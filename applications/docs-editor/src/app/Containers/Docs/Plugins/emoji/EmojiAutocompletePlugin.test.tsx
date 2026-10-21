@@ -18,6 +18,8 @@ import {
 import { act } from 'react'
 import EmojiAutocomplete from './EmojiAutocompletePlugin'
 import { AllNodes } from '../../AllNodes'
+import { DocsDependenciesProvider, type DocsDependencies } from '../../DocsDependenciesProvider'
+import { defaultDocsMessages } from '../../messages/defaultDocsMessages'
 import { $handleBeforeInputEvent } from '../Suggestions/handleBeforeInputEvent'
 
 import { polyfillSelectionRelatedThingsForTests } from '../Suggestions/TestUtils'
@@ -31,23 +33,25 @@ function CaptureEditor() {
 }
 function mount() {
   render(
-    <LexicalComposer
-      initialConfig={{
-        namespace: 'emoji-test',
-        nodes: AllNodes,
-        onError: (error) => {
-          throw error
-        },
-      }}
-    >
-      <RichTextPlugin
-        contentEditable={<ContentEditable aria-label="Document" />}
-        placeholder={null}
-        ErrorBoundary={LexicalErrorBoundary}
-      />
-      <CaptureEditor />
-      <EmojiAutocomplete />
-    </LexicalComposer>,
+    <DocsDependenciesProvider dependencies={{ defaultMessages: defaultDocsMessages } as DocsDependencies}>
+      <LexicalComposer
+        initialConfig={{
+          namespace: 'emoji-test',
+          nodes: AllNodes,
+          onError: (error) => {
+            throw error
+          },
+        }}
+      >
+        <RichTextPlugin
+          contentEditable={<ContentEditable aria-label="Document" />}
+          placeholder={null}
+          ErrorBoundary={LexicalErrorBoundary}
+        />
+        <CaptureEditor />
+        <EmojiAutocomplete />
+      </LexicalComposer>
+    </DocsDependenciesProvider>,
   )
 }
 async function type(text: string) {

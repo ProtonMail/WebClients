@@ -22,6 +22,11 @@ and suggestions you make in Suggest mode and accept or reject live in page memor
 There are no other users, so no typing indicators, unread threads, or comments from collaborators.
 Host file operations are unavailable.
 The harness supplies local Docs dependencies directly, including the in-memory comments client and awareness subscriptions.
+
+`StandaloneDocsEditor` requires a surrounding `DocsDependenciesProvider`. Supply a complete `DocsMessages`
+object via `dependencies.messages` to localize the UI, and use `dependencies.defaultMessages` to supply
+fallback messages. The demo supplies the English `defaultDocsMessages`.
+
 It does not require application, editor-state, or notification providers, or create a parent bridge or network transport.
 The in-memory document is preserved when the page enters the browser's back/forward cache and disposed on exit or unmount.
 Do not enable `STANDALONE_DOC` and `STANDALONE_SHEET` together.

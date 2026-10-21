@@ -1,0 +1,55 @@
+import { c } from 'ttag'
+import type { DocsMessages } from '../../../Docs/public'
+
+export function createToolbarMessages(): Pick<DocsMessages, 'toolbar' | 'alignmentMenuOptions'> {
+  return {
+    toolbar: {
+      Undo: c('Action').t`Undo`,
+      Redo: c('Action').t`Redo`,
+      'Adjust font size': c('Action').t`Adjust font size`,
+      and: c('Action').t`and`,
+      Indent: c('Action').t`Indent`,
+      Outdent: c('Action').t`Outdent`,
+      Bold: c('Action').t`Bold`,
+      Italic: c('Action').t`Italic`,
+      Underline: c('Action').t`Underline`,
+      'Strike-through': c('Action').t`Strike-through`,
+      Colour: c('Action').t`Colour`,
+      'Insert link': c('Action').t`Insert link`,
+      'Insert image': c('Action').t`Insert image`,
+      'Insert table': c('Action').t`Insert table`,
+      'Insert comment': c('Action').t`Insert comment`,
+      Divider: c('Action').t`Divider`,
+      'Check List': c('Action').t`Check List`,
+      'Bulleted List': c('Action').t`Bulleted List`,
+      'Numbered List': c('Action').t`Numbered List`,
+      Alphabetical: c('Action').t`Alphabetical`,
+      'A. B. C. D.': c('Action').t`A. B. C. D.`,
+      'a. b. c. d.': c('Action').t`a. b. c. d.`,
+      'A) B) C) D)': c('Action').t`A) B) C) D)`,
+      'a) b) c) d)': c('Action').t`a) b) c) d)`,
+      Roman: c('Action').t`Roman`,
+      'Code block': c('Action').t`Code block`,
+      Quote: c('Action').t`Quote`,
+      'Clear formatting': c('Action').t`Clear formatting`,
+      // The "(alpha only)" suffix stays untranslated so the existing msgids keep their translations.
+      'Subscript (alpha only)': `${c('Action').t`Subscript`} (alpha only)`,
+      'Superscript (alpha only)': `${c('Action').t`Superscript`} (alpha only)`,
+      'Page break (alpha only)': `${c('Action').t`Page break`} (alpha only)`,
+      New: c('Info').t`New`,
+      'More options': c('Action').t`More options`,
+      Editing: c('Info').t`Editing`,
+      Suggesting: c('Info').t`Suggesting`,
+      Viewing: c('Info').t`Viewing`,
+      'Edit document directly': c('Description').t`Edit document directly`,
+      'Edits become suggestions': c('Description').t`Edits become suggestions`,
+      'Read or print final document': c('Description').t`Read or print final document`,
+    },
+    alignmentMenuOptions: {
+      'Left align': c('Action').t`Left align`,
+      'Center align': c('Action').t`Center align`,
+      'Right align': c('Action').t`Right align`,
+      'Justify align': c('Action').t`Justify align`,
+    },
+  }
+}

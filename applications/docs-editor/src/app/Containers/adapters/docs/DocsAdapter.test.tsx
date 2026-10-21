@@ -7,6 +7,7 @@ import { isDevOrBlack } from '@proton/shared/lib/env'
 import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import { getDateFnLocaleWithSettings } from '@proton/shared/lib/i18n/dateFnLocale'
 import { enGBLocale, enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales'
+import { loadLocale } from '@proton/shared/lib/i18n/loadLocale'
 import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings'
 import { DocsEditorTelemetryEvents } from '../../Docs/contract/DocsEditorTelemetry'
 import type { SafeDocsUserState } from '../../Docs/public'
@@ -226,6 +227,33 @@ describe('DocsAdapter runtime services', () => {
     expect(onCleanup).toHaveBeenLastCalledWith(replacement)
     act(() => replacement.setLocale('pt_PT'))
     expect(host.dependencies.languageCode).toBe('nl')
+  })
+
+  it('rebuilds translated messages once the account locale activates', async () => {
+    const host = setup()
+    expect(host.dependencies.messages?.toolbar.Bold).toBe('Bold')
+    expect(host.dependencies.messages?.toolbar['Subscript (alpha only)']).toBe('Subscript (alpha only)')
+    const french = {
+      charset: 'utf-8',
+      headers: { 'plural-forms': 'nplurals=2; plural=(n > 1);' },
+      contexts: {
+        Action: { Bold: ['Gras'], Subscript: ['Indice'], 'Left align': ['Aligner à gauche'] },
+        'Emoji category': { Flags: ['Drapeaux'] },
+      },
+    }
+    try {
+      // The bridge sets the language code before the catalogue has loaded.
+      act(() => host.application.setLocale('fr_FR'))
+      expect(host.dependencies.messages?.toolbar.Bold).toBe('Bold')
+      await act(() => loadLocale('fr_FR', { fr_FR: async () => french }))
+      expect(host.dependencies.messages?.toolbar.Bold).toBe('Gras')
+      expect(host.dependencies.messages?.toolbar['Subscript (alpha only)']).toBe('Indice (alpha only)')
+      expect(host.dependencies.messages?.alignmentMenuOptions['Left align']).toBe('Aligner à gauche')
+      expect(host.dependencies.messages?.emoji.categories.flags).toBe('Drapeaux')
+    } finally {
+      await act(() => loadLocale('en_US', {}))
+    }
+    expect(host.dependencies.messages?.toolbar.Bold).toBe('Bold')
   })
 
   it("follows the account's date locale for absolute times without a parent render", () => {
