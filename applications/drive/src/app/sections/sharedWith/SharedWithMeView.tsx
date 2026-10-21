@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { useAppTitle } from '@proton/components';
+import useAppTitle from '@proton/components/hooks/useAppTitle';
 
 import { FileBrowserStateProvider } from '../../legacy/components/FileBrowser';
 import { useActiveShare } from '../../legacy/hooks/drive/useActiveShare';

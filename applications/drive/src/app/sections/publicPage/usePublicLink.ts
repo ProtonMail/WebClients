@@ -3,7 +3,7 @@ import { useCallback, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useAuthentication } from '@proton/components';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { is4xx, is5xx, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { uploadManager } from '@proton/drive/modules/upload';

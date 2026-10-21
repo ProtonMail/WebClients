@@ -4,13 +4,10 @@ import { c, msgid } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    type ModalStateReturnObj,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoHeader,
-    useModalStateObject,
-} from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { type ModalStateReturnObj, useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { getDriveForPhotos } from '@proton/drive/sdk';
 import { IcAlbumFolder } from '@proton/icons/icons/IcAlbumFolder';

@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
-import { Dropdown, DropdownMenu, DropdownMenuButton, MimeIcon } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import MimeIcon from '@proton/components/components/icon/MimeIcon';
 import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
 import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';

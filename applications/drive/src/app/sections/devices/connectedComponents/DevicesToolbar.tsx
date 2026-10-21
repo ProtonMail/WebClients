@@ -1,4 +1,4 @@
-import { Toolbar } from '@proton/components';
+import Toolbar from '@proton/components/components/toolbar/Toolbar';
 
 import { LayoutButton } from '../../../legacy/components/sections/ToolbarButtons';
 import { useSelectionStore } from '../../../modules/selection';

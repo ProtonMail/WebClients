@@ -2,8 +2,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import apertusWordmark from '@proton/styles/assets/img/lumo/apertus-wordmark.png';
 
@@ -35,12 +38,7 @@ export default function ApertusOnboardingModal({ onConfirm, open, ...modalProps 
         </Href>
     );
     const protonBlogLink = (
-        <Href
-            key="proton-blog"
-            href="https://proton.me/blog/lumo-apertus"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+        <Href key="proton-blog" href="https://proton.me/blog/lumo-apertus" target="_blank" rel="noopener noreferrer">
             {c('collider_2025: Link').t`${BRAND_NAME} blog`}
         </Href>
     );
@@ -84,7 +82,6 @@ export default function ApertusOnboardingModal({ onConfirm, open, ...modalProps 
                             .jt`You can learn more on the ${protonBlogLink}.`}</p>
                     </div>
                 </div>
-
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button type="button" onClick={modalProps.onClose}>{c('collider_2025: Action').t`Not now`}</Button>

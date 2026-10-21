@@ -7,8 +7,9 @@ import userEvent from '@testing-library/user-event';
 
 import type { ApiEvent, ApiListenerCallback, ApiWithListener } from '@proton/shared/lib/api/createApi';
 
-import type { ModalOwnProps } from '../..';
-import { ConfigProvider, NotificationsProvider } from '../..';
+import type { ModalOwnProps } from '../../components/modalTwo/Modal';
+import ConfigProvider from '../config/Provider';
+import NotificationsProvider from '../notifications/Provider';
 import type { AuthModalProps } from '../password/AuthModal';
 import ApiModals from './ApiModals';
 import ApiModalsHV from './ApiModalsHV';

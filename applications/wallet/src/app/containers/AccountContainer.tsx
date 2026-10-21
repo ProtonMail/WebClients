@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useModalState } from '@proton/components';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
 import { MINUTE } from '@proton/shared/lib/constants';

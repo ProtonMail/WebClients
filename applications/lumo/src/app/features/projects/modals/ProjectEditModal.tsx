@@ -3,15 +3,13 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import {
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    TextAreaTwo,
-} from '@proton/components';
-import type { ModalStateProps } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useUncontrolledField } from '../../../hooks/useUncontrolledField';

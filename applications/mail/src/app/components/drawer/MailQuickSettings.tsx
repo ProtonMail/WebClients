@@ -19,7 +19,7 @@ import QuickSettingsSectionRow from '@proton/components/components/drawer/views/
 import type { QuickSettingsReminders } from '@proton/components/components/drawer/views/quickSettings/interface';
 import DrawerAppScrollContainer from '@proton/components/components/drawer/views/shared/DrawerAppScrollContainer';
 import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
-import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
+import KeyTransparencyDetailsModal from '@proton/components/components/keyTransparency/KeyTransparencyDetailsModal';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';

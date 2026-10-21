@@ -18,11 +18,9 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { addApiMock, apiMock } from '@proton/test-api/api';
 
-import {
-    defaultSubscriptionCache,
-    organizationDefaultResponse,
-    plansDefaultResponse,
-} from '../../../hooks/helpers/tests/index';
+import { organizationDefaultResponse } from '../../../hooks/helpers/tests/useOrganization';
+import { plansDefaultResponse } from '../../../hooks/helpers/tests/usePlans';
+import { defaultSubscriptionCache } from '../../../hooks/helpers/tests/useSubscription';
 import { renderWithProviders } from '../../../testing/renderWithProviders';
 import {
     ContextSubscriptionContainer,

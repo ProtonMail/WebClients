@@ -18,7 +18,8 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
-import { Pagination, usePaginationAsync } from '../../../components/pagination/index';
+import Pagination from '../../../components/pagination/Pagination';
+import usePaginationAsync from '../../../components/pagination/usePaginationAsync';
 import useErrorHandler from '../../../hooks/useErrorHandler';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import { toCamelCase } from '../../credentialLeak/helpers';

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton/PromotionButton';
 import { IcBrandProtonPassFilled } from '@proton/icons/icons/IcBrandProtonPassFilled';
 import { IcPlus } from '@proton/icons/icons/IcPlus';

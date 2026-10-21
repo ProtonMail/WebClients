@@ -4,7 +4,8 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import { ButtonGroup, Mark } from '@proton/components';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
+import Mark from '@proton/components/components/text/Mark';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import type { IconSize } from '@proton/icons/types';
 

@@ -4,7 +4,7 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 @use '~@proton/styles/scss/base/custom-properties/init' as *;
 @use '~@proton/styles/scss/base/custom-properties/optionals' as *;
-@use '~@proton/components/components/dropzone/Dropzone' as *;
+@use '../../dropzone/Dropzone' as *;
 @use '~@proton/styles/scss/lib/include-media' as im;
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;

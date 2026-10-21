@@ -1,13 +1,11 @@
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    useModalState,
-} from '@proton/components';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { useFlag } from '@proton/unleash/useFlag';
 

@@ -1,16 +1,14 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import {
-    Loader,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    SUBSCRIPTION_STEPS,
-    useSubscriptionModal,
-} from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';

@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { ContextSeparator } from '@proton/components';
-import type { useConfirmActionModal } from '@proton/components';
+import type { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import type { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
 import { MemberRole, getDrivePerNodeType } from '@proton/drive/sdk';

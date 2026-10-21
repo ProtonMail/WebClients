@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import type { ModalStateProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, useModalTwoStatic } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useConfirmActionModal } from '@proton/components';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useLinksActions } from '../_links';

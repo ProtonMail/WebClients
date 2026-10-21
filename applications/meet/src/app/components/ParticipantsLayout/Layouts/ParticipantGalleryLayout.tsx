@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useRef } from 'react';
 
-import { useActiveBreakpoint } from '@proton/components/index';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectPagedIdentities } from '@proton/meet/store/slices/participants/sortedParticipantsSlice';
 import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';

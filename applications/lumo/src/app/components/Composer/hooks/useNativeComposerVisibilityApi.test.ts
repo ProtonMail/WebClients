@@ -14,7 +14,7 @@ jest.mock('../../../providers/SidebarProvider');
 jest.mock('../../../providers/RightPanelProvider');
 jest.mock('../../../remote/nativeComposerBridgeHelpers');
 jest.mock('../../../util/userAgent');
-jest.mock('@proton/components', () => ({ useActiveBreakpoint: jest.fn() }));
+jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({ __esModule: true, default: jest.fn() }));
 
 const mockedUseLumoFlags = useLumoFlags as jest.Mock;
 const mockedUseOptionalSidebar = useOptionalSidebar as jest.Mock;

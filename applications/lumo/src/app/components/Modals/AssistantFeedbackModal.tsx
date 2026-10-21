@@ -8,17 +8,15 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    Checkbox,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    TextAreaTwo,
-    useErrorHandler,
-    useModalStateObject,
-} from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { APERTUS_15_MODEL } from '@proton/lumo-api-client/core/chat-completions';
 import type { ChatCompletionsRequest } from '@proton/lumo-api-client/core/types';

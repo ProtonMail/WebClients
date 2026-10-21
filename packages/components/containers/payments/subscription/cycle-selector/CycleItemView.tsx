@@ -4,9 +4,9 @@ import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 
 import EllipsisLoader from '../../../../components/loader/EllipsisLoader';
 import Price from '../../../../components/price/Price';
-import { getShortBillingText } from '../helpers';
 import PlanDiscount from '../helpers/PlanDiscount';
 import PlanPrice from '../helpers/PlanPrice';
+import { getShortBillingText } from '../helpers/getTotalBillingText';
 
 const CycleItemView = ({
     loading,

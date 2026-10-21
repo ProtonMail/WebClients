@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import type { ModalStateProps } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { type NormalizedNode, getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';

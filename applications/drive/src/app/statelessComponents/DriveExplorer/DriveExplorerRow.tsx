@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 
-import { DragMoveContainer, TableCell, TableRow, useDragMove } from '@proton/components';
+import DragMoveContainer from '@proton/components/components/dragMoveContainer/DragMoveContainer';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
+import useDragMove from '@proton/components/hooks/useDragMove';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';

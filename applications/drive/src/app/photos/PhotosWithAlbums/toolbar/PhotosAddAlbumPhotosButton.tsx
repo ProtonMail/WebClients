@@ -2,7 +2,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
-import { DropdownMenuButton, ToolbarButton, useActiveBreakpoint } from '@proton/components';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import clsx from '@proton/utils/clsx';
 

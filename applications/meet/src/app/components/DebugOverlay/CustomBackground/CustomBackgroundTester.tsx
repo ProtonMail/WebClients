@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Toggle } from '@proton/components/index';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectSelectedCameraId } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';

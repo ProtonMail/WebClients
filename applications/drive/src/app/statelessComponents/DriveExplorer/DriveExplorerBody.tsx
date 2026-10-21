@@ -1,6 +1,7 @@
 import type { ReactNode, RefObject } from 'react';
 
-import { Table, TableBody } from '@proton/components';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
 import clsx from '@proton/utils/clsx';
 
 import { VirtualListItem } from './VirtualListItem';

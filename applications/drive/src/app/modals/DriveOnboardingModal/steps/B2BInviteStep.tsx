@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useSettingsLink } from '@proton/components';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcUsers } from '@proton/icons/icons/IcUsers';

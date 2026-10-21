@@ -1,14 +1,12 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    DrawerAppScrollContainer,
-    QuickSettingsButton,
-    QuickSettingsButtonSection,
-    useConfirmActionModal,
-} from '@proton/components';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import DefaultQuickSettings from '@proton/components/components/drawer/views/quickSettings/DefaultQuickSettings';
 import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
+import QuickSettingsButton from '@proton/components/components/drawer/views/quickSettings/QuickSettingsButton';
+import QuickSettingsButtonSection from '@proton/components/components/drawer/views/quickSettings/QuickSettingsButtonSection';
+import DrawerAppScrollContainer from '@proton/components/components/drawer/views/shared/DrawerAppScrollContainer';
 import { useDrive } from '@proton/drive/sdk';
 
 import { useDebug } from '../../../legacy/hooks/drive/useDebug';

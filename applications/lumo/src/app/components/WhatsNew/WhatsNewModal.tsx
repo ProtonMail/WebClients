@@ -4,8 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { ModalProps } from '@proton/components';
-import { ModalContent, ModalTwo, ModalTwoFooter, StepDot, StepDots } from '@proton/components';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import StepDot from '@proton/components/components/stepDot/StepDot';
+import StepDots from '@proton/components/components/stepDots/StepDots';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import range from '@proton/utils/range';
 

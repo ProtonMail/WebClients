@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { c, msgid } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { useActiveBreakpoint } from '@proton/components/index';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';

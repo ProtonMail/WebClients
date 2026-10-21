@@ -11,7 +11,7 @@ import { Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Toggle } from '@proton/components/index';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingName } from '@proton/meet/store/slices/currentMeeting';

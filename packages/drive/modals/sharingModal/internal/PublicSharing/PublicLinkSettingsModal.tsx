@@ -3,22 +3,20 @@ import { type ChangeEvent, type FormEvent, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import type { ModalProps } from '@proton/components';
-import {
-    DateInputTwo,
-    InputFieldTwo,
-    Label,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    PasswordInputTwo,
-    Toggle,
-    useConfirmActionModal,
-    useModalTwoStatic,
-} from '@proton/components';
-import useToggle from '@proton/hooks/useToggle'
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import Label from '@proton/components/components/label/Label';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
+import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useLoading from '@proton/hooks/useLoading';
+import useToggle from '@proton/hooks/useToggle';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { MAX_SHARED_URL_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 

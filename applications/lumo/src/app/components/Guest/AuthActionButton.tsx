@@ -3,7 +3,7 @@ import React from 'react';
 import { clsx } from 'clsx';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { SettingsLink } from '@proton/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 
 import type { GuestAuthAction } from '../../hooks/useAuthActionProps';
 import { useAuthActionProps } from '../../hooks/useAuthActionProps';

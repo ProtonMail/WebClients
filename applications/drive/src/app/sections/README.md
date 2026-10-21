@@ -73,9 +73,7 @@ export const useSectionActions = () => {
 
     // 2. Pure action handlers — each handler does ONE thing
     const handlePreview = (uid: string) => {
-        showPreviewModal({
-            /* ... */
-        });
+        showPreviewModal({/* ... */});
     };
 
     const handleDownload = async (uids: string[]) => {
@@ -291,7 +289,7 @@ export type CommonButtonProps<T = {}> =
 ### Button Implementation
 
 ```typescript
-import { ToolbarButton } from '@proton/components';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { ContextMenuButton } from '../../statelessComponents/ContextMenu';
 import type { CommonButtonProps } from './types';

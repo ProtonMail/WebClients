@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { MemberRole, NodeType } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
-import type { ModalStateProps } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
 import type { DirectoryTreeItem } from '../../../components/DirectoryTree/DirectoryTree';
 import { handleSdkError } from '../../../legacy/errorHandling';

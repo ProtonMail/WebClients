@@ -7,14 +7,12 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    ContactEmailsProvider,
-    FileIcon,
-    type ModalStateProps,
-    ModalTwo,
-    useConfirmActionModal,
-} from '@proton/components';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import useToggle from '@proton/hooks/useToggle';

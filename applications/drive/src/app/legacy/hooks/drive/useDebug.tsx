@@ -1,4 +1,4 @@
-import { useLocalState } from '@proton/components';
+import useLocalState from '@proton/components/hooks/useLocalState';
 
 /**
  * Reads a flag from local storage, if found returns true

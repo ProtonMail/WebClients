@@ -3,7 +3,7 @@ import { useState } from 'react';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import PlusToPlusUpsell from '@proton/components/containers/payments/subscription/PlusToPlusUpsell';
 import { useVisionaryDowngradeWarningModal } from '@proton/components/containers/payments/subscription/VisionaryDowngradeWarningModal';
-import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers';
+import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers/getAllowedCycles';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';

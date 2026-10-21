@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { FileIcon, TableRowBusy } from '@proton/components';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import TableRowBusy from '@proton/components/components/table/TableRowBusy';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';

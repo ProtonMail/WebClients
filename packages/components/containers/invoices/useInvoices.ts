@@ -4,7 +4,7 @@ import { type InvoiceDocument, queryInvoices } from '@proton/payments/core/api/a
 import type { InvoiceOwner } from '@proton/payments/core/constants';
 import type { Invoice, InvoiceResponse } from '@proton/payments/core/interface';
 
-import { usePaginationAsync } from '../../components/pagination';
+import usePaginationAsync from '../../components/pagination/usePaginationAsync';
 import useApiResult from '../../hooks/useApiResult';
 import type { DocumentHook } from './types';
 

@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 
-import { Loader } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
 import { splitNodeUid } from '@proton/drive/sdk';
 import useElementRect from '@proton/hooks/useElementRect';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';

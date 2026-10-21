@@ -33,7 +33,7 @@ import type { PlanCardFeatureDefinition } from '../../../features/interface';
 import { getFoldersAndLabelsFeature, getNAddressesFeature, getNDomainsFeature } from '../../../features/mail';
 import { PASS_PLUS_VAULTS, get2FAAuthenticator, getHideMyEmailAliases, getVaults } from '../../../features/pass';
 import { PlanCardFeatureList } from '../../PlanCardFeatures';
-import { isUpsellWithPlan } from '../../helpers';
+import { isUpsellWithPlan } from '../../helpers/dashboard-upsells';
 import UpsellPrice from '../../panels/components/UpsellPrice';
 import { CycleSelector } from '../CycleSelector';
 import { FreeVPNFeaturesB } from '../PlanFeatureSections';
