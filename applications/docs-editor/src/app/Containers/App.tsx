@@ -49,8 +49,6 @@ import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { getEditorStateFromSerializedNodes } from './Docs/Conversion/get-editor-state-from-nodes'
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 import { useStore } from 'zustand'
-import DocsLayout from './DocsLayout'
-import { getDocsLayoutScrollContainer } from './docsLayoutUtils'
 import { SheetsAdapter } from './adapters/sheets/SheetsAdapter'
 import { StandaloneSheetsEditor, type SpreadsheetRef } from './Spreadsheet/public'
 import { toSheetsInitialization } from './adapters/sheets/utils/sheets-initialization-adapter'
@@ -58,7 +56,9 @@ import SheetsLayout from './SheetsLayout'
 import { useEditorTheme } from '../Theme/EditorThemeProvider'
 import { DocsAdapter } from './adapters/docs/DocsAdapter'
 import {
+  DocsLayoutContainer,
   EditorSystemMode,
+  getDocsLayoutScrollContainer,
   StandaloneDocsEditor,
   type EditorInitializationConfig as DocsEditorInitializationConfig,
 } from './Docs/public'
@@ -729,7 +729,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
   if (documentType === 'doc') {
     return (
-      <DocsLayout.Container isSuggestionMode={isSuggestionMode}>
+      <DocsLayoutContainer isSuggestionMode={isSuggestionMode}>
         {showPreviewModeEditor && (
           <DocsAdapter clientInvoker={bridge.getClientInvoker()}>
             <PreviewModeEditor
@@ -766,7 +766,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             />
           </DocsAdapter>
         </div>
-      </DocsLayout.Container>
+      </DocsLayoutContainer>
     )
   }
 

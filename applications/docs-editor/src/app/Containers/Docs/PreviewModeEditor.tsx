@@ -14,7 +14,7 @@ import { $rejectAllSuggestions } from './Plugins/Suggestions/rejectAllSuggestion
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { setScrollableTablesActive } from '@lexical/table'
 import { TableOfContents } from '../../Components/TableOfContents/TableOfContents'
-import DocsLayout from '../DocsLayout'
+import { DocsLayoutCenterPanel, DocsLayoutGrid, DocsLayoutLeftPanel } from './Layout/DocsLayout'
 import { getDocsLayoutScrollContainer } from './Layout/docsLayoutUtils'
 import { ReadonlyLinkFixPlugin } from './Plugins/Link/ReadonlyLinkFixPlugin'
 import { useDocsDependencies } from './DocsDependenciesProvider'
@@ -60,8 +60,8 @@ export function PreviewModeEditor({
           isPreviewModeToolbar
           systemMode={EditorSystemMode.PublicView}
         />
-        <DocsLayout.Grid leftPanelEnabled={tableOfContentsVisible}>
-          <DocsLayout.LeftPanel>
+        <DocsLayoutGrid leftPanelEnabled={tableOfContentsVisible}>
+          <DocsLayoutLeftPanel>
             {tableOfContentsVisible && (
               <TableOfContents
                 editorHidden={hidden}
@@ -70,8 +70,8 @@ export function PreviewModeEditor({
                 reportTelemetry={reportTelemetry}
               />
             )}
-          </DocsLayout.LeftPanel>
-          <DocsLayout.CenterPanel>
+          </DocsLayoutLeftPanel>
+          <DocsLayoutCenterPanel>
             <RichTextPlugin
               contentEditable={
                 <ProtonContentEditable
@@ -88,8 +88,8 @@ export function PreviewModeEditor({
               placeholder={null}
               ErrorBoundary={LexicalErrorBoundary}
             />
-          </DocsLayout.CenterPanel>
-        </DocsLayout.Grid>
+          </DocsLayoutCenterPanel>
+        </DocsLayoutGrid>
 
         <PreviewStateSyncPlugin clonedEditorState={clonedEditorState} />
         <PreviewScrollRestorePlugin initialScrollTop={initialScrollTop} />

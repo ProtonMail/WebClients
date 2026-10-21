@@ -1,13 +1,16 @@
 import React from 'react'
-import clsx from '@proton/utils/clsx'
+import { clsx } from 'clsx'
+import { c } from 'ttag'
 import {
   clampLeftPanelWidth,
   DOCS_EDITOR_MAX_WIDTH,
   getDefaultLeftPanelWidth,
   getDocsLayoutColumnWidths,
   getEditorBleedArea,
+  LEFT_PANEL_MAX_WIDTH,
+  LEFT_PANEL_MIN_WIDTH,
 } from './docsLayoutUtils'
-import { PanelResizeHandle } from './__components/PanelResizeHandle'
+import { PanelResizeHandle } from './PanelResizeHandle'
 import './DocsLayout.scss'
 
 export { DOCS_EDITOR_MAX_WIDTH } from './docsLayoutUtils'
@@ -35,7 +38,7 @@ const RightPanelContext = React.createContext<RightPanelLayout | null>(null)
 export function useLeftPanelContext(): LeftPanelLayout {
   const context = React.useContext(LeftPanelContext)
   if (!context) {
-    throw new Error('useLeftPanelContext must be used within DocsLayout.Grid')
+    throw new Error('useLeftPanelContext must be used within DocsLayoutGrid')
   }
   return context
 }
@@ -43,12 +46,12 @@ export function useLeftPanelContext(): LeftPanelLayout {
 export function useRightPanelContext(): RightPanelLayout {
   const context = React.useContext(RightPanelContext)
   if (!context) {
-    throw new Error('useRightPanelContext must be used within DocsLayout.Container')
+    throw new Error('useRightPanelContext must be used within DocsLayoutContainer')
   }
   return context
 }
 
-function LeftPanel({ children }: React.PropsWithChildren) {
+export function DocsLayoutLeftPanel({ children }: React.PropsWithChildren) {
   const leftPanel = useLeftPanelContext()
   const [isDragging, setIsDragging] = React.useState(false)
   const isExpanded = leftPanel.visibility === 'expanded'
@@ -59,6 +62,10 @@ function LeftPanel({ children }: React.PropsWithChildren) {
       {isExpanded && leftPanel.width > 0 && (
         <PanelResizeHandle
           className="right-0"
+          label={c('Label').t`Resize outline`}
+          width={leftPanel.width}
+          minWidth={LEFT_PANEL_MIN_WIDTH}
+          maxWidth={LEFT_PANEL_MAX_WIDTH}
           onResizeEnd={() => setIsDragging(false)}
           onResize={(startWidth, delta) => leftPanel.setWidth(startWidth + delta)}
           onReset={leftPanel.resetWidth}
@@ -69,21 +76,21 @@ function LeftPanel({ children }: React.PropsWithChildren) {
   )
 }
 
-function CenterPanel({ children }: React.PropsWithChildren) {
+export function DocsLayoutCenterPanel({ children }: React.PropsWithChildren) {
   return <div className="docs-layout-center-panel">{children}</div>
 }
 
-function RightPanel() {
+export function DocsLayoutRightPanel() {
   const rightPanel = useRightPanelContext()
 
   return <div ref={rightPanel.setElement} className="docs-layout-right-panel" />
 }
 
-interface GridProps {
+export interface DocsLayoutGridProps {
   leftPanelEnabled: boolean
 }
 
-function Grid({ children, leftPanelEnabled }: React.PropsWithChildren<GridProps>) {
+export function DocsLayoutGrid({ children, leftPanelEnabled }: React.PropsWithChildren<DocsLayoutGridProps>) {
   const viewportWidth = useViewportWidth()
   const leftPanel = useLeftPanelLayout(viewportWidth, leftPanelEnabled)
   const rightPanel = useRightPanelContext()
@@ -180,11 +187,11 @@ function RightPanelProvider({ children }: React.PropsWithChildren) {
   )
 }
 
-interface ContainerProps {
+export interface DocsLayoutContainerProps {
   isSuggestionMode: boolean
 }
 
-function Container({ children, isSuggestionMode }: React.PropsWithChildren<ContainerProps>) {
+export function DocsLayoutContainer({ children, isSuggestionMode }: React.PropsWithChildren<DocsLayoutContainerProps>) {
   return (
     <RightPanelProvider>
       <div
@@ -201,12 +208,4 @@ function Container({ children, isSuggestionMode }: React.PropsWithChildren<Conta
       </div>
     </RightPanelProvider>
   )
-}
-
-export default {
-  Container,
-  Grid,
-  LeftPanel,
-  CenterPanel,
-  RightPanel,
 }
