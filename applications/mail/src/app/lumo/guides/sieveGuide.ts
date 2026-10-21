@@ -241,3 +241,215 @@ if anyof(date :is "received" "weekday" "0", date :is "received" "weekday" "6") {
     fileinto "Weekend";
 }
 \`\`\``;
+
+/**
+ * The same dialect, rewritten for the standalone prompt, which carries no examples of its own. Sourced as
+ * {@link PROTON_SIEVE_DIALECT_REFERENCE} is; where Proton's page disagrees with the backend filter engine,
+ * the engine wins: the Actions section follows its behaviour for discard, keep, flags and expire units.
+ */
+export const STANDALONE_PROTON_SIEVE_DIALECT_REFERENCE = `Proton implements a specific subset of Sieve, and this reference is the complete set of extensions, tests, actions and syntax it accepts. Anything outside it is rejected, so never invent syntax, options or extensions. When the user asks for something Proton can't do, say so plainly and, where possible, suggest the closest supported alternative.
+
+### 0. The spam-guard prologue
+
+Every Proton Sieve script begins with this fixed prologue, and it stays present and unchanged:
+\`\`\`sieve
+require ["include", "environment", "variables", "relational", "comparator-i;ascii-numeric", "spamtest"];
+
+${SIEVE_SPAM_GUARD}
+\`\`\`
+- By default it stays exactly as it is. Don't reorder, rewrite or tidy it, and never drop it on your own initiative.
+- If the user asks to remove it, don't remove it on the first request. Warn them clearly first: without this block every one of their filters runs on spam too, so spam can be filed into normal folders, flagged, answered by a vacation reply, or otherwise treated as legitimate mail, which breaks Proton's spam protection for this filter. Ask them to confirm they really want it gone.
+- Remove it only if, after that warning, the user is unmistakably clear they still want it removed. If there is any doubt, keep it and ask again.
+- Write the user's own rules after this block, never before it and never inside its \`if\`.
+- The prologue's \`require\` is the only one. When the user's rules need more extensions (such as fileinto, imap4flags, date or extlists), merge those names into this existing \`require\` array rather than adding a second \`require\`.
+- A draft handed to you as context already contains the prologue; keep it verbatim and add only below it.
+- If the user asks what the prologue does, explain the logic: it reads Proton's configured spam threshold from the environment (\`vnd.proton.spam-threshold\`) into \`\${1}\`; \`spamtest\` returns the message's spam score; when that score is greater than or equal to the threshold (a numeric comparison), the message is spam, so the script \`return\`s straight away and none of the user's filters run on it.
+
+### 1. Script structure
+
+- A script begins with a single \`require\` listing every extension it uses, such as \`require ["fileinto", "imap4flags"];\`. Require only what the script actually uses.
+- Control flow: \`if <test> { ... }\`, \`elsif <test> { ... }\`, \`else { ... }\`.
+- Every statement ends with \`;\`. Strings are double-quoted. A list is \`["a", "b"]\`.
+- Comments: \`# line comment\` or \`/* block */\`.
+
+### 2. Extensions (require names)
+
+- fileinto: move or label messages into a folder.
+- imap4flags: add, remove or set IMAP flags (\`addflag\`, \`removeflag\`, \`setflag\`, and the \`hasflag\` test).
+- reject: bounce a message back with a reason.
+- vacation: auto-reply (paid accounts only).
+- date: the \`date\` and \`currentdate\` tests.
+- envelope: test the SMTP envelope (Proton exposes only \`from\` and \`to\`).
+- variables: \`set\` and \`\${...}\` substitution.
+- relational: the \`:value\` and \`:count\` numeric match types.
+- comparator-i;ascii-numeric: numeric string comparison, paired with relational.
+- regex: the \`:regex\` match type.
+- extlists: \`header :list\` against contact, allow and block lists (\`:addrbook:\`, \`:incomingdefaults:\`).
+- vnd.proton.eval: \`set :eval\` arithmetic.
+- vnd.proton.expire: \`expire\` and \`unexpire\` auto-deletion (the \`hasexpiration\` and \`expiration\` tests).
+- include: supported only as the return node (\`return\`); don't generate \`include "..."\` statements.
+- environment: reads host values such as \`vnd.proton.spam-threshold\`; used only by the prologue (§0).
+- spamtest: the \`spamtest\` test, giving the message's spam score; used only by the prologue (§0).
+
+### 3. Tests
+
+- address [ADDRESS-PART] [MATCH-TYPE] <headers> <keys>: test an address header (from, to, cc and so on).
+  ADDRESS-PART: :all (the default, the whole address) | :localpart (before @) | :domain (after @).
+- header [MATCH-TYPE] <headers> <keys>: test a raw header value.
+- envelope [ADDRESS-PART] [MATCH-TYPE] <part> <keys>: \`from\` and \`to\` only.
+- exists <headers>: true when the header or headers are present.
+- size :over <n> / size :under <n>: the encrypted message size, in units K, M or G (such as \`2M\` or \`1000\`). This is the encrypted size, not the plaintext size.
+- date [:zone <"±hhmm"> | :originalzone] [MATCH-TYPE] <header> <date-part> <keys>: extract a date from a header.
+- currentdate [:zone <"±hhmm">] [MATCH-TYPE] <date-part> <keys>: the time the script runs.
+- hasflag [MATCH-TYPE] <flags>: test the flags currently set.
+- hasexpiration: true when the message has a pending expiration.
+- expiration :comparator "i;ascii-numeric" [MATCH-TYPE] <unit> <keys>: test the pending expiration, where unit is "day", "minute" or "second". The :comparator is required: without it the values are compared as text, so "10" sorts below "5".
+- string [MATCH-TYPE] [COMPARATOR] <source> <keys>: test arbitrary strings rather than a header. This is how you branch on a variable you have \`set\`, including a \`set :eval\` result.
+- true always matches; false never matches.
+- header :list <header> <list-spec>: membership of a contact, allow or block list (see §7).
+- Combinators: \`anyof(t1, t2, ...)\` is OR, \`allof(t1, t2, ...)\` is AND, and \`not <test>\` negates.
+
+### 4. Match types and comparators
+
+- :is: exact match (the default).
+- :contains: the substring is present.
+- Choosing between them for a sender: use :is only with a complete address ("news@example.com"). When the user names a sender by brand or company ("Substack", "Ryanair", "Proton"), use :contains with a lowercase fragment, or :domain :is with the domain. :is against a bare name compares it to the whole address, so it can never match and the filter silently never fires.
+- :matches: wildcards, where \`*\` is zero or more characters and \`?\` is exactly one. To match a literal star or question mark, escape it: \`\\*\` and \`\\?\`. Captured groups become the variables \`\${1}\`, \`\${2}\` and so on, and \`\${0}\` is the whole match (requires variables).
+- :regex: a POSIX-style regular expression (requires regex). The shorthands \`\\b\`, \`\\w\`, \`\\W\` and \`\\d\` are not supported; use explicit classes such as \`[0-9]\` instead. Captures also fill \`\${1}\`, \`\${2}\` and so on.
+- :value "<op>" / :count "<op>" (requires relational): ordered comparison, with the operators "gt", "ge", "eq", "le" and "lt". :count compares the number of matching fields. Add :comparator "i;ascii-numeric" (which also requires comparator-i;ascii-numeric) whenever the values are numbers, or they are compared as text and "10" sorts below "5". The exception is the whole-date parts "date", "time" and "std11" of §8, where the default comparator is right because \`yyyy-mm-dd\` already sorts in date order.
+
+### 5. Actions
+
+- fileinto "Folder": file into a folder or label. Nested folders: "Parent/Child/Grandchild". A literal slash in a name is escaped: "Misc\\/Other". The system locations are "inbox", "archive", "trash", "spam" and "starred"; "drafts" and "sent" are ignored. A name that matches no existing folder or label silently does nothing. A message lives in one folder, so when several fileinto target folders the last one wins; labels accumulate.
+- keep: cancels a \`discard\` in the same script, whether it comes before or after it. It does not force an Inbox copy, because Proton's \`keep\` is not standard Sieve's: \`fileinto "X"; keep;\` files into X and leaves no Inbox copy. Never write \`keep\` to mean "also keep a copy in the Inbox", and tell the user that combination isn't available.
+- discard: deletes the message only if nothing has filed it with fileinto or keep, in this filter or an earlier one; otherwise the message is filed as normal. Either way no further Sieve filter runs afterwards, and neither does the user's auto-reply. So a \`discard\` disables every filter the user has after this one: warn them before writing a broad one, and never put rules after a \`discard\` expecting them to run.
+- stop: stops processing all Sieve filters, not just the rest of this script, so later filters and the user's auto-reply don't run.
+- addflag / removeflag / setflag <flags>: the flags are "\\\\Seen" and "\\\\Flagged" (note the escaped backslash). setflag replaces; addflag and removeflag adjust. fileinto and keep apply the flags as they stand at that moment, so change flags before them: a flag change after the last fileinto or keep is ignored, and \`fileinto "X"; addflag "\\\\Seen";\` leaves the message unread.
+- reject "reason": refuse the message with a reason (requires reject). It cancels every other action (fileinto, flags, vacation) and no further filter runs.
+- vacation [:days <n>] [:subject "<s>"] [:mime] [:handle "<id>"] "<reason>": auto-reply (requires vacation; paid only). :days throttles per sender; :handle groups distinct replies. With :mime the reason must begin with a \`Content-Type: text/plain\` or \`Content-Type: text/html\` line, or the script is rejected.
+- expire "<unit>" "<n>" / unexpire: auto-delete after n units, where unit is "month", "day", "hour", "minute" or "second" (requires vnd.proton.expire). Values are clamped to between 15 minutes and 730 days.
+- set [MODIFIER] "<name>" "<value>": assign a variable (requires variables).
+
+### 6. Variables (require variables)
+
+- Reference a variable with \`\${name}\`; capture groups from :matches and :regex are \`\${0}\`, \`\${1}\` and so on.
+- set modifiers: :lower, :upper, :lowerfirst, :upperfirst, :quotewildcard, :length (which yields the character count).
+- set :eval "<name>" "<expr>" (requires vnd.proton.eval) evaluates arithmetic, such as \`set :eval "r" "\${len} * 25 - 1 / 8 + 3";\`.
+
+### 7. Contact, allow and block lists (require extlists)
+
+Used as \`header :list "<header>" "<list-spec>"\`, with these list specs:
+- :addrbook:personal: all personal contacts. Optional query parameters, appended with ? and combined with &:
+  ?label=Name | ?label.starts-with=x | ?label.ends-with=x | ?label.contains=x
+  ?keypinning=true|false | ?encryption=true|false | ?signing=true|false
+- :addrbook:myself: the user's own addresses.
+- :addrbook:organization: organization members' addresses.
+- :incomingdefaults:inbox: the Allow List.
+- :incomingdefaults:spam: the Block List.
+
+### 8. Date and currentdate detail (RFC 5260)
+
+- date-part (case-insensitive): "year" (0000-9999), "month" (01-12), "day" (01-31), "date" (yyyy-mm-dd), "time" (hh:mm:ss), "hour" (00-23), "minute" (00-59), "second" (00-60), "weekday" (0=Sunday to 6=Saturday), "zone" (±hhmm), "iso8601", "std11" (the RFC 2822 Date: form), "julian" (Modified Julian Day, an integer).
+- :zone "+0100" forces a timezone offset; :originalzone (date only) keeps the header's own zone; the default is local time.
+- For numeric date-parts (year, month, day, hour, minute, second, weekday, julian), use :value or :count with :comparator "i;ascii-numeric". For "date", "time" and "std11", use the default casemap comparator.
+- All currentdate tests in one script refer to the same instant.
+
+### 9. Proton limitations
+
+- Filters see only the encrypted message, so they can't test body content, only headers, envelope and size.
+- Moves between special locations are blocked: Sent and Drafts can't move to Inbox, received messages can't move to Drafts or Sent, and Drafts can't move to Inbox or Sent.
+- vacation never replies to spam or to messages filtered into Spam.
+- Expiration is capped at 730 days.
+
+### 10. Examples
+
+For brevity, the examples after the first show only the user's rules and a minimal \`require\`. Real output always includes the §0 prologue, with any extra extensions merged into its \`require\` array, as the first example shows in full.
+
+Flag and file by sender (full output, with the prologue kept and extensions merged in):
+\`\`\`sieve
+require ["include", "environment", "variables", "relational", "comparator-i;ascii-numeric", "spamtest", "fileinto", "imap4flags"];
+
+${SIEVE_SPAM_GUARD}
+
+if address :is "from" "sender@example.com" {
+    addflag "\\\\Flagged";
+    fileinto "Important";
+}
+\`\`\`
+
+Match a domain with a wildcard:
+\`\`\`sieve
+require ["fileinto"];
+if address :domain :matches "from" "protonmail.*" {
+    fileinto "Internal";
+}
+\`\`\`
+
+Capture the sender's domain into the folder name. Note \`address :domain\`, not \`header\`: a raw \`From:\` header is \`Jane <jane@example.com>\`, so capturing from it would yield \`example.com>\` and file into a folder of that name.
+\`\`\`sieve
+require ["variables", "fileinto"];
+if address :domain :matches "from" "*" {
+    set :lower "sender" "\${1}";
+    fileinto "\${sender}";
+}
+\`\`\`
+
+Numeric header comparison:
+\`\`\`sieve
+require ["fileinto", "relational", "comparator-i;ascii-numeric"];
+if header :value "ge" :comparator "i;ascii-numeric" "x-priority" "4" {
+    fileinto "Low priority";
+}
+\`\`\`
+
+Discard anything not from a known contact or the Allow List. Warn the user first that this stops every one of their later filters from running (§5, discard):
+\`\`\`sieve
+require ["extlists"];
+if not anyof(
+    header :list "from" ":addrbook:personal",
+    header :list "from" ":incomingdefaults:inbox",
+    header :list "from" ":addrbook:myself"
+) {
+    discard;
+}
+\`\`\`
+
+File newsletters by header presence:
+\`\`\`sieve
+require ["fileinto"];
+if anyof(exists "x-facebook", exists "x-linkedin-id") {
+    fileinto "Social";
+} elsif exists "list-unsubscribe" {
+    fileinto "Newsletters";
+}
+\`\`\`
+
+Vacation over a date range (paid). The "date" date-part takes no numeric comparator, per §4:
+\`\`\`sieve
+require ["date", "vacation", "relational"];
+if allof(
+    currentdate :value "ge" "date" "2026-07-01",
+    currentdate :value "le" "date" "2026-07-14"
+) {
+    vacation :days 7 "I'm away during the first half of July.";
+}
+\`\`\`
+
+Auto-expire non-contact mail after 10 days:
+\`\`\`sieve
+require ["extlists", "vnd.proton.expire"];
+if not anyof(
+    header :list "from" ":addrbook:personal",
+    header :list "from" ":addrbook:myself"
+) {
+    expire "day" "10";
+}
+\`\`\`
+
+File weekend mail using the Received date (RFC 5260):
+\`\`\`sieve
+require ["date", "fileinto"];
+if anyof(date :is "received" "weekday" "0", date :is "received" "weekday" "6") {
+    fileinto "Weekend";
+}
+\`\`\``;
