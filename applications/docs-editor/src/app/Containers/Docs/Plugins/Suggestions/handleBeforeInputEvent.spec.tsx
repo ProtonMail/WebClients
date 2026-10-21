@@ -358,37 +358,148 @@ describe('$handleBeforeInputEvent', () => {
       })
     })
 
-    test('should insert text into existing delete suggestion and move selection accordingly', async () => {
-      const suggestionID = 'test'
+    function $getSuggestionTypesAndText(paragraph: ParagraphNode) {
+      return paragraph.getChildren().map((node) => {
+        assertCondition($isSuggestionNode(node))
+        return [node.getSuggestionTypeOrThrow(), node.getTextContent()]
+      })
+    }
+
+    test.each([
+      {
+        position: 'start',
+        offset: 0,
+        expected: [
+          ['insert', 'new!'],
+          ['delete', 'World'],
+        ],
+      },
+      {
+        position: 'middle',
+        offset: 3,
+        expected: [
+          ['delete', 'Wor'],
+          ['insert', 'new!'],
+          ['delete', 'ld'],
+        ],
+      },
+      {
+        position: 'end',
+        offset: 5,
+        expected: [
+          ['delete', 'World'],
+          ['insert', 'new!'],
+        ],
+      },
+    ])(
+      'should insert text at the $position of a delete suggestion as an insert suggestion with its ID',
+      async ({ offset, expected }) => {
+        let paragraph: ParagraphNode
+        await update(() => {
+          const suggestionNode = $createSuggestionNode('test', 'delete').append($createTextNode('World'))
+          paragraph = $createParagraphNode().append(suggestionNode)
+          $getRoot().append(paragraph)
+          suggestionNode.getFirstChildOrThrow<TextNode>().select(offset, offset)
+          for (const data of ['new', '!']) {
+            $handleBeforeInputEvent(
+              editor!,
+              { inputType: 'insertText', data, dataTransfer: null } as InputEvent,
+              onSuggestionCreation,
+              logger,
+            )
+          }
+        })
+        editor!.read(() => {
+          expect($getSuggestionTypesAndText(paragraph)).toEqual(expected)
+          expect(paragraph.getChildren().map((node) => (node as ProtonNode).getSuggestionIdOrThrow())).toEqual(
+            expected.map(() => 'test'),
+          )
+        })
+      },
+    )
+
+    test.each([
+      {
+        deletion: 'Delete',
+        inputType: 'deleteContentForward',
+        clickIntoCell: false,
+        expected: [
+          ['delete', 'Hello'],
+          ['insert', 'World'],
+        ],
+      },
+      {
+        deletion: 'Backspace',
+        inputType: 'deleteContentBackward',
+        clickIntoCell: true,
+        expected: [
+          ['insert', 'World'],
+          ['delete', 'Hello'],
+        ],
+      },
+    ])(
+      'should insert text typed into a table cell emptied with $deletion as an insert suggestion',
+      async ({ inputType, clickIntoCell, expected }) => {
+        let cellParagraph: ParagraphNode
+        await update(() => {
+          const table = $createTableNodeWithDimensions(1, 1, false)
+          const cell = table.getFirstChildOrThrow<TableRowNode>().getFirstChildOrThrow<TableCellNode>()
+          const text = $createTextNode('Hello')
+          cellParagraph = cell.getFirstChildOrThrow<ParagraphNode>().append(text)
+          $getRoot().append(table)
+          text.select(0, 5)
+        })
+        await update(() => {
+          $handleBeforeInputEvent(
+            editor!,
+            { inputType, data: null, dataTransfer: null } as InputEvent,
+            onSuggestionCreation,
+            logger,
+          )
+        })
+        await update(() => {
+          if (clickIntoCell) {
+            // Clicking into the emptied cell puts the caret in its only text node, the deleted one.
+            cellParagraph.getFirstChildOrThrow<ProtonNode>().getFirstChildOrThrow<TextNode>().select(0, 0)
+          }
+          $handleBeforeInputEvent(
+            editor!,
+            { inputType: 'insertText', data: 'World', dataTransfer: null } as InputEvent,
+            onSuggestionCreation,
+            logger,
+          )
+        })
+        editor!.read(() => {
+          expect($getSuggestionTypesAndText(cellParagraph)).toEqual(expected)
+        })
+      },
+    )
+
+    test('should not insert text typed over a selection ending inside an insert suggestion into a delete suggestion', async () => {
       await update(() => {
-        const paragraph = $createParagraphNode().append($createTextNode('Hello'))
-        const suggestionNode = $createSuggestionNode(suggestionID, 'delete').append($createTextNode('World'))
-        paragraph.append(suggestionNode)
-        $getRoot().append(paragraph)
-        suggestionNode.getFirstChildOrThrow<TextNode>().select(3, 3) // Move selection to after 'r'
+        const original = $createTextNode('Hello')
+        const inserted = $createTextNode('World')
+        $getRoot().append(
+          $createParagraphNode().append(original, $createSuggestionNode('test', 'insert').append(inserted)),
+        )
+        const selection = $createRangeSelection()
+        selection.anchor.set(original.getKey(), 2, 'text')
+        selection.focus.set(inserted.getKey(), 3, 'text')
+        $setSelection(selection)
         $handleBeforeInputEvent(
           editor!,
-          {
-            inputType: 'insertText',
-            data: 'new',
-            dataTransfer: null,
-          } as InputEvent,
+          { inputType: 'insertText', data: 'x', dataTransfer: null } as InputEvent,
           onSuggestionCreation,
           logger,
         )
       })
       editor!.read(() => {
-        const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
-        expect(paragraph.getChildrenSize()).toBe(2)
-        const suggestionNode = paragraph.getChildAtIndex<ProtonNode>(1)
-        expect($isSuggestionNode(suggestionNode)).toBe(true)
-        expect(suggestionNode?.getSuggestionTypeOrThrow()).toBe('delete')
-        expect(suggestionNode?.getSuggestionIdOrThrow()).toBe(suggestionID)
-        expect(suggestionNode?.getTextContent()).toBe('Wornewld')
-        const selection = $getSelection()
-        expect($isRangeSelection(selection)).toBe(true)
-        expect(selection?.isCollapsed()).toBe(true)
-        expect((selection as RangeSelection).anchor.offset).toBe(6)
+        const typedText = $nodesOfType(TextNode).find((node) => node.getTextContent().includes('x'))
+        assertCondition(typedText !== undefined)
+        expect(typedText.getTextContent()).toBe('x')
+        const typedTextSuggestion = typedText.getParent()
+        assertCondition($isSuggestionNode(typedTextSuggestion))
+        expect(typedTextSuggestion.getSuggestionTypeOrThrow()).toBe('insert')
       })
     })
 
@@ -2324,13 +2435,20 @@ describe('$handleBeforeInputEvent', () => {
 
       testEditorState('paragraph should have delete and insert suggestion nodes', () => {
         const paragraph = $getRoot().getFirstChildOrThrow<ParagraphNode>()
-        expect(paragraph.getChildrenSize()).toBe(2)
+        expect(paragraph.getChildrenSize()).toBe(3)
         const deleteSuggestion = paragraph.getChildAtIndex(0)
         assertCondition($isSuggestionNode(deleteSuggestion))
         expect(deleteSuggestion.getSuggestionTypeOrThrow()).toBe('delete')
         const insertSuggestion = paragraph.getChildAtIndex(1)
         assertCondition($isSuggestionNode(insertSuggestion))
         expect(insertSuggestion.getSuggestionTypeOrThrow()).toBe('insert')
+      })
+
+      testEditorState('typed text should be its own insert suggestion', () => {
+        const typedTextSuggestion = $getRoot().getFirstChildOrThrow<ParagraphNode>().getLastChild()
+        assertCondition($isSuggestionNode(typedTextSuggestion))
+        expect(typedTextSuggestion.getSuggestionTypeOrThrow()).toBe('insert')
+        expect(typedTextSuggestion.getTextContent()).toBe('foo')
       })
 
       testEditorState('original text should not be deleted', () => {
