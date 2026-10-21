@@ -40,7 +40,7 @@ const mockedOrderAddresses = orderAddresses as jest.MockedFunction<typeof orderA
 jest.mock('@proton/redux-shared-store/sharedProvider');
 const mockedUseDispatch = useDispatch as jest.MockedFunction<typeof useDispatch>;
 
-jest.mock('@proton/shared/lib/helpers/upsell', () => ({ __esModule: true, getUpsellRef: () => '' }));
+jest.mock('@proton/shared/lib/helpers/ref', () => ({ __esModule: true, getUpsellRef: () => '' }));
 
 jest.mock('../../components/dnd/SortableList');
 const ActualSortableList = jest.requireActual('../../components/dnd/SortableList').SortableList;

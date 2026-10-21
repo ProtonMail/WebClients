@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { getUpgradePath } from '@proton/shared/lib/helpers/upsell';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 
 import SettingsLink from '../../../../components/link/SettingsLink';
 

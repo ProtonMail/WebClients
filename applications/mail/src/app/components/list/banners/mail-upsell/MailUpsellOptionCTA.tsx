@@ -14,7 +14,8 @@ import {
     MAIL_UPSELL_BANNER_LINK_ID_REF_PATH,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
+import { addRefToUrl } from '@proton/utils/addRefToUrl';
 
 interface OptionProps {
     url: string;
@@ -80,7 +81,7 @@ const MailUpsellOptionCTA = ({ url, optionID }: OptionProps) => {
     }
 
     return (
-        <SettingsLink path={addUpsellPath(url, upsellRef)} className="text-bold link align-baseline" tabIndex={0}>
+        <SettingsLink path={addRefToUrl(url, upsellRef)} className="text-bold link align-baseline" tabIndex={0}>
             {c('Action').t`Upgrade`}
         </SettingsLink>
     );

@@ -17,7 +17,7 @@ import {
 import { resetEndOfTrialIPCCall } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import protonDesktopTrialEnd from '@proton/styles/assets/img/illustrations/proton-desktop-trial-end.svg';
 import inboxPlaceholder from '@proton/styles/assets/img/inbox-desktop/inbox_placeholder.png';
 import inboxPlaceholderDark from '@proton/styles/assets/img/inbox-desktop/inbox_placeholder_dark.png';

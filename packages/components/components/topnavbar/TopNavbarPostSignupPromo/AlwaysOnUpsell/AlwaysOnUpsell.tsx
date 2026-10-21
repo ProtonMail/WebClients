@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { TelemetryAlwaysOnUpsellEvents } from '@proton/shared/lib/api/telemetry';
 import { SECOND, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 
 import { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
 import useSettingsLink from '../../../link/useSettingsLink';

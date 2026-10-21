@@ -1,5 +1,5 @@
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 
 import * as composerAssistantConfigModule from '../configs/getUpsellModalComposerAssistantConfig';
 import * as defaultConfigModule from '../configs/getUpsellModalDefaultConfig';

@@ -7,7 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
 import { PLANS } from '@proton/payments/core/constants';
-import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import clsx from '@proton/utils/clsx';
 
@@ -32,13 +32,13 @@ const UpgradeBanner = ({ className, children, audience, upsellPath }: Props) => 
             <ButtonLike
                 as={SettingsLink}
                 path={(() => {
-                    return addUpsellPath(
-                        getUpgradePath({
+                    return getUpgradePath(
+                        {
                             user,
                             subscription,
                             plan: audience === Audience.B2B ? bundleProPlan : PLANS.BUNDLE,
                             audience,
-                        }),
+                        },
                         upsellPath
                     );
                 })()}

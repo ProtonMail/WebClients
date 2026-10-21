@@ -19,11 +19,12 @@ import { useHandler } from '@proton/components/hooks/useHandler';
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { forceSend } from '@proton/shared/lib/api/messages';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
@@ -173,7 +174,7 @@ export const useCompose = ({
                     onClick={async () => {
                         const user = await getUser();
                         const subscription = await getSubscription();
-                        goToSettings(addUpsellPath(getUpgradePath({ user, subscription }), upsellRef));
+                        goToSettings(getUpgradePath({ user, subscription }, upsellRef));
                     }}
                 >{c('Action').t`Upgrade`}</Button>,
                 <Button onClick={storageCapacityModalProps.onClose}>{c('Action').t`Close`}</Button>,

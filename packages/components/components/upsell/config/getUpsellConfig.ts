@@ -2,8 +2,8 @@ import { type COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { APPS_WITH_IN_APP_PAYMENTS, type APP_NAMES } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import noop from '@proton/utils/noop';
@@ -99,5 +99,5 @@ export const getUpsellConfig = ({
     }
 
     // The user will be redirected to account app
-    return { upgradePath: addUpsellPath(getUpgradePath({ user, subscription, app: appName }), upsellRef) };
+    return { upgradePath: getUpgradePath({ user, subscription, app: appName }, upsellRef) };
 };

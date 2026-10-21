@@ -1,6 +1,7 @@
 import { useConfig } from '@proton/app-context/useConfig';
 import type { Currency } from '@proton/payments/core/interface';
 import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
+import { getSubscriptionSearchParamsString } from '@proton/payments/core/subscription/search-params';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS } from '@proton/shared/lib/constants';
@@ -16,7 +17,6 @@ import {
     useOptionalSubscriptionModal,
 } from '../../payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
-import getOfferRedirectionParams from '../helpers/getOfferRedirectionParams';
 import type { Deal, Offer } from '../interface';
 
 const useSelectDeal = (callback?: () => void) => {
@@ -59,10 +59,19 @@ const useSelectDeal = (callback?: () => void) => {
         }
 
         // Open the settings if the app doesn't support in-app payments
-        const urlSearchParams = getOfferRedirectionParams({ offer, deal, currency });
+
+        const search = getSubscriptionSearchParamsString({
+            cycle: deal.cycle,
+            coupon: deal.couponCode,
+            currency,
+            plan: getPlanNameFromIDs(deal.planIDs),
+            fixedPlan: true,
+            ...(!offer.enableCycleSelector ? { fixedCycle: true } : {}),
+            ref: deal.ref,
+        });
         callback?.();
 
-        const url = `/dashboard?${urlSearchParams.toString()}`;
+        const url = `/dashboard?${search}`;
         if (isElectronApp && !hasInboxDesktopInAppPayments) {
             openLinkInBrowser(getAppHref(`/${getSlugFromApp(APP_NAME)}${url}`, APPS.PROTONACCOUNT));
             return;

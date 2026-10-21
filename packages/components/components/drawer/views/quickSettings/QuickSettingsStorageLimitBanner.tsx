@@ -3,13 +3,14 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import {
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import {
     SpaceState,
     getAppStorage,
@@ -76,7 +77,7 @@ const QuickSettingsStorageLimitBanner = () => {
                 shape="ghost"
                 fullWidth
                 className="py-2 px-3"
-                path={addUpsellPath(getUpgradePath({ user, subscription, plan }), upsellRef)}
+                path={getUpgradePath({ user, subscription, plan }, upsellRef)}
             >
                 <div className="flex gap-2">
                     <div className="shrink-0">

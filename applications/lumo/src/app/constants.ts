@@ -1,9 +1,12 @@
+import { getSubscriptionSearchParamsString } from '@proton/payments/core/subscription/search-params';
+
 /*
 This class is added to any upsell/upgrade components that can direct users to account app or trigger LumoPlusUpsellModal for mobile app
 */
 export const LUMO_UPGRADE_TRIGGER_CLASS = 'lumo-upgrade-trigger';
 
-export const LUMO_PLUS_UPGRADE_PATH = '/dashboard?addon=lumo';
+const lumoSearchParams = getSubscriptionSearchParamsString({ totalLumo: 1 });
+export const LUMO_PLUS_UPGRADE_PATH = `/dashboard?${lumoSearchParams}`;
 export const LUMO_SIGNUP_PATH = '/signup';
 export const LUMO_BUSINESS_PATH = '/business/lumo';
 export const LUMO_TO_WORKSPACE_PATH = '/business/plans';

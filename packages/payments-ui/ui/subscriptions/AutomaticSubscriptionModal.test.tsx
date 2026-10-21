@@ -93,10 +93,16 @@ describe('getParameters', () => {
             expect(plan?.Name).toBe(getPlanName(subscription));
         });
 
-        it('does not fall back when totalLumo is set without plan', () => {
+        it('falls back to the subscription plan when totalLumo is set without plan', () => {
             const subscription = buildSubscription({ planName: PLANS.BUNDLE, currency: 'CHF', cycle: CYCLE.YEARLY });
             const { plan } = callGetParameters('?totalLumo=1', { subscription });
-            expect(plan).toBeUndefined();
+            expect(plan?.Name).toBe(getPlanName(subscription));
+        });
+
+        it('falls back to the subscription plan when totalMeet is set without plan', () => {
+            const subscription = buildSubscription({ planName: PLANS.BUNDLE, currency: 'CHF', cycle: CYCLE.YEARLY });
+            const { plan } = callGetParameters('?totalMeet=1', { subscription });
+            expect(plan?.Name).toBe(getPlanName(subscription));
         });
     });
 
@@ -217,15 +223,10 @@ describe('getParameters', () => {
         it.each([
             ['deprecated addon=lumo', '?addon=lumo'],
             ['deprecated addon=meet', '?addon=meet'],
-        ])('is true for %s', (_label, search) => {
-            expect(callGetParameters(search).disablePlanSelection).toBe(true);
-        });
-
-        it.each([
             ['totalLumo without plan', '?totalLumo=1'],
             ['totalMeet without plan', '?totalMeet=1'],
-        ])('is false for %s', (_label, search) => {
-            expect(callGetParameters(search).disablePlanSelection).toBe(false);
+        ])('is true for %s', (_label, search) => {
+            expect(callGetParameters(search).disablePlanSelection).toBe(true);
         });
 
         it('is false by default', () => {
@@ -245,15 +246,10 @@ describe('getParameters', () => {
         it.each([
             ['deprecated addon=lumo', '?addon=lumo'],
             ['deprecated addon=meet', '?addon=meet'],
-        ])('is true for %s', (_label, search) => {
-            expect(callGetParameters(search).disableCycleSelector).toBe(true);
-        });
-
-        it.each([
             ['totalLumo without plan', '?totalLumo=1'],
             ['totalMeet without plan', '?totalMeet=1'],
-        ])('is false for %s', (_label, search) => {
-            expect(callGetParameters(search).disableCycleSelector).toBe(false);
+        ])('is true for %s', (_label, search) => {
+            expect(callGetParameters(search).disableCycleSelector).toBe(true);
         });
 
         it('fixedPlan without fixedCycle leaves the cycle selector enabled', () => {
@@ -270,10 +266,21 @@ describe('getParameters', () => {
     });
 
     describe('totalX params', () => {
-        it.each(Object.values(ADDON_TOTAL_PARAM_NAMES))('total%s is ignored when missing plan', (addon) => {
+        it.each(
+            Object.values(ADDON_TOTAL_PARAM_NAMES).filter((addon) => addon !== 'Lumo' && addon !== 'Meet')
+        )('total%s is ignored when missing plan', (addon) => {
             const result = callGetParameters(`?total${addon}=1`);
 
             expect(result.totals).not.toHaveProperty(`total${addon}`);
+        });
+
+        it.each([
+            ['totalLumo', 'Lumo'],
+            ['totalMeet', 'Meet'],
+        ])('reads %s without plan for subscription expansion', (param) => {
+            const result = callGetParameters(`?${param}=1`);
+
+            expect(result.totals).toHaveProperty(param, 1);
         });
 
         it.each([
@@ -458,7 +465,17 @@ describe('<AutomaticSubscriptionModal />', () => {
         expect(props).not.toHaveProperty('skipPlanTransitionChecks');
     });
 
-    it('supports deprecated addon=lumo until callers are migrated', async () => {
+    it('opens subscription expansion checkout for totalLumo without plan', async () => {
+        renderModal('?totalLumo=1');
+
+        await waitFor(() => expect(mockOpenSubscriptionModal).toHaveBeenCalledTimes(1));
+        const props = mockOpenSubscriptionModal.mock.calls[0][0];
+        expect(props.plan).toBeUndefined();
+        expect(props.planIDs).toBeDefined();
+        expect(typeof props.onSubscribed).toBe('function');
+    });
+
+    it('still supports deprecated addon=lumo for backward compatibility', async () => {
         renderModal('?addon=lumo');
 
         await waitFor(() => expect(mockOpenSubscriptionModal).toHaveBeenCalledTimes(1));

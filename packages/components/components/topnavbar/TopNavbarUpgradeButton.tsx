@@ -9,10 +9,11 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 
 import { freeTrialUpgradeClick } from '../../containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../../containers/desktop/useHasInboxDesktopInAppPayments';

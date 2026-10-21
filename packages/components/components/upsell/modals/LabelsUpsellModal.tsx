@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { APP_UPSELL_REF_PATH, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import labelsImg from '@proton/styles/assets/img/illustrations/new-upsells-img/labels.svg';
 
 import type { ModalStateProps } from '../../modalTwo/useModalState';
