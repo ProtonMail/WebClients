@@ -394,9 +394,9 @@ describe('Lumo Persistence Integration Tests', () => {
                 }
 
                 // Now fetch a conversation
-                const conversationId = mapIds(state.conversations)[0];
+                const conversationId = mapIds(store.getState().conversations)[0];
                 expect(conversationId).toBeDefined();
-                const reduxConversation = state.conversations[conversationId];
+                const reduxConversation = store.getState().conversations[conversationId];
                 expect(reduxConversation).toBeDefined();
                 dispatch(pullConversationRequest({ id: conversationId }));
 
@@ -638,7 +638,9 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Delete the space
                 console.log('Delete the space');
                 dispatch(locallyDeleteSpaceFromLocalRequest(spaceId));
-                await sleep(1000); // tbr -- if this works, then 2nd call races the 1st
+                await waitForCondition(async () => store.getState().spaces[spaceId] === undefined, {
+                    message: 'Waiting for the space to be removed from Redux',
+                });
                 dispatch(pushSpaceRequest({ id: spaceId }));
 
                 // Verify the space is now removed from Redux
@@ -668,7 +670,7 @@ describe('Lumo Persistence Integration Tests', () => {
                         if (!space) throw new Error('space should not be hard deleted');
                         return !space.dirty;
                     },
-                    { pollInterval: 1000 }
+                    { pollInterval: 25 }
                 );
 
                 // Wait for the deleted space to appear in the remote list
@@ -692,7 +694,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Verify the space is not loaded into Redux when loading from IndexedDB
                 console.log('Verify the space is not loaded into Redux when loading from IndexedDB');
                 dispatch(reloadReduxRequest());
-                await sleep(500); // hack
+                await sleep(100); // negative assertion: give the reload time to (wrongly) restore the space
                 const stateAfterFinalReload = store.getState();
                 expect(stateAfterFinalReload.spaces[spaceId]).toBeUndefined();
 
@@ -827,7 +829,7 @@ describe('Lumo Persistence Integration Tests', () => {
                         if (!space) throw new Error('space should not be hard deleted');
                         return !space.dirty;
                     },
-                    { pollInterval: 1000 }
+                    { pollInterval: 25 }
                 );
 
                 // Wait for the deleted space to appear in remote list
@@ -862,7 +864,12 @@ describe('Lumo Persistence Integration Tests', () => {
                         if (state.spaces[spaceToDelete.id]) {
                             return false;
                         }
-                        return otherSpaceConversations.every((conversation) => state.conversations[conversation.id]);
+                        return (
+                            otherSpaceConversations.every((conversation) => state.conversations[conversation.id]) &&
+                            testData.messages
+                                .filter((m) => otherSpaceConversations.some((c) => c.id === m.conversationId))
+                                .every((m) => state.messages[m.id])
+                        );
                     },
                     { message: 'Waiting for Redux reload from IndexedDB' }
                 );
@@ -1033,9 +1040,16 @@ describe('Lumo Persistence Integration Tests', () => {
                 });
 
                 try {
-                    // Wait a bit for rehydration from IDB to Redux
-                    await sleep(1000);
-                    // todo we could remove the sleep and replace the below block with several waitForValue calls
+                    // Wait for rehydration from IDB to Redux
+                    await waitForCondition(
+                        async () => {
+                            const st = store.getState();
+                            return (
+                                !!st.spaces[spaceId] && !!st.conversations[conversationId] && !!st.messages[messageId]
+                            );
+                        },
+                        { message: 'Waiting for rehydration from IDB to Redux' }
+                    );
 
                     // Verify restored state matches original
                     console.log('Verify restored state matches original');
@@ -1106,7 +1120,17 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Load state into Redux
                 console.log('Load state into Redux');
                 dispatch(reloadReduxRequest());
-                await sleep(500);
+                await waitForCondition(
+                    async () => {
+                        const { messages, conversations, spaces } = store.getState();
+                        return (
+                            mapIds(spaces).length === fullState.spaces.length &&
+                            mapIds(conversations).length === fullState.conversations.length &&
+                            mapLength(messages) === fullState.messages.length
+                        );
+                    },
+                    { message: 'Waiting for Redux reload from IndexedDB' }
+                );
 
                 // Check restored state
                 console.log('Check restored state');
@@ -1171,7 +1195,7 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Wait for first 100 spaces to be loaded in IndexedDB
                 console.log('Wait for first 100 spaces to be loaded in IndexedDB');
-                const spaces1 = await waitForValue(spacesInReduxWhenMoreThan(100), { pollInterval: 1000 });
+                const spaces1 = await waitForValue(spacesInReduxWhenMoreThan(100), { pollInterval: 25 });
 
                 // Verify first 100 spaces are in Redux
                 console.log('Verify first 100 spaces are in Redux');
@@ -1181,11 +1205,11 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Wait for all 150 spaces to be found in IndexedDB
                 console.log('Wait for all 150 spaces to be found in IndexedDB');
-                await waitForValue(spacesInIDBWhenMoreThan(150), { pollInterval: 1000 });
+                await waitForValue(spacesInIDBWhenMoreThan(150), { pollInterval: 25 });
 
                 // Verify all 150 spaces are loaded back in Redux
                 console.log('Verify all 150 spaces are loaded back in Redux');
-                const spaces2 = await waitForValue(spacesInReduxWhenMoreThan(150), { pollInterval: 1000 });
+                const spaces2 = await waitForValue(spacesInReduxWhenMoreThan(150), { pollInterval: 25 });
                 expect(mapLength(spaces2)).toBe(150);
 
                 // Test IDB spaces are the same as the initial test set
@@ -1356,7 +1380,9 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Attempt to refresh spaces from remote (should fail)
                 console.log('Attempt to refresh spaces from remote (should fail)');
                 dispatch(pullSpacesRequest());
-                await sleep(500); // waitFor below
+                await waitForCondition(async () => nListSpacesErrors > 0, {
+                    message: 'Waiting for the list spaces error to be triggered',
+                });
 
                 // Verify error was triggered
                 console.log('Verify error was triggered');
@@ -1399,7 +1425,7 @@ describe('Lumo Persistence Integration Tests', () => {
                         return nPostConversationErrors > 0;
                     },
                     {
-                        pollInterval: 500,
+                        pollInterval: 25,
                         timeout: 5000,
                     }
                 );
@@ -1417,7 +1443,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 );
                 await waitForConversationSyncWithServer(dbApi, conversation.id, {
                     timeout: 40000, // worker loop restarts every 30s -- maybe we want to change that in tests
-                    pollInterval: 1000,
+                    pollInterval: 25,
                 });
                 const remoteConversationId = (await dbApi.getRemoteIdFromLocalId('conversation', conversation.id))!;
                 expect(remoteConversationId).toBeDefined();
@@ -1724,7 +1750,7 @@ describe('Lumo Persistence Integration Tests', () => {
                         console.log('Checking if space is no longer dirty:', localSpace);
                         return !localSpace.dirty && localSpace.deleted === true;
                     },
-                    { timeout: 10000, pollInterval: 500 }
+                    { timeout: 10000, pollInterval: 25 }
                 );
 
                 // Verify the space is marked as deleted in IndexedDB and not dirty
@@ -1743,7 +1769,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Verify reloading Redux doesn't bring back the space
                 console.log('Verifying reloading Redux does not bring back the space');
                 dispatch(reloadReduxRequest());
-                await sleep(500);
+                await sleep(100); // negative assertion: give the reload time to (wrongly) restore the space
                 const stateAfterReload = store.getState();
                 expect(stateAfterReload.spaces[testSpace.id]).toBeUndefined();
             } finally {
@@ -1864,7 +1890,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 console.log('Waiting for conflict to be resolved');
                 await waitForMessageSyncWithServer(dbApi, messageId, {
                     message: 'waiting for conflict to be resolved',
-                    pollInterval: 2000,
+                    pollInterval: 25,
                     timeout: 20000,
                 });
             } finally {
@@ -1986,7 +2012,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 await waitForCondition(async () => mockDb.getUserSettings() !== null, {
                     message: 'Waiting for user settings to be saved remotely',
                     timeout: 5000,
-                    pollInterval: 200,
+                    pollInterval: 25,
                 });
 
                 const serializedUserSettings = await lumoApi.getUserSettings();
@@ -2017,7 +2043,7 @@ describe('Lumo Persistence Integration Tests', () => {
                 // Verify reloading Redux from IndexedDB results in empty state
                 console.log('Verifying reloading Redux from IndexedDB results in empty state');
                 dispatch(reloadReduxRequest());
-                await sleep(1000);
+                await sleep(100); // negative assertion: give the reload time to (wrongly) restore data
 
                 const reloadedState = store.getState();
                 expect(Object.keys(reloadedState.spaces)).toHaveLength(0);
@@ -2084,9 +2110,10 @@ describe('Lumo Persistence Integration Tests', () => {
                 dispatch(deleteAllSpacesRequest());
 
                 // Wait for the failure action to be dispatched by checking for error in console output
-                // Since we're expecting a failure, we wait a bit for the error to be thrown and caught
                 console.log('Waiting for delete all spaces failure');
-                await sleep(2000); // Give time for the API call to fail and error to be logged
+                await waitForCondition(async () => actionHistory.hasAction(deleteAllSpacesFailure.type), {
+                    message: 'Waiting for deleteAllSpacesFailure',
+                });
 
                 // Verify that Redux state is unchanged (no deletion occurred)
                 console.log('Verifying Redux state is unchanged after failure');
@@ -2123,9 +2150,6 @@ describe('Lumo Persistence Integration Tests', () => {
 
                 // Clear action history to isolate the success case
                 actionHistory.clear();
-
-                // Wait a bit before trying again to ensure error injection is cleared
-                await sleep(1000);
 
                 // Execute delete all spaces again (should succeed now)
                 console.log('Executing delete all spaces again (should succeed)');
@@ -2656,8 +2680,8 @@ describe('Lumo Persistence Integration Tests', () => {
                 expect(reduxAttachment.filename).toBe('test.txt');
                 expect(reduxAttachment.spaceId).toBeUndefined();
 
-                // Wait a bit to ensure any persistence attempts would have happened
-                await sleep(1000);
+                // Negative assertion: wait a bit to ensure any persistence attempts would have happened
+                await sleep(200);
 
                 // Verify attachment is NOT in IndexedDB
                 console.log('Verifying attachment is not in IndexedDB');
@@ -2882,7 +2906,7 @@ describe('Lumo Persistence Integration Tests', () => {
                         {
                             message: 'Waiting for full attachment with encrypted data to be available in IndexedDB',
                             timeout: 10000,
-                            pollInterval: 500,
+                            pollInterval: 25,
                         }
                     );
 
@@ -3077,7 +3101,7 @@ describe('Lumo Persistence Integration Tests', () => {
                         {
                             message: 'Waiting for full attachment with encrypted data to be available in IndexedDB',
                             timeout: 10000,
-                            pollInterval: 500,
+                            pollInterval: 25,
                         }
                     );
 
@@ -3441,7 +3465,9 @@ describe('Lumo Persistence Integration Tests', () => {
                 });
 
                 try {
-                    await sleep(1000);
+                    await waitForCondition(async () => !!store2.getState().messages[assistantMessageId], {
+                        message: 'Waiting for messages to reload from IDB',
+                    });
 
                     // Control: succeeded message should survive reload
                     const reloadedSucceeded = store2.getState().messages[succeededMessageId];

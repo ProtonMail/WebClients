@@ -78,7 +78,7 @@ function createActionHistoryMiddleware(tracker: ActionHistoryTracker): Middlewar
 // Generic polling helper that waits for a condition to be met
 export async function waitForCondition(checkFn: () => Promise<boolean>, opts?: WaitOpts): Promise<void> {
     const timeout = opts?.timeout ?? 10000;
-    const pollInterval = opts?.pollInterval ?? 500;
+    const pollInterval = opts?.pollInterval ?? 25;
     const message = opts?.message;
 
     const startTime = Date.now();
@@ -99,7 +99,7 @@ export async function waitForCondition(checkFn: () => Promise<boolean>, opts?: W
 // Generic polling helper that waits for a condition to be met
 export async function waitForValue<T>(checkFn: () => Promise<T | undefined>, opts?: WaitOpts): Promise<NonNullable<T>> {
     const timeout = opts?.timeout ?? 10000;
-    const pollInterval = opts?.pollInterval ?? 500;
+    const pollInterval = opts?.pollInterval ?? 25;
     const message = opts?.message;
 
     const startTime = Date.now();
