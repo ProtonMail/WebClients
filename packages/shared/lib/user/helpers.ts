@@ -12,12 +12,11 @@ export const hasPaidDrive = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.
 export const hasPaidWallet = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.WALLET);
 export const hasPaidVpn = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.VPN);
 export const hasPassLifetime = (user: User) => !!user.Flags?.['pass-lifetime'];
-const hasPassViaSimpleLogin = (user: User) => !!user.Flags?.['pass-from-sl'];
+export const hasPassViaSimpleLogin = (user: User) => !!user.Flags?.['pass-from-sl'];
 export const hasPaidPass = (user: User) =>
     hasBit(user.Subscribed, PRODUCT_BIT.PASS) || hasPassLifetime(user) || hasPassViaSimpleLogin(user);
 export const hasPaidLumo = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.LUMO);
-export const hasPaidMeet = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.MEET);
-export const hasPaidSpaces = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.SPACES);
+const hasPaidMeet = (user: User) => hasBit(user.Subscribed, PRODUCT_BIT.MEET);
 export const isPaid = (user: User) => !!user.Subscribed;
 export const isPrivate = (user: User) => user.Private === 1;
 export const isFree = (user: User) => !isPaid(user);

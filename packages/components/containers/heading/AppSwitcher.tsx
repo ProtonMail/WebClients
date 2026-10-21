@@ -1,10 +1,8 @@
-import { useOrganization } from '@proton/account/organization/hooks';
+import { useAvailableApps } from '@proton/account/availableApps/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import Logo from '../../components/logo/Logo';
@@ -15,17 +13,9 @@ export const AppSwitcher = ({ hasBorder, app }: { hasBorder?: boolean; app: APP_
     const { APP_NAME } = useConfig();
     const [user] = useUser();
     const { viewportWidth } = useActiveBreakpoint();
-    const [organization] = useOrganization();
-
-    const isSpacesAvailable = useFlag('SpacesAvailable');
+    const availableApps = useAvailableApps();
 
     if (viewportWidth['<=small']) {
-        const availableApps = getAvailableApps({
-            user,
-            context: 'dropdown',
-            organization,
-            isSpacesAvailable,
-        });
         if (availableApps.length <= 1) {
             return null;
         }
