@@ -6,7 +6,7 @@ import {
     type OrganizationKeyRotationPayload,
     getKeyRotationPayload,
     rotatePasswordlessOrganizationKeys,
-} from '@proton/account';
+} from '@proton/account/organizationKey/actions';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';

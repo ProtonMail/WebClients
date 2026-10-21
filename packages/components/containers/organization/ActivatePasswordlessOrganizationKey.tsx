@@ -3,9 +3,12 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { AcceptOrganizationKeyInvitePayload } from '@proton/account';
-import { acceptOrganizationKeyInvite, prepareAcceptOrganizationKeyInvite } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
+import type { AcceptOrganizationKeyInvitePayload } from '@proton/account/organizationKey/actions';
+import {
+    acceptOrganizationKeyInvite,
+    prepareAcceptOrganizationKeyInvite,
+} from '@proton/account/organizationKey/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';

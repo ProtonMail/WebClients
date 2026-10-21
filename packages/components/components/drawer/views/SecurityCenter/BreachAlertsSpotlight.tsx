@@ -2,10 +2,10 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useWelcomeFlags } from '@proton/account';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import { PLANS } from '@proton/payments/core/constants';
 import { DARK_WEB_MONITORING_NAME, SECOND } from '@proton/shared/lib/constants';
@@ -70,6 +70,7 @@ const BreachAlertsSpotlight = ({ children }: Props) => {
                 </div>
             }
         >
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div ref={anchorRef} onClick={onClose}>
                 {children}
             </div>

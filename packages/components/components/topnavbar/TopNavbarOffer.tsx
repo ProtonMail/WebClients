@@ -3,9 +3,9 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useWelcomeFlags } from '@proton/account';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { useConfig } from '@proton/app-context/useConfig';
 import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
 import { CYCLE } from '@proton/payments/core/constants';

@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react';
 import { getUnixTime, subDays } from 'date-fns';
 
-import { useUserSettings } from '@proton/account';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useFeature from '@proton/features/useFeature';
 import { NEWSLETTER_SUBSCRIPTIONS_BITS } from '@proton/shared/lib/helpers/newsletter';
 import { useFlag } from '@proton/unleash/useFlag';

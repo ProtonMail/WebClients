@@ -3,7 +3,7 @@ import { Suspense, useEffect, useLayoutEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { useGetBreachesCounts } from '@proton/account';
+import { useGetBreachesCounts } from '@proton/account/breaches/breachNotificationsSlice';
 import { useConfig } from '@proton/app-context/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';

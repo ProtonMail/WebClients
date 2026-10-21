@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { userSettingsThunk } from '@proton/account';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { APPS, DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';

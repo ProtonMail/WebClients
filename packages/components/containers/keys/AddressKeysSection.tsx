@@ -3,11 +3,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useInactiveKeys } from '@proton/account';
 import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import { setAddressKeyFlagAction } from '@proton/account/addressKeys/setAddressKeyFlagAction';
 import { setAddressKeyPrimaryAction } from '@proton/account/addressKeys/setAddressKeyPrimaryAction';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useInactiveKeys } from '@proton/account/inactiveKeys/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';

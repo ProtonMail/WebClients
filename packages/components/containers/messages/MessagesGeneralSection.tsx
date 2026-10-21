@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { userSettingsActions } from '@proton/account';
 import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { useUser } from '@proton/account/user/hooks';
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';

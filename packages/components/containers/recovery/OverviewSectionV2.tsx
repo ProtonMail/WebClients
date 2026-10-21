@@ -1,4 +1,4 @@
-import { useInactiveKeys } from '@proton/account';
+import { useInactiveKeys } from '@proton/account/inactiveKeys/hooks';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';

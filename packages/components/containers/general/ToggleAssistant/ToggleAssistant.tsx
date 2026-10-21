@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { userSettingsActions } from '@proton/account';
+import { userSettingsActions } from '@proton/account/userSettings';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
