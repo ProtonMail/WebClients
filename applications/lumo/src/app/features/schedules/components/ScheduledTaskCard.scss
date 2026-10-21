@@ -18,6 +18,7 @@
 	}
 
 	&__schedule-chip {
+		max-inline-size: min(#{rem(200)}, 50%);
 		background-color: var(--signal-success-minor-1);
 		padding-block: #{rem(2)};
 		padding-inline: #{rem(6)};

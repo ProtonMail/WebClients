@@ -3,9 +3,11 @@ import { useId, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useDesktopManifests } from '@proton/lumo-api-client/core/desktop-tools';
+
 import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
 import { batchItems } from '../../../util/batchItems';
-import { SCHEDULE_TEMPLATES } from '../constants';
+import { getScheduleTemplates } from '../templates';
 import type { ScheduleTemplate } from '../types';
 import { ScheduleTemplateCard } from './ScheduleTemplateCard';
 
@@ -19,8 +21,9 @@ export const ScheduleTemplateGrid = ({ onSelect }: ScheduleTemplateGridProps) =>
     const [templatesVisible, setTemplatesVisible] = useState(true);
     const headerId = useId();
     const { isSmallScreen } = useIsLumoSmallScreen();
+    const { manifests } = useDesktopManifests();
     const columnCount = isSmallScreen ? 1 : 2;
-    const templateRows = batchItems(SCHEDULE_TEMPLATES, columnCount);
+    const templateRows = batchItems(getScheduleTemplates(manifests), columnCount);
 
     const toggleLabel = templatesVisible
         ? c('collider_2025:Button').t`Hide templates`
