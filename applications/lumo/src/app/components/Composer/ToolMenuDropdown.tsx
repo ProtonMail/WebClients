@@ -193,7 +193,7 @@ export const ToolMenuDropdown = ({
                                 <LumoIcon name="FileText" size={16} />
                                 <div className="flex flex-column">
                                     <span className="text-sm font-medium flex items-center gap-2">
-                                        {c('collider_2025: Action').t`creations`}
+                                        {c('collider_2025: Action').t`Creations`}
                                         {showArtifactNewLabel ? <NewLabel /> : null}
                                     </span>
                                     <span className="text-xs color-weak">{c('collider_2025: Info')
