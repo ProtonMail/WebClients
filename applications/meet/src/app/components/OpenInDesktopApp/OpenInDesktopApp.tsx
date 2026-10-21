@@ -1,82 +1,72 @@
-import { useEffect, useId, useRef } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
+import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { useSendOnce } from '../../telemetry/useSendOnce';
 import { saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { useLaunchDesktopAppOnLoad } from './useLaunchDesktopAppOnLoad';
 
 import './OpenInDesktopApp.scss';
 
 const DOWNLOAD_URL = 'https://proton.me/meet/download';
 
-export const OpenInDesktopAppLink = ({ onOpen }: { onOpen: () => void }) => {
+export const OpenInDesktopApp = () => {
     const meetingLink = useMeetSelector(selectMeetingLink);
+    const launchedOnLoad = useLaunchDesktopAppOnLoad();
+    const [isAppDidNotOpenHintVisible, setIsAppDidNotOpenHintVisible] = useState(launchedOnLoad);
 
     useSendOnce(() => sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_shown));
 
-    const handleClick = () => {
+    const handleOpenInDesktopApp = () => {
         sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_clicked, { action: 'open_app' });
         tryOpenInDesktopApp(meetingLink);
         saveDesktopAppPreference();
-        onOpen();
-    };
-
-    return (
-        <button type="button" className="open-in-desktop-app-link self-center text-semibold" onClick={handleClick}>
-            {c('Action').t`Open this meeting in the desktop app`}
-        </button>
-    );
-};
-
-export const OpenInDesktopAppCard = () => {
-    const meetingLink = useMeetSelector(selectMeetingLink);
-    const tryAgainRef = useRef<HTMLButtonElement>(null);
-    const titleId = useId();
-
-    useEffect(() => {
-        tryAgainRef.current?.focus();
-    }, []);
-
-    const handleTryAgain = () => {
-        sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_clicked, { action: 'retry' });
-        tryOpenInDesktopApp(meetingLink);
+        setIsAppDidNotOpenHintVisible(true);
     };
 
     const handleDownload = () => {
         sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_clicked, { action: 'download' });
-        window.open(DOWNLOAD_URL, '_blank', 'noopener,noreferrer');
     };
 
+    const downloadLink = (
+        <Href key="download" href={DOWNLOAD_URL} onClick={handleDownload}>
+            {c('Link').t`download`}
+            <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
+        </Href>
+    );
+
     return (
-        <div className="open-in-desktop-app-card w-full flex flex-column flex-nowrap gap-3 p-4">
-            <p id={titleId} className="open-in-desktop-app-card-title m-0 text-semibold text-center">
-                {c('Info').t`App didn't open?`}
-            </p>
-            <div className="flex flex-nowrap gap-2 py-2">
-                <Button
-                    ref={tryAgainRef}
-                    aria-describedby={titleId}
-                    className="open-in-desktop-app-card-button tertiary rounded-full flex-1 text-semibold"
-                    onClick={handleTryAgain}
-                >
-                    {c('Action').t`Try again`}
-                </Button>
-                <Button
-                    className="open-in-desktop-app-card-button tertiary rounded-full flex-1 text-semibold"
-                    onClick={handleDownload}
-                >
-                    {c('Action').t`Download app`}
-                    <span className="sr-only">{c('Accessibility').t`(opens in new tab)`}</span>
-                </Button>
-            </div>
-            <p className="open-in-desktop-app-card-hint m-0 text-sm color-hint text-center">
-                {c('Info').t`Already in the app? You can close this tab.`}
-            </p>
+        <div className="relative w-full">
+            <Button
+                className="tertiary py-4 px-5 md:py-5 rounded-full"
+                size="large"
+                fullWidth
+                onClick={handleOpenInDesktopApp}
+            >
+                {c('Action').t`Join from ${MEET_APP_NAME} app`}
+            </Button>
+            {isAppDidNotOpenHintVisible && (
+                <div aria-live="polite" className="open-in-desktop-app-hint absolute w-full mt-3 p-4 text-center">
+                    <CloseButton
+                        className="absolute top-0 right-0 mt-2 mr-2"
+                        style={{ '--w-custom': '1.75rem', '--h-custom': '1.75rem' }}
+                        onClose={() => setIsAppDidNotOpenHintVisible(false)}
+                    />
+                    <p className="m-0 text-semibold">{c('Info').t`App didn't open?`}</p>
+                    <p className="m-0 mt-2 text-sm color-weak">
+                        {c('Info')
+                            .jt`Please ${downloadLink} and install the app, then click Join in the ${MEET_APP_NAME} app again.`}
+                    </p>
+                </div>
+            )}
         </div>
     );
 };
