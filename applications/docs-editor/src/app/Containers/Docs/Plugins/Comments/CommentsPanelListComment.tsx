@@ -10,8 +10,7 @@ import type { DocsComment, DocsCommentThread } from '../../contract/DocsCommentT
 import { CommentThreadStates } from '../../contract/DocsCommentThread'
 import { AnonymousUserEmail } from '../../Utils/AnonymousUser'
 import { clsx } from 'clsx'
-import { c } from 'ttag'
-import { useDocsDependencies } from '../../DocsDependenciesProvider'
+import { useDocsDependencies, useDocsMessages } from '../../DocsDependenciesProvider'
 import { CommentsComposer } from './CommentsComposer'
 import { useCommentsContext } from './CommentsContext'
 import { CommentTime } from './CommentTime'
@@ -35,6 +34,7 @@ export function CommentsPanelListComment({
   setIsDeletingThread: (isDeleting: boolean) => void
 }): JSX.Element {
   const { reportError } = useDocsDependencies()
+  const messages = useDocsMessages().comments
   const [editor] = useLexicalComposerContext()
 
   const {
@@ -104,8 +104,8 @@ export function CommentsPanelListComment({
 
   const handleDeleteThread = () => {
     showDeleteDialog({
-      title: c('Title').t`Delete thread`,
-      message: c('Info').t`Are you sure you want to delete this thread?`,
+      title: messages.deleteThreadTitle,
+      message: messages.deleteThreadMessage,
       finalFocus: optionsButtonRef,
       onDelete: () => {
         setIsDeleting(true)
@@ -126,8 +126,8 @@ export function CommentsPanelListComment({
 
   const handleDeleteComment = () => {
     showDeleteDialog({
-      title: c('Title').t`Delete comment`,
-      message: c('Info').t`Are you sure you want to delete this comment?`,
+      title: messages.deleteCommentTitle,
+      message: messages.deleteCommentMessage,
       finalFocus: optionsButtonRef,
       onDelete: () => {
         setIsDeleting(true)
@@ -197,7 +197,7 @@ export function CommentsPanelListComment({
           {isSuggestionComment && suggestionsEnabled && thread.state === CommentThreadStates.Active && (
             <>
               <IconButton
-                label={c('Action').t`Decline suggestion`}
+                label={messages.declineSuggestion}
                 onClick={handleRejectSuggestion}
                 pill
                 shape="ghost"
@@ -211,7 +211,7 @@ export function CommentsPanelListComment({
                 <Icon data={Icons.cross} size={4.5} />
               </IconButton>
               <IconButton
-                label={c('Action').t`Accept suggestion`}
+                label={messages.acceptSuggestion}
                 onClick={handleAcceptSuggestion}
                 pill
                 shape="ghost"
@@ -239,7 +239,7 @@ export function CommentsPanelListComment({
                 'opacity-0 hover:opacity-100 focus:opacity-100 group-hover/comment:opacity-100 aria-expanded:opacity-100',
                 isFirstComment && 'group-focus-within/thread:opacity-100',
               )}
-              content={<Icon data={Icons.threeDotsVertical} size={4.5} alt={c('Label').t`More options`} />}
+              content={<Icon data={Icons.threeDotsVertical} size={4.5} alt={messages.moreOptions} />}
               hasCaret={false}
               onToggle={setIsOptionsMenuOpen}
             >
@@ -253,7 +253,7 @@ export function CommentsPanelListComment({
                     data-testid="edit-button"
                   >
                     <Icon data={Icons.pencil} size={4.5} />
-                    {c('Action').t`Edit`}
+                    {messages.edit}
                   </DropdownMenuButton>
                 )}
                 {showResolveButton && (
@@ -265,7 +265,7 @@ export function CommentsPanelListComment({
                     data-testid="resolve-button"
                   >
                     <Icon data={Icons.checkmarkCircle} size={4.5} />
-                    {c('Action').t`Resolve`}
+                    {messages.resolve}
                   </DropdownMenuButton>
                 )}
                 {showReOpenButton && (
@@ -276,7 +276,7 @@ export function CommentsPanelListComment({
                     }}
                     data-testid="reopen-button"
                   >
-                    {c('Action').t`Re-open`}
+                    {messages.reopen}
                   </DropdownMenuButton>
                 )}
                 {showDeleteButton && (
@@ -293,14 +293,14 @@ export function CommentsPanelListComment({
                     data-testid="delete-button"
                   >
                     <Icon data={Icons.trash} size={4.5} />
-                    {isFirstComment ? c('Action').t`Delete thread` : c('Action').t`Delete comment`}
+                    {isFirstComment ? messages.deleteThread : messages.deleteComment}
                   </DropdownMenuButton>
                 )}
               </DropdownMenu>
             </SimpleDropdown>
           )}
           {!comment.verificationResult.verified && comment.verificationResult.verificationAvailable && (
-            <LabelTooltip label={c('Action').t`Signature could not be verified`}>
+            <LabelTooltip label={messages.signatureUnverified}>
               <Icon
                 data={Icons.exclamationTriangleFilled}
                 size={4.5}
@@ -317,7 +317,7 @@ export function CommentsPanelListComment({
             autoFocus
             initialContent={comment.content}
             className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
-            placeholder={c('Placeholder').t`Edit comment...`}
+            placeholder={messages.editCommentPlaceholder}
             onSubmit={async (content) => {
               const success = await editComment(thread.id, comment.id, content)
               if (success) {
@@ -340,7 +340,7 @@ export function CommentsPanelListComment({
             buttons={(canSubmit, submitComment) => (
               <>
                 <IconButton
-                  label={c('Action').t`Cancel`}
+                  label={messages.cancel}
                   shape="ghost"
                   size="small"
                   pill
@@ -350,7 +350,7 @@ export function CommentsPanelListComment({
                   <Icon data={Icons.crossCircleFilled} size={6} />
                 </IconButton>
                 <IconButton
-                  label={c('Action').t`Save`}
+                  label={messages.save}
                   shape="ghost"
                   size="small"
                   pill

@@ -3,14 +3,15 @@ import { createDOMRange } from '@lexical/selection'
 import { $getSelection, $isRangeSelection } from 'lexical'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { CommentsComposer } from './CommentsComposer'
-import { c } from 'ttag'
 import { CommentSendButton } from './CommentSendButton'
 import { useCommentsContext } from './CommentsContext'
 import { createRectsFromDOMRange } from '../../Utils/createRectsFromDOMRange'
+import { useDocsMessages } from '../../DocsDependenciesProvider'
 
 export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalEditor; cancelAddComment: () => void }) {
   const textContentRef = useRef('')
   const { createCommentThread, setThreadToFocus, setCurrentCommentDraft } = useCommentsContext()
+  const messages = useDocsMessages().comments
 
   const boxRef = useRef<HTMLDivElement>(null)
   const selectionState = useMemo(
@@ -90,7 +91,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
       }
       event.preventDefault()
       event.stopPropagation()
-      if (confirm(c('Confirm').t`Discard comment?`)) {
+      if (confirm(messages.discardComment)) {
         cancelAddComment()
       }
     }
@@ -104,7 +105,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
 
       window.removeEventListener('resize', updateLocation)
     }
-  }, [cancelAddComment, updateLocation])
+  }, [cancelAddComment, messages.discardComment, updateLocation])
 
   const onSubmit = useCallback(
     async (content: string) => {
@@ -147,13 +148,13 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
       <CommentsComposer
         autoFocus
         className="px-2.5 py-2"
-        placeholder={c('Placeholder').t`Add a comment...`}
+        placeholder={messages.addCommentPlaceholder}
         onSubmit={onSubmit}
         onCancel={cancelAddComment}
         onTextContentChange={onTextChange}
         buttons={(canSubmit, submitComment) => (
           <CommentSendButton
-            label={c('Action').t`Add comment`}
+            label={messages.addComment}
             disabled={!canSubmit}
             onClick={submitComment}
             data-testid="comments-floating-send-button"
