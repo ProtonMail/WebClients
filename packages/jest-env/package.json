@@ -7,11 +7,11 @@
         "lint": "oxlint --quiet"
     },
     "dependencies": {
-        "jest-environment-jsdom": "^30.5.2"
+        "jest-environment-jsdom": "catalog:"
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",
-        "oxlint": "1.87.0",
-        "oxlint-tsgolint": "7.0.2004"
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:"
     }
 }

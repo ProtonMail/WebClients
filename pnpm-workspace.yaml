@@ -15,19 +15,47 @@ packages:
 # @protontech/crypto must resolve to a single version across workspaces; check:constraints requires
 # every workspace to declare it as "catalog:".
 catalog:
+    '@jest/globals': ^30.5.2
+    # Must stay on the same version as oxlint.
+    '@oxlint/plugins': 1.87.0
     '@protontech/crypto': ^2.2.0
     # Shared so that every workspace importing the Drive SDK resolves the same version.
     '@protontech/drive-sdk': ^0.23.0
     '@protontech/logger': ^1.0.0
+    '@testing-library/dom': ^10.4.2
+    '@testing-library/jest-dom': ^6.9.1
+    '@testing-library/react-hooks': ^8.0.1
+    '@testing-library/user-event': ^14.6.8
     '@types/chrome': ^0.3.4
     '@types/history': ^4.7.11
     '@types/jest': ^30.0.0
+    '@types/jest-when': ^3.5.5
     '@types/lodash': ^4.17.25
     '@types/node': ^24.19.0
     '@types/react': ^18.3.31
     '@types/react-dom': ^18.3.7
     '@types/react-router-dom': ^5.3.3
     '@types/webpack-env': ^1.18.8
+    '@typescript/native': npm:typescript@^7.0.2
+    babel-jest: ^30.4.1
+    core-js: ^3.50.0
+    cross-env: ^10.1.0
+    eslint: ^10.12.0
+    fake-indexeddb: ^6.2.5
+    happy-dom: ^21.0.1
+    jest: ^30.5.2
+    jest-environment-jsdom: ^30.5.2
+    jest-junit: ^16.0.0
+    jest-when: 3.7.0
+    oxlint: 1.87.0
+    oxlint-tsgolint: 7.0.2004
+    prettier: ^3.9.10
+    prettier-plugin-tailwindcss: ^0.8.1
+    stylelint: ^15.11.0
+    ts-node: ^10.9.2
+    # A few workspaces (including the root) still declare the real `typescript` package directly.
+    typescript: npm:@typescript/typescript6@^6.0.2
+    typescript-eslint: ^8.71.2
 
 # Yarn resolved any range that a workspace satisfies to that workspace, including the `*` peer
 # dependencies between @proton packages.

@@ -57,17 +57,17 @@
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
-        "@testing-library/react-hooks": "^8.0.1",
+        "@testing-library/react-hooks": "catalog:",
         "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/webpack-env": "catalog:",
-        "@typescript/native": "npm:typescript@^7.0.2",
-        "fake-indexeddb": "^6.2.5",
-        "jest": "^30.5.2",
-        "oxlint": "1.87.0",
-        "oxlint-tsgolint": "7.0.2004",
-        "typescript": "npm:@typescript/typescript6@^6.0.2"
+        "@typescript/native": "catalog:",
+        "fake-indexeddb": "catalog:",
+        "jest": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
+        "typescript": "catalog:"
     }
 }
