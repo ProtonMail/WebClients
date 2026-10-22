@@ -6,6 +6,7 @@ import ImageComponent from './ImageComponent'
 const mockOpenLink = jest.fn()
 jest.mock('../../DocsDependenciesProvider', () => ({
   useDocsDependencies: () => ({ openLink: mockOpenLink }),
+  useDocsMessages: () => jest.requireActual('../../messages/defaultDocsMessages').defaultDocsMessages,
 }))
 jest.mock('../../Utils/getEditorWidthWithoutPadding', () => ({
   getElementDimensionsWithoutPadding: () => ({ width: 100, height: 100 }),

@@ -1,6 +1,16 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { SimpleDropdown } from '../Components/Dropdown'
+import { DocsDependenciesProvider, type DocsDependencies } from '../DocsDependenciesProvider'
+import { defaultDocsMessages } from '../messages/defaultDocsMessages'
 import { BlockTypeMenu } from './BlockTypeMenu'
+
+function MessagesProvider({ children }: { children: React.ReactNode }) {
+  return (
+    <DocsDependenciesProvider dependencies={{ defaultMessages: defaultDocsMessages } as DocsDependencies}>
+      {children}
+    </DocsDependenciesProvider>
+  )
+}
 
 function renderMenu(isEditable = true) {
   const formatParagraph = jest.fn()
@@ -9,6 +19,7 @@ function renderMenu(isEditable = true) {
     <SimpleDropdown content="Block type">
       <BlockTypeMenu isEditable={isEditable} formatParagraph={formatParagraph} formatHeading={formatHeading} />
     </SimpleDropdown>,
+    { wrapper: MessagesProvider },
   )
   fireEvent.click(screen.getByRole('button', { name: 'Block type' }))
   return { formatParagraph, formatHeading }
@@ -98,6 +109,7 @@ it('closes the menu on Escape while a menu item shows its shortcut, so the toolb
         <BlockTypeMenu isEditable formatParagraph={jest.fn()} formatHeading={jest.fn()} />
       </SimpleDropdown>
     </>,
+    { wrapper: MessagesProvider },
   )
   fireEvent.click(screen.getByRole('button', { name: 'Block type' }))
   const normal = await screen.findByRole('menuitem', { name: 'Normal' })

@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { CommentViewer } from './CommentViewer'
 import { DocsDependenciesProvider, type DocsDependencies } from '../../DocsDependenciesProvider'
+import { defaultDocsMessages } from '../../messages/defaultDocsMessages'
 
 jest.mock('./CommentsContext', () => ({
   useCommentsContext: jest.fn(() => ({
@@ -11,6 +12,7 @@ jest.mock('./CommentsContext', () => ({
 function createDependencies(reportError: DocsDependencies['reportError']): DocsDependencies {
   return {
     userName: 'Test user',
+    defaultMessages: defaultDocsMessages,
     suggestionsEnabled: true,
     isAlpha: false,
     canEdit: true,
