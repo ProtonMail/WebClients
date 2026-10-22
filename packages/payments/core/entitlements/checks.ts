@@ -87,6 +87,8 @@ export const entitlementChecksForSelection = {
             excludes: [EntitlementName.Business],
         }),
 
+    hasCustomDomainAddresses: (r) => r.hasEntitlement(EntitlementName.CustomDomainAddresses),
+
     hasExternalManagedMembers: (r) => r.hasEntitlement(EntitlementName.ExternalManagedMembers),
 
     isPassB2BWithoutActivityMonitor: (r) =>
