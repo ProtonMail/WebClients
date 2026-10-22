@@ -173,14 +173,14 @@ describe('stringifySearchParams()', () => {
 describe('getUrlWithReturnUrl', () => {
     it('should get passed url with returnUrl and returnUrlContext as search parameter', () => {
         const location = { pathname: '/somePath', search: '?search=MySearch', hash: '#hash' } as Location;
-        const expectedUrl = 'https://mail.proton.me/?returnUrl=%2FsomePath%3Fsearch%3DMySearch%23hash';
+        const expectedUrl = 'https://mail.proton.me/?returnUrl=%252FsomePath%253Fsearch%253DMySearch%2523hash';
         expect(getUrlWithReturnUrl(mailUrl, { returnUrl: getPathFromLocation(location) })).toEqual(expectedUrl);
     });
 
     it('should be a URL from the current app with public context', () => {
         const location = { pathname: '/somePath', search: '?search=MySearch', hash: '#hash' } as Location;
         const expectedUrl =
-            'https://mail.proton.me/?returnUrl=%2FsomePath%3Fsearch%3DMySearch%23hash&returnUrlContext=public';
+            'https://mail.proton.me/?returnUrl=%252FsomePath%253Fsearch%253DMySearch%2523hash&returnUrlContext=public';
         expect(getUrlWithReturnUrl(mailUrl, { returnUrl: getPathFromLocation(location), context: 'public' })).toEqual(
             expectedUrl
         );
