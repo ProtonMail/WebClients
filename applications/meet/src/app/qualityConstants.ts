@@ -26,4 +26,5 @@ export const qualityConstants = {
 
 export const screenShareQuality = h1080screenshare;
 
-export const audioQuality = 96_000; // Increased from 48kbps to 96kbps for higher quality audio
+// Plenty for Opus speech, and leaves headroom on weak or lossy uplinks
+export const audioQuality = 32_000;
