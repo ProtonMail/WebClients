@@ -2302,6 +2302,18 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Cancel import": [
+        "Cancelar importación"
+      ],
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Crear una ${ ACCOUNT_APP_NAME }"
+      ],
+      "Import actions": [
+        "Acciones de importación"
+      ],
+      "Remove from the list": [
+        "Eliminar de la lista"
       ]
     },
     "action": {
@@ -5614,6 +5626,18 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Su plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail",
         "Su plan soporta un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail"
+      ],
+      "Access your passwords on all your devices": [
+        "Acceda a sus contraseñas en todos sus dispositivos"
+      ],
+      "Autofill logins instantly on any site": [
+        "Complete automáticamente los inicios de sesión en cualquier sitio"
+      ],
+      "Create strong password with one click": [
+        "Cree una contraseña robusta con un clic"
+      ],
+      "No ads, no tracking. Use your Gmail in ${ BRAND_NAME }. Nothing there gets edited or deleted.": [
+        "Sin anuncios ni rastreos. Use su Gmail en ${ BRAND_NAME }. Nada allá se edita o elimina."
       ]
     },
     "description": {
@@ -7071,6 +7095,22 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Sus contactos de recuperación deben ser personas que conoce y puede contactar fácilmente."
+      ],
+      "Add contact": [
+        "Añadir contacto"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Recupere sus datos antes de añadir un contacto nuevo."
+      ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Recibirá el acceso automáticamente **hoy**, a las **${ formattedAccessibleAt }**. Puede rechazar la solicitud o conceder el acceso de inmediato en cualquier momento."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Recibirá el acceso automáticamente en **${ days } día**, el **${ formattedAccessibleAt }**. Puede rechazar la solicitud o conceder el acceso de inmediato en cualquier momento.",
+        "Recibirá el acceso automáticamente en **${ days } días**, el **${ formattedAccessibleAt }**. Puede rechazar la solicitud o conceder el acceso de inmediato en cualquier momento."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Sus datos siguen bloqueados tras el restablecimiento de la contraseña. Un contacto añadido ahora no podrá recuperarlos."
       ]
     },
     "Empty group name": {
@@ -7493,7 +7533,7 @@
         "Se permite un máximo de ${ displayMaxValue }"
       ],
       "Member address not found. Please contact customer support to resolve this": [
-        "Falta la dirección de miembro. Contacte con el soporte al cliente para resolver esto."
+        "Falta la dirección del miembro. Contacte con el soporte al cliente para resolver esto."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Fusione al menos ${ calendarsToFixCount } calendario con un calendario existente de ${ BRAND_NAME }",
@@ -8098,6 +8138,15 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ],
+      "Couldn't load your connections": [
+        "No se pudieron cargar sus conexiones"
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "No pudimos desconectar esta dirección. Intente de nuevo."
+      ],
+      "We couldn't reconnect this address.": [
+        "No pudimos reconectar esta dirección."
       ]
     },
     "error": {
@@ -14232,6 +14281,45 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantía de reembolso de 30 días: cancela durante los 30 días posteriores a tu compra y comunícate con nuestro ${ customerSupportLink } para obtener un reembolso."
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Cancele dentro de los 30 días posteriores a su compra y comuníquese con nuestro ${ customerSupportLink } para obtener un reembolso."
+      ],
+      "For security, business accounts sign in with a code instead. On your TV, select 'Trouble signing in?' and follow the steps.": [
+        "Por motivos de seguridad, las cuentas empresariales inician sesión con un código. En su televisor, seleccione «¿Problemas para iniciar sesión?» y siga los pasos."
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Los mensajes de otros usuarios de ${ BRAND_NAME } también perderán el cifrado de extremo a extremo."
+      ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "Inicie sesión con ${ emailAddress } para continuar."
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "Inicie sesión con la cuenta de Gmail que desea conectar para continuar."
+      ],
+      "SEPA Bank transfer": [
+        "Transferencia bancaria SEPA"
+      ],
+      "This Gmail is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Este Gmail se usa para iniciar sesión en otra cuenta de ${ BRAND_NAME }. Estamos facilitando la conexión, pero por ahora tendrá que seguir algunos pasos."
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "Para usar ${ toAppName }, necesita una dirección de ${ MAIL_APP_NAME }. Un administrador de su organización puede crearle una dirección."
+      ],
+      "UnionPay logo": [
+        "logo de UnionPay"
+      ],
+      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Cuando el inicio de sesión está restringido, solo puede usar su nombre de usuario ${ usernameElement } para iniciar sesión. Sus otras direcciones no se pueden vincular a tSu cuenta, incluso si alguien las conoce."
+      ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "Ya no podrá enviar o recibir con ${ email } en ${ BRAND_NAME }."
+      ],
+      "Your account and password stay the same.": [
+        "Su cuenta y contraseña permanecen igual."
       ]
     },
     "info": {
@@ -16596,6 +16684,15 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Item": [
+        "Elemento"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Restringir el inicio de sesión a la dirección de correo principal"
+      ],
+      "Restrict sign-in to username": [
+        "Restringir el inicio de sesión al nombre de usuario"
       ]
     },
     "label": {
@@ -17028,6 +17125,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "Customer Support": [
+        "Servicio al cliente"
       ]
     },
     "Link (Scribe)": {
@@ -22051,6 +22151,9 @@
     "Rollback state": {
       "Undo in progress": [
         "Revirtiendo..."
+      ],
+      "Undo finished": [
+        "Acción revertida"
       ]
     },
     "Safety review": {
@@ -24109,6 +24212,9 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará su configuración de SSO."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "Para asegurarnos de que es usted quien intenta iniciar sesión, ingrese su contraseña."
       ]
     },
     "sso: auth device state": {
@@ -27726,6 +27832,39 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "Connect your Gmail": [
+        "Conecte su Gmail"
+      ],
+      "Good to know before you connect": [
+        "Es bueno saberlo antes de conectarse"
+      ],
+      "Over 95% of users love our extension": [
+        "Más del 95% de los usuarios aman nuestra extensión"
+      ],
+      "QR sign-in isn't available for business accounts": [
+        "El inicio de sesión con código QR no está disponible para cuentas empresariales"
+      ],
+      "Sign-in protection": [
+        "Protección de inicio de sesión"
+      ],
+      "Skip for now": [
+        "Omitir por ahora"
+      ],
+      "Stay connected:": [
+        "Manténgase conectado:"
+      ],
+      "Stay safe:": [
+        "Manténgase a salvo:"
+      ],
+      "This Gmail is already connected": [
+        "Este Gmail ya está conectado"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "Desbloquee el poder del completado automático con ${ PASS_APP_NAME } en su navegador"
+      ],
+      "You need a ${ BRAND_NAME } address": [
+        "Necesita una dirección de ${ BRAND_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28712,6 +28851,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrá asignar roles una vez que el usuario haya aceptado la invitación."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Este usuario obtendrá permisos de administrador en el próximo inicio de sesión."
       ]
     },
     "Users table: badge": {
@@ -29403,6 +29545,116 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantía de reembolso de 30 días: cancela durante los 30 días posteriores a tu compra y comunícate con nuestro ${ customerSupportLink } para obtener un reembolso."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Aproveche la oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "15 GB storage": [
+        "15 GB de almacenamiento"
+      ],
+      "2 individual accounts": [
+        "2 cuentas individuales"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de almacenamiento seguro"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces el plan actual"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de almacenamiento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de almacenamiento seguro"
+      ],
+      "6 individual accounts": [
+        "6 cuentas individuales"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en el precio mensual estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Online document editor": [
+        "Editor de documentos en línea"
+      ],
+      "Recover previous file versions": [
+        "Recupere las versiones anteriores de sus archivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Más protección contra las ciberamenazas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Use un dominio de correo electrónico propio"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Los mejores descuentos del año"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "Last chance to save big": [
+        "Última oportunidad para ahorrar mucho"
+      ],
+      "Protect your entire tribe": [
+        "Proteja a toda su tribu"
+      ],
+      "Protection for two in a single plan": [
+        "Protección para dos en un solo plan"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "Iniciar sesión en ${ providerName }"
       ]
     }
   }

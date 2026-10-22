@@ -2587,6 +2587,27 @@
       ],
       "Use your own email domain": [
         "استخدم نطاق بريدك الإلكتروني الخاص"
+      ],
+      "/month": [
+        "/ شهر"
+      ],
+      "2 individual accounts": [
+        "حسابان فرديان"
+      ],
+      "2 TB of secure storage": [
+        "تيرابايتان من التخزين الآمن"
+      ],
+      "3 TB of secure storage": [
+        "3 تيرابايت من التخزين الآمن"
+      ],
+      "500 GB of secure storage": [
+        "500 جيجابايت من التخزين الآمن"
+      ],
+      "6 individual accounts": [
+        "6 حسابات فردية"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "تعتمد الخصومات على الأسعار الشهرية القياسية. سيتم تجديد اشتراكك بالسعر السنوي القياسي عند انتهاء دورة الفوترة."
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -2619,6 +2640,9 @@
       ],
       "Protection for two in a single plan": [
         "حماية لشخصين في خطة واحدة"
+      ],
+      "for 12 months": [
+        "لمدة 12 شهراً"
       ]
     },
     "Billing cycle": {
@@ -28551,6 +28575,24 @@
       ],
       "Yearly, ${ untilString }": [
         "سنويًا، ${ untilString }"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "الجمعة السوداء"
+      ],
+      "Get the deal": [
+        "احصل على الصفقة"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "ميزات Premium في ${ DRIVE_SHORT_APP_NAME } و${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "إصدارات Premium من ${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME }"
       ]
     }
   }
