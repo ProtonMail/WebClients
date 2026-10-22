@@ -77,7 +77,7 @@ This shared Drive package also provides modules that builds on top of the Drive 
 The package exposes exactly two entry points to the rest of the monorepo:
 
 - **`@proton/drive/sdk`** - the SDK facade, with the core client and shared types. Importable by any app, including `applications/drive`.
-- **`@proton/drive/public/*`** - the public modals and helpers (`sharingModal`, `moveItemsModal`, `thumbnails`, etc). Importable by external apps only, **not** `applications/drive`.
+- **`@proton/drive/public/*`** - the public modals and helpers (`sharingModal`, `moveItemsModal`, `publicDocsSharing`, `thumbnails`, etc). Importable by external apps only, **not** `applications/drive`.
 
 Everything else (`modules/`, `components/`, `internal/`) is private and off-limits to external apps.
 

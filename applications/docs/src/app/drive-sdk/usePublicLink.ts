@@ -3,8 +3,7 @@ import { c } from 'ttag'
 
 import { useNotifications } from '@proton/app-context/useNotifications'
 import { ValidationError, getDrive } from '@proton/drive/sdk'
-// eslint-disable-next-line proton/restricted-imports
-import { receiveCustomPasswordFromDriveWindow } from '@proton/drive/modules/publicDocsSharing'
+import { receiveCustomPasswordFromDriveWindow } from '@proton/drive/public/publicDocsSharing'
 import { authenticatePublicDrive, loadPublicLinkInfo } from '@proton/docs-core/lib/DriveSDK/authenticatePublicDrive'
 import { getPublicLinkInfo } from '@proton/docs-core/lib/DriveSDK/getPublicDrive'
 import { reportPublicDriveError } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
