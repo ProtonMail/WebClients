@@ -20,6 +20,7 @@
         "./calendarBootstrap": "./calendarBootstrap/index.ts",
         "./calendarBootstrap/hooks": "./calendarBootstrap/hooks.ts",
         "./calendarBootstrap/keys": "./calendarBootstrap/keys.ts",
+        "./calendarEvent/useGetCalendarEventRaw": "./calendarEvent/useGetCalendarEventRaw.ts",
         "./calendarEventLoop": "./calendarEventLoop/index.ts",
         "./calendarEventLoop/interface": "./calendarEventLoop/interface.ts",
         "./calendarEventLoop/listeners": "./calendarEventLoop/listeners.ts",
