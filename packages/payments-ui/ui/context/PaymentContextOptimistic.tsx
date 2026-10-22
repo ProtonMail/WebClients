@@ -1,6 +1,6 @@
 import { type ReactNode, createContext, useContext, useRef, useState } from 'react';
 
-import { useHandler } from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/hooks/useHandler';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { CYCLE } from '@proton/payments/core/constants';

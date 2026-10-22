@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from 'react';
 
-import usePrevious from '@proton/hooks/usePrevious';
+import usePrevious from './usePrevious';
 
 const useIsClosing = (isOpen = false): [boolean, boolean, () => void] => {
     const [[isClosed, isClosing], setResult] = useState(() => [false, !isOpen]);

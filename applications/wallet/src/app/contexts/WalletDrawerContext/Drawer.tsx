@@ -2,7 +2,7 @@ import type { CSSProperties, PropsWithChildren } from 'react';
 import { useRef } from 'react';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import { useHotkeys } from '@proton/components';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import clsx from '@proton/utils/clsx';
 
 import { DrawerHeader } from './DrawerHeader';

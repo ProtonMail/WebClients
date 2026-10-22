@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

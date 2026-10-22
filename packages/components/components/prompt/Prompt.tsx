@@ -1,10 +1,10 @@
 import type { ReactElement, ReactNode } from 'react';
 import React, { cloneElement, useContext } from 'react';
 
+import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
 import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import clsx from '@proton/utils/clsx';
 
-import type { HotkeyTuple } from '../../hooks/useHotkeys';
 import type { ModalProps } from '../modalTwo/Modal';
 import ModalTwo, { ModalContext } from '../modalTwo/Modal';
 import type { ModalContentProps } from '../modalTwo/ModalContent';

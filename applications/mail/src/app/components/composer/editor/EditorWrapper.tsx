@@ -7,7 +7,7 @@ import Editor from '@proton/components/components/editor/Editor';
 import type { EditorProps } from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import type { EditorActions, EditorMetadata } from '@proton/components/components/editor/interface';
-import { useHandler } from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { sanitizeComposerBlockquoteHtml } from '@proton/sanitize/purify';

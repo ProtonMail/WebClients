@@ -1,10 +1,9 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { ResizeHandlePosition } from '../components/list/ResizeHandle';
-
 import { resetMemoryCacheForTesting, useResizableUtils } from './useResizableUtils';
 
-jest.mock('@proton/components/hooks/useHandler', () => ({
+jest.mock('@proton/hooks/useHandler', () => ({
     useHandler: jest.fn((fn) => {
         const handler = (...args: any[]) => fn(...args);
         handler.cancel = jest.fn();

@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 interface Props {

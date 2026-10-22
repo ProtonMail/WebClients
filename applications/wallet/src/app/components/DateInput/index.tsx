@@ -8,7 +8,7 @@ import { c } from 'ttag';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
 
