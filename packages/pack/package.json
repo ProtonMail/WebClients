@@ -29,7 +29,7 @@
         "browserslist": "^4.29.3",
         "commander": "^14.0.3",
         "copy-webpack-plugin": "^14.0.0",
-        "core-js": "^3.50.0",
+        "core-js": "catalog:",
         "css-loader": "^7.1.5",
         "esbuild-loader": "^4.5.0",
         "eslint-webpack-plugin": "^6.0.0",
@@ -61,12 +61,12 @@
         "@proton/oxlint-config": "workspace:^",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
-        "@typescript/native": "npm:typescript@^7.0.2",
-        "eslint": "^10.12.0",
-        "oxlint": "1.87.0",
-        "oxlint-tsgolint": "7.0.2004",
-        "prettier": "^3.9.10",
-        "typescript": "npm:@typescript/typescript6@^6.0.2"
+        "@typescript/native": "catalog:",
+        "eslint": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
+        "prettier": "catalog:",
+        "typescript": "catalog:"
     },
     "peerDependencies": {
         "@proton/collect-metrics": "workspace:^"

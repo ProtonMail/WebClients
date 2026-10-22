@@ -719,14 +719,14 @@
         "@types/minimist": "^1.2.5",
         "@types/react": "catalog:",
         "@types/tinycolor2": "^1.4.6",
-        "@typescript/native": "npm:typescript@^7.0.2",
+        "@typescript/native": "catalog:",
         "@vitest/browser-playwright": "^5.0.4",
         "@vitest/coverage-v8": "^5.0.4",
         "@webgpu/types": "^0.1.74",
-        "eslint": "^10.12.0",
+        "eslint": "catalog:",
         "playwright": "^1.63.0",
-        "prettier": "^3.9.10",
-        "typescript": "npm:@typescript/typescript6@^6.0.2",
+        "prettier": "catalog:",
+        "typescript": "catalog:",
         "vitest": "^5.0.4"
     },
     "peerDependencies": {

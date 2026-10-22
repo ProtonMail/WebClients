@@ -8,10 +8,10 @@
     },
     "dependencies": {
         "@swc/jest": "^0.2.39",
-        "core-js": "^3.50.0"
+        "core-js": "catalog:"
     },
     "devDependencies": {
-        "oxlint": "1.87.0",
-        "oxlint-tsgolint": "7.0.2004"
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:"
     }
 }
