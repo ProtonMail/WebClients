@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useModalStateObject } from '@proton/components/index';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import { useLumoNavigate } from '../../../hooks/useLumoNavigate';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';

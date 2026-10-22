@@ -1,4 +1,4 @@
-import { NotificationsChildren } from '@proton/components';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
 
 import { useLumoFlags } from '../hooks/useLumoFlags';
 import { canShowWebComposer } from '../util/userAgent';

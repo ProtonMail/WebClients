@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 

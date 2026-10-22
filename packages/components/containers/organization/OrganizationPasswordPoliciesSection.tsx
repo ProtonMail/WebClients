@@ -27,7 +27,8 @@ import noop from '@proton/utils/noop';
 
 import RadioGroup from '../../components/input/RadioGroup';
 import Info from '../../components/link/Info';
-import { PermissionBanner, PermissionTooltip } from '../../components/orgPermissions/index';
+import PermissionBanner from '../../components/orgPermissions/PermissionBanner';
+import PermissionTooltip from '../../components/orgPermissions/PermissionTooltip';
 import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import SettingsLayout from '../account/SettingsLayout';

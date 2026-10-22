@@ -5,19 +5,17 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import {
-    Checkbox,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoHeader,
-    Row,
-    Table,
-    TableBody,
-    TableHeader,
-    TableRow,
-    Tabs,
-    useModalState,
-} from '@proton/components';
+import Row from '@proton/components/components/container/Row';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import { Tabs } from '@proton/components/components/tabs/Tabs';
 import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { SORT_DIRECTION as SORT } from '@proton/shared/lib/constants';

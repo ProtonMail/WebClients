@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalOwnProps } from '@proton/components';
-import { Prompt } from '@proton/components';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import walletKeyDark from '@proton/styles/assets/img/wallet/wallet-key-dark.jpg';
 import walletKey from '@proton/styles/assets/img/wallet/wallet-key.jpg';

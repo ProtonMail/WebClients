@@ -1,4 +1,4 @@
-import type { GroupsWithContactsMap } from '@proton/components';
+import type { GroupsWithContactsMap } from '@proton/components/components/addressesAutocomplete/helper';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 /**

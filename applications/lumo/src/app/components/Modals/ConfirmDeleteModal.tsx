@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Prompt } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { LumoIcon } from '../LumoIcon/LumoIcon';

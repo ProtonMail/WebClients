@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { MimeIcon, ToolbarButton } from '@proton/components';
+import MimeIcon from '@proton/components/components/icon/MimeIcon';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 
 import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';
 import type { ActionButtonProps } from '../../buttons/types';

@@ -98,7 +98,7 @@ The SDK does **not** subscribe to core events on its own. The host application m
 This should be done once at app bootstrap, typically in `MainContainer`:
 
 ```javascript
-import { useEventManager } from '@proton/components';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { getBusDriver } from '@proton/drive/modules/busDriver';
 
 function MainContainer() {

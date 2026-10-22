@@ -6,7 +6,8 @@ import { Banner } from '@proton/atoms/Banner/Banner';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import { DropdownSizeUnit, EllipsisLoader } from '@proton/components/index';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tools';
 import { openDesktopSettings, useDesktopManifests } from '@proton/lumo-api-client/core/desktop-tools';
 

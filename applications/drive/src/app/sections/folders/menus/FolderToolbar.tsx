@@ -1,7 +1,8 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { Toolbar, useActiveBreakpoint } from '@proton/components';
+import Toolbar from '@proton/components/components/toolbar/Toolbar';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import { isMultiSelect, noSelection } from '../../../legacy/components/sections/ToolbarButtons/utils';

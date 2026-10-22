@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import type { ModalOwnProps } from '@proton/components';
-import { TextAreaTwo } from '@proton/components';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 
 import { Button, Input, Modal } from '../../atoms';
 

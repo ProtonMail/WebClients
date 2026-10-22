@@ -15,7 +15,6 @@ const config: SettingsAreaConfig = {
     ],
 };
 
-jest.mock('../..');
 const mockUseFlag = useFlag as unknown as jest.MockedFunction<any>;
 jest.mock('../../hooks/useAppTitle');
 jest.mock('react-router', () => ({

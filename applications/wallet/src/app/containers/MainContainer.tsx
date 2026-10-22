@@ -3,8 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 
 import { setPanicHook } from '@proton/andromeda';
 import { useConfig } from '@proton/app-context/useConfig';
-import { ContactEmailsProvider, SubscriptionModalProvider, useActiveBreakpoint } from '@proton/components';
+import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
+import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 
 import { PrivateWalletLayout } from '../components';
 import { BitcoinBlockchainContextProvider } from '../contexts/BitcoinBlockchainContext/BitcoinBlockchainContextProvider';

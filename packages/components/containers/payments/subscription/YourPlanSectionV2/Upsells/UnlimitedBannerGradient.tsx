@@ -44,8 +44,8 @@ import { PASS_PLUS_VAULTS, get2FAAuthenticator, getHideMyEmailAliases, getVaults
 import { PlanCardFeatureList } from '../../PlanCardFeatures';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
-import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers';
-import { defaultUpsellCycleB2C, getUpsell } from '../../helpers';
+import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers/dashboard-upsells';
+import { defaultUpsellCycleB2C, getUpsell } from '../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';

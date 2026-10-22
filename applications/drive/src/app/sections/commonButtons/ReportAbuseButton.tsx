@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ToolbarButton } from '@proton/components';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { IcFlag } from '@proton/icons/icons/IcFlag';
 import { useFlag } from '@proton/unleash/useFlag';
 

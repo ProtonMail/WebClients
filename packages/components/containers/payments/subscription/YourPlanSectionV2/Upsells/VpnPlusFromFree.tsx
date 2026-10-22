@@ -21,8 +21,8 @@ import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlo
 import type { PlanCardFeatureDefinition } from '../../../features/interface';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../constants';
-import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers';
-import { defaultUpsellCycleB2C, getUpsell } from '../../helpers';
+import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers/dashboard-upsells';
+import { defaultUpsellCycleB2C, getUpsell } from '../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';

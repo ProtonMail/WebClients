@@ -3,7 +3,7 @@ import React, { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import { getMessageBlocks } from '../../../../../messageHelpers';
 import type { Message } from '../../../../../types';

@@ -2,7 +2,8 @@ import type { CSSProperties, FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, Loader } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import Loader from '@proton/components/components/loader/Loader';
 
 type Props = {
     style: CSSProperties;

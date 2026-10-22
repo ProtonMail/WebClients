@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import type { ModalProps } from '@proton/components/index';
 import lumoCatFavorite from '@proton/styles/assets/img/lumo/lumo-cat-favorite.svg';
 
 import { CreateFreeAccountButton } from './CreateFreeAccountLink/CreateFreeAccountLink';

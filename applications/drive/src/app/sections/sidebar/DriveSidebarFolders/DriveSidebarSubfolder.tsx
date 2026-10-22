@@ -1,6 +1,10 @@
 import { useMemo, useState } from 'react';
 
-import { FileIcon, FileNameDisplay, Loader, SidebarListItem, SidebarListItemContent } from '@proton/components';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
+import Loader from '@proton/components/components/loader/Loader';
+import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
+import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
 import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
 import { splitNodeUid } from '@proton/drive/sdk';
 

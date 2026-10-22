@@ -3,14 +3,12 @@ import { useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import {
-    AuthenticatedBugModal,
-    Hamburger,
-    Header,
-    TopBanner,
-    useActiveBreakpoint,
-    useModalState,
-} from '@proton/components';
+import Header from '@proton/components/components/header/Header';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Hamburger from '@proton/components/components/sidebar/Hamburger';
+import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
+import TopBanner from '@proton/components/containers/topBanners/TopBanner';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 
 import { CoreButton } from '../../atoms';

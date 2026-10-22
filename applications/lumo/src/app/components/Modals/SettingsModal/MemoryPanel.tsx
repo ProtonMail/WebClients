@@ -6,7 +6,10 @@ import { c, msgid } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { InputFieldTwo, Prompt, Toggle, useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import TextAreaWithCounter from '@proton/components/components/v2/input/TextAreaWithCounter';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -701,10 +704,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                         </Button>
                                     )}
                                     {(canOptimize || generatedMemories.length > 0 || hasMemories) && (
-                                        <span
-                                            className="memory-panel-toolbar-divider shrink-0"
-                                            aria-hidden="true"
-                                        />
+                                        <span className="memory-panel-toolbar-divider shrink-0" aria-hidden="true" />
                                     )}
                                     <Tooltip title={c('collider_2025: Action').t`Add memory`}>
                                         <Button

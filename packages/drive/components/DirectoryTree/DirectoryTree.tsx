@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { FileIcon, Radio, useErrorHandler } from '@proton/components';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import Radio from '@proton/components/components/input/Radio';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { IcFile } from '@proton/icons/icons/IcFile';
 import { IcInbox } from '@proton/icons/icons/IcInbox';

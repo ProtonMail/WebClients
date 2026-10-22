@@ -1,4 +1,4 @@
-import { useConfirmActionModal } from '@proton/components';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import { useCopyItemsModal } from '@proton/drive/modals/copyItemsModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 

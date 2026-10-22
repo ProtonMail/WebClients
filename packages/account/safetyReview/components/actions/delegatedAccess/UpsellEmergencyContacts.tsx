@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
 import SubscriptionModalProvider, {
     useSubscriptionModal,
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';

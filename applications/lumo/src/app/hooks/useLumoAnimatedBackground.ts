@@ -1,12 +1,12 @@
 import { useCallback, useState } from 'react';
 
-import { useTheme } from '@proton/components';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
 
 import { resolveAnimatedBackgroundEnabled } from '../lib/animatedBackground/resolveAnimatedBackgroundEnabled';
 import {
-    DEFAULT_ANIMATED_BACKGROUND_BLOB_MODE,
     type AnimatedBackgroundBlobMode,
+    DEFAULT_ANIMATED_BACKGROUND_BLOB_MODE,
 } from '../lib/webgl/animatedBackgroundConfig';
 import { getLumoSettings, setLumoSettings } from '../providers';
 import { useIsGuest } from '../providers/IsGuestProvider';

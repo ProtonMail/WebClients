@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Progress, useActiveBreakpoint } from '@proton/components';
+import Progress from '@proton/components/components/progress/Progress';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { UploadStatus } from '@proton/drive/modules/upload';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import clsx from '@proton/utils/clsx';

@@ -1,4 +1,4 @@
-import { useActiveBreakpoint } from '@proton/components';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 
 export const useIsLumoSmallScreen = () => {
     const { viewportWidth } = useActiveBreakpoint();

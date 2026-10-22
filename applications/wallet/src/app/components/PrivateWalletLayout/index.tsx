@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { PrivateAppContainer, PrivateMainArea } from '@proton/components';
-import useToggle from '@proton/hooks/useToggle'
+import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
+import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
+import useToggle from '@proton/hooks/useToggle';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { LayoutViewLoader } from '../../atoms/LayoutViewLoader';

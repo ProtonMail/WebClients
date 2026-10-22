@@ -3,7 +3,9 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { AddressesAutocompleteTwo, AddressesInput, InputFieldTwo } from '@proton/components';
+import AddressesInput from '@proton/components/components/addressesInput/AddressesInput';
+import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import clsx from '@proton/utils/clsx';

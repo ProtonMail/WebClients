@@ -1,11 +1,11 @@
 import { useCallback, useRef } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
-import { useErrorHandler as useProtonErrorHandler } from '@proton/components';
+import useProtonErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { fetchUsageLimits } from '@proton/lumo-api-client/core/network';
 
-import { getSelectedModelTier, useOptionalModelTier } from '../../providers/ModelTierProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
+import { getSelectedModelTier, useOptionalModelTier } from '../../providers/ModelTierProvider';
 import { useLumoDispatch } from '../../redux/hooks';
 import { onComposerError } from '../../remote/nativeComposerBridgeHelpers';
 import {
@@ -79,10 +79,7 @@ export const useActionErrorHandler = () => {
                                 const exhaustedLimit = getExhaustedLimitForModel(limits, selectedModelTier);
 
                                 if (!hasLumoPlus && exhaustedLimit) {
-                                    markModelLimitExhausted(
-                                        exhaustedLimit.limitCategory,
-                                        exhaustedLimit.modelTier
-                                    );
+                                    markModelLimitExhausted(exhaustedLimit.limitCategory, exhaustedLimit.modelTier);
                                     dispatch(handleTierError(lumoUserType));
                                     return;
                                 }

@@ -1,4 +1,4 @@
-import type { useConfirmActionModal } from '@proton/components';
+import type { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 
 import { OpenBookmarkButton } from '../buttons/OpenBookmarkButton';
 import { RemoveBookmarkButton } from '../buttons/RemoveBookmarkButton';

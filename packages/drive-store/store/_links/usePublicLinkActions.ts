@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@protontech/crypto';
 
-import { usePreventLeave } from '@proton/components';
+import usePreventLeave from '@proton/components/hooks/usePreventLeave';
 import { queryPublicRenameLink } from '@proton/shared/lib/api/drive/share';
 import { generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';

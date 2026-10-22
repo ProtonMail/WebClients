@@ -10,14 +10,14 @@
  * and `export ... from` behave exactly like the built-in rule.
  *
  * What a client can pass to `createRestrictedImportsConfig` (details on the function, at the bottom):
- *   - `rollout`   ids of ROLLOUT restrictions to turn on, e.g. 'components-barrel'
+ *   - `rollout`   ids of ROLLOUT restrictions to turn on, e.g. 'account-barrel'
  *   - `paths`     extra bans on one exact module specifier, optionally only for some named exports
  *   - `patterns`  extra bans on every specifier matching a gitignore-style glob
  *   - `files`     limit the config to some files (default: all)
  *
  * @example client config
  * createRestrictedImportsConfig({
- *     rollout: ['account-barrel', 'components-barrel'],
+ *     rollout: ['account-barrel'],
  *     paths: [{ name: 'some-package', importNames: ['oldHelper'], message: 'Use newHelper instead.' }],
  *     patterns: [{ group: ['@proton/foo/*'], message: 'Only the entry point is public.' }],
  * })
