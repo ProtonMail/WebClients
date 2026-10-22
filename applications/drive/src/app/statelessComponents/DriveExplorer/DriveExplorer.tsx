@@ -89,7 +89,7 @@ interface DriveExplorerProps {
      * ```tsx
      * {
      *   name: (uid) => <div>{getItemName(uid)}</div>,
-     *   mainContent: (uid) => <FileIcon uid={uid} />
+     *   mainContent: (uid) => <ItemIcon uid={uid} />
      * }
      * ```
      */

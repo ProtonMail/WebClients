@@ -8,12 +8,12 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 import useLoading from '@proton/hooks/useLoading';
 import useToggle from '@proton/hooks/useToggle';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
@@ -248,11 +248,13 @@ export const SharingModalView = ({
             return <ModalContentLoader>{c('Info').t`Loading`}</ModalContentLoader>;
         }
 
+        const MediaTypeIcon = getFileIcon(mediaType ?? '');
+
         return (
             <ContactEmailsProvider>
                 <div className="flex items-center justify-space-between flex-nowrap border-bottom border-weak px-8 py-3 mb-5">
                     <div className="flex items-center flex-nowrap gap-2 m-0" data-testid="modal-two-header">
-                        <FileIcon mimeType={mediaType ?? ''} />
+                        <MediaTypeIcon className="shrink-0" />
                         <span className="modal-two-header-title h4 text-bold text-ellipsis">{c('Title')
                             .t`Share "${fileName}"`}</span>
                     </div>

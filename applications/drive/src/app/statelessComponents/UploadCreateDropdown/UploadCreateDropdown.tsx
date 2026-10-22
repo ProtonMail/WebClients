@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import MimeIcon from '@proton/components/components/icon/MimeIcon';
+import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc';
+import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet';
 import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
 import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
@@ -57,13 +58,13 @@ export function UploadCreateDropdown({
                 )}
                 {onCreateDocument && (
                     <DropdownMenuButton className="flex items-center gap-2" onClick={onCreateDocument}>
-                        <MimeIcon name="proton-doc" />
+                        <MimeProtonDoc />
                         {c('Action').t`New document`}
                     </DropdownMenuButton>
                 )}
                 {onCreateSpreadsheet && (
                     <DropdownMenuButton className="flex items-center gap-2" onClick={onCreateSpreadsheet}>
-                        <MimeIcon name="proton-sheet" />
+                        <MimeProtonSheet />
                         {c('Action').t`New spreadsheet`}
                     </DropdownMenuButton>
                 )}

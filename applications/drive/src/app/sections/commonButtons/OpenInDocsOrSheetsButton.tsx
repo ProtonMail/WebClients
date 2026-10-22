@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import MimeIcon from '@proton/components/components/icon/MimeIcon';
-import type { MimeName } from '@proton/components/components/icon/MimeIcon';
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import type { MimeIconComponent } from '@proton/file-icons/component';
+import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc';
+import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet';
 import { DOCS_APP_NAME, SHEETS_APP_NAME } from '@proton/shared/lib/constants';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
@@ -24,27 +25,27 @@ interface ToolbarProps extends BaseProps {
 
 type Props = ContextMenuProps | ToolbarProps;
 
-const getTitleAndIcon = ({ type, isNative }: OpenInDocsType): { title: string; iconName: MimeName } => {
+const getTitleAndIcon = ({ type, isNative }: OpenInDocsType): { title: string; Icon: MimeIconComponent } => {
     if (type === 'spreadsheet') {
         return {
             title: isNative ? c('Action').t`Open` : c('Action: Sheets').t`Open in ${SHEETS_APP_NAME}`,
-            iconName: 'proton-sheet',
+            Icon: MimeProtonSheet,
         };
     }
     return {
         title: isNative ? c('Action').t`Open` : c('Action: Docs').t`Open in ${DOCS_APP_NAME}`,
-        iconName: 'proton-doc',
+        Icon: MimeProtonDoc,
     };
 };
 
 export const OpenInDocsOrSheetsButton = ({ buttonType, onClick, close, type, isNative }: Props) => {
-    const { title, iconName } = getTitleAndIcon({ type, isNative });
+    const { title, Icon } = getTitleAndIcon({ type, isNative });
 
     if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
                 title={title}
-                icon={<MimeIcon name={iconName} alt={title} />}
+                icon={<Icon alt={title} />}
                 onClick={onClick}
                 data-testid={`toolbar-open-${type}`}
             />
@@ -55,7 +56,7 @@ export const OpenInDocsOrSheetsButton = ({ buttonType, onClick, close, type, isN
         return (
             <ContextMenuButton
                 name={title}
-                icon={<MimeIcon className="mr-2" name={iconName} />}
+                icon={<Icon className="mr-2" />}
                 testId={`context-menu-${type}`}
                 action={onClick}
                 close={close}

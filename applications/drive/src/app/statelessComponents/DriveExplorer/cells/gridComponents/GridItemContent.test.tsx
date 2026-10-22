@@ -1,9 +1,14 @@
 import React from 'react';
 
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { NodeType } from '@proton/drive/sdk';
+import type { MimeIconComponent } from '@proton/file-icons/component';
+import { MimeAlbum } from '@proton/file-icons/icons/MimeAlbum';
+import { MimeFolder } from '@proton/file-icons/icons/MimeFolder';
+import { MimePdf } from '@proton/file-icons/icons/MimePdf';
+import { MimeUnknown } from '@proton/file-icons/icons/MimeUnknown';
 
 import { GridItemContent } from './GridItemContent';
 
@@ -13,15 +18,15 @@ const defaultProps = {
     mediaType: 'application/pdf',
 };
 
-const getMimeIconHref = (container: HTMLElement) => {
-    const use = container.querySelector('use');
-    return use?.getAttribute('href') || use?.getAttributeNS('http://www.w3.org/1999/xlink', 'href') || '';
-};
+// File icons inline their markup, so the expected one is rendered at the same size and looked for in the cell.
+const getMimeIconMarkup = (Icon: MimeIconComponent) =>
+    render(<Icon size={12} />, { container: document.createElement('div') }).container.querySelector('svg')
+        ?.innerHTML ?? 'missing reference icon';
 
 describe('GridItemContent', () => {
     it('renders file icon without button by default', () => {
         const { container } = renderWithProviders(<GridItemContent {...defaultProps} />);
-        expect(getMimeIconHref(container)).toContain('pdf');
+        expect(container.innerHTML).toContain(getMimeIconMarkup(MimePdf));
         expect(container.querySelector('img')).not.toBeInTheDocument();
         expect(screen.queryByRole('button')).not.toBeInTheDocument();
     });
@@ -35,19 +40,19 @@ describe('GridItemContent', () => {
         const { container } = renderWithProviders(
             <GridItemContent {...defaultProps} type={NodeType.Folder} name="My Folder" />
         );
-        expect(getMimeIconHref(container)).toContain('folder');
+        expect(container.innerHTML).toContain(getMimeIconMarkup(MimeFolder));
     });
 
     it('renders an unknown icon when mediaType is absent', () => {
         const { container } = renderWithProviders(<GridItemContent {...defaultProps} mediaType={undefined} />);
-        expect(getMimeIconHref(container)).toContain('unknown');
+        expect(container.innerHTML).toContain(getMimeIconMarkup(MimeUnknown));
     });
 
     it('renders an album icon without a thumbnail for albums', () => {
         const { container } = renderWithProviders(
             <GridItemContent {...defaultProps} type={NodeType.Album} thumbnailUrl="blob:thumb" />
         );
-        expect(getMimeIconHref(container)).toContain('album');
+        expect(container.innerHTML).toContain(getMimeIconMarkup(MimeAlbum));
         expect(container.querySelector('img')).not.toBeInTheDocument();
     });
 

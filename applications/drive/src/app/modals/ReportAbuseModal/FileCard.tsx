@@ -1,7 +1,7 @@
 import React from 'react';
 
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import { NodeType } from '@proton/drive/sdk';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import clsx from '@proton/utils/clsx';
 
@@ -16,11 +16,13 @@ interface Props {
 }
 
 export const FileCard = ({ mediaType, type, className, name, size }: Props) => {
+    const NodeIcon = getFileIcon(type === NodeType.Folder ? 'Folder' : mediaType || 'unknown');
+
     return (
         <div className={clsx(['flex', 'flex-nowrap', 'rounded', 'border', 'p-4', 'items-center', className])}>
             <div className="flex flex-column flex-nowrap bg-grey mr-4 shrink-0">
-                {/* TODO: Update the FileIcon to support NodeType */}
-                <FileIcon size={7} mimeType={type === NodeType.Folder ? 'Folder' : mediaType || 'unknown'} alt={name} />
+                {/* TODO: Update getFileIcon to support NodeType */}
+                <NodeIcon size={7} alt={name} className="shrink-0" />
             </div>
             <div className="flex flex-column flex-nowrap">
                 <div className="text-bold flex w-full">
