@@ -5,15 +5,16 @@ import debounce from 'lodash/debounce'
 import clsx from 'clsx'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
-import { c } from 'ttag'
 import { $addNewColumnAtEndOfTable } from './TableUtils/addNewColumnToTable'
 import { $addNewRowAtEndOfTable } from './TableUtils/addNewRowToTable'
 import { isHTMLElement } from '../../Utils/guard'
+import { useDocsMessages } from '../../DocsDependenciesProvider'
 
 const OVERFLOWING_COLUMN_BUTTON_OFFSET = 11
 
 export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
   const [editor] = useLexicalComposerContext()
+  const messages = useDocsMessages().table
 
   const rowAddButtonRef = useRef<HTMLButtonElement>(null)
   const [isHoveringOnLastRow, setIsHoveringOnLastRow] = useState(false)
@@ -187,7 +188,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
         }}
       >
         <Icon data={Icons.plus} size={3.5} />
-        <div className="sr-only">{c('Action').t`Add new table row`}</div>
+        <div className="sr-only">{messages.addRow}</div>
       </button>
       <button
         ref={columnAddButtonRef}
@@ -214,7 +215,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
         }}
       >
         <Icon data={Icons.plus} size={3.5} />
-        <div className="sr-only">{c('Action').t`Add new table column`}</div>
+        <div className="sr-only">{messages.addColumn}</div>
       </button>
     </>
   )

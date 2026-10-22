@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { c } from 'ttag'
 
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $wrapNodeInElement, mergeRegister } from '@lexical/utils'
@@ -30,7 +29,7 @@ import { INSERT_IMAGE_NODE_COMMAND, SET_IMAGE_SIZE_COMMAND } from './ImageComman
 export { INSERT_IMAGE_NODE_COMMAND, SET_IMAGE_SIZE_COMMAND } from './ImageCommands'
 export type { SetImageSizePayload } from './ImageCommands'
 
-import { useDocsDependencies } from '../../DocsDependenciesProvider'
+import { useDocsDependencies, useDocsMessages } from '../../DocsDependenciesProvider'
 import { $canDropImage, $getImageNodeInSelection, getDragImageData, getDragSelection } from './ImageUtils'
 import { INSERT_FILE_COMMAND } from '../../Commands/Events'
 import { hasBlockedImageInClipboard } from './hasBlockedImageInClipboard'
@@ -50,6 +49,7 @@ export default function ImagesPlugin({
   createWarningNotification: (message: string) => void
 }): JSX.Element | null {
   const { reportError } = useDocsDependencies()
+  const { remoteImagePasteNotSupported } = useDocsMessages().image
   const [editor] = useLexicalComposerContext()
 
   useEffect(() => {
@@ -67,10 +67,7 @@ export default function ImagesPlugin({
             'clipboardData' in event &&
             hasBlockedImageInClipboard(event.clipboardData, editor._config.namespace)
           ) {
-            createWarningNotification(
-              c('Warning')
-                .t`Pasting remote images is not supported. Download the image and use "Insert image" instead.`,
-            )
+            createWarningNotification(remoteImagePasteNotSupported)
           }
           // Let normal paste handling keep the supported content, including in suggestion mode.
           return false
@@ -275,7 +272,7 @@ export default function ImagesPlugin({
         COMMAND_PRIORITY_LOW,
       ),
     )
-  }, [editor, createWarningNotification, reportError])
+  }, [editor, createWarningNotification, reportError, remoteImagePasteNotSupported])
 
   return null
 }
