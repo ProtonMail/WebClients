@@ -30,6 +30,7 @@ export const defaultFlags: Flags = {
     isSsoForPbsEnabled: false,
     isRetentionPoliciesEnabled: false,
     isCategoryViewEnabled: false,
+    isLumoApiEnabled: false,
 };
 
 const buildEntitlementsForPlan = (plan: CataloguedPlan | undefined, subscriptionPlan: CataloguedPlan | undefined) => {

@@ -23,6 +23,7 @@ import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
     APPS,
     BRAND_NAME,
+    LUMO_APP_NAME,
     ORGANIZATION_STATE,
     ORGANIZATION_TWOFA_SETTING,
     PROTON_SENTINEL_NAME,
@@ -36,6 +37,7 @@ import {
 } from '@proton/shared/lib/organization/helper';
 
 import type { OrganizationRouterParams } from '../../content/router-params';
+import type { FeatureAccessVisibility } from './components/FeatureAccessSection';
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
 const scribeValidApplications = new Set<string>([APPS.PROTONMAIL]);
@@ -50,7 +52,7 @@ export const getOrganizationAppRoutes = ({
     isGroupOwner,
     flags,
     permissions,
-}: OrganizationRouterParams): SidebarConfig => {
+}: OrganizationRouterParams): SidebarConfig & { featureAccess: FeatureAccessVisibility } => {
     const {
         isScribeEnabled = false,
         isZoomIntegrationEnabled = false,
@@ -58,6 +60,7 @@ export const getOrganizationAppRoutes = ({
         isAlwaysOnVpnEnabled = false,
         isSsoForPbsEnabled = false,
         isRetentionPoliciesEnabled = false,
+        isLumoApiEnabled = false,
     } = flags;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
@@ -131,6 +134,8 @@ export const getOrganizationAppRoutes = ({
         (hasActiveOrganizationKey || (isPartOfFamily && hasOrganization)) &&
         user.hasPaidMail &&
         videoConferenceValidApplications.has(app);
+
+    const canShowLumoApiSection = isLumoApiEnabled && hasMemberCapablePlan;
 
     const canShowAccessControl = permissions['account.access_control.read'] && (hasSubUsers || isOrgConfigured);
 
@@ -516,11 +521,12 @@ export const getOrganizationAppRoutes = ({
                 {
                     id: 'feature-access',
                     text: c('Title').t`Feature access`,
-                    available: canShowVideoConferenceSection || canShowScribeSection,
+                    available: canShowVideoConferenceSection || canShowScribeSection || canShowLumoApiSection,
                     keywords: [
                         c('Title').t`${BRAND_NAME} Scribe writing assistant`,
                         c('Title').t`Video conferencing with Zoom`,
                         c('Title').t`Email categories`,
+                        c('Title').t`${LUMO_APP_NAME} API`,
                     ],
                 },
             ],
@@ -534,5 +540,10 @@ export const getOrganizationAppRoutes = ({
         available: showOrganizationSection,
         header: sectionTitle,
         routes,
+        featureAccess: {
+            canShowScribe: canShowScribeSection,
+            canShowVideoConference: canShowVideoConferenceSection,
+            canShowLumoApi: canShowLumoApiSection,
+        },
     };
 };
