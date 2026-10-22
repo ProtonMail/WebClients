@@ -1,26 +1,28 @@
 import { renderHook } from '@testing-library/react';
 
+import { PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { EntitlementScope, EntitlementType } from '@proton/payments/core/entitlements/interface';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 
+import { useAllSubscriptions } from '../allSubscriptions/hooks';
 import { useAllEntitlements } from '../entitlements/hooks';
-import { useGetSubscription, useSubscription } from '../subscription/hooks';
 import { useEntitlementChecksForOrgAndUser } from './hooks';
 
 const mockUseEntitlementCatalog = jest.fn();
 const mockUseAllEntitlements = jest.mocked(useAllEntitlements);
-const mockUseSubscription = jest.mocked(useSubscription);
-const mockUseGetSubscription = jest.mocked(useGetSubscription);
+const mockUseAllSubscriptions = jest.mocked(useAllSubscriptions);
 
 jest.mock('@proton/account/entitlements/hooks', () => ({
     useAllEntitlements: jest.fn(),
     useGetAllEntitlements: jest.fn(),
 }));
 
-jest.mock('@proton/account/subscription/hooks', () => ({
-    useSubscription: jest.fn(),
-    useGetSubscription: jest.fn(),
+jest.mock('@proton/account/allSubscriptions/hooks', () => ({
+    useAllSubscriptions: jest.fn(),
+    useGetAllSubscriptions: jest.fn(),
 }));
 
 jest.mock('@proton/redux-utilities/hooks', () => ({
@@ -32,8 +34,7 @@ jest.mock('@proton/redux-utilities/hooks', () => ({
 
 beforeEach(() => {
     mockUseEntitlementCatalog.mockReturnValue([undefined as any, false]);
-    mockUseSubscription.mockReturnValue([undefined as any, false]);
-    mockUseGetSubscription.mockReturnValue(() => Promise.resolve(undefined as any));
+    mockUseAllSubscriptions.mockReturnValue([undefined, false]);
 });
 
 describe('useEntitlements', () => {
@@ -196,5 +197,32 @@ describe('useEntitlements', () => {
 
         expect(result.current[0].quantityForMember(EntitlementName.Business)).toBe(1);
         expect(result.current[0].quantityTotal(EntitlementName.Business)).toBe(1);
+    });
+
+    it('returns loading=true while the subscriptions are loading', () => {
+        mockUseAllEntitlements.mockReturnValue([makeEntitlements(), false]);
+        mockUseAllSubscriptions.mockReturnValue([undefined, true]);
+
+        const { result } = renderHook(() => useEntitlementChecksForOrgAndUser());
+
+        expect(result.current[1]).toBe(true);
+    });
+
+    it('matches subscription checks against every subscription', () => {
+        const catalog = buildEntitlementCatalog({
+            [PLANS.MAIL]: [EntitlementName.FlagsInbox],
+            [PLANS.VPN_BUSINESS]: [EntitlementName.Business, EntitlementName.FlagsVpn],
+        });
+        mockUseEntitlementCatalog.mockReturnValue([catalog, false]);
+        mockUseAllEntitlements.mockReturnValue([makeEntitlements(), false]);
+        mockUseAllSubscriptions.mockReturnValue([
+            [buildSubscription(PLANS.MAIL), buildSubscription(PLANS.VPN_BUSINESS)],
+            false,
+        ]);
+
+        const { result } = renderHook(() => useEntitlementChecksForOrgAndUser());
+
+        expect(result.current[0].isVpnB2B).toBe(true);
+        expect(result.current[0].isPassB2B).toBe(false);
     });
 });
