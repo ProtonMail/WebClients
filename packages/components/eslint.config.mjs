@@ -30,7 +30,6 @@ const vitestGlobals = {
 export default defineConfig([
     defaultConfig,
     createRestrictedImportsConfig({
-        rollout: ['account-barrel'],
         // The package imports its own modules relatively, which the path entries of the Icon restriction cannot match.
         // `./Icon` covers siblings inside `components/icon` itself, the form `custom-rules/no-package-self-import`
         // steers you towards.

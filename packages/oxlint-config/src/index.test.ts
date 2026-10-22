@@ -38,7 +38,7 @@ describe('createOxlintConfig', () => {
         const workspaceOverride = { files: ['testing/**'], rules: { 'no-console': 'off' as const } };
 
         const config = createOxlintConfig({
-            restrictedImports: { rollout: ['account-barrel'] },
+            restrictedImports: { paths: [{ name: 'some-package' }] },
             overrides: [workspaceOverride],
         });
 
@@ -46,7 +46,10 @@ describe('createOxlintConfig', () => {
             {
                 files: allGlobs,
                 rules: {
-                    'proton/restricted-imports': ['error', { rollout: ['account-barrel'], paths: [], patterns: [] }],
+                    'proton/restricted-imports': [
+                        'error',
+                        { rollout: [], paths: [{ name: 'some-package' }], patterns: [] },
+                    ],
                 },
             },
             workspaceOverride,

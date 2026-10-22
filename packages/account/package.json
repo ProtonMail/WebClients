@@ -4,7 +4,6 @@
     "license": "GPL-3.0",
     "sideEffects": false,
     "exports": {
-        ".": "./index.ts",
         "./*": "./*.ts",
         "./*.svg": "./*.svg",
         "./testing/buildUser": "./testing/buildUser.ts",
