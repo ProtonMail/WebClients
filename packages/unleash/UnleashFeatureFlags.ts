@@ -49,6 +49,7 @@ enum AccountVPNFeatureFlag {
     VpnB2bUserActivity = 'VpnB2bUserActivity',
     VpnOrganizationLogRelayGatewayCreationMultiIp = 'VpnOrganizationLogRelayGatewayCreationMultiIp',
     VpnOrganizationLogRelayGatewayUpdateMultiIp = 'VpnOrganizationLogRelayGatewayUpdateMultiIp',
+    B2BGatewayChartViewEnabled = 'B2BGatewayChartViewEnabled',
 }
 
 type AccountProjectFeatureFlag =
