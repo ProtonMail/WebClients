@@ -93,6 +93,7 @@ export interface OrganizationSettings {
     MailCategoryViewEnabled: boolean;
     SSOBackupPasswordDisabled: boolean;
     PasswordReminderEnforced: boolean;
+    LumoApiEnabled: boolean;
     AllowedProducts: SerializedOrganizationSettingsAllowedProduct[];
     // Settings for admin
     InvoiceEmail: string | null;

@@ -50,6 +50,7 @@ export const updateOrganizationSettings = (data: {
     MailCategoryViewEnabled?: boolean;
     SSOBackupPasswordDisabled?: boolean;
     PasswordReminderEnforced?: boolean;
+    LumoApiEnabled?: boolean;
     AllowedProducts?: OrganizationSettings['AllowedProducts'];
     PasswordPolicies?: OrganizationSettings['PasswordPolicies'];
     InvoiceEmail?: OrganizationSettings['InvoiceEmail'];
