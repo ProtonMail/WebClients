@@ -8,7 +8,7 @@ import debounce from 'lodash/debounce'
 import { DropdownPopover } from '../../Components/Dropdown'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
-import { c } from 'ttag'
+import { useDocsMessages } from '../../DocsDependenciesProvider'
 import type { PositionedItem } from './Positioner'
 import { Positioner } from './Positioner'
 import { CommentInputBox } from './CommentInputBox'
@@ -24,14 +24,15 @@ const COMMENTS_WIDTH = 'max(20.5vw, 300px)'
 export type ThreadPopoverButtonProps = { thread: DocsCommentThread }
 
 export function ThreadPopoverButton({ thread }: ThreadPopoverButtonProps) {
+  const messages = useDocsMessages().comments
   return (
     <Ariakit.PopoverProvider placement="left-start">
       <Ariakit.PopoverDisclosure className="rounded border border-[--border-weak] bg-[--background-norm] p-2">
-        <div className="sr-only">{c('Action').t`Show thread`}</div>
+        <div className="sr-only">{messages.showThread}</div>
         <Icon data={Icons.speechBubbleDots} viewBox="0 0 33 33" className="min-h-4 min-w-4" />
       </Ariakit.PopoverDisclosure>
       <DropdownPopover
-        aria-label={c('Label').t`Comments`}
+        aria-label={messages.threadPopoverLabel}
         style={{ width: COMMENTS_WIDTH }}
         render={<Ariakit.Popover portal unmountOnHide gutter={10} flip="left-end left" />}
       >
