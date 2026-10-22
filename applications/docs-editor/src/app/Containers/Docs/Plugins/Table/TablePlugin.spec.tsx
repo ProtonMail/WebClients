@@ -36,7 +36,9 @@ import { TablePlugin } from './TablePlugin'
 import { mergedCellsHTML, TablesWithUnalignedRowsAndColumns } from './__mocks__/TestTables'
 import { $createHeadingNode, $isHeadingNode } from '@lexical/rich-text'
 import DocumentEditorTheme from '../../theme/Theme'
+import { DocsDependenciesProvider, type DocsDependencies } from '../../DocsDependenciesProvider'
 import { DocsPresentationProvider } from '../../DocsPresentationProvider'
+import { defaultDocsMessages } from '../../messages/defaultDocsMessages'
 import { EditorUserMode } from '../../contract/EditorUserMode'
 
 describe('TablePlugin', () => {
@@ -58,24 +60,26 @@ describe('TablePlugin', () => {
         return null
       }
       return (
-        <DocsPresentationProvider userMode={EditorUserMode.Edit}>
-          <LexicalComposer
-            initialConfig={{
-              namespace: 'test',
-              nodes: AllNodes,
-              onError,
-              theme: DocumentEditorTheme,
-            }}
-          >
-            <RichTextPlugin
-              contentEditable={<ProtonContentEditable isSuggestionMode={true} />}
-              placeholder={null}
-              ErrorBoundary={LexicalErrorBoundary}
-            />
-            <TestPlugin />
-            <TablePlugin />
-          </LexicalComposer>
-        </DocsPresentationProvider>
+        <DocsDependenciesProvider dependencies={{ defaultMessages: defaultDocsMessages } as DocsDependencies}>
+          <DocsPresentationProvider userMode={EditorUserMode.Edit}>
+            <LexicalComposer
+              initialConfig={{
+                namespace: 'test',
+                nodes: AllNodes,
+                onError,
+                theme: DocumentEditorTheme,
+              }}
+            >
+              <RichTextPlugin
+                contentEditable={<ProtonContentEditable isSuggestionMode={true} />}
+                placeholder={null}
+                ErrorBoundary={LexicalErrorBoundary}
+              />
+              <TestPlugin />
+              <TablePlugin />
+            </LexicalComposer>
+          </DocsPresentationProvider>
+        </DocsDependenciesProvider>
       )
     }
 

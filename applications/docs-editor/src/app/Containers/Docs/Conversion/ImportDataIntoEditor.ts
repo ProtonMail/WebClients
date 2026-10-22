@@ -6,9 +6,9 @@ import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 import type { LexicalEditor, LexicalNode } from 'lexical'
 import { $createParagraphNode, $getRoot, $insertNodes } from 'lexical'
 import { odtToHtml } from 'odf-kit/odt/to-html'
-import { c } from 'ttag'
 import { MarkdownTransformers } from '../Utils/MarkdownTransformers'
 import type { DocsDependencies } from '../DocsDependenciesProvider'
+import type { DocsMessages } from '../messages/DocsMessages'
 import { $importNodesFromDocx } from './Docx/DocxToLexical/ImportNodesFromDocx'
 
 function isValidSuperString(editor: LexicalEditor, superString: string): boolean {
@@ -25,6 +25,7 @@ export async function $importDataIntoEditor(
   data: Uint8Array<ArrayBuffer>,
   dataFormat: ConvertibleDataType,
   reportError: DocsDependencies['reportError'],
+  getMessages: () => DocsMessages['editorLoad'],
   options?: {
     html?: {
       addLineBreaks?: boolean
@@ -48,7 +49,7 @@ export async function $importDataIntoEditor(
     const result = await new Promise<TranslatedResult<void>>((resolve) => {
       editor.update(
         () => {
-          void $importNodesFromDocx(editor, data).then(resolve)
+          void $importNodesFromDocx(editor, data, getMessages).then(resolve)
         },
         {
           discrete: true,
@@ -56,9 +57,7 @@ export async function $importDataIntoEditor(
       )
     }).catch((error) => {
       reportError(error)
-      return TranslatedResult.failWithTranslatedError<void>(
-        c('Error').t`Failed to import Word document due to unknown error.`,
-      )
+      return TranslatedResult.failWithTranslatedError<void>(getMessages().importWordFailed)
     })
 
     return result
@@ -69,9 +68,7 @@ export async function $importDataIntoEditor(
       return importHtmlIntoEditor(editor, odtToHtml(data, { fragment: true }), options?.html, normalizeOdtImages)
     } catch (error) {
       reportError(error)
-      return TranslatedResult.failWithTranslatedError<void>(
-        c('Error').t`Failed to import OpenDocument file due to unknown error.`,
-      )
+      return TranslatedResult.failWithTranslatedError<void>(getMessages().importOdtFailed)
     }
   }
 
@@ -86,7 +83,7 @@ export async function $importDataIntoEditor(
       return importHtmlIntoEditor(editor, otherFormatString, options?.html)
     } catch (error) {
       reportError(error)
-      return TranslatedResult.failWithTranslatedError<void>(c('Error').t`Failed to import HTML due to unknown error.`)
+      return TranslatedResult.failWithTranslatedError<void>(getMessages().importHtmlFailed)
     }
   } else {
     try {
@@ -100,9 +97,7 @@ export async function $importDataIntoEditor(
       )
     } catch (error) {
       reportError(error)
-      return TranslatedResult.failWithTranslatedError<void>(
-        c('Error').t`Failed to import Markdown due to unknown error.`,
-      )
+      return TranslatedResult.failWithTranslatedError<void>(getMessages().importMarkdownFailed)
     }
 
     return TranslatedResult.ok()

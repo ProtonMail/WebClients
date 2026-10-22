@@ -14,8 +14,8 @@ import type { EditorState } from 'lexical'
 import { $getSelection, $isRangeSelection, COMMAND_PRIORITY_EDITOR, SELECTION_CHANGE_COMMAND } from 'lexical'
 import debounce from 'lodash/debounce'
 import { useEffect, useRef, useState } from 'react'
-import { c } from 'ttag'
 import { useDocsUserMode } from '../../DocsPresentationProvider'
+import { useDocsMessages } from '../../DocsDependenciesProvider'
 import { EditorUserMode } from '../../contract/EditorUserMode'
 import { getNodeLatestSafe } from '../../Utils/getNodeLatestSafe'
 import { DELETE_TABLE_COMMAND } from './Commands'
@@ -47,6 +47,7 @@ export function TableMenu() {
   const [editor] = useLexicalComposerContext()
   const isEditable = useLexicalEditable()
   const menuRef = useRef<HTMLDivElement>(null)
+  const messages = useDocsMessages().table
 
   const userMode = useDocsUserMode()
   const isSuggestionMode = userMode === EditorUserMode.Suggest
@@ -230,7 +231,7 @@ export function TableMenu() {
   return (
     <Ariakit.Toolbar
       ref={menuRef}
-      aria-label={c('Label').t`Table`}
+      aria-label={messages.menuLabel}
       className="absolute left-0 top-0 inline-flex items-stretch rounded-[--border-radius-md] bg-[--background-norm] p-[calc(3em/14)] shadow-[var(--shadow-norm)] [border:1px_solid_var(--interaction-weak-major-1)]"
       style={{
         visibility: !tableNode ? 'hidden' : 'visible',
@@ -246,7 +247,7 @@ export function TableMenu() {
               <Button
                 icon
                 className={toolbarIconItemClassName}
-                aria-label={c('Action').t`Fit table to page width`}
+                aria-label={messages.fitToPageWidth}
                 onClick={fitTableToPageWidth}
               />
             }
@@ -257,8 +258,7 @@ export function TableMenu() {
           <SimpleDropdown
             render={<Ariakit.ToolbarItem />}
             className={clsx(toolbarItemClassName, 'px-[calc(8em/14)] py-[calc(3em/14)] text-sm')}
-            // translator: Table header options
-            content={c('Action').t`Options`}
+            content={messages.headerOptions}
           >
             <DropdownMenu>
               <DropdownMenuCheckboxButton
@@ -268,7 +268,7 @@ export function TableMenu() {
                 onClick={() => toggleTableHeader($toggleTableHeaderRow)}
               >
                 <Icon data={Icons.palette} />
-                <span className="mr-1">{c('Action').t`Header row`}</span>
+                <span className="mr-1">{messages.headerRow}</span>
               </DropdownMenuCheckboxButton>
               <DropdownMenuCheckboxButton
                 name="header-column"
@@ -277,7 +277,7 @@ export function TableMenu() {
                 onClick={() => toggleTableHeader($toggleTableHeaderColumn)}
               >
                 <Icon data={Icons.palette} />
-                <span className="mr-1">{c('Action').t`Header column`}</span>
+                <span className="mr-1">{messages.headerColumn}</span>
               </DropdownMenuCheckboxButton>
             </DropdownMenu>
           </SimpleDropdown>
@@ -288,7 +288,7 @@ export function TableMenu() {
         render={<Ariakit.ToolbarItem />}
         icon
         className={toolbarIconItemClassName}
-        aria-label={c('Action').t`Table options`}
+        aria-label={messages.tableOptions}
         content={<Icon data={Icons.threeDotsHorizontal} />}
         hasCaret={false}
       >
@@ -296,12 +296,12 @@ export function TableMenu() {
           {!isSuggestionMode && (
             <DropdownMenuButton className="flex items-center gap-2 text-sm" onClick={duplicateTable}>
               <Icon data={Icons.squares} />
-              {c('Action').t`Duplicate`}
+              {messages.duplicate}
             </DropdownMenuButton>
           )}
           <DropdownMenuButton className="flex items-center gap-2 text-sm" onClick={deleteTable}>
             <Icon data={Icons.trash} />
-            {c('Action').t`Delete`}
+            {messages.deleteTable}
           </DropdownMenuButton>
         </DropdownMenu>
       </SimpleDropdown>
