@@ -1,4 +1,4 @@
-import { useWelcomeFlags } from '@proton/account';
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import StartupModals from '@proton/components/components/startupModals/StartupModals';
 import {
