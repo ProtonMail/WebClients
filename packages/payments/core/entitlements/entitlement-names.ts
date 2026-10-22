@@ -114,6 +114,8 @@ export enum EntitlementName {
     PassFolders = 'pass-folders',
     /** Indicates whether the plan supports private members. */
     PrivateMembers = 'private-members',
+    /** Add-on that gives a separate product, such as Lumo, Scribe or Meet */
+    ProductAddon = 'product-addon',
     /** Allows users to collaborate with anyone on documents. */
     PublicCollaboration = 'public-collaboration',
     /** Plans available for the referrer in the referral program. */
