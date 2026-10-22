@@ -7,6 +7,7 @@
     },
     "main": "index.js",
     "scripts": {
+        "lint": "oxlint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage"
     },
@@ -14,6 +15,8 @@
         "@proton/jest-swc-preset": "workspace:^",
         "@types/jest": "catalog:",
         "eslint": "^10.12.0",
-        "jest": "^30.5.2"
+        "jest": "^30.5.2",
+        "oxlint": "1.87.0",
+        "oxlint-tsgolint": "7.0.2004"
     }
 }

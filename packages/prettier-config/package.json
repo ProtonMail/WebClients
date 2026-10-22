@@ -2,9 +2,13 @@
     "name": "@proton/prettier-config-proton",
     "main": "config.mjs",
     "types": "config.d.ts",
+    "scripts": {
+        "lint": "oxlint --quiet"
+    },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
-        "eslint": "^10.12.0",
+        "@proton/oxlint-config": "workspace:^",
+        "oxlint": "1.87.0",
+        "oxlint-tsgolint": "7.0.2004",
         "prettier": "^3.9.10"
     }
 }
