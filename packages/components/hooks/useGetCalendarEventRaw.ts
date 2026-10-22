@@ -1,9 +1,12 @@
 import { useCallback } from 'react';
 
+import { VERIFICATION_STATUS } from '@protontech/crypto';
+
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
+import { legacySignatureFallback } from '@proton/calendar/telemetry/events';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAuthorPublicKeysMap, withNormalizedAuthors } from '@proton/shared/lib/calendar/author';
 import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
@@ -12,8 +15,12 @@ import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { tracker } from '@proton/telemetry-tracker/tracker';
 
 import useGetVerificationPreferences from './useGetVerificationPreferences';
+
+// One report per event is enough, the same event is read many times (grid, popovers, notifications)
+const eventIDsReportedForLegacyVerification = new Set<string>();
 
 const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetCalendarEventRaw => {
     const getCalendarKeys = useGetCalendarKeys();
@@ -61,6 +68,19 @@ const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetC
                 return result;
             };
 
+            const onLegacyVerification = (legacyVerificationStatus: VERIFICATION_STATUS) => {
+                if (eventIDsReportedForLegacyVerification.has(ID)) {
+                    return;
+                }
+                eventIDsReportedForLegacyVerification.add(ID);
+                tracker.emit(legacySignatureFallback, {
+                    dimensions: {
+                        legacy_verification:
+                            legacyVerificationStatus === VERIFICATION_STATUS.SIGNED_AND_VALID ? 'valid' : 'invalid',
+                    },
+                });
+            };
+
             return readCalendarEvent({
                 event: {
                     SharedEvents: withNormalizedAuthors(SharedEvents),
@@ -81,6 +101,7 @@ const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetC
                 addresses,
                 encryptingAddressID,
                 getAttendeeVerificationPreferences,
+                onLegacyVerification,
             });
         },
         [getAddresses, getAddressKeys, getCalendarKeys, contactEmailsMap]

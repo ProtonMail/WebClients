@@ -24,6 +24,7 @@ import {
     getAggregatedEventVerificationStatus,
     getDecryptedSessionKey,
 } from './crypto/decrypt';
+import type { OnLegacyVerification } from './crypto/decrypt';
 import { unwrap } from './helper';
 import { getAttendeePartstat, getIsEventComponent } from './vcalHelper';
 import { parseWithFoldingRecovery } from './vcalRecovery';
@@ -235,6 +236,7 @@ interface ReadCalendarEventArguments {
     addresses: Address[];
     encryptingAddressID?: string;
     getAttendeeVerificationPreferences: (attendeeEmail: string) => Promise<VerificationPreferences>;
+    onLegacyVerification?: OnLegacyVerification;
 }
 
 export const readCalendarEvent = async ({
@@ -257,11 +259,24 @@ export const readCalendarEvent = async ({
     calendarSettings,
     encryptingAddressID,
     getAttendeeVerificationPreferences,
+    onLegacyVerification,
 }: ReadCalendarEventArguments) => {
     const decryptedEventsResults = await Promise.all([
-        Promise.all(SharedEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey))),
-        Promise.all(CalendarEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, calendarSessionKey))),
-        Promise.all(AttendeesEvents.map((e) => decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey))),
+        Promise.all(
+            SharedEvents.map((e) =>
+                decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey, onLegacyVerification)
+            )
+        ),
+        Promise.all(
+            CalendarEvents.map((e) =>
+                decryptAndVerifyCalendarEvent(e, publicKeysMap, calendarSessionKey, onLegacyVerification)
+            )
+        ),
+        Promise.all(
+            AttendeesEvents.map((e) =>
+                decryptAndVerifyCalendarEvent(e, publicKeysMap, sharedSessionKey, onLegacyVerification)
+            )
+        ),
     ]);
     const [decryptedSharedEvents, decryptedCalendarEvents, decryptedAttendeesEvents] = decryptedEventsResults.map(
         (decryptedEvents) => decryptedEvents.map(({ data }) => data)
