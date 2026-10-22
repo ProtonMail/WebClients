@@ -1,4 +1,4 @@
-import { getContextLengthExceededUpstreamMessage, isContextLengthExceededApiError } from './contextLengthError';
+import { getContextLengthExceededUpstreamMessage, isContextLengthExceededApiError } from './context-length';
 
 describe('isContextLengthExceededApiError', () => {
     it('detects verbatim vLLM pre-stream bodies', () => {

@@ -40,7 +40,7 @@ function extractTerminalCodeFromObject(obj: unknown): GenerationTerminalCode | n
  * an SSE stream. Matches the OpenAI-style body shape:
  * `{ "error": { "code": "timeout"|"rejected"|"error", "type": "server_error", ... } }`
  *
- * `context_length_exceeded` is handled separately — see `contextLengthError.ts`.
+ * `context_length_exceeded` is handled separately: see `context-length.ts`.
  */
 export function getTerminalTypeFromApiError(error: unknown): GenerationTerminalCode | null {
     if (!error || typeof error !== 'object') {

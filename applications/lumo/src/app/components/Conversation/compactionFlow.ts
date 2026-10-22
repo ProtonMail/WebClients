@@ -1,4 +1,5 @@
 import { composeClientToolExecutors } from '@proton/lumo-api-client/core/client-tools';
+import { isContextLengthExceededError } from '@proton/lumo-api-client/core/context-length';
 import { createDesktopClientToolExecutor, isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 import type { AssistantCallOptions, ClientToolExecutor, LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
@@ -17,7 +18,6 @@ import {
     pushMessageRequest,
 } from '../../redux/slices/core/messages';
 import type { LumoDispatch } from '../../redux/store';
-import { isContextLengthExceededError } from '../../services/errors/contextLengthError';
 import { isAbortError, throwIfAborted } from '../../services/generation/abortGeneration';
 import {
     type Attachment,
