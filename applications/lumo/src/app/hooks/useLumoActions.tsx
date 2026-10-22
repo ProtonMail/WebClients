@@ -20,6 +20,7 @@ import { addContextToMessages, fillAttachmentData } from '../llm/attachments';
 import { addToolCallBlock, addToolResultBlock } from '../messageHelpers';
 import { buildLinearChain } from '../messageTree';
 import { useGhostChat } from '../providers/GhostChatProvider';
+import { useIsGuest } from '../providers/IsGuestProvider';
 import { useModelTier } from '../providers/ModelTierProvider';
 import { useLumoDispatch, useLumoSelector } from '../redux/hooks';
 import {
@@ -146,6 +147,7 @@ export const useLumoActions = ({
 
     // Custom hooks
     const { isGhostChatMode: isGhostMode } = useGhostChat();
+    const isGuest = useIsGuest();
     const { hasLumoPlus } = useLumoPlan();
     const { isThinkingEnabled, modelTier } = useModelTier();
     const { ensureConversationAndSpace } = useConversationState({
@@ -325,6 +327,7 @@ export const useLumoActions = ({
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
                     hasLumoPlus,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
+                    isGuestUser: isGuest,
                 },
             })
         );
@@ -418,6 +421,7 @@ export const useLumoActions = ({
                     personalization,
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
+                    isGuestUser: isGuest,
                 },
                 retryData: {
                     lastUserMessage,
@@ -486,6 +490,7 @@ export const useLumoActions = ({
                     personalization,
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
+                    isGuestUser: isGuest,
                 },
             })
         );
@@ -586,6 +591,7 @@ export const useLumoActions = ({
                     personalization,
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
+                    isGuestUser: isGuest,
                 },
                 regenerateData: {
                     assistantMessageId,

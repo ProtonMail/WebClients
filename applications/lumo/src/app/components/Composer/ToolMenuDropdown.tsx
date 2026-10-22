@@ -186,7 +186,10 @@ export const ToolMenuDropdown = ({
                     {isArtifactsViewFlagEnabled && (
                         /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
                         <div
-                            className="flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4"
+                            className={clsx(
+                                'flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4',
+                                isGuest && 'tool-menu-item--sign-in-required'
+                            )}
                             onClick={(e) => e.stopPropagation()}
                         >
                             <div className="flex items-center gap-3">
@@ -196,13 +199,17 @@ export const ToolMenuDropdown = ({
                                         {c('collider_2025: Action').t`Creations`}
                                         {showArtifactNewLabel ? <NewLabel /> : null}
                                     </span>
-                                    <span className="text-xs color-weak">{c('collider_2025: Info')
-                                        .t`For this chat`}</span>
+                                    <span className="text-xs color-weak">
+                                        {isGuest
+                                            ? c('collider_2025:Placeholder').t`Sign in required`
+                                            : c('collider_2025: Info').t`For this chat`}
+                                    </span>
                                 </div>
                             </div>
                             <Toggle
                                 id="artifact-creation-toggle"
-                                checked={isArtifactCreationEnabled}
+                                checked={isGuest ? false : isArtifactCreationEnabled}
+                                disabled={isGuest}
                                 onChange={handleArtifactCreationToggleChange}
                             />
                         </div>
