@@ -1,6 +1,6 @@
 import { type ReactNode, type RefObject, useRef } from 'react';
 
-import { useElementRect } from '@proton/components';
+import useElementRect from '@proton/hooks/useElementRect';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import { VirtualGridRow } from './VirtualGridRow';

@@ -1,7 +1,8 @@
 import type { FC, ReactNode } from 'react';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 
-import { Loader, useElementRect } from '@proton/components';
+import { Loader } from '@proton/components';
+import useElementRect from '@proton/hooks/useElementRect';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import { usePhotosStore } from '../usePhotos.store';

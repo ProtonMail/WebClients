@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import { focusLumoPrompt } from '@proton/llm/lib/lumoAgent/ui/focusLumoPrompt';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';

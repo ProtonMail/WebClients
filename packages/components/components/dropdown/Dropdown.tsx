@@ -15,14 +15,14 @@ import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { allPopperPlacements } from '@proton/atoms/Popper/utils';
 import { Portal } from '@proton/atoms/Portal/Portal';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
+import useElementRect from '@proton/hooks/useElementRect';
+import { type HotkeyTuple, useHotkeys } from '@proton/hooks/useHotkeys';
+import useIsClosing from '@proton/hooks/useIsClosing';
 import { dropdownRootClassName } from '@proton/shared/lib/busy/busy';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import useDropdownArrowNavigation from '../../hooks/useDropdownArrowNavigation';
-import useElementRect from '../../hooks/useElementRect';
-import { type HotkeyTuple, useHotkeys } from '../../hooks/useHotkeys';
-import useIsClosing from '../../hooks/useIsClosing';
 import useFocusTrap from '../focus/useFocusTrap';
 import type { DropdownSize } from './utils';
 import { DropdownSizeUnit, getHeightValue, getMaxSizeValue, getProp, getWidthValue } from './utils';

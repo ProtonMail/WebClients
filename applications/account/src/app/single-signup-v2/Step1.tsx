@@ -18,7 +18,7 @@ import { forceAddonsMinMaxConstraints } from '@proton/components/containers/paym
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useHandler } from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/hooks/useHandler';
 import useLoading from '@proton/hooks/useLoading';
 import metrics from '@proton/metrics/metricsInstance';
 import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
