@@ -21,6 +21,7 @@ Comments and suggestions work for the single local user: threads, replies, edits
 and suggestions you make in Suggest mode and accept or reject live in page memory and reset on reload, like the document.
 There are no other users, so no typing indicators, unread threads, or comments from collaborators.
 Host file operations are unavailable.
+The outline (table of contents) shows once the document has headings. Its heading links point at this page with `?headingKey=…`.
 The harness supplies local Docs dependencies directly, including the in-memory comments client and awareness subscriptions.
 
 `StandaloneDocsEditor` requires a surrounding `DocsDependenciesProvider`. Supply a complete `DocsMessages`

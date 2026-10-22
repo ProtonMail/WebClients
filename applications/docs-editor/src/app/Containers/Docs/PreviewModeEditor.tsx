@@ -13,7 +13,7 @@ import { $unwrapAllCommentThreadMarks } from './Utils/removeCommentThreadMarks'
 import { $rejectAllSuggestions } from './Plugins/Suggestions/rejectAllSuggestions'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { setScrollableTablesActive } from '@lexical/table'
-import { TableOfContents } from '../../Components/TableOfContents/TableOfContents'
+import { TableOfContentsPlugin } from './Plugins/TableOfContents/TableOfContentsPlugin'
 import { DocsLayoutCenterPanel, DocsLayoutGrid, DocsLayoutLeftPanel } from './Layout/DocsLayout'
 import { getDocsLayoutScrollContainer } from './Layout/docsLayoutUtils'
 import { ReadonlyLinkFixPlugin } from './Plugins/Link/ReadonlyLinkFixPlugin'
@@ -35,7 +35,7 @@ export function PreviewModeEditor({
   tableOfContentsVisible,
   hidden,
 }: PreviewModeEditorProps) {
-  const { canEdit, openLink, getDocumentUrl, replaceDocumentUrl, reportTelemetry } = useDocsDependencies()
+  const { canEdit, openLink } = useDocsDependencies()
 
   return (
     <DocsStyleScope>
@@ -63,12 +63,7 @@ export function PreviewModeEditor({
         <DocsLayoutGrid leftPanelEnabled={tableOfContentsVisible}>
           <DocsLayoutLeftPanel>
             {tableOfContentsVisible && (
-              <TableOfContents
-                editorHidden={hidden}
-                getDocumentUrl={getDocumentUrl}
-                replaceDocumentUrl={replaceDocumentUrl}
-                reportTelemetry={reportTelemetry}
-              />
+              <TableOfContentsPlugin editorHidden={hidden} />
             )}
           </DocsLayoutLeftPanel>
           <DocsLayoutCenterPanel>
