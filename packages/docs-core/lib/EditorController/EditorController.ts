@@ -1,18 +1,14 @@
 import type { LoggerInterface } from '@proton/shared/lib/logs'
-import type {
-  EditorInitializationConfig,
-  FileMenuAction,
-  InternalEventBusInterface,
-  SheetImportData,
-} from '@proton/docs-shared'
-import {
-  BroadcastSource,
-  DocUpdateOrigin,
-  FileMenuActionEvent,
-  InternalEventPublishStrategy,
-  type ClientRequiresEditorMethods,
-  type DataTypesThatDocumentCanBeExportedAs,
-} from '@proton/docs-shared'
+import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { SheetImportData } from '@proton/docs-shared/SheetImportData'
+import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import type { ClientRequiresEditorMethods } from '@proton/docs-shared/Bridge/ClientRequiresEditorMethods'
+import { FileMenuActionEvent } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import { DocUpdateOrigin } from '@proton/docs-shared/Doc/DocState'
+import { InternalEventPublishStrategy } from '@proton/docs-shared/Events/InternalEventPublishStrategy'
+import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'
 import type { SerializedEditorState } from 'lexical'
 import type { DocumentState, DocumentStateValues, PublicDocumentState } from '../State/DocumentState'
 import metrics from '@proton/metrics/metricsInstance'
@@ -27,7 +23,7 @@ import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/d
 import type { SheetsStorageService } from '../Services/SheetsStorage/SheetsStorageService'
 import { SheetsPatchesType } from '../Database/SheetsDBSchema'
 import { downloadUpdateTimeline } from '../utils/create-update-timeline'
-import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
 import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 
 export interface EditorControllerInterface {

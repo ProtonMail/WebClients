@@ -1,4 +1,4 @@
-import type { EditorControllerInterface } from '@proton/docs-core'
+import type { EditorControllerInterface } from '@proton/docs-core/EditorController/EditorController'
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise'
 
 /**

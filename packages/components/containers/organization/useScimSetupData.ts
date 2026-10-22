@@ -5,17 +5,14 @@ import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useMembers } from '@proton/account/members/hooks';
 import { useMemberRoles } from '@proton/account/members/useMemberRoles';
+import { ItemStatus, OrgKeyDemotionApproval, Phase, getOrgKeyDemotionStatus } from '@proton/account/scimSetup';
+import { type ScimProgress, approveScimChanges } from '@proton/account/scimSetup/actions';
 import {
-    ItemStatus,
-    OrgKeyDemotionApproval,
-    Phase,
-    getOrgKeyDemotionStatus,
     selectMembersRequiringOrgKeyDemotion,
     selectPendingScimGroups,
     selectPendingScimMembersByGroup,
     selectPendingScimUsers,
-} from '@proton/account/scimSetup';
-import { type ScimProgress, approveScimChanges } from '@proton/account/scimSetup/actions';
+} from '@proton/account/scimSetup/selectors';
 import { useApi } from '@proton/app-context/useApi';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { Group } from '@proton/shared/lib/interfaces/Group';

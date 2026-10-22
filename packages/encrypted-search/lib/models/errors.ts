@@ -1,4 +1,4 @@
-export class ESError extends Error {
+class ESError extends Error {
     constructor(
         message: string,
         public cause?: Error

@@ -10,7 +10,7 @@ import { TelemetryMeasurementGroups, TelemetryVpnTvEvents } from '@proton/shared
 import { isAndroid } from '@proton/shared/lib/helpers/browser';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { setItem } from '@proton/shared/lib/helpers/storage';
-import { TvNotSignedIn } from '@proton/vpn/components/tv';
+import { TvNotSignedIn } from '@proton/vpn/components/tv/components/TvNotSignedIn';
 import { VPN_TV_USER_TIER } from '@proton/vpn/constants/tvUserTier';
 
 import Layout from '../public/Layout';

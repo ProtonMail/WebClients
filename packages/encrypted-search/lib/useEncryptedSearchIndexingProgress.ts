@@ -4,10 +4,12 @@ import { useUser } from '@proton/account/user/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { defaultESIndexingState as defaultESIndexingProgressState } from './constants';
-import { estimateIndexingDuration, estimateIndexingProgress } from './esHelpers';
-import type { IndexedDBRow } from './esIDB';
-import { contentIndexingProgress } from './esIDB';
-import type { ESIndexingState, RecordProgress } from './models';
+import { estimateIndexingDuration } from './esHelpers/esBuild';
+import { estimateIndexingProgress } from './esHelpers/esProgress';
+import type { IndexedDBRow } from './esIDB/indexingProgress';
+import { contentIndexingProgress } from './esIDB/indexingProgress';
+import type { RecordProgress } from './models/esIndexing';
+import type { ESIndexingState } from './models/interfaces';
 
 /**
  * This hook provides helpers related to the progress of the ES indexing

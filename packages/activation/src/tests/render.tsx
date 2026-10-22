@@ -4,7 +4,7 @@ import { Router } from 'react-router';
 import { render as originalRender } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';

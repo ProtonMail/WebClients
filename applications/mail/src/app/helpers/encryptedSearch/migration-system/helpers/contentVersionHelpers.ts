@@ -1,6 +1,6 @@
 import type { IDBPDatabase } from 'idb';
 
-import type { EncryptedSearchDB } from '@proton/encrypted-search/models';
+import type { EncryptedSearchDB } from '@proton/encrypted-search/models/interfaces';
 
 import { getContentVersion } from '../../esBuild';
 import { type ESItemCursorResult, READ_BATCH_SIZE } from '../interface';

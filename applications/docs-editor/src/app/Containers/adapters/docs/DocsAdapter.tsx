@@ -10,8 +10,8 @@ import {
   type DocsLogger,
   type SuggestionSummaryType,
 } from '../../Docs/public'
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
-import { EditorEvent } from '@proton/docs-shared'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import { EditorEvent } from '@proton/docs-shared/Bridge/EditorEvent'
 import { reportErrorToSentry } from '../../../Utils/errorMessage'
 import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import { DocsEditorTelemetryEvents, type DocsEditorTelemetryEvent } from '../../Docs/contract/DocsEditorTelemetry'

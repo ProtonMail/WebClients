@@ -1,4 +1,5 @@
-import type { BasePropertiesState, BasePropertyValues } from '@proton/docs-shared'
+import type { BasePropertiesState } from '@proton/docs-shared/State/BasePropertiesState'
+import type { BasePropertyValues } from '@proton/docs-shared/State/BasePropertiesStateInterface'
 import { useCallback, useEffect, useInsertionEffect, useRef, useState } from 'react'
 
 // use event

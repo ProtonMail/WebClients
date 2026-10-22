@@ -1,4 +1,4 @@
-import type { ESIndexingState, ESTimepoint } from '@proton/encrypted-search/models';
+import type { ESIndexingState, ESTimepoint } from '@proton/encrypted-search/models/interfaces';
 
 import type { ImportHandle, ImportOutcome } from '../import/ImportHandle';
 import type { IndexService } from '../indexation/IndexService';

@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { signoutAction } from '@proton/account/authenticationService';
+import { signoutAction } from '@proton/account/authenticationService/authenticationListener';
 import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';

@@ -9,7 +9,7 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
 import { driveEventsResultToDriveEvents } from '../_api/transformers';
-import { VolumeTypeForEvents } from '../_volumes';
+import { VolumeTypeForEvents } from '../_volumes/interface';
 import { useDriveEventManagerProvider } from './useDriveEventManager';
 
 const VOLUME_ID_1 = 'volumeId-1';

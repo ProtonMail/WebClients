@@ -1,11 +1,11 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { reportTrashError } from '@proton/docs-core/lib/DriveSDK/trash'
+import { reportTrashError } from '@proton/docs-core/DriveSDK/trash'
 import { restoreDocuments, trashDocuments } from './trashMany'
 import { trashManyAndNotify } from './trash-restore-notify'
 
-jest.mock('@proton/docs-core/lib/DriveSDK/trash', () => ({
+jest.mock('@proton/docs-core/DriveSDK/trash', () => ({
   reportTrashError: jest.fn(),
   trashDocument: jest.fn(),
   restoreDocument: jest.fn(),

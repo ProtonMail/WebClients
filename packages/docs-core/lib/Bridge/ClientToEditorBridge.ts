@@ -1,13 +1,15 @@
+import type { ClientToEditorReplyMessage } from '@proton/docs-shared/Bridge/ClientToEditorMessage'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 import type {
   EditorToClientGenericMessage,
   EditorToClientInvokationMessage,
   EditorToClientReplyMessage,
-  ClientToEditorReplyMessage,
-  EditorRequiresClientMethods,
-  InternalEventBusInterface,
-  SyncedEditorState,
-} from '@proton/docs-shared'
-import { EditorBridgeMessageType, BridgeOriginProvider, DOCS_EDITOR_DEBUG_KEY } from '@proton/docs-shared'
+} from '@proton/docs-shared/Bridge/EditorToClientMessage'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { SyncedEditorState } from '@proton/docs-shared/State/SyncedEditorState'
+import { BridgeOriginProvider } from '@proton/docs-shared/Bridge/BridgeOriginProvider'
+import { EditorBridgeMessageType } from '@proton/docs-shared/Bridge/EditorBridgeMessageType'
+import { DOCS_EDITOR_DEBUG_KEY } from '@proton/docs-shared/constants'
 import { EditorInvoker } from './EditorInvoker'
 import { EditorToClientRequestHandler } from './EditorToClientRequestHandler'
 import { Logger } from '@proton/shared/lib/logs'

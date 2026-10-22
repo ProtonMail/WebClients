@@ -1,6 +1,6 @@
 import type { OpenDBCallbacks } from 'idb';
 
-import type { EncryptedSearchDB } from '../models';
+import type { EncryptedSearchDB } from '../models/interfaces';
 
 type UpgradeCallback = NonNullable<OpenDBCallbacks<EncryptedSearchDB>['upgrade']>;
 

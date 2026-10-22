@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom-v5-compat'
 
-import type { DocumentType } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 import { HandshakeInfoVendorType } from '@proton/shared/lib/interfaces/drive/sharing'
 
 import { replaceLastPathSegment } from '~/utils/docs-url-bar'

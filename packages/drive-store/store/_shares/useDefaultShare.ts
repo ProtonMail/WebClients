@@ -9,8 +9,8 @@ import { findDefaultPhotosShareId, findDefaultShareId, useSharesStore } from '..
 import { shareMetaShortToShare } from '../_api/transformers';
 import useDebouncedRequest from '../_api/useDebouncedRequest';
 import useDriveCrypto from '../_crypto/useDriveCrypto';
-import { useDebouncedFunction } from '../_utils';
-import { useVolumesState } from '../_volumes';
+import useDebouncedFunction from '../_utils/useDebouncedFunction';
+import useVolumesState from '../_volumes/useVolumesState';
 import { type Share, ShareType, type ShareWithKey } from './interface';
 import useShare from './useShare';
 import useVolume from './useVolume';

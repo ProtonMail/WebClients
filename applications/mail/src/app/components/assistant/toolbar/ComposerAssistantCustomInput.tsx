@@ -12,7 +12,7 @@ import type { IconComponent } from '@proton/icons/component';
 import { IcArrowLeftAndUp } from '@proton/icons/icons/IcArrowLeftAndUp';
 import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { IcTextQuoteFilled } from '@proton/icons/icons/IcTextQuoteFilled';
-import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib';
+import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib/constants';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 

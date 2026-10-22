@@ -1,4 +1,5 @@
-import type { DecryptedLink, SharedUrlInfo } from '../../store';
+import type { DecryptedLink } from '../../store/_links/interface';
+import type { SharedUrlInfo } from '../../store/_shares/interface';
 
 interface PublicShare {
     sharedUrlInfo: SharedUrlInfo;

@@ -1,7 +1,7 @@
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { useApplication } from '../Containers/ApplicationProvider'
 import { useCallback, useEffect, useState } from 'react'
-import { AnonymousUserDisplayName } from '@proton/docs-shared'
+import { AnonymousUserDisplayName } from '@proton/docs-shared/AnonymousUser'
 
 export function useContactEmails() {
   const { application } = useApplication()

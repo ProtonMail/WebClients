@@ -9,7 +9,7 @@ import { ES_DELETE_DB_BLOCKED_TIMEOUT, INDEXEDDB_VERSION, STORING_OUTCOME } from
 import { getESLogger } from '../esHelpers/esLogger';
 import { esErrorReport, esSentryReport } from '../esHelpers/esReporting';
 import { ciphertextSize, isTimepointSmaller } from '../esHelpers/esUtils';
-import type { EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models';
+import type { EncryptedItemWithInfo, EncryptedMetadataItem, EncryptedSearchDB } from '../models/interfaces';
 import { upgrade } from './indexedDBUpgrade';
 import { getOldestID, getOldestInfo } from './metadataOldest';
 

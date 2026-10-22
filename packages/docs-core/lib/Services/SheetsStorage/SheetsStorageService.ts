@@ -1,5 +1,7 @@
-import type { CacheConfig, AnyNodeMeta } from '@proton/docs-shared'
-import { nodeMetaUniqueId, Result } from '@proton/docs-shared'
+import type { CacheConfig } from '@proton/docs-shared/CacheConfig'
+import type { AnyNodeMeta } from '@proton/docs-shared/NodeMetaHelpers'
+import { nodeMetaUniqueId } from '@proton/docs-shared/NodeMetaHelpers'
+import { Result } from '@proton/docs-shared/Result'
 import type { IndexedDatabase } from '../../Database/IndexedDB'
 import type { SheetsAction, SheetsDatabaseSchema, SheetsPatches } from '../../Database/SheetsDBSchema'
 import { SheetsPatchesType, SheetsRecordEncryption } from '../../Database/SheetsDBSchema'
@@ -10,7 +12,7 @@ import { getClientKey } from '@proton/shared/lib/authentication/clientKey'
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 import { CryptoProxy } from '@protontech/crypto'
 import type { SessionKey } from '@protontech/crypto'
-import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
 import { v4 as uuidv4 } from 'uuid'
 
 export class SheetsStorageService {

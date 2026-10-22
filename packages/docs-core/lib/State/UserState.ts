@@ -1,4 +1,4 @@
-import { BasePropertiesState } from '@proton/docs-shared'
+import { BasePropertiesState } from '@proton/docs-shared/State/BasePropertiesState'
 
 export type UserEvent = { name: 'BlockingInterfaceErrorDidDisplay'; payload: unknown }
 

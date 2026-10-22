@@ -1,5 +1,5 @@
-import type { EditorInitializationConfig as HostEditorInitializationConfig } from '@proton/docs-shared/lib/EditorInitializationConfig'
-import type { DataTypesThatDocumentCanBeExportedAs as HostExportFormat } from '@proton/docs-shared/lib/ExportableDataType'
+import type { EditorInitializationConfig as HostEditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
+import type { DataTypesThatDocumentCanBeExportedAs as HostExportFormat } from '@proton/docs-shared/ExportableDataType'
 
 import type {
   ConvertibleDataType,

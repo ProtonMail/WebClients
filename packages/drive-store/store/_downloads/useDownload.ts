@@ -10,7 +10,7 @@ import useDebouncedRequest from '../_api/useDebouncedRequest';
 import useDriveCrypto from '../_crypto/useDriveCrypto';
 import type { DecryptedLink, SignatureIssues } from '../_links/interface';
 import useLink from '../_links/useLink';
-import { waitFor } from '../_utils';
+import waitFor from '../_utils/waitFor';
 import { useDownloadMetrics } from './DownloadProvider/useDownloadMetrics';
 import { initDownloadStream } from './download/download';
 import type {

@@ -1,4 +1,4 @@
-import type { ESStatusBooleans } from '@proton/encrypted-search/models';
+import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 
 import { indexedESStatus } from '../../helpers/navigation.test.helpers';
 import type { ContentSearchEvidence } from './contentSearch';

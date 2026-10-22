@@ -14,7 +14,7 @@ import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/sha
 import walletKeyDark from '@proton/styles/assets/img/wallet/wallet-key-dark.jpg';
 import walletKey from '@proton/styles/assets/img/wallet/wallet-key.jpg';
 import clsx from '@proton/utils/clsx';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, ButtonLike } from '../../atoms';

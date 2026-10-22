@@ -14,7 +14,8 @@ import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
-import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet/store/hooks';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
+import { useWalletAccountExchangeRate } from '@proton/wallet/store/hooks/useWalletAccountExchangeRate';
 
 import { Price } from '../../atoms/Price';
 import { Skeleton } from '../../atoms/Skeleton';

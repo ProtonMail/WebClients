@@ -28,6 +28,8 @@ import { writeAllEvents } from '../esIDB/events';
 import { openESDB } from '../esIDB/indexedDB';
 import { contentIndexingProgress, metadataIndexingProgress } from '../esIDB/indexingProgress';
 import { executeMetadataOperations, readMetadataBatch, readSortedIDs, wrappedGetOldestInfo } from '../esIDB/metadata';
+import type { InternalESCallbacks } from '../models/esCallbacks';
+import type { GetItemInfo, GetUserKeys } from '../models/esFunctions';
 import type {
     ESCache,
     ESItemInfo,
@@ -36,10 +38,7 @@ import type {
     EncryptedItemWithInfo,
     EncryptedSearchDB,
     EventsObject,
-    GetItemInfo,
-    GetUserKeys,
-    InternalESCallbacks,
-} from '../models';
+} from '../models/interfaces';
 import { getESLogger } from './esLogger';
 import { esErrorReport, esSentryReport } from './esReporting';
 import { getVisibilityState, isObjectEmpty, serializeAndEncryptItem, sizeOfESItem } from './esUtils';

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
-import type { NodeMeta } from '@proton/docs-shared'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
+import OpenTracer from '@proton/docs-shared/Tracer/Module'
 
 import { useApplication } from '~/utils/application-context'
 import { useDocInvites } from '~/drive-sdk/useDocInvites'

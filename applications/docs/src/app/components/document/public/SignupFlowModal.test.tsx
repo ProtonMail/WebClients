@@ -8,9 +8,9 @@ import { DRIVE_SIGNIN, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { replaceUrl } from '@proton/shared/lib/helpers/browser'
 
-import { useDocsUrlPublicToken } from '@proton/docs-shared/lib/Hooks/useDocsUrlPublicToken'
+import { useDocsUrlPublicToken } from '@proton/docs-shared/Hooks/useDocsUrlPublicToken'
 import { SignupFlowModal } from './SignupFlowModal'
-import { RedirectAction } from '@proton/docs-shared'
+import { RedirectAction } from '@proton/docs-shared/DocumentAction'
 
 jest.mock('@proton/app-context/useApi')
 const mockedUseApi = jest.mocked(useApi)
@@ -18,7 +18,7 @@ const mockedUseApi = jest.mocked(useApi)
 jest.mock('@proton/shared/lib/helpers/browser')
 const mockedReplaceUrl = jest.mocked(replaceUrl)
 
-jest.mock('@proton/docs-shared/lib/Hooks/useDocsUrlPublicToken')
+jest.mock('@proton/docs-shared/Hooks/useDocsUrlPublicToken')
 const mockUrlPassword = 'mockUrlPassword'
 const mockToken = 'mockToken'
 

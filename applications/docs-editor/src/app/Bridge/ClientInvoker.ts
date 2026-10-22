@@ -1,32 +1,29 @@
 import type { LoggerInterface } from '@proton/shared/lib/logs'
+import type { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import type { ClientToEditorReplyMessage } from '@proton/docs-shared/Bridge/ClientToEditorMessage'
 import type {
-  EditorToClientInvokationMessage,
-  ClientToEditorReplyMessage,
   EditorRequiresClientMethods,
-  PendingMessage,
-  CommentInterface,
-  CommentThreadInterface,
-  ParamsExcludingFunctions,
-  RtsMessagePayload,
-  BroadcastSource,
-  SuggestionSummaryType,
-  SafeDocsUserState,
   FileMenuAction,
   AppPlatform,
-} from '@proton/docs-shared'
-import {
-  GenerateUUID,
-  EditorBridgeMessageType,
-  BridgeOriginProvider,
-  type WordCountInfoCollection,
-  type EditorEvent,
-  type EditorEventData,
-} from '@proton/docs-shared'
+} from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { EditorToClientInvokationMessage } from '@proton/docs-shared/Bridge/EditorToClientMessage'
+import type { PendingMessage } from '@proton/docs-shared/Bridge/PendingMessage'
+import type { ParamsExcludingFunctions } from '@proton/docs-shared/Bridge/Utils'
+import type { CommentInterface } from '@proton/docs-shared/CommentInterface'
+import type { CommentThreadInterface } from '@proton/docs-shared/CommentThreadInterface'
+import type { SafeDocsUserState } from '@proton/docs-shared/Doc/DocsAwareness'
+import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
+import type { SuggestionSummaryType } from '@proton/docs-shared/SuggestionType'
+import { BridgeOriginProvider } from '@proton/docs-shared/Bridge/BridgeOriginProvider'
+import { EditorBridgeMessageType } from '@proton/docs-shared/Bridge/EditorBridgeMessageType'
+import type { EditorEvent, EditorEventData } from '@proton/docs-shared/Bridge/EditorEvent'
+import { GenerateUUID } from '@proton/docs-shared/GenerateUuid'
+import type { WordCountInfoCollection } from '@proton/docs-shared/WordCount/WordCountTypes'
 import type { ErrorInfo } from 'react'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
-import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
-import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import type { SheetsPatchesType } from '@proton/docs-core/Database/SheetsDBSchema'
+import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 
 /** Allows the editor to invoke methods on the client */

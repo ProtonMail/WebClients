@@ -8,8 +8,8 @@ import { act as actHook, renderHook as originalRenderHook } from '@testing-libra
 import type { History } from 'history';
 import { createMemoryHistory } from 'history';
 
+import { getModelState } from '@proton/account/testing/getModelState';
 import { getOrganizationState } from '@proton/account/testing/redux-state';
-import { getModelState } from '@proton/account/tests';
 import { ApiContext } from '@proton/app-context/apiContext';
 import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import SpotlightProvider from '@proton/components/components/spotlight/Provider';

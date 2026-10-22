@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
 
-import { useDebouncedFunction } from '../_utils';
+import useDebouncedFunction from '../_utils/useDebouncedFunction';
 
 export default function useDebouncedRequest() {
     const api = useApi();
@@ -18,7 +18,6 @@ export default function useDebouncedRequest() {
             );
             // DO NOT add debouncedFunction to the dependency array
             // debouncedFunction is returning a new reference each time the hook is called
-            // eslint-disable-next-line
         },
         [api]
     );

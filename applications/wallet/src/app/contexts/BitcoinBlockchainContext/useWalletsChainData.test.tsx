@@ -10,8 +10,10 @@ import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUse
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { setupStore } from '@proton/wallet/store/store';
-import { apiWalletsData } from '@proton/wallet/tests/fixtures';
-import { mockUseFlag, mockUseGetBitcoinNetwork, mockUseWalletApiClients } from '@proton/wallet/tests/mocks';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures/api';
+import { mockUseGetBitcoinNetwork } from '@proton/wallet/tests/mocks/useBitcoinNetwork';
+import { mockUseFlag } from '@proton/wallet/tests/mocks/useFlag';
+import { mockUseWalletApiClients } from '@proton/wallet/tests/mocks/useWalletApi';
 
 import { mockUseBlockchainClient, mockWasmAccountSyncer } from '../../tests';
 import { mockIsFullSyncDone } from '../../tests/mocks/useCache';

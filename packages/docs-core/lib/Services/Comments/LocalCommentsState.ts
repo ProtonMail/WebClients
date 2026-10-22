@@ -1,11 +1,10 @@
-import type {
-  CommentInterface,
-  CommentThreadInterface,
-  CommentsChangedData,
-  EditCommentData,
-  InternalEventBusInterface,
-} from '@proton/docs-shared'
-import { CommentThreadState, CommentsEvent } from '@proton/docs-shared'
+import type { CommentInterface } from '@proton/docs-shared/CommentInterface'
+import type { CommentsChangedData } from '@proton/docs-shared/CommentsEvent'
+import type { CommentThreadInterface } from '@proton/docs-shared/CommentThreadInterface'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { EditCommentData } from '@proton/docs-shared/Realtime/CommentsMessageType'
+import { CommentsEvent } from '@proton/docs-shared/CommentsEvent'
+import { CommentThreadState } from '@proton/docs-shared/CommentThreadState'
 
 export class LocalCommentsState {
   private threads: CommentThreadInterface[] = []

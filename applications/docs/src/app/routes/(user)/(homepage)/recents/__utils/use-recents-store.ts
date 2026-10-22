@@ -1,4 +1,4 @@
-import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
+import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import { generateNodeUid } from '@proton/drive/sdk'
 import { create } from 'zustand'
 

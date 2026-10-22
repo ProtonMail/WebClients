@@ -4,7 +4,7 @@ import loudRejection from 'loud-rejection';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import { buildUser } from '@proton/account/testing/buildUser';
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';

@@ -7,7 +7,7 @@ import {
     WasmWallet,
 } from '@proton/andromeda';
 
-import type { WalletChainDataByWalletId } from '../../types';
+import type { WalletChainDataByWalletId } from '../../types/wallet';
 import { freeable } from '../utils/wasm';
 import {
     apiWalletAccountOneA,

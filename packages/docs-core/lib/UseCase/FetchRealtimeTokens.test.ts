@@ -1,8 +1,8 @@
-import { ApiResult } from '@proton/docs-shared'
+import { ApiResult } from '@proton/docs-shared/ApiResult'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import metrics from '@proton/metrics/metricsInstance'
 import { FetchRealtimeToken } from './FetchRealtimeToken'
-import type { NodeMeta } from '@proton/docs-shared'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
 
 describe('FetchRealtimeToken', () => {
   let fetchRealtimeToken: FetchRealtimeToken

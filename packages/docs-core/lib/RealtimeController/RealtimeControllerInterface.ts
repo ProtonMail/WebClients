@@ -1,4 +1,4 @@
-import type { WebsocketConnectionInterface } from '@proton/docs-shared'
+import type { WebsocketConnectionInterface } from '@proton/docs-shared/Realtime/WebsocketConnectionInterface'
 
 export interface RealtimeControllerInterface {
   initializeConnection(): WebsocketConnectionInterface

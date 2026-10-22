@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { PropsWithChildren } from 'react'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { isDevOrBlack } from '@proton/shared/lib/env'
 

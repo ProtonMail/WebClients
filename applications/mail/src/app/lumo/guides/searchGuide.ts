@@ -1,4 +1,4 @@
-import type { ESStatusBooleans } from '@proton/encrypted-search/models';
+import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 
 const SEARCH_GUIDE_HEAD = `The search tool LOCATES emails. It returns a LIST of matching emails as metadata rows only — reference, sender, subject, date, folder — NEVER their body or contents. You do NOT need to call view_emails afterwards; the rows are already in the result.
 
