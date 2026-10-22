@@ -285,3 +285,37 @@ describe('getOrganizationAppRoutes gateways', () => {
         ).toBe(false);
     });
 });
+
+describe('getOrganizationAppRoutes domain names', () => {
+    const isDomainNamesAvailable = (input: OrganizationRoutesInput) =>
+        getOrganizationAppRoutes(buildOrganizationRouterParams(input)).routes.domains.available;
+
+    it.each([PLANS.MAIL_PRO, PLANS.BUNDLE_PRO_2024, PLANS.FAMILY, PLANS.MEET_BUSINESS] as const)(
+        'shows Domain names to a %s organization that can host addresses on its own domain',
+        (plan) => {
+            expect(isDomainNamesAvailable({ plan })).toBe(true);
+        }
+    );
+
+    it.each([PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS] as const)(
+        'hides Domain names from a %s organization that cannot host addresses on its own domain',
+        (plan) => {
+            expect(isDomainNamesAvailable({ plan })).toBe(false);
+        }
+    );
+
+    it('hides Domain names from an admin without the domain read permission', () => {
+        expect(
+            isDomainNamesAvailable({ plan: PLANS.MAIL_PRO, permissions: permissionsWithout('account.domain.read') })
+        ).toBe(false);
+    });
+
+    it('keeps Domain names for a delinquent organization that still has domains, so it can delete them', () => {
+        const delinquentOrganization = buildOrganizationWithKeys({
+            State: ORGANIZATION_STATE.DELINQUENT,
+            UsedDomains: 1,
+        });
+
+        expect(isDomainNamesAvailable({ organization: delinquentOrganization })).toBe(true);
+    });
+});
