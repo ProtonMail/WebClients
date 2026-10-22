@@ -1,3 +1,3 @@
-import { createOxlintConfig } from '@proton/oxlint-config';
+import { createOxlintConfig } from '@proton/oxlint-config/createOxlintConfig';
 
 export default createOxlintConfig({ preset: 'base' });
