@@ -1,9 +1,6 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { useApi } from '@proton/app-context/useApi';
-// eslint-disable-next-line proton/restricted-imports
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     TelemetryAccountCancellationFlowFeedbackEvents,
     type TelemetryEvents,
@@ -12,6 +9,7 @@ import {
 } from '@proton/shared/lib/api/telemetry';
 import { getBaseTelemetryDimensions } from '@proton/shared/lib/helpers/metrics';
 
+import { useSilentApi } from '../../../../../hooks/useSilentApi';
 import { SUBSCRIPTION_CANCELLATION_REASONS } from '../../content/FeedbackDowngradeContent';
 import type { FeedbackDowngradeFormData } from '../../content/interface';
 
@@ -35,14 +33,12 @@ const getCancellationReason = (feedback: FeedbackDowngradeFormData) => {
 };
 
 export const useFeedbackFirstTelemetry = () => {
-    const api = useApi();
+    const silentApi = useSilentApi();
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [userSettings] = useUserSettings();
 
     const sendReport = (event: TelemetryEvents, dimensions?: Record<string, string>) => {
-        const silentApi = getSilentApi(api);
-
         void silentApi(
             sendTelemetryData({
                 MeasurementGroup: TelemetryMeasurementGroups.accountCancellationFeedbackFirst,
