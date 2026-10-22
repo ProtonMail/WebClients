@@ -1,9 +1,14 @@
 import { format } from 'date-fns';
 
+import { selectCategories } from '@proton/mail/store/labels';
+import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { recipientToInput } from '@proton/shared/lib/mail/recipient';
 
+import { isSearch } from '../helpers/elementSearch';
 import { isElementConversation, isElementMessage } from '../helpers/elementTypeGuards';
+import { getStandardFolders } from '../helpers/labels';
 import { selectParams } from '../store/elements/elementsSelectors';
 import { messageByID } from '../store/messages/messagesSelectors';
 import type { MailState } from '../store/store';
@@ -11,11 +16,25 @@ import { formatLocalDateTime } from './helpers/formatting';
 
 const NO_SUBJECT = '(no subject)';
 
-// Subjects and sender names come from incoming mail, so keep them on one line and free of tags
-// that could close the block early.
+// Subjects, sender names and folder or label names can come from incoming mail, imports or filters,
+// so keep them on one line and free of tags that could close the block early.
 const neutralise = (text: string) => text.replace(/[\r\n]+/g, ' ').replace(/[<>]/g, '');
 
 const quote = (subject?: string) => `"${neutralise(subject || NO_SUBJECT)}"`;
+
+const describeList = (state: MailState): string => {
+    const { labelID, search } = selectParams(state);
+    if (isSearch(search)) {
+        return 'search results';
+    }
+
+    return neutralise(
+        getStandardFolders()[labelID]?.name ||
+            selectCategories(state).value?.find(({ ID }) => ID === labelID)?.Name ||
+            LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] ||
+            'unknown'
+    );
+};
 
 const describeReadingPane = (state: MailState): string => {
     const { elementID, conversationMode } = selectParams(state);
@@ -50,6 +69,7 @@ export const buildMailContext = (state: MailState, now: Date, timezone: string):
         '<mail_context>',
         `Current date and time: ${format(now, 'EEEE', { locale: enUSLocale })}, ${formatLocalDateTime(now)}`,
         `Timezone: ${timezone}`,
+        `Open in the list: ${describeList(state)}`,
         `Open in the reading pane: ${describeReadingPane(state)}`,
         `Open composers: ${describeOpenComposers(state)}`,
         '</mail_context>',
