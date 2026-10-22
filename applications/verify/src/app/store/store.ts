@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { apiStatusReducer } from '@proton/account/index';
+import { apiStatusReducer } from '@proton/account/apiStatus';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
 /**

@@ -1,8 +1,11 @@
-import { initEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { serverEvent } from '@proton/account/eventLoop';
+import { initEvent } from '@proton/account/init';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
+import { userThunk } from '@proton/account/user';
+import { userSettingsThunk } from '@proton/account/userSettings';
+import { welcomeFlagsActions } from '@proton/account/welcomeFlags';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { featureFlagStore } from '@proton/drive/modules/flags';
 import { driveMetrics } from '@proton/drive/modules/metrics';

@@ -1,12 +1,16 @@
-// Barrel import so jest.spyOn matches modules resolved through @proton/account in consumers.
-// eslint-disable-next-line custom-rules/no-package-self-import, proton/no-extraneous-dependencies -- jest module identity
-import * as useUserSettingsModule from '@proton/account';
 import {
     FIDO2_CREDENTIALS_PIN_VALUE,
     LOGIN_IDENTIFIER_POLICY,
     PASSWORD_REMINDERS_VALUE,
     type UserSettings,
 } from '@proton/shared/lib/interfaces/UserSettings';
+
+import * as useUserSettingsModule from '../userSettings/hooks';
+
+jest.mock('../userSettings/hooks', () => ({
+    __esModule: true,
+    ...jest.requireActual('../userSettings/hooks'),
+}));
 
 const defaultUserSettings: UserSettings = {
     '2FA': { Enabled: 0, Allowed: 0, ExpirationTime: null, RegisteredKeys: [] },

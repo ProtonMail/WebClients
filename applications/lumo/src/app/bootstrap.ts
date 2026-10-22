@@ -1,17 +1,15 @@
 import createSagaMiddleware from 'redux-saga';
 
-import {
-    initEvent,
-    serverEvent,
-    userKeysThunk,
-    userSettingsThunk,
-    userThunk,
-    welcomeFlagsActions,
-} from '@proton/account';
 import { readAccountSessions } from '@proton/account/accountSessions/storage';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { serverEvent } from '@proton/account/eventLoop';
+import { initEvent } from '@proton/account/init';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
+import { userThunk } from '@proton/account/user';
+import { userKeysThunk } from '@proton/account/userKeys';
+import { userSettingsThunk } from '@proton/account/userSettings';
+import { welcomeFlagsActions } from '@proton/account/welcomeFlags';
 import { FeatureCode } from '@proton/features/interface';
 import { fetchFeatures } from '@proton/features/reducer';
 import createApi from '@proton/shared/lib/api/createApi';

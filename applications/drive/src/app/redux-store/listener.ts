@@ -1,5 +1,6 @@
-import { startAccountSessionsListener, startPersistListener } from '@proton/account';
+import { startAccountSessionsListener } from '@proton/account/accountSessions';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { startPersistListener } from '@proton/account/persist/listener';
 import { startOffersDeliveryListener } from '@proton/offers-delivery/store/listener';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 

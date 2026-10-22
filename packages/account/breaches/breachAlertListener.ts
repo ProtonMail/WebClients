@@ -1,5 +1,4 @@
 // TODO: until design and api changes are made this listener is no longer being used. Data fetching is in BreachAlertsSecurityCenter component.
-// import { selectUser } from '@proton/account';
 // import type { SharedStartListening } from '@proton/redux-shared-store-types';
 
 // import { UserBreachesState } from './breachReportsSlice';

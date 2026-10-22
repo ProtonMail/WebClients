@@ -17,7 +17,6 @@
  *
  * @example client oxlint config
  * 'proton/restricted-imports': createRestrictedImportRule({
- *     rollout: ['account-barrel'],
  *     paths: [{ name: 'some-package', importNames: ['oldHelper'], message: 'Use newHelper instead.' }],
  *     patterns: [{ group: ['@proton/foo/*'], message: 'Only the entry point is public.' }],
  * })
@@ -83,6 +82,7 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
         // These packages have an explicit `exports` map, so their bare specifier no longer resolves.
         name: 'packages with an exports map have no barrel',
         paths: [
+            '@proton/account',
             '@proton/activation',
             '@proton/app-context',
             '@proton/calendar',
@@ -217,12 +217,10 @@ export const OXLINT_BASE_RESTRICTIONS: Restrictions = {
 //   '<package>-barrel'         bans importing from the package root, so every import uses the full path
 //                                bad:  import { Foo } from '@proton/account';
 //                                good: import Foo from '@proton/account/path/to/Foo';
-//                              Ids: account-barrel
+//                              Ids: none right now, every barrel ban is in the base list
 // ---------------------------------------------------------------------------------------------------------------------
 
-const ROLLOUT_RESTRICTIONS = {
-    'account-barrel': createBarrelRestrictions('@proton/account'),
-} satisfies Record<string, Restrictions>;
+const ROLLOUT_RESTRICTIONS = {} satisfies Record<string, Restrictions>;
 
 export type RolloutId = keyof typeof ROLLOUT_RESTRICTIONS;
 

@@ -5,11 +5,9 @@ import {
     createExtraneousDependenciesRule,
     extraneousDependenciesDevDependencies,
 } from '@proton/eslint-config-proton/extraneousDependencies';
-import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports';
 
 export default defineConfig([
     defaultConfig,
-    createRestrictedImportsConfig({ rollout: ['account-barrel'] }),
     {
         rules: {
             'import/no-internal-modules': [
