@@ -1038,7 +1038,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
                 description:
                     app === APPS.PROTONDRIVE && flags.isDriveEasySwitchNewUIEnabled
-                        ? c('Description').t`Bring over your files from another provider.`
+                        ? c('Description').t`Bring over your files and folders from another provider.`
                         : c('Description')
                               .t`Bring over your email, calendar events, and contacts from another provider.`,
                 to: '/easy-switch',
