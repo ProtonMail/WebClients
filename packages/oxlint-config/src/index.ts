@@ -1,4 +1,3 @@
-import { fileURLToPath } from 'node:url';
 import { type OxlintOverride, defineConfig } from 'oxlint';
 
 import { brandNameSelectors } from './brandNames.ts';
@@ -18,11 +17,7 @@ const javaScriptGlobs = ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'];
  */
 export const base = defineConfig({
     plugins: ['typescript', 'import'],
-    jsPlugins: [
-        fileURLToPath(new URL('./plugin/index.ts', import.meta.url)),
-        'eslint-plugin-custom-rules',
-        'eslint-plugin-compat',
-    ],
+    jsPlugins: ['@proton/oxlint-config/plugin', 'eslint-plugin-custom-rules', 'eslint-plugin-compat'],
     categories: { correctness: 'off' },
     options: { typeAware: true },
     env: { builtin: true, browser: true },

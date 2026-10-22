@@ -9,6 +9,7 @@
         "./extraneousDependencies": "./src/extraneousDependencies.ts",
         "./globs": "./src/globs.ts",
         "./namingConvention": "./src/namingConvention.ts",
+        "./plugin": "./src/plugin/index.ts",
         "./restrictedImports": "./src/restrictedImports.ts"
     },
     "scripts": {
