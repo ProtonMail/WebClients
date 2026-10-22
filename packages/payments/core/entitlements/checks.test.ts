@@ -184,3 +184,22 @@ describe('hasDedicatedIpsOrIsVpnB2B', () => {
         expect(hasDedicatedIpsOrIsVpnB2B(plan)).toBe(false);
     });
 });
+
+describe('hasCustomDomainAddresses', () => {
+    const customDomainCatalog = buildEntitlementCatalog({
+        [PLANS.MAIL_PRO]: [EntitlementName.FlagsInbox, EntitlementName.CustomDomainAddresses],
+        [PLANS.MEET_BUSINESS]: [EntitlementName.FlagsMeet, EntitlementName.CustomDomainAddresses],
+        [PLANS.VPN_BUSINESS]: [EntitlementName.FlagsVpn, EntitlementName.MaxDomains],
+    });
+
+    const hasCustomDomainAddresses = (plan: PLANS) =>
+        createEntitlementResolverForSelection(customDomainCatalog, plan).hasCustomDomainAddresses;
+
+    it.each([PLANS.MAIL_PRO, PLANS.MEET_BUSINESS])('returns true for %s', (plan) => {
+        expect(hasCustomDomainAddresses(plan)).toBe(true);
+    });
+
+    it('returns false for a plan that has domains only for SSO', () => {
+        expect(hasCustomDomainAddresses(PLANS.VPN_BUSINESS)).toBe(false);
+    });
+});
