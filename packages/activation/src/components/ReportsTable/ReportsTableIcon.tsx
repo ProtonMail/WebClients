@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import Logo from '@proton/components/components/logo/Logo';
 import { APPS } from '@proton/shared/lib/constants';
 import contactsLogo from '@proton/styles/assets/img/import/importTypes/contacts.svg';
+import googleDriveLogo from '@proton/styles/assets/img/import/providers/google-drive.svg';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 import outlookLogo from '@proton/styles/assets/img/import/providers/outlook.svg';
 import yahooLogo from '@proton/styles/assets/img/import/providers/yahoo_short.svg';
@@ -22,6 +23,9 @@ export const providerLogos: Partial<Record<ImportProvider, string>> = {
     [ImportProvider.YAHOO]: yahooLogo,
 };
 
+export const getProviderLogo = (provider: ImportProvider, product: ImportType) =>
+    provider === ImportProvider.GOOGLE && product === ImportType.DRIVE ? googleDriveLogo : providerLogos[provider];
+
 const productLogos: Partial<Record<ImportType, ReactNode>> = {
     [ImportType.MAIL]: <Logo appName={APPS.PROTONMAIL} variant="glyph-only" size={5} className="self-center mr-4" />,
     [ImportType.CALENDAR]: (
@@ -34,7 +38,7 @@ const productLogos: Partial<Record<ImportType, ReactNode>> = {
 export const ReportsTableIcon = ({ provider: apiProvider, product }: Props) => {
     const provider = getImportProviderFromApiProvider(apiProvider);
 
-    const logo = providerLogos[provider];
+    const logo = getProviderLogo(provider, product);
 
     if (logo) {
         return <img src={logo} alt="" className="self-center mr-4" width={20} />;
