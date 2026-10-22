@@ -2,7 +2,8 @@ import { mergeRegister } from '@lexical/utils'
 import { useGetUserSettings } from '@proton/account/userSettings/hooks'
 import { useConfig } from '@proton/app-context/useConfig'
 import { Button } from '@proton/atoms/Button/Button'
-import MimeIcon from '@proton/components/components/icon/MimeIcon'
+import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc'
+import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet'
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type {
@@ -870,7 +871,11 @@ function Loader({ documentType }: LoaderProps) {
   return (
     <div className="relative h-full w-full">
       <div className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center">
-        <MimeIcon name={documentType === 'sheet' ? 'proton-sheet' : 'proton-doc'} size={9} className="shrink-0" />
+        {documentType === 'sheet' ? (
+          <MimeProtonSheet size={9} className="shrink-0" />
+        ) : (
+          <MimeProtonDoc size={9} className="shrink-0" />
+        )}
 
         <div className="mb-4 mt-12">
           <LoadingBar />

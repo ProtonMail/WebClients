@@ -2,8 +2,9 @@ import type { MouseEvent, ReactNode, TouchEvent } from 'react';
 
 import { c } from 'ttag';
 
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import { NodeType } from '@proton/drive/sdk';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
+import { MimeAlbum } from '@proton/file-icons/icons/MimeAlbum';
 import { isCompatibleCBZ } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
@@ -36,13 +37,15 @@ export function GridItemContent({
         isFile: type === NodeType.File || type === NodeType.Photo,
     });
 
+    const NodeIcon = getFileIcon(type === NodeType.File || type === NodeType.Photo ? mediaType || '' : 'Folder');
+
     const IconComponent = (
         <>
             {type === NodeType.Album && (
-                <FileIcon
-                    mimeType="Album"
+                <MimeAlbum
                     alt={c('Label').t`Album`}
                     size={12}
+                    className="shrink-0"
                     style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
                 />
             )}
@@ -58,10 +61,10 @@ export function GridItemContent({
                 />
             )}
             {!thumbnailUrl && type !== NodeType.Album && (
-                <FileIcon
-                    mimeType={type === NodeType.File || type === NodeType.Photo ? mediaType || '' : 'Folder'}
+                <NodeIcon
                     alt={iconText}
                     size={12}
+                    className="shrink-0"
                     style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
                 />
             )}

@@ -164,7 +164,7 @@ export interface DriveExplorerSort {
  * ```tsx
  * {
  *   name: (uid) => <div className="text-ellipsis">{getItemName(uid)}</div>,
- *   mainContent: (uid) => <FileIcon mimeType={getItemType(uid)} />
+ *   mainContent: (uid) => <ItemIcon mimeType={getItemType(uid)} />
  * }
  * ```
  */
