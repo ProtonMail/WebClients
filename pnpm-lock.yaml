@@ -9474,6 +9474,9 @@ importers:
 
   tests:
     dependencies:
+      '@inquirer/prompts':
+        specifier: ^7.9.0
+        version: 7.9.0(@types/node@24.19.0)
       '@playwright/test':
         specifier: ^1.63.0
         version: 1.63.0
@@ -9619,6 +9622,9 @@ importers:
       prettier:
         specifier: ^3.9.10
         version: 3.9.10
+      tsx:
+        specifier: ^4.23.15
+        version: 4.23.15
       typescript:
         specifier: npm:@typescript/typescript6@^6.0.2
         version: '@typescript/typescript6@6.0.2'
