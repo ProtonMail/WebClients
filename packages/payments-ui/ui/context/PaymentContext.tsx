@@ -12,7 +12,7 @@ import type { CreateNotificationOptions } from '@proton/app-context/notification
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useHandler } from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/hooks/useHandler';
 import {
     type BillingAddressExtended,
     DEFAULT_TAX_BILLING_ADDRESS,

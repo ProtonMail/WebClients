@@ -6796,6 +6796,9 @@ importers:
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
+      lodash:
+        specifier: ^4.18.1
+        version: 4.18.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -6815,6 +6818,9 @@ importers:
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
+      '@types/lodash':
+        specifier: 'catalog:'
+        version: 4.17.25
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0

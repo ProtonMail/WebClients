@@ -1,6 +1,8 @@
 import { type ElementType, createContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import { Portal } from '@proton/atoms/Portal/Portal';
+import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import useInstance from '@proton/hooks/useInstance';
 import usePrevious from '@proton/hooks/usePrevious';
 import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
@@ -8,8 +10,6 @@ import { modalTwoRootClassName } from '@proton/shared/lib/busy/busy';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import type { HotkeyTuple } from '../../hooks/useHotkeys';
-import { useHotkeys } from '../../hooks/useHotkeys';
 import Dialog from '../dialog/Dialog';
 import useFocusTrap from '../focus/useFocusTrap';
 import { useModalPosition } from './modalPositions';
