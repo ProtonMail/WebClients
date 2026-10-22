@@ -38,7 +38,7 @@
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
         "@testing-library/react": "^15.0.7",
-        "@testing-library/react-hooks": "^8.0.1",
+        "@testing-library/react-hooks": "catalog:",
         "date-fns": "^2.30.0",
         "lodash": "^4.18.1",
         "react": "^18.3.1",
@@ -54,9 +54,9 @@
         "@types/react": "catalog:",
         "@types/react-router-dom": "catalog:",
         "@types/webpack-env": "catalog:",
-        "@typescript/native": "npm:typescript@^7.0.2",
-        "eslint": "^10.12.0",
-        "jest": "^30.5.2",
-        "typescript": "npm:@typescript/typescript6@^6.0.2"
+        "@typescript/native": "catalog:",
+        "eslint": "catalog:",
+        "jest": "catalog:",
+        "typescript": "catalog:"
     }
 }
