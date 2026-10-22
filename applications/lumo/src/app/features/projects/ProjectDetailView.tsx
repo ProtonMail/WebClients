@@ -88,6 +88,7 @@ const ProjectDetailViewInner = () => {
         imageTools: ffImageTools,
         visualizationInstructions: ffVisualizationInstructions,
         artifactsView: ffArtifactsView,
+        artifactSlides: ffArtifactSlides,
     } = useLumoFlags();
 
     const space = useLumoSelector(selectSpaceById(projectId));
@@ -189,6 +190,7 @@ const ProjectDetailViewInner = () => {
                         settingsContext: {
                             personalization,
                             isArtifactsViewFeatureEnabled: ffArtifactsView,
+                            isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                             isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                         },
                     })
@@ -215,6 +217,7 @@ const ProjectDetailViewInner = () => {
             ffImageTools,
             ffSmoothRendering,
             ffArtifactsView,
+            ffArtifactSlides,
             ffVisualizationInstructions,
             personalization,
         ]
