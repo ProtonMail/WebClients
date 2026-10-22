@@ -1,8 +1,9 @@
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners'
-import { startAccountSessionsListener, startPersistListener } from '@proton/account'
 
-import type { AppStartListening } from './store'
+import { startAccountSessionsListener } from '@proton/account/accountSessions'
+import { startPersistListener } from '@proton/account/persist/listener'
 import type { DocsState } from './rootReducer'
+import type { AppStartListening } from './store'
 
 export function start({
   startListening,

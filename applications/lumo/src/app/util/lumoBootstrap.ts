@@ -2,7 +2,9 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
-import { addressKeysThunk, addressesThunk, userKeysThunk } from '@proton/account';
+import { addressKeysThunk } from '@proton/account/addressKeys';
+import { addressesThunk } from '@proton/account/addresses';
+import { userKeysThunk } from '@proton/account/userKeys';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';

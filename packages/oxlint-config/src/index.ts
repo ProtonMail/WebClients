@@ -277,7 +277,7 @@ export interface WorkspaceConfigOptions {
  * copies them over.
  *
  * @example
- * export default createOxlintConfig({ restrictedImports: { rollout: ['account-barrel'] } });
+ * export default createOxlintConfig({ restrictedImports: { paths: [{ name: 'some-package' }] } });
  */
 export function createOxlintConfig({
     preset = 'all',

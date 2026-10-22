@@ -1,6 +1,7 @@
 import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
-import { addressesReducer, userReducer } from '@proton/account';
+import { addressesReducer } from '@proton/account/addresses';
+import { userReducer } from '@proton/account/user';
 import { calendarsReducer } from '@proton/calendar/calendars';
 import { featuresReducer } from '@proton/features/reducer';
 import { importerConfigReducer } from '@proton/mail/store/importerConfig';

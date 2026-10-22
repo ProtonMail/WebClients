@@ -2,11 +2,9 @@ import { defineConfig } from 'eslint/config';
 
 import config from '@proton/eslint-config-proton/all';
 import { extraneousDependenciesDevDependencies } from '@proton/eslint-config-proton/extraneousDependencies';
-import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports';
 
 export default defineConfig([
     config,
-    createRestrictedImportsConfig({ rollout: ['account-barrel'] }),
     {
         // Mocks @proton/components modules without a manifest dep (cycle constraint).
         files: ['testing/setup/**'],

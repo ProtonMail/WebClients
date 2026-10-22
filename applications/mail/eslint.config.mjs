@@ -30,7 +30,6 @@ const noEnumDestructuring = {
 export default defineConfig([
     defaultConfig,
     createRestrictedImportsConfig({
-        rollout: ['account-barrel'],
         paths: [
             {
                 name: '@proton/mail/store/counts/conversationCountsSlice',
