@@ -18,7 +18,7 @@ import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
 import { PLANS } from '@proton/payments/core/constants';
-import { organizationOrSubscriptionSupportsSSO, upsellPlanSSO } from '@proton/payments/core/plan/helpers';
+import { getHasSsoUpsell, getIsSsoAvailable } from '@proton/payments/core/plan/helpers';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
     APPS,
@@ -44,7 +44,7 @@ export const getOrganizationAppRoutes = ({
     app,
     user,
     organization,
-    subscription,
+    allSubscriptions,
     entitlements,
     groups,
     isGroupOwner,
@@ -161,16 +161,17 @@ export const getOrganizationAppRoutes = ({
 
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
-    const orgOrSubscriptionSupportsSSO = organizationOrSubscriptionSupportsSSO({
-        organization,
-        subscription,
+    const isSsoAvailable = getIsSsoAvailable({
+        hasSso: entitlements.hasSso,
+        subscriptions: allSubscriptions,
         isSsoForPbsEnabled,
     });
+    const hasSsoUpsell = getHasSsoUpsell(allSubscriptions);
 
     const canShowSSOSection =
         permissions['account.sso_config.read'] &&
         appSupportsSSO(app) &&
-        (orgOrSubscriptionSupportsSSO || upsellPlanSSO(organization?.PlanName)) &&
+        (isSsoAvailable || hasSsoUpsell) &&
         isOrgConfigured;
 
     const routes = {
@@ -495,7 +496,7 @@ export const getOrganizationAppRoutes = ({
             to: '/single-sign-on',
             icon: IcKey,
             available: canShowSSOSection,
-            upgradeRequired: !orgOrSubscriptionSupportsSSO && !!upsellPlanSSO(organization?.PlanName),
+            upgradeRequired: !isSsoAvailable && hasSsoUpsell,
         },
         accessControl: {
             id: 'accessControl',

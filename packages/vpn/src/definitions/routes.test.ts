@@ -109,6 +109,7 @@ describe('resolveNavigation', () => {
         ...org,
         permissions,
         subscription: FREE_SUBSCRIPTION,
+        allSubscriptions: [],
         flags: { B2BAlwaysOnEnabled: true },
         context: {
             isDataRecoveryAvailable: true,
@@ -171,5 +172,55 @@ describe('resolveNavigation', () => {
         const nav = resolveNavigation(buildArgs(admin, getOrgPermissions(['account.dashboard.read'], false)));
 
         expect(collectIds(nav.items as NavNode[])).not.toContain('organization.vpn.gateways');
+    });
+
+    describe('single sign-on', () => {
+        const getOrganizationChildIds = (resolved: NavResolved) =>
+            resolved.items.find((item) => item.id === 'organization')?.children?.map((child) => child.id) ?? [];
+
+        const ssoPermissions = getOrgPermissions(['account.sso_config.read'], false);
+
+        const buildSsoEntitlements = (names: EntitlementName[], plan: PLANS) =>
+            createEntitlementResolverForOrgAndUser(
+                buildEntitlementCatalog({ [plan]: names }),
+                makeEntitlements(names.map(orgSwitch)),
+                [buildSubscription(plan)]
+            );
+
+        it('shows single sign-on when the organization has the sso entitlement', () => {
+            const nav = resolveNavigation({
+                ...buildArgs(admin, ssoPermissions, {
+                    organization: b2bOrganization,
+                    entitlements: buildSsoEntitlements(
+                        [EntitlementName.Business, EntitlementName.FlagsVpn, EntitlementName.Sso],
+                        PLANS.VPN_BUSINESS
+                    ),
+                }),
+                allSubscriptions: [buildSubscription(PLANS.VPN_BUSINESS)],
+            });
+
+            expect(getOrganizationChildIds(nav)).toContain('organization.sso');
+        });
+
+        it('shows single sign-on as an upsell to a vpnpro2023 subscription without the sso entitlement', () => {
+            const nav = resolveNavigation({
+                ...buildArgs(admin, ssoPermissions, {
+                    organization: { ...b2bOrganization, PlanName: PLANS.VPN_PRO },
+                    entitlements: buildSsoEntitlements(
+                        [EntitlementName.Business, EntitlementName.FlagsVpn],
+                        PLANS.VPN_PRO
+                    ),
+                }),
+                allSubscriptions: [buildSubscription(PLANS.VPN_PRO)],
+            });
+
+            expect(getOrganizationChildIds(nav)).toContain('organization.sso');
+        });
+
+        it('hides single sign-on without the sso entitlement or an upsell subscription', () => {
+            const nav = resolveNavigation(buildArgs(admin, ssoPermissions));
+
+            expect(getOrganizationChildIds(nav)).not.toContain('organization.sso');
+        });
     });
 });

@@ -1,3 +1,4 @@
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
@@ -37,6 +38,7 @@ export const useB2BAdminSidebarFeature = ({
     | { enabled: false; routes: undefined; loading: boolean } => {
     const [user, isUserLoading] = useUser();
     const [subscription, isSubscriptionLoading] = useSubscription();
+    const [allSubscriptions, isAllSubscriptionsLoading] = useAllSubscriptions();
     const [organization, isOrganizationLoading] = useOrganization();
     const [entitlements, isEntitlementsLoading] = useEntitlementChecksForOrgAndUser();
 
@@ -45,6 +47,7 @@ export const useB2BAdminSidebarFeature = ({
     const skip =
         isUserLoading ||
         isSubscriptionLoading ||
+        isAllSubscriptionsLoading ||
         isOrganizationLoading ||
         isEntitlementsLoading ||
         permissions === null;
@@ -69,7 +72,7 @@ export const useB2BAdminSidebarFeature = ({
 
     const disabled = (loading: boolean) => ({ enabled: false as const, routes: undefined, loading });
 
-    if (skip || !subscription || !organization || !permissions) {
+    if (skip || !subscription || !allSubscriptions || !organization || !permissions) {
         return disabled(true);
     }
     const hasVpnOrganization = entitlements.isVpnB2B;
@@ -80,6 +83,7 @@ export const useB2BAdminSidebarFeature = ({
     const resolvedNavigation = resolveNavigation({
         user,
         subscription,
+        allSubscriptions,
         entitlements,
         organization,
         notifications: { recovery: recoveryNotification?.color },
