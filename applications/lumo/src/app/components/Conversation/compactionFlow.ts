@@ -42,6 +42,8 @@ type ForwardedSendOptions = AssistantCallOptions & {
     errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
     /** Whether/how the `create_artifact` client tool is registered for this request. See `resolveArtifactToolMode`. */
     artifactToolMode?: ArtifactToolMode;
+    /** Whether `create_artifact` offers `presentation` (slide decks, `LumoArtifactSlides`). */
+    artifactPresentationEnabled?: boolean;
 };
 
 export type GenerationWithCompactionParams = {
@@ -93,7 +95,9 @@ function resolveClientToolExecutor(sendOptions: ForwardedSendOptions): ClientToo
     const executors: ClientToolExecutor[] = [];
 
     if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
-        executors.push(createArtifactToolExecutor);
+        executors.push(
+            createArtifactToolExecutor({ presentationEnabled: sendOptions.artifactPresentationEnabled ?? false })
+        );
     }
 
     if (isDesktopEnvironment()) {
