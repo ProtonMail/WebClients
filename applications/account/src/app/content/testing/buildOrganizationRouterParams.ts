@@ -15,14 +15,32 @@ import { PERMISSIONS } from '@proton/shared/lib/interfaces/UserPermission';
 import type { Flags, OrganizationRouterParams } from '../router-params';
 
 const prodCatalogGrants = {
-    [PLANS.MAIL]: [EntitlementName.FlagsInbox],
-    [PLANS.FAMILY]: [EntitlementName.FlagsInbox, EntitlementName.FlagsVpn, EntitlementName.MultiUser],
-    [PLANS.MAIL_PRO]: [EntitlementName.FlagsInbox, EntitlementName.Business, EntitlementName.MultiUser],
+    [PLANS.MAIL]: [EntitlementName.FlagsInbox, EntitlementName.CustomDomainAddresses],
+    [PLANS.FAMILY]: [
+        EntitlementName.FlagsInbox,
+        EntitlementName.FlagsVpn,
+        EntitlementName.MultiUser,
+        EntitlementName.CustomDomainAddresses,
+    ],
+    [PLANS.MAIL_PRO]: [
+        EntitlementName.FlagsInbox,
+        EntitlementName.Business,
+        EntitlementName.MultiUser,
+        EntitlementName.CustomDomainAddresses,
+    ],
+    [PLANS.MEET_BUSINESS]: [
+        EntitlementName.FlagsMeet,
+        EntitlementName.Business,
+        EntitlementName.MultiUser,
+        EntitlementName.ExternalManagedMembers,
+        EntitlementName.CustomDomainAddresses,
+    ],
     [PLANS.BUNDLE_PRO_2024]: [
         EntitlementName.FlagsInbox,
         EntitlementName.FlagsVpn,
         EntitlementName.Business,
         EntitlementName.MultiUser,
+        EntitlementName.CustomDomainAddresses,
     ],
     [PLANS.VPN_PRO]: [
         EntitlementName.FlagsVpn,
