@@ -88,6 +88,7 @@ export const entitlementChecksForSelection = {
         }),
 
     hasCustomDomainAddresses: (r) => r.hasEntitlement(EntitlementName.CustomDomainAddresses),
+    hasSso: (r) => r.hasEntitlement(EntitlementName.Sso),
 
     hasExternalManagedMembers: (r) => r.hasEntitlement(EntitlementName.ExternalManagedMembers),
 
