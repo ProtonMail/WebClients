@@ -74,13 +74,32 @@ export function invokeInboxDesktopIPC({ type, payload }: IPCInboxClientUpdateMes
     return Promise.resolve();
 }
 
+export const hasInboxDesktopFeature = (feature: IPCInboxDesktopFeature) =>
+    isElectronMail &&
+    !!window.ipcInboxMessageBroker &&
+    !!window.ipcInboxMessageBroker!.hasFeature &&
+    window.ipcInboxMessageBroker!.hasFeature(feature);
+
 export function handleInboxDesktopIPCPostMessages() {
+    const calendarOrigin = new URL(getAppHref('/', APPS.PROTONCALENDAR, undefined, location)).origin;
+
+    const isFromCalendarChildFrame = (event: MessageEvent) =>
+        event.origin === calendarOrigin &&
+        event.source !== window &&
+        (event.source as Window | null)?.parent === window;
+
+    const isUnsupportedByHost = (type: IPCInboxClientUpdateMessage['type']) =>
+        type === 'oauthPopupOpenedV2' && !hasInboxDesktopFeature('OAuthPopupV2');
+
     window.addEventListener('message', (event) => {
-        if (event.data?.name === IPC_POST_MESSAGE_NAME) {
+        if (event.data?.name === IPC_POST_MESSAGE_NAME && isFromCalendarChildFrame(event)) {
             event.source?.postMessage(
                 { name: IPC_POST_MESSAGE_NAME, id: event.data.id },
                 { targetOrigin: event.origin }
             );
+            if (isUnsupportedByHost(event.data.type)) {
+                return;
+            }
             void invokeInboxDesktopIPC({ type: event.data.type, payload: event.data.payload });
         }
     });
@@ -109,12 +128,6 @@ export const getInboxDesktopAsyncData = <T extends IPCInboxClientGetAsyncDataMes
 export const getInboxDesktopUserInfo = <T extends IPCInboxGetUserInfoMessage['type']>(key: T, userID: string) => {
     return window.ipcInboxMessageBroker!.getUserInfo!<T>(key, userID);
 };
-
-export const hasInboxDesktopFeature = (feature: IPCInboxDesktopFeature) =>
-    isElectronMail &&
-    !!window.ipcInboxMessageBroker &&
-    !!window.ipcInboxMessageBroker!.hasFeature &&
-    window.ipcInboxMessageBroker!.hasFeature(feature);
 
 export const emptyListener: IPCInboxHostUpdateListenerRemover = { removeListener: () => {} };
 
