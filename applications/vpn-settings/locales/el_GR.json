@@ -2134,7 +2134,7 @@
         "/μήνα"
       ],
       "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
+        "15 GB αποθήκευσης"
       ],
       "2 individual accounts": [
         "2 ατομικοί λογαριασμοί"
@@ -2143,7 +2143,7 @@
         "2 TB ασφαλούς αποθήκευσης"
       ],
       "200 GB storage: 40x your current plan": [
-        "Αποθηκευτικός χώρος 200 GB: 40 φορές το τρέχον πλάνο σας"
+        "200 GB αποθήκευσης: 40x το τρέχον πρόγραμμά σας"
       ],
       "3 TB of secure storage": [
         "3 TB ασφαλούς αποθήκευσης"
@@ -2155,7 +2155,7 @@
         "6 ατομικοί λογαριασμοί"
       ],
       "Built-in 2FA authenticator": [
-        "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
+        "Ενσωματωμένη εφαρμογή ταυτοποίησης δύο παραγόντων"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
@@ -2170,10 +2170,10 @@
         "Ισχυρότερη προστασία από τις απειλές στον κυβερνοχώρο"
       ],
       "Unlimited folders, labels, and filters": [
-        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
       ],
       "Use your own email domain": [
-        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
+        "Χρησιμοποιήστε τον δικό σας τομέα email"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -2203,7 +2203,7 @@
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Η μεγαλύτερη προσφορά της χρονιάς"
+        "Οι μεγαλύτερες εκπτώσεις της χρονιάς"
       ],
       "Black Friday": [
         "Black Friday"
@@ -2212,10 +2212,10 @@
         "για 12 μήνες"
       ],
       "Last chance to save big": [
-        "Τελευταία ευκαιρία για μεγάλες εξοικονομήσεις"
+        "Τελευταία ευκαιρία για μεγάλη εξοικονόμηση"
       ],
       "Protect your entire tribe": [
-        "Προστάτεψε ολόκληρη τη φυλή σας"
+        "Προστατέψτε ολόκληρη τη φυλή σας"
       ],
       "Protection for two in a single plan": [
         "Προστασία για δύο άτομα σε ένα ενιαίο πλάνο"
@@ -10325,6 +10325,9 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "UnionPay logo": [
+        "Λογότυπο UnionPay"
       ]
     },
     "info": {
@@ -11839,6 +11842,9 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "Customer Support": [
+        "Υποστήριξη Πελατών"
       ]
     },
     "Link (Scribe)": {
@@ -20686,6 +20692,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Μετά την επιτυχή επαλήθευση, μην καταργήσετε αυτήν την εγγραφή TXT, διότι απαιτείται για να επιβεβαιώσετε ότι συνεχίζετε να είστε ο ιδιοκτήτης του τομέα."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Εγγύηση επιστροφής χρημάτων 30 ημερών: ακυρώστε εντός 30 ημερών από την αγορά σας και επικοινωνήστε με το ${ customerSupportLink } για να λάβετε επιστροφή χρημάτων."
       ]
     }
   }

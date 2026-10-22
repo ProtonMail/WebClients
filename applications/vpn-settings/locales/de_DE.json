@@ -2126,7 +2126,7 @@
         "Black Friday"
       ],
       "Get the deal": [
-        "Jetzt zugreifen"
+        "Deal sichern"
       ]
     },
     "bfcampaign2026: Info": {
@@ -2134,40 +2134,40 @@
         "/Monat"
       ],
       "15 GB storage": [
-        "15 GB Speicherplatz"
+        "15 GB Speicher"
       ],
       "2 individual accounts": [
-        "2 Einzelkonten"
+        "2 individuelle Konten"
       ],
       "2 TB of secure storage": [
-        "2 TB sicherer Speicherplatz"
+        "2 TB sicherer Speicher"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB Speicherplatz: das 40-fache Ihres aktuellen Abonnements"
+        "200 GB Speicher: 40 Mal so viel wie dein aktuelles Abonnement"
       ],
       "3 TB of secure storage": [
-        "3 TB sicherer Speicherplatz"
+        "3 TB sicherer Speicher"
       ],
       "500 GB of secure storage": [
-        "500 GB sicherer Speicherplatz"
+        "500 GB sicherer Speicher"
       ],
       "6 individual accounts": [
-        "6 Einzelkonten"
+        "6 individuelle Konten"
       ],
       "Built-in 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
+        "Integrierter 2FA-Authenticator"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+        "Die Rabatte basieren auf dem üblichen Monatspreis. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum Standard-Jahrestarif."
       ],
       "Online document editor": [
-        "Dokumente Online bearbeiten"
+        "Online-Dokumenteneditor"
       ],
       "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
+        "Stelle frühere Dateiversionen wieder her"
       ],
       "Stronger protection against cyber threats": [
-        "Besserer Schutz vor Cyber-Bedrohungen"
+        "Stärkerer Schutz vor Cyberbedrohungen"
       ],
       "Unlimited folders, labels, and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
@@ -2178,7 +2178,7 @@
     },
     "bfcampaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
@@ -2193,17 +2193,17 @@
     },
     "bfcampaign2026: Info, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Das größte Sonderangebot des Jahres"
+        "Der größte Sale des Jahres"
       ],
       "Black Friday": [
         "Black Friday"
@@ -2212,7 +2212,7 @@
         "für 12 Monate"
       ],
       "Last chance to save big": [
-        "Letzte Chance, kräftig zu sparen"
+        "Letzte Chance auf satte Ersparnisse"
       ],
       "Protect your entire tribe": [
         "Schütze deine ganze Gemeinschaft"
@@ -5000,6 +5000,13 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Deine Wiederherstellungskontakte sollten Personen sein, die du kennst und die du leicht erreichen kannst."
+      ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Sie erhalten **heute**, am **${ formattedAccessibleAt }**, automatisch Zugriff. Du kannst ihre Anfrage jederzeit ablehnen oder ihnen sofort Zugriff gewähren."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Sie erhalten automatisch Zugriff in **${ days } Tag**, am **${ formattedAccessibleAt }**. Du kannst ihre Anfrage jederzeit ablehnen oder ihnen sofort Zugriff gewähren.",
+        "Sie erhalten automatisch Zugriff in **${ days } Tagen**, am **${ formattedAccessibleAt }**. Du kannst ihre Anfrage jederzeit ablehnen oder ihnen sofort Zugriff gewähren."
       ]
     },
     "Empty group name": {
@@ -10325,6 +10332,12 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-Tage-Geld-zurück-Garantie: Kündige innerhalb von 30 Tagen nach dem Kauf und wende dich an unseren ${ customerSupportLink }, um eine Rückerstattung zu erhalten."
+      ],
+      "UnionPay logo": [
+        "Union Pay-Logo"
       ]
     },
     "info": {
@@ -20364,6 +20377,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Sobald der Benutzer die Einladung angenommen hat, kannst du ihm Rollen zuweisen."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Dieser Nutzer erhält bei seiner nächsten Anmeldung Administratorrechte."
       ]
     },
     "Users table: badge": {
@@ -20689,6 +20705,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-Tage-Geld-zurück-Garantie: Kündige innerhalb von 30 Tagen nach dem Kauf und wende dich an unseren ${ customerSupportLink }, um eine Rückerstattung zu erhalten."
       ]
     }
   }
