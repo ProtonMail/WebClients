@@ -2,7 +2,7 @@ import type { MouseEvent } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import './AttachmentThumbnail.scss';
@@ -18,6 +18,8 @@ const AttachmentThumbnail = ({ attachmentMetadata, onClick, ...rest }: Props) =>
         onClick(attachmentMetadata);
     };
 
+    const AttachmentIcon = getFileIcon(attachmentMetadata?.MIMEType || 'unknown');
+
     return (
         <Button
             shape="outline"
@@ -25,7 +27,7 @@ const AttachmentThumbnail = ({ attachmentMetadata, onClick, ...rest }: Props) =>
             className="text-sm flex items-center flex-nowrap gap-2 attachment-thumbnail"
             {...rest}
         >
-            <FileIcon mimeType={attachmentMetadata?.MIMEType || 'unknown'} className="shrink-0" />
+            <AttachmentIcon className="shrink-0" />
             <span className="lh100 attachment-thumbnail-name">
                 <MiddleEllipsis charsToDisplayEnd={3} text={attachmentMetadata.Name} />
             </span>
