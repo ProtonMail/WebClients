@@ -9190,9 +9190,9 @@ importers:
       '@jest/globals':
         specifier: ^30.5.2
         version: 30.5.2(supports-color@11.0.0)
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../eslint-config-proton
+        version: link:../oxlint-config
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -9205,9 +9205,12 @@ importers:
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
-      eslint:
-        specifier: ^10.12.0
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       typescript:
         specifier: npm:@typescript/typescript6@^6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -9315,9 +9318,9 @@ importers:
 
   packages/vitest-config:
     devDependencies:
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../eslint-config-proton
+        version: link:../oxlint-config
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0
@@ -9327,9 +9330,12 @@ importers:
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
-      eslint:
-        specifier: ^10.12.0
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       typescript:
         specifier: npm:@typescript/typescript6@^6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -9911,12 +9917,12 @@ importers:
         specifier: ^2.9.1
         version: 2.9.1
     devDependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../../packages/oxlint-config
       '@types/async-retry':
         specifier: ^1.4.9
         version: 1.4.9
@@ -9932,21 +9938,21 @@ importers:
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
-      eslint:
-        specifier: ^10.12.0
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       jest:
         specifier: ^30.5.2
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       typescript:
         specifier: npm:@typescript/typescript6@^6.0.2
         version: '@typescript/typescript6@6.0.2'
-      typescript-eslint:
-        specifier: ^8.71.2
-        version: 8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
 
   utilities/ci-scripts:
     dependencies:
@@ -9975,12 +9981,12 @@ importers:
         specifier: ^7.30.0
         version: 7.30.0
     devDependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../../packages/oxlint-config
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
@@ -9996,18 +10002,18 @@ importers:
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
-      eslint:
-        specifier: ^10.12.0
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       jest:
         specifier: ^30.5.2
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
-      typescript-eslint:
-        specifier: ^8.71.2
-        version: 8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
 
   utilities/ci-tools:
     dependencies:
@@ -10024,12 +10030,12 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0(axios@1.20.0(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0))
     devDependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../../packages/oxlint-config
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -10039,12 +10045,15 @@ importers:
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
-      eslint:
-        specifier: ^10.12.0
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       jest:
         specifier: ^30.5.2
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
@@ -10073,12 +10082,12 @@ importers:
         specifier: ^5.111.1
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
     devDependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../../packages/oxlint-config
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -10091,6 +10100,12 @@ importers:
       jest:
         specifier: ^30.5.2
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(typescript@7.0.2))
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(typescript@7.0.2)
@@ -10104,12 +10119,12 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0(axios@1.20.0(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0))
     devDependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../../packages/oxlint-config
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -10119,12 +10134,15 @@ importers:
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
-      eslint:
-        specifier: ^10.12.0
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       jest:
         specifier: ^30.5.2
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(typescript@7.0.2))
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(typescript@7.0.2)
@@ -10192,12 +10210,18 @@ importers:
 
   utilities/scripts:
     devDependencies:
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
+        version: link:../../packages/oxlint-config
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(typescript@6.0.3)
@@ -10211,12 +10235,12 @@ importers:
         specifier: workspace:^
         version: link:../gitlab
     devDependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../../packages/oxlint-config
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -10232,12 +10256,15 @@ importers:
       axios:
         specifier: ^1.20.0
         version: 1.20.0(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)
-      eslint:
-        specifier: ^10.12.0
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       jest:
         specifier: ^30.5.2
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
@@ -10247,9 +10274,6 @@ importers:
       typescript:
         specifier: npm:@typescript/typescript6@^6.0.2
         version: '@typescript/typescript6@6.0.2'
-      typescript-eslint:
-        specifier: ^8.71.2
-        version: 8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
 
   utilities/version:
     dependencies:
@@ -10272,12 +10296,12 @@ importers:
         specifier: ^4.23.15
         version: 4.23.15
     devDependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../../packages/oxlint-config
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -10296,6 +10320,12 @@ importers:
       jest:
         specifier: ^30.5.2
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(typescript@7.0.2))
+      oxlint:
+        specifier: 1.87.0
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 7.0.2004
+        version: 7.0.2004
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(typescript@7.0.2)
