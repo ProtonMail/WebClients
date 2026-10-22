@@ -7,9 +7,9 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 import { IcCloud } from '@proton/icons/icons/IcCloud';
 import { IcHeart } from '@proton/icons/icons/IcHeart';
 import { IcHeartFilled } from '@proton/icons/icons/IcHeartFilled';
@@ -106,6 +106,8 @@ export const PhotosCard: FC<Props> = ({
             };
         }
     }, [thumbnailUrl]);
+
+    const PhotoIcon = getFileIcon(photoInfo?.mediaType ?? '');
 
     const onKeyDown = useCallback(
         (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -206,7 +208,7 @@ export const PhotosCard: FC<Props> = ({
                                     className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty"
                                     data-testid={getAltText({ name: photoInfo.name, mediaType: photoInfo.mediaType })}
                                 >
-                                    <FileIcon mimeType={photoInfo.mediaType} size={12} />
+                                    <PhotoIcon size={12} className="shrink-0" />
                                 </div>
                             )
                         )}

@@ -1,12 +1,12 @@
 import { useMemo, useState } from 'react';
 
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
 import Loader from '@proton/components/components/loader/Loader';
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
 import type { TreeItemWithChildren } from '@proton/drive/modules/directoryTree';
 import { splitNodeUid } from '@proton/drive/sdk';
+import { MimeFolder } from '@proton/file-icons/icons/MimeFolder';
 
 import SidebarListItemLink from '../../../legacy/components/layout/sidebar/SidebarListItemLink';
 import { useSidebarStore } from '../hooks/useSidebar.store';
@@ -71,7 +71,7 @@ export const DriveSidebarSubfolder = ({ shareId, item, toggleExpand, level }: Su
                             {isLoading ? (
                                 <Loader className="flex shrink-0 drive-sidebar--icon" />
                             ) : (
-                                <FileIcon className="self-center my-auto drive-sidebar--icon" mimeType="Folder" />
+                                <MimeFolder className="shrink-0 self-center my-auto drive-sidebar--icon" />
                             )}
                             <FileNameDisplay text={item.name} />
                         </div>
