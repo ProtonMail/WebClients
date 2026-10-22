@@ -692,6 +692,9 @@ importers:
       '@proton/components':
         specifier: workspace:^
         version: link:../../packages/components
+      '@proton/file-icons':
+        specifier: workspace:^
+        version: link:../../packages/file-icons
       '@proton/hooks':
         specifier: workspace:^
         version: link:../../packages/hooks
