@@ -117,8 +117,14 @@ const ARTIFACT_TOOL_CREATE_NUDGE = `The user has asked for this message to be an
 // Creation is enabled by default, so the tool is registered on ordinary turns. The model must
 // decide for itself whether the request qualifies — and the default answer is "no". Without an
 // explicit bias towards answering inline, factual questions answered from web search results
-// (weather, stock prices) were being routed into the side panel.
-const ARTIFACT_TOOL_AUTO_NUDGE = `The "${CREATE_ARTIFACT_TOOL_NAME}" tool is available, but most messages should be answered normally in the chat, without it. Use it only when the user asks you to produce a substantial, standalone piece of content they are likely to copy, edit, send, or run outside this chat — for example a drafted email, letter, Slack message, essay, report, a complete script or program, a web page, or a slide deck. Do not use it for answering questions, explanations, factual or real-time information (weather, news, stock prices, sports scores), summaries of search results, advice, recommendations, or comparisons — even when the answer is long or contains a table or list. If you are unsure, answer in the chat. If an artifact already exists in this conversation and the user asks to change it, call the tool again with its exact "id" and the full updated content.`;
+// (weather, stock prices) were being routed into the side panel. Slide decks are only listed when
+// the tool offers `presentation` (`LumoArtifactSlides`).
+const buildArtifactToolAutoNudge = (presentationEnabled: boolean): string => {
+    const examples = presentationEnabled
+        ? 'a complete script or program, a web page, or a slide deck'
+        : 'a complete script or program, or a web page';
+    return `The "${CREATE_ARTIFACT_TOOL_NAME}" tool is available, but most messages should be answered normally in the chat, without it. Use it only when the user asks you to produce a substantial, standalone piece of content they are likely to copy, edit, send, or run outside this chat — for example a drafted email, letter, Slack message, essay, report, ${examples}. Do not use it for answering questions, explanations, factual or real-time information (weather, news, stock prices, sports scores), summaries of search results, advice, recommendations, or comparisons — even when the answer is long or contains a table or list. If you are unsure, answer in the chat. If an artifact already exists in this conversation and the user asks to change it, call the tool again with its exact "id" and the full updated content.`;
+};
 
 // Creation is disabled, but an artifact already exists in this conversation — the tool stays
 // available so ordinary follow-ups (including the artifact panel's own selection-based inline-edit
@@ -126,12 +132,12 @@ const ARTIFACT_TOOL_AUTO_NUDGE = `The "${CREATE_ARTIFACT_TOOL_NAME}" tool is ava
 // the model must not spawn a second, unrelated artifact.
 const ARTIFACT_TOOL_REVISE_NUDGE = `The "${CREATE_ARTIFACT_TOOL_NAME}" tool is available in this conversation only to revise an artifact already created earlier (reuse its exact "id"). Do not use it to create a new, unrelated artifact — the user has turned off creations, so write any new content in the chat instead.`;
 
-function getArtifactToolNudge(mode: Exclude<ArtifactToolMode, 'off'>): string {
+function getArtifactToolNudge(mode: Exclude<ArtifactToolMode, 'off'>, presentationEnabled: boolean): string {
     if (mode === 'create') {
         return ARTIFACT_TOOL_CREATE_NUDGE;
     }
     if (mode === 'auto') {
-        return ARTIFACT_TOOL_AUTO_NUDGE;
+        return buildArtifactToolAutoNudge(presentationEnabled);
     }
     return ARTIFACT_TOOL_REVISE_NUDGE;
 }
@@ -172,7 +178,8 @@ export function prepareTurns(
     includeVisualizationInstructions = false,
     artifactToolMode: ArtifactToolMode = 'off',
     isFromQueryParam = false,
-    contextLimits: ContextLimits = DEFAULT_CONTEXT_LIMITS
+    contextLimits: ContextLimits = DEFAULT_CONTEXT_LIMITS,
+    artifactPresentationEnabled = false
 ): Turn[] {
     // Step 0: Apply any context-compaction boundary. Summarized messages are
     // replaced by a single summary turn and dropped from the chain, so the model
@@ -281,7 +288,7 @@ export function prepareTurns(
     if (artifactToolMode !== 'off') {
         const artifactToolTurn: TurnInProgress = {
             role: Role.System,
-            content: getArtifactToolNudge(artifactToolMode),
+            content: getArtifactToolNudge(artifactToolMode, artifactPresentationEnabled),
         };
         turns = [artifactToolTurn, ...turns];
     }

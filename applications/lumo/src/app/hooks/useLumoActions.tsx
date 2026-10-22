@@ -134,6 +134,7 @@ export const useLumoActions = ({
         imageTools: ffImageTools,
         memory: ffMemory,
         artifactsView: ffArtifactsView,
+        artifactSlides: ffArtifactSlides,
         visualizationInstructions: ffVisualizationInstructions,
     } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
@@ -325,6 +326,7 @@ export const useLumoActions = ({
                     personalization,
                     isMemoryFeatureEnabled: ffMemory,
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
+                    isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                     hasLumoPlus,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                     isGuestUser: isGuest,
@@ -420,6 +422,7 @@ export const useLumoActions = ({
                 settingsContext: {
                     personalization,
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
+                    isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                     isGuestUser: isGuest,
                 },
@@ -489,6 +492,7 @@ export const useLumoActions = ({
                 settingsContext: {
                     personalization,
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
+                    isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                     isGuestUser: isGuest,
                 },
@@ -590,6 +594,7 @@ export const useLumoActions = ({
                 settingsContext: {
                     personalization,
                     isArtifactsViewFeatureEnabled: ffArtifactsView,
+                    isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                     isGuestUser: isGuest,
                 },

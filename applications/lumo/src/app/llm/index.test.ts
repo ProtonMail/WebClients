@@ -60,6 +60,28 @@ describe('prepareTurns — artifact tool nudge', () => {
         expect(nudge?.content).not.toContain('answered as a creation in the canvas');
     });
 
+    it('lists slide decks in the auto nudge only with LumoArtifactSlides', () => {
+        const getNudge = (artifactPresentationEnabled: boolean) => {
+            const turns = prepareTurns(
+                [message],
+                personalization,
+                undefined,
+                undefined,
+                undefined,
+                undefined,
+                false,
+                'auto',
+                false,
+                undefined,
+                artifactPresentationEnabled
+            );
+            return turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
+        };
+
+        expect(getNudge(true)?.content).toContain('slide deck');
+        expect(getNudge(false)?.content).not.toContain('slide deck');
+    });
+
     it('injects the revise-only nudge when artifactToolMode is "revise"', () => {
         const turns = prepareTurns(
             [message],
