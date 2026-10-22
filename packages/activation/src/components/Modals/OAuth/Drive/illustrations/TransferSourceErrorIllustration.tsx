@@ -316,7 +316,7 @@ export const TransferSourceErrorIllustration = () => {
                     ...tileFace(palette.plainTile),
                 }}
             >
-                <GoogleDriveMark uid={uid} />
+                <ProtonDriveMark uid={uid} />
             </div>
 
             <div
@@ -344,7 +344,7 @@ export const TransferSourceErrorIllustration = () => {
                         ...tileFace(palette.badgedTile),
                     }}
                 >
-                    <ProtonDriveMark uid={uid} />
+                    <GoogleDriveMark uid={uid} />
                 </div>
             </div>
 
