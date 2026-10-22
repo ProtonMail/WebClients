@@ -1,4 +1,5 @@
 import { MAX_CHARS_API } from '@proton/account/organization';
+import { getStorageRange } from '@proton/account/organization/storage';
 import {
     type DeferredMnemonicData,
     generateDeferredMnemonicData,
@@ -6,6 +7,7 @@ import {
 import { startEasySwitchSignupImportTask } from '@proton/activation/src/api/api';
 import { BYOE_QUOTA_THRESHOLD_RATIO } from '@proton/activation/src/constants';
 import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
+import { disableStorageSelection } from '@proton/components/containers/members/helper';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
@@ -15,8 +17,12 @@ import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getAllMembers, updateVPN } from '@proton/shared/lib/api/members';
-import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
+import { getAllMembers, updateQuota, updateVPN } from '@proton/shared/lib/api/members';
+import {
+    createPasswordlessOrganizationKeys,
+    getOrganization,
+    updateOrganizationName,
+} from '@proton/shared/lib/api/organization';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -28,15 +34,19 @@ import { persistSession } from '@proton/shared/lib/authentication/persistedSessi
 import { APPS, CLIENT_TYPES, KEYGEN_CONFIGS, KEYGEN_TYPES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronMail, isElectronMeet } from '@proton/shared/lib/helpers/desktop';
+import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
+import type { Member } from '@proton/shared/lib/interfaces/Member';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { generatePasswordlessOrganizationKey } from '@proton/shared/lib/keys/organizationKeys';
 import { handleSetupKeys } from '@proton/shared/lib/keys/setupKeys';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
+import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
 import type { AppIntent } from '../../content/authSession';
@@ -253,25 +263,41 @@ export const handleSetPassword = async ({
     };
 };
 
+const PASS_B2B_SEAT_STORAGE = 10 * sizeUnits.GB;
+
+const setPassB2BAdminSeatStorage = async (api: Api, selfMember: Member) => {
+    const { Organization: organization } = await api<{ Organization: Organization }>(getOrganization());
+    if (disableStorageSelection(organization)) {
+        return;
+    }
+    const storageRange = getStorageRange(selfMember, organization);
+    const storage = clamp(PASS_B2B_SEAT_STORAGE, storageRange.min, storageRange.max);
+    if (storage === selfMember.MaxSpace) {
+        return;
+    }
+    await api(updateQuota(selfMember.ID, storage));
+};
+
 export const handleSetupOrg = async ({
     api,
     user,
     password,
     keyPassword,
     orgName,
+    isPassB2B = false,
 }: {
     api: Api;
     user: User;
     password: string;
     keyPassword: string;
     orgName: string;
+    isPassB2B?: boolean;
 }) => {
     const members = await getAllMembers(api);
     const selfMember = members.find(({ Self }) => !!Self);
-    const selfMemberID = selfMember?.ID;
     const [userKey] = await getDecryptedUserKeysHelper(user, keyPassword);
 
-    if (!selfMemberID) {
+    if (!selfMember) {
         throw new Error('Missing member id');
     }
     if (!userKey) {
@@ -281,7 +307,13 @@ export const handleSetupOrg = async ({
     // NOTE: By default the admin gets allocated all of the VPN connections. Here we artificially set the admin to the default value
     // So that other users can get connections allocated.
     if (hasPaidVpn(user)) {
-        await api(updateVPN(selfMemberID, VPN_CONNECTIONS)).catch(noop);
+        await api(updateVPN(selfMember.ID, VPN_CONNECTIONS)).catch(noop);
+    }
+
+    // NOTE: By default the admin gets allocated all of the organization storage. On Pass B2B plans, we set the admin to one seat's storage
+    // So that other users can get storage allocated.
+    if (isPassB2B) {
+        await setPassB2BAdminSeatStorage(api, selfMember).catch(noop);
     }
 
     // Slice the org name (to ensure the request passes validation), specifically for VPN B2B signup where it's passed as a query param and not validated.
