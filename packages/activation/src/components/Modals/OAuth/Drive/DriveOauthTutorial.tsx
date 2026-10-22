@@ -21,11 +21,7 @@ export const DriveOauthTutorial = ({ triggerOAuth }: Props) => {
     return (
         <DriveStepModal
             onClose={handleClose}
-            media={
-                <div className="p-10 bg-weak rounded">
-                    <AuthorizationIllustration />
-                </div>
-            }
+            media={<AuthorizationIllustration />}
             secondaryAction={{ label: c('Action').t`Cancel`, onClick: handleClose, color: 'weak' }}
             primaryAction={{ label: c('Action').t`Sign in with Google`, onClick: () => triggerOAuth() }}
         >
