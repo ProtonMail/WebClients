@@ -187,13 +187,13 @@ ruleTester.run('restricted-imports: base restrictions', rule, {
     ],
 });
 
-ruleTester.run('restricted-imports: rollout restrictions', rule, {
-    valid: [{ code: `import { Foo } from '@proton/account';`, filename: appFile }],
+ruleTester.run('restricted-imports: barrels', rule, {
+    valid: [{ code: `import { Foo } from '@proton/account/welcomeFlags';`, filename: appFile }],
     invalid: [
         {
             code: `import { Foo } from '@proton/account';`,
             filename: appFile,
-            options: [{ rollout: ['account-barrel'] }],
+            options: [{}],
             errors: [{ messageId: 'path' }],
         },
         {

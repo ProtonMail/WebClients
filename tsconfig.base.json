@@ -21,7 +21,6 @@
         "types": ["@proton/types", "global-types-monorepo", "webpack-env", "jest", "node"],
         "paths": {
             "@proton/atoms/*": ["./packages/atoms/src/*"],
-            "@proton/account/*": ["./packages/account/*"],
             "@proton/andromeda": ["./packages/wasm/andromeda/*"],
             "@proton/cross-storage/*": ["./packages/cross-storage/*"],
             "@proton/drive-store/*": ["./packages/drive-store/*"],
