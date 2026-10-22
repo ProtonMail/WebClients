@@ -9,8 +9,7 @@ import clsx from '@proton/utils/clsx';
 
 import Price from '../../../../../price/Price';
 import type { PriceData } from '../../helpers/interface';
-import { getSubscriptionAge } from '../../helpers/paidUserNudgeHelper';
-import { getWindowEndDate } from '../../helpers/paidUserNudgeHelper';
+import { getSubscriptionAge, getWindowEndDate } from '../../helpers/paidUserNudgeHelper';
 import { NudgeOfferPromoChild } from './NudgeOfferPromoChild';
 
 interface Props {
@@ -19,9 +18,10 @@ interface Props {
     onNeverShow: () => void;
     prices: PriceData;
     planCopy: string;
+    loading: boolean;
 }
 
-export const NudgeOfferContent = ({ imgSrc, onClick, onNeverShow, prices, planCopy }: Props) => {
+export const NudgeOfferContent = ({ imgSrc, onClick, onNeverShow, prices, planCopy, loading }: Props) => {
     const [currency] = useAutomaticCurrency();
     const [subscription] = useSubscription();
 
@@ -64,7 +64,7 @@ export const NudgeOfferContent = ({ imgSrc, onClick, onNeverShow, prices, planCo
                 ) : null}
             </div>
             <div className="text-center">
-                <Button color="norm" className="mb-4" onClick={onClick} fullWidth>
+                <Button color="norm" className="mb-4" onClick={onClick} loading={loading} fullWidth>
                     <NudgeOfferPromoChild prices={prices} />
                 </Button>
                 <div className="flex gap-1 text-sm flex-column">

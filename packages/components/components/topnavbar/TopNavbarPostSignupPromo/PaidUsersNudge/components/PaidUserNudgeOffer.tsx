@@ -39,7 +39,7 @@ export const PaidUserNudgeOffer = ({ offerConfig, openSpotlight, isLoading }: Pr
 
     const { createNotification } = useNotifications();
     const [subscription, loadingSubscription] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     const [user] = useUser();
 
@@ -80,9 +80,9 @@ export const PaidUserNudgeOffer = ({ offerConfig, openSpotlight, isLoading }: Pr
 
     const upsellInApp = () => {
         if (onUpgrade) {
-            onUpgrade();
+            void onUpgrade();
         } else {
-            openSubscriptionModal({
+            void openSubscriptionModal({
                 ...defaultOfferUpsellConfig,
                 plan: offerConfig.currentPlan,
                 upsellRef: offerConfig.upsellRef,
@@ -96,7 +96,6 @@ export const PaidUserNudgeOffer = ({ offerConfig, openSpotlight, isLoading }: Pr
             getUpgradePath(
                 {
                     user,
-                    subscription,
                     app: APP_NAME,
                     target: 'checkout',
                     ...defaultOfferUpsellConfig,
@@ -167,6 +166,7 @@ export const PaidUserNudgeOffer = ({ offerConfig, openSpotlight, isLoading }: Pr
                         prices={prices}
                         onNeverShow={handleHideOffer}
                         planCopy={getPlanCopy(offerConfig.currentPlan)}
+                        loading={loadingSubscriptionModal}
                     />
                 )
             }
