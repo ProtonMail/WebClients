@@ -12,6 +12,7 @@ interface DrawVideoWithAspectRatioParams {
     height: number;
     mirror?: boolean;
     isIncomingVideoDisabled?: boolean;
+    fit?: 'cover' | 'contain';
 }
 
 interface DrawMessageOverlayParams {
@@ -34,25 +35,38 @@ export const drawVideoWithAspectRatio = ({
     height,
     mirror = false,
     isIncomingVideoDisabled = false,
+    fit = 'contain',
 }: DrawVideoWithAspectRatioParams) => {
     const hasFrame = videoElement.readyState >= 1 && videoElement.videoWidth > 0 && videoElement.videoHeight > 0;
 
     if (hasFrame && !isIncomingVideoDisabled) {
         try {
-            const videoAspectRatio = videoElement.videoWidth / videoElement.videoHeight;
+            const { videoWidth, videoHeight } = videoElement;
+            const videoAspectRatio = videoWidth / videoHeight;
             const containerAspectRatio = width / height;
 
+            // Source crop (cover) and destination rect (contain)
+            let srcX = 0;
+            let srcY = 0;
+            let srcWidth = videoWidth;
+            let srcHeight = videoHeight;
             let drawWidth = width;
             let drawHeight = height;
             let drawX = x;
             let drawY = y;
 
-            if (videoAspectRatio > containerAspectRatio) {
-                // Video is wider than container, fit to width
+            if (fit === 'cover') {
+                if (videoAspectRatio > containerAspectRatio) {
+                    srcWidth = videoHeight * containerAspectRatio;
+                    srcX = (videoWidth - srcWidth) / 2;
+                } else {
+                    srcHeight = videoWidth / containerAspectRatio;
+                    srcY = (videoHeight - srcHeight) / 2;
+                }
+            } else if (videoAspectRatio > containerAspectRatio) {
                 drawHeight = width / videoAspectRatio;
                 drawY = y + (height - drawHeight) / 2;
             } else {
-                // Video is taller than container, fit to height
                 drawWidth = height * videoAspectRatio;
                 drawX = x + (width - drawWidth) / 2;
             }
@@ -62,10 +76,10 @@ export const drawVideoWithAspectRatio = ({
                 ctx.save();
                 ctx.translate(drawX + drawWidth, 0);
                 ctx.scale(-1, 1);
-                ctx.drawImage(videoElement, 0, drawY, drawWidth, drawHeight);
+                ctx.drawImage(videoElement, srcX, srcY, srcWidth, srcHeight, 0, drawY, drawWidth, drawHeight);
                 ctx.restore();
             } else {
-                ctx.drawImage(videoElement, drawX, drawY, drawWidth, drawHeight);
+                ctx.drawImage(videoElement, srcX, srcY, srcWidth, srcHeight, drawX, drawY, drawWidth, drawHeight);
             }
         } catch (error) {
             // Draw error placeholder
