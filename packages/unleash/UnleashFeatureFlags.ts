@@ -292,6 +292,7 @@ export enum MailFeatureFlag {
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     //ML R&D
     LumoInMail = 'LumoInMail',
+    LumoInMailStandalonePrompt = 'LumoInMailStandalonePrompt',
     OneTimePasscode = 'OneTimePasscode',
     ScribeToLumo = 'ScribeToLumo',
     // reworked local search using foundation search
