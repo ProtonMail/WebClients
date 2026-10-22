@@ -132,7 +132,7 @@ function StandaloneDoc() {
               userAddress={userAddress}
               isSuggestionsFeatureEnabled
               showTreeView={false}
-              tableOfContentsVisible={false}
+              tableOfContentsVisible
             />
           </DocsLayoutContainer>
         </DocsDependenciesProvider>

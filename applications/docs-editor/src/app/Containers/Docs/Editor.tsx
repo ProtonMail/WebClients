@@ -53,7 +53,7 @@ import { FixBrokenTabNode } from './Plugins/FixBrokenTabNode'
 import { getAccentColorForUsername } from './Utils/getAccentColorForUsername'
 import { PageBreakPlugin } from './Plugins/PageBreak/PageBreakPlugin'
 import { SCROLL_TO_USER_CURSOR_COMMAND } from './Plugins/Collaboration/ScrollToUserCursorPlugin'
-import { TableOfContents } from '../../Components/TableOfContents/TableOfContents'
+import { TableOfContentsPlugin } from './Plugins/TableOfContents/TableOfContentsPlugin'
 import { DocsLayoutCenterPanel, DocsLayoutGrid, DocsLayoutLeftPanel, DocsLayoutRightPanel } from './Layout/DocsLayout'
 import { useDocsDependencies } from './DocsDependenciesProvider'
 
@@ -123,9 +123,6 @@ export function Editor({
     getAllThreads,
     reopenSuggestion,
     rejectSuggestion,
-    getDocumentUrl,
-    replaceDocumentUrl,
-    reportTelemetry,
   } = useDocsDependencies()
 
   const setEditorRef = useCallback(
@@ -218,12 +215,7 @@ export function Editor({
         <DocsLayoutGrid leftPanelEnabled={tableOfContentsVisible}>
           <DocsLayoutLeftPanel>
             {tableOfContentsVisible && (
-              <TableOfContents
-                editorHidden={hidden}
-                getDocumentUrl={getDocumentUrl}
-                replaceDocumentUrl={replaceDocumentUrl}
-                reportTelemetry={reportTelemetry}
-              />
+              <TableOfContentsPlugin editorHidden={hidden} />
             )}
           </DocsLayoutLeftPanel>
           <DocsLayoutCenterPanel>

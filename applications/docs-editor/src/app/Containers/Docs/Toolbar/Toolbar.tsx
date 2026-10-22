@@ -36,6 +36,7 @@ import {
 
 import { $isLinkNode } from '@lexical/link'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
+import { Badge } from '../Components/atoms'
 import { Icon } from '../Components/Icon'
 import * as Icons from '../Components/icons'
 import { rootFontSize } from '../Utils/rootFontSize'
@@ -1221,9 +1222,7 @@ export default function DocumentEditorToolbar({
           label: (
             <span className="inline-flex items-center gap-2">
               <span>{toolbar['Page break (alpha only)']}</span>
-              <span className="rounded-sm bg-[--signal-info-minor-1] px-1 py-0.5 text-[0.625rem] font-semibold uppercase leading-none text-[--signal-info]">
-                {toolbar.New}
-              </span>
+              <Badge>{toolbar.New}</Badge>
             </span>
           ),
           disabled: !isEditable,
