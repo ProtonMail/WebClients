@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import { NodeType } from '@proton/drive/sdk';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
+import { MimeAlbum } from '@proton/file-icons/icons/MimeAlbum';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
@@ -38,13 +39,14 @@ export const NameCell = ({
 
     const hasExtension = extension.length > 0;
     const charsToDisplayEnd = hasExtension ? extension.length + CHARACTERS_BEFORE_EXTENSION : 0;
+    const NodeIcon = getFileIcon(type === NodeType.File || type === NodeType.Photo ? mediaType || '' : 'Folder');
+
     return (
         <span className="flex items-center flex-nowrap mr-4" aria-label={name}>
             {type === NodeType.Album && (
-                <FileIcon
-                    mimeType="Album"
+                <MimeAlbum
                     alt={c('Label').t`Album`}
-                    className="file-browser-list-item--icon mr-2"
+                    className="shrink-0 file-browser-list-item--icon mr-2"
                     // TODO: Create a proper scss file for this cell
                     style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
                 />
@@ -58,10 +60,9 @@ export const NameCell = ({
                         style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
                     />
                 ) : (
-                    <FileIcon
-                        mimeType={type === NodeType.File || type === NodeType.Photo ? mediaType || '' : 'Folder'}
+                    <NodeIcon
                         alt={name}
-                        className="file-browser-list-item--icon mr-2"
+                        className="shrink-0 file-browser-list-item--icon mr-2"
                         style={isInvitation ? { filter: 'grayscale(100%)' } : undefined}
                     />
                 ))}

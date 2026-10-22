@@ -122,7 +122,7 @@ DriveExplorer virtualized file browser component for Proton Drive. It provides b
 Located in `sections/commonDriveExplorerCells/`:
 
 - **NameCell** - File/folder name with icon and signature indicator
-    - Shows thumbnail or FileIcon
+    - Shows thumbnail or file icon
     - Displays signature issues
     - Grayscale filter for invitations
 

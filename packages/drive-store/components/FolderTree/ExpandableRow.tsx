@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import TableRowBusy from '@proton/components/components/table/TableRowBusy';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';
@@ -47,6 +47,7 @@ const ExpandableRow = ({
     const paddingElement = { width: `${depth * 1.5}em` };
 
     const floatingEllipsisVisibilityControlRef = useRef<HTMLDivElement>(null);
+    const LinkIcon = getFileIcon(link.isFile ? link.mimeType : 'Folder');
 
     return (
         <>
@@ -103,7 +104,7 @@ const ExpandableRow = ({
                             className="folder-tree-list-item-name flex items-center flex-nowrap w-full"
                             data-testid="directorytree-item-name"
                         >
-                            <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr-2" />
+                            <LinkIcon className="shrink-0 mr-2" />
                             <Tooltip title={link.name} originalPlacement="bottom">
                                 <span
                                     ref={floatingEllipsisVisibilityControlRef}
