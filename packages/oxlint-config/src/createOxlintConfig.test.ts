@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
+import { all, base, createOxlintConfig } from './createOxlintConfig.ts';
 import { allGlobs } from './globs.ts';
-import { all, base, createOxlintConfig } from './index.ts';
 
 describe('createOxlintConfig', () => {
     it('extends the all preset by default and copies the fields extends drops', () => {
