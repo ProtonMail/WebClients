@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import Loader from '@proton/components/components/loader/Loader';
@@ -37,10 +37,10 @@ export const TvContainerSignedIn = ({ code }: { code: string }) => {
     const [error, setError] = useState<FetchErrors | undefined>(undefined);
     const [user] = useUser();
     const [organization] = useOrganization();
-    const [subscription] = useSubscription();
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
     const [tier, setTier] = useState(getTelemetryUserTier(user));
 
-    const isBusiness = isB2BAdmin({ subscription, user, organization });
+    const isBusiness = isB2BAdmin({ user, organization, isVpnB2B: entitlements.isVpnB2B });
 
     useEffectOnce(() => {
         // If the tier is in the localStorage means it was sent already, but it is also need to

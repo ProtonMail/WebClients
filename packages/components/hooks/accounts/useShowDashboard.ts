@@ -1,18 +1,14 @@
 import { useMemo } from 'react';
 
-import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { getIsB2BAudienceFromSubscription } from '@proton/payments/core/subscription/helpers';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
 
 const useIsDashboardB2BAudience = () => {
-    const [organization] = useOrganization();
-    const [subscription] = useSubscription();
-    return getIsB2BAudienceFromSubscription(subscription) || isOrganizationB2B(organization);
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
+    return entitlements.isB2B;
 };
 
 /**

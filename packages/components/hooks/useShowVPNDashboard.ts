@@ -1,21 +1,17 @@
 import { useMemo } from 'react';
 
-import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { getIsB2BAudienceFromSubscription } from '@proton/payments/core/subscription/helpers';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
 
 const useShowVPNDashboard = (app: APP_NAMES) => {
-    const [organization] = useOrganization();
-    const [subscription] = useSubscription();
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
     const isVPNDashboardEnabled = useFlag('VPNDashboard');
     const showVPNDashboardVariant = useVariant('VPNDashboard');
 
-    const isB2B = getIsB2BAudienceFromSubscription(subscription) || isOrganizationB2B(organization);
+    const isB2B = entitlements.isB2B;
 
     const canShowVPNDashboard = useMemo(() => {
         return app === APPS.PROTONVPN_SETTINGS && !isB2B && isVPNDashboardEnabled;
