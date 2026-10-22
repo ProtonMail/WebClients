@@ -2,19 +2,24 @@ import { type ReactNode, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
+import { ItemStatus, Phase } from '@proton/account/scimSetup';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcBroom } from '@proton/icons/icons/IcBroom';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Group } from '@proton/shared/lib/interfaces/Group';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
-import type { MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces/Member';
+import type { EnhancedMember, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces/Member';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { ModalProps } from '../../components/modalTwo/Modal';
@@ -25,19 +30,6 @@ import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import GroupIcon from './groups/GroupIcon';
 
 import './ScimSetupModal.scss';
-
-enum ItemStatus {
-    Waiting = 'waiting',
-    Finalizing = 'finalizing',
-    Completed = 'completed',
-    Unknown = 'unknown',
-}
-
-enum Phase {
-    Idle = 'idle',
-    Working = 'working',
-    Done = 'done',
-}
 
 interface PendingUserItem {
     member: MemberReadyForManualUnprivatization;
@@ -55,9 +47,15 @@ interface PendingGroupItem {
     status: ItemStatus;
 }
 
+interface PendingCleanUpItem {
+    member: EnhancedMember;
+    status: ItemStatus;
+}
+
 interface Props extends ModalProps {
     users: PendingUserItem[];
     groups: PendingGroupItem[];
+    cleanUps: PendingCleanUpItem[];
     pendingMembers: Record<string, GroupMember[]>;
     phase: Phase;
     onFinish: () => void;
@@ -81,22 +79,45 @@ const StatusBadge = ({ status }: { status: ItemStatus }) => {
                     {c('Status').t`completed`}
                 </span>
             );
+        case ItemStatus.Scheduled:
+            return (
+                <span className="inline-flex items-center gap-1 text-sm text-bold color-success">
+                    <IcClock />
+                    {c('Status').t`key removal scheduled`}
+                </span>
+            );
+        case ItemStatus.Failed:
+            return (
+                <span className="inline-flex items-center gap-1 text-sm text-bold color-danger">
+                    <IcCrossCircleFilled />
+                    {c('Status').t`failed`}
+                </span>
+            );
         case ItemStatus.Unknown:
         default:
             return null;
     }
 };
 
+const RemoveOrgKeyBadge = () => (
+    <span className="inline-flex items-center gap-1 text-sm color-info">
+        <IcBroom />
+        {c('Status').t`remove organization key`}
+    </span>
+);
+
 const UserInfoRow = ({
     name,
     email,
     status,
     isPrivate,
+    unknownStatusBadge,
 }: {
     name: string;
     email?: string;
     status: ItemStatus;
     isPrivate?: boolean;
+    unknownStatusBadge?: ReactNode;
 }) => (
     <div className="flex items-center gap-3 py-2">
         <Avatar className="shrink-0 text-rg" color="weak">
@@ -116,7 +137,7 @@ const UserInfoRow = ({
             )}
         </div>
         <span className="mr-6">
-            <StatusBadge status={status} />
+            {status === ItemStatus.Unknown && unknownStatusBadge ? unknownStatusBadge : <StatusBadge status={status} />}
         </span>
     </div>
 );
@@ -126,12 +147,14 @@ const Section = ({
     sectionStatus,
     expanded,
     onToggle,
+    hideScimTexts,
     children,
 }: {
     label: string;
     sectionStatus: ItemStatus;
     expanded: boolean;
     onToggle: () => void;
+    hideScimTexts?: boolean;
     children: ReactNode;
 }) => {
     const ChevronIcon = expanded ? IcChevronUp : IcChevronDown;
@@ -145,7 +168,10 @@ const Section = ({
             >
                 <span className="block">
                     <span className="block text-bold">{label}</span>
-                    <span className="block mt-1 text-sm color-weak">{c('scim').t`From your identity provider`}</span>
+                    {!hideScimTexts && (
+                        <span className="block mt-1 text-sm color-weak">{c('scim')
+                            .t`From your identity provider`}</span>
+                    )}
                 </span>
                 <span className="flex items-center gap-2">
                     {!expanded && <StatusBadge status={sectionStatus} />}
@@ -236,22 +262,33 @@ const getSectionStatus = (statuses: ItemStatus[]): ItemStatus => {
         return ItemStatus.Waiting;
     }
 
-    if (statuses.every((status) => status === ItemStatus.Completed)) {
-        return ItemStatus.Completed;
+    if (statuses.some((status) => status === ItemStatus.Failed)) {
+        return ItemStatus.Failed;
+    }
+
+    if (statuses.every((status) => status === ItemStatus.Completed || status === ItemStatus.Scheduled)) {
+        return statuses.includes(ItemStatus.Scheduled) ? ItemStatus.Scheduled : ItemStatus.Completed;
     }
 
     return ItemStatus.Unknown;
 };
 
-const ScimSetupModal = ({ users, groups, pendingMembers, phase, onFinish, onClose, ...rest }: Props) => {
+const ScimSetupModal = ({ users, groups, cleanUps, pendingMembers, phase, onFinish, onClose, ...rest }: Props) => {
     const isUserGroupsScimGroupsEnabled = useFlag('UserGroupsScimGroups');
+    const [organization] = useOrganization();
 
     const [usersExpanded, setUsersExpanded] = useState(false);
     const [groupsExpanded, setGroupsExpanded] = useState(false);
+    const [cleanUpsExpanded, setCleanUpsExpanded] = useState(false);
     const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({});
 
     const numberOfPendingUsers = users.length;
     const numberOfPendingGroups = groups.length;
+    const numberOfCleanUps = cleanUps.length;
+
+    // Without SCIM, only clean-ups unrelated to an identity provider can be pending here. To be extracted into a
+    // standalone banner and modal: https://protonag.atlassian.net/browse/B2B-689
+    const isPermissionChangesOnly = !organization?.IsScimEnabled && !numberOfPendingUsers && !numberOfPendingGroups;
 
     const getGroupMemberItems = ({ group, members }: PendingGroupItem): PendingGroupMemberItem[] => {
         const statusByMemberId = new Map(members.map(({ member, status }) => [member.ID, status]));
@@ -262,7 +299,7 @@ const ScimSetupModal = ({ users, groups, pendingMembers, phase, onFinish, onClos
         }));
     };
 
-    if (!isUserGroupsScimGroupsEnabled || (!numberOfPendingUsers && !numberOfPendingGroups)) {
+    if (!isUserGroupsScimGroupsEnabled || (!numberOfPendingUsers && !numberOfPendingGroups && !numberOfCleanUps)) {
         return null;
     }
 
@@ -277,7 +314,9 @@ const ScimSetupModal = ({ users, groups, pendingMembers, phase, onFinish, onClos
                 }
             />
             <ModalTwoContent>
-                <p className="mb-4 text-md">{c('scim').t`Review users and groups before finishing setup`}</p>
+                {!isPermissionChangesOnly && (
+                    <p className="mb-4 text-md">{c('scim').t`Review users and groups before finishing setup`}</p>
+                )}
 
                 <div className="scim-setup-list">
                     {numberOfPendingUsers > 0 && (
@@ -330,15 +369,41 @@ const ScimSetupModal = ({ users, groups, pendingMembers, phase, onFinish, onClos
                             ))}
                         </Section>
                     )}
+
+                    {numberOfCleanUps > 0 && (
+                        <Section
+                            label={c('scim').ngettext(
+                                msgid`${numberOfCleanUps} clean up action required`,
+                                `${numberOfCleanUps} clean up actions required`,
+                                numberOfCleanUps
+                            )}
+                            sectionStatus={getSectionStatus(cleanUps.map((cleanUp) => cleanUp.status))}
+                            expanded={cleanUpsExpanded}
+                            onToggle={() => setCleanUpsExpanded((isCleanUpsExpanded) => !isCleanUpsExpanded)}
+                            hideScimTexts={isPermissionChangesOnly}
+                        >
+                            {cleanUps.map(({ member, status }) => (
+                                <UserInfoRow
+                                    key={member.ID}
+                                    name={member.Name}
+                                    email={member.Addresses?.[0]?.Email}
+                                    status={status}
+                                    unknownStatusBadge={<RemoveOrgKeyBadge />}
+                                />
+                            ))}
+                        </Section>
+                    )}
                 </div>
 
-                <div className="color-hint mt-4 flex flex-nowrap gap-2">
-                    <IcInfoCircle className="shrink-0 mt-0.5" />
-                    <span>
-                        {c('scim')
-                            .t`Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.`}
-                    </span>
-                </div>
+                {!isPermissionChangesOnly && (
+                    <div className="color-hint mt-4 flex flex-nowrap gap-2">
+                        <IcInfoCircle className="shrink-0 mt-0.5" />
+                        <span>
+                            {c('scim')
+                                .t`Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.`}
+                        </span>
+                    </div>
+                )}
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose} disabled={phase === Phase.Working}>
