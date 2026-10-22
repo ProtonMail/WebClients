@@ -1,5 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
+import { buildUser } from '@proton/account/testing/buildUser';
+import { useUser } from '@proton/account/user/hooks';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import useOnline from '@proton/components/hooks/useOnline';
@@ -11,10 +13,13 @@ import { LumoFloatingPanelProvider, useLumoFloatingPanel } from './LumoFloatingP
 import { PanelSide } from './panelSide';
 import { useLumoHotkey } from './useLumoHotkey';
 
+const SURFACE_MODE_KEY = 'lumo-mail-surface-mode-user-a';
+
 const assistantOpened = jest.fn();
 const toggleDrawer = jest.fn();
 const toggleDrawerApp = jest.fn(() => toggleDrawer);
 
+jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({ __esModule: true, default: jest.fn() }));
 jest.mock('@proton/components/hooks/useApiStatus', () => ({ __esModule: true, default: jest.fn() }));
 jest.mock('@proton/components/hooks/useOnline', () => ({ __esModule: true, default: jest.fn() }));
@@ -26,6 +31,9 @@ jest.mock('../telemetry/useLumoMailTelemetry', () => ({
 
 const setAppInView = (appInView: DrawerApp | undefined) => {
     jest.mocked(useDrawer).mockReturnValue({ appInView, toggleDrawerApp } as unknown as ReturnType<typeof useDrawer>);
+};
+const setUserID = (ID: string) => {
+    jest.mocked(useUser).mockReturnValue([buildUser({ ID }), false]);
 };
 const setComposersCount = (count: number) => {
     jest.mocked(useMailSelector).mockReturnValue(count);
@@ -51,6 +59,8 @@ const renderDetached = () => {
 
 beforeEach(() => {
     jest.clearAllMocks();
+    window.localStorage.clear();
+    setUserID('user-a');
     setAppInView(undefined);
     setComposersCount(0);
     setReachability({ isApiOffline: false, isOnline: true });
@@ -213,6 +223,79 @@ describe('LumoFloatingPanelProvider', () => {
 
         expect(result.current.isDetached).toBe(true);
         expect(result.current.isCatHidden).toBe(false);
+    });
+
+    it('starts docked when no mode is remembered', () => {
+        const { result } = renderPanel();
+
+        expect(result.current.isDetached).toBe(false);
+    });
+
+    it('restores a remembered detached mode closed, with the cat shown and no open reported', () => {
+        window.localStorage.setItem(SURFACE_MODE_KEY, 'true');
+
+        const { result } = renderPanel();
+
+        expect(result.current.isDetached).toBe(true);
+        expect(result.current.isPanelOpen).toBe(false);
+        expect(result.current.isCatHidden).toBe(false);
+        expect(result.current.isCurrentSurfaceOpen).toBe(false);
+        expect(toggleDrawer).not.toHaveBeenCalled();
+        expect(assistantOpened).not.toHaveBeenCalled();
+    });
+
+    it('starts docked when the remembered mode is unrecognised', () => {
+        window.localStorage.setItem(SURFACE_MODE_KEY, 'banana');
+
+        const { result } = renderPanel();
+
+        expect(result.current.isDetached).toBe(false);
+    });
+
+    it("ignores another user's remembered mode", () => {
+        setUserID('user-b');
+        const otherUser = renderPanel();
+        act(() => {
+            otherUser.result.current.detach();
+        });
+        otherUser.unmount();
+        setUserID('user-a');
+
+        const { result } = renderPanel();
+
+        expect(result.current.isDetached).toBe(false);
+    });
+
+    it('remembers the detached mode on detach', () => {
+        const { result } = renderPanel();
+
+        act(() => {
+            result.current.detach();
+        });
+
+        expect(window.localStorage.getItem(SURFACE_MODE_KEY)).toBe('true');
+    });
+
+    it('remembers the docked mode on dock', () => {
+        const { result } = renderDetached();
+
+        act(() => {
+            result.current.dock();
+        });
+
+        expect(window.localStorage.getItem(SURFACE_MODE_KEY)).toBe('false');
+    });
+
+    it('keeps the remembered detached mode when a dock is refused offline', () => {
+        const { result, rerender } = renderDetached();
+        setReachability({ isApiOffline: false, isOnline: false });
+        rerender();
+
+        act(() => {
+            result.current.dock();
+        });
+
+        expect(window.localStorage.getItem(SURFACE_MODE_KEY)).toBe('true');
     });
 
     it('switches sides on request', () => {
