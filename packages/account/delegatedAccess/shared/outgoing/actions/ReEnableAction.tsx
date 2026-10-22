@@ -2,12 +2,10 @@ import { useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-// eslint-disable-next-line proton/restricted-imports
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import noop from '@proton/utils/noop';
 
 import { updateDelegatedAccess } from '../../../outgoingActions';
@@ -19,7 +17,7 @@ export const ReEnableAction = () => {
 
     const handleError = useErrorHandler();
     const dispatch = useDispatch();
-    const api = useApi();
+    const silentApi = useSilentApi();
     const { createNotification } = useNotifications();
 
     const action = useCallback(async (value: ReEnableActionPayload['value'], successText: string) => {
@@ -27,7 +25,7 @@ export const ReEnableAction = () => {
             await dispatch(
                 updateDelegatedAccess({
                     delegatedAccess: value.outgoingDelegatedAccess,
-                    api: getSilentApi(api),
+                    api: silentApi,
                 })
             );
 
