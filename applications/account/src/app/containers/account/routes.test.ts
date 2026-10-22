@@ -41,6 +41,7 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
         app: APPS.PROTONMAIL,
         user: buildUser(),
         subscription: { Renew: Renew.Enabled } as Subscription,
+        allSubscriptions: [],
         entitlements: createEntitlementResolverForOrgAndUser(buildEntitlementCatalog(), undefined, []),
         recoveryNotification: undefined,
         accountRecoveryRouterFlags,

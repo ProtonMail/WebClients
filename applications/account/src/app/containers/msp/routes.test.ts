@@ -11,6 +11,7 @@ const buildParams = (overrides: Partial<OrganizationRouterParams>): Organization
     app: APPS.PROTONPASS,
     user: buildUser({ isAdmin: true }),
     subscription: {} as Subscription,
+    allSubscriptions: [],
     entitlements: { isMspEligible: true } as EntitlementChecksForOrgAndUser,
     flags: {} as Flags,
     organization: undefined,

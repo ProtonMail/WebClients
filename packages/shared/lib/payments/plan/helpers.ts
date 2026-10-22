@@ -194,46 +194,26 @@ export const getIsSentinelPlan = (planName: PLANS | ADDON_NAMES | undefined) => 
     return sentinelPlans.has(planName);
 };
 
-const getSsoSupportedPlans = (isSsoForPbsEnabled: boolean) => {
-    const plans = [PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS, PLANS.VPN_PASS_BUNDLE_BUSINESS, PLANS.LUMO_BUSINESS];
-    if (isSsoForPbsEnabled) {
-        plans.push(PLANS.BUNDLE_BIZ_2025, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_PRO);
-    }
-    return plans;
-};
+type SubscriptionWithPlanNames = { Plans?: { Name: PLANS | ADDON_NAMES }[] };
 
-export const planSupportsSSO = (planName: PLANS | undefined, isSsoForPbsEnabled: boolean) => {
-    if (!planName) {
-        return;
-    }
-    return getSsoSupportedPlans(isSsoForPbsEnabled).some((ssoPlanName) => ssoPlanName === planName);
-};
+const ssoForPbsPlans = [PLANS.BUNDLE_BIZ_2025, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_PRO];
+const ssoUpsellPlans = [PLANS.VPN_PRO, PLANS.PASS_PRO];
 
-export const subscriptionSupportsSSO = (
-    subscription: { Plans?: { Name: PLANS | ADDON_NAMES }[] } | undefined,
-    isSsoForPbsEnabled: boolean
-) => {
-    return subscription?.Plans?.some((plan) => planSupportsSSO(plan.Name as PLANS, isSsoForPbsEnabled)) ?? false;
-};
+const hasSubscriptionWithPlan = (subscriptions: SubscriptionWithPlanNames[], plans: PLANS[]) =>
+    subscriptions.some((subscription) => subscription.Plans?.some((plan) => plans.includes(plan.Name as PLANS)));
 
-export const organizationOrSubscriptionSupportsSSO = ({
-    organization,
-    subscription,
+export const getIsSsoAvailable = ({
+    hasSso,
+    subscriptions,
     isSsoForPbsEnabled,
 }: {
-    organization?: { PlanName?: PLANS };
-    subscription?: { Plans?: { Name: PLANS | ADDON_NAMES }[] };
+    hasSso: boolean;
+    subscriptions: SubscriptionWithPlanNames[];
     isSsoForPbsEnabled: boolean;
-}) => {
-    return (
-        planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) ||
-        subscriptionSupportsSSO(subscription, isSsoForPbsEnabled)
-    );
-};
+}) => hasSso || (isSsoForPbsEnabled && hasSubscriptionWithPlan(subscriptions, ssoForPbsPlans));
 
-export const upsellPlanSSO = (planName?: PLANS) => {
-    return planName && [PLANS.VPN_PRO, PLANS.PASS_PRO].some((ssoPlanName) => ssoPlanName === planName);
-};
+export const getHasSsoUpsell = (subscriptions: SubscriptionWithPlanNames[]) =>
+    hasSubscriptionWithPlan(subscriptions, ssoUpsellPlans);
 
 export const getHasProPlan = (planName?: PLANS) => {
     return (
