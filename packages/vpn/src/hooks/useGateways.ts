@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useFetchData } from '@proton/components/hooks/useFetchData';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';
@@ -69,11 +70,12 @@ export const useGateways = (organization: Organization | undefined, maxAge: numb
     const api = useApi();
 
     const [allSubscriptions = []] = useAllSubscriptions();
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
     const subscriptionWithIpAddon = allSubscriptions.find((subscription) =>
         supportsAddonType(getPlanIDs(subscription), ADDON_PREFIXES.IP)
     );
     const planWithIpAddon = getPlanName(subscriptionWithIpAddon);
-    const hasGatewaysAccess = !!organization && planWithIpAddon !== undefined;
+    const hasGatewaysAccess = !!organization && (entitlements.hasMaxDedicatedIps || planWithIpAddon !== undefined);
 
     // If there’s no result yet, define fallback config
     const nbDay = 7;
