@@ -1,5 +1,8 @@
+import type { PropsWithChildren } from 'react'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import type { DocsCommentThread } from '../../contract/DocsCommentThread'
+import { DocsDependenciesProvider, type DocsDependencies } from '../../DocsDependenciesProvider'
+import { defaultDocsMessages } from '../../messages/defaultDocsMessages'
 import { ThreadPopoverButton } from './ContextualComments'
 
 // The thread itself needs an editor and comments state; only the popover around it is under test.
@@ -10,12 +13,21 @@ jest.mock('./CommentsPanelListThread', () => ({
   ),
 }))
 
+function DependenciesWrapper({ children }: PropsWithChildren) {
+  return (
+    <DocsDependenciesProvider dependencies={{ defaultMessages: defaultDocsMessages } as DocsDependencies}>
+      {children}
+    </DocsDependenciesProvider>
+  )
+}
+
 function renderThreadPopoverButton() {
   render(
     <>
       <ThreadPopoverButton thread={{ id: 'thread-id' } as DocsCommentThread} />
       <button>Outside</button>
     </>,
+    { wrapper: DependenciesWrapper },
   )
   return screen.getByRole('button', { name: 'Show thread' })
 }

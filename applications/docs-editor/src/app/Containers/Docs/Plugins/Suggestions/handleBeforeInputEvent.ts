@@ -45,7 +45,7 @@ import { SuggestionTypesThatCanBeEmpty, TextEditingSuggestionTypes } from './Typ
 import type { ListItemNode } from '@lexical/list'
 import { $handleListInsertParagraph, $isListItemNode } from '@lexical/list'
 import { $getListInfo } from '../CustomList/$getListInfo'
-import { c } from 'ttag'
+import { suggestionsMessages } from './suggestionsMessages'
 import { $removeSuggestionNodeAndResolveIfNeeded } from './removeSuggestionNodeAndResolveIfNeeded'
 import { $setBlocksTypeAsSuggestion } from './setBlocksTypeAsSuggestion'
 import { sanitizeUrl } from '../../Utils/sanitizeUrl'
@@ -62,6 +62,7 @@ export function $handleBeforeInputEvent(
   onSuggestionCreation: (id: string) => void,
   logger: DocsLogger,
   createWarningNotification?: (message: string) => void,
+  codeBlocksNotSupportedMessage = suggestionsMessages.suggestions.codeBlocksNotSupported,
 ): boolean {
   const inputType = event.inputType
 
@@ -91,7 +92,7 @@ export function $handleBeforeInputEvent(
 
   if ($isAnyPartOfSelectionInCodeNode(selection)) {
     logger.info('suggestion-mode: Aborting beforeinput because selection is inside a code-block')
-    createWarningNotification?.(c('Warning').t`Making suggestions inside code blocks is not supported`)
+    createWarningNotification?.(codeBlocksNotSupportedMessage)
     return true
   }
 
