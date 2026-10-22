@@ -1,4 +1,5 @@
-import type { DecryptedMessage, DocumentType } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
+import type { DecryptedMessage } from '@proton/docs-shared/Realtime/DecryptedMessage'
 import { GetCommitDULimit } from '../Types/SquashingConstants'
 import { mergeUpdates } from 'yjs'
 import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'

@@ -1,20 +1,17 @@
-import type { FileMenuAction, SafeDocsUserState } from '@proton/docs-shared'
-import {
-  type CommentInterface,
-  type CommentThreadInterface,
-  type CommentControllerInterface,
-  type ClientRequiresEditorMethods,
-  type RtsMessagePayload,
-  type BroadcastSource,
-  type DataTypesThatDocumentCanBeExportedAs,
-  type InternalEventBusInterface,
-  type SuggestionSummaryType,
-  type EditorEventData,
-  type EditorEvent,
-  type DocsAwarenessStateChangeData,
-  DocAwarenessEvent,
-  AnonymousUserEmail,
-} from '@proton/docs-shared'
+import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { SafeDocsUserState } from '@proton/docs-shared/Doc/DocsAwareness'
+import { AnonymousUserEmail } from '@proton/docs-shared/AnonymousUser'
+import type { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import type { ClientRequiresEditorMethods } from '@proton/docs-shared/Bridge/ClientRequiresEditorMethods'
+import type { EditorEventData, EditorEvent } from '@proton/docs-shared/Bridge/EditorEvent'
+import type { CommentInterface } from '@proton/docs-shared/CommentInterface'
+import type { CommentControllerInterface } from '@proton/docs-shared/CommentServiceInterface'
+import type { CommentThreadInterface } from '@proton/docs-shared/CommentThreadInterface'
+import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
+import { type DocsAwarenessStateChangeData, DocAwarenessEvent } from '@proton/docs-shared/DocAwarenessEvent'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'
+import type { SuggestionSummaryType } from '@proton/docs-shared/SuggestionType'
 import type { EditorOrchestratorInterface } from './EditorOrchestratorInterface'
 import type { DocsApi } from '../../Api/DocsApi'
 import { ApplicationEvent, PostApplicationError } from '../../Application/ApplicationEvent'
@@ -27,7 +24,7 @@ import { getUnleashReadyPromise } from '@proton/unleash/getUnleashReadyPromise'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '../../Database/SheetsDBSchema'
 import metrics from '@proton/metrics/metricsInstance'
-import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 import type { MetricService } from '../Metrics/MetricService'
 

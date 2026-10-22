@@ -15,7 +15,7 @@ import { encryptExtendedAttributes } from '../../store/_links/extendedAttributes
 import useLink from '../../store/_links/useLink';
 import useLinksState from '../../store/_links/useLinksState';
 import useShare from '../../store/_shares/useShare';
-import { useAbortSignal } from '../../store/_views/utils';
+import useAbortSignal from '../../store/_views/utils/useAbortSignal';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import type { LegacyNodeMeta } from '../NodeMeta';
 import type { DocumentNodeMeta } from './interface';

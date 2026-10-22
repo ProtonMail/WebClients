@@ -1,4 +1,4 @@
-import type { LockedVolumeForRestore, Share, ShareWithKey } from '../../store';
+import type { LockedVolumeForRestore, Share, ShareWithKey } from '../../store/_shares/interface';
 
 export interface SharesState {
     shares: Record<string, Share | ShareWithKey>;

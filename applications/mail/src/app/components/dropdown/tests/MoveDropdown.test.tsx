@@ -1,6 +1,6 @@
 import { act, fireEvent, getByTestId as getByTestIdDefault, screen, waitFor } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';

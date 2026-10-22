@@ -41,7 +41,7 @@ import { IcDensityLow } from '@proton/icons/icons/IcDensityLow';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcWindowMaximised } from '@proton/icons/icons/IcWindowMaximised';
 import { IcWindowSmall } from '@proton/icons/icons/IcWindowSmall';
-import { useAssistant } from '@proton/llm/lib';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';

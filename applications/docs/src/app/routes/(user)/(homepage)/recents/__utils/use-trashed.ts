@@ -1,12 +1,12 @@
 import { useNotifications } from '@proton/app-context/useNotifications'
-import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
+import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { DriveEvent, NodeEntity, ProtonDriveClient } from '@proton/drive/sdk'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { nodeToTrashedDocumentItem } from './create-document-items'
-import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
+import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 import type { SDKEventListener } from '~/drive-sdk/event-subscriber'
 
 export function useTrashed(drive: ProtonDriveClient) {

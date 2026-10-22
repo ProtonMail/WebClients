@@ -19,7 +19,7 @@ jest.mock('./telemetry', () => ({
   countActionWithTelemetry: jest.fn(),
   traceTelemetry: () => ({ start: jest.fn() }),
 }))
-jest.mock('@proton/docs-shared/lib/URL/saveUrlPasswordForRedirection', () => ({
+jest.mock('@proton/docs-shared/URL/saveUrlPasswordForRedirection', () => ({
   saveUrlPasswordForRedirection: jest.fn(),
 }))
 

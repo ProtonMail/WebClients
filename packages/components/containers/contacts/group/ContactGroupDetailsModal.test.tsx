@@ -1,4 +1,4 @@
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 

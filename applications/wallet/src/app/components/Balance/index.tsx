@@ -6,14 +6,12 @@ import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
-import {
-    useHideAmounts,
-    useUserWalletSettings,
-    useWalletAccountExchangeRate,
-    useWalletDispatch,
-} from '@proton/wallet/store/hooks';
+import { useWalletDispatch } from '@proton/wallet/store/hooks/app';
+import { useHideAmounts } from '@proton/wallet/store/hooks/useHideAmounts';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
+import { useWalletAccountExchangeRate } from '@proton/wallet/store/hooks/useWalletAccountExchangeRate';
 import { toggleHideAmounts } from '@proton/wallet/store/slices';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { CoreButton } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';

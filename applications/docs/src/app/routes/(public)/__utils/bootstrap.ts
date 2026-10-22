@@ -11,10 +11,10 @@ import { APPS } from '@proton/shared/lib/constants'
 import { getLastUsedLocalID } from '@proton/account/bootstrap/lastUsedLocalID'
 import { readAccountSessions } from '@proton/account/accountSessions/storage'
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
-import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
+import { CacheService } from '@proton/docs-core/Services/CacheService'
 import { getDecryptedPersistedState } from '@proton/account/persist/helper'
 import type { DocsState } from '~/redux-store/rootReducer'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import OpenTracer from '@proton/docs-shared/Tracer/Module'
 
 function getLocalID(token: string | null) {
   if (token) {

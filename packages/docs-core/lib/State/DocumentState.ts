@@ -1,17 +1,14 @@
 import type { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
 import type { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
-import { BasePropertiesState } from '@proton/docs-shared'
-import type {
-  DocumentRole,
-  BroadcastSource,
-  DecryptedMessage,
-  DocTrashState,
-  DocumentMetaInterface,
-  RtsMessagePayload,
-  NodeMeta,
-  PublicNodeMeta,
-  DecryptedNode,
-} from '@proton/docs-shared'
+import { BasePropertiesState } from '@proton/docs-shared/State/BasePropertiesState'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import type { DecryptedNode } from '@proton/docs-shared/DecryptedNode'
+import type { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
+import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
+import type { DocTrashState } from '@proton/docs-shared/DocTrashEvent'
+import type { DocumentMetaInterface } from '@proton/docs-shared/DocumentMetaInterface'
+import type { DecryptedMessage } from '@proton/docs-shared/Realtime/DecryptedMessage'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import type { DocumentEntitlements, PublicDocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { SessionKey } from '@protontech/crypto'

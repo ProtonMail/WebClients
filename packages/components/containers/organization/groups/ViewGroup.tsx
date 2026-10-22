@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { getIsScimGroup, getIsScimGroupPendingKeys } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getTranslatedRoleName, isOrgKeyRequired } from '@proton/account/organizationRoles/helpers';
-import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup';
+import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup/selectors';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';

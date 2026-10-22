@@ -6,7 +6,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcListArrowDown } from '@proton/icons/icons/IcListArrowDown';
 import { IcListArrowUp } from '@proton/icons/icons/IcListArrowUp';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { CoreButton } from '../../../atoms';
 import { ExportStatementButton } from '../../ExportStatementButton';

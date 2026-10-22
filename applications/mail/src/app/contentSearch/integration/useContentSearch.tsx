@@ -4,14 +4,11 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { defaultESIndexingState, defaultESStatus } from '@proton/encrypted-search/constants';
-import type { IndexingMetrics } from '@proton/encrypted-search/esHelpers';
-import type {
-    ESCallbacks,
-    ESIndexingState,
-    ESTimepoint,
-    EncryptedSearchFunctions,
-    NormalizedSearchParams,
-} from '@proton/encrypted-search/models';
+import type { IndexingMetrics } from '@proton/encrypted-search/esHelpers/esProgress';
+import type { ESCallbacks } from '@proton/encrypted-search/models/esCallbacks';
+import type { EncryptedSearchFunctions } from '@proton/encrypted-search/models/esFunctions';
+import type { ESIndexingState, ESTimepoint } from '@proton/encrypted-search/models/interfaces';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
 import { isSearch } from '../../helpers/elements';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';

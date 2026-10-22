@@ -2,7 +2,7 @@ import DropdownMenuLink from '@proton/components/components/dropdown/DropdownMen
 import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
 import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
 
-import { type WalletClient, WalletClientKeys } from '../types';
+import { type WalletClient, WalletClientKeys } from '../types/settings';
 
 const androidLinks = [
     {

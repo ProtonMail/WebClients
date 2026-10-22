@@ -1,12 +1,12 @@
-import type { ApiResult, CommentType } from '@proton/docs-shared'
+import type { ApiResult } from '@proton/docs-shared/ApiResult'
+import type { CommentType } from '@proton/docs-shared/CommentType'
 import type { HttpHeaders } from '../Types/HttpHeaders'
 import type { AddCommentToThreadResponse } from '../Types/AddCommentToThreadResponse'
 import { DocsApiPrivateRouteBuilder } from '../Routes/DocsApiPrivateRouteBuilder'
 import { DocsApiPublicRouteBuilder } from '../Routes/DocsApiPublicRouteBuilder'
 import type { RouteExecutor } from '../RouteExecutor'
-import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
+import type { DocumentEntitlements, PublicDocumentEntitlements } from '../../Types/DocumentEntitlements'
 import { isPublicDocumentEntitlements } from '../../Types/DocumentEntitlements'
-import type { PublicDocumentEntitlements } from '../../Types/DocumentEntitlements'
 
 export type AddCommentToThreadDTO = {
   threadId: string

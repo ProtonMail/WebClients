@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 
 import { DIACRITICS_REGEXP, ES_MAX_INITIAL_CHARS } from '../constants';
-import type { HighlightMetadata } from '../models';
+import type { HighlightMetadata } from '../models/esFunctions';
 import { esSentryReport } from './esReporting';
 import { normalizeString } from './esUtils';
 

@@ -1,6 +1,6 @@
 import { deleteDB } from 'idb';
 
-import { esSentryReport } from '@proton/encrypted-search/esHelpers';
+import { esSentryReport } from '@proton/encrypted-search/esHelpers/esReporting';
 import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { getDBName } from './schema';

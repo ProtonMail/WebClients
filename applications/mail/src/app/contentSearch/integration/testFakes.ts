@@ -1,4 +1,4 @@
-import type { ESSettledState } from '@proton/encrypted-search/models';
+import type { ESSettledState } from '@proton/encrypted-search/models/esFunctions';
 
 import type { ImportHandle, ImportOutcome } from '../import/ImportHandle';
 import type { IndexService } from '../indexation/IndexService';

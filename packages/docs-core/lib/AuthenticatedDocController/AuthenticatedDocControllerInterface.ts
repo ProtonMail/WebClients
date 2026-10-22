@@ -1,5 +1,7 @@
-import type { YjsState, Result, DocumentType, NodeMeta } from '@proton/docs-shared'
-import type { NativeVersionHistory } from '../VersionHistory'
+import type { DocumentType, NodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { Result } from '@proton/docs-shared/Result'
+import type { YjsState } from '@proton/docs-shared/YjsState'
+import type { NativeVersionHistory } from '../VersionHistory/NativeVersionHistory'
 import type { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
 
 export interface AuthenticatedDocControllerInterface {

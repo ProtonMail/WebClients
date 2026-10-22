@@ -2,7 +2,7 @@ import type { History } from 'history';
 
 import type { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
-import type { ESStatusBooleans } from '@proton/encrypted-search/models';
+import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';

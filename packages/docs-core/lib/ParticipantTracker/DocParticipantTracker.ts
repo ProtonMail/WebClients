@@ -1,4 +1,4 @@
-import type { SafeDocsUserState } from '@proton/docs-shared'
+import type { SafeDocsUserState } from '@proton/docs-shared/Doc/DocsAwareness'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
 
 export const MAX_USER_STATES_FOR_LOCKING_EDITOR = 20

@@ -9,7 +9,7 @@ import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { getInactiveKeys } from '@proton/shared/lib/keys/getInactiveKeys';
 
-import { signoutAction } from '../authenticationService';
+import { signoutAction } from '../authenticationService/authenticationListener';
 import { inactiveKeysActions } from '../inactiveKeys';
 import { type UserState, userThunk } from '../user';
 

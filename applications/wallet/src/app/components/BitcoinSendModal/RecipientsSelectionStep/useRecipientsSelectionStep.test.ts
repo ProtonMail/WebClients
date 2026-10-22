@@ -7,8 +7,9 @@ import { WasmTxBuilder } from '@proton/andromeda';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { mockUseBitcoinNetwork, mockUseWalletApiClients } from '@proton/wallet/tests/mocks';
-import { getAddressKey } from '@proton/wallet/tests/utils';
+import { mockUseBitcoinNetwork } from '@proton/wallet/tests/mocks/useBitcoinNetwork';
+import { mockUseWalletApiClients } from '@proton/wallet/tests/mocks/useWalletApi';
+import { getAddressKey } from '@proton/wallet/tests/utils/keys';
 
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import { mockUseGetRecipientVerifiedAddressKey } from '../../../tests/mocks/useGetRecipientVerifiedAddressKey';

@@ -11,7 +11,8 @@ import { IcArrowToCenterHorizontal } from '@proton/icons/icons/IcArrowToCenterHo
 import { IcArrowsFromCenterHorizontal } from '@proton/icons/icons/IcArrowsFromCenterHorizontal';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcMagnifierCheck } from '@proton/icons/icons/IcMagnifierCheck';
-import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';
+import { ASSISTANT_SERVER_THROTTLE_TIMEOUT } from '@proton/llm/lib/constants';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import type { ActionType } from '@proton/llm/lib/types';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';

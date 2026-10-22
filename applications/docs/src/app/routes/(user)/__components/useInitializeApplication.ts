@@ -1,18 +1,18 @@
 import { useApi } from '@proton/app-context/useApi'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { useConfig } from '@proton/app-context/useConfig'
-import type { DriveCompat } from '@proton/drive-store'
+import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { useEffect, useMemo } from 'react'
-import { Application } from '@proton/docs-core'
+import { Application } from '@proton/docs-core/Application/Application'
 import { useUnleashClient } from '@proton/unleash/proxy'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { getDrive, useDrive } from '@proton/drive/sdk'
 import { APPS } from '@proton/shared/lib/constants'
 import config from '~/config'
 import { loggerForSDK } from '~/drive-sdk/logger'
-import { useGetCacheConfig } from '@proton/docs-core/lib/Crypto/useGetCacheConfig'
-import { useGetVerificationKey } from '@proton/docs-core/lib/Crypto/useGetVerificationKey'
-import { isDriveCompatSDKEnabled } from '@proton/docs-core/lib/Util/isDriveCompatSDKEnabled'
+import { useGetCacheConfig } from '@proton/docs-core/Crypto/useGetCacheConfig'
+import { useGetVerificationKey } from '@proton/docs-core/Crypto/useGetVerificationKey'
+import { isDriveCompatSDKEnabled } from '@proton/docs-core/Util/isDriveCompatSDKEnabled'
 
 export function useInitializeApplication({ driveCompat }: { driveCompat: DriveCompat }) {
   const api = useApi()

@@ -1,4 +1,4 @@
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 /**
  * sub-theme is used to distinguish user's wallets

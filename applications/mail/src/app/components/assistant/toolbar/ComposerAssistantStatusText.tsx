@@ -11,7 +11,7 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import ErrorZone from '@proton/components/components/text/ErrorZone';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { IcPauseFilled } from '@proton/icons/icons/IcPauseFilled';
-import { useAssistant } from '@proton/llm/lib';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant/types';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

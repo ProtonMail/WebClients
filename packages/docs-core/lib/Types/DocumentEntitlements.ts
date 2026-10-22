@@ -1,6 +1,8 @@
 import { getCanWrite, getCanAdmin } from '@proton/shared/lib/drive/permissions'
-import type { DocumentKeys, PublicDocumentKeys, NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
-import { DocumentRole, isPublicNodeMeta } from '@proton/docs-shared'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { DocumentKeys, PublicDocumentKeys } from '@proton/docs-shared/CryptoTypes'
+import { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
+import { isPublicNodeMeta } from '@proton/docs-shared/NodeMetaHelpers'
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import type { PrivateKeyReference } from '@protontech/crypto'
 

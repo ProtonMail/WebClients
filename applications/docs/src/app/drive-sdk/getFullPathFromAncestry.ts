@@ -1,5 +1,5 @@
 import type { NodeEntity } from '@proton/drive/sdk'
-import { getNodeNameOrFallback } from '@proton/docs-core/lib/DriveSDK/getNodeName'
+import { getNodeNameOrFallback } from '@proton/docs-core/DriveSDK/getNodeName'
 
 /**
  *

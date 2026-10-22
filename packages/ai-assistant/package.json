@@ -2,6 +2,7 @@
     "name": "@proton/ai-assistant",
     "version": "0.0.0",
     "private": true,
+    "exports": {},
     "scripts": {
         "check:types": "tsc --checkers 1",
         "dev": "vite",

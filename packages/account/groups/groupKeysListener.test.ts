@@ -14,7 +14,7 @@ import { createGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 import { type GroupsState, groupsReducer, selectGroups } from '../groups';
 import { ktSlice } from '../kt';
 import { organizationKeyReducer } from '../organizationKey';
-import { getModelState } from '../tests';
+import { getModelState } from '../testing/getModelState';
 import { groupKeysListener } from './groupKeysListener';
 
 // Lets the redux listener middleware schedule and run any pending effect.

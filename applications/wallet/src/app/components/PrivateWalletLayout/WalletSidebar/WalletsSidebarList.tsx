@@ -20,7 +20,7 @@ import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
 import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import clsx from '@proton/utils/clsx';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { CoreButton } from '../../../atoms';
 import type { SubTheme } from '../../../utils';

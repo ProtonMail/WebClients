@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SubscriptionModalContext } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { mockOrganizationApi } from '@proton/components/hooks/helpers/tests/useOrganization';

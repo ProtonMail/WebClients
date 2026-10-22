@@ -7,7 +7,7 @@ import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
 import { is4xx, is5xx } from '../../utils/errorHandling/apiErrors';
-import type { VolumeTypeForEvents } from '../_volumes';
+import type { VolumeTypeForEvents } from '../_volumes/interface';
 import type { DriveEvent } from './interface';
 
 const EVENT_METRICS = ['delete', 'create', 'update', 'update_metadata'] as const;

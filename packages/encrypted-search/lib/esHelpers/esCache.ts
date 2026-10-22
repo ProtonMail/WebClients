@@ -3,7 +3,8 @@ import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.
 import { ES_MAX_CACHE, ES_MAX_ITEMS_PER_BATCH } from '../constants';
 import { readContentBatch } from '../esIDB/content';
 import { readMetadataBatch, readSortedIDs } from '../esIDB/metadata';
-import type { CachedItem, ESCache, ESTimepoint, GetItemInfo } from '../models';
+import type { GetItemInfo } from '../models/esFunctions';
+import type { CachedItem, ESCache, ESTimepoint } from '../models/interfaces';
 import { decryptFromDB } from './esDecrypt';
 import { isTimepointSmaller, sizeOfESItem } from './esUtils';
 

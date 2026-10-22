@@ -1,5 +1,5 @@
 import { RouteExecutor } from './RouteExecutor'
-import { ApiResult } from '@proton/docs-shared'
+import { ApiResult } from '@proton/docs-shared/ApiResult'
 import type { Api } from '@proton/shared/lib/interfaces/Api'
 
 describe('RouteExecutor', () => {

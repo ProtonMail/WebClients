@@ -1,27 +1,23 @@
 const mockAssertUnreachableAndLog = jest.fn()
-jest.mock('@proton/docs-shared', () => ({
-  ...jest.requireActual('@proton/docs-shared'),
+jest.mock('@proton/docs-shared/AssertUnreachable', () => ({
+  ...jest.requireActual('@proton/docs-shared/AssertUnreachable'),
   assertUnreachableAndLog: (...args: any[]) => mockAssertUnreachableAndLog(...args),
 }))
 
-import type {
-  DocumentMetaInterface,
-  InternalEventBusInterface,
-  InternalEventInterface,
-  RtsMessagePayload,
-  WebsocketConnectionInterface,
-  NodeMeta,
-  DecryptedNode,
-} from '@proton/docs-shared'
-import {
-  ApiResult,
-  DecryptedMessage,
-  Result,
-  BroadcastSource,
-  DocumentRole,
-  ProcessedIncomingRealtimeEventMessage,
-  SyncedEditorState,
-} from '@proton/docs-shared'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { DecryptedNode } from '@proton/docs-shared/DecryptedNode'
+import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
+import type { DocumentMetaInterface } from '@proton/docs-shared/DocumentMetaInterface'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { InternalEventInterface } from '@proton/docs-shared/Events/InternalEventInterface'
+import type { WebsocketConnectionInterface } from '@proton/docs-shared/Realtime/WebsocketConnectionInterface'
+import { ApiResult } from '@proton/docs-shared/ApiResult'
+import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
+import { DecryptedMessage } from '@proton/docs-shared/Realtime/DecryptedMessage'
+import { ProcessedIncomingRealtimeEventMessage } from '@proton/docs-shared/Realtime/ProcessedIncomingRealtimeMessage'
+import { Result } from '@proton/docs-shared/Result'
+import { SyncedEditorState } from '@proton/docs-shared/State/SyncedEditorState'
 import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../Models/Constants'
 import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
 import { RealtimeController } from './RealtimeController'

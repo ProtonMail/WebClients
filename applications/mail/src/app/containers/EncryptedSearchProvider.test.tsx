@@ -1,6 +1,7 @@
 import { screen, waitFor } from '@testing-library/react';
 
-import * as esIDB from '@proton/encrypted-search/esIDB';
+import { hasESDB } from '@proton/encrypted-search/esIDB/indexedDB';
+import { contentIndexingProgress } from '@proton/encrypted-search/esIDB/indexingProgress';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
 import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
@@ -12,10 +13,18 @@ jest.mock('@proton/encrypted-search/useIndexedDBSupport', () => ({
     useIndexedDBSupport: jest.fn(),
 }));
 
-jest.mock('@proton/encrypted-search/esIDB', () => ({
-    ...jest.requireActual('@proton/encrypted-search/esIDB'),
+jest.mock('@proton/encrypted-search/esIDB/indexedDB', () => ({
+    ...jest.requireActual('@proton/encrypted-search/esIDB/indexedDB'),
     hasESDB: jest.fn(),
+}));
+
+jest.mock('@proton/encrypted-search/esIDB/indexingProgress', () => ({
+    ...jest.requireActual('@proton/encrypted-search/esIDB/indexingProgress'),
     contentIndexingProgress: { read: jest.fn() },
+}));
+
+jest.mock('@proton/encrypted-search/esIDB/metadata', () => ({
+    ...jest.requireActual('@proton/encrypted-search/esIDB/metadata'),
     wrappedGetOldestInfo: jest.fn().mockResolvedValue(undefined),
 }));
 
@@ -70,8 +79,8 @@ describe('EncryptedSearchProvider', () => {
             jest.clearAllMocks();
             mockUseFlag(false);
             jest.mocked(useIndexedDBSupport).mockReturnValue({ isSupported: true, error: null });
-            jest.mocked(esIDB.hasESDB).mockResolvedValue(true);
-            jest.mocked(esIDB.contentIndexingProgress.read).mockResolvedValue(undefined);
+            jest.mocked(hasESDB).mockResolvedValue(true);
+            jest.mocked(contentIndexingProgress.read).mockResolvedValue(undefined);
             initializeES.mockResolvedValue(undefined);
             enableEncryptedSearch.mockResolvedValue(false);
         });
@@ -95,7 +104,7 @@ describe('EncryptedSearchProvider', () => {
         });
 
         it('should settle when there is no database to initialise', async () => {
-            jest.mocked(esIDB.hasESDB).mockResolvedValue(false);
+            jest.mocked(hasESDB).mockResolvedValue(false);
 
             await renderProvider();
 

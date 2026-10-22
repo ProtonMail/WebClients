@@ -1,4 +1,4 @@
-import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { mergeUpdates } from 'yjs'
 import { DocumentDebounceMode } from './DocumentDebounceMode'

@@ -4,7 +4,7 @@ import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { serverEvent } from '@proton/account/eventLoop';
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';

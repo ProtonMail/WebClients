@@ -9,7 +9,7 @@ import QRCode from '@proton/components/components/image/QRCode';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import Info from '@proton/components/components/link/Info';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { Button, Select } from '../../../atoms';
 import { WalletAccountItem } from '../../../components/WalletAccountSelector';

@@ -32,27 +32,24 @@ import { IcPencil } from '@proton/icons/icons/IcPencil'
 import { IcPrinter } from '@proton/icons/icons/IcPrinter'
 import { IcSquares } from '@proton/icons/icons/IcSquares'
 import { IcTrash } from '@proton/icons/icons/IcTrash'
-import type {
-  AuthenticatedDocControllerInterface,
-  DocumentState,
-  PublicDocumentState,
-  EditorControllerInterface,
-  RenameControllerInterface,
-} from '@proton/docs-core'
-import { isDocumentState, PostApplicationError } from '@proton/docs-core'
-import type {
-  FileMenuAction,
-  SheetImportData,
-  NodeMeta,
-  DocTrashState,
-  DocumentType,
-  DocumentAction,
-} from '@proton/docs-shared'
-import { FileMenuActionEvent, isWordCountSupported, isPrivateNodeMeta } from '@proton/docs-shared'
+import type { AuthenticatedDocControllerInterface } from '@proton/docs-core/AuthenticatedDocController/AuthenticatedDocControllerInterface'
+import type { EditorControllerInterface } from '@proton/docs-core/EditorController/EditorController'
+import type { RenameControllerInterface } from '@proton/docs-core/RenameController/RenameController'
+import type { DocumentState, PublicDocumentState } from '@proton/docs-core/State/DocumentState'
+import { PostApplicationError } from '@proton/docs-core/Application/ApplicationEvent'
+import { isDocumentState } from '@proton/docs-core/State/DocumentState'
+import type { NodeMeta, DocumentType } from '@proton/docs-shared/BasicTypes'
+import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { DocTrashState } from '@proton/docs-shared/DocTrashEvent'
+import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
+import type { SheetImportData } from '@proton/docs-shared/SheetImportData'
+import { FileMenuActionEvent } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import { isPrivateNodeMeta } from '@proton/docs-shared/NodeMetaHelpers'
+import { isWordCountSupported } from '@proton/docs-shared/WordCount/isWordCountSupported'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, APPS_CONFIGURATION, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { isDefaultDocumentName } from '@proton/shared/lib/docs/utils/isDefaultDocumentName'
-import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
+import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'
 import { useApplication } from '~/utils/application-context'
 import { constructDriveFolderUrl } from '~/utils/open-drive-folder'
@@ -85,7 +82,7 @@ import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { IcListBullets } from '@proton/icons/icons/IcListBullets'
 import type { UserModel } from '@proton/shared/lib/interfaces/User'
-import { useOpenDocument } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
+import { useOpenDocument } from '@proton/docs-shared/Hooks/useOpenDocument'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined

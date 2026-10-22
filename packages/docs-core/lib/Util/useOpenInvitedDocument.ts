@@ -1,5 +1,5 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication'
-import type { ExtendedInvitationDetails } from '@proton/docs-shared'
+import type { ExtendedInvitationDetails } from '@proton/docs-shared/InvitationTypes'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'

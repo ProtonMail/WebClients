@@ -15,7 +15,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import { useAssistant } from '@proton/llm/lib';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import type { AssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { sendAssistantFeedback } from '@proton/shared/lib/api/feedback';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

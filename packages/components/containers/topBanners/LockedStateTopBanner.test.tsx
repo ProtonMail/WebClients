@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 
 import { useGetPreviousSubscription } from '@proton/account/previousSubscription/hooks';
 import { buildUser } from '@proton/account/testing/buildUser';
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PreviousSubscription } from '@proton/payments/core/interface';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';

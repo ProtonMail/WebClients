@@ -1,8 +1,9 @@
 import GlobalLoader from '@proton/components/components/globalLoader/GlobalLoader'
 import GlobalLoaderProvider from '@proton/components/components/globalLoader/GlobalLoaderProvider'
 import LocationErrorBoundary from '@proton/components/containers/app/LocationErrorBoundary'
-import type { DriveCompat } from '@proton/drive-store'
-import { DriveStoreProvider, useDriveCompat } from '@proton/drive-store'
+import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
+import { DriveStoreProvider } from '@proton/drive-store/lib/DriveStoreProvider'
+import { useDriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { Suspense, lazy } from 'react'
 import { Routes, Route, useSearchParams, Navigate } from 'react-router-dom-v5-compat'
 
@@ -11,7 +12,7 @@ import { DocsNotificationsProvider } from '../__utils/notifications-context'
 import { DOCUMENT_CREATION_PATHS, DOCUMENT_EDITOR_PATH, DocsUrlContextProvider } from '~/utils/docs-url-bar'
 import { useInitializeApplication } from './useInitializeApplication'
 import { useCoreEventSubscription } from '~/drive-sdk/core-event-subscriber'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import { HOMEPAGE_PATHS, HOMEPAGE_RECENTS_PATH } from '../__utils/homepage-paths'
 
 // container

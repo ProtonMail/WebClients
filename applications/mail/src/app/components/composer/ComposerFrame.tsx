@@ -7,7 +7,7 @@ import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useWindowSize from '@proton/components/hooks/useWindowSize';
 import { useHandler } from '@proton/hooks/useHandler';
-import { getHasAssistantStatus } from '@proton/llm/lib';
+import { getHasAssistantStatus } from '@proton/llm/lib/helpers';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import clsx from '@proton/utils/clsx';

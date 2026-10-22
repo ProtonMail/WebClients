@@ -15,13 +15,11 @@ import type {
 } from '@proton/andromeda';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import {
-    useCountriesByProvider,
-    useExchangeRate,
-    useFiatCurrenciesByProvider,
-    useGetQuotesByProvider,
-    useWalletDispatch,
-} from '@proton/wallet/store/hooks';
+import { useWalletDispatch } from '@proton/wallet/store/hooks/app';
+import { useCountriesByProvider } from '@proton/wallet/store/hooks/useCountriesByProvider';
+import { useExchangeRate } from '@proton/wallet/store/hooks/useExchangeRate';
+import { useFiatCurrenciesByProvider } from '@proton/wallet/store/hooks/useFiatCurrenciesByProvider';
+import { useGetQuotesByProvider } from '@proton/wallet/store/hooks/useQuotesByProvider';
 import { type GetQuotesArgs, resetQuotesByProvider } from '@proton/wallet/store/slices';
 
 import { BUY_BITCOIN_DEFAULT_AMOUNT } from '../../../constants/amount';

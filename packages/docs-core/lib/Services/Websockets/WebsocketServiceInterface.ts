@@ -1,11 +1,7 @@
-import type {
-  DocumentKeys,
-  NodeMeta,
-  PublicNodeMeta,
-  BroadcastSource,
-  WebsocketConnectionInterface,
-  DocumentType,
-} from '@proton/docs-shared'
+import type { NodeMeta, PublicNodeMeta, DocumentType } from '@proton/docs-shared/BasicTypes'
+import type { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import type { DocumentKeys } from '@proton/docs-shared/CryptoTypes'
+import type { WebsocketConnectionInterface } from '@proton/docs-shared/Realtime/WebsocketConnectionInterface'
 import type { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
 import type { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
 import type { DocumentState, PublicDocumentState } from '../../State/DocumentState'

@@ -1,7 +1,7 @@
 import { IcMoon } from '@proton/icons/icons/IcMoon';
 import { IcSun } from '@proton/icons/icons/IcSun';
 import { useFlag } from '@proton/unleash/useFlag';
-import { useWalletDispatch } from '@proton/wallet/store/hooks';
+import { useWalletDispatch } from '@proton/wallet/store/hooks/app';
 import { themeChange } from '@proton/wallet/store/slices';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 

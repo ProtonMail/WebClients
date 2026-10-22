@@ -16,7 +16,7 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { FeatureCode } from '@proton/features/interface';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import { useAssistant } from '@proton/llm/lib';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';

@@ -1,7 +1,7 @@
 import { fireEvent, getByTestId } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';

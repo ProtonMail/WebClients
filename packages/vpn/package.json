@@ -13,14 +13,20 @@
         "./components/Gateways": "./src/components/Gateways/GatewaysSection.tsx",
         "./components/NavSections": "./src/components/NavSections.tsx",
         "./components/Onboarding": "./src/components/Onboarding/index.tsx",
-        "./components/tv": "./src/components/tv/index.ts",
+        "./components/tv/components/TvNotSignedIn": "./src/components/tv/components/TvNotSignedIn.tsx",
+        "./components/tv/containers/TVContainer": "./src/components/tv/containers/TVContainer.tsx",
+        "./components/tv/containers/TvCheckoutContainer": "./src/components/tv/containers/TvCheckoutContainer.tsx",
+        "./components/tv/containers/TvContainerSignedIn": "./src/components/tv/containers/TvContainerSignedIn.tsx",
         "./components/VPNDownloadSection": "./src/components/VPNDownloadSection/DownloadAndInfoSection.tsx",
         "./components/VPNClientsSection": "./src/components/VPNClientsSection/index.tsx",
         "./components/AlwaysOn": "./src/components/AlwaysOn/AlwaysOn.tsx",
         "./definitions/routes": "./src/definitions/routes.ts",
         "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts",
         "./contexts/navigation": "./src/contexts/NavigationContext.tsx",
-        "./routes/organization": "./src/routes/organization/index.tsx"
+        "./routes/organization/AlwaysOnVpnRoute": "./src/routes/organization/AlwaysOnVpnRoute.tsx",
+        "./routes/organization/GatewayMonitorRoute": "./src/routes/organization/GatewayMonitorRoute.tsx",
+        "./routes/organization/GatewaysRoute": "./src/routes/organization/GatewaysRoute.tsx",
+        "./routes/organization/SharedServersRoute": "./src/routes/organization/SharedServersRoute.tsx"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",

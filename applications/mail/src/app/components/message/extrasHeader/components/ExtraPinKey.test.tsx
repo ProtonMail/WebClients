@@ -1,7 +1,7 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 import { fireEvent, screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import type { MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

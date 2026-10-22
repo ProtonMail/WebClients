@@ -3,7 +3,8 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import type { ESStatusBooleans, EnableContentSearch } from '@proton/encrypted-search/models';
+import type { EnableContentSearch } from '@proton/encrypted-search/models/esFunctions';
+import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 
 /**
  * Announces content search once the index can actually answer a query, and returns the

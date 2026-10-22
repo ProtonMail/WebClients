@@ -2,14 +2,12 @@ import { render, screen } from '@testing-library/react';
 
 import { WasmKeychainKind, WasmNetwork, WasmPaymentLink } from '@proton/andromeda';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
-import { apiWalletsData } from '@proton/wallet/tests/fixtures';
-import {
-    mockUseFiatCurrencies,
-    mockUseGetExchangeRate,
-    mockUseUserWalletSettings,
-    mockUseWalletAccountExchangeRate,
-} from '@proton/wallet/tests/mocks';
-import { freeable } from '@proton/wallet/tests/utils';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures/api';
+import { mockUseFiatCurrencies } from '@proton/wallet/tests/mocks/useFiatCurrencies';
+import { mockUseGetExchangeRate } from '@proton/wallet/tests/mocks/useGetExchangeRate';
+import { mockUseUserWalletSettings } from '@proton/wallet/tests/mocks/useUserWalletSettings';
+import { mockUseWalletAccountExchangeRate } from '@proton/wallet/tests/mocks/useWalletAccountExchangeRate';
+import { freeable } from '@proton/wallet/tests/utils/wasm';
 
 import { WalletReceiveContent } from '.';
 import { mockUseBitcoinBlockchainContext } from '../../../tests';

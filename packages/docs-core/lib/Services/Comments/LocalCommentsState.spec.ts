@@ -1,5 +1,7 @@
-import type { CommentInterface, CommentThreadInterface, InternalEventBusInterface } from '@proton/docs-shared'
-import { CommentThreadState } from '@proton/docs-shared'
+import type { CommentInterface } from '@proton/docs-shared/CommentInterface'
+import type { CommentThreadInterface } from '@proton/docs-shared/CommentThreadInterface'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import { CommentThreadState } from '@proton/docs-shared/CommentThreadState'
 import { LocalCommentsState } from './LocalCommentsState'
 
 describe('LocalCommentsState', () => {

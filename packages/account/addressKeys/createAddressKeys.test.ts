@@ -21,7 +21,7 @@ import { memberReducer } from '../member';
 import { membersReducer } from '../members';
 import { organizationReducer } from '../organization';
 import { organizationKeyReducer } from '../organizationKey';
-import { getModelState } from '../tests';
+import { getModelState } from '../testing/getModelState';
 import { userReducer } from '../user';
 import { userKeysReducer } from '../userKeys';
 import { userPermissionsReducer } from '../userPermissions';

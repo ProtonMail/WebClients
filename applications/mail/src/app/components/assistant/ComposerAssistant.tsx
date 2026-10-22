@@ -9,7 +9,9 @@ import type { EditorMetadata } from '@proton/components/components/editor/interf
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
-import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, getHasAssistantStatus, useAssistant } from '@proton/llm/lib';
+import { ASSISTANT_SERVER_THROTTLE_TIMEOUT } from '@proton/llm/lib/constants';
+import { getHasAssistantStatus } from '@proton/llm/lib/helpers';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { removeLineBreaks } from '@proton/mail/helpers/string';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant/types';

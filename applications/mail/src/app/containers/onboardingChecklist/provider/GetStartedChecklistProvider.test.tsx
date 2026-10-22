@@ -1,6 +1,6 @@
 import { describe } from '@jest/globals';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import useLoading from '@proton/hooks/useLoading';
 import type { ChecklistId } from '@proton/shared/lib/interfaces/Checklist';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey, ChecklistType } from '@proton/shared/lib/interfaces/Checklist';

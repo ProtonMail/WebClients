@@ -1,6 +1,6 @@
 import type { DocumentStateValues } from './DocumentState'
 import { DocumentState } from './DocumentState'
-import { DocumentRole } from '@proton/docs-shared'
+import { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
 import type { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
 
 describe('DocumentState', () => {

@@ -2,7 +2,8 @@ import { act, renderHook } from '@testing-library/react';
 
 import { SHARE_URL_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
-import type { DecryptedLink, SharedUrlInfo } from '../../store';
+import type { DecryptedLink } from '../../store/_links/interface';
+import type { SharedUrlInfo } from '../../store/_shares/interface';
 import { usePublicShareStore } from './public-share.store';
 
 describe('usePublicShareStore', () => {

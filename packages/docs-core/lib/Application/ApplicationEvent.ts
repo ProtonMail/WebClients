@@ -1,4 +1,4 @@
-import type { InternalEventBusInterface } from '@proton/docs-shared'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
 import type { SquashVerificationObjectionDecision } from '../Types/SquashVerificationObjection'
 
 export enum ApplicationEvent {

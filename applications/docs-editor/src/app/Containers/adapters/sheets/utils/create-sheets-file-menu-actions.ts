@@ -1,4 +1,4 @@
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 
 import type { SheetsFileMenuActions } from '../../../Spreadsheet/public'
 

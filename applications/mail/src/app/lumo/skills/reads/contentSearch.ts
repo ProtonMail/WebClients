@@ -1,4 +1,4 @@
-import type { ESStatusBooleans } from '@proton/encrypted-search/models';
+import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 
 export type ContentSearchCoverage = 'full' | 'partial' | 'metadata_only' | 'unfinished';
 

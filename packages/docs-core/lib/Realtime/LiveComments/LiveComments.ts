@@ -1,12 +1,10 @@
-import type {
-  BeganTypingData,
-  StoppedTypingData,
-  NodeMeta,
-  LiveCommentsTypeStatusChangeData,
-  InternalEventBusInterface,
-  PublicNodeMeta,
-} from '@proton/docs-shared'
-import { BroadcastSource, CommentsMessageType, LiveCommentsEvent } from '@proton/docs-shared'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { LiveCommentsTypeStatusChangeData } from '@proton/docs-shared/LiveCommentsEvent'
+import type { BeganTypingData, StoppedTypingData } from '@proton/docs-shared/Realtime/CommentsMessageType'
+import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import { LiveCommentsEvent } from '@proton/docs-shared/LiveCommentsEvent'
+import { CommentsMessageType } from '@proton/docs-shared/Realtime/CommentsMessageType'
 import { CreateRealtimeCommentPayload } from '../../Services/Comments/CreateRealtimeCommentPayload'
 import { CommentTypers } from './CommentTypers'
 import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'

@@ -80,7 +80,7 @@ jest.mock('@proton/components/components/modalTwo/BackdropContainer', () => ({
 // Silence JDOM warnings triggered by emoji-mart
 HTMLCanvasElement.prototype.getContext = jest.fn();
 
-jest.mock('@proton/llm/lib/hooks/useAssistant.tsx', () => {
+jest.mock('@proton/llm/lib/hooks/useAssistant', () => {
     return {
         __esModule: true,
         useAssistant: jest.fn(() => ({

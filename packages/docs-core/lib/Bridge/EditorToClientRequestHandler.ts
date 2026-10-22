@@ -1,18 +1,17 @@
+import type { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import type { EditorEvent, EditorEventData } from '@proton/docs-shared/Bridge/EditorEvent'
 import type {
-  BroadcastSource,
-  CommentInterface,
-  CommentThreadInterface,
   EditorRequiresClientMethods,
   FileMenuAction,
-  InternalEventBusInterface,
-  RtsMessagePayload,
-  SafeDocsUserState,
-  SuggestionSummaryType,
-  WordCountInfoCollection,
-  EditorEvent,
-  EditorEventData,
   AppPlatform,
-} from '@proton/docs-shared'
+} from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { CommentInterface } from '@proton/docs-shared/CommentInterface'
+import type { CommentThreadInterface } from '@proton/docs-shared/CommentThreadInterface'
+import type { SafeDocsUserState } from '@proton/docs-shared/Doc/DocsAwareness'
+import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { SuggestionSummaryType } from '@proton/docs-shared/SuggestionType'
+import type { WordCountInfoCollection } from '@proton/docs-shared/WordCount/WordCountTypes'
 import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 import type { ErrorInfo } from 'react'
 import { ApplicationEvent, type GenericInfoEventPayload } from '../Application/ApplicationEvent'
@@ -21,7 +20,7 @@ import type { CustomWindow } from '../Application/Window'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '../Database/SheetsDBSchema'
-import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 
 declare const window: CustomWindow

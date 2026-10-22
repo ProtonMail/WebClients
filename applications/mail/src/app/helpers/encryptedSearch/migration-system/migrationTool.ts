@@ -1,7 +1,7 @@
 import { expose } from 'comlink';
 
-import { getIndexKey } from '@proton/encrypted-search/esHelpers';
-import { openESDB } from '@proton/encrypted-search/esIDB';
+import { getIndexKey } from '@proton/encrypted-search/esHelpers/esBuild';
+import { openESDB } from '@proton/encrypted-search/esIDB/indexedDB';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { TelemetryESMigrationToolEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport, setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';

@@ -6,7 +6,7 @@ import type { Permission } from '@proton/shared/lib/interfaces/UserPermission';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
 import { addressesReducer } from '../addresses';
-import { getModelState } from '../tests';
+import { getModelState } from '../testing/getModelState';
 import { userReducer } from '../user';
 import { userPermissionsReducer } from '../userPermissions';
 import { membersReducer, membersThunk, selectMembers } from './index';

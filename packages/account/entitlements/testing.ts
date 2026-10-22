@@ -10,7 +10,7 @@ import { getTestStore } from '@proton/redux-shared-store/test';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { entitlementCatalogReducer } from '../entitlementCatalog';
-import { getModelState } from '../tests';
+import { getModelState } from '../testing/getModelState';
 import { userReducer } from '../user';
 import { entitlementsReducer } from './index';
 

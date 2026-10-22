@@ -20,7 +20,8 @@ import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
 import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
 import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
-import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store/hooks';
+import { useExchangeRate } from '@proton/wallet/store/hooks/useExchangeRate';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, CoreButton, Input } from '../../atoms';

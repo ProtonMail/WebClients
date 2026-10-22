@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useGetAddresses } from '@proton/account/addresses/hooks'
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks'
-import type { NodeMeta } from '@proton/docs-shared'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
 import { generateNodeUid, getDrive, type NodeEntity } from '@proton/drive/sdk'
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share'
 import type { Api } from '@proton/shared/lib/interfaces/Api'

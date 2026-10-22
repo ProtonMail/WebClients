@@ -1,8 +1,8 @@
-import { ApiResult } from '@proton/docs-shared'
+import { ApiResult } from '@proton/docs-shared/ApiResult'
 import type { DocsApi } from '../Api/DocsApi'
 import { Commit } from '@proton/docs-proto/Generated/Commit'
 import type { CacheService } from '../Services/CacheService'
-import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
 
 /** Gets the raw encrypted commit data based on a commitId */
 export class GetCommitData {

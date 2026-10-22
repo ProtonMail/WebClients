@@ -10,14 +10,12 @@ import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdow
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils'
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import Spotlight from '@proton/components/components/spotlight/Spotlight'
-import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
-import {
-  TooltipKey,
-  useTooltipOnce,
-  useDocsUrlPublicToken,
-  type DocumentType,
-  RedirectAction,
-} from '@proton/docs-shared'
+import type { EditorControllerInterface } from '@proton/docs-core/EditorController/EditorController'
+import type { PublicDocumentState } from '@proton/docs-core/State/DocumentState'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
+import { RedirectAction } from '@proton/docs-shared/DocumentAction'
+import { useDocsUrlPublicToken } from '@proton/docs-shared/Hooks/useDocsUrlPublicToken'
+import { TooltipKey, useTooltipOnce } from '@proton/docs-shared/Hooks/useTooltipOnce'
 import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
 import {
   needPublicRedirectSpotlight,
@@ -40,9 +38,9 @@ import { useCallback, useEffect, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
-import { getPublicLinkUrlParams } from '@proton/docs-shared/lib/URL/getPublicLinkUrlParams'
-import { getPublicLinkInfo } from '@proton/docs-core/lib/DriveSDK/getPublicDrive'
-import type { PublicDriveCompat } from '@proton/drive-store/lib'
+import { getPublicLinkUrlParams } from '@proton/docs-shared/URL/getPublicLinkUrlParams'
+import { getPublicLinkInfo } from '@proton/docs-core/DriveSDK/getPublicDrive'
+import type { PublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 import { useDocsContext } from '../context'
 import { CommentsButton } from '../DocumentLayout/DocumentHeader/CommentsButton'
 import { DocumentActiveUsers } from '../DocumentLayout/DocumentHeader/DocumentActiveUsers'

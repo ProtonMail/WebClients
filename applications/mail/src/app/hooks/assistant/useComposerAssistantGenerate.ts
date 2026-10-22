@@ -4,7 +4,8 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { isPromptSizeValid, useAssistant } from '@proton/llm/lib';
+import { isPromptSizeValid } from '@proton/llm/lib/helpers';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import type {
     Action,
     ActionType,

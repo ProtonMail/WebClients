@@ -1,5 +1,5 @@
-import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared'
-import { DocumentExportMimeTypes } from '@proton/docs-shared'
+import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'
+import { DocumentExportMimeTypes } from '@proton/docs-shared/ExportableDataType'
 
 export function downloadExport(
   data: Uint8Array<ArrayBuffer>,

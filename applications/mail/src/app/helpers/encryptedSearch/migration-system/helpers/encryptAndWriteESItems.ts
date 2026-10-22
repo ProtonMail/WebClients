@@ -1,7 +1,7 @@
 import type { IDBPDatabase } from 'idb';
 
-import { ciphertextSize, serializeAndEncryptItem } from '@proton/encrypted-search/esHelpers';
-import type { ESCiphertext, EncryptedSearchDB } from '@proton/encrypted-search/models';
+import { ciphertextSize, serializeAndEncryptItem } from '@proton/encrypted-search/esHelpers/esUtils';
+import type { ESCiphertext, EncryptedSearchDB } from '@proton/encrypted-search/models/interfaces';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import type { PreparedMessageContent } from '../interface';

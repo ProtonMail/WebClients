@@ -1,12 +1,11 @@
 import type { HttpHeaders } from '../Types/HttpHeaders'
 import type { EditCommentResponse } from '../Types/EditCommentResponse'
-import type { ApiResult } from '@proton/docs-shared'
+import type { ApiResult } from '@proton/docs-shared/ApiResult'
 import { DocsApiPrivateRouteBuilder } from '../Routes/DocsApiPrivateRouteBuilder'
 import { DocsApiPublicRouteBuilder } from '../Routes/DocsApiPublicRouteBuilder'
 import type { RouteExecutor } from '../RouteExecutor'
-import type { PublicDocumentEntitlements } from '../../Types/DocumentEntitlements'
+import type { DocumentEntitlements, PublicDocumentEntitlements } from '../../Types/DocumentEntitlements'
 import { isPublicDocumentEntitlements } from '../../Types/DocumentEntitlements'
-import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
 
 export type EditCommentDTO = {
   threadId: string

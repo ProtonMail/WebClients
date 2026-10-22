@@ -17,10 +17,11 @@ import walletClockDark from '@proton/styles/assets/img/wallet/wallet-clock-dark.
 import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.jpg';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
-import { useWalletApiClients } from '@proton/wallet/contexts';
-import { useNetworkFees, useUserWalletSettings } from '@proton/wallet/store/hooks';
+import { useWalletApiClients } from '@proton/wallet/contexts/ExtendedApiContext';
+import { useNetworkFees } from '@proton/wallet/store/hooks/useNetworkFees';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
 import { DEFAULT_FEE_SETTINGS } from '@proton/wallet/store/slices';
-import type { TransactionData } from '@proton/wallet/types';
+import type { TransactionData } from '@proton/wallet/types/transactions';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, Modal } from '../../atoms';

@@ -1,6 +1,6 @@
-import { Result } from '@proton/docs-shared'
+import { Result } from '@proton/docs-shared/Result'
 import type { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
-import type { DecryptedMessage } from '@proton/docs-shared'
+import type { DecryptedMessage } from '@proton/docs-shared/Realtime/DecryptedMessage'
 import { mergeUpdates } from 'yjs'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'

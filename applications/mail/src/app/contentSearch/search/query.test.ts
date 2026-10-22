@@ -1,4 +1,4 @@
-import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
 import { initFoundationWasm } from '../testing/initFoundationWasm';
 import { buildQuery } from './query';

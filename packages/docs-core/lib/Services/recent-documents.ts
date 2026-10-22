@@ -1,4 +1,7 @@
-import { getErrorString, ServerTime, BasePropertiesState, nodeMetaUniqueId } from '@proton/docs-shared'
+import { getErrorString } from '@proton/docs-shared/GetErrorString'
+import { nodeMetaUniqueId } from '@proton/docs-shared/NodeMetaHelpers'
+import { ServerTime } from '@proton/docs-shared/ServerTime'
+import { BasePropertiesState } from '@proton/docs-shared/State/BasePropertiesState'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import type { DocsApi } from './../Api/DocsApi'
 import type { LoggerInterface } from '@proton/shared/lib/logs'

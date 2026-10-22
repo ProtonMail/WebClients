@@ -1,4 +1,4 @@
-import { selectOrganizationTheme } from '@proton/account/organization/theme';
+import { selectOrganizationTheme } from '@proton/account/organization/theme/slice';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 export const useOrganizationTheme = () => {

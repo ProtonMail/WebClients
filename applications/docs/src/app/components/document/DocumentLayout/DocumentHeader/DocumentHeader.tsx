@@ -18,15 +18,14 @@ import { c } from 'ttag'
 import { PopoverPill } from './PopoverPill'
 import { useDocsContext } from '../../context'
 import { HeaderPublicOptions } from '../../public/HeaderPublicOptions'
-import type {
-  EditorControllerInterface,
-  AuthenticatedDocControllerInterface,
-  DocumentState,
-  PublicDocumentState,
-  RenameControllerInterface,
-} from '@proton/docs-core'
+import type { AuthenticatedDocControllerInterface } from '@proton/docs-core/AuthenticatedDocController/AuthenticatedDocControllerInterface'
+import type { EditorControllerInterface } from '@proton/docs-core/EditorController/EditorController'
+import type { RenameControllerInterface } from '@proton/docs-core/RenameController/RenameController'
+import type { DocumentState, PublicDocumentState } from '@proton/docs-core/State/DocumentState'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
-import { isPrivateNodeMeta, type DocumentAction, type DocumentType } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
+import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
+import { isPrivateNodeMeta } from '@proton/docs-shared/NodeMetaHelpers'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import clsx from '@proton/utils/clsx'
 import { useIsSheetsEnabled, useDriveCompatSDK } from '~/utils/flags'
@@ -37,7 +36,7 @@ import { HeaderShareButton } from './HeaderShareButton'
 import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { replaceAddress, reportChangeAddressError } from '../../useChangeAddressWhenPubliclyShared'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
-import { getShareId } from '@proton/docs-core/lib/DriveSDK/getShareId'
+import { getShareId } from '@proton/docs-core/DriveSDK/getShareId'
 
 function getWindowLocationExcludingDomain() {
   return stripLocalBasenameFromPathname(window.location.pathname) + window.location.search + window.location.hash

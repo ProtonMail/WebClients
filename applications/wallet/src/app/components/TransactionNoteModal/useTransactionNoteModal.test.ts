@@ -4,8 +4,10 @@ import { act } from '@testing-library/react-hooks';
 
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
-import { mockUseApiWalletTransactionData, mockUseWalletApi, mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
-import type { DecryptedTransactionData } from '@proton/wallet/types';
+import { mockUseApiWalletTransactionData } from '@proton/wallet/tests/mocks/useApiWalletTransactionData';
+import { mockUseWalletApi } from '@proton/wallet/tests/mocks/useWalletApi';
+import { mockUseWalletDispatch } from '@proton/wallet/tests/mocks/useWalletDispatch';
+import type { DecryptedTransactionData } from '@proton/wallet/types/transactions';
 import { decryptWalletData } from '@proton/wallet/utils/crypto';
 
 import { useTransactionNoteModal } from './useTransactionNoteModal';

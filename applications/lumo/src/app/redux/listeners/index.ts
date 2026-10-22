@@ -1,6 +1,6 @@
 import { createListenerMiddleware } from '@reduxjs/toolkit';
 
-import { startAccountSessionsListener } from '@proton/account/accountSessions';
+import { startAccountSessionsListener } from '@proton/account/accountSessions/listener';
 import { startPersistListener } from '@proton/account/persist/listener';
 import { getPersistedState } from '@proton/redux-shared-store/persist';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';

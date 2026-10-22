@@ -10,7 +10,7 @@ import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Progress from '@proton/components/components/progress/Progress';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import type { ESIndexingState } from '@proton/encrypted-search/models';
+import type { ESIndexingState } from '@proton/encrypted-search/models/interfaces';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
 import clsx from '@proton/utils/clsx';
 

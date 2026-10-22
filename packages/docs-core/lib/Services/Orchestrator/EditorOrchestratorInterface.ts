@@ -1,19 +1,16 @@
-import type {
-  CommentInterface,
-  CommentThreadInterface,
-  ClientRequiresEditorMethods,
-  RtsMessagePayload,
-  BroadcastSource,
-  DataTypesThatDocumentCanBeExportedAs,
-  SuggestionSummaryType,
-  EditorEvent,
-  EditorEventData,
-  SafeDocsUserState,
-  FileMenuAction,
-} from '@proton/docs-shared'
+import type { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import type { ClientRequiresEditorMethods } from '@proton/docs-shared/Bridge/ClientRequiresEditorMethods'
+import type { EditorEvent, EditorEventData } from '@proton/docs-shared/Bridge/EditorEvent'
+import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { CommentInterface } from '@proton/docs-shared/CommentInterface'
+import type { CommentThreadInterface } from '@proton/docs-shared/CommentThreadInterface'
+import type { SafeDocsUserState } from '@proton/docs-shared/Doc/DocsAwareness'
+import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
+import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'
+import type { SuggestionSummaryType } from '@proton/docs-shared/SuggestionType'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { SheetsPatchesType } from '../../Database/SheetsDBSchema'
-import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 
 export interface EditorOrchestratorInterface {

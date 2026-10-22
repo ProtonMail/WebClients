@@ -1,4 +1,4 @@
-import { startAccountSessionsListener } from '@proton/account/accountSessions';
+import { startAccountSessionsListener } from '@proton/account/accountSessions/listener';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { startPersistListener } from '@proton/account/persist/listener';
 import { startOffersDeliveryListener } from '@proton/offers-delivery/store/listener';

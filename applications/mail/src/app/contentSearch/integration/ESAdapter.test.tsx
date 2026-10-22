@@ -1,4 +1,5 @@
-import type { ESCallbacks, NormalizedSearchParams } from '@proton/encrypted-search/models';
+import type { ESCallbacks } from '@proton/encrypted-search/models/esCallbacks';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import type { SearchService } from '../search/SearchService';

@@ -1,6 +1,6 @@
 import useEventManager from '@proton/components/hooks/useEventManager'
 import { getDrive } from '@proton/drive/sdk'
-import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
+import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager'
 import type { CoreApiEvent, ProtonDriveClient } from '@protontech/drive-sdk'
 import { useEffect } from 'react'

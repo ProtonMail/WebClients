@@ -1,4 +1,4 @@
-import { DocumentRole } from '@proton/docs-shared'
+import { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { LexicalEditor } from 'lexical'
 import { createRoot } from 'react-dom/client'

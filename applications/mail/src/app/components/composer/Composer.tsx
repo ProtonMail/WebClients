@@ -10,7 +10,7 @@ import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useHandler } from '@proton/hooks/useHandler';
-import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib';
+import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib/helpers';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { removeLineBreaks } from '@proton/mail/helpers/string';

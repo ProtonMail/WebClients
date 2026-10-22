@@ -1,7 +1,7 @@
 import { replaceUrl } from '@proton/shared/lib/helpers/browser'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import type { DocsApi } from '../Api/DocsApi'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import OpenTracer from '@proton/docs-shared/Tracer/Module'
 
 const MIME_TYPE_TO_PATHNAME_MAP: Record<string, string> = {
   [PROTON_DOCS_DOCUMENT_MIMETYPE]: '/doc',

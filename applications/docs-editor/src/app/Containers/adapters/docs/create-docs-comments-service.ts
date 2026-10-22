@@ -1,11 +1,11 @@
-import type {
-  CommentMarkNodeChangeData,
-  DocsAwarenessStateChangeData,
-  EditorRequiresClientMethods,
-  InternalEventBusInterface,
-  LiveCommentsTypeStatusChangeData,
-} from '@proton/docs-shared'
-import { CommentsEvent, DocAwarenessEvent, LiveCommentsEvent } from '@proton/docs-shared'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { CommentMarkNodeChangeData } from '@proton/docs-shared/CommentsEvent'
+import type { DocsAwarenessStateChangeData } from '@proton/docs-shared/DocAwarenessEvent'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { LiveCommentsTypeStatusChangeData } from '@proton/docs-shared/LiveCommentsEvent'
+import { CommentsEvent } from '@proton/docs-shared/CommentsEvent'
+import { DocAwarenessEvent } from '@proton/docs-shared/DocAwarenessEvent'
+import { LiveCommentsEvent } from '@proton/docs-shared/LiveCommentsEvent'
 import { mergeRegister } from '@lexical/utils'
 import type { DocsComments } from '../../Docs/public'
 

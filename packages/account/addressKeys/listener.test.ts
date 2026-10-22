@@ -13,7 +13,7 @@ import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys/getDecryp
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 
 import { addressesReducer } from '../addresses';
-import { getModelState } from '../tests';
+import { getModelState } from '../testing/getModelState';
 import { getServerEvent } from '../tests/getServerEvent';
 import { userReducer } from '../user';
 import { userKeysReducer } from '../userKeys';

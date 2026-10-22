@@ -1,5 +1,5 @@
 import { LinksKeysProvider } from './useLinksKeys';
-import { LinksListingProvider } from './useLinksListing';
+import { LinksListingProvider } from './useLinksListing/useLinksListing';
 import { LinksStateProvider } from './useLinksState';
 
 export * from './interface';

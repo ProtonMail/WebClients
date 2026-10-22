@@ -1,6 +1,6 @@
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 import { getNodeNameWithoutExtension } from './getNodeNameWithoutExtension'
-import type { DecryptedNode } from '@proton/docs-shared'
+import type { DecryptedNode } from '@proton/docs-shared/DecryptedNode'
 
 const mockDecryptedNode = (name: string, mimeType: any) => ({ name, mimeType }) as DecryptedNode
 

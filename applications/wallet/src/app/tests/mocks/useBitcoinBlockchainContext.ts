@@ -1,5 +1,6 @@
 import { WasmNetwork } from '@proton/andromeda';
-import { apiWalletsData, mockedWalletChainDataByWalletId } from '@proton/wallet/tests/fixtures';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures/api';
+import { mockedWalletChainDataByWalletId } from '@proton/wallet/tests/fixtures/wallets';
 import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
 import * as useBitcoinBlockchainContextModule from '../../contexts/BitcoinBlockchainContext';

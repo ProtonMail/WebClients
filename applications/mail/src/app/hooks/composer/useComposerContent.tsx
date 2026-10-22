@@ -10,7 +10,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { useHandler } from '@proton/hooks/useHandler';
-import { getHasAssistantStatus } from '@proton/llm/lib';
+import { getHasAssistantStatus } from '@proton/llm/lib/helpers';
 import type { OpenedAssistant } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

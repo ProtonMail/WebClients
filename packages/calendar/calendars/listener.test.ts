@@ -3,7 +3,7 @@ import { combineReducers, configureStore, createListenerMiddleware } from '@redu
 
 import { addressKeysReducer } from '@proton/account/addressKeys';
 import { addressesReducer } from '@proton/account/addresses';
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { getServerEvent } from '@proton/account/tests/getServerEvent';
 import { userReducer } from '@proton/account/user';
 import { userKeysReducer } from '@proton/account/userKeys';

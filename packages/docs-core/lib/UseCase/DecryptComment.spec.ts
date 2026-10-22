@@ -1,5 +1,6 @@
-import { CommentType, Result } from '@proton/docs-shared'
-import type { DocumentKeys, PublicDocumentKeys } from '@proton/docs-shared'
+import { CommentType } from '@proton/docs-shared/CommentType'
+import { Result } from '@proton/docs-shared/Result'
+import type { DocumentKeys, PublicDocumentKeys } from '@proton/docs-shared/CryptoTypes'
 import { DecryptComment } from './DecryptComment'
 import { VERIFICATION_STATUS } from '@protontech/crypto'
 import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'

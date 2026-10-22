@@ -39,13 +39,13 @@ jest.mock('@proton/raw-images/createWorker', () => ({
 // The metrics package has its own test coverage, so we don't need to test it here.
 jest.mock('@proton/metrics/metricsInstance')
 
-jest.mock('@proton/drive-store/store/_downloads/fileSaver/download.ts', () => {
+jest.mock('@proton/drive-store/store/_downloads/fileSaver/download', () => {
   return {
     initDownloadSW: jest.fn().mockResolvedValue(true),
   }
 })
 
-jest.mock('@proton/drive-store/utils/metrics/userSuccessMetrics.ts', () => {
+jest.mock('@proton/drive-store/utils/metrics/userSuccessMetrics', () => {
   return {
     userSuccessMetrics: {
       init: jest.fn(),

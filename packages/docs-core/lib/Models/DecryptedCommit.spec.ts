@@ -1,4 +1,4 @@
-import { DecryptedMessage } from '@proton/docs-shared'
+import { DecryptedMessage } from '@proton/docs-shared/Realtime/DecryptedMessage'
 import { DecryptedCommit } from './DecryptedCommit'
 
 describe('DecryptedCommit', () => {

@@ -1,8 +1,9 @@
-import { ApiResult, type RealtimeTokenResult } from '@proton/docs-shared'
+import { ApiResult } from '@proton/docs-shared/ApiResult'
+import type { RealtimeTokenResult } from '@proton/docs-shared/Realtime/RealtimeTokenResult'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import metrics from '@proton/metrics/metricsInstance'
 import type { DocsApi } from '../Api/DocsApi'
-import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
 import { z } from 'zod'
 
 // Only define needed properties

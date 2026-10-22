@@ -1,12 +1,12 @@
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
 import { SERVER_HEARTBEAT_INTERVAL } from '@proton/docs-proto/Heartbeat'
+import { ApiResult } from '@proton/docs-shared/ApiResult'
+import type { WebsocketCallbacks } from '@proton/docs-shared/Realtime/WebsocketCallbacks'
 import {
-  ApiResult,
   type WebsocketConnectionInterface,
-  type WebsocketCallbacks,
   ConnectionType,
-} from '@proton/docs-shared'
+} from '@proton/docs-shared/Realtime/WebsocketConnectionInterface'
 import { WebsocketState } from './WebsocketState'
 import metrics from '@proton/metrics/metricsInstance'
 import { getWebSocketServerURL } from './getWebSocketServerURL'

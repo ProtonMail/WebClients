@@ -1,4 +1,4 @@
-import { startAccountSessionsListener } from '@proton/account/accountSessions';
+import { startAccountSessionsListener } from '@proton/account/accountSessions/listener';
 import { startPersistListener } from '@proton/account/persist/listener';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 

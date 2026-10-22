@@ -15,7 +15,7 @@ import { srpVerify } from '@proton/shared/lib/srp';
 
 import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
 import { addressesThunk } from '../addresses';
-import { signoutAction } from '../authenticationService';
+import { signoutAction } from '../authenticationService/authenticationListener';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import { type UserState, userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';

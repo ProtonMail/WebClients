@@ -7,10 +7,11 @@ import type { WasmBitcoinUnit } from '@proton/andromeda';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useLoading from '@proton/hooks/useLoading';
-import { useWalletApiClients } from '@proton/wallet/contexts';
-import { useUserWalletSettings, useWalletDispatch } from '@proton/wallet/store/hooks';
+import { useWalletApiClients } from '@proton/wallet/contexts/ExtendedApiContext';
+import { useWalletDispatch } from '@proton/wallet/store/hooks/app';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
 import { bitcoinUnitChange, walletUpdate } from '@proton/wallet/store/slices';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 import { encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
 
 import { useBitcoinBlockchainContext } from '../../contexts';

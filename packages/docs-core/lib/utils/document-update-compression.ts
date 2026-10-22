@@ -1,4 +1,4 @@
-import type { DocumentType } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { gzipSync, decompressSync } from 'fflate'
 

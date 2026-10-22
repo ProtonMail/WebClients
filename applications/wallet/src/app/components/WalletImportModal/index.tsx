@@ -17,7 +17,7 @@ import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInp
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcWallet } from '@proton/icons/icons/IcWallet';
-import { useWalletSettings } from '@proton/wallet/store/hooks';
+import { useWalletSettings } from '@proton/wallet/store/hooks/useWalletSettings';
 
 import { Button, CoreButton, CoreButtonLike, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';

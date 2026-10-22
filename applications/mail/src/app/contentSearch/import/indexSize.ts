@@ -1,4 +1,4 @@
-import { hasESDB, openESDB } from '@proton/encrypted-search/esIDB';
+import { hasESDB, openESDB } from '@proton/encrypted-search/esIDB/indexedDB';
 
 export async function findEncryptedSearchIndexSize(userId: string): Promise<number | undefined> {
     // Never create the v1 ES DB: `openESDB` creates an empty shell if it's absent, which then makes

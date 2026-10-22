@@ -8,10 +8,11 @@ import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresse
 import { type WasmApiEmailAddress, WasmNetwork } from '@proton/andromeda';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
-import { apiWalletsData } from '@proton/wallet/tests/fixtures';
-import { mockUseWalletApiClients, mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
-import { getAddressKey } from '@proton/wallet/tests/utils';
-import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet/types';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures/api';
+import { mockUseWalletApiClients } from '@proton/wallet/tests/mocks/useWalletApi';
+import { mockUseWalletDispatch } from '@proton/wallet/tests/mocks/useWalletDispatch';
+import { getAddressKey } from '@proton/wallet/tests/utils/keys';
+import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { formatToSubset, getWalletsChainDataInit } from '../contexts/BitcoinBlockchainContext/useWalletsChainData';
 import { mockUseBitcoinBlockchainContext } from '../tests';

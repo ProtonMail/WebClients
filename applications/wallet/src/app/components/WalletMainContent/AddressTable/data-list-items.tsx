@@ -15,7 +15,8 @@ import { IcBrandBitcoin } from '@proton/icons/icons/IcBrandBitcoin';
 import { IcLockPenFilled } from '@proton/icons/icons/IcLockPenFilled';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import clsx from '@proton/utils/clsx';
-import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet/store/hooks';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
+import { useWalletAccountExchangeRate } from '@proton/wallet/store/hooks/useWalletAccountExchangeRate';
 
 import { CoreButtonLike } from '../../../atoms';
 import { Price } from '../../../atoms/Price';

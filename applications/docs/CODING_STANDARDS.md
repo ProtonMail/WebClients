@@ -136,7 +136,7 @@ These packages are being phased out; development happens inside the two apps.
 ### Logging and tracing
 
 - Log with `application.logger` (`info` / `warn` / `error` / `debug`). Lint allows only `console.warn`, `console.error` and `console.trace`.
-- Trace boot and load steps with `void OpenTracer.trace('snake_case_event', {...})` (from `@proton/docs-shared/lib/Tracer/Module`), prefixing the event name with its area (e.g. `boot_docs_url_bar_*`).
+- Trace boot and load steps with `void OpenTracer.trace('snake_case_event', {...})` (from `@proton/docs-shared/Tracer/Module`), prefixing the event name with its area (e.g. `boot_docs_url_bar_*`).
 
 ### Feature flags
 
