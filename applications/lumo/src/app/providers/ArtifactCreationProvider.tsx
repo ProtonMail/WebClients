@@ -8,6 +8,7 @@ import { clearPendingArtifactCreation, setPendingArtifactCreation } from '../red
 import { pushConversationRequest, setConversationArtifactCreation } from '../redux/slices/core/conversations';
 import { sendArtifactCreationToggledEvent } from '../util/telemetry';
 import { useConversation } from './ConversationProvider';
+import { useIsGuest } from './IsGuestProvider';
 
 interface ArtifactCreationContextType {
     isArtifactCreationEnabled: boolean;
@@ -28,11 +29,15 @@ interface ArtifactCreationProviderProps {
 export const ArtifactCreationProvider = ({ children }: ArtifactCreationProviderProps) => {
     const dispatch = useLumoDispatch();
     const store = useLumoStore();
+    const isGuest = useIsGuest();
     const { conversationId } = useConversation();
     const conversationExists = useLumoSelector((state) => {
         return conversationId !== undefined && state.conversations[conversationId] !== undefined;
     });
     const isArtifactCreationEnabled = useLumoSelector((state) => {
+        if (isGuest) {
+            return false;
+        }
         return resolveArtifactCreationEnabled(state, conversationId);
     });
     const hasPendingChoice = useLumoSelector((state) => {
@@ -47,7 +52,16 @@ export const ArtifactCreationProvider = ({ children }: ArtifactCreationProviderP
         }
     }, [conversationExists, hasPendingChoice, dispatch]);
 
+    useEffect(() => {
+        if (isGuest && hasPendingChoice) {
+            dispatch(clearPendingArtifactCreation());
+        }
+    }, [isGuest, hasPendingChoice, dispatch]);
+
     const handleArtifactCreationToggle = useCallback(() => {
+        if (isGuest) {
+            return;
+        }
         const scope = conversationId && conversationExists ? 'conversation' : 'pending-new-chat';
         // Read at click time rather than subscribed to: only the telemetry needs it.
         const state = store.getState();
@@ -69,7 +83,7 @@ export const ArtifactCreationProvider = ({ children }: ArtifactCreationProviderP
         } else {
             dispatch(setPendingArtifactCreation(newValue));
         }
-    }, [isArtifactCreationEnabled, conversationId, conversationExists, dispatch, store]);
+    }, [isGuest, isArtifactCreationEnabled, conversationId, conversationExists, dispatch, store]);
 
     const value = {
         isArtifactCreationEnabled,
