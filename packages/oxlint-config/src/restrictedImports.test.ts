@@ -4,10 +4,7 @@ import { collectRestrictions, createRestrictedImportRule } from './restrictedImp
 
 describe('createRestrictedImportRule', () => {
     it('returns the rule value with every option filled in', () => {
-        expect(createRestrictedImportRule({ rollout: ['account-barrel'] })).toEqual([
-            'error',
-            { rollout: ['account-barrel'], paths: [], patterns: [] },
-        ]);
+        expect(createRestrictedImportRule({})).toEqual(['error', { rollout: [], paths: [], patterns: [] }]);
     });
 
     it('throws on an unknown rollout id', () => {
@@ -24,18 +21,13 @@ describe('collectRestrictions', () => {
     const patternGroups = (filename: string) =>
         collectRestrictions(filename, {}).patterns.map((pattern) => pattern.group[0]);
 
-    it('adds rollout and client paths after the base ones', () => {
+    it('adds client paths after the base ones', () => {
         const names = pathNames('/repo/applications/account/src/a.ts', {
-            rollout: ['account-barrel'],
             paths: [{ name: 'some-package' }],
         });
-        expect(names.slice(-4)).toEqual([
-            '@proton/account',
-            '@proton/account/index',
-            '@proton/account/index.ts',
-            'some-package',
-        ]);
+        expect(names.slice(-1)).toEqual(['some-package']);
         expect(names).toContain('@proton/atoms');
+        expect(names).toContain('@proton/account');
     });
 
     it('scopes the drive fence and the silent api ban by file', () => {

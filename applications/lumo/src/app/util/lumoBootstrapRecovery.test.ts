@@ -9,9 +9,15 @@ import { addDataLossWarning } from '../redux/slices/meta/errors';
 import { LUMO_ELIGIBILITY } from '../types';
 import type { MasterKeyEnvelope } from './lumoBootstrap';
 
-jest.mock('@proton/account', () => ({
+jest.mock('@proton/account/addressKeys', () => ({
     addressKeysThunk: () => async () => [],
+}));
+
+jest.mock('@proton/account/addresses', () => ({
     addressesThunk: () => async () => [],
+}));
+
+jest.mock('@proton/account/userKeys', () => ({
     userKeysThunk: () => async () => [],
 }));
 

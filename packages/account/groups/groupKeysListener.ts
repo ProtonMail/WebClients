@@ -1,7 +1,7 @@
 import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 
-import type { GroupsState } from '../index';
 import { generateGroupKeysIfNeeded, groupsToGenerateFilter } from './generateGroupKeys';
+import type { GroupsState } from './index';
 
 export const groupKeysListener = (startListening: SharedStartListening<GroupsState>) => {
     startListening({
