@@ -250,6 +250,8 @@ export type SettingsContext = {
     personalization?: PersonalizationSettings;
     isMemoryFeatureEnabled?: boolean;
     isArtifactsViewFeatureEnabled?: boolean;
+    /** `LumoArtifactSlides`: the model may create slide decks (`presentation` artifacts). */
+    isArtifactSlidesFeatureEnabled?: boolean;
     hasLumoPlus?: boolean;
     isVisualizationInstructionsFeatureEnabled?: boolean;
     isGuestUser?: boolean;
@@ -708,7 +710,8 @@ export function sendMessage({
                     shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
                     artifactToolMode,
                     ui.isFromQueryParam,
-                    contextLimits
+                    contextLimits,
+                    !!s.isArtifactSlidesFeatureEnabled
                 );
 
             await dispatch(
@@ -734,6 +737,7 @@ export function sendMessage({
                         generateTitle,
                         imageAspectRatio: ui.imageAspectRatio,
                         artifactToolMode,
+                        artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -915,7 +919,8 @@ export function regenerateMessage({
                     shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
                     artifactToolMode,
                     false,
-                    contextLimits
+                    contextLimits,
+                    !!s.isArtifactSlidesFeatureEnabled
                 );
 
                 // Add retry instructions if provided
@@ -957,6 +962,7 @@ export function regenerateMessage({
                         modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         artifactToolMode,
+                        artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -1150,7 +1156,8 @@ export function retrySendMessage({
                 shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
                 artifactToolMode,
                 false,
-                contextLimits
+                contextLimits,
+                !!s.isArtifactSlidesFeatureEnabled
             );
 
         // Call the LLM
@@ -1177,6 +1184,7 @@ export function retrySendMessage({
                         enableSuggestedQuestions: false,
                         generateTitle: requestTitle,
                         artifactToolMode,
+                        artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,

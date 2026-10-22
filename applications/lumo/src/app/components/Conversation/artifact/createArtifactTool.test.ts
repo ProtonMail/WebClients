@@ -6,7 +6,7 @@ import {
 
 describe('createArtifactToolExecutor', () => {
     it('advertises the create_artifact function tool', async () => {
-        const tools = await createArtifactToolExecutor.getClientTools!();
+        const tools = await createArtifactToolExecutor({ presentationEnabled: false }).getClientTools!();
 
         expect(tools).toHaveLength(1);
         expect(tools[0]!.function.name).toBe(CREATE_ARTIFACT_TOOL_NAME);
@@ -16,7 +16,7 @@ describe('createArtifactToolExecutor', () => {
     // D12: the same Vega-Lite version as the chat [Visualization] rules, one embed syntax per
     // artifact type, and no chat-only card blocks inside artifacts.
     it('scopes chart embedding per artifact type and keeps cards out of artifacts', async () => {
-        const tools = await createArtifactToolExecutor.getClientTools!();
+        const tools = await createArtifactToolExecutor({ presentationEnabled: true }).getClientTools!();
         const description = tools[0]!.function.description ?? '';
 
         expect(description).toContain('vega-lite/v6.json');
@@ -27,13 +27,33 @@ describe('createArtifactToolExecutor', () => {
         expect(description).toContain('Never put ```card-row or ```card blocks in any artifact');
     });
 
+    it('offers presentation only with LumoArtifactSlides', async () => {
+        const [withSlides] = await createArtifactToolExecutor({ presentationEnabled: true }).getClientTools!();
+        const [withoutSlides] = await createArtifactToolExecutor({ presentationEnabled: false }).getClientTools!();
+        const typeEnum = (tool: typeof withSlides) => {
+            return (tool!.function.parameters!.properties as Record<string, { enum?: string[] }>).type.enum;
+        };
+
+        expect(typeEnum(withSlides)).toContain('presentation');
+        expect(withSlides!.function.description).toContain('slide deck');
+
+        expect(typeEnum(withoutSlides)).toEqual(['code', 'document', 'webpage']);
+        expect(withoutSlides!.function.description).not.toContain('presentation');
+        expect(withoutSlides!.function.description).not.toContain('<section>');
+        expect(withoutSlides!.function.description).toContain(
+            'In a `document`, put a chart in a ```vega-lite fenced block'
+        );
+    });
+
     it('only claims its own tool name', () => {
-        expect(createArtifactToolExecutor.canExecute(CREATE_ARTIFACT_TOOL_NAME)).toBe(true);
-        expect(createArtifactToolExecutor.canExecute('web_search')).toBe(false);
+        const executor = createArtifactToolExecutor({ presentationEnabled: false });
+
+        expect(executor.canExecute(CREATE_ARTIFACT_TOOL_NAME)).toBe(true);
+        expect(executor.canExecute('web_search')).toBe(false);
     });
 
     it('acknowledges every call it executes', async () => {
-        const results = await createArtifactToolExecutor.execute([
+        const results = await createArtifactToolExecutor({ presentationEnabled: false }).execute([
             { id: 'call_1', name: CREATE_ARTIFACT_TOOL_NAME, arguments: '{}' },
         ]);
 
