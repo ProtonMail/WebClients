@@ -5,7 +5,7 @@ import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
-import { signoutAction } from '../authenticationService';
+import { signoutAction } from '../authenticationService/authenticationListener';
 import { accountSessionsEvent } from './events';
 import { type AccountSessions, type AccountSessionsState, selectAccountSessions } from './slice';
 

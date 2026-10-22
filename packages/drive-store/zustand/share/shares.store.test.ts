@@ -1,5 +1,5 @@
-import type { LockedVolumeForRestore, Share, ShareWithKey } from '../../store';
-import { ShareState, ShareType } from '../../store';
+import type { LockedVolumeForRestore, Share, ShareWithKey } from '../../store/_shares/interface';
+import { ShareState, ShareType } from '../../store/_shares/interface';
 import { findDefaultPhotosShareId, findDefaultShareId, useSharesStore } from './shares.store';
 
 const createTestShare = (overrides: Partial<Share> = {}): Share => ({

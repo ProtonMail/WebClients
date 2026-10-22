@@ -3,7 +3,17 @@
     "description": "Shared navigation definition builder",
     "type": "module",
     "exports": {
-        "./*": "./src/*.ts"
+        "./api/applyPrefix": "./src/api/applyPrefix.ts",
+        "./api/defineNavigation": "./src/api/defineNavigation.ts",
+        "./api/defineSearchOptions": "./src/api/defineSearchOptions.ts",
+        "./api/defineSidebar": "./src/api/defineSidebar.ts",
+        "./api/findNavItem": "./src/api/findNavItem.ts",
+        "./errors": "./src/errors/index.ts",
+        "./types/models": "./src/types/models.ts",
+        "./types/nav": "./src/types/nav.ts",
+        "./types/navIds": "./src/types/navIds.ts",
+        "./types/section": "./src/types/section.ts",
+        "./types/sidebar": "./src/types/sidebar.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",

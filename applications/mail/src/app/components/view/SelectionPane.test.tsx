@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 

@@ -15,7 +15,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcWallet } from '@proton/icons/icons/IcWallet';
-import { useUserWalletSettings } from '@proton/wallet/store/hooks';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
 
 import { Button, CoreButton, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';

@@ -15,10 +15,10 @@ import type { ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload, SharedURLInfoPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import type { Device } from '../_devices';
+import type { Device } from '../_devices/interface';
 import type { DriveEvents } from '../_events/interface';
 import type { EncryptedLink } from '../_links/interface';
-import type { DriveFileRevision } from '../_revisions';
+import type { DriveFileRevision } from '../_revisions/interface';
 import type {
     Share,
     ShareInvitation,
@@ -28,7 +28,7 @@ import type {
     SharedUrlInfo,
 } from '../_shares/interface';
 import { ShareType } from '../_shares/interface';
-import { ThumbnailType } from '../_uploads/media';
+import { ThumbnailType } from '../_uploads/media/interface';
 
 // LinkMetaWithShareURL is used when loading shared links.
 // We need this to load information about number of accesses.

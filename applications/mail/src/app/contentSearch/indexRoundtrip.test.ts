@@ -5,10 +5,9 @@ import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import 'fake-indexeddb/auto';
 import type { IDBPDatabase } from 'idb';
 
-import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
 import type { ESBaseMessage } from '../models/encryptedSearch.ts';
-
 import { openContentSearchDB } from './db/open';
 import type { Database } from './db/schema';
 import { IndexWriter } from './indexation/IndexWriter';

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import useToggle from '@proton/hooks/useToggle';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { LayoutViewLoader } from '../../atoms/LayoutViewLoader';
 import { useBitcoinBlockchainContext } from '../../contexts';

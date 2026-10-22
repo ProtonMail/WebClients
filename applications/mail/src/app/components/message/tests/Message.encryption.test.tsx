@@ -1,6 +1,6 @@
 import { findByText, screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { IcLockCheckFilled } from '@proton/icons/icons/IcLockCheckFilled';
 import { IcLockExclamationFilled } from '@proton/icons/icons/IcLockExclamationFilled';
 import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';

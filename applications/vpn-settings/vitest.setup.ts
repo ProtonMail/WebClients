@@ -102,7 +102,7 @@ vi.mock('@proton/components/components/modalTwo/BackdropContainer', () => ({
 // Silence JDOM warnings triggered by emoji-mart
 HTMLCanvasElement.prototype.getContext = vi.fn() as unknown as typeof HTMLCanvasElement.prototype.getContext;
 
-vi.mock('@proton/llm/lib/hooks/useAssistant.tsx', () => {
+vi.mock('@proton/llm/lib/hooks/useAssistant', () => {
     return {
         __esModule: true,
         useAssistant: vi.fn(() => ({

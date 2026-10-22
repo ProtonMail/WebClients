@@ -1,4 +1,4 @@
-import type { NodeMeta } from '@proton/docs-shared'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
 import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { getDecryptedNode } from './getDecryptedNode'
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays'

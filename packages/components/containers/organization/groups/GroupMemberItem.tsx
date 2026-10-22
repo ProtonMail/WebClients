@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { isOrgKeyRequired } from '@proton/account/organizationRoles/helpers';
-import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup';
+import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup/selectors';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Group } from '@proton/shared/lib/interfaces/Group';

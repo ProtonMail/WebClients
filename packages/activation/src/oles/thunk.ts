@@ -8,13 +8,9 @@ import { orderAddresses } from '@proton/account/addresses/actions';
 import type { KtState } from '@proton/account/kt';
 import { getKTActivation } from '@proton/account/kt/actions';
 import type { MemberState } from '@proton/account/member';
-import {
-    type MembersState,
-    UnavailableAddressesError,
-    getMemberAddresses,
-    membersThunk,
-} from '@proton/account/members';
+import { type MembersState, getMemberAddresses, membersThunk } from '@proton/account/members';
 import { createMember } from '@proton/account/members/actions';
+import UnavailableAddressesError from '@proton/account/members/errors/UnavailableAddressesError';
 import { decryptTemporaryPassword, encryptTemporaryPassword } from '@proton/account/orgJoiningLink/helpers';
 import { organizationThunk } from '@proton/account/organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '@proton/account/organizationKey';

@@ -1,6 +1,6 @@
 import { act, screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';

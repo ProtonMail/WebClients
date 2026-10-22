@@ -1,4 +1,4 @@
-import type { NodeMeta } from '@proton/docs-shared'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
 import { generateNodeUid, getDrive, MemberRole } from '@proton/drive/sdk'
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import { getRoleFromHierarchy } from './getRoleFromHierarchy'

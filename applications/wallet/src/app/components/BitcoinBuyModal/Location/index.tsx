@@ -9,7 +9,7 @@ import CountrySelect from '@proton/components/components/country/CountrySelect';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
-import { useCountriesByProvider } from '@proton/wallet/store/hooks';
+import { useCountriesByProvider } from '@proton/wallet/store/hooks/useCountriesByProvider';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import type { CoreSearchableSelectProps } from '../../../atoms';

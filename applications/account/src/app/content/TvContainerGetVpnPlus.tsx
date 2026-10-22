@@ -1,4 +1,4 @@
-import { TvCheckout } from '@proton/vpn/components/tv';
+import { TvCheckout } from '@proton/vpn/components/tv/containers/TvCheckoutContainer';
 
 import Layout from '../public/Layout';
 import Main from '../public/Main';

@@ -1,15 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
-import type { FileToDocConversionResult } from '@proton/docs-core'
+import type { FileToDocConversionResult } from '@proton/docs-core/Types/FileToDocConversionResult'
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName'
-import type {
-  DocumentAction,
-  EditorInitializationConfig,
-  FileToDocPendingConversion,
-  NodeMeta,
-} from '@proton/docs-shared'
-import type { DriveCompat } from '@proton/drive-store'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
+import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
+import type { FileToDocPendingConversion } from '@proton/docs-shared/FileToDocPendingConversion'
+import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { c } from 'ttag'
 
@@ -22,17 +20,17 @@ import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { useUser } from '@proton/account/user/hooks'
 import { DocsProvider } from '~/components/document/context'
 import { PublicDocumentCopier } from './__components/PublicDocumentCopier'
-import { getUrlPassword } from '@proton/docs-shared/lib/URL/getUrlPassword'
+import { getUrlPassword } from '@proton/docs-shared/URL/getUrlPassword'
 import { useEmailOptInModal } from './__components/EmailOptInModal/EmailOptInModal'
 import { useDocsNotifications } from '../../__utils/notifications-context'
 import { PrivateHookChangesToEvents } from './__components/PrivateHookChangesToEvents'
 import { useFlag } from '@proton/unleash/useFlag'
 import { useLocation } from 'react-router-dom-v5-compat'
-import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/lib/Doc/convert-doc-type'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/Doc/convert-doc-type'
+import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import { useDriveCompatSDK } from '~/utils/flags'
-import { getMyFilesNodeMeta } from '@proton/docs-core/lib/DriveSDK/getMyFilesNodeMeta'
-import { getNodeContents as getNodeContentsSDK } from '@proton/docs-core/lib/DriveSDK/getNodeContents'
+import { getMyFilesNodeMeta } from '@proton/docs-core/DriveSDK/getMyFilesNodeMeta'
+import { getNodeContents as getNodeContentsSDK } from '@proton/docs-core/DriveSDK/getNodeContents'
 
 export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()

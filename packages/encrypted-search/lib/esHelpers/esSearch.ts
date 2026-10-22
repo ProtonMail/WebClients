@@ -6,15 +6,9 @@ import isTruthy from '@proton/utils/isTruthy';
 import { ES_EXTRA_RESULTS_LIMIT, ES_MAX_ITEMS_PER_BATCH } from '../constants';
 import { readContentBatch } from '../esIDB/content';
 import { readMetadataBatch, readSortedIDs } from '../esIDB/metadata';
-import type {
-    CachedItem,
-    ESCache,
-    ESItem,
-    ESTimepoint,
-    GetItemInfo,
-    GetUserKeys,
-    InternalESCallbacks,
-} from '../models';
+import type { InternalESCallbacks } from '../models/esCallbacks';
+import type { GetItemInfo, GetUserKeys } from '../models/esFunctions';
+import type { CachedItem, ESCache, ESItem, ESTimepoint } from '../models/interfaces';
 import { getIndexKey } from './esBuild';
 import { cacheIDB, getOldestCachedTimepoint } from './esCache';
 import { decryptFromDB } from './esDecrypt';

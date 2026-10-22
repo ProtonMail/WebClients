@@ -1,4 +1,4 @@
-import { apiHelper } from '@proton/encrypted-search/esHelpers';
+import { apiHelper } from '@proton/encrypted-search/esHelpers/esAPI';
 import { removeBase64 } from '@proton/mail-renderer/helpers/transforms/transformEscape';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { removeHTMLComments } from '@proton/shared/lib/helpers/string';

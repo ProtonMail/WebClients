@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import { useAccountSessions } from '@proton/account/accountSessions';
+import { useAccountSessions } from '@proton/account/accountSessions/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';

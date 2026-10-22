@@ -1,10 +1,10 @@
 import { PublicSessionProvider } from '../store/_api/usePublicSession';
-import { DevicesProvider } from '../store/_devices';
+import { DevicesListingProvider as DevicesProvider } from '../store/_devices/useDevicesListing';
 import { DriveEventManagerProvider } from '../store/_events/useDriveEventManager';
 import { InvitationsStateProvider } from '../store/_invitations/useInvitationsState';
 import { LinksProvider, PublicLinksProvider } from '../store/_links/index';
 import { SharesProvider } from '../store/_shares/index';
-import { VolumesProvider } from '../store/_volumes';
+import { VolumesStateProvider as VolumesProvider } from '../store/_volumes/useVolumesState';
 
 export const DriveStoreProvider = ({ children }: { children: React.ReactNode }) => {
     return (

@@ -26,10 +26,12 @@ import {
     wordCountToNumber,
 } from '@proton/wallet/constants/bitcoin';
 import { DEFAULT_MAX_SUB_WALLETS } from '@proton/wallet/constants/wallet';
-import { useWalletApi, useWalletApiClients } from '@proton/wallet/contexts';
-import { useFiatCurrencies, useUserWalletSettings, useWalletDispatch } from '@proton/wallet/store/hooks';
+import { useWalletApi, useWalletApiClients } from '@proton/wallet/contexts/ExtendedApiContext';
+import { useWalletDispatch } from '@proton/wallet/store/hooks/app';
+import { useFiatCurrencies } from '@proton/wallet/store/hooks/useFiatCurrencies';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
 import { acceptTermsAndConditions, walletCreation } from '@proton/wallet/store/slices';
-import { WalletType } from '@proton/wallet/types';
+import { WalletType } from '@proton/wallet/types/api';
 import { encryptWalletData, encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
 import { decryptWallet, getDefaultWalletName } from '@proton/wallet/utils/wallet';
 

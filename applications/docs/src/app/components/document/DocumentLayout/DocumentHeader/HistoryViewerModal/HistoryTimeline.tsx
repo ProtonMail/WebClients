@@ -1,5 +1,5 @@
 import clsx from '@proton/utils/clsx'
-import type { NativeVersionHistory } from '@proton/docs-core'
+import type { NativeVersionHistory } from '@proton/docs-core/VersionHistory/NativeVersionHistory'
 import { c } from 'ttag'
 
 export type HistoryTimelineProps = {

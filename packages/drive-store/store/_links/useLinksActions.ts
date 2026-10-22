@@ -17,7 +17,7 @@ import { useDriveEventManager } from '../_events/useDriveEventManager';
 import { ShareType } from '../_shares/interface';
 import useShare from '../_shares/useShare';
 import { useBatchHelper } from '../_utils/useBatchHelper';
-import { useVolumesState } from '../_volumes';
+import useVolumesState from '../_volumes/useVolumesState';
 import useLink from './useLink';
 import useLinks from './useLinks';
 import useLinksState from './useLinksState';

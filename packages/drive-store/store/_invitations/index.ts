@@ -1,1 +1,0 @@
-export { useInvitations } from './useInvitations';

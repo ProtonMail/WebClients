@@ -13,7 +13,7 @@ import useLink from '../../store/_links/useLink';
 import { useLinksListingHelpers } from '../../store/_links/useLinksListing/useLinksListingHelpers';
 import type { SharedUrlInfo } from '../../store/_shares/interface';
 import usePublicShare from '../../store/_shares/usePublicShare';
-import { useAbortSignal } from '../../store/_views/utils';
+import useAbortSignal from '../../store/_views/utils/useAbortSignal';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import type { PublicNodeMeta } from '../NodeMeta';
 import type { DecryptedNode } from './interface';

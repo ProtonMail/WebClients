@@ -1,4 +1,4 @@
-import { useAssistant } from '@proton/llm/lib';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 
 import { parseModelResult } from '../../helpers/assistant/result';
 

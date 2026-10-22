@@ -1,7 +1,7 @@
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../Models/Constants'
 import { DocSizeTracker } from './SizeTracker'
-import type { InternalEventBusInterface } from '@proton/docs-shared'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
 
 describe('SizeTracker', () => {
   const logger = {

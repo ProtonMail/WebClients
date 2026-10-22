@@ -1,11 +1,11 @@
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 
-import { useLinkPath } from '../../store';
 import useLinks from '../../store/_links/useLinks';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
+import useLinkPath from '../../store/_views/useLinkPath';
 import type { PathItem } from '../../store/_views/useLinkPath';
-import { useAbortSignal } from '../../store/_views/utils';
+import useAbortSignal from '../../store/_views/utils/useAbortSignal';
 import type { DecryptedNode } from './interface';
 import { decryptedLinkToNode } from './utils';
 

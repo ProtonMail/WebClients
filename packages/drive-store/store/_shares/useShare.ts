@@ -13,7 +13,7 @@ import useDebouncedRequest from '../_api/useDebouncedRequest';
 import integrityMetrics from '../_crypto/integrityMetrics';
 import useDriveCrypto from '../_crypto/useDriveCrypto';
 import { useGetMetricsUserPlan } from '../_user/useGetMetricsUserPlan';
-import { useDebouncedFunction } from '../_utils';
+import useDebouncedFunction from '../_utils/useDebouncedFunction';
 import type { Share, ShareWithKey } from './interface';
 import { getShareTypeString } from './shareType';
 import type { ShareKeys } from './useSharesKeys';

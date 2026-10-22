@@ -9,11 +9,11 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { useInvitations } from '../_invitations';
+import { useInvitations } from '../_invitations/useInvitations';
 import { useInvitationsState } from '../_invitations/useInvitationsState';
 import useLink from '../_links/useLink';
 import useLinksListing from '../_links/useLinksListing/useLinksListing';
-import { useVolumesState } from '../_volumes';
+import useVolumesState from '../_volumes/useVolumesState';
 
 export const useInvitationsActions = () => {
     const { setVolumeShareIds } = useVolumesState();

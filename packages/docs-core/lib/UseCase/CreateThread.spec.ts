@@ -1,13 +1,11 @@
-import {
-  ApiResult,
-  Result,
-  ServerTime,
-  GenerateUUID,
-  type NodeMeta,
-  type InternalEventBusInterface,
-} from '@proton/docs-shared'
-import type { DocumentKeys } from '@proton/docs-shared'
-import { CommentThread } from '../Models'
+import { ApiResult } from '@proton/docs-shared/ApiResult'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import { GenerateUUID } from '@proton/docs-shared/GenerateUuid'
+import { Result } from '@proton/docs-shared/Result'
+import { ServerTime } from '@proton/docs-shared/ServerTime'
+import type { DocumentKeys } from '@proton/docs-shared/CryptoTypes'
+import { CommentThread } from '../Models/CommentThread'
 import type { EncryptComment } from './EncryptComment'
 import type { DecryptComment } from './DecryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
@@ -16,13 +14,25 @@ import type { DocsApi } from '../Api/DocsApi'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 
-jest.mock('@proton/docs-shared', () => ({
-  ...jest.requireActual('@proton/docs-shared'),
+jest.mock('@proton/docs-shared/GenerateUuid', () => ({
+  ...jest.requireActual('@proton/docs-shared/GenerateUuid'),
   GenerateUUID: jest.fn(),
+}))
+
+jest.mock('@proton/docs-shared/ServerTime', () => ({
+  ...jest.requireActual('@proton/docs-shared/ServerTime'),
   ServerTime: jest.fn().mockImplementation(() => ({})),
+}))
+
+jest.mock('@proton/docs-shared/CommentThreadState', () => ({
+  ...jest.requireActual('@proton/docs-shared/CommentThreadState'),
   CommentThreadState: {
     Active: 'Active',
   },
+}))
+
+jest.mock('@proton/docs-shared/CommentsEvent', () => ({
+  ...jest.requireActual('@proton/docs-shared/CommentsEvent'),
   CommentsEvent: {
     CreateMarkNode: 'CreateMarkNode',
   },

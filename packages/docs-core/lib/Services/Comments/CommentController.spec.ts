@@ -1,6 +1,7 @@
 import { CommentController } from './CommentController'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
-import { Result, type InternalEventBusInterface } from '@proton/docs-shared'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import { Result } from '@proton/docs-shared/Result'
 
 import type { PrivateKeyReference, SessionKey } from '@protontech/crypto'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'

@@ -1,4 +1,5 @@
-import type { NodeMeta, PublicDocumentKeys, PublicNodeMeta } from '@proton/docs-shared'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { PublicDocumentKeys } from '@proton/docs-shared/CryptoTypes'
 import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 import type { SessionKey } from '@protontech/crypto'
 import { traceErrorSDK } from './traceErrorSDK'

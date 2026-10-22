@@ -1,7 +1,6 @@
 import noop from '@proton/utils/noop';
 
 import { esErrorReport } from '../esHelpers/esReporting';
-import type { ConfigKeys, ConfigValues, RetryObject } from '../models';
 import {
     ESDbTableNotFound,
     ESInvalidAccessError,
@@ -9,6 +8,7 @@ import {
     ESTransactionError,
     ESTransactionInactiveError,
 } from '../models/errors';
+import type { ConfigKeys, ConfigValues, RetryObject } from '../models/interfaces';
 import { openESDB, safelyWriteToIDBAbsolutely } from './indexedDB';
 
 /**
@@ -76,15 +76,6 @@ const readConfigProperty = async (userID: string, configID: ConfigKeys) => {
 };
 
 /**
- * Read from the config table whether IDB was migrated after the latest
- * version upgrade, in case it had been created before. If so, the migrated
- * row contains some product-specific information to perform the migration.
- * Note that if no such row exists, it means IDB was created after the
- * migration and is therefore considered already migrated
- */
-export const readMigrated = async (userID: string) => readConfigProperty(userID, 'migrated');
-
-/**
  * Read the index key from the config table
  */
 export const readIndexKey = async (userID: string): Promise<string | undefined> =>
@@ -145,19 +136,6 @@ export const toggleEnabled = async (userID: string) => {
     const oldEnabled = await readEnabled(userID);
     const newEnabled = !oldEnabled;
     return writeConfigProperty(userID, 'enabled', newEnabled).catch(noop);
-};
-
-/**
- * Remove the migrated row once migration is done
- */
-export const setMigrated = async (userID: string) => {
-    const esDB = await openESDB(userID);
-    if (!esDB || !esDB.objectStoreNames.contains('config')) {
-        return;
-    }
-
-    await esDB.delete('config', 'migrated');
-    esDB.close();
 };
 
 /**

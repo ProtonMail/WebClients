@@ -1,20 +1,20 @@
 import { Logger } from '@proton/shared/lib/logs'
+import type { ClientRequiresEditorMethods } from '@proton/docs-shared/Bridge/ClientRequiresEditorMethods'
 import type {
   ClientToEditorGenericMessage,
   ClientToEditorInvokationMessage,
   ClientToEditorReplyMessage,
-  ClientRequiresEditorMethods,
-  EditorRequiresClientMethods,
-  EditorToClientReplyMessage,
-} from '@proton/docs-shared'
+} from '@proton/docs-shared/Bridge/ClientToEditorMessage'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { EditorToClientReplyMessage } from '@proton/docs-shared/Bridge/EditorToClientMessage'
+import { BridgeOriginProvider } from '@proton/docs-shared/Bridge/BridgeOriginProvider'
+import { EditorBridgeMessageType } from '@proton/docs-shared/Bridge/EditorBridgeMessageType'
 import {
-  EditorBridgeMessageType,
-  BridgeOriginProvider,
-  DOCS_EDITOR_DEBUG_KEY,
   EDITOR_TAG_INFO_EVENT,
   EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD,
   EDITOR_CONFIRMS_VERSIONS_MATCH,
-} from '@proton/docs-shared'
+} from '@proton/docs-shared/Bridge/EditorTagInfoEvent'
+import { DOCS_EDITOR_DEBUG_KEY } from '@proton/docs-shared/constants'
 
 import { ClientInvoker } from './ClientInvoker'
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/helpers/versionCookie'

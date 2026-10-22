@@ -1,6 +1,6 @@
 import { fireEvent, getByText, screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';

@@ -8,7 +8,7 @@ import OpenVPNCredentialsSection from '@proton/components/containers/vpn/OpenVPN
 import WireGuardConfigurationSection from '@proton/components/containers/vpn/WireGuardConfigurationSection/WireGuardConfigurationSection';
 import { VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { VPNClientsSection } from '@proton/vpn/components/VPNClientsSection';
-import { TVContainer } from '@proton/vpn/components/tv';
+import { TVContainer } from '@proton/vpn/components/tv/containers/TVContainer';
 
 import VpnUpgradeSection from './VpnUpgradeSection';
 import type { getVpnAppRoutes } from './routes';

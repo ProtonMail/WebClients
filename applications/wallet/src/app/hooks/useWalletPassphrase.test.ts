@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
-import type { IWasmApiWalletData, WalletWithChainData } from '@proton/wallet/types';
+import type { WalletWithChainData } from '@proton/wallet/types/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { mockUseBitcoinBlockchainContext } from '../tests';
 import { useWalletPassphrase } from './useWalletPassphrase';
