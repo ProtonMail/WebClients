@@ -3,26 +3,23 @@ import { Suspense, lazy, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { SECOND } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { canShowB2BOnboardingButton } from '@proton/shared/lib/onboarding/helpers';
-import { isAdmin } from '@proton/shared/lib/user/helpers';
 import buildingImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-buildings.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import ErrorBoundary from '../../containers/app/ErrorBoundary';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import useIsB2BAdmin from '../../hooks/useIsB2BAdmin';
 import useSpotlightOnFeature from '../../hooks/useSpotlightOnFeature';
 import ContextMenu from '../contextMenu/ContextMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
@@ -42,9 +39,7 @@ const B2BOnboardingModal = lazy(
 );
 
 const TopNavbarB2BOnboardingButton = () => {
-    const [user] = useUser();
     const [subscription] = useSubscription();
-    const [organization] = useOrganization();
     const { APP_NAME } = useConfig();
     const api = useApi();
     const showB2BButtonFeatureFlag = useFeature(FeatureCode.ShowB2BOnboardingButton);
@@ -59,7 +54,7 @@ const TopNavbarB2BOnboardingButton = () => {
      * - Button can be displayed (user subscribed less than 60 days ago)
      * - User did not hide the button manually
      */
-    const isB2BAdmin = isAdmin(user) && getIsB2BAudienceFromPlan(organization?.PlanName);
+    const isB2BAdmin = useIsB2BAdmin();
     const canShowB2BButton =
         isB2BAdmin &&
         b2bOnboardingEnabled &&

@@ -1,78 +1,21 @@
 import { buildUser } from '@proton/account/testing/buildUser';
 import { getOrgPermissions } from '@proton/account/userPermissions';
-import { PLANS } from '@proton/payments/core/constants';
-import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
-import { type Entitlement, EntitlementScope, EntitlementType } from '@proton/payments/core/entitlements/interface';
+import type { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
+import {
+    type CataloguedPlan,
+    prodCatalogGrants,
+    toOrganizationEntitlement,
+} from '@proton/payments/testing/prodCatalogGrants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { Group, GroupFlags } from '@proton/shared/lib/interfaces/Group';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import { PERMISSIONS } from '@proton/shared/lib/interfaces/UserPermission';
 
 import type { Flags, OrganizationRouterParams } from '../router-params';
-
-const prodCatalogGrants = {
-    [PLANS.MAIL]: [EntitlementName.FlagsInbox, EntitlementName.CustomDomainAddresses],
-    [PLANS.FAMILY]: [
-        EntitlementName.FlagsInbox,
-        EntitlementName.FlagsVpn,
-        EntitlementName.MultiUser,
-        EntitlementName.CustomDomainAddresses,
-    ],
-    [PLANS.MAIL_PRO]: [
-        EntitlementName.FlagsInbox,
-        EntitlementName.Business,
-        EntitlementName.MultiUser,
-        EntitlementName.CustomDomainAddresses,
-    ],
-    [PLANS.MEET_BUSINESS]: [
-        EntitlementName.FlagsMeet,
-        EntitlementName.Business,
-        EntitlementName.MultiUser,
-        EntitlementName.ExternalManagedMembers,
-        EntitlementName.CustomDomainAddresses,
-    ],
-    [PLANS.BUNDLE_PRO_2024]: [
-        EntitlementName.FlagsInbox,
-        EntitlementName.FlagsVpn,
-        EntitlementName.Business,
-        EntitlementName.MultiUser,
-        EntitlementName.CustomDomainAddresses,
-    ],
-    [PLANS.VPN_PRO]: [
-        EntitlementName.FlagsVpn,
-        EntitlementName.Business,
-        EntitlementName.Groups,
-        EntitlementName.MultiUser,
-        EntitlementName.ExternalManagedMembers,
-    ],
-    [PLANS.PASS_PRO]: [EntitlementName.FlagsPass, EntitlementName.Business],
-    [PLANS.PASS_BUSINESS]: [
-        EntitlementName.FlagsPass,
-        EntitlementName.Business,
-        EntitlementName.OrganizationPolicy,
-        EntitlementName.ActivityMonitorPass,
-        EntitlementName.Groups,
-        EntitlementName.MultiUser,
-        EntitlementName.ExternalManagedMembers,
-        EntitlementName.Sso,
-    ],
-    [PLANS.VPN_BUSINESS]: [
-        EntitlementName.FlagsVpn,
-        EntitlementName.Business,
-        EntitlementName.MaxDedicatedIps,
-        EntitlementName.OrganizationPolicy,
-        EntitlementName.Groups,
-        EntitlementName.MultiUser,
-        EntitlementName.ExternalManagedMembers,
-        EntitlementName.Sso,
-    ],
-} satisfies Partial<Record<PLANS, EntitlementName[]>>;
-
-type CataloguedPlan = keyof typeof prodCatalogGrants;
 
 export const defaultFlags: Flags = {
     isAlwaysOnVpnEnabled: false,
@@ -88,13 +31,6 @@ export const defaultFlags: Flags = {
     isRetentionPoliciesEnabled: false,
     isCategoryViewEnabled: false,
 };
-
-const toOrganizationEntitlement = (name: EntitlementName): Entitlement => ({
-    Name: name,
-    Type: EntitlementType.Switch,
-    Quantity: 1,
-    Scope: EntitlementScope.Organization,
-});
 
 const buildEntitlementsForPlan = (plan: CataloguedPlan | undefined, subscriptionPlan: CataloguedPlan | undefined) => {
     const grantedNames: EntitlementName[] = plan ? prodCatalogGrants[plan] : [];

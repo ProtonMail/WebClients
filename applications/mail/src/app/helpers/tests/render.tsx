@@ -24,6 +24,7 @@ import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
 import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
+import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
@@ -206,6 +207,7 @@ export const getStoreWrapper = ({
             holidaysDirectory: getModelState([]),
             importerConfig: getModelState({} as ApiEnvironmentConfig),
             entitlementCatalog: getModelState(buildEntitlementCatalog()),
+            entitlements: getModelState(makeEntitlements()),
             conversationCounts: getModelState([]),
             messageCounts: getModelState([]),
             attachments: {} as AttachmentsState,
