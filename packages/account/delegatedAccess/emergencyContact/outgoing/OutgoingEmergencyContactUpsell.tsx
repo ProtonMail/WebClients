@@ -3,7 +3,10 @@ import { useCallback, useEffect, useState } from 'react';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { type Upsell, isUpsellWithPlan } from '@proton/components/containers/payments/subscription/helpers';
+import {
+    type Upsell,
+    isUpsellWithPlan,
+} from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
 import { useGetUpsell } from '@proton/components/containers/payments/subscription/helpers/useGetUpsell';
 import {
     type APP_NAMES,

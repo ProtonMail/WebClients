@@ -188,25 +188,24 @@ ruleTester.run('restricted-imports: base restrictions', rule, {
 });
 
 ruleTester.run('restricted-imports: rollout restrictions', rule, {
-    valid: [
-        { code: `import { Button } from '@proton/components';`, filename: appFile },
-        {
-            code: `import { Button } from '@proton/components';`,
-            filename: appFile,
-            options: [{ rollout: ['components-barrel-index'] }],
-        },
-    ],
+    valid: [{ code: `import { Foo } from '@proton/account';`, filename: appFile }],
     invalid: [
         {
+            code: `import { Foo } from '@proton/account';`,
+            filename: appFile,
+            options: [{ rollout: ['account-barrel'] }],
+            errors: [{ messageId: 'path' }],
+        },
+        {
             code: `import { Button } from '@proton/components';`,
             filename: appFile,
-            options: [{ rollout: ['components-barrel'] }],
+            options: [{}],
             errors: [{ messageId: 'path' }],
         },
         {
             code: `import { Button } from '@proton/components/index';`,
             filename: appFile,
-            options: [{ rollout: ['components-barrel-index'] }],
+            options: [{}],
             errors: [{ messageId: 'path' }],
         },
         {
@@ -214,12 +213,6 @@ ruleTester.run('restricted-imports: rollout restrictions', rule, {
             filename: appFile,
             options: [{}],
             errors: [{ messageId: 'path' }],
-        },
-        {
-            code: `import { Icon, Button } from '@proton/components';`,
-            filename: appFile,
-            options: [{}],
-            errors: [{ messageId: 'importName' }],
         },
     ],
 });

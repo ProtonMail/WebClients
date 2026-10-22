@@ -8,8 +8,11 @@ import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { ModalOwnProps } from '@proton/components/index';
-import { ModalTwo, ModalTwoContent, SettingsLink, Toggle } from '@proton/components/index';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 

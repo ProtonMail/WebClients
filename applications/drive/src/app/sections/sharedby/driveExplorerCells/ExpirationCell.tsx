@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { TimeIntl } from '@proton/components';
+import TimeIntl from '@proton/components/components/time/TimeIntl';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';

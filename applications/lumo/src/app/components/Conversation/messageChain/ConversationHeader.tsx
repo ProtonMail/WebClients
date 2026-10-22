@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo } from '@proton/components';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 
 import { useConversationStar } from '../../../hooks/useConversationStar';
 import ChatDropdownMenu from '../../../layouts/sidepanel/ChatDropdownMenu';

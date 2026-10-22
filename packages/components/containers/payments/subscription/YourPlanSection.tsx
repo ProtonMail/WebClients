@@ -31,9 +31,11 @@ import SettingsSectionExtraWide from '../../account/SettingsSectionExtraWide';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import TrialInfo from '../../referral/components/TrialInfo/TrialInfo';
 import { useSubscriptionModalRaw } from './SubscriptionModalProvider';
-import { useUpsellsToDisplay } from './helpers';
-import { SubscriptionPanel, UpsellPanels, UsagePanel } from './panels';
+import { useUpsellsToDisplay } from './helpers/dashboard-upsells';
 import PendingInvitationsPanel from './panels/PendingInvitationsPanel';
+import UpsellPanels from './panels/UpsellPanels';
+import UsagePanel from './panels/UsagePanel';
+import SubscriptionPanel from './panels/subscription-panel/SubscriptionPanel';
 
 import './YourPlanSection.scss';
 

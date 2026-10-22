@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import { useLumoDispatch, useLumoMemoSelector } from '../redux/hooks';
 import { selectConversationHasGeneratedImages, selectSpaceById } from '../redux/selectors';

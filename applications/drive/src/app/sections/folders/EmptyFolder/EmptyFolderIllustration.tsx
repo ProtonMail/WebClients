@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 
-import { useTheme } from '@proton/components';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
 
 interface Gradient {

@@ -27,7 +27,8 @@ import Modal from '../../components/modalTwo/Modal';
 import ModalContent from '../../components/modalTwo/ModalContent';
 import ModalFooter from '../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../components/modalTwo/ModalHeader';
-import { PasswordPolicy, usePasswordPolicyValidation } from '../../components/passwordPolicy/index';
+import { PasswordPolicy } from '../../components/passwordPolicy/PasswordPolicy';
+import { usePasswordPolicyValidation } from '../../components/passwordPolicy/usePasswordPolicyValidation';
 import PasswordStrengthIndicator, {
     useLoadPasswordStrengthIndicatorWasm,
 } from '../../components/passwordStrengthIndicator/PasswordStrengthIndicator';

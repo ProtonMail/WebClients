@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo, PasswordInputTwo } from '@proton/components';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useLoading from '@proton/hooks/useLoading';
 import { IcKeySkeleton } from '@proton/icons/icons/IcKeySkeleton';
 

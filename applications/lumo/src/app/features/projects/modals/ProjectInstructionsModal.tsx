@@ -1,8 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, TextAreaTwo } from '@proton/components';
-import type { ModalStateProps } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
@@ -33,7 +37,7 @@ export const ProjectInstructionsModal = ({
             ...space,
             projectInstructions: instructions.getValue() || undefined,
         };
-        
+
         dispatch(addSpace(updatedSpace));
         dispatch(pushSpaceRequest({ id: projectId }));
         modalProps.onClose?.();
@@ -51,7 +55,8 @@ export const ProjectInstructionsModal = ({
                     {...instructions.bind}
                     id="project-instructions"
                     className={'project-instruction-edit-area'}
-                    placeholder={c('collider_2025:Placeholder').t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt. These instructions will apply to all chats in this project.`}
+                    placeholder={c('collider_2025:Placeholder')
+                        .t`Add instructions about the tone, style, and persona you want ${LUMO_SHORT_APP_NAME} to adopt. These instructions will apply to all chats in this project.`}
                     rows={10}
                     autoFocus
                 />
@@ -67,4 +72,3 @@ export const ProjectInstructionsModal = ({
         </ModalTwo>
     );
 };
-

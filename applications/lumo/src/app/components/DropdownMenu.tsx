@@ -4,7 +4,8 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { DropdownMenuButton, SimpleDropdown } from '@proton/components';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 
 import { useIsLumoSmallScreen } from '../hooks/useIsLumoSmallScreen';
 import { useIsTouchDevice } from '../hooks/useIsTouchDevice';

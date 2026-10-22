@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import { useConversation } from '../providers/ConversationProvider';
 import { useGhostChat } from '../providers/GhostChatProvider';

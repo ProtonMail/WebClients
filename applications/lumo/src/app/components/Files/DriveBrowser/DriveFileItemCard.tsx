@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { FileIcon } from '@proton/components';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import { NodeType } from '@proton/drive/sdk';
 
 import { getFileTypeDescription, getMimeTypeFromExtension } from '../../../util/filetypes';

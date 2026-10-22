@@ -4,7 +4,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import type { PopperPosition } from '@proton/atoms/Popper/interface';
-import { useActiveBreakpoint } from '@proton/components';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';

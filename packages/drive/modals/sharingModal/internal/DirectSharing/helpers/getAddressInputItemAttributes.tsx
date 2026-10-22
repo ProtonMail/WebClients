@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Loader } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 

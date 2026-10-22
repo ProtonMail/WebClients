@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { LoaderPage } from '@proton/components';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
 
 export const PublicPageLoader = () => {
     return (

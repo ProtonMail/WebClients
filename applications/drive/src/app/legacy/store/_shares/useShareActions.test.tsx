@@ -13,8 +13,9 @@ import { useDefaultShare } from './useDefaultShare';
 import useShare from './useShare';
 import useShareActions from './useShareActions';
 
-jest.mock('@proton/components', () => ({
-    usePreventLeave: jest.fn().mockReturnValue({ preventLeave: jest.fn() }),
+jest.mock('@proton/components/hooks/usePreventLeave', () => ({
+    __esModule: true,
+    default: jest.fn().mockReturnValue({ preventLeave: jest.fn() }),
 }));
 
 jest.mock('../_api/useDebouncedRequest');

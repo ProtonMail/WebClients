@@ -1,4 +1,4 @@
-import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface.ts';
+import { SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 
 import { compute } from '../compute';
 import type { NavContext } from '../types/models';

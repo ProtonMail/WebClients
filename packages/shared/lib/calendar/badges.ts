@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { BadgeType } from '@proton/components';
+import type { BadgeType } from '@proton/components/components/badge/Badge';
 
 import type { VisualCalendar } from '../interfaces/calendar/Calendar';
 import type { SubscribedCalendar } from '../interfaces/calendar/Subscription';

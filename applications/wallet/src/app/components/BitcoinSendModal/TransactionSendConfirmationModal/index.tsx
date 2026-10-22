@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { ModalOwnProps } from '@proton/components';
-import { Prompt } from '@proton/components';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletPaperPlaneDark from '@proton/styles/assets/img/wallet/wallet-paper-plane-dark.jpg';
 import walletPaperPlane from '@proton/styles/assets/img/wallet/wallet-paper-plane.jpg';

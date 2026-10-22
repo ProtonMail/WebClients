@@ -5,9 +5,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { ModalStateProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, Price } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import Price from '@proton/components/components/price/Price';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import type { Currency } from '@proton/payments/core/interface';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';

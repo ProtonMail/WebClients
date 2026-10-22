@@ -1,6 +1,6 @@
 import { type MouseEvent, useCallback } from 'react';
 
-import { Checkbox } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import clsx from '@proton/utils/clsx';
 
 import { SelectionState } from '../../../legacy/components/FileBrowser/hooks/useSelectionControls';

@@ -1,4 +1,4 @@
-import type { ModalStateReturnObj } from '@proton/components';
+import type { ModalStateReturnObj } from '@proton/components/components/modalTwo/useModalState';
 
 import { AlbumsPageTypes } from '../../layout.store';
 import type { PhotoItem } from '../../usePhotos.store';

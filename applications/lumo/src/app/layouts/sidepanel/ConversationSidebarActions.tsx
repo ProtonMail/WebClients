@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import type { DropdownOptions } from '../../components/DropdownMenu';
 import DropdownMenu from '../../components/DropdownMenu';

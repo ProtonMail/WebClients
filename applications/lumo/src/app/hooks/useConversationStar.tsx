@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import { useIsGuest } from '../providers/IsGuestProvider';
 import { useLumoDispatch } from '../redux/hooks';
@@ -17,8 +17,11 @@ export const useConversationStar = ({ conversation, location }: UseConversationS
     const { id, starred } = conversation;
     const dispatch = useLumoDispatch();
     const isGuest = useIsGuest();
-    const { openModal: openFavoritesUpsellModal, render: showFavoritesUpsellModal, modalProps: favoritesUpsellModalProps } =
-        useModalStateObject();
+    const {
+        openModal: openFavoritesUpsellModal,
+        render: showFavoritesUpsellModal,
+        modalProps: favoritesUpsellModalProps,
+    } = useModalStateObject();
 
     const handleStarToggle = useCallback(() => {
         sendConversationFavoriteEvent(isGuest, starred, location);

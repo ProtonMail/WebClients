@@ -3,7 +3,10 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton } from '@proton/components/index';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectHasRecordings, setRecordings } from '@proton/meet/store/slices/recordingsSlice';

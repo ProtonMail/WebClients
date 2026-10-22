@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { SettingsLink } from '@proton/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import clsx from '@proton/utils/clsx';
 
 import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';

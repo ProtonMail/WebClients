@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import { TableRowBusy } from '@proton/components';
+import TableRowBusy from '@proton/components/components/table/TableRowBusy';
 
 import type { DecryptedLink, TreeItem } from '../../store';
 import ExpandableRow from './ExpandableRow';
