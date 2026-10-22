@@ -4,8 +4,8 @@
     "description": "Shared oxlint config, Proton's oxlint rules, and the restriction lists workspaces build their own configs from",
     "type": "module",
     "exports": {
-        ".": "./src/index.ts",
         "./brandNames": "./src/brandNames.ts",
+        "./createOxlintConfig": "./src/createOxlintConfig.ts",
         "./extraneousDependencies": "./src/extraneousDependencies.ts",
         "./globs": "./src/globs.ts",
         "./namingConvention": "./src/namingConvention.ts",
