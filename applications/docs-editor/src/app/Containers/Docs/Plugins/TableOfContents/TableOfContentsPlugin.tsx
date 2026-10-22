@@ -1,22 +1,17 @@
-import Dropdown from '@proton/components/components/dropdown/Dropdown'
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton'
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
-import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import React from 'react'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
-import { TableOfContentsPlugin } from '@lexical/react/LexicalTableOfContentsPlugin'
+import { TableOfContentsPlugin as LexicalTableOfContentsPlugin } from '@lexical/react/LexicalTableOfContentsPlugin'
 import type { TableOfContentsEntry } from '@lexical/react/LexicalTableOfContentsPlugin'
-import useEffectOnce from '@proton/hooks/useEffectOnce'
 import type { NodeKey } from 'lexical'
-import { c } from 'ttag'
-import { DOCS_EDITOR_MAX_WIDTH, useLeftPanelContext } from '../../Containers/Docs/Layout/DocsLayout'
-import clsx from '@proton/utils/clsx'
-import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
-import { IcLink } from '@proton/icons/icons/IcLink'
-import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
+import { clsx } from 'clsx'
+import { DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../Components/Dropdown'
+import { Icon } from '../../Components/Icon'
+import * as Icons from '../../Components/icons'
+import { DocsEditorTelemetryEvents, type DocsEditorTelemetryEvent } from '../../contract/DocsEditorTelemetry'
+import { useDocsDependencies, useDocsMessages } from '../../DocsDependenciesProvider'
+import { DOCS_EDITOR_MAX_WIDTH, useLeftPanelContext } from '../../Layout/DocsLayout'
 import { TocHeader } from './TocHeader'
-import { getDocsLayoutScrollContainer } from '../../Containers/Docs/Layout/docsLayoutUtils'
+import { getDocsLayoutScrollContainer } from '../../Layout/docsLayoutUtils'
 import './TableOfContents.scss'
 
 // distance from top of scroll root to make heading active
@@ -29,16 +24,17 @@ interface ContentItemProps {
   scrollToNode: (key: NodeKey) => void
 }
 
+function getHeadingUrl(documentUrl: string, nodeKey: NodeKey) {
+  const url = new URL(documentUrl)
+  url.searchParams.set('headingKey', nodeKey)
+  return url.href
+}
+
 function ContentItem({ nodeKey, text, tag, scrollToNode }: ContentItemProps) {
+  const messages = useDocsMessages().tableOfContents
   const { activeHeadingKey, documentUrl } = useTableOfContentsContext()
   const isActive = activeHeadingKey === nodeKey
-
-  const {
-    anchorRef: moreOptionsAnchorRef,
-    toggle: toggleMoreOptions,
-    isOpen: isMoreOptionsOpen,
-    close: closeMoreOptions,
-  } = usePopperAnchor<HTMLButtonElement>()
+  const headingUrl = documentUrl ? getHeadingUrl(documentUrl, nodeKey) : undefined
 
   let level = parseInt(tag.slice(1)) - 1
   if (Number.isNaN(level) || level < 0) {
@@ -46,13 +42,10 @@ function ContentItem({ nodeKey, text, tag, scrollToNode }: ContentItemProps) {
   }
 
   function handleCopyLink() {
-    if (!documentUrl) {
+    if (!headingUrl) {
       return
     }
-    const url = new URL(documentUrl)
-    url.searchParams.set('headingKey', nodeKey)
-    void navigator.clipboard.writeText(url.href)
-    closeMoreOptions()
+    void navigator.clipboard.writeText(headingUrl)
   }
 
   return (
@@ -60,9 +53,17 @@ function ContentItem({ nodeKey, text, tag, scrollToNode }: ContentItemProps) {
       className="group flex min-h-0 w-full min-w-0 shrink-0 cursor-pointer flex-nowrap items-center justify-between pr-2"
       data-testid="table-of-contents-item-group"
     >
-      <button
-        className={clsx('flex w-full flex-nowrap items-stretch text-left', level === 0 ? 'text-md' : 'text-sm')}
-        onClick={() => scrollToNode(nodeKey)}
+      <a
+        href={headingUrl ?? '#'}
+        aria-current={isActive ? 'location' : undefined}
+        className={clsx(
+          'flex w-full flex-nowrap items-stretch text-left no-underline',
+          level === 0 ? 'text-md' : 'text-sm',
+        )}
+        onClick={(event) => {
+          event.preventDefault()
+          scrollToNode(nodeKey)
+        }}
       >
         {level > 0 && (
           <div
@@ -90,41 +91,30 @@ function ContentItem({ nodeKey, text, tag, scrollToNode }: ContentItemProps) {
         >
           {text}
         </span>
-      </button>
-      <DropdownButton
-        ref={moreOptionsAnchorRef}
-        onClick={toggleMoreOptions}
-        disabled={!documentUrl}
-        hasCaret={false}
+      </a>
+      <SimpleDropdown
         as="button"
-        className={clsx(
-          'flex items-center justify-center rounded-md p-2 min-[816px]:hover:bg-[var(--background-weak)]',
-          isMoreOptionsOpen ? 'min-[816px]:flex' : 'min-[816px]:hidden min-[816px]:group-hover:flex',
-        )}
-        data-testid="table-of-contents-item-options"
-      >
-        <IcThreeDotsVertical />
-      </DropdownButton>
-      <Dropdown
-        isOpen={isMoreOptionsOpen}
-        anchorRef={moreOptionsAnchorRef}
-        onClose={closeMoreOptions}
+        hasCaret={false}
+        disabled={!headingUrl}
         originalPlacement="bottom-end"
+        className="flex items-center justify-center rounded-md p-2 min-[816px]:opacity-0 min-[816px]:hover:bg-[var(--background-weak)] min-[816px]:group-hover:opacity-100 min-[816px]:group-has-[:focus-visible]:opacity-100 min-[816px]:aria-expanded:opacity-100"
+        content={<Icon data={Icons.threeDotsVertical} alt={messages.moreOptions} />}
+        data-testid="table-of-contents-item-options"
       >
         <DropdownMenu>
           <DropdownMenuButton onClick={handleCopyLink} className="flex flex-nowrap items-center gap-2">
-            <IcLink />
-            <span className="text-sm">{c('Action').t`Copy link`}</span>
+            <Icon data={Icons.link} />
+            <span className="text-sm">{messages.copyLink}</span>
           </DropdownMenuButton>
         </DropdownMenu>
-      </Dropdown>
+      </SimpleDropdown>
     </li>
   )
 }
 
 interface TableOfContentsRendererProps {
   tableOfContents: TableOfContentsEntry[]
-  reportTelemetry: (event: TelemetryDocsEditorEvents) => void
+  reportTelemetry: (event: DocsEditorTelemetryEvent) => void
   editorHidden: boolean
 }
 
@@ -212,13 +202,15 @@ function HeadingParamListener({ scrollToNode, editorHidden }: HeadingParamListen
 }
 
 function TableOfContentsRenderer({ tableOfContents, reportTelemetry, editorHidden }: TableOfContentsRendererProps) {
+  const messages = useDocsMessages().tableOfContents
   const [editor] = useLexicalComposerContext()
   const { visibility, setVisibility } = useLeftPanelContext()
   const isExpanded = visibility === 'expanded'
 
-  useEffectOnce(() => {
-    reportTelemetry(TelemetryDocsEditorEvents.table_of_contents_available)
-  }, [reportTelemetry])
+  React.useEffect(() => {
+    reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_available)
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- report once per outline, even if the host's callback changes
+  }, [])
 
   const navigateToHeading = React.useCallback(
     (key: NodeKey) => {
@@ -242,7 +234,7 @@ function TableOfContentsRenderer({ tableOfContents, reportTelemetry, editorHidde
 
   const handleHeadingClick = React.useCallback(
     (key: NodeKey) => {
-      reportTelemetry(TelemetryDocsEditorEvents.table_of_contents_heading_clicked)
+      reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_heading_clicked)
       navigateToHeading(key)
     },
     [navigateToHeading, reportTelemetry],
@@ -253,7 +245,8 @@ function TableOfContentsRenderer({ tableOfContents, reportTelemetry, editorHidde
       <HeadingParamListener scrollToNode={navigateToHeading} editorHidden={editorHidden} />
       <ActiveHeadingListener tableOfContents={tableOfContents} />
 
-      <div
+      <nav
+        aria-label={messages.outline}
         className={clsx(
           'table-of-contents flex w-0 min-w-0 flex-col flex-nowrap p-0',
           isExpanded && 'is-expanded h-full w-full p-5 pr-1.5 pt-0',
@@ -261,10 +254,10 @@ function TableOfContentsRenderer({ tableOfContents, reportTelemetry, editorHidde
         data-testid="table-of-contents"
       >
         <TocHeader
-          isActive={isExpanded}
+          isExpanded={isExpanded}
           onToggle={() => {
             if (!isExpanded) {
-              reportTelemetry(TelemetryDocsEditorEvents.table_of_contents_opened)
+              reportTelemetry(DocsEditorTelemetryEvents.table_of_contents_opened)
             }
             setVisibility(isExpanded ? 'collapsed' : 'expanded')
           }}
@@ -275,7 +268,7 @@ function TableOfContentsRenderer({ tableOfContents, reportTelemetry, editorHidde
             <ContentItem key={key} nodeKey={key} text={text} tag={tag} scrollToNode={handleHeadingClick} />
           ))}
         </ul>
-      </div>
+      </nav>
     </>
   )
 }
@@ -300,19 +293,12 @@ function useTableOfContentsContext() {
   return React.useContext(TableOfContentsContext)
 }
 
-interface TableOfContentsProps {
-  getDocumentUrl: () => Promise<string>
-  replaceDocumentUrl: (url: string) => Promise<void>
-  reportTelemetry: (event: TelemetryDocsEditorEvents) => void
+export interface TableOfContentsPluginProps {
   editorHidden: boolean
 }
 
-export function TableOfContents({
-  getDocumentUrl,
-  replaceDocumentUrl,
-  reportTelemetry,
-  editorHidden,
-}: TableOfContentsProps) {
+export function TableOfContentsPlugin({ editorHidden }: TableOfContentsPluginProps) {
+  const { getDocumentUrl, replaceDocumentUrl, reportTelemetry } = useDocsDependencies()
   const [activeHeadingKey, setActiveHeadingKey] = React.useState<NodeKey | null>(null)
   const [documentUrl, setDocumentUrl] = React.useState<string | null>(null)
 
@@ -334,7 +320,7 @@ export function TableOfContents({
         setDocumentUrl,
       }}
     >
-      <TableOfContentsPlugin>
+      <LexicalTableOfContentsPlugin>
         {(tableOfContents) => {
           const visibleTableOfContents = tableOfContents.filter(([, text]) => text.trim().length > 0)
           if (!visibleTableOfContents.length) {
@@ -348,7 +334,7 @@ export function TableOfContents({
             />
           )
         }}
-      </TableOfContentsPlugin>
+      </LexicalTableOfContentsPlugin>
     </TableOfContentsContext.Provider>
   )
 }

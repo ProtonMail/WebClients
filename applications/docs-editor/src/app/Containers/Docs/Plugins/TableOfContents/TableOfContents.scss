@@ -6,9 +6,12 @@ $docs-toc-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
 	.toc-list {
 		transform: translateX(calc(-100%));
 		opacity: 0;
+		// Hidden after the slide-out, so the collapsed outline's links leave the tab order.
+		visibility: hidden;
 		transition:
 			transform $docs-toc-transition-duration $docs-toc-transition-easing,
-			opacity $docs-toc-transition-duration $docs-toc-transition-easing;
+			opacity $docs-toc-transition-duration $docs-toc-transition-easing,
+			visibility 0s linear $docs-toc-transition-duration;
 		scrollbar-color: var(--scrollbar-thumb-color) transparent;
 	}
 
@@ -17,6 +20,8 @@ $docs-toc-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
 		.toc-list {
 			transform: none;
 			opacity: 1;
+			visibility: visible;
+			transition-delay: 0s;
 		}
 	}
 }
