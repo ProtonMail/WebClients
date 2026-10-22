@@ -58,6 +58,7 @@ const prodCatalogGrants = {
         EntitlementName.Groups,
         EntitlementName.MultiUser,
         EntitlementName.ExternalManagedMembers,
+        EntitlementName.Sso,
     ],
     [PLANS.VPN_BUSINESS]: [
         EntitlementName.FlagsVpn,
@@ -67,6 +68,7 @@ const prodCatalogGrants = {
         EntitlementName.Groups,
         EntitlementName.MultiUser,
         EntitlementName.ExternalManagedMembers,
+        EntitlementName.Sso,
     ],
 } satisfies Partial<Record<PLANS, EntitlementName[]>>;
 
@@ -148,6 +150,7 @@ export const buildOrganizationRouterParams = ({
         app: APPS.PROTONACCOUNT,
         user: buildUser(),
         subscription: subscriptionPlan ? buildSubscription(subscriptionPlan) : undefined,
+        allSubscriptions: subscriptionPlan ? [buildSubscription(subscriptionPlan)] : [],
         entitlements: buildEntitlementsForPlan(plan, subscriptionPlan),
         organization: organization ?? buildOrganizationWithKeys({ PlanName: plan }),
         isB2BDrive: false,

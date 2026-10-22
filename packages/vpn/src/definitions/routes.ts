@@ -22,7 +22,7 @@ import type { NavDefinition, NavItemDefinition, NavItemResolved, NavResolved } f
 import type { NavDefinitionIds, NavSectionIds as SectionIds } from '@proton/nav/types/navIds';
 import type { NavSectionResolved } from '@proton/nav/types/section';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
-import { getIsB2BAudienceFromPlan, planSupportsSSO, upsellPlanSSO } from '@proton/payments/core/plan/helpers';
+import { getHasSsoUpsell, getIsB2BAudienceFromPlan, getIsSsoAvailable } from '@proton/payments/core/plan/helpers';
 import {
     type MaybeFreeSubscription,
     getHasExternalMemberCapableB2BPlan,
@@ -31,6 +31,7 @@ import {
     hasCancellablePlan,
     isCancellableOnlyViaSupport,
 } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -62,6 +63,7 @@ type PropContext = {
 
 type VpnNavContext = {
     subscription: MaybeFreeSubscription;
+    allSubscriptions: Subscription[];
     entitlements: EntitlementChecksForOrgAndUser;
     notifications?: Record<NavItemDefinition<NavContext>['id'], any>;
     canHaveOrganization: boolean;
@@ -329,8 +331,12 @@ const routesDefinition = {
                     isVisible: ({ context }) =>
                         !!(
                             context.permissions['account.sso_config.read'] &&
-                            (planSupportsSSO(context.organization?.PlanName, !!context.flags?.SsoForPbs) ||
-                                upsellPlanSSO(context.organization?.PlanName)) &&
+                            (getIsSsoAvailable({
+                                hasSso: context.entitlements.hasSso,
+                                subscriptions: context.allSubscriptions,
+                                isSsoForPbsEnabled: !!context.flags?.SsoForPbs,
+                            }) ||
+                                getHasSsoUpsell(context.allSubscriptions)) &&
                             (context.hasActiveOrganization || context.hasActiveOrganizationKey)
                         ),
                 },
@@ -580,6 +586,7 @@ type Args = {
     organization?: NavContext['organization'];
     notifications?: Record<NavItemDefinition<NavContext>['id'], any>;
     subscription: MaybeFreeSubscription;
+    allSubscriptions: Subscription[];
     entitlements: EntitlementChecksForOrgAndUser;
     context: PropContext;
     flags?: Partial<Record<FeatureFlag, boolean>>;
@@ -591,6 +598,7 @@ export const resolveNavigation = ({
     notifications,
     user,
     subscription,
+    allSubscriptions,
     entitlements,
     organization,
     flags,
@@ -616,6 +624,7 @@ export const resolveNavigation = ({
         context: {
             user,
             subscription,
+            allSubscriptions,
             entitlements,
             organization,
             notifications,

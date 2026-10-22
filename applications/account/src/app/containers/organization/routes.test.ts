@@ -319,3 +319,56 @@ describe('getOrganizationAppRoutes domain names', () => {
         expect(isDomainNamesAvailable({ organization: delinquentOrganization })).toBe(true);
     });
 });
+
+describe('getOrganizationAppRoutes single sign-on', () => {
+    const getSsoRoute = (input: OrganizationRoutesInput) => {
+        const { sso } = getRoutes({ app: APPS.PROTONPASS, ...input });
+        return { available: sso.available, upgradeRequired: sso.upgradeRequired };
+    };
+
+    const ssoForPbsFlags = { ...defaultFlags, isSsoForPbsEnabled: true };
+
+    it.each([PLANS.PASS_BUSINESS, PLANS.VPN_BUSINESS] as const)(
+        'shows SSO without an upgrade badge to a %s organization, which has the sso entitlement',
+        (plan) => {
+            expect(getSsoRoute({ plan })).toEqual({ available: true, upgradeRequired: false });
+        }
+    );
+
+    it.each([PLANS.PASS_PRO, PLANS.VPN_PRO] as const)(
+        'shows SSO with an upgrade badge to a %s organization',
+        (plan) => {
+            expect(getSsoRoute({ plan })).toEqual({ available: true, upgradeRequired: true });
+        }
+    );
+
+    it('hides SSO from a Workspace Standard organization while SsoForPbs is off', () => {
+        expect(getSsoRoute({ plan: PLANS.BUNDLE_PRO_2024 }).available).toBe(false);
+    });
+
+    it('shows SSO without an upgrade badge to a Workspace Standard organization when SsoForPbs is on', () => {
+        expect(getSsoRoute({ plan: PLANS.BUNDLE_PRO_2024, flags: ssoForPbsFlags })).toEqual({
+            available: true,
+            upgradeRequired: false,
+        });
+    });
+
+    it('hides SSO from a Mail Essentials organization', () => {
+        expect(getSsoRoute({ plan: PLANS.MAIL_PRO, flags: ssoForPbsFlags }).available).toBe(false);
+    });
+
+    it('shows SSO to a Pass Professional MSP subsidiary that cannot read its subscription', () => {
+        const subsidiary = buildOrganizationWithKeys({ IsSubsidiary: true });
+
+        expect(
+            getSsoRoute({ plan: PLANS.PASS_BUSINESS, hasReadableSubscription: false, organization: subsidiary })
+        ).toEqual({ available: true, upgradeRequired: false });
+    });
+
+    it('hides SSO from an admin without the SSO read permission', () => {
+        expect(
+            getSsoRoute({ plan: PLANS.PASS_BUSINESS, permissions: permissionsWithout('account.sso_config.read') })
+                .available
+        ).toBe(false);
+    });
+});

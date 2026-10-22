@@ -1,6 +1,7 @@
 import type { ThemeColor } from '@proton/colors/types';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Group } from '@proton/shared/lib/interfaces/Group';
@@ -71,6 +72,7 @@ export type GeneralRouterParams = {
     user: UserModel;
     addresses?: Address[];
     subscription: MaybeFreeSubscription;
+    allSubscriptions: Subscription[];
     entitlements: EntitlementChecksForOrgAndUser;
     flags: Flags;
 };
