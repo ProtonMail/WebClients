@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 import { type Participant, RoomEvent } from 'livekit-client';
 
-import { useHandler } from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/hooks/useHandler';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setActiveSpeakerIdentity } from '@proton/meet/store/slices/participants/participantsSlice';
 

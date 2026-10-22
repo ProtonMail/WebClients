@@ -8,8 +8,8 @@ import SidebarListItemContentIcon from '@proton/components/components/sidebar/Si
 import SidebarListItemLink from '@proton/components/components/sidebar/SidebarListItemLink';
 import useItemsDroppable from '@proton/components/containers/items/useItemsDroppable';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import useLoading from '@proton/hooks/useLoading';
 import type { IconComponent } from '@proton/icons/component';
 import type { IconSize } from '@proton/icons/types';

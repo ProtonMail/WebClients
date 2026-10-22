@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import FolderIcon from '@proton/components/containers/labels/FolderIcon';
-import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { formatFolderName } from '@proton/shared/lib/helpers/folder';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';

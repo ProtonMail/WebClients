@@ -7,12 +7,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Vr } from '@proton/atoms/Vr/Vr';
+import { createObserver } from '@proton/hooks/useElementRect';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import clsx from '@proton/utils/clsx';
 
-import { createObserver } from '../../hooks/useElementRect';
 import TodayIcon from '../icon/TodayIcon';
 import MonthDays from './MonthDays';
 import WeekDays from './WeekDays';

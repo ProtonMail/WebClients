@@ -2,7 +2,8 @@ import { memo, useRef } from 'react';
 import type { ListChildComponentProps } from 'react-window';
 import { FixedSizeList } from 'react-window';
 
-import { useActiveBreakpoint, useElementRect } from '@proton/components';
+import { useActiveBreakpoint } from '@proton/components';
+import useElementRect from '@proton/hooks/useElementRect';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import type { AbuseReportPrefill } from '../../../modals/ReportAbuseModal';

@@ -1,6 +1,6 @@
 import { type FC, Fragment, type ReactNode, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
-import useElementRect from '@proton/components/hooks/useElementRect';
+import useElementRect from '@proton/hooks/useElementRect';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import clsx from '@proton/utils/clsx';
 
