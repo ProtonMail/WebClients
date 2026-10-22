@@ -3,8 +3,8 @@ import { forwardRef, useRef } from 'react';
 import * as React from 'react';
 
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {

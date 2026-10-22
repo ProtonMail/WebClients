@@ -3,10 +3,9 @@ import type { RefObject } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-
-import { useHotkeys } from '../../hooks/useHotkeys';
 
 interface Props {
     current: number;

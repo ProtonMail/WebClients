@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useElementRect } from '@proton/components';
+import useElementRect from '@proton/hooks/useElementRect';
 import clsx from '@proton/utils/clsx';
 
 import { usePhotosStore } from '../usePhotos.store';

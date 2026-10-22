@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 
 import InnerModalContent from './InnerModal/InnerModalContent';
 import InnerModalFooter from './InnerModal/InnerModalFooter';

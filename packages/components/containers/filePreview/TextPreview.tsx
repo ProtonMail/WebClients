@@ -1,8 +1,7 @@
 import { useRef, useState } from 'react';
 
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
-
-import { useHotkeys } from '../../hooks/useHotkeys';
 
 interface Props {
     contents?: Uint8Array<ArrayBuffer>[];

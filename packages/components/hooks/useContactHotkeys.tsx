@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import { type HotkeyTuple, useHotkeys } from './useHotkeys';
+import { type HotkeyTuple, useHotkeys } from '@proton/hooks/useHotkeys';
 
 export interface ContactHotkeysContext {
     elementIDs: string[];

@@ -5,7 +5,7 @@ import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { Portal } from '@proton/atoms/Portal/Portal';
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { ModalContext } from '@proton/components/components/modalTwo/Modal';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import generateUID from '@proton/utils/generateUID';
 
 import './TargetSpotlight.scss';

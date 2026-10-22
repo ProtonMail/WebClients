@@ -1,7 +1,7 @@
 import type { TouchEvent } from 'react';
 import { useEffect } from 'react';
 
-import { useHandler } from '../../../../hooks/useHandler';
+import { useHandler } from '@proton/hooks/useHandler';
 
 const useTriggerDiscardModal = (callback: () => void) => {
     const handler = useHandler((event: MouseEvent | TouchEvent) => {

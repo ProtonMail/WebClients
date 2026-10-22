@@ -1,11 +1,10 @@
 import type { KeyboardEvent, RefObject } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import type { MatchChunk } from '@proton/shared/lib/helpers/regex';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
-
-import { useHotkeys } from '../../hooks/useHotkeys';
 
 export interface DataWithMatches<T> {
     option: T;

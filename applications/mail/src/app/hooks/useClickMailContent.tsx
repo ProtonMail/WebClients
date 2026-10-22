@@ -1,7 +1,7 @@
 import type { ReactNode, RefObject } from 'react';
 import { createContext, useContext, useEffect } from 'react';
 
-import { useHandler } from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/hooks/useHandler';
 
 const MailContentRefContext = createContext<RefObject<HTMLDivElement>>(null as any);
 

@@ -2,12 +2,12 @@ import type { ReactNode } from 'react';
 import { useRef } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 
 import type { Color } from '../../components/button/ButtonGroup';
-import { useHotkeys } from '../../hooks/useHotkeys';
 
 interface Props {
     onToggleDropdown: () => void;

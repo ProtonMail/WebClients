@@ -1,6 +1,7 @@
 import { type DependencyList, useRef } from 'react';
 
-import { type HotkeyTuple, useHotkeys } from '@proton/components';
+import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 

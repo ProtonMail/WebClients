@@ -16,8 +16,8 @@ import CurrencySelector from '@proton/components/containers/payments/CurrencySel
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { useVpn2024SignupExperiment } from '@proton/components/containers/payments/subscription/helpers/useVpn2024SignupExperiment';
 import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
-import { useHandler } from '@proton/components/hooks/useHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { useHandler } from '@proton/hooks/useHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCode } from '@proton/icons/icons/IcCode';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
