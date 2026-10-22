@@ -102,6 +102,7 @@ export interface Flags {
     DisplayTrialEndModal: 0 | 1;
     PasswordReminderOptOut: PASSWORD_REMINDERS_VALUE;
     Fido2CredentialsPinOptIn: FIDO2_CREDENTIALS_PIN_VALUE;
+    LumoApiEnabled: 0 | 1;
 }
 
 export enum AI_ASSISTANT_ACCESS {
