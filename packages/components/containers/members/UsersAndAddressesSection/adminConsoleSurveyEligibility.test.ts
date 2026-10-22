@@ -11,7 +11,7 @@ const createEntitlements = (names: EntitlementName[]) =>
     createEntitlementResolverForOrgAndUser(
         buildEntitlementCatalog({ [PLANS.VPN_BUSINESS]: names }),
         makeEntitlements(),
-        buildSubscription(PLANS.VPN_BUSINESS)
+        [buildSubscription(PLANS.VPN_BUSINESS)]
     );
 
 const eligibleParams = {
@@ -53,7 +53,7 @@ describe('getIsAdminConsoleSurveyEligible', () => {
                     [PLANS.VPN2024]: [EntitlementName.FlagsVpn],
                 }),
                 makeEntitlements(),
-                buildSubscription(PLANS.MAIL_PRO, { SecondarySubscriptions: [buildSubscription(PLANS.VPN2024)] })
+                [buildSubscription(PLANS.MAIL_PRO), buildSubscription(PLANS.VPN2024)]
             );
             expect(getIsAdminConsoleSurveyEligible({ ...eligibleParams, entitlements })).toBe(false);
         });
