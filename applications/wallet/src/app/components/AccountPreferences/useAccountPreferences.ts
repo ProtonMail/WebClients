@@ -7,10 +7,11 @@ import { useUserKeys } from '@proton/account/userKeys/hooks';
 import type { WasmApiWalletAccount, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { useWalletApiClients } from '@proton/wallet/contexts';
-import { useFiatCurrencies, useWalletDispatch } from '@proton/wallet/store/hooks';
+import { useWalletApiClients } from '@proton/wallet/contexts/ExtendedApiContext';
+import { useWalletDispatch } from '@proton/wallet/store/hooks/app';
+import { useFiatCurrencies } from '@proton/wallet/store/hooks/useFiatCurrencies';
 import { walletAccountDeletion, walletAccountUpdate } from '@proton/wallet/store/slices';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 import { encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
 
 import { useBitcoinBlockchainContext } from '../../contexts';

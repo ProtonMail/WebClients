@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { mergeRegister } from '@lexical/utils'
-import type { WebsocketConnectionEventPayloads, WebsocketConnectionEventStatusChange } from '@proton/docs-core'
-import { WebsocketConnectionEvent } from '@proton/docs-core'
-import { areNodeMetasEqual, type NodeMeta, type PublicNodeMeta } from '@proton/docs-shared'
+import type { WebsocketConnectionEventPayloads } from '@proton/docs-core/Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import type { WebsocketConnectionEventStatusChange } from '@proton/docs-core/Realtime/WebsocketEvent/WebsocketConnectionEventStatusChange'
+import { WebsocketConnectionEvent } from '@proton/docs-core/Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
+import { areNodeMetasEqual } from '@proton/docs-shared/NodeMetaHelpers'
 import type { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
 
 // @TODO(aman): This whole thing should probably be refactored to be some kind of state machine that directly reflects the current status instead of using events where it can potentially become disjointed from the actual state.

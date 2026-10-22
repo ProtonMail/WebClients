@@ -98,7 +98,7 @@ import { locales } from '@proton/shared/lib/i18n/locales';
 import { useFlag } from '@proton/unleash/useFlag';
 import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
 import { VPNDownloadAndInfoSection } from '@proton/vpn/components/VPNDownloadSection';
-import { TVContainer } from '@proton/vpn/components/tv';
+import { TVContainer } from '@proton/vpn/components/tv/containers/TVContainer';
 import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 
 import { DownloadsRoute } from '../routes/downloads';

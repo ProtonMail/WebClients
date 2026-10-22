@@ -1,4 +1,4 @@
-import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
 import { openContentSearchDB } from '../db/open';
 import { initWasm } from '../init';

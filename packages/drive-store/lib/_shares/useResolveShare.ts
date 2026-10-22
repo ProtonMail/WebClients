@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { queryResolveContextShare } from '@proton/shared/lib/api/drive/share';
 
 import useDebouncedRequest from '../../store/_api/useDebouncedRequest';
-import { useAbortSignal } from '../../store/_views/utils';
+import useAbortSignal from '../../store/_views/utils/useAbortSignal';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import type { LegacyNodeMeta, NodeMeta } from '../NodeMeta';
 

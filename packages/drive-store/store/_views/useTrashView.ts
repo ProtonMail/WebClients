@@ -6,7 +6,9 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { sendErrorReport } from '../../utils/errorHandling';
 import useLinksListing from '../_links/useLinksListing/useLinksListing';
 import useDefaultShare from '../_shares/useDefaultShare';
-import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
+import { useMemoArrayNoMatterTheOrder } from './utils/objectId';
+import useAbortSignal from './utils/useAbortSignal';
+import { useSortingWithDefault } from './utils/useSorting';
 import type { SortField } from './utils/useSorting';
 
 const DEFAULT_SORT = {

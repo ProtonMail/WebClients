@@ -1,13 +1,12 @@
-import {
-  CommentsEvent,
-  CommentThreadState as HostCommentThreadState,
-  CommentThreadType as HostCommentThreadType,
-  CommentType as HostCommentType,
-  DocAwarenessEvent,
-  InternalEventBus,
-  LiveCommentsEvent,
-} from '@proton/docs-shared'
-import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
+import { CommentsEvent } from '@proton/docs-shared/CommentsEvent'
+import { CommentThreadState as HostCommentThreadState } from '@proton/docs-shared/CommentThreadState'
+import { CommentThreadType as HostCommentThreadType } from '@proton/docs-shared/CommentThreadType'
+import { CommentType as HostCommentType } from '@proton/docs-shared/CommentType'
+import { DocAwarenessEvent } from '@proton/docs-shared/DocAwarenessEvent'
+import { InternalEventBus } from '@proton/docs-shared/Events/InternalEventBus'
+import { LiveCommentsEvent } from '@proton/docs-shared/LiveCommentsEvent'
+import type { CommentInterface } from '@proton/docs-shared/CommentInterface'
+import type { CommentThreadInterface } from '@proton/docs-shared/CommentThreadInterface'
 import type { DocsComment, DocsCommentThread, SafeDocsUserState } from '../../Docs/public'
 import { CommentThreadStates, CommentThreadTypes, CommentTypes } from '../../Docs/public'
 import { createClientInvokerFixture } from './create-client-invoker-fixture'

@@ -1,4 +1,4 @@
-import type { NodeMeta } from '@proton/docs-shared/lib/BasicTypes'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
 import { NodeType, generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { traceErrorSDK } from './traceErrorSDK'
 

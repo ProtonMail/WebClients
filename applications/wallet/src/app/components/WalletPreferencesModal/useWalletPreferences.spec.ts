@@ -8,10 +8,12 @@ import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresse
 import { mockUseUserKeys } from '@proton/account/testing/vitest/mockUseUserKeys';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
-import { apiWalletsData } from '@proton/wallet/tests/fixtures';
-import { mockUseUserWalletSettings, mockUseWalletApiClients, mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
-import { getAddressKey, getUserKeys } from '@proton/wallet/tests/utils';
-import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet/types';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures/api';
+import { mockUseUserWalletSettings } from '@proton/wallet/tests/mocks/useUserWalletSettings';
+import { mockUseWalletApiClients } from '@proton/wallet/tests/mocks/useWalletApi';
+import { mockUseWalletDispatch } from '@proton/wallet/tests/mocks/useWalletDispatch';
+import { getAddressKey, getUserKeys } from '@proton/wallet/tests/utils/keys';
+import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet/types/wasm';
 import { decryptWalletData } from '@proton/wallet/utils/crypto';
 
 import { useWalletPreferences } from './useWalletPreferences';

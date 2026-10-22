@@ -1,7 +1,7 @@
 import {
   SheetsActions as StoredSheetsActions,
   type SheetsActionType as StoredSheetsActionType,
-} from '@proton/docs-shared/lib/SheetsActionType'
+} from '@proton/docs-shared/SheetsActionType'
 
 import type { SheetsActionType } from '../../../Spreadsheet/public'
 

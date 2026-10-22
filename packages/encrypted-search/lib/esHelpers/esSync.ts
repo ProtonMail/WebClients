@@ -9,6 +9,7 @@ import { readLimited, setLimited } from '../esIDB/configObjectStore';
 import { executeContentOperations } from '../esIDB/content';
 import { openESDB } from '../esIDB/indexedDB';
 import { executeMetadataOperations } from '../esIDB/metadata';
+import type { InternalESCallbacks } from '../models/esCallbacks';
 import type {
     CachedItem,
     ESCache,
@@ -16,8 +17,7 @@ import type {
     ESItemEvent,
     EncryptedItemWithInfo,
     EncryptedSearchDB,
-    InternalESCallbacks,
-} from '../models';
+} from '../models/interfaces';
 import { addToESCache, removeFromESCache } from './esCache';
 import { addRetry } from './esRetries';
 import { applySearch } from './esSearch';

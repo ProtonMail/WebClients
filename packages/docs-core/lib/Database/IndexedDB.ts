@@ -1,5 +1,5 @@
 import type { LoggerInterface } from '@proton/shared/lib/logs'
-import { Result } from '@proton/docs-shared'
+import { Result } from '@proton/docs-shared/Result'
 
 enum IndexedDBError {
   QUOTA_EXCEEDED = 'QUOTA_EXCEEDED',

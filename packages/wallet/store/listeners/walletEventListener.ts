@@ -1,7 +1,7 @@
 import { selectUserKeys } from '@proton/account/userKeys';
 
-import type { IWasmApiWalletData } from '../../types';
-import { eventLoopEvent, stateFromWalletAccountEvent, stateFromWalletEvent } from '../../utils';
+import type { IWasmApiWalletData } from '../../types/wasm';
+import { eventLoopEvent, stateFromWalletAccountEvent, stateFromWalletEvent } from '../../utils/eventLoop';
 import { selectApiWalletsData, setWallets } from '../slices';
 import type { AppStartListening } from '../store';
 

@@ -7,7 +7,7 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { useDriveEventManager } from '../_events/useDriveEventManager';
 import { useInvitationsListing } from '../_invitations/useInvitationsListing';
-import { useMemoArrayNoMatterTheOrder } from './utils';
+import { useMemoArrayNoMatterTheOrder } from './utils/objectId';
 
 export const useInvitationsView = () => {
     const [isLoading, withLoading] = useLoading(true);

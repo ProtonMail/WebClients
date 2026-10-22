@@ -1,4 +1,5 @@
-import type { AuthenticatedDocControllerInterface, EditorControllerInterface } from '@proton/docs-core'
+import type { AuthenticatedDocControllerInterface } from '@proton/docs-core/AuthenticatedDocController/AuthenticatedDocControllerInterface'
+import type { EditorControllerInterface } from '@proton/docs-core/EditorController/EditorController'
 import { isDevOrBlack } from '@proton/shared/lib/env'
 import { useEffect, useRef } from 'react'
 

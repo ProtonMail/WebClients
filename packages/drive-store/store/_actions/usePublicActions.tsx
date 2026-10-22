@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { usePublicLinkActions } from '../_links/usePublicLinkActions';
-import { useErrorHandler } from '../_utils';
+import { useErrorHandler } from '../_utils/errorHandler';
 
 /**
  * useActions provides actions over links and its results is reported back

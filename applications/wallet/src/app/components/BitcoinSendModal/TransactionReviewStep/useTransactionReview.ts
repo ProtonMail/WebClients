@@ -9,7 +9,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import type { DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { ANONYMOUS_SENDER_ADDRESS_ID } from '@proton/wallet/constants/wallet';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { usePrimaryAddressKey } from '../../../hooks/usePrimaryAddressKey';
 import { usePsbt } from '../../../hooks/usePsbt';

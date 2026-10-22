@@ -1,19 +1,15 @@
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary'
-import type {
-  ClientRequiresEditorMethods,
-  CommentMarkNodeChangeData,
-  RtsMessagePayload,
-  DocumentRoleType,
-  SheetImportData,
-  DocumentType,
-} from '@proton/docs-shared'
-import {
-  BridgeOriginProvider,
-  CommentsEvent,
-  EDITOR_READY_POST_MESSAGE_EVENT,
-  LiveCommentsEvent,
-  SheetImportEvent,
-} from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
+import type { ClientRequiresEditorMethods } from '@proton/docs-shared/Bridge/ClientRequiresEditorMethods'
+import type { CommentMarkNodeChangeData } from '@proton/docs-shared/CommentsEvent'
+import type { DocumentRoleType } from '@proton/docs-shared/Doc/DocumentRole'
+import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
+import type { SheetImportData } from '@proton/docs-shared/SheetImportData'
+import { BridgeOriginProvider } from '@proton/docs-shared/Bridge/BridgeOriginProvider'
+import { EDITOR_READY_POST_MESSAGE_EVENT } from '@proton/docs-shared/Bridge/EditorReadyEvent'
+import { CommentsEvent } from '@proton/docs-shared/CommentsEvent'
+import { LiveCommentsEvent } from '@proton/docs-shared/LiveCommentsEvent'
+import { SheetImportEvent } from '@proton/docs-shared/SheetImportData'
 
 import { bootstrapEditorApp } from '../Lib/Bootstrap'
 import { c } from 'ttag'

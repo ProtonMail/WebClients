@@ -8,7 +8,7 @@ import type {
   TelemetryDocsHomepageEvents,
 } from '@proton/shared/lib/api/telemetry'
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry'
-import type { SuggestionSummaryType } from '@proton/docs-shared/lib/SuggestionType'
+import type { SuggestionSummaryType } from '@proton/docs-shared/SuggestionType'
 import { ConnectionCloseMetrics } from '../../Realtime/ConnectionCloseMetrics'
 import type { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
 

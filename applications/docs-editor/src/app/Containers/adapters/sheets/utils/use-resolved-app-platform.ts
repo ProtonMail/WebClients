@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import type { AppPlatform, EditorRequiresClientMethods } from '@proton/docs-shared'
+import type { AppPlatform, EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 
 export function useResolvedAppPlatform(clientInvoker: EditorRequiresClientMethods) {
   const [platform, setPlatform] = useState<AppPlatform | null>(null)

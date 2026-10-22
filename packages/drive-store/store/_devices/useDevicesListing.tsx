@@ -8,7 +8,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import useLink from '../_links/useLink';
-import { useVolumesState } from '../_volumes';
+import useVolumesState from '../_volumes/useVolumesState';
 import type { Device } from './interface';
 import useDevicesApi from './useDevicesApi';
 

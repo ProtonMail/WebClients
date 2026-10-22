@@ -1,7 +1,7 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import { useNotifications } from '@proton/app-context/useNotifications'
-import type { RecentDocumentsItem } from '@proton/docs-core'
+import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
@@ -14,9 +14,9 @@ import { getDrive, generateNodeUid } from '@proton/drive/sdk'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { c } from 'ttag'
-import { deleteDocument, reportTrashError } from '@proton/docs-core/lib/DriveSDK/trash'
+import { deleteDocument, reportTrashError } from '@proton/docs-core/DriveSDK/trash'
 import { trashAndNotify, restoreAndNotify, handleRestoreError } from '~/drive-sdk/trash-restore-notify'
-import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
+import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 
 export type DocumentActionsContextValue = {
   open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void

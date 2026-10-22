@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
-import { ServerTime } from '@proton/docs-shared'
-import { RecentDocumentsItem } from '@proton/docs-core'
+import { ServerTime } from '@proton/docs-shared/ServerTime'
+import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { getOwnerName } from './get-owner-name'
 

@@ -14,7 +14,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcPassTrash } from '@proton/icons/icons/IcPassTrash';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { Input } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';

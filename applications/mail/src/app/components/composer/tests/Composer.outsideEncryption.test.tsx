@@ -2,7 +2,7 @@ import { fireEvent, getByTestId as getByTestIdDefault, screen } from '@testing-l
 import { addHours } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 

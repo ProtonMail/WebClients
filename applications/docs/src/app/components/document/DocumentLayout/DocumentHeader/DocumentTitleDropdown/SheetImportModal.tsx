@@ -6,7 +6,11 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import Option from '@proton/components/components/option/Option'
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo'
-import { SheetImportDestination, SheetImportSeparatorType, type SheetImportData } from '@proton/docs-shared'
+import {
+  SheetImportDestination,
+  SheetImportSeparatorType,
+  type SheetImportData,
+} from '@proton/docs-shared/SheetImportData'
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle'
 import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'

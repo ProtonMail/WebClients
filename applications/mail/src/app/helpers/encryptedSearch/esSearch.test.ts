@@ -1,4 +1,4 @@
-import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 

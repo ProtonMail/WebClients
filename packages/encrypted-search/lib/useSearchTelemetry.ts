@@ -8,7 +8,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
-import type { IndexingMetrics } from './esHelpers';
+import type { IndexingMetrics } from './esHelpers/esProgress';
 import type { ESCalendarSearchParams } from './models/calendar';
 import type { ESDriveSearchParams } from './models/drive';
 import type { NormalizedSearchParams } from './models/mail';

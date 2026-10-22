@@ -1,16 +1,17 @@
-import type { EditorSystemMode, DocumentType } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
+import type { EditorSystemMode } from '@proton/docs-shared/EditorSystemMode'
+import { BridgeOriginProvider } from '@proton/docs-shared/Bridge/BridgeOriginProvider'
+import { EDITOR_IFRAME_FOCUS_EVENT } from '@proton/docs-shared/Bridge/EditorIframeFocusEvent'
+import { EDITOR_READY_POST_MESSAGE_EVENT } from '@proton/docs-shared/Bridge/EditorReadyEvent'
 import {
-  BridgeOriginProvider,
-  EDITOR_IFRAME_FOCUS_EVENT,
-  EDITOR_READY_POST_MESSAGE_EVENT,
   EDITOR_TAG_INFO_EVENT,
   EDITOR_REQUESTS_TOTAL_CLIENT_RELOAD,
   EDITOR_CONFIRMS_VERSIONS_MATCH,
-} from '@proton/docs-shared'
+} from '@proton/docs-shared/Bridge/EditorTagInfoEvent'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import { getCookie } from '@proton/shared/lib/helpers/cookies'
 
 // normalize 'default' tag to undefined, only pass valid early access tags

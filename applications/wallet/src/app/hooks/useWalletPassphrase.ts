@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { useBitcoinBlockchainContext } from '../contexts';
 

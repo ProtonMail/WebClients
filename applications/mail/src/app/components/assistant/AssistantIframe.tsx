@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { getAssistantIframeURL, useAssistant } from '@proton/llm/lib';
+import { getAssistantIframeURL } from '@proton/llm/lib/helpers';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 
 const AssistantIframe = () => {
     const { canShowAssistant } = useAssistant();

@@ -1,4 +1,4 @@
-import type { SheetsActionType } from '@proton/docs-shared/lib/SheetsActionType'
+import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
 
 const SheetsDBVersions = {
   InitialVersion: 1,

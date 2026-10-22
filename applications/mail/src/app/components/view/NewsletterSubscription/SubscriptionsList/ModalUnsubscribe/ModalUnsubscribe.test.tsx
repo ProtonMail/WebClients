@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';

@@ -1,7 +1,7 @@
 import type { Api } from '@proton/shared/lib/interfaces/Api'
 import type { DocsRoute } from './Routes/DocsRoute'
 import { getErrorString } from '../Util/GetErrorString'
-import { ApiResult } from '@proton/docs-shared'
+import { ApiResult } from '@proton/docs-shared/ApiResult'
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper'
 
 export class RouteExecutor {

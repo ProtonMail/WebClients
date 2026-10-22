@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { addDays, addHours, addMinutes, getUnixTime } from 'date-fns';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

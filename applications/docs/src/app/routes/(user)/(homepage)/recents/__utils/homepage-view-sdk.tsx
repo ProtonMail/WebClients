@@ -1,5 +1,5 @@
-import { RecentDocumentsItem } from '@proton/docs-core'
-import type { RecentDocumentsItemValue } from '@proton/docs-core/lib/Services/recent-documents'
+import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import type { NodeEntity } from '@proton/drive/sdk'
 import { getDrive } from '@proton/drive/sdk'
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'

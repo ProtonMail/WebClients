@@ -10,7 +10,7 @@ import { format, getUnixTime, set } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { mockPlansApi } from '@proton/components/hooks/helpers/tests/usePlans';
 import { FeatureCode } from '@proton/features/interface';
 import { getFeatureFlagsState } from '@proton/features/testing/features';

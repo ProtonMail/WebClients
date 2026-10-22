@@ -3,7 +3,7 @@ import type { Doc } from 'yjs'
 import type { DocsAwareness } from './DocsAwareness'
 import type { RtsMessagePayload } from './RtsMessagePayload'
 
-export type DocumentUpdateGuardContext = {
+type DocumentUpdateGuardContext = {
   update: Uint8Array<ArrayBuffer>
   origin: unknown
 }

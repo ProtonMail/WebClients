@@ -27,7 +27,7 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error'
 import type { UserModel } from '@proton/shared/lib/interfaces/User'
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces/UserSettings'
 
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
 import { ThemeTypes } from '@proton/shared/lib/themes/constants'
 import { PROTON_DEFAULT_THEME_SETTINGS } from '@proton/shared/lib/themes/themes'

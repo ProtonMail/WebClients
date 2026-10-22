@@ -15,27 +15,24 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft'
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig'
 import { IcEye } from '@proton/icons/icons/IcEye'
-import type {
-  AuthenticatedDocControllerInterface,
-  NativeVersionHistory,
-  EditorInvoker,
-  EditorControllerInterface,
-  DocumentState,
-  PublicDocumentState,
-} from '@proton/docs-core'
+import type { AuthenticatedDocControllerInterface } from '@proton/docs-core/AuthenticatedDocController/AuthenticatedDocControllerInterface'
+import type { EditorInvoker } from '@proton/docs-core/Bridge/EditorInvoker'
+import type { EditorControllerInterface } from '@proton/docs-core/EditorController/EditorController'
+import type { DocumentState, PublicDocumentState } from '@proton/docs-core/State/DocumentState'
+import type { NativeVersionHistory } from '@proton/docs-core/VersionHistory/NativeVersionHistory'
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
 import { HistoryTimeline } from './HistoryTimeline'
 import { SingleRevisionViewer } from './SingleRevisionViewer'
 import useLoading from '@proton/hooks/useLoading'
 import type { SerializedEditorState } from 'lexical'
-import type { DocumentType } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 import { useDebugMode } from '~/utils/debug-mode-context'
-import { downloadExport } from '@proton/docs-core/lib/UseCase/ExportAndDownload'
+import { downloadExport } from '@proton/docs-core/UseCase/ExportAndDownload'
 import { downloadJSONFile } from '~/utils/download-json-file'
 import downloadFile from '@proton/shared/lib/helpers/downloadFile'
 import { useIsODTEnabled } from '~/utils/flags'
-import { useOpenDocument } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
+import { useOpenDocument } from '@proton/docs-shared/Hooks/useOpenDocument'
 
 type RestoreType = 'replace' | 'as-copy'
 

@@ -1,6 +1,6 @@
 import { findByTestId, fireEvent, screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
 import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';

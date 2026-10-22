@@ -1,4 +1,4 @@
-import { Result } from '@proton/docs-shared'
+import { Result } from '@proton/docs-shared/Result'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import type { DecryptMessageDTO } from './DecryptMessage'
