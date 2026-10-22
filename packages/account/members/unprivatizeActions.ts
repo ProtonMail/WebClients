@@ -18,6 +18,7 @@ import type { Member, MemberReadyForAutomaticUnprivatization } from '@proton/sha
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';
 
+import { allSubscriptionsThunk } from '../allSubscriptions';
 import { type EntitlementCatalogState, entitlementCatalogThunk } from '../entitlementCatalog';
 import { type EntitlementsState, entitlementsThunk } from '../entitlements';
 import type { KtState } from '../kt';
@@ -26,7 +27,7 @@ import { type MemberState, memberThunk } from '../member';
 import { getPendingUnprivatizationRequest, memberAcceptUnprivatization } from '../member/actions';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import type { OrganizationRolesState } from '../organizationRoles';
-import { type SubscriptionState, subscriptionThunk } from '../subscription';
+import type { SubscriptionState } from '../subscription';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import { MemberCreationValidationError, type MembersState, getMemberAddresses } from './index';
@@ -220,15 +221,15 @@ export const unprivatizeSelfForMsp = ({
 > => {
     return async (dispatch) => {
         try {
-            const [allEntitlements, subscription, entitlementCatalog] = await Promise.all([
+            const [allEntitlements, allSubscriptions, entitlementCatalog] = await Promise.all([
                 dispatch(entitlementsThunk()),
-                dispatch(subscriptionThunk()),
+                dispatch(allSubscriptionsThunk()),
                 dispatch(entitlementCatalogThunk()),
             ]);
             const entitlements = createEntitlementResolverForOrgAndUser(
                 entitlementCatalog,
                 allEntitlements,
-                subscription
+                allSubscriptions
             );
             if (!entitlements.isMspEligible) {
                 return;
