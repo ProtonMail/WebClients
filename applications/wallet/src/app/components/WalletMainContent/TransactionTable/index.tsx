@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import type { WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
 import arrowsExchange from '@proton/styles/assets/img/illustrations/arrows-exchange.svg';
 import clsx from '@proton/utils/clsx';
-import type { DecryptedTransactionData, IWasmApiWalletData } from '@proton/wallet/types';
+import type { DecryptedTransactionData } from '@proton/wallet/types/transactions';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { Button, SimplePaginator } from '../../../atoms';
 import { useResponsiveContainerContext } from '../../../contexts/ResponsiveContainerContext';

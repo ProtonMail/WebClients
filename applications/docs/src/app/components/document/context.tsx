@@ -1,5 +1,5 @@
-import type { DocumentAction } from '@proton/docs-shared'
-import type { PublicDriveCompat } from '@proton/drive-store/lib'
+import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
+import type { PublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import type { UserModel } from '@proton/shared/lib/interfaces/User'
 import type { ReactNode } from 'react'

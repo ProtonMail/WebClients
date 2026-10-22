@@ -13,10 +13,10 @@ import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-recei
 import arrowSendDarkSvg from '@proton/styles/assets/img/illustrations/arrow-send-dark.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
 import clsx from '@proton/utils/clsx';
-import type { TransactionData } from '@proton/wallet/types';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
-import { useUserWalletSettings } from '@proton/wallet/store/hooks';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
+import type { TransactionData } from '@proton/wallet/types/transactions';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { MaybeHiddenAmount } from '../../../atoms/MaybeHiddenAmount';
 import { Price } from '../../../atoms/Price';

@@ -1,9 +1,5 @@
 import { CacheService } from './CacheService'
 
-jest.mock('@proton/drive-store/lib', () => ({
-  nodeMetaUniqueId: jest.fn(),
-}))
-
 describe('document localID cache', () => {
   const document = { volumeId: 'volume-id', linkId: 'link-id' }
 

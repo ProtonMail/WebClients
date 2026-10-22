@@ -1,6 +1,8 @@
 import { act, render } from '@testing-library/react'
 import type { ComponentProps, ReactNode } from 'react'
-import type { ClientRequiresEditorMethods, DocumentType, EditorInitializationConfig } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
+import type { ClientRequiresEditorMethods } from '@proton/docs-shared/Bridge/ClientRequiresEditorMethods'
+import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
 import { loadLocales } from '@proton/account/bootstrap'
 import { setDateLocales } from '@proton/shared/lib/i18n'
 import { enGBLocale, enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales'
@@ -10,8 +12,10 @@ import { App } from './App'
 import { EditorSystemMode, StandaloneDocsEditor } from './Docs/public'
 import { EditorStateProvider } from './EditorStateProvider'
 
-jest.mock('@proton/docs-shared', () => ({
+jest.mock('@proton/docs-shared/Bridge/BridgeOriginProvider', () => ({
   BridgeOriginProvider: { GetClientOrigin: () => 'http://localhost' },
+}))
+jest.mock('@proton/docs-shared/Bridge/EditorReadyEvent', () => ({
   EDITOR_READY_POST_MESSAGE_EVENT: 'editor-ready',
 }))
 jest.mock('@proton/hooks/useEffectOnce', () => ({ __esModule: true, default: jest.fn() }))

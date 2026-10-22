@@ -6,57 +6,47 @@ import MimeIcon from '@proton/components/components/icon/MimeIcon'
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type {
-  AuthenticatedDocControllerInterface,
   DocsClientSquashVerificationObjectionMadePayload,
-  DocumentState,
-  EditorControllerInterface,
-  EditorOrchestratorInterface,
   GeneralUserDisplayableErrorOccurredPayload,
   GenericInfoEventPayload,
-  PublicDocumentState,
-  WebsocketConnectionEventPayloads,
-} from '@proton/docs-core'
-import {
-  ApplicationEvent,
-  ClientToEditorBridge,
-  DocControllerEvent,
-  SquashVerificationObjectionDecision,
-  WebsocketConnectionEvent,
-} from '@proton/docs-core'
-import { getNodeName } from '@proton/docs-core/lib/DriveSDK/getNodeName'
-import { CacheService } from '@proton/docs-core/lib/Services/CacheService'
+} from '@proton/docs-core/Application/ApplicationEvent'
+import type { AuthenticatedDocControllerInterface } from '@proton/docs-core/AuthenticatedDocController/AuthenticatedDocControllerInterface'
+import type { EditorControllerInterface } from '@proton/docs-core/EditorController/EditorController'
+import type { WebsocketConnectionEventPayloads } from '@proton/docs-core/Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import type { EditorOrchestratorInterface } from '@proton/docs-core/Services/Orchestrator/EditorOrchestratorInterface'
+import type { DocumentState, PublicDocumentState } from '@proton/docs-core/State/DocumentState'
+import { ApplicationEvent } from '@proton/docs-core/Application/ApplicationEvent'
+import { DocControllerEvent } from '@proton/docs-core/AuthenticatedDocController/AuthenticatedDocControllerEvent'
+import { ClientToEditorBridge } from '@proton/docs-core/Bridge/ClientToEditorBridge'
+import { WebsocketConnectionEvent } from '@proton/docs-core/Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import { SquashVerificationObjectionDecision } from '@proton/docs-core/Types/SquashVerificationObjection'
+import { getNodeName } from '@proton/docs-core/DriveSDK/getNodeName'
+import { CacheService } from '@proton/docs-core/Services/CacheService'
 import { useApi } from '@proton/app-context/useApi'
-import { useGetMemberAddressKeys } from '@proton/docs-core/lib/Crypto/useGetMemberAddressKeys'
-import { useGetDefaultShareAddressKeys } from '@proton/docs-core/lib/Crypto/useGetDefaultShareAddressKeys'
-import type {
-  CommentMarkNodeChangeData,
-  DocumentAction,
-  DocumentType,
-  EditorInitializationConfig,
-  LiveCommentsTypeStatusChangeData,
-  NodeMeta,
-  PublicNodeMeta,
-} from '@proton/docs-shared'
-import {
-  CommentsEvent,
-  EditorEvent,
-  EditorSystemMode,
-  LiveCommentsEvent,
-  isPrivateNodeMeta,
-  isPublicNodeMeta,
-} from '@proton/docs-shared'
+import { useGetMemberAddressKeys } from '@proton/docs-core/Crypto/useGetMemberAddressKeys'
+import { useGetDefaultShareAddressKeys } from '@proton/docs-core/Crypto/useGetDefaultShareAddressKeys'
+import type { DocumentType, NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { CommentMarkNodeChangeData } from '@proton/docs-shared/CommentsEvent'
+import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
+import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
+import type { LiveCommentsTypeStatusChangeData } from '@proton/docs-shared/LiveCommentsEvent'
+import { EditorEvent } from '@proton/docs-shared/Bridge/EditorEvent'
+import { CommentsEvent } from '@proton/docs-shared/CommentsEvent'
+import { EditorSystemMode } from '@proton/docs-shared/EditorSystemMode'
+import { LiveCommentsEvent } from '@proton/docs-shared/LiveCommentsEvent'
+import { isPrivateNodeMeta, isPublicNodeMeta } from '@proton/docs-shared/NodeMetaHelpers'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive/sdk'
-import { useDocumentWindowAction } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
-import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/lib/Doc/convert-doc-type'
+import { useDocumentWindowAction } from '@proton/docs-shared/Hooks/useOpenDocument'
+import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/Doc/convert-doc-type'
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, SHEETS_APP_NAME } from '@proton/shared/lib/constants'
 import { isLocalEnvironment } from '@proton/shared/lib/env'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import { traceErrorSDK } from '@proton/docs-core/lib/DriveSDK/traceErrorSDK'
+import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 import { useFlagsStatus } from '@proton/unleash/proxy'
 import { useFlag } from '@proton/unleash/useFlag'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'

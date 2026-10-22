@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { createContext, useContext } from 'react'
-import type { Application } from '@proton/docs-core'
+import type { Application } from '@proton/docs-core/Application/Application'
 
 const ApplicationContext = createContext<Application | undefined>(undefined)
 

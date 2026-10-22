@@ -4,9 +4,10 @@ import type { EncryptionService } from '../Services/Encryption/EncryptionService
 import { GetAssociatedEncryptionDataForRealtimeMessage } from './GetAdditionalEncryptionData'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { VERIFICATION_STATUS } from '@protontech/crypto'
-import { DecryptedMessage, Result } from '@proton/docs-shared'
+import { DecryptedMessage } from '@proton/docs-shared/Realtime/DecryptedMessage'
+import { Result } from '@proton/docs-shared/Result'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import type { DocumentKeys } from '@proton/docs-shared'
+import type { DocumentKeys } from '@proton/docs-shared/CryptoTypes'
 
 export type DecryptMessageDTO = {
   message: DocumentUpdate | Event

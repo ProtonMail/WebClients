@@ -10,7 +10,7 @@ import AuthModal from '@proton/components/containers/password/AuthModal';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { Button, ButtonLike } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';

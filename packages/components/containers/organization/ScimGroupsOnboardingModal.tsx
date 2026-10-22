@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup';
+import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup/selectors';
 import { Button } from '@proton/atoms/Button/Button';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';

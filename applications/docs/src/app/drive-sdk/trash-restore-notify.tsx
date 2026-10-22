@@ -2,7 +2,7 @@ import NotificationButton from '@proton/components/containers/notifications/Noti
 import type { NotificationType } from '@proton/app-context/notifications/interfaces'
 import { c, msgid } from 'ttag'
 import type { ReactNode } from 'react'
-import { trashDocument, restoreDocument, reportTrashError } from '@proton/docs-core/lib/DriveSDK/trash'
+import { trashDocument, restoreDocument, reportTrashError } from '@proton/docs-core/DriveSDK/trash'
 import { trashDocuments, restoreDocuments, type BatchResult } from './trashMany'
 
 type CreateNotification = ({ type, text }: { type: NotificationType; text: ReactNode }) => void

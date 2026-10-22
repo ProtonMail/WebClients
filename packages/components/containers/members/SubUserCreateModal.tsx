@@ -3,12 +3,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    InvalidAddressesError,
-    MemberCreationValidationError,
-    UnavailableAddressesError,
-} from '@proton/account/members';
 import { assignMemberRoles, createMember } from '@proton/account/members/actions';
+import InvalidAddressesError from '@proton/account/members/errors/InvalidAddressesError';
+import MemberCreationValidationError from '@proton/account/members/errors/MemberCreationValidationError';
+import UnavailableAddressesError from '@proton/account/members/errors/UnavailableAddressesError';
 import { getInitialStorage, getStorageRange, getTotalStorage } from '@proton/account/organization/storage';
 import { getPrivateAdminError, getPrivateText, getRolesTabBanner } from '@proton/account/organizationKey/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';

@@ -1,5 +1,5 @@
 import { generateNodeUid, getDrive } from '@proton/drive/sdk'
-import type { NodeMeta } from '@proton/docs-shared'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
 import { traceErrorSDK } from './traceErrorSDK'
 
 export async function renameNode(nodeMeta: NodeMeta, newName: string) {

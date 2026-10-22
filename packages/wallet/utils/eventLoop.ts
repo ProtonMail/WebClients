@@ -6,8 +6,8 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { CreateEventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
-import type { IWasmApiWalletData } from '../types';
 import type { WalletAccountEvent, WalletEvent, WalletEventLoop } from '../types/eventLoop';
+import type { IWasmApiWalletData } from '../types/wasm';
 import { replaceAt } from './array';
 import { decryptWallet } from './wallet';
 

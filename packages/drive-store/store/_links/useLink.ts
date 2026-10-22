@@ -29,7 +29,7 @@ import useDefaultShare from '../_shares/useDefaultShare';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 import useShare from '../_shares/useShare';
 import { useGetMetricsUserPlan } from '../_user/useGetMetricsUserPlan';
-import { useDebouncedFunction } from '../_utils';
+import useDebouncedFunction from '../_utils/useDebouncedFunction';
 import { decryptExtendedAttributes } from './extendedAttributes';
 import type { DecryptedLink, EncryptedLink, SignatureIssueLocation, SignatureIssues } from './interface';
 import { isDecryptedLinkSame } from './link';

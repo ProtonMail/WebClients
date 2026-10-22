@@ -12,11 +12,8 @@ import type { ModelState } from '@proton/redux-utilities/initialModelState/inter
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type {
-    AccountIdByDerivationPathAndWalletId,
-    DecryptedTransactionData,
-    NetworkTransactionByHashedTxId,
-} from '../../types';
+import type { DecryptedTransactionData, NetworkTransactionByHashedTxId } from '../../types/transactions';
+import type { AccountIdByDerivationPathAndWalletId } from '../../types/wallet';
 import { createApiTransactions, fetchApiTransactions, hashApiTransactions } from '../../utils/transactions';
 import type { WalletThunkArguments } from '../thunk';
 

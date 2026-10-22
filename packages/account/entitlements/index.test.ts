@@ -5,7 +5,7 @@ import { getTestStore } from '@proton/redux-shared-store/test';
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
-import { getModelState } from '../tests';
+import { getModelState } from '../testing/getModelState';
 import { userFulfilled, userReducer } from '../user';
 import { entitlementsReducer, entitlementsThunk, selectEntitlements } from './index';
 

@@ -1,4 +1,4 @@
-// Copied from @proton/docs-core/lib/utils/hash to keep the standalone spreadsheet editor independent of docs-core.
+// Copied from @proton/docs-core/utils/hash to keep the standalone spreadsheet editor independent of docs-core.
 /**
  * Get the hash of a buffer
  * @param content - The buffer to hash

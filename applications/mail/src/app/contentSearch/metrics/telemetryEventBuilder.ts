@@ -1,4 +1,7 @@
-import type { ContentSearchEventStatus, ContentSearchIndexErrorKind } from '@proton/encrypted-search/models';
+import type {
+    ContentSearchEventStatus,
+    ContentSearchIndexErrorKind,
+} from '@proton/encrypted-search/models/contentSearchTelemetry';
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
 import {
     TelemetryContentSearchEvents,

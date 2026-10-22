@@ -1,6 +1,6 @@
 import type * as Comlink from 'comlink';
 
-import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
 import { DatabaseLock } from '../db/DatabaseLock';
 import type { EncryptedSearchReader } from '../import/EncryptedSearchReader';

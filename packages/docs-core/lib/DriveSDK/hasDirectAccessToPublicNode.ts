@@ -1,5 +1,5 @@
 import { generateNodeUid, getDrive } from '@proton/drive/sdk'
-import type { PublicNodeMeta } from '@proton/docs-shared'
+import type { PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
 import { getPublicLinkInfo } from './getPublicDrive'
 
 /**

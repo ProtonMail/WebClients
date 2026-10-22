@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom'
 import { CompatRouter } from 'react-router-dom-v5-compat'
 
 import AuthenticationContext from '@proton/components/containers/authentication/authenticationContext'
-import type { DocumentAction } from '@proton/docs-shared'
+import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
 
 import { DocsUrlContextProvider, useDocsUrlBar } from './docs-url-bar'
 

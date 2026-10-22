@@ -8,7 +8,7 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import Progress from '@proton/components/components/progress/Progress'
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField'
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea'
-import type { DocumentType } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 import { useEffect, useState } from 'react'
 import { c } from 'ttag'
 

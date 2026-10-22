@@ -1,7 +1,7 @@
 import { ES_SYNC_ACTIONS } from '@proton/encrypted-search/constants';
-import { hasReactivatedKey } from '@proton/encrypted-search/esHelpers';
-import { openESDB } from '@proton/encrypted-search/esIDB';
-import type { ESEvent, ESTimepoint, EventsObject } from '@proton/encrypted-search/models';
+import { hasReactivatedKey } from '@proton/encrypted-search/esHelpers/esUtils';
+import { openESDB } from '@proton/encrypted-search/esIDB/indexedDB';
+import type { ESEvent, ESTimepoint, EventsObject } from '@proton/encrypted-search/models/interfaces';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 

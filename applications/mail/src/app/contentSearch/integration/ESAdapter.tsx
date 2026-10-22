@@ -1,15 +1,12 @@
-import { highlightJSX, insertMarks } from '@proton/encrypted-search/esHelpers';
+import { highlightJSX, insertMarks } from '@proton/encrypted-search/esHelpers/esHighlight';
+import type { ESCallbacks } from '@proton/encrypted-search/models/esCallbacks';
 import type {
-    ESCallbacks,
-    ESEvent,
-    ESIndexingState,
     ESInitializeOptions,
     ESSetResultsList,
     ESSettledState,
-    ESStatus,
-    ESTimepoint,
-    NormalizedSearchParams,
-} from '@proton/encrypted-search/models';
+} from '@proton/encrypted-search/models/esFunctions';
+import type { ESEvent, ESIndexingState, ESStatus, ESTimepoint } from '@proton/encrypted-search/models/interfaces';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 import noop from '@proton/utils/noop';
 
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';

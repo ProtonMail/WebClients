@@ -11,7 +11,7 @@ import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
-import { useUserWalletSettings } from '@proton/wallet/store/hooks';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
 
 import { Modal } from '../../../../atoms';
 import { CoreButton } from '../../../../atoms/Button';

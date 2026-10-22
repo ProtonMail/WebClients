@@ -1,6 +1,6 @@
 import { fireEvent } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';

@@ -2,7 +2,7 @@ import { IcPenSquare } from '@proton/icons/icons/IcPenSquare'
 
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../../__utils/document-actions'
-import type { RecentDocumentsItem } from '@proton/docs-core'
+import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { c } from 'ttag'
 
 export type RenameButtonProps = {

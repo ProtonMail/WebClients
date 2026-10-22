@@ -1,7 +1,24 @@
 {
     "name": "@proton/drive-store",
     "description": "Duplication of the Drive Store",
-    "main": "index.ts",
+    "exports": {
+        "./components/FolderTree/FolderTree.scss": "./components/FolderTree/FolderTree.scss",
+        "./lib/_invites/useDocInvites": "./lib/_invites/useDocInvites.tsx",
+        "./lib/_views/useDocsBookmarks": "./lib/_views/useDocsBookmarks.ts",
+        "./lib/DriveCompatWrapper": "./lib/DriveCompatWrapper.ts",
+        "./lib/DriveStoreProvider": "./lib/DriveStoreProvider.tsx",
+        "./lib/useDriveCompat": "./lib/useDriveCompat.tsx",
+        "./lib/usePublicDriveCompat": "./lib/usePublicDriveCompat.tsx",
+        "./store/_downloads/fileSaver/download": "./store/_downloads/fileSaver/download.ts",
+        "./store/_events/useDriveEventManager": "./store/_events/useDriveEventManager.tsx",
+        "./store/_links/interface": "./store/_links/interface.ts",
+        "./store/_shares/useDefaultShare": "./store/_shares/useDefaultShare.ts",
+        "./store/_user/usePublicSessionUser": "./store/_user/usePublicSessionUser.ts",
+        "./store/_views/useTrashView": "./store/_views/useTrashView.ts",
+        "./store/_volumes/interface": "./store/_volumes/interface.ts",
+        "./utils/metrics/userSuccessMetrics": "./utils/metrics/userSuccessMetrics.ts",
+        "./utils/publicRedirectSpotlight": "./utils/publicRedirectSpotlight.ts"
+    },
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",

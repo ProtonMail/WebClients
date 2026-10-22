@@ -1,6 +1,6 @@
 import { useEffect, useCallback } from 'react'
 import { useApplication } from '~/utils/application-context'
-import { PostApplicationError } from '@proton/docs-core'
+import { PostApplicationError } from '@proton/docs-core/Application/ApplicationEvent'
 import { c } from 'ttag'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { APPS } from '@proton/shared/lib/constants'
@@ -9,10 +9,10 @@ import type {
   PublicDocumentPostMessageDataForCopying,
   PublicDocumentPostMessageEvent,
 } from '~/components/document/public/utils'
-import { useDocumentWindowAction } from '@proton/docs-shared/lib/Hooks/useOpenDocument'
-import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/lib/Doc/convert-doc-type'
-import type { DocumentAction } from '@proton/docs-shared'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
+import { useDocumentWindowAction } from '@proton/docs-shared/Hooks/useOpenDocument'
+import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/Doc/convert-doc-type'
+import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
+import OpenTracer from '@proton/docs-shared/Tracer/Module'
 
 /**
  * A processing component that duplicates a document received from the tab opener. Once duplication completes,

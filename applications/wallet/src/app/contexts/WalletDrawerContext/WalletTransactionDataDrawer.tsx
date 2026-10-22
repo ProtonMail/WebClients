@@ -12,8 +12,9 @@ import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-recei
 import arrowSendDarkSvg from '@proton/styles/assets/img/illustrations/arrow-send-dark.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
-import { useApiWalletTransactionData, useUserWalletSettings } from '@proton/wallet/store/hooks';
-import type { TransactionData } from '@proton/wallet/types';
+import { useApiWalletTransactionData } from '@proton/wallet/store/hooks/useApiWalletTransactionData';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
+import type { TransactionData } from '@proton/wallet/types/transactions';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { CoreButton } from '../../atoms';

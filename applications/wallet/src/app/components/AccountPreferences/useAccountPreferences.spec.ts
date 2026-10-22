@@ -9,10 +9,12 @@ import { mockUseUserKeys } from '@proton/account/testing/vitest/mockUseUserKeys'
 import { WasmNetwork } from '@proton/andromeda';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import { setupCryptoProxyForTesting } from '@proton/pass/utils/tests/fixtures/crypto';
-import { apiWalletsData } from '@proton/wallet/tests/fixtures';
-import { mockUseFiatCurrencies, mockUseWalletApiClients, mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
-import { getAddressKey, getUserKeys } from '@proton/wallet/tests/utils';
-import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet/types';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures/api';
+import { mockUseFiatCurrencies } from '@proton/wallet/tests/mocks/useFiatCurrencies';
+import { mockUseWalletApiClients } from '@proton/wallet/tests/mocks/useWalletApi';
+import { mockUseWalletDispatch } from '@proton/wallet/tests/mocks/useWalletDispatch';
+import { getAddressKey, getUserKeys } from '@proton/wallet/tests/utils/keys';
+import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet/types/wasm';
 import { decryptWalletData } from '@proton/wallet/utils/crypto';
 
 import { formatToSubset, getWalletsChainDataInit } from '../../contexts/BitcoinBlockchainContext/useWalletsChainData';

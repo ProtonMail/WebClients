@@ -256,7 +256,14 @@
         },
         "packages/account": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"]
+            "project": ["**/*.{ts,tsx}"],
+            "ignore": [
+                "breaches/breachAlertListener.ts",
+                "breaches/breachReportsSlice.ts",
+                "groupOwnerInvites/hooks.ts",
+                "testing/vitest/mockUseOrganization.ts",
+                "testing/vitest/mockUseUser.ts"
+            ]
         },
         "packages/activation": {
             "entry": [],

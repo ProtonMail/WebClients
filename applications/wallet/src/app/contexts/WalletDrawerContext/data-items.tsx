@@ -17,8 +17,8 @@ import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
-import { useUserWalletSettings } from '@proton/wallet/store/hooks';
-import type { TransactionData } from '@proton/wallet/types';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
+import type { TransactionData } from '@proton/wallet/types/transactions';
 
 import { Button, ButtonLike, CoreButton } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';

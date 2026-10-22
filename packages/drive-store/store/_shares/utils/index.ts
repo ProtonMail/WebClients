@@ -1,1 +1,0 @@
-export { getSharedWithMeMembership } from './getSharedWithMeMembership';

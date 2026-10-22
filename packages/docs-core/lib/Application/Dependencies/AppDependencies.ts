@@ -1,13 +1,11 @@
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { Logger } from '@proton/shared/lib/logs'
-import {
-  DOCS_DEBUG_KEY,
-  DependencyContainer,
-  InternalEventBus,
-  type InternalEventBusInterface,
-  type SyncedEditorState,
-  type CacheConfig,
-} from '@proton/docs-shared'
+import type { CacheConfig } from '@proton/docs-shared/CacheConfig'
+import { DOCS_DEBUG_KEY } from '@proton/docs-shared/constants'
+import { DependencyContainer } from '@proton/docs-shared/Dependency/DependencyContainer'
+import { InternalEventBus } from '@proton/docs-shared/Events/InternalEventBus'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { SyncedEditorState } from '@proton/docs-shared/State/SyncedEditorState'
 import { App_TYPES } from './Types'
 import type { HttpHeaders } from '../../Api/Types/HttpHeaders'
 import { DocsApi } from '../../Api/DocsApi'

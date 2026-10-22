@@ -8,20 +8,25 @@ import type {
   DeleteCommentData,
   BeganTypingData,
   StoppedTypingData,
-} from '@proton/docs-shared'
-import { CommentsMessageType } from '@proton/docs-shared'
-import { Comment, CommentThread } from '../Models'
+} from '@proton/docs-shared/Realtime/CommentsMessageType'
+import { CommentsMessageType } from '@proton/docs-shared/Realtime/CommentsMessageType'
+import { Comment } from '../Models/Comments'
+import { CommentThread } from '../Models/CommentThread'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import type { LiveComments } from '../Realtime/LiveComments/LiveComments'
 import { getErrorString } from '../Util/GetErrorString'
 import type { SyncUseCaseInterface } from '../Domain/UseCase/SyncUseCaseInterface'
-import { Result } from '@proton/docs-shared'
+import { Result } from '@proton/docs-shared/Result'
 
 /**
  * Updates the local comment state after receiving a message from the RTS.
  */
 export class HandleRealtimeCommentsEvent implements SyncUseCaseInterface<void> {
-  execute(localCommentsState: LocalCommentsState, liveComments: LiveComments, content: Uint8Array<ArrayBuffer>): Result<void> {
+  execute(
+    localCommentsState: LocalCommentsState,
+    liveComments: LiveComments,
+    content: Uint8Array<ArrayBuffer>,
+  ): Result<void> {
     try {
       const jsonString = uint8ArrayToUtf8String(content)
       const { type, data } = JSON.parse(jsonString) as { type: CommentsMessageType; data: AnyCommentMessageData }

@@ -6,8 +6,9 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import { c } from 'ttag'
 
 import { Button } from '@proton/atoms/Button/Button'
-import type { EditorControllerInterface, PublicDocumentState } from '@proton/docs-core'
-import type { DocumentType } from '@proton/docs-shared'
+import type { EditorControllerInterface } from '@proton/docs-core/EditorController/EditorController'
+import type { PublicDocumentState } from '@proton/docs-core/State/DocumentState'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 import { DOCS_APP_NAME, DOCS_SHORT_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import EncryptedBanner from '@proton/styles/assets/img/docs/encrypted-bg.png'

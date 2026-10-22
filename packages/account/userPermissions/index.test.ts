@@ -6,7 +6,7 @@ import { type OrganizationRole, PREDEFINED_ROLE_NAME } from '@proton/shared/lib/
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { PERMISSIONS } from '@proton/shared/lib/interfaces/UserPermission';
 
-import { getModelState } from '../tests';
+import { getModelState } from '../testing/getModelState';
 import { getServerEvent } from '../tests/getServerEvent';
 import { userReducer, userThunk } from '../user';
 import {

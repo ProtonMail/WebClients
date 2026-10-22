@@ -9,7 +9,7 @@ import { entitlementCatalogReducer } from '../entitlementCatalog';
 import { entitlementsReducer } from '../entitlements';
 import { CATALOG_URL, ENTITLEMENTS_URL, asEntitlements } from '../entitlements/testing';
 import { subscriptionReducer } from '../subscription';
-import { getModelState } from '../tests';
+import { getModelState } from '../testing/getModelState';
 import { userReducer } from '../user';
 import { unprivatizeSelfForMsp } from './unprivatizeActions';
 

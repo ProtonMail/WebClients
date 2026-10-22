@@ -1,13 +1,17 @@
 import { EditorController } from './EditorController'
 import type { Logger } from '@proton/shared/lib/logs'
-import { BroadcastSource, DocumentRole, DocUpdateOrigin } from '@proton/docs-shared'
+import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import { DocUpdateOrigin } from '@proton/docs-shared/Doc/DocState'
+import { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
 import type { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
 import { EventType } from '@proton/docs-proto/Event/EventType'
 import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
 import metrics from '@proton/metrics/metricsInstance'
 import type { DocumentStateValues } from '../State/DocumentState'
 import { DocumentState } from '../State/DocumentState'
-import type { ClientRequiresEditorMethods, DecryptedMessage, InternalEventBusInterface } from '@proton/docs-shared'
+import type { ClientRequiresEditorMethods } from '@proton/docs-shared/Bridge/ClientRequiresEditorMethods'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { DecryptedMessage } from '@proton/docs-shared/Realtime/DecryptedMessage'
 import type { SerializedEditorState } from 'lexical'
 import type { DecryptedCommit } from '../Models/DecryptedCommit'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
@@ -19,7 +23,7 @@ jest.mock('@proton/metrics/metricsInstance', () => ({
   },
 }))
 
-jest.mock('@proton/docs-core/lib/UseCase/ExportAndDownload', () => ({
+jest.mock('@proton/docs-core/UseCase/ExportAndDownload', () => ({
   downloadExport: jest.fn(),
 }))
 

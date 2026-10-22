@@ -18,8 +18,9 @@ import walletDownloadDark from '@proton/styles/assets/img/wallet/wallet-download
 import walletDownload from '@proton/styles/assets/img/wallet/wallet-download.png';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
-import { useWalletAccountExchangeRate } from '@proton/wallet/store/hooks';
-import type { IWasmApiWalletData, WalletChainDataByWalletId } from '@proton/wallet/types';
+import { useWalletAccountExchangeRate } from '@proton/wallet/store/hooks/useWalletAccountExchangeRate';
+import type { WalletChainDataByWalletId } from '@proton/wallet/types/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, CoreButton, Modal, Select } from '../../atoms';

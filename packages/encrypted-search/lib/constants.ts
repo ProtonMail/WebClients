@@ -1,7 +1,9 @@
 import { DAY } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import type { ESIndexingState, ESProgress, EncryptedSearchFunctions, OptionalESCallbacks } from './models';
+import type { OptionalESCallbacks } from './models/esCallbacks';
+import type { EncryptedSearchFunctions } from './models/esFunctions';
+import type { ESIndexingState, ESProgress } from './models/interfaces';
 
 /**
  * Number of items to add to the search results list during
