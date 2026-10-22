@@ -1,7 +1,6 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useLexicalNodeSelection } from '@lexical/react/useLexicalNodeSelection'
 import { addClassNamesToElement, mergeRegister, removeClassNamesFromElement } from '@lexical/utils'
-import { c } from 'ttag'
 import type {
   DOMConversionMap,
   DOMConversionOutput,
@@ -13,15 +12,23 @@ import type {
 } from 'lexical'
 import { $applyNodeReplacement, CLICK_COMMAND, COMMAND_PRIORITY_LOW, DecoratorNode, createCommand } from 'lexical'
 import type { JSX } from 'react'
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
+import { useDocsMessages } from '../../DocsDependenciesProvider'
 
 export type SerializedPageBreakNode = SerializedLexicalNode
 
 export const INSERT_PAGE_BREAK_COMMAND: LexicalCommand<void> = createCommand('INSERT_PAGE_BREAK_COMMAND')
 
+export const pageBreakMessages = {
+  pageBreak: {
+    label: 'Page break',
+  },
+}
+
 function PageBreakComponent({ nodeKey }: { nodeKey: string }) {
   const [editor] = useLexicalComposerContext()
   const [isSelected, setSelected, clearSelection] = useLexicalNodeSelection(nodeKey)
+  const { label } = useDocsMessages().pageBreak
 
   useEffect(() => {
     return mergeRegister(
@@ -56,6 +63,17 @@ function PageBreakComponent({ nodeKey }: { nodeKey: string }) {
       removeClassNamesFromElement(element, 'selected')
     }
   }, [editor, isSelected, nodeKey])
+
+  // `createDOM` has no React context, so the translated label is set here.
+  useLayoutEffect(() => {
+    const element = editor.getElementByKey(nodeKey)
+    if (!element) {
+      return
+    }
+
+    element.dataset.label = label
+    element.setAttribute('aria-label', label)
+  }, [editor, label, nodeKey])
 
   return null
 }
@@ -110,8 +128,6 @@ export class PageBreakNode extends DecoratorNode<JSX.Element> {
     const element = document.createElement('div')
     addClassNamesToElement(element, 'Lexical__pageBreak', config.theme.hr)
     element.dataset.lexicalPageBreak = 'true'
-    element.dataset.label = c('Label').t`Page break`
-    element.setAttribute('aria-label', c('Label').t`Page break`)
     element.contentEditable = 'false'
     return element
   }

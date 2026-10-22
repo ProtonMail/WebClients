@@ -6,6 +6,7 @@ let mockShouldThrow = false
 
 jest.mock('../DocsDependenciesProvider', () => ({
   useDocsDependencies: () => ({ reportError: mockReportError }),
+  useDocsMessages: () => ({ safeLexicalComposer: { somethingWentWrong: 'Une erreur est survenue :' } }),
 }))
 jest.mock('@lexical/react/LexicalComposer', () => ({
   LexicalComposer: ({ children }: { children: React.ReactNode }) => {
@@ -32,7 +33,7 @@ it('renders the editor while composition succeeds', () => {
   expect(screen.getByText('Editor content')).toBeInTheDocument()
 })
 
-it('reports a render failure once and shows the Docs fallback', () => {
+it('reports a render failure once and shows the Docs fallback in the host language', () => {
   mockShouldThrow = true
   const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {})
   try {
@@ -41,7 +42,7 @@ it('reports a render failure once and shows the Docs fallback', () => {
         <span>Editor content</span>
       </SafeLexicalComposer>,
     )
-    expect(screen.getByRole('alert')).toHaveTextContent('Something went wrong:')
+    expect(screen.getByRole('alert')).toHaveTextContent('Une erreur est survenue :')
     expect(screen.getByRole('alert')).toHaveTextContent('Composer failed')
     expect(mockReportError).toHaveBeenCalledTimes(1)
     expect(mockReportError).toHaveBeenCalledWith(expect.objectContaining({ message: 'Composer failed' }))

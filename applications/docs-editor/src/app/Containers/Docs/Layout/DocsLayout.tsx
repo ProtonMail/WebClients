@@ -1,6 +1,5 @@
 import React from 'react'
 import { clsx } from 'clsx'
-import { c } from 'ttag'
 import {
   clampLeftPanelWidth,
   DOCS_EDITOR_MAX_WIDTH,
@@ -11,9 +10,16 @@ import {
   LEFT_PANEL_MIN_WIDTH,
 } from './docsLayoutUtils'
 import { PanelResizeHandle } from './PanelResizeHandle'
+import { useDocsMessages } from '../DocsDependenciesProvider'
 import './DocsLayout.scss'
 
 export { DOCS_EDITOR_MAX_WIDTH } from './docsLayoutUtils'
+
+export const docsLayoutMessages = {
+  docsLayout: {
+    resizeOutline: 'Resize outline',
+  },
+}
 
 type PanelVisibility = 'collapsed' | 'expanded'
 
@@ -53,6 +59,7 @@ export function useRightPanelContext(): RightPanelLayout {
 
 export function DocsLayoutLeftPanel({ children }: React.PropsWithChildren) {
   const leftPanel = useLeftPanelContext()
+  const messages = useDocsMessages().docsLayout
   const [isDragging, setIsDragging] = React.useState(false)
   const isExpanded = leftPanel.visibility === 'expanded'
 
@@ -62,7 +69,7 @@ export function DocsLayoutLeftPanel({ children }: React.PropsWithChildren) {
       {isExpanded && leftPanel.width > 0 && (
         <PanelResizeHandle
           className="right-0"
-          label={c('Label').t`Resize outline`}
+          label={messages.resizeOutline}
           width={leftPanel.width}
           minWidth={LEFT_PANEL_MIN_WIDTH}
           maxWidth={LEFT_PANEL_MAX_WIDTH}

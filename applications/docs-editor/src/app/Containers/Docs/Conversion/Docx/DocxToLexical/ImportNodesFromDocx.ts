@@ -3,13 +3,14 @@ import type { LexicalEditor } from 'lexical'
 import { $createParagraphNode, $insertNodes } from 'lexical'
 
 import { TranslatedResult } from '../../../Utils/TranslatedResult'
-import { c } from 'ttag'
+import type { DocsMessages } from '../../../messages/DocsMessages'
 import { ParseDocxElements } from './Parsing/ParseDocxElement'
 import { mapDocxChildren } from './CreateLexicalNodeFromDocxInfo'
 
 export async function $importNodesFromDocx(
   editor: LexicalEditor,
   docx: Blob | ArrayBuffer | Uint8Array<ArrayBuffer>,
+  getMessages: () => DocsMessages['editorLoad'],
 ): Promise<TranslatedResult<void>> {
   try {
     const parsedDocx = await parseAsync(docx, {
@@ -37,9 +38,6 @@ export async function $importNodesFromDocx(
   } catch (error) {
     console.error('Failed to import nodes from docx', error)
 
-    return TranslatedResult.failWithTranslatedError(
-      c('Error')
-        .t`Unable to convert Word document. Is it password protected? If so, please remove the password and try again.`,
-    )
+    return TranslatedResult.failWithTranslatedError(getMessages().unreadableWordDocument)
   }
 }

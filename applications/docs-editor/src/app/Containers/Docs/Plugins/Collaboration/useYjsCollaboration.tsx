@@ -10,7 +10,7 @@ import { UndoManager } from 'yjs'
 import type { EditorInitializationConfig } from '../../contract/EditorInitialization'
 import { initializeEditorAccordingToConfigIfRootIsEmpty } from './initializeEditor'
 import { syncCursorPositions } from './syncCursorPositions'
-import { useDocsDependencies } from '../../DocsDependenciesProvider'
+import { useDocsDependencies, useDocsMessages } from '../../DocsDependenciesProvider'
 
 /**
  * Original: https://github.com/facebook/lexical/blob/main/packages/lexical-react/src/shared/useYjsCollaboration.tsx
@@ -29,6 +29,10 @@ export function useYjsCollaboration(
   awarenessData = {},
 ): Binding {
   const { reportError } = useDocsDependencies()
+  const messages = useDocsMessages().editorLoad
+  // A ref, so a locale change doesn't rerun the binding effect below.
+  const editorLoadMessages = useRef(messages)
+  editorLoadMessages.current = messages
   const [doc] = useState(() => docMap.get(id))
   const didPostReadyEvent = useRef(false)
   const didInitializeEditor = useRef(false)
@@ -109,6 +113,7 @@ export function useYjsCollaboration(
           binding,
           editorInitializationConfig,
           reportError,
+          () => editorLoadMessages.current,
         ).then((result) => {
           didInitializeEditor.current = true
           if (result.isFailed()) {

@@ -7,6 +7,7 @@ import { ImageNode } from './ImageNode'
 
 jest.mock('../../DocsDependenciesProvider', () => ({
   useDocsDependencies: () => ({ reportError: jest.fn() }),
+  useDocsMessages: () => jest.requireActual('../../messages/defaultDocsMessages').defaultDocsMessages,
 }))
 
 let editor: LexicalEditor

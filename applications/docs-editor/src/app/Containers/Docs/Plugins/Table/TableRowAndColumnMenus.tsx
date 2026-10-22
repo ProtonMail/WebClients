@@ -5,7 +5,6 @@ import { $isTableCellNode, $isTableRowNode } from '@lexical/table'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { c } from 'ttag'
 import debounce from 'lodash/debounce'
 import { isHTMLElement } from '../../Utils/guard'
 import type { NodeKey } from 'lexical'
@@ -25,10 +24,12 @@ import {
   INSERT_TABLE_ROW_COMMAND,
 } from './Commands'
 import { useDocsUserMode } from '../../DocsPresentationProvider'
+import { useDocsMessages } from '../../DocsDependenciesProvider'
 import { EditorUserMode } from '../../contract/EditorUserMode'
 
 export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) {
   const [editor] = useLexicalComposerContext()
+  const messages = useDocsMessages().table
 
   const userMode = useDocsUserMode()
   const isSuggestionMode = userMode === EditorUserMode.Suggest
@@ -234,7 +235,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         hasCaret={false}
       >
         <Icon data={Icons.dots} />
-        <div className="sr-only">{c('Action').t`Click to open row menu`}</div>
+        <div className="sr-only">{messages.openRowMenu}</div>
       </DropdownButton>
       <Dropdown
         anchorRef={rowMenuButtonRef}
@@ -252,7 +253,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               content={
                 <>
                   <Icon data={Icons.palette} />
-                  {c('Action').t`Color`}
+                  {messages.color}
                   <Icon data={Icons.chevronRight} className="ml-auto" />
                 </>
               }
@@ -288,7 +289,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
             }}
           >
             <Icon data={Icons.arrowUp} />
-            {c('Action').t`Insert above`}
+            {messages.insertAbove}
           </DropdownMenuButton>
           <DropdownMenuButton
             className={menuButtonClassName}
@@ -301,7 +302,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
             }}
           >
             <Icon data={Icons.arrowDown} />
-            {c('Action').t`Insert below`}
+            {messages.insertBelow}
           </DropdownMenuButton>
           <DropdownMenuButton
             className={menuButtonClassName}
@@ -314,7 +315,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
             }}
           >
             <Icon data={Icons.squares} />
-            {c('Action').t`Duplicate`}
+            {messages.duplicate}
           </DropdownMenuButton>
           {!isSuggestionMode && (
             <DropdownMenuButton
@@ -330,7 +331,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               }}
             >
               <Icon data={Icons.cross} />
-              {c('Action').t`Clear contents`}
+              {messages.clearContents}
             </DropdownMenuButton>
           )}
           <DropdownMenuButton
@@ -344,7 +345,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
             }}
           >
             <Icon data={Icons.trash} />
-            {c('Action').t`Delete row`}
+            {messages.deleteRow}
           </DropdownMenuButton>
         </DropdownMenu>
       </Dropdown>
@@ -361,7 +362,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         hasCaret={false}
       >
         <Icon data={Icons.dots} />
-        <div className="sr-only">{c('Action').t`Click to open column menu`}</div>
+        <div className="sr-only">{messages.openColumnMenu}</div>
       </DropdownButton>
       <Dropdown
         anchorRef={columnMenuButtonRef}
@@ -387,7 +388,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               content={
                 <>
                   <Icon data={Icons.palette} />
-                  {c('Action').t`Color`}
+                  {messages.color}
                   <Icon data={Icons.chevronRight} className="ml-auto" />
                 </>
               }
@@ -416,7 +417,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
             }}
           >
             <Icon data={Icons.arrowLeft} />
-            {c('Action').t`Insert left`}
+            {messages.insertLeft}
           </DropdownMenuButton>
           <DropdownMenuButton
             className={menuButtonClassName}
@@ -429,7 +430,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
             }}
           >
             <Icon data={Icons.arrowRight} />
-            {c('Action').t`Insert right`}
+            {messages.insertRight}
           </DropdownMenuButton>
           <DropdownMenuButton
             className={menuButtonClassName}
@@ -443,7 +444,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
             }}
           >
             <Icon data={Icons.squares} />
-            {c('Action').t`Duplicate`}
+            {messages.duplicate}
           </DropdownMenuButton>
           {!isSuggestionMode && (
             <DropdownMenuButton
@@ -459,7 +460,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
               }}
             >
               <Icon data={Icons.cross} size={4.5} />
-              {c('Action').t`Clear contents`}
+              {messages.clearContents}
             </DropdownMenuButton>
           )}
           <DropdownMenuButton
@@ -473,7 +474,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
             }}
           >
             <Icon data={Icons.trash} />
-            {c('Action').t`Delete column`}
+            {messages.deleteColumn}
           </DropdownMenuButton>
         </DropdownMenu>
       </Dropdown>

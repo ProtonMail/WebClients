@@ -4,6 +4,7 @@ import { strFromU8, strToU8, unzipSync, zipSync } from 'fflate'
 import { AllNodes } from '../../../AllNodes'
 import { ImageNode } from '../../../Plugins/Image/ImageNode'
 import { $importDataIntoEditor } from '../../ImportDataIntoEditor'
+import { defaultDocsMessages } from '../../../messages/defaultDocsMessages'
 import type { ExporterRequiredCallbacks } from '../EditorExporter'
 import { EditorOdtExporter, restorePageBreaks } from './EditorOdtExporter'
 
@@ -95,6 +96,7 @@ describe('EditorOdtExporter', () => {
       result,
       { docType: 'doc', dataType: 'odt' },
       callbacks.reportError,
+      () => defaultDocsMessages.editorLoad,
     )
 
     expect(importResult.isFailed()).toBe(false)
