@@ -2960,10 +2960,10 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Get the deal": [
-        "Tekliften yararlanın"
+        "Fırsatı yakala"
       ]
     },
     "bfcampaign2026: Info": {
@@ -2980,7 +2980,7 @@
         "2 TB güvenli depolama alanı"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
+        "200 GB depolama alanı: Mevcut tarifenizin 40 katı"
       ],
       "3 TB of secure storage": [
         "3 TB güvenli depolama alanı"
@@ -2992,25 +2992,25 @@
         "6 bireysel hesap"
       ],
       "Built-in 2FA authenticator": [
-        "Hazır iki adımlı kimlik doğrulayıcı"
+        "Yerleşik iki faktörlü kimlik doğrulayıcı"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
+        "İndirimler, standart aylık fiyatlandırmaya göre hesaplanmıştır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
       ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
       "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleme"
+        "Önceki dosya sürümlerini kurtarın"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
       ],
       "Unlimited folders, labels, and filters": [
-        "Sınırsız sayıda klasör, etiket ve süzgeç"
+        "Sınırsız sayıda klasör, etiket ve filtre"
       ],
       "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanma"
+        "Kendi e-posta etki alanınızı kullanın"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -3043,13 +3043,13 @@
         "Yılın en büyük indirimi"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "for 12 months": [
         "12 aylık"
       ],
       "Last chance to save big": [
-        "Büyük kazanç için son şans"
+        "Büyük tasarruf için son fırsat"
       ],
       "Protect your entire tribe": [
         "Kabilenizi koruyun"
@@ -7209,6 +7209,13 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Kurtarma kişilerinizi tanıdığınız ve kolayca ulaşabileceğiniz kişilerden seçmelisiniz."
+      ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "**Bugün**, ****${ formattedAccessibleAt } zamanında otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "**${ days } gün** sonra **${ formattedAccessibleAt }** zamanında otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz.",
+        "**${ days } gün** sonra **${ formattedAccessibleAt }** zamanında otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz."
       ]
     },
     "Empty group name": {
@@ -9175,7 +9182,7 @@
         "Tümü"
       ],
       "Errors": [
-        "Hatalar"
+        "Sorunlar"
       ],
       "In progress": [
         "İşleniyor"
@@ -13451,7 +13458,7 @@
         "Bu kullanıcıyı aktarabilmek için ${ domainNamesLink } altındaki e-posta etki alanını ekleyin ve doğrulayın."
       ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını kullanıma alın."
+        "Bu kullanıcıyı aktarmak için ${ provider.adminConsoleName } üzerinden hesabını kullanıma alın."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını kullanıma alın."
@@ -14412,6 +14419,9 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "${ toAppName } kullanmak için bir ${ MAIL_APP_NAME } adresiniz olmalı. Kuruluşunuzdaki yöneticilerden biri sizin için bir adres oluşturabilir."
       ]
     },
     "info": {
@@ -27959,6 +27969,9 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "You need a ${ BRAND_NAME } address": [
+        "Bir ${ BRAND_NAME } adresiniz olmalı"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28945,6 +28958,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Bu kullanıcı bir sonraki oturum açmasında yönetici yetkilerini alacak."
       ]
     },
     "Users table: badge": {

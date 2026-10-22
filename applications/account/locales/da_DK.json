@@ -2963,7 +2963,7 @@
         "Black Friday"
       ],
       "Get the deal": [
-        "Indløs tilbuddet"
+        "Få tilbuddet"
       ]
     },
     "bfcampaign2026: Info": {
@@ -2980,7 +2980,7 @@
         "2 TB sikker lagerplads"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB lagerplads: 40x dit nuværende abonnement"
+        "200 GB lagerplads: 40 gange så meget som i dit nuværende abonnement"
       ],
       "3 TB of secure storage": [
         "3 TB sikker lagerplads"
@@ -2992,13 +2992,13 @@
         "6 individuelle konti"
       ],
       "Built-in 2FA authenticator": [
-        "Indbygget 2FA-godkender"
+        "Indbygget 2FA-godkendelse"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+        "Rabatterne er baseret på den månedlige standardpris. Dit abonnement fornyes til den årlige standardpris, når faktureringsperioden udløber."
       ],
       "Online document editor": [
-        "Online dokumentredigering"
+        "Online dokumenteditor"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -3007,7 +3007,7 @@
         "Stærkere beskyttelse mod cybertrusler"
       ],
       "Unlimited folders, labels, and filters": [
-        "Ubegrænsede mapper, etiketter og filtre"
+        "Ubegrænset antal mapper, etiketter og filtre"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
@@ -3046,7 +3046,7 @@
         "Black Friday"
       ],
       "for 12 months": [
-        "i 12 måneder"
+        "for 12 måneder"
       ],
       "Last chance to save big": [
         "Sidste chance for at spare stort"
@@ -7209,6 +7209,13 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Dine gendannelseskontakter bør være personer, du kender og nemt kan komme i kontakt med."
+      ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "De vil automatisk få adgang om **i dag**, den **${ formattedAccessibleAt }**. Du kan afvise deres anmodning eller give dem øjeblikkelig adgang når som helst."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "De vil automatisk få adgang om **${ days } dag**, den **${ formattedAccessibleAt }**. Du kan afvise deres anmodning eller give dem øjeblikkelig adgang når som helst.",
+        "De vil automatisk få adgang om **${ days } dage**, den **${ formattedAccessibleAt }**. Du kan afvise deres anmodning eller give dem øjeblikkelig adgang når som helst."
       ]
     },
     "Empty group name": {
@@ -11354,7 +11361,7 @@
         "Rul ud på tværs af alle dine administrerede enheder"
       ],
       "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
-        "Rul den ud igennem din MDM (Jamf, Intune…) eller manuelt på hver enhed."
+        "Rul den ud igennem dit MDM (Jamf, Intune…) eller manuelt på hver enhed."
       ],
       "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
         "Enheder, der har en konstant VPN enhedsprofil aktiveret, kan ikke tilgå internettet, medmindre en ${ VPN_APP_NAME }-forbindelse er aktiv."
@@ -12724,7 +12731,7 @@
         "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
       "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
-        "Rul ${ mobileConfigArtifact } ud til hver administreret Mac ved hjælp af din MDM."
+        "Rul ${ mobileConfigArtifact } ud til hver administreret Mac ved hjælp af dit MDM."
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakt os for at få hjælp til hvad som helst ${ BRAND_NAME }."
@@ -13652,7 +13659,7 @@
         "Brug den valgte e-mailadresse som SMTP-brugernavn i den eksterne service, og det genererede token som SMTP-adgangskode."
       ],
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
-        "Brug din MDM til at slette filen, eller kør ${ removeScriptLink } via din MDM's scriptkørsel. Enhver MDM, der understøtter udrulning af filer eller at køre scripts, fungerer."
+        "Brug dit MDM til at slette filen, eller kør ${ removeScriptLink } via dit MDM's scriptkørsel. Ethvert MDM, der understøtter udrulning af filer eller at køre scripts, fungerer."
       ],
       "User activated": [
         "Bruger aktiveret"
@@ -13670,7 +13677,7 @@
         "Brugerne opretter en backupadgangskode første gang de logger ind med single sign-on. Når de logger ind på en anden enhed senere kan de indtaste denne adgangskode for at gennemføre log-ind forsøget selv, uden at skulle bruge en enhed der allerede er logget ind eller hjælp fra en administrator."
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
-        "Bruger du en anden MDM? Enhver MDM, der understøtter aktivering af en konfigurationsprofil, fungerer. Se dokumentationen for din MDM for hvordan du uploader og tildeler den til dine enheder."
+        "Bruger du et andet MDM? Ethvert MDM, der understøtter aktivering af en konfigurationsprofil, fungerer. Se dokumentationen for dit MDM for hvordan du uploader og tildeler den til dine enheder."
       ],
       "Verification code sent.": [
         "Bekræftelseskode sendt."
@@ -14409,6 +14416,9 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "Du skal have en ${ MAIL_APP_NAME }-adresse for at bruge ${ toAppName }. Bed en af din organisations administratorer om at oprette en for dig."
       ]
     },
     "info": {
@@ -27956,6 +27966,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "You need a ${ BRAND_NAME } address": [
+        "Du skal bruge en ${ BRAND_NAME }-adresse"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28942,6 +28955,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brugeren har accepteret invitationen."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne bruger får administratorrettigheder næste gang de logger ind."
       ]
     },
     "Users table: badge": {

@@ -2311,6 +2311,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Upgrade to connect": [
+        "Modificați pentru conectare"
       ]
     },
     "action": {
@@ -2976,31 +2979,31 @@
         "/lună"
       ],
       "15 GB storage": [
-        "15 GiB de spațiu de stocare"
+        "15 GB de stocare"
       ],
       "2 individual accounts": [
-        "Două conturi individuale"
+        "2 conturi individuale"
       ],
       "2 TB of secure storage": [
-        "2 TiB de stocare securizată"
+        "2 TB de stocare securizată"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GiB de spațiu de stocare: de 40 de ori planul actual"
+        "200 GB spațiu de stocare: de 40x mai mult față de planul actual"
       ],
       "3 TB of secure storage": [
-        "3 TiB de stocare securizată"
+        "3 TB de stocare securizată"
       ],
       "500 GB of secure storage": [
-        "500 GiB de stocare securizată"
+        "500 GB de stocare securizată"
       ],
       "6 individual accounts": [
         "6 conturi individuale"
       ],
       "Built-in 2FA authenticator": [
-        "Autentificator A2F încorporat"
+        "Autentificator 2FA încorporat"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+        "Reducerile se calculează față de prețul lunar standard. Abonamentul dvs. se va reînnoi la tariful anual standard atunci când se încheie ciclul de facturare."
       ],
       "Online document editor": [
         "Editor de documente online"
@@ -3045,7 +3048,7 @@
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Cea mai mare reducere a anului"
+        "Cea mai mare promoție a anului"
       ],
       "Black Friday": [
         "Black Friday"
@@ -3054,7 +3057,7 @@
         "pentru 12 luni"
       ],
       "Last chance to save big": [
-        "Ultima șansă de a economisi semnificativ"
+        "Ultima șansă pentru o reducere mare"
       ],
       "Protect your entire tribe": [
         "Protejați-vă întreaga familie"
@@ -7247,6 +7250,14 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Contactele de recuperare ar trebui să fie persoane pe care le cunoașteți și le puteți contacta cu ușurință."
+      ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "I se va acorda acces automat **astăzi**, la ****${ formattedAccessibleAt }. Îi puteți respinge solicitarea sau îi puteți acorda acces imediat oricând."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Va primi acces automat peste **${ days } zi**, la **${ formattedAccessibleAt }**. Îi puteți respinge solicitarea sau îi puteți oferi acces imediat, în orice moment.",
+        "Va primi acces automat peste **${ days } zile**, la **${ formattedAccessibleAt }**. Îi puteți respinge solicitarea sau îi puteți oferi acces imediat, în orice moment.",
+        "Va primi acces automat peste **${ days } de zile**, la **${ formattedAccessibleAt }**. Îi puteți respinge solicitarea sau îi puteți oferi acces imediat, în orice moment."
       ]
     },
     "Empty group name": {
@@ -9242,13 +9253,13 @@
         "Erori"
       ],
       "In progress": [
-        "In desfășurare"
+        "În derulare"
       ],
       "Migrated": [
         "Migrat"
       ],
       "Not activated": [
-        "Neactivată"
+        "Neactivat"
       ],
       "Pending": [
         "În așteptare"
@@ -14534,6 +14545,21 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Anulați în termen de 30 de la achiziție și contactați ${ customerSupportLink } pentru a obține o rambursare."
+      ],
+      "More cards": [
+        "Mai multe carduri"
+      ],
+      "SEPA Bank transfer": [
+        "Transfer bancar SEPA"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "Pentru a utiliza ${ toAppName }, aveți nevoie de o adresă ${ MAIL_APP_NAME }. Un administrator al organizației vă poate crea una."
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Adresa v-a fost conectată. Vi se importă mesajele."
       ]
     },
     "info": {
@@ -25887,7 +25913,7 @@
     },
     "Table header": {
       "Activated": [
-        "Activată"
+        "Activat"
       ],
       "Estimated size": [
         "Mărime estimată"
@@ -28256,6 +28282,9 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "You need a ${ BRAND_NAME } address": [
+        "Aveți nevoie de o adresă ${ BRAND_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
