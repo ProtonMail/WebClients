@@ -1,15 +1,14 @@
 import type { LexicalEditor, NodeKey } from 'lexical'
 import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
-import { c } from 'ttag'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
 import ToolbarTooltip from '../../Toolbar/ToolbarTooltip'
 import { ShortcutLabel } from '../KeyboardShortcuts/ShortcutLabel'
 import { TOGGLE_SUGGESTION_MODE_COMMAND } from '../Suggestions/Commands'
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { useDocsUserMode } from '../../DocsPresentationProvider'
 import { EditorUserMode } from '../../contract/EditorUserMode'
-import { useDocsDependencies } from '../../DocsDependenciesProvider'
+import { useDocsDependencies, useDocsMessages } from '../../DocsDependenciesProvider'
 import { useViewportWidth } from '../../Layout/DocsLayout'
 
 // Proton's "small" breakpoint, at a 16px root font size.
@@ -25,6 +24,7 @@ export function FloatingQuickActions({
   onAddComment: () => void
 }): JSX.Element {
   const { suggestionsEnabled } = useDocsDependencies()
+  const messages = useDocsMessages().comments
   const userMode = useDocsUserMode()
   const isSuggestionMode = userMode === EditorUserMode.Suggest
 
@@ -69,9 +69,9 @@ export function FloatingQuickActions({
     updatePosition()
   }, [anchorKey, editor, updatePosition])
 
-  const addCommentLabel = c('Action').t`Add comment`
+  const addCommentLabel = messages.addComment
 
-  const suggestionToggleLabel = c('Action').t`Add suggestion`
+  const suggestionToggleLabel = messages.addSuggestion
 
   return (
     <div

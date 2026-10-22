@@ -3,12 +3,15 @@ import { useRef, useState } from 'react'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { DeleteCommentDialog } from './DeleteCommentDialog'
 import { DocsDependenciesProvider, type DocsDependencies } from '../../DocsDependenciesProvider'
+import { defaultDocsMessages } from '../../messages/defaultDocsMessages'
 
 const reportError = jest.fn()
 
 function DependenciesWrapper({ children }: PropsWithChildren) {
   return (
-    <DocsDependenciesProvider dependencies={{ reportError } as unknown as DocsDependencies}>
+    <DocsDependenciesProvider
+      dependencies={{ reportError, defaultMessages: defaultDocsMessages } as unknown as DocsDependencies}
+    >
       {children}
     </DocsDependenciesProvider>
   )

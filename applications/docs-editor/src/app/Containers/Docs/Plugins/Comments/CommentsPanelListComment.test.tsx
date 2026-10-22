@@ -6,6 +6,7 @@ import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { useCommentsContext } from './CommentsContext'
 import { DeleteCommentDialog, type DeleteCommentDialogOptions } from './DeleteCommentDialog'
 import { DocsDependenciesProvider, type DocsDependencies } from '../../DocsDependenciesProvider'
+import { defaultDocsMessages } from '../../messages/defaultDocsMessages'
 import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND } from '../Suggestions/Commands'
 
 const mockEditor = { dispatchCommand: jest.fn(() => true), focus: jest.fn() }
@@ -33,7 +34,9 @@ jest.mock('./CommentsComposer', () => ({
 
 function DependenciesWrapper({ children }: PropsWithChildren) {
   return (
-    <DocsDependenciesProvider dependencies={{ reportError: jest.fn() } as unknown as DocsDependencies}>
+    <DocsDependenciesProvider
+      dependencies={{ reportError: jest.fn(), defaultMessages: defaultDocsMessages } as unknown as DocsDependencies}
+    >
       {children}
     </DocsDependenciesProvider>
   )

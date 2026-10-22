@@ -1,6 +1,6 @@
-import { c } from 'ttag'
 import type { DocsCommentTime } from '../../contract/DocsCommentThread'
 import type { DocsDateFormat } from '../../contract/DocsDateFormat'
+import { useDocsMessages } from '../../DocsDependenciesProvider'
 import { commentDate, formatAbsoluteTime, formatRelativeTime, isNewerThan } from '../../Utils/commentTime'
 
 export type CommentTimeProps = {
@@ -10,13 +10,9 @@ export type CommentTimeProps = {
 }
 
 export function CommentTime({ createTime, languageCode, dateFormat }: CommentTimeProps) {
+  const messages = useDocsMessages().comments
   if (isNewerThan(createTime, 10, 'seconds')) {
-    return (
-      <span data-testid="comment-time-just-now">{
-        // translator: indicates the comment has been added less than 10 seconds ago
-        c('Info').t`Just now`
-      }</span>
-    )
+    return <span data-testid="comment-time-just-now">{messages.justNow}</span>
   }
 
   if (isNewerThan(createTime, 60, 'minutes')) {
