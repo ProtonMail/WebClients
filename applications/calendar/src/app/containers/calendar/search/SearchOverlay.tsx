@@ -14,9 +14,9 @@ import { Portal } from '@proton/atoms/Portal/Portal';
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { getCustomSizingClasses } from '@proton/components/helpers/getCustomSizingClasses';
 import useDropdownArrowNavigation from '@proton/components/hooks/useDropdownArrowNavigation';
-import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
-import useIsClosing from '@proton/components/hooks/useIsClosing';
+import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
+import useIsClosing from '@proton/hooks/useIsClosing';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

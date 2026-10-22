@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import type { CommanderItemInterface } from '@proton/components/components/commander/Commander';
-import type { Hotkey, HotkeyTuple } from '@proton/components/hooks/useHotkeys';
+import type { Hotkey, HotkeyTuple } from '@proton/hooks/useHotkeys';
 import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { getCategoryIconComponent } from '@proton/mail/features/categoriesView/CategoryIcon';
 import { getCategoryCommanderKeyboardShortcut } from '@proton/mail/features/categoriesView/categoriesHelpers';

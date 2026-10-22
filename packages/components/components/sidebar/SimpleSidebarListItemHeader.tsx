@@ -1,11 +1,11 @@
 import type { ReactNode, Ref } from 'react';
 import { useRef } from 'react';
 
+import { type HotkeyTuple, useHotkeys } from '@proton/hooks/useHotkeys';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { type HotkeyTuple, useHotkeys } from '../../hooks/useHotkeys';
 import SidebarListItem from './SidebarListItem';
 
 interface Props {

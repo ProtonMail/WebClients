@@ -3,11 +3,10 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import debounce from 'lodash/debounce';
 
+import { equivalentReducer } from '@proton/hooks/useElementRect';
 import useRightToLeft from '@proton/hooks/useRightToLeft';
 import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
-
-import { equivalentReducer } from '../../hooks/useElementRect';
 
 import './Tabs.scss';
 

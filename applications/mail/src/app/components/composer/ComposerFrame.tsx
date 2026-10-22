@@ -5,8 +5,8 @@ import { logger } from '@protontech/logger';
 
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { useHandler } from '@proton/components/hooks/useHandler';
 import useWindowSize from '@proton/components/hooks/useWindowSize';
+import { useHandler } from '@proton/hooks/useHandler';
 import { getHasAssistantStatus } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';

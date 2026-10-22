@@ -15,7 +15,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { useHandler } from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/hooks/useHandler';
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';

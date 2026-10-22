@@ -6,9 +6,9 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
-import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
-import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import useLocalState from '@proton/components/hooks/useLocalState';
+import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import { useFolders, useLabels, useSystemFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -27,7 +27,6 @@ import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLoca
 import { useApplyLabelsToAll } from '../../hooks/actions/label/useApplyLabelsToAll';
 import { MoveAllType, useMoveAllToFolder } from '../../hooks/actions/move/useMoveAllToFolder';
 import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
-
 import { LabelActionsContextProvider } from './EditLabelContext';
 import { MailSidebarCollapsedButton } from './MailSidebarCollapsedButton';
 import { MailSidebarCustomView } from './MailSidebarCustomView';

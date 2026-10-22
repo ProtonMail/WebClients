@@ -4,8 +4,7 @@ import { Fragment, forwardRef, useEffect, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
-
-import useElementRect from '../../../hooks/useElementRect';
+import useElementRect from '@proton/hooks/useElementRect';
 
 const getIsValidValue = (value: string, type: TotpInputProps['type']) => {
     if (type === 'number') {

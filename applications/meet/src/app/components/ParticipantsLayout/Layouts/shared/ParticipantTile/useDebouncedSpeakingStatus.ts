@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useIsSpeaking } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 
-import { useHandler } from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/hooks/useHandler';
 
 export const useDebouncedSpeakingStatus = (participant: Participant) => {
     const isCurrentlySpeaking = useIsSpeaking(participant);

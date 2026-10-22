@@ -9,12 +9,12 @@ import { Slider } from '@proton/atoms/Slider/Slider';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import getVariableFromThemeColor from '@proton/colors/get-variable-from-theme-color';
 import { ThemeColor } from '@proton/colors/types';
+import useElementRect from '@proton/hooks/useElementRect';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import generateUID from '@proton/utils/generateUID';
 
 import { InputField } from '../../components/v2/field/InputField';
-import useElementRect from '../../hooks/useElementRect';
 
 interface Props {
     range: ReturnType<typeof getStorageRange>;

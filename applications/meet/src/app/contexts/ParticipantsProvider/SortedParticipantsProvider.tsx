@@ -3,7 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo } from 'reac
 import { useParticipants, useRoomContext } from '@livekit/components-react';
 import { type Participant, RoomEvent } from 'livekit-client';
 
-import { useHandler } from '@proton/components/hooks/useHandler';
+import { useHandler } from '@proton/hooks/useHandler';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { setAgentIdentities } from '@proton/meet/store/slices/participants/agentParticipantsSlice';

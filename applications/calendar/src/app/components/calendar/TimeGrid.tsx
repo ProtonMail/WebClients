@@ -8,7 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import useElementRect from '@proton/components/hooks/useElementRect';
+import useElementRect from '@proton/hooks/useElementRect';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';

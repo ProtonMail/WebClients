@@ -8,10 +8,10 @@ import { c } from 'ttag';
 import type { InputProps } from '@proton/atoms/Input/Input';
 import { Input } from '@proton/atoms/Input/Input';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import { useHotkeys } from '@proton/hooks/useHotkeys';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
 
-import { useHotkeys } from '../../../hooks/useHotkeys';
 import Dropdown from '../../dropdown/Dropdown';
 import LocalizedMiniCalendar from '../../miniCalendar/LocalizedMiniCalendar';
 

@@ -4,8 +4,8 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 
 import throttle from 'lodash/throttle';
 
-import useElementRect from '@proton/components/hooks/useElementRect';
-import { useHandler } from '@proton/components/hooks/useHandler';
+import useElementRect from '@proton/hooks/useElementRect';
+import { useHandler } from '@proton/hooks/useHandler';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import clamp from '@proton/utils/clamp';
 
