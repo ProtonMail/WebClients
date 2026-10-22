@@ -8010,6 +8010,9 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Votre période d’essai gratuite est terminée. Abonnez-vous dès maintenant pour maintenir l’accès de votre équipe sans interruption et assurer la sécurité de vos comptes."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Vous avez une facture ouverte ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -15766,7 +15769,7 @@
         "Black Friday"
       ],
       "Get the deal": [
-        "Profitez de l'offre"
+        "Profitez de l’offre"
       ]
     },
     "bfcampaign2026: Info": {
@@ -15777,13 +15780,13 @@
         "2 comptes individuels"
       ],
       "2 TB of secure storage": [
-        "2 To d'espace de stockage sécurisé"
+        "2 To d’espace de stockage sécurisé"
       ],
       "3 TB of secure storage": [
-        "3 To d'espace de stockage sécurisé"
+        "3 To d’espace de stockage sécurisé"
       ],
       "500 GB of secure storage": [
-        "500 Go d'espace de stockage sécurisé"
+        "500 Go d’espace de stockage sécurisé"
       ],
       "6 individual accounts": [
         "6 comptes individuels"
@@ -15792,13 +15795,13 @@
         "Protection avancée contre les cybermenaces"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+        "Les remises sont calculées sur la base du tarif mensuel standard. Votre abonnement se renouvellera au tarif annuel standard à la fin du cycle de facturation."
       ],
       "15 GB storage": [
-        "15 Go d'espace de stockage"
+        "15 Go de stockage"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 Go d'espace de stockage : 40x votre abonnement actuel"
+        "200 Go d’espace de stockage : 40 fois votre abonnement actuel"
       ],
       "Built-in 2FA authenticator": [
         "Authentificateur A2F intégré"
@@ -15807,13 +15810,13 @@
         "Éditeur de documents en ligne"
       ],
       "Recover previous file versions": [
-        "Récupérez les versions précédentes des fichiers"
+        "Récupérez les versions précédentes de vos fichiers"
       ],
       "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
+        "Une protection plus forte contre les cybermenaces"
       ],
       "Unlimited folders, labels, and filters": [
-        "Des dossiers, labels et filtres illimités"
+        "Dossiers, libellés et filtres illimités."
       ],
       "Use your own email domain": [
         "Utilisez votre propre domaine de messagerie"
@@ -15829,17 +15832,17 @@
         "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
       ],
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } Premium"
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Family, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Mail first": {
@@ -15847,7 +15850,7 @@
         "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, et ${ CALENDAR_SHORT_APP_NAME } Premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } Premium"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Title": {
@@ -15855,13 +15858,13 @@
         "pour 12 mois"
       ],
       "Biggest sale of the year": [
-        "Les plus grosses soldes de l'année"
+        "La plus belle offre de l’année"
       ],
       "Black Friday": [
         "Black Friday"
       ],
       "Last chance to save big": [
-        "Dernière chance de faire de grosses économies"
+        "Dernière chance de faire de belles économies"
       ],
       "Protect your entire tribe": [
         "Protégez toute votre tribu"
@@ -15875,7 +15878,7 @@
     },
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } Premium"
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "VPN B2B cancellation reason": {
