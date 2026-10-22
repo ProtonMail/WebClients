@@ -21,10 +21,10 @@
         "@types/node": "catalog:",
         "@types/toastify-js": "^1.12.4",
         "@types/webpack-env": "catalog:",
-        "@typescript/native": "npm:typescript@^7.0.2",
-        "oxlint": "1.87.0",
-        "oxlint-tsgolint": "7.0.2004",
-        "typescript": "npm:@typescript/typescript6@^6.0.2",
+        "@typescript/native": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
+        "typescript": "catalog:",
         "vite": "^8.3.4"
     }
 }

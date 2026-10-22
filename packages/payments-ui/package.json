@@ -104,10 +104,10 @@
         "@proton/metrics": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
         "@proton/test-api": "workspace:^",
-        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "^15.0.7",
-        "@testing-library/react-hooks": "^8.0.1",
-        "@testing-library/user-event": "^14.6.8",
+        "@testing-library/react-hooks": "catalog:",
+        "@testing-library/user-event": "catalog:",
         "@types/history": "catalog:",
         "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
@@ -117,11 +117,11 @@
         "@types/react-router": "^5.1.20",
         "@types/react-router-dom": "catalog:",
         "@types/webpack-env": "catalog:",
-        "@typescript/native": "npm:typescript@^7.0.2",
-        "eslint": "^10.12.0",
+        "@typescript/native": "catalog:",
+        "eslint": "catalog:",
         "history": "^4.10.1",
-        "jest": "^30.5.2",
+        "jest": "catalog:",
         "react-router": "^5.3.4",
-        "typescript": "npm:@typescript/typescript6@^6.0.2"
+        "typescript": "catalog:"
     }
 }

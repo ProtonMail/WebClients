@@ -16,9 +16,9 @@
         "@proton/oxlint-config": "workspace:^",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
-        "@typescript/native": "npm:typescript@^7.0.2",
-        "oxlint": "1.87.0",
-        "oxlint-tsgolint": "7.0.2004",
-        "typescript": "npm:@typescript/typescript6@^6.0.2"
+        "@typescript/native": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
+        "typescript": "catalog:"
     }
 }
