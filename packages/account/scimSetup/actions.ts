@@ -2,22 +2,24 @@ import type { ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
+import { scheduleOrgKeyDemotions } from '@proton/shared/lib/api/members';
 import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Group } from '@proton/shared/lib/interfaces/Group';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
-import type { MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces/Member';
+import type { Member, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces/Member';
+import chunk from '@proton/utils/chunk';
 
 import { type GroupMembersState, groupMembersThunk } from '../groupMembers';
 import { type GroupsState, updateGroup } from '../groups';
 import { createKeysForGroup } from '../groups/actions';
 import { addGroupMemberKeysThunk } from '../groups/addGroupMember';
 import type { KtState } from '../kt';
-import type { MembersState } from '../members';
+import { type MembersState, getMemberRolesBatch, invalidateMemberRoles } from '../members';
 import { unprivatizeMembersManual } from '../members/unprivatizeMembers';
 import type { OrganizationKeyState } from '../organizationKey';
 import type { OrganizationRolesState } from '../organizationRoles';
-import { ItemStatus, Phase } from './index';
+import { ItemStatus, OrgKeyDemotionApproval, Phase } from './index';
 
 type RequiredState = GroupsState &
     GroupMembersState &
@@ -46,16 +48,28 @@ export type ScimProgress =
     | { type: 'userStatuses'; statuses: Record<string, ItemStatus> }
     | { type: 'groupStatus'; groupID: string; status: ItemStatus }
     | { type: 'groupMemberStatus'; memberID: string; status: ItemStatus }
+    | { type: 'orgKeyDemotion'; approval: OrgKeyDemotionApproval }
     | { type: 'error'; error: unknown };
 
 interface ScimApprovalDeps {
     usersToApprove: MemberReadyForManualUnprivatization[];
     groupsToApprove: Group[];
     pendingMembersByGroup: Record<string, GroupMember[]>;
+    membersToDemote: Member[];
     api: Api;
     getMemberPublicKeys: GetMemberPublicKeys;
     dispatch: ScimDispatch;
 }
+
+/** Re-reads the org key demotion flags of the given members, which nothing else refetches when a task settles. */
+export const refreshOrgKeyDemotionState =
+    ({ members }: { members: Member[] }) =>
+    async (dispatch: ScimDispatch) => {
+        members.forEach((member) => dispatch(invalidateMemberRoles({ member })));
+        await dispatch(getMemberRolesBatch({ members }));
+    };
+
+const ORG_KEY_DEMOTIONS_CHUNK_SIZE = 1000;
 
 async function* processScimGroup(
     group: Group,
@@ -108,7 +122,7 @@ async function* processScimGroup(
 
 // TODO: Add error handling - now we just move back item status to "Waiting"
 export async function* approveScimChanges(deps: ScimApprovalDeps): AsyncGenerator<ScimProgress> {
-    const { usersToApprove, groupsToApprove, pendingMembersByGroup, dispatch } = deps;
+    const { usersToApprove, groupsToApprove, pendingMembersByGroup, membersToDemote, api, dispatch } = deps;
 
     // Set initial statuses to user, groups and group members
     yield { type: 'phase', phase: Phase.Working };
@@ -124,6 +138,21 @@ export async function* approveScimChanges(deps: ScimApprovalDeps): AsyncGenerato
     };
 
     try {
+        if (membersToDemote.length) {
+            yield { type: 'orgKeyDemotion', approval: OrgKeyDemotionApproval.Requested };
+
+            try {
+                for (const chunkToDemote of chunk(membersToDemote, ORG_KEY_DEMOTIONS_CHUNK_SIZE)) {
+                    await api(scheduleOrgKeyDemotions(chunkToDemote.map(({ ID }) => ID)));
+                }
+            } catch (e) {
+                yield { type: 'orgKeyDemotion', approval: OrgKeyDemotionApproval.None };
+                throw e;
+            }
+            await dispatch(refreshOrgKeyDemotionState({ members: membersToDemote }));
+            yield { type: 'orgKeyDemotion', approval: OrgKeyDemotionApproval.Enqueued };
+        }
+
         if (usersToApprove.length) {
             await dispatch(unprivatizeMembersManual({ membersToUnprivatize: usersToApprove }));
             yield {

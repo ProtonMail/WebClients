@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { useGetGroupMembers } from '@proton/account/groupMembers/hooks';
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
@@ -7,7 +7,9 @@ import { useMembers } from '@proton/account/members/hooks';
 import { useMemberRoles } from '@proton/account/members/useMemberRoles';
 import {
     ItemStatus,
+    OrgKeyDemotionApproval,
     Phase,
+    getOrgKeyDemotionStatus,
     selectMembersRequiringOrgKeyDemotion,
     selectPendingScimGroups,
     selectPendingScimMembersByGroup,
@@ -18,7 +20,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { Group } from '@proton/shared/lib/interfaces/Group';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
-import type { MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces/Member';
+import type { EnhancedMember, MemberReadyForManualUnprivatization } from '@proton/shared/lib/interfaces/Member';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useErrorHandler from '../../hooks/useErrorHandler';
@@ -42,6 +44,11 @@ export interface PendingGroupItem {
     status: ItemStatus;
 }
 
+export interface PendingCleanUpItem {
+    member: EnhancedMember;
+    status: ItemStatus;
+}
+
 const useScimSetupData = () => {
     const isEnabled = useFlag('UserGroupsScimGroups');
 
@@ -49,6 +56,7 @@ const useScimSetupData = () => {
     const [userStatuses, setUserStatuses] = useState<Record<string, ItemStatus>>({});
     const [groupStatuses, setGroupStatuses] = useState<Record<string, ItemStatus>>({});
     const [groupMemberStatuses, setGroupMemberStatuses] = useState<Record<string, ItemStatus>>({});
+    const [orgKeyDemotionApproval, setOrgKeyDemotionApproval] = useState(OrgKeyDemotionApproval.None);
 
     const pendingUsers = useSelector(selectPendingScimUsers);
     const pendingGroups = useSelector(selectPendingScimGroups);
@@ -67,6 +75,14 @@ const useScimSetupData = () => {
     const handleError = useErrorHandler();
 
     const { getMemberPublicKeys } = useGroupKeys();
+
+    const orgKeyDemotionStatuses = useMemo(
+        () =>
+            Object.fromEntries(
+                (members ?? []).map((member) => [member.ID, getOrgKeyDemotionStatus(member, orgKeyDemotionApproval)])
+            ),
+        [members, orgKeyDemotionApproval]
+    );
 
     // TODO: add a way to know how many group members need to be activated per group
     useEffect(() => {
@@ -99,6 +115,9 @@ const useScimSetupData = () => {
             case 'groupMemberStatus':
                 setGroupMemberStatuses((prev) => ({ ...prev, [update.memberID]: update.status }));
                 break;
+            case 'orgKeyDemotion':
+                setOrgKeyDemotionApproval(update.approval);
+                break;
             case 'error':
                 handleError(update.error);
                 break;
@@ -107,18 +126,26 @@ const useScimSetupData = () => {
 
     const approvePendingChanges = async (
         usersToApprove: MemberReadyForManualUnprivatization[],
-        groupsToApprove: Group[]
+        groupsToApprove: Group[],
+        membersToDemote: EnhancedMember[] = []
     ) => {
         for await (const update of approveScimChanges({
             usersToApprove,
             groupsToApprove,
             pendingMembersByGroup,
+            membersToDemote,
             api,
             getMemberPublicKeys,
             dispatch,
         })) {
             applyScimProgress(update);
         }
+    };
+
+    // Lets a reopened modal approve again, e.g. to retry clean-up actions that failed
+    const resetApproval = () => {
+        setPhase((previousPhase) => (previousPhase === Phase.Working ? previousPhase : Phase.Idle));
+        setOrgKeyDemotionApproval(OrgKeyDemotionApproval.None);
     };
 
     return {
@@ -132,6 +159,8 @@ const useScimSetupData = () => {
         groupStatuses,
         groupMemberStatuses,
         approvePendingChanges,
+        orgKeyDemotionStatuses,
+        resetApproval,
     };
 };
 
