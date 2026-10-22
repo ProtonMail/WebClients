@@ -33,11 +33,19 @@ import monitoringIcon from '@proton/styles/assets/img/onboarding/mail_onboarding
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
+import { ONBOARDING_SETTINGS, ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
 type FeatureID = 'aliases' | 'monitoring' | 'autoDelete';
+
+const FEATURE_SETTINGS: Record<FeatureID, ONBOARDING_SETTINGS> = {
+    aliases: ONBOARDING_SETTINGS.shortDomain,
+    monitoring: ONBOARDING_SETTINGS.darkWebMonitoring,
+    autoDelete: ONBOARDING_SETTINGS.autoDelete,
+};
 
 interface Feature {
     id: FeatureID;
@@ -145,6 +153,7 @@ export const isActivatePremiumFeaturesStepEligible: OnboardingStepEligibleCallba
 const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const api = useApi();
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
+    const { trackSettingToggled, trackStepCompleted } = useOnboardingTracking();
     const [addresses, addressesLoading] = useAddresses();
     const [userSettings, userSettingsLoading] = useUserSettings();
     const [mailSettings, mailSettingsLoading] = useMailSettings();
@@ -170,12 +179,16 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
     const loadingDeps = addressesLoading || userSettingsLoading || mailSettingsLoading || loadingDependencies;
     const hasAllItemsActivated = Object.values(activeFeatures).every(Boolean);
 
-    const handleToggleFeature = (id: FeatureID) => (isChecked: boolean) =>
+    const handleToggleFeature = (id: FeatureID) => (isChecked: boolean) => {
+        trackSettingToggled(ONBOARDING_STEPS.premiumFeatures, FEATURE_SETTINGS[id], isChecked);
         setCheckedFeatures((prev) => ({ ...prev, [id]: isChecked }));
+    };
 
     const hasNoItemsChecked = !Object.values(checkedFeatures).some(Boolean);
 
     const handleNext = () => {
+        trackStepCompleted(ONBOARDING_STEPS.premiumFeatures);
+
         const promises: Promise<any>[] = [
             sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.premium_features, {
                 feature_auto_delete: checkedFeatures.autoDelete ? 'yes' : 'no',
@@ -209,6 +222,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
 
     return (
         <OnboardingStep>
+            <TrackOnboardingStepLoad step={ONBOARDING_STEPS.premiumFeatures} />
             <OnboardingContent
                 title={
                     // translator: Keep this title short. Avoid making char length bigger than english one.

@@ -8,6 +8,8 @@ import type { OnboardingStepRenderCallback } from '@proton/components/containers
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 
+import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
+import { ONBOARDING_ACTIONS, ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -22,6 +24,7 @@ const NewOnboardingOrganizationStep = (props: OnboardingStepRenderCallback) => {
     const [organization] = useOrganization();
     const hasFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
     const goToSettings = useSettingsLink();
+    const { trackStepInteracted, trackStepCompleted } = useOnboardingTracking();
 
     const title = hasFamilyOrg
         ? c('familyOffer_2023:Onboarding Proton').t`Set up your family account`
@@ -31,8 +34,21 @@ const NewOnboardingOrganizationStep = (props: OnboardingStepRenderCallback) => {
         ? c('familyOffer_2023:Onboarding Proton').t`Invite members and get everything up and running.`
         : c('Onboarding Proton').t`Link your domain name and create accounts for all members of your organization.`;
 
+    const handleStartSetup = () => {
+        trackStepInteracted(ONBOARDING_STEPS.organization, ONBOARDING_ACTIONS.startOrgSetup);
+        trackStepCompleted(ONBOARDING_STEPS.organization);
+        goToSettings('/multi-user-support', undefined, true);
+        props.onNext();
+    };
+
+    const handleSkip = () => {
+        trackStepCompleted(ONBOARDING_STEPS.organization);
+        props.onNext();
+    };
+
     return (
         <OnboardingStep>
+            <TrackOnboardingStepLoad step={ONBOARDING_STEPS.organization} />
             <OnboardingContent title={title} description={description} className="mb-12 text-center">
                 <div className="py-12">
                     <div>
@@ -43,20 +59,14 @@ const NewOnboardingOrganizationStep = (props: OnboardingStepRenderCallback) => {
                             style={{ '--max-w-custom': '15em' }}
                         />
                     </div>
-                    <Button
-                        color="norm"
-                        onClick={() => {
-                            goToSettings('/multi-user-support', undefined, true);
-                            props.onNext();
-                        }}
-                    >
+                    <Button color="norm" onClick={handleStartSetup}>
                         {c('Action').t`Start setup`}
                     </Button>
                 </div>
             </OnboardingContent>
             <footer>
                 <footer>
-                    <Button size="large" fullWidth onClick={props.onNext}>
+                    <Button size="large" fullWidth onClick={handleSkip}>
                         {c('Action').t`Skip`}
                     </Button>
                 </footer>
