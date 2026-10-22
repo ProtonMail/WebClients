@@ -1,5 +1,7 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import { Result, type DocumentRole, type NodeMeta } from '@proton/docs-shared'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
+import { Result } from '@proton/docs-shared/Result'
 import { getErrorString } from '../Util/GetErrorString'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { CacheService } from '../Services/CacheService'
@@ -24,10 +26,7 @@ export class GetNodePermissions implements UseCaseInterface<GetNodePermissionsRe
     private unleashClient: UnleashClient,
   ) {}
 
-  async execute(
-    nodeMeta: NodeMeta,
-    options: { useCache: boolean },
-  ): Promise<Result<GetNodePermissionsResult>> {
+  async execute(nodeMeta: NodeMeta, options: { useCache: boolean }): Promise<Result<GetNodePermissionsResult>> {
     try {
       if (options.useCache) {
         const cachedPermissions = await this.cacheService.getCachedValue({

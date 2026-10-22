@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
-import { useNetworkFees } from '@proton/wallet/store/hooks';
+import { useNetworkFees } from '@proton/wallet/store/hooks/useNetworkFees';
 
 import type { TxBuilderHelper } from './useTxBuilder';
 

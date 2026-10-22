@@ -5,7 +5,7 @@ import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { sendErrorReport } from '../../../utils/errorHandling';
-import { useErrorHandler } from '../../_utils';
+import { useErrorHandler } from '../../_utils/errorHandler';
 import type { DecryptedLink, EncryptedLink } from '../interface';
 import useLinks from '../useLinks';
 import type { Link } from '../useLinksState';

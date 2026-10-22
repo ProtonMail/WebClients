@@ -1,6 +1,6 @@
 import type { NotificationsManager } from '@proton/app-context/notifications/manager'
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
-import type { Application } from '@proton/docs-core'
+import type { Application } from '@proton/docs-core/Application/Application'
 import {
   type DriveEvent,
   DriveEventType,

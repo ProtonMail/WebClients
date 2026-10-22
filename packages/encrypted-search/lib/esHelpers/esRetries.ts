@@ -10,7 +10,8 @@ import { readRetries, setRetries } from '../esIDB/configObjectStore';
 import { executeContentOperations } from '../esIDB/content';
 import { openESDB } from '../esIDB/indexedDB';
 import { readMetadataBatch } from '../esIDB/metadata';
-import type { EncryptedItemWithInfo, InternalESCallbacks, RetryObject } from '../models';
+import type { InternalESCallbacks } from '../models/esCallbacks';
+import type { EncryptedItemWithInfo, RetryObject } from '../models/interfaces';
 import { isObjectEmpty, serializeAndEncryptItem } from './esUtils';
 
 /**
@@ -30,7 +31,7 @@ const handleMaxRetriesReached = (retryID: string, retryMap?: Map<string, RetryOb
  * Increase the number of retries by one and set a new retryTime accordingly
  * with exponential backoff capped at 24 hours
  */
-export const updateRetryObject = ({
+const updateRetryObject = ({
     retry,
     retryID,
     retryMap,
@@ -86,7 +87,7 @@ export const addRetry = async (userID: string, retryID: string) => {
  * 1. Have been in the queue for more than 2 days (based on initial retryTime)
  * 2. Have reached max retry attempts
  */
-export const getRetries = async (userID: string) => {
+const getRetries = async (userID: string) => {
     const retryMap = await readRetries(userID);
     const now = +serverTime();
 

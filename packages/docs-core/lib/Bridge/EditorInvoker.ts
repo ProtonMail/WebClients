@@ -1,19 +1,18 @@
-import type {
-  EditorToClientReplyMessage,
-  ClientRequiresEditorMethods,
-  ParamsExcludingFunctions,
-  ClientToEditorInvokationMessage,
-  PendingMessage,
-  RtsMessagePayload,
-  DataTypesThatDocumentCanBeExportedAs,
-  DocumentRoleType,
-  EditorInitializationConfig,
-  YjsState,
-  SyncedEditorStateValues,
-  SyncedEditorEvent,
-  SheetImportData,
-} from '@proton/docs-shared'
-import { EditorBridgeMessageType, BridgeOriginProvider, GenerateUUID } from '@proton/docs-shared'
+import type { ClientRequiresEditorMethods } from '@proton/docs-shared/Bridge/ClientRequiresEditorMethods'
+import type { ClientToEditorInvokationMessage } from '@proton/docs-shared/Bridge/ClientToEditorMessage'
+import type { EditorToClientReplyMessage } from '@proton/docs-shared/Bridge/EditorToClientMessage'
+import type { PendingMessage } from '@proton/docs-shared/Bridge/PendingMessage'
+import type { ParamsExcludingFunctions } from '@proton/docs-shared/Bridge/Utils'
+import type { DocumentRoleType } from '@proton/docs-shared/Doc/DocumentRole'
+import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
+import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
+import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'
+import type { SheetImportData } from '@proton/docs-shared/SheetImportData'
+import type { SyncedEditorStateValues, SyncedEditorEvent } from '@proton/docs-shared/State/SyncedEditorState'
+import type { YjsState } from '@proton/docs-shared/YjsState'
+import { BridgeOriginProvider } from '@proton/docs-shared/Bridge/BridgeOriginProvider'
+import { EditorBridgeMessageType } from '@proton/docs-shared/Bridge/EditorBridgeMessageType'
+import { GenerateUUID } from '@proton/docs-shared/GenerateUuid'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { SerializedEditorState } from 'lexical'
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'

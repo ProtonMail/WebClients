@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-import { useFloatingEllipsisEventBasedUpdater } from './hooks';
+import { useFloatingEllipsisEventBasedUpdater } from './hooks/useFloatingEllipsisEventBasedUpdater';
 
 const FloatingEllipsis = ({ visibilityControlRef }: { visibilityControlRef: React.RefObject<HTMLDivElement> }) => {
     const elem = useRef<HTMLDivElement>(null);

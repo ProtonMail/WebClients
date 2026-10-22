@@ -7,7 +7,7 @@ import { HttpResponse, type RequestHandler, http } from 'msw';
 import { setupServer } from 'msw/node';
 
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';

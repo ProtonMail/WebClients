@@ -1,9 +1,6 @@
-import type {
-    ESItem,
-    ESStatus,
-    EncryptedSearchFunctions,
-    NormalizedSearchParams,
-} from '@proton/encrypted-search/models';
+import type { EncryptedSearchFunctions } from '@proton/encrypted-search/models/esFunctions';
+import type { ESItem, ESStatus } from '@proton/encrypted-search/models/interfaces';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 

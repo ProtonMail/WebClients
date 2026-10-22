@@ -1,4 +1,4 @@
-import type { DecryptedNode } from '@proton/docs-shared'
+import type { DecryptedNode } from '@proton/docs-shared/DecryptedNode'
 import { SupportedProtonDocsMimeTypes } from '@proton/shared/lib/drive/constants'
 
 export const getNodeNameWithoutExtension = (node: DecryptedNode) => {

@@ -1,4 +1,4 @@
-import type { DecryptedLink } from '../../store';
+import type { DecryptedLink } from '../../store/_links/interface';
 import type { DecryptedNode } from './interface';
 
 /**

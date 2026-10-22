@@ -1,6 +1,6 @@
 import type { WasmAccount, WasmApiWalletAccount, WasmWallet } from '@proton/andromeda';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 export type AccountWithChainData = {
     account: WasmAccount;

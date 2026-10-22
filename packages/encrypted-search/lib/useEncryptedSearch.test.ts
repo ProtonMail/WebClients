@@ -3,8 +3,10 @@ import { renderHook } from '@testing-library/react-hooks';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { INDEXING_STATUS } from './constants';
-import * as esHelpers from './esHelpers';
-import * as esIDB from './esIDB';
+import { getIndexKey } from './esHelpers/esBuild';
+import { readEnabled, readLimited } from './esIDB/configObjectStore';
+import { deleteESDB, hasESDB } from './esIDB/indexedDB';
+import { contentIndexingProgress, metadataIndexingProgress } from './esIDB/indexingProgress';
 import { useEncryptedSearch } from './useEncryptedSearch';
 
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
@@ -41,10 +43,6 @@ jest.mock('@proton/account/user/hooks', () => ({
     useUser: jest.fn().mockReturnValue([{ ID: 'userID' }, false]),
 }));
 
-jest.mock('@proton/account/addresses/hooks', () => ({
-    useAddresses: jest.fn().mockReturnValue([[], false]),
-}));
-
 jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
 }));
@@ -59,15 +57,23 @@ jest.mock('./useEncryptedSearchStatus', () => ({
     useEncryptedSearchStatus: jest.fn().mockReturnValue([{}, jest.fn()]),
 }));
 
-jest.mock('./esIDB', () => {
-    const actual = jest.requireActual('./esIDB');
+jest.mock('./esIDB/indexedDB', () => ({
+    ...jest.requireActual('./esIDB/indexedDB'),
+    hasESDB: jest.fn(),
+    deleteESDB: jest.fn(),
+}));
+
+jest.mock('./esIDB/configObjectStore', () => ({
+    ...jest.requireActual('./esIDB/configObjectStore'),
+    readEnabled: jest.fn(),
+    readLimited: jest.fn(),
+}));
+
+jest.mock('./esIDB/indexingProgress', () => {
+    const actual = jest.requireActual('./esIDB/indexingProgress');
 
     return {
         ...actual,
-        hasESDB: jest.fn(),
-        deleteESDB: jest.fn(),
-        readEnabled: jest.fn(),
-        readLimited: jest.fn(),
         metadataIndexingProgress: {
             ...actual.metadataIndexingProgress,
             read: jest.fn(),
@@ -79,15 +85,15 @@ jest.mock('./esIDB', () => {
     };
 });
 
-jest.mock('./esHelpers', () => ({
-    ...jest.requireActual('./esHelpers'),
+jest.mock('./esHelpers/esBuild', () => ({
+    ...jest.requireActual('./esHelpers/esBuild'),
     getIndexKey: jest.fn(),
 }));
 
 describe('useEncryptedSearch', () => {
     describe('correctDecryptionErrors', () => {
         it('should return 0 if there is no database', async () => {
-            jest.mocked(esIDB.hasESDB).mockResolvedValue(false);
+            jest.mocked(hasESDB).mockResolvedValue(false);
 
             const { result } = renderHook(() =>
                 useEncryptedSearch({
@@ -103,7 +109,7 @@ describe('useEncryptedSearch', () => {
 
     describe('initializeES', () => {
         it('should return if there is no database', async () => {
-            jest.mocked(esIDB.hasESDB).mockResolvedValue(false);
+            jest.mocked(hasESDB).mockResolvedValue(false);
 
             const { result } = renderHook(() =>
                 useEncryptedSearch({
@@ -117,8 +123,8 @@ describe('useEncryptedSearch', () => {
         });
 
         it('should delete the database if metadata progress is missing (zombie DB)', async () => {
-            jest.mocked(esIDB.hasESDB).mockResolvedValue(true);
-            jest.mocked(esIDB.metadataIndexingProgress.read).mockResolvedValue(undefined);
+            jest.mocked(hasESDB).mockResolvedValue(true);
+            jest.mocked(metadataIndexingProgress.read).mockResolvedValue(undefined);
 
             const { result } = renderHook(() =>
                 useEncryptedSearch({
@@ -129,7 +135,7 @@ describe('useEncryptedSearch', () => {
 
             const returnValue = await result.current.initializeES();
             expect(returnValue).toBe(undefined);
-            expect(esIDB.deleteESDB).toHaveBeenCalled();
+            expect(deleteESDB).toHaveBeenCalled();
             expect(traceInitiativeError).toHaveBeenCalledWith(
                 expect.anything(),
                 expect.objectContaining({ message: 'initializeES - zombie DB deleted (no metadata progress)' })
@@ -141,14 +147,14 @@ describe('useEncryptedSearch', () => {
     // call returns, because resuming or restarting an index only returns once that index is built.
     describe('initializeES - onStateSettled', () => {
         const setupIndexedDB = (contentStatus: INDEXING_STATUS) => {
-            jest.mocked(esIDB.hasESDB).mockResolvedValue(true);
-            jest.mocked(esIDB.metadataIndexingProgress.read).mockResolvedValue({
+            jest.mocked(hasESDB).mockResolvedValue(true);
+            jest.mocked(metadataIndexingProgress.read).mockResolvedValue({
                 status: INDEXING_STATUS.ACTIVE,
             } as any);
-            jest.mocked(esIDB.contentIndexingProgress.read).mockResolvedValue({ status: contentStatus } as any);
-            jest.mocked(esIDB.readEnabled).mockResolvedValue(true);
-            jest.mocked(esIDB.readLimited).mockResolvedValue(false);
-            jest.mocked(esHelpers.getIndexKey).mockResolvedValue({} as CryptoKey);
+            jest.mocked(contentIndexingProgress.read).mockResolvedValue({ status: contentStatus } as any);
+            jest.mocked(readEnabled).mockResolvedValue(true);
+            jest.mocked(readLimited).mockResolvedValue(false);
+            jest.mocked(getIndexKey).mockResolvedValue({} as CryptoKey);
         };
 
         const initialize = async (onStateSettled: jest.Mock) => {
@@ -192,7 +198,7 @@ describe('useEncryptedSearch', () => {
         // Nothing was concluded, so nothing is reported: the caller is expected to settle on the call
         // returning instead (see `EncryptedSearchProvider`).
         it('should report nothing when there is no database', async () => {
-            jest.mocked(esIDB.hasESDB).mockResolvedValue(false);
+            jest.mocked(hasESDB).mockResolvedValue(false);
             const onStateSettled = jest.fn();
 
             await initialize(onStateSettled);

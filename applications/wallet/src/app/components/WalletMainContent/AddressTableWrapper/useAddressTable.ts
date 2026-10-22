@@ -8,8 +8,8 @@ import {
 } from '@proton/andromeda';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
-import { useBitcoinAddressPool } from '@proton/wallet/store/hooks';
+import { useBitcoinAddressPool } from '@proton/wallet/store/hooks/useBitcoinAddressPool';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { ITEMS_PER_PAGE } from '../../../constants';
 import { useBitcoinBlockchainContext } from '../../../contexts';

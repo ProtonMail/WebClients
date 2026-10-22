@@ -2,7 +2,9 @@ import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmApiFiatCurrency } from '@proton/andromeda';
 import { BITCOIN_CURRENCY, COMPUTE_BITCOIN_UNIT, SATS_CURRENCY } from '@proton/wallet/constants/bitcoin';
-import { useFiatCurrencies, useGetExchangeRate, useUserWalletSettings } from '@proton/wallet/store/hooks';
+import { useGetExchangeRate } from '@proton/wallet/store/hooks/useExchangeRate';
+import { useFiatCurrencies } from '@proton/wallet/store/hooks/useFiatCurrencies';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks/useUserWalletSettings';
 
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { CoreButton } from '../../../atoms/Button';

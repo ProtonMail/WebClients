@@ -1,6 +1,6 @@
 import { generateNodeUid } from '@proton/drive/sdk'
-import type { PublicNodeMeta } from '@proton/docs-shared'
-import type { DecryptedNode } from '@proton/docs-shared/lib/DecryptedNode'
+import type { PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { DecryptedNode } from '@proton/docs-shared/DecryptedNode'
 import { getPublicDrive, getPublicLinkInfo } from './getPublicDrive'
 import { toDecryptedNode } from './getDecryptedNode'
 import { traceErrorSDK } from './traceErrorSDK'

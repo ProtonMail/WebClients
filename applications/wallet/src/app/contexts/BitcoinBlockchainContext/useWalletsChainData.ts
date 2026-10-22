@@ -20,9 +20,9 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { useFlag } from '@proton/unleash/useFlag';
 import generateUID from '@proton/utils/generateUID';
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet/constants/wallet';
-import { useWalletApiClients } from '@proton/wallet/contexts';
-import { useGetBitcoinNetwork } from '@proton/wallet/store/hooks';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import { useWalletApiClients } from '@proton/wallet/contexts/ExtendedApiContext';
+import { useGetBitcoinNetwork } from '@proton/wallet/store/hooks/useBitcoinNetwork';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 import { getWalletAccountMetrics, updateWalletAccountActivityMetrics } from '@proton/wallet/utils/cache';
 import { getYesterday } from '@proton/wallet/utils/date';
 

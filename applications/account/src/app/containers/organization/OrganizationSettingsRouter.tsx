@@ -27,12 +27,10 @@ import { SentinelSection } from '@proton/components/containers/sentinel/Sentinel
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
-import {
-    AlwaysOnVpnRoute,
-    GatewayMonitorRoute,
-    GatewaysRoute,
-    SharedServersRoute,
-} from '@proton/vpn/routes/organization';
+import { AlwaysOnVpnRoute } from '@proton/vpn/routes/organization/AlwaysOnVpnRoute';
+import { GatewayMonitorRoute } from '@proton/vpn/routes/organization/GatewayMonitorRoute';
+import { GatewaysRoute } from '@proton/vpn/routes/organization/GatewaysRoute';
+import { SharedServersRoute } from '@proton/vpn/routes/organization/SharedServersRoute';
 
 import { FeatureAccessSection } from './components/FeatureAccessSection';
 import type { getOrganizationAppRoutes } from './routes';

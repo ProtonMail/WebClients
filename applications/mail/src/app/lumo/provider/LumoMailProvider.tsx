@@ -16,7 +16,7 @@ import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { getReportInfo } from '@proton/components/helpers/report';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { defaultESStatus } from '@proton/encrypted-search/constants';
-import type { ESStatusBooleans } from '@proton/encrypted-search/models';
+import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import LumoAgentDrawerContext from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
 import useLumoAgent from '@proton/llm/lib/lumoAgent/ui/useLumoAgent';

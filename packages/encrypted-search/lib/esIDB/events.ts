@@ -1,6 +1,6 @@
 import noop from '@proton/utils/noop';
 
-import type { EventsObject } from '../models';
+import type { EventsObject } from '../models/interfaces';
 import { openESDB, safelyWriteToIDBAbsolutely } from './indexedDB';
 
 /**

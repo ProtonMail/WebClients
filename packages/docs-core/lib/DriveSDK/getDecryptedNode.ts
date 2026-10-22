@@ -1,9 +1,9 @@
 import { generateNodeUid, getDrive, NodeType, splitNodeUid, type Author, type NodeEntity } from '@proton/drive/sdk'
 import { getNodeName } from './getNodeName'
 import { traceErrorSDK } from './traceErrorSDK'
-import type { DecryptedNode } from '@proton/docs-shared/lib/DecryptedNode'
+import type { DecryptedNode } from '@proton/docs-shared/DecryptedNode'
 import { c } from 'ttag'
-import type { NodeMeta } from '@proton/docs-shared'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
 
 export async function getDecryptedNode(nodeMeta: NodeMeta): Promise<DecryptedNode> {
   const drive = getDrive()

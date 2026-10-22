@@ -3,6 +3,16 @@
     "description": "Server-driven in-app offer/notification delivery, consumable across Proton web applications",
     "license": "GPL-3.0",
     "sideEffects": false,
+    "exports": {
+        "./components/OfferBanner": "./components/OfferBanner.tsx",
+        "./components/OfferDealModal": "./components/OfferDealModal.tsx",
+        "./components/OfferModal": "./components/OfferModal.tsx",
+        "./components/OfferNavbarButton": "./components/OfferNavbarButton.tsx",
+        "./components/useActiveOffer": "./components/useActiveOffer.ts",
+        "./interface": "./interface.ts",
+        "./store/listener": "./store/listener.ts",
+        "./store/slice": "./store/slice.ts"
+    },
     "scripts": {
         "check:types": "tsc --checkers 1",
         "i18n:validate": "proton-i18n validate lint-functions",

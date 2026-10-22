@@ -1,6 +1,6 @@
 import * as Comlink from 'comlink';
 
-import type { NormalizedSearchParams } from '@proton/encrypted-search/models';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import { getIndexKey } from '../crypto/indexKey';

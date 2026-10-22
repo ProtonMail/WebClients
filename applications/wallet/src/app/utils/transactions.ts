@@ -16,7 +16,9 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import type { IWasmApiWalletData, TransactionData, WalletChainDataByWalletId } from '@proton/wallet/types';
+import type { TransactionData } from '@proton/wallet/types/transactions';
+import type { WalletChainDataByWalletId } from '@proton/wallet/types/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 import { encryptPgp, encryptTransactionMessage, encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
 
 import type { WalletMap } from '../types';

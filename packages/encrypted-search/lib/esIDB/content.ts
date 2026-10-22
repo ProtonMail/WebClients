@@ -3,7 +3,7 @@ import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.
 import { STORING_OUTCOME } from '../constants';
 import { decryptFromDB } from '../esHelpers/esDecrypt';
 import { ciphertextSize } from '../esHelpers/esUtils';
-import type { EncryptedItemWithInfo } from '../models';
+import type { EncryptedItemWithInfo } from '../models/interfaces';
 import { openESDB, safelyWriteToIDBConditionally, updateSize } from './indexedDB';
 
 /**

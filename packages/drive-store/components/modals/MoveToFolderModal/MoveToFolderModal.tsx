@@ -7,8 +7,9 @@ import { useModalTwoStatic } from '@proton/components/components/modalTwo/useMod
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLoading from '@proton/hooks/useLoading';
 
-import type { DecryptedLink } from '../../../store';
-import { useActions, useTreeForModals } from '../../../store';
+import useActions from '../../../store/_actions/useActions';
+import type { DecryptedLink } from '../../../store/_links/interface';
+import { useTreeForModals } from '../../../store/_views/useTree';
 import { getMovedFiles } from '../../../utils/moveTexts';
 import { selectMessageForItemList } from '../../sections/helpers';
 import CreateFolderModal from '../CreateFolderModal';

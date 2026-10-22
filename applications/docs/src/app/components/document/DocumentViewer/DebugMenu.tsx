@@ -12,13 +12,10 @@ import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
-import type {
-  EditorControllerInterface,
-  AuthenticatedDocControllerInterface,
-  DocumentState,
-  PublicDocumentState,
-} from '@proton/docs-core'
-import type { DocumentType } from '@proton/docs-shared'
+import type { AuthenticatedDocControllerInterface } from '@proton/docs-core/AuthenticatedDocController/AuthenticatedDocControllerInterface'
+import type { EditorControllerInterface } from '@proton/docs-core/EditorController/EditorController'
+import type { DocumentState, PublicDocumentState } from '@proton/docs-core/State/DocumentState'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 import clsx from '@proton/utils/clsx'
 import { ConnectionCloseReason } from '@proton/docs-proto/ConnectionCloseReason/ConnectionCloseReason'
 import { Tooltip } from '@proton/docs-shared/components/ui/ui'

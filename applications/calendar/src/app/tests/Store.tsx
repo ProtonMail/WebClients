@@ -2,8 +2,8 @@ import type { PropsWithChildren } from 'react';
 
 import type { createMemoryHistory } from 'history';
 
+import { getModelState } from '@proton/account/testing/getModelState';
 import { getOrganizationState } from '@proton/account/testing/redux-state';
-import { getModelState } from '@proton/account/tests';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';

@@ -1,7 +1,7 @@
 import type { PrivateKeyReference, PrivateKeyReferenceV4, PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
 import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';

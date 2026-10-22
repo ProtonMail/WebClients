@@ -1,16 +1,16 @@
 import { c } from 'ttag'
-import type { SyncedEditorState, WebsocketConnectionInterface, DocumentType } from '@proton/docs-shared'
-import {
-  assertUnreachableAndLog,
-  DecryptedMessage,
-  ProcessedIncomingRealtimeEventMessage,
-  Result,
-  type BroadcastSource,
-  type InternalEventBusInterface,
-  type InternalEventHandlerInterface,
-  type InternalEventInterface,
-  type RtsMessagePayload,
-} from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
+import type { WebsocketConnectionInterface } from '@proton/docs-shared/Realtime/WebsocketConnectionInterface'
+import type { SyncedEditorState } from '@proton/docs-shared/State/SyncedEditorState'
+import { assertUnreachableAndLog } from '@proton/docs-shared/AssertUnreachable'
+import type { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { InternalEventHandlerInterface } from '@proton/docs-shared/Events/InternalEventHandlerInterface'
+import type { InternalEventInterface } from '@proton/docs-shared/Events/InternalEventInterface'
+import { DecryptedMessage } from '@proton/docs-shared/Realtime/DecryptedMessage'
+import { ProcessedIncomingRealtimeEventMessage } from '@proton/docs-shared/Realtime/ProcessedIncomingRealtimeMessage'
+import { Result } from '@proton/docs-shared/Result'
 import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketConnectionEvent'

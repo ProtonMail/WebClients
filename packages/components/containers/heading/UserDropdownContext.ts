@@ -1,6 +1,6 @@
 import { type MouseEvent, type RefObject, createContext } from 'react';
 
-import type { useAccountSessions } from '@proton/account/accountSessions';
+import type { useAccountSessions } from '@proton/account/accountSessions/hooks';
 import type { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 

@@ -1,13 +1,10 @@
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 import type { Commit } from '@proton/docs-proto/Generated/Commit'
-import {
-  DynamicResult,
-  type ApiResult,
-  type DocumentMetaInterface,
-  type RealtimeTokenResult,
-  type NodeMeta,
-  type PublicNodeMeta,
-} from '@proton/docs-shared'
+import type { ApiResult } from '@proton/docs-shared/ApiResult'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { DocumentMetaInterface } from '@proton/docs-shared/DocumentMetaInterface'
+import { DynamicResult } from '@proton/docs-shared/DynamicResult'
+import type { RealtimeTokenResult } from '@proton/docs-shared/Realtime/RealtimeTokenResult'
 import type { GetCommitData } from './GetCommitData'
 import type { GetDocumentMeta } from './GetDocumentMeta'
 import type { FetchRealtimeToken } from './FetchRealtimeToken'

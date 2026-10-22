@@ -1,5 +1,5 @@
 import { buildUser } from '@proton/account/testing/buildUser';
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { SessionAccessTypeFlag } from '@proton/shared/lib/authentication/sessionAccessType';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { RetentionRule } from '@proton/shared/lib/interfaces/RetentionRule';

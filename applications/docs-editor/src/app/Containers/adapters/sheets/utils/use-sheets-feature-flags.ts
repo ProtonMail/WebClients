@@ -1,4 +1,4 @@
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 import { isDevOrBlack } from '@proton/shared/lib/env'
 import { useEffect, useMemo, useState } from 'react'
 

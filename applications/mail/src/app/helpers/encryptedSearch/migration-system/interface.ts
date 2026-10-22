@@ -1,4 +1,4 @@
-import type { ESCiphertext } from '@proton/encrypted-search/models';
+import type { ESCiphertext } from '@proton/encrypted-search/models/interfaces';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 

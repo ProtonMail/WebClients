@@ -1,4 +1,4 @@
-import { DocState } from '@proton/docs-shared/lib/Doc/DocState'
+import { DocState } from '@proton/docs-shared/Doc/DocState'
 import type { EditorInitializationConfig, SafeDocsUserState } from '../app/Containers/Docs/public'
 
 const docStateLogger = {

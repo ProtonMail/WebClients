@@ -4,7 +4,7 @@ import useLoading from '@proton/hooks/useLoading';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { useBookmarks } from '../../store/_bookmarks/useBookmarks';
-import { usePublicSessionUser } from '../../store/_user';
+import { usePublicSessionUser } from '../../store/_user/usePublicSessionUser';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 
 export interface Props {

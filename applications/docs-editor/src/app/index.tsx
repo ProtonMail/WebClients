@@ -1,5 +1,6 @@
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary'
-import { BridgeOriginProvider, EDITOR_IFRAME_FOCUS_EVENT } from '@proton/docs-shared'
+import { BridgeOriginProvider } from '@proton/docs-shared/Bridge/BridgeOriginProvider'
+import { EDITOR_IFRAME_FOCUS_EVENT } from '@proton/docs-shared/Bridge/EditorIframeFocusEvent'
 import '@proton/polyfill'
 import { createRoot } from 'react-dom/client'
 import { RootContainer } from './Containers/RootContainer'
@@ -7,7 +8,7 @@ import { SyncBundleFail } from './Containers/SyncBundleFail'
 import './style'
 import { reportErrorToSentry } from './Utils/errorMessage'
 import type { EditorSystemMode } from './Containers/Docs/public'
-import type { DocumentType } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 import { syncBundle, SyncBundleResult } from './Utils/syncBundle'
 
 const container = document.querySelector('.app-root')

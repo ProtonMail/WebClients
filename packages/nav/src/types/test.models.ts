@@ -5,10 +5,3 @@ export interface TestUserModel {
     roles?: string[];
     subscription?: string[];
 }
-
-export interface TestOrganizationExtended {
-    id: string;
-    name: string;
-    slug?: string;
-    features?: string[];
-}

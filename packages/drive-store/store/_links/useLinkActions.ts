@@ -17,7 +17,7 @@ import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import useDebouncedRequest from '../_api/useDebouncedRequest';
 import { useDriveEventManager } from '../_events/useDriveEventManager';
 import useShare from '../_shares/useShare';
-import { useVolumesState } from '../_volumes';
+import useVolumesState from '../_volumes/useVolumesState';
 import { encryptFolderExtendedAttributes } from './extendedAttributes';
 import useLink from './useLink';
 import { validateLinkName } from './validation';

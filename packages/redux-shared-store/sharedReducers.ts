@@ -1,4 +1,4 @@
-import { accountSessionsSlice } from '@proton/account/accountSessions';
+import { accountSessionsSlice } from '@proton/account/accountSessions/slice';
 import { addressKeysReducer } from '@proton/account/addressKeys';
 import { addressesReducer } from '@proton/account/addresses';
 import { apiStatusReducer } from '@proton/account/apiStatus';
@@ -19,7 +19,7 @@ import { ktSlice } from '@proton/account/kt';
 import { memberReducer } from '@proton/account/member';
 import { membersReducer } from '@proton/account/members';
 import { organizationReducer } from '@proton/account/organization';
-import { organizationThemeSlice } from '@proton/account/organization/theme';
+import { organizationThemeSlice } from '@proton/account/organization/theme/slice';
 import { organizationKeyReducer } from '@proton/account/organizationKey';
 import { organizationRolesReducer } from '@proton/account/organizationRoles';
 import { passwordReminderReducer } from '@proton/account/passwordReminder';

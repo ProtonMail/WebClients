@@ -1,5 +1,5 @@
 import { Logger, type LoggerInterface } from '@proton/shared/lib/logs'
-import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
+import { DOCS_DEBUG_KEY } from '@proton/docs-shared/constants'
 
 export const sharedLogger = new Logger('proton-docs', DOCS_DEBUG_KEY)
 

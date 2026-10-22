@@ -4,8 +4,8 @@ import DropdownButton from '@proton/components/components/dropdown/DropdownButto
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils'
-import { WordCountEvent } from '@proton/docs-core'
-import type { WordCountInfoCollection } from '@proton/docs-shared'
+import { WordCountEvent } from '@proton/docs-core/Bridge/Events'
+import type { WordCountInfoCollection } from '@proton/docs-shared/WordCount/WordCountTypes'
 import {
   createContext,
   useContext,

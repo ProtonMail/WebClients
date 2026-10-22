@@ -30,7 +30,8 @@ import type { OrganizationRolesState } from '../organizationRoles';
 import type { SubscriptionState } from '../subscription';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
-import { MemberCreationValidationError, type MembersState, getMemberAddresses } from './index';
+import MemberCreationValidationError from './errors/MemberCreationValidationError';
+import { type MembersState, getMemberAddresses } from './index';
 import {
     getIsMemberInAutomaticApproveState,
     getIsMemberInManualAcceptState,

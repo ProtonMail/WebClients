@@ -2,10 +2,10 @@ import { Button } from '@proton/atoms/Button/Button'
 import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble'
 import { useEffect, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
-import type { CommentsChangedData } from '@proton/docs-shared'
-import { CommentsEvent } from '@proton/docs-shared'
+import type { CommentsChangedData } from '@proton/docs-shared/CommentsEvent'
+import { CommentsEvent } from '@proton/docs-shared/CommentsEvent'
 import clsx from '@proton/utils/clsx'
-import type { EditorControllerInterface } from '@proton/docs-core'
+import type { EditorControllerInterface } from '@proton/docs-core/EditorController/EditorController'
 
 export type CommentsButtonProps = { editorController: EditorControllerInterface }
 

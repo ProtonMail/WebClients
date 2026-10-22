@@ -1,7 +1,7 @@
-import { useDefaultShare } from '../../store';
-import { useAbortSignal } from '../../store/_views/utils';
+import useDefaultShare from '../../store/_shares/useDefaultShare';
+import useAbortSignal from '../../store/_views/utils/useAbortSignal';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import type { NodeMeta } from "../NodeMeta";
+import type { NodeMeta } from '../NodeMeta';
 
 export const useMyFiles = () => {
     const abortSignal = useAbortSignal([]);

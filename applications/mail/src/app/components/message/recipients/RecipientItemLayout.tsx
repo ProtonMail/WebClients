@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import ProtonBadgeType from '@proton/components/components/protonBadge/ProtonBadgeType';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { highlightNode } from '@proton/encrypted-search/esHelpers';
+import { highlightNode } from '@proton/encrypted-search/esHelpers/esHighlight';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import { useHotkeys } from '@proton/hooks/useHotkeys';
 import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';

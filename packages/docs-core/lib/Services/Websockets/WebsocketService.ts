@@ -1,21 +1,14 @@
 import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils'
-import type {
-  DocumentKeys,
-  PublicDocumentKeys,
-  NodeMeta,
-  PublicNodeMeta,
-  InternalEventBusInterface,
-  WebsocketConnectionInterface,
-  WebsocketCallbacks,
-  DocumentType,
-} from '@proton/docs-shared'
-import {
-  BroadcastSource,
-  ProcessedIncomingRealtimeEventMessage,
-  assertUnreachableAndLog,
-  GenerateUUID,
-  ConnectionType,
-} from '@proton/docs-shared'
+import type { NodeMeta, PublicNodeMeta, DocumentType } from '@proton/docs-shared/BasicTypes'
+import type { DocumentKeys, PublicDocumentKeys } from '@proton/docs-shared/CryptoTypes'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { WebsocketCallbacks } from '@proton/docs-shared/Realtime/WebsocketCallbacks'
+import type { WebsocketConnectionInterface } from '@proton/docs-shared/Realtime/WebsocketConnectionInterface'
+import { assertUnreachableAndLog } from '@proton/docs-shared/AssertUnreachable'
+import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import { GenerateUUID } from '@proton/docs-shared/GenerateUuid'
+import { ProcessedIncomingRealtimeEventMessage } from '@proton/docs-shared/Realtime/ProcessedIncomingRealtimeMessage'
+import { ConnectionType } from '@proton/docs-shared/Realtime/WebsocketConnectionInterface'
 import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import type { AnonymousEncryptionMetadata, EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
@@ -74,7 +67,7 @@ import {
 } from '../../utils/document-update-chunking'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
-import { tmpConvertOldDocTypeToNew } from '@proton/docs-shared/lib/Doc/convert-doc-type'
+import { tmpConvertOldDocTypeToNew } from '@proton/docs-shared/Doc/convert-doc-type'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { seconds_to_ms } from '../../Util/time-utils'
 import type { APP_NAMES } from '@proton/shared/lib/constants'

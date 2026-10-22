@@ -79,7 +79,8 @@ import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
-import { TVContainer, TvContainerSignedIn } from '@proton/vpn/components/tv';
+import { TVContainer } from '@proton/vpn/components/tv/containers/TVContainer';
+import { TvContainerSignedIn } from '@proton/vpn/components/tv/containers/TvContainerSignedIn';
 import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';

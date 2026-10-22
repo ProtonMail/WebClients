@@ -7,7 +7,7 @@ import {
 
 import { readAccountSessions } from './storage';
 
-export const getLocalIDSessionString = (array: number[]) => {
+const getLocalIDSessionString = (array: number[]) => {
     return array.sort().join(',');
 };
 

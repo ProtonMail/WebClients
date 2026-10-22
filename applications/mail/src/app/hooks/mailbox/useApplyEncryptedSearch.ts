@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { getESLogger } from '@proton/encrypted-search/esHelpers';
+import { getESLogger } from '@proton/encrypted-search/esHelpers/esLogger';
 import { SEARCH_TYPE, useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 

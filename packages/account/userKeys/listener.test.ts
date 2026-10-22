@@ -8,7 +8,7 @@ import { getTestStore } from '@proton/redux-shared-store/test';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 
-import { getModelState } from '../tests';
+import { getModelState } from '../testing/getModelState';
 import { getServerEvent } from '../tests/getServerEvent';
 import { userReducer } from '../user';
 import { selectUserKeys, userKeysReducer, userKeysThunk } from './index';

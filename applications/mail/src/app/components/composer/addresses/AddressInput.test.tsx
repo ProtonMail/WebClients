@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { mailTestRender } from '../../../helpers/tests/render';

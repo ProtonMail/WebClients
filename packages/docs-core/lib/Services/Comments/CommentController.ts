@@ -1,24 +1,20 @@
-import type {
-  AnyCommentMessageData,
-  CommentControllerInterface,
-  CommentInterface,
-  CommentMarkNodeChangeData,
-  CommentThreadInterface,
-  InternalEventBusInterface,
-  InternalEventHandlerInterface,
-  InternalEventInterface,
-  SuggestionSummaryType,
-  SuggestionThreadStateAction,
-} from '@proton/docs-shared'
-import {
-  AnonymousUserDisplayName,
-  BroadcastSource,
-  CommentsEvent,
-  CommentsMessageType,
-  CommentThreadState,
-  CommentType,
-  CommentThreadType,
-} from '@proton/docs-shared'
+import type { CommentInterface } from '@proton/docs-shared/CommentInterface'
+import type { CommentControllerInterface } from '@proton/docs-shared/CommentServiceInterface'
+import type { CommentMarkNodeChangeData } from '@proton/docs-shared/CommentsEvent'
+import type { CommentThreadInterface } from '@proton/docs-shared/CommentThreadInterface'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { InternalEventHandlerInterface } from '@proton/docs-shared/Events/InternalEventHandlerInterface'
+import type { InternalEventInterface } from '@proton/docs-shared/Events/InternalEventInterface'
+import type { AnyCommentMessageData } from '@proton/docs-shared/Realtime/CommentsMessageType'
+import type { SuggestionThreadStateAction } from '@proton/docs-shared/SuggestionThreadStateAction'
+import type { SuggestionSummaryType } from '@proton/docs-shared/SuggestionType'
+import { AnonymousUserDisplayName } from '@proton/docs-shared/AnonymousUser'
+import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import { CommentsEvent } from '@proton/docs-shared/CommentsEvent'
+import { CommentThreadState } from '@proton/docs-shared/CommentThreadState'
+import { CommentThreadType } from '@proton/docs-shared/CommentThreadType'
+import { CommentType } from '@proton/docs-shared/CommentType'
+import { CommentsMessageType } from '@proton/docs-shared/Realtime/CommentsMessageType'
 import { CreateRealtimeCommentPayload } from './CreateRealtimeCommentPayload'
 import { DocControllerEvent } from '../../AuthenticatedDocController/AuthenticatedDocControllerEvent'
 import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'

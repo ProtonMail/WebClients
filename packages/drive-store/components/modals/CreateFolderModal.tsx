@@ -14,7 +14,8 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 
-import { formatLinkName, validateLinkNameField } from '../../store';
+import { formatLinkName } from '../../store/_links/link';
+import { validateLinkNameField } from '../../store/_links/validation';
 
 interface Props {
     onClose?: () => void;

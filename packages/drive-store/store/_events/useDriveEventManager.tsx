@@ -16,7 +16,7 @@ import { isIgnoredErrorForReporting, logError } from '../../utils/errorHandling'
 import { UserAvailabilityTypes } from '../../utils/metrics/types/userSuccessMetricsTypes';
 import { userSuccessMetrics } from '../../utils/metrics/userSuccessMetrics';
 import { driveEventsResultToDriveEvents } from '../_api/transformers';
-import type { VolumeTypeForEvents } from '../_volumes';
+import type { VolumeTypeForEvents } from '../_volumes/interface';
 import { EventsMetrics, countEventsPerType, getErrorCategory } from './driveEventsMetrics';
 import type { DriveCoreEvent, DriveEvent, EventHandler } from './interface';
 

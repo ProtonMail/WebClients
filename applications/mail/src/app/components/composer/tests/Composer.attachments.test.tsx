@@ -2,7 +2,7 @@ import { screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey } from '@proton/shared/lib/interfaces/Key';

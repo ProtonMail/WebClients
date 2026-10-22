@@ -1,7 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
@@ -55,7 +55,7 @@ jest.mock('idb', () => ({
     deleteDB: jest.fn(() => Promise.resolve()),
 }));
 
-jest.mock('@proton/encrypted-search/esIDB', () => ({
+jest.mock('@proton/encrypted-search/esIDB/indexedDB', () => ({
     hasESDB: jest.fn(() => false),
 }));
 

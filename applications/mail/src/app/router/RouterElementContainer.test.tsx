@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 
 import { buildUser } from '@proton/account/testing/buildUser';
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';

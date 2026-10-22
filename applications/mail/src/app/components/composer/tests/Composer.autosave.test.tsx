@@ -1,6 +1,6 @@
 import { act, fireEvent, getByTestId } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
 import { MIME_TYPES } from '@proton/shared/lib/constants';

@@ -11,7 +11,7 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';
 
-import type { DecryptedLink } from '../../store';
+import type { DecryptedLink } from '../../store/_links/interface';
 import FloatingEllipsis from './FloatingEllipsis';
 
 interface Props {

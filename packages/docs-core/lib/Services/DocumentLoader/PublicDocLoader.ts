@@ -3,14 +3,11 @@ import type { PublicDocumentState } from '../../State/DocumentState'
 import { EditorController } from '../../EditorController/EditorController'
 import { EditorOrchestrator } from '../Orchestrator/EditorOrchestrator'
 import { RealtimeController } from '../../RealtimeController/RealtimeController'
-import {
-  AnonymousUserDisplayName,
-  type InternalEventBusInterface,
-  type SyncedEditorState,
-  type CommentControllerInterface,
-  type PublicNodeMeta,
-  type DocumentType,
-} from '@proton/docs-shared'
+import { AnonymousUserDisplayName } from '@proton/docs-shared/AnonymousUser'
+import type { PublicNodeMeta, DocumentType } from '@proton/docs-shared/BasicTypes'
+import type { CommentControllerInterface } from '@proton/docs-shared/CommentServiceInterface'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { SyncedEditorState } from '@proton/docs-shared/State/SyncedEditorState'
 import type { CreateComment } from '../../UseCase/CreateComment'
 import type { CreateThread } from '../../UseCase/CreateThread'
 import type { DocLoaderInterface, DocLoaderInitializeOptions } from './DocLoaderInterface'
@@ -28,15 +25,15 @@ import type { LoadDocument } from '../../UseCase/LoadDocument'
 import type { LoadThreads } from '../../UseCase/LoadThreads'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { MetricService } from '../Metrics/MetricService'
-import type { PublicDriveCompat } from '@proton/drive-store'
+import type { PublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { PublicRenameController } from '../../RenameController/RenameController'
 import type { GetNode } from '../../UseCase/GetNode'
 import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
 import { redirectToCorrectDocTypeIfNeeded } from '../../Util/redirect-to-correct-doc-type'
 import type { DocSizeTracker } from '../../SizeTracker/SizeTracker'
-import OpenTracer from '@proton/docs-shared/lib/Tracer/Module'
-import { getDocumentActionUrl } from '@proton/docs-shared/lib/URL/getDocumentActionUrl'
+import OpenTracer from '@proton/docs-shared/Tracer/Module'
+import { getDocumentActionUrl } from '@proton/docs-shared/URL/getDocumentActionUrl'
 
 export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> {
   private editorController?: EditorControllerInterface

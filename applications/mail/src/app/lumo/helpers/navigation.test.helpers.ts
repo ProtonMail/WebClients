@@ -8,7 +8,7 @@ import { createLocation } from 'history';
 
 import { defaultApiStatus } from '@proton/account/apiStatus';
 import { defaultESStatus } from '@proton/encrypted-search/constants';
-import type { ESStatusBooleans } from '@proton/encrypted-search/models';
+import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 

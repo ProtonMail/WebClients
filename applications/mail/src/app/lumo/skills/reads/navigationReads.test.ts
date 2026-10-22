@@ -6,7 +6,7 @@
  */
 import { formatISO } from 'date-fns';
 
-import type { ESStatusBooleans } from '@proton/encrypted-search/models';
+import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';

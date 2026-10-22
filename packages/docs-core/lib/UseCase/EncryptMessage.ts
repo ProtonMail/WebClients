@@ -1,5 +1,6 @@
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
-import type { Result, DocumentKeys, PublicDocumentKeys } from '@proton/docs-shared'
+import type { DocumentKeys, PublicDocumentKeys } from '@proton/docs-shared/CryptoTypes'
+import type { Result } from '@proton/docs-shared/Result'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'
 import { GetAssociatedEncryptionDataForRealtimeMessage } from './GetAdditionalEncryptionData'

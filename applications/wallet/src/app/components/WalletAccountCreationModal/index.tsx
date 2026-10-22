@@ -13,7 +13,7 @@ import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { BASE_INDEX_OPTIONS, SCRIPT_TYPES } from '@proton/wallet/constants/bitcoin';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';

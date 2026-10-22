@@ -5,17 +5,14 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter'
 import { useNotifications } from '@proton/app-context/useNotifications'
 import { useEffect, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
-import type {
-  AuthenticatedDocControllerInterface,
-  DocumentState,
-  EditorControllerInterface,
-  PublicDocumentState,
-} from '@proton/docs-core'
-import { DocSizeTrackerEvent, type DocSizeTrackerEventPayload } from '@proton/docs-core'
+import type { AuthenticatedDocControllerInterface } from '@proton/docs-core/AuthenticatedDocController/AuthenticatedDocControllerInterface'
+import type { EditorControllerInterface } from '@proton/docs-core/EditorController/EditorController'
+import type { DocumentState, PublicDocumentState } from '@proton/docs-core/State/DocumentState'
+import { DocSizeTrackerEvent, type DocSizeTrackerEventPayload } from '@proton/docs-core/SizeTracker/SizeTracker'
 import { c } from 'ttag'
 import { Button } from '@proton/atoms/Button/Button'
 import noop from '@proton/utils/noop'
-import type { DocumentType } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 import useLoading from '@proton/hooks/useLoading'
 
 export function DocumentSizeLimitModal({ documentType }: { documentType: DocumentType }) {

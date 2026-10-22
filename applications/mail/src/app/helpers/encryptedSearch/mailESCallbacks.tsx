@@ -5,33 +5,28 @@ import {
     ES_MAX_METADATA_BATCH,
     ES_MAX_PARALLEL_ITEMS,
 } from '@proton/encrypted-search/constants';
-import {
-    apiHelper,
-    buildContentDB,
-    esSentryReport,
-    serializeAndEncryptItem,
-    testKeywords,
-} from '@proton/encrypted-search/esHelpers';
-import {
-    executeContentOperations,
-    hasESDB,
-    metadataIndexingProgress,
-    readLastEvent,
-    readMetadataItem,
-    readNumContent,
-} from '@proton/encrypted-search/esIDB';
+import { apiHelper } from '@proton/encrypted-search/esHelpers/esAPI';
+import { buildContentDB } from '@proton/encrypted-search/esHelpers/esBuild';
+import { esSentryReport } from '@proton/encrypted-search/esHelpers/esReporting';
+import { testKeywords } from '@proton/encrypted-search/esHelpers/esSearch';
+import { serializeAndEncryptItem } from '@proton/encrypted-search/esHelpers/esUtils';
+import { executeContentOperations, readNumContent } from '@proton/encrypted-search/esIDB/content';
+import { readLastEvent } from '@proton/encrypted-search/esIDB/events';
+import { hasESDB } from '@proton/encrypted-search/esIDB/indexedDB';
+import { metadataIndexingProgress } from '@proton/encrypted-search/esIDB/indexingProgress';
+import { readMetadataItem } from '@proton/encrypted-search/esIDB/metadata';
+import type { ESCallbacks } from '@proton/encrypted-search/models/esCallbacks';
+import type { RecordProgress } from '@proton/encrypted-search/models/esIndexing';
 import type {
     CachedItem,
-    ESCallbacks,
     ESEvent,
     ESItemInfo,
     ESStatusBooleans,
     ESTimepoint,
     EncryptedItemWithInfo,
     EventsObject,
-    NormalizedSearchParams,
-    RecordProgress,
-} from '@proton/encrypted-search/models';
+} from '@proton/encrypted-search/models/interfaces';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';

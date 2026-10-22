@@ -13,15 +13,16 @@ import type { DocumentType } from '../store/_documents/useOpenDocument';
 import useLink from '../store/_links/useLink';
 import useShare from '../store/_shares/useShare';
 import type { PathItem } from '../store/_views/useLinkPath';
-import { useAbortSignal } from '../store/_views/utils';
+import useAbortSignal from '../store/_views/utils/useAbortSignal';
 import type { CacheConfig } from './CacheConfig';
 import type { LegacyNodeMeta, NodeMeta } from './NodeMeta';
-import type { DocumentNodeMeta } from './_documents';
-import { useDocuments } from './_documents';
+import type { DocumentNodeMeta } from './_documents/interface';
+import { useDocuments } from './_documents/useDocuments';
 import type { DecryptedNode } from './_nodes/interface';
 import useNode from './_nodes/useNode';
 import useNodes from './_nodes/useNodes';
-import { useMyFiles, useResolveShareId } from './_shares';
+import { useMyFiles } from './_shares/useMyFiles';
+import { useResolveShareId } from './_shares/useResolveShare';
 
 export interface DriveCompat {
     /**

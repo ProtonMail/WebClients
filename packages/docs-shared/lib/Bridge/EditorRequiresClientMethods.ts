@@ -9,7 +9,7 @@ import type { EditorEvent, EditorEventData } from './EditorEvent'
 import type { SafeDocsUserState } from '../Doc/DocsAwareness'
 import type { DataTypesThatDocumentCanBeExportedAs } from '../ExportableDataType'
 import type { FeatureFlag } from '@proton/unleash/Flags'
-import type { SheetsPatchesType } from '@proton/docs-core/lib/Database/SheetsDBSchema'
+import type { SheetsPatchesType } from '@proton/docs-core/Database/SheetsDBSchema'
 import type { SheetsActionType } from '../SheetsActionType'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 

@@ -8,7 +8,7 @@ import chunk from '@proton/utils/chunk';
 
 import { linkMetaToEncryptedLink } from '../../_api/transformers';
 import useDebouncedRequest from '../../_api/useDebouncedRequest';
-import { waitFor } from '../../_utils';
+import waitFor from '../../_utils/waitFor';
 import type { DecryptedLink } from './../interface';
 import useLinksState, { isLinkDecrypted } from './../useLinksState';
 import type { FetchLoadLinksMeta } from './interface';

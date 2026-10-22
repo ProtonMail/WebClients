@@ -6,7 +6,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/inte
 import { getTestStore } from '@proton/redux-shared-store/test';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
-import { getModelState } from '../tests';
+import { getModelState } from '../testing/getModelState';
 import { userReducer } from '../user';
 import {
     defaultPreviousSubscriptionValue,

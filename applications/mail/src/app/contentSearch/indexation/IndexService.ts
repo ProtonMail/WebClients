@@ -3,9 +3,9 @@ import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.js';
 import { deleteDB } from 'idb';
 
 import { ES_SYNC_ACTIONS } from '@proton/encrypted-search/constants';
-import { getIndexKey as getIndexKeyV1 } from '@proton/encrypted-search/esHelpers';
-import { hasESDB } from '@proton/encrypted-search/esIDB';
-import type { ESEvent } from '@proton/encrypted-search/lib/models';
+import { getIndexKey as getIndexKeyV1 } from '@proton/encrypted-search/esHelpers/esBuild';
+import { hasESDB } from '@proton/encrypted-search/esIDB/indexedDB';
+import type { ESEvent } from '@proton/encrypted-search/models/interfaces';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
 import type { ESBaseMessage } from '../../models/encryptedSearch';

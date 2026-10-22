@@ -1,4 +1,4 @@
-import type { DecryptedLink } from '../../store';
+import type { DecryptedLink } from '../../store/_links/interface';
 
 /**
  * A decrypted node in the Drive structure.

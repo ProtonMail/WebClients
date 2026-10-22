@@ -32,7 +32,7 @@ import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces/UserSettings';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
-import { ExtendedApiProvider } from '@proton/wallet/contexts';
+import ExtendedApiProvider from '@proton/wallet/contexts/ExtendedApiContext/ExtendedApiProvider';
 import type { WalletStore } from '@proton/wallet/store/store';
 import { extraThunkArguments } from '@proton/wallet/store/thunk';
 import { isWasmSupported } from '@proton/wallet/utils/wasm';

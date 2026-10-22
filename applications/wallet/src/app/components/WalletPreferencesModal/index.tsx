@@ -11,7 +11,7 @@ import InputFieldStackedGroup from '@proton/components/components/inputFieldStac
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcWallet } from '@proton/icons/icons/IcWallet';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import type { IWasmApiWalletData } from '@proton/wallet/types/wasm';
 
 import { Button, Input, Modal, Select, SelectOption } from '../../atoms';
 import type { SubTheme } from '../../utils';

@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 

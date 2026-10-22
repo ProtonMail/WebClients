@@ -1,13 +1,13 @@
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { useDownload } from '../../store/_downloads';
+import useDownload from '../../store/_downloads/useDownload';
 import useLink from '../../store/_links/useLink';
 import useLinksListing from '../../store/_links/useLinksListing/useLinksListing';
 import { validateLinkName } from '../../store/_links/validation';
 import { useDirectSharingInfo } from '../../store/_shares/useDirectSharingInfo';
 import useUploadHelper from '../../store/_uploads/UploadProvider/useUploadHelper';
-import { useAbortSignal } from '../../store/_views/utils';
+import useAbortSignal from '../../store/_views/utils/useAbortSignal';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../utils/stream';
 import type { LegacyNodeMeta } from '../NodeMeta';

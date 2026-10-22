@@ -1,4 +1,4 @@
-import type { CommentType } from '@proton/docs-shared'
+import type { CommentType } from '@proton/docs-shared/CommentType'
 
 export type CommentResponseDto = {
   CommentID: string

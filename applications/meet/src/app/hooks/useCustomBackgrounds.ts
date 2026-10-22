@@ -2,8 +2,8 @@ import { useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { selectUserKeys } from '@proton/account/userKeys';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { selectUserKeys } from '@proton/account/userKeys/index';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { ValidationError } from '@proton/drive/sdk';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';

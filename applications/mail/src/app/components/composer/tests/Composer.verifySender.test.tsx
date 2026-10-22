@@ -1,7 +1,7 @@
 import { getByText as getByTextDefault, screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { AddressKey } from '@proton/shared/lib/interfaces/Key';

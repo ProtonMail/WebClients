@@ -1,6 +1,6 @@
 import type { IDBPDatabase } from 'idb';
 
-import type { ESItemInfo, EncryptedSearchDB } from '../models';
+import type { ESItemInfo, EncryptedSearchDB } from '../models/interfaces';
 
 /**
  * Retrieve the ID of the oldest item's metadata

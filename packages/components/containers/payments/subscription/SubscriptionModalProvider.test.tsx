@@ -1,7 +1,7 @@
 import { act, screen, waitFor } from '@testing-library/react';
 import cloneDeep from 'lodash/cloneDeep';
 
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { formatSubscription } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';

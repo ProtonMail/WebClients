@@ -1,4 +1,4 @@
-import type { EditorInitializationConfig } from '@proton/docs-shared/lib/EditorInitializationConfig'
+import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
 
 import type { SheetsImportDataType, SheetsInitialization } from '../../../Spreadsheet/public'
 

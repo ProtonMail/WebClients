@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useDevicesListing } from '../_devices';
+import useDevicesListing from '../_devices/useDevicesListing';
 import type { DecryptedLink } from '../_links/interface';
 import useLink from '../_links/useLink';
 import useLinksState from '../_links/useLinksState';

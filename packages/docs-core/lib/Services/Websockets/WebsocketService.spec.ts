@@ -1,11 +1,11 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils'
-import type {
-  DocumentKeys,
-  NodeMeta,
-  InternalEventBusInterface,
-  WebsocketConnectionInterface,
-} from '@proton/docs-shared'
-import { BroadcastSource, ConnectionType, Result } from '@proton/docs-shared'
+import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { DocumentKeys } from '@proton/docs-shared/CryptoTypes'
+import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
+import type { WebsocketConnectionInterface } from '@proton/docs-shared/Realtime/WebsocketConnectionInterface'
+import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import { ConnectionType } from '@proton/docs-shared/Realtime/WebsocketConnectionInterface'
+import { Result } from '@proton/docs-shared/Result'
 import type {
   ServerMessageWithDocumentUpdates,
   ServerMessageWithEvents,

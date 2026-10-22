@@ -7,7 +7,8 @@ import { deriveGcmKey } from '../../Crypto/deriveGcmKey'
 import * as aesGcm from '@protontech/crypto/subtle/aesGcm.ts'
 import { EncryptionContext } from './EncryptionContext'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
-import type { DriveCompat, PublicDriveCompat } from '@proton/drive-store/lib'
+import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
+import type { PublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 
 jest.mock('@protontech/crypto', () => ({
   CryptoProxy: {

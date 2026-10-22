@@ -1,12 +1,8 @@
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey'
-import {
-  nodeMetaUniqueId,
-  Result,
-  type NodeMeta,
-  type PublicNodeMeta,
-  type AnyNodeMeta,
-  type CacheConfig,
-} from '@proton/docs-shared'
+import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { CacheConfig } from '@proton/docs-shared/CacheConfig'
+import { nodeMetaUniqueId, type AnyNodeMeta } from '@proton/docs-shared/NodeMetaHelpers'
+import { Result } from '@proton/docs-shared/Result'
 import type { EncryptionContext } from './Encryption/EncryptionContext'
 import type { EncryptionService } from './Encryption/EncryptionService'
 import type { LoggerInterface } from '@proton/shared/lib/logs'

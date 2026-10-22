@@ -6,7 +6,7 @@ import { screen, waitFor, within } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
 import { buildAddress } from '@proton/account/testing/buildAddress';
-import { getModelState } from '@proton/account/tests';
+import { getModelState } from '@proton/account/testing/getModelState';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 
 import { useSharingModal } from './SharingModal';

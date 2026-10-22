@@ -1,4 +1,4 @@
-import type { EditorRequiresClientMethods } from '@proton/docs-shared'
+import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 import { createStandaloneDocClient } from '../../../../standalone-doc/client'
 
 /** The shell adapter still accepts the shared host bridge; the editor does not. */

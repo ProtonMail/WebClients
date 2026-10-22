@@ -1,7 +1,7 @@
 import { getUnixTime, isAfter, isBefore } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import type { ESItem } from '@proton/encrypted-search/models';
+import type { ESItem } from '@proton/encrypted-search/models/interfaces';
 import { MAXIMUM_DATE_UTC } from '@proton/shared/lib/calendar/constants';
 import type { OccurrenceIterationCache } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';

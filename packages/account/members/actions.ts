@@ -75,10 +75,10 @@ import {
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import InvalidAddressesError from './errors/InvalidAddressesError';
+import MemberCreationValidationError from './errors/MemberCreationValidationError';
 import UnavailableAddressesError from './errors/UnavailableAddressesError';
 import { getMember } from './getMember';
 import {
-    MemberCreationValidationError,
     type MembersState,
     type RoleAssignmentsResult,
     getMemberRoles,

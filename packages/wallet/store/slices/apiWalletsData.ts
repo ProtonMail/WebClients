@@ -10,8 +10,8 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 
-import type { IWasmApiWalletData } from '../../types';
-import { decryptWallet } from '../../utils';
+import type { IWasmApiWalletData } from '../../types/wasm';
+import { decryptWallet } from '../../utils/wallet';
 import type { WalletThunkArguments } from '../thunk';
 
 export const apiWalletsDataSliceName = 'api_wallets_data' as const;

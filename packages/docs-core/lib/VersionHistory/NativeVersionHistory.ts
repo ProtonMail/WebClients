@@ -2,7 +2,7 @@ import { BatchDocumentUpdates } from './BatchDocumentUpdates'
 import { mergeUpdates } from 'yjs'
 import type { VersionHistoryBatch, VersionHistoryUpdate } from './VersionHistoryBatch'
 import { DateFormatter } from './DateFormatter'
-import type { DocumentType } from '@proton/docs-shared'
+import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 
 /**
  * How many DUs should make up a presentable revision in the history viewer. If the threshold is 10 and a

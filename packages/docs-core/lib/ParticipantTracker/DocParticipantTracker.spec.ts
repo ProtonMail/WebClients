@@ -1,6 +1,6 @@
 import { DocParticipantTracker, MAX_USER_STATES_FOR_LOCKING_EDITOR } from './DocParticipantTracker'
 import type { DocumentState } from '../State/DocumentState'
-import type { SafeDocsUserState } from '@proton/docs-shared'
+import type { SafeDocsUserState } from '@proton/docs-shared/Doc/DocsAwareness'
 
 describe('DocParticipantTracker', () => {
   let tracker: DocParticipantTracker

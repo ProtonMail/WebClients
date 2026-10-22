@@ -3,8 +3,9 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useWalletApi } from '@proton/wallet/contexts';
-import { useApiWalletTransactionData, useWalletDispatch } from '@proton/wallet/store/hooks';
+import { useWalletApi } from '@proton/wallet/contexts/ExtendedApiContext';
+import { useWalletDispatch } from '@proton/wallet/store/hooks/app';
+import { useApiWalletTransactionData } from '@proton/wallet/store/hooks/useApiWalletTransactionData';
 import { updateWalletTransaction } from '@proton/wallet/store/slices';
 import { encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
 
