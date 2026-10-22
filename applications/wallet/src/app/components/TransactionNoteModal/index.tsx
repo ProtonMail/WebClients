@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { ModalOwnProps } from '@proton/components';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
 

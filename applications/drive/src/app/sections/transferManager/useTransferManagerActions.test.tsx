@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import { useConfirmActionModal } from '@proton/components';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 
@@ -9,7 +9,7 @@ import { BaseTransferStatus } from '../../modules/download/downloadManager.store
 import { useTransferManagerActions } from './useTransferManagerActions';
 import type { TransferManagerEntry } from './useTransferManagerState';
 
-jest.mock('@proton/components', () => {
+jest.mock('@proton/components/components/confirmActionModal/ConfirmActionModal', () => {
     return {
         useConfirmActionModal: jest.fn(),
     };

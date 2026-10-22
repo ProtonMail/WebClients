@@ -12,7 +12,7 @@ import {
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
-import { PromotionButton } from '../../components/button/PromotionButton/index';
+import PromotionButton from '../../components/button/PromotionButton/PromotionButton';
 import SettingsParagraph from '../account/SettingsParagraph';
 import { useSubscriptionModal } from '../payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';

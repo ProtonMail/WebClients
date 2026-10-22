@@ -6,13 +6,11 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import {
-    HumanVerificationForm,
-    HumanVerificationSteps,
-    StandardLoadErrorPage,
-    useThemeQueryParameter,
-} from '@proton/components';
 import AccountLockedUpsellForm from '@proton/components/components/upsell/modals/AccountLockedUpsellForm';
+import HumanVerificationForm from '@proton/components/containers/api/humanVerification/HumanVerificationForm';
+import { HumanVerificationSteps } from '@proton/components/containers/api/humanVerification/interface';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import useThemeQueryParameter from '@proton/components/containers/themes/useThemeQueryParameter';
 import useInstance from '@proton/hooks/useInstance';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';

@@ -1,6 +1,6 @@
 import { IcBrandProtonMailFilledPlus } from '@proton/icons/icons/IcBrandProtonMailFilledPlus';
 
-import { PromotionButton } from '../button/PromotionButton';
+import PromotionButton from '../button/PromotionButton/PromotionButton';
 
 interface Props {
     onClick: () => void;

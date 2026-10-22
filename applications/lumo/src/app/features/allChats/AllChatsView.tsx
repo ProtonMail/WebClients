@@ -9,7 +9,8 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Input } from '@proton/atoms/Input/Input';
-import { Checkbox, useModalStateObject } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import { ChatHistoryLoadingSkeleton } from '../../components/ChatHistoryLoadingSkeleton';
 import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';

@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
-import type { ModalOwnProps } from '@proton/components';
-import { AuthModal, Prompt } from '@proton/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import AuthModal from '@proton/components/containers/password/AuthModal';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

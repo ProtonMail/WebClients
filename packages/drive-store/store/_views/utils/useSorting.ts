@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { type SortConfig, useMultiSortedList } from '@proton/components';
+import { type SortConfig, useMultiSortedList } from '@proton/components/hooks/useSortedList';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { LinkShareUrl } from '../../_links/interface';

@@ -2,7 +2,9 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { ContactEmailsProvider, useActiveBreakpoint, useConfirmActionModal } from '@proton/components';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 
 import { useItemContextMenu } from '../../legacy/components/FileBrowser';

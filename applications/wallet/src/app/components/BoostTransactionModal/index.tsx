@@ -10,7 +10,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Slider, SliderSizeEnum } from '@proton/atoms/Slider/Slider';
-import type { ModalStateProps } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useLoading from '@proton/hooks/useLoading';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import walletClockDark from '@proton/styles/assets/img/wallet/wallet-clock-dark.jpg';

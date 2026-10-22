@@ -3,8 +3,10 @@ import type { MouseEvent, TouchEvent } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { Badge, type Breakpoints, useContactEmailsCache } from '@proton/components';
+import { Badge } from '@proton/components/components/badge/Badge';
 import type { ConfirmActionModalProps } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 import { MemberRole, NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
 

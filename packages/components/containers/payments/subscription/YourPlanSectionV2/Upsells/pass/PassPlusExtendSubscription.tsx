@@ -16,7 +16,7 @@ import getBoldFormattedText from '../../../../../../helpers/getBoldFormattedText
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModalRaw } from '../../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../../constants';
-import type { GetPlanUpsellArgs } from '../../../helpers';
+import type { GetPlanUpsellArgs } from '../../../helpers/dashboard-upsells';
 import UpsellPanelV2 from '../../../panels/UpsellPanelV2';
 import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../../PlanIcon';

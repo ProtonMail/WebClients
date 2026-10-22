@@ -3,8 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import type { ModalProps } from '@proton/components/index';
 import lumoCatAlert from '@proton/styles/assets/img/lumo/lumo-cat-alert.svg';
 
 import { CreateFreeAccountButton } from './CreateFreeAccountLink/CreateFreeAccountLink';

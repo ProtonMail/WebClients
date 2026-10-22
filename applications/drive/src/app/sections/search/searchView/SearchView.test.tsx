@@ -24,13 +24,10 @@ jest.mock('./subscribeSearchStoreToEvents', () => ({
     subscribeSearchStoreToEvents: jest.fn(() => jest.fn()),
 }));
 
-jest.mock('@proton/components', () => {
-    const React = require('react');
-    return {
-        useActiveBreakpoint: jest.fn(() => ({ viewportWidth: { isMedium: false, isLarge: true, isSmall: false } })),
-        EmptyViewContainer: jest.fn((props) => React.createElement('div', null, props.children)),
-    };
-});
+jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
+    __esModule: true,
+    default: jest.fn(() => ({ viewportWidth: { isMedium: false, isLarge: true, isSmall: false } })),
+}));
 
 jest.mock('../../../statelessComponents/ToolbarRow/ToolbarRow', () => {
     const React = require('react');

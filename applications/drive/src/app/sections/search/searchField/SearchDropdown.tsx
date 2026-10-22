@@ -3,7 +3,8 @@ import * as React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Dropdown, DropdownSizeUnit } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import useLoading from '@proton/hooks/useLoading';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 

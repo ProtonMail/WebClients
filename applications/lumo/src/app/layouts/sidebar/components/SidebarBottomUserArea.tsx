@@ -1,5 +1,5 @@
 import { useConfig } from '@proton/app-context/useConfig';
-import { UserDropdown } from '@proton/components';
+import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 
 import LumoUserDropdown from '../../../components/LumoUserDropdown/LumoUserDropdown';
 import LumoUserDropdownContent from '../../../components/LumoUserDropdown/LumoUserDropdownContent';

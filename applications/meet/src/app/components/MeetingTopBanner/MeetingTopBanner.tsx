@@ -1,4 +1,4 @@
-import { TopBanner } from '@proton/components/index';
+import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsRecordingInProgress } from '@proton/meet/store/slices/recordingStatusSlice';
 import {

@@ -5,10 +5,11 @@ import userEvent from '@testing-library/user-event';
 
 import { Breadcrumbs } from './Breadcrumbs';
 
-jest.mock('@proton/components/index', () => {
+jest.mock('@proton/components/components/collapsingBreadcrumbs/CollapsingBreadcrumbs', () => {
     const ReactMock = require('react');
     return {
-        CollapsingBreadcrumbs: ({ breadcrumbs }: { breadcrumbs: any[] }) =>
+        __esModule: true,
+        default: ({ breadcrumbs }: { breadcrumbs: any[] }) =>
             ReactMock.createElement(
                 ReactMock.Fragment,
                 null,
@@ -16,7 +17,14 @@ jest.mock('@proton/components/index', () => {
                     ReactMock.createElement('button', { key: b.key, onClick: b.onClick }, b.text)
                 )
             ),
-        Loader: () => ReactMock.createElement('div', null, 'Loading'),
+    };
+});
+
+jest.mock('@proton/components/components/loader/Loader', () => {
+    const ReactMock = require('react');
+    return {
+        __esModule: true,
+        default: () => ReactMock.createElement('div', null, 'Loading'),
     };
 });
 

@@ -1,5 +1,5 @@
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { ContextSeparator } from '@proton/components';
+import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
 import { DeleteButton } from '../../../commonButtons/DeleteButton';

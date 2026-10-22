@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalTwo, useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLoading from '@proton/hooks/useLoading';
 
 import type { DecryptedLink } from '../../../store';

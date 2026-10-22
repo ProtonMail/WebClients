@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
-import { useSettingsLink } from '@proton/components/index';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { useIsWaitingRoomCreationEnabled } from '@proton/meet/hooks/useWaitingRoomFlags';

@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import type { WasmGatewayProvider } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalOwnProps } from '@proton/components';
-import { Checkbox, Prompt } from '@proton/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Button } from '../../../atoms';

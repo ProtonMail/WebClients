@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { SettingsLink } from '@proton/components/index';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import clsx from '@proton/utils/clsx';
 
 import { useLumoPlan } from '../../../hooks/useLumoPlan';

@@ -4,7 +4,7 @@ import compact from 'lodash/compact';
 import { c } from 'ttag';
 
 import type { WasmTransactionDetails } from '@proton/andromeda';
-import { useModalStateWithData } from '@proton/components';
+import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import arrowReceiveDarkSvg from '@proton/styles/assets/img/illustrations/arrow-receive-dark.svg';

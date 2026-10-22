@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { ProjectIcon } from '../../components/ProjectIcon/ProjectIcon';

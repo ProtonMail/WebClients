@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { NotificationButton } from '@proton/components';
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 
 import { useErrorHandler } from '../_utils';
 import type { LinkInfo } from './interface';

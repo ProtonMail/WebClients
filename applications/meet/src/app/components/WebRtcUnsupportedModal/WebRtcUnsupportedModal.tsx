@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ModalTwo, ModalTwoContent } from '@proton/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import warningIcon from '@proton/styles/assets/img/meet/warning-icon.svg';

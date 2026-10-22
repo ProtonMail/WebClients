@@ -8,7 +8,12 @@ import { WasmAccountSweeper, type WasmApiWalletAccount, type WasmBitcoinUnit, ty
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { MiddleEllipsis, type ModalStateProps, Prompt, useModalState, useModalStateWithData } from '@proton/components';
+import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
+import useModalState, {
+    type ModalStateProps,
+    useModalStateWithData,
+} from '@proton/components/components/modalTwo/useModalState';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import useLoading from '@proton/hooks/useLoading';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';

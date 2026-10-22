@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { FileIcon, MiddleEllipsis } from '@proton/components';
+import MiddleEllipsis from '@proton/components/components/ellipsis/MiddleEllipsis';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import { NodeType } from '@proton/drive/sdk';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { splitExtension } from '@proton/shared/lib/helpers/file';

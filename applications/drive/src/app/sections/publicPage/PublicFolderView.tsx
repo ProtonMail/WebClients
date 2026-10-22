@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useActiveBreakpoint } from '@proton/components';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getNodeAncestry, getNodeName } from '@proton/drive/modules/nodes';

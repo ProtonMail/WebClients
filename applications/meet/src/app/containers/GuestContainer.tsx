@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { NotificationsChildren } from '@proton/components';
 import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import type { MeetStore } from '@proton/meet/store/store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';

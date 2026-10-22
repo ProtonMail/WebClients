@@ -8,16 +8,14 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    Sidebar,
-    SidebarDrawerItems,
-    SidebarLogo,
-    SidebarNav,
-    useActiveBreakpoint,
-    useLocalState,
-} from '@proton/components';
+import SidebarDrawerItems from '@proton/components/components/drawer/SidebarDrawerItems';
+import Sidebar from '@proton/components/components/sidebar/Sidebar';
+import SidebarLogo from '@proton/components/components/sidebar/SidebarLogo';
+import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
 import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { directoryTreeFactory } from '@proton/drive/modules/directoryTree';
 import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
 import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';

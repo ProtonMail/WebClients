@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { SettingsLink } from '@proton/components';
-import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useAuthActionProps } from '../../hooks/useAuthActionProps';

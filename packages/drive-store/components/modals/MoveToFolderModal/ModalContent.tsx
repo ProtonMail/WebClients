@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import Alert from '@proton/components/components/alert/Alert';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 
 import type { DecryptedLink, TreeItem } from '../../../store';

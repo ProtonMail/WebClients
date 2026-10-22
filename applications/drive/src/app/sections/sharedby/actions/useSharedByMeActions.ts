@@ -1,4 +1,4 @@
-import { useConfirmActionModal } from '@proton/components';
+import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';

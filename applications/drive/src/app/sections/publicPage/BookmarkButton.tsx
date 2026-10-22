@@ -3,7 +3,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Spotlight } from '@proton/components';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useLoading from '@proton/hooks/useLoading';
 import { DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 

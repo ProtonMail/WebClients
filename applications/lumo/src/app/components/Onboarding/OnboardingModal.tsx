@@ -1,15 +1,13 @@
 import { c } from 'ttag';
 
-import type { ModalProps } from '@proton/components';
-import {
-    DriveLogo,
-    MailLogo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    VpnLogo,
-} from '@proton/components';
+import DriveLogo from '@proton/components/components/logo/DriveLogo';
+import MailLogo from '@proton/components/components/logo/MailLogo';
+import VpnLogo from '@proton/components/components/logo/VpnLogo';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import './OnboardingModal.scss';

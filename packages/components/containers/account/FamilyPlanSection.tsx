@@ -15,7 +15,7 @@ import {
 
 import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
-import { UsagePanel } from '../payments/subscription/panels';
+import UsagePanel from '../payments/subscription/panels/UsagePanel';
 import LeaveFamilyModal from './LeaveFamilyModal';
 import SettingsParagraph from './SettingsParagraph';
 

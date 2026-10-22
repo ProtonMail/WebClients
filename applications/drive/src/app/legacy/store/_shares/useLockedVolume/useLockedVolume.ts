@@ -8,7 +8,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { usePreventLeave } from '@proton/components';
+import usePreventLeave from '@proton/components/hooks/usePreventLeave';
 import {
     queryDeleteLockedVolumes,
     queryGetDriveVolume,

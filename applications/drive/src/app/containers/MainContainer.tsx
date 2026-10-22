@@ -8,16 +8,14 @@ import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { driveOAuthViewsOverride } from '@proton/activation/src/components/Modals/OAuth/Drive/driveOAuthViews';
 import EasySwitchProvider from '@proton/activation/src/logic/StoreProvider';
 import { useApi } from '@proton/app-context/useApi';
-import {
-    GlobalLoader,
-    GlobalLoaderProvider,
-    LoaderPage,
-    ModalsChildren,
-    SubscriptionModalProvider,
-    useDrawerWidth,
-    useEventManager,
-} from '@proton/components';
+import GlobalLoader from '@proton/components/components/globalLoader/GlobalLoader';
+import GlobalLoaderProvider from '@proton/components/components/globalLoader/GlobalLoaderProvider';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import ModalsChildren from '@proton/components/containers/modals/Children';
+import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import useDrawerWidth from '@proton/components/hooks/drawer/useDrawerWidth';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getBusDriver } from '@proton/drive/modules/busDriver';
 import { logging } from '@proton/drive/modules/logging';

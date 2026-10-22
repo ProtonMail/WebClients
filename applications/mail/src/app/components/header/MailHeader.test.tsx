@@ -46,7 +46,7 @@ const user = {
 } as UserModel;
 
 // Mock offer config file because it is supposed to change a lot
-jest.mock('@proton/components/containers/offers/hooks/useOfferConfig.ts', () => ({
+jest.mock('@proton/components/containers/offers/hooks/useOfferConfig', () => ({
     __esModule: true,
     default: jest.fn(() => [undefined, false]),
 }));

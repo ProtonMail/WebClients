@@ -1,7 +1,7 @@
 import { createContext, useContext, useMemo, useRef } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
-import { useEventManager } from '@proton/components';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import { logError } from '@proton/drive/legacy/errorHandling';
 import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import metrics from '@proton/metrics/metricsInstance';

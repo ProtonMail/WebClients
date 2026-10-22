@@ -7,7 +7,7 @@ import '@proton/components/testing/mockMatchMedia';
 // console.warn = () => {};
 
 // Globally mocked @proton/components modules
-jest.mock('@proton/components/hooks/useEventManager.ts', () => {
+jest.mock('@proton/components/hooks/useEventManager', () => {
     const subscribe = jest.fn();
     const call = jest.fn();
     const stop = jest.fn();

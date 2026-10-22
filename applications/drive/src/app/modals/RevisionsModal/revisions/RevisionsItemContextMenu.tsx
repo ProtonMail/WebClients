@@ -1,4 +1,4 @@
-import { ContextSeparator } from '@proton/components';
+import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import type { Revision } from '@proton/drive/sdk';
 
 import type { ContextMenuProps } from '../../../legacy/components/FileBrowser';

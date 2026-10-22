@@ -110,10 +110,10 @@ import { SubscriptionConfirmButton } from './confirm-button/SubscriptionConfirmB
 import { SUBSCRIPTION_STEPS } from './constants';
 import SubscriptionCheckoutCycleItem from './cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
-import { type SelectedProductPlans, getDefaultSelectedProductPlans } from './helpers';
 import { getAllowedCycles } from './helpers/getAllowedCycles';
 import { getInitialCycle } from './helpers/getInitialCycle';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
+import { type SelectedProductPlans, getDefaultSelectedProductPlans } from './helpers/payment';
 import { getCommonTelemetryPayload, reportChangeTelemetry, telemetryContext } from './helpers/subscriptionTelemetry';
 import { useVpn2024AddonsExperiment } from './helpers/useVpn2024AddonsExperiment';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';

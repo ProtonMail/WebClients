@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import type { ModalStateReturnObj } from '@proton/components';
+import type { ModalStateReturnObj } from '@proton/components/components/modalTwo/useModalState';
 
 import { type AlbumItem, useAlbumsStore } from '../useAlbums.store';
 import { AddAlbumPhotosModal } from './AddAlbumPhotosModal';

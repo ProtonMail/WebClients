@@ -5,7 +5,6 @@ import {
     createExtraneousDependenciesRule,
     extraneousDependenciesDevDependencies,
 } from '@proton/eslint-config-proton/extraneousDependencies';
-import { createRestrictedImportsConfig } from '@proton/eslint-config-proton/restrictedImports';
 
 /**
  * lint-staged runs ESLint from the monorepo root with repo-relative file paths
@@ -45,7 +44,6 @@ const passDesktopDevDependencies = [
 export default defineConfig([
     { ignores: ['native/target/**'] },
     defaultConfig,
-    createRestrictedImportsConfig({ rollout: ['components-barrel'] }),
     {
         rules: {
             'no-console': ['error', { allow: ['warn', 'error'] }],

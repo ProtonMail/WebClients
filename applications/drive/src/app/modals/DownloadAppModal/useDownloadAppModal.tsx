@@ -3,20 +3,18 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import type { ModalStateProps } from '@proton/components';
-import {
-    ButtonGroup,
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoHeader,
-    useActiveBreakpoint,
-} from '@proton/components';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import QRCode from '@proton/components/components/image/QRCode';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { DESKTOP_PLATFORMS, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_ANDROID_APP, DRIVE_IOS_APP } from '@proton/shared/lib/drive/urls';
 import { isIos, isMac } from '@proton/shared/lib/helpers/browser';

@@ -21,7 +21,7 @@ import usePreloadOfferImage from '../../containers/offers/hooks/usePreloadOfferI
 import type { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
-import { PromotionButton } from '../button/PromotionButton';
+import PromotionButton from '../button/PromotionButton/PromotionButton';
 import TopNavbarListItem from './TopNavbarListItem';
 
 interface Props {

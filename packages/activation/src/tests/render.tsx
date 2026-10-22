@@ -27,7 +27,7 @@ import { setupStore } from './protonStore';
 /**
  * Mocks
  */
-jest.mock('@proton/components/hooks/useEventManager.ts', () => {
+jest.mock('@proton/components/hooks/useEventManager', () => {
     const subscribe = jest.fn();
     const call = jest.fn();
     const stop = jest.fn();

@@ -7,12 +7,13 @@ import { resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/o
 import type { MailImportState } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
 import type { EasySwitchState } from '@proton/activation/src/logic/store';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useEventManager } from '@proton/components';
+import useEventManager from '@proton/components/hooks/useEventManager';
 
 import { useDriveImportStatus } from './useDriveImportStatus';
 
-jest.mock('@proton/components', () => ({
-    useEventManager: jest.fn(),
+jest.mock('@proton/components/hooks/useEventManager', () => ({
+    __esModule: true,
+    default: jest.fn(),
 }));
 
 jest.mock('@proton/activation/src/logic/store', () => ({

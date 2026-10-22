@@ -11,7 +11,7 @@ import { useNativeSidebarLayoutApi } from './useNativeSidebarLayoutApi';
 // derive its shape. That module pulls in the full `@proton/components` barrel (drawer, Pass
 // integration, dnd-kit, ...), which isn't safe to execute under jsdom. Stub it out so automocking
 // stays cheap and doesn't depend on unrelated parts of that barrel loading cleanly.
-jest.mock('@proton/components', () => ({ useActiveBreakpoint: jest.fn() }));
+jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({ __esModule: true, default: jest.fn() }));
 jest.mock('../../../hooks/useIsLumoSmallScreen');
 jest.mock('../../../providers/SidebarProvider');
 jest.mock('../../../remote/nativeComposerBridgeHelpers');

@@ -1,5 +1,5 @@
 import { Vr } from '@proton/atoms/Vr/Vr';
-import { Toolbar } from '@proton/components';
+import Toolbar from '@proton/components/components/toolbar/Toolbar';
 import { NodeType, getDrivePerNodeType } from '@proton/drive/sdk';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 

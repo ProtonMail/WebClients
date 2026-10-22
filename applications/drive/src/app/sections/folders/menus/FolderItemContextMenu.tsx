@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow';
 
-import { ContextSeparator } from '@proton/components';
+import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 

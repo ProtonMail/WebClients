@@ -7,7 +7,8 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { InputFieldTwo, Select } from '@proton/components/index';
+import Select from '@proton/components/components/select/Select';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 
 import {

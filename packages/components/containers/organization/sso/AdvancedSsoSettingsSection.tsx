@@ -11,7 +11,7 @@ import { updateOrganizationSettings } from '@proton/shared/lib/api/organization'
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces/Organization';
 
-import { PermissionTooltip } from '../../../components/orgPermissions/index';
+import PermissionTooltip from '../../../components/orgPermissions/PermissionTooltip';
 import Toggle from '../../../components/toggle/Toggle';
 import useErrorHandler from '../../../hooks/useErrorHandler';
 import SettingsLayout from '../../account/SettingsLayout';

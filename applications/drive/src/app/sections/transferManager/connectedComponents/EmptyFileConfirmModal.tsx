@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { confirmActionModal as ConfirmActionModal } from '@proton/components';
+import ConfirmActionModal from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import { EmptyFileDecision, uploadManager } from '@proton/drive/modules/upload';
 
 /**

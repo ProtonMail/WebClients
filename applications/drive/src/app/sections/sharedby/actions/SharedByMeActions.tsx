@@ -1,4 +1,4 @@
-import { ContextSeparator } from '@proton/components';
+import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 

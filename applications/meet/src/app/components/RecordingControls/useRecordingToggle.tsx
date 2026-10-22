@@ -4,7 +4,7 @@ import { addSeconds, format, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useSettingsLink } from '@proton/components';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { IcArrowDownCircle } from '@proton/icons/icons/IcArrowDownCircle';
 import { useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {

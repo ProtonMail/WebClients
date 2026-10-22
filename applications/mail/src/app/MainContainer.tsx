@@ -18,7 +18,7 @@ import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { useInboxDesktopEventLoopRefresh } from '@proton/components/hooks/useInboxDesktopEventLoopRefresh';
 import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktopMetrics';
 import useOnline from '@proton/components/hooks/useOnline';
-import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLoading.ts';
+import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLoading';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import { EventNotifierLoopType } from '@proton/shared/lib/eventNotifier/interface';
 

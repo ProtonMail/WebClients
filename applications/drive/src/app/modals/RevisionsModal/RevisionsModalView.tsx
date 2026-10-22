@@ -3,14 +3,12 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import {
-    AppLink,
-    FreeUpgradeBanner,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoHeader,
-    getRetentionLabel,
-} from '@proton/components';
+import AppLink from '@proton/components/components/link/AppLink';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { FreeUpgradeBanner } from '@proton/components/containers/drive/settings/banner/FreeUpgradeBanner';
+import { getRetentionLabel } from '@proton/components/containers/drive/settings/retentionLabels';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RevisionRetentionDaysSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 

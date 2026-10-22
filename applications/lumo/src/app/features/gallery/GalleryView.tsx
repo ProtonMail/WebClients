@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import lumoImageLight from '@proton/styles/assets/img/lumo/lumo-image-light.svg';
 import lumojiCreateDark from '@proton/styles/assets/img/lumo/lumoji-create-dark.svg';
 import lumojiCreateLight from '@proton/styles/assets/img/lumo/lumoji-create-light.svg';

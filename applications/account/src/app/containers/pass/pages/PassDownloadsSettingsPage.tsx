@@ -8,7 +8,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
 import DownloadClientCard from '@proton/components/components/downloadClientCard/DownloadClientCard';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';

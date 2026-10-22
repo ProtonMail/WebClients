@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { useAppTitle } from '@proton/components';
+import useAppTitle from '@proton/components/hooks/useAppTitle';
 
 import { useActiveShare } from '../../legacy/hooks/drive/useActiveShare';
 import { ToolbarRow } from '../../statelessComponents/ToolbarRow/ToolbarRow';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ToolbarButton } from '@proton/components';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { ContextMenuButton } from '../../../statelessComponents/ContextMenu';

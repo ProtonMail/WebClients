@@ -1,4 +1,5 @@
-import { MimeIcon, ToolbarButton } from '@proton/components';
+import MimeIcon from '@proton/components/components/icon/MimeIcon';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 
 import { hasFoldersSelected, isMultiSelect } from '../../../legacy/components/sections/ToolbarButtons/utils';

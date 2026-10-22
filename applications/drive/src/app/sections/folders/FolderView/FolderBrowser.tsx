@@ -2,7 +2,7 @@ import { type ReactNode, useCallback, useEffect, useRef } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { useActiveBreakpoint } from '@proton/components';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMoveNodes } from '@proton/drive/modules/moveNodes';
 import type { MoveNodesItemMap } from '@proton/drive/modules/moveNodes';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';

@@ -1,6 +1,6 @@
 import { useShallow } from 'zustand/react/shallow';
 
-import type { Breakpoints } from '@proton/components';
+import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 import { MemberRole, NodeType } from '@proton/drive/sdk';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';

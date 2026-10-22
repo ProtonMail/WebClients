@@ -2,7 +2,9 @@ import { MemberRole } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import { Dropdown, DropdownButton, DropdownMenu } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import useLoading from '@proton/hooks/useLoading';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { IcPencil } from '@proton/icons/icons/IcPencil';

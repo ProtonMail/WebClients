@@ -1,12 +1,10 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import {
-    ModalsChildren,
-    ModalsProvider,
-    NotificationsChildren,
-    NotificationsProvider,
-    ThemeProvider,
-} from '@proton/components';
+import ModalsChildren from '@proton/components/containers/modals/Children';
+import ModalsProvider from '@proton/components/containers/modals/Provider';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
+import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import InlineIcons from '@proton/icons/InlineIcons';
 import { APPS } from '@proton/shared/lib/constants';
 import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP, getThemes } from '@proton/shared/lib/themes/themes';

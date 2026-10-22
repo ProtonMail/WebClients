@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Badge } from '@proton/components';
+import { Badge } from '@proton/components/components/badge/Badge';
 
 import { withHoc } from '../modalUtils/withHoc';
 import { type Log, useLogsState } from './useLogsState';

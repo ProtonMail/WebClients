@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { ModalStateProps } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getFormattedNodeLocation, getNodeName } from '@proton/drive/modules/nodes';
 import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';

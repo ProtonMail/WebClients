@@ -7,16 +7,14 @@ import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { Vr } from '@proton/atoms/Vr/Vr';
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    type ModalStateReturnObj,
-    Toolbar,
-    ToolbarButton,
-    useActiveBreakpoint,
-} from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import type { ModalStateReturnObj } from '@proton/components/components/modalTwo/useModalState';
+import Toolbar from '@proton/components/components/toolbar/Toolbar';
+import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { MemberRole, getDriveForPhotos } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';

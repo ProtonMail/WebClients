@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import type { ModalStateProps } from '@proton/components';
+import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import type { DirectoryTreeItem } from '@proton/drive/components/DirectoryTree/DirectoryTree';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import type { useSharingModal } from '@proton/drive/modals/sharingModal';

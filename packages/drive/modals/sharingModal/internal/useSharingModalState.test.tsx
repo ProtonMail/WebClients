@@ -110,7 +110,6 @@ const mockedResultOk = jest.mocked(resultOk);
 const mockedResultError = jest.mocked(resultError);
 
 jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/components');
 jest.mock('@proton/app-context/useNotifications');
 jest.mock('@proton/hooks/useLoading');
 jest.mock('@proton/shared/lib/apps/helper');

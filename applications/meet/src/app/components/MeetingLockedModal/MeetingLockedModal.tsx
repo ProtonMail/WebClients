@@ -3,8 +3,7 @@ import { useContext } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ModalTwo } from '@proton/components';
-import { ModalContext } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo, { ModalContext } from '@proton/components/components/modalTwo/Modal';
 import lockIcon from '@proton/styles/assets/img/meet/lock-icon.png';
 
 import './MeetingLockedModal.scss';

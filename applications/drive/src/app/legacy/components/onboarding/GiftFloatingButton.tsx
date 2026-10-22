@@ -4,14 +4,12 @@ import { useLocation } from 'react-router-dom-v5-compat';
 import { c, msgid } from 'ttag';
 
 import type { ThemeColorUnion } from '@proton/colors/types';
-import {
-    FloatingButton,
-    Row,
-    Spotlight,
-    useActiveBreakpoint,
-    useAuthentication,
-    useLocalState,
-} from '@proton/components';
+import FloatingButton from '@proton/components/components/button/FloatingButton';
+import Row from '@proton/components/components/container/Row';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import { useSharingModal } from '@proton/drive/modals/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 import { generateNodeUid } from '@proton/drive/sdk';

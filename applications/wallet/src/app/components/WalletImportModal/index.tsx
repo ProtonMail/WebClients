@@ -5,18 +5,16 @@ import { c } from 'ttag';
 
 import type { WasmFiatCurrencySymbol } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import type { ModalOwnProps } from '@proton/components';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    DropdownSizeUnit,
-    ModalTwoFooter,
-    PasswordInputTwo,
-    TextAreaTwo,
-    useModalStateWithData,
-} from '@proton/components';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcWallet } from '@proton/icons/icons/IcWallet';
 import { useWalletSettings } from '@proton/wallet/store/hooks';

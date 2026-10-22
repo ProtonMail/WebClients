@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useStaggeredWhatsNewFeatures } from '../../hooks/useStaggeredWhatsNewFeatures';

@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { CircularProgress, FileIcon } from '@proton/components';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import CircularProgress from '@proton/components/components/progress/CircularProgress';
 
 import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
 import { attachmentDataCache } from '../../../services/attachmentDataCache';

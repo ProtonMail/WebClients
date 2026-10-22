@@ -8,7 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { DRIVE_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -26,12 +26,12 @@ import { selectAttachmentsBySpaceId, selectSpaceById } from '../../redux/selecto
 import { locallyDeleteAttachmentFromLocalRequest } from '../../redux/slices/core/attachments';
 import { handleSpaceAttachmentFileAsync } from '../../services/files';
 import type { Attachment, ProjectSpace } from '../../types';
-import { getAcceptAttributeString } from '../../util/filetypes';
 import { isSupportedFile } from '../../util/fileTypeHelpers';
+import { getAcceptAttributeString } from '../../util/filetypes';
+import { ProjectKnowledgeSection } from './ProjectKnowledgeSection';
 import { ConfirmRemoveAllFilesModal } from './modals/ConfirmRemoveAllFilesModal';
 import { CreateFolderModal } from './modals/CreateFolderModal';
 import { LinkDriveFolderModal } from './modals/LinkDriveFolderModal';
-import { ProjectKnowledgeSection } from './ProjectKnowledgeSection';
 
 import './ProjectFilesPanel.scss';
 

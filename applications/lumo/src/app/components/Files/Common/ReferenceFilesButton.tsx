@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { FileIcon } from '@proton/components';
+import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 
 import type { ContextFilter } from '../../../llm';
 import { useLumoSelector } from '../../../redux/hooks';

@@ -2,18 +2,16 @@ import { Suspense, lazy, useState } from 'react';
 import { Router } from 'react-router-dom';
 import { CompatRouter } from 'react-router-dom-v5-compat';
 
-import {
-    ApiProvider,
-    AuthenticationProvider,
-    DrawerProvider,
-    ErrorBoundary,
-    EventManagerProvider,
-    LoaderPage,
-    ProtonApp,
-    StandardErrorPage,
-    StandardLoadErrorPage,
-    StandardPrivateApp,
-} from '@proton/components';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import LoaderPage from '@proton/components/containers/app/LoaderPage';
+import ProtonApp from '@proton/components/containers/app/ProtonApp';
+import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
+import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { getWebpackChunkFailedToLoadError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { driveMetrics } from '@proton/drive/modules/metrics';
 import useEffectOnce from '@proton/hooks/useEffectOnce';

@@ -1,4 +1,4 @@
-import { TimeIntl } from '@proton/components';
+import TimeIntl from '@proton/components/components/time/TimeIntl';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';

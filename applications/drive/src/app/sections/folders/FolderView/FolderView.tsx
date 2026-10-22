@@ -2,7 +2,8 @@ import { useCallback, useEffect } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { Loader, useAppTitle } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
+import useAppTitle from '@proton/components/hooks/useAppTitle';
 import { type MoveNodesItemMap, useMoveNodes } from '@proton/drive/modules/moveNodes';
 import { uploadManager } from '@proton/drive/modules/upload';
 import { generateNodeUid, splitNodeUid } from '@proton/drive/sdk';

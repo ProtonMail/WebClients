@@ -17,7 +17,7 @@
  *
  * @example client oxlint config
  * 'proton/restricted-imports': createRestrictedImportRule({
- *     rollout: ['account-barrel', 'components-barrel'],
+ *     rollout: ['account-barrel'],
  *     paths: [{ name: 'some-package', importNames: ['oldHelper'], message: 'Use newHelper instead.' }],
  *     patterns: [{ group: ['@proton/foo/*'], message: 'Only the entry point is public.' }],
  * })
@@ -53,8 +53,6 @@ interface BaseRestriction extends Restrictions {
     appliesTo?: (filename: string) => boolean;
 }
 
-const COMPONENTS = '@proton/components';
-
 export const iconRestrictedMessage =
     "Do not use the `Icon` component. Import the icon directly from `@proton/icons` instead, e.g. `import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal'`.";
 
@@ -64,16 +62,9 @@ export const iconRestrictedMessage =
  * `/index` and `/index.ts` load the same file as the bare specifier, but specifiers are matched exactly, so they
  * need their own entries or they would bypass the ban.
  */
-function createBarrelRestrictions(
-    packageName: string,
-    { includeBareSpecifier = true }: { includeBareSpecifier?: boolean } = {}
-): Required<Pick<Restrictions, 'paths'>> {
-    const specifiers = [`${packageName}/index`, `${packageName}/index.ts`];
-    if (includeBareSpecifier) {
-        specifiers.unshift(packageName);
-    }
+function createBarrelRestrictions(packageName: string): Required<Pick<Restrictions, 'paths'>> {
     return {
-        paths: specifiers.map((name) => ({
+        paths: [packageName, `${packageName}/index`, `${packageName}/index.ts`].map((name) => ({
             name,
             message: 'You should avoid barrel imports. Prefer full path imports.',
         })),
@@ -98,6 +89,7 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
             '@proton/chargebee',
             '@proton/collect-metrics',
             '@proton/colors',
+            '@proton/components',
             '@proton/docs-proto',
             '@proton/drive',
             '@proton/features',
@@ -123,13 +115,10 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
     },
     {
         // The generic `<Icon name="..." />` component, replaced by direct imports from @proton/icons.
-        //   bad:  import { Icon } from '@proton/components';
+        //   bad:  import Icon from '@proton/components/components/icon/Icon';
         //   good: import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
         name: 'the generic Icon component',
-        paths: [
-            { name: `${COMPONENTS}/components/icon/Icon`, message: iconRestrictedMessage },
-            { name: COMPONENTS, importNames: ['Icon'], message: iconRestrictedMessage },
-        ],
+        paths: [{ name: '@proton/components/components/icon/Icon', message: iconRestrictedMessage }],
     },
     {
         name: 'reselect',
@@ -226,19 +215,13 @@ export const OXLINT_BASE_RESTRICTIONS: Restrictions = {
 //
 // Available ids:
 //   '<package>-barrel'         bans importing from the package root, so every import uses the full path
-//                                bad:  import { ModalTwo } from '@proton/components';
-//                                good: import ModalTwo from '@proton/components/components/modalTwo/Modal';
-//                              Ids: account-barrel, components-barrel
-//   'components-barrel-index'  temporary, packages/activation only, see its entry below
+//                                bad:  import { Foo } from '@proton/account';
+//                                good: import Foo from '@proton/account/path/to/Foo';
+//                              Ids: account-barrel
 // ---------------------------------------------------------------------------------------------------------------------
 
 const ROLLOUT_RESTRICTIONS = {
     'account-barrel': createBarrelRestrictions('@proton/account'),
-    'components-barrel': createBarrelRestrictions(COMPONENTS),
-
-    // Temporary, only for packages/activation: it still imports the bare `@proton/components` barrel, so only the
-    // `/index` specifiers are banned there. Delete with the activation migration.
-    'components-barrel-index': createBarrelRestrictions(COMPONENTS, { includeBareSpecifier: false }),
 } satisfies Record<string, Restrictions>;
 
 export type RolloutId = keyof typeof ROLLOUT_RESTRICTIONS;

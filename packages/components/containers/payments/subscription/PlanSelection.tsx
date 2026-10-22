@@ -81,8 +81,8 @@ import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './
 import PlanSelectionPlanCard, { type HocPrice } from './PlanSelectionPlanCard';
 import useCancellationFlow from './cancellationFlow/useCancellationFlow';
 import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
-import { getAllowedCycles } from './helpers';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
+import { getAllowedCycles } from './helpers/getAllowedCycles';
 
 import './PlanSelection.scss';
 

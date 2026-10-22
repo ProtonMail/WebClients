@@ -14,7 +14,8 @@ import type { OrganizationExtended, OrganizationSettings } from '@proton/shared/
 
 import Info from '../../components/link/Info';
 import Loader from '../../components/loader/Loader';
-import { PermissionBanner, PermissionTooltip } from '../../components/orgPermissions/index';
+import PermissionBanner from '../../components/orgPermissions/PermissionBanner';
+import PermissionTooltip from '../../components/orgPermissions/PermissionTooltip';
 import Toggle from '../../components/toggle/Toggle';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';

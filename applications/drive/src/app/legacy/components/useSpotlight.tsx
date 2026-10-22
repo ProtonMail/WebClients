@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-import { useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
+import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { FeatureCode } from '@proton/features/interface';
 

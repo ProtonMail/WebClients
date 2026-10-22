@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 
 const meta: Meta = {
     title: 'Core Concepts/Typography',

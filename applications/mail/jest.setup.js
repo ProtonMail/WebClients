@@ -40,7 +40,7 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 jest.mock('@sentry/browser', () => jest.requireActual('./src/__mocks__/sentryBrowser').default);
 
 // Globally mocked @proton/components modules
-jest.mock('@proton/components/hooks/useEventManager.ts', () => {
+jest.mock('@proton/components/hooks/useEventManager', () => {
     const subscribe = jest.fn();
     const call = jest.fn();
     const stop = jest.fn();

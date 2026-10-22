@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { FileNameDisplay } from '@proton/components/index';
+import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
 import { getNodeName } from '@proton/drive/modules/nodes';
 import { MemberRole, type NodeEntity } from '@proton/drive/sdk';
 

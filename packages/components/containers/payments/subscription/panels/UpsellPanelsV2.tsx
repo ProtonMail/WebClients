@@ -10,7 +10,7 @@ import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import Time from '../../../../components/time/Time';
-import { type Upsell, type UpsellWithPlan, isUpsellWithPlan } from '../helpers';
+import { type Upsell, type UpsellWithPlan, isUpsellWithPlan } from '../helpers/dashboard-upsells';
 import UpsellPanelV2 from './UpsellPanelV2';
 import SaveLabel from './components/SaveLabel';
 import UpsellPrice from './components/UpsellPrice';

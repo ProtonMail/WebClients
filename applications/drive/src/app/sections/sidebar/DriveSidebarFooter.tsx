@@ -1,5 +1,6 @@
 import { useConfig } from '@proton/app-context/useConfig';
-import { AppVersion, getAppVersion } from '@proton/components';
+import AppVersion from '@proton/components/components/version/AppVersion';
+import { getAppVersion } from '@proton/components/helpers/appVersion';
 
 export const DriveSidebarFooter = () => {
     const { APP_VERSION } = useConfig();

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { usePreventLeave } from '@proton/components';
+import usePreventLeave from '@proton/components/hooks/usePreventLeave';
 import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import {
     queryCreateShare,

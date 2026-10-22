@@ -16,7 +16,7 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { apiMock } from '@proton/test-api/api';
 
-import { plansDefaultResponse } from '../../hooks/helpers/tests/index';
+import { plansDefaultResponse } from '../../hooks/helpers/tests/usePlans';
 import { renderWithProviders } from '../../testing/renderWithProviders';
 import SubscriptionsSection from './SubscriptionsSection';
 
