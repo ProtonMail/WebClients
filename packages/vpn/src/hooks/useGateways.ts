@@ -5,8 +5,8 @@ import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCa
 import { useApi } from '@proton/app-context/useApi';
 import { useFetchData } from '@proton/components/hooks/useFetchData';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';
-import { supportsAddonType } from '@proton/payments/core/plan/addons';
-import { getPlanIDs, getPlanName } from '@proton/payments/core/subscription/helpers';
+import { getSubscriptionSupportingAddon } from '@proton/payments/core/plan/addons';
+import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { queryVPNGateways } from '../apis/gateway';
@@ -71,9 +71,7 @@ export const useGateways = (organization: Organization | undefined, maxAge: numb
 
     const [allSubscriptions = []] = useAllSubscriptions();
     const [entitlements] = useEntitlementChecksForOrgAndUser();
-    const subscriptionWithIpAddon = allSubscriptions.find((subscription) =>
-        supportsAddonType(getPlanIDs(subscription), ADDON_PREFIXES.IP)
-    );
+    const subscriptionWithIpAddon = getSubscriptionSupportingAddon(allSubscriptions, ADDON_PREFIXES.IP);
     const planWithIpAddon = getPlanName(subscriptionWithIpAddon);
     const hasGatewaysAccess = !!organization && (entitlements.hasMaxDedicatedIps || planWithIpAddon !== undefined);
 
