@@ -1,8 +1,10 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
 
+import { useUser } from '@proton/account/user/hooks';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
+import useLocalState from '@proton/components/hooks/useLocalState';
 import useOnline from '@proton/components/hooks/useOnline';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
@@ -52,9 +54,14 @@ interface Props {
     children: ReactNode;
 }
 
+const getSurfaceModeKey = (userID: string) => {
+    return `lumo-mail-surface-mode-${userID}`;
+};
+
 /** Held above the routes and the drawer, so the floating state survives a mailbox remount and a dock. */
 export const LumoFloatingPanelProvider = ({ children }: Props) => {
-    const [isDetached, setIsDetached] = useState(false);
+    const [user] = useUser();
+    const [isDetached, setIsDetached] = useLocalState(false, getSurfaceModeKey(user.ID));
     const [isPanelOpen, setIsPanelOpen] = useState(false);
     const [sideState, setSideState] = useState(INITIAL_PANEL_SIDE_STATE);
     const [cardWidth, setCardWidth] = useState(CARD_MIN_WIDTH);
