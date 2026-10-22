@@ -96,6 +96,18 @@ export const getSelfMember = () => ({
     url: 'core/v4/members/me',
 });
 
+/**
+ * Demotes the given members that are flagged with RequiresOrgKeyDemotion, except the requesting admin. Runs
+ * asynchronously. Accepts up to 1,000 member IDs.
+ */
+export const scheduleOrgKeyDemotions = (memberIDs: string[]) => ({
+    method: 'post',
+    url: 'core/v4/members/org-key-demotions',
+    data: {
+        MemberIDs: memberIDs,
+    },
+});
+
 export const getAllUserOrganizations = (api: Api) => {
     return api<{ Organizations: UserOrganization[] }>({
         method: 'get',
