@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
 import CircularProgress from '@proton/components/components/progress/CircularProgress';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
@@ -117,6 +117,8 @@ const AttachmentItem = ({
         void withLoading(action);
     };
 
+    const AttachmentIcon = getFileIcon(attachment?.MIMEType || 'unknown');
+
     return (
         <div className="message-attachmentList-item-container" data-testid="attachment-item">
             <div
@@ -137,7 +139,7 @@ const AttachmentItem = ({
                         {progressionHappening ? (
                             <CircularProgress progress={value} size={20} className="mr-2" />
                         ) : (
-                            <FileIcon mimeType={attachment?.MIMEType || 'unknown'} size={5} className="mr-2" />
+                            <AttachmentIcon size={5} className="shrink-0 mr-2" />
                         )}
                     </button>
                     <Tooltip title={primaryActionTitle}>
