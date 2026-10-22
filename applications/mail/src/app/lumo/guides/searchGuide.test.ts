@@ -1,5 +1,5 @@
 import { indexedESStatus } from '../helpers/navigation.test.helpers';
-import { buildMailSearchGuide } from './searchGuide';
+import { buildMailSearchGuide, buildStandaloneMailSearchGuide } from './searchGuide';
 
 const SUBSTRING_CLAIM = 'There is no OR, and no operators of any kind.';
 const OPERATOR_CLAIM = '`hello | world` — OR';
@@ -85,5 +85,34 @@ describe('buildMailSearchGuide', () => {
     ])('shares %s across both variants', (_case, section) => {
         expect(buildMailSearchGuide(indexedESStatus())).toContain(section);
         expect(buildMailSearchGuide(indexedESStatus({ esEnabled: false }))).toContain(section);
+    });
+});
+
+const STANDALONE_SUBSTRING_VARIANT = 'Matching on this device: one short stem.';
+const STANDALONE_OPERATOR_VARIANT = 'Matching on this device: widen with operators.';
+
+describe('buildStandaloneMailSearchGuide', () => {
+    it('teaches substring matching when Encrypted Search will run the query', () => {
+        const guide = buildStandaloneMailSearchGuide(indexedESStatus());
+
+        expect(guide).toContain(STANDALONE_SUBSTRING_VARIANT);
+        expect(guide).not.toContain(STANDALONE_OPERATOR_VARIANT);
+    });
+
+    it.each([
+        ['no index on this device', { dbExists: false }],
+        ['the user switched it off', { esEnabled: false }],
+    ])('teaches the server operator syntax when %s', (_case, esStatus) => {
+        const guide = buildStandaloneMailSearchGuide(indexedESStatus(esStatus));
+
+        expect(guide).toContain(STANDALONE_OPERATOR_VARIANT);
+        expect(guide).not.toContain(STANDALONE_SUBSTRING_VARIANT);
+    });
+
+    // The syntax regime turns only on who parses the keyword: a metadata-only index still normalises it.
+    it('keeps substring rules while content indexing is unfinished, since ES still parses the keyword', () => {
+        expect(
+            buildStandaloneMailSearchGuide(indexedESStatus({ contentIndexingDone: false, isDBLimited: true }))
+        ).toContain(STANDALONE_SUBSTRING_VARIANT);
     });
 });
