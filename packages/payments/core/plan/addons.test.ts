@@ -1,7 +1,8 @@
+import { buildSubscription } from '../../testing/buildSubscription';
 import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
 import type { PlanIDs } from '../interface';
 import type { SupportedAddons } from './addons';
-import { getSupportedAddons, supportsAddonType, supportsMemberAddon } from './addons';
+import { getSubscriptionSupportingAddon, getSupportedAddons, supportsAddonType, supportsMemberAddon } from './addons';
 
 describe('getSupportedAddons', () => {
     describe('B2C plans', () => {
@@ -418,5 +419,25 @@ describe('supportsAddonType', () => {
 
     it('should return false for an empty selection', () => {
         expect(supportsAddonType({}, ADDON_PREFIXES.IP)).toBe(false);
+    });
+});
+
+describe('getSubscriptionSupportingAddon', () => {
+    it('returns the first subscription whose plan supports the addon', () => {
+        const passPro = buildSubscription(PLANS.PASS_PRO);
+        const mailPro = buildSubscription(PLANS.MAIL_PRO);
+        const bundlePro = buildSubscription(PLANS.BUNDLE_PRO_2024);
+
+        expect(getSubscriptionSupportingAddon([passPro, mailPro, bundlePro], ADDON_PREFIXES.SCRIBE)).toBe(mailPro);
+    });
+
+    it('returns undefined when no subscription supports the addon', () => {
+        expect(
+            getSubscriptionSupportingAddon([buildSubscription(PLANS.PASS_PRO)], ADDON_PREFIXES.SCRIBE)
+        ).toBeUndefined();
+    });
+
+    it('returns undefined without subscriptions', () => {
+        expect(getSubscriptionSupportingAddon([], ADDON_PREFIXES.SCRIBE)).toBeUndefined();
     });
 });
