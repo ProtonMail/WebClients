@@ -5803,9 +5803,6 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
-      '@proton/telemetry-tracker':
-        specifier: workspace:^
-        version: link:../telemetry-tracker
       '@proton/types':
         specifier: workspace:^
         version: link:../types

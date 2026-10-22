@@ -6,10 +6,10 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
+import { useGetCalendarEventRaw } from '@proton/calendar/calendarEvent/useGetCalendarEventRaw';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import { defaultESContext } from '@proton/encrypted-search/constants';
 import type { ESCalendarSearchParams } from '@proton/encrypted-search/models/calendar';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';

@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
+import { useGetCalendarEventRaw } from '@proton/calendar/calendarEvent/useGetCalendarEventRaw';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
-import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getEvent } from '@proton/shared/lib/api/calendars';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
