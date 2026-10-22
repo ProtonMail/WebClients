@@ -10,14 +10,14 @@
         "lint": "oxlint --quiet"
     },
     "dependencies": {
-        "stylelint": "^15.11.0",
+        "stylelint": "catalog:",
         "stylelint-config-prettier-scss": "^1.0.0",
         "stylelint-config-standard-scss": "^10.0.0",
         "stylelint-use-logical-spec": "^5.0.1"
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",
-        "oxlint": "1.87.0",
-        "oxlint-tsgolint": "7.0.2004"
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:"
     }
 }

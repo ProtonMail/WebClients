@@ -20,17 +20,17 @@
         "test:ci": "pnpm run test --run"
     },
     "dependencies": {
-        "@oxlint/plugins": "1.87.0",
+        "@oxlint/plugins": "catalog:",
         "eslint-plugin-compat": "^7.0.2",
         "eslint-plugin-custom-rules": "workspace:^",
         "ignore": "^7.0.5",
-        "oxlint": "1.87.0",
-        "oxlint-tsgolint": "7.0.2004"
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:"
     },
     "devDependencies": {
         "@types/node": "catalog:",
-        "@typescript/native": "npm:typescript@^7.0.2",
-        "typescript": "npm:@typescript/typescript6@^6.0.2",
+        "@typescript/native": "catalog:",
+        "typescript": "catalog:",
         "vitest": "^5.0.2"
     }
 }
