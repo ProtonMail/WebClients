@@ -1,6 +1,7 @@
 import AppsDropdown from '@proton/components/containers/app/AppsDropdown'
 import Logo from '@proton/components/components/logo/Logo'
-import MimeIcon from '@proton/components/components/icon/MimeIcon'
+import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc'
+import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet'
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
 import { useConfig } from '@proton/app-context/useConfig'
 import UserDropdown from '@proton/components/containers/heading/UserDropdown'
@@ -219,13 +220,8 @@ function DocsHeaderForDocument({
   const role = documentState.getProperty('userRole')
   const { volumeId, nodeId } = documentState.getProperty('decryptedNode')
 
-  const icon = (
-    <MimeIcon
-      name={documentType === 'sheet' ? 'proton-sheet' : 'proton-doc'}
-      size={5}
-      className="ml-[.75rem] mr-[.0625rem] shrink-0"
-    />
-  )
+  const DocumentTypeIcon = documentType === 'sheet' ? MimeProtonSheet : MimeProtonDoc
+  const icon = <DocumentTypeIcon size={5} className="ml-[.75rem] mr-[.0625rem] shrink-0" />
 
   return (
     <>

@@ -1401,6 +1401,9 @@ importers:
       '@proton/features':
         specifier: workspace:^
         version: link:../../packages/features
+      '@proton/file-icons':
+        specifier: workspace:^
+        version: link:../../packages/file-icons
       '@proton/hooks':
         specifier: workspace:^
         version: link:../../packages/hooks
@@ -1931,6 +1934,9 @@ importers:
       '@proton/features':
         specifier: workspace:^
         version: link:../../packages/features
+      '@proton/file-icons':
+        specifier: workspace:^
+        version: link:../../packages/file-icons
       '@proton/hooks':
         specifier: workspace:^
         version: link:../../packages/hooks
@@ -6288,6 +6294,9 @@ importers:
       '@proton/components':
         specifier: workspace:^
         version: link:../components
+      '@proton/file-icons':
+        specifier: workspace:^
+        version: link:../file-icons
       '@proton/hooks':
         specifier: workspace:^
         version: link:../hooks
@@ -6442,6 +6451,9 @@ importers:
       '@proton/drive':
         specifier: workspace:^
         version: link:../drive
+      '@proton/file-icons':
+        specifier: workspace:^
+        version: link:../file-icons
       '@proton/hooks':
         specifier: workspace:^
         version: link:../hooks
