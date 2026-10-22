@@ -3,13 +3,16 @@ import path from 'node:path';
 
 const usesOxlintByDirectory = new Map();
 
-/** Workspaces move from ESLint to oxlint one at a time; a migrated one has an oxlint.config.mts. */
+/**
+ * Code moves from ESLint to oxlint one folder at a time: a migrated folder has an oxlint.config.mts, which can also
+ * sit outside a workspace (e.g. ci/bin/update-chargebee-iframe). The nearest oxlint.config.mts or package.json decides.
+ */
 function usesOxlint(directory) {
     if (!usesOxlintByDirectory.has(directory)) {
         let result = false;
-        if (fs.existsSync(path.join(directory, 'package.json'))) {
-            result = fs.existsSync(path.join(directory, 'oxlint.config.mts'));
-        } else if (path.dirname(directory) !== directory) {
+        if (fs.existsSync(path.join(directory, 'oxlint.config.mts'))) {
+            result = true;
+        } else if (!fs.existsSync(path.join(directory, 'package.json')) && path.dirname(directory) !== directory) {
             result = usesOxlint(path.dirname(directory));
         }
         usesOxlintByDirectory.set(directory, result);
