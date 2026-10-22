@@ -387,7 +387,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
     const contentRef = useRef<HTMLDivElement>(null);
     const { handleSaveManualArtifactEdit } = useConversationActions();
     const isGuest = useIsGuest();
-    const { artifactsView: isArtifactsViewFlagEnabled } = useLumoFlags();
+    const { artifactsView: isArtifactsViewFlagEnabled, artifactSlides: isArtifactSlidesFlagEnabled } = useLumoFlags();
     const versions = selectedId ? registry[selectedId]?.versions : undefined;
     const versionCount = versions?.length;
     // Everything that changes an artifact (Lumo, inline edits, manual edits) works on the latest
@@ -723,17 +723,20 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                         />
                         {isArtifactRevisionLoading && <ArtifactPanelRevisionOverlay artifactType={artifact.type} />}
                         {/* Hidden on older versions: the selection would come from this version while the
-                            model revises the latest, where that text may no longer exist. */}
-                        {isArtifactsViewFlagEnabled && !isViewingOlderVersion && (
-                            <ArtifactInlineEdit
-                                containerRef={contentRef}
-                                artifactId={artifact.id}
-                                title={artifact.title}
-                                artifactType={artifact.type}
-                                isGenerating={isGenerating || isSelectedVersionProvisional}
-                                layout={layout}
-                            />
-                        )}
+                            model revises the latest, where that text may no longer exist. Hidden on decks
+                            without LumoArtifactSlides: the model isn't offered `presentation`. */}
+                        {isArtifactsViewFlagEnabled &&
+                            !isViewingOlderVersion &&
+                            (artifact.type !== 'presentation' || isArtifactSlidesFlagEnabled) && (
+                                <ArtifactInlineEdit
+                                    containerRef={contentRef}
+                                    artifactId={artifact.id}
+                                    title={artifact.title}
+                                    artifactType={artifact.type}
+                                    isGenerating={isGenerating || isSelectedVersionProvisional}
+                                    layout={layout}
+                                />
+                            )}
                     </div>
                 )}
             </div>
