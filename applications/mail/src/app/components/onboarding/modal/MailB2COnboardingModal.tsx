@@ -14,6 +14,7 @@ import type { OnboardingStepEligibleCallback } from './interface';
 import ActivatePremiumFeaturesStep, {
     isActivatePremiumFeaturesStepEligible,
 } from './steps/ActivatePremiumFeaturesStep';
+import { DiscoverAppsStep } from './steps/DiscoverAppsStep';
 import DisplayNameStep, { isDisplayNameStepEligible } from './steps/DisplayNameStep';
 import GetDesktopAppStep, { isGetDesktopAppStepEligible } from './steps/GetDesktopAppStep';
 import GetMobileAppStep, { isGetMobileAppStepEligible } from './steps/GetMobileAppStep';
@@ -164,6 +165,7 @@ const MailB2COnboardingModal = (props: MailOnboardingProps) => {
                 data-testid="new-onboarding-variant"
                 genericSteps={{
                     setupThemeStep: getStepComponent('new-onboarding-themes'),
+                    discoverAppsStep: DiscoverAppsStep,
                     organizationStep: getStepComponent('new-onboarding-organization'),
                 }}
             >
