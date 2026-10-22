@@ -1,14 +1,24 @@
 import { useState } from 'react';
 
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { ONBOARDING_THEMES } from '@proton/components/containers/onboarding/constants';
+import { getPlanName } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { allowed, defineEvent, defineTimer, duration, number } from '@proton/telemetry-tracker/events';
+import { allowed, defineEvent, defineTimer, duration, number, topValues } from '@proton/telemetry-tracker/events';
 import { tracker } from '@proton/telemetry-tracker/tracker';
+import isTruthy from '@proton/utils/isTruthy';
 
 type OnboardingThemeLabel = (typeof ONBOARDING_THEMES)[number]['label'];
 
 export enum ONBOARDING_STEPS {
+    displayName = 'display_name',
+    partner = 'partner',
+    organization = 'organization',
+    discoverApps = 'discover_apps',
+    premiumFeatures = 'premium_features',
     welcome = 'welcome',
     desktopApp = 'get_desktop_app',
     mobileApp = 'get_mobile_app',
@@ -20,15 +30,35 @@ export enum ONBOARDING_ACTIONS {
     openAppStore = 'open_app_store',
     openPlayStore = 'open_play_store',
     selectTheme = 'select_theme',
+    startOrgSetup = 'start_org_setup',
+    back = 'back',
+    toggleSetting = 'toggle_setting',
+}
+
+/** Settings a user can switch on or off during the onboarding, sent as the `setting` dimension */
+export enum ONBOARDING_SETTINGS {
+    shortDomain = 'short_domain',
+    darkWebMonitoring = 'dark_web_monitoring',
+    autoDelete = 'auto_delete',
 }
 
 const baseDimensions = {
     flow: allowed(['onboarding']),
     step: allowed(Object.values(ONBOARDING_STEPS)),
+    /**
+     * Plans the user holds, sorted and joined with a comma (for example `bundle2022,pass2023`), `free` when none, `unknown` while they load.
+     * Several subscriptions can coexist, so there is no single plan.
+     */
+    plan: topValues(),
 };
 
 /** Time the user spent in the onboarding, sent as `activeMs` on every event */
 const onboardingTimer = defineTimer('mailOnboarding');
+
+const getPlanDimension = (subscriptions: Subscription[]) => {
+    const names = subscriptions.map((subscription) => getPlanName(subscription)).filter(isTruthy);
+    return names.length ? Array.from(new Set(names)).sort().join(',') : 'free';
+};
 
 const baseValues = {
     activeMs: duration(),
@@ -53,6 +83,18 @@ const stepInteracted = defineEvent({
     dimensions: { ...baseDimensions, action: allowed(Object.values(ONBOARDING_ACTIONS)) },
 });
 
+/** Same event as `stepInteracted`, for the `toggle_setting` action: which setting, and whether it ends up on */
+const settingToggled = defineEvent({
+    ...baseEvent,
+    event: TelemetryMailOnboardingEvents.stepInteracted,
+    dimensions: {
+        ...baseDimensions,
+        action: allowed([ONBOARDING_ACTIONS.toggleSetting]),
+        setting: allowed(Object.values(ONBOARDING_SETTINGS)),
+        enabled: allowed(['true', 'false']),
+    },
+});
+
 const stepCompleted = defineEvent({
     ...baseEvent,
     event: TelemetryMailOnboardingEvents.stepCompleted,
@@ -69,7 +111,7 @@ const themeStepCompleted = defineEvent({
 const flowFinished = defineEvent({
     ...baseEvent,
     event: TelemetryMailOnboardingEvents.flowFinished,
-    dimensions: { flow: baseDimensions.flow },
+    dimensions: { flow: baseDimensions.flow, plan: baseDimensions.plan },
 });
 
 /** Idempotent: the first event of the onboarding starts the timer */
@@ -80,31 +122,53 @@ const withTiming = () => {
 
 const timing = { durationFrom: onboardingTimer };
 
-const trackStepLoaded = (step: ONBOARDING_STEPS) => {
-    tracker.emit(stepLoad, { dimensions: { flow: 'onboarding', step }, ...withTiming() }, timing);
+const trackStepLoaded = (plan: string, step: ONBOARDING_STEPS) => {
+    tracker.emit(stepLoad, { dimensions: { flow: 'onboarding', plan, step }, ...withTiming() }, timing);
 };
 
-const trackStepInteracted = (step: ONBOARDING_STEPS, action: ONBOARDING_ACTIONS) => {
-    tracker.emit(stepInteracted, { dimensions: { flow: 'onboarding', step, action }, ...withTiming() }, timing);
+const trackStepInteracted = (plan: string, step: ONBOARDING_STEPS, action: ONBOARDING_ACTIONS) => {
+    tracker.emit(stepInteracted, { dimensions: { flow: 'onboarding', plan, step, action }, ...withTiming() }, timing);
 };
 
-const trackStepCompleted = (step: ONBOARDING_STEPS) => {
-    tracker.emit(stepCompleted, { dimensions: { flow: 'onboarding', step }, ...withTiming() }, timing);
+const trackStepCompleted = (plan: string, step: ONBOARDING_STEPS) => {
+    tracker.emit(stepCompleted, { dimensions: { flow: 'onboarding', plan, step }, ...withTiming() }, timing);
 };
 
-const trackThemeStepCompleted = (theme: OnboardingThemeLabel) => {
+const trackThemeStepCompleted = (plan: string, theme: OnboardingThemeLabel) => {
     tracker.emit(
         themeStepCompleted,
         {
-            dimensions: { flow: 'onboarding', step: ONBOARDING_STEPS.themeSelection, theme },
+            dimensions: { flow: 'onboarding', plan, step: ONBOARDING_STEPS.themeSelection, theme },
             ...withTiming(),
         },
         timing
     );
 };
 
-const trackFlowFinished = () => {
-    tracker.emit(flowFinished, { dimensions: { flow: 'onboarding' }, ...withTiming() }, { ...timing, stopTimer: true });
+const trackSettingToggled = (plan: string, step: ONBOARDING_STEPS, setting: ONBOARDING_SETTINGS, enabled: boolean) => {
+    tracker.emit(
+        settingToggled,
+        {
+            dimensions: {
+                flow: 'onboarding',
+                plan,
+                step,
+                action: ONBOARDING_ACTIONS.toggleSetting,
+                setting,
+                enabled: enabled ? 'true' : 'false',
+            },
+            ...withTiming(),
+        },
+        timing
+    );
+};
+
+const trackFlowFinished = (plan: string) => {
+    tracker.emit(
+        flowFinished,
+        { dimensions: { flow: 'onboarding', plan }, ...withTiming() },
+        { ...timing, stopTimer: true }
+    );
 };
 
 /** Replays of the onboarding are not tracked, the funnel only measures first-time users */
@@ -112,31 +176,39 @@ export const useOnboardingTracking = () => {
     const { welcomeFlags } = useWelcomeFlags();
     // Only read once: the flag flips back when the modal closes, the last events must still follow the opening state
     const [isReplay] = useState(welcomeFlags.isReplay);
+    const [subscription] = useSubscription();
+    // `unknown` while the subscriptions load, so a paid user is never reported as free
+    const plan = subscription ? getPlanDimension(isFreeSubscription(subscription) ? [] : [subscription]) : 'unknown';
 
     return {
         trackStepLoaded: (step: ONBOARDING_STEPS) => {
             if (!isReplay) {
-                trackStepLoaded(step);
+                trackStepLoaded(plan, step);
             }
         },
         trackStepInteracted: (step: ONBOARDING_STEPS, action: ONBOARDING_ACTIONS) => {
             if (!isReplay) {
-                trackStepInteracted(step, action);
+                trackStepInteracted(plan, step, action);
             }
         },
         trackStepCompleted: (step: ONBOARDING_STEPS) => {
             if (!isReplay) {
-                trackStepCompleted(step);
+                trackStepCompleted(plan, step);
             }
         },
         trackThemeStepCompleted: (theme: OnboardingThemeLabel) => {
             if (!isReplay) {
-                trackThemeStepCompleted(theme);
+                trackThemeStepCompleted(plan, theme);
+            }
+        },
+        trackSettingToggled: (step: ONBOARDING_STEPS, setting: ONBOARDING_SETTINGS, enabled: boolean) => {
+            if (!isReplay) {
+                trackSettingToggled(plan, step, setting, enabled);
             }
         },
         trackFlowFinished: () => {
             if (!isReplay) {
-                trackFlowFinished();
+                trackFlowFinished(plan);
             }
         },
     };

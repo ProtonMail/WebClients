@@ -8,6 +8,8 @@ import type { OnboardingStepRenderCallback } from '@proton/components/containers
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import checkConfirmation from '@proton/styles/assets/img/onboarding/img-check-confirmation.svg';
 
+import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
+import { ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -17,6 +19,7 @@ export const isPartnerStepEligible: OnboardingStepEligibleCallback = async () =>
 });
 
 const PartnerStep = ({ onNext }: OnboardingStepRenderCallback) => {
+    const { trackStepCompleted } = useOnboardingTracking();
     const [subscription] = useSubscription();
     const [domains] = useCustomDomains();
     const domain = domains ? domains[0]?.DomainName : undefined;
@@ -28,8 +31,14 @@ const PartnerStep = ({ onNext }: OnboardingStepRenderCallback) => {
             ? c('Onboarding modal').t`Your domain and subscription are ready to use.`
             : c('Onboarding modal').t`Your domain ${domain} and ${subscriptionName} subscription are ready to use.`;
 
+    const handleNext = () => {
+        trackStepCompleted(ONBOARDING_STEPS.partner);
+        onNext();
+    };
+
     return (
         <OnboardingStep>
+            <TrackOnboardingStepLoad step={ONBOARDING_STEPS.partner} />
             <OnboardingContent
                 topChildren={<img src={checkConfirmation} alt="" />}
                 title={c('Onboarding modal').t`You are all set!`}
@@ -38,7 +47,7 @@ const PartnerStep = ({ onNext }: OnboardingStepRenderCallback) => {
                 style={{ '--h-custom': '25.625rem' }}
             ></OnboardingContent>
             <footer>
-                <Button size="large" color="norm" fullWidth onClick={onNext}>
+                <Button size="large" color="norm" fullWidth onClick={handleNext}>
                     {c('Onboarding modal').t`Discover ${MAIL_APP_NAME}`}
                 </Button>
             </footer>
