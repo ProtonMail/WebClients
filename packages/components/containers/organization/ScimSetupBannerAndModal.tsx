@@ -36,7 +36,10 @@ const ScimSetupBannerAndModal = () => {
     const [modalProps, setOpen, render] = useModalState();
     const [frozenData, setFrozenData] = useState<FrozenData | null>(null);
 
-    if (!isEnabled || (!pendingUsers.length && !pendingGroups.length && !render)) {
+    if (
+        !isEnabled ||
+        (!pendingUsers.length && !pendingGroups.length && !membersRequiringOrgKeyDemotion.length && !render)
+    ) {
         return null;
     }
 
@@ -71,10 +74,11 @@ const ScimSetupBannerAndModal = () => {
 
     return (
         <>
-            {(pendingUsers.length > 0 || pendingGroups.length > 0) && (
+            {(pendingUsers.length > 0 || pendingGroups.length > 0 || membersRequiringOrgKeyDemotion.length > 0) && (
                 <ScimSetupBanner
                     pendingUsersCount={pendingUsers.length}
                     pendingGroupsCount={pendingGroups.length}
+                    cleanUpCount={membersRequiringOrgKeyDemotion.length}
                     onReviewChanges={handleOpen}
                 />
             )}
