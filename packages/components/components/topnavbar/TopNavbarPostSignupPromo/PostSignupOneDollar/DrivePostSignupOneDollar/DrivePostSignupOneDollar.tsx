@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
@@ -38,7 +37,6 @@ const getUpsellFeature = (daysSinceOffer: number) => {
 
 export const DrivePostSignupOneDollar = () => {
     const [user] = useUser();
-    const [subscription] = useSubscription();
 
     const { viewportWidth } = useActiveBreakpoint();
     const { openSpotlight } = useDrivePostSignupOneDollar();
@@ -110,7 +108,6 @@ export const DrivePostSignupOneDollar = () => {
             getUpgradePath(
                 {
                     user,
-                    subscription,
                     plan: PLANS.DRIVE,
                     cycle: CYCLE.MONTHLY,
                     coupon: COUPON_CODES.TRYDRIVEPLUS2024,
