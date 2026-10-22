@@ -21,6 +21,7 @@ export const getDefaultOrganizationSettings = (): OrganizationSettings => {
         MailCategoryViewEnabled: false,
         SSOBackupPasswordDisabled: false,
         PasswordReminderEnforced: false,
+        LumoApiEnabled: false,
         AllowedProducts: ['All'],
         InvoiceEmail: null,
         InvoiceEmailState: INVOICE_EMAIL_STATE.DISABLED,

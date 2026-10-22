@@ -52,6 +52,7 @@ export type Flags = {
     isSsoForPbsEnabled: boolean;
     isRetentionPoliciesEnabled: boolean;
     isCategoryViewEnabled: boolean;
+    isLumoApiEnabled: boolean;
     isReferralProgramEnabled: boolean;
     isDriveEasySwitchNewUIEnabled: boolean;
     showSignInRestrictionToggle: boolean;
