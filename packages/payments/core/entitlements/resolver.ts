@@ -1,8 +1,7 @@
 import type { PlanIDs } from '../interface';
-import { getSubscriptionsArray } from '../subscription/helpers';
 import { getPlanIDs } from '../subscription/helpers/plan-ids';
-import type { MaybeFreeSubscription, Subscription } from '../subscription/interface';
-import { isFreeSubscription, isPaidSubscription, isValidPlanName } from '../type-guards';
+import type { Subscription } from '../subscription/interface';
+import { isFreeSubscription, isValidPlanName } from '../type-guards';
 import { entitlementChecksForOrgAndUser, entitlementChecksForSelection } from './checks';
 import { getEntitlementsPerPlan, getEntitlementsPerSubscription } from './entitlement-grants';
 import type { EntitlementName } from './entitlement-names';
@@ -111,19 +110,6 @@ export const createEntitlementResolverForSelection = (
     return { ...resolver, ...bindEntitlementChecks(entitlementChecksForSelection, resolver) };
 };
 
-const normalizeSubscriptionsInput = (subscriptions: Subscription[] | MaybeFreeSubscription): Subscription[] => {
-    if (Array.isArray(subscriptions)) {
-        return subscriptions;
-    }
-
-    const subscription = subscriptions;
-    if (!isPaidSubscription(subscription)) {
-        return [];
-    }
-
-    return getSubscriptionsArray(subscription);
-};
-
 /**
  * Wraps entitlements so callers can use the convenient named checks defined in {@link entitlementChecksForOrgAndUser}.
  * At the same time gives access to the entitlement resolver functions.
@@ -143,11 +129,9 @@ const normalizeSubscriptionsInput = (subscriptions: Subscription[] | MaybeFreeSu
 export const createEntitlementResolverForOrgAndUser = (
     entitlementCatalog: EntitlementCatalog | undefined,
     entitlements: Entitlements | undefined,
-    subscriptions: Subscription[] | MaybeFreeSubscription
+    subscriptions: Subscription[]
 ): EntitlementChecksForOrgAndUser => {
-    const subscriptionsArray = normalizeSubscriptionsInput(subscriptions);
-
-    const resolvedEntitlementsPerSubscription: EntitlementsPerSubscription = subscriptionsArray.map((subscription) => {
+    const resolvedEntitlementsPerSubscription: EntitlementsPerSubscription = subscriptions.map((subscription) => {
         const entitlements = getEntitlementsPerSubscription(entitlementCatalog, subscription);
         return { subscription, entitlements };
     });

@@ -493,62 +493,36 @@ describe('createEntitlementResolverForOrgAndUser subscription queries', () => {
     });
 });
 
-/**
- * Besides a flat array, the resolver accepts a single (possibly free or undefined) subscription and normalizes it into
- * the array it works with. An empty `includes` condition matches every subscription, so `findSubscriptionsMatching`
- * reports that normalized array back in order.
- *
- * Multi-subscription users get their extra plans as `SecondarySubscriptions` nested inside the primary one. Until the
- * proper multi-subscription migration lands, this flattening is what makes those plans visible to the resolver.
- */
-describe('createEntitlementResolverForOrgAndUser subscription input shapes', () => {
+describe('createEntitlementResolverForOrgAndUser with several subscriptions', () => {
     const emptyEntitlements = makeEntitlements([], [], []);
+    const catalog: EntitlementCatalog = {
+        Plans: [
+            { Name: PLANS.MAIL, Entitlements: [switchEntry(EntitlementName.FlagsInbox)] },
+            { Name: PLANS.MAIL_PRO, Entitlements: [switchEntry(EntitlementName.Business)] },
+            { Name: PLANS.VPN2024, Entitlements: [switchEntry(EntitlementName.FlagsVpn)] },
+            {
+                Name: PLANS.VPN_BUSINESS,
+                Entitlements: [switchEntry(EntitlementName.Business), switchEntry(EntitlementName.FlagsVpn)],
+            },
+        ],
+        Addons: [],
+    };
 
-    const normalizedSubscriptions = (subscriptions: Parameters<typeof createEntitlementResolverForOrgAndUser>[2]) =>
-        createEntitlementResolverForOrgAndUser(
-            emptyCatalog,
-            emptyEntitlements,
-            subscriptions
-        ).findSubscriptionsMatching({
-            includes: [],
-        }).subscriptions;
+    it('matches a combined check when any one subscription grants all of it', () => {
+        const resolver = createEntitlementResolverForOrgAndUser(catalog, emptyEntitlements, [
+            buildSubscription(PLANS.MAIL),
+            buildSubscription(PLANS.VPN_BUSINESS),
+        ]);
 
-    it('wraps a single paid subscription into an array', () => {
-        const subscription = buildSubscription(PLANS.MAIL_PRO);
-
-        expect(normalizedSubscriptions(subscription)).toEqual([subscription]);
+        expect(resolver.isVpnB2B).toBe(true);
     });
 
-    it('drops a free subscription', () => {
-        expect(normalizedSubscriptions(FREE_SUBSCRIPTION)).toEqual([]);
-    });
+    it('does not match a combined check split across two subscriptions', () => {
+        const resolver = createEntitlementResolverForOrgAndUser(catalog, emptyEntitlements, [
+            buildSubscription(PLANS.MAIL_PRO),
+            buildSubscription(PLANS.VPN2024),
+        ]);
 
-    it('handles undefined subscription', () => {
-        expect(normalizedSubscriptions(undefined)).toEqual([]);
-    });
-
-    it('keeps every secondary subscription, in order after the primary', () => {
-        const lumo = buildSubscription(PLANS.LUMO);
-        const vpn = buildSubscription(PLANS.VPN2024);
-        const primary = buildSubscription(PLANS.MAIL_PRO, { SecondarySubscriptions: [lumo, vpn] });
-
-        expect(normalizedSubscriptions(primary)).toEqual([primary, lumo, vpn]);
-    });
-
-    it('still requires a single subscription to grant every entitlement of a combined check', () => {
-        const catalog: EntitlementCatalog = {
-            Plans: [
-                { Name: PLANS.MAIL_PRO, Entitlements: [switchEntry(EntitlementName.Business)] },
-                { Name: PLANS.VPN2024, Entitlements: [switchEntry(EntitlementName.FlagsVpn)] },
-            ],
-            Addons: [],
-        };
-        const vpn = buildSubscription(PLANS.VPN2024);
-        const mailPro = buildSubscription(PLANS.MAIL_PRO, { SecondarySubscriptions: [vpn] });
-
-        const resolver = createEntitlementResolverForOrgAndUser(catalog, emptyEntitlements, mailPro);
-
-        // Business comes from the primary and VPN from the secondary, so no one subscription grants both
         expect(resolver.isVpnB2B).toBe(false);
     });
 });

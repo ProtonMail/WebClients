@@ -11,8 +11,8 @@ import {
 } from '@proton/payments/core/entitlements/resolver';
 import { createHooks } from '@proton/redux-utilities/hooks';
 
+import { useAllSubscriptions } from '../allSubscriptions/hooks';
 import { useAllEntitlements } from '../entitlements/hooks';
-import { useSubscription } from '../subscription/hooks';
 import { entitlementCatalogThunk, selectEntitlementCatalog } from './index';
 
 const hooks = createHooks(entitlementCatalogThunk, selectEntitlementCatalog);
@@ -58,14 +58,14 @@ export const useGetEntitlementCatalog = hooks.useGet;
  */
 export const useEntitlementChecksForOrgAndUser = (): [EntitlementChecksForOrgAndUser, boolean] => {
     const [allEntitlements, loadingEntitlements] = useAllEntitlements();
-    const [subscription, loadingSubscription] = useSubscription();
+    const [allSubscriptions, loadingAllSubscriptions] = useAllSubscriptions();
     const [entitlementCatalog, loadingEntitlementCatalog] = useEntitlementCatalog();
 
     const resolver = useMemo(() => {
-        return createEntitlementResolverForOrgAndUser(entitlementCatalog, allEntitlements, subscription);
-    }, [entitlementCatalog, allEntitlements, subscription]);
+        return createEntitlementResolverForOrgAndUser(entitlementCatalog, allEntitlements, allSubscriptions ?? []);
+    }, [entitlementCatalog, allEntitlements, allSubscriptions]);
 
-    const loading = loadingEntitlements || loadingSubscription || loadingEntitlementCatalog;
+    const loading = loadingEntitlements || loadingAllSubscriptions || loadingEntitlementCatalog;
     return [resolver, loading];
 };
 
