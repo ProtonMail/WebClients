@@ -14,6 +14,18 @@ export const getExifInfo = async (file: File, mimeType: string): Promise<Expande
         return undefined;
     }
 
+    try {
+        return await ExifReader.load(file, {
+            length: 'auto',
+            expanded: true,
+            includeOffsets: true,
+            excludeTags: { mpf: true },
+            domParser,
+        });
+    } catch {
+        // Plain TIFF (most RAW formats) can't be read partially --> fall back to a full read
+    }
+
     const buffer = await file.arrayBuffer();
 
     try {
