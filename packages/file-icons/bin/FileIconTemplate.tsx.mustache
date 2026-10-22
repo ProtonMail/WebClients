@@ -1,0 +1,36 @@
+{{#needsId}}
+import React, { useId } from 'react';
+{{/needsId}}
+{{^needsId}}
+import React from 'react';
+{{/needsId}}
+
+import clsx from '@proton/utils/clsx';
+
+import { MIME_ICON_VIEWBOX, type MimeIconComponentProps, getMimeIconAsset } from '../component';
+
+export const {{iconName}} = ({ alt, title, size = 4, className, ...rest }: MimeIconComponentProps) => {
+    const asset = getMimeIconAsset(size);
+    {{#needsId}}
+    // Gradient, mask and clip path ids must be unique per instance: a hidden earlier copy would blank later ones.
+    const id = useId().replace(/:/g, '');
+    {{/needsId}}
+
+    return (
+        <>
+            <svg
+                role="img"
+                viewBox={MIME_ICON_VIEWBOX[asset]}
+                focusable="false"
+                className={clsx(`icon-size-${size}`, className)}
+                {...rest}
+            >
+                {title ? <title>{title}</title> : null}
+                {asset === 'sm' && ({{{sm}}})}
+                {asset === 'md' && ({{{md}}})}
+                {asset === 'lg' && ({{{lg}}})}
+            </svg>
+            {alt ? <span className="sr-only">{alt}</span> : null}
+        </>
+    );
+};

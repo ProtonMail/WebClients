@@ -1,0 +1,60 @@
+{
+    "name": "@proton/file-icons",
+    "description": "File type icons generated from file-icons.svg, and the mime type lookup that picks one",
+    "sideEffects": false,
+    "type": "module",
+    "exports": {
+        "./component": "./component.ts",
+        "./getFileIcon": "./getFileIcon.ts",
+        "./icons/MimeAlbum": "./icons/MimeAlbum.tsx",
+        "./icons/MimeAttachments": "./icons/MimeAttachments.tsx",
+        "./icons/MimeCalendar": "./icons/MimeCalendar.tsx",
+        "./icons/MimeDoc": "./icons/MimeDoc.tsx",
+        "./icons/MimeFolder": "./icons/MimeFolder.tsx",
+        "./icons/MimeFont": "./icons/MimeFont.tsx",
+        "./icons/MimeImage": "./icons/MimeImage.tsx",
+        "./icons/MimeKeynote": "./icons/MimeKeynote.tsx",
+        "./icons/MimeKeytrust": "./icons/MimeKeytrust.tsx",
+        "./icons/MimeNumbers": "./icons/MimeNumbers.tsx",
+        "./icons/MimePages": "./icons/MimePages.tsx",
+        "./icons/MimePdf": "./icons/MimePdf.tsx",
+        "./icons/MimePpt": "./icons/MimePpt.tsx",
+        "./icons/MimeProtonDoc": "./icons/MimeProtonDoc.tsx",
+        "./icons/MimeProtonSheet": "./icons/MimeProtonSheet.tsx",
+        "./icons/MimeSound": "./icons/MimeSound.tsx",
+        "./icons/MimeText": "./icons/MimeText.tsx",
+        "./icons/MimeUnknown": "./icons/MimeUnknown.tsx",
+        "./icons/MimeVideo": "./icons/MimeVideo.tsx",
+        "./icons/MimeXls": "./icons/MimeXls.tsx",
+        "./icons/MimeXml": "./icons/MimeXml.tsx",
+        "./icons/MimeZip": "./icons/MimeZip.tsx"
+    },
+    "scripts": {
+        "check:types": "tsc --checkers 1",
+        "generate": "tsx ./bin/generateFileIcons.ts",
+        "lint": "oxlint --quiet",
+        "test": "vitest",
+        "test:ci": "pnpm run test --run"
+    },
+    "dependencies": {
+        "@proton/icons": "workspace:^",
+        "@proton/shared": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "react": "^18.3.1"
+    },
+    "devDependencies": {
+        "@proton/oxlint-config": "workspace:^",
+        "@types/mustache": "^4.2.6",
+        "@types/node": "catalog:",
+        "@types/react": "catalog:",
+        "@typescript/native": "npm:typescript@^7.0.2",
+        "jsdom": "^29.1.1",
+        "mustache": "^4.2.0",
+        "oxlint": "1.87.0",
+        "oxlint-tsgolint": "7.0.2004",
+        "prettier": "^3.9.10",
+        "tsx": "^4.23.15",
+        "typescript": "npm:@typescript/typescript6@^6.0.2",
+        "vitest": "^5.0.2"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        // The generator imports jsdom, whose dependencies are plain JS that should not be type-checked.
+        "maxNodeModuleJsDepth": 0,
+        "types": ["@proton/types", "global-types-monorepo", "node", "vitest/globals"]
+    }
+}
