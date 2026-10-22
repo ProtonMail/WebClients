@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
@@ -23,7 +22,6 @@ interface Props {
 
 const UpgradeBanner = ({ className, children, audience, upsellPath }: Props) => {
     const [user] = useUser();
-    const [subscription] = useSubscription();
     const bundleProPlan = useBundleProPlan();
 
     return (
@@ -35,7 +33,6 @@ const UpgradeBanner = ({ className, children, audience, upsellPath }: Props) => 
                     return getUpgradePath(
                         {
                             user,
-                            subscription,
                             plan: audience === Audience.B2B ? bundleProPlan : PLANS.BUNDLE,
                             audience,
                         },
