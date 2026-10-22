@@ -194,6 +194,20 @@ export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(
   )
 })
 
+export interface BadgeProps extends Ariakit.RoleProps<'span'> {}
+export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(props, ref) {
+  return (
+    <Ariakit.Role.span
+      ref={ref}
+      {...props}
+      className={clsx(
+        'rounded-sm bg-[--signal-info-minor-1] px-1 py-0.5 text-[0.625rem] font-semibold uppercase leading-none text-[--signal-info]',
+        props.className,
+      )}
+    />
+  )
+})
+
 export interface KbdProps extends Ariakit.RoleProps<'kbd'> {}
 export const Kbd = forwardRef<HTMLDivElement, KbdProps>(function Kbd(props, ref) {
   return (
