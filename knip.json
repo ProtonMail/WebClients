@@ -360,6 +360,10 @@
             "project": ["**/*.{js,mjs,ts,tsx}"],
             "ignore": ["test/input/js/**"]
         },
+        "packages/file-icons": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
         "packages/icons": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
