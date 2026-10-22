@@ -1,4 +1,4 @@
-import { getReturnUrlParameter } from '../../lib/authentication/returnUrl';
+import { appendReturnUrlParams, getReturnUrlParameter } from '../../lib/authentication/returnUrl';
 
 describe('returnUrl parameter', () => {
     [
@@ -19,6 +19,16 @@ describe('returnUrl parameter', () => {
             expect(getReturnUrlParameter(searchParams)).toEqual(output);
             expect(searchParams.get('foo')).toEqual('123');
             expect(searchParams.get('bar')).toEqual('1234');
+        });
+    });
+});
+
+describe('appendReturnUrlParams', () => {
+    ['/foo/bar?x=1&y=2#z', '/search?q=a%26b&d=100%25'].forEach((url) => {
+        it(`should hand ${url} to getReturnUrlParameter unchanged`, () => {
+            const searchParams = new URLSearchParams();
+            appendReturnUrlParams(searchParams, { url });
+            expect(getReturnUrlParameter(new URLSearchParams(searchParams.toString()))).toEqual(url);
         });
     });
 });
