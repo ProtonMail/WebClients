@@ -81,7 +81,7 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "pretty:fix": "prettier --write  .",
         "test": "jest --logHeapUsage --forceExit",
         "test:ci": "jest --runInBand --ci --forceExit --logHeapUsage",
@@ -114,8 +114,8 @@
         "turndown": "^7.2.4"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@testing-library/jest-dom": "^6.9.1",
         "@testing-library/react-hooks": "^8.0.1",
         "@types/history": "catalog:",
@@ -127,9 +127,10 @@
         "@types/turndown": "^5.0.6",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "npm:typescript@^7.0.2",
-        "eslint": "^10.12.0",
         "jest": "^30.5.2",
         "jest-environment-jsdom": "^30.5.2",
+        "oxlint": "1.87.0",
+        "oxlint-tsgolint": "7.0.2004",
         "prettier": "^3.9.10",
         "react-dom": "^18.3.1",
         "typescript": "npm:@typescript/typescript6@^6.0.2"
