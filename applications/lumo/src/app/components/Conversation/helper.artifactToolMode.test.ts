@@ -80,4 +80,12 @@ describe('resolveArtifactToolMode', () => {
 
         expect(resolveArtifactToolMode(false, chain, true, true, true)).toBe('off');
     });
+
+    it('returns "off" for guest users regardless of creation preference or canvas mode', () => {
+        const chain: Message[] = [makeArtifactMessage('')];
+
+        expect(resolveArtifactToolMode(false, chain, true, true, false, true)).toBe('off');
+        expect(resolveArtifactToolMode(true, chain, true, true, false, true)).toBe('off');
+        expect(resolveArtifactToolMode(false, [], true, false, false, true)).toBe('off');
+    });
 });

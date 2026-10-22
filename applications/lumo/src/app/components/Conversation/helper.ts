@@ -214,9 +214,15 @@ export function resolveArtifactToolMode(
     isArtifactsViewFeatureEnabled?: boolean,
     artifactCreationEnabled?: boolean,
     /** First inference from a ?q= deep link only; see SECBTY comment above. */
-    isFromQueryParam?: boolean
+    isFromQueryParam?: boolean,
+    /** Guest sessions never register create_artifact (Library and composer toggle require sign-in). */
+    isGuestUser?: boolean
 ): ArtifactToolMode {
     if (!isArtifactsViewFeatureEnabled) {
+        return 'off';
+    }
+
+    if (isGuestUser) {
         return 'off';
     }
 
@@ -246,7 +252,30 @@ export type SettingsContext = {
     isArtifactsViewFeatureEnabled?: boolean;
     hasLumoPlus?: boolean;
     isVisualizationInstructionsFeatureEnabled?: boolean;
+    isGuestUser?: boolean;
 };
+
+function isArtifactCreationEnabledForRequest(
+    state: LumoState,
+    conversationId: ConversationId | undefined,
+    settingsContext: SettingsContext
+): boolean {
+    if (settingsContext.isGuestUser) {
+        return false;
+    }
+    return resolveArtifactCreationEnabled(state, conversationId);
+}
+
+function artifactCreationSettingForRequest(
+    state: LumoState,
+    conversationId: ConversationId | undefined,
+    settingsContext: SettingsContext
+): ArtifactCreationSetting {
+    if (settingsContext.isGuestUser) {
+        return 'chat-off';
+    }
+    return resolveArtifactCreationSetting(state, conversationId);
+}
 
 function shouldIncludeVisualizationInstructions(
     settingsContext: SettingsContext,
@@ -655,15 +684,16 @@ export function sendMessage({
                 updatedLinearChain,
                 s.isArtifactsViewFeatureEnabled,
                 // Fresh state: `state` predates the conversation this send may have just created.
-                resolveArtifactCreationEnabled(getState(), conversationId),
-                ui.isFromQueryParam
+                isArtifactCreationEnabledForRequest(getState(), conversationId, s),
+                ui.isFromQueryParam,
+                s.isGuestUser
             );
             sendArtifactTurnTelemetry(
                 'new',
                 artifactToolMode,
                 updatedLinearChain,
                 s.isArtifactsViewFeatureEnabled,
-                resolveArtifactCreationSetting(getState(), conversationId)
+                artifactCreationSettingForRequest(getState(), conversationId, s)
             );
 
             const contextLimits = getContextLimitsForModelTier(ui.modelTier);
@@ -861,14 +891,16 @@ export function regenerateMessage({
                 ui.canvasModeActive,
                 c.messageChain,
                 s.isArtifactsViewFeatureEnabled,
-                resolveArtifactCreationEnabled(state, c.conversationId)
+                isArtifactCreationEnabledForRequest(state, c.conversationId, s),
+                undefined,
+                s.isGuestUser
             );
             sendArtifactTurnTelemetry(
                 'regenerate',
                 artifactToolMode,
                 c.messageChain,
                 s.isArtifactsViewFeatureEnabled,
-                resolveArtifactCreationSetting(state, c.conversationId)
+                artifactCreationSettingForRequest(state, c.conversationId, s)
             );
 
             const contextLimits = getContextLimitsForModelTier(ui.modelTier);
@@ -1094,14 +1126,16 @@ export function retrySendMessage({
             ui.canvasModeActive,
             updatedLinearChain,
             s.isArtifactsViewFeatureEnabled,
-            resolveArtifactCreationEnabled(state, c.conversationId)
+            isArtifactCreationEnabledForRequest(state, c.conversationId, s),
+            undefined,
+            s.isGuestUser
         );
         sendArtifactTurnTelemetry(
             'retry',
             artifactToolMode,
             updatedLinearChain,
             s.isArtifactsViewFeatureEnabled,
-            resolveArtifactCreationSetting(state, c.conversationId)
+            artifactCreationSettingForRequest(state, c.conversationId, s)
         );
 
         const contextLimits = getContextLimitsForModelTier(ui.modelTier);
