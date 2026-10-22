@@ -90,8 +90,8 @@ import Layout from '../public/Layout';
 import Main from '../public/Main';
 import AccountSidebar from './AccountSidebar';
 import AccountStartupModals from './AccountStartupModals';
-import { getAssistantKillSwitch } from './assistantKillSwitch';
 import SettingsSearch, { AutocompleteSettingsSearch } from './SettingsSearch';
+import { getAssistantKillSwitch } from './assistantKillSwitch';
 import type {
     AccountRecoveryRouterFlags,
     AccountSettingsRouterParams,
@@ -189,6 +189,7 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
+    const [allSubscriptions = [], loadingAllSubscriptions] = useAllSubscriptions();
     const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const [{ permissions }] = useUserPermissions();
     const [isOrganizationOwner] = useIsOrganizationOwner();
@@ -231,7 +232,6 @@ const MainContainer = () => {
         entitlements.hasAllCoreProductsB2C ||
         appFromPathname === APPS.PROTONMAIL ||
         appFromPathname === APPS.PROTONCALENDAR;
-    const [allSubscriptions = []] = useAllSubscriptions();
     const assistantKillSwitch = getAssistantKillSwitch({ isInAllowedApps, subscriptions: allSubscriptions });
 
     const organizationTheme = useOrganizationTheme();
@@ -311,6 +311,7 @@ const MainContainer = () => {
         user,
         addresses,
         subscription,
+        allSubscriptions,
         entitlements,
         accountSettingsRouterParams,
         organizationSettingsRouterParams,
@@ -423,6 +424,7 @@ const MainContainer = () => {
         if (
             loadingOrganization ||
             loadingSubscription ||
+            loadingAllSubscriptions ||
             loadingEntitlements ||
             permissions === null ||
             loadingDataRecovery ||

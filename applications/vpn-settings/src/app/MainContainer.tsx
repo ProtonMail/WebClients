@@ -14,6 +14,7 @@ import type {
 } from 'proton-account/src/app/content/router-params';
 import { c } from 'ttag';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -120,6 +121,7 @@ const MainContainer: FunctionComponent = () => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [subscription, loadingSubscription] = useSubscription();
+    const [allSubscriptions = [], loadingAllSubscriptions] = useAllSubscriptions();
     const [organization, loadingOrganization] = useOrganization();
     const [{ permissions }] = useUserPermissions();
     const [isOrganizationOwner] = useIsOrganizationOwner();
@@ -203,6 +205,7 @@ const MainContainer: FunctionComponent = () => {
         app: APPS.PROTONVPN_SETTINGS,
         user,
         subscription,
+        allSubscriptions,
         entitlements,
         flags,
         ...organizationSettingsRouterParams,
@@ -253,6 +256,7 @@ const MainContainer: FunctionComponent = () => {
     const redirect = (() => {
         if (
             loadingSubscription ||
+            loadingAllSubscriptions ||
             loadingOrganization ||
             loadingGroups ||
             loadingEntitlements ||
