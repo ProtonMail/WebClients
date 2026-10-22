@@ -1,4 +1,7 @@
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { getIsIframe } from '@proton/shared/lib/helpers/browser';
+
+const canUseOAuthPopupV2 = () => hasInboxDesktopFeature('OAuthPopupV2') || getIsIframe();
 
 /**
  * Tells the desktop (Electron) app that an OAuth-style popup is about to open, so it renders the
@@ -11,7 +14,7 @@ import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/li
  * desktop clears the session.
  */
 export const notifyDesktopOAuthPopupStarted = (authorizationUrl: string, sessionId: string) =>
-    hasInboxDesktopFeature('OAuthPopupV2')
+    canUseOAuthPopupV2()
         ? invokeInboxDesktopIPC({
               type: 'oauthPopupOpenedV2',
               payload: { action: 'oauthPopupStarted', authorizationUrl, sessionId },
@@ -20,7 +23,7 @@ export const notifyDesktopOAuthPopupStarted = (authorizationUrl: string, session
 
 /** Counterpart to {@link notifyDesktopOAuthPopupStarted}: signals the popup has closed. */
 export const notifyDesktopOAuthPopupFinished = (sessionId: string) =>
-    hasInboxDesktopFeature('OAuthPopupV2')
+    canUseOAuthPopupV2()
         ? invokeInboxDesktopIPC({
               type: 'oauthPopupOpenedV2',
               payload: { action: 'oauthPopupFinished', sessionId },
