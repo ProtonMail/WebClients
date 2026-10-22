@@ -32,8 +32,6 @@ import {
     getHasPassB2BPlan,
     hasDuo,
     hasLumoBusiness,
-    hasMeet,
-    hasMeetBusiness,
     hasVPNPassProfessional,
     hasVisionary,
 } from '@proton/payments/core/subscription/helpers';
@@ -123,16 +121,14 @@ export const useMemberActions = ({
     const hasDriveB2BPlan = getHasDriveB2BPlan(subscription);
     const hasLumoB2BPlan = hasLumoBusiness(subscription);
     const hasVPNPassProfessionalPlan = hasVPNPassProfessional(subscription);
-    const hasMeetPlan = hasMeetBusiness(subscription) || hasMeet(subscription);
     const hasExternalMemberCapableB2BPlan = entitlements.hasEntitlement(EntitlementName.ExternalManagedMembers);
 
     const verifiedMailDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
 
     const hasMaxAddresses = Boolean(organization?.MaxAddresses ?? 0);
     const hasCustomDomains = verifiedMailDomains.length > 0;
-    // Allow using custom domain if organization has meetbiz2025 and a verified custom domain
-    const hasMeetB2BPlanAndVerifiedCustomDomain = hasMeetPlan && hasCustomDomains;
-    const useEmail = hasExternalMemberCapableB2BPlan && !hasMeetB2BPlanAndVerifiedCustomDomain;
+    const canUseVerifiedCustomDomain = entitlements.hasCustomDomainAddresses && hasCustomDomains;
+    const useEmail = hasExternalMemberCapableB2BPlan && !canUseVerifiedCustomDomain;
     const planSupportsMemberFeatures =
         !hasExternalMemberCapableB2BPlan ||
         hasDriveB2BPlan ||
@@ -185,8 +181,7 @@ export const useMemberActions = ({
 
     // "Add address" is currently broken for MSP subsidiary orgs, so hide it for them.
     const showAddAddress =
-        !isSubsidiaryOrg &&
-        (!hasExternalMemberCapableB2BPlan || hasPassB2BPlan || hasMeetB2BPlanAndVerifiedCustomDomain);
+        !isSubsidiaryOrg && (!hasExternalMemberCapableB2BPlan || hasPassB2BPlan || canUseVerifiedCustomDomain);
 
     const hasReachedInvitationLimit = organization?.InvitationsRemaining === 0;
     const disableInviteUserButton =
