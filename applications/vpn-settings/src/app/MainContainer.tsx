@@ -176,6 +176,7 @@ const MainContainer: FunctionComponent = () => {
     const flags: Flags = {
         canDisplayNonPrivateEmailPhone: false,
         isCategoryViewEnabled: false,
+        isLumoApiEnabled: false,
         isCryptoPostQuantumOptInEnabled: false,
         isScribeEnabled: false,
         isZoomIntegrationEnabled,

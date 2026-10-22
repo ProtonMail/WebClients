@@ -188,7 +188,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, accessControl)}>
                     <PrivateMainSettingsArea config={accessControl}>
                         <AccessControlSettingsSection />
-                        <FeatureAccessSection />
+                        <FeatureAccessSection {...organizationAppRoutes.featureAccess} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

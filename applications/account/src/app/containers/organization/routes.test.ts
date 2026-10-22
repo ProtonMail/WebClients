@@ -231,6 +231,41 @@ describe('multi-user pages', () => {
     });
 });
 
+describe('Feature access', () => {
+    const lumoApiFlags = { ...defaultFlags, isLumoApiEnabled: true };
+
+    const getFeatureAccess = (input: OrganizationRoutesInput) => {
+        const { routes, featureAccess } = getOrganizationAppRoutes(
+            buildOrganizationRouterParams({ app: APPS.PROTONMAIL, ...input })
+        );
+
+        return {
+            section: findSubsection(routes.accessControl.subsections, 'feature-access')?.available,
+            ...featureAccess,
+        };
+    };
+
+    it('shows only the Lumo API toggle to a Pass Business organization without Scribe or Zoom', () => {
+        expect(getFeatureAccess({ plan: PLANS.PASS_BUSINESS, flags: lumoApiFlags })).toEqual({
+            section: true,
+            canShowScribe: false,
+            canShowVideoConference: false,
+            canShowLumoApi: true,
+        });
+    });
+
+    it('hides the Lumo API toggle from a Pass Business organization when the flag is off', () => {
+        expect(getFeatureAccess({ plan: PLANS.PASS_BUSINESS, flags: defaultFlags })).toMatchObject({
+            section: false,
+            canShowLumoApi: false,
+        });
+    });
+
+    it('hides the Lumo API toggle from a single-user Mail Plus organization', () => {
+        expect(getFeatureAccess({ plan: PLANS.MAIL, flags: lumoApiFlags }).canShowLumoApi).toBe(false);
+    });
+});
+
 describe('external members', () => {
     const getExternalMemberRoutes = (input: OrganizationRoutesInput) => {
         const { users, filter } = getRoutes(input);

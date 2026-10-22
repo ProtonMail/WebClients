@@ -30,6 +30,7 @@ const defaultUserSettings: UserSettings = {
         DisplayTrialEndModal: 0,
         PasswordReminderOptOut: PASSWORD_REMINDERS_VALUE.ENABLED,
         Fido2CredentialsPinOptIn: FIDO2_CREDENTIALS_PIN_VALUE.ENABLED,
+        LumoApiEnabled: 0,
     },
     HideSidePanel: 0,
     InvoiceText: '',
