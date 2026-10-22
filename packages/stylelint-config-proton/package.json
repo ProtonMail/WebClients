@@ -6,6 +6,9 @@
     "files": [
         "index.js"
     ],
+    "scripts": {
+        "lint": "oxlint --quiet"
+    },
     "dependencies": {
         "stylelint": "^15.11.0",
         "stylelint-config-prettier-scss": "^1.0.0",
@@ -13,6 +16,8 @@
         "stylelint-use-logical-spec": "^5.0.1"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^"
+        "@proton/oxlint-config": "workspace:^",
+        "oxlint": "1.87.0",
+        "oxlint-tsgolint": "7.0.2004"
     }
 }
