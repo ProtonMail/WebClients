@@ -9,8 +9,7 @@ import type { LexicalEditor } from 'lexical'
 import { COMMAND_PRIORITY_EDITOR, COMMAND_PRIORITY_LOW, SELECTION_CHANGE_COMMAND } from 'lexical'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { c } from 'ttag'
-import { useDocsDependencies } from '../../DocsDependenciesProvider'
+import { useDocsDependencies, useDocsMessages } from '../../DocsDependenciesProvider'
 import { getDOMRangeRect } from '../../Utils/getDOMRangeRect'
 import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
@@ -26,6 +25,7 @@ type Props = {
 
 export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }: Props) {
   const { reportError } = useDocsDependencies()
+  const messages = useDocsMessages().link
   const isEditorEditable = useLexicalEditable()
 
   const [position, setPosition] = useState<{
@@ -137,7 +137,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
           <div className="max-w-[35ch] overflow-hidden text-ellipsis">{linkUrl}</div>
         </a>
         <LinkIconButton
-          label={c('Action').t`Copy link`}
+          label={messages.copy}
           onClick={() => {
             navigator.clipboard.writeText(linkUrl).catch(reportError)
           }}
@@ -148,7 +148,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
         {!isAutoLink && isEditorEditable && (
           <>
             <LinkIconButton
-              label={c('Action').t`Edit link`}
+              label={messages.edit}
               onClick={() => {
                 setIsEditingLink(true)
               }}
@@ -157,7 +157,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
               <Icon data={Icons.pencil} />
             </LinkIconButton>
             <LinkIconButton
-              label={c('Action').t`Remove link`}
+              label={messages.remove}
               onClick={() => {
                 editor.dispatchCommand(LINK_CHANGE_COMMAND, {
                   linkNode: null,

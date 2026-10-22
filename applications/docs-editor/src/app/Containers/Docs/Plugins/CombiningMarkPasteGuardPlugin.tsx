@@ -2,7 +2,7 @@ import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext
 import { mergeRegister } from '@lexical/utils'
 import { COMMAND_PRIORITY_HIGH, PASTE_COMMAND } from 'lexical'
 import { useEffect } from 'react'
-import { c } from 'ttag'
+import { useDocsMessages } from '../DocsDependenciesProvider'
 
 const MAX_COMBINING_MARKS_PER_BASE_CHARACTER = 10
 const COMBINING_MARK_PATTERN = /\p{M}/u
@@ -37,18 +37,19 @@ export function CombiningMarkPasteGuardPlugin({
   showGenericAlertModal: (message: string) => void
 }) {
   const [editor] = useLexicalComposerContext()
-
-  const onPaste = (event: ClipboardEvent) => {
-    if (!pasteExceedsDepth(event.clipboardData)) {
-      return false
-    }
-
-    showGenericAlertModal(c('Info').t`This paste was blocked because the text contains invalid characters.`)
-    event.preventDefault()
-    return true
-  }
+  const { invalidCharacters } = useDocsMessages().paste
 
   useEffect(() => {
+    const onPaste = (event: ClipboardEvent) => {
+      if (!pasteExceedsDepth(event.clipboardData)) {
+        return false
+      }
+
+      showGenericAlertModal(invalidCharacters)
+      event.preventDefault()
+      return true
+    }
+
     return mergeRegister(
       editor.registerCommand<ClipboardEvent>(
         PASTE_COMMAND,
@@ -58,7 +59,7 @@ export function CombiningMarkPasteGuardPlugin({
         COMMAND_PRIORITY_HIGH,
       ),
     )
-  }, [editor])
+  }, [editor, showGenericAlertModal, invalidCharacters])
 
   return null
 }

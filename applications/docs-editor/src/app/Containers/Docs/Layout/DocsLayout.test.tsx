@@ -1,5 +1,15 @@
 import { fireEvent, render, screen } from '@testing-library/react'
+import { DocsDependenciesProvider, type DocsDependencies } from '../DocsDependenciesProvider'
+import { defaultDocsMessages } from '../messages/defaultDocsMessages'
 import { DocsLayoutContainer, DocsLayoutGrid, DocsLayoutLeftPanel, useLeftPanelContext } from './DocsLayout'
+
+function MessagesProvider({ children }: { children: React.ReactNode }) {
+  return (
+    <DocsDependenciesProvider dependencies={{ defaultMessages: defaultDocsMessages } as DocsDependencies}>
+      {children}
+    </DocsDependenciesProvider>
+  )
+}
 
 function ExpandButton() {
   const { setVisibility } = useLeftPanelContext()
@@ -15,6 +25,7 @@ function renderExpandedLeftPanel() {
         </DocsLayoutLeftPanel>
       </DocsLayoutGrid>
     </DocsLayoutContainer>,
+    { wrapper: MessagesProvider },
   )
   fireEvent.click(screen.getByRole('button', { name: 'Expand' }))
   return screen.getByRole('separator')
