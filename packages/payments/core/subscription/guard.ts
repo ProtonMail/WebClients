@@ -121,11 +121,13 @@ const GUARD_ERROR_COPY: Record<GUARD_ERROR_CODES, () => string> = {
         c('Payments').t`Please close extra wallets before changing your plan.`,
     [GUARD_ERROR_CODES.EXTRA_WALLET_ACCOUNTS_PRESENT]: () =>
         c('Payments').t`Please close extra wallet accounts before changing your plan.`,
-    [GUARD_ERROR_CODES.BORN_PRIVATE_REQUIRES_DONATION]: () => c('Payments').t`Born Private requires a donation.`,
-    [GUARD_ERROR_CODES.BORN_PRIVATE_ALREADY_OWNED]: () => c('Payments').t`You already own Born Private.`,
-    [GUARD_ERROR_CODES.BORN_PRIVATE_ACCOUNT_TOO_OLD]: () => c('Payments').t`Your account is too old for Born Private.`,
+    [GUARD_ERROR_CODES.BORN_PRIVATE_REQUIRES_DONATION]: () =>
+        c('Payments').t`The Born Private initiative requires a donation.`,
+    [GUARD_ERROR_CODES.BORN_PRIVATE_ALREADY_OWNED]: () => c('Payments').t`You already own a Born Private account.`,
+    [GUARD_ERROR_CODES.BORN_PRIVATE_ACCOUNT_TOO_OLD]: () =>
+        c('Payments').t`Your account is too old for the Born Private initiative.`,
     [GUARD_ERROR_CODES.BORN_PRIVATE_RUNNING_SUBSCRIPTION]: () =>
-        c('Payments').t`Born Private can’t be purchased with an active subscription.`,
+        c('Payments').t`Born Private accounts can’t be purchased with an active subscription.`,
     [GUARD_ERROR_CODES.MEET_SEATS_MUST_MATCH_MEMBERS]: () =>
         c('Payments').t`Proton Meet seats must match the number of members.`,
 };
