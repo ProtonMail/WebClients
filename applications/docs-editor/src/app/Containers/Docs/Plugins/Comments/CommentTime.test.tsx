@@ -1,5 +1,16 @@
+import type { PropsWithChildren } from 'react'
 import { render, screen } from '@testing-library/react'
+import { DocsDependenciesProvider, type DocsDependencies } from '../../DocsDependenciesProvider'
+import { defaultDocsMessages } from '../../messages/defaultDocsMessages'
 import { CommentTime } from './CommentTime'
+
+function DependenciesWrapper({ children }: PropsWithChildren) {
+  return (
+    <DocsDependenciesProvider dependencies={{ defaultMessages: defaultDocsMessages } as DocsDependencies}>
+      {children}
+    </DocsDependenciesProvider>
+  )
+}
 
 describe('CommentTime', () => {
   it("shows a comment an hour old or more in the account's date format", () => {
@@ -10,6 +21,7 @@ describe('CommentTime', () => {
         languageCode="en"
         dateFormat={{ localeCode: 'en-US', hourCycle: 'h23' }}
       />,
+      { wrapper: DependenciesWrapper },
     )
     const time = screen.getByText('Jan 2, 2024, 15:04')
     expect(time.tagName).toBe('TIME')

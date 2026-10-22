@@ -5,7 +5,7 @@ import type { DocsCommentThread } from '../../contract/DocsCommentThread'
 import { CommentThreadStates } from '../../contract/DocsCommentThread'
 import { clsx } from 'clsx'
 import { memo, useMemo } from 'react'
-import { c } from 'ttag'
+import { useDocsMessages } from '../../DocsDependenciesProvider'
 import { CommentsPanelList } from './CommentsPanelList'
 
 function CommentsPanel({
@@ -16,6 +16,7 @@ function CommentsPanel({
   setShowComments: (show: boolean) => void
 }): JSX.Element {
   const [editor] = useLexicalComposerContext()
+  const messages = useDocsMessages().comments
 
   const isEmpty = threads.length === 0
 
@@ -35,7 +36,7 @@ function CommentsPanel({
       data-testid="comments-main-section"
     >
       <div className="flex flex-shrink-0 items-center justify-between gap-2 px-4 py-2.5">
-        <h2 className="text-base font-semibold">{c('Info').t`Comments`}</h2>
+        <h2 className="text-base font-semibold">{messages.panelTitle}</h2>
         <button
           aria-label="Close comments"
           className="flex items-center justify-center rounded-full p-1 hover:bg-[--background-strong]"
@@ -53,7 +54,7 @@ function CommentsPanel({
           className="flex min-h-0 flex-grow flex-col items-center justify-center px-3.5 text-center text-sm text-[color:--text-weak]"
           data-testid="empty-comments-section"
         >
-          {c('Info').t`No comments`}
+          {messages.noComments}
         </div>
       ) : (
         <div

@@ -1,0 +1,78 @@
+import { c, msgid } from 'ttag'
+import type { DocsMessages } from '../../../Docs/public'
+
+// Parameter names stay as the components had them because ttag builds the existing msgids from them.
+export function createCommentsMessages(): Pick<DocsMessages, 'comments'> {
+  return {
+    comments: {
+      panelTitle: c('Info').t`Comments`,
+      noComments: c('Info').t`No comments`,
+      showThread: c('Action').t`Show thread`,
+      threadPopoverLabel: c('Label').t`Comments`,
+      addComment: c('Action').t`Add comment`,
+      addCommentPlaceholder: c('Placeholder').t`Add a comment...`,
+      discardComment: c('Confirm').t`Discard comment?`,
+      addSuggestion: c('Action').t`Add suggestion`,
+      // translator: indicates the comment has been added less than 10 seconds ago
+      justNow: c('Info').t`Just now`,
+      reply: c('Action').t`Reply`,
+      replyPlaceholder: c('Placeholder').t`Reply...`,
+      reopenThread: c('Action').t`Re-open thread`,
+      // translator: list of names (eg: "Tom, John and Henry")
+      typerNames: (allTypersExceptLast: string, lastTyper: string) =>
+        c('Info').t`${allTypersExceptLast} and ${lastTyper}`,
+      typing: (usersTranslation: string, count: number) =>
+        c('Info').ngettext(msgid`${usersTranslation} is typing...`, `${usersTranslation} are typing...`, count),
+      acceptSuggestion: c('Action').t`Accept suggestion`,
+      declineSuggestion: c('Action').t`Decline suggestion`,
+      moreOptions: c('Label').t`More options`,
+      edit: c('Action').t`Edit`,
+      resolve: c('Action').t`Resolve`,
+      reopen: c('Action').t`Re-open`,
+      deleteThread: c('Action').t`Delete thread`,
+      deleteComment: c('Action').t`Delete comment`,
+      signatureUnverified: c('Action').t`Signature could not be verified`,
+      editCommentPlaceholder: c('Placeholder').t`Edit comment...`,
+      cancel: c('Action').t`Cancel`,
+      save: c('Action').t`Save`,
+      deleteThreadTitle: c('Title').t`Delete thread`,
+      deleteThreadMessage: c('Info').t`Are you sure you want to delete this thread?`,
+      deleteCommentTitle: c('Title').t`Delete comment`,
+      deleteCommentMessage: c('Info').t`Are you sure you want to delete this comment?`,
+      cannotUndo: c('Info').t`You cannot undo this action.`,
+      delete: c('Action').t`Delete`,
+      suggestionSummary: {
+        insert: c('Label').t`Insert`,
+        delete: c('Label').t`Delete`,
+        replace: c('Label').t`Replace`,
+        format: c('Label').t`Format`,
+        insertParagraph: c('Label').t`Insert paragraph`,
+        deleteParagraph: c('Label').t`Delete paragraph`,
+        addLink: c('Label').t`Add link`,
+        replaceLink: c('Label').t`Replace link`,
+        deleteLink: c('Label').t`Delete link`,
+        insertImage: c('Label').t`Insert image`,
+        deleteImage: c('Label').t`Delete image`,
+        changeImageSize: c('Label').t`Change image size`,
+        changeIndentLevel: c('Label').t`Change indent level`,
+        insertTable: c('Label').t`Insert table`,
+        insertTableRow: c('Label').t`Insert table row`,
+        duplicateTableRow: c('Label').t`Duplicate table row`,
+        insertTableColumn: c('Label').t`Insert table column`,
+        duplicateTableColumn: c('Label').t`Duplicate table column`,
+        deleteTable: c('Label').t`Delete table`,
+        deleteTableRow: c('Label').t`Delete table row`,
+        deleteTableColumn: c('Label').t`Delete table column`,
+        insertDivider: c('Label').t`Insert divider`,
+        deleteDivider: c('Label').t`Delete divider`,
+        clearFormatting: c('Label').t`Clear formatting`,
+        align: c('Label').t`Align`,
+        highlight: c('Info').t`Highlight`,
+        textColor: c('Info').t`Text color`,
+        fontSize: c('Info').t`Font size`,
+        font: c('Info').t`Font`,
+        replaceWith: (replaceWith: string) => c('Label').t`with "${replaceWith}"`,
+      },
+    },
+  }
+}

@@ -4,6 +4,7 @@ import type { PropsWithChildren } from 'react'
 import { DocsDependenciesProvider, type DocsDependencies } from '../../DocsDependenciesProvider'
 import { DocsPresentationProvider } from '../../DocsPresentationProvider'
 import { EditorUserMode } from '../../contract/EditorUserMode'
+import { defaultDocsMessages } from '../../messages/defaultDocsMessages'
 import { FloatingQuickActions } from './FloatingQuickActions'
 
 function setViewportWidth(width: number) {
@@ -12,7 +13,9 @@ function setViewportWidth(width: number) {
 
 function EditorProviders({ children }: PropsWithChildren) {
   return (
-    <DocsDependenciesProvider dependencies={{ suggestionsEnabled: false } as DocsDependencies}>
+    <DocsDependenciesProvider
+      dependencies={{ suggestionsEnabled: false, defaultMessages: defaultDocsMessages } as DocsDependencies}
+    >
       <DocsPresentationProvider userMode={EditorUserMode.Edit}>{children}</DocsPresentationProvider>
     </DocsDependenciesProvider>
   )

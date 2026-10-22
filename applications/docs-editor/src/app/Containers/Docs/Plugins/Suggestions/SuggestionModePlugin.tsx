@@ -36,7 +36,7 @@ import { $acceptSuggestion } from './acceptSuggestion'
 import { $rejectSuggestion } from './rejectSuggestion'
 import { $handleBeforeInputEvent } from './handleBeforeInputEvent'
 import { $formatTextAsSuggestion } from './formatTextAsSuggestion'
-import { useDocsDependencies } from '../../DocsDependenciesProvider'
+import { useDocsDependencies, useDocsMessages } from '../../DocsDependenciesProvider'
 import { $selectionInsertClipboardNodes } from './selectionInsertClipboardNodes'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
 import { getShortcutFromKeyboardEvent } from '../KeyboardShortcuts/Utils'
@@ -49,7 +49,6 @@ import { INSERT_IMAGE_NODE_COMMAND, SET_IMAGE_SIZE_COMMAND } from '../Image/Imag
 import { $handleImageDragAndDropAsSuggestion, $handleImageSizeChangeAsSuggestion } from './imageHandling'
 import { EditorUserMode } from '../../contract/EditorUserMode'
 import { $handleIndentOutdentAsSuggestion } from './handleIndentOutdent'
-import { c } from 'ttag'
 import {
   DELETE_TABLE_COLUMN_COMMAND,
   DELETE_TABLE_COMMAND,
@@ -114,6 +113,7 @@ export function SuggestionModePlugin({
   const { markNodeMap } = useMarkNodesContext()
 
   const { logger: suggestionModeLogger, reportError } = useDocsDependencies()
+  const messages = useDocsMessages().suggestions
 
   /**
    * Set of suggestion IDs created during the current session.
@@ -423,6 +423,7 @@ export function SuggestionModePlugin({
             addCreatedIDtoSet,
             suggestionModeLogger,
             createWarningNotification,
+            messages.codeBlocksNotSupported,
           )
         },
         COMMAND_PRIORITY_CRITICAL,
@@ -606,11 +607,7 @@ export function SuggestionModePlugin({
           editor.setEditable(false)
           editor._compositionKey = null
           onUserModeChange(EditorUserMode.Preview)
-          showAlert(
-            c('Title').t`Language not supported`,
-            c('Info')
-              .t`The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.`,
-          )
+          showAlert(messages.languageNotSupportedTitle, messages.languageNotSupportedMessage)
           return true
         },
         COMMAND_PRIORITY_CRITICAL,
@@ -731,7 +728,7 @@ export function SuggestionModePlugin({
         COMMAND_PRIORITY_CRITICAL,
       ),
     )
-  }, [createWarningNotification, editor, isSuggestionMode, onUserModeChange, showAlert, suggestionModeLogger])
+  }, [createWarningNotification, editor, isSuggestionMode, messages, onUserModeChange, showAlert, suggestionModeLogger])
 
   return null
 }

@@ -6,8 +6,7 @@ import { CommentsComposer } from './CommentsComposer'
 import { CommentSendButton } from './CommentSendButton'
 import type { DocsComment, DocsCommentThread } from '../../contract/DocsCommentThread'
 import { CommentThreadStates, CommentThreadTypes, CommentTypes } from '../../contract/DocsCommentThread'
-import { c, msgid } from 'ttag'
-import { useDocsDependencies } from '../../DocsDependenciesProvider'
+import { useDocsDependencies, useDocsMessages } from '../../DocsDependenciesProvider'
 import { useCommentsContext } from './CommentsContext'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { $getNodeByKey, $getSelection, $isRangeSelection, COMMAND_PRIORITY_NORMAL, createCommand } from 'lexical'
@@ -18,6 +17,7 @@ export const TYPING_STATUS_CHANGE_EVENT_COMMAND = createCommand<{
 
 export function CommentsPanelListThread({ thread, className }: { thread: DocsCommentThread; className?: string }) {
   const { reportError } = useDocsDependencies()
+  const messages = useDocsMessages().comments
   const [editor] = useLexicalComposerContext()
   const {
     getMarkNodes,
@@ -192,8 +192,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: DocsCom
   const firstTyper = typers[0]
   const allTypersExceptLast = typers.slice(0, -1).join(', ')
   const lastTyper = typers[typers.length - 1]
-  // translator: list of names (eg: "Tom, John and Henry")
-  const usersTranslation = typers.length === 1 ? firstTyper : c('Info').t`${allTypersExceptLast} and ${lastTyper}`
+  const typerNames = typers.length === 1 ? firstTyper : messages.typerNames(allTypersExceptLast, lastTyper)
 
   const isSuggestionClosed =
     thread.state === CommentThreadStates.Accepted || thread.state === CommentThreadStates.Rejected
@@ -273,7 +272,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: DocsCom
         >
           <CommentsComposer
             className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
-            placeholder={c('Placeholder').t`Reply...`}
+            placeholder={messages.replyPlaceholder}
             data-testid="reply-in-thread-input"
             onSubmit={async (content) => {
               const comment = await createComment(content, thread.id)
@@ -295,7 +294,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: DocsCom
               }
               return (
                 <CommentSendButton
-                  label={c('Action').t`Reply`}
+                  label={messages.reply}
                   disabled={!canSubmit}
                   onClick={submitComment}
                   data-testid="reply-in-send-button"
@@ -314,17 +313,13 @@ export function CommentsPanelListThread({ thread, className }: { thread: DocsCom
             }}
             data-testid="reopen-thread-button"
           >
-            {c('Action').t`Re-open thread`}
+            {messages.reopenThread}
           </button>
         </div>
       )}
       {typers.length > 0 && (
         <div className="px-3.5 py-1.5 text-xs text-[--text-weak]" data-testid="info-active-typing">
-          {c('Info').ngettext(
-            msgid`${usersTranslation} is typing...`,
-            `${usersTranslation} are typing...`,
-            typers.length,
-          )}
+          {messages.typing(typerNames, typers.length)}
         </div>
       )}
     </li>

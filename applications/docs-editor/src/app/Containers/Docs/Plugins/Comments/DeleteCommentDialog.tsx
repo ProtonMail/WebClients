@@ -1,9 +1,8 @@
 import * as Ariakit from '@ariakit/react'
 import type { FormEventHandler, RefObject } from 'react'
 import { useState } from 'react'
-import { c } from 'ttag'
 import { Button } from '../../Components/ui'
-import { useDocsDependencies } from '../../DocsDependenciesProvider'
+import { useDocsDependencies, useDocsMessages } from '../../DocsDependenciesProvider'
 
 export type DeleteCommentDialogOptions = {
   title: string
@@ -19,6 +18,7 @@ export interface DeleteCommentDialogProps extends DeleteCommentDialogOptions {
 
 export function DeleteCommentDialog({ title, message, onDelete, finalFocus, onClose }: DeleteCommentDialogProps) {
   const { reportError } = useDocsDependencies()
+  const messages = useDocsMessages().comments
   const [isDeleting, setIsDeleting] = useState(false)
 
   const onSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
@@ -52,7 +52,7 @@ export function DeleteCommentDialog({ title, message, onDelete, finalFocus, onCl
     >
       <Ariakit.DialogHeading className="mb-4 text-xl font-bold">{title}</Ariakit.DialogHeading>
       <Ariakit.DialogDescription className="mb-6">
-        {message} {c('Info').t`You cannot undo this action.`}
+        {message} {messages.cannotUndo}
       </Ariakit.DialogDescription>
       <div className="flex items-center justify-end gap-2">
         <Ariakit.DialogDismiss
@@ -61,7 +61,7 @@ export function DeleteCommentDialog({ title, message, onDelete, finalFocus, onCl
           accessibleWhenDisabled
           render={<Button className="aria-disabled:opacity-50" />}
         >
-          {c('Action').t`Cancel`}
+          {messages.cancel}
         </Ariakit.DialogDismiss>
         <Button
           type="submit"
@@ -69,7 +69,7 @@ export function DeleteCommentDialog({ title, message, onDelete, finalFocus, onCl
           accessibleWhenDisabled
           className="!bg-[--signal-danger] text-[--signal-danger-contrast] hover:!bg-[--signal-danger-major-1] active:!bg-[--signal-danger-major-2] aria-disabled:opacity-50"
         >
-          {c('Action').t`Delete`}
+          {messages.delete}
         </Button>
       </div>
     </Ariakit.Dialog>
