@@ -8,7 +8,9 @@ import type { LexicalEditor } from 'lexical'
 import { $getRoot } from 'lexical'
 import { AllNodes } from '../../AllNodes'
 import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditable'
+import { DocsDependenciesProvider, type DocsDependencies } from '../../DocsDependenciesProvider'
 import { DocsPresentationProvider } from '../../DocsPresentationProvider'
+import { defaultDocsMessages } from '../../messages/defaultDocsMessages'
 import { EditorUserMode } from '../../contract/EditorUserMode'
 import DocumentEditorTheme from '../../theme/Theme'
 import { $createTableNodeWithDimensions } from './CreateTableNodeWithDimensions'
@@ -17,6 +19,14 @@ import { isCellHeaderColumn } from './TableUtils/isCellHeaderColumn'
 import { isCellHeaderRow } from './TableUtils/isCellHeaderRow'
 
 let editor: LexicalEditor
+
+function MessagesProvider({ children }: { children: React.ReactNode }) {
+  return (
+    <DocsDependenciesProvider dependencies={{ defaultMessages: defaultDocsMessages } as DocsDependencies}>
+      {children}
+    </DocsDependenciesProvider>
+  )
+}
 
 function TestPlugin() {
   ;[editor] = useLexicalComposerContext()
@@ -38,6 +48,7 @@ async function renderTableMenu() {
         <TableMenu />
       </LexicalComposer>
     </DocsPresentationProvider>,
+    { wrapper: MessagesProvider },
   )
 
   await act(async () => {

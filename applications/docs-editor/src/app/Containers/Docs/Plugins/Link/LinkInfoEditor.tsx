@@ -7,7 +7,7 @@ import { createPortal } from 'react-dom'
 import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
 import { mergeRegister } from '@lexical/utils'
-import { c } from 'ttag'
+import { useDocsMessages } from '../../DocsDependenciesProvider'
 import { LINK_CHANGE_COMMAND } from './LinkPlugin'
 
 const inputClassName =
@@ -26,6 +26,7 @@ export function LinkInfoEditor({
   linkNode: LinkNode | null
   linkTextNode: TextNode | null
 }) {
+  const messages = useDocsMessages().link
   const [position, setPosition] = useState<{
     top: number
     left: number
@@ -173,8 +174,8 @@ export function LinkInfoEditor({
               autoCorrect="off"
               spellCheck={false}
               className={inputClassName}
-              aria-label={c('Label').t`Link text`}
-              placeholder={c('Placeholder').t`Text`}
+              aria-label={messages.textLabel}
+              placeholder={messages.textPlaceholder}
               value={text}
               onChange={(event) => {
                 setText(event.target.value)
@@ -192,8 +193,8 @@ export function LinkInfoEditor({
             spellCheck={false}
             className={inputClassName}
             value={url}
-            aria-label={c('Label').t`Link URL`}
-            placeholder={c('Placeholder').t`Paste link`}
+            aria-label={messages.urlLabel}
+            placeholder={messages.urlPlaceholder}
             onChange={(event) => {
               setURL(event.target.value)
             }}
@@ -208,10 +209,10 @@ export function LinkInfoEditor({
         </div>
         <div className="flex items-center justify-end gap-1.5">
           <button type="button" className={`${buttonClassName} border-transparent`} onClick={cancelLinkEdit}>
-            {c('Action').t`Cancel`}
+            {messages.cancel}
           </button>
           <button type="button" className={`${buttonClassName} border-[--border-weak]`} onClick={handleSubmission}>
-            {c('Action').t`Apply`}
+            {messages.apply}
           </button>
         </div>
       </form>

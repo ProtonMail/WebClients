@@ -20,9 +20,8 @@ import {
   createCommand,
 } from 'lexical'
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react'
-import { c } from 'ttag'
 
-import { useDocsDependencies } from '../../DocsDependenciesProvider'
+import { useDocsDependencies, useDocsMessages } from '../../DocsDependenciesProvider'
 import { getRemoteImageUrl, isAllowedImageSrc } from '../../Conversion/ImageSrcUtils'
 import { getElementDimensionsWithoutPadding } from '../../Utils/getEditorWidthWithoutPadding'
 import { SET_IMAGE_SIZE_COMMAND } from './ImageCommands'
@@ -35,6 +34,7 @@ const imageCache = new Set()
 const RIGHT_CLICK_IMAGE_COMMAND: LexicalCommand<MouseEvent> = createCommand('RIGHT_CLICK_IMAGE_COMMAND')
 
 function ImageLoadingIndicator(): JSX.Element {
+  const messages = useDocsMessages().image
   return (
     <>
       <svg
@@ -47,7 +47,7 @@ function ImageLoadingIndicator(): JSX.Element {
         <circle className="docs-image-loader-track" cx="8" cy="8" r="7" />
         <circle className="docs-image-loader-circle" cx="8" cy="8" r="7" />
       </svg>
-      <span className="sr-only">{c('Info').t`Loading`}</span>
+      <span className="sr-only">{messages.loading}</span>
     </>
   )
 }
@@ -79,6 +79,7 @@ function BlockedImagePlaceholder({
   imageRef: { current: null | HTMLImageElement }
 }): JSX.Element {
   const { openLink } = useDocsDependencies()
+  const messages = useDocsMessages().image
   const remoteUrl = getRemoteImageUrl(src)
   return (
     <span
@@ -88,7 +89,7 @@ function BlockedImagePlaceholder({
         className,
       )}
     >
-      {c('Info').t`Remote image blocked`}
+      {messages.remoteImageBlocked}
       {remoteUrl && (
         <>
           <a
@@ -104,9 +105,7 @@ function BlockedImagePlaceholder({
           >
             {remoteUrl}
           </a>
-          <span className="text-sm">
-            {c('Info').t`Open the link to download the image, then use "Insert image" to add it to this document.`}
-          </span>
+          <span className="text-sm">{messages.remoteImageDownloadHint}</span>
         </>
       )}
     </span>
