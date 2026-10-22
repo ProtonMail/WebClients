@@ -1,12 +1,6 @@
 import { getTestPlansMap } from '../../testing/data-plans';
 import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
-import {
-    getAddonNameByPlan,
-    isMultiUserPersonalPlan,
-    organizationOrSubscriptionSupportsSSO,
-    planSupportsSSO,
-    subscriptionSupportsSSO,
-} from './helpers';
+import { getAddonNameByPlan, getHasSsoUpsell, getIsSsoAvailable, isMultiUserPersonalPlan } from './helpers';
 import type { Plan } from './interface';
 
 describe('getAddonNameByPlan', () => {
@@ -83,37 +77,63 @@ describe('isMultiUserPersonalPlan', () => {
     });
 });
 
-describe('planSupportsSSO', () => {
-    it('returns true for business plans that support SSO', () => {
-        expect(planSupportsSSO(PLANS.VPN_BUSINESS, false)).toBe(true);
-        expect(planSupportsSSO(PLANS.PASS_BUSINESS, false)).toBe(true);
-        expect(planSupportsSSO(PLANS.LUMO_BUSINESS, false)).toBe(true);
+describe('getIsSsoAvailable', () => {
+    const subscriptionOn = (plan: PLANS) => ({ Plans: [{ Name: plan }] });
+
+    it('is true when the organization has the sso entitlement', () => {
+        expect(getIsSsoAvailable({ hasSso: true, subscriptions: [], isSsoForPbsEnabled: false })).toBe(true);
     });
 
-    it('returns false for plans without SSO support', () => {
-        expect(planSupportsSSO(PLANS.MAIL, false)).toBe(false);
-        expect(planSupportsSSO(undefined, false)).toBe(undefined);
-    });
-});
+    it.each([PLANS.BUNDLE_BIZ_2025, PLANS.BUNDLE_PRO_2024])(
+        'is true for a %s subscription when SsoForPbs is on',
+        (plan) => {
+            expect(
+                getIsSsoAvailable({ hasSso: false, subscriptions: [subscriptionOn(plan)], isSsoForPbsEnabled: true })
+            ).toBe(true);
+        }
+    );
 
-describe('subscriptionSupportsSSO', () => {
-    it('returns true when subscription includes an SSO-capable plan', () => {
-        expect(subscriptionSupportsSSO({ Plans: [{ Name: PLANS.LUMO_BUSINESS }] }, false)).toBe(true);
-    });
-
-    it('returns false when subscription has no SSO-capable plan', () => {
-        expect(subscriptionSupportsSSO({ Plans: [{ Name: PLANS.LUMO }] }, false)).toBe(false);
-    });
-});
-
-describe('organizationOrSubscriptionSupportsSSO', () => {
-    it('returns true for Lumo Business via subscription when org plan name is missing', () => {
+    it('is false for a bundle subscription when SsoForPbs is off', () => {
         expect(
-            organizationOrSubscriptionSupportsSSO({
-                organization: {},
-                subscription: { Plans: [{ Name: PLANS.LUMO_BUSINESS }] },
+            getIsSsoAvailable({
+                hasSso: false,
+                subscriptions: [subscriptionOn(PLANS.BUNDLE_BIZ_2025)],
                 isSsoForPbsEnabled: false,
             })
+        ).toBe(false);
+    });
+
+    it('finds the bundle among several subscriptions', () => {
+        expect(
+            getIsSsoAvailable({
+                hasSso: false,
+                subscriptions: [subscriptionOn(PLANS.LUMO), subscriptionOn(PLANS.BUNDLE_PRO_2024)],
+                isSsoForPbsEnabled: true,
+            })
         ).toBe(true);
+    });
+
+    it('is false without the entitlement and without a bundle subscription', () => {
+        expect(
+            getIsSsoAvailable({
+                hasSso: false,
+                subscriptions: [subscriptionOn(PLANS.MAIL_PRO)],
+                isSsoForPbsEnabled: true,
+            })
+        ).toBe(false);
+    });
+});
+
+describe('getHasSsoUpsell', () => {
+    it.each([PLANS.VPN_PRO, PLANS.PASS_PRO])('is true when a subscription is %s', (plan) => {
+        expect(getHasSsoUpsell([{ Plans: [{ Name: PLANS.LUMO }] }, { Plans: [{ Name: plan }] }])).toBe(true);
+    });
+
+    it('is false for other plans', () => {
+        expect(getHasSsoUpsell([{ Plans: [{ Name: PLANS.MAIL_PRO }] }])).toBe(false);
+    });
+
+    it('is false without subscriptions', () => {
+        expect(getHasSsoUpsell([])).toBe(false);
     });
 });

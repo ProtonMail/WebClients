@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import type { MockedFunction } from 'vitest';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -9,10 +10,12 @@ import { useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { defineSidebar } from '@proton/nav/api/defineSidebar';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { resolveNavigation } from '../definitions/routes';
 import { useB2BAdminSidebarFeature } from './useB2BAdminSidebarFeature';
 
 vi.mock('@proton/account/user/hooks', () => ({ useUser: vi.fn() }));
 vi.mock('@proton/account/subscription/hooks', () => ({ useSubscription: vi.fn() }));
+vi.mock('@proton/account/allSubscriptions/hooks', () => ({ useAllSubscriptions: vi.fn() }));
 vi.mock('@proton/account/organization/hooks', () => ({ useOrganization: vi.fn() }));
 vi.mock('@proton/account/userPermissions/hooks', () => ({ useUserPermissions: vi.fn() }));
 vi.mock('@proton/account/recovery/dataRecovery', () => ({
@@ -32,6 +35,7 @@ vi.mock('@proton/account/entitlementCatalog/hooks', () => ({ useEntitlementCheck
 
 const mockUseUser = useUser as MockedFunction<any>;
 const mockUseSubscription = useSubscription as MockedFunction<any>;
+const mockUseAllSubscriptions = useAllSubscriptions as MockedFunction<any>;
 const mockUseOrganization = useOrganization as MockedFunction<any>;
 const mockUseUserPermissions = useUserPermissions as MockedFunction<any>;
 const mockUseEntitlementChecks = useEntitlementChecksForOrgAndUser as MockedFunction<any>;
@@ -49,6 +53,7 @@ describe('useB2BAdminSidebarFeature', () => {
         vi.clearAllMocks();
         mockUseUser.mockReturnValue([user, false]);
         mockUseSubscription.mockReturnValue([subscription, false]);
+        mockUseAllSubscriptions.mockReturnValue([[subscription], false]);
         mockUseOrganization.mockReturnValue([organization, false]);
         mockUseUserPermissions.mockReturnValue([{ permissions }, false]);
         mockUseEntitlementChecks.mockReturnValue([entitlements, false]);
@@ -66,11 +71,13 @@ describe('useB2BAdminSidebarFeature', () => {
             routes: 'sidebar-tree',
             settings: 'search-options',
         });
+        expect(resolveNavigation).toHaveBeenCalledWith(expect.objectContaining({ allSubscriptions: [subscription] }));
     });
 
     describe.each([
         ['user', () => mockUseUser.mockReturnValue([undefined, true])],
         ['subscription', () => mockUseSubscription.mockReturnValue([undefined, true])],
+        ['all subscriptions', () => mockUseAllSubscriptions.mockReturnValue([undefined, true])],
         ['organization', () => mockUseOrganization.mockReturnValue([undefined, true])],
         ['permissions', () => mockUseUserPermissions.mockReturnValue([{ permissions: null }, true])],
         ['entitlements', () => mockUseEntitlementChecks.mockReturnValue([entitlements, true])],
