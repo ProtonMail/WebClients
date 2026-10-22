@@ -4,6 +4,9 @@
     "exports": {
         "./interface": "./interface.ts"
     },
+    "scripts": {
+        "lint": "oxlint --quiet"
+    },
     "dependencies": {
         "@proton/shared": "workspace:^",
         "@proton/unleash": "workspace:^",
@@ -13,8 +16,10 @@
         "react-redux": "^9.3.0"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@types/history": "catalog:",
-        "@types/react": "catalog:"
+        "@types/react": "catalog:",
+        "oxlint": "1.87.0",
+        "oxlint-tsgolint": "7.0.2004"
     }
 }
