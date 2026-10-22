@@ -3,10 +3,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href/Href';
 import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
 import { IcFileArrowIn } from '@proton/icons/icons/IcFileArrowIn';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import { selectOauthImportStateHasReadInstructions } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
@@ -23,7 +25,7 @@ const InstructionRow = ({
 }: {
     icon: ReactNode;
     title: string;
-    subtitle: string;
+    subtitle: ReactNode;
     hasBorder?: boolean;
 }) => (
     <div className={`flex items-center gap-4 py-4 ${hasBorder ? 'border-bottom border-weak' : ''}`}>
@@ -69,7 +71,13 @@ export const DriveInstructionsStep = ({ triggerOAuth }: Props) => {
                 <InstructionRow
                     icon={<IcFileArrowIn size={6} className="color-primary shrink-0" />}
                     title={c('Info').t`Import your files and folders`}
-                    subtitle={c('Info').t`We'll copy them from Google Drive to ${DRIVE_APP_NAME}.`}
+                    subtitle={
+                        <>
+                            {c('Info').t`We'll copy them from Google Drive to ${DRIVE_APP_NAME}.`}{' '}
+                            <Href href={getKnowledgeBaseUrl('/import-files-google-drive')}>{c('Link')
+                                .t`Learn more`}</Href>
+                        </>
+                    }
                     hasBorder
                 />
                 <InstructionRow
