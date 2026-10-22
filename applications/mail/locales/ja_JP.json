@@ -1775,6 +1775,9 @@
       ],
       "Yes, organize it": [
         "はい、整理する"
+      ],
+      "Preview logs": [
+        "ログをプレビュー"
       ]
     },
     "action": {
@@ -5979,6 +5982,12 @@
       ],
       "Security key": [
         "セキュリティキー"
+      ],
+      "Still waiting?": [
+        "まだお待ちですか？"
+      ],
+      "Touch your security key to continue.": [
+        "続行するにはセキュリティキーにタッチしてください。"
       ]
     },
     "fido2: Label": {
@@ -9750,6 +9759,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "お使いの Gmail はこの ${ MAIL_APP_NAME } アドレスと連携します"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "ログは、問題が発生する直前に何が起きたかを把握するのに役立ちます。ログにはアプリの操作履歴やエラーメッセージが含まれますが、メッセージ本文の内容は含まれません。"
       ]
     },
     "info": {
@@ -11084,6 +11096,21 @@
       ],
       "Write-chain drain after last line": [
         "最終行の後の書き込みチェーン完了待ち"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 文字"
+      ],
+      "At": [
+        "At"
+      ],
+      "Client": [
+        "クライアント"
+      ],
+      "Client version": [
+        "クライアントのバージョン"
+      ],
+      "Image": [
+        "画像"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14357,6 +14384,9 @@
       ],
       "User Admin": [
         "ユーザー管理者"
+      ],
+      "Organization Admin": [
+        "組織管理者"
       ]
     },
     "Safety review": {
