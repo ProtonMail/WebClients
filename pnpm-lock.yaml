@@ -2726,6 +2726,9 @@ importers:
       '@proton/llm':
         specifier: workspace:^
         version: link:../../packages/llm
+      '@proton/lumo-api-client':
+        specifier: workspace:^
+        version: link:../../packages/lumo-api-client
       '@proton/lumo-ui':
         specifier: workspace:^
         version: link:../../packages/lumo-ui
