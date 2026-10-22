@@ -1,9 +1,12 @@
 import { fireEvent, waitFor, within } from '@testing-library/react';
 
+import { MimeImage } from '@proton/file-icons/icons/MimeImage';
+import { MimePdf } from '@proton/file-icons/icons/MimePdf';
+import { MimeUnknown } from '@proton/file-icons/icons/MimeUnknown';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { assertIcon } from '../../../../helpers/tests/assertion';
+import { assertIconComponent } from '../../../../helpers/tests/assertion';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
 import { EOClearAll } from '../../../../helpers/tests/eo/helpers';
 import { tick } from '../../../../helpers/tests/render';
@@ -45,7 +48,7 @@ describe('Encrypted Outside message attachments', () => {
     };
     const Attachments = [attachment1, attachment2, attachment3];
     const NumAttachments = Attachments.length;
-    const icons = ['md-unknown', 'md-pdf', 'md-image'];
+    const icons = [MimeUnknown, MimePdf, MimeImage];
     const totalSize = Attachments.map((attachment) => attachment.Size).reduce((acc, size) => acc + size, 0);
 
     beforeAll(async () => {
@@ -71,7 +74,7 @@ describe('Encrypted Outside message attachments', () => {
             const attachmentSizeText = getByTestId('attachment-item:size').textContent;
             expect(attachmentSizeText).toEqual(humanSize({ bytes: Attachments[i].Size }));
 
-            assertIcon(items[i].querySelector('svg'), icons[i], undefined, 'mime');
+            assertIconComponent(items[i].querySelector('svg'), icons[i], undefined, 5);
         }
     });
 
