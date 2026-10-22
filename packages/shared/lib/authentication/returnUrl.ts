@@ -86,7 +86,8 @@ export const appendReturnUrlParams = (
         context?: ReturnUrlContext;
     }
 ) => {
-    searchParams.append(returnUrlKey, url);
+    // Encoded once more because getReturnUrlParameter decodes it again after URLSearchParams did
+    searchParams.append(returnUrlKey, encodeURIComponent(url));
     if (context) {
         searchParams.append(returnUrlContextKey, context);
     }
