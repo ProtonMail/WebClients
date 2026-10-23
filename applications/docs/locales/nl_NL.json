@@ -381,9 +381,6 @@
       "Get ${ planOrAppName }": [
         "Neem ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Krijg een gratis ${ BRAND_NAME }-adres"
-      ],
       "Get the apps": [
         "De apps downloaden"
       ],
@@ -509,9 +506,6 @@
       ],
       "Merge contacts": [
         "Contacten samenvoegen"
-      ],
-      "Migrate": [
-        "Migreer"
       ],
       "More actions": [
         "Meer acties"
@@ -1134,14 +1128,92 @@
     "bfcampaign2026: Action": {
       "Black Friday": [
         "Black Friday"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/maand"
+      ],
+      "15 GB storage": [
+        "15 GB opslag"
+      ],
+      "2 individual accounts": [
+        "2 individuele accounts"
+      ],
+      "2 TB of secure storage": [
+        "2 TB veilige opslag"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidige abonnement"
+      ],
+      "3 TB of secure storage": [
+        "3 TB veilige opslag"
+      ],
+      "500 GB of secure storage": [
+        "500 GB veilige opslag"
+      ],
+      "6 individual accounts": [
+        "6 individuele accounts"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ingebouwde 2FA-verificatie"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "De kortingen zijn gebaseerd op de standaard maandprijs. Wanneer de factureringsperiode afloopt, wordt uw abonnement verlengd tegen het standaard jaartarief ."
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere bescherming tegen cyberdreigingen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde aantallen mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Grootste uitverkoop van het jaar"
+        "Het grootste koopfeest van het jaar"
       ],
       "Black Friday": [
-        "Black friday"
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "voor 12 maanden"
       ],
       "Last chance to save big": [
         "Laatste kans om flink te besparen"
@@ -2788,14 +2860,8 @@
       "Address could not be added.": [
         "Adres kon niet worden toegevoegd."
       ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adres wordt al gebruikt door een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
-      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Alle opslagruimte is reeds toegewezen. Beperk de toegewezen opslagruimte van andere gebruikers."
       ],
       "Already a member of this share": [
         "Al lid van deze share"
@@ -3072,9 +3138,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Verouderde openbare link kan niet worden bijgewerkt. Maak opnieuw een nieuwe openbare link."
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
         "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
@@ -3084,12 +3147,6 @@
       ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
-      ],
-      "Missing organization private key": [
-        "Ontbrekende privésleutel van de organisatie"
-      ],
-      "Missing organization public key": [
-        "Ontbrekende openbare sleutel van de organisatie"
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
@@ -3151,12 +3208,6 @@
       "Operation failed, try again later": [
         "Bewerking mislukt. Probeer het later opnieuw"
       ],
-      "Organization does not have enough seats available": [
-        "De organisatie heeft niet voldoende zitplaatsen beschikbaar"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisatie heeft niet voldoende opslagruimte beschikbaar"
-      ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
@@ -3180,15 +3231,6 @@
       ],
       "Photo not found": [
         "Foto niet gevonden"
-      ],
-      "Please configure a custom domain before adding addresses.": [
-        "Configureer eerst een eigen domein voordat u adressen toevoegt."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Configureer een eigen domein om gebruikers aan uw organisatie toe te voegen."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Activeer multi-user ondersteuning voordat u gebruikers toevoegt aan uw organisatie."
       ],
       "Please enter a valid postal code": [
         "Voer een geldige postcode in."
@@ -3214,9 +3256,6 @@
       ],
       "Please select a state": [
         "Selecteer een staat"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
       ],
       "Port is required": [
         "Poort is vereist"
@@ -3480,12 +3519,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "U heeft de limiet van het aantal contacten bereikt voor dit account"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "U heeft alle adressen in uw abonnement gebruikt. Upgrade uw abonnement om een nieuw adres toe te voegen of schakel een adres in uw account uit."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -3893,29 +3926,6 @@
         "Terabytes"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Geactiveerd"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Errors": [
-        "Fouten"
-      ],
-      "In progress": [
-        "In uitvoering"
-      ],
-      "Migrated": [
-        "Gemigreerd"
-      ],
-      "Not activated": [
-        "Niet geactiveerd"
-      ],
-      "Pending": [
-        "In behandeling"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } bijgewerkt"
@@ -4289,20 +4299,6 @@
         "Selecteer ${ boldExport } om de agenda te exporteren als een ICS-bestand."
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Bevat fouten"
-      ],
-      "In progress": [
-        "Bezig"
-      ],
-      "Migrated": [
-        "Gemigreerd"
-      ],
-      "Pending": [
-        "In behandeling"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -4340,9 +4336,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } vereist een ${ BRAND_NAME } adres voor veilige afspraak synchronisatie en versleuteling. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nieuwe agenda",
@@ -4420,10 +4413,6 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
-      ],
-      "${ total } user found": [
-        "${ total } gebruiker gevonden",
-        "${ total } gebruikers gevonden"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
@@ -4735,9 +4724,6 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Alleen bestanden (geen foto's, ${ DOCS_APP_NAME } of ${ SHEETS_APP_NAME }) - tot in totaal 100 GB, 100.000 bestanden en 50 GB per bestand"
       ],
-      "Find out what can be migrated.": [
-        "Ontdek wat er gemigreerd kan worden."
-      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Map \"${ link.name }\" werd verwijderd tijdens downloaden"
       ],
@@ -4935,9 +4921,6 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "No users to display": [
-        "Er zijn geen gebruikers om weer te geven."
-      ],
       "No version history available": [
         "Geen versiegeschiedenis beschikbaar"
       ],
@@ -5092,9 +5075,6 @@
       "Select a folder to move to.": [
         "Kies een map om naartoe te verplaatsen"
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
-      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wil gebruiken wanneer u een e-mail stuurt aan deze geadresseerde."
       ],
@@ -5171,9 +5151,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Tijdelijk niet leverbaar wegens grote vraag. Probeer het later opnieuw."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Tijdelijk onbeschikbaar. Probeer later opnieuw."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "De auteur van bewerkingen in het document kon niet worden geverifieerd. Wilt u dit document markeren als geverifieerd? U kan kiezen om te negeren en later te beslissen."
       ],
@@ -5231,12 +5208,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Deze unieke code kan worden gebruikt door websites en ISP's (internet service providers) om uw locatie en browsegeschiedenis te koppelen aan uw apparaat"
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Deze gebruiker kan niet worden gemigreerd omdat zijn e-mailadres niet beschikbaar is op ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit met het platform."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Dit zal u uitloggen uit alle accounts die momenteel zijn ingelogd."
       ],
@@ -5245,30 +5216,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Om u te helpen uw wachtwoord te onthouden, vragen wij u dit periodiek in te voeren. We vragen u in de loop van de tijd minder."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Maak eerst een agenda aan in ${ CALENDAR_APP_NAME } om afspraken te importeren. Dit is waar de afspraken tevoorschijn komen na het importeren."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Om deze gebruiker te migreren, voegt u het e-maildomein toe en verifieert u het onder ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Om deze gebruiker te migreren, schakelt u zijn/haar account in uw ${ provider.adminConsoleName } in."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Als u deze gebruiker wilt migreren, schakelt u het account in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Om deze gebruiker te migreren, schakelt u het adres in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Om deze gebruiker te migreren, moet hij/zij de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Om deze gebruiker te migreren, haalt u hem uit het archief in uw ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Als u deze gebruiker wilt migreren, heft u de opschorting op in uw ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Om uw contacten opnieuw te ondertekenen, moeten we elk contactpersoon controleren op de lijst met versleutelingssleuteld die beschikbaar zijn in uw account. Als er geen overeenkomst is gevonden, zal uw contactpersoon opnieuw worden ondertekend met de primaire versleutelingssleutel."
@@ -5380,9 +5327,6 @@
       ],
       "Writing assistant": [
         "Schrijfassistent"
-      ],
-      "You": [
-        "U"
       ],
       "you": [
         "u"
@@ -5668,9 +5612,6 @@
       "Calendar": [
         "Agenda"
       ],
-      "Calendars": [
-        "Agenda's"
-      ],
       "can edit": [
         "kan bewerken"
       ],
@@ -5754,9 +5695,6 @@
       ],
       "Email format": [
         "E-mailformaat"
-      ],
-      "Emails": [
-        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle berichten)"
@@ -7876,17 +7814,11 @@
       "Please select the main reason": [
         "Selecteer de hoofdreden"
       ],
-      "Search": [
-        "Zoeken"
-      ],
       "Search for group name": [
         "Zoeken naar groepsnaam"
       ],
       "Search for name or email": [
         "Naam of e-mailadres zoeken"
-      ],
-      "Search for users or addresses": [
-        "Naar gebruikers of adressen zoeken"
       ],
       "Search parent folder": [
         "Zoek in bovenliggende map"
@@ -8628,12 +8560,6 @@
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Een link naar dit item werd opgeslaan op uw schijf. U kan het later bekijken in de sectie \"Gedeeld met mij\"."
       ],
-      "Editor permissions": [
-        "Bewerk machtigingen"
-      ],
-      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
-        "Bewerkers kunnen nu het delen beheren en anderen uitnodigen. U kunt dit op elk gewenst moment uitschakelen via de instellingen voor delen."
-      ],
       "To edit this document, create a copy that you can modify.": [
         "Om dit document te bewerken, maak een kopie die u kunt wijzigen."
       ]
@@ -8959,17 +8885,11 @@
       "Actions": [
         "Acties"
       ],
-      "Activated": [
-        "Geactiveerd"
-      ],
       "Address": [
         "Adres"
       ],
       "Created": [
         "Aangemaakt"
-      ],
-      "Estimated size": [
-        "Geschatte grootte"
       ],
       "Expires": [
         "Verloopt"
@@ -8977,23 +8897,14 @@
       "Fingerprint": [
         "Vingerafdruk"
       ],
-      "Migration status": [
-        "Migratiestatus"
-      ],
       "Name": [
         "Naam"
-      ],
-      "Size": [
-        "Grootte"
       ],
       "Status": [
         "Status"
       ],
       "Type": [
         "Soort"
-      ],
-      "User": [
-        "Gebruiker"
       ]
     },
     "TableHeader": {
@@ -9106,9 +9017,6 @@
       "Change password": [
         "Wachtwoord wijzigen"
       ],
-      "Choose a provider": [
-        "Kies een provider"
-      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Claim uw ${ MAIL_APP_NAME }-adres"
       ],
@@ -9120,9 +9028,6 @@
       ],
       "Computers": [
         "Computers"
-      ],
-      "Configure migration": [
-        "Migratie configureren"
       ],
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
@@ -9231,9 +9136,6 @@
       "Document verification failed": [
         "Documentverificatie mislukt"
       ],
-      "Domain names": [
-        "Domeinnamen"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Download ${ DRIVE_APP_NAME } apps"
       ],
@@ -9333,9 +9235,6 @@
       ],
       "Import groups": [
         "Importeer groepen"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Importeer uw gegevens naar ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Informatie die is blootgesteld bij datalek"
@@ -9475,14 +9374,8 @@
       "Select contact group": [
         "Contactgroep selecteren"
       ],
-      "Select data to import": [
-        "Selecteer gegevens om te importeren"
-      ],
       "Select link expiration date": [
         "Selecteer vervaldatum link"
-      ],
-      "Select users to migrate": [
-        "Selecteer gebruikers om te migreren"
       ],
       "Set recovery methods": [
         "Herstelmethoden instellen"
@@ -9580,9 +9473,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Gebruik ${ VPN_SHORT_APP_NAME } voor data privacy"
       ],
-      "Users and addresses": [
-        "Gebruikers en adressen"
-      ],
       "Verify your password": [
         "Controleer uw wachtwoord"
       ],
@@ -9597,9 +9487,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
-      ],
-      "What are you migrating?": [
-        "Wat migreert u?"
       ],
       "What can a VPN protect you from?": [
         "Waartegen kan een VPN u beschermen?"
@@ -9673,9 +9560,6 @@
       "Customize import to reduce the number of labels": [
         "Import aanpassen om het aantal labels te verminderen"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Status gegevensmigratie van ${ providerName } naar ${ BRAND_NAME }"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitaal ondertekenen van e-mails helpt bij het verifiëren van berichten die door u zijn verzonden"
       ],
@@ -9735,9 +9619,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
       ],
       "Version 6 OpenPGP key": [
         "Versie 6 OpenPGP-sleutel"
