@@ -539,9 +539,6 @@
       "Get ${ planOrAppName }": [
         "รับ ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "รับที่อยู่ ${ BRAND_NAME } ฟรี"
-      ],
       "Get a new encrypted email address": [
         "รับที่อยู่อีเมลที่เข้ารหัสใหม่"
       ],
@@ -1762,6 +1759,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "พื้นที่จัดเก็บจะถูกแชร์ร่วมกันในบริการทั้งหมดของ ${ BRAND_NAME }"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "11.11"
+      ],
+      "Get the deal": [
+        "รับข้อเสนอ"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/เดือน"
+      ],
+      "15 GB storage": [
+        "พื้นที่จัดเก็บ 15 GB"
+      ],
+      "2 individual accounts": [
+        "2 บัญชีส่วนบุคคล"
+      ],
+      "2 TB of secure storage": [
+        "พื้นที่จัดเก็บที่ปลอดภัย 2 TB"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "พื้นที่จัดเก็บ 200 GB: 40 เท่าของแผนปัจจุบัน"
+      ],
+      "3 TB of secure storage": [
+        "พื้นที่จัดเก็บที่ปลอดภัย 3 TB"
+      ],
+      "500 GB of secure storage": [
+        "พื้นที่จัดเก็บที่ปลอดภัย 500 GB"
+      ],
+      "6 individual accounts": [
+        "6 บัญชีส่วนบุคคล"
+      ],
+      "Built-in 2FA authenticator": [
+        "ตัวยืนยันตัวตน 2FA ในตัว"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "ส่วนลดคำนวณจากราคามาตรฐานรายเดือน การสมัครสมาชิกจะต่ออายุในอัตรารายปีมาตรฐานเมื่อสิ้นสุดรอบการชำระเงิน"
+      ],
+      "Online document editor": [
+        "ตัวแก้ไขเอกสารออนไลน์"
+      ],
+      "Recover previous file versions": [
+        "กู้คืนไฟล์เวอร์ชันก่อนหน้า"
+      ],
+      "Stronger protection against cyber threats": [
+        "การปกป้องที่แข็งแกร่งขึ้นจากภัยคุกคามทางไซเบอร์"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "โฟลเดอร์ ป้ายกำกับ และตัวกรองไม่จำกัด"
+      ],
+      "Use your own email domain": [
+        "ใช้โดเมนอีเมลของคุณเอง"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } ${ MAIL_SHORT_APP_NAME } ${ PASS_SHORT_APP_NAME } และ ${ VPN_SHORT_APP_NAME } แบบพรีเมียม"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } ${ MAIL_SHORT_APP_NAME } ${ PASS_SHORT_APP_NAME } ${ VPN_SHORT_APP_NAME } แบบพรีเมียม"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } ${ PASS_SHORT_APP_NAME } ${ DRIVE_SHORT_APP_NAME } ${ VPN_SHORT_APP_NAME } แบบพรีเมียม"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } ${ PASS_SHORT_APP_NAME } ${ DRIVE_SHORT_APP_NAME } และ ${ VPN_SHORT_APP_NAME } แบบพรีเมียม"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME } ${ MAIL_SHORT_APP_NAME } ${ DRIVE_SHORT_APP_NAME } และ ${ VPN_SHORT_APP_NAME } แบบพรีเมียม"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "มหกรรมลดราคาครั้งใหญ่ที่สุดแห่งปี"
+      ],
+      "Black Friday": [
+        "11.11"
+      ],
+      "for 12 months": [
+        "เป็นเวลา 12 เดือน"
+      ],
+      "Last chance to save big": [
+        "โอกาสสุดท้ายที่จะประหยัดสุดคุ้ม"
+      ],
+      "Protect your entire tribe": [
+        "ปกป้องคนทั้งกลุ่มของคุณ"
+      ],
+      "Protection for two in a single plan": [
+        "ปกป้องสองคนได้ในแผนเดียว"
       ]
     },
     "Billing cycle": {
@@ -4298,9 +4395,6 @@
       "They may ask to access your account in case of an emergency.": [
         "บุคคลเหล่านี้อาจขอเข้าถึงบัญชีในกรณีฉุกเฉิน"
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "พวกเขาจะได้รับสิทธิ์เข้าถึงโดยอัตโนมัติใน **${ days } วัน** ในวันที่ **${ formattedAccessibleAt }** คุณสามารถปฏิเสธคำขอของพวกเขาหรือให้สิทธิ์เข้าถึงทันทีได้ตลอดเวลา"
-      ],
       "This will take effect immediately.": [
         "จะมีผลทันที"
       ],
@@ -4581,9 +4675,6 @@
       "Invalid private key file": [
         "ไฟล์คีย์ส่วนตัวไม่ถูกต้อง"
       ],
-      "Invalid URL": [
-        "URL ไม่ถูกต้อง"
-      ],
       "Invalid VAT number": [
         "หมายเลขภาษีมูลค่าเพิ่มไม่ถูกต้อง"
       ],
@@ -4601,9 +4692,6 @@
       ],
       "Missing key packet": [
         "ไม่พบแพ็กเก็ตคีย์"
-      ],
-      "Missing signature": [
-        "ไม่พบลายเซ็น"
       ],
       "Name already exists": [
         "ชื่อนี้มีอยู่แล้ว"
@@ -4787,9 +4875,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "บางชื่อป้ายกำกับของคุณเกินขีดจำกัดจำนวนตัวอักษรสูงสุดของ ${ MAIL_APP_NAME } แล้วโปรดปรับแก้การนำเข้าเพื่อแก้ไขชื่อเหล่านี้"
-      ],
-      "Something went wrong": [
-        "มีข้อผิดพลาดเกิดขึ้น"
       ],
       "Something went wrong while converting the address": [
         "เกิดข้อผิดพลาดขณะแปลงที่อยู่"
@@ -6302,14 +6387,6 @@
         "ตัวเลือกการนำเข้าเพิ่มเติม"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "อยู่ระหว่างดำเนินการ"
-      ],
-      "Migrated": [
-        "ย้ายข้อมูลแล้ว"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "มีรายชื่อติดต่อ ${ totalContactsDiscarded } จากทั้งหมด ${ totalContacts } รายชื่อติดต่อที่ได้นำเข้ามา คลิกเพื่อดูรายละเอียด"
@@ -6354,9 +6431,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "เทคโนโลยีการเข้ารหัสลับของ ${ BRAND_NAME } หมายความว่าไม่มีใครสามารถเข้าถึงรหัสผ่านของคุณได้ แม้แต่เรา"
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } ต้องใช้ที่อยู่ ${ BRAND_NAME } เพื่อการซิงค์กิจกรรมและการเข้ารหัสลับที่ปลอดภัย ${ claimAddressButton }"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ปฏิทินใหม่"
@@ -8095,9 +8169,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "ไม่สามารถใช้งานได้ชั่วคราวเนื่องจากมีผู้ใช้งานจำนวนมาก โปรดลองใหม่อีกครั้งในภายหลัง"
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "ไม่สามารถใช้งานได้ชั่วคราว โปรดกลับมาตรวจสอบในภายหลัง"
-      ],
       "Thank you": [
         "ขอบคุณ"
       ],
@@ -8322,9 +8393,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "เพื่อช่วยให้จดจำรหัสผ่านได้ จะมีการขอให้ป้อนรหัสผ่านเป็นระยะ โดยความถี่ในการขอจะลดลงเมื่อเวลาผ่านไป"
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "ในการนำเข้ากิจกรรม ให้สร้างปฏิทินใน ${ CALENDAR_APP_NAME } ก่อน ซึ่งจะเป็นที่ที่กิจกรรมจะปรากฏขึ้นหลังจากการนำเข้า"
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "เพื่อติดตามการพัฒนาล่าสุดของผลิตภัณฑ์ ${ BRAND_NAME } คุณสามารถสมัครรับอีเมลต่างๆ ของเราและ ${ blogLink } ได้เป็นครั้งคราว"
@@ -9269,9 +9337,6 @@
       "Calendar": [
         "ปฏิทิน"
       ],
-      "Calendars": [
-        "ปฏิทิน"
-      ],
       "Card details": [
         "รายละเอียดบัตร"
       ],
@@ -9448,9 +9513,6 @@
       ],
       "Email with @yourcompany.com domain": [
         "อีเมลพร้อมโดเมน @yourcompany.com"
-      ],
-      "Emails": [
-        "อีเมล"
       ],
       "Emails (all messages)": [
         "อีเมล (ข้อความทั้งหมด)"
@@ -13004,9 +13066,6 @@
       "Search for an email or IP address": [
         "ค้นหาอีเมลหรือที่อยู่ IP"
       ],
-      "Search for users or addresses": [
-        "ค้นหาผู้ใช้หรือที่อยู่"
-      ],
       "Search parent folder": [
         "ค้นหาโฟลเดอร์หลัก"
       ],
@@ -16053,14 +16112,6 @@
         "สำหรับบุคคลทั่วไป"
       ]
     },
-    "Table header": {
-      "Size": [
-        "ขนาด"
-      ],
-      "Status": [
-        "สถานะ"
-      ]
-    },
     "TableHeader": {
       "Action": [
         "การดำเนินการ"
@@ -16440,9 +16491,6 @@
       ],
       "Change second password": [
         "เปลี่ยนรหัสผ่านที่สอง"
-      ],
-      "Choose a provider": [
-        "เลือกผู้ให้บริการ"
       ],
       "Choose user affiliations": [
         "เลือกสังกัดของผู้ใช้"
@@ -16888,9 +16936,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "นำเข้าโดย ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Import your data to ${ BRAND_NAME }": [
-        "นำเข้าข้อมูลไปยัง ${ BRAND_NAME }"
-      ],
       "Imports": [
         "การนำเข้า"
       ],
@@ -17175,9 +17220,6 @@
       ],
       "Select contact group": [
         "เลือกกลุ่มรายชื่อติดต่อ"
-      ],
-      "Select data to import": [
-        "เลือกข้อมูลที่จะนำเข้า"
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "ส่งและรับ Gmail ผ่าน ${ MAIL_APP_NAME }"

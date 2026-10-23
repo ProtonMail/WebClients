@@ -695,9 +695,6 @@
       "Get ${ planOrAppName }": [
         "Pridobi ${ planOrAppName }."
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Pridobite brezplačen ${ BRAND_NAME } naslov"
-      ],
       "Get a new encrypted email address": [
         "Pridobite nov šifriran e-poštni naslov"
       ],
@@ -1723,6 +1720,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Črni petek"
+      ],
+      "Get the deal": [
+        "Izkoristite ponudbo"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mesec"
+      ],
+      "15 GB storage": [
+        "15 GB shrambe"
+      ],
+      "2 individual accounts": [
+        "2 individualna računa"
+      ],
+      "2 TB of secure storage": [
+        "2 TB varne shrambe"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB shrambe: 40x vaš trenutni paket"
+      ],
+      "3 TB of secure storage": [
+        "3 TB varne shrambe"
+      ],
+      "500 GB of secure storage": [
+        "500 GB varne shrambe"
+      ],
+      "6 individual accounts": [
+        "6 individualnih računov"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vgrajen overitelj 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti temeljijo na standardnih mesečnih cenah. Vaša naročnina se bo ob koncu obračunskega obdobja podaljšala po standardni letni ceni."
+      ],
+      "Online document editor": [
+        "Spletni urejevalnik dokumentov"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
+      "Stronger protection against cyber threats": [
+        "Močnejša zaščita pred kibernetskimi grožnjami"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
+      "Use your own email domain": [
+        "Uporabite svojo e-poštno domeno"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Največja razprodaja leta"
+      ],
+      "Black Friday": [
+        "Črni petek"
+      ],
+      "for 12 months": [
+        "za 12 mesecev"
+      ],
+      "Last chance to save big": [
+        "Zadnja priložnost za velik prihranek"
+      ],
+      "Protect your entire tribe": [
+        "Zaščitite vaše celotno pleme"
+      ],
+      "Protection for two in a single plan": [
+        "Zaščita za dve osebi v enem paketu"
       ]
     },
     "Billing cycle": {
@@ -3977,9 +4074,6 @@
       "A group with this name already exists": [
         "Skupina z enakim imenom že obstaja"
       ],
-      "A message is required when reporting copyright infringement or stolen data": [
-        "Pri prijavi kršitve avtorskih pravic ali kraje podatkov je obvezno sporočilo"
-      ],
       "Address could not be added.": [
         "Naslova ni bilo mogoče dodati."
       ],
@@ -4004,23 +4098,8 @@
       "Authentication error.": [
         "Napaka pri preverjanju pristnosti."
       ],
-      "Bookmark password is not available": [
-        "Geslo zaznamka ni na voljo"
-      ],
       "Calendar limit reached": [
         "Dosežena omejitev števila koledarjev."
-      ],
-      "Cannot download a folder": [
-        "Mape ni mogoče prenesti"
-      ],
-      "Cannot move item without a valid name, please rename the item first": [
-        "Predmeta ni mogoče premakniti brez veljavnega imena. Najprej preimenujte predmet"
-      ],
-      "Cannot share root folder": [
-        "Korenske mape ni mogoče deliti"
-      ],
-      "Cannot verify who uploaded this file": [
-        "Ni mogoče preveriti, kdo je naložil to datoteko"
       ],
       "Checkout expired, please try again": [
         "Seja je potekla, poskusite znova."
@@ -4031,35 +4110,11 @@
       "Company name or personal name is required": [
         "Naziv podjetja ali osebno ime je obvezno"
       ],
-      "Copying item to a non-folder is not allowed": [
-        "Kopiranje predmetov v mapo, ki to ni, ni dovoljeno"
-      ],
       "Could not grant access to the organization key": [
         "Dostop do ključa organizacije ni bil odobren"
       ],
-      "Could not load the image preview: ${ message }": [
-        "Predogleda slike ni mogoče naložiti: ${ message }"
-      ],
-      "Could not read part of this file: ${ message }": [
-        "Dela naslednje datoteke ni bilo mogoče prebrati: ${ message }"
-      ],
-      "Could not unlock the parent folder": [
-        "Nadrejene mape ni bilo mogoče odkleniti"
-      ],
-      "Could not unlock this item": [
-        "Predmeta ni bilo mogoče odkleniti"
-      ],
       "Couldn't load invoices. Please try again later.": [
         "Računov ni bilo mogoče naložiti. Poskusite kasneje."
-      ],
-      "Creating documents in non-folders is not allowed": [
-        "Ustvarjanje dokumentov v mapah, ki to niso, ni dovoljeno"
-      ],
-      "Creating files in non-folders is not allowed": [
-        "Ustvarjanje datotek v mapah, ki to niso, ni dovoljeno"
-      ],
-      "Creating folders in non-folders is not allowed": [
-        "Ustvarjanje map v mapah, ki to niso, ni dovoljeno"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Izberite vsaj ${ calendarsToFixCount } koledar manj",
@@ -4072,9 +4127,6 @@
         "Izberite vsaj ${ calendarsToFixCount } koledarja manj ali",
         "Izberite vsaj ${ calendarsToFixCount } koledarje manj ali",
         "Izberite vsaj ${ calendarsToFixCount } koledarjev manj ali"
-      ],
-      "Device not found": [
-        "Naprave ni bilo mogoče najti"
       ],
       "Domain not available, try again later": [
         "Domena ni na voljo, poskusite znova pozneje"
@@ -4103,26 +4155,8 @@
       "Error connecting to the Bitcoin API.": [
         "Napaka pri vzpostavljanju povezave z Bitcoin API."
       ],
-      "Expiration date cannot be in the past": [
-        "Datum poteka ne more biti v preteklosti"
-      ],
       "Failed to add group member": [
         "Člana skupine ni bilo mogoče dodati"
-      ],
-      "Failed to decrypt bookmark key: ${ message }": [
-        "Ključa zaznamka ni bilo mogoče dešifrirati: ${ message }"
-      ],
-      "Failed to decrypt bookmark name: ${ message }": [
-        "Imena zaznamka ni bilo mogoče dešifrirati: ${ message }"
-      ],
-      "Failed to decrypt item name: ${ message }": [
-        "Imena predmeta ni bilo mogoče dešifrirati: ${ message }"
-      ],
-      "Failed to decrypt node key: ${ message }": [
-        "Ključa vozlišča ni bilo mogoče dešifrirati: ${ message }"
-      ],
-      "Failed to decrypt revision metadata": [
-        "Metapodatkov revizije ni bilo mogoče dešifrirati"
       ],
       "Failed to load OAuth modal.": [
         "Ni bilo mogoče naložiti modal OAuth."
@@ -4139,12 +4173,6 @@
       "Failed to update billing address": [
         "Naslova za izstavitev računa ni bilo mogoče posodobiti"
       ],
-      "Failed to verify invitation": [
-        "Povabila ni bilo mogoče preveriti"
-      ],
-      "File download failed due to empty response": [
-        "Prenos datoteke ni uspel zaradi praznega odziva"
-      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Datoteka je prevelika. Velikost logotipa ne sme presegati 30 KB."
       ],
@@ -4153,9 +4181,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Če je čas za vnos kode na televizorju potekel, kliknite Osveži in znova vnesite kodo."
-      ],
-      "Image preview not found": [
-        "Predogleda slike ni bilo mogoče najti"
       ],
       "IMAP server is required": [
         "Zahtevan je strežnik IMAP"
@@ -4211,20 +4236,11 @@
       "Invalid postal code": [
         "Neveljavna poštna številka"
       ],
-      "Invalid URL": [
-        "Neveljaven URL"
-      ],
       "Invalid VAT number": [
         "Neveljavna DDV številka"
       ],
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"
-      ],
-      "Invitation not found": [
-        "Povabila ni bilo mogoče najti"
-      ],
-      "Item not found": [
-        "Predmeta ni bilo mogoče najti"
       ],
       "Label name cannot be empty.": [
         "Ime oznake ne sme biti prazno."
@@ -4241,23 +4257,11 @@
       "Missing key packet": [
         "Manjka paket ključev"
       ],
-      "Missing signature": [
-        "Manjka podpis"
-      ],
-      "Missing signature for ${ signatureType }": [
-        "Za ${ signatureType } manjka podpis"
-      ],
-      "Moving item to a non-folder is not allowed": [
-        "Premikanje predmetov v mapo, ki to ni, ni dovoljeno"
-      ],
       "Name already exists": [
         "Ime že obstaja"
       ],
       "Name does not match": [
         "Ime se ne ujema."
-      ],
-      "Name must not be empty": [
-        "Ime ne sme biti prazno"
       ],
       "No calendars found to import": [
         "Ni najdenih koledarjev za uvoz."
@@ -4280,15 +4284,6 @@
       "Not a valid number": [
         "Ni veljavna številka"
       ],
-      "Only admins can convert external invitations": [
-        "Zunanja povabila lahko pretvorijo samo skrbniki"
-      ],
-      "Organization does not have enough seats available": [
-        "Organizacija nima na voljo dovolj sedežev"
-      ],
-      "Organization does not have enough storage available": [
-        "Organizacija nima na voljo dovolj shrambe"
-      ],
       "Organization key is not decrypted": [
         "Ključ organizacije ni dešifriran."
       ],
@@ -4297,9 +4292,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Za ustvarjanje nezasebnih uporabnikov mora biti ključ organizacije aktiviran."
-      ],
-      "Part of the file appears to be corrupted": [
-        "Del datoteke se zdi poškodovan"
       ],
       "Password is required": [
         "Zahtevano je geslo"
@@ -4321,12 +4313,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Plačila trenutno niso na voljo, poskusite znova pozneje"
-      ],
-      "Photo is already in the target album": [
-        "Fotografija je že v ciljnem albumu"
-      ],
-      "Photo not found": [
-        "Fotografije ni bilo mogoče najti"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Preverite, če je vaš ABN registriran za čezmejni DDV."
@@ -4415,21 +4401,6 @@
       "Signature verification failed": [
         "Preverjanje podpisa ni uspelo"
       ],
-      "Signature verification failed: ${ errorMessage }": [
-        "Preverjanje podpisa ni uspelo: ${ errorMessage }"
-      ],
-      "Signature verification for ${ signatureType } failed": [
-        "Preverjanje podpisa za ${ signatureType } ni uspelo"
-      ],
-      "Some file data failed to upload. Please try again.": [
-        "Podatki nekaterih datotek se niso uspeli naložiti. Poskusite znova."
-      ],
-      "Some file parts failed to upload. Please try again.": [
-        "Deli nekaterih datotek se niso uspeli naložiti. Poskusite znova."
-      ],
-      "Some items could not be loaded": [
-        "Nekaterih predmetov ni bilo mogoče naložiti"
-      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nekatera imena map niso na voljo. Prosimo prilagodite uvoz tako, da uredite takšna imena."
       ],
@@ -4444,9 +4415,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nekatera imena vaših oznak presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
-      ],
-      "Something went wrong": [
-        "Nekaj je šlo narobe"
       ],
       "Something went wrong while converting the address": [
         "Med pretvorbo naslova je prišlo do napake"
@@ -4520,9 +4488,6 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "To polje zahteva vsaj ${ minimumLength } znakov."
       ],
-      "This file version could not be uploaded": [
-        "Te različice datoteke ni bilo mogoče naložiti"
-      ],
       "This folder name is not available. Please choose a different name.": [
         "To ime mape ni na voljo. Izberite drugačno ime."
       ],
@@ -4534,12 +4499,6 @@
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Če želite ustvariti nezasebne uporabniške račune in dostopati do njihovih računov, boste morali obnoviti skrbniške pravice."
-      ],
-      "Too many server errors, please try again later": [
-        "Preveč napak strežnika, poskusite znova pozneje"
-      ],
-      "Too many server requests, please try again later": [
-        "Preveč zahtev strežniku, poskusite znova pozneje"
       ],
       "Try again later": [
         "Poskusite znova kasneje."
@@ -4594,21 +4553,6 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Napačna koda za preverjanje. Prepričajte se, da ste pravilno kopirali kodo za preverjanje in poskusite znova. Do uveljavitve sprememb lahko mine tudi do 24 ur."
-      ],
-      "You can create public links for your own files only": [
-        "Javne povezave lahko ustvarjate samo do lastnih datotek"
-      ],
-      "You can only leave items that are shared with you": [
-        "Zapustite lahko le predmete, ki so v skupni rabi z vami"
-      ],
-      "You can only upload a new version to a file": [
-        "Naložite lahko samo novo različico datoteke"
-      ],
-      "You can update a public link for your own files only": [
-        "Javno povezavo lahko posodobite samo za lastne datoteke"
-      ],
-      "You do not have access to this shared item": [
-        "Nimate dostopa do tega predmeta v skupni rabi"
       ],
       "You have reached the maximum number of calendars.": [
         "Dosegli ste največje število koledarjev."
@@ -5327,17 +5271,6 @@
         "Terabajtov"
       ]
     },
-    "Filter": {
-      "All": [
-        "Vse"
-      ],
-      "Errors": [
-        "Napake"
-      ],
-      "In progress": [
-        "V teku"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } je posodobljen"
@@ -5913,11 +5846,6 @@
         "Več možnosti uvoza"
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Z napakami"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } stikov ne bo uvoženih. Kliknite za podrobnosti"
@@ -5950,9 +5878,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ova tehnologija šifriranja pomeni, da nihče nima dostopa do vašega gesla – niti mi ne."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } zahteva ${ BRAND_NAME } naslov za varno sinhronizacijo dogodkov in šifriranje. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nov koledar",
@@ -6692,9 +6617,6 @@
       "Fill in user details": [
         "Vnesite podatke o uporabniku"
       ],
-      "Find out what can be migrated.": [
-        "Ugotovite, kaj je mogoče preseliti."
-      ],
       "for ${ price }": [
         "za ${ price }"
       ],
@@ -7412,9 +7334,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Trenutno ni dosegljivo zaradi visokega povpraševanja. Poskusite znova kasneje."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Začasno ni na voljo. Poskusite znova pozneje."
-      ],
       "Thank you": [
         "Hvala"
       ],
@@ -7535,12 +7454,6 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "To sporočilo ne bo doseglo ekipe za podporo. Če imate težave z našo storitvijo ali potrebujete nadaljnjo pomoč ${ supportLink }."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Tega uporabnika ni mogoče prenesti, ker njegov e-poštni naslov ni na voljo v storitvi ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tega uporabnika ni mogoče preseliti zaradi nezdružljivosti platform."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ta uporabnik trenutno skrbi za plačila za vašo organizacijo. Z odstranitvijo tega člana boste vi postali odgovorni za plačila za vašo organizacijo."
       ],
@@ -7607,17 +7520,8 @@
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Da si boste lažje zapomnili geslo, vas bomo občasno prosili, da ga vnesete. Sčasoma vas bomo za to prosili vse redkeje."
       ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Za uvoz dogodkov najprej ustvarite koledar v aplikaciji ${ CALENDAR_APP_NAME }. Tam se bodo dogodki po uvozu prikazali."
-      ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Če želite ostati na tekočem z novicami o razvoju izdelkov ${ BRAND_NAME }, se lahko naročite na naše različne e-poštne novice in občasno ${ blogLink }."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Če želite prenesti tega uporabnika, dodajte in potrdite e-poštno domeno na povezavi ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Če želite preseliti tega uporabnika, omogočite njegov račun v ${ provider.adminConsoleName }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Za nadaljevanje izberite način obnovitve računa, da lahko preverimo zahtevo."
@@ -7870,9 +7774,6 @@
       ],
       "X": [
         "X"
-      ],
-      "You": [
-        "Vi"
       ],
       "You already have a free account": [
         "Brezplačen račun že imate"
@@ -8398,9 +8299,6 @@
       "Calendar": [
         "Koledar"
       ],
-      "Calendars": [
-        "Koledarje"
-      ],
       "Card details": [
         "Podatki o kartici"
       ],
@@ -8562,9 +8460,6 @@
       ],
       "Email or username": [
         "E-pošta ali uporabniško ime"
-      ],
-      "Emails": [
-        "E-pošto"
       ],
       "Emails (all messages)": [
         "E-pošto (vsa sporočila)"
@@ -13881,20 +13776,6 @@
         "Za posameznike"
       ]
     },
-    "Table header": {
-      "Estimated size": [
-        "Ocenjena velikost"
-      ],
-      "Migration status": [
-        "Stanje selitve"
-      ],
-      "Status": [
-        "Stanje"
-      ],
-      "User": [
-        "Uporabnik"
-      ]
-    },
     "TableHeader": {
       "Action": [
         "Dejanje"
@@ -14215,9 +14096,6 @@
       ],
       "Change second password": [
         "Spremenite drugo geslo"
-      ],
-      "Choose a provider": [
-        "Izberite ponudnika"
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Prevzemite svoj naslov ${ MAIL_APP_NAME }"
@@ -14573,9 +14451,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Uvozi preko ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Uvozite svoje podatke v ${ BRAND_NAME }"
-      ],
       "Imports": [
         "Uvozi"
       ],
@@ -14810,9 +14685,6 @@
       "Select contact group": [
         "Izberi skupino stikov"
       ],
-      "Select data to import": [
-        "Izberite podatke za uvoz"
-      ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Pošiljajte in prejemajte Gmail z uporabo ${ MAIL_APP_NAME }"
       ],
@@ -15025,9 +14897,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Dobrodošli v ${ BRAND_NAME } for Business"
-      ],
-      "What are you migrating?": [
-        "Kaj selite?"
       ],
       "What is an alias?": [
         "Kaj je vzdevek?"

@@ -539,9 +539,6 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName }-ის მიღება"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
-      ],
       "Get a new encrypted email address": [
         "მიიღეთ ახალი დაშიფრული ელფოსტის მისამართი"
       ],
@@ -1777,6 +1774,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "შავი პარასკევი"
+      ],
+      "Get the deal": [
+        "მიიღეთ შეთავაზება"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/თვე"
+      ],
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "2 individual accounts": [
+        "2 ინდივიდუალური ანგარიში"
+      ],
+      "2 TB of secure storage": [
+        "2 ტბ დაცული საცავი"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 გბ საცავი: თქვენი მიმდინარე პაკეტის 40-ჯერ მეტი"
+      ],
+      "3 TB of secure storage": [
+        "3 ტბ დაცული საცავი"
+      ],
+      "500 GB of secure storage": [
+        "500 გბ დაცული საცავი"
+      ],
+      "6 individual accounts": [
+        "6 ინდივიდუალური ანგარიში"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "ფასდაკლებები ეფუძნება სტანდარტულ თვიურ ფასს. გამოწერა განახლდება სტანდარტული წლიური ტარიფით გადახდის ციკლის დასრულებისას."
+      ],
+      "Online document editor": [
+        "ონლაინ დოკუმენტების რედაქტორი"
+      ],
+      "Recover previous file versions": [
+        "ფაილების წინა ვერსიების აღდგენა"
+      ],
+      "Stronger protection against cyber threats": [
+        "უფრო ძლიერი დაცვა კიბერ საფრთხეებისგან"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "შეუზღუდავი საქაღალდეები, იარლიყები და ფილტრები"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ საკუთარი ელფოსტის დომენი"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "წლის ყველაზე დიდი ფასდაკლება"
+      ],
+      "Black Friday": [
+        "შავი პარასკევი"
+      ],
+      "for 12 months": [
+        "12 თვით"
+      ],
+      "Last chance to save big": [
+        "ბოლო შანსი დიდი დანაზოგისთვის"
+      ],
+      "Protect your entire tribe": [
+        "დაიცავით მთელი თქვენი ოჯახი"
+      ],
+      "Protection for two in a single plan": [
+        "დაცვა ორი ადამიანისთვის ერთ პაკეტში"
       ]
     },
     "Billing cycle": {
@@ -4330,10 +4427,6 @@
       "They may ask to access your account in case of an emergency.": [
         "მათ შეიძლება მოითხოვონ წვდომა თქვენს ანგარიშზე საგანგებო სიტუაციის შემთხვევაში."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "ისინი ავტომატურად მიიღებენ წვდომას **${ days } დღეში**, **${ formattedAccessibleAt }**-ზე. თქვენ შეგიძლიათ უარყოთ მათი მოთხოვნა ან მისცეთ წვდომა დაუყოვნებლივ ნებისმიერ დროს.",
-        "ისინი ავტომატურად მიიღებენ წვდომას **${ days } დღეში**, **${ formattedAccessibleAt }**-ზე. თქვენ შეგიძლიათ უარყოთ მათი მოთხოვნა ან მისცეთ წვდომა დაუყოვნებლივ ნებისმიერ დროს."
-      ],
       "This will take effect immediately.": [
         "ეს ძალაში დაუყოვნებლივ შევა."
       ],
@@ -4618,9 +4711,6 @@
       "Invalid private key file": [
         "არასწორი პირადი გასაღების ფაილი"
       ],
-      "Invalid URL": [
-        "არასწორი URL"
-      ],
       "Invalid VAT number": [
         "არასწორი დღგს ნომერი"
       ],
@@ -4639,9 +4729,6 @@
       ],
       "Missing key packet": [
         "აკლია საკვანძო პაკეტი"
-      ],
-      "Missing signature": [
-        "ხელმოწერა აკლია"
       ],
       "Name already exists": [
         "სახელი უკვე არსებობს"
@@ -4827,9 +4914,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
-      ],
-      "Something went wrong": [
-        "რაღაც არასწორად წავიდა"
       ],
       "Something went wrong while converting the address": [
         "მისამართის კონვერტაციისას დაფიქსირდა შეცდომა"
@@ -6366,14 +6450,6 @@
         "მეტი შემოტანის პარამეტრები"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "მიმდინარეობს"
-      ],
-      "Migrated": [
-        "მიგრირებულია"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "შემოტანილი იქნება ${ totalContactsDiscarded } ${ totalContacts }-დან. დეტალებისთვის დააწკაპუნეთ"
@@ -6420,9 +6496,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } საჭიროებს ${ BRAND_NAME } მისამართს ღონისძიების უსაფრთხო სინქრონიზაციისა და დაშიფვრისთვის. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ახალი კალენდარი",
@@ -8212,9 +8285,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "დროებით მიუწვდომელია მაღალი მოთხოვნის გამო. გთხოვთ, სცადოთ მოგვიანებით."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
-      ],
       "Thank you": [
         "მადლობა"
       ],
@@ -8442,9 +8512,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "პაროლის დამახსოვრებაში დაგეხმარებით, თუ პერიოდულად მის შეყვანას გთხოვთ. დროთა განმავლობაში ამას სულ უფრო იშვიათად გთხოვთ."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "მოვლენების შემოსატანად ჯერ შექმენით კალენდარი ${ CALENDAR_APP_NAME }-ში. შემოტანილი მოვლენები ამ კალენდარში გამოჩნდება."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "იმისათვის, რომ ყოველთვის იცოდეთ ყველა სიახლე ${ BRAND_NAME }-ის პროდუქტების შესახებ, შეგიძლიათ გამოიწეროთ ჩვენი სხვადასხვა საფოსტო დაგზავნები და ხანდახან ჩვენს ${ blogLink }-ზე შეიხედოთ ხოლმე."
@@ -9410,9 +9477,6 @@
       "Calendar": [
         "კალენდარი"
       ],
-      "Calendars": [
-        "კალენდრები"
-      ],
       "Card details": [
         "ბარათის დეტალები"
       ],
@@ -9590,9 +9654,6 @@
       ],
       "Email with @yourcompany.com domain": [
         "ელფოსტა @yourcompany.com დომენით"
-      ],
-      "Emails": [
-        "ელფოსტები"
       ],
       "Emails (all messages)": [
         "ელფოსტა (ყველა შეტყობინება)"
@@ -13199,9 +13260,6 @@
       "Search for an email or IP address": [
         "ელფოსტის ან IP მისამართის ძებნა"
       ],
-      "Search for users or addresses": [
-        "მოძებნეთ მომხმარებლები ან მისამართები"
-      ],
       "Search parent folder": [
         "მშობელ საქაღალდეში ძებნა"
       ],
@@ -16319,14 +16377,6 @@
         "ინდივიდუალური პირებისთვის"
       ]
     },
-    "Table header": {
-      "Size": [
-        "ზომა"
-      ],
-      "Status": [
-        "სტატუსი"
-      ]
-    },
     "TableHeader": {
       "Action": [
         "ქმედება"
@@ -16716,9 +16766,6 @@
       ],
       "Change second password": [
         "მეორე პაროლის შეცვლა"
-      ],
-      "Choose a provider": [
-        "აირჩიეთ პროვაიდერი"
       ],
       "Choose user affiliations": [
         "აირჩიეთ მომხმარებლის წევრობა"
@@ -17171,9 +17218,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH }-ის გავლით შემოტანა"
       ],
-      "Import your data to ${ BRAND_NAME }": [
-        "თქვენი მონაცემების იმპორტი ${ BRAND_NAME }-ში"
-      ],
       "Imports": [
         "შემოტანები"
       ],
@@ -17458,9 +17502,6 @@
       ],
       "Select contact group": [
         "მონიშნეთ კონტაქტების ჯგუფი"
-      ],
-      "Select data to import": [
-        "აირჩიეთ შემოსატანი მონაცემები"
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "გააგზავნეთ და მიიღეთ Gmail ${ MAIL_APP_NAME }-ის გამოყენებით"
