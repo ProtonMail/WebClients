@@ -15,9 +15,43 @@ packages:
 # @protontech/crypto must resolve to a single version across workspaces; check:constraints requires
 # every workspace to declare it as "catalog:".
 catalog:
+    '@dnd-kit/abstract': ^0.5.0
+    '@dnd-kit/collision': ^0.5.0
     '@dnd-kit/dom': ^0.5.0
+    '@dnd-kit/helpers': ^0.5.0
     '@dnd-kit/react': ^0.5.0
+    '@electron-forge/cli': ^7.11.2
+    '@electron-forge/maker-deb': ^7.11.2
+    '@electron-forge/maker-dmg': ^7.11.2
+    '@electron-forge/maker-msix': ^7.11.2
+    '@electron-forge/maker-rpm': ^7.11.2
+    '@electron-forge/maker-squirrel': ^7.11.2
+    '@electron-forge/maker-zip': ^7.11.2
+    '@electron-forge/plugin-auto-unpack-natives': ^7.11.2
+    '@electron-forge/plugin-fuses': ^7.11.2
+    '@electron-forge/plugin-webpack': ^7.11.2
+    '@electron-forge/publisher-github': ^7.11.2
+    '@electron-forge/shared-types': ^7.11.2
+    '@electron/fuses': ^1.8.0
     '@jest/globals': ^30.5.2
+    # `lexical` and every `@lexical/*` package must share one exact version; patchedDependencies
+    # patches `@lexical/table` at that version.
+    '@lexical/clipboard': 0.31.2
+    '@lexical/code': 0.31.2
+    '@lexical/hashtag': 0.31.2
+    '@lexical/headless': 0.31.2
+    '@lexical/html': 0.31.2
+    '@lexical/link': 0.31.2
+    '@lexical/list': 0.31.2
+    '@lexical/markdown': 0.31.2
+    '@lexical/overflow': 0.31.2
+    '@lexical/react': 0.31.2
+    '@lexical/rich-text': 0.31.2
+    '@lexical/selection': 0.31.2
+    '@lexical/table': 0.31.2
+    '@lexical/text': 0.31.2
+    '@lexical/utils': 0.31.2
+    '@lexical/yjs': 0.31.2
     # Must stay on the same version as oxlint.
     '@oxlint/plugins': 1.87.0
     '@pmmmwh/react-refresh-webpack-plugin': ^0.6.3
@@ -25,6 +59,7 @@ catalog:
     # Shared so that every workspace importing the Drive SDK resolves the same version.
     '@protontech/drive-sdk': ^0.23.0
     '@protontech/logger': ^1.0.0
+    '@protontech/pass-rust-core': 1.6.0
     '@reduxjs/toolkit': ^2.13.0
     '@sentry/browser': ^7.120.4
     '@sentry/types': ^7.120.4
@@ -46,6 +81,7 @@ catalog:
     '@types/tinycolor2': ^1.4.6
     '@types/webpack-env': ^1.18.8
     '@typescript/native': npm:typescript@^7.0.2
+    '@vercel/webpack-asset-relocator-loader': 1.7.3
     '@vitest/coverage-v8': ^5.0.5
     '@vitest/ui': ^5.0.5
     babel-jest: ^30.4.1
@@ -57,6 +93,8 @@ catalog:
     cross-env: ^10.1.0
     css-loader: ^7.1.5
     dompurify: ^3.4.17
+    electron-log: ^5.4.4
+    electron-store: ^8.2.0
     eslint: ^10.12.0
     fake-indexeddb: ^6.2.5
     fork-ts-checker-webpack-plugin: ^9.1.0
@@ -70,6 +108,7 @@ catalog:
     jest-junit: ^16.0.0
     jest-when: 3.7.0
     jszip: ^3.10.2
+    lexical: 0.31.2
     lodash: ^4.18.1
     mini-css-extract-plugin: ^2.10.2
     msw: 2.12.14
@@ -102,6 +141,8 @@ catalog:
     vitest: ^5.0.5
     webpack: ^5.111.1
     webpack-dev-server: ^6.0.0
+    y-protocols: ^1.0.6
+    yjs: ^13.6.15
     zod: ^3.25.76
 
 # Yarn resolved any range that a workspace satisfies to that workspace, including the `*` peer
