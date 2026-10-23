@@ -21,11 +21,11 @@
     "dependencies": {
         "@proton/react-redux-store": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@reduxjs/toolkit": "^2.13.0",
-        "react": "^18.3.1",
-        "react-redux": "^9.3.0",
-        "redux": "^5.0.1",
-        "redux-thunk": "^3.1.0"
+        "@reduxjs/toolkit": "catalog:",
+        "react": "catalog:",
+        "react-redux": "catalog:",
+        "redux": "catalog:",
+        "redux-thunk": "catalog:"
     },
     "devDependencies": {
         "@jest/globals": "catalog:",
@@ -43,7 +43,7 @@
         "jest-environment-jsdom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "react-dom": "^18.3.1",
+        "react-dom": "catalog:",
         "typescript": "catalog:"
     }
 }

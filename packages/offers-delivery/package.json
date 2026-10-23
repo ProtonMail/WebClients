@@ -33,9 +33,9 @@
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@reduxjs/toolkit": "^2.13.0",
-        "react-redux": "^9.3.0",
-        "ttag": "^1.8.12"
+        "@reduxjs/toolkit": "catalog:",
+        "react-redux": "catalog:",
+        "ttag": "catalog:"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
@@ -52,8 +52,8 @@
         "eslint": "catalog:",
         "jest": "catalog:",
         "jest-environment-jsdom": "catalog:",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
+        "react": "catalog:",
+        "react-dom": "catalog:",
         "typescript": "catalog:"
     },
     "peerDependencies": {

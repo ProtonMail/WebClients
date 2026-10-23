@@ -105,12 +105,12 @@
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "catalog:",
-        "@reduxjs/toolkit": "^2.13.0",
-        "history": "^4.10.1",
-        "react": "^18.3.1",
-        "react-redux": "^9.3.0",
-        "react-router-dom": "^5.3.4",
-        "ttag": "^1.8.12",
+        "@reduxjs/toolkit": "catalog:",
+        "history": "catalog:",
+        "react": "catalog:",
+        "react-redux": "catalog:",
+        "react-router-dom": "catalog:",
+        "ttag": "catalog:",
         "turndown": "^7.2.4"
     },
     "devDependencies": {
@@ -132,7 +132,7 @@
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "prettier": "catalog:",
-        "react-dom": "^18.3.1",
+        "react-dom": "catalog:",
         "typescript": "catalog:"
     }
 }
