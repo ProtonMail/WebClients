@@ -28,6 +28,7 @@ export class VideoMixerClient {
     private encoderDoneResolve: (() => void) | null = null;
     private audioCodec: string | null = null;
     private encoderStarted = false;
+    private workerFailedToLoad = false;
 
     constructor({
         initialScene,
@@ -72,6 +73,10 @@ export class VideoMixerClient {
                     lineno: event.lineno,
                 },
             });
+
+            if (!(event instanceof ErrorEvent)) {
+                this.workerFailedToLoad = true;
+            }
 
             // Unblock a pending stopEncoder so stop() doesn't hang on a dead worker.
             this.encoderDoneResolve?.();
@@ -142,6 +147,10 @@ export class VideoMixerClient {
     }
 
     public stopEncoder(): Promise<void> {
+        if (this.workerFailedToLoad) {
+            return Promise.resolve();
+        }
+
         return new Promise((resolve) => {
             this.encoderDoneResolve = resolve;
             this.worker.postMessage({ type: VideoMixerMessageType.STOP_ENCODER });
