@@ -289,7 +289,7 @@
         "Copia l'enllaç de la sala"
       ],
       "Create a free account": [
-        "Creeu un compte gratuït"
+        "Crea un compte gratuït"
       ],
       "Create a room": [
         "Crea una sala"
@@ -341,9 +341,6 @@
       ],
       "Download": [
         "Baixa"
-      ],
-      "Download app": [
-        "Descarrega l'aplicació"
       ],
       "Download local participant report": [
         "Descarrega l'informe de participants locals"
@@ -435,6 +432,9 @@
       "Join and leave sounds": [
         "Sons d'entrada i sortida"
       ],
+      "Join from ${ MEET_APP_NAME } app": [
+        "Afegiu-vos-hi amb ${ MEET_APP_NAME }7"
+      ],
       "Join in browser": [
         "Uneix-m'hi al navegador"
       ],
@@ -515,9 +515,6 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Obre la menció de ${ senderName } al xat"
-      ],
-      "Open this meeting in the desktop app": [
-        "Obre aquesta reunió a l'aplicació d'escriptori"
       ],
       "Participants": [
         "Participants"
@@ -730,9 +727,6 @@
       ],
       "Stay in meeting": [
         "Roman a la reunió"
-      ],
-      "Stop opening meetings in the desktop app": [
-        "Deixa d'obrir reunions a l'aplicació d'escriptori"
       ],
       "Stop receiving video": [
         "Deixa de rebre vídeo"
@@ -2350,6 +2344,9 @@
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
       ],
+      "The emoji could not be added because the message is at its character limit": [
+        "No s'ha pogut afegir l'emoji perquè el missatge ha assolit el límit de caràcters."
+      ],
       "The meeting password is incorrect": [
         "La contrasenya de la reunió és incorrecta"
       ],
@@ -2503,7 +2500,7 @@
         "S'ha produït un error."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
-        "Per utilitzar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, canvieu a la versió web."
+        "Per a utilitzar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, canvieu a la versió web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la connexió a Internet."
@@ -2756,9 +2753,6 @@
       ],
       "Allow camera access to preview your background": [
         "Permeteu l'accés a la càmera per a previsualitzar el fons"
-      ],
-      "Already in the app? You can close this tab.": [
-        "Ja sou a l'aplicació? Podeu tancar aquesta pestanya."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "${ particle } anònim ${ participantNumber }"
@@ -3231,6 +3225,9 @@
       "Permissions not given.": [
         "No s'han concedit els permisos."
       ],
+      "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
+        "Feu clic a ${ downloadLink } i instal·leu l'aplicació, després torneu a fer clic a \"Unir-s'hi\" a l'aplicació ${ MEET_APP_NAME }."
+      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Habiliteu l'accés al ${ microphoneLinkButton }${ andString }a la ${ cameraLinkButton } per a una experiència òptima."
       ],
@@ -3417,9 +3414,6 @@
       "This meeting reached the time limit.": [
         "Aquesta reunió ha arribat al límit de temps."
       ],
-      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Aquesta reunió s'ha obert a l'aplicació d'escriptori ${ MEET_APP_NAME }."
-      ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Aquest enregistrament s'eliminarà permanentment del dispositiu. Aquesta acció no es podrà desfer."
       ],
@@ -3523,13 +3517,10 @@
         "Ahir — ${ absoluteDate }"
       ],
       "You": [
-        "Vós"
+        "Tú"
       ],
       "You are almost there": [
         "Ja gairebé ho teniu"
-      ],
-      "You can close this tab.": [
-        "Podeu tancar aquesta pestanya."
       ],
       "You can now return to the application to continue": [
         "Ara podeu tornar a l'aplicació per continuar."
@@ -3914,6 +3905,9 @@
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
       ],
+      "download": [
+        "descarregar"
+      ],
       "Learn more": [
         "Més informació"
       ],
@@ -3931,6 +3925,110 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ]
+    },
+    "Lumo emoji name": {
+      "Alert": [
+        "Alerta"
+      ],
+      "Browse folders": [
+        "Navega per les carpetes"
+      ],
+      "Cash": [
+        "Efectiu"
+      ],
+      "Celebrate": [
+        "Celebració"
+      ],
+      "Cheers": [
+        "Salut!"
+      ],
+      "Chef's kiss": [
+        "Petó del Xef"
+      ],
+      "Coffee": [
+        "Cafè"
+      ],
+      "Cowboy": [
+        "Vaquer"
+      ],
+      "Encrypt": [
+        "Xifra"
+      ],
+      "Gaming": [
+        "Jocs"
+      ],
+      "Halo": [
+        "Halo"
+      ],
+      "Happy": [
+        "Feliç"
+      ],
+      "Love": [
+        "Amor"
+      ],
+      "Mild panic": [
+        "Pànic lleuger"
+      ],
+      "Mind blown": [
+        "Al·lucinant."
+      ],
+      "Nine lives": [
+        "Nou vides"
+      ],
+      "Party": [
+        "Festa"
+      ],
+      "Perk": [
+        "Avantatge"
+      ],
+      "Popcorn": [
+        "Crispetes"
+      ],
+      "Rocket": [
+        "Coet"
+      ],
+      "Sad": [
+        "Tristesa"
+      ],
+      "Schrödinger in a box": [
+        "Schrödinger en una caixa"
+      ],
+      "Schrödinger out of the box": [
+        "Schrödinger fora de la caixa"
+      ],
+      "Search": [
+        "Cerca"
+      ],
+      "Sit": [
+        "Seu"
+      ],
+      "Slay": [
+        "Morir de riure"
+      ],
+      "Sleepy": [
+        "Amb son"
+      ],
+      "Sweep": [
+        "Escombrada"
+      ],
+      "Thank you": [
+        "Gràcies"
+      ],
+      "Think": [
+        "Pensa"
+      ],
+      "This is fine": [
+        "Això està bé"
+      ],
+      "Watch left": [
+        "Mira a l'esquerra"
+      ],
+      "Watch right": [
+        "Mira a la dreta"
+      ],
+      "Write": [
+        "Escriu"
       ]
     },
     "meet": {
@@ -4142,7 +4240,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Tanqueu la sessió"
+        "Tanca la sessió"
       ],
       "Stay signed in": [
         "Mantén la sessió iniciada"
@@ -4163,12 +4261,12 @@
         "Si tanqueu la sessió sense restablir la contrasenya, podríeu perdre l'accés al compte."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
-        "Podreu restablir la vostra contrasenya en ${ boldTimeLeft }."
+        "Podreu restablir la contrasenya en ${ boldTimeLeft }."
       ]
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Restabliment de contrasenya"
+        "Restabliment de la contrasenya"
       ]
     },
     "session_recovery:sign_out:title": {

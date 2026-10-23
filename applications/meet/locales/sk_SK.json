@@ -348,9 +348,6 @@
       "Download": [
         "Stiahnuť"
       ],
-      "Download app": [
-        "Stiahnuť aplikáciu"
-      ],
       "Download local participant report": [
         "Stiahnuť správu miestneho účastníka"
       ],
@@ -521,9 +518,6 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Otvoriť zmienku od ${ senderName } v chate"
-      ],
-      "Open this meeting in the desktop app": [
-        "Otvoriť túto schôdzku v aplikácii pre počítač"
       ],
       "Participants": [
         "Účastníci"
@@ -740,9 +734,6 @@
       ],
       "Stay in meeting": [
         "Zostať v stretnutí"
-      ],
-      "Stop opening meetings in the desktop app": [
-        "Zastaviť otváranie schôdzí v desktopovej aplikácii"
       ],
       "Stop receiving video": [
         "Zastaviť prijímanie videa"
@@ -2362,6 +2353,9 @@
       "The email addresses do not match": [
         "Emailové adresy sa nezhodujú"
       ],
+      "The emoji could not be added because the message is at its character limit": [
+        "Toto emoji nebolo možné pridať, pretože správa dosiahla maximálny počet znakov."
+      ],
       "The meeting password is incorrect": [
         "Heslo k stretnutiu je nesprávne"
       ],
@@ -2790,9 +2784,6 @@
       ],
       "Allow camera access to preview your background": [
         "Povoľte kamere prístup k náhľadu vášho pozadia"
-      ],
-      "Already in the app? You can close this tab.": [
-        "Už ste v aplikácii? Túto kartu môžete zavrieť."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonymný účastník ${ particle } ${ participantNumber }"
@@ -3451,9 +3442,6 @@
       "This meeting reached the time limit.": [
         "Táto schôdza dosiahla časový limit."
       ],
-      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Táto schôdza bola otvorená v desktopovej aplikácii ${ MEET_APP_NAME }."
-      ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Táto nahrávka bude z tohto zariadenia natrvalo vymazaná. Túto akciu nie je možné vrátiť späť."
       ],
@@ -3561,9 +3549,6 @@
       ],
       "You are almost there": [
         "Už ste takmer tam"
-      ],
-      "You can close this tab.": [
-        "Túto kartu môžete zavrieť."
       ],
       "You can now return to the application to continue": [
         "Teraz sa môžete vrátiť do aplikácie a pokračovať"
@@ -3967,6 +3952,110 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ]
+    },
+    "Lumo emoji name": {
+      "Alert": [
+        "Upozornenie"
+      ],
+      "Browse folders": [
+        "Prehliadať priečinky"
+      ],
+      "Cash": [
+        "Hotovosť"
+      ],
+      "Celebrate": [
+        "Oslavovanie"
+      ],
+      "Cheers": [
+        "Na zdravie"
+      ],
+      "Chef's kiss": [
+        "Šéfkuchárov bozk"
+      ],
+      "Coffee": [
+        "Káva"
+      ],
+      "Cowboy": [
+        "Kovboj"
+      ],
+      "Encrypt": [
+        "Šifrovanie"
+      ],
+      "Gaming": [
+        "Hranie"
+      ],
+      "Halo": [
+        "Haló"
+      ],
+      "Happy": [
+        "Šťastný"
+      ],
+      "Love": [
+        "Láska"
+      ],
+      "Mild panic": [
+        "Jemná panika"
+      ],
+      "Mind blown": [
+        "To ma ohromilo"
+      ],
+      "Nine lives": [
+        "Deväť životov"
+      ],
+      "Party": [
+        "Párty"
+      ],
+      "Perk": [
+        "Perk"
+      ],
+      "Popcorn": [
+        "Pukance"
+      ],
+      "Rocket": [
+        "Raketa"
+      ],
+      "Sad": [
+        "Smutný"
+      ],
+      "Schrödinger in a box": [
+        "Schrödinger v škatuli"
+      ],
+      "Schrödinger out of the box": [
+        "Schrödinger vonku zo škatule"
+      ],
+      "Search": [
+        "Hľadať"
+      ],
+      "Sit": [
+        "Sadnúť"
+      ],
+      "Slay": [
+        "Zabijak"
+      ],
+      "Sleepy": [
+        "Ospalý"
+      ],
+      "Sweep": [
+        "Zametanie"
+      ],
+      "Thank you": [
+        "Ďakujem"
+      ],
+      "Think": [
+        "Premýšľanie"
+      ],
+      "This is fine": [
+        "Toto je fajn"
+      ],
+      "Watch left": [
+        "Pozri vľavo"
+      ],
+      "Watch right": [
+        "Pozri vpravo"
+      ],
+      "Write": [
+        "Písať"
       ]
     },
     "meet": {

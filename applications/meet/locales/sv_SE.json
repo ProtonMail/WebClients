@@ -277,6 +277,9 @@
       "Create meeting": [
         "Skapa möte"
       ],
+      "Debug overlay": [
+        "Felsökningsöverlägg"
+      ],
       "Delete": [
         "Ta bort"
       ],
@@ -312,9 +315,6 @@
       ],
       "Download": [
         "Ladda ner"
-      ],
-      "Download app": [
-        "Ladda ner app"
       ],
       "Download local participant report": [
         "Ladda ner lokal deltagarrapport"
@@ -659,9 +659,6 @@
       ],
       "Stay in meeting": [
         "Stanna i möte"
-      ],
-      "Stop opening meetings in the desktop app": [
-        "Sluta öppna möten i appen för stationär dator"
       ],
       "Stop receiving video": [
         "Stoppa mottagning av video"
@@ -2571,6 +2568,9 @@
       "Anyone with the link can join immediately": [
         "Alla med länken kan gå med direkt"
       ],
+      "App didn't open?": [
+        "Öppnades inte appen?"
+      ],
       "Approve participants before they can join": [
         "Godkänn deltagare innan de kan gå med"
       ],
@@ -2765,6 +2765,9 @@
       ],
       "Host": [
         "Värd"
+      ],
+      "Host has another meeting in progress": [
+        "Värden har ett annat möte som pågår"
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Håll ditt eget säkra möte. Starta ett samtal i ${ MEET_APP_NAME } och dela länken för att bjuda in vem som helst att gå med. Enkelt, säkert och gratis."
@@ -3081,6 +3084,9 @@
       "Selected devices have disconnected.": [
         "Valda enheter har kopplats från."
       ],
+      "Selected microphone and camera have disconnected.": [
+        "Vald mikrofon och kamera har kopplats från."
+      ],
       "Selected microphone has disconnected.": [
         "Vald mikrofon har kopplats från."
       ],
@@ -3149,9 +3155,6 @@
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
         "Det här mötet har nått tidsgränsen för ett kostnadsfritt paket. Uppgradera för att förlänga din möteslängd i framtida samtal."
-      ],
-      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Detta möte öppnades i ${ MEET_APP_NAME }-appen för stationär dator."
       ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Denna inspelning kommer att tas bort permanent från denna enhet. Denna åtgärd kan inte ångras."
@@ -3251,9 +3254,6 @@
       ],
       "You are almost there": [
         "Du är nästan där"
-      ],
-      "You can close this tab.": [
-        "Du kan stänga denna flik."
       ],
       "You can now return to the application to continue": [
         "Du kan nu gå tillbaka till applikationen för att fortsätta"
@@ -3483,6 +3483,9 @@
       "Library background": [
         "Biblioteksbakgrund"
       ],
+      "Light ${ BRAND_NAME } background": [
+        "Ljus ${ BRAND_NAME }-bakgrund"
+      ],
       "Manage recordings": [
         "Hantera inspelningar"
       ],
@@ -3634,6 +3637,77 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ]
+    },
+    "Lumo emoji name": {
+      "Alert": [
+        "Varning"
+      ],
+      "Browse folders": [
+        "Bläddra bland mappar"
+      ],
+      "Cash": [
+        "Kontant"
+      ],
+      "Celebrate": [
+        "Fira"
+      ],
+      "Coffee": [
+        "Kaffe"
+      ],
+      "Cowboy": [
+        "Cowboy"
+      ],
+      "Encrypt": [
+        "Krypterad"
+      ],
+      "Gaming": [
+        "Spel"
+      ],
+      "Happy": [
+        "Glad"
+      ],
+      "Love": [
+        "Kärlek"
+      ],
+      "Nine lives": [
+        "Nio liv"
+      ],
+      "Party": [
+        "Party"
+      ],
+      "Popcorn": [
+        "Popcorn"
+      ],
+      "Rocket": [
+        "Raket"
+      ],
+      "Sad": [
+        "Ledsen"
+      ],
+      "Search": [
+        "Sök"
+      ],
+      "Sit": [
+        "Sitt"
+      ],
+      "Sleepy": [
+        "Sömnig"
+      ],
+      "Sweep": [
+        "Svep"
+      ],
+      "Thank you": [
+        "Tack"
+      ],
+      "Watch left": [
+        "Titta vänster"
+      ],
+      "Watch right": [
+        "Titta höger"
+      ],
+      "Write": [
+        "Skriv"
       ]
     },
     "meet": {
@@ -4047,6 +4121,9 @@
       ],
       "Help center": [
         "Hjälpcenter"
+      ],
+      "Host settings": [
+        "Värdinställningar"
       ],
       "Human verification": [
         "Mänsklig verifiering"

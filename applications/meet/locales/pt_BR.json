@@ -342,9 +342,6 @@
       "Download": [
         "Baixar"
       ],
-      "Download app": [
-        "Baixar aplicativo"
-      ],
       "Download local participant report": [
         "Baixar relatório de participantes locais"
       ],
@@ -721,9 +718,6 @@
       ],
       "Stay in meeting": [
         "Ficar na reunião"
-      ],
-      "Stop opening meetings in the desktop app": [
-        "Interromper abertura de reuniões no aplicativo para computador"
       ],
       "Stop receiving video": [
         "Interromper recebimento de vídeo"
@@ -2717,9 +2711,6 @@
       "Allow camera access to preview your background": [
         "Permitir que a câmera acesse o seu plano de fundo para pré-visualizá-lo"
       ],
-      "Already in the app? You can close this tab.": [
-        "Já está no aplicativo? Você pode fechar esta guia."
-      ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anônimo ${ particle } ${ participantNumber }"
       ],
@@ -3353,9 +3344,6 @@
       "This meeting reached the time limit.": [
         "Esta reunião atingiu o tempo limite."
       ],
-      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Esta reunião foi aberta no aplicativo do ${ MEET_APP_NAME } para computador."
-      ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Essa gravação será excluída penetrantemente desse dispositivo. Essa ação não pode ser desfeita."
       ],
@@ -3461,9 +3449,6 @@
       "You are almost there": [
         "Você está quase lá"
       ],
-      "You can close this tab.": [
-        "Você pode fechar esta guia."
-      ],
       "You can now return to the application to continue": [
         "Agora você pode retornar ao aplicativo para continuar"
       ],
@@ -3472,6 +3457,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Você ainda pode desligar seu microfone e câmera a qualquer momento na reunião."
+      ],
+      "You have too many meetings in progress": [
+        "Você tem muitas reuniões em andamento"
       ],
       "You left ${ meetingName }": [
         "Você saiu de ${ meetingName }"
@@ -3510,7 +3498,7 @@
         "Seu navegador bloqueou o acesso à sua câmera. Para ativar, atualize as configurações do navegador e retone na chamada."
       ],
       "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
-        "Seu navegador bloqueou o acesso ao seu microfone. Para ativar, atualize as configurações do navegador e retone na chamada."
+        "Seu navegador bloqueou o acesso ao seu microfone. Para ativar, atualize as configurações do navegador e retorne na chamada."
       ],
       "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
         "Seu navegador bloqueou o acesso ao seu compartilhamento de tela. Para ativar, atualize as configurações do navegador e retone na chamada."
@@ -3841,6 +3829,9 @@
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
       ],
+      "download": [
+        "baixar"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -3858,6 +3849,107 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ]
+    },
+    "Lumo emoji name": {
+      "Alert": [
+        "Alerta"
+      ],
+      "Browse folders": [
+        "Navegar em pastas"
+      ],
+      "Cash": [
+        "Dinheiro"
+      ],
+      "Celebrate": [
+        "Celebrar"
+      ],
+      "Cheers": [
+        "Saúde!"
+      ],
+      "Chef's kiss": [
+        "Beijo do chef"
+      ],
+      "Coffee": [
+        "Café"
+      ],
+      "Cowboy": [
+        "Vaqueiro"
+      ],
+      "Encrypt": [
+        "Criptografar"
+      ],
+      "Gaming": [
+        "Jogos"
+      ],
+      "Halo": [
+        "Halo"
+      ],
+      "Happy": [
+        "Feliz"
+      ],
+      "Love": [
+        "Amor"
+      ],
+      "Mild panic": [
+        "Pânico leve"
+      ],
+      "Mind blown": [
+        "Alucinante"
+      ],
+      "Nine lives": [
+        "Nove vidas"
+      ],
+      "Party": [
+        "Festa"
+      ],
+      "Perk": [
+        "Vantagem"
+      ],
+      "Popcorn": [
+        "Pipoca"
+      ],
+      "Rocket": [
+        "Foguete"
+      ],
+      "Sad": [
+        "Triste"
+      ],
+      "Schrödinger in a box": [
+        "Schrödinger em uma caixa"
+      ],
+      "Search": [
+        "Pesquisar"
+      ],
+      "Sit": [
+        "Sentar"
+      ],
+      "Slay": [
+        "Matar"
+      ],
+      "Sleepy": [
+        "Dormir"
+      ],
+      "Sweep": [
+        "Varrer"
+      ],
+      "Thank you": [
+        "Obrigado"
+      ],
+      "Think": [
+        "Pensar"
+      ],
+      "This is fine": [
+        "Tudo bem"
+      ],
+      "Watch left": [
+        "Olhar para à esquerda"
+      ],
+      "Watch right": [
+        "Olhar para à direita"
+      ],
+      "Write": [
+        "Escrita"
       ]
     },
     "meet": {
@@ -3991,7 +4083,7 @@
         "Carregando..."
       ],
       "Meeting name, e.g. team sync, project update, etc": [
-        "Nome da reunião, por ex. sincronização da equipe, atualização do projeto, etc"
+        "Nome da reunião, por ex. sincronização da equipe, atualização de projeto, etc"
       ],
       "Password": [
         "Senha"
