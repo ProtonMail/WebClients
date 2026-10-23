@@ -28,7 +28,7 @@ interface CondensedAddonRowProps {
 
 export const CondensedAddonRow = ({ name, price, description, onAdd, testId }: CondensedAddonRowProps) => {
     const [open, setOpen] = useState(false);
-    const [uid] = useState(generateUID('condensed-addon'));
+    const [uid] = useState(() => generateUID('condensed-addon'));
 
     const label = c('Action').t`About ${name}`;
     const addLabel = c('Action').t`Add ${name}`;

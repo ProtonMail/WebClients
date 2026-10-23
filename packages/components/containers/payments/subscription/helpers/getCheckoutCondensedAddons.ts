@@ -1,6 +1,5 @@
 import { PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import { getIsB2BAudienceFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import {
     type MaybeFreeSubscription,
     getIsB2BAudienceFromSubscription,
@@ -15,13 +14,14 @@ export interface CheckoutCondensedAddonsParams {
     variant: FeatureFlagVariant<'CheckoutCondensedAddons'>;
     selectedPlanIDs: PlanIDs;
     latestSubscription: MaybeFreeSubscription;
-    user: Pick<UserModel, 'isMember' | 'canPay'>;
+    user: Pick<UserModel, 'canPay'>;
     isLiteApp: boolean;
 }
 
 /**
  * Checkout experiment CheckoutCondensedAddons: only B2C Proton Unlimited checkouts in the account app can get the
  * condensed layout. Anything else (flag off, missing or unknown variant, other plans, B2B) stays on control.
+ * bundle2022 is a B2C plan, and canPay is false for organization members, so neither needs its own check.
  */
 export const getCheckoutCondensedAddons = ({
     flagsReady,
@@ -35,9 +35,7 @@ export const getCheckoutCondensedAddons = ({
         flagsReady &&
         variant.name === 'condensed' &&
         !!selectedPlanIDs[PLANS.BUNDLE] &&
-        !getIsB2BAudienceFromPlanIDs(selectedPlanIDs) &&
         !getIsB2BAudienceFromSubscription(latestSubscription) &&
-        !user.isMember &&
         user.canPay &&
         !isLiteApp;
 
