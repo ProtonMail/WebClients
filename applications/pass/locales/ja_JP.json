@@ -109,6 +109,9 @@
       "Bulk restore items from trash": [
         "ごみ箱からアイテムを一括復元"
       ],
+      "Bulk select items": [
+        "アイテムを一括選択"
+      ],
       "Cancel": [
         "キャンセル"
       ],
@@ -310,6 +313,9 @@
       "Don't show this again": [
         "次回から表示しない"
       ],
+      "Download for Linux": [
+        "Linux 版をダウンロード"
+      ],
       "Download for macOS": [
         "macOS 版をダウンロード"
       ],
@@ -496,6 +502,9 @@
       "Move to Trash": [
         "ごみ箱に移動"
       ],
+      "Multiple select": [
+        "複数選択"
+      ],
       "New token": [
         "新規トークン"
       ],
@@ -516,6 +525,9 @@
       ],
       "Open navigation": [
         "ナビゲーションを開く"
+      ],
+      "Open platform selection dropdown": [
+        "プラットフォーム選択ドロップダウンを開く"
       ],
       "Organize vaults": [
         "保管庫を整理"
@@ -848,8 +860,17 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "メールエイリアスはメールアドレスと同じように機能しますが、スパムを減らし、実際のメールアドレスと身元を隠します。"
       ],
+      "Change these passwords immediately": [
+        "これらのパスワードを今すぐ変更してください"
+      ],
       "Change your passwords": [
         "パスワードを変更してください"
+      ],
+      "Check if your passwords have been exposed": [
+        "パスワードが漏洩していないか確認する"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "${ compromised.progress.total } 件中 ${ compromised.progress.completed } 件を確認中"
       ],
       "Create unique passwords": [
         "一意のパスワードを作成してください"
@@ -904,6 +925,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "このアカウントは脆弱です。サービスにアクセスしてパスワードを変更してください。"
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "このログインパスワードはデータ侵害で流出した可能性があります。該当のサービスにアクセスして、パスワードを変更してください。"
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "このサービスは 2FA を提供します。アカウントのセキュリティを強化するには、これを有効にします。"
@@ -1638,6 +1662,9 @@
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "アクセストークンは${ passCliLink }と併用することで、CI/CDを自動化したり、AIエージェントに業務の実行に必要なスコープ付きアクセス権を付与したりできます。"
       ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "無料トライアル終了後もサブスクリプションを継続できるよう、お支払い方法を追加してください。"
+      ],
       "Add your custom email address to monitor:": [
         "監視対象にカスタムメールアドレスを追加："
       ],
@@ -1763,6 +1790,9 @@
       ],
       "Can view this item.": [
         "このアイテムを閲覧できます。"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "${ compromised.progress.total } 件中 ${ compromised.progress.completed } 件のパスワードを確認中"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "削除を続行するために、追加パスワードを確認します。"
@@ -1941,6 +1971,9 @@
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
       ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "新しく開いたブラウザウィンドウでサインインを完了してください。完了すると、${ PASS_APP_NAME } が自動的に認識して処理を再開します。"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "以下の手順に従って、汎用 CSV を使用してデータをインポートします:"
       ],
@@ -2107,7 +2140,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、そのセキュアリンクは消去されます。"
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2375,6 +2408,9 @@
       ],
       "Restoring trashed items...": [
         "ごみ箱の項目を復元しています..."
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "QR コードをスキャンして iOS / Android 版 ${ PASS_APP_NAME } をダウンロード"
       ],
       "Secure links": [
         "セキュアリンク"
@@ -2818,6 +2854,9 @@
       "${ hours } hour": [
         "${ hours } 時間"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 文字"
+      ],
       "${ minutes } minute": [
         "${ minutes } 分"
       ],
@@ -2913,6 +2952,9 @@
       ],
       "Account Type": [
         "口座種別"
+      ],
+      "Add a payment method": [
+        "お支払い方法を追加"
       ],
       "Add a random prefix for this domain when creating a new alias.": [
         "新しいエイリアスを作成する際に、このドメインにランダムなプレフィックスを追加します。"
@@ -3415,11 +3457,17 @@
       "LinkedIn account": [
         "LinkedIn アカウント"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "ログイン"
       ],
       "Logins": [
         "ログイン"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "メールボックス"
@@ -3978,6 +4026,9 @@
       ],
       "WiFi network": [
         "WiFiネットワーク"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "仕事の詳細"
@@ -4605,6 +4656,12 @@
       "Clear clipboard": [
         "クリップボードをクリア"
       ],
+      "Compromised password": [
+        "漏洩したパスワード"
+      ],
+      "Compromised passwords": [
+        "漏洩したパスワード"
+      ],
       "Confirm extra password": [
         "追加パスワードの確認"
       ],
@@ -4619,6 +4676,9 @@
       ],
       "Contacts": [
         "連絡先"
+      ],
+      "Continue in your browser": [
+        "ブラウザで続行"
       ],
       "Create a vault": [
         "保管庫の作成"
@@ -4719,6 +4779,9 @@
       "Folder options": [
         "フォルダー設定"
       ],
+      "Get mobile apps": [
+        "モバイルアプリを入手"
+      ],
       "Get Started": [
         "利用開始"
       ],
@@ -4754,6 +4817,9 @@
       ],
       "Item": [
         "アイテム"
+      ],
+      "Keep your subscription active": [
+        "サブスクリプションを継続して利用する"
       ],
       "Last autofill": [
         "最後の自動入力"
@@ -4811,6 +4877,9 @@
       ],
       "No access tokens yet": [
         "アクセストークンがまだありません"
+      ],
+      "No compromised passwords": [
+        "漏洩したパスワードはありません"
       ],
       "No excluded items": [
         "除外項目なし"
@@ -4988,6 +5057,9 @@
       ],
       "Update available": [
         "アップデートが利用可能です"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "アップグレードして漏洩したパスワードを確認"
       ],
       "URL matching": [
         "URL一致"
