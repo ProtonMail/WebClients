@@ -12,7 +12,7 @@ import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 
-import type { Gateway, GatewayLogical } from '../../types/Gateway';
+import type { Gateway, GatewayLogical } from '../../../types/Gateway';
 
 const GuardedUpdateMenuButton = withPermissionGuard('account.gateway.update')(DropdownMenuButton);
 const GuardedDeleteMenuButton = withPermissionGuard('account.gateway.delete')(DropdownMenuButton);
