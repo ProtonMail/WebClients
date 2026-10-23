@@ -169,6 +169,11 @@ export function usePiPRenderer() {
                     height: videoHeight,
                     mirror: shouldMirror,
                     isIncomingVideoDisabled,
+                    // Match ParticipantTile: crop landscape cameras, letterbox portrait cameras and screen shares
+                    fit:
+                        trackInfo.isScreenShare || videoElement.videoWidth < videoElement.videoHeight
+                            ? 'contain'
+                            : 'cover',
                 });
 
                 // Draw participant name below the video
