@@ -3,6 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack from 'webpack';
 
+import { SandboxedLibrariesPlugin } from '@proton/drive/modules/sandbox/webpack/SandboxedLibrariesPlugin';
 import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
 import { addDevEntry, getConfig } from '@proton/pack/webpack.config';
 import { getIndexChunks } from '@proton/pack/webpack/entries';
@@ -128,6 +129,7 @@ const result = (opts: WebpackEnvArguments): webpack.Configuration => {
             new webpack.ProvidePlugin({
                 Buffer: [require.resolve('buffer'), 'Buffer'],
             }),
+            new SandboxedLibrariesPlugin({ hash: webpackOptions.isProduction }),
             new CopyPlugin({
                 patterns: [
                     {
