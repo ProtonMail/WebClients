@@ -23,6 +23,7 @@ import { selectUserId } from '@proton/meet/store/slices/userSlice';
 import { TimeoutError } from '@proton/meet/utils/withTimeout';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 
 import { useSortedPagedParticipants } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { RecordingStatus } from '../../types';
@@ -107,7 +108,7 @@ export const useMeetingRecorder = () => {
         sessionRef.current = null;
         lastSessionRef.current = session;
         await session.cleanup();
-        void publishRecordingStatus(RecordingStatus.Stopped);
+        publishRecordingStatus(RecordingStatus.Stopped).catch(noop);
         markRecordingStopped();
     };
 
