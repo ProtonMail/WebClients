@@ -184,6 +184,20 @@ describe('event payloads sent to Proton Analytics', () => {
         expect(sentEvent()).toMatchSnapshot();
     });
 
+    it('guard_shown', () => {
+        checkoutTelemetry.reportGuardShown({
+            guardCodes: [801001000, 801002000],
+            subscriptions: [
+                subscription,
+                buildSubscription({ planIDs: { [PLANS.VPN2024]: 1 }, currency: 'EUR', cycle: CYCLE.MONTHLY }),
+            ],
+            selectedPlanIDs: { [PLANS.MAIL]: 1 },
+            selectedCycle: CYCLE.YEARLY,
+        });
+
+        expect(sentEvent()).toMatchSnapshot();
+    });
+
     it('add_pass', () => {
         checkoutTelemetry.reportAddPass({ context: 'subscription-modification' });
 
