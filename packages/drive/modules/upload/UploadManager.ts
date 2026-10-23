@@ -199,12 +199,12 @@ export class UploadManager {
         });
 
         const hasStructure = hasFolderStructure(filteredFilesArray);
-        const queuedUploadIds: string[] = [];
+        let queuedUploadIds: string[] = [];
         const rootFolderSummaries: RootFolderSummary[] = [];
         const ignoredFiles: Record<string, number> = {};
         if (isForPhotos) {
-            queuedUploadIds.push(
-                ...this.queueFiles(
+            queuedUploadIds = queuedUploadIds.concat(
+                this.queueFiles(
                     filteredFilesArray,
                     (file, uploadId) => ({
                         type: NodeType.Photo,
@@ -241,11 +241,11 @@ export class UploadManager {
             });
 
             if (!hasStructure) {
-                queuedUploadIds.push(...this.queueFiles(filteredFilesArray, makeFileItem, false));
+                queuedUploadIds = queuedUploadIds.concat(this.queueFiles(filteredFilesArray, makeFileItem, false));
             } else {
                 const { filesWithStructure, standaloneFiles } = this.separateFilesAndFolders(filteredFilesArray);
 
-                queuedUploadIds.push(...this.queueFiles(standaloneFiles, makeFileItem, false));
+                queuedUploadIds = queuedUploadIds.concat(this.queueFiles(standaloneFiles, makeFileItem, false));
 
                 const rootFolders = this.groupFilesByRootFolder(filesWithStructure);
                 for (const rootFiles of rootFolders.values()) {
