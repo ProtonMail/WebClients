@@ -624,14 +624,92 @@
     "bfcampaign2026: Action": {
       "Black Friday": [
         "Black Friday"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/maand"
+      ],
+      "15 GB storage": [
+        "15 GB opslag"
+      ],
+      "2 individual accounts": [
+        "2 individuele accounts"
+      ],
+      "2 TB of secure storage": [
+        "2 TB veilige opslag"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidige abonnement"
+      ],
+      "3 TB of secure storage": [
+        "3 TB veilige opslag"
+      ],
+      "500 GB of secure storage": [
+        "500 GB veilige opslag"
+      ],
+      "6 individual accounts": [
+        "6 individuele accounts"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ingebouwde 2FA-verificatie"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "De kortingen zijn gebaseerd op de standaard maandprijs. Wanneer de factureringsperiode afloopt, wordt uw abonnement verlengd tegen het standaard jaartarief ."
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere bescherming tegen cyberdreigingen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde aantallen mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Grootste uitverkoop van het jaar"
+        "Het grootste koopfeest van het jaar"
       ],
       "Black Friday": [
-        "Black friday"
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "voor 12 maanden"
       ],
       "Last chance to save big": [
         "Laatste kans om flink te besparen"
@@ -950,9 +1028,6 @@
       "Create image": [
         "Maak afbeelding"
       ],
-      "creations": [
-        "creaties"
-      ],
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "Aangepaste ${ LUMO_SHORT_APP_NAME }'s"
       ],
@@ -1266,26 +1341,14 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Voeg uw eigen herinneringen toe, bewerk automatisch gegenereerde gegevens of wis alles op elk gewenst moment. Gegenereerde herinneringen die u bewerkt, worden gepromoveerd tot uw eigen herinneringen."
       ],
-      "Allow ${ LUMO_SHORT_APP_NAME } to open longer documents, code, and slides in the canvas when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.": [
-        "Sta toe dat ${ LUMO_SHORT_APP_NAME } indien nodig langere documenten, code en dia's in het canvas opent. Dit is de standaard voor alle chats; u kunt dit voor een enkele chat wijzigen via het menu Extra."
-      ],
-      "Always enable web search for new conversations": [
-        "Schakel web zoeken altijd in voor nieuwe gesprekken"
-      ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "Met API-sleutels krijgt u programmatisch toegang tot ${ LUMO_SHORT_APP_NAME }. Elke sleutel wordt bij het aanmaken slechts één keer getoond."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Maak een sleutel aan om ${ LUMO_SHORT_APP_NAME } te integreren met uw scripts en tools."
       ],
-      "Encrypted search index for chats and Drive files.": [
-        "Versleutelde zoekindex voor chats en Drive-bestanden."
-      ],
       "High-performance model for complex tasks": [
         "Krachtig model voor complexe taken"
-      ],
-      "Include project conversations in the main chat history": [
-        "Neem projectgesprekken op in de hoofdchatgeschiedenis"
       ],
       "Internal preview of an upcoming model": [
         "Intern voorbeeld van een aankomend model"
@@ -1299,9 +1362,6 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Meer informatie over het gebruik van ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
-        "Laat ${ LUMO_SHORT_APP_NAME } gegevens visualiseren met grafieken"
-      ],
       "Lightweight model for everyday tasks": [
         "Lichtgewicht model voor alledaagse taken"
       ],
@@ -1313,9 +1373,6 @@
       ],
       "More thorough answers, but can take longer": [
         "Grondigere antwoorden, maar kan langer duren"
-      ],
-      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
-        "Verwijder uw projecten, chats en opgeslagen herinneringen permanent. Dit is onomkeerbaar."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Projectchats worden volledig geïsoleerd gehouden. Ze vertrouwen op hun eigen instructies en bestanden en negeren uw globale herinneringen volledig."
@@ -1675,9 +1732,6 @@
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         ". Het volgt het OpenAI API-schema; te integreren in uw bestaande client met een wijziging van slechts één regel."
       ],
-      "1 file": [
-        "1 bestand"
-      ],
       "A ${ LUMO_SHORT_APP_NAME } account": [
         "Een ${ LUMO_SHORT_APP_NAME }-account"
       ],
@@ -1747,9 +1801,6 @@
       "characters not shown": [
         "tekens niet weergegeven"
       ],
-      "characters processed": [
-        "verwerkte tekens"
-      ],
       "Chat expiring soon": [
         "Chat verloopt binnenkort"
       ],
@@ -1818,9 +1869,6 @@
       ],
       "File too large for preview (>150k tokens)": [
         "Bestand te groot voor voorbeeld (>150k tokens)"
-      ],
-      "files": [
-        "bestanden"
       ],
       "Files": [
         "Bestanden"
@@ -2076,9 +2124,6 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Om later naar dit gesprek te kunnen verwijzen, meldt u zich aan of maakt u een account aan."
-      ],
-      "tokens": [
-        "tokens"
       ],
       "tokens / 30d": [
         "tokens / 30d"
@@ -2619,12 +2664,6 @@
       "Auto update memory": [
         "Geheugen automatisch bijwerken"
       ],
-      "Automatic creations": [
-        "Automatische creaties"
-      ],
-      "Automatic web search": [
-        "Automatisch zoeken op internet"
-      ],
       "Build intelligent apps.": [
         "Bouw intelligente apps."
       ],
@@ -2642,9 +2681,6 @@
       ],
       "Create new API key": [
         "Maak nieuwe API-sleutel"
-      ],
-      "Delete everything": [
-        "Alles verwijderen"
       ],
       "Document intelligence": [
         "Documentintelligentie"
@@ -2715,14 +2751,8 @@
       "Saved memories": [
         "Opgeslagen herinneringen"
       ],
-      "Search Index": [
-        "Zoekindex"
-      ],
       "Security note:": [
         "Beveiligingsopmerking:"
-      ],
-      "Show project chats in history": [
-        "Toon projectchats in geschiedenis"
       ],
       "Theme": [
         "Thema"
@@ -2744,9 +2774,6 @@
       ],
       "Visionary": [
         "Visionary"
-      ],
-      "Visualization mode": [
-        "Visualisatiemodus"
       ],
       "What you can build": [
         "Wat u kunt bouwen"
@@ -4632,9 +4659,6 @@
     "collider_2025:Tab": {
       "Create": [
         "Creëer"
-      ],
-      "creations": [
-        "creaties"
       ],
       "Gallery": [
         "Galerij"
@@ -9867,18 +9891,6 @@
       ]
     },
     "Time": {
-      "${ days } days ago": [
-        "${ days } dagen geleden"
-      ],
-      "${ hours } hours ago": [
-        "${ hours } uur geleden"
-      ],
-      "${ minutes } minutes ago": [
-        "${ minutes } minuten geleden"
-      ],
-      "1 hour ago": [
-        "1 uur geleden"
-      ],
       "Just now": [
         "Zojuist"
       ],
