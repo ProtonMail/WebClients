@@ -2050,6 +2050,106 @@
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "15 GB storage": [
+        "15 GB de almacenamiento"
+      ],
+      "2 individual accounts": [
+        "2 cuentas individuales"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de almacenamiento seguro"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces el plan actual"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de almacenamiento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de almacenamiento seguro"
+      ],
+      "6 individual accounts": [
+        "6 cuentas individuales"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en la cuota mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recupera las versiones anteriores de los archivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protección más sólida contra las ciberamenazas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Usa un dominio de correo electrónico propio"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "La mejor oferta del año"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "Last chance to save big": [
+        "Última oportunidad para ahorrar a lo grande"
+      ],
+      "Protect your entire tribe": [
+        "Protege a toda tu tribu"
+      ],
+      "Protection for two in a single plan": [
+        "Protección para dos en un solo plan"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } mes",
@@ -2569,6 +2669,11 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Esta conversación es demasiado larga para continuar. Inicia un nuevo chat para que ${ LUMO_SHORT_APP_NAME } funcione a la perfección y responda con rapidez."
       ]
     },
     "collider_2025: feature": {
@@ -4546,9 +4651,6 @@
       "Aliases could not be loaded": [
         "No se han podido cargar los alias."
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Se ha asignado todo el espacio de almacenamiento. Reduce el almacenamiento asignado a otros usuarios."
-      ],
       "Amount above the maximum.": [
         "Cantidad por encima del máximo."
       ],
@@ -4750,9 +4852,6 @@
       "Invalid public key file": [
         "Archivo de clave pública no válido"
       ],
-      "Invalid URL": [
-        "La URL no es válida."
-      ],
       "Invalid VAT number": [
         "Número de IVA incorrecto"
       ],
@@ -4873,15 +4972,6 @@
       "Please complete the billing details": [
         "Completa los detalles de facturación"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Configura un dominio personalizado antes de añadir direcciones."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Configura un dominio personalizado antes de añadir usuarios a tu organización."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Activa el soporte multiusuario antes de añadir usuarios a tu organización."
-      ],
       "Please enter a valid postal code": [
         "Por favor, introduzca un código postal válido"
       ],
@@ -4921,9 +5011,6 @@
       ],
       "Please try generating the text again": [
         "Intenta generar el texto de nuevo."
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Pasa a un plan para empresa con más de 1 usuario para administrar varios usuarios."
       ],
       "Port is required": [
         "Puerto requerido"
@@ -5009,9 +5096,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos de tus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Modifica la importación para editar estos nombres."
-      ],
-      "Something went wrong": [
-        "Se ha producido un error."
       ],
       "Something went wrong while converting the address": [
         "Se ha producido un error al convertir la dirección"
@@ -5189,12 +5273,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Has alcanzado el límite de contactos para tu cuenta."
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Has agotado todas las direcciones disponibles. Actualiza tu plan para añadir una nueva o desactiva alguna de las que tienes en tu cuenta."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un nuevo usuario."
       ],
       "You must set a name": [
         "Debes establecer un nombre."
@@ -5674,9 +5752,6 @@
       ],
       "Has attachments": [
         "Tiene adjuntos"
-      ],
-      "Pending": [
-        "Pendiente"
       ],
       "Read": [
         "Leído"
@@ -6383,14 +6458,6 @@
         "Más opciones de importación"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "En progreso"
-      ],
-      "Migrated": [
-        "Se ha migrado"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no se importarán. Haz clic para obtener más detalles."
@@ -6653,10 +6720,6 @@
       "${ total } message": [
         "${ total } mensaje",
         "${ total } mensajes"
-      ],
-      "${ total } user found": [
-        "${ total } usuario encontrado",
-        "${ total } usuarios encontrados"
       ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } rastreador de correo bloqueado",
@@ -7472,8 +7535,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -12448,6 +12510,11 @@
         "Necesitas acceso a la clave de la organización para realizar esta acción."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Cuenta bancaria"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -12873,9 +12940,6 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Buscar"
-      ],
       "Search date, name, email address, or subject line": [
         "Búsqueda por fecha, nombre, dirección de correo electrónico o asunto"
       ],
@@ -12884,9 +12948,6 @@
       ],
       "Search for name or email": [
         "Buscar por nombre o correo electrónico"
-      ],
-      "Search for users or addresses": [
-        "Buscar usuarios o direcciones"
       ],
       "Search messages": [
         "Buscar mensajes"
@@ -14848,9 +14909,6 @@
       "Name": [
         "Nombre"
       ],
-      "Size": [
-        "Tamaño"
-      ],
       "Status": [
         "Estado"
       ],
@@ -15281,9 +15339,6 @@
       ],
       "Distraction-free emailing": [
         "Correo electrónico sin distracciones"
-      ],
-      "Domain names": [
-        "Nombres de dominio"
       ],
       "Don't give spam a chance": [
         "No dejes que el spam llegue a su destino."
@@ -15968,9 +16023,6 @@
       ],
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Usa Gmail de forma segura en ${ MAIL_APP_NAME }"
-      ],
-      "Users and addresses": [
-        "Usuarios y direcciones"
       ],
       "Verification error": [
         "Error de verificación"

@@ -2079,6 +2079,106 @@
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Чёрная пятница"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "15 GB storage": [
+        "Хранилище на 15 ГБ"
+      ],
+      "2 individual accounts": [
+        "2 отдельных аккаунта"
+      ],
+      "2 TB of secure storage": [
+        "Защищенное хранилище на 2 ТБ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Хранилище на 200 ГБ: в 40 раз больше текущего тарифа"
+      ],
+      "3 TB of secure storage": [
+        "Защищенное хранилище на 3 ТБ"
+      ],
+      "500 GB of secure storage": [
+        "Защищенное хранилище на 500 ГБ"
+      ],
+      "6 individual accounts": [
+        "6 отдельных аккаунтов"
+      ],
+      "Built-in 2FA authenticator": [
+        "Встроенная функция двухфакторной аутентификации"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются исходя из стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платёжного цикла."
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Recover previous file versions": [
+        "Восстановление предыдущих версий файлов"
+      ],
+      "Stronger protection against cyber threats": [
+        "Более надёжная защита от киберугроз"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Собственный домен для электронной почты"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Крупнейшая распродажа года"
+      ],
+      "Black Friday": [
+        "Чёрная пятница"
+      ],
+      "for 12 months": [
+        "на 12 месяцев"
+      ],
+      "Last chance to save big": [
+        "Последний шанс сэкономить по-крупному"
+      ],
+      "Protect your entire tribe": [
+        "Защитите всех, кто вам дорог"
+      ],
+      "Protection for two in a single plan": [
+        "Защита для двоих в одном тарифе"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } месяц",
@@ -2608,6 +2708,11 @@
       ],
       "Expand": [
         "Развернуть"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Эта цепочка писем слишком длинная для продолжения. Начните новый чат, чтобы ${ LUMO_SHORT_APP_NAME } работал быстро и без перебоев."
       ]
     },
     "collider_2025: feature": {
@@ -4614,9 +4719,6 @@
       "Aliases could not be loaded": [
         "Не удалось загрузить псевдонимы"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Весь объём хранилища был распределён. Пожалуйста, уменьшите объём хранилища, выделенного для других пользователей."
-      ],
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
       ],
@@ -4821,9 +4923,6 @@
       "Invalid public key file": [
         "Недействительный файл открытого ключа"
       ],
-      "Invalid URL": [
-        "Недействительный URL"
-      ],
       "Invalid VAT number": [
         "Недействительный номер НДС"
       ],
@@ -4950,15 +5049,6 @@
       "Please complete the billing details": [
         "Пожалуйста, заполните платежную информацию"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Перед добавлением адресов настройте пользовательский домен."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Пожалуйста, настройте свой домен перед добавлением пользователей в вашу организацию."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Пожалуйста, включите многопользовательский режим перед добавлением пользователей в вашу организацию."
-      ],
       "Please enter a valid postal code": [
         "Пожалуйста, введите действительный почтовый индекс"
       ],
@@ -5000,9 +5090,6 @@
       ],
       "Please try generating the text again": [
         "Попробуйте сгенерировать текст еще раз"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
       ],
       "Port is required": [
         "Нужно указать порт"
@@ -5090,9 +5177,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
-      ],
-      "Something went wrong": [
-        "Что-то пошло не так"
       ],
       "Something went wrong while converting the address": [
         "Что-то пошло не так при конвертации адреса"
@@ -5276,12 +5360,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Вы достигли лимита контактов для вашего аккаунта"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Вы израсходовали все адреса, предусмотренные вашим тарифом. Пожалуйста, улучшите ваш тариф, чтобы добавить новый адрес, или отключите какой-либо адрес в вашем аккаунте."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
       ],
       "You must set a name": [
         "Вы должны задать имя"
@@ -6505,14 +6583,6 @@
         "Другие варианты импортировать"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "В процессе"
-      ],
-      "Migrated": [
-        "Перенесено"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
@@ -6857,12 +6927,6 @@
         "${ total } сообщения",
         "${ total } сообщений",
         "${ total } сообщений"
-      ],
-      "${ total } user found": [
-        "Найден ${ total } пользователь",
-        "Найдено ${ total } пользователя",
-        "Найдено ${ total } пользователей",
-        "Найдено ${ total } пользователя"
       ],
       "${ trackersCount } email tracker blocked": [
         "Заблокирован ${ trackersCount } трекер в электронной почте",
@@ -7726,10 +7790,7 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение",
-        "Вставить изображения",
-        "Вставить изображения",
-        "Вставить изображения"
+        "Вставить изображение"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -13265,9 +13326,6 @@
       "San Francisco": [
         "Сан-Франциско"
       ],
-      "Search": [
-        "Поиск"
-      ],
       "Search date, name, email address, or subject line": [
         "Поиск по дате, имени, адресу электронной почты или теме письма"
       ],
@@ -13276,9 +13334,6 @@
       ],
       "Search for name or email": [
         "Поиск имени или электронной почты"
-      ],
-      "Search for users or addresses": [
-        "Искать пользователей или адреса"
       ],
       "Search messages": [
         "Поиск сообщений"
@@ -15380,9 +15435,6 @@
       "Name": [
         "Имя"
       ],
-      "Size": [
-        "Размер"
-      ],
       "Status": [
         "Состояние"
       ],
@@ -15851,9 +15903,6 @@
       ],
       "Distraction-free emailing": [
         "Отправка электронных писем без отвлекающих факторов"
-      ],
-      "Domain names": [
-        "Доменные имена"
       ],
       "Don't give spam a chance": [
         "Не давайте спаму шанса"
@@ -16541,9 +16590,6 @@
       ],
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Безопасно используйте Gmail в ${ MAIL_APP_NAME }"
-      ],
-      "Users and addresses": [
-        "Пользователи и адреса"
       ],
       "Verification error": [
         "Ошибка подтверждения"
