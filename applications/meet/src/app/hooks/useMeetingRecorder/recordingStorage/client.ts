@@ -62,6 +62,7 @@ export class RecordingStorageClient {
     private messageId = 0;
     private pendingMessages: Map<string, PendingMessage> = new Map();
     private pendingChunkWrites: Set<Promise<void>> = new Set();
+    private lastChunkWrittenAt: number | null = null;
     private fileExtension: string;
     private userId: string;
     private folder: string = '';
@@ -173,6 +174,7 @@ export class RecordingStorageClient {
 
         try {
             await writePromise;
+            this.lastChunkWrittenAt = performance.now();
         } finally {
             this.pendingChunkWrites.delete(writePromise);
         }
@@ -180,6 +182,10 @@ export class RecordingStorageClient {
 
     getPendingWriteCount(): number {
         return this.pendingChunkWrites.size;
+    }
+
+    getLastChunkWrittenAt(): number | null {
+        return this.lastChunkWrittenAt;
     }
 
     private async drainPendingChunkWrites(): Promise<void> {
