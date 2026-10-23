@@ -62,8 +62,8 @@ const getErrorReason = (error: unknown) => {
  * means the browser's native noiseSuppression constraint is the fallback.
  *
  * Shared architecture:
- * - Processors run in the shared playback AudioContext; sample rate pinned models get a dedicated
- *   one, reused across device switches.
+ * - Processors run in the shared playback AudioContext; models pinned to a different sample rate get
+ *   a dedicated one, reused across device switches.
  * - A new processor is created per track (processors can't be reused across tracks because LiveKit
  *   calls processor.destroy() when a track is stopped).
  * - On device change, LiveKit internally calls processor.restart() on the existing track — we do NOT
@@ -142,7 +142,8 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
     const getProcessorAudioContext = () => {
         const requiredSampleRate = noiseCancellationModel.audioContextSampleRate;
 
-        if (!requiredSampleRate) {
+        // DeepFilterNet's 48 kHz usually matches the playback context
+        if (!requiredSampleRate || meetAudioContext.audioContext.sampleRate === requiredSampleRate) {
             return meetAudioContext.audioContext;
         }
 
