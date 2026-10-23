@@ -1481,9 +1481,6 @@
       "Maybe later": [
         "以后再说"
       ],
-      "Migrate": [
-        "迁移"
-      ],
       "More": [
         "更多"
       ],
@@ -2939,7 +2936,7 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "黑色星期五"
+        "黑色星期五特惠活动"
       ],
       "Get the deal": [
         "获取优惠"
@@ -2953,7 +2950,7 @@
         "15 GB 存储空间"
       ],
       "2 individual accounts": [
-        "2 个独立账户"
+        "2 个独立帐户"
       ],
       "2 TB of secure storage": [
         "2 TB 安全存储空间"
@@ -2968,10 +2965,10 @@
         "500 GB 安全存储空间"
       ],
       "6 individual accounts": [
-        "6 个独立账户"
+        "6 个独立帐户"
       ],
       "Built-in 2FA authenticator": [
-        "内置 2FA 验证器"
+        "内置双重验证器"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
@@ -2983,13 +2980,13 @@
         "恢复先前的文件版本"
       ],
       "Stronger protection against cyber threats": [
-        "针对网络威胁提供更强有力的保护"
+        "针对网络威胁的更强有力保护"
       ],
       "Unlimited folders, labels, and filters": [
-        "文件夹、标签、筛选规则不限量"
+        "无限文件夹、标签和筛选器"
       ],
       "Use your own email domain": [
-        "使用自有邮箱域名"
+        "使用您专属的电子邮件域名"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -3019,16 +3016,16 @@
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "年份最大特卖"
+        "全年力度最大的优惠活动"
       ],
       "Black Friday": [
-        "黑色星期五"
+        "黑色星期五特惠活动"
       ],
       "for 12 months": [
-        "年费"
+        "为期 12 个月"
       ],
       "Last chance to save big": [
-        "最后的促销机会"
+        "限时超值优惠，抓紧最后时机"
       ],
       "Protect your entire tribe": [
         "保护您的整个家庭"
@@ -5422,9 +5419,6 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "从其他服务商迁移您的邮件、日历事件和联系人。"
       ],
-      "Bring over your files from another provider.": [
-        "从其他服务商迁移您的文件。"
-      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "使用您自有域名的专业邮箱地址，建立信任和品牌认知度。"
       ],
@@ -7042,9 +7036,6 @@
       "They may ask to access your account in case of an emergency.": [
         "他们可能会在紧急情况下请求访问您的账户。"
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "他们将在**${ days }天后**自动获得访问权限，具体日期为**${ formattedAccessibleAt }**。在此之前，您可随时拒绝其请求或立即授予访问权限。"
-      ],
       "This will take effect immediately.": [
         "此更改将立即生效"
       ],
@@ -7201,9 +7192,6 @@
       ],
       "Address is already added to your account": [
         "地址已添加到您的账户"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "该地址已被您组织外的用户使用，请联系客服以解决此问题。"
       ],
       "Address primary private key not found": [
         "找不到地址主私钥"
@@ -7577,9 +7565,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "最大允许 ${ displayMaxValue }"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "未找到成员地址，请联系客服解决此问题。"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "至少将 ${ calendarsToFixCount } 份日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
@@ -7588,12 +7573,6 @@
       ],
       "Missing key packet": [
         "缺少密钥数据包"
-      ],
-      "Missing organization private key": [
-        "缺少组织私钥"
-      ],
-      "Missing organization public key": [
-        "缺少组织公钥"
       ],
       "Missing signature": [
         "缺少签名"
@@ -7672,12 +7651,6 @@
       ],
       "Operation failed, try again later": [
         "操作失败，请稍后重试"
-      ],
-      "Organization does not have enough seats available": [
-        "组织可用席位不足"
-      ],
-      "Organization does not have enough storage available": [
-        "组织可用存储空间不足"
       ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
@@ -9087,29 +9060,6 @@
         "TB"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "已激活"
-      ],
-      "All": [
-        "全部"
-      ],
-      "Errors": [
-        "错误"
-      ],
-      "In progress": [
-        "正在处理"
-      ],
-      "Migrated": [
-        "已迁移"
-      ],
-      "Not activated": [
-        "未激活"
-      ],
-      "Pending": [
-        "待处理"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "归档"
@@ -9686,9 +9636,6 @@
       "Contact us": [
         "联系我们"
       ],
-      "Downloads": [
-        "下载"
-      ],
       "Enjoying ${ planName }?": [
         "喜欢 ${ planName } 吗？"
       ],
@@ -10056,9 +10003,6 @@
       "Failed": [
         "失败"
       ],
-      "Has errors": [
-        "出错啦"
-      ],
       "Import completed successfully": [
         "导入成功"
       ],
@@ -10076,9 +10020,6 @@
       ],
       "Paused": [
         "已暂停"
-      ],
-      "Pending": [
-        "待处理"
       ],
       "Queued": [
         "队列中"
@@ -11594,9 +11535,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
       ],
-      "Find out what can be migrated.": [
-        "了解可以迁移哪些内容"
-      ],
       "for ${ price }": [
         "仅需 ${ price }"
       ],
@@ -12257,9 +12195,6 @@
       "No single sign-on": [
         "无单点登录"
       ],
-      "No users to display": [
-        "无可显示的用户"
-      ],
       "Not a valid URL": [
         "URL 无效"
       ],
@@ -12704,9 +12639,6 @@
       "Select a group to view its members and settings.": [
         "请选择一个群组以查看其成员和设置！"
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "精确选择您要迁移的内容，这将适用于所有组织用户。"
-      ],
       "Select one or multiple user affiliations": [
         "选择一个或多个用户的隶属关系"
       ],
@@ -13139,12 +13071,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "此取消订阅链接已过期。请从此邮件列表中打开一封最新的电子邮件。"
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "此用户无法迁移，因为其在 ${ BRAND_NAME } 上没有可用的邮箱地址。"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "由于平台不兼容，此用户无法迁移。"
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "此用户负责为您的组织付款。降低其权限后，您将负责此组织的付款。"
       ],
@@ -13285,27 +13211,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "您可以订阅我们的各类邮件或${ blogLink }了解 ${ BRAND_NAME } 产品的动态。"
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "要迁移此用户，请添加并验证 ${ domainNamesLink } 下的邮箱域名"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "要迁移此用户，请在 ${ provider.adminConsoleName } 中启用其账户。"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "要迁移此用户，请在 ${ usersAddressesLink } 中启用其账户。"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "要迁移此用户，请在 ${ usersAddressesLink } 中启用其地址。"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "要迁移此用户，该用户需要接受加入 ${ BRAND_NAME } 的邀请。"
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "要迁移此用户，请在 ${ provider.adminConsoleName } 中取消归档该用户。"
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "要迁移此用户，请在 ${ provider.adminConsoleName } 中取消暂停该用户。"
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "为防止滥用或欺诈，我们要求最低捐赠 ${ minimumDonation }。这支持了 ${ protonFoundationLink } 在全球范围内捍卫数字隐私的工作，并有助于保护下一代。"
@@ -13780,9 +13685,6 @@
       ],
       "Yearly": [
         "每年"
-      ],
-      "You": [
-        "您"
       ],
       "You already have a free account": [
         "您的账户已经是免费版了"
@@ -16833,9 +16735,6 @@
       ],
       "Details": [
         "详细信息"
-      ],
-      "Downloads": [
-        "下载"
       ],
       "Encryption and keys": [
         "加密与密钥"
@@ -20517,12 +20416,6 @@
       "Billing Country": [
         "计费国家/地区"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "在订阅生效期间无法购买 Born Private。"
-      ],
-      "Born Private requires a donation.": [
-        "Born Private 需要捐赠。"
-      ],
       "Buying credits requires a separate purchase.": [
         "购买额度需要单独进行！"
       ],
@@ -20715,9 +20608,6 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "您已经拥有 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
       ],
-      "You already own Born Private.": [
-        "您已经拥有 Born Private。"
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "您将从您选定的付款方式收取 ${ amountToCharge } 费用。"
       ],
@@ -20726,9 +20616,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "您即将被重定向以验证付款"
-      ],
-      "Your account is too old for Born Private.": [
-        "您的账户注册时间过长，无法使用 Born Private。"
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "您的货币已更改为欧元 (€)，因为 ${ IDEAL_WERO_BRAND_NAME } 仅支持欧元支付。"
@@ -25265,23 +25152,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "已激活"
-      ],
-      "Estimated size": [
-        "预计大小"
-      ],
-      "Migration status": [
-        "迁移状态"
-      ],
       "Size": [
         "大小"
       ],
       "Status": [
         "状态"
-      ],
-      "User": [
-        "用户"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25856,9 +25731,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "配置始终开启 VPN 设备配置文件"
-      ],
-      "Configure migration": [
-        "配置迁移"
       ],
       "Configure your domain": [
         "配置域名"
@@ -27066,9 +26938,6 @@
       "Select the way to send this notification": [
         "选择发送该通知的方式"
       ],
-      "Select users to migrate": [
-        "请选择要迁移的用户"
-      ],
       "Select when you want this notification to be sent": [
         "选择您希望发送该通知的时间"
       ],
@@ -27504,9 +27373,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "欢迎使用 ${ BRAND_NAME } 商业版"
       ],
-      "What are you migrating?": [
-        "您需要迁移什么？"
-      ],
       "What changes if you switch to the Free plan": [
         "切换到免费套餐会有什么变化"
       ],
@@ -27789,9 +27655,6 @@
       "Customize import to reduce the number of labels": [
         "自定义导入以减少标签数量"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "从 ${ providerName } 到 ${ BRAND_NAME } 的数据迁移状态"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "垃圾邮件与回收站中的邮件 30 天后自动删除。开启此选项时，现有的无用邮件按其存在于对应文件夹中的时长推算删除时间。"
       ],
@@ -28013,9 +27876,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "用户大致位置（基于 IP 地址）"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "已访问过其 ${ BRAND_NAME } 账户的用户"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "用户在我们的网络应用程序上登录时，看到的将是您的徽标，而不是 ${ BRAND_NAME } 图标。"

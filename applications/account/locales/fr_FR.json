@@ -818,6 +818,9 @@
       "Download updated file": [
         "Télécharger le fichier mis à jour"
       ],
+      "Dropbox": [
+        "Dropbox"
+      ],
       "Edit": [
         "Modifier"
       ],
@@ -1298,9 +1301,6 @@
       "Maybe later": [
         "Peut-être plus tard"
       ],
-      "Migrate": [
-        "Migrer"
-      ],
       "More": [
         "Plus"
       ],
@@ -1354,6 +1354,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "OneDrive": [
+        "OneDrive"
       ],
       "Open": [
         "Ouvrir"
@@ -2748,7 +2751,7 @@
         "Black Friday"
       ],
       "Get the deal": [
-        "Profitez de l'offre"
+        "Profitez de l’offre"
       ]
     },
     "bfcampaign2026: Info": {
@@ -2756,22 +2759,22 @@
         "/mois"
       ],
       "15 GB storage": [
-        "15 Go d'espace de stockage"
+        "15 Go de stockage"
       ],
       "2 individual accounts": [
         "2 comptes individuels"
       ],
       "2 TB of secure storage": [
-        "2 To d'espace de stockage sécurisé"
+        "2 To d’espace de stockage sécurisé"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 Go d'espace de stockage : 40x votre abonnement actuel"
+        "200 Go d’espace de stockage : 40 fois votre abonnement actuel"
       ],
       "3 TB of secure storage": [
-        "3 To d'espace de stockage sécurisé"
+        "3 To d’espace de stockage sécurisé"
       ],
       "500 GB of secure storage": [
-        "500 Go d'espace de stockage sécurisé"
+        "500 Go d’espace de stockage sécurisé"
       ],
       "6 individual accounts": [
         "6 comptes individuels"
@@ -2780,19 +2783,19 @@
         "Authentificateur A2F intégré"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+        "Les remises sont calculées sur la base du tarif mensuel standard. Votre abonnement se renouvellera au tarif annuel standard à la fin du cycle de facturation."
       ],
       "Online document editor": [
         "Éditeur de documents en ligne"
       ],
       "Recover previous file versions": [
-        "Récupérez les versions précédentes des fichiers"
+        "Récupérez les versions précédentes de vos fichiers"
       ],
       "Stronger protection against cyber threats": [
-        "Une protection renforcée contre les cybermenaces"
+        "Une protection plus forte contre les cybermenaces"
       ],
       "Unlimited folders, labels, and filters": [
-        "Des dossiers, labels et filtres illimités"
+        "Dossiers, libellés et filtres illimités."
       ],
       "Use your own email domain": [
         "Utilisez votre propre domaine de messagerie"
@@ -2800,32 +2803,32 @@
     },
     "bfcampaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } Premium"
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Family, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } Premium"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } Premium"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } Premium"
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Les plus grosses soldes de l'année"
+        "La plus belle offre de l’année"
       ],
       "Black Friday": [
         "Black Friday"
@@ -2834,7 +2837,7 @@
         "pour 12 mois"
       ],
       "Last chance to save big": [
-        "Dernière chance de faire de grosses économies"
+        "Dernière chance de faire de belles économies"
       ],
       "Protect your entire tribe": [
         "Protégez toute votre tribu"
@@ -5229,8 +5232,8 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Importez vos messages, calendriers et contacts depuis un autre fournisseur."
       ],
-      "Bring over your files from another provider.": [
-        "Transférez vos fichiers depuis un autre fournisseur."
+      "Bring over your files and folders from another provider.": [
+        "Transférez vos fichiers et dossiers depuis un autre fournisseur."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Renforcez la confiance et la reconnaissance de votre marque avec des adresses e-mail professionnelles avec votre propre domaine."
@@ -6835,10 +6838,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Ils peuvent demander à accéder à votre compte en cas d'urgence."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Ils auront accès automatiquement dans **${ days } jour**, le **${ formattedAccessibleAt }**. Vous pouvez refuser leur demande ou leur donner accès immédiatement à tout moment.",
-        "Ils recevront l'accès automatiquement dans **${ days } jours**, le **${ formattedAccessibleAt }**. Vous pouvez refuser leur demande ou leur donner accès immédiatement à tout moment."
-      ],
       "This will take effect immediately.": [
         "Cela prendra effet immédiatement."
       ],
@@ -7315,9 +7314,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Maximum ${ displayMaxValue } autorisé"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "L'adresse du membre n'a pas été trouvée. Veuillez contacter le service client pour résoudre ce problème."
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Fusionnez au moins ${ calendarsToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
         "Fusionnez au moins ${ calendarsToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants."
@@ -7327,12 +7323,6 @@
       ],
       "Missing key packet": [
         "Le paquet de clés est manquant."
-      ],
-      "Missing organization private key": [
-        "La clé privée de l'organisation est absente."
-      ],
-      "Missing organization public key": [
-        "La clé publique de l'organisation est absente."
       ],
       "Missing signature": [
         "Il manque la signature."
@@ -8801,29 +8791,6 @@
         "Téraoctets"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Activé"
-      ],
-      "All": [
-        "Tout"
-      ],
-      "Errors": [
-        "Erreurs"
-      ],
-      "In progress": [
-        "En cours"
-      ],
-      "Migrated": [
-        "Migré"
-      ],
-      "Not activated": [
-        "Non activé"
-      ],
-      "Pending": [
-        "En attente"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Déplacer vers les archives"
@@ -9379,9 +9346,6 @@
       ],
       "Contact us": [
         "Contactez-nous"
-      ],
-      "Downloads": [
-        "Téléchargements"
       ],
       "Enjoying ${ planName }?": [
         "Vous appréciez ${ planName } ?"
@@ -10366,6 +10330,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Autorisez les utilisateurs à se connecter à des serveurs partagés sécurisés depuis la section **Pays** de l'application ${ VPN_APP_NAME }."
       ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Autorisez votre organisation à utiliser l'API ${ LUMO_APP_NAME }"
+      ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Autoriser la connexion par QR code vous permettra de vous connecter en scannant un QR code si vous oubliez votre mot de passe. Il vous suffira d'être connecté à un service ${ BRAND_NAME } sur un autre appareil."
       ],
@@ -11266,9 +11233,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Les filtres fonctionnent sur tous les messages, y compris les messages entrants et envoyés. Chaque filtre doit contenir au moins un nom, une condition et une action."
       ],
-      "Find out what can be migrated.": [
-        "Découvrez ce qui peut être migré."
-      ],
       "for ${ price }": [
         "pour ${ price }"
       ],
@@ -11917,9 +11881,6 @@
       "No single sign-on": [
         "Pas d’authentification unique"
       ],
-      "No users to display": [
-        "Il n'y a aucun utilisateur à afficher."
-      ],
       "Not a valid URL": [
         "L'URL n'est pas valide."
       ],
@@ -12356,9 +12317,6 @@
       "Select a group to view its members and settings.": [
         "Sélectionnez un groupe pour afficher ses membres et ses paramètres."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Sélectionnez exactement ce que vous voulez migrer. Cela s'appliquera à tous les utilisateurs de l'organisation."
-      ],
       "Select one or multiple user affiliations": [
         "Sélectionnez une ou plusieurs affiliations pour l'utilisateur."
       ],
@@ -12786,12 +12744,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Ce lien de désinscription a expiré. Nous vous invitons à ouvrir un message plus récent provenant de cette liste de diffusion."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Cet utilisateur ne peut pas être migré car son adresse e-mail n'est pas disponible sur ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Cet utilisateur ne peut pas être migré en raison d'incompatibilités de plateforme."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Cet utilisateur est actuellement responsable des paiements pour votre organisation. Si vous lui attribuez un abonnement inférieur, vous deviendrez responsable des paiements pour votre organisation."
       ],
@@ -12926,18 +12878,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Pour vous tenir au courant des dernières évolutions des produits ${ BRAND_NAME }, vous pouvez vous abonner à nos différentes newsletters et ${ blogLink } de temps en temps."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Pour migrer cet utilisateur, ajoutez et vérifiez le domaine de messagerie sous ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Pour migrer cet utilisateur, activez son compte sous ${ usersAddressesLink }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Pour migrer cet utilisateur, désarchivez-le dans votre ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Pour migrer cet utilisateur, annulez sa suspension dans votre ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Pour prévenir les abus ou la fraude, nous demandons un don minimum de ${ minimumDonation }. Ceci soutient le travail de la ${ protonFoundationLink } pour défendre la confidentialité numérique à l'échelle mondiale et aide à protéger les générations futures."
@@ -13386,9 +13326,6 @@
       "Yearly": [
         "Chaque année"
       ],
-      "You": [
-        "Vous"
-      ],
       "You already have a free account": [
         "Vous avez déjà un compte gratuit."
       ],
@@ -13544,6 +13481,9 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Vous disposez d'une période d'essai pour l'abonnement ${ planTitle }. Aucun paiement n'est requis pour le moment. Votre abonnement se renouvellera automatiquement à la fin de la période d'essai."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Vous avez une facture ouverte ${ payInvoiceLink }"
       ],
       "You have no calendars to export.": [
         "Vous n'avez aucun calendrier à exporter."
@@ -16408,9 +16348,6 @@
       "Details": [
         "Informations"
       ],
-      "Downloads": [
-        "Téléchargements"
-      ],
       "Encryption and keys": [
         "Chiffrement et clés"
       ],
@@ -16587,6 +16524,9 @@
       ],
       "Visit our support site": [
         "Visitez notre site de support"
+      ],
+      "Want to import email, calendar and contacts?": [
+        "Vous souhaitez importer vos e-mails, votre agenda et vos contacts ?"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quelle est la différence entre les protocoles UDP et TCP ?"
@@ -20047,11 +19987,8 @@
       "Billing Country": [
         "Pays de facturation"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private ne peut pas être acheté avec un abonnement actif."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private nécessite une donation."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Les comptes Born Private ne peuvent pas être achetés avec un abonnement actif."
       ],
       "Buying credits requires a separate purchase.": [
         "Acheter des crédits nécessite un achat séparé."
@@ -20146,6 +20083,9 @@
       "terms and conditions": [
         "conditions générales d'utilisation"
       ],
+      "The Born Private initiative requires a donation.": [
+        "L'initiative Born Private nécessite un don."
+      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "La réduction est valable pour ${ renewalsWithCoupon } renouvellement.",
         "La réduction est valable pour ${ renewalsWithCoupon } renouvellements."
@@ -20239,8 +20179,8 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Vous possédez déjà ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Vous possédez déjà Born Private."
+      "You already own a Born Private account.": [
+        "Vous possédez déjà un compte Born Private."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Un montant de ${ amountToCharge } sera débité selon votre méthode de paiement sélectionnée."
@@ -20251,8 +20191,8 @@
       "You will soon be redirected to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
-      "Your account is too old for Born Private.": [
-        "Votre compte est trop ancien pour Born Private."
+      "Your account is too old for the Born Private initiative.": [
+        "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Votre devise a été changée en euros (€) car ${ IDEAL_WERO_BRAND_NAME } prennent uniquement en charge les paiements en euros."
@@ -21851,9 +21791,21 @@
       ]
     },
     "scim": {
+      "${ cleanUpCount } clean up action required.": [
+        "${ cleanUpCount } action de nettoyage requise.",
+        "${ cleanUpCount } actions de nettoyage requises."
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "L'autorisation de ${ cleanUpCount } utilisateur a été modifié.",
+        "Les autorisations de ${ cleanUpCount } utilisateurs ont été modifiées."
+      ],
       "${ memberCount } new member": [
         "${ memberCount } nouveau membre",
         "${ memberCount } nouveaux membres"
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "${ numberOfCleanUps } action de nettoyage requise",
+        "${ numberOfCleanUps } actions de nettoyage requises"
       ],
       "${ numberOfPendingGroups } group synced": [
         "${ numberOfPendingGroups } groupe synchronisé",
@@ -21888,8 +21840,17 @@
       "Approve changes from your identity provider": [
         "Approuvez les modifications de votre fournisseur d'identité"
       ],
+      "Approve permission changes for your organization": [
+        "Approuver les modifications apportées aux autorisations au sein de votre organisation"
+      ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Approbation finale nécessaire pour accorder l'accès à tous les services ${ BRAND_NAME }."
+      ],
+      "Final approval needed to remove organization key access.": [
+        "Une autorisation finale est nécessaire pour retirer l'accès à la clé de l'organisation."
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "Une autorisation finale est nécessaire pour révoquer leurs clés d'organisation."
       ],
       "From your identity provider": [
         "De votre fournisseur d'identité"
@@ -23621,11 +23582,17 @@
       "Disabled": [
         "Désactivé"
       ],
+      "failed": [
+        "n'a pas abouti"
+      ],
       "finalizing": [
         "finalisation en cours"
       ],
       "Generate a recovery phrase": [
         "Générer une phrase de récupération"
+      ],
+      "key removal scheduled": [
+        "retrait de la clé prévu"
       ],
       "Last changed ${ formattedDate }": [
         "Dernière modification le ${ formattedDate }"
@@ -23644,6 +23611,9 @@
       ],
       "Outdated": [
         "Obsolète"
+      ],
+      "remove organization key": [
+        "retirer la clé de l’organisation"
       ],
       "Saved": [
         "Enregistré"
@@ -24815,20 +24785,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "Activé"
-      ],
-      "Estimated size": [
-        "Taille estimée"
-      ],
       "Size": [
         "Taille"
       ],
       "Status": [
         "État"
-      ],
-      "User": [
-        "Utilisateur"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25016,6 +24977,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } ami abonné",
         "${ friendsSubscribed } amis abonnés"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "API ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
@@ -26578,9 +26542,6 @@
       ],
       "Select the way to send this notification": [
         "Sélectionnez le mode d’envoi de cette notification."
-      ],
-      "Select users to migrate": [
-        "Sélectionnez les utilisateurs à migrer"
       ],
       "Select when you want this notification to be sent": [
         "Sélectionnez le moment où cette notification doit être envoyée."

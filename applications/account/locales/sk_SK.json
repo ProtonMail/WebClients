@@ -995,6 +995,9 @@
       "Download updated file": [
         "Stiahnuť aktualizovaný súbor"
       ],
+      "Dropbox": [
+        "Dropbox"
+      ],
       "Edit": [
         "Upraviť"
       ],
@@ -1540,6 +1543,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "OneDrive": [
+        "OneDrive"
       ],
       "Open": [
         "Otvoriť"
@@ -2982,6 +2988,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Využiť ponuku"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mesiac"
+      ],
+      "15 GB storage": [
+        "15 GB úložiska"
+      ],
+      "2 individual accounts": [
+        "2 samostatné účty"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpečného úložiska"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB úložiska: 40-násobok vášho aktuálneho plánu"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpečného úložiska"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpečného úložiska"
+      ],
+      "6 individual accounts": [
+        "6 samostatných účtov"
+      ],
+      "Built-in 2FA authenticator": [
+        "Zabudovaný 2FA autentifikátor"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného obdobia obnoví za štandardnú ročnú sadzbu."
+      ],
+      "Online document editor": [
+        "Online editor dokumentov"
+      ],
+      "Recover previous file versions": [
+        "Obnovte predchádzajúce verzie súborov"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnejšia ochrana pred kybernetickými hrozbami"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Use your own email domain": [
+        "Používajte vlastnú emailovú doménu"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Najväčší výpredaj roka"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "na 12 mesiacov"
+      ],
+      "Last chance to save big": [
+        "Posledná šanca ušetriť výrazne"
+      ],
+      "Protect your entire tribe": [
+        "Chráňte celú svoju rodinu"
+      ],
+      "Protection for two in a single plan": [
+        "Ochrana pre dvoch v jednom pláne"
       ]
     },
     "Billing cycle": {
@@ -5429,8 +5535,8 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Preneste si vaše emaily, udalosti kalendára a kontakty od iného poskytovateľa."
       ],
-      "Bring over your files from another provider.": [
-        "Preneste si svoje súbory od iného poskytovateľa."
+      "Bring over your files and folders from another provider.": [
+        "Preneste si svoje súbory a priečinky od iného poskytovateľa."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Vytvorte si dôveryhodnú a rozpoznateľnú značku pomocou profesionálnych emailových adries vo vašej vlastnej doméne."
@@ -7079,7 +7185,10 @@
       "They may ask to access your account in case of an emergency.": [
         "V prípade núdze môžu požiadať o prístup k vášmu účtu."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Prístup získajú automaticky **dnes**, o **${ formattedAccessibleAt }**. Ich žiadosť môžete kedykoľvek zamietnuť alebo im prístup udeliť okamžite."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
         "Prístup získajú automaticky o **${ days } deň**, **${ formattedAccessibleAt }**. Ich žiadosť môžete kedykoľvek zamietnuť alebo im prístup udeliť okamžite.",
         "Prístup získajú automaticky o **${ days } dni **, **${ formattedAccessibleAt }**. Ich žiadosť môžete kedykoľvek zamietnuť alebo im prístup udeliť okamžite.",
         "Prístup získajú automaticky o **${ days } dní**, **${ formattedAccessibleAt }**. Ich žiadosť môžete kedykoľvek zamietnuť alebo im prístup udeliť okamžite.",
@@ -9231,7 +9340,7 @@
         "Neaktivovaný"
       ],
       "Pending": [
-        "Čaká"
+        "Čakajúce"
       ]
     },
     "Filter Actions": {
@@ -9813,9 +9922,6 @@
       "Contact us": [
         "Kontaktujte nás"
       ],
-      "Downloads": [
-        "Na stiahnutie"
-      ],
       "Enjoying ${ planName }?": [
         "Páči sa vám ${ planName }?"
       ],
@@ -10226,7 +10332,7 @@
         "Pozastavené"
       ],
       "Pending": [
-        "Čaká"
+        "Čakajúce"
       ],
       "Queued": [
         "V poradí"
@@ -10940,6 +11046,9 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Umožniť používateľom pripojiť sa k zabezpečeným zdieľaným serverom v položke **Krajiny** v aplikácii ${ VPN_APP_NAME }."
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Povoľte vašej organizácii používať rozhranie API aplikácie ${ LUMO_APP_NAME }"
       ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Ak povolíte prihlásenie pomocou QR kódu, budete sa môcť prihlásiť naskenovaním QR kódu v prípade, že zabudnete heslo. Stačí, ak budete prihlásení do služby ${ BRAND_NAME } na inom zariadení."
@@ -13670,6 +13779,9 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Aby ste mohli použiť ${ toAppName }, potrebujete ${ MAIL_APP_NAME } adresu."
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "Na používanie ${ toAppName } potrebujete adresu ${ MAIL_APP_NAME }. Správca vašej organizácie vám ju môže vytvoriť."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pre správnu funkciu musí každý filter obsahovať aspoň názov a platný skript Sieve. Môžete ${ link }."
@@ -17251,9 +17363,6 @@
       ],
       "Details": [
         "Podrobnosti"
-      ],
-      "Downloads": [
-        "Na stiahnutie"
       ],
       "Encryption and keys": [
         "Šifrovanie a kľúče"
@@ -21121,12 +21230,6 @@
       "Billing Country": [
         "Krajina fakturácie"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
-      ],
-      "Born Private requires a donation.": [
-        "Na Born Private je potrebný príspevok."
-      ],
       "Buying credits requires a separate purchase.": [
         "Nákup kreditov si vyžaduje samostatnú platbu."
       ],
@@ -21337,9 +21440,6 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Už vlastníte ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Born Private už vlastníte."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Z vybraného spôsobu platby vám bude účtovaná suma ${ amountToCharge }."
       ],
@@ -21348,9 +21448,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
-      ],
-      "Your account is too old for Born Private.": [
-        "Váš účet je príliš starý na službu Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_WERO_BRAND_NAME } podporuje platby len v eurách."
@@ -22965,6 +23062,12 @@
       ]
     },
     "scim": {
+      "${ cleanUpCount } user's permissions have changed.": [
+        "Zmenili sa oprávnenia ${ cleanUpCount } používateľa.",
+        "Zmenili sa oprávnenia ${ cleanUpCount } používateľov.",
+        "Zmenili sa oprávnenia ${ cleanUpCount } používateľov.",
+        "Zmenili sa oprávnenia ${ cleanUpCount } používateľov."
+      ],
       "${ memberCount } new member": [
         "${ memberCount } nový člen",
         "${ memberCount } noví členovia",
@@ -24862,11 +24965,17 @@
       "Disabled": [
         "Deaktivované"
       ],
+      "failed": [
+        "zlyhalo"
+      ],
       "finalizing": [
         "dokončovanie"
       ],
       "Generate a recovery phrase": [
         "Vygenerovať obnovovaciu frázu"
+      ],
+      "key removal scheduled": [
+        "odstránenie kľúča naplánované"
       ],
       "Last changed ${ formattedDate }": [
         "Posledná zmena ${ formattedDate }"
@@ -24885,6 +24994,9 @@
       ],
       "Outdated": [
         "Zastarané"
+      ],
+      "remove organization key": [
+        "odstrániť kľúč organizácie"
       ],
       "Saved": [
         "Uložené"
@@ -26140,7 +26252,7 @@
         "Odhadovaná veľkosť"
       ],
       "Migration status": [
-        "Stav migrácie"
+        "Stav presunu"
       ],
       "Size": [
         "Veľkosť"
@@ -26361,6 +26473,9 @@
         "${ friendsSubscribed } priatelia s predplatným",
         "${ friendsSubscribed } priateľov s predplatným",
         "${ friendsSubscribed } priateľov s predplatným"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "${ LUMO_APP_NAME } API"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } asistenta písania"
@@ -28427,7 +28542,7 @@
         "Vitajte v službe ${ BRAND_NAME } pre Business"
       ],
       "What are you migrating?": [
-        "Čo migrujete?"
+        "Čo presúvate?"
       ],
       "What changes if you switch to the Free plan": [
         "Čo sa zmení, keď prejdete na plán Free"
@@ -28464,6 +28579,9 @@
       ],
       "You have no resolved alerts": [
         "Nemáte žiadne nevyriešené upozornenia"
+      ],
+      "You need a ${ BRAND_NAME } address": [
+        "Potrebujete ${ BRAND_NAME } adresu"
       ],
       "You're all set!": [
         "Všetko je pripravené!"
@@ -28712,7 +28830,7 @@
         "Prispôsobiť import na zníženie počtu štítkov"
       ],
       "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Stav migrácie dát z ${ providerName } do ${ BRAND_NAME }"
+        "Stav presunu dát z ${ providerName } do ${ BRAND_NAME }"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Po 30 dňoch sa vymaže kôš a spamové správy. Zapnutím automatického odstraňovania sa správam, ktoré sa už nachádzajú v koši/spame, pridelí dátum odstránenia na základe dátumu, kedy tam boli presunuté."
@@ -29494,6 +29612,9 @@
       ],
       "Send invite link via email instead": [
         "Radšej poslať pozvánku cez email"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Tento používateľ získa práva správcu pri najbližšom prihlásení."
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Týmto sa vytvorí nová ${ MAIL_APP_NAME } adresa."

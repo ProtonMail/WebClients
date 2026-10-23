@@ -1185,7 +1185,7 @@
         "Obter mais endereços"
       ],
       "Get more filters": [
-        "Obtenha mais filtros"
+        "Obter mais filtros"
       ],
       "Get more folders": [
         "Obter mais pastas"
@@ -2951,16 +2951,16 @@
         "6 contas individuais"
       ],
       "Built-in 2FA authenticator": [
-        "Autenticador de 2FA integrado"
+        "Autenticador A2F integrado"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Os descontos são baseados em preços mensais padrão. Sua assinatura será renovada na taxa anual padrão quando o ciclo de faturamento terminar."
+        "Os descontos são baseados no preço mensal padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
       ],
       "Online document editor": [
         "Editor de documentos on-line"
       ],
       "Recover previous file versions": [
-        "Recuperar versões de arquivo anteriores"
+        "Recupere versões anteriores de arquivos"
       ],
       "Stronger protection against cyber threats": [
         "Proteção mais forte contra ameaças cibernéticas"
@@ -2969,32 +2969,32 @@
         "Pastas, marcadores e filtros ilimitados"
       ],
       "Use your own email domain": [
-        "Use seu próprio domínio de e-mail"
+        "Use o seu próprio domínio de e-mail"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium para ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium para ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Family, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium para ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Title": {
@@ -6976,10 +6976,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Eles podem pedir para acessar sua conta em caso de emergência."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Eles receberão acesso automaticamente em **${ days } dia**, em **${ formattedAccessibleAt }**, você pode rejeitar a solicitação deles ou dar-lhes acesso a qualquer momento.",
-        "Eles receberão acesso automaticamente em **${ days } dias**, em **${ formattedAccessibleAt }**, você pode rejeitar a solicitação deles ou dar-lhes acesso a qualquer momento."
-      ],
       "This will take effect immediately.": [
         "Isso entrará em vigor imediatamente."
       ],
@@ -7132,9 +7128,6 @@
       ],
       "Address is already added to your account": [
         "Endereço já adicionado à sua conta"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "O endereço já é usado por um usuário fora da sua organização. Entre em contato com o suporte ao cliente para resolver isso"
       ],
       "Address primary private key not found": [
         "Chave privada principal do endereço não encontrada"
@@ -7507,9 +7500,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Máximo de ${ displayMaxValue } permitido"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Endereço do membro não encontrado. Entre em contato com o suporte ao cliente para resolver isso"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Mescle pelo menos ${ calendarsToFixCount } calendário com um calendário existente da ${ BRAND_NAME }",
         "Mescle pelo menos ${ calendarsToFixCount } calendários com calendários existente da ${ BRAND_NAME }"
@@ -7519,12 +7509,6 @@
       ],
       "Missing key packet": [
         "Pacote de chave ausente"
-      ],
-      "Missing organization private key": [
-        "Chave privada da organização ausente"
-      ],
-      "Missing organization public key": [
-        "Chave pública da organização ausente"
       ],
       "Missing signature": [
         "Assinatura ausente"
@@ -7604,12 +7588,6 @@
       ],
       "Operation failed, try again later": [
         "Erro na operação, tente novamente mais tarde"
-      ],
-      "Organization does not have enough seats available": [
-        "A organização não tem licenças suficientes disponíveis"
-      ],
-      "Organization does not have enough storage available": [
-        "A organização não tem armazenamento suficientes disponíveis"
       ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
@@ -8753,7 +8731,7 @@
         "500 MB de armazenamento do Mail"
       ],
       "500 MB storage": [
-        "Cancelar assinatura"
+        "500 MB de armazenamento"
       ],
       "Access to all countries": [
         "Acesso a todos os países"
@@ -9027,11 +9005,8 @@
       "Activated": [
         "Ativado"
       ],
-      "All": [
-        "Todos"
-      ],
       "Errors": [
-        "Errors"
+        "Erros"
       ],
       "In progress": [
         "Em progresso"
@@ -9614,9 +9589,6 @@
       "Contact us": [
         "Contate-nos"
       ],
-      "Downloads": [
-        "Downloads"
-      ],
       "Enjoying ${ planName }?": [
         "Aproveitando o ${ planName }?"
       ],
@@ -9990,9 +9962,6 @@
       ],
       "Failed": [
         "Erro"
-      ],
-      "Has errors": [
-        "Tem erros"
       ],
       "Import completed successfully": [
         "Importação concluída com sucesso"
@@ -11537,9 +11506,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação a ser salva."
       ],
-      "Find out what can be migrated.": [
-        "Descubra o que pode ser migrado."
-      ],
       "for ${ price }": [
         "por ${ price }"
       ],
@@ -12083,6 +12049,9 @@
       "Monthly ${ onDayString }": [
         "Mensal ${ onDayString }"
       ],
+      "More cards": [
+        "Mais cartões"
+      ],
       "Multi-user support not enabled.": [
         "Suporte a múltiplos usuários desativado."
       ],
@@ -12175,9 +12144,6 @@
       ],
       "No single sign-on": [
         "Sem autenticação única (SSO)"
-      ],
-      "No users to display": [
-        "Nenhum usuário para exibir"
       ],
       "Not a valid URL": [
         "Não é uma URL válida"
@@ -12612,9 +12578,6 @@
       "Select a group to view its members and settings.": [
         "Selecione um grupo para ver seus membros e configurações."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selecione exatamente o que deseja migrar. Isso se aplicará a todos os usuários da organização."
-      ],
       "Select one or multiple user affiliations": [
         "Selecione uma ou várias afiliações de usuário"
       ],
@@ -13036,12 +12999,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Este link de cancelamento de inscrição expirou. Abra um e-mail mais recente desta lista de discussão."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Este usuário não pode ser migrado porque o endereço de e-mail deles não está disponível em ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Este usuário não pode ser migrado devido a incompatibilidades de plataforma."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuário é atualmente responsável pelos pagamentos de sua organização. Ao rebaixar este membro, você se tornará responsável pelos pagamentos de sua organização."
       ],
@@ -13177,27 +13134,6 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Para acompanhar as novidades sobre desenvolvimento de produtos da ${ BRAND_NAME }, de tempos em tempos, você pode se inscrever em um dos nossos vários e-mails e no ${ blogLink }."
       ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Para migrar este usuário, adicione e verifique o domínio de e-mail em ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Para migrar este usuário, ative a conta no seu ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Para migrar este usuário, ative a conta dele em ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Para migrar este usuário, ative o endereço dele em ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Para migrar esse usuário, eles precisam aceitar seu convite para participar ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Para migrar este usuário, remova-o do arquivo no seu ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Para migrar este usuário, remova a suspensão no seu ${ provider.adminConsoleName }."
-      ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Para evitar abusos ou fraudes, pedimos uma doação mínima de ${ minimumDonation }. Isso apoia o trabalho da ${ protonFoundationLink } na defesa da privacidade digital globalmente e ajuda a proteger a próxima geração."
       ],
@@ -13269,6 +13205,9 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Infelizmente não há um método de recuperação disponível para esta conta."
+      ],
+      "UnionPay logo": [
+        "Logotipo da UnionPay"
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID único gerado pelo seu provedor de identidade, geralmente gerado na forma de URL que contém o nome do provedor de identidade (por exemplo, https://idp.example.com/XXXXX)."
@@ -16672,14 +16611,14 @@
       "Create an alias": [
         "Criar um alias"
       ],
+      "Customer Support": [
+        "Suporte ao cliente"
+      ],
       "data recovery option": [
         "opção de recuperação de dados"
       ],
       "Details": [
         "Detalhes"
-      ],
-      "Downloads": [
-        "Downloads"
       ],
       "Encryption and keys": [
         "Criptografia e chaves"
@@ -20371,12 +20310,6 @@
       "Billing Country": [
         "País de Faturamento"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "O Born Private não pode ser adquirido com uma assinatura ativa."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private requer uma doação."
-      ],
       "Buying credits requires a separate purchase.": [
         "Comprar créditos requer uma compra separada."
       ],
@@ -20572,9 +20505,6 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Você já tem o Born Private."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Você será cobrado em ${ amountToCharge } no método de pagamento selecionado."
       ],
@@ -20583,9 +20513,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Em breve você será redirecionado para verificar seu pagamento."
-      ],
-      "Your account is too old for Born Private.": [
-        "Sua conta é muito antiga para Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque ${ IDEAL_WERO_BRAND_NAME } suporta apenas pagamentos em euros."
@@ -20629,6 +20556,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Ocorreu um erro. A verificação do Google Pay falhou."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ao confirmar, você autoriza a ${ BRAND_NAME } e a Stripe, a realizar cobranças futuras da sua assinatura nesta conta bancária via Débito Direto, e autoriza seu banco a debitar esses valores. Seu primeiro pagamento é realizado agora via ${ IDEAL_WERO_BRAND_NAME }. Seu plano é renovado automaticamente até que você o cancele; notificaremos você antes de cada cobrança. Para cobranças via débito direto, você pode solicitar um reembolso ao seu banco em até 8 semanas após a data do débito, conforme os termos do seu contrato com o banco. Isso não se aplica ao pagamento via ${ IDEAL_WERO_BRAND_NAME } que você está realizando agora."
       ]
     },
     "Payments.info": {
@@ -25154,12 +25086,6 @@
       "Activated": [
         "Ativado"
       ],
-      "Estimated size": [
-        "Tempo estimado"
-      ],
-      "Migration status": [
-        "Status da migração"
-      ],
       "Size": [
         "Tamanho"
       ],
@@ -25779,6 +25705,9 @@
       ],
       "Connect to video conferencing": [
         "Conectar-se à videoconferência"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Conecte seu ${ ACCOUNT_APP_NAME }"
       ],
       "Connect your custom domain": [
         "Conecte seu domínio personalizado"
@@ -26939,9 +26868,6 @@
       "Select the way to send this notification": [
         "Selecione a forma de enviar esta notificação"
       ],
-      "Select users to migrate": [
-        "Selecione os usuários a serem migrados"
-      ],
       "Select when you want this notification to be sent": [
         "Selecione quando você deseja que esta notificação seja enviada"
       ],
@@ -27354,9 +27280,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
-      "What are you migrating?": [
-        "O que você está migrando?"
-      ],
       "What changes if you switch to the Free plan": [
         "O que muda se você mudar para o plano Free"
       ],
@@ -27636,9 +27559,6 @@
       "Customize import to reduce the number of labels": [
         "Personalize a importação para reduzir a quantidade de marcadores"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Status de migração de dados do ${ providerName } para a ${ BRAND_NAME }"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Exclua as mensagens da lixeira e spam após 30 dias. Ativar a exclusão automática dá às mensagens que já estão na lixeira/spam uma data de exclusão com base na data em que foram movidas para lá."
       ],
@@ -27857,9 +27777,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Localização aproximada do usuário (com base no endereço de IP dele)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Usuários que acessaram sua conta da ${ BRAND_NAME }"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Os usuários verão o seu logotipo em vez do ícone da ${ BRAND_NAME } quando conectados nos nossos aplicativos web."
