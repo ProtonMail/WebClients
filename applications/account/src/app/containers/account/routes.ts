@@ -415,7 +415,7 @@ export const getRecoverySettings = ({
 export const getAccountAppRoutes = ({
     app,
     user,
-    entitlements,
+    addresses,
     subscription,
     organization,
     recoveryNotification,
@@ -946,10 +946,11 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Sign-in protection`,
                         id: 'sign-in-protection',
                         available:
-                            flags.showSignInRestrictionToggle && getCanShowSignInRestriction({ user, entitlements }),
+                            flags.showSignInRestrictionToggle && getCanShowSignInRestriction({ user, addresses }),
                         keywords: [
                             c('Label').t`Restrict sign-in to primary email address`,
                             c('Label').t`Restrict sign-in to username`,
+                            c('Label').t`Restrict sign-in to email address`,
                         ],
                         variant: SettingsLayoutVariant.Card,
                     },

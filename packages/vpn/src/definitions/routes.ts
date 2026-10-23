@@ -44,6 +44,7 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { OrgPermissions } from '@proton/shared/lib/interfaces/UserPermission';
 import {
     getIsBYOEAccount,
@@ -59,6 +60,7 @@ type PropContext = {
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
     appName: APP_NAMES;
+    addresses?: Address[];
 };
 
 type VpnNavContext = {
@@ -450,7 +452,7 @@ const routesDefinition = {
                                 !!context.flags.ShowSignInRestrictionToggle &&
                                 getCanShowSignInRestriction({
                                     user: context.user,
-                                    entitlements: context.entitlements,
+                                    addresses: context.addresses,
                                 }),
                         },
                         {
