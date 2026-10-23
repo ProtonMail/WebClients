@@ -1,14 +1,12 @@
 import { c } from 'ttag';
 
-import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
 import type { IconComponent } from '@proton/icons/component';
 import type { ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { getPaymentMethodUi } from '@proton/payments-ui/payment-methods/paymentMethodUiRegistry';
+import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, PaymentMethodType } from '@proton/payments/core/interface';
 import americanExpressSafekeySvg from '@proton/styles/assets/img/bank-icons/amex-safekey-colored.svg';
 import discoverProtectBuySvg from '@proton/styles/assets/img/bank-icons/discover-protectbuy-colored.svg';
-import googlePayMarkSvg from '@proton/styles/assets/img/bank-icons/google-pay-mark.svg';
-import idealMarkSvg from '@proton/styles/assets/img/bank-icons/ideal.svg';
 import jcbLogoSvg from '@proton/styles/assets/img/bank-icons/jcb-logo.png';
 import mastercardSecurecodeSvg from '@proton/styles/assets/img/bank-icons/mastercard-securecode-colored.svg';
 import unionpayLogoSvg from '@proton/styles/assets/img/bank-icons/unionpay-logo.svg';
@@ -39,30 +37,11 @@ const PaymentMethodIcon = ({
 }: {
     icon?: IconComponent;
     className?: string;
-    type: PaymentMethodType;
+    type: PAYMENT_METHOD_TYPES;
 }) => {
-    if (type === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
-        return (
-            <span className="mr-2 w-custom" style={{ '--w-custom': '2.5rem' }}>
-                <img
-                    src={googlePayMarkSvg}
-                    alt={c('Info').t`Google Pay mark`}
-                    style={{ maxHeight: '1.25rem', marginTop: '-0.15625rem' }}
-                />
-            </span>
-        );
-    }
-
-    if (type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
-        return (
-            <span className="mr-2 w-custom" style={{ '--w-custom': '3.5rem' }}>
-                <img
-                    src={idealMarkSvg}
-                    alt={c('Info').t`${IDEAL_WERO_BRAND_NAME} mark`}
-                    style={{ marginTop: '-0.15625rem' }}
-                />
-            </span>
-        );
+    const renderOptionMark = getPaymentMethodUi(type)?.renderOptionMark;
+    if (renderOptionMark) {
+        return renderOptionMark();
     }
 
     if (!Icon) {
