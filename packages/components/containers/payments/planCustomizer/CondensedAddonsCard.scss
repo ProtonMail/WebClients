@@ -1,0 +1,17 @@
+// No bordered card left behind when every row is empty
+.condensed-addons-card:not(:has(> .condensed-addons-card-row:not(:empty))) {
+	display: none;
+}
+
+.condensed-addons-card-row {
+	padding: var(--space-4);
+}
+
+// A child that renders nothing (e.g. a customiser with no room to change) must not leave an empty row behind
+.condensed-addons-card-row:empty {
+	display: none;
+}
+
+.condensed-addons-card-row:not(:empty) ~ .condensed-addons-card-row:not(:empty) {
+	border-block-start: 1px solid var(--border-weak);
+}

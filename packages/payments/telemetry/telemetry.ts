@@ -33,6 +33,7 @@ import {
 import {
     reportAudienceChange,
     reportChangeStep,
+    reportCheckoutCondensedAddonsExperimentSeen,
     reportClosedByUser,
     reportPlanDescriptionInteraction,
     reportVpn2024AddonsExperimentSeen,
@@ -80,5 +81,7 @@ export const checkoutTelemetry = {
         reportChangeStep,
         /** Report first exposure to the VPN 2024 addons experiment variant */
         reportVpn2024AddonsExperimentSeen,
+        /** Report first exposure to the condensed add-ons checkout experiment variant (eligible users only) */
+        reportCheckoutCondensedAddonsExperimentSeen,
     },
 };
