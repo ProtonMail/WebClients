@@ -1,4 +1,4 @@
-import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../../types-api';
+import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../types-api';
 
 /**
  * Raised when the upstream model reports that the conversation no longer fits in
