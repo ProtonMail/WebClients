@@ -77,6 +77,23 @@ describe('SignInRestrictionSection', () => {
         expect(screen.getByLabelText('Restrict sign-in to username')).toBeInTheDocument();
     });
 
+    it('mentions only the email when the account has no username', () => {
+        mockUseUser([{ Name: '' }]);
+        mockUseAddresses([[buildAddress({ Email: 'eric.norbert@proton.me', Status: 1, Receive: 1, Send: 1 })]]);
+
+        renderSection();
+
+        expect(
+            screen.getByText((_, element) => {
+                return (
+                    element?.textContent ===
+                    'When sign-in is restricted, only your email eric.norbert@proton.me can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.'
+                );
+            })
+        ).toBeInTheDocument();
+        expect(screen.getByLabelText('Restrict sign-in to email address')).toBeInTheDocument();
+    });
+
     it('reflects the saved restriction and sends the new value when toggled off', async () => {
         mockUseAddresses([[]]);
         mockedUseUserSettings.mockReturnValue([{ LoginIdentifierPolicy: RESTRICTED_LOGIN_IDENTIFIER_POLICY }]);
