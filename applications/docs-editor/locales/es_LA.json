@@ -247,6 +247,12 @@
       ],
       "Undo": [
         "Deshacer"
+      ],
+      "Header column": [
+        "Columna de encabezado"
+      ],
+      "Header row": [
+        "Fila de encabezado"
       ]
     },
     "color": {
@@ -372,6 +378,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "No se puede convertir el documento de Word. ¿Está protegido con contraseña? Si es así, elimine la contraseña e intente de nuevo."
+      ],
+      "Could not load emoji. Close the picker and try again.": [
+        "No se pudo cargar el emoji. Cierre el selector e intente de nuevo."
       ]
     },
     "Error message": {
@@ -495,6 +504,12 @@
       ],
       "You cannot undo this action.": [
         "No puede deshacer esta acción."
+      ],
+      "Loading emoji…": [
+        "Cargando emoji…"
+      ],
+      "No emoji found": [
+        "No se ha encontrado el emoji"
       ]
     },
     "Label": {
@@ -605,6 +620,27 @@
       ],
       "with \"${ replaceWith }\"": [
         "con «${ replaceWith }»"
+      ],
+      "Comments": [
+        "Comentarios"
+      ],
+      "Emoji": [
+        "Emoji"
+      ],
+      "Emoji suggestions": [
+        "Sugerencias de emojis"
+      ],
+      "Resize outline": [
+        "Redimensionar contorno"
+      ],
+      "Search emoji": [
+        "Buscar emoji"
+      ],
+      "Search results": [
+        "Resultados de la búsqueda"
+      ],
+      "Table": [
+        "Tabla"
       ]
     },
     "Placeholder": {
@@ -933,6 +969,9 @@
       ],
       "Values only": [
         "Solo valores"
+      ],
+      "(Blanks)": [
+        "(Espacios en blanco)"
       ]
     },
     "sheets_2025:Spreadsheet context menu (columns/rows)": {
@@ -1575,6 +1614,9 @@
       ],
       "Go to previous": [
         "Ir a la anterior"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
       ]
     },
     "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
@@ -1714,6 +1756,15 @@
       ],
       "Zoom": [
         "Zoom"
+      ],
+      "Border": [
+        "Borde"
+      ],
+      "Fill color": [
+        "Color de relleno"
+      ],
+      "Text color": [
+        "Color de texto"
       ]
     },
     "sheets_2025:Spreadsheet filter menu": {
@@ -1797,6 +1848,21 @@
       ],
       "OK": [
         "Aceptar"
+      ],
+      "Default ${ size }": [
+        "Por defecto ${ size }"
+      ],
+      "Resize column ${ title }": [
+        "Redimensionar columna ${ title }"
+      ],
+      "Resize row ${ title }": [
+        "Redimensionar fila ${ title }"
+      ],
+      "Specify column width (px)": [
+        "Especificar ancho de columna (px)"
+      ],
+      "Specify row height (px)": [
+        "Especificar alto de fila (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -1980,6 +2046,18 @@
       ],
       "Vertical axis title": [
         "Título del eje vertical"
+      ],
+      "Series ${ seriesNumber }": [
+        "Serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "Agregado de serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Nombre de serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "Rango de serie ${ seriesNumber }"
       ]
     },
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
@@ -2256,6 +2334,461 @@
       ],
       "Pasting remote images is not supported. Download the image and use \"Insert image\" instead.": [
         "No se admite pegar imágenes remotas. Descargue la imagen y use «Insertar imagen» en su lugar."
+      ]
+    },
+    "Emoji category": {
+      "Activities": [
+        "Actividades"
+      ],
+      "Animals and nature": [
+        "Animales y naturaleza"
+      ],
+      "Flags": [
+        "Banderas"
+      ],
+      "Food and drink": [
+        "Comida y bebida"
+      ],
+      "Objects": [
+        "Objetos"
+      ],
+      "Smileys and people": [
+        "Emoticonos y personas"
+      ],
+      "Symbols": [
+        "Símbolos"
+      ],
+      "Travel and places": [
+        "Viajes y destinos"
+      ]
+    },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Contabilidad"
+      ],
+      "Bottom": [
+        "Inferior"
+      ],
+      "Center": [
+        "Centrar"
+      ],
+      "Clip": [
+        "Clip"
+      ],
+      "Currency": [
+        "Moneda"
+      ],
+      "Currency formats are used for general monetary values.": [
+        "Los formatos de moneda se usan para valores monetarios generales."
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Date": [
+        "Fecha"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Los formatos de fecha muestran la fecha y hora en números de serie como valores de fecha."
+      ],
+      "Fraction": [
+        "Fracción"
+      ],
+      "General": [
+        "General"
+      ],
+      "General format cells have no specific number format.": [
+        "Las celdas de formato general no tienen formato de número específico."
+      ],
+      "Left": [
+        "Izquierda"
+      ],
+      "Number": [
+        "Número"
+      ],
+      "Number is used for general display of numbers.": [
+        "Número se usa para la visualización general de números."
+      ],
+      "Overflow": [
+        "Desbordamiento"
+      ],
+      "Percentage": [
+        "Porcentaje"
+      ],
+      "Right": [
+        "Derecha"
+      ],
+      "Scientific": [
+        "Científica"
+      ],
+      "Text": [
+        "Texto"
+      ],
+      "Time": [
+        "Hora"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Los formatos de hora muestran la fecha y hora en números de serie como valores de fecha."
+      ],
+      "Top": [
+        "Superior"
+      ],
+      "Wrap": [
+        "Ajustar"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Promedio"
+      ],
+      "Count": [
+        "Cantidad"
+      ],
+      "Max": [
+        "Max"
+      ],
+      "Median": [
+        "Media"
+      ],
+      "Min": [
+        "Min"
+      ],
+      "Sum": [
+        "Suma"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Ninguno"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "Pastel 2D"
+      ],
+      "Clustered Column": [
+        "Columna agrupada"
+      ],
+      "Column": [
+        "Columna"
+      ],
+      "Doughnut": [
+        "Rosquilla"
+      ],
+      "Hierarchy": [
+        "Jerarquía"
+      ],
+      "Line": [
+        "Línea"
+      ],
+      "Pie": [
+        "Pastel"
+      ],
+      "Smooth line": [
+        "Línea suave"
+      ],
+      "Stacked column": [
+        "Columna apilada"
+      ],
+      "Stacked line": [
+        "Línea apilada"
+      ],
+      "Sunburst": [
+        "Proyección solar"
+      ],
+      "Treemap": [
+        "Mapa de árbol"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Por encima del promedio"
+      ],
+      "April": [
+        "Abril"
+      ],
+      "August": [
+        "Agosto"
+      ],
+      "Below average": [
+        "Por debajo del promedio"
+      ],
+      "Between": [
+        "Entre"
+      ],
+      "Bottom N items": [
+        "Elementos N inferiores"
+      ],
+      "Bottom N percent": [
+        "Porcentaje N inferior"
+      ],
+      "Checkbox": [
+        "Casilla de verificación"
+      ],
+      "Custom formula": [
+        "Fórmula personalizada"
+      ],
+      "Date is after": [
+        "Fecha posterior"
+      ],
+      "Date is before": [
+        "Fecha es anterior a"
+      ],
+      "Date is between": [
+        "Fecha entre"
+      ],
+      "Date is equal to": [
+        "Fecha igual a"
+      ],
+      "Date is not between": [
+        "Fecha no está entre"
+      ],
+      "Date is not equal to": [
+        "La fecha es diferente a"
+      ],
+      "Date is on or after": [
+        "Fecha igual o posterior a"
+      ],
+      "Date is on or before": [
+        "Fecha igual o anterior a"
+      ],
+      "Date is valid": [
+        "Fecha inválida"
+      ],
+      "December": [
+        "Diciembre"
+      ],
+      "Dropdown": [
+        "Desplegable"
+      ],
+      "Dropdown (from a range)": [
+        "Menú desplegable (desde un rango)"
+      ],
+      "Equal to": [
+        "Igual que"
+      ],
+      "Errors": [
+        "Errores"
+      ],
+      "February": [
+        "Febrero"
+      ],
+      "Greater than": [
+        "Mayor que"
+      ],
+      "Greater than or equal to": [
+        "Mayor que o igual que"
+      ],
+      "Greater than or equal to previous": [
+        "Mayor que o igual que el anterior"
+      ],
+      "Greater than previous": [
+        "Mayor que el anterior"
+      ],
+      "Is empty": [
+        "Está vacío"
+      ],
+      "Is not empty": [
+        "No está vacío"
+      ],
+      "January": [
+        "Enero"
+      ],
+      "July": [
+        "Julio"
+      ],
+      "June": [
+        "Junio"
+      ],
+      "Last 7 days": [
+        "Últimos 7 días"
+      ],
+      "Last month": [
+        "Último mes"
+      ],
+      "Last quarter": [
+        "Último trimestre"
+      ],
+      "Last week": [
+        "Última semana"
+      ],
+      "Last year": [
+        "Último año"
+      ],
+      "Less than": [
+        "Menor que"
+      ],
+      "Less than or equal to": [
+        "Menor que o igual que"
+      ],
+      "Less than or equal to previous": [
+        "Menor que o igual al anterior"
+      ],
+      "Less than previous": [
+        "Menor que el anterior"
+      ],
+      "March": [
+        "Marzo"
+      ],
+      "May": [
+        "Mayo"
+      ],
+      "Next month": [
+        "Mes siguiente"
+      ],
+      "Next quarter": [
+        "Próximo trimestre"
+      ],
+      "Next week": [
+        "Próxima semana"
+      ],
+      "Next year": [
+        "Próximo año"
+      ],
+      "No errors": [
+        "Sin errores"
+      ],
+      "Not between": [
+        "No entre"
+      ],
+      "Not equal to": [
+        "No igual que"
+      ],
+      "November": [
+        "Noviembre"
+      ],
+      "October": [
+        "Octubre"
+      ],
+      "Quarter 1": [
+        "Primer trimestre"
+      ],
+      "Quarter 2": [
+        "Segundo trimestre"
+      ],
+      "Quarter 3": [
+        "Tercer trimestre"
+      ],
+      "Quarter 4": [
+        "Cuarto trimestre"
+      ],
+      "September": [
+        "Septiembre"
+      ],
+      "Text contains": [
+        "Texto contiene"
+      ],
+      "Text does not contain": [
+        "El texto no contiene"
+      ],
+      "Text ends with": [
+        "Texto termina con"
+      ],
+      "Text is email": [
+        "Texto es correo"
+      ],
+      "Text is exactly": [
+        "Texto es exactamente"
+      ],
+      "Text is not equal": [
+        "Texto no es igual a"
+      ],
+      "Text is URL": [
+        "Texto es URL"
+      ],
+      "Text starts with": [
+        "Texto comienza con"
+      ],
+      "This month": [
+        "Este mes"
+      ],
+      "This quarter": [
+        "Este trimestre"
+      ],
+      "This week": [
+        "Esta semana"
+      ],
+      "This year": [
+        "Este año"
+      ],
+      "Today": [
+        "Hoy"
+      ],
+      "Tomorrow": [
+        "Mañana"
+      ],
+      "Top N items": [
+        "Elementos N superiores"
+      ],
+      "Top N percent": [
+        "Porcentaje N superior"
+      ],
+      "Year to date": [
+        "Del año hasta la fecha"
+      ],
+      "Yesterday": [
+        "Ayer"
+      ]
+    },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Formato"
+      ],
+      "Symbol": [
+        "Símbolo"
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Editar"
+      ]
+    },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Ninguno"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Próximamente..."
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Editar"
+      ],
+      "Remove": [
+        "Eliminar"
+      ],
+      "View": [
+        "Vista"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Añadir"
+      ],
+      "more rows at the bottom": [
+        "más filas al final"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 columna"
+      ],
+      "1 row": [
+        "1 fila"
+      ],
+      "2 columns": [
+        "2 columnas"
+      ],
+      "2 rows": [
+        "2 filas"
+      ],
+      "No columns": [
+        "Sin columnas"
+      ],
+      "No rows": [
+        "Sin filas"
       ]
     }
   }
