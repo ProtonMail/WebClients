@@ -391,6 +391,7 @@ export const useResizableUtils = ({
             document.removeEventListener('mouseup', disableResize);
             document.removeEventListener('mouseleave', disableResize);
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- handlers are recreated on every render, kept as is to preserve behavior
     }, [isResizing, handleResizeWithMouse, disableResize]);
 
     const debouncedCalculateScrollBarWidth = useHandler(
