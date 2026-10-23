@@ -1,4 +1,4 @@
-import { createOxlintConfig } from '@proton/oxlint-config';
+import { createOxlintConfig } from '@proton/oxlint-config/createOxlintConfig';
 import {
     createExtraneousDependenciesRule,
     extraneousDependenciesDevDependencies,
