@@ -45,11 +45,11 @@
         "electron-log": "^5.4.4",
         "electron-store": "^8.2.0",
         "execa": "^8.0.1",
-        "lodash": "^4.18.1",
-        "ttag": "^1.8.12",
-        "ttag-cli": "^1.12.0",
+        "lodash": "catalog:",
+        "ttag": "catalog:",
+        "ttag-cli": "catalog:",
         "update-electron-app": "^3.3.0",
-        "zod": "^3.25.76"
+        "zod": "catalog:"
     },
     "devDependencies": {
         "@electron-forge/cli": "^7.11.2",

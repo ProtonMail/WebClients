@@ -20,9 +20,9 @@
         "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@reduxjs/toolkit": "^2.13.0",
-        "react": "^18.3.1",
-        "redux-thunk": "^3.1.0"
+        "@reduxjs/toolkit": "catalog:",
+        "react": "catalog:",
+        "redux-thunk": "catalog:"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",

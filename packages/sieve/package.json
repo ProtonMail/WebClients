@@ -20,7 +20,7 @@
     },
     "dependencies": {
         "@proton/utils": "workspace:^",
-        "lodash": "^4.18.1"
+        "lodash": "catalog:"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",

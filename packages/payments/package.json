@@ -123,12 +123,12 @@
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@sentry/browser": "^7.120.4",
-        "@sentry/types": "^7.120.4",
+        "@sentry/browser": "catalog:",
+        "@sentry/types": "catalog:",
         "date-fns": "^2.30.0",
         "ibantools": "4.5.4",
-        "lodash": "^4.18.1",
-        "ttag": "^1.8.12",
+        "lodash": "catalog:",
+        "ttag": "catalog:",
         "vat-validation": "^3.0.0"
     },
     "devDependencies": {
