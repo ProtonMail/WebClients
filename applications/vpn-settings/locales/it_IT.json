@@ -667,9 +667,6 @@
       "Get ${ planOrAppName }": [
         "Scegli ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Ottieni un indirizzo ${ BRAND_NAME } gratuito"
-      ],
       "Get a new encrypted email address": [
         "Ottieni un nuovo indirizzo email crittografato"
       ],
@@ -864,9 +861,6 @@
       ],
       "Mark as resolved": [
         "Segna come risolto"
-      ],
-      "Migrate": [
-        "Avvia la migrazione"
       ],
       "More benefits": [
         "Più vantaggi"
@@ -1983,38 +1977,77 @@
       "/month": [
         "/mese"
       ],
+      "15 GB storage": [
+        "15 GB di archiviazione"
+      ],
       "2 individual accounts": [
         "2 account individuali"
       ],
       "2 TB of secure storage": [
-        "2 TB di spazio di archiviazione protetto"
+        "2 TB di archiviazione sicura"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB di spazio di archiviazione: 40x rispetto al tuo piano attuale"
       ],
       "3 TB of secure storage": [
-        "3 TB di spazio di archiviazione sicuro"
+        "3 TB di archiviazione sicura"
       ],
       "500 GB of secure storage": [
-        "500 GB di spazio di archiviazione sicuro"
+        "500 GB di archiviazione sicura"
       ],
       "6 individual accounts": [
-        "6 conti individuali"
+        "6 account individuali"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticazione 2FA integrata"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "Online document editor": [
+        "Editor di documenti online"
+      ],
+      "Recover previous file versions": [
+        "Recupera le versioni precedenti dei file"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protezione avanzata contro le minacce informatiche"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Use your own email domain": [
+        "Usa il tuo dominio di posta elettronica"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "Versione premium di ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "Versione premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "La promozione più grande dell'anno"
+        "L'offerta più grande dell'anno"
       ],
       "Black Friday": [
         "Black Friday"
@@ -4659,10 +4692,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Potrebbero chiedere di accedere al tuo account in caso di emergenza."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Riceveranno l'accesso automaticamente tra **${ days } giorno**, il **${ formattedAccessibleAt }**. Puoi rifiutare la loro richiesta o dare loro accesso immediatamente in qualsiasi momento.",
-        "Riceveranno accesso automaticamente tra **${ days } giorni**, il **${ formattedAccessibleAt }**, puoi rifiutare la loro richiesta o concedere loro l'accesso immediatamente in qualsiasi momento."
-      ],
       "This will take effect immediately.": [
         "Questo avrà effetto immediatamente."
       ],
@@ -4780,9 +4809,6 @@
       "Address is already added to your account": [
         "L'indirizzo è già stato aggiunto al tuo account"
       ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "L'indirizzo è già utilizzato da un utente esterno alla tua organizzazione. Contatta l'assistenza clienti per risolvere il problema"
-      ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
       ],
@@ -4804,9 +4830,6 @@
       "Calendar limit reached": [
         "Limite calendario raggiunto"
       ],
-      "Cannot verify the author of this file": [
-        "Impossibile verificare l'autore di questo file"
-      ],
       "Checkout expired, please try again": [
         "Checkout scaduto, riprova"
       ],
@@ -4816,32 +4839,17 @@
       "Company name or personal name is required": [
         "Il nome dell'azienda o il nome personale è obbligatorio"
       ],
-      "Copying item to a non-folder is not allowed": [
-        "Non è possibile copiare l'elemento in un elemento che non è una cartella"
-      ],
       "Could not generate the device profile. Please try again.": [
         "Non è stato possibile creare il profilo del dispositivo. Riprova."
       ],
       "Could not grant access to the organization key": [
         "Impossibile concedere l'accesso alla chiave dell'organizzazione"
       ],
-      "Could not load sharing details": [
-        "Impossibile caricare i dettagli della condivisione"
-      ],
-      "Could not unlock the parent folder": [
-        "Impossibile sbloccare la cartella principale."
-      ],
-      "Could not unlock this item": [
-        "Impossibile sbloccare questo elemento."
-      ],
       "Couldn't load invoices. Please try again later.": [
         "Impossibile caricare le fatture. Riprova più tardi."
       ],
       "Couldn't load transactions. Please try again later.": [
         "Impossibile caricare le transazioni. Per favore riprova più tardi."
-      ],
-      "Creating folders in non-folders is not allowed": [
-        "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deseleziona almeno ${ calendarsToFixCount } calendario",
@@ -4884,12 +4892,6 @@
       "Failed to add group member": [
         "Impossibile aggiungere un membro al gruppo"
       ],
-      "Failed to decrypt bookmark password: ${ message }": [
-        "Impossibile decrittografare la password del segnalibro: ${ message }"
-      ],
-      "Failed to decrypt content key: ${ message }": [
-        "Impossibile decrittografare la chiave del contenuto: ${ message }"
-      ],
       "Failed to load OAuth modal.": [
         "Impossibile caricare la modalità OAuth."
       ],
@@ -4911,9 +4913,6 @@
       "Failed to update detailed monitoring.": [
         "Impossibile aggiornare il monitoraggio dettagliato."
       ],
-      "File has no revision": [
-        "Il file non ha revisioni"
-      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "File troppo grande. Il tuo logo deve essere di 30 KB o più piccolo."
       ],
@@ -4922,9 +4921,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Se il tempo sul tuo televisore è scaduto. Clicca su Aggiorna sul tuo televisore e reinserisci il tuo codice."
-      ],
-      "Image preview not found": [
-        "Anteprima dell'immagine non trovata"
       ],
       "IMAP server is required": [
         "È richiesto il server IMAP"
@@ -4986,9 +4982,6 @@
       "Invalid private key file": [
         "File della chiave privata non valido"
       ],
-      "Invalid URL": [
-        "URL non valido"
-      ],
       "Invalid VAT number": [
         "Partita IVA non valida"
       ],
@@ -4998,43 +4991,21 @@
       "Label name cannot be empty.": [
         "Il nome dell'etichetta non può essere vuoto."
       ],
-      "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "Il vecchio link pubblico non può essere aggiornato. Crea un nuovo link pubblico."
-      ],
       "Maximum ${ displayMaxValue } allowed": [
         "Massimo ${ displayMaxValue } consentito"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Indirizzo del membro non trovato. Contatta l'assistenza clienti per risolvere il problema"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Unisci almeno ${ calendarsToFixCount } calendario con un calendario ${ BRAND_NAME } esistente",
         "Unisci almeno ${ calendarsToFixCount } calendari con calendari ${ BRAND_NAME } esistenti"
       ],
-      "Missing inviter email": [
-        "Manca l'indirizzo email dell'invitante"
-      ],
       "Missing key packet": [
         "Pacchetto chiavi mancante"
-      ],
-      "Missing organization private key": [
-        "Manca la chiave privata dell'organizzazione"
-      ],
-      "Missing organization public key": [
-        "Manca la chiave pubblica dell'organizzazione"
-      ],
-      "Missing signature": [
-        "Firma mancante"
       ],
       "Name already exists": [
         "Nome già esistente"
       ],
       "Name does not match": [
         "Il nome non corrisponde"
-      ],
-      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
-        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
-        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
       ],
       "No calendars found to import": [
         "Nessun calendario trovato da importare"
@@ -5048,9 +5019,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Nessuna email trovata da importare - l'account non ha una cartella di posta ricevuta"
       ],
-      "No file data was received. Please try again.": [
-        "Non sono stati ricevuti dati del file. Riprova."
-      ],
       "No image selected": [
         "Nessuna immagine selezionata"
       ],
@@ -5063,15 +5031,6 @@
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Per questo indirizzo è possibile modificare solo le maiuscole e la punteggiatura (punti, trattini e trattini bassi)"
       ],
-      "Operation aborted": [
-        "Operazione interrotta"
-      ],
-      "Organization does not have enough seats available": [
-        "L'organizzazione non dispone di posti disponibili a sufficienza"
-      ],
-      "Organization does not have enough storage available": [
-        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
-      ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
       ],
@@ -5080,9 +5039,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
-      ],
-      "Part of the file appears to be corrupted": [
-        "Parte del file sembra essere danneggiata"
       ],
       "Password is required": [
         "Password necessaria"
@@ -5223,9 +5179,6 @@
       "Server not found": [
         "Server non trovato"
       ],
-      "Signature is missing": [
-        "Manca la firma"
-      ],
       "Signature verification failed": [
         "Verifica della firma non riuscita"
       ],
@@ -5243,9 +5196,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alcuni nomi delle etichette superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
-      ],
-      "Something went wrong": [
-        "Qualcosa è andato storto"
       ],
       "Something went wrong while converting the address": [
         "Si è verificato un errore durante la conversione dell'indirizzo"
@@ -5307,9 +5257,6 @@
       "The policy name must be between 3 and 40 characters.": [
         "Il nome della policy deve essere compreso tra 3 e 40 caratteri."
       ],
-      "The uploaded file does not match the original. Please try again.": [
-        "Il file caricato non corrisponde all'originale. Riprova."
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ci sono troppe cartelle nel tuo account esterno. Personalizza l'importazione per eliminare alcune cartelle."
       ],
@@ -5331,17 +5278,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
       ],
-      "This file has no version available to download": [
-        "Non è disponibile alcuna versione di questo file da scaricare"
-      ],
       "This folder name is not available. Please choose a different name.": [
         "Questo nome della cartella non è disponibile. Scegli un nome diverso."
-      ],
-      "This item is no longer shared": [
-        "Questo elemento non è più condiviso"
-      ],
-      "This item is not shared": [
-        "Questo elemento non è condiviso"
       ],
       "This label name is not available. Please choose a different name.": [
         "Questo nome dell'etichetta non è disponibile. Scegli un nome diverso."
@@ -5397,12 +5335,6 @@
       "Verification did not succeed, please try again in an hour.": [
         "Verifica non riuscita, riprova tra un'ora."
       ],
-      "Verification keys are not available": [
-        "Le chiavi di verifica non sono disponibili"
-      ],
-      "Verification keys for ${ signatureType } are not available": [
-        "Le chiavi di verifica per ${ signatureType } non sono disponibili"
-      ],
       "We couldn’t send a verification code using this method.": [
         "Non è stato possibile inviare un codice di verifica con questo metodo."
       ],
@@ -5417,9 +5349,6 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Codice di verifica errato. Assicurati di aver copiato il codice correttamente e riprova. Ci possono volere fino a 24 ore affinché le modifiche vengano applicate."
-      ],
-      "You do not have access to this item": [
-        "Non hai accesso a questo elemento"
       ],
       "You have reached the maximum number of calendars.": [
         "Hai raggiunto il numero massimo di calendari."
@@ -6226,29 +6155,6 @@
         "Terabyte"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Attivato"
-      ],
-      "All": [
-        "Tutto"
-      ],
-      "Errors": [
-        "Errori"
-      ],
-      "In progress": [
-        "In corso"
-      ],
-      "Migrated": [
-        "La migrazione è riuscita"
-      ],
-      "Not activated": [
-        "Non attivo"
-      ],
-      "Pending": [
-        "In attesa"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } aggiornato"
@@ -6856,20 +6762,6 @@
         "Altre opzioni di importazione"
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Ci sono errori"
-      ],
-      "In progress": [
-        "In corso"
-      ],
-      "Migrated": [
-        "Migrato"
-      ],
-      "Pending": [
-        "In attesa"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } su ${ totalContacts } contatti non saranno importati. Clicca per i dettagli"
@@ -6916,9 +6808,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia di crittografia di ${ BRAND_NAME } implica che nessuno può accedere alla tua password - nemmeno noi."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } richiede un indirizzo ${ BRAND_NAME } per la sincronizzazione sicura degli eventi e la crittografia. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nuovo calendario",
@@ -7948,9 +7837,6 @@
       "Fill in user details": [
         "Compila i dettagli dell'utente"
       ],
-      "Find out what can be migrated.": [
-        "Scopri cosa può essere migrato."
-      ],
       "for ${ price }": [
         "per ${ price }"
       ],
@@ -8397,9 +8283,6 @@
       "No single sign-on": [
         "Nessun single sign-on"
       ],
-      "No users to display": [
-        "Nessun utente da mostrare"
-      ],
       "Nothing changes in your other ${ BRAND_NAME } account.": [
         "Il tuo altro account ${ BRAND_NAME } rimane invariato."
       ],
@@ -8725,9 +8608,6 @@
       "Select a group to view its members and settings.": [
         "Seleziona un gruppo per visualizzarne i membri e le impostazioni."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Seleziona esattamente ciò che vuoi migrare. La selezione verrà applicata a tutti gli utenti dell'organizzazione."
-      ],
       "Select one or multiple user affiliations": [
         "Seleziona una o più affiliazioni utente"
       ],
@@ -8886,9 +8766,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporaneamente non disponibile a causa dell'elevato traffico. Riprova più tardi."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
-      ],
       "Thank you": [
         "Grazie"
       ],
@@ -9022,12 +8899,6 @@
       "This service is not available to users signing in with single sign-on.": [
         "Questo servizio non è disponibile per gli utenti che accedono con single sign-on."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Non è possibile migrare questo utente perché il suo indirizzo e-mail non è disponibile su ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Questo utente non può essere migrato a causa di incompatibilità tra le piattaforme."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Questo utente è attualmente responsabile dei pagamenti per l'organizzazione. Abbassando il livello di questo membro, si diventa responsabile per pagamenti dell'organizzazione."
       ],
@@ -9136,32 +9007,8 @@
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Per aiutarti a ricordare la tua password, ti chiederemo di inserirla periodicamente. Con il tempo te lo chiederemo sempre meno."
       ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
-      ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Per rimanere informato sugli ultimi aggiornamenti dei prodotti ${ BRAND_NAME }, puoi iscriverti alle nostre mailing list e ${ blogLink } occasionalmente."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Per migrare questo utente, aggiungi e verifica il dominio e-mail alla pagina ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Per eseguire la migrazione di questo utente, abilita il suo account nella tua ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Per eseguire la migrazione di questo utente, abilita il suo account in ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Per eseguire la migrazione di questo utente, abilita il suo indirizzo in ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Per eseguire la migrazione di questo utente, deve accettare l'invito a entrare in ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Per eseguire la migrazione di questo utente, annulla l'archiviazione nella tua ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Per eseguire la migrazione di questo utente, riattivalo nella tua ${ provider.adminConsoleName }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per procedere, seleziona un metodo di recupero dell'account in modo da poter verificare la richiesta."
@@ -9504,9 +9351,6 @@
       ],
       "X": [
         "X"
-      ],
-      "You": [
-        "Tu"
       ],
       "You already have a free account": [
         "Hai già un account gratuito"
@@ -10188,9 +10032,6 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendars": [
-        "Calendari"
-      ],
       "Card details": [
         "Dettagli della carta"
       ],
@@ -10374,9 +10215,6 @@
       ],
       "Email with @yourcompany.com domain": [
         "Email con dominio @tuaazienda.com"
-      ],
-      "Emails": [
-        "Email"
       ],
       "Emails (all messages)": [
         "Email (tutti i messaggi)"
@@ -13777,12 +13615,6 @@
       "Billing Country": [
         "Paese di fatturazione"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "“Born Private” non può essere acquistato se si dispone di un abbonamento attivo."
-      ],
-      "Born Private requires a donation.": [
-        "Per accedere a “Born Private” è richiesta una donazione."
-      ],
       "Buying credits requires a separate purchase.": [
         "L'acquisto dei crediti richiede un acquisto separato."
       ],
@@ -13963,9 +13795,6 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Possiedi già ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Hai già acquistato “Born Private”."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Ti verranno addebitati ${ amountToCharge } dal metodo di pagamento selezionato."
       ],
@@ -13974,9 +13803,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Sarai presto reindirizzato per verificare il pagamento."
-      ],
-      "Your account is too old for Born Private.": [
-        "Il tuo account è troppo vecchio per Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
@@ -14244,9 +14070,6 @@
       "Search for an email or IP address": [
         "Cerca per email o indirizzo IP"
       ],
-      "Search for users or addresses": [
-        "Cerca utenti o indirizzi"
-      ],
       "Search parent folder": [
         "Cerca nella cartella principale"
       ],
@@ -14354,14 +14177,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Effettua l'upgrade a ${ upsellPlanTitle }"
-      ]
-    },
-    "Property": {
-      "attributes": [
-        "Attributi"
-      ],
-      "key": [
-        "chiave"
       ]
     },
     "Property type": {
@@ -17423,26 +17238,6 @@
         "Per gli individui"
       ]
     },
-    "Table header": {
-      "Activated": [
-        "Attivato"
-      ],
-      "Estimated size": [
-        "Dimensione stimata"
-      ],
-      "Migration status": [
-        "Stato della migrazione"
-      ],
-      "Size": [
-        "Dimensione"
-      ],
-      "Status": [
-        "Stato"
-      ],
-      "User": [
-        "Utente"
-      ]
-    },
     "TableHeader": {
       "Action": [
         "Azione"
@@ -17848,9 +17643,6 @@
       "Choose a deployment method": [
         "Scegli un metodo di distribuzione"
       ],
-      "Choose a provider": [
-        "Scegli un fornitore"
-      ],
       "Choose a removal method": [
         "Scegli un metodo di rimozione"
       ],
@@ -17871,9 +17663,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "Configurare il profilo del dispositivo VPN sempre attivo"
-      ],
-      "Configure migration": [
-        "Configura la migrazione"
       ],
       "Confirm": [
         "Conferma"
@@ -18323,9 +18112,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importa tramite ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Importa i tuoi dati in ${ BRAND_NAME }"
-      ],
       "Imports": [
         "Importazioni"
       ],
@@ -18629,12 +18415,6 @@
       "Select contact group": [
         "Seleziona gruppo di contatti"
       ],
-      "Select data to import": [
-        "Seleziona i dati da importare"
-      ],
-      "Select users to migrate": [
-        "Seleziona gli utenti da migrare"
-      ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Invia e ricevi Gmail usando ${ MAIL_APP_NAME }"
       ],
@@ -18933,9 +18713,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Benvenuto in ${ BRAND_NAME } for Business"
       ],
-      "What are you migrating?": [
-        "Cosa stai migrando?"
-      ],
       "What changes if you switch to the Free plan": [
         "Cosa cambia se passi al piano gratuito"
       ],
@@ -19117,9 +18894,6 @@
       "Customize import to reduce the number of labels": [
         "Personalizza l'importazione per ridurre il numero delle etichette"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Stato della migrazione dei dati da ${ providerName } a ${ BRAND_NAME }"
-      ],
       "Device name and app version": [
         "Nome del dispositivo e versione dell'app"
       ],
@@ -19245,9 +19019,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Posizione approssimativa dell'utente (basata sul suo indirizzo IP)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Utenti che hanno effettuato l'accesso al proprio account ${ BRAND_NAME }"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Gli utenti vedranno il tuo logo invece dell'icona di ${ BRAND_NAME } quando accedono alle nostre app web."
