@@ -16,6 +16,9 @@ import { selectFeatureFlag } from './user';
 
 export const selectMonitorState = (state: State) => state.monitor;
 export const selectMonitorSettings = ({ user }: State) => user.monitor;
+export const selectCanCheckCompromisedPasswords = ({ user }: State) => user.plan?.MonitorCompromisedPasswords ?? false;
+export const selectCanUseDarkWebMonitoring = ({ user }: State) => user.plan?.MonitorDarkWeb ?? false;
+export const selectCanCheckDuplicatePasswords = ({ user }: State) => user.plan?.MonitorDeduplication ?? false;
 export const selectTotalBreaches = (state: State) => state.monitor?.total;
 export const selectHasCustomDomains = (state: State) => state.monitor?.customDomains;
 export const selectCustomBreaches = (state: State) => state.monitor?.custom;
