@@ -1,5 +1,6 @@
 import type { FC, RefObject } from 'react';
 import { useEffect, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { pipe } from 'imask/esm/masked/pipe';
 import { c } from 'ttag';
@@ -31,6 +32,7 @@ import type { ItemState } from '../../../hooks/items/useItemState';
 import { useItemState } from '../../../hooks/items/useItemState';
 import { otpGenerationErrorNotifcation } from '../../../hooks/useOTPCode';
 import { getItemKey } from '../../../lib/items/item.utils';
+import { selectCanRevealSensitiveContent } from '../../../store/selectors/user';
 import type { Item, ItemRevisionWithOptimistic } from '../../../types/data/items';
 import type { ObfuscatedItemProperty } from '../../../types/data/obfuscation';
 import type { Share } from '../../../types/data/shares';
@@ -82,7 +84,7 @@ const fromExpirationValue = (content: string) =>
 const withItemCondition = (condition: boolean, item: ContextMenuItem): ContextMenuItem[] => (condition ? [item] : []);
 
 /** Returns context menu items to copy item fields depending on item type */
-const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => {
+const getItemCopyButtons = (item: Item, getTotp: GetTotp, canRevealSensitiveContent: boolean): ContextMenuItem[] => {
     switch (item.type) {
         case 'login':
             return [
@@ -102,7 +104,7 @@ const getItemCopyButtons = (item: Item, getTotp: GetTotp): ContextMenuItem[] => 
                     type: 'button',
                     icon: <IcKey />,
                     name: c('Action').t`Copy password`,
-                    copy: fromObfuscatedValue(item.content.password),
+                    copy: canRevealSensitiveContent ? fromObfuscatedValue(item.content.password) : undefined,
                 },
                 {
                     type: 'button',
@@ -237,17 +239,22 @@ export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
     const { close, state } = useContextMenu();
     const itemState = useItemState(item, share);
     const itemActions = useItemActions(item);
+    const canRevealSensitiveContent = useSelector(selectCanRevealSensitiveContent(share.shareId));
 
     const elements: ContextMenuElement[] = useMemo(() => {
         if (item.failed) return [];
 
         const getOTPCode = fromOTPValue(generateOTP, createNotification);
-        const copyBtns: ContextMenuElement[] = getItemCopyButtons(item.data, getOTPCode).filter(({ copy }) => !!copy);
+        const copyBtns: ContextMenuElement[] = getItemCopyButtons(
+            item.data,
+            getOTPCode,
+            canRevealSensitiveContent
+        ).filter(({ copy }) => !!copy);
         const actionBtns = getItemActionButtons(itemState, itemActions);
         const separator = copyBtns.length > 0 && actionBtns.length > 0 ? [CONTEXT_MENU_SEPARATOR] : [];
 
         return copyBtns.concat(separator, actionBtns);
-    }, [item, itemState, itemActions]);
+    }, [item, itemState, itemActions, canRevealSensitiveContent]);
 
     const itemOpened = state?.id === getItemKey(item);
     const autoClose = elements.length === 0 && itemOpened;

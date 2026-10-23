@@ -25,6 +25,7 @@ import { getModeDescription, isAutofillModeDataOfTypeUrl } from '../../../lib/ur
 import { isValidScheme } from '../../../lib/urls/utils/utils';
 import { selectAliasByAliasEmail } from '../../../store/selectors/alias';
 import { selectTOTPLimits } from '../../../store/selectors/limits';
+import { selectCanRevealSensitiveContent } from '../../../store/selectors/user';
 import { TelemetryFieldType } from '../../../types/data/telemetry';
 import { AutofillMode } from '../../../types/protobuf';
 import type { MaybeNull } from '../../../types/utils';
@@ -55,6 +56,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
     const sanitizedUrls = useMemo(() => autofillUrls.filter((url) => isValidScheme(url.url)), [autofillUrls]);
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId) || secureLinkItem;
     const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
+    const passwordRevealable = useSelector(selectCanRevealSensitiveContent(shareId));
     const passwordStrength = usePasswordStrength(password);
     const showEmptyEmailOrUsername = !(itemEmail || itemUsername);
     /** Checked against the full `autofillUrls`, not `sanitizedUrls`: `Pattern`/`RegularExpression`
@@ -114,13 +116,15 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                 <ValueControl
                     clickToCopy
                     hidden
+                    revealable={passwordRevealable}
+                    revealableHint={c('Info').t`Password hidden. You can still autofill it.`}
                     icon={IcKey}
                     label={c('Label').t`Password`}
                     value={password}
                     ellipsis={false}
                     valueClassName="text-monospace text-break-all"
                     actions={
-                        passwordStrength
+                        passwordStrength && passwordRevealable
                             ? [<PasswordStrength className="mr-4" strength={passwordStrength} inline />]
                             : undefined
                     }

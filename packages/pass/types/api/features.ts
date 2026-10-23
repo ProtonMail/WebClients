@@ -31,6 +31,7 @@ export enum PassFeature {
     PassOnboardingUpgrade = 'PassOnboardingUpgrade',
     PassProtonAnniversaryPromo2025 = 'PassProtonAnniversaryPromo2025',
     PassRenameAdminToManager = 'PassRenameAdminToManager',
+    Pass__V1_44__ShareWithHiddenPassword = 'Pass__V1_44__ShareWithHiddenPassword',
     PassUserEventsV1 = 'PassUserEventsV1',
     PassWebDesktopLifetimeBanner = 'PassWebDesktopLifetimeBanner',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
