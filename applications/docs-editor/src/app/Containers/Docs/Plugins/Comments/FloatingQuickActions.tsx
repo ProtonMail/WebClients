@@ -75,7 +75,7 @@ export function FloatingQuickActions({
 
   return (
     <div
-      className="shadow-raised border-weak bg-norm pointer-events-auto absolute z-10 flex flex-col gap-1 rounded-lg border p-1"
+      className="pointer-events-auto absolute z-10 flex flex-col gap-1 rounded-lg border border-[--border-weak] bg-[--background-norm] p-1 shadow-[shadow:--shadow-raised]"
       ref={boxRef}
     >
       <ToolbarTooltip
@@ -93,7 +93,7 @@ export function FloatingQuickActions({
       </ToolbarTooltip>
       {suggestionsEnabled && !isSuggestionMode && (
         <>
-          <hr className="min-h-px bg-[--border-weak]" />
+          <hr className="min-h-px border-0 bg-[--border-weak]" />
           <ToolbarTooltip
             originalPlacement="right"
             title={<ShortcutLabel label={suggestionToggleLabel} shortcut="SUGGESTION_MODE_SHORTCUT" />}
