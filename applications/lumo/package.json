@@ -80,7 +80,7 @@
         "lucide-react": "^1.49.0",
         "mdast-util-gfm": "^3.1.0",
         "mdast-util-to-markdown": "^2.1.2",
-        "msw": "2.12.14",
+        "msw": "catalog:",
         "pdfjs-dist": "5.4.530",
         "pptxgenjs": "^4.0.1",
         "react": "catalog:",
@@ -137,10 +137,10 @@
         "cross-env": "catalog:",
         "eslint": "catalog:",
         "fake-indexeddb": "catalog:",
-        "postcss": "^8.5.30",
-        "sass": "^1.80.3",
+        "postcss": "catalog:",
+        "sass": "catalog:",
         "typescript": "catalog:",
-        "webpack": "^5.111.1"
+        "webpack": "catalog:"
     },
     "msw": {
         "workerDirectory": [

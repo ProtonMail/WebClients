@@ -92,13 +92,13 @@
         "@types/react": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "browserslist": "^4.29.3",
+        "browserslist": "catalog:",
         "esbuild": "^0.28.1",
         "eslint": "catalog:",
         "fake-indexeddb": "catalog:",
         "jest": "catalog:",
         "jest-when": "catalog:",
         "typescript": "catalog:",
-        "webpack": "^5.111.1"
+        "webpack": "catalog:"
     }
 }

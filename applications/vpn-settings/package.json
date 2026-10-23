@@ -66,16 +66,16 @@
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
         "@vitejs/plugin-react": "^6.1.2",
-        "@vitest/coverage-v8": "^5.0.5",
+        "@vitest/coverage-v8": "catalog:",
         "cross-env": "catalog:",
         "eslint": "catalog:",
-        "html-webpack-plugin": "^5.6.8",
+        "html-webpack-plugin": "catalog:",
         "jsdom": "^26.1.0",
         "prettier": "catalog:",
         "typescript": "catalog:",
-        "vite": "^8.3.4",
-        "vitest": "^5.0.5",
-        "webpack": "^5.111.1",
-        "webpack-dev-server": "^6.0.0"
+        "vite": "catalog:",
+        "vitest": "catalog:",
+        "webpack": "catalog:",
+        "webpack-dev-server": "catalog:"
     }
 }

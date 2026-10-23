@@ -721,13 +721,13 @@
         "@types/tinycolor2": "catalog:",
         "@typescript/native": "catalog:",
         "@vitest/browser-playwright": "^5.0.5",
-        "@vitest/coverage-v8": "^5.0.5",
+        "@vitest/coverage-v8": "catalog:",
         "@webgpu/types": "^0.1.74",
         "eslint": "catalog:",
         "playwright": "^1.63.0",
         "prettier": "catalog:",
         "typescript": "catalog:",
-        "vitest": "^5.0.5"
+        "vitest": "catalog:"
     },
     "peerDependencies": {
         "electron": "*"
