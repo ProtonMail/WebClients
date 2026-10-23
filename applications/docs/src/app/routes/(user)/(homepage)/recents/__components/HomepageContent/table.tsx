@@ -31,7 +31,7 @@ export function Title({ topLevelSticky, ...props }: TitleProps) {
     <div
       {...props}
       className={clsx(
-        'sticky top-[1px] hidden h-11 border-b text-[1rem] font-semibold before:absolute before:inset-0 before:z-[-1] before:rounded-xl before:bg-[#fff] small:!block [[data-theme-mode=dark]_&]:before:!bg-[--background-norm]',
+        'sticky top-[1px] z-[1] hidden h-11 border-b text-[1rem] font-semibold before:absolute before:inset-0 before:z-[-1] before:rounded-xl before:bg-[#fff] small:!block [[data-theme-mode=dark]_&]:before:!bg-[--background-norm]',
         props.className,
       )}
     >
@@ -60,7 +60,11 @@ export function Head({ children, secondarySticky, topLevelSticky, topLevelSticky
       data-bg-hack={!topLevelSticky ? '' : undefined}
       data-bg-hack-mobile={topLevelStickyOnlyOnMobile ? '' : undefined}
       {...props}
-      className={clsx('sticky left-0 top-[1px]', secondarySticky && 'small:!top-[calc(2.75rem+1px)]', props.className)}
+      className={clsx(
+        'sticky left-0 top-[1px] z-[1]',
+        secondarySticky && 'small:!top-[calc(2.75rem+1px)]',
+        props.className,
+      )}
     >
       {topLevelSticky ? (
         <div className={clsx('relative z-[-1] mx-[-1px] h-0', topLevelStickyOnlyOnMobile && 'small:!hidden')}>
