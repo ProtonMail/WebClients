@@ -63,6 +63,7 @@ export class RecordingSession {
     private outcomeError: string | null = null;
     private finalAudioDiagnostics: AudioMixerDiagnostics | null = null;
     private stallSummary: StallSummary | null = null;
+    private stopResult: Promise<OpfsRecording | null> | null = null;
 
     constructor({
         codec,
@@ -263,6 +264,10 @@ export class RecordingSession {
             return null;
         }
 
+        if (this.stopResult) {
+            return this.stopResult;
+        }
+
         const stopStartedAt = performance.now();
         this.stopStartedAt = stopStartedAt;
         this.bytesBeforeStop = stats?.snapshot().totalBytes ?? 0;
@@ -271,12 +276,13 @@ export class RecordingSession {
             Math.max(stopStartedAt, stats?.snapshot().lastChunkAt ?? 0, storage.getLastChunkWrittenAt() ?? 0);
 
         try {
-            return await withIdleTimeout(
+            this.stopResult = withIdleTimeout(
                 this.stopRecorderAndFinalize(mediaRecorder, storage),
                 'Stop recording',
                 STOP_IDLE_TIMEOUT_MS,
                 getLastStopProgressAt
             );
+            return await this.stopResult;
         } finally {
             this.stopFinishedAt = performance.now();
             const snapshot = this.stats?.snapshot();

@@ -157,4 +157,22 @@ describe('RecordingSession.stop', () => {
 
         await expect(result).resolves.toBe(recordedFile);
     });
+
+    it('requests the encoder stop once and resolves both callers with the file when stop is called again mid-flush', async () => {
+        let stopEncoderCalls = 0;
+        boundary.stopEncoder = () => {
+            stopEncoderCalls += 1;
+            return resolveAfter(5_000, undefined);
+        };
+        const session = await startSession();
+
+        const firstStop = session.stop();
+        await vi.advanceTimersByTimeAsync(1_000);
+        const secondStop = session.stop();
+        await vi.advanceTimersByTimeAsync(5_000);
+
+        await expect(firstStop).resolves.toBe(recordedFile);
+        await expect(secondStop).resolves.toBe(recordedFile);
+        expect(stopEncoderCalls).toBe(1);
+    });
 });
