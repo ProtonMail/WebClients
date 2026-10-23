@@ -115,6 +115,7 @@ import { getInitialCycle } from './helpers/getInitialCycle';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
 import { type SelectedProductPlans, getDefaultSelectedProductPlans } from './helpers/payment';
 import { getCommonTelemetryPayload, reportChangeTelemetry, telemetryContext } from './helpers/subscriptionTelemetry';
+import { useCheckoutCondensedAddons } from './helpers/useCheckoutCondensedAddons';
 import { useVpn2024AddonsExperiment } from './helpers/useVpn2024AddonsExperiment';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
@@ -1143,6 +1144,12 @@ const SubscriptionContainerInner = ({
 
     const [optimisticPlanIDs, setOptimisticPlanIDs] = useState<PlanIDs | null>(null);
     const vpn2024AddonsExperiment = useVpn2024AddonsExperiment(optimisticPlanIDs ?? model.planIDs);
+    const condensedAddons = useCheckoutCondensedAddons({
+        selectedPlanIDs: optimisticPlanIDs ?? model.planIDs,
+        latestSubscription,
+        user,
+        isLiteApp: isAccountLiteApp,
+    });
     const optimisticPlanIDsRef = useRef<any | undefined>();
 
     const handleChangePlanIDs = useHandler(
@@ -1261,6 +1268,7 @@ const SubscriptionContainerInner = ({
                                                 className="subscription-container-plan-customizer"
                                                 telemetryContext={telemetryContext}
                                                 app={app}
+                                                condensedAddons={condensedAddons}
                                             />
                                         )}
                                         {displayPassAsFakeAddon && (

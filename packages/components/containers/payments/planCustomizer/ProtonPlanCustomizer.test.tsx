@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
@@ -526,5 +527,186 @@ it('should balance scribes and lumos when total exceeds members', () => {
         [PLANS.MAIL_PRO]: 1,
         [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
         [ADDON_NAMES.LUMO_MAIL_PRO]: 4,
+    });
+});
+
+describe('condensed add-ons', () => {
+    const unlimitedProps = buildProps({ selectedPlanIDs: { [PLANS.BUNDLE]: 1 }, meetAddonEnabled: true });
+
+    it('should keep the banners when condensedAddons is not passed', () => {
+        render(<ProtonPlanCustomizer {...unlimitedProps} />);
+
+        expect(screen.getByTestId('lumo-addon-banner')).toBeInTheDocument();
+        expect(screen.getByTestId('meet-addon-banner')).toBeInTheDocument();
+        expect(screen.queryByTestId('condensed-addons-card')).not.toBeInTheDocument();
+    });
+
+    it('should group Meet then Lumo into one card instead of the banners', () => {
+        render(<ProtonPlanCustomizer {...unlimitedProps} condensedAddons />);
+
+        const cards = screen.getAllByTestId('condensed-addons-card');
+        expect(cards).toHaveLength(1);
+        expect(screen.queryByTestId('lumo-addon-banner')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('meet-addon-banner')).not.toBeInTheDocument();
+
+        const meetRow = screen.getByTestId('meet-addon-row');
+        const lumoRow = screen.getByTestId('lumo-addon-row');
+        expect(cards[0]).toContainElement(meetRow);
+        expect(cards[0]).toContainElement(lumoRow);
+        expect(meetRow.compareDocumentPosition(lumoRow) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+
+        [
+            { row: meetRow, name: 'Meet Professional' },
+            { row: lumoRow, name: 'Lumo' },
+        ].forEach(({ row, name }) => {
+            expect(within(row).getByText(name)).toBeInTheDocument();
+            expect(within(row).getByText('per month')).toBeInTheDocument();
+            expect(within(row).getByRole('button', { name: `About ${name}` })).toBeInTheDocument();
+            expect(within(row).getByRole('button', { name: `Add ${name}` })).toBeInTheDocument();
+        });
+    });
+
+    // The added state must be whatever the banner layout shows today, rendered inside the card
+    const addedStateTestIds = [
+        `increase-addon-${ADDON_NAMES.LUMO_BUNDLE}`,
+        `decrease-addon-${ADDON_NAMES.LUMO_BUNDLE}`,
+        `increase-addon-${ADDON_NAMES.MEET_BUNDLE}`,
+        `decrease-addon-${ADDON_NAMES.MEET_BUNDLE}`,
+        'meet-addon-active',
+        'decrease-blocked-reason',
+    ];
+
+    const getRenderedTestIds = () => addedStateTestIds.filter((testId) => screen.queryByTestId(testId));
+
+    it.each([
+        { addon: ADDON_NAMES.LUMO_BUNDLE, rowTestId: 'lumo-addon-row', otherRowTestId: 'meet-addon-row' },
+        { addon: ADDON_NAMES.MEET_BUNDLE, rowTestId: 'meet-addon-row', otherRowTestId: 'lumo-addon-row' },
+    ])(
+        'should show the same added state as today inside the card once $addon is added',
+        ({ addon, rowTestId, otherRowTestId }) => {
+            const { rerender } = render(<ProtonPlanCustomizer {...unlimitedProps} condensedAddons />);
+
+            fireEvent.click(screen.getByTestId(`${rowTestId}-add-button`));
+            const newPlanIDs = { [PLANS.BUNDLE]: 1, [addon]: 1 };
+            expect(onChangePlanIDsMock).toHaveBeenCalledWith(newPlanIDs);
+
+            rerender(<ProtonPlanCustomizer {...unlimitedProps} selectedPlanIDs={newPlanIDs} />);
+            const controlTestIds = getRenderedTestIds();
+            expect(controlTestIds.length).toBeGreaterThan(0);
+
+            rerender(<ProtonPlanCustomizer {...unlimitedProps} selectedPlanIDs={newPlanIDs} condensedAddons />);
+            const card = screen.getByTestId('condensed-addons-card');
+            expect(getRenderedTestIds()).toEqual(controlTestIds);
+            controlTestIds.forEach((testId) => {
+                expect(card).toContainElement(screen.getByTestId(testId));
+            });
+            expect(screen.queryByTestId(rowTestId)).not.toBeInTheDocument();
+            expect(card).toContainElement(screen.getByTestId(otherRowTestId));
+        }
+    );
+
+    it('should show the blocked decrease reason inside the card when renewal is disabled', () => {
+        const planIDs: PlanIDs = {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 1,
+            [ADDON_NAMES.LUMO_MAIL_PRO]: 1,
+        };
+
+        render(
+            <ProtonPlanCustomizer
+                {...buildProps({
+                    selectedPlanIDs: planIDs,
+                    latestSubscription: buildSubscription(planIDs, { Renew: Renew.Disabled }),
+                })}
+                condensedAddons
+            />
+        );
+
+        const card = screen.getByTestId('condensed-addons-card');
+        expect(screen.getByTestId(`decrease-addon-${ADDON_NAMES.LUMO_MAIL_PRO}`)).toBeDisabled();
+        expect(card).toContainElement(screen.getByTestId(`decrease-addon-${ADDON_NAMES.LUMO_MAIL_PRO}`));
+        expect(within(card).getByTestId('decrease-blocked-reason')).toHaveTextContent(
+            'Please reactivate your subscription first to decrease the number of add-ons.'
+        );
+    });
+
+    it('should match today when Lumo is already on an Unlimited subscription that does not renew', () => {
+        const planIDs: PlanIDs = { [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 };
+        const props = buildProps({
+            selectedPlanIDs: planIDs,
+            latestSubscription: buildSubscription(planIDs, { Renew: Renew.Disabled }),
+            meetAddonEnabled: true,
+        });
+
+        // Single-user plan: with renewal off the Lumo stepper has min === max, so today nothing is shown for Lumo
+        const { rerender } = render(<ProtonPlanCustomizer {...props} />);
+        expect(getRenderedTestIds()).toEqual([]);
+        expect(screen.queryByTestId('lumo-addon-banner')).not.toBeInTheDocument();
+        expect(screen.getByTestId('meet-addon-banner')).toBeInTheDocument();
+
+        rerender(<ProtonPlanCustomizer {...props} condensedAddons />);
+        const card = screen.getByTestId('condensed-addons-card');
+        expect(getRenderedTestIds()).toEqual([]);
+        expect(screen.queryByTestId('lumo-addon-row')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('lumo-addon-banner')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('meet-addon-banner')).not.toBeInTheDocument();
+        expect(card).toContainElement(screen.getByTestId('meet-addon-row'));
+    });
+
+    it('should not render the card when Lumo and Meet are not available', () => {
+        render(
+            <ProtonPlanCustomizer
+                {...buildProps({
+                    selectedPlanIDs: { [PLANS.BUNDLE]: 1 },
+                    lumoAddonEnabled: false,
+                    meetAddonEnabled: false,
+                })}
+                condensedAddons
+            />
+        );
+
+        expect(screen.queryByTestId('condensed-addons-card')).not.toBeInTheDocument();
+    });
+
+    it('should show the added Meet state in the card when Meet is already selected', () => {
+        const planIDs: PlanIDs = { [PLANS.BUNDLE]: 1, [ADDON_NAMES.MEET_BUNDLE]: 1 };
+
+        render(
+            <ProtonPlanCustomizer
+                {...buildProps({
+                    selectedPlanIDs: planIDs,
+                    latestSubscription: buildSubscription(planIDs),
+                    meetAddonEnabled: true,
+                })}
+                condensedAddons
+            />
+        );
+
+        const card = screen.getByTestId('condensed-addons-card');
+        expect(screen.queryByTestId('meet-addon-row')).not.toBeInTheDocument();
+        expect(card).toContainElement(screen.getByTestId('meet-addon-active'));
+        expect(card).toContainElement(screen.getByTestId('lumo-addon-row'));
+    });
+
+    it('should reach the seat stepper inside the card with Tab', async () => {
+        // Multi-user plan, so the Lumo stepper has room to increase and its button is enabled
+        const planIDs: PlanIDs = {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+            [ADDON_NAMES.LUMO_MAIL_PRO]: 1,
+        };
+
+        render(<ProtonPlanCustomizer {...buildProps({ selectedPlanIDs: planIDs })} condensedAddons />);
+
+        const card = screen.getByTestId('condensed-addons-card');
+        const increaseButton = screen.getByTestId(`increase-addon-${ADDON_NAMES.LUMO_MAIL_PRO}`);
+        expect(increaseButton).toBeEnabled();
+        expect(card).toContainElement(increaseButton);
+
+        // Tab through the page until focus lands on the stepper, bounded so a focus trap fails the test
+        for (let i = 0; i < 20 && document.activeElement !== increaseButton; i++) {
+            await userEvent.tab();
+        }
+        expect(increaseButton).toHaveFocus();
     });
 });
