@@ -1,5 +1,6 @@
 import type { ApiImportReportListResponse, ApiReport } from '../../api/api.interface';
-import type { ImportType } from '../../interface';
+import { ApiImporterState } from '../../api/api.interface';
+import { ImportType } from '../../interface';
 import type { Report, ReportSummariesMap, ReportSummary, ReportsMap } from './reports.interface';
 
 type NormalizeReport = (apiReport: ApiReport) => { report: Report; reportSummaries: ReportSummary[] };
@@ -62,4 +63,22 @@ export const normalizeReports: NormalizeReports = (reportsResponse) => {
     }, {});
 
     return { reportsMap, reportSummariesMap };
+};
+
+export const getDriveReportOutcome = (
+    previousSummaries: ReportSummariesMap,
+    summaries: ReportSummariesMap
+): 'success' | 'failed' | undefined => {
+    const changedDriveStates = Object.values(summaries)
+        .filter(
+            ({ localID, product, state }) => product === ImportType.DRIVE && previousSummaries[localID]?.state !== state
+        )
+        .map(({ state }) => state);
+
+    if (changedDriveStates.includes(ApiImporterState.DONE)) {
+        return 'success';
+    }
+    if (changedDriveStates.includes(ApiImporterState.FAILED)) {
+        return 'failed';
+    }
 };

@@ -18,6 +18,7 @@ import OLESSettingsArea from '../../oles/components/SettingsArea';
 import { ImporterOrganizationsProvider } from '../../oles/useImporterOrganizations';
 import useOLESFeatureStatus from '../../oles/useOLESFeatureStatus';
 import DriveConnectEntry from '../Modals/OAuth/Drive/DriveConnectEntry';
+import { DriveImportOutcomeModal } from '../Modals/OAuth/Drive/DriveImportOutcomeModal';
 import { driveOAuthViewsOverride } from '../Modals/OAuth/Drive/driveOAuthViews';
 import ImportsTable from '../ReportsTable/ImportsTable';
 import { SyncsTable } from '../ReportsTable/SyncsTable';
@@ -84,6 +85,7 @@ const SettingsArea = ({ config, app }: Props) => {
                     </SettingsSectionWide>
                 </PrivateMainSettingsArea>
             </EasySwitchStoreInitializer>
+            {isDriveNewUIEnabled ? <DriveImportOutcomeModal /> : null}
         </EasySwitchStoreProvider>
     );
 
