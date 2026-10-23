@@ -93,6 +93,8 @@ export type NewUserInviteCreateRequest = {
     FolderID?: string | null;
     /* Expiration time for the share */
     ExpirationTime?: number | null;
+    /* Whether the resulting share should hide sensitive content. Only allowed for Viewer (Read) roles */
+    HideSensitiveContent?: boolean | null;
 };
 export type NewUserInviteCreateBatchRequest = {
     /* New user invites */
@@ -770,6 +772,8 @@ export type InviteCreateRequest = {
     Data?: string | null;
     /* Expiration time for the share */
     ExpirationTime?: number | null;
+    /* Whether the resulting share should hide sensitive content. Only allowed for Viewer (Read) roles */
+    HideSensitiveContent?: boolean | null;
 };
 export type InviteCreateBatchRequest = {
     /* Invites for existing users */
