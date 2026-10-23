@@ -1362,7 +1362,7 @@
         "Black Friday"
       ],
       "Get the deal": [
-        "Indløs tilbuddet"
+        "Få tilbuddet"
       ]
     },
     "bfcampaign2026: Info": {
@@ -1379,7 +1379,7 @@
         "2 TB sikker lagerplads"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB lagerplads: 40x dit nuværende abonnement"
+        "200 GB lagerplads: 40 gange så meget som i dit nuværende abonnement"
       ],
       "3 TB of secure storage": [
         "3 TB sikker lagerplads"
@@ -1391,13 +1391,13 @@
         "6 individuelle konti"
       ],
       "Built-in 2FA authenticator": [
-        "Indbygget 2FA-godkender"
+        "Indbygget 2FA-godkendelse"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+        "Rabatterne er baseret på den månedlige standardpris. Dit abonnement fornyes til den årlige standardpris, når faktureringsperioden udløber."
       ],
       "Online document editor": [
-        "Online dokumentredigering"
+        "Online dokumenteditor"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -1406,7 +1406,7 @@
         "Stærkere beskyttelse mod cybertrusler"
       ],
       "Unlimited folders, labels, and filters": [
-        "Ubegrænsede mapper, etiketter og filtre"
+        "Ubegrænset antal mapper, etiketter og filtre"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
@@ -1445,7 +1445,7 @@
         "Black Friday"
       ],
       "for 12 months": [
-        "i 12 måneder"
+        "for 12 måneder"
       ],
       "Last chance to save big": [
         "Sidste chance for at spare stort"
@@ -6953,6 +6953,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nået grænsen for reservationspladser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Bed din administrator om at opgradere abonnementet eller fjerne en side fra sidepanelet med reservationssider i ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "For at tilføje en ny reservationsside, skal du fjerne en eksisterende fra sidepanelet for reservationssider i ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -10074,6 +10080,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Born Private-konti kan ikke købes uden et aktivt abonnement."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private kræver en donation."
+      ],
+      "You already own a Born Private account.": [
+        "Du ejer allerede en Born Private-konto."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Din konto er for gammel til Born Private."
       ]
     },
     "Payments.Error": {
@@ -13033,6 +13051,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brugeren har accepteret invitationen."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne bruger får administratorrettigheder næste gang de logger ind."
       ]
     },
     "Validation": {

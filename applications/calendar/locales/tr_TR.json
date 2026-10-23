@@ -1359,10 +1359,10 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Get the deal": [
-        "Tekliften yararlanın"
+        "Fırsatı yakala"
       ]
     },
     "bfcampaign2026: Info": {
@@ -1379,7 +1379,7 @@
         "2 TB güvenli depolama alanı"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
+        "200 GB depolama alanı: Mevcut tarifenizin 40 katı"
       ],
       "3 TB of secure storage": [
         "3 TB güvenli depolama alanı"
@@ -1391,25 +1391,25 @@
         "6 bireysel hesap"
       ],
       "Built-in 2FA authenticator": [
-        "Hazır iki adımlı kimlik doğrulayıcı"
+        "Yerleşik iki faktörlü kimlik doğrulayıcı"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
+        "İndirimler, standart aylık fiyatlandırmaya göre hesaplanmıştır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
       ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
       "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleme"
+        "Önceki dosya sürümlerini kurtarın"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
       ],
       "Unlimited folders, labels, and filters": [
-        "Sınırsız sayıda klasör, etiket ve süzgeç"
+        "Sınırsız sayıda klasör, etiket ve filtre"
       ],
       "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanma"
+        "Kendi e-posta etki alanınızı kullanın"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -1442,13 +1442,13 @@
         "Yılın en büyük indirimi"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "for 12 months": [
         "12 aylık"
       ],
       "Last chance to save big": [
-        "Büyük kazanç için son şans"
+        "Büyük tasarruf için son fırsat"
       ],
       "Protect your entire tribe": [
         "Kabilenizi koruyun"
@@ -6953,6 +6953,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Yöneticinizden tarifeyi yükseltmesini veya ${ CALENDAR_APP_NAME } içindeki Rezervasyon sayfaları kenar çubuğundan bir sayfayı kaldırmasını isteyin."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Yeni bir rezervasyon sayfası eklemek için ${ CALENDAR_APP_NAME } içindeki Rezervasyon sayfaları kenar çubuğundan var olan bir sayfayı kaldırın."
       ]
     },
     "info": {
@@ -10074,6 +10080,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Etkin bir abonelik varken Born Private hesapları satın alınamaz."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private girişimine bağış yapılması gerekir."
+      ],
+      "You already own a Born Private account.": [
+        "Zaten bir Born Private hesabınız var."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ]
     },
     "Payments.Error": {
@@ -12125,7 +12143,7 @@
         "Doğum günü"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Calendar": [
         "Takvim"
@@ -13033,6 +13051,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Kullanıcı daveti kabul ettikten sonra rol atayabileceksiniz."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Bu kullanıcı bir sonraki oturum açmasında yönetici yetkilerini alacak."
       ]
     },
     "Validation": {
