@@ -1,3 +1,7 @@
+tr[data-deleted='true'] {
+	opacity: 0.5;
+}
+
 .gateway-row-server-container {
 	container-type: inline-size;
 

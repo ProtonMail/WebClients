@@ -40,7 +40,6 @@ interface Props extends ModalProps<typeof Form> {
     showIPv6?: boolean;
     showLoad?: boolean;
     showCancelButton?: boolean;
-    isDeleted: (logical: GatewayLogical) => boolean;
     onSubmitDone: (deletedLogicalIds: readonly string[], addedQuantities: Record<string, number>) => Promise<void>;
     onUpsell: () => void;
 }
@@ -58,7 +57,6 @@ export const GatewayServersModal = ({
     showIPv6 = true,
     showLoad = true,
     showCancelButton = false,
-    isDeleted,
     onSubmitDone,
     onUpsell,
     ...rest
