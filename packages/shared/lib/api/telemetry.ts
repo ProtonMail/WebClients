@@ -465,6 +465,7 @@ export enum TelemetryMailLumoEvents {
     tool_end = 'tool_end',
     confirm_answered = 'confirm_answered',
     debug_report_opened = 'debug_report_opened',
+    assistant_disabled = 'assistant_disabled',
 }
 
 export enum TelemetryCategoriesOnboardingEvents {

@@ -6,9 +6,9 @@ import { useUser } from '@proton/account/user/hooks';
 import DrawerSidebar from '@proton/components/components/drawer/DrawerSidebar';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import InboxQuickSettingsAppButton from '@proton/components/components/drawer/drawerAppButtons/InboxQuickSettingsAppButton';
-import useLumoInMail from '@proton/components/components/drawer/views/lumoAgent/useLumoInMail';
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { useHasLumoAgentDrawer } from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
@@ -58,7 +58,7 @@ export const RouterMailboxContainer = () => {
     useRetryElementsOnReconnect();
 
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
-    const isLumoInMailEnabled = useLumoInMail();
+    const hasLumo = useHasLumoAgentDrawer();
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
     const hasRowMode = !isColumnModeActive;
@@ -153,7 +153,7 @@ export const RouterMailboxContainer = () => {
                         />
                     </Switch>
                 </PrivateMainArea>
-                {isLumoInMailEnabled && (
+                {hasLumo && (
                     <LumoFloatingPanel
                         mainAreaRef={mainAreaRef}
                         hasFloatingDrawerButton={canShowDrawer && !showDrawerSidebar}

@@ -14,11 +14,11 @@ import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import ConnectedLumoAgentPanel from './ConnectedLumoAgentPanel';
 import { LumoConversationHeaderActions } from './LumoConversationHeaderActions';
 import { focusLumoPrompt } from './focusLumoPrompt';
-import { useLumoAgentDrawer } from './lumoAgentDrawerContext';
+import { useHasLumoAgentDrawer, useLumoAgentDrawer } from './lumoAgentDrawerContext';
 
 import './DrawerLumoView.scss';
 
-const DrawerLumoView = () => {
+const DrawerLumoViewContent = () => {
     const { hasConversation, clear, openDebugReport, onDetach } = useLumoAgentDrawer();
     const theme = useTheme();
     const { toggleDrawerApp } = useDrawer();
@@ -58,6 +58,10 @@ const DrawerLumoView = () => {
             <ConnectedLumoAgentPanel onClose={closeDrawer} />
         </DrawerView>
     );
+};
+
+const DrawerLumoView = () => {
+    return useHasLumoAgentDrawer() ? <DrawerLumoViewContent /> : null;
 };
 
 export default DrawerLumoView;
