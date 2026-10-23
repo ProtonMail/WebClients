@@ -17,6 +17,7 @@ export const useWelcomeFlag = (deps: DependencyList) => {
     });
     const [welcomeShown, setWelcomeShown] = useState(false);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- deps are provided by the caller
     useEffect(() => {
         if (!welcomeShown) {
             setWelcomeFlag(true);
