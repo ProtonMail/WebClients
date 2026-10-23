@@ -12,8 +12,8 @@ packages:
 
 # Each workspace declares the type packages it uses. Most list node, webpack-env and jest in
 # compilerOptions.types through tsconfig.base.json, so these ranges are shared here.
-# @protontech/crypto must resolve to a single version across workspaces; check:constraints requires
-# every workspace to declare it as "catalog:".
+# check:constraints requires every workspace to declare these dependencies as "catalog:"; see
+# utilities/repo-rules/README.md for the exceptions.
 catalog:
     '@dnd-kit/abstract': ^0.5.0
     '@dnd-kit/collision': ^0.5.0
