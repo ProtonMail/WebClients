@@ -1,17 +1,21 @@
-import React, { type ReactNode, createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
+import React, { createContext, useContext } from 'react';
 
+import { ComposerPreInputPortalProvider } from '../components/Composer/ComposerPreInputPortal';
 import type {
     HandleEditMessage,
     HandleRegenerateMessage,
     HandleSaveManualArtifactEdit,
     HandleSendArtifactAction,
     HandleSendMessage,
+    HandleSendQuestionAnswers,
 } from '../hooks/useLumoActions';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import type { Message, SiblingInfo } from '../types';
 
 interface ConversationActionsContextType {
     handleSendMessage: HandleSendMessage;
+    handleSendQuestionAnswers: HandleSendQuestionAnswers;
     handleSendArtifactAction: HandleSendArtifactAction;
     handleSaveManualArtifactEdit: HandleSaveManualArtifactEdit;
     handleAbort: () => void;
@@ -28,6 +32,7 @@ const ConversationActionsContext = createContext<ConversationActionsContextType 
 interface ConversationActionsProviderProps {
     children: ReactNode;
     handleSendMessage: HandleSendMessage;
+    handleSendQuestionAnswers: HandleSendQuestionAnswers;
     handleSendArtifactAction: HandleSendArtifactAction;
     handleSaveManualArtifactEdit: HandleSaveManualArtifactEdit;
     handleAbort: () => void;
@@ -42,6 +47,7 @@ interface ConversationActionsProviderProps {
 export const ConversationActionsProvider = ({
     children,
     handleSendMessage,
+    handleSendQuestionAnswers,
     handleSendArtifactAction,
     handleSaveManualArtifactEdit,
     handleAbort,
@@ -56,6 +62,7 @@ export const ConversationActionsProvider = ({
         <ConversationActionsContext.Provider
             value={{
                 handleSendMessage,
+                handleSendQuestionAnswers,
                 handleSendArtifactAction,
                 handleSaveManualArtifactEdit,
                 handleAbort,
@@ -67,7 +74,7 @@ export const ConversationActionsProvider = ({
                 messageChainRef,
             }}
         >
-            {children}
+            <ComposerPreInputPortalProvider>{children}</ComposerPreInputPortalProvider>
         </ConversationActionsContext.Provider>
     );
 };

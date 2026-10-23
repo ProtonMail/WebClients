@@ -1,0 +1,13 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.question-card {
+	--border-weak: var(--border);
+
+	&__title {
+		outline: none !important;
+	}
+
+	&__body .scroll-inner {
+		max-block-size: 40vh;
+	}
+}
