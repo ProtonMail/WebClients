@@ -384,9 +384,6 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } beszerzése"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Ingyenes ${ BRAND_NAME } cím beszerzése"
-      ],
       "Get in touch": [
         "Lépjen velünk kapcsolatba"
       ],
@@ -1127,6 +1124,106 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } egyszeri számlázás"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Szerezze meg az ajánlatot"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/hónap"
+      ],
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "2 individual accounts": [
+        "2 egyéni fiók"
+      ],
+      "2 TB of secure storage": [
+        "2 TB biztonságos tárhely"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB tárhely: a jelenlegi csomag 40-szorosa"
+      ],
+      "3 TB of secure storage": [
+        "3 TB biztonságos tárhely"
+      ],
+      "500 GB of secure storage": [
+        "500 GB biztonságos tárhely"
+      ],
+      "6 individual accounts": [
+        "6 egyéni fiók"
+      ],
+      "Built-in 2FA authenticator": [
+        "Beépített kétlépcsős hitelesítés"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "A kedvezmények alapja a normál havi díjszabás. Az előfizetése a számlázási ciklus végén a normál éves díjszabás szerint újul meg."
+      ],
+      "Online document editor": [
+        "Online dokumentumszerkesztő"
+      ],
+      "Recover previous file versions": [
+        "Korábbi fájlverziók helyreállítása"
+      ],
+      "Stronger protection against cyber threats": [
+        "Erősebb védelem a kiberfenyegetések ellen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Korlátlan mappák, címkék és szűrők"
+      ],
+      "Use your own email domain": [
+        "Saját e-mail domain név használata"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Az év legnagyobb akciója"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "12 hónapra"
+      ],
+      "Last chance to save big": [
+        "Utolsó lehetőség a nagy megtakarításra"
+      ],
+      "Protect your entire tribe": [
+        "Védje meg az egész családját"
+      ],
+      "Protection for two in a single plan": [
+        "Védelem két személynek egyetlen csomagban"
       ]
     },
     "Billing cycle option": {
@@ -2815,9 +2912,6 @@
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
-      ],
       "Already a member of this share": [
         "Már tagja ennek a megosztásnak"
       ],
@@ -3046,15 +3140,6 @@
       "Please complete the billing details": [
         "Adja meg a számlázási adatokat"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Címek létrehozása előtt, állítson be egy saját domain nevet."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Vegyen fel egy saját domain nevet, mielőtt felhasználókat venne fel a szervezethez."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Engedélyezze a többfelhasználós módot, mielőtt felhasználókat venne fel a szervezethez."
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
         "Javítsa ki a megjelölt hibákat a folytatáshoz."
@@ -3073,9 +3158,6 @@
       ],
       "Please select billing state": [
         "Kérjük, válassza ki a számlázási megyét"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Váltson egy üzleti csomagra, egynél több felhasználval, hogy több felhasználót kezelhessen."
       ],
       "Port is required": [
         "A port megadása szükséges"
@@ -3249,9 +3331,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Elérte a fiókhoz létrehozható névjegyek maximális számát"
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Valamennyi, az előfizetéséhez rendelkezésére álló felhasználót elhasználta. Több felhasználó létrehozásához váltson nagyobb csomagra."
       ],
       "You must set a name": [
         "Meg kell adnia egy nevet"
@@ -4043,9 +4122,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } titkosítási technológiájának köszönhetően senki sem fér hozzá a jelszavához - még mi sem."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "A ${ CALENDAR_APP_NAME } használatához egy ${ BRAND_NAME } cím szükséges, az események biztonságos szinkronizáláshoz és titkosításhoz. ${ claimAddressButton }."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "A ${ CALENDAR_APP_NAME } használatához egy ${ BRAND_NAME } cím szükséges, az események biztonságos szinkronizáláshoz és titkosításhoz. Igényeljen egy ingyenes ${ MAIL_APP_NAME } címet."
@@ -4871,9 +4947,6 @@
       "Symbols (#$&)": [
         "Szimbólumok (#$&)"
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Átmenetileg nem elérhető. Próbálja meg később."
-      ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Köszönjük, hogy a ${ BRAND_NAME }-t választotta szervezete biztonsága érdekében."
       ],
@@ -4951,9 +5024,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Események importálásához, először hozzon létre egy ${ CALENDAR_APP_NAME } naptárat. Ebben fognak megjelenni az események az importálás után."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "A névjegyek újbóli aláírásához, összehasonlítjuk a névjegyeket a jelenlegi titkosítási kulcsaival. Amelyikhez nem található titkosítási kulcs, azok a névjegyek kerülnek újbóli aláírásra az elsődleges kulccsal."
@@ -5404,9 +5474,6 @@
       "Calendar": [
         "Naptár"
       ],
-      "Calendars": [
-        "Naptárak"
-      ],
       "Cancel download": [
         "Letöltés megszakítása"
       ],
@@ -5511,9 +5578,6 @@
       ],
       "Email format": [
         "E-mail formátum"
-      ],
-      "Emails": [
-        "E-mailek"
       ],
       "Emails (all messages)": [
         "E-mailek (összes üzenet)"
@@ -7897,9 +7961,6 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Keresés"
-      ],
       "Search for group name": [
         "Csoport név keresése"
       ],
@@ -9432,9 +9493,6 @@
       "Disconnected from Gmail": [
         "Leválasztva a Gmailről"
       ],
-      "Domain names": [
-        "Domain nevek"
-      ],
       "Downgrade account": [
         "Váltás kisebb csomagra"
       ],
@@ -9742,9 +9800,6 @@
       "Select contact group": [
         "Névjegy csoport kiválasztása"
       ],
-      "Select data to import": [
-        "Válassza ki az importálni kívánt adatokat"
-      ],
       "Select link expiration date": [
         "Hivatkozás lejárati dátumának kiválasztása"
       ],
@@ -9876,9 +9931,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Használja a(z) ${ VPN_SHORT_APP_NAME } alkalmazást az adatok védelmének biztosításához"
-      ],
-      "Users and addresses": [
-        "Felhasználók és címek"
       ],
       "Verification failed": [
         "Az ellenőrzés sikertelen"

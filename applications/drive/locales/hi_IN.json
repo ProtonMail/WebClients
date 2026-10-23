@@ -497,9 +497,6 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } लें"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "एक मुफ़्त ${ BRAND_NAME } पता प्राप्त करें"
-      ],
       "Get in touch": [
         "हमसे संपर्क करें"
       ],
@@ -682,9 +679,6 @@
       ],
       "Merge contacts": [
         "संपर्क मर्ज करें"
-      ],
-      "Migrate": [
-        "माइग्रेट करें"
       ],
       "Minimize transfers": [
         "स्थानांतरण छुपाएं"
@@ -1509,6 +1503,106 @@
         "स्टोरेज स्पेस सभी ${ BRAND_NAME } सेवाओं में साझा किया जाता है।"
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "ब्लैक फ्राइडे"
+      ],
+      "Get the deal": [
+        "सौदा पाएं"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/महीना"
+      ],
+      "15 GB storage": [
+        "15 जीबी स्टोरेज"
+      ],
+      "2 individual accounts": [
+        "2 इंडिविजुअल खाते"
+      ],
+      "2 TB of secure storage": [
+        "2 TB सुरक्षित स्टोरेज"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 जीबी स्टोरेज: आपके वर्तमान प्लान का 40 गुना"
+      ],
+      "3 TB of secure storage": [
+        "3 TB सुरक्षित स्टोरेज"
+      ],
+      "500 GB of secure storage": [
+        "500 जीबी सुरक्षित स्टोरेज"
+      ],
+      "6 individual accounts": [
+        "6 इंडिविजुअल खाते"
+      ],
+      "Built-in 2FA authenticator": [
+        "बिल्ट-इन 2FA ऑथेंटिकेटर"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "छूट मानक मासिक कीमतों पर आधारित है। बिल साइकिल खत्म होने पर आपकी सदस्यता मानक वार्षिक दर पर रिन्यू हो जाएगी।"
+      ],
+      "Online document editor": [
+        "ऑनलाइन दस्तावेज़ एडिटर"
+      ],
+      "Recover previous file versions": [
+        "पिछले फाइल संस्करणों को रिकवर करें"
+      ],
+      "Stronger protection against cyber threats": [
+        "साइबर खतरों के खिलाफ मज़बूत सुरक्षा"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "असीमित फोल्डर, लेबल और फिल्टर"
+      ],
+      "Use your own email domain": [
+        "अपने खुद के ईमेल डोमेन का उपयोग करें"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } और ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } और ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } और ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "साल का सबसे बड़ा धमाका"
+      ],
+      "Black Friday": [
+        "ब्लैक फ्राइडे"
+      ],
+      "for 12 months": [
+        "12 महीनों के लिए"
+      ],
+      "Last chance to save big": [
+        "बड़ी बचत का आखिरी मौका"
+      ],
+      "Protect your entire tribe": [
+        "अपने पूरे कुनबे को सुरक्षित रखें"
+      ],
+      "Protection for two in a single plan": [
+        "एक ही प्लान में दो लोगों के लिए सुरक्षा"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } महीना",
@@ -1765,6 +1859,11 @@
       ],
       "Expand": [
         "बढ़ाएं"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "यह बातचीत जारी रखने के लिए बहुत लंबी है। ${ LUMO_SHORT_APP_NAME } को सुचारू और तेज़ी से काम करने वाला बनाए रखने के लिए एक नई चैट शुरू करें।"
       ]
     },
     "collider_2025: feature": {
@@ -3267,14 +3366,8 @@
       "Address could not be added.": [
         "पता जोड़ा नहीं जा सका।"
       ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "यह पता पहले से आपके संगठन से बाहर के एक यूज़र के इस्तेमाल में है। इसे सुलझाने के लिए ग्राहक सहायता से संपर्क करें।"
-      ],
       "Address primary private key not found": [
         "पते की मुख्य प्राइवेट चाबी नहीं मिली।"
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "सभी स्टोरेज स्पेस आवंटित हो चुके हैं। कृपया अन्य यूज़र्स को आवंटित स्टोरेज कम करें।"
       ],
       "Already a member of this share": [
         "आप इस साझकरण के पहले से ही सदस्य हैं"
@@ -3594,9 +3687,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "विरासत पब्लिक लिंक अपडेट नहीं हो सकता। कृपया नया पब्लिक लिंक दोबारा बनाएं।"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "सदस्य का पता नहीं मिला। इसे सुलझाने के लिए कृपया ग्राहक सहायता से संपर्क करें"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें",
         "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर मर्ज करें।"
@@ -3606,12 +3696,6 @@
       ],
       "Missing key packet": [
         "लुप्त कुञ्जी खण्ड"
-      ],
-      "Missing organization private key": [
-        "संगठन की प्राइवेट चाबी मौजूद नहीं"
-      ],
-      "Missing organization public key": [
-        "संगठन की सार्वजनिक चाबी मौजूद नहीं।"
       ],
       "Missing signature": [
         "लापता हस्ताक्षर"
@@ -3679,12 +3763,6 @@
       "Operation failed, try again later": [
         "कार्रवाई असफल हुई, बाद में वापिस कोशिश करें।"
       ],
-      "Organization does not have enough seats available": [
-        "संगठन के पास जो सीटें हैं वो नाकाफी हैं"
-      ],
-      "Organization does not have enough storage available": [
-        "संगठन के पास जो स्टोरेज है वो नाकाफी है"
-      ],
       "Organization key is not decrypted": [
         "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है"
       ],
@@ -3727,15 +3805,6 @@
       "Please complete the billing details": [
         "कृपया बिलिंग की जानकारी पूरी करें"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "कृपया पता जोड़ने से पहले एक कस्टम डोमेन कॉन्फिगर करें।"
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "अपने संगठन में यूज़र्स को जोड़ने से पहले कृपया एक कस्टम डोमेन कॉन्फ़िगर करें।"
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "कृपया अपने संगठन में यूज़र्स को जोड़ने से पहले कई-यूज़र सहायता सक्षम करें।"
-      ],
       "Please enter a valid postal code": [
         "कृपया एक मान्य पोस्टल कोड दर्ज करें"
       ],
@@ -3766,9 +3835,6 @@
       ],
       "Please select billing state": [
         "कृपया बिलिंग राज्य चुनें"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "कई यूज़र्स को मैनेज करने के लिए कृपया 1 से ज़्यादा यूज़र वाले बिज़नेस प्लान पे अपग्रेड करें।"
       ],
       "Port is required": [
         "पोर्ट चाहिए"
@@ -4089,12 +4155,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "आपके खाते के लिए संपर्कों की संख्या की सीमा पूरी हो गई है"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "आपने अपने प्लान के सभी पतों का उपयोग कर लिया है। कृपया नया पता जोड़ने के लिए अपना प्लान अपग्रेड करें या अपने खाते में किसी पते को अक्षम करें।"
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "आपने अपने प्लान में सभी यूज़र्स का उपयोग किया है। कृपया एक नया यूज़र जोड़ने के लिए अपने प्लान को अपग्रेड करें।"
       ],
       "You must set a name": [
         "आपको एक नाम सेट करना होगा"
@@ -4515,29 +4575,6 @@
         "टेराबाइट"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "सक्रिय"
-      ],
-      "All": [
-        "सब"
-      ],
-      "Errors": [
-        "गड़बड़ियां"
-      ],
-      "In progress": [
-        "प्रगति पर है"
-      ],
-      "Migrated": [
-        "माइग्रेट किया गया"
-      ],
-      "Not activated": [
-        "सक्रिय नहीं"
-      ],
-      "Pending": [
-        "लंबित"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } अपडेट किया गया"
@@ -4937,20 +4974,6 @@
         "कैलेंडर एक ICS फाइल की तरह निर्यात करने के लिए ${ boldExport } चुनें।"
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "गड़बड़ियां हैं"
-      ],
-      "In progress": [
-        "प्रगति पर है"
-      ],
-      "Migrated": [
-        "माइग्रेट किया गया"
-      ],
-      "Pending": [
-        "लंबित"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } में से ${ totalContacts } संपर्क आयात नहीं किए जाएंगे। जानकारी के लिए क्लिक करें"
@@ -4991,9 +5014,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } की एन्क्रिप्शन टेकनोलॉजी का मतलब है कि कोई भी आपका पासवर्ड एक्सेस नहीं कर सकता - यहां तक कि हम भी नहीं।"
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } को सुरक्षित ईवेंट सिंक और एन्क्रिप्शन के लिए ${ BRAND_NAME } पते की आवश्यकता होती है। ${ claimAddressButton }।"
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } को सुरक्षित ईवेंट सिंक और एन्क्रिप्शन के लिए ${ BRAND_NAME } पते की आवश्यकता होती है। अपना मुफ़्त ${ MAIL_APP_NAME } पता अभी प्राप्त करें।"
@@ -5663,9 +5683,6 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "केवल फाइलें (कोई फोटो नहीं, ${ DOCS_APP_NAME } या ${ SHEETS_APP_NAME } नहीं) - कुल 100 जीबी तक, 100,000 फाइलें और प्रति फाइल 50 जीबी"
       ],
-      "Find out what can be migrated.": [
-        "जानें कि क्या-क्या माइग्रेट किया जा सकता है।"
-      ],
       "Folder will not be uploaded": [
         "फ़ोल्डर अपलोड नहीं किया जाएगा"
       ],
@@ -6022,9 +6039,6 @@
       "No synced folders": [
         "कोई सिंक फोल्डर नहीं"
       ],
-      "No users to display": [
-        "प्रदर्शित करने के लिए कोई यूज़र नहीं"
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "अपलोड की गई चाबीयों में से कोई भी इन्क्रिप्शन के लिए मान्य नहीं है। इस पते पे संदेश भेजने के लिए, कृपया एक मान्य चाबी अपलोड करे या \"संदेश एन्क्रिप्ट करें\" को अक्षम करें।"
       ],
@@ -6354,9 +6368,6 @@
       "Select an uploaded file or folder and create a link to it.": [
         "अपलोड की गई फाइल या फ़ोल्डर चुनें और उसका लिंक बनाएं।"
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "ठीक-ठीक चुनें कि क्या माइग्रेट करना है। ये संगठन के सभी यूज़र्स पे लागू होगा।"
-      ],
       "Select item": [
         "आइटम चुनें"
       ],
@@ -6463,9 +6474,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "अत्यधिक मांग के कारण अस्थायी रूप से अनुपलब्ध है। कृपया बाद में पुनः प्रयास करें।"
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जांच करें।"
-      ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "अपने संगठन को सुरक्षित करने के लिए ${ BRAND_NAME } को चुनने के लिए धन्यवाद।"
       ],
@@ -6555,12 +6563,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "इस विशिष्ट कोड का उपयोग वेबसाइटों और ISPs (इंटरनेट सेवा प्रोवाइडर) द्वारा आपके स्थान और ब्राउज़िंग इतिहास को आपके डिवाइस से लिंक करने के लिए किया जा सकता है"
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "ये यूज़र माइग्रेट नहीं किया जा सकता, क्योंकि उनका ईमेल पता ${ BRAND_NAME } पे उपलब्ध नहीं है।"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "प्लेटफ़ॉर्म असंगति की वजह से ये यूज़र माइग्रेट नहीं किया जा सकता।"
-      ],
       "This will cancel any remaining downloads.": [
         "यह किसी भी शेष डाउनलोड को रद्द कर देगा।"
       ],
@@ -6614,30 +6616,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "अपना पासवर्ड याद रखने में आपकी मदद करने के लिए, हम आपसे समय-समय पर इसे दर्ज करने के लिए कहेंगे। समय के साथ हम यह कम पूछेंगे।"
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "इवेंट आयात करने के लिए, पहले ${ CALENDAR_APP_NAME } में एक कैलेंडर बनाएं। आयात के बाद इवेंट इधर दिखाए जाएंगे।"
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "इस यूज़र को माइग्रेट करने के लिए, ${ domainNamesLink } के तहत ईमेल डोमेन जोड़ें और वेरिफाई करें"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "इस यूज़र को माइग्रेट करने के लिए, अपने ${ provider.adminConsoleName } में उनका खाता सक्षम करें।"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "इस यूज़र को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका खाता सक्षम करें।"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "इस यूज़र को माइग्रेट करने के लिए, ${ usersAddressesLink } के तहत उनका पता सक्षम करें।"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "इस यूज़र को माइग्रेट करने के लिए, उन्हें ${ BRAND_NAME } में शामिल होने का निमंत्रण स्वीकार करना होगा।"
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "इस यूज़र को माइग्रेट करने के लिए, अपने ${ provider.adminConsoleName } में उन्हें आर्काइव से बाहर निकालें।"
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "इस यूज़र को माइग्रेट करने के लिए, अपने ${ provider.adminConsoleName } में उनका सस्पेंशन हटाएं।"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "अपने संपर्कों को फिर से हस्ताक्षर करने के लिए, हमें आपके खाते में उपलब्ध एन्क्रिप्शन कुंजी की सूची के विरुद्ध प्रत्येक संपर्क की जांच करने की आवश्यकता है। यदि कोई मिलान नहीं मिलता है, तो आपके संपर्क को प्राथमिक एन्क्रिप्शन कुंजी के साथ फिर से हस्ताक्षरित किया जाएगा।"
@@ -6884,9 +6862,6 @@
       ],
       "Yesterday": [
         "कल"
-      ],
-      "You": [
-        "आप"
       ],
       "you": [
         "आप"
@@ -7314,9 +7289,6 @@
       "Calendar": [
         "कैलेंडर"
       ],
-      "Calendars": [
-        "कैलेंडर"
-      ],
       "can edit": [
         "बदल सकते हैं"
       ],
@@ -7473,9 +7445,6 @@
       ],
       "Email format": [
         "ईमेल प्रारूप"
-      ],
-      "Emails": [
-        "ईमेल"
       ],
       "Emails (all messages)": [
         "ईमेल (सारे संदेश)"
@@ -10108,6 +10077,11 @@
         "इस कार्य को करने के लिए आपको संगठन कुंजी तक पहुंच की आवश्यकता है।"
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "बैंक खाता"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -10157,12 +10131,6 @@
       ],
       "Billing Country": [
         "बिलिंग देश"
-      ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "एक्टिव सदस्यता के साथ Born Private नहीं खरीदा जा सकता।"
-      ],
-      "Born Private requires a donation.": [
-        "Born Private के लिए डोनेशन ज़रूरी है।"
       ],
       "Buying credits requires a separate purchase.": [
         "क्रेडिट खरीदने के लिए अलग खरीदारी ज़रूरी है।"
@@ -10323,17 +10291,11 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } आपके पास पहले से है।"
       ],
-      "You already own Born Private.": [
-        "Born Private आपके पास पहले से है।"
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "आपके भुगतान को सत्यापित करने के लिए आपको जल्द ही PayPal पर रीडायरेक्ट कर दिया जाएगा।"
       ],
       "You will soon be redirected to verify your payment.": [
         "आपके भुगतान को सत्यापित करने के लिए आपको जल्द ही रीडायरेक्ट कर दिया जाएगा।"
-      ],
-      "Your account is too old for Born Private.": [
-        "Born Private के लिए आपका खाता बहुत पुराना है।"
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "आपकी मुद्रा यूरो (€) में बदल दी गई है, क्योंकि ${ IDEAL_WERO_BRAND_NAME } सिर्फ यूरो में पेमेंट सपोर्ट करता है।"
@@ -10612,17 +10574,11 @@
       "San Francisco": [
         "सैन फ्रांसिस्को"
       ],
-      "Search": [
-        "खोजें"
-      ],
       "Search for group name": [
         "समूह का नाम खोजें"
       ],
       "Search for name or email": [
         "नाम या ईमेल खोजें"
-      ],
-      "Search for users or addresses": [
-        "यूज़र्स या पतों की खोज करें"
       ],
       "Search parent folder": [
         "मुख्य फोल्डर खोजें"
@@ -11308,12 +11264,6 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "इस आइटम का एक लिंक आपके ड्राइव में सहेजा गया है। इसे बाद में 'Shared with me' सेक्शन में एक्सेस किया जा सकता है।"
-      ],
-      "Editor permissions": [
-        "एडिटर की इजाज़तें"
-      ],
-      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
-        "एडिटर अब शेयरिंग मैनेज कर सकते हैं और दूसरों को न्योता दे सकते हैं। इसे कभी भी शेयर सेटिंग में बंद किया जा सकता है।"
       ]
     },
     "sso": {
@@ -11996,17 +11946,11 @@
       "Actions": [
         "कार्रवाई"
       ],
-      "Activated": [
-        "सक्रिय"
-      ],
       "Address": [
         "पता"
       ],
       "Created": [
         "रचनातिथी"
-      ],
-      "Estimated size": [
-        "अनुमानित साइज़"
       ],
       "Expires": [
         "समय-सीमा समाप्त"
@@ -12014,23 +11958,14 @@
       "Fingerprint": [
         "फिंगरप्रिंट"
       ],
-      "Migration status": [
-        "माइग्रेशन की स्थिति"
-      ],
       "Name": [
         "नाम"
-      ],
-      "Size": [
-        "साइज़"
       ],
       "Status": [
         "स्थिति"
       ],
       "Type": [
         "टाइप"
-      ],
-      "User": [
-        "यूज़र"
       ]
     },
     "TableHeader": {
@@ -12245,9 +12180,6 @@
       "Check for malicious files": [
         "दुर्भावनापूर्ण फाइलों की जांच करें"
       ],
-      "Choose a provider": [
-        "प्रदाता चुनें"
-      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "अपने ${ MAIL_APP_NAME } पते पर दावा करें"
       ],
@@ -12259,9 +12191,6 @@
       ],
       "Computers": [
         "कंप्यूटर"
-      ],
-      "Configure migration": [
-        "माइग्रेशन कॉन्फ़िगर करें"
       ],
       "Confirmation required": [
         "पुष्टि ज़रूरी है"
@@ -12409,9 +12338,6 @@
       ],
       "Disconnected from Gmail": [
         "Gmail से डिस्कनेक्ट हो गया"
-      ],
-      "Domain names": [
-        "डोमेन नाम"
       ],
       "Downgrade account": [
         "खाते को डाउनग्रेड करें"
@@ -12585,9 +12511,6 @@
       ],
       "Import started, but your storage won't be enough for this import": [
         "आयात शुरू हो गया, लेकिन इस आयात के लिए स्टोरेज काफी नहीं होगी"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "अपना डेटा ${ BRAND_NAME } में आयात करें"
       ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } द्वारा आयात किया गया"
@@ -12869,14 +12792,8 @@
       "Select contact group": [
         "संपर्क ग्रुप चुनें"
       ],
-      "Select data to import": [
-        "आयात करने के लिए डेटा चुनें"
-      ],
       "Select link expiration date": [
         "लिंक खत्म होने का दिन चुनें"
-      ],
-      "Select users to migrate": [
-        "माइग्रेट करने के लिए यूज़र चुनें"
       ],
       "Set recovery methods": [
         "रिकवरी तरीके सेट करें"
@@ -13037,9 +12954,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "डेटा प्राइवेसी के लिए ${ VPN_SHORT_APP_NAME } का उपयोग करें"
       ],
-      "Users and addresses": [
-        "यूज़र और ई-मेल पते"
-      ],
       "Verification failed": [
         "सत्यापन असफल"
       ],
@@ -13111,9 +13025,6 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } में स्वागत"
-      ],
-      "What are you migrating?": [
-        "क्या माइग्रेट किया जा रहा है?"
       ],
       "What can a VPN protect you from?": [
         "VPN आपको किस चीज़ से बचा सकता है?"
@@ -13217,9 +13128,6 @@
       "Customize import to reduce the number of labels": [
         "लेबल की संख्या कम करने के लिए आयात को अनुकूलित करें"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "${ providerName } से ${ BRAND_NAME } तक डेटा माइग्रेशन की स्थिति"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "ईमेल पर डिजिटल रूप से हस्ताक्षर करने से यह प्रमाणित करने में मदद मिलती है कि संदेश आपके द्वारा भेजे गए हैं"
       ],
@@ -13294,9 +13202,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "इस ईमेल पर एंड-टू-एंड एन्क्रिप्टेड ईमेल भेजने को सक्षम करने के लिए एक सार्वजनिक कुंजी अपलोड करें"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "जिन यूज़र्स ने अपने ${ BRAND_NAME } खाते को एक्सेस किया है"
       ],
       "Version 6 OpenPGP key": [
         "संस्करण 6 OpenPGP कुंजी"

@@ -497,9 +497,6 @@
       "Get ${ planOrAppName }": [
         "Få ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Få en gratis ${ BRAND_NAME }-adresse"
-      ],
       "Get in touch": [
         "Kontakt os"
       ],
@@ -685,9 +682,6 @@
       ],
       "Merge contacts": [
         "Flet kontakter"
-      ],
-      "Migrate": [
-        "Migrer"
       ],
       "Minimize transfers": [
         "Minimér overførsler"
@@ -1538,7 +1532,7 @@
         "Black Friday"
       ],
       "Get the deal": [
-        "Indløs tilbuddet"
+        "Få tilbuddet"
       ]
     },
     "bfcampaign2026: Info": {
@@ -1555,7 +1549,7 @@
         "2 TB sikker lagerplads"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB lagerplads: 40x dit nuværende abonnement"
+        "200 GB lagerplads: 40 gange så meget som i dit nuværende abonnement"
       ],
       "3 TB of secure storage": [
         "3 TB sikker lagerplads"
@@ -1567,13 +1561,13 @@
         "6 individuelle konti"
       ],
       "Built-in 2FA authenticator": [
-        "Indbygget 2FA-godkender"
+        "Indbygget 2FA-godkendelse"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+        "Rabatterne er baseret på den månedlige standardpris. Dit abonnement fornyes til den årlige standardpris, når faktureringsperioden udløber."
       ],
       "Online document editor": [
-        "Online dokumentredigering"
+        "Online dokumenteditor"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -1582,7 +1576,7 @@
         "Stærkere beskyttelse mod cybertrusler"
       ],
       "Unlimited folders, labels, and filters": [
-        "Ubegrænsede mapper, etiketter og filtre"
+        "Ubegrænset antal mapper, etiketter og filtre"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
@@ -1621,7 +1615,7 @@
         "Black Friday"
       ],
       "for 12 months": [
-        "i 12 måneder"
+        "for 12 måneder"
       ],
       "Last chance to save big": [
         "Sidste chance for at spare stort"
@@ -1893,6 +1887,11 @@
       ],
       "Expand": [
         "Udvid"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Denne samtale er for lang til at fortsætte. Start en ny chat for at holde ${ LUMO_SHORT_APP_NAME } kørende og responsiv."
       ]
     },
     "collider_2025: feature": {
@@ -3395,14 +3394,8 @@
       "Address could not be added.": [
         "Adressen kunne ikke tilføjes."
       ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
-      ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Al lagerplads er blevet tildelt. Reducér lagerplads tildelt andre brugere."
       ],
       "Already a member of this share": [
         "Allerede medlem af denne deling"
@@ -3730,9 +3723,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Legacy offentlige links kan ikke opdateres. Opret et nyt offentligt link."
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adressen for medlemmet blev ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Flet mindst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
         "Flet mindst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
@@ -3742,12 +3732,6 @@
       ],
       "Missing key packet": [
         "Manglende nøglepakke"
-      ],
-      "Missing organization private key": [
-        "Mangler organisationens private nøgle"
-      ],
-      "Missing organization public key": [
-        "Mangler organisationens offentlige nøgle"
       ],
       "Missing signature": [
         "Manglende signatur"
@@ -3815,12 +3799,6 @@
       "Operation failed, try again later": [
         "Handlingen mislykkedes, prøv igen sere"
       ],
-      "Organization does not have enough seats available": [
-        "Organisationen har ikke nok ledige pladser"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisationen har ikke tilstrækkelig ledig lagerplads"
-      ],
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
       ],
@@ -3863,15 +3841,6 @@
       "Please complete the billing details": [
         "Udfyld faktureringsoplysningerne"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Sæt et brugerdomæne op, før du tilføjer adresser."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Konfigurer et brugerdomæne, inden du tilføjer brugere til din organisation."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Aktivér flerbrugerunderstøttelse inden du tilføjer brugere til din organisation."
-      ],
       "Please enter a valid postal code": [
         "Indtast et gyldigt postnummer"
       ],
@@ -3902,9 +3871,6 @@
       ],
       "Please select billing state": [
         "Vælg venligst faktureringsstat"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Opgradér venligst til et erhvervsabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
       "Port is required": [
         "Port er påkrævet."
@@ -4225,12 +4191,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nået grænsen for antallet af kontakter på din konto"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Du har opbrugt alle adresser i dit abonnement. Opgradér dit abonnement for at tilføje en ny adresse, eller deaktivér en adresse på din konto."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -4662,29 +4622,6 @@
         "Terabyte"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Aktiveret"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Errors": [
-        "Fejl"
-      ],
-      "In progress": [
-        "I gang"
-      ],
-      "Migrated": [
-        "Migreret"
-      ],
-      "Not activated": [
-        "Ikke aktiveret"
-      ],
-      "Pending": [
-        "Afventer"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } opdateret"
@@ -5092,20 +5029,6 @@
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Har fejl"
-      ],
-      "In progress": [
-        "I gang"
-      ],
-      "Migrated": [
-        "Migreret"
-      ],
-      "Pending": [
-        "Afventer"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
@@ -5150,9 +5073,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. ${ claimAddressButton }."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } kræver en ${ BRAND_NAME } adresse til sikker begivenhedssynkronisering og kryptering. Gør krav på din gratis ${ MAIL_APP_NAME } adresse nu."
@@ -5317,10 +5237,6 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Der er ${ timeRemaining } tilbage tilbage i prøveversionen. ${ addPaymentMethodLink } for at beholde dit abonnement. ${ learnMoreLink }"
-      ],
-      "${ total } user found": [
-        "${ total } bruger fundet",
-        "${ total } brugere fundet"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
@@ -5829,9 +5745,6 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Kun filer (ingen fotos, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) - op til 100 GB i alt, 100.000 filer og 50 GB pr. fil"
       ],
-      "Find out what can be migrated.": [
-        "Find ud af hvad der kan migreres."
-      ],
       "Folder will not be uploaded": [
         "Mappe vil ikke blive uploadet"
       ],
@@ -6191,9 +6104,6 @@
       "No synced folders": [
         "Ingen synkroniserede mapper"
       ],
-      "No users to display": [
-        "Ingen brugere"
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ingen af de uploadede nøgler er gyldige til kryptering. For at kunne sende beskeder til denne adresse skal du uploade en gyldig nøgle eller deaktivere \"Krypter e-mails\" for at kunne sende beskeder til denne adresse."
       ],
@@ -6523,9 +6433,6 @@
       "Select an uploaded file or folder and create a link to it.": [
         "Vælg en uploadet fil eller mappe og opret et link til den."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Vælg præcis det du gerne vil migrere. Det vil gælde for alle brugere i organisationen."
-      ],
       "Select item": [
         "Vælg element"
       ],
@@ -6632,9 +6539,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Midlertidigt utilgængelig på grund af høj efterspørgsel. Prøv igen senere."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Midlertidigt utilgængelig. Tjek igen senere."
-      ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Tak, fordi du valgte ${ BRAND_NAME } til at sikre din organisation."
       ],
@@ -6724,12 +6628,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denne unikke kode kan bruges af websteder og ISPs (internetudbydere) til at forbinde din placering og browserhistorik til din enhed."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Denne bruger kan ikke migreres da brugerens e-mailadresse ikke er tilgængelig på ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
-      ],
       "This will cancel any remaining downloads.": [
         "Dette annullerer eventuelle udestående downloads."
       ],
@@ -6783,30 +6681,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "For at hjælpe dig med at huske din adgangskode, beder vi dig om at indtaste den en gang imellem. Vi spørger dig mindre og mindre efterhånden."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "For at importere begivenheder, skal du først oprette en kalender i ${ CALENDAR_APP_NAME }. Det er her, at begivenhederne vises efter importen."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "For at migrere denne bruger skal du tilføje og bekræfte e-mail-domænet under ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Aktivér kontoen for denne bruger i ${ provider.adminConsoleName } for at migrere dem."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "For at migrere denne bruger skal de acceptere deres invitation til at tilslutte sig ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Fjern denne bruger fra arkivet i ${ provider.adminConsoleName } for at migrere dem."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "For at gensignere dine kontaktpersoner, skal vi kontrollere alle kontaktpersoner mod listen over krypteringsnøgler på din konto. Hvis der ikke findes nogen match, vil din kontakt blive gensigneret med den primære krypteringsnøgle."
@@ -7056,9 +6930,6 @@
       ],
       "Yesterday": [
         "I går"
-      ],
-      "You": [
-        "Dig"
       ],
       "you": [
         "dig"
@@ -7508,9 +7379,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalendere"
-      ],
       "can edit": [
         "kan redigere"
       ],
@@ -7667,9 +7535,6 @@
       ],
       "Email format": [
         "E-mailformattering"
-      ],
-      "Emails": [
-        "E-mails"
       ],
       "Emails (all messages)": [
         "E-mails (alle beskeder)"
@@ -10345,6 +10210,11 @@
         "Du skal have adgang til organisationsnøglen for at udføre denne handling."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -10395,11 +10265,8 @@
       "Billing Country": [
         "Faktura land"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private kan ikke købes uden et aktivt abonnement."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private kræver en donation."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Born Private-konti kan ikke købes uden et aktivt abonnement."
       ],
       "Buying credits requires a separate purchase.": [
         "Køb af kredit kræver et separat køb."
@@ -10487,6 +10354,9 @@
       ],
       "terms and conditions": [
         "vilkår og betingelser"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private kræver en donation."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
@@ -10584,8 +10454,8 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Du ejer allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Du ejer allerede Born Private."
+      "You already own a Born Private account.": [
+        "Du ejer allerede en Born Private-konto."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
@@ -10593,7 +10463,7 @@
       "You will soon be redirected to verify your payment.": [
         "Du omdirigeres snart for at bekræfte din betaling."
       ],
-      "Your account is too old for Born Private.": [
+      "Your account is too old for the Born Private initiative.": [
         "Din konto er for gammel til Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
@@ -10878,17 +10748,11 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Søg"
-      ],
       "Search for group name": [
         "Søg efter gruppenavn"
       ],
       "Search for name or email": [
         "Søg efter navn eller e-mail"
-      ],
-      "Search for users or addresses": [
-        "Søg efter brugere eller adresser"
       ],
       "Search parent folder": [
         "Søg i overordnet mappe"
@@ -11578,12 +11442,6 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Et link til dette element er blevet gemt på dit drev. Du kan få adgang til det senere i sektionen 'Delt med mig'."
-      ],
-      "Editor permissions": [
-        "Tilladelser for redaktører"
-      ],
-      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
-        "Redaktører kan nu administrere deling og invitere andre. Det kan til enhver tid slås fra i delingsindstillingerne."
       ]
     },
     "sso": {
@@ -12290,17 +12148,11 @@
       "Actions": [
         "Handlinger"
       ],
-      "Activated": [
-        "Aktiveret"
-      ],
       "Address": [
         "Adresse"
       ],
       "Created": [
         "Oprettet"
-      ],
-      "Estimated size": [
-        "Anslået størrelse"
       ],
       "Expires": [
         "Udløber"
@@ -12308,23 +12160,14 @@
       "Fingerprint": [
         "Fingeraftryk"
       ],
-      "Migration status": [
-        "Migrationsstatus"
-      ],
       "Name": [
         "Navn"
-      ],
-      "Size": [
-        "Størrelse"
       ],
       "Status": [
         "Status"
       ],
       "Type": [
         "Type"
-      ],
-      "User": [
-        "Bruger"
       ]
     },
     "TableHeader": {
@@ -12542,9 +12385,6 @@
       "Check for malicious files": [
         "Tjek efter skadelige filer"
       ],
-      "Choose a provider": [
-        "Vælg en udbyder"
-      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Gør krav på din gratis ${ MAIL_APP_NAME } addresse"
       ],
@@ -12556,9 +12396,6 @@
       ],
       "Computers": [
         "Computere"
-      ],
-      "Configure migration": [
-        "Konfigurer migration"
       ],
       "Confirmation required": [
         "Bekræftelse påkrævet"
@@ -12706,9 +12543,6 @@
       ],
       "Disconnected from Gmail": [
         "Forbindelsen til Gmail er afbrudt"
-      ],
-      "Domain names": [
-        "Domænenavne"
       ],
       "Downgrade account": [
         "Nedgradér konto"
@@ -12882,9 +12716,6 @@
       ],
       "Import started, but your storage won't be enough for this import": [
         "Importen er startet, men du har ikke nok lagerplads til hele importen"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Importér dine data til ${ BRAND_NAME }"
       ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importeret af ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -13169,14 +13000,8 @@
       "Select contact group": [
         "Vælg kontaktgruppe"
       ],
-      "Select data to import": [
-        "Vælg data til import"
-      ],
       "Select link expiration date": [
         "Vælg link-udløbsdato"
-      ],
-      "Select users to migrate": [
-        "Vælg brugere at migrere"
       ],
       "Set recovery methods": [
         "Indstil gendannelsesmetoder"
@@ -13340,9 +13165,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
       ],
-      "Users and addresses": [
-        "Brugere og adresser"
-      ],
       "Verification failed": [
         "Bekræftelse mislykkedes"
       ],
@@ -13414,9 +13236,6 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Velkommen til ${ DRIVE_APP_NAME }"
-      ],
-      "What are you migrating?": [
-        "Hvad migrerer du?"
       ],
       "What can a VPN protect you from?": [
         "Hvad kan en VPN beskytte dig imod?"
@@ -13520,9 +13339,6 @@
       "Customize import to reduce the number of labels": [
         "Tilpas import for at reducere antallet af etiketter"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digital signering af e-mails hjælper med at bekræfte, at beskeder er sendt af dig"
       ],
@@ -13597,9 +13413,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
       ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nøgle version 6"
@@ -13679,6 +13492,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne bruger får administratorrettigheder næste gang de logger ind."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Opgrader til en understøttet plan for at bruge administratorroller."
       ],

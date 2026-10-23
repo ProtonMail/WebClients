@@ -417,9 +417,6 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName }-ის მიღება"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
-      ],
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
@@ -1269,6 +1266,106 @@
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "შავი პარასკევი"
+      ],
+      "Get the deal": [
+        "მიიღეთ შეთავაზება"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/თვე"
+      ],
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "2 individual accounts": [
+        "2 ინდივიდუალური ანგარიში"
+      ],
+      "2 TB of secure storage": [
+        "2 ტბ დაცული საცავი"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 გბ საცავი: თქვენი მიმდინარე პაკეტის 40-ჯერ მეტი"
+      ],
+      "3 TB of secure storage": [
+        "3 ტბ დაცული საცავი"
+      ],
+      "500 GB of secure storage": [
+        "500 გბ დაცული საცავი"
+      ],
+      "6 individual accounts": [
+        "6 ინდივიდუალური ანგარიში"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "ფასდაკლებები ეფუძნება სტანდარტულ თვიურ ფასს. გამოწერა განახლდება სტანდარტული წლიური ტარიფით გადახდის ციკლის დასრულებისას."
+      ],
+      "Online document editor": [
+        "ონლაინ დოკუმენტების რედაქტორი"
+      ],
+      "Recover previous file versions": [
+        "ფაილების წინა ვერსიების აღდგენა"
+      ],
+      "Stronger protection against cyber threats": [
+        "უფრო ძლიერი დაცვა კიბერ საფრთხეებისგან"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "შეუზღუდავი საქაღალდეები, იარლიყები და ფილტრები"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ საკუთარი ელფოსტის დომენი"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "წლის ყველაზე დიდი ფასდაკლება"
+      ],
+      "Black Friday": [
+        "შავი პარასკევი"
+      ],
+      "for 12 months": [
+        "12 თვით"
+      ],
+      "Last chance to save big": [
+        "ბოლო შანსი დიდი დანაზოგისთვის"
+      ],
+      "Protect your entire tribe": [
+        "დაიცავით მთელი თქვენი ოჯახი"
+      ],
+      "Protection for two in a single plan": [
+        "დაცვა ორი ადამიანისთვის ერთ პაკეტში"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } თვე",
@@ -1511,6 +1608,11 @@
       ],
       "Expand": [
         "ამოკეცვა"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "ეს მიმოწერა ძალიან გრძელია გასაგრძელებლად. დაიწყეთ ახალი ჩატი, რათა ${ LUMO_SHORT_APP_NAME }-მა გამართულად და სწრაფად განაგრძოს მუშაობა."
       ]
     },
     "collider_2025: feature": {
@@ -3002,9 +3104,6 @@
       "Address primary private key not found": [
         "მისამართის ძირითადი პირადი გასაღები ნაპოვნი არაა"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
-      ],
       "Already a member of this share": [
         "უკვე წარმოადგენს ამ გაზიარების წევრს"
       ],
@@ -3262,15 +3361,6 @@
       "Please complete the billing details": [
         "გთხოვთ, შეავსოთ ბილინგის დეტალები"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "თქვენს ორგანიზაციაში მომხმარებლების ჩამატებამდე თქვენი დომენის მორგებაა საჭირო."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
-      ],
       "Please enter a valid postal code": [
         "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
       ],
@@ -3301,9 +3391,6 @@
       ],
       "Please select billing state": [
         "აირჩიეთ გადახდის მდგომარეობა"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
       ],
       "Port is required": [
         "პორტი აუცილებელია"
@@ -3504,12 +3591,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "თქვენ გამოიყენეთ თქვენს პაკეტში არსებული ყველა მისამართი. გთხოვთ განაახლოთ თქვენი პაკეტი ახალი მისამართის დასამატებლად ან გამორთოთ მისამართი თქვენს ანგარიშში."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ],
       "You must set a name": [
         "სახელის დაყენება აუცილებელია"
@@ -4287,14 +4368,6 @@
         "კალენდრის ICS ფაილად გასატანად აირჩიეთ ${ boldExport }."
       ]
     },
-    "Import status": {
-      "In progress": [
-        "მიმდინარეობს"
-      ],
-      "Migrated": [
-        "მიგრირებულია"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "შემოტანილი იქნება ${ totalContactsDiscarded } ${ totalContacts }-დან. დეტალებისთვის დააწკაპუნეთ"
@@ -4326,9 +4399,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } საჭიროებს ${ BRAND_NAME } მისამართს ღონისძიების უსაფრთხო სინქრონიზაციისა და დაშიფვრისთვის. ${ claimAddressButton }."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } საჭიროებს ${ BRAND_NAME } მისამართს ღონისძიების უსაფრთხო სინქრონიზაციისა და დაშიფვრისთვის. მიიღეთ თქვენი უფასო ${ MAIL_APP_NAME } მისამართი ახლავე."
@@ -4437,10 +4507,6 @@
       ],
       "${ storage } storage": [
         "${ storage } საცავი"
-      ],
-      "${ total } user found": [
-        "აღმოჩენილია ${ total } მომხმარებელი",
-        "აღმოჩენილია ${ total } მომხმარებელი"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } კონტაქტი წარმატებით განახლდა.",
@@ -5318,9 +5384,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "დროებით მიუწვდომელია მაღალი მოთხოვნის გამო. გთხოვთ, სცადოთ მოგვიანებით."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
-      ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "მადლობა, რომ აირჩიეთ ${ BRAND_NAME } თქვენი ორგანიზაციის დასაცავად."
       ],
@@ -5429,9 +5492,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "პაროლის დამახსოვრებაში დაგეხმარებით, თუ პერიოდულად მის შეყვანას გთხოვთ. დროთა განმავლობაში ამას სულ უფრო იშვიათად გთხოვთ."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "მოვლენების შემოსატანად ჯერ შექმენით კალენდარი ${ CALENDAR_APP_NAME }-ში. შემოტანილი მოვლენები ამ კალენდარში გამოჩნდება."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "თქვენი კონტაქტების ხელახლა ხელმოწერისთვის ჩვენ უნდა შევამოწმოთ ყველა კონტაქტი თქვენს ანგარიშში არსებული დაშიფვრის გასაღებების სიიდან. თუ შესატყვისი ვერ მოიძებნა, თქვენი კონტაქტი ხელახლა გაფორმდება დაშიფვრის ძირითადი გასაღებით."
@@ -5963,9 +6023,6 @@
       "Calendar": [
         "კალენდარი"
       ],
-      "Calendars": [
-        "კალენდრები"
-      ],
       "can edit": [
         "შეუძლია, ჩაასწოროს"
       ],
@@ -6091,9 +6148,6 @@
       ],
       "Email format": [
         "ელფოსტის ფორმატი"
-      ],
-      "Emails": [
-        "ელფოსტები"
       ],
       "Emails (all messages)": [
         "ელფოსტა (ყველა შეტყობინება)"
@@ -8744,17 +8798,11 @@
       "San Francisco": [
         "სან-ფრანცისკო"
       ],
-      "Search": [
-        "ძებნა"
-      ],
       "Search for group name": [
         "ჯგუფის სახელის მოძებნა"
       ],
       "Search for name or email": [
         "სახელის ან ელფოსტის ძებნა"
-      ],
-      "Search for users or addresses": [
-        "მოძებნეთ მომხმარებლები ან მისამართები"
       ],
       "Search parent folder": [
         "მშობელ საქაღალდეში ძებნა"
@@ -10096,9 +10144,6 @@
       "Name": [
         "სახელი"
       ],
-      "Size": [
-        "ზომა"
-      ],
       "Status": [
         "სტატუსი"
       ],
@@ -10276,9 +10321,6 @@
       "Check for malicious files": [
         "შემოწმება საეჭვო ფაილებზე"
       ],
-      "Choose a provider": [
-        "აირჩიეთ პროვაიდერი"
-      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-ის მისამართის გამოთხოვა"
       ],
@@ -10429,9 +10471,6 @@
       "Disconnected from Gmail": [
         "გათიშულია Gmail-დან"
       ],
-      "Domain names": [
-        "დომენის სახელი"
-      ],
       "Downgrade account": [
         "ანგარიშის ტარიფის ჩამოწევა"
       ],
@@ -10567,9 +10606,6 @@
       ],
       "Import groups": [
         "ჯგუფების შემოტანა"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "თქვენი მონაცემების იმპორტი ${ BRAND_NAME }-ში"
       ],
       "Information exposed in breach": [
         "გაჟონილი ინფორმაცია"
@@ -10766,9 +10802,6 @@
       "Select contact group": [
         "მონიშნეთ კონტაქტების ჯგუფი"
       ],
-      "Select data to import": [
-        "აირჩიეთ შემოსატანი მონაცემები"
-      ],
       "Select link expiration date": [
         "აირჩიეთ ბმულის ვადის თარიღი"
       ],
@@ -10921,9 +10954,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "გამოიყენეთ ${ VPN_SHORT_APP_NAME } მონაცემთა კონფიდენციალობისთვის"
-      ],
-      "Users and addresses": [
-        "მომხმარებლები და მისამართები"
       ],
       "Verification failed": [
         "გადამოწმების შეცდომა"
