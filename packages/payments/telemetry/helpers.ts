@@ -1,3 +1,5 @@
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
+
 import { type ApplePayFlow, getOfferedApplePayFlow } from '../core/apple-pay-support';
 import type { BillingAddress } from '../core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES, type PLANS } from '../core/constants';
@@ -10,7 +12,6 @@ import type {
     PlanIDs,
 } from '../core/interface';
 import { type TelemetryMethodName, getPaymentMethodConfig } from '../core/payment-methods/registry';
-import { getPlanNameFromIDs } from '../core/plan/helpers';
 import { getPlanIDs } from '../core/subscription/helpers/plan-ids';
 import type { Subscription } from '../core/subscription/interface';
 import { isFreeSubscription, isSavedPaymentMethod } from '../core/type-guards';

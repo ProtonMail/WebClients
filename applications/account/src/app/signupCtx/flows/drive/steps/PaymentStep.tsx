@@ -17,10 +17,10 @@ import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentCont
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { ADDON_PREFIXES, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 import noop from '@proton/utils/noop';
 
 import Terms from '../../../components/Terms';

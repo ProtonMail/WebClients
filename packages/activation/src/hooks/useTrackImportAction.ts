@@ -1,4 +1,4 @@
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import type { ApiImportProvider } from '../api/api.interface';
 import type { ImportType } from '../interface';

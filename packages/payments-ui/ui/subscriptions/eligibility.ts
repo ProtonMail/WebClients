@@ -1,17 +1,17 @@
 import type { OfferConfig } from '@proton/components/containers/offers/interface';
 import { type ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
-import { isPlanEnabled } from '@proton/payments/core/plan/helpers';
-import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     getHas2025OfferCoupon,
     getIsB2BAudienceFromSubscription,
     isForbiddenModification,
 } from '@proton/payments/core/subscription/helpers';
-import { getPlan } from '@proton/payments/core/subscription/helpers/plan-info';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
+import { isPlanEnabled } from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { getPlan } from '@proton/shared/lib/payments/subscription/helpers/plan-info';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 
 interface Combination {

@@ -11,9 +11,9 @@ import { getTotalBillingText } from '@proton/components/containers/payments/subs
 import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
-import type { Plan } from '@proton/payments/core/plan/interface';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { APPS } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import clsx from '@proton/utils/clsx';
 
 import type { OptimisticOptions } from '../single-signup-v2/interface';

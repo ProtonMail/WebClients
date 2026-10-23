@@ -1,5 +1,6 @@
 import { TelemetryEasySwitchEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { allowed, bool, defineEvent } from '@proton/telemetry-tracker/events';
+import { defineEvent } from '@proton/telemetry-tracker/lib/defineEvent';
+import { allowed, bool } from '@proton/telemetry-tracker/lib/dimensions';
 
 const IMPORT_ACTIONS = ['cancel_import', 'resume_import', 'undo_import', 'delete_report'] as const;
 export type ImportAction = (typeof IMPORT_ACTIONS)[number];

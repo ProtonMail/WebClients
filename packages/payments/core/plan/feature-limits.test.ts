@@ -1,8 +1,9 @@
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+
 import { getLongTestPlans } from '../../testing/data-plans';
 import { ADDON_NAMES, PLANS, PLAN_TYPES } from '../constants';
 import type { FeatureLimitKey } from '../interface';
 import { getPlanFeatureLimit } from './feature-limits';
-import type { Plan } from './interface';
 
 const testPlans = getLongTestPlans();
 

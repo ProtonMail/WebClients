@@ -1,8 +1,8 @@
 import { CYCLE, type PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getIsVPNPassPromotion } from '@proton/payments/core/subscription/helpers';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import type { CycleData } from './interface';
 

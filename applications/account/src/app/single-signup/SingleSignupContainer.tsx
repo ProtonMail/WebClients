@@ -20,15 +20,7 @@ import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billin
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
-import {
-    getIsB2BAudienceFromPlan,
-    getIsVpnB2BPlan,
-    getPlanFromPlanIDs,
-    getPlanNameFromIDs,
-} from '@proton/payments/core/plan/helpers';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getHas2025OfferCoupon, getIsVPNPassPromotion, getPlanIDs } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
@@ -42,6 +34,14 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import {
+    getIsB2BAudienceFromPlan,
+    getIsVpnB2BPlan,
+    getPlanFromPlanIDs,
+    getPlanNameFromIDs,
+} from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';

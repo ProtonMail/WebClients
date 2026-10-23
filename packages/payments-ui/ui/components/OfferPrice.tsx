@@ -5,7 +5,7 @@ import SkeletonLoader, {
     type Props as SkeletonLoaderProps,
 } from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
-import { getIsVpnB2BPlan, getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
+import { getIsVpnB2BPlan, getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
 import noop from '@proton/utils/noop';
 
 import { type PlanToCheck, usePaymentsPreloaded } from '../context/PaymentContext';

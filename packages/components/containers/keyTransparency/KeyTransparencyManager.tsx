@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { serverTime } from '@protontech/crypto';
 
-import { KT_ERROR_TYPE, ktSentryReportError } from '@proton/key-transparency/helpers';
+import { KT_ERROR_TYPE, ktSentryReportError } from '@proton/key-transparency/helpers/utils';
 import { SECOND } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 

@@ -1,11 +1,11 @@
 import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { BillingAddress } from './billing-address/billing-address';
 import { type ADDON_NAMES, PLANS } from './constants';
 import type { Currency, FreeSubscription, PaymentStatus } from './interface';
-import type { Plan } from './plan/interface';
 import type { Subscription } from './subscription/interface';
 import { isValidPlanName } from './type-guards';
 

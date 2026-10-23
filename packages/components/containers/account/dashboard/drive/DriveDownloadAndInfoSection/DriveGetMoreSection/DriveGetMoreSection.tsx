@@ -2,12 +2,12 @@ import { c } from 'ttag';
 
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { type MaybeFreeSubscription, hasFree } from '@proton/payments/core/subscription/helpers';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { APPS, DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import DriveLogo from '../../../../../../components/logo/DriveLogo';
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../../../../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../../../../payments/subscription/constants';
 import type { DashboardMoreInfoSection } from '../../../shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
 import {
     DashboardMoreInfoSectionTag,

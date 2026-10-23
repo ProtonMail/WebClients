@@ -1,10 +1,10 @@
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import type { EitherOr } from '@proton/shared/lib/interfaces/utils';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { Renew, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { CYCLE, PLANS } from '../core/constants';
 import type { Currency, PlanIDs } from '../core/interface';
-import type { Plan } from '../core/plan/interface';
-import { Renew, SubscriptionPlatform } from '../core/subscription/constants';
 import type { Subscription } from '../core/subscription/interface';
 import { SelectedPlan } from '../core/subscription/selected-plan';
 import { isValidPlanName } from '../core/type-guards';

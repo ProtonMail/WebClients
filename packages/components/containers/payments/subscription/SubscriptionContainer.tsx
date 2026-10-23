@@ -49,15 +49,7 @@ import type {
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';
 import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
-import {
-    getIsB2BAudienceFromPlan,
-    getPlanCurrencyFromPlanIDs,
-    getPlanFromPlanIDs,
-    getPlanNameFromIDs,
-} from '@proton/payments/core/plan/helpers';
-import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import { hasPlanIDs, switchPlan } from '@proton/payments/core/planIDs';
-import { Audience, SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
 import {
     getAutoCoupon,
@@ -76,6 +68,7 @@ import type {
 } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { SubscriptionModificationChangeAudienceTelemetry } from '@proton/payments/telemetry/subscription-container';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
@@ -86,6 +79,14 @@ import { APPS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import {
+    getIsB2BAudienceFromPlan,
+    getPlanCurrencyFromPlanIDs,
+    getPlanFromPlanIDs,
+    getPlanNameFromIDs,
+} from '@proton/shared/lib/payments/plan/helpers';
+import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
+import { Audience, SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -107,7 +108,6 @@ import { RenewalEnableNote } from './RenewalEnableNote';
 import { useVisionaryDowngradeWarningModal } from './VisionaryDowngradeWarningModal';
 import { useCancelSubscriptionFlow } from './cancelSubscription/useCancelSubscriptionFlow';
 import { SubscriptionConfirmButton } from './confirm-button/SubscriptionConfirmButton';
-import { SUBSCRIPTION_STEPS } from './constants';
 import SubscriptionCheckoutCycleItem from './cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
 import { getAllowedCycles } from './helpers/getAllowedCycles';

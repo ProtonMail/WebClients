@@ -1,9 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import { MEET_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { getIsB2BAudienceFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import { ADDON_PREFIXES, MAX_MEET_ADDON, MAX_MEMBER_MEET_ADDON, TRIAL_MAX_MEET_SEATS } from '../../constants';
-import { getIsB2BAudienceFromPlanIDs } from '../../plan/helpers';
 import type { AddonConfig } from '../interfaces';
 import { notInMailOrCalendarContext, passesCouponGate, planSupportsAddon } from '../visibility';
 

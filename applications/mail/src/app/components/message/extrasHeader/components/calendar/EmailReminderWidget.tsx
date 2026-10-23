@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses, useGetAddresses } from '@proton/account/addresses/hooks';
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
@@ -23,7 +24,6 @@ import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';
 import { getEvent } from '@proton/shared/lib/api/calendars';

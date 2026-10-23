@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import type { PLANS } from '@proton/payments/core/constants';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import {
     type SubscriptionSearchParams,
     getSubscriptionSearchParamsString,
 } from '@proton/payments/core/subscription/search-params';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import type { OptimisticOptions } from '../single-signup-v2/interface';
 import type { Measure } from './interface';

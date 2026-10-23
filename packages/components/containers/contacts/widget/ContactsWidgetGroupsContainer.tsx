@@ -2,10 +2,10 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';

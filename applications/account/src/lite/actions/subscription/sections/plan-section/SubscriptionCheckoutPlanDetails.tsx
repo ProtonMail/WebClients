@@ -19,11 +19,11 @@ import { IcCreditCards } from '@proton/icons/icons/IcCreditCards';
 import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import type { CheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { FreeSubscription } from '@proton/payments/core/interface';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { isTrial } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionCheckForbiddenReason } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { isOrganization } from '@proton/shared/lib/organization/helper';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { getDisplayName, getTrialPeriodText } from '../../helpers';
 import WithLoadingIndicator from '../shared/WithLoadingIndicator';

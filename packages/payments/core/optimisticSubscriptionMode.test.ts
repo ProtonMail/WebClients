@@ -1,8 +1,9 @@
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+
 import { buildSubscription } from '../testing/buildSubscription';
 import { getTestPlansMap } from '../testing/data-plans';
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from './constants';
 import { computeOptimisticSubscriptionMode } from './optimisticSubscriptionMode';
-import { SubscriptionMode } from './subscription/constants';
 
 describe('computeOptimisticSubscriptionMode', () => {
     it('should return regular subscription mode if user has a free subscription', () => {

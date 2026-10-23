@@ -1,7 +1,8 @@
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+
 import type { getOptimisticCheckResult } from './checkout';
 import type { FreeSubscription } from './interface';
 import { planIDsPositiveDifference } from './planIDs';
-import { SubscriptionMode } from './subscription/constants';
 import type { Subscription } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
 import { isFreeSubscription } from './type-guards';

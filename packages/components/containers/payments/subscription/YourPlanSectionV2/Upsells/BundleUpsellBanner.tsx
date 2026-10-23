@@ -10,6 +10,7 @@ import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
 import { hasFreeOrPlus, isManagedExternally } from '@proton/payments/core/subscription/helpers';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -19,7 +20,6 @@ import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlo
 import useLoad from '../../../../../hooks/useLoad';
 import { PromotionBanner } from '../../../../banner/PromotionBanner';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../constants';
 import bundleLogo from '../images/bundle.svg';
 
 const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {

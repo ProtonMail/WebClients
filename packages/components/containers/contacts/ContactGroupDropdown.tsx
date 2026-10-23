@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
@@ -12,7 +13,6 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {

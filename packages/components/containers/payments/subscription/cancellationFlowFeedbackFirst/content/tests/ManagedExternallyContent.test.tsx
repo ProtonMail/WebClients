@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import ModalTwo from '../../../../../../components/modalTwo/Modal';
 import { ManagedExternallyContent } from '../ManagedExternallyContent';

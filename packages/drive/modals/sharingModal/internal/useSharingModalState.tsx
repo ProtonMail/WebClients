@@ -15,11 +15,11 @@ import {
 import { splitInvitationUid, splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
 import { c } from 'ttag';
 
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useLoading from '@proton/hooks/useLoading';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';

@@ -2,8 +2,8 @@ import { CryptoProxy } from '@protontech/crypto';
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import * as useContactEmailHooks from '@proton/account/contactEmails/hooks';
 import * as userHooks from '@proton/account/user/hooks';
-import * as useContactEmailHooks from '@proton/mail/store/contactEmails/hooks';
 import * as mailLabelHooks from '@proton/mail/store/labels/hooks';
 import * as mailSettingsHooks from '@proton/mail/store/mailSettings/hooks';
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
@@ -28,9 +28,9 @@ jest.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ API_URL: 'api' }),
 }));
 
-jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
+jest.mock('@proton/account/contactEmails/hooks', () => ({
     __esModule: true,
-    ...jest.requireActual('@proton/mail/store/contactEmails/hooks'),
+    ...jest.requireActual('@proton/account/contactEmails/hooks'),
 }));
 jest.mock('@proton/mail/store/labels/hooks', () => ({
     __esModule: true,

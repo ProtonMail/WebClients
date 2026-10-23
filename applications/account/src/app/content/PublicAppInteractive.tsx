@@ -1,6 +1,7 @@
 import { type Dispatch, type ReactNode, type SetStateAction, useCallback, useEffect, useState } from 'react';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
+import { FlagProvider } from '@unleash/proxy-client-react';
 import type * as H from 'history';
 import { c } from 'ttag';
 
@@ -21,7 +22,6 @@ import {
     VPN_TV_SIGNUP_REDIRECT,
 } from '@proton/shared/lib/constants';
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
-import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
 import bornPrivateActivatePage from '../../pages/born-private.activate';

@@ -11,8 +11,6 @@ import {
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { PLANS } from '@proton/payments/core/constants';
-import { getHasPlusPlan } from '@proton/payments/core/plan/helpers';
-import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getSubscriptionPlanTitle,
@@ -24,6 +22,8 @@ import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrappe
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { getHasPlusPlan } from '@proton/shared/lib/payments/plan/helpers';
+import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import Loader from '../../../../../components/loader/Loader';
 import useLoad from '../../../../../hooks/useLoad';

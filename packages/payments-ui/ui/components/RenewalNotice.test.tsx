@@ -4,15 +4,15 @@ import { addMonths } from 'date-fns';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { getPrice } from '@proton/payments/core/price-helpers';
-import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { getCheckoutRenewNoticeText, getCheckoutRenewNoticeTextFromCheckResult } from './RenewalNotice';
 

@@ -1,5 +1,5 @@
 import type { IconSize } from '@proton/icons/types';
-import type { Plan } from '@proton/payments/core/plan/interface';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';

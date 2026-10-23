@@ -2,10 +2,10 @@ import { render, screen } from '@testing-library/react';
 
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
-import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import { getHeadlessCheckout } from '../get-headless-checkout';

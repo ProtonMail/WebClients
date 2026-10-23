@@ -30,7 +30,6 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { PassAliasesProvider } from '@proton/pass/components/Drawer/PassAliases/PassAliasesProvider';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import {
     ADDRESS_TYPE,
     BRAND_NAME,
@@ -44,6 +43,7 @@ import { getActiveAddresses, getIsBYOEOnlyAccount } from '@proton/shared/lib/hel
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { isDesktopInboxUser, isDriveUser, isPassUser, isVPNUser } from '@proton/shared/lib/helpers/usedClientsFlags';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 
 import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from '../../../constants';
 import { isConversationMode } from '../../../helpers/mailSettings';

@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import type { CtaUpgradeParams } from '@proton/offers-delivery/interface';
-import { SUBSCRIPTION_STEPS } from '@proton/payments-ui/ui/subscriptions/constants';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 
 export const useOfferUpgrade = () => {
     const openSubscriptionModal = useSubscriptionModalRaw();

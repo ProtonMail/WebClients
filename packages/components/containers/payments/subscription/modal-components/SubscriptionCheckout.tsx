@@ -20,8 +20,6 @@ import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/che
 import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
-import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
-import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import type {
     FullPlansMap,
     Subscription,
@@ -32,6 +30,8 @@ import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
+import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 

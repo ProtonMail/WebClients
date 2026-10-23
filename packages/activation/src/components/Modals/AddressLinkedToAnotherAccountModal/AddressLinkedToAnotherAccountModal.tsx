@@ -16,7 +16,7 @@ import {
     WALLET_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { BYOEAddressLinkedModalAction, BYOEAddressLinkedModalShown } from '../../../telemetry/events';
 

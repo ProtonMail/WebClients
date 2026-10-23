@@ -7,16 +7,16 @@ import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
 import { ADDON_PREFIXES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
-import { getAddonNameByPlan } from '@proton/payments/core/plan/helpers';
 import { getHasMeetIncludedInPlan, getPlanIDs, getPlanName } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { getAddonNameByPlan } from '@proton/shared/lib/payments/plan/helpers';
 
 import NewBadge from '../../../../../../components/newBadge/NewBadge';
 import { getSimplePriceString } from '../../../../../../components/price/helper';
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../../constants';
 import { PlanIcon } from '../../PlanIcon';
 import PlanIconName from '../../PlanIconName';
 import type { UpsellSectionBaseProps } from '../../YourPlanUpsellsSectionV2';

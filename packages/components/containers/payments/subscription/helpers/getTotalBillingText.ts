@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
-import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
+import { isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
 
 export const getTotalBillingText = (cycle: Cycle, planIDs: PlanIDs, { excludingTax }: { excludingTax: boolean }) => {
     if (isLifetimePlanSelected(planIDs)) {

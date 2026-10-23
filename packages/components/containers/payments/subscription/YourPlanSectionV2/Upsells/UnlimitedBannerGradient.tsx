@@ -9,11 +9,11 @@ import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/Dashboa
 import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
 import { getNormalCycleFromCustomCycle } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -27,6 +27,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { everythingInPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
+import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 import DriveLogo from '../../../../../components/logo/DriveLogo';
@@ -43,7 +44,6 @@ import { getFoldersAndLabelsFeature, getNAddressesFeature, getNDomainsFeature } 
 import { PASS_PLUS_VAULTS, get2FAAuthenticator, getHideMyEmailAliases, getVaults } from '../../../features/pass';
 import { PlanCardFeatureList } from '../../PlanCardFeatures';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers/dashboard-upsells';
 import { defaultUpsellCycleB2C, getUpsell } from '../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';

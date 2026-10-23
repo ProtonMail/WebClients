@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 
 import { useAlbumsStore } from '../../useAlbums.store';
 import { getContactNameAndEmail } from '../getContactNameAndEmail';

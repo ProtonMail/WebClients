@@ -1,5 +1,5 @@
 import { generateDeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
-import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
+import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { Currency, Cycle, ExtendedTokenPayment, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';

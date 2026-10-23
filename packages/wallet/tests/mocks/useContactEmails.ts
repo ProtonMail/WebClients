@@ -1,4 +1,4 @@
-import * as useContactEmailsModule from '@proton/mail/store/contactEmails/hooks';
+import * as useContactEmailsModule from '@proton/account/contactEmails/hooks';
 
 export const mockUseContactEmails = (
     mockedValue?: Partial<ReturnType<typeof useContactEmailsModule.useContactEmails>>

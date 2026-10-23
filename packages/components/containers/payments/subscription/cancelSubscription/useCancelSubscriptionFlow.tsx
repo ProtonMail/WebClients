@@ -6,7 +6,6 @@ import { useGetSubscription, useSubscription } from '@proton/account/subscriptio
 import { useGetUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { PLANS } from '@proton/payments/core/constants';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getAvailableSubscriptionActions,
@@ -18,6 +17,7 @@ import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials'
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useCancelConfirmationStep } from '../cancellationSteps/useCancelConfirmationStep';

@@ -1,5 +1,7 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import { FlagProvider } from '@unleash/proxy-client-react';
+
 import * as bootstrap from '@proton/account/bootstrap';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
@@ -18,7 +20,6 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
-import { FlagProvider } from '@proton/unleash/proxy';
 
 import NotificationManagerInjector from './components/notification/NotificationManagerInjector';
 import config from './config';

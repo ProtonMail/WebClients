@@ -1,4 +1,4 @@
-import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
+import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
 import { getForks, pullForkSession, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';

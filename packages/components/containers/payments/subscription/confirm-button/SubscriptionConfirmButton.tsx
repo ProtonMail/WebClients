@@ -2,8 +2,8 @@ import { useApi } from '@proton/app-context/useApi';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { usePaymentPollers } from '@proton/payments-ui/ui/hooks/usePaymentPollers';
 import { changeRenewState } from '@proton/payments/core/api/api';
-import { Renew, SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { isTrial } from '@proton/payments/core/subscription/helpers';
+import { Renew, SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import noop from '@proton/utils/noop';
 
 import { AddCreditCardButton, type PublicProps as AddCreditCardButtonProps } from './AddCreditCardButton';

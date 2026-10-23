@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import type { OpenSubscriptionModalCallback } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { PLANS } from '@proton/payments/core/constants';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { Button, Modal } from '../../../atoms';

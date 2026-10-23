@@ -2,7 +2,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { getTokensByFeature } from '../api/api';
 import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';

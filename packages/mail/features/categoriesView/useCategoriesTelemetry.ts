@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { useUnleashClient } from '@unleash/proxy-client-react';
+
 import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
@@ -15,7 +17,6 @@ import { sendTelemetryReportWithBaseDimensions } from '@proton/shared/lib/helper
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
-import { useUnleashClient } from '@proton/unleash/proxy';
 
 import type { CategoriesViewState } from '../../store/categoriesView/categoriesViewSelector';
 import { selectCategoryUnreadCount } from '../../store/categoriesView/categoriesViewSelector';

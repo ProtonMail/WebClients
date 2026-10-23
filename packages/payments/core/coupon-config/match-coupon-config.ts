@@ -1,4 +1,5 @@
-import { getPlanNameFromIDs } from '../plan/helpers';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
+
 import type { CouponConfigMetadata, CouponConfigProps } from './interface';
 import { isCouponConfigRequiredProps } from './interface';
 

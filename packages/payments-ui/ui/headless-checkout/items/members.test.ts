@@ -1,7 +1,7 @@
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import { getHeadlessCheckout } from '../get-headless-checkout';
 import { defaultApp as app, makeAddon, makeCheckResult, makePlan, makePricing } from './test-helpers';

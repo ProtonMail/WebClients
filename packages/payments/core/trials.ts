@@ -1,8 +1,9 @@
+import { TrialType } from '@proton/shared/lib/payments/subscription/constants';
+
 import { getEntitlementsPerSubscription } from './entitlements/entitlement-grants';
 import { EntitlementName } from './entitlements/entitlement-names';
 import { hasGrantedEntitlement } from './entitlements/helpers';
 import type { EntitlementCatalog } from './entitlements/interface';
-import { TrialType } from './subscription/constants';
 import { isTrial } from './subscription/helpers/trial';
 import type { MaybeFreeSubscription, Subscription } from './subscription/interface';
 import { isPaidSubscription } from './type-guards';

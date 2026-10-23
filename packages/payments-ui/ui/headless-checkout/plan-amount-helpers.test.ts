@@ -1,5 +1,5 @@
 import { PLANS } from '@proton/payments/core/constants';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { createHeadlessCheckoutContextInner } from './get-headless-checkout';
 import { defaultApp as app, makeCheckResult, makePlan, makePricing } from './items/test-helpers';

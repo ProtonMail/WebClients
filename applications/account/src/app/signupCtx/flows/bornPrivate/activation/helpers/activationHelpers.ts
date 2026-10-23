@@ -1,4 +1,4 @@
-import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
+import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { getInfo } from '@proton/shared/lib/api/auth';
 import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';

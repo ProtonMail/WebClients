@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
-import { TrialType } from '@proton/payments/core/subscription/constants';
+import { TrialType } from '@proton/shared/lib/payments/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';

@@ -7,9 +7,9 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 
 import './AliasPromotionSection.scss';
 

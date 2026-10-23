@@ -1,6 +1,6 @@
 import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
-import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
+import { isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
 
 import EllipsisLoader from '../../../../components/loader/EllipsisLoader';
 import Price from '../../../../components/price/Price';

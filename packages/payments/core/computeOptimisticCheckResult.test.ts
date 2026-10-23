@@ -1,8 +1,9 @@
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+
 import { buildSubscription } from '../testing/buildSubscription';
 import { getTestPlansMap } from '../testing/data-plans';
 import { computeOptimisticCheckResult } from './computeOptimisticCheckResult';
 import { CYCLE, PLANS } from './constants';
-import { SubscriptionMode } from './subscription/constants';
 
 describe('computeOptimisticCheckResult', () => {
     beforeAll(() => {

@@ -6,10 +6,10 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
-import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import type { Coupon } from '@proton/payments/core/subscription/interface';
 import { createMockModel, mockPlans } from '@proton/payments/testing/signup';
 import { APPS } from '@proton/shared/lib/constants';
+import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import AccountStepPaymentSummary from './AccountStepPaymentSummary';
 import type { SignupModelV2 } from './interface';

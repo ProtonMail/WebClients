@@ -27,8 +27,6 @@ import type {
 } from '@proton/payments/core/interface';
 import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/currencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { isV5PaymentToken } from '@proton/payments/core/type-guards';
 import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
@@ -39,6 +37,8 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { isBilledUser } from '@proton/shared/lib/interfaces/User';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import noop from '@proton/utils/noop';
 
 import AccountStepPaymentSummary from './AccountStepPaymentSummary';

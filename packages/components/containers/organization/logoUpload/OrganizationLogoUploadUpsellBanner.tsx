@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { PLANS } from '@proton/payments/core/constants';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import lightlabellingUpsellSvg from '@proton/styles/assets/img/illustrations/account-lightlabelling-upsell.svg';
 
 import { useBundleProPlan } from '../../../hooks/useHasPlan';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 
 interface UpsellBannerProps {
     organization: Organization;

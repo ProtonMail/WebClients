@@ -3,10 +3,10 @@ import isDeepEqual from 'lodash/isEqual';
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useGetSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { CacheType } from '@proton/redux-utilities/interface';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import { usePollCondition } from './usePollCondition';
 

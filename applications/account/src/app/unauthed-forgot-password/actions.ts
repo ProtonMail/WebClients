@@ -1,7 +1,8 @@
 import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
 import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 
-import { createPreAuthKTVerifier, resetSelfAudit } from '@proton/key-transparency/shared';
+import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
+import { resetSelfAudit } from '@proton/key-transparency/shared/resetSelfAudit';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';

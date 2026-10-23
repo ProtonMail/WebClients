@@ -23,7 +23,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { initTracker } from '@proton/telemetry-tracker/tracker';
+import { initTracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import config from '../config';
 import locales from '../locales';

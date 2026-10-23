@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { isMainCurrency } from '@proton/payments/core/currencies';
-import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import Price from '../../../price/Price';
 import { getUpsellPlanMonthlyPrice } from '../helpers/getUpsellPlanMonthlyPrice';

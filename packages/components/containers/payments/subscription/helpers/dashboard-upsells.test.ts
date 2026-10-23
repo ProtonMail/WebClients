@@ -1,13 +1,14 @@
 import { buildUser } from '@proton/account/testing/buildUser';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import {
     bundle2024Upsell,
@@ -20,7 +21,6 @@ import {
     unlimitedUpsell,
     vpnBusinessUpsell,
 } from '../__mocks__/data';
-import { SUBSCRIPTION_STEPS } from '../constants';
 import { resolveUpsellsToDisplay } from './dashboard-upsells';
 
 const vpnPassProUpsell = {

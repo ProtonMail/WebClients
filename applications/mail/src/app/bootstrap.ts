@@ -5,6 +5,7 @@ import type { LogLevel } from '@protontech/logger/types';
 import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { contactEmailsThunk } from '@proton/account/contactEmails';
 import { serverEvent } from '@proton/account/eventLoop';
 import { initEvent } from '@proton/account/init';
 import { organizationThunk } from '@proton/account/organization';
@@ -18,7 +19,6 @@ import { createCalendarModelEventManager } from '@proton/calendar/calendarModelE
 import { setupGuestCrossStorage } from '@proton/cross-storage/account/guest';
 import { FeatureCode } from '@proton/features/interface';
 import { fetchFeatures } from '@proton/features/reducer';
-import { contactEmailsThunk } from '@proton/mail/store/contactEmails';
 import { categoriesThunk } from '@proton/mail/store/labels';
 import { mailSettingsThunk } from '@proton/mail/store/mailSettings';
 import createApi from '@proton/shared/lib/api/createApi';
@@ -34,7 +34,7 @@ import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { startMailForegroundTelemetry } from '@proton/shared/lib/telemetry/mailForegroundTelemetry';
 import { appMode } from '@proton/shared/lib/webpack.constants';
-import { initTracker } from '@proton/telemetry-tracker/tracker';
+import { initTracker } from '@proton/telemetry-tracker/lib/tracker';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';
 

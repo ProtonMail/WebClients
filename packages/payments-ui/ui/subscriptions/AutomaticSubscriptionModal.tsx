@@ -24,18 +24,18 @@ import {
     URL_CONFIGURABLE_ADDON_PREFIXES,
 } from '@proton/payments/core/constants';
 import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { extractSubscriptionSearchParams } from '@proton/payments/core/subscription/search-params';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useCurrencies } from '../hooks/useCurrencies';
-import { SUBSCRIPTION_STEPS } from './constants';
 import { type Eligibility, type PlanCombination, getEligibility } from './eligibility';
 
 interface Props extends ModalProps {

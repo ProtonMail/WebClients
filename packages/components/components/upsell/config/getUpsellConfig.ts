@@ -1,18 +1,18 @@
 import { type COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { APPS_WITH_IN_APP_PAYMENTS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import noop from '@proton/utils/noop';
 
 import type {
     OpenCallbackProps,
     OpenSubscriptionModalCallback,
 } from '../../../containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../../containers/payments/subscription/constants';
 
 export interface GetUpsellConfigProps {
     upsellRef?: string;

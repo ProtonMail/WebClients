@@ -1,4 +1,4 @@
-import type { Plan } from '@proton/payments/core/plan/interface';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import Info from '../../../components/link/Info';
 import { ButtonNumberInput } from './ButtonNumberInput';

@@ -18,9 +18,9 @@ import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS } from '@proton/payments/core/constants';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { BRAND_NAME, CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import { getStorageFeature } from '../../containers/payments/features/drive';
 import type { PlanCardFeatureDefinition } from '../../containers/payments/features/interface';

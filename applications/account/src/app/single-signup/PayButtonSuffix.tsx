@@ -5,9 +5,9 @@ import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PlainPaymentMethodType, PlanIDs } from '@proton/payments/core/interface';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import { getLocaleTermsURL } from '../content/helper';
 import Guarantee from './Guarantee';

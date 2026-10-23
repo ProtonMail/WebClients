@@ -1,7 +1,7 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 
 import AutomaticallySaveContacts from './AutomaticallySaveContacts';
 import { KeyboardShortcut } from './KeyboardShortcut';

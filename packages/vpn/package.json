@@ -8,8 +8,6 @@
     "exports": {
         "./types/Server": "./src/types/Server.ts",
         "./constants/tvUserTier": "./constants/tvUserTier.ts",
-        "./constants/staticCounters": "./constants/staticCounters.ts",
-        "./constants/vpnServers": "./constants/vpnServers.ts",
         "./components/Gateways": "./src/components/Gateways/GatewaysSection.tsx",
         "./components/NavSections": "./src/components/NavSections.tsx",
         "./components/Onboarding": "./src/components/Onboarding/index.tsx",

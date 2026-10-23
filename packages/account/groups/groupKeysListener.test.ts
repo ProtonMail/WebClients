@@ -27,7 +27,7 @@ jest.mock('@proton/shared/lib/keys/groupKeys', () => ({
     createGroupAddressKey: jest.fn(),
 }));
 
-jest.mock('@proton/key-transparency/helpers', () => ({
+jest.mock('@proton/key-transparency/helpers/createKTVerifier', () => ({
     createKTVerifier: jest.fn(() => ({
         keyTransparencyVerify: jest.fn(),
         keyTransparencyCommit: jest.fn(),

@@ -12,10 +12,10 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 import { configs, parser, plugin } from 'typescript-eslint';
 
 import { brandNameSelectors } from '@proton/oxlint-config/brandNames';
+import { allExtensions, allGlobs, typescriptGlobs } from '@proton/oxlint-config/globs';
 import { namingConventionOptions } from '@proton/oxlint-config/namingConvention';
 
 import { createExtraneousDependenciesRule } from './extraneousDependencies.js';
-import { allExtensions, allGlobs, typescriptGlobs } from './globs.js';
 import { restrictedImportsPlugin } from './restrictedImports.js';
 
 export default defineConfig(

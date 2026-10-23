@@ -5,10 +5,10 @@ import type { BillingAddress } from '@proton/payments/core/billing-address/billi
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { CYCLE } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

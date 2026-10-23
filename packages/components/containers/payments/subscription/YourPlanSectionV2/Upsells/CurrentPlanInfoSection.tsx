@@ -10,7 +10,6 @@ import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, Cycle } from '@proton/payments/core/interface';
-import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import { getSubscriptionPlanTitle } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
@@ -19,6 +18,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { everythingInPlanOrAppNameText, selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { getSelectFromNCountries, getVpnDevices } from '@proton/shared/lib/vpn/features';
 import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 

@@ -1,8 +1,8 @@
 import { APPS } from '@proton/shared/lib/constants';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { buildSubscription } from '../../testing/buildSubscription';
 import { ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION, PLANS } from '../constants';
-import { SubscriptionPlatform } from '../subscription/constants';
 import type { AddonCustomizerContext } from './interfaces';
 import {
     domainVpnBusinessGate,

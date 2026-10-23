@@ -2,7 +2,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/payments/core/plan/helpers';
+import { getIsPassB2BPlan, getIsVpnB2BPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 export const useShowScimGroupsOnboardingModal = () => {

@@ -1,9 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { getIsB2BAudienceFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import { ADDON_PREFIXES, TRIAL_MAX_SCRIBE_SEATS } from '../../constants';
-import { getIsB2BAudienceFromPlanIDs } from '../../plan/helpers';
 import type { AddonConfig } from '../interfaces';
 
 const getScribeWritingAssistantText = (scribeToLumo: boolean) => {

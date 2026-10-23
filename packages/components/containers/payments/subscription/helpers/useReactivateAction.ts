@@ -6,8 +6,8 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { changeRenewState } from '@proton/payments/core/api/api';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

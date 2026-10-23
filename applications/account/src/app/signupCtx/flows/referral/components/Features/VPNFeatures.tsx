@@ -4,7 +4,7 @@ import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
+import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
 

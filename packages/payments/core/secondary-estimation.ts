@@ -1,9 +1,10 @@
+import { getAddonNameByPlan, getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
+
 import type { CheckSubscriptionData } from './api/api';
 import { getOptimisticCheckResult } from './checkout';
 import type { ADDON_PREFIXES } from './constants';
 import type { PaymentsApi } from './interface';
-import { getAddonNameByPlan, getPlanNameFromIDs } from './plan/helpers';
-import type { PlansMap } from './plan/interface';
 import type { SubscriptionEstimation } from './subscription/interface';
 
 interface RunSecondarySubscriptionEstimationParams {

@@ -64,7 +64,7 @@ jest.mock('@proton/shared/lib/organization/helper', () => {
     };
 });
 
-jest.mock('@proton/key-transparency/helpers', () => {
+jest.mock('@proton/key-transparency/helpers/createKTVerifier', () => {
     return {
         createKTVerifier: jest.fn(() => ({
             keyTransparencyVerify: jest.fn(async () => {}),

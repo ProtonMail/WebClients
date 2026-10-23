@@ -1,9 +1,10 @@
+import { isMultiUserPersonalPlan } from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
+
 import { getAddonConfigByName, getPlanInclusionLimit, isSyntheticFeatureLimitKey } from '../addon/addons';
 import { type ADDON_NAMES, ADDON_PREFIXES, type PLANS, PLAN_TYPES } from '../constants';
 import type { FeatureLimitKey, PlanIDs } from '../interface';
 import { isAddonType } from './addons';
-import { isMultiUserPersonalPlan } from './helpers';
-import type { Plan, PlansMap } from './interface';
 
 // Synthetic feature limits (MaxIPs/MaxAI/MaxLumo/MaxMeet) aren't returned by the API; an addon-plan
 // fabricates them via its config's `featureLimit.grants`. lumo grants both MaxLumo and MaxAI.

@@ -1,6 +1,8 @@
 import { TelemetryBYOECreationFunnelEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { allowed, bool, defineEvent, defineTimer, duration, topValues } from '@proton/telemetry-tracker/events';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { defineEvent } from '@proton/telemetry-tracker/lib/defineEvent';
+import { allowed, bool, duration, topValues } from '@proton/telemetry-tracker/lib/dimensions';
+import { defineTimer } from '@proton/telemetry-tracker/lib/timers';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import type { EASY_SWITCH_SOURCES, TIME_PERIOD } from '../interface';
 

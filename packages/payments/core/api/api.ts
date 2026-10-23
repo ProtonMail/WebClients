@@ -1,5 +1,7 @@
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { User } from '@proton/shared/lib/interfaces/User';
+import type { FreePlanDefault, SubscriptionPlan } from '@proton/shared/lib/payments/plan/interface';
+import type { Renew, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
 import type { BillingAddressExtended } from '../billing-address/billing-address';
@@ -33,8 +35,6 @@ import type {
 } from '../interface';
 import { normalizePaymentMethodStatus } from '../payment-status';
 import { PlanState } from '../plan/constants';
-import type { FreePlanDefault, SubscriptionPlan } from '../plan/interface';
-import type { Renew, SubscriptionPlatform } from '../subscription/constants';
 import { FREE_PLAN } from '../subscription/freePlans';
 import type { Subscription } from '../subscription/interface';
 

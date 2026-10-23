@@ -1,8 +1,12 @@
 import { APPS } from '@proton/shared/lib/constants';
+import {
+    getAddonNameByPlan,
+    getIsB2BAudienceFromPlanIDs,
+    getPlanNameFromIDs,
+} from '@proton/shared/lib/payments/plan/helpers';
 
 import { ADDON_PREFIXES, PLANS } from '../constants';
 import { hasAddonFromPlanIDs } from '../plan/addons';
-import { getAddonNameByPlan, getIsB2BAudienceFromPlanIDs, getPlanNameFromIDs } from '../plan/helpers';
 import { hasNoExternallyManagedLumoSubscription } from '../subscription/helpers/external-management';
 import { getPlanIDs } from '../subscription/helpers/plan-ids';
 import type { AddonVisibilityRule } from './interfaces';
