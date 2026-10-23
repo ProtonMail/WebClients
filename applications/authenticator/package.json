@@ -20,9 +20,9 @@
         "test:ci": "jest --runInBand --ci --passWithNoTests --logHeapUsage"
     },
     "dependencies": {
-        "@dnd-kit/collision": "^0.5.0",
+        "@dnd-kit/collision": "catalog:",
         "@dnd-kit/dom": "catalog:",
-        "@dnd-kit/helpers": "^0.5.0",
+        "@dnd-kit/helpers": "catalog:",
         "@dnd-kit/react": "catalog:",
         "@proton/app-context": "workspace:^",
         "@proton/atoms": "workspace:^",

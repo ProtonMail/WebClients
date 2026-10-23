@@ -102,7 +102,7 @@
   },
   "dependencies": {
     "@ariakit/react": "0.4.29",
-    "@lexical/yjs": "0.31.2",
+    "@lexical/yjs": "catalog:",
     "@proton/atoms": "workspace:^",
     "@proton/components": "workspace:^",
     "@proton/docs-proto": "workspace:^",
@@ -113,14 +113,14 @@
     "@protontech/crypto": "catalog:",
     "date-fns": "^2.30.0",
     "idb": "catalog:",
-    "lexical": "0.31.2",
+    "lexical": "catalog:",
     "lib0": "^0.2.119",
     "react": "catalog:",
     "react-dom": "catalog:",
     "ttag": "catalog:",
     "uuid": "catalog:",
-    "y-protocols": "^1.0.6",
-    "yjs": "^13.6.15"
+    "y-protocols": "catalog:",
+    "yjs": "catalog:"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
