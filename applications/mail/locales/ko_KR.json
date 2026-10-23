@@ -906,9 +906,6 @@
       "Messages to this recipient": [
         "이 수신자에게 보내는 메시지"
       ],
-      "Migrate": [
-        "이전"
-      ],
       "Minimize composer": [
         "최소화"
       ],
@@ -1878,6 +1875,9 @@
       "Domains": [
         "도메인"
       ],
+      "Managed Service Provider": [
+        "관리 중인 서비스 제공자"
+      ],
       "Servers": [
         "서버"
       ],
@@ -2096,6 +2096,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "블랙프라이데이"
+      ],
+      "Get the deal": [
+        "혜택 받기"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/월"
+      ],
+      "15 GB storage": [
+        "15GB 저장공간"
+      ],
+      "2 individual accounts": [
+        "개별 계정 2개"
+      ],
+      "2 TB of secure storage": [
+        "2TB 보안 저장공간"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200GB 저장공간: 현재 요금제의 40배"
+      ],
+      "3 TB of secure storage": [
+        "3TB 보안 저장공간"
+      ],
+      "500 GB of secure storage": [
+        "500GB 보안 저장공간"
+      ],
+      "6 individual accounts": [
+        "개별 계정 6개"
+      ],
+      "Built-in 2FA authenticator": [
+        "내장형 2단계 인증 기능"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인율은 정상 월 요금 기준입니다. 청구 주기가 종료되면 정상 연간 요금으로 갱신됩니다."
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협 차단 및 보안 강화"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Use your own email domain": [
+        "자체 이메일 도메인 사용"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "연중 최대 세일"
+      ],
+      "Black Friday": [
+        "블랙프라이데이"
+      ],
+      "for 12 months": [
+        "12개월"
+      ],
+      "Last chance to save big": [
+        "마지막 역대급 할인 기회"
+      ],
+      "Protect your entire tribe": [
+        "온 가족을 보호하세요"
+      ],
+      "Protection for two in a single plan": [
+        "하나의 요금제로 두 사람 보호"
       ]
     },
     "Billing cycle option": {
@@ -2624,6 +2724,11 @@
       ],
       "Expand": [
         "펼치기"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "이 대화는 너무 길어서 더 이상 계속할 수 없습니다. ${ LUMO_SHORT_APP_NAME }의 원활하고 빠른 작동을 위해 새 대화를 시작해 주세요."
       ]
     },
     "collider_2025: feature": {
@@ -4570,9 +4675,6 @@
       "A group with this name already exists": [
         "이 이름을 가진 그룹이 이미 있습니다"
       ],
-      "A message is required when reporting copyright infringement or stolen data": [
-        "저작권 침해나 데이터 유실에 대한 리포트 제출 시 메시지가 필요합니다."
-      ],
       "A problem occurred, please try again.": [
         "문제가 발생했습니다. 다시 시도해 주세요."
       ],
@@ -4588,9 +4690,6 @@
       "Address is already added to your account": [
         "이미 추가된 주소입니다."
       ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "조직 외부의 사용자에 의해 주소가 이미 사용 중입니다. 해당 문제를 해결하기 위해 고객 지원 팀으로 문의 바랍니다."
-      ],
       "Address primary private key not found": [
         "기본 주소 키 찾을 수 없음"
       ],
@@ -4605,9 +4704,6 @@
       ],
       "Aliases could not be loaded": [
         "별칭을 불러올 수 없습니다."
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "모든 저장 공간이 할당되었습니다. 다른 사용자에게 할당 된 저장공간을 줄이십시오."
       ],
       "Amount above the maximum.": [
         "최대 금액보다 많습니다."
@@ -4630,35 +4726,14 @@
       "Authentication error.": [
         "인증 오류"
       ],
-      "Bookmark password is not available": [
-        "북마크 비밀번호를 사용할 수 없습니다"
-      ],
       "Calendar limit reached": [
         "캘린더 개수 제한에 도달했습니다"
-      ],
-      "Cannot add photo to album without a valid name": [
-        "유효한 이름 없이는 앨범에 사진을 추가할 수 없습니다"
-      ],
-      "Cannot download a folder": [
-        "폴더를 다운로드할 수 없음"
       ],
       "Cannot export this contact": [
         "이 연락처를 불러올 수 없음"
       ],
-      "Cannot move item without a valid name, please rename the item first": [
-        "유효한 이름 없이는 항목을 이동할 수 없습니다. 항목 이동 전 이름을 변경하세요."
-      ],
       "Cannot set expiration longer than retention policy allows.": [
         "보존 정책이 허용하는 것보다 유효기간을 더 길게 설정할 수 없습니다."
-      ],
-      "Cannot share root folder": [
-        "상위 폴더를 공유할 수 없습니다"
-      ],
-      "Cannot verify the author of this file": [
-        "이 파일의 소유자를 확인할 수 없습니다"
-      ],
-      "Cannot verify who uploaded this file": [
-        "이 파일을 업로드한 사용자의 진위를 파악할 수 없음"
       ],
       "Checkout expired, please try again": [
         "체크아웃 만료됨, 다시 시도하십시오"
@@ -4699,47 +4774,14 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "내용 검색을 활성화 할 수 없습니다. 어플리케이션을 재시작하거나 데이터를 제거하십시오."
       ],
-      "Copy operation aborted": [
-        "복사 작업 중단됨"
-      ],
-      "Copying item to a non-folder is not allowed": [
-        "폴더가 없는 곳에 항목을 복사하는 것이 허용되지 않습니다"
-      ],
-      "Could not find an available name": [
-        "사용 가능한 이름을 찾을 수 없음"
-      ],
       "Could not grant access to the organization key": [
         "조직 키의 접근 권한을 부여할 수 없습니다"
-      ],
-      "Could not load sharing details": [
-        "공유 상세 정보를 불러올 수 없음"
-      ],
-      "Could not load the image preview: ${ message }": [
-        "이미지 미리보기를 불러올 수 없음: ${ message }"
       ],
       "Could not open created vault": [
         "생성된 금고를 열 수 없습니다."
       ],
       "Could not open updated vault": [
         "업데이트된 금고를 열 수 없습니다."
-      ],
-      "Could not read part of this file: ${ message }": [
-        "해당 파일의 일부를 읽을 수 없음: ${ message }"
-      ],
-      "Could not unlock the parent folder": [
-        "상위 폴더를 잠금할 수 없습니다"
-      ],
-      "Could not unlock this item": [
-        "이 항목을 잠금 해제할 수 없음"
-      ],
-      "Creating documents in non-folders is not allowed": [
-        "폴더가 없는 곳에 문서를 생성하는 것이 허용되지 않습니다."
-      ],
-      "Creating files in non-folders is not allowed": [
-        "폴더가 없는 곳에 파일을 생성하는 것이 허용되지 않습니다."
-      ],
-      "Creating folders in non-folders is not allowed": [
-        "폴더가 없는 곳에 폴더를 생성하는 것이 허용되지 않습니다."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "복호화 오류: 이 메시지의 암호화된 내용을 복호화할 수 없습니다."
@@ -4749,9 +4791,6 @@
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "최소 ${ calendarsToFixCount }개의 캘린더를 선택 해제하거나"
-      ],
-      "Device not found": [
-        "기기를 찾을 수 없음"
       ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
@@ -4801,38 +4840,11 @@
       "Error while uploading attachments. Message is not sent.": [
         "첨부 파일을 업로드하던 중 오류가 발생했습니다. 메시지는 전송되지 않습니다."
       ],
-      "Expiration date cannot be in the past": [
-        "만료일은 과거일 수 없습니다"
-      ],
       "Failed loading group members": [
         "그룹 구성원을 로드하는 데 실패했습니다"
       ],
-      "Failed to decrypt bookmark key: ${ message }": [
-        "북마크 키 복호화 불가: ${ message }"
-      ],
-      "Failed to decrypt bookmark name: ${ message }": [
-        "북마크 이름 복호화 불가: ${ message }"
-      ],
-      "Failed to decrypt bookmark password: ${ message }": [
-        "북마크 비밀번호 복호화 실패: ${ message }"
-      ],
-      "Failed to decrypt content key: ${ message }": [
-        "콘텐츠 키를 복호화할 수 없습니다: ${ message }"
-      ],
-      "Failed to decrypt item name: ${ message }": [
-        "항목 이름을 복호화할 수 없음: ${ message }"
-      ],
-      "Failed to decrypt node key: ${ message }": [
-        "노드 키 복호화 실패: ${ message }"
-      ],
-      "Failed to decrypt revision metadata": [
-        "수정 메타데이터를 복호화할 수 없음"
-      ],
       "Failed to encrypt attachment. Please try again.": [
         "첨부 파일을 암호화하지 못했습니다. 다시 시도해주세요."
-      ],
-      "Failed to get inviter keys": [
-        "초대한 사람의 키를 받을 수 없음"
       ],
       "Failed to load subscription data. Please try again later.": [
         "구독 데이터를 불러올 수 없습니다. 나중에 다시 시도하세요."
@@ -4842,15 +4854,6 @@
       ],
       "Failed to open to contact": [
         "연락처 열기 실패"
-      ],
-      "Failed to verify invitation": [
-        "초대장 확인 실패"
-      ],
-      "File download failed due to empty response": [
-        "응답이 비어있어 파일을 다운로드할 수 없습니다."
-      ],
-      "File has no revision": [
-        "파일에 수정 사항 없음"
       ],
       "Filter with this name already exists": [
         "이 이름의 필터가 이미 있습니다"
@@ -4863,9 +4866,6 @@
       ],
       "Forward address is required": [
         "전달 주소가 필요합니다."
-      ],
-      "Image preview not found": [
-        "이미지 미리보기를 사용할 수 없음"
       ],
       "Image upload failed": [
         "이미지 업로드 실패"
@@ -4906,23 +4906,14 @@
       "Invalid public key file": [
         "공개 키 파일이 유효하지 않습니다"
       ],
-      "Invalid URL": [
-        "유효하지 않은 URL"
-      ],
       "Invalid VAT number": [
         "유효하지 않은 VAT 넘버"
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
       ],
-      "Invitation not found": [
-        "초대를 찾을 수 없음"
-      ],
       "Item content cannot exceed 40KB": [
         "항목 콘텐츠가 40KB를 초과할 수 없습니다."
-      ],
-      "Item not found": [
-        "항목을 찾을 수 없습니다"
       ],
       "Label name cannot be empty.": [
         "라벨 이름은 비워둘 수 없습니다."
@@ -4930,17 +4921,11 @@
       "Last name is too long": [
         "성(이름)이 너무 깁니다."
       ],
-      "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "기존 공개 링크는 업데이트되지 않습니다. 새로운 공개 링크로 다시 생성해야 합니다."
-      ],
       "Maximum expiration time reached.": [
         "최대 유효 기간에 도달했습니다."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "최대 첨부 파일 (${ attachmentsCountLimit }개) 도달"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "구성원 주소를 찾을 수 없습니다. 해당 문제를 해결하기 위해 고객 지원 팀에 문의해 주시기 바랍니다."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "기존 ${ BRAND_NAME } 캘린더에 최소 ${ calendarsToFixCount }개의 캘린더를 병합하세요."
@@ -4951,41 +4936,14 @@
       "Message processing error.": [
         "메시지 처리 실패."
       ],
-      "Missing inviter email": [
-        "초대한 사람의 이메일 누락"
-      ],
       "Missing key packet": [
         "키 패킷 없음"
-      ],
-      "Missing organization private key": [
-        "조직 비공개 키 유실"
-      ],
-      "Missing organization public key": [
-        "조직 공개 키 유실"
       ],
       "Missing signature": [
         "서명 없음"
       ],
-      "Missing signature for ${ signatureType }": [
-        "${ signatureType }에 대한 서명 유실"
-      ],
-      "Move operation aborted": [
-        "이동 작업 중단됨"
-      ],
-      "Moving item to a non-folder is not allowed": [
-        "폴더가 없는 곳에 항목을 이동하는 것이 허용되지 않습니다"
-      ],
-      "Moving root item is not allowed": [
-        "상위 항목에 대한 이동은 허용되지 않습니다."
-      ],
       "Name is required": [
         "이름은 필수입니다"
-      ],
-      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
-        "이름은 최대 ${ MAX_NODE_NAME_LENGTH }글자까지입니다."
-      ],
-      "Name must not be empty": [
-        "이름은 필수 입력 항목입니다"
       ],
       "Network error": [
         "네트워크 오류"
@@ -5014,9 +4972,6 @@
       "No external key retrieved for user is valid for sending": [
         "사용자를 위해 검색된 외부 키가 전송에 유효하지 않습니다."
       ],
-      "No file data was received. Please try again.": [
-        "수신된 데이터가 없습니다. 다시 시도하세요."
-      ],
       "No valid address found": [
         "유효한 주소를 찾을 수 없습니다"
       ],
@@ -5029,21 +4984,6 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "그룹 중 하나에 연락처가 없어요 : ${ noContactGroupList } "
       ],
-      "Only admins can convert external invitations": [
-        "관리자만 외부 초대로 변경할 수 있습니다"
-      ],
-      "Operation aborted": [
-        "작업이 중단됨"
-      ],
-      "Operation failed, try again later": [
-        "작업에 실패했습니다. 나중에 다시 시도하세요."
-      ],
-      "Organization does not have enough seats available": [
-        "조직의 사용 권한이 충분하지 않습니다."
-      ],
-      "Organization does not have enough storage available": [
-        "조직에 충분한 저장공간이 남아있지 않습니다."
-      ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
       ],
@@ -5052,9 +4992,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "개인이 아닌 사용자를 생성하려면 조직 키는 활성화 상태여야 합니다."
-      ],
-      "Part of the file appears to be corrupted": [
-        "파일 일부가 손상되었을 가능성이 있습니다"
       ],
       "Password is required": [
         "비밀번호가 필요함"
@@ -5077,12 +5014,6 @@
       "Permissions request failed.": [
         "권한 요청을 실패했습니다."
       ],
-      "Photo is already in the target album": [
-        "해당 앨범에 같은 사진이 이미 존재합니다."
-      ],
-      "Photo not found": [
-        "사진을 찾을 수 없음"
-      ],
       "Please activate your search again": [
         "다시 검색을 활성화 해주세요"
       ],
@@ -5091,15 +5022,6 @@
       ],
       "Please complete the billing details": [
         "청구 상세 정보를 입력해 주세요."
-      ],
-      "Please configure a custom domain before adding addresses.": [
-        "주소를 추가하기 전에 지정 도메인을 설정해야 합니다."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "조직에 사용자를 추가하기 전에 커스텀 도메인을 구성하세요."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "조직에 사용자를 추가하기 전에 다중 사용자 지원을 활성화해주세요."
       ],
       "Please enter a valid postal code": [
         "유효한 우편 번호를 입력해 주세요"
@@ -5139,9 +5061,6 @@
       ],
       "Please try generating the text again": [
         "문장 생성을 다시 시도해 보세요."
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "1명 보다 더 많은 다중 사용자를 관리하려면 비즈니스 플랜으로 업그레이드 하세요."
       ],
       "Port is required": [
         "포트가 필요함"
@@ -5185,12 +5104,6 @@
       "Removed duplicate recipient: ${ recipents }": [
         "중복된 수신자를 삭제했습니다: ${ recipents }"
       ],
-      "Renaming root item is not allowed": [
-        "상위 항목에 대한 이름 변경은 허용되지 않습니다."
-      ],
-      "Request aborted": [
-        "요청 중지됨"
-      ],
       "Request timed out": [
         "요청 시간이 초과되었습니다."
       ],
@@ -5203,9 +5116,6 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "파일 첨부가 플랜의 상한을 초과한 상태에선 플랜을 업그레이드하기 전까지 제한됩니다."
       ],
-      "Signature is missing": [
-        "서명이 유실되었습니다"
-      ],
       "Signature not verified": [
         "인증되지 않은 서명입니다."
       ],
@@ -5215,29 +5125,11 @@
       "Signature verification failed": [
         "서명 검증 실패"
       ],
-      "Signature verification failed: ${ errorMessage }": [
-        "서명 인증 실패: ${ errorMessage }"
-      ],
-      "Signature verification for ${ signatureType } failed": [
-        "${ signatureType }에 대한 서명 인증 실패"
-      ],
-      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "${ signatureType }에 대한 서명 인증 실패:${ errorMessage }"
-      ],
       "Some contacts could not be deleted": [
         "일부 연락처를 삭제할 수 없습니다"
       ],
-      "Some file data failed to upload. Please try again.": [
-        "일부 파일의 데이터 업로드가 실패했습니다. 다시 시도하세요."
-      ],
-      "Some file parts failed to upload. Please try again.": [
-        "일부 파일의 부분을 업로드할 수 없습니다. 다시 시도하세요."
-      ],
       "Some groups could not be deleted": [
         "일부 그룹은 삭제할 수 없었습니다."
-      ],
-      "Some items could not be loaded": [
-        "일부 항목을 불러올 수 없습니다."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "가능하지 않은 폴더 이름들이 존재합니다. 해당 폴더의 이름들을 수정하기 위해 불러온 내역을 설정해 주세요."
@@ -5253,9 +5145,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
-      ],
-      "Something went wrong": [
-        "문제가 발생했습니다"
       ],
       "Something went wrong while converting the address": [
         "주소를 변환하는 중 오류가 발생했습니다."
@@ -5329,9 +5218,6 @@
       "The system is busy at the moment. Please try again in a few minutes.": [
         "시스템이 현재 과부하 상태입니다. 몇 분 뒤 다시 시도하세요."
       ],
-      "The uploaded file does not match the original. Please try again.": [
-        "업로드된 파일과 원본 파일이 일치하지 않습니다. 다시 시도해 주세요."
-      ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
         "글쓰기 도우미가 요청을 처리할 수 없습니다. 다른 프롬포트를 시도해 주세요."
       ],
@@ -5362,26 +5248,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
       ],
-      "This file has missing crypto material": [
-        "이 파일에 필요한 암호화 키가 누락되었습니다"
-      ],
-      "This file has no version available to download": [
-        "이 파일에 다운로드할 수 있는 사용 가능한 버전이 없습니다."
-      ],
-      "This file version could not be uploaded": [
-        "해당 파일 버전은 업로드할 수 없습니다."
-      ],
       "This folder name is not available. Please choose a different name.": [
         "이 폴더 이름을 사용할 수 없어요. 다른 이름을 선택하세요."
-      ],
-      "This item has no image preview": [
-        "해당 항목의 이미지 미리보기가 없습니다."
-      ],
-      "This item is no longer shared": [
-        "더 이상 공유되지 않는 항목입니다."
-      ],
-      "This item is not shared": [
-        "더 이상 공유되지 않는 항목입니다."
       ],
       "This label name is not available. Please choose a different name.": [
         "이 라벨 이름은 사용할 수 없어요. 다른 이름을 선택하세요."
@@ -5394,12 +5262,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "이 메시지는 현재 브라우저에서 제대로 열 수 없는 URL 링크있을 수 있습니다."
-      ],
-      "Too many server errors, please try again later": [
-        "서버 오류가 너무 많습니다. 나중에 다시 시도하십시오."
-      ],
-      "Too many server requests, please try again later": [
-        "서버 요청이 너무 많습니다. 나중에 다시 시도하십시오."
       ],
       "Trusted keys are not valid for sending": [
         "인증된 키가 전송하기에 유효하지 않음"
@@ -5434,12 +5296,6 @@
       "VAT number must start with ${ prefixes }": [
         "부가가치세(VAT)번호는 ${ prefixes }(으)로 시작해야 합니다."
       ],
-      "Verification keys are not available": [
-        "인증 키를 사용할 수 없습니다"
-      ],
-      "Verification keys for ${ signatureType } are not available": [
-        "${ signatureType }용 인증 키가 사용할 수 없습니다"
-      ],
       "We couldn’t send a verification code using this method.": [
         "해당 방법으로 인증 코드를 전송할 수 없습니다."
       ],
@@ -5452,18 +5308,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "잘못된 복구 키입니다. 다시 시도하거나 다른 복구 방법을 사용하세요."
       ],
-      "You can create public links for your own files only": [
-        "내가 소유한 파일만 공개 링크를 생성할 수 있습니다."
-      ],
-      "You can only leave items that are shared with you": [
-        "나와 공유된 항목에는 나갈 수만 있습니다."
-      ],
-      "You can only upload a new version to a file": [
-        "새로운 버전의 파일만 업로드할 수 있습니다."
-      ],
-      "You can update a public link for your own files only": [
-        "내가 소유한 파일만 공개 링크를 업데이트할 수 있습니다."
-      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }명 이상의 수신자에게 메일을 보낼 수 없습니다."
       ],
@@ -5473,23 +5317,11 @@
       "You did not provide a file.": [
         "파일을 제공하지 않았습니다."
       ],
-      "You do not have access to this item": [
-        "이 항목에 접근할 권한이 없습니디"
-      ],
-      "You do not have access to this shared item": [
-        "해당 항목에 대한 접근 권한이 없습니다."
-      ],
       "You have reached the maximum number of calendars.": [
         "캘린더 갯수의 한도에 도달했습니다."
       ],
       "You have reached the number of contacts limit for your account": [
         "계정의 최대 연락처 수를 초과했습니다"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "플랜에서 사용 가능한 모든 주소를 사용했습니다. 새 주소를 사용하려면 계정에서 주소를 비활성화하거나 플랜을 업그레이드하세요."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "현재 플랜에서 추가 가능한 모든 사용자를 추가했습니다. 새 사용자를 추가하려면 플랜을 업그레이드해 주세요."
       ],
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
@@ -5958,15 +5790,6 @@
       ]
     },
     "Filter": {
-      "Activated": [
-        "활성화됨"
-      ],
-      "All": [
-        "전체"
-      ],
-      "Errors": [
-        "오류"
-      ],
       "Filter": [
         "필터"
       ],
@@ -5978,18 +5801,6 @@
       ],
       "Has attachments": [
         "첨부 파일 포함"
-      ],
-      "In progress": [
-        "진행 중"
-      ],
-      "Migrated": [
-        "이전됨"
-      ],
-      "Not activated": [
-        "비활성화됨"
-      ],
-      "Pending": [
-        "대기 중"
       ],
       "Read": [
         "읽음"
@@ -6686,20 +6497,6 @@
         "추가 불러오기 옵션"
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "오류 있음"
-      ],
-      "In progress": [
-        "진행 중"
-      ],
-      "Migrated": [
-        "이전됨"
-      ],
-      "Pending": [
-        "대기 중"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 연락처 중 ${ totalContactsDiscarded } 개가 불러오지 않습니다. 자세한 정보를 보려면 클릭하세요"
@@ -6951,9 +6748,6 @@
       ],
       "${ total } message": [
         "${ total }개 메시지"
-      ],
-      "${ total } user found": [
-        "${ total }명 사용자 찾음"
       ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount }개 이메일 트래커 차단됨"
@@ -7207,9 +7001,6 @@
       "Attention required": [
         "주의 필요"
       ],
-      "Author is not provided on public link": [
-        "작성자가 공개 링크에서 제공되지 않았습니다"
-      ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "30일 이상 전에 휴지통 및 스팸으로 이동한 이메일을 자동으로 삭제합니다."
       ],
@@ -7450,6 +7241,9 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "알고 계셨나요? 회원님만을 위한 더 짧은 이메일 주소를 예약해 드렸어요. \"@${ PM_DOMAIN }\"에 따른 사용자 이름입니다."
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인은 표준 월간 요금을 기준으로 합니다. 결제일이 종료되면 구독은 표준 연간 요금으로 갱신됩니다."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "잠금해제된 새 기능들을 둘러보고 바로 사용해보세요!"
       ],
@@ -7689,9 +7483,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "필터는 수신과 발신을 포함한 모든 이메일에서 작동합니다. 각 필터는 적어도 이름, 조건 및 작업을 포함해야 합니다."
-      ],
-      "Find out what can be migrated.": [
-        "이전되는 항목을 살펴보세요."
       ],
       "Folder": [
         "폴더"
@@ -8155,9 +7946,6 @@
       "No trackers found": [
         "트래커를 찾을 수 없음"
       ],
-      "No users to display": [
-        "표시할 사용자 없음"
-      ],
       "non-${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }이 아닌"
       ],
@@ -8557,9 +8345,6 @@
       "Select all ${ elementsCount } in ${ location }": [
         "${ location }(에)서 모두 ${ elementsCount } 선택"
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "이전하고자 하는 항목을 선택하세요. 모든 조직 구성원들에게 적용됩니다."
-      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "이 이메일 주소로 이메일을 보낼 때 기본적으로 사용할 이메일 형식을 선택하세요."
       ],
@@ -8938,12 +8723,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "이 고유 코드는 웹사이트와 ISP(인터넷 서비스 제공업체)에서 위치와 검색 기록을 기기에 연결하는 데 사용할 수 있습니다."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "해당 이메일 주소는 ${ BRAND_NAME }에서 지원되지 않음으로 사용자를 이전할 수 없습니다."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
-      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "이메일 제목에 암호 재설정 키워드가 포함되어 있기 때문에 표시되었습니다."
       ],
@@ -8970,27 +8749,6 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "해당 사용자를 이전하려면 ${ domainNamesLink } 아래로 이메일 도메인을 추가 및 인증해야 합니다."
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "해당 사용자를 이전하려면 ${ provider.adminConsoleName } 아래로 계정을 활성화해야 합니다."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 보관 해제헤야 합니다."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 정지 취소해야 합니다."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "연락처를 재서명하려면, 계정에서 사용할 수 있는 암호화 키 목록에 대한 모든 연락처를 확인해야 합니다. 일치하는 것을 찾을 수 없다면, 연락처는 기본 암호화 키로 다시 서명될 것입니다."
@@ -9292,9 +9050,6 @@
       "Yearly": [
         "연간"
       ],
-      "You": [
-        "나"
-      ],
       "You already have a free account": [
         "이미 무료 계정을 가지고 있습니다."
       ],
@@ -9447,6 +9202,9 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "\"${ attachmentsFoundKeyword }\" 으로 작성하였지만, 추가된 첨부 파일이 없습니다. 이 메시지를 그대로 전송하시겠습니까?"
+      ],
+      "You'll choose a new username": [
+        "새로운 사용자 이름을 선택할 수 있습니다."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "친구가 연간 플랜을 구독하고 1개월 후, 월간 플랜 구독 2개월 후에 크레딧 보상을 받게 됩니다."
@@ -13223,6 +12981,11 @@
         "이 작업을 수행하려면 조직 키에 접근해야 합니다."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "은행 계좌"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -13267,14 +13030,11 @@
       "Billing Country": [
         "청구 국가 "
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private는 활성 구독과 함께 결제할 수 없습니다."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private는 기부가 필수입니다."
-      ],
       "Buying credits requires a separate purchase.": [
         "크레딧 구매는 별도 결제건으로 분리됩니다."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "계속하면, ${ termsLink }에 동의하는 것으로 간주합니다."
       ],
       "Card number": [
         "카드 번호"
@@ -13324,6 +13084,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "무료 체험 종료 후 구독이 활성화되려면 결제 수단이 필요합니다."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "다음 사유로 플랜 변경이 불가합니다:"
+      ],
       "Please close extra wallets before changing your plan.": [
         "플랜 변경 전 추가적인 지갑 계좌를 폐지해야 합니다."
       ],
@@ -13348,8 +13111,14 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "해당 할인은 ${ renewalsWithCoupon }회 갱신까지 유효합니다."
       ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "선택된 플랜은 설정된 주소의 수만큼 지원하지 않습니다."
+      ],
       "The selected plan doesn’t offer enough domains for your account.": [
         "선택된 플랜은 계정에 설정된 도메인만큼을 지원하지 않습니다."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "선택된 플랜은 조직의 구성원 수만큼 지원하지 않습니다."
       ],
       "The selected plan doesn’t offer enough storage for your account.": [
         "선택된 플랜은 현재 계정이 사용하는 저장공간만큼 지원하지 않습니다."
@@ -13396,8 +13165,14 @@
       "Trial plans don’t support custom domains.": [
         "무료 체험에서는 사용자 지정 도메인 이용 권한을 지원하지 않습니다."
       ],
+      "Trial plans don’t support dedicated IPs.": [
+        "무료 체험에서는 지정 IP 이용 권한을 지원하지 않습니다."
+      ],
       "Trial plans don’t support Scribe seats.": [
         "무료 체험에서는 Scribe 이용 권한을 지원하지 않습니다."
+      ],
+      "Trial plans don’t support this many members.": [
+        "무료 체험 상태에서는 해당 구성원 수만큼을 지원하지 않습니다."
       ],
       "VAT number": [
         "부가가치세 번호"
@@ -13459,6 +13234,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "확인을 선택하면 회원님은 ${ BRAND_NAME } 및 당사의 결제 서비스 제공업체인 Stripe이 SEPA 자동이체(Direct Debit)를 통해 본 은행 계좌에서 향후 구독 결제금을 수금하고, 해당 은행이 결제금을 출금하도록 승인하게 됩니다. 첫 결제는 지금 ${ IDEAL_WERO_BRAND_NAME }을(를) 통해 진행됩니다. 구독은 취소할 때까지 자동으로 갱신되며, 결제 전 미리 안내해 드립니다. 자동이체 수금의 경우 은행과의 약관에 따라 출금일로부터 8주 이내에 은행에 환불을 요청할 수 있습니다. 이는 지금 진행 중인 ${ IDEAL_WERO_BRAND_NAME } 결제에는 적용되지 않습니다."
       ]
     },
     "Payments.info": {
@@ -13706,9 +13486,6 @@
       "San Francisco": [
         "샌프란시스코"
       ],
-      "Search": [
-        "검색"
-      ],
       "Search date, name, email address, or subject line": [
         "날짜, 이름, 이메일 주소 및 제목을 입력하세요"
       ],
@@ -13717,9 +13494,6 @@
       ],
       "Search for name or email": [
         "이름 및 이메일을 위해 검색"
-      ],
-      "Search for users or addresses": [
-        "사용자 및 주소를 검색하세요"
       ],
       "Search messages": [
         "메시지 검색"
@@ -13844,26 +13618,6 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "진행률: ${ combinedProgress }%"
-      ]
-    },
-    "Property": {
-      "attributes": [
-        "속성"
-      ],
-      "content key": [
-        "콘텐츠 키"
-      ],
-      "hash key": [
-        "해시 키"
-      ],
-      "key": [
-        "키"
-      ],
-      "membership": [
-        "멤버쉽"
-      ],
-      "name": [
-        "이름"
       ]
     },
     "Property type": {
@@ -15630,17 +15384,11 @@
       "Actions": [
         "동작"
       ],
-      "Activated": [
-        "활성화됨"
-      ],
       "Address": [
         "주소"
       ],
       "Created": [
         "생성됨"
-      ],
-      "Estimated size": [
-        "예상 용량"
       ],
       "Expires": [
         "만료"
@@ -15648,23 +15396,14 @@
       "Fingerprint": [
         "지문"
       ],
-      "Migration status": [
-        "이전 상태"
-      ],
       "Name": [
         "이름"
-      ],
-      "Size": [
-        "크기"
       ],
       "Status": [
         "상태"
       ],
       "Type": [
         "유형"
-      ],
-      "User": [
-        "사용자"
       ]
     },
     "TableHeader": {
@@ -15892,6 +15631,9 @@
       "Birthday": [
         "생일"
       ],
+      "Black Friday": [
+        "블랙 프라이데이"
+      ],
       "Blind Carbon Copy": [
         "숨김 참조"
       ],
@@ -15936,9 +15678,6 @@
       ],
       "Collaborate on documents": [
         "문서에서 협업하기"
-      ],
-      "Configure migration": [
-        "이전 작업 구성"
       ],
       "Confirm recipient address?": [
         "수신자의 주소를 확인할까요?"
@@ -16074,9 +15813,6 @@
       ],
       "Distraction-free emailing": [
         "방해 없는 이메일"
-      ],
-      "Domain names": [
-        "도메인 이름"
       ],
       "Don't give spam a chance": [
         "스팸 메일에 기회를 주지 마세요"
@@ -16287,6 +16023,9 @@
       ],
       "Make a secure connection your default": [
         "보안 연결을 기본값으로 설정하세요"
+      ],
+      "Make Categories work better for you": [
+        "나에게 꼭 맞는 카테고리 만들기"
       ],
       "Make your inbox your own": [
         "나만의 받은 편지함 만들기"
@@ -16597,9 +16336,6 @@
       "Select data to import": [
         "불러올 데이터 선택"
       ],
-      "Select users to migrate": [
-        "이전할 사용자를 선택하세요"
-      ],
       "Self-destruct message": [
         "메시지 자동 폭파"
       ],
@@ -16693,6 +16429,9 @@
       "Subject missing": [
         "제목을 찾을 수 없습니다."
       ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } 구독"
+      ],
       "Subscription canceled": [
         "구독이 취소되었습니다"
       ],
@@ -16768,9 +16507,6 @@
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }에서 안전하게 Gmail 사용하기"
       ],
-      "Users and addresses": [
-        "사용자 및 주소"
-      ],
       "Verification error": [
         "인증 오류"
       ],
@@ -16809,9 +16545,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business에 오신 것을 환영합니다"
-      ],
-      "What are you migrating?": [
-        "무엇을 이전하시나요?"
       ],
       "What can a VPN protect you from?": [
         "VPN은 무엇으로부터 나를 보호할 수 있나요?"
@@ -16900,9 +16633,6 @@
       "Customize import to reduce the number of labels": [
         "라벨 수를 줄이기 위해 가져오기를 사용자 정의하세요"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "${ providerName }(에)서 ${ BRAND_NAME }으로 데이터 이전 상태"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "디지털 방식의 서명 이메일은 당신으로 부터 보내졌다는 것을 인증하는데 도움을 줍니다"
       ],
@@ -16980,9 +16710,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "전송을 종단 간 암호화 이메일로 보내려면 공개 키를 업로드 하십시오"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "개인의 ${ BRAND_NAME } 계정에 접근한 사용자"
       ],
       "Version 6 OpenPGP key": [
         "버전 6 OpenPGP 키"

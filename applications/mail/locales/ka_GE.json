@@ -2050,6 +2050,106 @@
         "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის სერვისებს შორის."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "შავი პარასკევი"
+      ],
+      "Get the deal": [
+        "მიიღეთ შეთავაზება"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/თვე"
+      ],
+      "15 GB storage": [
+        "15 გბ საცავი"
+      ],
+      "2 individual accounts": [
+        "2 ინდივიდუალური ანგარიში"
+      ],
+      "2 TB of secure storage": [
+        "2 ტბ დაცული საცავი"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 გბ საცავი: თქვენი მიმდინარე პაკეტის 40-ჯერ მეტი"
+      ],
+      "3 TB of secure storage": [
+        "3 ტბ დაცული საცავი"
+      ],
+      "500 GB of secure storage": [
+        "500 გბ დაცული საცავი"
+      ],
+      "6 individual accounts": [
+        "6 ინდივიდუალური ანგარიში"
+      ],
+      "Built-in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "ფასდაკლებები ეფუძნება სტანდარტულ თვიურ ფასს. გამოწერა განახლდება სტანდარტული წლიური ტარიფით გადახდის ციკლის დასრულებისას."
+      ],
+      "Online document editor": [
+        "ონლაინ დოკუმენტების რედაქტორი"
+      ],
+      "Recover previous file versions": [
+        "ფაილების წინა ვერსიების აღდგენა"
+      ],
+      "Stronger protection against cyber threats": [
+        "უფრო ძლიერი დაცვა კიბერ საფრთხეებისგან"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "შეუზღუდავი საქაღალდეები, იარლიყები და ფილტრები"
+      ],
+      "Use your own email domain": [
+        "გამოიყენეთ საკუთარი ელფოსტის დომენი"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "პრემიუმ ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "წლის ყველაზე დიდი ფასდაკლება"
+      ],
+      "Black Friday": [
+        "შავი პარასკევი"
+      ],
+      "for 12 months": [
+        "12 თვით"
+      ],
+      "Last chance to save big": [
+        "ბოლო შანსი დიდი დანაზოგისთვის"
+      ],
+      "Protect your entire tribe": [
+        "დაიცავით მთელი თქვენი ოჯახი"
+      ],
+      "Protection for two in a single plan": [
+        "დაცვა ორი ადამიანისთვის ერთ პაკეტში"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } თვე",
@@ -2569,6 +2669,11 @@
       ],
       "Expand": [
         "ამოკეცვა"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "ეს მიმოწერა ძალიან გრძელია გასაგრძელებლად. დაიწყეთ ახალი ჩატი, რათა ${ LUMO_SHORT_APP_NAME }-მა გამართულად და სწრაფად განაგრძოს მუშაობა."
       ]
     },
     "collider_2025: feature": {
@@ -4543,9 +4648,6 @@
       "Aliases could not be loaded": [
         "ფსევდონიმების ჩატვირთვა შეუძლებელია"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "შესაძლო სივრცე მთლიანად გაცემულია. შეამცირეთ სხვა მომხმარებლების მიერ მოხმარებული ადგილის რაოდენობა."
-      ],
       "Amount above the maximum.": [
         "თანხა დასაშვებზე მაღალია."
       ],
@@ -4744,9 +4846,6 @@
       "Invalid public key file": [
         "არასწორი საჯარო გასაღების ფაილი"
       ],
-      "Invalid URL": [
-        "არასწორი URL"
-      ],
       "Invalid VAT number": [
         "არასწორი დღგს ნომერი"
       ],
@@ -4867,15 +4966,6 @@
       "Please complete the billing details": [
         "გთხოვთ, შეავსოთ ბილინგის დეტალები"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "თქვენს ორგანიზაციაში მომხმარებლების ჩამატებამდე თქვენი დომენის მორგებაა საჭირო."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "მომხმარებლების ორგანიზაციაში ჩამატებამდე მრავალმომხმარებლიანი რეჟიმის ჩართვაა საჭირო."
-      ],
       "Please enter a valid postal code": [
         "გთხოვთ შეიყვანოთ სწორი საფოსტო კოდი"
       ],
@@ -4915,9 +5005,6 @@
       ],
       "Please try generating the text again": [
         "სცადეთ ტექსტის გენერაცია კიდევ ერთხელ"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "ბევრი მომხმარებლის სამართავად შეიძინეთ სატარიფო გეგმა, რომელიც 1-ზე მეტ მომხმარებელს შეიცავს."
       ],
       "Port is required": [
         "პორტი აუცილებელია"
@@ -5003,9 +5090,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
-      ],
-      "Something went wrong": [
-        "რაღაც არასწორად წავიდა"
       ],
       "Something went wrong while converting the address": [
         "მისამართის კონვერტაციისას დაფიქსირდა შეცდომა"
@@ -5183,12 +5267,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "თქვენ გამოიყენეთ თქვენს პაკეტში არსებული ყველა მისამართი. გთხოვთ განაახლოთ თქვენი პაკეტი ახალი მისამართის დასამატებლად ან გამორთოთ მისამართი თქვენს ანგარიშში."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ],
       "You must set a name": [
         "სახელის დაყენება აუცილებელია"
@@ -6374,14 +6452,6 @@
         "მეტი შემოტანის პარამეტრები"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "მიმდინარეობს"
-      ],
-      "Migrated": [
-        "მიგრირებულია"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "შემოტანილი იქნება ${ totalContactsDiscarded } ${ totalContacts }-დან. დეტალებისთვის დააწკაპუნეთ"
@@ -6636,10 +6706,6 @@
       "${ total } message": [
         "${ total } შეტყობინება",
         "${ total } შეტყობინება"
-      ],
-      "${ total } user found": [
-        "აღმოჩენილია ${ total } მომხმარებელი",
-        "აღმოჩენილია ${ total } მომხმარებელი"
       ],
       "${ trackersCount } email tracker blocked": [
         "დაბლოკილია ${ trackersCount } ელფოსტის ტრეკერი",
@@ -7449,8 +7515,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -12817,9 +12882,6 @@
       "San Francisco": [
         "სან-ფრანცისკო"
       ],
-      "Search": [
-        "ძებნა"
-      ],
       "Search date, name, email address, or subject line": [
         "მოძებნეთ თარიღით, სახელით, ელფოსტის მისამართით ან თემის ხაზით"
       ],
@@ -12828,9 +12890,6 @@
       ],
       "Search for name or email": [
         "სახელის ან ელფოსტის ძებნა"
-      ],
-      "Search for users or addresses": [
-        "მოძებნეთ მომხმარებლები ან მისამართები"
       ],
       "Search messages": [
         "შეტყობინებების ძებნა"
@@ -14792,9 +14851,6 @@
       "Name": [
         "სახელი"
       ],
-      "Size": [
-        "ზომა"
-      ],
       "Status": [
         "სტატუსი"
       ],
@@ -15225,9 +15281,6 @@
       ],
       "Distraction-free emailing": [
         "ელფოსტასთან ხელის შეშლის გარეშე მუშაობა"
-      ],
-      "Domain names": [
-        "დომენის სახელი"
       ],
       "Don't give spam a chance": [
         "ნუ მისცემთ სპამს შანსს"
@@ -15909,9 +15962,6 @@
       ],
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "გამოიყენეთ Gmail უსაფრთხოდ ${ MAIL_APP_NAME }-ში"
-      ],
-      "Users and addresses": [
-        "მომხმარებლები და მისამართები"
       ],
       "Verification error": [
         "შემოწმების შეცდომა"
