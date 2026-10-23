@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 
 import { LumoIcon } from '../../../LumoIcon/LumoIcon';
 import type { GroupedDocument } from './SearchInspectList';
@@ -21,6 +21,7 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
     const [expandedChunk, setExpandedChunk] = useState<number | null>(null);
 
     const sizeText = formatBytes(totalSize);
+    const DocumentIcon = getFileIcon(doc.mimeType || 'application/octet-stream');
 
     return (
         <div className="flex flex-column gap-4 flex-nowrap overflow-y-auto *:min-size-auto">
@@ -35,7 +36,7 @@ export const SearchInspectDetail: FunctionComponent<Props> = ({ grouped, formatB
             {/* Document metadata */}
             <div className="p-3 border rounded bg-weak" style={{ borderColor: 'var(--border-weak)' }}>
                 <div className="flex items-start gap-3">
-                    <FileIcon mimeType={doc.mimeType || 'application/octet-stream'} size={5} />
+                    <DocumentIcon size={5} className="shrink-0" />
                     <div className="flex flex-column gap-1 flex-1 min-w-0">
                         <div className="text-semibold text-lg truncate">{doc.name}</div>
                         {doc.folderPath && (

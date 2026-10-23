@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
 import { useFileItemData } from '../fileUtils';
@@ -70,6 +70,8 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
         }
     };
 
+    const FileTypeIcon = getFileIcon(mimeTypeIcon);
+
     return (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div
@@ -78,7 +80,7 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
             }`}
             onClick={handleFileClick}
         >
-            <FileIcon mimeType={mimeTypeIcon} size={10} className="shrink-0 mr-3" />
+            <FileTypeIcon size={10} className="shrink-0 mr-3" />
 
             <div className="flex-1 min-w-0">
                 <div className="flex flex-row flex-nowrap items-center gap-2 mb-0.5">

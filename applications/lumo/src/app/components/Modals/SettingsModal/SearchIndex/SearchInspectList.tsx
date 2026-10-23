@@ -4,7 +4,7 @@ import type { FunctionComponent } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 
 import type { DriveDocument } from '../../../../types/documents';
 import { LumoIcon } from '../../../LumoIcon/LumoIcon';
@@ -90,6 +90,7 @@ export const SearchInspectList: FunctionComponent<Props> = ({
                         const { doc, chunks, totalSize } = grouped;
                         const hasChunks = chunks.length > 0;
                         const sizeText = formatBytes(totalSize);
+                        const DocumentIcon = getFileIcon(doc.mimeType || 'application/octet-stream');
 
                         return (
                             <button
@@ -100,7 +101,7 @@ export const SearchInspectList: FunctionComponent<Props> = ({
                                 onClick={() => onSelect(grouped)}
                             >
                                 <div className="flex items-start gap-3">
-                                    <FileIcon mimeType={doc.mimeType || 'application/octet-stream'} size={4} />
+                                    <DocumentIcon size={4} className="shrink-0" />
                                     <div className="flex flex-column gap-1 flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
                                             <span className="text-semibold truncate">{doc.name}</span>
