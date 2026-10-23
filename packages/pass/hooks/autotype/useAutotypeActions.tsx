@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -11,14 +12,18 @@ import { IcUser } from '@proton/icons/icons/IcUser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AutotypeKeyboardShortcut } from '../../components/Item/Autotype/AutotypeKeyboardShortcut';
+import { selectCanRevealSensitiveContent } from '../../store/selectors/user';
+import type { ShareId } from '../../types/crypto/pass-types';
 import type { Item } from '../../types/data/items';
 import type { AutotypeAction } from '../../types/desktop/autotype';
 import { AutotypeKey } from '../../types/desktop/autotype';
 import { deobfuscate } from '../../utils/obfuscate/xor';
 
-export const useAutotypeActions = (data: Item<'login'>) =>
-    useMemo(() => {
-        const hasPassword = Boolean(data.content.password.v.length);
+export const useAutotypeActions = (data: Item<'login'>, shareId: ShareId) => {
+    const canRevealSensitiveContent = useSelector(selectCanRevealSensitiveContent(shareId));
+
+    return useMemo(() => {
+        const hasPassword = Boolean(data.content.password.v.length) && canRevealSensitiveContent;
         const hasUsername = Boolean(data.content.itemUsername.v.length);
         const hasEmail = Boolean(data.content.itemEmail.v.length);
 
@@ -159,4 +164,5 @@ export const useAutotypeActions = (data: Item<'login'>) =>
         );
 
         return { actions };
-    }, [data]);
+    }, [data, canRevealSensitiveContent]);
+};

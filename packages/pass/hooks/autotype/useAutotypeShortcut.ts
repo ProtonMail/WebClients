@@ -8,6 +8,7 @@ import { useSpotlightFor } from '../../components/Spotlight/WithSpotlight';
 import { selectPassPlan, selectUserPlan } from '../../store/selectors/user';
 import { PassFeature } from '../../types/api/features';
 import { UserPassPlan } from '../../types/api/plan';
+import type { ShareId } from '../../types/crypto/pass-types';
 import type { Item } from '../../types/data/items';
 import { SpotlightMessage } from '../../types/worker/spotlight';
 import { useFeatureFlag } from '../useFeatureFlag';
@@ -15,11 +16,11 @@ import { useAutotypeActions } from './useAutotypeActions';
 import { useAutotypeExecute } from './useAutotypeExecute';
 
 export const useAutotypeShortcut = DESKTOP_BUILD
-    ? (data: Item<'login'>) => {
+    ? (data: Item<'login'>, shareId: ShareId) => {
           const autotypeEnabled = useFeatureFlag(PassFeature.PassDesktopAutotype);
           const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
           const isPassEssentials = useSelector(selectUserPlan)?.InternalName === 'passpro2024';
-          const { actions } = useAutotypeActions(data);
+          const { actions } = useAutotypeActions(data, shareId);
           const executeAutotype = useAutotypeExecute();
           const { autotypeConfirmShortcut } = useItemsActions();
           const confirmationSpotlight = useSpotlightFor(SpotlightMessage.AUTOTYPE_CONFIRM_SHORTCUT);

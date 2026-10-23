@@ -17,6 +17,7 @@ export enum ShareRole {
 
 export enum ShareFlags {
     HIDDEN = 1 << 0,
+    HIDE_SENSITIVE_CONTENT = 1 << 1,
 }
 
 export type VaultShareContent = {

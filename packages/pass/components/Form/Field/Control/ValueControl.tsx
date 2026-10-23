@@ -32,6 +32,8 @@ export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon
     icon?: IconSlotValue;
     label: ReactNode;
     loading?: boolean;
+    revealable?: boolean;
+    revealableHint?: ReactNode;
     value?: string;
     valueClassName?: string;
     onCopy?: () => void;
@@ -74,6 +76,8 @@ export const ValueControl = <E extends ElementType = 'div'>({
     icon,
     label,
     loading = false,
+    revealable = true,
+    revealableHint,
     value,
     valueClassName,
     onClick,
@@ -87,7 +91,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
     const ValueContainer = (as ?? 'div') as ElementType;
     const intrinsicEl = isIntrinsicElement(ValueContainer);
 
-    const [hide, setHide] = useState(hidden);
+    const [hide, setHide] = useState(hidden || !revealable);
     useEffect(() => onHide?.(hide), [onHide, hide]);
 
     const displayValue = useMemo(() => {
@@ -95,7 +99,9 @@ export const ValueControl = <E extends ElementType = 'div'>({
         if (intrinsicEl && loading) return <div className="pass-skeleton pass-skeleton--value" />;
         if (intrinsicEl && !value && !children) return <div className="color-weak">{c('Info').t`None`}</div>;
 
-        if (hide) return hiddenValue ?? DEFAULT_HIDDEN_VALUE;
+        /* `revealable: false` is a hard override: never display the raw value,
+         * regardless of `hide`'s current state */
+        if (hide || !revealable) return hiddenValue ?? DEFAULT_HIDDEN_VALUE;
 
         /* if children are passed: display them - when working with
          * a `ValueContainer` component, we leverage the inherited prop
@@ -105,9 +111,9 @@ export const ValueControl = <E extends ElementType = 'div'>({
         /* if no children provided: fallback to value which is always
          * a valid "string" ReactNode */
         return value ?? '';
-    }, [value, children, loading, hide, intrinsicEl]);
+    }, [value, children, loading, hide, revealable, intrinsicEl]);
 
-    const canCopy = clickToCopy && value;
+    const canCopy = clickToCopy && value && revealable;
     const interactive = (canCopy || onClick) && !disabled;
 
     const MaybeClickToCopy: ElementType<ClickToCopyProps> = canCopy ? ClickToCopy : 'div';
@@ -125,7 +131,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
         >
             <FieldBox
                 actions={
-                    hidden && value
+                    hidden && value && revealable
                         ? [<HideButton hidden={hide} onClick={() => setHide((prev) => !prev)} />, actions ?? []].flat()
                         : actions
                 }
@@ -145,6 +151,12 @@ export const ValueControl = <E extends ElementType = 'div'>({
                     )}
                     children={displayValue}
                 />
+
+                {!revealable && value && (
+                    <span className="block color-weak text-sm">
+                        {revealableHint ?? c('Info').t`Field hidden. You can still autofill it.`}
+                    </span>
+                )}
 
                 {extra}
             </FieldBox>
