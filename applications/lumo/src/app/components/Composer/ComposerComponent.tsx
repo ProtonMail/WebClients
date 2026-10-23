@@ -41,6 +41,7 @@ import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerExpirationBanner } from './ComposerExpirationBanner';
 import { ComposerLimitBanner } from './ComposerLimitBanner';
 import { ComposerModelLimitUpsell } from './ComposerModelLimitUpsell';
+import { ComposerPreInputPortalRoot } from './ComposerPreInputPortal';
 import { ComposerToolbar } from './ComposerToolbar';
 import { DictationLanguageModal } from './DictationLanguageModal';
 import { useExcelSheetSelection } from './ExcelSheetSelectionModal';
@@ -495,6 +496,8 @@ const ComposerComponentInner = ({
                     className="justify-center mb-1"
                 />
             )}
+
+            <ComposerPreInputPortalRoot />
         </>
     );
 

@@ -3,13 +3,14 @@ import React, { memo } from 'react';
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../..//hooks/useLumoActions';
 import { useLumoFlags } from '../../../..//hooks/useLumoFlags';
 import type { SiblingInfo } from '../../../..//hooks/usePreferredSiblings';
-import type { Message } from '../../../../types';
-import { type Attachment, Role, isCompactionMessage, isManualArtifactEditMessage } from '../../../../types';
+import type { Attachment, Message } from '../../../../types';
+import { Role, isCompactionMessage, isManualArtifactEditMessage, isQuestionAnswerMessage } from '../../../../types';
 import ChatContainerItem from '../../../ChatContainerItem';
 import { ArtifactEditMarker } from './ArtifactEditMarker/ArtifactEditMarker';
 import AssistantMessage from './AssistantMessage/AssistantMessage';
 import { CompactionMarker } from './CompactionMarker/CompactionMarker';
 import UserMessage from './UserMessage/UserMessage';
+import { AskUserQuestionsResponseMessage } from './askUserQuestions/AskUserQuestionsResponseMessage';
 
 export type MessageComponentProps = {
     message: Message;
@@ -52,7 +53,8 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
         prevProps.message.reasoning !== nextProps.message.reasoning ||
         prevProps.message.thinkingTimeline?.length !== nextProps.message.thinkingTimeline?.length ||
         prevProps.message.suggestedQuestions?.length !== nextProps.message.suggestedQuestions?.length ||
-        prevProps.message.artifactAction !== nextProps.message.artifactAction;
+        prevProps.message.artifactAction !== nextProps.message.artifactAction ||
+        prevProps.message.questionAnswers !== nextProps.message.questionAnswers;
 
     // Compare siblingInfo by its key properties
     const siblingInfoChanged =
@@ -116,6 +118,18 @@ const MessageComponentPure = ({
                 data-message-id={message.id}
             >
                 <ArtifactEditMarker message={message} />
+            </ChatContainerItem>
+        );
+    }
+
+    if (isQuestionAnswerMessage(message)) {
+        return (
+            <ChatContainerItem
+                className="user-msg justify-end mb-6"
+                data-message-role="question-answer"
+                data-message-id={message.id}
+            >
+                <AskUserQuestionsResponseMessage questionAnswers={message.questionAnswers} />
             </ChatContainerItem>
         );
     }
