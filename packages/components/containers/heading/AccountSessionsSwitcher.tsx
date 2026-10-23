@@ -100,7 +100,7 @@ const AccountSessionsSwitcher = ({
                                                         </span>
                                                     )}
                                                 </div>
-                                                {sessionDisplayData.email && (
+                                                {sessionDisplayData.showEmail && (
                                                     <div
                                                         className="text-ellipsis color-weak"
                                                         data-testid="sessions:item-email"
