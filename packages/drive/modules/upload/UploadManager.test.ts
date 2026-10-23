@@ -256,5 +256,13 @@ describe('UploadManager', () => {
             expect(queueItems.every((item) => item.type === NodeType.Photo)).toBe(true);
             expect(queueItems.every((item) => isPhotosUploadItem(item))).toBe(true);
         });
+
+        it('should queue a very large selection without overflowing the call stack', async () => {
+            const files = Array.from({ length: 200_000 }, (_, index) => new File(['x'], `photo-${index}.jpg`));
+
+            const uploadIds = await uploadManager.uploadPhotos(files);
+
+            expect(uploadIds).toHaveLength(files.length);
+        });
     });
 });

@@ -1,6 +1,8 @@
 import { EMPTY_FOLDER_PLACEHOLDER_FILE, EMPTY_FOLDER_PLACEHOLDER_MIMETYPE } from '../constants';
 import { processFileSystemEntry } from './processFileSystemEntry';
 
+const READ_ENTRIES_BATCH_SIZE = 100;
+
 describe('processFileSystemEntry', () => {
     const createMockFile = (name: string): File => {
         return new File([], name, { type: 'text/plain' });
@@ -23,16 +25,12 @@ describe('processFileSystemEntry', () => {
             isDirectory: true,
             name,
             createReader: () => {
-                let entriesRemaining = [...entries];
+                let offset = 0;
                 return {
                     readEntries: (successCallback: (entries: FileSystemEntry[]) => void) => {
-                        if (entriesRemaining.length > 0) {
-                            const currentEntries = entriesRemaining;
-                            entriesRemaining = [];
-                            successCallback(currentEntries);
-                        } else {
-                            successCallback([]);
-                        }
+                        const batch = entries.slice(offset, offset + READ_ENTRIES_BATCH_SIZE);
+                        offset += batch.length;
+                        successCallback(batch);
                     },
                 } as FileSystemDirectoryReader;
             },
@@ -166,5 +164,17 @@ describe('processFileSystemEntry', () => {
         } as FileSystemDirectoryEntry;
 
         await expect(processFileSystemEntry(dirEntry)).rejects.toThrow('Directory read error');
+    });
+
+    it('should process a subfolder with a very large number of files without overflowing the call stack', async () => {
+        const fileEntries = Array.from({ length: 200_000 }, (_, index) =>
+            createMockFileEntry(`file-${index}.txt`, createMockFile(`file-${index}.txt`))
+        );
+        const subDirEntry = createMockDirectoryEntry('subfolder', fileEntries);
+        const dirEntry = createMockDirectoryEntry('folder', [subDirEntry]);
+
+        const result = await processFileSystemEntry(dirEntry);
+
+        expect(result).toHaveLength(fileEntries.length);
     });
 });

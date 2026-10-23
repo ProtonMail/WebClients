@@ -62,7 +62,9 @@ export async function processDroppedItems(
         if (entry) {
             promises.push(
                 processFileSystemEntry(entry, options).then((files) => {
-                    collectedFiles.push(...files);
+                    for (const file of files) {
+                        collectedFiles.push(file);
+                    }
                 })
             );
             continue;
