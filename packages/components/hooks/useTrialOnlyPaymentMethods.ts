@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import { isTrial } from '@proton/payments/core/subscription/helpers';
 
@@ -10,24 +10,24 @@ import { isTrial } from '@proton/payments/core/subscription/helpers';
  * Returns a boolean indicating whether the trial user has payment methods.
  */
 export const useTrialOnlyPaymentMethods = (): boolean => {
-    const [subscription] = useSubscription();
+    const [subscriptions] = useAllSubscriptions();
     const getPaymentMethods = useGetPaymentMethods();
     const [paymentMethods, setPaymentMethods] = useState<SavedPaymentMethod[]>([]);
 
     useEffect(() => {
         const fetchPaymentMethodsIfTrial = async () => {
-            if (isTrial(subscription)) {
+            if (subscriptions?.some((subscription) => isTrial(subscription))) {
                 try {
                     const methods = await getPaymentMethods();
                     setPaymentMethods(methods);
-                } catch (error) {
+                } catch {
                     setPaymentMethods([]);
                 }
             }
         };
 
         void fetchPaymentMethodsIfTrial();
-    }, [subscription, getPaymentMethods]);
+    }, [subscriptions, getPaymentMethods]);
 
     return paymentMethods.length > 0;
 };

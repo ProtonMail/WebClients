@@ -3,34 +3,24 @@ import { c } from 'ttag';
 import { addressesThunk } from '@proton/account/addresses';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { featureTourActions } from '@proton/account/featuresTour';
-import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
-import { PLANS } from '@proton/payments/core/constants';
-import { isTrial } from '@proton/payments/core/subscription/helpers';
+import useToggle from '@proton/hooks/useToggle';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { SentryMailInitiatives, traceError } from '@proton/shared/lib/helpers/sentry';
 import shortDomainImg from '@proton/styles/assets/img/illustrations/new-upsells-img/pm-me.svg';
 
 import useShortDomainAddress from '../../../hooks/mail/useShortDomainAddress';
-import useToggle from '@proton/hooks/useToggle'
 import type { FeatureTourStepProps, ShouldDisplayTourStep } from '../interface';
 import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 import FeatureTourToggle from './components/FeatureTourToggle';
 
 export const shouldDisplayShortDomainTourStep: ShouldDisplayTourStep = async (dispatch) => {
-    const [user, subscription, addresses] = await Promise.all([
-        dispatch(userThunk()),
-        dispatch(subscriptionThunk()),
-        dispatch(addressesThunk()),
-    ]);
+    const [user, addresses] = await Promise.all([dispatch(userThunk()), dispatch(addressesThunk())]);
     return {
         canDisplay:
-            addresses !== undefined &&
-            addresses.length > 0 &&
-            (isTrial(subscription, PLANS.MAIL) || user.hasPaidMail) &&
-            !getIsBYOEOnlyAccount(addresses),
+            addresses !== undefined && addresses.length > 0 && user.hasPaidMail && !getIsBYOEOnlyAccount(addresses),
         preloadUrls: [shortDomainImg],
     };
 };
