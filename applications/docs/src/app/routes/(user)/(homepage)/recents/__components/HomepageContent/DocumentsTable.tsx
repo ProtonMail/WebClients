@@ -9,6 +9,7 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown'
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
 import Checkbox from '@proton/components/components/input/Checkbox'
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { DateFormatter } from '@proton/docs-core/VersionHistory/DateFormatter'
@@ -32,7 +33,7 @@ import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helper
 import { getInitials } from '@proton/shared/lib/helpers/string'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
 import clsx from '@proton/utils/clsx'
-import type { ComponentPropsWithoutRef, ReactNode } from 'react'
+import type { ComponentPropsWithoutRef, KeyboardEvent, MouseEvent, ReactNode } from 'react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { c, msgid } from 'ttag'
 import { useApplication } from '~/utils/application-context'
@@ -43,6 +44,7 @@ import type { RecentsSort } from '../../__utils/homepage-view'
 import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../../__utils/homepage-view'
 import { isMyDocument } from '../../__utils/is-my-document'
 import { useBulkTrash } from '../../__utils/useBulkTrash'
+import { useDoubleClick } from '../../__utils/useDoubleClick'
 import { useRowSelection, type RowSelection } from '../../__utils/useRowSelection'
 import { DocContextMenu, useCanTrash } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
@@ -64,7 +66,9 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   const isRecents = variant.startsWith('recents')
   const isSearch = variant === 'search'
 
-  const bulkEnabled = useBulkTrashEnabled() && (isRecents || isSearch)
+  // Like Drive: single click selects, double click opens.
+  const openOnDoubleClick = useBulkTrashEnabled()
+  const bulkEnabled = openOnDoubleClick && (isRecents || isSearch)
   const canTrash = useCanTrash()
   const allItems = itemsSections.flatMap(({ items }) => items)
   const selectableIds = bulkEnabled ? allItems.filter(canTrash).map((item) => item.uniqueId()) : []
@@ -73,8 +77,19 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   const selection = useRowSelection(selectableIds, resetKey)
   const { trash, isTrashing } = useBulkTrash()
   const hasSelection = selection.selectedIds.length > 0
+  // The title is hidden on mobile, so the selection controls move to the head, like in Drive.
+  const isNarrow = useActiveBreakpoint().viewportWidth['<=small']
+  const hasSelectionControls = selectableIds.length > 0
 
   const label = isRecents || isSearch ? recentsLabelByType(type) : c('Info').t`Trash`
+  const bulkTrashButton = (
+    <BulkTrashButton
+      selection={selection}
+      documents={allItems.filter((item) => selection.isSelected(item.uniqueId()))}
+      trash={trash}
+      isTrashing={isTrashing}
+    />
+  )
 
   return (
     <>
@@ -82,7 +97,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
         isBottom
         className="shrink-0 grow pb-4"
         onClick={(event) => {
-          // Rows stop propagation. `contains` skips clicks bubbling from portals (e.g. modals).
+          // Skips rows (their activator is a button). `contains` skips clicks bubbling from portals (e.g. modals).
           const { target, currentTarget } = event
           if (target instanceof Element && currentTarget.contains(target) && !target.closest('button, input, label')) {
             selection.clear()
@@ -91,44 +106,43 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
       >
         <Table.Table
           onKeyDown={(event) => {
-            // Leave Escape alone for the rename input.
+            // Leave the rename input alone.
             const { target } = event
-            if (event.key === 'Escape' && !(target instanceof HTMLInputElement && target.type !== 'checkbox')) {
+            if (target instanceof HTMLInputElement && target.type !== 'checkbox') {
+              return
+            }
+            if (event.key === 'Escape') {
               selection.clear()
+            } else {
+              moveRowFocus(event)
             }
           }}
         >
           <Table.Title topLevelSticky>
-            {selectableIds.length > 0 ? (
-              <span className="flex items-center gap-3">
-                <SelectAllCheckbox selection={selection} isTrashing={isTrashing} />
-                {hasSelection ? (
-                  <span aria-live="polite" data-testid="bulk-selected-count">
-                    {c('Info').ngettext(
-                      msgid`${selection.selectedIds.length} selected`,
-                      `${selection.selectedIds.length} selected`,
-                      selection.selectedIds.length,
-                    )}
-                  </span>
-                ) : (
-                  label
-                )}
-              </span>
+            {hasSelectionControls && !isNarrow ? (
+              <SelectionLabel selection={selection} isTrashing={isTrashing} label={label} />
             ) : (
               label
             )}
-            {hasSelection ? (
-              <BulkTrashButton
-                selection={selection}
-                documents={allItems.filter((item) => selection.isSelected(item.uniqueId()))}
-                trash={trash}
-                isTrashing={isTrashing}
-              />
-            ) : (
-              isRecents && <SortSelect />
-            )}
+            {hasSelection && !isNarrow ? bulkTrashButton : isRecents && <SortSelect />}
           </Table.Title>
-          <Head variant={variant} sectionId={itemsSections[0].id} hasCheckbox={bulkEnabled} />
+          <Head
+            variant={variant}
+            sectionId={itemsSections[0].id}
+            hasCheckbox={bulkEnabled}
+            selectionControls={
+              hasSelectionControls && isNarrow ? (
+                <div className="flex w-full items-center">
+                  <SelectionLabel
+                    selection={selection}
+                    isTrashing={isTrashing}
+                    label={getSectionLabel(itemsSections[0].id)}
+                  />
+                  {hasSelection && bulkTrashButton}
+                </div>
+              ) : undefined
+            }
+          />
           {itemsSections.map(({ id, items }, sectionIndex) => (
             <Fragment key={id}>
               {sectionIndex > 0 && <SectionLabel sectionId={id} hasCheckbox={bulkEnabled} />}
@@ -139,6 +153,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
                 selection={bulkEnabled ? selection : undefined}
                 selectableIdsSet={selectableIdsSet}
                 isTrashing={isTrashing}
+                openOnDoubleClick={openOnDoubleClick}
               />
             </Fragment>
           ))}
@@ -153,6 +168,27 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
         position={contextMenu.position}
       />
     </>
+  )
+}
+
+type SelectionLabelProps = { selection: RowSelection; isTrashing: boolean; label: string }
+
+function SelectionLabel({ selection, isTrashing, label }: SelectionLabelProps) {
+  return (
+    <span className="flex items-center gap-3">
+      <SelectAllCheckbox selection={selection} isTrashing={isTrashing} />
+      {selection.selectedIds.length > 0 ? (
+        <span aria-live="polite" data-testid="bulk-selected-count">
+          {c('Info').ngettext(
+            msgid`${selection.selectedIds.length} selected`,
+            `${selection.selectedIds.length} selected`,
+            selection.selectedIds.length,
+          )}
+        </span>
+      ) : (
+        label
+      )}
+    </span>
   )
 }
 
@@ -218,18 +254,15 @@ function recentsLabelByType(type: ProtonDocumentType | undefined): string {
 // head
 // ----
 
-type HeadProps = { variant: TableVariant; sectionId: ItemsSectionId; hasCheckbox: boolean }
+type HeadProps = {
+  variant: TableVariant
+  sectionId: ItemsSectionId
+  hasCheckbox: boolean
+  selectionControls?: ReactNode
+}
 
-function Head({ variant, sectionId, hasCheckbox }: HeadProps) {
+function Head({ variant, sectionId, hasCheckbox, selectionControls }: HeadProps) {
   const firstHeaderSorted = variant === 'recents-name' || variant === 'trash'
-
-  let secondHeaderLabel = c('Recent documents table header').t`Viewed`
-  if (variant === 'recents-modified') {
-    secondHeaderLabel = c('Recent documents table header').t`Modified`
-  }
-  if (variant === 'trash') {
-    secondHeaderLabel = c('Recent documents table header').t`Deleted`
-  }
   const secondHeaderSorted = variant === 'recents-viewed' || variant === 'recents-modified'
   const thirdHeaderSorted = variant === 'recents-owner'
   const fourthHeaderSorted = variant === 'recents-location'
@@ -237,15 +270,17 @@ function Head({ variant, sectionId, hasCheckbox }: HeadProps) {
   return (
     <Table.Head secondarySticky topLevelSticky topLevelStickyOnlyOnMobile className="border-weak border-b">
       <Table.Header>
-        <div className="flex items-center gap-3">
-          {/* Same width as the row checkboxes, so that the label aligns with the names. */}
-          {hasCheckbox && <span className="hidden w-5 shrink-0 small:!flex" />}
-          <MaybeSorted sorted={firstHeaderSorted}>{getSectionLabel(sectionId)}</MaybeSorted>
-        </div>
+        {selectionControls ?? (
+          <div className="flex items-center gap-3">
+            {/* Same width as the row checkboxes, so that the label aligns with the names. */}
+            {hasCheckbox && <span className="w-5 shrink-0" />}
+            <MaybeSorted sorted={firstHeaderSorted}>{getSectionLabel(sectionId)}</MaybeSorted>
+          </div>
+        )}
       </Table.Header>
       <Table.Header target="large">
         <MaybeSorted sorted={secondHeaderSorted}>
-          <span>{secondHeaderLabel}</span>
+          <span>{getDateHeaderLabel(variant)}</span>
         </MaybeSorted>
       </Table.Header>
       <Table.Header target="medium">
@@ -270,7 +305,7 @@ function SectionLabel({ sectionId, hasCheckbox }: SectionLabelProps) {
       <Table.Header>
         <span className="flex items-center gap-3">
           {/* Same width as the row checkboxes, so that the label aligns with the names. */}
-          {hasCheckbox && <span className="hidden w-5 shrink-0 small:!flex" />}
+          {hasCheckbox && <span className="w-5 shrink-0" />}
           {getSectionLabel(sectionId)}
         </span>
       </Table.Header>
@@ -370,6 +405,17 @@ function getSectionLabel(id: ItemsSectionId): string {
   }
 }
 
+function getDateHeaderLabel(variant: TableVariant): string {
+  switch (variant) {
+    case 'recents-modified':
+      return c('Recent documents table header').t`Modified`
+    case 'trash':
+      return c('Recent documents table header').t`Deleted`
+    default:
+      return c('Recent documents table header').t`Viewed`
+  }
+}
+
 // body
 // ----
 
@@ -380,9 +426,10 @@ type BodyProps = {
   selection?: RowSelection
   selectableIdsSet: Set<string>
   isTrashing: boolean
+  openOnDoubleClick: boolean
 }
 
-function Body({ items, variant, addresses, selection, selectableIdsSet, isTrashing }: BodyProps) {
+function Body({ items, variant, addresses, selection, selectableIdsSet, isTrashing, openOnDoubleClick }: BodyProps) {
   return (
     <Table.Body className="divide-weak divide-y">
       {items.map((recentDocument) => (
@@ -394,6 +441,7 @@ function Body({ items, variant, addresses, selection, selectableIdsSet, isTrashi
           selection={selection}
           isSelectable={selectableIdsSet.has(recentDocument.uniqueId())}
           isTrashing={isTrashing}
+          openOnDoubleClick={openOnDoubleClick}
         />
       ))}
     </Table.Body>
@@ -406,6 +454,9 @@ function Body({ items, variant, addresses, selection, selectableIdsSet, isTrashi
 // Refresh dates every minute.
 const REFRESH_DATE_INTERVAL = 1000 * 60 // ms
 
+// Lifts controls above the row activator, so that they keep their own clicks.
+const RAISED = 'relative z-[1]'
+
 type RowProps = {
   document: RecentDocumentsItem
   variant: TableVariant
@@ -413,9 +464,10 @@ type RowProps = {
   selection?: RowSelection
   isSelectable?: boolean
   isTrashing?: boolean
+  openOnDoubleClick?: boolean
 }
 
-function Row({ document, variant, addresses, selection, isSelectable, isTrashing }: RowProps) {
+function Row({ document, variant, addresses, selection, isSelectable, isTrashing, openOnDoubleClick }: RowProps) {
   const { getLocalID } = useAuthentication()
   const documentActions = useDocumentActions()
   const { location } = document
@@ -462,7 +514,7 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
         }
       }}
       shape="ghost"
-      className="text-pre flex flex-nowrap items-center px-2"
+      className={clsx('text-pre flex flex-nowrap items-center px-2', RAISED)}
       title={!isLocationPath ? locationLabel : undefined}
       data-testid="document-location-button"
     >
@@ -480,42 +532,66 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
   const DocumentTypeIcon = ICON_BY_TYPE[document.type]
 
   const isSelected = !!selection?.isSelected(document.uniqueId())
+  const selectable = isSelectable && !isTrashing ? selection : undefined
+
+  const open = () => documentActions.open(document, variant === 'trash' ? 'trash' : 'normal')
+  const doubleClick = useDoubleClick(open)
 
   return (
     <Table.Row
       className={clsx(
-        'group-hover-opacity-container cursor-pointer hover:bg-[--optional-background-lowered]',
+        // `z-0` keeps the raised controls below the sticky head.
+        'group-hover-opacity-container relative z-0 hover:bg-[--optional-background-lowered]',
+        openOnDoubleClick ? 'select-none' : 'cursor-pointer',
         isSelected && 'bg-[--optional-background-lowered]',
       )}
       data-selected={isSelected ? '' : undefined}
-      onClick={(event) => {
-        event.stopPropagation()
-        if (event.target instanceof Element && event.target.closest('[data-bulk-select]')) {
-          return
-        }
-        documentActions.open(document, variant === 'trash' ? 'trash' : 'normal')
-      }}
+      onClick={
+        openOnDoubleClick
+          ? undefined
+          : (event) => {
+              event.stopPropagation()
+              open()
+            }
+      }
       onContextMenu={(event) => {
         event.stopPropagation()
+        if (!isSelected) {
+          selectable?.select(document.uniqueId())
+        }
         contextMenu.setCurrentDocument(document)
         contextMenu.handleContextMenu(event)
       }}
     >
       <Table.DataCell>
-        <span title={document.name} className="flex flex-nowrap items-center gap-3">
+        <span title={openOnDoubleClick ? undefined : document.name} className="flex flex-nowrap items-center gap-3">
           {selection && (
             // Empty for non-trashable rows, so that names stay aligned.
             <span
-              data-bulk-select
               className={clsx(
-                'hidden w-5 shrink-0 small:!flex',
+                'flex w-5 shrink-0',
+                isSelectable && RAISED,
                 selection.selectedIds.length === 0 && 'mouse:group-hover:opacity-100',
               )}
             >
               {isSelectable && (
                 <Checkbox
+                  // Like Drive, the whole cell is clickable.
+                  className="expand-click-area"
                   checked={isSelected}
-                  onChange={() => selection.toggle(document.uniqueId())}
+                  readOnly
+                  onClick={(event) => {
+                    if (!event.shiftKey) {
+                      selection.toggle(document.uniqueId())
+                    }
+                  }}
+                  // Shift is handled on the label, because Firefox doesn't forward shift-clicks from
+                  // labels to inputs: https://bugzilla.mozilla.org/show_bug.cgi?id=559506
+                  labelOnClick={(event) => {
+                    if (event.shiftKey) {
+                      selectable?.toggleRange(document.uniqueId())
+                    }
+                  }}
                   disabled={isTrashing}
                   aria-label={c('Label').t`Select ${document.name}`}
                   data-testid="bulk-row-checkbox"
@@ -533,6 +609,7 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
               ref={(element) => {
                 element?.select()
               }}
+              className={RAISED}
               defaultValue={document.name}
               onClick={(event) => event.stopPropagation()}
               disabled={documentActions.isRenameSaving}
@@ -612,7 +689,7 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
                 contextMenu.handleContextMenu(event)
               }}
               shape="ghost"
-              className="ml-auto shrink-0 px-2"
+              className={clsx('ml-auto shrink-0 px-2', RAISED)}
               aria-label={c('Action').t`Actions`}
             >
               <IcThreeDotsVertical />
@@ -620,12 +697,122 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
           </Tooltip>
         </div>
       </Table.DataCell>
+
+      {/* Like Drive's `ItemA11yActivator`: a row-sized button under the controls, focusable and announced for the whole row. */}
+      {/* `z-0` because Proton's `absolute` also sets `z-index: 1`, which would cover the raised controls. */}
+      {openOnDoubleClick && (
+        <Table.DataCell className="absolute inset-0 z-0">
+          <button
+            type="button"
+            className={clsx(
+              // `touch-manipulation` stops double tap from zooming, and drops the tap delay.
+              'bg-transparent h-full w-full cursor-default touch-manipulation border-0 p-0',
+              'focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-[--focus-outline]',
+            )}
+            aria-label={getRowAriaLabel({
+              document,
+              isSelected: isSelectable ? isSelected : undefined,
+              dateLabel: `${getDateHeaderLabel(variant)} ${getRelativeDate(document)}`,
+              displayName,
+              locationLabel,
+            })}
+            aria-pressed={isSelectable ? isSelected : undefined}
+            // The button covers the cells, so it carries the name tooltip for them.
+            title={document.name}
+            data-item-activator
+            data-testid="row-activator"
+            onClick={(event) => {
+              if (selectable) {
+                selectOnClick(selectable, document.uniqueId(), event)
+              }
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                event.preventDefault()
+                open()
+              } else if (event.key === ' ' && selectable) {
+                event.preventDefault()
+                selectable.toggle(document.uniqueId())
+              }
+            }}
+            {...doubleClick}
+          />
+        </Table.DataCell>
+      )}
     </Table.Row>
   )
 }
 
 // utils
 // -----
+
+// Like Drive's `useArrowKeyNavigation`: arrows move focus between rows, Space selects.
+function moveRowFocus(event: KeyboardEvent<HTMLElement>) {
+  const { key, target, currentTarget } = event
+  // `contains` skips keys bubbling from portals (e.g. the sort dropdown).
+  if (!(target instanceof Element) || !currentTarget.contains(target)) {
+    return
+  }
+  const activators = [...currentTarget.querySelectorAll<HTMLElement>('[data-item-activator]')]
+  const row = target.closest('[role="row"]')
+  const index = getNextRowIndex(
+    key,
+    activators.findIndex((activator) => row?.contains(activator)),
+    activators.length - 1,
+  )
+  const activator = index === undefined ? undefined : activators[index]
+  if (activator) {
+    event.preventDefault()
+    activator.focus()
+  }
+}
+
+function getNextRowIndex(key: string, current: number, last: number): number | undefined {
+  switch (key) {
+    case 'ArrowDown':
+      return current < 0 ? 0 : Math.min(current + 1, last)
+    case 'ArrowUp':
+      return current < 0 ? last : Math.max(current - 1, 0)
+    case 'Home':
+      return 0
+    case 'End':
+      return last
+  }
+}
+
+type RowAriaLabelParams = {
+  document: RecentDocumentsItem
+  isSelected: boolean | undefined
+  dateLabel: string
+  displayName: string | undefined
+  locationLabel: string
+}
+
+// Like Drive's `getFolderItemAriaLabel`: mirrors the visible columns, prefixed with the selection state.
+function getRowAriaLabel({ document, isSelected, dateLabel, displayName, locationLabel }: RowAriaLabelParams) {
+  const parts = [
+    document.name,
+    document.type === 'spreadsheet' ? c('Label').t`Spreadsheet` : c('Label').t`Document`,
+    dateLabel,
+    displayName && c('Label').t`Created by ${displayName}`,
+    c('Label').t`Location ${locationLabel}`,
+  ].filter(Boolean)
+  if (isSelected !== undefined) {
+    parts.unshift(isSelected ? c('Label').t`Selected` : c('Label').t`Not selected`)
+  }
+  return parts.join(', ')
+}
+
+// Same modifiers as Drive's `useItemInteraction`.
+function selectOnClick(selection: RowSelection, id: string, { shiftKey, ctrlKey, metaKey }: MouseEvent) {
+  if (shiftKey) {
+    selection.toggleRange(id)
+  } else if (ctrlKey || metaKey) {
+    selection.toggle(id)
+  } else {
+    selection.select(id)
+  }
+}
 
 function useNameAndAvatar(document: RecentDocumentsItem, addresses: Address[] | undefined) {
   const [contactEmails] = useContactEmails()
