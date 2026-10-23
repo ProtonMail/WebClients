@@ -883,7 +883,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@dnd-kit/abstract": "^0.5.0",
+        "@dnd-kit/abstract": "catalog:",
         "@dnd-kit/dom": "catalog:",
         "@dnd-kit/react": "catalog:",
         "@emoji-mart/data": "^1.0.3",
@@ -918,7 +918,7 @@
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "catalog:",
         "@protontech/logger": "catalog:",
-        "@protontech/pass-rust-core": "1.6.0",
+        "@protontech/pass-rust-core": "catalog:",
         "@reduxjs/toolkit": "catalog:",
         "@types/codemirror": "5.60.18",
         "@types/react": "catalog:",

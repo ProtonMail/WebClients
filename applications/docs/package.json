@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@ariakit/react": "0.4.29",
-    "@lexical/utils": "0.31.2",
+    "@lexical/utils": "catalog:",
     "@proton/account": "workspace:^",
     "@proton/app-context": "workspace:^",
     "@proton/atoms": "workspace:^",
@@ -52,14 +52,14 @@
     "@reduxjs/toolkit": "catalog:",
     "history": "catalog:",
     "jszip": "catalog:",
-    "lexical": "0.31.2",
+    "lexical": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-router": "catalog:",
     "react-router-dom": "catalog:",
     "react-router-dom-v5-compat": "^6.30.6",
     "ttag": "catalog:",
-    "yjs": "^13.6.15",
+    "yjs": "catalog:",
     "zustand": "^4.5.7"
   },
   "devDependencies": {
