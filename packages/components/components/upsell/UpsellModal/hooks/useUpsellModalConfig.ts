@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { allSubscriptionsThunk } from '@proton/account/allSubscriptions';
+import { entitlementCatalogThunk } from '@proton/account/entitlementCatalog';
 import { paymentStatusThunk } from '@proton/account/paymentStatus';
 import { plansThunk } from '@proton/account/plans';
 import { previousSubscriptionThunk } from '@proton/account/previousSubscription';
@@ -9,6 +11,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { getSubscriptionForApp } from '@proton/payments/core/subscription/subscription-for-app';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
@@ -80,13 +83,24 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
             //
             // Fetch dependencies
             //
-            const [user, subscription, plansModel, paymentStatus, { hasHadSubscription }] = await Promise.all([
+            const [
+                user,
+                subscription,
+                allSubscriptions,
+                entitlementCatalog,
+                plansModel,
+                paymentStatus,
+                { hasHadSubscription },
+            ] = await Promise.all([
                 dispatch(userThunk()),
                 dispatch(subscriptionThunk()),
+                dispatch(allSubscriptionsThunk()),
+                dispatch(entitlementCatalogThunk()),
                 dispatch(plansThunk()),
                 dispatch(paymentStatusThunk()),
                 dispatch(previousSubscriptionThunk()),
             ]);
+            const subscriptionForApp = getSubscriptionForApp(allSubscriptions, entitlementCatalog, APP_NAME);
             const plans = plansModel?.plans ?? [];
 
             //
@@ -130,7 +144,7 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                     planIDs,
                     preventInApp,
                     step,
-                    subscription,
+                    subscription: subscriptionForApp,
                     upsellRef,
                     user,
                 });
@@ -167,7 +181,7 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                     planIDs: defaultPlanIDs,
                     preventInApp,
                     step,
-                    subscription,
+                    subscription: subscriptionForApp,
                     upsellRef,
                     user,
                 });

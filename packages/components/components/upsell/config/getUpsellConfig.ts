@@ -1,7 +1,7 @@
 import { type COUPON_CODES, CYCLE } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import type { Plan } from '@proton/payments/core/plan/interface';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { APPS_WITH_IN_APP_PAYMENTS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
@@ -58,7 +58,7 @@ export const getUpsellConfig = ({
     appName: APP_NAMES;
     planIDs?: PlanIDs;
     openSubscriptionModal: OpenSubscriptionModalCallback | undefined;
-    subscription: MaybeFreeSubscription;
+    subscription: Subscription | undefined;
     user: UserModel;
     /** Override final config before opening subscription modal */
     configOverride?: (config: OpenCallbackProps) => void;
