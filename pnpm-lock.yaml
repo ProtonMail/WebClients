@@ -1766,9 +1766,6 @@ importers:
       '@proton/hooks':
         specifier: workspace:^
         version: link:../../packages/hooks
-      '@proton/icons':
-        specifier: workspace:^
-        version: link:../../packages/icons
       '@proton/pack':
         specifier: workspace:^
         version: link:../../packages/pack
@@ -3631,9 +3628,6 @@ importers:
       '@proton/components':
         specifier: workspace:^
         version: link:../../packages/components
-      '@proton/icons':
-        specifier: workspace:^
-        version: link:../../packages/icons
       '@proton/pass':
         specifier: workspace:^
         version: link:../../packages/pass
@@ -4227,9 +4221,6 @@ importers:
       '@proton/hooks':
         specifier: workspace:^
         version: link:../../packages/hooks
-      '@proton/icons':
-        specifier: workspace:^
-        version: link:../../packages/icons
       '@proton/polyfill':
         specifier: workspace:^
         version: link:../../packages/polyfill
@@ -7052,9 +7043,6 @@ importers:
 
   packages/icons:
     dependencies:
-      '@proton/utils':
-        specifier: workspace:^
-        version: link:../utils
       jsdom:
         specifier: ^29.1.1
         version: 29.1.1(@noble/hashes@2.4.0)
@@ -8083,9 +8071,6 @@ importers:
       sass-loader:
         specifier: ^17.0.1
         version: 17.0.1(sass@1.97.1)(webpack@5.111.1)
-      svgo-loader:
-        specifier: ^5.0.0
-        version: 5.0.0
       swc-loader:
         specifier: ^0.2.7
         version: 0.2.7(@swc/core@1.16.18(@swc/helpers@0.5.17))(webpack@5.111.1)
@@ -8310,9 +8295,6 @@ importers:
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
-      '@types/jsdom':
-        specifier: ^21.1.7
-        version: 21.1.7
       '@types/lodash':
         specifier: 'catalog:'
         version: 4.17.25
@@ -8355,9 +8337,6 @@ importers:
       jest:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
-      jsdom:
-        specifier: ^29.1.1
-        version: 29.1.1(@noble/hashes@2.4.0)
       json-schema-to-typescript:
         specifier: ^13.1.2
         version: 13.1.2
@@ -27816,9 +27795,6 @@ packages:
 
   svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
-
-  svgo-loader@5.0.0:
-    resolution: {integrity: sha512-GBM8PCIHEMBciHi+ZQcNcdeFPacvnboougYPTuKAHSLtOtcqHOJmXNu/lITJl8CtU8PmORUCSK5hKW844GO4dQ==}
 
   svgo@4.1.0:
     resolution: {integrity: sha512-bkxnTg1kSU0guhIBmibA6UUhrQmPVA1XsQLN+ylCd+UWzbnLkySOcXpyk1mrl05f+pcaCx2eHb+sp6BgMZWX+Q==}
@@ -49980,10 +49956,6 @@ snapshots:
     optional: true
 
   svg-tags@1.0.0: {}
-
-  svgo-loader@5.0.0:
-    dependencies:
-      svgo: 4.1.0
 
   svgo@4.1.0:
     dependencies:

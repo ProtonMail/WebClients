@@ -4,7 +4,6 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
-import Icons from '@proton/icons/Icons';
 import '@proton/polyfill';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
@@ -23,7 +22,6 @@ sentry({ config, sentryConfig });
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <>
-        <Icons />
         <NotificationsProvider>
             <ModalsProvider>
                 <StoreProvider>

@@ -13,7 +13,6 @@ import { RightToLeftProvider } from '@proton/components/containers/rightToLeft/P
 import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import { PreventLeaveProvider } from '@proton/components/hooks/usePreventLeave';
 import useInstance from '@proton/hooks/useInstance';
-import Icons from '@proton/icons/Icons';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import { isWebView } from '@proton/shared/lib/broadcast/broadcast';
@@ -46,7 +45,6 @@ const App = () => {
         <ConfigProvider config={config}>
             <Router>
                 <RightToLeftProvider>
-                    <Icons />
                     <ThemeProvider appName={config.APP_NAME}>
                         <PreventLeaveProvider>
                             <VerifyNotificationsProvider>

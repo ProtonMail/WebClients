@@ -1,7 +1,6 @@
 import { JSDOM } from 'jsdom';
 import mustache from 'mustache';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
-import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as prettier from 'prettier';
@@ -15,8 +14,7 @@ const PACKAGE_JSON_INDENT = 4;
 
 const ASSETS = ['sm', 'md', 'lg'] as const;
 
-// The source still lives in @proton/icons, whose sprite loaders use it. It moves here once they are gone.
-const source = createRequire(import.meta.url).resolve('@proton/icons/assets/file-icons.svg');
+const source = path.join(dirname, '../assets/file-icons.svg');
 
 const disclaimer = `
 /*

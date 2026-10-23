@@ -48,7 +48,7 @@ const config: Configuration = {
         rules: [
             ...getJsLoaders({ ...webpackOptions, browserslist: browserslistQuery, hasReactRefresh: false }),
             ...getCssLoaders({ browserslist: undefined, noLogicalScss: true }),
-            ...getAssetsLoaders({ inlineIcons: true }),
+            ...getAssetsLoaders(),
         ],
     },
     plugins: [...plugins, new ReactRefreshWebpackPlugin(), new MiniCssExtractPlugin({ filename: 'styles/[name].css' })],

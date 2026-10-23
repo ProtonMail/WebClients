@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
+import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet';
+import { MimeXls } from '@proton/file-icons/icons/MimeXls';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { SHEETS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { ButtonWithTextAndIcon } from '../../components/button/ButtonWithTextAndIcon';
-import MimeIcon from '../../components/icon/MimeIcon';
 
 export function ExcelPreview({ onOpenInDocs, onDownload }: { onOpenInDocs?: () => void; onDownload?: () => void }) {
     const hasActions = onOpenInDocs || onDownload;
@@ -15,7 +16,7 @@ export function ExcelPreview({ onOpenInDocs, onDownload }: { onOpenInDocs?: () =
             className="m-auto flex flex-column items-center justify-space-between gap-8 w-custom"
             style={{ '--w-custom': '24rem' }}
         >
-            <MimeIcon name="xls" size={15} />
+            <MimeXls size={15} />
             <span className="h3 text-center">
                 {onOpenInDocs
                     ? c('Title').t`To preview this spreadsheet, open it in ${SHEETS_APP_NAME} or download it.`
@@ -32,7 +33,7 @@ export function ExcelPreview({ onOpenInDocs, onDownload }: { onOpenInDocs?: () =
                         <ButtonWithTextAndIcon
                             shape="solid"
                             color="weak"
-                            mimeIconName="proton-sheet"
+                            icon={<MimeProtonSheet />}
                             buttonText={c('Action: Sheets').t`Open in ${SHEETS_APP_NAME}`}
                             onClick={onOpenInDocs}
                         />

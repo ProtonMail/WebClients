@@ -4,7 +4,6 @@ import { App } from './App'
 import { ApplicationProvider } from './ApplicationProvider'
 import { ThemeStyles } from '../Theme'
 import { useBridge } from '../Lib/useBridge'
-import Icons from '@proton/icons/Icons'
 import type { EditorSystemMode } from './Docs/public'
 import { EditorStateProvider } from './EditorStateProvider'
 import type { DocumentType } from '@proton/docs-shared/BasicTypes'
@@ -33,7 +32,6 @@ export function RootContainer({ documentType, systemMode }: ContainerProps) {
           </NotificationsProvider>
         </EditorStateProvider>
       </ApplicationProvider>
-      <Icons />
     </EditorThemeProvider>
   )
 }

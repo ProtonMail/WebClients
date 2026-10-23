@@ -60,7 +60,6 @@ export default {
         const options = {
             isProduction,
             hasReactRefresh: false,
-            inlineIcons: true,
         };
 
         return {
@@ -75,7 +74,7 @@ export default {
                     ...config.module.rules.filter((rule) => {
                         return rule && rule.test && rule.test.toString().includes('mdx');
                     }),
-                    ...[getJsLoader(options), ...getCssLoaders(options), ...getAssetsLoaders(options)],
+                    ...[getJsLoader(options), ...getCssLoaders(options), ...getAssetsLoaders()],
                 ],
             },
             node: {

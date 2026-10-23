@@ -148,14 +148,6 @@ im.$media-expressions: $media-expressions;
 	margin-block-end: 0;
 }
 
-/*
- * Hide a div injected by the Proton framework.
- */
-
-#icons-root {
-	display: none;
-}
-
 @media print {
 	.lumo-avatar {
 		position: static;

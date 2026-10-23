@@ -28,8 +28,6 @@ import { assertKnownRolloutIds, collectRestrictions, rolloutIds } from '@proton/
 
 import { allGlobs } from './globs.js';
 
-export { iconRestrictedMessage } from '@proton/oxlint-config/restrictedImports';
-
 /**
  * @typedef {import('@proton/oxlint-config/restrictedImports').RestrictedPath} RestrictedPath
  * @typedef {import('@proton/oxlint-config/restrictedImports').RestrictedPattern} RestrictedPattern
