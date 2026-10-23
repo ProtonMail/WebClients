@@ -15,7 +15,6 @@ const PostCssLogicalWebpackPlugin = require('./postcss-logical-webpack-plugin').
 const WriteWebpackPlugin = require('./write-webpack-plugin').default;
 const HtmlEditWebpackPlugin = require('./html-edit-webpack-plugin').default;
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const SriWebpackPlugin = require('./sri-webpack-plugin').default;
 const { WebpackInvalidation: WebpackInvalidationPlugin } = require('./benchmark-apps-build/WebpackInvalidation');
 
 const defaultFaviconConfig = require('./favicon.config');
@@ -216,8 +215,6 @@ module.exports = ({
                   }),
               ]
             : []),
-
-        new SriWebpackPlugin(),
 
         new HtmlEditWebpackPlugin((tag) => {
             // Remove the favicon.ico tag that the FaviconsWebpackPlugin generates because:

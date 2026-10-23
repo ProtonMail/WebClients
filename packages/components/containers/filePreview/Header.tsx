@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
+import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc';
+import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcCross } from '@proton/icons/icons/IcCross';
@@ -15,7 +18,7 @@ import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
-import { getOpenInDocsMimeIconName, getOpenInDocsString } from '@proton/shared/lib/drive/translations';
+import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import { isDevOrBlack } from '@proton/shared/lib/env';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
@@ -23,9 +26,7 @@ import { mimeTypeToOpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import FileIcon from '../../components/fileIcon/FileIcon';
 import FileNameDisplay from '../../components/fileNameDisplay/FileNameDisplay';
-import MimeIcon from '../../components/icon/MimeIcon';
 import TimeIntl from '../../components/time/TimeIntl';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 
@@ -110,12 +111,13 @@ const Header = ({
     const isODSImportEnabled = useFlag('SheetsODSImportEnabled');
     const isODTEnabled = useFlag('DocsODTEnabled') || isDevOrBlack();
     const openInDocsType = mimeTypeToOpenInDocsType(mimeType, isODSImportEnabled, isODTEnabled);
+    const MimeTypeIcon = mimeType ? getFileIcon(mimeType) : undefined;
 
     return (
         <div className={clsx('file-preview-header flex justify-space-between items-center relative', headerSpacing)}>
             <div className="flex-1">
                 <div className="file-preview-filename flex items-center flex-nowrap" data-testid="preview:file-name">
-                    {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
+                    {MimeTypeIcon && <MimeTypeIcon className="shrink-0 mr-2" />}
                     <FileNameDisplay text={name} className="user-select" testId="file-preview:file-name" />
                     {signatureStatus}
                 </div>
@@ -148,7 +150,11 @@ const Header = ({
                         color="weak"
                         data-testid="file-preview:actions:open-document"
                     >
-                        <MimeIcon name={getOpenInDocsMimeIconName(openInDocsType)} className="mr-2" />
+                        {openInDocsType.type === 'spreadsheet' ? (
+                            <MimeProtonSheet className="mr-2" />
+                        ) : (
+                            <MimeProtonDoc className="mr-2" />
+                        )}
                         {getOpenInDocsString(openInDocsType, mimeType)}
                     </Button>
                 )}

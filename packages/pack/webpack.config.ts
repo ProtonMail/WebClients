@@ -100,7 +100,7 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
                     ? jsBabelLoader.getJsLoaders(loaderOptions)
                     : jsSwcLoader.getJsLoaders(loaderOptions)),
                 ...getCssLoaders(loaderOptions),
-                ...getAssetsLoaders(webpackOptions),
+                ...getAssetsLoaders(),
             ],
             strictExportPresence: true, // Make missing exports an error instead of warning
         },

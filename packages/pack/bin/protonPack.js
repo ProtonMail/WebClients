@@ -30,7 +30,6 @@ const addGlobalOptions = (program) => {
         .option('--api <api>', '', (api) => getApi(api), '')
         .option('--sso <sso>', '')
         .option('--no-api-proxy', '')
-        .option('--inline-icons', false)
         .option('--handleSupportAndErrors', '', false)
         .option('--noLogicalScss', '', false)
         .option('--benchmarkBuild', '', false)
