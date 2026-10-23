@@ -370,7 +370,7 @@ function UI({ hidden, isVersionHistoryView, isPublicMode }: UIProps) {
         )}
 
         <div className="flex min-h-0 min-w-0 grow">
-          <div className="isolate z-10 flex h-full min-h-0 grow flex-col">
+          <div className="isolate z-10 flex h-full min-h-0 min-w-0 grow flex-col">
             {!isVersionHistoryView && <Toolbar className="m-2 max-sm:m-0" />}
             <Grid />
             <BottomBar />
