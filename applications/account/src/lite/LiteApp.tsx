@@ -14,7 +14,6 @@ import { RightToLeftProvider } from '@proton/components/containers/rightToLeft/P
 import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import { PreventLeaveProvider } from '@proton/components/hooks/usePreventLeave';
 import useInstance from '@proton/hooks/useInstance';
-import Icons from '@proton/icons/Icons';
 import metrics from '@proton/metrics/metricsInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
@@ -173,7 +172,6 @@ const App = () => {
     return (
         <ProtonStoreProvider store={store}>
             <ConfigProvider config={config}>
-                <Icons />
                 <RightToLeftProvider>
                     <Fragment key={UID}>
                         <ThemeProvider appName={config.APP_NAME}>

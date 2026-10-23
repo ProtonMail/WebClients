@@ -11,7 +11,6 @@ import getAssetsLoaders from '@proton/pack/webpack/assets.loader';
 import getCssLoaders from '@proton/pack/webpack/css.loader';
 import { getJsLoader } from '@proton/pack/webpack/js.loader.swc.js';
 import getOptimizations from '@proton/pack/webpack/optimization';
-import ProtonIconsTreeShakePlugin from '@proton/pass/utils/webpack/icons/plugin';
 import { coreJsUint8ArrayFromBase64Rule, sideEffectsRule, zipJSRule } from '@proton/pass/utils/webpack/rules';
 
 import { CRYPTO_DYNAMIC_IMPORTS_CHUNKS, IGNORED_DYNAMIC_IMPORTS_CHUNKS } from './src/app/worker/chunks';
@@ -231,7 +230,7 @@ const config: Configuration = {
             layeredJSLoaders,
             ...(BUILD_TARGET === 'safari' ? [coreJsUint8ArrayFromBase64Rule] : []),
             ...getCssLoaders({ browserslist: undefined, noLogicalScss: true }),
-            ...getAssetsLoaders({ inlineIcons: true }),
+            ...getAssetsLoaders(),
         ],
     },
     optimization: {
@@ -427,14 +426,6 @@ const config: Configuration = {
               ]
             : []),
         ...(WEBPACK_BUNDLE_ANALYZER ? [new BundleAnalyzerPlugin({ generateStatsFile: true })] : []),
-        ...(webpackOptions.isProduction
-            ? [
-                  new ProtonIconsTreeShakePlugin({
-                      entries: ['dropdown', 'notification', 'onboarding', 'popup', 'settings', 'internal'],
-                      excludeMimeIcons: true,
-                  }),
-              ]
-            : []),
     ],
     experiments: {
         asyncWebAssembly: true,
