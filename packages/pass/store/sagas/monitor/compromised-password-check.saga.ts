@@ -6,9 +6,7 @@ import { checkPasswordCompromised } from '../../../lib/monitor/compromised-passw
 import { hasPasswordChanged } from '../../../lib/monitor/monitor.utils';
 import type { CompromisedPasswordEntry } from '../../../lib/monitor/types';
 import { isOnline } from '../../../lib/network/connectivity.utils';
-import { isPaidPlan } from '../../../lib/user/user.predicates';
 import { PassFeature } from '../../../types/api/features';
-import type { UserPassPlan } from '../../../types/api/plan';
 import type { ItemRevision } from '../../../types/data/items';
 import { logger } from '../../../utils/logger';
 import { deobfuscate } from '../../../utils/obfuscate/xor';
@@ -16,16 +14,15 @@ import { importItemsProgress } from '../../actions/creators/import';
 import { itemCreate, itemEdit } from '../../actions/creators/item';
 import { compromisedPasswordUpdate } from '../../actions/creators/monitor';
 import type { ItemEditIntentAction } from '../../middleware/item-edit.middleware';
-import { selectCompromisedPasswordsCache } from '../../selectors/monitor';
-import { selectFeatureFlag, selectPassPlan } from '../../selectors/user';
+import { selectCanCheckCompromisedPasswords, selectCompromisedPasswordsCache } from '../../selectors/monitor';
+import { selectFeatureFlag } from '../../selectors/user';
 import type { RootSagaOptions } from '../../types';
 
 function* isEnabled(): Generator<any, boolean, any> {
     const enabled: boolean = yield select(selectFeatureFlag(PassFeature.PassCompromisedPasswords));
     if (!enabled) return false;
 
-    const plan: UserPassPlan = yield select(selectPassPlan);
-    return isPaidPlan(plan);
+    return yield select(selectCanCheckCompromisedPasswords);
 }
 
 function* checkItem(item: ItemRevision): Generator<any, void, any> {

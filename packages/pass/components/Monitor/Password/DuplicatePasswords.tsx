@@ -1,4 +1,5 @@
 import { type FC, useCallback, useMemo, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import type { List } from 'react-virtualized';
 
 import { c, msgid } from 'ttag';
@@ -10,6 +11,7 @@ import { useTelemetryEvent } from '../../../hooks/useTelemetryEvent';
 import { itemEq } from '../../../lib/items/item.predicates';
 import { getItemKey } from '../../../lib/items/item.utils';
 import { selectSelectedItemGroups } from '../../../store/selectors/items';
+import { selectCanCheckDuplicatePasswords } from '../../../store/selectors/monitor';
 import type { ItemRevision } from '../../../types/data/items';
 import { TelemetryEventName } from '../../../types/data/telemetry';
 import { useContextMenu } from '../../ContextMenu/ContextMenuProvider';
@@ -44,9 +46,10 @@ export const DuplicatePasswords: FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const selectItem = useSelectItemAction();
 
+    const allowed = useSelector(selectCanCheckDuplicatePasswords);
     const { duplicates } = useMonitor();
 
-    const groups = useMemoSelector(selectSelectedItemGroups, [duplicates.data, 'titleASC']);
+    const groups = useMemoSelector(selectSelectedItemGroups, [allowed ? duplicates.data : [], 'titleASC']);
     const { interpolation, interpolationIndexes } = useMemo(() => interpolateDuplicates(groups), [groups]);
 
     const selectedItem = useSelectedItem();
@@ -60,6 +63,14 @@ export const DuplicatePasswords: FC = () => {
         onTelemetry(TelemetryEventName.PassMonitorItemDetailFromReusedPassword, {}, {});
         selectItem(item, { scope: 'monitor/duplicates' });
     }, []);
+
+    if (!allowed) {
+        return (
+            <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
+                <strong>{c('Title').t`Upgrade to check for reused passwords`}</strong>
+            </div>
+        );
+    }
 
     return interpolation.length > 0 ? (
         <>
