@@ -46,4 +46,9 @@ export const useLumoAgentDrawer = (): LumoAgentDrawerValue => {
     return value;
 };
 
+/** False outside a product Lumo provider, or while that provider has not published its conversation yet. */
+export const useHasLumoAgentDrawer = (): boolean => {
+    return useContext(LumoAgentDrawerContext) !== null;
+};
+
 export default LumoAgentDrawerContext;
