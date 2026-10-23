@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { cleanup, render, screen, waitFor, within } from '@testing-library/react'
+import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { HomepageContent } from './HomepageContent'
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { DocumentActionsContext } from '../../__utils/document-actions'
@@ -46,6 +46,12 @@ let mockBulkEnabled = false
 jest.mock('~/utils/flags', () => ({
   ...jest.requireActual('~/utils/flags'),
   useBulkTrashEnabled: () => mockBulkEnabled,
+}))
+
+let mockIsNarrow = false
+jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
+  __esModule: true,
+  default: () => ({ viewportWidth: { '<=small': mockIsNarrow } }),
 }))
 
 const mockBulkTrash = jest.fn()
@@ -144,6 +150,7 @@ describe('HomepageContent', () => {
 
     afterEach(() => {
       mockBulkEnabled = false
+      mockIsNarrow = false
     })
 
     const expectNoSelectionUI = () => {
@@ -152,6 +159,8 @@ describe('HomepageContent', () => {
     }
 
     const selectAll = () => userEvent.click(screen.getByTestId('bulk-select-all'))
+    // The row activator's label lists the columns, e.g. "Not selected, Document1, Document, ...".
+    const findRow = (name: string) => screen.findByRole('button', { name: new RegExp(`(^|, )${name}, `) })
 
     test('does not render selection UI when the flag is off', async () => {
       mockBulkEnabled = false
@@ -247,6 +256,130 @@ describe('HomepageContent', () => {
       await userEvent.click(await screen.findByRole('checkbox', { name: 'Select Document1' }))
       await userEvent.click(screen.getByRole('table'))
       expect(screen.queryByTestId('bulk-selected-count')).toBeNull()
+    })
+
+    test('single click opens the document when the flag is off', async () => {
+      mockBulkEnabled = false
+      const { mockOpen } = renderWithProviders(<HomepageContent />)
+      await userEvent.click((await screen.findAllByText('Document1'))[0])
+      expect(mockOpen).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]), 'normal')
+    })
+
+    test('single click selects the row, double click opens the document', async () => {
+      const { mockOpen } = renderWithProviders(<HomepageContent />)
+      await userEvent.click(await findRow('Document1'))
+      expect(mockOpen).not.toHaveBeenCalled()
+      expect(screen.getByRole('checkbox', { name: 'Select Document1' })).toBeChecked()
+      expect(await findRow('Document1')).toHaveAttribute('aria-pressed', 'true')
+
+      await userEvent.dblClick(await findRow('Document1'))
+      expect(mockOpen).toHaveBeenCalledTimes(1)
+      expect(mockOpen).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]), 'normal')
+    })
+
+    test('double tap opens the document', async () => {
+      const { mockOpen } = renderWithProviders(<HomepageContent />)
+      const row = await findRow('Document1')
+      const touch = { changedTouches: [{ clientX: 0, clientY: 0 }] }
+      fireEvent.touchStart(row, touch)
+      fireEvent.touchEnd(row, touch)
+      expect(mockOpen).not.toHaveBeenCalled()
+
+      fireEvent.touchStart(row, touch)
+      fireEvent.touchEnd(row, touch)
+      expect(mockOpen).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]), 'normal')
+    })
+
+    test('double click opens the document in the trash view', async () => {
+      const { mockOpen } = renderWithProviders(<HomepageContent />, 'trash')
+      await userEvent.click(await findRow('Document1'))
+      expect(mockOpen).not.toHaveBeenCalled()
+
+      await userEvent.dblClick(await findRow('Document1'))
+      expect(mockOpen).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]), 'trash')
+    })
+
+    test('click replaces the selection, ctrl click toggles a row', async () => {
+      renderWithProviders(<HomepageContent />)
+      fireEvent.click(await findRow('Document1'))
+      fireEvent.click(await findRow('Test Document'))
+      expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('1 selected')
+
+      fireEvent.click(await findRow('Document1'), { ctrlKey: true })
+      expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+
+      fireEvent.click(await findRow('Document1'), { metaKey: true })
+      expect(screen.getByRole('checkbox', { name: 'Select Document1' })).not.toBeChecked()
+    })
+
+    test('shift click selects a range', async () => {
+      renderWithProviders(<HomepageContent />)
+      fireEvent.click(await findRow('Document1'))
+      fireEvent.click(await findRow('Test Document'), { shiftKey: true })
+      expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+    })
+
+    test('clicking a row that cannot be trashed does not select or open it', async () => {
+      const { mockOpen } = renderWithProviders(<HomepageContent />)
+      await userEvent.click(await findRow('Test Doc'))
+      expect(screen.queryByTestId('bulk-selected-count')).toBeNull()
+      expect(mockOpen).not.toHaveBeenCalled()
+    })
+
+    test('row label lists the selection state and the columns', async () => {
+      renderWithProviders(<HomepageContent />)
+      expect(await findRow('Document1')).toHaveAccessibleName(
+        expect.stringMatching(/^Not selected, Document1, Document, Viewed .+, Created by .+, Location Document1$/),
+      )
+      expect(await findRow('Test Doc')).toHaveAccessibleName(expect.stringMatching(/^Test Doc, Document, /))
+    })
+
+    test('Enter opens the focused row, Space selects it', async () => {
+      const { mockOpen } = renderWithProviders(<HomepageContent />)
+      ;(await findRow('Document1')).focus()
+
+      await userEvent.keyboard(' ')
+      expect(screen.getByRole('checkbox', { name: 'Select Document1' })).toBeChecked()
+      expect(mockOpen).not.toHaveBeenCalled()
+
+      await userEvent.keyboard('{Enter}')
+      expect(mockOpen).toHaveBeenCalledTimes(1)
+      expect(mockOpen).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]), 'normal')
+    })
+
+    test('arrow keys, Home and End move focus between rows', async () => {
+      renderWithProviders(<HomepageContent />)
+      ;(await findRow('Document1')).focus()
+
+      await userEvent.keyboard('{ArrowDown}')
+      expect(await findRow('Test Document')).toHaveFocus()
+
+      await userEvent.keyboard('{End}')
+      expect(await findRow('Test Doc')).toHaveFocus()
+
+      await userEvent.keyboard('{ArrowUp}')
+      expect(await findRow('Test Document')).toHaveFocus()
+
+      await userEvent.keyboard('{Home}')
+      expect(await findRow('Document1')).toHaveFocus()
+    })
+
+    test('on mobile, the selection controls are in the head', async () => {
+      mockIsNarrow = true
+      renderWithProviders(<HomepageContent />)
+      const table = await screen.findByRole('table')
+      const head = within(table).getAllByRole('rowgroup')[0]
+      await userEvent.click(await findRow('Document1'))
+
+      expect(within(head).getByTestId('bulk-select-all')).toBeInTheDocument()
+      expect(within(head).getByTestId('bulk-selected-count')).toHaveTextContent('1 selected')
+      expect(within(head).getByTestId('bulk-trash-button')).toBeInTheDocument()
+    })
+
+    test('double clicking a row button does not open the document', async () => {
+      const { mockOpen } = renderWithProviders(<HomepageContent />)
+      await userEvent.dblClick((await screen.findAllByRole('button', { name: /Actions/ }))[0])
+      expect(mockOpen).not.toHaveBeenCalled()
     })
   })
 
@@ -360,7 +493,10 @@ describe('HomepageContent', () => {
     createdBy: string,
     location?: RecentDocumentsItemLocation,
   ) {
-    const columns = within(row).getAllByRole('cell')
+    // Skips the row activator, rendered with the bulk trash flag on.
+    const columns = within(row)
+      .getAllByRole('cell')
+      .filter((cell) => !within(cell).queryByTestId('row-activator'))
     expect(columns).toHaveLength(4)
     expect(columns[0]).toHaveTextContent(documentName)
     expect(columns[2]).toHaveTextContent(createdBy)
