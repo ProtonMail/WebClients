@@ -105,6 +105,8 @@ describe('getCheckoutCondensedAddons', () => {
 
         it.each([
             ['Proton Unlimited (already subscribed)', PLANS.BUNDLE],
+            ['Lumo Plus', PLANS.LUMO],
+            ['Meet Plus', PLANS.MEET],
             ['Duo', PLANS.DUO],
             ['Family', PLANS.FAMILY],
             ['Visionary', PLANS.VISIONARY],
