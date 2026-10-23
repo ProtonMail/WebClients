@@ -57,6 +57,7 @@ import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTran
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { AI_ASSISTANT_ACCESS, type UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -65,6 +66,7 @@ import { CategoriesQuickSettings } from '../categoryView/CategoriesQuickSettings
 import { MailDebugButton } from '../debug/MailDebugButton';
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
 import MailDefaultHandlerModal from '../header/MailDefaultHandlerModal';
+import LumoInMailToggle from './LumoInMailToggle';
 
 interface QuickSettingsSelectOption {
     value: any;
@@ -99,6 +101,7 @@ const MailQuickSettings = () => {
     const [loadingDownloadLogs, withLoadingDownloadLogs] = useLoading();
     const collectLogs = useFlag('CollectLogs');
     const scribeToLumo = useFlag('ScribeToLumo');
+    const isLumoInMailFlagOn = useFlag(MailFeatureFlag.LumoInMail);
     const [clearBrowserDataProps, setClearBrowserDataModalOpen] = useModalState();
     const [mailDefaultHandlerProps, setDefaultHandlerModalOpen] = useModalState();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
@@ -371,6 +374,16 @@ const MailQuickSettings = () => {
                     }
                 />
             </DrawerAppSection>
+
+            {isLumoInMailFlagOn && (
+                <DrawerAppSection>
+                    <QuickSettingsSectionRow
+                        label={c('Label').t`${LUMO_SHORT_APP_NAME} assistant`}
+                        labelProps={{ htmlFor: 'toggle-lumo-in-mail' }}
+                        action={<LumoInMailToggle id="toggle-lumo-in-mail" />}
+                    />
+                </DrawerAppSection>
+            )}
 
             {assistantFeatureEnabled.enabled && (
                 <DrawerAppSection>

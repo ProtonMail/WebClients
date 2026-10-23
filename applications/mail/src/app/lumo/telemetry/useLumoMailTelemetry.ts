@@ -46,6 +46,7 @@ interface LumoMailTelemetry extends LumoMailConfigTelemetry {
     assistantOpened: () => void;
     suggestionPicked: (cardId: string) => void;
     debugReportOpened: () => void;
+    assistantDisabled: () => void;
 }
 
 /**
@@ -110,5 +111,9 @@ export const useLumoMailTelemetry = (): LumoMailTelemetry => {
         toolFailed: (toolName: ToolName, toolKind: ToolKind) => reportTool(toolName, toolKind, EndReason.FAILED),
 
         debugReportOpened: () => report(TelemetryMailLumoEvents.debug_report_opened),
+
+        assistantDisabled: () => {
+            return report(TelemetryMailLumoEvents.assistant_disabled);
+        },
     };
 };
