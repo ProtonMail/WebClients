@@ -13,7 +13,7 @@ import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
 import SettingsParagraph from '../../../account/SettingsParagraph';
 import SettingsSection from '../../../account/SettingsSection';
-import credits from '../../../referral/components/TrialInfo/credits.svg';
+import credits from '../../../referral/components/ReferralTrialInfo/credits.svg';
 import useCancellationFlow from '../cancellationFlow/useCancellationFlow';
 import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
 import { useFeedbackFirstCancellationFlow } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstCancellationFlow';
