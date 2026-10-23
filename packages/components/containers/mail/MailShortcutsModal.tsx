@@ -9,12 +9,11 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKeyboardShortcutsWithAppName } from '@proton/shared/lib/shortcuts/i18n';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
-import { MailFeatureFlag } from '@proton/unleash/Flags';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import Field from '../../components/container/Field';
 import Row from '../../components/container/Row';
+import useLumoInMail from '../../components/drawer/views/lumoAgent/useLumoInMail';
 import Label from '../../components/label/Label';
 import type { ModalProps } from '../../components/modalTwo/Modal';
 import ModalTwo from '../../components/modalTwo/Modal';
@@ -30,7 +29,7 @@ import './MailShortcutsModal.scss';
 const MailShortCutsModal = (props: ModalProps) => {
     const title = getKeyboardShortcutsWithAppName(MAIL_APP_NAME);
     const [mailSettings] = useMailSettings();
-    const isLumoInMailEnabled = useFlag(MailFeatureFlag.LumoInMail);
+    const isLumoInMailEnabled = useLumoInMail();
 
     const { activeCategoriesTabs } = useCategoriesData();
     const categoriesShortcuts = activeCategoriesTabs.map((tab) => {
