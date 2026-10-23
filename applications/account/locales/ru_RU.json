@@ -2459,6 +2459,106 @@
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Чёрная пятница"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "15 GB storage": [
+        "Хранилище на 15 ГБ"
+      ],
+      "2 individual accounts": [
+        "2 отдельных аккаунта"
+      ],
+      "2 TB of secure storage": [
+        "Защищенное хранилище на 2 ТБ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Хранилище на 200 ГБ: в 40 раз больше текущего тарифа"
+      ],
+      "3 TB of secure storage": [
+        "Защищенное хранилище на 3 ТБ"
+      ],
+      "500 GB of secure storage": [
+        "Защищенное хранилище на 500 ГБ"
+      ],
+      "6 individual accounts": [
+        "6 отдельных аккаунтов"
+      ],
+      "Built-in 2FA authenticator": [
+        "Встроенная функция двухфакторной аутентификации"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются исходя из стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платёжного цикла."
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Recover previous file versions": [
+        "Восстановление предыдущих версий файлов"
+      ],
+      "Stronger protection against cyber threats": [
+        "Более надёжная защита от киберугроз"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Собственный домен для электронной почты"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Крупнейшая распродажа года"
+      ],
+      "Black Friday": [
+        "Чёрная пятница"
+      ],
+      "for 12 months": [
+        "на 12 месяцев"
+      ],
+      "Last chance to save big": [
+        "Последний шанс сэкономить по-крупному"
+      ],
+      "Protect your entire tribe": [
+        "Защитите всех, кто вам дорог"
+      ],
+      "Protection for two in a single plan": [
+        "Защита для двоих в одном тарифе"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "Обновляется автоматически в ${ subscriptionManagerName }"
@@ -6355,12 +6455,6 @@
       ],
       "They may ask to access your account in case of an emergency.": [
         "Они могут запросить доступ к вашему аккаунту в экстренной ситуации."
-      ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Они автоматически получат доступ через **${ days } день**, в **${ formattedAccessibleAt }**, вы можете отклонить их запрос или сразу предоставить им доступ в любое время.",
-        "Доступ будет автоматически предоставлен через **${ days } дня**, **${ formattedAccessibleAt }**. Вы можете отклонить этот запрос или сразу предоставить им доступ в любое время.",
-        "Доступ будет автоматически предоставлен через **${ days } дней**, **${ formattedAccessibleAt }**. Вы можете отклонить этот запрос или сразу предоставить им доступ в любое время.",
-        "Доступ будет автоматически предоставлен через **${ days } дня**, **${ formattedAccessibleAt }**. Вы можете отклонить этот запрос или сразу предоставить им доступ в любое время."
       ],
       "This will take effect immediately.": [
         "Это вступит в силу немедленно."
@@ -15323,9 +15417,6 @@
       ],
       "Details": [
         "Информация"
-      ],
-      "Downloads": [
-        "Скачивания"
       ],
       "Encryption and keys": [
         "Шифрование и ключи"

@@ -2221,6 +2221,106 @@
         "Prostor za shranjevanje si delijo vse aplikacije ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Črni petek"
+      ],
+      "Get the deal": [
+        "Izkoristite ponudbo"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mesec"
+      ],
+      "15 GB storage": [
+        "15 GB shrambe"
+      ],
+      "2 individual accounts": [
+        "2 individualna računa"
+      ],
+      "2 TB of secure storage": [
+        "2 TB varne shrambe"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB shrambe: 40x vaš trenutni paket"
+      ],
+      "3 TB of secure storage": [
+        "3 TB varne shrambe"
+      ],
+      "500 GB of secure storage": [
+        "500 GB varne shrambe"
+      ],
+      "6 individual accounts": [
+        "6 individualnih računov"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vgrajen overitelj 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti temeljijo na standardnih mesečnih cenah. Vaša naročnina se bo ob koncu obračunskega obdobja podaljšala po standardni letni ceni."
+      ],
+      "Online document editor": [
+        "Spletni urejevalnik dokumentov"
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
+      ],
+      "Stronger protection against cyber threats": [
+        "Močnejša zaščita pred kibernetskimi grožnjami"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomejeno število map, oznak in filtrov"
+      ],
+      "Use your own email domain": [
+        "Uporabite svojo e-poštno domeno"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premijski ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } in ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Največja razprodaja leta"
+      ],
+      "Black Friday": [
+        "Črni petek"
+      ],
+      "for 12 months": [
+        "za 12 mesecev"
+      ],
+      "Last chance to save big": [
+        "Zadnja priložnost za velik prihranek"
+      ],
+      "Protect your entire tribe": [
+        "Zaščitite vaše celotno pleme"
+      ],
+      "Protection for two in a single plan": [
+        "Zaščita za dve osebi v enem paketu"
+      ]
+    },
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "Se podaljša samodejno na ${ subscriptionManagerName }"
@@ -5582,12 +5682,6 @@
       "Only admins can convert external invitations": [
         "Zunanja povabila lahko pretvorijo samo skrbniki"
       ],
-      "Organization does not have enough seats available": [
-        "Organizacija nima na voljo dovolj sedežev"
-      ],
-      "Organization does not have enough storage available": [
-        "Organizacija nima na voljo dovolj shrambe"
-      ],
       "Organization key is not decrypted": [
         "Ključ organizacije ni dešifriran."
       ],
@@ -6757,17 +6851,6 @@
         "Terabajtov"
       ]
     },
-    "Filter": {
-      "All": [
-        "Vse"
-      ],
-      "Errors": [
-        "Napake"
-      ],
-      "In progress": [
-        "V teku"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Arhiv"
@@ -7603,9 +7686,6 @@
       ],
       "Failed": [
         "Neuspešno"
-      ],
-      "Has errors": [
-        "Z napakami"
       ],
       "Imported": [
         "Uvoženo"
@@ -8596,9 +8676,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtri delujejo na vseh e-poštnih sporočilih, vključno z dohodnimi in poslanimi sporočili. Vsak filter mora vsebovati ime, pogoj in dejanje."
-      ],
-      "Find out what can be migrated.": [
-        "Ugotovite, kaj je mogoče preseliti."
       ],
       "for ${ price }": [
         "za ${ price }"
@@ -9719,12 +9796,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Povezava za odjavo je potekla. Odprite novejše sporočilo s tega seznama poštnih sporočil."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Tega uporabnika ni mogoče prenesti, ker njegov e-poštni naslov ni na voljo v storitvi ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tega uporabnika ni mogoče preseliti zaradi nezdružljivosti platform."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ta uporabnik trenutno skrbi za plačila za vašo organizacijo. Z odstranitvijo tega člana boste vi postali odgovorni za plačila za vašo organizacijo."
       ],
@@ -9799,12 +9870,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Če želite ostati na tekočem z novicami o razvoju izdelkov ${ BRAND_NAME }, se lahko naročite na naše različne e-poštne novice in občasno ${ blogLink }."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Če želite prenesti tega uporabnika, dodajte in potrdite e-poštno domeno na povezavi ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Če želite preseliti tega uporabnika, omogočite njegov račun v ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Da bi preprečili zlorabe ali goljufije, prosimo za donacijo v višini najmanj ${ minimumDonation }. To podpira delo ${ protonFoundationLink } za zaščito digitalne zasebnosti po vsem svetu in pomaga zaščititi naslednjo generacijo."
@@ -10114,9 +10179,6 @@
       ],
       "Yearly": [
         "Letno"
-      ],
-      "You": [
-        "Vi"
       ],
       "You already have a free account": [
         "Brezplačen račun že imate"
@@ -18401,17 +18463,8 @@
       ]
     },
     "Table header": {
-      "Estimated size": [
-        "Ocenjena velikost"
-      ],
-      "Migration status": [
-        "Stanje selitve"
-      ],
       "Status": [
         "Stanje"
-      ],
-      "User": [
-        "Uporabnik"
       ]
     },
     "TableHeader": {
@@ -19966,9 +20019,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Dobrodošli v ${ BRAND_NAME } for Business"
-      ],
-      "What are you migrating?": [
-        "Kaj selite?"
       ],
       "What is an alias?": [
         "Kaj je vzdevek?"

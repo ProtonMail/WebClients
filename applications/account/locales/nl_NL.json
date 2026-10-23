@@ -1125,9 +1125,6 @@
       "Maybe later": [
         "Misschien later"
       ],
-      "Migrate": [
-        "Migreer"
-      ],
       "More": [
         "Meer"
       ],
@@ -2522,14 +2519,92 @@
     "bfcampaign2026: Action": {
       "Black Friday": [
         "Black Friday"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/maand"
+      ],
+      "15 GB storage": [
+        "15 GB opslag"
+      ],
+      "2 individual accounts": [
+        "2 individuele accounts"
+      ],
+      "2 TB of secure storage": [
+        "2 TB veilige opslag"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB opslag: 40x uw huidige abonnement"
+      ],
+      "3 TB of secure storage": [
+        "3 TB veilige opslag"
+      ],
+      "500 GB of secure storage": [
+        "500 GB veilige opslag"
+      ],
+      "6 individual accounts": [
+        "6 individuele accounts"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ingebouwde 2FA-verificatie"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "De kortingen zijn gebaseerd op de standaard maandprijs. Wanneer de factureringsperiode afloopt, wordt uw abonnement verlengd tegen het standaard jaartarief ."
+      ],
+      "Online document editor": [
+        "Online document editor"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere bescherming tegen cyberdreigingen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde aantallen mappen, labels en filters"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Grootste uitverkoop van het jaar"
+        "Het grootste koopfeest van het jaar"
       ],
       "Black Friday": [
-        "Black friday"
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "voor 12 maanden"
       ],
       "Last chance to save big": [
         "Laatste kans om flink te besparen"
@@ -6429,10 +6504,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Zij kunnen vragen om toegang tot mijn account te krijgen in geval van nood."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Zij ontvangen automatisch toegang binnen **${ days } dag**, op **${ formattedAccessibleAt }**. U kunt hun verzoek afwijzen of hen op elk moment onmiddellijk toegang geven.",
-        "Zij ontvangen automatisch toegang binnen **${ days } dagen**, op **${ formattedAccessibleAt }**. U kunt hun verzoek afwijzen of hen op elk moment onmiddellijk toegang geven."
-      ],
       "This will take effect immediately.": [
         "Dit gaat onmiddellijk in."
       ],
@@ -6588,9 +6659,6 @@
       ],
       "Address is already added to your account": [
         "Het adres is al aan uw account toegevoegd"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adres wordt al gebruikt door een gebruiker buiten uw organisatie. Neem contact op met de klantenservice om dit op te lossen"
       ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
@@ -6960,9 +7028,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Maximaal ${ displayMaxValue } toegestaan"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Lidadres niet gevonden. Neem contact op met de klantenservice om dit op te lossen"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
         "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
@@ -6972,12 +7037,6 @@
       ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
-      ],
-      "Missing organization private key": [
-        "Ontbrekende privésleutel van de organisatie"
-      ],
-      "Missing organization public key": [
-        "Ontbrekende openbare sleutel van de organisatie"
       ],
       "Missing signature": [
         "Handtekening ontbreekt"
@@ -7057,12 +7116,6 @@
       ],
       "Operation failed, try again later": [
         "Bewerking mislukt. Probeer het later opnieuw"
-      ],
-      "Organization does not have enough seats available": [
-        "De organisatie heeft niet voldoende zitplaatsen beschikbaar"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisatie heeft niet voldoende opslagruimte beschikbaar"
       ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
@@ -8468,29 +8521,6 @@
         "Terabytes"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Geactiveerd"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Errors": [
-        "Fouten"
-      ],
-      "In progress": [
-        "In uitvoering"
-      ],
-      "Migrated": [
-        "Gemigreerd"
-      ],
-      "Not activated": [
-        "Niet geactiveerd"
-      ],
-      "Pending": [
-        "In behandeling"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Archief"
@@ -9396,9 +9426,6 @@
       "Failed": [
         "Mislukt"
       ],
-      "Has errors": [
-        "Bevat fouten"
-      ],
       "Imported": [
         "Geïmporteerd"
       ],
@@ -9413,9 +9440,6 @@
       ],
       "Paused": [
         "Gepauzeerd"
-      ],
-      "Pending": [
-        "In behandeling"
       ],
       "Queued": [
         "In wachtrij"
@@ -10841,9 +10865,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
       ],
-      "Find out what can be migrated.": [
-        "Ontdek wat er gemigreerd kan worden."
-      ],
       "for ${ price }": [
         "voor ${ price }"
       ],
@@ -11468,9 +11489,6 @@
       "No single sign-on": [
         "Geen Single Sign-On"
       ],
-      "No users to display": [
-        "Er zijn geen gebruikers om weer te geven."
-      ],
       "Not a valid URL": [
         "Ongeldige link"
       ],
@@ -11885,9 +11903,6 @@
       ],
       "Select a group to view its members and settings.": [
         "Selecteer een groep om de leden en instellingen ervan te bekijken."
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selecteer precies wat u wilt migreren. Het is van toepassing op alle organisatiegebruikers."
       ],
       "Select one or multiple user affiliations": [
         "Selecteer één of meerdere gebruikers affiliaties"
@@ -12309,12 +12324,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Deze uitschrijvingslink is verlopen. Opnieuw een meer recente e-mail van deze mailinglijst."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Deze gebruiker kan niet worden gemigreerd omdat zijn e-mailadres niet beschikbaar is op ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Deze gebruiker kan niet worden gemigreerd vanwege incompatibiliteit met het platform."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Deze gebruiker is momenteel verantwoordelijk voor de betalingen voor uw organisatie. Door degradatie van dit lid, word u verantwoordelijk voor de betalingen voor uw organisatie."
       ],
@@ -12446,27 +12455,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Om de laatste ontwikkeling bij ${ BRAND_NAME }-producten te kunnen bijhouden, kunt u zich abonneren op onze verschillende e-mails en van tijd tot tijd ${ blogLink }."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Om deze gebruiker te migreren, voegt u het e-maildomein toe en verifieert u het onder ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Om deze gebruiker te migreren, schakelt u zijn/haar account in uw ${ provider.adminConsoleName } in."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Als u deze gebruiker wilt migreren, schakelt u het account in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Om deze gebruiker te migreren, schakelt u het adres in onder ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Om deze gebruiker te migreren, moet hij/zij de uitnodiging accepteren om lid te worden van ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Om deze gebruiker te migreren, haalt u hem uit het archief in uw ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Als u deze gebruiker wilt migreren, heft u de opschorting op in uw ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Om misbruik of fraude te voorkomen, vragen we om een minimale donatie van ${ minimumDonation }. Dit ondersteunt het werk van de ${ protonFoundationLink } bij de wereldwijde verdediging van digitale privacy en helpt de volgende generatie te beschermen."
@@ -12896,9 +12884,6 @@
       ],
       "Yearly": [
         "Jaarlijks"
-      ],
-      "You": [
-        "U"
       ],
       "You already have a free account": [
         "U heeft al een gratis account"
@@ -15837,9 +15822,6 @@
       ],
       "Details": [
         "Details"
-      ],
-      "Downloads": [
-        "Downloads"
       ],
       "Encryption and keys": [
         "Versleuteling en sleutels"
@@ -24012,23 +23994,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "Geactiveerd"
-      ],
-      "Estimated size": [
-        "Geschatte grootte"
-      ],
-      "Migration status": [
-        "Migratiestatus"
-      ],
       "Size": [
         "Grootte"
       ],
       "Status": [
         "Status"
-      ],
-      "User": [
-        "Gebruiker"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -24595,9 +24565,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "Configureer het Always-on VPN-apparaatprofiel"
-      ],
-      "Configure migration": [
-        "Migratie configureren"
       ],
       "Confirm": [
         "Bevestigen"
@@ -25713,9 +25680,6 @@
       "Select the way to send this notification": [
         "Selecteer de manier om deze melding te verzenden"
       ],
-      "Select users to migrate": [
-        "Selecteer gebruikers om te migreren"
-      ],
       "Select when you want this notification to be sent": [
         "Selecteer wanneer u wilt dat deze melding wordt verzonden"
       ],
@@ -26098,9 +26062,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
       ],
-      "What are you migrating?": [
-        "Wat migreert u?"
-      ],
       "What changes if you switch to the Free plan": [
         "Wat verandert er als u overstapt naar het gratis abonnement"
       ],
@@ -26359,9 +26320,6 @@
       "Customize import to reduce the number of labels": [
         "Import aanpassen om het aantal labels te verminderen"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Status gegevensmigratie van ${ providerName } naar ${ BRAND_NAME }"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Verwijder prullenbak- en spamberichten na 30 dagen. Door automatisch verwijderen in te schakelen, krijgen berichten die al in de prullenbak/spam staan een verwijderingsdatum op basis van de datum waarop ze daarheen zijn verplaatst."
       ],
@@ -26565,9 +26523,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Geschatte locatie van de gebruiker (gebaseerd op hun IP-adres)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Gebruikers die toegang hebben gehad tot hun ${ BRAND_NAME }-account"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Gebruikers zullen uw logo zien in plaats van het ${ BRAND_NAME }-pictogram wanneer ze inlogt zijn op onze webapps."
