@@ -26,6 +26,6 @@ export type Item = {
 
 export const ItemEntity = defineEncryptedEntity<Item>()({
     primaryKey: 'id',
-    safeProps: ['id', 'issuer', 'name', 'order'] as const,
+    safeProps: ['id', 'order'] as const,
     tag: AuthenticatorEncryptionTag.Item,
 });
