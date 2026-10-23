@@ -1,10 +1,79 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
+import type { FreeSubscription } from '@proton/payments/core/interface';
 import { GUARD_ERROR_MESSAGES, type GuardError } from '@proton/payments/core/subscription/guard';
+import { getSubscriptionsArray } from '@proton/payments/core/subscription/helpers';
+import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
+import type { GuardShownTelemetryPayload } from '@proton/payments/telemetry/shared-checkout-telemetry';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
+
+export interface GuardBannerTelemetry {
+    /** The `subscription/check` response the banner displays */
+    checkResult: SubscriptionEstimation;
+    /**
+     * User's current subscription(s): a single one (its secondary ones are included) or a list. Free
+     * subscriptions and `undefined` are not reported.
+     */
+    subscriptions: Subscription | FreeSubscription | Subscription[] | undefined;
+}
+
+/**
+ * Flattens the subscription input of the banner telemetry.
+ *
+ * @param subscriptions - A subscription or a list of them, each with optional secondary ones
+ * @returns Every paid subscription, each primary followed by its secondary ones. Empty for free users.
+ */
+const getSubscriptionsList = (subscriptions: GuardBannerTelemetry['subscriptions']): Subscription[] => {
+    const list = Array.isArray(subscriptions) ? subscriptions : [subscriptions];
+    return list.flatMap((subscription) =>
+        subscription && isPaidSubscription(subscription) ? getSubscriptionsArray(subscription) : []
+    );
+};
+
+/**
+ * Builds the `reportGuardShown` payload from the `subscription/check` response the banner displays, so the
+ * reported codes and selection always match what the user sees. Backend messages are dropped.
+ *
+ * @param telemetry - The check response the banner displays and the user's current subscription(s)
+ * @returns The payload for `reportGuardShown`
+ */
+export const getGuardBannerTelemetry = ({
+    checkResult,
+    subscriptions,
+}: GuardBannerTelemetry): GuardShownTelemetryPayload => ({
+    guardCodes: (checkResult.GuardResult ?? []).flatMap(({ Code }) => (Code === undefined ? [] : [Code])),
+    selectedPlanIDs: checkResult.requestData.Plans,
+    selectedCycle: checkResult.requestData.Cycle,
+    subscriptions: getSubscriptionsList(subscriptions),
+});
+
+/**
+ * Reports the guard banner to telemetry once per distinct set of guard codes. Does nothing without codes.
+ *
+ * @param telemetry - What to report, or `undefined` to opt out
+ * @returns Nothing. Reports from an effect keyed on the guard codes.
+ */
+const useBannerTelemetry = (telemetry: GuardBannerTelemetry | undefined) => {
+    const payload = telemetry && getGuardBannerTelemetry(telemetry);
+    const codesKey = payload?.guardCodes.join(',');
+
+    useEffect(() => {
+        if (payload?.guardCodes.length) {
+            checkoutTelemetry.reportGuardShown(payload);
+        }
+    }, [codesKey]);
+};
 
 interface Props {
     errors: GuardError[];
+    /**
+     * What the banner reports when shown, or `undefined` to opt out on purpose.
+     */
+    telemetry: GuardBannerTelemetry | undefined;
     className?: string;
 }
 
@@ -17,9 +86,13 @@ interface Props {
  *
  * @param errors Guard errors from a single `subscription/check` response (normalized
  *   `GuardResult`). Renders nothing when empty.
+ * @param telemetry Reported when the banner is shown, see {@link useBannerTelemetry}.
  * @param className Extra classes appended to the banner wrapper.
+ * @returns The banner, or `null` when there are no errors.
  */
-export const GuardBanner = ({ errors, className }: Props) => {
+export const GuardBanner = ({ errors, telemetry, className }: Props) => {
+    useBannerTelemetry(telemetry);
+
     if (!errors.length) {
         return null;
     }

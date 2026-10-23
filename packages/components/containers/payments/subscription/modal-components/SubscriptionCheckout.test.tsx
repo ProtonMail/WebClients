@@ -48,11 +48,11 @@ jest.mock('../../Checkout', () => {
     };
 });
 
-const WrappedSubscriptionCheckout = (props: Omit<SubscriptionCheckoutProps, 'taxCountry' | 'guardErrors'>) => {
+const WrappedSubscriptionCheckout = (props: Omit<SubscriptionCheckoutProps, 'taxCountry'>) => {
     const taxCountry = useTaxCountry({
         telemetryContext: 'other',
     });
-    return <SubscriptionCheckout {...props} guardErrors={[]} taxCountry={taxCountry} />;
+    return <SubscriptionCheckout {...props} taxCountry={taxCountry} />;
 };
 
 describe('SubscriptionCheckout', () => {
