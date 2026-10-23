@@ -135,6 +135,7 @@ export enum TelemetryMailOnboardingEvents {
     stepCompleted = 'step_completed',
     stepInteracted = 'step_interacted',
     flowFinished = 'flow_finished',
+    flowDismissed = 'flow_dismissed',
 }
 
 export enum TelemetryEasySwitchCreationFunnelEvents {
