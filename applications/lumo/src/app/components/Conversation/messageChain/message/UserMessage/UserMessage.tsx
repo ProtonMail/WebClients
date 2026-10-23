@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
 import { useLumoFlags } from '../../../../../hooks/useLumoFlags';
@@ -48,11 +48,12 @@ const FileMentionChip = ({ filename, attachment, onView }: FileMentionChipProps)
     const className =
         'inline-flex items-center gap-1 align-middle rounded border border-weak bg-weak px-2 py-0.5 text-sm transition-colors ' +
         (canPreview ? 'cursor-pointer hover:border-norm hover:bg-norm' : '');
+    const FileTypeIcon = getFileIcon(mimeType);
 
     return (
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <span className={className} title={filename} onClick={canPreview ? handleClick : undefined}>
-            <FileIcon mimeType={mimeType} size={3} className="shrink-0" />
+            <FileTypeIcon size={3} className="shrink-0" />
             <span className="max-w-48 overflow-hidden text-ellipsis whitespace-nowrap">{filename}</span>
         </span>
     );

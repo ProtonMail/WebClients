@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import CircularProgress from '@proton/components/components/progress/CircularProgress';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 
 import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
 import { attachmentDataCache } from '../../../services/attachmentDataCache';
@@ -76,9 +76,11 @@ const FilePreview = ({ processing, previewUrl, previewText, filename, mimeTypeIc
         );
     }
 
+    const FileTypeIcon = getFileIcon(mimeTypeIcon);
+
     return (
         <div className="file-card-preview flex-1 min-h-0 flex items-center justify-center">
-            <FileIcon mimeType={mimeTypeIcon} size={10} />
+            <FileTypeIcon size={10} className="shrink-0" />
         </div>
     );
 };
@@ -127,25 +129,29 @@ interface FileInfoProps {
     mimeTypeIcon: string;
 }
 
-const FileInfo = ({ filename, prettyType, processing, autoRetrieved, mimeTypeIcon }: FileInfoProps) => (
-    <div className="file-card-info">
-        <FileIcon mimeType={mimeTypeIcon} size={6} className="file-card-info-icon" />
-        <div className="file-card-info-text">
-            <p className="m-0 text-ellipsis font-medium file-title text-xs" title={filename}>
-                {filename}
-            </p>
-            <p className="m-0 text-xs color-weak text-ellipsis file-subtitle" title={prettyType}>
-                {processing ? c('collider_2025:Info').t`Processing...` : prettyType}
-            </p>
-            {autoRetrieved && (
-                <span className="text-xs color-primary flex items-center gap-1 mt-0.5">
-                    <LumoIcon name="WandSparkles" width={12} height={12} />
-                    {c('collider_2025:Info').t`Auto-retrieved`}
-                </span>
-            )}
+const FileInfo = ({ filename, prettyType, processing, autoRetrieved, mimeTypeIcon }: FileInfoProps) => {
+    const FileTypeIcon = getFileIcon(mimeTypeIcon);
+
+    return (
+        <div className="file-card-info">
+            <FileTypeIcon size={6} className="shrink-0 file-card-info-icon" />
+            <div className="file-card-info-text">
+                <p className="m-0 text-ellipsis font-medium file-title text-xs" title={filename}>
+                    {filename}
+                </p>
+                <p className="m-0 text-xs color-weak text-ellipsis file-subtitle" title={prettyType}>
+                    {processing ? c('collider_2025:Info').t`Processing...` : prettyType}
+                </p>
+                {autoRetrieved && (
+                    <span className="text-xs color-primary flex items-center gap-1 mt-0.5">
+                        <LumoIcon name="WandSparkles" width={12} height={12} />
+                        {c('collider_2025:Info').t`Auto-retrieved`}
+                    </span>
+                )}
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 interface ErrorDisplayProps {
     errorMessage?: string;
