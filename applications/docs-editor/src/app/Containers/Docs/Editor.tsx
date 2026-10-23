@@ -197,7 +197,7 @@ export function Editor({
     >
       {hidden && (
         <div
-          className="bg-norm absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4"
+          className="absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4 bg-[--background-norm]"
           data-testid="editor-curtain"
         ></div>
       )}

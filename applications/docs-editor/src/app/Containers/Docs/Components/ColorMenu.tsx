@@ -115,7 +115,7 @@ function Color({
       render={<button type="button" aria-label={label} />}
       role="menuitemradio"
       aria-checked={isCurrent}
-      className="border-weak relative flex h-6 w-6 items-center justify-center rounded border text-xs font-semibold outline-1 hover:outline hover:outline-[#000] focus-visible:outline focus-visible:outline-[#000]"
+      className="relative flex h-6 w-6 items-center justify-center rounded border border-[--border-weak] text-xs font-semibold outline-1 hover:outline hover:outline-[#000] focus-visible:outline focus-visible:outline-[#000]"
       style={{
         backgroundColor: color.background,
         color: color.text,

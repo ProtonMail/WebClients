@@ -166,7 +166,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
       <button
         ref={rowAddButtonRef}
         className={clsx(
-          'bg-weak absolute left-0 top-0 z-0 flex select-none items-center justify-center px-2.5 py-1 opacity-0 hover:pointer-events-auto hover:opacity-100',
+          'pointer-events-none absolute left-0 top-0 z-0 flex select-none items-center justify-center bg-[--background-weak] px-2.5 py-1 opacity-0 hover:pointer-events-auto hover:opacity-100',
           isHoveringOnLastRow && 'pointer-events-auto opacity-100',
         )}
         onClick={() => {
@@ -193,7 +193,7 @@ export function TableAddButtons({ tableNode }: { tableNode: TableNode }) {
       <button
         ref={columnAddButtonRef}
         className={clsx(
-          'bg-weak absolute left-0 top-0 z-0 flex select-none items-center justify-center p-1 opacity-0 hover:pointer-events-auto hover:opacity-100',
+          'pointer-events-none absolute left-0 top-0 z-0 flex select-none items-center justify-center bg-[--background-weak] p-1 opacity-0 hover:pointer-events-auto hover:opacity-100',
           isHoveringOnLastColumn && 'pointer-events-auto opacity-100',
         )}
         onClick={() => {

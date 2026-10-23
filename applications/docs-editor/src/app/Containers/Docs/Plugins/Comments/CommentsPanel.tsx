@@ -64,7 +64,7 @@ function CommentsPanel({
           <CommentsPanelList threads={active} data-testid="active-comments-list" />
           {resolved.length > 0 && (
             <>
-              <div className="color-weak mb-1.5 mt-4 text-sm font-medium" data-testid="resolved-comments-text">
+              <div className="mb-1.5 mt-4 text-sm font-medium text-[--text-weak]" data-testid="resolved-comments-text">
                 Resolved
               </div>
               <CommentsPanelList threads={resolved} data-testid="resolved-comments-list" />

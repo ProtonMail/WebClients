@@ -58,7 +58,7 @@ These packages are being phased out; development happens inside the two apps.
 
 ### Styling
 
-- Style with Tailwind utilities plus Proton design-system classes (`color-weak`, `bg-norm`, `border-weak`...). Reach theme CSS variables with arbitrary values (`text-[--text-hint]`).
+- Style with Tailwind utilities plus Proton design-system classes (`color-weak`, `bg-norm`, `border-weak`...), except in the editor's standalone editors (see [Logging and styling](#logging-and-styling)). Reach theme CSS variables with arbitrary values (`text-[--text-hint]`).
 - Both apps' `tailwind.config.js` replace the default colour palette, so stock Tailwind colours (`bg-red-500`) do not exist. Use design-system classes or CSS variables for colour.
 - Use SCSS only when Tailwind cannot express the style.
 
@@ -201,6 +201,7 @@ Rules that follow:
 
 - Host shell: log with the editor `Application`'s `logger`. Standalone editors: use the injected `logger` and `reportError` from their dependencies.
 - Combine classes with bare `clsx` inside the standalone editors, `@proton/utils/clsx` elsewhere.
+- The standalone editors use no Proton classes, since `src/standalone-doc` and `src/standalone-sheet` load only Tailwind. Write colours, borders and shadows as CSS-variable utilities (`bg-[--background-norm]`, `border-[--border-weak]`, `text-[--text-weak]`, `shadow-[shadow:--shadow-norm]`); Docs defines its variables in `Containers/Docs/docs.scss`. A shadow variable needs the `shadow:` hint, or Tailwind reads it as a shadow colour.
 
 ## Drive SDK
 

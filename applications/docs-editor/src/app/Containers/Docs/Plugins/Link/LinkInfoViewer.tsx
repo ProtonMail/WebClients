@@ -111,7 +111,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
 
   return createPortal(
     <div
-      className="bg-norm shadow-norm border-weak absolute left-0 top-0 rounded border px-2.5 py-1.5 print:hidden"
+      className="absolute left-0 top-0 rounded border border-[--border-weak] bg-[--background-norm] px-2.5 py-1.5 shadow-[shadow:--shadow-norm] print:hidden"
       style={{
         top: position.top,
         left: position.left,
