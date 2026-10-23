@@ -209,7 +209,7 @@ ruleTester.run('restricted-imports: barrels', rule, {
             errors: [{ messageId: 'path' }],
         },
         {
-            code: `import Icon from '@proton/components/components/icon/Icon';`,
+            code: `import { c } from '@proton/shared';`,
             filename: appFile,
             options: [{}],
             errors: [{ messageId: 'path' }],
