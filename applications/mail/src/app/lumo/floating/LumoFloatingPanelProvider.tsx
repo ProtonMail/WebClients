@@ -23,7 +23,7 @@ import {
 } from './panelSide';
 import { useLumoHotkey } from './useLumoHotkey';
 
-interface LumoFloatingPanelValue {
+export interface LumoFloatingPanelValue {
     isDetached: boolean;
     isPanelOpen: boolean;
     isCurrentSurfaceOpen: boolean;
@@ -38,6 +38,9 @@ interface LumoFloatingPanelValue {
     isCatHidden: boolean;
     hideCat: () => void;
     revealCat: () => void;
+    /** Detached only. */
+    isCatDismissed: boolean;
+    dismissCat: () => void;
 }
 
 const LumoFloatingPanelContext = createContext<LumoFloatingPanelValue | null>(null);
@@ -66,8 +69,9 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
     const [sideState, setSideState] = useState(INITIAL_PANEL_SIDE_STATE);
     const [cardWidth, setCardWidth] = useState(CARD_MIN_WIDTH);
     const [isCatHidden, setIsCatHidden] = useState(false);
+    const [isCatDismissed, setIsCatDismissed] = useState(false);
     const hasComposers = useMailSelector(selectComposersCount) > 0;
-    const { appInView, toggleDrawerApp } = useDrawer();
+    const { appInView, toggleDrawerApp, showDrawerSidebar } = useDrawer();
     const { assistantOpened } = useLumoMailTelemetry();
     const { offline } = useApiStatus();
     const isOnline = useOnline();
@@ -78,6 +82,13 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
         setSideState(hasComposers ? composersOpened : composersClosed);
     }, [hasComposers]);
 
+    // The sidebar button is the only visible way back from a dismiss, so hiding the sidebar brings the cat back
+    useEffect(() => {
+        if (!showDrawerSidebar) {
+            setIsCatDismissed(false);
+        }
+    }, [showDrawerSidebar]);
+
     const toggleDrawer = toggleDrawerApp({ app: DRAWER_NATIVE_APPS.LUMO });
     const isCurrentSurfaceOpen = isDetached ? isPanelOpen : isAppInView(DRAWER_NATIVE_APPS.LUMO, appInView);
 
@@ -85,11 +96,16 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
         setIsPanelOpen(false);
     };
 
+    const openPanelWithCat = () => {
+        setIsPanelOpen(true);
+        setIsCatHidden(false);
+        setIsCatDismissed(false);
+    };
+
     const detach = () => {
         toggleDrawer();
         setIsDetached(true);
-        setIsPanelOpen(true);
-        setIsCatHidden(false);
+        openPanelWithCat();
     };
 
     const dock = () => {
@@ -98,6 +114,7 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
         }
         setIsPanelOpen(false);
         setIsDetached(false);
+        setIsCatDismissed(false);
         toggleDrawer();
     };
 
@@ -107,8 +124,7 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
         }
         assistantOpened();
         if (isDetached) {
-            setIsPanelOpen(true);
-            setIsCatHidden(false);
+            openPanelWithCat();
             return;
         }
         toggleDrawer();
@@ -121,6 +137,11 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
 
     const revealCat = () => {
         setIsCatHidden(false);
+    };
+
+    const dismissCat = () => {
+        setIsPanelOpen(false);
+        setIsCatDismissed(true);
     };
 
     const closeLumo = isDetached ? closePanel : toggleDrawer;
@@ -148,6 +169,8 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
                 isCatHidden,
                 hideCat,
                 revealCat,
+                isCatDismissed,
+                dismissCat,
             }}
         >
             {children}

@@ -29,8 +29,12 @@ jest.mock('../telemetry/useLumoMailTelemetry', () => ({
     useLumoMailTelemetry: () => ({ assistantOpened }),
 }));
 
-const setAppInView = (appInView: DrawerApp | undefined) => {
-    jest.mocked(useDrawer).mockReturnValue({ appInView, toggleDrawerApp } as unknown as ReturnType<typeof useDrawer>);
+const setAppInView = (appInView: DrawerApp | undefined, showDrawerSidebar = true) => {
+    jest.mocked(useDrawer).mockReturnValue({
+        appInView,
+        toggleDrawerApp,
+        showDrawerSidebar,
+    } as unknown as ReturnType<typeof useDrawer>);
 };
 const setUserID = (ID: string) => {
     jest.mocked(useUser).mockReturnValue([buildUser({ ID }), false]);
@@ -296,6 +300,48 @@ describe('LumoFloatingPanelProvider', () => {
         });
 
         expect(window.localStorage.getItem(SURFACE_MODE_KEY)).toBe('true');
+    });
+
+    it('closes the panel and takes the cat off screen on dismiss', () => {
+        const { result } = renderDetached();
+
+        act(() => result.current.dismissCat());
+
+        expect(result.current.isPanelOpen).toBe(false);
+        expect(result.current.isCatDismissed).toBe(true);
+    });
+
+    it('brings the dismissed cat back with the panel open on toggle', () => {
+        const { result } = renderDetached();
+        act(() => result.current.hideCat());
+        act(() => result.current.dismissCat());
+
+        act(() => result.current.toggleLumo());
+
+        expect(result.current.isPanelOpen).toBe(true);
+        expect(result.current.isCatDismissed).toBe(false);
+        expect(result.current.isCatHidden).toBe(false);
+    });
+
+    it('brings the dismissed cat back on a fresh detach after a dock', () => {
+        const { result } = renderDetached();
+        act(() => result.current.dismissCat());
+        act(() => result.current.dock());
+
+        act(() => result.current.detach());
+
+        expect(result.current.isCatDismissed).toBe(false);
+    });
+
+    it('brings the dismissed cat back when the Drawer sidebar is hidden', () => {
+        const { result, rerender } = renderDetached();
+        act(() => result.current.dismissCat());
+
+        setAppInView(undefined, false);
+        rerender();
+
+        expect(result.current.isCatDismissed).toBe(false);
+        expect(result.current.isPanelOpen).toBe(false);
     });
 
     it('switches sides on request', () => {

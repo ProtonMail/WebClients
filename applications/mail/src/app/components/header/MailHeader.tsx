@@ -4,8 +4,8 @@ import { memo, useCallback } from 'react';
 import { c } from 'ttag';
 
 import FloatingButton from '@proton/components/components/button/FloatingButton';
-import Hamburger from '@proton/components/components/sidebar/Hamburger';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Hamburger from '@proton/components/components/sidebar/Hamburger';
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
@@ -40,11 +40,10 @@ interface Props {
     labelID: string;
     elementsData: ElementsStructure;
     actions: MailboxActions;
-    assistantButton?: ReactNode;
     settingsButton?: ReactNode;
 }
 
-const MailHeader = ({ labelID, elementsData, actions, assistantButton, settingsButton }: Props) => {
+const MailHeader = ({ labelID, elementsData, actions, settingsButton }: Props) => {
     const elementID = useMailSelector(selectElementID);
 
     const [labels = []] = useLabels();
@@ -110,7 +109,6 @@ const MailHeader = ({ labelID, elementsData, actions, assistantButton, settingsB
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isSmallViewport={breakpoints.viewportWidth['<=small']}
-                assistantButton={assistantButton}
                 settingsButton={settingsButton}
                 floatingButton={
                     <FloatingButton

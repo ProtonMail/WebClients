@@ -13,6 +13,7 @@ import CatSprite from '../pet/CatSprite';
 import { CatPose } from '../pet/catPose';
 import LumoFloatingPanel from './LumoFloatingPanel';
 import { useLumoFloatingPanel } from './LumoFloatingPanelProvider';
+import { buildLumoFloatingPanelValue } from './LumoFloatingPanelProvider.testing';
 import { CARD_MIN_WIDTH, CARD_RESIZING_CLASS } from './cardResize';
 import { PanelSide } from './panelSide';
 import { useMailboxBounds } from './useMailboxBounds';
@@ -52,6 +53,7 @@ interface Setup {
     shownSide?: PanelSide;
     hasFloatingDrawerButton?: boolean;
     isCatHidden?: boolean;
+    isCatDismissed?: boolean;
     isReducedMotion?: boolean;
     mailboxWidth?: number;
 }
@@ -64,25 +66,28 @@ const mockPanel = ({
     cardWidth = CARD_MIN_WIDTH,
     shownSide = PanelSide.LEFT,
     isCatHidden = false,
+    isCatDismissed = false,
     isReducedMotion = false,
     mailboxWidth = MAILBOX_WIDTH,
 }: Setup) => {
-    jest.mocked(useLumoFloatingPanel).mockReturnValue({
-        isDetached,
-        isPanelOpen,
-        isCurrentSurfaceOpen: isPanelOpen,
-        shownSide,
-        cardWidth,
-        setCardWidth,
-        detach: jest.fn(),
-        dock,
-        toggleLumo,
-        closePanel,
-        switchSides,
-        isCatHidden,
-        hideCat,
-        revealCat,
-    });
+    jest.mocked(useLumoFloatingPanel).mockReturnValue(
+        buildLumoFloatingPanelValue({
+            isDetached,
+            isPanelOpen,
+            isCurrentSurfaceOpen: isPanelOpen,
+            shownSide,
+            cardWidth,
+            setCardWidth,
+            dock,
+            toggleLumo,
+            closePanel,
+            switchSides,
+            isCatHidden,
+            hideCat,
+            revealCat,
+            isCatDismissed,
+        })
+    );
     jest.mocked(useLumoAgentDrawer).mockReturnValue({
         items: [],
         isBusy: false,
@@ -139,6 +144,7 @@ describe('LumoFloatingPanel', () => {
         ['docked', { isDetached: false }],
         ['on a small viewport', { isSmallViewport: true }],
         ['the mailbox is unmeasured', { hasBounds: false }],
+        ['the cat is dismissed', { isCatDismissed: true }],
     ])('renders nothing while %s', async (_, setup) => {
         const { container } = await renderPanel(setup);
 
