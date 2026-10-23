@@ -6,9 +6,23 @@ body,
   overflow: hidden;
 }
 
+/* The header and `DocsLayoutContainer` sit outside `.docs-editor-root`, so the page sets the tokens they read.
+   Keep the values equal to `Containers/Docs/docs.scss`, or the area around the page drifts from the editor. */
 .app-root {
+  --background-norm: white;
+  --border-weak: #eae7e4;
+  --text-norm: #0c0c14;
+  --text-weak: #5c5958;
+
   display: flex;
   flex-direction: column;
+}
+
+[data-theme-mode='dark'] .app-root {
+  --background-norm: #16141c;
+  --border-weak: #343140;
+  --text-norm: white;
+  --text-weak: #a7a4b5;
 }
 
 .standalone-doc-header {

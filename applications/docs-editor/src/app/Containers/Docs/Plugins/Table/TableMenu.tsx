@@ -232,7 +232,7 @@ export function TableMenu() {
     <Ariakit.Toolbar
       ref={menuRef}
       aria-label={messages.menuLabel}
-      className="absolute left-0 top-0 inline-flex items-stretch rounded-[--border-radius-md] bg-[--background-norm] p-[calc(3em/14)] shadow-[var(--shadow-norm)] [border:1px_solid_var(--interaction-weak-major-1)]"
+      className="absolute left-0 top-0 inline-flex items-stretch rounded-[--border-radius-md] bg-[--background-norm] p-[calc(3em/14)] shadow-[shadow:--shadow-norm] [border:1px_solid_var(--interaction-weak-major-1)]"
       style={{
         visibility: !tableNode ? 'hidden' : 'visible',
         opacity: !tableNode ? 0 : 1,

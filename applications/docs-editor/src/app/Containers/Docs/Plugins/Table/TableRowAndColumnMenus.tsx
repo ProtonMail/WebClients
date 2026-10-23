@@ -224,7 +224,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
     <>
       <DropdownButton
         as="button"
-        className="bg-norm border-weak absolute left-0 top-0 z-0 flex items-center justify-center rounded border py-0.5 [opacity:0] hover:bg-[--background-weak] hover:opacity-100 focus-visible:opacity-100"
+        className="absolute left-0 top-0 z-0 flex items-center justify-center rounded border border-[--border-weak] bg-[--background-norm] py-0.5 [opacity:0] hover:bg-[--background-weak] hover:opacity-100 focus-visible:opacity-100"
         style={{
           transform: `translate3d(var(--x), var(--y), 0)`,
           opacity: isRowMenuOpen || !!tableRowElement ? 1 : undefined,
@@ -351,7 +351,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
       </Dropdown>
       <DropdownButton
         as="button"
-        className="bg-norm border-weak absolute left-0 top-0 z-0 flex items-center justify-center rounded border py-0.5 [opacity:0] hover:bg-[--background-weak] hover:opacity-100 focus-visible:opacity-100"
+        className="absolute left-0 top-0 z-0 flex items-center justify-center rounded border border-[--border-weak] bg-[--background-norm] py-0.5 [opacity:0] hover:bg-[--background-weak] hover:opacity-100 focus-visible:opacity-100"
         style={{
           transform: `translate3d(var(--x), var(--y), 0) rotate(90deg)`,
           opacity: isColumnMenuOpen || !!tableCellElement ? 1 : undefined,
