@@ -43,7 +43,7 @@
         "react-router-dom": "catalog:",
         "ttag": "catalog:",
         "typescript": "catalog:",
-        "webpack": "^5.111.1"
+        "webpack": "catalog:"
     },
     "devDependencies": {
         "@playwright/test": "^1.63.0",
@@ -55,7 +55,7 @@
         "@typescript/native": "catalog:",
         "eslint-plugin-storybook": "^10.6.2",
         "http-server": "^14.1.1",
-        "mini-css-extract-plugin": "^2.10.2",
+        "mini-css-extract-plugin": "catalog:",
         "netlify-cli": "27.10.2",
         "rimraf": "^6.1.3",
         "storybook": "^10.6.2",
