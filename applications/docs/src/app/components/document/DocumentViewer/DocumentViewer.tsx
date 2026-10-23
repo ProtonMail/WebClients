@@ -38,7 +38,7 @@ import { LiveCommentsEvent } from '@proton/docs-shared/LiveCommentsEvent'
 import { isPrivateNodeMeta, isPublicNodeMeta } from '@proton/docs-shared/NodeMetaHelpers'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import OpenTracer from '@proton/docs-shared/Tracer/Module'
-import { generateNodeUid, getDrive, type DriveEvent, type NodeEntity } from '@proton/drive/sdk'
+import { generateNodeUid, getDrive, ValidationError, type DriveEvent, type NodeEntity } from '@proton/drive/sdk'
 import { useDocumentWindowAction } from '@proton/docs-shared/Hooks/useOpenDocument'
 import { tmpConvertNewDocTypeToOld } from '@proton/docs-shared/Doc/convert-doc-type'
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled'
@@ -670,7 +670,9 @@ export function DocumentViewer({
             .catch((error) => {
               const errorMessage = 'Failed to fetch member address keys'
               application.logger.error(errorMessage, error)
-              handleInitError(errorMessage)
+              // SDK throws ValidationError (e.g. "Item not found") when the user lost access to the node
+              const code = error instanceof ValidationError ? DocsApiErrorCode.InsufficientPermissions : undefined
+              handleInitError(errorMessage, code)
             })
         } else {
           // Like legacy getAddressKeyInfo, anonymous viewers get no address keys,
