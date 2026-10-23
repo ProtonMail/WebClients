@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
@@ -22,7 +22,7 @@ interface Props {
 const PmMeSection = ({ isPMAddressActive }: Props) => {
     const goToSettings = useSettingsLink();
     const [user] = useUser();
-    const [subscription] = useSubscription();
+    const [subscription] = useSubscriptionForApp();
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
