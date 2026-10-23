@@ -23,7 +23,6 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
-import Icons from '@proton/icons/Icons';
 import { ContextMenuProvider } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
@@ -176,8 +175,6 @@ export const App = () => (
             {(sw) => (
                 <PassCoreProvider {...getPassCoreProps(sw?.client)} wasm>
                     <CompatibilityCheck compatibilities={PASS_WEB_COMPAT}>
-                        <Icons />
-
                         <ErrorBoundary
                             component={<StandardErrorPageDisplay big errorComponent={GenericErrorDisplay} />}
                         >

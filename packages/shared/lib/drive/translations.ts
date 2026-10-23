@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import type { MimeName } from '@proton/components/components/icon/MimeIcon';
-
 import { DOCS_APP_NAME, SHEETS_APP_NAME } from '../constants';
 import type { OpenInDocsType } from '../helpers/mimetype';
 import { SupportedMimeTypes } from './constants';
@@ -39,16 +37,4 @@ export const getOpenInDocsString = ({ type, isNative }: OpenInDocsType, mimeType
 
     // translator: 'Open in Proton Docs/Sheets' action
     return c('sheets_2025:Action').t`Open in ${appName}`;
-};
-
-/**
- * Returns the appropriate icon name for an "Open in Docs/Sheets" action.
- */
-export const getOpenInDocsMimeIconName = ({ type }: Pick<OpenInDocsType, 'type'>): MimeName => {
-    switch (type) {
-        case 'document':
-            return 'proton-doc';
-        case 'spreadsheet':
-            return 'proton-sheet';
-    }
 };

@@ -41,7 +41,7 @@ const config: Configuration = {
     },
     module: {
         strictExportPresence: true, // Make missing exports an error instead of warning
-        rules: [...getJsLoaders(loaderOptions), ...getCssLoaders(loaderOptions), ...getAssetsLoaders(loaderOptions)],
+        rules: [...getJsLoaders(loaderOptions), ...getCssLoaders(loaderOptions), ...getAssetsLoaders()],
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
