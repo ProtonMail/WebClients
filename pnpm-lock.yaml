@@ -306,6 +306,7 @@ overrides:
   fast-uri@^2.1.0: 2.4.7
   fast-uri@^3.0.1: 3.1.8
   fastify@4.28.1: 4.29.1
+  follow-redirects@1.16.0: 1.16.1
   form-data@~2.3.2: 2.5.6
   glob@^11.0.0: 11.1.0
   http-proxy-middleware@2.0.7: 2.0.10
@@ -323,7 +324,9 @@ overrides:
   json5: ^2.2.3
   jws@^3.2.2: 4.0.1
   jws@^4.0.0: 4.0.1
+  launch-editor@2.14.1: 2.14.2
   lodash@4.17.21: 4.18.1
+  markdown-it@14.3.2: 14.3.3
   mdast-util-to-hast@^13.0.0: 13.2.1
   merge: ^2.1.1
   minimatch@^5.0.1: 5.1.9
@@ -373,6 +376,7 @@ overrides:
   tmp@^0.0.33: 0.2.7
   toml@3.0.0: 4.2.0
   toml@^3.0.0: 4.2.0
+  toml@4.3.0: 5.0.1
   undici@6.21.1: 6.28.0
   undici@^8.0.0: 8.11.2
   webpack-dev-middleware@^6.1.2: 8.3.0
@@ -2940,8 +2944,8 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0
       markdown-it:
-        specifier: ^14.3.2
-        version: 14.3.2
+        specifier: 14.3.3
+        version: 14.3.3
       path-to-regexp:
         specifier: ^6.3.0
         version: 6.3.0
@@ -7352,8 +7356,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       markdown-it:
-        specifier: ^14.3.2
-        version: 14.3.2
+        specifier: 14.3.3
+        version: 14.3.3
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -22021,8 +22025,8 @@ packages:
   foldline@1.1.0:
     resolution: {integrity: sha512-9SheyADS50hjvFYjFJ3OB/GlDz2mD1T2CHd7auIk4Uto5YYWPBcw8iYo3F+gENJ+/SOeH9tT0loHZSqlUlumTA==}
 
-  follow-redirects@1.16.0:
-    resolution: {integrity: sha512-y5rN/uOsadFT/JfYwhxRS5R7Qce+g3zG97+JrtFZlC9klX/W5hD7iiLzScI4nZqUS7DNUdhPgw4xI8W2LuXlUw==}
+  follow-redirects@1.16.1:
+    resolution: {integrity: sha512-FNvFGzoMLWmE6Yj9spb/zjd7yiNCHiAW9/Tg9CXrQ8wuu32HtlJOwWO11OJafl5FfY3DxTdQ0vj42zU1kvv5jg==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -23956,8 +23960,8 @@ packages:
     resolution: {integrity: sha512-7W0vV3rqv5tokqkBAFV1LbR7HPOWzXQDpDgEuib/aJ1jsZZx6x3c2mBI+TJhJzOhkGeaLbCKEHXEXLfirtG2JA==}
     engines: {node: '>=18'}
 
-  launch-editor@2.14.1:
-    resolution: {integrity: sha512-QWBrQsMpH7gPr965dsKD/3cKWiNoTjpATQf++Xq63N6sKRGMwlVXz41O1IZTMfZQgBctD/K5Zt06+/I6pP6+HA==}
+  launch-editor@2.14.2:
+    resolution: {integrity: sha512-NHJEb30MGBCkmZXLZwz25t37QR4aY03ZzPYUJXOJaOa92uWwExI9SBQUuIznBYc1xkD7cJNGX7oc3Nl3sq2kQQ==}
 
   layout-base@1.0.2:
     resolution: {integrity: sha512-8h2oVEZNktL4BH2JCOI90iD1yXwL6iNW7KcCKT2QZgQJR2vbqDsldCTPRU9NifTCqHZci57XvQQ15YTu+sTYPg==}
@@ -24401,8 +24405,8 @@ packages:
     resolution: {integrity: sha512-K6K2NgKnTXimT3779/4KxSvobxOtMmx1LBZ3NwRxT/MDIR3Br/fQ4Q+WCX5QxjyUR8zg5+RV9Tbf2c5pAWTD2A==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  markdown-it@14.3.2:
-    resolution: {integrity: sha512-sHHjZ5fJKlgrG4qns2YwVcdNep35h5fERrfkD2YNsb9UFk0UIHarbiTaHKVMlPuWAoiilyK8Fv/jAm11slsY7Q==}
+  markdown-it@14.3.3:
+    resolution: {integrity: sha512-L//tDAkjTjJCU6pBUSBTgs3Kg4InVaZuUZog/b6V12UKhcDQ7S78877ibbCanRExwPuYP1CZD7Gd2dxSy1GXRg==}
     hasBin: true
 
   markdown-table@3.0.4:
@@ -28083,8 +28087,8 @@ packages:
     resolution: {integrity: sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==}
     engines: {node: '>=0.6'}
 
-  toml@4.3.0:
-    resolution: {integrity: sha512-lVb8X9BsPVuH0M4BKeS91tXAmJvCjQ5UIyAbQFaxkKGyUFK2RPkhwaFSQH8vbpl1d23eu/IBH+dwVMHWaq9A5A==}
+  toml@5.0.1:
+    resolution: {integrity: sha512-EqYNA/YvUNndrA2B3O2ojzLQoTQrBxeZ9UIjQwk8t10oe6n7dwclBwd9IdZQTOKwe6vWX+AXtl6IntXRbepdxQ==}
     engines: {node: '>=20'}
 
   tomlify-j0.4@3.0.0:
@@ -34200,7 +34204,7 @@ snapshots:
       resolve: 2.0.0-next.5
       semver: 7.8.5
       tmp-promise: 3.0.3
-      toml: 4.3.0
+      toml: 5.0.1
       unixify: 1.0.0
       urlpattern-polyfill: 8.0.2
       yargs: 17.7.3
@@ -39253,7 +39257,7 @@ snapshots:
 
   axios@1.20.0(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0):
     dependencies:
-      follow-redirects: 1.16.0(debug@4.4.3(supports-color@11.0.0))
+      follow-redirects: 1.16.1(debug@4.4.3(supports-color@11.0.0))
       form-data: 4.0.6
       https-proxy-agent: 5.0.1(supports-color@11.0.0)
       proxy-from-env: 2.1.0
@@ -42524,7 +42528,7 @@ snapshots:
 
   foldline@1.1.0: {}
 
-  follow-redirects@1.16.0(debug@4.4.3(supports-color@11.0.0)):
+  follow-redirects@1.16.1(debug@4.4.3(supports-color@11.0.0)):
     optionalDependencies:
       debug: 4.4.3(supports-color@11.0.0)
 
@@ -43626,7 +43630,7 @@ snapshots:
   http-proxy@1.18.1(debug@4.4.3(supports-color@11.0.0)):
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.16.0(debug@4.4.3(supports-color@11.0.0))
+      follow-redirects: 1.16.1(debug@4.4.3(supports-color@11.0.0))
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -45165,7 +45169,7 @@ snapshots:
     dependencies:
       package-json: 10.0.1
 
-  launch-editor@2.14.1:
+  launch-editor@2.14.2:
     dependencies:
       picocolors: 1.1.1
       shell-quote: 1.12.0
@@ -45632,7 +45636,7 @@ snapshots:
 
   map-obj@5.0.2: {}
 
-  markdown-it@14.3.2:
+  markdown-it@14.3.3:
     dependencies:
       argparse: 2.0.1
       entities: 4.5.0
@@ -46532,7 +46536,7 @@ snapshots:
       semver: 7.8.5
       source-map-support: 0.5.21
       terminal-link: 5.0.0
-      toml: 4.3.0
+      toml: 5.0.1
       tomlify-j0.4: 3.0.0
       ulid: 3.0.2
       update-notifier: 7.3.1
@@ -50237,7 +50241,7 @@ snapshots:
 
   toidentifier@1.0.1: {}
 
-  toml@4.3.0: {}
+  toml@5.0.1: {}
 
   tomlify-j0.4@3.0.0: {}
 
@@ -51557,7 +51561,7 @@ snapshots:
       graceful-fs: 4.2.11
       http-proxy-middleware: 2.0.10(@types/express@4.17.25)(debug@4.4.3(supports-color@11.0.0))
       ipaddr.js: 2.5.0
-      launch-editor: 2.14.1
+      launch-editor: 2.14.2
       open: 10.2.0
       p-retry: 6.2.1
       schema-utils: 4.5.0
@@ -51596,7 +51600,7 @@ snapshots:
       graceful-fs: 4.2.11
       http-proxy-middleware: 2.0.10(@types/express@4.17.25)(debug@4.4.3(supports-color@11.0.0))
       ipaddr.js: 2.5.0
-      launch-editor: 2.14.1
+      launch-editor: 2.14.2
       open: 10.2.0
       p-retry: 6.2.1
       schema-utils: 4.5.0
@@ -51634,7 +51638,7 @@ snapshots:
       graceful-fs: 4.2.11
       http-proxy-middleware: 4.2.0(supports-color@11.0.0)
       ipaddr.js: 2.5.0
-      launch-editor: 2.14.1
+      launch-editor: 2.14.2
       open: 11.0.1
       p-retry: 8.0.0
       schema-utils: 4.5.0
