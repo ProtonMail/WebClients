@@ -72,6 +72,7 @@ describe('useCheckoutCondensedAddons', () => {
     it.each([
         ['upgrading to Duo', { ...eligibleArgs, selectedPlanIDs: { [PLANS.DUO]: 1 } }],
         ['already on Family', { ...eligibleArgs, latestSubscription: buildSubscription({ [PLANS.FAMILY]: 1 }) }],
+        ['already on Lumo Plus', { ...eligibleArgs, latestSubscription: buildSubscription({ [PLANS.LUMO]: 1 }) }],
         ['already on a B2B plan', { ...eligibleArgs, latestSubscription: buildSubscription({ [PLANS.VPN_PRO]: 1 }) }],
         ['unable to pay', { ...eligibleArgs, user: { canPay: false } }],
         ['in the lite app', { ...eligibleArgs, isLiteApp: true }],
