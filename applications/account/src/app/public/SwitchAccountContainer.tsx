@@ -127,7 +127,7 @@ const AccountItem = ({
                             </span>
                         )}
                     </div>
-                    {sessionDisplayData.email && (
+                    {sessionDisplayData.showEmail && (
                         <div className="text-break color-weak text-ellipsis">{sessionDisplayData.email}</div>
                     )}
                 </a>
