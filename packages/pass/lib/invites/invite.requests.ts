@@ -143,7 +143,7 @@ export const createUserInvites = async (
                 method: 'post',
                 data: {
                     Invites: await Promise.all(
-                        batch.map(({ email, role, publicKey }) =>
+                        batch.map(({ email, role, publicKey, hideSensitiveContent }) =>
                             PassCrypto.createInvite({
                                 shareId,
                                 email,
@@ -151,6 +151,7 @@ export const createUserInvites = async (
                                 invitedPublicKey: publicKey,
                                 itemId,
                                 targetKeys,
+                                hideSensitiveContent,
                             })
                         )
                     ),
@@ -179,12 +180,13 @@ export const createNewUserInvites = async (
                 method: 'post',
                 data: {
                     NewUserInvites: await Promise.all(
-                        batch.map(({ email, role }) =>
+                        batch.map(({ email, role, hideSensitiveContent }) =>
                             PassCrypto.createNewUserInvite({
                                 email,
                                 role,
                                 shareId,
                                 itemId,
+                                hideSensitiveContent,
                             })
                         )
                     ),

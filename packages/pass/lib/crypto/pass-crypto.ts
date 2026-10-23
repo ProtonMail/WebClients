@@ -528,7 +528,7 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             return processes.moveItem({ itemId, itemKeys, targetKey, targetFolderId });
         },
 
-        async createInvite({ shareId, itemId, invitedPublicKey, email, role, targetKeys }) {
+        async createInvite({ shareId, itemId, invitedPublicKey, email, role, targetKeys, hideSensitiveContent }) {
             assertHydrated(context);
 
             const manager = getShareManager(shareId);
@@ -545,12 +545,13 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
                 ShareRoleID: role,
                 TargetType: !itemId ? ShareType.Vault : ShareType.Item,
                 ItemID: itemId,
+                HideSensitiveContent: hideSensitiveContent ?? null,
             };
         },
 
         /** New user invites does not support item sharing.
          * Passing an item share shareId will throw. */
-        async createNewUserInvite({ shareId, email, role, itemId }) {
+        async createNewUserInvite({ shareId, email, role, itemId, hideSensitiveContent }) {
             assertHydrated(context);
 
             if (!core) throw new PassCryptoError('`PassCoreProxy` not initialized');
@@ -574,6 +575,7 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
                 Signature: signature,
                 TargetType: !itemId ? ShareType.Vault : ShareType.Item,
                 ItemID: itemId,
+                HideSensitiveContent: hideSensitiveContent ?? null,
             };
         },
 

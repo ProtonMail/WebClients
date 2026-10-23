@@ -21,8 +21,8 @@ import { ListField } from '../../Form/Field/ListField';
 import { InviteGroupField } from './InviteGroupField';
 import { InviteRecommendations } from './InviteRecommendations';
 
-const createMember = (email: string, isGroup: boolean): InviteFormMemberItem => ({
-    value: { email, isGroup, role: ShareRole.READ },
+const createMember = (email: string, isGroup: boolean, hideSensitiveContent: boolean): InviteFormMemberItem => ({
+    value: { email, isGroup, role: ShareRole.READ, hideSensitiveContent },
     id: uniqueId(),
 });
 
@@ -51,6 +51,9 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
         const [autocomplete, setAutocomplete] = useState('');
         const selected = useMemo(() => new Set<string>(members.map((member) => member.value.email)), [members]);
 
+        const hideSensitiveContentDefault =
+            members.length > 0 && members.every(({ value }) => value.hideSensitiveContent);
+
         /** Filter out emails pending validation by comparing against the
          * address validator cache. Pending emails are those present in
          * `members` but not in the validator's results cache */
@@ -68,13 +71,13 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
             const value = maybeEmail.trim();
             if ((await PassUI.is_email_valid(value)) && emailField) {
                 emailField.value = '';
-                void onUpdate(members.concat([createMember(value, false)]));
+                void onUpdate(members.concat([createMember(value, false, hideSensitiveContentDefault)]));
             }
         };
 
         const onRecommendationToggle = (email: string, isGroup: boolean, checked: boolean) => {
             const update = checked
-                ? members.concat([createMember(email, isGroup)])
+                ? members.concat([createMember(email, isGroup, hideSensitiveContentDefault)])
                 : members.filter(({ value }) => value.email !== email);
 
             if (checked) {
@@ -101,7 +104,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                 .split(/[,;\s\n\t]+/)
                 .map((email) => email.trim())
                 .filter((email) => email.length > 0)
-                .map((email) => createMember(email, false));
+                .map((email) => createMember(email, false, hideSensitiveContentDefault));
 
             await onUpdate(members.concat(emails));
 
@@ -136,7 +139,7 @@ export const InviteStepMembers = forwardRef<HTMLInputElement, Props>(
                         key={`autofocus-email-${autoFocus}`}
                         name="emails"
                         onBlur={onEmailFieldBlur}
-                        onPush={(email) => createMember(email, false)}
+                        onPush={(email) => createMember(email, false, hideSensitiveContentDefault)}
                         onReplace={(email, prev) => ({ ...prev, value: { ...prev.value, email } })}
                         placeholder={c('Placeholder').t`Email address`}
                         onPaste={handlePaste}

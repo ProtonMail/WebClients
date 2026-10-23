@@ -1,4 +1,5 @@
 import { forwardRef, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
 import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
@@ -7,6 +8,7 @@ import type { InviteAddressValidator } from '../../../hooks/invite/useAddressVal
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { type AccessKeys, AccessTarget } from '../../../lib/access/types';
 import { selectAccessMembers } from '../../../store/selectors/access';
+import { selectItem } from '../../../store/selectors/items';
 import type { InviteFormMemberItem, InviteFormStep, ItemInviteFormValues } from '../../../types/forms/invite';
 import type { MaybeNull } from '../../../types/utils';
 import { InviteStepMembers } from '../Steps/InviteStepMembers';
@@ -26,6 +28,8 @@ export const ItemInviteForm = forwardRef<HTMLInputElement, Props>(({ form, autoF
     const { step, members, shareId, itemId } = form.values;
     const excluded = useMemoSelector(selectAccessMembers, [shareId, itemId]);
     const access = useMemo<AccessKeys>(() => ({ shareId, itemId }), [shareId, itemId]);
+    const item = useSelector(selectItem(shareId, itemId));
+    const isLoginItem = item?.data.type === 'login';
 
     const handles = useMemo(
         () => ({
@@ -57,6 +61,7 @@ export const ItemInviteForm = forwardRef<HTMLInputElement, Props>(({ form, autoF
                 <InviteStepPermissions
                     members={members}
                     target={AccessTarget.Item}
+                    showSensitiveContentToggle={isLoginItem}
                     onUpdate={handles.setMembers}
                     onStep={handles.setStep}
                 />
