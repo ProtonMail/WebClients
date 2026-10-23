@@ -1,9 +1,9 @@
 import { telemetry } from '@proton/shared/lib/telemetry';
 
-import { buildSubscription } from '../testing/buildSubscription';
 import { setOfferedApplePayFlow } from '../core/apple-pay-support';
 import type { FullBillingAddress } from '../core/billing-address/billing-address';
 import { ADDON_NAMES, CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '../core/constants';
+import { buildSubscription } from '../testing/buildSubscription';
 import { checkoutTelemetry } from './telemetry';
 
 jest.mock('@proton/shared/lib/telemetry', () => ({
@@ -26,9 +26,12 @@ const sendCustomEvent = telemetry.sendCustomEvent as jest.Mock;
  * The inputs are deliberately noisy: a paid subscription, a coupon, and addresses carrying the name,
  * street, city, company, zip and VAT number that must never reach an event.
  */
-const subscription = buildSubscription({ planIDs: { [PLANS.MAIL]: 1 }, currency: 'EUR', cycle: CYCLE.YEARLY }, {
-    CouponCode: 'CURRENT_COUPON',
-});
+const subscription = buildSubscription(
+    { planIDs: { [PLANS.MAIL]: 1 }, currency: 'EUR', cycle: CYCLE.YEARLY },
+    {
+        CouponCode: 'CURRENT_COUPON',
+    }
+);
 
 const billingAddressWithPersonalData = {
     CountryCode: 'DE',
@@ -41,10 +44,7 @@ const billingAddressWithPersonalData = {
     LastName: 'Customer',
 };
 
-const fullAddress = (
-    overrides: Partial<typeof billingAddressWithPersonalData>,
-    VatId: string
-): FullBillingAddress => ({
+const fullAddress = (overrides: Partial<typeof billingAddressWithPersonalData>, VatId: string): FullBillingAddress => ({
     BillingAddress: { ...billingAddressWithPersonalData, ...overrides },
     VatId,
 });
@@ -163,7 +163,10 @@ describe('event payloads sent to Proton Analytics', () => {
         checkoutTelemetry.reportBillingAddressEditSuccess({
             source: 'invoices',
             previousBillingAddress: fullAddress({}, 'DE000000001'),
-            nextBillingAddress: fullAddress({ CountryCode: 'FR', City: 'Another City', ZipCode: '75001' }, 'FR000000002'),
+            nextBillingAddress: fullAddress(
+                { CountryCode: 'FR', City: 'Another City', ZipCode: '75001' },
+                'FR000000002'
+            ),
         });
 
         expect(sentEvent()).toMatchSnapshot();
@@ -225,6 +228,12 @@ describe('event payloads sent to Proton Analytics', () => {
         expect(sentEvent()).toMatchSnapshot();
     });
 
+    it('checkout_condensed_addons_experiment_seen', () => {
+        checkoutTelemetry.subscriptionContainer.reportCheckoutCondensedAddonsExperimentSeen({ variant: 'condensed' });
+
+        expect(sentEvent()).toMatchSnapshot();
+    });
+
     /**
      * The snapshots above show what we send, but a snapshot can be updated without reading it. This
      * says the quiet part out loud, so that a payload which starts carrying customer data fails with a
@@ -240,7 +249,10 @@ describe('event payloads sent to Proton Analytics', () => {
                     initialBillingAddress: billingAddressWithPersonalData,
                 }),
         ],
-        ['payment', () => checkoutTelemetry.reportPayment({ ...checkoutState, stage: 'attempt', amount: 1, ...savedCard })],
+        [
+            'payment',
+            () => checkoutTelemetry.reportPayment({ ...checkoutState, stage: 'attempt', amount: 1, ...savedCard }),
+        ],
         [
             'estimation_change',
             () =>

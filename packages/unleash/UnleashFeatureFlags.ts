@@ -395,6 +395,7 @@ enum MeetFeatureFlag {
 
 enum PaymentsFeatureFlag {
     ApplePayCapabilities = 'ApplePayCapabilities',
+    CheckoutCondensedAddons = 'CheckoutCondensedAddons',
     DomainVpnBiz2023 = 'DomainVpnBiz2023',
     EmailForInvoices = 'EmailForInvoices',
     EmailForInvoicesKillSwitch = 'EmailForInvoicesKillSwitch',
