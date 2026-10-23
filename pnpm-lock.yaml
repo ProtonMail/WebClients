@@ -164,15 +164,111 @@ settings:
 
 catalogs:
   default:
+    '@dnd-kit/abstract':
+      specifier: ^0.5.0
+      version: 0.5.0
+    '@dnd-kit/collision':
+      specifier: ^0.5.0
+      version: 0.5.0
     '@dnd-kit/dom':
+      specifier: ^0.5.0
+      version: 0.5.0
+    '@dnd-kit/helpers':
       specifier: ^0.5.0
       version: 0.5.0
     '@dnd-kit/react':
       specifier: ^0.5.0
       version: 0.5.0
+    '@electron-forge/cli':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron-forge/maker-deb':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron-forge/maker-dmg':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron-forge/maker-msix':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron-forge/maker-rpm':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron-forge/maker-squirrel':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron-forge/maker-zip':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron-forge/plugin-auto-unpack-natives':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron-forge/plugin-fuses':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron-forge/plugin-webpack':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron-forge/publisher-github':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron-forge/shared-types':
+      specifier: ^7.11.2
+      version: 7.11.2
+    '@electron/fuses':
+      specifier: ^1.8.0
+      version: 1.8.0
     '@jest/globals':
       specifier: ^30.5.2
       version: 30.5.2
+    '@lexical/clipboard':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/code':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/hashtag':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/headless':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/html':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/link':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/list':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/markdown':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/overflow':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/react':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/rich-text':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/selection':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/table':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/text':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/utils':
+      specifier: 0.31.2
+      version: 0.31.2
+    '@lexical/yjs':
+      specifier: 0.31.2
+      version: 0.31.2
     '@oxlint/plugins':
       specifier: 1.87.0
       version: 1.87.0
@@ -188,6 +284,9 @@ catalogs:
     '@protontech/logger':
       specifier: ^1.0.0
       version: 1.0.0
+    '@protontech/pass-rust-core':
+      specifier: 1.6.0
+      version: 1.6.0
     '@reduxjs/toolkit':
       specifier: ^2.13.0
       version: 2.13.0
@@ -251,6 +350,9 @@ catalogs:
     '@typescript/native':
       specifier: npm:typescript@^7.0.2
       version: 7.0.2
+    '@vercel/webpack-asset-relocator-loader':
+      specifier: 1.7.3
+      version: 1.7.3
     '@vitest/coverage-v8':
       specifier: ^5.0.5
       version: 5.0.5
@@ -284,6 +386,12 @@ catalogs:
     dompurify:
       specifier: ^3.4.17
       version: 3.4.17
+    electron-log:
+      specifier: ^5.4.4
+      version: 5.4.4
+    electron-store:
+      specifier: ^8.2.0
+      version: 8.2.0
     eslint:
       specifier: ^10.12.0
       version: 10.12.0
@@ -323,6 +431,9 @@ catalogs:
     jszip:
       specifier: ^3.10.2
       version: 3.10.2
+    lexical:
+      specifier: 0.31.2
+      version: 0.31.2
     lodash:
       specifier: ^4.18.1
       version: 4.18.1
@@ -416,6 +527,12 @@ catalogs:
     webpack-dev-server:
       specifier: ^6.0.0
       version: 6.0.0
+    y-protocols:
+      specifier: ^1.0.6
+      version: 1.0.6
+    yjs:
+      specifier: ^13.6.15
+      version: 13.6.27
     zod:
       specifier: ^3.25.76
       version: 3.25.76
@@ -1077,13 +1194,13 @@ importers:
   applications/authenticator:
     dependencies:
       '@dnd-kit/collision':
-        specifier: ^0.5.0
+        specifier: 'catalog:'
         version: 0.5.0
       '@dnd-kit/dom':
         specifier: 'catalog:'
         version: 0.5.0
       '@dnd-kit/helpers':
-        specifier: ^0.5.0
+        specifier: 'catalog:'
         version: 0.5.0
       '@dnd-kit/react':
         specifier: 'catalog:'
@@ -1596,7 +1713,7 @@ importers:
         specifier: 0.4.29
         version: 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@lexical/utils':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@proton/account':
         specifier: workspace:^
@@ -1692,7 +1809,7 @@ importers:
         specifier: 'catalog:'
         version: 3.10.2
       lexical:
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       react:
         specifier: 'catalog:'
@@ -1713,7 +1830,7 @@ importers:
         specifier: 'catalog:'
         version: 1.8.12
       yjs:
-        specifier: ^13.6.15
+        specifier: 'catalog:'
         version: 13.6.27
       zustand:
         specifier: ^4.5.7
@@ -1828,10 +1945,10 @@ importers:
         specifier: ^0.3.1
         version: 0.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@dnd-kit/abstract':
-        specifier: ^0.5.0
+        specifier: 'catalog:'
         version: 0.5.0
       '@dnd-kit/collision':
-        specifier: ^0.5.0
+        specifier: 'catalog:'
         version: 0.5.0
       '@dnd-kit/dom':
         specifier: 'catalog:'
@@ -1843,52 +1960,52 @@ importers:
         specifier: 1.2.1
         version: 1.2.1
       '@lexical/clipboard':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/code':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/hashtag':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/headless':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/html':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/link':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/list':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/markdown':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/overflow':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/react':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27)
       '@lexical/rich-text':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/selection':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/table':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2(patch_hash=3e35bf4fec82c0652d2811d1266298cf3b7ce54a64e8f9099c1a4106cadfd2f9)
       '@lexical/text':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/utils':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@lexical/yjs':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2(yjs@13.6.27)
       '@proton/account':
         specifier: workspace:^
@@ -1984,7 +2101,7 @@ importers:
         specifier: 11.1.21
         version: 11.1.21
       lexical:
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       lodash:
         specifier: 'catalog:'
@@ -2017,7 +2134,7 @@ importers:
         specifier: 'catalog:'
         version: 14.0.2
       yjs:
-        specifier: ^13.6.15
+        specifier: 'catalog:'
         version: 13.6.27
       zustand:
         specifier: ^5.0.15
@@ -2123,7 +2240,7 @@ importers:
         specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
       y-protocols:
-        specifier: ^1.0.6
+        specifier: 'catalog:'
         version: 1.0.6(yjs@13.6.27)
 
   applications/drive:
@@ -2403,10 +2520,10 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       electron-log:
-        specifier: ^5.4.4
+        specifier: 'catalog:'
         version: 5.4.4
       electron-store:
-        specifier: ^8.2.0
+        specifier: 'catalog:'
         version: 8.2.0(electron@43.7.6(supports-color@11.0.0))
       execa:
         specifier: ^8.0.1
@@ -2428,40 +2545,40 @@ importers:
         version: 3.25.76
     devDependencies:
       '@electron-forge/cli':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(bluebird@3.7.2)(clean-css@5.3.3)(csso@5.0.5)(encoding@0.1.13)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.2.3)
       '@electron-forge/maker-deb':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-dmg':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-rpm':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-squirrel':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-zip':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/plugin-auto-unpack-natives':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/plugin-fuses':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(@electron/fuses@1.8.0)(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/plugin-webpack':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(bluebird@3.7.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.2.3)
       '@electron-forge/publisher-github':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/shared-types':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron/fuses':
-        specifier: ^1.7.0
+        specifier: 'catalog:'
         version: 1.8.0
       '@eslint/js':
         specifier: ^9.39.5
@@ -2497,7 +2614,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vercel/webpack-asset-relocator-loader':
-        specifier: 1.7.3
+        specifier: 'catalog:'
         version: 1.7.3
       cross-env:
         specifier: 'catalog:'
@@ -3237,10 +3354,10 @@ importers:
         specifier: ^1.8.0
         version: 1.8.0
       '@lexical/react':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(yjs@13.6.27)
       '@lexical/utils':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       '@livekit/components-core':
         specifier: 0.12.15
@@ -3375,7 +3492,7 @@ importers:
         specifier: 'catalog:'
         version: 8.0.3
       lexical:
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       livekit-client:
         specifier: 2.22.3
@@ -3478,10 +3595,10 @@ importers:
         specifier: workspace:^
         version: link:../../packages/shared
       electron-log:
-        specifier: ^5.4.4
+        specifier: 'catalog:'
         version: 5.4.4
       electron-store:
-        specifier: ^8.2.0
+        specifier: 'catalog:'
         version: 8.2.0(electron@43.7.6(supports-color@11.0.0))
       execa:
         specifier: ^8.0.1
@@ -3503,40 +3620,40 @@ importers:
         version: 3.25.76
     devDependencies:
       '@electron-forge/cli':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(bluebird@3.7.2)(clean-css@5.3.3)(csso@5.0.5)(encoding@0.1.13)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.2.3)
       '@electron-forge/maker-deb':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-dmg':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-rpm':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-squirrel':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-zip':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/plugin-auto-unpack-natives':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/plugin-fuses':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(@electron/fuses@1.8.0)(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/plugin-webpack':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(bluebird@3.7.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.2.3)
       '@electron-forge/publisher-github':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/shared-types':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron/fuses':
-        specifier: ^1.7.0
+        specifier: 'catalog:'
         version: 1.8.0
       '@eslint/js':
         specifier: ^9.39.5
@@ -3569,7 +3686,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vercel/webpack-asset-relocator-loader':
-        specifier: 1.7.3
+        specifier: 'catalog:'
         version: 1.7.3
       cross-env:
         specifier: 'catalog:'
@@ -3795,10 +3912,10 @@ importers:
         specifier: 'catalog:'
         version: 4.29.3
       electron-log:
-        specifier: ^5.4.4
+        specifier: 'catalog:'
         version: 5.4.4
       electron-store:
-        specifier: ^8.2.0
+        specifier: 'catalog:'
         version: 8.2.0(electron@44.5.0(supports-color@11.0.0))
       history:
         specifier: 'catalog:'
@@ -3823,37 +3940,37 @@ importers:
         version: 1.8.12
     devDependencies:
       '@electron-forge/cli':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(bluebird@3.7.2)(clean-css@5.3.3)(csso@5.0.5)(encoding@0.1.13)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.2.3)
       '@electron-forge/maker-deb':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-dmg':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-msix':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-rpm':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-zip':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/plugin-auto-unpack-natives':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/plugin-fuses':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(@electron/fuses@1.8.0)(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/plugin-webpack':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(bluebird@3.7.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.2.3)
       '@electron-forge/shared-types':
-        specifier: ^7.11.2
+        specifier: 'catalog:'
         version: 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron/fuses':
-        specifier: ^1.8.0
+        specifier: 'catalog:'
         version: 1.8.0
       '@pmmmwh/react-refresh-webpack-plugin':
         specifier: 'catalog:'
@@ -3913,7 +4030,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vercel/webpack-asset-relocator-loader':
-        specifier: 1.7.3
+        specifier: 'catalog:'
         version: 1.7.3
       cross-env:
         specifier: 'catalog:'
@@ -4061,7 +4178,7 @@ importers:
         specifier: workspace:^
         version: link:../../packages/types
       '@protontech/pass-rust-core':
-        specifier: 1.6.0
+        specifier: 'catalog:'
         version: 1.6.0
       '@testing-library/jest-dom':
         specifier: 'catalog:'
@@ -5863,7 +5980,7 @@ importers:
   packages/components:
     dependencies:
       '@dnd-kit/abstract':
-        specifier: ^0.5.0
+        specifier: 'catalog:'
         version: 0.5.0
       '@dnd-kit/dom':
         specifier: 'catalog:'
@@ -5968,7 +6085,7 @@ importers:
         specifier: 'catalog:'
         version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@protontech/pass-rust-core':
-        specifier: 1.6.0
+        specifier: 'catalog:'
         version: 1.6.0
       '@reduxjs/toolkit':
         specifier: 'catalog:'
@@ -6285,7 +6402,7 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       lexical:
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       react:
         specifier: 'catalog:'
@@ -6297,7 +6414,7 @@ importers:
         specifier: 'catalog:'
         version: 14.0.2
       yjs:
-        specifier: ^13.6.15
+        specifier: 'catalog:'
         version: 13.6.27
       zod:
         specifier: 'catalog:'
@@ -6401,7 +6518,7 @@ importers:
         specifier: 0.4.29
         version: 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@lexical/yjs':
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2(yjs@13.6.27)
       '@proton/atoms':
         specifier: workspace:^
@@ -6434,7 +6551,7 @@ importers:
         specifier: 'catalog:'
         version: 8.0.3
       lexical:
-        specifier: 0.31.2
+        specifier: 'catalog:'
         version: 0.31.2
       lib0:
         specifier: ^0.2.119
@@ -6452,10 +6569,10 @@ importers:
         specifier: 'catalog:'
         version: 14.0.2
       y-protocols:
-        specifier: ^1.0.6
+        specifier: 'catalog:'
         version: 1.0.6(yjs@13.6.27)
       yjs:
-        specifier: ^13.6.15
+        specifier: 'catalog:'
         version: 13.6.27
     devDependencies:
       '@babel/core':
@@ -8341,7 +8458,7 @@ importers:
         specifier: 'catalog:'
         version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       '@protontech/pass-rust-core':
-        specifier: 1.6.0
+        specifier: 'catalog:'
         version: 1.6.0
       '@reduxjs/toolkit':
         specifier: 'catalog:'
@@ -9218,7 +9335,7 @@ importers:
         specifier: 'catalog:'
         version: 3.4.17
       electron-log:
-        specifier: ^5.4.4
+        specifier: 'catalog:'
         version: 5.4.4
       file-saver:
         specifier: ^2.0.5
