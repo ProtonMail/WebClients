@@ -100,6 +100,7 @@ describe('useLumoMailTelemetry', () => {
         [LumoChainEnd.STOPPED, 'user_stopped'],
         [LumoChainEnd.REPLACED, 'replaced'],
         [LumoChainEnd.DISCARDED, 'discarded'],
+        [LumoChainEnd.CONTEXT_LIMIT, 'context_limit'],
     ])('reports %s with its own reason', (end, reason) => {
         const { current } = renderTelemetry();
 
