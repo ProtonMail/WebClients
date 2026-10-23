@@ -295,9 +295,6 @@
       "Download": [
         "Télécharger"
       ],
-      "Download app": [
-        "Télécharger l’application"
-      ],
       "Download local participant report": [
         "Télécharger le rapport des participants locaux"
       ],
@@ -647,9 +644,6 @@
       ],
       "Stay in meeting": [
         "Rester dans la réunion"
-      ],
-      "Stop opening meetings in the desktop app": [
-        "Arrêter l'ouverture des réunions dans l'application de bureau"
       ],
       "Stop receiving video": [
         "Arrêter de recevoir la vidéo"
@@ -2141,6 +2135,9 @@
       "The email addresses do not match": [
         "Les adresses e-mail ne correspondent pas."
       ],
+      "The emoji could not be added because the message is at its character limit": [
+        "L'émoji n'a pas pu être ajouté, car le message a atteint sa limite de caractères."
+      ],
       "The meeting password is incorrect": [
         "Le mot de passe de la réunion est erroné."
       ],
@@ -3117,9 +3114,6 @@
       "This meeting reached the time limit.": [
         "Cette réunion a atteint sa limite de temps."
       ],
-      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Cette réunion a été ouverte dans l'application de bureau ${ MEET_APP_NAME }."
-      ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Cet enregistrement sera supprimé définitivement de cet appareil. Cette action est irréversible."
       ],
@@ -3213,14 +3207,8 @@
       "Yesterday — ${ absoluteDate }": [
         "Hier — ${ absoluteDate }"
       ],
-      "You": [
-        "Vous"
-      ],
       "You are almost there": [
         "Vous y êtes presque"
-      ],
-      "You can close this tab.": [
-        "Vous pouvez fermer cet onglet."
       ],
       "You can now return to the application to continue": [
         "Vous pouvez maintenant revenir à l'application pour continuer."
@@ -3592,6 +3580,110 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ]
+    },
+    "Lumo emoji name": {
+      "Alert": [
+        "Alerte"
+      ],
+      "Browse folders": [
+        "Parcourir les dossiers"
+      ],
+      "Cash": [
+        "Argent"
+      ],
+      "Celebrate": [
+        "Célébrer"
+      ],
+      "Cheers": [
+        "Félicitations"
+      ],
+      "Chef's kiss": [
+        "Un baiser du chef"
+      ],
+      "Coffee": [
+        "Café"
+      ],
+      "Cowboy": [
+        "Cowboy"
+      ],
+      "Encrypt": [
+        "Encrypter"
+      ],
+      "Gaming": [
+        "Jeux"
+      ],
+      "Halo": [
+        "Halo"
+      ],
+      "Happy": [
+        "Heureux"
+      ],
+      "Love": [
+        "Amour"
+      ],
+      "Mild panic": [
+        "Panique légère"
+      ],
+      "Mind blown": [
+        "Incroyable"
+      ],
+      "Nine lives": [
+        "Neuf vies"
+      ],
+      "Party": [
+        "Fête"
+      ],
+      "Perk": [
+        "Avantage"
+      ],
+      "Popcorn": [
+        "Pop-corn"
+      ],
+      "Rocket": [
+        "Fusée"
+      ],
+      "Sad": [
+        "Triste"
+      ],
+      "Schrödinger in a box": [
+        "Schrödinger dans une boîte"
+      ],
+      "Schrödinger out of the box": [
+        "Schrödinger hors de la boîte"
+      ],
+      "Search": [
+        "Rechercher"
+      ],
+      "Sit": [
+        "Assis"
+      ],
+      "Slay": [
+        "Slay"
+      ],
+      "Sleepy": [
+        "Dormeur"
+      ],
+      "Sweep": [
+        "Balayer"
+      ],
+      "Thank you": [
+        "Merci"
+      ],
+      "Think": [
+        "Penser"
+      ],
+      "This is fine": [
+        "C'est Ok"
+      ],
+      "Watch left": [
+        "Regarde à gauche"
+      ],
+      "Watch right": [
+        "Regarde à droite"
+      ],
+      "Write": [
+        "Écrire"
       ]
     },
     "meet": {
