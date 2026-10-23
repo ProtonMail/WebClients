@@ -18,7 +18,6 @@ import clsx from '@proton/utils/clsx';
 import { CategoriesOnboardingProvider } from '../components/categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../components/categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
 import { OnboardingStep } from '../components/categoryView/categoriesOnboarding/onboardingInterface';
-import LumoHeaderButton from '../components/drawer/LumoHeaderButton';
 import MailHeader from '../components/header/MailHeader';
 import { NewsletterSubscriptionView } from '../components/view/NewsletterSubscription/NewsletterSubscriptionView';
 import { ROUTE_LABEL } from '../constants';
@@ -113,7 +112,6 @@ export const RouterMailboxContainer = () => {
                     elementsData={elementsData}
                     actions={actions}
                     labelID={labelID}
-                    assistantButton={isLumoInMailEnabled ? <LumoHeaderButton /> : undefined}
                     settingsButton={
                         <CategoriesOnboardingSpotlight step={OnboardingStep.CUSTOMIZE}>
                             <InboxQuickSettingsAppButton />
