@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -63,6 +64,8 @@ export const VPNClientsSection = () => {
     const location = useLocation();
     const { createNotification } = useNotifications();
     const [user] = useUser();
+    const [subscriptions] = useAllSubscriptions();
+    const subscription = subscriptions?.[0];
 
     const handleDownloadClick = (destination: string) => {
         void sendTelemetryReport({
@@ -128,9 +131,15 @@ export const VPNClientsSection = () => {
                     history.replace({ ...location, search: '' });
                 }}
             />
-            <FeedbackSurveyModalWrapper>
-                <FeedbackSurveyModal open={isFeedbackModalOpen} onClose={handleOnCloseFeedbackModal} />
-            </FeedbackSurveyModalWrapper>
+            {subscription && (
+                <FeedbackSurveyModalWrapper>
+                    <FeedbackSurveyModal
+                        open={isFeedbackModalOpen}
+                        onClose={handleOnCloseFeedbackModal}
+                        subscription={subscription}
+                    />
+                </FeedbackSurveyModalWrapper>
+            )}
             <SettingsParagraph>
                 {c('Info')
                     .t`To secure your internet connection, download and install the ${VPN_APP_NAME} application for your device and connect to a server.`}
