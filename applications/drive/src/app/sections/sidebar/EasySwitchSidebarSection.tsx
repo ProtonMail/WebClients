@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { DriveImportGenericErrorStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportGenericErrorStep';
-import { DriveImportInProgressStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportInProgressStep';
 import { DriveImportPausedStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportPausedStep';
 import { DriveImportSuccessStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportSuccessStep';
 import { useProductSelectionSubmit } from '@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button/Button';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import NewFeatureTag from '@proton/components/components/newFeatureTag/NewFeatureTag';
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
@@ -33,8 +33,8 @@ interface EasySwitchSidebarSectionProps {
 
 export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSectionProps) => {
     const { handleSubmit } = useProductSelectionSubmit();
+    const goToSettings = useSettingsLink();
     const { isLoaded, isImporting, isPaused, hasCompletedImport, outcome, clearOutcome } = useDriveImportStatus();
-    const [showInProgressModal, setShowInProgressModal] = useState(false);
     const [showPausedModal, setShowPausedModal] = useState(false);
     const hasOngoingImport = isImporting || isPaused;
 
@@ -97,11 +97,7 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
             return;
         }
         if (isImporting) {
-            // Import resumed while the paused modal was open --> modal unmounted without onClose, outcome left behind
-            if (outcome === 'paused') {
-                clearOutcome();
-            }
-            setShowInProgressModal(true);
+            goToSettings('/easy-switch');
             return;
         }
         void countActionWithTelemetry(Actions.EasySwitchGoogleSidebarClicked);
@@ -194,17 +190,7 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                     onImport={handleSpotlightImport}
                 />
             )}
-            {showInProgressModal && !outcome && (
-                <DriveImportInProgressStep onClose={() => setShowInProgressModal(false)} />
-            )}
-            {outcome === 'success' && (
-                <DriveImportSuccessStep
-                    onClose={() => {
-                        setShowInProgressModal(false);
-                        clearOutcome();
-                    }}
-                />
-            )}
+            {outcome === 'success' && <DriveImportSuccessStep onClose={clearOutcome} />}
             {isPaused && (outcome === 'paused' || (showPausedModal && !outcome)) && (
                 <DriveImportPausedStep
                     onClose={() => {
@@ -213,14 +199,7 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                     }}
                 />
             )}
-            {outcome === 'failed' && (
-                <DriveImportGenericErrorStep
-                    onClose={() => {
-                        setShowInProgressModal(false);
-                        clearOutcome();
-                    }}
-                />
-            )}
+            {outcome === 'failed' && <DriveImportGenericErrorStep onClose={clearOutcome} />}
         </>
     );
 };

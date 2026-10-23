@@ -28,7 +28,7 @@ const ImporterRow = ({ activeImporter, importer }: Props) => {
             </TableCell>
             <TableCell className="easy-switch-table-status">
                 <div>
-                    <ImporterRowStatus state={importState} errorCode={errorCode} />
+                    <ImporterRowStatus state={importState} errorCode={errorCode} product={product} />
                 </div>
             </TableCell>
             <TableCell className="easy-switch-table-actions">
