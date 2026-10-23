@@ -1207,6 +1207,9 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/telemetry-tracker':
+        specifier: workspace:^
+        version: link:../../packages/telemetry-tracker
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
@@ -5245,6 +5248,9 @@ importers:
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
+      '@proton/telemetry-tracker':
+        specifier: workspace:^
+        version: link:../telemetry-tracker
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils

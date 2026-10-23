@@ -20,6 +20,7 @@
         "./calendarBootstrap": "./calendarBootstrap/index.ts",
         "./calendarBootstrap/hooks": "./calendarBootstrap/hooks.ts",
         "./calendarBootstrap/keys": "./calendarBootstrap/keys.ts",
+        "./calendarEvent/useGetCalendarEventRaw": "./calendarEvent/useGetCalendarEventRaw.ts",
         "./calendarEventLoop": "./calendarEventLoop/index.ts",
         "./calendarEventLoop/interface": "./calendarEventLoop/interface.ts",
         "./calendarEventLoop/listeners": "./calendarEventLoop/listeners.ts",
@@ -35,6 +36,7 @@
         "./holidaysDirectory": "./holidaysDirectory/index.ts",
         "./holidaysDirectory/hooks": "./holidaysDirectory/hooks.ts",
         "./holidaysDirectory/listener": "./holidaysDirectory/listener.ts",
+        "./telemetry/events": "./telemetry/events.ts",
         "./testing/builders": "./testing/builders.ts",
         "./testing/handlers": "./testing/handlers.ts",
         "./utils": "./utils.ts"
@@ -55,6 +57,7 @@
         "@proton/redux-utilities": "workspace:^",
         "@proton/sanitize": "workspace:^",
         "@proton/shared": "workspace:^",
+        "@proton/telemetry-tracker": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "catalog:",
         "@reduxjs/toolkit": "^2.13.0",
