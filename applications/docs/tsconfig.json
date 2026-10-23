@@ -6,16 +6,10 @@
       // actually merge them, it overrides them instead which would remove them.
       // If you see import errors, make sure these paths are up to date as it could fix it.
       "@proton/andromeda": ["../../packages/wasm/andromeda/*"],
-      "@proton/atoms/*": ["../../packages/atoms/*"],
-      "@proton/cross-storage/*": ["../../packages/cross-storage/*"],
-      "@proton/eslint-config-proton/*": ["../../packages/eslint-config-proton/*"],
       "@proton/i18n/*": ["../../packages/i18n/*"],
-      "@proton/key-transparency/*": ["../../packages/key-transparency/*"],
       "@proton/pack/*": ["../../packages/pack/*"],
       "@proton/polyfill/*": ["../../packages/polyfill/*"],
-      "@proton/sieve/*": ["../../packages/sieve/*"],
       "@proton/stylelint-config-proton/*": ["../../packages/stylelint-config-proton/*"],
-      "@proton/utils/*": ["../../packages/utils/src/*"],
       "proton-mail/*": ["../../applications/mail/src/app/*"],
       "proton-pass-extension/*": ["../../applications/pass-extension/src/*"],
       "proton-pass-web/*": ["../../applications/pass/src/*"],

@@ -1,4 +1,4 @@
-import { createOxlintConfig } from '@proton/oxlint-config';
+import { createOxlintConfig } from '@proton/oxlint-config/createOxlintConfig';
 import { allGlobs } from '@proton/oxlint-config/globs';
 
 export default createOxlintConfig({
