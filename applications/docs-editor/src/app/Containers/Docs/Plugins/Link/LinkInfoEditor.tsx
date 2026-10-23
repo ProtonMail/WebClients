@@ -8,6 +8,7 @@ import { Icon } from '../../Components/Icon'
 import * as Icons from '../../Components/icons'
 import { mergeRegister } from '@lexical/utils'
 import { useDocsMessages } from '../../DocsDependenciesProvider'
+import { clsx } from 'clsx'
 import { LINK_CHANGE_COMMAND } from './LinkPlugin'
 
 const inputClassName =
@@ -144,7 +145,7 @@ export function LinkInfoEditor({
 
   return createPortal(
     <div
-      className="bg-norm shadow-norm border-weak absolute left-0 top-0 rounded border px-3 py-1.5 text-sm print:hidden"
+      className="absolute left-0 top-0 rounded border border-[--border-weak] bg-[--background-norm] px-3 py-1.5 text-sm shadow-[shadow:--shadow-norm] print:hidden"
       style={{
         top: position.top,
         left: position.left,
@@ -208,10 +209,10 @@ export function LinkInfoEditor({
           />
         </div>
         <div className="flex items-center justify-end gap-1.5">
-          <button type="button" className={`${buttonClassName} border-transparent`} onClick={cancelLinkEdit}>
+          <button type="button" className={clsx(buttonClassName, 'border-[transparent]')} onClick={cancelLinkEdit}>
             {messages.cancel}
           </button>
-          <button type="button" className={`${buttonClassName} border-[--border-weak]`} onClick={handleSubmission}>
+          <button type="button" className={clsx(buttonClassName, 'border-[--border-weak]')} onClick={handleSubmission}>
             {messages.apply}
           </button>
         </div>

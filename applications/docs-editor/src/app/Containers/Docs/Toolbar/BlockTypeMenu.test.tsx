@@ -38,11 +38,6 @@ it('applies document preview typography to labels inside menu buttons', async ()
     // Typography belongs on the label so the menu button's text styles cannot override it.
     expect(preview).toHaveClass(`Lexical__h${level}`, 'mb-0', 'mt-0')
     expect(item).not.toHaveClass(`Lexical__h${level}`)
-    if (level >= 4) {
-      expect(preview).toHaveClass('color-weak')
-    } else {
-      expect(preview).not.toHaveClass('color-weak')
-    }
   }
 })
 

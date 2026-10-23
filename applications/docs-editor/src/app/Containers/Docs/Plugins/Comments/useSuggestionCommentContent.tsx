@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import type { LexicalEditor } from 'lexical'
 import type { DocsComment, DocsCommentThread } from '../../contract/DocsCommentThread'
 import { useState, useEffect, Fragment } from 'react'
@@ -157,7 +158,7 @@ export function useSuggestionCommentContent(
     return (
       <Fragment key={index}>
         <div className="line-clamp-2">
-          <span className={`color-${color} font-medium`}>
+          <span className={clsx('font-medium', color === 'success' ? 'text-[--signal-success]' : 'text-[--text-weak]')}>
             {icon} {title}
             {content.length > 0 && ':'}
           </span>{' '}

@@ -23,6 +23,8 @@ There are no other users, so no typing indicators, unread threads, or comments f
 Host file operations are unavailable.
 The outline (table of contents) shows once the document has headings. Its heading links point at this page with `?headingKey=…`.
 The harness supplies local Docs dependencies directly, including the in-memory comments client and awareness subscriptions.
+It loads no Proton styles, only Tailwind (`standalone-doc.tailwind.scss`) and the editor's own tokens in `Containers/Docs/docs.scss`, so a Proton class in `Containers/Docs` shows up here as missing styling.
+`standalone-doc.css` sets the same tokens on `.app-root` for what renders outside `.docs-editor-root`: the header and `DocsLayoutContainer`.
 
 `StandaloneDocsEditor` requires a surrounding `DocsDependenciesProvider`. Supply a complete `DocsMessages`
 object via `dependencies.messages` to localize the UI, and use `dependencies.defaultMessages` to supply
