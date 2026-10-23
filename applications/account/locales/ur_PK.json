@@ -1466,9 +1466,6 @@
       "Maybe later": [
         "شاید بعد میں"
       ],
-      "Migrate": [
-        "منتقل کریں"
-      ],
       "More": [
         "مزید"
       ],
@@ -2911,6 +2908,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "اسٹوریج کی جگہ تمام ${ BRAND_NAME } سروسز میں مشترکہ ہے۔"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "بلیک فرائیڈے"
+      ],
+      "Get the deal": [
+        "ڈیل حاصل کریں"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/ماہ"
+      ],
+      "15 GB storage": [
+        "15 GB اسٹوریج"
+      ],
+      "2 individual accounts": [
+        "2 انفرادی اکاؤنٹس"
+      ],
+      "2 TB of secure storage": [
+        "2 TB کی محفوظ اسٹوریج"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB اسٹوریج: آپ کے موجودہ پلان سے 40 گنا"
+      ],
+      "3 TB of secure storage": [
+        "3 TB کی محفوظ اسٹوریج"
+      ],
+      "500 GB of secure storage": [
+        "500 GB کی محفوظ اسٹوریج"
+      ],
+      "6 individual accounts": [
+        "6 انفرادی اکاؤنٹس"
+      ],
+      "Built-in 2FA authenticator": [
+        "بلٹ اِن 2FA آتھنٹیکیٹر"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "رعایتیں معیاری ماہانہ قیمتوں پر مبنی ہیں۔ بلنگ سائیکل ختم ہونے پر آپ کی سبسکرپشن معیاری سالانہ قیمت پر تجدید ہو جائے گی۔"
+      ],
+      "Online document editor": [
+        "آن لائن دستاویز ایڈیٹر"
+      ],
+      "Recover previous file versions": [
+        "فائل کے سابقہ ورژن بازیافت کریں"
+      ],
+      "Stronger protection against cyber threats": [
+        "سائبر خطرات کے خلاف زیادہ مضبوط حفاظت"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "لامحدود فولڈرز، لیبلز، اور فلٹرز"
+      ],
+      "Use your own email domain": [
+        "اپنا ای میل ڈومین استعمال کریں"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "پریمیم ${ DRIVE_SHORT_APP_NAME }، ${ MAIL_SHORT_APP_NAME }، ${ PASS_SHORT_APP_NAME }، اور ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "پریمیم ${ DRIVE_SHORT_APP_NAME }، ${ MAIL_SHORT_APP_NAME }، ${ PASS_SHORT_APP_NAME }، ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "پریمیم ${ MAIL_SHORT_APP_NAME }، ${ PASS_SHORT_APP_NAME }، ${ DRIVE_SHORT_APP_NAME }، ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "پریمیم ${ MAIL_SHORT_APP_NAME }، ${ PASS_SHORT_APP_NAME }، ${ DRIVE_SHORT_APP_NAME }، اور ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "پریمیم ${ PASS_SHORT_APP_NAME }، ${ MAIL_SHORT_APP_NAME }، ${ DRIVE_SHORT_APP_NAME }، اور ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "سال کی سب سے بڑی سیل"
+      ],
+      "Black Friday": [
+        "بلیک فرائیڈے"
+      ],
+      "for 12 months": [
+        "12 ماہ کے لیے"
+      ],
+      "Last chance to save big": [
+        "بڑی بچت کا آخری موقع"
+      ],
+      "Protect your entire tribe": [
+        "اپنے پورے خاندان کی حفاظت کریں"
+      ],
+      "Protection for two in a single plan": [
+        "ایک ہی پلان میں دو افراد کی حفاظت"
       ]
     },
     "Billing cycle": {
@@ -5268,9 +5365,6 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "کسی دوسرے فراہم کنندہ سے اپنے ای میل، کیلنڈر کے ایونٹس اور رابطے یہاں منتقل کریں۔"
       ],
-      "Bring over your files from another provider.": [
-        "کسی دوسرے فراہم کنندہ سے اپنی فائلیں منتقل کریں۔"
-      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "اپنے ڈومین پر پروفیشنل ای میل پتوں کے ساتھ اعتماد اور برانڈ کی پہچان بنائیں۔"
       ],
@@ -6883,10 +6977,6 @@
       "They may ask to access your account in case of an emergency.": [
         "ایمرجنسی کی صورت میں وہ آپ کے اکاؤنٹ تک رسائی کی درخواست کر سکتے ہیں۔"
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "انہیں **${ days } دن** میں یعنی **${ formattedAccessibleAt }** کو خود بخود رسائی مل جائے گی، آپ کسی بھی وقت ان کی درخواست مسترد کر سکتے ہیں یا انہیں فوراً رسائی دے سکتے ہیں۔",
-        "انہیں **${ days } دن** میں یعنی **${ formattedAccessibleAt }** کو خود بخود رسائی مل جائے گی، آپ کسی بھی وقت ان کی درخواست مسترد کر سکتے ہیں یا انہیں فوراً رسائی دے سکتے ہیں۔"
-      ],
       "This will take effect immediately.": [
         "یہ فوری طور پر لاگو ہوگا۔"
       ],
@@ -7042,9 +7132,6 @@
       ],
       "Address is already added to your account": [
         "پتہ پہلے سے آپ کے اکاؤنٹ میں شامل ہے۔"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "یہ پتہ آپ کی تنظیم سے باہر کے کسی صارف کے استعمال میں پہلے سے ہے۔ اس مسئلے کو حل کرنے کے لیے براہِ کرم کسٹمر سپورٹ سے رابطہ کریں۔"
       ],
       "Address primary private key not found": [
         "پتے کی پرائمری نجی کلید نہیں ملی۔"
@@ -7417,9 +7504,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "زیادہ سے زیادہ ${ displayMaxValue } کی اجازت ہے۔"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "رکن کا پتہ نہیں ملا۔ اس مسئلے کو حل کرنے کے لیے براہِ کرم کسٹمر سپورٹ سے رابطہ کریں۔"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "کم از کم ${ calendarsToFixCount } کیلنڈر کو کسی موجودہ ${ BRAND_NAME } کیلنڈر کے ساتھ ضم کریں",
         "کم از کم ${ calendarsToFixCount } کیلنڈرز کو موجودہ ${ BRAND_NAME } کیلنڈرز کے ساتھ ضم کریں۔"
@@ -7429,12 +7513,6 @@
       ],
       "Missing key packet": [
         "کلید پیکٹ موجود نہیں ہے۔"
-      ],
-      "Missing organization private key": [
-        "تنظیم کی نجی کلید موجود نہیں۔"
-      ],
-      "Missing organization public key": [
-        "تنظیم کی عوامی کلید موجود نہیں۔"
       ],
       "Missing signature": [
         "دستخط موجود نہیں ہے۔"
@@ -7514,12 +7592,6 @@
       ],
       "Operation failed, try again later": [
         "کارروائی نہیں ہو سکی، بعد میں دوبارہ کوشش کریں۔"
-      ],
-      "Organization does not have enough seats available": [
-        "تنظیم کے پاس کافی سیٹس دستیاب نہیں۔"
-      ],
-      "Organization does not have enough storage available": [
-        "تنظیم کے پاس کافی اسٹوریج دستیاب نہیں۔"
       ],
       "Organization key is not decrypted": [
         "تنظیمی کلید ڈی کرپٹ نہیں کی گئی۔"
@@ -8941,29 +9013,6 @@
         "ٹیرا بائٹ"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "فعال شدہ"
-      ],
-      "All": [
-        "تمام"
-      ],
-      "Errors": [
-        "نقائص"
-      ],
-      "In progress": [
-        "جاری ہے"
-      ],
-      "Migrated": [
-        "منتقل شدہ"
-      ],
-      "Not activated": [
-        "فعال نہیں ہوا"
-      ],
-      "Pending": [
-        "زیرِ التوا"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "آرکائیو کریں"
@@ -9541,9 +9590,6 @@
       "Contact us": [
         "ہم سے رابطہ کریں"
       ],
-      "Downloads": [
-        "ڈاؤن لوڈز"
-      ],
       "Enjoying ${ planName }?": [
         "${ planName } سے لطف اندوز ہو رہے ہیں؟"
       ],
@@ -9926,9 +9972,6 @@
       ],
       "Paused": [
         "روکا گیا"
-      ],
-      "Pending": [
-        "زیرِ التوا"
       ],
       "Skipped ${ count } contact due to incompatibilities": [
         "عدم مطابقت کی وجہ سے ${ count } رابطہ چھوڑا گیا۔",
@@ -11466,9 +11509,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "فلٹرز تمام ای میلز پر کام کرتے ہیں، بشمول آنے والی اور بھیجی گئی ای میلز۔ ہر فلٹر میں کم از کم ایک نام، ایک شرط اور ایک عمل شامل ہونا چاہیے۔"
       ],
-      "Find out what can be migrated.": [
-        "جانیں کہ کیا منتقل کیا جا سکتا ہے۔"
-      ],
       "for ${ price }": [
         "${ price } میں"
       ],
@@ -12120,9 +12160,6 @@
       "No single sign-on": [
         "سنگل سائن آن نہیں"
       ],
-      "No users to display": [
-        "دکھانے کے لیے کوئی صارف نہیں"
-      ],
       "Not a valid URL": [
         "درست URL نہیں ہے۔"
       ],
@@ -12565,9 +12602,6 @@
       "Select a group to view its members and settings.": [
         "اراکین اور سیٹنگز دیکھنے کے لیے کوئی گروپ منتخب کریں۔"
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "وہ سب منتخب کریں جو آپ منتقل کرنا چاہتے ہیں۔ یہ تنظیم کے تمام صارفین پر لاگو ہوگا۔"
-      ],
       "Select one or multiple user affiliations": [
         "ایک یا ایک سے زیادہ صارف وابستگیاں منتخب کریں"
       ],
@@ -12998,12 +13032,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "ان سبسکرائب کرنے کا یہ لنک میعاد ختم ہو چکا ہے۔ براہِ کرم اس میلنگ لسٹ سے حالیہ ای میل کھولیں۔"
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "یہ صارف منتقل نہیں کیا جا سکتا کیونکہ اس کا ای میل پتہ ${ BRAND_NAME } پر دستیاب نہیں ہے۔"
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "اس صارف کو پلیٹ فارم کی عدم مطابقت کی وجہ سے منتقل نہیں کیا جا سکتا۔"
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "اس وقت یہ صارف آپ کی تنظیم کی ادائیگیوں کا ذمہ دار ہے۔ اس رکن کے عہدے میں کمی کرنے سے تنظیم کی ادائیگیوں کی ذمہ داری آپ کے سپرد ہو جائے گی۔"
       ],
@@ -13144,27 +13172,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } مصنوعات کی تازہ ترین پیش رفت سے باخبر رہنے کے لیے آپ ہماری مختلف ای میلز کی سبسکرائب کر سکتے ہیں اور وقتاً فوقتاً ${ blogLink } دیکھ سکتے ہیں۔"
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "اس صارف کی منتقلی کے لیے ${ domainNamesLink } کے تحت ای میل ڈومین شامل کر کے تصدیق کریں"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "اس صارف کی منتقلی کے لیے اپنے ${ provider.adminConsoleName } میں اس کا اکاؤنٹ فعال کریں۔"
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "اس صارف کو منتقل کرنے کے لیے ${ usersAddressesLink } میں جا کر اس کا اکاؤنٹ فعال کریں۔"
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "اس صارف کو منتقل کرنے کے لیے ${ usersAddressesLink } میں جا کر اس کا پتہ فعال کریں۔"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "اس صارف کو منتقل کرنے کے لیے ضروری ہے کہ وہ ${ BRAND_NAME } میں شمولیت کی اپنی دعوت قبول کرے۔"
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "اس صارف کی منتقلی کے لیے اپنے ${ provider.adminConsoleName } میں اسے آرکائیو سے بحال کریں۔"
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "اس صارف کی منتقلی کے لیے اپنے ${ provider.adminConsoleName } میں اس کی معطلی ختم کریں۔"
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "گھاتی یا فراڈ سے بچنے کے لیے ہم کم از کم ${ minimumDonation } کا عطیہ طلب کرتے ہیں۔ اس سے ${ protonFoundationLink } کے اس کام کو سپورٹ ملتا ہے جس کے ذریعے دنیا بھر میں ڈیجیٹل رازداری کا دفاع کیا جاتا ہے، اور یہ آنے والی نسل کی حفاظت میں مدد دیتا ہے۔"
@@ -13621,9 +13628,6 @@
       ],
       "Yearly": [
         "سالانہ"
-      ],
-      "You": [
-        "آپ"
       ],
       "You already have a free account": [
         "آپ کے پاس پہلے سے ایک مفت اکاؤنٹ موجود ہے۔"
@@ -16666,9 +16670,6 @@
       ],
       "Details": [
         "تفصیلات"
-      ],
-      "Downloads": [
-        "ڈاؤن لوڈز"
       ],
       "Encryption and keys": [
         "انکرپشن اور کلیدیں"
@@ -20396,12 +20397,6 @@
       "Billing Country": [
         "بلنگ کا ملک"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private کو فعال سبسکرپشن کے ساتھ نہیں خریدا جا سکتا۔"
-      ],
-      "Born Private requires a donation.": [
-        "Born Private کے لیے عطیہ درکار ہے۔"
-      ],
       "Buying credits requires a separate purchase.": [
         "کریڈٹ خریدنے کے لیے الگ خریداری درکار ہے۔"
       ],
@@ -20588,9 +20583,6 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "آپ کے پاس پہلے ہی ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } موجود ہے۔"
       ],
-      "You already own Born Private.": [
-        "آپ کے پاس پہلے ہی Born Private موجود ہے۔"
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "آپ کی منتخب کردہ ادائیگی کے طریقے سے ${ amountToCharge } کی رقم وصول کی جائے گی۔"
       ],
@@ -20599,9 +20591,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "اپنی ادائیگی کی تصدیق کے لیے آپ جلد ہی بھیج دیے جائیں گے۔"
-      ],
-      "Your account is too old for Born Private.": [
-        "آپ کا اکاؤنٹ Born Private کے لیے بہت پرانا ہے۔"
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "آپ کی کرنسی یورو (€) میں تبدیل کر دی گئی ہے کیونکہ ${ IDEAL_WERO_BRAND_NAME } صرف یورو میں ادائیگی کی سپورٹ کرتا ہے۔"
@@ -25189,23 +25178,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "فعال شدہ"
-      ],
-      "Estimated size": [
-        "متوقع سائز"
-      ],
-      "Migration status": [
-        "منتقلی کی صورتحال"
-      ],
       "Size": [
         "سائز"
       ],
       "Status": [
         "حالت"
-      ],
-      "User": [
-        "صارف"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25778,9 +25755,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "ہمیشہ آن VPN ڈیوائس پروفائل کنفیگر کریں"
-      ],
-      "Configure migration": [
-        "منتقلی ترتیب دیں"
       ],
       "Configure your domain": [
         "اپنا ڈومین کنفیگر کریں"
@@ -26961,9 +26935,6 @@
       "Select the way to send this notification": [
         "اس اطلاع کو بھیجنے کا طریقہ منتخب کریں"
       ],
-      "Select users to migrate": [
-        "منتقل کرنے کے لیے صارفین منتخب کریں"
-      ],
       "Select when you want this notification to be sent": [
         "منتخب کریں کہ آپ یہ اطلاع کب بھیجنا چاہتے ہیں"
       ],
@@ -27376,9 +27347,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business میں خوش آمدید"
       ],
-      "What are you migrating?": [
-        "آپ کیا منتقل کر رہے ہیں؟"
-      ],
       "What changes if you switch to the Free plan": [
         "Free plan پر منتقل ہونے سے کیا تبدیل ہوگا"
       ],
@@ -27658,9 +27626,6 @@
       "Customize import to reduce the number of labels": [
         "لیبلز کی تعداد کم کرنے کے لیے درآمد کو کسٹمائز کریں۔"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "${ providerName } سے ${ BRAND_NAME } تک ڈیٹا کی منتقلی کی حالت"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "کوڑے دان اور اسپام کے پیغامات 30 دن بعد حذف کر دیے جاتے ہیں۔ آٹو ڈیلیٹ آن کرنے پر کوڑے دان/اسپام میں موجود پیغامات کو اُس تاریخ کے مطابق حذف ہونے کی تاریخ مل جاتی ہے جس دن وہ وہاں منتقل ہوئے تھے۔"
       ],
@@ -27882,9 +27847,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "صارف کا تخمینی مقام (اس کے IP پتے کی بنیاد پر)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "وہ صارفین جنہوں نے اپنے ${ BRAND_NAME } اکاؤنٹ تک رسائی حاصل کی"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "ہماری ویب ایپس میں سائن ان کرتے وقت صارفین ${ BRAND_NAME } آئیکن کی جگہ آپ کا لوگو دیکھیں گے۔"

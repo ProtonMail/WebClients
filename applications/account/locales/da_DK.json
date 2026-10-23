@@ -995,6 +995,9 @@
       "Download updated file": [
         "Download opdateret fil"
       ],
+      "Dropbox": [
+        "Dropbox"
+      ],
       "Edit": [
         "Redigér"
       ],
@@ -1481,9 +1484,6 @@
       "Maybe later": [
         "Måske senere"
       ],
-      "Migrate": [
-        "Migrer"
-      ],
       "More": [
         "Mere"
       ],
@@ -1540,6 +1540,9 @@
       ],
       "OK": [
         "Ok"
+      ],
+      "OneDrive": [
+        "OneDrive"
       ],
       "Open": [
         "Åbn"
@@ -2963,7 +2966,7 @@
         "Black Friday"
       ],
       "Get the deal": [
-        "Indløs tilbuddet"
+        "Få tilbuddet"
       ]
     },
     "bfcampaign2026: Info": {
@@ -2980,7 +2983,7 @@
         "2 TB sikker lagerplads"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB lagerplads: 40x dit nuværende abonnement"
+        "200 GB lagerplads: 40 gange så meget som i dit nuværende abonnement"
       ],
       "3 TB of secure storage": [
         "3 TB sikker lagerplads"
@@ -2992,13 +2995,13 @@
         "6 individuelle konti"
       ],
       "Built-in 2FA authenticator": [
-        "Indbygget 2FA-godkender"
+        "Indbygget 2FA-godkendelse"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+        "Rabatterne er baseret på den månedlige standardpris. Dit abonnement fornyes til den årlige standardpris, når faktureringsperioden udløber."
       ],
       "Online document editor": [
-        "Online dokumentredigering"
+        "Online dokumenteditor"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -3007,7 +3010,7 @@
         "Stærkere beskyttelse mod cybertrusler"
       ],
       "Unlimited folders, labels, and filters": [
-        "Ubegrænsede mapper, etiketter og filtre"
+        "Ubegrænset antal mapper, etiketter og filtre"
       ],
       "Use your own email domain": [
         "Brug dit eget e-mail-domæne"
@@ -3046,7 +3049,7 @@
         "Black Friday"
       ],
       "for 12 months": [
-        "i 12 måneder"
+        "for 12 måneder"
       ],
       "Last chance to save big": [
         "Sidste chance for at spare stort"
@@ -5463,8 +5466,8 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Overfør din e-mail, kalenderbegivenheder og kontakter fra en anden udbyder."
       ],
-      "Bring over your files from another provider.": [
-        "Overfør dine filer fra en anden udbyder."
+      "Bring over your files and folders from another provider.": [
+        "Overfør dine filer og mapper fra en anden udbyder."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Opbyg tillid og brandgenkendelse med professionelle e-mailadresser på dit eget domæne."
@@ -7093,9 +7096,12 @@
       "They may ask to access your account in case of an emergency.": [
         "De kan anmode om at få adgang til din konto i en nødsituation."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "De vil automatisk få adgang om **${ days } dag**, den **${ formattedAccessibleAt }**. Du kan afvise deres anmodning eller du kan når som helst give dem umiddelbar adgang.",
-        "De vil automatisk få adgang om **${ days } dage**, den **${ formattedAccessibleAt }**. Du kan afvise deres anmodning eller du kan når som helst give dem umiddelbar adgang."
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "De vil automatisk få adgang om **i dag**, den **${ formattedAccessibleAt }**. Du kan afvise deres anmodning eller give dem øjeblikkelig adgang når som helst."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "De vil automatisk få adgang om **${ days } dag**, den **${ formattedAccessibleAt }**. Du kan afvise deres anmodning eller give dem øjeblikkelig adgang når som helst.",
+        "De vil automatisk få adgang om **${ days } dage**, den **${ formattedAccessibleAt }**. Du kan afvise deres anmodning eller give dem øjeblikkelig adgang når som helst."
       ],
       "This will take effect immediately.": [
         "Øjeblikkelig ikrafttræden."
@@ -7255,9 +7261,6 @@
       ],
       "Address is already added to your account": [
         "Adressen er allerede tilføjet til din konto"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupport for at løse dette"
       ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
@@ -7633,9 +7636,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Maksimalt ${ displayMaxValue } tilladt"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adressen for medlemmet blev ikke fundet. Kontakt venligst vores kundesupport for at løse dette"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Flet mindst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
         "Flet mindst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere"
@@ -7645,12 +7645,6 @@
       ],
       "Missing key packet": [
         "Manglende nøglepakke"
-      ],
-      "Missing organization private key": [
-        "Mangler organisationens private nøgle"
-      ],
-      "Missing organization public key": [
-        "Mangler organisationens offentlige nøgle"
       ],
       "Missing signature": [
         "Manglende signatur"
@@ -7730,12 +7724,6 @@
       ],
       "Operation failed, try again later": [
         "Handlingen mislykkedes, prøv igen sere"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisationen har ikke nok ledige pladser"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisationen har ikke tilstrækkelig ledig lagerplads"
       ],
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
@@ -9170,29 +9158,6 @@
         "Terabyte"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Aktiveret"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Errors": [
-        "Fejl"
-      ],
-      "In progress": [
-        "I gang"
-      ],
-      "Migrated": [
-        "Migreret"
-      ],
-      "Not activated": [
-        "Ikke aktiveret"
-      ],
-      "Pending": [
-        "Afventer"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Arkiv"
@@ -9770,9 +9735,6 @@
       "Contact us": [
         "Kontakt os"
       ],
-      "Downloads": [
-        "Downloads"
-      ],
       "Enjoying ${ planName }?": [
         "Glad for ${ planName }?"
       ],
@@ -10147,9 +10109,6 @@
       "Failed": [
         "Mislykkedes"
       ],
-      "Has errors": [
-        "Har fejl"
-      ],
       "Import completed successfully": [
         "Import lykkedes"
       ],
@@ -10167,9 +10126,6 @@
       ],
       "Paused": [
         "Sat på pause"
-      ],
-      "Pending": [
-        "Afventer"
       ],
       "Queued": [
         "I kø"
@@ -10804,6 +10760,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Tillad brugere at forbinde til sikre delte servere fra sektionen **Lande** i ${ VPN_APP_NAME }-appen."
       ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Tillad at din organisation bruger ${ LUMO_APP_NAME } API'et"
+      ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Ved at tillade log ind med QR-kode vil du kunne logge ind ved at skanne en QR-kode hvis du glemmer din adgangskode. Alt du har brug for er at være logget ind på en ${ BRAND_NAME }-tjeneste på en anden enhed."
       ],
@@ -11354,7 +11313,7 @@
         "Rul ud på tværs af alle dine administrerede enheder"
       ],
       "Deploy it through your MDM (Jamf, Intune…) or manually on each device.": [
-        "Rul den ud igennem din MDM (Jamf, Intune…) eller manuelt på hver enhed."
+        "Rul den ud igennem dit MDM (Jamf, Intune…) eller manuelt på hver enhed."
       ],
       "Devices that have Always-on VPN device profile deployed can't reach the internet unless a ${ VPN_APP_NAME } connection is active.": [
         "Enheder, der har en konstant VPN enhedsprofil aktiveret, kan ikke tilgå internettet, medmindre en ${ VPN_APP_NAME }-forbindelse er aktiv."
@@ -11737,9 +11696,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
-      ],
-      "Find out what can be migrated.": [
-        "Find ud af hvad der kan migreres."
       ],
       "for ${ price }": [
         "til ${ price }"
@@ -12407,9 +12363,6 @@
       "No single sign-on": [
         "Ingen single sign-on"
       ],
-      "No users to display": [
-        "Ingen brugere"
-      ],
       "Not a valid URL": [
         "Ugyldig URL"
       ],
@@ -12724,7 +12677,7 @@
         "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
       "Push ${ mobileConfigArtifact } to every managed Mac using your MDM.": [
-        "Rul ${ mobileConfigArtifact } ud til hver administreret Mac ved hjælp af din MDM."
+        "Rul ${ mobileConfigArtifact } ud til hver administreret Mac ved hjælp af dit MDM."
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakt os for at få hjælp til hvad som helst ${ BRAND_NAME }."
@@ -12857,9 +12810,6 @@
       ],
       "Select a group to view its members and settings.": [
         "Vælg en gruppe for at se dens medlemmer og indstillinger."
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Vælg præcis det du gerne vil migrere. Det vil gælde for alle brugere i organisationen."
       ],
       "Select one or multiple user affiliations": [
         "Vælg en eller flere brugertilknytninger"
@@ -13303,12 +13253,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Dette afmeldelseslink er udløbet. Åbn venligst en mere nylig e-mail fra denne mailingliste."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Denne bruger kan ikke migreres da brugerens e-mailadresse ikke er tilgængelig på ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne bruger er pt. ansvarlig for betalinger for din organisation. Ved at degradere dette medlem, bliver du ansvarlig for betalinger for din organisation."
       ],
@@ -13450,27 +13394,6 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "For at holde trit med den seneste udvikling af produkter hos ${ BRAND_NAME } kan du abonnere på vores forskellige e-mails og ${ blogLink } fra tid til anden."
       ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "For at migrere denne bruger skal du tilføje og bekræfte e-mail-domænet under ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Aktivér kontoen for denne bruger i ${ provider.adminConsoleName } for at migrere dem."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes konto under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "For at migrere denne bruger skal du aktivere vedkommendes adresse under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "For at migrere denne bruger skal de acceptere deres invitation til at tilslutte sig ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Fjern denne bruger fra arkivet i ${ provider.adminConsoleName } for at migrere dem."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Ophæv suspenderingen af denne bruger i ${ provider.adminConsoleName } for at migrere dem."
-      ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "For at forhindre misbrug eller svindel beder vi om en minimumsdonation på ${ minimumDonation }. Dette støtter ${ protonFoundationLink } arbejde for at forsvare digitalt privatliv globalt og hjælper med at beskytte den næste generation."
       ],
@@ -13491,6 +13414,9 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "For at bruge ${ toAppName }, skal du bruge en ${ MAIL_APP_NAME } adresse."
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "Du skal have en ${ MAIL_APP_NAME }-adresse for at bruge ${ toAppName }. Bed en af din organisations administratorer om at oprette en for dig."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "For at fungere korrekt skal hvert filter indeholde mindst et navn og et gyldigt Sieve-script. Du kan ${ link }."
@@ -13652,7 +13578,7 @@
         "Brug den valgte e-mailadresse som SMTP-brugernavn i den eksterne service, og det genererede token som SMTP-adgangskode."
       ],
       "Use your MDM to delete the file, or run ${ removeScriptLink } via your MDM's script execution. Any MDM that supports deploying files or running scripts will work.": [
-        "Brug din MDM til at slette filen, eller kør ${ removeScriptLink } via din MDM's scriptkørsel. Enhver MDM, der understøtter udrulning af filer eller at køre scripts, fungerer."
+        "Brug dit MDM til at slette filen, eller kør ${ removeScriptLink } via dit MDM's scriptkørsel. Ethvert MDM, der understøtter udrulning af filer eller at køre scripts, fungerer."
       ],
       "User activated": [
         "Bruger aktiveret"
@@ -13670,7 +13596,7 @@
         "Brugerne opretter en backupadgangskode første gang de logger ind med single sign-on. Når de logger ind på en anden enhed senere kan de indtaste denne adgangskode for at gennemføre log-ind forsøget selv, uden at skulle bruge en enhed der allerede er logget ind eller hjælp fra en administrator."
       ],
       "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
-        "Bruger du en anden MDM? Enhver MDM, der understøtter aktivering af en konfigurationsprofil, fungerer. Se dokumentationen for din MDM for hvordan du uploader og tildeler den til dine enheder."
+        "Bruger du et andet MDM? Ethvert MDM, der understøtter aktivering af en konfigurationsprofil, fungerer. Se dokumentationen for dit MDM for hvordan du uploader og tildeler den til dine enheder."
       ],
       "Verification code sent.": [
         "Bekræftelseskode sendt."
@@ -13941,9 +13867,6 @@
       ],
       "Yearly": [
         "Årlig"
-      ],
-      "You": [
-        "Dig"
       ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
@@ -17023,9 +16946,6 @@
       "Details": [
         "Detaljer"
       ],
-      "Downloads": [
-        "Downloads"
-      ],
       "Encryption and keys": [
         "Kryptering og nøgler"
       ],
@@ -17208,6 +17128,9 @@
       ],
       "Visit our support site": [
         "Besøg vores supportside"
+      ],
+      "Want to import email, calendar and contacts?": [
+        "Vil du importere e-mails, kalender, og kontakter?"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Hvad er forskellen mellem UDP- og TCP-protokollerne?"
@@ -20768,11 +20691,8 @@
       "Billing Country": [
         "Faktura land"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private kan ikke købes uden et aktivt abonnement."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private kræver en donation."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Born Private-konti kan ikke købes uden et aktivt abonnement."
       ],
       "Buying credits requires a separate purchase.": [
         "Køb af kredit kræver et separat køb."
@@ -20873,6 +20793,9 @@
       "terms and conditions": [
         "vilkår og betingelser"
       ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private kræver en donation."
+      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
@@ -20972,8 +20895,8 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Du ejer allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Du ejer allerede Born Private."
+      "You already own a Born Private account.": [
+        "Du ejer allerede en Born Private-konto."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du vil blive opkrævet ${ amountToCharge } fra din valgte betalingsmetode."
@@ -20984,7 +20907,7 @@
       "You will soon be redirected to verify your payment.": [
         "Du omdirigeres snart for at bekræfte din betaling."
       ],
-      "Your account is too old for Born Private.": [
+      "Your account is too old for the Born Private initiative.": [
         "Din konto er for gammel til Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
@@ -22584,9 +22507,21 @@
       ]
     },
     "scim": {
+      "${ cleanUpCount } clean up action required.": [
+        "${ cleanUpCount } oprydningshandling påkrævet.",
+        "${ cleanUpCount } oprydningshandlinger påkrævet."
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "${ cleanUpCount } brugers rettigheder er blevet ændret.",
+        "${ cleanUpCount } brugeres rettigheder er blevet ændret."
+      ],
       "${ memberCount } new member": [
         "${ memberCount } nyt medlem",
         "${ memberCount } nye medlemmer"
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "${ numberOfCleanUps } oprydningshandling påkrævet",
+        "${ numberOfCleanUps } oprydningshandlinger påkrævet"
       ],
       "${ numberOfPendingGroups } group synced": [
         "${ numberOfPendingGroups } gruppe synkroniseret",
@@ -22624,8 +22559,17 @@
       "Approve changes from your identity provider": [
         "Godkend ændringer fra din identitetsudbyder"
       ],
+      "Approve permission changes for your organization": [
+        "Godkend ændringer til rettigheder i din organisation"
+      ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Endelig godkendelse kræves for at give adgang på tværs af alle ${ BRAND_NAME }-tjenester."
+      ],
+      "Final approval needed to remove organization key access.": [
+        "Der kræves endelig godkendelse for at fjerne adgang til organisationsnøgler."
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "Der kræves endelig godkendelse for at tilbagekalde deres organisationsnøgler."
       ],
       "From your identity provider": [
         "Fra din identitetsudbyder"
@@ -24383,11 +24327,17 @@
       "Disabled": [
         "Deaktiveret"
       ],
+      "failed": [
+        "mislykkedes"
+      ],
       "finalizing": [
         "færdiggør"
       ],
       "Generate a recovery phrase": [
         "Opret en gendannelsessætning"
+      ],
+      "key removal scheduled": [
+        "fjernelse af nøgle planlagt"
       ],
       "Last changed ${ formattedDate }": [
         "Sidst ændret ${ formattedDate }"
@@ -24406,6 +24356,9 @@
       ],
       "Outdated": [
         "Forældet"
+      ],
+      "remove organization key": [
+        "fjern organisationsnøgle"
       ],
       "Saved": [
         "Gemt"
@@ -25604,23 +25557,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "Aktiveret"
-      ],
-      "Estimated size": [
-        "Anslået størrelse"
-      ],
-      "Migration status": [
-        "Migrationsstatus"
-      ],
       "Size": [
         "Størrelse"
       ],
       "Status": [
         "Status"
-      ],
-      "User": [
-        "Bruger"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25808,6 +25749,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } ven har abonneret",
         "${ friendsSubscribed } venner har abonneret"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "${ LUMO_APP_NAME } API"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
@@ -26208,9 +26152,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "Konfigurer konstant VPN enhedsprofil"
-      ],
-      "Configure migration": [
-        "Konfigurer migration"
       ],
       "Configure your domain": [
         "Konfigurer dit domæne"
@@ -27422,9 +27363,6 @@
       "Select the way to send this notification": [
         "Vælg måden at sende denne notifikation på"
       ],
-      "Select users to migrate": [
-        "Vælg brugere at migrere"
-      ],
       "Select when you want this notification to be sent": [
         "Vælg når du ønsker, at denne notifikation skal sendes"
       ],
@@ -27861,9 +27799,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
-      "What are you migrating?": [
-        "Hvad migrerer du?"
-      ],
       "What changes if you switch to the Free plan": [
         "Hvad der ændrer sig hvis du skifter til det gratis abonnement"
       ],
@@ -27899,6 +27834,9 @@
       ],
       "You have no resolved alerts": [
         "Du har ingen afklarede varsler"
+      ],
+      "You need a ${ BRAND_NAME } address": [
+        "Du skal bruge en ${ BRAND_NAME }-adresse"
       ],
       "You're all set!": [
         "Så er du klar!"
@@ -28146,9 +28084,6 @@
       "Customize import to reduce the number of labels": [
         "Tilpas import for at reducere antallet af etiketter"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Status for datamigration fra ${ providerName } til ${ BRAND_NAME }"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Slet beskeder i papirkurven og spam efter 30 dage. Hvis du slår automatisk sletning til, får beskeder, der allerede er i papirkurven/spam, en sletningsdato baseret på den dato de blev flyttet dertil."
       ],
@@ -28370,9 +28305,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Brugerens omtrentlige placering (baseret på IP-adressen)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brugere, som har tilgået deres ${ BRAND_NAME }-konto"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Brugere vil se dit logo i stedet for ${ BRAND_NAME }-ikonet, når de er logget ind på vores webapps."
@@ -28921,6 +28853,9 @@
       ],
       "Send invite link via email instead": [
         "Send invitationslink via e-mail i stedet"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne bruger får administratorrettigheder næste gang de logger ind."
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Dette vil oprette en ny ${ MAIL_APP_NAME }-adresse."
