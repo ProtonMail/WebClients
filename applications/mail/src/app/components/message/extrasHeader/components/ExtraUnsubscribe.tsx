@@ -72,6 +72,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const [passAliasesModalProps, setPassAliasesModalOpen, renderPassAliasesModal] = useModalState();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C4F463
     const unsubscribeMethods = message.UnsubscribeMethods || {};
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- unsubscribeMethods is derived from message and only read for its keys
     const hasUnsubscribeMethods = useMemo(() => !!Object.keys(unsubscribeMethods).length, [unsubscribeMethods]);
     const isSimpleLoginAlias = hasSimpleLoginSender(message);
     const descriptionText = useMemo(() => {
