@@ -122,8 +122,11 @@
       "Fit table to page width": [
         "Tabloyu sayfa genişliğine sığdır"
       ],
-      "Go to label": [
-        "Etikete git"
+      "Header column": [
+        "Başlık sütunu"
+      ],
+      "Header row": [
+        "Başlık satırı"
       ],
       "Indent": [
         "İçe kaydır"
@@ -200,9 +203,6 @@
       "Refresh the page": [
         "Sayfayı yenile"
       ],
-      "Remove": [
-        "Kaldır"
-      ],
       "Remove link": [
         "Bağlantıyı kaldır"
       ],
@@ -230,9 +230,6 @@
       "Strike-through": [
         "Üzeri çizili"
       ],
-      "Submit": [
-        "Gönder"
-      ],
       "Subscript": [
         "Alt karakter"
       ],
@@ -256,29 +253,8 @@
       "carrot": [
         "havuç"
       ],
-      "cerise": [
-        "kiraz"
-      ],
-      "cobalt": [
-        "kobalt"
-      ],
-      "copper": [
-        "bakır"
-      ],
-      "enzian": [
-        "kantaron"
-      ],
-      "fern": [
-        "eğrelti otu"
-      ],
-      "forest": [
-        "orman"
-      ],
       "gray": [
         "gri"
-      ],
-      "ocean": [
-        "okyanus"
       ],
       "olive": [
         "zeytin"
@@ -286,17 +262,8 @@
       "pacific": [
         "pasifik"
       ],
-      "pickle": [
-        "salatalık"
-      ],
-      "pine": [
-        "çam"
-      ],
       "pink": [
         "pembe"
-      ],
-      "plum": [
-        "erik"
       ],
       "purple": [
         "mor"
@@ -307,17 +274,8 @@
       "reef": [
         "resif"
       ],
-      "sahara": [
-        "çöl"
-      ],
       "slateblue": [
         "arduvaz mavisi"
-      ],
-      "soil": [
-        "toprak"
-      ],
-      "strawberry": [
-        "çilek"
       ]
     },
     "Confirm": {
@@ -473,9 +431,6 @@
       ],
       "Just now": [
         "Şimdi"
-      ],
-      "Labels:": [
-        "Etiketler:"
       ],
       "Loading": [
         "Yükleniyor"
@@ -644,11 +599,17 @@
       "Replace link": [
         "Bağlantıyı değiştir"
       ],
+      "Resize outline": [
+        "Özeti yeniden boyutlandır"
+      ],
       "Search emoji": [
         "Emoji ara"
       ],
       "Search results": [
         "Arama sonuçları"
+      ],
+      "Table": [
+        "Tablo"
       ],
       "Text and highlight color": [
         "Yazı ve vurgu rengi"
@@ -2768,7 +2729,7 @@
         "Dil desteklenmiyor"
       ],
       "Outline": [
-        "Çerçeve"
+        "Özet"
       ]
     },
     "Warning": {

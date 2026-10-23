@@ -122,8 +122,11 @@
       "Fit table to page width": [
         "Tabelle an Seitenbreite anpassen"
       ],
-      "Go to label": [
-        "Zu Kategorie wechseln"
+      "Header column": [
+        "Kopfspalte"
+      ],
+      "Header row": [
+        "Kopfzeile"
       ],
       "Indent": [
         "Einrücken"
@@ -200,9 +203,6 @@
       "Refresh the page": [
         "Seite aktualisieren"
       ],
-      "Remove": [
-        "Entfernen"
-      ],
       "Remove link": [
         "Link entfernen"
       ],
@@ -230,9 +230,6 @@
       "Strike-through": [
         "Durchgestrichen"
       ],
-      "Submit": [
-        "Senden"
-      ],
       "Subscript": [
         "Tiefgestellt"
       ],
@@ -256,29 +253,8 @@
       "carrot": [
         "Karotte"
       ],
-      "cerise": [
-        "Kirschrot"
-      ],
-      "cobalt": [
-        "Kobaltblau"
-      ],
-      "copper": [
-        "Kupfer"
-      ],
-      "enzian": [
-        "Enzian"
-      ],
-      "fern": [
-        "Farn"
-      ],
-      "forest": [
-        "Waldgrün"
-      ],
       "gray": [
         "grau"
-      ],
-      "ocean": [
-        "Ozeanblau"
       ],
       "olive": [
         "Olivgrün"
@@ -286,17 +262,8 @@
       "pacific": [
         "Pazifikblau"
       ],
-      "pickle": [
-        "Moosgrün"
-      ],
-      "pine": [
-        "Kiefernfarben"
-      ],
       "pink": [
         "Rosa"
-      ],
-      "plum": [
-        "Pflaume"
       ],
       "purple": [
         "Violett"
@@ -307,17 +274,8 @@
       "reef": [
         "Koralle"
       ],
-      "sahara": [
-        "Sahara"
-      ],
       "slateblue": [
         "Blaugrau"
-      ],
-      "soil": [
-        "Erdfarben"
-      ],
-      "strawberry": [
-        "Erdbeere"
       ]
     },
     "Confirm": {
@@ -473,9 +431,6 @@
       ],
       "Just now": [
         "Jetzt gerade"
-      ],
-      "Labels:": [
-        "Kategorien:"
       ],
       "Loading": [
         "Wird geladen"
@@ -644,11 +599,17 @@
       "Replace link": [
         "Link ersetzen"
       ],
+      "Resize outline": [
+        "Grösse der Kontur anpassen"
+      ],
       "Search emoji": [
         "Emoji suchen"
       ],
       "Search results": [
         "Suchergebnisse"
+      ],
+      "Table": [
+        "Tabelle"
       ],
       "Text and highlight color": [
         "Schrift- und Hervorhebungsfarbe"
@@ -2459,7 +2420,7 @@
         "Bereich auswählen"
       ],
       "Series": [
-        "Serie"
+        "Datenreihe"
       ],
       "Series ${ seriesNumber }": [
         "Datenreihe ${ seriesNumber }"

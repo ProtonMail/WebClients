@@ -1122,9 +1122,6 @@
       "Maybe later": [
         "ربما لاحقًا"
       ],
-      "Migrate": [
-        "نقل"
-      ],
       "More": [
         "المزيد"
       ],
@@ -2563,15 +2560,44 @@
         "مساحة التخزين مشتركة عبر جميع خدمات ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "الجمعة السوداء"
+      ],
+      "Get the deal": [
+        "احصل على الصفقة"
+      ]
+    },
     "bfcampaign2026: Info": {
+      "/month": [
+        "/ شهر"
+      ],
       "15 GB storage": [
         "سعة تخزين 15 جيجابايت"
+      ],
+      "2 individual accounts": [
+        "حسابان فرديان"
+      ],
+      "2 TB of secure storage": [
+        "تيرابايتان من التخزين الآمن"
       ],
       "200 GB storage: 40x your current plan": [
         "سعة تخزين 200 جيجابايت: تعادل 40 ضعف سعة خطتك الحالية"
       ],
+      "3 TB of secure storage": [
+        "3 تيرابايت من التخزين الآمن"
+      ],
+      "500 GB of secure storage": [
+        "500 جيجابايت من التخزين الآمن"
+      ],
+      "6 individual accounts": [
+        "6 حسابات فردية"
+      ],
       "Built-in 2FA authenticator": [
         "أداة مدمجة للمصادقة الثنائية (2FA)"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "تعتمد الخصومات على الأسعار الشهرية القياسية. سيتم تجديد اشتراكك بالسعر السنوي القياسي عند انتهاء دورة الفوترة."
       ],
       "Online document editor": [
         "محرر مستندات عبر الإنترنت"
@@ -2594,6 +2620,16 @@
         "ميزات Premium في ${ DRIVE_SHORT_APP_NAME } و${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME }"
       ]
     },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "ميزات Premium في ${ DRIVE_SHORT_APP_NAME } و${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "إصدارات Premium من ${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME }"
+      ]
+    },
     "bfcampaign2026: Info, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "ميزات Premium في ${ MAIL_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME }"
@@ -2610,6 +2646,9 @@
       ],
       "Black Friday": [
         "الجمعة السوداء"
+      ],
+      "for 12 months": [
+        "لمدة 12 شهراً"
       ],
       "Last chance to save big": [
         "الفرصة الأخيرة لتحقيق توفير كبير"
@@ -6531,14 +6570,6 @@
       "They may ask to access your account in case of an emergency.": [
         "قد يطلبون الوصول إلى الحساب في حالة الطوارئ."
       ],
-      "They will receive access automatically in **${ days } days**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "سيحصلون على الوصول تلقائيًا في غضون **${ days } يوم**، في **${ formattedAccessibleAt }**، يمكنك رفض طلبهم أو منحهم الوصول فورًا في أي وقت.",
-        "سيحصلون على الوصول تلقائيًا في غضون **${ days } يوم**، في **${ formattedAccessibleAt }**، يمكنك رفض طلبهم أو منحهم الوصول فورًا في أي وقت.",
-        "سيحصلون على الوصول تلقائيًا في غضون **${ days } يومين**، في **${ formattedAccessibleAt }**، يمكنك رفض طلبهم أو منحهم الوصول فورًا في أي وقت.",
-        "سيحصلون على الوصول تلقائيًا في غضون **${ days } أيام**، في **${ formattedAccessibleAt }**، يمكنك رفض طلبهم أو منحهم الوصول فورًا في أي وقت.",
-        "سيحصلون على الوصول تلقائيًا في غضون **${ days } يومًا**، في **${ formattedAccessibleAt }**، يمكنك رفض طلبهم أو منحهم الوصول فورًا في أي وقت.",
-        "سيحصلون على الوصول تلقائيًا في غضون **${ days } يومًا**، في **${ formattedAccessibleAt }**، يمكنك رفض طلبهم أو منحهم الوصول فورًا في أي وقت."
-      ],
       "This will take effect immediately.": [
         "سيصبح هذا ساري المفعول فورًا."
       ],
@@ -6687,9 +6718,6 @@
       ],
       "Address is already added to your account": [
         "العنوان مضاف بالفعل إلى حسابك"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "العنوان مستخدم بالفعل من قِبل مستخدم خارج مؤسستك. يُرجى التواصل مع دعم العملاء لحل هذه المشكلة."
       ],
       "Address primary private key not found": [
         "لم يتم العثور على المفتاح الخاص الرئيسي للعنوان"
@@ -6953,9 +6981,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "الحد الأقصى المسموح به هو ${ displayMaxValue }"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "لم يتم العثور على عنوان العضو. يُرجى التواصل مع دعم العملاء لحل هذه المشكلة."
-      ],
       "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
         "دمج ما لا يقل عن ${ calendarsToFixCount } من التقاويم مع تقاويم ${ BRAND_NAME } الحالية",
         "دمج تقويم واحد (${ calendarsToFixCount }) على الأقل مع تقويم ${ BRAND_NAME } حالي",
@@ -6966,12 +6991,6 @@
       ],
       "Missing key packet": [
         "حزمة المفتاح مفقودة"
-      ],
-      "Missing organization private key": [
-        "المفتاح الخاص بالمؤسسة مفقود"
-      ],
-      "Missing organization public key": [
-        "مفتاح المؤسسة العام مفقود"
       ],
       "Missing signature": [
         "التوقيع مفقود"
@@ -7020,12 +7039,6 @@
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "يمكن تغيير حالة الأحرف وعلامات الترقيم (النقاط، والواصلات، والشرطات السفلية) فقط لهذا العنوان"
-      ],
-      "Organization does not have enough seats available": [
-        "لا تتوفر لدى المؤسسة مقاعد كافية"
-      ],
-      "Organization does not have enough storage available": [
-        "لا تتوفر لدى المؤسسة مساحة تخزين كافية"
       ],
       "Organization key is not decrypted": [
         "لم يتم فك تشفير مفتاح المنظمة"
@@ -8391,29 +8404,6 @@
         "تيرابايت"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "مُفعّل"
-      ],
-      "All": [
-        "الكل"
-      ],
-      "Errors": [
-        "أخطاء"
-      ],
-      "In progress": [
-        "قيد التنفيذ"
-      ],
-      "Migrated": [
-        "تم النقل"
-      ],
-      "Not activated": [
-        "غير مُفعّل"
-      ],
-      "Pending": [
-        "قيد الانتظار"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "الأرشيف"
@@ -9357,9 +9347,6 @@
       "Failed": [
         "فشل"
       ],
-      "Has errors": [
-        "به أخطاء"
-      ],
       "Import completed successfully": [
         "اكتملت عملية الاستيراد بنجاح"
       ],
@@ -9377,9 +9364,6 @@
       ],
       "Paused": [
         "متوقف مؤقتاً"
-      ],
-      "Pending": [
-        "معلق"
       ]
     },
     "Import type": {
@@ -10916,9 +10900,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "تعمل الفلاتر على جميع رسائل البريد الإلكتروني، بما في ذلك رسائل البريد الإلكتروني الواردة وكذلك المرسلة. يجب أن يحتوي كل عامل تصفية على الأقل على اسم وشرط وإجراء."
       ],
-      "Find out what can be migrated.": [
-        "تعرّف على ما يمكن نقله."
-      ],
       "for ${ price }": [
         "مقابل ${ price }"
       ],
@@ -11531,9 +11512,6 @@
       "No single sign-on": [
         "لا يوجد تسجيل دخول فردي"
       ],
-      "No users to display": [
-        "لا يوجد مستخدمون للعرض"
-      ],
       "Not a valid URL": [
         "عنوان الURL ليس صحيحاً"
       ],
@@ -11955,9 +11933,6 @@
       ],
       "Select a group to view its members and settings.": [
         "تحديد مجموعة لعرض أعضائها وإعداداتها."
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "حدّد بالضبط ما ترغب في نقله. وسيُطبَّق ذلك على جميع مستخدمي المؤسسة."
       ],
       "Select one or multiple user affiliations": [
         "حدد انتماء مستخدم واحد أو أكثر"
@@ -12388,9 +12363,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "انتهت صلاحية رابط إلغاء الاشتراك هذا. يرجى فتح رسالة بريد إلكتروني أحدث من هذه القائمة البريدية."
       ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "لا يمكن نقل هذا المستخدم بسبب عدم توافق المنصات."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "هذا المستخدم مسؤول حالياً عن مدفوعات مؤسستك. بتخفيض صلاحيات هذا العضو، ستصبح أنت المسؤول عن مدفوعات مؤسستك."
       ],
@@ -12519,15 +12491,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "لمواكبة آخر التطورات في منتجات ${ BRAND_NAME }، يمكنك الاشتراك في رسائل البريد الإلكتروني المختلفة لدينا و ${ blogLink } من وقت لآخر."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "لنقل هذا المستخدم، فعِّل حسابه ضمن ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "لنقل هذا المستخدم، فعِّل عنوانه ضمن ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "لنقل هذا المستخدم، يجب عليه قبول دعوته للانضمام إلى ${ BRAND_NAME }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "لمنع إساءة الاستخدام أو الاحتيال، نطلب تبرعًا بحد أدنى قدره ${ minimumDonation }. يدعم ذلك عمل ${ protonFoundationLink } في الدفاع عن الخصوصية الرقمية عالميًا ويساعد على حماية الجيل القادم."
@@ -12918,9 +12881,6 @@
       ],
       "Yearly": [
         "سنويًا"
-      ],
-      "You": [
-        "أنت"
       ],
       "You already have a free account": [
         "لديك حساب مجاني بالفعل"
@@ -15914,9 +15874,6 @@
       ],
       "Details": [
         "تفاصيل"
-      ],
-      "Downloads": [
-        "التنزيلات"
       ],
       "Encryption and keys": [
         "التشفير والمفاتيح"
@@ -24565,23 +24522,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "مفعل"
-      ],
-      "Estimated size": [
-        "الحجم المقدر"
-      ],
-      "Migration status": [
-        "حالة النقل"
-      ],
       "Size": [
         "الحجم"
       ],
       "Status": [
         "الحالة"
-      ],
-      "User": [
-        "المستخدم"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25179,9 +25124,6 @@
       ],
       "Composing": [
         "الإنشاء"
-      ],
-      "Configure migration": [
-        "إعداد عملية النقل"
       ],
       "Confirm": [
         "تأكيد"
@@ -26298,9 +26240,6 @@
       "Select the way to send this notification": [
         "حدد طريقة إرسال هذا الإشعار"
       ],
-      "Select users to migrate": [
-        "تحديد المستخدمين المراد نقلهم"
-      ],
       "Select when you want this notification to be sent": [
         "حدد متى تريد إرسال هذا الإشعار"
       ],
@@ -26683,9 +26622,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "مرحبًا بك في ${ BRAND_NAME } للأعمال"
-      ],
-      "What are you migrating?": [
-        "ما الذي تريد نقله؟"
       ],
       "What changes if you switch to the Free plan": [
         "التغييرات عند الانتقال إلى Free plan"
@@ -27151,9 +27087,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "الموقع التقريبي للمستخدم (بناءً على عنوان IP الخاص به)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "المستخدمون الذين سبق لهم الوصول إلى حسابهم في ${ BRAND_NAME }"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "سيرى المستخدمون شعارك بدلاً من أيقونة ${ BRAND_NAME } عند تسجيل الدخول إلى تطبيقات الويب الخاصة بنا."

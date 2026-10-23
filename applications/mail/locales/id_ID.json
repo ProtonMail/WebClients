@@ -891,9 +891,6 @@
       "Messages to this recipient": [
         "Pesan untuk penerima ini"
       ],
-      "Migrate": [
-        "Migrasi"
-      ],
       "Minimize composer": [
         "Minimalkan penulis pesan"
       ],
@@ -2043,6 +2040,106 @@
         "Ruang penyimpanan terbagi antar seluruh layanan ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "11.11"
+      ],
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/bulan"
+      ],
+      "15 GB storage": [
+        "15 GB penyimpanan"
+      ],
+      "2 individual accounts": [
+        "2 akun individu"
+      ],
+      "2 TB of secure storage": [
+        "2 TB penyimpanan aman"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB penyimpanan: 40x lebih besar dari paket saat ini"
+      ],
+      "3 TB of secure storage": [
+        "3 TB penyimpanan aman"
+      ],
+      "500 GB of secure storage": [
+        "500 GB penyimpanan aman"
+      ],
+      "6 individual accounts": [
+        "6 akun individu"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Diskon dihitung berdasarkan harga bulanan standar. Langganan Anda akan diperpanjang dengan tarif tahunan standar saat siklus tagihan berakhir."
+      ],
+      "Online document editor": [
+        "Editor dokumen online"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi file sebelumnya"
+      ],
+      "Stronger protection against cyber threats": [
+        "Perlindungan lebih kuat terhadap ancaman siber"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Folder, label, dan filter tanpa batas"
+      ],
+      "Use your own email domain": [
+        "Gunakan domain email Anda sendiri"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Promo besar-besaran tahun ini"
+      ],
+      "Black Friday": [
+        "11.11"
+      ],
+      "for 12 months": [
+        "untuk 12 bulan"
+      ],
+      "Last chance to save big": [
+        "Kesempatan terakhir untuk hemat besar"
+      ],
+      "Protect your entire tribe": [
+        "Lindungi seluruh keluarga Anda"
+      ],
+      "Protection for two in a single plan": [
+        "Perlindungan untuk dua orang dalam satu paket"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } bulan"
@@ -2560,6 +2657,11 @@
       ],
       "Expand": [
         "Lebarkan"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Percakapan ini terlalu panjang untuk dilanjutkan. Mulai obrolan baru agar ${ LUMO_SHORT_APP_NAME } tetap berjalan lancar dan responsif."
       ]
     },
     "collider_2025: feature": {
@@ -4522,9 +4624,6 @@
       "Aliases could not be loaded": [
         "Alias tidak dapat dimuat"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Semua ruang penyimpanan telah dialokasikan. Harap kurangi penyimpanan yang dialokasikan ke pengguna lain."
-      ],
       "Amount above the maximum.": [
         "Jumlah melebihi nilai maksimum."
       ],
@@ -4720,9 +4819,6 @@
       "Invalid public key file": [
         "File kunci publik tidak valid"
       ],
-      "Invalid URL": [
-        "URL tidak valid"
-      ],
       "Invalid VAT number": [
         "Nomor PPN tidak valid"
       ],
@@ -4840,15 +4936,6 @@
       "Please complete the billing details": [
         "Lengkapi rincian penagihan"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Silakan atur domain kustom sebelum menambahkan alamat"
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Mohon konfigurasi domain khusus sebelum menambahkan pengguna ke organisasi Anda."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
-      ],
       "Please enter a valid postal code": [
         "Silakan masukkan kode pos yang valid"
       ],
@@ -4887,9 +4974,6 @@
       ],
       "Please try generating the text again": [
         "Silakan coba hasilkan teks kembali"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat mengelola banyak pengguna sekaligus."
       ],
       "Port is required": [
         "Port wajib diisi"
@@ -4974,9 +5058,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
-      ],
-      "Something went wrong": [
-        "Terjadi kesalahan"
       ],
       "Something went wrong while converting the address": [
         "Terjadi kesalahan saat mengonversi alamat"
@@ -5151,12 +5232,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak untuk akun Anda"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Semua alamat dalam paket telah digunakan. Harap tingkatkan paket untuk menambah alamat baru atau nonaktifkan alamat di akun Anda."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
       ],
       "You must set a name": [
         "Anda harus menetapkan nama"
@@ -5616,9 +5691,6 @@
       ]
     },
     "Filter": {
-      "All": [
-        "Semua"
-      ],
       "Filter": [
         "Filter"
       ],
@@ -5630,12 +5702,6 @@
       ],
       "Has attachments": [
         "Mengandung lampiran"
-      ],
-      "In progress": [
-        "Sedang berlangsung"
-      ],
-      "Pending": [
-        "Tertunda"
       ],
       "Read": [
         "Dibaca"
@@ -6332,20 +6398,6 @@
         "Opsi impor lainnya"
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Memiliki kesalahan"
-      ],
-      "In progress": [
-        "Sedang berlangsung"
-      ],
-      "Migrated": [
-        "Dimigrasikan"
-      ],
-      "Pending": [
-        "Tertunda"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
@@ -6564,9 +6616,6 @@
       ],
       "${ total } message": [
         "${ total } pesan"
-      ],
-      "${ total } user found": [
-        "${ total } pengguna ditemukan"
       ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } pelacak email diblokir"
@@ -8526,9 +8575,6 @@
       ],
       "Yearly": [
         "Tahunan"
-      ],
-      "You": [
-        "Anda"
       ],
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
@@ -12722,9 +12768,6 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Pencarian"
-      ],
       "Search date, name, email address, or subject line": [
         "Cari tanggal, nama, alamat email, atau baris subjek"
       ],
@@ -12733,9 +12776,6 @@
       ],
       "Search for name or email": [
         "Cari nama atau email"
-      ],
-      "Search for users or addresses": [
-        "Cari pengguna atau alamat"
       ],
       "Search messages": [
         "Cari pesan"
@@ -12860,26 +12900,6 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Proses: ${ combinedProgress }%"
-      ]
-    },
-    "Property": {
-      "attributes": [
-        "atribut"
-      ],
-      "content key": [
-        "kunci konten"
-      ],
-      "hash key": [
-        "kunci hash"
-      ],
-      "key": [
-        "kunci"
-      ],
-      "membership": [
-        "keanggotaan"
-      ],
-      "name": [
-        "nama"
       ]
     },
     "Property type": {
@@ -14647,17 +14667,11 @@
       "Name": [
         "Nama"
       ],
-      "Size": [
-        "Ukuran"
-      ],
       "Status": [
         "Status"
       ],
       "Type": [
         "Tipe"
-      ],
-      "User": [
-        "Pengguna"
       ]
     },
     "TableHeader": {
@@ -15064,9 +15078,6 @@
       ],
       "Distraction-free emailing": [
         "Email bebas gangguan"
-      ],
-      "Domain names": [
-        "Nama domain"
       ],
       "Don't give spam a chance": [
         "Jangan beri spam kesempatan"
@@ -15745,9 +15756,6 @@
       ],
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Gunakan Gmail dengan aman di ${ MAIL_APP_NAME }"
-      ],
-      "Users and addresses": [
-        "Pengguna dan alamat"
       ],
       "Verification error": [
         "Kesalahan verifikasi"

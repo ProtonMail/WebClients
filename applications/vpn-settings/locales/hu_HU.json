@@ -456,9 +456,6 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } beszerzése"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Ingyenes ${ BRAND_NAME } cím beszerzése"
-      ],
       "Get a new encrypted email address": [
         "Szerezzen egy új, titkosított email címet"
       ],
@@ -1439,6 +1436,106 @@
     "BF2024: Offers": {
       "Billed at ${ amount } once": [
         "${ amount } egyszeri számlázás"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Szerezze meg az ajánlatot"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/hónap"
+      ],
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
+      "2 individual accounts": [
+        "2 egyéni fiók"
+      ],
+      "2 TB of secure storage": [
+        "2 TB biztonságos tárhely"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB tárhely: a jelenlegi csomag 40-szorosa"
+      ],
+      "3 TB of secure storage": [
+        "3 TB biztonságos tárhely"
+      ],
+      "500 GB of secure storage": [
+        "500 GB biztonságos tárhely"
+      ],
+      "6 individual accounts": [
+        "6 egyéni fiók"
+      ],
+      "Built-in 2FA authenticator": [
+        "Beépített kétlépcsős hitelesítés"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "A kedvezmények alapja a normál havi díjszabás. Az előfizetése a számlázási ciklus végén a normál éves díjszabás szerint újul meg."
+      ],
+      "Online document editor": [
+        "Online dokumentumszerkesztő"
+      ],
+      "Recover previous file versions": [
+        "Korábbi fájlverziók helyreállítása"
+      ],
+      "Stronger protection against cyber threats": [
+        "Erősebb védelem a kiberfenyegetések ellen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Korlátlan mappák, címkék és szűrők"
+      ],
+      "Use your own email domain": [
+        "Saját e-mail domain név használata"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Az év legnagyobb akciója"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "12 hónapra"
+      ],
+      "Last chance to save big": [
+        "Utolsó lehetőség a nagy megtakarításra"
+      ],
+      "Protect your entire tribe": [
+        "Védje meg az egész családját"
+      ],
+      "Protection for two in a single plan": [
+        "Védelem két személynek egyetlen csomagban"
       ]
     },
     "Billing cycle": {
@@ -3540,9 +3637,6 @@
       "Calendar limit reached": [
         "Elérte a naptárak maximális számát"
       ],
-      "Cannot verify the author of this file": [
-        "A fájl szerzője nem ellenőrizhető"
-      ],
       "Checkout expired, please try again": [
         "A fizetés időtúllépéssel megszakadt, kérjük próbálja újra"
       ],
@@ -3662,9 +3756,6 @@
       "Invalid postal code": [
         "Érvénytelen irányítószám"
       ],
-      "Invalid URL": [
-        "Érvénytelen URL cím"
-      ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
@@ -3678,15 +3769,8 @@
       "Missing key packet": [
         "Hiányzó kulcs csomag"
       ],
-      "Missing signature": [
-        "Hiányzó aláírás"
-      ],
       "Name does not match": [
         "Név nem egyezik"
-      ],
-      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
-        "A név maximum ${ MAX_NODE_NAME_LENGTH } karakter hosszú lehet",
-        "A név maximum ${ MAX_NODE_NAME_LENGTH } karakter hosszú lehet"
       ],
       "No calendars found to import": [
         "Nincs importálandó naptár"
@@ -3714,9 +3798,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "A szervezeti kulcsot aktiválni kell, nem-privát felhasználók létrehozásához"
-      ],
-      "Part of the file appears to be corrupted": [
-        "A fájl egy része sérült"
       ],
       "Password is required": [
         "Jelszó megadása szükséges"
@@ -3829,9 +3910,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
-      ],
-      "Something went wrong": [
-        "Hiba történt"
       ],
       "Something went wrong while converting the address": [
         "Hiba történt a cím átalakítása közben"
@@ -3946,9 +4024,6 @@
       ],
       "Verification did not succeed, please try again in an hour.": [
         "Az igazolás sikertelen, kérjük hogy próbálja meg egy óra múlva."
-      ],
-      "Verification keys are not available": [
-        "Az ellenőrzési kulcsok nem érhetők el"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "A DKIM aláírás felfüggesztésre került a DNS beállítási hibája miatt. Kövesse az útmutatót a DKIM aláírás helyreállításához."
@@ -5234,9 +5309,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } titkosítási technológiájának köszönhetően senki sem fér hozzá a jelszavához - még mi sem."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "A ${ CALENDAR_APP_NAME } használatához egy ${ BRAND_NAME } cím szükséges, az események biztonságos szinkronizáláshoz és titkosításhoz. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } új naptár",
@@ -6562,9 +6634,6 @@
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "A TechRadar Pro az 5 csillagból 4,2 csillaggal ajánlotta."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Átmenetileg nem elérhető. Próbálja meg később."
-      ],
       "Thank you": [
         "Köszönjük"
       ],
@@ -6759,9 +6828,6 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Események importálásához, először hozzon létre egy ${ CALENDAR_APP_NAME } naptárat. Ebben fognak megjelenni az események az importálás után."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "A ${ BRAND_NAME } termékekről szóló legfrissebb híreinkhez iratkozzon fel a hírleveleinkre és időnként nézze meg a ${ blogLink } oldalunkat."
@@ -7520,9 +7586,6 @@
       "Calendar": [
         "Naptár"
       ],
-      "Calendars": [
-        "Naptárak"
-      ],
       "Card details": [
         "Kártya adatai"
       ],
@@ -7666,9 +7729,6 @@
       ],
       "Email or username": [
         "Email cím, vagy felhasználónév"
-      ],
-      "Emails": [
-        "E-mailek"
       ],
       "Emails (all messages)": [
         "E-mailek (összes üzenet)"
@@ -12801,11 +12861,6 @@
         "Magánszemélyeknek"
       ]
     },
-    "Table header": {
-      "Status": [
-        "Állapot"
-      ]
-    },
     "TableHeader": {
       "Action": [
         "Művelet"
@@ -13640,9 +13695,6 @@
       ],
       "Select contact group": [
         "Névjegy csoport kiválasztása"
-      ],
-      "Select data to import": [
-        "Válassza ki az importálni kívánt adatokat"
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Gmail-üzenetek küldése és fogadása a ${ MAIL_APP_NAME } alkalmazással"

@@ -423,9 +423,6 @@
       "Get ${ planOrAppName }": [
         "Получить ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Получите бесплатный адрес ${ BRAND_NAME }"
-      ],
       "Get in touch": [
         "Связаться с нами"
       ],
@@ -1296,6 +1293,106 @@
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Чёрная пятница"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "15 GB storage": [
+        "Хранилище на 15 ГБ"
+      ],
+      "2 individual accounts": [
+        "2 отдельных аккаунта"
+      ],
+      "2 TB of secure storage": [
+        "Защищенное хранилище на 2 ТБ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Хранилище на 200 ГБ: в 40 раз больше текущего тарифа"
+      ],
+      "3 TB of secure storage": [
+        "Защищенное хранилище на 3 ТБ"
+      ],
+      "500 GB of secure storage": [
+        "Защищенное хранилище на 500 ГБ"
+      ],
+      "6 individual accounts": [
+        "6 отдельных аккаунтов"
+      ],
+      "Built-in 2FA authenticator": [
+        "Встроенная функция двухфакторной аутентификации"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются исходя из стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платёжного цикла."
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Recover previous file versions": [
+        "Восстановление предыдущих версий файлов"
+      ],
+      "Stronger protection against cyber threats": [
+        "Более надёжная защита от киберугроз"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Собственный домен для электронной почты"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Крупнейшая распродажа года"
+      ],
+      "Black Friday": [
+        "Чёрная пятница"
+      ],
+      "for 12 months": [
+        "на 12 месяцев"
+      ],
+      "Last chance to save big": [
+        "Последний шанс сэкономить по-крупному"
+      ],
+      "Protect your entire tribe": [
+        "Защитите всех, кто вам дорог"
+      ],
+      "Protection for two in a single plan": [
+        "Защита для двоих в одном тарифе"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } месяц",
@@ -1548,6 +1645,11 @@
       ],
       "Expand": [
         "Развернуть"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Эта цепочка писем слишком длинная для продолжения. Начните новый чат, чтобы ${ LUMO_SHORT_APP_NAME } работал быстро и без перебоев."
       ]
     },
     "collider_2025: feature": {
@@ -3041,9 +3143,6 @@
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Весь объём хранилища был распределён. Пожалуйста, уменьшите объём хранилища, выделенного для других пользователей."
-      ],
       "Already a member of this share": [
         "Уже участник этого общего ресурса"
       ],
@@ -3311,15 +3410,6 @@
       "Please complete the billing details": [
         "Пожалуйста, заполните платежную информацию"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Перед добавлением адресов настройте пользовательский домен."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Пожалуйста, настройте свой домен перед добавлением пользователей в вашу организацию."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Пожалуйста, включите многопользовательский режим перед добавлением пользователей в вашу организацию."
-      ],
       "Please enter a valid postal code": [
         "Пожалуйста, введите действительный почтовый индекс"
       ],
@@ -3352,9 +3442,6 @@
       ],
       "Please select billing state": [
         "Пожалуйста, выберите государство выставления счета"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
       ],
       "Port is required": [
         "Нужно указать порт"
@@ -3559,12 +3646,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Вы достигли лимита контактов для вашего аккаунта"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Вы израсходовали все адреса, предусмотренные вашим тарифом. Пожалуйста, улучшите ваш тариф, чтобы добавить новый адрес, или отключите какой-либо адрес в вашем аккаунте."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
       ],
       "You must set a name": [
         "Вы должны задать имя"
@@ -4372,14 +4453,6 @@
         "Выберите ${ boldExport } для экспорта календаря в формате файла ICS."
       ]
     },
-    "Import status": {
-      "In progress": [
-        "В процессе"
-      ],
-      "Migrated": [
-        "Перенесено"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
@@ -4415,9 +4488,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } требует адрес ${ BRAND_NAME } для безопасной синхронизации событий и шифрования. ${ claimAddressButton }."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } требует адрес ${ BRAND_NAME } для безопасной синхронизации событий и шифрования. Получите бесплатный адрес ${ MAIL_APP_NAME } сейчас."
@@ -4556,12 +4626,6 @@
       ],
       "${ storage } storage": [
         "${ storage } хранилище"
-      ],
-      "${ total } user found": [
-        "Найден ${ total } пользователь",
-        "Найдено ${ total } пользователя",
-        "Найдено ${ total } пользователей",
-        "Найдено ${ total } пользователя"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успешно обновлен.",
@@ -5463,9 +5527,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Временно недоступно из-за высокой нагрузки. Пожалуйста, попробуйте позже."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Временно недоступно. Пожалуйста, проверьте позже."
-      ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Спасибо, что выбрали ${ BRAND_NAME } для защиты вашей организации."
       ],
@@ -5576,9 +5637,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Чтобы помочь вам запомнить пароль, мы будем периодически просить вас ввести его. Со временем мы будем делать это всё реже."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Чтобы импортировать события, сначала создайте календарь в ${ CALENDAR_APP_NAME }. Именно в нём события будут отображаться после импорта."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Для повторной подписи контактов нам необходимо проверить каждый контакт с помощью списка ключей шифрования, доступных в вашем аккаунте. Если совпадение не найдено, ваш контакт будет повторно подписан основным ключом шифрования."
@@ -6128,9 +6186,6 @@
       "Calendar": [
         "Календарь"
       ],
-      "Calendars": [
-        "Календари"
-      ],
       "can edit": [
         "может редактировать"
       ],
@@ -6256,9 +6311,6 @@
       ],
       "Email format": [
         "Формат сообщения"
-      ],
-      "Emails": [
-        "Электронные письма"
       ],
       "Emails (all messages)": [
         "Письма (все)"
@@ -9022,17 +9074,11 @@
       "San Francisco": [
         "Сан-Франциско"
       ],
-      "Search": [
-        "Поиск"
-      ],
       "Search for group name": [
         "Поиск по названию группы"
       ],
       "Search for name or email": [
         "Поиск имени или электронной почты"
-      ],
-      "Search for users or addresses": [
-        "Искать пользователей или адреса"
       ],
       "Search parent folder": [
         "Искать родительскую папку"
@@ -10452,9 +10498,6 @@
       "Name": [
         "Имя"
       ],
-      "Size": [
-        "Размер"
-      ],
       "Status": [
         "Состояние"
       ],
@@ -10644,9 +10687,6 @@
       "Check for malicious files": [
         "Проверять наличие вредоносных файлов"
       ],
-      "Choose a provider": [
-        "Выберите провайдера"
-      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Получите свой адрес ${ MAIL_APP_NAME }"
       ],
@@ -10803,9 +10843,6 @@
       "Disconnected from Gmail": [
         "Соединение с Gmail разорвано"
       ],
-      "Domain names": [
-        "Доменные имена"
-      ],
       "Downgrade account": [
         "Перейти на более дешевую версию аккаунта"
       ],
@@ -10943,9 +10980,6 @@
       ],
       "Import groups": [
         "Импорт групп"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Импортируйте свои данные в ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Информация, раскрытая при утечке"
@@ -11142,9 +11176,6 @@
       "Select contact group": [
         "Выбор группы контактов"
       ],
-      "Select data to import": [
-        "Выберите данные для импорта"
-      ],
       "Select link expiration date": [
         "Выберите дату окончания действия ссылки"
       ],
@@ -11297,9 +11328,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Используйте ${ VPN_SHORT_APP_NAME } для обеспечения конфиденциальности данных"
-      ],
-      "Users and addresses": [
-        "Пользователи и адреса"
       ],
       "Verification failed": [
         "Проверка не удалась"

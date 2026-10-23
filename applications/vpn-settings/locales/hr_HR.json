@@ -539,9 +539,6 @@
       "Get ${ planOrAppName }": [
         "Nabavite ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Dobijte besplatnu adresu za ${ BRAND_NAME }"
-      ],
       "Get a new encrypted email address": [
         "Izradi novu adresu šifrirane e-pošte"
       ],
@@ -1786,6 +1783,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za pohranu dijeli se između svih ${ BRAND_NAME } usluga."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Crni petak"
+      ],
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mjesec"
+      ],
+      "15 GB storage": [
+        "15 GB prostora za pohranu"
+      ],
+      "2 individual accounts": [
+        "2 pojedinačna korisnička računa"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sigurnog prostora za pohranu"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB prostora za pohranu: 40x više od trenutnog plana"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sigurnog prostora za pohranu"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sigurnog prostora za pohranu"
+      ],
+      "6 individual accounts": [
+        "6 pojedinačnih korisničkih računa"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ugrađeni autentifikator 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti se temelje na standardnoj mjesečnoj cijeni. Pretplata će se obnoviti po standardnoj godišnjoj cijeni kada završi ciklus naplate."
+      ],
+      "Online document editor": [
+        "Uređivač dokumenata na mreži"
+      ],
+      "Recover previous file versions": [
+        "Oporavite prethodne verzije datoteka"
+      ],
+      "Stronger protection against cyber threats": [
+        "Jača zaštita od kibernetičkih prijetnji"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neograničene mape, oznake i filtri"
+      ],
+      "Use your own email domain": [
+        "Koristite vlastitu domenu e-pošte"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Najveće sniženje godine"
+      ],
+      "Black Friday": [
+        "Crni petak"
+      ],
+      "for 12 months": [
+        "za 12 mjeseci"
+      ],
+      "Last chance to save big": [
+        "Posljednja prilika za velike uštede"
+      ],
+      "Protect your entire tribe": [
+        "Zaštitite cijelu svoju obitelj"
+      ],
+      "Protection for two in a single plan": [
+        "Zaštita za dvoje u jednom planu"
       ]
     },
     "Billing cycle": {
@@ -4356,11 +4453,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Mogu zatražiti pristup vašem korisničkom računu u hitnom slučaju."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Oni će automatski dobiti pristup za **${ days } dan**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
-        "Oni će automatski dobiti pristup za **${ days } dana**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
-        "Oni će automatski dobiti pristup za **${ days } dana**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku."
-      ],
       "This will take effect immediately.": [
         "Ovo će stupiti na snagu odmah."
       ],
@@ -4649,9 +4741,6 @@
       "Invalid private key file": [
         "Nevažeća datoteka privatnog ključa"
       ],
-      "Invalid URL": [
-        "Nevažeći URL"
-      ],
       "Invalid VAT number": [
         "Nevaljani PDV broj"
       ],
@@ -4671,9 +4760,6 @@
       ],
       "Missing key packet": [
         "Nedostaje paket ključa"
-      ],
-      "Missing signature": [
-        "Nedostaje potpis"
       ],
       "Name already exists": [
         "Ime već postoji"
@@ -4861,9 +4947,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
-      ],
-      "Something went wrong": [
-        "Nešto je pošlo po zlu"
       ],
       "Something went wrong while converting the address": [
         "Došlo je do pogreške prilikom pretvaranja adrese"
@@ -6424,14 +6507,6 @@
         "Više opcija uvoza"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "U tijeku"
-      ],
-      "Migrated": [
-        "Migrirano"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -6480,9 +6555,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }ova tehnologija šifriranja omogućuje da nitko ne može pristupiti Vašoj lozinki - čak ni mi."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } zahtijeva ${ BRAND_NAME } adresu za sigurnu sinkronizaciju događaja i šifriranje. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novi kalendar",
@@ -8317,9 +8389,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Privremeno nedostupno zbog visoke potražnje. Molimo pokušajte ponovno kasnije."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Privremeno nedostupno. Provjerite ponovno kasnije."
-      ],
       "Thank you": [
         "Hvala vam"
       ],
@@ -8550,9 +8619,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Kako bismo vam pomogli da zapamtite svoju lozinku, tražit ćemo od vas da je povremeno unesete. S vremenom ćemo vas tražiti rjeđe."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Za uvoz događaja najprije stvorite kalendar u aplikaciji ${ CALENDAR_APP_NAME }. Ovdje će se događaji pojaviti nakon uvoza."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Kako biste bili u toku s najnovijim razvojem proizvoda ${ BRAND_NAME }, možete se pretplatiti na naše razne e-mailove i povremeno posjećivati ${ blogLink }."
@@ -9533,9 +9599,6 @@
       "Calendar": [
         "Kalendar"
       ],
-      "Calendars": [
-        "Kalendari"
-      ],
       "Card details": [
         "Detalji kartice"
       ],
@@ -9714,9 +9777,6 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-pošta s domenom @vasatvrtka.com"
-      ],
-      "Emails": [
-        "E-pošta"
       ],
       "Emails (all messages)": [
         "Poruke e-pošte (sve poruke)"
@@ -13376,9 +13436,6 @@
       "Search for an email or IP address": [
         "Potražite e-poštu ili IP adresu"
       ],
-      "Search for users or addresses": [
-        "Pretražite korisnike ili adrese"
-      ],
       "Search parent folder": [
         "Pretraži nadređenu mapu"
       ],
@@ -16555,14 +16612,6 @@
         "Za pojedince"
       ]
     },
-    "Table header": {
-      "Size": [
-        "Veličina"
-      ],
-      "Status": [
-        "Status"
-      ]
-    },
     "TableHeader": {
       "Action": [
         "Radnja"
@@ -16956,9 +17005,6 @@
       ],
       "Change second password": [
         "Promijeni drugu lozinku"
-      ],
-      "Choose a provider": [
-        "Odaberite pružatelja usluga"
       ],
       "Choose user affiliations": [
         "Odaberite korisničke pripadnosti"
@@ -17412,9 +17458,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Uvoz iz ${ PRODUCT_NAMES.EASY_SWITCH }a"
       ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Uvezite svoje podatke u ${ BRAND_NAME }"
-      ],
       "Imports": [
         "Uvozi"
       ],
@@ -17699,9 +17742,6 @@
       ],
       "Select contact group": [
         "Odaberi grupu kontakta"
-      ],
-      "Select data to import": [
-        "Odaberite podatke za uvoz"
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Šaljite i primajte Gmail koristeći ${ MAIL_APP_NAME }"

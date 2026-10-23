@@ -396,9 +396,6 @@
       "Get ${ planOrAppName }": [
         "Získajte ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Získajte bezplatnú ${ BRAND_NAME } adresu"
-      ],
       "Get the apps": [
         "Stiahnť aplikácie"
       ],
@@ -524,9 +521,6 @@
       ],
       "Merge contacts": [
         "Zlúčiť kontakty"
-      ],
-      "Migrate": [
-        "Migrovať"
       ],
       "More actions": [
         "Ďalšie akcie"
@@ -1187,6 +1181,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný priestor je zdieľaný medzi všetkými službami ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Využiť ponuku"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mesiac"
+      ],
+      "15 GB storage": [
+        "15 GB úložiska"
+      ],
+      "2 individual accounts": [
+        "2 samostatné účty"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpečného úložiska"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB úložiska: 40-násobok vášho aktuálneho plánu"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpečného úložiska"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpečného úložiska"
+      ],
+      "6 individual accounts": [
+        "6 samostatných účtov"
+      ],
+      "Built-in 2FA authenticator": [
+        "Zabudovaný 2FA autentifikátor"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného obdobia obnoví za štandardnú ročnú sadzbu."
+      ],
+      "Online document editor": [
+        "Online editor dokumentov"
+      ],
+      "Recover previous file versions": [
+        "Obnovte predchádzajúce verzie súborov"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnejšia ochrana pred kybernetickými hrozbami"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neobmedzený počet priečinkov, štítkov a filtrov"
+      ],
+      "Use your own email domain": [
+        "Používajte vlastnú emailovú doménu"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkcie ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Najväčší výpredaj roka"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "na 12 mesiacov"
+      ],
+      "Last chance to save big": [
+        "Posledná šanca ušetriť výrazne"
+      ],
+      "Protect your entire tribe": [
+        "Chráňte celú svoju rodinu"
+      ],
+      "Protection for two in a single plan": [
+        "Ochrana pre dvoch v jednom pláne"
       ]
     },
     "Browser": {
@@ -2838,14 +2932,8 @@
       "Address could not be added.": [
         "Adresu nebolo možné pridať."
       ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresu už používa používateľ mimo vašej organizácie. Kontaktujte zákaznícku podporu, aby ste to vyriešili."
-      ],
       "Address primary private key not found": [
         "Primárny súkromný kľúč adresy nenájdený"
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Všetok úložný priestor bol pridelený. Zmenšite prosím úložný priestor pridelený iným používateľom."
       ],
       "Already a member of this share": [
         "Už ste členom tohto zdieľania"
@@ -3129,9 +3217,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Starý verejný odkaz nie je možné aktualizovať. Vytvorte nový verejný odkaz, prosím."
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresa člena nebola nájdená. Na vyriešenie tohto problému kontaktujte zákaznícku podporu."
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Zlúčte aspoň ${ calendarsToFixCount } kalendár s existujúcim ${ BRAND_NAME } kalendárom",
         "Zlúčte aspoň ${ calendarsToFixCount } kalendárov s existujúcimi ${ BRAND_NAME } kalendármi",
@@ -3143,12 +3228,6 @@
       ],
       "Missing key packet": [
         "Chýbajúci kľúčový balík"
-      ],
-      "Missing organization private key": [
-        "Chýba súkromný kľúč organizácie"
-      ],
-      "Missing organization public key": [
-        "Chýba verejný kľúč organizácie"
       ],
       "Missing signature": [
         "Chýbajúci podpis"
@@ -3216,12 +3295,6 @@
       "Operation failed, try again later": [
         "Operácia sa nepodarila, skúste to neskôr"
       ],
-      "Organization does not have enough seats available": [
-        "Organizaícia nemá dostatok voľných licencií"
-      ],
-      "Organization does not have enough storage available": [
-        "Organzácia nemá dostatok úložného priestoru"
-      ],
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
       ],
@@ -3245,15 +3318,6 @@
       ],
       "Photo not found": [
         "Fotografia nebola nájdená"
-      ],
-      "Please configure a custom domain before adding addresses.": [
-        "Pred pridaním adries nastavte vlastnú doménu."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Pred pridaním používateľov do svojej organizácie nakonfigurujte vlastnú doménu."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Pred pridaním používateľov do organizácie povoľte podporu viacerých používateľov."
       ],
       "Please enter a valid postal code": [
         "Zadajte platné PSČ, prosím"
@@ -3281,9 +3345,6 @@
       ],
       "Please select a state": [
         "Vyberte kraj, prosím"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Ak chcete spravovať viacerých používateľov, prejdite na obchodný plán s viac ako 1 používateľom."
       ],
       "Port is required": [
         "Port je požadovaný"
@@ -3551,12 +3612,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Dosiahli ste limit počtu kontaktov pre svoj účet"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Využili ste všetky adresy vo vašom pláne. Navýšte, prosím, svoj plán, aby ste mohli pridať novú adresu alebo deaktivujte nejakú adresu vo vašom účte."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Limit počtu používateľov vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať ďalšieho používateľa."
       ],
       "You must set a name": [
         "Musíte nastaviť meno"
@@ -3983,29 +4038,6 @@
         "terabajtov"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Aktivované"
-      ],
-      "All": [
-        "Všetci"
-      ],
-      "Errors": [
-        "Chyby"
-      ],
-      "In progress": [
-        "Prebieha"
-      ],
-      "Migrated": [
-        "Presunuté"
-      ],
-      "Not activated": [
-        "Neaktivovaný"
-      ],
-      "Pending": [
-        "Čaká"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "Štítok ${ Label.Name } bol aktualizovaný"
@@ -4393,20 +4425,6 @@
         "Ak chcete kalendár exportovať ako ICS súbor, vyberte ${ boldExport }."
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Má chyby"
-      ],
-      "In progress": [
-        "Prebieha"
-      ],
-      "Migrated": [
-        "Presunuté"
-      ],
-      "Pending": [
-        "Čaká"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktov nebude importované. Kliknite pre detaily"
@@ -4448,9 +4466,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pre bezpečnú synchronizáciu udalostí a šifrovanie. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendár",
@@ -4557,17 +4572,17 @@
         "${ selectedFoldersCountLocalized } vybratých štítkov",
         "${ selectedFoldersCountLocalized } vybratých štítkov"
       ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } vybrané",
+        "${ selection.selectedIds.length } vybrané",
+        "${ selection.selectedIds.length } vybraných",
+        "${ selection.selectedIds.length } vybraných"
+      ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "Zostáva vám ešte ${ timeRemaining } v rámci skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, aby ste neprišli o prístup. ${ learnMoreLink }"
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Zostáva vám ${ timeRemaining } skúšobnej doby. Kliknite na ${ addPaymentMethodLink }, ak si chcete predplatné zachovať. ${ learnMoreLink }"
-      ],
-      "${ total } user found": [
-        "${ total } nájdený používateľ",
-        "${ total } nájdení používatelia",
-        "${ total } nájdených používateľov",
-        "${ total } nájdených používateľov"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt bol úspešne aktualizovaný.",
@@ -4905,9 +4920,6 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Iba súbory (bez fotografií, ${ DOCS_APP_NAME } alebo ${ SHEETS_APP_NAME }) – celkovo až 100 GB, 100 000 súborov a 50 GB na jeden súbor"
       ],
-      "Find out what can be migrated.": [
-        "Zistite, čo je možné preniesť."
-      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Priečinok „${ link.name }“ bol vymazaný počas sťahovania"
       ],
@@ -5124,9 +5136,6 @@
       "No results found": [
         "Nenájdené žiadne výsledky"
       ],
-      "No users to display": [
-        "Nie sú žiadni používatelia na zobrazenie"
-      ],
       "No version history available": [
         "História verzií nie je k dispozícii"
       ],
@@ -5283,9 +5292,6 @@
       "Select a folder to move to.": [
         "Vyberte priečinok na presun."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Vyberte presne to, čo chcete preniesť. Zmena sa uplatní na všetkých používateľov v organizácii."
-      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, ktorý chcete aby bol použitý ako predvolený pre zasielanie emailu na túto emailovú adresu."
       ],
@@ -5364,9 +5370,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "V súčasnosti nie je k dispozícii kvôli veľkému záujmu. Skúste to neskôr, prosím."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Dočasne nedostupné. Skúste to neskôr."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Autorstvo úprav v dokumente nebolo možné overiť. Chcete tento dokument označiť ako overený? Môžete zvoliť možnosť Ignorovať a rozhodnúť sa neskôr."
       ],
@@ -5427,12 +5430,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Tento jedinečný kód môžu webové stránky a poskytovatelia internetových služieb (ISP) použiť na prepojenie vašej polohy a histórie prehliadania s vaším zariadením"
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Tento používateľ nemôže byť prenesený, pretože jeho emailová adresa nie je k dispozícii na ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Tento používateľ nemôže byť prenesený z dôvodu nekompatibility platforiem."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
       ],
@@ -5444,30 +5441,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Aby sme vám pomohli nezabudnúť heslo, budeme vás pravidelne žiadať o jeho zadanie. Časom vás o to budeme žiadať čoraz menej."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Ak chcete importovať udalosti, najprv vytvorte kalendár v ${ CALENDAR_APP_NAME }. Po importe sa tu zobrazia udalosti."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Ak chcete tohto používateľa presunúť, pridajte a overte emailovú doménu na stránke ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Ak chcete tohto používateľa presunúť, aktivujte jeho účet vo vašom ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Ak chcete tohto používateľa presunúť, aktivujte jeho účet na ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Ak chcete tohto používateľa presunúť, aktivujte jeho adresu na ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Na presun tohto používateľa je potrebné, aby prijal pozvánku na pripojenie sa k ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Ak chcete tohto používateľa presunúť, odarchivujte ho vo vašej ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Ak chcete tohto používateľa presunúť, zrušte jeho pozastavenie vo vašom ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Na opätovné podpísanie vašich kontaktov musíme porovnať každý kontakt so zoznamom šifrovacích kľúčov dostupných vo vašom účte. Ak sa nenájde žiadna zhoda, váš kontakt bude znova podpísaný primárnym šifrovacím kľúčom."
@@ -5579,9 +5552,6 @@
       ],
       "Writing assistant": [
         "Asistent písania"
-      ],
-      "You": [
-        "Vy"
       ],
       "you": [
         "vy"
@@ -5887,9 +5857,6 @@
       "Calendar": [
         "Kalendár"
       ],
-      "Calendars": [
-        "Kalendáre"
-      ],
       "can edit": [
         "môže upravovať"
       ],
@@ -5973,9 +5940,6 @@
       ],
       "Email format": [
         "Formát emailu"
-      ],
-      "Emails": [
-        "Emaily"
       ],
       "Emails (all messages)": [
         "Emaily (všetky správy)"
@@ -6153,6 +6117,12 @@
       ],
       "Reveal password": [
         "Odkryť heslo"
+      ],
+      "Select ${ document.name }": [
+        "Vybrať ${ document.name }"
+      ],
+      "Select all": [
+        "Vybrať všetko"
       ],
       "Set a password to limit access via link": [
         "Nastavte heslo, aby ste obmedzili prístup prostredníctvom odkazu"
@@ -7589,6 +7559,12 @@
       "\"Document deleted permanently": [
         "Dokument bol trvalo odstránený"
       ],
+      "${ count } item could not be moved to trash": [
+        "${ count } položka nemohla byť presunutá do koša",
+        "${ count } položky nemohli byť presunuté do koša",
+        "${ count } položiek nemohlo byť presunutých do koša",
+        "${ count } položiek nemohlo byť presunutých do koša"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } položku sa nepodarilo dešifrovať",
         "${ count } položky sa nepodarilo dešifrovať",
@@ -8118,12 +8094,6 @@
       "An organization is required for this plan.": [
         "Tento plán si vyžaduje organizáciu."
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
-      ],
-      "Born Private requires a donation.": [
-        "Na Born Private je potrebný príspevok."
-      ],
       "Buying credits requires a separate purchase.": [
         "Nákup kreditov si vyžaduje samostatnú platbu."
       ],
@@ -8234,12 +8204,6 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Už vlastníte ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
-      ],
-      "You already own Born Private.": [
-        "Born Private už vlastníte."
-      ],
-      "Your account is too old for Born Private.": [
-        "Váš účet je príliš starý na službu Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -8339,17 +8303,11 @@
       "Please select the main reason": [
         "Prosím vyberte hlavný dôvod"
       ],
-      "Search": [
-        "Hľadať"
-      ],
       "Search for group name": [
         "Vyhľadať názov skupiny"
       ],
       "Search for name or email": [
         "Vyhľadať meno alebo emailovú adresu"
-      ],
-      "Search for users or addresses": [
-        "Hľadať používateľov alebo adresy"
       ],
       "Search parent folder": [
         "Prehľadať nadradenú zložku"
@@ -9141,12 +9099,6 @@
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Odkaz na túto položku bol uložený na vašom disku. Prístup k nemu môžete získať neskôr v časti \"Zdieľané so mnou\"."
       ],
-      "Editor permissions": [
-        "Oprávnenia redaktora"
-      ],
-      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
-        "Redaktori teraz môžu spravovať zdieľanie a pozývať ďalších používateľov. Túto funkciu môžete kedykoľvek vypnúť v nastaveniach zdieľania."
-      ],
       "To edit this document, create a copy that you can modify.": [
         "Ak chcete tento dokument upraviť, vytvorte si kópiu, ktorú môžete meniť."
       ]
@@ -9494,17 +9446,11 @@
       "Actions": [
         "Akcie"
       ],
-      "Activated": [
-        "Aktivovaný"
-      ],
       "Address": [
         "Adresa"
       ],
       "Created": [
         "Vytvorené"
-      ],
-      "Estimated size": [
-        "Odhadovaná veľkosť"
       ],
       "Expires": [
         "Vyprší"
@@ -9512,23 +9458,14 @@
       "Fingerprint": [
         "Digitálny odtlačok"
       ],
-      "Migration status": [
-        "Stav migrácie"
-      ],
       "Name": [
         "Meno"
-      ],
-      "Size": [
-        "Veľkosť"
       ],
       "Status": [
         "Stav"
       ],
       "Type": [
         "Typ"
-      ],
-      "User": [
-        "Používateľ"
       ]
     },
     "TableHeader": {
@@ -9653,9 +9590,6 @@
       "Change password": [
         "Zmeniť heslo"
       ],
-      "Choose a provider": [
-        "Vyberte poskytovateľa"
-      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Získajte vašu ${ MAIL_APP_NAME } adresu"
       ],
@@ -9667,9 +9601,6 @@
       ],
       "Computers": [
         "Počítače"
-      ],
-      "Configure migration": [
-        "Nastaviť migráciu"
       ],
       "Connect apps and devices": [
         "Pripojenie aplikácií a zariadení"
@@ -9782,9 +9713,6 @@
       "Document verification failed": [
         "Overenie dokumentu zlyhalo"
       ],
-      "Domain names": [
-        "Názvy domén"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
       ],
@@ -9886,9 +9814,6 @@
       ],
       "Import groups": [
         "Importovať skupiny"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Importujte svoje dáta do ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Informácie odhalené pri úniku"
@@ -10031,14 +9956,8 @@
       "Select contact group": [
         "Vybrať skupinu kontaktov"
       ],
-      "Select data to import": [
-        "Vyberte dáta na import"
-      ],
       "Select link expiration date": [
         "Vyberte koniec platnosti odkazu"
-      ],
-      "Select users to migrate": [
-        "Vyberte používateľov na presun"
       ],
       "Set recovery methods": [
         "Nastaviť spôsoby obnovenia"
@@ -10136,9 +10055,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Používajte ${ VPN_SHORT_APP_NAME } na ochranu osobných údajov"
       ],
-      "Users and addresses": [
-        "Používatelia a adresy"
-      ],
       "Verify your password": [
         "Overte svoje heslo"
       ],
@@ -10153,9 +10069,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vitajte v službe ${ BRAND_NAME } pre Business"
-      ],
-      "What are you migrating?": [
-        "Čo migrujete?"
       ],
       "What can a VPN protect you from?": [
         "Pred čím vás môže VPN ochrániť?"
@@ -10229,9 +10142,6 @@
       "Customize import to reduce the number of labels": [
         "Prispôsobiť import na zníženie počtu štítkov"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Stav migrácie dát z ${ providerName } do ${ BRAND_NAME }"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitálne podpisovanie emailov pomáha overiť, že sú správy zaslané vami"
       ],
@@ -10294,9 +10204,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Používatelia, ktorí sa prihlásili do svojho ${ BRAND_NAME } účtu"
       ],
       "Version 6 OpenPGP key": [
         "Kľúč OpenPGP verzie 6"
@@ -10366,6 +10273,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Tento používateľ získa práva správcu pri najbližšom prihlásení."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Navýšte úroveň na podporovaný plán, aby ste mohli využívať pozície správcov."
       ],

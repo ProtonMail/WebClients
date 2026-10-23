@@ -1466,9 +1466,6 @@
       "Maybe later": [
         "Labda baadaye"
       ],
-      "Migrate": [
-        "Hamisha"
-      ],
       "More": [
         "Zaidi"
       ],
@@ -2915,6 +2912,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Nafasi ya hifadhi inashirikiwa katika huduma zote za ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Pata ofa"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mwezi"
+      ],
+      "15 GB storage": [
+        "Hifadhi ya GB 15"
+      ],
+      "2 individual accounts": [
+        "Akaunti 2 za kibinafsi"
+      ],
+      "2 TB of secure storage": [
+        "Hifadhi salama ya TB 2"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Hifadhi ya GB 200: mara 40 ya mpango wako wa sasa"
+      ],
+      "3 TB of secure storage": [
+        "Hifadhi salama ya TB 3"
+      ],
+      "500 GB of secure storage": [
+        "Hifadhi salama ya GB 500"
+      ],
+      "6 individual accounts": [
+        "Akaunti 6 za kibinafsi"
+      ],
+      "Built-in 2FA authenticator": [
+        "Kithibitisho cha uthibitishaji wa hatua mbili kilichojengwa ndani"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Punguzo linatokana na bei ya kawaida ya kila mwezi. Usajili wako utaendelea kwa bei ya kawaida ya mwaka mzunguko wa malipo unapoisha."
+      ],
+      "Online document editor": [
+        "Kihariri cha hati mtandaoni"
+      ],
+      "Recover previous file versions": [
+        "Rejesha matoleo ya awali ya faili"
+      ],
+      "Stronger protection against cyber threats": [
+        "Ulinzi madhubuti zaidi dhidi ya vitisho vya mtandao"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Folda, lebo na vichujio visivyo na kikomo"
+      ],
+      "Use your own email domain": [
+        "Tumia kikoa chako cha barua pepe"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } na ${ VPN_SHORT_APP_NAME } za kiwango cha juu"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } za kiwango cha juu"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } za kiwango cha juu"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } na ${ VPN_SHORT_APP_NAME } za kiwango cha juu"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } na ${ VPN_SHORT_APP_NAME } za kiwango cha juu"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Ofa kubwa zaidi ya mwaka"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "kwa miezi 12"
+      ],
+      "Last chance to save big": [
+        "Nafasi ya mwisho kuokoa pesa nyingi"
+      ],
+      "Protect your entire tribe": [
+        "Linda jamii yako yote"
+      ],
+      "Protection for two in a single plan": [
+        "Ulinzi kwa watu wawili katika mpango mmoja"
       ]
     },
     "Billing cycle": {
@@ -5272,9 +5369,6 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Leteza barua pepe zako, matukio ya kalenda, na mawasiliano yako kutoka kwa mtoa huduma mwingine."
       ],
-      "Bring over your files from another provider.": [
-        "Leta faili zako kutoka kwa mtoa huduma mwingine."
-      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Jenga uaminifu na utambulisho wa chapa kwa anwani za barua pepe za kitaalamu katika kikoa chako mwenyewe."
       ],
@@ -6887,10 +6981,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Wanaweza kuomba kufikia akaunti yako endapo itatokea dharura."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Atapata ufikiaji kiotomatiki baada ya **siku ${ days }**, mnamo **${ formattedAccessibleAt }**. Unaweza kukataa ombi lake au kumpa ufikiaji mara moja wakati wowote.",
-        "Atapata ufikiaji kiotomatiki baada ya **siku ${ days }**, mnamo **${ formattedAccessibleAt }**. Unaweza kukataa ombi lake au kumpa ufikiaji mara moja wakati wowote."
-      ],
       "This will take effect immediately.": [
         "Hii itaanza kutumika mara moja."
       ],
@@ -7046,9 +7136,6 @@
       ],
       "Address is already added to your account": [
         "Anwani tayari imeongezwa kwenye akaunti yako"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Anwani hii tayari inatumika na mtumiaji asiye katika shirika lako. Tafadhali wasiliana na huduma kwa wateja kutatua hili."
       ],
       "Address primary private key not found": [
         "Ufunguo msingi wa faragha wa anwani haupatikani"
@@ -7421,9 +7508,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Kiwango cha juu kilichoruhusiwa ni ${ displayMaxValue }"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Anwani ya mwanachama haikupatikana. Tafadhali wasiliana na huduma kwa wateja kutatua hili."
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Unganisha kalenda angalau ${ calendarsToFixCount } na kalenda ya ${ BRAND_NAME } iliyopo",
         "Unganisha kalenda angalau ${ calendarsToFixCount } na kalenda za ${ BRAND_NAME } zilizopo."
@@ -7433,12 +7517,6 @@
       ],
       "Missing key packet": [
         "Kifurushi cha ufunguo kinakosekana"
-      ],
-      "Missing organization private key": [
-        "Ufunguo wa faragha wa shirika haupatikani."
-      ],
-      "Missing organization public key": [
-        "Ufunguo wa umma wa shirika haupatikani."
       ],
       "Missing signature": [
         "Saini inakosekana"
@@ -7518,12 +7596,6 @@
       ],
       "Operation failed, try again later": [
         "Operesheni haikufaulu, jaribu tena baadaye."
-      ],
-      "Organization does not have enough seats available": [
-        "Shirika halina leseni za mtumiaji za kutosha."
-      ],
-      "Organization does not have enough storage available": [
-        "Shirika halina hifadhi ya kutosha."
       ],
       "Organization key is not decrypted": [
         "Funguo za shirika hazijasimbuliwa"
@@ -8949,29 +9021,6 @@
         "Terabaiti"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Imewashwa"
-      ],
-      "All": [
-        "Zote"
-      ],
-      "Errors": [
-        "Hitilafu"
-      ],
-      "In progress": [
-        "Inaendelea"
-      ],
-      "Migrated": [
-        "Imehamishwa"
-      ],
-      "Not activated": [
-        "Haijawashwa"
-      ],
-      "Pending": [
-        "Inasubiri"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Kumbukumbu"
@@ -9549,9 +9598,6 @@
       "Contact us": [
         "Wasiliana nasi"
       ],
-      "Downloads": [
-        "Vipakuliwa"
-      ],
       "Enjoying ${ planName }?": [
         "Je, unafurahia ${ planName }?"
       ],
@@ -9922,9 +9968,6 @@
       "Failed": [
         "Imeshindikana"
       ],
-      "Has errors": [
-        "Ina hitilafu"
-      ],
       "Import completed successfully": [
         "Uletaji umekamilika."
       ],
@@ -9942,9 +9985,6 @@
       ],
       "Paused": [
         "Imesitishwa"
-      ],
-      "Pending": [
-        "Inasubiri"
       ],
       "Skipped ${ count } contact due to incompatibilities": [
         "Mwasiliani ${ count } amerukwa kutokana na kutokulingana.",
@@ -11486,9 +11526,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Vichujio hufanya kazi kwa barua pepe zote, ikiwemo zinazoingia na zilizotumwa. Kila kichujio lazima kiwe na jina, sharti na hatua angalau."
       ],
-      "Find out what can be migrated.": [
-        "Jifunze kuhusu kinachoweza kuhamishwa."
-      ],
       "for ${ price }": [
         "kwa ${ price }"
       ],
@@ -12135,9 +12172,6 @@
       ],
       "No single sign-on": [
         "Hakuna single sign-on"
-      ],
-      "No users to display": [
-        "Hakuna watumiaji wa kuonyesha"
       ],
       "Not a valid URL": [
         "Si URL halali"
@@ -13014,12 +13048,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Kiungo hiki cha kujiondoa kimeisha muda. Tafadhali fungua barua pepe mpya zaidi kutoka kwenye orodha hii ya wapokeaji."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Mtumiaji huyu hawezi kuhamishwa kwa sababu anwani yake ya barua pepe haipatikani kwenye ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Mtumiaji huyu hawezi kuhamishwa kwa sababu ya kutokuwiana kwa majukwaa."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Mtumiaji huyu kwa sasa anawajibika kwa malipo ya shirika lako. Ukipunguza cheo cha mwanachama huyu, wewe utawajibika kwa malipo ya shirika lako."
       ],
@@ -13160,27 +13188,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Ili kufuatilia maendeleo mapya ya bidhaa za ${ BRAND_NAME }, unaweza kujisajili kwenye barua pepe zetu mbalimbali na kutembelea ${ blogLink } mara kwa mara."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Ili kuhamisha mtumiaji huyu, ongeza na uthibitishe kikoa cha barua pepe chini ya ${ domainNamesLink }."
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Ili kuhamisha mtumiaji huyu, washa akaunti yake kwenye ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Ili kuhamisha mtumiaji huyu, washa akaunti yake chini ya ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Ili kuhamisha mtumiaji huyu, washa anwani yake chini ya ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Ili kuhamisha mtumiaji huyu, lazima akubali mwaliko wa kujiunga na ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Ili kuhamisha mtumiaji huyu, toa akaunti yake kutoka kwenye kihifadhi kwenye ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Ili kuhamisha mtumiaji huyu, ondoa usimamishaji wake kwenye ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Ili kuzuia matumizi mabaya au udanganyifu, tunaomba mchango wa chini kabisa wa ${ minimumDonation }. Hii inasaidia kazi ya ${ protonFoundationLink } ya kutetea faragha ya kidijitali duniani kote na husaidia kulinda kizazi kijacho."
@@ -13637,9 +13644,6 @@
       ],
       "Yearly": [
         "Kila mwaka"
-      ],
-      "You": [
-        "Wewe"
       ],
       "You already have a free account": [
         "Tayari una akaunti ya bila malipo."
@@ -16682,9 +16686,6 @@
       ],
       "Details": [
         "Maelezo"
-      ],
-      "Downloads": [
-        "Vipakuliwa"
       ],
       "Encryption and keys": [
         "Usimbaji fiche na funguo"
@@ -20406,12 +20407,6 @@
       "Billing Country": [
         "Nchi ya malipo"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private haiwezi kununuliwa ikiwa una usajili unaoendelea."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private inahitaji mchango."
-      ],
       "Buying credits requires a separate purchase.": [
         "Kununua salio kunahitaji manunuzi tofauti."
       ],
@@ -20598,9 +20593,6 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Tayari unamiliki ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Tayari unamiliki Born Private."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Kiasi cha ${ amountToCharge } kitakatwa kutoka kwenye njia yako ya malipo uliyoteua."
       ],
@@ -20609,9 +20601,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Utapelekwa hivi karibuni ili uthibitishe malipo yako."
-      ],
-      "Your account is too old for Born Private.": [
-        "Akaunti yako ni ya zamani mno kwa Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Sarafu yako imebadilishwa kuwa yuro (€) kwa sababu ${ IDEAL_WERO_BRAND_NAME } inaunga mkono malipo kwa yuro pekee."
@@ -25203,23 +25192,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "Imewashwa"
-      ],
-      "Estimated size": [
-        "Ukubwa uliokadiriwa"
-      ],
-      "Migration status": [
-        "Hali ya uhamishaji"
-      ],
       "Size": [
         "Ukubwa"
       ],
       "Status": [
         "Hali"
-      ],
-      "User": [
-        "Mtumiaji"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25792,9 +25769,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "Sanidi wasifu wa kifaa cha VPN wakati wote"
-      ],
-      "Configure migration": [
-        "Sanidi uhamishaji"
       ],
       "Configure your domain": [
         "Sanidi kikoa chako"
@@ -27390,9 +27364,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Karibu kwenye ${ BRAND_NAME } for Business"
       ],
-      "What are you migrating?": [
-        "Unahamisha nini?"
-      ],
       "What changes if you switch to the Free plan": [
         "Nini kinabadilika unapohamia kwenye Free plan"
       ],
@@ -27672,9 +27643,6 @@
       "Customize import to reduce the number of labels": [
         "Rekebisha uletaji ili kupunguza idadi ya lebo"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Hali ya uhamishaji wa data kutoka ${ providerName } hadi ${ BRAND_NAME }"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Futa ujumbe wa tupio na barua taka baada ya siku 30. Kuwasha kufuta kiotomatiki kunaweka tarehe ya kufuta kwa ujumbe ulioko tayari kwenye tupio/barua taka kulingana na tarehe uliohamishiwa humo."
       ],
@@ -27896,9 +27864,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Eneo takriban la mtumiaji (kulingana na anwani yake ya IP)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Watumiaji waliofikia akaunti zao za ${ BRAND_NAME }"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Watumiaji wataona nembo yako badala ya aikoni ya ${ BRAND_NAME } wakati wameingia kwenye programu zetu za wavuti."

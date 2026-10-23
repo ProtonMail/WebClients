@@ -610,6 +610,11 @@
         "Administrador de contraseñas premium"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantía de reembolso de 30 días: cancela durante los 30 días posteriores a tu compra y comunícate con nuestro ${ customerSupportLink } para obtener un reembolso."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicación de escritorio ${ MAIL_APP_NAME }"
@@ -632,6 +637,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Aproveche la oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "15 GB storage": [
+        "15 GB de almacenamiento"
+      ],
+      "2 individual accounts": [
+        "2 cuentas individuales"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de almacenamiento seguro"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces el plan actual"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de almacenamiento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de almacenamiento seguro"
+      ],
+      "6 individual accounts": [
+        "6 cuentas individuales"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en el precio mensual estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Online document editor": [
+        "Editor de documentos en línea"
+      ],
+      "Recover previous file versions": [
+        "Recupere las versiones anteriores de sus archivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Más protección contra las ciberamenazas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Use un dominio de correo electrónico propio"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Los mejores descuentos del año"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "por 12 meses"
+      ],
+      "Last chance to save big": [
+        "Última oportunidad para ahorrar mucho"
+      ],
+      "Protect your entire tribe": [
+        "Proteja a toda su tribu"
+      ],
+      "Protection for two in a single plan": [
+        "Protección para dos en un solo plan"
       ]
     },
     "Billing cycle option": {
@@ -895,6 +1000,9 @@
       "Add file to ${ DRIVE_APP_NAME }": [
         "Agregar archivo a ${ DRIVE_APP_NAME }"
       ],
+      "Add from ${ DRIVE_SHORT_APP_NAME }": [
+        "Añadir desde ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Add memory": [
         "Añadir memoria"
       ],
@@ -942,6 +1050,9 @@
       ],
       "Create image": [
         "Crear imagen"
+      ],
+      "Creations": [
+        "Creaciones"
       ],
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "${ LUMO_SHORT_APP_NAME } personalizados"
@@ -1066,6 +1177,9 @@
       "Update from chats (${ newPromptsSinceLastUpdate } new)": [
         "Actualización desde los chats (${ newPromptsSinceLastUpdate } nuevo)",
         "Actualización desde los chats (${ newPromptsSinceLastUpdate } nuevos)"
+      ],
+      "Upload": [
+        "Cargar"
       ],
       "Upload file to Drive": [
         "Cargar archivo en Drive"
@@ -1338,11 +1452,11 @@
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "Después de continuar, Apertus aparecerá como el modelo seleccionado en el menú de modelos. Puede usar ese menú para cambiar a otro modelo en cualquier momento."
       ],
-      "Always enable web search for new conversations": [
-        "Activar siempre la búsqueda web para nuevas conversaciones"
-      ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "Las claves de API le permiten acceder a ${ LUMO_SHORT_APP_NAME } mediante programación. Cada clave se muestra solo una vez al momento de su creación."
+      ],
+      "Choose the language you speak when using dictation.": [
+        "Elija el idioma que habla cuando use el dictado."
       ],
       "Configure app preferences, keyboard shortcuts, and updates in the desktop settings window.": [
         "Configure las preferencias de la aplicación, los atajos de teclado y las actualizaciones en la ventana de configuración del escritorio."
@@ -1350,8 +1464,8 @@
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Cree una clave para integrar ${ LUMO_SHORT_APP_NAME } con sus scripts y herramientas."
       ],
-      "Encrypted search index for chats and Drive files.": [
-        "Índice de búsqueda cifrado para chats y archivos de Drive."
+      "Enable web search by default in new chats.": [
+        "Active la búsqueda web por defecto en chats nuevos."
       ],
       "Fully open, Swiss-made model for lighter tasks": [
         "Modelo suizo totalmente abierto para tareas más ligeras"
@@ -1362,9 +1476,6 @@
       "If Apertus gives you a poor response, use the thumbs down button to send feedback. The related prompt and response will be shared with university research teams at ETH Zurich and EPFL to help improve the model. This feedback loop is especially valuable for fully open models, helping them improve faster and remain competitive.": [
         "Si Apertus le ofrece una respuesta deficiente, utilizase el botón de «pulgar hacia abajo» para enviar comentarios. La instrucción y la respuesta correspondientes se compartirán con los equipos de investigación universitaria de ETH Zúrich y EPFL para ayudar a mejorar el modelo. Este ciclo de retroalimentación es especialmente valioso para los modelos totalmente abiertos, ya que contribuye a que mejoren más rápidamente y se mantengan competitivos."
       ],
-      "Include project conversations in the main chat history": [
-        "Incluir conversaciones del proyecto en el historial de chat principal"
-      ],
       "Internal preview of an upcoming model": [
         "Vista previa interna de un modelo próximo"
       ],
@@ -1374,17 +1485,17 @@
       "Keep it safe — it won't be shown again": [
         "Guárdela en un lugar seguro, no volverá a mostrarse"
       ],
-      "Language used when transcribing your voice": [
-        "Idioma usado cuando se transcribe su voz"
-      ],
       "Last updated on ${ formattedDate }": [
         "Última actualización el ${ formattedDate }"
       ],
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Más información sobre cómo usar ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
-        "Permita a ${ LUMO_SHORT_APP_NAME } visualizar datos con gráficos"
+      "Let ${ LUMO_SHORT_APP_NAME } generate charts when they help explain an answer.": [
+        "Permita que ${ LUMO_SHORT_APP_NAME } genere gráficos cuando ayuden a explicar una respuesta."
+      ],
+      "Let ${ LUMO_SHORT_APP_NAME } open documents, code, and web pages in a canvas beside your chat. Change this for individual chats in Tools.": [
+        "Permita que ${ LUMO_SHORT_APP_NAME } abra documentos, código y páginas web en canvas junto al chat. Cambie esto para chats individuales en Herramientas."
       ],
       "Lightweight model for everyday tasks": [
         "Modelo ligero para tareas diarias"
@@ -1398,8 +1509,8 @@
       "More thorough answers, but can take longer": [
         "Respuestas más completas, pero pueden tardar más"
       ],
-      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
-        "Elimina permanentemente sus proyectos, chats y memorias guardadas. Esto es irreversible."
+      "Permanently delete your projects, chats, and saved memories. This cannot be undone.": [
+        "Elimine permanentemente sus proyectos, chats y memorias guardadas. Esto no se puede revertir."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Los chats de proyectos se mantienen totalmente aislados. Responden a sus propias instrucciones y archivos e ignoran en su totalidad la memoria global."
@@ -1410,8 +1521,14 @@
       "Report a bug or feature request": [
         "Reportar un error o solicitar una función"
       ],
+      "Reset the encrypted search index for your chats and Drive files.": [
+        "Restablezca el índice de búsqueda cifrado para sus chats y archivos en Drive."
+      ],
       "Show animated background on the home screen": [
         "Mostrar fondo animado en la pantalla principal"
+      ],
+      "Show chats from your projects alongside other chats in the Recent section of the sidebar.": [
+        "Muestre los chats de sus proyectos junto con otros chats en la sección Recientes de la barra lateral."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Inicie sesión para acceder a su cuenta y desbloquear más funciones. ¿No tiene una? ${ createLink }"
@@ -1457,6 +1574,18 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not download this file.": [
+        "No se pudo descargar este archivo."
+      ],
+      "Could not export as a Word document.": [
+        "No se pudo exportar como un documento Word."
+      ],
+      "Could not export as PDF.": [
+        "No se pudo exportar como PDF."
+      ],
+      "Could not export as PPTX.": [
+        "No se pudo exportar como PPTX."
+      ],
       "Could not generate a workflow. Try again.": [
         "No se pudo generar un flujo de trabajo. Intente de nuevo."
       ],
@@ -1758,6 +1887,10 @@
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "«${ fileName }» tiene múltiples hojas. Seleccione las hojas para incluir en el contexto de la conversación."
       ],
+      "${ characterCount } character processed": [
+        "${ characterCount } caracter procesado",
+        "${ characterCount } caracteres procesados"
+      ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "El almacenamiento de ${ DRIVE_SHORT_APP_NAME } aún no está configurado"
       ],
@@ -1777,6 +1910,10 @@
         "${ expiringToday } chat expirará hoy",
         "${ expiringToday } chats expirarán hoy"
       ],
+      "${ fileCount } file": [
+        "${ fileCount } archivo",
+        "${ fileCount } archivos"
+      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } es una IA que prioriza la privacidad y le ayuda a hacer más, a la vez que mantiene sus datos seguros. Desbloquee todo su potencial y disfrute del acceso anticipado a nuevas funciones a medida que se introduzcan."
       ],
@@ -1793,11 +1930,11 @@
         "${ urgentTotal } chat expirará en 24 horas",
         "${ urgentTotal } chats expirarán en 24 horas"
       ],
+      "${ used } / ${ maximum } tokens (${ percentageUsed }%)": [
+        "${ used } / ${ maximum } tokens (${ percentageUsed }%)"
+      ],
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         ". Siga el esquema de la API de OpenAI — integre su cliente actual con un cambio de una línea."
-      ],
-      "1 file": [
-        "1 archivo"
       ],
       "A ${ LUMO_SHORT_APP_NAME } account": [
         "Una cuenta de ${ LUMO_SHORT_APP_NAME }"
@@ -1868,9 +2005,6 @@
       "characters not shown": [
         "caracteres no mostrados"
       ],
-      "characters processed": [
-        "caracteres procesados"
-      ],
       "Chat expiring soon": [
         "El chat expira pronto"
       ],
@@ -1886,8 +2020,20 @@
       "Conversation": [
         "Conversación"
       ],
+      "Couldn't open the print dialog, so the PDF was downloaded with each page as an image.": [
+        "No se pudo abrir la ventana de imprimir, así que el PDF fue descargado con cada página como una imagen."
+      ],
+      "Couldn't open the rich text editor, so you're editing the Markdown source.": [
+        "No se pudo abrir el editor de texto enriquecido así que está editando el código fuente Markdown."
+      ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Cree y revoque claves de API para acceder mediante programación. Las claves solo se muestran una vez luego de crearlas."
+      ],
+      "Created by ${ LUMO_SHORT_APP_NAME } in this conversation.": [
+        "Creado por ${ LUMO_SHORT_APP_NAME } en esta conversación."
+      ],
+      "creations": [
+        "creaciones"
       ],
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Describa un flujo de trabajo en lenguaje sencillo y obtenga un gráfico con código ejecutable. Inicie sesión para usar esta función."
@@ -1939,9 +2085,6 @@
       ],
       "File too large for preview (>150k tokens)": [
         "Archivo demasiado grande para la vista previa (>150k tokens)"
-      ],
-      "files": [
-        "archivos"
       ],
       "Files": [
         "Archivos"
@@ -2044,6 +2187,9 @@
       ],
       "No data rows found.": [
         "No se encontraron filas de datos."
+      ],
+      "No files or creations yet": [
+        "Aún no hay archivos o creaciones"
       ],
       "No new memories were found in your recent chats.": [
         "No se encontraron nuevos recuerdos en sus chats recientes."
@@ -2237,9 +2383,6 @@
       "To refer back to this conversation later, sign in or create an account.": [
         "Para consultar esta conversación más tarde, inicie sesión o cree una cuenta."
       ],
-      "tokens": [
-        "tokens"
-      ],
       "tokens / 30d": [
         "tokens / 30d"
       ],
@@ -2257,6 +2400,12 @@
       ],
       "Upgrade for unlimited chats, projects, larger file uploads, and more.": [
         "Actualice para chats ilimitados, proyectos, cargas de archivos grandes y más."
+      ],
+      "Upload files or add them from ${ DRIVE_APP_NAME } to give ${ LUMO_SHORT_APP_NAME } context. ${ LUMO_SHORT_APP_NAME } creations from this chat will appear here.": [
+        "Cargue archivos o añádalos desde ${ DRIVE_APP_NAME } para darle contexto a ${ LUMO_SHORT_APP_NAME }. Las creaciones de ${ LUMO_SHORT_APP_NAME } de este chat aparecerán aquí."
+      ],
+      "Upload from your computer": [
+        "Cargar desde la computadora"
       ],
       "Uploading \"${ file.name }\" to ${ DRIVE_APP_NAME }...": [
         "Cargando «${ file.name }» a ${ DRIVE_APP_NAME }..."
@@ -2687,8 +2836,20 @@
       ]
     },
     "collider_2025: Spotlight": {
+      "A new space for your creations": [
+        "Un espacio nuevo para sus creaciones"
+      ],
+      "Documents, code, and web pages now open in a canvas beside your chat. Ask ${ LUMO_SHORT_APP_NAME } for changes, compare versions, and download your work.": [
+        "Los documentos, el código y las páginas web ahora se abren en un canvas junto al chat. Pídale cambios a ${ LUMO_SHORT_APP_NAME }, comparar versiones y descargar su trabajo."
+      ],
       "Settings": [
         "Ajustes"
+      ],
+      "You can turn off creations in ${ tools } or ${ settings }.": [
+        "Puede desactivar las creaciones en ${ tools } o en ${ settings }."
+      ],
+      "You can turn off creations in ${ tools }.": [
+        "Puede desactivar las creaciones en ${ tools }."
       ]
     },
     "collider_2025: Status": {
@@ -2803,9 +2964,6 @@
       "Auto update memory": [
         "Actualizar memoria automáticamente"
       ],
-      "Automatic web search": [
-        "Búsqueda web automática"
-      ],
       "Build intelligent apps.": [
         "Cree aplicaciones inteligentes."
       ],
@@ -2830,8 +2988,14 @@
       "Create new API key": [
         "Crear una clave de API"
       ],
-      "Delete everything": [
-        "Eliminar todo"
+      "Creations": [
+        "Creaciones"
+      ],
+      "Data visualizations": [
+        "Visualización de datos"
+      ],
+      "Delete all data": [
+        "Eliminar todos los datos"
       ],
       "Dictation language": [
         "Idioma de dictado"
@@ -2896,6 +3060,9 @@
       "Privacy included by default.": [
         "Privacidad incluida por defecto."
       ],
+      "Project chats in Recent": [
+        "Chats del proyecto en Recientes"
+      ],
       "Raw response": [
         "Respuesta sin procesar"
       ],
@@ -2911,14 +3078,11 @@
       "Saved memories": [
         "Memoria guardada"
       ],
-      "Search Index": [
+      "Search index": [
         "Índice de búsqueda"
       ],
       "Security note:": [
         "Nota de seguridad:"
-      ],
-      "Show project chats in history": [
-        "Mostrar chats del proyecto en el historial"
       ],
       "Theme": [
         "Tema"
@@ -2941,8 +3105,8 @@
       "Visionary": [
         "Visionary"
       ],
-      "Visualization mode": [
-        "Modo de visualización"
+      "Web search": [
+        "Búsqueda web"
       ],
       "What you can build": [
         "Lo que puede crear"
@@ -3218,17 +3382,32 @@
       ]
     },
     "collider_2025:Action": {
+      "Add column right": [
+        "Añadir columna a la derecha"
+      ],
+      "Add connector": [
+        "Añadir conector"
+      ],
       "Add details": [
         "Añadir detalles"
       ],
       "Add more information to improve the response": [
         "Añada más información para mejorar la respuesta"
       ],
+      "Add row below": [
+        "Añadir fila abajo"
+      ],
       "Add to favorites": [
         "Añadir a favoritos"
       ],
+      "All": [
+        "Todo"
+      ],
       "Analyze another export": [
         "Analizar otra exportación"
+      ],
+      "Apply": [
+        "Aplicar"
       ],
       "Ask the model to be more careful and thorough": [
         "Pida al modelo que sea más cuidadoso y exhaustivo"
@@ -3236,8 +3415,17 @@
       "Back": [
         "Atrás"
       ],
+      "Back to all files": [
+        "Regresar a todos los archivos"
+      ],
       "Back to chat": [
         "Volver al chat"
+      ],
+      "Bold": [
+        "Negrita"
+      ],
+      "Bulleted list": [
+        "Lista de viñetas"
       ],
       "Cancel": [
         "Cancelar"
@@ -3250,6 +3438,9 @@
       ],
       "Change style": [
         "Cambiar estilo"
+      ],
+      "Checklist": [
+        "Lista de verificación"
       ],
       "Choose project icon": [
         "Elegir ícono del proyecto"
@@ -3269,8 +3460,14 @@
       "Code": [
         "Código"
       ],
+      "Code block": [
+        "Bloque de códigos"
+      ],
       "Continue": [
         "Continuar"
+      ],
+      "Copy": [
+        "Copiar"
       ],
       "Copy link & caption": [
         "Copiar enlace y subtítulo"
@@ -3299,17 +3496,38 @@
       "Delete chat": [
         "Eliminar chat"
       ],
+      "Delete column": [
+        "Eliminar columna"
+      ],
       "Delete conversation": [
         "Eliminar conversación"
       ],
       "Delete project": [
         "Eliminar proyecto"
       ],
+      "Delete row": [
+        "Eliminar fila"
+      ],
+      "Delete table": [
+        "Eliminar la tabla"
+      ],
+      "Delete task": [
+        "Eliminar tarea"
+      ],
       "Describe desired changes...": [
         "Describa los cambios deseados..."
       ],
       "Deselect all": [
         "Deseleccionar todo"
+      ],
+      "Discard changes": [
+        "Descartar cambios"
+      ],
+      "Divider": [
+        "Divisor"
+      ],
+      "Documents": [
+        "Documentos"
       ],
       "Download": [
         "Descargar"
@@ -3322,6 +3540,12 @@
       ],
       "Edit agent": [
         "Editar agente"
+      ],
+      "Edit as Markdown": [
+        "Editar como Markdown"
+      ],
+      "Edit as rich text": [
+        "Editar como texto enriquecido"
       ],
       "Edit image": [
         "Editar imagen"
@@ -3359,14 +3583,38 @@
       "Go to project": [
         "Ir al proyecto"
       ],
+      "Heading 1": [
+        "Encabezado 1"
+      ],
+      "Heading 2": [
+        "Encabezado 2"
+      ],
+      "Heading 3": [
+        "Encabezado 3"
+      ],
       "Hide knowledge panel": [
         "Ocultar panel de conocimiento"
       ],
       "Improve": [
         "Mejorar"
       ],
+      "Inline code": [
+        "Código en línea"
+      ],
+      "Insert table": [
+        "Insertar tabla"
+      ],
+      "Italic": [
+        "Cursiva"
+      ],
+      "Keep editing": [
+        "Seguir editando"
+      ],
       "Light": [
         "Claro"
+      ],
+      "Link": [
+        "Vincular"
       ],
       "Make a copy": [
         "Hacer una copia"
@@ -3374,11 +3622,23 @@
       "Manage chats": [
         "Gestionar chats"
       ],
+      "Manage connectors": [
+        "Gestionar conectores"
+      ],
       "Manage Drive folder link": [
         "Gestionar enlace de la carpeta de Drive"
       ],
+      "Markdown": [
+        "Markdown"
+      ],
       "Modify": [
         "Modificar"
+      ],
+      "More actions": [
+        "Más acciones"
+      ],
+      "More actions for ${ title }": [
+        "Más acciones para ${ title }"
       ],
       "More breadcrumbs": [
         "Más rutas de navegación"
@@ -3392,8 +3652,17 @@
       "Next message": [
         "Mensaje siguiente"
       ],
+      "Numbered list": [
+        "Lista numerada"
+      ],
       "Open": [
         "Abrir"
+      ],
+      "Open ${ entry.title } in its chat": [
+        "Abrir ${ entry.title } en su chat"
+      ],
+      "Open chat": [
+        "Abrir chat"
       ],
       "Open conversation": [
         "Abrir conversación"
@@ -3401,8 +3670,14 @@
       "PDF": [
         "PDF"
       ],
+      "Plain text": [
+        "Texto plano"
+      ],
       "Plain text (.txt)": [
         "Texto plano (.txt)"
+      ],
+      "PowerPoint": [
+        "PowerPoint"
       ],
       "PowerPoint (.pptx)": [
         "PowerPoint (.pptx)"
@@ -3413,11 +3688,20 @@
       "Previous message": [
         "Mensaje anterior"
       ],
+      "Quote": [
+        "Citar"
+      ],
+      "Redo": [
+        "Rehacer"
+      ],
       "Regenerate": [
         "Regenerar"
       ],
       "Remove": [
         "Borrar"
+      ],
+      "Remove ${ label }": [
+        "Eliminar ${ label }"
       ],
       "Remove agent": [
         "Eliminar agente"
@@ -3452,6 +3736,9 @@
       "Save": [
         "Guardar"
       ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Guardar en ${ DRIVE_APP_NAME }"
+      ],
       "Select all": [
         "Seleccionar todo"
       ],
@@ -3460,6 +3747,9 @@
       ],
       "Select conversation": [
         "Seleccionar conversación"
+      ],
+      "Select time zone": [
+        "Seleccionar zona horaria"
       ],
       "Send": [
         "Enviar"
@@ -3473,14 +3763,29 @@
       "Show knowledge panel": [
         "Mostrar panel de conocimiento"
       ],
+      "Show more": [
+        "Mostrar más"
+      ],
       "Show sidebar": [
         "Mostrar la barra lateral"
+      ],
+      "Slides": [
+        "Diapositivas"
       ],
       "Source (Markdown)": [
         "Fuente (Markdown)"
       ],
+      "Source file": [
+        "Archivo fuente"
+      ],
       "Start a chat": [
         "Iniciar un chat"
+      ],
+      "Strikethrough": [
+        "Tachado"
+      ],
+      "Task options": [
+        "Opciones de tarea"
       ],
       "Think longer": [
         "Pensar por más tiempo"
@@ -3496,6 +3801,9 @@
       ],
       "Try this": [
         "Pruebe esto"
+      ],
+      "Undo": [
+        "Deshacer"
       ],
       "Unlink Folder": [
         "Desvincular carpeta"
@@ -3515,14 +3823,35 @@
       "Upload your AI export": [
         "Cargue su exportación de IA"
       ],
+      "Versions and actions": [
+        "Versiones y acciones"
+      ],
+      "View latest": [
+        "Ver más reciente"
+      ],
       "View mode": [
         "Modo de vista"
       ],
       "View v${ versionNumber }": [
         "Ver v${ versionNumber }"
       ],
+      "Web": [
+        "Web"
+      ],
+      "Web presentation": [
+        "Presentación web"
+      ],
+      "Webpage": [
+        "Página web"
+      ],
       "What needs changed?": [
         "¿Qué necesita cambiarse?"
+      ],
+      "Word (.docx)": [
+        "Word (.docx)"
+      ],
+      "Word document": [
+        "Documento de Word"
       ]
     },
     "collider_2025:Agent": {
@@ -3558,6 +3887,11 @@
         "Asistente de Escritura"
       ]
     },
+    "collider_2025:Alert": {
+      "Please fix the form errors and try again.": [
+        "Arregle los errores del formulario e intente de nuevo."
+      ]
+    },
     "collider_2025:Badge": {
       "Built-in": [
         "Integrado"
@@ -3591,8 +3925,14 @@
       "Create project": [
         "Crear proyecto"
       ],
+      "Create task": [
+        "Crear tarea"
+      ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete task": [
+        "Eliminar tarea"
       ],
       "Edit": [
         "Editar"
@@ -3603,8 +3943,14 @@
       "Filter & Sort": [
         "Filtrar y Ordenar"
       ],
+      "Hide templates": [
+        "Ocultar plantillas"
+      ],
       "Images": [
         "Imágenes"
+      ],
+      "Library": [
+        "Librería"
       ],
       "Link this folder": [
         "Enlazar esta carpeta"
@@ -3624,14 +3970,23 @@
       "New project": [
         "Proyecto nuevo"
       ],
+      "New task": [
+        "Tarea nueva"
+      ],
       "Projects": [
         "Proyectos"
       ],
       "Save": [
         "Guardar"
       ],
+      "Save changes": [
+        "Guardar cambios"
+      ],
       "Save here": [
         "Guardar aquí"
+      ],
+      "Scheduled": [
+        "Programado"
       ],
       "Search": [
         "Buscar"
@@ -3648,6 +4003,9 @@
       "Settings": [
         "Ajustes"
       ],
+      "Show templates": [
+        "Mostrar plantillas"
+      ],
       "Untitled chat": [
         "Chat sin título"
       ],
@@ -3655,24 +4013,89 @@
         "Cargar desde la computadora"
       ]
     },
+    "collider_2025:Description": {
+      "Big Tech AI built a scarily accurate profile of me from my chat history. See what yours knows about you 👀": [
+        "La IA de las grandes tecnológicas creó un perfil mío sorprendentemente preciso a partir de mi historial de chat. Descubra qué sabe la suya sobre usted 👀"
+      ],
+      "Use the connectors above without asking. Off: pause and notify me before each Ask tool.": [
+        "Use los conectores anteriores sin preguntar. Desactivado: pause y notifíqueme antes de cada herramienta de Ask."
+      ]
+    },
     "collider_2025:Error": {
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
         "${ LUMO_SHORT_APP_NAME } necesita almacenamiento de base de datos local (IndexedDB) para ejecutarse, pero no está disponible en este navegador. Esto puede pasar cuando las cookies o los datos de sitio web están bloqueados, en navegación privada, o con modo hermético activado. Permita los datos de sitio web para esta página y actualícela."
       ],
+      "Artifact has no content to save.": [
+        "El artefacto no tiene contenido que guardar."
+      ],
       "Cannot link the root folder. Please select a subfolder.": [
         "No se puede enlazar la carpeta raíz. Seleccione una subcarpeta."
+      ],
+      "Chart unavailable": [
+        "Gráfico no disponible"
+      ],
+      "Choose a date and time in the future": [
+        "Elija una fecha y hora en el futuro"
+      ],
+      "Conversation export files must contain a JSON array.": [
+        "Los archivos de exportación de conversaciones deben contener una matriz JSON."
+      ],
+      "Could not build HTML for PDF export.": [
+        "No se pudo crear el HTML para exportar en PDF."
+      ],
+      "Could not find ${ CONVERSATIONS_JSON } or conversations-*.json inside the uploaded archive.": [
+        "No se pudo encontrar ${ CONVERSATIONS_JSON } o conversations-*.json dentro del archivo cargado."
+      ],
+      "Could not load all creations.": [
+        "No se pudieron cargar todas las creaciones."
+      ],
+      "Could not load connectors": [
+        "No se pudieron cargar los conectores"
+      ],
+      "Could not load creations.": [
+        "No se pudieron cargar las creaciones."
+      ],
+      "Could not read this file.": [
+        "No se pudo leer este archivo."
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "Se perdió la conexión con la base de datos. Actualice la página para continuar."
       ],
+      "Enter a name": [
+        "Ingrese un nombre"
+      ],
+      "Enter a valid date and time for this one-time run": [
+        "Ingrese una fecha y hora válidas para esta única ejecución"
+      ],
+      "Enter a valid time": [
+        "Ingrese una hora válida"
+      ],
+      "Enter instructions for each run": [
+        "Ingrese las instrucciones para cada ejecución"
+      ],
       "Error uploading file: ${ file.name }": [
         "Error al subir el archivo: ${ file.name }"
+      ],
+      "Excel file appears to be empty or contains no readable data": [
+        "El archivo de Excel parece que está vacío o contiene datos ilegibles"
+      ],
+      "Excel file contains no worksheets": [
+        "El archivo de Excel no contiene hojas de cálculo"
+      ],
+      "Failed to browse folder": [
+        "Error al navegar a la carpeta"
       ],
       "Failed to create folder": [
         "Error al crear la carpeta"
       ],
+      "Failed to download file": [
+        "Error al descargar el archivo"
+      ],
       "Failed to index Drive folder for search": [
         "Error al indexar la carpeta de Drive para la búsqueda"
+      ],
+      "Failed to initialize Drive browser": [
+        "Error al inicializar el navegador de Drive"
       ],
       "Failed to link Drive folder": [
         "Error al enlazar la carpeta de Drive"
@@ -3683,8 +4106,17 @@
       "Failed to load images. Please try again.": [
         "Error al cargar las imágenes. Intente de nuevo."
       ],
+      "Failed to navigate to folder": [
+        "Error al navegar a la carpeta"
+      ],
+      "Failed to process file": [
+        "Error al procesar el archivo"
+      ],
       "Failed to process file: ${ file.name }": [
         "Error al procesar el archivo: ${ file.name }"
+      ],
+      "Failed to refresh folder": [
+        "Error al actualizar la carpeta"
       ],
       "Failed to save file": [
         "Error al guardar el archivo"
@@ -3692,14 +4124,59 @@
       "Failed to unlink Drive folder": [
         "Error al desvincular la carpeta de Drive"
       ],
+      "Failed to upload ${ file.name }": [
+        "Error al cargar ${ file.name }"
+      ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "El archivo «${ file.name }» (${ fileSizeFormatted }) excede el límite de ${ maxSizeFormatted }. Enlace una carpeta de ${ DRIVE_APP_NAME } para cargar archivos más grandes."
       ],
       "File type not supported: ${ file.name }": [
         "Tipo de archivo no compatible: ${ file.name }"
       ],
+      "Format \"${ format }\" is not supported for ${ artifact.type } artifacts.": [
+        "El formato «${ format }» no es compatible con los artefactos ${ artifact.type }."
+      ],
+      "Legacy Excel .xls files are not supported. Please save the workbook as .xlsx or CSV and try again.": [
+        "Los archivos Excel antiguos (.xls) no son compatibles. Guarde el libro como .xlsx o CSV e intente de nuevo."
+      ],
+      "No conversations with user messages were found in this export.": [
+        "No se encontraron conversaciones con mensajes de usuario en esta exportación."
+      ],
+      "No Excel worksheets selected": [
+        "No hay hojas de Excel seleccionadas"
+      ],
+      "PDF export is only supported for documents and presentations.": [
+        "Solo se admite exportar PDF para documentos y presentaciones."
+      ],
+      "PPTX export is only supported for presentations.": [
+        "Solo se admite exportar PPTX para documentos y presentaciones."
+      ],
+      "Presentation has no slides to export.": [
+        "La presentación no tiene diapositivas para exportar."
+      ],
       "Project not found": [
         "Proyecto no encontrado"
+      ],
+      "Select at least one day of the month": [
+        "Seleccione al menos un día del mes"
+      ],
+      "Select at least one day of the week": [
+        "Seleccione al menos un día de la semana"
+      ],
+      "Something went wrong starting the analysis.": [
+        "Algo salió mal al iniciar el análisis."
+      ],
+      "The uploaded file is not valid JSON.": [
+        "El archivo cargado no es un JSON válido."
+      ],
+      "This does not look like a ChatGPT or Claude export.": [
+        "Esto no parece una exportación de ChatGPT o Claude."
+      ],
+      "We could not read this Excel workbook. It may be encrypted, corrupted, or not a valid .xlsx file. Please save it as .xlsx or CSV and try again.": [
+        "No pudimos leer este libro de Excel. Es posible que esté cifrado, dañado o que no sea un archivo .xlsx válido. Guárdelo como .xlsx o CSV e intente de nuevo."
+      ],
+      "We could not read this file. Select it again, or move it out of cloud storage before uploading.": [
+        "No pudimos leer este archivo. Selecciónelo de nuevo o muévalo fuera de la nube antes de cargarlo."
       ]
     },
     "collider_2025:Error (validation)": {
@@ -3767,6 +4244,12 @@
         "${ lineCount } línea",
         "${ lineCount } líneas"
       ],
+      "${ LUMO_SHORT_APP_NAME } and edits change the latest version.": [
+        "${ LUMO_SHORT_APP_NAME } y las ediciones cambian la última versión."
+      ],
+      "${ LUMO_SHORT_APP_NAME } can run a prompt for you every morning, every Friday, or whenever you like.": [
+        "${ LUMO_SHORT_APP_NAME } puede ejecutar un prompt para usted cada mañana, cada viernes o cuando lo desee."
+      ],
       "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
         "${ LUMO_SHORT_APP_NAME } es una IA privada. Sus conversaciones están cifradas y nunca las usamos para entrenar modelos de IA."
       ],
@@ -3798,6 +4281,9 @@
         "${ wordCount } palabra",
         "${ wordCount } palabras"
       ],
+      "(latest)": [
+        "(más reciente)"
+      ],
       "ad value": [
         "valor publicitario"
       ],
@@ -3828,6 +4314,9 @@
       "Applying your changes…": [
         "Aplicando sus cambios…"
       ],
+      "Are you sure you want to delete \"${ taskName }\"? This action cannot be undone.": [
+        "¿En verdad desea eliminar «${ taskName }»? Esta acción no se puede deshacer."
+      ],
       "Ask a question to get started. Your conversation is private.": [
         "Haga una pregunta para iniciar. Su conversación es privada."
       ],
@@ -3848,6 +4337,9 @@
       ],
       "Built-in ${ BRAND_NAME } agent": [
         "Agente de ${ BRAND_NAME } integrado"
+      ],
+      "Changed a selection": [
+        "Cambiada una selección"
       ],
       "Chats from your projects will appear here.": [
         "Los chats de sus proyectos aparecerán aquí."
@@ -3870,6 +4362,12 @@
       "Click your profile icon in the bottom-left corner of the page": [
         "Pulse el ícono de su perfil en la esquina inferior izquierda de la página"
       ],
+      "Code": [
+        "Código"
+      ],
+      "Code · ${ langLabel }": [
+        "Código · ${ langLabel }"
+      ],
       "Conversation encrypted": [
         "Conversación cifrada"
       ],
@@ -3879,6 +4377,9 @@
       "Cookies or website data are blocked in your browser settings": [
         "Las cookies o los datos de sitio web están bloqueados en los ajustes del navegador"
       ],
+      "Create documents, images, and more in your chats. Sign in or create a free account to save your creations.": [
+        "Cree documentos, imágenes y más en sus chats. Inicie sesión o cree una cuenta gratuita para guardar sus creaciones."
+      ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
         "Cree imágenes, aplique estilos y esboce ideas. Inicie sesión o cree una cuenta gratuita para guardar sus creaciones."
       ],
@@ -3887,6 +4388,18 @@
       ],
       "Create visuals from a prompt, edit photos, analyze charts, or turn rough sketches into polished graphics.": [
         "Cree elementos visuales a partir de un aviso, editar fotos, analizar gráficos o convertir bocetos burdos en gráficos pulidos."
+      ],
+      "Created": [
+        "Creado"
+      ],
+      "Creating…": [
+        "Creando…"
+      ],
+      "Creation": [
+        "Creación"
+      ],
+      "Creations and images ${ LUMO_SHORT_APP_NAME } made in your chats.": [
+        "Creaciones e imágenes que ${ LUMO_SHORT_APP_NAME } hizo en sus chats."
       ],
       "Current chat:": [
         "Chat actual:"
@@ -3900,6 +4413,12 @@
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Descubra qué información sobre usted podría obtener la IA de las grandes tecnológicas a partir de su historial de chat y obtenga una puntuación de privacidad que podrá compartir."
       ],
+      "Document · MD": [
+        "Documento · MD"
+      ],
+      "Documents, code and webpages created in your chats will appear here.": [
+        "Los documentos, códigos y páginas web creados en sus chats aparecerán aquí."
+      ],
       "Drafting content…": [
         "Redactando el contenido…"
       ],
@@ -3908,6 +4427,9 @@
       ],
       "Drive files are not available for guest users": [
         "Los archivos de Drive no están disponibles para usuarios invitados"
+      ],
+      "Edited by hand": [
+        "Editado a mano"
       ],
       "Every conversation leaves behind small clues. On their own, they don't say much. Together, they can reveal a surprisingly detailed picture of your life. This report shows what other AI providers can infer from your chats. But unlike them, ${ LUMO_SHORT_APP_NAME } doesn't see your data.": [
         "Cada conversación deja pistas pequeñas. Por sí solas, no dicen mucho. Juntas, pueden revelar una imagen sorprendentemente detallada de su vida. Este informe muestra lo que otros proveedores de IA pueden inferir de sus chats. Pero a diferencia de ellos, ${ LUMO_SHORT_APP_NAME } no ve sus datos."
@@ -3969,11 +4491,21 @@
       "Initializing Drive...": [
         "Inicializando Drive..."
       ],
+      "Large content (${ charCountLabel } characters) converted to attachment": [
+        "Contenido largo (${ charCountLabel } caracteres) convertido en un adjunto"
+      ],
+      "Large content (${ lineCount } line) converted to attachment": [
+        "Contenido largo (${ lineCount } línea) convertido en un adjunto",
+        "Contenido largo (${ lineCount } líneas) convertido en un adjunto"
+      ],
       "Learn more about how project knowledge works": [
         "Más información sobre cómo funciona el conocimiento del proyecto"
       ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Enlace archivos desde ${ DRIVE_APP_NAME } o cárguelos desde su computadora."
+      ],
+      "Loading connectors": [
+        "Cargando conectores"
       ],
       "Loading…": [
         "Cargando…"
@@ -3984,8 +4516,29 @@
       "Look for Export data, then click Export": [
         "Busque Exportar datos, luego pulse Exportar"
       ],
+      "Next run in ${ count } day": [
+        "Próxima ejecución en ${ count } día",
+        "Próxima ejecución en ${ count } días"
+      ],
+      "Next run in ${ count } hour": [
+        "Próxima ejecución en ${ count } hora",
+        "Próxima ejecución en ${ count } horas"
+      ],
+      "Next run in ${ count } minute": [
+        "Próxima ejecución en ${ count } minuto",
+        "Próxima ejecución en ${ count } minutos"
+      ],
+      "No connectors available yet. Manage connectors to set them up.": [
+        "Aún no hay conectores disponibles. Gestione conectores para configurarlos."
+      ],
       "No content generated": [
         "Ningún contenido generado"
+      ],
+      "No creations match your search.": [
+        "No hay creaciones que coincidan con su búsqueda."
+      ],
+      "No creations of this type yet.": [
+        "Aún no hay creaciones de este tipo."
       ],
       "No favorites yet. Star a chat to find it here quickly.": [
         "Aún no hay favoritos. Destaque un chat para encontrarlo aquí rápidamente."
@@ -4008,8 +4561,14 @@
       "Please upload your AI export before continuing.": [
         "Cargue su exportación de IA antes de continuar."
       ],
+      "Preparing your canvas…": [
+        "Preparando su canvas…"
+      ],
       "Preparing…": [
         "Preparando…"
+      ],
+      "Presentation · HTML": [
+        "Presentación · HTML"
       ],
       "Processing file...": [
         "Procesando archivo..."
@@ -4026,8 +4585,24 @@
       "red flags": [
         "banderas rojas"
       ],
+      "Revised": [
+        "Revisado"
+      ],
+      "Revising your creation…": [
+        "Revisando su creación…"
+      ],
+      "Run tasks on a schedule or whenever you need them. Tasks run on this computer while ${ LUMO_SHORT_APP_NAME } is open.": [
+        "Ejecute tareas según un cronograma o cuando las necesite. Las tareas se ejecutan en esta computadora mientras ${ LUMO_SHORT_APP_NAME } esté abierto."
+      ],
+      "Runs on this computer while ${ LUMO_SHORT_APP_NAME } is open. If your computer is asleep, it runs when ${ LUMO_SHORT_APP_NAME } next opens.": [
+        "Se ejecuta en esta computadora mientras ${ LUMO_SHORT_APP_NAME } esté abierto. Si la computadora hiberna, se ejecuta cuando ${ LUMO_SHORT_APP_NAME } se vuelva a abrir."
+      ],
       "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
         "Guardando como ${ formatLabel }. Navegue a la carpeta de ${ DRIVE_SHORT_APP_NAME } que desea usar, luego pulse «Guardar aquí»."
+      ],
+      "Searching ${ pendingSearchCount } more creation…": [
+        "Buscando ${ pendingSearchCount } creación más…",
+        "Buscando ${ pendingSearchCount } creaciones más…"
       ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Mire lo que las Big Tech de IA saben de usted. Hecho con ${ LUMO_SHORT_APP_NAME }."
@@ -4044,6 +4619,9 @@
       "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
         "Parte del contenido que ha pegado podría traspasar límites en el ámbito laboral, legal o de protección de datos. Esto está aquí para ayudarle a detectarlo, no para juzgarle."
       ],
+      "Some selected connectors are unavailable or need attention. This task may fail or run without data from those connectors. Check your connectors in the settings.": [
+        "Algunos conectores seleccionados no están disponibles o requieren atención. Esta tarea podría fallar o ejecutarse sin datos de dichos conectores. Verifique sus conectores en los ajustes."
+      ],
       "Something went wrong analysing this export. Please try again.": [
         "Algo salió mal al analizar esta exportación. Intente de nuevo."
       ],
@@ -4052,6 +4630,9 @@
       ],
       "Start a new chat to see it here.": [
         "Comience un chat para verlo aquí."
+      ],
+      "Status: ${ statusAccessibleLabel }": [
+        "Estado: ${ statusAccessibleLabel }"
       ],
       "Structured data, aiming for compatibility with the ChatGPT export format": [
         "Datos estructurados con el objetivo de que sean compatibles con el formato de exportación de ChatGPT"
@@ -4110,8 +4691,8 @@
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Actualice a ${ LUMO_SHORT_APP_NAME } Plus para crear ${ LUMO_SHORT_APP_NAME }s personalizados, desbloquear modelos avanzados de IA y más."
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
-        "Actualice a ${ LUMO_SHORT_APP_NAME } Plus para crear proyectos ilimitados, desbloquear modelos avanzados de IA y más."
+      "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited projects, unlock advanced AI models, and more.": [
+        "Actualice a ${ PLAN_NAMES[PLANS.LUMO] } para crear proyectos ilimitados, desbloquear modelos avanzados de IA y más."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Use el modelo Max para trabajo complejo o el modelo Lite para tareas cotidianas. Elija el modo Rápido para obtener respuestas rápidas o el modo Pensante para preguntas más difíciles."
@@ -4125,11 +4706,23 @@
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Guardaremos su tarjeta para que pueda adjuntarla a la publicación; las redes sociales no pueden añadir la imagen por usted."
       ],
+      "Webpage · HTML": [
+        "Página web · HTML"
+      ],
+      "You": [
+        "Usted"
+      ],
       "You edited ${ meta.artifactTitle }": [
         "Editó ${ meta.artifactTitle }"
       ],
+      "You may have unsaved changes. If you leave now, your edits will be lost.": [
+        "Podría tener cambios sin guardar. Si abandona ahora, sus ediciones se perderán."
+      ],
       "You're using private browsing": [
         "Está usando la navegación privada"
+      ],
+      "You're viewing version ${ versionNumber } of ${ versionCount }, from ${ time }.": [
+        "Está viendo la versión ${ versionNumber } de ${ versionCount }, de ${ time }."
       ],
       "Your export is encrypted in transit and processed without being stored on ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Su exportación está cifrada en tránsito y procesada sin almacenarse en los servidores de ${ LUMO_SHORT_APP_NAME }."
@@ -4222,6 +4815,23 @@
       ]
     },
     "collider_2025:Label": {
+      "${ data.pressure } hPa": [
+        "${ data.pressure } hPa"
+      ],
+      "${ data.wind_speed } m/s": [
+        "${ data.wind_speed } m/s"
+      ],
+      "${ data.wind_speed } m/s ${ direction }": [
+        "${ data.wind_speed } m/s ${ direction }"
+      ],
+      "${ file.tokenCount } token": [
+        "${ file.tokenCount } token",
+        "${ file.tokenCount } tokens"
+      ],
+      "${ progress.indexed }/${ progress.total } file (${ percentage }%)": [
+        "${ progress.indexed }/${ progress.total } archivo (${ percentage }%)",
+        "${ progress.indexed }/${ progress.total } archivos (${ percentage }%)"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } seleccionado"
       ],
@@ -4243,14 +4853,77 @@
       "AI platform": [
         "Plataforma IA"
       ],
+      "All traits have been selected": [
+        "Se seleccionaron todos los rasgos"
+      ],
+      "Anime": [
+        "Anime"
+      ],
+      "AsciiDoc Document": [
+        "Documento AsciiDoc"
+      ],
+      "Batch File": [
+        "Archivo Batch"
+      ],
+      "C# File": [
+        "Archivo C#"
+      ],
+      "C/C++ File": [
+        "Archivo C/C++"
+      ],
+      "Canvas": [
+        "Canvas"
+      ],
+      "Canvas full screen view": [
+        "Vista de pantalla completa de canvas"
+      ],
       "Card theme": [
         "Tema de la tarjeta"
+      ],
+      "Cargo File": [
+        "Archivo Cargo"
+      ],
+      "Chart": [
+        "Gráfico"
+      ],
+      "Chart: ${ text }": [
+        "Gráfico: ${ text }"
       ],
       "chat": [
         "chat"
       ],
       "chats": [
         "chats"
+      ],
+      "Claw-culating trends…": [
+        "Calculando las tendencias…"
+      ],
+      "Clojure File": [
+        "Archivo Clojure"
+      ],
+      "Cloud Cover": [
+        "Cobertura de nubes"
+      ],
+      "CMake File": [
+        "Archivo CMake"
+      ],
+      "Comic book": [
+        "Cómic"
+      ],
+      "Configuration File": [
+        "Archivo de configuración"
+      ],
+      "Connected": [
+        "Conectado"
+      ],
+      "Connected with issues": [
+        "Conectado con problemas"
+      ],
+      "Connection failed": [
+        "Error de conexión"
+      ],
+      "Connectors this task can use": [
+        "Conectores que esta tarea puede usar"
       ],
       "Conversation starters (optional)": [
         "Iniciadores de conversación (opcional)"
@@ -4261,8 +4934,35 @@
       "Created on": [
         "Creado el"
       ],
+      "Crunching the cat-able numbers…": [
+        "Analizando los números gatológicos…"
+      ],
+      "CSS File": [
+        "Archivo CSS"
+      ],
+      "CSV": [
+        "CSV"
+      ],
+      "Currently disabled by your settings": [
+        "Actualmente desactivado por sus ajustes"
+      ],
+      "Daily at ${ timeLabel }": [
+        "Diario a las ${ timeLabel }"
+      ],
+      "Dart File": [
+        "Archivo Dart"
+      ],
       "Data brokers": [
         "Intermediarios de datos"
+      ],
+      "Date": [
+        "Fecha"
+      ],
+      "Days of month": [
+        "Días del mes"
+      ],
+      "Days of week": [
+        "Días de la semana"
       ],
       "Describe what to change": [
         "Describa qué puede cambiar"
@@ -4270,11 +4970,71 @@
       "Description (optional)": [
         "Descripción (opcional)"
       ],
+      "Digital oversharing": [
+        "Sobreexposición digital"
+      ],
+      "Disabled": [
+        "Desactivado"
+      ],
+      "Dismiss": [
+        "Descartar"
+      ],
+      "Dockerfile": [
+        "Dockerfile"
+      ],
+      "Document editor": [
+        "Editor de documento"
+      ],
       "Draw a sketch": [
         "Dibujar un boceto"
       ],
+      "Drawing whisker plots…": [
+        "Dibujando diagramas…"
+      ],
+      "E": [
+        "E"
+      ],
+      "Easy to profile": [
+        "Fácil de perfilar"
+      ],
       "Edit conversation title": [
         "Editar título de la conversación"
+      ],
+      "Elixir File": [
+        "Archivo Elixir"
+      ],
+      "ENE": [
+        "ENE"
+      ],
+      "Erlang File": [
+        "Archivo Erland"
+      ],
+      "ESE": [
+        "ESE"
+      ],
+      "Every ${ dayName } at ${ timeLabel }": [
+        "Cada ${ dayName } a las ${ timeLabel }"
+      ],
+      "Excel Document": [
+        "Documento de Excel"
+      ],
+      "Failed": [
+        "Error"
+      ],
+      "Failed to load conversations": [
+        "Error al cargar las conversaciones"
+      ],
+      "Feels Like": [
+        "Se siente como"
+      ],
+      "File": [
+        "Archivo"
+      ],
+      "Files in Drive": [
+        "Archivos en Drive"
+      ],
+      "Filter by type": [
+        "Filtrar por tipo"
       ],
       "Fine": [
         "Fino"
@@ -4282,11 +5042,56 @@
       "Folder name": [
         "Nombre de la carpeta"
       ],
+      "Formatting": [
+        "Formato"
+      ],
+      "Frequency": [
+        "Frecuencia"
+      ],
+      "Generated image": [
+        "Imagen generada"
+      ],
+      "Generated image from ${ formattedDate }": [
+        "Imagen generada de ${ formattedDate }"
+      ],
       "Generating": [
         "Generando"
       ],
+      "Generating chart…": [
+        "Generando gráfico…"
+      ],
       "Generating your report": [
         "Generando su reporte"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "Obtener ${ PLAN_NAMES[PLANS.LUMO] }"
+      ],
+      "GIF Image": [
+        "Imagen GIF"
+      ],
+      "Gitignore File": [
+        "Archivo Gitignore"
+      ],
+      "Go File": [
+        "Archivo Go"
+      ],
+      "Go to ${ LUMO_SHORT_APP_NAME } homepage": [
+        "Ir a la página principal de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Gradle File": [
+        "Archivo Gradle"
+      ],
+      "Groovy File": [
+        "Archivo Groovy"
+      ],
+      "Hard to read": [
+        "Difícil de leer"
+      ],
+      "Haskell File": [
+        "Archivo Haskell"
+      ],
+      "HEIC Image": [
+        "Imagen HEIC"
       ],
       "High": [
         "Alto"
@@ -4294,11 +5099,20 @@
       "How AI gets more out of you": [
         "Cómo la IA obtiene más de usted"
       ],
+      "HTML Document": [
+        "Documento HTML"
+      ],
+      "Humidity": [
+        "Humedad"
+      ],
       "Image preview": [
         "Vista previa de imagen"
       ],
       "Include full conversation": [
         "Incluir conversación completa"
+      ],
+      "Initializing Drive...": [
+        "Inicializando Drive..."
       ],
       "Inspiration image": [
         "Imagen de inspiración"
@@ -4312,17 +5126,80 @@
       "It doesn't expire": [
         "No expira"
       ],
+      "Java File": [
+        "Archivo Java"
+      ],
+      "JavaScript File": [
+        "Archivo JavaScript"
+      ],
+      "JPEG Image": [
+        "Imagen JPEG"
+      ],
       "JSON": [
         "JSON"
+      ],
+      "JSON File": [
+        "Archivo JSON"
+      ],
+      "Kotlin File": [
+        "Archivo Kotlin"
+      ],
+      "Last 30 days": [
+        "Últimos 30 días"
+      ],
+      "Last 7 Days": [
+        "Últimos siete días"
+      ],
+      "Last 7 days": [
+        "Últimos siete días"
+      ],
+      "LaTeX Document": [
+        "Documento LaTeX"
+      ],
+      "Leaving receipts": [
+        "Dejando acuses de recibo"
       ],
       "Lending & hiring": [
         "Préstamos y contratación"
       ],
+      "Liking ${ LUMO_SHORT_APP_NAME }?": [
+        "¿Le gusta ${ LUMO_SHORT_APP_NAME }?"
+      ],
+      "Link address": [
+        "Vincular dirección"
+      ],
+      "Loading card...": [
+        "Cargando la tarjeta..."
+      ],
+      "Loading image...": [
+        "Cargando imagen..."
+      ],
+      "Lock File": [
+        "Archivo Lock"
+      ],
+      "Log File": [
+        "Archivo de registro"
+      ],
       "Low": [
         "Baja"
       ],
+      "Lua File": [
+        "Archivo Lua"
+      ],
+      "Makefile": [
+        "Makefile"
+      ],
       "Markdown": [
         "Markdown"
+      ],
+      "Markdown Document": [
+        "Documento Markdown"
+      ],
+      "MATLAB/Mathematica File": [
+        "Archivo MATLAB/Mathematica"
+      ],
+      "Maven File": [
+        "Archivo Maven"
       ],
       "Medium": [
         "Media"
@@ -4330,20 +5207,107 @@
       "Minimal": [
         "Mínimo"
       ],
+      "Monthly on ${ days } at ${ timeLabel }": [
+        "Mensual los ${ days } a las ${ timeLabel }"
+      ],
+      "My AI Paper Trail": [
+        "Mi rastro digital de IA"
+      ],
+      "My Data Value": [
+        "Mi valor de datos"
+      ],
       "My privacy type": [
         "Mi tipo de privacidad"
+      ],
+      "My Privacy Type": [
+        "Mi tipo de privacidad"
+      ],
+      "N": [
+        "N"
       ],
       "Name": [
         "Nombre"
       ],
+      "NE": [
+        "NE"
+      ],
+      "NNE": [
+        "NNE"
+      ],
+      "NNW": [
+        "NNO"
+      ],
+      "Not connected": [
+        "No conectado"
+      ],
+      "Notify me when a run finishes": [
+        "Notificarme cuando finalice una ejecución"
+      ],
+      "NW": [
+        "NO"
+      ],
+      "OCaml File": [
+        "Archivo OCaml"
+      ],
+      "ODT Document": [
+        "Documento ODT"
+      ],
+      "Oil painting": [
+        "Pintura al óleo"
+      ],
+      "Older": [
+        "Antiguo"
+      ],
+      "Once on ${ dateTimeLabel }": [
+        "Una vez el ${ dateTimeLabel }"
+      ],
+      "Other": [
+        "Otro"
+      ],
+      "Out of 100": [
+        "De 100"
+      ],
+      "PDF Document": [
+        "Documento PDF"
+      ],
+      "Pencil sketch": [
+        "Boceto a lápiz"
+      ],
+      "Perl File": [
+        "Archivo Perl"
+      ],
       "Personalized pricing": [
         "Precio personalizado"
+      ],
+      "PHP File": [
+        "Archivo PHP"
       ],
       "Platform": [
         "Plataforma"
       ],
+      "Plotting purr-fect data…": [
+        "Mostrando datos perfectos…"
+      ],
+      "PNG Image": [
+        "Imagen PNG"
+      ],
       "Politics": [
         "Política"
+      ],
+      "PowerShell Script": [
+        "Script PowerShell"
+      ],
+      "Preparing...": [
+        "Preparando..."
+      ],
+      "Pressure": [
+        "Presión"
+      ],
+      "Privacy Exposure": [
+        "Exposición de privacidad"
+      ],
+      "Privacy maxxing": [
+        "Maximizar la privacidad"
       ],
       "Progress": [
         "Progreso"
@@ -4351,23 +5315,119 @@
       "Project Instructions (optional)": [
         "Instrucciones del proyecto (opcional)"
       ],
+      "Projects": [
+        "Proyectos"
+      ],
+      "Python File": [
+        "Archivo Python"
+      ],
+      "R File": [
+        "Archivo R"
+      ],
+      "reStructuredText": [
+        "reStructuredText"
+      ],
+      "RTF Document": [
+        "Documento RTF"
+      ],
+      "Ruby File": [
+        "Archivo Ruby"
+      ],
+      "Rust File": [
+        "Archivo Rust"
+      ],
+      "S": [
+        "S"
+      ],
       "Save report on this device to view it later": [
         "Guardar reporte en este dispositivo para verlo después"
+      ],
+      "SBT File": [
+        "Archivo SBT"
+      ],
+      "Scala File": [
+        "Archivo Scala"
       ],
       "Scams": [
         "Estafas"
       ],
+      "SE": [
+        "SE"
+      ],
+      "Search failed": [
+        "Error en la búsqueda"
+      ],
+      "Search library": [
+        "Buscar librería"
+      ],
       "Selected:": [
         "Seleccionado:"
+      ],
+      "Series": [
+        "Series"
+      ],
+      "Series ${ seriesNumber }": [
+        "Serie ${ seriesNumber }"
+      ],
+      "Settings": [
+        "Ajustes"
+      ],
+      "Share (%)": [
+        "Compartir (%)"
       ],
       "Share to": [
         "Compartir en"
       ],
+      "Sheet": [
+        "Hoja"
+      ],
+      "Shell Script": [
+        "Script Shell"
+      ],
+      "Sifting through the meow-trics…": [
+        "Analizando las métricas…"
+      ],
+      "SQL File": [
+        "Archivo SQL"
+      ],
+      "SSE": [
+        "SSE"
+      ],
+      "SSW": [
+        "SSO"
+      ],
+      "SW": [
+        "SO"
+      ],
+      "Swift File": [
+        "Archivo Swift"
+      ],
+      "Text File": [
+        "Archivo de texto"
+      ],
       "Thick": [
         "Gruesa"
       ],
+      "This Year": [
+        "Este año"
+      ],
+      "Time": [
+        "Hora"
+      ],
       "Tips": [
         "Consejos"
+      ],
+      "Today": [
+        "Hoy"
+      ],
+      "TOML File": [
+        "Archivo TOML"
+      ],
+      "TypeScript File": [
+        "Archivo TypeScript"
+      ],
+      "Unknown file": [
+        "Archivo desconocido"
       ],
       "Untitled chat": [
         "Chat sin título"
@@ -4375,8 +5435,71 @@
       "Untitled project": [
         "Proyecto sin nombre"
       ],
+      "Untitled task": [
+        "Tarea sin título"
+      ],
       "Upload": [
         "Cargar"
+      ],
+      "Value": [
+        "Valor"
+      ],
+      "Vim Script": [
+        "Script Vim"
+      ],
+      "Vintage photo": [
+        "Foto antigua"
+      ],
+      "Vol: ": [
+        "Vol: "
+      ],
+      "W": [
+        "O"
+      ],
+      "Watercolor": [
+        "Acuarela"
+      ],
+      "WebP Image": [
+        "Imagen WebP"
+      ],
+      "Weekdays at ${ timeLabel }": [
+        "Días laborales a las ${ timeLabel }"
+      ],
+      "Weekly on ${ dayNames } at ${ timeLabel }": [
+        "Semanal los ${ dayNames } a las ${ timeLabel }"
+      ],
+      "What AI Knows About Me": [
+        "Lo que la IA sabe de mí"
+      ],
+      "What should ${ LUMO_SHORT_APP_NAME } do each time?": [
+        "¿Qué debería hacer ${ LUMO_SHORT_APP_NAME } cada vez?"
+      ],
+      "What's your AI Paper Trail? ": [
+        "¿Qué es su rastro digital de IA? "
+      ],
+      "When to run": [
+        "Cuándo ejecutar"
+      ],
+      "Wind": [
+        "Viento"
+      ],
+      "WNW": [
+        "ONO"
+      ],
+      "Word Document": [
+        "Documento de Word"
+      ],
+      "WSW": [
+        "WSW"
+      ],
+      "XML File": [
+        "Archivo XML"
+      ],
+      "YAML File": [
+        "Archivo YAML"
+      ],
+      "Yesterday": [
+        "Ayer"
       ]
     },
     "collider_2025:Notification": {
@@ -4391,8 +5514,17 @@
       "All": [
         "Todo"
       ],
+      "Always local time": [
+        "Siempre hora local"
+      ],
+      "Daily": [
+        "Diario"
+      ],
       "Date created": [
         "Fecha creada"
+      ],
+      "Day ${ day }": [
+        "Día ${ day }"
       ],
       "Favorited": [
         "Destacado"
@@ -4402,6 +5534,15 @@
       ],
       "Last updated": [
         "Última actualización"
+      ],
+      "Monthly": [
+        "Mensual"
+      ],
+      "Once": [
+        "Una vez"
+      ],
+      "Weekly": [
+        "Semanal"
       ]
     },
     "collider_2025:Placeholder": {
@@ -4447,11 +5588,17 @@
       "Holiday planner": [
         "Planificador de vacaciones"
       ],
+      "Paste or type a link": [
+        "Pegue o escriba un enlace"
+      ],
       "Search chats": [
         "Buscar chats"
       ],
       "Search custom ${ LUMO_SHORT_APP_NAME }": [
         "Buscar ${ LUMO_SHORT_APP_NAME } personalizados"
+      ],
+      "Search library": [
+        "Buscar librería"
       ],
       "Sign in required": [
         "Se requiere iniciar sesión"
@@ -4564,6 +5711,24 @@
       "Identify research gaps and suggest future research directions": [
         "Identifique lagunas de investigación y sugiera futuras direcciones de investigación"
       ],
+      "Reimagine this image as a bold comic book illustration with strong outlines and flat colors": [
+        "Reimagine esta imagen como una ilustración de cómic llamativa con contornos definidos y colores planos"
+      ],
+      "Reimagine this image as a detailed pencil sketch with fine line work and shading": [
+        "Reimagine esta imagen como un boceto detallado a lápiz con líneas finas y sombreado"
+      ],
+      "Reimagine this image as a rich oil painting with visible brushstrokes and warm tones": [
+        "Reimagine esta imagen como una rica pintura al óleo con pinceladas visibles y tonos cálidos"
+      ],
+      "Reimagine this image as a soft watercolor painting with flowing, translucent colors": [
+        "Reimagine esta imagen como una pintura de acuarela suave con colores fluidos y translúcidos"
+      ],
+      "Reimagine this image as a vintage photograph with faded colors and film grain": [
+        "Reimagine esta imagen como una fotografía antigua con colores desvanecidos y grano de película"
+      ],
+      "Reimagine this image in a detailed anime illustration style": [
+        "Reimagine esta imagen con un estilo de ilustración animé detallado"
+      ],
       "Review this code for bugs and potential improvements": [
         "Revise este código en busca de errores y posibles mejoras"
       ],
@@ -4608,8 +5773,26 @@
       ]
     },
     "collider_2025:Reasoning": {
+      "${ failedCount } failed": [
+        "${ failedCount } fallida",
+        "${ failedCount } fallidas"
+      ],
+      "${ resultCount } result": [
+        "${ resultCount } resultado",
+        "${ resultCount } resultados"
+      ],
+      "${ urlCount } URL": [
+        "${ urlCount } URL",
+        "${ urlCount } URLs"
+      ],
       "Checked ${ BRAND_NAME } knowledge": [
         "Conocimiento de ${ BRAND_NAME } comprobado"
+      ],
+      "Checked ${ symbol } cryptocurrency prices": [
+        "Comprobé los precios de la criptomoneda ${ symbol }"
+      ],
+      "Checked cryptocurrency prices": [
+        "Comprobé los precios de la criptomoneda"
       ],
       "Checked prices": [
         "Revisé los precios"
@@ -4617,17 +5800,35 @@
       "Checked the weather": [
         "Comprobé el clima"
       ],
+      "Checked the weather in ${ location }": [
+        "Comprobé el tiempo en ${ location }"
+      ],
       "Checking ${ BRAND_NAME } knowledge": [
         "Comprobando conocimiento de ${ BRAND_NAME }"
       ],
       "Checking ${ BRAND_NAME } knowledge...": [
         "Comprobando conocimiento de ${ BRAND_NAME }..."
       ],
+      "Checking ${ symbol } cryptocurrency prices...": [
+        "Comprobando los precios de la criptomoneda ${ symbol }..."
+      ],
+      "Checking cryptocurrency prices...": [
+        "Comprobando los precios de la criptomoneda..."
+      ],
       "Checking prices": [
         "Revisando los precios"
       ],
       "Checking the weather": [
         "Comprobando el clima"
+      ],
+      "Checking the weather in ${ location }...": [
+        "Comprobando el tiempo en ${ location }..."
+      ],
+      "Checking the weather...": [
+        "Comprobando el tiempo..."
+      ],
+      "command": [
+        "comando"
       ],
       "Complete": [
         "Completado"
@@ -4644,8 +5845,20 @@
       "Done": [
         "Listo"
       ],
+      "Edited ${ path }": [
+        "Edité ${ path }"
+      ],
+      "Edited file": [
+        "Archivo editado"
+      ],
       "Edited image": [
         "Imagen editada"
+      ],
+      "Editing ${ path }...": [
+        "Editando ${ path }..."
+      ],
+      "Editing file...": [
+        "Editando archivo..."
       ],
       "Editing image": [
         "Editando la imagen"
@@ -4671,6 +5884,27 @@
       "Failed": [
         "Error"
       ],
+      "Fetched ${ url } and sent contents back": [
+        "Obtuve ${ url } y envié los contenidos"
+      ],
+      "Fetched page": [
+        "Página obtenida"
+      ],
+      "Fetching ${ url }...": [
+        "Obteniendo ${ url }..."
+      ],
+      "Fetching page...": [
+        "Obteniendo página..."
+      ],
+      "file": [
+        "archivo"
+      ],
+      "files": [
+        "archivos"
+      ],
+      "Finished your creation": [
+        "Finalicé su creación"
+      ],
       "Generated image": [
         "Imagen generada"
       ],
@@ -4689,14 +5923,23 @@
       "Last updated: ": [
         "Última actualización: "
       ],
+      "Last updated: ${ updatedTime }": [
+        "Última actualización: ${ updatedTime }"
+      ],
       "Looked at your image": [
         "Miré su imagen"
       ],
       "Looked things up online": [
         "Busqué información en internet"
       ],
+      "Looked up ${ symbol } stock prices": [
+        "Busqué los precios de las acciones ${ symbol }"
+      ],
       "Looked up market data": [
         "Busqué los datos de mercado"
+      ],
+      "Looked up stock prices": [
+        "Busqué los precios de las acciones"
       ],
       "Looked up the forecast": [
         "Consulté el pronóstico"
@@ -4713,8 +5956,14 @@
       "Looking things up online": [
         "Buscando información en internet"
       ],
+      "Looking up ${ symbol } stock prices...": [
+        "Buscando los precios de las acciones ${ symbol }..."
+      ],
       "Looking up market data": [
         "Buscando los datos de mercado"
+      ],
+      "Looking up stock prices...": [
+        "Buscando precios de las acciones..."
       ],
       "Looking up the forecast": [
         "Consultando el pronóstico"
@@ -4728,8 +5977,17 @@
       "P/E Ratio": [
         "Relación P/B"
       ],
+      "page": [
+        "página"
+      ],
       "Performance comparison": [
         "Comparación de rendimiento"
+      ],
+      "Prepared your canvas": [
+        "Preparé su canvas"
+      ],
+      "Preparing your canvas": [
+        "Preparando su canvas"
       ],
       "Price": [
         "Precio"
@@ -4737,11 +5995,35 @@
       "Profit Margin": [
         "Margen de beneficio"
       ],
+      "Ran ${ shortName }": [
+        "Ejecuté ${ shortName }"
+      ],
+      "Ran ${ shortName } and sent results back": [
+        "Ejecuté ${ shortName } y envié los resultados"
+      ],
+      "Ran command": [
+        "Ejecuté el comando"
+      ],
+      "Ran command and sent output back": [
+        "Ejecuté el comando y envié el resultado"
+      ],
+      "Read ${ path } and sent contents back": [
+        "Leí ${ path } y envié los contenidos"
+      ],
       "Read a web page": [
         "Leí una página web"
       ],
+      "Read file": [
+        "Leí el archivo"
+      ],
+      "Reading ${ path }...": [
+        "Leyendo ${ path }..."
+      ],
       "Reading a web page": [
         "Leyendo una página web"
+      ],
+      "Reading file...": [
+        "Leyendo el archivo..."
       ],
       "Reasoning": [
         "Razonamiento"
@@ -4749,11 +6031,41 @@
       "Revenue TTM": [
         "Ingresos TTM"
       ],
+      "Running ${ shortName }...": [
+        "Ejecutando ${ shortName }..."
+      ],
+      "Running `${ short }`...": [
+        "Ejecutando `${ short }`..."
+      ],
+      "Running command...": [
+        "Ejecutando comando..."
+      ],
+      "Searched files": [
+        "Archivos buscados"
+      ],
+      "Searched files for \"${ query }\" and sent results back": [
+        "Busqué archivos para «${ query }» y envié los resultados"
+      ],
       "Searched the web": [
         "Busqué en la web"
       ],
+      "Searched the web for \"${ query }\"": [
+        "Busqué en la web para «${ query }»"
+      ],
+      "Searching files for \"${ query }\"...": [
+        "Buscando archivos para «${ query }»..."
+      ],
+      "Searching files...": [
+        "Buscando archivos..."
+      ],
       "Searching the web": [
         "Buscando en la web"
+      ],
+      "Searching the web for \"${ query }\"...": [
+        "Buscando en la web para «${ query }»..."
+      ],
+      "Searching the web...": [
+        "Buscando en la web..."
       ],
       "Thinking": [
         "Pensante"
@@ -4763,6 +6075,12 @@
       ],
       "Thought this through": [
         "Pensé bien"
+      ],
+      "Updated ${ path }": [
+        "Actualizado ${ path }"
+      ],
+      "Updated file": [
+        "Actualicé el archivo"
       ],
       "Updated your image": [
         "Imagen actualizada"
@@ -4794,8 +6112,17 @@
       "Working on this": [
         "Trabajando en esto"
       ],
+      "Working on your creation": [
+        "Trabajando en su creación"
+      ],
       "Working through this": [
         "Trabajando en esto"
+      ],
+      "Writing ${ path }...": [
+        "Escribiendo ${ path }..."
+      ],
+      "Writing file...": [
+        "Escribiendo el archivo..."
       ]
     },
     "collider_2025:Status": {
@@ -4862,8 +6189,14 @@
       "Create": [
         "Crear"
       ],
+      "Creations": [
+        "Creaciones"
+      ],
       "Gallery": [
         "Galería"
+      ],
+      "Images": [
+        "Imágenes"
       ]
     },
     "collider_2025:Time": {
@@ -4873,8 +6206,26 @@
       "${ ageMinutes }m ago": [
         "Hace ${ ageMinutes } min"
       ],
+      "${ day } at ${ time }": [
+        "${ day } a las ${ time }"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min"
+      ],
       "Just now": [
         "Justo ahora"
+      ],
+      "Now": [
+        "Ahora"
+      ],
+      "Today at ${ time }": [
+        "Hoy a las ${ time }"
+      ],
+      "Yesterday": [
+        "Ayer"
+      ],
+      "Yesterday at ${ time }": [
+        "Ayer a las ${ time }"
       ]
     },
     "collider_2025:Title": {
@@ -4883,6 +6234,9 @@
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Un asistente de IA debería empoderarle, no explotarle para obtener sus datos."
+      ],
+      "Auto-approve": [
+        "Auto aprobar"
       ],
       "Better web search": [
         "Mejor búsqueda web"
@@ -4923,11 +6277,20 @@
       "Delete project?": [
         "¿Eliminar proyecto?"
       ],
+      "Delete scheduled task?": [
+        "¿Eliminar la tarea programada?"
+      ],
       "Delete your data regularly": [
         "Elimine sus datos regularmente"
       ],
       "Detail makes fraud convincing": [
         "Los detalles hacen que el fraude sea convincente"
+      ],
+      "Discard changes?": [
+        "¿Descartar cambios?"
+      ],
+      "Download as": [
+        "Descargar como"
       ],
       "Edit custom ${ LUMO_SHORT_APP_NAME }": [
         "Editar ${ LUMO_SHORT_APP_NAME } personalizado"
@@ -4937,6 +6300,9 @@
       ],
       "Edit Project": [
         "Editar proyecto"
+      ],
+      "Edit scheduled task": [
+        "Editar tarea programada"
       ],
       "Every clarification is a new data point": [
         "Cada aclaración es un dato nuevo"
@@ -4986,6 +6352,9 @@
       "Introducing ${ LUMO_SHORT_APP_NAME } 2.0": [
         "Presentamos a ${ LUMO_SHORT_APP_NAME } 2.0"
       ],
+      "Library": [
+        "Librería"
+      ],
       "Link Drive Folder": [
         "Enlazar carpeta de Drive"
       ],
@@ -5007,8 +6376,8 @@
       "More options": [
         "Más opciones"
       ],
-      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Más proyectos con ${ LUMO_SHORT_APP_NAME } Plus"
+      "More Projects with ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "Más proyectos con ${ PLAN_NAMES[PLANS.LUMO] }"
       ],
       "Most revealing": [
         "Lo más revelador"
@@ -5018,6 +6387,9 @@
       ],
       "My Projects": [
         "Mis proyectos"
+      ],
+      "New scheduled task": [
+        "Tarea programada nueva"
       ],
       "No chat history yet. Let's start chatting!": [
         "Todavía no hay historial de chat. ¡Empecemos a chatear!"
@@ -5033,6 +6405,9 @@
       ],
       "No project chats yet": [
         "Aún no hay chats del proyecto"
+      ],
+      "No scheduled tasks yet": [
+        "Aún sin tareas programadas"
       ],
       "Nothing here yet": [
         "No hay nada aquí en este momento"
@@ -5061,8 +6436,14 @@
       "Review privacy settings": [
         "Revisar ajustes de privacidad"
       ],
+      "Save as": [
+        "Guardar como"
+      ],
       "Save to ${ DRIVE_SHORT_APP_NAME }": [
         "Guardar en ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Scheduled tasks": [
+        "Tareas programadas"
       ],
       "See what Big Tech AI already knows about you": [
         "Descubra lo que la IA de las grandes tecnológicas ya sabe sobre usted"
@@ -5079,6 +6460,9 @@
       "Sign in to build your gallery": [
         "Inicie sesión para crear su galería"
       ],
+      "Sign in to build your library": [
+        "Inicie sesión para crear su librería"
+      ],
       "Sign in to create projects": [
         "Iniciar sesión para crear proyectos"
       ],
@@ -5090,6 +6474,12 @@
       ],
       "Start a new conversation": [
         "Iniciar una nueva conversación"
+      ],
+      "Start from a template": [
+        "Comenzar desde una plantilla"
+      ],
+      "Templates hidden": [
+        "Plantillas ocultas"
       ],
       "That's why we built ${ LUMO_SHORT_APP_NAME }: To bring you all the benefits of AI, without compromising your privacy and data security.": [
         "Por eso creamos ${ LUMO_SHORT_APP_NAME }: para ofrecerle todos los beneficios de la IA sin comprometer su privacidad ni la seguridad de sus datos."
@@ -5103,14 +6493,26 @@
       "Two models, two modes": [
         "Dos modelos, dos modos"
       ],
+      "Untitled": [
+        "Sin título"
+      ],
       "Untitled conversation": [
         "Conversación sin título"
+      ],
+      "Untitled document": [
+        "Documento sin título"
+      ],
+      "Untitled Project": [
+        "Proyecto sin nombre"
       ],
       "Upload your data export": [
         "Cargue su exportación de datos"
       ],
       "Use AI on your terms": [
         "Use la IA bajo sus términos"
+      ],
+      "Versions": [
+        "Versiones"
       ],
       "We couldn't read your paper trail": [
         "No pudimos leer su rastro digital"
@@ -5141,6 +6543,9 @@
       ],
       "Your shareable card": [
         "Su tarjeta compartible"
+      ],
+      "Your tasks": [
+        "Sus tareas"
       ],
       "Your traits get bundled and sold": [
         "Sus rasgos se agrupan y se venden"
@@ -6377,6 +7782,12 @@
       "Failed to decrypt revision metadata": [
         "Error al descifrar los metadatos de la revisión"
       ],
+      "Failed to download chart. Please try again.": [
+        "Error al descargar el gráfico. Intente de nuevo."
+      ],
+      "Failed to download image. Please try again.": [
+        "Error al descargar la imagen. Intente de nuevo."
+      ],
       "Failed to get inviter keys": [
         "Error al obtener las claves de quien invita"
       ],
@@ -6917,6 +8328,9 @@
       "1 vault per user": [
         "1 bóveda por usuario"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantía de reembolso de 30 días: cancela durante los 30 días posteriores a tu compra y comunícate con nuestro ${ customerSupportLink } para obtener un reembolso."
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
       ],
@@ -7323,6 +8737,9 @@
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
+      ],
+      "UnionPay logo": [
+        "logo de UnionPay"
       ],
       "Unknown": [
         "Desconocido"
@@ -7768,6 +9185,9 @@
       "clearing your browser cache": [
         "vaciar la caché del navegador"
       ],
+      "Customer Support": [
+        "Servicio al cliente"
+      ],
       "Enforcing 2FA for organizations": [
         "Implementar 2FA para organizaciones"
       ],
@@ -7843,6 +9263,9 @@
       ],
       "Assets": [
         "Activos"
+      ],
+      "Behaves as if the backend refused a message for this chat: shows the toast, replaces the composer with \"Start new chat\", and saves the lock to IndexedDB so it survives a reload. Unlock removes it from both.": [
+        "Se comporta como si el servidor hubiera rechazado un mensaje para este chat: muestra el mensaje emergente, reemplaza el texto del mensaje con «Iniciar chat nuevo» y guarda el bloqueo en IndexedDB para que se conserve tras una recarga. La opción «Desbloquear» lo elimina de ambos."
       ],
       "Buffer size": [
         "Tamaño del búfer"
@@ -7922,6 +9345,9 @@
       "Local storage (IndexedDB)": [
         "Almacenamiento local (IndexedDB)"
       ],
+      "Locked": [
+        "Bloqueado"
+      ],
       "max": [
         "máx."
       ],
@@ -7963,6 +9389,9 @@
       ],
       "Open a conversation to enable generation error testing.": [
         "Abra una conversación para activar la prueba de generación de error."
+      ],
+      "Open a conversation to simulate the server message limit.": [
+        "Abre una conversación para simular el límite de mensajes del servidor."
       ],
       "Performance": [
         "Rendimiento"
@@ -8011,6 +9440,12 @@
       ],
       "Send spaces limit to native": [
         "Enviar límite de espacios a nativo"
+      ],
+      "Server message limit (current chat)": [
+        "Límite de mensaje del servidor (chat actual)"
+      ],
+      "Simulate server rejection": [
+        "Simular rechazo del servidor"
       ],
       "Smoothing (Spring-Mass)": [
         "Amortiguación (Resorte-Masa)"
@@ -8083,6 +9518,9 @@
       ],
       "Triggers generation error messages with tier-specific messaging. User type: ${ lumoUserType }": [
         "Genera mensajes de error con mensajes específicos para cada nivel. Tipo de usuario: ${ lumoUserType }"
+      ],
+      "Unlock": [
+        "Desbloquear"
       ],
       "Unsynced conversations": [
         "Conversaciones no sincronizadas"
@@ -9199,6 +10637,11 @@
         "Necesita acceso a la clave de la organización para realizar esta acción."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Cuenta bancaria"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -9248,12 +10691,6 @@
       ],
       "Billing Country": [
         "País de facturación"
-      ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "No se puede comprar Born Private con una suscripción activa."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private requiere una donación."
       ],
       "Buying credits requires a separate purchase.": [
         "La compra de créditos requiere una compra separada."
@@ -9438,17 +10875,11 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ya posee ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Ya posee Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto se le redirigirá a PayPal para verificar el pago."
       ],
       "You will soon be redirected to verify your payment.": [
         "Pronto se le redirigirá para verificar el pago."
-      ],
-      "Your account is too old for Born Private.": [
-        "Su cuenta es demasiado antigua para Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_WERO_BRAND_NAME } solo admite pagos en euros."
@@ -10236,17 +11667,17 @@
       ]
     },
     "Time": {
-      "${ days } days ago": [
-        "hace ${ days } días"
+      "${ days } day ago": [
+        "Hace ${ days } día",
+        "Hace ${ days } días"
       ],
-      "${ hours } hours ago": [
+      "${ hours } hour ago": [
+        "Hace ${ hours } hora",
         "Hace ${ hours } horas"
       ],
-      "${ minutes } minutes ago": [
-        "hace ${ minutes } minutos"
-      ],
-      "1 hour ago": [
-        "Hace 1 hora"
+      "${ minutes } minute ago": [
+        "Hace ${ minutes } minuto",
+        "Hace ${ minutes } minutos"
       ],
       "Just now": [
         "Justo ahora"
@@ -10593,6 +12024,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Este usuario obtendrá permisos de administrador en el próximo inicio de sesión."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Actualice a un plan que admita usar roles de administrador."
       ],

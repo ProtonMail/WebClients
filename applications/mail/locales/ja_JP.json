@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }を追加"
       ],
+      "Add a payment method": [
+        "お支払い方法を追加"
+      ],
       "Add account": [
         "アカウントを追加"
       ],
@@ -86,6 +89,9 @@
       ],
       "Add group": [
         "グループを追加"
+      ],
+      "Add more details": [
+        "詳細を追加"
       ],
       "Add new group": [
         "新しいグループを追加"
@@ -438,6 +444,9 @@
       "Deselect all messages": [
         "すべてのメッセージの選択を解除"
       ],
+      "Detach": [
+        "切り離す"
+      ],
       "Details": [
         "詳細"
       ],
@@ -455,6 +464,12 @@
       ],
       "Display navigation bar": [
         "ナビゲーションバーを表示する"
+      ],
+      "Dock to side panel": [
+        "サイドパネルに固定"
+      ],
+      "Don't show this offer again": [
+        "このオファーを今後表示しない"
       ],
       "Done": [
         "完了"
@@ -618,6 +633,9 @@
       "Get in touch": [
         "連絡する"
       ],
+      "Get index size on disk": [
+        "ディスク上のインデックスサイズを取得"
+      ],
       "Get started": [
         "利用開始"
       ],
@@ -666,8 +684,14 @@
       "Google": [
         "Google"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "はい"
+      ],
+      "Got it, connect my Gmail": [
+        "了解しました。Gmail を連携します"
       ],
       "Help and feedback": [
         "ヘルプとフィードバック"
@@ -797,6 +821,9 @@
       ],
       "Later this week": [
         "今週中"
+      ],
+      "Learn how this works": [
+        "仕組みについて詳しく見る"
       ],
       "Learn more": [
         "詳細"
@@ -942,6 +969,12 @@
       "Move": [
         "移動"
       ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "${ LUMO_SHORT_APP_NAME } を左に移動"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "${ LUMO_SHORT_APP_NAME } を右に移動"
+      ],
       "Move all to archive": [
         "すべてアーカイブに移動"
       ],
@@ -993,6 +1026,9 @@
       "Never show": [
         "常に非表示"
       ],
+      "New chat": [
+        "新しいチャット"
+      ],
       "New message": [
         "新しいメッセージ"
       ],
@@ -1038,6 +1074,9 @@
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
       ],
+      "Open debug menu": [
+        "デバッグメニューを開く"
+      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
@@ -1070,6 +1109,9 @@
       ],
       "Preview contact": [
         "連絡先をプレビュー"
+      ],
+      "Preview logs": [
+        "ログをプレビュー"
       ],
       "Previous": [
         "前へ"
@@ -1223,6 +1265,9 @@
       ],
       "Run on ${ BRAND_NAME } servers": [
         "${ BRAND_NAME } サーバー上で実行"
+      ],
+      "Run realistic session": [
+        "実践的なセッションを実行"
       ],
       "Save": [
         "保存"
@@ -1425,6 +1470,9 @@
       "Snooze": [
         "スヌーズ"
       ],
+      "Special Offer": [
+        "特別オファー"
+      ],
       "Star": [
         "スターを付ける"
       ],
@@ -1470,6 +1518,9 @@
       "Switch or add account": [
         "アカウントを切り替え・追加"
       ],
+      "Switch to ${ planName }": [
+        "${ planName } に切り替え"
+      ],
       "Take a tour": [
         "ツアーを開始"
       ],
@@ -1484,6 +1535,9 @@
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "メールを安全に検索するには、メッセージのコピーをブラウザにダウンロードする必要があります。初回のダウンロードには時間がかかることがあります。"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } を切り替え"
       ],
       "Toggle Calendar app": [
         "カレンダーアプリを切り替え"
@@ -1650,6 +1704,9 @@
       "View contact details": [
         "連絡先の詳細を表示"
       ],
+      "View guide": [
+        "ガイドを見る"
+      ],
       "View headers": [
         "ヘッダーを表示する"
       ],
@@ -1677,6 +1734,9 @@
       "Why not?": [
         "どうして？"
       ],
+      "Write ${ count } logs": [
+        "${ count } 件のログを書き込む"
+      ],
       "Write for me": [
         "私の代わりに返信"
       ],
@@ -1685,6 +1745,9 @@
       ],
       "Yes, I'll attend": [
         "はい、参加します"
+      ],
+      "Yes, organize it": [
+        "はい、整理する"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "${ maxAttachments }件を超える連絡先のvCardファイルを送信できません。"
@@ -1711,6 +1774,16 @@
     "action": {
       "Search messages": [
         "メッセージを検索"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "${ folder } の名前を変更…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "${ label } の名前を変更…"
       ]
     },
     "Action: Sheets": {
@@ -1826,6 +1899,9 @@
       "Domains": [
         "ドメイン"
       ],
+      "Managed Service Provider": [
+        "マネージドサービスプロバイダー"
+      ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "マネージドサービスプロバイダーアドオンを導入している組織は、子会社組織を作成および管理できます。"
       ],
@@ -1940,6 +2016,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "メールの生産性を新しいレベルに。${ BRAND_NAME }Scribeがメールの作成、返信、校正をお手伝いします。"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "メールの生産性を新たな次元へ。${ LUMO_SHORT_APP_NAME } がメールの作成、返信、校正をサポートします。"
       ]
     },
     "Attached ics file error": {
@@ -1988,6 +2067,9 @@
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_LUMO_SEATS }の${ LUMO_SHORT_APP_NAME }シートをご利用いただけます。"
       ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "トライアル期間中は、文章作成アシスタント ${ LUMO_SHORT_APP_NAME } を最大 ${ TRIAL_MAX_SCRIBE_SEATS } シートまでご利用いただけます。"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_SCRIBE_SEATS }のScribeシートをご利用いただけます。"
       ],
@@ -2019,6 +2101,11 @@
         "プレミアムパスワードマネージャー"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30日間の返金保証：ご購入から30日以内にキャンセルし、${ customerSupportLink } までご連絡いただければ、返金いたします。"
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
@@ -2046,11 +2133,101 @@
     "bfcampaign2026: Action": {
       "Black Friday": [
         "ブラックフライデー"
+      ],
+      "Get the deal": [
+        "この特典を利用する"
       ]
     },
     "bfcampaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GBのストレージ"
+      ],
+      "2 individual accounts": [
+        "2つの独立アカウント"
+      ],
+      "2 TB of secure storage": [
+        "2 TBの安全なストレージ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GBのストレージ（現在のプランの40倍）"
+      ],
+      "3 TB of secure storage": [
+        "3 TBの安全なストレージ"
+      ],
+      "500 GB of secure storage": [
+        "500 GBの安全なストレージ"
+      ],
+      "6 individual accounts": [
+        "6つの独立アカウント"
+      ],
+      "Built-in 2FA authenticator": [
+        "2要素認証機能を内蔵"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は標準の月額料金に基づいて計算されます。今回の請求期間終了時に、サブスクリプションは通常の年間料金で更新されます。"
+      ],
+      "Online document editor": [
+        "オンライン文書エディタ"
+      ],
+      "Recover previous file versions": [
+        "過去のファイルバージョンを復元"
+      ],
+      "Stronger protection against cyber threats": [
+        "サイバー脅威に対するより強力な保護"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "無制限のフォルダー、ラベル、フィルター"
+      ],
       "Use your own email domain": [
         "独自のメールドメインを使用"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }のプレミアム機能"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }のプレミアム機能"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }のプレミアム機能"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }のプレミアム機能"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }のプレミアム機能"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "今年最大のセール"
+      ],
+      "Black Friday": [
+        "ブラックフライデー"
+      ],
+      "for 12 months": [
+        "12か月分"
+      ],
+      "Last chance to save big": [
+        "大幅割引のラストチャンス"
+      ],
+      "Protect your entire tribe": [
+        "家族全員を保護"
+      ],
+      "Protection for two in a single plan": [
+        "1つのプランで2人を保護"
       ]
     },
     "Billing cycle option": {
@@ -2213,6 +2390,11 @@
       ],
       "Take a tour": [
         "ツアーを開始"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "最新のメールから順にインポートされます。すでにインポート済みのメールが再度コピーされることはありません。"
       ]
     },
     "Calendar attachment tooltip": {
@@ -2551,6 +2733,15 @@
       "${ users } user": [
         "${ users } 人のユーザー"
       ],
+      "Amount due": [
+        "ご請求額"
+      ],
+      "Amount due after trial": [
+        "トライアル終了後のお支払い額"
+      ],
+      "Amount due now": [
+        "今すぐのお支払い額"
+      ],
       "Subtotal": [
         "小計"
       ],
@@ -2570,6 +2761,11 @@
       ],
       "Expand": [
         "開く"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "この会話は長すぎるため、続行できません。${ LUMO_SHORT_APP_NAME }を快調かつレスポンシブに維持するために、新しいチャットを開始してください。"
       ]
     },
     "collider_2025: feature": {
@@ -4036,11 +4232,17 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
+      "Move emails to the right category to improve categorization.": [
+        "メールを適切なカテゴリーに移動して、自動分類の精度を向上させます。"
+      ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "${ senderEmailAddress } と ${ otherSendersCount } からの新しいメールは受信されず、完全に削除されます。"
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "${ senderEmailAddress }からのメールは今後一切受信しません。"
+      ],
+      "No ads. No trackers": [
+        "広告もトラッカーも一切ありません"
       ],
       "No folders": [
         "フォルダがありません。"
@@ -4224,6 +4426,9 @@
     "Desktop notification body": {
       "${ messageCount } new message": [
         "${ messageCount }件の新着メッセージ"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "差出人: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -4504,6 +4709,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "あなたのユーザー名は${ user.Name }です。 ${ emailAddress }を作成するには、設定 > 署名とアドレス > 短縮ドメイン (@pm.me) に移動してください。"
       ],
+      "A contact with this email address already exists": [
+        "このメールアドレスを持つ連絡先は既に存在します"
+      ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
@@ -4537,9 +4745,6 @@
       "Aliases could not be loaded": [
         "エイリアスを読み込めませんでした"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
-      ],
       "Amount above the maximum.": [
         "金額が上限を超えています。"
       ],
@@ -4570,9 +4775,6 @@
       "Cannot set expiration longer than retention policy allows.": [
         "保持ポリシーで許可されているよりも長い有効期限を設定することはできません。"
       ],
-      "Cannot verify the author of this file": [
-        "このファイルの作成者を確認できません"
-      ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
@@ -4600,6 +4802,9 @@
       "Contact signature not verified": [
         "連絡先の署名が検証されていません"
       ],
+      "Contact your administrator to start a migration.": [
+        "移行を開始するには、管理者にお問い合わせください。"
+      ],
       "Contact your organization’s administrator to resolve this": [
         "これを解決するには、組織の管理者に連絡してください"
       ],
@@ -4609,26 +4814,14 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
       ],
-      "Copying item to a non-folder is not allowed": [
-        "フォルダではない場所へのアイテムのコピーはできません"
-      ],
-      "Could not load sharing details": [
-        "共有の詳細を読み込めませんでした"
+      "Could not grant access to the organization key": [
+        "組織の鍵へのアクセス権を付与できませんでした"
       ],
       "Could not open created vault": [
         "作成された保管庫を開けませんでした"
       ],
       "Could not open updated vault": [
         "更新された保管庫を開けませんでした"
-      ],
-      "Could not unlock the parent folder": [
-        "親フォルダをアンロックできませんでした"
-      ],
-      "Could not unlock this item": [
-        "このアイテムをアンロックできませんでした"
-      ],
-      "Creating folders in non-folders is not allowed": [
-        "フォルダではない場所にフォルダを作成することはできません"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "復号エラー: 暗号化されたメッセージのコンテンツ復号に失敗しました。"
@@ -4702,9 +4895,6 @@
       "Failed to open to contact": [
         "連絡先を開けませんでした"
       ],
-      "File has no revision": [
-        "ファイルに修正はありません"
-      ],
       "Filter with this name already exists": [
         "この名前のフィルターが既に存在します"
       ],
@@ -4756,9 +4946,6 @@
       "Invalid public key file": [
         "無効な公開鍵ファイル"
       ],
-      "Invalid URL": [
-        "無効なURL"
-      ],
       "Invalid VAT number": [
         "無効なVAT番号です"
       ],
@@ -4773,9 +4960,6 @@
       ],
       "Last name is too long": [
         "姓が長すぎます。"
-      ],
-      "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "レガシー公開リンクは変更できません。新しい公開リンクを再生成してください。"
       ],
       "Maximum expiration time reached.": [
         "最大有効期限に達しています。"
@@ -4795,17 +4979,11 @@
       "Missing key packet": [
         "キーパケットが見つかりません"
       ],
-      "Missing organization public key": [
-        "組織の公開鍵が見つかりません"
-      ],
       "Missing signature": [
         "署名がありません"
       ],
       "Name is required": [
         "名前は必須です"
-      ],
-      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
-        "名前は${ MAX_NODE_NAME_LENGTH }文字以内で入力してください"
       ],
       "Network error": [
         "ネットワークエラーが発生しました"
@@ -4834,9 +5012,6 @@
       "No external key retrieved for user is valid for sending": [
         "送信に有効なキーが取得されませんでした"
       ],
-      "No file data was received. Please try again.": [
-        "ファイルデータを受け取っていません。再度お試しください。"
-      ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
       ],
@@ -4849,9 +5024,6 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
-      "Operation aborted": [
-        "操作は中断されました"
-      ],
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
       ],
@@ -4860,9 +5032,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
-      ],
-      "Part of the file appears to be corrupted": [
-        "ファイルの一部が破損しているようです"
       ],
       "Password is required": [
         "パスワードは必須です"
@@ -4893,15 +5062,6 @@
       ],
       "Please complete the billing details": [
         "請求の詳細をご記入ください"
-      ],
-      "Please configure a custom domain before adding addresses.": [
-        "アドレスを追加する前にカスタム ドメインを構成してください。"
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "ユーザーを組織に追加する前に、独自ドメインを設定してください。"
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "組織にユーザーを追加する前に、マルチユーザー対応を有効にしてください。"
       ],
       "Please enter a valid postal code": [
         "有効な郵便番号を入力してください"
@@ -4941,9 +5101,6 @@
       ],
       "Please try generating the text again": [
         "もう一度テキストを生成してみてください"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "複数のユーザーを管理するには、複数のユーザーを含むビジネスプランにアップグレードしてください。"
       ],
       "Port is required": [
         "ポートは必須です"
@@ -5029,9 +5186,6 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
-      "Something went wrong": [
-        "何か問題が発生しました"
-      ],
       "Something went wrong while converting the address": [
         "アドレスの変換中にエラーが発生しました"
       ],
@@ -5040,6 +5194,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "利用可能なドメインのフェッチ中にエラーが発生しました"
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "問題が発生しました。この画面を閉じて、もう一度お試しください。"
       ],
       "Something went wrong. Please try again.": [
         "何か問題が発生しました。もう一度お試しください。"
@@ -5134,12 +5291,6 @@
       "This folder name is not available. Please choose a different name.": [
         "このフォルダー名は利用できません。別の名前を選択してください。"
       ],
-      "This item is no longer shared": [
-        "このアイテムはもう共有されません"
-      ],
-      "This item is not shared": [
-        "このアイテムは共有されていません"
-      ],
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
@@ -5185,9 +5336,6 @@
       "VAT number must start with ${ prefixes }": [
         "VAT番号は ${ prefixes } で始まる必要があります"
       ],
-      "Verification keys are not available": [
-        "検証キーは利用できません"
-      ],
       "We couldn’t send a verification code using this method.": [
         "この方法を使用して認証コードを送信することはできません。"
       ],
@@ -5209,23 +5357,17 @@
       "You did not provide a file.": [
         "ファイルが選択されていません。"
       ],
-      "You do not have access to this item": [
-        "このアイテムにはアクセスできません"
-      ],
       "You have reached the maximum number of calendars.": [
         "カレンダーの上限数に達しました。"
       ],
       "You have reached the number of contacts limit for your account": [
         "このアカウントの連絡先の数が上限に達しています"
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "現在のプランで使用可能なアドレス数の上限に達しました。アドレスを追加するにはプランをアップグレードするか、アカウントに登録済みのアドレスを無効にしてください。"
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
-      ],
       "You must set a name": [
         "名前を設定してください"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "連携可能なアドレス数の上限に達しました"
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "文字数が上限に達しました。メッセージを短くしてください。"
@@ -5580,6 +5722,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "未納の請求書があります。ファミリープランに参加する前にお支払いください。"
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "このファミリーグループにお使いの ${ BRAND_NAME } アカウントをリンクして、すべてのプレミアム機能をご利用いただくための招待が届いています。"
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "あなたのアカウントはこのプランで利用可能なメールアドレスの上限を超えています。${ addressSettingsLink }"
       ],
@@ -5640,6 +5785,12 @@
       ],
       "Security key": [
         "セキュリティキー"
+      ],
+      "Still waiting?": [
+        "まだお待ちですか？"
+      ],
+      "Touch your security key to continue.": [
+        "続行するにはセキュリティキーにタッチしてください。"
       ]
     },
     "fido2: Label": {
@@ -5693,9 +5844,6 @@
       ],
       "Has attachments": [
         "添付ファイルあり"
-      ],
-      "Pending": [
-        "保留中"
       ],
       "Read": [
         "既読"
@@ -6031,6 +6179,9 @@
       ],
       "Drawer": [
         "サイドパネル"
+      ],
+      "Good to know before you connect": [
+        "連携前の確認事項"
       ],
       "Hardware not compatible": [
         "ハードウェアと互換性がありません"
@@ -6392,14 +6543,6 @@
         "その他のインポートオプション"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "進行中"
-      ],
-      "Migrated": [
-        "移行済み"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。詳細はクリックしてください"
@@ -6487,6 +6630,9 @@
       "${ currentProgress } out of ${ totalProgress }": [
         "${ totalProgress } のうち ${ currentProgress }"
       ],
+      "${ dateString } at ${ formattedTime }": [
+        "${ dateString } の ${ formattedTime }"
+      ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount } 件の会話に次のラベルを付けます:"
       ],
@@ -6529,11 +6675,17 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } のロゴ"
+      ],
       "${ issues.length } issue during import:": [
         "インポート中の${ issues.length }件の問題:"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } には文章作成アシスタントが含まれています"
       ],
       "${ LUMO_SHORT_APP_NAME } helps you craft better emails quickly and effortlessly.": [
         "${ LUMO_SHORT_APP_NAME } を使用すると、お客様はより良いメールを迅速かつ簡単に作成できます。"
@@ -6558,6 +6710,9 @@
       ],
       "${ n } unread conversation": [
         "${ n } 件の未読の会話"
+      ],
+      "${ name } in ${ parentName }": [
+        "${ parentName } 内の ${ name }"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } 件のリンクがクリアされました"
@@ -6607,6 +6762,9 @@
       "${ receivedMessagesCount } email last month": [
         "先月受信した${ receivedMessagesCount }件のメール"
       ],
+      "${ remainingMinutes } minutes remaining…": [
+        "残り ${ remainingMinutes } 分…"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
@@ -6625,14 +6783,17 @@
       "${ subscription.UnreadMessageCount } unread": [
         "${ subscription.UnreadMessageCount } 件が未読"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "トライアル期間は残り ${ timeRemaining } です。アクセス権を失わないよう、${ addPaymentMethodLink } を行ってください。${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "トライアル期間は残り ${ timeRemaining } です。サブスクリプションを継続するには ${ addPaymentMethodLink } を行ってください。${ learnMoreLink }"
+      ],
       "${ total } conversation": [
         "${ total } 件の会話"
       ],
       "${ total } message": [
         "${ total } 件のメッセージ"
-      ],
-      "${ total } user found": [
-        "${ total } 人のユーザーが見つかりました"
       ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } 個のメールトラッカーをブロックしました"
@@ -6670,6 +6831,9 @@
       "(No Recipient)": [
         "(宛先なし)"
       ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** は、${ MAIL_APP_NAME } 以外の別の ${ BRAND_NAME } アカウントへのサインインにも使用されています。"
+      ],
       "**${ total }** result found in ${ labelName }": [
         "${ labelName } 内で **${ total }** 件の結果が見つかりました"
       ],
@@ -6688,11 +6852,20 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "友達が登録するたびに、クレジットとして**${ referrerRewardAmount }**を獲得できます。"
       ],
+      "1 device per user": [
+        "1ユーザーにつき1台のデバイス"
+      ],
       "1 vault per user": [
         "一人のユーザーにつき一つの保管庫"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30日間の返金保証：ご購入から30日以内にキャンセルし、${ customerSupportLink } までご連絡いただければ、返金いたします。"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "過去のメールの検索から返信の下書き作成まで、メールボックスで私がお手伝いできることと、対応していないことについて簡単にご案内します。"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "メーリングリストの購読解除のリクエストがニュースレターの差出人に送信され、自動で処理されます"
@@ -6730,8 +6903,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }を追加"
       ],
+      "Add ${ contact } to your contacts": [
+        "${ contact } を連絡先に追加"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } を追加"
+      ],
+      "Add a contact": [
+        "連絡先を追加する"
+      ],
+      "Add contact": [
+        "連絡先を追加"
       ],
       "Add image URL": [
         "画像 URL を追加"
@@ -6747,6 +6929,9 @@
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "広告主はあなたのブラウジングを追跡してターゲティング広告を表示します。${ VPN_APP_NAME }はトラッカーと広告をブロックすることで、接続を高速化し、オンライン上の体験を向上させます。"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "アップデート後、Mac からパスワードを求められる場合があります。Mac のロック解除に使用しているパスワードを入力し、「常に許可」をクリックするとサインイン状態が維持されます。${ learnMore }"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
@@ -6810,6 +6995,9 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "「${ nameDeleted }」フォルダ内のサブフォルダはすべて削除されますが、フォルダ内に保存されているメールは削除されずに「すべてのメール」フォルダに残ります。"
+      ],
+      "Apply labels": [
+        "ラベルを適用"
       ],
       "Apply to future messages": [
         "今後のメッセージに適用する"
@@ -6937,6 +7125,27 @@
       "Center": [
         "中央揃え"
       ],
+      "Change a display setting": [
+        "表示設定を変更する"
+      ],
+      "Change display setting": [
+        "表示設定を変更"
+      ],
+      "Change how your mail is grouped": [
+        "メールのグループ表示方法を変更する"
+      ],
+      "Change your list density": [
+        "リストの表示密度を変更する"
+      ],
+      "Change your mailbox layout": [
+        "メールボックスのレイアウトを変更する"
+      ],
+      "Change your theme": [
+        "テーマを変更する"
+      ],
+      "Checked Proton support": [
+        "Proton サポートを確認しました"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "${ max } のうち ${ progress } の連絡先を確認しています..."
       ],
@@ -7006,8 +7215,17 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 件の新しいカレンダーを作成"
       ],
+      "Create a filter": [
+        "フィルターを作成する"
+      ],
+      "Create a folder": [
+        "フォルダーを作成する"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "例えば「${ suggestedFolderName }」というフォルダを作成し、すべてのオンラインレシートを1か所に保存できます。"
+      ],
+      "Create a label": [
+        "ラベルを作成する"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "インポートされたメッセージのラベル、インポートする期間、およびインポート先のフォルダーを設定します。"
@@ -7021,8 +7239,17 @@
       "Create a secure cloud for ${ memberCount } member": [
         "${ memberCount } 人のメンバーのために安全なクラウドを作成"
       ],
+      "Create filter": [
+        "フィルターを作成"
+      ],
+      "Create folder": [
+        "フォルダーを作成"
+      ],
       "Create in": [
         "作成日時"
+      ],
+      "Create label": [
+        "ラベルを作成"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "複数の無料アカウントの作成は${ termsLink }で禁止されています。"
@@ -7078,6 +7305,9 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "あなた専用の短いメールアドレスを予約しておいたことをご存じでしょうか。あなたのユーザー名に「@${ PM_DOMAIN }」を付けたものです。"
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は通常の月払い料金を基準としています。請求サイクルが終了すると、サブスクリプションは通常の年額料金で更新されます。"
+      ],
       "Discover new features unlocked and start using them right away!": [
         "アンロックされた新機能を見つけて、すぐに使い始めましょう！"
       ],
@@ -7087,6 +7317,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy ロゴ"
       ],
+      "Do you remember your password?": [
+        "パスワードを覚えていますか？"
+      ],
       "Do you want to download this attachment anyway?": [
         "添付ファイルをダウンロードしますか?"
       ],
@@ -7095,6 +7328,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "連絡先の詳細に再署名しますか?"
+      ],
+      "Document in foundation-search index": [
+        "foundation-search インデックス内のドキュメント"
+      ],
+      "Document lookup failed": [
+        "ドキュメントの検索に失敗しました"
       ],
       "Don't forget to share the password with the recipient": [
         "宛先にパスワードを伝えることを忘れないでください"
@@ -7132,11 +7371,29 @@
       "Draft": [
         "下書き"
       ],
+      "Draft a ${ kind }": [
+        "${ kind } の下書きを作成"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "${ recipient } 宛ての ${ kind } の下書きを作成"
+      ],
+      "Draft an ${ kind }": [
+        "${ kind } の下書きを作成"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "${ recipient } 宛ての ${ kind } の下書きを作成"
+      ],
       "Draft discarded": [
         "下書きは破棄されました"
       ],
       "Draft saved.": [
         "下書きが保存されました。"
+      ],
+      "Drafted a ${ kind }": [
+        "${ kind } の下書きを作成しました"
+      ],
+      "Drafted an ${ kind }": [
+        "${ kind } の下書きを作成しました"
       ],
       "Drop file here to upload": [
         "アップロードするファイルをここにドロップ"
@@ -7158,6 +7415,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "ニュースレターとメーリングリストの管理と登録解除が簡単に行えます。"
+      ],
+      "Edit ${ contact }": [
+        "${ contact } を編集"
+      ],
+      "Edit a contact": [
+        "連絡先を編集する"
+      ],
+      "Edit contact": [
+        "連絡先を編集"
       ],
       "Edit email address": [
         "メールアドレスを編集"
@@ -7249,6 +7515,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "${ planOrAppName } のすべての機能――そしてさらに："
       ],
+      "Expand logs": [
+        "ログを展開"
+      ],
       "Expand selection": [
         "選択を展開"
       ],
@@ -7303,6 +7572,9 @@
       "Forgot password?": [
         "パスワードを忘れましたか？"
       ],
+      "forward": [
+        "転送"
+      ],
       "Found ${ count } contact": [
         "${ count } 件の連絡先を削除"
       ],
@@ -7342,8 +7614,17 @@
       "here": [
         "こちら"
       ],
+      "Here's what happens when you continue:": [
+        "続行すると、次の処理が行われます:"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Lumo、受信トレイにどんなメールが一番多く届いているか、それと既存のフォルダーやフィルターを確認して、受信トレイを整理するための提案をして。今ある設定のどこを変更すべきか、新しく追加するとよいものがあれば教えて。まずは計画を説明してね。私が同意するまでは何も移動しないで。"
+      ],
       "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
         "Hey Lumo、旅行に行くから不在通知を設定して。日付とメッセージの内容を確認して、有効にする前にメッセージを見せてくれ。"
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Lumo、ここ7日間に届いたメールを検索して、実際に返信が必要なものを教えてください。何についての依頼なのかを1行ずつ簡潔にまとめて、対応不要なものは除外してください。"
       ],
       "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
         "Hey Lumo、私のメールボックスについて何を手伝ってくれるのか教えて。どんなことを頼めるの？どんなことは手伝ってくれないの？"
@@ -7356,6 +7637,9 @@
       ],
       "How hide-my-email aliases works": [
         "hide-my-email エイリアスの仕組み"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "先週のメールを確認して、実際に返信が必要なメールを抽出します。これにより、まとめて一度に対応できるようになります。"
       ],
       "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
         "あなたがよく利用するコンテンツや、既に作成済みのフォルダやフィルターを確認した上で、改善点や不足している点をご提案します。お客様のご要望がない限り、何も変更は行いません。"
@@ -7377,6 +7661,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "認証アプリにアクセスできなくなった場合は、2要素認証の設定時に提供された16個のバックアップ用リカバリーコードのいずれかを使用できます。${ learnMoreLink }"
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "エイリアスが売却、漏洩、悪用された場合は、そのエイリアスを無効にするだけで迷惑メールを遮断できます。"
@@ -7401,6 +7688,9 @@
       ],
       "Import in progress": [
         "インポートは進行しています"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "インポート中です。処理の実行中はこのダイアログを閉じて後から戻ることができますが、タブは閉じないでください。"
       ],
       "Import mailbox": [
         "メールボックスのインポート"
@@ -7436,7 +7726,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -7479,6 +7769,12 @@
       ],
       "Key fingerprint": [
         "鍵のフィンガープリント"
+      ],
+      "Label ${ emails }": [
+        "${ emails } にラベルを付ける"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "${ emails } に ${ names } ラベルを付ける"
       ],
       "Label all imported messages as": [
         "インポートされたすべてのメッセージに次のようにラベル"
@@ -7525,8 +7821,17 @@
       "Loading...": [
         "読み込み中..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "ログは、問題が発生する直前に何が起きたかを把握するのに役立ちます。ログにはアプリの操作履歴やエラーメッセージが含まれますが、メッセージ本文の内容は含まれません。"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "ドキュメント ${ lookup.result.docId } の検索"
+      ],
       "Low Priority": [
         "優先度：低"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME } をデフォルトのメールアプリに設定します。"
       ],
       "Manage your folders": [
         "フォルダを管理"
@@ -7534,11 +7839,29 @@
       "Manage your labels": [
         "ラベルを管理"
       ],
+      "Mark ${ emails } as read": [
+        "${ emails } を既読としてマーク"
+      ],
+      "Mark ${ emails } as unread": [
+        "${ emails } を未読にする"
+      ],
       "Mark all as read": [
         "すべて既読にする"
       ],
       "Mark all as unread": [
         "全てを未読にする"
+      ],
+      "Mark as read": [
+        "既読にする"
+      ],
+      "Mark as unread": [
+        "未読にする"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "${ place } のすべてのメールを既読にする"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "${ place } のすべてのメールを未読にする"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode ロゴ"
@@ -7609,8 +7932,20 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "ほとんどの公共のWiFiネットワークは安全ですが、一部はセキュリティ対策が不十分であり、あなたをサイバー攻撃の危険に晒してしまいます。VPNはトラフィックを暗号化することにより、あなたを保護します。"
       ],
+      "Move ${ emails }": [
+        "${ emails } を移動"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "${ emails } を ${ destination } に移動"
+      ],
       "Move emails": [
         "メールを移動"
+      ],
+      "Move here": [
+        "ここに移動"
+      ],
+      "Move to Primary": [
+        "メインに移動"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
@@ -7621,6 +7956,9 @@
       "newsletter": [
         "ニュースレター"
       ],
+      "Next time you sign in to your other account": [
+        "次回、別のアカウントにサインインするとき"
+      ],
       "No action selected": [
         "アクションが選択されていません"
       ],
@@ -7630,8 +7968,23 @@
       "No contacts added yet": [
         "まだ連絡先が追加されていません"
       ],
+      "No contacts found": [
+        "連絡先が見つかりません"
+      ],
+      "No conversation to read": [
+        "読み込む会話がありません"
+      ],
+      "No draft open": [
+        "開いている下書きはありません"
+      ],
       "No email address": [
         "メールアドレスなし"
+      ],
+      "No email open": [
+        "開いているメールはありません"
+      ],
+      "No emails selected": [
+        "メールが選択されていません"
       ],
       "No folder found": [
         "フォルダが見つかりませんでした"
@@ -7651,6 +8004,9 @@
       "No links cleaned": [
         "クリアされたリンクはありません"
       ],
+      "No location selected": [
+        "場所が選択されていません"
+      ],
       "No messages to show": [
         "表示するメッセージはありません"
       ],
@@ -7659,6 +8015,9 @@
       ],
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
+      ],
+      "No payment is required.": [
+        "お支払いは不要です。"
       ],
       "No results found": [
         "該当する項目がありません"
@@ -7681,8 +8040,17 @@
       "Not connected": [
         "接続されていません"
       ],
+      "Not found in the encrypted search index.": [
+        "暗号化検索インデックス内に見つかりません。"
+      ],
       "Not found in the foundation-search index.": [
         "対象のデータが見つかりませんでした。"
+      ],
+      "Not supported by this browser": [
+        "お使いのブラウザではサポートされていません"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "お使いの別の ${ BRAND_NAME } アカウントに変更はありません。"
       ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
@@ -7702,11 +8070,23 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "相手から「漏洩」と判断された鍵があります。対象の鍵の信頼を解除することを推奨します。"
       ],
+      "open draft": [
+        "下書きを開く"
+      ],
       "Open shortcut cheat sheet": [
         "ショートカットのチートシートを開く"
       ],
       "Open the guide for recommended actions and helpful links.": [
         "推奨されるアクションと役立つリンクのガイドを開きます。"
+      ],
+      "Opened ${ location }": [
+        "${ location } を開きました"
+      ],
+      "Opened a draft": [
+        "下書きを開きました"
+      ],
+      "Opened a problem report": [
+        "問題の報告を開きました"
       ],
       "Optional": [
         "オプション"
@@ -7810,6 +8190,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
       ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "アプリを引き続きご利用いただくには、${ MAIL_APP_NAME } をアップデートしてください。${ downloadUpdate }"
+      ],
       "Please use another browser or download the file.": [
         "他のブラウザを使用するか、このファイルをダウンロードしてください。"
       ],
@@ -7885,6 +8268,15 @@
       "Read ${ count } open draft": [
         "${ count }件の未読下書きを読みました"
       ],
+      "Read draft \"${ subject }\"": [
+        "下書き \"${ subject }\" を読み込む"
+      ],
+      "Read open email “${ subject }”": [
+        "開いているメール “${ subject }” を読み込む"
+      ],
+      "Read the open draft": [
+        "開いている下書きを読み込む"
+      ],
       "Read your ${ count } filter": [
         "${ count }件のフィルターを既読にする"
       ],
@@ -7893,6 +8285,21 @@
       ],
       "Read your ${ count } label": [
         "${ count }件のラベルを既読にする"
+      ],
+      "Read your auto-reply": [
+        "自動返信を確認する"
+      ],
+      "Read your display settings": [
+        "表示設定を読み込む"
+      ],
+      "Read your signature": [
+        "署名を読み込む"
+      ],
+      "Readdressed": [
+        "宛先を変更しました"
+      ],
+      "Readdressed the draft": [
+        "下書きの宛先を変更しました"
       ],
       "Recipient: ": [
         "宛先: "
@@ -7915,11 +8322,32 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "パスワードマネージャーや、アカウントやログイン情報を保管している場所での更新をお忘れなく。"
       ],
+      "Remove signature": [
+        "署名を削除"
+      ],
+      "Remove the star from ${ emails }": [
+        "${ emails } のスターを解除"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "このアプリに関連するすべてのデータを削除します (ダウンロードしたメッセージなど…)"
       ],
+      "Rename folder": [
+        "フォルダー名を変更"
+      ],
+      "Rename label": [
+        "ラベル名を変更"
+      ],
       "Rename this folder": [
         "フォルダ名を変更"
+      ],
+      "Rename this label": [
+        "このラベルの名前を変更"
+      ],
+      "reply": [
+        "返信"
+      ],
+      "reply all": [
+        "全員に返信"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "フィッシング詐欺としてこのメッセージを報告すると、私たちにこのメッセージが送信され、私たちはこのメッセージを分析してフィルターを改善することができます。メッセージを報告すると、このメッセージのすべての内容を私たちが閲覧可能になります。"
@@ -7929,6 +8357,24 @@
       ],
       "Restore": [
         "復元"
+      ],
+      "Results came from the local search.": [
+        "検索結果はローカル検索によるものです。"
+      ],
+      "Results came from the server.": [
+        "検索結果はサーバーによるものです。"
+      ],
+      "Revise the ${ draft }": [
+        "${ draft } を推敲する"
+      ],
+      "Rewrote and readdressed": [
+        "書き直しと宛先の変更を完了しました"
+      ],
+      "Rewrote and readdressed the draft": [
+        "下書きの書き直しと宛先の変更を完了しました"
+      ],
+      "Rewrote the draft": [
+        "下書きを書き直しました"
       ],
       "Right to Left": [
         "右から左に"
@@ -7969,8 +8415,23 @@
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "検索時間が長すぎますか? 検索セッションから ${ dropdownButton } か ${ toggleOffButton } してください。"
       ],
+      "Searched ${ targetName }": [
+        "${ targetName } を検索しました"
+      ],
+      "Searched for mail from ${ sender }": [
+        "${ sender } からのメールを検索しました"
+      ],
+      "Searched for mail to ${ recipient }": [
+        "${ recipient } 宛てメールの検索結果"
+      ],
+      "Searched for “${ keyword }”": [
+        "“${ keyword }” を検索しました"
+      ],
       "Searched the web": [
         "ウェブを検索しました"
+      ],
+      "Searched your mail": [
+        "メールを検索しました"
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "今すぐ暗号化クラウドストレージでファイルを保護しましょう。"
@@ -7980,9 +8441,6 @@
       ],
       "Select all ${ elementsCount } in ${ location }": [
         "${ location } 内のすべての ${ elementsCount } を選択"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "移行したい内容を正確に選択してください。それはすべての組織ユーザーに適用されます。"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
@@ -8029,8 +8487,20 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "${ MAIL_APP_NAME }をデフォルトのメールアプリに設定しましょう。メールのリンクをクリックした時に、自動で${ MAIL_APP_NAME }が開きます。"
       ],
+      "Set auto-reply": [
+        "自動返信を設定"
+      ],
+      "Set my out of office": [
+        "不在通知を設定"
+      ],
+      "Set signature": [
+        "署名を設定"
+      ],
       "Set up your organization": [
         "組織を設定"
+      ],
+      "Set your signature": [
+        "署名を設定する"
       ],
       "Setting up ${ feature }…": [
         "${ feature }を設定しています…"
@@ -8049,6 +8519,9 @@
       ],
       "Show original message": [
         "元のメッセージを表示"
+      ],
+      "Snooze emails": [
+        "メールをスヌーズ"
       ],
       "Snooze messages for later so they are top of your inbox when you want": [
         "メッセージを後で再表示するようにスヌーズして、必要なときに受信箱のトップに表示されるようにします"
@@ -8073,6 +8546,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "申し訳ありません、このメッセージは存在しないか有効期限切れです。"
+      ],
+      "Source document in encrypted search index": [
+        "暗号化検索インデックス内のソースドキュメント"
+      ],
+      "Star ${ emails }": [
+        "${ emails } にスターを付ける"
       ],
       "Star emails": [
         "スター付きのメール"
@@ -8127,6 +8606,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "${ DRIVE_APP_NAME }アプリでファイルを同期して管理します。${ DOCS_APP_NAME }でドキュメントを作成して共有し、安全に保存します。すべて${ ios }、${ android }、${ desktop }で利用可能です。"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "不在にする期間とメッセージの内容を教えていただければ、保存する前に全体の内容をご確認いただけます。"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "現在アクセスが集中しているため、一時的にご利用いただけません。後ほど再度お試しください。"
@@ -8209,6 +8691,9 @@
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "本来のメールアドレスを知られなければ、迷惑メールを送られることもありません。Hide-my-email で受信トレイを守りましょう。"
       ],
+      "Thinking about this": [
+        "処理中…"
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
       ],
@@ -8235,6 +8720,9 @@
       ],
       "This file is too large to preview": [
         "このファイルは、非常に大きいためプレビューできません"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "この Gmail アドレスは、別の ${ BRAND_NAME } アカウント（${ VPN_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ WALLET_SHORT_APP_NAME }、${ LUMO_SHORT_APP_NAME } AI など）に登録されています。現在、シームレスに連携できるよう改善を進めておりますが、現時点ではいくつかの手順を実行していただく必要があります。"
       ],
       "This invitation is saved in a disabled calendar.": [
         "招待は無効化されたカレンダーに保存されています。"
@@ -8338,9 +8826,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "この固有のコードは、ウェブサイトやプロバイダ(ISP)が、位置情報や閲覧履歴をお客様のデバイスと紐づけるのに利用します。"
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "このユーザーはメールアドレスが ${ BRAND_NAME } に登録されていないため、移行することができません。"
-      ],
       "This was shown to you because your email subject line contains password reset keywords.": [
         "これは、メールの件名にパスワードリセットキーワードが含まれているため表示されました。"
       ],
@@ -8349,6 +8834,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "これにより、現在ログインしているすべてのアカウントからサインアウトされます。"
+      ],
+      "Tidy up my inbox": [
+        "受信トレイを整理"
       ],
       "to ${ destinationElement } folder.": [
         "${ destinationElement } フォルダへ"
@@ -8367,15 +8855,6 @@
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "予定をインポートするには、まず ${ CALENDAR_APP_NAME } に予定のインポート先となるカレンダーを作成してください。"
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "このユーザーを移行するには、${ domainNamesLink } にメールドメインを追加して確認してください"
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "このユーザーを移行するには、${ provider.adminConsoleName }でアーカイブを解除してください。"
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "このユーザーを移行するには、${ provider.adminConsoleName }でアカウントの一時停止を解除してください。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
@@ -8428,8 +8907,20 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
       ],
+      "Turn off auto-reply": [
+        "自動返信をオフにする"
+      ],
+      "Turn off your away message": [
+        "不在メッセージをオフにする"
+      ],
+      "Turn on your away message": [
+        "不在メッセージをオンにする"
+      ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "このブラウザではストレージ機能へのアクセスができません、メッセージ内容の検索を有効にするためには、このアクセスが必要です。"
+      ],
+      "UnionPay logo": [
+        "UnionPayのロゴ"
       ],
       "Unlock message": [
         "メッセージのロックを解除"
@@ -8443,11 +8934,23 @@
       "Unsaved changes": [
         "未保存の変更"
       ],
+      "Unstar emails": [
+        "メールのスターを解除"
+      ],
       "Unsubscribe": [
         "登録解除"
       ],
       "Unsupported file": [
         "非対応のファイル"
+      ],
+      "Update filter": [
+        "フィルターを更新"
+      ],
+      "Update the filter ${ filter }": [
+        "フィルター ${ filter } を更新"
+      ],
+      "Update this filter": [
+        "このフィルターを更新"
       ],
       "Updating message content search...": [
         "メッセージ内容の検索を更新中..."
@@ -8578,6 +9081,9 @@
       "We use 3-D Secure to protect your payments": [
         "支払いを保護するために3Dセキュアを使用しています"
       ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "この取引を完了するために、新しいブラウザタブで ${ IDEAL_WERO_BRAND_NAME } にリダイレクトします。ポップアップブロック機能をご利用の場合は、続行するために無効にしてください。"
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
       ],
@@ -8601,6 +9107,12 @@
       ],
       "Week": [
         "週"
+      ],
+      "What can you do?": [
+        "どんなことができますか？"
+      ],
+      "What needs handling?": [
+        "対応が必要なものは？"
       ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "宛先の受信トレイとあなたの送信済みフォルダーからメッセージをいつ自動的に削除しますか？"
@@ -8634,6 +9146,12 @@
       ],
       "Would you like to receive a new verification code?": [
         "新しい認証コードを受け取りますか?"
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "一度に書き込むのではなく、実際のセッションのように ${ REALISTIC_ENTRIES } 行のリアルなログ行を1分間かけて徐々に書き込みます。実行には約1分かかります。バックグラウンドではフレーム測定が一時停止するため、このタブを開いたまま（アクティブな状態）にしてください。"
+      ],
+      "Writes realistic log lines back-to-back, then reads them all back. Shows how write and read/export cost scale with the number of stored entries.": [
+        "リアルなログ行を連続して書き込んだ後、それらをすべて読み戻します。保存されたエントリー数に応じて、書き込みおよび読み取り/エクスポートの負荷がどのようにスケールするかを示します。"
       ],
       "Writing assistant": [
         "執筆アシスタント"
@@ -8686,6 +9204,9 @@
       "You can either update your search query or clear it": [
         "検索内容を変更、または消去できます"
       ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "開発目的で、新しい foundation-search インデックスとしてインポートできます。"
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持することができます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクと共有したカレンダーの ${ BRAND_NAME } ユーザーを削除してください。"
       ],
@@ -8736,6 +9257,12 @@
       ],
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "試用版 ${ planTitle } のサブスクリプションが有効です。現時点での支払いは必要ありません。 サブスクリプションは試用期間の終了時に自動的に更新されます。"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "未払いのご請求があります ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "期日が ${ dueDate } の未払いのご請求があります ${ payInvoiceLink }"
       ],
       "You have no conversations in this category": [
         "このカテゴリに会話はありません"
@@ -8794,11 +9321,17 @@
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "「${ attachmentsFoundKeyword }」 と書かれてありますが、添付ファイルは追加されていません。そのままメッセージを送信してもいいですか?"
       ],
+      "You'll choose a new username": [
+        "新しいユーザー名を選択します"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "クレジット報酬は、ご友人が年額プランにご登録いただいてから1か月後、月額プランにご加入いただいてから2か月後に受け取れます。"
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "その後、${ renewCycle }ヶ月ごとに${ renewAmountStr }で請求されます。いつでもキャンセルできます。"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "以降はそれを使ってサインインすることになります。変更されるのはそれだけです。"
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "${ MAX_SYNC_PAID_USER } 個の Gmail アドレスで転送が有効になっています。別のアドレスを追加するには、まずいずれか 1 つを無効化してください。"
@@ -8839,11 +9372,17 @@
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
       ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "無料トライアルが終了しました。チームのアクセスを中断させることなく、アカウントのセキュリティを維持するために、今すぐサブスクリプションにご登録ください。"
+      ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは、${ cycle }ヶ月サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは月額サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "お使いの Gmail はこの ${ MAIL_APP_NAME } アドレスと連携します"
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "お客様のハードウェアはローカルでの執筆アシスタントの実行をサポートしていません。サーバーでの実行をお試しください。"
@@ -9022,6 +9561,9 @@
       "Cancel / close": [
         "キャンセル / 閉じる"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "${ LUMO_SHORT_APP_NAME } を閉じる"
+      ],
       "Close draft": [
         "下書きを閉じる"
       ],
@@ -9121,6 +9663,9 @@
       "New message": [
         "新しいメッセージ"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "${ LUMO_SHORT_APP_NAME } を開く / 入力欄にフォーカス"
+      ],
       "Open command panel": [
         "コマンドパネルを開く"
       ],
@@ -9178,6 +9723,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME } のショートカット"
+      ],
       "Action shortcuts": [
         "アクションのショートカット"
       ],
@@ -9225,6 +9773,9 @@
       "${ count } unread message": [
         "${ count } 件の未読メッセージ"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 文字"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } ライティングアシスタント"
       ],
@@ -9242,6 +9793,9 @@
       ],
       "Account holder": [
         "アカウント所有者"
+      ],
+      "Account holder name": [
+        "口座名義人名"
       ],
       "Actions": [
         "アクション"
@@ -9318,6 +9872,9 @@
       "Archive": [
         "アーカイブ"
       ],
+      "At": [
+        "At"
+      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
@@ -9357,6 +9914,9 @@
       "BTC amount": [
         "Bitcoin 金額"
       ],
+      "Burst write": [
+        "一括作成"
+      ],
       "Calendar": [
         "カレンダー"
       ],
@@ -9384,6 +9944,9 @@
       "CC": [
         "CC"
       ],
+      "Cc": [
+        "CC"
+      ],
       "Choose what to do instead": [
         "代わりに何をするか選択してください"
       ],
@@ -9396,14 +9959,29 @@
       "Clear logs": [
         "ログをクリア"
       ],
+      "Client": [
+        "クライアント"
+      ],
+      "Client version": [
+        "クライアントのバージョン"
+      ],
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
       ],
       "Colors": [
         "色"
       ],
+      "Column": [
+        "カラム"
+      ],
+      "Comfortable": [
+        "標準"
+      ],
       "Command line interface (CLI)": [
         "コマンドラインインターフェース (CLI)"
+      ],
+      "Compact": [
+        "コンパクト"
       ],
       "Company": [
         "会社"
@@ -9422,6 +10000,9 @@
       ],
       "Contacts": [
         "連絡先"
+      ],
+      "Content search version to use": [
+        "使用するコンテンツ検索のバージョン"
       ],
       "Context page": [
         "コンテキストページ"
@@ -9465,6 +10046,9 @@
       "Date:": [
         "日時："
       ],
+      "Deals, offers, and marketing emails": [
+        "お得な情報、特別オファー、マーケティングメール"
+      ],
       "Delete": [
         "削除"
       ],
@@ -9479,6 +10063,9 @@
       ],
       "Display name": [
         "表示名"
+      ],
+      "Document ID": [
+        "ドキュメントID"
       ],
       "Don't ask again": [
         "今後表示しない"
@@ -9500,6 +10087,9 @@
       ],
       "Drive": [
         "ドライブ"
+      ],
+      "Dropped frames": [
+        "ドロップフレーム"
       ],
       "Duration": [
         "期間"
@@ -9546,8 +10136,14 @@
       "Enable filter": [
         "フィルターを有効にする"
       ],
+      "Encrypt": [
+        "暗号化"
+      ],
       "Encrypt emails": [
         "メールを暗号化"
+      ],
+      "Entries": [
+        "エントリー"
       ],
       "Exact host matching": [
         "正確なホスト一致"
@@ -9557,6 +10153,9 @@
       ],
       "Expires": [
         "有効期限"
+      ],
+      "Export size": [
+        "エクスポートのファイルサイズ"
       ],
       "Extended address": [
         "拡張アドレス"
@@ -9569,6 +10168,9 @@
       ],
       "Filter": [
         "フィルター"
+      ],
+      "Filter name": [
+        "フィルター名"
       ],
       "Filter Name": [
         "フィルター名"
@@ -9593,6 +10195,12 @@
       ],
       "From": [
         "差出人"
+      ],
+      "From date": [
+        "開始日"
+      ],
+      "From time": [
+        "開始時刻"
       ],
       "From:": [
         "差出人："
@@ -9621,6 +10229,9 @@
       "Go to Updates": [
         "アップデートへ移動"
       ],
+      "Grouped conversations": [
+        "会話をグループ表示"
+      ],
       "Has attachments": [
         "添付ファイルあり"
       ],
@@ -9639,6 +10250,9 @@
       "IF": [
         "条件"
       ],
+      "Image": [
+        "画像"
+      ],
       "Import all messages": [
         "すべてのメッセージをインポート"
       ],
@@ -9656,6 +10270,9 @@
       ],
       "Include application logs in bug report": [
         "バグレポートにアプリのログを含める"
+      ],
+      "IndexedDB store": [
+        "IndexedDB ストア"
       ],
       "Information": [
         "情報"
@@ -9681,6 +10298,9 @@
       "Label messages as": [
         "メッセージにつけるラベル"
       ],
+      "Label name": [
+        "ラベル名"
+      ],
       "Last 12 months only": [
         "過去 12 か月のみ"
       ],
@@ -9701,6 +10321,9 @@
       ],
       "Location": [
         "場所"
+      ],
+      "Log performance": [
+        "ログのパフォーマンス"
       ],
       "Long tasks (≥ 50 ms)": [
         "長いタスク (≥ 50 ms)"
@@ -9771,6 +10394,9 @@
       "Never fill on this exact URL": [
         "この正確なURLには絶対に入力しない"
       ],
+      "New name": [
+        "新しい名前"
+      ],
       "New password": [
         "新しいパスワード"
       ],
@@ -9785,6 +10411,12 @@
       ],
       "No label found": [
         "ラベルが見つかりませんでした"
+      ],
+      "No unread conversations": [
+        "未読の会話はありません"
+      ],
+      "No unread messages": [
+        "未読のメッセージはありません"
       ],
       "Non-promotional content and news": [
         "プロモーション以外のコンテンツおよびニュース"
@@ -9891,6 +10523,12 @@
       "Read": [
         "既読"
       ],
+      "Read / export": [
+        "読み取り / エクスポート"
+      ],
+      "Realistic session": [
+        "実践的なセッション"
+      ],
       "Recipient": [
         "宛先"
       ],
@@ -9915,11 +10553,17 @@
       "Remove Zoom video conference": [
         "Zoomビデオ会議を削除"
       ],
+      "Return on": [
+        "復帰日"
+      ],
       "Reveal password": [
         "パスワードを表示する"
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "ジュネーブ、1228 Plan-les-Ouates、Route de la Galaise 32"
+      ],
+      "Row": [
+        "行表示"
       ],
       "Search in": [
         "検索対象"
@@ -9936,11 +10580,17 @@
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "${ CALENDAR_APP_NAME }で予約ページと利用可能な時間を共有し、${ MEET_APP_NAME }で安全な会議をホストしましょう。"
       ],
+      "Sieve script": [
+        "Sieve スクリプト"
+      ],
       "Sign emails": [
         "メールに署名"
       ],
       "Signature": [
         "署名"
+      ],
+      "Single messages": [
+        "個別メッセージ表示"
       ],
       "Size:": [
         "サイズ:"
@@ -9996,6 +10646,9 @@
       "Subscription options": [
         "サブスクリプションのオプション"
       ],
+      "Sum of write() calls": [
+        "write() 呼び出しの合計"
+      ],
       "Sync with system": [
         "システムと同期する"
       ],
@@ -10022,6 +10675,9 @@
       ],
       "Time": [
         "時間"
+      ],
+      "To": [
+        "宛先"
       ],
       "To:": [
         "宛先:"
@@ -10050,6 +10706,12 @@
       "Unsubscribed from ${ truncatedName }.": [
         "${ truncatedName }の登録を解除しました。"
       ],
+      "Until date": [
+        "終了日"
+      ],
+      "Until time": [
+        "終了時刻"
+      ],
       "Updates": [
         "更新情報"
       ],
@@ -10067,6 +10729,12 @@
       ],
       "Username": [
         "ユーザー名"
+      ],
+      "v1": [
+        "v1"
+      ],
+      "v2": [
+        "v2"
       ],
       "Verification code": [
         "認証コード"
@@ -10100,6 +10768,15 @@
       ],
       "Without attachment": [
         "添付ファイルなし"
+      ],
+      "Write": [
+        "作成"
+      ],
+      "Write (whole session)": [
+        "書き込み（セッション全体）"
+      ],
+      "Write-chain drain after last line": [
+        "最終行の後の書き込みチェーン完了待ち"
       ],
       "Writing assistant": [
         "執筆アシスタント"
@@ -10244,6 +10921,12 @@
       "Add a gift code": [
         "ギフトコードを追加"
       ],
+      "Add formatting, links or images": [
+        "書式設定、リンク、画像を追加"
+      ],
+      "Advanced auto-reply options": [
+        "自動返信の詳細オプション"
+      ],
       "All mail": [
         "すべてのメール"
       ],
@@ -10267,6 +10950,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "招待を管理するには新しいカレンダーを作成しましょう"
+      ],
+      "Customer Support": [
+        "カスタマーサポート"
       ],
       "Deleted": [
         "削除しました"
@@ -10569,6 +11255,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタントを追加"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 文章作成アシスタントを追加"
       ],
       "Add-on with free trial": [
         "無料トライアル付きアドオン"
@@ -10937,6 +11626,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 文章作成アシスタント（拡張アクセス付き）"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 文章作成アシスタント（一部機能制限あり）"
       ],
       "${ n } calendar": [
         "${ n } 個のカレンダー"
@@ -11396,6 +12091,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "末尾が ${ Last4 } の ${ Brand }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "ファイルの保存、同期、共有を簡単に行える 1 TB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
       ],
@@ -11734,6 +12432,16 @@
         "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "今すぐ試す"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "新しい ${ CALENDAR_APP_NAME } をご利用いただけるようになりました。${ link }"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } が作成されました"
@@ -11835,6 +12543,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "最初の月の${ plan }が80%割引になる最後のチャンスです。"
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "${ plan } の初月をこの価格で利用できる最後のチャンスです。"
+      ],
       "Last day to save": [
         "節約できる最後の日"
       ],
@@ -11916,6 +12627,9 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Short @pm.me address": [
+        "短い @pm.me アドレス"
       ],
       "Storage": [
         "容量"
@@ -12108,6 +12822,21 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " ${ helpCenterLink }をご覧いただくか、${ contactSupportLink }をご利用ください。"
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "無料トライアル終了後もすべての機能を引き続き利用するには、**お支払い方法を追加**してください。"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**それまではいつでもキャンセルできます。** トライアルが終了するまで、無料で ${ planTitle } をご利用いただけます。"
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**トライアル終了後も継続してご利用いただく場合、** 30日以内にキャンセルすれば日割り計算による返金を受けることができます。"
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**正式なサブスクリプションの開始後も…** 30日以内であればキャンセルして日割り計算による返金を受けることができます。"
+      ],
+      "Add a payment method": [
+        "お支払い方法を追加"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "${ cancelDate }までにいつでもキャンセルできます。"
       ],
@@ -12123,11 +12852,20 @@
       "help center": [
         "ヘルプ センター"
       ],
+      "If you continue after your trial,": [
+        "トライアル終了後も継続してご利用いただく場合、"
+      ],
       "If you need help,": [
         "助けが必要な場合は、"
       ],
       "Once your full subscription starts...": [
         "有料サブスクリプションが開始されると…"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "無料トライアル終了後もすべての機能を引き続き利用するには"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30日以内にキャンセルすれば、日割り計算による返金を受けることができます。"
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
@@ -12260,6 +12998,9 @@
       "Permanent": [
         "永続"
       ],
+      "Remind me later": [
+        "後で通知"
+      ],
       "Repeat daily": [
         "毎日繰り返し"
       ],
@@ -12268,6 +13009,9 @@
       ],
       "Repeat weekly": [
         "毎週繰り返し"
+      ],
+      "Yes, don't show again": [
+        "はい、次回から表示しない"
       ]
     },
     "Option group": {
@@ -12405,6 +13149,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice }（税別）"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } は ${ PLAN_NAMES[PLANS.PASS] } と組み合わせることはできません。"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } はビジネスプランでのみご利用いただけます。"
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% の税金: ${ taxAmountElement }"
       ],
@@ -12414,8 +13164,17 @@
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } のトライアル後のお支払い額"
       ],
+      "An organization is required for this plan.": [
+        "このプランをご利用いただくには組織の作成が必要です。"
+      ],
       "Billing Country": [
         "請求先の国"
+      ],
+      "Buying credits requires a separate purchase.": [
+        "クレジットの購入には、別途個別のお手続きが必要です。"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "切り替えることにより、お客様は当社の ${ termsLink } に同意したものとみなされます。"
       ],
       "Card number": [
         "カード番号"
@@ -12456,17 +13215,38 @@
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } の購入は1つまでに制限されています。"
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "${ IDEAL_WERO_BRAND_NAME } で支払う"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "トライアル終了後、サブスクリプションを有効化するためには支払い方法が必要です。"
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "以下の理由により、プランの切り替えを行うことができません:"
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "プランを変更する前に、余分なウォレットアカウントを閉じてください。"
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "プランを変更する前に、余分なウォレットを閉じてください。"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet のシート数はメンバー数と一致している必要があります。"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "更新価格は ${ termsAndConditionsLink }に応じて変更される可能性があります。"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe のシート数はメンバー数を超えることはできません。"
       ],
       "Tax ${ rate }%": [
         "税金 ${ rate }%"
@@ -12479,6 +13259,18 @@
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "この割引は ${ renewalsWithCoupon } の更新で有効です。"
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なメールアドレス数が不足しています。"
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なドメイン数が不足しています。"
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なメンバー数が不足しています。"
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なストレージ容量が不足しています。"
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
@@ -12504,20 +13296,41 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "この操作により、既存のサブスクリプションが拡張されます。新しいアドオンと、現在の支払間隔の残りの期間に対してのみ課金されます。お客様のサブスクリプションの更新日は変更されません。"
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "この専用サーバーはゲートウェイに割り当てられているため、変更できません。"
+      ],
       "This offer is not available with your current plan.": [
         "この特典は現在のプランではご利用いただけません。"
       ],
       "This payment method will become your new default for all future renewals.": [
         "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "このプランでは、お使いのアカウントで利用中の管理機能がサポートされていません。"
+      ],
       "This plan doesn’t support the members on your account.": [
         "このプランは、お客様のアカウントに登録されているメンバーをサポートしていません。"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "現在、このサブスクリプションを完了できません。もう一度お試しください。"
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
       ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "トライアルプランでは ${ LUMO_SHORT_APP_NAME } のシートを追加できません。"
+      ],
+      "Trial plans don’t support custom domains.": [
+        "トライアルプランではカスタムドメインをご利用いただけません。"
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "トライアルプランでは専用 IP をご利用いただけません。"
+      ],
       "Trial plans don’t support Scribe seats.": [
         "トライアルプランは Scrieシート をサポートしていません。"
+      ],
+      "Trial plans don’t support this many members.": [
+        "トライアルプランでは、この人数のメンバーをサポートしていません。"
       ],
       "VAT number": [
         "VAT番号"
@@ -12531,11 +13344,17 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "お客様はすでに ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } を所有しています。"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへ転送されます。"
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_WERO_BRAND_NAME } はユーロでの支払いにのみ対応しているため、通貨がユーロ (€) に変更されました。"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "お客様の通貨はユーロ (€) に変更されました。これは、SEPA銀行振込がユーロ建ての支払いのみをサポートしているためです。"
@@ -12548,6 +13367,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_WERO_BRAND_NAME } の初期化に失敗しました。しばらくしてからもう一度お試しください。"
+      ],
       "Invalid card number": [
         "無効なカード番号です"
       ],
@@ -12556,6 +13378,9 @@
       ],
       "Invalid security code": [
         "無効なセキュリティコードです"
+      ],
+      "Please enter the account holder name": [
+        "口座名義人名を入力してください"
       ],
       "Something went wrong. Please try again later.": [
         "何か問題が発生しました。 後でもう一度試してください。"
@@ -12572,12 +13397,22 @@
         "何か問題が発生しました。Google Payの認証に失敗しました。"
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "確認することにより、お客様は ${ BRAND_NAME } および当社の決済サービスプロバイダーである Stripe に対し、SEPA口座振替によってこの銀行口座から今後のサブスクリプション料金を引き落とすことを承認し、取引銀行がそれらの支払い額を引き落とすことを承認したものとみなされます。初回の支払いは、今すぐ ${ IDEAL_WERO_BRAND_NAME } で決済されます。プランはキャンセルするまで自動更新され、引き落としの前に毎回通知いたします。口座振替による引き落としについては、取引銀行との契約条件に基づき、引き落とし日から8週間以内であれば銀行に返金を請求できます。これは、現在行っている ${ IDEAL_WERO_BRAND_NAME } による支払いには適用されません。"
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "以前のサブスクリプションプランの未使用分のクレジット"
       ],
       "Credits will be added to your balance": [
         "クレジットがお客様の残高に追加されます。"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "請求先住所を変更すると、今後のご請求に対する税額に影響が生じる場合があります。"
       ]
     },
     "Payments.ModificationWarning": {
@@ -12617,6 +13452,12 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - 末尾が ${ Last4 } のカード"
+      ],
+      "Bank transfer - ${ iban }": [
+        "銀行振込 - ${ iban }"
+      ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - 末尾が${ Last4 }のカード"
       ]
@@ -12706,6 +13547,9 @@
       ],
       "Anytown": [
         "どこにでもある都市"
+      ],
+      "Ask anything…": [
+        "何でも聞いてください…"
       ],
       "Company name": [
         "会社名"
@@ -12803,9 +13647,6 @@
       "San Francisco": [
         "サンフランシスコ"
       ],
-      "Search": [
-        "検索"
-      ],
       "Search date, name, email address, or subject line": [
         "日付、名前、メールアドレス、件名で検索"
       ],
@@ -12814,9 +13655,6 @@
       ],
       "Search for name or email": [
         "名前またはメールアドレスで検索"
-      ],
-      "Search for users or addresses": [
-        "ユーザーまたはアドレスを検索"
       ],
       "Search messages": [
         "メッセージを検索"
@@ -12941,11 +13779,6 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "進捗: ${ combinedProgress }%"
-      ]
-    },
-    "Property": {
-      "attributes": [
-        "属性"
       ]
     },
     "Property type": {
@@ -13134,6 +13967,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "組織管理者"
+      ],
       "Security Admin": [
         "セキュリティ管理者"
       ],
@@ -13572,6 +14408,12 @@
     "Snooze info": {
       "${ count } email → ${ wakeTime }": [
         "${ count }件のメール→${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "${ emails } をスヌーズ"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "${ emails } を ${ wakeTime } までスヌーズ"
       ]
     },
     "Snooze message": {
@@ -14718,9 +15560,6 @@
       "Name": [
         "名前"
       ],
-      "Size": [
-        "サイズ"
-      ],
       "Status": [
         "状態"
       ],
@@ -14953,6 +15792,9 @@
       "Birthday": [
         "誕生日"
       ],
+      "Black Friday": [
+        "ブラックフライデー"
+      ],
       "Blind Carbon Copy": [
         "ブラインドカーボンコピー"
       ],
@@ -15133,9 +15975,6 @@
       "Distraction-free emailing": [
         "自由なメール送信"
       ],
-      "Domain names": [
-        "ドメイン名"
-      ],
       "Don't give spam a chance": [
         "迷惑メールを送らせない"
       ],
@@ -15247,6 +16086,9 @@
       "Groups": [
         "グループ"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "ご注意: この Gmail は別の ${ BRAND_NAME } アカウントにリンクされています"
+      ],
       "Help and feedback": [
         "ヘルプとフィードバック"
       ],
@@ -15342,6 +16184,12 @@
       ],
       "Make a secure connection your default": [
         "安全な接続を標準設定にする"
+      ],
+      "Make Categories work better for you": [
+        "カテゴリー機能をより便利にカスタマイズ"
+      ],
+      "Make your inbox your own": [
+        "受信トレイを思い通りにカスタマイズ"
       ],
       "Mark all messages as read": [
         "すべてのメッセージを既読にする"
@@ -15742,6 +16590,9 @@
       "Subject missing": [
         "件名がありません"
       ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } を登録"
+      ],
       "Subscription canceled": [
         "サブスクリプションがキャンセルされました"
       ],
@@ -15816,9 +16667,6 @@
       ],
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Gmail を ${ MAIL_APP_NAME } で安全に使用する"
-      ],
-      "Users and addresses": [
-        "ユーザーとアドレス"
       ],
       "Verification error": [
         "検証エラーが発生しました"
@@ -16108,6 +16956,15 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "このユーザーは、次回のサインイン時に管理者権限を取得します。"
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "管理者ロールを使用するには、対応するプランにアップグレードしてください。"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "自分自身のロールを変更することはできません。変更するには、別の管理者にお問い合わせください。"
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "ユーザーが招待を承認すると、役割を割り当てることができるようになります。"
       ]

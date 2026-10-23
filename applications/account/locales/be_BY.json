@@ -992,6 +992,9 @@
       "Download updated file": [
         "Спампаваць абноўлены файл"
       ],
+      "Dropbox": [
+        "Dropbox"
+      ],
       "Edit": [
         "Рэдагаваць"
       ],
@@ -1537,6 +1540,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "OneDrive": [
+        "OneDrive"
       ],
       "Open": [
         "Адкрыць"
@@ -2948,7 +2954,7 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "Чорная Пятніца"
+        "Чорная пятніца"
       ],
       "Get the deal": [
         "Скарыстацца прапановай"
@@ -2958,17 +2964,72 @@
       "/month": [
         "/месяц"
       ],
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
       "2 individual accounts": [
-        "2 асабістых уліковых запісы"
+        "2 асабістыя ўліковыя запісы"
       ],
       "2 TB of secure storage": [
         "2 ТБ бяспечнага сховішча"
       ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ сховішча: у 40 разоў больш за бягучы тарыфны план"
+      ],
       "3 TB of secure storage": [
         "3 ТБ бяспечнага сховішча"
       ],
+      "500 GB of secure storage": [
+        "500 ГБ бяспечнага сховішча"
+      ],
       "6 individual accounts": [
         "6 асабістых уліковых запісаў"
+      ],
+      "Built-in 2FA authenticator": [
+        "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ],
+      "Online document editor": [
+        "Рэдактар дакументаў у інтэрнэце"
+      ],
+      "Recover previous file versions": [
+        "Аднаўленне папярэдніх версій файла"
+      ],
+      "Stronger protection against cyber threats": [
+        "Больш надзейная абарона супраць кіберпагроз"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неабмежаваная колькасць папак, метак і фільтраў"
+      ],
+      "Use your own email domain": [
+        "Выкарыстанне ўласнага дамена электроннай пошты"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльныя ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
@@ -2976,13 +3037,19 @@
         "Найбуйнейшы распродаж года"
       ],
       "Black Friday": [
-        "Чорная Пятніца"
+        "Чорная пятніца"
       ],
       "for 12 months": [
-        "за 12 месяцаў"
+        "на 12 месяцаў"
       ],
       "Last chance to save big": [
-        "Апошні шанс істотна сэканоміць"
+        "Апошні шанец зэканоміць многа"
+      ],
+      "Protect your entire tribe": [
+        "Абарона ўсёй вашай сям'і"
+      ],
+      "Protection for two in a single plan": [
+        "Абарона для дваіх у адным тарыфным плане"
       ]
     },
     "Billing cycle": {
@@ -5377,9 +5444,6 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Перанясіце свае лісты, падзеі календара і кантакты ад іншага пастаўшчыка."
       ],
-      "Bring over your files from another provider.": [
-        "Перанясіце свае файлы ад іншага пастаўшчыка."
-      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Стварайце давер і пазнавальнасць гандлёвай маркі з дапамогай прафесійных адрасоў электроннай пошты са сваім уласным даменам."
       ],
@@ -7003,12 +7067,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Яны могуць папрасіць доступ да вашага ўліковага запісу ў выпадку экстраннай сітуацыі."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Яны атрымаюць доступ аўтаматычна праз **${ days } дзень**, **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час.",
-        "Яны атрымаюць доступ аўтаматычна праз **${ days } дні**, **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час.",
-        "Яны атрымаюць доступ аўтаматычна праз **${ days } дзён**, **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час.",
-        "Яны атрымаюць доступ аўтаматычна праз **${ days } дзён**, **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час."
-      ],
       "This will take effect immediately.": [
         "Гэта дзеянне ўступіць у сілу неадкладна."
       ],
@@ -7165,9 +7223,6 @@
       ],
       "Address is already added to your account": [
         "Адрас ужо дададзены ў ваш уліковы запіс"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Адрас ужо выкарыстоўваецца карыстальнікам з іншай арганізацыі. Звярніцеся ў службу падтрымкі кліентаў для вырашэння гэтай праблемы"
       ],
       "Address primary private key not found": [
         "Асноўны закрыты ключ адраса не знойдзены"
@@ -7544,9 +7599,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Максімальны дазволены аб'ём складае ${ displayMaxValue }"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Адрас удзельніка не знойдзены. Звяжыцеся з нашай службай падтрымкі кліентаў, каб вырашыць гэта"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Аб'яднайце прынамсі ${ calendarsToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
         "Аб'яднайце прынамсі ${ calendarsToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }",
@@ -7558,12 +7610,6 @@
       ],
       "Missing key packet": [
         "Адсутнічае пакет ключоў"
-      ],
-      "Missing organization private key": [
-        "Адсутнічае закрыты ключ арганізацыі"
-      ],
-      "Missing organization public key": [
-        "Адсутнічае адкрыты ключ арганізацыі"
       ],
       "Missing signature": [
         "Адсутнічае подпіс"
@@ -7645,12 +7691,6 @@
       ],
       "Operation failed, try again later": [
         "Збой выканання аперацыі. Паўтарыце спробу пазней"
-      ],
-      "Organization does not have enough seats available": [
-        "У арганізацыі недастаткова даступных ліцэнзій"
-      ],
-      "Organization does not have enough storage available": [
-        "У арганізацыі недастаткова даступнага месца для захоўвання"
       ],
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
@@ -9112,9 +9152,6 @@
       ]
     },
     "Filter": {
-      "Activated": [
-        "Актывавана"
-      ],
       "All": [
         "Усе"
       ],
@@ -9125,10 +9162,7 @@
         "Выконваецца"
       ],
       "Migrated": [
-        "Перанесена"
-      ],
-      "Not activated": [
-        "Не актывавана"
+        "Перанесеныя"
       ],
       "Pending": [
         "У чаканні"
@@ -9706,9 +9740,6 @@
       ],
       "Contact us": [
         "Звязацца з намі"
-      ],
-      "Downloads": [
-        "Спампоўкі"
       ],
       "Enjoying ${ planName }?": [
         "Падабаецца ${ planName }?"
@@ -11720,9 +11751,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтры працуюць для ўсіх лістоў, уключаючы ўваходныя і выходныя лісты. Кожны фільтр павінен змяшчаць прынамсі назву, умову і дзеянне."
       ],
-      "Find out what can be migrated.": [
-        "Даведайцеся, што перанесена."
-      ],
       "for ${ price }": [
         "за ${ price }"
       ],
@@ -12272,6 +12300,9 @@
       "Monthly ${ onDayString }": [
         "Штомесяц ${ onDayString }"
       ],
+      "More cards": [
+        "Больш картак"
+      ],
       "Multi-user support not enabled.": [
         "Падтрымка шматкарыстальніцкага рэжыму не ўключана."
       ],
@@ -12367,9 +12398,6 @@
       ],
       "No single sign-on": [
         "Няма адзінага ўваходу"
-      ],
-      "No users to display": [
-        "Няма карыстальнікаў для адлюстравання"
       ],
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
@@ -12812,9 +12840,6 @@
       "Select a group to view its members and settings.": [
         "Выберыце групу, каб паглядзець яе ўдзельнікаў і налады."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Выберыце толькі тое, што хочаце перанесці. Гэта будзе прыменена да ўсіх карыстальнікаў арганізацыі."
-      ],
       "Select one or multiple user affiliations": [
         "Выберыце адну або некалькі прыналежнасцей карыстальніка"
       ],
@@ -13250,12 +13275,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Гэта спасылка для скасавання падпіскі пратэрмінавана. Адкрыйце больш нядаўніх лістоў з гэтага спіса рассылкі."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Гэтага карыстальніка немагчыма перанесці, бо яго адрас электроннай пошты недаступны ў ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Гэтага карыстальніка немагчыма перанесці з-за несумяшчальнасці платформ."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Гэты карыстальнік з'яўляецца адказным за плацяжы ў вашай арганізацыі. Паніжэнне правоў гэтага ўдзельніка прывядзе да таго, што за плацяжы арганізацыі будзеце адказваць вы."
       ],
@@ -13384,27 +13403,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Каб быць у курсе апошніх распрацовак прадуктаў ${ BRAND_NAME }, вы можаце падпісацца на нашу рассылку, а таксама час ад часу ${ blogLink }."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Дадайце і праверце дамен электроннай пошты ў ${ domainNamesLink } для пераносу гэтага карыстальніка"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Уключыце ўліковы запіс карыстальніка ў свой ${ provider.adminConsoleName } для яго пераносу."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Уключыце ўліковы запіс карыстальніка ў ${ usersAddressesLink } для яго пераносу."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Уключыце адрас карыстальніка ў ${ usersAddressesLink } для яго пераносу."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Карыстальніку неабходна праняць запрашэнне на далучэнне да ${ BRAND_NAME } для яго пераносу."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Распакуйце карыстальніка ў сваёй ${ provider.adminConsoleName } для яго пераносу."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Аднавіць карыстальніка ў вашай ${ provider.adminConsoleName } для яго пераносу."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Унясіце мінімальнае ахвяраванне ў памеры ${ minimumDonation }, каб прадухіліць злоўжыванне або махлярства. Гэта таксама падтрымлівае працу ${ protonFoundationLink }, які абараняе лічбавую прыватнасць ва ўсім свеце, і дапамагае абараніць наступнае пакаленне."
@@ -16938,9 +16936,6 @@
       ],
       "Details": [
         "Падрабязнасці"
-      ],
-      "Downloads": [
-        "Спампоўкі"
       ],
       "Encryption and keys": [
         "Шыфраванне і ключы"
@@ -20778,12 +20773,6 @@
       "Billing Country": [
         "Краіна выстаўлення рахунку"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private не можа быць куплены з актыўнай падпіскай."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private патрабуе ахвяраванне."
-      ],
       "Buying credits requires a separate purchase.": [
         "Купля крэдытаў патрабуе асобнай пакупкі."
       ],
@@ -20967,9 +20956,6 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
-      "You already own Born Private.": [
-        "Вы ўжо валодаеце Born Private."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
       ],
@@ -20978,9 +20964,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
-      ],
-      "Your account is too old for Born Private.": [
-        "У вас занадта стары ўліковы запіс для Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Ваша валюта была зменена на еўра (€), бо ${ IDEAL_WERO_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
@@ -24467,6 +24450,9 @@
       "Disabled": [
         "Адключана"
       ],
+      "failed": [
+        "збой"
+      ],
       "finalizing": [
         "завяршэнне"
       ],
@@ -25735,15 +25721,6 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "Актывавана"
-      ],
-      "Estimated size": [
-        "Прыблізны памер"
-      ],
-      "Migration status": [
-        "Статус пераносу"
-      ],
       "Size": [
         "Памер"
       ],
@@ -26353,9 +26330,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "Канфігурацыя профілю прылады пастаяннай VPN"
-      ],
-      "Configure migration": [
-        "Сканфігурыраваць перанос"
       ],
       "Configure your domain": [
         "Сканфігурыруйце свой дамен"
@@ -27560,9 +27534,6 @@
       "Select the way to send this notification": [
         "Выберыце спосаб адпраўкі гэтага апавяшчэння"
       ],
-      "Select users to migrate": [
-        "Выберыце карыстальнікаў для пераносу"
-      ],
       "Select when you want this notification to be sent": [
         "Выберыце, калі гэта апавяшчэнне павінна быць адпраўлена"
       ],
@@ -27739,6 +27710,9 @@
       ],
       "Status": [
         "Статус"
+      ],
+      "Stay connected:": [
+        "Заставацца падключаным:"
       ],
       "Stay safe:": [
         "Пакінута ў бяспецы:"
@@ -27985,9 +27959,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
-      ],
-      "What are you migrating?": [
-        "Што вы плануеце перанесці?"
       ],
       "What changes if you switch to the Free plan": [
         "Што зменіцца пры пераходзе на тарыфны план Free"
@@ -28268,9 +28239,6 @@
       "Customize import to reduce the number of labels": [
         "Наладзьце імпартаванне, каб паменшыць колькасць метак"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Статус пераносу даных з ${ providerName } у ${ BRAND_NAME }"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Выдаляць смецце і спам праз 30 дзён. Пры ўключэнні аўтаматычнага выдалення паведамленняў, якія ўжо знаходзяцца ў сметніцы/спаме, атрымаюць дату выдалення на аснове даты іх перамяшчэння туды."
       ],
@@ -28489,9 +28457,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Прыблізнае месцазнаходжанне карыстальніка (на падставе IP-адраса)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Карыстальнікі, якія маюць доступ да сваіх уліковых запісаў ${ BRAND_NAME }"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Карыстальнікі будуць бачыць ваш лагатып замест значка ${ BRAND_NAME } пры ўваходзе ў нашу вэб-праграму."

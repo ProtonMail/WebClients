@@ -602,6 +602,106 @@
         "El espacio de almacenamiento se distribuye entre todos los servicios de ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mes"
+      ],
+      "15 GB storage": [
+        "15 GB de almacenamiento"
+      ],
+      "2 individual accounts": [
+        "2 cuentas individuales"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de almacenamiento seguro"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de almacenamiento: 40 veces el plan actual"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de almacenamiento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de almacenamiento seguro"
+      ],
+      "6 individual accounts": [
+        "6 cuentas individuales"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en la cuota mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recupera las versiones anteriores de los archivos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protección más sólida contra las ciberamenazas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Usa un dominio de correo electrónico propio"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } prémium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "La mejor oferta del año"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "Last chance to save big": [
+        "Última oportunidad para ahorrar a lo grande"
+      ],
+      "Protect your entire tribe": [
+        "Protege a toda tu tribu"
+      ],
+      "Protection for two in a single plan": [
+        "Protección para dos en un solo plan"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } mes",
@@ -1191,23 +1291,14 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Añade tus propios recuerdos, edita cualquier entrada generada automáticamente o borra todo en cualquier momento. Los recuerdos generados que edites se convierten en propios."
       ],
-      "Always enable web search for new conversations": [
-        "Activar siempre la búsqueda web para las nuevas conversaciones"
-      ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "Las claves de API permiten acceder a ${ LUMO_SHORT_APP_NAME } de forma programática. Cada clave solo se muestra una vez al crearla."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Crea una clave para integrar ${ LUMO_SHORT_APP_NAME } con tus scripts y herramientas."
       ],
-      "Encrypted search index for chats and Drive files.": [
-        "Índice de búsqueda cifrado para chats y archivos de Drive."
-      ],
       "High-performance model for complex tasks": [
         "Modelo de alto rendimiento para tareas complejas"
-      ],
-      "Include project conversations in the main chat history": [
-        "Incluir las conversaciones del proyecto en el historial de chat principal"
       ],
       "Keep it safe — it won't be shown again": [
         "Guárdalo en un lugar seguro — no volverá a mostrarse"
@@ -1217,9 +1308,6 @@
       ],
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Más información sobre cómo usar ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
-        "Permite que ${ LUMO_SHORT_APP_NAME } visualice datos con gráficos"
       ],
       "Lightweight model for everyday tasks": [
         "Modelo ligero para tareas cotidianas"
@@ -1232,9 +1320,6 @@
       ],
       "More thorough answers, but can take longer": [
         "Respuestas más completas, pero pueden tardar más"
-      ],
-      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
-        "Elimina permanentemente tus proyectos, chats y recuerdos guardados. Esto es irreversible."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Los chats de proyecto se mantienen totalmente aislados. Dependen de sus propias instrucciones y archivos, e ignoran tus recuerdos globales por completo."
@@ -1579,9 +1664,6 @@
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         ". Sigue el esquema de la API de OpenAI — integra tu cliente actual con un cambio de una sola línea."
       ],
-      "1 file": [
-        "1 archivo"
-      ],
       "A ${ LUMO_SHORT_APP_NAME } account": [
         "Una cuenta de ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -1651,9 +1733,6 @@
       "characters not shown": [
         "caracteres no mostrados"
       ],
-      "characters processed": [
-        "caracteres procesados"
-      ],
       "Chat expiring soon": [
         "El chat expira pronto"
       ],
@@ -1707,9 +1786,6 @@
       ],
       "File too large for preview (>150k tokens)": [
         "Archivo demasiado grande para vista previa (>150k tokens)"
-      ],
-      "files": [
-        "archivos"
       ],
       "Files": [
         "Archivos"
@@ -1947,9 +2023,6 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Para consultar esta conversación más tarde, inicia sesión o crea una cuenta."
-      ],
-      "tokens": [
-        "tokens"
       ],
       "tokens / 30d": [
         "tokens / 30d"
@@ -2452,9 +2525,6 @@
       "Auto update memory": [
         "Actualizar la memoria automáticamente"
       ],
-      "Automatic web search": [
-        "Búsqueda web automática"
-      ],
       "Build intelligent apps.": [
         "Crea aplicaciones inteligentes."
       ],
@@ -2472,9 +2542,6 @@
       ],
       "Create new API key": [
         "Crear nueva clave de API"
-      ],
-      "Delete everything": [
-        "Eliminar todo"
       ],
       "Document intelligence": [
         "Inteligencia de documentos"
@@ -2539,14 +2606,8 @@
       "Saved memories": [
         "Recuerdos guardados"
       ],
-      "Search Index": [
-        "Índice de búsqueda"
-      ],
       "Security note:": [
         "Nota de seguridad:"
-      ],
-      "Show project chats in history": [
-        "Mostrar las conversaciones de proyectos en el historial"
       ],
       "Theme": [
         "Tema"
@@ -2568,9 +2629,6 @@
       ],
       "Visionary": [
         "Visionary"
-      ],
-      "Visualization mode": [
-        "Modo de visualización"
       ],
       "What you can build": [
         "Qué puedes crear"
@@ -7708,6 +7766,11 @@
         "Necesitas acceso a la clave de la organización para realizar esta acción."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Cuenta bancaria"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -8599,18 +8662,6 @@
       ]
     },
     "Time": {
-      "${ days } days ago": [
-        "Hace ${ days } días"
-      ],
-      "${ hours } hours ago": [
-        "Hace ${ hours } horas"
-      ],
-      "${ minutes } minutes ago": [
-        "Hace ${ minutes } minutos"
-      ],
-      "1 hour ago": [
-        "Hace 1 hora"
-      ],
       "Just now": [
         "Ahora mismo"
       ],

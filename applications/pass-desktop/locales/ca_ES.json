@@ -421,6 +421,9 @@
       "Hide": [
         "Amaga"
       ],
+      "Hide passwords": [
+        "Amagar les contrasenyes"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Com exporto les meves dades de ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -941,6 +944,9 @@
       ],
       "Change your passwords": [
         "Canvieu les vostres contrasenyes"
+      ],
+      "Check if you're reusing passwords": [
+        "Comproveu si reutilitzeu contrasenyes"
       ],
       "Check if your passwords have been exposed": [
         "Comproveu si les vostres contrasenyes s'han exposat"
@@ -1705,6 +1711,9 @@
         "${ forwardedEmailsCount } reenviat",
         "${ forwardedEmailsCount } reenviats"
       ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold }. Això no impedeix que els espectadors recuperin les contrasenyes per altres mitjans."
+      ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } vol compartir un element amb un grup que administreu."
       ],
@@ -2015,7 +2024,7 @@
         "Descarregueu-vos pass-cli des de ${ passCliLink }."
       ],
       "Drop file here to upload": [
-        "Arrossegueu el fitxer aquí per carregar-lo."
+        "Arrossegueu el fitxer aquí per a carregar-lo."
       ],
       "Drop to import": [
         "Arrossegueu aquí per a importar"
@@ -2113,6 +2122,9 @@
       "Failed updating your vault organization": [
         "No s'ha pogut actualitzar l'organització de la vostra caixa forta"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Camp ocult. Encara el podeu emplenar automàticament."
+      ],
       "Fill in the CSV with your data": [
         "Empleneu el CSV amb les vostres dades"
       ],
@@ -2184,6 +2196,9 @@
       "Import the CSV file below.": [
         "Importa el fitxer CSV de sota."
       ],
+      "Important:": [
+        "Important:"
+      ],
       "Imported on ${ date }": [
         "Importat el ${ date }"
       ],
@@ -2218,7 +2233,7 @@
         "us convida a accedir a elements a"
       ],
       "iOS and Android Apps": [
-        "Aplicacions per iOS i Android"
+        "Aplicacions per a iOS i Android"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sembla que ja heu iniciat sessió a ${ PASS_APP_NAME }. Si esteu intentant iniciar sessió amb un altre compte, tanqueu primer la sessió de l'extensió."
@@ -2322,8 +2337,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2413,6 +2427,9 @@
       ],
       "Pass Plus trial": [
         "Prova Pass Plus"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Contrasenya amagada. Encara la podeu emplenar automàticament."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "S'ha registrat el bloqueig de la contrasenya. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }."
@@ -2620,7 +2637,7 @@
         "S'estan restaurant els elements de la paperera..."
       ],
       "Scan to download": [
-        "Escanegeu-lo per descarregar-lo"
+        "Escanegeu per a descarregar"
       ],
       "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
         "Escaneja per descarregar ${ PASS_APP_NAME } per a iOS i Android"
@@ -2920,6 +2937,12 @@
       ],
       "Viewer": [
         "Lector"
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Els espectadors encara poden emplenar automàticament les contrasenyes, però no les veuran a ${ PASS_APP_NAME }. Això desincentiva la visualització casual i redueix el risc de divulgació accidental."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Els espectadors encara ho poden emplenar automàticament. Els editors i els administradors sempre veuen les contrasenyes."
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estem tenint problemes per sincronitzar les dades amb el vostre emmagatzematge local. Assegureu-vos que teniu prou espai al disc perquè ${ PASS_SHORT_APP_NAME } funcioni correctament."
@@ -3251,6 +3274,9 @@
       "All items": [
         "Tots els elements"
       ],
+      "Allow viewers to see passwords": [
+        "Permeteu als espectadors veure les contrasenyes"
+      ],
       "Alphabetical": [
         "Alfabètic"
       ],
@@ -3507,7 +3533,7 @@
         "Testimonis caducats (${ expired.length })"
       ],
       "Expires in": [
-        "Caducarà d'aquí a"
+        "Caduca en"
       ],
       "Expiry Date": [
         "Data d'expiració"
@@ -4459,7 +4485,7 @@
     },
     "Notification": {
       "${ reason } has been disabled": [
-        "${ reason } s'ha desactivat"
+        "S'ha desactivat ${ reason }"
       ],
       "${ reason } has been enabled": [
         "S'ha activat ${ reason } "
@@ -4656,7 +4682,7 @@
         "per exemple: 60"
       ],
       "e.g. My automation script": [
-        "per exemple, el meu guió d'automatització"
+        "p. ex. El meu script d'automatització"
       ],
       "E.g., ": [
         "Ex., "
@@ -5149,7 +5175,7 @@
         "Opcions de carpeta"
       ],
       "Get mobile and desktop apps": [
-        "Obtingueu les aplicacions per mòbil i escriptori"
+        "Obteniu les aplicacions per a mòbil i per a escriptori"
       ],
       "Get mobile apps": [
         "Obtingueu aplicacions mòbils"
@@ -5159,6 +5185,9 @@
       ],
       "Hidden vaults": [
         "Caixes fortes ocultes"
+      ],
+      "Hide passwords from viewers?": [
+        "Voleu amagar les contrasenyes dels espectadors?"
       ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
@@ -5454,6 +5483,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Milloreu el pla per comprovar les contrasenyes en risc"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Actualitza per comprovar si hi ha contrasenyes reutilitzades"
       ],
       "URL matching": [
         "Coincidència d'URL"

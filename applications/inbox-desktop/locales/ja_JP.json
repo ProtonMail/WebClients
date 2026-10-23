@@ -70,6 +70,9 @@
       "Force Reload": [
         "強制再読み込み"
       ],
+      "Help and feedback": [
+        "ヘルプとフィードバック"
+      ],
       "Hide ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }を非表示"
       ],
@@ -78,6 +81,9 @@
       ],
       "Minimize": [
         "最小化"
+      ],
+      "OK": [
+        "OK"
       ],
       "Paste": [
         "貼り付け"
@@ -111,6 +117,9 @@
       ],
       "Select All": [
         "すべて選択"
+      ],
+      "Set as default email app": [
+        "デフォルトのメールアプリに設定する"
       ],
       "Show All": [
         "すべて表示"
@@ -147,6 +156,9 @@
       ],
       "Uninstall ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }をアンインストール"
+      ],
+      "Version ${ version } (${ buildInfo })\n${ pkg.config.copyright }": [
+        "バージョン ${ version }(${ buildInfo } ${ pkg.config.copyright })"
       ],
       "When hardware acceleration is enabled, the app uses your device's dedicated graphics hardware for rendering. This can cause compatibility issues on some systems.": [
         "ハードウェアアクセラレーションが有効な場合、アプリはレンダリングにデバイス専用のグラフィックスハードウェアを使用します。これにより、一部のシステムで互換性の問題が発生する可能性があります。"
@@ -255,11 +267,19 @@
       "File": [
         "ファイル"
       ],
+      "Help": [
+        "ヘルプ"
+      ],
       "View": [
         "表示"
       ],
       "Window": [
         "ウィンドウ"
+      ]
+    },
+    "Title": {
+      "About ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } について"
       ]
     },
     "Unload warning": {

@@ -342,9 +342,6 @@
       "Download": [
         "Herunterladen"
       ],
-      "Download app": [
-        "App herunterladen"
-      ],
       "Download local participant report": [
         "Lokalen Teilnehmerbericht herunterladen"
       ],
@@ -515,9 +512,6 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Offene Erwähnung von ${ senderName } im Chat"
-      ],
-      "Open this meeting in the desktop app": [
-        "Dieses Meeting in der Desktop-App öffnen"
       ],
       "Participants": [
         "Teilnehmer"
@@ -730,9 +724,6 @@
       ],
       "Stay in meeting": [
         "Im Meeting bleiben"
-      ],
-      "Stop opening meetings in the desktop app": [
-        "Öffne keine Meetings mehr in der Desktop-App"
       ],
       "Stop receiving video": [
         "Eingehendes Video stoppen"
@@ -2350,6 +2341,9 @@
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
       ],
+      "The emoji could not be added because the message is at its character limit": [
+        "Das Emoji konnte nicht hinzugefügt werden, da die Zeichenbegrenzung der Nachricht erreicht ist"
+      ],
       "The meeting password is incorrect": [
         "Das Meeting-Passwort ist falsch"
       ],
@@ -2756,9 +2750,6 @@
       ],
       "Allow camera access to preview your background": [
         "Der Kamera den Zugriff erlauben, um eine Vorschau deines Hintergrunds anzuzeigen"
-      ],
-      "Already in the app? You can close this tab.": [
-        "Schon in die App gewechselt? Dann kann dieser Tab geschlossen werden."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonym ${ particle } ${ participantNumber }"
@@ -3417,9 +3408,6 @@
       "This meeting reached the time limit.": [
         "Dieses Meeting hat die vorgesehene Dauer erreicht."
       ],
-      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Dieses Meeting wurde in der Desktop-App ${ MEET_APP_NAME } geöffnet."
-      ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Diese Aufnahme wird von diesem Gerät dauerhaft gelöscht. Diese Aktion kann nicht rückgängig gemacht werden."
       ],
@@ -3522,14 +3510,8 @@
       "Yesterday — ${ absoluteDate }": [
         "Gestern — ${ absoluteDate }"
       ],
-      "You": [
-        "Du"
-      ],
       "You are almost there": [
         "Du bist fast fertig"
-      ],
-      "You can close this tab.": [
-        "Du kannst diesen Tab jetzt schließen."
       ],
       "You can now return to the application to continue": [
         "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
@@ -3931,6 +3913,101 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ]
+    },
+    "Lumo emoji name": {
+      "Alert": [
+        "Alarm"
+      ],
+      "Browse folders": [
+        "Ordner durchsuchen"
+      ],
+      "Cash": [
+        "Bargeld"
+      ],
+      "Celebrate": [
+        "Feiern"
+      ],
+      "Cheers": [
+        "Jubel"
+      ],
+      "Chef's kiss": [
+        "Kochkuss"
+      ],
+      "Coffee": [
+        "Kaffee"
+      ],
+      "Cowboy": [
+        "Cowboy"
+      ],
+      "Encrypt": [
+        "Verschlüsseln"
+      ],
+      "Halo": [
+        "Strahlenkranz"
+      ],
+      "Happy": [
+        "Glücklich"
+      ],
+      "Love": [
+        "Liebe"
+      ],
+      "Mild panic": [
+        "Leichte Panik"
+      ],
+      "Mind blown": [
+        "Verblüfft"
+      ],
+      "Nine lives": [
+        "Neun Leben"
+      ],
+      "Party": [
+        "Feier"
+      ],
+      "Perk": [
+        "Vorteil"
+      ],
+      "Popcorn": [
+        "Popcorn"
+      ],
+      "Rocket": [
+        "Rakete"
+      ],
+      "Sad": [
+        "Traurig"
+      ],
+      "Schrödinger out of the box": [
+        "Schrödinger mal ganz anders"
+      ],
+      "Search": [
+        "Suche"
+      ],
+      "Sit": [
+        "Sitzen"
+      ],
+      "Sleepy": [
+        "Schläfrig"
+      ],
+      "Sweep": [
+        "Fegen"
+      ],
+      "Thank you": [
+        "Vielen Dank"
+      ],
+      "Think": [
+        "Denken"
+      ],
+      "This is fine": [
+        "Dies ist in Ordnung"
+      ],
+      "Watch left": [
+        "Nach links schauen"
+      ],
+      "Watch right": [
+        "Nach rechts schauen"
+      ],
+      "Write": [
+        "Schreiben"
       ]
     },
     "meet": {

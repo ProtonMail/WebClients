@@ -539,9 +539,6 @@
       "Get ${ planOrAppName }": [
         "Získat ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Získejte ${ BRAND_NAME } adresu zdarma"
-      ],
       "Get a new encrypted email address": [
         "Získat novou šifrovanou e-mailovou adresu"
       ],
@@ -1798,6 +1795,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/měsíc"
+      ],
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "2 individual accounts": [
+        "2 samostatné účty"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpečného úložiště"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB úložiště: 40× více než váš současný plán"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpečného úložiště"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpečného úložiště"
+      ],
+      "6 individual accounts": [
+        "6 samostatných účtů"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vestavěné ověřování 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Slevy se vztahují na standardní měsíční ceny. Po skončení fakturačního cyklu se vaše předplatné obnoví za standardní roční sazbu."
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Použijte svou vlastní e-mailovou doménu"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Největší slevová akce roku"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "na 12 měsíců"
+      ],
+      "Last chance to save big": [
+        "Poslední šance ušetřit ve velkém"
+      ],
+      "Protect your entire tribe": [
+        "Chraňte celou svou partu"
+      ],
+      "Protection for two in a single plan": [
+        "Ochrana pro dva v jednom plánu"
       ]
     },
     "Billing cycle": {
@@ -4385,12 +4482,6 @@
       "They may ask to access your account in case of an emergency.": [
         "V případě nouze vás mohou požádat o přístup k vašemu účtu."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Přístup získají automaticky za **${ days } den**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě.",
-        "Přístup získají automaticky za **${ days } dny**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě.",
-        "Přístup získají automaticky za **${ days } dnů**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě.",
-        "Přístup získají automaticky za **${ days } dnů**, **${ formattedAccessibleAt }**. Jejich žádost můžete kdykoli odmítnout nebo jim přístup poskytnout okamžitě."
-      ],
       "This will take effect immediately.": [
         "Tato změna se projeví okamžitě."
       ],
@@ -4683,9 +4774,6 @@
       "Invalid private key file": [
         "Neplatný soubor soukromého klíče"
       ],
-      "Invalid URL": [
-        "Neplatná URL"
-      ],
       "Invalid VAT number": [
         "Neplatné DIČ"
       ],
@@ -4706,9 +4794,6 @@
       ],
       "Missing key packet": [
         "Chybějící paket klíče"
-      ],
-      "Missing signature": [
-        "Chybí podpis"
       ],
       "Name already exists": [
         "Jméno již existuje"
@@ -4898,9 +4983,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
-      ],
-      "Something went wrong": [
-        "Něco se pokazilo"
       ],
       "Something went wrong while converting the address": [
         "Při převodu adresy došlo k chybě"
@@ -6485,14 +6567,6 @@
         "Další možnosti importu"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "Probíhá"
-      ],
-      "Migrated": [
-        "Migrováno"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro detaily"
@@ -6543,9 +6617,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pro bezpečnou synchronizaci událostí a šifrování. ${ claimAddressButton }"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendář",
@@ -8428,9 +8499,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Dočasně nedostupné z důvodu vysokého vytížení. Zkuste to prosím později."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Dočasně nedostupné. Zkontrolujte to prosím později."
-      ],
       "Thank you": [
         "Děkujeme"
       ],
@@ -8664,9 +8732,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Abychom vám pomohli zapamatovat si vaše heslo, budeme vás žádat o jeho pravidelné zadávání. Časem budeme tyto žádosti omezovat."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Chcete-li importovat události, nejprve vytvořte kalendář v ${ CALENDAR_APP_NAME }. Po importu se zde zobrazí události."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Chcete-li držet krok s nejnovějším vývojem produktů ${ BRAND_NAME }, můžete se přihlásit k odběru našich e-mailů a občas ${ blogLink }."
@@ -9665,9 +9730,6 @@
       "Calendar": [
         "Kalendář"
       ],
-      "Calendars": [
-        "Kalendáře"
-      ],
       "Card details": [
         "Podrobnosti karty"
       ],
@@ -9847,9 +9909,6 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mail s doménou @vasefirma.cz"
-      ],
-      "Emails": [
-        "E-maily"
       ],
       "Emails (all messages)": [
         "E-maily (všechny zprávy)"
@@ -13562,9 +13621,6 @@
       "Search for an email or IP address": [
         "Hledat e-mail nebo IP adresu"
       ],
-      "Search for users or addresses": [
-        "Hledat uživatele nebo adresy"
-      ],
       "Search parent folder": [
         "Prohledat nadřazenou složku"
       ],
@@ -16806,14 +16862,6 @@
         "Pro jednotlivce"
       ]
     },
-    "Table header": {
-      "Size": [
-        "Velikost"
-      ],
-      "Status": [
-        "Stav"
-      ]
-    },
     "TableHeader": {
       "Action": [
         "Akce"
@@ -17214,9 +17262,6 @@
       ],
       "Change second password": [
         "Změnit druhé heslo"
-      ],
-      "Choose a provider": [
-        "Vybrat poskytovatele"
       ],
       "Choose user affiliations": [
         "Výběr příslušnosti uživatele"
@@ -17674,9 +17719,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importovat přes ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Importujte svá data do ${ BRAND_NAME }"
-      ],
       "Imports": [
         "Importy"
       ],
@@ -17961,9 +18003,6 @@
       ],
       "Select contact group": [
         "Vybrat skupinu kontaktů"
-      ],
-      "Select data to import": [
-        "Vyberte data k importu"
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Odesílejte a přijímejte Gmail pomocí ${ MAIL_APP_NAME }"

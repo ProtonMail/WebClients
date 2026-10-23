@@ -2082,6 +2082,106 @@
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/měsíc"
+      ],
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "2 individual accounts": [
+        "2 samostatné účty"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpečného úložiště"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB úložiště: 40× více než váš současný plán"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpečného úložiště"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpečného úložiště"
+      ],
+      "6 individual accounts": [
+        "6 samostatných účtů"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vestavěné ověřování 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Slevy se vztahují na standardní měsíční ceny. Po skončení fakturačního cyklu se vaše předplatné obnoví za standardní roční sazbu."
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Použijte svou vlastní e-mailovou doménu"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Největší slevová akce roku"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "na 12 měsíců"
+      ],
+      "Last chance to save big": [
+        "Poslední šance ušetřit ve velkém"
+      ],
+      "Protect your entire tribe": [
+        "Chraňte celou svou partu"
+      ],
+      "Protection for two in a single plan": [
+        "Ochrana pro dva v jednom plánu"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } měsíc",
@@ -2611,6 +2711,11 @@
       ],
       "Expand": [
         "Rozbalit"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Tato konverzace je příliš dlouhá na to, aby mohla pokračovat. Spusťte nový chat, aby byl zajištěn hladký chod a rychlá odezva aplikace ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "collider_2025: feature": {
@@ -4609,9 +4714,6 @@
       "Aliases could not be loaded": [
         "Aliasy se nepodařilo načíst"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
-      ],
       "Amount above the maximum.": [
         "Hodnota je vyšší než maximální částka."
       ],
@@ -4816,9 +4918,6 @@
       "Invalid public key file": [
         "Neplatný soubor veřejného klíče"
       ],
-      "Invalid URL": [
-        "Neplatná URL"
-      ],
       "Invalid VAT number": [
         "Neplatné DIČ"
       ],
@@ -4945,15 +5044,6 @@
       "Please complete the billing details": [
         "Prosím, doplňte fakturační údaje"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Před přidáním adres nastavte vlastní doménu."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Před přidáním uživatelů do Vaši organizace si prosím nastavte vlastní doménu."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
-      ],
       "Please enter a valid postal code": [
         "Zadejte prosím platné poštovní směrovací číslo"
       ],
@@ -4995,9 +5085,6 @@
       ],
       "Please try generating the text again": [
         "Zkuste prosím text vygenerovat znovu"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
       ],
       "Port is required": [
         "Port je povinná položka"
@@ -5085,9 +5172,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
-      ],
-      "Something went wrong": [
-        "Něco se pokazilo"
       ],
       "Something went wrong while converting the address": [
         "Při převodu adresy došlo k chybě"
@@ -5271,12 +5355,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Dosáhli jste limitu počtu kontaktů vašeho účtu"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte některou z adres ve svém účtu."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -6500,14 +6578,6 @@
         "Další možnosti importu"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "Probíhá"
-      ],
-      "Migrated": [
-        "Migrováno"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro detaily"
@@ -6840,12 +6910,6 @@
         "${ total } zprávy",
         "${ total } zpráv",
         "${ total } zpráv"
-      ],
-      "${ total } user found": [
-        "Nalezen ${ total } uživatel",
-        "Nalezeni ${ total } uživatelé",
-        "Nalezeno ${ total } uživatelů",
-        "Nalezeno ${ total } uživatelů"
       ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } sledovací prvek e-mailu zablokován",
@@ -7703,10 +7767,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -13245,9 +13306,6 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Vyhledat"
-      ],
       "Search date, name, email address, or subject line": [
         "Vyhledávání podle data, jména, e-mailové adresy nebo předmětu zprávy"
       ],
@@ -13256,9 +13314,6 @@
       ],
       "Search for name or email": [
         "Vyhledat jméno nebo e-mail"
-      ],
-      "Search for users or addresses": [
-        "Hledat uživatele nebo adresy"
       ],
       "Search messages": [
         "Prohledat zprávy"
@@ -15360,9 +15415,6 @@
       "Name": [
         "Název"
       ],
-      "Size": [
-        "Velikost"
-      ],
       "Status": [
         "Stav"
       ],
@@ -15831,9 +15883,6 @@
       ],
       "Distraction-free emailing": [
         "Odesílání e-mailů bez rozptylování"
-      ],
-      "Domain names": [
-        "Názvy domén"
       ],
       "Don't give spam a chance": [
         "Nedávejte spamu šanci"
@@ -16521,9 +16570,6 @@
       ],
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Používejte Gmail bezpečně v ${ MAIL_APP_NAME }"
-      ],
-      "Users and addresses": [
-        "Uživatelé a adresy"
       ],
       "Verification error": [
         "Chyba při ověření"

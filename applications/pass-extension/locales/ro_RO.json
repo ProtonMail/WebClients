@@ -415,6 +415,9 @@
       "Hide": [
         "Ascundere"
       ],
+      "Hide passwords": [
+        "Ascundere parole"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Cum se pot exporta datele din ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -928,6 +931,9 @@
       ],
       "Change your passwords": [
         "Schimbați-vă parolele"
+      ],
+      "Check if you're reusing passwords": [
+        "Verifică dacă refolosiți parolele."
       ],
       "Check if your passwords have been exposed": [
         "Verificați dacă parolele v-au fost expuse"
@@ -1885,6 +1891,9 @@
         "Transferate: ${ forwardedEmailsCount }",
         "Transferate: ${ forwardedEmailsCount }"
       ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Acest lucru nu îi împiedică pe spectatori să obțină parolele prin alte mijloace."
+      ],
       "${ imported } of ${ total } (${ percentage }%)": [
         "${ imported } din ${ total } (${ percentage }%)"
       ],
@@ -2373,6 +2382,9 @@
       "Failed updating your vault organization": [
         "Nu s-a putut actualiza organizarea seifului."
       ],
+      "Field hidden. You can still autofill it.": [
+        "Câmp ascuns. Încă se poate autocompleta."
+      ],
       "Fill in the CSV with your data": [
         "Completați fișierul CSV cu datele necesare."
       ],
@@ -2436,6 +2448,9 @@
       ],
       "Import the CSV file below.": [
         "Importați mai jos fișierul CSV."
+      ],
+      "Important:": [
+        "Important:"
       ],
       "Imported on ${ date }": [
         "Importat la ${ date }"
@@ -2568,7 +2583,9 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2684,6 +2701,9 @@
       ],
       "Passkey sign-in": [
         "Autentificare cu cheia de acces"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Parola este ascunsă. Încă se poate autocompleta."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Blocarea cu parolă s-a înregistrat. Folosiți-o pentru a debloca ${ PASS_APP_NAME }."
@@ -3222,6 +3242,12 @@
       "Viewer": [
         "Utilizator"
       ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Utilizatorii cu drept de vizualizare pot în continuare să completeze automat parolele, dar nu le vor vedea în ${ PASS_APP_NAME }. Acest lucru descurajează vizualizarea ocazională și reduce riscul unei dezvăluiri accidentale."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Utilizatorii cu drept de vizualizare pot folosi în continuare completarea automată. Editorii și administratorii văd întotdeauna parolele."
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Există probleme la sincronizarea datelor cu stocarea locală. Asigurați-vă că aveți suficient spațiu pe disc pentru ca ${ PASS_SHORT_APP_NAME } să funcționeze fără probleme."
       ],
@@ -3568,6 +3594,9 @@
       ],
       "All items": [
         "Toate articolele"
+      ],
+      "Allow viewers to see passwords": [
+        "Permitere ca spectatorii să vadă parolele"
       ],
       "Alphabetical": [
         "Alfabetic"
@@ -5432,6 +5461,9 @@
       "Hide my email": [
         "Ascundere adresă e-mail"
       ],
+      "Hide passwords from viewers?": [
+        "Ascundeți parolele pentru spectatori?"
+      ],
       "Hide-my-email aliases": [
         "Aliasuri hide-my-email"
       ],
@@ -5763,6 +5795,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Modificați contul pentru a putea verifica parolele compromise"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Modificați contul pentru a putea verifica parolele reutilizate"
       ],
       "Upload": [
         "Încărcare"

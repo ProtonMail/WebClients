@@ -428,9 +428,6 @@
       "Get ${ planOrAppName }": [
         "Uzyskaj ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Uzyskaj darmowy adres ${ BRAND_NAME }"
-      ],
       "Get in touch": [
         "Skontaktuj się z nami"
       ],
@@ -1343,6 +1340,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi usługami ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/miesiąc"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "2 individual accounts": [
+        "2 indywidualne konta"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpiecznej przestrzeni dyskowej"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB przestrzeni dyskowej: 40× więcej niż w obecnym planie"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpiecznej przestrzeni dyskowej"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpiecznej przestrzeni dyskowej"
+      ],
+      "6 individual accounts": [
+        "6 indywidualnych kont"
+      ],
+      "Built-in 2FA authenticator": [
+        "Wbudowana aplikacja do uwierzytelniania dwustopniowego"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej po zakończeniu cyklu rozliczeniowego."
+      ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
+      "Recover previous file versions": [
+        "Odzyskuj poprzednie wersje plików"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silniejsza ochrona przed cyberzagrożeniami"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Use your own email domain": [
+        "Możliwość użycia własnej domeny e-mail"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Największa wyprzedaż roku"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "na 12 miesięcy"
+      ],
+      "Last chance to save big": [
+        "Ostatnia szansa na duże oszczędności"
+      ],
+      "Protect your entire tribe": [
+        "Chroń całą swoją społeczność"
+      ],
+      "Protection for two in a single plan": [
+        "Ochrona dla dwóch osób w jednym planie"
       ]
     },
     "Billing cycle option": {
@@ -3489,9 +3586,6 @@
       "Address primary private key not found": [
         "Główny klucz prywatny adresu nie został znaleziony"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Cała przestrzeń dyskowa została już przydzielona. Zmniejsz przydział przestrzeni innym użytkownikom."
-      ],
       "Already a member of this calendar": [
         "To jest już użytkownik kalendarza"
       ],
@@ -3681,9 +3775,6 @@
       "Invalid public key file": [
         "Plik klucza publicznego jest nieprawidłowy"
       ],
-      "Invalid URL": [
-        "Adres URL jest nieprawidłowy"
-      ],
       "Invalid VAT number": [
         "Nieprawidłowy numer VAT"
       ],
@@ -3801,17 +3892,8 @@
       "Please complete the billing details": [
         "Uzupełnij szczegóły rozliczeniowe"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Ustaw niestandardową domenę przed dodaniem adresów."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Ustaw niestandardową domenę przed dodaniem użytkowników do organizacji."
-      ],
       "Please create an address first.": [
         "Najpierw utwórz adres."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
       ],
       "Please enter a valid postal code": [
         "Wpisz prawidłowy kod pocztowy"
@@ -3845,9 +3927,6 @@
       ],
       "Please select billing state": [
         "Wybierz stan rozliczeniowy"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby zarządzać wieloma użytkownikami."
       ],
       "Port is required": [
         "Port jest wymagany"
@@ -3908,9 +3987,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektóre nazwy etykiet przekraczają maksymalny limit znaków ${ MAIL_APP_NAME }. Dostosuj proces importowania, aby zmienić te nazwy."
-      ],
-      "Something went wrong": [
-        "Coś poszło nie tak"
       ],
       "Something went wrong while fetching available domains": [
         "Coś poszło nie tak podczas pobierania dostępnych domen"
@@ -4049,12 +4125,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Osiągnięto limit liczby kontaktów na koncie"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Wykorzystano wszystkie adresy w Twoim planie. Ulepsz swój plan, aby dodać nowy adres, lub wyłącz jeden z adresów na swoim koncie."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
       ],
       "You must set a name": [
         "Musisz wpisać nazwę"
@@ -4976,14 +5046,6 @@
         "Kliknij ${ boldExport }, aby wyeksportować plik ICS."
       ]
     },
-    "Import status": {
-      "In progress": [
-        "W toku"
-      ],
-      "Migrated": [
-        "Przeniesione"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Niektóre kontakty (${ totalContactsDiscarded }/${ totalContacts }) nie mogą zostać zaimportowane. Kliknij po szczegóły"
@@ -5022,9 +5084,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "Aplikacja ${ CALENDAR_APP_NAME } wymaga adresu ${ BRAND_NAME } w celu zapewnienia bezpiecznej synchronizacji wydarzeń i szyfrowania. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nowy kalendarz",
@@ -5145,12 +5204,6 @@
       ],
       "${ storage } storage": [
         "${ storage } przestrzeni dyskowej"
-      ],
-      "${ total } user found": [
-        "Znaleziono ${ total } użytkownika",
-        "Znaleziono ${ total } użytkowników",
-        "Znaleziono ${ total } użytkowników",
-        "Znaleziono ${ total } użytkowników"
       ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
@@ -6088,9 +6141,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Tymczasowo niedostępne z powodu dużego obciążenia. Spróbuj ponownie później."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
-      ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Dziękujemy za wybranie ${ BRAND_NAME } do zabezpieczenia Twojej organizacji."
       ],
@@ -6192,9 +6242,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Aby pomóc Ci zapamiętać hasło, będziemy prosić o jego okresowe wpisywanie. Z czasem będziemy prosić o to coraz rzadziej."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Aby zaimportować wydarzenia, utwórz kalendarz w ${ CALENDAR_APP_NAME }. W utworzonym kalendarzu pojawią się zaimportowane wydarzenia."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Aby podpisać ponownie kontakty, musimy porównać każdy kontakt z listą dostępnych kluczy szyfrowania na koncie. Jeśli dopasowanie nie zostanie znalezione, kontakt zostanie podpisany ponownie za pomocą głównego klucza szyfrowania."
@@ -6864,9 +6911,6 @@
       "Calendar": [
         "Kalendarz"
       ],
-      "Calendars": [
-        "Kalendarze"
-      ],
       "Card details": [
         "Szczegóły karty"
       ],
@@ -6971,9 +7015,6 @@
       ],
       "Email format": [
         "Format wiadomości"
-      ],
-      "Emails": [
-        "Wiadomości"
       ],
       "Emails (all messages)": [
         "Wiadomości (wszystkie)"
@@ -9943,9 +9984,6 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Szukaj"
-      ],
       "Search events": [
         "Szukaj wydarzeń"
       ],
@@ -9954,9 +9992,6 @@
       ],
       "Search for name or email": [
         "Szukaj nazwy lub adresu e-mail"
-      ],
-      "Search for users or addresses": [
-        "Szukaj użytkowników lub adresów"
       ],
       "Search parent folder": [
         "Przeszukaj folder nadrzędny"
@@ -11556,9 +11591,6 @@
       "Name": [
         "Nazwa"
       ],
-      "Size": [
-        "Rozmiar"
-      ],
       "Status": [
         "Status"
       ],
@@ -11806,9 +11838,6 @@
       "Change password": [
         "Zmień hasło"
       ],
-      "Choose a provider": [
-        "Wybierz dostawcę"
-      ],
       "Choose a time": [
         "Wybierz godzinę"
       ],
@@ -11928,9 +11957,6 @@
       ],
       "Does not repeat": [
         "Nie powtarza się"
-      ],
-      "Domain names": [
-        "Nazwy domen"
       ],
       "Downgrade account": [
         "Obniż plan"
@@ -12075,9 +12101,6 @@
       ],
       "Import groups": [
         "Importuj grupy"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Importuj dane do ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Ujawnione informacje w wycieku"
@@ -12244,9 +12267,6 @@
       "Select contact group": [
         "Wybierz grupę kontaktów"
       ],
-      "Select data to import": [
-        "Wybierz dane do importu"
-      ],
       "Select event end date": [
         "Wybierz datę zakończenia wydarzenia"
       ],
@@ -12381,9 +12401,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Użyj ${ VPN_SHORT_APP_NAME } dla prywatności danych"
-      ],
-      "Users and addresses": [
-        "Użytkownicy i adresy"
       ],
       "Verification failed": [
         "Weryfikacja nie powiodła się"
