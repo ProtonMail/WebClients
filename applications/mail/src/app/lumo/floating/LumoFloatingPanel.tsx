@@ -54,13 +54,14 @@ const LumoFloatingPanel = ({ mainAreaRef, hasFloatingDrawerButton }: Props) => {
         isCatHidden,
         hideCat,
         revealCat,
+        isCatDismissed,
     } = useLumoFloatingPanel();
     const { clear } = useLumoAgentDrawer();
     const bounds = useMailboxBounds(mainAreaRef);
     const { viewportWidth } = useActiveBreakpoint();
     const isReducedMotion = useReducedMotion();
     const { isTyping, noteKeystroke } = useTypingActivity();
-    const isHiddenByLayout = !isDetached || viewportWidth['<=small'] || !bounds;
+    const isHiddenByLayout = !isDetached || isCatDismissed || viewportWidth['<=small'] || !bounds;
     // Off screen nobody sees a run or a jump, so the cat comes back sitting
     const canJump = !isReducedMotion && !isHiddenByLayout;
     const runMs = bounds ? getRunMs(bounds.width, hasFloatingDrawerButton) : 0;
