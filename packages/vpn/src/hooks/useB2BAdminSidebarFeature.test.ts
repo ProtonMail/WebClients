@@ -13,6 +13,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { resolveNavigation } from '../definitions/routes';
 import { useB2BAdminSidebarFeature } from './useB2BAdminSidebarFeature';
 
+vi.mock('@proton/account/addresses/hooks', () => ({ useAddresses: () => [[], false] }));
 vi.mock('@proton/account/user/hooks', () => ({ useUser: vi.fn() }));
 vi.mock('@proton/account/subscription/hooks', () => ({ useSubscription: vi.fn() }));
 vi.mock('@proton/account/allSubscriptions/hooks', () => ({ useAllSubscriptions: vi.fn() }));

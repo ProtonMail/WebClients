@@ -37,6 +37,15 @@ const getDescriptionAndLabel = ({ username, primaryEmail }: ReturnType<typeof ge
 
     const primaryEmailElement = <strong key="primary-email">{primaryEmail}</strong>;
 
+    if (!username) {
+        return {
+            // translator: full sentence is: When sign-in is restricted, only your email <eric.norbert@example.com> can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.
+            description: c('Info')
+                .jt`When sign-in is restricted, only your email ${primaryEmailElement} can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.`,
+            label: c('Label').t`Restrict sign-in to email address`,
+        };
+    }
+
     return {
         // translator: full sentence is: When sign-in is restricted, only <eric.norbert@proton.me> and your username <eric.norbert> can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.
         description: c('Info')
