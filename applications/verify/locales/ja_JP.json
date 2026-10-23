@@ -78,6 +78,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "メールの生産性を新しいレベルに。${ BRAND_NAME }Scribeがメールの作成、返信、校正をお手伝いします。"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "メールの生産性を新たな次元へ。${ LUMO_SHORT_APP_NAME } がメールの作成、返信、校正をサポートします。"
       ]
     },
     "BF2024: Deal details": {
@@ -940,6 +943,12 @@
       ],
       "Security key": [
         "セキュリティキー"
+      ],
+      "Still waiting?": [
+        "まだお待ちですか？"
+      ],
+      "Touch your security key to continue.": [
+        "続行するにはセキュリティキーにタッチしてください。"
       ]
     },
     "fido2: Label": {
@@ -1081,6 +1090,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "認証アプリにアクセスできなくなった場合は、2要素認証の設定時に提供された16個のバックアップ用リカバリーコードのいずれかを使用できます。${ learnMoreLink }"
+      ],
       "Internet connection lost": [
         "インターネット接続が切断されました"
       ],
@@ -1192,6 +1204,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 文章作成アシスタント（拡張アクセス付き）"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 文章作成アシスタント（一部機能制限あり）"
       ],
       "${ n } custom email domain": [
         "${ n } 件の独自メールドメイン"
