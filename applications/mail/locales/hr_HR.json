@@ -2066,6 +2066,106 @@
         "Prostor za pohranu dijeli se između svih ${ BRAND_NAME } usluga."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Crni petak"
+      ],
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mjesec"
+      ],
+      "15 GB storage": [
+        "15 GB prostora za pohranu"
+      ],
+      "2 individual accounts": [
+        "2 pojedinačna korisnička računa"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sigurnog prostora za pohranu"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB prostora za pohranu: 40x više od trenutnog plana"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sigurnog prostora za pohranu"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sigurnog prostora za pohranu"
+      ],
+      "6 individual accounts": [
+        "6 pojedinačnih korisničkih računa"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ugrađeni autentifikator 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti se temelje na standardnoj mjesečnoj cijeni. Pretplata će se obnoviti po standardnoj godišnjoj cijeni kada završi ciklus naplate."
+      ],
+      "Online document editor": [
+        "Uređivač dokumenata na mreži"
+      ],
+      "Recover previous file versions": [
+        "Oporavite prethodne verzije datoteka"
+      ],
+      "Stronger protection against cyber threats": [
+        "Jača zaštita od kibernetičkih prijetnji"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neograničene mape, oznake i filtri"
+      ],
+      "Use your own email domain": [
+        "Koristite vlastitu domenu e-pošte"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Najveće sniženje godine"
+      ],
+      "Black Friday": [
+        "Crni petak"
+      ],
+      "for 12 months": [
+        "za 12 mjeseci"
+      ],
+      "Last chance to save big": [
+        "Posljednja prilika za velike uštede"
+      ],
+      "Protect your entire tribe": [
+        "Zaštitite cijelu svoju obitelj"
+      ],
+      "Protection for two in a single plan": [
+        "Zaštita za dvoje u jednom planu"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } mjesec",
@@ -2590,6 +2690,11 @@
       ],
       "Expand": [
         "Proširi"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Ovaj je razgovor predug za nastavak. Pokrenite novi razgovor kako bi ${ LUMO_SHORT_APP_NAME } ostao brz i radio besprijekorno."
       ]
     },
     "collider_2025: feature": {
@@ -4576,9 +4681,6 @@
       "Aliases could not be loaded": [
         "Nije moguće učitati pseudonime"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Sav prostor za pohranu je dodijeljen. Molimo smanjite prostor za pohranu dodijeljen ostalim korisnicima."
-      ],
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
       ],
@@ -4780,9 +4882,6 @@
       "Invalid public key file": [
         "Nevažeća datoteka javnog ključa"
       ],
-      "Invalid URL": [
-        "Nevažeći URL"
-      ],
       "Invalid VAT number": [
         "Nevaljani PDV broj"
       ],
@@ -4906,15 +5005,6 @@
       "Please complete the billing details": [
         "Molimo ispunite pojedinosti o plaćanju"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Molimo, konfigurirajte prilagođenu domenu prije dodavanja adresa."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Konfigurirajte prilagođenu domenu prije dodavanja korisnika u vašu organizaciju."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
-      ],
       "Please enter a valid postal code": [
         "Molim vas, unesite valjani poštanski kôd"
       ],
@@ -4955,9 +5045,6 @@
       ],
       "Please try generating the text again": [
         "Pokušajte ponovno generirati tekst"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Molimo nadogradite na poslovnu pretplatu s više od jednog korisnika kako biste upravljali višestrukim korisnicima."
       ],
       "Port is required": [
         "Port je obavezan"
@@ -5044,9 +5131,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
-      ],
-      "Something went wrong": [
-        "Nešto je pošlo po zlu"
       ],
       "Something went wrong while converting the address": [
         "Došlo je do pogreške prilikom pretvaranja adrese"
@@ -5227,12 +5311,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Dosegnuli ste ograničenje broja kontakata za svoj korisnički račun"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Iskoristili ste sve adrese u svom planu. Nadogradite svoj plan kako biste dodali novu adresu ili onemogućite adresu u svom korisničkom računu."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Iskoristili ste sve slobodne korisnike u Vašem planu. Molimo Vas da nadogradite Vaš plan da biste dodali novog korisnika."
       ],
       "You must set a name": [
         "Morate postaviti naziv"
@@ -6437,14 +6515,6 @@
         "Više opcija uvoza"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "U tijeku"
-      ],
-      "Migrated": [
-        "Migrirano"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -6738,11 +6808,6 @@
         "${ total } e-poruka",
         "${ total } e-poruke",
         "${ total } e-poruka"
-      ],
-      "${ total } user found": [
-        "Pronađen je ${ total } korisnik",
-        "Pronađena su ${ total } korisnika",
-        "Pronađeno je ${ total } korisnika"
       ],
       "${ trackersCount } email tracker blocked": [
         "Blokiran je ${ trackersCount } pratitelj e-pošte",
@@ -7576,9 +7641,7 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -13031,9 +13094,6 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Pretraga"
-      ],
       "Search date, name, email address, or subject line": [
         "Traži datum, ime, adresu e-pošte ili predmet"
       ],
@@ -13042,9 +13102,6 @@
       ],
       "Search for name or email": [
         "Pretraga po imenu ili adresi e-pošte"
-      ],
-      "Search for users or addresses": [
-        "Pretražite korisnike ili adrese"
       ],
       "Search messages": [
         "Pretraži poruke"
@@ -15076,9 +15133,6 @@
       "Name": [
         "Naziv"
       ],
-      "Size": [
-        "Veličina"
-      ],
       "Status": [
         "Status"
       ],
@@ -15528,9 +15582,6 @@
       ],
       "Distraction-free emailing": [
         "Slanje e-pošte bez ometanja"
-      ],
-      "Domain names": [
-        "Nazivi domena"
       ],
       "Don't give spam a chance": [
         "Ne dajte šansu neželjenoj pošti"
@@ -16215,9 +16266,6 @@
       ],
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Koristite Gmail sigurno u aplikaciji ${ MAIL_APP_NAME }"
-      ],
-      "Users and addresses": [
-        "Korisnici i adrese"
       ],
       "Verification error": [
         "Pogreška pri provjeri valjanosti"
