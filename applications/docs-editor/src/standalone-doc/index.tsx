@@ -12,12 +12,11 @@ import {
   type DocsDependencies,
   type EditorProps,
 } from '../app/Containers/Docs/public'
-import { ThemeStyles } from '../app/Theme'
 import { EditorThemeProvider, useEditorTheme } from '../app/Theme/EditorThemeProvider'
 import { createStandaloneDocClient } from './client'
 import { createStandaloneDocSession } from './session'
-// Keep these last so Tailwind utilities override component styles such as `.button`.
-import '../app/style'
+// Keep these last so Tailwind utilities override the editor's component styles, as in the hosted app.
+import './standalone-doc.tailwind.scss'
 import './standalone-doc.css'
 
 document.title = 'Standalone Docs'
@@ -146,7 +145,6 @@ function StandaloneDocRoot() {
 
   return (
     <EditorThemeProvider initialTheme={initialTheme}>
-      <ThemeStyles />
       <StandaloneDoc />
     </EditorThemeProvider>
   )

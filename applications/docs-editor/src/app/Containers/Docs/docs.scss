@@ -35,6 +35,9 @@
 	--primary-major-3: #4c34b3;
 	--primary-minor-1: #e2dbff;
 	--scrollbar-thumb-color: #d1cfcd;
+	--shadow-lifted: 0 0.5rem 1.5rem rgb(0 0 0 / 0.16);
+	--shadow-norm: 0 0.0625rem 0.25rem rgb(0 0 0 / 0.1);
+	--shadow-raised: 0 0.25rem 0.75rem rgb(0 0 0 / 0.1);
 	--signal-danger: #dc3251;
 	--signal-danger-contrast: white;
 	--signal-danger-major-1: #c62d49;
@@ -74,6 +77,9 @@
 	--primary-major-3: #ad9aff;
 	--primary-minor-1: #29214d;
 	--scrollbar-thumb-color: #4a4658;
+	--shadow-lifted: 0 0.5rem 1.5rem rgb(0 0 0 / 0.75);
+	--shadow-norm: 0 0.0625rem 0.25rem rgb(0 0 0 / 0.5);
+	--shadow-raised: 0 0.25rem 0.75rem rgb(0 0 0 / 0.44);
 	--signal-danger: #f5385a;
 	--signal-danger-major-1: #f64c6b;
 	--signal-danger-major-2: #f7607b;
@@ -107,6 +113,21 @@
 			min-inline-size: 0;
 		}
 	}
+}
+
+// Proton's `.flex`, `.inline-flex` and `.absolute` also set these, and the hosted editor still loads Proton.
+// Without them Standalone Docs would lay out differently; `:where()` keeps any Tailwind class in charge.
+:where(.docs-editor-root) :where(.flex, .inline-flex) {
+	flex-wrap: wrap;
+}
+
+:where(.docs-editor-root) :where(.flex) > * {
+	min-block-size: 0;
+	min-inline-size: 0;
+}
+
+:where(.docs-editor-root) :where(.absolute) {
+	z-index: 1;
 }
 
 // PDF export prints this iframe, so the parent app's @page rule does not apply.

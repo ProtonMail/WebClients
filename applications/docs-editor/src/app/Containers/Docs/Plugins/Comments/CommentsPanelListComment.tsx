@@ -316,7 +316,7 @@ export function CommentsPanelListComment({
           <CommentsComposer
             autoFocus
             initialContent={comment.content}
-            className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
+            className="border border-[--border-weak] ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={messages.editCommentPlaceholder}
             onSubmit={async (content) => {
               const success = await editComment(thread.id, comment.id, content)

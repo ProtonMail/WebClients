@@ -163,7 +163,7 @@ export const DropdownButton = forwardRef<HTMLButtonElement, DropdownButtonProps>
       data-testid="dropdown-button"
       aria-expanded={isOpen}
       {...props}
-      className={clsx('text-nowrap', hasCaret && 'flex flex-nowrap items-center', className)}
+      className={clsx('whitespace-nowrap', hasCaret && 'flex flex-nowrap items-center', className)}
     >
       {children}
       {hasCaret && (

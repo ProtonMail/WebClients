@@ -224,8 +224,8 @@ export function CommentsPanelListThread({ thread, className }: { thread: DocsCom
       onClick={handleClickThread}
       data-active={isActive ? true : undefined}
       className={clsx(
-        'group/thread border-weak bg-norm mb-3.5 list-none overflow-hidden rounded-lg border transition-transform duration-[25ms] last:mb-0 focus:outline-none',
-        isActive || isHovering ? 'shadow-raised relative' : '',
+        'group/thread mb-3.5 list-none overflow-hidden rounded-lg border border-[--border-weak] bg-[--background-norm] transition-transform duration-[25ms] last:mb-0 focus:outline-none',
+        isActive || isHovering ? 'relative shadow-[shadow:--shadow-raised]' : '',
         !isActive && 'hover:bg-[--optional-background-lowered]',
         thread.isPlaceholder || isDeleting ? 'pointer-events-none opacity-50' : '',
         className,
@@ -234,7 +234,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: DocsCom
     >
       {quote && (
         <blockquote
-          className="color-weak mx-3 mb-1 mt-2 line-clamp-1 border-l border-[--signal-warning] px-2.5 py-px text-xs font-medium leading-none before:content-none after:content-none"
+          className="mx-3 mb-1 mt-2 line-clamp-1 border-l border-[--signal-warning] px-2.5 py-px text-xs font-medium leading-none text-[--text-weak] before:content-none after:content-none"
           data-testid="comment-thread-name"
         >
           {quote}
@@ -271,7 +271,7 @@ export function CommentsPanelListThread({ thread, className }: { thread: DocsCom
           )}
         >
           <CommentsComposer
-            className="border-weak border ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
+            className="border border-[--border-weak] ring-[--primary] focus-within:border-[--primary] focus-within:ring focus-within:ring-[--primary-minor-1]"
             placeholder={messages.replyPlaceholder}
             data-testid="reply-in-thread-input"
             onSubmit={async (content) => {

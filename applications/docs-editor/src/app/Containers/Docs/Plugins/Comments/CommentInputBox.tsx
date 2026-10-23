@@ -141,7 +141,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
 
   return (
     <div
-      className="bg-norm shadow-lifted border-norm relative rounded border text-sm print:hidden"
+      className="relative rounded border border-[--border-norm] bg-[--background-norm] text-sm shadow-[shadow:--shadow-lifted] print:hidden"
       ref={boxRef}
       data-testid="comments-floating-input"
     >

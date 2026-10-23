@@ -54,21 +54,21 @@ export function BlockTypeMenu({
       name: blockTypeToBlockName.h4,
       onClick: () => formatHeading('h4'),
       tooltip: <ShortcutLabel shortcut="HEADING_4_SHORTCUT" />,
-      className: 'Lexical__h4 color-weak mb-0 mt-0',
+      className: 'Lexical__h4 mb-0 mt-0',
     },
     {
       type: 'h5',
       name: blockTypeToBlockName.h5,
       onClick: () => formatHeading('h5'),
       tooltip: <ShortcutLabel shortcut="HEADING_5_SHORTCUT" />,
-      className: 'Lexical__h5 color-weak mb-0 mt-0',
+      className: 'Lexical__h5 mb-0 mt-0',
     },
     {
       type: 'h6',
       name: blockTypeToBlockName.h6,
       onClick: () => formatHeading('h6'),
       tooltip: <ShortcutLabel shortcut="HEADING_6_SHORTCUT" />,
-      className: 'Lexical__h6 color-weak mb-0 mt-0',
+      className: 'Lexical__h6 mb-0 mt-0',
     },
   ]
 

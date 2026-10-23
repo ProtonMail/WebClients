@@ -710,16 +710,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'headings-options',
           type: 'dropdown',
-          label: () => (
-            <span
-              className="w-custom line-clamp-1 break-all"
-              style={{
-                '--w-custom': '9ch',
-              }}
-            >
-              {blockTypeToBlockName[blockType]}
-            </span>
-          ),
+          label: () => <span className="line-clamp-1 w-[9ch] break-all">{blockTypeToBlockName[blockType]}</span>,
           menu: (
             <BlockTypeMenu isEditable={isEditable} formatParagraph={formatParagraph} formatHeading={formatHeading} />
           ),
@@ -730,16 +721,7 @@ export default function DocumentEditorToolbar({
         {
           id: 'font-family',
           type: 'dropdown',
-          label: () => (
-            <span
-              className="w-custom line-clamp-1 break-all"
-              style={{
-                '--w-custom': '7ch',
-              }}
-            >
-              {fontFamilyLabel}
-            </span>
-          ),
+          label: () => <span className="line-clamp-1 w-[7ch] break-all">{fontFamilyLabel}</span>,
           menu: (
             <DropdownMenu>
               {FontOptions.map(({ id, label, value }) => (
@@ -893,7 +875,7 @@ export default function DocumentEditorToolbar({
           label: (target) => (
             <div className="h-4 w-4">
               <div
-                className="border-weak bg-norm absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-[4px] border text-[1rem]"
+                className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-[4px] border border-[--border-weak] bg-[--background-norm] text-[1rem]"
                 aria-hidden="true"
                 style={{
                   backgroundColor,
@@ -1066,7 +1048,7 @@ export default function DocumentEditorToolbar({
                 data-testid="dropdown-alphabetical-list"
                 content={
                   <>
-                    <Icon data={Icons.alphabeticalList} className="color-weak h-4 w-4" />
+                    <Icon data={Icons.alphabeticalList} className="h-4 w-4 text-[--text-weak]" />
                     {toolbar.Alphabetical}
                     <Icon data={Icons.chevronRightFilled} className="ml-auto" />
                   </>
@@ -1133,7 +1115,7 @@ export default function DocumentEditorToolbar({
                 onClick={() => formatCustomList('upper-roman')}
                 disabled={!isEditable}
               >
-                <Icon data={Icons.romanList} className="color-weak h-4 w-4" />
+                <Icon data={Icons.romanList} className="h-4 w-4 text-[--text-weak]" />
                 {toolbar.Roman}
               </DropdownMenuButton>
             </DropdownMenu>
@@ -1237,7 +1219,7 @@ export default function DocumentEditorToolbar({
   return (
     // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
     <div
-      className="bg-norm z-[2] flex flex-nowrap items-center gap-1.5 print:hidden"
+      className="z-[2] flex flex-nowrap items-center gap-1.5 bg-[--background-norm] print:hidden"
       style={{
         gridColumn: '1 / 3',
         gridRow: '1',
@@ -1247,7 +1229,7 @@ export default function DocumentEditorToolbar({
       role="presentation"
     >
       <div
-        className="DocumentEditorToolbar bg-norm flex w-full flex-nowrap items-center gap-1.5 px-3 py-1.5 md:mx-auto md:max-w-max md:[border-radius:1rem]"
+        className="DocumentEditorToolbar flex w-full flex-nowrap items-center gap-1.5 bg-[--background-norm] px-3 py-1.5 md:mx-auto md:max-w-max md:[border-radius:1rem]"
         data-testid={isPreviewModeToolbar ? 'preview-mode-toolbar' : 'main-toolbar'}
       >
         <div
@@ -1291,7 +1273,7 @@ export default function DocumentEditorToolbar({
               <div
                 className={clsx(
                   'flex flex-nowrap items-center gap-1.5',
-                  group.className ? group.className(isVisible) : !isVisible && 'visibility-hidden',
+                  group.className ? group.className(isVisible) : !isVisible && '[visibility:hidden]',
                 )}
                 key={group.id}
                 data-testid={group.id}
@@ -1334,7 +1316,7 @@ export default function DocumentEditorToolbar({
                   {group.items.map((item) => (
                     <OverflowMenuItem key={item.id} item={item} />
                   ))}
-                  {index !== array.length - 1 && <hr className="my-1" />}
+                  {index !== array.length - 1 && <hr className="my-1 border-0 bg-[--border-norm]" />}
                 </Fragment>
               )
             })}
