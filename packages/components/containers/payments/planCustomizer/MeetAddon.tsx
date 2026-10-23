@@ -11,7 +11,12 @@ import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
+import { CondensedAddonRow } from './CondensedAddonsCard';
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
+
+const getMeetAddonDescription = () =>
+    c('Info')
+        .t`${MEET_APP_NAME} is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.`;
 
 const MeetAddonBanner = ({ onClick, price }: { onClick: () => void; price: ReactElement }) => (
     <div
@@ -24,10 +29,7 @@ const MeetAddonBanner = ({ onClick, price }: { onClick: () => void; price: React
                 <strong className="block lg:inline">{c('Info').t`Add ${PLAN_NAMES[PLANS.MEET_BUSINESS]}`}</strong>{' '}
                 {c('Info').jt`for ${price}`}
             </p>
-            <p className="m-0 text-sm color-weak">
-                {c('Info')
-                    .t`${MEET_APP_NAME} is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.`}
-            </p>
+            <p className="m-0 text-sm color-weak">{getMeetAddonDescription()}</p>
         </div>
         <Button color="norm" shape="outline" className="shrink-0 flex items-center gap-1" pill onClick={onClick}>
             <IcPlus className="shrink-0" />
@@ -63,22 +65,44 @@ interface MeetAddonProps extends Omit<NumberCustomiserProps, 'label' | 'tooltip'
     onRemoveMeet: () => void;
     locked?: boolean;
     telemetryContext: PaymentTelemetryContext;
+    /** Checkout experiment CheckoutCondensedAddons: render a row of the condensed addons card instead of the banner. */
+    condensed?: boolean;
 }
 
-const MeetAddon = ({ price, onAddMeet, onRemoveMeet, locked, value, telemetryContext, ...rest }: MeetAddonProps) => {
+const MeetAddon = ({
+    price,
+    onAddMeet,
+    onRemoveMeet,
+    locked,
+    value,
+    telemetryContext,
+    condensed = false,
+    ...rest
+}: MeetAddonProps) => {
     const [showMeetBanner, setShowMeetBanner] = useState(value === 0);
 
+    const handleAdd = () => {
+        setShowMeetBanner(false);
+        onAddMeet();
+        checkoutTelemetry.reportAddMeet({ context: telemetryContext });
+    };
+
     if (showMeetBanner) {
+        if (condensed) {
+            return (
+                <CondensedAddonRow
+                    name={PLAN_NAMES[PLANS.MEET_BUSINESS]}
+                    price={price}
+                    description={getMeetAddonDescription()}
+                    onAdd={handleAdd}
+                    testId="meet-addon-row"
+                />
+            );
+        }
+
         return (
             <div>
-                <MeetAddonBanner
-                    price={price}
-                    onClick={() => {
-                        setShowMeetBanner(false);
-                        onAddMeet();
-                        checkoutTelemetry.reportAddMeet({ context: telemetryContext });
-                    }}
-                />
+                <MeetAddonBanner price={price} onClick={handleAdd} />
             </div>
         );
     }
