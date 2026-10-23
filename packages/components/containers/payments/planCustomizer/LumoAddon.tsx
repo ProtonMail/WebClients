@@ -12,7 +12,7 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useSubscriptionModalTelemetry from '../subscription/useSubscriptionModalTelemetry';
-import { CondensedAddonRow } from './CondensedAddonsCard';
+import { CondensedAddonRow } from './CondensedAddonRow';
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 
 const getLumoAddonDescription = () =>
