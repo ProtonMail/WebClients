@@ -48,6 +48,34 @@ describe('useRowSelection', () => {
     expect(result.current.allState).toBe('all')
   })
 
+  it('select replaces the selection', () => {
+    const { result } = setup()
+    act(() => result.current.toggleAll())
+
+    act(() => result.current.select('b'))
+
+    expect(result.current.selectedIds).toEqual(['b'])
+  })
+
+  it('toggleRange selects from the anchor to the given id', () => {
+    const { result } = renderHook(() => useRowSelection(['a', 'b', 'c', 'd'], 'k'))
+    act(() => result.current.select('c'))
+
+    act(() => result.current.toggleRange('a'))
+    expect(result.current.selectedIds).toEqual(['a', 'b', 'c'])
+
+    act(() => result.current.toggleRange('d'))
+    expect(result.current.selectedIds).toEqual(['c', 'd'])
+  })
+
+  it('toggleRange without an anchor selects only the given id', () => {
+    const { result } = setup()
+
+    act(() => result.current.toggleRange('b'))
+
+    expect(result.current.selectedIds).toEqual(['b'])
+  })
+
   it('clears the selection when resetKey changes', () => {
     const { result, rerender } = setup()
     act(() => result.current.toggle('a'))
