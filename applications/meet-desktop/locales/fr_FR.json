@@ -101,6 +101,11 @@
         "Services"
       ]
     },
+    "Clear application data prompt": {
+      "Cancel": [
+        "Annuler"
+      ]
+    },
     "Download warning": {
       "A recording is still being saved": [
         "Un enregistrement est toujours en cours de sauvegarde."
@@ -156,6 +161,37 @@
         "Fenêtre"
       ]
     },
+    "Screen share permission": {
+      "Cancel": [
+        "Annuler"
+      ]
+    },
+    "Screen share picker": {
+      "Built-in": [
+        "Intégré"
+      ],
+      "Cancel": [
+        "Annuler"
+      ],
+      "Close": [
+        "Fermer"
+      ],
+      "External": [
+        "Externe"
+      ],
+      "Hide advanced options": [
+        "Masquer les options avancées"
+      ],
+      "Share": [
+        "Partager"
+      ],
+      "Share your screen": [
+        "Partager votre écran"
+      ],
+      "Show advanced options": [
+        "Afficher les options avancées"
+      ]
+    },
     "Unload warning": {
       "Changes you made may not be saved.": [
         "Les modifications que vous avez apportées ne seront peut-être pas enregistrées."
@@ -168,6 +204,17 @@
       ],
       "Stay": [
         "Rester"
+      ]
+    },
+    "Update prompt": {
+      "${ MEET_APP_NAME } update": [
+        "Mettre à jour ${ MEET_APP_NAME }"
+      ],
+      "Later": [
+        "Plus tard"
+      ],
+      "Restart": [
+        "Redémarrer"
       ]
     }
   }

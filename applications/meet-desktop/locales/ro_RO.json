@@ -101,6 +101,17 @@
         "Servicii"
       ]
     },
+    "Clear application data prompt": {
+      "Cancel": [
+        "Anulare"
+      ],
+      "Clear application data": [
+        "Ștergere date aplicație"
+      ],
+      "This removes all data associated with this app. The app will close and you will need to sign in again to use the app.": [
+        "Această acțiune elimină toate datele asociate cu această aplicație. Aplicația se va închide și va trebui să vă reautentificați pentru a o utiliza."
+      ]
+    },
     "Download warning": {
       "A recording is still being saved": [
         "O înregistrare încă se salvează"
@@ -156,6 +167,67 @@
         "Fereastra"
       ]
     },
+    "Screen share permission": {
+      "Allow screen recording": [
+        "Permitere înregistrare ecran"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Open System Settings": [
+        "Deschidere setări de sistem"
+      ],
+      "To share your screen, allow Proton Meet in System Settings > Privacy & Security > Screen & System Audio Recording.": [
+        "Pentru a partaja ecranul, acordați permisiunea aplicației Proton Meet în Configurări sistem > Confidențialitate și securitate > Înregistrare ecran și sunet de sistem."
+      ]
+    },
+    "Screen share picker": {
+      "Built-in": [
+        "Integrat"
+      ],
+      "Cancel": [
+        "Anulare"
+      ],
+      "Close": [
+        "Închidere"
+      ],
+      "Display ${ screenNumber }": [
+        "Afișare ${ screenNumber }"
+      ],
+      "Entire screen": [
+        "Întreg ecranul"
+      ],
+      "External": [
+        "Extern"
+      ],
+      "Hide advanced options": [
+        "Ascundere opțiuni avansate"
+      ],
+      "Just one app": [
+        "Doar o atingere"
+      ],
+      "No windows available to share": [
+        "Nu există ferestre disponibile pentru partajare"
+      ],
+      "Share": [
+        "Partajare"
+      ],
+      "Share system audio": [
+        "Partajare sistem audio"
+      ],
+      "Share your screen": [
+        "Partajare ecran"
+      ],
+      "Show advanced options": [
+        "Afișare opțiuni avansate"
+      ],
+      "Viewers only see this app, even if you switch windows.": [
+        "Spectatorii văd doar această aplicație, chiar dacă schimbați ferestrele."
+      ],
+      "Viewers see your entire screen, including apps and notifications.": [
+        "Spectatorii văd întregul ecran, inclusiv aplicațiile și notificările."
+      ]
+    },
     "Unload warning": {
       "Changes you made may not be saved.": [
         "Modificările efectuate nu pot fi salvate."
@@ -168,6 +240,20 @@
       ],
       "Stay": [
         "Rămânere"
+      ]
+    },
+    "Update prompt": {
+      "${ MEET_APP_NAME } update": [
+        "Actualizare ${ MEET_APP_NAME }"
+      ],
+      "A new version of ${ MEET_APP_NAME } has been downloaded. Restart the application to apply the updates.": [
+        "O nouă versiune a ${ MEET_APP_NAME } a fost descărcată. Reporniți aplicația pentru a aplica actualizarea."
+      ],
+      "Later": [
+        "Mai târziu"
+      ],
+      "Restart": [
+        "Repornire"
       ]
     }
   }

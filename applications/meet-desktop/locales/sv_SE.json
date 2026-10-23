@@ -101,6 +101,14 @@
         "Tjänster"
       ]
     },
+    "Clear application data prompt": {
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Clear application data": [
+        "Rensa applikationsdata"
+      ]
+    },
     "Download warning": {
       "A recording is still being saved": [
         "En inspelning sparas fortfarande"
@@ -156,6 +164,58 @@
         "Fönster"
       ]
     },
+    "Screen share permission": {
+      "Allow screen recording": [
+        "Tillåt skärminspelning"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Open System Settings": [
+        "Öppna systeminställningar"
+      ]
+    },
+    "Screen share picker": {
+      "Built-in": [
+        "Inbyggd"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Close": [
+        "Stäng"
+      ],
+      "Display ${ screenNumber }": [
+        "Visa ${ screenNumber }"
+      ],
+      "Entire screen": [
+        "Hela skärmen"
+      ],
+      "External": [
+        "Extern"
+      ],
+      "Hide advanced options": [
+        "Dölj avancerade alternativ"
+      ],
+      "Just one app": [
+        "Endast en app"
+      ],
+      "No windows available to share": [
+        "Inga fönster tillgängliga att dela"
+      ],
+      "Share": [
+        "Dela"
+      ],
+      "Share system audio": [
+        "Dela systemljud"
+      ],
+      "Share your screen": [
+        "Dela din skärm"
+      ],
+      "Show advanced options": [
+        "Visa avancerade alternativ"
+      ]
+    },
     "Unload warning": {
       "Changes you made may not be saved.": [
         "Ändringar du gjort kanske inte sparas."
@@ -168,6 +228,14 @@
       ],
       "Stay": [
         "Stanna"
+      ]
+    },
+    "Update prompt": {
+      "Later": [
+        "Senare"
+      ],
+      "Restart": [
+        "Starta om"
       ]
     }
   }

@@ -101,6 +101,14 @@
         "Serviços"
       ]
     },
+    "Clear application data prompt": {
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Clear application data": [
+        "Limpar cache do aplicativo"
+      ]
+    },
     "Download warning": {
       "A recording is still being saved": [
         "A gravação ainda está sendo salva"
@@ -156,6 +164,55 @@
         "Janela"
       ]
     },
+    "Screen share permission": {
+      "Allow screen recording": [
+        "Permitir gravação da tela"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Open System Settings": [
+        "Abrir configurações do sistema"
+      ]
+    },
+    "Screen share picker": {
+      "Built-in": [
+        "Integrado"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Close": [
+        "Fechar"
+      ],
+      "Display ${ screenNumber }": [
+        "Mostrar ${ screenNumber }"
+      ],
+      "Entire screen": [
+        "Tela inteira"
+      ],
+      "External": [
+        "Externo"
+      ],
+      "Hide advanced options": [
+        "Ocultar opções avançadas"
+      ],
+      "No windows available to share": [
+        "Nenhuma janela para compartilhar"
+      ],
+      "Share": [
+        "Compartilhar"
+      ],
+      "Share system audio": [
+        "Compartilhar áudio do sistema"
+      ],
+      "Share your screen": [
+        "Compartilhe sua tela"
+      ],
+      "Show advanced options": [
+        "Mostrar opções avançadas"
+      ]
+    },
     "Unload warning": {
       "Changes you made may not be saved.": [
         "As alterações feitas podem não ser salvas."
@@ -168,6 +225,20 @@
       ],
       "Stay": [
         "Permanecer"
+      ]
+    },
+    "Update prompt": {
+      "${ MEET_APP_NAME } update": [
+        "Atualização do ${ MEET_APP_NAME }"
+      ],
+      "A new version of ${ MEET_APP_NAME } has been downloaded. Restart the application to apply the updates.": [
+        "Uma nova versão do ${ MEET_APP_NAME } foi baixada. Reinicie o aplicativo para aplicar as atualizações."
+      ],
+      "Later": [
+        "Mais tarde"
+      ],
+      "Restart": [
+        "Reiniciar"
       ]
     }
   }
