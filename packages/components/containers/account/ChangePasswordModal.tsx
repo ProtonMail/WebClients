@@ -11,6 +11,7 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { shouldDisplayEmailNextToName } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
@@ -147,7 +148,8 @@ const ChangePasswordModal = ({
             if (!user.isSelf) {
                 const userName = (
                     <b key="user" className="text-break">
-                        {user.Name} ({user.Email})
+                        {user.Name || user.Email}
+                        {shouldDisplayEmailNextToName(user.Name, user.Email) && ` (${user.Email})`}
                     </b>
                 );
                 return {
