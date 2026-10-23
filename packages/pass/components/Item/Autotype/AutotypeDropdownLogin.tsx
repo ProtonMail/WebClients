@@ -10,10 +10,11 @@ import { AutotypeDropdown } from './AutotypeDropdown';
 
 type AutotypeDropdownLoginProps = {
     data: Item<'login'>;
+    shareId: string;
 };
 
-const AutotypeDropdownLoginCore: FC<AutotypeDropdownLoginProps> = ({ data }) => {
-    const { actions } = useAutotypeActions(data);
+const AutotypeDropdownLoginCore: FC<AutotypeDropdownLoginProps> = ({ data, shareId }) => {
+    const { actions } = useAutotypeActions(data, shareId);
     const isPassEssentials = useSelector(selectUserPlan)?.InternalName === 'passpro2024';
 
     if (actions.length === 0 || isPassEssentials) return null;

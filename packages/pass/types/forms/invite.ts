@@ -4,7 +4,7 @@ import type { SelectedItem, SelectedShare } from '../data/items';
 import type { ShareRole } from '../data/shares';
 
 export type InviteFormStep = 'members' | 'permissions' | 'review';
-type InviteFormMemberValue = { email: string; role: ShareRole; isGroup: boolean };
+type InviteFormMemberValue = { email: string; role: ShareRole; isGroup: boolean; hideSensitiveContent?: boolean };
 export type InviteFormMemberItem = ListFieldValue<InviteFormMemberValue>;
 
 type InviteFormValuesBase<T extends AccessTarget = AccessTarget, V = {}> = {

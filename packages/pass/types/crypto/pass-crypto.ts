@@ -131,6 +131,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         shareId: ShareId;
         targetKeys: InviteTargetKey[];
         itemId?: ItemId;
+        hideSensitiveContent?: boolean;
     }) => Promise<InviteCreateRequest>;
     promoteInvite: (data: { shareId: ShareId; invitedPublicKey: string }) => Promise<NewUserInvitePromoteRequest>;
     createNewUserInvite: (data: {
@@ -138,6 +139,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         role: ShareRole;
         shareId: ShareId;
         itemId?: ItemId;
+        hideSensitiveContent?: boolean;
     }) => Promise<NewUserInviteCreateRequest>;
     acceptVaultInvite: (data: {
         invitedAddressId: string;

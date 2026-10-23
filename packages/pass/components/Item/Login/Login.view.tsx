@@ -17,12 +17,16 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
     const { vaultId } = share;
     const { createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId, data } = revision;
 
-    useAutotypeShortcut(data);
+    useAutotypeShortcut(data, shareId);
 
     return (
         <ItemViewPanel
             type="login"
-            quickActions={DESKTOP_BUILD ? [<AutotypeDropdownLogin data={data} key="autotype-dropdown" />] : undefined}
+            quickActions={
+                DESKTOP_BUILD
+                    ? [<AutotypeDropdownLogin data={data} shareId={shareId} key="autotype-dropdown" />]
+                    : undefined
+            }
             {...itemViewProps}
         >
             {({ onHistory }) => (

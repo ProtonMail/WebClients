@@ -10,6 +10,7 @@ import { createTelemetryEvent } from '../../../lib/telemetry/utils';
 import { UserPassPlan } from '../../../types/api/plan';
 import type { InviteMemberDTO, InviteUserDTO } from '../../../types/data/invites.dto';
 import type { ItemRevision } from '../../../types/data/items';
+import { ShareRole } from '../../../types/data/shares';
 import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '../../../types/data/telemetry';
 import type { Maybe } from '../../../types/utils';
 import { partition } from '../../../utils/array/partition';
@@ -40,10 +41,12 @@ function* createInviteWorker(
          * proton user, `publicKey` will be `undefined` and we should
          * treat it as as a new user invite */
         const membersDTO: InviteMemberDTO[] = yield Promise.all(
-            members.map<Promise<InviteMemberDTO>>(async ({ value: { email, role } }) => ({
+            members.map<Promise<InviteMemberDTO>>(async ({ value: { email, role, hideSensitiveContent } }) => ({
                 email: email,
                 publicKey: await getPrimaryPublicKeyForEmail(email),
                 role,
+                /** `HideSensitiveContent` is only allowed by the API for Viewer invites */
+                hideSensitiveContent: role === ShareRole.READ ? hideSensitiveContent : false,
             }))
         );
 

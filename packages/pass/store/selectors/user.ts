@@ -7,6 +7,7 @@ import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces/UserSettin
 import { AuthDeviceState } from '@proton/shared/lib/keys/device';
 
 import type { AuthStore } from '../../lib/auth/store';
+import { isShareHidingSensitiveContent } from '../../lib/shares/share.predicates';
 import { getPassPlan } from '../../lib/user/user.plan';
 import { isWritableVault } from '../../lib/vaults/vault.predicates';
 import {
@@ -25,7 +26,7 @@ import { getEpoch } from '../../utils/time/epoch';
 import type { VaultShareItem } from '../reducers';
 import type { State } from '../types';
 import { selectExtraPasswordEnabled } from './settings';
-import { selectShareState } from './shares';
+import { selectShare, selectShareState } from './shares';
 import { createUncachedSelector } from './utils';
 import { selectDefaultVault } from './vaults';
 
@@ -91,6 +92,15 @@ export const selectFeatureFlagVariant =
     (feature: PassFeature) =>
     ({ user: { featureVariants } }: State) =>
         featureVariants?.[feature] ?? null;
+
+/** Single source of truth for whether a share's sensitive content (e.g. a login
+ * password) should be revealable to the current user. `false` only when the
+ * feature flag is on, the share is known, and it has `HIDE_SENSITIVE_CONTENT` set. */
+export const selectCanRevealSensitiveContent = (shareId: Maybe<string>) =>
+    createSelector(
+        [selectFeatureFlag(PassFeature.Pass__V1_44__ShareWithHiddenPassword), selectShare(shareId)],
+        (hiddenPasswordEnabled, share) => !hiddenPasswordEnabled || !share || !isShareHidingSensitiveContent(share)
+    );
 
 export const selectAutofillModelExperimentGroup = (state: State): AutofillModelExperimentGroup => {
     const name = selectFeatureFlagVariant(PassFeature.PassAutofillModelExperimentGroup)(state)?.name;
