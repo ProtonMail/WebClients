@@ -25,8 +25,9 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
-import { canOpenInDesktopApp } from '../../utils/desktopAppDetector';
-import { OpenInDesktopAppCard, OpenInDesktopAppLink } from '../OpenInDesktopApp/OpenInDesktopApp';
+import { canOpenInDesktopApp, clearDesktopAppPreference } from '../../utils/desktopAppDetector';
+import { OpenInDesktopApp } from '../OpenInDesktopApp/OpenInDesktopApp';
+import { useDesktopAppPreferenceStorageKey } from '../OpenInDesktopApp/useDesktopAppPreferenceStorageKey';
 import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
 import { WaitingRoomAdmission } from './WaitingRoomAdmission/WaitingRoomAdmission';
 import { WaitingRoomDropdown } from './WaitingRoomDropdown';
@@ -61,10 +62,9 @@ export const PreJoinDetails = ({
     const meetingLink = useMeetSelector(selectMeetingLink);
     const showWaitingRoomAdmission = useMeetSelector(selectIsWaitingRoomAdmissionActive);
     const waitingRoomEnabled = useMeetSelector(selectWaitingRoomSetting);
+    const desktopAppPreferenceStorageKey = useDesktopAppPreferenceStorageKey();
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
-
-    const [desktopAppLaunchRequested, setDesktopAppLaunchRequested] = useState(false);
 
     const showHostScreen = instantMeeting || isHost;
 
@@ -79,6 +79,13 @@ export const PreJoinDetails = ({
     };
 
     const showOpenInDesktopApp = !instantMeeting && canOpenInDesktopApp();
+
+    const handleJoinMeeting = () => {
+        if (showOpenInDesktopApp) {
+            clearDesktopAppPreference(desktopAppPreferenceStorageKey);
+        }
+        onJoinMeeting(displayName, keepDisplayNameOnDevice);
+    };
 
     const NameInput = (
         <InputFieldStacked isGroupElement classname={clsx(!showHostScreen && viewportWidth['<=small'] && 'rounded-xl')}>
@@ -120,28 +127,18 @@ export const PreJoinDetails = ({
                     className="primary py-4 px-5 md:py-5 rounded-full"
                     size="large"
                     fullWidth
-                    onClick={() => onJoinMeeting(displayName, keepDisplayNameOnDevice)}
+                    onClick={handleJoinMeeting}
                     disabled={displayName.trim() === ''}
                 >
                     {getActionLabel()}
                 </Button>,
-                ...(showOpenInDesktopApp && !desktopAppLaunchRequested
-                    ? [
-                          <OpenInDesktopAppLink
-                              key="open-in-desktop-app-link"
-                              onOpen={() => setDesktopAppLaunchRequested(true)}
-                          />,
-                      ]
-                    : []),
+                ...(showOpenInDesktopApp ? [<OpenInDesktopApp key="open-in-desktop-app" />] : []),
                 ...(!showHostScreen && waitingRoomEnabled
                     ? [
                           <span key="meeting-with-waiting-room-message" className="color-hint text-sm text-no-bold">{c(
                               'Info'
                           ).t`This meeting has a waiting room`}</span>,
                       ]
-                    : []),
-                ...(showOpenInDesktopApp && desktopAppLaunchRequested
-                    ? [<OpenInDesktopAppCard key="open-in-desktop-app-card" />]
                     : []),
             ]}
             loading={isMeetingLoading}

@@ -1,43 +1,16 @@
-.open-in-desktop-app-link {
-	padding-block: 0.125rem;
-	padding-inline: 0.25rem;
-	border: none;
-	border-radius: 0.25rem;
-	background: transparent;
-	color: var(--interaction-norm-major-2);
-	font-size: 0.875rem;
-	line-height: 1.3125rem;
-
-	&:hover {
-		text-decoration: underline;
-	}
-
-	&:focus-visible {
-		outline: none;
-		box-shadow: 0 0 0 3px var(--focus-ring);
-	}
-}
-
-.open-in-desktop-app-card {
+.open-in-desktop-app-hint {
+	inset-block-start: 100%;
+	z-index: 1;
 	background: var(--background-card);
 	border: 1px solid var(--border-card);
 	border-radius: var(--border-radius-xxl);
 
-	&-title {
-		color: var(--interaction-norm-major-1);
-		font-size: 0.875rem;
-	}
-
-	&-button {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		block-size: 2.5rem;
-		padding-block: 0;
-		font-size: 0.875rem;
-	}
-
-	&-hint {
-		line-height: 1.125rem;
+	&::before {
+		content: '';
+		position: absolute;
+		inset-block-end: 100%;
+		inset-inline-start: calc(50% - 0.5rem);
+		border-inline: 0.5rem solid transparent;
+		border-block-end: 0.5rem solid var(--border-card);
 	}
 }
