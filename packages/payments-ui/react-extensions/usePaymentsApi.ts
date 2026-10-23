@@ -36,8 +36,6 @@ import type {
     PaymentStatus,
     PaymentsApi,
 } from '@proton/payments/core/interface';
-import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { normalizeGuardResult } from '@proton/payments/core/subscription/guard';
 import { getPlanName, isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
@@ -45,6 +43,8 @@ import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrappe
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { usePreferredPlansMap } from '../ui/hooks/usePreferredPlansMap';

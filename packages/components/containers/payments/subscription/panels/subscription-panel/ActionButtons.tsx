@@ -11,13 +11,13 @@ import {
     isManagedExternally,
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../constants';
 
 export const ActionButtons = ({
     user,

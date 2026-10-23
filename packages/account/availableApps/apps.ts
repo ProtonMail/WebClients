@@ -1,10 +1,10 @@
 import { PLANS } from '@proton/payments/core/constants';
-import { getHasBusinessProductPlan, getHasPlusPlan, getHasProPlan } from '@proton/payments/core/plan/helpers';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS, type APP_NAMES, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Organization, OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import type { User } from '@proton/shared/lib/interfaces/User';
+import { getHasBusinessProductPlan, getHasPlusPlan, getHasProPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { hasPassLifetime, hasPassViaSimpleLogin } from '@proton/shared/lib/user/helpers';
 import type { UnleashClient } from '@proton/unleash/UnleashClient';
 

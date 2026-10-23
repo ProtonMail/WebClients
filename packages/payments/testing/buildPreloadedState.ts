@@ -5,9 +5,9 @@ import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organiz
 import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { CalendarWithOwnMembers } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import type { Entitlements } from '../core/entitlements/interface';
-import type { Plan } from '../core/plan/interface';
 import { FREE_PLAN } from '../core/subscription/freePlans';
 import type { Subscription } from '../core/subscription/interface';
 import { getLongTestPlans } from './data-plans';

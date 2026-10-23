@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 
+import { useFlagsStatus } from '@unleash/proxy-client-react';
+
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { FeatureFlagVariant, FeatureFlagsWithVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
-import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useVariant } from '@proton/unleash/useVariant';
 
 import {

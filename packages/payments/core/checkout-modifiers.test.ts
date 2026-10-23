@@ -1,6 +1,7 @@
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+
 import { getCheckoutModifiers } from './checkout-modifiers';
 import { CYCLE, PLANS } from './constants';
-import { SubscriptionMode } from './subscription/constants';
 import type { SubscriptionEstimation } from './subscription/interface';
 
 describe('getCheckoutModifiers', () => {

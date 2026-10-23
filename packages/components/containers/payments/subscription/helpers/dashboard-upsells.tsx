@@ -12,8 +12,6 @@ import {
 } from '@proton/payments-ui/ui/context/PaymentContext';
 import { ADDON_PREFIXES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
-import { getIsB2BAudienceFromPlan, isPlan } from '@proton/payments/core/plan/helpers';
-import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { getPrice } from '@proton/payments/core/price-helpers';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
@@ -44,6 +42,7 @@ import {
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
 import { getPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -59,6 +58,8 @@ import {
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getIsB2BAudienceFromPlan, isPlan } from '@proton/shared/lib/payments/plan/helpers';
+import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import isTruthy from '@proton/utils/isTruthy';
@@ -102,7 +103,6 @@ import {
     getVPNConnectionsFeature,
 } from '../../features/vpn';
 import type { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../constants';
 import { getAllowedCycles } from './getAllowedCycles';
 
 export const defaultUpsellCycleB2C = CYCLE.YEARLY;

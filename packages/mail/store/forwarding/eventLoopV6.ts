@@ -1,10 +1,6 @@
 import type { MailEventLoopV6Callback } from '../mailEventLoop/interface';
-import {
-    incomingForwardingEventLoopV6Thunk,
-    outgoingForwardingEventLoopV6Thunk,
-    selectIncomingForwarding,
-    selectOutgoingForwarding,
-} from './index';
+import { incomingForwardingEventLoopV6Thunk, selectIncomingForwarding } from './incoming';
+import { outgoingForwardingEventLoopV6Thunk, selectOutgoingForwarding } from './outgoing';
 
 export const forwardingsLoop: MailEventLoopV6Callback = ({ event, state, dispatch, api }) => {
     const promises = [];

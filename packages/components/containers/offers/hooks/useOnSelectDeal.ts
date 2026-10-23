@@ -1,12 +1,13 @@
 import { useConfig } from '@proton/app-context/useConfig';
 import type { Currency } from '@proton/payments/core/interface';
-import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { getSubscriptionSearchParamsString } from '@proton/payments/core/subscription/search-params';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS } from '@proton/shared/lib/constants';
 import { isElectronApp, isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import noop from '@proton/utils/noop';
 
 import useSettingsLink from '../../../components/link/useSettingsLink';
@@ -16,7 +17,6 @@ import {
     type OpenCallbackProps,
     useOptionalSubscriptionModal,
 } from '../../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import type { Deal, Offer } from '../interface';
 
 const useSelectDeal = (callback?: () => void) => {

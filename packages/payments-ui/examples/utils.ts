@@ -5,9 +5,9 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { PLANS } from '@proton/payments/core/constants';
 import { getFallbackCurrency } from '@proton/payments/core/helpers';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
-import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
-import type { Plan, StrictPlan } from '@proton/payments/core/plan/interface';
 import { getPlanByName, getPlansMap, getStrictPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan, StrictPlan } from '@proton/shared/lib/payments/plan/interface';
 
 // #region Example: Get plan name from planIDs object
 function exampleGetPlanNameFromIDs() {

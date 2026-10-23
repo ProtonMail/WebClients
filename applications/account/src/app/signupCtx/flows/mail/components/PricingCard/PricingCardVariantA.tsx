@@ -4,8 +4,8 @@ import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { APPS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 import clsx from '@proton/utils/clsx';
-import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
 

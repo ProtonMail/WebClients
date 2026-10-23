@@ -8,7 +8,8 @@ import type { CheckoutCondensedAddonsParams } from './getCheckoutCondensedAddons
 import { useCheckoutCondensedAddons } from './useCheckoutCondensedAddons';
 
 const mockUseFlagsStatus = jest.fn();
-jest.mock('@proton/unleash/proxy', () => ({
+jest.mock('@unleash/proxy-client-react', () => ({
+    ...jest.requireActual('@unleash/proxy-client-react'),
     useFlagsStatus: () => mockUseFlagsStatus(),
 }));
 

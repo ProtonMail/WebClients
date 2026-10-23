@@ -5,6 +5,21 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { hasLifetimeCoupon } from '@proton/shared/lib/payments/coupons';
+import {
+    getPlanFromIDs,
+    getPlanFromPlanIDs,
+    hasFreePlanIDs,
+    isMultiUserPersonalPlan,
+} from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { Renew, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
+import {
+    getAddons,
+    getPlan,
+    getPlanName,
+    getPlanTitle,
+} from '@proton/shared/lib/payments/subscription/helpers/plan-info';
 
 import {
     type ADDON_NAMES,
@@ -21,21 +36,16 @@ import {
     TRIAL_MAX_USERS,
     VPN_PASS_PROMOTION_COUPONS,
 } from '../constants';
-import { hasLifetimeCoupon } from '../coupons';
 import { isRegionalCurrency } from '../currencies';
 import type { EntitlementCatalog } from '../entitlements/interface';
 import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
 import { getSupportedAddons, hasAddonFromPlanIDs, isAddonType } from '../plan/addons';
 import { getPlansLimit, getPlansQuantity } from '../plan/feature-limits';
-import { getPlanFromIDs, getPlanFromPlanIDs, hasFreePlanIDs, isMultiUserPersonalPlan } from '../plan/helpers';
-import type { Plan, PlansMap } from '../plan/interface';
 import { getTrialInfoForSingleSubscription } from '../trials';
 import { isFreeSubscription } from '../type-guards';
-import { Renew, TaxMode } from './constants';
 import { FREE_PLAN } from './freePlans';
 import { getSubscriptionsArray, hasLumoMobileSubscription, isManagedExternally } from './helpers/external-management';
 import { getPlanIDs } from './helpers/plan-ids';
-import { getAddons, getPlan, getPlanName, getPlanTitle } from './helpers/plan-info';
 import { hasBundle, hasBundlePro, hasBundlePro2024, hasFree, hasLumo } from './helpers/plan-matching';
 import type {
     MaybeFreeSubscription,
@@ -65,7 +75,12 @@ export {
     getHasVpnOnlyB2BPlan,
 } from './helpers/plan-b2b';
 export { getPlanIDs } from './helpers/plan-ids';
-export { getAddons, getPlan, getPlanName, getPlanTitle } from './helpers/plan-info';
+export {
+    getAddons,
+    getPlan,
+    getPlanName,
+    getPlanTitle,
+} from '@proton/shared/lib/payments/subscription/helpers/plan-info';
 export * from './helpers/plan-matching';
 export {
     hasCancellablePlan,

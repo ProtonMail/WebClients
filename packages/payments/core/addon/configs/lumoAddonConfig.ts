@@ -1,9 +1,9 @@
 import { c, msgid } from 'ttag';
 
 import { LUMO_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { getIsB2BAudienceFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import { ADDON_PREFIXES, MAX_LUMO_ADDON, MAX_MEMBER_LUMO_ADDON, PLANS, TRIAL_MAX_LUMO_SEATS } from '../../constants';
-import { getIsB2BAudienceFromPlanIDs } from '../../plan/helpers';
 import type { AddonConfig } from '../interfaces';
 import {
     notExternallyManagedLumo,

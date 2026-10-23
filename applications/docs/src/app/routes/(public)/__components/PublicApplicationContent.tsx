@@ -16,7 +16,7 @@ import { DocumentLayout } from '~/components/document/DocumentLayout/DocumentLay
 import { usePublicSessionUser } from '@proton/drive-store/store/_user/usePublicSessionUser'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { DocsProvider } from '~/components/document/context'
-import { useUnleashClient } from '@proton/unleash/proxy'
+import { useUnleashClient } from '@unleash/proxy-client-react'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { Route, Routes } from 'react-router-dom-v5-compat'
 import type { ProviderType } from '../../../provider-type'

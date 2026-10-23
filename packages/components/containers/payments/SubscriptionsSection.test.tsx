@@ -9,11 +9,11 @@ import {
     PLANS,
     PLAN_TYPES,
 } from '@proton/payments/core/constants';
-import { Renew, SubscriptionPlatform, TrialType } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
+import { Renew, SubscriptionPlatform, TrialType } from '@proton/shared/lib/payments/subscription/constants';
 import { apiMock } from '@proton/test-api/api';
 
 import { plansDefaultResponse } from '../../hooks/helpers/tests/usePlans';

@@ -5,15 +5,19 @@ import type { BillingAddressExtended } from '@proton/payments/core/billing-addre
 import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
-import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import { getAvailableSubscriptionActions, getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import {
+    SUBSCRIPTION_STEPS,
+    subscriptionModalClassName,
+} from '@proton/payments/core/subscription/subscription-modal-constants';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { TelemetryMailDrivePostSignupOneDollarEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { isBilledUser } from '@proton/shared/lib/interfaces/User';
+import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 import clsx from '@proton/utils/clsx';
 
 import ModalTwo from '../../../components/modalTwo/Modal';
@@ -27,7 +31,6 @@ import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDeskto
 import InAppPurchaseModal from './InAppPurchaseModal';
 import SubscriptionContainer from './SubscriptionContainer';
 import type { OpenCallbackProps, SubscriptionOverridableStep } from './SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
 import { usePostSubscription } from './postSubscription/usePostSubscription';
 
 interface Props {

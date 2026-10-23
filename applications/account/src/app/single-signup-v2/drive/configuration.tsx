@@ -25,9 +25,9 @@ import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';

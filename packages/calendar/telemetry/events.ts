@@ -1,5 +1,6 @@
 import { TelemetryCalendarClientEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { allowed, defineEvent } from '@proton/telemetry-tracker/events';
+import { defineEvent } from '@proton/telemetry-tracker/lib/defineEvent';
+import { allowed } from '@proton/telemetry-tracker/lib/dimensions';
 
 /**
  * A calendar card was not valid as binary but verified through the legacy path, i.e. signed as text by an

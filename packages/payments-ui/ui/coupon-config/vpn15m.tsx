@@ -6,8 +6,8 @@ import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import { vpn15mMetadata } from '@proton/payments/core/coupon-config/configs/vpn15m';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
-import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import type { CouponConfig } from './interface';
 

@@ -1,8 +1,8 @@
 import { CryptoProxy, type PrivateKeyReferenceV4 } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { createKTVerifier } from '@proton/key-transparency/helpers';
-import { getAndVerifyApiKeys } from '@proton/key-transparency/keys';
+import { createKTVerifier } from '@proton/key-transparency/helpers/createKTVerifier';
+import { getAndVerifyApiKeys } from '@proton/key-transparency/keys/getAndVerifyApiKeys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

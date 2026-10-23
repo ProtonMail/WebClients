@@ -7,7 +7,6 @@ import { useGetPreviousSubscription } from '@proton/account/previousSubscription
 import { Href } from '@proton/atoms/Href/Href';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { type MaybeFreeSubscription, getPlanName } from '@proton/payments/core/subscription/helpers';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
@@ -17,6 +16,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { UserLockedFlags } from '@proton/shared/lib/interfaces/User';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import { getAppStorage } from '@proton/shared/lib/user/storage';
 import { addRefToUrl } from '@proton/utils/addRefToUrl';
 import noop from '@proton/utils/noop';

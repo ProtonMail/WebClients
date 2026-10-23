@@ -1,11 +1,11 @@
 import { buildUser } from '@proton/account/testing/buildUser';
 import { getOrgPermissions } from '@proton/account/userPermissions';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import { hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { APPS } from '@proton/shared/lib/constants';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import type { AccountRecoveryRouterFlags, AccountRouterParams, Flags } from '../../content/router-params';
 import { defaultFlags } from '../../content/testing/buildOrganizationRouterParams';

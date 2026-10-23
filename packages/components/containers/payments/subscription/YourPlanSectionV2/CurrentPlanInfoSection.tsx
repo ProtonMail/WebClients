@@ -25,6 +25,7 @@ import {
     willTrialExpireInLessThan1Week,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -42,7 +43,6 @@ import useDashboardPaymentFlow from '../../../../hooks/useDashboardPaymentFlow';
 import { useTrialOnlyPaymentMethods } from '../../../../hooks/useTrialOnlyPaymentMethods';
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { REACTIVATE_SOURCE } from '../cancellationFlow/useCancellationTelemetry';
-import { SUBSCRIPTION_STEPS } from '../constants';
 import { getReactivateSubscriptionAction } from '../helpers/subscriptionExpires';
 import { getSubscriptionPanelText } from '../helpers/subscriptionPanelHelpers';
 import {

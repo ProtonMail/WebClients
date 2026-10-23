@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { getContactEmailsMapWithDuplicates } from '@proton/shared/lib/contacts/getContactEmailsMap';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';

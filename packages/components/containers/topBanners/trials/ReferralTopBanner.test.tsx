@@ -6,14 +6,14 @@ import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import { TrialType } from '@proton/payments/core/subscription/constants';
+import { TrialType } from '@proton/shared/lib/payments/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { renderWithProviders } from '../../../testing/renderWithProviders';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import ReferralTopBanner from './ReferralTopBanner';
 
 jest.mock('@proton/app-context/useConfig');

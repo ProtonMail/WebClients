@@ -3,9 +3,9 @@ import * as organizationModule from '@proton/account/organization';
 import * as checkoutModule from '@proton/payments/core/checkout';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Currency, PaymentsApi } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import * as organizationHelperModule from '@proton/shared/lib/organization/helper';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import * as assistantUpsellConfigModule from '../../../../hooks/assistant/assistantUpsellConfig';
 import * as composerAssistantUpsellModalHelpersModule from '../../modals/ComposerAssistantUpsellModal.helpers';

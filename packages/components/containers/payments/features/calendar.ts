@@ -3,7 +3,6 @@ import { c, msgid } from 'ttag';
 import { IcBrandProtonCalendar } from '@proton/icons/icons/IcBrandProtonCalendar';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { PLANS, PLAN_SERVICES } from '@proton/payments/core/constants';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import {
     MAX_CALENDARS_DUO,
     MAX_CALENDARS_FAMILY,
@@ -13,6 +12,7 @@ import {
 import { CALENDAR_APP_NAME, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 

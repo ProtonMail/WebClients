@@ -26,7 +26,7 @@ import { getAppVersionHeader } from '@proton/shared/lib/fetch/headers';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
-import { initTracker } from '@proton/telemetry-tracker/tracker';
+import { initTracker } from '@proton/telemetry-tracker/lib/tracker';
 import noop from '@proton/utils/noop';
 
 import defaultConfig from '../app/config';

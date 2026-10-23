@@ -28,7 +28,7 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { appMode } from '@proton/shared/lib/webpack.constants';
-import { initTracker } from '@proton/telemetry-tracker/tracker';
+import { initTracker } from '@proton/telemetry-tracker/lib/tracker';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import noop from '@proton/utils/noop';
 

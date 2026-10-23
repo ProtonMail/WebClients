@@ -3,10 +3,9 @@ import type {
     BillingAddressExtended,
     FullBillingAddress,
 } from '@proton/payments/core/billing-address/billing-address';
+import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
 import { DEFAULT_PAYMENT_VENDOR_STATES } from '@proton/payments/core/constants';
 import type { GetFullBillingAddressOptions, PaymentStatus } from '@proton/payments/core/interface';
-
-import { loadInitialBillingAddress } from './load-initial-billing-address';
 
 function createPaymentStatus(billingAddress: Partial<BillingAddress>): PaymentStatus {
     return {

@@ -22,7 +22,6 @@ import type { NavDefinition, NavItemDefinition, NavItemResolved, NavResolved } f
 import type { NavDefinitionIds, NavSectionIds as SectionIds } from '@proton/nav/types/navIds';
 import type { NavSectionResolved } from '@proton/nav/types/section';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
-import { getHasSsoUpsell, getIsB2BAudienceFromPlan, getIsSsoAvailable } from '@proton/payments/core/plan/helpers';
 import {
     type MaybeFreeSubscription,
     getHasExternalMemberCapableB2BPlan,
@@ -53,6 +52,7 @@ import {
     getIsSSOVPNOnlyAccount,
 } from '@proton/shared/lib/keys/accountType';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
+import { getHasSsoUpsell, getIsB2BAudienceFromPlan, getIsSsoAvailable } from '@proton/shared/lib/payments/plan/helpers';
 import { isSubscriptionRenewEnabled } from '@proton/shared/lib/payments/subscription/helpers/renew';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 

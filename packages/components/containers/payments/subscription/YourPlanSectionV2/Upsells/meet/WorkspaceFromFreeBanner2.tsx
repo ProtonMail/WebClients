@@ -8,6 +8,7 @@ import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid'
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasFreeOrPlus, isManagedExternally } from '@proton/payments/core/subscription/helpers';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import {
     type APP_NAMES,
@@ -27,7 +28,6 @@ import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPayment
 import useLoad from '../../../../../../hooks/useLoad';
 import { PromotionBanner } from '../../../../../banner/PromotionBanner';
 import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../../constants';
 import { PlanIcon } from '../../PlanIcon';
 
 const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {

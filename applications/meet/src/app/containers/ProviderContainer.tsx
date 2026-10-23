@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
+import { FlagProvider } from '@unleash/proxy-client-react';
+
 import { useNotifications } from '@proton/app-context/useNotifications';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
@@ -15,7 +17,6 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/inte
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { FlagProvider } from '@proton/unleash/proxy';
 
 import { bootstrapApp } from '../bootstrap';
 import config from '../config';

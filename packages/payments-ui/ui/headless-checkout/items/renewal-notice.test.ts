@@ -1,5 +1,5 @@
 import { PLANS } from '@proton/payments/core/constants';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import { getHeadlessCheckout } from '../get-headless-checkout';
 import { defaultApp as app, makeCheckResult, makePlan, makePricing } from './test-helpers';

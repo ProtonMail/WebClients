@@ -1,6 +1,6 @@
 import { queryPlans } from '@proton/payments/core/api/api';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { addApiMock } from '@proton/test-api/api';
 
 export const plansDefaultResponse: { Code: number; Plans: Plan[] } = {

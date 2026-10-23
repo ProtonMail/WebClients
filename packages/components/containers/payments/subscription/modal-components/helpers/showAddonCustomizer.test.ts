@@ -1,7 +1,7 @@
 import { ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { showAddonCustomizer } from './showAddonCustomizer';
 

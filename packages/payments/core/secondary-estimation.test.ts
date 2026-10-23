@@ -1,7 +1,8 @@
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
+
 import type { CheckSubscriptionData } from './api/api';
 import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, PLANS } from './constants';
 import type { PaymentsApi } from './interface';
-import type { PlansMap } from './plan/interface';
 import { runSecondarySubscriptionEstimation } from './secondary-estimation';
 import type { SubscriptionEstimation } from './subscription/interface';
 

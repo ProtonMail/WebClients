@@ -15,8 +15,8 @@ import {
 } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getAddonType } from '@proton/payments/core/plan/addons';
-import type { Plan, StrictPlan } from '@proton/payments/core/plan/interface';
 import { setQuantity } from '@proton/payments/core/planIDs';
+import type { Plan, StrictPlan } from '@proton/shared/lib/payments/plan/interface';
 import clsx from '@proton/utils/clsx';
 
 import ButtonNumberInput, { type ButtonNumberInputProps } from './ButtonNumberInput';

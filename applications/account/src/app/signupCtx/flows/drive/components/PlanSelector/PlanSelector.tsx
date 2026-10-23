@@ -15,9 +15,9 @@ import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { BRAND_NAME, DRIVE_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import { getDriveMaxSpaceMap } from '../../helpers/getMaxSpaceMap';
 import { getSavePercentageString, getSecureStoragePerUserString, getSecureStorageString } from '../../helpers/i18n';

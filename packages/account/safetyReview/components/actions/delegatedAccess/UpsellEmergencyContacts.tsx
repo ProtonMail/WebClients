@@ -5,9 +5,9 @@ import PromotionButton from '@proton/components/components/button/PromotionButto
 import SubscriptionModalProvider, {
     useSubscriptionModal,
 } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { APP_UPSELL_REF_PATH, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

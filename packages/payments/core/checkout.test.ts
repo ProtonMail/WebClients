@@ -1,4 +1,6 @@
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { PLANS_MAP, getTestPlansMap } from '../testing/data-plans';
 import { getAddonDisplayOrder, getAddonTrialLimit } from './addon/addons';
@@ -25,8 +27,6 @@ import {
 } from './constants';
 import { InvalidCouponError, WrongBillingAddressError } from './errors';
 import type { PlanIDs } from './interface';
-import type { Plan } from './plan/interface';
-import { SubscriptionMode, TaxMode } from './subscription/constants';
 import type { CouponDiscountBreakdownBE, SubscriptionEstimation } from './subscription/interface';
 
 const getPlan = (data: Partial<Plan>) => {

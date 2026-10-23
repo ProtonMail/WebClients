@@ -5,8 +5,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { changeRenewState } from '@proton/payments/core/api/api';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import useEventManager from '../../../../hooks/useEventManager';
 import { OPEN_TRIAL_CANCELED_MODAL } from '../../../topBanners/constants';

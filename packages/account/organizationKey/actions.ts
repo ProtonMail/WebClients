@@ -2,7 +2,7 @@ import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { getVerifiedPublicKeys } from '@proton/key-transparency/keys';
+import { getVerifiedPublicKeys } from '@proton/key-transparency/keys/getVerifiedPublicKeys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

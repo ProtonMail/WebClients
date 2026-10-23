@@ -10,7 +10,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeSetupSuccess from '@proton/styles/assets/img/illustrations/byoe-setup-success.svg';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { BYOEAddressAction } from '../../../telemetry/events';
 

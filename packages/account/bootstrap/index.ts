@@ -1,4 +1,5 @@
 import { type History, createBrowserHistory } from 'history';
+import { EVENTS } from 'unleash-proxy-client';
 
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { handleEarlyAccessDesynchronization } from '@proton/components/helpers/earlyAccessDesynchronization';
@@ -75,7 +76,6 @@ import { telemetry } from '@proton/shared/lib/telemetry';
 import { createUnauthenticatedApi as createSharedUnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import { UnleashClient } from '@proton/unleash/UnleashClient';
 import { createCustomFetch, getUnleashConfig } from '@proton/unleash/UnleashFlagProvider';
-import { EVENTS } from '@proton/unleash/proxy';
 import { setStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import noop from '@proton/utils/noop';
 

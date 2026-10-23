@@ -22,14 +22,6 @@ import type {
     PlanIDs,
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
-import {
-    getHasPlusPlan,
-    getIsB2BAudienceFromPlan,
-    getPlanFromPlanIDs,
-    getPlanNameFromIDs,
-    isLifetimePlanSelected,
-} from '@proton/payments/core/plan/helpers';
-import type { Plan, PlansMap, StrictPlan, SubscriptionPlan } from '@proton/payments/core/plan/interface';
 import { getAddonsFromIDs, getPlanFromIDs, hasPlanIDs, switchPlan } from '@proton/payments/core/planIDs';
 import { getPrice } from '@proton/payments/core/price-helpers';
 import {
@@ -58,6 +50,14 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { getOrganization } from '@proton/shared/lib/organization/api';
+import {
+    getHasPlusPlan,
+    getIsB2BAudienceFromPlan,
+    getPlanFromPlanIDs,
+    getPlanNameFromIDs,
+    isLifetimePlanSelected,
+} from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan, PlansMap, StrictPlan, SubscriptionPlan } from '@proton/shared/lib/payments/plan/interface';
 import {
     canPay as getCanPay,
     isAdmin as getIsAdmin,

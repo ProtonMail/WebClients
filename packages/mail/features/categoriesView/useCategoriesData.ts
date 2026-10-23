@@ -1,6 +1,7 @@
+import { useFlagsStatus } from '@unleash/proxy-client-react';
+
 import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import type { CategoryViewVariantVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
-import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
 

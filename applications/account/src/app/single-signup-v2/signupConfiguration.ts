@@ -1,10 +1,10 @@
 import { PLANS } from '@proton/payments/core/constants';
-import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getIsLumoApp, getIsMeetApp, getIsPassApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import { getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import type { SignupV2Theme } from './SignupV2ThemeProvider';
 import { getAuthenticatorConfiguration } from './authenticator/configuration';

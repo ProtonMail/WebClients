@@ -21,9 +21,9 @@ import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import { APPS, BRAND_NAME, LUMO_APP_NAME, LUMO_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';

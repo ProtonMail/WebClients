@@ -4,10 +4,11 @@ import * as sentry from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
-import { allowed, bool, defineEvent, defineTimer, duration, number, topValues } from '../events';
 import { mockTracker } from '../testing';
-import { initTracker, tracker } from '../tracker';
-import { NOT_INITIALIZED_MESSAGE, setTrackerInstance } from './tracker';
+import { defineEvent } from './defineEvent';
+import { allowed, bool, duration, number, topValues } from './dimensions';
+import { defineTimer } from './timers';
+import { NOT_INITIALIZED_MESSAGE, initTracker, setTrackerInstance, tracker } from './tracker';
 
 jest.mock('@proton/shared/lib/helpers/metrics', () => ({ sendTelemetryReport: jest.fn() }));
 jest.mock('@proton/shared/lib/telemetry', () => ({ telemetry: { sendCustomEvent: jest.fn() } }));

@@ -5,7 +5,7 @@ import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { ImportProvider } from '@proton/activation/src/interface';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { ChecklistKey, ChecklistType } from '@proton/shared/lib/interfaces/Checklist';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import {
     CHECKLIST_ACTIONS,
@@ -18,7 +18,7 @@ import {
 
 jest.mock('@proton/account/allSubscriptions/hooks');
 
-jest.mock('@proton/telemetry-tracker/tracker', () => ({
+jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
     tracker: { emit: jest.fn() },
 }));
 

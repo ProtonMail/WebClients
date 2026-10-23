@@ -4,7 +4,6 @@ import { format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import type { CYCLE } from '@proton/payments/core/constants';
-import { hasLifetimeCoupon } from '@proton/payments/core/coupons';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { Currency } from '@proton/payments/core/interface';
 import {
@@ -21,6 +20,7 @@ import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials'
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { hasLifetimeCoupon } from '@proton/shared/lib/payments/coupons';
 
 import type { BadgeType } from '../../../../components/badge/Badge';
 import Info from '../../../../components/link/Info';

@@ -12,12 +12,12 @@ import { IcUser } from '@proton/icons/icons/IcUser';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import type { StrictPlan } from '@proton/payments/core/plan/interface';
-import { Audience } from '@proton/payments/core/subscription/constants';
 import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import type { StrictPlan } from '@proton/shared/lib/payments/plan/interface';
+import { Audience } from '@proton/shared/lib/payments/subscription/constants';
 
 import DiscountBanner from '../DiscountBanner';
 import type { OptimisticOptions, SignupModelV2, SignupParameters2 } from '../interface';

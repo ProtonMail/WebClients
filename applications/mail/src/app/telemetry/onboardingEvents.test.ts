@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react';
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { ONBOARDING_STEPS, useOnboardingTracking } from './onboardingEvents';
 
@@ -11,7 +11,7 @@ jest.mock('@proton/account/allSubscriptions/hooks');
 
 jest.mock('@proton/account/welcomeFlags');
 
-jest.mock('@proton/telemetry-tracker/tracker', () => ({
+jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
     tracker: { emit: jest.fn(), startTimer: jest.fn() },
 }));
 

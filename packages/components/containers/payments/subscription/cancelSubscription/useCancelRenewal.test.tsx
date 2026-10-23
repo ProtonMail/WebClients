@@ -6,9 +6,9 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { changeRenewState } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import useEventManager from '../../../../hooks/useEventManager';
 import { componentsHookRenderer } from '../../../contacts/tests/render';

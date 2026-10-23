@@ -21,7 +21,6 @@ import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS } from '@proton/payments/core/constants';
-import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import {
     APPS,
     BRAND_NAME,
@@ -37,6 +36,7 @@ import {
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { SizeUnits } from '@proton/shared/lib/helpers/humanSize';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import AppsLogos from '../../../../../components/appsLogos/AppsLogos';
 import DriveLogo from '../../../../../components/logo/DriveLogo';

@@ -13,7 +13,6 @@ import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS } from '@proton/payments/core/constants';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
@@ -24,6 +23,7 @@ import {
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 

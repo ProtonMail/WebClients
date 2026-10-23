@@ -1,11 +1,11 @@
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlans } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import { getInitialCycle } from './getInitialCycle';
 

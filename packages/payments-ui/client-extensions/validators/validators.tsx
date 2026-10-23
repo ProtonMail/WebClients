@@ -25,7 +25,6 @@ import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentVerificatorV5, PaymentVerificatorV5Params } from '@proton/payments/core/createPaymentToken';
 import { ensureTokenChargeableV5 } from '@proton/payments/core/ensureTokenChargeable';
 import type { ChargebeeIframeHandles, FreeSubscription, V5PaymentToken } from '@proton/payments/core/interface';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';
@@ -33,6 +32,7 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { User } from '@proton/shared/lib/interfaces/User';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 

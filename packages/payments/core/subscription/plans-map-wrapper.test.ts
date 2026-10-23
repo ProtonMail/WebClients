@@ -1,6 +1,7 @@
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+
 import { PLANS, PLAN_TYPES } from '../constants';
 import type { Cycle } from '../interface';
-import type { Plan } from '../plan/interface';
 import {
     getAvailableCycles,
     getPlanByName,

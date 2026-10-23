@@ -7,11 +7,11 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, SECOND, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 
 import { useSubscriptionModal } from '../../../../../containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../../../../containers/payments/subscription/constants';
 import useActiveBreakpoint from '../../../../../hooks/useActiveBreakpoint';
 import useSpotlightShow from '../../../../spotlight/useSpotlightShow';
 import useUpsellConfig from '../../../../upsell/config/useUpsellConfig';

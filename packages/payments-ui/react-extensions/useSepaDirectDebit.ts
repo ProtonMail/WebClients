@@ -29,10 +29,10 @@ import type {
     V5PaymentToken,
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { type ExtendedExtractIBANResult, extractIBAN } from '@proton/payments/core/sepa';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
 export class SepaEmailNotProvidedError extends DisplayablePaymentError {

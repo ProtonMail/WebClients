@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import type { IconSize } from '@proton/icons/types';
 import { PLANS, PLAN_SERVICES } from '@proton/payments/core/constants';
-import type { Plan, PlansMap, SubscriptionPlan } from '@proton/payments/core/plan/interface';
 import { getFreeTitle } from '@proton/payments/core/subscription/freePlans';
 import {
     APPS,
@@ -14,6 +13,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import type { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/payments/plan/interface';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';

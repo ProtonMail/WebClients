@@ -2,11 +2,11 @@ import { AddonFeatureLimitKeyMapping } from '@proton/payments/core/addon/addons'
 import { CYCLE } from '@proton/payments/core/constants';
 import type { Currency, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { getPlansWithAddons } from '@proton/payments/core/plan/addons';
-import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { setQuantity } from '@proton/payments/core/planIDs';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import { getForcedFeatureLimitations } from './forced-addon-limits';
 

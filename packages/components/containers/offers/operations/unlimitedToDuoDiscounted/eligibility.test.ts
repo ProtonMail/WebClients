@@ -2,10 +2,10 @@ import { subDays } from 'date-fns';
 
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { configuration } from './configuration';
 import { getIsEligible } from './eligibility';

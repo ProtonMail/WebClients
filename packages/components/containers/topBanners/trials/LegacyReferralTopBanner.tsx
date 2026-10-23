@@ -13,6 +13,7 @@ import {
     willTrialExpireInLessThan1Week,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -27,7 +28,6 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 
 import SettingsLink from '../../../components/link/SettingsLink';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import TopBanner from '../TopBanner';
 
 const ModalAction = ({

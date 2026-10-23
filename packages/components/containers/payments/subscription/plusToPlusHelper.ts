@@ -1,8 +1,8 @@
 import { type ADDON_NAMES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import { getHasSomeDrivePlusPlan } from '@proton/payments/core/plan/helpers';
-import type { Plan, SubscriptionPlan } from '@proton/payments/core/plan/interface';
 import { isValidPlanName } from '@proton/payments/core/type-guards';
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { getHasSomeDrivePlusPlan } from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan, SubscriptionPlan } from '@proton/shared/lib/payments/plan/interface';
 
 const getPlusTitle = (appName: string) => {
     return `${appName} Plus`;

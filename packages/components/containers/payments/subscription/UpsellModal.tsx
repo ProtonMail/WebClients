@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import type { PLANS } from '@proton/payments/core/constants';
-import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import Modal from '../../../components/modalTwo/Modal';

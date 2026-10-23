@@ -1,10 +1,11 @@
+import isDeepEqual from 'lodash/isEqual';
+
 import type {
     ChatCompletionsFunctionTool,
     ClientToolExecutor,
     ClientToolResult,
     PendingClientToolCall,
 } from '@proton/lumo-api-client/core/types';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import getRandomString, { DEFAULT_LOWERCASE_CHARSET } from '@proton/utils/getRandomString';
 
 import { ToolInputError, UnknownReferenceError } from '../contracts/errors';

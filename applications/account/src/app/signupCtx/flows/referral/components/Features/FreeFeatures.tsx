@@ -4,7 +4,7 @@ import { FREE_PASS_ALIASES } from '@proton/components/containers/payments/featur
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
+import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
 

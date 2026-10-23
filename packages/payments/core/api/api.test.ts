@@ -1,7 +1,7 @@
 import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { ADDON_NAMES, PLANS } from '../constants';
-import { SubscriptionPlatform } from '../subscription/constants';
 import type { Subscription } from '../subscription/interface';
 import { fetchPreviousSubscription, getPaymentsInit, getSubscription } from './api';
 

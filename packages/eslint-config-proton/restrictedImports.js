@@ -24,9 +24,8 @@
 import { defineConfig } from 'eslint/config';
 import { plugin as typescriptEslintPlugin } from 'typescript-eslint';
 
+import { allGlobs } from '@proton/oxlint-config/globs';
 import { assertKnownRolloutIds, collectRestrictions, rolloutIds } from '@proton/oxlint-config/restrictedImports';
-
-import { allGlobs } from './globs.js';
 
 /**
  * @typedef {import('@proton/oxlint-config/restrictedImports').RestrictedPath} RestrictedPath

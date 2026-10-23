@@ -1,7 +1,7 @@
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { UserType } from '@proton/shared/lib/interfaces/User';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 // On B2B plans, only admins can add a BYOE address

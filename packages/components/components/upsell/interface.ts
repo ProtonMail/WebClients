@@ -1,4 +1,4 @@
-import type { Plan } from '@proton/payments/core/plan/interface';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import type { PlanCardFeatureIcon } from '../../containers/payments/features/interface';
 

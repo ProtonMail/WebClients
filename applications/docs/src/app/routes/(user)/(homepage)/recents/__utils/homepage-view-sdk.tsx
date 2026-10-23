@@ -2,7 +2,7 @@ import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import type { NodeEntity } from '@proton/drive/sdk'
 import { getDrive } from '@proton/drive/sdk'
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks'
+import { useContactEmails } from '@proton/account/contactEmails/hooks'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'

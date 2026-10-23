@@ -18,7 +18,6 @@ import {
 import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
 import { CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
-import type { FreePlanDefault } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getCanAccessFamilyPlans,
@@ -46,6 +45,7 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { FreePlanDefault } from '@proton/shared/lib/payments/plan/interface';
 import { hasPassLifetime } from '@proton/shared/lib/user/helpers';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import { useVariant } from '@proton/unleash/useVariant';

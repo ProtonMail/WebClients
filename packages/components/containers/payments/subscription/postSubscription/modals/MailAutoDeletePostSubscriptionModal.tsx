@@ -5,13 +5,13 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
-import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { PostSubscriptionModalComponentProps } from '../interface';
 import {
     PostSubscriptionModalContent,

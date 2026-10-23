@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
+import { FlagProvider } from '@unleash/proxy-client-react';
+
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
@@ -16,7 +18,6 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import { FlagProvider } from '@proton/unleash/proxy';
 
 import config from '../../../config';
 import { extraThunkArguments } from '../../../store/thunk';

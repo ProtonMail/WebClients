@@ -13,7 +13,6 @@ import { IcShield2Bolt } from '@proton/icons/icons/IcShield2Bolt';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS } from '@proton/payments/core/constants';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
@@ -24,6 +23,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import type { PlanCardFeatureIcon } from '../../features/interface';
 import { getScribeWritingAssistantText } from '../assistant/helpers';

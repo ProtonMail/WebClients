@@ -1,7 +1,7 @@
 import type { EligibleTrials } from '@proton/account/eligibleTrials';
 import type { PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 /**
  * Whether the referral signup will create the plan as a trial.

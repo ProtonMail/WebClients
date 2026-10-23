@@ -29,11 +29,11 @@ import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { APPS, MEET_APP_NAME, MEET_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { everythingInPlanOrAppNamePlusText } from '@proton/shared/lib/i18n/ttag';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 

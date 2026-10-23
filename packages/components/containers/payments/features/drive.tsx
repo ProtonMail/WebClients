@@ -6,7 +6,6 @@ import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcStorage } from '@proton/icons/icons/IcStorage';
 import { PLANS } from '@proton/payments/core/constants';
-import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
@@ -23,6 +22,7 @@ import {
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 

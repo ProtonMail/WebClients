@@ -1,4 +1,5 @@
-import { SubscriptionMode } from './subscription/constants';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+
 import type { SubscriptionEstimation } from './subscription/interface';
 
 export interface CheckoutModifiers {

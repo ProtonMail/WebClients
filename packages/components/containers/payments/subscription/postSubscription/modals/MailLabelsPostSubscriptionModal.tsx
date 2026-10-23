@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 
 import { usePostSubscriptionTourTelemetry } from '../../../../../hooks/mail/usePostSubscriptionTourTelemetry';
 import EditLabelModal from '../../../../labels/modals/EditLabelModal';
-import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { PostSubscriptionModalComponentProps } from '../interface';
 import {
     PostSubscriptionModalContentWrapper,

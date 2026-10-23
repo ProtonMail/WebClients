@@ -9,6 +9,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcAt } from '@proton/icons/icons/IcAt';
 import { IcInbox } from '@proton/icons/icons/IcInbox';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import illustration from '@proton/styles/assets/img/illustrations/check.svg';
@@ -16,7 +17,6 @@ import illustration from '@proton/styles/assets/img/illustrations/check.svg';
 import Copy from '../../../../../components/button/Copy';
 import SettingsLink from '../../../../../components/link/SettingsLink';
 import useShortDomainAddress from '../../../../../hooks/mail/useShortDomainAddress';
-import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { PostSubscriptionModalComponentProps } from '../interface';
 import {
     PostSubscriptionModalContentWrapper,

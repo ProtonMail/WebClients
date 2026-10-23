@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { useFlagsStatus } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -9,7 +10,6 @@ import { getAppHref, getClientID } from '@proton/shared/lib/apps/helper';
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
 import { APPS, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 

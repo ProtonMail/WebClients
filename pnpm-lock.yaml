@@ -900,6 +900,9 @@ importers:
       '@types/react-router-dom':
         specifier: 'catalog:'
         version: 5.3.3
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       '@xstate/react':
         specifier: ^6.1.0
         version: 6.1.0(@types/react@18.3.31)(react@18.3.1)(xstate@5.33.2)
@@ -1084,6 +1087,9 @@ importers:
       '@types/react-router-dom':
         specifier: 'catalog:'
         version: 5.3.3
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       cross-env:
         specifier: 'catalog:'
         version: 10.1.0
@@ -1497,6 +1503,9 @@ importers:
       '@types/react-router-dom':
         specifier: 'catalog:'
         version: 5.3.3
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -1642,9 +1651,6 @@ importers:
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
-      '@proton/unleash':
-        specifier: workspace:^
-        version: link:../../packages/unleash
       '@proton/utils':
         specifier: workspace:^
         version: link:../../packages/utils
@@ -1660,6 +1666,9 @@ importers:
       '@types/react-router-dom':
         specifier: 'catalog:'
         version: 5.3.3
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       cross-env:
         specifier: 'catalog:'
         version: 10.1.0
@@ -1757,9 +1766,6 @@ importers:
       '@proton/icons':
         specifier: workspace:^
         version: link:../../packages/icons
-      '@proton/mail':
-        specifier: workspace:^
-        version: link:../../packages/mail
       '@proton/metrics':
         specifier: workspace:^
         version: link:../../packages/metrics
@@ -1802,6 +1808,9 @@ importers:
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       history:
         specifier: 'catalog:'
         version: 4.10.1
@@ -2290,9 +2299,6 @@ importers:
       '@proton/llm':
         specifier: workspace:^
         version: link:../../packages/llm
-      '@proton/mail':
-        specifier: workspace:^
-        version: link:../../packages/mail
       '@proton/metrics':
         specifier: workspace:^
         version: link:../../packages/metrics
@@ -2811,6 +2817,9 @@ importers:
       '@types/toposort':
         specifier: ^2.0.7
         version: 2.0.7
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       '@xyflow/react':
         specifier: ^12.12.0
         version: 12.12.0(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3175,6 +3184,9 @@ importers:
       '@types/react-router-dom':
         specifier: 'catalog:'
         version: 5.3.3
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       clsx:
         specifier: 'catalog:'
         version: 2.1.1
@@ -3470,6 +3482,9 @@ importers:
       '@types/wicg-file-system-access':
         specifier: 2023.10.7
         version: 2023.10.7
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       '@workadventure/noise-suppression':
         specifier: 0.2.0
         version: 0.2.0
@@ -4794,9 +4809,6 @@ importers:
       '@proton/key-transparency':
         specifier: workspace:^
         version: link:../../packages/key-transparency
-      '@proton/mail':
-        specifier: workspace:^
-        version: link:../../packages/mail
       '@proton/pack':
         specifier: workspace:^
         version: link:../../packages/pack
@@ -5014,6 +5026,9 @@ importers:
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
+      unleash-proxy-client:
+        specifier: ^3.8.0
+        version: 3.8.0
     devDependencies:
       '@jest/globals':
         specifier: 'catalog:'
@@ -6111,6 +6126,9 @@ importers:
       '@types/react-virtualized':
         specifier: ^9.22.4
         version: 9.22.4
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       card-validator:
         specifier: ^10.0.4
         version: 10.0.4
@@ -6695,6 +6713,9 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       '@xmldom/xmldom':
         specifier: ^0.9.12
         version: 0.9.12
@@ -7744,6 +7765,9 @@ importers:
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       history:
         specifier: 'catalog:'
         version: 4.10.1
@@ -9898,9 +9922,6 @@ importers:
       '@proton/eslint-config-proton':
         specifier: workspace:^
         version: link:../eslint-config-proton
-      '@proton/mail':
-        specifier: workspace:^
-        version: link:../mail
       '@proton/polyfill':
         specifier: workspace:^
         version: link:../polyfill

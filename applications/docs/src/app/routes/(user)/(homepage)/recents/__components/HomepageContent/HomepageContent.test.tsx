@@ -24,7 +24,7 @@ jest.mock('@proton/drive-store/lib/_invites/useDocInvites', () => ({
   }),
 }))
 
-jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
+jest.mock('@proton/account/contactEmails/hooks', () => ({
   useContactEmails: () => [[], false],
 }))
 

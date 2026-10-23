@@ -6,10 +6,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import { CondensedAddonRow } from './CondensedAddonRow';
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';

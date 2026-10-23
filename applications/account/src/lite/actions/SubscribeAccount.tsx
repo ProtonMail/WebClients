@@ -19,15 +19,13 @@ import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
-import { loadInitialBillingAddress } from '@proton/payments-ui/ui/helpers/load-initial-billing-address';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
+import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
 import { CURRENCIES, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
-import { correctDeprecatedPlanName } from '@proton/payments/core/plan/helpers';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getAvailableSubscriptionActions,
@@ -36,6 +34,7 @@ import {
     getUpgradedPlan,
     getValidCycle,
 } from '@proton/payments/core/subscription/helpers';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import {
@@ -50,6 +49,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { correctDeprecatedPlanName } from '@proton/shared/lib/payments/plan/helpers';
 import { canPay } from '@proton/shared/lib/user/helpers';
 import type { FeatureFlagVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import { useVariant } from '@proton/unleash/useVariant';

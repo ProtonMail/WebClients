@@ -16,7 +16,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import claimExternalAddress from '@proton/styles/assets/img/byoe/claim-external-address.svg';
 import claimStepDone from '@proton/styles/assets/img/byoe/claim-step-done.svg';
 import claimStepNext from '@proton/styles/assets/img/byoe/claim-step-next.svg';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { BYOEClaimableAddressModalAction, BYOEClaimableAddressModalShown } from '../../../telemetry/events';
 

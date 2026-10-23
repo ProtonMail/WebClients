@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { TaxMode } from '@proton/payments/core/subscription/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import type { BaseLineItem } from './base-line-item';

@@ -1,3 +1,4 @@
+import { correctDeprecatedPlanName } from '@proton/shared/lib/payments/plan/helpers';
 import { type SearchParamStringOptions, getSearchParamString } from '@proton/utils/searchParams';
 
 import {
@@ -8,7 +9,6 @@ import {
     type PLANS,
 } from '../constants';
 import type { Currency } from '../interface';
-import { correctDeprecatedPlanName } from '../plan/helpers';
 import { getValidCycle } from './helpers';
 
 type TotalParams = Partial<Record<`total${ADDON_TOTAL_PARAM_NAME}`, number>>;

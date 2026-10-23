@@ -5,8 +5,8 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 import { mockTracker } from '@proton/telemetry-tracker/testing';
-import { tracker } from '@proton/telemetry-tracker/tracker';
 
 import type { LaunchImportPayload } from '../../../../interface';
 import { IMPORT_ERROR, ImportProvider, ImportType, TIME_PERIOD } from '../../../../interface';

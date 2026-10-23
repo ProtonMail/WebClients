@@ -1,8 +1,10 @@
 import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { allowed, defineEvent, defineTimer, duration, number, topValues } from '@proton/telemetry-tracker/events';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { defineEvent } from '@proton/telemetry-tracker/lib/defineEvent';
+import { allowed, duration, number, topValues } from '@proton/telemetry-tracker/lib/dimensions';
+import { defineTimer } from '@proton/telemetry-tracker/lib/timers';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 /**
  * Proof of concept (DAWG-99): signup events sent to a temporary measurement group, to check how the data side

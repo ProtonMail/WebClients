@@ -6,6 +6,7 @@ import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/Dashboa
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -20,7 +21,6 @@ import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTie
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import type { PlanCardFeatureDefinition } from '../../../features/interface';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../constants';
 import type { GetPlanUpsellArgs, MaybeUpsell } from '../../helpers/dashboard-upsells';
 import { defaultUpsellCycleB2C, getUpsell } from '../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../panels/UpsellPanelsV2';

@@ -54,9 +54,7 @@
         "./bootstrap/standaloneSession": "./bootstrap/standaloneSession.ts",
         "./breaches/breachNotificationsSlice": "./breaches/breachNotificationsSlice.ts",
         "./contactEmails": "./contactEmails/index.ts",
-        "./contactEmails/getContactEmail": "./contactEmails/getContactEmail.ts",
         "./contactEmails/hooks": "./contactEmails/hooks.ts",
-        "./contactEmails/selector": "./contactEmails/selector.ts",
         "./coreEventLoop": "./coreEventLoop/index.ts",
         "./coreEventLoop/interface": "./coreEventLoop/interface.ts",
         "./coreEventLoop/listener": "./coreEventLoop/listener.ts",
@@ -337,7 +335,8 @@
         "react": "catalog:",
         "react-dom": "catalog:",
         "react-router-dom": "catalog:",
-        "ttag": "catalog:"
+        "ttag": "catalog:",
+        "unleash-proxy-client": "^3.8.0"
     },
     "devDependencies": {
         "@jest/globals": "catalog:",

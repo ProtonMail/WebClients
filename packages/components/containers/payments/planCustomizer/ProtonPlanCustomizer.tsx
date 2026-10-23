@@ -8,13 +8,13 @@ import { type ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION } from '@proton/pay
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getAddonType } from '@proton/payments/core/plan/addons';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { setQuantity } from '@proton/payments/core/planIDs';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';

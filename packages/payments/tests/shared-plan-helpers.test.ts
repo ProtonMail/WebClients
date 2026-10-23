@@ -1,7 +1,13 @@
-import { getTestPlansMap } from '../../testing/data-plans';
-import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
-import { getAddonNameByPlan, getHasSsoUpsell, getIsSsoAvailable, isMultiUserPersonalPlan } from './helpers';
-import type { Plan } from './interface';
+import {
+    getAddonNameByPlan,
+    getHasSsoUpsell,
+    getIsSsoAvailable,
+    isMultiUserPersonalPlan,
+} from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+
+import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../core/constants';
+import { getTestPlansMap } from '../testing/data-plans';
 
 describe('getAddonNameByPlan', () => {
     it.each<[plan: PLANS, expectedAddon: ADDON_NAMES]>([

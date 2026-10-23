@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { buildAddress } from '@proton/account/testing/buildAddress';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import type { ImportToken } from '../interface';
@@ -50,7 +50,9 @@ jest.mock('../api/api', () => ({
 jest.mock('../thunks/updateBYOEAddressConnection', () => ({
     updateBYOEAddressConnection: jest.fn((props) => ({ type: 'address/reconnect', props })),
 }));
-jest.mock('@proton/telemetry-tracker/tracker', () => ({ tracker: { emit: jest.fn() } }));
+jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
+    tracker: { emit: jest.fn() },
+}));
 
 const mockToken: ImportToken = {
     ID: 'token-id',

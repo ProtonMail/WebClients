@@ -1,8 +1,9 @@
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+
 import { buildSubscription } from '../../testing/buildSubscription';
 import { PLANS_MAP } from '../../testing/data-plans';
 import { ADDON_NAMES, PLANS } from '../constants';
 import type { PlanIDs } from '../interface';
-import { SubscriptionPlatform } from './constants';
 import { getIsPlanTransitionForbidden } from './forbidden-plan-transition';
 
 describe('forbidden plan transitions', () => {

@@ -7,10 +7,10 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, type APP_NAMES, MAIL_UPSELL_PATHS, SHARED_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { canShowB2BOnboardingButton } from '@proton/shared/lib/onboarding/helpers';
+import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 

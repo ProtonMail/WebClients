@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 import { PLANS } from '@proton/payments/core/constants';
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 import clsx from '@proton/utils/clsx';
 
 import type { StyleProps as PriceStyleProps } from '../../../components/price/Price';

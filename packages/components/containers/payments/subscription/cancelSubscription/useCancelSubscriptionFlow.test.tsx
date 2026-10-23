@@ -5,13 +5,13 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import { getOrganizationState } from '@proton/account/testing/redux-state';
 import { changeRenewState } from '@proton/payments/core/api/api';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { apiMock } from '@proton/test-api/api';
 
 import { renderWithProviders } from '../../../../testing/renderWithProviders';

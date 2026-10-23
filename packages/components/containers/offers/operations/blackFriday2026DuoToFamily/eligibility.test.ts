@@ -1,5 +1,5 @@
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import {
     accountAppConfig,

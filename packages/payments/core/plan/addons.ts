@@ -1,9 +1,10 @@
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
+import type { Addon } from '@proton/shared/lib/payments/plan/interface';
+
 import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
 import type { PlanIDs } from '../interface';
 import { getPlanIDs } from '../subscription/helpers/plan-ids';
 import type { Subscription } from '../subscription/interface';
-import { getPlanNameFromIDs } from './helpers';
-import type { Addon } from './interface';
 
 type AddonOrName = Addon | ADDON_NAMES | PLANS;
 

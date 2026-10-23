@@ -24,7 +24,6 @@ import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     APPS,
     BRAND_NAME,
@@ -35,6 +34,7 @@ import {
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';

@@ -6,12 +6,12 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
-import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
 import Form from '../../../components/form/Form';

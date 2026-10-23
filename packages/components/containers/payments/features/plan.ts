@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
@@ -13,6 +12,7 @@ import {
     VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
+import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { getPlusServers } from '@proton/shared/lib/vpn/features';
 import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 import { MailFeatureFlag } from '@proton/unleash/Flags';

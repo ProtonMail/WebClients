@@ -3,10 +3,10 @@ import userEvent from '@testing-library/user-event';
 
 import { ADDON_NAMES, ADDON_PREFIXES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { PLANS_MAP } from '@proton/payments/testing/data-plans';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import { type Props, ProtonPlanCustomizer } from './ProtonPlanCustomizer';
 

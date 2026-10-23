@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import { getSimplePriceString } from '../../../../../components/price/helper';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../constants';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
 import type { UpsellSectionBaseProps } from '../YourPlanUpsellsSectionV2';

@@ -18,11 +18,11 @@ import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePayments
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { DEFAULT_CYCLE, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
-import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlanIDs, getValidAudience, getValidCycle } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { isValidPlanName } from '@proton/payments/core/type-guards';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -30,6 +30,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import Loader from '../../components/loader/Loader';
 import useLoad from '../../hooks/useLoad';
@@ -38,7 +39,6 @@ import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopIn
 import { usePlansSectionTelemetry } from './plansSectionTelemetry';
 import PlanSelection from './subscription/PlanSelection';
 import { UpsellModalTelemetryProvider, useSubscriptionModal } from './subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from './subscription/constants';
 import { getDefaultSelectedProductPlans } from './subscription/helpers/payment';
 
 const getSearchParams = (search: string) => {

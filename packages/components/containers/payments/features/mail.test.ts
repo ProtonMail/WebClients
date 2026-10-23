@@ -1,6 +1,6 @@
 import { IcMagicWand } from '@proton/icons/icons/IcMagicWand';
 import { PLANS } from '@proton/payments/core/constants';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import type { PlanCardFeature } from './interface';
 import { getMailFeatures } from './mail';

@@ -21,11 +21,10 @@ import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrenci
 import { usePaymentsTelemetry } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
 import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { VatReverseChargeErrorModal } from '@proton/payments-ui/ui/billing-address/containers/VatReverseChargeErrorModal';
-import { loadInitialBillingAddress } from '@proton/payments-ui/ui/helpers/load-initial-billing-address';
+import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
 import { DEFAULT_CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { Currency, PaymentMethodFlow } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
-import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { getHas2025OfferCoupon, getPlanIDs } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
@@ -55,6 +54,7 @@ import { getPathFromLocation, stringifySearchParams } from '@proton/shared/lib/h
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
+import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
