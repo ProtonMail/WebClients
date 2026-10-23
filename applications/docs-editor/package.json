@@ -110,7 +110,7 @@
     "@typescript/native": "catalog:",
     "babel-jest": "catalog:",
     "babel-plugin-transform-require-context": "^0.1.1",
-    "browserslist": "^4.29.3",
+    "browserslist": "catalog:",
     "core-js": "catalog:",
     "cross-env": "catalog:",
     "dotenv": "^17.4.2",
@@ -119,10 +119,10 @@
     "jest-junit": "catalog:",
     "prettier": "catalog:",
     "prettier-plugin-tailwindcss": "catalog:",
-    "sass": "^1.80.3",
+    "sass": "catalog:",
     "tailwindcss": "^3.4.19",
     "typescript": "catalog:",
-    "webpack": "^5.111.1",
+    "webpack": "catalog:",
     "y-protocols": "^1.0.6"
   }
 }
