@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import { shouldDisplayEmailNextToName } from '@proton/shared/lib/helpers/email';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 import clsx from '@proton/utils/clsx';
@@ -17,11 +18,12 @@ const AccordionButton = ({ onClick, children }: { onClick: () => void; children:
 };
 
 const MembersListItem = ({ member }: { member: Member }) => {
-    const name = member.Name;
     const email = getMemberEmailOrName(member);
+    const name = member.Name || email;
     return (
         <div className="text-ellipsis w-full">
-            <span title={name}>{name}</span> {email !== name && <span title={email}>({email})</span>}
+            <span title={name}>{name}</span>{' '}
+            {shouldDisplayEmailNextToName(name, email) && <span title={email}>({email})</span>}
         </div>
     );
 };
