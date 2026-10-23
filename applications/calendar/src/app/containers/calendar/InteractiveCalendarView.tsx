@@ -21,6 +21,7 @@ import {
 } from '@proton/calendar-video-conferencing/videoConferencing/telemetry';
 import { useGetCalendarBootstrap, useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
+import { useGetCalendarEventRaw } from '@proton/calendar/calendarEvent/useGetCalendarEventRaw';
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
 import { validateDeepLinkParams } from '@proton/calendar/utils';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
@@ -29,7 +30,6 @@ import { useContactEmailsCache } from '@proton/components/containers/contacts/Co
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
-import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
