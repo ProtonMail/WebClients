@@ -176,6 +176,9 @@ catalogs:
     '@oxlint/plugins':
       specifier: 1.87.0
       version: 1.87.0
+    '@pmmmwh/react-refresh-webpack-plugin':
+      specifier: ^0.6.3
+      version: 0.6.3
     '@protontech/crypto':
       specifier: ^2.2.0
       version: 2.2.0
@@ -248,21 +251,36 @@ catalogs:
     '@typescript/native':
       specifier: npm:typescript@^7.0.2
       version: 7.0.2
+    '@vitest/coverage-v8':
+      specifier: ^5.0.5
+      version: 5.0.5
+    '@vitest/ui':
+      specifier: ^5.0.5
+      version: 5.0.5
     babel-jest:
       specifier: ^30.4.1
       version: 30.5.2
+    browserslist:
+      specifier: ^4.29.3
+      version: 4.29.3
     clsx:
       specifier: ^2.1.1
       version: 2.1.1
     commander:
       specifier: ^14.0.3
       version: 14.0.3
+    copy-webpack-plugin:
+      specifier: ^14.0.0
+      version: 14.0.0
     core-js:
       specifier: ^3.50.0
       version: 3.50.0
     cross-env:
       specifier: ^10.1.0
       version: 10.1.0
+    css-loader:
+      specifier: ^7.1.5
+      version: 7.1.5
     dompurify:
       specifier: ^3.4.17
       version: 3.4.17
@@ -272,6 +290,9 @@ catalogs:
     fake-indexeddb:
       specifier: ^6.2.5
       version: 6.2.5
+    fork-ts-checker-webpack-plugin:
+      specifier: ^9.1.0
+      version: 9.1.0
     formik:
       specifier: ^2.4.9
       version: 2.4.9
@@ -281,6 +302,9 @@ catalogs:
     history:
       specifier: ^4.10.1
       version: 4.10.1
+    html-webpack-plugin:
+      specifier: ^5.6.8
+      version: 5.6.8
     idb:
       specifier: ^8.0.3
       version: 8.0.3
@@ -302,12 +326,21 @@ catalogs:
     lodash:
       specifier: ^4.18.1
       version: 4.18.1
+    mini-css-extract-plugin:
+      specifier: ^2.10.2
+      version: 2.10.2
+    msw:
+      specifier: 2.12.14
+      version: 2.12.14
     oxlint:
       specifier: 1.87.0
       version: 1.87.0
     oxlint-tsgolint:
       specifier: 7.0.2004
       version: 7.0.2004
+    postcss:
+      specifier: ^8.5.30
+      version: 8.5.30
     prettier:
       specifier: ^3.9.10
       version: 3.9.10
@@ -338,15 +371,24 @@ catalogs:
     redux-thunk:
       specifier: ^3.1.0
       version: 3.1.0
+    sass:
+      specifier: ^1.80.3
+      version: 1.97.1
     stylelint:
       specifier: ^15.11.0
       version: 15.11.0
     tinycolor2:
       specifier: ^1.6.0
       version: 1.6.0
+    ts-loader:
+      specifier: ^9.6.2
+      version: 9.6.2
     ts-node:
       specifier: ^10.9.2
       version: 10.9.2
+    tsx:
+      specifier: ^4.23.15
+      version: 4.23.15
     ttag:
       specifier: ^1.8.12
       version: 1.8.12
@@ -362,6 +404,18 @@ catalogs:
     uuid:
       specifier: ^14.0.2
       version: 14.0.2
+    vite:
+      specifier: ^8.3.4
+      version: 8.3.4
+    vitest:
+      specifier: ^5.0.5
+      version: 5.0.5
+    webpack:
+      specifier: ^5.111.1
+      version: 5.111.1
+    webpack-dev-server:
+      specifier: ^6.0.0
+      version: 6.0.0
     zod:
       specifier: ^3.25.76
       version: 3.25.76
@@ -812,7 +866,7 @@ importers:
         specifier: 'catalog:'
         version: 10.1.0
       html-webpack-plugin:
-        specifier: ^5.6.8
+        specifier: 'catalog:'
         version: 5.6.8(webpack@5.111.1)
       jest:
         specifier: 'catalog:'
@@ -833,10 +887,10 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
       webpack-dev-server:
-        specifier: ^6.0.0
+        specifier: 'catalog:'
         version: 6.0.0(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
 
   applications/admin:
@@ -1017,7 +1071,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   applications/authenticator:
@@ -1113,7 +1167,7 @@ importers:
         specifier: 0.23.0
         version: 0.23.0
       browserslist:
-        specifier: ^4.29.3
+        specifier: 'catalog:'
         version: 4.29.3
       dexie:
         specifier: ^4.4.6
@@ -1147,7 +1201,7 @@ importers:
         specifier: ^2.2.5
         version: 2.2.5
       '@pmmmwh/react-refresh-webpack-plugin':
-        specifier: ^0.6.3
+        specifier: 'catalog:'
         version: 0.6.3(react-refresh@0.19.0)(type-fest@5.9.0)(webpack-dev-server@6.0.0)(webpack-hot-middleware@2.26.1)(webpack@5.111.1)
       '@proton/eslint-config-proton':
         specifier: workspace:^
@@ -1198,25 +1252,25 @@ importers:
         specifier: 'catalog:'
         version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       html-webpack-plugin:
-        specifier: ^5.6.8
+        specifier: 'catalog:'
         version: 5.6.8(webpack@5.111.1)
       jest:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       mini-css-extract-plugin:
-        specifier: ^2.10.2
+        specifier: 'catalog:'
         version: 2.10.2(webpack@5.111.1)
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
       webpack-dev-server:
-        specifier: ^6.0.0
+        specifier: 'catalog:'
         version: 6.0.0(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
 
   applications/calendar:
@@ -1415,7 +1469,7 @@ importers:
         specifier: 'catalog:'
         version: 10.1.0
       html-webpack-plugin:
-        specifier: ^5.6.8
+        specifier: 'catalog:'
         version: 5.6.8(webpack@5.111.1)
       jest:
         specifier: 'catalog:'
@@ -1436,7 +1490,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   applications/console:
@@ -1533,7 +1587,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   applications/docs:
@@ -1735,7 +1789,7 @@ importers:
         specifier: 'catalog:'
         version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       html-webpack-plugin:
-        specifier: ^5.6.8
+        specifier: 'catalog:'
         version: 5.6.8(webpack@5.111.1)
       jest:
         specifier: 'catalog:'
@@ -1753,7 +1807,7 @@ importers:
         specifier: 'catalog:'
         version: 0.8.1(@trivago/prettier-plugin-sort-imports@6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.10)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.71.2)))(prettier@3.9.10)
       sass:
-        specifier: ^1.80.3
+        specifier: 'catalog:'
         version: 1.97.1
       tailwindcss:
         specifier: ^3.4.19
@@ -1762,7 +1816,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   applications/docs-editor:
@@ -2030,7 +2084,7 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1
       browserslist:
-        specifier: ^4.29.3
+        specifier: 'catalog:'
         version: 4.29.3
       core-js:
         specifier: 'catalog:'
@@ -2057,7 +2111,7 @@ importers:
         specifier: 'catalog:'
         version: 0.8.1(@trivago/prettier-plugin-sort-imports@6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.10)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.71.2)))(prettier@3.9.10)
       sass:
-        specifier: ^1.80.3
+        specifier: 'catalog:'
         version: 1.97.1
       tailwindcss:
         specifier: ^3.4.19
@@ -2066,7 +2120,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
       y-protocols:
         specifier: ^1.0.6
@@ -2301,7 +2355,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       copy-webpack-plugin:
-        specifier: ^14.0.0
+        specifier: 'catalog:'
         version: 14.0.0(webpack@5.111.1)
       cross-env:
         specifier: 'catalog:'
@@ -2313,7 +2367,7 @@ importers:
         specifier: 'catalog:'
         version: 6.2.5
       html-webpack-plugin:
-        specifier: ^5.6.8
+        specifier: 'catalog:'
         version: 5.6.8(webpack@5.111.1)
       jest:
         specifier: 'catalog:'
@@ -2334,7 +2388,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   applications/inbox-desktop:
@@ -2449,7 +2503,7 @@ importers:
         specifier: 'catalog:'
         version: 10.1.0
       css-loader:
-        specifier: ^7.1.5
+        specifier: 'catalog:'
         version: 7.1.5(webpack@5.111.1)
       dotenv:
         specifier: ^17.4.2
@@ -2467,7 +2521,7 @@ importers:
         specifier: ^4.17.1
         version: 4.17.1(@typescript-eslint/utils@8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0))(eslint-import-resolver-node@0.3.9(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
       fork-ts-checker-webpack-plugin:
-        specifier: ^9.1.0
+        specifier: 'catalog:'
         version: 9.1.0(@typescript/typescript6@6.0.2)(webpack@5.111.1)
       globals:
         specifier: ^14.0.0
@@ -2488,7 +2542,7 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.111.1)
       ts-loader:
-        specifier: ^9.6.2
+        specifier: 'catalog:'
         version: 9.6.2(@typescript/typescript6@6.0.2)(loader-utils@2.0.4)(webpack@5.111.1)
       typescript:
         specifier: 'catalog:'
@@ -2497,7 +2551,7 @@ importers:
         specifier: 'catalog:'
         version: 8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   applications/lumo:
@@ -2689,7 +2743,7 @@ importers:
         specifier: ^2.1.2
         version: 2.1.2
       msw:
-        specifier: 2.12.14
+        specifier: 'catalog:'
         version: 2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       pdfjs-dist:
         specifier: 5.4.530
@@ -2855,16 +2909,16 @@ importers:
         specifier: 'catalog:'
         version: 6.2.5
       postcss:
-        specifier: ^8.5.30
+        specifier: 'catalog:'
         version: 8.5.30
       sass:
-        specifier: ^1.80.3
+        specifier: 'catalog:'
         version: 1.97.1
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   applications/mail:
@@ -3135,7 +3189,7 @@ importers:
         specifier: 'catalog:'
         version: 6.2.5
       html-webpack-plugin:
-        specifier: ^5.6.8
+        specifier: 'catalog:'
         version: 5.6.8(webpack@5.111.1)
       immer:
         specifier: 11.1.21
@@ -3150,7 +3204,7 @@ importers:
         specifier: ^30.5.2
         version: 30.5.2
       msw:
-        specifier: 2.12.14
+        specifier: 'catalog:'
         version: 2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       oxlint:
         specifier: 'catalog:'
@@ -3165,7 +3219,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   applications/meet:
@@ -3351,7 +3405,7 @@ importers:
         specifier: 'catalog:'
         version: 1.8.12
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
     devDependencies:
       '@proton/eslint-config-proton':
@@ -3388,10 +3442,10 @@ importers:
         specifier: ^6.1.2
         version: 6.1.2(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@vitest/browser@5.0.5)(vitest@5.0.5)
       '@vitest/ui':
-        specifier: 5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(vitest@5.0.5)
       dotenv:
         specifier: ^17.4.2
@@ -3403,7 +3457,7 @@ importers:
         specifier: 'catalog:'
         version: 21.0.1
       html-webpack-plugin:
-        specifier: ^5.6.8
+        specifier: 'catalog:'
         version: 5.6.8(webpack@5.111.1)
       path-browserify:
         specifier: ^1.0.1
@@ -3415,7 +3469,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   applications/meet-desktop:
@@ -3521,7 +3575,7 @@ importers:
         specifier: 'catalog:'
         version: 10.1.0
       css-loader:
-        specifier: ^7.1.5
+        specifier: 'catalog:'
         version: 7.1.5(webpack@5.111.1)
       dotenv:
         specifier: ^17.4.2
@@ -3539,7 +3593,7 @@ importers:
         specifier: ^4.17.1
         version: 4.17.1(@typescript-eslint/utils@8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0))(eslint-import-resolver-node@0.3.9(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
       fork-ts-checker-webpack-plugin:
-        specifier: ^9.1.0
+        specifier: 'catalog:'
         version: 9.1.0(@typescript/typescript6@6.0.2)(webpack@5.111.1)
       globals:
         specifier: ^14.0.0
@@ -3557,7 +3611,7 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.111.1)
       ts-loader:
-        specifier: ^9.6.2
+        specifier: 'catalog:'
         version: 9.6.2(@typescript/typescript6@6.0.2)(loader-utils@2.0.4)(webpack@5.111.1)
       ts-node:
         specifier: 'catalog:'
@@ -3569,7 +3623,7 @@ importers:
         specifier: 'catalog:'
         version: 8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   applications/pass:
@@ -3708,7 +3762,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
       webpack-manifest-plugin:
         specifier: ^6.0.1
@@ -3738,7 +3792,7 @@ importers:
         specifier: 'catalog:'
         version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       browserslist:
-        specifier: ^4.29.3
+        specifier: 'catalog:'
         version: 4.29.3
       electron-log:
         specifier: ^5.4.4
@@ -3802,7 +3856,7 @@ importers:
         specifier: ^1.8.0
         version: 1.8.0
       '@pmmmwh/react-refresh-webpack-plugin':
-        specifier: ^0.6.3
+        specifier: 'catalog:'
         version: 0.6.3(react-refresh@0.19.0)(type-fest@5.9.0)(webpack-dev-server@5.2.6)(webpack-hot-middleware@2.26.1)(webpack@5.111.1)
       '@proton/eslint-config-proton':
         specifier: workspace:^
@@ -3880,7 +3934,7 @@ importers:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       mini-css-extract-plugin:
-        specifier: ^2.10.2
+        specifier: 'catalog:'
         version: 2.10.2(webpack@5.111.1)
       node-loader:
         specifier: ^2.1.0
@@ -3889,7 +3943,7 @@ importers:
         specifier: 'catalog:'
         version: 3.9.10
       ts-loader:
-        specifier: ^9.6.2
+        specifier: 'catalog:'
         version: 9.6.2(@typescript/typescript6@6.0.2)(loader-utils@2.0.4)(webpack@5.111.1)
       ts-node:
         specifier: 'catalog:'
@@ -3898,7 +3952,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   applications/pass-desktop/native:
@@ -3986,7 +4040,7 @@ importers:
         version: 0.12.0
     devDependencies:
       '@pmmmwh/react-refresh-webpack-plugin':
-        specifier: ^0.6.3
+        specifier: 'catalog:'
         version: 0.6.3(react-refresh@0.19.0)(type-fest@5.9.0)(webpack-dev-server@6.0.0)(webpack-hot-middleware@2.26.1)(webpack@5.111.1)
       '@proton/eslint-config-proton':
         specifier: workspace:^
@@ -4052,7 +4106,7 @@ importers:
         specifier: ^5.2.2
         version: 5.2.2(webpack@5.111.1)
       copy-webpack-plugin:
-        specifier: ^14.0.0
+        specifier: 'catalog:'
         version: 14.0.0(webpack@5.111.1)
       cross-env:
         specifier: 'catalog:'
@@ -4064,7 +4118,7 @@ importers:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       mini-css-extract-plugin:
-        specifier: ^2.10.2
+        specifier: 'catalog:'
         version: 2.10.2(webpack@5.111.1)
       prettier:
         specifier: 'catalog:'
@@ -4085,13 +4139,13 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
       webpack-bundle-analyzer:
         specifier: ^5.4.0
         version: 5.4.0
       webpack-dev-server:
-        specifier: ^6.0.0
+        specifier: 'catalog:'
         version: 6.0.0(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
 
   applications/pdf-ui:
@@ -4137,7 +4191,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vite:
-        specifier: ^8.3.4
+        specifier: 'catalog:'
         version: 8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
 
   applications/preview-sandbox:
@@ -4255,7 +4309,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
     devDependencies:
       '@playwright/test':
@@ -4286,7 +4340,7 @@ importers:
         specifier: ^14.1.1
         version: 14.1.1(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)
       mini-css-extract-plugin:
-        specifier: ^2.10.2
+        specifier: 'catalog:'
         version: 2.10.2(webpack@5.111.1)
       netlify-cli:
         specifier: 27.10.2
@@ -4410,7 +4464,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   applications/vpn-settings:
@@ -4552,7 +4606,7 @@ importers:
         specifier: ^6.1.2
         version: 6.1.2(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@vitest/browser@5.0.5)(vitest@5.0.5)
       cross-env:
         specifier: 'catalog:'
@@ -4561,7 +4615,7 @@ importers:
         specifier: 'catalog:'
         version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       html-webpack-plugin:
-        specifier: ^5.6.8
+        specifier: 'catalog:'
         version: 5.6.8(webpack@5.111.1)
       jsdom:
         specifier: 26.1.0
@@ -4573,16 +4627,16 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vite:
-        specifier: ^8.3.4
+        specifier: 'catalog:'
         version: 8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
       webpack-dev-server:
-        specifier: ^6.0.0
+        specifier: 'catalog:'
         version: 6.0.0(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
 
   applications/wallet:
@@ -4699,7 +4753,7 @@ importers:
         specifier: 'catalog:'
         version: 1.8.12
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
     devDependencies:
       '@proton/eslint-config-proton':
@@ -4742,7 +4796,7 @@ importers:
         specifier: 'catalog:'
         version: 21.0.1
       html-webpack-plugin:
-        specifier: ^5.6.8
+        specifier: 'catalog:'
         version: 5.6.8(webpack@5.111.1)
       prettier:
         specifier: 'catalog:'
@@ -4754,7 +4808,7 @@ importers:
         specifier: ^3.6.0
         version: 3.6.0(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/account:
@@ -5071,7 +5125,7 @@ importers:
         specifier: 'catalog:'
         version: 16.0.0
       msw:
-        specifier: 2.12.14
+        specifier: 'catalog:'
         version: 2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       prettier:
         specifier: 'catalog:'
@@ -5126,7 +5180,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vite:
-        specifier: ^8.3.4
+        specifier: 'catalog:'
         version: 8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
       vite-plugin-mkcert:
         specifier: ^1.17.12
@@ -5193,7 +5247,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/atoms:
@@ -5405,7 +5459,7 @@ importers:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       msw:
-        specifier: 2.12.14
+        specifier: 'catalog:'
         version: 2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       oxlint:
         specifier: 'catalog:'
@@ -5651,7 +5705,7 @@ importers:
         specifier: 'catalog:'
         version: 16.0.0
       postcss:
-        specifier: ^8.5.30
+        specifier: 'catalog:'
         version: 8.5.30
       serve:
         specifier: ^14.2.6
@@ -5660,7 +5714,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vite:
-        specifier: ^8.3.4
+        specifier: 'catalog:'
         version: 8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
       vite-plugin-mkcert:
         specifier: ^1.17.12
@@ -5721,10 +5775,10 @@ importers:
         specifier: ^6.1.2
         version: 6.1.2(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@vitest/browser@5.0.5)(vitest@5.0.5)
       '@vitest/ui':
-        specifier: 5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(vitest@5.0.5)
       eslint:
         specifier: 'catalog:'
@@ -5739,7 +5793,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/colors:
@@ -5791,7 +5845,7 @@ importers:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       ts-loader:
-        specifier: ^9.6.2
+        specifier: 'catalog:'
         version: 9.6.2(@typescript/typescript6@6.0.2)(loader-utils@2.0.4)(webpack@5.111.1)
       ts-node:
         specifier: 'catalog:'
@@ -5800,7 +5854,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
       webpack-cli:
         specifier: ^7.2.3
@@ -6101,7 +6155,7 @@ importers:
         specifier: ^30.5.2
         version: 30.5.2
       msw:
-        specifier: 2.12.14
+        specifier: 'catalog:'
         version: 2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       prettier:
         specifier: 'catalog:'
@@ -6113,7 +6167,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/console:
@@ -6137,10 +6191,10 @@ importers:
         specifier: ^6.1.2
         version: 6.1.2(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@vitest/browser@5.0.5)(vitest@5.0.5)
       '@vitest/ui':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(vitest@5.0.5)
       eslint:
         specifier: 'catalog:'
@@ -6152,7 +6206,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/cross-storage:
@@ -6292,7 +6346,7 @@ importers:
         specifier: 'catalog:'
         version: 30.5.2(@babel/core@7.29.7(supports-color@11.0.0))(supports-color@11.0.0)
       browserslist:
-        specifier: ^4.29.3
+        specifier: 'catalog:'
         version: 4.29.3
       core-js:
         specifier: 'catalog:'
@@ -6441,7 +6495,7 @@ importers:
         specifier: 'catalog:'
         version: 30.5.2(@babel/core@7.29.7(supports-color@11.0.0))(supports-color@11.0.0)
       browserslist:
-        specifier: ^4.29.3
+        specifier: 'catalog:'
         version: 4.29.3
       core-js:
         specifier: 'catalog:'
@@ -6598,7 +6652,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       browserslist:
-        specifier: ^4.29.3
+        specifier: 'catalog:'
         version: 4.29.3
       esbuild:
         specifier: ^0.28.1
@@ -6619,7 +6673,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   packages/drive-store:
@@ -7047,13 +7101,13 @@ importers:
         specifier: 'catalog:'
         version: 3.9.10
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@29.1.1(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/global-types: {}
@@ -7181,7 +7235,7 @@ importers:
         specifier: 'catalog:'
         version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
       typescript:
         specifier: ^6.0.3
@@ -7289,7 +7343,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/llm:
@@ -7835,10 +7889,10 @@ importers:
         specifier: ^6.1.2
         version: 6.1.2(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@vitest/browser@5.0.5)(vitest@5.0.5)
       '@vitest/ui':
-        specifier: 5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(vitest@5.0.5)
       eslint:
         specifier: 'catalog:'
@@ -7853,7 +7907,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/metrics:
@@ -7930,10 +7984,10 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitest/coverage-v8':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@vitest/browser@5.0.5)(vitest@5.0.5)
       '@vitest/ui':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(vitest@5.0.5)
       eslint:
         specifier: 'catalog:'
@@ -7942,7 +7996,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/offers-delivery:
@@ -8073,7 +8127,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/pack:
@@ -8100,7 +8154,7 @@ importers:
         specifier: ^7.29.7
         version: 7.29.7
       '@pmmmwh/react-refresh-webpack-plugin':
-        specifier: ^0.6.3
+        specifier: 'catalog:'
         version: 0.6.3(react-refresh@0.19.0)(type-fest@5.9.0)(webpack-dev-server@6.0.0)(webpack-hot-middleware@2.26.1)(webpack@5.111.1)
       '@proton/shared':
         specifier: workspace:^
@@ -8121,19 +8175,19 @@ importers:
         specifier: ^0.4.24
         version: 0.4.24
       browserslist:
-        specifier: ^4.29.3
+        specifier: 'catalog:'
         version: 4.29.3
       commander:
         specifier: 'catalog:'
         version: 14.0.3
       copy-webpack-plugin:
-        specifier: ^14.0.0
+        specifier: 'catalog:'
         version: 14.0.0(webpack@5.111.1)
       core-js:
         specifier: 'catalog:'
         version: 3.50.0
       css-loader:
-        specifier: ^7.1.5
+        specifier: 'catalog:'
         version: 7.1.5(webpack@5.111.1)
       esbuild-loader:
         specifier: ^4.5.0
@@ -8151,19 +8205,19 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1(favicons@7.3.1(@types/node@24.19.0))(webpack@5.111.1)
       fork-ts-checker-webpack-plugin:
-        specifier: ^9.1.0
+        specifier: 'catalog:'
         version: 9.1.0(@typescript/typescript6@6.0.2)(webpack@5.111.1)
       html-webpack-plugin:
-        specifier: ^5.6.8
+        specifier: 'catalog:'
         version: 5.6.8(webpack@5.111.1)
       mini-css-extract-plugin:
-        specifier: ^2.10.2
+        specifier: 'catalog:'
         version: 2.10.2(webpack@5.111.1)
       portfinder:
         specifier: ^1.0.38
         version: 1.0.38(supports-color@11.0.0)
       postcss:
-        specifier: ^8.5.30
+        specifier: 'catalog:'
         version: 8.5.30
       postcss-color-functional-notation:
         specifier: ^6.0.14
@@ -8178,7 +8232,7 @@ importers:
         specifier: ^0.19.0
         version: 0.19.0
       sass:
-        specifier: ^1.80.3
+        specifier: 'catalog:'
         version: 1.97.1
       sass-loader:
         specifier: ^17.0.1
@@ -8190,7 +8244,7 @@ importers:
         specifier: ^5.6.1
         version: 5.6.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(webpack@5.111.1)
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
       webpack-bundle-analyzer:
         specifier: ^5.4.0
@@ -8199,7 +8253,7 @@ importers:
         specifier: ^7.2.3
         version: 7.2.3(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@6.0.0)(webpack@5.111.1)
       webpack-dev-server:
-        specifier: ^6.0.0
+        specifier: 'catalog:'
         version: 6.0.0(supports-color@11.0.0)(webpack-cli@7.2.3)(webpack@5.111.1)
       webpack-retry-chunk-load-plugin:
         specifier: ^3.1.1
@@ -8456,7 +8510,7 @@ importers:
         specifier: 'catalog:'
         version: 3.10.2
       msw:
-        specifier: 2.12.14
+        specifier: 'catalog:'
         version: 2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       openapi-types:
         specifier: ^12.1.3
@@ -8465,13 +8519,13 @@ importers:
         specifier: 'catalog:'
         version: 3.9.10
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
 
   packages/pass/docs/starlight:
@@ -9249,7 +9303,7 @@ importers:
         specifier: ^5.0.5
         version: 5.0.5(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(playwright@1.63.0)(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(vitest@5.0.5)
       '@vitest/coverage-v8':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@vitest/browser@5.0.5)(vitest@5.0.5)
       '@webgpu/types':
         specifier: ^0.1.74
@@ -9267,7 +9321,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/sieve:
@@ -9344,7 +9398,7 @@ importers:
   packages/styles:
     devDependencies:
       sass:
-        specifier: ^1.80.3
+        specifier: 'catalog:'
         version: 1.97.1
       stylelint:
         specifier: 'catalog:'
@@ -9543,7 +9597,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/vpn:
@@ -9637,10 +9691,10 @@ importers:
         specifier: ^6.1.2
         version: 6.1.2(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@vitest/browser@5.0.5)(vitest@5.0.5)
       '@vitest/ui':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(vitest@5.0.5)
       eslint:
         specifier: 'catalog:'
@@ -9655,7 +9709,7 @@ importers:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/wallet:
@@ -9761,10 +9815,10 @@ importers:
         specifier: ^6.1.2
         version: 6.1.2(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@vitest/browser@5.0.5)(vitest@5.0.5)
       '@vitest/ui':
-        specifier: 5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(vitest@5.0.5)
       eslint:
         specifier: 'catalog:'
@@ -9776,7 +9830,7 @@ importers:
         specifier: ^3.6.0
         version: 3.6.0(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/wasm/andromeda: {}
@@ -9932,7 +9986,7 @@ importers:
         specifier: 'catalog:'
         version: 3.9.10
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
       typescript:
         specifier: 'catalog:'
@@ -9999,16 +10053,16 @@ importers:
         specifier: 'catalog:'
         version: 3.9.10
       sass:
-        specifier: ^1.80.3
+        specifier: 'catalog:'
         version: 1.97.1
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
       vite:
-        specifier: ^8.3.4
+        specifier: 'catalog:'
         version: 8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
       wait-on:
         specifier: ^9.5.1
@@ -10084,7 +10138,7 @@ importers:
         specifier: 'catalog:'
         version: 10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
       typescript:
         specifier: 'catalog:'
@@ -10114,7 +10168,7 @@ importers:
         specifier: ^7.8.5
         version: 7.8.5
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
       yaml:
         specifier: ^2.9.1
@@ -10175,7 +10229,7 @@ importers:
         specifier: 'catalog:'
         version: 4.18.1
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
       typescript:
         specifier: 'catalog:'
@@ -10279,10 +10333,10 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
       webpack:
-        specifier: ^5.111.1
+        specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
     devDependencies:
       '@proton/jest-swc-preset':
@@ -10353,7 +10407,7 @@ importers:
   utilities/lumo-dev-proxy:
     dependencies:
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
     devDependencies:
       '@proton/eslint-config-proton':
@@ -10400,13 +10454,13 @@ importers:
         specifier: 'catalog:'
         version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       tsx:
-        specifier: ^4.23.13
+        specifier: 'catalog:'
         version: 4.23.15
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
       vitest:
-        specifier: ^5.0.5
+        specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.0)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.1)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2))(vite@8.3.4(@types/node@24.19.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   utilities/publish: {}
@@ -10472,7 +10526,7 @@ importers:
         specifier: 'catalog:'
         version: 10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
       typescript:
         specifier: 'catalog:'
@@ -10496,7 +10550,7 @@ importers:
         specifier: ^2.4.2
         version: 2.4.2
       tsx:
-        specifier: ^4.23.15
+        specifier: 'catalog:'
         version: 4.23.15
     devDependencies:
       '@proton/jest-swc-preset':

@@ -88,14 +88,14 @@
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
         "cross-env": "catalog:",
-        "html-webpack-plugin": "^5.6.8",
+        "html-webpack-plugin": "catalog:",
         "jest": "catalog:",
         "jest-junit": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "prettier": "catalog:",
         "typescript": "catalog:",
-        "webpack": "^5.111.1",
-        "webpack-dev-server": "^6.0.0"
+        "webpack": "catalog:",
+        "webpack-dev-server": "catalog:"
     }
 }
