@@ -248,3 +248,9 @@ export const isNoReplyEmail = (email: string) => {
     const normalizedLocalPart = localPart.replace(/[._-]/g, ''); // Remove dots, underscores, and hyphens
     return normalizedLocalPart.includes('noreply') || normalizedLocalPart.includes('donotreply');
 };
+
+/**
+ * Whether an email adds information when displayed next to a name, i.e. both are set and the name isn't the email itself.
+ */
+export const shouldDisplayEmailNextToName = (name: string | null | undefined, email: string | null | undefined) =>
+    !!name && !!email && name.toLowerCase() !== email.toLowerCase();

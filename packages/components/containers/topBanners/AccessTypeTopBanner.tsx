@@ -5,6 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import { SessionAccessTypeFlag, selfAccessTypeMask } from '@proton/shared/lib/authentication/sessionAccessType';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { shouldDisplayEmailNextToName } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -40,7 +41,7 @@ const AccessTypeTopBanner = () => {
 
     const email = user.Email;
     const displayName = user.Name || user.DisplayName || email;
-    const maybeEmail = email !== displayName ? `(${email})` : null;
+    const maybeEmail = shouldDisplayEmailNextToName(displayName, email) ? `(${email})` : null;
     const username = [displayName, maybeEmail].filter(isTruthy).join(' ');
 
     // A session can hold several of these at once, so each flag gets its own banner rather than

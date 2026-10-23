@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { shouldDisplayEmailNextToName } from '@proton/shared/lib/helpers/email';
 
 import Collapsible from '../../components/collapsible/Collapsible';
 import CollapsibleContent from '../../components/collapsible/CollapsibleContent';
@@ -10,10 +11,10 @@ import CollapsibleHeaderIconButton from '../../components/collapsible/Collapsibl
 export const AdministratorItem = ({ name, email }: { name: string; email: string }) => {
     return (
         <div className="w-full text-ellipsis">
-            <span className="text-bold" title={name}>
-                {name}
+            <span className="text-bold" title={name || email}>
+                {name || email}
             </span>{' '}
-            {email && email !== name && (
+            {shouldDisplayEmailNextToName(name, email) && (
                 <span className="color-weak" title={email}>
                     ({email})
                 </span>

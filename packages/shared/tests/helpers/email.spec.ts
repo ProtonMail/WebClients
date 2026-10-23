@@ -7,6 +7,7 @@ import {
     isNoReplyEmail,
     lowercaseEmailDomain,
     parseMailtoURL,
+    shouldDisplayEmailNextToName,
     validateDomain,
     validateEmailAddress,
 } from '../../lib/helpers/email';
@@ -295,9 +296,25 @@ describe('email', () => {
         });
 
         it('should lowercase all emails', () => {
-            expect(lowercaseEmailDomain('alice@gmaiI.com AAA bob@gmaiI.com')).toBe(
-                'alice@gmaii.com AAA bob@gmaii.com'
-            );
+            expect(lowercaseEmailDomain('alice@gmaiI.com AAA bob@gmaiI.com')).toBe('alice@gmaii.com AAA bob@gmaii.com');
+        });
+    });
+
+    describe('shouldDisplayEmailNextToName', () => {
+        it('should display the email when it differs from the name', () => {
+            expect(shouldDisplayEmailNextToName('Alice', 'alice@proton.me')).toBe(true);
+        });
+
+        it('should not display the email when it is the name, ignoring case', () => {
+            expect(shouldDisplayEmailNextToName('alice@proton.me', 'alice@proton.me')).toBe(false);
+            expect(shouldDisplayEmailNextToName('Alice@Proton.me', 'alice@proton.me')).toBe(false);
+        });
+
+        it('should not display the email when either value is missing', () => {
+            expect(shouldDisplayEmailNextToName('Alice', '')).toBe(false);
+            expect(shouldDisplayEmailNextToName('Alice', undefined)).toBe(false);
+            expect(shouldDisplayEmailNextToName('', 'alice@proton.me')).toBe(false);
+            expect(shouldDisplayEmailNextToName(null, 'alice@proton.me')).toBe(false);
         });
     });
 });

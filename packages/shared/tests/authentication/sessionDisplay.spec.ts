@@ -33,8 +33,22 @@ describe('getSessionDisplayData', () => {
             name: 'Display Name',
             initials: 'DN',
             email: 'user@proton.me',
+            showEmail: true,
             maybeEmailInBrackets: '<user@proton.me>',
             path: '/u/4',
+        });
+    });
+
+    it('hides the email when it is the name to display', () => {
+        const session = getSession(0);
+        session.remote.DisplayName = '';
+        session.remote.Username = '';
+
+        expect(getSessionDisplayData(session)).toMatchObject({
+            name: 'user@proton.me',
+            email: 'user@proton.me',
+            showEmail: false,
+            maybeEmailInBrackets: '',
         });
     });
 });

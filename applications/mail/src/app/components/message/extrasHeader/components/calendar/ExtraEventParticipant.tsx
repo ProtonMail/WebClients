@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { buildMailTo } from '@proton/shared/lib/helpers/email';
+import { buildMailTo, shouldDisplayEmailNextToName } from '@proton/shared/lib/helpers/email';
 import type { Participant } from '@proton/shared/lib/interfaces/calendar/Invite';
 import clsx from '@proton/utils/clsx';
 
@@ -11,7 +11,9 @@ interface Props {
 const ExtraEventParticipant = ({ participant, isOrganizer = false }: Props) => {
     const { displayEmail, displayName } = participant;
 
-    const displayText = displayName !== displayEmail ? `${displayName} <${displayEmail}>` : displayEmail;
+    const displayText = shouldDisplayEmailNextToName(displayName, displayEmail)
+        ? `${displayName} <${displayEmail}>`
+        : displayEmail;
 
     return (
         <div className={clsx(['text-ellipsis', isOrganizer && 'mb-1'])}>

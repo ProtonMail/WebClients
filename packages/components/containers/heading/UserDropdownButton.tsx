@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
 import type { ThemeColor } from '@proton/colors/types';
+import { shouldDisplayEmailNextToName } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import isTruthy from '@proton/utils/isTruthy';
@@ -29,7 +30,10 @@ const UserDropdownButton = (
     const nameToDisplay = DisplayName || Name || ''; // nameToDisplay can be falsy for external account
     // DisplayName is null for VPN users without any addresses, cast to undefined in case Name would be null too.
     const initials = getInitials(nameToDisplay || Email || '');
-    const title = [nameToDisplay, `<${Email}>`].filter(isTruthy).join(' ');
+    const showEmail = shouldDisplayEmailNextToName(nameToDisplay, Email);
+    // A name that is just the email is displayed like a missing name
+    const showName = !!nameToDisplay && (showEmail || !Email);
+    const title = [showName ? nameToDisplay : Email, showEmail && `<${Email}>`].filter(isTruthy).join(' ');
 
     return (
         <button
@@ -42,10 +46,10 @@ const UserDropdownButton = (
         >
             <DropdownCaret className="md:hidden ml-1 color-weak" icon={dropdownIcon} isOpen={isOpen} />
 
-            {nameToDisplay ? (
+            {showName ? (
                 <span className="flex-1 lh130 user-dropdown-text">
                     <span className="block text-ellipsis text-sm user-dropdown-displayName">{nameToDisplay}</span>
-                    {Email ? (
+                    {showEmail ? (
                         <span className="block text-ellipsis color-weak text-sm m-0 lh-rg user-dropdown-email">
                             {Email}
                         </span>
