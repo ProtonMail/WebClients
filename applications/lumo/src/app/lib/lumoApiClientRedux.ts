@@ -2,6 +2,12 @@ import { c } from 'ttag';
 
 import { formatRequestedModel, resolveChatModel } from '@proton/lumo-api-client/core/chat-completions';
 import { LumoApiClient } from '@proton/lumo-api-client/core/client';
+import {
+    ContextLengthExceededError,
+    getContextLengthExceededUpstreamMessage,
+    isContextLengthExceededApiError,
+    isContextLengthExceededError,
+} from '@proton/lumo-api-client/core/context-length';
 import { getDesktopLumoApiClientConfig } from '@proton/lumo-api-client/core/desktop-tools';
 import { getTerminalTypeFromApiError } from '@proton/lumo-api-client/core/generation-terminal';
 import type {
@@ -36,12 +42,6 @@ import {
 } from '../redux/slices/core/messages';
 import type { LumoDispatch, LumoState } from '../redux/store';
 import { attachmentDataCache } from '../services/attachmentDataCache';
-import {
-    ContextLengthExceededError,
-    getContextLengthExceededUpstreamMessage,
-    isContextLengthExceededApiError,
-    isContextLengthExceededError,
-} from '../services/errors/contextLengthError';
 import { recordLastRequest } from '../services/feedback/lastRequestStore';
 import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
 import { ConversationStatus, Role } from '../types';
