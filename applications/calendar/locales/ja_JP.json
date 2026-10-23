@@ -56,6 +56,9 @@
       "Add a date": [
         "日付を追加"
       ],
+      "Add a payment method": [
+        "お支払い方法を追加"
+      ],
       "Add account": [
         "アカウントを追加"
       ],
@@ -335,6 +338,9 @@
       "Display navigation bar": [
         "ナビゲーションバーを表示する"
       ],
+      "Don't show this offer again": [
+        "このオファーを今後表示しない"
+      ],
       "Done": [
         "完了"
       ],
@@ -419,9 +425,6 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } を入手"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "無料の${ BRAND_NAME }アドレスを入手"
-      ],
       "Get in touch": [
         "連絡する"
       ],
@@ -460,6 +463,9 @@
       ],
       "Go to the next available appointment": [
         "次の利用可能な予定へ移動"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ],
       "Got it": [
         "はい"
@@ -671,6 +677,9 @@
       "Preview contact": [
         "連絡先をプレビュー"
       ],
+      "Preview logs": [
+        "ログをプレビュー"
+      ],
       "Previous": [
         "前へ"
       ],
@@ -872,6 +881,9 @@
       "Skip verification": [
         "検証をスキップする"
       ],
+      "Special Offer": [
+        "特別オファー"
+      ],
       "Start import": [
         "インポート開始"
       ],
@@ -892,6 +904,9 @@
       ],
       "Switch or add account": [
         "アカウントを切り替え・追加"
+      ],
+      "Switch to ${ planName }": [
+        "${ planName } に切り替え"
       ],
       "Take a tour": [
         "ツアーを開始"
@@ -1122,6 +1137,9 @@
       "Domains": [
         "ドメイン"
       ],
+      "Managed Service Provider": [
+        "マネージドサービスプロバイダー"
+      ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "マネージドサービスプロバイダーアドオンを導入している組織は、子会社組織を作成および管理できます。"
       ],
@@ -1198,6 +1216,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "メールの生産性を新しいレベルに。${ BRAND_NAME }Scribeがメールの作成、返信、校正をお手伝いします。"
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "メールの生産性を新たな次元へ。${ LUMO_SHORT_APP_NAME } がメールの作成、返信、校正をサポートします。"
       ]
     },
     "Attached ics file error": {
@@ -1243,6 +1264,9 @@
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_LUMO_SEATS }の${ LUMO_SHORT_APP_NAME }シートをご利用いただけます。"
       ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "トライアル期間中は、文章作成アシスタント ${ LUMO_SHORT_APP_NAME } を最大 ${ TRIAL_MAX_SCRIBE_SEATS } シートまでご利用いただけます。"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_SCRIBE_SEATS }のScribeシートをご利用いただけます。"
       ],
@@ -1279,6 +1303,11 @@
         "プレミアムパスワードマネージャー"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30日間の返金保証：ご購入から30日以内にキャンセルし、${ customerSupportLink } までご連絡いただければ、返金いたします。"
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
@@ -1306,11 +1335,101 @@
     "bfcampaign2026: Action": {
       "Black Friday": [
         "ブラックフライデー"
+      ],
+      "Get the deal": [
+        "この特典を利用する"
       ]
     },
     "bfcampaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GBのストレージ"
+      ],
+      "2 individual accounts": [
+        "2つの独立アカウント"
+      ],
+      "2 TB of secure storage": [
+        "2 TBの安全なストレージ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GBのストレージ（現在のプランの40倍）"
+      ],
+      "3 TB of secure storage": [
+        "3 TBの安全なストレージ"
+      ],
+      "500 GB of secure storage": [
+        "500 GBの安全なストレージ"
+      ],
+      "6 individual accounts": [
+        "6つの独立アカウント"
+      ],
+      "Built-in 2FA authenticator": [
+        "2要素認証機能を内蔵"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は標準の月額料金に基づいて計算されます。今回の請求期間終了時に、サブスクリプションは通常の年間料金で更新されます。"
+      ],
+      "Online document editor": [
+        "オンライン文書エディタ"
+      ],
+      "Recover previous file versions": [
+        "過去のファイルバージョンを復元"
+      ],
+      "Stronger protection against cyber threats": [
+        "サイバー脅威に対するより強力な保護"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "無制限のフォルダー、ラベル、フィルター"
+      ],
       "Use your own email domain": [
         "独自のメールドメインを使用"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }のプレミアム機能"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }のプレミアム機能"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }のプレミアム機能"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }のプレミアム機能"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }のプレミアム機能"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "今年最大のセール"
+      ],
+      "Black Friday": [
+        "ブラックフライデー"
+      ],
+      "for 12 months": [
+        "12か月分"
+      ],
+      "Last chance to save big": [
+        "大幅割引のラストチャンス"
+      ],
+      "Protect your entire tribe": [
+        "家族全員を保護"
+      ],
+      "Protection for two in a single plan": [
+        "1つのプランで2人を保護"
       ]
     },
     "Billing cycle option": {
@@ -1708,6 +1827,15 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 人のユーザー"
+      ],
+      "Amount due": [
+        "ご請求額"
+      ],
+      "Amount due after trial": [
+        "トライアル終了後のお支払い額"
+      ],
+      "Amount due now": [
+        "今すぐのお支払い額"
       ],
       "Subtotal": [
         "小計"
@@ -3394,6 +3522,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "あなたのユーザー名は${ user.Name }です。 ${ emailAddress }を作成するには、設定 > 署名とアドレス > 短縮ドメイン (@pm.me) に移動してください。"
       ],
+      "A contact with this email address already exists": [
+        "このメールアドレスを持つ連絡先は既に存在します"
+      ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
@@ -3408,9 +3539,6 @@
       ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "すべてのストレージ容量が割り当てられています。他のユーザーに割り当てられたストレージ容量を小さくしてください。"
       ],
       "Already a member of this calendar": [
         "すでにこのカレンダーのメンバーです"
@@ -3442,9 +3570,6 @@
       "Cannot export this contact": [
         "この連絡先はエクスポートできません"
       ],
-      "Cannot verify the author of this file": [
-        "このファイルの作成者を確認できません"
-      ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
@@ -3469,20 +3594,8 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "コンテンツ検索を有効にできません。アプリケーションを再起動するか、データを消去してください。"
       ],
-      "Copying item to a non-folder is not allowed": [
-        "フォルダではない場所へのアイテムのコピーはできません"
-      ],
-      "Could not load sharing details": [
-        "共有の詳細を読み込めませんでした"
-      ],
-      "Could not unlock the parent folder": [
-        "親フォルダをアンロックできませんでした"
-      ],
-      "Could not unlock this item": [
-        "このアイテムをアンロックできませんでした"
-      ],
-      "Creating folders in non-folders is not allowed": [
-        "フォルダではない場所にフォルダを作成することはできません"
+      "Could not grant access to the organization key": [
+        "組織の鍵へのアクセス権を付与できませんでした"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "復号エラー：この予定の内容の復号に失敗しました。"
@@ -3562,9 +3675,6 @@
       "Failed to update settings": [
         "設定の更新に失敗しました"
       ],
-      "File has no revision": [
-        "ファイルに修正はありません"
-      ],
       "First name is too long": [
         "名前が長すぎます。"
       ],
@@ -3616,9 +3726,6 @@
       "Invalid public key file": [
         "無効な公開鍵ファイル"
       ],
-      "Invalid URL": [
-        "無効なURL"
-      ],
       "Invalid VAT number": [
         "無効なVAT番号です"
       ],
@@ -3640,9 +3747,6 @@
       "Last name is too long": [
         "姓が長すぎます。"
       ],
-      "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "レガシー公開リンクは変更できません。新しい公開リンクを再生成してください。"
-      ],
       "Location is required": [
         "位置情報は必須です"
       ],
@@ -3652,14 +3756,8 @@
       "Missing key packet": [
         "キーパケットが見つかりません"
       ],
-      "Missing organization public key": [
-        "組織の公開鍵が見つかりません"
-      ],
       "Missing signature": [
         "署名がありません"
-      ],
-      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
-        "名前は${ MAX_NODE_NAME_LENGTH }文字以内で入力してください"
       ],
       "Name required": [
         "名前は必須です"
@@ -3682,9 +3780,6 @@
       "No external key retrieved for user is valid for sending": [
         "送信に有効なキーが取得されませんでした"
       ],
-      "No file data was received. Please try again.": [
-        "ファイルデータを受け取っていません。再度お試しください。"
-      ],
       "No valid address found": [
         "有効なアドレスが見つかりません"
       ],
@@ -3703,9 +3798,6 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
       ],
-      "Operation aborted": [
-        "操作は中断されました"
-      ],
       "Organization key is not decrypted": [
         "組織の鍵が復号されていません"
       ],
@@ -3714,9 +3806,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "非プライベートユーザーを作成するには、組織の鍵を有効にする必要があります"
-      ],
-      "Part of the file appears to be corrupted": [
-        "ファイルの一部が破損しているようです"
       ],
       "Password is required": [
         "パスワードは必須です"
@@ -3745,17 +3834,8 @@
       "Please complete the billing details": [
         "請求の詳細をご記入ください"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "アドレスを追加する前にカスタム ドメインを構成してください。"
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "ユーザーを組織に追加する前に、独自ドメインを設定してください。"
-      ],
       "Please create an address first.": [
         "最初にアドレスを作成してください。"
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "組織にユーザーを追加する前に、マルチユーザー対応を有効にしてください。"
       ],
       "Please enter a valid postal code": [
         "有効な郵便番号を入力してください"
@@ -3786,9 +3866,6 @@
       ],
       "Please select billing state": [
         "請求先の州を選択してください"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "複数のユーザーを管理するには、複数のユーザーを含むビジネスプランにアップグレードしてください。"
       ],
       "Port is required": [
         "ポートは必須です"
@@ -3846,9 +3923,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
-      ],
-      "Something went wrong": [
-        "何か問題が発生しました"
       ],
       "Something went wrong while fetching available domains": [
         "利用可能なドメインのフェッチ中にエラーが発生しました"
@@ -3919,12 +3993,6 @@
       "This folder name is not available. Please choose a different name.": [
         "このフォルダー名は利用できません。別の名前を選択してください。"
       ],
-      "This item is no longer shared": [
-        "このアイテムはもう共有されません"
-      ],
-      "This item is not shared": [
-        "このアイテムは共有されていません"
-      ],
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
@@ -3964,9 +4032,6 @@
       "VAT number must start with ${ prefixes }": [
         "VAT番号は${ prefixes }で始まる必要があります"
       ],
-      "Verification keys are not available": [
-        "検証キーは利用できません"
-      ],
       "We couldn’t send a verification code using this method.": [
         "この方法を使用して認証コードを送信することはできません。"
       ],
@@ -3988,23 +4053,17 @@
       "You cannot enter the organizer's email": [
         "主催者メールアドレスを入力できません"
       ],
-      "You do not have access to this item": [
-        "このアイテムにはアクセスできません"
-      ],
       "You have reached the maximum number of calendars.": [
         "カレンダーの上限数に達しました。"
       ],
       "You have reached the number of contacts limit for your account": [
         "このアカウントの連絡先の数が上限に達しています"
       ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "現在のプランで使用可能なアドレス数の上限に達しました。アドレスを追加するにはプランをアップグレードするか、アカウントに登録済みのアドレスを無効にしてください。"
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
-      ],
       "You must set a name": [
         "名前を設定してください"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "連携可能なアドレス数の上限に達しました"
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
@@ -4368,6 +4427,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "未納の請求書があります。ファミリープランに参加する前にお支払いください。"
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "このファミリーグループにお使いの ${ BRAND_NAME } アカウントをリンクして、すべてのプレミアム機能をご利用いただくための招待が届いています。"
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "あなたのアカウントはこのプランで利用可能なメールアドレスの上限を超えています。${ addressSettingsLink }"
       ],
@@ -4425,6 +4487,12 @@
       ],
       "Security key": [
         "セキュリティキー"
+      ],
+      "Still waiting?": [
+        "まだお待ちですか？"
+      ],
+      "Touch your security key to continue.": [
+        "続行するにはセキュリティキーにタッチしてください。"
       ]
     },
     "fido2: Label": {
@@ -4464,11 +4532,6 @@
       ],
       "Terabyte": [
         "テラバイト"
-      ]
-    },
-    "Filter": {
-      "Pending": [
-        "保留中"
       ]
     },
     "Filter notification": {
@@ -4877,14 +4940,6 @@
         "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "進行中"
-      ],
-      "Migrated": [
-        "移行済み"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。詳細はクリックしてください"
@@ -4918,9 +4973,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
       ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } は、安全な予定同期と暗号化のために ${ BRAND_NAME }アドレスを必要とします。${ claimAddressButton }。"
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
@@ -4948,8 +5000,14 @@
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "${ IDEAL_WERO_BRAND_NAME } のロゴ"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } には文章作成アシスタントが含まれています"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
@@ -5002,8 +5060,11 @@
       "${ storage } storage": [
         "${ storage } ストレージ"
       ],
-      "${ total } user found": [
-        "${ total } 人のユーザーが見つかりました"
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "トライアル期間は残り ${ timeRemaining } です。アクセス権を失わないよう、${ addPaymentMethodLink } を行ってください。${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "トライアル期間は残り ${ timeRemaining } です。サブスクリプションを継続するには ${ addPaymentMethodLink } を行ってください。${ learnMoreLink }"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
@@ -5035,8 +5096,14 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "友達が登録するたびに、クレジットとして**${ referrerRewardAmount }**を獲得できます。"
       ],
+      "1 device per user": [
+        "1ユーザーにつき1台のデバイス"
+      ],
       "1 vault per user": [
         "一人のユーザーにつき一つの保管庫"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30日間の返金保証：ご購入から30日以内にキャンセルし、${ customerSupportLink } までご連絡いただければ、返金いたします。"
       ],
       "A cancellation email will be sent to removed participants.": [
         "削除を行った参加者にはキャンセルメールが送信されます。"
@@ -5092,6 +5159,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "広告主はあなたのブラウジングを追跡してターゲティング広告を表示します。${ VPN_APP_NAME }はトラッカーと広告をブロックすることで、接続を高速化し、オンライン上の体験を向上させます。"
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "アップデート後、Mac からパスワードを求められる場合があります。Mac のロック解除に使用しているパスワードを入力し、「常に許可」をクリックするとサインイン状態が維持されます。${ learnMore }"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
       ],
@@ -5142,6 +5212,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "インポートを破棄してもよろしいですか?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "管理者にプランのアップグレードを依頼するか、${ CALENDAR_APP_NAME } の「予約ページ」サイドバーからページを削除してください。"
       ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "管理者に、プランをアップグレードしていただくか、予約ページサイドバーからページを削除していただくよう依頼してください。"
@@ -5311,6 +5384,9 @@
       "Discard changes?": [
         "変更を破棄してよろしいですか？"
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は通常の月払い料金を基準としています。請求サイクルが終了すると、サブスクリプションは通常の年額料金で更新されます。"
+      ],
       "Discover new features unlocked and start using them right away!": [
         "アンロックされた新機能を見つけて、すぐに使い始めましょう！"
       ],
@@ -5322,6 +5398,9 @@
       ],
       "Display events for calendar ${ Name }": [
         "カレンダー ${ Name } の予定を表示"
+      ],
+      "Do you remember your password?": [
+        "パスワードを覚えていますか？"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "何も表示されませんか？ポップアップブロックをオフにすることを忘れないでください。"
@@ -5473,6 +5552,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "認証アプリにアクセスできなくなった場合は、2要素認証の設定時に提供された16個のバックアップ用リカバリーコードのいずれかを使用できます。${ learnMoreLink }"
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
       ],
@@ -5578,6 +5660,9 @@
       "Location": [
         "位置"
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "ログは、問題が発生する直前に何が起きたかを把握するのに役立ちます。ログにはアプリの操作履歴やエラーメッセージが含まれますが、メッセージ本文の内容は含まれません。"
+      ],
       "Low Priority": [
         "優先度：低"
       ],
@@ -5643,6 +5728,9 @@
       ],
       "No payment is required at this time.": [
         "現時点での支払いは必要ありません。"
+      ],
+      "No payment is required.": [
+        "お支払いは不要です。"
       ],
       "No results found": [
         "該当する項目がありません"
@@ -5764,6 +5852,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "別の支払い方法で再度お試しいただくか、銀行へお問い合わせください。"
       ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "アプリを引き続きご利用いただくには、${ MAIL_APP_NAME } をアップデートしてください。${ downloadUpdate }"
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "プライマリー暗号鍵で再署名できる連絡先を探しています。しばらくお待ちください。"
       ],
@@ -5826,9 +5917,6 @@
       ],
       "Scan the QR code with your mobile device": [
         "携帯デバイスでQRコードを読み込んでください。"
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "移行したい内容を正確に選択してください。それはすべての組織ユーザーに適用されます。"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
@@ -5907,9 +5995,6 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "現在アクセスが集中しているため、一時的にご利用いただけません。後ほど再度お試しください。"
-      ],
-      "Temporarily unavailable. Please check back later.": [
-        "一時的に利用できません。あとでお試しください。"
       ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "組織を保護するために ${ BRAND_NAME } をお選びいただきありがとうございます。"
@@ -5992,14 +6077,14 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "この固有のコードは、ウェブサイトやプロバイダ(ISP)が、位置情報や閲覧履歴をお客様のデバイスと紐づけるのに利用します。"
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "このユーザーはメールアドレスが ${ BRAND_NAME } に登録されていないため、移行することができません。"
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "これにより、現在ログインしているすべてのアカウントからサインアウトされます。"
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "新しい予約ページを追加するには、管理者にお客様のプランをアップグレードするよう依頼してください。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "新しい予約ページを追加するには、${ CALENDAR_APP_NAME } の「予約ページ」サイドバーから既存のページを削除してください。"
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "新しい予約ページを追加するには、予約ページサイドバーから既存のページを削除してください。"
@@ -6015,18 +6100,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "パスワードを忘れないよう、定期的に入力をお願いしております。入力の頻度は徐々に少なくなります。"
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "予定をインポートするには、まず ${ CALENDAR_APP_NAME } に予定のインポート先となるカレンダーを作成してください。"
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "このユーザーを移行するには、${ domainNamesLink } にメールドメインを追加して確認してください"
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "このユーザーを移行するには、${ provider.adminConsoleName }でアーカイブを解除してください。"
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "このユーザーを移行するには、${ provider.adminConsoleName }でアカウントの一時停止を解除してください。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
@@ -6057,6 +6130,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
+      ],
+      "UnionPay logo": [
+        "UnionPayのロゴ"
       ],
       "Upgrade anytime to bring over the rest": [
         "残りを持ち越すためにいつでもアップグレードできます"
@@ -6108,6 +6184,9 @@
       ],
       "We use 3-D Secure to protect your payments": [
         "支払いを保護するために3Dセキュアを使用しています"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "この取引を完了するために、新しいブラウザタブで ${ IDEAL_WERO_BRAND_NAME } にリダイレクトします。ポップアップブロック機能をご利用の場合は、続行するために無効にしてください。"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
@@ -6247,6 +6326,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "試用版 ${ planTitle } のサブスクリプションが有効です。現時点での支払いは必要ありません。 サブスクリプションは試用期間の終了時に自動的に更新されます。"
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "未払いのご請求があります ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "期日が ${ dueDate } の未払いのご請求があります ${ payInvoiceLink }"
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "鍵が復活したため、以下のカレンダーに登録されている予定は復号できるようになりました。"
       ],
@@ -6333,6 +6418,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "無料トライアルが終了しました。チームのアクセスを中断させることなく、アカウントのセキュリティを維持するために、今すぐサブスクリプションにご登録ください。"
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "お客様の無料トライアルは、${ cycle }ヶ月サブスクリプションに移行されました。お客様の更新日は ${ nextBillingDate } です。"
@@ -6588,6 +6676,9 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } ユーザー名"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 文字"
+      ],
       "${ n } month": [
         "${ n } か月"
       ],
@@ -6599,6 +6690,9 @@
       ],
       "Account holder": [
         "アカウント所有者"
+      ],
+      "Account holder name": [
+        "口座名義人名"
       ],
       "Add ${ MEET_APP_NAME } conferencing": [
         "${ MEET_APP_NAME }会議を追加"
@@ -6669,9 +6763,6 @@
       "Calendar": [
         "カレンダー"
       ],
-      "Calendars": [
-        "カレンダー"
-      ],
       "Card details": [
         "カード詳細"
       ],
@@ -6692,6 +6783,12 @@
       ],
       "City": [
         "市区町村"
+      ],
+      "Client": [
+        "クライアント"
+      ],
+      "Client version": [
+        "クライアントのバージョン"
       ],
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
@@ -6776,9 +6873,6 @@
       ],
       "Email format": [
         "メールの形式"
-      ],
-      "Emails": [
-        "メール"
       ],
       "Emails (all messages)": [
         "メール (すべてのメッセージ)"
@@ -7238,6 +7332,9 @@
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
       ],
+      "Customer Support": [
+        "カスタマーサポート"
+      ],
       "Enforcing 2FA for organizations": [
         "組織に2要素認証を適用"
       ],
@@ -7424,6 +7521,9 @@
       ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタントを追加"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 文章作成アシスタントを追加"
       ],
       "Add-on with free trial": [
         "無料トライアル付きアドオン"
@@ -7777,6 +7877,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }執筆アシスタント"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 文章作成アシスタント（拡張アクセス付き）"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "${ LUMO_SHORT_APP_NAME } 文章作成アシスタント（一部機能制限あり）"
       ],
       "${ n } calendar": [
         "${ n } 個のカレンダー"
@@ -8236,6 +8342,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "末尾が ${ Last4 } の ${ Brand }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "ファイルの保存、同期、共有を簡単に行える 1 TB のクラウド ストレージ。エンドツーエンド暗号化により保護されています。"
       ],
@@ -8574,6 +8683,16 @@
         "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "今すぐ試す"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "新しい ${ CALENDAR_APP_NAME } をご利用いただけるようになりました。${ link }"
+      ]
+    },
     "Note": {
       "Note:": [
         "注意:"
@@ -8780,6 +8899,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "最初の月の${ plan }が80%割引になる最後のチャンスです。"
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "${ plan } の初月をこの価格で利用できる最後のチャンスです。"
+      ],
       "Last day to save": [
         "節約できる最後の日"
       ],
@@ -8862,6 +8984,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "短い @pm.me アドレス"
+      ],
       "Storage": [
         "容量"
       ],
@@ -8912,6 +9037,21 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " ${ helpCenterLink }をご覧いただくか、${ contactSupportLink }をご利用ください。"
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "無料トライアル終了後もすべての機能を引き続き利用するには、**お支払い方法を追加**してください。"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**それまではいつでもキャンセルできます。** トライアルが終了するまで、無料で ${ planTitle } をご利用いただけます。"
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**トライアル終了後も継続してご利用いただく場合、** 30日以内にキャンセルすれば日割り計算による返金を受けることができます。"
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**正式なサブスクリプションの開始後も…** 30日以内であればキャンセルして日割り計算による返金を受けることができます。"
+      ],
+      "Add a payment method": [
+        "お支払い方法を追加"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "${ cancelDate }までにいつでもキャンセルできます。"
       ],
@@ -8927,11 +9067,20 @@
       "help center": [
         "ヘルプ センター"
       ],
+      "If you continue after your trial,": [
+        "トライアル終了後も継続してご利用いただく場合、"
+      ],
       "If you need help,": [
         "助けが必要な場合は、"
       ],
       "Once your full subscription starts...": [
         "有料サブスクリプションが開始されると…"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "無料トライアル終了後もすべての機能を引き続き利用するには"
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30日以内にキャンセルすれば、日割り計算による返金を受けることができます。"
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "お客様は引き続き30日以内にキャンセルし、日割り計算での払い戻しを受けることができます。"
@@ -9145,6 +9294,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice }（税別）"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } は ${ PLAN_NAMES[PLANS.PASS] } と組み合わせることはできません。"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } はビジネスプランでのみご利用いただけます。"
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% の税金: ${ taxAmountElement }"
       ],
@@ -9154,8 +9309,17 @@
       "Amount due after trial on ${ formattedDate }": [
         "${ formattedDate } のトライアル後のお支払い額"
       ],
+      "An organization is required for this plan.": [
+        "このプランをご利用いただくには組織の作成が必要です。"
+      ],
       "Billing Country": [
         "請求先の国"
+      ],
+      "Buying credits requires a separate purchase.": [
+        "クレジットの購入には、別途個別のお手続きが必要です。"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "切り替えることにより、お客様は当社の ${ termsLink } に同意したものとみなされます。"
       ],
       "Card number": [
         "カード番号"
@@ -9196,17 +9360,38 @@
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } の購入は1つまでに制限されています。"
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "${ IDEAL_WERO_BRAND_NAME } で支払う"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "トライアル終了後、サブスクリプションを有効化するためには支払い方法が必要です。"
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "以下の理由により、プランの切り替えを行うことができません:"
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "プランを変更する前に、余分なウォレットアカウントを閉じてください。"
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "プランを変更する前に、余分なウォレットを閉じてください。"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet のシート数はメンバー数と一致している必要があります。"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "更新価格は ${ termsAndConditionsLink }に応じて変更される可能性があります。"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe のシート数はメンバー数を超えることはできません。"
       ],
       "Tax ${ rate }%": [
         "税金 ${ rate }%"
@@ -9219,6 +9404,18 @@
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "この割引は ${ renewalsWithCoupon } の更新で有効です。"
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なメールアドレス数が不足しています。"
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なドメイン数が不足しています。"
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なメンバー数が不足しています。"
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "選択したプランでは、お使いのアカウントに必要なストレージ容量が不足しています。"
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "特別割引価格は${ couponRedemptions }ヶ月間有効です。その後、1ヶ月${ renewPriceStr }で自動更新されます。いつでもキャンセル可能です。"
@@ -9244,20 +9441,41 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "この操作により、既存のサブスクリプションが拡張されます。新しいアドオンと、現在の支払間隔の残りの期間に対してのみ課金されます。お客様のサブスクリプションの更新日は変更されません。"
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "この専用サーバーはゲートウェイに割り当てられているため、変更できません。"
+      ],
       "This offer is not available with your current plan.": [
         "この特典は現在のプランではご利用いただけません。"
       ],
       "This payment method will become your new default for all future renewals.": [
         "この支払い方法は、今後のすべての更新について、お客様の新しいデフォルトになります。"
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "このプランでは、お使いのアカウントで利用中の管理機能がサポートされていません。"
+      ],
       "This plan doesn’t support the members on your account.": [
         "このプランは、お客様のアカウントに登録されているメンバーをサポートしていません。"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "現在、このサブスクリプションを完了できません。もう一度お試しください。"
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
       ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "トライアルプランでは ${ LUMO_SHORT_APP_NAME } のシートを追加できません。"
+      ],
+      "Trial plans don’t support custom domains.": [
+        "トライアルプランではカスタムドメインをご利用いただけません。"
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "トライアルプランでは専用 IP をご利用いただけません。"
+      ],
       "Trial plans don’t support Scribe seats.": [
         "トライアルプランは Scrieシート をサポートしていません。"
+      ],
+      "Trial plans don’t support this many members.": [
+        "トライアルプランでは、この人数のメンバーをサポートしていません。"
       ],
       "VAT number": [
         "VAT番号"
@@ -9271,11 +9489,17 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "お客様は既にこのプランのサブスクリプションを契約済みです。${ subscriptionPlatform }でサブスクリプションを変更できます。"
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "お客様はすでに ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } を所有しています。"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへ転送されます。"
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "${ IDEAL_WERO_BRAND_NAME } はユーロでの支払いにのみ対応しているため、通貨がユーロ (€) に変更されました。"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "お客様の通貨はユーロ (€) に変更されました。これは、SEPA銀行振込がユーロ建ての支払いのみをサポートしているためです。"
@@ -9288,6 +9512,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "${ IDEAL_WERO_BRAND_NAME } の初期化に失敗しました。しばらくしてからもう一度お試しください。"
+      ],
       "Invalid card number": [
         "無効なカード番号です"
       ],
@@ -9296,6 +9523,9 @@
       ],
       "Invalid security code": [
         "無効なセキュリティコードです"
+      ],
+      "Please enter the account holder name": [
+        "口座名義人名を入力してください"
       ],
       "Something went wrong. Please try again later.": [
         "何か問題が発生しました。 後でもう一度試してください。"
@@ -9312,12 +9542,22 @@
         "何か問題が発生しました。Google Payの認証に失敗しました。"
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "確認することにより、お客様は ${ BRAND_NAME } および当社の決済サービスプロバイダーである Stripe に対し、SEPA口座振替によってこの銀行口座から今後のサブスクリプション料金を引き落とすことを承認し、取引銀行がそれらの支払い額を引き落とすことを承認したものとみなされます。初回の支払いは、今すぐ ${ IDEAL_WERO_BRAND_NAME } で決済されます。プランはキャンセルするまで自動更新され、引き落としの前に毎回通知いたします。口座振替による引き落としについては、取引銀行との契約条件に基づき、引き落とし日から8週間以内であれば銀行に返金を請求できます。これは、現在行っている ${ IDEAL_WERO_BRAND_NAME } による支払いには適用されません。"
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "以前のサブスクリプションプランの未使用分のクレジット"
       ],
       "Credits will be added to your balance": [
         "クレジットがお客様の残高に追加されます。"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "請求先住所を変更すると、今後のご請求に対する税額に影響が生じる場合があります。"
       ]
     },
     "Payments.ModificationWarning": {
@@ -9357,6 +9597,12 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - 末尾が ${ Last4 } のカード"
+      ],
+      "Bank transfer - ${ iban }": [
+        "銀行振込 - ${ iban }"
+      ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - 末尾が${ Last4 }のカード"
       ]
@@ -9546,9 +9792,6 @@
       "San Francisco": [
         "サンフランシスコ"
       ],
-      "Search": [
-        "検索"
-      ],
       "Search events": [
         "予定を検索"
       ],
@@ -9557,9 +9800,6 @@
       ],
       "Search for name or email": [
         "名前またはメールアドレスで検索"
-      ],
-      "Search for users or addresses": [
-        "ユーザーまたはアドレスを検索"
       ],
       "Search parent folder": [
         "親フォルダーを検索"
@@ -9647,11 +9887,6 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "進捗: ${ combinedProgress }%"
-      ]
-    },
-    "Property": {
-      "attributes": [
-        "属性"
       ]
     },
     "Property type": {
@@ -9782,6 +10017,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "組織管理者"
+      ],
       "Security Admin": [
         "セキュリティ管理者"
       ],
@@ -11044,9 +11282,6 @@
       "Name": [
         "名前"
       ],
-      "Size": [
-        "サイズ"
-      ],
       "Status": [
         "状態"
       ],
@@ -11231,6 +11466,9 @@
       "Birthday": [
         "誕生日"
       ],
+      "Black Friday": [
+        "ブラックフライデー"
+      ],
       "Calendar": [
         "カレンダー"
       ],
@@ -11257,9 +11495,6 @@
       ],
       "Change password": [
         "パスワードを変更"
-      ],
-      "Choose a provider": [
-        "プロバイダーを選択"
       ],
       "Choose a time": [
         "時間を選択"
@@ -11374,9 +11609,6 @@
       ],
       "Does not repeat": [
         "繰り返さない"
-      ],
-      "Domain names": [
-        "ドメイン名"
       ],
       "Downgrade account": [
         "アカウントのダウングレード"
@@ -11518,9 +11750,6 @@
       ],
       "Import groups": [
         "グループをインポート"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "データを ${ BRAND_NAME } にインポート"
       ],
       "Information exposed in breach": [
         "侵害で漏洩した情報"
@@ -11687,9 +11916,6 @@
       "Select contact group": [
         "連絡先グループの選択"
       ],
-      "Select data to import": [
-        "インポートしたい情報を選択"
-      ],
       "Select event end date": [
         "予定の終了日を選択"
       ],
@@ -11771,6 +11997,9 @@
       "Start import process": [
         "インポートを開始"
       ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } を登録"
+      ],
       "Subscription canceled": [
         "サブスクリプションがキャンセルされました"
       ],
@@ -11824,9 +12053,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "データプライバシーのために ${ VPN_SHORT_APP_NAME } を使用する"
-      ],
-      "Users and addresses": [
-        "ユーザーとアドレス"
       ],
       "Verification failed": [
         "検証に失敗しました"
@@ -12108,6 +12334,15 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "このユーザーは、次回のサインイン時に管理者権限を取得します。"
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "管理者ロールを使用するには、対応するプランにアップグレードしてください。"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "自分自身のロールを変更することはできません。変更するには、別の管理者にお問い合わせください。"
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "ユーザーが招待を承認すると、役割を割り当てることができるようになります。"
       ]

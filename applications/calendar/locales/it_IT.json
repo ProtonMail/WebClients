@@ -425,9 +425,6 @@
       "Get ${ planOrAppName }": [
         "Scegli ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Ottieni un indirizzo ${ BRAND_NAME } gratuito"
-      ],
       "Get in touch": [
         "Mettiti in contatto"
       ],
@@ -601,9 +598,6 @@
       ],
       "Merge contacts": [
         "Unisci contatti"
-      ],
-      "Migrate": [
-        "Avvia la migrazione"
       ],
       "More actions": [
         "Altre azioni"
@@ -1349,38 +1343,77 @@
       "/month": [
         "/mese"
       ],
+      "15 GB storage": [
+        "15 GB di archiviazione"
+      ],
       "2 individual accounts": [
         "2 account individuali"
       ],
       "2 TB of secure storage": [
-        "2 TB di spazio di archiviazione protetto"
+        "2 TB di archiviazione sicura"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB di spazio di archiviazione: 40x rispetto al tuo piano attuale"
       ],
       "3 TB of secure storage": [
-        "3 TB di spazio di archiviazione sicuro"
+        "3 TB di archiviazione sicura"
       ],
       "500 GB of secure storage": [
-        "500 GB di spazio di archiviazione sicuro"
+        "500 GB di archiviazione sicura"
       ],
       "6 individual accounts": [
-        "6 conti individuali"
+        "6 account individuali"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticazione 2FA integrata"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "Online document editor": [
+        "Editor di documenti online"
+      ],
+      "Recover previous file versions": [
+        "Recupera le versioni precedenti dei file"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protezione avanzata contro le minacce informatiche"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Use your own email domain": [
+        "Usa il tuo dominio di posta elettronica"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "Versione premium di ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "Versione premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "La promozione più grande dell'anno"
+        "L'offerta più grande dell'anno"
       ],
       "Black Friday": [
         "Black Friday"
@@ -3523,14 +3556,8 @@
       "Address could not be added.": [
         "Impossibile aggiungere l'indirizzo."
       ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "L'indirizzo è già utilizzato da un utente esterno alla tua organizzazione. Contatta l'assistenza clienti per risolvere il problema"
-      ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Tutto lo spazio di archiviazione è stato allocato. Riduci lo spazio assegnato agli altri utenti."
       ],
       "Already a member of this calendar": [
         "L'utente è già membro del calendario"
@@ -3562,9 +3589,6 @@
       "Cannot export this contact": [
         "Impossibile esportare questo contatto"
       ],
-      "Cannot verify the author of this file": [
-        "Impossibile verificare l'autore di questo file"
-      ],
       "Checkout expired, please try again": [
         "Checkout scaduto, riprova"
       ],
@@ -3589,23 +3613,8 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Impossibile abilitare la ricerca nel contenuto. Riavvia l'applicazione o cancella il testo."
       ],
-      "Copying item to a non-folder is not allowed": [
-        "Non è possibile copiare l'elemento in un elemento che non è una cartella"
-      ],
       "Could not grant access to the organization key": [
         "Impossibile concedere l'accesso alla chiave dell'organizzazione"
-      ],
-      "Could not load sharing details": [
-        "Impossibile caricare i dettagli della condivisione"
-      ],
-      "Could not unlock the parent folder": [
-        "Impossibile sbloccare la cartella principale."
-      ],
-      "Could not unlock this item": [
-        "Impossibile sbloccare questo elemento."
-      ],
-      "Creating folders in non-folders is not allowed": [
-        "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Errore di decriptazione: decriptazione del contenuto di questo evento non riuscita."
@@ -3666,12 +3675,6 @@
       "Failed to create meeting": [
         "Impossibile creare la riunione"
       ],
-      "Failed to decrypt bookmark password: ${ message }": [
-        "Impossibile decrittografare la password del segnalibro: ${ message }"
-      ],
-      "Failed to decrypt content key: ${ message }": [
-        "Impossibile decrittografare la chiave del contenuto: ${ message }"
-      ],
       "Failed to decrypt session key": [
         "Decriptazione della chiave di sessione non riuscita"
       ],
@@ -3693,17 +3696,11 @@
       "Failed to update settings": [
         "Errore nell'aggiornamento delle impostazioni"
       ],
-      "File has no revision": [
-        "Il file non ha revisioni"
-      ],
       "First name is too long": [
         "Il nome è troppo lungo"
       ],
       "Folder name cannot be empty.": [
         "Il nome della cartella non può essere vuoto."
-      ],
-      "Image preview not found": [
-        "Anteprima dell'immagine non trovata"
       ],
       "Image upload failed": [
         "Caricamento dell'immagine non riuscito"
@@ -3750,9 +3747,6 @@
       "Invalid public key file": [
         "File chiave pubblica non valido"
       ],
-      "Invalid URL": [
-        "URL non valido"
-      ],
       "Invalid VAT number": [
         "Partita IVA non valida"
       ],
@@ -3774,37 +3768,18 @@
       "Last name is too long": [
         "Il cognome è troppo lungo"
       ],
-      "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "Il vecchio link pubblico non può essere aggiornato. Crea un nuovo link pubblico."
-      ],
       "Location is required": [
         "La posizione è obbligatoria"
-      ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Indirizzo del membro non trovato. Contatta l'assistenza clienti per risolvere il problema"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Unisci almeno ${ calendarsToFixCount } calendario con un calendario ${ BRAND_NAME } esistente",
         "Unisci almeno ${ calendarsToFixCount } calendari con calendari ${ BRAND_NAME } esistenti"
       ],
-      "Missing inviter email": [
-        "Manca l'indirizzo email dell'invitante"
-      ],
       "Missing key packet": [
         "Pacchetto chiavi mancante"
       ],
-      "Missing organization private key": [
-        "Manca la chiave privata dell'organizzazione"
-      ],
-      "Missing organization public key": [
-        "Manca la chiave pubblica dell'organizzazione"
-      ],
       "Missing signature": [
         "Firma mancante"
-      ],
-      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
-        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
-        "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
       ],
       "Name required": [
         "Nome obbligatorio"
@@ -3827,9 +3802,6 @@
       "No external key retrieved for user is valid for sending": [
         "Nessuna chiave esterna caricata per l'utente è valida per l'invio"
       ],
-      "No file data was received. Please try again.": [
-        "Non sono stati ricevuti dati del file. Riprova."
-      ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
       ],
@@ -3850,15 +3822,6 @@
         "Uno dei gruppi non ha contatti: ${ noContactGroupList }",
         "Alcuni gruppi non hanno contatti: ${ noContactGroupList } "
       ],
-      "Operation aborted": [
-        "Operazione interrotta"
-      ],
-      "Organization does not have enough seats available": [
-        "L'organizzazione non dispone di posti disponibili a sufficienza"
-      ],
-      "Organization does not have enough storage available": [
-        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
-      ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
       ],
@@ -3867,9 +3830,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
-      ],
-      "Part of the file appears to be corrupted": [
-        "Parte del file sembra essere danneggiata"
       ],
       "Password is required": [
         "Password necessaria"
@@ -3898,17 +3858,8 @@
       "Please complete the billing details": [
         "Completa i dettagli di fatturazione"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Configura un dominio personalizzato prima di aggiungere indirizzi."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Per favore configura un dominio personalizzato prima di aggiungere utenti all'organizzazione."
-      ],
       "Please create an address first.": [
         "Per favore prima crea un indirizzo."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
       ],
       "Please enter a valid postal code": [
         "Si prega di inserire un codice postale valido"
@@ -3941,9 +3892,6 @@
       "Please select billing state": [
         "Seleziona lo stato di fatturazione"
       ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Effettua l'upgrade a un piano aziendale con più di 1 utente per gestire più utenti."
-      ],
       "Port is required": [
         "La porta è obbligatoria"
       ],
@@ -3975,9 +3923,6 @@
       "Self invitation not allowed": [
         "Auto-invito non consentito"
       ],
-      "Signature is missing": [
-        "Manca la firma"
-      ],
       "Signature not verified": [
         "Firma non verificata"
       ],
@@ -4004,9 +3949,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alcuni nomi delle etichette superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
-      ],
-      "Something went wrong": [
-        "Qualcosa è andato storto"
       ],
       "Something went wrong while fetching available domains": [
         "Si è verificato un errore durante il recupero dei domini disponibili"
@@ -4056,9 +3998,6 @@
       "The sending key is not valid": [
         "La chiave di invio non è valida"
       ],
-      "The uploaded file does not match the original. Please try again.": [
-        "Il file caricato non corrisponde all'originale. Riprova."
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Ci sono troppe cartelle nel tuo account esterno. Personalizza l'importazione per eliminare alcune cartelle."
       ],
@@ -4077,17 +4016,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
       ],
-      "This file has no version available to download": [
-        "Non è disponibile alcuna versione di questo file da scaricare"
-      ],
       "This folder name is not available. Please choose a different name.": [
         "Questo nome della cartella non è disponibile. Scegli un nome diverso."
-      ],
-      "This item is no longer shared": [
-        "Questo elemento non è più condiviso"
-      ],
-      "This item is not shared": [
-        "Questo elemento non è condiviso"
       ],
       "This label name is not available. Please choose a different name.": [
         "Questo nome dell'etichetta non è disponibile. Scegli un nome diverso."
@@ -4128,12 +4058,6 @@
       "VAT number must start with ${ prefixes }": [
         "La partita IVA deve iniziare con ${ prefixes }"
       ],
-      "Verification keys are not available": [
-        "Le chiavi di verifica non sono disponibili"
-      ],
-      "Verification keys for ${ signatureType } are not available": [
-        "Le chiavi di verifica per ${ signatureType } non sono disponibili"
-      ],
       "We couldn’t send a verification code using this method.": [
         "Non è stato possibile inviare un codice di verifica con questo metodo."
       ],
@@ -4156,20 +4080,11 @@
       "You cannot enter the organizer's email": [
         "Non puoi inserire l'email dell'organizzatore"
       ],
-      "You do not have access to this item": [
-        "Non hai accesso a questo elemento"
-      ],
       "You have reached the maximum number of calendars.": [
         "Hai raggiunto il numero massimo di calendari."
       ],
       "You have reached the number of contacts limit for your account": [
         "Hai raggiunto il numero limite di contatti per il tuo account"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Hai utilizzato tutti gli indirizzi inclusi nel tuo piano. Effettua l'upgrade del piano per aggiungere un nuovo indirizzo o disattivarne uno dal tuo account."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Hai utilizzato tutti gli utenti del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo utente."
       ],
       "You must set a name": [
         "È necessario impostare un nome"
@@ -4647,29 +4562,6 @@
         "Terabyte"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Attivato"
-      ],
-      "All": [
-        "Tutto"
-      ],
-      "Errors": [
-        "Errori"
-      ],
-      "In progress": [
-        "In corso"
-      ],
-      "Migrated": [
-        "La migrazione è riuscita"
-      ],
-      "Not activated": [
-        "Non attivo"
-      ],
-      "Pending": [
-        "In attesa"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } aggiornato"
@@ -5083,20 +4975,6 @@
         "Seleziona ${ boldExport } per esportare il calendario come file ICS."
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Ci sono errori"
-      ],
-      "In progress": [
-        "In corso"
-      ],
-      "Migrated": [
-        "Migrato"
-      ],
-      "Pending": [
-        "In attesa"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } su ${ totalContacts } contatti non saranno importati. Clicca per i dettagli"
@@ -5131,9 +5009,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia di crittografia di ${ BRAND_NAME } implica che nessuno può accedere alla tua password - nemmeno noi."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } richiede un indirizzo ${ BRAND_NAME } per la sincronizzazione sicura degli eventi e la crittografia. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nuovo calendario",
@@ -5229,10 +5104,6 @@
       ],
       "${ storage } storage": [
         "${ storage } di archiviazione"
-      ],
-      "${ total } user found": [
-        "${ total } utente trovato",
-        "${ total } utenti trovati"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contatto aggiornato con successo.",
@@ -5672,9 +5543,6 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Solo file (no foto, ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME }) - fino a un totale di 100 GB, 100.000 file e 50 GB per file"
       ],
-      "Find out what can be migrated.": [
-        "Scopri cosa può essere migrato."
-      ],
       "for ${ price }": [
         "a ${ price }"
       ],
@@ -5907,9 +5775,6 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
-      "No users to display": [
-        "Nessun utente da mostrare"
-      ],
       "None of the participants can be notified about your changes:": [
         "Nessuno dei partecipanti può essere avvisato delle tue modifiche:"
       ],
@@ -6095,9 +5960,6 @@
       "Scan the QR code with your mobile device": [
         "Scansiona il codice QR con il tuo dispositivo mobile"
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Seleziona esattamente ciò che vuoi migrare. La selezione verrà applicata a tutti gli utenti dell'organizzazione."
-      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri usare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
@@ -6176,9 +6038,6 @@
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporaneamente non disponibile a causa dell'elevato traffico. Riprova più tardi."
-      ],
-      "Temporarily unavailable. Please check back later.": [
-        "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Grazie per aver scelto ${ BRAND_NAME } per proteggere la tua organizzazione."
@@ -6261,12 +6120,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Questo codice univoco può essere utilizzato dai siti Web e dagli ISP (fornitori di servizi Internet) per collegare la tua posizione e la cronologia di navigazione al tuo dispositivo"
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Non è possibile migrare questo utente perché il suo indirizzo e-mail non è disponibile su ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Questo utente non può essere migrato a causa di incompatibilità tra le piattaforme."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
       ],
@@ -6287,30 +6140,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Per aiutarti a ricordare la tua password, ti chiederemo di inserirla periodicamente. Con il tempo te lo chiederemo sempre meno."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Per migrare questo utente, aggiungi e verifica il dominio e-mail alla pagina ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Per eseguire la migrazione di questo utente, abilita il suo account nella tua ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Per eseguire la migrazione di questo utente, abilita il suo account in ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Per eseguire la migrazione di questo utente, abilita il suo indirizzo in ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Per eseguire la migrazione di questo utente, deve accettare l'invito a entrare in ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Per eseguire la migrazione di questo utente, annulla l'archiviazione nella tua ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Per eseguire la migrazione di questo utente, riattivalo nella tua ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per firmare nuovamente i tuoi contatti, dobbiamo controllare ogni contatto con l'elenco delle chiavi di crittografia disponibili nel tuo account. Se non viene trovata alcuna corrispondenza, il contatto verrà nuovamente firmato con la chiave di crittografia primaria."
@@ -6476,9 +6305,6 @@
       ],
       "Yearly": [
         "Annuale"
-      ],
-      "You": [
-        "Tu"
       ],
       "You already have a free account": [
         "Hai già un account gratuito"
@@ -6974,9 +6800,6 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendars": [
-        "Calendari"
-      ],
       "Card details": [
         "Dettagli della carta"
       ],
@@ -7087,9 +6910,6 @@
       ],
       "Email format": [
         "Formato email"
-      ],
-      "Emails": [
-        "Email"
       ],
       "Emails (all messages)": [
         "Email (tutti i messaggi)"
@@ -9498,6 +9318,11 @@
         "Devi avere accesso alla chiave dell'organizzazione per eseguire questa operazione."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Conto bancario"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -9547,12 +9372,6 @@
       ],
       "Billing Country": [
         "Paese di fatturazione"
-      ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "“Born Private” non può essere acquistato se si dispone di un abbonamento attivo."
-      ],
-      "Born Private requires a donation.": [
-        "Per accedere a “Born Private” è richiesta una donazione."
       ],
       "Buying credits requires a separate purchase.": [
         "L'acquisto dei crediti richiede un acquisto separato."
@@ -9725,17 +9544,11 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Possiedi già ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Hai già acquistato “Born Private”."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
       "You will soon be redirected to verify your payment.": [
         "Sarai presto reindirizzato per verificare il pagamento."
-      ],
-      "Your account is too old for Born Private.": [
-        "Il tuo account è troppo vecchio per Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
@@ -10015,9 +9828,6 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Cerca"
-      ],
       "Search events": [
         "Cerca eventi"
       ],
@@ -10026,9 +9836,6 @@
       ],
       "Search for name or email": [
         "Cerca nome o email"
-      ],
-      "Search for users or addresses": [
-        "Cerca utenti o indirizzi"
       ],
       "Search parent folder": [
         "Cerca nella cartella principale"
@@ -10120,14 +9927,6 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Progresso: ${ combinedProgress }%"
-      ]
-    },
-    "Property": {
-      "attributes": [
-        "Attributi"
-      ],
-      "key": [
-        "chiave"
       ]
     },
     "Property type": {
@@ -11544,17 +11343,11 @@
       "Actions": [
         "Azioni"
       ],
-      "Activated": [
-        "Attivato"
-      ],
       "Address": [
         "Indirizzo"
       ],
       "Created": [
         "Creata"
-      ],
-      "Estimated size": [
-        "Dimensione stimata"
       ],
       "Expires": [
         "Scade"
@@ -11562,23 +11355,14 @@
       "Fingerprint": [
         "Impronta digitale"
       ],
-      "Migration status": [
-        "Stato della migrazione"
-      ],
       "Name": [
         "Nome"
-      ],
-      "Size": [
-        "Dimensione"
       ],
       "Status": [
         "Stato"
       ],
       "Type": [
         "Tipo"
-      ],
-      "User": [
-        "Utente"
       ]
     },
     "TableHeader": {
@@ -11800,9 +11584,6 @@
       "Change password": [
         "Modifica la password"
       ],
-      "Choose a provider": [
-        "Scegli un fornitore"
-      ],
       "Choose a time": [
         "Scegli un orario"
       ],
@@ -11820,9 +11601,6 @@
       ],
       "Collaborate on documents": [
         "Collabora sui documenti"
-      ],
-      "Configure migration": [
-        "Configura la migrazione"
       ],
       "Connect apps and devices": [
         "Connetti app e dispositivi"
@@ -11921,9 +11699,6 @@
       ],
       "Does not repeat": [
         "Nessuna ripetizione"
-      ],
-      "Domain names": [
-        "Nome dominio"
       ],
       "Downgrade account": [
         "Effettua il downgrade dell'account"
@@ -12066,9 +11841,6 @@
       ],
       "Import groups": [
         "Importa gruppi"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Importa i tuoi dati in ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Informazioni esposte in caso di violazioni"
@@ -12235,9 +12007,6 @@
       "Select contact group": [
         "Seleziona gruppo di contatti"
       ],
-      "Select data to import": [
-        "Seleziona i dati da importare"
-      ],
       "Select event end date": [
         "Seleziona la data di fine dell'evento"
       ],
@@ -12267,9 +12036,6 @@
       ],
       "Select the way to send this notification": [
         "Seleziona il modo di inviare questa notifica"
-      ],
-      "Select users to migrate": [
-        "Seleziona gli utenti da migrare"
       ],
       "Select when you want this notification to be sent": [
         "Scegli quando vuoi inviare questa notifica"
@@ -12376,9 +12142,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usa ${ VPN_SHORT_APP_NAME } per la privacy dei dati"
       ],
-      "Users and addresses": [
-        "Utenti e indirizzi"
-      ],
       "Verification failed": [
         "Verifica non riuscita"
       ],
@@ -12414,9 +12177,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Benvenuto in ${ BRAND_NAME } for Business"
-      ],
-      "What are you migrating?": [
-        "Cosa stai migrando?"
       ],
       "What can a VPN protect you from?": [
         "Da cosa può proteggerti una VPN?"
@@ -12523,9 +12283,6 @@
       "Customize import to reduce the number of labels": [
         "Personalizza l'importazione per ridurre il numero delle etichette"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Stato della migrazione dei dati da ${ providerName } a ${ BRAND_NAME }"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "La firma digitale delle email aiuta ad attestare che i messaggi vengono inviati da te"
       ],
@@ -12591,9 +12348,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Utenti che hanno effettuato l'accesso al proprio account ${ BRAND_NAME }"
       ],
       "Version 6 OpenPGP key": [
         "Chiave OpenPGP versione 6"
