@@ -387,9 +387,6 @@
       "Get ${ planOrAppName }": [
         "Skaffa ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Skaffa en gratis ${ BRAND_NAME }-adress"
-      ],
       "Get the apps": [
         "Skaffa apparna"
       ],
@@ -515,9 +512,6 @@
       ],
       "Merge contacts": [
         "Slå ihop kontakter"
-      ],
-      "Migrate": [
-        "Migrera"
       ],
       "More actions": [
         "Fler åtgärder"
@@ -1168,8 +1162,26 @@
       "6 individual accounts": [
         "6 individuella konton"
       ],
+      "Built-in 2FA authenticator": [
+        "Inbyggd 2FA-autentiserare"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna beräknas utifrån ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Starkare skydd mot cyberhot"
+      ],
       "Unlimited folders, labels, and filters": [
         "Obegränsade mappar, etiketter och filter"
+      ],
+      "Use your own email domain": [
+        "Använd din egen e-postdomän"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -1198,6 +1210,9 @@
       ]
     },
     "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Årets största rea"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -1206,6 +1221,12 @@
       ],
       "Last chance to save big": [
         "Sista chansen att spara stort"
+      ],
+      "Protect your entire tribe": [
+        "Skydda hela din familj"
+      ],
+      "Protection for two in a single plan": [
+        "Skydd för två i ett enda paket"
       ]
     },
     "Browser": {
@@ -2848,14 +2869,8 @@
       "Address could not be added.": [
         "Adress kunde inte läggas till."
       ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
-      ],
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Allt lagringsutrymme har allokerats. Minska lagringsutrymmet som tilldelas andra användare."
       ],
       "Already a member of this share": [
         "Redan medlem av denna delning"
@@ -3117,9 +3132,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Äldre publik länk kan inte uppdateras. Vänligen återskapa en ny publik länk."
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
         "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
@@ -3129,12 +3141,6 @@
       ],
       "Missing key packet": [
         "Saknar nyckelpaket"
-      ],
-      "Missing organization private key": [
-        "Saknar organisationens privata nyckel"
-      ],
-      "Missing organization public key": [
-        "Saknar organisationens offentliga nyckel"
       ],
       "Missing signature": [
         "Signatur saknas"
@@ -3193,9 +3199,6 @@
       "Operation failed, try again later": [
         "Åtgärd misslyckades, försök igen senare"
       ],
-      "Organization does not have enough storage available": [
-        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
-      ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
       ],
@@ -3219,15 +3222,6 @@
       ],
       "Photo not found": [
         "Foto hittades inte"
-      ],
-      "Please configure a custom domain before adding addresses.": [
-        "Konfigurera en anpassad domän innan du lägger till adresser."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Konfigurera en anpassad domän innan du lägger till användare till din organisation."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Aktivera stöd för flera användare innan du lägger till användare till din organisation."
       ],
       "Please enter a valid postal code": [
         "Ange ett giltigt postnummer"
@@ -3253,9 +3247,6 @@
       ],
       "Please select a state": [
         "Välj en delstat"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
       ],
       "Port is required": [
         "Port är obligatoriskt"
@@ -3516,12 +3507,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Du har nått gränsen för antalet kontakter för ditt konto"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress eller inaktivera en adress i ditt konto."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Du har använt alla användare i ditt paket. Uppgradera ditt paket för att lägga till en ny användare."
       ],
       "You must set a name": [
         "Du måste ange ett namn"
@@ -3926,29 +3911,6 @@
         "Terabyte"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Aktiverat"
-      ],
-      "All": [
-        "Alla"
-      ],
-      "Errors": [
-        "Fel"
-      ],
-      "In progress": [
-        "Pågår"
-      ],
-      "Migrated": [
-        "Migrerad"
-      ],
-      "Not activated": [
-        "Inte aktiverad"
-      ],
-      "Pending": [
-        "Väntande"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } uppdaterad"
@@ -4322,20 +4284,6 @@
         "Välj ${ boldExport } för att exportera kalendern som en ICS-fil."
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Har fel"
-      ],
-      "In progress": [
-        "Pågår"
-      ],
-      "Migrated": [
-        "Migrerad"
-      ],
-      "Pending": [
-        "Väntar"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } av ${ totalContacts } kontakter kommer inte att importeras. Klicka för detaljer"
@@ -4373,9 +4321,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } kräver en ${ BRAND_NAME }-adress för säker synkronisering och kryptering av händelse. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
@@ -4459,10 +4404,6 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "${ timeRemaining } kvar av din provperiod. ${ addPaymentMethodLink } för att behålla din prenumeration. ${ learnMoreLink }"
-      ],
-      "${ total } user found": [
-        "${ total } användare hittades",
-        "${ total } användare hittades"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt uppdaterades.",
@@ -4786,9 +4727,6 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Endast filer (inga foton, ${ DOCS_APP_NAME } eller ${ SHEETS_APP_NAME }) – totalt upp till 100 GB, 100 000 filer och 50 GB per fil"
       ],
-      "Find out what can be migrated.": [
-        "Ta reda på vad som kan migreras."
-      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Mapp “${ link.name }“ togs bort under nedladdningen"
       ],
@@ -4998,9 +4936,6 @@
       "No results found": [
         "Inga resultat hittades"
       ],
-      "No users to display": [
-        "Inga användare att visa"
-      ],
       "No version history available": [
         "Ingen versionshistorik tillgänglig"
       ],
@@ -5155,9 +5090,6 @@
       "Select a folder to move to.": [
         "Välj en mapp att flytta till."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
-      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Välj det e-postformat du vill använda som standard när du skickar ett e-postmeddelande till den här e-postadressen."
       ],
@@ -5234,9 +5166,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Tillfälligt otillgänglig på grund av hög efterfrågan. Försök igen senare."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Tillfälligt otillgänglig. Återkom senare."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Författarskapet av redigeringar i dokumentet kan inte verifieras. Vill du markera detta dokument som verifierat? Du kan välja att ignorera för att bestämma dig senare."
       ],
@@ -5297,9 +5226,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denna unika kod kan användas av webbplatser och ISP:er (internetleverantörer) för att koppla din plats och surfhistorik till din enhet"
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Denna användare kan inte migreras eftersom deras e-postadress inte är tillgänglig på ${ BRAND_NAME }."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
       ],
@@ -5308,27 +5234,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "För att hjälpa dig att komma ihåg ditt lösenord kommer vi att be dig ange det regelbundet. Vi ber dig att ange det mindre med tiden."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "För att migrera denna användare, lägg till och verifiera e-postdomänen under ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "För att migrera denna användare, upphäv deras arkivering från ditt ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "För att signera om dina kontakter måste vi kontrollera varje kontakt mot listan över tillgängliga krypteringsnycklar på ditt konto. Om ingen matchning hittas kommer din kontakt att signeras om med den primära krypteringsnyckeln."
@@ -5440,9 +5345,6 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
-      ],
-      "You": [
-        "Du"
       ],
       "you": [
         "du"
@@ -5731,9 +5633,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendars": [
-        "Kalendrar"
-      ],
       "can edit": [
         "kan redigera"
       ],
@@ -5817,9 +5716,6 @@
       ],
       "Email format": [
         "E-postformat"
-      ],
-      "Emails": [
-        "E-postmeddelanden"
       ],
       "Emails (all messages)": [
         "E-post (alla meddelanden)"
@@ -5997,6 +5893,12 @@
       ],
       "Reveal password": [
         "Visa lösenord"
+      ],
+      "Select ${ document.name }": [
+        "Välj ${ document.name }"
+      ],
+      "Select all": [
+        "Välj alla"
       ],
       "Set a password to limit access via link": [
         "Ställ in ett lösenord för att begränsa åtkomst via länk"
@@ -7968,17 +7870,11 @@
       "Please select the main reason": [
         "Välj huvudorsaken"
       ],
-      "Search": [
-        "Sök"
-      ],
       "Search for group name": [
         "Sök efter gruppnamn"
       ],
       "Search for name or email": [
         "Sök efter namn eller e-postadress"
-      ],
-      "Search for users or addresses": [
-        "Sök efter användare eller adresser"
       ],
       "Search parent folder": [
         "Sök överordnad mapp"
@@ -8723,12 +8619,6 @@
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "En länk till detta objekt har sparats på din Drive. Du kan komma åt det senare i sektionen ”Delas med mig”."
       ],
-      "Editor permissions": [
-        "Redaktörsbehörigheter"
-      ],
-      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
-        "Redaktörer kan nu hantera delning och bjuda in andra. Du kan stänga av det när som helst i delningsinställningar."
-      ],
       "To edit this document, create a copy that you can modify.": [
         "För att redigera detta dokument, skapa en kopia som du kan ändra."
       ]
@@ -9054,17 +8944,11 @@
       "Actions": [
         "Åtgärder"
       ],
-      "Activated": [
-        "Aktiverad"
-      ],
       "Address": [
         "Adress"
       ],
       "Created": [
         "Skapad"
-      ],
-      "Estimated size": [
-        "Beräknad storlek"
       ],
       "Expires": [
         "Löper ut"
@@ -9072,23 +8956,14 @@
       "Fingerprint": [
         "Fingeravtryck"
       ],
-      "Migration status": [
-        "Migreringsstatus"
-      ],
       "Name": [
         "Namn"
-      ],
-      "Size": [
-        "Storlek"
       ],
       "Status": [
         "Status"
       ],
       "Type": [
         "Typ"
-      ],
-      "User": [
-        "Användare"
       ]
     },
     "TableHeader": {
@@ -9201,9 +9076,6 @@
       "Change password": [
         "Ändra lösenord"
       ],
-      "Choose a provider": [
-        "Välj en leverantör"
-      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Gör anspråk på din ${ MAIL_APP_NAME }-adress"
       ],
@@ -9215,9 +9087,6 @@
       ],
       "Computers": [
         "Datorer"
-      ],
-      "Configure migration": [
-        "Konfigurera migrering"
       ],
       "Connect apps and devices": [
         "Anslut appar och enheter"
@@ -9326,9 +9195,6 @@
       "Document verification failed": [
         "Dokumentverifiering misslyckades"
       ],
-      "Domain names": [
-        "Domännamn"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appar"
       ],
@@ -9428,9 +9294,6 @@
       ],
       "Import groups": [
         "Importera grupper"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Importera din data till ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Information exponerad vid intrång"
@@ -9573,14 +9436,8 @@
       "Select contact group": [
         "Välj kontaktgrupp"
       ],
-      "Select data to import": [
-        "Välj data att importera"
-      ],
       "Select link expiration date": [
         "Välj länkens utgångsdatum"
-      ],
-      "Select users to migrate": [
-        "Välj användare att migrera"
       ],
       "Set recovery methods": [
         "Ställ in återställningsmetoder"
@@ -9678,9 +9535,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
-      "Users and addresses": [
-        "Användare och adresser"
-      ],
       "Verify your password": [
         "Verifiera ditt lösenord"
       ],
@@ -9695,9 +9549,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
-      ],
-      "What are you migrating?": [
-        "Vad migrerar du?"
       ],
       "What can a VPN protect you from?": [
         "Vad kan en VPN skydda dig från?"
@@ -9771,9 +9622,6 @@
       "Customize import to reduce the number of labels": [
         "Anpassa import för att minska antalet etiketter"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Status för datamigrering från ${ providerName } till ${ BRAND_NAME }"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digital signering av e-postmeddelanden hjälper till att autentisera att meddelanden skickas av dig"
       ],
@@ -9836,9 +9684,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Ladda upp en offentlig nyckel för att aktivera sändning av end-to-end-krypterad e-post till denna e-post"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Användare som har åtkomst till sitt ${ BRAND_NAME }-konto"
       ],
       "Version 6 OpenPGP key": [
         "OpenPGP-nyckel version 6"
