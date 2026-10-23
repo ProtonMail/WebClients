@@ -22,13 +22,47 @@ describe('getCheckoutCondensedAddons', () => {
         expect(getCheckoutCondensedAddons(eligible)).toBe('condensed');
     });
 
-    it('should return condensed for a Mail Plus user upgrading to Proton Unlimited', () => {
+    it.each([
+        ['Mail Plus', PLANS.MAIL],
+        ['VPN Plus', PLANS.VPN2024],
+        ['Pass Plus', PLANS.PASS],
+        ['Drive Plus', PLANS.DRIVE],
+    ])('should return condensed for a %s user upgrading to Proton Unlimited', (_, plan) => {
         expect(
             getCheckoutCondensedAddons({
                 ...eligible,
-                latestSubscription: buildSubscription({ [PLANS.MAIL]: 1 }),
+                latestSubscription: buildSubscription({ [plan]: 1 }),
             })
         ).toBe('condensed');
+    });
+
+    describe('Pass Lifetime is ignored', () => {
+        it('should treat a user with only Pass Lifetime as Free', () => {
+            expect(
+                getCheckoutCondensedAddons({
+                    ...eligible,
+                    latestSubscription: buildSubscription({ [PLANS.PASS_LIFETIME]: 1 }),
+                })
+            ).toBe('condensed');
+        });
+
+        it('should judge a user with Pass Lifetime and Duo by their Duo plan', () => {
+            expect(
+                getCheckoutCondensedAddons({
+                    ...eligible,
+                    latestSubscription: buildSubscription({ [PLANS.DUO]: 1, [PLANS.PASS_LIFETIME]: 1 }),
+                })
+            ).toBe('control');
+        });
+
+        it('should judge a user with Pass Lifetime and Mail Plus by their Mail Plus plan', () => {
+            expect(
+                getCheckoutCondensedAddons({
+                    ...eligible,
+                    latestSubscription: buildSubscription({ [PLANS.MAIL]: 1, [PLANS.PASS_LIFETIME]: 1 }),
+                })
+            ).toBe('condensed');
+        });
     });
 
     describe('flag states fall back to control', () => {
@@ -67,6 +101,20 @@ describe('getCheckoutCondensedAddons', () => {
             expect(getCheckoutCondensedAddons({ ...eligible, selectedPlanIDs: { [PLANS.BUNDLE_PRO_2024]: 1 } })).toBe(
                 'control'
             );
+        });
+
+        it.each([
+            ['Proton Unlimited (already subscribed)', PLANS.BUNDLE],
+            ['Duo', PLANS.DUO],
+            ['Family', PLANS.FAMILY],
+            ['Visionary', PLANS.VISIONARY],
+        ])('should return control when the user is already on %s', (_, plan) => {
+            expect(
+                getCheckoutCondensedAddons({
+                    ...eligible,
+                    latestSubscription: buildSubscription({ [plan]: 1 }),
+                })
+            ).toBe('control');
         });
 
         it('should return control when the current subscription is B2B', () => {
