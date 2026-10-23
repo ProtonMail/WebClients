@@ -264,8 +264,8 @@ catalogs:
       specifier: ^10.1.0
       version: 10.1.0
     dompurify:
-      specifier: ^3.4.16
-      version: 3.4.16
+      specifier: ^3.4.17
+      version: 3.4.17
     eslint:
       specifier: ^10.12.0
       version: 10.12.0
@@ -388,6 +388,7 @@ overrides:
   devalue@^5.8.1: 5.9.4
   electron-windows-msix: github:Swiip/electron-windows-msix#f1c1f4f46439c7d94569afdedd9561d09d4a1c54
   electron-winstaller: ^5.4.4
+  dompurify@3.4.16: 3.4.17
   electron>extract-zip: 2.0.1
   fast-uri@^2.0.0: 2.4.7
   fast-uri@^2.1.0: 2.4.7
@@ -736,7 +737,7 @@ importers:
         version: 2.30.0
       dompurify:
         specifier: 'catalog:'
-        version: 3.4.16
+        version: 3.4.17
       history:
         specifier: 'catalog:'
         version: 4.10.1
@@ -1921,7 +1922,7 @@ importers:
         version: 0.3.7
       dompurify:
         specifier: 'catalog:'
-        version: 3.4.16
+        version: 3.4.17
       fflate:
         specifier: ^0.8.3
         version: 0.8.3
@@ -2653,7 +2654,7 @@ importers:
         version: 8.5.0
       dompurify:
         specifier: 'catalog:'
-        version: 3.4.16
+        version: 3.4.17
       history:
         specifier: 'catalog:'
         version: 4.10.1
@@ -5144,7 +5145,7 @@ importers:
         version: link:../shared
       dompurify:
         specifier: 'catalog:'
-        version: 3.4.16
+        version: 3.4.17
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -5947,7 +5948,7 @@ importers:
         version: 2.30.0
       dompurify:
         specifier: 'catalog:'
-        version: 3.4.16
+        version: 3.4.17
       emoji-mart:
         specifier: ^5.1.0
         version: 5.6.0
@@ -9058,7 +9059,7 @@ importers:
     dependencies:
       dompurify:
         specifier: 'catalog:'
-        version: 3.4.16
+        version: 3.4.17
     devDependencies:
       '@proton/jest-swc-preset':
         specifier: workspace:^
@@ -9161,7 +9162,7 @@ importers:
         version: 2.30.0
       dompurify:
         specifier: 'catalog:'
-        version: 3.4.16
+        version: 3.4.17
       electron-log:
         specifier: ^5.4.4
         version: 5.4.4
@@ -21155,8 +21156,8 @@ packages:
     resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
     engines: {node: '>= 4'}
 
-  dompurify@3.4.16:
-    resolution: {integrity: sha512-sqo+pNp3qRhCIpbgRi1y8Tgk27Bo2Ry7w0dC1NBeNTdZChWjz9Xb/KOoZbRP/R6pQZ80Qw8YhXw13hWWBbMRnQ==}
+  dompurify@3.4.17:
+    resolution: {integrity: sha512-B/pSlYVHQ58kqISD/yDjuJ1yfzI34m1gF4lAod2bwSRhiN4K5Cl3H8Af7hqB2PmTL911tdEudnnXn5FnhRoz0w==}
 
   domutils@2.8.0:
     resolution: {integrity: sha512-w96Cjofp72M5IIhpjgobBimYEfoPjx1Vx0BSX9P30WBdZW2WIKU0T1Bd0kz2eNZ9ikjKgHbEyKx8BB6H1L3h3A==}
@@ -35028,7 +35029,7 @@ snapshots:
       air-datepicker: 3.6.0
       bwip-js: 4.11.4
       date-fns: 4.4.0
-      dompurify: 3.4.16
+      dompurify: 3.4.17
       fontkit: 2.0.4
       lucide: 1.47.0
       signature_pad: 5.1.4
@@ -35043,7 +35044,7 @@ snapshots:
       '@pdfme/schemas': 6.1.13(@pdfme/common@6.1.13)
       '@scena/react-guides': 0.28.2
       antd: 6.6.5(date-fns@4.4.0)(luxon@3.7.2)(moment@2.31.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
-      dompurify: 3.4.16
+      dompurify: 3.4.17
       hotkeys-js: 4.0.8
       lucide-react: 1.49.0(@types/react@18.3.31)(react@19.3.0)
       rc-field-form: 2.7.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -41184,7 +41185,7 @@ snapshots:
     dependencies:
       domelementtype: 2.3.0
 
-  dompurify@3.4.16:
+  dompurify@3.4.17:
     optionalDependencies:
       '@types/trusted-types': 2.0.7
 
@@ -45079,7 +45080,7 @@ snapshots:
     optionalDependencies:
       canvg: 3.0.11
       core-js: 3.50.0
-      dompurify: 3.4.16
+      dompurify: 3.4.17
       html2canvas: 1.4.1
 
   jsprim@1.4.2:
@@ -46042,7 +46043,7 @@ snapshots:
       d3-sankey: 0.12.3
       dagre-d3-es: 7.0.14
       dayjs: 1.11.23
-      dompurify: 3.4.16
+      dompurify: 3.4.17
       es-toolkit: 1.46.1
       fastdom: 1.0.12
       katex: 0.16.47
