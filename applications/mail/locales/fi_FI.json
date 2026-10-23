@@ -2062,6 +2062,106 @@
         "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-palveluiden kesken."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Hanki tarjous"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/kuukausi"
+      ],
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
+      ],
+      "2 individual accounts": [
+        "2 erillistä tiliä"
+      ],
+      "2 TB of secure storage": [
+        "2 Tt suojattua tallennustilaa"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 Gt tallennustilaa: 40x nykyinen tilauksesi"
+      ],
+      "3 TB of secure storage": [
+        "3 Tt suojattua tallennustilaa"
+      ],
+      "500 GB of secure storage": [
+        "500 Gt suojattua tallennustilaa"
+      ],
+      "6 individual accounts": [
+        "6 erillistä tiliä"
+      ],
+      "Built-in 2FA authenticator": [
+        "Sisäänrakennettu kaksivaiheinen todentaja"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Alennukset perustuvat normaaliin kuukausihintaan. Tilauksesi uusiutuu normaaliin vuosihintaan, kun laskutusjakso päättyy."
+      ],
+      "Online document editor": [
+        "Dokumenttieditori verkossa"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
+      ],
+      "Stronger protection against cyber threats": [
+        "Vahvempi suoja kyberuhkia vastaan"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Rajattomasti kansioita, tunnisteita ja suodattimia"
+      ],
+      "Use your own email domain": [
+        "Käytä omaa sähköpostin verkkotunnusta"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ja ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Vuoden muhkeimmat alennukset"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "12 kuukaudeksi"
+      ],
+      "Last chance to save big": [
+        "Viimeinen mahdollisuus säästää isosti"
+      ],
+      "Protect your entire tribe": [
+        "Suojaa koko heimosi"
+      ],
+      "Protection for two in a single plan": [
+        "Suojaus kahdelle yhdellä tilauksella"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } kuukausi",
@@ -2581,6 +2681,11 @@
       ],
       "Expand": [
         "Laajenna"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Tämä keskustelu on liian pitkä jatkettavaksi. Aloittakaa uusi chat, jotta ${ LUMO_SHORT_APP_NAME } kehrää jatkossakin ja pysyy reagoivana."
       ]
     },
     "collider_2025: feature": {
@@ -4561,9 +4666,6 @@
       "Aliases could not be loaded": [
         "Aliaksia ei voitu ladata"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Kaikki tallennustila on varattu. Vähennä muille käyttäjille varattua tallennustilaa."
-      ],
       "Amount above the maximum.": [
         "Summa on enimmäismäärää suurempi."
       ],
@@ -4762,23 +4864,14 @@
       "Invalid public key file": [
         "Virheellinen julkisen avaimen tiedosto"
       ],
-      "Invalid URL": [
-        "Virheellinen URL"
-      ],
       "Invalid VAT number": [
         "Virheellinen VAT-numero"
       ],
       "Invalid verification code": [
         "Virheellinen vahvistuskoodi"
       ],
-      "Invitation not found": [
-        "Kutsua ei löytynyt"
-      ],
       "Item content cannot exceed 40KB": [
         "Kohteen sisällön koko ei saa ylittää 40 kt"
-      ],
-      "Item not found": [
-        "Kohdetta ei löytynyt"
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
@@ -4810,9 +4903,6 @@
       ],
       "Name is required": [
         "Nimi vaaditaan"
-      ],
-      "Name must not be empty": [
-        "Nimi ei voi olla tyhjä"
       ],
       "Network error": [
         "Verkkovirhe"
@@ -4885,9 +4975,6 @@
       "Permissions request failed.": [
         "Käyttöoikeuspyyntö epäonnistui."
       ],
-      "Photo not found": [
-        "Kuvaa ei löytynyt"
-      ],
       "Please activate your search again": [
         "Aktivoi hakusi uudelleen"
       ],
@@ -4896,15 +4983,6 @@
       ],
       "Please complete the billing details": [
         "Täydennä laskutustiedot"
-      ],
-      "Please configure a custom domain before adding addresses.": [
-        "Määritä oma verkkotunnus ennen kuin lisäät osoitteita."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Määritä oma verkkotunnus ennen kuin lisäät organisaatioosi käyttäjiä."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Ota usean käyttäjän tuki käyttöön ennen kuin lisäät käyttäjiä organisaatioosi."
       ],
       "Please enter a valid postal code": [
         "Syötä kelvollinen postinumero"
@@ -4945,9 +5023,6 @@
       ],
       "Please try generating the text again": [
         "Yritä luoda teksti uudelleen"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Hallitaksesi useita käyttäjiä, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
       ],
       "Port is required": [
         "Portti vaaditaan"
@@ -5004,9 +5079,6 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "Liitteiden lähettämistä rajoitetaan, koska olet ylittänyt nykyisen tilauksesi rajoitukset tai kunnes päivität laajempaan tilaukseen."
       ],
-      "Signature is missing": [
-        "Allekirjoitus puuttuu"
-      ],
       "Signature not verified": [
         "Allekirjoitusta ei vahvistettu"
       ],
@@ -5036,9 +5108,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
-      ],
-      "Something went wrong": [
-        "Jotain meni pieleen"
       ],
       "Something went wrong while converting the address": [
         "Jotain meni vikaan muutettaessa osoitetta"
@@ -5216,12 +5285,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Olet saavuttanut tilisi yhteystietojen enimmäismäärän"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Olet käyttänyt kaikki tilauksesi osoitteet. Päivitä tilauksesi lisätäksesi uuden osoitteen tai ota osoite pois käytöstä tililtäsi."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Olet kuluttanut tilaukseesi sisältyvän käyttäjäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
       ],
       "You must set a name": [
         "Nimi on asetettava"
@@ -5690,12 +5753,6 @@
       ]
     },
     "Filter": {
-      "All": [
-        "Kaikki"
-      ],
-      "Errors": [
-        "Virheet"
-      ],
       "Filter": [
         "Suodatin"
       ],
@@ -6413,14 +6470,6 @@
         "Lisää tuontiasetuksia"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "Käynnissä"
-      ],
-      "Migrated": [
-        "Siirretty"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
@@ -6687,10 +6736,6 @@
       "${ total } message": [
         "${ total } viesti",
         "${ total } viestiä"
-      ],
-      "${ total } user found": [
-        "Löytyi ${ total } käyttäjä",
-        "${ total } käyttäjää löytyi"
       ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } sähköpostiseuranta estetty",
@@ -7524,8 +7569,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8721,9 +8765,6 @@
       ],
       "Yearly": [
         "Vuosittain"
-      ],
-      "You": [
-        "Sinä"
       ],
       "You already have a free account": [
         "Sinulla on jo ilmainen tili"
@@ -12564,6 +12605,11 @@
         "Sinulla on oltava oikeus käyttää organisaatioavainta suorittaaksesi tämä toiminnon."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Pankkitili"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -12992,9 +13038,6 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Etsi"
-      ],
       "Search date, name, email address, or subject line": [
         "Etsi päiväystä, nimeä, sähköpostiosoitetta tai aiheriviä"
       ],
@@ -13003,9 +13046,6 @@
       ],
       "Search for name or email": [
         "Etsi nimeä tai sähköpostiosoitetta"
-      ],
-      "Search for users or addresses": [
-        "Etsi käyttäjiä tai osoitteita"
       ],
       "Search messages": [
         "Etsi viestejä"
@@ -13134,14 +13174,6 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Edistyminen: ${ combinedProgress } %"
-      ]
-    },
-    "Property": {
-      "key": [
-        "avain"
-      ],
-      "name": [
-        "nimi"
       ]
     },
     "Property type": {
@@ -14966,9 +14998,6 @@
       "Created": [
         "Luotu"
       ],
-      "Estimated size": [
-        "Arvioitu koko"
-      ],
       "Expires": [
         "Erääntyy"
       ],
@@ -14978,17 +15007,11 @@
       "Name": [
         "Nimi"
       ],
-      "Size": [
-        "Koko"
-      ],
       "Status": [
         "Tila"
       ],
       "Type": [
         "Tyyppi"
-      ],
-      "User": [
-        "Käyttäjä"
       ]
     },
     "TableHeader": {
@@ -15414,9 +15437,6 @@
       ],
       "Distraction-free emailing": [
         "Häiriötön sähköpostittelu"
-      ],
-      "Domain names": [
-        "Verkkotunnukset"
       ],
       "Don't give spam a chance": [
         "Älä anna roskapostille mahdollisuutta"
@@ -16101,9 +16121,6 @@
       ],
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Käytä Gmailia turvallisesti ${ MAIL_APP_NAME } -sovelluksessa"
-      ],
-      "Users and addresses": [
-        "Käyttäjät ja osoitteet"
       ],
       "Verification error": [
         "Vahvistusvirhe"

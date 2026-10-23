@@ -2804,6 +2804,9 @@
       "1 vault per user": [
         "1 bóveda por usuario"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantía de reembolso de 30 días: cancela durante los 30 días posteriores a tu compra y comunícate con nuestro ${ customerSupportLink } para obtener un reembolso."
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
       ],
@@ -3123,6 +3126,9 @@
       ],
       "Total VPN connections": [
         "Conexiones VPN totales"
+      ],
+      "UnionPay logo": [
+        "logo de UnionPay"
       ],
       "Users": [
         "Usuarios"
@@ -3555,6 +3561,9 @@
       ],
       "clearing your browser cache": [
         "vaciar la caché del navegador"
+      ],
+      "Customer Support": [
+        "Servicio al cliente"
       ],
       "Enforcing 2FA for organizations": [
         "Implementar 2FA para organizaciones"
@@ -4674,6 +4683,11 @@
         "Necesita acceso a la clave de la organización para realizar esta acción."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Cuenta bancaria"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -4723,12 +4737,6 @@
       ],
       "Billing Country": [
         "País de facturación"
-      ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "No se puede comprar Born Private con una suscripción activa."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private requiere una donación."
       ],
       "Buying credits requires a separate purchase.": [
         "La compra de créditos requiere una compra separada."
@@ -4913,17 +4921,11 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ya posee ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Ya posee Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto se le redirigirá a PayPal para verificar el pago."
       ],
       "You will soon be redirected to verify your payment.": [
         "Pronto se le redirigirá para verificar el pago."
-      ],
-      "Your account is too old for Born Private.": [
-        "Su cuenta es demasiado antigua para Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_WERO_BRAND_NAME } solo admite pagos en euros."
@@ -5965,6 +5967,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Este usuario obtendrá permisos de administrador en el próximo inicio de sesión."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Actualice a un plan que admita usar roles de administrador."
       ],

@@ -1481,9 +1481,6 @@
       "Maybe later": [
         "Ίσως αργότερα"
       ],
-      "Migrate": [
-        "Μετεγκατάσταση"
-      ],
       "More": [
         "Περισσότερα"
       ],
@@ -2924,6 +2921,11 @@
         "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να λάβετε ${ discountPercentage } έκπτωση στο ${ plan.Title } όταν εγγράφεστε για ${ cycle } μήνες."
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Εγγύηση επιστροφής χρημάτων 30 ημερών: ακυρώστε εντός 30 ημερών από την αγορά σας και επικοινωνήστε με το ${ customerSupportLink } για να λάβετε επιστροφή χρημάτων."
+      ]
+    },
     "bf2023: Title": {
       "Offer unavailable": [
         "Η προσφορά δεν είναι διαθέσιμη"
@@ -2966,7 +2968,7 @@
         "/μήνα"
       ],
       "15 GB storage": [
-        "15 GB αποθηκευτικός χώρος"
+        "15 GB αποθήκευσης"
       ],
       "2 individual accounts": [
         "2 ατομικοί λογαριασμοί"
@@ -2975,7 +2977,7 @@
         "2 TB ασφαλούς αποθήκευσης"
       ],
       "200 GB storage: 40x your current plan": [
-        "Αποθηκευτικός χώρος 200 GB: 40 φορές το τρέχον πλάνο σας"
+        "200 GB αποθήκευσης: 40x το τρέχον πρόγραμμά σας"
       ],
       "3 TB of secure storage": [
         "3 TB ασφαλούς αποθήκευσης"
@@ -2987,7 +2989,7 @@
         "6 ατομικοί λογαριασμοί"
       ],
       "Built-in 2FA authenticator": [
-        "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
+        "Ενσωματωμένη εφαρμογή ταυτοποίησης δύο παραγόντων"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
@@ -3002,10 +3004,10 @@
         "Ισχυρότερη προστασία από τις απειλές στον κυβερνοχώρο"
       ],
       "Unlimited folders, labels, and filters": [
-        "Απεριόριστοι φάκελοι, ετικέτες, και φίλτρα"
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
       ],
       "Use your own email domain": [
-        "Χρησιμοποιήστε τον δικό σας τομέα ηλεκτρονικού ταχυδρομείου"
+        "Χρησιμοποιήστε τον δικό σας τομέα email"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -3035,7 +3037,7 @@
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Η μεγαλύτερη προσφορά της χρονιάς"
+        "Οι μεγαλύτερες εκπτώσεις της χρονιάς"
       ],
       "Black Friday": [
         "Black Friday"
@@ -3044,10 +3046,10 @@
         "για 12 μήνες"
       ],
       "Last chance to save big": [
-        "Τελευταία ευκαιρία για μεγάλες εξοικονομήσεις"
+        "Τελευταία ευκαιρία για μεγάλη εξοικονόμηση"
       ],
       "Protect your entire tribe": [
-        "Προστάτεψε ολόκληρη τη φυλή σας"
+        "Προστατέψτε ολόκληρη τη φυλή σας"
       ],
       "Protection for two in a single plan": [
         "Προστασία για δύο άτομα σε ένα ενιαίο πλάνο"
@@ -5458,9 +5460,6 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Μεταφέρετε τα μηνύματα, τις εκδηλώσεις ημερολογίου και τις επαφές σας από έναν άλλο πάροχο."
       ],
-      "Bring over your files from another provider.": [
-        "Μεταφέρετε τα αρχεία σας από άλλο πάροχο."
-      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Δημιουργήστε εμπιστοσύνη και αναγνώριση επωνυμίας με επαγγελματικές διευθύνσεις ηλεκτρονικού ταχυδρομείου στον δικό σας τομέα."
       ],
@@ -7088,10 +7087,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Μπορεί να ζητήσουν πρόσβαση στον λογαριασμό σας σε περίπτωση έκτακτης ανάγκης."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Θα αποκτήσουν αυτόματα πρόσβαση σε **${ days } ημέρα**, στις **${ formattedAccessibleAt }**, μπορείτε να απορρίψετε το αίτημά τους ή να τους δώσετε πρόσβαση άμεσα ανά πάσα στιγμή.",
-        "Θα αποκτήσουν αυτόματα πρόσβαση σε **${ days } ημέρες**, στις **${ formattedAccessibleAt }**, μπορείτε να απορρίψετε το αίτημά τους ή να τους δώσετε πρόσβαση άμεσα ανά πάσα στιγμή."
-      ],
       "This will take effect immediately.": [
         "Αυτό θα τεθεί σε ισχύ άμεσα."
       ],
@@ -7250,9 +7245,6 @@
       ],
       "Address is already added to your account": [
         "Η διεύθυνση έχει ήδη προστεθεί στον λογαριασμό σας"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Η διεύθυνση χρησιμοποιείται ήδη από χρήστη εκτός του οργανισμού σας. Για επίλυση, παρακαλούμε απευθυνθείτε στην υποστήριξη πελατών."
       ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
@@ -7628,9 +7620,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Μέγιστα ${ displayMaxValue } επιτρέπονται"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Η διεύθυνση μέλους δε βρέθηκε. Επικοινωνήστε με την υποστήριξη πελατών για να επιλύσετε αυτό το πρόβλημα."
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
@@ -7640,12 +7629,6 @@
       ],
       "Missing key packet": [
         "Λείπει πακέτο κλειδιού"
-      ],
-      "Missing organization private key": [
-        "Λείπει το ιδιωτικό κλειδί του οργανισμού"
-      ],
-      "Missing organization public key": [
-        "Λείπει το δημόσιο κλειδί του οργανισμού"
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
@@ -7725,12 +7708,6 @@
       ],
       "Operation failed, try again later": [
         "Η λειτουργία απέτυχε, δοκιμάστε ξανά αργότερα"
-      ],
-      "Organization does not have enough seats available": [
-        "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
-      ],
-      "Organization does not have enough storage available": [
-        "Ο οργανισμός δεν διαθέτει αρκετό χώρο αποθήκευσης"
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
@@ -9162,29 +9139,6 @@
         "Terabytes"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Ενεργοποιήθηκε"
-      ],
-      "All": [
-        "Όλα"
-      ],
-      "Errors": [
-        "Σφάλματα"
-      ],
-      "In progress": [
-        "Σε εξέλιξη"
-      ],
-      "Migrated": [
-        "Μετεγκαταστάθηκε"
-      ],
-      "Not activated": [
-        "Δεν έχει ενεργοποιηθεί"
-      ],
-      "Pending": [
-        "Σε εκκρεμότητα"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Αρχειοθετημένα"
@@ -9762,9 +9716,6 @@
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
       ],
-      "Downloads": [
-        "Λήψεις"
-      ],
       "Enjoying ${ planName }?": [
         "Απολαμβάνετε το ${ planName };"
       ],
@@ -10139,9 +10090,6 @@
       "Failed": [
         "Απέτυχε"
       ],
-      "Has errors": [
-        "Έχει σφάλματα"
-      ],
       "Import completed successfully": [
         "Η εισαγωγή ολοκληρώθηκε επιτυχώς"
       ],
@@ -10159,9 +10107,6 @@
       ],
       "Paused": [
         "Σε παύση"
-      ],
-      "Pending": [
-        "Σε εκκρεμότητα"
       ],
       "Queued": [
         "Σε αναμονή"
@@ -11724,9 +11669,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Τα φίλτρα λειτουργούν σε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου, συμπεριλαμβανομένων των εισερχόμενων καθώς και των απεσταλμένων μηνυμάτων ηλεκτρονικού ταχυδρομείου. Κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα, μια συνθήκη και μια ενέργεια."
       ],
-      "Find out what can be migrated.": [
-        "Μάθετε τι μπορεί να μετεγκατασταθεί."
-      ],
       "for ${ price }": [
         "για ${ price }"
       ],
@@ -12393,9 +12335,6 @@
       "No single sign-on": [
         "Χωρίς καθολική σύνδεση"
       ],
-      "No users to display": [
-        "Δεν υπάρχουν χρήστες για εμφάνιση"
-      ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
@@ -12844,9 +12783,6 @@
       "Select a group to view its members and settings.": [
         "Επιλέξτε μια ομάδα για να δείτε τα μέλη και τις ρυθμίσεις της."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Επιλέξτε ακριβώς αυτό που θέλετε να μετεγκαταστήσετε. Θα εφαρμοστεί για όλους τους χρήστες του οργανισμού."
-      ],
       "Select one or multiple user affiliations": [
         "Επιλέξτε μία ή περισσότερες συνεργασίες χρηστών"
       ],
@@ -13289,12 +13225,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Αυτός ο σύνδεσμος κατάργησης εγγραφής έχει λήξει. Ανοίξτε ένα πιο πρόσφατο μήνυμα ηλεκτρονικού ταχυδρομείου από αυτήν τη λίστα αλληλογραφίας."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Δεν είναι δυνατή η μετεγκατάσταση αυτού του χρήστη επειδή η διεύθυνση ηλεκτρονικού ταχυδρομείου του δεν είναι διαθέσιμη στο ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Αυτός ο χρήστης είναι προς το παρόν υπεύθυνος για τις πληρωμές του οργανισμού σας. Με την υποβάθμιση αυτού του μέλους, θα είστε εσείς υπεύθυνοι για τις πληρωμές του οργανισμού σας."
       ],
@@ -13436,27 +13366,6 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Για να ακολουθείτε την τελευταία εξέλιξη στα προϊόντα ${ BRAND_NAME }, μπορείτε να εγγραφείτε στα διάφορα email μας και ${ blogLink } κατά διαστήματα."
       ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, προσθέστε και επαληθεύστε τον τομέα ηλεκτρονικού ταχυδρομείου στο ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στο ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην ενότητα ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τη διεύθυνσή του στην περιοχή ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του από το ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στον φάκελο ${ provider.adminConsoleName }."
-      ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Για να αποτραπεί η κατάχρηση ή η απάτη, ζητάμε μια ελάχιστη δωρεά ${ minimumDonation }. Αυτό στηρίζει το έργο της ${ protonFoundationLink } στην υπεράσπιση της ψηφιακής ιδιωτικότητας παγκοσμίως και βοηθά στην προστασία της επόμενης γενιάς."
       ],
@@ -13528,6 +13437,9 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Δυστυχώς, δεν υπάρχει διαθέσιμη μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
+      ],
+      "UnionPay logo": [
+        "Λογότυπο UnionPay"
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Μοναδικό αναγνωριστικό που δημιουργείται από τον πάροχο ταυτότητάς σας, συνήθως με τη μορφή διεύθυνσης URL που περιέχει το όνομα του παρόχου ταυτότητας (π.χ. https://idp.example.com/XXXXX)."
@@ -13930,9 +13842,6 @@
       ],
       "Yearly": [
         "Ετησίως"
-      ],
-      "You": [
-        "Εσείς"
       ],
       "You already have a free account": [
         "Έχετε ήδη έναν δωρεάν λογαριασμό"
@@ -17003,14 +16912,14 @@
       "Create an alias": [
         "Δημιουργία ψευδωνύμου"
       ],
+      "Customer Support": [
+        "Υποστήριξη Πελατών"
+      ],
       "data recovery option": [
         "επιλογή ανάκτησης δεδομένων"
       ],
       "Details": [
         "Λεπτομέρειες"
-      ],
-      "Downloads": [
-        "Λήψεις"
       ],
       "Encryption and keys": [
         "Κρυπτογράφηση και κλειδιά"
@@ -20754,12 +20663,6 @@
       "Billing Country": [
         "Χώρα χρέωσης"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Το Born Private δεν μπορεί να αγοραστεί όσο υπάρχει ενεργή συνδρομή."
-      ],
-      "Born Private requires a donation.": [
-        "Το Born Private απαιτεί δωρεά."
-      ],
       "Buying credits requires a separate purchase.": [
         "Η αγορά μονάδων απαιτεί ξεχωριστή αγορά."
       ],
@@ -20958,9 +20861,6 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ήδη διαθέτετε το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Έχετε ήδη το Born Private."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Θα χρεωθείτε ${ amountToCharge } από τον επιλεγμένο τρόπο πληρωμής."
       ],
@@ -20969,9 +20869,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
-      ],
-      "Your account is too old for Born Private.": [
-        "Ο λογαριασμός σας είναι πολύ παλιός για το Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Το νόμισμά σας έχει αλλάξει σε ευρώ (€) επειδή το ${ IDEAL_WERO_BRAND_NAME } υποστηρίζει μόνο πληρωμές σε ευρώ."
@@ -25590,23 +25487,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "Ενεργοποιήθηκε"
-      ],
-      "Estimated size": [
-        "Εκτιμώμενος χρόνος"
-      ],
-      "Migration status": [
-        "Κατάσταση μετεγκατάστασης"
-      ],
       "Size": [
         "Μέγεθος"
       ],
       "Status": [
         "Κατάσταση"
-      ],
-      "User": [
-        "Χρήστης"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -26194,9 +26079,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "Ρύθμιση παραμέτρων Always-on VPN προφίλ συσκευής"
-      ],
-      "Configure migration": [
-        "Διαμόρφωση μετεγκατάστασης"
       ],
       "Configure your domain": [
         "Ρυθμίστε τον τομέα σας"
@@ -27408,9 +27290,6 @@
       "Select the way to send this notification": [
         "Επιλέξτε πώς θα σταλεί αυτή η ειδοποίηση"
       ],
-      "Select users to migrate": [
-        "Επιλογή χρηστών για μετεγκατάσταση"
-      ],
       "Select when you want this notification to be sent": [
         "Επιλέξτε πότε θέλετε να σταλεί αυτή η ειδοποίηση"
       ],
@@ -27847,9 +27726,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
       ],
-      "What are you migrating?": [
-        "Τι μετεγκαταστάτε;"
-      ],
       "What changes if you switch to the Free plan": [
         "Τι αλλάζει αν μεταβείτε στο Free πλάνο"
       ],
@@ -28132,9 +28008,6 @@
       "Customize import to reduce the number of labels": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των ετικετών"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Κατάσταση μετεγκατάστασης δεδομένων από το ${ providerName } στο ${ BRAND_NAME }"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Εξαλείψτε οριστικά τα μηνύματα στα Διαγραμμένα και τα Ενοχλητικά μετά από 30 ημέρες. Η ενεργοποίηση της αυτόματης διαγραφής, εφαρμόζει στα διαγραμμένα/ενοχλητικά μηνύματα ημερομηνία αυτόματης εξάλειψης βάσει της ημερομηνίας μετακίνησής τους εκεί."
       ],
@@ -28356,9 +28229,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Κατά προσέγγιση τοποθεσία του χρήστη (βάσει της διεύθυνσης IP του)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Χρήστες που έχουν κάνει πρόσβαση στον λογαριασμό τους ${ BRAND_NAME }"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Οι χρήστες θα βλέπουν το λογότυπό σας αντί για το εικονίδιο του ${ BRAND_NAME } όταν είναι συνδεδεμένοι στις εφαρμογές ιστού μας."

@@ -1466,9 +1466,6 @@
       "Maybe later": [
         "Mungkin kemudian"
       ],
-      "Migrate": [
-        "Migrasikan"
-      ],
       "More": [
         "Lagi"
       ],
@@ -2902,6 +2899,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ruang storan dikongsi merentas semua perkhidmatan ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Dapatkan tawaran"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/bulan"
+      ],
+      "15 GB storage": [
+        "15 GB storan"
+      ],
+      "2 individual accounts": [
+        "2 akaun individu"
+      ],
+      "2 TB of secure storage": [
+        "2 TB storan selamat"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB storan: 40 kali ganda pelan semasa anda"
+      ],
+      "3 TB of secure storage": [
+        "3 TB storan selamat"
+      ],
+      "500 GB of secure storage": [
+        "500 GB storan selamat"
+      ],
+      "6 individual accounts": [
+        "6 akaun individu"
+      ],
+      "Built-in 2FA authenticator": [
+        "Pengesah 2FA terbina dalam"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Diskaun adalah berdasarkan harga bulanan standard. Langganan anda akan diperbaharui pada kadar tahunan standard apabila kitaran pengebilan tamat."
+      ],
+      "Online document editor": [
+        "Penyunting dokumen dalam talian"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi fail terdahulu"
+      ],
+      "Stronger protection against cyber threats": [
+        "Perlindungan lebih kuat terhadap ancaman siber"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Folder, label dan penapis tanpa had"
+      ],
+      "Use your own email domain": [
+        "Gunakan domain e-mel anda sendiri"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Jualan terbesar tahun ini"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "selama 12 bulan"
+      ],
+      "Last chance to save big": [
+        "Peluang terakhir untuk berjimat besar"
+      ],
+      "Protect your entire tribe": [
+        "Lindungi seluruh keluarga anda"
+      ],
+      "Protection for two in a single plan": [
+        "Perlindungan untuk dua orang dalam satu pelan"
       ]
     },
     "Billing cycle": {
@@ -5239,9 +5336,6 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Bawa e-mel, acara kalendar dan kenalan anda daripada pembekal lain."
       ],
-      "Bring over your files from another provider.": [
-        "Pindahkan fail anda daripada penyedia lain."
-      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Bina kepercayaan dan pengiktirafan jenama dengan alamat e-mel profesional pada domain anda sendiri."
       ],
@@ -6844,9 +6938,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Mereka boleh meminta akses ke akaun anda dalam kecemasan."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Mereka akan menerima akses secara automatik dalam **${ days } hari**, pada **${ formattedAccessibleAt }**, anda boleh menolak permintaan mereka atau memberi mereka akses serta-merta pada bila-bila masa."
-      ],
       "This will take effect immediately.": [
         "Tindakan ini akan berkuat kuasa serta-merta."
       ],
@@ -7385,12 +7476,6 @@
       "Missing key packet": [
         "Paket kunci tiada"
       ],
-      "Missing organization private key": [
-        "Kunci peribadi organisasi tidak dijumpai"
-      ],
-      "Missing organization public key": [
-        "Kunci awam organisasi tidak dijumpai"
-      ],
       "Missing signature": [
         "Tandatangan tiada"
       ],
@@ -7468,12 +7553,6 @@
       ],
       "Operation failed, try again later": [
         "Operasi gagal, cuba lagi kemudian"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisasi tidak mempunyai lesen pengguna yang mencukupi"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisasi tidak mempunyai storan yang mencukupi"
       ],
       "Organization key is not decrypted": [
         "Kunci organisasi tidak dinyahsulit"
@@ -8877,29 +8956,6 @@
         "Terabait"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Diaktifkan"
-      ],
-      "All": [
-        "Semua"
-      ],
-      "Errors": [
-        "Ralat"
-      ],
-      "In progress": [
-        "Sedang berjalan"
-      ],
-      "Migrated": [
-        "Telah dipindahkan"
-      ],
-      "Not activated": [
-        "Tidak diaktifkan"
-      ],
-      "Pending": [
-        "Menunggu"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Arkib"
@@ -9476,9 +9532,6 @@
       "Contact us": [
         "Hubungi kami"
       ],
-      "Downloads": [
-        "Muat turun"
-      ],
       "Enjoying ${ planName }?": [
         "Suka dengan ${ planName }?"
       ],
@@ -9846,9 +9899,6 @@
       "Failed": [
         "Gagal"
       ],
-      "Has errors": [
-        "Ada ralat"
-      ],
       "Import completed successfully": [
         "Import telah selesai"
       ],
@@ -9866,9 +9916,6 @@
       ],
       "Paused": [
         "Dijeda"
-      ],
-      "Pending": [
-        "Menunggu"
       ],
       "Skipped ${ count } contact due to incompatibilities": [
         "${ count } kenalan telah dilangkau kerana ketidakserasian"
@@ -11363,9 +11410,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Penapis berfungsi pada semua e-mel, termasuk e-mel masuk dan e-mel yang dihantar. Setiap penapis mesti mengandungi sekurang-kurangnya satu nama, satu syarat dan satu tindakan."
       ],
-      "Find out what can be migrated.": [
-        "Ketahui apa yang boleh dimigrasikan."
-      ],
       "for ${ price }": [
         "pada ${ price }"
       ],
@@ -12014,9 +12058,6 @@
       "No single sign-on": [
         "Tiada log masuk tunggal"
       ],
-      "No users to display": [
-        "Tiada pengguna untuk dipaparkan"
-      ],
       "Not a valid URL": [
         "URL tidak sah"
       ],
@@ -12455,9 +12496,6 @@
       "Select a group to view its members and settings.": [
         "Pilih kumpulan untuk melihat ahli dan tetapannya."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Pilih dengan tepat apa yang anda mahu migrasikan. Ia akan digunakan bagi semua pengguna organisasi."
-      ],
       "Select one or multiple user affiliations": [
         "Pilih satu atau beberapa afiliasi pengguna"
       ],
@@ -12881,12 +12919,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Pautan henti langgan ini telah luput. Sila buka e-mel yang lebih baharu daripada senarai mel ini."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Pengguna ini tidak dapat dipindahkan kerana alamat e-mel mereka tidak tersedia di ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Pengguna ini tidak dapat dimigrasikan kerana ketidaksesuaian platform."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Pengguna ini kini bertanggungjawab untuk pembayaran organisasi anda. Dengan menurunkan taraf ahli ini, anda akan menjadi pihak yang bertanggungjawab untuk pembayaran organisasi anda."
       ],
@@ -13027,27 +13059,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Untuk mengikuti perkembangan terkini produk ${ BRAND_NAME }, anda boleh melanggan pelbagai e-mel kami dan ${ blogLink } dari semasa ke semasa."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Untuk memindahkan pengguna ini, tambah dan sahkan domain e-mel di bawah ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Untuk memigrasikan pengguna ini, dayakan akaun mereka dalam ${ provider.adminConsoleName } anda."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Untuk memigrasikan pengguna ini, dayakan akaun mereka di ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Untuk memigrasikan pengguna ini, dayakan alamat mereka di ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Untuk memigrasikan pengguna ini, mereka perlu menerima jemputan untuk menyertai ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Untuk memigrasikan pengguna ini, keluarkan mereka dari arkib dalam ${ provider.adminConsoleName } anda."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Untuk memigrasikan pengguna ini, aktifkan semula mereka dalam ${ provider.adminConsoleName } anda."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Untuk mengelakkan penyalahgunaan atau penipuan, kami meminta derma minimum ${ minimumDonation }. Ini menyokong usaha ${ protonFoundationLink } dalam mempertahankan privasi digital di peringkat global dan membantu melindungi generasi akan datang."
@@ -13504,9 +13515,6 @@
       ],
       "Yearly": [
         "Tahunan"
-      ],
-      "You": [
-        "Anda"
       ],
       "You already have a free account": [
         "Anda sudah mempunyai akaun percuma"
@@ -16527,9 +16535,6 @@
       ],
       "Details": [
         "Butiran"
-      ],
-      "Downloads": [
-        "Muat turun"
       ],
       "Encryption and keys": [
         "Penyulitan dan kunci"
@@ -20211,12 +20216,6 @@
       "Billing Country": [
         "Negara pengebilan"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private tidak boleh dibeli dengan langganan yang aktif."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private memerlukan sumbangan."
-      ],
       "Buying credits requires a separate purchase.": [
         "Pembelian kredit memerlukan pembelian berasingan."
       ],
@@ -20397,9 +20396,6 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Anda sudah memiliki ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Anda sudah memiliki Born Private."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Anda akan dicas ${ amountToCharge } daripada kaedah pembayaran pilihan anda."
       ],
@@ -20408,9 +20404,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Anda akan dialihkan sebentar lagi untuk mengesahkan pembayaran anda."
-      ],
-      "Your account is too old for Born Private.": [
-        "Akaun anda terlalu lama untuk Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Mata wang anda telah ditukar kepada euro (€) kerana ${ IDEAL_WERO_BRAND_NAME } hanya menyokong pembayaran dalam euro."
@@ -24920,23 +24913,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "Diaktifkan"
-      ],
-      "Estimated size": [
-        "Anggaran saiz"
-      ],
-      "Migration status": [
-        "Status migrasi"
-      ],
       "Size": [
         "Saiz"
       ],
       "Status": [
         "Status"
-      ],
-      "User": [
-        "Pengguna"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25496,9 +25477,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "Konfigur profil peranti VPN sentiasa aktif"
-      ],
-      "Configure migration": [
-        "Konfigurasikan migrasi"
       ],
       "Configure your domain": [
         "Konfigurasikan domain anda"
@@ -26679,9 +26657,6 @@
       "Select the way to send this notification": [
         "Pilih cara menghantar pemberitahuan ini"
       ],
-      "Select users to migrate": [
-        "Pilih pengguna untuk dimigrasikan"
-      ],
       "Select when you want this notification to be sent": [
         "Pilih bila anda mahu pemberitahuan ini dihantar"
       ],
@@ -27093,9 +27068,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Selamat datang ke ${ BRAND_NAME } for Business"
       ],
-      "What are you migrating?": [
-        "Apakah yang anda mahu migrasikan?"
-      ],
       "What changes if you switch to the Free plan": [
         "Apa yang berubah jika anda beralih ke Free plan"
       ],
@@ -27375,9 +27347,6 @@
       "Customize import to reduce the number of labels": [
         "Sesuaikan import untuk mengurangkan bilangan label"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Status migrasi data dari ${ providerName } ke ${ BRAND_NAME }"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Padam mesej dalam sampah dan spam selepas 30 hari. Apabila auto-padam didayakan, mesej yang sudah berada dalam sampah/spam akan diberi tarikh pemadaman berdasarkan tarikh ia dipindahkan ke sana."
       ],
@@ -27599,9 +27568,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Anggaran lokasi pengguna (berdasarkan alamat IP mereka)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Pengguna yang telah mengakses akaun ${ BRAND_NAME } mereka"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Pengguna akan melihat logo anda sebagai ganti ikon ${ BRAND_NAME } semasa log masuk dalam aplikasi web kami."

@@ -342,9 +342,6 @@
       "Download": [
         "Descargar"
       ],
-      "Download app": [
-        "Descargar aplicación"
-      ],
       "Download local participant report": [
         "Descargar informe de participante local"
       ],
@@ -432,6 +429,12 @@
       "Join": [
         "Unirse"
       ],
+      "Join and leave sounds": [
+        "Unirse y dejar sonidos"
+      ],
+      "Join in browser": [
+        "Unirse en el navegador"
+      ],
       "Join meeting": [
         "Unirse a la reunión"
       ],
@@ -464,6 +467,9 @@
       ],
       "Lower hand": [
         "Bajar la mano"
+      ],
+      "Meeting debug": [
+        "Depuración de la reunión"
       ],
       "Meeting info": [
         "Información de la reunión"
@@ -698,6 +704,9 @@
       "Start meeting": [
         "Comenzar la reunión"
       ],
+      "Start meeting in browser": [
+        "Iniciar la reunión en el navegador"
+      ],
       "Start new meeting": [
         "Iniciar una reunión"
       ],
@@ -715,9 +724,6 @@
       ],
       "Stay in meeting": [
         "Permanecer en la reunión"
-      ],
-      "Stop opening meetings in the desktop app": [
-        "Dejar de abrir reuniones en la aplicación de escritorio"
       ],
       "Stop receiving video": [
         "Dejar de recibir video"
@@ -849,6 +855,9 @@
       ],
       "Incoming video": [
         "Video entrante"
+      ],
+      "Join and leave sounds": [
+        "Unirse y dejar sonidos"
       ],
       "Leave Meeting": [
         "Salir de la reunión"
@@ -1965,6 +1974,12 @@
       "Cannot verify who uploaded this file": [
         "No se puede verificar quién cargó este archivo"
       ],
+      "Check your audio settings and try again": [
+        "Compruebe los ajustes del audio e intente de nuevo"
+      ],
+      "Connection lost — captions will resume when reconnected": [
+        "Conexión perdida, los subtítulos se reanudarán cuando se reconecte"
+      ],
       "Copy operation aborted": [
         "Operación de copiado abortada"
       ],
@@ -2202,6 +2217,9 @@
       "Microphone access is blocked. Allow it in your browser settings.": [
         "El acceso al micrófono está bloqueado. Permítalo en los ajustes del navegador."
       ],
+      "Microphone not detected": [
+        "Micrófono no detectado"
+      ],
       "Missing inviter email": [
         "Falta el correo electrónico de invitación"
       ],
@@ -2323,6 +2341,9 @@
       "The email addresses do not match": [
         "Las direcciónes de correo electrónico no son las mismas"
       ],
+      "The emoji could not be added because the message is at its character limit": [
+        "No se pudo añadir el emoji porque el mensaje alcanzó el límite de caracteres"
+      ],
       "The meeting password is incorrect": [
         "La contraseña de la reunión es incorrecta"
       ],
@@ -2392,8 +2413,14 @@
       "Too many server requests, please try again later": [
         "Demasiadas solicitudes del servidor, intente de nuevo más tarde"
       ],
+      "Try turning live captions off and on again.": [
+        "Intente desactivar y activar los subtítulos en directo de nuevo."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Intente usando solo letras, números y _.-"
+      ],
+      "Unable to generate captions": [
+        "No se pueden generar los subtítulos"
       ],
       "Unknown error": [
         "Error desconocido"
@@ -2647,6 +2674,9 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualice su navegador o dispositivo a una versión que sea compatible con WebRTC, pruebe un navegador diferente o desactive cualquier extensión que pueda estar bloqueándolo."
       ],
+      "${ meetingName } has ended": [
+        "${ meetingName } ha terminado"
+      ],
       "${ mlsMemberCount } member": [
         "${ mlsMemberCount } miembro",
         "${ mlsMemberCount } miembros"
@@ -2727,6 +2757,9 @@
       "Anyone with the link can join immediately": [
         "Cualquiera con el enlace puede unirse automáticamente"
       ],
+      "App didn't open?": [
+        "¿No se abrió la aplicación?"
+      ],
       "Approve participants before they can join": [
         "Aprobar a los participantes antes de que se unan"
       ],
@@ -2768,6 +2801,9 @@
       ],
       "Camera permission denied": [
         "Permiso de cámara denegado"
+      ],
+      "Captions on": [
+        "Subtítulos activados"
       ],
       "Changes are staged. Apply to rebuild the preview with the new constants.": [
         "Los cambios se realizan por fases. Aplique para reconstruir la vista previa con las constantes nuevas."
@@ -2987,6 +3023,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Cargando el calendario, espere. Se le redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
+      ],
+      "Loading captions…": [
+        "Cargando subtítulos…"
       ],
       "Loading meeting details...": [
         "Cargando los detalles de la reunión..."
@@ -3369,9 +3408,6 @@
       "This meeting reached the time limit.": [
         "Esta reunión alcanzó el límite de tiempo."
       ],
-      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Esta reunión fue abierta en la aplicación de escritorio de ${ MEET_APP_NAME }."
-      ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Esta grabación será eliminada permanentemente de este dispositivo. Esta acción no se puede deshacer."
       ],
@@ -3383,6 +3419,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas con la sesión activa."
+      ],
+      "Time is up for ${ meetingName }": [
+        "Se acabó el tiempo para ${ meetingName }"
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Para crear una sala, necesitará **una Cuenta ${ BRAND_NAME } gratuita** para que podamos guardar la sala. Esto solo toma unos segundos."
@@ -3435,6 +3474,9 @@
       "Virtual background initializing": [
         "Inicializando fondo virtual"
       ],
+      "Waiting for speech…": [
+        "Esperando el discurso…"
+      ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
         "Esperando al anfitrión para admitirle. Se notificó al anfitrión de que usted está esperando."
       ],
@@ -3474,9 +3516,6 @@
       "You are almost there": [
         "Ya casi terminamos"
       ],
-      "You can close this tab.": [
-        "Puede cerrar esta pestaña."
-      ],
       "You can now return to the application to continue": [
         "Ahora puede regresar a la aplicación para continuar."
       ],
@@ -3489,11 +3528,17 @@
       "You have too many meetings in progress": [
         "Tiene muchas reuniones en progreso"
       ],
+      "You left ${ meetingName }": [
+        "Abandonó ${ meetingName }"
+      ],
       "You left the meeting": [
         "Abandonó la reunión"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
         "Esta función requiere un plan de pago de ${ MEET_SHORT_APP_NAME } o Workspace. Contacte con la administración de su organización para mejorar el plan."
+      ],
+      "You were removed from ${ meetingName }": [
+        "Se le retiró de ${ meetingName }"
       ],
       "You were removed from the meeting": [
         "Se le retiró de la reunión"
@@ -3714,6 +3759,9 @@
       "Live caption agent": [
         "Agente de subtítulos en directo"
       ],
+      "Live captions": [
+        "Subtítulos en directo"
+      ],
       "Manage recordings": [
         "Gestionar grabaciones"
       ],
@@ -3868,6 +3916,110 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ]
+    },
+    "Lumo emoji name": {
+      "Alert": [
+        "Alerta"
+      ],
+      "Browse folders": [
+        "Navegar carpetas"
+      ],
+      "Cash": [
+        "Efectivo"
+      ],
+      "Celebrate": [
+        "Celebración"
+      ],
+      "Cheers": [
+        "Salud"
+      ],
+      "Chef's kiss": [
+        "Beso de chef"
+      ],
+      "Coffee": [
+        "Café"
+      ],
+      "Cowboy": [
+        "Vaquero"
+      ],
+      "Encrypt": [
+        "Cifrado"
+      ],
+      "Gaming": [
+        "Juegos"
+      ],
+      "Halo": [
+        "Halo"
+      ],
+      "Happy": [
+        "Feliz"
+      ],
+      "Love": [
+        "Amor"
+      ],
+      "Mild panic": [
+        "Pánico leve"
+      ],
+      "Mind blown": [
+        "Alucinante"
+      ],
+      "Nine lives": [
+        "Nueve vidas"
+      ],
+      "Party": [
+        "Fiesta"
+      ],
+      "Perk": [
+        "Recompensa"
+      ],
+      "Popcorn": [
+        "Palomitas de maíz"
+      ],
+      "Rocket": [
+        "Cohete"
+      ],
+      "Sad": [
+        "Triste"
+      ],
+      "Schrödinger in a box": [
+        "Schrödinger en una caja"
+      ],
+      "Schrödinger out of the box": [
+        "Schrödinger fuera de la caja"
+      ],
+      "Search": [
+        "Búsqueda"
+      ],
+      "Sit": [
+        "Sentarse"
+      ],
+      "Slay": [
+        "Matar"
+      ],
+      "Sleepy": [
+        "Dormido"
+      ],
+      "Sweep": [
+        "Barrer"
+      ],
+      "Thank you": [
+        "Gracias"
+      ],
+      "Think": [
+        "Pensar"
+      ],
+      "This is fine": [
+        "Está bien"
+      ],
+      "Watch left": [
+        "Mirar a la izquierda"
+      ],
+      "Watch right": [
+        "Mirar a la derecha"
+      ],
+      "Write": [
+        "Escribir"
       ]
     },
     "meet": {

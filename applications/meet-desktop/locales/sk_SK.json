@@ -101,6 +101,17 @@
         "Služby"
       ]
     },
+    "Clear application data prompt": {
+      "Cancel": [
+        "Zrušiť"
+      ],
+      "Clear application data": [
+        "Vymazať dáta aplikácie"
+      ],
+      "This removes all data associated with this app. The app will close and you will need to sign in again to use the app.": [
+        "Týmto odstránite všetky dáta spojené s touto aplikáciou. Aplikácia sa zavrie a na jej používanie sa budete musieť znovu prihlásiť."
+      ]
+    },
     "Download warning": {
       "A recording is still being saved": [
         "Nahrávka sa stále ukladá"
@@ -156,6 +167,67 @@
         "Okno"
       ]
     },
+    "Screen share permission": {
+      "Allow screen recording": [
+        "Povoliť nahrávanie obrazovky"
+      ],
+      "Cancel": [
+        "Zrušiť"
+      ],
+      "Open System Settings": [
+        "Otvoriť Nastavenia systému"
+      ],
+      "To share your screen, allow Proton Meet in System Settings > Privacy & Security > Screen & System Audio Recording.": [
+        "Ak chcete zdieľať svoju obrazovku, povoľte Proton Meet v časti Systémové nastavenia > Súkromie a bezpečnosť > Nahrávanie obrazovky a systémového zvuku."
+      ]
+    },
+    "Screen share picker": {
+      "Built-in": [
+        "Vstavaná"
+      ],
+      "Cancel": [
+        "Zrušiť"
+      ],
+      "Close": [
+        "Zavrieť"
+      ],
+      "Display ${ screenNumber }": [
+        "Zobraziť ${ screenNumber }"
+      ],
+      "Entire screen": [
+        "Celá obrazovka"
+      ],
+      "External": [
+        "Externá"
+      ],
+      "Hide advanced options": [
+        "Skryť rozšírené nastavenia"
+      ],
+      "Just one app": [
+        "Len jedna aplikácia"
+      ],
+      "No windows available to share": [
+        "Nie sú k dispozícii žiadne okná, ktoré by bolo možné zdieľať"
+      ],
+      "Share": [
+        "Zdielať"
+      ],
+      "Share system audio": [
+        "Zdieľať systémový zvuk"
+      ],
+      "Share your screen": [
+        "Zdieľať vašu obrazovku"
+      ],
+      "Show advanced options": [
+        "Zobraziť pokročilé nastavenia"
+      ],
+      "Viewers only see this app, even if you switch windows.": [
+        "Diváci vidia len túto aplikáciu, aj keď prepnete medzi oknami."
+      ],
+      "Viewers see your entire screen, including apps and notifications.": [
+        "Diváci vidia celú vašu obrazovku, vrátane aplikácií a upozornení."
+      ]
+    },
     "Unload warning": {
       "Changes you made may not be saved.": [
         "Vykonané zmeny sa nemusia uložiť."
@@ -168,6 +240,20 @@
       ],
       "Stay": [
         "Zostať"
+      ]
+    },
+    "Update prompt": {
+      "${ MEET_APP_NAME } update": [
+        "Aktualizácia ${ MEET_APP_NAME }"
+      ],
+      "A new version of ${ MEET_APP_NAME } has been downloaded. Restart the application to apply the updates.": [
+        "Stiahla sa nová verzia ${ MEET_APP_NAME }. Na uplatnenie aktualizácií reštartujte aplikáciu."
+      ],
+      "Later": [
+        "Neskôr"
+      ],
+      "Restart": [
+        "Reštartovať"
       ]
     }
   }

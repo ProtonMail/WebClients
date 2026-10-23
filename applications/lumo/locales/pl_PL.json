@@ -615,6 +615,106 @@
         "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi usługami ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/miesiąc"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "2 individual accounts": [
+        "2 indywidualne konta"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpiecznej przestrzeni dyskowej"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB przestrzeni dyskowej: 40× więcej niż w obecnym planie"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpiecznej przestrzeni dyskowej"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpiecznej przestrzeni dyskowej"
+      ],
+      "6 individual accounts": [
+        "6 indywidualnych kont"
+      ],
+      "Built-in 2FA authenticator": [
+        "Wbudowana aplikacja do uwierzytelniania dwustopniowego"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej po zakończeniu cyklu rozliczeniowego."
+      ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
+      "Recover previous file versions": [
+        "Odzyskuj poprzednie wersje plików"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silniejsza ochrona przed cyberzagrożeniami"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Use your own email domain": [
+        "Możliwość użycia własnej domeny e-mail"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Największa wyprzedaż roku"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "na 12 miesięcy"
+      ],
+      "Last chance to save big": [
+        "Ostatnia szansa na duże oszczędności"
+      ],
+      "Protect your entire tribe": [
+        "Chroń całą swoją społeczność"
+      ],
+      "Protection for two in a single plan": [
+        "Ochrona dla dwóch osób w jednym planie"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } miesiąc",
@@ -1218,23 +1318,14 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Dodawaj własne wspomnienia, edytuj dowolny automatycznie wygenerowany wpis lub wyczyść wszystko w dowolnym momencie. Edytowane przez Ciebie wygenerowane wspomnienia zostaną przypisane jako Twoje własne."
       ],
-      "Always enable web search for new conversations": [
-        "Zawsze włączaj wyszukiwanie w sieci dla nowych wątków"
-      ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "Klucze interfejsu API umożliwiają programistyczny dostęp do ${ LUMO_SHORT_APP_NAME }. Każdy klucz jest pokazywany tylko raz, podczas jego tworzenia."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Utwórz klucz, aby zintegrować ${ LUMO_SHORT_APP_NAME } ze swoimi skryptami i narzędziami."
       ],
-      "Encrypted search index for chats and Drive files.": [
-        "Zaszyfrowany indeks wyszukiwania czatów i plików na Dysku."
-      ],
       "High-performance model for complex tasks": [
         "Wydajny model do złożonych zadań"
-      ],
-      "Include project conversations in the main chat history": [
-        "Uwzględniaj wątki projektu w głównej historii czatu"
       ],
       "Keep it safe — it won't be shown again": [
         "Zapisz go w bezpiecznym miejscu — nie zostanie ponownie pokazany"
@@ -1256,9 +1347,6 @@
       ],
       "More thorough answers, but can take longer": [
         "Bardziej szczegółowe odpowiedzi, ale mogą potrwać dłużej"
-      ],
-      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
-        "Trwale usuń swoje projekty, czaty i zapisane wspomnienia. Tej operacji nie można cofnąć."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Czaty projektowe są całkowicie odizolowane. Opierają się na własnych instrukcjach i plikach oraz całkowicie ignorują Twoje globalne wspomnienia."
@@ -1611,9 +1699,6 @@
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         ". Jest on zgodny ze schematem interfejsu API OpenAI — pozwala na integrację z istniejącym klientem za pomocą jednolinijkowej zmiany."
       ],
-      "1 file": [
-        "1 plik"
-      ],
       "A ${ LUMO_SHORT_APP_NAME } account": [
         "Konto ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -1683,9 +1768,6 @@
       "characters not shown": [
         "niewyświetlane znaki"
       ],
-      "characters processed": [
-        "przetworzonych znaków"
-      ],
       "Chat expiring soon": [
         "Czat wkrótce wygasa"
       ],
@@ -1739,9 +1821,6 @@
       ],
       "File too large for preview (>150k tokens)": [
         "Plik jest zbyt duży, aby wyświetlić podgląd (>150 tys. tokenów)"
-      ],
-      "files": [
-        "pliki"
       ],
       "Files": [
         "Pliki"
@@ -1973,9 +2052,6 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Aby wrócić do tego wątku później, zaloguj się lub utwórz konto."
-      ],
-      "tokens": [
-        "tokeny"
       ],
       "tokens / 30d": [
         "tokeny / 30 dni"
@@ -2480,9 +2556,6 @@
       "Auto update memory": [
         "Automatycznie aktualizuj pamięć"
       ],
-      "Automatic web search": [
-        "Automatyczne wyszukiwanie w sieci"
-      ],
       "Build intelligent apps.": [
         "Twórz inteligentne aplikacje."
       ],
@@ -2500,9 +2573,6 @@
       ],
       "Create new API key": [
         "Utwórz nowy klucz interfejsu API"
-      ],
-      "Delete everything": [
-        "Usuń wszystko"
       ],
       "Document intelligence": [
         "Inteligentna analiza dokumentów"
@@ -2567,14 +2637,8 @@
       "Saved memories": [
         "Zapisane wspomnienia"
       ],
-      "Search Index": [
-        "Indeks wyszukiwania"
-      ],
       "Security note:": [
         "Uwaga dotycząca bezpieczeństwa:"
-      ],
-      "Show project chats in history": [
-        "Pokazuj czaty projektu w historii"
       ],
       "Theme": [
         "Motyw"
@@ -8725,18 +8789,6 @@
       ]
     },
     "Time": {
-      "${ days } days ago": [
-        "${ days } dni temu"
-      ],
-      "${ hours } hours ago": [
-        "${ hours } godz. temu"
-      ],
-      "${ minutes } minutes ago": [
-        "${ minutes } min temu"
-      ],
-      "1 hour ago": [
-        "1 godzinę temu"
-      ],
       "Just now": [
         "Przed chwilą"
       ],

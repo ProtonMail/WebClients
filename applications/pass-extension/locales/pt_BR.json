@@ -1043,6 +1043,9 @@
       "Authentication failure: ${ message }": [
         "Falha na autenticação: ${ message }"
       ],
+      "Biometric authentication cancelled.": [
+        "Autenticação biométrica cancelada."
+      ],
       "Biometric authentication failed.": [
         "A autenticação biométrica falhou."
       ],
@@ -1670,6 +1673,9 @@
       "Autofill and passwords": [
         "Preenchimento automático e senhas"
       ],
+      "Continue export": [
+        "Continuar exportação"
+      ],
       "Download file": [
         "Baixar arquivo"
       ],
@@ -1702,6 +1708,9 @@
       ],
       "Google Password Manager": [
         "Gerenciador de Senhas do Google"
+      ],
+      "Manage your vault": [
+        "Gerencie seu cofre"
       ],
       "Microsoft password manager": [
         "Gerenciador de senhas da Microsoft"
@@ -2418,7 +2427,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2467,6 +2477,9 @@
       ],
       "None": [
         "Nenhum"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Nenhuma das suas senhas salvas apareceu em um vazamento de dados conhecido."
       ],
       "None selected": [
         "Nenhum selecionado"
@@ -5222,6 +5235,9 @@
       "Import to vault(s)": [
         "Importar para cofre(s)"
       ],
+      "Imported items:": [
+        "Itens importados"
+      ],
       "Importing your data": [
         "Importando seus dados"
       ],
@@ -5454,6 +5470,9 @@
       "Shared via": [
         "Compartilhar via"
       ],
+      "Some of your items could not be imported. See the details below.": [
+        "Alguns de seus itens não ponderam ser importados. Veja os detalhes abaixo."
+      ],
       "SPF (Optional)": [
         "SPF (Opcional)"
       ],
@@ -5501,6 +5520,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Faça upgrade para verificar se há senhas comprometidas"
+      ],
+      "Upload": [
+        "Enviar"
       ],
       "Upload your data": [
         "Enviar seus dados"

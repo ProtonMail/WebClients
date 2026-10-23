@@ -1454,9 +1454,6 @@
       "Maybe later": [
         "Kanskje senere"
       ],
-      "Migrate": [
-        "Migrer"
-      ],
       "More": [
         "Mer"
       ],
@@ -2873,6 +2870,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Lagringsplass deles mellom alle ${ BRAND_NAME }-tjenestene."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Benytt deg av tilbudet"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/måned"
+      ],
+      "15 GB storage": [
+        "15 GB lagring"
+      ],
+      "2 individual accounts": [
+        "2 individuelle kontoer"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sikker lagring"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB lagring: 40 ganger så mye som i ditt nåværende abonnement"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sikker lagring"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sikker lagring"
+      ],
+      "6 individual accounts": [
+        "6 individuelle kontoer"
+      ],
+      "Built-in 2FA authenticator": [
+        "Innebygd 2FA-autentisering"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabattene er basert på standard månedspris. Abonnementet ditt fornyes til standard årlig pris når faktureringssyklusen avsluttes."
+      ],
+      "Online document editor": [
+        "Dokumentredigerer på nett"
+      ],
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere beskyttelse mot cybertrusler"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ubegrensede mapper, etiketter og filtre"
+      ],
+      "Use your own email domain": [
+        "Bruk ditt eget e-postdomene"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Årets største salg"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "i 12 måneder"
+      ],
+      "Last chance to save big": [
+        "Siste sjanse til å spare stort"
+      ],
+      "Protect your entire tribe": [
+        "Beskytt hele gjengen din"
+      ],
+      "Protection for two in a single plan": [
+        "Beskyttelse for to i ett abonnement"
       ]
     },
     "Billing cycle": {
@@ -6793,10 +6890,6 @@
       "They may ask to access your account in case of an emergency.": [
         "De kan be om tilgang til kontoen din i tilfelle en nødsituasjon."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "De vil automatisk motta tilgang om **${ days } dag**, på **${ formattedAccessibleAt }**, du kan avslå forespørselen deres eller gi dem tilgang umiddelbart når som helst.",
-        "De får automatisk tilgang om **${ days } dager**, på **${ formattedAccessibleAt }**, du kan avvise forespørselen deres eller gi dem tilgang umiddelbart når som helst."
-      ],
       "This will take effect immediately.": [
         "Dette trer i kraft umiddelbart."
       ],
@@ -6952,9 +7045,6 @@
       ],
       "Address is already added to your account": [
         "Adressen er allerede lagt til i kontoen din"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresse er allerede i bruk av en bruker på utsiden av organisasjonen. Kontakt kundestøtte for å løse dette."
       ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
@@ -7327,9 +7417,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Maksimalt ${ displayMaxValue } tillatt"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå sammen minst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender.",
         "Slå sammen minst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere."
@@ -7339,12 +7426,6 @@
       ],
       "Missing key packet": [
         "Mangler nøkkelpakke"
-      ],
-      "Missing organization private key": [
-        "Mangler privat nøkkel for organisasjonen"
-      ],
-      "Missing organization public key": [
-        "Mangler offentlig nøkkel for organisasjonen"
       ],
       "Missing signature": [
         "Mangler signatur"
@@ -7424,12 +7505,6 @@
       ],
       "Operation failed, try again later": [
         "Operasjon mislyktes, prøv igjen senere"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisasjonen har ikke nok ledige seter"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
       ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
@@ -8843,29 +8918,6 @@
         "Terabytes"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Aktivert"
-      ],
-      "All": [
-        "Alle"
-      ],
-      "Errors": [
-        "Feil"
-      ],
-      "In progress": [
-        "Pågår"
-      ],
-      "Migrated": [
-        "Migrert"
-      ],
-      "Not activated": [
-        "Ikke aktivert"
-      ],
-      "Pending": [
-        "Venter"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Arkiver"
@@ -9440,9 +9492,6 @@
       "Contact us": [
         "Kontakt oss"
       ],
-      "Downloads": [
-        "Nedlastinger"
-      ],
       "Enjoying ${ planName }?": [
         "Liker du ${ planName }?"
       ],
@@ -9817,9 +9866,6 @@
       "Failed": [
         "Mislyktes"
       ],
-      "Has errors": [
-        "Inneholder feil"
-      ],
       "Import completed successfully": [
         "Import fullført uten problemer"
       ],
@@ -9837,9 +9883,6 @@
       ],
       "Paused": [
         "Satt på pause"
-      ],
-      "Pending": [
-        "Venter"
       ],
       "Skipped ${ count } contact due to incompatibilities": [
         "Hoppet over ${ count } kontakt på grunn av inkompatibiliteter",
@@ -11366,9 +11409,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre fungerer på alle e-poster, inkludert innkommende så vel som sendte e-poster. Hvert filter må inneholde minst et navn, et vilkår og en handling."
       ],
-      "Find out what can be migrated.": [
-        "Finn ut hva som kan migreres."
-      ],
       "for ${ price }": [
         "for ${ price }"
       ],
@@ -12002,9 +12042,6 @@
       "No single sign-on": [
         "Ingen enkel pålogging"
       ],
-      "No users to display": [
-        "Ingen brukere å vise"
-      ],
       "Not a valid URL": [
         "Ikke en gyldig nettadresse"
       ],
@@ -12438,9 +12475,6 @@
       "Select a group to view its members and settings.": [
         "Velg en gruppe for å se medlemmene og innstillingene."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
-      ],
       "Select one or multiple user affiliations": [
         "Velg én eller flere brukertilknytninger"
       ],
@@ -12868,12 +12902,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Denne koblingen til å avslutte abonnementet er utløpt. Åpne en mer nylig e-post fra denne e-postlisten."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Denne brukeren kan ikke migreres fordi e-postadressen deres ikke er tilgjengelig på ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Denne brukeren kan ikke migreres på grunn av plattformuforenlighet."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne brukeren er for øyeblikket ansvarlig for betalinger i organisasjonen din. Ved å degradere dette medlemmet, vil du bli ansvarlig for betalinger i organisasjonen din."
       ],
@@ -13011,27 +13039,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "For å holde tritt med den siste utviklingen på ${ BRAND_NAME }s produkter, kan du abonnere på våre forskjellige e-poster og ${ blogLink } i ny og ne."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "For å migrere denne brukeren, legg til og bekreft e-postdomenet under ${ domainNamesLink }."
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "For å migrere denne brukeren må du aktivere kontoen deres i ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "For å migrere denne brukeren må du aktivere kontoen deres under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "For å migrere denne brukeren må du aktivere adressen deres under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "For å migrere denne brukeren må de godta invitasjonen sin til å bli med i ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "For å migrere denne brukeren må du oppheve arkiveringen i ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "For å migrere denne brukeren må du oppheve suspensjonen deres i ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "For å forhindre misbruk eller svindel, ber vi om en donasjon på minst ${ minimumDonation }. Dette støtter arbeidet til ${ protonFoundationLink } med å forsvare digitalt personvern globalt og bidrar til å beskytte neste generasjon."
@@ -13479,9 +13486,6 @@
       ],
       "Yearly": [
         "Årlig"
-      ],
-      "You": [
-        "Du"
       ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
@@ -16491,9 +16495,6 @@
       ],
       "Details": [
         "Detaljer"
-      ],
-      "Downloads": [
-        "Nedlastinger"
       ],
       "Encryption and keys": [
         "Kryptering og nøkler"
@@ -24914,23 +24915,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "Aktivert"
-      ],
-      "Estimated size": [
-        "Estimert størrelse"
-      ],
-      "Migration status": [
-        "Migreringsstatus"
-      ],
       "Size": [
         "Størrelse"
       ],
       "Status": [
         "Status"
-      ],
-      "User": [
-        "Bruker"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25500,9 +25489,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "Konfigurer Alltid-på-VPN-enhetsprofil"
-      ],
-      "Configure migration": [
-        "Konfigurer migrering"
       ],
       "Configure your domain": [
         "Konfigurer domenet ditt"
@@ -26678,9 +26664,6 @@
       "Select the way to send this notification": [
         "Velg hvordan du vil sende dette varselet"
       ],
-      "Select users to migrate": [
-        "Velg brukere som skal migreres"
-      ],
       "Select when you want this notification to be sent": [
         "Velg når du vil at dette varselet skal sendes"
       ],
@@ -27087,9 +27070,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
-      "What are you migrating?": [
-        "Hva migrerer du?"
-      ],
       "What changes if you switch to the Free plan": [
         "Hva endres hvis du bytter til Free-planen"
       ],
@@ -27360,9 +27340,6 @@
       "Customize import to reduce the number of labels": [
         "Tilpass import for å redusere antall etiketter"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Status for dataoverføring fra ${ providerName } til ${ BRAND_NAME }"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Sletter papirkurvinnhold og søppelpostmeldinger etter 30 dager. Hvis du slår på automatisk sletting, får meldinger som allerede er i papirkurven/søppelposten, en slettedato basert på datoen de ble flyttet dit."
       ],
@@ -27584,9 +27561,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Brukerens omtrentlige plassering (basert på deres IP-adresse)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Brukere som har aktivert ${ BRAND_NAME }-kontoen"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Brukere vil se logoen din i stedet for ${ BRAND_NAME }-ikonet når de er logget på nettappene våre."

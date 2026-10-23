@@ -1095,9 +1095,6 @@
       "Maybe later": [
         "Можливо пізніше"
       ],
-      "Migrate": [
-        "Мігрувати"
-      ],
       "More": [
         "Більше"
       ],
@@ -2469,6 +2466,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Простір сховища є спільним для всіх сервісів ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Чорна П’ятниця"
+      ],
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/місяць"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховища"
+      ],
+      "2 individual accounts": [
+        "2 окремі облікові записи"
+      ],
+      "2 TB of secure storage": [
+        "2 ТБ захищеного сховища"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 ГБ сховища: у 40 разів більше, ніж у поточному тарифному плані"
+      ],
+      "3 TB of secure storage": [
+        "3 ТБ захищеного сховища"
+      ],
+      "500 GB of secure storage": [
+        "500 ГБ захищеного сховища"
+      ],
+      "6 individual accounts": [
+        "6 окремих облікових записів"
+      ],
+      "Built-in 2FA authenticator": [
+        "Вбудований автентифікатор 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Знижки розраховуються на основі стандартної місячної ціни. Після завершення платіжного циклу ваша передплата поновиться за стандартною річною ціною."
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документів"
+      ],
+      "Recover previous file versions": [
+        "Відновлення попередніх версій файлів"
+      ],
+      "Stronger protection against cyber threats": [
+        "Надійніший захист від кіберзагроз"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Необмежена кількість папок, міток і фільтрів"
+      ],
+      "Use your own email domain": [
+        "Використовуйте власний домен електронної пошти"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Преміум ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Преміум ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Преміум ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Преміум ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Преміум ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Найбільший розпродаж року"
+      ],
+      "Black Friday": [
+        "Чорна П’ятниця"
+      ],
+      "for 12 months": [
+        "на 12 місяців"
+      ],
+      "Last chance to save big": [
+        "Останній шанс значно заощадити"
+      ],
+      "Protect your entire tribe": [
+        "Захистіть усю свою родину"
+      ],
+      "Protection for two in a single plan": [
+        "Захист для двох в одному тарифному плані"
       ]
     },
     "Billing cycle": {
@@ -6368,12 +6465,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Вони можуть попросити доступ до вашого облікового запису в разі надзвичайної ситуації."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Вони автоматично отримають доступ через **${ days } день**, **${ formattedAccessibleAt }**, ви можете відхилити їхній запит або надати їм доступ негайно в будь-який час.",
-        "Вони автоматично отримають доступ через **${ days } дні**, **${ formattedAccessibleAt }**, ви можете відхилити їхній запит або надати їм доступ негайно в будь-який час.",
-        "Вони автоматично отримають доступ через **${ days } днів**, **${ formattedAccessibleAt }**, ви можете відхилити їхній запит або надати їм доступ негайно в будь-який час.",
-        "Вони автоматично отримають доступ через **${ days } дня**, **${ formattedAccessibleAt }**, ви можете відхилити їхній запит або надати їм доступ негайно в будь-який час."
-      ],
       "This will take effect immediately.": [
         "Це набере чинності негайно."
       ],
@@ -6521,9 +6612,6 @@
       ],
       "Address is already added to your account": [
         "Адресу вже додано до вашого облікового запису"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Адреса вже використовується користувачем, який не належить до вашої організації. Для розв'язання цієї проблеми зверніться до служби підтримки клієнтів"
       ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
@@ -6882,9 +6970,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Дозволено максимум ${ displayMaxValue }"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Адресу учасника не знайдено. Для розв'язання цієї проблеми, будь ласка, зверніться до служби підтримки клієнтів"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Об'єднайте принаймні ${ calendarsToFixCount } календар з наявним календарем ${ BRAND_NAME }",
         "Об'єднайте принаймні ${ calendarsToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
@@ -6893,12 +6978,6 @@
       ],
       "Missing key packet": [
         "Відсутній пакунок ключів"
-      ],
-      "Missing organization private key": [
-        "Відсутній приватний ключ організації"
-      ],
-      "Missing organization public key": [
-        "Відсутній відкритий ключ організації"
       ],
       "Missing signature": [
         "Відсутній підпис"
@@ -6974,12 +7053,6 @@
       ],
       "Operation failed, try again later": [
         "Операція не вдалася, спробуйте пізніше"
-      ],
-      "Organization does not have enough seats available": [
-        "В організації недостатньо вільних місць"
-      ],
-      "Organization does not have enough storage available": [
-        "В організації недостатньо вільного місця для зберігання даних"
       ],
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
@@ -8383,29 +8456,6 @@
         "Терабайтів"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Активовано"
-      ],
-      "All": [
-        "Все"
-      ],
-      "Errors": [
-        "Помилки"
-      ],
-      "In progress": [
-        "В процесі"
-      ],
-      "Migrated": [
-        "Перенесено"
-      ],
-      "Not activated": [
-        "Не активовано"
-      ],
-      "Pending": [
-        "Очікування"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Архівувати"
@@ -9327,9 +9377,6 @@
       "Failed": [
         "Не вдалося"
       ],
-      "Has errors": [
-        "Містить помилки"
-      ],
       "Imported": [
         "Імпортовано"
       ],
@@ -9344,9 +9391,6 @@
       ],
       "Paused": [
         "Зупинено"
-      ],
-      "Pending": [
-        "Очікування"
       ]
     },
     "Import type": {
@@ -10769,9 +10813,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтри працюють для всіх листів, включаючи вхідні та надіслані. Кожен фільтр повинен містити принаймні назву, умову та дію."
       ],
-      "Find out what can be migrated.": [
-        "Дізнайтеся, що можна перенести."
-      ],
       "for ${ price }": [
         "за ${ price }"
       ],
@@ -11366,9 +11407,6 @@
       "No single sign-on": [
         "Без єдиного входу"
       ],
-      "No users to display": [
-        "Немає користувачів для показу"
-      ],
       "Not a valid URL": [
         "Недійсна URL-адреса"
       ],
@@ -11773,9 +11811,6 @@
       ],
       "Select a group to view its members and settings.": [
         "Виберіть групу, щоб переглянути її учасників та налаштування."
-      ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Виберіть саме те, що ви хочете перенести. Це буде застосовано до всіх користувачів організації."
       ],
       "Select one or multiple user affiliations": [
         "Виберіть одну або кілька приналежностей користувачів"
@@ -12191,12 +12226,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Термін дії цього посилання для підтвердження завершився. Відкрийте новіше повідомлення з цього списку розсилки."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Цього користувача неможливо перенести, оскільки його адреса електронної пошти відсутня в системі ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Цього користувача неможливо перенести через несумісність платформ."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
       ],
@@ -12319,27 +12348,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Щоб бути в курсі найновіших розробок продуктів ${ BRAND_NAME }, підпишіться на наші розсилки електронною поштою та час від часу відвідуйте ${ blogLink }."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Щоб перенести цього користувача, додайте та підтвердьте домен електронної пошти за посиланням ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Щоб перенести цього користувача, активуйте його обліковий запис у вашій ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Щоб перенести цього користувача, увімкніть його обліковий запис за посиланням ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Щоб перенести цього користувача, увімкніть його адресу за посиланням ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Щоб перенести цього користувача, йому потрібно прийняти запрошення приєднатися до ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Щоб перенести цього користувача, розпакуйте його у вашій ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Щоб перенести цього користувача, скасуйте його блокування у вашій ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Щоб запобігти зловживанням або шахрайству, ми просимо зробити мінімальний внесок ${ minimumDonation }. Це підтримує роботу ${ protonFoundationLink } із захисту цифрової приватності в усьому світі та допомагає захистити наступне покоління."
@@ -12721,9 +12729,6 @@
       ],
       "Yearly": [
         "Щороку"
-      ],
-      "You": [
-        "Ви"
       ],
       "You already have a free account": [
         "У мене вже є безплатний обліковий запис"
@@ -15640,9 +15645,6 @@
       ],
       "Details": [
         "Подробиці"
-      ],
-      "Downloads": [
-        "Завантаження"
       ],
       "Encryption and keys": [
         "Шифрування та ключі"
@@ -23977,23 +23979,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "Активовано"
-      ],
-      "Estimated size": [
-        "Орієнтовний розмір"
-      ],
-      "Migration status": [
-        "Статус міграції"
-      ],
       "Size": [
         "Розмір"
       ],
       "Status": [
         "Статус"
-      ],
-      "User": [
-        "Користувач"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -24565,9 +24555,6 @@
       ],
       "Composing": [
         "Написання"
-      ],
-      "Configure migration": [
-        "Налаштувати міграцію"
       ],
       "Confirm": [
         "Підтвердити"
@@ -25652,9 +25639,6 @@
       "Select the way to send this notification": [
         "Виберіть спосіб надсилання цього сповіщення"
       ],
-      "Select users to migrate": [
-        "Виберіть користувачів для перенесення"
-      ],
       "Select when you want this notification to be sent": [
         "Виберіть якщо ви хочете, щоб це сповіщення було надіслано"
       ],
@@ -26024,9 +26008,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Ласкаво просимо до ${ BRAND_NAME } для бізнесу"
       ],
-      "What are you migrating?": [
-        "Що саме ви переносите?"
-      ],
       "What changes if you switch to the Free plan": [
         "Що зміниться, якщо ви перейдете на безплатний тарифний план"
       ],
@@ -26279,9 +26260,6 @@
       "Customize import to reduce the number of labels": [
         "Налаштуйте імпорт щоб зменшити кількість міток"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Стан перенесення даних з ${ providerName } до ${ BRAND_NAME }"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Видаляти повідомлення зі Смітника та спаму через 30 днів. Увімкнення автоматичного видалення призначає повідомленням, що вже містяться в смітнику/спамі, дату видалення на основі дати їхнього переміщення туди."
       ],
@@ -26482,9 +26460,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Приблизне розташування користувача (на основі його IP-адреси)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Користувачі, які увійшли у свій обліковий запис ${ BRAND_NAME }"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "У вебверсіях наших програм користувачі бачитимуть ваш логотип замість піктограми ${ BRAND_NAME }."

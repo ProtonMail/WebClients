@@ -493,6 +493,9 @@
       "Maximum views": [
         "Maximalt antal visningar"
       ],
+      "More details about how to export": [
+        "Mer detaljer om hur man exporterar"
+      ],
       "More info": [
         "Mer info"
       ],
@@ -1676,6 +1679,9 @@
       "Export": [
         "Exportera"
       ],
+      "Export All Passwords to File": [
+        "Exportera alla lösenord till fil"
+      ],
       "Export Data": [
         "Exportera data"
       ],
@@ -1765,6 +1771,9 @@
       ],
       "Vault": [
         "Valv"
+      ],
+      "Vault options": [
+        "Valvalternativ"
       ],
       "your username": [
         "ditt användarnamn"
@@ -2454,7 +2463,8 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -5266,6 +5276,9 @@
       ],
       "Import failed": [
         "Import misslyckades"
+      ],
+      "Import successful": [
+        "Import lyckades"
       ],
       "Import to vault(s)": [
         "Importera till valv"

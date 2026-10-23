@@ -345,9 +345,6 @@
       "Download": [
         "Descărcare"
       ],
-      "Download app": [
-        "Descărcare aplicație"
-      ],
       "Download local participant report": [
         "Descărcare raport participant local"
       ],
@@ -438,6 +435,9 @@
       "Join and leave sounds": [
         "Sunete de conectare și deconectare"
       ],
+      "Join from ${ MEET_APP_NAME } app": [
+        "Participați din aplicația ${ MEET_APP_NAME }"
+      ],
       "Join in browser": [
         "Alăturare în navigatorul web"
       ],
@@ -518,9 +518,6 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Deschidere mențiune de la ${ senderName } în conversație"
-      ],
-      "Open this meeting in the desktop app": [
-        "Deschideți această conferință în aplicația desktop"
       ],
       "Participants": [
         "Participanți"
@@ -735,9 +732,6 @@
       ],
       "Stay in meeting": [
         "Rămânere în întâlnire"
-      ],
-      "Stop opening meetings in the desktop app": [
-        "Nu se mai deschid conferințe în aplicația desktop"
       ],
       "Stop receiving video": [
         "Oprire recepționare video"
@@ -2356,6 +2350,9 @@
       "The email addresses do not match": [
         "Adresele de e-mail nu se potrivesc."
       ],
+      "The emoji could not be added because the message is at its character limit": [
+        "Emoticonul nu a putut fi adăugat deoarece mesajul a atins limita de caractere."
+      ],
       "The meeting password is incorrect": [
         "Parola întâlnirii nu este corectă"
       ],
@@ -2773,9 +2770,6 @@
       ],
       "Allow camera access to preview your background": [
         "Permiteți accesul camerei pentru examinarea fundalului"
-      ],
-      "Already in the app? You can close this tab.": [
-        "Sunteți deja în aplicație? Puteți închide această filă."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonim ${ particle } ${ participantNumber }"
@@ -3248,6 +3242,9 @@
       "Permissions not given.": [
         "Permisiuni neacordate."
       ],
+      "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
+        "Trebuie să ${ downloadLink } și să instalați aplicația, apoi să apăsați din nou pe „Participare” în aplicația ${ MEET_APP_NAME }."
+      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Activați accesul la ${ microphoneLinkButton }${ andString }${ cameraLinkButton } pentru cea mai bună experiență."
       ],
@@ -3434,9 +3431,6 @@
       "This meeting reached the time limit.": [
         "Această conferință a atins limita de timp."
       ],
-      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Această conferință a fost deschisă în aplicația desktop ${ MEET_APP_NAME }."
-      ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Această înregistrare va fi ștearsă definitiv de pe acest dispozitiv. Această acțiune nu poate fi anulată."
       ],
@@ -3544,9 +3538,6 @@
       ],
       "You are almost there": [
         "Aproape gata"
-      ],
-      "You can close this tab.": [
-        "Puteți închide această filă."
       ],
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
@@ -3932,6 +3923,9 @@
       "clearing your browser cache": [
         "golind bufferul navigatorului web"
       ],
+      "download": [
+        "descărcați"
+      ],
       "Learn more": [
         "Detalii"
       ],
@@ -3949,6 +3943,110 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ]
+    },
+    "Lumo emoji name": {
+      "Alert": [
+        "Alertă"
+      ],
+      "Browse folders": [
+        "Răsfoire foldere"
+      ],
+      "Cash": [
+        "Bani"
+      ],
+      "Celebrate": [
+        "Sărbătorire"
+      ],
+      "Cheers": [
+        "Noroc"
+      ],
+      "Chef's kiss": [
+        "Sărutul bucătarului-șef"
+      ],
+      "Coffee": [
+        "Cafea"
+      ],
+      "Cowboy": [
+        "Văcar"
+      ],
+      "Encrypt": [
+        "Criptare"
+      ],
+      "Gaming": [
+        "Jocuri"
+      ],
+      "Halo": [
+        "Aură"
+      ],
+      "Happy": [
+        "Fericire"
+      ],
+      "Love": [
+        "Dragoste"
+      ],
+      "Mild panic": [
+        "Panică ușoară"
+      ],
+      "Mind blown": [
+        "Uluit"
+      ],
+      "Nine lives": [
+        "Nouă vieți"
+      ],
+      "Party": [
+        "Petrecere"
+      ],
+      "Perk": [
+        "Avantaj"
+      ],
+      "Popcorn": [
+        "Floricele de porumb"
+      ],
+      "Rocket": [
+        "Rachetă"
+      ],
+      "Sad": [
+        "Trist"
+      ],
+      "Schrödinger in a box": [
+        "Schrödinger într-o cutie"
+      ],
+      "Schrödinger out of the box": [
+        "Schrödinger în afara cutiei"
+      ],
+      "Search": [
+        "Căutare"
+      ],
+      "Sit": [
+        "Așază-te"
+      ],
+      "Slay": [
+        "Ucigaş"
+      ],
+      "Sleepy": [
+        "Somnoros"
+      ],
+      "Sweep": [
+        "Glisare"
+      ],
+      "Thank you": [
+        "Mulțumesc"
+      ],
+      "Think": [
+        "Gânditor"
+      ],
+      "This is fine": [
+        "E în regulă"
+      ],
+      "Watch left": [
+        "Privire la stânga"
+      ],
+      "Watch right": [
+        "Privire la dreapta"
+      ],
+      "Write": [
+        "Scriere"
       ]
     },
     "meet": {

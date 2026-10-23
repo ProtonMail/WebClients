@@ -3124,6 +3124,9 @@
       "Total VPN connections": [
         "Σύνολο συνδέσεων VPN"
       ],
+      "UnionPay logo": [
+        "Λογότυπο UnionPay"
+      ],
       "Users": [
         "Χρήστες"
       ],
@@ -3555,6 +3558,9 @@
       ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
+      ],
+      "Customer Support": [
+        "Υποστήριξη Πελατών"
       ],
       "Enforcing 2FA for organizations": [
         "Επιβολή πιστοποίησης δύο παραγόντων (2FA) για οργανισμούς"
@@ -4674,6 +4680,11 @@
         "Χρειάζεστε πρόσβαση στο κλειδί οργανισμού για να εκτελέσετε αυτήν τη λειτουργία."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Τραπεζικός Λογαριασμός"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -4723,12 +4734,6 @@
       ],
       "Billing Country": [
         "Χώρα χρέωσης"
-      ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Το Born Private δεν μπορεί να αγοραστεί όσο υπάρχει ενεργή συνδρομή."
-      ],
-      "Born Private requires a donation.": [
-        "Το Born Private απαιτεί δωρεά."
       ],
       "Buying credits requires a separate purchase.": [
         "Η αγορά μονάδων απαιτεί ξεχωριστή αγορά."
@@ -4913,17 +4918,11 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ήδη διαθέτετε το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Έχετε ήδη το Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
       ],
       "You will soon be redirected to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
-      ],
-      "Your account is too old for Born Private.": [
-        "Ο λογαριασμός σας είναι πολύ παλιός για το Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Το νόμισμά σας έχει αλλάξει σε ευρώ (€) επειδή το ${ IDEAL_WERO_BRAND_NAME } υποστηρίζει μόνο πληρωμές σε ευρώ."

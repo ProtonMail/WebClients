@@ -710,6 +710,9 @@
       "Create": [
         "Skapa"
       ],
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Skapa ett ${ ACCOUNT_APP_NAME }"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Skapa en länk att dela med alla utanför ${ BRAND_NAME }"
       ],
@@ -940,6 +943,9 @@
       ],
       "Download updated file": [
         "Ladda ner uppdaterad fil"
+      ],
+      "Dropbox": [
+        "Dropbox"
       ],
       "Edit": [
         "Redigera"
@@ -1484,6 +1490,9 @@
       "OK": [
         "OK"
       ],
+      "OneDrive": [
+        "OneDrive"
+      ],
       "Open": [
         "Öppna"
       ],
@@ -1975,6 +1984,9 @@
       ],
       "Start subscription": [
         "Starta prenumeration"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Börja använda ${ PASS_APP_NAME }"
       ],
       "Start using ${ PASS_APP_NAME } now": [
         "Börja använda ${ PASS_APP_NAME } nu"
@@ -2890,8 +2902,26 @@
       "6 individual accounts": [
         "6 individuella konton"
       ],
+      "Built-in 2FA authenticator": [
+        "Inbyggd 2FA-autentiserare"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna beräknas utifrån ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
+      ],
+      "Stronger protection against cyber threats": [
+        "Starkare skydd mot cyberhot"
+      ],
       "Unlimited folders, labels, and filters": [
         "Obegränsade mappar, etiketter och filter"
+      ],
+      "Use your own email domain": [
+        "Använd din egen e-postdomän"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -2920,6 +2950,9 @@
       ]
     },
     "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Årets största rea"
+      ],
       "Black Friday": [
         "Black Friday"
       ],
@@ -2928,6 +2961,12 @@
       ],
       "Last chance to save big": [
         "Sista chansen att spara stort"
+      ],
+      "Protect your entire tribe": [
+        "Skydda hela din familj"
+      ],
+      "Protection for two in a single plan": [
+        "Skydd för två i ett enda paket"
       ]
     },
     "Billing cycle": {
@@ -6877,10 +6916,6 @@
       "They may ask to access your account in case of an emergency.": [
         "De kan komma att be om åtkomst till ditt konto i händelse av en nödsituation."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "De kommer att få åtkomst automatiskt om **${ days } dag**, den **${ formattedAccessibleAt }**, och du kan neka deras begäran eller ge dem åtkomst omedelbart när som helst.",
-        "De kommer att få åtkomst automatiskt om **${ days } dagar**, den **${ formattedAccessibleAt }**, och du kan neka deras begäran eller ge dem åtkomst omedelbart när som helst."
-      ],
       "This will take effect immediately.": [
         "Detta kommer träda i kraft omedelbart."
       ],
@@ -7030,9 +7065,6 @@
       ],
       "Address is already added to your account": [
         "Adress är redan tillagd till ditt konto"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adress används redan av en användare utanför din organisation. Kontakta kundsupport för att lösa detta"
       ],
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
@@ -7390,9 +7422,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Maximalt ${ displayMaxValue } tillåtet"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Medlemsadress hittades inte. Kontakta kundsupport för att lösa detta"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
         "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
@@ -7402,12 +7431,6 @@
       ],
       "Missing key packet": [
         "Saknar nyckelpaket"
-      ],
-      "Missing organization private key": [
-        "Saknar organisationens privata nyckel"
-      ],
-      "Missing organization public key": [
-        "Saknar organisationens offentliga nyckel"
       ],
       "Missing signature": [
         "Signatur saknas"
@@ -7484,9 +7507,6 @@
       ],
       "Operation failed, try again later": [
         "Åtgärd misslyckades, försök igen senare"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisation har inte tillräckligt med lagringsutrymme tillgängligt"
       ],
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
@@ -8902,7 +8922,7 @@
     },
     "Filter": {
       "Activated": [
-        "Aktiverat"
+        "Aktiverad"
       ],
       "All": [
         "Alla"
@@ -8918,9 +8938,6 @@
       ],
       "Not activated": [
         "Inte aktiverad"
-      ],
-      "Pending": [
-        "Väntande"
       ]
     },
     "Filter Actions": {
@@ -9485,9 +9502,6 @@
       "Contact us": [
         "Kontakta oss"
       ],
-      "Downloads": [
-        "Nedladdningar"
-      ],
       "Enjoying ${ planName }?": [
         "Gillar du ${ planName }?"
       ],
@@ -9882,9 +9896,6 @@
       ],
       "Paused": [
         "Pausad"
-      ],
-      "Pending": [
-        "Väntar"
       ],
       "Queued": [
         "I kö"
@@ -11372,9 +11383,6 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter fungerar på all e-post, såväl inkommande som skickade. Varje filter måste innehålla minst ett namn, ett villkor och en åtgärd."
       ],
-      "Find out what can be migrated.": [
-        "Ta reda på vad som kan migreras."
-      ],
       "for ${ price }": [
         "för ${ price }"
       ],
@@ -12005,9 +12013,6 @@
       "No single sign-on": [
         "Ingen enkel inloggning"
       ],
-      "No users to display": [
-        "Inga användare att visa"
-      ],
       "Not a valid URL": [
         "Ogiltig URL"
       ],
@@ -12429,9 +12434,6 @@
       "Select a group to view its members and settings.": [
         "Välj en grupp för att visa dess medlemmar och inställningar."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Välj exakt vad du vill migrera. Det kommer tillämpas till alla användare i organisationen."
-      ],
       "Select one or multiple user affiliations": [
         "Välj en eller flera användartillhörigheter"
       ],
@@ -12846,9 +12848,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Denna länk för att avsluta prenumeration har löpt ut. Öppna ett nyare e-postmeddelande från denna e-postlista."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Denna användare kan inte migreras eftersom deras e-postadress inte är tillgänglig på ${ BRAND_NAME }."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denna användare ansvarar för närvarande för betalningar för din organisation. Genom att degradera denna medlem, kommer du bli ansvarig för betalningar för din organisation."
       ],
@@ -12977,24 +12976,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "För att hänga med i den senaste utvecklingen av ${ BRAND_NAME }-produkter kan du prenumerera på våra olika e-postmeddelanden och ${ blogLink } då och då."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "För att migrera denna användare, lägg till och verifiera e-postdomänen under ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "För att migrera denna användare, aktivera deras konto under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "För att migrera denna användare, aktivera deras adress under ${ usersAddressesLink }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "För att migrera denna användare, upphäv deras arkivering från ditt ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "För att migrera denna användare, aktivera deras konto i din ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "För att förhindra missbruk eller bedrägerier ber vi om en donation på minst ${ minimumDonation }. Detta stöder ${ protonFoundationLink } arbete med att försvara digital integritet globalt och hjälper till att skydda nästa generation."
@@ -16072,6 +16053,9 @@
       "Value": [
         "Värde"
       ],
+      "Vault": [
+        "Valv"
+      ],
       "Vault, item & secure link sharing": [
         "Delning av valv, objekt och säker länk"
       ],
@@ -16416,9 +16400,6 @@
       ],
       "Details": [
         "Detaljer"
-      ],
-      "Downloads": [
-        "Nedladdningar"
       ],
       "Encryption and keys": [
         "Kryptering och nycklar"
@@ -23571,6 +23552,9 @@
       "Disabled": [
         "Inaktiverad"
       ],
+      "failed": [
+        "misslyckades"
+      ],
       "finalizing": [
         "färdigställer"
       ],
@@ -24789,9 +24773,6 @@
       "Activated": [
         "Aktiverad"
       ],
-      "Estimated size": [
-        "Beräknad storlek"
-      ],
       "Migration status": [
         "Migreringsstatus"
       ],
@@ -24988,6 +24969,9 @@
         "${ friendsSubscribed } vän prenumererar",
         "${ friendsSubscribed } vänner prenumererar"
       ],
+      "${ LUMO_APP_NAME } API": [
+        "${ LUMO_APP_NAME }-API"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } skrivassistent"
       ],
@@ -24996,6 +24980,9 @@
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Exportverktyg för ${ MAIL_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Välkommen"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-rapport"
@@ -25402,6 +25389,9 @@
       ],
       "Connect to video conferencing": [
         "Anslut till videokonferens"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Anslut ditt ${ ACCOUNT_APP_NAME }"
       ],
       "Connect your custom domain": [
         "Anslut din anpassad domän"
@@ -27250,9 +27240,6 @@
       "Customize import to reduce the number of labels": [
         "Anpassa import för att minska antalet etiketter"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Status för datamigrering från ${ providerName } till ${ BRAND_NAME }"
-      ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Ta bort kastade och skräppostmeddelanden efter 30 dagar. Att slå på automatisk borttagning får meddelanden som redan är i kastade/skräppost ett datum för borttagning baserat på datumet de flyttades dit."
       ],
@@ -27468,9 +27455,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Användares ungefärliga plats (baserat på deras IP-adress)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Användare som har åtkomst till sitt ${ BRAND_NAME }-konto"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Användare kommer att se din logga istället för ${ BRAND_NAME }-ikonen när de är inloggade på våra webbappar."
