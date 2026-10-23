@@ -3,7 +3,7 @@ import React from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 
 import { getMimeTypeFromExtension } from '../../util/filetypes';
@@ -88,6 +88,7 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
             {files.map((file, index) => {
                 const mimeType =
                     file.mimeType || (file.source === 'drive' ? getMimeTypeFromExtension(file.name) : undefined);
+                const FileTypeIcon = getFileIcon(mimeType || '');
                 const query = mentionState.query.toLowerCase();
                 const fullPath = file.name;
 
@@ -112,7 +113,7 @@ export const FileMentionComponent: React.FC<FileMentionComponentProps> = ({
                         onMouseEnter={() => setSelectedIndex(index)}
                     >
                         {mimeType ? (
-                            <FileIcon mimeType={mimeType} className="shrink-0" size={3.5} />
+                            <FileTypeIcon className="shrink-0" size={3.5} />
                         ) : (
                             <LumoIcon name="FileText" width={14} height={14} className="color-weak shrink-0" />
                         )}

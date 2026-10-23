@@ -1012,7 +1012,7 @@ const mimeTypeToFileTypeMap: { [mimeType: string]: LumoFileType } = {
 
 /**
  * Converts a mime type string to a LumoFileType enum value
- * This function matches the logic from FileIcon.tsx to ensure consistent icon display
+ * This function matches the logic of `getFileIcon` in @proton/file-icons to ensure consistent icon display
  */
 export const getLumoFileType = (mimeType: string): LumoFileType => {
     // Check explicit mapping first
