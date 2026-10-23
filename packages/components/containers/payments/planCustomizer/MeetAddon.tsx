@@ -11,7 +11,7 @@ import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
-import { CondensedAddonRow } from './CondensedAddonsCard';
+import { CondensedAddonRow } from './CondensedAddonRow';
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 
 const getMeetAddonDescription = () =>
