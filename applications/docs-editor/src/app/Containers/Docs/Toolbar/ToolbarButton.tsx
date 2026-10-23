@@ -21,7 +21,10 @@ export const ToolbarButton = forwardRef(function ToolbarButton(
       <button
         type="button"
         className={clsx([
-          'editor-toolbar-button interactive relative m-0 flex rounded-lg px-2.5 py-2.5',
+          'editor-toolbar-button relative m-0 flex rounded-lg px-2.5 py-2.5',
+          'bg-[--interaction-default] [outline:none] [transition:0.15s_cubic-bezier(0.22,1,0.36,1),background-position_0s]',
+          'hover:bg-[--interaction-default-hover] active:bg-[--interaction-default-active] aria-expanded:bg-[--interaction-default-active] [&.active]:bg-[--interaction-default-active]',
+          'focus-visible:shadow-[0_0_0_0.1875rem_var(--focus-ring)] disabled:pointer-events-none disabled:opacity-50',
           active && 'active',
           className,
         ])}

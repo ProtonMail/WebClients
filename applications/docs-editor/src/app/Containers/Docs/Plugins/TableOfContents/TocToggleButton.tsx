@@ -20,8 +20,8 @@ export function TocToggleButton({ isExpanded, onClick, showNewTag }: TocToggleBu
       aria-label={isExpanded ? messages.closeOutline : messages.openOutline}
       aria-expanded={isExpanded}
       className={clsx(
-        'bg-norm relative flex shrink-0 rounded-r-full p-2.5',
-        !isExpanded && 'shadow-raised border-weak border border-l-0',
+        'relative flex shrink-0 rounded-r-full bg-[--background-norm] p-2.5',
+        !isExpanded && 'border border-l-0 border-[--border-weak] shadow-[shadow:--shadow-raised]',
       )}
       data-testid="toc-toggle"
     >
