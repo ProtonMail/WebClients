@@ -5,14 +5,14 @@
     "scripts": {
         "app-versions": "bash utilities/app-versions/app-versions.sh",
         "check:branch": "node utilities/branch-check/branch-check.mjs",
-        "check:constraints": "node utilities/workspace-constraints/workspace-constraints.mjs",
+        "check:constraints": "node utilities/repo-rules/src/workspace-constraints/run.ts",
         "config-app": "(packages/config/install 2>/dev/null) || true",
         "create-atom": "pnpm --filter @proton/atoms run create-atom",
         "drive:test-index:staged": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON tests/drive/tools/tests-mapping/test-index.ts --staged",
-        "preinstall": "node utilities/enforce-pnpm/preinstall.mjs",
+        "preinstall": "node utilities/repo-rules/src/enforce-pnpm/run.ts",
         "postinstall": "is-ci || (husky; pnpm run config-app)",
         "knip": "knip",
-        "knip:staged": "node utilities/knip-staged/knip-staged.mjs",
+        "knip:staged": "node utilities/repo-rules/src/knip-staged/run.ts",
         "nyc": "npx nyc",
         "start-all": "cd utilities/local-sso && bash ./run.sh",
         "version": "pnpm --filter @proton/version run version"
