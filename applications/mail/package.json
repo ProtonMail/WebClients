@@ -112,16 +112,16 @@
         "@typescript/native": "catalog:",
         "@webgpu/types": "^0.1.74",
         "fake-indexeddb": "catalog:",
-        "html-webpack-plugin": "^5.6.8",
+        "html-webpack-plugin": "catalog:",
         "immer": "11.1.21",
         "jest": "catalog:",
         "jest-junit": "catalog:",
         "jest-mock": "^30.5.2",
-        "msw": "2.12.14",
+        "msw": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "prettier": "catalog:",
         "typescript": "catalog:",
-        "webpack": "^5.111.1"
+        "webpack": "catalog:"
     }
 }
