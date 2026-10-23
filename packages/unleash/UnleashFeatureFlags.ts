@@ -245,6 +245,7 @@ enum LumoFeatureFlag {
     LumoArtifactSlides = 'LumoArtifactSlides',
     LumoArtifactsView = 'LumoArtifactsView',
     LumoArtifactsViewSpotlight = 'LumoArtifactsViewSpotlight',
+    LumoAskUserQuestionsTool = 'LumoAskUserQuestionsTool',
     LumoCustomAgents = 'LumoCustomAgents',
     LumoDarkMode = 'LumoDarkMode',
     LumoDictationV2 = 'LumoDictationV2',
