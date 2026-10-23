@@ -77,6 +77,15 @@ exports[`event payloads sent to Proton Analytics change_step 1`] = `
 }
 `;
 
+exports[`event payloads sent to Proton Analytics checkout_condensed_addons_experiment_seen 1`] = `
+{
+  "event": "subscription_modification_checkout_condensed_addons_experiment_seen",
+  "payload": {
+    "variant": "condensed",
+  },
+}
+`;
+
 exports[`event payloads sent to Proton Analytics closed_by_user 1`] = `
 {
   "event": "subscription_modification_closed_by_user",

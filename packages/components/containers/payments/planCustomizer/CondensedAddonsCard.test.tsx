@@ -1,7 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { CondensedAddonRow, CondensedAddonsCard } from './CondensedAddonsCard';
+import { CondensedAddonRow } from './CondensedAddonRow';
+import { CondensedAddonsCard } from './CondensedAddonsCard';
 
 const onAddMock = jest.fn();
 
