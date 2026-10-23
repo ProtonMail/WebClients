@@ -982,11 +982,11 @@
         "eslint": "catalog:",
         "jest": "catalog:",
         "jest-mock": "^30.5.2",
-        "msw": "2.12.14",
+        "msw": "catalog:",
         "prettier": "catalog:",
         "react-redux": "catalog:",
         "typescript": "catalog:",
-        "vitest": "^5.0.5"
+        "vitest": "catalog:"
     },
     "peerDependencies": {
         "@proton/activation": "*",

@@ -20,6 +20,7 @@ catalog:
     '@jest/globals': ^30.5.2
     # Must stay on the same version as oxlint.
     '@oxlint/plugins': 1.87.0
+    '@pmmmwh/react-refresh-webpack-plugin': ^0.6.3
     '@protontech/crypto': ^2.2.0
     # Shared so that every workspace importing the Drive SDK resolves the same version.
     '@protontech/drive-sdk': ^0.23.0
@@ -45,17 +46,24 @@ catalog:
     '@types/tinycolor2': ^1.4.6
     '@types/webpack-env': ^1.18.8
     '@typescript/native': npm:typescript@^7.0.2
+    '@vitest/coverage-v8': ^5.0.5
+    '@vitest/ui': ^5.0.5
     babel-jest: ^30.4.1
+    browserslist: ^4.29.3
     clsx: ^2.1.1
     commander: ^14.0.3
+    copy-webpack-plugin: ^14.0.0
     core-js: ^3.50.0
     cross-env: ^10.1.0
+    css-loader: ^7.1.5
     dompurify: ^3.4.17
     eslint: ^10.12.0
     fake-indexeddb: ^6.2.5
+    fork-ts-checker-webpack-plugin: ^9.1.0
     formik: ^2.4.9
     happy-dom: ^21.0.1
     history: ^4.10.1
+    html-webpack-plugin: ^5.6.8
     idb: ^8.0.3
     jest: ^30.5.2
     jest-environment-jsdom: ^30.5.2
@@ -63,8 +71,11 @@ catalog:
     jest-when: 3.7.0
     jszip: ^3.10.2
     lodash: ^4.18.1
+    mini-css-extract-plugin: ^2.10.2
+    msw: 2.12.14
     oxlint: 1.87.0
     oxlint-tsgolint: 7.0.2004
+    postcss: ^8.5.30
     prettier: ^3.9.10
     prettier-plugin-tailwindcss: ^0.8.1
     react: ^18.3.1
@@ -75,15 +86,22 @@ catalog:
     redux: ^5.0.1
     redux-saga: ^1.5.1
     redux-thunk: ^3.1.0
+    sass: ^1.80.3
     stylelint: ^15.11.0
     tinycolor2: ^1.6.0
+    ts-loader: ^9.6.2
     ts-node: ^10.9.2
+    tsx: ^4.23.15
     ttag: ^1.8.12
     ttag-cli: ^1.12.0
     # A few workspaces (including the root) still declare the real `typescript` package directly.
     typescript: npm:@typescript/typescript6@^6.0.2
     typescript-eslint: ^8.71.2
     uuid: ^14.0.2
+    vite: ^8.3.4
+    vitest: ^5.0.5
+    webpack: ^5.111.1
+    webpack-dev-server: ^6.0.0
     zod: ^3.25.76
 
 # Yarn resolved any range that a workspace satisfies to that workspace, including the `*` peer

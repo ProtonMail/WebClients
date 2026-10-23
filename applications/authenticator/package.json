@@ -50,7 +50,7 @@
         "@tauri-apps/plugin-updater": "~2.13.1",
         "@zxing/browser": "0.2.1",
         "@zxing/library": "0.23.0",
-        "browserslist": "^4.29.3",
+        "browserslist": "catalog:",
         "dexie": "^4.4.6",
         "dexie-react-hooks": "^1.1.7",
         "formik": "catalog:",
@@ -63,7 +63,7 @@
     },
     "devDependencies": {
         "@iarna/toml": "^2.2.5",
-        "@pmmmwh/react-refresh-webpack-plugin": "^0.6.3",
+        "@pmmmwh/react-refresh-webpack-plugin": "catalog:",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/jest-env": "workspace:^",
@@ -80,12 +80,12 @@
         "@typescript/native": "catalog:",
         "cross-env": "catalog:",
         "eslint": "catalog:",
-        "html-webpack-plugin": "^5.6.8",
+        "html-webpack-plugin": "catalog:",
         "jest": "catalog:",
-        "mini-css-extract-plugin": "^2.10.2",
-        "tsx": "^4.23.15",
+        "mini-css-extract-plugin": "catalog:",
+        "tsx": "catalog:",
         "typescript": "catalog:",
-        "webpack": "^5.111.1",
-        "webpack-dev-server": "^6.0.0"
+        "webpack": "catalog:",
+        "webpack-dev-server": "catalog:"
     }
 }
