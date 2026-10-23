@@ -2,12 +2,12 @@ import { format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
+import { useReferralTrialSubscription } from '@proton/payments-ui/ui/hooks/useReferralTrialSubscription';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getPlanTitle, isAutoRenewTrial, isTrialRenewing } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -33,12 +33,12 @@ import credits from './credits.svg';
 import downgrade from './downgrade.svg';
 import reactivate from './reactivate.svg';
 
-const TrialInfoHeader = () => {
+const ReferralTrialInfoHeader = () => {
     return c('Title').t`How your free trial works`;
 };
 
-const TrialInfoContent = () => {
-    const [subscription] = useSubscription();
+const ReferralTrialInfoContent = () => {
+    const [subscription] = useReferralTrialSubscription();
     const [referralInfo] = useReferralInfo();
     const { referrerRewardAmount } = referralInfo.uiData;
 
@@ -158,12 +158,12 @@ const TrialInfoContent = () => {
     );
 };
 
-interface TrialInfoFooterProps {
+interface ReferralTrialInfoFooterProps {
     modalProps?: Partial<ModalStateProps>;
 }
 
-const TrialInfoFooter = ({ modalProps }: TrialInfoFooterProps) => {
-    const [subscription, loadingSubscription] = useSubscription();
+const ReferralTrialInfoFooter = ({ modalProps }: ReferralTrialInfoFooterProps) => {
+    const [subscription, loadingSubscription] = useReferralTrialSubscription();
     const { APP_NAME } = useConfig();
     const { onClose } = modalProps || {};
     const telemetryFlow = useDashboardPaymentFlow(APP_NAME);
@@ -272,44 +272,48 @@ const TrialInfoFooter = ({ modalProps }: TrialInfoFooterProps) => {
     );
 };
 
-const TrialInfo = () => {
-    const [subscription, loadingSubscription] = useSubscription();
+const ReferralTrialInfo = () => {
+    const [referralTrialSubscription, loadingReferralTrialSubscription] = useReferralTrialSubscription();
 
-    if (loadingSubscription || !subscription) {
+    if (loadingReferralTrialSubscription) {
         return <Loader />;
+    }
+
+    if (!referralTrialSubscription) {
+        return null;
     }
 
     return (
         <div className="relative border rounded px-6 py-5 self-start panel">
             <h3 className="h3 text-bold m-0 pt-0 pb-1">
-                <TrialInfoHeader />
+                <ReferralTrialInfoHeader />
             </h3>
-            <TrialInfoContent />
+            <ReferralTrialInfoContent />
             <footer className="flex flex-column gap-2">
-                <TrialInfoFooter />
+                <ReferralTrialInfoFooter />
             </footer>
         </div>
     );
 };
 
-interface TrialInfoModalProps {
+interface ReferralTrialInfoModalProps {
     modalProps: ModalStateProps;
 }
 
-export const TrialInfoModal = ({ modalProps }: TrialInfoModalProps) => {
+export const ReferralTrialInfoModal = ({ modalProps }: ReferralTrialInfoModalProps) => {
     return (
         <>
             <ModalTwo {...modalProps}>
-                <ModalTwoHeader title={<TrialInfoHeader />} />
+                <ModalTwoHeader title={<ReferralTrialInfoHeader />} />
                 <ModalTwoContent>
-                    <TrialInfoContent />
+                    <ReferralTrialInfoContent />
                 </ModalTwoContent>
                 <ModalTwoFooter>
-                    <TrialInfoFooter modalProps={modalProps} />
+                    <ReferralTrialInfoFooter modalProps={modalProps} />
                 </ModalTwoFooter>
             </ModalTwo>
         </>
     );
 };
 
-export default TrialInfo;
+export default ReferralTrialInfo;

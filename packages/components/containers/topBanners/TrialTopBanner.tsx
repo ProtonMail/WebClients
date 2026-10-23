@@ -4,13 +4,14 @@ import { useLocation } from 'react-router-dom';
 import { fromUnixTime, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useDateCountdown from '@proton/hooks/useDateCountdown';
 import { Renew } from '@proton/payments/core/subscription/constants';
+import { getSoonestEndingSubscription, isTrial } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
@@ -171,33 +172,35 @@ const TrialTopBannerPerSubscription = ({ app, subscription }: { app: APP_NAMES; 
         [entitlementCatalog, subscription]
     );
 
-    const topBanner = (() => {
-        if (loadingEntitlementCatalog) {
-            return undefined;
-        }
-        if (trialInfo.isB2BTrial) {
-            return <B2BTrialTopBanner subscription={subscription} />;
-        }
-        if (trialInfo.isReferralTrial) {
-            return <ReferralTopBanner app={app} subscription={subscription} />;
-        }
-        if (trialInfo.isTrial && !isVpn && app) {
-            return <LegacyReferralTopBanner fromApp={app} subscription={subscription} />;
-        }
-        return undefined;
-    })();
-
-    return <TrialCanceledModalWrapper>{topBanner}</TrialCanceledModalWrapper>;
+    if (loadingEntitlementCatalog) {
+        return null;
+    }
+    if (trialInfo.isB2BTrial) {
+        return <B2BTrialTopBanner subscription={subscription} />;
+    }
+    if (trialInfo.isReferralTrial) {
+        return <ReferralTopBanner app={app} subscription={subscription} />;
+    }
+    if (trialInfo.isTrial && !isVpn && app) {
+        return <LegacyReferralTopBanner fromApp={app} subscription={subscription} />;
+    }
+    return null;
 };
 
 const TrialTopBanner = ({ app }: { app: APP_NAMES }) => {
-    const [subscription] = useSubscription();
+    const [subscriptions = []] = useAllSubscriptions();
 
-    if (!isPaidSubscription(subscription)) {
+    if (subscriptions.length === 0) {
         return null;
     }
 
-    return <TrialTopBannerPerSubscription app={app} subscription={subscription} />;
+    const soonestEndingTrial = getSoonestEndingSubscription(subscriptions, (subscription) => isTrial(subscription));
+
+    return (
+        <TrialCanceledModalWrapper>
+            {soonestEndingTrial && <TrialTopBannerPerSubscription app={app} subscription={soonestEndingTrial} />}
+        </TrialCanceledModalWrapper>
+    );
 };
 
 export default TrialTopBanner;

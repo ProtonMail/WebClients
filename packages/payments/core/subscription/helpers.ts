@@ -874,6 +874,19 @@ export function subscriptionExpires(
     }
 }
 
+export function getSoonestEndingSubscription(
+    subscriptions: Subscription[],
+    isCandidate: (subscription: Subscription) => boolean
+): Subscription | undefined {
+    return subscriptions
+        .filter(isCandidate)
+        .reduce<Subscription | undefined>(
+            (soonest, subscription) =>
+                !soonest || subscription.PeriodEnd < soonest.PeriodEnd ? subscription : soonest,
+            undefined
+        );
+}
+
 /** If plan has changed but coupon remains, check if there is a mismatch */
 const vpnInvalidPlansForCouponMap: Map<COUPON_CODES, PLANS[]> = new Map([
     [COUPON_CODES.VPNPASSINTRO2026, [PLANS.VPN2024]],
