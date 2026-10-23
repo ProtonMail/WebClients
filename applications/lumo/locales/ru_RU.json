@@ -612,6 +612,106 @@
         "Объём хранилища распределяется между всеми приложениями ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Чёрная пятница"
+      ],
+      "Get the deal": [
+        "Получить скидку"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/месяц"
+      ],
+      "15 GB storage": [
+        "Хранилище на 15 ГБ"
+      ],
+      "2 individual accounts": [
+        "2 отдельных аккаунта"
+      ],
+      "2 TB of secure storage": [
+        "Защищенное хранилище на 2 ТБ"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Хранилище на 200 ГБ: в 40 раз больше текущего тарифа"
+      ],
+      "3 TB of secure storage": [
+        "Защищенное хранилище на 3 ТБ"
+      ],
+      "500 GB of secure storage": [
+        "Защищенное хранилище на 500 ГБ"
+      ],
+      "6 individual accounts": [
+        "6 отдельных аккаунтов"
+      ],
+      "Built-in 2FA authenticator": [
+        "Встроенная функция двухфакторной аутентификации"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются исходя из стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платёжного цикла."
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Recover previous file versions": [
+        "Восстановление предыдущих версий файлов"
+      ],
+      "Stronger protection against cyber threats": [
+        "Более надёжная защита от киберугроз"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Use your own email domain": [
+        "Собственный домен для электронной почты"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Платные ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Крупнейшая распродажа года"
+      ],
+      "Black Friday": [
+        "Чёрная пятница"
+      ],
+      "for 12 months": [
+        "на 12 месяцев"
+      ],
+      "Last chance to save big": [
+        "Последний шанс сэкономить по-крупному"
+      ],
+      "Protect your entire tribe": [
+        "Защитите всех, кто вам дорог"
+      ],
+      "Protection for two in a single plan": [
+        "Защита для двоих в одном тарифе"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } месяц",
@@ -1215,23 +1315,14 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Добавляйте собственные воспоминания, изменяйте автоматически созданные записи или очищайте всю историю в любое время. Измененные вами автоматически созданные воспоминания переносятся в категорию ваших собственных."
       ],
-      "Always enable web search for new conversations": [
-        "Всего включать поиск в Сети для новых цепочек писем"
-      ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "API-ключи позволяют получать программный доступ к ${ LUMO_SHORT_APP_NAME }. Каждый ключ показывается только один раз при создании."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Создайте ключ для интеграции ${ LUMO_SHORT_APP_NAME } со своими скриптами и инструментами."
       ],
-      "Encrypted search index for chats and Drive files.": [
-        "Зашифрованный поисковый индекс для чатов и файлов хранилища."
-      ],
       "High-performance model for complex tasks": [
         "Высокопроизводительная модель для сложных задач"
-      ],
-      "Include project conversations in the main chat history": [
-        "Включить цепочки писем проекта в основную историю чата"
       ],
       "Keep it safe — it won't be shown again": [
         "Сохраните его в надежном месте — он больше не будет показан"
@@ -1253,9 +1344,6 @@
       ],
       "More thorough answers, but can take longer": [
         "Более подробные ответы, но это может занять больше времени"
-      ],
-      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
-        "Безвозвратно удалить ваши проекты, чаты и сохраненные воспоминания. Это действие необратимо."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Чаты проектов полностью изолированы. Они используют собственные инструкции и файлы и полностью игнорируют ваши глобальные воспоминания."
@@ -1608,9 +1696,6 @@
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         ". Оно соответствует схеме API OpenAI — подключите ваш существующий клиент, изменив всего одну строку."
       ],
-      "1 file": [
-        "1 файл"
-      ],
       "A ${ LUMO_SHORT_APP_NAME } account": [
         "Аккаунт ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -1680,9 +1765,6 @@
       "characters not shown": [
         "символы не показаны"
       ],
-      "characters processed": [
-        "символов обработано"
-      ],
       "Chat expiring soon": [
         "Срок действия чата скоро истекает"
       ],
@@ -1736,9 +1818,6 @@
       ],
       "File too large for preview (>150k tokens)": [
         "Файл слишком велик для предпросмотра (>150 тыс. токенов)"
-      ],
-      "files": [
-        "файлы"
       ],
       "Files": [
         "Файлы"
@@ -1970,9 +2049,6 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Чтобы вернуться к этому разговору позже, войдите в систему или создайте аккаунт."
-      ],
-      "tokens": [
-        "токенов"
       ],
       "tokens / 30d": [
         "токенов / 30 дн."
@@ -2477,9 +2553,6 @@
       "Auto update memory": [
         "Автоматическое обновление воспоминаний"
       ],
-      "Automatic web search": [
-        "Автоматический поиск в Сети"
-      ],
       "Build intelligent apps.": [
         "Создавайте умные приложения."
       ],
@@ -2497,9 +2570,6 @@
       ],
       "Create new API key": [
         "Создать новый API-ключ"
-      ],
-      "Delete everything": [
-        "Удалить всё"
       ],
       "Document intelligence": [
         "Анализ документов"
@@ -2564,14 +2634,8 @@
       "Saved memories": [
         "Сохраненные воспоминания"
       ],
-      "Search Index": [
-        "Поисковый индекс"
-      ],
       "Security note:": [
         "Примечание по безопасности:"
-      ],
-      "Show project chats in history": [
-        "Показывать чаты проектов в истории"
       ],
       "Theme": [
         "Тема"
@@ -8719,18 +8783,6 @@
       ]
     },
     "Time": {
-      "${ days } days ago": [
-        "${ days } дн. назад"
-      ],
-      "${ hours } hours ago": [
-        "${ hours } ч. назад"
-      ],
-      "${ minutes } minutes ago": [
-        "${ minutes } мин. назад"
-      ],
-      "1 hour ago": [
-        "1 час назад"
-      ],
       "Just now": [
         "Только что"
       ],

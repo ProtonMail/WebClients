@@ -615,6 +615,106 @@
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/měsíc"
+      ],
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "2 individual accounts": [
+        "2 samostatné účty"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpečného úložiště"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB úložiště: 40× více než váš současný plán"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpečného úložiště"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpečného úložiště"
+      ],
+      "6 individual accounts": [
+        "6 samostatných účtů"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vestavěné ověřování 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Slevy se vztahují na standardní měsíční ceny. Po skončení fakturačního cyklu se vaše předplatné obnoví za standardní roční sazbu."
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Použijte svou vlastní e-mailovou doménu"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Největší slevová akce roku"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "na 12 měsíců"
+      ],
+      "Last chance to save big": [
+        "Poslední šance ušetřit ve velkém"
+      ],
+      "Protect your entire tribe": [
+        "Chraňte celou svou partu"
+      ],
+      "Protection for two in a single plan": [
+        "Ochrana pro dva v jednom plánu"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } měsíc",
@@ -1218,23 +1318,14 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Kdykoli můžete přidat vlastní vzpomínky, upravit automaticky vygenerované, nebo vše smazat. Vygenerované vzpomínky, které upravíte, budou povýšeny na vaše vlastní."
       ],
-      "Always enable web search for new conversations": [
-        "Vždy povolit vyhledávání na webu u nových konverzací"
-      ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "Klíče API vám umožní programový přístup k ${ LUMO_SHORT_APP_NAME }. Každý klíč je po vytvoření zobrazen jen jednou."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Vytvořte klíč pro integraci ${ LUMO_SHORT_APP_NAME } do svých skriptů a nástrojů."
       ],
-      "Encrypted search index for chats and Drive files.": [
-        "Šifrovaný vyhledávací index chatů a souborů Drive."
-      ],
       "High-performance model for complex tasks": [
         "Vysoce výkonný model pro složité úkoly"
-      ],
-      "Include project conversations in the main chat history": [
-        "Zahrnout konverzace projektu do hlavního chatu"
       ],
       "Keep it safe — it won't be shown again": [
         "Uložte si ho – znovu nebude zobrazen"
@@ -1256,9 +1347,6 @@
       ],
       "More thorough answers, but can take longer": [
         "Důkladnější odpovědi, které však mohou trvat déle"
-      ],
-      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
-        "Trvale smažte své projekty, chaty a uložené vzpomínky. Tento úkon nelze vrátit zpět."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Chaty v rámci projektů jsou udržovány zcela izolované. Spoléhají na vlastní instrukce a soubory a vaše globální vzpomínky zcela ignorují."
@@ -1611,9 +1699,6 @@
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         ". Je v souladu se schématem API OpenAI - stačí ve vašem stávajícím klientu změnit jeden řádek."
       ],
-      "1 file": [
-        "1 soubor"
-      ],
       "A ${ LUMO_SHORT_APP_NAME } account": [
         "${ LUMO_SHORT_APP_NAME } účet"
       ],
@@ -1683,9 +1768,6 @@
       "characters not shown": [
         "znaků se nezobrazuje"
       ],
-      "characters processed": [
-        "znaků zpracováno"
-      ],
       "Chat expiring soon": [
         "Platnost chatu brzy vyprší"
       ],
@@ -1739,9 +1821,6 @@
       ],
       "File too large for preview (>150k tokens)": [
         "Příliš velký soubor pro náhled (>150 tisíc tokenů)"
-      ],
-      "files": [
-        "soubory"
       ],
       "Files": [
         "Soubory"
@@ -1973,9 +2052,6 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Chcete-li se později k této konverzaci vrátit, přihlaste se nebo si vytvořte účet."
-      ],
-      "tokens": [
-        "tokenů"
       ],
       "tokens / 30d": [
         "tokeny / 30 dnů"
@@ -2480,9 +2556,6 @@
       "Auto update memory": [
         "Automaticky aktualizovat paměť"
       ],
-      "Automatic web search": [
-        "Automatické hledání na webu"
-      ],
       "Build intelligent apps.": [
         "Vytvářejte inteligentní aplikace."
       ],
@@ -2500,9 +2573,6 @@
       ],
       "Create new API key": [
         "Vytvořit nový API klíč"
-      ],
-      "Delete everything": [
-        "Smazat vše"
       ],
       "Document intelligence": [
         "Data k dokumentu"
@@ -2567,14 +2637,8 @@
       "Saved memories": [
         "Uložené vzpomínky"
       ],
-      "Search Index": [
-        "Vyhledávací index"
-      ],
       "Security note:": [
         "Bezpečnostní poznámka:"
-      ],
-      "Show project chats in history": [
-        "Zobrazit historii chatů projektu"
       ],
       "Theme": [
         "Motiv"
@@ -8725,18 +8789,6 @@
       ]
     },
     "Time": {
-      "${ days } days ago": [
-        "Před ${ days } dny"
-      ],
-      "${ hours } hours ago": [
-        "Před ${ hours } hodinami"
-      ],
-      "${ minutes } minutes ago": [
-        "Před ${ minutes } minutami"
-      ],
-      "1 hour ago": [
-        "Před 1 hodinou"
-      ],
       "Just now": [
         "Právě teď"
       ],

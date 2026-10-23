@@ -668,16 +668,16 @@
         "6 contas individuais"
       ],
       "Built-in 2FA authenticator": [
-        "Autenticador de 2FA integrado"
+        "Autenticador A2F integrado"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Os descontos são baseados em preços mensais padrão. Sua assinatura será renovada na taxa anual padrão quando o ciclo de faturamento terminar."
+        "Os descontos são baseados no preço mensal padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
       ],
       "Online document editor": [
         "Editor de documentos on-line"
       ],
       "Recover previous file versions": [
-        "Recuperar versões de arquivo anteriores"
+        "Recupere versões anteriores de arquivos"
       ],
       "Stronger protection against cyber threats": [
         "Proteção mais forte contra ameaças cibernéticas"
@@ -686,32 +686,32 @@
         "Pastas, marcadores e filtros ilimitados"
       ],
       "Use your own email domain": [
-        "Use seu próprio domínio de e-mail"
+        "Use o seu próprio domínio de e-mail"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium para ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium para ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Family, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium para ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium para ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
       ]
     },
     "bfcampaign2026: Title": {
@@ -1046,8 +1046,8 @@
       "Create image": [
         "Criar imagem"
       ],
-      "creations": [
-        "criações"
+      "Creations": [
+        "Criações"
       ],
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "${ LUMO_SHORT_APP_NAME } personalizados"
@@ -1395,17 +1395,20 @@
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "Após você prosseguir, o Apertus aparecerá como o modelo selecionado no menu de modelos. Você poderá usar este menu para alternar para outro modelo a qualquer momento."
       ],
-      "Always enable web search for new conversations": [
-        "Sempre ativar a pesquisa na web para novas conversas"
-      ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "As chaves de API permitem acessar o ${ LUMO_SHORT_APP_NAME } por meio de programação. Cada chave é exibida apenas uma vez após a criação."
+      ],
+      "Choose the language you speak when using dictation.": [
+        "Escolha o idioma que você fala ao usar o recurso de ditado."
+      ],
+      "Configure app preferences, keyboard shortcuts, and updates in the desktop settings window.": [
+        "Configure as preferências do aplicativo, os atalhos de teclado e as atualizações na janela de configurações da área de trabalho."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Crie uma chave para integrar o ${ LUMO_SHORT_APP_NAME } aos seus scripts e ferramentas."
       ],
-      "Encrypted search index for chats and Drive files.": [
-        "Índice de pesquisa criptografado para bate-papos e arquivos do Drive."
+      "Enable web search by default in new chats.": [
+        "Ativar a pesquisa na web por padrão em novos bate-papos."
       ],
       "Fully open, Swiss-made model for lighter tasks": [
         "Modelo totalmente aberto, fabricado na Suíça, para tarefas mais leves"
@@ -1416,17 +1419,11 @@
       "If Apertus gives you a poor response, use the thumbs down button to send feedback. The related prompt and response will be shared with university research teams at ETH Zurich and EPFL to help improve the model. This feedback loop is especially valuable for fully open models, helping them improve faster and remain competitive.": [
         "Se o Apertus fornecer uma resposta inadequada, use o botão de polegar para baixo para enviar feedback. A pergunta original e a resposta serão compartilhadas com as equipes de pesquisa da universidade em ETH Zurique e EPFL, a fim de ajudar a melhorar o modelo. Esse ciclo de feedback é especialmente valioso para modelos totalmente abertos, auxiliando-os a melhorar mais rapidamente e a manter a competitividade."
       ],
-      "Include project conversations in the main chat history": [
-        "Inclua conversas sobre projetos no histórico principal do bate-papo"
-      ],
       "Its model weights, training data, values, and development details are open for inspection. The ${ apertusCharterLink } provides strong ethical guardrails for privacy, responsible data use, transparency, and human agency.": [
         "Os pesos do modelo, dados de treinamento, valores e detalhes de desenvolvimento estão disponíveis para inspeção. O ${ apertusCharterLink } oferece fortes salvaguardas éticas para privacidade, uso responsável de dados, transparência e autonomia humana."
       ],
       "Keep it safe — it won't be shown again": [
         "Guarde em segurança - não será exibido novamente"
-      ],
-      "Language used when transcribing your voice": [
-        "Idioma usado na transcrição da sua voz"
       ],
       "Last updated on ${ formattedDate }": [
         "Última atualização em ${ formattedDate }"
@@ -1434,8 +1431,11 @@
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Saiba mais sobre como usar o ${ LUMO_SHORT_APP_NAME }"
       ],
-      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
-        "Permita que ${ LUMO_SHORT_APP_NAME } visualize os dados por meio de gráficos"
+      "Let ${ LUMO_SHORT_APP_NAME } generate charts when they help explain an answer.": [
+        "Permita que o ${ LUMO_SHORT_APP_NAME } gere gráficos quando eles ajudarem a explicar uma resposta."
+      ],
+      "Let ${ LUMO_SHORT_APP_NAME } open documents, code, and web pages in a canvas beside your chat. Change this for individual chats in Tools.": [
+        "Permita que o ${ LUMO_SHORT_APP_NAME } abra documentos, códigos e páginas da web em uma área de trabalho ao lado do seu bate-papo. Altere essa configuração para bate-papos individuais em Ferramentas."
       ],
       "Lightweight model for everyday tasks": [
         "Modelo leve para tarefas diárias"
@@ -1449,9 +1449,6 @@
       "More thorough answers, but can take longer": [
         "Respostas mais detalhadas, mas podem demorar mais"
       ],
-      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
-        "Exclua permanentemente seus projetos, bate-papos e memórias salvas. Essa ação é irreversível."
-      ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Os chats do projeto são mantidos totalmente isolados. Eles contam com suas próprias instruções e arquivos e ignoram totalmente suas memórias globais."
       ],
@@ -1461,8 +1458,14 @@
       "Report a bug or feature request": [
         "Reporte um erro ou solicitação de recurso"
       ],
+      "Reset the encrypted search index for your chats and Drive files.": [
+        "Redefina o índice de pesquisa criptografado para seus bate-papos e arquivos do Drive."
+      ],
       "Show animated background on the home screen": [
         "Mostrar plano de fundo animado na tela inicial"
+      ],
+      "Show chats from your projects alongside other chats in the Recent section of the sidebar.": [
+        "Mostre as conversas dos seus projetos junto com outras conversas na seção Recentes da barra lateral."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Inicie uma sessão para acessar sua conta e desbloquear mais recursos. Ainda não tem uma conta? ${ createLink }"
@@ -1508,6 +1511,12 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not export as PDF.": [
+        "Não foi possível exportar como PDF."
+      ],
+      "Could not export as PPTX.": [
+        "Não foi possível exportar como PPTX."
+      ],
       "Could not generate a workflow. Try again.": [
         "Não foi possível gerar um fluxo de trabalho. Tente novamente."
       ],
@@ -1788,6 +1797,10 @@
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "\"${ fileName }\" contém várias planilhas. Selecione as planilhas que deseja incluir no contexto da conversa."
       ],
+      "${ characterCount } character processed": [
+        "${ characterCount } caracter processado",
+        "${ characterCount } carateres processados"
+      ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "O armazenamento de ${ DRIVE_SHORT_APP_NAME } ainda não foi configurado"
       ],
@@ -1802,6 +1815,10 @@
       "${ expiringToday } chat will expire today": [
         "${ expiringToday } conversa expirará hoje",
         "${ expiringToday } conversas expirarão hoje"
+      ],
+      "${ fileCount } file": [
+        "${ fileCount } arquivo",
+        "${ fileCount } arquivos"
       ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
@@ -1818,9 +1835,6 @@
       ],
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         "Segue o esquema da API da OpenAI — basta inserir seu cliente existente com uma única alteração."
-      ],
-      "1 file": [
-        "1 arquivo"
       ],
       "A ${ LUMO_SHORT_APP_NAME } account": [
         "Uma conta do ${ LUMO_SHORT_APP_NAME }"
@@ -1891,9 +1905,6 @@
       "characters not shown": [
         "caracteres não exibidos"
       ],
-      "characters processed": [
-        "caracteres processados"
-      ],
       "Chat expiring soon": [
         "Bate-papo expirando em breve"
       ],
@@ -1911,6 +1922,9 @@
       ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Crie e revogue chaves de API para acesso programático. As chaves são exibidas apenas uma vez após a criação."
+      ],
+      "Created by ${ LUMO_SHORT_APP_NAME } in this conversation.": [
+        "Criado por ${ LUMO_SHORT_APP_NAME } nesta conversa."
       ],
       "creations": [
         "criações"
@@ -1954,11 +1968,11 @@
       "Expires tomorrow": [
         "Expira amanhã"
       ],
+      "Extract, analyze, and summarise documents, PDFs, and images.": [
+        "Extraia, analise e resuma documentos, PDFs e imagens."
+      ],
       "File too large for preview (>150k tokens)": [
         "Arquivo muito grande para pré-visualização (>150k tokens)"
-      ],
-      "files": [
-        "arquivos"
       ],
       "Files": [
         "Arquivos"
@@ -2059,6 +2073,9 @@
       "No data rows found.": [
         "Nenhuma linha de dados encontrada."
       ],
+      "No files or creations yet": [
+        "Nenhum arquivo ou criações ainda."
+      ],
       "No new memories were found in your recent chats.": [
         "Nenhuma nova memória foi encontrada nos seus chats recentes."
       ],
@@ -2070,6 +2087,9 @@
       ],
       "No usage yet": [
         "Não usado ainda"
+      ],
+      "Or pull suggestions from your recent chats.": [
+        "Ou veja sugestões a partir dos seus bate-papos recentes."
       ],
       "Over capacity": [
         "Excesso de capacidade"
@@ -2229,9 +2249,6 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Para consultar esta conversa mais tarde, inicie uma sessão ou crie uma conta."
-      ],
-      "tokens": [
-        "tokens"
       ],
       "tokens / 30d": [
         "tokens / 30d"
@@ -2665,8 +2682,17 @@
       ]
     },
     "collider_2025: Spotlight": {
+      "A new space for your creations": [
+        "Um novo espaço para suas criações"
+      ],
       "Settings": [
         "Configurações"
+      ],
+      "You can turn off creations in ${ tools } or ${ settings }.": [
+        "Você pode desativar as criações em ${ tools } ou ${ settings }."
+      ],
+      "You can turn off creations in ${ tools }.": [
+        "Você pode desativar as criações em ${ tools }."
       ]
     },
     "collider_2025: Status": {
@@ -2781,9 +2807,6 @@
       "Auto update memory": [
         "Atualizar memória automaticamente"
       ],
-      "Automatic web search": [
-        "Pesquisa web automática"
-      ],
       "Build intelligent apps.": [
         "Crie aplicativos inteligentes."
       ],
@@ -2808,8 +2831,14 @@
       "Create new API key": [
         "Criar chave de API"
       ],
-      "Delete everything": [
-        "Excluir tudo"
+      "Creations": [
+        "Criações"
+      ],
+      "Data visualizations": [
+        "Visualizações de dados"
+      ],
+      "Delete all data": [
+        "Excluir todos os dados"
       ],
       "Dictation language": [
         "Idioma do ditado"
@@ -2874,6 +2903,9 @@
       "Privacy included by default.": [
         "Privacidade incluída por padrão."
       ],
+      "Project chats in Recent": [
+        "Bate-papos do projeto em Recentes"
+      ],
       "Raw response": [
         "Resposta sem processar"
       ],
@@ -2889,14 +2921,11 @@
       "Saved memories": [
         "Memórias salvas"
       ],
-      "Search Index": [
+      "Search index": [
         "Índice de pesquisa"
       ],
       "Security note:": [
         "Nota de segurança:"
-      ],
-      "Show project chats in history": [
-        "Mostrar bate-papos de projetos no histórico"
       ],
       "Theme": [
         "Tema"
@@ -2919,8 +2948,8 @@
       "Visionary": [
         "Visionary"
       ],
-      "Visualization mode": [
-        "Modo de visualização"
+      "Web search": [
+        "Pesquisa na web"
       ],
       "What you can build": [
         "O que você pode construir"
@@ -3214,6 +3243,9 @@
       "Add to favorites": [
         "Adicionar aos favoritos"
       ],
+      "All": [
+        "Todos"
+      ],
       "Analyze another export": [
         "Analisar outra exportação"
       ],
@@ -3271,6 +3303,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy link & caption": [
         "Copiar link e legenda"
       ],
@@ -3324,6 +3359,9 @@
       ],
       "Discard changes": [
         "Descartar alteração"
+      ],
+      "Dismiss questions": [
+        "Descartar perguntas"
       ],
       "Divider": [
         "Divisor"
@@ -3421,6 +3459,9 @@
       "Manage chats": [
         "Gerenciar bate-papos"
       ],
+      "Manage connectors": [
+        "Gerenciar conectores"
+      ],
       "Manage Drive folder link": [
         "Gerenciar link de pasta do Drive"
       ],
@@ -3433,6 +3474,9 @@
       "More actions": [
         "Mais ações"
       ],
+      "More actions for ${ title }": [
+        "Mais ações para ${ title }"
+      ],
       "More breadcrumbs": [
         "Mais trilhas"
       ],
@@ -3444,6 +3488,9 @@
       ],
       "Next message": [
         "Próxima mensagem"
+      ],
+      "Next question": [
+        "Próxima pergunta"
       ],
       "Numbered list": [
         "Lista numerada"
@@ -3478,6 +3525,9 @@
       "Previous message": [
         "Mensagem anterior"
       ],
+      "Previous question": [
+        "Reposta anterior"
+      ],
       "Quote": [
         "Citar"
       ],
@@ -3489,6 +3539,9 @@
       ],
       "Remove": [
         "Remover"
+      ],
+      "Remove ${ label }": [
+        "Remover ${ label }"
       ],
       "Remove agent": [
         "Remover agente"
@@ -3523,6 +3576,9 @@
       "Save": [
         "Salvar"
       ],
+      "Save to ${ DRIVE_APP_NAME }": [
+        "Salvar no ${ DRIVE_APP_NAME }"
+      ],
       "Select all": [
         "Selecionar tudo"
       ],
@@ -3553,17 +3609,26 @@
       "Show sidebar": [
         "Mostrar barra lateral"
       ],
+      "Skip": [
+        "Pular"
+      ],
       "Slides": [
         "Slides"
       ],
       "Source (Markdown)": [
         "Origem (Markdown)"
       ],
+      "Source file": [
+        "Arquivo fonte"
+      ],
       "Start a chat": [
         "Iniciar um bate-papo"
       ],
       "Strikethrough": [
         "Tachado"
+      ],
+      "Submit": [
+        "Enviar"
       ],
       "Task options": [
         "Opções da tarefa"
@@ -3604,6 +3669,12 @@
       "Upload your AI export": [
         "Envie sua exportação de IA"
       ],
+      "Versions and actions": [
+        "Versões e ações"
+      ],
+      "View latest": [
+        "Ver mais recente"
+      ],
       "View mode": [
         "Modo de visualização"
       ],
@@ -3612,6 +3683,9 @@
       ],
       "Web": [
         "Web"
+      ],
+      "Web presentation": [
+        "Apresentação web"
       ],
       "Webpage": [
         "Página web"
@@ -3716,6 +3790,9 @@
       "Images": [
         "Imagens"
       ],
+      "Library": [
+        "Biblioteca"
+      ],
       "Link this folder": [
         "Vincular esta pasta"
       ],
@@ -3784,17 +3861,29 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Não é possível vincular a pasta raiz. Selecione uma subpasta."
       ],
+      "Could not load all creations.": [
+        "Não foi possível carregar todas as criações."
+      ],
+      "Could not load creations.": [
+        "Não foi possível carregar as criações."
+      ],
       "Database connection lost. Please refresh the page to continue.": [
         "Conexão com o banco de dados perdida. Atualize a página para continuar."
       ],
       "Enter a name": [
         "Insira um nome"
       ],
+      "Enter a valid time": [
+        "Insira um horário válido"
+      ],
       "Error uploading file: ${ file.name }": [
         "Erro ao carregar arquivo: ${ file.name }"
       ],
       "Failed to create folder": [
         "Falha ao criar a pasta"
+      ],
+      "Failed to download file": [
+        "Falha ao baixar o arquivo"
       ],
       "Failed to index Drive folder for search": [
         "Falha ao indexar a pasta do Drive para pesquisa"
@@ -3817,6 +3906,9 @@
       "Failed to unlink Drive folder": [
         "Falha ao desvincular a pasta do Drive"
       ],
+      "Failed to upload ${ file.name }": [
+        "Falha ao enviar ${ file.name } para o"
+      ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "O arquivo \"${ file.name }\" (${ fileSizeFormatted }) excede o limite de ${ maxSizeFormatted }. Conecte uma pasta do ${ DRIVE_APP_NAME } para enviar arquivos maiores."
       ],
@@ -3825,6 +3917,9 @@
       ],
       "Project not found": [
         "Projeto não encontrado"
+      ],
+      "The uploaded file is not valid JSON.": [
+        "O arquivo enviado não JSON válido."
       ]
     },
     "collider_2025:Error (validation)": {
@@ -3923,6 +4018,9 @@
         "${ wordCount } palavra",
         "${ wordCount } palavras"
       ],
+      "(latest)": [
+        "(mais recente)"
+      ],
       "ad value": [
         "valor publicitário"
       ],
@@ -3992,6 +4090,9 @@
       "Code": [
         "Código"
       ],
+      "Code · ${ langLabel }": [
+        "Código· ${ langLabel }"
+      ],
       "Conversation encrypted": [
         "Conversa criptografada"
       ],
@@ -4019,6 +4120,9 @@
       "Creation": [
         "Criação"
       ],
+      "Creations and images ${ LUMO_SHORT_APP_NAME } made in your chats.": [
+        "Criações e imagens do ${ LUMO_SHORT_APP_NAME } feitas nos seus bate-papos"
+      ],
       "Current chat:": [
         "Bate-papo atual:"
       ],
@@ -4027,6 +4131,9 @@
       ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Descubra o que a IA das Big Techs poderia deduzir sobre você a partir do seu histórico de conversas — e obtenha uma pontuação de privacidade que você pode compartilhar."
+      ],
+      "Document · MD": [
+        "Document · MD"
       ],
       "Drafting content…": [
         "Elaborando o conteúdo…"
@@ -4088,6 +4195,9 @@
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Vincule arquivos do ${ DRIVE_APP_NAME } ou envie do seu computador."
       ],
+      "Loading connectors": [
+        "Carregando conectores"
+      ],
       "Loading…": [
         "Carregando…"
       ],
@@ -4096,6 +4206,27 @@
       ],
       "Look for Export data, then click Export": [
         "Procure por Exportar dados e, em seguida, clique em Exportar"
+      ],
+      "Next run in ${ count } day": [
+        "Próxima execução em ${ count } dia",
+        "Próxima execução em ${ count } dias"
+      ],
+      "Next run in ${ count } hour": [
+        "Próxima execução em ${ count } hora",
+        "Próxima execução em ${ count } horas"
+      ],
+      "Next run in ${ count } minute": [
+        "Próxima execução em ${ count } minuto",
+        "Próxima execução em ${ count } minutos"
+      ],
+      "No content generated": [
+        "Nenhum conteúdo gerado"
+      ],
+      "No creations match your search.": [
+        "Nenhuma criação corresponde à sua pesquisa."
+      ],
+      "No creations of this type yet.": [
+        "Nenhuma criação para este tipo ainda."
       ],
       "No favorites yet. Star a chat to find it here quickly.": [
         "Ainda não há favoritos. Marque um bate-papo com uma estrela para encontrá-lo rapidamente aqui."
@@ -4118,6 +4249,9 @@
       "Please upload your AI export before continuing.": [
         "Envie seu arquivo de exportação de IA antes de continuar."
       ],
+      "Preparing your canvas…": [
+        "Preparando seu canvas…"
+      ],
       "Preparing…": [
         "Preparando…"
       ],
@@ -4139,14 +4273,30 @@
       "red flags": [
         "sinais de alerta"
       ],
+      "Revised": [
+        "Revisado"
+      ],
+      "Revising your creation…": [
+        "Revisando sua criação"
+      ],
+      "Searching ${ pendingSearchCount } more creation…": [
+        "Pesquisando ${ pendingSearchCount } criação a mais…",
+        "Pesquisando ${ pendingSearchCount } criações a mais…"
+      ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Veja o que a IA da Big Tech sabe sobre você. Feito com o ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Select all that apply.": [
+        "Selecione todos que se aplicam."
       ],
       "Sign in to your ChatGPT account on chatgpt.com": [
         "Inicie sessão na sua conta do ChatGPT em chatgpt.com"
       ],
       "Sign in to your Claude account at claude.ai": [
         "Faça login na sua conta Claude em claude.ai"
+      ],
+      "Skipped": [
+        "Ignorado"
       ],
       "Some content, such as images and attachments, may not be included in the exported file.": [
         "Alguns conteúdos, como imagens e anexos, podem não ser incluídos no arquivo exportado."
@@ -4156,6 +4306,9 @@
       ],
       "Start a new chat to see it here.": [
         "Inicie uma nova conversa para vê-la aqui."
+      ],
+      "Status: ${ statusAccessibleLabel }": [
+        "Status: ${ statusAccessibleLabel }"
       ],
       "Structured data, aiming for compatibility with the ChatGPT export format": [
         "Dados estruturados, com o objetivo de garantir a compatibilidade com o formato de exportação do ChatGPT"
@@ -4199,8 +4352,8 @@
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para criar ${ LUMO_SHORT_APP_NAME }s personalizados ilimitados, desbloquear modelos de IA avançados e muito mais."
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
-        "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para criar projetos ilimitados, desbloquear modelos avançados de IA e muito mais."
+      "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited projects, unlock advanced AI models, and more.": [
+        "Faça upgrade para o ${ PLAN_NAMES[PLANS.LUMO] } para criar projetos ilimitados, desbloquear modelos avançados de IA e muito mais."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Use o modelo Max para trabalhos complexos ou o modelo Lite para tarefas cotidianas. Escolha o modo Rápido para respostas rápidas ou o modo Pensamento para perguntas mais difíceis."
@@ -4305,6 +4458,26 @@
       ]
     },
     "collider_2025:Label": {
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
+      ],
+      "${ data.pressure } hPa": [
+        "${ data.pressure } hPa"
+      ],
+      "${ data.wind_speed } m/s": [
+        "${ data.wind_speed } m/s"
+      ],
+      "${ data.wind_speed } m/s ${ direction }": [
+        "${ data.wind_speed } m/s ${ direction }"
+      ],
+      "${ file.tokenCount } token": [
+        "${ file.tokenCount } token",
+        "${ file.tokenCount } tokens"
+      ],
+      "${ progress.indexed }/${ progress.total } file (${ percentage }%)": [
+        "${ progress.indexed }/${ progress.total } arquivo (${ percentage }%)",
+        "${ progress.indexed }/${ progress.total } arquivos (${ percentage }%)"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } selecionados"
       ],
@@ -4326,17 +4499,62 @@
       "AI platform": [
         "Plataforma de IA"
       ],
+      "Anime": [
+        "Anime"
+      ],
+      "AsciiDoc Document": [
+        "Documento AsciiDoc"
+      ],
+      "Batch File": [
+        "Arquivo de lote"
+      ],
+      "C# File": [
+        "Arquivo C#"
+      ],
+      "C/C++ File": [
+        "Arquivo C/C++"
+      ],
       "Canvas": [
         "Canvas"
       ],
       "Card theme": [
         "Tema do cartão"
       ],
+      "Cargo File": [
+        "Arquivo Cargo"
+      ],
+      "Chart: ${ text }": [
+        "Gráfico: ${ text }"
+      ],
       "chat": [
         "bate-papo"
       ],
       "chats": [
         "bate-papos"
+      ],
+      "Clojure File": [
+        "Arquivo Clojure"
+      ],
+      "Cloud Cover": [
+        "Coberto de nuvens"
+      ],
+      "CMake File": [
+        "Arquivo CMake"
+      ],
+      "Comic book": [
+        "História em quadrinhos"
+      ],
+      "Configuration File": [
+        "Arquivo de configuração"
+      ],
+      "Connected": [
+        "Conectado"
+      ],
+      "Connected with issues": [
+        "Conectado com problemas"
+      ],
+      "Connection failed": [
+        "Conexão falhou"
       ],
       "Conversation starters (optional)": [
         "Iniciadores de conversa (opcional)"
@@ -4346,6 +4564,18 @@
       ],
       "Created on": [
         "Criada em"
+      ],
+      "CSS File": [
+        "Arquivo CSS"
+      ],
+      "CSV": [
+        "CSV"
+      ],
+      "Daily at ${ timeLabel }": [
+        "Diariamente às ${ timeLabel }"
+      ],
+      "Dart File": [
+        "Arquivo Dart"
       ],
       "Data brokers": [
         "Corretores de dados"
@@ -4365,14 +4595,56 @@
       "Description (optional)": [
         "Descrição (opcional)"
       ],
+      "Disabled": [
+        "Desativado"
+      ],
+      "Dismiss": [
+        "Dispensar"
+      ],
+      "Dockerfile": [
+        "Dockerfile"
+      ],
       "Document editor": [
         "Editor de documentos"
       ],
       "Draw a sketch": [
         "Desenhe um esboço"
       ],
+      "E": [
+        "L"
+      ],
       "Edit conversation title": [
         "Editar título da conversa"
+      ],
+      "Elixir File": [
+        "Arquivo Elixir"
+      ],
+      "ENE": [
+        "LNE"
+      ],
+      "Erlang File": [
+        "Arquivo Erlang"
+      ],
+      "ESE": [
+        "SSE"
+      ],
+      "Excel Document": [
+        "Documento Excel"
+      ],
+      "Failed": [
+        "Erro"
+      ],
+      "Feels Like": [
+        "Sensação térmica"
+      ],
+      "File": [
+        "Arquivo"
+      ],
+      "Files in Drive": [
+        "Arquivos no Drive"
+      ],
+      "Filter by type": [
+        "Filtrar por tipo"
       ],
       "Fine": [
         "Fino"
@@ -4386,11 +4658,47 @@
       "Frequency": [
         "Frequência"
       ],
+      "Generated image": [
+        "Imagem gerada"
+      ],
+      "Generated image from ${ formattedDate }": [
+        "Imagem gerada de ${ formattedDate }"
+      ],
       "Generating": [
         "Gerando"
       ],
+      "Generating chart…": [
+        "Gerando gráfico…"
+      ],
       "Generating your report": [
         "Gerando seu relatório"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "Obter ${ PLAN_NAMES[PLANS.LUMO] }"
+      ],
+      "GIF Image": [
+        "Imagem GIF"
+      ],
+      "Gitignore File": [
+        "Arquivo Gitignore"
+      ],
+      "Go File": [
+        "Arquivo Go"
+      ],
+      "Gradle File": [
+        "Arquivo Gradle"
+      ],
+      "Groovy File": [
+        "Arquivo Groovy"
+      ],
+      "Hard to read": [
+        "Difícil de ler"
+      ],
+      "Haskell File": [
+        "Arquivo Haskell"
+      ],
+      "HEIC Image": [
+        "Imagem HEIC"
       ],
       "High": [
         "Alta"
@@ -4398,11 +4706,20 @@
       "How AI gets more out of you": [
         "Como a IA consegue mais de você"
       ],
+      "HTML Document": [
+        "Documento HTML"
+      ],
+      "Humidity": [
+        "Humidade"
+      ],
       "Image preview": [
         "Pré-visualização da imagem"
       ],
       "Include full conversation": [
         "Incluir conversa completa"
+      ],
+      "Initializing Drive...": [
+        "Inicializando o Drive..."
       ],
       "Inspiration image": [
         "Imagem de inspiração"
@@ -4416,17 +4733,74 @@
       "It doesn't expire": [
         "Não expira"
       ],
+      "Java File": [
+        "Arquivo Java"
+      ],
+      "JavaScript File": [
+        "Arquivo JavaScript"
+      ],
+      "JPEG Image": [
+        "Imagem JPEG"
+      ],
       "JSON": [
         "JSON"
+      ],
+      "JSON File": [
+        "Arquivo JSON"
+      ],
+      "Kotlin File": [
+        "Arquivo Kotlin"
+      ],
+      "Last 30 days": [
+        "Últimos 30 dias"
+      ],
+      "Last 7 Days": [
+        "Últimos 7 dias"
+      ],
+      "Last 7 days": [
+        "Últimos 7 Dias"
+      ],
+      "LaTeX Document": [
+        "Documento LaTeX"
       ],
       "Lending & hiring": [
         "Empréstimos e contratações"
       ],
+      "Liking ${ LUMO_SHORT_APP_NAME }?": [
+        "Gostando do ${ LUMO_SHORT_APP_NAME }?"
+      ],
+      "Loading card...": [
+        "Carregando cartão..."
+      ],
+      "Loading image...": [
+        "Carregando imagem..."
+      ],
+      "Lock File": [
+        "Arquivo Lock"
+      ],
+      "Log File": [
+        "Arquivo de registro"
+      ],
       "Low": [
         "Baixo"
       ],
+      "Lua File": [
+        "Arquivo Lua"
+      ],
+      "Makefile": [
+        "Makefile"
+      ],
       "Markdown": [
         "Markdown"
+      ],
+      "Markdown Document": [
+        "Documento Markdown"
+      ],
+      "MATLAB/Mathematica File": [
+        "Arquivo MATLAB/Mathematica"
+      ],
+      "Maven File": [
+        "Arquivo Maven"
       ],
       "Medium": [
         "Medio"
@@ -4437,17 +4811,83 @@
       "My privacy type": [
         "Meu tipo privado"
       ],
+      "My Privacy Type": [
+        "Meu tipo de privacidade"
+      ],
+      "N": [
+        "N"
+      ],
       "Name": [
         "Nome"
+      ],
+      "NE": [
+        "NE"
+      ],
+      "NNE": [
+        "NNE"
+      ],
+      "NNW": [
+        "NNO"
+      ],
+      "Not connected": [
+        "Não conectado"
+      ],
+      "Notify me when a run finishes": [
+        "Notifique-me quando a execução terminar"
+      ],
+      "NW": [
+        "NO"
+      ],
+      "OCaml File": [
+        "Arquivo OCaml"
+      ],
+      "ODT Document": [
+        "Documento ODT"
+      ],
+      "Oil painting": [
+        "Pintura a óleo"
+      ],
+      "Older": [
+        "Mais antigo"
+      ],
+      "Other": [
+        "Outro"
+      ],
+      "Out of 100": [
+        "De 100"
+      ],
+      "PDF Document": [
+        "Documento PDF"
+      ],
+      "Perl File": [
+        "Arquivo Perl"
       ],
       "Personalized pricing": [
         "Preços personalizados"
       ],
+      "PHP File": [
+        "Arquivo PHP"
+      ],
       "Platform": [
         "Plataforma"
       ],
+      "PNG Image": [
+        "Imagem PNG"
+      ],
       "Politics": [
         "Política"
+      ],
+      "PowerShell Script": [
+        "Script PowerShell"
+      ],
+      "Preparing...": [
+        "Preparando..."
+      ],
+      "Pressure": [
+        "Pressão"
+      ],
+      "Privacy Exposure": [
+        "Exposição de privacidade"
       ],
       "Progress": [
         "Progresso"
@@ -4455,23 +4895,110 @@
       "Project Instructions (optional)": [
         "Instruções do projeto (opcional)"
       ],
+      "Projects": [
+        "Projetos"
+      ],
+      "Python File": [
+        "Arquivo Python"
+      ],
+      "R File": [
+        "Arquivo R"
+      ],
+      "reStructuredText": [
+        "reStructuredText"
+      ],
+      "RTF Document": [
+        "Documento RTF"
+      ],
+      "Ruby File": [
+        "Arquivo Ruby"
+      ],
+      "Rust File": [
+        "Arquivo Rust"
+      ],
+      "S": [
+        "S"
+      ],
       "Save report on this device to view it later": [
         "Salve o relatório neste dispositivo para visualizá-la mais tarde"
+      ],
+      "SBT File": [
+        "Documento SBT"
+      ],
+      "Scala File": [
+        "Arquivo Scala"
       ],
       "Scams": [
         "Golpes"
       ],
+      "SE": [
+        "SE"
+      ],
+      "Search library": [
+        "Pesquisar biblioteca"
+      ],
       "Selected:": [
         "Selecionado:"
+      ],
+      "Series": [
+        "Séries"
+      ],
+      "Settings": [
+        "Configurações"
+      ],
+      "Share (%)": [
+        "Compartilhar (%)"
       ],
       "Share to": [
         "Compartilhar para"
       ],
+      "Sheet": [
+        "Planilha"
+      ],
+      "Shell Script": [
+        "Script Shell"
+      ],
+      "SQL File": [
+        "Arquivo SQL"
+      ],
+      "SSE": [
+        "SSE"
+      ],
+      "SSW": [
+        "SSO"
+      ],
+      "SW": [
+        "SO"
+      ],
+      "Swift File": [
+        "Arquivo Swift"
+      ],
+      "Text File": [
+        "Arquivo de texto"
+      ],
       "Thick": [
         "Grosso"
       ],
+      "This Year": [
+        "Este ano"
+      ],
+      "Time": [
+        "Hora"
+      ],
       "Tips": [
         "Dicas"
+      ],
+      "Today": [
+        "Hoje"
+      ],
+      "TOML File": [
+        "ArquivoTOML"
+      ],
+      "TypeScript File": [
+        "Arquivo TypeScript"
+      ],
+      "Unknown file": [
+        "Arquivo desconhecido"
       ],
       "Untitled chat": [
         "Bate-papo sem título"
@@ -4484,6 +5011,54 @@
       ],
       "Upload": [
         "Enviar"
+      ],
+      "Value": [
+        "Valor"
+      ],
+      "Vim Script": [
+        "Script Vim"
+      ],
+      "Vintage photo": [
+        "Foto antiga"
+      ],
+      "Vol: ": [
+        "Vol: "
+      ],
+      "W": [
+        "O"
+      ],
+      "Watercolor": [
+        "Aquarela"
+      ],
+      "WebP Image": [
+        "Imagem WebP"
+      ],
+      "When to run": [
+        "Quando executar"
+      ],
+      "Wind": [
+        "Vento"
+      ],
+      "WNW": [
+        "ONO"
+      ],
+      "Word Document": [
+        "Documento Word"
+      ],
+      "WSW": [
+        "OSO"
+      ],
+      "XML File": [
+        "Arquivo XML"
+      ],
+      "YAML File": [
+        "Arquivo YAML"
+      ],
+      "Yesterday": [
+        "Ontem"
+      ],
+      "Your answer": [
+        "Sua resposta"
       ]
     },
     "collider_2025:Notification": {
@@ -4497,6 +5072,9 @@
     "collider_2025:Option": {
       "All": [
         "Todos"
+      ],
+      "Always local time": [
+        "Sempre na hora local"
       ],
       "Daily": [
         "Diariamente"
@@ -4572,8 +5150,14 @@
       "Search custom ${ LUMO_SHORT_APP_NAME }": [
         "Pesquisar ${ LUMO_SHORT_APP_NAME } personalizados"
       ],
+      "Search library": [
+        "Pesquisar biblioteca"
+      ],
       "Sign in required": [
         "É necessário iniciar sessão"
+      ],
+      "Something else…": [
+        "Algo mais…"
       ]
     },
     "collider_2025:Prefill": {
@@ -4718,6 +5302,18 @@
       ]
     },
     "collider_2025:Reasoning": {
+      "${ failedCount } failed": [
+        "${ failedCount } erro",
+        "${ failedCount } erros"
+      ],
+      "${ resultCount } result": [
+        "${ resultCount } resultado",
+        "${ resultCount } resultados"
+      ],
+      "${ urlCount } URL": [
+        "${ urlCount } URL",
+        "${ urlCount } URLs"
+      ],
       "Checked ${ BRAND_NAME } knowledge": [
         "Verifiquei os conhecimentos sobre a ${ BRAND_NAME }"
       ],
@@ -4726,6 +5322,9 @@
       ],
       "Checked the weather": [
         "Verificado o tempo"
+      ],
+      "Checked the weather in ${ location }": [
+        "Verificado o tempo em ${ location }"
       ],
       "Checking ${ BRAND_NAME } knowledge": [
         "Verificando o conhecimento de ${ BRAND_NAME }"
@@ -4738,6 +5337,12 @@
       ],
       "Checking the weather": [
         "Verificando o tempo"
+      ],
+      "Checking the weather...": [
+        "Verificando o clima"
+      ],
+      "command": [
+        "comando"
       ],
       "Complete": [
         "Concluído"
@@ -4754,8 +5359,20 @@
       "Done": [
         "Concluído"
       ],
+      "Edited ${ path }": [
+        "Editado ${ path }"
+      ],
+      "Edited file": [
+        "Arquivo editado"
+      ],
       "Edited image": [
         "Imagem editada"
+      ],
+      "Editing ${ path }...": [
+        "Editando ${ path }..."
+      ],
+      "Editing file...": [
+        "Editando arquivo..."
       ],
       "Editing image": [
         "Editando imagem"
@@ -4781,6 +5398,21 @@
       "Failed": [
         "Erro"
       ],
+      "Fetching ${ url }...": [
+        "Buscando ${ url }..."
+      ],
+      "Fetching page...": [
+        "Obtendo página..."
+      ],
+      "file": [
+        "arquivo"
+      ],
+      "files": [
+        "arquivos"
+      ],
+      "Finished your creation": [
+        "Finalize sua criação"
+      ],
       "Generated image": [
         "A imagem foi gerada"
       ],
@@ -4798,6 +5430,9 @@
       ],
       "Last updated: ": [
         "Última atualização: "
+      ],
+      "Last updated: ${ updatedTime }": [
+        "Última atualização: ${ updatedTime }"
       ],
       "Looked at your image": [
         "Olhei para a sua imagem"
@@ -4838,8 +5473,17 @@
       "P/E Ratio": [
         "Índice P/L"
       ],
+      "page": [
+        "página"
+      ],
       "Performance comparison": [
         "Comparação de desempenho"
+      ],
+      "Prepared your canvas": [
+        "Preparando seu canvas"
+      ],
+      "Preparing your canvas": [
+        "Preparando seu canvas"
       ],
       "Price": [
         "Preço"
@@ -4847,11 +5491,23 @@
       "Profit Margin": [
         "Margem de lucro"
       ],
+      "Ran command": [
+        "Comando Ran"
+      ],
       "Read a web page": [
         "Ler uma página da web"
       ],
+      "Read file": [
+        "Arquivo Read"
+      ],
+      "Reading ${ path }...": [
+        "Lendo ${ path }..."
+      ],
       "Reading a web page": [
         "Lendo uma página da web"
+      ],
+      "Reading file...": [
+        "Lendo arquivo..."
       ],
       "Reasoning": [
         "Racionamento"
@@ -4859,11 +5515,35 @@
       "Revenue TTM": [
         "Receita TTM"
       ],
+      "Running ${ shortName }...": [
+        "Executando ${ shortName }..."
+      ],
+      "Running `${ short }`...": [
+        "Executando `${ short }`..."
+      ],
+      "Running command...": [
+        "Executando comando..."
+      ],
+      "Searched files": [
+        "Arquivos pesquisados"
+      ],
       "Searched the web": [
         "Pesquisei na web"
       ],
+      "Searching files for \"${ query }\"...": [
+        "Pesquisando arquivos por \"${ query }\"..."
+      ],
+      "Searching files...": [
+        "Pesquisando arquivos..."
+      ],
       "Searching the web": [
         "Pesquisando na web"
+      ],
+      "Searching the web for \"${ query }\"...": [
+        "Pesquisando a web por \"${ query }\"..."
+      ],
+      "Searching the web...": [
+        "Pesquisando na web..."
       ],
       "Thinking": [
         "Pensando"
@@ -4873,6 +5553,12 @@
       ],
       "Thought this through": [
         "Refletiu sobre isso"
+      ],
+      "Updated ${ path }": [
+        "Atualizado ${ path }"
+      ],
+      "Updated file": [
+        "Arquivo atualizado"
       ],
       "Updated your image": [
         "Atualizou sua imagem"
@@ -4904,8 +5590,17 @@
       "Working on this": [
         "Trabalhando nisso"
       ],
+      "Working on your creation": [
+        "Trabalhando na sua criação"
+      ],
       "Working through this": [
         "Trabalhando nisso"
+      ],
+      "Writing ${ path }...": [
+        "Escrevendo ${ path }..."
+      ],
+      "Writing file...": [
+        "Escrevendo o arquivo..."
       ]
     },
     "collider_2025:Status": {
@@ -4972,8 +5667,8 @@
       "Create": [
         "Criar"
       ],
-      "creations": [
-        "criações"
+      "Creations": [
+        "Criações"
       ],
       "Gallery": [
         "Álbum de fotos"
@@ -4992,6 +5687,9 @@
       "${ day } at ${ time }": [
         "${ day } às ${ time }"
       ],
+      "${ minutes } min": [
+        "${ minutes } min"
+      ],
       "Just now": [
         "Agora mesmo"
       ],
@@ -5003,6 +5701,9 @@
       ],
       "Yesterday": [
         "Ontem"
+      ],
+      "Yesterday at ${ time }": [
+        "Ontem às ${ time }"
       ]
     },
     "collider_2025:Title": {
@@ -5011,6 +5712,9 @@
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Um assistente de IA deve empoderar você, não explorar você por seus dados."
+      ],
+      "Auto-approve": [
+        "Aprovação automática"
       ],
       "Better web search": [
         "Melhor pesquisa na web"
@@ -5063,6 +5767,9 @@
       "Discard changes?": [
         "Descartar alterações?"
       ],
+      "Download as": [
+        "Baixar como"
+      ],
       "Edit custom ${ LUMO_SHORT_APP_NAME }": [
         "Editar ${ LUMO_SHORT_APP_NAME } personalizados"
       ],
@@ -5071,6 +5778,9 @@
       ],
       "Edit Project": [
         "Editar projeto"
+      ],
+      "Edit scheduled task": [
+        "Editar tarefa agendada"
       ],
       "Every clarification is a new data point": [
         "Cada esclarecimento é um novo ponto de dados"
@@ -5141,8 +5851,8 @@
       "More options": [
         "Mais opções"
       ],
-      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Mais Projetos no ${ LUMO_SHORT_APP_NAME } Plus"
+      "More Projects with ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "Mais Projetos com ${ PLAN_NAMES[PLANS.LUMO] }"
       ],
       "Most revealing": [
         "Mais revelador"
@@ -5152,6 +5862,9 @@
       ],
       "My Projects": [
         "Meus projetos"
+      ],
+      "New scheduled task": [
+        "Nova tarefa agendada"
       ],
       "No chat history yet. Let's start chatting!": [
         "Nenhum histórico de bate-papo ainda. Vamos começar a conversar!"
@@ -5184,7 +5897,7 @@
         "Conhecimento do projeto"
       ],
       "Recent": [
-        "Recente"
+        "Recentes"
       ],
       "Remove all files?": [
         "Remover todos os arquivos?"
@@ -5249,11 +5962,17 @@
       "Two models, two modes": [
         "Dois modelos, dois modos"
       ],
+      "Untitled": [
+        "Sem título"
+      ],
       "Untitled conversation": [
         "Conversa sem título"
       ],
       "Untitled document": [
         "Documento sem título"
+      ],
+      "Untitled Project": [
+        "Projeto sem título"
       ],
       "Upload your data export": [
         "Envie sua exportação de dados"
@@ -7479,6 +8198,9 @@
       "Total VPN connections": [
         "Conexões VPN adicionais"
       ],
+      "UnionPay logo": [
+        "Logotipo da UnionPay"
+      ],
       "Unknown": [
         "Desconhecido"
       ],
@@ -7923,6 +8645,9 @@
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
       ],
+      "Customer Support": [
+        "Suporte ao cliente"
+      ],
       "Enforcing 2FA for organizations": [
         "Impondo a autenticação em dois fatores (2FA) para organizações"
       ],
@@ -8070,6 +8795,9 @@
       ],
       "Local storage (IndexedDB)": [
         "Armazenamento local (IndexedDB)"
+      ],
+      "Locked": [
+        "Bloqueado"
       ],
       "max": [
         "máx."
@@ -9342,6 +10070,11 @@
         "Você precisa ter acesso à chave da organização para realizar esta operação."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Conta bancária"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -9397,12 +10130,6 @@
       ],
       "Billing Country": [
         "País de Faturamento"
-      ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "O Born Private não pode ser adquirido com uma assinatura ativa."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private requer uma doação."
       ],
       "Buying credits requires a separate purchase.": [
         "Comprar créditos requer uma compra separada."
@@ -9584,17 +10311,11 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Você já tem o Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
       ],
       "You will soon be redirected to verify your payment.": [
         "Em breve você será redirecionado para verificar seu pagamento."
-      ],
-      "Your account is too old for Born Private.": [
-        "Sua conta é muito antiga para Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Sua moeda foi alterada para euros (€) porque ${ IDEAL_WERO_BRAND_NAME } suporta apenas pagamentos em euros."
@@ -9638,6 +10359,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Ocorreu um erro. A verificação do Google Pay falhou."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ao confirmar, você autoriza a ${ BRAND_NAME } e a Stripe, a realizar cobranças futuras da sua assinatura nesta conta bancária via Débito Direto, e autoriza seu banco a debitar esses valores. Seu primeiro pagamento é realizado agora via ${ IDEAL_WERO_BRAND_NAME }. Seu plano é renovado automaticamente até que você o cancele; notificaremos você antes de cada cobrança. Para cobranças via débito direto, você pode solicitar um reembolso ao seu banco em até 8 semanas após a data do débito, conforme os termos do seu contrato com o banco. Isso não se aplica ao pagamento via ${ IDEAL_WERO_BRAND_NAME } que você está realizando agora."
       ]
     },
     "Payments.info": {
@@ -10377,17 +11103,17 @@
       ]
     },
     "Time": {
-      "${ days } days ago": [
+      "${ days } day ago": [
+        "${ days } dia atrás",
         "${ days } dias atrás"
       ],
-      "${ hours } hours ago": [
+      "${ hours } hour ago": [
+        "${ hours } hora atrás",
         "${ hours } horas atrás"
       ],
-      "${ minutes } minutes ago": [
+      "${ minutes } minute ago": [
+        "${ minutes } minuto atrás",
         "${ minutes } minutos atrás"
-      ],
-      "1 hour ago": [
-        "1 hora atrás"
       ],
       "Just now": [
         "Agora mesmo"

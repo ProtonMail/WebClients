@@ -641,10 +641,10 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Get the deal": [
-        "Tekliften yararlanın"
+        "Fırsatı yakala"
       ]
     },
     "bfcampaign2026: Info": {
@@ -661,7 +661,7 @@
         "2 TB güvenli depolama alanı"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
+        "200 GB depolama alanı: Mevcut tarifenizin 40 katı"
       ],
       "3 TB of secure storage": [
         "3 TB güvenli depolama alanı"
@@ -673,25 +673,25 @@
         "6 bireysel hesap"
       ],
       "Built-in 2FA authenticator": [
-        "Hazır iki adımlı kimlik doğrulayıcı"
+        "Yerleşik iki faktörlü kimlik doğrulayıcı"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
+        "İndirimler, standart aylık fiyatlandırmaya göre hesaplanmıştır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
       ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
       "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleme"
+        "Önceki dosya sürümlerini kurtarın"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
       ],
       "Unlimited folders, labels, and filters": [
-        "Sınırsız sayıda klasör, etiket ve süzgeç"
+        "Sınırsız sayıda klasör, etiket ve filtre"
       ],
       "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanma"
+        "Kendi e-posta etki alanınızı kullanın"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -724,13 +724,13 @@
         "Yılın en büyük indirimi"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "for 12 months": [
         "12 aylık"
       ],
       "Last chance to save big": [
-        "Büyük kazanç için son şans"
+        "Büyük tasarruf için son fırsat"
       ],
       "Protect your entire tribe": [
         "Kabilenizi koruyun"
@@ -1051,8 +1051,8 @@
       "Create image": [
         "Görsel oluştur"
       ],
-      "creations": [
-        "yapıt"
+      "Creations": [
+        "Yapıtlar"
       ],
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "Özel ${ LUMO_SHORT_APP_NAME }"
@@ -1452,14 +1452,11 @@
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "İlerlediğinizde, model menüsünde seçilmiş model olarak Apertus görüntülenir. Bu menüden istediğiniz zaman başka bir modele geçebilirsiniz."
       ],
-      "Allow ${ LUMO_SHORT_APP_NAME } to open longer documents, code, and slides in the canvas when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.": [
-        "Uygun olduğunda ${ LUMO_SHORT_APP_NAME } tarafından tuvalde daha uzun belgeler, kodlar ve slaytlar açılmasına izin verin. Bu davranış tüm sohbetler için varsayılandır; Araçlar menüsünden belirli bir sohbet için değiştirebilirsiniz."
-      ],
-      "Always enable web search for new conversations": [
-        "Yeni yazışmalarda internet araması her zaman açık olsun"
-      ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "API anahtarları ${ LUMO_SHORT_APP_NAME } uygulamasına programlama ile erişmenizi sağlar. Oluşturulan her yalnızca bir kez görüntülenir."
+      ],
+      "Choose the language you speak when using dictation.": [
+        "Yazıya dönüştürme kullanırken konuşacağınız dili seçin."
       ],
       "Configure app preferences, keyboard shortcuts, and updates in the desktop settings window.": [
         "Bilgisayar ayarları penceresinde uygulama ayarlarını, klavye kısayollarını ve güncellemeleri yapılandırın."
@@ -1467,8 +1464,8 @@
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Betikleriniz ve araçlarınız ile ${ LUMO_SHORT_APP_NAME } bütünleştirmesi için bir anahtar oluşturun."
       ],
-      "Encrypted search index for chats and Drive files.": [
-        "Sohbetler ve Drive dosyaları için şifrelenmiş arama dizini."
+      "Enable web search by default in new chats.": [
+        "Yeni sohbetlerde varsayılan olarak internet araması kullanılsın."
       ],
       "Fully open, Swiss-made model for lighter tasks": [
         "Daha hafif işler için tümüyle açık, İsviçre modeli"
@@ -1479,9 +1476,6 @@
       "If Apertus gives you a poor response, use the thumbs down button to send feedback. The related prompt and response will be shared with university research teams at ETH Zurich and EPFL to help improve the model. This feedback loop is especially valuable for fully open models, helping them improve faster and remain competitive.": [
         "Apertus size kötü bir yanıt verirse, geri bildirim göndermek için başparmak aşağı düğmesini kullanın. İlgili istem ve yanıt, modelin geliştirilmesine yardımcı olmak için ETH Zürih ve EPFL içindeki üniversite araştırma ekipleriyle paylaşılır. Bu geri bildirim döngüsü özellikle tümüyle açık modeller için değerlidir ve daha hızlı gelişmelerine ve rekabetçi kalmalarına yardımcı olur."
       ],
-      "Include project conversations in the main chat history": [
-        "Proje yazışmaları ana sohbet geçmişine katılsın"
-      ],
       "Internal preview of an upcoming model": [
         "Yakında çıkacak bir modelin iç ön izlemesi"
       ],
@@ -1491,17 +1485,17 @@
       "Keep it safe — it won't be shown again": [
         "Güvende tutun — Bir daha gösterilmeyecek"
       ],
-      "Language used when transcribing your voice": [
-        "Sesiniz yazıya dönüştürülürken kullanılacak dil"
-      ],
       "Last updated on ${ formattedDate }": [
         "Son güncelleme: ${ formattedDate }"
       ],
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } uygulamasının nasıl kullanılacağı ile ilgili ayrıntılı bilgi alın"
       ],
-      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
-        "${ LUMO_SHORT_APP_NAME } ile verileri çizelgelere dönüştürün"
+      "Let ${ LUMO_SHORT_APP_NAME } generate charts when they help explain an answer.": [
+        "Bir yanıtı açıklamaya yardımcı olduğunda ${ LUMO_SHORT_APP_NAME } çizelgeler oluşturabilir."
+      ],
+      "Let ${ LUMO_SHORT_APP_NAME } open documents, code, and web pages in a canvas beside your chat. Change this for individual chats in Tools.": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasının sohbetinizin yanındaki bir tuvalde belgeleri, kodu ve site sayfalarını açmasına izin verin. Araçlar bölümünden her sohbet için ayrı ayrı bunu değiştirebilirsiniz."
       ],
       "Lightweight model for everyday tasks": [
         "Günlük işler için hafif model"
@@ -1515,8 +1509,8 @@
       "More thorough answers, but can take longer": [
         "Daha kapsamlı yanıt, ancak daha uzun sürebilir"
       ],
-      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
-        "Projelerinizi, sohbetlerinizi ve kaydedilmiş anılarınızı kalıcı olarak silin. Bu işlem geri alınamaz."
+      "Permanently delete your projects, chats, and saved memories. This cannot be undone.": [
+        "Projelerinizi, sohbetlerinizi ve kaydedilen anılarınızı kalıcı olarak silin. Bu işlem geri alınamaz."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Proje sohbetleri tümüyle yalıtılmıştır. Kendi yönergelerini ve dosyalarını kullanırlar ve genel belleklerinizi tümüyle yok sayarlar."
@@ -1527,8 +1521,14 @@
       "Report a bug or feature request": [
         "Bir hata ya da özellik isteği bildirin"
       ],
+      "Reset the encrypted search index for your chats and Drive files.": [
+        "Sohbetleriniz ve Drive dosyalarınız için şifrelenmiş arama dizinini sıfırlayın."
+      ],
       "Show animated background on the home screen": [
         "Girişte canlandırılmış arka plan görüntülensin"
+      ],
+      "Show chats from your projects alongside other chats in the Recent section of the sidebar.": [
+        "Kenar çubuğunun Son kullanılanlar bölümünde, projelerinizdeki sohbetleri diğer sohbetlerle birlikte gösterin."
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Hesabınıza erişmek ve daha fazla özelliğe erişmek için oturum açın. Bir hesabınız yok mu? ${ createLink }"
@@ -1887,6 +1887,10 @@
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "“${ fileName }” dosyasında birden fazla çalışma sayfası var. Sohbet bağlamına eklenecek çalışma sayfalarını seçin."
       ],
+      "${ characterCount } character processed": [
+        "${ characterCount } karakter işlendi",
+        "${ characterCount } karakter işlendi"
+      ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "${ DRIVE_SHORT_APP_NAME } depolama alanı henüz ayarlanmamış"
       ],
@@ -1906,6 +1910,10 @@
         "${ expiringToday } sohbetin geçerlilik süresi bugün sona erecek",
         "${ expiringToday } sohbetin geçerlilik süresi bugün sona erecek"
       ],
+      "${ fileCount } file": [
+        "${ fileCount } dosya",
+        "${ fileCount } dosya"
+      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
       ],
@@ -1922,11 +1930,11 @@
         "${ urgentTotal } sohbetin geçerlilik süresi 24 saat içinde sona erecek",
         "${ urgentTotal } sohbetin geçerlilik süresi 24 saat içinde sona erecek"
       ],
+      "${ used } / ${ maximum } tokens (${ percentageUsed }%)": [
+        "${ used } / ${ maximum } kod (%${ percentageUsed })"
+      ],
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         ". OpenAI API şemasına uyar — Var olan istemcinizi tek satırda değiştirerek kullanmaya başlayın."
-      ],
-      "1 file": [
-        "1 dosya"
       ],
       "A ${ LUMO_SHORT_APP_NAME } account": [
         "Bir ${ LUMO_SHORT_APP_NAME } hesabı"
@@ -1996,9 +2004,6 @@
       ],
       "characters not shown": [
         "görüntülenmeyen karakterler"
-      ],
-      "characters processed": [
-        "işlenen karakter"
       ],
       "Chat expiring soon": [
         "Sohbetin geçerlilik süresi yakında dolacak"
@@ -2080,9 +2085,6 @@
       ],
       "File too large for preview (>150k tokens)": [
         "Dosya ön izleme için çok büyük (>150 bin kod)"
-      ],
-      "files": [
-        "dosyalar"
       ],
       "Files": [
         "Dosyalar"
@@ -2380,9 +2382,6 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Bu sohbete daha sonra geri dönmek için oturum veya bir hesap açın."
-      ],
-      "tokens": [
-        "kodlar"
       ],
       "tokens / 30d": [
         "kod / 30 gün"
@@ -2965,12 +2964,6 @@
       "Auto update memory": [
         "Bellek otomatik olarak güncellensin"
       ],
-      "Automatic creations": [
-        "Otomatik yapıtlar"
-      ],
-      "Automatic web search": [
-        "Otomatik internet araması"
-      ],
       "Build intelligent apps.": [
         "Akıllı uygulamalar oluşturun."
       ],
@@ -2995,8 +2988,14 @@
       "Create new API key": [
         "Yeni API anahtarı oluştur"
       ],
-      "Delete everything": [
-        "Her şeyi sil"
+      "Creations": [
+        "Yapıtlar"
+      ],
+      "Data visualizations": [
+        "Veri görselleştirmeleri"
+      ],
+      "Delete all data": [
+        "Tüm verileri sil"
       ],
       "Dictation language": [
         "Yazıya dönüştürme dili"
@@ -3061,6 +3060,9 @@
       "Privacy included by default.": [
         "Varsayılan olarak gizlilik odaklıdır."
       ],
+      "Project chats in Recent": [
+        "Son kullanılan proje sohbetleri"
+      ],
       "Raw response": [
         "Ham yanıt"
       ],
@@ -3076,14 +3078,11 @@
       "Saved memories": [
         "Kaydedilmiş bellekler"
       ],
-      "Search Index": [
+      "Search index": [
         "Arama dizini"
       ],
       "Security note:": [
         "Güvenlik notu:"
-      ],
-      "Show project chats in history": [
-        "Geçmiş proje sohbetlerini görüntüle"
       ],
       "Theme": [
         "Tema"
@@ -3106,8 +3105,8 @@
       "Visionary": [
         "Visionary"
       ],
-      "Visualization mode": [
-        "Görselleştirme kipi"
+      "Web search": [
+        "İnternet araması"
       ],
       "What you can build": [
         "Neler oluşturabilirsiniz"
@@ -3623,6 +3622,9 @@
       "Manage chats": [
         "Sohbet yönetimi"
       ],
+      "Manage connectors": [
+        "Bağlayıcı yönetimi"
+      ],
       "Manage Drive folder link": [
         "Drive klasör bağlantısını yönet"
       ],
@@ -3697,6 +3699,9 @@
       ],
       "Remove": [
         "Kaldır"
+      ],
+      "Remove ${ label }": [
+        "${ label } bağlayıcısını kaldır"
       ],
       "Remove agent": [
         "Aracıyı kaldır"
@@ -4009,6 +4014,9 @@
       ]
     },
     "collider_2025:Description": {
+      "Big Tech AI built a scarily accurate profile of me from my chat history. See what yours knows about you 👀": [
+        "Big Tech yapay zekaları, sohbet geçmişimden korkutucu derecede doğru bir profilim oluşturdu. Seninkilerin hakkında ne bildiklerini gör 👀"
+      ],
       "Use the connectors above without asking. Off: pause and notify me before each Ask tool.": [
         "Yukarıdaki bağlayıcılar sormadan kullanılsın. Kapalı: Duraklatılsın ve her Sor aracından önce bana bildirilsin."
       ]
@@ -4017,17 +4025,38 @@
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
         "${ LUMO_SHORT_APP_NAME } uygulamasının çalışması için yerel veri tabanı depolama alanı (IndexedDB) gereklidir. Ancak bu tarayıcıda bu özellik bulunmuyor. Bu durum tanımlama bilgileri veya site verileri engellendiğinde, gizli gezinme kipinde veya kilitleme kipi açıldığında ortaya çıkabilir. Lütfen bu site için site verilerine izin verin ve sayfayı yeniden yükleyin."
       ],
+      "Artifact has no content to save.": [
+        "Yapıtın kaydedilebilecek bir içeriği yok."
+      ],
       "Cannot link the root folder. Please select a subfolder.": [
         "Kök klasör bağlanamaz. Lütfen bir alt klasör seçin."
+      ],
+      "Chart unavailable": [
+        "Çizelge kullanılamıyor"
       ],
       "Choose a date and time in the future": [
         "Gelecekte bir tarih ve saat seçin"
       ],
+      "Conversation export files must contain a JSON array.": [
+        "Yazışma dışa aktarma dosyalarında bir JSON dizisi bulunmalıdır."
+      ],
+      "Could not build HTML for PDF export.": [
+        "PDF dışa aktarması için HTML oluşturulamadı."
+      ],
+      "Could not find ${ CONVERSATIONS_JSON } or conversations-*.json inside the uploaded archive.": [
+        "Yüklenen arşivde ${ CONVERSATIONS_JSON } veya conversations-*.json bulunamadı."
+      ],
       "Could not load all creations.": [
         "Tüm yapıtlar yüklenemedi."
       ],
+      "Could not load connectors": [
+        "Bağlayıcılar yüklenemedi"
+      ],
       "Could not load creations.": [
         "Yapıtlar yüklenemedi."
+      ],
+      "Could not read this file.": [
+        "Bu dosya okunamadı."
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "Veri tabanı bağlantısı kesildi. İlerlemek için sayfayı yenileyin."
@@ -4047,11 +4076,26 @@
       "Error uploading file: ${ file.name }": [
         "Dosya yüklenirken sorun çıktı: ${ file.name }"
       ],
+      "Excel file appears to be empty or contains no readable data": [
+        "Excel dosyası boş görünüyor veya okunabilir veri içermiyor"
+      ],
+      "Excel file contains no worksheets": [
+        "Excel dosyasında bir çalışma sayfası yok"
+      ],
+      "Failed to browse folder": [
+        "Klasöre göz atılamadı"
+      ],
       "Failed to create folder": [
         "Klasör oluşturulamadı"
       ],
+      "Failed to download file": [
+        "Dosya indirilemedi"
+      ],
       "Failed to index Drive folder for search": [
         "Drive klasörü arama için dizine eklenemedi"
+      ],
+      "Failed to initialize Drive browser": [
+        "Drive tarayıcısı hazırlanamadı"
       ],
       "Failed to link Drive folder": [
         "Drive klasörü ile bağlantı kurulamadı"
@@ -4062,8 +4106,17 @@
       "Failed to load images. Please try again.": [
         "Görseller yüklenemedi. Lütfen yeniden deneyin."
       ],
+      "Failed to navigate to folder": [
+        "Klasöre geçilemedi"
+      ],
+      "Failed to process file": [
+        "Dosya işlenemedi"
+      ],
       "Failed to process file: ${ file.name }": [
         "Dosya işlenemedi: ${ file.name }"
+      ],
+      "Failed to refresh folder": [
+        "Klasör yenilenemedi"
       ],
       "Failed to save file": [
         "Dosya kaydedilemedi"
@@ -4071,11 +4124,35 @@
       "Failed to unlink Drive folder": [
         "Drive klasörü bağlantısı kaldırılamadı"
       ],
+      "Failed to upload ${ file.name }": [
+        "${ file.name } dosyası yüklenemedi"
+      ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "“${ file.name }” dosyası (${ fileSizeFormatted }) ${ maxSizeFormatted } sınırını aşıyor. Daha büyük dosyalar yüklemek için bir ${ DRIVE_APP_NAME } klasörü bağlantısı ekleyin."
       ],
       "File type not supported: ${ file.name }": [
         "Dosya türü desteklenmiyor: ${ file.name }"
+      ],
+      "Format \"${ format }\" is not supported for ${ artifact.type } artifacts.": [
+        "${ artifact.type } yapıtları için \"${ format }\" biçimi desteklenmiyor."
+      ],
+      "Legacy Excel .xls files are not supported. Please save the workbook as .xlsx or CSV and try again.": [
+        "Eski Excel .xls dosyaları desteklenmez. Lütfen çalışma kitabını .xlsx veya CSV olarak kaydedip yeniden deneyin."
+      ],
+      "No conversations with user messages were found in this export.": [
+        "Bu dışa aktarmada kullanıcı iletileri ile yapılmış bir yazışma bulunamadı."
+      ],
+      "No Excel worksheets selected": [
+        "Herhangi bir Excel çalışma sayfası seçilmemiş"
+      ],
+      "PDF export is only supported for documents and presentations.": [
+        "Yalnızca belgeler ve sunumlar PDF olarak dışa aktarılabilir."
+      ],
+      "PPTX export is only supported for presentations.": [
+        "Yalnızca sunumlar PDF olarak dışa aktarılabilir."
+      ],
+      "Presentation has no slides to export.": [
+        "Sunumda dışa aktarılacak bir slayt yok."
       ],
       "Project not found": [
         "Proje bulunamadı"
@@ -4085,6 +4162,21 @@
       ],
       "Select at least one day of the week": [
         "Haftanın en az bir gününü seçin"
+      ],
+      "Something went wrong starting the analysis.": [
+        "İnceleme başlatılırken bir sorun çıktı."
+      ],
+      "The uploaded file is not valid JSON.": [
+        "Yüklenen dosya geçerli bir JSON kodu değil."
+      ],
+      "This does not look like a ChatGPT or Claude export.": [
+        "Bu bir ChatGPT veya Claude dışa aktarması gibi görünmüyor."
+      ],
+      "We could not read this Excel workbook. It may be encrypted, corrupted, or not a valid .xlsx file. Please save it as .xlsx or CSV and try again.": [
+        "Bu Excel çalışma kitabı okunamadı. Şifrelenmiş, bozuk veya geçersiz bir .xlsx dosyası olabilir. Lütfen .xlsx veya CSV olarak kaydedip yeniden deneyin."
+      ],
+      "We could not read this file. Select it again, or move it out of cloud storage before uploading.": [
+        "Bu dosya okunamadı. Yeniden seçin ya da yüklemeden önce bulut depolama alanından çıkarın."
       ]
     },
     "collider_2025:Error (validation)": {
@@ -4285,6 +4377,9 @@
       "Cookies or website data are blocked in your browser settings": [
         "Tarayıcı ayarlarınızda tanımlama bilgileri veya site verileri engellenmiş"
       ],
+      "Create documents, images, and more in your chats. Sign in or create a free account to save your creations.": [
+        "Sohbetlerinizde belgeler, görseller ve diğer şeyleri oluşturun. Yapıtlarınızı kaydetmek için oturum ya da ücretsiz bir hesap açın."
+      ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
         "Görseller oluşturun, tarzlar uygulayın ve fikirlerinizin taslağını oluşturun. Yaptıklarınızı kaydetmek için oturum veya ücretsiz bir hesap açın."
       ],
@@ -4396,11 +4491,21 @@
       "Initializing Drive...": [
         "Drive başlatılıyor..."
       ],
+      "Large content (${ charCountLabel } characters) converted to attachment": [
+        "Büyük içerik (${ charCountLabel } karakter) ek dosyaya dönüştürüldü"
+      ],
+      "Large content (${ lineCount } line) converted to attachment": [
+        "Büyük içerik (${ lineCount } satır) ek dosyaya dönüştürüldü",
+        "Büyük içerik (${ lineCount } satır) ek dosyaya dönüştürüldü"
+      ],
       "Learn more about how project knowledge works": [
         "Proje bilgisinin nasıl işlediğini öğrenin"
       ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Dosyaları ${ DRIVE_APP_NAME } uygulamasından bağlayın veya bilgisayarınızdan yükleyin."
+      ],
+      "Loading connectors": [
+        "Bağlayıcılar yükleniyor"
       ],
       "Loading…": [
         "Yükleniyor…"
@@ -4410,6 +4515,21 @@
       ],
       "Look for Export data, then click Export": [
         "Verileri dışa aktar seçeneğini arayın, ardından Dışa aktar üzerine tıklayın"
+      ],
+      "Next run in ${ count } day": [
+        "Sonraki yürütülme ${ count } gün içinde",
+        "Sonraki yürütülme ${ count } gün içinde"
+      ],
+      "Next run in ${ count } hour": [
+        "Sonraki yürütülme ${ count } saat içinde",
+        "Sonraki yürütülme ${ count } saat içinde"
+      ],
+      "Next run in ${ count } minute": [
+        "Sonraki yürütülme ${ count } dakika içinde",
+        "Sonraki yürütülme ${ count } dakika içinde"
+      ],
+      "No connectors available yet. Manage connectors to set them up.": [
+        "Henüz kullanılabilecek bir bağlayıcı yok. Bağlayıcı yönetiminden bir tane ayarlayın."
       ],
       "No content generated": [
         "Herhangi bir içerik oluşturulmamış"
@@ -4499,6 +4619,9 @@
       "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
         "Yapıştırdığınız içeriklerin bazıları iş yeri, yasal veya veri koruma sınırlarını aşıyor olabilir. Bu bilgi, sizi yargılamak için değil, bunu fark etmenize yardımcı olmak için verilmiştir."
       ],
+      "Some selected connectors are unavailable or need attention. This task may fail or run without data from those connectors. Check your connectors in the settings.": [
+        "Seçilmiş bazı bağlayıcılar kullanılamıyor veya ilgilenilmesi gerekiyor. Bu görev yapılamayabilir ya da bu bağlayıcılardan gelen veriler olmadan çalışabilir. Ayarlar bölümünden bağlayıcılarınızı denetleyin."
+      ],
       "Something went wrong analysing this export. Please try again.": [
         "Bu dışa aktarma dosyası incelenirken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
@@ -4507,6 +4630,9 @@
       ],
       "Start a new chat to see it here.": [
         "Burada görünmesi için yeni bir sohbet başlatın."
+      ],
+      "Status: ${ statusAccessibleLabel }": [
+        "Durum: ${ statusAccessibleLabel }"
       ],
       "Structured data, aiming for compatibility with the ChatGPT export format": [
         "ChatGPT dışa aktarma biçimi ile uyumluluğu amaçlanan yapılandırılmış veriler"
@@ -4565,8 +4691,8 @@
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Sınırsız özel ${ LUMO_SHORT_APP_NAME } oluşturmak, gelişmiş yapay zeka modellerine erişmek ve diğer şeyler için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
-        "Sınırsız proje oluşturmak, gelişmiş yapay zeka modellerine erişmek ve diğer şeyler için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
+      "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited projects, unlock advanced AI models, and more.": [
+        "Sınırsız proje oluşturmak, gelişmiş yapay zeka modellerine erişmek ve diğer şeyler için ${ PLAN_NAMES[PLANS.LUMO] } tarifesine yükseltin."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Karmaşık işler için Max modelini, günlük görevler için Lite modelini kullanın. Hızlı yanıtlar için Hızlı kipi, daha zor sorular için Düşünme kipini seçin."
@@ -4689,6 +4815,23 @@
       ]
     },
     "collider_2025:Label": {
+      "${ data.pressure } hPa": [
+        "${ data.pressure } hPa"
+      ],
+      "${ data.wind_speed } m/s": [
+        "${ data.wind_speed } m/s"
+      ],
+      "${ data.wind_speed } m/s ${ direction }": [
+        "${ data.wind_speed } m/s ${ direction }"
+      ],
+      "${ file.tokenCount } token": [
+        "${ file.tokenCount } kod",
+        "${ file.tokenCount } kod"
+      ],
+      "${ progress.indexed }/${ progress.total } file (${ percentage }%)": [
+        "${ progress.indexed }/${ progress.total } dosya (%${ percentage })",
+        "${ progress.indexed }/${ progress.total } dosya (%${ percentage })"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } seçilmiş"
       ],
@@ -4710,6 +4853,24 @@
       "AI platform": [
         "AI platformu"
       ],
+      "All traits have been selected": [
+        "Tüm özellikler seçildi"
+      ],
+      "Anime": [
+        "Anime"
+      ],
+      "AsciiDoc Document": [
+        "AsciiDoc belgesi"
+      ],
+      "Batch File": [
+        "Toplu işlem dosyası"
+      ],
+      "C# File": [
+        "C# dosyası"
+      ],
+      "C/C++ File": [
+        "C/C++ dosyası"
+      ],
       "Canvas": [
         "Tuval"
       ],
@@ -4719,11 +4880,47 @@
       "Card theme": [
         "Kart teması"
       ],
+      "Cargo File": [
+        "Cargo dosyası"
+      ],
+      "Chart": [
+        "Çizelge"
+      ],
+      "Chart: ${ text }": [
+        "Çizelge: ${ text }"
+      ],
       "chat": [
         "sohbet"
       ],
       "chats": [
         "sohbet"
+      ],
+      "Claw-culating trends…": [
+        "Eğilimler tırmalanıyor…"
+      ],
+      "Clojure File": [
+        "Clojure dosyası"
+      ],
+      "Cloud Cover": [
+        "Bulut örtüsü"
+      ],
+      "CMake File": [
+        "CMake dosyası"
+      ],
+      "Comic book": [
+        "Çizgi roman"
+      ],
+      "Configuration File": [
+        "Yapılandırma dosyası"
+      ],
+      "Connected": [
+        "Bağlı"
+      ],
+      "Connected with issues": [
+        "Sorunlar ile bağlandı"
+      ],
+      "Connection failed": [
+        "Bağlantı kurulamadı"
       ],
       "Connectors this task can use": [
         "Bu görevin kullanabileceği bağlayıcılar"
@@ -4736,6 +4933,24 @@
       ],
       "Created on": [
         "Oluşturulma"
+      ],
+      "Crunching the cat-able numbers…": [
+        "Kedi-leneblir sayılar hesaplanıyor…"
+      ],
+      "CSS File": [
+        "CSS dosyası"
+      ],
+      "CSV": [
+        "CSV"
+      ],
+      "Currently disabled by your settings": [
+        "Şu anda ayarlarınızdan kapatılmış"
+      ],
+      "Daily at ${ timeLabel }": [
+        "Her gün ${ timeLabel } saatinde"
+      ],
+      "Dart File": [
+        "Dart dosyası"
       ],
       "Data brokers": [
         "Veri tüccarları"
@@ -4755,14 +4970,68 @@
       "Description (optional)": [
         "Açıklama (isteğe bağlı)"
       ],
+      "Digital oversharing": [
+        "Aşırı dijital paylaşım"
+      ],
+      "Disabled": [
+        "Kapalı"
+      ],
+      "Dismiss": [
+        "Kapat"
+      ],
+      "Dockerfile": [
+        "Docker dosyası"
+      ],
       "Document editor": [
         "Belge düzenleyici"
       ],
       "Draw a sketch": [
         "Bir taslak çizin"
       ],
+      "Drawing whisker plots…": [
+        "Bıyık çizelgeleri oluşturuluyor…"
+      ],
+      "E": [
+        "D"
+      ],
+      "Easy to profile": [
+        "Profil çıkarılması kolay"
+      ],
       "Edit conversation title": [
         "Sohbet başlığını düzenle"
+      ],
+      "Elixir File": [
+        "Elixir dosyası"
+      ],
+      "ENE": [
+        "DKD"
+      ],
+      "Erlang File": [
+        "Erlang dosyası"
+      ],
+      "ESE": [
+        "DGD"
+      ],
+      "Every ${ dayName } at ${ timeLabel }": [
+        "Her ${ dayName } günü ${ timeLabel } saatinde"
+      ],
+      "Excel Document": [
+        "Excel belgesi"
+      ],
+      "Failed": [
+        "Başarısız oldu"
+      ],
+      "Failed to load conversations": [
+        "Yazışmalar yüklenemedi"
+      ],
+      "Feels Like": [
+        "Hissedilen"
+      ],
+      "File": [
+        "Dosya"
+      ],
+      "Files in Drive": [
+        "Drive üzerindeki dosyalar"
       ],
       "Filter by type": [
         "Türe göre süz"
@@ -4779,11 +5048,50 @@
       "Frequency": [
         "Sıklık"
       ],
+      "Generated image": [
+        "Oluşturulan görsel"
+      ],
+      "Generated image from ${ formattedDate }": [
+        "${ formattedDate } tarafından oluşturulmuş görsel"
+      ],
       "Generating": [
         "Oluşturuluyor"
       ],
+      "Generating chart…": [
+        "Çizelge oluşturuluyor…"
+      ],
       "Generating your report": [
         "Raporunuz oluşturuluyor"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "${ PLAN_NAMES[PLANS.LUMO] } tarifesini edinin"
+      ],
+      "GIF Image": [
+        "GIF görseli"
+      ],
+      "Gitignore File": [
+        "Gitignore dosyası"
+      ],
+      "Go File": [
+        "Go dosyası"
+      ],
+      "Go to ${ LUMO_SHORT_APP_NAME } homepage": [
+        "${ LUMO_SHORT_APP_NAME } sitesine git"
+      ],
+      "Gradle File": [
+        "Gradle dosyası"
+      ],
+      "Groovy File": [
+        "Groovy dosyası"
+      ],
+      "Hard to read": [
+        "Okunması zor"
+      ],
+      "Haskell File": [
+        "Haskell dosyası"
+      ],
+      "HEIC Image": [
+        "HEIC görseli"
       ],
       "High": [
         "Yüksek"
@@ -4791,11 +5099,20 @@
       "How AI gets more out of you": [
         "Yapay zeka sizden nasıl daha fazlasını alır"
       ],
+      "HTML Document": [
+        "HTML belgesi"
+      ],
+      "Humidity": [
+        "Nem"
+      ],
       "Image preview": [
         "Görsel ön izlemesi"
       ],
       "Include full conversation": [
         "Tam yazışma katılsın"
+      ],
+      "Initializing Drive...": [
+        "Drive hazırlanıyor..."
       ],
       "Inspiration image": [
         "İlham görseli"
@@ -4809,20 +5126,80 @@
       "It doesn't expire": [
         "Geçerlilik süresi dolmaz"
       ],
+      "Java File": [
+        "Java dosyası"
+      ],
+      "JavaScript File": [
+        "JavaScript dosyası"
+      ],
+      "JPEG Image": [
+        "JPEG görseli"
+      ],
       "JSON": [
         "JSON"
+      ],
+      "JSON File": [
+        "JSON dosyası"
+      ],
+      "Kotlin File": [
+        "Kotlin dosyası"
+      ],
+      "Last 30 days": [
+        "Son 30 gün"
+      ],
+      "Last 7 Days": [
+        "Son 7 gün"
+      ],
+      "Last 7 days": [
+        "Son 7 gün"
+      ],
+      "LaTeX Document": [
+        "LaTeX belgesi"
+      ],
+      "Leaving receipts": [
+        "Alındılar bırakılıyor"
       ],
       "Lending & hiring": [
         "Kredi ve işe alım"
       ],
+      "Liking ${ LUMO_SHORT_APP_NAME }?": [
+        "${ LUMO_SHORT_APP_NAME } uygulamasını beğeniyor musunuz?"
+      ],
       "Link address": [
         "Bağlantı adresi"
+      ],
+      "Loading card...": [
+        "Kart yükleniyor..."
+      ],
+      "Loading image...": [
+        "Görsel yükleniyor..."
+      ],
+      "Lock File": [
+        "Lock dosyası"
+      ],
+      "Log File": [
+        "Günlük dosyası"
       ],
       "Low": [
         "Düşük"
       ],
+      "Lua File": [
+        "Lua dosyası"
+      ],
+      "Makefile": [
+        "Makefile"
+      ],
       "Markdown": [
         "Markdown"
+      ],
+      "Markdown Document": [
+        "Markdown belgesi"
+      ],
+      "MATLAB/Mathematica File": [
+        "MATLAB/Mathematica dosyası"
+      ],
+      "Maven File": [
+        "Maven dosyası"
       ],
       "Medium": [
         "Orta"
@@ -4830,23 +5207,107 @@
       "Minimal": [
         "Minimal"
       ],
+      "Monthly on ${ days } at ${ timeLabel }": [
+        "Her ayın ${ days } günlerinde ${ timeLabel } saatinde"
+      ],
+      "My AI Paper Trail": [
+        "Yapay zeka veri izim"
+      ],
+      "My Data Value": [
+        "Veri değerim"
+      ],
       "My privacy type": [
         "Gizlilik tercihim"
+      ],
+      "My Privacy Type": [
+        "Gizlilik türüm"
+      ],
+      "N": [
+        "K"
       ],
       "Name": [
         "Ad"
       ],
+      "NE": [
+        "KD"
+      ],
+      "NNE": [
+        "KKD"
+      ],
+      "NNW": [
+        "KKB"
+      ],
+      "Not connected": [
+        "Bağlı değil"
+      ],
       "Notify me when a run finishes": [
         "Bir yürütülmenin tamamlandığı bana bildirilsin"
+      ],
+      "NW": [
+        "KB"
+      ],
+      "OCaml File": [
+        "OCaml dosyası"
+      ],
+      "ODT Document": [
+        "ODT belgesi"
+      ],
+      "Oil painting": [
+        "Yağlı boya"
+      ],
+      "Older": [
+        "Daha eski"
+      ],
+      "Once on ${ dateTimeLabel }": [
+        "Bir kez ${ dateTimeLabel } zamanında"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Out of 100": [
+        "100 üzerinden"
+      ],
+      "PDF Document": [
+        "PDF belgesi"
+      ],
+      "Pencil sketch": [
+        "Kalem çizimi"
+      ],
+      "Perl File": [
+        "Perl dosyası"
       ],
       "Personalized pricing": [
         "Kişiye özel fiyatlar"
       ],
+      "PHP File": [
+        "PHP dosyası"
+      ],
       "Platform": [
         "Platform"
       ],
+      "Plotting purr-fect data…": [
+        "Mırr-emmel veriler çiziliyor…"
+      ],
+      "PNG Image": [
+        "PNG görseli"
+      ],
       "Politics": [
         "Politika"
+      ],
+      "PowerShell Script": [
+        "PowerShell betiği"
+      ],
+      "Preparing...": [
+        "Hazırlanıyor..."
+      ],
+      "Pressure": [
+        "Basınç"
+      ],
+      "Privacy Exposure": [
+        "Gizliliğin bozulması"
+      ],
+      "Privacy maxxing": [
+        "Gizliliği sağlamlaştırma"
       ],
       "Progress": [
         "İlerleme"
@@ -4854,11 +5315,47 @@
       "Project Instructions (optional)": [
         "Proje yönergeleri (isteğe bağlı)"
       ],
+      "Projects": [
+        "Projeler"
+      ],
+      "Python File": [
+        "Python dosyası"
+      ],
+      "R File": [
+        "R dosyası"
+      ],
+      "reStructuredText": [
+        "reStructuredText"
+      ],
+      "RTF Document": [
+        "RTF belgesi"
+      ],
+      "Ruby File": [
+        "Ruby dosyası"
+      ],
+      "Rust File": [
+        "Rust dosyası"
+      ],
+      "S": [
+        "G"
+      ],
       "Save report on this device to view it later": [
         "Raporu daha sonra görüntülemek için bu aygıta kaydedin"
       ],
+      "SBT File": [
+        "SBT dosyası"
+      ],
+      "Scala File": [
+        "Scala dosyası"
+      ],
       "Scams": [
         "Dolandırıcılık"
+      ],
+      "SE": [
+        "GD"
+      ],
+      "Search failed": [
+        "Arama yapılamadı"
       ],
       "Search library": [
         "Kitaplıkta ara"
@@ -4866,17 +5363,71 @@
       "Selected:": [
         "Seçilmiş:"
       ],
+      "Series": [
+        "Diziler"
+      ],
+      "Series ${ seriesNumber }": [
+        "Diziler ${ seriesNumber }"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Share (%)": [
+        "Paylaş (%)"
+      ],
       "Share to": [
         "Şurada paylaş"
       ],
+      "Sheet": [
+        "Çalışma sayfası"
+      ],
+      "Shell Script": [
+        "Shell betiği"
+      ],
+      "Sifting through the meow-trics…": [
+        "Mav-ölçütler gözden geçiriliyor…"
+      ],
+      "SQL File": [
+        "SQL dosyası"
+      ],
+      "SSE": [
+        "GGD"
+      ],
+      "SSW": [
+        "GGB"
+      ],
+      "SW": [
+        "GB"
+      ],
+      "Swift File": [
+        "Swift dosyası"
+      ],
+      "Text File": [
+        "Yazı dosyası"
+      ],
       "Thick": [
         "Kalın"
+      ],
+      "This Year": [
+        "Bu yıl"
       ],
       "Time": [
         "Saat"
       ],
       "Tips": [
         "İpuçları"
+      ],
+      "Today": [
+        "Bugün"
+      ],
+      "TOML File": [
+        "TOML dosyası"
+      ],
+      "TypeScript File": [
+        "TypeScript dosyası"
+      ],
+      "Unknown file": [
+        "Bilinmeyen dosya"
       ],
       "Untitled chat": [
         "Adlandırılmamış sohbet"
@@ -4890,11 +5441,65 @@
       "Upload": [
         "Yükle"
       ],
+      "Value": [
+        "Değer"
+      ],
+      "Vim Script": [
+        "Vim betiği"
+      ],
+      "Vintage photo": [
+        "Eski fotoğraf"
+      ],
+      "Vol: ": [
+        "Birim: "
+      ],
+      "W": [
+        "B"
+      ],
+      "Watercolor": [
+        "Sulu boya"
+      ],
+      "WebP Image": [
+        "WebP görseli"
+      ],
+      "Weekdays at ${ timeLabel }": [
+        "Hafta içi günlerde ${ timeLabel } saatinde"
+      ],
+      "Weekly on ${ dayNames } at ${ timeLabel }": [
+        "Her hafta ${ dayNames } günlerinde ${ timeLabel } saatinde"
+      ],
+      "What AI Knows About Me": [
+        "Yapay zekanın hakkımda bildikleri"
+      ],
       "What should ${ LUMO_SHORT_APP_NAME } do each time?": [
         "${ LUMO_SHORT_APP_NAME } her seferinde ne yapmalı?"
       ],
+      "What's your AI Paper Trail? ": [
+        "Yapay zeka veri iziniz nedir? "
+      ],
       "When to run": [
         "Çalışacağı zaman"
+      ],
+      "Wind": [
+        "Rüzgar"
+      ],
+      "WNW": [
+        "BKB"
+      ],
+      "Word Document": [
+        "Word belgesi"
+      ],
+      "WSW": [
+        "BGB"
+      ],
+      "XML File": [
+        "XML dosyası"
+      ],
+      "YAML File": [
+        "YAML dosyası"
+      ],
+      "Yesterday": [
+        "Dün"
       ]
     },
     "collider_2025:Notification": {
@@ -5106,6 +5711,24 @@
       "Identify research gaps and suggest future research directions": [
         "Araştırma eksikliklerini belirle ve gelecekteki araştırma yönelimlerini öner"
       ],
+      "Reimagine this image as a bold comic book illustration with strong outlines and flat colors": [
+        "Bu görseli güçlü ana hatları ve düz renkleri olan cesur bir çizgi roman çizimi olarak yeniden oluştur"
+      ],
+      "Reimagine this image as a detailed pencil sketch with fine line work and shading": [
+        "Bu görseli ince çizgi çalışması ve gölgelendirme ile ayrıntılı bir kara kalem çizimi olarak yeniden oluştur"
+      ],
+      "Reimagine this image as a rich oil painting with visible brushstrokes and warm tones": [
+        "Bu görseli görünür fırça darbeleri ve sıcak tonlarla zengin bir yağlı boya tablo olarak yeniden oluştur"
+      ],
+      "Reimagine this image as a soft watercolor painting with flowing, translucent colors": [
+        "Bu görseli akan, yarı saydam renkleri olan yumuşak bir suluboya resim olarak yeniden oluştur"
+      ],
+      "Reimagine this image as a vintage photograph with faded colors and film grain": [
+        "Bu görseli soluk renkler ve film damlalı eski bir fotoğraf olarak yeniden oluştur"
+      ],
+      "Reimagine this image in a detailed anime illustration style": [
+        "Bu görseli ayrıntılı bir anime çizimi tarzında yeniden oluştur"
+      ],
       "Review this code for bugs and potential improvements": [
         "Hataları ve olası iyileştirmeleri belirlemek için bu kodu incele"
       ],
@@ -5150,8 +5773,26 @@
       ]
     },
     "collider_2025:Reasoning": {
+      "${ failedCount } failed": [
+        "${ failedCount } başarısız oldu",
+        "${ failedCount } başarısız oldu"
+      ],
+      "${ resultCount } result": [
+        "${ resultCount } sonuç",
+        "${ resultCount } sonuç"
+      ],
+      "${ urlCount } URL": [
+        "${ urlCount } adres",
+        "${ urlCount } adres"
+      ],
       "Checked ${ BRAND_NAME } knowledge": [
         "${ BRAND_NAME } bilgilerine bakıldı"
+      ],
+      "Checked ${ symbol } cryptocurrency prices": [
+        "${ symbol } kripto para fiyatları denetlendi"
+      ],
+      "Checked cryptocurrency prices": [
+        "Kripto para fiyatları denetlendi"
       ],
       "Checked prices": [
         "Fiyatlara bakıldı"
@@ -5159,17 +5800,35 @@
       "Checked the weather": [
         "Hava durumuna bakıldı"
       ],
+      "Checked the weather in ${ location }": [
+        "${ location } konumundaki hava durumuna bakıldı"
+      ],
       "Checking ${ BRAND_NAME } knowledge": [
         "${ BRAND_NAME } bilgileri kontrol ediliyor"
       ],
       "Checking ${ BRAND_NAME } knowledge...": [
         "${ BRAND_NAME } bilgilerine bakılıyor..."
       ],
+      "Checking ${ symbol } cryptocurrency prices...": [
+        "${ symbol } kripto para fiyatları denetleniyor..."
+      ],
+      "Checking cryptocurrency prices...": [
+        "Kripto para fiyatları denetleniyor..."
+      ],
       "Checking prices": [
         "Fiyatlara bakılıyor"
       ],
       "Checking the weather": [
         "Hava durumuna bakılıyor"
+      ],
+      "Checking the weather in ${ location }...": [
+        "${ location } konumundaki hava durumuna bakılıyor..."
+      ],
+      "Checking the weather...": [
+        "Hava durumuna bakılıyor..."
+      ],
+      "command": [
+        "komut"
       ],
       "Complete": [
         "Tamamlandı"
@@ -5186,8 +5845,20 @@
       "Done": [
         "Tamamlandı"
       ],
+      "Edited ${ path }": [
+        "${ path } düzenlendi"
+      ],
+      "Edited file": [
+        "Düzenlenmiş dosya"
+      ],
       "Edited image": [
         "Düzenlenmiş görsel"
+      ],
+      "Editing ${ path }...": [
+        "${ path } düzenleniyor..."
+      ],
+      "Editing file...": [
+        "Dosya düzenleniyor..."
       ],
       "Editing image": [
         "Görsel düzenleniyor"
@@ -5213,6 +5884,24 @@
       "Failed": [
         "Başarısız"
       ],
+      "Fetched ${ url } and sent contents back": [
+        "${ url } okundu ve içerikleri geri gönderildi"
+      ],
+      "Fetched page": [
+        "Alınan sayfa"
+      ],
+      "Fetching ${ url }...": [
+        "${ url } alınıyor..."
+      ],
+      "Fetching page...": [
+        "Sayfa alınıyor…"
+      ],
+      "file": [
+        "dosya"
+      ],
+      "files": [
+        "dosya"
+      ],
       "Finished your creation": [
         "Yapıtınız tamamlandı"
       ],
@@ -5234,14 +5923,23 @@
       "Last updated: ": [
         "Son güncelleme: "
       ],
+      "Last updated: ${ updatedTime }": [
+        "Son güncelleme: ${ updatedTime }"
+      ],
       "Looked at your image": [
         "Görselinize bakıldı"
       ],
       "Looked things up online": [
         "Çevrim içi bilgilere bakıldı"
       ],
+      "Looked up ${ symbol } stock prices": [
+        "${ symbol } hisse fiyatına bakıldı"
+      ],
       "Looked up market data": [
         "Piyasa verilerine bakıldı"
+      ],
+      "Looked up stock prices": [
+        "Hisse fiyatlarına bakıldı"
       ],
       "Looked up the forecast": [
         "Hava durumuna bakıldı"
@@ -5258,8 +5956,14 @@
       "Looking things up online": [
         "Çevrim içi bilgilere bakılıyor"
       ],
+      "Looking up ${ symbol } stock prices...": [
+        "${ symbol } hisse fiyatına bakılıyor..."
+      ],
       "Looking up market data": [
         "Piyasa verilerine bakılıyor"
+      ],
+      "Looking up stock prices...": [
+        "Hisse fiyatlarına bakılıyor..."
       ],
       "Looking up the forecast": [
         "Hava durumuna bakılıyor"
@@ -5272,6 +5976,9 @@
       ],
       "P/E Ratio": [
         "F/K oranı"
+      ],
+      "page": [
+        "sayfa"
       ],
       "Performance comparison": [
         "Başarım"
@@ -5288,11 +5995,35 @@
       "Profit Margin": [
         "Kâr marjı"
       ],
+      "Ran ${ shortName }": [
+        "${ shortName } yürütüldü"
+      ],
+      "Ran ${ shortName } and sent results back": [
+        "${ shortName } yürütüldü ve sonuçları alındı"
+      ],
+      "Ran command": [
+        "Komut yürütüldü"
+      ],
+      "Ran command and sent output back": [
+        "Komut yürütüldü ve çıktı geri gönderildi"
+      ],
+      "Read ${ path } and sent contents back": [
+        "${ path } okundu ve içerikleri geri gönderildi"
+      ],
       "Read a web page": [
         "Bir site sayfası okundu"
       ],
+      "Read file": [
+        "Dosyayı oku"
+      ],
+      "Reading ${ path }...": [
+        "${ path } okunuyor..."
+      ],
       "Reading a web page": [
         "Bir site sayfasını okumak"
+      ],
+      "Reading file...": [
+        "Dosya okunuyor..."
       ],
       "Reasoning": [
         "Akıl yürütme"
@@ -5300,11 +6031,41 @@
       "Revenue TTM": [
         "Gelir PSS"
       ],
+      "Running ${ shortName }...": [
+        "${ shortName } yürütülüyor..."
+      ],
+      "Running `${ short }`...": [
+        "`${ short }` yürütülüyor..."
+      ],
+      "Running command...": [
+        "Komut yürütülüyor..."
+      ],
+      "Searched files": [
+        "Aranan dosyalar"
+      ],
+      "Searched files for \"${ query }\" and sent results back": [
+        "\"${ query }\" için dosyalar arandı ve sonuçlar geri gönderildi"
+      ],
       "Searched the web": [
         "İnternet üzerinde arandı"
       ],
+      "Searched the web for \"${ query }\"": [
+        "\"${ query }\" internet üzerinde arandı"
+      ],
+      "Searching files for \"${ query }\"...": [
+        "\"${ query }\" için dosyalar aranıyor..."
+      ],
+      "Searching files...": [
+        "Dosyalar aranıyor..."
+      ],
       "Searching the web": [
         "İnternet üzerinde aranıyor"
+      ],
+      "Searching the web for \"${ query }\"...": [
+        "\"${ query }\" internet üzerinde aranıyor..."
+      ],
+      "Searching the web...": [
+        "İnternet üzerinde aranıyor..."
       ],
       "Thinking": [
         "Düşünüyor"
@@ -5314,6 +6075,12 @@
       ],
       "Thought this through": [
         "Üzerinde düşünüldü"
+      ],
+      "Updated ${ path }": [
+        "${ path } güncellendi"
+      ],
+      "Updated file": [
+        "Güncellenen dosya"
       ],
       "Updated your image": [
         "Görseliniz güncellendi"
@@ -5350,6 +6117,12 @@
       ],
       "Working through this": [
         "Üzerinde çalışılıyor"
+      ],
+      "Writing ${ path }...": [
+        "${ path } yazılıyor..."
+      ],
+      "Writing file...": [
+        "Dosya yazılıyor..."
       ]
     },
     "collider_2025:Status": {
@@ -5416,8 +6189,8 @@
       "Create": [
         "Oluştur"
       ],
-      "creations": [
-        "yapıt"
+      "Creations": [
+        "Yapıtlar"
       ],
       "Gallery": [
         "Galeri"
@@ -5603,8 +6376,8 @@
       "More options": [
         "Diğer seçenekler"
       ],
-      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "${ LUMO_SHORT_APP_NAME } Plus ile daha çok proje"
+      "More Projects with ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "${ PLAN_NAMES[PLANS.LUMO] } ile daha çok proje"
       ],
       "Most revealing": [
         "En çok bilgi açığan çıkaran"
@@ -5687,6 +6460,9 @@
       "Sign in to build your gallery": [
         "Galerinizi oluşturmak için oturum açın"
       ],
+      "Sign in to build your library": [
+        "Kitaplığınızı oluşturmak için oturum açın"
+      ],
       "Sign in to create projects": [
         "Proje oluşturmak için oturum açın"
       ],
@@ -5717,11 +6493,17 @@
       "Two models, two modes": [
         "İki model, iki kip"
       ],
+      "Untitled": [
+        "Adsız"
+      ],
       "Untitled conversation": [
         "Başlıksız yazışma"
       ],
       "Untitled document": [
         "Adlandırılmamış belge"
+      ],
+      "Untitled Project": [
+        "Adlandırılmamış proje"
       ],
       "Upload your data export": [
         "Verileri dışa aktarma dosyanızı yükleyin"
@@ -6999,6 +7781,12 @@
       ],
       "Failed to decrypt revision metadata": [
         "Sürüm üst bilgilerinin şifresi çözülemedi"
+      ],
+      "Failed to download chart. Please try again.": [
+        "Çizelge indirilemedi. Lütfen yeniden deneyin."
+      ],
+      "Failed to download image. Please try again.": [
+        "Görsel indirilemedi. Lütfen yeniden deneyin."
       ],
       "Failed to get inviter keys": [
         "Davet edilenin anahtarları alınamadı"
@@ -9849,6 +10637,11 @@
         "Bu işlemi gerçekleştirmek için kuruluş anahtarına erişebilmeniz gerekir."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Banka hesabı"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -9899,11 +10692,8 @@
       "Billing Country": [
         "Faturalanacak ülke"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private etkin bir abonelik ile satın alınamaz."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private için bir bağış yapılması gereklidir."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Etkin bir abonelik varken Born Private hesapları satın alınamaz."
       ],
       "Buying credits requires a separate purchase.": [
         "Kredi satın almak için ayrı bir satın alma gerekir."
@@ -9991,6 +10781,9 @@
       ],
       "terms and conditions": [
         "hükümler ve koşullar"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private girişimine bağış yapılması gerekir."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir.",
@@ -10088,8 +10881,8 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Zaten ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } sahibisiniz."
       ],
-      "You already own Born Private.": [
-        "Zaten Born Private kapsamındasınız."
+      "You already own a Born Private account.": [
+        "Zaten bir Born Private hesabınız var."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
@@ -10097,8 +10890,8 @@
       "You will soon be redirected to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
       ],
-      "Your account is too old for Born Private.": [
-        "Hesabınız Born Private için çok eski."
+      "Your account is too old for the Born Private initiative.": [
+        "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "${ IDEAL_WERO_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
@@ -10886,17 +11679,17 @@
       ]
     },
     "Time": {
-      "${ days } days ago": [
+      "${ days } day ago": [
+        "${ days } gün önce",
         "${ days } gün önce"
       ],
-      "${ hours } hours ago": [
+      "${ hours } hour ago": [
+        "${ hours } saat önce",
         "${ hours } saat önce"
       ],
-      "${ minutes } minutes ago": [
+      "${ minutes } minute ago": [
+        "${ minutes } dakika önce",
         "${ minutes } dakika önce"
-      ],
-      "1 hour ago": [
-        "1 saat önce"
       ],
       "Just now": [
         "Şimdi"
@@ -10976,7 +11769,7 @@
         "Fatura dönemi"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
@@ -11243,6 +12036,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Bu kullanıcı bir sonraki oturum açmasında yönetici yetkilerini alacak."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Yönetici rollerini kullanabilmek için bu rolleri destekleyen bir tarifeye yükseltin."
       ],

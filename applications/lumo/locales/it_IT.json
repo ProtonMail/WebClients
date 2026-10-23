@@ -637,38 +637,77 @@
       "/month": [
         "/mese"
       ],
+      "15 GB storage": [
+        "15 GB di archiviazione"
+      ],
       "2 individual accounts": [
         "2 account individuali"
       ],
       "2 TB of secure storage": [
-        "2 TB di spazio di archiviazione protetto"
+        "2 TB di archiviazione sicura"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB di spazio di archiviazione: 40x rispetto al tuo piano attuale"
       ],
       "3 TB of secure storage": [
-        "3 TB di spazio di archiviazione sicuro"
+        "3 TB di archiviazione sicura"
       ],
       "500 GB of secure storage": [
-        "500 GB di spazio di archiviazione sicuro"
+        "500 GB di archiviazione sicura"
       ],
       "6 individual accounts": [
-        "6 conti individuali"
+        "6 account individuali"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticazione 2FA integrata"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "Online document editor": [
+        "Editor di documenti online"
+      ],
+      "Recover previous file versions": [
+        "Recupera le versioni precedenti dei file"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protezione avanzata contro le minacce informatiche"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Use your own email domain": [
+        "Usa il tuo dominio di posta elettronica"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "Versione premium di ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+        "Versione premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Versione premium di ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "La promozione più grande dell'anno"
+        "L'offerta più grande dell'anno"
       ],
       "Black Friday": [
         "Black Friday"
@@ -1314,9 +1353,6 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Aggiungi i tuoi ricordi, modifica qualsiasi voce generata automaticamente o cancella tutto in qualsiasi momento. I ricordi generati che modifichi verranno promossi come tuoi."
       ],
-      "Always enable web search for new conversations": [
-        "Abilita sempre la ricerca web per le nuove conversazioni"
-      ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
         "Le chiavi API ti consentono di accedere a ${ LUMO_SHORT_APP_NAME } a livello di programmazione. Ogni chiave viene mostrata una sola volta al momento della creazione."
       ],
@@ -1326,17 +1362,11 @@
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Crea una chiave per integrare ${ LUMO_SHORT_APP_NAME } con i tuoi script e strumenti."
       ],
-      "Encrypted search index for chats and Drive files.": [
-        "Indice di ricerca crittografato per chat e file di Drive."
-      ],
       "Fully open, Swiss-made model for lighter tasks": [
         "Modello interamente open source di produzione svizzera per attività più leggere"
       ],
       "High-performance model for complex tasks": [
         "Modello ad alte prestazioni per attività complesse"
-      ],
-      "Include project conversations in the main chat history": [
-        "Includi le conversazioni del progetto nella cronologia principale della chat"
       ],
       "Internal preview of an upcoming model": [
         "Anteprima interna di un modello di prossima uscita"
@@ -1344,17 +1374,11 @@
       "Keep it safe — it won't be shown again": [
         "Conservala al sicuro: non verrà mostrata di nuovo"
       ],
-      "Language used when transcribing your voice": [
-        "Lingua utilizzata per la trascrizione della tua voce"
-      ],
       "Last updated on ${ formattedDate }": [
         "Ultimo aggiornamento il ${ formattedDate }"
       ],
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Scopri di più su come usare ${ LUMO_SHORT_APP_NAME }"
-      ],
-      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
-        "Lascia che ${ LUMO_SHORT_APP_NAME } visualizzi i dati tramite grafici"
       ],
       "Lightweight model for everyday tasks": [
         "Modello leggero per le attività quotidiane"
@@ -1367,9 +1391,6 @@
       ],
       "More thorough answers, but can take longer": [
         "Risposte più approfondite, ma possono richiedere più tempo"
-      ],
-      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
-        "Elimina definitivamente i tuoi progetti, le chat e i ricordi salvati. Questa azione è irreversibile."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Le chat di progetto sono mantenute completamente isolate. Si basano sulle proprie istruzioni e sui propri file, ignorando del tutto i tuoi ricordi globali."
@@ -1726,9 +1747,6 @@
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         ". Segue lo schema delle API di OpenAI — integralo nel tuo client esistente con una modifica di una sola riga."
       ],
-      "1 file": [
-        "1 file"
-      ],
       "A ${ LUMO_SHORT_APP_NAME } account": [
         "Un account ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -1798,9 +1816,6 @@
       "characters not shown": [
         "caratteri non visualizzati"
       ],
-      "characters processed": [
-        "caratteri elaborati"
-      ],
       "Chat expiring soon": [
         "Chat in scadenza"
       ],
@@ -1869,9 +1884,6 @@
       ],
       "File too large for preview (>150k tokens)": [
         "File troppo grande per l'anteprima (>150k token)"
-      ],
-      "files": [
-        "file"
       ],
       "Files": [
         "File"
@@ -2133,9 +2145,6 @@
       ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Per consultare questa conversazione in seguito, accedi o crea un account."
-      ],
-      "tokens": [
-        "token"
       ],
       "tokens / 30d": [
         "token / 30 g"
@@ -2673,9 +2682,6 @@
       "Auto update memory": [
         "Aggiornamento automatico memoria"
       ],
-      "Automatic web search": [
-        "Ricerca web automatica"
-      ],
       "Build intelligent apps.": [
         "Crea app intelligenti."
       ],
@@ -2699,9 +2705,6 @@
       ],
       "Create new API key": [
         "Crea nuova chiave API"
-      ],
-      "Delete everything": [
-        "Elimina tutto"
       ],
       "Dictation language": [
         "Lingua di dettatura"
@@ -2772,14 +2775,8 @@
       "Saved memories": [
         "Ricordi salvati"
       ],
-      "Search Index": [
-        "Indici di ricerca"
-      ],
       "Security note:": [
         "Nota sulla sicurezza:"
-      ],
-      "Show project chats in history": [
-        "Mostra le chat del progetto nella cronologia"
       ],
       "Theme": [
         "Tema"
@@ -2801,9 +2798,6 @@
       ],
       "Visionary": [
         "Visionario"
-      ],
-      "Visualization mode": [
-        "Modalità di visualizzazione"
       ],
       "What you can build": [
         "Cosa puoi realizzare"
@@ -3802,9 +3796,6 @@
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Effettua l’upgrade a ${ LUMO_SHORT_APP_NAME } Plus per creare ${ LUMO_SHORT_APP_NAME } personalizzati illimitati, sbloccare modelli di IA avanzati e altro ancora."
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
-        "Esegui l'upgrade a ${ LUMO_SHORT_APP_NAME } Plus per creare progetti illimitati, sbloccare modelli AI avanzati e altro ancora."
-      ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Usa il modello Max per lavori complessi o il modello Lite per le attività quotidiane. Scegli la modalità Veloce per risposte rapide o la modalità Ragionamento per domande più difficili."
       ],
@@ -4608,9 +4599,6 @@
       ],
       "More options": [
         "Altre opzioni"
-      ],
-      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Altri progetti con ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "Most revealing": [
         "Più rivelatori"
@@ -8546,6 +8534,11 @@
         "Devi avere accesso alla chiave dell'organizzazione per eseguire questa operazione."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Conto bancario"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -8595,12 +8588,6 @@
       ],
       "Billing Country": [
         "Paese di fatturazione"
-      ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "“Born Private” non può essere acquistato se si dispone di un abbonamento attivo."
-      ],
-      "Born Private requires a donation.": [
-        "Per accedere a “Born Private” è richiesta una donazione."
       ],
       "Buying credits requires a separate purchase.": [
         "L'acquisto dei crediti richiede un acquisto separato."
@@ -8773,17 +8760,11 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Possiedi già ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Hai già acquistato “Born Private”."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
       "You will soon be redirected to verify your payment.": [
         "Sarai presto reindirizzato per verificare il pagamento."
-      ],
-      "Your account is too old for Born Private.": [
-        "Il tuo account è troppo vecchio per Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
@@ -9543,18 +9524,6 @@
       ]
     },
     "Time": {
-      "${ days } days ago": [
-        "${ days } giorni fa"
-      ],
-      "${ hours } hours ago": [
-        "${ hours } ore fa"
-      ],
-      "${ minutes } minutes ago": [
-        "${ minutes } minuti fa"
-      ],
-      "1 hour ago": [
-        "1 ora fa"
-      ],
       "Just now": [
         "Adesso"
       ],

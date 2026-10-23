@@ -610,6 +610,11 @@
         "Premium-Passwortmanager"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-Tage-Geld-zurück-Garantie: Kündige innerhalb von 30 Tagen nach dem Kauf und wende dich an unseren ${ customerSupportLink }, um eine Rückerstattung zu erhalten."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop-App"
@@ -639,7 +644,7 @@
         "Black Friday"
       ],
       "Get the deal": [
-        "Jetzt zugreifen"
+        "Deal sichern"
       ]
     },
     "bfcampaign2026: Info": {
@@ -647,40 +652,40 @@
         "/Monat"
       ],
       "15 GB storage": [
-        "15 GB Speicherplatz"
+        "15 GB Speicher"
       ],
       "2 individual accounts": [
-        "2 Einzelkonten"
+        "2 individuelle Konten"
       ],
       "2 TB of secure storage": [
-        "2 TB sicherer Speicherplatz"
+        "2 TB sicherer Speicher"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB Speicherplatz: das 40-fache Ihres aktuellen Abonnements"
+        "200 GB Speicher: 40 Mal so viel wie dein aktuelles Abonnement"
       ],
       "3 TB of secure storage": [
-        "3 TB sicherer Speicherplatz"
+        "3 TB sicherer Speicher"
       ],
       "500 GB of secure storage": [
-        "500 GB sicherer Speicherplatz"
+        "500 GB sicherer Speicher"
       ],
       "6 individual accounts": [
-        "6 Einzelkonten"
+        "6 individuelle Konten"
       ],
       "Built-in 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
+        "Integrierter 2FA-Authenticator"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+        "Die Rabatte basieren auf dem üblichen Monatspreis. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum Standard-Jahrestarif."
       ],
       "Online document editor": [
-        "Dokumente Online bearbeiten"
+        "Online-Dokumenteneditor"
       ],
       "Recover previous file versions": [
-        "Vorherige Dateiversionen wiederherstellen"
+        "Stelle frühere Dateiversionen wieder her"
       ],
       "Stronger protection against cyber threats": [
-        "Besserer Schutz vor Cyber-Bedrohungen"
+        "Stärkerer Schutz vor Cyberbedrohungen"
       ],
       "Unlimited folders, labels, and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
@@ -691,7 +696,7 @@
     },
     "bfcampaign2026: Info, Drive first": {
       "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Family, Drive first": {
@@ -706,17 +711,17 @@
     },
     "bfcampaign2026: Info, Mail first": {
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, und ${ VPN_SHORT_APP_NAME }"
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Das größte Sonderangebot des Jahres"
+        "Der größte Sale des Jahres"
       ],
       "Black Friday": [
         "Black Friday"
@@ -725,7 +730,7 @@
         "für 12 Monate"
       ],
       "Last chance to save big": [
-        "Letzte Chance, kräftig zu sparen"
+        "Letzte Chance auf satte Ersparnisse"
       ],
       "Protect your entire tribe": [
         "Schütze deine ganze Gemeinschaft"
@@ -1444,23 +1449,14 @@
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "Sobald du fortfährst, wird Apertus im Modellmenü als ausgewähltes Modell angezeigt. Über dieses Menü kannst du jederzeit zu einem anderen Modell wechseln."
       ],
-      "Allow ${ LUMO_SHORT_APP_NAME } to open longer documents, code, and slides in the canvas when appropriate. This is the default for all chats; you can change it for a single chat from the Tools menu.": [
-        "Erlaube ${ LUMO_SHORT_APP_NAME }, längere Dokumente, Code und Folien bei Bedarf im Arbeitsbereich zu öffnen. Dies ist die Standardeinstellung für alle Chats; du kannst sie für einen einzelnen Chat über das Menü «Extras» ändern."
-      ],
-      "Always enable web search for new conversations": [
-        "Immer Websuche für neue Unterhaltungen aktivieren"
-      ],
       "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
-        "API-Schlüssel ermöglichen dir den programmgesteuerten Zugriff auf ${ LUMO_SHORT_APP_NAME }. Jeder Schlüssel wird nur einmal bei der Erstellung angezeigt."
+        "Mit API-Schlüsseln erhältst du programmgesteuert Zugriff auf ${ LUMO_SHORT_APP_NAME }. Jeder Schlüssel wird bei der Erstellung nur einmal angezeigt."
       ],
       "Configure app preferences, keyboard shortcuts, and updates in the desktop settings window.": [
         "Konfiguriere App-Einstellungen, Tastaturkürzel und Aktualisierungen im Fenster „Desktop-Einstellungen“."
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Erstelle einen Schlüssel, um ${ LUMO_SHORT_APP_NAME } mit deinen Skripten und Tools zu integrieren."
-      ],
-      "Encrypted search index for chats and Drive files.": [
-        "Verschlüsselter Suchindex für Chats und Drive-Dateien."
       ],
       "Fully open, Swiss-made model for lighter tasks": [
         "Vollständig offenes, Schweizer Modell für weniger anspruchsvolle Aufgaben"
@@ -1471,9 +1467,6 @@
       "If Apertus gives you a poor response, use the thumbs down button to send feedback. The related prompt and response will be shared with university research teams at ETH Zurich and EPFL to help improve the model. This feedback loop is especially valuable for fully open models, helping them improve faster and remain competitive.": [
         "Sollte Apertus eine unbefriedigende Antwort liefern, nutze die Daumen-runter-Schaltfläche, um Feedback zu senden. Die entsprechende Eingabe und Antwort werden an Forschungsteams der ETH Zürich und der EPFL weitergeleitet, um das Modells zu verbessern. Dieser Feedback-Kreislauf ist besonders wertvoll für vollständig offene Modelle, da er dazu beiträgt, dass sie sich schneller verbessern und wettbewerbsfähig bleiben."
       ],
-      "Include project conversations in the main chat history": [
-        "Projektunterhaltungen im Haupt-Chatverlauf einschließen"
-      ],
       "Internal preview of an upcoming model": [
         "Interne Vorschau auf ein kommendes Modell"
       ],
@@ -1483,17 +1476,11 @@
       "Keep it safe — it won't be shown again": [
         "Bewahre es sicher auf – es wird nicht erneut angezeigt"
       ],
-      "Language used when transcribing your voice": [
-        "Sprache, die bei der Umwandlung deiner Stimme in Text verwendet wird"
-      ],
       "Last updated on ${ formattedDate }": [
         "Zuletzt aktualisiert am ${ formattedDate }"
       ],
       "Learn more about how to use ${ LUMO_SHORT_APP_NAME }": [
         "Mehr erfahren, wie ${ LUMO_SHORT_APP_NAME } eingesetzt werden kann"
-      ],
-      "Let ${ LUMO_SHORT_APP_NAME } visualize data with charts": [
-        "${ LUMO_SHORT_APP_NAME } Daten mithilfe von Diagrammen visualisieren lassen"
       ],
       "Lightweight model for everyday tasks": [
         "Leichtgewichtiges Modell für alltägliche Aufgaben"
@@ -1506,9 +1493,6 @@
       ],
       "More thorough answers, but can take longer": [
         "Gründlichere Antworten, kann aber länger dauern"
-      ],
-      "Permanently delete your projects, chats, and saved memories. This is irreversible.": [
-        "Deine Projekte, Chats und gespeicherten Erinnerungen dauerhaft löschen. Dies ist unwiderruflich."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Projekt-Chats sind vollständig isoliert. Sie greifen auf ihre eigenen Anweisungen und Dateien zurück und ignorieren deine globalen Erinnerungen vollständig."
@@ -1879,6 +1863,10 @@
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "\"${ fileName }\" hat mehrere Tabellenblätter. Tabellenblätter auswählen, die in den Kontext der Unterhaltung aufgenommen werden sollen."
       ],
+      "${ characterCount } character processed": [
+        "${ characterCount } Zeichen verarbeitet",
+        "${ characterCount } Zeichen verarbeitet"
+      ],
       "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
         "${ DRIVE_SHORT_APP_NAME } Speicher noch nicht eingerichtet"
       ],
@@ -1898,6 +1886,10 @@
         "${ expiringToday } Chat läuft heute ab",
         "${ expiringToday } Chats laufen heute ab"
       ],
+      "${ fileCount } file": [
+        "${ fileCount } Datei",
+        "${ fileCount } Dateien"
+      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
@@ -1914,11 +1906,11 @@
         "${ urgentTotal } Chat läuft innerhalb von 24 Stunden ab",
         "${ urgentTotal } Chats laufen innerhalb von 24 Stunden ab"
       ],
+      "${ used } / ${ maximum } tokens (${ percentageUsed }%)": [
+        "${ used } / ${ maximum } Token (${ percentageUsed }%)"
+      ],
       ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
         ". Es folgt dem OpenAI API-Schema – füge deinen bestehenden Client mit einer einzeiligen Änderung ein."
-      ],
-      "1 file": [
-        "1 Datei"
       ],
       "A ${ LUMO_SHORT_APP_NAME } account": [
         "Ein ${ LUMO_SHORT_APP_NAME }-Konto"
@@ -1989,9 +1981,6 @@
       "characters not shown": [
         "Zeichen werden nicht angezeigt"
       ],
-      "characters processed": [
-        "Zeichen verarbeitet"
-      ],
       "Chat expiring soon": [
         "Chat läuft bald ab"
       ],
@@ -2015,6 +2004,12 @@
       ],
       "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
         "Erstelle und widerrufe API-Schlüssel für programmgesteuerten Zugriff. Schlüssel werden nur einmal beim Erstellen angezeigt."
+      ],
+      "Created by ${ LUMO_SHORT_APP_NAME } in this conversation.": [
+        "Erstellt durch ${ LUMO_SHORT_APP_NAME } in dieser Unterhaltung."
+      ],
+      "creations": [
+        "Erstellte Inhalte"
       ],
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Beschreibe einen Workflow in einfacher Sprache und erhalte eine Grafik plus ausführbaren Code. Melde dich an, um diese Funktion zu nutzen."
@@ -2066,9 +2061,6 @@
       ],
       "File too large for preview (>150k tokens)": [
         "Datei zu groß für die Vorschau (>150.000 Token)"
-      ],
-      "files": [
-        "dateien"
       ],
       "Files": [
         "Dateien"
@@ -2171,6 +2163,9 @@
       ],
       "No data rows found.": [
         "Keine Datenzeilen gefunden."
+      ],
+      "No files or creations yet": [
+        "Noch keine Dateien oder erstellten Inhalte"
       ],
       "No new memories were found in your recent chats.": [
         "In deinen letzten Chats wurden keine neuen Erinnerungen gefunden."
@@ -2290,7 +2285,7 @@
         "Melde dich an, um Workflows mit ${ LUMO_SHORT_APP_NAME } zu generieren."
       ],
       "Sorted by creation time": [
-        "Sortiert nach Erstellungszeit"
+        "Nach Erstellungszeit sortiert"
       ],
       "Sorted by update time": [
         "Sortiert nach Aktualisierungszeit"
@@ -2364,9 +2359,6 @@
       "To refer back to this conversation later, sign in or create an account.": [
         "Um später auf diese Unterhaltung zurückzukommen, melde dich an oder erstelle ein Konto."
       ],
-      "tokens": [
-        "Token"
-      ],
       "tokens / 30d": [
         "Token / 30 Tage"
       ],
@@ -2384,6 +2376,9 @@
       ],
       "Upgrade for unlimited chats, projects, larger file uploads, and more.": [
         "Mache ein Upgrade für unbegrenzte Chats, Projekte, größere Datei-Uploads und mehr."
+      ],
+      "Upload files or add them from ${ DRIVE_APP_NAME } to give ${ LUMO_SHORT_APP_NAME } context. ${ LUMO_SHORT_APP_NAME } creations from this chat will appear here.": [
+        "Lade Dateien hoch oder füge sie aus ${ DRIVE_APP_NAME } hinzu, um ${ LUMO_SHORT_APP_NAME } mit Kontext zu versorgen. Die in diesem Chat erstellten ${ LUMO_SHORT_APP_NAME }-Inhalte werden hier angezeigt."
       ],
       "Upload from your computer": [
         "Von deinem Computer hochladen"
@@ -2817,11 +2812,20 @@
       ]
     },
     "collider_2025: Spotlight": {
+      "A new space for your creations": [
+        "Ein neuer Raum für deine erstellten Inhalte"
+      ],
       "Documents, code, and web pages now open in a canvas beside your chat. Ask ${ LUMO_SHORT_APP_NAME } for changes, compare versions, and download your work.": [
         "Dokumente, Code und Webseiten werden nun in einem Arbeitsbereich neben deinem Chat geöffnet. Frage ${ LUMO_SHORT_APP_NAME } nach Änderungen, vergleiche Versionen und lade deine Arbeit herunter."
       ],
       "Settings": [
         "Einstellungen"
+      ],
+      "You can turn off creations in ${ tools } or ${ settings }.": [
+        "Sie können das Erstellten von Inhalten unter ${ tools } oder ${ settings } deaktivieren."
+      ],
+      "You can turn off creations in ${ tools }.": [
+        "Sie können das Erstellen von Inhalten unter ${ tools } deaktivieren."
       ]
     },
     "collider_2025: Status": {
@@ -2936,9 +2940,6 @@
       "Auto update memory": [
         "Erinnerungen automatisch aktualisieren"
       ],
-      "Automatic web search": [
-        "Automatische Websuche"
-      ],
       "Build intelligent apps.": [
         "Erstelle intelligente Apps."
       ],
@@ -2962,9 +2963,6 @@
       ],
       "Create new API key": [
         "Neue API-Schlüssel erstellen"
-      ],
-      "Delete everything": [
-        "Alles löschen"
       ],
       "Dictation language": [
         "Diktiersprache"
@@ -3044,14 +3042,8 @@
       "Saved memories": [
         "Erinnerungen speichern"
       ],
-      "Search Index": [
-        "Suchindex"
-      ],
       "Security note:": [
         "Sicherheitshinweis:"
-      ],
-      "Show project chats in history": [
-        "Projektchats im Verlauf anzeigen"
       ],
       "Theme": [
         "Farbschema"
@@ -3073,9 +3065,6 @@
       ],
       "Visionary": [
         "Visionary"
-      ],
-      "Visualization mode": [
-        "Visualisierungs-Modus"
       ],
       "What you can build": [
         "Was du bauen kannst"
@@ -3591,6 +3580,9 @@
       "Manage chats": [
         "Chats verwalten"
       ],
+      "Manage connectors": [
+        "Konnektoren verwalten"
+      ],
       "Manage Drive folder link": [
         "Drive-Ordnerlink verwalten"
       ],
@@ -3665,6 +3657,9 @@
       ],
       "Remove": [
         "Entfernen"
+      ],
+      "Remove ${ label }": [
+        "${ label } entfernen"
       ],
       "Remove agent": [
         "Agent entfernen"
@@ -3977,19 +3972,49 @@
       ]
     },
     "collider_2025:Description": {
+      "Big Tech AI built a scarily accurate profile of me from my chat history. See what yours knows about you 👀": [
+        "Die KI der Big-Tech-Unternehmen hat anhand meines Chat-Verlaufs ein erschreckend genaues Profil von mir erstellt. Schau mal, was deine über dich weiß 👀"
+      ],
       "Use the connectors above without asking. Off: pause and notify me before each Ask tool.": [
-        "Verwende die oben genannten Konnektoren, ohne zu fragen. Ausgeschaltet: Vor jedem Frage-Tool pausieren und mich benachrichtigen."
+        "Die oben genannten Konnektoren ohne Nachfrage verwenden. Ausschalten: Vor jeder Anfrage pausieren und mich benachrichtigen."
       ]
     },
     "collider_2025:Error": {
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
         "${ LUMO_SHORT_APP_NAME } benötigt zum Ausführen lokalen Datenspeicher (IndexedDB), der in diesem Browser jedoch nicht verfügbar ist. Dies kann passieren, wenn Cookies oder Website-Daten blockiert sind, im Inkognito-Modus gesurft wird oder der Sperrmodus aktiviert ist. Bitte lass Website-Daten für diese Seite zu und lade die Seite neu."
       ],
+      "Artifact has no content to save.": [
+        "Für das Artefakt gibt es keine Inhalte, die gespeichert werden könnten."
+      ],
       "Cannot link the root folder. Please select a subfolder.": [
         "Du kannst nicht den Stammordner verknüpfen. Wähle bitte einen Unterordner aus."
       ],
+      "Chart unavailable": [
+        "Diagramm nicht verfügbar"
+      ],
       "Choose a date and time in the future": [
         "Wähle ein Datum und eine Urzeit, die in der Zukunft liegen"
+      ],
+      "Conversation export files must contain a JSON array.": [
+        "Dateien zum Export von Unterhaltungen müssen ein JSON-Array enthalten."
+      ],
+      "Could not build HTML for PDF export.": [
+        "Der HTML-Code für den PDF-Export konnte nicht erstellt werden."
+      ],
+      "Could not find ${ CONVERSATIONS_JSON } or conversations-*.json inside the uploaded archive.": [
+        "${ CONVERSATIONS_JSON } oder conversations-*.json“ wurde im hochgeladenen Archiv nicht gefunden."
+      ],
+      "Could not load all creations.": [
+        "Es konnten nicht alle erstellten Inhalte geladen werden."
+      ],
+      "Could not load connectors": [
+        "Konnektoren konnten nicht geladen werden"
+      ],
+      "Could not load creations.": [
+        "Die erstellten Inhalte konnten nicht geladen werden."
+      ],
+      "Could not read this file.": [
+        "Diese Datei konnte nicht eingelesen werden."
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "Datenbankverbindung verloren. Bitte lade die Seite neu, um fortzufahren."
@@ -3998,10 +4023,10 @@
         "Name eingeben"
       ],
       "Enter a valid date and time for this one-time run": [
-        "Gib ein gültiges Datum und eine gültige Uhrzeit für diese einmalige Ausführung ein"
+        "Ein gültiges Datum und eine gültige Uhrzeit für diese einmalige Ausführung eingeben"
       ],
       "Enter a valid time": [
-        "Gib eine gültige Uhrzeit ein"
+        "Gültige Uhrzeit eingeben"
       ],
       "Enter instructions for each run": [
         "Instruktionen für jede Ausführung eingeben"
@@ -4009,11 +4034,26 @@
       "Error uploading file: ${ file.name }": [
         "Fehler beim Hochladen der Datei: ${ file.name }"
       ],
+      "Excel file appears to be empty or contains no readable data": [
+        "Die Excel-Datei scheint leer zu sein oder enthält keine lesbaren Daten"
+      ],
+      "Excel file contains no worksheets": [
+        "Excel-Datei enthält kein Arbeitsblatt"
+      ],
+      "Failed to browse folder": [
+        "Ordner konnte nicht durchsucht werden"
+      ],
       "Failed to create folder": [
         "Ordner konnte nicht erstellt werden"
       ],
+      "Failed to download file": [
+        "Fehler beim Herunterladen der Datei"
+      ],
       "Failed to index Drive folder for search": [
         "Fehler beim Indizieren des Drive-Ordners für die Suche"
+      ],
+      "Failed to initialize Drive browser": [
+        "Die Initialisierung des Drive-Browsers ist fehlgeschlagen"
       ],
       "Failed to link Drive folder": [
         "Drive-Ordner konnte nicht verknüpft werden"
@@ -4024,8 +4064,17 @@
       "Failed to load images. Please try again.": [
         "Bilder konnten nicht geladen werden. Bitte versuche es erneut."
       ],
+      "Failed to navigate to folder": [
+        "Zugriff auf Ordner fehlgeschlagen"
+      ],
+      "Failed to process file": [
+        "Fehler beim Verarbeiten der Datei"
+      ],
       "Failed to process file: ${ file.name }": [
         "Fehler beim Verarbeiten der Datei: ${ file.name }"
+      ],
+      "Failed to refresh folder": [
+        "Ordner konnte nicht aktualisiert werden"
       ],
       "Failed to save file": [
         "Speichern der Datei fehlgeschlagen"
@@ -4033,20 +4082,59 @@
       "Failed to unlink Drive folder": [
         "Drive-Ordner konnte nicht getrennt werden"
       ],
+      "Failed to upload ${ file.name }": [
+        "${ file.name } konnte nicht hochgeladen werden."
+      ],
       "File \"${ file.name }\" (${ fileSizeFormatted }) exceeds the ${ maxSizeFormatted } limit. Link a ${ DRIVE_APP_NAME } folder to upload larger files.": [
         "Datei \"${ file.name }\" (${ fileSizeFormatted }) überschreitet das Limit von ${ maxSizeFormatted }. Verknüpfe einen ${ DRIVE_APP_NAME }-Ordner, um größere Dateien hochzuladen."
       ],
       "File type not supported: ${ file.name }": [
         "Dateiformat nicht unterstützt: ${ file.name }"
       ],
+      "Format \"${ format }\" is not supported for ${ artifact.type } artifacts.": [
+        "Das Format „${ format }“ wird für Artefakte vom Typ „${ artifact.type }“ nicht unterstützt."
+      ],
+      "Legacy Excel .xls files are not supported. Please save the workbook as .xlsx or CSV and try again.": [
+        "Ältere Excel-Dateien im .xls-Format werden nicht unterstützt. Bitte speichere die Arbeitsmappe im .xlsx- oder CSV-Format und versuche es erneut."
+      ],
+      "No conversations with user messages were found in this export.": [
+        "In diesen exportierten Daten wurden keine Unterhaltungen mit Benutzernachrichten gefunden."
+      ],
+      "No Excel worksheets selected": [
+        "Kein Excel-Arbeitsblatt ausgewählt"
+      ],
+      "PDF export is only supported for documents and presentations.": [
+        "Der PDF-Export wird nur für Dokumente und Präsentationen unterstützt."
+      ],
+      "PPTX export is only supported for presentations.": [
+        "Der PPTX-Export wird nur für Präsentationen unterstützt."
+      ],
+      "Presentation has no slides to export.": [
+        "Die Präsentation enthält keine Folien, die exportiert werden könnten."
+      ],
       "Project not found": [
         "Projekt nicht gefunden"
       ],
       "Select at least one day of the month": [
-        "Wähle mindestens einen Tag des Monats"
+        "Mindestens einen Tag des Monats auswählen"
       ],
       "Select at least one day of the week": [
-        "Wähle mindestens einen Tag der Woche"
+        "Mindestens einen Wochentag auswählen"
+      ],
+      "Something went wrong starting the analysis.": [
+        "Fehler beim Starten der Analyse."
+      ],
+      "The uploaded file is not valid JSON.": [
+        "Die hochgeladene Datei ist kein gültiges JSON."
+      ],
+      "This does not look like a ChatGPT or Claude export.": [
+        "Das scheint kein ChatGPT- oder Claude-Export zu sein."
+      ],
+      "We could not read this Excel workbook. It may be encrypted, corrupted, or not a valid .xlsx file. Please save it as .xlsx or CSV and try again.": [
+        "Wir konnten diese Excel-Arbeitsmappe nicht öffnen. Möglicherweise ist sie verschlüsselt, beschädigt oder keine gültige .xlsx-Datei. Bitte speichere sie als .xlsx- oder CSV-Datei und versuche es erneut."
+      ],
+      "We could not read this file. Select it again, or move it out of cloud storage before uploading.": [
+        "Diese Datei konnte nicht eingelesen werden. Wähle sie erneut aus oder verschiebe sie vor dem Hochladen aus dem Cloud-Speicher."
       ]
     },
     "collider_2025:Error (validation)": {
@@ -4113,6 +4201,9 @@
       "${ lineCount } line": [
         "${ lineCount } Zeile",
         "${ lineCount } Zeilen"
+      ],
+      "${ LUMO_SHORT_APP_NAME } and edits change the latest version.": [
+        "${ LUMO_SHORT_APP_NAME } und Änderungen wirken sich auf die neueste Version aus."
       ],
       "${ LUMO_SHORT_APP_NAME } can run a prompt for you every morning, every Friday, or whenever you like.": [
         "${ LUMO_SHORT_APP_NAME } kann jeden Morgen, jeden Freitag oder wann immer du möchtest eine Aufforderung für dich anzeigen."
@@ -4182,7 +4273,7 @@
         "Deine Änderungen werden angewendet…"
       ],
       "Are you sure you want to delete \"${ taskName }\"? This action cannot be undone.": [
-        "Möchtest du \"${ taskName }\" wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+        "Möchtest du \"${ taskName }\" wirklich löschen? Diese Aktion kann nicht widerrufen werden."
       ],
       "Ask a question to get started. Your conversation is private.": [
         "Stelle eine Frage, um loszulegen. Dein Gespräch ist vertraulich."
@@ -4204,6 +4295,9 @@
       ],
       "Built-in ${ BRAND_NAME } agent": [
         "Integrierter ${ BRAND_NAME }-Agent"
+      ],
+      "Changed a selection": [
+        "Eine Auswahl geändert"
       ],
       "Chats from your projects will appear here.": [
         "Hier werden die Chats aus deinen Projekten angezeigt."
@@ -4242,7 +4336,7 @@
         "In deinen Browsereinstellungen sind Cookies oder Website-Daten blockiert"
       ],
       "Create images, apply styles, and sketch ideas. Sign in or create a free account to save your creations.": [
-        "Erstelle Bilder, wende Stile an und skizziere Ideen. Melde dich an oder erstelle ein kostenloses Konto, um deine Kreationen zu speichern."
+        "Erstelle Bilder, wende Stile an und skizziere Ideen. Melde dich an oder erstelle ein kostenloses Konto, um deine erstellten Inhalte zu speichern."
       ],
       "Create purpose-built assistants with their own instructions. Set them up once, and they’ll follow your preferences every time.": [
         "Erstelle zweckgebundene Assistenten mit ihren eigenen Anweisungen. Richte sie einmal ein und sie werden deine Einstellungen jedes Mal befolgen."
@@ -4255,6 +4349,12 @@
       ],
       "Creating…": [
         "Wird erstellt…"
+      ],
+      "Creation": [
+        "Erstellter Inhalt"
+      ],
+      "Creations and images ${ LUMO_SHORT_APP_NAME } made in your chats.": [
+        "Von ${ LUMO_SHORT_APP_NAME } in deinen Chats erstellte Inhalte und Bilder."
       ],
       "Current chat:": [
         "Aktueller Chat:"
@@ -4346,11 +4446,21 @@
       "Initializing Drive...": [
         "Drive wird initialisiert..."
       ],
+      "Large content (${ charCountLabel } characters) converted to attachment": [
+        "Umfangreicher Inhalt (${ charCountLabel } Zeichen) in einen Anhang umgewandelt"
+      ],
+      "Large content (${ lineCount } line) converted to attachment": [
+        "Umfangreicher Inhalt (${ lineCount } Zeile) in einen Anhang umgewandelt",
+        "Umfangreicher Inhalt (${ lineCount } Zeilen) in einen Anhang umgewandelt"
+      ],
       "Learn more about how project knowledge works": [
         "Erfahre mehr darüber, wie Projektwissen funktioniert"
       ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Dateien von ${ DRIVE_APP_NAME } verknüpfen oder vom Computer hochladen."
+      ],
+      "Loading connectors": [
+        "Konnektoren werden geladen"
       ],
       "Loading…": [
         "Wird geladen…"
@@ -4361,8 +4471,29 @@
       "Look for Export data, then click Export": [
         "Suche nach „Daten exportieren“ und klicke dann auf „Exportieren“."
       ],
+      "Next run in ${ count } day": [
+        "Nächste Ausführung in ${ count } Tag",
+        "Nächste Ausführung in ${ count } Tagen"
+      ],
+      "Next run in ${ count } hour": [
+        "Nächste Ausführung in ${ count } Stunde",
+        "Nächste Ausführung in ${ count } Stunden"
+      ],
+      "Next run in ${ count } minute": [
+        "Nächste Ausführung in ${ count } Minute",
+        "Nächste Ausführung in ${ count } Minuten"
+      ],
+      "No connectors available yet. Manage connectors to set them up.": [
+        "Keine Konnektoren verfügbar. Verwalte die Konnektoren, um sie einzurichten."
+      ],
       "No content generated": [
         "Kein Inhalt erzeugt"
+      ],
+      "No creations match your search.": [
+        "Keine erstellten Inhalte gefunden, die deiner Suche entsprechen."
+      ],
+      "No creations of this type yet.": [
+        "Es gibt noch keine erstellten Inhalte dieser Art."
       ],
       "No favorites yet. Star a chat to find it here quickly.": [
         "Noch keine Favoriten. Setze ein Sternchen auf einen Chat, um ihn hier schnell wiederzufinden."
@@ -4412,6 +4543,9 @@
       "Revised": [
         "Überarbeitet"
       ],
+      "Revising your creation…": [
+        "Deine erstellten Inhalte werden überarbeitet …"
+      ],
       "Run tasks on a schedule or whenever you need them. Tasks run on this computer while ${ LUMO_SHORT_APP_NAME } is open.": [
         "Führe Aufgaben nach einem Zeitplan oder bei Bedarf aus. Die Aufgaben werden auf diesem Computer ausgeführt, solange ${ LUMO_SHORT_APP_NAME } geöffnet bleibt."
       ],
@@ -4420,6 +4554,10 @@
       ],
       "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
         "Als ${ formatLabel } speichern. Gehe zum Ordner ${ DRIVE_SHORT_APP_NAME }, den du verwenden möchtest, und klicke dann auf «Hier speichern»."
+      ],
+      "Searching ${ pendingSearchCount } more creation…": [
+        "Es wird noch ${ pendingSearchCount } weiterer erstellter Inhalt gesucht …",
+        "Es werden noch ${ pendingSearchCount } weitere erstellte Inhalte gesucht …"
       ],
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Sieh dir an, was die KI der Tech-Riesen über dich weiß. Erstellt mit ${ LUMO_SHORT_APP_NAME }."
@@ -4436,6 +4574,9 @@
       "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
         "Ein Teil dessen, was du eingefügt hast, könnte gegen arbeitsrechtliche, rechtliche oder datenschutzrechtliche Vorschriften verstoßen. Dies soll dir helfen, solche Verstöße zu erkennen, und dient nicht dazu, dich zu beurteilen."
       ],
+      "Some selected connectors are unavailable or need attention. This task may fail or run without data from those connectors. Check your connectors in the settings.": [
+        "Einige ausgewählte Konnektoren sind nicht verfügbar oder erfordern eine Überprüfung. Diese Aufgabe kann fehlschlagen oder ohne Daten aus diesen Konnektoren ausgeführt werden. Überprüfe deine Konnektoren in den Einstellungen."
+      ],
       "Something went wrong analysing this export. Please try again.": [
         "Beim Analysieren dieses Exports ist ein Fehler aufgetreten. Bitte versuche es erneut."
       ],
@@ -4444,6 +4585,9 @@
       ],
       "Start a new chat to see it here.": [
         "Starte einen neuen Chat, um ihn hier zu sehen."
+      ],
+      "Status: ${ statusAccessibleLabel }": [
+        "Status: ${ statusAccessibleLabel }"
       ],
       "Structured data, aiming for compatibility with the ChatGPT export format": [
         "Strukturierte Daten, die auf Kompatibilität mit dem ChatGPT-Exportformat abzielen"
@@ -4502,8 +4646,8 @@
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus, um unbegrenzt benutzerdefinierte ${ LUMO_SHORT_APP_NAME }s zu erstellen, fortschrittliche KI-Modelle freizuschalten und mehr."
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
-        "Auf ${ LUMO_SHORT_APP_NAME } Plus upgraden, um unbegrenzt Projekte zu erstellen, erweiterte KI-Modelle freizuschalten und vieles mehr."
+      "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited projects, unlock advanced AI models, and more.": [
+        "Auf ${ PLAN_NAMES[PLANS.LUMO] } upgraden, um unbegrenzt Projekte zu erstellen, erweiterte KI-Modelle freizuschalten und vieles mehr."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Nutze das Max-Modell für komplexe Arbeiten oder das Lite-Modell für alltägliche Aufgaben. Wähle den schnellen Modus für kurze Antworten oder den Denk-Modus für schwierigere Fragen."
@@ -4527,7 +4671,7 @@
         "Du hast ${ meta.artifactTitle } bearbeitet"
       ],
       "You may have unsaved changes. If you leave now, your edits will be lost.": [
-        "Möglicherweise hast du noch nicht gespeicherte Änderungen. Wenn du die Seite jetzt verlässt, gehen deine Änderungen verloren."
+        "Möglicherweise gibt es noch nicht gespeicherte Änderungen. Wenn du die Seite jetzt verlässt, gehen deine Änderungen verloren."
       ],
       "You're using private browsing": [
         "Du benutzt privates Surfen"
@@ -4626,6 +4770,23 @@
       ]
     },
     "collider_2025:Label": {
+      "${ data.pressure } hPa": [
+        "${ data.pressure } hPa"
+      ],
+      "${ data.wind_speed } m/s": [
+        "${ data.wind_speed } m/s"
+      ],
+      "${ data.wind_speed } m/s ${ direction }": [
+        "${ data.wind_speed } m/s ${ direction }"
+      ],
+      "${ file.tokenCount } token": [
+        "${ file.tokenCount } Token",
+        "${ file.tokenCount } Token"
+      ],
+      "${ progress.indexed }/${ progress.total } file (${ percentage }%)": [
+        "${ progress.indexed }/${ progress.total } Datei (${ percentage } %)",
+        "${ progress.indexed }/${ progress.total } Dateien (${ percentage } %)"
+      ],
       "${ selectedCount } selected": [
         "${ selectedCount } ausgewählt"
       ],
@@ -4647,6 +4808,24 @@
       "AI platform": [
         "KI-Plattform"
       ],
+      "All traits have been selected": [
+        "Alle Eigenschaften wurden ausgewählt"
+      ],
+      "Anime": [
+        "Anime"
+      ],
+      "AsciiDoc Document": [
+        "AsciiDoc-Dokument"
+      ],
+      "Batch File": [
+        "Stapelverarbeitungsdatei"
+      ],
+      "C# File": [
+        "C#-Datei"
+      ],
+      "C/C++ File": [
+        "C/C++-Datei"
+      ],
       "Canvas": [
         "Arbeitsbereich"
       ],
@@ -4656,14 +4835,47 @@
       "Card theme": [
         "Karten-Farbschema"
       ],
+      "Cargo File": [
+        "Cargo-Datei"
+      ],
+      "Chart": [
+        "Diagramm"
+      ],
+      "Chart: ${ text }": [
+        "Tabelle: ${ text }"
+      ],
       "chat": [
         "Chat"
       ],
       "chats": [
         "Chats"
       ],
+      "Clojure File": [
+        "Clojure-Datei"
+      ],
+      "Cloud Cover": [
+        "Wolkendecke"
+      ],
+      "CMake File": [
+        "CMake-Datei"
+      ],
+      "Comic book": [
+        "Comic"
+      ],
+      "Configuration File": [
+        "Konfigurationsdatei"
+      ],
+      "Connected": [
+        "Verbunden"
+      ],
+      "Connected with issues": [
+        "Verbindungsprobleme"
+      ],
+      "Connection failed": [
+        "Verbindung fehlgeschlagen"
+      ],
       "Connectors this task can use": [
-        "Konnektoren, die diese Aufgabe verwenden können"
+        "Konnektoren, die für diese Aufgabe verwendet werden können"
       ],
       "Conversation starters (optional)": [
         "Unterhaltungsaufhänger (optional)"
@@ -4673,6 +4885,21 @@
       ],
       "Created on": [
         "Erstellt am"
+      ],
+      "CSS File": [
+        "CSS-Datei"
+      ],
+      "CSV": [
+        "CSV"
+      ],
+      "Currently disabled by your settings": [
+        "Derzeit in deinen Einstellungen deaktiviert"
+      ],
+      "Daily at ${ timeLabel }": [
+        "Täglich um ${ timeLabel }"
+      ],
+      "Dart File": [
+        "Dart-Datei"
       ],
       "Data brokers": [
         "Datenhändler"
@@ -4684,7 +4911,7 @@
         "Tage des Monats"
       ],
       "Days of week": [
-        "Tage der Woche"
+        "Wochentage"
       ],
       "Describe what to change": [
         "Beschreibe, was geändert werden soll"
@@ -4692,14 +4919,65 @@
       "Description (optional)": [
         "Beschreibung (optional)"
       ],
+      "Digital oversharing": [
+        "Übermäßiges Teilen digitaler Inhalte"
+      ],
+      "Disabled": [
+        "Deaktiviert"
+      ],
+      "Dismiss": [
+        "Verwerfen"
+      ],
+      "Dockerfile": [
+        "Docker-Datei"
+      ],
       "Document editor": [
         "Dokument bearbeiten"
       ],
       "Draw a sketch": [
         "Zeichne eine Skizze"
       ],
+      "E": [
+        "O"
+      ],
+      "Easy to profile": [
+        "Leicht zu durchschauen"
+      ],
       "Edit conversation title": [
         "Titel der Unterhaltung bearbeiten"
+      ],
+      "Elixir File": [
+        "Elixir-Datei"
+      ],
+      "ENE": [
+        "ONO"
+      ],
+      "Erlang File": [
+        "Erlang-Datei"
+      ],
+      "ESE": [
+        "OSO"
+      ],
+      "Every ${ dayName } at ${ timeLabel }": [
+        "Jeden ${ dayName } um ${ timeLabel }"
+      ],
+      "Excel Document": [
+        "Excel-Dokument"
+      ],
+      "Failed": [
+        "Fehlgeschlagen"
+      ],
+      "Failed to load conversations": [
+        "Unterhaltungen konnten nicht geladen werden"
+      ],
+      "Feels Like": [
+        "Gefühlt wie"
+      ],
+      "File": [
+        "Datei"
+      ],
+      "Files in Drive": [
+        "Dateien in Drive"
       ],
       "Filter by type": [
         "Nach Typ filtern"
@@ -4714,13 +4992,52 @@
         "Formatierung"
       ],
       "Frequency": [
-        "Zeitraum"
+        "Häufigkeit"
+      ],
+      "Generated image": [
+        "Erzeugtes Bild"
+      ],
+      "Generated image from ${ formattedDate }": [
+        "Generiertes Bild vom ${ formattedDate }"
       ],
       "Generating": [
         "Wird erzeugt"
       ],
+      "Generating chart…": [
+        "Diagramm wird erstellt …"
+      ],
       "Generating your report": [
         "Dein Bericht wird erzeugt"
+      ],
+      "Get ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "${ PLAN_NAMES[PLANS.LUMO] } holen"
+      ],
+      "GIF Image": [
+        "GIF-Bild"
+      ],
+      "Gitignore File": [
+        "Gitignore-Datei"
+      ],
+      "Go File": [
+        "Go-Datei"
+      ],
+      "Go to ${ LUMO_SHORT_APP_NAME } homepage": [
+        "Zur Startseite von ${ LUMO_SHORT_APP_NAME } wechseln"
+      ],
+      "Gradle File": [
+        "Gradle-Datei"
+      ],
+      "Groovy File": [
+        "Groovy-Datei"
+      ],
+      "Hard to read": [
+        "Schwer zu interpretieren"
+      ],
+      "Haskell File": [
+        "Haskell-Datei"
+      ],
+      "HEIC Image": [
+        "HEIC-Bild"
       ],
       "High": [
         "Hoch"
@@ -4728,11 +5045,20 @@
       "How AI gets more out of you": [
         "Wie KI mehr aus dir herausholt"
       ],
+      "HTML Document": [
+        "HTML-Dokument"
+      ],
+      "Humidity": [
+        "Luftfeuchtigkeit"
+      ],
       "Image preview": [
         "Bildvorschau"
       ],
       "Include full conversation": [
         "Komplette Unterhaltung einschließen"
+      ],
+      "Initializing Drive...": [
+        "Drive wird initialisiert ..."
       ],
       "Inspiration image": [
         "Inspirationsbild"
@@ -4746,20 +5072,80 @@
       "It doesn't expire": [
         "Läuft nicht ab"
       ],
+      "Java File": [
+        "Java-Datei"
+      ],
+      "JavaScript File": [
+        "JavaScript-Datei"
+      ],
+      "JPEG Image": [
+        "JPEG-Bild"
+      ],
       "JSON": [
         "JSON"
+      ],
+      "JSON File": [
+        "JSON-Datei"
+      ],
+      "Kotlin File": [
+        "Kotlin-Datei"
+      ],
+      "Last 30 days": [
+        "Letzte 30 Tage"
+      ],
+      "Last 7 Days": [
+        "Letzte 7 Tage"
+      ],
+      "Last 7 days": [
+        "Letzte 7 Tage"
+      ],
+      "LaTeX Document": [
+        "LaTeX-Dokument"
+      ],
+      "Leaving receipts": [
+        "Belege hinterlassen"
       ],
       "Lending & hiring": [
         "Kreditvergabe & Einstellungen"
       ],
+      "Liking ${ LUMO_SHORT_APP_NAME }?": [
+        "Gefällt dir ${ LUMO_SHORT_APP_NAME }?"
+      ],
       "Link address": [
         "Link-Adresse"
+      ],
+      "Loading card...": [
+        "Karte wird geladen ..."
+      ],
+      "Loading image...": [
+        "Bild wird geladen ..."
+      ],
+      "Lock File": [
+        "Lock-Datei"
+      ],
+      "Log File": [
+        "Protokolldatei"
       ],
       "Low": [
         "Niedrig"
       ],
+      "Lua File": [
+        "Lua-Datei"
+      ],
+      "Makefile": [
+        "Make-Datei"
+      ],
       "Markdown": [
         "Markdown"
+      ],
+      "Markdown Document": [
+        "Markdown-Dokument"
+      ],
+      "MATLAB/Mathematica File": [
+        "MATLAB/Mathematica-Datei"
+      ],
+      "Maven File": [
+        "Maven-Datei"
       ],
       "Medium": [
         "Mittel"
@@ -4767,23 +5153,107 @@
       "Minimal": [
         "Minimal"
       ],
+      "Monthly on ${ days } at ${ timeLabel }": [
+        "Monatlich am ${ days } um ${ timeLabel }"
+      ],
+      "My AI Paper Trail": [
+        "Meine KI-Datenspur"
+      ],
+      "My Data Value": [
+        "Mein Datenwert"
+      ],
       "My privacy type": [
         "Meine Datenschutzpräferenz"
+      ],
+      "My Privacy Type": [
+        "Meine Datenschutzeinstellungen"
+      ],
+      "N": [
+        "N"
       ],
       "Name": [
         "Name"
       ],
+      "NE": [
+        "NO"
+      ],
+      "NNE": [
+        "NNO"
+      ],
+      "NNW": [
+        "NNW"
+      ],
+      "Not connected": [
+        "Nicht verbunden"
+      ],
       "Notify me when a run finishes": [
-        "Benachrichtige mich, wenn eine Ausführung beendet ist"
+        "Mich benachrichtigen, wenn eine Ausführung beendet ist"
+      ],
+      "NW": [
+        "NW"
+      ],
+      "OCaml File": [
+        "OCaml-Datei"
+      ],
+      "ODT Document": [
+        "ODT-Dokument"
+      ],
+      "Oil painting": [
+        "Ölgemälde"
+      ],
+      "Older": [
+        "Älter"
+      ],
+      "Once on ${ dateTimeLabel }": [
+        "Einmalig am ${ dateTimeLabel }"
+      ],
+      "Other": [
+        "Andere"
+      ],
+      "Out of 100": [
+        "von 100"
+      ],
+      "PDF Document": [
+        "PDF-Dokument"
+      ],
+      "Pencil sketch": [
+        "Bleistiftzeichnung"
+      ],
+      "Perl File": [
+        "Perl-Datei"
       ],
       "Personalized pricing": [
         "Individuelle Preisgestaltung"
       ],
+      "PHP File": [
+        "PHP-Datei"
+      ],
       "Platform": [
         "Plattform"
       ],
+      "Plotting purr-fect data…": [
+        "Daten perfekt darstellen …"
+      ],
+      "PNG Image": [
+        "PNG-Bild"
+      ],
       "Politics": [
         "Politik"
+      ],
+      "PowerShell Script": [
+        "PowerShell-Skript"
+      ],
+      "Preparing...": [
+        "Wird vorbereitet ..."
+      ],
+      "Pressure": [
+        "Luftdruck"
+      ],
+      "Privacy Exposure": [
+        "Verletzung der Privatsphäre"
+      ],
+      "Privacy maxxing": [
+        "Datenschutz maximieren"
       ],
       "Progress": [
         "Fortschritt"
@@ -4791,11 +5261,47 @@
       "Project Instructions (optional)": [
         "Projektanweisungen (optional)"
       ],
+      "Projects": [
+        "Projekte"
+      ],
+      "Python File": [
+        "Python-Datei"
+      ],
+      "R File": [
+        "R-Datei"
+      ],
+      "reStructuredText": [
+        "reStructuredText"
+      ],
+      "RTF Document": [
+        "RTF-Daokument"
+      ],
+      "Ruby File": [
+        "Ruby-Datei"
+      ],
+      "Rust File": [
+        "Rust-Datei"
+      ],
+      "S": [
+        "S"
+      ],
       "Save report on this device to view it later": [
         "Bericht auf diesem Gerät speichern, um ihn später anzusehen"
       ],
+      "SBT File": [
+        "SBT-Datei"
+      ],
+      "Scala File": [
+        "Scala-Datei"
+      ],
       "Scams": [
         "Betrugsversuche"
+      ],
+      "SE": [
+        "SO"
+      ],
+      "Search failed": [
+        "Suche fehlgeschlagen"
       ],
       "Search library": [
         "Bibliothek durchsuchen"
@@ -4803,17 +5309,68 @@
       "Selected:": [
         "Ausgewählt:"
       ],
+      "Series": [
+        "Datenreihe"
+      ],
+      "Series ${ seriesNumber }": [
+        "Datenreihe ${ seriesNumber }"
+      ],
+      "Settings": [
+        "Einstellungen"
+      ],
+      "Share (%)": [
+        "Teilen (%)"
+      ],
       "Share to": [
         "Teilen auf"
       ],
+      "Sheet": [
+        "Tabellenblatt"
+      ],
+      "Shell Script": [
+        "Shell-Skript"
+      ],
+      "SQL File": [
+        "SQL-Datei"
+      ],
+      "SSE": [
+        "SSO"
+      ],
+      "SSW": [
+        "SSW"
+      ],
+      "SW": [
+        "SW"
+      ],
+      "Swift File": [
+        "Swift-Datei"
+      ],
+      "Text File": [
+        "Text-Datei"
+      ],
       "Thick": [
         "Dick"
+      ],
+      "This Year": [
+        "Dieses Jahr"
       ],
       "Time": [
         "Uhrzeit"
       ],
       "Tips": [
         "Hinweise"
+      ],
+      "Today": [
+        "Heute"
+      ],
+      "TOML File": [
+        "TOML-Datei"
+      ],
+      "TypeScript File": [
+        "TypeScript-Datei"
+      ],
+      "Unknown file": [
+        "Unbekannte Datei"
       ],
       "Untitled chat": [
         "Unbenannter Chat"
@@ -4827,11 +5384,65 @@
       "Upload": [
         "Hochladen"
       ],
+      "Value": [
+        "Wert"
+      ],
+      "Vim Script": [
+        "Vim-Skript"
+      ],
+      "Vintage photo": [
+        "Vintage-Foto"
+      ],
+      "Vol: ": [
+        "Menge: "
+      ],
+      "W": [
+        "W"
+      ],
+      "Watercolor": [
+        "Aquarell"
+      ],
+      "WebP Image": [
+        "WebP-Bild"
+      ],
+      "Weekdays at ${ timeLabel }": [
+        "An Werktagen um ${ timeLabel }"
+      ],
+      "Weekly on ${ dayNames } at ${ timeLabel }": [
+        "Wöchentlich am ${ dayNames } um ${ timeLabel }"
+      ],
+      "What AI Knows About Me": [
+        "Was die KI über mich weiß"
+      ],
       "What should ${ LUMO_SHORT_APP_NAME } do each time?": [
-        "Was soll ${ LUMO_SHORT_APP_NAME } jedes Mal tun?"
+        "Was soll ${ LUMO_SHORT_APP_NAME } jedes Mal ausführen?"
+      ],
+      "What's your AI Paper Trail? ": [
+        "Wie sieht deine KI-Datenspur aus? "
       ],
       "When to run": [
         "Wann ausführen"
+      ],
+      "Wind": [
+        "Wind"
+      ],
+      "WNW": [
+        "WNW"
+      ],
+      "Word Document": [
+        "Word-Dokument"
+      ],
+      "WSW": [
+        "WSW"
+      ],
+      "XML File": [
+        "XML-Datei"
+      ],
+      "YAML File": [
+        "YAML-Datei"
+      ],
+      "Yesterday": [
+        "Gestern"
       ]
     },
     "collider_2025:Notification": {
@@ -5043,6 +5654,24 @@
       "Identify research gaps and suggest future research directions": [
         "Identifiziere Forschungslücken und schlage zukünftige Forschungsrichtungen vor"
       ],
+      "Reimagine this image as a bold comic book illustration with strong outlines and flat colors": [
+        "Gestalte dieses Bild als markante Comic-Illustration mit kräftigen Konturen und flachen Farben"
+      ],
+      "Reimagine this image as a detailed pencil sketch with fine line work and shading": [
+        "Gestalte dieses Bild als detaillierte Bleistiftskizze mit feinen Linien und Schattierungen"
+      ],
+      "Reimagine this image as a rich oil painting with visible brushstrokes and warm tones": [
+        "Gestalte dieses Bild als ein ausdrucksstarkes Ölgemälde mit sichtbaren Pinselstrichen und warmen Farbtönen"
+      ],
+      "Reimagine this image as a soft watercolor painting with flowing, translucent colors": [
+        "Gestalte dieses Bild als zartes Aquarell mit fließenden, durchscheinenden Farben"
+      ],
+      "Reimagine this image as a vintage photograph with faded colors and film grain": [
+        "Gestalte dieses Bild neu als Vintage-Foto mit verblassten Farben und Filmkörnung"
+      ],
+      "Reimagine this image in a detailed anime illustration style": [
+        "Gestalte dieses Bild neu im Stil einer detailreichen Anime-Illustration"
+      ],
       "Review this code for bugs and potential improvements": [
         "Überprüfe diesen Code auf Fehler und mögliche Verbesserungen"
       ],
@@ -5087,8 +5716,26 @@
       ]
     },
     "collider_2025:Reasoning": {
+      "${ failedCount } failed": [
+        "${ failedCount } fehlgeschlagen",
+        "${ failedCount } fehlgeschlagen"
+      ],
+      "${ resultCount } result": [
+        "${ resultCount } Ergebnis",
+        "${ resultCount } Ergebnisse"
+      ],
+      "${ urlCount } URL": [
+        "${ urlCount } URL",
+        "${ urlCount } URLs"
+      ],
       "Checked ${ BRAND_NAME } knowledge": [
         "${ BRAND_NAME }-Wissen überprüft"
+      ],
+      "Checked ${ symbol } cryptocurrency prices": [
+        "Kryptokurse für ${ symbol } wurden abgerufen …"
+      ],
+      "Checked cryptocurrency prices": [
+        "Kryptokurse wurden abgerufen"
       ],
       "Checked prices": [
         "Preise geprüft"
@@ -5096,17 +5743,35 @@
       "Checked the weather": [
         "Wetterbericht abgerufen"
       ],
+      "Checked the weather in ${ location }": [
+        "Wetter für ${ location } wurde abgerufen"
+      ],
       "Checking ${ BRAND_NAME } knowledge": [
         "${ BRAND_NAME }-Wissen wird überprüft"
       ],
       "Checking ${ BRAND_NAME } knowledge...": [
         "${ BRAND_NAME }-Wissen wird überprüft..."
       ],
+      "Checking ${ symbol } cryptocurrency prices...": [
+        "Kryptokurse für ${ symbol } werden abgerufen …"
+      ],
+      "Checking cryptocurrency prices...": [
+        "Kryptokurse wurden abgerufen"
+      ],
       "Checking prices": [
         "Preise überprüfen"
       ],
       "Checking the weather": [
         "Prüft das Wetter"
+      ],
+      "Checking the weather in ${ location }...": [
+        "Wetter in ${ location } wird abgerufen ..."
+      ],
+      "Checking the weather...": [
+        "Wetter wird abgerufen …"
+      ],
+      "command": [
+        "Befehl"
       ],
       "Complete": [
         "Abgeschlossen"
@@ -5123,8 +5788,20 @@
       "Done": [
         "Fertig"
       ],
+      "Edited ${ path }": [
+        "${ path } wurde bearbeitet"
+      ],
+      "Edited file": [
+        "Bearbeitete Datei"
+      ],
       "Edited image": [
         "Bild bearbeitet"
+      ],
+      "Editing ${ path }...": [
+        "${ path } wird bearbeitet ..."
+      ],
+      "Editing file...": [
+        "Datei wird bearbeitet ..."
       ],
       "Editing image": [
         "Bild wird bearbeitet"
@@ -5150,6 +5827,27 @@
       "Failed": [
         "Fehlgeschlagen"
       ],
+      "Fetched ${ url } and sent contents back": [
+        "${ url } abgerufen und Inhalt zurückgesendet"
+      ],
+      "Fetched page": [
+        "Abgerufene Seite"
+      ],
+      "Fetching ${ url }...": [
+        "${ url } wird abgerufen ..."
+      ],
+      "Fetching page...": [
+        "Seite wird abgerufen …"
+      ],
+      "file": [
+        "Datei"
+      ],
+      "files": [
+        "Dateien"
+      ],
+      "Finished your creation": [
+        "Deine erstellten Inhalte sind bereit"
+      ],
       "Generated image": [
         "Generiertes Bild"
       ],
@@ -5168,14 +5866,23 @@
       "Last updated: ": [
         "Zuletzt aktualisiert: "
       ],
+      "Last updated: ${ updatedTime }": [
+        "Zuletzt aktualisiert: ${ updatedTime }"
+      ],
       "Looked at your image": [
         "Dein Bild wurde analysiert"
       ],
       "Looked things up online": [
         "Online nachgeschlagen"
       ],
+      "Looked up ${ symbol } stock prices": [
+        "Aktienkurse von ${ symbol } nachgeschlagen"
+      ],
       "Looked up market data": [
         "Marktdaten nachgeschlagen"
+      ],
+      "Looked up stock prices": [
+        "Aktienkurse werden nachgeschlagen"
       ],
       "Looked up the forecast": [
         "Wettervorhersage nachgeschlagen"
@@ -5192,8 +5899,14 @@
       "Looking things up online": [
         "Online nachschlagen"
       ],
+      "Looking up ${ symbol } stock prices...": [
+        "Aktienkurse für ${ symbol } werden abgerufen ..."
+      ],
       "Looking up market data": [
         "Suche nach Marktdaten"
+      ],
+      "Looking up stock prices...": [
+        "Aktienkurse werden nachgeschlagen ..."
       ],
       "Looking up the forecast": [
         "Wettervorhersage wird abgerufen"
@@ -5207,11 +5920,17 @@
       "P/E Ratio": [
         "KGV"
       ],
+      "page": [
+        "Seite"
+      ],
       "Performance comparison": [
         "Leistungsvergleich"
       ],
       "Prepared your canvas": [
         "Dein Arbeitsbereich ist vorbereitet"
+      ],
+      "Preparing your canvas": [
+        "Dein Arbeitsbereich wird vorbereitet"
       ],
       "Price": [
         "Preis"
@@ -5219,11 +5938,35 @@
       "Profit Margin": [
         "Gewinnmarge"
       ],
+      "Ran ${ shortName }": [
+        "${ shortName } wurde ausgeführt"
+      ],
+      "Ran ${ shortName } and sent results back": [
+        "${ shortName } ausgeführt und Ergebnisse zurückgesendet."
+      ],
+      "Ran command": [
+        "Befehl wurde ausgeführt"
+      ],
+      "Ran command and sent output back": [
+        "Befehl ausgeführt und Ausgabe zurückgesendet"
+      ],
+      "Read ${ path } and sent contents back": [
+        "${ path } lesen und Inhalt zurücksenden"
+      ],
       "Read a web page": [
         "Eine Webseite gelesen"
       ],
+      "Read file": [
+        "Datei einlesen"
+      ],
+      "Reading ${ path }...": [
+        "${ path } wird eingelesen …"
+      ],
       "Reading a web page": [
         "Eine Webseite wird gelesen"
+      ],
+      "Reading file...": [
+        "Datei wird eingelesen ..."
       ],
       "Reasoning": [
         "Begründung"
@@ -5231,11 +5974,41 @@
       "Revenue TTM": [
         "Umsatz (TTM)"
       ],
+      "Running ${ shortName }...": [
+        "${ shortName } wird ausgeführt ..."
+      ],
+      "Running `${ short }`...": [
+        "„${ short }“ wird ausgeführt ..."
+      ],
+      "Running command...": [
+        "Befehl wird ausgeführt …"
+      ],
+      "Searched files": [
+        "Durchsuchte Dateien"
+      ],
+      "Searched files for \"${ query }\" and sent results back": [
+        "Dateien nach „${ query }“ durchsucht und Ergebnisse zurückgegeben"
+      ],
       "Searched the web": [
         "Im Web gesucht"
       ],
+      "Searched the web for \"${ query }\"": [
+        "Internet wird nach „${ query }“ durchsucht"
+      ],
+      "Searching files for \"${ query }\"...": [
+        "Dateien werden nach „${ query }“ durchsucht ..."
+      ],
+      "Searching files...": [
+        "Dateien werden gesucht ..."
+      ],
       "Searching the web": [
         "Sucht im Web"
+      ],
+      "Searching the web for \"${ query }\"...": [
+        "Internet nach „${ query }“ durchsuchen ..."
+      ],
+      "Searching the web...": [
+        "Internet wird durchsucht …"
       ],
       "Thinking": [
         "Denkt nach..."
@@ -5245,6 +6018,12 @@
       ],
       "Thought this through": [
         "Durchdacht"
+      ],
+      "Updated ${ path }": [
+        "${ path } wurde aktualisiert"
+      ],
+      "Updated file": [
+        "Aktualisierte Datei"
       ],
       "Updated your image": [
         "Dein Bild wurde aktualisiert"
@@ -5276,8 +6055,17 @@
       "Working on this": [
         "Arbeite daran"
       ],
+      "Working on your creation": [
+        "An deinem erstellten Inhalt wird gearbeitet"
+      ],
       "Working through this": [
         "Wird bearbeitet..."
+      ],
+      "Writing ${ path }...": [
+        "${ path } wird geschrieben …"
+      ],
+      "Writing file...": [
+        "Datei wird geschrieben ..."
       ]
     },
     "collider_2025:Status": {
@@ -5388,7 +6176,7 @@
         "Ein KI-Assistent sollte dich unterstützen, statt dich für deine Daten auszunutzen."
       ],
       "Auto-approve": [
-        "Automatische Genehmigung"
+        "Automatisch genehmigen"
       ],
       "Better web search": [
         "Bessere Web-Suche"
@@ -5528,8 +6316,8 @@
       "More options": [
         "Weitere Optionen"
       ],
-      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Mehr Projekte mit ${ LUMO_SHORT_APP_NAME } Plus"
+      "More Projects with ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "Mehr Projekte mit ${ PLAN_NAMES[PLANS.LUMO] }"
       ],
       "Most revealing": [
         "Am aufschlussreichsten"
@@ -5642,11 +6430,17 @@
       "Two models, two modes": [
         "Zwei Modelle, zwei Modi"
       ],
+      "Untitled": [
+        "Unbenannt"
+      ],
       "Untitled conversation": [
         "Unterhaltung ohne Titel"
       ],
       "Untitled document": [
         "Unbenanntes Dokument"
+      ],
+      "Untitled Project": [
+        "Unbenanntes Projekt"
       ],
       "Upload your data export": [
         "Deinen Daten-Export hochladen"
@@ -6925,6 +7719,12 @@
       "Failed to decrypt revision metadata": [
         "Die Entschlüsselung der Versionsmetadaten ist fehlgeschlagen"
       ],
+      "Failed to download chart. Please try again.": [
+        "Diagramm konnte nicht heruntergeladen werden. Bitte versuche es erneut."
+      ],
+      "Failed to download image. Please try again.": [
+        "Bild konnte nicht heruntergeladen werden. Bitte versuche es erneut."
+      ],
       "Failed to get inviter keys": [
         "Schlüssel des Einladers konnten nicht abgerufen werden"
       ],
@@ -7465,6 +8265,9 @@
       "1 vault per user": [
         "1 Tresor je Benutzer"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-Tage-Geld-zurück-Garantie: Kündige innerhalb von 30 Tagen nach dem Kauf und wende dich an unseren ${ customerSupportLink }, um eine Rückerstattung zu erhalten."
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
       ],
@@ -7871,6 +8674,9 @@
       ],
       "Total VPN connections": [
         "Anzahl VPN‐Verbindungen"
+      ],
+      "UnionPay logo": [
+        "Union Pay-Logo"
       ],
       "Unknown": [
         "Unbekannt"
@@ -9768,6 +10574,11 @@
         "Du benötigst Zugriff auf den Organisationsschlüssel, um diese Operation durchzuführen."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -9818,11 +10629,8 @@
       "Billing Country": [
         "Rechnungsland"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "«Born Private» kann nicht gekauft werden, wenn ein aktives Abonnement besteht."
-      ],
-      "Born Private requires a donation.": [
-        "Für «Born Private» ist eine Spende erforderlich."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "„Born Private“-Konten können während eines aktiven Abonnements nicht erworben werden."
       ],
       "Buying credits requires a separate purchase.": [
         "Der Erwerb von Guthaben erfordert einen separaten Kauf."
@@ -9910,6 +10718,9 @@
       ],
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Für die Initiative „Born Private“ ist eine Spende erforderlich."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerung gültig.",
@@ -10007,8 +10818,8 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Du besitzt bereits ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Du besitzt „Born Private“ bereits."
+      "You already own a Born Private account.": [
+        "Du besitzt bereits ein „Born Private“-Konto."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
@@ -10016,8 +10827,8 @@
       "You will soon be redirected to verify your payment.": [
         "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
       ],
-      "Your account is too old for Born Private.": [
-        "Dein Konto ist zu alt für „Born Private“."
+      "Your account is too old for the Born Private initiative.": [
+        "Dein Konto ist zu alt für die „Born Private“-Initiative."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_WERO_BRAND_NAME } nur Zahlungen in Euro unterstützt."
@@ -10805,17 +11616,17 @@
       ]
     },
     "Time": {
-      "${ days } days ago": [
-        "Vor ${ days } Tagen"
+      "${ days } day ago": [
+        "vor ${ days } Tag",
+        "vor ${ days } Tagen"
       ],
-      "${ hours } hours ago": [
-        "Vor ${ hours } Stunden"
+      "${ hours } hour ago": [
+        "vor ${ hours } Stunde",
+        "vor ${ hours } Stunden"
       ],
-      "${ minutes } minutes ago": [
-        "Vor ${ minutes } Minuten"
-      ],
-      "1 hour ago": [
-        "Vor einer Stunde"
+      "${ minutes } minute ago": [
+        "vor ${ minutes } Minute",
+        "vor ${ minutes } Minuten"
       ],
       "Just now": [
         "Gerade eben"
@@ -11162,6 +11973,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Dieser Nutzer erhält bei seiner nächsten Anmeldung Administratorrechte."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Zu einem unterstützten Abonnement upgraden, um Administratorrollen nutzen zu können."
       ],
