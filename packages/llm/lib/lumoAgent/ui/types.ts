@@ -81,6 +81,8 @@ export enum LumoChainEnd {
     REPLACED = 'replaced',
     /** The conversation it belonged to went away: cleared, or the panel unmounted under it. */
     DISCARDED = 'discarded',
+    /** The backend refused the conversation because it no longer fits the model's context window. */
+    CONTEXT_LIMIT = 'context_limit',
 }
 
 export enum LumoConfirmAnswer {
@@ -118,4 +120,9 @@ export interface LumoAgentConfig {
     suggestions?: WelcomeSuggestionCard[];
     /** Absent for a host that reports nothing; every call site is then a no-op. */
     telemetry?: LumoAgentTelemetry;
+    /**
+     * Show Lumo's context-limit toast instead of the inline error when the backend reports
+     * `context_length_exceeded`, and end the chain as {@link LumoChainEnd.CONTEXT_LIMIT}.
+     */
+    showContextLimitToast?: boolean;
 }

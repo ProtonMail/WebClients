@@ -15,6 +15,7 @@ enum EndReason {
     USER_STOPPED = 'user_stopped',
     REPLACED = 'replaced',
     DISCARDED = 'discarded',
+    CONTEXT_LIMIT = 'context_limit',
 }
 
 enum PromptSource {
@@ -32,6 +33,7 @@ const CHAIN_END_REASONS: Record<LumoChainEnd, EndReason> = {
     [LumoChainEnd.STOPPED]: EndReason.USER_STOPPED,
     [LumoChainEnd.REPLACED]: EndReason.REPLACED,
     [LumoChainEnd.DISCARDED]: EndReason.DISCARDED,
+    [LumoChainEnd.CONTEXT_LIMIT]: EndReason.CONTEXT_LIMIT,
 };
 
 /** The reporters `buildLumoMailConfig` closes over; the rest are called straight from a component. */

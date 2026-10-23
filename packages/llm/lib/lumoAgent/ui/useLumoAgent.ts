@@ -3,7 +3,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import type { LumoApiClient } from '@proton/lumo-api-client/core/client';
+import { isContextLengthExceededApiError } from '@proton/lumo-api-client/core/context-length';
 import type {
     ChatCompletionsFunctionTool,
     GenerationResponseMessage,
@@ -12,8 +14,10 @@ import type {
     Turn,
 } from '@proton/lumo-api-client/core/types';
 import type { WireImage } from '@proton/lumo-api-client/types-api';
+import { isContextLengthExceededMessage } from '@proton/lumo-api-client/types-api';
 import { lumoImageMarker } from '@proton/lumo-api-client/utils';
 import type { ServerToolSource } from '@proton/lumo-ui/ServerToolChip';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { ToolImage, ToolName } from '../contracts/types';
 import type { ConfirmDecision, ToolChip } from '../engine/engine';
@@ -128,6 +132,7 @@ const extractWebSources = (content: string): ServerToolSource[] => {
  */
 const useLumoAgent = (config: LumoAgentConfig) => {
     const api = useApi();
+    const { createNotification } = useNotifications();
     const standalonePrompt = !!config.serverPrompt;
 
     const [items, setItems] = useState<LumoAgentItem[]>([]);
@@ -163,6 +168,15 @@ const useLumoAgent = (config: LumoAgentConfig) => {
         finalizeReply();
         pushItem({ id: nextId(), kind: 'error', message: c('Error').t`Something went wrong. Please try again.` });
     }, [finalizeReply, nextId, pushItem]);
+    const notifyContextLimit = useCallback(() => {
+        createNotification({
+            type: 'error',
+            // translator: shown when a conversation gets too long to stay responsive. Reassures the user this is about performance, not a plan limit.
+            text: c('collider_2025: Error')
+                .t`This conversation is too long to continue. Start a new chat to keep ${LUMO_SHORT_APP_NAME} purring and responsive.`,
+            expiration: 8000,
+        });
+    }, [createNotification]);
 
     /** Banks the exchange the projection has accumulated, and empties it either way. */
     const commitHistory = useCallback((userText: string) => {
@@ -385,6 +399,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             // chain returns as though it answered while the user reads an error. Latched here because
             // that is the only place the two are distinguishable.
             let streamFailed = false;
+            let hitContextLimit = false;
 
             const chunkCallback = (chunk: GenerationResponseMessage) => {
                 if (chunk.type === 'token_data' && chunk.target === 'message') {
@@ -418,6 +433,16 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 ) {
                     streamFailed = true;
                     pushError();
+                } else if (
+                    config.showContextLimitToast &&
+                    isContextLengthExceededMessage(chunk) &&
+                    !hitContextLimit &&
+                    controllerRef.current === controller
+                ) {
+                    hitContextLimit = true;
+                    streamFailed = true;
+                    finalizeReply();
+                    notifyContextLimit();
                 }
             };
 
@@ -456,9 +481,22 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 }
                 recordChainWork(producedTurns);
                 commitHistory(userContent);
-                reportChainEnd(streamFailed ? LumoChainEnd.FAILED : LumoChainEnd.SUCCEEDED);
+                if (hitContextLimit) {
+                    reportChainEnd(LumoChainEnd.CONTEXT_LIMIT);
+                } else {
+                    reportChainEnd(streamFailed ? LumoChainEnd.FAILED : LumoChainEnd.SUCCEEDED);
+                }
             } catch (error: any) {
                 const isAbort = error?.name === 'AbortError';
+                if (!isAbort && config.showContextLimitToast && isContextLengthExceededApiError(error)) {
+                    if (controllerRef.current !== controller) {
+                        reportChainEnd(abortEndRef.current);
+                        return;
+                    }
+                    notifyContextLimit();
+                    reportChainEnd(LumoChainEnd.CONTEXT_LIMIT);
+                    return;
+                }
                 if (!isAbort) {
                     pushError();
                 }
@@ -485,6 +523,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             nextId,
             pushItem,
             pushError,
+            notifyContextLimit,
         ]
     );
 

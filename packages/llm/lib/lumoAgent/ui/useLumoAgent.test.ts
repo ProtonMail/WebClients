@@ -30,6 +30,13 @@ jest.mock('@proton/app-context/useApi', () => ({
     useApi: () => jest.fn(),
 }));
 
+const createNotification = jest.fn();
+
+jest.mock('@proton/app-context/useNotifications', () => ({
+    __esModule: true,
+    useNotifications: () => ({ createNotification }),
+}));
+
 jest.mock('@proton/lumo-api-client/core/client', () => ({
     __esModule: true,
     LumoApiClient: class {
@@ -1385,6 +1392,142 @@ describe('useLumoAgent', () => {
             });
 
             expect(telemetry.promptSent).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('when the conversation outgrows the context limit', () => {
+        const withToast: LumoAgentConfig = { ...config, showContextLimitToast: true };
+        const contextLimitToast = {
+            type: 'error',
+            text: 'This conversation is too long to continue. Start a new chat to keep Lumo purring and responsive.',
+            expiration: 8000,
+        };
+        const tooLong = () =>
+            Object.assign(new Error('400'), { status: 400, data: { error: { code: 'context_length_exceeded' } } });
+
+        const sendOnce = async (agentConfig: LumoAgentConfig) => {
+            const { result } = renderHook(() => useLumoAgent(agentConfig));
+            await act(async () => {
+                await result.current.send('summarise every email I have ever had');
+            });
+            return result;
+        };
+
+        const hasInlineError = (result: AgentResult) => result.current.items.some((item) => item.kind === 'error');
+
+        const expectContextLimitToast = (result: AgentResult) => {
+            expect(createNotification).toHaveBeenCalledTimes(1);
+            expect(createNotification).toHaveBeenCalledWith(contextLimitToast);
+            expect(hasInlineError(result)).toBe(false);
+            expect(telemetry.chainEnded).toHaveBeenLastCalledWith(LumoChainEnd.CONTEXT_LIMIT, expect.anything());
+            expect(result.current.lastChainEnd).toBe(LumoChainEnd.CONTEXT_LIMIT);
+        };
+
+        const expectInlineErrorOnly = (result: AgentResult) => {
+            expect(hasInlineError(result)).toBe(true);
+            expect(createNotification).not.toHaveBeenCalled();
+            expect(result.current.lastChainEnd).toBe(LumoChainEnd.FAILED);
+        };
+
+        it('shows the toast instead of the inline error when the stream reports it', async () => {
+            script = async ({ chunk }) => {
+                chunk({ type: 'tool-error', error: { code: 'context_length_exceeded', message: 'x' } });
+            };
+
+            const result = await sendOnce(withToast);
+
+            expectContextLimitToast(result);
+        });
+
+        it('shows the toast once when the stream reports it more than once', async () => {
+            script = async ({ chunk }) => {
+                chunk({ type: 'tool-error', error: { code: 'context_length_exceeded', message: 'x' } });
+                chunk({ type: 'tool-error', error: { code: 'context_length_exceeded', message: 'x' } });
+            };
+
+            const result = await sendOnce(withToast);
+
+            expectContextLimitToast(result);
+        });
+
+        it('ignores the stream signal for a product that did not ask for the toast', async () => {
+            script = async ({ chunk }) => {
+                chunk({ type: 'tool-error', error: { code: 'context_length_exceeded', message: 'x' } });
+            };
+
+            const result = await sendOnce(config);
+
+            expect(createNotification).not.toHaveBeenCalled();
+            expect(hasInlineError(result)).toBe(false);
+            expect(result.current.lastChainEnd).toBe(LumoChainEnd.SUCCEEDED);
+        });
+
+        it('shows the toast instead of the inline error when the request is refused before streaming', async () => {
+            script = async () => {
+                throw tooLong();
+            };
+
+            const result = await sendOnce(withToast);
+
+            expectContextLimitToast(result);
+        });
+
+        it('keeps the inline error for any other failure', async () => {
+            script = async () => {
+                throw new Error('the transport gave up');
+            };
+
+            const result = await sendOnce(withToast);
+
+            expectInlineErrorOnly(result);
+        });
+
+        it('keeps the inline error for a product that did not ask for the toast', async () => {
+            script = async () => {
+                throw tooLong();
+            };
+
+            const result = await sendOnce(config);
+
+            expectInlineErrorOnly(result);
+        });
+
+        it.each([
+            [
+                'in the stream',
+                ({ chunk }: Parameters<Script>[0]) =>
+                    chunk({ type: 'tool-error', error: { code: 'context_length_exceeded', message: 'x' } }),
+            ],
+            [
+                'before streaming',
+                () => {
+                    throw tooLong();
+                },
+            ],
+        ])('stays silent when a stopped chain reports it %s', async (_name, report) => {
+            let releaseChain = () => {};
+            const chainMayFinish = new Promise<void>((resolve) => {
+                releaseChain = resolve;
+            });
+            script = async (ctx) => {
+                await chainMayFinish;
+                report(ctx);
+            };
+
+            const { result } = renderHook(() => useLumoAgent(withToast));
+            let sendPromise!: Promise<void>;
+            act(() => {
+                sendPromise = result.current.send('summarise every email I have ever had');
+            });
+
+            act(() => result.current.stop());
+            await act(async () => {
+                releaseChain();
+                await sendPromise;
+            });
+
+            expect(createNotification).not.toHaveBeenCalled();
+            expect(telemetry.chainEnded).toHaveBeenLastCalledWith(LumoChainEnd.STOPPED, expect.anything());
         });
     });
 });
