@@ -593,6 +593,10 @@
             "entry": [],
             "project": []
         },
+        "utilities/repo-rules": {
+            "entry": ["src/**/run.ts", "src/**/*.test.ts"],
+            "project": ["src/**/*.ts"]
+        },
         "vendor/*/*": {
             "entry": [],
             "project": [],
