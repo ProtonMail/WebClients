@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 
+import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 
@@ -87,4 +88,35 @@ it('should display the prices correctly for VPN Plus', () => {
     expect(queryByTestId('price-per-user-per-month-1')).toHaveTextContent('CHF 9.99/month');
     expect(queryByTestId('price-per-user-per-month-12')).toHaveTextContent('CHF 6.66/month');
     expect(queryByTestId('price-per-user-per-month-24')).toHaveTextContent('CHF 4.99/month');
+});
+
+it('should ignore estimations made for other addons', () => {
+    const planIDs = { mailpro2022: 1 };
+    const staleEstimation = getOptimisticCheckResult({
+        planIDs: { mailpro2022: 1, '1member-mailpro2022': 3 },
+        plansMap: PLANS_MAP,
+        currency: 'CHF',
+        cycle: CYCLE.TWO_YEARS,
+    });
+
+    const { getByTestId } = render(
+        <SubscriptionCycleSelector {...props} planIDs={planIDs} additionalCheckResults={[staleEstimation]} />
+    );
+
+    expect(getByTestId('cycle-24')).not.toHaveTextContent('Save -');
+    expect(getByTestId('price-per-user-per-month-24')).toHaveTextContent('CHF 6.49/user per month');
+});
+
+it('should ignore estimations made in another currency', () => {
+    const planIDs = { mailpro2022: 1 };
+    const otherCurrencyEstimation = {
+        ...getOptimisticCheckResult({ planIDs, plansMap: PLANS_MAP, currency: 'USD', cycle: CYCLE.TWO_YEARS }),
+        Amount: 100,
+    };
+
+    const { getByTestId } = render(
+        <SubscriptionCycleSelector {...props} planIDs={planIDs} additionalCheckResults={[otherCurrencyEstimation]} />
+    );
+
+    expect(getByTestId('price-per-user-per-month-24')).toHaveTextContent('CHF 6.49/user per month');
 });
