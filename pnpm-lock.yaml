@@ -4115,6 +4115,9 @@ importers:
       '@proton/eslint-config-proton':
         specifier: workspace:^
         version: link:../../packages/eslint-config-proton
+      '@proton/file-icons':
+        specifier: workspace:^
+        version: link:../../packages/file-icons
       '@proton/hooks':
         specifier: workspace:^
         version: link:../../packages/hooks
