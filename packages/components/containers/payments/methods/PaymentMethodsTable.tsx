@@ -1,14 +1,7 @@
 import { c } from 'ttag';
 
-import { formattedSavedSepaDetails } from '@proton/payments-ui/client-extensions/useMethods';
+import { getSavedMethodUi } from '@proton/payments-ui/payment-methods/paymentMethodUiRegistry';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
-import {
-    isPaypalDetails,
-    isSavedPaymentMethodApplePay,
-    isSavedPaymentMethodGooglePay,
-    isSavedPaymentMethodIdeal,
-    isSavedPaymentMethodSepa,
-} from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import Table from '../../../components/table/Table';
@@ -18,65 +11,17 @@ import TableRow from '../../../components/table/TableRow';
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
 
-const NBSP_HTML = '\u00A0';
-
 interface Props {
     methods: SavedPaymentMethod[];
     app: APP_NAMES;
 }
 
 const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
-    if (isPaypalDetails(method.Details)) {
-        return (
-            <>
-                <span className="mr-2 align-middle" data-testid="payment-method">
-                    PayPal
-                </span>
-                <span
-                    className="block lg:inline-block align-middle text-ellipsis max-w-full"
-                    data-testid="payer"
-                    title={method.Details.Payer}
-                >
-                    {method.Details.Payer}
-                </span>
-            </>
-        );
+    if (!method.Details) {
+        return null;
     }
 
-    const hiddenDigitsPlaceholder = '••••';
-
-    if (isSavedPaymentMethodSepa(method) || isSavedPaymentMethodIdeal(method)) {
-        return (
-            <>
-                <span className="mr-2 align-middle" data-testid="sepa-payment-method">
-                    {c('Payment Method').t`Bank Account`}
-                </span>
-                <span
-                    className="block lg:inline-block align-middle text-ellipsis max-w-full"
-                    data-testid="sepa-details"
-                >
-                    {formattedSavedSepaDetails(method.Details)}
-                </span>
-            </>
-        );
-    }
-
-    if (isSavedPaymentMethodApplePay(method)) {
-        const applePayDetails = `Apple Pay (${hiddenDigitsPlaceholder}${NBSP_HTML}${method.Details.Last4})`;
-        return <span data-testid="apple-pay-details">{applePayDetails}</span>;
-    }
-
-    if (isSavedPaymentMethodGooglePay(method)) {
-        const googlePayDetails = `Google Pay (${hiddenDigitsPlaceholder}${NBSP_HTML}${method.Details.Last4})`;
-        return <span data-testid="google-pay-details">{googlePayDetails}</span>;
-    }
-
-    if (method.Details && method.Details.Brand && method.Details.Last4) {
-        const cardDetails = `${method.Details.Brand} (${hiddenDigitsPlaceholder}${NBSP_HTML}${method.Details.Last4})`;
-        return <span data-testid="card-details">{cardDetails}</span>;
-    }
-
-    return null;
+    return getSavedMethodUi(method.Type)?.renderSavedMethodTableCell?.(method.Details) ?? null;
 };
 
 const PaymentMethodsTable = ({ methods, app }: Props) => {
