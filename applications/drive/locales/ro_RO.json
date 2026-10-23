@@ -502,9 +502,6 @@
       "Get ${ planOrAppName }": [
         "Luați ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Obțineți o adresă gratuită ${ BRAND_NAME }"
-      ],
       "Get in touch": [
         "Contactați-ne"
       ],
@@ -690,9 +687,6 @@
       ],
       "Merge contacts": [
         "Îmbinare contacte"
-      ],
-      "Migrate": [
-        "Migrare"
       ],
       "Minimize transfers": [
         "Micșorare transferuri"
@@ -1522,6 +1516,11 @@
         "Manager de parole premium"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanție de restituire a banilor în 30 de zile: anulați în termen de 30 de zile de la achiziție și contactați ${ customerSupportLink } pentru a obține o rambursare."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
@@ -1559,31 +1558,31 @@
         "/lună"
       ],
       "15 GB storage": [
-        "15 GiB de spațiu de stocare"
+        "15 GB de stocare"
       ],
       "2 individual accounts": [
-        "Două conturi individuale"
+        "2 conturi individuale"
       ],
       "2 TB of secure storage": [
-        "2 TiB de stocare securizată"
+        "2 TB de stocare securizată"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GiB de spațiu de stocare: de 40 de ori planul actual"
+        "200 GB spațiu de stocare: de 40x mai mult față de planul actual"
       ],
       "3 TB of secure storage": [
-        "3 TiB de stocare securizată"
+        "3 TB de stocare securizată"
       ],
       "500 GB of secure storage": [
-        "500 GiB de stocare securizată"
+        "500 GB de stocare securizată"
       ],
       "6 individual accounts": [
         "6 conturi individuale"
       ],
       "Built-in 2FA authenticator": [
-        "Autentificator A2F încorporat"
+        "Autentificator 2FA încorporat"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+        "Reducerile se calculează față de prețul lunar standard. Abonamentul dvs. se va reînnoi la tariful anual standard atunci când se încheie ciclul de facturare."
       ],
       "Online document editor": [
         "Editor de documente online"
@@ -1628,7 +1627,7 @@
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Cea mai mare reducere a anului"
+        "Cea mai mare promoție a anului"
       ],
       "Black Friday": [
         "Black Friday"
@@ -1637,7 +1636,7 @@
         "pentru 12 luni"
       ],
       "Last chance to save big": [
-        "Ultima șansă de a economisi semnificativ"
+        "Ultima șansă pentru o reducere mare"
       ],
       "Protect your entire tribe": [
         "Protejați-vă întreaga familie"
@@ -1912,6 +1911,11 @@
       ],
       "Expand": [
         "Extindere"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Această conversație este prea lungă pentru a continua. Începeți o conversație nouă pentru ca ${ LUMO_SHORT_APP_NAME } să fie mereu activ și receptiv."
       ]
     },
     "collider_2025: feature": {
@@ -3415,14 +3419,8 @@
       "Address could not be added.": [
         "Adresa nu a putut fi adăugată."
       ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Adresa este deja utilizată de un utilizator din afara propriei organizații. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
-      ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Tot spațiul de stocare a fost alocat. Reduceți spațiul alocat altor utilizatori."
       ],
       "Already a member of this share": [
         "Deja este membru al acestei partajări"
@@ -3752,9 +3750,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Legătura web publică veche nu poate fi actualizată. Creați o legătură web publică nouă."
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Adresa membrului nu a fost găsită. Contactați serviciul de asistență pentru clienți pentru a rezolva această problemă."
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Îmbinați cel puțin ${ calendarsToFixCount } calendar cu un calendar ${ BRAND_NAME } existent.",
         "Îmbinați cel puțin ${ calendarsToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
@@ -3765,12 +3760,6 @@
       ],
       "Missing key packet": [
         "Lipsește pachetul de chei."
-      ],
-      "Missing organization private key": [
-        "Cheia privată a organizației lipsește."
-      ],
-      "Missing organization public key": [
-        "Cheia publică a organizației lipsește."
       ],
       "Missing signature": [
         "Semnătură lipsă"
@@ -3841,12 +3830,6 @@
       "Operation failed, try again later": [
         "Operația a eșuat. Reîncercați."
       ],
-      "Organization does not have enough seats available": [
-        "Organizația nu dispune de suficiente licențe disponibile."
-      ],
-      "Organization does not have enough storage available": [
-        "Organizația nu are suficient spațiu de stocare disponibil."
-      ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
       ],
@@ -3889,15 +3872,6 @@
       "Please complete the billing details": [
         "Completați detaliile de facturare."
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Configurația un domeniu personal înainte de a adăuga adrese."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Configurați un nume de domeniu personal înainte de a adăuga utilizatori la organizație."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Activați suportul pentru utilizatori multipli înainte de a adăuga utilizatori la organizație."
-      ],
       "Please enter a valid postal code": [
         "Introduceți un cod poștal valid."
       ],
@@ -3929,9 +3903,6 @@
       ],
       "Please select billing state": [
         "Selectați statul pentru facturare"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
       ],
       "Port is required": [
         "Portul este obligatoriu"
@@ -4254,12 +4225,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Ați atins limita numărului de contacte disponibil pentru acest cont."
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Ați folosit toate adresele disponibile în plan. Modificați-vă planul pentru a adăuga o adresă nouă sau dezactivați o adresă din cont."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
       ],
       "You must set a name": [
         "Trebuie specificat un nume"
@@ -4700,29 +4665,6 @@
         "Tibibaiți"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Activat"
-      ],
-      "All": [
-        "Toate"
-      ],
-      "Errors": [
-        "Erori"
-      ],
-      "In progress": [
-        "In desfășurare"
-      ],
-      "Migrated": [
-        "Migrat"
-      ],
-      "Not activated": [
-        "Neactivată"
-      ],
-      "Pending": [
-        "În așteptare"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "S-a actualizat ${ Label.Name }."
@@ -5139,20 +5081,6 @@
         "Selectați ${ boldExport } pentru a exporta calendarul ca fișier ICS."
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Are erori"
-      ],
-      "In progress": [
-        "În derulare"
-      ],
-      "Migrated": [
-        "Migrat"
-      ],
-      "Pending": [
-        "În așteptare"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } din ${ totalContacts } contacte nu vor fi importate. Faceți clic pentru detalii."
@@ -5200,9 +5128,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } necesită o adresă ${ BRAND_NAME } pentru sincronizarea și criptarea securizată a evenimentelor. ${ claimAddressButton }."
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } necesită o adresă ${ BRAND_NAME } pentru sincronizarea și criptarea securizată a evenimentelor. Revendicați-vă acum adresa gratuită ${ MAIL_APP_NAME }."
@@ -5388,11 +5313,6 @@
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Din perioada de probă au mai rămas ${ timeRemaining }. ${ addPaymentMethodLink } pentru a vă păstra abonamentul. ${ learnMoreLink }"
       ],
-      "${ total } user found": [
-        "Utilizatori găsiți: ${ total }",
-        "Utilizatori găsiți: ${ total }",
-        "Utilizatori găsiți: ${ total }"
-      ],
       "${ updated } contact updated successfully.": [
         "Contacte actualizate: ${ updated }",
         "Contacte actualizate: ${ updated }",
@@ -5435,6 +5355,9 @@
       ],
       "1 vault per user": [
         "Un seif per utilizator"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanție de restituire a banilor în 30 de zile: anulați în termen de 30 de zile de la achiziție și contactați ${ customerSupportLink } pentru a obține o rambursare."
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
         "Este disponibilă o nouă versiune ${ DRIVE_APP_NAME }. Reîncărcați pentru a continua căutarea."
@@ -5906,9 +5829,6 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Doar fișiere (fără fotografii, ${ DOCS_APP_NAME } sau ${ SHEETS_APP_NAME }) - până la 100 GiB total, 100.000 de fișiere și 50 GiB per fișier."
       ],
-      "Find out what can be migrated.": [
-        "Aflați ce poate fi migrat."
-      ],
       "Folder will not be uploaded": [
         "Folderul nu va fi încărcat."
       ],
@@ -6273,9 +6193,6 @@
       "No synced folders": [
         "Nu există foldere sincronizate"
       ],
-      "No users to display": [
-        "Nu există utilizatori de afișat."
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Niciuna din cheile încărcate nu este validă pentru criptare. Pentru a putea trimite mesaje către această adresă, încărcați o cheie validă sau dezactivați „Criptare mesaje”."
       ],
@@ -6607,9 +6524,6 @@
       "Select an uploaded file or folder and create a link to it.": [
         "Selectați un fișier sau folder încărcat și creați o legătură web la acesta."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Selectați exact ce doriți să migrați. Se va aplica tuturor utilizatorilor organizației."
-      ],
       "Select item": [
         "Selectare articol"
       ],
@@ -6717,9 +6631,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporar indisponibil din cauza solicitărilor mari. Reîncercați mai târziu."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Temporar indisponibil. Reveniți mai târziu."
-      ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Vă mulțumim că ați ales ${ BRAND_NAME } pentru a vă securiza organizația."
       ],
@@ -6811,12 +6722,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Acest cod unic poate fi folosit de către site-uri web și ISP (furnizorii de servicii de internet) pentru a vă corela locul și istoricul de navigare cu dispozitivul utilizat."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Acest utilizator nu poate fi migrat deoarece adresa sa de e-mail nu este disponibilă în ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Acest utilizator nu poate fi migrat din cauza unor incompatibilități de platformă."
-      ],
       "This will cancel any remaining downloads.": [
         "Aceasta va anula toate descărcările rămase."
       ],
@@ -6871,30 +6776,6 @@
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Pentru a vă ajuta să vă amintiți parola, vă vom solicita să o introduceți periodic. Vi se va solicita mai rar în timp."
       ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Pentru a importa evenimente, mai întâi creați un calendar în ${ CALENDAR_APP_NAME }. Aici vor apărea evenimentele după importare."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Pentru a migra acest utilizator, adăugați și verificați domeniul de e-mail în ${ domainNamesLink }."
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Pentru a migra acest utilizator, activați-i contul din ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Pentru a migra acest utilizator, activați-i contul la ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Pentru a migra acest utilizator, activați-i adresa la ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Pentru a migra acest utilizator, acesta trebuie să accepte invitația de a se alătura la ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Pentru a migra acest utilizator, dezarhivați-l din ${ provider.adminConsoleName }."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Pentru a migra acest utilizator, anulați-i suspendarea din ${ provider.adminConsoleName }."
-      ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pentru a vă resemna contactele, trebuie să verificăm fiecare contact în lista de chei de criptare disponibile în cont. Dacă nu se găsește nicio potrivire, contactul va fi resemnat cu cheia de criptare primară."
       ],
@@ -6942,6 +6823,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Din păcate, se pare că fișierul sau unele dintre datele sale nu pot fi decriptate."
+      ],
+      "UnionPay logo": [
+        "Logo UnionPay"
       ],
       "Unknown date": [
         "Dată necunoscută"
@@ -7143,9 +7027,6 @@
       ],
       "Yesterday": [
         "Ieri"
-      ],
-      "You": [
-        "Eu"
       ],
       "you": [
         "dvs."
@@ -7606,9 +7487,6 @@
       "Calendar": [
         "Calendar"
       ],
-      "Calendars": [
-        "Calendare"
-      ],
       "can edit": [
         "poate edita"
       ],
@@ -7766,9 +7644,6 @@
       ],
       "Email format": [
         "Format e-mail"
-      ],
-      "Emails": [
-        "Mesaje"
       ],
       "Emails (all messages)": [
         "Mesaje (toate mesajele)"
@@ -8300,6 +8175,9 @@
       ],
       "clearing your browser cache": [
         "golind bufferul navigatorului web"
+      ],
+      "Customer Support": [
+        "Asistența pentru clienți"
       ],
       "Enforcing 2FA for organizations": [
         "Impunere A2F pentru organizații"
@@ -10501,6 +10379,11 @@
         "Aveți nevoie de accesul la cheia organizației pentru a efectua această operație."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Cont bancar"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -10551,11 +10434,8 @@
       "Billing Country": [
         "Țara de facturare"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Oferta Born Private nu poate fi achiziționată dacă există un abonament activ."
-      ],
-      "Born Private requires a donation.": [
-        "Oferta Born Private necesită o donație."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Conturile „Born Private” nu pot fi achiziționate dacă există un abonament activ."
       ],
       "Buying credits requires a separate purchase.": [
         "Achiziționarea de credite necesită o tranzacție separată."
@@ -10643,6 +10523,9 @@
       ],
       "terms and conditions": [
         "termeni și condiții"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Inițiativa „Born Private” necesită o donație."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
@@ -10746,8 +10629,8 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Deja dețineți planul ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ],
-      "You already own Born Private.": [
-        "Dețineți deja oferta Born Private."
+      "You already own a Born Private account.": [
+        "Deja dețineți un cont „Born Private”."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
@@ -10755,8 +10638,8 @@
       "You will soon be redirected to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă nouă."
       ],
-      "Your account is too old for Born Private.": [
-        "Contul tău este prea vechi pentru oferta Born Private."
+      "Your account is too old for the Born Private initiative.": [
+        "Contul este prea vechi pentru inițiativa „Born Private”."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_WERO_BRAND_NAME } acceptă doar plăți în euro."
@@ -11040,17 +10923,11 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Căutare"
-      ],
       "Search for group name": [
         "Căutare nume grup"
       ],
       "Search for name or email": [
         "Căutare după nume sau e-mail"
-      ],
-      "Search for users or addresses": [
-        "Căutare utilizator sau adresă"
       ],
       "Search parent folder": [
         "Căutare în folder părinte"
@@ -11763,12 +11640,6 @@
     "Spotlight": {
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "O legătură web a acestui articol a fost salvată în Drive. O puteți accesa mai târziu în secțiunea „Partajate cu mine”."
-      ],
-      "Editor permissions": [
-        "Permisiuni de editor"
-      ],
-      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
-        "Editorii pot gestiona acum partajarea și pot invita alte persoane. Puteți dezactiva oricând această opțiune în setările de partajare."
       ]
     },
     "sso": {
@@ -12492,17 +12363,11 @@
       "Actions": [
         "Acțiuni"
       ],
-      "Activated": [
-        "Activată"
-      ],
       "Address": [
         "Adresa"
       ],
       "Created": [
         "Creat la"
-      ],
-      "Estimated size": [
-        "Mărime estimată"
       ],
       "Expires": [
         "Expirare"
@@ -12510,23 +12375,14 @@
       "Fingerprint": [
         "Amprenta"
       ],
-      "Migration status": [
-        "Stare migrare"
-      ],
       "Name": [
         "Nume"
-      ],
-      "Size": [
-        "Mărime"
       ],
       "Status": [
         "Stare"
       ],
       "Type": [
         "Tip"
-      ],
-      "User": [
-        "Utilizator"
       ]
     },
     "TableHeader": {
@@ -12751,9 +12607,6 @@
       "Check for malicious files": [
         "Verificare fișiere malițioase"
       ],
-      "Choose a provider": [
-        "Alegeți un furnizor"
-      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Revendicați-vă adresa ${ MAIL_APP_NAME }"
       ],
@@ -12765,9 +12618,6 @@
       ],
       "Computers": [
         "Calculatoare"
-      ],
-      "Configure migration": [
-        "Configurare migrare"
       ],
       "Confirmation required": [
         "Confirmare necesară"
@@ -12918,9 +12768,6 @@
       ],
       "Disconnected from Gmail": [
         "Deconectat de la Gmail"
-      ],
-      "Domain names": [
-        "Nume de domenii"
       ],
       "Downgrade account": [
         "Retrogradare cont"
@@ -13096,9 +12943,6 @@
       ],
       "Import started, but your storage won't be enough for this import": [
         "Importarea a început, dar spațiul de stocare nu va fi suficient"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Importați-vă datele în ${ BRAND_NAME }"
       ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importat de ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -13384,14 +13228,8 @@
       "Select contact group": [
         "Selectare grup contacte"
       ],
-      "Select data to import": [
-        "Selectați datele de importat"
-      ],
       "Select link expiration date": [
         "Selectați data expirării legăturii web"
-      ],
-      "Select users to migrate": [
-        "Selectați utilizatorii pentru migrare"
       ],
       "Set recovery methods": [
         "Setați metodele de recuperare"
@@ -13555,9 +13393,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
       ],
-      "Users and addresses": [
-        "Utilizatori și adrese"
-      ],
       "Verification failed": [
         "Verificarea a eșuat"
       ],
@@ -13629,9 +13464,6 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Bun venit la ${ DRIVE_APP_NAME }"
-      ],
-      "What are you migrating?": [
-        "Ce migrați?"
       ],
       "What can a VPN protect you from?": [
         "De ce te poate proteja un VPN?"
@@ -13735,9 +13567,6 @@
       "Customize import to reduce the number of labels": [
         "Modificare opțiuni de importare pentru a reduce numărul de etichete."
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Starea migrării datelor de la ${ providerName } la ${ BRAND_NAME }"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Semnarea digitală a mesajelor ajută la confirmarea că mesajele sunt trimise de către dvs."
       ],
@@ -13812,9 +13641,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Utilizatori care și-au accesat contul ${ BRAND_NAME }"
       ],
       "Version 6 OpenPGP key": [
         "Cheie PGP versiunea 6"
@@ -13894,6 +13720,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Acest utilizator primește drepturi de administrator la următoarea autentificare."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Treceți la un plan care suportă roluri de administrator."
       ],
