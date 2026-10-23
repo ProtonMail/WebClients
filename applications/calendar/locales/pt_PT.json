@@ -422,9 +422,6 @@
       "Get ${ planOrAppName }": [
         "Obtenha o ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Obtenha um endereço ${ BRAND_NAME } gratuito"
-      ],
       "Get in touch": [
         "Entrar em contacto"
       ],
@@ -1313,6 +1310,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "O espaço de armazenamento é partilhado por todos os serviços da ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Aproveite a oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "2 individual accounts": [
+        "2 contas individuais"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de armazenamento seguro"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de armazenamento: 40x o seu plano atual"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de armazenamento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de armazenamento seguro"
+      ],
+      "6 individual accounts": [
+        "6 contas individuais"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são calculados com base no preço mensal padrão. A sua subscrição será renovada à tarifa anual padrão quando o ciclo de faturação terminar."
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recupere as versões anteriores do ficheiro"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção reforçada contra ciberameaças"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Utilize o seu próprio domínio de e-mail"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "A maior promoção do ano"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "Last chance to save big": [
+        "Última oportunidade para poupar em grande"
+      ],
+      "Protect your entire tribe": [
+        "Proteja toda a sua tribo"
+      ],
+      "Protection for two in a single plan": [
+        "Proteção para dois num único plano"
       ]
     },
     "Billing cycle option": {
@@ -3425,9 +3522,6 @@
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Foi alocado todo o espaço de armazenamento. Reduza o armazenamento alocado a outros membros."
-      ],
       "Already a member of this calendar": [
         "Já é membro deste calendário."
       ],
@@ -3458,9 +3552,6 @@
       "Cannot export this contact": [
         "Não é possível exportar este contacto"
       ],
-      "Cannot verify the author of this file": [
-        "Não é possível verificar o autor deste ficheiro"
-      ],
       "Checkout expired, please try again": [
         "A finalização da compra expirou. Tente novamente."
       ],
@@ -3484,21 +3575,6 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "A pesquisa de conteúdo não pode ser ativada. Reinicie a aplicação, ou limpe os dados."
-      ],
-      "Copying item to a non-folder is not allowed": [
-        "Não é permitido copiar um item para um local que não seja uma pasta"
-      ],
-      "Could not load sharing details": [
-        "Não foi possível carregar os detalhes da partilha"
-      ],
-      "Could not unlock the parent folder": [
-        "Não foi possível desbloquear a pasta principal"
-      ],
-      "Could not unlock this item": [
-        "Não foi possível desbloquear este item"
-      ],
-      "Creating folders in non-folders is not allowed": [
-        "Não é permitido criar pastas dentro de elementos que não sejam pastas"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Erro de desencriptação: este evento não pôde ser desencriptado."
@@ -3559,9 +3635,6 @@
       "Failed to create meeting": [
         "Erro ao criar a reunião"
       ],
-      "Failed to decrypt bookmark password: ${ message }": [
-        "Não foi possível descodificar a palavra-passe do marcador: ${ message }"
-      ],
       "Failed to decrypt session key": [
         "Falha ao desencriptar a chave de sessão"
       ],
@@ -3583,17 +3656,11 @@
       "Failed to update settings": [
         "Falha ao atualizar definições"
       ],
-      "File has no revision": [
-        "O ficheiro não tem nenhuma revisão"
-      ],
       "First name is too long": [
         "O primeiro nome é muito longo"
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode estar vazio."
-      ],
-      "Image preview not found": [
-        "Não foi encontrada a pré-visualização da imagem"
       ],
       "Image upload failed": [
         "Erro ao enviar a imagem"
@@ -3640,9 +3707,6 @@
       "Invalid public key file": [
         "O ficheiro da chave pública não é válido."
       ],
-      "Invalid URL": [
-        "O URL não é válido."
-      ],
       "Invalid VAT number": [
         "NIF inválido"
       ],
@@ -3664,9 +3728,6 @@
       "Last name is too long": [
         "O último nome é muito longo."
       ],
-      "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "O link público antigo não pode ser atualizado. Por favor, crie um novo link público."
-      ],
       "Location is required": [
         "A localização é obrigatória"
       ],
@@ -3674,18 +3735,11 @@
         "Combine pelo menos ${ calendarsToFixCount } calendário com um calendário ${ BRAND_NAME } existente.",
         "Combine pelo menos ${ calendarsToFixCount } calendários com calendários ${ BRAND_NAME } existentes"
       ],
-      "Missing inviter email": [
-        "Falta o e-mail do convidante"
-      ],
       "Missing key packet": [
         "Pacote chave em falta."
       ],
       "Missing signature": [
         "Assinatura em falta"
-      ],
-      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
-        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } carácter",
-        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } caracteres"
       ],
       "Name required": [
         "Nome obrigatório"
@@ -3708,9 +3762,6 @@
       "No external key retrieved for user is valid for sending": [
         "Nenhuma das chaves externas recuperadas para o utilizador é válida para o envio."
       ],
-      "No file data was received. Please try again.": [
-        "Não foram recebidos dados do ficheiro. Por favor, tente novamente."
-      ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
       ],
@@ -3731,9 +3782,6 @@
         "Um dos grupos não tem contactos: ${ noContactGroupList }",
         "Alguns grupos não têm contactos: ${ noContactGroupList } "
       ],
-      "Operation aborted": [
-        "Operação cancelada"
-      ],
       "Organization key is not decrypted": [
         "A chave da organização não está encriptada."
       ],
@@ -3742,9 +3790,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "A chave da organização deve ser ativada para criar utilizadores não privados."
-      ],
-      "Part of the file appears to be corrupted": [
-        "Parte do ficheiro parece estar corrompida"
       ],
       "Password is required": [
         "A palavra-passe é obrigatória."
@@ -3773,17 +3818,8 @@
       "Please complete the billing details": [
         "Preencha os dados de faturação"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Configure um domínio personalizado antes de adicionar endereços."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Defina um domínio personalizado antes de adicionar utilizadores à sua organização."
-      ],
       "Please create an address first.": [
         "Primeiro crie um endereço."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Ative o suporte multi-utilizador antes de adicionar utilizadores à sua organização."
       ],
       "Please enter a valid postal code": [
         "Introduza um código postal válido"
@@ -3816,9 +3852,6 @@
       "Please select billing state": [
         "Selecionar o estado de faturação"
       ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Subscreva um plano empresarial com mais de 1 utilizador para gerir vários utilizadores."
-      ],
       "Port is required": [
         "A porta é obrigatória."
       ],
@@ -3850,9 +3883,6 @@
       "Self invitation not allowed": [
         "Não é possível convidar-se a si próprio"
       ],
-      "Signature is missing": [
-        "Assinatura em falta."
-      ],
       "Signature not verified": [
         "Assinatura não verificada"
       ],
@@ -3879,9 +3909,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas etiquetas excedem o limite máximo de carateres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
-      ],
-      "Something went wrong": [
-        "Algo correu mal"
       ],
       "Something went wrong while fetching available domains": [
         "Ocorreu um erro ao obter os domínios disponíveis"
@@ -3949,17 +3976,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } carateres."
       ],
-      "This file has no version available to download": [
-        "Este ficheiro não tem nenhuma versão disponível para descarregar"
-      ],
       "This folder name is not available. Please choose a different name.": [
         "Este nome de pasta não está disponível. Escolha um nome diferente."
-      ],
-      "This item is no longer shared": [
-        "Este item já não está partilhado"
-      ],
-      "This item is not shared": [
-        "Este item não é partilhado"
       ],
       "This label name is not available. Please choose a different name.": [
         "Este nome de etiqueta não está disponível. Escolha um nome diferente."
@@ -4000,9 +4018,6 @@
       "VAT number must start with ${ prefixes }": [
         "O número de IVA deve começar por ${ prefixes }"
       ],
-      "Verification keys are not available": [
-        "As chaves de verificação não estão disponíveis"
-      ],
       "We couldn’t send a verification code using this method.": [
         "Não conseguimos enviar um código de verificação através deste método."
       ],
@@ -4025,20 +4040,11 @@
       "You cannot enter the organizer's email": [
         "Não é possível introduzir o e-mail do organizador"
       ],
-      "You do not have access to this item": [
-        "Não tem acesso a este artigo"
-      ],
       "You have reached the maximum number of calendars.": [
         "Atingiu o número máximo de calendários."
       ],
       "You have reached the number of contacts limit for your account": [
         "Atingiu o limite do número de contactos da sua conta"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Utilizou todos os endereços do seu plano. Atualize o seu plano para adicionar um novo endereço ou desative um endereço na sua conta."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Usou todos os utilizadores do seu plano. Subscreva um plano superior para adicionar um utilizador."
       ],
       "You must set a name": [
         "Tem de definir um nome"
@@ -4926,14 +4932,6 @@
         "Selecione ${ boldExport } para exportar o calendário no formato de ficheiro ICS."
       ]
     },
-    "Import status": {
-      "In progress": [
-        "Em curso"
-      ],
-      "Migrated": [
-        "Migrado"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos não serão importados. Clique para detalhes"
@@ -4968,9 +4966,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de encriptação da ${ BRAND_NAME } significa que ninguém pode aceder à sua palavra-passe - nem mesmo nós."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "O ${ CALENDAR_APP_NAME } requer um endereço ${ BRAND_NAME } para a sincronização segura de eventos e para a encriptação. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
@@ -5066,10 +5061,6 @@
       ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
-      ],
-      "${ total } user found": [
-        "${ total } utilizador encontrado",
-        "${ total } utilizadores encontrados"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado.",
@@ -5981,9 +5972,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporariamente indisponível devido à elevada procura. Tente novamente mais tarde."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Temporariamente indisponível. Tente mais tarde."
-      ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Obrigado por escolher a ${ BRAND_NAME } para proteger a sua organização."
       ],
@@ -6085,9 +6073,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Para ajudar a lembrar-se da sua palavra-passe, pedimos que a introduza periodicamente. Aos poucos vamos pedindo cada vez menos."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Para importar eventos, crie primeiro um calendário em ${ CALENDAR_APP_NAME }. É aqui que os eventos vão aparecer depois da importação."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Para assinar novamente os contactos, temos de os verificar todos contra a lista de chaves de encriptação disponíveis na conta. Se não houver correspondências, o contacto será assinado novamente com a chave principal."
@@ -6739,9 +6724,6 @@
       "Calendar": [
         "Calendário"
       ],
-      "Calendars": [
-        "Calendários"
-      ],
       "Card details": [
         "Detalhes do cartão"
       ],
@@ -6846,9 +6828,6 @@
       ],
       "Email format": [
         "Formato do e-mail"
-      ],
-      "Emails": [
-        "E-mails"
       ],
       "Emails (all messages)": [
         "Emails (todas as mensagens)"
@@ -9678,9 +9657,6 @@
       "San Francisco": [
         "São Francisco"
       ],
-      "Search": [
-        "Pesquisar"
-      ],
       "Search events": [
         "Procurar eventos"
       ],
@@ -9689,9 +9665,6 @@
       ],
       "Search for name or email": [
         "Pesquisar por nome ou e-mail"
-      ],
-      "Search for users or addresses": [
-        "Pesquisar por utilizadores ou endereços"
       ],
       "Search parent folder": [
         "Pesquisar pasta inicial"
@@ -9783,11 +9756,6 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Progresso: ${ combinedProgress }%"
-      ]
-    },
-    "Property": {
-      "attributes": [
-        "atributos"
       ]
     },
     "Property type": {
@@ -11216,9 +11184,6 @@
       "Name": [
         "Nome"
       ],
-      "Size": [
-        "Tamanho"
-      ],
       "Status": [
         "Estado"
       ],
@@ -11442,9 +11407,6 @@
       "Change password": [
         "Alterar a palavra-passe"
       ],
-      "Choose a provider": [
-        "Escolha um fornecedor"
-      ],
       "Choose a time": [
         "Escolha uma hora"
       ],
@@ -11560,9 +11522,6 @@
       ],
       "Does not repeat": [
         "Não se repete"
-      ],
-      "Domain names": [
-        "Nomes de domínio"
       ],
       "Downgrade account": [
         "Optar por um plano inferior"
@@ -11705,9 +11664,6 @@
       ],
       "Import groups": [
         "Importar grupos"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Importar os seus dados para ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Informação exposta na violação"
@@ -11874,9 +11830,6 @@
       "Select contact group": [
         "Seleccionar grupo de contactos"
       ],
-      "Select data to import": [
-        "Selecionar dados para importar"
-      ],
       "Select event end date": [
         "Selecione a data final do evento"
       ],
@@ -12011,9 +11964,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Use o ${ VPN_SHORT_APP_NAME } para a privacidade dos dados"
-      ],
-      "Users and addresses": [
-        "Utilizadores e endereços"
       ],
       "Verification failed": [
         "Erro na verificação"
