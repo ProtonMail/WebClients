@@ -1515,7 +1515,9 @@
         "Vjeruj"
       ],
       "Trust key": [
-        "Ključ povjerenja"
+        "Vjeruj ključu",
+        "Vjeruj ključevima",
+        "Vjeruj ključevima"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -7576,9 +7578,7 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku",
-        "Umetni slike",
-        "Umetni slike"
+        "Umetni sliku"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -17013,6 +17013,106 @@
       ],
       "Passcode:": [
         "Pristupni kôd:"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Crni petak"
+      ],
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mjesec"
+      ],
+      "15 GB storage": [
+        "15 GB prostora za pohranu"
+      ],
+      "2 individual accounts": [
+        "2 pojedinačna korisnička računa"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sigurnog prostora za pohranu"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB prostora za pohranu: 40x više od trenutnog plana"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sigurnog prostora za pohranu"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sigurnog prostora za pohranu"
+      ],
+      "6 individual accounts": [
+        "6 pojedinačnih korisničkih računa"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ugrađeni autentifikator 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti se temelje na standardnoj mjesečnoj cijeni. Pretplata će se obnoviti po standardnoj godišnjoj cijeni kada završi ciklus naplate."
+      ],
+      "Online document editor": [
+        "Uređivač dokumenata na mreži"
+      ],
+      "Recover previous file versions": [
+        "Oporavite prethodne verzije datoteka"
+      ],
+      "Stronger protection against cyber threats": [
+        "Jača zaštita od kibernetičkih prijetnji"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neograničene mape, oznake i filtri"
+      ],
+      "Use your own email domain": [
+        "Koristite vlastitu domenu e-pošte"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Najveće sniženje godine"
+      ],
+      "Black Friday": [
+        "Crni petak"
+      ],
+      "for 12 months": [
+        "za 12 mjeseci"
+      ],
+      "Last chance to save big": [
+        "Posljednja prilika za velike uštede"
+      ],
+      "Protect your entire tribe": [
+        "Zaštitite cijelu svoju obitelj"
+      ],
+      "Protection for two in a single plan": [
+        "Zaštita za dvoje u jednom planu"
       ]
     }
   }
