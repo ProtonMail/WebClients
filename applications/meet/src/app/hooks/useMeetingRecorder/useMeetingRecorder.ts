@@ -20,6 +20,7 @@ import {
 } from '@proton/meet/store/slices/recordingStatusSlice';
 import { recordingFailed, recordingProcessing, recordingReady } from '@proton/meet/store/slices/recordingsSlice';
 import { selectUserId } from '@proton/meet/store/slices/userSlice';
+import { TimeoutError } from '@proton/meet/utils/withTimeout';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -106,6 +107,7 @@ export const useMeetingRecorder = () => {
         sessionRef.current = null;
         lastSessionRef.current = session;
         await session.cleanup();
+        void publishRecordingStatus(RecordingStatus.Stopped);
         markRecordingStopped();
     };
 
@@ -180,11 +182,17 @@ export const useMeetingRecorder = () => {
             // Sending telemetry before resetting recording duration counter.
             sendTelemetryRecordingStats(recording?.size, session.getStopTelemetry());
 
-            void publishRecordingStatus(RecordingStatus.Stopped);
             markRecordingStopped();
 
             return recording;
         } catch (error) {
+            if (error instanceof TimeoutError) {
+                reportMeetError('MeetingRecording Error: Stop recording timed out', {
+                    context: { error: error.message, ...session.getDiagnostics(), ...session.getStopTelemetry() },
+                });
+                throw error;
+            }
+
             reportMeetError('MeetingRecording Error: Failed to stop recording', {
                 context: {
                     error: error instanceof Error ? error.message : String(error),
