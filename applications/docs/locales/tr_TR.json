@@ -390,9 +390,6 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName } edinin"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Ücretsiz bir ${ BRAND_NAME } adresi alın"
-      ],
       "Get the apps": [
         "Uygulamaları edinin"
       ],
@@ -518,9 +515,6 @@
       ],
       "Merge contacts": [
         "Kişileri birleştir"
-      ],
-      "Migrate": [
-        "Aktar"
       ],
       "More actions": [
         "Diğer işlemler"
@@ -1157,10 +1151,10 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Get the deal": [
-        "Tekliften yararlanın"
+        "Fırsatı yakala"
       ]
     },
     "bfcampaign2026: Info": {
@@ -1177,7 +1171,7 @@
         "2 TB güvenli depolama alanı"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
+        "200 GB depolama alanı: Mevcut tarifenizin 40 katı"
       ],
       "3 TB of secure storage": [
         "3 TB güvenli depolama alanı"
@@ -1189,25 +1183,25 @@
         "6 bireysel hesap"
       ],
       "Built-in 2FA authenticator": [
-        "Hazır iki adımlı kimlik doğrulayıcı"
+        "Yerleşik iki faktörlü kimlik doğrulayıcı"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
+        "İndirimler, standart aylık fiyatlandırmaya göre hesaplanmıştır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
       ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
       "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleme"
+        "Önceki dosya sürümlerini kurtarın"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
       ],
       "Unlimited folders, labels, and filters": [
-        "Sınırsız sayıda klasör, etiket ve süzgeç"
+        "Sınırsız sayıda klasör, etiket ve filtre"
       ],
       "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanma"
+        "Kendi e-posta etki alanınızı kullanın"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -1240,13 +1234,13 @@
         "Yılın en büyük indirimi"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "for 12 months": [
         "12 aylık"
       ],
       "Last chance to save big": [
-        "Büyük kazanç için son şans"
+        "Büyük tasarruf için son fırsat"
       ],
       "Protect your entire tribe": [
         "Kabilenizi koruyun"
@@ -2898,14 +2892,8 @@
       "Address could not be added.": [
         "Adres eklenemedi."
       ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Bu adres kuruluşunuz dışındaki bir kullanıcı tarafından kullanılıyor. Bu sorunu çözmek için lütfen müşteri destek ekibimiz ile görüşün"
-      ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Tüm depolama alanı dağıtıldı. Lütfen diğer kullanıcılara ayrılmış depolama alanlarını azaltın."
       ],
       "Already a member of this share": [
         "Zaten bu paylaşımın bir üyesi"
@@ -3185,9 +3173,6 @@
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Eski herkese açık bağlantı güncellenemedi. Lütfen yeni bir herkese açık bağlantı oluşturun."
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Üye adresi bulunamadı. Bu sorunu çözmek için müşteri destek ekibimiz ile görüşün"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin"
@@ -3197,12 +3182,6 @@
       ],
       "Missing key packet": [
         "Anahtar paketi eksik"
-      ],
-      "Missing organization private key": [
-        "Kuruluşun kişisel anahtarı eksik"
-      ],
-      "Missing organization public key": [
-        "Kuruluşun herkese açık anahtarı bulunamadı"
       ],
       "Missing signature": [
         "İmza eksik"
@@ -3264,12 +3243,6 @@
       "Operation failed, try again later": [
         "İşlem tamamlanamadı. Bir süre sonra yeniden deneyin"
       ],
-      "Organization does not have enough seats available": [
-        "Kuruluşun yeterli koltuk sayısı yok"
-      ],
-      "Organization does not have enough storage available": [
-        "Kuruluşun yeterli depolama alanı yok"
-      ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
@@ -3293,15 +3266,6 @@
       ],
       "Photo not found": [
         "Fotoğraf bulunamadı"
-      ],
-      "Please configure a custom domain before adding addresses.": [
-        "Lütfen adresleri eklemeden önce bir özel etki alanı yapılandırın."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Lütfen kuruluşunuza kullanıcılar eklemeden önce bir özel etki alanı ayarlayın."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Lütfen kuruluşunuza kullanıcılar eklemeden önce çok kullanıcı desteğini açın."
       ],
       "Please enter a valid postal code": [
         "Lütfen geçerli bir posta kodu yazın"
@@ -3327,9 +3291,6 @@
       ],
       "Please select a state": [
         "Lütfen bir il seçin"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
       ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
@@ -3593,12 +3554,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Hesabınızın kişi sayısı sınırına ulaştınız"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek veya hesabınızdaki bir adresi kullanımdan kaldırmak için lütfen tarifenizi yükseltin."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
@@ -4009,29 +3964,6 @@
         "Terabayt"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Kullanıma alındı"
-      ],
-      "All": [
-        "Tümü"
-      ],
-      "Errors": [
-        "Hatalar"
-      ],
-      "In progress": [
-        "İşleniyor"
-      ],
-      "Migrated": [
-        "Aktarıldı"
-      ],
-      "Not activated": [
-        "Kullanıma alınmamış"
-      ],
-      "Pending": [
-        "Bekliyor"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } güncellendi"
@@ -4405,20 +4337,6 @@
         "Takvimi ICS olarak dışa aktarmak için ${ boldExport } seçin."
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Sorunlar çıktı"
-      ],
-      "In progress": [
-        "İşlem sürüyor"
-      ],
-      "Migrated": [
-        "Aktarıldı"
-      ],
-      "Pending": [
-        "Bekliyor"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
@@ -4456,9 +4374,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } etkinlikleri güvenli olarak eşitlemek ve şifrelemek için bir ${ BRAND_NAME } adresine gerek duyar. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
@@ -4537,15 +4452,15 @@
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } seçilmiş",
+        "${ selection.selectedIds.length } seçilmiş"
+      ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Erişiminizi kaybetmemek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Deneme sürenizin bitmesine ${ timeRemaining } kaldı. Aboneliğinizi sürdürmek için ${ addPaymentMethodLink }. ${ learnMoreLink }"
-      ],
-      "${ total } user found": [
-        "${ total } kullanıcı bulundu",
-        "${ total } kullanıcı bulundu"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kişi güncellendi.",
@@ -4869,9 +4784,6 @@
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Yalnızca dosyalar (fotoğraf dışında, ${ DOCS_APP_NAME } veya ${ SHEETS_APP_NAME }) – toplamda en fazla 100 GB, 100.000 dosya ve dosya başına 50 GB"
       ],
-      "Find out what can be migrated.": [
-        "Nelerin aktarılabileceğini öğrenin."
-      ],
       "Folder \"${ link.name }\" was deleted during download": [
         "\"${ link.name }\" klasörü indirme sırasında silindi"
       ],
@@ -5084,9 +4996,6 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
-      "No users to display": [
-        "Görüntülenebilecek bir kullanıcı yok"
-      ],
       "No version history available": [
         "Herhangi bir sürüm geçmişi kaydı yok"
       ],
@@ -5241,9 +5150,6 @@
       "Select a folder to move to.": [
         "Taşınacak bir klasör seçin."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Tam olarak neyi aktarmak istediğinizi seçin. Kuruluşun tüm kullanıcılarına uygulanır."
-      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
       ],
@@ -5320,9 +5226,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Yoğun istek nedeniyle geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Belgedeki düzenlemelerin sahibi doğrulanamadı. Bu belgeyi doğrulanmış olarak işaretlemek ister misiniz? Daha sonra karar vermek için Yok say üzerine tıklayın."
       ],
@@ -5383,12 +5286,6 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Bu benzersiz kod, siteler ve internet hizmeti sağlayıcıları tarafından konumunuzu ve tarama geçmişinizi aygıtınızla ilişkilendirmek için kullanılabilir."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Bu kullanıcı, ${ BRAND_NAME } üzerinde e-posta adresi bulunmadığı için aktarılamaz."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Bu kullanıcı platform uyuşmazlıkları nedeniyle aktarılamaz."
-      ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
@@ -5400,30 +5297,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Parolanızı unutmamanız için belirli aralıklarla parolanızı yazmanızı isteyeceğiz. Zamanla bunu daha az isteyeceğiz."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Etkinlikleri içe aktarmak için önce ${ CALENDAR_APP_NAME } içinde bir takvim oluşturun. Etkinlikleriniz içe aktarma işleminden sonra bu takvimde görüntülenir."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Bu kullanıcıyı aktarabilmek için ${ domainNamesLink } altındaki e-posta etki alanını ekleyin ve doğrulayın."
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını kullanıma alın."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını kullanıma alın."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından adresini kullanıma alın."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Bu kullanıcıyı aktarmak için kullanıcının ${ BRAND_NAME } üzerine katılma davetini kabul etmesi gerekir."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Bu kullanıcıyı aktarabilmek için onu ${ provider.adminConsoleName } üzerindeki arşivden çıkarın."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden kullanıcının askıya alınma durumunu kaldırın."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
@@ -5535,9 +5408,6 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
-      ],
-      "You": [
-        "Siz"
       ],
       "you": [
         "siz"
@@ -5835,9 +5705,6 @@
       "Calendar": [
         "Takvim"
       ],
-      "Calendars": [
-        "Takvimler"
-      ],
       "can edit": [
         "düzenleyebilir"
       ],
@@ -5921,9 +5788,6 @@
       ],
       "Email format": [
         "E-posta biçimi"
-      ],
-      "Emails": [
-        "E-postalar"
       ],
       "Emails (all messages)": [
         "E-postalar (tüm iletiler)"
@@ -6101,6 +5965,12 @@
       ],
       "Reveal password": [
         "Parolayı görüntüle"
+      ],
+      "Select ${ document.name }": [
+        "${ document.name } belgesini seç"
+      ],
+      "Select all": [
+        "Tümünü seç"
       ],
       "Set a password to limit access via link": [
         "Bağlantı üzerinden erişimi sınırlamak için bir parola belirleyin"
@@ -7459,6 +7329,10 @@
       "\"Document deleted permanently": [
         "\"Belge kalıcı olarak silindi"
       ],
+      "${ count } item could not be moved to trash": [
+        "${ count } öge çöpe atılamadı",
+        "${ count } öge çöpe atılamadı"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } ögenin şifresi çözülemedi",
         "${ count } ögenin şifresi çözülemedi"
@@ -7962,11 +7836,8 @@
       "An organization is required for this plan.": [
         "Bu tarife için bir kuruluş gereklidir."
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private etkin bir abonelik ile satın alınamaz."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private için bir bağış yapılması gereklidir."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Etkin bir abonelik varken Born Private hesapları satın alınamaz."
       ],
       "Buying credits requires a separate purchase.": [
         "Kredi satın almak için ayrı bir satın alma gerekir."
@@ -7997,6 +7868,9 @@
       ],
       "terms and conditions": [
         "hükümler ve koşullar"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private girişimine bağış yapılması gerekir."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir.",
@@ -8067,11 +7941,11 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Zaten ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } sahibisiniz."
       ],
-      "You already own Born Private.": [
-        "Zaten Born Private kapsamındasınız."
+      "You already own a Born Private account.": [
+        "Zaten bir Born Private hesabınız var."
       ],
-      "Your account is too old for Born Private.": [
-        "Hesabınız Born Private için çok eski."
+      "Your account is too old for the Born Private initiative.": [
+        "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ]
     },
     "PGP key encryption warning": {
@@ -8171,17 +8045,11 @@
       "Please select the main reason": [
         "Lütfen temel nedeni seçin"
       ],
-      "Search": [
-        "Arama"
-      ],
       "Search for group name": [
         "Grup adı ile arayın"
       ],
       "Search for name or email": [
         "Ad veya e-posta adresi ile arayın"
-      ],
-      "Search for users or addresses": [
-        "Kullanıcıları veya adresleri ara"
       ],
       "Search parent folder": [
         "Üst klasörü ara"
@@ -8929,12 +8797,6 @@
       "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
         "Bu ögenin bağlantısı Drive depolama alanınıza kaydedildi. Daha sonra 'Benimle paylaşılan' bölümünden erişebilirsiniz."
       ],
-      "Editor permissions": [
-        "Düzenleyici izinleri"
-      ],
-      "Editors can now manage sharing and invite others. You can turn it off anytime in Share settings.": [
-        "Düzenleyiciler artık paylaşımları yönetebilir ve başkalarını davet edebilir. Bu özelliği paylaşım ayarlarından istediğiniz zaman kapatabilirsiniz."
-      ],
       "To edit this document, create a copy that you can modify.": [
         "Bu belgeyi düzenlemek için, üzerinde değişiklik yapabileceğiniz bir kopya oluşturun."
       ]
@@ -9260,17 +9122,11 @@
       "Actions": [
         "İşlemler"
       ],
-      "Activated": [
-        "Kullanıma alındı"
-      ],
       "Address": [
         "Adres"
       ],
       "Created": [
         "Oluşturulma"
-      ],
-      "Estimated size": [
-        "Öngörülen boyut"
       ],
       "Expires": [
         "Geçerlilik sonu"
@@ -9278,23 +9134,14 @@
       "Fingerprint": [
         "Parmak izi"
       ],
-      "Migration status": [
-        "Aktarım durumu"
-      ],
       "Name": [
         "Ad"
-      ],
-      "Size": [
-        "Boyut"
       ],
       "Status": [
         "Durum"
       ],
       "Type": [
         "Tür"
-      ],
-      "User": [
-        "Kullanıcı"
       ]
     },
     "TableHeader": {
@@ -9407,9 +9254,6 @@
       "Change password": [
         "Parolayı değiştir"
       ],
-      "Choose a provider": [
-        "Bir hizmet sağlayıcı seçin"
-      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresinizi alın"
       ],
@@ -9421,9 +9265,6 @@
       ],
       "Computers": [
         "Bilgisayarlar"
-      ],
-      "Configure migration": [
-        "Aktarımı yapılandır"
       ],
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
@@ -9532,9 +9373,6 @@
       "Document verification failed": [
         "Belge doğrulanamadı"
       ],
-      "Domain names": [
-        "Etki alanları"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
       ],
@@ -9634,9 +9472,6 @@
       ],
       "Import groups": [
         "Grupları içe aktar"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Verilerinizi ${ BRAND_NAME } içine aktarın"
       ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"
@@ -9779,14 +9614,8 @@
       "Select contact group": [
         "Kişi grubunu seç"
       ],
-      "Select data to import": [
-        "İçe aktarılacak verileri seçin"
-      ],
       "Select link expiration date": [
         "Bağlantının geçerlilik sonu tarihini seçin"
-      ],
-      "Select users to migrate": [
-        "Aktarılacak kullanıcıları seçin"
       ],
       "Set recovery methods": [
         "Kurtarma yöntemlerini ayarlayın"
@@ -9884,9 +9713,6 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Veri gizliliği için ${ VPN_SHORT_APP_NAME } kullanın"
       ],
-      "Users and addresses": [
-        "Kullanıcılar ve adresler"
-      ],
       "Verify your password": [
         "Parolanızı doğrulayın"
       ],
@@ -9901,9 +9727,6 @@
       ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business uygulamasına hoş geldiniz"
-      ],
-      "What are you migrating?": [
-        "Neyi aktarıyorsunuz?"
       ],
       "What can a VPN protect you from?": [
         "Bir VPN sizi nelerden koruyabilir?"
@@ -9977,9 +9800,6 @@
       "Customize import to reduce the number of labels": [
         "Etiket sayısını azaltmak için içe aktarmayı özelleştirin"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "${ providerName } üzerinden ${ BRAND_NAME } üzerine veri aktarma durumu"
-      ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "E-postaları dijital olarak imzalamak, iletilerin sizin tarafınızdan gönderildiğinin doğrulanmasını sağlar"
       ],
@@ -10042,9 +9862,6 @@
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } hesaplarına erişen kullanıcılar"
       ],
       "Version 6 OpenPGP key": [
         "6. sürüm OpenPGP anahtarı"
@@ -10114,6 +9931,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Bu kullanıcı bir sonraki oturum açmasında yönetici yetkilerini alacak."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Yönetici rollerini kullanabilmek için bu rolleri destekleyen bir tarifeye yükseltin."
       ],
