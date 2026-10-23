@@ -425,9 +425,6 @@
       "Get ${ planOrAppName }": [
         "Nabavite ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Dobijte besplatnu adresu za ${ BRAND_NAME }"
-      ],
       "Get in touch": [
         "Kontaktirajte nas"
       ],
@@ -1328,6 +1325,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Prostor za pohranu dijeli se između svih ${ BRAND_NAME } usluga."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Crni petak"
+      ],
+      "Get the deal": [
+        "Ugrabite ponudu"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mjesec"
+      ],
+      "15 GB storage": [
+        "15 GB prostora za pohranu"
+      ],
+      "2 individual accounts": [
+        "2 pojedinačna korisnička računa"
+      ],
+      "2 TB of secure storage": [
+        "2 TB sigurnog prostora za pohranu"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB prostora za pohranu: 40x više od trenutnog plana"
+      ],
+      "3 TB of secure storage": [
+        "3 TB sigurnog prostora za pohranu"
+      ],
+      "500 GB of secure storage": [
+        "500 GB sigurnog prostora za pohranu"
+      ],
+      "6 individual accounts": [
+        "6 pojedinačnih korisničkih računa"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ugrađeni autentifikator 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Popusti se temelje na standardnoj mjesečnoj cijeni. Pretplata će se obnoviti po standardnoj godišnjoj cijeni kada završi ciklus naplate."
+      ],
+      "Online document editor": [
+        "Uređivač dokumenata na mreži"
+      ],
+      "Recover previous file versions": [
+        "Oporavite prethodne verzije datoteka"
+      ],
+      "Stronger protection against cyber threats": [
+        "Jača zaštita od kibernetičkih prijetnji"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neograničene mape, oznake i filtri"
+      ],
+      "Use your own email domain": [
+        "Koristite vlastitu domenu e-pošte"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Najveće sniženje godine"
+      ],
+      "Black Friday": [
+        "Crni petak"
+      ],
+      "for 12 months": [
+        "za 12 mjeseci"
+      ],
+      "Last chance to save big": [
+        "Posljednja prilika za velike uštede"
+      ],
+      "Protect your entire tribe": [
+        "Zaštitite cijelu svoju obitelj"
+      ],
+      "Protection for two in a single plan": [
+        "Zaštita za dvoje u jednom planu"
       ]
     },
     "Billing cycle option": {
@@ -3457,9 +3554,6 @@
       "Address primary private key not found": [
         "Primarni privatni ključ adrese nije pronađen"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Sav prostor za pohranu je dodijeljen. Molimo smanjite prostor za pohranu dodijeljen ostalim korisnicima."
-      ],
       "Already a member of this calendar": [
         "Već je član ovog kalendara"
       ],
@@ -3647,9 +3741,6 @@
       "Invalid public key file": [
         "Nevažeća datoteka javnog ključa"
       ],
-      "Invalid URL": [
-        "Nevažeći URL"
-      ],
       "Invalid VAT number": [
         "Nevažeći PDV broj"
       ],
@@ -3764,17 +3855,8 @@
       "Please complete the billing details": [
         "Molimo ispunite pojedinosti o naplati"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Molimo, konfigurirajte prilagođenu domenu prije dodavanja adresa."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Konfigurirajte prilagođenu domenu prije dodavanja korisnika u vašu organizaciju."
-      ],
       "Please create an address first.": [
         "Prvo stvorite adresu."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
       ],
       "Please enter a valid postal code": [
         "Molim vas, unesite valjani poštanski kôd"
@@ -3807,9 +3889,6 @@
       ],
       "Please select billing state": [
         "Molim vas, odaberite saveznu državu za naplatu"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Molimo nadogradite na poslovnu pretplatu s više od jednog korisnika kako biste upravljali višestrukim korisnicima."
       ],
       "Port is required": [
         "Port je obavezan"
@@ -3869,9 +3948,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
-      ],
-      "Something went wrong": [
-        "Nešto je pošlo po zlu"
       ],
       "Something went wrong while fetching available domains": [
         "Došlo je do pogreške prilikom dohvaćanja dostupnih domena"
@@ -4009,12 +4085,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Dosegnuli ste ograničenje broja kontakata za svoj korisnički račun"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Iskoristili ste sve adrese u svom planu. Nadogradite svoj plan kako biste dodali novu adresu ili onemogućite adresu u svom korisničkom računu."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Iskoristili ste sve slobodne korisnike u Vašem planu. Molimo Vas da nadogradite Vaš plan da biste dodali novog korisnika."
       ],
       "You must set a name": [
         "Morate postaviti naziv"
@@ -4919,14 +4989,6 @@
         "Odaberite ${ boldExport } za izvoz kalendara kao ICS datoteke."
       ]
     },
-    "Import status": {
-      "In progress": [
-        "U tijeku"
-      ],
-      "Migrated": [
-        "Migrirano"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -4963,9 +5025,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }ova tehnologija šifriranja omogućuje da nitko ne može pristupiti Vašoj lozinki - čak ni mi."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } zahtijeva ${ BRAND_NAME } adresu za sigurnu sinkronizaciju događaja i šifriranje. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novi kalendar",
@@ -5072,11 +5131,6 @@
       ],
       "${ storage } storage": [
         "${ storage } pohrana"
-      ],
-      "${ total } user found": [
-        "Pronađen je ${ total } korisnik",
-        "Pronađena su ${ total } korisnika",
-        "Pronađeno je ${ total } korisnika"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt je uspješno ažuriran.",
@@ -6001,9 +6055,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Privremeno nedostupno zbog visoke potražnje. Molimo pokušajte ponovno kasnije."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Privremeno nedostupno. Provjerite ponovno kasnije."
-      ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Hvala vam što ste odabrali ${ BRAND_NAME } za zaštitu svoje organizacije."
       ],
@@ -6105,9 +6156,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Kako bismo vam pomogli da zapamtite svoju lozinku, tražit ćemo od vas da je povremeno unesete. S vremenom ćemo vas tražiti rjeđe."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Za uvoz događaja najprije stvorite kalendar u aplikaciji ${ CALENDAR_APP_NAME }. Ovdje će se događaji pojaviti nakon uvoza."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Da bismo ponovno potpisali svoje kontakte, moramo svaki kontakt provjeriti s popisom ključeva za šifriranje dostupnih na vašem računu. Ako se ne pronađe podudaranje, vaš će se kontakt ponovo potpisati s primarnim ključem šifriranja."
@@ -6768,9 +6816,6 @@
       "Calendar": [
         "Kalendar"
       ],
-      "Calendars": [
-        "Kalendari"
-      ],
       "Card details": [
         "Detalji kartice"
       ],
@@ -6875,9 +6920,6 @@
       ],
       "Email format": [
         "Format e-pošte"
-      ],
-      "Emails": [
-        "E-pošta"
       ],
       "Emails (all messages)": [
         "Poruke e-pošte (sve poruke)"
@@ -9774,9 +9816,6 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Pretraga"
-      ],
       "Search events": [
         "Traži događaje"
       ],
@@ -9785,9 +9824,6 @@
       ],
       "Search for name or email": [
         "Pretraga po imenu ili adresi e-pošte"
-      ],
-      "Search for users or addresses": [
-        "Pretražite korisnike ili adrese"
       ],
       "Search parent folder": [
         "Pretraži nadređenu mapu"
@@ -11347,9 +11383,6 @@
       "Name": [
         "Naziv"
       ],
-      "Size": [
-        "Veličina"
-      ],
       "Status": [
         "Status"
       ],
@@ -11585,9 +11618,6 @@
       "Change password": [
         "Promjena lozinke"
       ],
-      "Choose a provider": [
-        "Odaberite pružatelja usluga"
-      ],
       "Choose a time": [
         "Odaberi vrijeme"
       ],
@@ -11705,9 +11735,6 @@
       ],
       "Does not repeat": [
         "Ne ponavlja se"
-      ],
-      "Domain names": [
-        "Nazivi domena"
       ],
       "Downgrade account": [
         "Smanjite pretplatu računa"
@@ -11851,9 +11878,6 @@
       ],
       "Import groups": [
         "Uvoz grupa"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Uvezite svoje podatke u ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Podaci izloženi u povredi"
@@ -12020,9 +12044,6 @@
       "Select contact group": [
         "Odaberi grupu kontakta"
       ],
-      "Select data to import": [
-        "Odaberite podatke za uvoz"
-      ],
       "Select event end date": [
         "Odaberite datum završetka događaja"
       ],
@@ -12157,9 +12178,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Upotrijebite ${ VPN_SHORT_APP_NAME } za privatnost podataka"
-      ],
-      "Users and addresses": [
-        "Korisnici i adrese"
       ],
       "Verification failed": [
         "Neuspješna provjera"

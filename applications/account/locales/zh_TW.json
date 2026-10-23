@@ -1101,9 +1101,6 @@
       "Maybe later": [
         "稍後再考慮"
       ],
-      "Migrate": [
-        "遷移"
-      ],
       "More": [
         "瀏覽更多"
       ],
@@ -2439,6 +2436,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "儲存空間於全部的 ${ BRAND_NAME } 服務。"
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "黑色星期五特惠活動"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "2 individual accounts": [
+        "2 個獨立帳號"
+      ],
+      "2 TB of secure storage": [
+        "2 TB 安全儲存空間"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 儲存空間：為您目前方案的 40 倍"
+      ],
+      "3 TB of secure storage": [
+        "3 TB 安全儲存空間"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
+      ],
+      "6 individual accounts": [
+        "6 個獨立帳號"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證程式"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣以標準月費為準。您的訂閱將在帳單週期結束時以標準年費續訂。"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "針對網路威脅的更強大保護"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Use your own email domain": [
+        "使用您專屬的電子郵件網域"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ PASS_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "全年力度最大的優惠活動"
+      ],
+      "Black Friday": [
+        "黑色星期五特惠活動"
+      ],
+      "for 12 months": [
+        "為期 12 個月"
+      ],
+      "Last chance to save big": [
+        "把握最後優惠機會"
+      ],
+      "Protect your entire tribe": [
+        "守護你的整個圈子"
+      ],
+      "Protection for two in a single plan": [
+        "一份方案守護兩人"
       ]
     },
     "Billing cycle": {
@@ -6275,9 +6372,6 @@
       "They may ask to access your account in case of an emergency.": [
         "在緊急情況下，他們可能會要求存取您的帳號。"
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "他們將在 **${ days } 天**後（於 **${ formattedAccessibleAt }**）自動獲得存取權，您可以隨時拒絕他們的請求或立即給予他們存取權。"
-      ],
       "This will take effect immediately.": [
         "這將立即生效。"
       ],
@@ -6416,9 +6510,6 @@
       ],
       "Address is already added to your account": [
         "位址已添加至您的帳號"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "郵件位址已被組織外的使用者使用了。請聯絡客服"
       ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
@@ -6723,9 +6814,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "最多允許 ${ displayMaxValue }"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
@@ -6734,12 +6822,6 @@
       ],
       "Missing key packet": [
         "缺少金鑰封包"
-      ],
-      "Missing organization private key": [
-        "缺少組織私有密鑰"
-      ],
-      "Missing organization public key": [
-        "缺少組織公用密鑰"
       ],
       "Missing signature": [
         "簽章遺失"
@@ -6806,9 +6888,6 @@
       ],
       "Operation failed, try again later": [
         "作業失敗。稍後再試。"
-      ],
-      "Organization does not have enough seats available": [
-        "組織沒有足夠的可用座席"
       ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
@@ -8137,29 +8216,6 @@
         "Terabytes"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "已啟用"
-      ],
-      "All": [
-        "全部"
-      ],
-      "Errors": [
-        "錯誤"
-      ],
-      "In progress": [
-        "進行中"
-      ],
-      "Migrated": [
-        "遷移"
-      ],
-      "Not activated": [
-        "未啟動"
-      ],
-      "Pending": [
-        "等待中"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "封存檔"
@@ -9057,9 +9113,6 @@
       "Failed": [
         "已失敗"
       ],
-      "Has errors": [
-        "有錯誤"
-      ],
       "Imported": [
         "已匯入"
       ],
@@ -9074,9 +9127,6 @@
       ],
       "Paused": [
         "已暫停"
-      ],
-      "Pending": [
-        "等待中"
       ]
     },
     "Import type": {
@@ -10979,9 +11029,6 @@
       "No single sign-on": [
         "無單一登入"
       ],
-      "No users to display": [
-        "無使用者可顯示"
-      ],
       "Not a valid URL": [
         "無效的網址"
       ],
@@ -11897,15 +11944,6 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "想知道 ${ BRAND_NAME } 的最新發展嗎？您可以前往 ${ blogLink } 隨時訂閱我們的各種電子郵件通知。"
       ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 啟用它們的帳號。"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "若要遷移此使用者，他們需要接受邀請以加入 ${ BRAND_NAME }。"
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 取消封存它們的帳號。"
-      ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "為防止濫用或欺詐，我們會要求至少 ${ minimumDonation } 的捐贈。這將支援 ${ protonFoundationLink } 在全球捍衛數位隱私的工作，並有助於保護下一代。"
       ],
@@ -12283,9 +12321,6 @@
       ],
       "Yearly": [
         "每年"
-      ],
-      "You": [
-        "您"
       ],
       "You already have a free account": [
         "您已有一個免費帳號"
@@ -15154,9 +15189,6 @@
       ],
       "Details": [
         "詳細資料"
-      ],
-      "Downloads": [
-        "下載"
       ],
       "Encryption and keys": [
         "加密與金鑰"
@@ -23117,23 +23149,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "已啟用"
-      ],
-      "Estimated size": [
-        "預估大小"
-      ],
-      "Migration status": [
-        "遷移狀態"
-      ],
       "Size": [
         "大小"
       ],
       "Status": [
         "狀態"
-      ],
-      "User": [
-        "使用者"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -23672,9 +23692,6 @@
       ],
       "Composing": [
         "撰寫郵件"
-      ],
-      "Configure migration": [
-        "設置遷移"
       ],
       "Confirm": [
         "確認"
@@ -24749,9 +24766,6 @@
       ],
       "Select the way to send this notification": [
         "請選擇此通知傳送的方式"
-      ],
-      "Select users to migrate": [
-        "選取使用者以遷移"
       ],
       "Select when you want this notification to be sent": [
         "請選擇您想此通知何時傳送"

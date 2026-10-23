@@ -417,9 +417,6 @@
       "Get ${ planOrAppName }": [
         "選用 ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "獲取免費 ${ BRAND_NAME } 電郵位址"
-      ],
       "Get in touch": [
         "保持聯絡"
       ],
@@ -578,9 +575,6 @@
       ],
       "Merge contacts": [
         "合併聯絡人"
-      ],
-      "Migrate": [
-        "遷移"
       ],
       "Minimize transfers": [
         "傳輸最小化"
@@ -1272,6 +1266,106 @@
         "儲存空間於全部的 ${ BRAND_NAME } 服務。"
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "黑色星期五特惠活動"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/月"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
+      ],
+      "2 individual accounts": [
+        "2 個獨立帳號"
+      ],
+      "2 TB of secure storage": [
+        "2 TB 安全儲存空間"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB 儲存空間：為您目前方案的 40 倍"
+      ],
+      "3 TB of secure storage": [
+        "3 TB 安全儲存空間"
+      ],
+      "500 GB of secure storage": [
+        "500 GB 安全儲存空間"
+      ],
+      "6 individual accounts": [
+        "6 個獨立帳號"
+      ],
+      "Built-in 2FA authenticator": [
+        "內建雙重驗證程式"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣以標準月費為準。您的訂閱將在帳單週期結束時以標準年費續訂。"
+      ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
+      ],
+      "Stronger protection against cyber threats": [
+        "針對網路威脅的更強大保護"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "資料夾、標籤與篩選器無上限"
+      ],
+      "Use your own email domain": [
+        "使用您專屬的電子郵件網域"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ DRIVE_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "進階版 ${ PASS_SHORT_APP_NAME }、${ MAIL_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 和 ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "全年力度最大的優惠活動"
+      ],
+      "Black Friday": [
+        "黑色星期五特惠活動"
+      ],
+      "for 12 months": [
+        "為期 12 個月"
+      ],
+      "Last chance to save big": [
+        "把握最後優惠機會"
+      ],
+      "Protect your entire tribe": [
+        "守護你的整個圈子"
+      ],
+      "Protection for two in a single plan": [
+        "一份方案守護兩人"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } 月"
@@ -1515,6 +1609,11 @@
       ],
       "Expand": [
         "展開"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "此對話過長而無法繼續。請開始新對話，以讓 ${ LUMO_SHORT_APP_NAME } 維持順暢與快速回應。"
       ]
     },
     "collider_2025: feature": {
@@ -3002,14 +3101,8 @@
       "Address could not be added.": [
         "位址無法被添加。"
       ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "郵件位址已被組織外的使用者使用了。請聯絡客服"
-      ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
-      ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
       ],
       "Already a member of this share": [
         "已經是這個分享的成員了"
@@ -3248,9 +3341,6 @@
       "Last name is too long": [
         "姓氏太長"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "未發現成員的位址。請聯繫客戶支援服務以協助解決問題。"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
@@ -3259,12 +3349,6 @@
       ],
       "Missing key packet": [
         "缺少金鑰封包"
-      ],
-      "Missing organization private key": [
-        "缺少組織私有密鑰"
-      ],
-      "Missing organization public key": [
-        "缺少組織公用密鑰"
       ],
       "Missing signature": [
         "簽章遺失"
@@ -3314,9 +3398,6 @@
       "Operation failed, try again later": [
         "作業失敗。稍後再試。"
       ],
-      "Organization does not have enough seats available": [
-        "組織沒有足夠的可用座席"
-      ],
       "Organization key is not decrypted": [
         "組織金鑰未解密"
       ],
@@ -3356,15 +3437,6 @@
       "Please complete the billing details": [
         "請完成付款詳細資料"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "您需要先設定好自訂網域才能新增電子郵件。"
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "請先設置一個自訂網域，然後才加入使用者到您的組織。"
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "請先啟用多使用者支援，然後才加入使用者到您的組織。"
-      ],
       "Please enter a valid postal code": [
         "請輸入有效的郵遞區號"
       ],
@@ -3394,9 +3466,6 @@
       ],
       "Please select billing state": [
         "請選擇您的付款州名"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "請升級至選用多於 1 位使用者的企業方案，以便管理多位使用者。"
       ],
       "Port is required": [
         "通訊埠為必填"
@@ -3652,12 +3721,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "您已使用方案中的所有位址。請升級您的方案以新增新位址，或在您的帳號中停用某個位址。"
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -4053,29 +4116,6 @@
         "Terabytes"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "已啟用"
-      ],
-      "All": [
-        "全部"
-      ],
-      "Errors": [
-        "錯誤"
-      ],
-      "In progress": [
-        "進行中"
-      ],
-      "Migrated": [
-        "遷移"
-      ],
-      "Not activated": [
-        "未啟動"
-      ],
-      "Pending": [
-        "等待中"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 已更新"
@@ -4453,20 +4493,6 @@
         "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案。"
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "有錯誤"
-      ],
-      "In progress": [
-        "進行中"
-      ],
-      "Migrated": [
-        "已移轉"
-      ],
-      "Pending": [
-        "等待中"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
@@ -4499,9 +4525,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } 需要 ${ BRAND_NAME } 位址以進行安全的事件同步與加密。${ claimAddressButton }"
       ],
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } 需要 ${ BRAND_NAME } 位址以進行安全的事件同步與加密。立刻領取您的免費 ${ MAIL_APP_NAME } 位址。"
@@ -4607,9 +4630,6 @@
       ],
       "${ storage } storage": [
         "${ storage } 儲存空間"
-      ],
-      "${ total } user found": [
-        "找到 ${ total } 位使用者"
       ],
       "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
@@ -5223,9 +5243,6 @@
       "No results found": [
         "找不到相符的結果"
       ],
-      "No users to display": [
-        "無使用者可顯示"
-      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "上傳的金鑰皆無法用於加密。為能夠傳送郵件至此電子信箱，請上傳有效的金鑰或是停用「加密郵件」。"
       ],
@@ -5496,9 +5513,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "因為過量請求暫時不可用。請稍後在試。"
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "暫時無法使用，請稍後再試。"
-      ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "感謝您選擇 ${ BRAND_NAME } 保護您的組織。"
       ],
@@ -5606,18 +5620,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "為協助您記住您的密碼，我們會要求您定期輸入。隨著時間推移，要求的頻率會降低。"
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "若要匯入行程，須先在 ${ CALENDAR_APP_NAME } 創建新的行事曆。匯入後的行程，都會在此顯示。"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 啟用它們的帳號。"
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "若要遷移此使用者，他們需要接受邀請以加入 ${ BRAND_NAME }。"
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "若要遷移此使用者，於您的 ${ provider.adminConsoleName } 取消封存它們的帳號。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一位聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
@@ -5786,9 +5788,6 @@
       ],
       "Yes": [
         "是"
-      ],
-      "You": [
-        "您"
       ],
       "you": [
         "您"
@@ -6146,9 +6145,6 @@
       "Calendar": [
         "行事曆"
       ],
-      "Calendars": [
-        "行事曆"
-      ],
       "can edit": [
         "可以編輯"
       ],
@@ -6274,9 +6270,6 @@
       ],
       "Email format": [
         "電郵格式"
-      ],
-      "Emails": [
-        "電郵"
       ],
       "Emails (all messages)": [
         "電子郵件（全部訊息）"
@@ -8942,17 +8935,11 @@
       "San Francisco": [
         "舊金山"
       ],
-      "Search": [
-        "搜尋"
-      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
       "Search for name or email": [
         "搜尋名稱或電郵"
-      ],
-      "Search for users or addresses": [
-        "搜尋使用者或位址"
       ],
       "Search parent folder": [
         "搜尋資料夾主目錄"
@@ -10263,17 +10250,11 @@
       "Actions": [
         "操作"
       ],
-      "Activated": [
-        "已啟用"
-      ],
       "Address": [
         "電郵位址"
       ],
       "Created": [
         "創建日期"
-      ],
-      "Estimated size": [
-        "預估大小"
       ],
       "Expires": [
         "有效期限"
@@ -10281,23 +10262,14 @@
       "Fingerprint": [
         "指紋"
       ],
-      "Migration status": [
-        "遷移狀態"
-      ],
       "Name": [
         "名稱"
-      ],
-      "Size": [
-        "大小"
       ],
       "Status": [
         "狀態"
       ],
       "Type": [
         "類型"
-      ],
-      "User": [
-        "使用者"
       ]
     },
     "TableHeader": {
@@ -10470,9 +10442,6 @@
       "Check for malicious files": [
         "檢察可疑檔案"
       ],
-      "Choose a provider": [
-        "選擇服務商"
-      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "取得 ${ MAIL_APP_NAME } 電郵位址"
       ],
@@ -10484,9 +10453,6 @@
       ],
       "Computers": [
         "電腦"
-      ],
-      "Configure migration": [
-        "設置遷移"
       ],
       "Connect apps and devices": [
         "連線應用程式和裝置"
@@ -10623,9 +10589,6 @@
       "Disconnected from Gmail": [
         "與 Gmail 中斷連線"
       ],
-      "Domain names": [
-        "網域名稱"
-      ],
       "Downgrade account": [
         "降級帳號"
       ],
@@ -10760,9 +10723,6 @@
       ],
       "Import groups": [
         "匯入群組"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "匯入您的資料至 ${ BRAND_NAME }"
       ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "透過 ${ PRODUCT_NAMES.EASY_SWITCH } 匯入"
@@ -10965,14 +10925,8 @@
       "Select contact group": [
         "選擇聯絡人群組"
       ],
-      "Select data to import": [
-        "選擇匯入資料"
-      ],
       "Select link expiration date": [
         "選擇連結到期日"
-      ],
-      "Select users to migrate": [
-        "選取使用者以遷移"
       ],
       "Set recovery methods": [
         "設定復原方式"
@@ -11123,9 +11077,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 為了資料隱私"
-      ],
-      "Users and addresses": [
-        "使用者及電郵位址"
       ],
       "Verification failed": [
         "驗證失敗"

@@ -793,9 +793,6 @@
       "Get ${ planOrAppName }": [
         "Ẹ gba ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Gba àdírẹ́sì ${ BRAND_NAME } ọ̀fẹ́"
-      ],
       "Get a new encrypted email address": [
         "Ẹ gba àdírẹ́sì ímeèlì tuntun tí ó ní àṣírí"
       ],
@@ -990,9 +987,6 @@
       ],
       "Mark as resolved": [
         "Sàmì síi pé ó ti yanjú"
-      ],
-      "Migrate": [
-        "Kó"
       ],
       "More benefits": [
         "Àwọn ànfààní mìíràn"
@@ -2097,6 +2091,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "A ń ṣe alábàápín ààyè ìfipamọ́ náà láàárín gbogbo iṣẹ́ ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Ẹ gba ìpèsè yìí"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/oṣù"
+      ],
+      "15 GB storage": [
+        "Ìfipamọ́ 15 GB"
+      ],
+      "2 individual accounts": [
+        "Àwọn àkántì ẹnìkọ̀ọ̀kan 2"
+      ],
+      "2 TB of secure storage": [
+        "Ìfipamọ́ ààbò 2 TB"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "Ìfipamọ́ 200 GB: 40 ìgbà ti ètò yín lọ́wọ́lọ́wọ́"
+      ],
+      "3 TB of secure storage": [
+        "Ìfipamọ́ ààbò 3 TB"
+      ],
+      "500 GB of secure storage": [
+        "Ìfipamọ́ ààbò 500 GB"
+      ],
+      "6 individual accounts": [
+        "Àwọn àkántì ẹnìkọ̀ọ̀kan 6"
+      ],
+      "Built-in 2FA authenticator": [
+        "Olùjẹ́rìísí 2FA àdáni"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Àwọn ẹ̀dínwó wà nípasẹ̀ owó oṣùòṣù àṣà. Ìforúkọsílẹ̀ yín á tún gbilẹ̀ ní owó ọdún àṣà nígbà tí sáà ìdíyeléni yóò parí."
+      ],
+      "Online document editor": [
+        "Olùṣàtúnṣe àkọsílẹ̀ lórí ayélujára"
+      ],
+      "Recover previous file versions": [
+        "Mú àwọn ẹ̀dà fáìlì tó ṣáájú bọ̀ sípò"
+      ],
+      "Stronger protection against cyber threats": [
+        "Ààbò tó lágbára jù lòdì sí àwọn eégun ayélujára"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Àwọn fóldà, àwọn àkọlé àti àwọn fíltà aláìlópin"
+      ],
+      "Use your own email domain": [
+        "Lò orúkọ ímeèlì ara yín"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } àti ${ VPN_SHORT_APP_NAME } àfikún àbùdá"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } àti ${ VPN_SHORT_APP_NAME } àfikún àbùdá"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } àti ${ VPN_SHORT_APP_NAME } àfikún àbùdá"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } àti ${ VPN_SHORT_APP_NAME } àfikún àbùdá"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } àti ${ VPN_SHORT_APP_NAME } àfikún àbùdá"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Ìtajà ẹ̀dínwó tó tóbi jùlọ ní ọdún"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "fún oṣù 12"
+      ],
+      "Last chance to save big": [
+        "Àǹfààní ìkẹyìn láti rí ẹ̀dínwó ńlá"
+      ],
+      "Protect your entire tribe": [
+        "Ẹ dáàbò bo gbogbo àwùjọ yín"
+      ],
+      "Protection for two in a single plan": [
+        "Ààbò fún ẹni méjì nínú ètò kan ṣoṣo"
       ]
     },
     "Billing cycle": {
@@ -3705,9 +3799,6 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Mu ímeèlì yín, àwọn ìṣẹ̀lẹ̀ kàlẹ́ndà àti àwọn alábáṣepọ̀ yín wá láti ọ̀dọ̀ olùpèsè mìíràn."
       ],
-      "Bring over your files from another provider.": [
-        "Ẹ kó àwọn fáìlì yín wá láti ọ̀dọ̀ olùpèsè mìíràn."
-      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Kó ìgbẹ́kẹ̀, kí ẹ sì jẹ́ kí àwọn ènìyàn mọ ìdánimọ̀ òwò yín, pẹ̀lú àwọn àdírẹ́sì ímeèlì ọ̀jọ̀gbọn ní ojú òpó tirẹ̀."
       ],
@@ -4704,9 +4795,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Wọ́n lè tọrọ ìráàyèsí sí àkántì yín nígbà ìṣẹ̀lẹ̀ pàjáwìrò."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Wọ́n yóò gba ìráàyèsí láìrògùn lẹ́yìn **${ days } ọjọ́**, ní **${ formattedAccessibleAt }**; ẹ lè kọ́ ìbéèrè wọn sílẹ̀ tàbí fún wọn ní ìráàyèsí ní ẹ̀ẹ̀kánì nígbà èyíkéyìí."
-      ],
       "This will take effect immediately.": [
         "Eyi yóò bẹ̀rẹ̀ sí iṣẹ́ lẹ́sẹ̀kẹsẹ̀."
       ],
@@ -4819,9 +4907,6 @@
       "A group with this name already exists": [
         "Ẹgbẹ́ kan ti wà tẹ́lẹ̀ pẹ̀lú orúkọ yìí."
       ],
-      "A message is required when reporting copyright infringement or stolen data": [
-        "Iṣẹ́-rírán ni a nílò nígbà tí a bá ń jábọ̀ nípa ìṣe àìtọ́ sí ẹ̀tọ́ ọ̀rọ̀ tàbí dátà tí wọ́n jí."
-      ],
       "Address cannot be yours": [
         "Àdírẹ́sì kò lè jẹ́ ti yín."
       ],
@@ -4830,9 +4915,6 @@
       ],
       "Address is already added to your account": [
         "Àdírẹ́sì náà ti wà nínú àkántì yín tẹ́lẹ̀."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Olùmúlò kan tí kò wà nínú àjọ yín ti ń lo àdírẹ́sì náà tẹ́lẹ̀. Jọ̀wọ́ kàn sí ẹ̀ka àtìlẹ́yìn oníbàárà láti yanju ọ̀rọ̀ yìí."
       ],
       "Address primary private key not found": [
         "Kọ́kọ́rọ́ ti àṣírí ìṣáájú àdírẹ́sì kò wà."
@@ -4852,29 +4934,8 @@
       "Authentication error.": [
         "Àṣìṣe ìjẹ́rìísí"
       ],
-      "Bookmark password is not available": [
-        "Ọ̀rọ̀ ìgbaniwọlé àmì sàmì kò wà."
-      ],
       "Calendar limit reached": [
         "A ti dé iye kàlẹ́ndà tí ó tó"
-      ],
-      "Cannot add photo to album without a valid name": [
-        "A kò lè fi fọ́tò kún álẹ́bọ́mù láìsí orúkọ tó faramọ."
-      ],
-      "Cannot download a folder": [
-        "A kò lè gbà fóldà wọlé."
-      ],
-      "Cannot move item without a valid name, please rename the item first": [
-        "A kò lè gbe nǹkan ló láìsí orúkọ tó faramọ. Jọ̀wọ́, ẹ yí orúkọ nǹkan náà padà kọ́kọ́."
-      ],
-      "Cannot share root folder": [
-        "A kò lè ṣe alábàápín fóldà gbòngbò."
-      ],
-      "Cannot verify the author of this file": [
-        "A kò lè fidi olùdá fáìlì yìí múlẹ̀."
-      ],
-      "Cannot verify who uploaded this file": [
-        "A kò lè mọ ẹniti ó gbé fáìlì yìí sókè."
       ],
       "Checkout expired, please try again": [
         "Ìsanwọ́ náà ti wá sí òpin, jọ̀wọ́ ẹ tún gbìyànjú"
@@ -4885,35 +4946,11 @@
       "Company name or personal name is required": [
         "A nílò orúkọ ilé-iṣẹ́ tàbí orúkọ ara ẹni."
       ],
-      "Copy operation aborted": [
-        "Ìṣe àdàkọ náà ti fagilé."
-      ],
-      "Copying item to a non-folder is not allowed": [
-        "A kò fàyè gba láti ṣàdàkọ nǹkan sí ohun tí kì í ṣe fóldà."
-      ],
-      "Could not find an available name": [
-        "A kò rí orúkọ tí ó ṣiṣẹpọ̀."
-      ],
       "Could not generate the device profile. Please try again.": [
         "A kò lè ṣẹ̀dá púrọ́fáìlì irin iṣẹ́ náà. Jọ̀wọ́, ẹ tún gbìyànjú nígbà mìíràn."
       ],
       "Could not grant access to the organization key": [
         "A kò lè fúnni ní ìráàyèsí sí kọ́kọ́rọ́ àjọ náà."
-      ],
-      "Could not load sharing details": [
-        "A kò lè gbé àwọn àlàyé pínpín kalẹ̀."
-      ],
-      "Could not load the image preview: ${ message }": [
-        "A kò lè gbé àyẹ̀wò ṣáájú àwòrán wá: ${ message }."
-      ],
-      "Could not read part of this file: ${ message }": [
-        "A kò lè kà apá kan fáìlì yìí: ${ message }."
-      ],
-      "Could not unlock the parent folder": [
-        "A kò lè ṣí olórí àwọn fóldà náà sílẹ̀."
-      ],
-      "Could not unlock this item": [
-        "A kò lè ṣí nǹkan yìí sílẹ̀."
       ],
       "Couldn't load invoices. Please try again later.": [
         "A kò lè gbé àwọn ìwé owó ìsanwó wá. Jọ̀wọ́, ẹ tún gbìyànjú nígbà mìíràn."
@@ -4921,23 +4958,11 @@
       "Couldn't load transactions. Please try again later.": [
         "A kò lè gbé àwọn ìfowóṣowó wá. Jọ̀wọ́, ẹ tún gbìyànjú lẹ́yìn ìgbà díẹ̀."
       ],
-      "Creating documents in non-folders is not allowed": [
-        "A kò gbà láti ṣẹ̀dá àwọn àkọsílẹ̀ ní ibìtí kìí ṣe fóldà."
-      ],
-      "Creating files in non-folders is not allowed": [
-        "A kò gbà láti ṣẹ̀dá fáìlì ní àyà tí kìí ṣe fóldà."
-      ],
-      "Creating folders in non-folders is not allowed": [
-        "A kò fàyè gba láti ṣẹ̀dá fóldà nínú ohun tí kì í ṣe fóldà."
-      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Ẹ ṣe àìyàn kàlẹ́ndà tí ó kéré tó ${ calendarsToFixCount }."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Ẹ ṣe àìyàn kàlẹ́ndà tí ó kéré tó ${ calendarsToFixCount } tàbí"
-      ],
-      "Device not found": [
-        "A kò rí irin iṣẹ́ náà."
       ],
       "Domain not available, try again later": [
         "Ojú òpó kò wà ní ọ̀fẹ́, ẹ tún gbìyànjú lẹ́yìn ìgbà díẹ̀."
@@ -4969,35 +4994,8 @@
       "Error publishing changes": [
         "Àṣìṣe nígbà ìtẹ̀jáde àwọn àyípadà"
       ],
-      "Expiration date cannot be in the past": [
-        "Ọjọ́ wíwá sí òpin kò lè jẹ́ ọjọ́ tí ó ti kọjá."
-      ],
       "Failed to add group member": [
         "A kò lè fi ọmọ kún ẹgbẹ́ náà."
-      ],
-      "Failed to decrypt bookmark key: ${ message }": [
-        "A kò lè ṣe ìtúpalẹ̀ kọ́kọ́rọ́ àmì sàmì: ${ message }."
-      ],
-      "Failed to decrypt bookmark name: ${ message }": [
-        "A kò lè ṣe ìtúpalẹ̀ orúkọ àmì sàmì: ${ message }."
-      ],
-      "Failed to decrypt bookmark password: ${ message }": [
-        "A kò lè ṣe ìtúpalẹ̀ ọ̀rọ̀ ìgbaniwọlé ti àmì ìpamọ́: ${ message }"
-      ],
-      "Failed to decrypt content key: ${ message }": [
-        "A kò lè ṣe ìtúpalẹ̀ kọ́kọ́rọ́ ohun èlò: ${ message }"
-      ],
-      "Failed to decrypt item name: ${ message }": [
-        "A kò lè ṣe ìtúpalẹ̀ orúkọ nǹkan náà: ${ message }."
-      ],
-      "Failed to decrypt node key: ${ message }": [
-        "A kò lè ṣe ìtúpalẹ̀ kọ́kọ́rọ́ nódù náà: ${ message }."
-      ],
-      "Failed to decrypt revision metadata": [
-        "A kò lè ṣe ìtúpalẹ̀ dátà nípa dátà míràn ti ìtúnṣe náà."
-      ],
-      "Failed to get inviter keys": [
-        "A kò lè gba àwọn kọ́kọ́rọ́ olùkéni náà."
       ],
       "Failed to load OAuth modal.": [
         "A kò lè gbé módàlì OAuth wá."
@@ -5020,15 +5018,6 @@
       "Failed to update detailed monitoring.": [
         "A kò lè mú ìbójútó àlàyé dé ojú ìwọ̀n."
       ],
-      "Failed to verify invitation": [
-        "A kò lè jẹ́rìísí ìpè náà."
-      ],
-      "File download failed due to empty response": [
-        "A kò lè gbà fáìlì wọlé nítorí pé ìdáhùn náà kò ní ohunkóhun."
-      ],
-      "File has no revision": [
-        "Fáìlì náà kò ní ìtúnṣe."
-      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Fáìlì náà ti pọ̀ jù. Lógò yín gbọ́dọ̀ jẹ́ 30 KB tàbí kéré sí i."
       ],
@@ -5037,9 +5026,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Tí àsìkò tí ó wà lórí télífíṣọ̀nù yín bá ti wá sí òpin, ẹ tẹ \"Tún u sọjí\" lórí télífíṣọ̀nù yín kí ẹ sì tẹ kóòdù yín lẹ́ẹ̀kan sí i."
-      ],
-      "Image preview not found": [
-        "A kò rí àyẹ̀wò ṣáájú àwòrán."
       ],
       "IMAP server is required": [
         "Sáfà IMAP ni a nílò"
@@ -5101,74 +5087,29 @@
       "Invalid private key file": [
         "Fáìlì kọ́kọ́rọ́ ti àṣírí kò tọ́."
       ],
-      "Invalid URL": [
-        "URL àìtọ́"
-      ],
       "Invalid VAT number": [
         "Nọ́mbà VAT kò tọ́."
       ],
       "Invalid verification code": [
         "Kóòdù ìjẹ́rìísí kò tọ́."
       ],
-      "Invitation not found": [
-        "A kò rí ìpè náà."
-      ],
-      "Item not found": [
-        "A kò rí nǹkan náà."
-      ],
       "Label name cannot be empty.": [
         "Orúkọ àkọlé náà kò gbọdọ̀ ṣó."
-      ],
-      "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "A kò lè mú ojú òpó gbangba ogún dé ojú ìwọ̀n. Jọ̀wọ́, ẹ ṣẹ̀dá ojú òpó gbangba tuntun."
       ],
       "Maximum ${ displayMaxValue } allowed": [
         "${ displayMaxValue } ni ọ̀pọ̀ tó pọ̀ jùlọ tí a gba."
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "A kò rí àdírẹ́sì ọmọ ẹgbẹ́ náà. Jọ̀wọ́ kàn sí ẹ̀ka àtìlẹ́yìn oníbàárà láti yanju ọ̀rọ̀ yìí."
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Ẹ dapọ̀ kàlẹ́ndà tí ó kéré tó ${ calendarsToFixCount } pẹ̀lú àwọn kàlẹ́ndà ${ BRAND_NAME } tí ó wà."
       ],
-      "Missing inviter email": [
-        "Ímeèlì olùpẹ̀ kò sí"
-      ],
       "Missing key packet": [
         "Páàkẹ́tì kọ́kọ́rọ́ kò wà."
-      ],
-      "Missing organization private key": [
-        "Kọ́kọ́rọ́ ti àṣírí àjọ kò sí."
-      ],
-      "Missing organization public key": [
-        "Kọ́kọ́rọ́ gbogbogbò àjọ kò sí."
-      ],
-      "Missing signature": [
-        "Ìbọwọ́lù kò wà."
-      ],
-      "Missing signature for ${ signatureType }": [
-        "Kò sí ìbọwọ́lù fún ${ signatureType }."
-      ],
-      "Move operation aborted": [
-        "Ìṣe gbígbé ló náà ti fagilé."
-      ],
-      "Moving item to a non-folder is not allowed": [
-        "A kò gbà láti gbe nǹkan sí ohun tí kì í ṣe fóldà."
-      ],
-      "Moving root item is not allowed": [
-        "A kò gbà láti gbé nǹkan gbòngbò lọ."
       ],
       "Name already exists": [
         "Orúkọ náà ti wà tẹ́lẹ̀."
       ],
       "Name does not match": [
         "Orúkọ náà kò bá a mu."
-      ],
-      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
-        "Orúkọ náà kò gbọdọ̀ tó ${ MAX_NODE_NAME_LENGTH } àmì ọ̀rọ̀."
-      ],
-      "Name must not be empty": [
-        "Orúkọ kò gbọdọ̀ ṣòfo."
       ],
       "No calendars found to import": [
         "A kò rí kàlẹ́ndà kan láti gbé wọlé."
@@ -5182,9 +5123,6 @@
       "No emails found to import - the account does not have an inbox": [
         "A kò rí ímeèlì kankan láti gbé wọlé, àkántì náà kò ní àpótí ìfìwéránṣẹ́."
       ],
-      "No file data was received. Please try again.": [
-        "A kò gba dáta fáìlì kan. Jọ̀wọ́, ẹ tún gbìyànjú."
-      ],
       "No image selected": [
         "A kò yàn àwòrán kankan."
       ],
@@ -5194,23 +5132,8 @@
       "Not a valid number": [
         "Eyìí kì í ṣe nọ́mbà tó tọ́."
       ],
-      "Only admins can convert external invitations": [
-        "Àwọn alákòóso níkan ni lè yí àwọn ìpè ìta padà."
-      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Ìtẹ́ ẹ̀yẹ létẹ̀rẹ̀ àti àmì ò̀ndò (àmi ààyò, àmi ìlà, àti àmi ìsàlẹ̀) nìkan ni a lè ṣàtúnṣe fún àdírẹ́sì yìí."
-      ],
-      "Operation aborted": [
-        "Ìṣẹ́ náà ti fagilé."
-      ],
-      "Operation failed, try again later": [
-        "Ìṣe náà kò ṣeéṣe, ẹ tún gbìyànjú lẹ́yìn ìgbà díẹ̀."
-      ],
-      "Organization does not have enough seats available": [
-        "Àjọ náà kò ní ibùjókòó tí ó tó kù."
-      ],
-      "Organization does not have enough storage available": [
-        "Àjọ náà kò ní ìfipamọ́ tí ó tó kù."
       ],
       "Organization key is not decrypted": [
         "A kò ti ṣe ìtúpalẹ̀ kọ́kọ́rọ́ àjọ náà."
@@ -5220,9 +5143,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "A gbọdọ̀ ṣí àwọn kọ́kọ́rọ́ àjọ kí a lè ṣẹ̀dá àwọn olùmúlò tí kì í ṣe ti àṣírí."
-      ],
-      "Part of the file appears to be corrupted": [
-        "Àpá kan nínú fáìlì náà dà bí ẹni pé ó ti bá jẹ́."
       ],
       "Password is required": [
         "Ọ̀rọ̀ ìgbaniwọlé ni a nílò"
@@ -5247,12 +5167,6 @@
       ],
       "Permissions request failed.": [
         "Ìbẹ̀ àṣẹ kò ṣàṣeyọrí."
-      ],
-      "Photo is already in the target album": [
-        "Fọ́tò náà ti wà nínú álẹ́bọ́mù tí a kàn sí tẹ́lẹ̀."
-      ],
-      "Photo not found": [
-        "A kò rí fọ́tò náà."
       ],
       "Please add a payment method before reactivating your subscription": [
         "Ẹ fi ọ̀nà ìsanwó kan kún kí ẹ tó gbé ìforúkọsílẹ̀ yín ṣiṣẹ́ padà."
@@ -5344,12 +5258,6 @@
       "Process aborted": [
         "Ìgbésẹ̀ náà ti fọwọ́ kọ́."
       ],
-      "Renaming root item is not allowed": [
-        "A kò gbà láti yí orúkọ nǹkan gbòngbò padà."
-      ],
-      "Request aborted": [
-        "Ìbéèrè náà ti fagilé."
-      ],
       "Request timed out": [
         "Àkókò ìbéèrè ti parí."
       ],
@@ -5371,29 +5279,8 @@
       "Server not found": [
         "A kò rí sáfà náà."
       ],
-      "Signature is missing": [
-        "Ìbọwọ́lù kò sí."
-      ],
       "Signature verification failed": [
         "A kò lè dájọ ìbọwọ́lù náà wò."
-      ],
-      "Signature verification failed: ${ errorMessage }": [
-        "Ìjẹ́rìísí ìbọwọ́lù kò ṣeéṣe: ${ errorMessage }."
-      ],
-      "Signature verification for ${ signatureType } failed": [
-        "Ìjẹ́rìísí ìbọwọ́lù fún ${ signatureType } kò ṣeéṣe."
-      ],
-      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "Ìjẹ́rìísí ìbọwọ́lù fún ${ signatureType } kò ṣeéṣe: ${ errorMessage }."
-      ],
-      "Some file data failed to upload. Please try again.": [
-        "A kò lè gbé àwọn dátà fáìlì kan sórí ẹ̀rọ. Jọ̀wọ́, ẹ tún gbìyànjú."
-      ],
-      "Some file parts failed to upload. Please try again.": [
-        "A kò lè gbé àwọn apá fáìlì kan sórí ẹ̀rọ. Jọ̀wọ́, ẹ tún gbìyànjú."
-      ],
-      "Some items could not be loaded": [
-        "A kò lè gbé àwọn nǹkan kan wọlé."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Àwọn orúkọ fóldà kan kò wà ní ọ̀fẹ́. Jọ̀wọ́, ẹ ya gbígbé wọlé náà lọ́nà àdáni láti ṣe àtúkọ àwọn orúkọ wọ̀nyí."
@@ -5409,9 +5296,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Àwọn orúkọ àkọlé kan kọjá iye lẹ́tà tó pọ̀ jùlú ti ${ MAIL_APP_NAME }. Jọ̀wọ́, ẹ ya gbígbé wọlé náà lọ́nà àdáni láti ṣe àtúkọ àwọn orúkọ wọ̀nyí."
-      ],
-      "Something went wrong": [
-        "Àṣìṣe kan wáyé."
       ],
       "Something went wrong while converting the address": [
         "Àṣìṣe kan wáyé nígbà ìyípadà àdírẹ́sì náà."
@@ -5473,9 +5357,6 @@
       "The policy name must be between 3 and 40 characters.": [
         "Orúkọ ìlànà náà gbọdọ̀ wà láàrin 3 àti 40 àmì."
       ],
-      "The uploaded file does not match the original. Please try again.": [
-        "Fáìlì tí a gbé sórí ẹ̀rọ kò fara pẹ̀lú òun àkọ́kọ́. Jọ̀wọ́, ẹ tún gbìyànjú."
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Púpọ̀ fóldà ni ó wà nínú àkántì ìta yín. Jọ̀wọ́, ẹ ya gbígbé wọlé náà lọ́nà àdáni láti pa díẹ̀ nínú àwọn fóldà rẹ́."
       ],
@@ -5497,26 +5378,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ààyè yìí gbọ́dọ̀ ní àmì tó ${ minimumLength }."
       ],
-      "This file has missing crypto material": [
-        "Fáìlì yìí ní àwọn ohun èlò ìfipamọ́ tí kò pé."
-      ],
-      "This file has no version available to download": [
-        "Kò sí ẹ̀yà fáìlì yìí tí a lè gbà láti orí ẹ̀rọ."
-      ],
-      "This file version could not be uploaded": [
-        "A kò lè gbé ẹ̀yà fáìlì yìí sókè."
-      ],
       "This folder name is not available. Please choose a different name.": [
         "Orúkọ fóldà yìí kò wà ní ọ̀fẹ́. Jọ̀wọ́, ẹ yan orúkọ mìíràn."
-      ],
-      "This item has no image preview": [
-        "Nǹkan yìí kò ní àyẹ̀wò ṣáájú àwòrán."
-      ],
-      "This item is no longer shared": [
-        "A kò ṣe alábàápín nǹkan yìí mọ́."
-      ],
-      "This item is not shared": [
-        "A kò ṣe alábàápín nǹkan yìí."
       ],
       "This label name is not available. Please choose a different name.": [
         "Orúkọ àkọlé yìí kò wà ní ọ̀fẹ́. Jọ̀wọ́, ẹ yan orúkọ mìíràn."
@@ -5532,12 +5395,6 @@
       ],
       "Too many requests. Please try again later": [
         "Àwọn béèré pọ̀ jù. Jọ̀wọ́, ẹ tún gbìyànjú lẹ́yìn ìgbà díẹ̀."
-      ],
-      "Too many server errors, please try again later": [
-        "Àwọn àṣìṣe sáfà ti pọ̀ jù, jọ̀wọ́ gbiyanju mìíràn lẹ́yìn ìgbà díẹ̀."
-      ],
-      "Too many server requests, please try again later": [
-        "Àwọn ìbéèrè sí sáfà pọ̀ jù, jọ̀wọ́, ẹ tún gbìyànjú lẹ́yìn ìgbà díẹ̀."
       ],
       "Try again later": [
         "Ẹ tún gbìyànjú nígbà mìíràn."
@@ -5578,12 +5435,6 @@
       "Verification did not succeed, please try again in an hour.": [
         "Ìjẹ́rìísí kò ṣàṣeyọrí; jọ̀wọ́, ẹ tún gbìyànjú lẹ́yìn wákàtí kan."
       ],
-      "Verification keys are not available": [
-        "Àwọn kọ́kọ́rọ́ ìjẹ́rìísí kò wà."
-      ],
-      "Verification keys for ${ signatureType } are not available": [
-        "Kò sí àwọn kọ́kọ́rọ́ ìjẹ́rìísí fún ${ signatureType }."
-      ],
       "We couldn’t send a verification code using this method.": [
         "A kò lè fi ránṣẹ́ kóòdù ìjẹ́rìísí nípasẹ̀ ọ̀nà yìí."
       ],
@@ -5598,24 +5449,6 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Kóòdù ìjẹ́rìísí kò tọ́. Jọ̀wọ́, ẹ ríi dájú pé ẹ ṣàdàkọ kóòdù ìjẹ́rìísí náà dáadáa, kí ẹ sì tún gbìyànjú. Ó lè gba tó wákàtí 24 kí àwọn àyípadà bá bẹ̀rẹ̀ sí ní ṣiṣẹ́."
-      ],
-      "You can create public links for your own files only": [
-        "Ẹ lè ṣẹ̀dá ojú òpó gbàngbà fún fáìlì yín níkan."
-      ],
-      "You can only leave items that are shared with you": [
-        "Ẹ lè kúrò nínú àwọn nǹkan tí wọ́n ṣe alábàápín wọn pẹ̀lú yín nìkan."
-      ],
-      "You can only upload a new version to a file": [
-        "Ẹ lè gbé ẹ̀yà tuntun sókè sí fáìlì níkan."
-      ],
-      "You can update a public link for your own files only": [
-        "Ẹ lè mú ojú òpó gbàngbà dé ojú ìwọ̀n fún fáìlì yín níkan."
-      ],
-      "You do not have access to this item": [
-        "Ẹ kò ní ìráàyèsí sí nǹkan yìí."
-      ],
-      "You do not have access to this shared item": [
-        "Ẹ kò ní ìráàyèsí sí nǹkan tí a ṣe alábàápín rẹ̀ yìí."
       ],
       "You have reached the maximum number of calendars.": [
         "Ẹ ti dé iye kàlẹ́ndà tí ó ga jùlọ."
@@ -6415,29 +6248,6 @@
         "Tẹrábáìtì"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Tí a ti ṣí"
-      ],
-      "All": [
-        "Gbogbo"
-      ],
-      "Errors": [
-        "Àwọn àṣìṣe"
-      ],
-      "In progress": [
-        "Ó ń lọ lọwọ́"
-      ],
-      "Migrated": [
-        "A ti kó lọ"
-      ],
-      "Not activated": [
-        "Tí a kò ṣí"
-      ],
-      "Pending": [
-        "Ó ń dè"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "A ti mú ${ Label.Name } dé ojú ìwọ̀n."
@@ -7066,20 +6876,6 @@
         "Àwọn aṣàyàn gbígbé wọlé mìíràn"
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Ó ní àṣìṣe"
-      ],
-      "In progress": [
-        "Ó ń lọ lọwọ́"
-      ],
-      "Migrated": [
-        "A ti kó lọ"
-      ],
-      "Pending": [
-        "Ó ń dè"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } nínú ${ totalContacts } olùbánisọ̀rọ̀ ni a kò ní gbé wọlé. Kàn fún àwọn àlàyé"
@@ -7124,9 +6920,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Ẹ̀rọ sísọ di àṣírí ${ BRAND_NAME } túmọ̀ sí pé kò sí ẹni tí ó lè ní ìráàyèsí sí ọ̀rọ̀ ìgbaniwọlé yín, àwọn wa náà kò lè."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } nílò àdírẹ́sì ${ BRAND_NAME } fún ìsopọ̀ ìṣẹ̀lẹ̀ tí ó ní ààbò àti fún sísọ di àṣírí. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Àwọn kàlẹ́ndà tuntun ${ calendarsToBeCreatedCount }"
@@ -7580,9 +7373,6 @@
       ],
       "Authenticator app 2FA enabled": [
         "A ti fi ààyè gba 2FA nípasẹ̀ áàpù ìjẹ́rìísí."
-      ],
-      "Author is not provided on public link": [
-        "A kò fi olùdá hàn ní ojú òpó gbàngbà."
       ],
       "Available on VPN Professional": [
         "Ó wà ní VPN Professional."
@@ -8124,9 +7914,6 @@
       "Fill in user details": [
         "Kun àwọn àlàyé olùmúlò"
       ],
-      "Find out what can be migrated.": [
-        "Ẹ ṣàwárí ohun tí a lè kó lọ."
-      ],
       "for ${ price }": [
         "ní owó ${ price }"
       ],
@@ -8571,9 +8358,6 @@
       "No single sign-on": [
         "Kò sí Single Sign-On"
       ],
-      "No users to display": [
-        "A kò rí olùmúlò tí a ó fi hàn."
-      ],
       "Nothing changes in your other ${ BRAND_NAME } account.": [
         "Kò sí ohun tí ó yí padà nínú àkántì ${ BRAND_NAME } mìíràn yín."
       ],
@@ -8904,9 +8688,6 @@
       "Select a group to view its members and settings.": [
         "Ẹ yan ẹgbẹ́ kan láti wo àwọn ọmọ ẹgbẹ́ rẹ̀ àti àwọn ààtò rẹ̀."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Ẹ yan déédé ohun tí ẹ fẹ́ kó lọ. Yóò ṣe àmúlò fún gbogbo àwọn olùmúlò àjọ náà."
-      ],
       "Select one or multiple user affiliations": [
         "Yàn ọ̀kan tàbí ọ̀pọ̀lọ́pọ̀ ìbáṣepọ̀ olùmúlò"
       ],
@@ -9063,9 +8844,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Nítori ìbéèrè tí ó pọ̀ jù, ó kò ṣẹ́ fún lílo fún ìgbà díẹ̀. Ẹ tún gbìyànjú nígbà mìíràn."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Kò sí ní àṣìkò yìí. Jọ̀wọ́, ẹ padà wá wò lẹ́yìn ìgbà díẹ̀."
-      ],
       "Thank you": [
         "Ẹ ṣé"
       ],
@@ -9195,12 +8973,6 @@
       "This service is not available to users signing in with single sign-on.": [
         "Ìṣẹ́ yìí kò sí fún àwọn olùmúlò tí wọ́n ń wọlé pẹ̀lú Single Sign-On."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "A kò lè gbé olùmúlò yìí lọ nítorí pé àdírẹ́sì ímeèlì rẹ̀ kò sí lórí ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "A kò lè kó olùmúlò yìí lọ nítorí àìbájọpọ̀ ojú àtẹ."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Olùmúlò yìí ni ó ń ṣe ojúṣe fún ìsan owó fún àjọ yín ní ìgbà yìí. Nípa dídínkù ipò ọmọ ẹgbé yìí, ẹ yóò di ẹni tó ń ṣe ojúṣe fún ìsan owó fún àjọ yín."
       ],
@@ -9312,32 +9084,8 @@
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Láti ràn yín lọ́wọ́ láti ranti ọ̀rọ̀ ìgbaniwọlé yín, a ó bẹ̀ yín kí ẹ tẹ̀ ẹ́ sínú ní ìgbà kan sí òkan. Nígbà tí àkókò bá ń lọ, a ó dín ìbéèrè wa kù."
       ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Kí ẹ lè gbé àwọn ìṣẹ̀lẹ̀ wọlé, ṣẹ̀dá kàlẹ́ndà kan nínú ${ CALENDAR_APP_NAME } ní ìgbà kọ́kọ́. Ibẹ̀ ni àwọn ìṣẹ̀lẹ̀ yóò hàn ní lẹ́yìn gbígbé wọlé."
-      ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Láti máa tẹ̀lé àwọn ìdàgbàsókè tuntun lórí àwọn ọjà ${ BRAND_NAME }, ẹ lè fi orúkọ sílẹ̀ sí àwọn ímeèlì wa oríṣiríṣi àti wo ${ blogLink } ní àmọ̀dájú."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Láti gbé olùmúlò yìí lọ, ẹ fi orúkọ ímeèlì kún ní ${ domainNamesLink } àti fidi rẹ̀ múlẹ̀."
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Láti kó olùmúlò yìí lọ, ẹ fi ààyè gba àkántì rẹ̀ ní ${ provider.adminConsoleName } yín."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Láti kó olùmúlò yìí lọ, ẹ fi ààyè gba àkántì rẹ̀ ní abẹ́ ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Láti kó olùmúlò yìí lọ, ẹ fi ààyè gba àdírẹ́sì rẹ̀ ní abẹ́ ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Láti kó olùmúlò yìí lọ, ó ní láti gbà ìpè rẹ̀ láti dara pọ̀ mọ́ ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Láti kó olùmúlò yìí lọ, ẹ yọ ọ́ kúrò láti inú àkọọlè nínú ${ provider.adminConsoleName } yín."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Láti kó olùmúlò yìí lọ, ẹ gban ìdẹ̀sì rẹ̀ nínú ${ provider.adminConsoleName } yín."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Láti tẹ̀ síwájú, ẹ yàn ọ̀nà ìgbàpadà àkántì kan kí a lè jẹ́rìísí àbẹ̀wọ̀ náà."
@@ -9677,9 +9425,6 @@
       ],
       "X": [
         "X"
-      ],
-      "You": [
-        "Ìwọ"
       ],
       "You already have a free account": [
         "Ẹ ti ní àkántì ọ̀fẹ́ tẹ́lẹ̀."
@@ -10349,9 +10094,6 @@
       "Calendar": [
         "Kàlẹ́ndà"
       ],
-      "Calendars": [
-        "Àwọn kàlẹ́ndà"
-      ],
       "Card details": [
         "Àwọn àlàyé kààdì"
       ],
@@ -10534,9 +10276,6 @@
       ],
       "Email with @yourcompany.com domain": [
         "Ímeèlì pẹ̀lú ojú òpó @ileiseyin.ng"
-      ],
-      "Emails": [
-        "Àwọn ímeèlì"
       ],
       "Emails (all messages)": [
         "Àwọn ímeèlì (gbogbo iṣẹ́-rírán)"
@@ -13961,12 +13700,6 @@
       "Billing Country": [
         "Orílẹ̀èdè ìsanwó"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "A kò lè fi ìforúkọsílẹ̀ tí ń ṣiṣẹ́ ra Born Private."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private nílò ọrẹ."
-      ],
       "Buying credits requires a separate purchase.": [
         "Ríra àwọn krẹ́díìtì nílò ìrà ọ̀tọ̀."
       ],
@@ -14141,9 +13874,6 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ẹ ti ní ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } tẹ́lẹ̀."
       ],
-      "You already own Born Private.": [
-        "Ẹ ti ní Born Private tẹ́lẹ̀."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Ẹ yóò san ${ amountToCharge } láti ọ̀nà ìsanwó tí ẹ ti yàn."
       ],
@@ -14152,9 +13882,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Láìpẹ́, a ó gbé yín padà láti fọwọ́sí ìsanwó yín."
-      ],
-      "Your account is too old for Born Private.": [
-        "Àkántì yín ti pẹ́ jù fún Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "A ti yí kọ́rẹ́nsì yín padà sí oúrò (€) nítorí pé ${ IDEAL_WERO_BRAND_NAME } ṣe àtìlẹ́yìn fún ìsanwó ní oúrò nìkan."
@@ -14433,9 +14160,6 @@
       "Search for an email or IP address": [
         "Wá ímeèlì tàbí àdírẹ́sì IP"
       ],
-      "Search for users or addresses": [
-        "Wá àwọn olùmúlò tàbí àwọn àdírẹ́sì"
-      ],
       "Search parent folder": [
         "Wá olórí àwọn fóldà"
       ],
@@ -14541,26 +14265,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Gbé e ga sí ${ upsellPlanTitle }"
-      ]
-    },
-    "Property": {
-      "attributes": [
-        "àwọn àmì"
-      ],
-      "content key": [
-        "kọ́kọ́rọ́ àkóónù"
-      ],
-      "hash key": [
-        "kọ́kọ́rọ́ háàṣì"
-      ],
-      "key": [
-        "kọ́kọ́rọ́"
-      ],
-      "membership": [
-        "ìdarapọ̀"
-      ],
-      "name": [
-        "orúkọ"
       ]
     },
     "Property type": {
@@ -17561,26 +17265,6 @@
         "Fún àwọn ènìyàn èyọ̀kẹ́lù"
       ]
     },
-    "Table header": {
-      "Activated": [
-        "Tí a ti ṣí"
-      ],
-      "Estimated size": [
-        "Ìṣirò títóbi"
-      ],
-      "Migration status": [
-        "Ipò ìkó"
-      ],
-      "Size": [
-        "Títóbi"
-      ],
-      "Status": [
-        "Ìpò"
-      ],
-      "User": [
-        "Olùmúlò"
-      ]
-    },
     "TableHeader": {
       "Action": [
         "Ìṣe"
@@ -17979,9 +17663,6 @@
       "Choose a deployment method": [
         "Ẹ yan ọ̀nà gbígbé kalẹ̀ kan"
       ],
-      "Choose a provider": [
-        "Yan olùpèsè kan"
-      ],
       "Choose a removal method": [
         "Yan ọ̀nà ìyọkúrò kan"
       ],
@@ -18002,9 +17683,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "Ṣètò prófáìlì irin iṣẹ́ Gbogbo ìgbà lórí VPN"
-      ],
-      "Configure migration": [
-        "Ṣètò ìkó"
       ],
       "Confirm": [
         "Jẹ́rìísí"
@@ -18450,9 +18128,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Gbé e wọlé nípasẹ̀ ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Kó dátà yín wọlé sí ${ BRAND_NAME }"
-      ],
       "Imports": [
         "Àwọn gbígbé wọlé"
       ],
@@ -18756,12 +18431,6 @@
       "Select contact group": [
         "Yan ẹgbẹ́ kíkàn sí"
       ],
-      "Select data to import": [
-        "Yan dátà láti gbé wọlé"
-      ],
-      "Select users to migrate": [
-        "Yàn àwọn olùmúlò láti kó lọ"
-      ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Fi Gmail ránṣẹ́ àti gba á nípasẹ̀ ${ MAIL_APP_NAME }"
       ],
@@ -19062,9 +18731,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Kú àbọ̀ sí ${ BRAND_NAME } for Business"
       ],
-      "What are you migrating?": [
-        "Kí ni ẹ ń kó lọ?"
-      ],
       "What changes if you switch to the Free plan": [
         "Ohun tí yóò yí padà tí ẹ bá padà sí Free plan"
       ],
@@ -19264,9 +18930,6 @@
       "Customize import to reduce the number of labels": [
         "Ṣe gbígbé wọlé àdáni láti dín iye àwọn àkọlé kù."
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Ipò ìkó dátà láti ${ providerName } sí ${ BRAND_NAME }"
-      ],
       "Device name and app version": [
         "Orúkọ irin iṣẹ́ àti ẹ̀dà áàpù"
       ],
@@ -19392,9 +19055,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Ibùdó tí ó súnmọ́ olùmúlò (nípa lílo àdírẹ́sì IP rẹ̀)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Àwọn olùmúlò tí wọ́n ti ní ìráàyèsí sí àkántì ${ BRAND_NAME } wọn"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Àwọn olùmúlò yóò ri logo yín dípò ààmì ${ BRAND_NAME } nígbà tí wọ́n bá wọlé sí áàpù wẹ́ẹ̀bù wa."

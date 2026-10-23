@@ -2059,6 +2059,106 @@
         "O espaço de armazenamento é partilhado por todos os serviços da ${ BRAND_NAME }."
       ]
     },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Aproveite a oferta"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/mês"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "2 individual accounts": [
+        "2 contas individuais"
+      ],
+      "2 TB of secure storage": [
+        "2 TB de armazenamento seguro"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB de armazenamento: 40x o seu plano atual"
+      ],
+      "3 TB of secure storage": [
+        "3 TB de armazenamento seguro"
+      ],
+      "500 GB of secure storage": [
+        "500 GB de armazenamento seguro"
+      ],
+      "6 individual accounts": [
+        "6 contas individuais"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador 2FA integrado"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são calculados com base no preço mensal padrão. A sua subscrição será renovada à tarifa anual padrão quando o ciclo de faturação terminar."
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recupere as versões anteriores do ficheiro"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção reforçada contra ciberameaças"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, etiquetas e filtros ilimitados"
+      ],
+      "Use your own email domain": [
+        "Utilize o seu próprio domínio de e-mail"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } premium"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "A maior promoção do ano"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "durante 12 meses"
+      ],
+      "Last chance to save big": [
+        "Última oportunidade para poupar em grande"
+      ],
+      "Protect your entire tribe": [
+        "Proteja toda a sua tribo"
+      ],
+      "Protection for two in a single plan": [
+        "Proteção para dois num único plano"
+      ]
+    },
     "Billing cycle option": {
       "${ n } month": [
         "${ n } mês",
@@ -2578,6 +2678,11 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Esta conversa é demasiado longa para continuar. Inicie uma nova conversa para manter o ${ LUMO_SHORT_APP_NAME } a funcionar na perfeição e de forma responsiva."
       ]
     },
     "collider_2025: feature": {
@@ -4558,9 +4663,6 @@
       "Aliases could not be loaded": [
         "Não foi possível carregar os aliases"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Foi alocado todo o espaço de armazenamento. Reduza o armazenamento alocado a outros membros."
-      ],
       "Amount above the maximum.": [
         "Quantia acima do máximo."
       ],
@@ -4590,9 +4692,6 @@
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Não é possível definir uma data de expiração superior à permitida pela política de retenção."
-      ],
-      "Cannot verify the author of this file": [
-        "Não é possível verificar o autor deste ficheiro"
       ],
       "Checkout expired, please try again": [
         "A finalização da compra expirou. Tente novamente."
@@ -4631,26 +4730,11 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "A pesquisa de conteúdo não pode ser ativada. Reinicie a aplicação, ou limpe os dados."
       ],
-      "Copying item to a non-folder is not allowed": [
-        "Não é permitido copiar um item para um local que não seja uma pasta"
-      ],
-      "Could not load sharing details": [
-        "Não foi possível carregar os detalhes da partilha"
-      ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
       ],
       "Could not open updated vault": [
         "Não foi possível abrir o cofre actualizado"
-      ],
-      "Could not unlock the parent folder": [
-        "Não foi possível desbloquear a pasta principal"
-      ],
-      "Could not unlock this item": [
-        "Não foi possível desbloquear este item"
-      ],
-      "Creating folders in non-folders is not allowed": [
-        "Não é permitido criar pastas dentro de elementos que não sejam pastas"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Erro de desencriptação: a desencriptação do conteúdo encriptado desta mensagem falhou."
@@ -4714,9 +4798,6 @@
       "Failed loading group members": [
         "Falha ao carregar membros do grupo"
       ],
-      "Failed to decrypt bookmark password: ${ message }": [
-        "Não foi possível descodificar a palavra-passe do marcador: ${ message }"
-      ],
       "Failed to encrypt attachment. Please try again.": [
         "Erro ao encriptar o anexo. Tente novamente."
       ],
@@ -4729,9 +4810,6 @@
       "Failed to open to contact": [
         "Erro ao abrir o contacto"
       ],
-      "File has no revision": [
-        "O ficheiro não tem nenhuma revisão"
-      ],
       "Filter with this name already exists": [
         "Já existe um filtro com este nome"
       ],
@@ -4743,9 +4821,6 @@
       ],
       "Forward address is required": [
         "Endereço de encaminhamento é necessário"
-      ],
-      "Image preview not found": [
-        "Não foi encontrada a pré-visualização da imagem"
       ],
       "Image upload failed": [
         "Erro ao enviar a imagem"
@@ -4786,9 +4861,6 @@
       "Invalid public key file": [
         "O ficheiro da chave pública não é válido."
       ],
-      "Invalid URL": [
-        "O URL não é válido."
-      ],
       "Invalid VAT number": [
         "NIF inválido"
       ],
@@ -4803,9 +4875,6 @@
       ],
       "Last name is too long": [
         "O último nome é muito longo."
-      ],
-      "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "O link público antigo não pode ser atualizado. Por favor, crie um novo link público."
       ],
       "Maximum expiration time reached.": [
         "Tempo máximo de expiração atingido."
@@ -4823,9 +4892,6 @@
       "Message processing error.": [
         "Erro ao processar mensagem."
       ],
-      "Missing inviter email": [
-        "Falta o e-mail do convidante"
-      ],
       "Missing key packet": [
         "Pacote chave em falta."
       ],
@@ -4834,10 +4900,6 @@
       ],
       "Name is required": [
         "É necessário um nome."
-      ],
-      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
-        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } carácter",
-        "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } caracteres"
       ],
       "Network error": [
         "Erro de rede"
@@ -4866,9 +4928,6 @@
       "No external key retrieved for user is valid for sending": [
         "Nenhuma das chaves externas recuperadas para o utilizador é válida para o envio."
       ],
-      "No file data was received. Please try again.": [
-        "Não foram recebidos dados do ficheiro. Por favor, tente novamente."
-      ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
       ],
@@ -4883,9 +4942,6 @@
         "Um dos grupos não tem contactos: ${ noContactGroupList }",
         "Alguns grupos não têm contactos: ${ noContactGroupList } "
       ],
-      "Operation aborted": [
-        "Operação cancelada"
-      ],
       "Organization key is not decrypted": [
         "A chave da organização não está encriptada."
       ],
@@ -4894,9 +4950,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "A chave da organização deve ser ativada para criar utilizadores não privados."
-      ],
-      "Part of the file appears to be corrupted": [
-        "Parte do ficheiro parece estar corrompida"
       ],
       "Password is required": [
         "A palavra-passe é obrigatória."
@@ -4927,15 +4980,6 @@
       ],
       "Please complete the billing details": [
         "Preencha os dados de faturação"
-      ],
-      "Please configure a custom domain before adding addresses.": [
-        "Configure um domínio personalizado antes de adicionar endereços."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Defina um domínio personalizado antes de adicionar utilizadores à sua organização."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Ative o suporte multi-utilizador antes de adicionar utilizadores à sua organização."
       ],
       "Please enter a valid postal code": [
         "Introduza um código postal válido"
@@ -4976,9 +5020,6 @@
       ],
       "Please try generating the text again": [
         "Tente gerar o texto novamente."
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Subscreva um plano empresarial com mais de 1 utilizador para gerir vários utilizadores."
       ],
       "Port is required": [
         "A porta é obrigatória."
@@ -5035,9 +5076,6 @@
       "Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.": [
         "O envio de anexos é limitado enquanto exceder os limites do seu plano ou até atualizar o seu plano."
       ],
-      "Signature is missing": [
-        "Assinatura em falta."
-      ],
       "Signature not verified": [
         "Assinatura não verificada"
       ],
@@ -5067,9 +5105,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos nomes das suas etiquetas excedem o limite máximo de carateres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
-      ],
-      "Something went wrong": [
-        "Algo correu mal"
       ],
       "Something went wrong while converting the address": [
         "Ocorreu um erro ao converter o endereço"
@@ -5171,17 +5206,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } carateres."
       ],
-      "This file has no version available to download": [
-        "Este ficheiro não tem nenhuma versão disponível para descarregar"
-      ],
       "This folder name is not available. Please choose a different name.": [
         "Este nome de pasta não está disponível. Escolha um nome diferente."
-      ],
-      "This item is no longer shared": [
-        "Este item já não está partilhado"
-      ],
-      "This item is not shared": [
-        "Este item não é partilhado"
       ],
       "This label name is not available. Please choose a different name.": [
         "Este nome de etiqueta não está disponível. Escolha um nome diferente."
@@ -5228,9 +5254,6 @@
       "VAT number must start with ${ prefixes }": [
         "O número de IVA deve começar por ${ prefixes }"
       ],
-      "Verification keys are not available": [
-        "As chaves de verificação não estão disponíveis"
-      ],
       "We couldn’t send a verification code using this method.": [
         "Não conseguimos enviar um código de verificação através deste método."
       ],
@@ -5254,20 +5277,11 @@
       "You did not provide a file.": [
         "Não forneceu um ficheiro."
       ],
-      "You do not have access to this item": [
-        "Não tem acesso a este artigo"
-      ],
       "You have reached the maximum number of calendars.": [
         "Atingiu o número máximo de calendários."
       ],
       "You have reached the number of contacts limit for your account": [
         "Atingiu o limite do número de contactos da sua conta"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Utilizou todos os endereços do seu plano. Atualize o seu plano para adicionar um novo endereço ou desative um endereço na sua conta."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Usou todos os utilizadores do seu plano. Subscreva um plano superior para adicionar um utilizador."
       ],
       "You must set a name": [
         "Tem de definir um nome"
@@ -6453,14 +6467,6 @@
         "Mais opções de importar"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "Em curso"
-      ],
-      "Migrated": [
-        "Migrado"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos não serão importados. Clique para detalhes"
@@ -6726,10 +6732,6 @@
       "${ total } message": [
         "${ total } mensagem",
         "${ total } mensagens"
-      ],
-      "${ total } user found": [
-        "${ total } utilizador encontrado",
-        "${ total } utilizadores encontrados"
       ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } rastreador de e-mail bloqueado",
@@ -7546,8 +7548,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -12936,9 +12937,6 @@
       "San Francisco": [
         "San Francisco"
       ],
-      "Search": [
-        "Pesquisar"
-      ],
       "Search date, name, email address, or subject line": [
         "Data de pesquisa, nome, endereço de e-mail ou linha de assunto"
       ],
@@ -12947,9 +12945,6 @@
       ],
       "Search for name or email": [
         "Pesquisar por nome ou e-mail"
-      ],
-      "Search for users or addresses": [
-        "Pesquisar por utilizadores ou endereços"
       ],
       "Search messages": [
         "Pesquisar mensagens"
@@ -13078,11 +13073,6 @@
       ],
       "Progress: ${ combinedProgress }%": [
         "Progresso: ${ combinedProgress }%"
-      ]
-    },
-    "Property": {
-      "attributes": [
-        "atributos"
       ]
     },
     "Property type": {
@@ -14916,9 +14906,6 @@
       "Name": [
         "Nome"
       ],
-      "Size": [
-        "Tamanho"
-      ],
       "Status": [
         "Estado"
       ],
@@ -15349,9 +15336,6 @@
       ],
       "Distraction-free emailing": [
         "Uma caixa de entrada de e-mail sem distrações"
-      ],
-      "Domain names": [
-        "Nomes de domínio"
       ],
       "Don't give spam a chance": [
         "Não dê oportunidade ao spam"
@@ -16033,9 +16017,6 @@
       ],
       "Use Gmail securely in ${ MAIL_APP_NAME }": [
         "Utilize o Gmail de forma segura no ${ MAIL_APP_NAME }"
-      ],
-      "Users and addresses": [
-        "Utilizadores e endereços"
       ],
       "Verification error": [
         "Erro de verificação"

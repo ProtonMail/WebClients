@@ -995,6 +995,9 @@
       "Download updated file": [
         "Güncellenmiş dosyayı indir"
       ],
+      "Dropbox": [
+        "Dropbox"
+      ],
       "Edit": [
         "Düzenle"
       ],
@@ -1540,6 +1543,9 @@
       ],
       "OK": [
         "Tamam"
+      ],
+      "OneDrive": [
+        "OneDrive"
       ],
       "Open": [
         "Aç"
@@ -2895,10 +2901,10 @@
     },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
-        "Yüksek hızlı İsviçre VPN hizmetini Muhteşem Cuma fırsatlarıyla indirimli olarak alın"
+        "Yüksek hızlı İsviçre VPN hizmetini Efsane Cuma fırsatlarıyla indirimli olarak alın"
       ],
       "Select your Black Friday offer": [
-        "Muhteşem Cuma teklifinizi seçin"
+        "Efsane Cuma teklifinizi seçin"
       ]
     },
     "bf2023: Info": {
@@ -2960,10 +2966,10 @@
     },
     "bfcampaign2026: Action": {
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Get the deal": [
-        "Tekliften yararlanın"
+        "Fırsatı yakala"
       ]
     },
     "bfcampaign2026: Info": {
@@ -2980,7 +2986,7 @@
         "2 TB güvenli depolama alanı"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GB depolama alanı: Geçerli tarifenizin 40 katı"
+        "200 GB depolama alanı: Mevcut tarifenizin 40 katı"
       ],
       "3 TB of secure storage": [
         "3 TB güvenli depolama alanı"
@@ -2992,25 +2998,25 @@
         "6 bireysel hesap"
       ],
       "Built-in 2FA authenticator": [
-        "Hazır iki adımlı kimlik doğrulayıcı"
+        "Yerleşik iki faktörlü kimlik doğrulayıcı"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "İndirimler standart aylık fiyatlara göre hesaplanır. Fatura dönemi sona erdiğinde aboneliğiniz standart yıllık ücret ile yenilenir."
+        "İndirimler, standart aylık fiyatlandırmaya göre hesaplanmıştır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
       ],
       "Online document editor": [
         "Çevrim içi belge düzenleyici"
       ],
       "Recover previous file versions": [
-        "Önceki dosya sürümlerini geri yükleme"
+        "Önceki dosya sürümlerini kurtarın"
       ],
       "Stronger protection against cyber threats": [
         "Siber tehditlere karşı daha güçlü koruma"
       ],
       "Unlimited folders, labels, and filters": [
-        "Sınırsız sayıda klasör, etiket ve süzgeç"
+        "Sınırsız sayıda klasör, etiket ve filtre"
       ],
       "Use your own email domain": [
-        "Kendi e-posta etki alanınızı kullanma"
+        "Kendi e-posta etki alanınızı kullanın"
       ]
     },
     "bfcampaign2026: Info, Drive first": {
@@ -3043,13 +3049,13 @@
         "Yılın en büyük indirimi"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "for 12 months": [
         "12 aylık"
       ],
       "Last chance to save big": [
-        "Büyük kazanç için son şans"
+        "Büyük tasarruf için son fırsat"
       ],
       "Protect your entire tribe": [
         "Kabilenizi koruyun"
@@ -5463,8 +5469,8 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Başka bir hizmet sağlayıcıdaki e-postalarınızı, takvim etkinliklerinizi ve kişilerinizi aktarın."
       ],
-      "Bring over your files from another provider.": [
-        "Başka bir hizmet sağlayıcıdaki dosyalarınızı aktarın."
+      "Bring over your files and folders from another provider.": [
+        "Dosyalarınızı ve klasörlerinizi başka bir hizmet sağlayıcıdan buraya aktarın."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Kendi etki alanınızı kullanan profesyonel e-posta adresleriyle güven ve marka bilinirliği sağlayın."
@@ -7093,9 +7099,12 @@
       "They may ask to access your account in case of an emergency.": [
         "Acil bir durumda hesabınıza erişme isteğinde bulunabilirler."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "**${ days } gün** sonra **${ formattedAccessibleAt }** tarihinde otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz.",
-        "**${ days } gün** sonra **${ formattedAccessibleAt }** tarihinde otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz."
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "**Bugün**, ****${ formattedAccessibleAt } zamanında otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "**${ days } gün** sonra **${ formattedAccessibleAt }** zamanında otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz.",
+        "**${ days } gün** sonra **${ formattedAccessibleAt }** zamanında otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz."
       ],
       "This will take effect immediately.": [
         "Bu izin hemen etkin olacak."
@@ -9175,7 +9184,7 @@
         "Tümü"
       ],
       "Errors": [
-        "Hatalar"
+        "Sorunlar"
       ],
       "In progress": [
         "İşleniyor"
@@ -9766,9 +9775,6 @@
       ],
       "Contact us": [
         "Bize ulaşın"
-      ],
-      "Downloads": [
-        "İndirmeler"
       ],
       "Enjoying ${ planName }?": [
         "${ planName } hoşunuza gitti mi?"
@@ -10800,6 +10806,9 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Kullanıcıların güvenli paylaşılan sunuculara bağlanabilmesi için ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden izin verin."
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Kuruluşunuzun ${ LUMO_APP_NAME } API uygulamasını kullanmasına izin verin"
       ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Kare kod ile oturum açmayı açarsanız, parolanızı unuttuğunuzda bir kare kodu tarayarak oturum açabilirsiniz. Bunun için başka bir aygıtta ${ BRAND_NAME } oturumu açmış olmanız yeterlidir."
@@ -13451,7 +13460,7 @@
         "Bu kullanıcıyı aktarabilmek için ${ domainNamesLink } altındaki e-posta etki alanını ekleyin ve doğrulayın."
       ],
       "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Bu kullanıcıyı aktarabilmek için ${ provider.adminConsoleName } üzerinden hesabını kullanıma alın."
+        "Bu kullanıcıyı aktarmak için ${ provider.adminConsoleName } üzerinden hesabını kullanıma alın."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
         "Bu kullanıcıyı aktarmak için ${ usersAddressesLink } altından hesabını kullanıma alın."
@@ -13488,6 +13497,9 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ toAppName } kullanabilmek için bir ${ MAIL_APP_NAME } adresiniz olmalıdır."
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "${ toAppName } kullanmak için bir ${ MAIL_APP_NAME } adresiniz olmalı. Kuruluşunuzdaki yöneticilerden biri sizin için bir adres oluşturabilir."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Düzgün çalışması için, her süzgecin en az bir adı ve geçerli bir Sieve betiği olmalıdır. ${ link }."
@@ -17026,9 +17038,6 @@
       "Details": [
         "Ayrıntılar"
       ],
-      "Downloads": [
-        "İndirmeler"
-      ],
       "Encryption and keys": [
         "Şifreleme ve anahtarlar"
       ],
@@ -17211,6 +17220,9 @@
       ],
       "Visit our support site": [
         "Destek sitemizi ziyaret edin"
+      ],
+      "Want to import email, calendar and contacts?": [
+        "E-postaları, takvimleri ve kişileri içe aktarmak ister misiniz?"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP ve TCP iletişim kuralları arasındaki fark nedir?"
@@ -20771,11 +20783,8 @@
       "Billing Country": [
         "Faturalanacak ülke"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private etkin bir abonelik ile satın alınamaz."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private için bir bağış yapılması gereklidir."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Etkin bir abonelik varken Born Private hesapları satın alınamaz."
       ],
       "Buying credits requires a separate purchase.": [
         "Kredi satın almak için ayrı bir satın alma gerekir."
@@ -20876,6 +20885,9 @@
       "terms and conditions": [
         "hükümler ve koşullar"
       ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private girişimine bağış yapılması gerekir."
+      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir.",
         "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir."
@@ -20975,8 +20987,8 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Zaten ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } sahibisiniz."
       ],
-      "You already own Born Private.": [
-        "Zaten Born Private kapsamındasınız."
+      "You already own a Born Private account.": [
+        "Zaten bir Born Private hesabınız var."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Seçilmiş ödeme yönteminizden ${ amountToCharge } ödeme alınacak."
@@ -20987,8 +20999,8 @@
       "You will soon be redirected to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
       ],
-      "Your account is too old for Born Private.": [
-        "Hesabınız Born Private için çok eski."
+      "Your account is too old for the Born Private initiative.": [
+        "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "${ IDEAL_WERO_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
@@ -22587,9 +22599,21 @@
       ]
     },
     "scim": {
+      "${ cleanUpCount } clean up action required.": [
+        "${ cleanUpCount } temizleme işleminin yapılması gerekiyor",
+        "${ cleanUpCount } temizleme işleminin yapılması gerekiyor"
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "${ cleanUpCount } kullanıcının izinleri değiştirildi.",
+        "${ cleanUpCount } kullanıcının izinleri değiştirildi."
+      ],
       "${ memberCount } new member": [
         "${ memberCount } yeni üye",
         "${ memberCount } yeni üye"
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "${ numberOfCleanUps } temizleme işleminin yapılması gerekiyor",
+        "${ numberOfCleanUps } temizleme işleminin yapılması gerekiyor"
       ],
       "${ numberOfPendingGroups } group synced": [
         "${ numberOfPendingGroups } grup eşitlendi",
@@ -22627,8 +22651,17 @@
       "Approve changes from your identity provider": [
         "Kimlik hizmeti sağlayıcınızdan gelen değişiklikleri onaylayın"
       ],
+      "Approve permission changes for your organization": [
+        "Kuruluşunuzundaki izin değişikliklerini onaylayın"
+      ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Tüm ${ BRAND_NAME } hizmetlerine erişme izni vermek için son onay gerekli."
+      ],
+      "Final approval needed to remove organization key access.": [
+        "Kuruluş anahtarına erişme iznini kaldırmak için son onay gerekli."
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "Kuruluş anahtarlarının iptal edilmesi için son onay gerekli."
       ],
       "From your identity provider": [
         "Kimlik hizmeti sağlayıcınızdan"
@@ -24386,11 +24419,17 @@
       "Disabled": [
         "Kapalı"
       ],
+      "failed": [
+        "tamamlanamadı"
+      ],
       "finalizing": [
         "tamamlanıyor"
       ],
       "Generate a recovery phrase": [
         "Bir kurtarma ifadesi oluşturun"
+      ],
+      "key removal scheduled": [
+        "anahtarın kaldırılması zamanlandı"
       ],
       "Last changed ${ formattedDate }": [
         "Son değiştirilme ${ formattedDate }"
@@ -24409,6 +24448,9 @@
       ],
       "Outdated": [
         "Eski"
+      ],
+      "remove organization key": [
+        "kuruluş anahtarını kaldır"
       ],
       "Saved": [
         "Kaydedildi"
@@ -25812,6 +25854,9 @@
         "${ friendsSubscribed } arkadaş abone oldu",
         "${ friendsSubscribed } arkadaş abone oldu"
       ],
+      "${ LUMO_APP_NAME } API": [
+        "${ LUMO_APP_NAME } API"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
@@ -26108,7 +26153,7 @@
         "Fatura dönemi"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Block trackers and malware": [
         "İzleyicileri ve zararlı yazılımları engelleyin"
@@ -27903,6 +27948,9 @@
       "You have no resolved alerts": [
         "Çözümlenmiş bir uyarınız yok"
       ],
+      "You need a ${ BRAND_NAME } address": [
+        "Bir ${ BRAND_NAME } adresiniz olmalı"
+      ],
       "You're all set!": [
         "Hazırsınız!"
       ],
@@ -28924,6 +28972,9 @@
       ],
       "Send invite link via email instead": [
         "Bunun yerine davet bağlantısını e-posta ile gönderin"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Bu kullanıcı bir sonraki oturum açmasında yönetici yetkilerini alacak."
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Bu işlem yeni bir ${ MAIL_APP_NAME } adresi oluşturur."

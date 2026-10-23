@@ -342,9 +342,6 @@
       "Download": [
         "Download"
       ],
-      "Download app": [
-        "Download app"
-      ],
       "Download local participant report": [
         "Download lokal-deltagerrapport"
       ],
@@ -435,6 +432,9 @@
       "Join and leave sounds": [
         "Lyde ved til- og fraslutning"
       ],
+      "Join from ${ MEET_APP_NAME } app": [
+        "Deltag fra ${ MEET_APP_NAME }-appen"
+      ],
       "Join in browser": [
         "Tilslut via browseren"
       ],
@@ -515,9 +515,6 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "Åbn omtale fra ${ senderName } i chatten"
-      ],
-      "Open this meeting in the desktop app": [
-        "Åbn mødet i skrivebordsappen"
       ],
       "Participants": [
         "Deltagere"
@@ -730,9 +727,6 @@
       ],
       "Stay in meeting": [
         "Bliv i møde"
-      ],
-      "Stop opening meetings in the desktop app": [
-        "Stop åbning af møder i desktop-appen"
       ],
       "Stop receiving video": [
         "Stop indgående video"
@@ -2347,6 +2341,9 @@
       "The email addresses do not match": [
         "E-mailadresserne stemmer ikke overens"
       ],
+      "The emoji could not be added because the message is at its character limit": [
+        "Emojien kunne ikke tilføjes fordi beskeden har nået dens maksimale antal tegn"
+      ],
       "The meeting password is incorrect": [
         "Mødeadgangskoden er forkert"
       ],
@@ -2753,9 +2750,6 @@
       ],
       "Allow camera access to preview your background": [
         "Tillad adgang til kameraet for at forhåndsvise din baggrund"
-      ],
-      "Already in the app? You can close this tab.": [
-        "Er du allerede i appen? Du kan lukke denne fane."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "Anonym ${ particle } ${ participantNumber }"
@@ -3228,6 +3222,9 @@
       "Permissions not given.": [
         "Tilladelser ikke givet."
       ],
+      "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
+        "${ downloadLink } og installer appen, og klik derefter på Deltag i ${ MEET_APP_NAME }-appen igen."
+      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Aktivér adgang til din ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for den bedste oplevelse."
       ],
@@ -3414,9 +3411,6 @@
       "This meeting reached the time limit.": [
         "Dette mødet har nået tidsgrænsen."
       ],
-      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Dette møde blev åbnet i desktop-appen ${ MEET_APP_NAME }"
-      ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Denne optagelse slettes permanent fra denne enhed. Handlingen kan ikke fortrydes."
       ],
@@ -3519,14 +3513,8 @@
       "Yesterday — ${ absoluteDate }": [
         "I går — ${ absoluteDate }"
       ],
-      "You": [
-        "Dig"
-      ],
       "You are almost there": [
         "Du er der næsten"
-      ],
-      "You can close this tab.": [
-        "Du kan lukke denne fane."
       ],
       "You can now return to the application to continue": [
         "Du kan nu vende tilbage til applikationen for at fortsætte"
@@ -3911,6 +3899,9 @@
       "clearing your browser cache": [
         "rydder din browser-cache"
       ],
+      "download": [
+        "download"
+      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -3928,6 +3919,110 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ]
+    },
+    "Lumo emoji name": {
+      "Alert": [
+        "Advarsel"
+      ],
+      "Browse folders": [
+        "Søg i mapper"
+      ],
+      "Cash": [
+        "Kontanter"
+      ],
+      "Celebrate": [
+        "Fejring"
+      ],
+      "Cheers": [
+        "Jubel"
+      ],
+      "Chef's kiss": [
+        "Perfektion"
+      ],
+      "Coffee": [
+        "Kaffe"
+      ],
+      "Cowboy": [
+        "Cowboy"
+      ],
+      "Encrypt": [
+        "Kryptér"
+      ],
+      "Gaming": [
+        "Gaming"
+      ],
+      "Halo": [
+        "Glorie"
+      ],
+      "Happy": [
+        "Glad"
+      ],
+      "Love": [
+        "Kærlighed"
+      ],
+      "Mild panic": [
+        "Mild panik"
+      ],
+      "Mind blown": [
+        "Mind blown"
+      ],
+      "Nine lives": [
+        "Ni liv"
+      ],
+      "Party": [
+        "Fest"
+      ],
+      "Perk": [
+        "Fordel"
+      ],
+      "Popcorn": [
+        "Popcorn"
+      ],
+      "Rocket": [
+        "Raket"
+      ],
+      "Sad": [
+        "Trist"
+      ],
+      "Schrödinger in a box": [
+        "Schrödinger inden i rummet"
+      ],
+      "Schrödinger out of the box": [
+        "Schrödinger udenfor rummet"
+      ],
+      "Search": [
+        "Søg"
+      ],
+      "Sit": [
+        "Sidde"
+      ],
+      "Slay": [
+        "Slay"
+      ],
+      "Sleepy": [
+        "Træt"
+      ],
+      "Sweep": [
+        "Feje"
+      ],
+      "Thank you": [
+        "Tak"
+      ],
+      "Think": [
+        "Tænke"
+      ],
+      "This is fine": [
+        "\"This is fine\""
+      ],
+      "Watch left": [
+        "Se til venstre"
+      ],
+      "Watch right": [
+        "Se til højre"
+      ],
+      "Write": [
+        "Skrive"
       ]
     },
     "meet": {

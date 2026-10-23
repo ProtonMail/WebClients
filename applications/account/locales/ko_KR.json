@@ -1454,9 +1454,6 @@
       "Maybe later": [
         "나중에"
       ],
-      "Migrate": [
-        "이전"
-      ],
       "More": [
         "더 보기"
       ],
@@ -2372,6 +2369,9 @@
       "Domains": [
         "도메인"
       ],
+      "Managed Service Provider": [
+        "관리 중인 서비스 제공자"
+      ],
       "Servers": [
         "서버"
       ],
@@ -2860,6 +2860,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "스토리지 공간은 모든 ${ BRAND_NAME } 서비스에 공유됩니다."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "블랙프라이데이"
+      ],
+      "Get the deal": [
+        "혜택 받기"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/월"
+      ],
+      "15 GB storage": [
+        "15GB 저장공간"
+      ],
+      "2 individual accounts": [
+        "개별 계정 2개"
+      ],
+      "2 TB of secure storage": [
+        "2TB 보안 저장공간"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200GB 저장공간: 현재 요금제의 40배"
+      ],
+      "3 TB of secure storage": [
+        "3TB 보안 저장공간"
+      ],
+      "500 GB of secure storage": [
+        "500GB 보안 저장공간"
+      ],
+      "6 individual accounts": [
+        "개별 계정 6개"
+      ],
+      "Built-in 2FA authenticator": [
+        "내장형 2단계 인증 기능"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "할인율은 정상 월 요금 기준입니다. 청구 주기가 종료되면 정상 연간 요금으로 갱신됩니다."
+      ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
+      ],
+      "Stronger protection against cyber threats": [
+        "사이버 위협 차단 및 보안 강화"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "무제한 폴더, 라벨 및 필터"
+      ],
+      "Use your own email domain": [
+        "자체 이메일 도메인 사용"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "프리미엄 ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "연중 최대 세일"
+      ],
+      "Black Friday": [
+        "블랙프라이데이"
+      ],
+      "for 12 months": [
+        "12개월"
+      ],
+      "Last chance to save big": [
+        "마지막 역대급 할인 기회"
+      ],
+      "Protect your entire tribe": [
+        "온 가족을 보호하세요"
+      ],
+      "Protection for two in a single plan": [
+        "하나의 요금제로 두 사람 보호"
       ]
     },
     "Billing cycle": {
@@ -5162,9 +5262,6 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "다른 서비스 제공자로부터 회원님의 이매일, 캘린더 이벤트 및 연락처를 가져올 수 있습니다."
       ],
-      "Bring over your files from another provider.": [
-        "다른 서비스 제공업체에서 파일을 손쉽게 가져오세요."
-      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "자신의 도메인에서 전문 이메일 주소로 신뢰와 브랜드 인지도를 구축하세요."
       ],
@@ -6767,9 +6864,6 @@
       "They may ask to access your account in case of an emergency.": [
         "아래 사용자가 비밀번호 분실 등의 비상 상황에서 회원님의 계정에 접근을 요청할 수 있습니다."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "**${ days }**일 **${ formattedAccessibleAt }**일 후에 접근 권한이 자동으로 부여됩니다. 언제든지 요청을 거부하거나 즉시 접근 권한을 부여할 수 있습니다."
-      ],
       "This will take effect immediately.": [
         "이 효력은 즉시 발생합니다."
       ],
@@ -6923,9 +7017,6 @@
       ],
       "Address is already added to your account": [
         "이미 추가된 주소입니다."
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "조직 외부의 사용자에 의해 주소가 이미 사용 중입니다. 해당 문제를 해결하기 위해 고객 지원 팀으로 문의 바랍니다."
       ],
       "Address primary private key not found": [
         "기본 주소 키 찾을 수 없음"
@@ -7296,9 +7387,6 @@
       "Maximum ${ displayMaxValue } allowed": [
         "최대 ${ displayMaxValue }까지 허용됨"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "구성원 주소를 찾을 수 없습니다. 해당 문제를 해결하기 위해 고객 지원 팀에 문의해 주시기 바랍니다."
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "기존 ${ BRAND_NAME } 캘린더에 최소 ${ calendarsToFixCount }개의 캘린더를 병합하세요."
       ],
@@ -7307,12 +7395,6 @@
       ],
       "Missing key packet": [
         "키 패킷 없음"
-      ],
-      "Missing organization private key": [
-        "조직 비공개 키 유실"
-      ],
-      "Missing organization public key": [
-        "조직 공개 키 유실"
       ],
       "Missing signature": [
         "서명 없음"
@@ -7391,12 +7473,6 @@
       ],
       "Operation failed, try again later": [
         "작업에 실패했습니다. 나중에 다시 시도하세요."
-      ],
-      "Organization does not have enough seats available": [
-        "조직의 사용 권한이 충분하지 않습니다."
-      ],
-      "Organization does not have enough storage available": [
-        "조직에 충분한 저장공간이 남아있지 않습니다."
       ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
@@ -8788,29 +8864,6 @@
         "테라바이트"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "활성화됨"
-      ],
-      "All": [
-        "전체"
-      ],
-      "Errors": [
-        "오류"
-      ],
-      "In progress": [
-        "진행 중"
-      ],
-      "Migrated": [
-        "이전됨"
-      ],
-      "Not activated": [
-        "비활성화됨"
-      ],
-      "Pending": [
-        "대기 중"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "보관함"
@@ -9384,9 +9437,6 @@
       "Contact us": [
         "문의"
       ],
-      "Downloads": [
-        "다운로드"
-      ],
       "Enjoying ${ planName }?": [
         "${ planName }을(를) 잘 사용하고 계신가요?"
       ],
@@ -9754,9 +9804,6 @@
       "Failed": [
         "실패함"
       ],
-      "Has errors": [
-        "오류 있음"
-      ],
       "Import completed successfully": [
         "불러오기가 성공적으로 완료됨"
       ],
@@ -9774,9 +9821,6 @@
       ],
       "Paused": [
         "일시 정지됨"
-      ],
-      "Pending": [
-        "대기 중"
       ],
       "Skipped ${ count } contact due to incompatibilities": [
         "호환되지 않는 연락처 ${ count }개 건너뜀"
@@ -10969,7 +11013,7 @@
         "시작하는 방법을 모르시겠다면? ${ registrarLink }(에)서 DNS 업데이트 방법을 살펴보세요."
       ],
       "Don’t know your recovery phrase?": [
-        "복구 구문을 잊어버리셨나요?"
+        "복구 키를 잊어버리셨나요?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "아무 화면도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요. Google Pay로 결제하는 경우, 국내에서 지원되지 않는 서비스이므로 결제 진행이 되지 않을 수 있습니다."
@@ -11194,7 +11238,7 @@
         "복구 전화번호를 입력하면 사용자 이름 또는 이메일 주소를 보내드립니다."
       ],
       "Enter your recovery phrase to change your password now.": [
-        "비밀번호 변경을 즉시 하려면 복구 구문을 입력하십시오."
+        "비밀번호를 즉시 변경하려면 복구 키를 입력하십시오."
       ],
       "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
         "사용자의 신원을 인증하고 2단계 인증을 비활성화하기 위해 복구 키를 입력하세요."
@@ -11264,9 +11308,6 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "필터는 수신과 발신을 포함한 모든 이메일에서 작동합니다. 각 필터는 적어도 이름, 조건 및 작업을 포함해야 합니다."
-      ],
-      "Find out what can be migrated.": [
-        "이전되는 항목을 살펴보세요."
       ],
       "for ${ price }": [
         "${ price }으로"
@@ -11907,9 +11948,6 @@
       "No single sign-on": [
         "싱글 사인 온 없음"
       ],
-      "No users to display": [
-        "표시할 사용자 없음"
-      ],
       "Not a valid URL": [
         "유효하지 않은 URL"
       ],
@@ -12345,9 +12383,6 @@
       "Select a group to view its members and settings.": [
         "구성원과 설정을 보려면 그룹을 선택하세요."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "이전하고자 하는 항목을 선택하세요. 모든 조직 구성원들에게 적용됩니다."
-      ],
       "Select one or multiple user affiliations": [
         "한 명 또는 여러명 사용자의 소속을 선택하세요"
       ],
@@ -12771,12 +12806,6 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "구독 취소 링크가 만료되었습니다. 이 메일링 리스트의 가장 최신의 이메일을 열어주세요."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "해당 이메일 주소는 ${ BRAND_NAME }에서 지원되지 않음으로 사용자를 이전할 수 없습니다."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "플랫폼이 호환되지 않으므로 해당 사용자를 이전할 수 없습니다."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "이 사용자는 현재 조직의 지불에 대한 책임이 있습니다. 이 멤버를 강등하면 귀하가 조직에 대한 지불 책임을 지게 됩니다."
       ],
@@ -12914,27 +12943,6 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } 제품의 최신 개발 소식을 알고 싶으시다면 다양한 이메일을 구독해보거나 가끔씩 ${ blogLink } 해보세요."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "해당 사용자를 이전하려면 ${ domainNamesLink } 아래로 이메일 도메인을 추가 및 인증해야 합니다."
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "해당 사용자를 이전하려면 ${ provider.adminConsoleName } 아래로 계정을 활성화해야 합니다."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 계정을 활성화해야 합니다."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "해당 사용자를 이전하려면 ${ usersAddressesLink } 아래로 주소를 활성화해야 합니다."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "해당 사용자를 이전하려면 ${ BRAND_NAME }으로의 초대장 수락을 해야합니다."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 보관 해제헤야 합니다."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "이 사용자를 이전하려면 ${ provider.adminConsoleName }(에)서 해당 사용자를 정지 취소해야 합니다."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "남용이나 사기를 방지하기 위해 최소 ${ minimumDonation }의 기부를 부탁드립니다. 이는 전 세계적으로 디지털 개인정보를 보호하는 ${ protonFoundationLink } 작업을 지원하고 다음 세대를 보호하는 데 도움이 됩니다."
@@ -13389,9 +13397,6 @@
       "Yearly": [
         "연간"
       ],
-      "You": [
-        "나"
-      ],
       "You already have a free account": [
         "이미 무료 계정을 가지고 있습니다."
       ],
@@ -13619,6 +13624,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "다운로드한 복구 파일을 사용하여 잠긴 데이터를 복구할 수 없게 됩니다. 또한 장치 기반 복구도 비활성화됩니다."
+      ],
+      "You'll choose a new username": [
+        "새로운 사용자 이름을 선택할 수 있습니다."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "친구가 연간 플랜을 구독하고 1개월 후, 월간 플랜 구독 2개월 후에 크레딧 보상을 받게 됩니다."
@@ -16396,9 +16404,6 @@
       ],
       "Details": [
         "세부사항"
-      ],
-      "Downloads": [
-        "다운로드"
       ],
       "Encryption and keys": [
         "암호화 및 키"
@@ -19762,7 +19767,7 @@
         "오픈 소스이며 외부 감사를 받았음"
       ],
       "Passkeys supported on all devices": [
-        "모든 기기에서 패스키를 지원합니다"
+        "모든 기기에서 패스키 지원"
       ],
       "per month": [
         "매월"
@@ -20071,14 +20076,11 @@
       "Billing Country": [
         "청구 국가 "
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private는 활성 구독과 함께 결제할 수 없습니다."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private는 기부가 필수입니다."
-      ],
       "Buying credits requires a separate purchase.": [
         "크레딧 구매는 별도 결제건으로 분리됩니다."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "계속하면, ${ termsLink }에 동의하는 것으로 간주합니다."
       ],
       "Card number": [
         "카드 번호"
@@ -20134,6 +20136,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "무료 체험 종료 후 구독이 활성화되려면 결제 수단이 필요합니다."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "다음 사유로 플랜 변경이 불가합니다:"
+      ],
       "Please close extra wallets before changing your plan.": [
         "플랜 변경 전 추가적인 지갑 계좌를 폐지해야 합니다."
       ],
@@ -20164,8 +20169,14 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "해당 할인은 ${ renewalsWithCoupon }회 갱신까지 유효합니다."
       ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "선택된 플랜은 설정된 주소의 수만큼 지원하지 않습니다."
+      ],
       "The selected plan doesn’t offer enough domains for your account.": [
         "선택된 플랜은 계정에 설정된 도메인만큼을 지원하지 않습니다."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "선택된 플랜은 조직의 구성원 수만큼 지원하지 않습니다."
       ],
       "The selected plan doesn’t offer enough storage for your account.": [
         "선택된 플랜은 현재 계정이 사용하는 저장공간만큼 지원하지 않습니다."
@@ -20215,8 +20226,14 @@
       "Trial plans don’t support custom domains.": [
         "무료 체험에서는 사용자 지정 도메인 이용 권한을 지원하지 않습니다."
       ],
+      "Trial plans don’t support dedicated IPs.": [
+        "무료 체험에서는 지정 IP 이용 권한을 지원하지 않습니다."
+      ],
       "Trial plans don’t support Scribe seats.": [
         "무료 체험에서는 Scribe 이용 권한을 지원하지 않습니다."
+      ],
+      "Trial plans don’t support this many members.": [
+        "무료 체험 상태에서는 해당 구성원 수만큼을 지원하지 않습니다."
       ],
       "VAT number": [
         "부가가치세 번호"
@@ -20281,6 +20298,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "문제가 발생했습니다. Google Pay 인증에 실패했습니다."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "확인을 선택하면 회원님은 ${ BRAND_NAME } 및 당사의 결제 서비스 제공업체인 Stripe이 SEPA 자동이체(Direct Debit)를 통해 본 은행 계좌에서 향후 구독 결제금을 수금하고, 해당 은행이 결제금을 출금하도록 승인하게 됩니다. 첫 결제는 지금 ${ IDEAL_WERO_BRAND_NAME }을(를) 통해 진행됩니다. 구독은 취소할 때까지 자동으로 갱신되며, 결제 전 미리 안내해 드립니다. 자동이체 수금의 경우 은행과의 약관에 따라 출금일로부터 8주 이내에 은행에 환불을 요청할 수 있습니다. 이는 지금 진행 중인 ${ IDEAL_WERO_BRAND_NAME } 결제에는 적용되지 않습니다."
       ]
     },
     "Payments.info": {
@@ -21121,7 +21143,7 @@
         "PDF 다운로드"
       ],
       "I understand that if I lose my recovery phrase, I may permanently lose access to my account.": [
-        "만일 복구 구문을 잃어버리면 계정에 영구적으로 접근할 수 없음을 확인합니다."
+        "만일 복구 키를 잃어버리면 계정에 영구적으로 접근할 수 없음을 확인합니다."
       ],
       "It’s the only way to recover everything—store it safely.": [
         "복구 키트는 모든 데이터를 복구할 수 있는 유일한 방법입니다. 안전한 곳에 보관하세요."
@@ -21138,7 +21160,7 @@
     },
     "RecoveryPhrase: Title": {
       "Save your recovery phrase": [
-        "복구 구문 저장"
+        "복구 키 저장"
       ]
     },
     "Referral": {
@@ -22959,7 +22981,7 @@
         "유일한 비즈니스 솔루션입니다:"
       ],
       "The only email service with:": [
-        "이메일"
+        "아래 기능이 모두 포함된 단 하나의 유일한 이메일 서비스:"
       ],
       "The only password manager with:": [
         "다음을 갖춘 유일한 비밀번호 관리자:"
@@ -24726,23 +24748,11 @@
       ]
     },
     "Table header": {
-      "Activated": [
-        "활성화됨"
-      ],
-      "Estimated size": [
-        "예상 용량"
-      ],
-      "Migration status": [
-        "이전 상태"
-      ],
       "Size": [
         "크기"
       ],
       "Status": [
         "상태"
-      ],
-      "User": [
-        "사용자"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25198,6 +25208,9 @@
       "Billing cycle": [
         "결제 주기"
       ],
+      "Black Friday": [
+        "블랙 프라이데이"
+      ],
       "Block trackers and malware": [
         "트래커와 멀웨어를 차단하기"
       ],
@@ -25299,9 +25312,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "VPN 항상 켜기 기기 프로파일 구성"
-      ],
-      "Configure migration": [
-        "이전 작업 구성"
       ],
       "Configure your domain": [
         "도메인 구성하기"
@@ -26482,9 +26492,6 @@
       "Select the way to send this notification": [
         "알림을 보낼 방법 선택"
       ],
-      "Select users to migrate": [
-        "이전할 사용자를 선택하세요"
-      ],
       "Select when you want this notification to be sent": [
         "언제 이 알림이 전송될지 선택하세요"
       ],
@@ -26661,6 +26668,9 @@
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "모든 회원님의 기기에서 ${ passPlusPlanName }로 보안을 강화하세요. ${ upgradeButton }"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } 구독"
       ],
       "Subscription": [
         "구독"
@@ -26893,9 +26903,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business에 오신 것을 환영합니다"
       ],
-      "What are you migrating?": [
-        "무엇을 이전하시나요?"
-      ],
       "What changes if you switch to the Free plan": [
         "Free 플랜으로 전환하는 경우 변경되는 사항"
       ],
@@ -27089,6 +27096,9 @@
       "Plan": [
         "플랜"
       ],
+      "Price": [
+        "가격"
+      ],
       "Start date": [
         "시작일"
       ],
@@ -27171,9 +27181,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "라벨 수를 줄이기 위해 가져오기를 사용자 정의하세요"
-      ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "${ providerName }(에)서 ${ BRAND_NAME }으로 데이터 이전 상태"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "휴지통 및 스팸함의 메시지를 30일 뒤 지웁니다. 자동 삭제를 활성화 하면 이미 휴지통/스팸에 있는 메시지가 이동된 날짜를 기준으로 삭제될 날짜를 알 수 있습니다."
@@ -27396,9 +27403,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "사용자의 대략적인 위치 (IP 주소 기반)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "개인의 ${ BRAND_NAME } 계정에 접근한 사용자"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "다른 사용자가 웹 앱에 로그인했을 때 사용자의 ${ BRAND_NAME } 아이콘 대신 로고를 보게 됩니다."

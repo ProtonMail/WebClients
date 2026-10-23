@@ -387,9 +387,6 @@
       "Get ${ planOrAppName }": [
         "Získat ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Získejte ${ BRAND_NAME } adresu zdarma"
-      ],
       "Get the apps": [
         "Získat aplikace"
       ],
@@ -1140,6 +1137,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Úložný prostor je sdílen mezi všemi službami ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/měsíc"
+      ],
+      "15 GB storage": [
+        "15 GB úložiště"
+      ],
+      "2 individual accounts": [
+        "2 samostatné účty"
+      ],
+      "2 TB of secure storage": [
+        "2 TB bezpečného úložiště"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB úložiště: 40× více než váš současný plán"
+      ],
+      "3 TB of secure storage": [
+        "3 TB bezpečného úložiště"
+      ],
+      "500 GB of secure storage": [
+        "500 GB bezpečného úložiště"
+      ],
+      "6 individual accounts": [
+        "6 samostatných účtů"
+      ],
+      "Built-in 2FA authenticator": [
+        "Vestavěné ověřování 2FA"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Slevy se vztahují na standardní měsíční ceny. Po skončení fakturačního cyklu se vaše předplatné obnoví za standardní roční sazbu."
+      ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silnější ochrana proti kybernetickým hrozbám"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Neomezený počet složek, štítků a filtrů"
+      ],
+      "Use your own email domain": [
+        "Použijte svou vlastní e-mailovou doménu"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Prémiový ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Největší slevová akce roku"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "na 12 měsíců"
+      ],
+      "Last chance to save big": [
+        "Poslední šance ušetřit ve velkém"
+      ],
+      "Protect your entire tribe": [
+        "Chraňte celou svou partu"
+      ],
+      "Protection for two in a single plan": [
+        "Ochrana pro dva v jednom plánu"
       ]
     },
     "Bug category": {
@@ -2783,9 +2880,6 @@
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nenalezen"
       ],
-      "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Celé úložiště již bylo přiděleno. Zmenšete prosím přidělený prostor ostatním uživatelům."
-      ],
       "Already a member of this share": [
         "Již má členství v tomto sdílení"
       ],
@@ -3011,15 +3105,6 @@
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
-      "Please configure a custom domain before adding addresses.": [
-        "Před přidáním adres nastavte vlastní doménu."
-      ],
-      "Please configure a custom domain before adding users to your organization.": [
-        "Před přidáním uživatelů do Vaši organizace si prosím nastavte vlastní doménu."
-      ],
-      "Please enable multi-user support before adding users to your organization.": [
-        "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
-      ],
       "Please enter a valid postal code": [
         "Zadejte prosím platné poštovní směrovací číslo"
       ],
@@ -3046,9 +3131,6 @@
       ],
       "Please select a state": [
         "Vyberte prosím stát"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
       ],
       "Port is required": [
         "Port je povinná položka"
@@ -3235,12 +3317,6 @@
       ],
       "You have reached the number of contacts limit for your account": [
         "Dosáhli jste limitu počtu kontaktů vašeho účtu"
-      ],
-      "You have used all addresses in your plan. Please upgrade your plan to add a new address or disable an address in your account.": [
-        "Využili jste všechny adresy ve vašem tarifu. Prosím navyšte svůj tarif, abyste mohli přidat novou adresu, nebo deaktivujte některou z adres ve svém účtu."
-      ],
-      "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -4042,14 +4118,6 @@
         "Chcete-li kalendář exportovat jako ICS soubor, vyberte ${ boldExport }."
       ]
     },
-    "Import status": {
-      "In progress": [
-        "Probíhá"
-      ],
-      "Migrated": [
-        "Migrováno"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro detaily"
@@ -4091,9 +4159,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pro bezpečnou synchronizaci událostí a šifrování. ${ claimAddressButton }"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendář",
@@ -4196,12 +4261,6 @@
         "vybrány ${ selectedFoldersCountLocalized } štítky",
         "vybráno ${ selectedFoldersCountLocalized } štítků",
         "vybráno ${ selectedFoldersCountLocalized } štítků"
-      ],
-      "${ total } user found": [
-        "Nalezen ${ total } uživatel",
-        "Nalezeni ${ total } uživatelé",
-        "Nalezeno ${ total } uživatelů",
-        "Nalezeno ${ total } uživatelů"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt úspěšně aktualizován.",
@@ -4950,9 +5009,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Dočasně nedostupné z důvodu vysokého vytížení. Zkuste to prosím později."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Dočasně nedostupné. Zkontrolujte to prosím později."
-      ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
         "Autorství úprav v dokumentu nebylo možné ověřit. Chcete tento dokument označit jako ověřený? Můžete zvolit možnost Ignorovat a rozhodnout se později."
       ],
@@ -5018,9 +5074,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Abychom vám pomohli zapamatovat si vaše heslo, budeme vás žádat o jeho pravidelné zadávání. Časem budeme tyto žádosti omezovat."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Chcete-li importovat události, nejprve vytvořte kalendář v ${ CALENDAR_APP_NAME }. Po importu se zde zobrazí události."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pro opětovné podepsání vašich kontaktů, potřebujeme prověřit každý kontakt oproti seznamu šifrovacích klíčů dostupných ve vašem účtu. Jestliže nebude nalezena shoda, bude kontakt znovu podepsán pomocí výchozího šifrovacího klíče."
@@ -5419,9 +5472,6 @@
       "Calendar": [
         "Kalendář"
       ],
-      "Calendars": [
-        "Kalendáře"
-      ],
       "can edit": [
         "může upravovat"
       ],
@@ -5499,9 +5549,6 @@
       ],
       "Email format": [
         "Formát e-mailu"
-      ],
-      "Emails": [
-        "E-maily"
       ],
       "Emails (all messages)": [
         "E-maily (všechny zprávy)"
@@ -7684,17 +7731,11 @@
       "Please select the main reason": [
         "Vyberte prosím hlavní důvod"
       ],
-      "Search": [
-        "Vyhledat"
-      ],
       "Search for group name": [
         "Vyhledat název skupiny"
       ],
       "Search for name or email": [
         "Vyhledat jméno nebo e-mail"
-      ],
-      "Search for users or addresses": [
-        "Hledat uživatele nebo adresy"
       ],
       "Search parent folder": [
         "Prohledat nadřazenou složku"
@@ -8822,9 +8863,6 @@
       "Name": [
         "Název"
       ],
-      "Size": [
-        "Velikost"
-      ],
       "Status": [
         "Stav"
       ],
@@ -8954,9 +8992,6 @@
       "Change password": [
         "Změnit heslo"
       ],
-      "Choose a provider": [
-        "Vybrat poskytovatele"
-      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Získejte vaši ${ MAIL_APP_NAME } adresu"
       ],
@@ -9080,9 +9115,6 @@
       "Document verification failed": [
         "Ověření dokumentu se nezdařilo"
       ],
-      "Domain names": [
-        "Názvy domén"
-      ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stáhnout aplikace ${ DRIVE_APP_NAME }"
       ],
@@ -9184,9 +9216,6 @@
       ],
       "Import groups": [
         "Importovat skupiny"
-      ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Importujte svá data do ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Informace odhalené při úniku"
@@ -9323,9 +9352,6 @@
       "Select contact group": [
         "Vybrat skupinu kontaktů"
       ],
-      "Select data to import": [
-        "Vyberte data k importu"
-      ],
       "Select link expiration date": [
         "Vyberte datum pro vypršení platnosti odkazu"
       ],
@@ -9424,9 +9450,6 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Použít ${ VPN_SHORT_APP_NAME } pro ochranu soukromí"
-      ],
-      "Users and addresses": [
-        "Uživatelé a adresy"
       ],
       "Verify your password": [
         "Ověřte své heslo"

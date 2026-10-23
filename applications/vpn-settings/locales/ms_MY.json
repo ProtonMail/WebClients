@@ -793,9 +793,6 @@
       "Get ${ planOrAppName }": [
         "Dapatkan ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Dapatkan alamat ${ BRAND_NAME } percuma"
-      ],
       "Get a new encrypted email address": [
         "Dapatkan alamat e-mel tersulit baharu"
       ],
@@ -990,9 +987,6 @@
       ],
       "Mark as resolved": [
         "Tandakan sebagai selesai"
-      ],
-      "Migrate": [
-        "Migrasikan"
       ],
       "More benefits": [
         "Lebih banyak faedah"
@@ -2097,6 +2091,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ruang storan dikongsi merentas semua perkhidmatan ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Dapatkan tawaran"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/bulan"
+      ],
+      "15 GB storage": [
+        "15 GB storan"
+      ],
+      "2 individual accounts": [
+        "2 akaun individu"
+      ],
+      "2 TB of secure storage": [
+        "2 TB storan selamat"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB storan: 40 kali ganda pelan semasa anda"
+      ],
+      "3 TB of secure storage": [
+        "3 TB storan selamat"
+      ],
+      "500 GB of secure storage": [
+        "500 GB storan selamat"
+      ],
+      "6 individual accounts": [
+        "6 akaun individu"
+      ],
+      "Built-in 2FA authenticator": [
+        "Pengesah 2FA terbina dalam"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Diskaun adalah berdasarkan harga bulanan standard. Langganan anda akan diperbaharui pada kadar tahunan standard apabila kitaran pengebilan tamat."
+      ],
+      "Online document editor": [
+        "Penyunting dokumen dalam talian"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi fail terdahulu"
+      ],
+      "Stronger protection against cyber threats": [
+        "Perlindungan lebih kuat terhadap ancaman siber"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Folder, label dan penapis tanpa had"
+      ],
+      "Use your own email domain": [
+        "Gunakan domain e-mel anda sendiri"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, dan ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Jualan terbesar tahun ini"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "selama 12 bulan"
+      ],
+      "Last chance to save big": [
+        "Peluang terakhir untuk berjimat besar"
+      ],
+      "Protect your entire tribe": [
+        "Lindungi seluruh keluarga anda"
+      ],
+      "Protection for two in a single plan": [
+        "Perlindungan untuk dua orang dalam satu pelan"
       ]
     },
     "Billing cycle": {
@@ -3705,9 +3799,6 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Bawa e-mel, acara kalendar dan kenalan anda daripada pembekal lain."
       ],
-      "Bring over your files from another provider.": [
-        "Pindahkan fail anda daripada penyedia lain."
-      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Bina kepercayaan dan pengiktirafan jenama dengan alamat e-mel profesional pada domain anda sendiri."
       ],
@@ -4704,9 +4795,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Mereka boleh meminta akses ke akaun anda dalam kecemasan."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Mereka akan menerima akses secara automatik dalam **${ days } hari**, pada **${ formattedAccessibleAt }**, anda boleh menolak permintaan mereka atau memberi mereka akses serta-merta pada bila-bila masa."
-      ],
       "This will take effect immediately.": [
         "Tindakan ini akan berkuat kuasa serta-merta."
       ],
@@ -4819,9 +4907,6 @@
       "A group with this name already exists": [
         "Kumpulan dengan nama ini sudah wujud"
       ],
-      "A message is required when reporting copyright infringement or stolen data": [
-        "Mesej diperlukan semasa melaporkan pelanggaran hak cipta atau data curian"
-      ],
       "Address cannot be yours": [
         "Alamat tidak boleh milik anda"
       ],
@@ -4830,9 +4915,6 @@
       ],
       "Address is already added to your account": [
         "Alamat telah ditambah ke akaun anda"
-      ],
-      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Alamat telah digunakan oleh pengguna di luar organisasi anda. Sila hubungi sokongan pelanggan untuk menyelesaikan masalah ini"
       ],
       "Address primary private key not found": [
         "Kunci peribadi utama alamat tidak ditemui"
@@ -4852,29 +4934,8 @@
       "Authentication error.": [
         "Ralat pengesahan."
       ],
-      "Bookmark password is not available": [
-        "Kata laluan penanda buku tidak tersedia"
-      ],
       "Calendar limit reached": [
         "Had kalendar telah dicapai"
-      ],
-      "Cannot add photo to album without a valid name": [
-        "Foto tidak boleh ditambah ke album tanpa nama yang sah"
-      ],
-      "Cannot download a folder": [
-        "Folder tidak boleh dimuat turun"
-      ],
-      "Cannot move item without a valid name, please rename the item first": [
-        "Item tidak boleh dipindahkan tanpa nama yang sah, sila namakan semula item terlebih dahulu"
-      ],
-      "Cannot share root folder": [
-        "Folder akar tidak boleh dikongsi"
-      ],
-      "Cannot verify the author of this file": [
-        "Tidak dapat mengesahkan pengarang fail ini"
-      ],
-      "Cannot verify who uploaded this file": [
-        "Tidak dapat mengesahkan siapa yang memuat naik fail ini"
       ],
       "Checkout expired, please try again": [
         "Pembayaran telah luput, sila cuba lagi"
@@ -4885,35 +4946,11 @@
       "Company name or personal name is required": [
         "Nama syarikat atau nama peribadi diperlukan"
       ],
-      "Copy operation aborted": [
-        "Operasi salinan telah dibatalkan"
-      ],
-      "Copying item to a non-folder is not allowed": [
-        "Item tidak boleh disalin ke lokasi yang bukan folder"
-      ],
-      "Could not find an available name": [
-        "Nama yang tersedia tidak dapat ditemui"
-      ],
       "Could not generate the device profile. Please try again.": [
         "Profil peranti tidak dapat dijana. Sila cuba lagi."
       ],
       "Could not grant access to the organization key": [
         "Tidak dapat memberikan akses kepada kunci organisasi"
-      ],
-      "Could not load sharing details": [
-        "Tidak dapat memuatkan butiran perkongsian"
-      ],
-      "Could not load the image preview: ${ message }": [
-        "Pratonton imej tidak dapat dimuatkan: ${ message }"
-      ],
-      "Could not read part of this file: ${ message }": [
-        "Sesetengah bahagian fail ini tidak dapat dibaca: ${ message }"
-      ],
-      "Could not unlock the parent folder": [
-        "Tidak dapat membuka kunci folder induk"
-      ],
-      "Could not unlock this item": [
-        "Tidak dapat membuka kunci item ini"
       ],
       "Couldn't load invoices. Please try again later.": [
         "Invois tidak dapat dimuatkan. Sila cuba lagi kemudian."
@@ -4921,23 +4958,11 @@
       "Couldn't load transactions. Please try again later.": [
         "Transaksi tidak dapat dimuatkan. Sila cuba lagi kemudian."
       ],
-      "Creating documents in non-folders is not allowed": [
-        "Dokumen tidak boleh dicipta dalam bukan folder"
-      ],
-      "Creating files in non-folders is not allowed": [
-        "Fail tidak boleh dicipta di lokasi selain folder"
-      ],
-      "Creating folders in non-folders is not allowed": [
-        "Folder tidak boleh dicipta dalam item yang bukan folder"
-      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Nyahpilih sekurang-kurangnya ${ calendarsToFixCount } kalendar"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Nyahpilih sekurang-kurangnya ${ calendarsToFixCount } kalendar atau"
-      ],
-      "Device not found": [
-        "Peranti tidak ditemui"
       ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, cuba lagi kemudian"
@@ -4969,35 +4994,8 @@
       "Error publishing changes": [
         "Ralat semasa menerbitkan perubahan"
       ],
-      "Expiration date cannot be in the past": [
-        "Tarikh tamat tempoh tidak boleh di masa lalu"
-      ],
       "Failed to add group member": [
         "Ahli kumpulan tidak dapat ditambah"
-      ],
-      "Failed to decrypt bookmark key: ${ message }": [
-        "Kunci penanda buku tidak dapat dinyahsulit: ${ message }"
-      ],
-      "Failed to decrypt bookmark name: ${ message }": [
-        "Nama penanda buku tidak dapat dinyahsulit: ${ message }"
-      ],
-      "Failed to decrypt bookmark password: ${ message }": [
-        "Kata laluan penanda buku tidak dapat dinyahsulit: ${ message }"
-      ],
-      "Failed to decrypt content key: ${ message }": [
-        "Kunci kandungan tidak dapat dinyahsulit: ${ message }"
-      ],
-      "Failed to decrypt item name: ${ message }": [
-        "Nama item tidak dapat dinyahsulit: ${ message }"
-      ],
-      "Failed to decrypt node key: ${ message }": [
-        "Kunci nod tidak dapat dinyahsulit: ${ message }"
-      ],
-      "Failed to decrypt revision metadata": [
-        "Metadata semakan tidak dapat dinyahsulit"
-      ],
-      "Failed to get inviter keys": [
-        "Kunci penjemput tidak dapat diperoleh"
       ],
       "Failed to load OAuth modal.": [
         "Modal OAuth tidak dapat dimuatkan."
@@ -5020,15 +5018,6 @@
       "Failed to update detailed monitoring.": [
         "Pemantauan terperinci tidak dapat dikemas kini."
       ],
-      "Failed to verify invitation": [
-        "Jemputan tidak dapat disahkan"
-      ],
-      "File download failed due to empty response": [
-        "Fail tidak dapat dimuat turun kerana respons kosong"
-      ],
-      "File has no revision": [
-        "Fail ini tidak mempunyai semakan"
-      ],
       "File too large. Your logo must be 30 KB or smaller.": [
         "Fail terlalu besar. Logo anda mesti bersaiz 30 KB atau kurang."
       ],
@@ -5037,9 +5026,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Jika masa pada TV anda telah luput, klik Muat semula pada TV anda dan masukkan kod anda sekali lagi."
-      ],
-      "Image preview not found": [
-        "Pratonton imej tidak ditemui"
       ],
       "IMAP server is required": [
         "Pelayan IMAP diperlukan"
@@ -5101,74 +5087,29 @@
       "Invalid private key file": [
         "Fail kunci peribadi tidak sah"
       ],
-      "Invalid URL": [
-        "URL tidak sah"
-      ],
       "Invalid VAT number": [
         "Nombor VAT tidak sah"
       ],
       "Invalid verification code": [
         "Kod pengesahan tidak sah"
       ],
-      "Invitation not found": [
-        "Jemputan tidak ditemui"
-      ],
-      "Item not found": [
-        "Item tidak ditemui"
-      ],
       "Label name cannot be empty.": [
         "Nama label tidak boleh kosong."
-      ],
-      "Legacy public link cannot be updated. Please re-create a new public link.": [
-        "Pautan awam legasi tidak dapat dikemas kini. Sila cipta pautan awam baharu."
       ],
       "Maximum ${ displayMaxValue } allowed": [
         "Maksimum ${ displayMaxValue } dibenarkan"
       ],
-      "Member address not found. Please contact customer support to resolve this": [
-        "Alamat ahli tidak dijumpai. Sila hubungi sokongan pelanggan untuk menyelesaikan masalah ini"
-      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Gabungkan sekurang-kurangnya ${ calendarsToFixCount } kalendar dengan kalendar ${ BRAND_NAME } sedia ada"
       ],
-      "Missing inviter email": [
-        "E-mel penjemput tiada"
-      ],
       "Missing key packet": [
         "Paket kunci tiada"
-      ],
-      "Missing organization private key": [
-        "Kunci peribadi organisasi tidak dijumpai"
-      ],
-      "Missing organization public key": [
-        "Kunci awam organisasi tidak dijumpai"
-      ],
-      "Missing signature": [
-        "Tandatangan tiada"
-      ],
-      "Missing signature for ${ signatureType }": [
-        "Tandatangan tidak dijumpai untuk ${ signatureType }"
-      ],
-      "Move operation aborted": [
-        "Operasi pemindahan telah dibatalkan"
-      ],
-      "Moving item to a non-folder is not allowed": [
-        "Item tidak boleh dipindahkan ke lokasi selain folder"
-      ],
-      "Moving root item is not allowed": [
-        "Item akar tidak boleh dipindahkan"
       ],
       "Name already exists": [
         "Nama sudah wujud"
       ],
       "Name does not match": [
         "Nama tidak sepadan"
-      ],
-      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
-        "Nama mestilah tidak melebihi ${ MAX_NODE_NAME_LENGTH } aksara"
-      ],
-      "Name must not be empty": [
-        "Nama tidak boleh dibiarkan kosong"
       ],
       "No calendars found to import": [
         "Tiada kalendar ditemui untuk diimport"
@@ -5182,9 +5123,6 @@
       "No emails found to import - the account does not have an inbox": [
         "Tiada e-mel ditemui untuk diimport kerana akaun tidak mempunyai peti masuk"
       ],
-      "No file data was received. Please try again.": [
-        "Tiada data fail diterima. Sila cuba lagi."
-      ],
       "No image selected": [
         "Tiada imej dipilih"
       ],
@@ -5194,23 +5132,8 @@
       "Not a valid number": [
         "Nombor tidak sah"
       ],
-      "Only admins can convert external invitations": [
-        "Hanya pentadbir boleh menukar jemputan luaran"
-      ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Hanya huruf besar dan tanda baca (titik, sempang dan garis bawah) boleh diubah untuk alamat ini"
-      ],
-      "Operation aborted": [
-        "Operasi telah dibatalkan"
-      ],
-      "Operation failed, try again later": [
-        "Operasi gagal, cuba lagi kemudian"
-      ],
-      "Organization does not have enough seats available": [
-        "Organisasi tidak mempunyai lesen pengguna yang mencukupi"
-      ],
-      "Organization does not have enough storage available": [
-        "Organisasi tidak mempunyai storan yang mencukupi"
       ],
       "Organization key is not decrypted": [
         "Kunci organisasi tidak dinyahsulit"
@@ -5220,9 +5143,6 @@
       ],
       "Organization key must be activated to create non-private users": [
         "Kunci organisasi mesti diaktifkan untuk mencipta pengguna bukan peribadi"
-      ],
-      "Part of the file appears to be corrupted": [
-        "Sebahagian fail nampaknya telah rosak"
       ],
       "Password is required": [
         "Kata laluan diperlukan"
@@ -5247,12 +5167,6 @@
       ],
       "Permissions request failed.": [
         "Permintaan kebenaran tidak berjaya."
-      ],
-      "Photo is already in the target album": [
-        "Foto sudah berada dalam album sasaran"
-      ],
-      "Photo not found": [
-        "Foto tidak ditemui"
       ],
       "Please add a payment method before reactivating your subscription": [
         "Sila tambah kaedah pembayaran sebelum mengaktifkan semula langganan anda"
@@ -5344,12 +5258,6 @@
       "Process aborted": [
         "Proses dibatalkan"
       ],
-      "Renaming root item is not allowed": [
-        "Item akar tidak boleh dinamakan semula"
-      ],
-      "Request aborted": [
-        "Permintaan telah dibatalkan"
-      ],
       "Request timed out": [
         "Permintaan tamat masa"
       ],
@@ -5371,29 +5279,8 @@
       "Server not found": [
         "Pelayan tidak dijumpai"
       ],
-      "Signature is missing": [
-        "Tandatangan tiada"
-      ],
       "Signature verification failed": [
         "Tandatangan tidak dapat disahkan"
-      ],
-      "Signature verification failed: ${ errorMessage }": [
-        "Pengesahan tandatangan gagal: ${ errorMessage }"
-      ],
-      "Signature verification for ${ signatureType } failed": [
-        "Pengesahan tandatangan untuk ${ signatureType } gagal"
-      ],
-      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "Pengesahan tandatangan untuk ${ signatureType } gagal: ${ errorMessage }"
-      ],
-      "Some file data failed to upload. Please try again.": [
-        "Sesetengah data fail tidak dapat dimuat naik. Sila cuba lagi."
-      ],
-      "Some file parts failed to upload. Please try again.": [
-        "Sesetengah bahagian fail tidak dapat dimuat naik. Sila cuba lagi."
-      ],
-      "Some items could not be loaded": [
-        "Sesetengah item tidak dapat dimuatkan"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sesetengah nama folder anda tidak tersedia. Sila sesuaikan import untuk menyunting nama-nama ini."
@@ -5409,9 +5296,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sesetengah nama label anda melebihi had aksara maksimum ${ MAIL_APP_NAME }. Sila sesuaikan import untuk menyunting nama-nama ini."
-      ],
-      "Something went wrong": [
-        "Sesuatu tidak kena"
       ],
       "Something went wrong while converting the address": [
         "Ralat berlaku semasa menukar alamat"
@@ -5473,9 +5357,6 @@
       "The policy name must be between 3 and 40 characters.": [
         "Nama dasar mesti antara 3 hingga 40 aksara."
       ],
-      "The uploaded file does not match the original. Please try again.": [
-        "Fail yang dimuat naik tidak sepadan dengan fail asal. Sila cuba lagi."
-      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Terdapat terlalu banyak folder dalam akaun luaran anda. Sila sesuaikan import untuk memadamkan sesetengah folder."
       ],
@@ -5497,26 +5378,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Medan ini memerlukan sekurang-kurangnya ${ minimumLength } aksara."
       ],
-      "This file has missing crypto material": [
-        "Fail ini tidak mempunyai bahan kriptografi yang lengkap"
-      ],
-      "This file has no version available to download": [
-        "Fail ini tiada versi yang tersedia untuk dimuat turun"
-      ],
-      "This file version could not be uploaded": [
-        "Versi fail ini tidak dapat dimuat naik"
-      ],
       "This folder name is not available. Please choose a different name.": [
         "Nama folder ini tidak tersedia. Sila pilih nama lain."
-      ],
-      "This item has no image preview": [
-        "Item ini tiada pratonton imej"
-      ],
-      "This item is no longer shared": [
-        "Item ini tidak lagi dikongsi"
-      ],
-      "This item is not shared": [
-        "Item ini tidak dikongsi"
       ],
       "This label name is not available. Please choose a different name.": [
         "Nama label ini tidak tersedia. Sila pilih nama lain."
@@ -5532,12 +5395,6 @@
       ],
       "Too many requests. Please try again later": [
         "Terlalu banyak permintaan. Sila cuba lagi kemudian"
-      ],
-      "Too many server errors, please try again later": [
-        "Terlalu banyak ralat pelayan, sila cuba lagi kemudian"
-      ],
-      "Too many server requests, please try again later": [
-        "Terlalu banyak permintaan pelayan, sila cuba lagi kemudian"
       ],
       "Try again later": [
         "Cuba lagi kemudian"
@@ -5578,12 +5435,6 @@
       "Verification did not succeed, please try again in an hour.": [
         "Pengesahan tidak berjaya, sila cuba lagi dalam masa sejam."
       ],
-      "Verification keys are not available": [
-        "Kunci pengesahan tidak tersedia"
-      ],
-      "Verification keys for ${ signatureType } are not available": [
-        "Kunci pengesahan untuk ${ signatureType } tidak tersedia"
-      ],
       "We couldn’t send a verification code using this method.": [
         "Kami tidak dapat menghantar kod pengesahan menggunakan kaedah ini."
       ],
@@ -5598,24 +5449,6 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Kod pengesahan tidak betul. Sila pastikan anda menyalin kod pengesahan dengan betul dan cuba lagi. Perubahan mungkin mengambil masa sehingga 24 jam untuk berkuat kuasa."
-      ],
-      "You can create public links for your own files only": [
-        "Anda hanya boleh mencipta pautan awam untuk fail anda sendiri"
-      ],
-      "You can only leave items that are shared with you": [
-        "Anda hanya boleh meninggalkan item yang dikongsi dengan anda"
-      ],
-      "You can only upload a new version to a file": [
-        "Anda hanya boleh memuat naik versi baharu ke fail"
-      ],
-      "You can update a public link for your own files only": [
-        "Anda hanya boleh mengemas kini pautan awam untuk fail anda sendiri"
-      ],
-      "You do not have access to this item": [
-        "Anda tidak mempunyai akses kepada item ini"
-      ],
-      "You do not have access to this shared item": [
-        "Anda tidak mempunyai akses kepada item yang dikongsi ini"
       ],
       "You have reached the maximum number of calendars.": [
         "Anda telah mencapai bilangan maksimum kalendar."
@@ -6415,29 +6248,6 @@
         "Terabait"
       ]
     },
-    "Filter": {
-      "Activated": [
-        "Diaktifkan"
-      ],
-      "All": [
-        "Semua"
-      ],
-      "Errors": [
-        "Ralat"
-      ],
-      "In progress": [
-        "Sedang berjalan"
-      ],
-      "Migrated": [
-        "Telah dipindahkan"
-      ],
-      "Not activated": [
-        "Tidak diaktifkan"
-      ],
-      "Pending": [
-        "Menunggu"
-      ]
-    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } telah dikemas kini"
@@ -7066,20 +6876,6 @@
         "Lebih banyak pilihan import"
       ]
     },
-    "Import status": {
-      "Has errors": [
-        "Ada ralat"
-      ],
-      "In progress": [
-        "Sedang berjalan"
-      ],
-      "Migrated": [
-        "Telah dipindahkan"
-      ],
-      "Pending": [
-        "Menunggu"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } daripada ${ totalContacts } kenalan tidak akan diimport. Klik untuk butiran"
@@ -7124,9 +6920,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi penyulitan ${ BRAND_NAME } memastikan tiada siapa dapat mengakses kata laluan anda, malah kami sekalipun."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "${ CALENDAR_APP_NAME } memerlukan alamat ${ BRAND_NAME } untuk penyegerakan dan penyulitan acara yang selamat. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } kalendar baharu"
@@ -7580,9 +7373,6 @@
       ],
       "Authenticator app 2FA enabled": [
         "2FA apl pengesah didayakan"
-      ],
-      "Author is not provided on public link": [
-        "Pengarang tidak dinyatakan pada pautan awam"
       ],
       "Available on VPN Professional": [
         "Tersedia pada VPN Professional"
@@ -8124,9 +7914,6 @@
       "Fill in user details": [
         "Isikan butiran pengguna"
       ],
-      "Find out what can be migrated.": [
-        "Ketahui apa yang boleh dimigrasikan."
-      ],
       "for ${ price }": [
         "pada ${ price }"
       ],
@@ -8571,9 +8358,6 @@
       "No single sign-on": [
         "Tiada log masuk tunggal"
       ],
-      "No users to display": [
-        "Tiada pengguna untuk dipaparkan"
-      ],
       "Nothing changes in your other ${ BRAND_NAME } account.": [
         "Tiada apa-apa berubah pada akaun ${ BRAND_NAME } anda yang lain."
       ],
@@ -8904,9 +8688,6 @@
       "Select a group to view its members and settings.": [
         "Pilih kumpulan untuk melihat ahli dan tetapannya."
       ],
-      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
-        "Pilih dengan tepat apa yang anda mahu migrasikan. Ia akan digunakan bagi semua pengguna organisasi."
-      ],
       "Select one or multiple user affiliations": [
         "Pilih satu atau beberapa afiliasi pengguna"
       ],
@@ -9063,9 +8844,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Tidak tersedia buat sementara kerana permintaan yang tinggi. Sila cuba lagi kemudian."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Tidak tersedia buat sementara waktu. Sila semak semula kemudian."
-      ],
       "Thank you": [
         "Terima kasih"
       ],
@@ -9195,12 +8973,6 @@
       "This service is not available to users signing in with single sign-on.": [
         "Perkhidmatan ini tidak tersedia untuk pengguna yang melog masuk menggunakan log masuk tunggal."
       ],
-      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Pengguna ini tidak dapat dipindahkan kerana alamat e-mel mereka tidak tersedia di ${ BRAND_NAME }."
-      ],
-      "This user can not be migrated due to platform incompatibilities.": [
-        "Pengguna ini tidak dapat dimigrasikan kerana ketidaksesuaian platform."
-      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Pengguna ini kini bertanggungjawab untuk pembayaran organisasi anda. Dengan menurunkan taraf ahli ini, anda akan menjadi pihak yang bertanggungjawab untuk pembayaran organisasi anda."
       ],
@@ -9312,32 +9084,8 @@
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Untuk membantu anda mengingati kata laluan, kami akan meminta anda memasukkannya secara berkala. Permintaan ini akan berkurangan dari masa ke semasa."
       ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Untuk mengimport acara, cipta kalendar dalam ${ CALENDAR_APP_NAME } terlebih dahulu. Acara akan muncul di sini selepas import."
-      ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Untuk mengikuti perkembangan terkini produk ${ BRAND_NAME }, anda boleh melanggan pelbagai e-mel kami dan ${ blogLink } dari semasa ke semasa."
-      ],
-      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
-        "Untuk memindahkan pengguna ini, tambah dan sahkan domain e-mel di bawah ${ domainNamesLink }"
-      ],
-      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
-        "Untuk memigrasikan pengguna ini, dayakan akaun mereka dalam ${ provider.adminConsoleName } anda."
-      ],
-      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Untuk memigrasikan pengguna ini, dayakan akaun mereka di ${ usersAddressesLink }."
-      ],
-      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Untuk memigrasikan pengguna ini, dayakan alamat mereka di ${ usersAddressesLink }."
-      ],
-      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Untuk memigrasikan pengguna ini, mereka perlu menerima jemputan untuk menyertai ${ BRAND_NAME }."
-      ],
-      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Untuk memigrasikan pengguna ini, keluarkan mereka dari arkib dalam ${ provider.adminConsoleName } anda."
-      ],
-      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Untuk memigrasikan pengguna ini, aktifkan semula mereka dalam ${ provider.adminConsoleName } anda."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk meneruskan, pilih kaedah pemulihan akaun supaya kami boleh mengesahkan permintaan tersebut."
@@ -9677,9 +9425,6 @@
       ],
       "X": [
         "X"
-      ],
-      "You": [
-        "Anda"
       ],
       "You already have a free account": [
         "Anda sudah mempunyai akaun percuma"
@@ -10349,9 +10094,6 @@
       "Calendar": [
         "Kalendar"
       ],
-      "Calendars": [
-        "Kalendar"
-      ],
       "Card details": [
         "Butiran kad"
       ],
@@ -10534,9 +10276,6 @@
       ],
       "Email with @yourcompany.com domain": [
         "E-mel dengan domain @syarikatanda.my"
-      ],
-      "Emails": [
-        "E-mel"
       ],
       "Emails (all messages)": [
         "E-mel (semua mesej)"
@@ -13961,12 +13700,6 @@
       "Billing Country": [
         "Negara pengebilan"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private tidak boleh dibeli dengan langganan yang aktif."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private memerlukan sumbangan."
-      ],
       "Buying credits requires a separate purchase.": [
         "Pembelian kredit memerlukan pembelian berasingan."
       ],
@@ -14141,9 +13874,6 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Anda sudah memiliki ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Anda sudah memiliki Born Private."
-      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Anda akan dicas ${ amountToCharge } daripada kaedah pembayaran pilihan anda."
       ],
@@ -14152,9 +13882,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Anda akan dialihkan sebentar lagi untuk mengesahkan pembayaran anda."
-      ],
-      "Your account is too old for Born Private.": [
-        "Akaun anda terlalu lama untuk Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Mata wang anda telah ditukar kepada euro (€) kerana ${ IDEAL_WERO_BRAND_NAME } hanya menyokong pembayaran dalam euro."
@@ -14433,9 +14160,6 @@
       "Search for an email or IP address": [
         "Cari e-mel atau alamat IP"
       ],
-      "Search for users or addresses": [
-        "Cari pengguna atau alamat"
-      ],
       "Search parent folder": [
         "Cari folder induk"
       ],
@@ -14541,26 +14265,6 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Naik taraf kepada ${ upsellPlanTitle }"
-      ]
-    },
-    "Property": {
-      "attributes": [
-        "atribut"
-      ],
-      "content key": [
-        "kunci kandungan"
-      ],
-      "hash key": [
-        "kunci cincangan"
-      ],
-      "key": [
-        "kunci"
-      ],
-      "membership": [
-        "keahlian"
-      ],
-      "name": [
-        "nama"
       ]
     },
     "Property type": {
@@ -17561,26 +17265,6 @@
         "Untuk individu"
       ]
     },
-    "Table header": {
-      "Activated": [
-        "Diaktifkan"
-      ],
-      "Estimated size": [
-        "Anggaran saiz"
-      ],
-      "Migration status": [
-        "Status migrasi"
-      ],
-      "Size": [
-        "Saiz"
-      ],
-      "Status": [
-        "Status"
-      ],
-      "User": [
-        "Pengguna"
-      ]
-    },
     "TableHeader": {
       "Action": [
         "Tindakan"
@@ -17979,9 +17663,6 @@
       "Choose a deployment method": [
         "Pilih kaedah atur gerak"
       ],
-      "Choose a provider": [
-        "Pilih pembekal"
-      ],
       "Choose a removal method": [
         "Pilih kaedah alih keluar"
       ],
@@ -18002,9 +17683,6 @@
       ],
       "Configure Always-on VPN device profile": [
         "Konfigur profil peranti VPN sentiasa aktif"
-      ],
-      "Configure migration": [
-        "Konfigurasikan migrasi"
       ],
       "Confirm": [
         "Sahkan"
@@ -18450,9 +18128,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Import melalui ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Import your data to ${ BRAND_NAME }": [
-        "Import data anda ke ${ BRAND_NAME }"
-      ],
       "Imports": [
         "Import"
       ],
@@ -18756,12 +18431,6 @@
       "Select contact group": [
         "Pilih kumpulan kenalan"
       ],
-      "Select data to import": [
-        "Pilih data untuk diimport"
-      ],
-      "Select users to migrate": [
-        "Pilih pengguna untuk dimigrasikan"
-      ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Hantar dan terima Gmail menggunakan ${ MAIL_APP_NAME }"
       ],
@@ -19062,9 +18731,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Selamat datang ke ${ BRAND_NAME } for Business"
       ],
-      "What are you migrating?": [
-        "Apakah yang anda mahu migrasikan?"
-      ],
       "What changes if you switch to the Free plan": [
         "Apa yang berubah jika anda beralih ke Free plan"
       ],
@@ -19264,9 +18930,6 @@
       "Customize import to reduce the number of labels": [
         "Sesuaikan import untuk mengurangkan bilangan label"
       ],
-      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
-        "Status migrasi data dari ${ providerName } ke ${ BRAND_NAME }"
-      ],
       "Device name and app version": [
         "Nama peranti dan versi apl"
       ],
@@ -19392,9 +19055,6 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Anggaran lokasi pengguna (berdasarkan alamat IP mereka)"
-      ],
-      "Users who have accessed their ${ BRAND_NAME } account": [
-        "Pengguna yang telah mengakses akaun ${ BRAND_NAME } mereka"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Pengguna akan melihat logo anda sebagai ganti ikon ${ BRAND_NAME } semasa log masuk dalam aplikasi web kami."
