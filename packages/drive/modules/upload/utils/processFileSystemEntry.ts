@@ -82,7 +82,9 @@ async function processRecursive(
             for (const childEntry of entries) {
                 const childPath = path.concat(entry.name).concat('/');
                 const childFiles = await processRecursive(childEntry, childPath, options);
-                files.push(...childFiles);
+                for (const childFile of childFiles) {
+                    files.push(childFile);
+                }
             }
         }
     }
