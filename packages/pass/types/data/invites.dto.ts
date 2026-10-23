@@ -5,7 +5,7 @@ import type { FolderData } from './folders';
 import type { ItemRevision } from './items';
 import type { Share, ShareRole } from './shares';
 
-export type InviteUserDTO = { email: string; publicKey: string; role: ShareRole };
+export type InviteUserDTO = { email: string; publicKey: string; role: ShareRole; hideSensitiveContent?: boolean };
 export type InviteNewUserDTO = Omit<InviteUserDTO, 'publicKey'>;
 export type InviteMemberDTO = InviteUserDTO | InviteNewUserDTO;
 
