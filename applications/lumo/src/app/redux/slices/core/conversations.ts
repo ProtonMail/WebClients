@@ -158,6 +158,7 @@ const conversationsReducer = createReducer<ConversationMap>(EMPTY_CONVERSATION_M
             console.log('Action triggered: updateConversationStatus', action.payload);
             const payload = action.payload;
             const conversation = state[payload.id];
+            if (!conversation) return;
             conversation.status = payload.status;
         })
         .addCase(pushConversationRequest, (state, action) => {

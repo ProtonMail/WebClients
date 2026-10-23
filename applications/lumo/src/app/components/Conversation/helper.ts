@@ -40,7 +40,7 @@ import { createGenerationError, getErrorTypeFromMessage } from '../../services/e
 import { throwIfAborted } from '../../services/generation/abortGeneration';
 import { maybeAutoSaveMemoriesFromChats } from '../../services/memoryAutoSave';
 import { SearchService } from '../../services/search/searchService';
-import type { ImageAspectRatio, MessageId, ShallowAttachment } from '../../types';
+import type { ImageAspectRatio, MessageId, QuestionAnswer, ShallowAttachment } from '../../types';
 import {
     type ArtifactActionMeta,
     type Attachment,
@@ -114,6 +114,7 @@ export type NewMessageData = {
     content: string;
     attachments: Attachment[];
     artifactAction?: ArtifactActionMeta;
+    questionAnswers?: QuestionAnswer[];
     artifactCreateModeActive?: boolean;
     artifactRevisionTargetId?: string;
 };
@@ -182,6 +183,7 @@ export type UiContext = {
     updateSibling?: (message: Message | undefined) => void; // todo remove optional
     enableExternalTools: boolean;
     enableImageTools: boolean;
+    enableAskUserQuestionsTool?: boolean;
     enableReasoning?: boolean;
     modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15' | 'lumo-preview';
     generateTitle?: boolean;
@@ -505,7 +507,8 @@ export function sendMessage({
             date2,
             m.artifactAction,
             m.artifactCreateModeActive,
-            m.artifactRevisionTargetId
+            m.artifactRevisionTargetId,
+            m.questionAnswers
         );
 
         // Save the user message to Redux and request push to persistence HTTP API
@@ -738,6 +741,7 @@ export function sendMessage({
                         imageAspectRatio: ui.imageAspectRatio,
                         artifactToolMode,
                         artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
+                        enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -963,6 +967,7 @@ export function regenerateMessage({
                         enableSuggestedQuestions: false,
                         artifactToolMode,
                         artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
+                        enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -1185,6 +1190,7 @@ export function retrySendMessage({
                         generateTitle: requestTitle,
                         artifactToolMode,
                         artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
+                        enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -1245,7 +1251,8 @@ function createMessagePair(
     date2: string,
     artifactAction?: ArtifactActionMeta,
     artifactCreateModeActive?: boolean,
-    artifactRevisionTargetId?: string
+    artifactRevisionTargetId?: string,
+    questionAnswers?: QuestionAnswer[]
 ) {
     const context = flattenAttachmentsForLlm(attachments);
     const shallowAttachments = stripDataFromAttachments(attachments);
@@ -1262,6 +1269,7 @@ function createMessagePair(
         blocks: [{ type: 'text', content }],
         ...(shallowAttachments.length && { attachments: shallowAttachments }),
         ...(artifactAction && { artifactAction }),
+        ...(questionAnswers && { questionAnswers }),
         ...(artifactCreateModeActive && { artifactCreateModeActive: true }),
         ...(artifactRevisionTargetId && { artifactRevisionTargetId }),
     };

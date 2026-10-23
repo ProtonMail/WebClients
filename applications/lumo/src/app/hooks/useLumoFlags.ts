@@ -24,6 +24,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - visualizationInstructions: Enable chart and KPI card formatting instructions in the system prompt
  * - customAgents: Enable the custom agents option in the composer tools dropdown
  * - artifactsView: Enable the create-artifact composer tool and artifact panel interactions
+ * - askUserQuestionsTool: Enable the ask-user-questions client tool
  * - artifactsViewSpotlight: Enable the create-artifact onboarding spotlight and New label
  * - artifactSlides: Let the model create slide decks (`presentation` artifacts)
  * - aiPaperTrailRoute: Enable the AI Paper Trail route (/aitrail)
@@ -56,6 +57,7 @@ export const useLumoFlags = () => {
     const lumoNativeAuthIOS = useFlag('LumoNativeAuthIOS');
     const customAgents = useFlag('LumoCustomAgents');
     const artifactsView = useFlag('LumoArtifactsView');
+    const askUserQuestionsTool = useFlag('LumoAskUserQuestionsTool');
     const artifactsViewSpotlight = useFlag('LumoArtifactsViewSpotlight');
     const artifactSlides = useFlag('LumoArtifactSlides');
     const aiPaperTrailRoute = useFlag('LumoAiPaperTrailRoute');
@@ -72,6 +74,7 @@ export const useLumoFlags = () => {
         visualizationInstructions,
         customAgents,
         artifactsView,
+        askUserQuestionsTool,
         artifactsViewSpotlight,
         artifactSlides,
         aiPaperTrailRoute,
