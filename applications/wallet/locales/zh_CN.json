@@ -4607,6 +4607,11 @@
         "您需要访问组织密钥才能执行此操作。"
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "银行账户"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -4656,12 +4661,6 @@
       ],
       "Billing Country": [
         "计费国家/地区"
-      ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "在订阅生效期间无法购买 Born Private。"
-      ],
-      "Born Private requires a donation.": [
-        "Born Private 需要捐赠。"
       ],
       "Buying credits requires a separate purchase.": [
         "购买额度需要单独进行！"
@@ -4840,17 +4839,11 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "您已经拥有 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
       ],
-      "You already own Born Private.": [
-        "您已经拥有 Born Private。"
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "您即将被重定向至 PayPal 以验证付款。"
       ],
       "You will soon be redirected to verify your payment.": [
         "您即将被重定向以验证付款"
-      ],
-      "Your account is too old for Born Private.": [
-        "您的账户注册时间过长，无法使用 Born Private。"
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "您的货币已更改为欧元 (€)，因为 ${ IDEAL_WERO_BRAND_NAME } 仅支持欧元支付。"

@@ -4805,6 +4805,11 @@
         "Вам патрэбны доступ да ключа арганізацыі, каб выканаць гэту аперацыю."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Банкаўскі рахунак"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -4848,12 +4853,6 @@
       ],
       "Billing Country": [
         "Краіна выстаўлення рахунку"
-      ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private не можа быць куплены з актыўнай падпіскай."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private патрабуе ахвяраванне."
       ],
       "Buying credits requires a separate purchase.": [
         "Купля крэдытаў патрабуе асобнай пакупкі."
@@ -5023,17 +5022,11 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
-      "You already own Born Private.": [
-        "Вы ўжо валодаеце Born Private."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
-      ],
-      "Your account is too old for Born Private.": [
-        "У вас занадта стары ўліковы запіс для Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Ваша валюта была зменена на еўра (€), бо ${ IDEAL_WERO_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
