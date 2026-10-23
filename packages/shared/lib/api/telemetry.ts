@@ -18,6 +18,7 @@ export enum TelemetryMeasurementGroups {
     referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
+    calendarClient = 'calendar.client',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
     calendarVideoConferencing = 'calendar.web.video_conferencing',
     meetFunnelTelemetry = 'meet.web.meet_funnel_telemetry',
@@ -166,6 +167,10 @@ export enum TelemetryListSetting {
 export enum TelemetryCalendarEvents {
     change_temporary_time_zone = 'change_temporary_time_zone',
     answer_invite = 'answer_invite',
+}
+
+export enum TelemetryCalendarClientEvents {
+    legacy_signature_fallback = 'legacy_signature_fallback',
 }
 
 export enum TelemetryCalendarVideoConferencing {
@@ -780,6 +785,7 @@ export type TelemetryEvents =
     | TelemetryDocsEvents
     | TelemetryDocsEditorEvents
     | TelemetryDocsHomepageEvents
+    | TelemetryCalendarClientEvents
     | TelemetryCalendarVideoConferencing
     | TelemetryEncryptedSearchEvents
     | TelemetryContentSearchEvents

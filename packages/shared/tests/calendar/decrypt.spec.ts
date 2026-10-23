@@ -359,16 +359,20 @@ p6UwLlBEdbtqT8YixITK1QU+Owmk/GmWADOyVzN/hXKg0zJVTc0=
 =Jg7J
 -----END PGP SIGNATURE-----`;
 
+        const onLegacyVerification = vi.fn();
         const { data, verificationStatus: verificationStatusEncryptedAndSignedCard } = await decryptCard(
             Uint8Array.fromBase64(encryptedAndSignedCard),
             signatureEncryptedAndSignedCard,
             verifyingKey,
-            sessionKey
+            sessionKey,
+            onLegacyVerification
         );
         expect(data).toEqual(
             'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Proton AG//AndroidCalendar 2.7.1//EN\r\nBEGIN:VEVENT\r\nUID:wETnJu3LPvN66KXRDJMYFxmq77Ys@proton.me\r\nDTSTAMP:20230317T104052Z\r\nDESCRIPTION:Line\\nJump\\n\\nAnd a \\\\n\r\nSUMMARY:Australian Brandenburg Orchestra concert: Ottoman Baroque with the \r\n Whirling Dervishes\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n'
         );
         expect(verificationStatusEncryptedAndSignedCard).toEqual(EVENT_VERIFICATION_STATUS.SUCCESSFUL);
+        expect(onLegacyVerification).toHaveBeenCalledTimes(1);
+        expect(onLegacyVerification).toHaveBeenCalledWith(VERIFICATION_STATUS.SIGNED_AND_VALID);
 
         // this legacy signature is NOT verified in binary. It needs the fallback
         const { data: decryptedData, verificationStatus: verificationStatusBinaryEncrypted } =

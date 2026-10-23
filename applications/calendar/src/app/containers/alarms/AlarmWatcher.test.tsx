@@ -21,9 +21,9 @@ jest.mock('@proton/app-context/useApi', () => ({ useApi: () => jest.fn() }));
 jest.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => ({
     useContactEmailsCache: () => ({ contactEmailsMap: {} }),
 }));
-jest.mock('@proton/components/hooks/useGetCalendarEventRaw', () => {
+jest.mock('@proton/calendar/calendarEvent/useGetCalendarEventRaw', () => {
     const getCalendarEventRaw = () => Promise.resolve({ veventComponent: {} });
-    return () => getCalendarEventRaw;
+    return { useGetCalendarEventRaw: () => getCalendarEventRaw };
 });
 jest.mock('@proton/components/hooks/useHasSuspendedCounter', () => () => false);
 

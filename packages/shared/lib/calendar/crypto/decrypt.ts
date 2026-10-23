@@ -2,8 +2,6 @@ import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proto
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import { isElectronMail } from '../../helpers/desktop';
-import { captureMessage } from '../../helpers/sentry';
 import type { CalendarEventData } from '../../interfaces/calendar/Event';
 import type { SimpleMap } from '../../interfaces/utils';
 import { CALENDAR_CARD_TYPE, EVENT_VERIFICATION_STATUS } from '../constants';
@@ -56,24 +54,30 @@ export const getNeedsLegacyVerification = (verifiedBinary: VERIFICATION_STATUS, 
     return /\n/.test(textDataWithoutCRLF);
 };
 
+/**
+ * Called when a card had to be verified the legacy way, with the outcome of that legacy verification.
+ */
+export type OnLegacyVerification = (legacyVerificationStatus: VERIFICATION_STATUS) => void;
+
 const getVerifiedLegacy = async ({
     textData,
     signature,
     publicKeys,
+    onLegacyVerification,
 }: {
     textData: string;
     signature: string;
     publicKeys: PublicKeyReference | PublicKeyReference[];
+    onLegacyVerification?: OnLegacyVerification;
 }) => {
     /**
      * Verification of an ical card may have failed because the signature is a legacy one,
      * done as text and therefore using OpenPGP normalization (\n -> \r\n) + stripping trailing spaces.
      *
-     * We try to verify the signature in the legacy way and log the fact in Sentry
+     * We try to verify the signature in the legacy way. This is an expected path for events signed by
+     * older clients, so it is not reported to Sentry (it generated ~80k events per week). Callers interested
+     * in how common it is can pass `onLegacyVerification` (used for telemetry).
      */
-    if (!isElectronMail) {
-        captureMessage('Fallback to legacy signature verification of calendar event', { level: 'info' });
-    }
     const { verificationStatus: verificationStatusLegacy } = await CryptoProxy.verifyMessage({
         textData,
         stripTrailingSpaces: true,
@@ -81,13 +85,16 @@ const getVerifiedLegacy = async ({
         armoredSignature: signature,
     });
 
+    onLegacyVerification?.(verificationStatusLegacy);
+
     return verificationStatusLegacy;
 };
 
 export const verifySignedCard = async (
     dataToVerify: string,
     signature: string,
-    publicKeys: PublicKeyReference | PublicKeyReference[]
+    publicKeys: PublicKeyReference | PublicKeyReference[],
+    onLegacyVerification?: OnLegacyVerification
 ) => {
     const { verificationStatus: verifiedBinary } = await CryptoProxy.verifyMessage({
         binaryData: utf8StringToUint8Array(dataToVerify), // not 'utf8' to avoid issues with trailing spaces and automatic normalisation of EOLs to \n
@@ -95,7 +102,7 @@ export const verifySignedCard = async (
         armoredSignature: signature,
     });
     const maybeLegacyVerificationStatus = getNeedsLegacyVerification(verifiedBinary, dataToVerify)
-        ? await getVerifiedLegacy({ textData: dataToVerify, signature, publicKeys })
+        ? await getVerifiedLegacy({ textData: dataToVerify, signature, publicKeys, onLegacyVerification })
         : verifiedBinary;
     const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
     const verificationStatus = getEventVerificationStatus(maybeLegacyVerificationStatus, hasPublicKeys);
@@ -107,7 +114,8 @@ export const decryptCard = async (
     dataToDecrypt: Uint8Array<ArrayBuffer>,
     signature: string | null,
     publicKeys: PublicKeyReference | PublicKeyReference[],
-    sessionKey: SessionKey
+    sessionKey: SessionKey,
+    onLegacyVerification?: OnLegacyVerification
 ) => {
     const { data: decryptedData, verificationStatus: verifiedBinary } = await CryptoProxy.decryptMessage({
         binaryMessage: dataToDecrypt,
@@ -119,7 +127,7 @@ export const decryptCard = async (
     const decryptedText = uint8ArrayToUtf8String(decryptedData);
     const maybeLegacyVerificationStatus =
         signature && getNeedsLegacyVerification(verifiedBinary, decryptedText)
-            ? await getVerifiedLegacy({ textData: decryptedText, signature, publicKeys })
+            ? await getVerifiedLegacy({ textData: decryptedText, signature, publicKeys, onLegacyVerification })
             : verifiedBinary;
     const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
     const verificationStatus = getEventVerificationStatus(maybeLegacyVerificationStatus, hasPublicKeys);
@@ -130,7 +138,8 @@ export const decryptCard = async (
 export const decryptAndVerifyCalendarEvent = (
     { Type, Data, Signature, Author }: CalendarEventData,
     publicKeysMap: SimpleMap<PublicKeyReference | PublicKeyReference[]>,
-    sessionKey: SessionKey | undefined
+    sessionKey: SessionKey | undefined,
+    onLegacyVerification?: OnLegacyVerification
 ): Promise<{ data: string; verificationStatus: EVENT_VERIFICATION_STATUS }> => {
     const publicKeys = publicKeysMap[Author] || [];
     if (Type === CALENDAR_CARD_TYPE.CLEAR_TEXT) {
@@ -146,7 +155,7 @@ export const decryptAndVerifyCalendarEvent = (
         if (!Signature) {
             throw new Error('Signed card is missing signature');
         }
-        return verifySignedCard(Data, Signature, publicKeys);
+        return verifySignedCard(Data, Signature, publicKeys, onLegacyVerification);
     }
     if (Type === CALENDAR_CARD_TYPE.ENCRYPTED_AND_SIGNED) {
         if (!Signature) {
@@ -156,7 +165,7 @@ export const decryptAndVerifyCalendarEvent = (
             throw new Error('Cannot decrypt without session key');
         }
 
-        return decryptCard(Uint8Array.fromBase64(Data), Signature, publicKeys, sessionKey);
+        return decryptCard(Uint8Array.fromBase64(Data), Signature, publicKeys, sessionKey, onLegacyVerification);
     }
     throw new Error('Unknow event card type');
 };
