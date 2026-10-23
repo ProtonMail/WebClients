@@ -2804,6 +2804,9 @@
       "1 vault per user": [
         "1 Tresor je Benutzer"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30-Tage-Geld-zurück-Garantie: Kündige innerhalb von 30 Tagen nach dem Kauf und wende dich an unseren ${ customerSupportLink }, um eine Rückerstattung zu erhalten."
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
       ],
@@ -3123,6 +3126,9 @@
       ],
       "Total VPN connections": [
         "Anzahl VPN‐Verbindungen"
+      ],
+      "UnionPay logo": [
+        "Union Pay-Logo"
       ],
       "Users": [
         "Benutzer"
@@ -4677,6 +4683,11 @@
         "Du benötigst Zugriff auf den Organisationsschlüssel, um diese Operation durchzuführen."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -4727,11 +4738,8 @@
       "Billing Country": [
         "Rechnungsland"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "«Born Private» kann nicht gekauft werden, wenn ein aktives Abonnement besteht."
-      ],
-      "Born Private requires a donation.": [
-        "Für «Born Private» ist eine Spende erforderlich."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "„Born Private“-Konten können während eines aktiven Abonnements nicht erworben werden."
       ],
       "Buying credits requires a separate purchase.": [
         "Der Erwerb von Guthaben erfordert einen separaten Kauf."
@@ -4819,6 +4827,9 @@
       ],
       "terms and conditions": [
         "Allgemeinen Geschäftsbedingungen"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Für die Initiative „Born Private“ ist eine Spende erforderlich."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Der Rabatt ist für ${ renewalsWithCoupon } Verlängerung gültig.",
@@ -4916,8 +4927,8 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Du besitzt bereits ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Du besitzt „Born Private“ bereits."
+      "You already own a Born Private account.": [
+        "Du besitzt bereits ein „Born Private“-Konto."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
@@ -4925,8 +4936,8 @@
       "You will soon be redirected to verify your payment.": [
         "Du wirst in Kürze weitergeleitet, um deine Zahlung zu bestätigen."
       ],
-      "Your account is too old for Born Private.": [
-        "Dein Konto ist zu alt für „Born Private“."
+      "Your account is too old for the Born Private initiative.": [
+        "Dein Konto ist zu alt für die „Born Private“-Initiative."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_WERO_BRAND_NAME } nur Zahlungen in Euro unterstützt."
@@ -5968,6 +5979,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Dieser Nutzer erhält bei seiner nächsten Anmeldung Administratorrechte."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Zu einem unterstützten Abonnement upgraden, um Administratorrollen nutzen zu können."
       ],

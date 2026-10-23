@@ -4662,6 +4662,11 @@
         "Vous devez accéder à la clé de l'organisation pour réaliser cette opération."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Compte bancaire"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -4712,11 +4717,8 @@
       "Billing Country": [
         "Pays de facturation"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private ne peut pas être acheté avec un abonnement actif."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private nécessite une donation."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Les comptes Born Private ne peuvent pas être achetés avec un abonnement actif."
       ],
       "Buying credits requires a separate purchase.": [
         "Acheter des crédits nécessite un achat séparé."
@@ -4798,6 +4800,9 @@
       ],
       "terms and conditions": [
         "conditions générales d'utilisation"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "L'initiative Born Private nécessite un don."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "La réduction est valable pour ${ renewalsWithCoupon } renouvellement.",
@@ -4889,8 +4894,8 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Vous possédez déjà ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Vous possédez déjà Born Private."
+      "You already own a Born Private account.": [
+        "Vous possédez déjà un compte Born Private."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
@@ -4898,8 +4903,8 @@
       "You will soon be redirected to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
-      "Your account is too old for Born Private.": [
-        "Votre compte est trop ancien pour Born Private."
+      "Your account is too old for the Born Private initiative.": [
+        "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Votre devise a été changée en euros (€) car ${ IDEAL_WERO_BRAND_NAME } prennent uniquement en charge les paiements en euros."

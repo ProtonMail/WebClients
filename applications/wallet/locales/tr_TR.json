@@ -4683,6 +4683,11 @@
         "Bu işlemi gerçekleştirmek için kuruluş anahtarına erişebilmeniz gerekir."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Banka hesabı"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -4733,11 +4738,8 @@
       "Billing Country": [
         "Faturalanacak ülke"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private etkin bir abonelik ile satın alınamaz."
-      ],
-      "Born Private requires a donation.": [
-        "Born Private için bir bağış yapılması gereklidir."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Etkin bir abonelik varken Born Private hesapları satın alınamaz."
       ],
       "Buying credits requires a separate purchase.": [
         "Kredi satın almak için ayrı bir satın alma gerekir."
@@ -4825,6 +4827,9 @@
       ],
       "terms and conditions": [
         "hükümler ve koşullar"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private girişimine bağış yapılması gerekir."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "İndirim ${ renewalsWithCoupon } yenileme için geçerlidir.",
@@ -4922,8 +4927,8 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Zaten ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } sahibisiniz."
       ],
-      "You already own Born Private.": [
-        "Zaten Born Private kapsamındasınız."
+      "You already own a Born Private account.": [
+        "Zaten bir Born Private hesabınız var."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
@@ -4931,8 +4936,8 @@
       "You will soon be redirected to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için yönlendirileceksiniz."
       ],
-      "Your account is too old for Born Private.": [
-        "Hesabınız Born Private için çok eski."
+      "Your account is too old for the Born Private initiative.": [
+        "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "${ IDEAL_WERO_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
@@ -5717,7 +5722,7 @@
         "Fatura dönemi"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
@@ -5974,6 +5979,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Bu kullanıcı bir sonraki oturum açmasında yönetici yetkilerini alacak."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Yönetici rollerini kullanabilmek için bu rolleri destekleyen bir tarifeye yükseltin."
       ],

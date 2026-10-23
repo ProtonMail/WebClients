@@ -2828,6 +2828,9 @@
       "1 vault per user": [
         "Un seif per utilizator"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanție de restituire a banilor în 30 de zile: anulați în termen de 30 de zile de la achiziție și contactați ${ customerSupportLink } pentru a obține o rambursare."
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
@@ -3149,6 +3152,9 @@
       ],
       "Total VPN connections": [
         "Total conexiuni VPN"
+      ],
+      "UnionPay logo": [
+        "Logo UnionPay"
       ],
       "Users": [
         "Utilizatori"
@@ -3586,6 +3592,9 @@
       ],
       "clearing your browser cache": [
         "golind bufferul navigatorului web"
+      ],
+      "Customer Support": [
+        "Asistența pentru clienți"
       ],
       "Enforcing 2FA for organizations": [
         "Impunere A2F pentru organizații"
@@ -4741,6 +4750,11 @@
         "Aveți nevoie de accesul la cheia organizației pentru a efectua această operație."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Cont bancar"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -4791,11 +4805,8 @@
       "Billing Country": [
         "Țara de facturare"
       ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Oferta Born Private nu poate fi achiziționată dacă există un abonament activ."
-      ],
-      "Born Private requires a donation.": [
-        "Oferta Born Private necesită o donație."
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Conturile „Born Private” nu pot fi achiziționate dacă există un abonament activ."
       ],
       "Buying credits requires a separate purchase.": [
         "Achiziționarea de credite necesită o tranzacție separată."
@@ -4883,6 +4894,9 @@
       ],
       "terms and conditions": [
         "termeni și condiții"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Inițiativa „Born Private” necesită o donație."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Reducerea este valabilă pentru ${ renewalsWithCoupon } reînnoire.",
@@ -4986,8 +5000,8 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Deja dețineți planul ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
       ],
-      "You already own Born Private.": [
-        "Dețineți deja oferta Born Private."
+      "You already own a Born Private account.": [
+        "Deja dețineți un cont „Born Private”."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
@@ -4995,8 +5009,8 @@
       "You will soon be redirected to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă nouă."
       ],
-      "Your account is too old for Born Private.": [
-        "Contul tău este prea vechi pentru oferta Born Private."
+      "Your account is too old for the Born Private initiative.": [
+        "Contul este prea vechi pentru inițiativa „Born Private”."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_WERO_BRAND_NAME } acceptă doar plăți în euro."
@@ -6048,6 +6062,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Acest utilizator primește drepturi de administrator la următoarea autentificare."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Treceți la un plan care suportă roluri de administrator."
       ],

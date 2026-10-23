@@ -4817,6 +4817,11 @@
         "Na vykonanie tejto operácie potrebujete prístup ku kľúču organizácie."
       ]
     },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankový účet"
+      ]
+    },
     "Payment method option": {
       "Apple Pay": [
         "Apple Pay"
@@ -4866,12 +4871,6 @@
       ],
       "Billing Country": [
         "Krajina fakturácie"
-      ],
-      "Born Private can’t be purchased with an active subscription.": [
-        "Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
-      ],
-      "Born Private requires a donation.": [
-        "Na Born Private je potrebný príspevok."
       ],
       "Buying credits requires a separate purchase.": [
         "Nákup kreditov si vyžaduje samostatnú platbu."
@@ -5068,17 +5067,11 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Už vlastníte ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
-      "You already own Born Private.": [
-        "Born Private už vlastníte."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu na PayPal."
       ],
       "You will soon be redirected to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
-      ],
-      "Your account is too old for Born Private.": [
-        "Váš účet je príliš starý na službu Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_WERO_BRAND_NAME } podporuje platby len v eurách."
@@ -6140,6 +6133,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Tento používateľ získa práva správcu pri najbližšom prihlásení."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Navýšte úroveň na podporovaný plán, aby ste mohli využívať pozície správcov."
       ],
