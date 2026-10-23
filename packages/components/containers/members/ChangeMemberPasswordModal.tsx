@@ -11,6 +11,7 @@ import { revoke } from '@proton/shared/lib/api/auth';
 import { authMember } from '@proton/shared/lib/api/members';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { shouldDisplayEmailNextToName } from '@proton/shared/lib/helpers/email';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 import noop from '@proton/utils/noop';
@@ -149,9 +150,11 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
 
     const handleClose = loading ? noop : lockAndClose;
 
+    const email = (member?.Addresses || [])[0]?.Email ?? '';
     const userName = (
         <b key="user" className="text-break">
-            {member.Name} ({(member?.Addresses || [])[0]?.Email ?? ''})
+            {member.Name || email}
+            {shouldDisplayEmailNextToName(member.Name, email) && ` (${email})`}
         </b>
     );
 

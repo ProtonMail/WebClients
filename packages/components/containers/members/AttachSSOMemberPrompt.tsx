@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { shouldDisplayEmailNextToName } from '@proton/shared/lib/helpers/email';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 
@@ -17,7 +18,7 @@ const AttachSSOMemberPrompt = ({ member, onClose, ...rest }: Props) => {
     const email = getMemberEmailOrName(member);
     const user = (
         <b key="member">
-            {name !== email && <>{name} </>}({email})
+            {shouldDisplayEmailNextToName(name, email) && <>{name} </>}({email})
         </b>
     );
 

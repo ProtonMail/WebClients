@@ -2,7 +2,11 @@ import { c } from 'ttag';
 
 import { apiNotificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { canonicalizeEmail, canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
+import {
+    canonicalizeEmail,
+    canonicalizeEmailByGuess,
+    shouldDisplayEmailNextToName,
+} from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { CalendarSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';
@@ -73,7 +77,7 @@ export const getOrganizerDisplayData = (
     }
 
     const name = displayName || cn || email;
-    const title = name === email ? email : `${name} <${email}>`;
+    const title = shouldDisplayEmailNextToName(name, email) ? `${name} <${email}>` : email;
     const initials = getInitials(name);
 
     return { name, title, contactID, initials };

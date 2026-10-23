@@ -1,3 +1,4 @@
+import { shouldDisplayEmailNextToName } from '../helpers/email';
 import { getInitials } from '../helpers/string';
 import type { ActiveSessionLite } from './persistedSessionHelper';
 import { getAccessTypeFromMask } from './sessionAccessType';
@@ -8,7 +9,8 @@ export const getSessionDisplayData = ({
     const nameToDisplay = DisplayName || Username || PrimaryEmail || '';
     const initials = getInitials(nameToDisplay);
 
-    const maybeEmailInBrackets = PrimaryEmail ? `<${PrimaryEmail}>` : '';
+    const showEmail = shouldDisplayEmailNextToName(nameToDisplay, PrimaryEmail);
+    const maybeEmailInBrackets = showEmail ? `<${PrimaryEmail}>` : '';
 
     const path = `/u/${LocalID}`;
 
@@ -17,6 +19,7 @@ export const getSessionDisplayData = ({
         name: nameToDisplay,
         initials,
         email: PrimaryEmail,
+        showEmail,
         maybeEmailInBrackets,
         path,
         accessType: getAccessTypeFromMask(AccessType),

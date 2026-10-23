@@ -29,6 +29,7 @@ import {
     canonicalizeEmail,
     canonicalizeEmailByGuess,
     canonicalizeInternalEmail,
+    shouldDisplayEmailNextToName,
 } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
@@ -170,7 +171,10 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                 selfEmail && canonicalizeInternalEmail(selfEmail) === canonicalizeInternalEmail(attendeeEmail)
             );
             const name = isCurrentUser ? c('Participant name').t`You` : displayName;
-            const title = name === attendee.email || isCurrentUser ? attendeeEmail : `${name} <${attendeeEmail}>`;
+            const title =
+                isCurrentUser || !shouldDisplayEmailNextToName(name, attendeeEmail)
+                    ? attendeeEmail
+                    : `${name} <${attendeeEmail}>`;
             const initials = getInitials(displayName);
             const tooltip = getAttendanceTooltip({ partstat: attendee.partstat, name, isYou: isCurrentUser });
             const extraText = attendee.role === ICAL_ATTENDEE_ROLE.OPTIONAL ? c('Attendee role').t`Optional` : '';
