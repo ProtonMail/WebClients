@@ -64,12 +64,12 @@ And move them to `./assets/` folder.
 
 ## Update 7-Zip binaries
 
-Bundled `7z*.dll` / `7z*.exe` files are used by Squirrel.Windows for archive handling on Windows installers. They are sourced from the official [7-Zip](https://www.7-zip.org/download.html) release (currently **26.02**).
+Bundled `7z*.dll` / `7z*.exe` files are used by Squirrel.Windows for archive handling on Windows installers. They are sourced from the official [7-Zip](https://www.7-zip.org/download.html) release (currently **26.05**).
 
-1. Download the latest Windows installers from https://www.7-zip.org/a/ (e.g. **26.02**):
-    - `7z2602.exe` (x86)
-    - `7z2602-x64.exe` (x64)
-    - `7z2602-arm64.exe` (ARM64)
+1. Download the latest Windows installers from https://www.7-zip.org/a/ (e.g. **26.05**):
+    - `7z2605.exe` (x86)
+    - `7z2605-x64.exe` (x64)
+    - `7z2605-arm64.exe` (ARM64)
 2. Extract each installer (e.g. with 7-Zip) and copy `7z.dll` + `7z.exe` into `./assets/` as:
 
 | Source          | Target in `./assets/`          |
