@@ -4,6 +4,7 @@ import { createDesktopClientToolExecutor, isDesktopEnvironment } from '@proton/l
 import type { AssistantCallOptions, ClientToolExecutor, LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
+import { askUserQuestionsToolExecutor } from '../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import type { ContextFilter } from '../../llm';
 import { compactConversation, estimateTurnsTokens } from '../../llm/compaction';
@@ -44,6 +45,8 @@ type ForwardedSendOptions = AssistantCallOptions & {
     artifactToolMode?: ArtifactToolMode;
     /** Whether `create_artifact` offers `presentation` (slide decks, `LumoArtifactSlides`). */
     artifactPresentationEnabled?: boolean;
+    /** Advertise the ask_user_questions tool only when its feature flag is enabled. */
+    enableAskUserQuestionsTool?: boolean;
 };
 
 export type GenerationWithCompactionParams = {
@@ -93,6 +96,10 @@ const DEFAULT_MAX_COMPACTIONS = 1;
  */
 function resolveClientToolExecutor(sendOptions: ForwardedSendOptions): ClientToolExecutor | undefined {
     const executors: ClientToolExecutor[] = [];
+
+    if (sendOptions.enableAskUserQuestionsTool) {
+        executors.push(askUserQuestionsToolExecutor);
+    }
 
     if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
         executors.push(

@@ -22,6 +22,13 @@ global.ENV = 'test';
 // @ts-ignore
 global.matchMedia = () => ({});
 
+// JSDOM does not provide ResizeObserver, which Scroll uses to update its shadows.
+window.ResizeObserver = jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+}));
+
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,

@@ -1,0 +1,12 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.choice-question-body {
+	&__option-title:not(:only-child) {
+		font-size: rem(13);
+		font-weight: 500;
+	}
+
+	.radio-fakeradio {
+		margin: 0 !important;
+	}
+}

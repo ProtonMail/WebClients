@@ -15,6 +15,7 @@ import {
     sendMessage,
 } from '../components/Conversation/helper';
 import type { AesGcmCryptoKey } from '../crypto/types';
+import { formatQuestionAnswersForModel } from '../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
 import { useLumoPlan } from '../hooks/useLumoPlan';
 import { addContextToMessages, fillAttachmentData } from '../llm/attachments';
 import { addToolCallBlock, addToolResultBlock } from '../messageHelpers';
@@ -44,6 +45,7 @@ import type {
     Attachment,
     ErrorContext,
     ImageGenerationOptions,
+    QuestionAnswer,
     RetryStrategy,
 } from '../types';
 import {
@@ -94,6 +96,7 @@ export type HandleSendMessage = (
     isFromQueryParam?: boolean,
     artifactRevisionTargetId?: string
 ) => Promise<void>;
+export type HandleSendQuestionAnswers = (answers: QuestionAnswer[], isWebSearchButtonToggled: boolean) => Promise<void>;
 export type HandleSendArtifactAction = (meta: ArtifactActionMeta, isWebSearchButtonToggled: boolean) => Promise<void>;
 export type HandleRegenerateMessage = (
     message: Message,
@@ -135,6 +138,7 @@ export const useLumoActions = ({
         memory: ffMemory,
         artifactsView: ffArtifactsView,
         artifactSlides: ffArtifactSlides,
+        askUserQuestionsTool: ffAskUserQuestionsTool,
         visualizationInstructions: ffVisualizationInstructions,
     } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
@@ -237,6 +241,7 @@ export const useLumoActions = ({
             isWebSearchButtonToggled,
             imageOptions,
             artifactAction,
+            questionAnswers,
             artifactRevisionTargetId,
             isFromQueryParam,
         } = actionParams;
@@ -301,6 +306,7 @@ export const useLumoActions = ({
                     content: newMessageContent ?? '',
                     attachments: filledAttachments,
                     ...(artifactAction && { artifactAction }),
+                    ...(questionAnswers && { questionAnswers }),
                     ...(artifactRevisionTargetId && { artifactRevisionTargetId }),
                 },
                 conversationContext: {
@@ -311,6 +317,7 @@ export const useLumoActions = ({
                     contextFilters,
                 },
                 uiContext: {
+                    enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,
@@ -407,6 +414,7 @@ export const useLumoActions = ({
                     allAttachments,
                 },
                 uiContext: {
+                    enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     // Pin the freshly created assistant message so the regenerated answer is the
                     // one displayed. Without this, the new assistant is added as a hidden sibling
                     // of the failed attempt and the retry does nothing.
@@ -478,6 +486,7 @@ export const useLumoActions = ({
                     contextFilters,
                 },
                 uiContext: {
+                    enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     isEdit: true,
                     editOriginalContent: originalMessage.content,
                     updateSibling: preferSibling,
@@ -583,6 +592,7 @@ export const useLumoActions = ({
                     contextFilters,
                 },
                 uiContext: {
+                    enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,
@@ -721,6 +731,16 @@ export const useLumoActions = ({
             imageOptions,
             isFromQueryParam,
             artifactRevisionTargetId,
+        });
+    };
+
+    const handleSendQuestionAnswers: HandleSendQuestionAnswers = async (questionAnswers, isWebSearchButtonToggled) => {
+        sendMessageSendEvent();
+        return handleMessageAction({
+            actionType: 'send',
+            newMessageContent: formatQuestionAnswersForModel(questionAnswers),
+            isWebSearchButtonToggled,
+            questionAnswers,
         });
     };
 
@@ -913,6 +933,7 @@ export const useLumoActions = ({
         handleRegenerateMessage,
         handleSendMessage,
         handleSendArtifactAction,
+        handleSendQuestionAnswers,
         handleSaveManualArtifactEdit,
         handleEditMessage,
         handleAbort,

@@ -10,8 +10,8 @@ import {
     type WireTurn,
 } from './types-api';
 
-export type { ImageAspectRatio };
 export { IMAGE_ASPECT_RATIOS };
+export type { ImageAspectRatio };
 
 // *** Turn aliases ***
 // Turn types are defined in types-api as WireTurn (matching backend schema)
@@ -19,8 +19,8 @@ export { IMAGE_ASPECT_RATIOS };
 export type Turn = WireTurn;
 export { Role };
 
-export type { AdString, Base64, EncryptedData } from './crypto/encryptedData';
 export { isOldEncryptedData } from './crypto/encryptedData';
+export type { AdString, Base64, EncryptedData } from './crypto/encryptedData';
 
 // *** Various string aliases ***
 
@@ -426,6 +426,37 @@ export type ArtifactAssetPointer = {
     syncedMessageId: MessageId;
 };
 
+/** One submitted question answer, stored independently of the question's input type. */
+export interface QuestionAnswer {
+    /** The id of the question that was answered. */
+    questionId: string;
+    /** The title of the question that was answered. */
+    title: string;
+    /** Submitted answer values. Single-choice answers are stored as a one-item array. */
+    answers?: string[];
+    /** Whether the user left this question unanswered. */
+    skipped?: boolean;
+}
+
+function isQuestionAnswers(value: unknown): value is QuestionAnswer[] {
+    return (
+        Array.isArray(value) &&
+        value.length > 0 &&
+        value.every((item: unknown) => {
+            if (typeof item !== 'object' || item === null) return false;
+            const answer = item as QuestionAnswer;
+            return (
+                typeof answer.questionId === 'string' &&
+                typeof answer.title === 'string' &&
+                (answer.answers === undefined ||
+                    (Array.isArray(answer.answers) &&
+                        answer.answers.every((value: unknown) => typeof value === 'string'))) &&
+                (answer.skipped === undefined || typeof answer.skipped === 'boolean')
+            );
+        })
+    );
+}
+
 export type MessagePriv = {
     // Legacy fields (kept for backward compatibility)
     context?: string;
@@ -464,6 +495,9 @@ export type MessagePriv = {
 
     /** When set, the user message was sent from the artifact panel selection UI. */
     artifactAction?: ArtifactActionMeta;
+
+    /** Structured question-card answers; content still carries the plain-text model input. */
+    questionAnswers?: QuestionAnswer[];
 
     /** Reserved for explicit create-artifact mode (phase 2). Not used for loading state. */
     artifactCreateModeActive?: boolean;
@@ -560,6 +594,7 @@ export function isMessagePriv(value: any): value is MessagePriv {
         (value.compaction === undefined || (typeof value.compaction === 'object' && value.compaction !== null)) &&
         (value.usage === undefined || (typeof value.usage === 'object' && value.usage !== null)) &&
         (value.artifactAction === undefined || isArtifactActionMeta(value.artifactAction)) &&
+        (value.questionAnswers === undefined || isQuestionAnswers(value.questionAnswers)) &&
         (value.artifactCreateModeActive === undefined || typeof value.artifactCreateModeActive === 'boolean') &&
         (value.artifactRevisionTargetId === undefined || typeof value.artifactRevisionTargetId === 'string') &&
         (value.artifactManualEdit === undefined || isArtifactManualEditMeta(value.artifactManualEdit))
@@ -588,6 +623,7 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         requestedModel,
         compaction,
         artifactAction,
+        questionAnswers,
         artifactCreateModeActive,
         artifactRevisionTargetId,
         artifactManualEdit,
@@ -609,6 +645,7 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         requestedModel,
         compaction,
         artifactAction,
+        questionAnswers,
         artifactCreateModeActive,
         artifactRevisionTargetId,
         artifactManualEdit,
@@ -618,6 +655,13 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
 
 export function isCompactionMessage(message: MessagePriv): boolean {
     return message.compaction !== undefined;
+}
+
+/** Question-card submissions use their own renderer while remaining ordinary user turns for the model. */
+export function isQuestionAnswerMessage(
+    message: MessagePriv
+): message is MessagePriv & { questionAnswers: QuestionAnswer[] } {
+    return message.questionAnswers !== undefined;
 }
 
 export function isManualArtifactEditMessage(message: MessagePriv): boolean {
@@ -648,6 +692,7 @@ export function cleanMessage(message: Message): Message {
         requestedModel,
         compaction,
         artifactAction,
+        questionAnswers,
         artifactCreateModeActive,
         artifactRevisionTargetId,
         artifactManualEdit,
@@ -676,6 +721,7 @@ export function cleanMessage(message: Message): Message {
         ...(requestedModel !== undefined && { requestedModel }),
         ...(compaction !== undefined && { compaction }),
         ...(artifactAction !== undefined && { artifactAction }),
+        ...(questionAnswers !== undefined && { questionAnswers }),
         ...(artifactCreateModeActive !== undefined && { artifactCreateModeActive }),
         ...(artifactRevisionTargetId !== undefined && { artifactRevisionTargetId }),
         ...(artifactManualEdit !== undefined && { artifactManualEdit }),
@@ -732,6 +778,7 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         value.requestedModel === undefined &&
         value.compaction === undefined &&
         value.artifactAction === undefined &&
+        value.questionAnswers === undefined &&
         value.artifactCreateModeActive === undefined &&
         value.artifactRevisionTargetId === undefined &&
         value.usage === undefined
@@ -1236,6 +1283,8 @@ export interface ActionParams {
     customRetryInstructions?: string;
     imageOptions?: ImageGenerationOptions;
     artifactAction?: ArtifactActionMeta;
+    /** Structured question-card answers; content still carries the plain-text model input. */
+    questionAnswers?: QuestionAnswer[];
     artifactRevisionTargetId?: string;
     /** True when the message was auto-sent from a ?q= URL parameter. */
     isFromQueryParam?: boolean;
