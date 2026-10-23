@@ -16,7 +16,7 @@ jest.mock('../../../lib/monitor/compromised-password.request', () => ({
 }));
 
 let featureEnabled = true;
-let plan: 'free' | 'plus' = 'plus';
+let canCheck = true;
 let logins: any[] = [];
 let cache: Record<string, any> = {};
 let lastSyncedChange = 0;
@@ -27,17 +27,15 @@ exposeApi({ getState: () => ({ online, unreachable: false }) } as any);
 jest.mock('../../selectors/user', () => ({
     ...jest.requireActual('../../selectors/user'),
     selectFeatureFlag: () => () => featureEnabled,
-    selectPassPlan: () => plan,
 }));
 
 jest.mock('../../selectors/monitor', () => ({
     ...jest.requireActual('../../selectors/monitor'),
+    selectCanCheckCompromisedPasswords: () => canCheck,
     selectMonitoredLogins: () => () => logins,
     selectCompromisedPasswordsCache: () => cache,
     selectLastSyncedChange: () => lastSyncedChange,
 }));
-
-jest.mock('../../../lib/user/user.predicates', () => ({ isPaidPlan: (p: string) => p !== 'free' }));
 
 const loginItem = (shareId: string, itemId: string, password: string, revision = 1) => ({
     shareId,
@@ -54,7 +52,7 @@ describe('compromisedPasswordsFullCheck saga', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         featureEnabled = true;
-        plan = 'plus';
+        canCheck = true;
         online = true;
         logins = [];
         cache = {};
@@ -95,8 +93,8 @@ describe('compromisedPasswordsFullCheck saga', () => {
         expect(success?.payload).toEqual([]);
     });
 
-    it('returns [] and never calls the network on a free plan', async () => {
-        plan = 'free';
+    it('returns [] and never calls the network when the access check disallows it', async () => {
+        canCheck = false;
         logins = [loginItem('s1', 'i1', 'hunter2')];
         intent();
         await saga.nextTick();
