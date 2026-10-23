@@ -1,3 +1,6 @@
+import { useHasRedeemedCoupons } from '@proton/payments-ui/client-extensions/useHasRedeemedCoupons';
+import { BLACK_FRIDAY_2026_COUPONS } from '@proton/payments/core/subscription/helpers';
+
 import type { OfferConfig, Operation } from '../interface';
 import { configuration as duoToFamily } from '../operations/blackFriday2026DuoToFamily/configuration';
 import { useOffer as useDuoToFamily } from '../operations/blackFriday2026DuoToFamily/useOffer';
@@ -42,7 +45,7 @@ export function useBlackFriday2026(): Operation[] {
     const freeToDrivePlus = useFreeToDrivePlus();
     const freeToPassPlus = useFreeToPassPlus();
 
-    return [
+    const operations = [
         unlimitedToDuo,
         duoToFamily,
         plusToUnlimited,
@@ -51,4 +54,20 @@ export function useBlackFriday2026(): Operation[] {
         freeToDrivePlus,
         freeToPassPlus,
     ];
+
+    // A user who has redeemed any BF 2026 coupon sees no further campaign offer. Only users who would
+    // otherwise see one need their redemption history, which keeps the request off everyone else's load.
+    const hasOfferToShow = operations.some((operation) => !operation.isLoading && operation.isValid);
+    const { hasRedeemed, loading } = useHasRedeemedCoupons({
+        coupons: BLACK_FRIDAY_2026_COUPONS,
+        enabled: hasOfferToShow,
+    });
+
+    return operations.map((operation) => {
+        return {
+            ...operation,
+            isValid: operation.isValid && !hasRedeemed,
+            isLoading: operation.isLoading || loading,
+        };
+    });
 }

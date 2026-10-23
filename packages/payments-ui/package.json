@@ -13,6 +13,7 @@
         "./client-extensions/helpers": "./client-extensions/helpers.ts",
         "./client-extensions/useAutomaticCurrency": "./client-extensions/useAutomaticCurrency.ts",
         "./client-extensions/useCurrencies": "./client-extensions/useCurrencies.ts",
+        "./client-extensions/useHasRedeemedCoupons": "./client-extensions/useHasRedeemedCoupons.ts",
         "./client-extensions/useMethods": "./client-extensions/useMethods.ts",
         "./client-extensions/usePaymentFacade": "./client-extensions/usePaymentFacade.ts",
         "./client-extensions/usePaymentsTelemetry": "./client-extensions/usePaymentsTelemetry.ts",
