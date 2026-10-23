@@ -101,6 +101,17 @@
         "Tjenester"
       ]
     },
+    "Clear application data prompt": {
+      "Cancel": [
+        "Annuller"
+      ],
+      "Clear application data": [
+        "Ryd applikationsdata"
+      ],
+      "This removes all data associated with this app. The app will close and you will need to sign in again to use the app.": [
+        "Dette fjerner alt data tilknyttet med denne app. Appen lukker, og du skal logge ind igen for at bruge appen."
+      ]
+    },
     "Download warning": {
       "A recording is still being saved": [
         "En optagelse er stadig ved at blive gemt"
@@ -156,6 +167,67 @@
         "Vindue"
       ]
     },
+    "Screen share permission": {
+      "Allow screen recording": [
+        "Tillad skærmoptagelse"
+      ],
+      "Cancel": [
+        "Annuller"
+      ],
+      "Open System Settings": [
+        "Åbn Systemindstillinger"
+      ],
+      "To share your screen, allow Proton Meet in System Settings > Privacy & Security > Screen & System Audio Recording.": [
+        "Del din skærm ved at tillade Proton Meet i Systemindstillinger > Anonymitet og sikkerhed > Optagelse af skærm og systemlyd"
+      ]
+    },
+    "Screen share picker": {
+      "Built-in": [
+        "Indbygget"
+      ],
+      "Cancel": [
+        "Annuller"
+      ],
+      "Close": [
+        "Luk"
+      ],
+      "Display ${ screenNumber }": [
+        "Vis ${ screenNumber }"
+      ],
+      "Entire screen": [
+        "Hele skærmen"
+      ],
+      "External": [
+        "Ekstern"
+      ],
+      "Hide advanced options": [
+        "Skjul avancerede indstillinger"
+      ],
+      "Just one app": [
+        "Kun én app"
+      ],
+      "No windows available to share": [
+        "Ingen vinduer er tilgængelige til at dele"
+      ],
+      "Share": [
+        "Del"
+      ],
+      "Share system audio": [
+        "Del systemlyd"
+      ],
+      "Share your screen": [
+        "Del din skærm"
+      ],
+      "Show advanced options": [
+        "Vis avancerede indstillinger"
+      ],
+      "Viewers only see this app, even if you switch windows.": [
+        "Seere ser kun denne app, selv hvis du skifter mellem vinduer."
+      ],
+      "Viewers see your entire screen, including apps and notifications.": [
+        "Seere ser hele din skærm, inklusiv apps og notifikationer."
+      ]
+    },
     "Unload warning": {
       "Changes you made may not be saved.": [
         "Foretagne ændringer gemmes muligvis ikke."
@@ -168,6 +240,20 @@
       ],
       "Stay": [
         "Bliv her"
+      ]
+    },
+    "Update prompt": {
+      "${ MEET_APP_NAME } update": [
+        "Opdatering til ${ MEET_APP_NAME }"
+      ],
+      "A new version of ${ MEET_APP_NAME } has been downloaded. Restart the application to apply the updates.": [
+        "En ny version af ${ MEET_APP_NAME } er blevet downloadet. Genstart appen for at anvende opdateringerne."
+      ],
+      "Later": [
+        "Senere"
+      ],
+      "Restart": [
+        "Genstart"
       ]
     }
   }
