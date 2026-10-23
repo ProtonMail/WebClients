@@ -40,7 +40,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { ConnectionFailedModal } from '../../components/ConnectionFailedModal/ConnectionFailedModal';
 import { ConnectionLostModal } from '../../components/ConnectionLostModal/ConnectionLostModal';
 import { MeetingLockedModal } from '../../components/MeetingLockedModal/MeetingLockedModal';
-import { MeetingOpenedInDesktopApp } from '../../components/MeetingOpenedInDesktopApp/MeetingOpenedInDesktopApp';
 import { PiPPreviewVideo } from '../../components/PiPPreviewVideo/PiPPreviewVideo';
 import { WebRtcUnsupportedModal } from '../../components/WebRtcUnsupportedModal/WebRtcUnsupportedModal';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -48,7 +47,6 @@ import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MeetingRecorderProvider } from '../../contexts/MeetingRecorderContext';
 import { WaitingRoomProvider } from '../../contexts/WaitingRoomContext';
 import { useIsRecordingInProgressReceiver } from '../../hooks/bridges/useIsRecordingInProgressReceiver';
-import { useDesktopAppRedirect } from '../../hooks/protonMeetContainer/useDesktopAppRedirect';
 import { useJoinFlow } from '../../hooks/protonMeetContainer/useJoinFlow';
 import { useMeetingCleanup } from '../../hooks/protonMeetContainer/useMeetingCleanup';
 import { useMeetingConnection } from '../../hooks/protonMeetContainer/useMeetingConnection';
@@ -126,8 +124,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         meetingLinkName: urlMeetingLinkName,
         isInstant: instantMeetingRef.current,
     });
-
-    const { openedInDesktopApp } = useDesktopAppRedirect({ meetingLinkName: urlMeetingLinkName, isInstantJoin });
 
     const { isReadyToDecrypt } = useMeetingInfoHydration({
         meetingLinkName: urlMeetingLinkName,
@@ -501,10 +497,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const getKeychainIndexInformation = useCallback(() => {
         return keyProvider.getKeychainIndexInformation() ?? [];
     }, [keyProvider]);
-
-    if (openedInDesktopApp) {
-        return <MeetingOpenedInDesktopApp />;
-    }
 
     if (!isReadyToDecrypt) {
         // Same loader as the bootstrap one, so the SRP handshake reads as a continuation of app startup
