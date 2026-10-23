@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { formattedSavedSepaDetails } from '@proton/payments-ui/client-extensions/useMethods';
+import { formattedSavedSepaDetails } from '@proton/payments-ui/payment-methods/sepa/sepa';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
     PayPalDetails,
@@ -289,5 +289,23 @@ describe('PaymentMethodsTable', () => {
         const sepaDetailsElement = screen.getByTestId('sepa-details');
         expect(sepaDetailsElement).toHaveTextContent(/IBAN DE .* 5678/);
         expect(sepaDetailsElement.textContent).toMatch(formattedSavedSepaDetails(sepaMethod.Details));
+    });
+
+    it('should render an empty cell for a Type that is not a saved method type', () => {
+        const unexpectedTypeMethod = {
+            Type: PAYMENT_METHOD_TYPES.TOKEN,
+            Details: {},
+            Order: 1,
+            ID: 'id-token',
+        } as unknown as SavedPaymentMethod;
+
+        const TableBodyMock: jest.Mock = TableBody as any;
+        TableBodyMock.mockImplementation(({ children }) => children);
+        const TableRowMock: jest.Mock = TableRow as any;
+        TableRowMock.mockImplementation(({ cells }) => <div data-testid="row">{cells}</div>);
+
+        render(<PaymentMethodsTable methods={[unexpectedTypeMethod]} app={APPS.PROTONMAIL} />);
+
+        expect(screen.getByTestId('row')).toBeInTheDocument();
     });
 });
