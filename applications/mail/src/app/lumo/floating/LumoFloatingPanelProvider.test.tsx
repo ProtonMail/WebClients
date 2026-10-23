@@ -1,7 +1,12 @@
+import type { ReactNode } from 'react';
+import { useEffect, useReducer } from 'react';
+
 import { act, renderHook } from '@testing-library/react';
 
+import { defaultApiStatus } from '@proton/account/apiStatus';
 import { buildUser } from '@proton/account/testing/buildUser';
 import { useUser } from '@proton/account/user/hooks';
+import useLumoInMail from '@proton/components/components/drawer/views/lumoAgent/useLumoInMail';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import useOnline from '@proton/components/hooks/useOnline';
@@ -9,7 +14,7 @@ import type { DrawerApp } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
 import { useMailSelector } from '../../store/hooks';
-import { LumoFloatingPanelProvider, useLumoFloatingPanel } from './LumoFloatingPanelProvider';
+import { LumoFloatingPanelProvider, useHasLumoFloatingPanel, useLumoFloatingPanel } from './LumoFloatingPanelProvider';
 import { PanelSide } from './panelSide';
 import { useLumoHotkey } from './useLumoHotkey';
 
@@ -20,6 +25,9 @@ const toggleDrawer = jest.fn();
 const toggleDrawerApp = jest.fn(() => toggleDrawer);
 
 jest.mock('@proton/account/user/hooks');
+jest.mock('@proton/components/components/drawer/views/lumoAgent/useLumoInMail', () => {
+    return { __esModule: true, default: jest.fn() };
+});
 jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({ __esModule: true, default: jest.fn() }));
 jest.mock('@proton/components/hooks/useApiStatus', () => ({ __esModule: true, default: jest.fn() }));
 jest.mock('@proton/components/hooks/useOnline', () => ({ __esModule: true, default: jest.fn() }));
@@ -29,12 +37,33 @@ jest.mock('../telemetry/useLumoMailTelemetry', () => ({
     useLumoMailTelemetry: () => ({ assistantOpened }),
 }));
 
+// The panel state lives in a memoised sibling that re-renders only from its own subscriptions, so a
+// changed mock has to be delivered the same way rather than by re-rendering the provider.
+const refreshers = new Set<() => void>();
+const useRefreshable = () => {
+    const [, refresh] = useReducer((count: number) => {
+        return count + 1;
+    }, 0);
+    useEffect(() => {
+        refreshers.add(refresh);
+        return () => {
+            refreshers.delete(refresh);
+        };
+    }, []);
+};
+const refresh = () => {
+    act(() => {
+        refreshers.forEach((refresher) => {
+            refresher();
+        });
+    });
+};
+
 const setAppInView = (appInView: DrawerApp | undefined, showDrawerSidebar = true) => {
-    jest.mocked(useDrawer).mockReturnValue({
-        appInView,
-        toggleDrawerApp,
-        showDrawerSidebar,
-    } as unknown as ReturnType<typeof useDrawer>);
+    jest.mocked(useDrawer).mockImplementation(() => {
+        useRefreshable();
+        return { appInView, toggleDrawerApp, showDrawerSidebar } as unknown as ReturnType<typeof useDrawer>;
+    });
 };
 const setUserID = (ID: string) => {
     jest.mocked(useUser).mockReturnValue([buildUser({ ID }), false]);
@@ -43,12 +72,28 @@ const setComposersCount = (count: number) => {
     jest.mocked(useMailSelector).mockReturnValue(count);
 };
 const setReachability = ({ isApiOffline, isOnline }: { isApiOffline: boolean; isOnline: boolean }) => {
-    jest.mocked(useApiStatus).mockReturnValue({ offline: isApiOffline } as ReturnType<typeof useApiStatus>);
+    jest.mocked(useApiStatus).mockReturnValue({ ...defaultApiStatus, offline: isApiOffline });
     jest.mocked(useOnline).mockReturnValue(isOnline);
 };
 
+interface Props {
+    children: ReactNode;
+}
+
+const WhenPublished = ({ children }: Props) => {
+    return useHasLumoFloatingPanel() ? children : null;
+};
+
+const Wrapper = ({ children }: Props) => {
+    return (
+        <LumoFloatingPanelProvider>
+            <WhenPublished>{children}</WhenPublished>
+        </LumoFloatingPanelProvider>
+    );
+};
+
 const renderPanel = () => {
-    return renderHook(() => useLumoFloatingPanel(), { wrapper: LumoFloatingPanelProvider });
+    return renderHook(useLumoFloatingPanel, { wrapper: Wrapper });
 };
 
 const renderDetached = () => {
@@ -56,13 +101,14 @@ const renderDetached = () => {
     const rendered = renderPanel();
     act(() => rendered.result.current.detach());
     setAppInView(undefined);
-    rendered.rerender();
+    refresh();
     jest.clearAllMocks();
     return rendered;
 };
 
 beforeEach(() => {
     jest.clearAllMocks();
+    jest.mocked(useLumoInMail).mockReturnValue(true);
     window.localStorage.clear();
     setUserID('user-a');
     setAppInView(undefined);
@@ -100,9 +146,9 @@ describe('LumoFloatingPanelProvider', () => {
         ['the API is unreachable', { isApiOffline: true, isOnline: true }],
         ['the browser is offline', { isApiOffline: false, isOnline: false }],
     ])('keeps the panel up on dock when %s, since the drawer cannot open', (_, reachability) => {
-        const { result, rerender } = renderDetached();
+        const { result } = renderDetached();
         setReachability(reachability);
-        rerender();
+        refresh();
 
         act(() => result.current.dock());
 
@@ -158,8 +204,8 @@ describe('LumoFloatingPanelProvider', () => {
     });
 
     it('hands the hotkey the current surface state and its opener', () => {
-        const { result, rerender } = renderDetached();
-        rerender();
+        const { result } = renderDetached();
+        refresh();
         expect(jest.mocked(useLumoHotkey).mock.lastCall![0].isCurrentSurfaceOpen).toBe(true);
         act(() => result.current.closePanel());
 
@@ -172,14 +218,14 @@ describe('LumoFloatingPanelProvider', () => {
     });
 
     it('moves to the left while a composer is open and back once none are', () => {
-        const { result, rerender } = renderPanel();
+        const { result } = renderPanel();
 
         setComposersCount(1);
-        rerender();
+        refresh();
         expect(result.current.shownSide).toBe(PanelSide.LEFT);
 
         setComposersCount(0);
-        rerender();
+        refresh();
         expect(result.current.shownSide).toBe(PanelSide.RIGHT);
     });
 
@@ -227,6 +273,30 @@ describe('LumoFloatingPanelProvider', () => {
 
         expect(result.current.isDetached).toBe(true);
         expect(result.current.isCatHidden).toBe(false);
+    });
+
+    it('publishes nothing while Lumo is off and the remembered mode, closed, once it is back on', () => {
+        const seenDetached: boolean[] = [];
+        const { result, rerender } = renderHook(
+            () => {
+                const panel = useLumoFloatingPanel();
+                seenDetached.push(panel.isDetached);
+                return panel;
+            },
+            { wrapper: Wrapper }
+        );
+        act(() => result.current.detach());
+        expect(result.current.isDetached).toBe(true);
+
+        seenDetached.length = 0;
+        jest.mocked(useLumoInMail).mockReturnValue(false);
+        rerender();
+        expect(seenDetached).toEqual([]);
+
+        jest.mocked(useLumoInMail).mockReturnValue(true);
+        rerender();
+        expect(result.current.isDetached).toBe(true);
+        expect(result.current.isPanelOpen).toBe(false);
     });
 
     it('starts docked when no mode is remembered', () => {
@@ -291,9 +361,9 @@ describe('LumoFloatingPanelProvider', () => {
     });
 
     it('keeps the remembered detached mode when a dock is refused offline', () => {
-        const { result, rerender } = renderDetached();
+        const { result } = renderDetached();
         setReachability({ isApiOffline: false, isOnline: false });
-        rerender();
+        refresh();
 
         act(() => {
             result.current.dock();
@@ -334,11 +404,11 @@ describe('LumoFloatingPanelProvider', () => {
     });
 
     it('brings the dismissed cat back when the Drawer sidebar is hidden', () => {
-        const { result, rerender } = renderDetached();
+        const { result } = renderDetached();
         act(() => result.current.dismissCat());
 
         setAppInView(undefined, false);
-        rerender();
+        refresh();
 
         expect(result.current.isCatDismissed).toBe(false);
         expect(result.current.isPanelOpen).toBe(false);

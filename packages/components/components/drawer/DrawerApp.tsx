@@ -65,10 +65,10 @@ const DrawerApp = ({
     onContainerClick,
 }: Props) => {
     const { APP_NAME } = useConfig();
-    const { appInView, iframeSrcMap } = useDrawer();
+    const { appInView, iframeSrcMap, setAppInView } = useDrawer();
     const isSecurityCenterEnabled = useSecurityCenter();
     const isVPNDrawerEnabled = useVPNDrawer();
-    const isLumoInMailEnabled = useLumoInMail() && APP_NAME === APPS.PROTONMAIL;
+    const isLumoInMailEnabled = useLumoInMail();
     const isLumoInDriveEnabled = useFlag('DriveWebLumo') && APP_NAME === APPS.PROTONDRIVE;
     const isLumoInAppEnabled = isLumoInMailEnabled || isLumoInDriveEnabled;
     const getBreachesCount = useGetBreachesCounts();
@@ -88,6 +88,12 @@ const DrawerApp = ({
             document.body.classList.remove('drawer-is-lumo');
         };
     }, [appInView]);
+
+    useEffect(() => {
+        if (appInView === DRAWER_NATIVE_APPS.LUMO && !isLumoInAppEnabled) {
+            setAppInView(undefined);
+        }
+    }, [appInView, isLumoInAppEnabled]);
 
     useEffect(() => {
         if (canDisplayBreachNotifications) {

@@ -1,17 +1,17 @@
 import { renderHook } from '@testing-library/react';
 
-import useLumoInMail from '@proton/components/components/drawer/views/lumoAgent/useLumoInMail';
 import useDisplayFeatureTourDrawerButton from '@proton/components/components/featureTour/useDisplayFeatureTourDrawerButton';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import type { OrganizationSettingsAllowedProduct } from '@proton/shared/lib/interfaces/Organization';
 
 import LumoSidebarButton from '../../components/drawer/LumoSidebarButton';
+import { useHasLumoFloatingPanel } from '../../lumo/floating/LumoFloatingPanelProvider';
 import useMailDrawer from './useMailDrawer';
 
-jest.mock('@proton/components/components/drawer/views/lumoAgent/useLumoInMail', () => ({
-    __esModule: true,
-    default: jest.fn(),
+jest.mock('../../lumo/floating/LumoFloatingPanelProvider', () => ({
+    ...jest.requireActual('../../lumo/floating/LumoFloatingPanelProvider'),
+    useHasLumoFloatingPanel: jest.fn(),
 }));
 jest.mock('@proton/components/components/featureTour/useDisplayFeatureTourDrawerButton', () => ({
     __esModule: true,
@@ -33,16 +33,16 @@ beforeEach(() => {
 });
 
 describe('useMailDrawer', () => {
-    it('puts Lumo first in the Drawer sidebar when Lumo in Mail is on', () => {
-        jest.mocked(useLumoInMail).mockReturnValue(true);
+    it('puts Lumo first in the Drawer sidebar once the Lumo panel state is published', () => {
+        jest.mocked(useHasLumoFloatingPanel).mockReturnValue(true);
 
         const { result } = renderHook(() => useMailDrawer());
 
         expect(result.current.drawerSidebarButtons[0].type).toBe(LumoSidebarButton);
     });
 
-    it('leaves Lumo out of the Drawer sidebar when Lumo in Mail is off', () => {
-        jest.mocked(useLumoInMail).mockReturnValue(false);
+    it('leaves Lumo out of the Drawer sidebar while there is no Lumo panel state, as when Lumo is off', () => {
+        jest.mocked(useHasLumoFloatingPanel).mockReturnValue(false);
 
         const { result } = renderHook(() => useMailDrawer());
 

@@ -57,4 +57,10 @@ describe('DrawerLumoView', () => {
 
         expect(detachButton()).toBeNull();
     });
+
+    it('renders nothing while no conversation is published', () => {
+        const { container } = render(<DrawerLumoView />);
+
+        expect(container).toBeEmptyDOMElement();
+    });
 });
