@@ -4,8 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import FileIcon from '@proton/components/components/fileIcon/FileIcon';
 import { NodeType } from '@proton/drive/sdk';
+import { getFileIcon } from '@proton/file-icons/getFileIcon';
 
 import { getFileTypeDescription, getMimeTypeFromExtension } from '../../../util/filetypes';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
@@ -90,6 +90,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
     // Use centralized functions directly - no need to redefine them
     const fileTypeDescription = getFileTypeDescription(file.name, file.mediaType);
     const detectedMimeType = getMimeTypeFromExtension(file.name);
+    const FileTypeIcon = getFileIcon(file.mediaType || detectedMimeType);
 
     return (
         // TODO: Remove eslint-disable and fix issues
@@ -103,7 +104,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
                 {file.type === NodeType.Folder ? (
                     <LumoIcon name="Folder" size={variant === 'simple' ? 40 : 24} className="color-warning" />
                 ) : (
-                    <FileIcon mimeType={file.mediaType || detectedMimeType} size={variant === 'simple' ? 10 : 6} />
+                    <FileTypeIcon size={variant === 'simple' ? 10 : 6} className="shrink-0" />
                 )}
                 {file.isSharedWithMe && (
                     <Tooltip
