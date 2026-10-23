@@ -220,7 +220,11 @@ const SubscriptionCheckoutPaymentSection = ({
                     vatNumber={billingAddressHook.vatNumber}
                     taxCountry={billingAddressHook.taxCountry}
                 >
-                    <GuardBanner errors={guardErrors} className="mb-4" />
+                    <GuardBanner
+                        errors={guardErrors}
+                        telemetry={{ checkResult, subscriptions: subscription }}
+                        className="mb-4"
+                    />
                     <SubscriptionConfirmButton
                         onDone={onClose}
                         currency={currency}

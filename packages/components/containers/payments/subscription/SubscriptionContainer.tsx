@@ -1369,7 +1369,6 @@ const SubscriptionContainerInner = ({
                                 user={user}
                                 couponConfig={couponConfig}
                                 trial={shouldPassIsTrial(model, false)}
-                                guardErrors={guardErrors}
                                 {...checkoutModifiers}
                             />
                         </div>

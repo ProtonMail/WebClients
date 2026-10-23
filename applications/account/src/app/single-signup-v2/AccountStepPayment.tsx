@@ -464,7 +464,14 @@ const AccountStepPayment = ({
 
                     return (
                         <div>
-                            <GuardBanner errors={getItem('guard').guards} className="mb-4" />
+                            <GuardBanner
+                                errors={getItem('guard').guards}
+                                telemetry={{
+                                    checkResult: options.checkResult,
+                                    subscriptions: model.session?.subscription,
+                                }}
+                                className="mb-4"
+                            />
                             <PayButton
                                 size="large"
                                 color="norm"

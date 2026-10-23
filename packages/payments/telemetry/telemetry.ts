@@ -25,6 +25,7 @@ import {
     reportAddMeet,
     reportAddPass,
     reportBillingCountryChange,
+    reportGuardShown,
     reportInitialization,
     reportPayment,
     reportSubscriptionEstimationChange,
@@ -63,6 +64,8 @@ export const checkoutTelemetry = {
     reportPayment,
     /** Report that the subscription modal opened from an upsell surface. Call once per modal open. */
     reportUpsellModalOpen,
+    /** Report that the guard banner was shown */
+    reportGuardShown,
     /** Report a successful save in the "Edit billing address" modal */
     reportBillingAddressEditSuccess,
 

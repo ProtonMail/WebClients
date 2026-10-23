@@ -22,7 +22,6 @@ import { PLANS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
-import type { GuardError } from '@proton/payments/core/subscription/guard';
 import type {
     FullPlansMap,
     Subscription,
@@ -87,7 +86,6 @@ type Props = {
     paymentFacade: PaymentFacade;
     taxCountry: TaxCountryHook;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
-    guardErrors: GuardError[];
 };
 
 export type SubscriptionCheckoutProps = Props & CheckoutModifiers;
@@ -112,7 +110,6 @@ const SubscriptionCheckout = ({
     paymentFacade,
     taxCountry,
     paymentForbiddenReason,
-    guardErrors,
     ...checkoutModifiers
 }: SubscriptionCheckoutProps) => {
     const { APP_NAME } = useConfig();
@@ -425,7 +422,11 @@ const SubscriptionCheckout = ({
 
             {/* Submit button */}
             <div className="my-4">
-                <GuardBanner errors={guardErrors} className="mb-4" />
+                <GuardBanner
+                    errors={checkResult.GuardResult ?? []}
+                    telemetry={{ checkResult, subscriptions: subscription }}
+                    className="mb-4"
+                />
                 {submit}
                 {checkoutView.render('taxInclusive')}
                 {checkoutView.render('vatReverseCharge')}
