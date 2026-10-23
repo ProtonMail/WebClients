@@ -48,7 +48,7 @@ const PACKAGE_JSON_INDENT = 4;
 
 /**
  * Writes one `exports` entry per generated component. Code wildcards are not allowed in export
- * maps (see `exports:validate` in `@proton/ci-scripts`). Hand-written entries keep their position
+ * maps (see `exports:validate` in `@proton/repo-rules`). Hand-written entries keep their position
  * and order.
  */
 async function writeIconExports(iconNames: string[]) {
