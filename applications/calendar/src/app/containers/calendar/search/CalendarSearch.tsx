@@ -77,13 +77,16 @@ const CalendarSearch = ({ containerRef, onSearch, onBackFromSearch }: Props) => 
         containerRef.current.addEventListener('touchstart', handleCloseSearch, { passive: true });
 
         return () => {
+            // eslint-disable-next-line react-hooks/exhaustive-deps -- the ref points to a stable container, so reading it in the cleanup is intended
             if (!containerRef.current) {
                 return;
             }
+            // eslint-disable-next-line react-hooks/exhaustive-deps -- the ref points to a stable container, so reading it in the cleanup is intended
             containerRef.current.removeEventListener('mousedown', handleCloseSearch);
             // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-DC17E1
             containerRef.current.removeEventListener('touchstart', handleCloseSearch);
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- handleCloseSearch is recreated on every render, kept as is to preserve behavior
     }, [containerRef, handleCloseSearch]);
 
     return (
