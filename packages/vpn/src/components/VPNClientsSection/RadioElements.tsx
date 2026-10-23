@@ -29,7 +29,7 @@ export const RadioElements = ({
     }[];
     className?: string;
 }) => {
-    const { podcasts, youtubeChannels } = useStaticSurveyOptions();
+    const { podcasts, youtubeChannels, twitchChannels } = useStaticSurveyOptions();
     const [searchValue, setSearchValue] = useState('');
 
     // If we dont have marginBottom or vertical margin in className, let's add default one
@@ -46,6 +46,13 @@ export const RadioElements = ({
 
     const youtubeOptions = [
         ...youtubeChannels,
+        ...(searchValue
+            ? [<Option key={searchValue} title={searchValue} value={searchValue.toLowerCase().replace(/\s+/g, '_')} />]
+            : []),
+    ];
+
+    const twitchOptions = [
+        ...twitchChannels,
         ...(searchValue
             ? [<Option key={searchValue} title={searchValue} value={searchValue.toLowerCase().replace(/\s+/g, '_')} />]
             : []),
@@ -90,6 +97,19 @@ export const RadioElements = ({
                     onSearchInputChange={setSearchValue}
                 >
                     {youtubeOptions}
+                </SearchableSelect>
+            ) : undefined}
+            {option.value === 'Twitch' && radioValue === 'Twitch' ? (
+                <SearchableSelect
+                    key="twitch-selector"
+                    caretClassName="hidden"
+                    search
+                    value={supplementaryInputs.Twitch || ''}
+                    onChange={({ value }) => onChangeSupplementary('Twitch', value)}
+                    placeholder={c('Info').t`Please specify...`}
+                    onSearchInputChange={setSearchValue}
+                >
+                    {twitchOptions}
                 </SearchableSelect>
             ) : undefined}
         </Fragment>
