@@ -342,9 +342,6 @@
       "Download": [
         "İndir"
       ],
-      "Download app": [
-        "Uygulamayı indir"
-      ],
       "Download local participant report": [
         "Yerel katılımcı raporunu indir"
       ],
@@ -435,6 +432,9 @@
       "Join and leave sounds": [
         "Katıl ve sesi şöyle bırak"
       ],
+      "Join from ${ MEET_APP_NAME } app": [
+        "${ MEET_APP_NAME } uygulaması ile katıl"
+      ],
       "Join in browser": [
         "Tarayıcıdan katıl"
       ],
@@ -515,9 +515,6 @@
       ],
       "Open mention from ${ senderName } in chat": [
         "${ senderName } kullanıcısının anmasını sohbette aç"
-      ],
-      "Open this meeting in the desktop app": [
-        "Bu görüşmeyi bilgisayar uygulamasında aç"
       ],
       "Participants": [
         "Katılımcılar"
@@ -730,9 +727,6 @@
       ],
       "Stay in meeting": [
         "Görüşmede kal"
-      ],
-      "Stop opening meetings in the desktop app": [
-        "Görüşmelerin bilgisayar uygulamasında açılmasını durdur"
       ],
       "Stop receiving video": [
         "Gelen görüntüyü kapat"
@@ -2350,6 +2344,9 @@
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
       ],
+      "The emoji could not be added because the message is at its character limit": [
+        "İleti karakter sınırına ulaştığından emoji eklenemedi"
+      ],
       "The meeting password is incorrect": [
         "Görüşme parolası yanlış"
       ],
@@ -2756,9 +2753,6 @@
       ],
       "Allow camera access to preview your background": [
         "Arka planınızın ön izlemesini görmek için kameraya erişme izni verin"
-      ],
-      "Already in the app? You can close this tab.": [
-        "Zaten uygulamada mısınız? Bu sekmeyi kapatabilirsiniz."
       ],
       "Anonymous ${ particle } ${ participantNumber }": [
         "${ particle } ${ participantNumber } anonim"
@@ -3231,6 +3225,9 @@
       "Permissions not given.": [
         "İzinler verilmemiş."
       ],
+      "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
+        "Lütfen uygulamayı ${ downloadLink } ve kurun. Ardından yeniden ${ MEET_APP_NAME } uygulaması ile katıl üzerine tıklayın."
+      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "En iyi deneyim için lütfen ${ microphoneLinkButton }${ andString }${ cameraLinkButton } erişme izinlerini verin."
       ],
@@ -3417,9 +3414,6 @@
       "This meeting reached the time limit.": [
         "Bu görüşme zaman sınırına ulaştı."
       ],
-      "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
-        "Bu görüşme ${ MEET_APP_NAME } bilgisayar uygulamasında açıldı."
-      ],
       "This recording will be permanently deleted from this device. This action cannot be undone.": [
         "Bu kayıt bu aygıttan kalıcı olarak silinecek. Bu işlem geri alınamaz."
       ],
@@ -3527,9 +3521,6 @@
       ],
       "You are almost there": [
         "Neredeyse tamam"
-      ],
-      "You can close this tab.": [
-        "Bu sekmeyi kapatabilirsiniz."
       ],
       "You can now return to the application to continue": [
         "İlerlemek için uygulamaya dönebilirsiniz"
@@ -3914,6 +3905,9 @@
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
       ],
+      "download": [
+        "indirin"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -3931,6 +3925,110 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ]
+    },
+    "Lumo emoji name": {
+      "Alert": [
+        "Uyarı"
+      ],
+      "Browse folders": [
+        "Klasörlere göz at"
+      ],
+      "Cash": [
+        "Nakit"
+      ],
+      "Celebrate": [
+        "Kutla"
+      ],
+      "Cheers": [
+        "Görüşürüz"
+      ],
+      "Chef's kiss": [
+        "Şefin öpücüğü"
+      ],
+      "Coffee": [
+        "Kahve"
+      ],
+      "Cowboy": [
+        "Kovboy"
+      ],
+      "Encrypt": [
+        "Şifrele"
+      ],
+      "Gaming": [
+        "Oyun"
+      ],
+      "Halo": [
+        "Hale"
+      ],
+      "Happy": [
+        "Mutlu"
+      ],
+      "Love": [
+        "Aşk"
+      ],
+      "Mild panic": [
+        "Hafif panik"
+      ],
+      "Mind blown": [
+        "Akıl uçması"
+      ],
+      "Nine lives": [
+        "Dokuz can"
+      ],
+      "Party": [
+        "Parti"
+      ],
+      "Perk": [
+        "Neşesiz"
+      ],
+      "Popcorn": [
+        "Patlamış mısır"
+      ],
+      "Rocket": [
+        "Roket"
+      ],
+      "Sad": [
+        "Üzgün"
+      ],
+      "Schrödinger in a box": [
+        "Kutuda Schrödinger"
+      ],
+      "Schrödinger out of the box": [
+        "Kutudan çıkmış Schrödinger"
+      ],
+      "Search": [
+        "Arama"
+      ],
+      "Sit": [
+        "Oturma"
+      ],
+      "Slay": [
+        "Mahvetme"
+      ],
+      "Sleepy": [
+        "Uykulu"
+      ],
+      "Sweep": [
+        "Süpür"
+      ],
+      "Thank you": [
+        "Teşekkürler"
+      ],
+      "Think": [
+        "Düşünme"
+      ],
+      "This is fine": [
+        "Tamamdır"
+      ],
+      "Watch left": [
+        "Soldan izle"
+      ],
+      "Watch right": [
+        "Sağdan izle"
+      ],
+      "Write": [
+        "Yazma"
       ]
     },
     "meet": {
