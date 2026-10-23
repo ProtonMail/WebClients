@@ -2005,6 +2005,55 @@ export type PassPlanResponse = {
     FolderMaxChildren?: number | null;
     /* If folders are supported, what is the maximum depth a folder can be at. First parentless folder in a vault has depth 1. */
     FolderMaxDepth?: number | null;
+    /* Whether the user can add custom fields to items. When false, clients must hide the custom field editor and
+     * existing custom fields are read-only */
+    CustomFields: boolean;
+    /* Whether the user can create items of the credit card type. When false, clients must not offer credit card
+     * creation, but already existing credit card items remain readable */
+    CreditCardType: boolean;
+    /* Whether the user can browse and restore previous revisions of an item. When false, only the current
+     * revision is available to the client */
+    ItemHistory: boolean;
+    /* Whether the user can share single items with other users, instead of sharing a whole vault. The number of
+     * item shares per vault is additionally capped by the plan */
+    ItemSharing: boolean;
+    /* Whether the user can share a folder with other users. Requires folders to be allowed for this plan, see
+     * FolderAllowed */
+    FolderSharing: boolean;
+    /* Whether the user can create secure (public) links to items. When false, clients must hide the link
+     * creation entry point; already created links keep working until they expire */
+    PublicLinkCreationAllowed: boolean;
+    /* Whether the user can use auto type, the desktop feature that fills the credentials of an item into the
+     * focused window through a keyboard shortcut. Only relevant for desktop clients; when false, the desktop
+     * app must not register the shortcut nor offer auto type */
+    AutoTypeAllowed: boolean;
+    /* Whether the user can use the Pass ssh agent, which serves the ssh keys stored in Pass to the ssh client.
+     * Granted together with the cli access, see CliAllowed */
+    SshAgentAllowed: boolean;
+    /* Whether the user plan allows to have policies in their organization, such as restricting sharing outside
+     * the organization. Only admins can manage them. */
+    OrganizationPolicies: boolean;
+    /* Whether the user plan allows their organization to have an activity log, listing the actions performed by
+     * its members. Only admins can access it. */
+    OrganizationActivityLog: boolean;
+    /* Whether the user plan allows their organization to have per-user security reports, such as weak or reused
+     * passwords per member. Only admins can access them. */
+    OrganizationUserReports: boolean;
+    /* Whether Pass Monitor reports logins that do not have a second factor configured even though the website
+     * supports it. When false, clients must not surface that insight */
+    MonitorInactive2FA: boolean;
+    /* Whether the user can use dark web monitoring, meaning breach alerts for their addresses, aliases and
+     * custom emails. When false, only a limited free summary is available */
+    MonitorDarkWeb: boolean;
+    /* How many custom (non-Proton) emails the user can register for breach monitoring. Zero means custom emails
+     * cannot be monitored on this plan */
+    MonitorMaxCustomEmails: number;
+    /* Whether Pass Monitor reports logins whose password appeared in a known breach. When false, clients must
+     * not surface that insight */
+    MonitorCompromisedPasswords: boolean;
+    /* Whether Pass Monitor reports passwords reused across several logins. When false, clients must not surface
+     * that insight */
+    MonitorDeduplication: boolean;
 };
 export type UserMonitorStatusResponse = {
     /* If the monitor for proton address leaks is enabled */

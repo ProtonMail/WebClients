@@ -15,9 +15,8 @@ import { useSelectItemAction } from '../../../hooks/useSelectItemAction';
 import { useTelemetryEvent } from '../../../hooks/useTelemetryEvent';
 import { itemEq } from '../../../lib/items/item.predicates';
 import { getItemKey } from '../../../lib/items/item.utils';
-import { isPaidPlan } from '../../../lib/user/user.predicates';
 import { selectSelectedItems } from '../../../store/selectors/items';
-import { selectPassPlan } from '../../../store/selectors/user';
+import { selectCanCheckCompromisedPasswords } from '../../../store/selectors/monitor';
 import { PassFeature } from '../../../types/api/features';
 import type { ItemRevision } from '../../../types/data/items';
 import { TelemetryEventName } from '../../../types/data/telemetry';
@@ -38,9 +37,9 @@ export const CompromisedPasswords: FC = () => {
 
     const featureFlagsReady = useFeatureFlagsReady();
     const enabled = useFeatureFlag(PassFeature.PassCompromisedPasswords);
-    const paid = isPaidPlan(useSelector(selectPassPlan));
+    const allowed = useSelector(selectCanCheckCompromisedPasswords);
     const { compromised } = useMonitor();
-    const items = useMemoSelector(selectSelectedItems, [paid ? compromised.data : [], 'titleASC']);
+    const items = useMemoSelector(selectSelectedItems, [allowed ? compromised.data : [], 'titleASC']);
     const selectedItem = useSelectedItem();
     const { close } = useContextMenu();
     const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
@@ -57,7 +56,7 @@ export const CompromisedPasswords: FC = () => {
     if (!enabled) return <Redirect to={getLocalPath('monitor')} push={false} />;
 
     if (items.length === 0) {
-        if (!paid) {
+        if (!allowed) {
             return (
                 <div className="flex items-center justify-center color-weak text-sm text-center text-break h-full">
                     <strong>{c('Title').t`Upgrade to check for compromised passwords`}</strong>
