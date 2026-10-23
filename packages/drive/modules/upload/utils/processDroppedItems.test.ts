@@ -3,6 +3,8 @@ import { uploadLogDebug, uploadLogError } from './uploadLogger';
 
 jest.mock('./uploadLogger');
 
+const READ_ENTRIES_BATCH_SIZE = 100;
+
 describe('processDroppedItems', () => {
     const createFile = (name: string): File => {
         return new File(['content'], name, { type: 'text/plain' });
@@ -18,19 +20,16 @@ describe('processDroppedItems', () => {
     };
 
     const createDirectoryEntry = (name: string, entries: FileSystemEntry[]): FileSystemDirectoryEntry => {
-        let hasRead = false;
+        let offset = 0;
         return {
             isFile: false,
             isDirectory: true,
             name,
             createReader: () => ({
                 readEntries: (cb: (entries: FileSystemEntry[]) => void) => {
-                    if (!hasRead) {
-                        hasRead = true;
-                        cb(entries);
-                    } else {
-                        cb([]);
-                    }
+                    const batch = entries.slice(offset, offset + READ_ENTRIES_BATCH_SIZE);
+                    offset += batch.length;
+                    cb(batch);
                 },
             }),
         } as FileSystemDirectoryEntry;
@@ -272,6 +271,18 @@ describe('processDroppedItems', () => {
         const result = await processDroppedItems(dataTransfer);
 
         expect(result.map((f) => f.name).sort()).toEqual(['file1.txt', 'file2.txt', 'file3.txt']);
+    });
+
+    it('should process a dropped folder with a very large number of files without overflowing the call stack', async () => {
+        const fileEntries = Array.from({ length: 200_000 }, (_, index) =>
+            createFileEntry(`file-${index}.txt`, createFile(`file-${index}.txt`))
+        );
+        const dirEntry = createDirectoryEntry('folder', fileEntries);
+        const dataTransfer = createMockDataTransfer([new File([], 'folder', { type: '' })], [dirEntry]);
+
+        const result = await processDroppedItems(dataTransfer);
+
+        expect(result).toHaveLength(fileEntries.length);
     });
 
     it('should filter out multiple root folders from fallback', async () => {
