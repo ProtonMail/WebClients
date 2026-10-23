@@ -14,8 +14,12 @@ import { UpsellRef } from '../../constants';
 import { useFeatureFlag } from '../../hooks/useFeatureFlag';
 import { useUpsellPlanFeatures } from '../../hooks/usePlanFeatures';
 import { useTelemetryEvent } from '../../hooks/useTelemetryEvent';
-import { isPaidPlan } from '../../lib/user/user.predicates';
-import { selectMonitorPreview } from '../../store/selectors/monitor';
+import {
+    selectCanCheckCompromisedPasswords,
+    selectCanCheckDuplicatePasswords,
+    selectCanUseDarkWebMonitoring,
+    selectMonitorPreview,
+} from '../../store/selectors/monitor';
 import { PassFeature } from '../../types/api/features';
 import { TelemetryEventName } from '../../types/data/telemetry';
 import { PillBadge } from '../Layout/Badge/PillBadge';
@@ -38,10 +42,12 @@ import './MonitorSummary.scss';
 export const MonitorSummary: FC = () => {
     const navigate = useNavigate();
     const { duplicates, insecure, compromised, missing2FAs, excluded } = useMonitor();
-    const { plan, features, upsellType, upgradePath } = useUpsellPlanFeatures();
+    const { features, upsellType, upgradePath } = useUpsellPlanFeatures();
     const compromisedPasswordsEnabled = useFeatureFlag(PassFeature.PassCompromisedPasswords);
 
-    const paid = isPaidPlan(plan);
+    const darkWebMonitoringAllowed = useSelector(selectCanUseDarkWebMonitoring);
+    const compromisedPasswordsAllowed = useSelector(selectCanCheckCompromisedPasswords);
+    const duplicatePasswordsAllowed = useSelector(selectCanCheckDuplicatePasswords);
     const preview = useSelector(selectMonitorPreview);
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
     const onUpsell = () => setUpsellModalOpen(true);
@@ -65,14 +71,14 @@ export const MonitorSummary: FC = () => {
                         <section className="flex flex-column gap-4">
                             <h3 className="text-lg text-semibold">{DARK_WEB_MONITORING_NAME}</h3>
                             <div className="pass-monitor-grid gap-4">
-                                {paid && (
+                                {darkWebMonitoringAllowed && (
                                     <BreachSummaryCard
                                         className="xl:self-start"
                                         onClick={() => navigate(getLocalPath('monitor/dark-web'))}
                                     />
                                 )}
 
-                                {!paid &&
+                                {!darkWebMonitoringAllowed &&
                                     (preview ? (
                                         <BreachPreviewCard
                                             className="xl:self-start"
@@ -104,18 +110,30 @@ export const MonitorSummary: FC = () => {
                                     }
                                 />
 
-                                <ButtonCard
-                                    actions={<PillBadge label={duplicates.count} />}
-                                    disabled={duplicates.count === 0}
-                                    icon={<CardIcon icon={duplicates.count > 0 ? IcExclamationFilled : IcCheckmark} />}
-                                    onClick={() => navigate(getLocalPath('monitor/duplicates'))}
-                                    subtitle={c('Description').t`Create unique passwords`}
-                                    title={c('Title').t`Reused passwords`}
-                                    type={duplicates.count > 0 ? 'warning' : 'success'}
-                                />
+                                {duplicatePasswordsAllowed ? (
+                                    <ButtonCard
+                                        actions={<PillBadge label={duplicates.count} />}
+                                        disabled={duplicates.count === 0}
+                                        icon={
+                                            <CardIcon icon={duplicates.count > 0 ? IcExclamationFilled : IcCheckmark} />
+                                        }
+                                        onClick={() => navigate(getLocalPath('monitor/duplicates'))}
+                                        subtitle={c('Description').t`Create unique passwords`}
+                                        title={c('Title').t`Reused passwords`}
+                                        type={duplicates.count > 0 ? 'warning' : 'success'}
+                                    />
+                                ) : (
+                                    <ButtonCard
+                                        actions={<PassPlusPromotionButton onClick={onUpsell} />}
+                                        onClick={onUpsell}
+                                        subtitle={c('Description').t`Check if you're reusing passwords`}
+                                        title={c('Title').t`Reused passwords`}
+                                        type="primary"
+                                    />
+                                )}
 
                                 {compromisedPasswordsEnabled &&
-                                    (paid ? (
+                                    (compromisedPasswordsAllowed ? (
                                         <ButtonCard
                                             actions={compromisedReady && <PillBadge label={compromised.count} />}
                                             disabled={!compromisedReady}
