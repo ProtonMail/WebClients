@@ -10,6 +10,7 @@ import {
     getAutoCoupon,
     getAvailableSubscriptionActions,
     getSubscriptionPlanTitle,
+    hasBlackFriday2026Coupon,
     isAddonDowngrade,
     isDangerouslyAllowedSubscriptionEstimation,
     isModifyingPaidSubscriptionSelection,
@@ -1316,5 +1317,40 @@ describe('isAddonDowngrade', () => {
     it('is false for an unchanged or increased addon quantity', () => {
         expect(isAddonDowngrade(withMembers(2), withMembers(2))).toBe(false);
         expect(isAddonDowngrade(withMembers(2), withMembers(5))).toBe(false);
+    });
+});
+
+describe('hasBlackFriday2026Coupon', () => {
+    it.each([
+        COUPON_CODES.BLACK_FRIDAY_2026_NEW,
+        COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
+        COUPON_CODES.BLACK_FRIDAY_2026_PARTNERS,
+        COUPON_CODES.BLACK_FRIDAY_2026_BUSINESS,
+        COUPON_CODES.BLACK_FRIDAY_2026_TRIAL,
+        COUPON_CODES.BLACK_FRIDAY_2026_NEW_CS,
+        COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE_CS,
+        COUPON_CODES.BLACK_FRIDAY_2026_PARTNERS_CS,
+        COUPON_CODES.BLACK_FRIDAY_2026_BUSINESS_CS,
+        COUPON_CODES.BLACK_FRIDAY_2026_TRIAL_CS,
+    ])('is true for %s', (couponCode) => {
+        expect(hasBlackFriday2026Coupon(buildSubscription(PLANS.BUNDLE, { CouponCode: couponCode }))).toBe(true);
+    });
+
+    it('matches the coupon regardless of case', () => {
+        expect(hasBlackFriday2026Coupon(buildSubscription(PLANS.BUNDLE, { CouponCode: 'bf2026newcs' }))).toBe(true);
+    });
+
+    it('is false for a coupon from another campaign', () => {
+        expect(hasBlackFriday2026Coupon(buildSubscription(PLANS.BUNDLE, { CouponCode: 'JUNE26BUNDLESALE' }))).toBe(
+            false
+        );
+    });
+
+    it('is false when the subscription has no coupon', () => {
+        expect(hasBlackFriday2026Coupon(buildSubscription(PLANS.BUNDLE, { CouponCode: null }))).toBe(false);
+    });
+
+    it('is false for a free subscription', () => {
+        expect(hasBlackFriday2026Coupon(FREE_SUBSCRIPTION)).toBe(false);
     });
 });
