@@ -8,7 +8,10 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import type { EnableVpn2024AddonsExperimentVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
+import type {
+    CheckoutCondensedAddonsVariant,
+    EnableVpn2024AddonsExperimentVariant,
+} from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 import type { SubscriptionModificationStepTelemetry } from './helpers';
 
@@ -131,4 +134,21 @@ export function reportVpn2024AddonsExperimentSeen(props: {
     variant: EnableVpn2024AddonsExperimentVariant | 'disabled';
 }) {
     telemetry.sendCustomEvent('subscription_modification_vpn2024_addons_experiment_seen', props);
+}
+
+/**
+ * Reports the first time the condensed add-ons checkout experiment variant is seen.
+ *
+ * **Event Name:** `subscription_modification_checkout_condensed_addons_experiment_seen`
+ *
+ * **When to call:** Once per checkout opening, after feature flags are ready, and only for users who are eligible for
+ * the experiment (Free or B2C Plus users upgrading to Proton Unlimited) and assigned to an arm. Use the
+ * `useCheckoutCondensedAddons` hook for automatic tracking.
+ *
+ * **Purpose:** Track experiment exposure — which variant each eligible user was assigned to.
+ *
+ * @param props.variant - The experiment variant name (`'control'` or `'condensed'`)
+ */
+export function reportCheckoutCondensedAddonsExperimentSeen(props: { variant: CheckoutCondensedAddonsVariant }) {
+    telemetry.sendCustomEvent('subscription_modification_checkout_condensed_addons_experiment_seen', props);
 }

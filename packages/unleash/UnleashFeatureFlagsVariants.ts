@@ -19,6 +19,7 @@ export const FLAGS_WITH_VARIANT = [
     'B2BAlwaysOnWindowsRelease',
     'CategoryViewVariant',
     'MeetScreenShareAudioSupportedElectronVersion',
+    'CheckoutCondensedAddons',
 ] satisfies FeatureFlag[];
 
 /**
@@ -40,6 +41,7 @@ export type B2BAlwaysOnWindowsReleaseVariant = 'version';
 export type MeetScreenShareAudioSupportedElectronVersionVariant = 'version';
 export type EnableVpn2024AddonsExperimentVariant =
     'lumo-addon-only' | 'meet-addon-only' | 'pass-addon-only' | 'no-addon';
+export type CheckoutCondensedAddonsVariant = 'control' | 'condensed';
 /**
  * The important variant for the client is `RecategorizationButton`. Users with this variant will see the move to primary badge.
  * The other variants are used for other experiments and are here for reference.
@@ -84,6 +86,7 @@ type FeatureFlagVariantMap = {
     B2BAlwaysOnWindowsRelease: VariantReturnType<B2BAlwaysOnWindowsReleaseVariant>;
     CategoryViewVariant: VariantReturnType<CategoryViewVariantVariant>;
     MeetScreenShareAudioSupportedElectronVersion: VariantReturnType<MeetScreenShareAudioSupportedElectronVersionVariant>;
+    CheckoutCondensedAddons: VariantReturnType<CheckoutCondensedAddonsVariant>;
 };
 
 /**

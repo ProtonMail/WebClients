@@ -12,7 +12,12 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useSubscriptionModalTelemetry from '../subscription/useSubscriptionModalTelemetry';
+import { CondensedAddonRow } from './CondensedAddonRow';
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
+
+const getLumoAddonDescription = () =>
+    c('collider_2025: Info')
+        .t`${LUMO_APP_NAME} is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.`;
 
 const LumoAddonBanner = ({ onClick, price }: { onClick: () => void; price: ReactElement }) => (
     <div
@@ -24,10 +29,7 @@ const LumoAddonBanner = ({ onClick, price }: { onClick: () => void; price: React
                 <strong className="block lg:inline">{c('collider_2025: Info').t`Add ${LUMO_APP_NAME}`}</strong>{' '}
                 {c('mail_signup_2024: Info').jt`for ${price}`}
             </p>
-            <p className="m-0 text-sm color-weak">
-                {c('collider_2025: Info')
-                    .t`${LUMO_APP_NAME} is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.`}
-            </p>
+            <p className="m-0 text-sm color-weak">{getLumoAddonDescription()}</p>
         </div>
         <Button color="norm" shape="outline" className="shrink-0 flex items-center gap-1" pill onClick={onClick}>
             <IcPlus className="shrink-0" />
@@ -41,26 +43,39 @@ interface LumoAddonProps extends Omit<NumberCustomiserProps, 'label' | 'tooltip'
     addon: Plan;
     onAddLumo: () => void;
     telemetryContext: PaymentTelemetryContext;
+    /** Checkout experiment CheckoutCondensedAddons: render a row of the condensed addons card instead of the banner. */
+    condensed?: boolean;
 }
 
-const LumoAddon = ({ price, onAddLumo, value, telemetryContext, ...rest }: LumoAddonProps) => {
+const LumoAddon = ({ price, onAddLumo, value, telemetryContext, condensed = false, ...rest }: LumoAddonProps) => {
     const { reportAddLumo } = useSubscriptionModalTelemetry();
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const [showLumoBanner, setShowLumoBanner] = useState(value === 0);
 
+    const handleAdd = () => {
+        setShowLumoBanner(false);
+        onAddLumo();
+        void reportAddLumo();
+        checkoutTelemetry.reportAddLumo({ context: telemetryContext });
+    };
+
     if (showLumoBanner) {
+        if (condensed) {
+            return (
+                <CondensedAddonRow
+                    name={LUMO_APP_NAME}
+                    price={price}
+                    description={getLumoAddonDescription()}
+                    onAdd={handleAdd}
+                    testId="lumo-addon-row"
+                />
+            );
+        }
+
         return (
             <div>
-                <LumoAddonBanner
-                    price={price}
-                    onClick={() => {
-                        setShowLumoBanner(false);
-                        onAddLumo();
-                        void reportAddLumo();
-                        checkoutTelemetry.reportAddLumo({ context: telemetryContext });
-                    }}
-                />
+                <LumoAddonBanner price={price} onClick={handleAdd} />
             </div>
         );
     }
