@@ -2,17 +2,19 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ApiImporterError, ApiImporterState } from '../../../api/api.interface';
+import { ImportType } from '../../../interface';
 import { getImporterString } from '../Reports/reportStrings';
 
 interface Props {
     state: ApiImporterState | undefined;
     errorCode: ApiImporterError | undefined;
+    product: ImportType;
 }
 
-const ImporterRowStatus = ({ state, errorCode }: Props) => {
+const ImporterRowStatus = ({ state, errorCode, product }: Props) => {
     if (state === ApiImporterState.PAUSED) {
         return (
             <div className="inline-flex gap-2 color-weak items-center">
@@ -26,7 +28,11 @@ const ImporterRowStatus = ({ state, errorCode }: Props) => {
                 )}
                 {errorCode === ApiImporterError.ERROR_CODE_QUOTA_LIMIT && (
                     <Tooltip
-                        title={c('Tooltip').t`Your ${MAIL_APP_NAME} inbox is almost full`}
+                        title={
+                            product === ImportType.DRIVE
+                                ? c('Tooltip').t`Your ${DRIVE_APP_NAME} storage is almost full`
+                                : c('Tooltip').t`Your ${MAIL_APP_NAME} inbox is almost full`
+                        }
                         data-testid="ImporterRowStatus:quota_Error"
                     >
                         <span className="inline-flex ">

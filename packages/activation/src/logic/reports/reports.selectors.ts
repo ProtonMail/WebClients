@@ -6,7 +6,8 @@ import type { EasySwitchState } from '../store';
 import type { Report, ReportSummariesMap, ReportSummary, ReportsMap } from './reports.interface';
 
 const selectReportsMap = (state: EasySwitchState): ReportsMap => state.reports.reports;
-const selectReportsSummariesMap = (state: EasySwitchState): ReportSummariesMap => state.reports.summaries;
+export const selectReportsSummariesMap = (state: EasySwitchState): ReportSummariesMap => state.reports.summaries;
+export const selectReportsLoading = (state: EasySwitchState) => state.reports.loading;
 
 const selectReports = createSelector(selectReportsMap, (reportsMap): Report[] => {
     const reports = Object.values(reportsMap);
