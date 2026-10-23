@@ -146,10 +146,21 @@ export const getHas2025OfferCoupon = (coupon: string | undefined | null): boolea
     return blackFriday2025Discounts.has(coupon?.toUpperCase());
 };
 
-const blackFriday2026Discounts: Set<string> = new Set([
+export const BLACK_FRIDAY_2026_COUPONS: COUPON_CODES[] = [
     COUPON_CODES.BLACK_FRIDAY_2026_NEW,
     COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE,
-]);
+    COUPON_CODES.BLACK_FRIDAY_2026_PARTNERS,
+    COUPON_CODES.BLACK_FRIDAY_2026_BUSINESS,
+    COUPON_CODES.BLACK_FRIDAY_2026_TRIAL,
+
+    COUPON_CODES.BLACK_FRIDAY_2026_NEW_CS,
+    COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE_CS,
+    COUPON_CODES.BLACK_FRIDAY_2026_PARTNERS_CS,
+    COUPON_CODES.BLACK_FRIDAY_2026_BUSINESS_CS,
+    COUPON_CODES.BLACK_FRIDAY_2026_TRIAL_CS,
+];
+
+const blackFriday2026Discounts: Set<string> = new Set(BLACK_FRIDAY_2026_COUPONS);
 
 export function hasBlackFriday2026Coupon(subscription: MaybeFreeSubscription): boolean {
     const coupon = subscription?.CouponCode;
