@@ -14,6 +14,7 @@ import type {
 } from 'proton-account/src/app/content/router-params';
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
@@ -119,6 +120,7 @@ const SettingsSearchArea = () => {
 
 const MainContainer: FunctionComponent = () => {
     const [user] = useUser();
+    const [addresses] = useAddresses();
     const [userSettings] = useUserSettings();
     const [subscription, loadingSubscription] = useSubscription();
     const [allSubscriptions = [], loadingAllSubscriptions] = useAllSubscriptions();
@@ -191,7 +193,7 @@ const MainContainer: FunctionComponent = () => {
 
     const vpnRoutes = getRoutes({
         user,
-        entitlements,
+        addresses,
         subscription,
         showVPNDashboard,
         showVPNDashboardVariant: showVPNDashboardVariant.name,

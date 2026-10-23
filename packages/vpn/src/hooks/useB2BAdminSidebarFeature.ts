@@ -1,3 +1,4 @@
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -37,6 +38,7 @@ export const useB2BAdminSidebarFeature = ({
       }
     | { enabled: false; routes: undefined; loading: boolean } => {
     const [user, isUserLoading] = useUser();
+    const [addresses] = useAddresses();
     const [subscription, isSubscriptionLoading] = useSubscription();
     const [allSubscriptions, isAllSubscriptionsLoading] = useAllSubscriptions();
     const [organization, isOrganizationLoading] = useOrganization();
@@ -94,7 +96,7 @@ export const useB2BAdminSidebarFeature = ({
             B2BAlwaysOnEnabled,
             ShowSignInRestrictionToggle,
         },
-        context: { isDataRecoveryAvailable, isSessionRecoveryAvailable, appName: APP_NAME },
+        context: { isDataRecoveryAvailable, isSessionRecoveryAvailable, appName: APP_NAME, addresses },
         permissions,
     });
 

@@ -18,7 +18,6 @@ import { IcPaintRoller } from '@proton/icons/icons/IcPaintRoller';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcSquaresInSquare } from '@proton/icons/icons/IcSquaresInSquare';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
-import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import {
     type MaybeFreeSubscription,
     getHasVpnB2BPlan,
@@ -28,6 +27,7 @@ import {
     isManagedExternally,
 } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import {
     getIsExternalAccount,
@@ -39,7 +39,7 @@ import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVar
 
 interface Arguments {
     user: UserModel;
-    entitlements: EntitlementChecksForOrgAndUser;
+    addresses: Address[] | undefined;
     subscription: MaybeFreeSubscription;
     showVPNDashboard: boolean;
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
@@ -56,7 +56,7 @@ interface Arguments {
 
 export const getRoutes = ({
     user,
-    entitlements,
+    addresses,
     subscription,
     showVPNDashboard,
     showVPNDashboardVariant,
@@ -322,7 +322,7 @@ export const getRoutes = ({
                 {
                     text: c('Title').t`Sign-in protection`,
                     id: 'sign-in-protection',
-                    available: flags.showSignInRestrictionToggle && getCanShowSignInRestriction({ user, entitlements }),
+                    available: flags.showSignInRestrictionToggle && getCanShowSignInRestriction({ user, addresses }),
                     variant: SettingsLayoutVariant.Card,
                 },
                 {
