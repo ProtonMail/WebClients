@@ -5,6 +5,7 @@ import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from
 import type { CYCLE } from '@proton/payments/core/constants';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { PlansMap } from '@proton/payments/core/plan/interface';
+import { isSubscriptionSelectionEqual } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -69,7 +70,16 @@ const SubscriptionCycleSelector = ({
 }: Props) => {
     const calculateCheckout = (cycle: CYCLE): PaymentsCheckoutUI => {
         const checkResult =
-            [...additionalCheckResults, checkResultProp].filter(isTruthy).find((it) => it.Cycle === cycle) ??
+            [...additionalCheckResults, checkResultProp]
+                .filter(isTruthy)
+                .find(
+                    (it) =>
+                        it.Currency === currency &&
+                        isSubscriptionSelectionEqual(
+                            { planIDs: it.requestData.Plans, cycle: it.Cycle },
+                            { planIDs, cycle }
+                        )
+                ) ??
             getOptimisticCheckResult({
                 planIDs,
                 plansMap,
