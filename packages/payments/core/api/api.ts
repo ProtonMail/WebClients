@@ -153,6 +153,21 @@ export async function getEntitlementCatalog(api: Api) {
     return api<EntitlementCatalog>(queryEntitlementCatalog());
 }
 
+export interface CouponRedemption {
+    Code: string;
+    Redemptions: number;
+}
+
+export interface CouponRedemptionsResponse {
+    Redemptions: CouponRedemption[];
+}
+
+export const queryCouponRedemptions = (codes: string[]) => ({
+    url: `payments/v5/coupons/redemptions`,
+    method: 'get',
+    params: { Codes: codes.join(',') },
+});
+
 export const getInvoicePDF = (invoiceID: string, version: PaymentsVersion) => ({
     url: `payments/${version}/invoices/${invoiceID}`,
     method: 'get',
