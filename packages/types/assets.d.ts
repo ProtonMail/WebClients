@@ -16,3 +16,9 @@ declare module 'pm-srp';
 declare module 'is-valid-domain';
 // Used to replace Node bundled punycode library which is now deprecated
 declare module 'punycode.js';
+
+// Provided by `SandboxedLibrariesPlugin` (@proton/drive): sandboxed library name -> emitted filename
+declare module 'proton-sandboxed-libraries' {
+    const manifest: Record<string, string>;
+    export default manifest;
+}

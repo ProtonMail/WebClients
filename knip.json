@@ -332,7 +332,12 @@
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/drive": {
-            "entry": ["public/**/index.ts"],
+            "entry": [
+                "public/**/index.ts",
+                "modules/sandbox/createSandboxedLibrary.ts",
+                "modules/sandbox/sandboxed/index.ts",
+                "modules/sandbox/webpack/SandboxedLibrariesPlugin.ts"
+            ],
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/drive-store": {

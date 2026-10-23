@@ -26,6 +26,7 @@
         "./modules/notifications": "./modules/notifications/index.ts",
         "./modules/publicDocsSharing": "./modules/publicDocsSharing/index.ts",
         "./modules/recentlyAccessed": "./modules/recentlyAccessed/index.ts",
+        "./modules/sandbox/webpack/SandboxedLibrariesPlugin": "./modules/sandbox/webpack/SandboxedLibrariesPlugin.ts",
         "./modules/testing": "./modules/testing/index.ts",
         "./modules/thumbnails": "./modules/thumbnails/index.ts",
         "./modules/transferPerformance": "./modules/transferPerformance/index.ts",
@@ -65,6 +66,7 @@
         "@sentry/types": "catalog:",
         "@types/node": "catalog:",
         "@xmldom/xmldom": "^0.9.12",
+        "comlink": "^4.4.2",
         "core-js": "catalog:",
         "exifreader": "^4.46.0",
         "heic-to": "^1.5.2",
@@ -90,10 +92,13 @@
         "@types/react": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
+        "browserslist": "^4.29.3",
+        "esbuild": "^0.28.1",
         "eslint": "catalog:",
         "fake-indexeddb": "catalog:",
         "jest": "catalog:",
         "jest-when": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "webpack": "^5.111.1"
     }
 }
