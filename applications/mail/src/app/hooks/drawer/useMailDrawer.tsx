@@ -3,6 +3,7 @@ import ContactDrawerAppButton from '@proton/components/components/drawer/drawerA
 import ReferralAppButton from '@proton/components/components/drawer/drawerAppButtons/ReferralAppButton';
 import SecurityCenterDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/SecurityCenterDrawerAppButton';
 import VPNDrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/VPNDrawerAppButton';
+import useLumoInMail from '@proton/components/components/drawer/views/lumoAgent/useLumoInMail';
 import useDisplayFeatureTourDrawerButton from '@proton/components/components/featureTour/useDisplayFeatureTourDrawerButton';
 import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
@@ -13,14 +14,17 @@ import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import FeatureTourDrawerButton from '../../components/drawer/FeatureTourDrawerButton';
+import LumoSidebarButton from '../../components/drawer/LumoSidebarButton';
 
 const useMailDrawer = () => {
     const { appInView, showDrawerSidebar } = useDrawer();
     const canShowFeatureTourDrawerButton = useDisplayFeatureTourDrawerButton();
+    const isLumoInMailEnabled = useLumoInMail();
 
     const [allowedProducts, loadingAllowedProducts] = useAllowedProducts();
 
     const drawerSidebarButtons = [
+        isLumoInMailEnabled && <LumoSidebarButton />,
         <ContactDrawerAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.CONTACTS, appInView)} />,
         allowedProducts.has(Product.Calendar) && (
             <CalendarDrawerAppButton

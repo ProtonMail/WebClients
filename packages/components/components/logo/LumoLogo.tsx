@@ -2,15 +2,15 @@ import { useState } from 'react';
 
 import { LUMO_APP_NAME } from '@proton/shared/lib/constants';
 import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
-import generateUID from '@proton/utils/generateUID';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import LogoBase, { type LogoProps } from './LogoBase';
 
 const WORDMARK_WIDTH = 107;
 const WORDMARK_HEIGHT = 26;
 
-const LumoCatMark = () => (
+export const LumoCatMark = () => (
     <>
         <path
             fill="#4129A3"
