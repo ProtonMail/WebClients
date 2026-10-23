@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { getCreditCardTypeByBrand } from '@proton/components/containers/payments/methods/PaymentMethodDetails';
+import { getCreditCardTypeByBrand } from '@proton/payments-ui/payment-methods/card/card';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedCardDetails, SavedMethodType, SavedPaymentMethod } from '@proton/payments/core/interface';
 import { getBankSvg } from '@proton/payments/core/payment-methods/credit-card-icons';
