@@ -94,7 +94,7 @@ const MailB2COnboardingModal = (props: MailOnboardingProps) => {
     const { endReplay } = useWelcomeFlags();
     const dispatch = useMailDispatch();
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
-    const { trackFlowFinished } = useOnboardingTracking();
+    const { trackFlowFinished, trackFlowDismissed } = useOnboardingTracking();
     const [loading, setLoading] = useState(true);
     const [imgsToPreload, setImgsToPreload] = useState<string[]>([]);
     const [steps, setSteps] = useState<Set<StepId>>(new Set());
@@ -151,6 +151,9 @@ const MailB2COnboardingModal = (props: MailOnboardingProps) => {
             <OnboardingModal
                 {...props}
                 onClose={() => {
+                    // `onClose` also runs after `onDone`, the tracking ignores it once the flow is finished
+                    trackFlowDismissed();
+
                     // Call the event manager when closing the modal so that BYOE users get as much imported emails as possible
                     void call();
                     endReplay();
