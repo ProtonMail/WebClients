@@ -13,7 +13,7 @@ const eligible: CheckoutCondensedAddonsParams = {
     variant: variant('condensed'),
     selectedPlanIDs: { [PLANS.BUNDLE]: 1 },
     latestSubscription: FREE_SUBSCRIPTION,
-    user: { isMember: false, canPay: true },
+    user: { canPay: true },
     isLiteApp: false,
 };
 
@@ -78,14 +78,8 @@ describe('getCheckoutCondensedAddons', () => {
             ).toBe('control');
         });
 
-        it('should return control for organization members', () => {
-            expect(getCheckoutCondensedAddons({ ...eligible, user: { isMember: true, canPay: true } })).toBe('control');
-        });
-
-        it('should return control for users who cannot pay', () => {
-            expect(getCheckoutCondensedAddons({ ...eligible, user: { isMember: false, canPay: false } })).toBe(
-                'control'
-            );
+        it('should return control for users who cannot pay (e.g. organization members)', () => {
+            expect(getCheckoutCondensedAddons({ ...eligible, user: { canPay: false } })).toBe('control');
         });
 
         it('should return control in the lite app', () => {
