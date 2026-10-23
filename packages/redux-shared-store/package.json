@@ -31,11 +31,11 @@
         "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@reduxjs/toolkit": "^2.13.0",
+        "@reduxjs/toolkit": "catalog:",
         "date-fns": "^2.30.0",
-        "react": "^18.3.1",
-        "react-redux": "^9.3.0",
-        "redux": "^5.0.1"
+        "react": "catalog:",
+        "react-redux": "catalog:",
+        "redux": "catalog:"
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",
