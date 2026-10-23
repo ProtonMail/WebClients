@@ -539,9 +539,6 @@
       "Get ${ planOrAppName }": [
         "Kunin ang ${ planOrAppName }"
       ],
-      "Get a free ${ BRAND_NAME } address": [
-        "Kumuha ng libreng ${ BRAND_NAME } address"
-      ],
       "Get a new encrypted email address": [
         "Kumuha ng bagong naka-encrypt na email address"
       ],
@@ -1774,6 +1771,106 @@
     "BF2024: Tooltip": {
       "Storage space is shared across all ${ BRAND_NAME } services.": [
         "Ang espasyo ng storage ay naka-share sa lahat ng serbisyo ng ${ BRAND_NAME }."
+      ]
+    },
+    "bfcampaign2026: Action": {
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Get the deal": [
+        "Kunin ang deal"
+      ]
+    },
+    "bfcampaign2026: Info": {
+      "/month": [
+        "/buwan"
+      ],
+      "15 GB storage": [
+        "15 GB storage"
+      ],
+      "2 individual accounts": [
+        "2 indibidwal na account"
+      ],
+      "2 TB of secure storage": [
+        "2 TB na secure na storage"
+      ],
+      "200 GB storage: 40x your current plan": [
+        "200 GB storage: 40x ng kasalukuyang plano"
+      ],
+      "3 TB of secure storage": [
+        "3 TB na secure na storage"
+      ],
+      "500 GB of secure storage": [
+        "500 GB na secure na storage"
+      ],
+      "6 individual accounts": [
+        "6 na indibidwal na account"
+      ],
+      "Built-in 2FA authenticator": [
+        "Built-in na 2FA authenticator"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Ang mga diskwento ay nakabatay sa standard na buwanang pagpepresyo. Magre-renew ang iyong subscription sa standard na taunang rate kapag natapos ang siklo ng pagsingil."
+      ],
+      "Online document editor": [
+        "Online na editor ng dokumento"
+      ],
+      "Recover previous file versions": [
+        "I-recover ang mga nakaraang bersyon ng file"
+      ],
+      "Stronger protection against cyber threats": [
+        "Mas malakas na proteksyon laban sa mga cyber threat"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Walang limitasyong mga folder, label, at filter"
+      ],
+      "Use your own email domain": [
+        "Gamitin ang sariling domain ng email"
+      ]
+    },
+    "bfcampaign2026: Info, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, at ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Drive first": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Family, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Mail first": {
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, at ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Info, Pass first": {
+      "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, at ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bfcampaign2026: Title": {
+      "Biggest sale of the year": [
+        "Pinakamalaking sale ng taon"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "for 12 months": [
+        "para sa 12 buwan"
+      ],
+      "Last chance to save big": [
+        "Huling pagkakataon para makatipid nang malaki"
+      ],
+      "Protect your entire tribe": [
+        "Protektahan ang buong pamilya mo"
+      ],
+      "Protection for two in a single plan": [
+        "Proteksyon para sa dalawa sa isang plano"
       ]
     },
     "Billing cycle": {
@@ -4327,10 +4424,6 @@
       "They may ask to access your account in case of an emergency.": [
         "Maaari silang humiling na i-access ang account sakaling may emergency."
       ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Awtomatiko silang makakatanggap ng access sa loob ng **${ days } na araw**, sa **${ formattedAccessibleAt }**, maaari mong tanggihan ang kanilang request o bigyan sila ng access agad anumang oras.",
-        "Awtomatiko silang makakatanggap ng access sa loob ng **${ days } na mga araw**, sa **${ formattedAccessibleAt }**, maaari mong tanggihan ang kanilang request o bigyan sila ng access agad anumang oras."
-      ],
       "This will take effect immediately.": [
         "Magkakabisa ito kaagad."
       ],
@@ -4615,9 +4708,6 @@
       "Invalid private key file": [
         "Hindi valid na pribadong key file"
       ],
-      "Invalid URL": [
-        "Hindi valid na URL"
-      ],
       "Invalid VAT number": [
         "Hindi valid na VAT number"
       ],
@@ -4636,9 +4726,6 @@
       ],
       "Missing key packet": [
         "Nawawala ang key packet"
-      ],
-      "Missing signature": [
-        "Nawawala ang signature"
       ],
       "Name already exists": [
         "Umiiral na ang pangalan"
@@ -4824,9 +4911,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Lumampas ang ilan sa mga pangalan ng iyong label sa limitasyon ng character ng ${ MAIL_APP_NAME }. I-customize ang import para i-edit ang mga pangalang ito."
-      ],
-      "Something went wrong": [
-        "Nagkaproblema"
       ],
       "Something went wrong while converting the address": [
         "Nagkaroon ng mali habang kino-convert ang address"
@@ -6363,14 +6447,6 @@
         "Higit pang opsyon sa pag-import"
       ]
     },
-    "Import status": {
-      "In progress": [
-        "Kasalukuyang isinasagawa"
-      ],
-      "Migrated": [
-        "Na-migrate na"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } sa ${ totalContacts } na contact ang hindi mai-import. I-click para sa mga detalye"
@@ -6417,9 +6493,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Ang teknolohiya ng encryption ng ${ BRAND_NAME } ay nangangahulugang walang makaka-access sa password mo - kahit na kami."
-      ],
-      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
-        "Kailangan ng ${ CALENDAR_APP_NAME } ang ${ BRAND_NAME } address para sa secure na pag-sync ng kaganapan at encryption. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } bagong kalendaryo",
@@ -8206,9 +8279,6 @@
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Pansamantalang hindi magagamit dahil sa mataas na demand. Pakisubukan muli mamaya."
       ],
-      "Temporarily unavailable. Please check back later.": [
-        "Pansamantalang hindi available. Pakibalikan mamaya."
-      ],
       "Thank you": [
         "Salamat"
       ],
@@ -8436,9 +8506,6 @@
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Para matandaan ang password, hihilingin ang pag-ilagay nito nang pana-panahon. Bawas ang dalas ng pagtatanong habang tumatagal."
-      ],
-      "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
-        "Upang mag-import ng mga kaganapan, gumawa muna ng kalendaryo sa ${ CALENDAR_APP_NAME }. Dito lalabas ang mga kaganapan pagkatapos ng pag-import."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Upang makasabay sa pinakabagong development sa mga produkto ng ${ BRAND_NAME }, maaari kang mag-subscribe sa aming iba't ibang email at ${ blogLink } paminsan-minsan."
@@ -9401,9 +9468,6 @@
       "Calendar": [
         "Kalendaryo"
       ],
-      "Calendars": [
-        "Mga kalendaryo"
-      ],
       "Card details": [
         "Mga detalye ng card"
       ],
@@ -9581,9 +9645,6 @@
       ],
       "Email with @yourcompany.com domain": [
         "Email na may @yourcompany.com domain"
-      ],
-      "Emails": [
-        "Mga email"
       ],
       "Emails (all messages)": [
         "Mga email (lahat ng mensahe)"
@@ -13190,9 +13251,6 @@
       "Search for an email or IP address": [
         "Maghanap ng email o IP address"
       ],
-      "Search for users or addresses": [
-        "Maghanap ng mga user o address"
-      ],
       "Search parent folder": [
         "Maghanap sa parent folder"
       ],
@@ -16304,14 +16362,6 @@
         "Para sa mga indibidwal"
       ]
     },
-    "Table header": {
-      "Size": [
-        "Laki"
-      ],
-      "Status": [
-        "Status"
-      ]
-    },
     "TableHeader": {
       "Action": [
         "Aksyon"
@@ -16698,9 +16748,6 @@
       ],
       "Change second password": [
         "Palitan ang pangalawang password"
-      ],
-      "Choose a provider": [
-        "Pumili ng provider"
       ],
       "Choose user affiliations": [
         "Pumili ng mga affiliation ng user"
@@ -17150,9 +17197,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Mag-import gamit ang ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Import your data to ${ BRAND_NAME }": [
-        "I-import ang data sa ${ BRAND_NAME }"
-      ],
       "Imports": [
         "Mga i-import"
       ],
@@ -17437,9 +17481,6 @@
       ],
       "Select contact group": [
         "Piliin ang grupo ng contact"
-      ],
-      "Select data to import": [
-        "Piliin ang data na i-import"
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Magpadala at tumanggap ng Gmail gamit ang ${ MAIL_APP_NAME }"
