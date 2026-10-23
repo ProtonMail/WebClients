@@ -1,6 +1,5 @@
 import type { ComponentType, ReactNode } from 'react';
 
-import Icons from '@proton/icons/Icons';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
@@ -27,7 +26,6 @@ const ProtonApp = ({ config, children, ThemeProvider = DefaultThemeProvider }: P
     return (
         <ConfigProvider config={config}>
             <CompatibilityCheck>
-                <Icons />
                 <RightToLeftProvider>
                     <ThemeProvider appName={config.APP_NAME}>
                         <PreventLeaveProvider>

@@ -137,7 +137,6 @@ export const getWebpackOptions = (envArguments: WebpackEnvArguments, extra: Extr
         errorLogs: protonPackOptions.errorLogs ?? false,
         featureFlags: protonPackOptions.featureFlags ?? '',
         handleSupportAndErrors: protonPackOptions.handleSupportAndErrors ?? false,
-        inlineIcons: protonPackOptions.inlineIcons === true,
         isProduction,
         isRelease,
         noLogicalScss: !logicalScss,

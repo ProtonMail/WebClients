@@ -21,7 +21,6 @@ const options: Partial<ProtonPackOptions> = {
     appMode: 'standalone',
     featureFlags: '',
     sri: true,
-    inlineIcons: false,
     warningLogs: false,
     errorLogs: false,
     overlayWarnings: false,

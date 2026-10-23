@@ -1,5 +1,5 @@
 import path from 'path';
-import webpack from 'webpack';
+import { type Configuration, DefinePlugin } from 'webpack';
 
 import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
 import { getConfig } from '@proton/pack/webpack.config';
@@ -22,10 +22,6 @@ const CRITICAL_OFFLINE_ASSETS = [
     /* crypto */
     'crypto-worker.js',
 
-    /* icons */
-    'sprite-icons.svg',
-    'file-icons.svg',
-
     /* rust modules */
     'pass-core.worker.js',
     'pass-ui.js',
@@ -35,7 +31,7 @@ const CRITICAL_OFFLINE_ASSETS = [
     'node_modules_openpgp_dist_lightweight_argon2id_min_mjs',
 ];
 
-const result = async (opts: WebpackEnvArguments): Promise<webpack.Configuration> => {
+const result = async (opts: WebpackEnvArguments): Promise<Configuration> => {
     /* webpack-manifest-plugin is ESM-only. webpack-cli v7 tries ESM first then falls back
      * to CJS (https://github.com/webpack/webpack-cli/blob/main/packages/webpack-cli/src/webpack-cli.ts#L1681-L1691),
      * but the failed ESM attempt leaves the module partially registered, causing the CJS
@@ -46,7 +42,7 @@ const result = async (opts: WebpackEnvArguments): Promise<webpack.Configuration>
     const version = webpackOptions.buildData.version;
 
     config.plugins?.push(
-        new webpack.DefinePlugin({
+        new DefinePlugin({
             BUILD_TARGET: JSON.stringify('web'),
             DESKTOP_BUILD: false,
             ENV: JSON.stringify(process.env.NODE_ENV ?? 'development'),

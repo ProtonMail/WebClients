@@ -9,7 +9,6 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
-import InlineIcons from '@proton/icons/InlineIcons';
 import { ContextMenuProvider } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
@@ -149,7 +148,6 @@ export const App = () => {
 
     return (
         <PassCoreProvider {...getPassCoreProps()} wasm bridge={window.ctxBridge}>
-            <InlineIcons /> {/* Remove when enabling SRI in desktop */}
             <ErrorBoundary component={<StandardErrorPage big />}>
                 <NotificationsProvider>
                     <ModalsProvider>

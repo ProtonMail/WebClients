@@ -70,13 +70,7 @@ export default defineConfig([
         {
           patterns: [
             {
-              group: [
-                '@proton/icons',
-                '@proton/icons/**',
-                '@proton/components/components/icon/Icon',
-                '@rowsncolumns/icons',
-                '@rowsncolumns/icons/**',
-              ],
+              group: ['@proton/icons', '@proton/icons/**', '@rowsncolumns/icons', '@rowsncolumns/icons/**'],
               message:
                 'Use icons from Spreadsheet/components/icons so standalone Sheets does not depend on an external icon registry or package.',
             },
@@ -93,7 +87,7 @@ export default defineConfig([
         {
           patterns: [
             {
-              group: ['@proton/icons', '@proton/icons/**', '@proton/components/components/icon/Icon'],
+              group: ['@proton/icons', '@proton/icons/**'],
               message:
                 'Use Docs/Components/Icon with data from Docs/Components/icons so the Docs editor does not depend on the Proton icon registry.',
             },

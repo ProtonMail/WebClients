@@ -52,9 +52,6 @@ interface BaseRestriction extends Restrictions {
     appliesTo?: (filename: string) => boolean;
 }
 
-export const iconRestrictedMessage =
-    "Do not use the `Icon` component. Import the icon directly from `@proton/icons` instead, e.g. `import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal'`.";
-
 /**
  * Bans importing a package through its barrel (`index.ts`), which loads the whole package for one symbol and is the
  * main cause of slow tests.
@@ -145,13 +142,6 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
             '@proton/vpn',
             '@proton/wallet',
         ].flatMap((packageName) => createBarrelRestrictions(packageName).paths),
-    },
-    {
-        // The generic `<Icon name="..." />` component, replaced by direct imports from @proton/icons.
-        //   bad:  import Icon from '@proton/components/components/icon/Icon';
-        //   good: import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
-        name: 'the generic Icon component',
-        paths: [{ name: '@proton/components/components/icon/Icon', message: iconRestrictedMessage }],
     },
     {
         name: 'reselect',
