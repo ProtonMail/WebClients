@@ -41,13 +41,13 @@
         "browserslist": "^4.29.3",
         "electron-log": "^5.4.4",
         "electron-store": "^8.2.0",
-        "history": "^4.10.1",
-        "lodash": "^4.18.1",
+        "history": "catalog:",
+        "lodash": "catalog:",
         "proton-pass-web": "workspace:proton-pass@^",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-router-dom": "^5.3.4",
-        "ttag": "^1.8.12"
+        "react": "catalog:",
+        "react-dom": "catalog:",
+        "react-router-dom": "catalog:",
+        "ttag": "catalog:"
     },
     "devDependencies": {
         "@electron-forge/cli": "^7.11.2",
