@@ -125,6 +125,40 @@ exports[`event payloads sent to Proton Analytics estimation_change 1`] = `
 }
 `;
 
+exports[`event payloads sent to Proton Analytics guard_shown 1`] = `
+{
+  "event": "subscription_guard_triggered",
+  "payload": {
+    "currentSubscriptions": [
+      {
+        "currency": "EUR",
+        "cycle": 12,
+        "planIDs": {
+          "mail2022": 1,
+        },
+        "planName": "mail2022",
+      },
+      {
+        "currency": "EUR",
+        "cycle": 1,
+        "planIDs": {
+          "vpn2024": 1,
+        },
+        "planName": "vpn2024",
+      },
+    ],
+    "guardCodes": [
+      801001000,
+      801002000,
+    ],
+    "selectedCycle": 12,
+    "selectedPlanIDs": {
+      "mail2022": 1,
+    },
+  },
+}
+`;
+
 exports[`event payloads sent to Proton Analytics init 1`] = `
 {
   "event": "subscription_modification_init",

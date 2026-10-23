@@ -20,6 +20,8 @@ import type {
     PlainPaymentMethodType,
     PlanIDs,
 } from '../core/interface';
+import { getPlanNameFromIDs } from '../core/plan/helpers';
+import { getPlanIDs } from '../core/subscription/helpers/plan-ids';
 import type { Subscription } from '../core/subscription/interface';
 import {
     type PaymentTelemetryContext,
@@ -547,6 +549,57 @@ export function reportUpsellModalOpen({
     telemetry.sendCustomEvent(eventName, {
         ...formatPaymentTelemetryPayload(userCurrency, subscription, selectedPlanIDs),
         ...rest,
+    });
+}
+// #endregion
+
+// ============================================================================
+// #region reportGuardShown
+// ============================================================================
+
+/** Payload of the guard-shown event. */
+export type GuardShownTelemetryPayload = {
+    /** Codes of every guard error shown. Backend messages are never reported. */
+    guardCodes: number[];
+    /** All of the user's current subscriptions: the primary one and its secondary ones. Empty for free users. */
+    subscriptions: Subscription[];
+    /** Plans the user tried to select */
+    selectedPlanIDs: PlanIDs;
+    /** Billing cycle the user tried to select */
+    selectedCycle: Cycle;
+};
+
+/**
+ * Reports that the guard banner was shown to the user.
+ *
+ * **When to call:** Each time the banner appears for a new set of guard errors.
+ * **Purpose:** Spot which guards users hit, and for which selection, to prevent anti-patterns.
+ * The flow is not part of the payload: telemetry already records the page the event came from.
+ *
+ * @param payload - Guard codes, current subscriptions and the selection the user tried to make
+ * @returns Nothing. Sends the `subscription_guard_triggered` event.
+ */
+export function reportGuardShown({
+    guardCodes,
+    subscriptions,
+    selectedPlanIDs,
+    selectedCycle,
+}: GuardShownTelemetryPayload) {
+    const currentSubscriptions = subscriptions.map((subscription) => {
+        const planIDs = getPlanIDs(subscription);
+        return {
+            planIDs,
+            planName: getPlanNameFromIDs(planIDs) ?? null,
+            cycle: subscription.Cycle,
+            currency: subscription.Currency,
+        };
+    });
+
+    telemetry.sendCustomEvent('subscription_guard_triggered', {
+        guardCodes,
+        currentSubscriptions,
+        selectedPlanIDs,
+        selectedCycle,
     });
 }
 // #endregion
