@@ -3,7 +3,6 @@ import { Suspense, forwardRef, lazy, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import DrawerApp from '@proton/components/components/drawer/DrawerApp';
-import useLumoInMail from '@proton/components/components/drawer/views/lumoAgent/useLumoInMail';
 import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
 import SmartBanner from '@proton/components/components/smartBanner/SmartBanner';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
@@ -40,7 +39,6 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
     const onMailTo = useOnMailTo();
     const isSidebarExpanded = useMailSelector(selectLayoutIsExpanded);
     const hasComposerInFocus = useMailSelector(selectHasFocusedComposer);
-    const isLumoInMailEnabled = useLumoInMail();
 
     const handleContactsCompose = async (emails: Recipient[], attachments: File[]) => {
         await onCompose({
@@ -95,12 +93,11 @@ const PrivateLayout = ({ children }: Props, ref: Ref<HTMLDivElement>) => {
     );
 
     // Mounted above the drawer so the Lumo conversation survives drawer tab switches, open/close and detach.
-    return isLumoInMailEnabled ? (
+    // Always rendered, so the off-switch never remounts the layout; each provider gates its own Lumo setup.
+    return (
         <LumoFloatingPanelProvider>
             <LumoMailProvider>{content}</LumoMailProvider>
         </LumoFloatingPanelProvider>
-    ) : (
-        content
     );
 };
 

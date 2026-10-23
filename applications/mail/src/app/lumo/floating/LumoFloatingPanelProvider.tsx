@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, memo, useContext, useEffect, useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
+import useLumoInMail from '@proton/components/components/drawer/views/lumoAgent/useLumoInMail';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import useLocalState from '@proton/components/hooks/useLocalState';
@@ -11,6 +12,9 @@ import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
 import { selectComposersCount } from '../../store/composers/composerSelectors';
 import { useMailSelector } from '../../store/hooks';
+import type { PublisherProps } from '../provider/PublishedProvider';
+import { PublishedProvider } from '../provider/PublishedProvider';
+import { usePublishToProvider } from '../provider/usePublishToProvider';
 import { useLumoMailTelemetry } from '../telemetry/useLumoMailTelemetry';
 import { CARD_MIN_WIDTH } from './cardResize';
 import type { PanelSide } from './panelSide';
@@ -53,16 +57,16 @@ export const useLumoFloatingPanel = (): LumoFloatingPanelValue => {
     return value;
 };
 
-interface Props {
-    children: ReactNode;
-}
+/** False while Lumo is off, and for the one render after it turns on, before the panel state is published. */
+export const useHasLumoFloatingPanel = (): boolean => {
+    return useContext(LumoFloatingPanelContext) !== null;
+};
 
 const getSurfaceModeKey = (userID: string) => {
     return `lumo-mail-surface-mode-${userID}`;
 };
 
-/** Held above the routes and the drawer, so the floating state survives a mailbox remount and a dock. */
-export const LumoFloatingPanelProvider = ({ children }: Props) => {
+const LumoFloatingPanelBody = memo(function LumoFloatingPanelBody({ onValue }: PublisherProps<LumoFloatingPanelValue>) {
     const [user] = useUser();
     const [isDetached, setIsDetached] = useLocalState(false, getSurfaceModeKey(user.ID));
     const [isPanelOpen, setIsPanelOpen] = useState(false);
@@ -152,28 +156,45 @@ export const LumoFloatingPanelProvider = ({ children }: Props) => {
 
     useLumoHotkey({ isCurrentSurfaceOpen, openLumo });
 
+    const value: LumoFloatingPanelValue = {
+        isDetached,
+        isPanelOpen,
+        isCurrentSurfaceOpen,
+        shownSide: getShownSide(sideState),
+        cardWidth,
+        setCardWidth,
+        detach,
+        dock,
+        toggleLumo: isCurrentSurfaceOpen ? closeLumo : openLumo,
+        closePanel,
+        switchSides,
+        isCatHidden,
+        hideCat,
+        revealCat,
+        isCatDismissed,
+        dismissCat,
+    };
+
+    usePublishToProvider(value, onValue);
+
+    return null;
+});
+
+interface Props {
+    children: ReactNode;
+}
+
+/** Held above the routes and the drawer, so the floating state survives a mailbox remount and a dock. */
+export const LumoFloatingPanelProvider = ({ children }: Props) => {
+    const isLumoInMailEnabled = useLumoInMail();
+
     return (
-        <LumoFloatingPanelContext.Provider
-            value={{
-                isDetached,
-                isPanelOpen,
-                isCurrentSurfaceOpen,
-                shownSide: getShownSide(sideState),
-                cardWidth,
-                setCardWidth,
-                detach,
-                dock,
-                toggleLumo: isCurrentSurfaceOpen ? closeLumo : openLumo,
-                closePanel,
-                switchSides,
-                isCatHidden,
-                hideCat,
-                revealCat,
-                isCatDismissed,
-                dismissCat,
-            }}
+        <PublishedProvider
+            context={LumoFloatingPanelContext}
+            isEnabled={isLumoInMailEnabled}
+            Publisher={LumoFloatingPanelBody}
         >
             {children}
-        </LumoFloatingPanelContext.Provider>
+        </PublishedProvider>
     );
 };
