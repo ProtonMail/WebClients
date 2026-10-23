@@ -60,9 +60,9 @@
         "@proton/telemetry-tracker": "workspace:^",
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "catalog:",
-        "@reduxjs/toolkit": "^2.13.0",
-        "lodash": "^4.18.1",
-        "react": "^18.3.1"
+        "@reduxjs/toolkit": "catalog:",
+        "lodash": "catalog:",
+        "react": "catalog:"
     },
     "devDependencies": {
         "@jackfranklin/test-data-bot": "^2.1.0",

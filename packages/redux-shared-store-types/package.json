@@ -10,10 +10,10 @@
     "dependencies": {
         "@proton/shared": "workspace:^",
         "@proton/unleash": "workspace:^",
-        "@reduxjs/toolkit": "^2.13.0",
-        "history": "^4.10.1",
-        "react": "^18.3.1",
-        "react-redux": "^9.3.0"
+        "@reduxjs/toolkit": "catalog:",
+        "history": "catalog:",
+        "react": "catalog:",
+        "react-redux": "catalog:"
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",

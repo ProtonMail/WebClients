@@ -67,14 +67,14 @@
     "@protontech/crypto": "catalog:",
     "@rowsncolumns/spreadsheet-state": "workspace:^",
     "fflate": "^0.8.3",
-    "jszip": "^3.10.2",
+    "jszip": "catalog:",
     "jwt-decode": "^4.0.0",
     "lexical": "0.31.2",
-    "react": "^18.3.1",
-    "ttag": "^1.8.12",
-    "uuid": "^14.0.2",
+    "react": "catalog:",
+    "ttag": "catalog:",
+    "uuid": "catalog:",
     "yjs": "^13.6.15",
-    "zod": "^3.25.76"
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@babel/plugin-transform-class-properties": "^7.29.7",
@@ -98,7 +98,7 @@
     "jest": "catalog:",
     "jest-junit": "catalog:",
     "prettier": "catalog:",
-    "react-dom": "^18.3.1",
+    "react-dom": "catalog:",
     "typescript": "catalog:"
   }
 }

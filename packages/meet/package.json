@@ -95,15 +95,15 @@
         "@proton/utils": "workspace:^",
         "@protontech/crypto": "catalog:",
         "@protontech/logger": "catalog:",
-        "@reduxjs/toolkit": "^2.13.0",
-        "@sentry/browser": "^7.120.4",
-        "@sentry/types": "^7.120.4",
+        "@reduxjs/toolkit": "catalog:",
+        "@sentry/browser": "catalog:",
+        "@sentry/types": "catalog:",
         "@types/react": "catalog:",
         "cross-env": "catalog:",
         "livekit-client": "2.22.3",
-        "react": "^18.3.1",
-        "react-redux": "^9.3.0",
-        "ttag": "^1.8.12"
+        "react": "catalog:",
+        "react-redux": "catalog:",
+        "ttag": "catalog:"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",

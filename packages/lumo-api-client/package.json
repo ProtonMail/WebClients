@@ -53,7 +53,7 @@
     "dependencies": {
         "@proton/shared": "workspace:^",
         "@protontech/crypto": "catalog:",
-        "uuid": "^14.0.2"
+        "uuid": "catalog:"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
@@ -65,7 +65,7 @@
         "@typescript/native": "catalog:",
         "eslint": "catalog:",
         "jest": "catalog:",
-        "react": "^18.3.1",
+        "react": "catalog:",
         "typescript": "catalog:"
     },
     "peerDependencies": {
