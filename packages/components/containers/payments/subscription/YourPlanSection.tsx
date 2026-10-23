@@ -29,7 +29,7 @@ import useLoad from '../../../hooks/useLoad';
 import { useTrialOnlyPaymentMethods } from '../../../hooks/useTrialOnlyPaymentMethods';
 import SettingsSectionExtraWide from '../../account/SettingsSectionExtraWide';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
-import TrialInfo from '../../referral/components/TrialInfo/TrialInfo';
+import ReferralTrialInfo from '../../referral/components/ReferralTrialInfo/ReferralTrialInfo';
 import { useSubscriptionModalRaw } from './SubscriptionModalProvider';
 import { useUpsellsToDisplay } from './helpers/dashboard-upsells';
 import PendingInvitationsPanel from './panels/PendingInvitationsPanel';
@@ -139,7 +139,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
                     <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />
                 )}
                 {shouldRenderUpsells && <UpsellPanels upsells={upsells} subscription={subscription} />}
-                {shouldRenderTrialInfo && <TrialInfo />}
+                {shouldRenderTrialInfo && <ReferralTrialInfo />}
                 {shouldRenderPendingInvitation && <PendingInvitationsPanel invites={invites} />}
             </div>
         </SettingsSection>
