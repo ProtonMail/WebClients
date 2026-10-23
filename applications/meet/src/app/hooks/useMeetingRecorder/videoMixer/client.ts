@@ -66,17 +66,18 @@ export class VideoMixerClient {
         };
 
         this.worker.onerror = (event) => {
+            if (!(event instanceof ErrorEvent)) {
+                this.workerFailedToLoad = true;
+            }
+
             this.reportMeetError('MeetingRecording Error: renderWorker uncaught error', {
                 context: {
                     message: event.message,
                     filename: event.filename,
                     lineno: event.lineno,
+                    workerFailedToLoad: this.workerFailedToLoad,
                 },
             });
-
-            if (!(event instanceof ErrorEvent)) {
-                this.workerFailedToLoad = true;
-            }
 
             // Unblock a pending stopEncoder so stop() doesn't hang on a dead worker.
             this.encoderDoneResolve?.();

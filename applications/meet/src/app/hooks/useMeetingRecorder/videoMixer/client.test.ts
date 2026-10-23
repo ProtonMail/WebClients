@@ -40,8 +40,9 @@ const samplesAt = (frame: number): AudioTapSamples => ({
 });
 
 const createClient = () => {
-    const client = new VideoMixerClient({ initialScene: emptyScene, reportMeetError: vi.fn() });
-    return { client, worker: FakeWorker.instances[FakeWorker.instances.length - 1] };
+    const reportMeetError = vi.fn();
+    const client = new VideoMixerClient({ initialScene: emptyScene, reportMeetError });
+    return { client, reportMeetError, worker: FakeWorker.instances[FakeWorker.instances.length - 1] };
 };
 
 const postedAudioFrames = (worker: FakeWorker) =>
@@ -67,6 +68,28 @@ describe('VideoMixerClient.provideAudioSamples', () => {
         client.provideAudioSamples(samplesAt(2048));
 
         expect(postedAudioFrames(worker)).toEqual([2048]);
+    });
+});
+
+describe('VideoMixerClient render worker error report', () => {
+    it('flags a worker that failed to load', () => {
+        const { reportMeetError, worker } = createClient();
+
+        worker.onerror?.(new Event('error'));
+
+        expect(reportMeetError).toHaveBeenCalledWith('MeetingRecording Error: renderWorker uncaught error', {
+            context: { message: undefined, filename: undefined, lineno: undefined, workerFailedToLoad: true },
+        });
+    });
+
+    it('does not flag an uncaught error in a running worker', () => {
+        const { reportMeetError, worker } = createClient();
+
+        worker.onerror?.(new ErrorEvent('error', { message: 'render failed', filename: 'worker.ts', lineno: 12 }));
+
+        expect(reportMeetError).toHaveBeenCalledWith('MeetingRecording Error: renderWorker uncaught error', {
+            context: { message: 'render failed', filename: 'worker.ts', lineno: 12, workerFailedToLoad: false },
+        });
     });
 });
 
