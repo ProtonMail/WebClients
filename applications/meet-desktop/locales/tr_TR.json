@@ -101,6 +101,17 @@
         "Hizmetler"
       ]
     },
+    "Clear application data prompt": {
+      "Cancel": [
+        "İptal"
+      ],
+      "Clear application data": [
+        "Uygulama verilerini temizle"
+      ],
+      "This removes all data associated with this app. The app will close and you will need to sign in again to use the app.": [
+        "Bu, bu uygulama ile ilişkili tüm verileri kaldırır. Uygulama kapanır ve kullanmak için yeniden oturum açmanız gerekir."
+      ]
+    },
     "Download warning": {
       "A recording is still being saved": [
         "Kaydın indirilmesi sürüyor"
@@ -156,6 +167,67 @@
         "Pencere"
       ]
     },
+    "Screen share permission": {
+      "Allow screen recording": [
+        "Ekran kaydı alınabilsin"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Open System Settings": [
+        "Sistem ayarlarını aç"
+      ],
+      "To share your screen, allow Proton Meet in System Settings > Privacy & Security > Screen & System Audio Recording.": [
+        "Ekranınızı paylaşmak için Proton Meet uygulamasına Sistem ayarları > Gizlilik ve güvenlik > Ekran ve sistem ses kaydı bölümünden izin verin."
+      ]
+    },
+    "Screen share picker": {
+      "Built-in": [
+        "İç"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Display ${ screenNumber }": [
+        "${ screenNumber }. ekranı görüntüle"
+      ],
+      "Entire screen": [
+        "Tüm ekran"
+      ],
+      "External": [
+        "Dış"
+      ],
+      "Hide advanced options": [
+        "Gelişmiş seçenekleri gizle"
+      ],
+      "Just one app": [
+        "Yalnızca bir uygulama"
+      ],
+      "No windows available to share": [
+        "Paylaşılabilecek bir pencere yok"
+      ],
+      "Share": [
+        "Paylaş"
+      ],
+      "Share system audio": [
+        "Sistem sesini paylaş"
+      ],
+      "Share your screen": [
+        "Ekranınızı paylaşın"
+      ],
+      "Show advanced options": [
+        "Gelişmiş seçenekleri görüntüle"
+      ],
+      "Viewers only see this app, even if you switch windows.": [
+        "İzleyiciler, pencereleri değiştirseniz bile yalnızca bu uygulamayı görür."
+      ],
+      "Viewers see your entire screen, including apps and notifications.": [
+        "İzleyiciler, uygulamalar ve bildirimler ile tüm ekranınızı görür."
+      ]
+    },
     "Unload warning": {
       "Changes you made may not be saved.": [
         "Yaptığınız değişiklikler kaydedilmeyebilir."
@@ -168,6 +240,20 @@
       ],
       "Stay": [
         "Kal"
+      ]
+    },
+    "Update prompt": {
+      "${ MEET_APP_NAME } update": [
+        "${ MEET_APP_NAME } uygulamasını güncelle"
+      ],
+      "A new version of ${ MEET_APP_NAME } has been downloaded. Restart the application to apply the updates.": [
+        "Yeni bir ${ MEET_APP_NAME } sürümü indirildi. Güncellemek için uygulamayı yeniden başlatın."
+      ],
+      "Later": [
+        "Daha sonra"
+      ],
+      "Restart": [
+        "Yeniden başlat"
       ]
     }
   }
