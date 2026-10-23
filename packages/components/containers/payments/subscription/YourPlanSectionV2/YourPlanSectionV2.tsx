@@ -13,7 +13,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import Loader from '../../../../components/loader/Loader';
 import useLoad from '../../../../hooks/useLoad';
-import TrialInfoDashboardV2 from '../../../referral/components/TrialInfo/TrialInfoDashboardV2';
+import ReferralTrialInfoDashboardV2 from '../../../referral/components/ReferralTrialInfo/ReferralTrialInfoDashboardV2';
 import SubscriptionEndsBannerV2 from '../../../topBanners/SubscriptionEndsBannerV2';
 import { CurrentPlanInfoSection } from './CurrentPlanInfoSection';
 
@@ -56,7 +56,7 @@ const YourPlanSectionV2 = ({ app, editBillingCycle = false, cta }: YourPlanSecti
                         />
                     </DashboardCardContent>
                 </DashboardCard>
-                <TrialInfoDashboardV2 />
+                <ReferralTrialInfoDashboardV2 />
             </DashboardGrid>
         </>
     );

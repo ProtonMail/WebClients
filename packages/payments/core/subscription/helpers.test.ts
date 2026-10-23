@@ -9,6 +9,7 @@ import {
     canModify,
     getAutoCoupon,
     getAvailableSubscriptionActions,
+    getSoonestEndingSubscription,
     getSubscriptionPlanTitle,
     hasBlackFriday2026Coupon,
     isAddonDowngrade,
@@ -1352,5 +1353,39 @@ describe('hasBlackFriday2026Coupon', () => {
 
     it('is false for a free subscription', () => {
         expect(hasBlackFriday2026Coupon(FREE_SUBSCRIPTION)).toBe(false);
+    });
+});
+
+describe('getSoonestEndingSubscription', () => {
+    const mailEndingLater = buildSubscription(PLANS.MAIL, { ID: 'mail-later', PeriodEnd: 1800000000 });
+    const driveEndingSooner = buildSubscription(PLANS.DRIVE, { ID: 'drive-sooner', PeriodEnd: 1700000000 });
+    const passEndingSoonest = buildSubscription(PLANS.PASS, { ID: 'pass-soonest', PeriodEnd: 1600000000 });
+    const isNotPass = (subscription: Subscription) => subscription.ID !== 'pass-soonest';
+
+    it.each([
+        { name: 'no subscriptions', subscriptions: [], expectedID: undefined },
+        { name: 'no candidate', subscriptions: [passEndingSoonest], expectedID: undefined },
+        { name: 'one candidate', subscriptions: [mailEndingLater], expectedID: 'mail-later' },
+        {
+            name: 'two candidates, soonest last',
+            subscriptions: [mailEndingLater, driveEndingSooner],
+            expectedID: 'drive-sooner',
+        },
+        {
+            name: 'two candidates, soonest first',
+            subscriptions: [driveEndingSooner, mailEndingLater],
+            expectedID: 'drive-sooner',
+        },
+        {
+            name: 'a non-candidate that ends sooner',
+            subscriptions: [passEndingSoonest, mailEndingLater],
+            expectedID: 'mail-later',
+        },
+    ] as const)('returns $expectedID for $name', ({ subscriptions, expectedID }) => {
+        expect(getSoonestEndingSubscription([...subscriptions], isNotPass)?.ID).toBe(expectedID);
+    });
+
+    it('returns the subscription object itself', () => {
+        expect(getSoonestEndingSubscription([mailEndingLater, driveEndingSooner], isNotPass)).toBe(driveEndingSooner);
     });
 });
