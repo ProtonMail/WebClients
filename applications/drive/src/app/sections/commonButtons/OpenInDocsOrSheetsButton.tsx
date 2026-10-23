@@ -4,6 +4,7 @@ import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import type { MimeIconComponent } from '@proton/file-icons/component';
 import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc';
 import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { DOCS_APP_NAME, SHEETS_APP_NAME } from '@proton/shared/lib/constants';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
@@ -45,7 +46,7 @@ export const OpenInDocsOrSheetsButton = ({ buttonType, onClick, close, type, isN
         return (
             <ToolbarButton
                 title={title}
-                icon={<Icon alt={title} />}
+                icon={isNative ? <IcArrowOutSquare alt={title} /> : <Icon alt={title} />}
                 onClick={onClick}
                 data-testid={`toolbar-open-${type}`}
             />

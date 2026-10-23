@@ -1,6 +1,7 @@
 import ToolbarButton from '@proton/components/components/toolbar/ToolbarButton';
 import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc';
 import { MimeProtonSheet } from '@proton/file-icons/icons/MimeProtonSheet';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 
 import { hasFoldersSelected, isMultiSelect } from '../../../legacy/components/sections/ToolbarButtons/utils';
@@ -51,7 +52,7 @@ export const OpenInDocsButton = ({ selectedItems, type, close }: Props) => {
         return (
             <ToolbarButton
                 title={title}
-                icon={<DocumentTypeIcon alt={title} />}
+                icon={documentInfo.isNative ? <IcArrowOutSquare alt={title} /> : <DocumentTypeIcon alt={title} />}
                 onClick={onClick}
                 data-testid="toolbar-open-document"
             />
