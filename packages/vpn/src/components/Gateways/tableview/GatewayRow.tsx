@@ -7,8 +7,9 @@ import { CountryFlagAndName } from '@proton/components/containers/vpn/gateways/C
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import clsx from '@proton/utils/clsx';
 
-import { getFormattedLoad, getMembers } from '../../functions/gatewayHelpers';
-import type { Gateway, GatewayGroup, GatewayLogical, GatewayServer, GatewayUser } from '../../types/Gateway';
+import { getFormattedLoad, getMembers } from '../../../functions/gatewayHelpers';
+import type { Gateway, GatewayGroup, GatewayLogical, GatewayServer, GatewayUser } from '../../../types/Gateway';
+import { isLogicalDeleted } from '../isLogicalDeleted';
 import { GatewayManageButton } from './GatewayManageButton';
 
 import './GatewayRow.scss';
@@ -20,7 +21,6 @@ interface Props {
     showIPv6?: boolean;
     showLoad?: boolean;
     gateway: Gateway;
-    isDeleted: (logical: GatewayLogical) => boolean;
     users: GatewayUser[];
     groups: GatewayGroup[];
     countryOptions: CountryOptions;
@@ -40,7 +40,6 @@ export const GatewayRow = ({
     showIPv6,
     showLoad,
     gateway,
-    isDeleted,
     users,
     groups,
     countryOptions,
@@ -56,14 +55,14 @@ export const GatewayRow = ({
 
     let provisioningCounter = 0;
     const allLogicals = gateway.Logicals || [];
-    const deleted = allLogicals.every(isDeleted);
+    const deleted = allLogicals.every(isLogicalDeleted);
 
     if (deleted && !showDeleted) {
         return <></>;
     }
 
     const logicals = allLogicals.filter((logical) => {
-        if (isDeleted(logical)) {
+        if (isLogicalDeleted(logical)) {
             return false;
         }
 
@@ -96,7 +95,7 @@ export const GatewayRow = ({
 
     return (
         <TableRow
-            className={deleted ? 'opacity-50' : undefined}
+            data-deleted={deleted}
             cells={[
                 <span className="block max-w-full text-ellipsis" title={gateway.Name}>
                     {gateway.Name}
