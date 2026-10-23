@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
@@ -57,10 +56,11 @@ import type { SubscriptionContainerProps } from '../../payments/subscription/Sub
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import type { UpsellFeature } from '../../payments/subscription/helpers/dashboard-upsells';
-import { TrialInfoModal } from '../../referral/components/TrialInfo/TrialInfo';
+import { ReferralTrialInfoModal } from '../../referral/components/ReferralTrialInfo/ReferralTrialInfo';
 import TopBanner from '../TopBanner';
 
 interface ModalActionProps extends Pick<ButtonProps, 'color' | 'shape'> {
+    subscription: Subscription;
     upsellRef: string | undefined;
     step: SubscriptionContainerProps['step'];
     closeModal: () => void;
@@ -68,8 +68,15 @@ interface ModalActionProps extends Pick<ButtonProps, 'color' | 'shape'> {
     children: ReactNode;
 }
 
-const ModalAction = ({ upsellRef, step, closeModal, disablePlanSelection, children, ...rest }: ModalActionProps) => {
-    const [subscription] = useSubscription();
+const ModalAction = ({
+    subscription,
+    upsellRef,
+    step,
+    closeModal,
+    disablePlanSelection,
+    children,
+    ...rest
+}: ModalActionProps) => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     return (
@@ -93,20 +100,23 @@ const ModalAction = ({ upsellRef, step, closeModal, disablePlanSelection, childr
 };
 
 interface ManageSubscriptionButtonProps extends Pick<ButtonProps, 'color' | 'shape'> {
+    subscription: Subscription;
     app: APP_NAMES;
     target: 'compare' | 'checkout';
     closeModal: () => void;
     children: ReactNode;
 }
 
-const ManageSubscriptionButton = ({ app, target, closeModal, children, ...rest }: ManageSubscriptionButtonProps) => {
+const ManageSubscriptionButton = ({
+    subscription,
+    app,
+    target,
+    closeModal,
+    children,
+    ...rest
+}: ManageSubscriptionButtonProps) => {
     const { APP_NAME } = useConfig();
     const [user] = useUser();
-    const [subscription, subscriptionLoading] = useSubscription();
-
-    if (subscriptionLoading) {
-        return null;
-    }
 
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
@@ -128,6 +138,7 @@ const ManageSubscriptionButton = ({ app, target, closeModal, children, ...rest }
         })();
         return (
             <ModalAction
+                subscription={subscription}
                 upsellRef={upsellRef}
                 step={step}
                 closeModal={closeModal}
@@ -162,8 +173,7 @@ const getAppFromPlan = (plan: PLANS | undefined) => {
     return null;
 };
 
-const ContinueSubscriptionActionButton = ({ app }: { app: APP_NAMES }) => {
-    const [subscription] = useSubscription();
+const ContinueSubscriptionActionButton = ({ app, subscription }: { app: APP_NAMES; subscription: Subscription }) => {
     const [modalProps, setModalOpen, renderModal] = useModalState();
     const [referralInfo] = useReferralInfo();
 
@@ -295,10 +305,17 @@ const ContinueSubscriptionActionButton = ({ app }: { app: APP_NAMES }) => {
                         {featuresList}
                     </ModalTwoContent>
                     <ModalTwoFooter className="flex flex-column flex-nowrap">
-                        <ManageSubscriptionButton color="norm" app={app} target="checkout" closeModal={closeModal}>
+                        <ManageSubscriptionButton
+                            subscription={subscription}
+                            color="norm"
+                            app={app}
+                            target="checkout"
+                            closeModal={closeModal}
+                        >
                             {planTitle ? getPlanOrAppNameText(planTitle) : c('Info').t`Continue`}
                         </ManageSubscriptionButton>
                         <ManageSubscriptionButton
+                            subscription={subscription}
                             color="norm"
                             shape="underline"
                             app={app}
@@ -317,12 +334,12 @@ const ContinueSubscriptionActionButton = ({ app }: { app: APP_NAMES }) => {
     );
 };
 
-const TrialInfoActionButton = () => {
+const ReferralTrialInfoActionButton = () => {
     const [modalProps, setModalOpen, renderModal] = useModalState();
 
     return (
         <>
-            {renderModal && <TrialInfoModal modalProps={modalProps} />}
+            {renderModal && <ReferralTrialInfoModal modalProps={modalProps} />}
             <InlineLinkButton className="color-inherit" onClick={() => setModalOpen(true)}>
                 {c('Action').t`Learn more`}
             </InlineLinkButton>
@@ -339,8 +356,10 @@ const ReferralTopBanner = ({ app, subscription }: { app: APP_NAMES; subscription
     );
     const [dismissing, setDismissing] = useState(false);
 
-    const nonAutoRenewalAction = <ContinueSubscriptionActionButton app={app} key="trial-action-button" />;
-    const autoRenewalAction = <TrialInfoActionButton key="opt-out-trial-action-button" />;
+    const nonAutoRenewalAction = (
+        <ContinueSubscriptionActionButton app={app} subscription={subscription} key="trial-action-button" />
+    );
+    const autoRenewalAction = <ReferralTrialInfoActionButton key="opt-out-trial-action-button" />;
 
     const action = isAutoRenewTrial(subscription) ? autoRenewalAction : nonAutoRenewalAction;
 
