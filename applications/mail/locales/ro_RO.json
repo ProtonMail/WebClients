@@ -1578,7 +1578,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -1782,6 +1784,12 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "Mutare ​​${ LUMO_SHORT_APP_NAME } la stânga"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Mutare ​​${ LUMO_SHORT_APP_NAME } la dreapta"
       ]
     },
     "action": {
@@ -2178,31 +2186,31 @@
         "/lună"
       ],
       "15 GB storage": [
-        "15 GiB de spațiu de stocare"
+        "15 GB de stocare"
       ],
       "2 individual accounts": [
-        "Două conturi individuale"
+        "2 conturi individuale"
       ],
       "2 TB of secure storage": [
-        "2 TiB de stocare securizată"
+        "2 TB de stocare securizată"
       ],
       "200 GB storage: 40x your current plan": [
-        "200 GiB de spațiu de stocare: de 40 de ori planul actual"
+        "200 GB spațiu de stocare: de 40x mai mult față de planul actual"
       ],
       "3 TB of secure storage": [
-        "3 TiB de stocare securizată"
+        "3 TB de stocare securizată"
       ],
       "500 GB of secure storage": [
-        "500 GiB de stocare securizată"
+        "500 GB de stocare securizată"
       ],
       "6 individual accounts": [
         "6 conturi individuale"
       ],
       "Built-in 2FA authenticator": [
-        "Autentificator A2F încorporat"
+        "Autentificator 2FA încorporat"
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
-        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+        "Reducerile se calculează față de prețul lunar standard. Abonamentul dvs. se va reînnoi la tariful anual standard atunci când se încheie ciclul de facturare."
       ],
       "Online document editor": [
         "Editor de documente online"
@@ -2247,7 +2255,7 @@
     },
     "bfcampaign2026: Title": {
       "Biggest sale of the year": [
-        "Cea mai mare reducere a anului"
+        "Cea mai mare promoție a anului"
       ],
       "Black Friday": [
         "Black Friday"
@@ -2256,7 +2264,7 @@
         "pentru 12 luni"
       ],
       "Last chance to save big": [
-        "Ultima șansă de a economisi semnificativ"
+        "Ultima șansă pentru o reducere mare"
       ],
       "Protect your entire tribe": [
         "Protejați-vă întreaga familie"
@@ -8315,9 +8323,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -10152,6 +10158,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanție de restituire a banilor în 30 de zile: anulați în termen de 30 de zile de la achiziție și contactați ${ customerSupportLink } pentru a obține o rambursare."
+      ],
+      "UnionPay logo": [
+        "Logo UnionPay"
       ]
     },
     "info": {
@@ -11873,6 +11885,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Trebuie să activați cheile pentru a vedea invitația actualizată"
+      ],
+      "Customer Support": [
+        "Asistența pentru clienți"
       ]
     },
     "Link to calendar event": {
@@ -14186,6 +14201,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Conturile „Born Private” nu pot fi achiziționate dacă există un abonament activ."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Inițiativa „Born Private” necesită o donație."
+      ],
+      "You already own a Born Private account.": [
+        "Deja dețineți un cont „Born Private”."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Contul este prea vechi pentru inițiativa „Born Private”."
       ]
     },
     "Payments.Error": {
@@ -18036,6 +18063,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Vei putea atribui roluri după ce utilizatorul a acceptat invitația."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Acest utilizator primește drepturi de administrator la următoarea autentificare."
       ]
     },
     "Validation": {
@@ -18541,6 +18571,11 @@
       ],
       "Passcode:": [
         "Cod de acces:"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanție de restituire a banilor în 30 de zile: anulați în termen de 30 de zile de la achiziție și contactați ${ customerSupportLink } pentru a obține o rambursare."
       ]
     }
   }
