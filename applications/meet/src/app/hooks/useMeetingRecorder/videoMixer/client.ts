@@ -27,6 +27,7 @@ export class VideoMixerClient {
     private encoderOnChunk: ((data: Uint8Array<ArrayBuffer>) => void) | null = null;
     private encoderDoneResolve: (() => void) | null = null;
     private audioCodec: string | null = null;
+    private encoderStarted = false;
 
     constructor({
         initialScene,
@@ -59,6 +60,7 @@ export class VideoMixerClient {
                 this.encoderDoneResolve = null;
             } else if (message?.type === 'encoderStarted') {
                 this.audioCodec = message.audioCodec;
+                this.encoderStarted = true;
             }
         };
 
@@ -147,6 +149,9 @@ export class VideoMixerClient {
     }
 
     public provideAudioSamples(samples: AudioTapSamples): void {
+        if (!this.encoderStarted) {
+            return;
+        }
         this.worker.postMessage({ type: VideoMixerMessageType.PROVIDE_AUDIO_SAMPLES, samples });
     }
 
