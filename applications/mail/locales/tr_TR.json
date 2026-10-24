@@ -1568,8 +1568,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1790,6 +1789,12 @@
       ],
       "Subscribe": [
         "Abone ol"
+      ],
+      "About ${ name }": [
+        "${ name } hakkında"
+      ],
+      "Add ${ name }": [
+        "${ name } ekle"
       ]
     },
     "action": {
@@ -8156,7 +8161,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -11325,6 +11331,9 @@
       ],
       "Why would you like to cancel?": [
         "Neden iptal etmek istiyorsunuz?"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } yardımcı"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13992,6 +14001,18 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Bu abonelik şu anda tamamlanamıyor. Lütfen yeniden deneyin."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Etkin bir abonelik varken Born Private hesapları satın alınamaz."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private girişimine bağış yapılması gerekir."
+      ],
+      "You already own a Born Private account.": [
+        "Zaten bir Born Private hesabınız var."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ]
     },
     "Payments.Error": {
@@ -16288,6 +16309,12 @@
       ],
       "Invoice paid": [
         "Fatura ödendi"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } yardımcı kapalı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } yardımcı açık"
       ]
     },
     "Success notification": {
@@ -18408,6 +18435,16 @@
       ],
       "Other": [
         "Diğer"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Bu yazışma çok uzadı ve daha fazla sürdüremiyoruz. ${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz ve hızlı çalışmasını sağlamak için yeni bir yazışma başlatın."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Banka hesabı"
       ]
     }
   }

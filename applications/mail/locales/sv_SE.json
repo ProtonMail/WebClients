@@ -1559,8 +1559,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1766,6 +1765,12 @@
       ],
       "Subscribe": [
         "Prenumerera"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Lägg till ${ name }"
       ]
     },
     "action": {
@@ -8006,7 +8011,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -11034,6 +11040,9 @@
       ],
       "Why would you like to cancel?": [
         "Vad vill du avbryta?"
+      ],
+      "Sieve script": [
+        "Sieve-skript"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17208,6 +17217,9 @@
       ],
       "Request sent": [
         "Begäran skickad"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Prenumerera på ${ planTitle }"
       ]
     },
     "Title header for keys table": {
@@ -17981,6 +17993,16 @@
       ],
       "Other": [
         "Annat"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Den här konversationen är för lång för att fortsätta. Starta en ny chatt för att hålla ${ LUMO_SHORT_APP_NAME } spinnande och responsiv."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
       ]
     }
   }

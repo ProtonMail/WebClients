@@ -1522,10 +1522,7 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufany klucz",
-        "Zaufane klucze",
-        "Zaufanych kluczy",
-        "Zaufane klucze"
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -7776,7 +7773,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -17652,6 +17652,11 @@
       ],
       "Other": [
         "Inny"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Ten wątek jest zbyt długi, aby go kontynuować. Rozpocznij nowy czat, aby ${ LUMO_SHORT_APP_NAME } działał płynnie i szybko odpowiadał."
       ]
     }
   }

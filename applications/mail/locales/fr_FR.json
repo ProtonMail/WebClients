@@ -1565,8 +1565,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -8015,7 +8014,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -13740,6 +13740,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Les comptes Born Private ne peuvent pas être achetés avec un abonnement actif."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "L'initiative Born Private nécessite un don."
+      ],
+      "You already own a Born Private account.": [
+        "Vous possédez déjà un compte Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
       ]
     },
     "Payments.Error": {
@@ -18135,6 +18147,16 @@
       ],
       "Other": [
         "Autre"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Cette conversation est trop longue pour continuer. Lancez une nouvelle conversation pour que ${ LUMO_SHORT_APP_NAME } continue de ronronner de manière fluide."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Compte bancaire"
       ]
     }
   }
