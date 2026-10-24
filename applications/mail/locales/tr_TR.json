@@ -1574,8 +1574,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1784,6 +1783,12 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the right": [
         "${ LUMO_SHORT_APP_NAME } uygulamasını sağa kaydır"
+      ],
+      "About ${ name }": [
+        "${ name } hakkında"
+      ],
+      "Add ${ name }": [
+        "${ name } ekle"
       ]
     },
     "action": {
@@ -8193,7 +8198,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -11353,6 +11359,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } yardımcı"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16201,6 +16210,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Aboneliğinizi iptal ettiniz."
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } yardımcı kapalı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } yardımcı açık"
       ]
     },
     "Success notification": {
@@ -18206,6 +18221,16 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Bu yazışma çok uzadı ve daha fazla sürdüremiyoruz. ${ LUMO_SHORT_APP_NAME } uygulamasının sorunsuz ve hızlı çalışmasını sağlamak için yeni bir yazışma başlatın."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Banka hesabı"
       ]
     }
   }

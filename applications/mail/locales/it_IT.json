@@ -1547,8 +1547,7 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
+        "Affida chiave"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -7827,7 +7826,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -17466,6 +17466,16 @@
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "Versione premium di ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Questa conversazione è troppo lunga per continuare. Avvia una nuova chat per far sì che ${ LUMO_SHORT_APP_NAME } continui a fare le fusa e a essere reattiva."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Conto bancario"
       ]
     }
   }

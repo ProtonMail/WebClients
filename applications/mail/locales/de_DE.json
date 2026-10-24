@@ -1574,8 +1574,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1784,6 +1783,12 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the right": [
         "${ LUMO_SHORT_APP_NAME } nach rechts verschieben"
+      ],
+      "About ${ name }": [
+        "Über ${ name }"
+      ],
+      "Add ${ name }": [
+        "${ name } hinzufügen"
       ]
     },
     "action": {
@@ -8185,7 +8190,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -11348,6 +11354,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME }-Assistent"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16196,6 +16205,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du hast dein Abonnement erfolgreich gekündigt."
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME }-Assistent deaktiviert"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME }-Assistent aktiviert"
       ]
     },
     "Success notification": {
@@ -18206,6 +18221,16 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30-Tage-Geld-zurück-Garantie: Kündige innerhalb von 30 Tagen nach dem Kauf und wende dich an unseren ${ customerSupportLink }, um eine Rückerstattung zu erhalten."
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Diese Unterhaltung ist zu lang, um sie fortzusetzen. Starte einen neuen Chat, damit ${ LUMO_SHORT_APP_NAME } weiterhin reibungslos und reaktionsschnell läuft."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
       ]
     }
   }
