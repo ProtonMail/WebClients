@@ -1568,8 +1568,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1790,6 +1789,12 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the right": [
         "Mover ${ LUMO_SHORT_APP_NAME } a la derecha"
+      ],
+      "About ${ name }": [
+        "Acerca de ${ name }"
+      ],
+      "Add ${ name }": [
+        "Añadir ${ name }"
       ]
     },
     "action": {
@@ -8156,7 +8161,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -11325,6 +11331,9 @@
       ],
       "Credits used": [
         "Créditos usados"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "Asistente ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13992,6 +14001,18 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Esta suscripción no se puede completar ahora. Intente de nuevo."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "No se pueden comprar cuentas Born Private con una suscripción activa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requiere de una donación."
+      ],
+      "You already own a Born Private account.": [
+        "Ya posee una cuenta Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Su cuenta es demasiado antigua para la iniciativa Born Private."
       ]
     },
     "Payments.Error": {
@@ -16215,6 +16236,12 @@
       ],
       "Invoice paid": [
         "Factura pagada"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "Asistente ${ LUMO_SHORT_APP_NAME } desactivado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "Asistente ${ LUMO_SHORT_APP_NAME } activado"
       ]
     },
     "Success notification": {
@@ -18329,6 +18356,16 @@
       ],
       "Protection for two in a single plan": [
         "Protección para dos en un solo plan"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Esta conversación es demasiado larga para continuar. Inicie un chat nuevo para mantener ${ LUMO_SHORT_APP_NAME } impoluto y útil."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Cuenta bancaria"
       ]
     }
   }
