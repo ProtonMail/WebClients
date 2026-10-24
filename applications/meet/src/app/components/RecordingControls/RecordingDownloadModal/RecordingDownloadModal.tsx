@@ -7,6 +7,8 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { clearRecording, selectRecording, selectRecordingStatus } from '@proton/meet/store/slices/recordingsSlice';
 import { getRecordingDurationBucket } from '@proton/meet/telemetry/buckets';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
+import warningImg from '@proton/styles/assets/img/meet/warning-icon.svg';
 
 import { useLastRecordingDownload } from '../../../hooks/useMeetingRecorder/hooks/useLastRecordingDownload';
 import { ConfirmationModal } from '../../ConfirmationModal/ConfirmationModal';
@@ -36,6 +38,18 @@ export const RecordingDownloadModal = () => {
     if (status === 'error') {
         return (
             <ConfirmationModal
+                icon={
+                    <img
+                        className="w-custom h-custom"
+                        src={warningImg}
+                        alt=""
+                        style={
+                            isMobile()
+                                ? { '--w-custom': '3rem', '--h-custom': '3rem' }
+                                : { '--w-custom': '5rem', '--h-custom': '5rem' }
+                        }
+                    />
+                }
                 title={c('Title').t`Couldn't prepare the recording`}
                 primaryText={c('Action').t`Close`}
                 onPrimaryAction={close}
