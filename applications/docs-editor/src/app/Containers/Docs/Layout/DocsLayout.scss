@@ -112,6 +112,12 @@ $docs-layout-transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
 		display: contents !important;
 	}
 
+	// The side panels don't print, so tables must not keep space for them; `!important` beats the inline style.
+	.docs-layout-grid {
+		--docs-layout-editor-bleed-inline-start-inset: 0px !important;
+		--docs-layout-editor-bleed-inline-end-inset: 0px !important;
+	}
+
 	.docs-layout-center-panel {
 		display: block !important;
 		inline-size: auto;
