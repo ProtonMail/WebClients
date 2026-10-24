@@ -1573,10 +1573,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1802,6 +1799,12 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the right": [
         "Presunúť ${ LUMO_SHORT_APP_NAME } doprava"
+      ],
+      "About ${ name }": [
+        "O ${ name }"
+      ],
+      "Add ${ name }": [
+        "Pridať ${ name }"
       ]
     },
     "action": {
@@ -8428,7 +8431,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -11689,6 +11695,9 @@
       ],
       "Credits used": [
         "Použité kredity"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistent"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14456,6 +14465,18 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Toto predplatné momentálne nie je možné dokončiť. Skúste to neskôr, prosím."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Účet Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Iniciatíva Born Private si vyžaduje finančný príspevok."
+      ],
+      "You already own a Born Private account.": [
+        "Už vlastníte účet Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Váš účet je príliš starý na iniciatívu Born Private."
       ]
     },
     "Payments.Error": {
@@ -16821,6 +16842,12 @@
       ],
       "Invoice paid": [
         "Faktúra uhradená"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } asistent deaktivovaný"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } asistent povolený"
       ]
     },
     "Success notification": {
@@ -19071,6 +19098,16 @@
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "Prémiové funkcie ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Táto konverzácia je príliš dlhá na to, aby sme v nej pokračovali. Začnite nový chat, aby aplikácia ${ LUMO_SHORT_APP_NAME } fungovala plynule a rýchlo."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankový účet"
       ]
     }
   }
