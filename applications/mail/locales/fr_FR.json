@@ -1562,8 +1562,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -8047,7 +8046,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -17931,6 +17931,16 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Cette conversation est trop longue pour continuer. Lancez une nouvelle conversation pour que ${ LUMO_SHORT_APP_NAME } continue de ronronner de manière fluide."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Compte bancaire"
       ]
     }
   }

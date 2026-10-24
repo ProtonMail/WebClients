@@ -1519,10 +1519,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -7706,7 +7703,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -17468,6 +17468,11 @@
       ],
       "Protection for two in a single plan": [
         "Ochrana pro dva v jednom plánu"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Tato konverzace je příliš dlouhá na to, aby mohla pokračovat. Spusťte nový chat, aby byl zajištěn hladký chod a rychlá odezva aplikace ${ LUMO_SHORT_APP_NAME }."
       ]
     }
   }
