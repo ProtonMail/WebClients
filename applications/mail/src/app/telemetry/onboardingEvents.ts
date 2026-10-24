@@ -7,6 +7,7 @@ import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import { allowed, defineEvent, defineTimer, duration, number, topValues } from '@proton/telemetry-tracker/events';
 import { tracker } from '@proton/telemetry-tracker/tracker';
 import isTruthy from '@proton/utils/isTruthy';
@@ -114,6 +115,24 @@ const flowFinished = defineEvent({
     dimensions: { flow: baseDimensions.flow, plan: baseDimensions.plan },
 });
 
+/** Same funnel as the other events, sent when the user closes the onboarding (Esc, close button) before the end */
+const flowDismissed = defineEvent({
+    ...baseEvent,
+    event: TelemetryMailOnboardingEvents.flowDismissed,
+    dimensions: baseDimensions,
+});
+
+/**
+ * Last step displayed, so a dismissal says where the user dropped off.
+ * Removed when the flow ends (finished or dismissed): no key means there is nothing left to drop off from.
+ */
+const LAST_STEP_KEY = 'mail-onboarding-last-step';
+
+const getLastLoadedStep = () => {
+    const stored = getItem(LAST_STEP_KEY);
+    return Object.values(ONBOARDING_STEPS).find((step) => step === stored);
+};
+
 /** Idempotent: the first event of the onboarding starts the timer */
 const withTiming = () => {
     tracker.startTimer(onboardingTimer);
@@ -163,6 +182,14 @@ const trackSettingToggled = (plan: string, step: ONBOARDING_STEPS, setting: ONBO
     );
 };
 
+const trackFlowDismissed = (plan: string, step: ONBOARDING_STEPS) => {
+    tracker.emit(
+        flowDismissed,
+        { dimensions: { flow: 'onboarding', plan, step }, ...withTiming() },
+        { ...timing, stopTimer: true }
+    );
+};
+
 const trackFlowFinished = (plan: string) => {
     tracker.emit(
         flowFinished,
@@ -183,6 +210,7 @@ export const useOnboardingTracking = () => {
     return {
         trackStepLoaded: (step: ONBOARDING_STEPS) => {
             if (!isReplay) {
+                setItem(LAST_STEP_KEY, step);
                 trackStepLoaded(plan, step);
             }
         },
@@ -206,8 +234,18 @@ export const useOnboardingTracking = () => {
                 trackSettingToggled(plan, step, setting, enabled);
             }
         },
+        /** Only sent when the user leaves before the end, and after at least one step was displayed */
+        trackFlowDismissed: () => {
+            const lastLoadedStep = getLastLoadedStep();
+
+            if (!isReplay && lastLoadedStep) {
+                removeItem(LAST_STEP_KEY);
+                trackFlowDismissed(plan, lastLoadedStep);
+            }
+        },
         trackFlowFinished: () => {
             if (!isReplay) {
+                removeItem(LAST_STEP_KEY);
                 trackFlowFinished(plan);
             }
         },
