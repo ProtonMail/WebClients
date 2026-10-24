@@ -1568,8 +1568,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Confia en aquesta clau",
-        "Confia en aquestes claus"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1790,6 +1789,12 @@
       ],
       "Subscribe": [
         "Subscriu-me"
+      ],
+      "About ${ name }": [
+        "Pel que fa a ${ name }"
+      ],
+      "Add ${ name }": [
+        "Afegir ${ name }"
       ]
     },
     "action": {
@@ -8156,7 +8161,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -11325,6 +11331,9 @@
       ],
       "Why would you like to cancel?": [
         "Per què voleu cancel·lar?"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "Assistent de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13992,6 +14001,18 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Aquesta subscripció no es pot completar ara mateix. Torneu-ho a provar."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Els comptes de Born Private no es poden adquirir amb una subscripció activa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requereix una donació."
+      ],
+      "You already own a Born Private account.": [
+        "Ja teniu un compte de Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "El vostre compte és massa antic per a la iniciativa Born Private."
       ]
     },
     "Payments.Error": {
@@ -16288,6 +16309,12 @@
       ],
       "Invoice paid": [
         "Factura pagada"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "S'ha deshabilitat l'assistent de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "S'ha habilitat l'assistent de ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Success notification": {
@@ -18408,6 +18435,16 @@
       ],
       "Other": [
         "Altre"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Aquesta conversa és massa llarga per a continuar. Inicieu un xat nou per a mantenir ${ LUMO_SHORT_APP_NAME } interessat i satisfet."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Compte bancari"
       ]
     }
   }

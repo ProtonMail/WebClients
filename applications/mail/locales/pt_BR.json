@@ -1559,8 +1559,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1787,6 +1786,9 @@
       ],
       "Subscribe": [
         "Inscrever-me"
+      ],
+      "Dock to side panel": [
+        "Acoplar ao painel lateral"
       ]
     },
     "action": {
@@ -8092,7 +8094,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -18381,6 +18384,16 @@
       ],
       "Other": [
         "Outros"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Essa conversa está muito longa para continuar. Inicie um novo bate-papo para manter o ${ LUMO_SHORT_APP_NAME } funcionando bem e ágil."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Conta bancária"
       ]
     }
   }

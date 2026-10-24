@@ -1568,8 +1568,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1790,6 +1789,12 @@
       ],
       "Subscribe": [
         "Abonnieren"
+      ],
+      "About ${ name }": [
+        "Über ${ name }"
+      ],
+      "Add ${ name }": [
+        "${ name } hinzufügen"
       ]
     },
     "action": {
@@ -8156,7 +8161,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -11325,6 +11331,9 @@
       ],
       "Why would you like to cancel?": [
         "Warum möchtest du stornieren?"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME }-Assistent"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13992,6 +14001,18 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Dieses Abonnement kann derzeit nicht abgeschlossen werden. Bitte versuche es erneut."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "„Born Private“-Konten können während eines aktiven Abonnements nicht erworben werden."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Für die Initiative „Born Private“ ist eine Spende erforderlich."
+      ],
+      "You already own a Born Private account.": [
+        "Du besitzt bereits ein „Born Private“-Konto."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Dein Konto ist zu alt für die „Born Private“-Initiative."
       ]
     },
     "Payments.Error": {
@@ -16288,6 +16309,12 @@
       ],
       "Invoice paid": [
         "Rechnung bezahlt"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME }-Assistent deaktiviert"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME }-Assistent aktiviert"
       ]
     },
     "Success notification": {
@@ -18408,6 +18435,16 @@
       ],
       "Other": [
         "Anderer Grund"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Diese Unterhaltung ist zu lang, um sie fortzusetzen. Starte einen neuen Chat, damit ${ LUMO_SHORT_APP_NAME } weiterhin reibungslos und reaktionsschnell läuft."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
       ]
     }
   }

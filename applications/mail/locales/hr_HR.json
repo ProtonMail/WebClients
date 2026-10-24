@@ -1518,9 +1518,7 @@
         "Vjeruj"
       ],
       "Trust key": [
-        "Vjeruj ključu",
-        "Vjeruj ključevima",
-        "Vjeruj ključevima"
+        "Ključ povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -7647,7 +7645,9 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku"
+        "Umetni sliku",
+        "Umetni slike",
+        "Umetni slike"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -17248,6 +17248,11 @@
       ],
       "Other": [
         "Ostalo"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Ovaj je razgovor predug za nastavak. Pokrenite novi razgovor kako bi ${ LUMO_SHORT_APP_NAME } ostao brz i radio besprijekorno."
       ]
     }
   }
