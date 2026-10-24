@@ -1571,8 +1571,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1781,6 +1780,9 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the right": [
         "Mover o ${ LUMO_SHORT_APP_NAME } para à direita"
+      ],
+      "Dock to side panel": [
+        "Acoplar ao painel lateral"
       ]
     },
     "action": {
@@ -8179,7 +8181,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -18165,6 +18168,16 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Ao confirmar, você autoriza a ${ BRAND_NAME } e a Stripe, a realizar cobranças futuras da sua assinatura nesta conta bancária via Débito Direto, e autoriza seu banco a debitar esses valores. Seu primeiro pagamento é realizado agora via ${ IDEAL_WERO_BRAND_NAME }. Seu plano é renovado automaticamente até que você o cancele; notificaremos você antes de cada cobrança. Para cobranças via débito direto, você pode solicitar um reembolso ao seu banco em até 8 semanas após a data do débito, conforme os termos do seu contrato com o banco. Isso não se aplica ao pagamento via ${ IDEAL_WERO_BRAND_NAME } que você está realizando agora."
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Essa conversa está muito longa para continuar. Inicie um novo bate-papo para manter o ${ LUMO_SHORT_APP_NAME } funcionando bem e ágil."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Conta bancária"
       ]
     }
   }

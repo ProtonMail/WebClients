@@ -1579,10 +1579,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1787,6 +1784,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "About ${ name }": [
+        "Аб ${ name }"
+      ],
+      "Add ${ name }": [
+        "Дадаць ${ name }"
       ]
     },
     "action": {
@@ -8374,7 +8377,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -18784,6 +18790,16 @@
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "Прэміяльныя ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Гэтая размова занадта доўгая, каб яе працягваць. Пачніце новы чат, каб забяспечыць для ${ LUMO_SHORT_APP_NAME } хуткую і бесперабойную працу."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Банкаўскі рахунак"
       ]
     }
   }
