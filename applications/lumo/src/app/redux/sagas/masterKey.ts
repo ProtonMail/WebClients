@@ -35,16 +35,17 @@ export function* waitForMasterKey(context: string): SagaIterator<Base64> {
     return bundle.primaryMasterKey;
 }
 
-function* waitForMasterKeysBundle(context: string): SagaIterator<MasterKeysBundle> {
+export function* waitForMasterKeysBundle(context: string): SagaIterator<MasterKeysBundle> {
     const masterKeyState: MasterKeyState = yield select(selectMasterKeyState);
 
     switch (masterKeyState.status) {
-        case 'ready':
-            return {
-                primaryMasterKeyId: masterKeyState.primaryMasterKeyId,
-                primaryMasterKey: masterKeyState.primaryMasterKey,
-                masterKeys: masterKeyState.masterKeys,
-            };
+        case 'ready': {
+            const bundle: MasterKeysBundle | undefined = yield select(selectMasterKeysBundle);
+            if (!bundle) {
+                throw new Error(`${context}: master key vanished between the state and bundle reads`);
+            }
+            return bundle;
+        }
         case 'ineligible':
             throw new Error(`${context}: user is not eligible for Lumo, so there is no master key`);
         case 'failed':

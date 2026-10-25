@@ -3,7 +3,7 @@ import { runSaga, stdChannel } from 'redux-saga';
 
 import type { Credentials, MasterKeyState, MasterKeysBundle } from '../../types';
 import { addMasterKey, masterKeyFailed } from '../slices/core/credentials';
-import { waitForMasterKey } from './masterKey';
+import { waitForMasterKey, waitForMasterKeysBundle } from './masterKey';
 
 const TEST_BUNDLE: MasterKeysBundle = {
     primaryMasterKeyId: 'test',
@@ -115,6 +115,25 @@ describe('waitForMasterKey', () => {
         channel.put(addMasterKey(TEST_BUNDLE));
 
         await expect(Promise.all(tasks.map((t) => t.toPromise()))).resolves.toEqual(['KEY', 'KEY', 'KEY']);
+    });
+
+    it('returns the same memoised bundle across calls so the key context cache is shared', async () => {
+        const channel = stdChannel<any>();
+        const credentials: Credentials = {
+            masterKeyState: {
+                status: 'ready',
+                primaryMasterKeyId: 'test',
+                primaryMasterKey: 'KEY',
+                masterKeys: { test: 'KEY' },
+            },
+        };
+        const options = { channel, dispatch: (a: any) => a, getState: () => ({ credentials }) as any };
+
+        const [first, second] = await Promise.all(
+            [1, 2].map((i) => runSaga(options, waitForMasterKeysBundle as Saga, `task-${i}`).toPromise())
+        );
+
+        expect(first).toBe(second);
     });
 
     it('throws when the key load has already failed, without waiting', async () => {
