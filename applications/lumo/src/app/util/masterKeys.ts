@@ -26,8 +26,30 @@ export function getLegacyMasterKeyBase64(bundle: MasterKeysBundle): Base64[] {
         .map(([, keyBase64]) => keyBase64);
 }
 
-export async function buildMasterKeyContext(bundle: MasterKeysBundle): Promise<MasterKeyContext> {
+async function importMasterKeyContext(bundle: MasterKeysBundle): Promise<MasterKeyContext> {
     const primary = await base64ToMasterKey(bundle.primaryMasterKey);
     const legacy = await Promise.all(getLegacyMasterKeyBase64(bundle).map((keyBase64) => base64ToMasterKey(keyBase64)));
     return { primary, legacy };
+}
+
+const masterKeyContextCache = new WeakMap<MasterKeysBundle, Promise<MasterKeyContext>>();
+
+/**
+ * Cached per bundle object, so callers must pass the memoised `selectMasterKeysBundle` result:
+ * every space refresh asks for a context, and re-importing primary plus every legacy key for each
+ * one floods the main thread with WebCrypto imports on accounts with many spaces or legacy keys.
+ */
+export function buildMasterKeyContext(bundle: MasterKeysBundle): Promise<MasterKeyContext> {
+    const cached = masterKeyContextCache.get(bundle);
+    if (cached) {
+        return cached;
+    }
+    const context = importMasterKeyContext(bundle);
+    masterKeyContextCache.set(bundle, context);
+    context.catch(() => {
+        if (masterKeyContextCache.get(bundle) === context) {
+            masterKeyContextCache.delete(bundle);
+        }
+    });
+    return context;
 }
