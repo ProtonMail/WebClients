@@ -293,6 +293,8 @@ export enum MailFeatureFlag {
     ScribeToLumo = 'ScribeToLumo',
     // reworked local search using foundation search
     ContentSearch = 'ContentSearch',
+    // Gates the booking page entry point in the composer footer (moved into the More options menu on small screens)
+    BookingsInComposerEnabled = 'BookingsInComposerEnabled',
 }
 
 enum MailKillSwitchFlag {

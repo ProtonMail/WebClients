@@ -1,6 +1,6 @@
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
-import type { GetContentMode } from 'roosterjs-editor-types';
+import type { GetContentMode, InsertOption } from 'roosterjs-editor-types';
 import { ContentPosition } from 'roosterjs-editor-types';
 
 import Editor from '@proton/components/components/editor/Editor';
@@ -47,6 +47,7 @@ export interface ExternalEditorActions extends Pick<
     isDisposed: () => boolean | undefined;
     showLinkModal: () => void;
     openEmojiPicker: () => void;
+    insertContent: (content: string, options?: InsertOption) => void;
 }
 interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 'toolbarCustomRender'> {
     message: MessageState;
@@ -320,6 +321,7 @@ const EditorWrapper = ({
                 openEmojiPicker: () => editorActionsRef.current?.openEmojiPicker?.(),
                 getSelectionContent: () => editorActionsRef.current?.getSelectionContent?.(),
                 setSelectionContent: (content) => editorActionsRef.current?.setSelectionContent?.(content),
+                insertContent: (content, options) => editorActionsRef.current?.insertContent?.(content, options),
             };
             onReady(externalActions);
         }
