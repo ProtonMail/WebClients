@@ -8,6 +8,7 @@ import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import type { OnboardingChecklistContext } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { useMailSelector } from '../../store/hooks';
+import { useChecklistTracking } from '../../telemetry/useChecklistTracking';
 import EmptyListPlaceholder from './EmptyListPlaceholder';
 
 jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
@@ -29,6 +30,18 @@ jest.mock('@proton/activation/src/hooks/useBYOEFeatureStatus', () => ({
 jest.mock('@proton/activation/src/logic/store', () => ({
     useEasySwitchSelector: jest.fn(() => null),
 }));
+
+jest.mock('../../telemetry/useChecklistTracking');
+jest.mocked(useChecklistTracking).mockReturnValue({
+    trackStepLoaded: jest.fn(),
+    trackStepInteracted: jest.fn(),
+    trackProviderSelected: jest.fn(),
+    trackServiceSelected: jest.fn(),
+    trackChecklistReduced: jest.fn(),
+    trackStepCompleted: jest.fn(),
+    trackFlowFinished: jest.fn(),
+    trackFlowDismissed: jest.fn(),
+});
 
 jest.mock('../../store/hooks');
 jest.mocked(useMailSelector).mockReturnValue(undefined);

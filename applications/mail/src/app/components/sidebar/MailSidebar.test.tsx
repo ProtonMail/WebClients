@@ -660,6 +660,7 @@ describe('Sidebar checklist display', () => {
             ],
             setByoeFlowInProgress: noop,
             byoeFlowInProgress: false,
+            checklistType: undefined,
         } as OnboardingChecklistContext);
 
         await mailTestRender(<MailSidebar />);
