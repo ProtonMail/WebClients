@@ -27,6 +27,7 @@ describe('createDiscountItem', () => {
         const discount = result.getItem('discount');
         expect(discount.visible).toBe(true);
         expect(discount.discountPercent).toBe(20);
+        expect(discount.formattedDiscount).toBe('-20%');
     });
 
     it('should show optimistic discount for trial', () => {
