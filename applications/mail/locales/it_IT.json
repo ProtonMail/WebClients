@@ -1744,6 +1744,24 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "About ${ name }": [
+        "Informazioni su ${ name }"
+      ],
+      "Add ${ name }": [
+        "Aggiungi ${ name }"
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
+      ],
+      "Add more details": [
+        "Aggiungi ulteriori dettagli"
+      ],
+      "Create a booking page": [
+        "Crea pagina di prenotazione"
+      ],
+      "Yes, organize it": [
+        "Sì, organizzalo"
       ]
     },
     "action": {
@@ -5479,6 +5497,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La tua ricerca ha restituito troppi risultati. Limita la ricerca e riprova."
+      ],
+      "A contact with this email address already exists": [
+        "Esiste già un contatto con questo indirizzo e-mail"
       ]
     },
     "error": {
@@ -5823,6 +5844,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Il tuo account sta usando ${ usedSpace } di spazio di archiviazione, mentre lo spazio a tua disposizione è inferiore: ${ inviteSpace }. Elimina dei dati o chiedi all'amministratore del piano di aumentarti lo spazio di archiviazione."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ti invitiamo a collegare il tuo account ${ BRAND_NAME } a questo gruppo familiare e a usufruire di tutte le sue funzionalità premium."
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -5878,6 +5902,12 @@
       ],
       "Security key": [
         "Chiave di sicurezza"
+      ],
+      "Still waiting?": [
+        "Stai ancora aspettando?"
+      ],
+      "Touch your security key to continue.": [
+        "Tocca la tua chiave di sicurezza per continuare."
       ]
     },
     "fido2: Label": {
@@ -7826,8 +7856,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9428,6 +9457,280 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per evitare di perdere l'accesso. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per mantenere l'abbonamento. ${ learnMoreLink }"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Ecco una breve panoramica di ciò che posso fare per te riguardo alla tua casella di posta, dalla ricerca di vecchi messaggi alla stesura delle risposte, e di ciò che invece non posso fare."
+      ],
+      "Add ${ contact } to your contacts": [
+        "Aggiungi ${ contact } ai tuoi contatti"
+      ],
+      "Add a contact": [
+        "Aggiungi un contatto"
+      ],
+      "Add contact": [
+        "Aggiungi contatto"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Chiedi al tuo amministratore di effettuare l’upgrade al piano o di rimuovere una pagina dalla barra laterale delle pagine di prenotazione."
+      ],
+      "Change a display setting": [
+        "Modifica un'impostazione dello schermo"
+      ],
+      "Change how your mail is grouped": [
+        "Modifica il modo in cui vengono raggruppate le tue e-mail"
+      ],
+      "Change your list density": [
+        "Modifica la densità dell'elenco"
+      ],
+      "Change your mailbox layout": [
+        "Modifica la struttura della tua casella di posta"
+      ],
+      "Change your theme": [
+        "Cambia il tema"
+      ],
+      "Create a filter": [
+        "Creare un filtro"
+      ],
+      "Create a folder": [
+        "Crea una cartella"
+      ],
+      "Create a label": [
+        "Crea un'etichetta"
+      ],
+      "Create filter": [
+        "Crea filtro"
+      ],
+      "Document in foundation-search index": [
+        "Documento nell'indice di ricerca delle fondazioni"
+      ],
+      "Document lookup failed": [
+        "Impossibile trovare il documento"
+      ],
+      "Draft a ${ kind }": [
+        "Redigi un ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Redigi un ${ kind } a ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Redigi un ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Redigi un ${ kind }a ${ recipient }"
+      ],
+      "Drafted a ${ kind }": [
+        "Redatto un ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Redatto un ${ kind }"
+      ],
+      "Edit ${ contact }": [
+        "Modifica ${ contact }"
+      ],
+      "Edit a contact": [
+        "Modifica di un contatto"
+      ],
+      "Edit contact": [
+        "Modifica contatto"
+      ],
+      "forward": [
+        "avanti"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Ehi Lumo, dai un'occhiata a cosa ricevo più spesso nella mia casella di posta, alle cartelle e ai filtri che ho già impostato, poi suggeriscimi come mantenerla organizzata: cosa cambiare in quelli che ho già e se c'è qualcosa di nuovo che vale la pena aggiungere. Spiegami prima il piano e non spostare nulla finché non ti darò il via libera."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Ehi Lumo, sto per partire e vorrei impostare un messaggio di assenza dall'ufficio. Chiedimi le date e cosa deve dire, poi mostrami il messaggio prima di attivarlo."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Ehi Lumo, cerca le mie e-mail degli ultimi 7 giorni e dimmi quali richiedono effettivamente una mia risposta. Fammi sapere in breve di cosa si tratta in ciascuna di esse e tralascia tutto ciò che posso ignorare."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Ehi Lumo, spiegami come puoi aiutarmi con la mia casella di posta. Che tipo di cose posso chiederti di fare e in cosa non puoi aiutarmi?"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Darò un'occhiata alla posta della settimana scorsa e selezionerò ciò a cui è davvero necessario rispondere, così potrai occupartene tutto in una volta sola."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Darò un'occhiata a ciò che ricevi più spesso e alle cartelle e ai filtri che hai già, poi ti suggerirò cosa migliorare e cosa manca. Non cambierò nulla finché non me lo dirai tu."
+      ],
+      "Label ${ emails }": [
+        "Etichetta ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Assegna a ${ emails } il nome ${ names }"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Ricerca del documento ${ lookup.result.docId }"
+      ],
+      "Mark ${ emails } as read": [
+        "Contrassegna ${ emails } come letti"
+      ],
+      "Mark ${ emails } as unread": [
+        "Contrassegna ${ emails } come non letti"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Contrassegna l'intero contenuto di ${ place } come letto"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Contrassegna l'intero contenuto di ${ place } come non letto"
+      ],
+      "Move ${ emails }": [
+        "Sposta ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Sposta ${ emails } in ${ destination }"
+      ],
+      "Move here": [
+        "Sposta qui"
+      ],
+      "No draft open": [
+        "Non ci sono bozze aperte"
+      ],
+      "No emails selected": [
+        "Nessuna e-mail selezionata"
+      ],
+      "No location selected": [
+        "Nessuna posizione selezionata"
+      ],
+      "Not found in the encrypted search index.": [
+        "Non trovato nell'indice di ricerca crittografato."
+      ],
+      "Not found in the foundation-search index.": [
+        "Non presente nell'indice di ricerca della fondazione."
+      ],
+      "open draft": [
+        "bozza aperta"
+      ],
+      "Opened a draft": [
+        "Ho aperto una bozza"
+      ],
+      "Read ${ count } open draft": [
+        "Leggi ${ count } bozza aperta",
+        "Leggi ${ count } bozze aperte"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Leggi la bozza “${ subject }”"
+      ],
+      "Read the open draft": [
+        "Leggi la bozza aperta"
+      ],
+      "Read your auto-reply": [
+        "Leggi la tua risposta automatica"
+      ],
+      "Read your signature": [
+        "Leggi la tua firma"
+      ],
+      "Readdressed": [
+        "Rinviato"
+      ],
+      "Readdressed the draft": [
+        "Si è proceduto a una revisione della bozza"
+      ],
+      "Remove signature": [
+        "Rimuovi firma"
+      ],
+      "Remove the star from ${ emails }": [
+        "Rimuovi l'asterisco da ${ emails }"
+      ],
+      "Rename folder": [
+        "Rinomina cartella"
+      ],
+      "Rename label": [
+        "Rinomina etichetta"
+      ],
+      "Rename this folder": [
+        "Rinomina cartella"
+      ],
+      "Rename this label": [
+        "RInomina questa etichetta"
+      ],
+      "reply": [
+        "rispondi"
+      ],
+      "reply all": [
+        "Rispondi a tutti"
+      ],
+      "Results came from the local search.": [
+        "I risultati provengono dalla ricerca locale."
+      ],
+      "Results came from the server.": [
+        "I risultati sono stati inviati dal server."
+      ],
+      "Revise the ${ draft }": [
+        "Revisiona il ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Riscritto e rindirizzato"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Ho riscritto e rielaborato la bozza"
+      ],
+      "Rewrote the draft": [
+        "Ho riscritto la bozza"
+      ],
+      "Set auto-reply": [
+        "Imposta risposta automatica"
+      ],
+      "Set my out of office": [
+        "Imposta la mia assenza dall'ufficio"
+      ],
+      "Set signature": [
+        "Imposta firma"
+      ],
+      "Set your signature": [
+        "Imposta la tua firma"
+      ],
+      "Source document in encrypted search index": [
+        "Documento sorgente nell'indice di ricerca crittografato"
+      ],
+      "Star ${ emails }": [
+        "Importante ${ emails }"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Dimmi quando sarai assente e cosa vorresti che dicesse, e potrai vedere il risultato completo prima che venga salvato."
+      ],
+      "Tidy up my inbox": [
+        "Metti in ordine la mia casella di posta"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Per aggiungere una nuova pagina di prenotazione, chiedi al tuo amministratore di effettuare l\"upgrade del tuo piano."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Per aggiungere una nuova pagina di prenotazione, rimuovi una esistente dalla barra laterale delle pagine di prenotazione."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Per aggiungere una nuova pagina di prenotazione, effettua l'upgrade del tuo piano."
+      ],
+      "Turn off auto-reply": [
+        "Disattiva la risposta automatica"
+      ],
+      "Turn off your away message": [
+        "Disattiva il messaggio di assenza"
+      ],
+      "Turn on your away message": [
+        "Attiva il messaggio di assenza"
+      ],
+      "Update the filter ${ filter }": [
+        "Aggiorna il filtro ${ filter }"
+      ],
+      "Update this filter": [
+        "Aggiorna questo filtro"
+      ],
+      "What can you do?": [
+        "Cosa puoi fare?"
+      ],
+      "What needs handling?": [
+        "Cosa bisogna gestire?"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Hai raggiunto il numero massimo di calendari disponibili nel tuo piano."
       ]
     },
     "info": {
@@ -9682,6 +9985,12 @@
       ],
       "Star": [
         "Segna come importante"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Chiudi ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Apri ${ LUMO_SHORT_APP_NAME } / metti in primo piano l'input"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -9718,6 +10027,9 @@
       ],
       "Message shortcuts": [
         "Scorciatoie messaggio"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Scorciatoie per ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Label": {
@@ -10734,6 +11046,33 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } assistente"
+      ],
+      "Away message": [
+        "Tono messaggio"
+      ],
+      "Cc": [
+        "Cc"
+      ],
+      "From date": [
+        "Dalla data"
+      ],
+      "From time": [
+        "Dall’ora"
+      ],
+      "New name": [
+        "Nuovo nome"
+      ],
+      "To": [
+        "A"
+      ],
+      "Until date": [
+        "Fino alla data"
+      ],
+      "Until time": [
+        "Fino a ora"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11081,6 +11420,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Devi riattivare le tue chiavi per visualizzare l'invito aggiornato"
+      ],
+      "Add formatting, links or images": [
+        "Aggiungi formattazione, link o immagini"
+      ],
+      "Advanced auto-reply options": [
+        "Opzioni avanzate di risposta automatica"
       ]
     },
     "Link to calendar event": {
@@ -12096,6 +12441,9 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Privacy illimitata e più spazio di archiviazione fino a 2 persone."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } che termina con ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -12791,6 +13139,30 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Il tuo abbonamento completo a ${ planTitle } inizia il ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Aggiungi un metodo di pagamento** per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puoi disdire in qualsiasi momento prima di allora.** Potrai utilizzare ${ planTitle } gratuitamente fino al termine del periodo di prova."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Se decidi di continuare dopo il periodo di prova,** puoi annullare l'abbonamento entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Una volta che l'abbonamento completo avrà inizio...** Potrai comunque disdirlo entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
+      ],
+      "If you continue after your trial,": [
+        "Se decidi di continuare dopo il periodo di prova,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "È possibile recedere dal contratto entro 30 giorni e ottenere un rimborso proporzionale."
       ]
     },
     "Option": {
@@ -13284,6 +13656,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Gli account Born Private non possono essere acquistati se si dispone di un abbonamento attivo."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "L'iniziativa “Born Private” richiede una donazione."
+      ],
+      "You already own a Born Private account.": [
+        "Hai già un account Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Il tuo account è troppo vecchio per partecipare all'iniziativa Born Private."
       ]
     },
     "Payments.Error": {
@@ -13364,6 +13748,12 @@
     "Payments.Saved payment method details": {
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - carta che termina con ${ Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carta che termina con ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bonifico bancario - ${ iban }"
       ]
     },
     "Payments.Sepa": {
@@ -14351,6 +14741,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } email → ${ wakeTime }",
         "${ count } email → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Silenzia ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Posticipa ${ emails } fino alle ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -15464,6 +15860,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Hai annullato l'abbonamento con successo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME }: assistente disattivato"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME }: assistente abilitato"
       ]
     },
     "Success notification": {
@@ -16778,6 +17180,12 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Cannot create more Booking pages": [
+        "Impossibile creare altre pagine di prenotazione"
+      ],
+      "Make your inbox your own": [
+        "Personalizza la tua casella di posta"
       ]
     },
     "Title header for keys table": {
@@ -16991,6 +17399,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Questo utente otterrà i diritti di amministratore al prossimo accesso."
       ]
     },
     "Validation": {
@@ -17476,6 +17887,21 @@
     "Payment Method": {
       "Bank Account": [
         "Conto bancario"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Rinomina ${ folder } in…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Rinomina ${ label } in…"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modifica dell'indirizzo di fatturazione potrebbe influire sulle imposte relative alle fatture future."
       ]
     }
   }

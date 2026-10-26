@@ -1789,6 +1789,9 @@
       ],
       "Add ${ name }": [
         "${ name } ekle"
+      ],
+      "Create a booking page": [
+        "Bir rezervasyon sayfası oluştur"
       ]
     },
     "action": {
@@ -4460,6 +4463,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Unlimited tarifesine geçin."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "İnsanların başka yerlere gitmeden doğrudan e-postalarınızdan sizinle rezervasyon yapmasını sağlayın."
       ]
     },
     "description": {
@@ -8198,8 +8204,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -10002,6 +10007,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Yöneticinizden tarifeyi yükseltmesini veya ${ CALENDAR_APP_NAME } içindeki Rezervasyon sayfaları kenar çubuğundan bir sayfayı kaldırmasını isteyin."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Yöneticinizden tarifeyi yükseltmesini veya Rezervasyon sayfaları kenar çubuğundan bir sayfayı kaldırmasını isteyin."
+      ],
+      "Here is my availability:": [
+        "Uygunluğum:"
+      ],
+      "No booking pages yet": [
+        "Henüz bir rezervasyon sayfası yok"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Yeni bir rezervasyon sayfası eklemek için yöneticinizden tarifenizi yükseltmesini isteyin."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Yeni bir rezervasyon sayfası eklemek için ${ CALENDAR_APP_NAME } içindeki Rezervasyon sayfaları kenar çubuğundan var olan bir sayfayı kaldırın."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Yeni bir rezervasyon sayfası eklemek için Rezervasyon sayfaları kenar çubuğundan var olan bir sayfayı kaldırın."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Yeni bir rezervasyon sayfası eklemek için tarifenizi yükseltin."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Tarifenizle kullanılabilecek en fazla rezervasyon sayfası sayısına ulaştınız."
       ]
     },
     "info": {
@@ -11362,6 +11394,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } assistant": [
         "${ LUMO_SHORT_APP_NAME } yardımcı"
+      ],
+      "Booking page": [
+        "Rezervasyon sayfası"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17542,6 +17577,15 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Cannot create more Booking pages": [
+        "Daha fazla Rezervasyon sayfası oluşturulamıyor"
+      ],
+      "Insert a booking page": [
+        "Bir rezervasyon sayfası ekle"
+      ],
+      "Share your availability": [
+        "Uygunluğunuzu paylaşın"
       ]
     },
     "Title header for keys table": {
