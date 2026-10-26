@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { ScheduledTaskRunPanel } from '../../features/schedules/components/ScheduledTaskRunPanel';
 import { useConversationPanelState } from '../../hooks/useConversationPanelState';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
@@ -15,7 +16,8 @@ import { useRightPanel } from '../../providers/RightPanelProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectConversationErrors } from '../../redux/slices/meta/errors';
-import { ComposerMode, type Conversation } from '../../types';
+import type { Conversation } from '../../types';
+import { ComposerMode, SpaceType } from '../../types';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
 import { FilePreviewPanel } from '../Files/Common/FilePreviewPanel';
@@ -98,6 +100,8 @@ const ConversationLayout = ({
     });
 
     const conversationId = conversation?.id;
+    const space = useLumoSelector((state) => (conversation ? state.spaces[conversation.spaceId] : undefined));
+    const isScheduledRun = space?.spaceType === SpaceType.Schedule;
 
     const { exceedsLimit: imageLimitExceeded } = useImageLimitInfo(messageChain);
 
@@ -245,7 +249,7 @@ const ConversationLayout = ({
         <>
             <LumoLayoutWithDrawer
                 header={{
-                    showNewChatButton: true,
+                    showNewChatButton: !isScheduledRun,
                     component: conversation && (
                         <ConversationHeader conversation={conversation} messageChain={messageChain} />
                     ),
@@ -260,19 +264,34 @@ const ConversationLayout = ({
                                     onClose={handleClosePanel}
                                 />
                             )}
-                            {openPanel.type === 'files' && (
-                                <FilesManagementView
-                                    messageChain={messageChain}
-                                    filesContainerRef={filesContainerRef}
-                                    onClose={handleClosePanel}
-                                    filterMessage={openPanel.filterMessage}
-                                    onClearFilter={handleClearFilter}
-                                    initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
-                                    spaceId={conversation?.spaceId}
-                                    drawerArtifacts={drawerArtifacts}
-                                    onOpenArtifact={handleOpenArtifactFromDrawer}
-                                />
-                            )}
+                            {openPanel.type === 'files' &&
+                                isScheduledRun &&
+                                conversation &&
+                                !openPanel.autoShowDriveBrowser &&
+                                !openPanel.filterMessage && (
+                                    <ScheduledTaskRunPanel
+                                        artifacts={drawerArtifacts}
+                                        conversation={conversation}
+                                        messageChain={messageChain}
+                                        onClose={handleClosePanel}
+                                        onOpenArtifact={handleOpenArtifactFromDrawer}
+                                        scheduleName={space.schedule.name}
+                                    />
+                                )}
+                            {openPanel.type === 'files' &&
+                                (!isScheduledRun || openPanel.autoShowDriveBrowser || openPanel.filterMessage) && (
+                                    <FilesManagementView
+                                        messageChain={messageChain}
+                                        filesContainerRef={filesContainerRef}
+                                        onClose={handleClosePanel}
+                                        filterMessage={openPanel.filterMessage}
+                                        onClearFilter={handleClearFilter}
+                                        initialShowDriveBrowser={openPanel.autoShowDriveBrowser}
+                                        spaceId={conversation?.spaceId}
+                                        drawerArtifacts={drawerArtifacts}
+                                        onOpenArtifact={handleOpenArtifactFromDrawer}
+                                    />
+                                )}
                             {openPanel.type === 'file-preview' && openPanel.attachment && (
                                 <FilePreviewPanel
                                     attachment={openPanel.attachment}
