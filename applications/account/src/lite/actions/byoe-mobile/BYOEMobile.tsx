@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import ReachedLimitForwardingModal from '@proton/activation/src/components/Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
@@ -20,6 +22,7 @@ import { ErrorPrompt } from './components/ErrorPrompt';
 import { BYOEMobileProvider, useBYOEMobile } from './context/BYOEMobileProvider';
 
 import '../MobileSettings.scss';
+import './BYOEMobile.scss';
 
 const BYOEMobileContent = () => {
     const { isLoading, defaultImportEmails, limitReached, status, connectingEmail, startOAuthFlowIfAllowed } =
@@ -65,7 +68,7 @@ const BYOEMobileContent = () => {
         <>
             <MobileSection>
                 <MobileSectionRow stackContent>
-                    <img src={icon} alt="" height={68} width={74} className="mb-4" />
+                    <img src={icon} alt="" height={68} width={74} className="mb-4 byoe-mobile-icon" />
                     <h2 className="text-3xl text-bold m-0 mb-1.5">{c('Title').t`Connect your Gmail`}</h2>
                     <p className="color-weak m-0">{c('Description')
                         .t`No ads, no tracking. Use your Gmail in ${BRAND_NAME}. Nothing there gets edited or deleted.`}</p>
@@ -109,9 +112,25 @@ interface Props {
     initialSearchParams: URLSearchParams;
 }
 
+/** Lets the background extend under the notch and the home indicator, the padding in the styles keeps the content clear of them. */
+const useExtendIntoSafeAreas = () => {
+    useEffect(() => {
+        const viewport = document.querySelector('meta[name="viewport"]');
+        const previous = viewport?.getAttribute('content');
+        if (!viewport || previous === null || previous === undefined) {
+            return;
+        }
+
+        viewport.setAttribute('content', `${previous}, viewport-fit=cover`);
+        return () => viewport.setAttribute('content', previous);
+    }, []);
+};
+
 export const BYOEMobile = ({ layout, redirect, initialSearchParams }: Props) => {
+    useExtendIntoSafeAreas();
+
     return layout(
-        <div className="mobile-settings">
+        <div className="mobile-settings byoe-mobile">
             <EasySwitchStoreProvider>
                 <EasySwitchStoreInitializer>
                     <BYOEMobileProvider redirect={redirect} initialSearchParams={initialSearchParams}>
