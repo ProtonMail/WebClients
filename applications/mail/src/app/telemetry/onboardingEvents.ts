@@ -56,7 +56,7 @@ const baseDimensions = {
 /** Time the user spent in the onboarding, sent as `activeMs` on every event */
 const onboardingTimer = defineTimer('mailOnboarding');
 
-const getPlanDimension = (subscriptions: Subscription[]) => {
+export const getPlanDimension = (subscriptions: Subscription[]) => {
     const names = subscriptions.map((subscription) => getPlanName(subscription)).filter(isTruthy);
     return names.length ? Array.from(new Set(names)).sort().join(',') : 'free';
 };

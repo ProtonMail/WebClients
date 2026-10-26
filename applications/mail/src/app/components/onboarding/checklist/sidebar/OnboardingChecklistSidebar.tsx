@@ -7,6 +7,8 @@ import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemet
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { CHECKLIST_ACTIONS, CHECKLIST_STEPS } from '../../../../telemetry/checklistEvents';
+import { useChecklistTracking } from '../../../../telemetry/useChecklistTracking';
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import OnboardingChecklistModalsProvider from '../OnboardingChecklistModalsProvider';
 import useOnboardingChecklist from '../useOnboardingChecklist';
@@ -43,6 +45,7 @@ const OnboardingChecklistSidebar = () => {
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const { items, changeChecklistDisplay, isChecklistFinished, isUserPaid, expiresAt, createdAt } =
         useGetStartedChecklist();
+    const tracking = useChecklistTracking();
 
     // If no expiration date, we consider the checklist as expired
     const hasExpired = expiresAt ? expiresAt < new Date() : true;
@@ -65,6 +68,13 @@ const OnboardingChecklistSidebar = () => {
                 canDisplayCountDown={canDisplayCountDown}
                 isOpened={isOpened}
                 onCloseChecklist={() => {
+                    if (isChecklistFinished) {
+                        // `flow_finished` is sent when the reward modal opens
+                        tracking.trackStepInteracted(CHECKLIST_STEPS.sidebar, CHECKLIST_ACTIONS.close);
+                    } else {
+                        tracking.trackFlowDismissed();
+                    }
+
                     changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.HIDDEN);
                     void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.close_checklist, {
                         checklist_step_import_completed: items.has('Import') ? 'yes' : 'no',
@@ -73,7 +83,13 @@ const OnboardingChecklistSidebar = () => {
                         checklist_step_update_login_completed: items.has('AccountLogin') ? 'yes' : 'no',
                     });
                 }}
-                onToggleChecklist={toggleChecklist}
+                onToggleChecklist={(value) => {
+                    tracking.trackStepInteracted(
+                        CHECKLIST_STEPS.sidebar,
+                        value ? CHECKLIST_ACTIONS.expand : CHECKLIST_ACTIONS.collapse
+                    );
+                    toggleChecklist(value);
+                }}
                 remainingDaysCount={daysBeforeExpire}
             />
             {isOpened && (

@@ -12,6 +12,8 @@ import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import checklistImportersImg from '@proton/styles/assets/img/illustrations/checklist-importers.svg';
 
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { CHECKLIST_ACTIONS, CHECKLIST_STEPS } from '../../../../telemetry/checklistEvents';
+import { useChecklistTracking } from '../../../../telemetry/useChecklistTracking';
 
 interface Props {
     goToNextStep: () => void;
@@ -20,8 +22,14 @@ interface Props {
 export const UserOnboardingImporters = ({ goToNextStep }: Props) => {
     const [hasAccessToBYOE] = useBYOEFeatureStatus();
     const { markItemsAsDone, setByoeFlowInProgress } = useGetStartedChecklist();
+    const tracking = useChecklistTracking();
     const stepModal = useEasySwitchSelector((state) => state.byoeFlow.stepModal);
     const prevStepModalRef = useRef(stepModal);
+
+    useEffect(() => {
+        tracking.trackStepLoaded(CHECKLIST_STEPS.importersScreen);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- the tracking functions are recreated on every render
+    }, []);
 
     useEffect(() => {
         const prev = prevStepModalRef.current;
@@ -60,6 +68,7 @@ export const UserOnboardingImporters = ({ goToNextStep }: Props) => {
                             .t`Choose a provider`}</span>
                     }
                     onBYOEFlowStart={() => setByoeFlowInProgress(true)}
+                    onProviderClick={(provider) => tracking.trackProviderSelected(provider)}
                     onComplete={async () => {
                         await markItemsAsDone(ChecklistKey.Import);
                         goToNextStep();
@@ -71,9 +80,14 @@ export const UserOnboardingImporters = ({ goToNextStep }: Props) => {
                     }
                 />
                 <div className="text-center mb-4">
-                    <Button shape="underline" className="color-weak text-sm" onClick={goToNextStep}>{c(
-                        'Onboarding List Placeholder'
-                    ).t`Maybe later`}</Button>
+                    <Button
+                        shape="underline"
+                        className="color-weak text-sm"
+                        onClick={() => {
+                            tracking.trackStepInteracted(CHECKLIST_STEPS.importersScreen, CHECKLIST_ACTIONS.skip);
+                            goToNextStep();
+                        }}
+                    >{c('Onboarding List Placeholder').t`Maybe later`}</Button>
                 </div>
             </div>
         </>
