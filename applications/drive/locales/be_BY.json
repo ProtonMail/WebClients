@@ -1409,6 +1409,12 @@
       ],
       "Subscribe": [
         "Падпісацца"
+      ],
+      "About ${ name }": [
+        "Аб ${ name }"
+      ],
+      "Add ${ name }": [
+        "Дадаць ${ name }"
       ]
     },
     "Action: Docs": {
@@ -9398,6 +9404,9 @@
       ],
       "Pay it": [
         "Заплаціць"
+      ],
+      "Customer Support": [
+        "Служба падтрымкі"
       ]
     },
     "List title": {
@@ -12149,6 +12158,9 @@
       ],
       "The selected plan doesn’t offer enough storage for your account.": [
         "Выбраны тарыфны план не прапануе дастатковую колькасць сховішча для вашага ўліковага запісу."
+      ],
+      "You already own a Born Private account.": [
+        "Вы ўжо валодаеце ўліковым запісам Born Private."
       ]
     },
     "Payments.Error": {
@@ -15361,6 +15373,9 @@
       ],
       "Request sent": [
         "Запыт адпраўлены"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Падпіска на тарыфны план ${ planTitle }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16333,6 +16348,16 @@
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "Прэміяльныя ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Гэтая размова занадта доўгая, каб яе працягваць. Пачніце новы чат, каб забяспечыць для ${ LUMO_SHORT_APP_NAME } хуткую і бесперабойную працу."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Банкаўскі рахунак"
       ]
     }
   }
