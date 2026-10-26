@@ -12,8 +12,6 @@ export type CodeLang = 'curl' | 'python' | 'typescript' | 'rust';
 
 export type ChatExampleVariant = 'basic' | 'tool_call';
 
-type LumoModelId = 'lumo-lite' | 'lumo-max';
-
 interface ApiDocParameter {
     name: string;
     type: string;
@@ -39,20 +37,11 @@ interface ApiDocEndpointGroup {
     endpoints: ApiDocEndpoint[];
 }
 
-interface ApiDocModel {
-    id: LumoModelId;
-    label: string;
-    description: string;
-    contextWindow: string;
-    tasks: string[];
-}
-
 export interface LumoApiDocsSpec {
     versionLabel: string;
     /** Shown in overview and used to build example request URLs */
     apiBaseUrl: string;
     endpointGroups: ApiDocEndpointGroup[];
-    models: ApiDocModel[];
     /** Keys match ChatExampleVariant */
     chatExamples: Record<ChatExampleVariant, Record<CodeLang, string>>;
     authExamples: Record<CodeLang, string>;
@@ -138,24 +127,6 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
                         'Returns the list of models currently available via the API, including task affinities and context window sizes. No parameters required.',
                 },
             ],
-        },
-    ],
-    models: [
-        {
-            id: 'lumo-lite',
-            label: 'Lumo 2.0 Lite',
-            description:
-                'Optimised for low-latency, high-throughput workloads. Best for classification, short-form generation, and real-time applications.',
-            contextWindow: '128k',
-            tasks: ['chat', 'classification', 'vision', 'extraction'],
-        },
-        {
-            id: 'lumo-max',
-            label: 'Lumo 2.0 Max',
-            description:
-                'Best-in-class reasoning for complex analytical tasks, multi-step code generation, and long-document synthesis.',
-            contextWindow: '128k',
-            tasks: ['analysis', 'code', 'vision', 'reasoning'],
         },
     ],
     chatExamples: {

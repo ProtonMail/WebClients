@@ -4,10 +4,12 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Button } from '@proton/atoms/Button/Button';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { getLoadingUsageState, useAllPersonalAccessTokensUsage } from '../../hooks/usePersonalAccessTokenUsage';
+import { useLumoPlan } from '../../hooks/useLumoPlan';
 import {
     type ListPersonalAccessTokensResponse,
     type PersonalAccessToken,
@@ -15,7 +17,6 @@ import {
     listPersonalAccessTokensRequest,
 } from '../../remote/personalAccessToken';
 import { ApiKeyCard } from './ApiKeyCard';
-import { ApiKeysUsageOverview } from './ApiKeyUsageCharts';
 import { CreateKeyForm } from './CreateKeyForm';
 import { TokenRevealModal } from './TokenRevealModal';
 
@@ -24,6 +25,7 @@ import './ApiKeysPanel.scss';
 const ApiKeysPanel = () => {
     const api = useApi();
     const { createNotification } = useNotifications();
+    const { hasLumoPlus } = useLumoPlan();
 
     const apiRef = useRef(api);
     apiRef.current = api;
@@ -37,14 +39,12 @@ const ApiKeysPanel = () => {
     const [revealedToken, setRevealedToken] = useState<string | null>(null);
 
     const tokenIds = useMemo(() => tokens.map((t) => t.PersonalAccessTokenID), [tokens]);
-    const {
-        byId,
-        aggregate,
-        isLoading: usageBatchLoading,
-        error: usageBatchError,
-    } = useAllPersonalAccessTokensUsage(tokenIds);
+    const { byId } = useAllPersonalAccessTokensUsage(tokenIds);
 
     const loadTokens = useCallback(async () => {
+        if (!hasLumoPlus) {
+            return;
+        }
         setIsLoading(true);
         try {
             const response = await apiRef.current<ListPersonalAccessTokensResponse>(listPersonalAccessTokensRequest());
@@ -57,9 +57,15 @@ const ApiKeysPanel = () => {
         } finally {
             setIsLoading(false);
         }
-    }, []);
+    }, [hasLumoPlus]);
 
     useEffect(() => {
+        if (!hasLumoPlus) {
+            setIsLoading(false);
+            setTokens([]);
+            return;
+        }
+
         let ignore = false;
 
         void (async () => {
@@ -88,7 +94,7 @@ const ApiKeysPanel = () => {
         return () => {
             ignore = true;
         };
-    }, []);
+    }, [hasLumoPlus]);
 
     const handleDelete = async (id: string) => {
         setDeletingIds((prev) => new Set(prev).add(id));
@@ -116,66 +122,74 @@ const ApiKeysPanel = () => {
         void loadTokens();
     };
 
-    const showNewKeyButton = !showCreateForm;
+    const showNewKeyButton = hasLumoPlus && !showCreateForm;
 
     return (
-        <div className="api-keys-panel flex flex-column gap-5 w-full">
+        <div className="api-keys-panel flex flex-column gap-5 w-full min-w-0">
             {revealedToken && <TokenRevealModal token={revealedToken} onClose={() => setRevealedToken(null)} />}
 
-            <div className="flex items-center justify-space-between gap-4 pt-2">
-                <p className="api-keys-description m-0 flex-1">
-                    {c('collider_2025: Description')
-                        .t`API keys let you access ${LUMO_SHORT_APP_NAME} programmatically. Each key is shown only once upon creation.`}
-                </p>
+            <div className="flex items-center justify-space-between gap-4">
+                <div>
+                    <h1 className="text-bold text-2xl m-0">{c('collider_2025: Title').t`Your API keys`}</h1>
+                    <p className="text-sm color-weak m-0 mt-1">
+                        {c('collider_2025: Description')
+                            .t`Create and revoke keys for your own programmatic access. Each key is shown only once.`}
+                    </p>
+                </div>
                 {showNewKeyButton && (
-                    <button
-                        className="api-keys-create-btn inline-flex items-center gap-1.5 shrink-0 rounded-lg"
+                    <Button
+                        color="norm"
+                        size="small"
+                        className="inline-flex items-center gap-1.5 shrink-0"
                         onClick={() => setShowCreateForm(true)}
                         type="button"
                     >
                         <LumoIcon name="Plus" width={12} height={12} />
                         {c('Action').t`New key`}
-                    </button>
+                    </Button>
                 )}
             </div>
 
-            {showCreateForm && <CreateKeyForm onCancel={() => setShowCreateForm(false)} onCreated={handleCreated} />}
-
-            {isLoading ? (
-                <div className="flex flex-column gap-2">
-                    <div className="api-keys-skeleton-item" />
-                    <div className="api-keys-skeleton-item" />
-                </div>
-            ) : tokens.length === 0 ? (
-                <div className="flex flex-column items-center justify-center text-center gap-3 pt-12 pb-8">
-                    <div className="api-keys-empty-icon flex items-center justify-center rounded-xl">
-                        <LumoIcon name="KeyRound" size={24} />
-                    </div>
-                    <p className="api-keys-empty-title m-0">{c('collider_2025: Title').t`No API keys yet`}</p>
-                    <p className="api-keys-empty-subtitle m-0">
-                        {c('collider_2025: Description')
-                            .t`Create a key to integrate ${LUMO_SHORT_APP_NAME} with your scripts and tools.`}
-                    </p>
+            {!hasLumoPlus ? (
+                <div className="p-4 text-sm color-weak bg-weak rounded-lg border border-weak">
+                    {c('collider_2025: Info')
+                        .t`Assign a ${LUMO_SHORT_APP_NAME} seat to create a personal API key.`}
                 </div>
             ) : (
                 <>
-                    <ApiKeysUsageOverview
-                        totalTokens={aggregate.totalTokens}
-                        totalApiCalls={aggregate.totalApiCalls}
-                        isLoading={usageBatchLoading}
-                        error={usageBatchError}
-                    />
-                    <div className="flex flex-column gap-2">
-                        {tokens.map((token) => (
-                            <ApiKeyCard
-                                key={token.PersonalAccessTokenID}
-                                token={token}
-                                usage={byId[token.PersonalAccessTokenID] ?? getLoadingUsageState()}
-                                onDelete={handleDelete}
-                                isDeleting={deletingIds.has(token.PersonalAccessTokenID)}
-                            />
-                        ))}
-                    </div>
+                    {showCreateForm && (
+                        <CreateKeyForm onCancel={() => setShowCreateForm(false)} onCreated={handleCreated} />
+                    )}
+
+                    {isLoading ? (
+                        <div className="flex flex-column gap-2">
+                            <div className="api-keys-skeleton-item" />
+                            <div className="api-keys-skeleton-item" />
+                        </div>
+                    ) : tokens.length === 0 ? (
+                        <div className="flex flex-column items-center justify-center text-center gap-3 pt-12 pb-8">
+                            <div className="api-keys-empty-icon flex items-center justify-center rounded-xl">
+                                <LumoIcon name="KeyRound" size={24} />
+                            </div>
+                            <p className="api-keys-empty-title m-0">{c('collider_2025: Title').t`No API keys yet`}</p>
+                            <p className="api-keys-empty-subtitle m-0">
+                                {c('collider_2025: Description')
+                                    .t`Create a key to integrate ${LUMO_SHORT_APP_NAME} with your scripts and tools.`}
+                            </p>
+                        </div>
+                    ) : (
+                        <div className="flex flex-column gap-2">
+                            {tokens.map((token) => (
+                                <ApiKeyCard
+                                    key={token.PersonalAccessTokenID}
+                                    token={token}
+                                    usage={byId[token.PersonalAccessTokenID] ?? getLoadingUsageState()}
+                                    onDelete={handleDelete}
+                                    isDeleting={deletingIds.has(token.PersonalAccessTokenID)}
+                                />
+                            ))}
+                        </div>
+                    )}
                 </>
             )}
         </div>
