@@ -443,14 +443,24 @@ export async function generateTestSpacesOnMockServer(count: number, masterKey: A
 // Helper functions for creating test objects
 export function createTestSpace(overrides: Partial<Space> = {}): Space {
     const now = new Date().toISOString();
-    return {
+    const base = {
         id: newSpaceId(),
         createdAt: now,
         updatedAt: now,
         spaceKey: generateSpaceKeyBase64(),
         ...overrides,
-        spaceType: overrides.spaceType ?? SpaceType.Default,
     };
+
+    switch (overrides.spaceType) {
+        case SpaceType.Schedule:
+            if (!('schedule' in overrides) || !overrides.schedule) throw new Error('Schedule fixture needs settings');
+            return { ...base, spaceType: SpaceType.Schedule, schedule: overrides.schedule };
+        case SpaceType.Project:
+            return { ...base, spaceType: SpaceType.Project };
+        case SpaceType.Default:
+        default:
+            return { ...base, spaceType: SpaceType.Default };
+    }
 }
 
 export function createTestConversation(spaceId: SpaceId, overrides: Partial<Conversation> = {}): Conversation {

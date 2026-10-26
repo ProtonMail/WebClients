@@ -9,6 +9,7 @@ import {
     serializeMessage,
     serializeSpace,
 } from './serialization';
+import { createTestSchedule } from './tests/fixtures/schedules';
 import type { Conversation, Message, Space } from './types';
 import { Role, SpaceType, getSpaceDek } from './types';
 
@@ -57,6 +58,17 @@ describe('serialization', () => {
             projectIcon: 'science',
             linkedDriveFolder: { folderId: 'folder', folderName: 'Sources', folderPath: '/Sources' },
         };
+        const schedule = createTestSchedule();
+        const createSpace = (type: SpaceType): Space => {
+            switch (type) {
+                case SpaceType.Project:
+                    return { ...mockSpace, spaceType: type, ...projectMetadata };
+                case SpaceType.Schedule:
+                    return { ...mockSpace, spaceType: type, schedule };
+                case SpaceType.Default:
+                    return { ...mockSpace, spaceType: type };
+            }
+        };
 
         it.each([
             [{}, { spaceType: SpaceType.Default }],
@@ -93,14 +105,17 @@ describe('serialization', () => {
             'writes the %s discriminator publicly and keeps project metadata encrypted',
             async (type) => {
                 const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
-                const space: Space =
-                    type === SpaceType.Project
-                        ? { ...mockSpace, spaceType: type, ...projectMetadata }
-                        : { ...mockSpace, spaceType: type };
+                const space = createSpace(type);
                 const serialized = await serializeSpace(space, masterKey);
                 const payload = JSON.parse(await decryptString(serialized.encrypted!, await getSpaceDek(space), ad));
                 expect(serialized.spaceType).toBe(type);
-                expect(payload).toEqual(type === SpaceType.Project ? { ...projectMetadata, isProject: true } : {});
+                expect(payload).toEqual(
+                    type === SpaceType.Project
+                        ? { ...projectMetadata, isProject: true }
+                        : type === SpaceType.Schedule
+                          ? { schedule }
+                          : {}
+                );
                 expect(payload).not.toHaveProperty('type');
                 expect(payload).not.toHaveProperty('spaceType');
                 if (type !== SpaceType.Project) expect(payload).not.toHaveProperty('isProject');
@@ -108,14 +123,11 @@ describe('serialization', () => {
             }
         );
 
-        it.each([SpaceType.Default, SpaceType.Project])(
+        it.each([SpaceType.Default, SpaceType.Project, SpaceType.Schedule])(
             'preserves %s when the API response omits public SpaceType',
             async (type) => {
                 const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
-                const space: Space =
-                    type === SpaceType.Project
-                        ? { ...mockSpace, spaceType: type, ...projectMetadata }
-                        : { ...mockSpace, spaceType: type };
+                const space = createSpace(type);
                 const { spaceType: _spaceType, ...backendResponse } = await serializeSpace(space, masterKey);
                 const restored = await deserializeSpace(backendResponse, masterKey);
                 expect(restored).toEqual(space);
