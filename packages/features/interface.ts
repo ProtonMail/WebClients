@@ -107,6 +107,7 @@ export enum FeatureCode {
     SpotlightIntroduceBookings = 'SpotlightIntroduceBookings',
     BookingPageLocationSpotlight = 'BookingPageLocationSpotlight',
     BookingSpotlightInMail = 'BookingSpotlightInMail',
+    BookingComposerSpotlight = 'BookingComposerSpotlight',
 
     Offers = 'Offers',
     PrivacyDropdownOpened = 'PrivacyDropdownOpened',
