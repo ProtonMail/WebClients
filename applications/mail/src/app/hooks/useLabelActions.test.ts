@@ -72,10 +72,10 @@ describe('useLabelActions', () => {
 
     it('should render correct action for all mail and almost all mail label', () => {
         const resAllMail = renderHook(() => useLabelActions(MAILBOX_LABEL_IDS.ALL_MAIL));
-        expect(resAllMail.result.current[0]).toEqual(['trash', 'archive', 'spam']);
+        expect(resAllMail.result.current[0]).toEqual(['trash', 'inbox', 'archive', 'spam']);
 
         const resAlmostAllMail = renderHook(() => useLabelActions(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL));
-        expect(resAlmostAllMail.result.current[0]).toEqual(['trash', 'archive', 'spam']);
+        expect(resAlmostAllMail.result.current[0]).toEqual(['trash', 'inbox', 'archive', 'spam']);
     });
 
     it('should render correct action for custom folder label', () => {
