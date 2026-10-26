@@ -9,9 +9,10 @@ interface Props {
     onClose: () => void;
     showPromptInput?: boolean;
     showThinking?: boolean;
+    showIdleMark?: boolean;
 }
 
-const ConnectedLumoAgentPanel = ({ onClose, showPromptInput, showThinking }: Props) => {
+const ConnectedLumoAgentPanel = ({ onClose, showPromptInput, showThinking, showIdleMark }: Props) => {
     const {
         items,
         isBusy,
@@ -38,6 +39,7 @@ const ConnectedLumoAgentPanel = ({ onClose, showPromptInput, showThinking }: Pro
             suggestions={suggestions}
             showPromptInput={showPromptInput}
             showThinking={showThinking}
+            showIdleMark={showIdleMark}
             onSend={send}
             onSuggestionPicked={onSuggestionPicked}
             onStop={stop}
