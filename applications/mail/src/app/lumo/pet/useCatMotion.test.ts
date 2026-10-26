@@ -4,7 +4,7 @@ import { PanelSide } from '../floating/panelSide';
 import { CatJump, CatRun, CatTrick } from './catPose';
 import { useCatMotion } from './useCatMotion';
 
-const initialProps = { side: PanelSide.RIGHT, isCatHidden: false, canJump: true, runMs: 1000 };
+const initialProps = { side: PanelSide.RIGHT, isCatHidden: false, canJump: true, runMs: 1000, isSnapping: false };
 
 const renderMotion = (props: Partial<typeof initialProps> = {}) => {
     return renderHook((options: typeof initialProps) => useCatMotion(options), {

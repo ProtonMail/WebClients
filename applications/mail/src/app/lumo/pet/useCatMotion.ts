@@ -18,10 +18,12 @@ interface Options {
     isCatHidden: boolean;
     canJump: boolean;
     runMs: number;
+    /** A drag drops the panel on its new side at once, so the cat lands there without a run. */
+    isSnapping: boolean;
 }
 
-export const useCatMotion = ({ side, isCatHidden, canJump, runMs }: Options) => {
-    const canRun = canJump && !isCatHidden;
+export const useCatMotion = ({ side, isCatHidden, canJump, runMs, isSnapping }: Options) => {
+    const canRun = canJump && !isCatHidden && !isSnapping;
     const { shownSide, run, endGlide } = useCatRun({ side, canRun, runMs });
     // Lags like the run's side, so the hidden class and the jump animation start together
     const [isHidden, setIsHidden] = useState(isCatHidden);
