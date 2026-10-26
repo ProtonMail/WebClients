@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
-import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import type { getConversationActions } from '@proton/llm/lib/lumoAgent/ui/LumoConversationHeaderActions';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -57,7 +57,7 @@ const LumoPetMenu = ({ side, onMove, onDock, onHide, conversationActions }: Prop
         onClick: onMove,
     };
     const dockAction: MenuAction = { label: dockLabel, icon: <IcArrowWithinSquare alt={dockLabel} />, onClick: onDock };
-    const hide: MenuAction = { label: hideLabel, icon: <IcEyeSlash alt={hideLabel} />, onClick: onHide };
+    const hide: MenuAction = { label: hideLabel, icon: <IcArrowDown alt={hideLabel} />, onClick: onHide };
 
     // Listed from the cat's head upwards, the conversation actions on top so the core buttons never shift
     const actionsFromHead = [move, hide, dockAction, ...[...conversationActions].reverse()];
