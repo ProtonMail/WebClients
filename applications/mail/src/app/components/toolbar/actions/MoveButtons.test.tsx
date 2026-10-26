@@ -63,11 +63,15 @@ describe('MoveButtons', () => {
         assertTrashArchiveSpam();
     });
 
-    it('should display trash, archive and spam actions in All Mail', () => {
+    it('should display trash, inbox, archive and spam actions in All Mail', () => {
         mockUseMailSelector.mockReturnValue(MAILBOX_LABEL_IDS.ALL_MAIL);
         render(<MoveButtons {...getProps(MAILBOX_LABEL_IDS.ALL_MAIL)} />);
 
-        assertTrashArchiveSpam();
+        screen.getByText('Move to trash');
+        screen.getByText('Move to inbox');
+        screen.getByText('Move to archive');
+        screen.getByText('Move to spam');
+        expect(screen.queryByText('Delete permanently')).toBeNull();
     });
 
     it('should display trash, archive and spam actions in a custom folder', () => {
