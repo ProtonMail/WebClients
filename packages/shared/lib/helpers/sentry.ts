@@ -51,7 +51,31 @@ const context: SentryContext = {
     enabled: true,
 };
 
-const EMAIL_PARAM_REGEX = /email=[^&]+/gi;
+const SAFE_QUERY_PARAMS = new Set([
+    'page',
+    'pagesize',
+    'sort',
+    'desc',
+    'type',
+    'parsedomain',
+    'start',
+    'end',
+    'limit',
+    'plan',
+    'cycle',
+    'currency',
+    'coupon',
+    'billing',
+    'minimumcycle',
+    'users',
+    'trial',
+    'app',
+    'product',
+]);
+const QUERY_PARAM_REGEX = /([?&])([\w%][^=&#\s]*)=([^&#\r\n]*)/g;
+const EMAIL_ADDRESS_REGEX = /(^|[\s/?#&=@"'<>,;])[^\s/?#&=@"'<>,;]{1,64}(?:@|%40)[^\s/?#&@"'<>,;]{1,253}\.[a-z]{2,}/gi;
+const RESET_TOKEN_PATH_REGEX = /(core\/v4\/reset\/)[^/?#]+\/[^/?#]+/gi;
+const VERIFICATION_TOKEN_PATH_REGEX = /(core\/v4\/verification\/[^/?#]+\/)[^?#]+/gi;
 const FRAGMENT_REGEX = /(?:#|%23).*$/is;
 
 /**
@@ -70,15 +94,24 @@ type RedactionOptions = {
 };
 
 /**
- * Redact the two classes of value we consider sensitive anywhere in a Sentry event:
+ * Redact the values we consider sensitive anywhere in a Sentry event:
  * - anything after a hash, which may be sensitive (e.g. a public share password,
  *   Ex: https://drive.proton.dev/urls/TBYS1295RG#[password]);
- * - `email` query parameters, which are PII (the keys/all endpoint accepts one).
+ * - every query parameter value, except the keys in `SAFE_QUERY_PARAMS`;
+ * - email addresses, wherever they are (path: calendar busy-schedule, free text);
+ * - the username and token of core/v4/reset/{username}/{token};
+ * - the token and code of core/v4/verification/{method}/{token}/{code}.
  */
 export const redactSensitiveString = (value: string, { redactFragment = true }: RedactionOptions = {}) => {
-    const withoutEmail = value.replace(EMAIL_PARAM_REGEX, 'email=[Filtered]');
+    const withoutPII = value
+        .replace(QUERY_PARAM_REGEX, (match, separator, key) =>
+            SAFE_QUERY_PARAMS.has(key.replace(/\[\]$/, '').toLowerCase()) ? match : `${separator}${key}=[Filtered]`
+        )
+        .replace(EMAIL_ADDRESS_REGEX, '$1[Filtered]')
+        .replace(RESET_TOKEN_PATH_REGEX, '$1[Filtered]/[Filtered]')
+        .replace(VERIFICATION_TOKEN_PATH_REGEX, '$1[Filtered]');
 
-    return redactFragment ? withoutEmail.replace(FRAGMENT_REGEX, '#[Filtered]') : withoutEmail;
+    return redactFragment ? withoutPII.replace(FRAGMENT_REGEX, '#[Filtered]') : withoutPII;
 };
 
 const isPlainObject = (value: unknown): value is Record<string, unknown> => {
@@ -310,27 +343,28 @@ function main({
                 return null;
             }
 
-            // Remove the hash from the request URL and navigation breadcrumbs to avoid
-            // leaking the search parameters of encrypted searches
-            if (event.request && event.request.url) {
-                [event.request.url] = event.request.url.split(/#|%23/i);
+            if (event.request?.url) {
+                event.request.url = redactSensitiveString(event.request.url);
             }
-            // keys/all endpoint accepts Email as parameter which is PII.
-            if (event.request && event.request.url) {
-                [event.request.url] = event.request.url.toLowerCase().split('email');
+
+            if (event.request?.headers) {
+                redactSensitiveContainer(event.request.headers);
+            }
+
+            if (event.message) {
+                event.message = redactSensitiveString(event.message);
+            }
+
+            if (event.contexts) {
+                redactSensitiveContainer(event.contexts);
+            }
+
+            if (event.tags) {
+                redactSensitiveContainer(event.tags);
             }
             if (event.breadcrumbs) {
                 event.breadcrumbs = event.breadcrumbs.map((breadcrumb) => {
-                    if (breadcrumb.category === 'navigation' && breadcrumb.data) {
-                        [breadcrumb.data.from] = breadcrumb.data.from.split(/#|%23/i);
-                        [breadcrumb.data.to] = breadcrumb.data.to.split(/#|%23/i);
-                        breadcrumb.data.from = breadcrumb.data.from.replace(/email=[^&]+/i, 'email=[Filtered]');
-                        breadcrumb.data.to = breadcrumb.data.to.replace(/email=[^&]+/i, 'email=[Filtered]');
-                    }
-
                     if (breadcrumb.category === 'fetch' && breadcrumb.data) {
-                        // Redact email addresses in breadcrumb messages
-                        breadcrumb.data.url = breadcrumb.data.url.replace(/email=[^&]+/i, 'email=[Filtered]');
                         breadcrumb.message = breadcrumb.data.url;
                     }
 
