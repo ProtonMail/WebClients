@@ -108,6 +108,10 @@ describe('useEncryptedSearch', () => {
     });
 
     describe('initializeES', () => {
+        beforeEach(() => {
+            jest.mocked(traceInitiativeError).mockClear();
+        });
+
         it('should return if there is no database', async () => {
             jest.mocked(hasESDB).mockResolvedValue(false);
 
@@ -136,10 +140,7 @@ describe('useEncryptedSearch', () => {
             const returnValue = await result.current.initializeES();
             expect(returnValue).toBe(undefined);
             expect(deleteESDB).toHaveBeenCalled();
-            expect(traceInitiativeError).toHaveBeenCalledWith(
-                expect.anything(),
-                expect.objectContaining({ message: 'initializeES - zombie DB deleted (no metadata progress)' })
-            );
+            expect(traceInitiativeError).not.toHaveBeenCalled();
         });
     });
 
