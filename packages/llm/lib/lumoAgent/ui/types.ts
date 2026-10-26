@@ -1,5 +1,6 @@
 import type { ComponentType, ReactNode } from 'react';
 
+import type { LumoApiModelTier } from '@proton/lumo-api-client/core/chat-completions';
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client/core/types';
 import type { LumoClientType } from '@proton/lumo-api-client/types-api';
 import type { ServerToolSource } from '@proton/lumo-ui/ServerToolChip';
@@ -114,6 +115,8 @@ export interface LumoAgentConfig {
     turnContext?: () => string;
     /** Forwarded to the transport as `clientType`. */
     clientType?: LumoClientType;
+    /** Forwarded to the transport as `modelTier`; the transport's default model when absent. */
+    modelTier?: LumoApiModelTier;
     serverTools?: ServerToolName[];
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
     /** Empty-state cards. Omitted by a product that wants no empty state of its own. */

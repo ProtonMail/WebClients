@@ -469,6 +469,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                     ...(clientTools && { clientTools }),
                     serverTools: config.serverTools,
                     ...(config.clientType && { clientType: config.clientType }),
+                    ...(config.modelTier && { modelTier: config.modelTier }),
                     signal: controller.signal,
                     chunkCallback,
                 });
