@@ -31,6 +31,8 @@ interface Props {
     showPromptInput?: boolean;
     /** Off for a host that shows its own thinking state, like Mail's floating cat. */
     showThinking?: boolean;
+    /** Off for a host that already shows Lumo beside the transcript, like Mail's floating cat. */
+    showIdleMark?: boolean;
     draft: string;
     onDraftChange: (draft: string) => void;
     onSend: (text: string) => void;
@@ -60,6 +62,7 @@ const LumoAgentPanel = ({
     placeholder,
     showPromptInput = true,
     showThinking = true,
+    showIdleMark = true,
     draft,
     onDraftChange,
     onSend,
@@ -186,7 +189,7 @@ const LumoAgentPanel = ({
                 {items.map(renderItem)}
                 {isGenerating && showThinking && <LumoThinking label={thinkingLabel} />}
                 {/* Idle Lumo mark beneath the latest turn, once a conversation exists (like lumo.proton.me). */}
-                {!isGenerating && items.length > 0 && <LumoLogo className="lumo-agent-avatar" />}
+                {!isGenerating && showIdleMark && items.length > 0 && <LumoLogo className="lumo-agent-avatar" />}
             </div>
             {linkConfirmationModal}
 

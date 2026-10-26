@@ -131,6 +131,19 @@ describe('LumoAgentPanel', () => {
         expect(screen.getByText('Move 1 email to Archive')).not.toBeNull();
     });
 
+    it('leaves the idle mark out for a host that shows Lumo itself', () => {
+        const { container } = renderPanel({ items: [userTurn, reply], showIdleMark: false });
+
+        expect(idleMark(container)).toBeNull();
+    });
+
+    it('leaves the idle mark out for that host while a confirm card is waiting', () => {
+        const { container } = renderPanel({ items: [userTurn, pendingConfirm], isBusy: true, showIdleMark: false });
+
+        expect(idleMark(container)).toBeNull();
+        expect(screen.getByText('Move 1 email to Archive')).not.toBeNull();
+    });
+
     it('offers stop only while the chain is actually running', () => {
         renderPanel({ items: [userTurn], isBusy: true });
 
