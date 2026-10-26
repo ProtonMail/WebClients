@@ -5,8 +5,10 @@ import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { captureMessage, getSentryError, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
-import type { FreeSubscription } from '../core/interface';
+import { getChargebeeErrorCode } from '../core/chargebee-errors';
+import type { FreeSubscription, PaymentMethodType } from '../core/interface';
 import type { Subscription } from '../core/subscription/interface';
+import { isSavedPaymentMethod } from '../core/type-guards';
 import { type PaymentErrorInfo, getPaymentErrorInfo } from './errorInfo';
 import { getSubscriptionKeys } from './subscriptionKey';
 
@@ -49,10 +51,40 @@ export interface PaymentsCaptureOptions {
     featureFlag?: FeatureFlag;
 }
 
+const CHARGEBEE_SDK_CONNECTIVITY_ERROR_CODES = [
+    'ERR_NETWORK',
+    'ECONNABORTED',
+    'empty_response',
+    'replyTimeout',
+    'scriptError',
+];
+
+function isChargebeeConnectivityError(error: unknown) {
+    const code = getChargebeeErrorCode(error);
+    return !!code && CHARGEBEE_SDK_CONNECTIVITY_ERROR_CODES.includes(code);
+}
+
+const isReportable = (error: unknown) => !!getSentryError(error) && !isChargebeeConnectivityError(error);
+
 function neverThrow(run: () => void) {
     try {
         run();
     } catch {}
+}
+
+const PAYMENT_METHOD_EXTRA_KEYS = ['paymentMethodValue', 'paymentMethodId'];
+
+function withoutSavedPaymentMethodId(extra: Record<string, unknown>) {
+    const redacted = { ...extra };
+
+    for (const key of PAYMENT_METHOD_EXTRA_KEYS) {
+        const value = redacted[key];
+        if (typeof value === 'string' && isSavedPaymentMethod(value as PaymentMethodType)) {
+            redacted[key] = 'saved';
+        }
+    }
+
+    return redacted;
 }
 
 function withPaymentScope(options: PaymentsCaptureOptions, run: (scope: Scope) => void) {
@@ -63,7 +95,7 @@ function withPaymentScope(options: PaymentsCaptureOptions, run: (scope: Scope) =
         scope.setTransactionName(`payments/${component}`);
 
         if (extra) {
-            scope.setExtras(extra);
+            scope.setExtras(withoutSavedPaymentMethodId(extra));
         }
 
         if (level) {
@@ -124,7 +156,7 @@ function toCapturableError(exception: unknown, info: PaymentErrorInfo, featureFl
  */
 export function tracePaymentError(exception: unknown, options: PaymentsCaptureOptions) {
     neverThrow(() => {
-        if (!getSentryError(exception)) {
+        if (!isReportable(exception)) {
             return;
         }
 
@@ -140,7 +172,7 @@ export function tracePaymentError(exception: unknown, options: PaymentsCaptureOp
 
 export function capturePaymentMessage(message: string, options: PaymentsCaptureOptions, cause?: unknown) {
     neverThrow(() => {
-        if (cause !== undefined && !getSentryError(cause)) {
+        if (cause !== undefined && !isReportable(cause)) {
             return;
         }
 
