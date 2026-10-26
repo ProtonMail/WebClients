@@ -1055,6 +1055,12 @@
       ],
       "Subscribe": [
         "Abone ol"
+      ],
+      "About ${ name }": [
+        "${ name } hakkında"
+      ],
+      "Add ${ name }": [
+        "${ name } ekle"
       ]
     },
     "action": {
@@ -3266,7 +3272,7 @@
         "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğu için yalnızca son Gmail e-postalarınız içe aktarılacak."
       ],
       "You’ll get a secure email with the details shortly.": [
-        "Kısa bir süre sonra ayrıntıların bulunduğu bir güvenli e-posta alacaksınız."
+        "Ayrıntıları biraz sonra güvenli bir e-posta ile alacaksınız."
       ]
     },
     "description": {
@@ -7025,6 +7031,12 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Ücretsiz deneme süreniz sona erdi. Ekibinizin erişimini sürdürmek ve hesaplarını güvende tutmak için şimdi abone olun."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Yöneticinizden tarifeyi yükseltmesini veya ${ CALENDAR_APP_NAME } içindeki Rezervasyon sayfaları kenar çubuğundan bir sayfayı kaldırmasını isteyin."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Yeni bir rezervasyon sayfası eklemek için ${ CALENDAR_APP_NAME } içindeki Rezervasyon sayfaları kenar çubuğundan var olan bir sayfayı kaldırın."
       ]
     },
     "info": {
@@ -10193,6 +10205,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Etkin bir abonelik varken Born Private hesapları satın alınamaz."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private girişimine bağış yapılması gerekir."
+      ],
+      "You already own a Born Private account.": [
+        "Zaten bir Born Private hesabınız var."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ]
     },
     "Payments.Error": {
@@ -12253,7 +12277,7 @@
         "Doğum günü"
       ],
       "Black Friday": [
-        "Muhteşem Cuma"
+        "Efsane Cuma"
       ],
       "Calendar": [
         "Takvim"
@@ -13631,6 +13655,11 @@
       ],
       "Other": [
         "Diğer"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Banka hesabı"
       ]
     }
   }
