@@ -5,7 +5,6 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Badge } from '@proton/components/components/badge/Badge';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
@@ -15,10 +14,21 @@ import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useIsGuest } from '../../providers/IsGuestProvider';
+import {
+    useDebugApiAccessDenied,
+    useDebugApiOrganizationMemberView,
+    useDebugApiOrganizationView,
+} from '../../services/apiUsageDebugStore';
 import GetLumoPlusButton from '../../upsells/primitives/GetLumoPlusButton';
 import useLumoPlusUpsellButtonConfig from '../../upsells/useLumoPlusUpsellButtonConfig';
 import ApiKeysPanel from '../api-keys/ApiKeysPanel';
+import { ApiUsagePanel } from '../api-keys/ApiUsagePanel';
+import { ApiBaseUrlBar } from './ApiBaseUrlBar';
 import { ApiDocsCodeBlock } from './ApiDocsCodeBlock';
+import { ApiModelsCatalogSection } from './ApiModelsCatalogSection';
+import { ApiPricingSummary } from './ApiPricingSummary';
+import { markApiDocsVisited } from './apiDocsVisit';
+import { type ApiModel, fetchApiModels } from './apiModels';
 import { type ChatExampleVariant, type CodeLang, type HttpMethod, LUMO_API_DOCS_SPEC } from './lumoApiDocs.config';
 import { WorkflowCodegenPanel } from './workflow-builder';
 
@@ -54,7 +64,11 @@ const MethodBadge = ({ method }: { method: HttpMethod }) => {
     );
 };
 
-type DocsTab = 'api' | 'keys' | 'workflow';
+type DocsTab = 'api' | 'usage' | 'keys' | 'workflow';
+type ApiModelsState =
+    | { status: 'loading'; models: ApiModel[] }
+    | { status: 'success'; models: ApiModel[] }
+    | { status: 'error'; models: ApiModel[] };
 
 const StatusBadge = ({ status }: { status: 'ga' | 'beta' }) =>
     status === 'ga' ? (
@@ -67,21 +81,60 @@ const StatusBadge = ({ status }: { status: 'ga' | 'beta' }) =>
         </span>
     );
 
+const ApiAccessDeniedNotice = () => (
+    <div className="flex flex-column gap-2 items-start rounded-lg border border-weak p-6 bg-weak">
+        <strong>{c('collider_2025: Title').t`API access is not enabled`}</strong>
+        <p className="m-0 color-weak">
+            {c('collider_2025: Info')
+                .t`Your organization has not allowed API access for your account. Contact your organization administrator to request access.`}
+        </p>
+    </div>
+);
+
 export const ApiDocsPage = () => {
     const history = useHistory();
     const location = useLocation();
     const { apiKeyManagement } = useLumoFlags();
     const isGuest = useIsGuest();
-    const { hasLumoPlus, isLumoPlanLoading, canShowTalkToAdminLumoUpsell } = useLumoPlan();
+    const { hasLumoPlus, isLumoPlanLoading, canShowTalkToAdminLumoUpsell, isOrgAdmin, userIsMember } = useLumoPlan();
+    const debugOrganizationView = useDebugApiOrganizationView();
+    const debugOrganizationMemberView = useDebugApiOrganizationMemberView();
     const lumoPlusUpsellConfig = useLumoPlusUpsellButtonConfig(LUMO_UPSELL_PATHS.SETTINGS_MODAL);
     const spec = LUMO_API_DOCS_SPEC;
 
-    /** API keys and programmatic API access require a paid Lumo+ seat (or Visionary). */
-    const canUseApiKeys = !isGuest && apiKeyManagement && hasLumoPlus;
+    const effectiveOrgAdmin = isOrgAdmin || debugOrganizationView;
+    const isOrgMember = debugOrganizationMemberView || (!effectiveOrgAdmin && userIsMember);
+    const debugApiAccessDenied = useDebugApiAccessDenied();
+    const apiAccessDenied = isOrgMember && debugApiAccessDenied;
+    const canManageApiKeys = !isGuest && apiKeyManagement && hasLumoPlus && !apiAccessDenied;
+    /** Organization preview only reveals mocked UI and does not grant backend permissions. */
+    const canViewApiUsage =
+        !apiAccessDenied &&
+        !isGuest &&
+        apiKeyManagement &&
+        (hasLumoPlus || effectiveOrgAdmin || debugOrganizationMemberView);
 
     const [docsTab, setDocsTab] = useState<DocsTab>('api');
     const [activeNav, setActiveNav] = useState('overview');
     const [chatExample, setChatExample] = useState<ChatExampleVariant>('basic');
+    const [apiModelsState, setApiModelsState] = useState<ApiModelsState>({ status: 'loading', models: [] });
+    const [apiModelsReload, setApiModelsReload] = useState(0);
+
+    useEffect(() => {
+        const abortController = new AbortController();
+        setApiModelsState((current) => ({ status: 'loading', models: current.models }));
+
+        void fetchApiModels(spec.apiBaseUrl, abortController.signal)
+            .then((models) => setApiModelsState({ status: 'success', models }))
+            .catch((error: unknown) => {
+                if (error instanceof DOMException && error.name === 'AbortError') {
+                    return;
+                }
+                setApiModelsState((current) => ({ status: 'error', models: current.models }));
+            });
+
+        return () => abortController.abort();
+    }, [apiModelsReload, spec.apiBaseUrl]);
 
     const flatEndpoints = useMemo(
         () => spec.endpointGroups.flatMap((g) => g.endpoints.map((ep) => ({ groupId: g.id, ...ep }))),
@@ -96,7 +149,9 @@ export const ApiDocsPage = () => {
     const selectDocsTab = useCallback(
         (tab: DocsTab) => {
             setDocsTab(tab);
-            if (tab === 'keys') {
+            if (tab === 'usage') {
+                history.replace({ pathname: location.pathname, search: location.search, hash: '#api-usage' });
+            } else if (tab === 'keys') {
                 history.replace({ pathname: location.pathname, search: location.search, hash: '#api-keys' });
             } else if (tab === 'workflow') {
                 history.replace({ pathname: location.pathname, search: location.search, hash: '#workflow' });
@@ -109,7 +164,12 @@ export const ApiDocsPage = () => {
 
     useEffect(() => {
         const hash = location.hash.replace(/^#/, '');
-        if (hash === 'api-keys') {
+        if (hash !== 'api-usage' && hash !== 'api-keys' && hash !== 'workflow') {
+            markApiDocsVisited();
+        }
+        if (hash === 'api-usage') {
+            setDocsTab('usage');
+        } else if (hash === 'api-keys') {
             setDocsTab('keys');
         } else if (hash === 'workflow') {
             setDocsTab('workflow');
@@ -138,10 +198,19 @@ export const ApiDocsPage = () => {
     const docsTabsHeader = (
         <div className="api-docs-page-tabs-row flex flex-row justify-center w-full">
             <div
-                className="api-docs-page-tabs"
+                className="api-docs-page-tabs flex flex-wrap"
                 role="tablist"
                 aria-label={c('collider_2025: Title').t`API docs sections`}
             >
+                <button
+                    type="button"
+                    role="tab"
+                    aria-selected={docsTab === 'usage'}
+                    className={clsx('api-docs-page-tab', docsTab === 'usage' && 'is-active')}
+                    onClick={() => selectDocsTab('usage')}
+                >
+                    {c('collider_2025: Tab').t`Overview`}
+                </button>
                 <button
                     type="button"
                     role="tab"
@@ -149,7 +218,7 @@ export const ApiDocsPage = () => {
                     className={clsx('api-docs-page-tab', docsTab === 'api' && 'is-active')}
                     onClick={() => selectDocsTab('api')}
                 >
-                    {c('collider_2025: Tab').t`API`}
+                    {c('collider_2025: Tab').t`Docs`}
                 </button>
                 <button
                     type="button"
@@ -158,7 +227,7 @@ export const ApiDocsPage = () => {
                     className={clsx('api-docs-page-tab', docsTab === 'keys' && 'is-active')}
                     onClick={() => selectDocsTab('keys')}
                 >
-                    {c('collider_2025: Tab').t`Manage keys`}
+                    {c('collider_2025: Tab').t`API keys`}
                 </button>
                 <button
                     type="button"
@@ -168,9 +237,6 @@ export const ApiDocsPage = () => {
                     onClick={() => selectDocsTab('workflow')}
                 >
                     {c('collider_2025: Tab').t`Workflow Builder`}
-                    <Badge className={'ml-2'} type="warning">
-                        Beta
-                    </Badge>
                 </button>
             </div>
         </div>
@@ -178,10 +244,10 @@ export const ApiDocsPage = () => {
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }} header={{ component: docsTabsHeader }}>
-            <div className="api-docs-page">
+            <div className="api-docs-page flex flex-1 flex-column min-h-0">
                 <div className="api-docs-page-body flex flex-1 min-h-0 overflow-y-auto flex-column items-center w-full">
                     {docsTab === 'api' && (
-                        <div className="api-docs-page-body-panel">
+                        <div className="api-docs-page-body-panel w-full min-w-0">
                             <div className="api-docs-page-layout">
                                 <nav
                                     className="api-docs-page-nav"
@@ -190,7 +256,7 @@ export const ApiDocsPage = () => {
                                     <button
                                         type="button"
                                         className={clsx(
-                                            'api-docs-page-nav-link',
+                                            'api-docs-page-nav-link block w-full text-left',
                                             activeNav === 'overview' && 'is-active'
                                         )}
                                         onClick={() => handleNav('overview')}
@@ -200,7 +266,7 @@ export const ApiDocsPage = () => {
                                     <button
                                         type="button"
                                         className={clsx(
-                                            'api-docs-page-nav-link',
+                                            'api-docs-page-nav-link block w-full text-left',
                                             activeNav === 'authentication' && 'is-active'
                                         )}
                                         onClick={() => handleNav('authentication')}
@@ -210,14 +276,13 @@ export const ApiDocsPage = () => {
                                     <button
                                         type="button"
                                         className={clsx(
-                                            'api-docs-page-nav-link',
+                                            'api-docs-page-nav-link block w-full text-left',
                                             activeNav === 'models' && 'is-active'
                                         )}
                                         onClick={() => handleNav('models')}
                                     >
-                                        {c('collider_2025: Nav').t`Models`}
+                                        {c('collider_2025: Nav').t`Models & pricing`}
                                     </button>
-
                                     <div className="api-docs-page-nav-group-label">{c('collider_2025: Nav')
                                         .t`Endpoints`}</div>
                                     {spec.endpointGroups.map((group) => (
@@ -228,7 +293,7 @@ export const ApiDocsPage = () => {
                                                     key={ep.id}
                                                     type="button"
                                                     className={clsx(
-                                                        'api-docs-page-nav-endpoint',
+                                                        'api-docs-page-nav-endpoint flex items-center gap-1.5 w-full text-left',
                                                         activeNav === ep.id && 'is-active'
                                                     )}
                                                     onClick={() => handleNav(ep.id)}
@@ -241,8 +306,8 @@ export const ApiDocsPage = () => {
                                     ))}
                                 </nav>
 
-                                <div className="api-docs-page-main-wrap">
-                                    <main className="api-docs-page-main">
+                                <div className="api-docs-page-main-wrap flex justify-center">
+                                    <main className="api-docs-page-main w-full min-w-0">
                                         <section id="overview" className="api-docs-page-section-anchor mb-14">
                                             <div className="api-docs-page-hero">
                                                 <div className="api-docs-page-hero-eyebrow">
@@ -252,13 +317,111 @@ export const ApiDocsPage = () => {
                                                 <h1 className="api-docs-page-hero-title">
                                                     {c('collider_2025: Title').t`Build intelligent apps.`}
                                                     <br />
-                                                    {c('collider_2025: Title').t`Privacy included by default.`}
+                                                    <span className="api-docs-page-hero-title-accent">
+                                                        {c('collider_2025: Title').t`Privacy included by default.`}
+                                                    </span>
                                                 </h1>
                                                 <p className="api-docs-page-hero-text">
                                                     {c('collider_2025: Info')
                                                         .t`The ${LUMO_SHORT_APP_NAME} API gives you programmatic access to language models with ${BRAND_NAME}'s privacy architecture built in. No data training on your requests. No tracking.`}
                                                 </p>
+                                                <ApiBaseUrlBar url={spec.apiBaseUrl} />
                                             </div>
+
+                                            <section aria-labelledby="api-getting-started-title" className="mb-10">
+                                                <h2
+                                                    id="api-getting-started-title"
+                                                    className="text-bold text-2xl mt-0 mb-2"
+                                                >
+                                                    {c('collider_2025: Title').t`Getting started`}
+                                                </h2>
+                                                <p className="color-weak mt-0 mb-4" style={{ lineHeight: 1.7 }}>
+                                                    {isOrgMember
+                                                        ? c('collider_2025: Info')
+                                                              .t`Check your organization access and create credentials before making your first API request.`
+                                                        : c('collider_2025: Info')
+                                                              .t`Set up billing and authentication before making your first API request.`}
+                                                </p>
+                                                <div className="api-docs-page-getting-started-grid">
+                                                    <article className="api-docs-page-getting-started-step flex flex-column">
+                                                        <span className="api-docs-page-step-number flex items-center justify-center rounded-full mb-3">
+                                                            1
+                                                        </span>
+                                                        <h3 className="text-base text-bold m-0 mb-1">
+                                                            {isOrgMember
+                                                                ? c('collider_2025: Title').t`Check organization access`
+                                                                : c('collider_2025: Title').t`Top up balance`}
+                                                        </h3>
+                                                        <p className="api-docs-page-getting-started-copy flex-none text-sm color-weak m-0 mb-4">
+                                                            {isOrgMember
+                                                                ? c('collider_2025: Info')
+                                                                      .t`Your administrator manages the shared API balance for your organization.`
+                                                                : c('collider_2025: Info')
+                                                                      .t`Top up your API balance so requests can run without interruption.`}
+                                                        </p>
+                                                        <Button
+                                                            size="small"
+                                                            color="weak"
+                                                            shape="ghost"
+                                                            className="self-start mt-auto"
+                                                            onClick={() => selectDocsTab('usage')}
+                                                        >
+                                                            {isOrgMember
+                                                                ? c('collider_2025: Action').t`View my usage`
+                                                                : c('collider_2025: Action').t`Manage balance`}
+                                                        </Button>
+                                                    </article>
+
+                                                    <article className="api-docs-page-getting-started-step flex flex-column">
+                                                        <span className="api-docs-page-step-number flex items-center justify-center rounded-full mb-3">
+                                                            2
+                                                        </span>
+                                                        <h3 className="text-base text-bold m-0 mb-1">
+                                                            {c('collider_2025: Title').t`Generate an API key`}
+                                                        </h3>
+                                                        <p className="api-docs-page-getting-started-copy flex-none text-sm color-weak m-0 mb-4">
+                                                            {c('collider_2025: Info')
+                                                                .t`Create a key and store it securely. It is only shown once.`}
+                                                        </p>
+                                                        <Button
+                                                            size="small"
+                                                            color="weak"
+                                                            shape="ghost"
+                                                            className="self-start mt-auto"
+                                                            onClick={() => selectDocsTab('keys')}
+                                                        >
+                                                            {c('collider_2025: Action').t`Manage API keys`}
+                                                        </Button>
+                                                    </article>
+
+                                                    <article className="api-docs-page-getting-started-step flex flex-column">
+                                                        <span className="api-docs-page-step-number flex items-center justify-center rounded-full mb-3">
+                                                            3
+                                                        </span>
+                                                        <h3 className="text-base text-bold m-0 mb-1">
+                                                            {c('collider_2025: Title').t`Make your first request`}
+                                                        </h3>
+                                                        <p className="api-docs-page-getting-started-copy flex-none text-sm color-weak m-0 mb-4">
+                                                            {c('collider_2025: Info')
+                                                                .t`Add your key to the authorization header and call a model.`}
+                                                        </p>
+                                                        <Button
+                                                            size="small"
+                                                            color="weak"
+                                                            shape="ghost"
+                                                            className="self-start mt-auto"
+                                                            onClick={() => handleNav('authentication')}
+                                                        >
+                                                            {c('collider_2025: Action').t`View authentication`}
+                                                        </Button>
+                                                    </article>
+                                                </div>
+                                            </section>
+
+                                            <ApiPricingSummary
+                                                models={apiModelsState.models}
+                                                onViewModels={() => handleNav('models')}
+                                            />
 
                                             <h2 className="text-bold text-2xl mt-0 mb-2">{c('collider_2025: Title')
                                                 .t`What you can build`}</h2>
@@ -267,18 +430,16 @@ export const ApiDocsPage = () => {
                                                 style={{ lineHeight: 1.7, maxWidth: '40rem' }}
                                             >
                                                 {c('collider_2025: Info')
-                                                    .t`The ${LUMO_SHORT_APP_NAME} API is a RESTful interface at `}
-                                                <code className="text-monospace px-1 py-0.5 rounded-sm bg-weak">
-                                                    {spec.apiBaseUrl}/
-                                                </code>
-                                                {c('collider_2025: Info')
-                                                    .t`. It follows the OpenAI API schema — drop in your existing client with a one-line change.`}
+                                                    .t`The ${LUMO_SHORT_APP_NAME} API is a RESTful interface that follows the OpenAI API schema — drop in your existing client with a one-line change.`}
                                             </p>
 
                                             <div className="api-docs-page-feature-grid">
                                                 <div className="api-docs-page-feature-card">
-                                                    <div className="text-2xl mb-2" aria-hidden>
-                                                        <LumoIcon name="Zap" />
+                                                    <div
+                                                        className="api-docs-page-feature-icon flex items-center justify-center rounded-lg mb-3"
+                                                        aria-hidden
+                                                    >
+                                                        <LumoIcon name="Zap" size={18} />
                                                     </div>
                                                     <div className="text-semibold mb-1">{c('collider_2025: Title')
                                                         .t`Workflow automation`}</div>
@@ -288,8 +449,11 @@ export const ApiDocsPage = () => {
                                                     </p>
                                                 </div>
                                                 <div className="api-docs-page-feature-card">
-                                                    <div className="text-2xl mb-2" aria-hidden>
-                                                        <LumoIcon name="PencilSparkles" />
+                                                    <div
+                                                        className="api-docs-page-feature-icon flex items-center justify-center rounded-lg mb-3"
+                                                        aria-hidden
+                                                    >
+                                                        <LumoIcon name="PencilSparkles" size={18} />
                                                     </div>
                                                     <div className="text-semibold mb-1">{c('collider_2025: Title')
                                                         .t`Document intelligence`}</div>
@@ -299,8 +463,11 @@ export const ApiDocsPage = () => {
                                                     </p>
                                                 </div>
                                                 <div className="api-docs-page-feature-card">
-                                                    <div className="text-2xl mb-2" aria-hidden>
-                                                        <LumoIcon name="MessagesSquare" />
+                                                    <div
+                                                        className="api-docs-page-feature-icon flex items-center justify-center rounded-lg mb-3"
+                                                        aria-hidden
+                                                    >
+                                                        <LumoIcon name="MessagesSquare" size={18} />
                                                     </div>
                                                     <div className="text-semibold mb-1">{c('collider_2025: Title')
                                                         .t`Conversational AI`}</div>
@@ -309,47 +476,6 @@ export const ApiDocsPage = () => {
                                                             .t`Build privacy-first assistants with streaming and persistent context.`}
                                                     </p>
                                                 </div>
-                                            </div>
-
-                                            <div className="rounded-lg border border-weak p-4 mb-6 bg-weak">
-                                                <strong className="block mb-2">{c('collider_2025: Title')
-                                                    .t`Prerequisites`}</strong>
-                                                <ul className="m-0 pl-4">
-                                                    <li>{c('collider_2025: Info')
-                                                        .t`A ${LUMO_SHORT_APP_NAME} account`}</li>
-                                                    <li>
-                                                        {isGuest ? (
-                                                            c('collider_2025: Info')
-                                                                .t`${LUMO_SHORT_APP_NAME}+ — API access and keys are included with a ${LUMO_SHORT_APP_NAME}+ subscription (sign in to upgrade or manage keys)`
-                                                        ) : canUseApiKeys ? (
-                                                            <span>
-                                                                {c('collider_2025: Info')
-                                                                    .t`An API key — generate one in `}
-                                                                <button
-                                                                    type="button"
-                                                                    className="link align-baseline p-0"
-                                                                    onClick={() => selectDocsTab('keys')}
-                                                                >
-                                                                    {c('collider_2025: Link').t`Manage keys`}
-                                                                </button>
-                                                            </span>
-                                                        ) : (
-                                                            <span>
-                                                                {c('collider_2025: Info')
-                                                                    .t`${LUMO_SHORT_APP_NAME}+ — the ${LUMO_SHORT_APP_NAME} API and API keys require an active ${LUMO_SHORT_APP_NAME}+ subscription. `}
-                                                                <button
-                                                                    type="button"
-                                                                    className="link align-baseline p-0"
-                                                                    onClick={() => selectDocsTab('keys')}
-                                                                >
-                                                                    {c('collider_2025: Link').t`View plans`}
-                                                                </button>
-                                                            </span>
-                                                        )}
-                                                    </li>
-                                                    <li>{c('collider_2025: Info')
-                                                        .t`An HTTP client or official SDK (Python, TypeScript, Rust)`}</li>
-                                                </ul>
                                             </div>
 
                                             <h3 className="text-lg text-bold mb-3">{c('collider_2025: Title')
@@ -454,50 +580,19 @@ export const ApiDocsPage = () => {
 
                                         <div className="border-top border-weak mb-10" />
 
-                                        <section id="models" className="api-docs-page-section-anchor mb-14">
-                                            <h2 className="text-bold text-xl mt-0 mb-2">{c('collider_2025: Title')
-                                                .t`Models`}</h2>
-                                            <p className="color-weak mb-6" style={{ lineHeight: 1.7 }}>
-                                                {c('collider_2025: Info')
-                                                    .t`Specify a model ID directly for predictable latency or capability targeting.`}
-                                            </p>
-                                            {spec.models.map((m) => (
-                                                <div key={m.id} className="api-docs-page-model-card">
-                                                    <div className="api-docs-page-model-main">
-                                                        <div className="flex flex-row flex-wrap items-center gap-2 mb-1">
-                                                            <code className="text-monospace text-semibold">{m.id}</code>
-                                                            <span className="text-sm text-bold color-primary">
-                                                                {m.label}
-                                                            </span>
-                                                        </div>
-                                                        <p className="m-0 mb-2 color-weak">{m.description}</p>
-                                                        <div>
-                                                            {m.tasks.map((t) => (
-                                                                <span
-                                                                    key={t}
-                                                                    className="text-2xs font-semibold px-2 py-0.5 rounded-sm bg-weak color-primary mr-1 mb-1 inline-block"
-                                                                >
-                                                                    {t}
-                                                                </span>
-                                                            ))}
-                                                        </div>
-                                                    </div>
-                                                    <div className="text-right shrink-0">
-                                                        <div className="text-xs color-hint">{c('collider_2025: Label')
-                                                            .t`Context`}</div>
-                                                        <div className="text-monospace text-bold">
-                                                            {m.contextWindow}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </section>
+                                        <ApiModelsCatalogSection
+                                            status={apiModelsState.status}
+                                            models={apiModelsState.models}
+                                            onRetry={() => setApiModelsReload((value) => value + 1)}
+                                        />
+
+                                        <div className="border-top border-weak mb-10" />
 
                                         {spec.endpointGroups.map((group) => (
                                             <div key={group.id}>
                                                 <div className="flex items-center gap-3 mt-8 mb-5">
                                                     <h2 className="text-bold text-xl m-0">{groupTitle(group.id)}</h2>
-                                                    <div className="api-docs-page-group-divider-line" />
+                                                    <div className="api-docs-page-group-divider-line flex-1" />
                                                 </div>
                                                 {group.endpoints.map((ep) => (
                                                     <section
@@ -605,13 +700,73 @@ export const ApiDocsPage = () => {
                         </div>
                     )}
 
+                    {docsTab === 'usage' && (
+                        <div className="api-docs-page-body-panel w-full min-w-0">
+                            {!canViewApiUsage && (
+                                <>
+                                    <h1 className="text-bold text-2xl mt-0 mb-2">
+                                        {c('collider_2025: Title').t`API overview`}
+                                    </h1>
+                                    <p className="color-weak mt-0 mb-6" style={{ lineHeight: 1.6 }}>
+                                        {isOrgMember
+                                            ? c('collider_2025: Info')
+                                                  .t`Monitor your API usage and organization balance status.`
+                                            : c('collider_2025: Info')
+                                                  .t`Monitor your balance, usage, spending controls, and access.`}
+                                    </p>
+                                </>
+                            )}
+                            {isGuest ? (
+                                <div className="flex flex-column gap-4 items-start rounded-lg border border-weak p-6 bg-weak">
+                                    <p className="m-0 color-weak">
+                                        {c('collider_2025: Info')
+                                            .t`Sign in to view API usage and balance for ${LUMO_SHORT_APP_NAME}.`}
+                                    </p>
+                                    <SignInButton color="norm" shape="solid" />
+                                </div>
+                            ) : isLumoPlanLoading ? (
+                                <p className="m-0 color-weak">{c('collider_2025: Info').t`Loading…`}</p>
+                            ) : apiAccessDenied ? (
+                                <ApiAccessDeniedNotice />
+                            ) : canViewApiUsage ? (
+                                <ApiUsagePanel />
+                            ) : canShowTalkToAdminLumoUpsell && !hasLumoPlus ? (
+                                <div className="rounded-lg border border-weak p-6 bg-weak">
+                                    <p className="m-0 color-weak">
+                                        {c('collider_2025: Info')
+                                            .t`API usage is available with ${LUMO_SHORT_APP_NAME}+. Ask your organization administrator to assign a ${LUMO_SHORT_APP_NAME} seat to your account.`}
+                                    </p>
+                                </div>
+                            ) : !hasLumoPlus ? (
+                                <div
+                                    className="flex flex-column gap-4 items-start rounded-lg border border-weak p-6 bg-weak"
+                                    style={{ maxWidth: '36rem' }}
+                                >
+                                    <p className="m-0 color-weak">
+                                        {c('collider_2025: Info')
+                                            .t`API usage and balance are available for ${LUMO_SHORT_APP_NAME}+ subscribers.`}
+                                    </p>
+                                    {lumoPlusUpsellConfig ? (
+                                        <GetLumoPlusButton
+                                            path={lumoPlusUpsellConfig.path}
+                                            onClick={lumoPlusUpsellConfig.onUpgrade}
+                                            className={lumoPlusUpsellConfig.className}
+                                        />
+                                    ) : null}
+                                </div>
+                            ) : (
+                                <div className="rounded-lg border border-weak p-6 bg-weak">
+                                    <p className="m-0 color-weak">
+                                        {c('collider_2025: Info')
+                                            .t`API usage is not available for your account at the moment.`}
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+                    )}
+
                     {docsTab === 'keys' && (
-                        <div className="api-docs-page-body-panel">
-                            <h1 className="text-bold text-2xl mt-0 mb-2">{c('collider_2025: Title').t`Manage keys`}</h1>
-                            <p className="color-weak mt-0 mb-6" style={{ lineHeight: 1.6 }}>
-                                {c('collider_2025: Info')
-                                    .t`Create and revoke API keys for programmatic access. Keys are shown only once when created.`}
-                            </p>
+                        <div className="api-docs-page-body-panel w-full min-w-0">
                             {isGuest ? (
                                 <div className="flex flex-column gap-4 items-start rounded-lg border border-weak p-6 bg-weak">
                                     <p className="m-0 color-weak">
@@ -622,13 +777,15 @@ export const ApiDocsPage = () => {
                                 </div>
                             ) : isLumoPlanLoading ? (
                                 <p className="m-0 color-weak">{c('collider_2025: Info').t`Loading…`}</p>
-                            ) : canUseApiKeys ? (
+                            ) : apiAccessDenied ? (
+                                <ApiAccessDeniedNotice />
+                            ) : canManageApiKeys ? (
                                 <ApiKeysPanel />
                             ) : canShowTalkToAdminLumoUpsell && !hasLumoPlus ? (
                                 <div className="rounded-lg border border-weak p-6 bg-weak">
                                     <p className="m-0 color-weak">
                                         {c('collider_2025: Info')
-                                            .t`The ${LUMO_SHORT_APP_NAME} API and API keys are included with ${LUMO_SHORT_APP_NAME}+. Ask your organization administrator to assign a ${LUMO_SHORT_APP_NAME} seat to your account.`}
+                                            .t`API keys are included with ${LUMO_SHORT_APP_NAME}+. Ask your organization administrator to assign a ${LUMO_SHORT_APP_NAME} seat to your account.`}
                                     </p>
                                 </div>
                             ) : !hasLumoPlus ? (
@@ -638,7 +795,7 @@ export const ApiDocsPage = () => {
                                 >
                                     <p className="m-0 color-weak">
                                         {c('collider_2025: Info')
-                                            .t`The ${LUMO_SHORT_APP_NAME} API is available for ${LUMO_SHORT_APP_NAME}+ subscribers. Upgrade to create API keys and use the API programmatically.`}
+                                            .t`Upgrade to ${LUMO_SHORT_APP_NAME}+ to create API keys and use the API programmatically.`}
                                     </p>
                                     {lumoPlusUpsellConfig ? (
                                         <GetLumoPlusButton
@@ -660,7 +817,7 @@ export const ApiDocsPage = () => {
                     )}
 
                     {docsTab === 'workflow' && (
-                        <div className="api-docs-page-body-panel">
+                        <div className="api-docs-page-body-panel w-full min-w-0">
                             <WorkflowCodegenPanel isGuest={isGuest} />
                         </div>
                     )}

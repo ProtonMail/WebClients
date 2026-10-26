@@ -1,0 +1,169 @@
+.api-docs-model-catalog-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+	gap: 0 1rem;
+	align-items: stretch;
+}
+
+/*
+ * Each card spans three shared rows (header / pricing / footer) via subgrid, so
+ * descriptions, price bands and footers line up across cards in the same row.
+ */
+.api-docs-model-catalog-card {
+	display: grid;
+	grid-row: span 3;
+	grid-template-rows: subgrid;
+	row-gap: 0;
+	margin-block-end: 1rem;
+	border: 1px solid var(--border-norm);
+	border-radius: 0.75rem;
+	background: var(--background-norm);
+	overflow: hidden;
+
+	@supports not (grid-template-rows: subgrid) {
+		grid-template-rows: auto 1fr auto;
+		grid-row: auto;
+
+		.api-docs-model-catalog-description {
+			min-block-size: 3em;
+		}
+	}
+}
+
+.api-docs-model-catalog-header {
+	padding-block: 1.15rem 0.9rem;
+	padding-inline: 1.35rem;
+}
+
+.api-docs-model-catalog-name {
+	font-size: 1.125rem;
+	font-weight: bold;
+	line-height: 1.3;
+	color: var(--text-norm);
+}
+
+.api-docs-model-catalog-id {
+	font-size: 0.75rem;
+	color: var(--text-weak);
+	background: var(--background-weak);
+	padding-block: 0.12rem;
+	padding-inline: 0.4rem;
+	border-radius: var(--border-radius-sm);
+}
+
+.api-docs-model-catalog-description {
+	margin-block-start: 0.4rem !important;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	color: var(--text-weak);
+}
+
+/* Pricing band — the most prominent part of the card */
+.api-docs-model-catalog-pricing {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 0.85rem;
+	padding-block: 1.1rem;
+	padding-inline: 1.35rem;
+	background: var(--background-weak);
+	border-block: 1px solid var(--border-weak);
+}
+
+.api-docs-model-catalog-headlines {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+.api-docs-model-catalog-headline-label {
+	font-size: 0.6875rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--text-hint);
+	margin-block-end: 0.2rem;
+}
+
+.api-docs-model-catalog-headline-amount {
+	font-size: 1.75rem;
+	font-weight: bold;
+	line-height: 1.1;
+	font-variant-numeric: tabular-nums;
+	color: var(--text-norm);
+}
+
+.api-docs-model-catalog-headline-unit {
+	margin-block-start: 0.15rem;
+	font-size: 0.75rem;
+	color: var(--text-weak);
+}
+
+.api-docs-model-catalog-cached {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 0.5rem;
+	padding-block-start: 0.75rem;
+	border-block-start: 1px dashed var(--border-norm);
+	font-size: 0.8125rem;
+	color: var(--text-weak);
+}
+
+.api-docs-model-catalog-cached-amount {
+	font-weight: 600;
+	color: var(--text-norm);
+	font-variant-numeric: tabular-nums;
+}
+
+.api-docs-model-catalog-cached-unit {
+	font-weight: 500;
+	color: var(--text-weak);
+}
+
+.api-docs-model-catalog-no-pricing {
+	font-size: 0.875rem;
+	color: var(--text-hint);
+}
+
+.api-docs-model-catalog-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+	padding-block: 0.85rem;
+	padding-inline: 1.35rem;
+}
+
+.api-docs-model-catalog-capabilities {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+}
+
+.api-docs-model-catalog-capability {
+	font-size: 0.6875rem;
+	font-weight: 600;
+	padding-block: 0.2rem;
+	padding-inline: 0.45rem;
+	border-radius: var(--border-radius-sm);
+	background: var(--interaction-norm-minor-2);
+	color: var(--interaction-norm);
+}
+
+.api-docs-model-catalog-context {
+	display: flex;
+	align-items: baseline;
+	gap: 0.4rem;
+	font-size: 0.8125rem;
+}
+
+.api-docs-model-catalog-context-label {
+	color: var(--text-hint);
+}
+
+.api-docs-model-catalog-context-value {
+	font-weight: bold;
+	color: var(--text-norm);
+}

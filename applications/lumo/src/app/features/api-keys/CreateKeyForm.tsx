@@ -85,7 +85,7 @@ export const CreateKeyForm = ({
         <div className="api-keys-form-card rounded-lg">
             <h4 className="api-keys-form-title m-0 mb-4">{c('collider_2025: Title').t`Create new API key`}</h4>
 
-            <div className="api-keys-form-fields">
+            <div className="api-keys-form-fields items-start">
                 <InputFieldTwo
                     id="api-key-name"
                     label={c('Label').t`Key name`}

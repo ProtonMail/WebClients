@@ -18,7 +18,11 @@ const StatusBadge = ({ status }: { status: TokenStatus }) => {
         expiring: c('collider_2025: Status').t`Expiring soon`,
         expired: c('collider_2025: Status').t`Expired`,
     };
-    return <span className={`api-keys-status api-keys-status--${status}`}>{labels[status]}</span>;
+    return (
+        <span className={`api-keys-status api-keys-status--${status} inline-flex items-center gap-1 shrink-0`}>
+            {labels[status]}
+        </span>
+    );
 };
 
 export const ApiKeyCard = ({
@@ -46,11 +50,11 @@ export const ApiKeyCard = ({
     const toggleExpanded = () => setExpanded((v) => !v);
 
     return (
-        <div className={clsx('api-keys-card-wrap', expanded && 'api-keys-card-wrap--expanded')}>
+        <div className={clsx('api-keys-card-wrap flex flex-column', expanded && 'api-keys-card-wrap--expanded')}>
             {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role*/}
             <div
                 className={clsx(
-                    'api-keys-card',
+                    'api-keys-card flex flex-nowrap items-center w-full text-left',
                     status === 'expired' && 'api-keys-card--expired',
                     expanded && 'api-keys-card--open'
                 )}
