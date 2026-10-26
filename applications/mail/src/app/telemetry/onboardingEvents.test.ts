@@ -1,13 +1,14 @@
 import { renderHook } from '@testing-library/react';
 
-import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
+import { FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { tracker } from '@proton/telemetry-tracker/tracker';
 
 import { ONBOARDING_STEPS, useOnboardingTracking } from './onboardingEvents';
 
-jest.mock('@proton/account/allSubscriptions/hooks');
+jest.mock('@proton/account/subscription/hooks');
 
 jest.mock('@proton/account/welcomeFlags');
 
@@ -31,7 +32,7 @@ describe('onboarding flow dismissal', () => {
         jest.clearAllMocks();
         sessionStorage.clear();
         setReplay(false);
-        jest.mocked(useAllSubscriptions).mockReturnValue([[], false]);
+        jest.mocked(useSubscription).mockReturnValue([FREE_SUBSCRIPTION, false]);
     });
 
     it('sends flow_dismissed with the last displayed step', () => {
