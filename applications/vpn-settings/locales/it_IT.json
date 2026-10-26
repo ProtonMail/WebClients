@@ -1485,6 +1485,15 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "About ${ name }": [
+        "Informazioni su ${ name }"
+      ],
+      "Add ${ name }": [
+        "Aggiungi ${ name }"
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
       ]
     },
     "action": {
@@ -1867,6 +1876,12 @@
       ],
       "You have reached the trial limit.": [
         "Hai raggiunto il limite della prova."
+      ],
+      "Active until ${ formattedPeriodEndDate }": [
+        "Valido fino al ${ formattedPeriodEndDate }"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Se annulli l'abbonamento, il tuo periodo di prova gratuito non verrà convertito in un abbonamento a pagamento, ma potrai comunque usufruire dei vantaggi del piano fino alla fine del periodo di prova."
       ]
     },
     "b2b_trials_Action": {
@@ -3915,6 +3930,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Il tuo piano supporta un totale di ${ MAX_SYNC_PAID_USER } indirizzi Gmail",
         "Il tuo piano supporta un totale di ${ MAX_SYNC_PAID_USER } indirizzi Gmail"
+      ],
+      "Bring over your files and folders from another provider.": [
+        "Trasferisci i tuoi file e le tue cartelle da un altro provider."
       ]
     },
     "description": {
@@ -4780,6 +4798,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "I tuoi contatti di recupero dovrebbero essere persone che conosci e che puoi contattare facilmente."
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Non sei ancora stato indicato come referente in caso di recupero per nessuno."
+      ],
+      "You have not been designated as an emergency contact for anyone yet.": [
+        "Non sei ancora stato designato come contatto di emergenza."
       ]
     },
     "Empty group name": {
@@ -5760,6 +5784,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Il tuo account sta usando ${ usedSpace } di spazio di archiviazione, mentre lo spazio a tua disposizione è inferiore: ${ inviteSpace }. Elimina dei dati o chiedi all'amministratore del piano di aumentarti lo spazio di archiviazione."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ti invitiamo a collegare il tuo account ${ BRAND_NAME } a questo gruppo familiare e a usufruire di tutte le sue funzionalità premium."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6085,6 +6112,12 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "La tua chiave di autenticazione a due fattori è pronta all'uso."
+      ],
+      "Still waiting?": [
+        "Stai ancora aspettando?"
+      ],
+      "Touch your security key to continue.": [
+        "Tocca la tua chiave di sicurezza per continuare."
       ]
     },
     "fido2: Label": {
@@ -9681,6 +9714,21 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per evitare di perdere l'accesso. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per mantenere l'abbonamento. ${ learnMoreLink }"
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Consenti alla tua organizzazione di utilizzare l'API di ${ LUMO_APP_NAME }"
+      ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "Il ${ formattedPeriodEndDate } terminerà il periodo di prova gratuito e avrà inizio il tuo abbonamento a pagamento."
+      ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quando l'accesso è limitato, per effettuare l'accesso è possibile utilizzare solo il tuo indirizzo e-mail ${ primaryEmailElement }. Gli altri tuoi indirizzi non possono essere associati al tuo account, anche se qualcuno li conosce."
       ]
     },
     "info": {
@@ -10864,6 +10912,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Restrict sign-in to email address": [
+        "Limita l'accesso all'indirizzo e-mail"
       ]
     },
     "label": {
@@ -12358,6 +12409,9 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } che termina con ${ Last4 }"
       ]
     },
     "new_plans: Info": {
@@ -13046,6 +13100,30 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Il tuo abbonamento completo a ${ planTitle } inizia il ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Aggiungi un metodo di pagamento** per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puoi disdire in qualsiasi momento prima di allora.** Potrai utilizzare ${ planTitle } gratuitamente fino al termine del periodo di prova."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Se decidi di continuare dopo il periodo di prova,** puoi annullare l'abbonamento entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Una volta che l'abbonamento completo avrà inizio...** Potrai comunque disdirlo entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
+      ],
+      "If you continue after your trial,": [
+        "Se decidi di continuare dopo il periodo di prova,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "È possibile recedere dal contratto entro 30 giorni e ottenere un rimborso proporzionale."
       ]
     },
     "Option": {
@@ -13815,6 +13893,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Gli account Born Private non possono essere acquistati se si dispone di un abbonamento attivo."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "L'iniziativa “Born Private” richiede una donazione."
+      ],
+      "You already own a Born Private account.": [
+        "Hai già un account Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Il tuo account è troppo vecchio per partecipare all'iniziativa Born Private."
       ]
     },
     "Payments.Error": {
@@ -13908,6 +13998,12 @@
     "Payments.Saved payment method details": {
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - carta che termina con ${ Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carta che termina con ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bonifico bancario - ${ iban }"
       ]
     },
     "Payments.Sepa": {
@@ -15178,6 +15274,27 @@
       ],
       "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Gli utenti impostati come privati devono accettare l'invito per completare la configurazione. Invieremo loro un invito una volta che avrai approvato."
+      ],
+      "${ cleanUpCount } clean up action required.": [
+        "${ cleanUpCount } operazione di pulizia richiesta.",
+        "${ cleanUpCount } operazioni di pulizia richieste."
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "Le autorizzazioni di ${ cleanUpCount } utente sono state modificate.",
+        "Le autorizzazioni di ${ cleanUpCount } utente sono state modificate."
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "${ numberOfCleanUps } operazione di pulizia necessaria",
+        "${ numberOfCleanUps } operazioni di pulizia necessarie"
+      ],
+      "Approve permission changes for your organization": [
+        "Approva le modifiche alle autorizzazioni per la tua organizzazione"
+      ],
+      "Final approval needed to remove organization key access.": [
+        "È necessaria l'approvazione definitiva per rimuovere l'accesso con chiave dell'organizzazione."
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "È necessaria l'approvazione definitiva per revocare le chiavi dell'organizzazione."
       ]
     },
     "scim: Action": {
@@ -16303,6 +16420,15 @@
       ],
       "Verify ${ value }": [
         "Verifica ${ value }"
+      ],
+      "failed": [
+        "fallito"
+      ],
+      "key removal scheduled": [
+        "rimozione della chiave in programma"
+      ],
+      "remove organization key": [
+        "rimuovere la chiave dell'organizzazione"
       ]
     },
     "Storage": {
@@ -18778,6 +18904,9 @@
       ],
       "Your subscriptions": [
         "I tuoi abbonamenti"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "${ LUMO_APP_NAME } API"
       ]
     },
     "Title for payment methods table": {
@@ -19037,6 +19166,9 @@
       ],
       "Your DKIM signing is working.": [
         "La tua firma DKIM sta funzionando."
+      ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Gli amministratori possono gestire gli account degli utenti e assegnare privilegi di amministratore ad altri utenti."
       ]
     },
     "tooltip": {
@@ -19453,6 +19585,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Questo utente otterrà i diritti di amministratore al prossimo accesso."
       ]
     },
     "Users table: badge": {
@@ -19778,6 +19913,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Dopo la verifica, non rimuovere questo record TXT in quanto è necessario per confermare che tu continui a possedere il dominio."
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modifica dell'indirizzo di fatturazione potrebbe influire sulle imposte relative alle fatture future."
       ]
     }
   }

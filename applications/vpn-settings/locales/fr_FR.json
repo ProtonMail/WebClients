@@ -1500,6 +1500,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "About ${ name }": [
+        "À propos de ${ name }"
+      ],
+      "Add ${ name }": [
+        "Ajouter ${ name }"
       ]
     },
     "action": {
@@ -9766,6 +9772,9 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Lorsque la connexion est restreinte, seule votre adresse e-mail ${ primaryEmailElement } peut être utilisée pour vous connecter. Vos autres adresses ne peuvent pas être associées à votre compte, même si quelqu'un les connaît."
       ]
     },
     "info": {
@@ -10955,6 +10964,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Restrict sign-in to email address": [
+        "Restreindre la connexion à l'adresse e-mail"
       ]
     },
     "label": {

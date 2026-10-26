@@ -1620,6 +1620,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "About ${ name }": [
+        "Acerca de ${ name }"
+      ],
+      "Add ${ name }": [
+        "Añadir ${ name }"
       ]
     },
     "action": {
@@ -4109,6 +4115,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Su plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail",
         "Su plan soporta un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail"
+      ],
+      "Bring over your files and folders from another provider.": [
+        "Traiga sus archivos y carpetas de cualquier otro proveedor."
       ]
     },
     "description": {
@@ -9989,6 +9998,12 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Permita a su organización usar la API de ${ LUMO_APP_NAME }"
+      ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Cuando el inicio de sesión está restringido, solo puede usar su dirección de correo ${ primaryEmailElement } para iniciar sesión. Sus otras direcciones no se pueden vincular a tSu cuenta, incluso si alguien las conoce."
       ]
     },
     "info": {
@@ -11187,6 +11202,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Restrict sign-in to email address": [
+        "Restringir el inicio de sesión a la dirección de correo"
       ]
     },
     "label": {
@@ -14230,6 +14248,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "No se pueden comprar cuentas Born Private con una suscripción activa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requiere de una donación."
+      ],
+      "You already own a Born Private account.": [
+        "Ya posee una cuenta Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Su cuenta es demasiado antigua para la iniciativa Born Private."
       ]
     },
     "Payments.Error": {
@@ -19263,6 +19293,9 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "API de ${ LUMO_APP_NAME }"
       ]
     },
     "Title for payment methods table": {

@@ -1620,6 +1620,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Tilføj ${ name }"
       ]
     },
     "action": {
@@ -9989,6 +9995,9 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Kun din e-mail ${ primaryEmailElement } kan bruges til logge ind når login er begrænset. Dine andre adresser kan ikke spores tilbage til din konto, selv hvis nogen kender dem."
       ]
     },
     "info": {
@@ -11187,6 +11196,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Restrict sign-in to email address": [
+        "Begræns login til e-mailadresse"
       ]
     },
     "label": {

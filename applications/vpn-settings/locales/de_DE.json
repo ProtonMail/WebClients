@@ -1620,6 +1620,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "About ${ name }": [
+        "Über ${ name }"
+      ],
+      "Add ${ name }": [
+        "${ name } hinzufügen"
       ]
     },
     "action": {
@@ -9992,6 +9998,9 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, kann nur deine E-Mail-Adresse ${ primaryEmailElement } zur Anmeldung verwendet werden. Deine weiteren E-Mail-Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn jemand sie kennen sollte."
       ]
     },
     "info": {
@@ -11190,6 +11199,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Restrict sign-in to email address": [
+        "Anmeldung auf E-Mail-Adresse beschränken"
       ]
     },
     "label": {
