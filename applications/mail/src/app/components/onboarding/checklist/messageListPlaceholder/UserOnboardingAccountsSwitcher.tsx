@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -15,6 +17,8 @@ import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import checklistAccountsSwitcherImg from '@proton/styles/assets/img/illustrations/checklist-accounts-switcher.svg';
 
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import { CHECKLIST_ACTIONS, CHECKLIST_REDUCE_TRIGGERS, CHECKLIST_STEPS } from '../../../../telemetry/checklistEvents';
+import { useChecklistTracking } from '../../../../telemetry/useChecklistTracking';
 import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import { ONLINE_SERVICES } from '../constants';
 import UpdateMailAddressModal from './UpdateMailAddressModal';
@@ -25,14 +29,21 @@ const UserOnboardingAccountsSwitcher = () => {
     const updateMailAddressModal = useModalStateObject();
     const { createNotification } = useNotifications();
     const { changeChecklistDisplay, canDisplayChecklist } = useGetStartedChecklist();
+    const tracking = useChecklistTracking();
     const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
+
+    useEffect(() => {
+        tracking.trackStepLoaded(CHECKLIST_STEPS.accountsScreen);
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- the tracking functions are recreated on every render
+    }, []);
 
     if (!canDisplayChecklist) {
         return null;
     }
 
     const handleChangeChecklistDisplay = () => {
-        changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
+        tracking.trackStepInteracted(CHECKLIST_STEPS.accountsScreen, CHECKLIST_ACTIONS.skip);
+        changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED, CHECKLIST_REDUCE_TRIGGERS.user);
         void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.finish_change_login, {});
     };
 
@@ -62,6 +73,10 @@ const UserOnboardingAccountsSwitcher = () => {
                                 className="bg-transparent color-weak inline-flex items-center flex-nowrap"
                                 onClick={() => {
                                     textToClipboard(defaultEmailAddress);
+                                    tracking.trackStepInteracted(
+                                        CHECKLIST_STEPS.accountsScreen,
+                                        CHECKLIST_ACTIONS.copyAddress
+                                    );
                                     createNotification({
                                         text: c('Info').t`Email copied to clipboard`,
                                     });
@@ -85,6 +100,7 @@ const UserOnboardingAccountsSwitcher = () => {
                                 rel="noopener noreferrer"
                                 target="_blank"
                                 onClick={() => {
+                                    tracking.trackServiceSelected(service.key);
                                     void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.change_login, {
                                         service: service.key,
                                     });
