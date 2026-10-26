@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import type { Currency } from '@proton/payments/core/interface';
 import { CryptoProxy } from '@protontech/crypto';
 import type { PublicKeyReference } from '@protontech/crypto';
 
@@ -47,10 +48,17 @@ export const formatTokenCount = (n: number): string => {
     return String(n);
 };
 
-export const formatAvgTokensPerCall = (n: number): string => {
-    if (!Number.isFinite(n) || n <= 0) return '—';
-    if (n >= 100) return formatTokenCount(Math.round(n));
-    return n.toFixed(1);
+/** Formats an amount in major currency units (e.g. 12.5 → "CHF 12.50"). */
+export const formatApiCurrency = (value: number, currency: Currency) =>
+    new Intl.NumberFormat(undefined, { style: 'currency', currency }).format(value);
+
+/** Parses a user-entered amount; returns null for empty, non-numeric, or negative input. */
+export const parseApiAmount = (value: string): number | null => {
+    if (value.trim() === '') {
+        return null;
+    }
+    const amount = Number(value);
+    return Number.isFinite(amount) && amount >= 0 ? amount : null;
 };
 
 export const shortDayLabel = (isoDate: string) =>

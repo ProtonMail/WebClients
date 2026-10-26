@@ -33,8 +33,12 @@ export interface ListPersonalAccessTokensResponse {
 export interface PersonalAccessTokenUsageDay {
     /** ISO date string e.g. "2026-03-11" */
     Date: string;
-    /** Total LLM tokens consumed on this day */
+    /** Legacy output-token count; used when OutputTokenCount is absent. */
     TokenCount: number;
+    /** Input-token count, once supplied by the API. */
+    InputTokenCount?: number;
+    /** Explicit output-token count, once supplied by the API. */
+    OutputTokenCount?: number;
     /** Number of API calls made on this day */
     ApiCalls: number;
 }
