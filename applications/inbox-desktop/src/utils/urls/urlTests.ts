@@ -174,6 +174,19 @@ export const isHomePage = (url: string) => {
     }
 };
 
+/**
+ * The Mail composer opens Calendar with `?action=create-booking` to open the booking page creation sidebar.
+ * `isSameURL` ignores the query on home pages, so this URL has to be loaded explicitly or Calendar never sees it.
+ */
+export const isCalendarCreateBookingURL = (urlString: string) => {
+    try {
+        const url = new URL(urlString);
+        return getAppURL().calendar === url.origin && url.searchParams.get("action") === "create-booking";
+    } catch (error) {
+        return false;
+    }
+};
+
 export const isSameURL = (urlA: string, urlB: string) => {
     if (urlA === urlB) {
         return true;

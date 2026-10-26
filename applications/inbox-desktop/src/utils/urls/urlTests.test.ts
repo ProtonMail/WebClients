@@ -1,4 +1,4 @@
-import { trimLocalID } from "./urlTests";
+import { isCalendarCreateBookingURL, isSameURL, trimLocalID } from "./urlTests";
 
 jest.mock("../config", () => {});
 
@@ -23,6 +23,32 @@ describe("urlTests", () => {
             expect(trimLocalID("https://example.local/u/123/")).toBe("https://example.local/");
             expect(trimLocalID("https://example.local/u/456/potato")).toBe("https://example.local/potato");
             expect(trimLocalID("https://example.local/u/7/tomato/")).toBe("https://example.local/tomato/");
+        });
+    });
+
+    describe("isCalendarCreateBookingURL", () => {
+        it("should match the Calendar create booking URL", () => {
+            expect(isCalendarCreateBookingURL("https://calendar.proton.me/u/0/?action=create-booking")).toBe(true);
+            expect(isCalendarCreateBookingURL("https://calendar.proton.me/u/3?action=create-booking")).toBe(true);
+        });
+
+        it("should not match other Calendar URLs", () => {
+            expect(isCalendarCreateBookingURL("https://calendar.proton.me/u/0/")).toBe(false);
+            expect(isCalendarCreateBookingURL("https://calendar.proton.me/u/0/?action=other")).toBe(false);
+        });
+
+        it("should not match the action on other apps", () => {
+            expect(isCalendarCreateBookingURL("https://mail.proton.me/u/0/?action=create-booking")).toBe(false);
+        });
+
+        it("should not throw on invalid URLs", () => {
+            expect(isCalendarCreateBookingURL("not a url")).toBe(false);
+        });
+
+        it("should be treated as the same home page by isSameURL, which is why it needs its own check", () => {
+            expect(
+                isSameURL("https://calendar.proton.me/u/0/?action=create-booking", "https://calendar.proton.me/u/0/"),
+            ).toBe(true);
         });
     });
 });
