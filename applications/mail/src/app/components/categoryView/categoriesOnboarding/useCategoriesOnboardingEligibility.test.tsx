@@ -78,6 +78,7 @@ const defaultGetStartedChecklist: ReturnType<typeof useGetStartedChecklist> = {
     itemsToComplete: [],
     byoeFlowInProgress: false,
     setByoeFlowInProgress: jest.fn(),
+    checklistType: undefined,
 };
 
 const buildFeature = (code: FeatureCode, value: number): FeatureContextValue => ({
