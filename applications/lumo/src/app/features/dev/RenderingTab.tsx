@@ -9,7 +9,7 @@ import { useLumoDispatch } from '../../redux/hooks';
 import { addConversation } from '../../redux/slices/core/conversations';
 import { addSpace, newSpaceId } from '../../redux/slices/core/spaces';
 import type { Conversation, Space } from '../../types';
-import { ConversationStatus } from '../../types';
+import { ConversationStatus, SpaceType } from '../../types';
 import { TestRendererModal } from './TestRendererModal';
 
 export const RenderingTab = () => {
@@ -28,7 +28,7 @@ export const RenderingTab = () => {
             createdAt: new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString(),
             updatedAt: new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString(),
             spaceKey,
-            isProject: true,
+            spaceType: SpaceType.Project,
             projectName: 'Test Space (Conversation Limit)',
             projectIcon: 'test',
         };

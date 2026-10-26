@@ -1,20 +1,19 @@
 import isNil from 'lodash/isNil';
 
-import type { SerializedAttachment } from '../types';
-import {
-    type Base64,
-    type EncryptedData,
-    type MasterKey,
-    type MessageId,
-    Role,
-    type SerializedConversation,
-    type SerializedMessage,
-    type SerializedSpace,
-    type SpaceId,
-    type Status,
-    isOldEncryptedData,
-    isRemoteId,
+import type {
+    Base64,
+    EncryptedData,
+    MasterKey,
+    MessageId,
+    SerializedAttachment,
+    SerializedConversation,
+    SerializedMessage,
+    SerializedSpace,
+    SpaceId,
+    SpaceType,
+    Status,
 } from '../types';
+import { Role, isOldEncryptedData, isRemoteId, isSpaceType } from '../types';
 import { mapify } from '../util/collections';
 import { topoSortMessagesFromApi } from '../util/sorting';
 import type {
@@ -73,7 +72,19 @@ const validateEncryptedField = (encrypted: unknown): EncryptedData => {
 
 export function convertSpaceFromApi(input: unknown): GetSpaceRemote {
     if (typeof input !== 'object' || input === null) throw new Error('Invalid input: expected object');
-    const { ID, CreateTime, UpdateTime, DeleteTime, Encrypted, SpaceKey, SpaceTag, Conversations, Assets } = input as SpaceFromApi;
+    const {
+        ID,
+        SpaceType: spaceType,
+        CreateTime,
+        UpdateTime,
+        DeleteTime,
+        Encrypted,
+        SpaceKey,
+        SpaceTag,
+        Conversations,
+        Assets,
+    } = input as SpaceFromApi;
+    if (spaceType != null && !isSpaceType(spaceType)) throw new Error('Invalid space SpaceType');
     if (!isRemoteId(ID)) throw new Error('Invalid ID: expected non-empty string');
     if (!isValidDateString(CreateTime)) throw new Error('Invalid CreateTime: expected Date');
     // UpdateTime is optional for backward compatibility - fallback to CreateTime if not present
@@ -91,6 +102,7 @@ export function convertSpaceFromApi(input: unknown): GetSpaceRemote {
     const space = {
         remoteId: ID as SpaceId,
         id: SpaceTag as LocalId,
+        spaceType: spaceType as SpaceType,
         createdAt: new Date(CreateTime as string).toISOString(),
         updatedAt: new Date((UpdateTime || CreateTime) as string).toISOString(), // Fallback to CreateTime for backward compatibility
         wrappedSpaceKey: SpaceKey as Base64,
@@ -136,7 +148,14 @@ export function convertSpacesFromApi(input: unknown): ListSpacesRemote {
         deletedAssets: {},
     };
     return input.reduce((acc: ListSpacesRemote, item: unknown): ListSpacesRemote => {
-        const { space, conversations, deletedConversations, assets, deletedAssets } = convertSpaceFromApi(item);
+        let converted: GetSpaceRemote;
+        try {
+            converted = convertSpaceFromApi(item);
+        } catch (error) {
+            console.warn('Skipping invalid space from API list:', error);
+            return acc;
+        }
+        const { space, conversations, deletedConversations, assets, deletedAssets } = converted;
         const conversationMap = mapify(conversations);
         const deletedConversationMap = mapify(deletedConversations);
         const assetMap = mapify(assets);
@@ -394,7 +413,7 @@ export function convertNewConversationToApi(
 }
 
 export function convertNewSpaceToApi(space: SerializedSpace): NewSpaceToApi {
-    const { id, wrappedSpaceKey, encrypted } = space;
+    const { id, spaceType, wrappedSpaceKey, encrypted } = space;
     if (!wrappedSpaceKey) {
         throw new Error("this space has no space key, which means it was deleted, so we don't push it");
     }
@@ -402,6 +421,7 @@ export function convertNewSpaceToApi(space: SerializedSpace): NewSpaceToApi {
     return {
         SpaceKey: wrappedSpaceKey,
         SpaceTag: id,
+        SpaceType: spaceType,
         Encrypted: encryptedConcat,
     };
 }

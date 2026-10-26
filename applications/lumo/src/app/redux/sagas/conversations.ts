@@ -18,17 +18,15 @@ import type {
     ResourceType,
 } from '../../remote/types';
 import { deserializeConversation, serializeConversation } from '../../serialization';
-import {
-    type Conversation,
-    type ConversationId,
-    type DeletedConversation,
-    type SerializedConversation,
-    type Space,
-    type SpaceId,
-    cleanConversation,
-    cleanSerializedConversation,
-    getSpaceDek,
+import type {
+    Conversation,
+    ConversationId,
+    DeletedConversation,
+    SerializedConversation,
+    Space,
+    SpaceId,
 } from '../../types';
+import { SpaceType, cleanConversation, cleanSerializedConversation, getSpaceDek } from '../../types';
 import { mergeConversationFromRemote } from '../../util/conversationTitle';
 import {
     selectConversationById,
@@ -520,7 +518,8 @@ export function* expireConversations({
         const conversationsInSpace: Record<ConversationId, Conversation> = yield select(
             selectConversationsBySpaceId(conversation.spaceId)
         );
-        const deleteConversationOnly = space?.isProject === true || Object.keys(conversationsInSpace).length > 1;
+        const deleteConversationOnly =
+            space?.spaceType === SpaceType.Project || Object.keys(conversationsInSpace).length > 1;
 
         if (deleteConversationOnly) {
             yield put(locallyDeleteConversationFromLocalRequest(conversation.id));

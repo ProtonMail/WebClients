@@ -9,6 +9,7 @@ import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectProvisionalAttachments, selectSpaceByIdOptional } from '../../../redux/selectors';
 import { newAttachmentId, upsertAttachment } from '../../../redux/slices/core/attachments';
 import type { Message, ProjectSpace, SpaceId } from '../../../types';
+import { SpaceType } from '../../../types';
 import { getMimeTypeFromExtension, getProcessingCategory } from '../../../util/filetypes';
 import { buildAlreadyMentionedNames, buildAttachedNames, filterFiles } from './fileMentionHelpers';
 import type { FileItem } from './fileMentionHelpers';
@@ -97,7 +98,7 @@ export const useFileMentionAutocomplete = (
 
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const space = useLumoSelector(selectSpaceByIdOptional(spaceId));
-    const spaceProject = space?.isProject ? (space satisfies ProjectSpace) : undefined;
+    const spaceProject = space?.spaceType === SpaceType.Project ? (space satisfies ProjectSpace) : undefined;
     const linkedDriveFolder = spaceProject?.linkedDriveFolder;
     const { driveIndexRevision } = useDriveIndexing();
 

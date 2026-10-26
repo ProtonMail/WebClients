@@ -19,6 +19,7 @@ import {
     selectStarredConversationsSorted,
 } from '../../../redux/selectors';
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
+import { SpaceType } from '../../../types';
 import { ChatHistoryGroupByMenu } from '../../sidepanel/ChatHistoryGroupByMenu';
 import RecentChatsList, { ConversationListItem } from '../../sidepanel/RecentChatsList';
 import { applyRetentionPolicy } from '../../sidepanel/helpers';
@@ -72,7 +73,7 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
             ? conversationRows
             : conversationRows.filter((row) => {
                   const space = row.spaceId ? spaceMap[row.spaceId] : undefined;
-                  return space?.isProject !== true;
+                  return space?.spaceType !== SpaceType.Project;
               });
 
         const retainedRows = applyRetentionPolicy(projectFilteredRows, hasLumoPlus);

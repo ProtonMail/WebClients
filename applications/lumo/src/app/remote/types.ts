@@ -11,6 +11,7 @@ import type {
     SerializedSpace,
     Shallow,
     SpaceId,
+    SpaceType,
 } from '../types';
 
 // Type alias for backwards compatibility (assets are now attachments)
@@ -30,6 +31,7 @@ export type MessageFromApi = {
 
 // prettier-ignore
 export type SpaceFromApi = {
+    SpaceType?: unknown;     // Expecting SpaceType; absent on legacy records
     ID?: any;                // Expecting type SpaceId
     CreateTime?: any;        // Expecting a serialized Date
     UpdateTime?: any;        // Expecting a serialized Date
@@ -73,8 +75,7 @@ export type MasterKeyFromApi = {
     MasterKey?: unknown;     // Expecting string (PGP armor)
 };
 
-const ResourceTypes = ['space', 'conversation', 'message', 'attachment', 'asset'] as const;
-export type ResourceType = (typeof ResourceTypes)[number];
+export type ResourceType = 'space' | 'conversation' | 'message' | 'attachment' | 'asset';
 
 export type LocalId = string;
 export type RemoteId = string;
@@ -89,10 +90,12 @@ export type ConversationTag = LocalId;
 type MessageTag = LocalId;
 type AssetTag = LocalId;
 
-type RemoteSpaceBase = SerializedSpace & {
+type RemoteSpaceBase = Omit<SerializedSpace, 'spaceType'> & {
+    /** Legacy records may not have a public space type */
+    spaceType?: SpaceType;
     remoteId: RemoteId;
 };
-export type RemoteSpace = RemoteSpaceBase & NonDeleted;
+export type RemoteSpace = RemoteSpaceBase & NonDeleted & { wrappedSpaceKey: Base64 };
 export type RemoteDeletedSpace = Omit<RemoteSpaceBase, 'encrypted'> & Deleted;
 type RemoteConversationBase = SerializedConversation & {
     remoteId: RemoteId;
@@ -150,6 +153,7 @@ export type MessageToApi = {
 
 export type SpaceToApi = {
     ID: RemoteId;
+    SpaceType: SpaceType;
     Encrypted?: Base64;
     SpaceKey: Base64;
     SpaceTag: SpaceTag;

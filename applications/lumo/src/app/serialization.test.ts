@@ -1,4 +1,4 @@
-import { base64ToMasterKey } from './crypto';
+import { base64ToMasterKey, decryptString, encryptString } from './crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from './crypto/testing';
 import {
     deserializeConversation,
@@ -9,9 +9,11 @@ import {
     serializeMessage,
     serializeSpace,
 } from './serialization';
-import { type Conversation, type Message, Role, type Space, getSpaceDek } from './types';
+import type { Conversation, Message, Space } from './types';
+import { Role, SpaceType, getSpaceDek } from './types';
 
 const mockSpace: Space = {
+    spaceType: SpaceType.Default,
     id: 'SpaceId',
     createdAt: 'spaceCreationDate',
     updatedAt: 'spaceCreationDate',
@@ -44,6 +46,126 @@ describe('serialization', () => {
 
         expect(space).toEqual(mockSpace);
         expect(needsMasterKeyMigration).toBe(true);
+    });
+
+    describe('space type compatibility', () => {
+        // Frozen legacy associated data: changing a space's discriminator must not change its encryption context.
+        const ad = '{"app":"lumo","id":"SpaceId","type":"space"}';
+        const projectMetadata = {
+            projectName: 'Research',
+            projectInstructions: 'Use these files',
+            projectIcon: 'science',
+            linkedDriveFolder: { folderId: 'folder', folderName: 'Sources', folderPath: '/Sources' },
+        };
+
+        it.each([
+            [{}, { spaceType: SpaceType.Default }],
+            [{ isProject: false }, { spaceType: SpaceType.Default }],
+            [{ isProject: null }, { spaceType: SpaceType.Default }],
+            [{ isProject: 'true' }, { spaceType: SpaceType.Default }],
+            [
+                { isProject: true, ...projectMetadata },
+                { spaceType: SpaceType.Project, ...projectMetadata },
+            ],
+        ])('reads legacy encrypted payloads without rewriting them: %p', async (legacy, expected) => {
+            const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
+            const { spaceType: _spaceType, ...serialized } = await serializeSpace(mockSpace, masterKey);
+            serialized.encrypted = await encryptString(JSON.stringify(legacy), await getSpaceDek(mockSpace), ad);
+            const before = JSON.stringify(serialized);
+            const restored = await deserializeSpace(serialized, masterKey);
+            expect(restored).toEqual({ ...mockSpace, ...expected });
+            expect(restored).not.toHaveProperty('isProject');
+            expect(JSON.stringify(serialized)).toBe(before);
+            const saved = await serializeSpace(restored!, masterKey);
+            const savedPayload = JSON.parse(await decryptString(saved.encrypted!, await getSpaceDek(mockSpace), ad));
+            const { spaceType: type, ...expectedPrivate } = expected;
+            expect(saved.spaceType).toBe(type);
+            expect(savedPayload).toEqual({
+                ...expectedPrivate,
+                ...(type === SpaceType.Project && { isProject: true }),
+            });
+            expect(savedPayload).not.toHaveProperty('type');
+            expect(savedPayload).not.toHaveProperty('spaceType');
+            if (type !== SpaceType.Project) expect(savedPayload).not.toHaveProperty('isProject');
+        });
+
+        it.each([SpaceType.Default, SpaceType.Project, SpaceType.Schedule])(
+            'writes the %s discriminator publicly and keeps project metadata encrypted',
+            async (type) => {
+                const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
+                const space: Space =
+                    type === SpaceType.Project
+                        ? { ...mockSpace, spaceType: type, ...projectMetadata }
+                        : { ...mockSpace, spaceType: type };
+                const serialized = await serializeSpace(space, masterKey);
+                const payload = JSON.parse(await decryptString(serialized.encrypted!, await getSpaceDek(space), ad));
+                expect(serialized.spaceType).toBe(type);
+                expect(payload).toEqual(type === SpaceType.Project ? { ...projectMetadata, isProject: true } : {});
+                expect(payload).not.toHaveProperty('type');
+                expect(payload).not.toHaveProperty('spaceType');
+                if (type !== SpaceType.Project) expect(payload).not.toHaveProperty('isProject');
+                expect(await deserializeSpace(serialized, masterKey)).toEqual(space);
+            }
+        );
+
+        it.each([SpaceType.Default, SpaceType.Project])(
+            'preserves %s when the API response omits public SpaceType',
+            async (type) => {
+                const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
+                const space: Space =
+                    type === SpaceType.Project
+                        ? { ...mockSpace, spaceType: type, ...projectMetadata }
+                        : { ...mockSpace, spaceType: type };
+                const { spaceType: _spaceType, ...backendResponse } = await serializeSpace(space, masterKey);
+                const restored = await deserializeSpace(backendResponse, masterKey);
+                expect(restored).toEqual(space);
+                expect(restored).not.toHaveProperty('isProject');
+            }
+        );
+
+        it('prefers a public type over the legacy encrypted isProject flag', async () => {
+            const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
+            const serialized = await serializeSpace(
+                { ...mockSpace, spaceType: SpaceType.Project, ...projectMetadata },
+                masterKey
+            );
+            serialized.encrypted = await encryptString(
+                JSON.stringify({ isProject: false, ...projectMetadata }),
+                await getSpaceDek(mockSpace),
+                ad
+            );
+            expect(await deserializeSpace(serialized, masterKey)).toEqual({
+                ...mockSpace,
+                spaceType: SpaceType.Project,
+                ...projectMetadata,
+            });
+        });
+
+        it('rejects unknown future types without changing the stored ciphertext', async () => {
+            const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
+            const serialized = await serializeSpace(mockSpace, masterKey);
+            Object.assign(serialized, { spaceType: 'future-type' });
+            const before = serialized.encrypted;
+            expect(await deserializeSpace(serialized, masterKey)).toBeNull();
+            expect(serialized.encrypted).toBe(before);
+        });
+
+        it.each([null, [], 'project'])('rejects invalid encrypted space metadata: %p', async (value) => {
+            const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
+            const serialized = await serializeSpace(mockSpace, masterKey);
+            serialized.encrypted = await encryptString(JSON.stringify(value), await getSpaceDek(mockSpace), ad);
+            expect(await deserializeSpace(serialized, masterKey)).toBeNull();
+        });
+
+        it('defaults legacy spaces without encrypted private metadata to Simple', async () => {
+            const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
+            const {
+                encrypted: _encrypted,
+                spaceType: _spaceType,
+                ...serialized
+            } = await serializeSpace(mockSpace, masterKey);
+            expect(await deserializeSpace(serialized, masterKey)).toEqual(mockSpace);
+        });
     });
 
     it('conversation', async () => {

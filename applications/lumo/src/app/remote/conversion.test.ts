@@ -1,4 +1,5 @@
-import { type Base64, Role } from '../types';
+import type { Base64 } from '../types';
+import { Role, SpaceType } from '../types';
 import {
     convertAssetFromApi,
     convertAssetsFromApi,
@@ -7,6 +8,7 @@ import {
     convertMasterKeyFromApi,
     convertMessageFromApi,
     convertMessagesFromApi,
+    convertNewSpaceToApi,
     convertRoleFromApi,
     convertRoleToApi,
     convertSpaceFromApi,
@@ -71,6 +73,31 @@ describe('remote - conversion', () => {
             expect(result.deletedConversations).toEqual([]);
             expect(result.assets).toEqual([]);
             expect(result.deletedAssets).toEqual([]);
+        });
+
+        it.each([SpaceType.Default, SpaceType.Project, SpaceType.Schedule])(
+            'preserves the public %s type through API conversion',
+            (type) => {
+                const result = convertSpaceFromApi({ ...validSpaceFromApi, SpaceType: type });
+                if (result.space.deleted) throw new Error('Expected an active space');
+                expect(result.space.spaceType).toBe(type);
+                expect(convertNewSpaceToApi({ ...result.space, spaceType: type }).SpaceType).toBe(type);
+                expect(
+                    convertSpaceFromApi({ ...validSpaceFromApi, SpaceType: type, DeleteTime: nowStr }).space.spaceType
+                ).toBe(type);
+            }
+        );
+
+        it('keeps legacy records without a public type available for encrypted migration', () => {
+            const result = convertSpaceFromApi(validSpaceFromApi);
+            if (result.space.deleted) throw new Error('Expected an active space');
+            expect(result.space.spaceType).toBeUndefined();
+        });
+
+        it('rejects an unknown public type', () => {
+            expect(() => convertSpaceFromApi({ ...validSpaceFromApi, SpaceType: 'future-type' })).toThrow(
+                'Invalid space SpaceType'
+            );
         });
 
         it('handles deleted space', () => {

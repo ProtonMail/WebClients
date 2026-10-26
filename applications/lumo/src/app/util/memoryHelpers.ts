@@ -2,7 +2,7 @@ import { applyRetentionPolicy } from '../layouts/sidepanel/helpers';
 import { getMessageContent } from '../messageHelpers';
 import type { Memory, MemorySource } from '../redux/slices/lumoUserSettings';
 import type { Conversation, LocalFlags, Message, Space } from '../types';
-import { Role } from '../types';
+import { Role, SpaceType } from '../types';
 import { listify } from './collections';
 import { sortByDate } from './date';
 
@@ -102,8 +102,7 @@ export const memoriesFromContents = (contents: string[], source: MemorySource): 
     }));
 };
 
-export const sortMemoriesByDate = (memories: Memory[]) =>
-    [...memories].toSorted((a, b) => b.createdAt - a.createdAt);
+export const sortMemoriesByDate = (memories: Memory[]) => [...memories].toSorted((a, b) => b.createdAt - a.createdAt);
 
 export const isMemoryCountHigh = (memories: Memory[]) =>
     normalizeMemories(memories).length >= MEMORY_RECOMMENDED_TOTAL_COUNT;
@@ -141,7 +140,7 @@ const isGeneralConversation = (conversation: Conversation, spaces: Record<string
     if (!conversation.spaceId) {
         return true;
     }
-    return spaces[conversation.spaceId]?.isProject !== true;
+    return spaces[conversation.spaceId]?.spaceType === SpaceType.Default;
 };
 
 const getEligibleConversationIdsForMemorySampling = (
@@ -159,11 +158,7 @@ const getEligibleUserMessagesForMemorySampling = (
     spaces: Record<string, Space>,
     { hasLumoPlus = false, after }: MemorySamplingOptions = {}
 ) => {
-    const eligibleConversationIds = getEligibleConversationIdsForMemorySampling(
-        conversations,
-        spaces,
-        hasLumoPlus
-    );
+    const eligibleConversationIds = getEligibleConversationIdsForMemorySampling(conversations, spaces, hasLumoPlus);
     const afterTimestamp = after ? Date.parse(after) : undefined;
 
     return listify(messages).filter((message) => {
@@ -252,8 +247,7 @@ export const getMemoryGenerationCutoff = (
 export const canGenerateMemoriesFromChats = (sampleCount: number) => sampleCount >= MIN_SAMPLES_TO_GENERATE;
 
 /** Optimize consolidates chat-based memories only; user-written entries are never sent to the model. */
-export const canOptimizeMemories = (generatedMemoryCount: number) =>
-    generatedMemoryCount >= MEMORY_OPTIMIZE_MIN_COUNT;
+export const canOptimizeMemories = (generatedMemoryCount: number) => generatedMemoryCount >= MEMORY_OPTIMIZE_MIN_COUNT;
 
 // ---------------------------------------------------------------------------
 // Prompt builders
@@ -345,9 +339,7 @@ ${serializePromptData(samples)}
 };
 
 export const buildMemoryOptimizePrompt = (generatedMemories: Memory[]): string => {
-    const normalized = sortMemoriesByDate(
-        normalizeMemories(generatedMemories).filter(isGeneratedMemory)
-    );
+    const normalized = sortMemoriesByDate(normalizeMemories(generatedMemories).filter(isGeneratedMemory));
 
     return `You clean up and consolidate long-term memories for an AI assistant.
 
@@ -430,8 +422,7 @@ export const parseMemoryStringsResponse = (response: string, existingMemories: M
 };
 
 export type ParsedMemoryGenerationResponse =
-    | { status: 'valid'; memories: string[] }
-    | { status: 'invalid'; memories: [] };
+    { status: 'valid'; memories: string[] } | { status: 'invalid'; memories: [] };
 
 /** Keeps a valid `[]` distinct from malformed output without treating either as a persisted memory. */
 export const parseMemoryGenerationResponse = (
@@ -477,17 +468,12 @@ export const parseMemoryOptimizeResponse = (response: string): string[] => {
 // ---------------------------------------------------------------------------
 
 /** Rebuilds chat-based memories from an optimized model response; user-written entries are unchanged. */
-export const rebuildMemoriesFromOptimizedContents = (
-    contents: string[],
-    previousMemories: Memory[]
-): Memory[] => {
+export const rebuildMemoriesFromOptimizedContents = (contents: string[], previousMemories: Memory[]): Memory[] => {
     const normalized = normalizeMemories(previousMemories);
     const userMemories = normalized.filter(isUserMemory);
     const previousGenerated = normalized.filter(isGeneratedMemory);
 
-    const userContentKeys = new Set(
-        userMemories.map((memory) => normalizeMemoryContent(memory.content).toLowerCase())
-    );
+    const userContentKeys = new Set(userMemories.map((memory) => normalizeMemoryContent(memory.content).toLowerCase()));
 
     const previousGeneratedByContent = new Map(
         previousGenerated.map((memory) => [normalizeMemoryContent(memory.content).toLowerCase(), memory])

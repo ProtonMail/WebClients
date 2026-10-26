@@ -43,20 +43,16 @@ import type {
     ActionParams,
     ArtifactActionMeta,
     Attachment,
+    ConversationId,
     ErrorContext,
     ImageGenerationOptions,
+    Message,
     QuestionAnswer,
     RetryStrategy,
+    Space,
+    SpaceId,
 } from '../types';
-import {
-    type ConversationId,
-    ConversationStatus,
-    type Message,
-    Role,
-    type Space,
-    type SpaceId,
-    getSpaceDek,
-} from '../types';
+import { ConversationStatus, Role, SpaceType, getSpaceDek } from '../types';
 import {
     fillAttachmentFromSearchIndex,
     refreshAttachmentFromSearchIndex,
@@ -391,7 +387,7 @@ export const useLumoActions = ({
 
         // Get project instructions from space if this is a project conversation
         let projectInstructions: string | undefined;
-        if (space?.isProject && space?.projectInstructions) {
+        if (space?.spaceType === SpaceType.Project && space?.projectInstructions) {
             projectInstructions = space.projectInstructions;
         }
 
@@ -409,7 +405,7 @@ export const useLumoActions = ({
                     contextFilters,
                 },
                 projectContext: {
-                    isProject: !!space?.isProject,
+                    isProject: space?.spaceType === SpaceType.Project,
                     projectInstructions,
                     allAttachments,
                 },

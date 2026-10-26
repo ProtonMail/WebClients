@@ -1,4 +1,5 @@
 import type { Attachment, ProjectSpace, Space } from '../types';
+import { SpaceType } from '../types';
 import type { DriveDocument } from '../types/documents';
 
 export type Project = Space & ProjectSpace;
@@ -16,11 +17,11 @@ export function buildProjectKnowledgeSnapshots(
     const snapshots: ProjectKnowledgeSnapshot[] = [];
 
     for (const space of Object.values(spaces)) {
-        if (!space.isProject) {
+        if (space.spaceType !== SpaceType.Project) {
             continue;
         }
 
-        const project = space as Project;
+        const project = space satisfies Project;
         const uploadedAttachmentIds = new Set<string>();
 
         for (const attachment of Object.values(attachments)) {
