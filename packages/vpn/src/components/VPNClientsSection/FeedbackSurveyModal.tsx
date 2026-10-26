@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -11,6 +10,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { type MaybeFreeSubscription, getPlan } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { getFeedbackSurveyOptions } from '../../../constants/feedbackSurveyOptions';
@@ -18,6 +18,7 @@ import { RadioElements } from './RadioElements';
 
 type Props = Omit<ModalProps, 'onClose'> & {
     onClose: (discarted: boolean) => void;
+    subscription: Subscription;
 };
 
 const getSubscriptionPlan = (subscription: MaybeFreeSubscription) => {
@@ -27,12 +28,11 @@ const getSubscriptionPlan = (subscription: MaybeFreeSubscription) => {
 
 const sendFeedback = (data: Record<string, unknown>) => telemetry.sendCustomEvent('feedbackPurchaseSurvey', data);
 
-const choicesRequiringInput = ['Other', 'Podcast', 'YouTube'];
+const choicesRequiringInput = ['Other', 'Podcast', 'YouTube', 'Twitch'];
 
-export const FeedbackSurveyModal = (props: Props) => {
+export const FeedbackSurveyModal = ({ subscription, ...props }: Props) => {
     const [userChoice, setUserChoice] = useState<string | null>(null);
     const [supplementaryInputs, setSupplementaryInputs] = useState<Record<string, string>>({});
-    const [subscription] = useSubscription();
     const options = useMemo(getFeedbackSurveyOptions, []);
 
     const isSubmitDisabled = () => {

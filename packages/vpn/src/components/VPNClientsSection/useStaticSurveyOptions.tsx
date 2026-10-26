@@ -255,6 +255,62 @@ const STATIC_PODCASTS: { name: string; value: string }[] = [
         name: 'Offline with Jon Favreau',
         value: 'offline_with_jon_favreau',
     },
+    {
+        name: 'Uri Sabat',
+        value: 'uri_sabat',
+    },
+    {
+        name: 'Rompiendo el molde',
+        value: 'rompiendo_el_molde',
+    },
+    {
+        name: 'ConPdePodcast',
+        value: 'conpdepodcast',
+    },
+    {
+        name: 'Something to Wrestle with Bruce Prichard',
+        value: 'something_to_wrestle_with_bruce_prichard',
+    },
+    {
+        name: 'Kliq This: The Kevin Nash Podcast',
+        value: 'kliq_this_the_kevin_nash_podcast',
+    },
+    {
+        name: 'Dungeons and Daddies',
+        value: 'dungeons_and_daddies',
+    },
+    {
+        name: 'The Totally Football Show with James Richardson',
+        value: 'the_totally_football_show_with_james_richardson',
+    },
+    {
+        name: 'P1 with Matt and Tommy',
+        value: 'p1_with_matt_and_tommy',
+    },
+    {
+        name: 'Go Fact Yourself',
+        value: 'go_fact_yourself',
+    },
+    {
+        name: 'Jordan Jesse Go!',
+        value: 'jordan_jesse_go',
+    },
+    {
+        name: 'Secretly Incredibly Fascinating',
+        value: 'secretly_incredibly_fascinating',
+    },
+    {
+        name: 'Wonderful!',
+        value: 'wonderful',
+    },
+    {
+        name: 'Suspicious Minds: AI and the Apocalypse',
+        value: 'suspicious_minds_ai_and_the_apocalypse',
+    },
+    {
+        name: 'Bitcoin News Alerts | Daily BTC News',
+        value: 'bitcoin_news_alerts_daily_btc_news',
+    },
 ] as const;
 
 const STATIC_YOUTUBE_CHANNELS: { name: string; value: string }[] = [
@@ -326,16 +382,99 @@ const STATIC_YOUTUBE_CHANNELS: { name: string; value: string }[] = [
         name: 'Un Podcast Sobre Bitcoin',
         value: 'un_podcast_sobre_bitcoin',
     },
+    {
+        name: 'Alex El Zurdo',
+        value: 'alex_el_zurdo',
+    },
+    {
+        name: 'Un Topo por el Mundo',
+        value: 'un_topo_por_el_mundo',
+    },
+    {
+        name: 'Anujbost',
+        value: 'anujbost',
+    },
+    {
+        name: 'El Viejo Continente',
+        value: 'el_viejo_continente',
+    },
+    {
+        name: 'Matias Bottero',
+        value: 'matias_bottero',
+    },
+    {
+        name: 'Japatonic',
+        value: 'japatonic',
+    },
+    {
+        name: 'Fortune',
+        value: 'fortune',
+    },
+    {
+        name: 'Caelan Conrad',
+        value: 'caelan_conrad',
+    },
+    {
+        name: 'Mark Reicher',
+        value: 'mark_reicher',
+    },
+    {
+        name: 'House of El',
+        value: 'house_of_el',
+    },
+    {
+        name: 'Javier Ledesma',
+        value: 'javier_ledesma',
+    },
+    {
+        name: 'LESA',
+        value: 'lesa',
+    },
+    {
+        name: 'Las rutas de Juan',
+        value: 'las_rutas_de_juan',
+    },
 ] as const;
 
+const STATIC_TWITCH_CHANNELS: { name: string; value: string }[] = [
+    {
+        name: 'Esportmaniacos',
+        value: 'esportmaniacos',
+    },
+    {
+        name: 'rodenasink',
+        value: 'rodenasink',
+    },
+    {
+        name: 'Pandarina',
+        value: 'pandarina',
+    },
+    {
+        name: 'El Yuste',
+        value: 'el_yuste',
+    },
+    {
+        name: 'Nissaxter',
+        value: 'nissaxter',
+    },
+    {
+        name: 'Junior Healy',
+        value: 'junior_healy',
+    },
+];
+
 export const useStaticSurveyOptions = () => {
-    const [podcasts, youtubeChannels] = useMemo(
+    const returnOptions = ({ name, value }: { name: string; value: string }) => (
+        <Option key={value} title={name} value={value} />
+    );
+    const [podcasts, youtubeChannels, twitchChannels] = useMemo(
         () => [
-            STATIC_PODCASTS.map(({ name, value }) => <Option key={value} title={name} value={value} />),
-            STATIC_YOUTUBE_CHANNELS.map(({ name, value }) => <Option key={value} title={name} value={value} />),
+            STATIC_PODCASTS.map(returnOptions),
+            STATIC_YOUTUBE_CHANNELS.map(returnOptions),
+            STATIC_TWITCH_CHANNELS.map(returnOptions),
         ],
         []
     );
 
-    return { podcasts, youtubeChannels };
+    return { podcasts, youtubeChannels, twitchChannels };
 };

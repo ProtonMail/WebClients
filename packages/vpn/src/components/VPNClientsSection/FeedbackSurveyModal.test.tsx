@@ -2,6 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { Mock } from 'vitest';
 
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { FeedbackSurveyModal } from './FeedbackSurveyModal';
@@ -24,11 +25,7 @@ const defaultSubscription = {
     Renew: 1,
     External: 0,
     IsTrial: false,
-};
-
-vi.mock('@proton/account/subscription/hooks', () => ({
-    useSubscription: () => [defaultSubscription],
-}));
+} as unknown as Subscription;
 
 vi.mock('@proton/shared/lib/telemetry', () => ({
     telemetry: {
@@ -43,19 +40,19 @@ describe('FeedbackSurveyModal', () => {
         vi.clearAllMocks();
     });
     it('should render', () => {
-        render(<FeedbackSurveyModal open onClose={vi.fn()} />);
+        render(<FeedbackSurveyModal open subscription={defaultSubscription} onClose={vi.fn()} />);
 
         expect(screen.getByText('How did you find out about us?')).toBeInTheDocument();
     });
 
     it('should have "submit" button disabled if no value is selected', () => {
-        render(<FeedbackSurveyModal open onClose={vi.fn()} />);
+        render(<FeedbackSurveyModal open subscription={defaultSubscription} onClose={vi.fn()} />);
 
         expect(screen.getByText('Submit')).toBeDisabled();
     });
 
     it('should have "submit" button disabled if value is "Other" and the input content is empty', async () => {
-        render(<FeedbackSurveyModal open onClose={vi.fn()} />);
+        render(<FeedbackSurveyModal open subscription={defaultSubscription} onClose={vi.fn()} />);
 
         await userEvent.click(screen.getByText('Other'));
 
@@ -64,7 +61,7 @@ describe('FeedbackSurveyModal', () => {
     });
 
     it('should have "submit" button enabled if value anything but "Other"', async () => {
-        render(<FeedbackSurveyModal open onClose={vi.fn()} />);
+        render(<FeedbackSurveyModal open subscription={defaultSubscription} onClose={vi.fn()} />);
 
         await userEvent.click(screen.getByText('TikTok'));
 
@@ -74,7 +71,7 @@ describe('FeedbackSurveyModal', () => {
     it('should trigger a network request when dismiss', async () => {
         const onClose = vi.fn();
 
-        render(<FeedbackSurveyModal open onClose={onClose} />);
+        render(<FeedbackSurveyModal open subscription={defaultSubscription} onClose={onClose} />);
 
         await userEvent.click(screen.getByText('Cancel'));
 
@@ -90,7 +87,7 @@ describe('FeedbackSurveyModal', () => {
     it('should trigger a network request when submitting', async () => {
         const onClose = vi.fn();
 
-        render(<FeedbackSurveyModal open onClose={onClose} />);
+        render(<FeedbackSurveyModal open subscription={defaultSubscription} onClose={onClose} />);
 
         await userEvent.click(screen.getByText('TikTok'));
         await userEvent.click(screen.getByText('Submit'));
@@ -104,12 +101,12 @@ describe('FeedbackSurveyModal', () => {
         expect(onClose).toHaveBeenCalled();
     });
 
-    it.each(['Podcast', 'YouTube', 'Other'])(
+    it.each(['Podcast', 'YouTube', 'Twitch', 'Other'])(
         'should disable submit button when %s option is selected but there is no value selected',
         async (option) => {
             const onClose = vi.fn();
 
-            render(<FeedbackSurveyModal open onClose={onClose} />);
+            render(<FeedbackSurveyModal open subscription={defaultSubscription} onClose={onClose} />);
 
             await userEvent.click(screen.getByText(option));
 
