@@ -1789,6 +1789,9 @@
       ],
       "Add ${ name }": [
         "Afegir ${ name }"
+      ],
+      "Create a booking page": [
+        "Crea una pàgina de reserves"
       ]
     },
     "action": {
@@ -4460,6 +4463,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Permeteu que la gent reservi temps amb vosaltres directament des dels vostres correus electrònics, sense anades i vingudes."
       ]
     },
     "description": {
@@ -8198,8 +8204,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -10002,6 +10007,33 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Demaneu a l'administrador que millori el pla o elimineu una pàgina de la barra lateral de pàgines de reserves a ${ CALENDAR_APP_NAME }."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Demaneu a l'administrador que millori el pla o esborri una pàgina de la barra lateral de Pàgines de reserves."
+      ],
+      "Here is my availability:": [
+        "Aquí teniu la meva disponibilitat:"
+      ],
+      "No booking pages yet": [
+        "Encara no hi ha cap pàgina de reserves"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Per a afegir una pàgina de reserves nova, demaneu al vostre administrador/a que us millori el pla."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Per afegir una pàgina de reserves nova, elimineu-ne una d'existent de la barra lateral de pàgines de reserves a ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Per a afegir una pàgina de reserves nova, esborreu-ne una d’existent de la barra lateral de pàgines de reserves."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Per a afegir una pàgina de reserves nova, milloreu el pla."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Heu assolit el nombre màxim de pàgines de reserva disponibles amb el vostre pla."
       ]
     },
     "info": {
@@ -11362,6 +11394,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } assistant": [
         "Assistent de ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Booking page": [
+        "Pàgina de reserves"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17542,6 +17577,15 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Cannot create more Booking pages": [
+        "No es poden crear més pàgines de reserves"
+      ],
+      "Insert a booking page": [
+        "Inseriu una pàgina de reserves"
+      ],
+      "Share your availability": [
+        "Compartiu la vostra disponibilitat"
       ]
     },
     "Title header for keys table": {
