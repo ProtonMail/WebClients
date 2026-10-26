@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { CYCLE } from '@proton/payments/core/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { formatIntlPercent } from '@proton/shared/lib/i18n/formatIntlPercent';
 
 import ProtonLogo from '../../../../components/logo/ProtonLogo';
 import { getSimplePriceString } from '../../../../components/price/helper';
@@ -52,7 +53,9 @@ export function UnlimitedToDuoDiscountedLayout({ offer, currency, onSelectDeal, 
                 <img src={offer.images?.modalImage} alt="" aria-hidden={true} className="duoDiscountKVImage" />
                 <div className="duoDiscountHeaderContent">
                     {offer.topButtonDiscount ? (
-                        <span className="duoDiscountBadge text-bold">{`-${offer.topButtonDiscount}%`}</span>
+                        <span className="duoDiscountBadge text-bold">
+                            {formatIntlPercent(-offer.topButtonDiscount)}
+                        </span>
                     ) : null}
                     <div className="flex flex-column">
                         <span className="duoDiscountPlanLockup flex flex-row items-center gap-3">

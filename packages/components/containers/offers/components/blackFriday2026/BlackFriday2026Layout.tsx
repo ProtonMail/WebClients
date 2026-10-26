@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { CYCLE } from '@proton/payments/core/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { formatIntlPercent } from '@proton/shared/lib/i18n/formatIntlPercent';
 
 import ProtonLogo from '../../../../components/logo/ProtonLogo';
 import { getSimplePriceString } from '../../../../components/price/helper';
@@ -63,7 +64,7 @@ export function BlackFriday2026Layout({ offer, currency, onSelectDeal, onCloseMo
                 <div className="bf2026HeaderContent">
                     {discount > 0 && (
                         <p className="bf2026Discount font-sofia-sans-condensed m-0" dir="ltr">
-                            -{discount}%
+                            {formatIntlPercent(-discount)}
                         </p>
                     )}
                     <h1 className="bf2026Title font-sofia-sans-condensed">
