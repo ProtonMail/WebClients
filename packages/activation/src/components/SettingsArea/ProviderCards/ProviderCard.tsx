@@ -39,6 +39,8 @@ interface Props {
     showAdvancedImport?: boolean;
     onComplete?: () => Promise<void>;
     onBYOEFlowStart?: () => void;
+    /** Called when the user clicks a provider, before any flow starts */
+    onProviderClick?: (provider: ImportProvider) => void;
     source: EASY_SWITCH_SOURCES;
     /**
      * Lets a caller (e.g. Drive's settings, behind its own flag) replace the default
@@ -55,6 +57,7 @@ const ProviderCard = ({
     showAdvancedImport = true,
     onComplete,
     onBYOEFlowStart,
+    onProviderClick,
     source: inputSource,
     entryView: EntryView,
 }: Props) => {
@@ -78,6 +81,8 @@ const ProviderCard = ({
     };
 
     const handleProviderChoice = (provider: ImportProvider) => {
+        onProviderClick?.(provider);
+
         // Org-Level Easy Switch takes precedence over both BYOE
         // and normal ES imports for supported providers
         if (olesFeatureStatus.creatingEnabled) {
@@ -153,6 +158,7 @@ const ProviderCard = ({
                             buttonText={c('Action').t`Google`}
                             onComplete={onComplete}
                             onBYOEFlowStart={onBYOEFlowStart}
+                            onClick={() => onProviderClick?.(ImportProvider.GOOGLE)}
                             source={source}
                         />
                     ) : (
