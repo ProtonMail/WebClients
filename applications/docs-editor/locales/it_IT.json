@@ -321,6 +321,9 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Impossibile convertire il documento Word. È protetto da password? In tal caso, rimuovi la password e riprova."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Impossibile importare il file OpenDocument a causa di un errore sconosciuto."
       ]
     },
     "Error message": {
@@ -435,6 +438,9 @@
       ],
       "You cannot undo this action.": [
         "Non puoi annullare questa azione."
+      ],
+      "Open the link to download the image, then use \"Insert image\" to add it to this document.": [
+        "Apri il link per scaricare l'immagine, quindi utilizza la funzione “Inserisci immagine” per aggiungerla a questo documento."
       ]
     },
     "Label": {
@@ -2656,6 +2662,14 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Non è supportato fornire suggerimenti all'interno di blocchi di codice"
+      ],
+      "Pasting remote images is not supported. Download the image and use \"Insert image\" instead.": [
+        "L'inserimento di immagini da remoto non è supportato. Scarica l'immagine e utilizza invece la funzione “Inserisci immagine”."
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Esiste già un foglio con questo nome"
       ]
     }
   }
