@@ -1,3 +1,5 @@
+import { formatIntlPercent } from '@proton/shared/lib/i18n/formatIntlPercent';
+
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import type { BaseLineItem } from './base-line-item';
 
@@ -22,6 +24,8 @@ function formatDiscount(ctx: HeadlessCheckoutContextInner) {
     return {
         /** Discount percentage, e.g. 20 for 20% off */
         discountPercent: viewDiscountPercent,
+        /** Localised discount badge text, e.g. -20% in English, -%20 in Turkish */
+        formattedDiscount: formatIntlPercent(-viewDiscountPercent),
         withoutDiscountPerCycle,
         withDiscountPerCycle,
         withoutDiscountPerMonth,
