@@ -135,7 +135,9 @@ type IframeActionOptions = {
     timeout?: number;
 };
 
-const TIMEOUT_EXCEEDED_ERROR_TEXT = c('Payments').t`Timeout exceeded`;
+const getTimeoutExceededUserMessage = () => c('Payments').t`Timeout exceeded`;
+
+const IFRAME_REPLY_TIMEOUT_ERROR = 'Timeout exceeded';
 
 const IFRAME_LOADING_TIMEOUT = 20000;
 
@@ -144,7 +146,7 @@ const IFRAME_LOADING_TIMEOUT = 20000;
  * parent side. Only the first kind was ever reported by the iframe.
  */
 export function getInitializationFailureReason(error: any) {
-    if (error?.error === TIMEOUT_EXCEEDED_ERROR_TEXT) {
+    if (error?.error === IFRAME_REPLY_TIMEOUT_ERROR) {
         return 'timeout';
     }
 
@@ -217,7 +219,7 @@ function iframeAction<T>(
                 type: `${type}-response`,
                 correlationId,
                 status: 'failure',
-                error: TIMEOUT_EXCEEDED_ERROR_TEXT,
+                error: IFRAME_REPLY_TIMEOUT_ERROR,
             });
         }
 
@@ -415,7 +417,7 @@ function useChargebeeHandles(
                 await promiseWithTimeout({
                     promise: waitForIframeLoaded(),
                     timeoutMs: IFRAME_LOADING_TIMEOUT,
-                    errorMessage: TIMEOUT_EXCEEDED_ERROR_TEXT,
+                    errorMessage: getTimeoutExceededUserMessage(),
                 });
                 await savedCardInitializationRef.current;
 
@@ -1044,7 +1046,7 @@ export const ChargebeeIframe = ({
 
         capturePaymentMessage(`Payments: Chargebee iframe failed to initialize (${type}, ${reason})`, {
             component: 'chargebee-iframe',
-            level: 'error',
+            level: reason === 'timeout' ? 'warning' : 'error',
             tags: { chargebeeIframeType: type, chargebeeInitFailureReason: reason },
             extra: {
                 errorMessage: technicalError.message,
@@ -1136,7 +1138,7 @@ export const ChargebeeIframe = ({
             if (!iframeHandles.iframeLoadedRef.current) {
                 capturePaymentMessage('Payments: Chargebee iframe not loaded', {
                     component: 'chargebee-iframe',
-                    level: 'error',
+                    level: 'warning',
                     tags: { chargebeeIframeType: type },
                     extra: { type },
                 });
