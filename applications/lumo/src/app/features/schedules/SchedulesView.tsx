@@ -1,9 +1,15 @@
-import { useState } from 'react';
+import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
+import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
+import { selectSchedules } from '../../redux/selectors';
+import { newSpaceId } from '../../redux/slices/core/spaces';
+import { deleteSchedule, saveSchedule } from '../../redux/slices/schedules';
+import type { SpaceId } from '../../types';
 import { ScheduleTemplateGrid } from './components/ScheduleTemplateGrid';
 import { ScheduledTaskGrid } from './components/ScheduledTaskGrid';
 import { SchedulesEmptyState } from './components/SchedulesEmptyState';
@@ -17,58 +23,74 @@ import './SchedulesView.scss';
 export const SchedulesView = () => {
     useNativeComposerVisibilityApi({ hideComposer: true });
 
-    const [schedules, setSchedules] = useState<Map<string, ScheduleDetails>>(new Map());
+    const dispatch = useLumoDispatch();
+    const schedules = useLumoSelector(selectSchedules);
+    const { createNotification } = useNotifications();
     const [{ data, ...scheduledTaskEditorModalProps }, openScheduledTaskEditorModal, renderScheduledTaskEditorModal] =
         useModalStateWithData<{
             initialValues: ScheduleDetails;
+            spaceId: SpaceId;
             mode: 'create' | 'edit';
         }>();
 
     const handleNewTaskClick = () => {
-        openScheduledTaskEditorModal({ initialValues: getEmptyScheduleDetails(), mode: 'create' });
+        openScheduledTaskEditorModal({
+            initialValues: getEmptyScheduleDetails(),
+            spaceId: newSpaceId(),
+            mode: 'create',
+        });
     };
 
     const handleSelectTemplate = (template: ScheduleTemplate) => {
-        openScheduledTaskEditorModal({ initialValues: createScheduleDetailsFrom(template), mode: 'create' });
-    };
-
-    const handleSaveSchedule = (schedule: ScheduleDetails) => {
-        setSchedules((prev) => {
-            const newSchedules = new Map(prev);
-            newSchedules.set(schedule.id, schedule);
-            return newSchedules;
+        openScheduledTaskEditorModal({
+            initialValues: createScheduleDetailsFrom(template),
+            spaceId: newSpaceId(),
+            mode: 'create',
         });
     };
 
-    const handleEditSchedule = (schedule: ScheduleDetails) => {
-        openScheduledTaskEditorModal({ initialValues: schedule, mode: 'edit' });
+    const handleSaveSchedule = (id: SpaceId, schedule: ScheduleDetails) => {
+        try {
+            dispatch(saveSchedule(id, schedule, data?.mode ?? 'create'));
+        } catch (error) {
+            // translator: Error notification when a scheduled task cannot be saved.
+            const fallbackMessage = c('collider_2025:Error')
+                .t`Could not save this task. Reload the page and try again.`;
+            createNotification({
+                type: 'error',
+                text: error instanceof Error ? error.message : fallbackMessage,
+            });
+            return false;
+        }
+        return true;
     };
 
-    const handleDeleteSchedule = (scheduleId: string) => {
-        setSchedules((prev) => {
-            const newSchedules = new Map(prev);
-            newSchedules.delete(scheduleId);
-            return newSchedules;
-        });
+    const handleEditSchedule = (id: SpaceId, schedule: ScheduleDetails) => {
+        openScheduledTaskEditorModal({ initialValues: schedule, spaceId: id, mode: 'edit' });
+    };
+
+    const handleDeleteSchedule = (scheduleId: SpaceId) => {
+        dispatch(deleteSchedule(scheduleId));
     };
 
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }}>
             <div className="schedules-view w-full px-6 overflow-auto">
                 <SchedulesPageHeader onNewTaskClick={handleNewTaskClick} />
-                {schedules.size === 0 && <SchedulesEmptyState />}
+                {Object.keys(schedules).length === 0 && <SchedulesEmptyState />}
                 <ScheduledTaskGrid
                     onDeleteSchedule={handleDeleteSchedule}
                     onEditSchedule={handleEditSchedule}
-                    schedules={[...schedules.values()]}
+                    schedules={schedules}
                 />
                 <ScheduleTemplateGrid onSelect={handleSelectTemplate} />
             </div>
-            {renderScheduledTaskEditorModal && (
+            {renderScheduledTaskEditorModal && data && (
                 <ScheduledTaskEditorModal
-                    initialValues={data?.initialValues}
-                    key={data?.initialValues?.id}
-                    mode={data?.mode}
+                    initialValues={data.initialValues}
+                    key={data.spaceId}
+                    mode={data.mode}
+                    spaceId={data.spaceId}
                     onDelete={handleDeleteSchedule}
                     onSave={handleSaveSchedule}
                     {...scheduledTaskEditorModalProps}

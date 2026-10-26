@@ -1,6 +1,5 @@
 import { isAfter, roundToNearestMinutes } from 'date-fns';
 import { c } from 'ttag';
-import { v4 as uuidv4 } from 'uuid';
 
 import { convertZonedDateTimeToUTC, toUTCDate } from '@proton/shared/lib/date/timezone';
 
@@ -18,7 +17,6 @@ export const getEmptyScheduleDetails = (): ScheduleDetails => {
     const defaultRunTime = roundToNearestMinutes(new Date(), { nearestTo: 15, roundingMethod: 'ceil' });
 
     return {
-        id: uuidv4(),
         name: '',
         instructions: '',
         recurrenceRule: {
@@ -47,7 +45,6 @@ export const createScheduleDetailsFrom = (template: ScheduleTemplate): ScheduleD
     }
 
     return {
-        id: uuidv4(),
         name: template.name,
         instructions: template.instructions,
         recurrenceRule: copiedRecurrenceRule,

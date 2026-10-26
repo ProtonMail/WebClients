@@ -3,6 +3,8 @@ import { useId } from 'react';
 import { c } from 'ttag';
 
 import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
+import type { ScheduleMap } from '../../../redux/selectors';
+import type { SpaceId } from '../../../types';
 import { batchItems } from '../../../util/batchItems';
 import type { ScheduleDetails } from '../types';
 import { ScheduledTaskCard } from './ScheduledTaskCard';
@@ -10,18 +12,18 @@ import { ScheduledTaskCard } from './ScheduledTaskCard';
 import './ScheduledTaskGrid.scss';
 
 interface ScheduledTaskGridProps {
-    onDeleteSchedule?: (scheduleId: string) => void;
-    onEditSchedule?: (schedule: ScheduleDetails) => void;
-    schedules: ScheduleDetails[];
+    onDeleteSchedule?: (id: SpaceId) => void;
+    onEditSchedule?: (id: SpaceId, schedule: ScheduleDetails) => void;
+    schedules: ScheduleMap;
 }
 
 export const ScheduledTaskGrid = ({ onDeleteSchedule, onEditSchedule, schedules }: ScheduledTaskGridProps) => {
     const headerId = useId();
     const { isSmallScreen } = useIsLumoSmallScreen();
     const columnCount = isSmallScreen ? 1 : 2;
-    const scheduleRows = batchItems(schedules, columnCount);
+    const scheduleRows = batchItems(Object.entries(schedules), columnCount);
 
-    if (schedules.length === 0) {
+    if (scheduleRows.length === 0) {
         return null;
     }
 
@@ -49,20 +51,20 @@ export const ScheduledTaskGrid = ({ onDeleteSchedule, onEditSchedule, schedules 
                         role="row"
                     >
                         {Array.from({ length: columnCount }, (_, columnIndex) => {
-                            const schedule = row[columnIndex];
+                            const [id, schedule] = row[columnIndex] ?? [];
 
                             return (
                                 // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                                 <div
                                     aria-colindex={columnIndex + 1}
                                     className="flex-1 min-w-0"
-                                    key={schedule?.id ?? columnIndex}
+                                    key={id ?? columnIndex}
                                     role={schedule ? 'gridcell' : undefined}
                                 >
                                     {schedule && (
                                         <ScheduledTaskCard
-                                            onDelete={() => onDeleteSchedule?.(schedule.id)}
-                                            onEdit={() => onEditSchedule?.(schedule)}
+                                            onDelete={() => onDeleteSchedule?.(id)}
+                                            onEdit={() => onEditSchedule?.(id, schedule)}
                                             schedule={schedule}
                                         />
                                     )}

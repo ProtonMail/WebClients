@@ -30,6 +30,7 @@ import type {
     MessagePriv,
     MessagePub,
     ProjectSpacePriv,
+    ScheduleSpacePriv,
     SerializedAttachment,
     SerializedConversation,
     SerializedMessage,
@@ -38,6 +39,7 @@ import type {
     Space,
     SpaceKeyClear,
     SpaceKeyEnc,
+    SpacePriv,
     SpacePub,
 } from './types';
 import {
@@ -186,6 +188,15 @@ export async function deserializeSpace(
     return space;
 }
 
+/**
+ * Infer {@link SpaceType} from decrypted private JSON when the record has no public `spaceType`.
+ * First match wins: `schedule` → Schedule, `isProject === true` → Project, else Simple.
+ */
+const getInferredType = (spacePriv: SpacePriv): SpaceType => {
+    const space = spacePriv as ProjectSpacePriv & Partial<ScheduleSpacePriv> & { isProject?: boolean };
+    return space.schedule ? SpaceType.Schedule : space.isProject === true ? SpaceType.Project : SpaceType.Default;
+};
+
 export async function deserializeSpaceWithMasterKeys(
     serializedSpace: Omit<SerializedSpace, 'spaceType'> & { spaceType?: SpaceType },
     masterKeys: MasterKeyContext
@@ -220,12 +231,14 @@ export async function deserializeSpaceWithMasterKeys(
         if (typeof parsedSpacePriv !== 'object' || parsedSpacePriv === null || Array.isArray(parsedSpacePriv)) {
             throw new Error('Invalid space data');
         }
-        // Legacy records have no public spaceType and use isProject in their encrypted metadata:
-        // true means Project, while false or missing means Simple. Prefer public spaceType when present.
-        // Strip the flag from the in-memory space. Project serialization temporarily writes it
-        // back for APIs that do not persist public SpaceType. Reading does not rewrite storage.
-        const { isProject, ...spacePriv } = parsedSpacePriv as ProjectSpacePriv & { isProject?: boolean };
-        const spaceType = serializedSpace.spaceType ?? (isProject === true ? SpaceType.Project : SpaceType.Default);
+
+        // Legacy space records (IndexedDB or API) may omit public `spaceType`; if so, use the decrypted private JSON to
+        // infer the type.
+        // Also strip `isProject` from the in-memory space. Serialize may write it back for backends that still expect it;
+        // deserialize does not rewrite storage.
+        const { isProject, ...spacePriv } = parsedSpacePriv as ProjectSpacePriv &
+            Partial<ScheduleSpacePriv> & { isProject?: boolean };
+        const spaceType = serializedSpace.spaceType ?? getInferredType(parsedSpacePriv);
         if (!isSpaceType(spaceType)) throw new Error('Unsupported space type');
         const spacePub = getSpacePub({ ...serializedSpace, spaceType });
         return {
@@ -233,7 +246,7 @@ export async function deserializeSpaceWithMasterKeys(
                 ...spacePub,
                 ...spaceKeyClear,
                 ...spacePriv,
-            }),
+            } as Space),
             needsMasterKeyMigration: !usedPrimaryMasterKey,
         };
     } catch (e) {
