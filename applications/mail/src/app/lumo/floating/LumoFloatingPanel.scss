@@ -155,12 +155,55 @@ $run-easing: cubic-bezier(0.3, 0.3, 0.45, 1);
 	}
 }
 
-// An iframe under the pointer (email body, composer) would swallow the drag's mousemove and mouseup
-.lumo-floating-panel-card-resizing iframe {
+// An iframe under the pointer (email body, composer) would swallow a drag's mousemove and mouseup
+.lumo-floating-panel-card-resizing iframe,
+.lumo-floating-panel-dragging iframe {
 	pointer-events: none;
 }
 
 // The panel scrolls its own transcript, so its container must be allowed to shrink below its content
 .lumo-floating-panel-card-body {
 	min-block-size: 0;
+	padding-block-start: rem(16);
+}
+
+// Two rows of four dots, one per 6px tile
+.lumo-floating-panel-drag-handle-dots {
+	--lumo-floating-panel-drag-handle-dot-color: var(--text-hint);
+
+	inline-size: rem(24);
+	block-size: rem(12);
+	background-image: radial-gradient(
+		circle,
+		var(--lumo-floating-panel-drag-handle-dot-color) rem(1.5),
+		transparent rem(2)
+	);
+	background-size: rem(6) rem(6);
+
+	.lumo-floating-panel-drag-handle:hover & {
+		--lumo-floating-panel-drag-handle-dot-color: var(--text-weak);
+	}
+}
+
+// Not the absolute utility: its z-index would lift the target over the card where a wide card crosses the midline
+.lumo-floating-panel-drop-target {
+	position: absolute;
+	inset-block: $card-top-gap $cat-inset;
+	border: 2px dashed var(--interaction-norm);
+
+	// Shown faintly from the start of the drag, so the user knows where to take the card
+	opacity: 0.4;
+
+	&--active {
+		opacity: 1;
+		background-color: color-mix(in srgb, var(--interaction-norm) 6%, transparent);
+	}
+
+	&--left {
+		inset-inline: $cat-inset calc(50% + #{$cat-inset});
+	}
+
+	&--right {
+		inset-inline: calc(50% + #{$cat-inset}) var(--lumo-floating-panel-inset-end);
+	}
 }
