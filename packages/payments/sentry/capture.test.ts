@@ -100,6 +100,33 @@ describe('tracePaymentError', () => {
         expect(collectTags()).toMatchObject({ subscriptionKey: null, upcomingSubscriptionKey: null });
     });
 
+    it('should not send the id of a saved payment method', () => {
+        tracePaymentError(chargebeeFailure, {
+            component: 'subscription-container',
+            extra: { paymentMethod: 'chargebee-card', paymentMethodValue: 'saved-method-id' },
+        });
+
+        expect(scope.setExtras).toHaveBeenCalledWith({ paymentMethod: 'chargebee-card', paymentMethodValue: 'saved' });
+    });
+
+    it('should not send the id of the saved payment method being edited', () => {
+        tracePaymentError(chargebeeFailure, {
+            component: 'edit-card-modal',
+            extra: { paymentMethodId: 'saved-method-id' },
+        });
+
+        expect(scope.setExtras).toHaveBeenCalledWith({ paymentMethodId: 'saved' });
+    });
+
+    it('should keep a new payment method as it is', () => {
+        tracePaymentError(chargebeeFailure, {
+            component: 'subscription-container',
+            extra: { paymentMethodValue: 'chargebee-card' },
+        });
+
+        expect(scope.setExtras).toHaveBeenCalledWith({ paymentMethodValue: 'chargebee-card' });
+    });
+
     it('should preserve tags passed by the caller', () => {
         tracePaymentError(chargebeeFailure, {
             component: 'subscription-container',
@@ -176,6 +203,14 @@ describe('tracePaymentError', () => {
         (getSentryError as jest.Mock).mockReturnValue(undefined);
 
         tracePaymentError(chargebeeFailure, { component: 'subscription-container', subscription });
+
+        expect(traceError).not.toHaveBeenCalled();
+    });
+
+    it('should not capture a Chargebee connectivity failure', () => {
+        const networkFailure = { ...chargebeeFailure, error: { code: 'ERR_NETWORK', message: 'Network Error' } };
+
+        tracePaymentError(networkFailure, { component: 'subscription-container', subscription });
 
         expect(traceError).not.toHaveBeenCalled();
     });
@@ -282,6 +317,18 @@ describe('capturePaymentMessage', () => {
         (getSentryError as jest.Mock).mockReturnValue(undefined);
 
         capturePaymentMessage('Payments: BIN response failure', { component: 'create-payment-token' }, new Error('x'));
+
+        expect(captureMessage).not.toHaveBeenCalled();
+    });
+
+    it('should not capture a message whose cause is a Chargebee connectivity failure', () => {
+        const replyTimeout = { ...chargebeeFailure, error: { code: 'replyTimeout', message: 'Action timed out' } };
+
+        capturePaymentMessage(
+            'Payments: Apple Pay button failed to mount',
+            { component: 'chargebee-iframe' },
+            replyTimeout
+        );
 
         expect(captureMessage).not.toHaveBeenCalled();
     });

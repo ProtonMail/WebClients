@@ -28,8 +28,9 @@ function loadIframeDocument() {
     const { getCheckpoints } = require('./checkpoints');
 
     return {
-        throwInsideTheIframe: (message: string) =>
-            onError(new ErrorEvent('error', { message, error: new Error(message) })),
+        throwInsideTheIframe: (message: string, filename = 'https://js.chargebee.com/v2/chargebee.js') =>
+            onError(new ErrorEvent('error', { message, filename, error: new Error(message) })),
+        throwOpaqueCrossOriginError: () => onError(new ErrorEvent('error', { message: 'Script error.', filename: '' })),
         windowErrors: (): Checkpoint[] => getCheckpoints().filter(({ name }: Checkpoint) => name === 'window_error'),
     };
 }
@@ -42,6 +43,37 @@ it('should report an uncaught error with the stage it happened at', () => {
     expect(sendUnhandledErrorMessage).toHaveBeenCalledTimes(1);
     expect(sendUnhandledErrorMessage.mock.calls[0][0].message).toBe('Cannot read properties of undefined');
     expect(sendUnhandledErrorMessage.mock.calls[0][1]).toBe('none');
+});
+
+it.each(['chrome-extension://abc/inject.js', 'moz-extension://abc/content.js', 'blob:https://account-api.proton.me/1'])(
+    'should not report a throw from a browser extension script (%s)',
+    (filename) => {
+        const { throwInsideTheIframe, windowErrors } = loadIframeDocument();
+
+        throwInsideTheIframe('Cannot redefine property: ethereum', filename);
+
+        expect(sendUnhandledErrorMessage).not.toHaveBeenCalled();
+        expect(windowErrors()).toHaveLength(1);
+    }
+);
+
+it('should still report an opaque cross-origin "Script error.", since chargebee.js throws those too', () => {
+    const { throwOpaqueCrossOriginError } = loadIframeDocument();
+
+    throwOpaqueCrossOriginError();
+
+    expect(sendUnhandledErrorMessage).toHaveBeenCalledTimes(1);
+});
+
+it('should not let browser extension throws use up the report limit', () => {
+    const { throwInsideTheIframe } = loadIframeDocument();
+
+    for (let index = 0; index < 20; index++) {
+        throwInsideTheIframe('Cannot redefine property: ethereum', 'chrome-extension://abc/inject.js');
+    }
+    throwInsideTheIframe('Chargebee threw after the extension');
+
+    expect(sendUnhandledErrorMessage).toHaveBeenCalledTimes(1);
 });
 
 it('should report every throw of a session that stays under the limit', () => {
