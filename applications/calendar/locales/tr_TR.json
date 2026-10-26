@@ -1049,6 +1049,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "${ name } hakkında"
+      ],
+      "Add ${ name }": [
+        "${ name } ekle"
       ]
     },
     "action": {
@@ -3257,7 +3263,7 @@
         "Ücretsiz ${ MAIL_APP_NAME } hesabınız sınırlı depolama alanıyla sunulduğu için yalnızca son Gmail e-postalarınız içe aktarılacak."
       ],
       "You’ll get a secure email with the details shortly.": [
-        "Kısa bir süre sonra ayrıntıların bulunduğu bir güvenli e-posta alacaksınız."
+        "Ayrıntıları biraz sonra güvenli bir e-posta ile alacaksınız."
       ]
     },
     "description": {
@@ -13512,6 +13518,11 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Banka hesabı"
       ]
     }
   }

@@ -1049,6 +1049,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "Acerca de ${ name }"
+      ],
+      "Add ${ name }": [
+        "Añadir ${ name }"
       ]
     },
     "action": {
@@ -9975,6 +9981,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "No se pueden comprar cuentas Born Private con una suscripción activa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requiere de una donación."
+      ],
+      "You already own a Born Private account.": [
+        "Ya posee una cuenta Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Su cuenta es demasiado antigua para la iniciativa Born Private."
       ]
     },
     "Payments.Error": {
@@ -13500,6 +13518,11 @@
       ],
       "Protection for two in a single plan": [
         "Protección para dos en un solo plan"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Cuenta bancaria"
       ]
     }
   }

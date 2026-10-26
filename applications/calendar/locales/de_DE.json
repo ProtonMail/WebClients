@@ -1049,6 +1049,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "Über ${ name }"
+      ],
+      "Add ${ name }": [
+        "${ name } hinzufügen"
       ]
     },
     "action": {
@@ -13512,6 +13518,11 @@
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30-Tage-Geld-zurück-Garantie: Kündige innerhalb von 30 Tagen nach dem Kauf und wende dich an unseren ${ customerSupportLink }, um eine Rückerstattung zu erhalten."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
       ]
     }
   }

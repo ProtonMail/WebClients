@@ -1049,6 +1049,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din gratis provperiod av din app för stationär dator slutar den ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Lägg till ${ name }"
       ]
     },
     "action": {
@@ -12627,6 +12633,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Prenumerera på ${ planTitle }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13290,6 +13299,11 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
       ]
     }
   }

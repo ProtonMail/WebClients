@@ -1049,6 +1049,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Din desktop app's gratis prøveperiode slutter den ${ upgradeButton }. ${ formattedEndDate }"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Tilføj ${ name }"
       ]
     },
     "action": {
@@ -13512,6 +13518,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
       ]
     }
   }
