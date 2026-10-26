@@ -2,6 +2,7 @@ import { type ArtifactType, isArtifactType } from './components/Conversation/art
 import { deriveDataEncryptionKey } from './crypto';
 import type { Base64, EncryptedData } from './crypto/encryptedData';
 import type { AesGcmCryptoKey } from './crypto/types';
+import type { ScheduleDetails } from './features/schedules/types';
 import {
     type GenerationResponseMessage,
     IMAGE_ASPECT_RATIOS,
@@ -46,9 +47,9 @@ export type Shallow = {
 
 // *** Space ***
 
-export type SpacePub = {
+export type SpacePub<T extends SpaceType = SpaceType> = {
     id: SpaceId;
-    spaceType: SpaceType;
+    spaceType: T;
     createdAt: string; // date
     updatedAt: string; // date - last modification time (for sorting)
 };
@@ -80,13 +81,15 @@ export type ProjectSpacePriv = {
 
 type SimpleSpacePriv = {};
 
-type ScheduleSpacePriv = {};
+export type ScheduleSpacePriv = {
+    schedule: ScheduleDetails;
+};
 
 export type SpacePriv = ProjectSpacePriv | SimpleSpacePriv | ScheduleSpacePriv;
 
-export type ProjectSpace = Omit<SpacePub, 'spaceType'> & { spaceType: SpaceType.Project } & ProjectSpacePriv;
-type SimpleSpace = Omit<SpacePub, 'spaceType'> & { spaceType: SpaceType.Default } & SimpleSpacePriv;
-type ScheduleSpace = Omit<SpacePub, 'spaceType'> & { spaceType: SpaceType.Schedule } & ScheduleSpacePriv;
+export type ProjectSpace = SpacePub<SpaceType.Project> & ProjectSpacePriv;
+type SimpleSpace = SpacePub<SpaceType.Default> & SimpleSpacePriv;
+type ScheduleSpace = SpacePub<SpaceType.Schedule> & ScheduleSpacePriv;
 
 export type SpaceKeyClear = {
     spaceKey: Base64; // type: HkdfCryptoKey
@@ -103,7 +106,7 @@ type WithoutSpaceKey = { wrappedSpaceKey?: never };
 type MaybeSpaceKey = (NonDeleted & WithSpaceKey) | (Deleted & WithoutSpaceKey);
 type LocalFlagsForSpace = Omit<LocalFlags, 'deleted'>;
 
-export type Space = (ProjectSpace | SimpleSpace | ScheduleSpace) & SpacePriv & SpaceKeyClear;
+export type Space = (ProjectSpace | SimpleSpace | ScheduleSpace) & SpaceKeyClear;
 export type SerializedSpace = SpacePub & Partial<Encrypted> & MaybeSpaceKey & LocalFlagsForSpace;
 export type SerializedSpaceMap = Record<SpaceId, SerializedSpace>;
 
@@ -118,8 +121,9 @@ function getSpacePriv(s: Space): SpacePriv {
             return { projectName, projectInstructions, projectIcon, linkedDriveFolder };
         }
         case SpaceType.Default:
-        case SpaceType.Schedule:
             return {};
+        case SpaceType.Schedule:
+            return { schedule: s.schedule };
         default:
             throw new Error('Unsupported space type');
     }
@@ -149,7 +153,7 @@ export function splitSpace(s: Space): {
 
 export function cleanSpace(space: Space): Space {
     const { spacePub, spacePriv, spaceKeyClear } = splitSpace(space);
-    return { ...spacePub, ...spacePriv, ...spaceKeyClear };
+    return { ...spacePub, ...spacePriv, ...spaceKeyClear } as Space;
 }
 
 // Helper to extract project and drive folder information from a space

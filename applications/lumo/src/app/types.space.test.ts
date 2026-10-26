@@ -1,3 +1,4 @@
+import { createTestSchedule } from './tests/fixtures/schedules';
 import { SpaceType, cleanSerializedSpace, cleanSpace, splitSpace } from './types';
 import type { Space } from './types';
 
@@ -33,5 +34,18 @@ describe('space field helpers', () => {
             projectInstructions: 'Summarize sources',
             projectIcon: 'science',
         });
+    });
+
+    it('keeps schedule settings when cleaning and splitting spaces', () => {
+        const space: Space = {
+            id: 'schedule-space',
+            spaceType: SpaceType.Schedule,
+            ...baseSpaceFields,
+            schedule: createTestSchedule(),
+        };
+        expectSpaceTypeIsPreserved(space);
+        expect(splitSpace(space).spacePriv).toEqual({ schedule: space.schedule });
+        const withExtraFields = { ...space, projectName: 'Discard this field' };
+        expect(cleanSpace(withExtraFields)).toEqual(space);
     });
 });

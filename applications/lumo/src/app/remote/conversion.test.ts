@@ -328,6 +328,23 @@ describe('remote - conversion', () => {
             expect(result.deletedConversations).toEqual({});
         });
 
+        it('convertSpacesFromApi skips spaces that fail conversion', () => {
+            const valid = {
+                ID: REMOTE_SPACE_ID,
+                CreateTime: nowStr,
+                UpdateTime: nowStr,
+                Encrypted: validBase64,
+                SpaceKey: validBase64,
+                SpaceTag: LOCAL_SPACE_ID,
+                Conversations: [],
+                Assets: [],
+                Type: SpaceType.Default,
+            };
+            const result = convertSpacesFromApi([valid, null, { ...valid, ID: '' }]);
+            expect(Object.keys(result.spaces)).toHaveLength(1);
+            expect(result.spaces[LOCAL_SPACE_ID]?.id).toBe(LOCAL_SPACE_ID);
+        });
+
         it('convertConversationsFromApi handles empty input', () => {
             const result = convertConversationsFromApi([], LOCAL_SPACE_ID as LocalId);
             expect(result.conversations).toEqual([]);

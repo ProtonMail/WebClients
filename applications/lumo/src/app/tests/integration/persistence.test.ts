@@ -13,6 +13,7 @@ import {
     selectMessageById,
     selectMessagesByConversationId,
     selectRemoteIdFromLocal,
+    selectSchedules,
 } from '../../redux/selectors';
 import { reloadReduxRequest, stopRootSaga, unloadReduxRequest } from '../../redux/slices/core';
 import {
@@ -39,6 +40,7 @@ import {
     deleteAllSpacesFailure,
     deleteAllSpacesRequest,
     deleteAllSpacesSuccess,
+    deleteSpace,
     locallyDeleteSpaceFromLocalRequest,
     newSpaceId,
     pullSpaceRequest,
@@ -47,6 +49,7 @@ import {
     pushSpaceRequest,
 } from '../../redux/slices/core/spaces';
 import { updateLumoUserSettings } from '../../redux/slices/lumoUserSettings';
+import { deleteSchedule, saveSchedule } from '../../redux/slices/schedules';
 import { LumoApi } from '../../remote/api';
 import { RoleInt, StatusInt } from '../../remote/types';
 import {
@@ -76,6 +79,7 @@ import type { GenerationResponseMessage } from '../../types-api';
 import { clarify } from '../../util/clarify';
 import { listify, mapIds, mapLength, mapify, setify } from '../../util/collections';
 import { sleep } from '../../util/date';
+import { createTestSchedule } from '../fixtures/schedules';
 import {
     addTestDataToStore,
     createTestConversation,
@@ -147,6 +151,55 @@ describe('Lumo Persistence Integration Tests', () => {
     });
 
     describe('Persistence of spaces, conversations and messages', () => {
+        it('persists a schedule through reload, legacy API reads, edits, and deletion', async () => {
+            const { store, dispatch, dbApi, masterKey } = await setupTestEnvironment();
+            const id = newSpaceId();
+            const details = createTestSchedule();
+            try {
+                dispatch(saveSchedule(id, details));
+                await waitForSpaceSyncWithServer(dbApi, id);
+                const before = store.getState().spaces[id];
+                const stored = await dbApi.getSpaceById(id);
+                expect(stored?.spaceType).toBe(SpaceType.Schedule);
+                expect(stored).not.toHaveProperty('schedule');
+                expect(await deserializeSpace(stored!, masterKey)).toEqual(before);
+
+                dispatch(deleteSpace(id));
+                dispatch(reloadReduxRequest());
+                await waitForCondition(async () => selectSchedules(store.getState())[id] !== undefined);
+                expect(selectSchedules(store.getState())).toEqual({ [id]: details });
+
+                // Current API versions omit public SpaceType; the encrypted definition preserves Schedule.
+                const remote = mockDb.listSpaces().find((space) => space.SpaceTag === id)!;
+                delete remote.SpaceType;
+                dispatch(deleteSpace(id));
+                dispatch(pullSpaceRequest({ id: id }));
+                await waitForCondition(async () => store.getState().spaces[id]?.spaceType === SpaceType.Schedule);
+                expect(selectSchedules(store.getState())).toEqual({ [id]: details });
+
+                const beforeEdit = store.getState().spaces[id];
+                const edited = { ...details, name: 'Edited schedule', notifyOnComplete: false };
+                dispatch(saveSchedule(id, edited, 'edit'));
+                await waitForCondition(async () => {
+                    const saved = await dbApi.getSpaceById(id);
+                    if (!saved || saved.deleted) return false;
+                    const space = await deserializeSpace(saved, masterKey);
+                    return space?.spaceType === SpaceType.Schedule && space.schedule.name === edited.name;
+                });
+                await waitForSpaceSyncWithServer(dbApi, id);
+                expect(selectSchedules(store.getState())).toEqual({ [id]: edited });
+                expect(store.getState().spaces[id].spaceKey).toBe(before.spaceKey);
+                expect(store.getState().spaces[id].createdAt).toBe(beforeEdit.createdAt);
+                dispatch(deleteSchedule(id));
+                await waitForCondition(async () => (await dbApi.getSpaceById(id))?.deleted === true);
+                await waitForCondition(async () => !store.getState().spaces[id]);
+                expect((await dbApi.getSpaceById(id))?.wrappedSpaceKey).toBeUndefined();
+                expect(selectSchedules(store.getState())).toEqual({});
+            } finally {
+                dispatch(stopRootSaga());
+            }
+        });
+
         it('should create a space and persist it to both Redux and IndexedDB', async () => {
             const { store, dispatch, dbApi } = await setupTestEnvironment();
             try {

@@ -13,8 +13,6 @@ export interface ScheduleConnector {
 
 /** The details of a scheduled task. */
 export interface ScheduleDetails {
-    /** The unique identifier for the scheduled task. */
-    id: string;
     /** Name for the scheduled task. */
     name: string;
     /** Prompt Lumo executes on every run for the scheduled task. */
@@ -30,7 +28,7 @@ export interface ScheduleDetails {
 }
 
 /** A template for a scheduled task. */
-export interface ScheduleTemplate extends Omit<ScheduleDetails, 'autoApprove' | 'notifyOnComplete' | 'id'> {
+export interface ScheduleTemplate extends Omit<ScheduleDetails, 'autoApprove' | 'notifyOnComplete'> {
     /** A short description of the schedule template. */
     description: string;
     /** The recurrence rule label to display for the schedule in the schedule template list (e.g. "Every Friday at 4:00 PM"). */

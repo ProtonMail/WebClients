@@ -3,12 +3,24 @@ import type { Selector } from 'react-redux';
 import { createSelector } from '@reduxjs/toolkit';
 import { differenceInCalendarDays, startOfDay } from 'date-fns';
 
+import type { ScheduleDetails } from '../features/schedules/types';
 import type { ConversationDateGroupKey } from '../layouts/sidepanel/helpers';
 import { getConversationDateGroupKey } from '../layouts/sidepanel/helpers';
 import { isGeneratedImageAttachment } from '../lib/imageAttachment';
 import type { LocalId, RemoteId, ResourceType } from '../remote/types';
-import type { Attachment, AttachmentId, Base64, Conversation, MasterKeysBundle, Message, Space } from '../types';
-import type { ConversationId, MessageId, SpaceId } from '../types';
+import type {
+    Attachment,
+    AttachmentId,
+    Base64,
+    Conversation,
+    ConversationId,
+    MasterKeysBundle,
+    Message,
+    MessageId,
+    Space,
+    SpaceId,
+} from '../types';
+import { SpaceType } from '../types';
 import { listify, mapIds, setify } from '../util/collections';
 import { sortByDate } from '../util/date';
 import { objectFilterV } from '../util/objects';
@@ -17,6 +29,7 @@ import { EMPTY_ATTACHMENT_MAP } from './slices/core/attachments';
 import { EMPTY_CONVERSATION_MAP } from './slices/core/conversations';
 import type { MessageMap } from './slices/core/messages';
 import { EMPTY_MESSAGE_MAP } from './slices/core/messages';
+import { selectSpaceMap } from './slices/core/spaces';
 import type { LumoState, LumoState as RootState } from './store';
 
 export type LumoSelector<T> = Selector<LumoState, T>;
@@ -305,4 +318,17 @@ export const selectConversationsHaveGeneratedImages =
 
 export const selectAnyGeneratedImages = createSelector([selectMessages, selectAttachments], (messages, attachments) =>
     Object.values(messages).some((message) => messageHasGeneratedImages(message, attachments))
+);
+
+/** Schedule details keyed by schedule space ID. */
+export type ScheduleMap = Record<SpaceId, ScheduleDetails>;
+
+/** Selects schedules keyed by space ID, inserted in latest-update order. */
+export const selectSchedules = createSelector([selectSpaceMap], (spaces): ScheduleMap =>
+    Object.fromEntries(
+        Object.values(spaces)
+            .filter((space) => space.spaceType === SpaceType.Schedule)
+            .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+            .map((space) => [space.id, space.schedule])
+    )
 );
