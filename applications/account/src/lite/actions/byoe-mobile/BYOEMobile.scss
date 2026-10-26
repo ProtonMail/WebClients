@@ -1,0 +1,12 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+// A CSS shadow instead of SVG filters: Safari rasterizes those at 1x, which blurs the icon on retina screens
+.byoe-mobile-icon {
+	filter: drop-shadow(0 rem(1) rem(1) rgb(15 15 15 / 0.1));
+}
+
+// The viewport extends under the safe areas (see BYOEMobile.tsx), keep the content clear of them
+.byoe-mobile.byoe-mobile {
+	padding-block: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-bottom));
+	padding-inline: max(1rem, env(safe-area-inset-left)) max(1rem, env(safe-area-inset-right));
+}

@@ -27,7 +27,9 @@
 
 	background-color: var(--background-weak);
 	padding: 1rem;
-	min-block-size: 100vh;
+	min-block-size: 100vh; // Fallback
+	// On iOS Safari 100vh includes the browser toolbar, which pushes the bottom of the page out of view
+	min-block-size: 100dvh;
 	block-size: auto;
 
 	// override for toggle design
