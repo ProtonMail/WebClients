@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 
+import { ScheduleBreadcrumbs } from '../../../features/schedules/components/ScheduleBreadcrumbs';
 import { useConversationStar } from '../../../hooks/useConversationStar';
 import ChatDropdownMenu from '../../../layouts/sidepanel/ChatDropdownMenu';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
@@ -13,7 +14,8 @@ import { useSidebar } from '../../../providers/SidebarProvider';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
 import { changeConversationTitle, pushConversationRequest } from '../../../redux/slices/core/conversations';
-import { type Conversation, type Message, getProjectInfo } from '../../../types';
+import type { Conversation, Message } from '../../../types';
+import { SpaceType, getProjectInfo } from '../../../types';
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
 import type { DropdownOptions } from '../../DropdownMenu';
 import FavoritesUpsellPrompt from '../../Guest/FavoritesUpsellPrompt';
@@ -182,6 +184,16 @@ const ConversationHeaderComponent = ({ conversation, messageChain }: Props) => {
               },
           ]
         : [];
+
+    if (space?.spaceType === SpaceType.Schedule) {
+        return (
+            <ScheduleBreadcrumbs
+                createdAt={conversation.createdAt}
+                scheduleId={spaceId}
+                scheduleName={space.schedule.name}
+            />
+        );
+    }
 
     if (isSmallScreen) {
         return (
@@ -354,6 +366,7 @@ export const ConversationHeader = React.memo(ConversationHeaderComponent, (prevP
         prevProps.conversation.id !== nextProps.conversation.id ||
         prevProps.conversation.title !== nextProps.conversation.title ||
         prevProps.conversation.spaceId !== nextProps.conversation.spaceId ||
+        prevProps.conversation.createdAt !== nextProps.conversation.createdAt ||
         prevProps.conversation.starred !== nextProps.conversation.starred;
 
     // Check if attachment references have changed (we can't filter by role here without Redux access)

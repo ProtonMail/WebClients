@@ -332,3 +332,34 @@ export const selectSchedules = createSelector([selectSpaceMap], (spaces): Schedu
             .map((space) => [space.id, space.schedule])
     )
 );
+
+/** The most recently created run conversation for each schedule, keyed by its schedule space ID. */
+export const selectLatestRunsByScheduleId = createSelector(
+    [selectConversations, selectSpaceMap],
+    (conversations, spaces) => {
+        const latestRuns: Partial<Record<SpaceId, Conversation>> = {};
+
+        for (const conversation of Object.values(conversations)) {
+            if (spaces[conversation.spaceId]?.spaceType !== SpaceType.Schedule) {
+                continue;
+            }
+            const previous = latestRuns[conversation.spaceId];
+            if (!previous || Date.parse(conversation.createdAt) > Date.parse(previous.createdAt)) {
+                latestRuns[conversation.spaceId] = conversation;
+            }
+        }
+
+        return latestRuns;
+    }
+);
+
+/** Sidebar schedules ordered by latest run creation time, or schedule creation time when there are no runs. */
+export const selectSchedulesSortedByLatestRun = createSelector(
+    [selectSchedules, selectLatestRunsByScheduleId, selectSpaceMap],
+    (schedules, latestRuns, spaces) =>
+        Object.entries(schedules).sort(
+            ([a], [b]) =>
+                Date.parse(latestRuns[b]?.createdAt ?? spaces[b].createdAt) -
+                Date.parse(latestRuns[a]?.createdAt ?? spaces[a].createdAt)
+        )
+);

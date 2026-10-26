@@ -27,26 +27,6 @@
 		font-size: #{rem(20)} !important;
 	}
 
-	&__add-connector-chip {
-		padding-block: #{rem(5)};
-		padding-inline: #{rem(8)} #{rem(10)};
-		font-size: #{rem(13)};
-		line-height: #{rem(16)};
-
-		&.border {
-			border-color: var(--border-mid);
-		}
-
-		&:hover,
-		&:focus-visible {
-			background-color: var(--control-fill-low) !important;
-		}
-
-		&:active {
-			background-color: var(--control-fill-mid) !important;
-		}
-	}
-
 	&__auto-approve-icon {
 		inline-size: #{rem(40)};
 		block-size: #{rem(40)};

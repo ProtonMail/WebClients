@@ -1,0 +1,9 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.scheduled-task-home {
+	--border-norm: var(--border);
+	--border-weak: var(--border);
+
+	max-inline-size: rem(560);
+	padding-block-start: clamp(rem(24), 8vh, rem(96));
+}

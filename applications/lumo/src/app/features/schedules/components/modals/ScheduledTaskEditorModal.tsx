@@ -23,7 +23,7 @@ import { RecurrenceRuleFieldset } from '../../../../components/RecurrenceRuleFie
 import type { RecurrenceRule } from '../../../../components/RecurrenceRuleFieldset/types';
 import type { SpaceId } from '../../../../types';
 import type { ScheduleDetails } from '../../types';
-import { ScheduleConnectorPicker } from '../ScheduleConnectorPicker';
+import { ConnectorList } from '../ConnectorList';
 import type { ScheduleDetailsValidationField } from '../utils/schedules';
 import { getScheduleDetailsValidationErrors } from '../utils/schedules';
 import { DeleteScheduledTaskPrompt } from './DeleteScheduledTaskPrompt';
@@ -198,7 +198,9 @@ export const ScheduledTaskEditorModal = ({
                             </p>
                         </section>
 
-                        <ScheduleConnectorPicker
+                        <ConnectorList
+                            editMode
+                            headerClassName="text-rg"
                             value={values.connectors}
                             onChange={(connectors) => updateValues((prev) => ({ ...prev, connectors }))}
                         />
