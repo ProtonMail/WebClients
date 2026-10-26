@@ -4,6 +4,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useReducedMotion } from '@proton/components/hooks/useReducedMotion';
+import useRightToLeft from '@proton/hooks/useRightToLeft';
 import ConnectedLumoPromptBar from '@proton/llm/lib/lumoAgent/ui/ConnectedLumoPromptBar';
 import { useLumoAgentDrawer } from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
@@ -17,9 +18,11 @@ import { buildLumoFloatingPanelValue } from './LumoFloatingPanelProvider.testing
 import { CARD_MIN_WIDTH, CARD_RESIZING_CLASS } from './cardResize';
 import { PanelSide } from './panelSide';
 import { useMailboxBounds } from './useMailboxBounds';
+import { PANEL_DRAGGING_CLASS } from './usePanelDrag';
 
 jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({ __esModule: true, default: jest.fn() }));
 jest.mock('@proton/components/hooks/useReducedMotion', () => ({ useReducedMotion: jest.fn() }));
+jest.mock('@proton/hooks/useRightToLeft', () => ({ __esModule: true, default: jest.fn() }));
 jest.mock('@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext', () => ({ useLumoAgentDrawer: jest.fn() }));
 jest.mock('@proton/llm/lib/lumoAgent/ui/ConnectedLumoPromptBar', () => ({
     __esModule: true,
@@ -56,6 +59,7 @@ interface Setup {
     isCatDismissed?: boolean;
     isReducedMotion?: boolean;
     mailboxWidth?: number;
+    isRTL?: boolean;
 }
 
 const mockPanel = ({
@@ -69,6 +73,7 @@ const mockPanel = ({
     isCatDismissed = false,
     isReducedMotion = false,
     mailboxWidth = MAILBOX_WIDTH,
+    isRTL = false,
 }: Setup) => {
     jest.mocked(useLumoFloatingPanel).mockReturnValue(
         buildLumoFloatingPanelValue({
@@ -102,6 +107,7 @@ const mockPanel = ({
         hasBounds ? ({ top: 0, left: 0, width: mailboxWidth, height: 800 } as DOMRect) : null
     );
     jest.mocked(useReducedMotion).mockReturnValue(isReducedMotion);
+    jest.mocked(useRightToLeft).mockReturnValue([isRTL, jest.fn()]);
 };
 
 const renderPanel = async (setup: Setup = {}) => {
@@ -128,6 +134,12 @@ const catSlot = (container: HTMLElement) => container.querySelector('.lumo-pet-c
 const shownSprite = () => jest.mocked(CatSprite).mock.lastCall![0];
 const isCatMirrored = () => shownSprite().isMirrored;
 const RUNNING_CLASS = 'lumo-floating-panel--running';
+const dragHandle = () => screen.queryByTestId('lumo-floating-panel-drag-handle');
+const dropTarget = (container: HTMLElement) => container.querySelector('.lumo-floating-panel-drop-target');
+const ACTIVE_DROP_TARGET_CLASS = 'lumo-floating-panel-drop-target--active';
+// The mailbox spans x 0 to 1000, so these sit in its left and right halves
+const LEFT_HALF_X = 100;
+const RIGHT_HALF_X = 900;
 
 // jsdom has no TransitionEvent, so the generic event it falls back to drops propertyName
 const endTransition = (element: Element, propertyName: string) => {
@@ -384,5 +396,180 @@ describe('LumoFloatingPanel', () => {
         fireEvent.doubleClick(resizeGrip());
 
         expect(setCardWidth).toHaveBeenCalledWith(CARD_MIN_WIDTH);
+    });
+
+    describe('drag handle', () => {
+        it('sits on the open card for the mouse only, and is gone while the card is closed', async () => {
+            const { rerenderPanel } = await renderPanel();
+
+            expect(dragHandle()).toHaveAttribute('aria-hidden', 'true');
+            expect(dragHandle()).toHaveClass('cursor-move');
+            expect(dragHandle()).not.toHaveAttribute('tabindex');
+            expect(dragHandle()).not.toHaveAttribute('role');
+
+            rerenderPanel({ isPanelOpen: false });
+            expect(dragHandle()).not.toBeInTheDocument();
+        });
+
+        it('outlines the other half from the start of the drag, lights it up under the pointer, and switches sides on release there', async () => {
+            const { container } = await renderPanel({ shownSide: PanelSide.RIGHT });
+
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+            expect(dropTarget(container)).toHaveClass('lumo-floating-panel-drop-target--left');
+            expect(dropTarget(container)).not.toHaveClass(ACTIVE_DROP_TARGET_CLASS);
+
+            fireEvent.mouseMove(document, { clientX: LEFT_HALF_X });
+            expect(dropTarget(container)).toHaveClass(ACTIVE_DROP_TARGET_CLASS);
+
+            fireEvent.mouseUp(document, { clientX: LEFT_HALF_X });
+            expect(switchSides).toHaveBeenCalledTimes(1);
+            expect(dropTarget(container)).not.toBeInTheDocument();
+        });
+
+        it('keeps the drop target faint and stays put while the pointer keeps to the current half', async () => {
+            const { container } = await renderPanel({ shownSide: PanelSide.RIGHT });
+
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+            fireEvent.mouseMove(document, { clientX: RIGHT_HALF_X - 100 });
+            expect(dropTarget(container)).not.toHaveClass(ACTIVE_DROP_TARGET_CLASS);
+
+            fireEvent.mouseUp(document, { clientX: RIGHT_HALF_X - 100 });
+            expect(switchSides).not.toHaveBeenCalled();
+        });
+
+        it('cancels when dragged back to the current half', async () => {
+            const { container } = await renderPanel({ shownSide: PanelSide.RIGHT });
+
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+            fireEvent.mouseMove(document, { clientX: LEFT_HALF_X });
+            fireEvent.mouseMove(document, { clientX: RIGHT_HALF_X });
+            expect(dropTarget(container)).toHaveClass('lumo-floating-panel-drop-target--left');
+            expect(dropTarget(container)).not.toHaveClass(ACTIVE_DROP_TARGET_CLASS);
+
+            fireEvent.mouseUp(document, { clientX: RIGHT_HALF_X });
+            expect(switchSides).not.toHaveBeenCalled();
+        });
+
+        it('does nothing on a click, even where a wide card reaches over the midline', async () => {
+            await renderPanel({ shownSide: PanelSide.RIGHT, cardWidth: WIDEST_CARD });
+
+            fireEvent.mouseDown(dragHandle()!, { clientX: 450 });
+            fireEvent.mouseUp(document, { clientX: 450 });
+
+            expect(switchSides).not.toHaveBeenCalled();
+        });
+
+        it('reads the halves mirrored in RTL, where the right side sits on the physical left', async () => {
+            await renderPanel({ shownSide: PanelSide.RIGHT, isRTL: true });
+
+            fireEvent.mouseDown(dragHandle()!, { clientX: LEFT_HALF_X });
+            fireEvent.mouseMove(document, { clientX: RIGHT_HALF_X });
+            fireEvent.mouseUp(document, { clientX: RIGHT_HALF_X });
+
+            expect(switchSides).toHaveBeenCalledTimes(1);
+        });
+
+        it('drops nothing when a composer forces the panel onto the hovered half mid-drag', async () => {
+            const { rerenderPanel } = await renderPanel({ shownSide: PanelSide.RIGHT });
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+            fireEvent.mouseMove(document, { clientX: LEFT_HALF_X });
+
+            act(() => rerenderPanel({ shownSide: PanelSide.LEFT }));
+            fireEvent.mouseUp(document, { clientX: LEFT_HALF_X });
+
+            expect(switchSides).not.toHaveBeenCalled();
+        });
+
+        it('ignores any button but the primary one', async () => {
+            const { container } = await renderPanel({ shownSide: PanelSide.RIGHT });
+
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X, button: 2 });
+            fireEvent.mouseMove(document, { clientX: LEFT_HALF_X });
+
+            expect(dropTarget(container)).not.toBeInTheDocument();
+            expect(document.body).not.toHaveClass('cursor-move');
+            expect(document.body).not.toHaveClass(PANEL_DRAGGING_CLASS);
+        });
+
+        it('shows the move cursor across the page for the length of the drag', async () => {
+            await renderPanel({ shownSide: PanelSide.RIGHT });
+
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+            expect(document.body).toHaveClass('cursor-move', PANEL_DRAGGING_CLASS);
+
+            fireEvent.mouseUp(document, { clientX: RIGHT_HALF_X });
+            expect(document.body).not.toHaveClass('cursor-move');
+            expect(document.body).not.toHaveClass(PANEL_DRAGGING_CLASS);
+        });
+
+        it('drops nothing once the panel closes mid-drag, and starts the next drag faint', async () => {
+            const { container, rerenderPanel } = await renderPanel({ shownSide: PanelSide.RIGHT });
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+            fireEvent.mouseMove(document, { clientX: LEFT_HALF_X });
+
+            rerenderPanel({ isPanelOpen: false });
+            expect(document.body).not.toHaveClass('cursor-move');
+            expect(document.body).not.toHaveClass(PANEL_DRAGGING_CLASS);
+
+            fireEvent.mouseUp(document, { clientX: LEFT_HALF_X });
+            expect(switchSides).not.toHaveBeenCalled();
+
+            rerenderPanel({ isPanelOpen: true });
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+            expect(dropTarget(container)).not.toHaveClass(ACTIVE_DROP_TARGET_CLASS);
+        });
+
+        it('drops once when a drag starts over one whose mouseup never arrived', async () => {
+            await renderPanel({ shownSide: PanelSide.RIGHT });
+
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+            fireEvent.mouseMove(document, { clientX: LEFT_HALF_X });
+            fireEvent.mouseUp(document, { clientX: LEFT_HALF_X });
+
+            expect(switchSides).toHaveBeenCalledTimes(1);
+        });
+
+        it.each([
+            ['the window loses focus', () => fireEvent.blur(window)],
+            ['the context menu opens', () => fireEvent.contextMenu(document)],
+        ])('ends the drag without a drop when %s', async (_, interrupt) => {
+            const { container } = await renderPanel({ shownSide: PanelSide.RIGHT });
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+            fireEvent.mouseMove(document, { clientX: LEFT_HALF_X });
+
+            interrupt();
+            expect(document.body).not.toHaveClass('cursor-move');
+            expect(document.body).not.toHaveClass(PANEL_DRAGGING_CLASS);
+            expect(dropTarget(container)).not.toBeInTheDocument();
+
+            fireEvent.mouseUp(document, { clientX: LEFT_HALF_X });
+            expect(switchSides).not.toHaveBeenCalled();
+        });
+
+        it('keeps the page from selecting text under the drag', async () => {
+            await renderPanel();
+
+            const isDefaultAllowed = fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+
+            expect(isDefaultAllowed).toBe(false);
+        });
+
+        it('snaps the cat, card and prompt to the dropped side, and lets the next Move gallop again', async () => {
+            const { container, rerenderPanel } = await renderPanel({ shownSide: PanelSide.RIGHT });
+            // The provider's side change lands in the same render as the drop
+            switchSides.mockImplementationOnce(() => mockPanel({ shownSide: PanelSide.LEFT }));
+
+            fireEvent.mouseDown(dragHandle()!, { clientX: RIGHT_HALF_X });
+            fireEvent.mouseMove(document, { clientX: LEFT_HALF_X });
+            fireEvent.mouseUp(document, { clientX: LEFT_HALF_X });
+            act(() => rerenderPanel({ shownSide: PanelSide.LEFT }));
+
+            expect(overlay(container)).toHaveClass('lumo-floating-panel--left');
+            expect(overlay(container)).not.toHaveClass(RUNNING_CLASS);
+
+            act(() => rerenderPanel({ shownSide: PanelSide.RIGHT }));
+            expect(overlay(container)).toHaveClass(RUNNING_CLASS);
+        });
     });
 });

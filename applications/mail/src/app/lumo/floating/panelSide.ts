@@ -10,7 +10,7 @@ export interface PanelSideState {
 
 export const INITIAL_PANEL_SIDE_STATE: PanelSideState = { userSide: PanelSide.RIGHT, isComposerOverride: false };
 
-const getOppositeSide = (side: PanelSide) => {
+export const getOppositeSide = (side: PanelSide) => {
     return side === PanelSide.RIGHT ? PanelSide.LEFT : PanelSide.RIGHT;
 };
 
@@ -24,6 +24,15 @@ export const composersOpened = (state: PanelSideState): PanelSideState => {
 
 export const composersClosed = (state: PanelSideState): PanelSideState => {
     return { ...state, isComposerOverride: false };
+};
+
+/** Sides are logical, so in RTL the physical left half of the mailbox is the right side. */
+export const getDropSide = (pointerX: number, bounds: Pick<DOMRect, 'left' | 'width'>, isRTL: boolean) => {
+    const isPhysicalLeft = pointerX < bounds.left + bounds.width / 2;
+    if (isRTL) {
+        return isPhysicalLeft ? PanelSide.RIGHT : PanelSide.LEFT;
+    }
+    return isPhysicalLeft ? PanelSide.LEFT : PanelSide.RIGHT;
 };
 
 /** A switch made while a composer holds the panel left is the user's choice from then on. */
