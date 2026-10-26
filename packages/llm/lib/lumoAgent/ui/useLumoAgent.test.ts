@@ -982,6 +982,12 @@ describe('useLumoAgent', () => {
             expect(sentOptions[0]).toHaveProperty('clientType', LumoClientType.LumoMail);
         });
 
+        it('tells the transport which model to use when the product names one', async () => {
+            await sendOnce({ ...standalone, modelTier: 'lumo-max' });
+
+            expect(sentOptions[0]).toHaveProperty('modelTier', 'lumo-max');
+        });
+
         it('advertises client tools through the executor alone, so the request carries each once', async () => {
             await sendOnce(standalone);
 
@@ -1064,6 +1070,15 @@ describe('useLumoAgent', () => {
                 expect(await loadAgain(result)).toContain('THE SEARCH GUIDE');
             });
         });
+    });
+
+    it('names no model when the product does not, so the transport keeps its default', async () => {
+        const { result } = renderHook(() => useLumoAgent(config));
+        await act(async () => {
+            await result.current.send('hi');
+        });
+
+        expect(sentOptions[0]).not.toHaveProperty('modelTier');
     });
 
     it('without a server prompt, advertises described client tools itself and names no client', async () => {
