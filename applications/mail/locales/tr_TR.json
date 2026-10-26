@@ -1577,7 +1577,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1795,6 +1796,9 @@
       ],
       "Add ${ name }": [
         "${ name } ekle"
+      ],
+      "Create a booking page": [
+        "Bir rezervasyon sayfası oluştur"
       ]
     },
     "action": {
@@ -4469,6 +4473,9 @@
       ],
       "Move emails to the right category to improve categorization.": [
         "Sınıflandırmayı iyileştirmek için e-postaları doğru kategoriye taşıyın."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "İnsanların başka yerlere gitmeden doğrudan e-postalarınızdan sizinle rezervasyon yapmasını sağlayın."
       ]
     },
     "description": {
@@ -8261,8 +8268,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -10074,6 +10080,33 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Ücretsiz deneme süreniz sona erdi. Ekibinizin erişimini sürdürmek ve hesaplarını güvende tutmak için şimdi abone olun."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Yöneticinizden tarifeyi yükseltmesini veya ${ CALENDAR_APP_NAME } içindeki Rezervasyon sayfaları kenar çubuğundan bir sayfayı kaldırmasını isteyin."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Yöneticinizden tarifeyi yükseltmesini veya Rezervasyon sayfaları kenar çubuğundan bir sayfayı kaldırmasını isteyin."
+      ],
+      "Here is my availability:": [
+        "Uygunluğum:"
+      ],
+      "No booking pages yet": [
+        "Henüz bir rezervasyon sayfası yok"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Yeni bir rezervasyon sayfası eklemek için yöneticinizden tarifenizi yükseltmesini isteyin."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Yeni bir rezervasyon sayfası eklemek için ${ CALENDAR_APP_NAME } içindeki Rezervasyon sayfaları kenar çubuğundan var olan bir sayfayı kaldırın."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Yeni bir rezervasyon sayfası eklemek için Rezervasyon sayfaları kenar çubuğundan var olan bir sayfayı kaldırın."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Yeni bir rezervasyon sayfası eklemek için tarifenizi yükseltin."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Tarifenizle kullanılabilecek en fazla rezervasyon sayfası sayısına ulaştınız."
       ]
     },
     "info": {
@@ -11434,6 +11467,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } assistant": [
         "${ LUMO_SHORT_APP_NAME } yardımcı"
+      ],
+      "Booking page": [
+        "Rezervasyon sayfası"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17677,6 +17713,15 @@
       ],
       "Subscribe to ${ planTitle }": [
         "${ planTitle } tarifesine abone olun"
+      ],
+      "Cannot create more Booking pages": [
+        "Daha fazla Rezervasyon sayfası oluşturulamıyor"
+      ],
+      "Insert a booking page": [
+        "Bir rezervasyon sayfası ekle"
+      ],
+      "Share your availability": [
+        "Uygunluğunuzu paylaşın"
       ]
     },
     "Title header for keys table": {

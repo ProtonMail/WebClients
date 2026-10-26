@@ -1574,7 +1574,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1786,6 +1787,15 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the right": [
         "Flyt ${ LUMO_SHORT_APP_NAME } til højre"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Tilføj ${ name }"
+      ],
+      "Create a booking page": [
+        "Opret en bookingside"
       ]
     },
     "action": {
@@ -8252,8 +8262,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -10065,6 +10074,27 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Din gratis prøveperiode er afsluttet. Abonnér nu så dit team beholder adgang, og deres konti forbliver sikre."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Bed din administrator om at opgradere abonnementet eller fjerne en side fra sidepanelet med reservationssider i ${ CALENDAR_APP_NAME }."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Bed din administrator om at opgradere abonnementet eller fjerne en side fra sidepanelet med reservationssider."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "For at tilføje en ny reservationsside, skal du bede din administrator om at opgradere dit abonnement."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "For at tilføje en ny reservationsside, skal du fjerne en eksisterende fra sidepanelet for reservationssider i ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "For at tilføje en ny reservationsside, skal du fjerne en eksisterende fra sidepanelet for reservationssider."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "For at tilføje en ny reservationsside skal du opgradere dit abonnement."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du har nået det maksimale antal reservationssider, der er tilgængelige i dit abonnement."
       ]
     },
     "info": {
@@ -11422,6 +11452,9 @@
       ],
       "Credits used": [
         "Kredit forbrugt"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME }-assistent"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16324,6 +16357,12 @@
       ],
       "Invoice paid": [
         "Faktura betalt"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME }-assistent deaktiveret"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME }-assistent aktiveret"
       ]
     },
     "Success notification": {
@@ -17659,6 +17698,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Abonnér på ${ planTitle }"
+      ],
+      "Cannot create more Booking pages": [
+        "Kan ikke oprette flere reservationssider"
       ]
     },
     "Title header for keys table": {

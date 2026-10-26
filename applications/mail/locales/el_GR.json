@@ -1568,7 +1568,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1783,6 +1784,9 @@
       ],
       "Switch sides": [
         "Αλλάξτε πλευρές"
+      ],
+      "Create a booking page": [
+        "Δημιουργήστε μια σελίδα κρατήσεων"
       ]
     },
     "action": {
@@ -8249,8 +8253,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -10059,6 +10062,21 @@
       ],
       "UnionPay logo": [
         "Λογότυπο UnionPay"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Ζητήστε από τον διαχειριστή σας να αναβαθμίσει το πλάνο ή να αφαιρέσει μια σελίδα από την πλαϊνή στήλη των Σελίδων Κρατήσεων."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, ζητήστε από τον διαχειριστή σας να αναβαθμίσει το πλάνο σας."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, αφαιρέστε μια υπάρχουσα από την πλαϊνή στήλη των σελίδων κρατήσεων."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, αναβαθμίστε το πλάνο σας."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό σελίδων κρατήσεων που είναι διαθέσιμες στο πλάνο σας."
       ]
     },
     "info": {
@@ -17641,6 +17659,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Εγγραφείτε στο ${ planTitle }"
+      ],
+      "Cannot create more Booking pages": [
+        "Δεν είναι δυνατή η δημιουργία περισσότερων Σελίδων Κρατήσεων"
       ]
     },
     "Title header for keys table": {

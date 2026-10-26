@@ -1751,6 +1751,9 @@
       ],
       "Subscribe": [
         "구독"
+      ],
+      "Create a booking page": [
+        "예약 페이지 만들기"
       ]
     },
     "action": {
@@ -9652,6 +9655,21 @@
       ],
       "You'll choose a new username": [
         "새로운 사용자 이름을 선택할 수 있습니다."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "관리자에게 플랜을 업그레이드하거나 예약 페이지 사이드바에서 페이지를 삭제하도록 요청하십시오."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "예약 페이지를 생성하려면, 관리자에게 플랜 업그레이드를 요청하십시오."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "예약 페이지를 생성하려면, 예약 페이지 사이드바에서 기존 페이지를 제거해야 합니다."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "예약 페이지를 생성하려면, 플랜 업그레이드가 필요합니다."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "사용자 플랜의 사용 가능한 최대 수의 예약 페이지에 도달했습니다."
       ]
     },
     "info": {
@@ -17037,6 +17055,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "${ planTitle } 구독"
+      ],
+      "Cannot create more Booking pages": [
+        "예약 페이지를 더 생성할 수 없음"
       ]
     },
     "Title header for keys table": {

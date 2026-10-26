@@ -1778,6 +1778,9 @@
       ],
       "Write ${ count } logs": [
         "${ count } 件のログを書き込む"
+      ],
+      "Create a booking page": [
+        "予約ページを作成"
       ]
     },
     "action": {
@@ -7803,7 +7806,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -9721,6 +9724,27 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "無料トライアルが終了しました。チームのアクセスを中断させることなく、アカウントのセキュリティを維持するために、今すぐサブスクリプションにご登録ください。"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "管理者にプランのアップグレードを依頼するか、${ CALENDAR_APP_NAME } の「予約ページ」サイドバーからページを削除してください。"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "管理者に、プランをアップグレードしていただくか、予約ページサイドバーからページを削除していただくよう依頼してください。"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "新しい予約ページを追加するには、管理者にお客様のプランをアップグレードするよう依頼してください。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "新しい予約ページを追加するには、${ CALENDAR_APP_NAME } の「予約ページ」サイドバーから既存のページを削除してください。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "新しい予約ページを追加するには、予約ページサイドバーから既存のページを削除してください。"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "新しい予約ページを追加するには、お客様のプランをアップグレードしてください。"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "このプランで利用できる予約ページの最大数に達しました。"
       ]
     },
     "info": {
@@ -17125,6 +17149,9 @@
       ],
       "What are you migrating?": [
         "何を移行しますか？"
+      ],
+      "Cannot create more Booking pages": [
+        "予約ページはこれ以上作成できません"
       ]
     },
     "Title header for keys table": {
