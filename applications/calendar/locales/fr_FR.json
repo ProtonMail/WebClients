@@ -1046,6 +1046,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "À propos de ${ name }"
+      ],
+      "Add ${ name }": [
+        "Ajouter ${ name }"
       ]
     },
     "action": {
@@ -13339,6 +13345,11 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Compte bancaire"
       ]
     }
   }

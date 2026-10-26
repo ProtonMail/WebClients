@@ -1040,6 +1040,15 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La tua prova gratuita dell'applicazione desktop termina ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "Informazioni su ${ name }"
+      ],
+      "Add ${ name }": [
+        "Aggiungi ${ name }"
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
       ]
     },
     "action": {
@@ -4206,6 +4215,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La tua connessione a Zoom è scaduta. Riconnettiti per continuare."
+      ],
+      "A contact with this email address already exists": [
+        "Esiste già un contatto con questo indirizzo e-mail"
       ]
     },
     "error": {
@@ -4572,6 +4584,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Il tuo account sta usando ${ usedSpace } di spazio di archiviazione, mentre lo spazio a tua disposizione è inferiore: ${ inviteSpace }. Elimina dei dati o chiedi all'amministratore del piano di aumentarti lo spazio di archiviazione."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ti invitiamo a collegare il tuo account ${ BRAND_NAME } a questo gruppo familiare e a usufruire di tutte le sue funzionalità premium."
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -4624,6 +4639,12 @@
       ],
       "Security key": [
         "Chiave di sicurezza"
+      ],
+      "Still waiting?": [
+        "Stai ancora aspettando?"
+      ],
+      "Touch your security key to continue.": [
+        "Tocca la tua chiave di sicurezza per continuare."
       ]
     },
     "fido2: Label": {
@@ -6717,6 +6738,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Hai raggiunto il limite di slot di prenotazione (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per evitare di perdere l'accesso. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per mantenere l'abbonamento. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -8665,6 +8692,9 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Privacy illimitata e più spazio di archiviazione fino a 2 persone."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } che termina con ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -9345,6 +9375,30 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Il tuo abbonamento completo a ${ planTitle } inizia il ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Aggiungi un metodo di pagamento** per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puoi disdire in qualsiasi momento prima di allora.** Potrai utilizzare ${ planTitle } gratuitamente fino al termine del periodo di prova."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Se decidi di continuare dopo il periodo di prova,** puoi annullare l'abbonamento entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Una volta che l'abbonamento completo avrà inizio...** Potrai comunque disdirlo entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
+      ],
+      "If you continue after your trial,": [
+        "Se decidi di continuare dopo il periodo di prova,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "È possibile recedere dal contratto entro 30 giorni e ottenere un rimborso proporzionale."
       ]
     },
     "Option": {
@@ -9772,6 +9826,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Il tuo abbonamento ha attualmente uno sconto esistente. Passare a questa nuova promozione significa che lo sconto esistente non sarà più applicato."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Gli account Born Private non possono essere acquistati se si dispone di un abbonamento attivo."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "L'iniziativa “Born Private” richiede una donazione."
+      ],
+      "You already own a Born Private account.": [
+        "Hai già un account Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Il tuo account è troppo vecchio per partecipare all'iniziativa Born Private."
       ]
     },
     "Payments.Error": {
@@ -9852,6 +9918,12 @@
     "Payments.Saved payment method details": {
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - carta che termina con ${ Last4 }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carta che termina con ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bonifico bancario - ${ iban }"
       ]
     },
     "Payments.Sepa": {
@@ -12697,6 +12769,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Questo utente otterrà i diritti di amministratore al prossimo accesso."
       ]
     },
     "Validation": {
@@ -13170,6 +13245,16 @@
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "Versione premium di ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Conto bancario"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modifica dell'indirizzo di fatturazione potrebbe influire sulle imposte relative alle fatture future."
       ]
     }
   }

@@ -1049,6 +1049,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "Pel que fa a ${ name }"
+      ],
+      "Add ${ name }": [
+        "Afegir ${ name }"
       ]
     },
     "action": {
@@ -13512,6 +13518,11 @@
       ],
       "Passcode:": [
         "Codi d'accés:"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Compte bancari"
       ]
     }
   }
