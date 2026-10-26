@@ -52,6 +52,26 @@ const baseDimensions = {
     plan: topValues(),
 };
 
+/**
+ * Proof of concept (DAWG-99): the first onboarding step is also sent, authenticated, to the group of the signup PoC,
+ * to check how the data side links it with the unauthenticated signup events of the Account app.
+ */
+const signupPocStepLoad = defineEvent({
+    target: 'telemetry',
+    group: TelemetryMeasurementGroups.mailSignupOnboardingPoc,
+    event: TelemetryMailOnboardingEvents.stepLoad,
+    values: { activeMs: duration(), timestampMs: number() },
+    // Not delayed so that the order of the events with the signup ones can be checked
+    delay: false,
+    dimensions: {
+        flow: allowed(['onboarding']),
+        product: allowed(['mail']),
+        authState: allowed(['authenticated']),
+        step: allowed([ONBOARDING_STEPS.welcome]),
+        plan: topValues(),
+    },
+});
+
 /** Time the user spent in the onboarding, sent as `activeMs` on every event */
 const onboardingTimer = defineTimer('mailOnboarding');
 
@@ -144,6 +164,23 @@ const trackStepLoaded = (plan: string, step: ONBOARDING_STEPS) => {
     tracker.emit(stepLoad, { dimensions: { flow: 'onboarding', plan, step }, ...withTiming() }, timing);
 };
 
+const trackSignupPocWelcomeLoaded = (plan: string) => {
+    tracker.emit(
+        signupPocStepLoad,
+        {
+            dimensions: {
+                flow: 'onboarding',
+                product: 'mail',
+                authState: 'authenticated',
+                step: ONBOARDING_STEPS.welcome,
+                plan,
+            },
+            ...withTiming(),
+        },
+        timing
+    );
+};
+
 const trackStepInteracted = (plan: string, step: ONBOARDING_STEPS, action: ONBOARDING_ACTIONS) => {
     tracker.emit(stepInteracted, { dimensions: { flow: 'onboarding', plan, step, action }, ...withTiming() }, timing);
 };
@@ -211,6 +248,9 @@ export const useOnboardingTracking = () => {
             if (!isReplay) {
                 setItem(LAST_STEP_KEY, step);
                 trackStepLoaded(plan, step);
+                if (step === ONBOARDING_STEPS.welcome) {
+                    trackSignupPocWelcomeLoaded(plan);
+                }
             }
         },
         trackStepInteracted: (step: ONBOARDING_STEPS, action: ONBOARDING_ACTIONS) => {
