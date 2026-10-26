@@ -1769,6 +1769,15 @@
       ],
       "Yes, organize it": [
         "はい、整理する"
+      ],
+      "About ${ name }": [
+        "${ name } について"
+      ],
+      "Add ${ name }": [
+        "${ name } を追加"
+      ],
+      "Create a booking page": [
+        "予約ページを作成"
       ]
     },
     "action": {
@@ -4338,6 +4347,9 @@
       ],
       "No ads. No trackers": [
         "広告もトラッカーも一切ありません"
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "メールの往復をすることなく、相手がメールから直接あなたの予定を予約できるようにします。"
       ]
     },
     "description": {
@@ -7598,7 +7610,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -9492,6 +9504,33 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "お使いの Gmail はこの ${ MAIL_APP_NAME } アドレスと連携します"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "管理者にプランのアップグレードを依頼するか、${ CALENDAR_APP_NAME } の「予約ページ」サイドバーからページを削除してください。"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "管理者に、プランをアップグレードしていただくか、予約ページサイドバーからページを削除していただくよう依頼してください。"
+      ],
+      "Here is my availability:": [
+        "私の空き時間は以下のとおりです:"
+      ],
+      "No booking pages yet": [
+        "予約ページはまだありません"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "新しい予約ページを追加するには、管理者にお客様のプランをアップグレードするよう依頼してください。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "新しい予約ページを追加するには、${ CALENDAR_APP_NAME } の「予約ページ」サイドバーから既存のページを削除してください。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "新しい予約ページを追加するには、予約ページサイドバーから既存のページを削除してください。"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "新しい予約ページを追加するには、お客様のプランをアップグレードしてください。"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "このプランで利用できる予約ページの最大数に達しました。"
       ]
     },
     "info": {
@@ -10841,6 +10880,15 @@
       ],
       "Write-chain drain after last line": [
         "最終行の後の書き込みチェーン完了待ち"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } アシスタント"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "メールに予約ページを追加して、相手が都合の良い時間を選べるようにします。"
+      ],
+      "Booking page": [
+        "予約ページ"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13391,6 +13439,18 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "${ IDEAL_WERO_BRAND_NAME } はユーロでの支払いにのみ対応しているため、通貨がユーロ (€) に変更されました。"
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "サブスクリプションの利用中は Born Private アカウントを購入することはできません。"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private プログラムに参加するには寄付が必要です。"
+      ],
+      "You already own a Born Private account.": [
+        "お客様はすでに Born Private アカウントを所有しています。"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "お使いのアカウントは、Born Private プログラムの対象期間より前に作成されています。"
       ]
     },
     "Payments.Error": {
@@ -15509,6 +15569,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "サブスクリプションが正常にキャンセルされました。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } アシスタントが無効になりました"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } アシスタントが有効になりました"
       ]
     },
     "Success notification": {
@@ -16791,6 +16857,15 @@
       ],
       "Subscribe to ${ planTitle }": [
         "${ planTitle } を登録"
+      ],
+      "Cannot create more Booking pages": [
+        "予約ページはこれ以上作成できません"
+      ],
+      "Insert a booking page": [
+        "予約ページを挿入"
+      ],
+      "Share your availability": [
+        "空き時間を共有"
       ]
     },
     "Title header for keys table": {
