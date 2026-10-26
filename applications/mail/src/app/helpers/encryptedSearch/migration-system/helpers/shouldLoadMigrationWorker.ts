@@ -35,13 +35,8 @@ export const canLoadRunner = async () => {
     const { hasIndexedDB, isAccessible } = await detectStorageCapabilities();
 
     // Expected in browsers without IndexedDB support or with storage restrictions
-    // For example WebKit with "Block All Cookies" or Lockdown Mode
-    if (!hasIndexedDB) {
-        return false;
-    }
-
-    if (!isAccessible) {
-        traceInitiativeError(SentryMailInitiatives.MIGRATION_TOOL, new Error('IndexedDB is not accessible'));
+    // For example WebKit with "Block All Cookies", Lockdown Mode or private mode
+    if (!hasIndexedDB || !isAccessible) {
         return false;
     }
 
