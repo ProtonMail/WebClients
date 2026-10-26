@@ -1051,6 +1051,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "O ${ name }"
+      ],
+      "Add ${ name }": [
+        "Pridať ${ name }"
       ]
     },
     "action": {
@@ -10041,6 +10047,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Účet Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Iniciatíva Born Private si vyžaduje finančný príspevok."
+      ],
+      "You already own a Born Private account.": [
+        "Už vlastníte účet Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Váš účet je príliš starý na iniciatívu Born Private."
       ]
     },
     "Payments.Error": {
