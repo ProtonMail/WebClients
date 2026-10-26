@@ -3,16 +3,16 @@ import { subDays } from 'date-fns';
 import { FREE_USER_CHAT_RETENTION_DAYS } from '../constants/limits';
 import type { Memory } from '../redux/slices/lumoUserSettings';
 import type { Conversation, Message, Space } from '../types';
-import { Role } from '../types';
+import { Role, SpaceType } from '../types';
 import {
+    MEMORY_GENERATION_MAX_MEMORIES,
+    MEMORY_RECOMMENDED_TOTAL_COUNT,
     applyMemoryEdit,
     buildMemoryBootstrapPrompt,
     buildMemoryOptimizePrompt,
     getMemoryGenerationCutoff,
     getMemoryGenerationScanBoundary,
     isMemoryCountHigh,
-    MEMORY_GENERATION_MAX_MEMORIES,
-    MEMORY_RECOMMENDED_TOTAL_COUNT,
     mergeAppendedGeneratedMemories,
     parseMemoryGenerationResponse,
     parseMemoryOptimizeResponse,
@@ -34,8 +34,8 @@ describe('memoryHelpers', () => {
     it('samples only general-chat user prompts, newest first, deduped', () => {
         const recentDate = subDays(new Date(), 1).toISOString();
         const spaces: Record<string, Space> = {
-            project: { id: 'project', isProject: true } as Space,
-            general: { id: 'general', isProject: false } as Space,
+            project: { id: 'project', spaceType: SpaceType.Project } as Space,
+            general: { id: 'general', spaceType: SpaceType.Default } as Space,
         };
         const conversations: Record<string, Conversation> = {
             c1: {
@@ -94,8 +94,8 @@ describe('memoryHelpers', () => {
         const recentDate = subDays(new Date(), 1).toISOString();
         const expiredDate = subDays(new Date(), FREE_USER_CHAT_RETENTION_DAYS + 1).toISOString();
         const spaces: Record<string, Space> = {
-            general: { id: 'general', isProject: false } as Space,
-            deletedSpace: { id: 'deletedSpace', isProject: false, deleted: true } as unknown as Space,
+            general: { id: 'general', spaceType: SpaceType.Default } as Space,
+            deletedSpace: { id: 'deletedSpace', spaceType: SpaceType.Default, deleted: true } as unknown as Space,
         };
         const conversations: Record<string, Conversation> = {
             active: {
@@ -173,7 +173,7 @@ describe('memoryHelpers', () => {
     it('includes expired conversations for Lumo Plus users', () => {
         const expiredDate = subDays(new Date(), FREE_USER_CHAT_RETENTION_DAYS + 1).toISOString();
         const spaces: Record<string, Space> = {
-            general: { id: 'general', isProject: false } as Space,
+            general: { id: 'general', spaceType: SpaceType.Default } as Space,
         };
         const conversations: Record<string, Conversation> = {
             expired: {
@@ -200,7 +200,7 @@ describe('memoryHelpers', () => {
     });
 
     it('samples only prompts created after the last completed memory scan', () => {
-        const spaces = { general: { id: 'general', isProject: false } as Space };
+        const spaces = { general: { id: 'general', spaceType: SpaceType.Default } as Space };
         const conversations = {
             general: {
                 id: 'general',
@@ -241,9 +241,7 @@ describe('memoryHelpers', () => {
         ];
 
         expect(getMemoryGenerationCutoff(undefined, memories)).toBe(new Date(200).toISOString());
-        expect(getMemoryGenerationCutoff('2026-02-01T00:00:00.000Z', memories)).toBe(
-            '2026-02-01T00:00:00.000Z'
-        );
+        expect(getMemoryGenerationCutoff('2026-02-01T00:00:00.000Z', memories)).toBe('2026-02-01T00:00:00.000Z');
     });
 
     it('does not infer a cutoff from optimized memories while chat prompts are still pending', () => {
@@ -270,7 +268,7 @@ describe('memoryHelpers', () => {
                 source: 'generated',
             },
         ];
-        const spaces = { general: { id: 'general', isProject: false } as Space };
+        const spaces = { general: { id: 'general', spaceType: SpaceType.Default } as Space };
         const conversations = {
             general: {
                 id: 'general',
@@ -411,7 +409,7 @@ describe('memoryHelpers', () => {
                 source: 'generated',
             },
         ];
-        const spaces = { general: { id: 'general', isProject: false } as Space };
+        const spaces = { general: { id: 'general', spaceType: SpaceType.Default } as Space };
         const conversations = {
             general: {
                 id: 'general',

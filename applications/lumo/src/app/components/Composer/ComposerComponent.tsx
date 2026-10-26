@@ -28,7 +28,7 @@ import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectProvisionalAttachments, selectSpaceById } from '../../redux/selectors';
 import { upsertAttachment } from '../../redux/slices/core/attachments';
 import type { Attachment, Message } from '../../types';
-import { ComposerMode } from '../../types';
+import { ComposerMode, SpaceType } from '../../types';
 import type { DictationLanguage } from '../../util/dictationLanguages';
 import { base64ToFile } from '../../util/imageHelpers';
 import { notifyMobileAppLoaded } from '../../util/mobileAppNotification';
@@ -179,7 +179,8 @@ const ComposerComponentInner = ({
     // Agents are hidden inside projects: a project already injects its own instructions,
     // so layering an agent persona on top would be redundant and confusing.
     const composerSpace = useLumoSelector(selectSpaceById(spaceId ?? ''));
-    const canUseAgents = !isGuest && !composerSpace?.isProject;
+    const canUseAgents =
+        !isGuest && composerSpace?.spaceType !== SpaceType.Project && composerSpace?.spaceType !== SpaceType.Schedule;
 
     // Conversation starters for the active agent, surfaced on a fresh, empty conversation.
     const { activeAgent } = useConversationAgent(messageChain?.[0]?.conversationId);

@@ -4,11 +4,12 @@ import { ActionEventV6 } from '@proton/shared/lib/api/events';
 import type { LumoEventResponse } from '@proton/shared/lib/interfaces/Lumo';
 
 import { computeSha256AsBase64 } from '../../crypto';
-import type { Base64 } from '../../types';
+import type { Base64, SpaceType } from '../../types';
 
 // Mock database types and state
 export type MockDbSpace = {
     ID: string;
+    SpaceType?: SpaceType;
     CreateTime: string;
     UpdateTime?: string; // Optional for backward compatibility with tests
     DeleteTime?: string;
@@ -71,6 +72,7 @@ export type MockDbUserSettings = {
 
 // Request body types
 type NewSpaceRequest = {
+    SpaceType?: SpaceType;
     SpaceKey: string;
     SpaceTag: string;
     Encrypted: string;
@@ -533,6 +535,7 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
                     UpdateTime: now,
                     SpaceKey: body.SpaceKey,
                     SpaceTag: body.SpaceTag,
+                    SpaceType: body.SpaceType,
                     Encrypted: body.Encrypted,
                 };
                 console.log(`mock server: about to add space:`, space);
@@ -694,6 +697,7 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
             checkForUndefinedParams(request, params);
 
             const body = (await request.json()) as {
+                SpaceType?: SpaceType;
                 SpaceKey?: string;
                 Encrypted?: string;
             };
@@ -707,6 +711,9 @@ export function createHandlers(mockDb: MockDatabase, errorHandler?: MockErrorHan
             }
 
             // Update the space
+            if (body.SpaceType !== undefined) {
+                space.SpaceType = body.SpaceType;
+            }
             if (body.SpaceKey !== undefined) {
                 space.SpaceKey = body.SpaceKey;
             }

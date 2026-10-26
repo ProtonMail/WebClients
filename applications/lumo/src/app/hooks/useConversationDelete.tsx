@@ -10,6 +10,7 @@ import { selectConversationHasGeneratedImages, selectSpaceById } from '../redux/
 import { locallyDeleteConversationFromLocalRequest } from '../redux/slices/core/conversations';
 import { locallyDeleteSpaceFromLocalRequest } from '../redux/slices/core/spaces';
 import type { Conversation } from '../types';
+import { SpaceType } from '../types';
 import { sendConversationDeleteEvent } from '../util/telemetry';
 import { useLumoNavigate } from './useLumoNavigate';
 
@@ -39,7 +40,7 @@ export const useConversationDelete = ({ conversation, navigateAfterDelete = true
         sendConversationDeleteEvent();
 
         // Project spaces and any space with more than one chat only delete the conversation (legacy 1:1 was space delete)
-        const deleteConversationOnly = space?.isProject === true;
+        const deleteConversationOnly = space?.spaceType === SpaceType.Project;
 
         try {
             if (deleteConversationOnly) {
@@ -61,7 +62,7 @@ export const useConversationDelete = ({ conversation, navigateAfterDelete = true
     }, [
         conversationId,
         spaceId,
-        space?.isProject,
+        space?.spaceType === SpaceType.Project,
         dispatch,
         createNotification,
         openConfirmDeleteModal,

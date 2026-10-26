@@ -20,14 +20,14 @@ import type {
     ResourceType,
 } from '../../remote/types';
 import { deserializeSpaceWithMasterKeys, serializeSpace } from '../../serialization';
-import { removeIndexedContentForSpace } from '../../services/removeIndexedContentForSpace';
 import {
     buildProjectKnowledgeSnapshot,
     buildProjectKnowledgeSnapshots,
 } from '../../services/reconcileProjectSearchIndex';
+import { removeIndexedContentForSpace } from '../../services/removeIndexedContentForSpace';
 import { SearchService } from '../../services/search/searchService';
-import { type SerializedSpace, type Space, type SpaceId, cleanSerializedSpace, cleanSpace } from '../../types';
-import type { Project } from '../../services/reconcileProjectSearchIndex';
+import type { SerializedSpace, Space, SpaceId } from '../../types';
+import { SpaceType, cleanSerializedSpace, cleanSpace } from '../../types';
 import { listify, mapIds, mapify } from '../../util/collections';
 import { isoToUnixTimestamp } from '../../util/date';
 import {
@@ -579,6 +579,7 @@ export function* refreshSpaceFromRemote({
         return;
     }
     const remoteSpace = cleanSpace(deserializedRemoteSpace);
+    const encryptedSpaceToSave: SerializedSpace = { ...encryptedRemoteSpace, spaceType: remoteSpace.spaceType };
 
     const localSpace: Space | undefined = yield select(selectSpaceById(localId));
     const encryptedIdbSpace: SerializedSpace | undefined = yield call([dbApi, dbApi.getSpaceById], localId);
@@ -593,7 +594,7 @@ export function* refreshSpaceFromRemote({
 
         console.log(`refreshSpaceFromRemote ${localId}: Updating from remote`);
         yield put(addSpace(remoteSpace));
-        yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false });
+        yield call([dbApi, dbApi.updateSpace], encryptedSpaceToSave, { dirty: false });
         yield call(migrateSpaceMasterKeyIfNeeded, remoteSpace, needsMasterKeyMigration);
         return;
     }
@@ -618,7 +619,7 @@ export function* refreshSpaceFromRemote({
         console.log(`refreshSpaceFromRemote ${localId}: Updating from remote`);
         yield put(addSpace(remoteSpace));
         yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
-        yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false });
+        yield call([dbApi, dbApi.updateSpace], encryptedSpaceToSave, { dirty: false });
         yield call(migrateSpaceMasterKeyIfNeeded, remoteSpace, needsMasterKeyMigration);
         return;
     }
@@ -626,7 +627,7 @@ export function* refreshSpaceFromRemote({
     console.log(`refreshSpaceFromRemote ${localId}: New space, inserting from remote`);
     yield put(addSpace(remoteSpace));
     yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
-    yield call([dbApi, dbApi.updateSpace], encryptedRemoteSpace, { dirty: false });
+    yield call([dbApi, dbApi.updateSpace], encryptedSpaceToSave, { dirty: false });
     yield call(migrateSpaceMasterKeyIfNeeded, remoteSpace, needsMasterKeyMigration);
 }
 
@@ -643,7 +644,7 @@ export function* reconcileProjectSearchIndex(): SagaIterator {
             (yield select((state: LumoState) => state.lumoUserSettings.indexedDriveFolders)) || [];
 
         for (const space of Object.values(spaces)) {
-            if (!space.isProject || space.linkedDriveFolder) {
+            if (space.spaceType !== SpaceType.Project || space.linkedDriveFolder) {
                 continue;
             }
 
@@ -667,10 +668,8 @@ export function* reconcileProjectSearchIndex(): SagaIterator {
     }
 }
 
-export function* cleanupProjectSearchIndexOnSpaceUpdate({
-    payload: space,
-}: ReturnType<typeof addSpace>): SagaIterator {
-    if (!space.isProject || space.linkedDriveFolder) {
+export function* cleanupProjectSearchIndexOnSpaceUpdate({ payload: space }: ReturnType<typeof addSpace>): SagaIterator {
+    if (space.spaceType !== SpaceType.Project || space.linkedDriveFolder) {
         return;
     }
 
@@ -690,7 +689,7 @@ export function* cleanupProjectSearchIndexOnSpaceUpdate({
         const searchService = SearchService.get(userId);
         const removed: number = yield call(
             [searchService, searchService.reconcileStaleProjectDocuments],
-            [buildProjectKnowledgeSnapshot(space as Project, attachments)]
+            [buildProjectKnowledgeSnapshot(space, attachments)]
         );
         if (removed > 0) {
             console.log('[cleanupProjectSearchIndexOnSpaceUpdate] Removed stale project documents:', removed);

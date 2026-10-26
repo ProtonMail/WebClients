@@ -40,19 +40,19 @@ import { createGenerationError, getErrorTypeFromMessage } from '../../services/e
 import { throwIfAborted } from '../../services/generation/abortGeneration';
 import { maybeAutoSaveMemoriesFromChats } from '../../services/memoryAutoSave';
 import { SearchService } from '../../services/search/searchService';
-import type { ImageAspectRatio, MessageId, QuestionAnswer, ShallowAttachment } from '../../types';
-import {
-    type ArtifactActionMeta,
-    type Attachment,
-    type ConversationId,
-    ConversationStatus,
-    type GenerationError,
-    type Message,
-    Role,
-    type SpaceId,
-    getAttachmentPriv,
-    getAttachmentPub,
+import type {
+    ArtifactActionMeta,
+    Attachment,
+    ConversationId,
+    GenerationError,
+    ImageAspectRatio,
+    Message,
+    MessageId,
+    QuestionAnswer,
+    ShallowAttachment,
+    SpaceId,
 } from '../../types';
+import { ConversationStatus, Role, SpaceType, getAttachmentPriv, getAttachmentPub } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
 import { getDefaultNewConversationTitle } from '../../util/conversationTitle';
 import { parseFileReferences } from '../../util/fileReferences';
@@ -546,7 +546,7 @@ export function sendMessage({
         let isProject = false;
         if (spaceId) {
             const space = state.spaces[spaceId];
-            if (space?.isProject) {
+            if (space?.spaceType === SpaceType.Project) {
                 isProject = true;
                 if (space?.projectInstructions) {
                     projectInstructions = space.projectInstructions;
@@ -805,7 +805,7 @@ export function regenerateMessage({
             let projectInstructions: string | undefined;
             let isProject = false;
             const space = state.spaces[c.spaceId];
-            if (space?.isProject) {
+            if (space?.spaceType === SpaceType.Project) {
                 isProject = true;
                 if (space?.projectInstructions) {
                     projectInstructions = space.projectInstructions;
@@ -1216,7 +1216,15 @@ export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode
         const pendingArtifactCreation = getState().composerActions?.pendingArtifactCreation ?? null;
 
         const spaceId = newSpaceId();
-        dispatch(addSpace({ id: spaceId, createdAt, updatedAt: createdAt, spaceKey: generateSpaceKeyBase64() }));
+        dispatch(
+            addSpace({
+                spaceType: SpaceType.Default,
+                id: spaceId,
+                createdAt,
+                updatedAt: createdAt,
+                spaceKey: generateSpaceKeyBase64(),
+            })
+        );
         dispatch(pushSpaceRequest({ id: spaceId }));
 
         const conversationId = newConversationId();

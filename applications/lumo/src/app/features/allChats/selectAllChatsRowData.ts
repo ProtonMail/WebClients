@@ -3,6 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { selectConversations } from '../../redux/selectors';
 import { selectSpaceMap } from '../../redux/slices/core/spaces';
 import type { ConversationId } from '../../types';
+import { SpaceType } from '../../types';
 
 // Fields derived from conversations/spaces only — never invalidated by streaming messages.
 export interface AllChatsRowData {
@@ -24,7 +25,7 @@ export const selectAllChatsRowDataMap = createSelector(
             }
 
             const space = spaces[conversation.spaceId];
-            const isProject = space?.isProject === true;
+            const isProject = space?.spaceType === SpaceType.Project;
             const projectIcon = isProject ? space?.projectIcon : undefined;
 
             rowDataMap[conversation.id] = {

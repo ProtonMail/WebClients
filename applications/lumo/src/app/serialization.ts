@@ -1,10 +1,9 @@
 // noinspection ExceptionCaughtLocallyJS
-import {decode as msgpackDecode, encode as msgpackEncode} from '@msgpack/msgpack';
+import { decode as msgpackDecode, encode as msgpackEncode } from '@msgpack/msgpack';
+import { generateAndImportKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import stableStringify from 'json-stable-stringify';
 import isNil from 'lodash/isNil';
 import isObject from 'lodash/isObject';
-
-import {generateAndImportKey} from '@protontech/crypto/subtle/aesGcm.ts';
 
 import {
     base64ToSpaceKey,
@@ -16,17 +15,34 @@ import {
     unwrapAesKeyWithMasterKeys,
     wrapAesKey,
 } from './crypto';
-import type {AesGcmCryptoKey, AesKwCryptoKey} from './crypto/types';
-import type {LumoUserSettings} from './redux/slices/lumoUserSettings';
-import type {SerializedUserSettings, UserSettingsToApi} from './remote/types';
-import type {Encrypted} from './types';
+import type { AesGcmCryptoKey, AesKwCryptoKey } from './crypto/types';
+import type { LumoUserSettings } from './redux/slices/lumoUserSettings';
+import type { SerializedUserSettings, UserSettingsToApi } from './remote/types';
+import type {
+    AdString,
+    Attachment,
+    AttachmentPub,
+    Conversation,
+    ConversationPub,
+    Encrypted,
+    EncryptedData,
+    Message,
+    MessagePriv,
+    MessagePub,
+    ProjectSpacePriv,
+    SerializedAttachment,
+    SerializedConversation,
+    SerializedMessage,
+    SerializedSpace,
+    ShallowAttachment,
+    Space,
+    SpaceKeyClear,
+    SpaceKeyEnc,
+    SpacePub,
+} from './types';
 import {
-    type AdString,
-    type Attachment,
-    type AttachmentPub,
-    type Conversation,
-    type ConversationPub,
-    type EncryptedData,
+    SpaceType,
+    cleanSpace,
     getAttachmentPub,
     getConversationPub,
     getMessagePriv,
@@ -38,25 +54,13 @@ import {
     isEmptyMessagePriv,
     isMessagePriv,
     isShallowAttachment,
-    isSpacePriv,
-    type Message,
-    type MessagePriv,
-    type MessagePub,
-    type SerializedAttachment,
-    type SerializedConversation,
-    type SerializedMessage,
-    type SerializedSpace,
-    type ShallowAttachment,
-    type Space,
-    type SpaceKeyClear,
-    type SpaceKeyEnc,
-    type SpacePub,
+    isSpaceType,
     splitAttachment,
     splitConversation,
     splitSpace,
 } from './types';
-import {objectMapV} from './util/objects';
-import {safeLogger} from './util/safeLogger';
+import { objectMapV } from './util/objects';
+import { safeLogger } from './util/safeLogger';
 
 const APP_NAME = 'lumo';
 
@@ -64,7 +68,7 @@ const APP_NAME = 'lumo';
 // This has consequences in terms of backward compatibility: if you
 // change this logic, this might make older spaces unreadable,
 // because the AD won't match anymore during decryption.
-function getSpaceAd(space: SpacePub): AdString {
+function getSpaceAd(space: Pick<SpacePub, 'id'>): AdString {
     const { id } = space;
 
     const _adString = stableStringify({
@@ -156,7 +160,13 @@ export async function serializeSpace(space: Space, masterKey: AesKwCryptoKey): P
     const spaceKeyWrappedBase64 = spaceKeyWrappedBytes.toBase64();
     const spaceKeyEnc: SpaceKeyEnc = { wrappedSpaceKey: spaceKeyWrappedBase64 };
 
-    const spacePrivJson = JSON.stringify(spacePriv);
+    const spacePrivJson = JSON.stringify({
+        ...spacePriv,
+        ...(space.spaceType === SpaceType.Project && {
+            /** @deprecated Remove once the API persists and returns the public SpaceType field. */
+            isProject: true,
+        }),
+    });
     const spaceDek = await getSpaceDek(spaceKeyClear);
     const ad = getSpaceAd(space);
     const spacePrivJsonEncrypted = await encryptString(spacePrivJson, spaceDek, ad);
@@ -169,7 +179,7 @@ export async function serializeSpace(space: Space, masterKey: AesKwCryptoKey): P
 }
 
 export async function deserializeSpace(
-    serializedSpace: SerializedSpace,
+    serializedSpace: Omit<SerializedSpace, 'spaceType'> & { spaceType?: SpaceType },
     masterKey: AesKwCryptoKey
 ): Promise<Space | null | undefined> {
     const { space } = await deserializeSpaceWithMasterKeys(serializedSpace, { primary: masterKey, legacy: [] });
@@ -177,11 +187,10 @@ export async function deserializeSpace(
 }
 
 export async function deserializeSpaceWithMasterKeys(
-    serializedSpace: SerializedSpace,
+    serializedSpace: Omit<SerializedSpace, 'spaceType'> & { spaceType?: SpaceType },
     masterKeys: MasterKeyContext
 ): Promise<DeserializeSpaceResult> {
     try {
-        const spacePub = getSpacePub(serializedSpace);
         const { encrypted, deleted } = serializedSpace;
 
         if (deleted === true) {
@@ -207,20 +216,24 @@ export async function deserializeSpaceWithMasterKeys(
         if (!spaceDek) {
             return { space: undefined, needsMasterKeyMigration: false };
         }
-        let spacePriv = {};
-        if (encrypted) {
-            const spacePrivJson = await decryptString(encrypted, spaceDek, ad);
-            spacePriv = JSON.parse(spacePrivJson);
-            if (!isSpacePriv(spacePriv)) {
-                throw new Error('Deserialized object is not a SpacePriv');
-            }
+        const parsedSpacePriv = encrypted ? JSON.parse(await decryptString(encrypted, spaceDek, ad)) : {};
+        if (typeof parsedSpacePriv !== 'object' || parsedSpacePriv === null || Array.isArray(parsedSpacePriv)) {
+            throw new Error('Invalid space data');
         }
+        // Legacy records have no public spaceType and use isProject in their encrypted metadata:
+        // true means Project, while false or missing means Simple. Prefer public spaceType when present.
+        // Strip the flag from the in-memory space. Project serialization temporarily writes it
+        // back for APIs that do not persist public SpaceType. Reading does not rewrite storage.
+        const { isProject, ...spacePriv } = parsedSpacePriv as ProjectSpacePriv & { isProject?: boolean };
+        const spaceType = serializedSpace.spaceType ?? (isProject === true ? SpaceType.Project : SpaceType.Default);
+        if (!isSpaceType(spaceType)) throw new Error('Unsupported space type');
+        const spacePub = getSpacePub({ ...serializedSpace, spaceType });
         return {
-            space: {
+            space: cleanSpace({
                 ...spacePub,
                 ...spaceKeyClear,
                 ...spacePriv,
-            },
+            }),
             needsMasterKeyMigration: !usedPrimaryMasterKey,
         };
     } catch (e) {

@@ -1,9 +1,10 @@
-import { locallyDeleteConversationFromLocalRequest } from '../../redux/slices/core/conversations';
 import type { ConversationMap } from '../../redux/slices/core/conversations';
-import { locallyDeleteSpaceFromLocalRequest } from '../../redux/slices/core/spaces';
+import { locallyDeleteConversationFromLocalRequest } from '../../redux/slices/core/conversations';
 import type { SpaceMap } from '../../redux/slices/core/spaces';
+import { locallyDeleteSpaceFromLocalRequest } from '../../redux/slices/core/spaces';
 import type { LumoDispatch } from '../../redux/store';
 import type { ConversationId, SpaceId } from '../../types';
+import { SpaceType } from '../../types';
 
 interface DeleteConversationsWithSemanticsParams {
     conversationIds: ConversationId[];
@@ -34,7 +35,7 @@ export const deleteConversationsWithSemantics = async ({
 
         const space = spacesMap[conversation.spaceId];
 
-        if (space?.isProject === true) {
+        if (space?.spaceType === SpaceType.Project) {
             conversationIdsToDelete.add(conversationId);
         } else {
             spaceIdsToDelete.add(conversation.spaceId);
