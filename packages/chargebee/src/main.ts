@@ -6,6 +6,18 @@ document.addEventListener('DOMContentLoaded', () => initialize());
 
 const WINDOW_ERROR_REPORT_LIMIT = 10;
 let windowErrorCount = 0;
+let reportedWindowErrorCount = 0;
+
+const BROWSER_EXTENSION_SCRIPT_PREFIXES = [
+    'chrome-extension://',
+    'moz-extension://',
+    'safari-web-extension://',
+    'blob:',
+];
+
+function isThrownByBrowserExtension({ filename }: ErrorEvent) {
+    return BROWSER_EXTENSION_SCRIPT_PREFIXES.some((prefix) => filename?.startsWith(prefix));
+}
 
 window.addEventListener('error', (event) => {
     const stage = getLastCheckpointName();
@@ -23,9 +35,10 @@ window.addEventListener('error', (event) => {
     });
     event.preventDefault();
 
-    if (windowErrorCount > WINDOW_ERROR_REPORT_LIMIT) {
+    if (isThrownByBrowserExtension(event) || reportedWindowErrorCount >= WINDOW_ERROR_REPORT_LIMIT) {
         return;
     }
+    reportedWindowErrorCount++;
 
     /**
      * Scripts from other domains report only "Script error." with no error object. Sent as-is that
