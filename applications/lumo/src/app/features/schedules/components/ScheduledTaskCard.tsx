@@ -93,7 +93,7 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule }: ScheduledTaskC
                             <span className="min-w-0 text-ellipsis">{cadenceLabel}</span>
                         </span>
                     </Tooltip>
-                    <ScheduleNextRunLabel rule={recurrenceRule} />
+                    <ScheduleNextRunLabel className="text-sm color-weak" rule={recurrenceRule} />
                     <LumoIcon aria-hidden className="shrink-0 color-hint" name="LaptopMinimal" size={14} />
                 </div>
             </div>

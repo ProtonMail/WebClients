@@ -69,14 +69,15 @@ const ChatsSidebarSectionInner = ({ onItemClick }: ChatsSidebarSectionInnerProps
     }, [favorites, hasLumoPlus]);
 
     const { filteredHistoryRows, visibleHistoryRows, showSeeMore } = useMemo(() => {
-        const projectFilteredRows = showProjectConversationsInHistory
-            ? conversationRows
-            : conversationRows.filter((row) => {
-                  const space = row.spaceId ? spaceMap[row.spaceId] : undefined;
-                  return space?.spaceType !== SpaceType.Project;
-              });
+        const filteredRows = conversationRows.filter((row) => {
+            const space = row.spaceId ? spaceMap[row.spaceId] : undefined;
+            return (
+                space?.spaceType !== SpaceType.Schedule &&
+                (showProjectConversationsInHistory || space?.spaceType !== SpaceType.Project)
+            );
+        });
 
-        const retainedRows = applyRetentionPolicy(projectFilteredRows, hasLumoPlus);
+        const retainedRows = applyRetentionPolicy(filteredRows, hasLumoPlus);
 
         const historySlots = Math.max(0, SIDEBAR_CHAT_TOTAL_LIMIT - retainedFavorites.length);
 

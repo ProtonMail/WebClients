@@ -25,12 +25,12 @@ export const KnowledgeBaseArtifactsSection = ({ artifacts, onOpenArtifact }: Kno
     }
 
     return (
-        <div className="mb-6 w-full min-w-0 max-w-full">
-            <h3 className="text-sm text-bold mb-1">
-                {c('collider_2025: Info').t`creations`}{' '}
-                <span className="color-weak text-normal">{artifacts.length}</span>
+        <div className="w-full min-w-0 max-w-full mb-6">
+            <h3 className="text-rg text-semibold">
+                {c('collider_2025: Info').t`creations`}
+                <span className="ml-1.5 text-normal color-hint">{artifacts.length}</span>
             </h3>
-            <p className="text-xs color-weak mb-3">
+            <p className="my-1.5 text-sm color-hint">
                 {c('collider_2025: Info').t`Created by ${LUMO_SHORT_APP_NAME} in this conversation.`}
             </p>
 

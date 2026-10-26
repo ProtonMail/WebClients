@@ -15,7 +15,8 @@ import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectContextFilters, selectSpaceByIdOptional } from '../../../redux/selectors';
 import { addContextFilter, removeContextFilter } from '../../../redux/slices/contextFilters';
 import { locallyDeleteAttachmentFromLocalRequest } from '../../../redux/slices/core/attachments';
-import { type Attachment, type Message, getProjectInfo } from '../../../types';
+import type { Attachment, Message } from '../../../types';
+import { getProjectInfo } from '../../../types';
 import { getMimeTypeFromExtension } from '../../../util/filetypes';
 import { dedupeAttachmentsByDocumentKey, getAttachmentDocumentKey } from '../../../util/resolveProjectFiles';
 import { useExcelSheetSelection } from '../../Composer/ExcelSheetSelectionModal';
@@ -30,6 +31,8 @@ import { ContextUsageBreakdown } from './ContextUsageBreakdown';
 import { KnowledgeBaseArtifactsSection } from './KnowledgeBaseArtifactsSection';
 import { KnowledgeBaseFileItem } from './KnowledgeBaseFileItem';
 import { EmptyStateWithUpload } from './components';
+
+import './KnowledgeBasePanel.scss';
 
 const MEDIUM_SCREEN_BREAK = 1024;
 
@@ -92,12 +95,12 @@ const FilteredFilesContent = ({
     return (
         <>
             {autoRetrievedFiles.length > 0 && (
-                <div className="mb-4 w-full">
-                    <h3 className="text-sm text-bold mb-1">
-                        {c('collider_2025: Info').t`Project knowledge`}{' '}
-                        <span className="color-weak text-normal">{activeAutoFiles.length}</span>
+                <div className="w-full mb-4">
+                    <h3 className="text-rg text-semibold">
+                        {c('collider_2025: Info').t`Project knowledge`}
+                        <span className="ml-1.5 text-normal color-hint">{activeAutoFiles.length}</span>
                     </h3>
-                    <p className="text-xs color-weak mb-3">
+                    <p className="my-1.5 text-sm color-hint">
                         {c('collider_2025: Info').t`Files automatically retrieved based on your question.`}
                     </p>
 
@@ -131,10 +134,11 @@ const FilteredFilesContent = ({
             )}
 
             {manualFiles.length > 0 && (
-                <div className="mb-6 w-full">
-                    <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                        <LumoIcon name="File" size={16} />
-                        {c('collider_2025: Info').t`Attached Files`} ({manualFiles.length})
+                <div className="w-full mb-6">
+                    <h3 className="flex flex-nowrap items-center gap-2 text-rg text-semibold">
+                        <LumoIcon aria-hidden name="File" size={16} />
+                        {c('collider_2025: Info').t`Attached Files`}
+                        <span className="ml-1.5 text-normal color-hint">{manualFiles.length}</span>
                     </h3>
                     {manualFiles.map((file) => (
                         <KnowledgeBaseFileItem
@@ -158,19 +162,19 @@ interface RetrievedKnowledgeSectionProps {
 }
 
 const RetrievedKnowledgeSection = ({ activeAutoRetrieved, onView, onExclude }: RetrievedKnowledgeSectionProps) => (
-    <div className="mb-4 w-full">
-        <h3 className="text-sm text-bold mb-1">
-            {c('collider_2025: Info').t`Project knowledge`}{' '}
-            <span className="color-weak text-normal">{activeAutoRetrieved.length}</span>
+    <div className="w-full mb-4">
+        <h3 className="text-rg text-semibold">
+            {c('collider_2025: Info').t`Project knowledge`}
+            <span className="ml-1.5 text-normal color-hint">{activeAutoRetrieved.length}</span>
         </h3>
 
         {activeAutoRetrieved.length === 0 ? (
-            <p className="text-xs color-weak mb-3">
+            <p className="my-1.5 text-sm color-hint">
                 {c('collider_2025: Info').t`Relevant files will be automatically retrieved based on your questions.`}
             </p>
         ) : (
             <>
-                <p className="text-xs color-weak mb-3">
+                <p className="my-1.5 text-sm color-hint">
                     {c('collider_2025: Info').t`Files automatically retrieved based on your questions.`}
                 </p>
                 {activeAutoRetrieved.map((attachment) => (
@@ -210,12 +214,12 @@ const ManualAttachmentsSection = ({
     if (totalManual === 0) return null;
 
     return (
-        <div className="mb-4 w-full">
-            <h3 className="text-sm text-bold mb-1">
-                {c('collider_2025: Info').t`Attached files`}{' '}
-                <span className="color-weak text-normal">{totalManual}</span>
+        <div className="w-full mb-4">
+            <h3 className="text-rg text-semibold">
+                {c('collider_2025: Info').t`Attached files`}
+                <span className="ml-1.5 text-normal color-hint">{totalManual}</span>
             </h3>
-            <p className="text-xs color-weak mb-3">
+            <p className="my-1.5 text-sm color-hint">
                 {c('collider_2025: Info').t`These files are referred to in the conversation.`}
             </p>
 
@@ -262,12 +266,12 @@ const CompactedFilesSection = ({
     if (compactedFiles.length === 0) return null;
 
     return (
-        <div className="mb-4 w-full">
-            <h3 className="text-sm text-bold mb-1">
-                {c('collider_2025: Info').t`Removed when chat was shortened`}{' '}
-                <span className="color-weak text-normal">{compactedFiles.length}</span>
+        <div className="w-full mb-4">
+            <h3 className="text-rg text-semibold">
+                {c('collider_2025: Info').t`Removed when chat was shortened`}
+                <span className="ml-1.5 text-normal color-hint">{compactedFiles.length}</span>
             </h3>
-            <p className="text-xs color-weak mb-3">
+            <p className="my-1.5 text-sm color-hint">
                 {c('collider_2025: Info')
                     .t`These files belonged to summarized messages and are no longer sent to the model.`}
             </p>
@@ -303,11 +307,12 @@ const ExcludedFilesSection = ({
     if (totalExcluded === 0) return null;
 
     return (
-        <div className="mb-4 w-full">
-            <h3 className="text-sm text-bold mb-1">
-                {c('collider_2025: Info').t`Excluded`} <span className="color-weak text-normal">{totalExcluded}</span>
+        <div className="w-full mb-4">
+            <h3 className="text-rg text-semibold">
+                {c('collider_2025: Info').t`Excluded`}
+                <span className="ml-1.5 text-normal color-hint">{totalExcluded}</span>
             </h3>
-            <p className="text-xs color-weak mb-3">
+            <p className="my-1.5 text-sm color-hint">
                 {c('collider_2025: Info').t`These files are no longer referred to in this conversation.`}
             </p>
             {excludedAutoRetrieved.map((attachment) => (
@@ -349,6 +354,10 @@ interface KnowledgeBasePanelProps {
     spaceId?: string;
     drawerArtifacts?: ConversationArtifactDrawerEntry[];
     onOpenArtifact?: (artifactId: string) => void;
+    title?: string;
+    headerActions?: React.ReactNode;
+    /** Additional sections below the existing knowledge-base file list. */
+    children?: React.ReactNode;
 }
 
 export const KnowledgeBasePanel = ({
@@ -364,6 +373,9 @@ export const KnowledgeBasePanel = ({
     spaceId,
     drawerArtifacts = [],
     onOpenArtifact,
+    title,
+    headerActions,
+    children,
 }: KnowledgeBasePanelProps) => {
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
@@ -454,7 +466,7 @@ export const KnowledgeBasePanel = ({
                 <div className={panelClassName} ref={filesContainerRef}>
                     <div
                         className={clsx('files-panel-content w-full h-full', {
-                            'bg-weak rounded-xl shadow-lifted': !isModal,
+                            'rounded-xl bg-weak shadow-lifted': !isModal,
                         })}
                     >
                         <FilePreviewPanel
@@ -517,7 +529,8 @@ export const KnowledgeBasePanel = ({
         currentAttachments.length === 0 &&
         autoRetrievedAttachments.length === 0 &&
         drawerArtifacts.length === 0 &&
-        !linkedDriveFolder;
+        !linkedDriveFolder &&
+        !children;
 
     const indicatorIconName = showKnowledgeExplanation ? 'ChevronUp' : 'ChevronDown';
 
@@ -525,33 +538,34 @@ export const KnowledgeBasePanel = ({
         <>
             <div className={panelClassName} ref={filesContainerRef}>
                 <div
-                    className={clsx('files-panel-content flex flex-column flex-nowrap w-full h-full p-4', {
-                        'bg-weak rounded-xl shadow-lifted': !isModal,
+                    className={clsx('files-panel-content flex flex-column flex-nowrap w-full h-full p-5', {
+                        'rounded-xl bg-weak shadow-lifted': !isModal,
                     })}
                 >
                     {/* Header */}
                     <div className="shrink-0 mb-4">
                         <div className="flex flex-row items-center justify-space-between gap-2 min-w-0">
-                            <div className="flex flex-row flex-nowrap items-center gap-1 min-w-0 flex-1">
-                                <p className="m-0 text-lg text-bold text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
-                                    {c('collider_2025: Info').t`All files in this chat`}
-                                </p>
+                            <div className="flex flex-row flex-nowrap flex-1 items-center gap-1 min-w-0">
+                                <h2 className="min-w-0 m-0 overflow-hidden text-xl text-bold text-ellipsis whitespace-nowrap">
+                                    {title ?? c('collider_2025: Info').t`All files in this chat`}
+                                </h2>
                             </div>
 
-                            {!linkedDriveFolder && (
-                                <Button
-                                    size="small"
-                                    shape="outline"
-                                    onClick={() => setShowDriveBrowser(true)}
-                                    className="shrink-0 flex flex-row flex-nowrap items-center gap-2 max-w-full"
-                                    title={c('collider_2025: KBActionTitle').t`Add from ${DRIVE_SHORT_APP_NAME}`}
-                                >
-                                    <IcBrandProtonDrive size={4} />
-                                    <span className="text-sm">
-                                        {c('collider_2025: KBAction').t`Add from ${DRIVE_SHORT_APP_NAME}`}
-                                    </span>
-                                </Button>
-                            )}
+                            {headerActions ??
+                                (!linkedDriveFolder && (
+                                    <Button
+                                        size="small"
+                                        shape="outline"
+                                        onClick={() => setShowDriveBrowser(true)}
+                                        className="flex flex-row flex-nowrap shrink-0 items-center gap-2 max-w-full"
+                                        title={c('collider_2025: KBActionTitle').t`Add from ${DRIVE_SHORT_APP_NAME}`}
+                                    >
+                                        <IcBrandProtonDrive size={4} />
+                                        <span className="text-sm">
+                                            {c('collider_2025: KBAction').t`Add from ${DRIVE_SHORT_APP_NAME}`}
+                                        </span>
+                                    </Button>
+                                ))}
 
                             <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>
                                 <LumoIcon name="X" size={16} />
@@ -629,11 +643,14 @@ export const KnowledgeBasePanel = ({
 
                         {isEmpty && (
                             <EmptyStateWithUpload
+                                className={children ? 'h-auto mb-6 py-6' : undefined}
                                 messageChain={messageChain}
                                 onShowDriveBrowser={() => setShowDriveBrowser(true)}
                                 spaceId={spaceId}
                             />
                         )}
+
+                        {children}
                     </div>
 
                     {/* Context usage breakdown — pinned to bottom, hidden in filter mode */}

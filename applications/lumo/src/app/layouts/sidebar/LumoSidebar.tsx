@@ -18,6 +18,7 @@ import { useSearchModal } from '../../providers/SearchModalProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
 import { LumoSidebarUpsell } from '../../upsells';
 import LumoLogoHeader from '../header/LumoLogo';
+import { ScheduledSidebarSection } from './ScheduledSidebarSection';
 import { ChatsSidebarSection } from './components/ChatsSidebarSection';
 import { LibrarySidebarButton } from './components/LibrarySidebarButton';
 import { NewChatSidebarButton } from './components/NewChatSidebarButton';
@@ -116,6 +117,7 @@ const LumoSidebarContent = () => {
                     <Suspense fallback={null}>
                         <ProjectsSidebarSection onItemClick={closeOnItemClick} isSmallScreen={isSmallScreen} />
                     </Suspense>
+                    {showSchedules && <ScheduledSidebarSection onItemClick={closeOnItemClick} />}
                     <ChatsSidebarSection onItemClick={closeOnItemClick} />
                 </Scroll>
 

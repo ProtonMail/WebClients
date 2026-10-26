@@ -1,0 +1,5 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.scheduled-run-breadcrumbs {
+	padding-block: rem(13);
+}
