@@ -154,6 +154,19 @@
 		.item-icon-fakecheck-icon {
 			fill: var(--interaction-norm-contrast);
 		}
+
+		// keep the checkbox outline visible on the selected (opened) row
+		.item-is-selected & {
+			box-shadow: inset 0 0 0 #{rem(2)} var(--interaction-norm-contrast);
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible + .item-icon {
+			.item-is-selected & {
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+		}
 	}
 }
 
