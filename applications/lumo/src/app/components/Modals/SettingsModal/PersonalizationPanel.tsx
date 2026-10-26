@@ -83,6 +83,9 @@ const PersonalizationPanel = () => {
     // Safely get user settings with error handling
     let userSettings;
     try {
+        // TODO: remove this try/catch. Calling a hook inside try/catch can change the hook order if it throws.
+        // Make useLumoUserSettings return undefined settings instead of throwing, or use an error boundary.
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const userSettingsHook = useLumoUserSettings();
         userSettings = userSettingsHook.lumoUserSettings;
     } catch {

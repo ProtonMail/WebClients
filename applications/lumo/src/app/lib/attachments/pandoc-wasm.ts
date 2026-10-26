@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-// /* eslint-disable @typescript-eslint/ban-ts-comment,@typescript-eslint/no-explicit-any,@typescript-eslint/no-unused-vars,@typescript-eslint/naming-convention */
+/* eslint-disable proton/naming-convention */
+// /* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars, proton/naming-convention */
 // // @ts-nocheck
-import {ConsoleStdout, File, OpenFile, PreopenDirectory, WASI} from '@bjorn3/browser_wasi_shim';
+import { ConsoleStdout, File, OpenFile, PreopenDirectory, WASI } from '@bjorn3/browser_wasi_shim';
 
 // import pandocWasmAsset from '../../../assets/pandoc.wasm';
 
@@ -179,7 +179,7 @@ export class PandocConverter {
                 // @ts-ignore
                 this.wasmInstance.exports.wasm_main(args_ptr, args_str.length);
 
-                return new TextDecoder('utf-8', {fatal: true}).decode(this.outFile!.data);
+                return new TextDecoder('utf-8', { fatal: true }).decode(this.outFile!.data);
             } finally {
                 // Free the allocated memory for args
                 if (this.wasmInstance?.exports.free) {

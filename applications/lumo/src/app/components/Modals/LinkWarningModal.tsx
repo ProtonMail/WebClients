@@ -167,7 +167,7 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                             <div className="flex flex-row flex-nowrap gap-2">
                                 <LumoIcon name="TriangleAlert" className={'color-warning'} />
                                 <span>
-                                    {/* eslint-disable-next-line no-restricted-syntax */}
+                                    {/* eslint-disable-next-line proton/restricted-syntax */}
                                     {c('collider_2025: Info').t`Watch for misspellings (e.g., proton.me vs pr0t0n.me)`}
                                 </span>
                             </div>
