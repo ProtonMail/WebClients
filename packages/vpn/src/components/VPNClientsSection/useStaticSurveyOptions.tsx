@@ -311,6 +311,14 @@ const STATIC_PODCASTS: { name: string; value: string }[] = [
         name: 'Bitcoin News Alerts | Daily BTC News',
         value: 'bitcoin_news_alerts_daily_btc_news',
     },
+    {
+        name: 'Darknet Diaries',
+        value: 'darknet_diaries',
+    },
+    {
+        name: 'The Adventure Zone',
+        value: 'the_adventure_zone',
+    },
 ] as const;
 
 const STATIC_YOUTUBE_CHANNELS: { name: string; value: string }[] = [
