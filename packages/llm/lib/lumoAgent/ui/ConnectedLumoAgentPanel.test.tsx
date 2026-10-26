@@ -30,7 +30,12 @@ describe('ConnectedLumoAgentPanel', () => {
 
         render(
             <LumoAgentDrawerContext.Provider value={drawer}>
-                <ConnectedLumoAgentPanel onClose={onClose} showPromptInput={false} showThinking={false} />
+                <ConnectedLumoAgentPanel
+                    onClose={onClose}
+                    showPromptInput={false}
+                    showThinking={false}
+                    showIdleMark={false}
+                />
             </LumoAgentDrawerContext.Provider>
         );
 
@@ -44,6 +49,7 @@ describe('ConnectedLumoAgentPanel', () => {
             suggestions: drawer.suggestions,
             showPromptInput: false,
             showThinking: false,
+            showIdleMark: false,
             onSend: drawer.send,
             onSuggestionPicked: drawer.onSuggestionPicked,
             onStop: drawer.stop,
