@@ -119,7 +119,8 @@ export const getIndexKey = async (userKeys: DecryptedKey<PrivateKeyReference>[],
     try {
         const encrypted = await readIndexKey(userID);
         if (!encrypted) {
-            throw new Error('Reading index key error');
+            getESLogger().info('[EncryptedSearch] No index key found');
+            return undefined;
         }
         return await decryptIndexKey(userKeys, encrypted);
     } catch (error: any) {
