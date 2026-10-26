@@ -32,6 +32,7 @@ import {
     getLocalID,
     isAccountLogin,
     isAccountSwitch,
+    isCalendarCreateBookingURL,
     isHomePage,
     isHostAllowed,
     isSameURL,
@@ -394,7 +395,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, url: string = "") {
         await showLoadingPage(viewTitleMap[viewID]);
         await loadURL(viewID, url);
         mainWindow!.setContentView(view);
-    } else if (url && !isSameURL(url, getViewURL(viewID))) {
+    } else if (url && (isCalendarCreateBookingURL(url) || !isSameURL(url, getViewURL(viewID)))) {
         viewLogger(viewID).debug("showView current url is different", getViewURL(viewID));
         viewLogger(viewID).info("showView loading", url);
         await showLoadingPage(viewTitleMap[viewID]);
@@ -519,7 +520,7 @@ async function loadURL(viewID: ViewID, url: string, { force } = { force: false }
             viewLogger(viewID).info(`Same anchor navigation detected for ${url}; forcing router hash refresh`);
             await view.webContents.executeJavaScript(`location.hash = "${bounceHash}";`);
         }
-    } else if (!isAccountSwitching && isSameURL(viewURL, url) && !force) {
+    } else if (!isAccountSwitching && !isCalendarCreateBookingURL(url) && isSameURL(viewURL, url) && !force) {
         viewLogger(viewID).info("loadURL already in given url", url);
         return;
     }
