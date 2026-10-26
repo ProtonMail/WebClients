@@ -1778,6 +1778,21 @@
       ],
       "Subscribe": [
         "订阅"
+      ],
+      "About ${ name }": [
+        "关于 ${ name }"
+      ],
+      "Add ${ name }": [
+        "添加 ${ name }"
+      ],
+      "Create a booking page": [
+        "创建预约页面"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "将 ${ LUMO_SHORT_APP_NAME } 向左移动"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "将 ${ LUMO_SHORT_APP_NAME } 向右移动"
       ]
     },
     "action": {
@@ -2116,6 +2131,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 天退款保证"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
       ]
     },
     "BF2024: Deal details": {
@@ -9769,6 +9787,27 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "您的免费试用已结束。立即订阅，以保持团队访问不中断并确保账户安全。"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "请您的管理员升级计划或从预约页面侧边栏中移除一个页面"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "要添加新的预约页面，请让您的管理员升级您的计划。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "要添加新的预约页面，请从预约页面侧边栏中移除一个现有的页面。"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "要添加新的预约页面，请升级您的计划。"
+      ],
+      "UnionPay logo": [
+        "UnionPay 标志"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "您已达到您计划中允许的预约页面最大数量"
       ]
     },
     "info": {
@@ -11118,6 +11157,9 @@
       ],
       "Why would you like to cancel?": [
         "您为什么想要取消？"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } 助手"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11474,6 +11516,9 @@
       ],
       "Pay it": [
         "支付"
+      ],
+      "Customer Support": [
+        "客户支持"
       ]
     },
     "Link to calendar event": {
@@ -13732,6 +13777,18 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "当前无法完成此订阅，请重试。"
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "在订阅生效期间无法购买 Born Private 账户。"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private 套餐需要捐款。"
+      ],
+      "You already own a Born Private account.": [
+        "您已经拥有一个 Born Private 账户。"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
       ]
     },
     "Payments.Error": {
@@ -15957,6 +16014,12 @@
       ],
       "Invoice paid": [
         "支付完成"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "已禁用 ${ LUMO_SHORT_APP_NAME } 助手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "已启用 ${ LUMO_SHORT_APP_NAME } 助手"
       ]
     },
     "Success notification": {
@@ -17272,6 +17335,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "订阅 ${ planTitle }"
+      ],
+      "Cannot create more Booking pages": [
+        "无法创建更多预约页面"
       ]
     },
     "Title header for keys table": {
@@ -17488,6 +17554,9 @@
       ],
       "You can't change your own roles. Ask another admin to change them.": [
         "您无法更改自己的角色，请联系其他管理员进行更改。"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "该用户下次登录时将获得管理员权限。"
       ]
     },
     "Validation": {

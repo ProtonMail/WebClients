@@ -1572,7 +1572,9 @@
         "Aprobare"
       ],
       "Trust key": [
-        "Aprobare cheie"
+        "Aprobare cheie",
+        "Aprobare chei",
+        "Aprobare chei"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -1800,6 +1802,9 @@
       ],
       "Add ${ name }": [
         "Adăugare ${ name }"
+      ],
+      "Create a booking page": [
+        "Creare pagină de rezervări"
       ]
     },
     "action": {
@@ -8296,9 +8301,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -10148,6 +10151,27 @@
       ],
       "UnionPay logo": [
         "Logo UnionPay"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Solicitați administratorului să facă modifice abonament sau să elimine o pagină din bara laterală „Pagini de rezervări” în ${ CALENDAR_APP_NAME }."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Solicitați-i administratorului să modifice planul actual sau să elimine o pagină din bara laterală a paginilor de rezervări."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Pentru a adăuga o pagină nouă de rezervări, solicitați-i administratorului să modifice planul actual."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pentru a adăuga o pagină de rezervări nouă, elimină una existentă din bara laterală „Pagini de rezervări” din ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Pentru a adăuga o pagină de rezervări nouă, eliminați una existentă din bara laterală a paginilor de rezervări."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Pentru a adăuga o pagină nouă de rezervări, modificați-vă planul."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Ați atins numărul maxim de pagini de rezervare disponibile în planul actual."
       ]
     },
     "info": {
@@ -17979,6 +18003,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Abonare la ${ planTitle }"
+      ],
+      "Cannot create more Booking pages": [
+        "Nu se mai pot crea pagini de rezervare"
       ]
     },
     "Title header for keys table": {

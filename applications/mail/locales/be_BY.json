@@ -1573,7 +1573,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1793,6 +1796,15 @@
       ],
       "Add ${ name }": [
         "Дадаць ${ name }"
+      ],
+      "Create a booking page": [
+        "Стварыць старонку браніравання"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "Перамясціць ${ LUMO_SHORT_APP_NAME } улева"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Перамясціць ${ LUMO_SHORT_APP_NAME } управа"
       ]
     },
     "action": {
@@ -8361,10 +8373,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -10216,6 +10225,21 @@
       ],
       "We'll get back to you shortly.": [
         "Мы звяжамся з вамі ў самы бліжэйшы час."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Папрасіце свайго адміністратара палепшыць тарыфны план або выдаліць старонку з бакавой панэлі браніравання старонак."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Папрасіце свайго адміністратара палепшыць ваш тарыфны план, каб дадаць новую старонку браніравання."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Выдаліце існуючую старонку з бакавой панэлі браніравання старонак, каб дадаць новую старонку браніравання."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Палепшыце свой тарыфны план, каб дадаць новую старонку браніравання."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Вы дасягнулі максімальнай колькасці старонак браніравання, якія даступны на вашым тарыфным плане."
       ]
     },
     "info": {
@@ -11945,6 +11969,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Вам неабходна паўторна актываваць ключы, каб паглядзець абноўленае запрашэнне"
+      ],
+      "Customer Support": [
+        "Служба падтрымкі"
       ]
     },
     "Link to calendar event": {
@@ -14320,6 +14347,9 @@
       ],
       "The selected plan doesn’t offer enough storage for your account.": [
         "Выбраны тарыфны план не прапануе дастатковую колькасць сховішча для вашага ўліковага запісу."
+      ],
+      "You already own a Born Private account.": [
+        "Вы ўжо валодаеце ўліковым запісам Born Private."
       ]
     },
     "Payments.Error": {
@@ -16750,6 +16780,12 @@
       ],
       "Invoice paid": [
         "Рахунак аплачаны"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "Памочнік ${ LUMO_SHORT_APP_NAME } адключаны"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "Памочнік ${ LUMO_SHORT_APP_NAME } уключаны"
       ]
     },
     "Success notification": {
@@ -18128,6 +18164,15 @@
       ],
       "Request sent": [
         "Запыт адпраўлены"
+      ],
+      "Cannot create more Booking pages": [
+        "Немагчыма стварыць больш старонак браніравання"
+      ],
+      "Make Categories work better for you": [
+        "Падладзьце катэгорыі пад сябе"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Падпіска на тарыфны план ${ planTitle }"
       ]
     },
     "Title header for keys table": {

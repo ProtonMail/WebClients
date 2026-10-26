@@ -1522,7 +1522,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufany klucz",
+        "Zaufane klucze",
+        "Zaufanych kluczy",
+        "Zaufane klucze"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1721,6 +1724,9 @@
       ],
       "Subscribe": [
         "Subskrybuj"
+      ],
+      "Create a booking page": [
+        "Utwórz stronę rezerwacji"
       ]
     },
     "action": {
@@ -7773,10 +7779,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -9292,6 +9295,21 @@
       ],
       "We'll get back to you shortly.": [
         "Skontaktujemy się z Tobą wkrótce."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Poproś swojego administratora o ulepszenie planu lub usuń stronę z panelu bocznego stron rezerwacji."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Aby dodać nową stronę rezerwacji, poproś administratora o ulepszenie planu."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Aby dodać nową stronę rezerwacji, usuń istniejącą z panelu bocznego stron rezerwacji."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Aby dodać nową stronę rezerwacji, ulepsz swój plan."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Osiągnięto maksymalną liczbę stron rezerwacji dostępnych w Twoim planie."
       ]
     },
     "info": {
@@ -16798,6 +16816,12 @@
       ],
       "Request sent": [
         "Żądanie zostało wysłane"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Cannot create more Booking pages": [
+        "Nie można utworzyć więcej stron rezerwacji"
       ]
     },
     "Title header for keys table": {

@@ -1559,7 +1559,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1771,6 +1772,9 @@
       ],
       "Add ${ name }": [
         "Lägg till ${ name }"
+      ],
+      "Create a booking page": [
+        "Skapa en bokningssida"
       ]
     },
     "action": {
@@ -8011,8 +8015,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9716,6 +9719,21 @@
       ],
       "We'll get back to you shortly.": [
         "Vi återkommer snart till dig."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Be din admin att uppgradera ditt paket eller ta bort en sida från sidofältet för bokningssidor."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "För att lägga till en ny bokningssida, be din administratör att uppgradera ditt paket."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "För att lägga till en ny bokningssida, ta bort en befintlig från sidofältet för bokningssidor."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "För att lägga till en ny bokningssida, uppgradera ditt paket."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du har nått det maximala antalet bokningssidor tillgängliga i ditt paket."
       ]
     },
     "info": {
@@ -17220,6 +17238,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Prenumerera på ${ planTitle }"
+      ],
+      "Cannot create more Booking pages": [
+        "Kan inte skapa fler bokningssidor"
       ]
     },
     "Title header for keys table": {
