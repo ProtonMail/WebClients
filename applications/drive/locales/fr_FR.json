@@ -1392,6 +1392,12 @@
       ],
       "Subscribe": [
         "S'abonner"
+      ],
+      "About ${ name }": [
+        "À propos de ${ name }"
+      ],
+      "Add ${ name }": [
+        "Ajouter ${ name }"
       ]
     },
     "Action: Docs": {
@@ -15905,6 +15911,16 @@
       ],
       "Other": [
         "Autre"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Cette conversation est trop longue pour continuer. Lancez une nouvelle conversation pour que ${ LUMO_SHORT_APP_NAME } continue de ronronner de manière fluide."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Compte bancaire"
       ]
     }
   }
