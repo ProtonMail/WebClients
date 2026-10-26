@@ -1,3 +1,5 @@
+import { getUnixTime, subDays } from 'date-fns';
+
 import { FeatureCode } from '@proton/features/interface';
 
 import { getFeatureCode, isAccountOlderThanMinimum } from './helpers';
@@ -48,7 +50,8 @@ describe('helper functions', () => {
 
         it('returns true if account is exactly at the minimum days', () => {
             // edge: exactly 30 days ago
-            const boundaryCreateTime = now - 60 * 60 * 24 * MINIMUM_DAYS;
+            // use calendar days so the test is not affected by DST changes
+            const boundaryCreateTime = getUnixTime(subDays(new Date(), MINIMUM_DAYS));
             expect(isAccountOlderThanMinimum(boundaryCreateTime, MINIMUM_DAYS)).toBe(true);
         });
 
