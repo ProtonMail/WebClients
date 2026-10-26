@@ -2956,9 +2956,6 @@ importers:
       '@jest/globals':
         specifier: 'catalog:'
         version: 30.5.2(supports-color@11.0.0)
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
       '@proton/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
@@ -2968,6 +2965,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../../packages/oxlint-config
       '@proton/pass':
         specifier: workspace:^
         version: link:../../packages/pass
@@ -3019,12 +3019,15 @@ importers:
       cross-env:
         specifier: 'catalog:'
         version: 10.1.0
-      eslint:
-        specifier: 'catalog:'
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       fake-indexeddb:
         specifier: 'catalog:'
         version: 6.2.5
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
       postcss:
         specifier: 'catalog:'
         version: 8.5.30
