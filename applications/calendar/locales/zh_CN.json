@@ -1051,6 +1051,12 @@
       ],
       "Subscribe": [
         "订阅"
+      ],
+      "About ${ name }": [
+        "关于 ${ name }"
+      ],
+      "Add ${ name }": [
+        "添加 ${ name }"
       ]
     },
     "action": {
@@ -1321,6 +1327,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 天退款保证"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
       ]
     },
     "BF2024: Deal details": {
@@ -6921,6 +6930,12 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "您的免费试用已结束。立即订阅，以保持团队访问不中断并确保账户安全。"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
+      ],
+      "UnionPay logo": [
+        "UnionPay 标志"
       ]
     },
     "info": {
@@ -7861,6 +7876,9 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "Customer Support": [
+        "客户支持"
       ]
     },
     "Link label (optional)": {
@@ -10005,6 +10023,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有折扣优惠，转用新的促销意味着现有折扣将不再适用。"
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "在订阅生效期间无法购买 Born Private 账户。"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private 套餐需要捐款。"
+      ],
+      "You already own a Born Private account.": [
+        "您已经拥有一个 Born Private 账户。"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
       ]
     },
     "Payments.Error": {
@@ -12927,6 +12957,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "用户接受邀请后，您即可为其分配角色。"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "该用户下次登录时将获得管理员权限。"
       ]
     },
     "Validation": {
@@ -13341,6 +13374,11 @@
       ],
       "Other": [
         "其它"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "银行账户"
       ]
     }
   }

@@ -1048,6 +1048,9 @@
       ],
       "Switch to ${ planName }": [
         "${ planName } に切り替え"
+      ],
+      "Preview logs": [
+        "ログをプレビュー"
       ]
     },
     "action": {
@@ -1160,6 +1163,9 @@
       ],
       "Writing assistant seats": [
         "執筆アシスタントシート"
+      ],
+      "Managed Service Provider": [
+        "マネージドサービスプロバイダー"
       ]
     },
     "Alarm notification": {
@@ -1806,6 +1812,12 @@
       ],
       "Amount due now": [
         "今すぐのお支払い額"
+      ],
+      "Amount due": [
+        "ご請求額"
+      ],
+      "Amount due after trial": [
+        "トライアル終了後のお支払い額"
       ]
     },
     "Collapsible tooltip": {
@@ -4220,6 +4232,12 @@
       ],
       "You can update a public link for your own files only": [
         "公開リンクを更新できるのは、自分が所有するファイルのみです"
+      ],
+      "Could not grant access to the organization key": [
+        "組織の鍵へのアクセス権を付与できませんでした"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "連携可能なアドレス数の上限に達しました"
       ]
     },
     "error": {
@@ -4590,6 +4608,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "あなたのアカウントは割り当てられた ${ inviteSpace } を超える ${ usedSpace } のストレージを使用中です。一部のデータを削除するか、プラン管理者にストレージを増やしてもらう必要があります。"
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "このファミリーグループにお使いの ${ BRAND_NAME } アカウントをリンクして、すべてのプレミアム機能をご利用いただくための招待が届いています。"
       ]
     },
     "familyOffer_2023:Label": {
@@ -4666,6 +4687,12 @@
       ],
       "Security key": [
         "セキュリティキー"
+      ],
+      "Still waiting?": [
+        "まだお待ちですか？"
+      ],
+      "Touch your security key to continue.": [
+        "続行するにはセキュリティキーにタッチしてください。"
       ]
     },
     "fido2: Label": {
@@ -6739,6 +6766,27 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "期日が ${ dueDate } の未払いのご請求があります ${ payInvoiceLink }"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } には文章作成アシスタントが含まれています"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "トライアル期間は残り ${ timeRemaining } です。アクセス権を失わないよう、${ addPaymentMethodLink } を行ってください。${ learnMoreLink }"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "管理者にプランのアップグレードを依頼するか、${ CALENDAR_APP_NAME } の「予約ページ」サイドバーからページを削除してください。"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は通常の月払い料金を基準としています。請求サイクルが終了すると、サブスクリプションは通常の年額料金で更新されます。"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "ログは、問題が発生する直前に何が起きたかを把握するのに役立ちます。ログにはアプリの操作履歴やエラーメッセージが含まれますが、メッセージ本文の内容は含まれません。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "新しい予約ページを追加するには、${ CALENDAR_APP_NAME } の「予約ページ」サイドバーから既存のページを削除してください。"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "無料トライアルが終了しました。チームのアクセスを中断させることなく、アカウントのセキュリティを維持するために、今すぐサブスクリプションにご登録ください。"
       ]
     },
     "info": {
@@ -7488,6 +7536,15 @@
       ],
       "Account holder name": [
         "口座名義人名"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } 文字"
+      ],
+      "Client": [
+        "クライアント"
+      ],
+      "Client version": [
+        "クライアントのバージョン"
       ]
     },
     "label": {
@@ -7776,6 +7833,9 @@
       ],
       "for ${ price }": [
         "${ price } の場合"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } 文章作成アシスタントを追加"
       ]
     },
     "meet_2025: Addon": {
@@ -8575,6 +8635,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "${ LUMO_SHORT_APP_NAME } 文章作成アシスタント（一部機能制限あり）"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "${ LUMO_SHORT_APP_NAME } 文章作成アシスタント（拡張アクセス付き）"
       ]
     },
     "new_plans: feature highlight": {
@@ -9370,6 +9433,9 @@
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "30日以内にキャンセルすれば、日割り計算による返金を受けることができます。"
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**正式なサブスクリプションの開始後も…** 30日以内であればキャンセルして日割り計算による返金を受けることができます。"
       ]
     },
     "Option": {
@@ -9768,6 +9834,33 @@
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "${ IDEAL_WERO_BRAND_NAME } はユーロでの支払いにのみ対応しているため、通貨がユーロ (€) に変更されました。"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } は ${ PLAN_NAMES[PLANS.PASS] } と組み合わせることはできません。"
+      ],
+      "Buying credits requires a separate purchase.": [
+        "クレジットの購入には、別途個別のお手続きが必要です。"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "切り替えることにより、お客様は当社の ${ termsLink } に同意したものとみなされます。"
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "以下の理由により、プランの切り替えを行うことができません:"
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe のシート数はメンバー数を超えることはできません。"
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "この専用サーバーはゲートウェイに割り当てられているため、変更できません。"
+      ],
+      "Trial plans don’t support custom domains.": [
+        "トライアルプランではカスタムドメインをご利用いただけません。"
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "トライアルプランでは専用 IP をご利用いただけません。"
+      ],
+      "Trial plans don’t support this many members.": [
+        "トライアルプランでは、この人数のメンバーをサポートしていません。"
       ]
     },
     "Payments.Error": {
@@ -9791,6 +9884,9 @@
       ],
       "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
         "${ IDEAL_WERO_BRAND_NAME } の初期化に失敗しました。しばらくしてからもう一度お試しください。"
+      ],
+      "Please enter the account holder name": [
+        "口座名義人名を入力してください"
       ]
     },
     "Payments.error": {
@@ -9848,6 +9944,9 @@
       ],
       "Bank transfer - ${ iban }": [
         "銀行振込 - ${ iban }"
+      ],
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - 末尾が ${ Last4 } のカード"
       ]
     },
     "Payments.Sepa": {
@@ -10288,6 +10387,9 @@
       ],
       "User Admin": [
         "ユーザー管理者"
+      ],
+      "Organization Admin": [
+        "組織管理者"
       ]
     },
     "RSVP Note": {
@@ -13136,6 +13238,11 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "確認することにより、お客様は ${ BRAND_NAME } および当社の決済サービスプロバイダーである Stripe に対し、SEPA口座振替によってこの銀行口座から今後のサブスクリプション料金を引き落とすことを承認し、取引銀行がそれらの支払い額を引き落とすことを承認したものとみなされます。初回の支払いは、今すぐ ${ IDEAL_WERO_BRAND_NAME } で決済されます。プランはキャンセルするまで自動更新され、引き落としの前に毎回通知いたします。口座振替による引き落としについては、取引銀行との契約条件に基づき、引き落とし日から8週間以内であれば銀行に返金を請求できます。これは、現在行っている ${ IDEAL_WERO_BRAND_NAME } による支払いには適用されません。"
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "請求先住所を変更すると、今後のご請求に対する税額に影響が生じる場合があります。"
       ]
     }
   }

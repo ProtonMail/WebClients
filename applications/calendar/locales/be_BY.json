@@ -1063,6 +1063,12 @@
       ],
       "Subscribe": [
         "Падпісацца"
+      ],
+      "About ${ name }": [
+        "Аб ${ name }"
+      ],
+      "Add ${ name }": [
+        "Дадаць ${ name }"
       ]
     },
     "action": {
@@ -8115,6 +8121,9 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "Customer Support": [
+        "Служба падтрымкі"
       ]
     },
     "Link label (optional)": {
@@ -10451,6 +10460,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "You already own a Born Private account.": [
+        "Вы ўжо валодаеце ўліковым запісам Born Private."
       ]
     },
     "Payments.Error": {
@@ -13316,6 +13328,9 @@
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Падпіска на тарыфны план ${ planTitle }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -14098,6 +14113,11 @@
     "bfcampaign2026: Info, Pass first": {
       "Premium ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME }": [
         "Прэміяльныя ${ PASS_SHORT_APP_NAME }, ${ MAIL_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Банкаўскі рахунак"
       ]
     }
   }

@@ -1055,6 +1055,12 @@
       ],
       "Subscribe": [
         "Abonnieren"
+      ],
+      "About ${ name }": [
+        "Über ${ name }"
+      ],
+      "Add ${ name }": [
+        "${ name } hinzufügen"
       ]
     },
     "action": {
@@ -7025,6 +7031,12 @@
       ],
       "UnionPay logo": [
         "Union Pay-Logo"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Bitte deinen Administrator, das Abonnement zu upgraden oder eine Seite aus der Seitenleiste der Buchungsseiten in ${ CALENDAR_APP_NAME } zu entfernen."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Um eine neue Buchungsseite hinzuzufügen, entferne eine bestehende aus der Seitenleiste der Buchungsseiten in ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -10193,6 +10205,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "„Born Private“-Konten können während eines aktiven Abonnements nicht erworben werden."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Für die Initiative „Born Private“ ist eine Spende erforderlich."
+      ],
+      "You already own a Born Private account.": [
+        "Du besitzt bereits ein „Born Private“-Konto."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Dein Konto ist zu alt für die „Born Private“-Initiative."
       ]
     },
     "Payments.Error": {
@@ -13631,6 +13655,11 @@
       ],
       "Other": [
         "Anderer Grund"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
       ]
     }
   }

@@ -1055,6 +1055,12 @@
       ],
       "Subscribe": [
         "Abonnér"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Tilføj ${ name }"
       ]
     },
     "action": {
@@ -7025,6 +7031,12 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Din gratis prøveperiode er afsluttet. Abonnér nu så dit team beholder adgang, og deres konti forbliver sikre."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Bed din administrator om at opgradere abonnementet eller fjerne en side fra sidepanelet med reservationssider i ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "For at tilføje en ny reservationsside, skal du fjerne en eksisterende fra sidepanelet for reservationssider i ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -10193,6 +10205,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Born Private-konti kan ikke købes uden et aktivt abonnement."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private kræver en donation."
+      ],
+      "You already own a Born Private account.": [
+        "Du ejer allerede en Born Private-konto."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Din konto er for gammel til Born Private."
       ]
     },
     "Payments.Error": {
@@ -13631,6 +13655,11 @@
       ],
       "Other": [
         "Andet"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
       ]
     }
   }
