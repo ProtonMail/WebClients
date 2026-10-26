@@ -80,9 +80,10 @@ type DurationKeys<V extends ValuesSpec> = {
 
 /**
  * Value specs -> numbers, without the duration ones: `{ count: number }`.
+ * A value can be `undefined` when it does not apply, it is then not sent.
  * Durations are never passed manually, see `EmitOptions.durationFrom`.
  */
-type ValuesInput<V extends ValuesSpec> = { [K in Exclude<keyof V, DurationKeys<V>>]: number };
+type ValuesInput<V extends ValuesSpec> = { [K in Exclude<keyof V, DurationKeys<V>>]: number | undefined };
 
 /** `{ [Name]: Content }`, or `unknown` (a no-op in an intersection) when there is nothing to pass */
 type InputPart<Name extends string, Content> = keyof Content extends never ? unknown : { [N in Name]: Content };

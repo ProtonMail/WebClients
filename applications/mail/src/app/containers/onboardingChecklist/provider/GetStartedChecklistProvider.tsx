@@ -17,6 +17,8 @@ import {
     ChecklistType,
 } from '@proton/shared/lib/interfaces/Checklist';
 
+import type { CHECKLIST_REDUCE_TRIGGERS } from '../../../telemetry/checklistEvents';
+import { getChecklistItemStep, useChecklistTracker } from '../../../telemetry/checklistEvents';
 import type { GetStartedChecklistApiResponse } from '../hooks/useChecklist';
 import useChecklist from '../hooks/useChecklist';
 
@@ -33,6 +35,12 @@ export const getMailChecklistItemsToComplete = (checklistType?: ChecklistType) =
     }
 };
 
+/** The reason is required when the checklist is reduced to the sidebar, it is sent with the telemetry event */
+interface ChangeChecklistDisplay {
+    (display: CHECKLIST_DISPLAY_TYPE.REDUCED, trigger: CHECKLIST_REDUCE_TRIGGERS): void;
+    (display: CHECKLIST_DISPLAY_TYPE.FULL | CHECKLIST_DISPLAY_TYPE.HIDDEN): void;
+}
+
 export interface OnboardingChecklistContext {
     /**
      * If user registered first with a paid plan
@@ -46,7 +54,7 @@ export interface OnboardingChecklistContext {
     items: Set<ChecklistKeyType>;
     displayState: ChecklistApiResponse['Display'];
     userWasRewarded: GetStartedChecklistApiResponse['UserWasRewarded'];
-    changeChecklistDisplay: (display: CHECKLIST_DISPLAY_TYPE) => void;
+    changeChecklistDisplay: ChangeChecklistDisplay;
     markItemsAsDone: (item: ChecklistKeyType) => Promise<void>;
     canDisplayChecklist: boolean;
     itemsToComplete: ChecklistKeyType[];
@@ -57,6 +65,7 @@ export interface OnboardingChecklistContext {
      */
     byoeFlowInProgress: boolean;
     setByoeFlowInProgress: (value: boolean) => void;
+    checklistType: ChecklistType | undefined;
 }
 
 const GetStartedChecklistContext = createContext<OnboardingChecklistContext | undefined>(undefined);
@@ -113,7 +122,14 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         }
     }, [checklist, submitting, byoeFlowInProgress]);
 
+    const tracking = useChecklistTracker({ canDisplayChecklist, checklistType, createdAt, expiresAt });
+
     const markItemsAsDone = async (item: ChecklistKeyType) => {
+        const step = getChecklistItemStep(ChecklistKey[item]);
+        if (step && !doneItems.includes(item)) {
+            tracking.trackStepCompleted(step);
+        }
+
         setDoneItems((state) => [...state, item]);
         if (checklistType) {
             await silentApi(updateChecklistItem(item, checklistType));
@@ -139,7 +155,14 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checklist.Items, checklistType]);
 
-    const changeChecklistDisplay = (newState: CHECKLIST_DISPLAY_TYPE) => {
+    const changeChecklistDisplay: ChangeChecklistDisplay = (
+        newState: CHECKLIST_DISPLAY_TYPE,
+        trigger?: CHECKLIST_REDUCE_TRIGGERS
+    ) => {
+        if (newState === CHECKLIST_DISPLAY_TYPE.REDUCED && trigger) {
+            tracking.trackChecklistReduced(trigger);
+        }
+
         setDisplayState(newState);
         void withSubmitting(async () => {
             // Reduce the checklist and mark first checklist item as done
@@ -185,6 +208,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         itemsToComplete,
         byoeFlowInProgress,
         setByoeFlowInProgress,
+        checklistType,
     };
 
     return <GetStartedChecklistContext.Provider value={context}>{children}</GetStartedChecklistContext.Provider>;
