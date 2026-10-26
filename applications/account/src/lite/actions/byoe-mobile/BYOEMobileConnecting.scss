@@ -7,6 +7,10 @@ $loop: 1.6s;
 	min-block-size: 100vh; // Fallback
 	min-block-size: 100dvh;
 
+	// Cancel the padding of .mobile-settings so the gradient reaches the edges of the screen
+	margin-block: calc(-1 * max(1rem, env(safe-area-inset-top))) calc(-1 * max(1rem, env(safe-area-inset-bottom)));
+	margin-inline: calc(-1 * max(1rem, env(safe-area-inset-left))) calc(-1 * max(1rem, env(safe-area-inset-right)));
+
 	// The design keeps room for the actions at the bottom, which sit below the illustration's center
 	padding-block-end: rem(144);
 
