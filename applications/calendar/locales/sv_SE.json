@@ -1055,6 +1055,12 @@
       ],
       "Subscribe": [
         "Prenumerera"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Lägg till ${ name }"
       ]
     },
     "action": {
@@ -12736,6 +12742,9 @@
       ],
       "Request sent": [
         "Begäran skickad"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Prenumerera på ${ planTitle }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13502,6 +13511,11 @@
       ],
       "Other": [
         "Annat"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankkonto"
       ]
     }
   }

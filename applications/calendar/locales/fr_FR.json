@@ -1052,6 +1052,12 @@
       ],
       "Subscribe": [
         "S'abonner"
+      ],
+      "About ${ name }": [
+        "À propos de ${ name }"
+      ],
+      "Add ${ name }": [
+        "Ajouter ${ name }"
       ]
     },
     "action": {
@@ -6793,6 +6799,9 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Votre période d’essai gratuite est terminée. Abonnez-vous dès maintenant pour maintenir l’accès de votre équipe sans interruption et assurer la sécurité de vos comptes."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Vous avez une facture ouverte ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -9943,6 +9952,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Les comptes Born Private ne peuvent pas être achetés avec un abonnement actif."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "L'initiative Born Private nécessite un don."
+      ],
+      "You already own a Born Private account.": [
+        "Vous possédez déjà un compte Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
       ]
     },
     "Payments.Error": {
@@ -13542,6 +13563,11 @@
       ],
       "Other": [
         "Autre"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Compte bancaire"
       ]
     }
   }
