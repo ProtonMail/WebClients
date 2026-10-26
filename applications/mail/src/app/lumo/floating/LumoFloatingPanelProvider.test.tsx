@@ -10,6 +10,7 @@ import useLumoInMail from '@proton/components/components/drawer/views/lumoAgent/
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import useOnline from '@proton/components/hooks/useOnline';
+import { getLocalStorageUserDrawerKey } from '@proton/shared/lib/drawer/helpers';
 import type { DrawerApp } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
@@ -96,14 +97,28 @@ const renderPanel = () => {
     return renderHook(useLumoFloatingPanel, { wrapper: Wrapper });
 };
 
+const renderDocked = () => {
+    window.localStorage.setItem(SURFACE_MODE_KEY, 'false');
+    return renderPanel();
+};
+
 const renderDetached = () => {
     setAppInView(DRAWER_NATIVE_APPS.LUMO);
-    const rendered = renderPanel();
+    const rendered = renderDocked();
     act(() => rendered.result.current.detach());
     setAppInView(undefined);
     refresh();
     jest.clearAllMocks();
     return rendered;
+};
+
+const expectDetachedClosedWithoutOpen = ({ result }: ReturnType<typeof renderPanel>) => {
+    expect(result.current.isDetached).toBe(true);
+    expect(result.current.isPanelOpen).toBe(false);
+    expect(result.current.isCatHidden).toBe(false);
+    expect(result.current.isCurrentSurfaceOpen).toBe(false);
+    expect(toggleDrawer).not.toHaveBeenCalled();
+    expect(assistantOpened).not.toHaveBeenCalled();
 };
 
 beforeEach(() => {
@@ -119,7 +134,7 @@ beforeEach(() => {
 describe('LumoFloatingPanelProvider', () => {
     it('closes the drawer and opens the panel on detach without reporting an open', () => {
         setAppInView(DRAWER_NATIVE_APPS.LUMO);
-        const { result } = renderPanel();
+        const { result } = renderDocked();
 
         act(() => result.current.detach());
 
@@ -158,7 +173,7 @@ describe('LumoFloatingPanelProvider', () => {
     });
 
     it('opens the drawer while docked and reports the open once', () => {
-        const { result } = renderPanel();
+        const { result } = renderDocked();
 
         act(() => result.current.toggleLumo());
 
@@ -171,7 +186,7 @@ describe('LumoFloatingPanelProvider', () => {
         ['the browser is offline', { isApiOffline: false, isOnline: false }],
     ])('neither opens the drawer nor reports an open while docked when %s', (_, reachability) => {
         setReachability(reachability);
-        const { result } = renderPanel();
+        const { result } = renderDocked();
 
         act(() => result.current.toggleLumo());
 
@@ -181,7 +196,7 @@ describe('LumoFloatingPanelProvider', () => {
 
     it('closes the drawer while docked without reporting an open', () => {
         setAppInView(DRAWER_NATIVE_APPS.LUMO);
-        const { result } = renderPanel();
+        const { result } = renderDocked();
         expect(result.current.isCurrentSurfaceOpen).toBe(true);
 
         act(() => result.current.toggleLumo());
@@ -218,7 +233,7 @@ describe('LumoFloatingPanelProvider', () => {
     });
 
     it('moves to the left while a composer is open and back once none are', () => {
-        const { result } = renderPanel();
+        const { result } = renderDocked();
 
         setComposersCount(1);
         refresh();
@@ -276,6 +291,7 @@ describe('LumoFloatingPanelProvider', () => {
     });
 
     it('publishes nothing while Lumo is off and the remembered mode, closed, once it is back on', () => {
+        window.localStorage.setItem(SURFACE_MODE_KEY, 'false');
         const seenDetached: boolean[] = [];
         const { result, rerender } = renderHook(
             () => {
@@ -299,8 +315,25 @@ describe('LumoFloatingPanelProvider', () => {
         expect(result.current.isPanelOpen).toBe(false);
     });
 
-    it('starts docked when no mode is remembered', () => {
+    it('starts detached and closed when no mode is remembered, with the cat shown and no open reported', () => {
+        expectDetachedClosedWithoutOpen(renderPanel());
+    });
+
+    it('starts docked when no mode is remembered but the drawer restores Lumo', () => {
+        window.localStorage.setItem(
+            getLocalStorageUserDrawerKey('user-a'),
+            JSON.stringify({ app: DRAWER_NATIVE_APPS.LUMO })
+        );
+        setAppInView(DRAWER_NATIVE_APPS.LUMO);
+
         const { result } = renderPanel();
+
+        expect(result.current.isDetached).toBe(false);
+        expect(result.current.isCurrentSurfaceOpen).toBe(true);
+    });
+
+    it('starts docked when docked is remembered', () => {
+        const { result } = renderDocked();
 
         expect(result.current.isDetached).toBe(false);
     });
@@ -308,40 +341,33 @@ describe('LumoFloatingPanelProvider', () => {
     it('restores a remembered detached mode closed, with the cat shown and no open reported', () => {
         window.localStorage.setItem(SURFACE_MODE_KEY, 'true');
 
-        const { result } = renderPanel();
-
-        expect(result.current.isDetached).toBe(true);
-        expect(result.current.isPanelOpen).toBe(false);
-        expect(result.current.isCatHidden).toBe(false);
-        expect(result.current.isCurrentSurfaceOpen).toBe(false);
-        expect(toggleDrawer).not.toHaveBeenCalled();
-        expect(assistantOpened).not.toHaveBeenCalled();
+        expectDetachedClosedWithoutOpen(renderPanel());
     });
 
-    it('starts docked when the remembered mode is unrecognised', () => {
+    it('starts detached when the remembered mode is unrecognised', () => {
         window.localStorage.setItem(SURFACE_MODE_KEY, 'banana');
 
         const { result } = renderPanel();
 
-        expect(result.current.isDetached).toBe(false);
+        expect(result.current.isDetached).toBe(true);
     });
 
     it("ignores another user's remembered mode", () => {
         setUserID('user-b');
         const otherUser = renderPanel();
         act(() => {
-            otherUser.result.current.detach();
+            otherUser.result.current.dock();
         });
         otherUser.unmount();
         setUserID('user-a');
 
         const { result } = renderPanel();
 
-        expect(result.current.isDetached).toBe(false);
+        expect(result.current.isDetached).toBe(true);
     });
 
     it('remembers the detached mode on detach', () => {
-        const { result } = renderPanel();
+        const { result } = renderDocked();
 
         act(() => {
             result.current.detach();

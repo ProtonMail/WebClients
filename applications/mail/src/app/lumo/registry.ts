@@ -246,6 +246,8 @@ export const buildLumoMailConfig = (
         suggestions: WELCOME_SUGGESTIONS,
         telemetry,
         showContextLimitToast: true,
+        // Staff-only release, so the traffic is small enough for the stronger model
+        modelTier: 'lumo-max',
         // Run backend-side, so unlike MODULES they contribute no handler and no card — opt-in plus wording.
         serverTools: ['web_search', 'proton_info'],
         serverToolMeta: {

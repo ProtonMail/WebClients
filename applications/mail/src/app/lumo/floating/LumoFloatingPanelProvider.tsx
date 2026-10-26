@@ -7,8 +7,10 @@ import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import useOnline from '@proton/components/hooks/useOnline';
-import { isAppInView } from '@proton/shared/lib/drawer/helpers';
+import { getLocalStorageUserDrawerKey, isAppInView } from '@proton/shared/lib/drawer/helpers';
+import type { DrawerLocalStorageValue } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import { selectComposersCount } from '../../store/composers/composerSelectors';
 import { useMailSelector } from '../../store/hooks';
@@ -66,9 +68,23 @@ const getSurfaceModeKey = (userID: string) => {
     return `lumo-mail-surface-mode-${userID}`;
 };
 
+// The drawer reopens its last app on load, so a Lumo tab left there would otherwise sit beside the pet
+const getIsLumoLastInDrawer = (userID: string) => {
+    const stored = getItem(getLocalStorageUserDrawerKey(userID));
+    if (!stored) {
+        return false;
+    }
+    try {
+        return (JSON.parse(stored) as DrawerLocalStorageValue).app === DRAWER_NATIVE_APPS.LUMO;
+    } catch {
+        return false;
+    }
+};
+
 const LumoFloatingPanelBody = memo(function LumoFloatingPanelBody({ onValue }: PublisherProps<LumoFloatingPanelValue>) {
     const [user] = useUser();
-    const [isDetached, setIsDetached] = useLocalState(false, getSurfaceModeKey(user.ID));
+    const [isLumoLastInDrawer] = useState(() => getIsLumoLastInDrawer(user.ID));
+    const [isDetached, setIsDetached] = useLocalState(!isLumoLastInDrawer, getSurfaceModeKey(user.ID));
     const [isPanelOpen, setIsPanelOpen] = useState(false);
     const [sideState, setSideState] = useState(INITIAL_PANEL_SIDE_STATE);
     const [cardWidth, setCardWidth] = useState(CARD_MIN_WIDTH);
