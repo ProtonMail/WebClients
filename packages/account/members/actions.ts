@@ -41,6 +41,7 @@ import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces/Membe
 import { CreateMemberMode } from '@proton/shared/lib/interfaces/Member';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
+import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import { setupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import { getIsPasswordless } from '@proton/shared/lib/keys/organizationKeys';
@@ -150,8 +151,15 @@ export const setRole = ({
     UnknownAction
 > => {
     return async (dispatch) => {
+        // demotion
         if (role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
             if (payload?.type === 'promote-global-sso') {
+                if (syncOwner) {
+                    // Safe for legacy pending admin invitations where the member never held Owner:
+                    // the endpoint returns success and skips removing a role that isn't assigned,
+                    // so deleteRequestUnprivatization below still runs
+                    await dispatch(updateOwnerRole({ member, makeAdmin: false, api }));
+                }
                 await dispatch(deleteRequestUnprivatization({ member, api }));
                 return;
             }
@@ -178,9 +186,13 @@ export const setRole = ({
             throw new Error('Missing payload');
         }
 
+        // promotion
         if (payload.type === 'promote-global-sso') {
             if (getIsMemberSetup(member) || !member.SSO) {
                 throw new MemberCreationValidationError('Unexpected request');
+            }
+            if (syncOwner) {
+                await dispatch(updateOwnerRole({ member, makeAdmin: true, api }));
             }
             // For VPN SSO users we request unprivatization with admin flag to convert them to global sso users
             await dispatch(requestUnprivatization({ member, api, makeAdmin: true }));
@@ -220,8 +232,16 @@ export const assignMemberRoles = ({
             (role) => desiredRoleIds.has(role.OrganizationRoleID) && isOrgKeyRequired(role)
         );
         const currentRolesRequireOrgKey = currentRoles.some(({ Role }) => isOrgKeyRequired(Role));
+        const groupRolesRequireOrgKey = currentRoles.some(
+            ({ Role, Source }) => Source === ROLE_SOURCE.GROUP && isOrgKeyRequired(Role)
+        );
+        const removesLastOrgKeyRole =
+            currentRolesRequireOrgKey && !desiredRolesRequireOrgKey && !groupRolesRequireOrgKey;
 
         if (!desiredRolesRequireOrgKey || currentRolesRequireOrgKey || getIsMemberAdminOrPendingAdmin(member)) {
+            if (removesLastOrgKeyRole && getMemberUnprivatizationMode(member).makeAdmin) {
+                await dispatch(deleteRequestUnprivatization({ member, api }));
+            }
             return dispatch(updateMemberRoles({ member, currentRoles, desiredRoleIds, api }));
         }
 
@@ -535,21 +555,6 @@ export const setMemberOwnerRole = ({
             payload = result.payload;
         }
 
-        let changed = false;
-
-        // The user cancels a pending admin invitation
-        if (!makeAdmin && unprivatization.makeAdmin) {
-            const { diff } = await dispatch(
-                editMember({
-                    member,
-                    memberDiff: { role: MEMBER_ROLE.ORGANIZATION_MEMBER },
-                    memberKeyPacketPayload: payload,
-                    api,
-                })
-            );
-            changed = diff;
-        }
-
         const desiredRoleIds = new Set(currentRoles.map(({ Role }) => Role.OrganizationRoleID));
         if (makeAdmin) {
             desiredRoleIds.add(ownerRoleId);
@@ -557,16 +562,27 @@ export const setMemberOwnerRole = ({
             desiredRoleIds.delete(ownerRoleId);
         }
 
-        // makeAdmin = true: org admin want to assign Owner role to this member
-        // makeAdmin = false && hasOwnerRole = true: org admin want to remove Owner role from this member
-        // makeAdmin = false && hasOwnerRole = false: cancel pending admin invitation, we should not do
-        //  anything here since member doesn't have Owner role
+        // A role change: assignMemberRoles also deletes the pending admin invitation when no org key role remains
         if (makeAdmin || hasOwnerRole) {
             const result = await dispatch(assignMemberRoles({ member, currentRoles, desiredRoleIds, payload, api }));
-            changed = changed || result.changed;
+            return { confirmed: true, changed: result.changed, desiredRoleIds };
         }
 
-        return { confirmed: true, changed, desiredRoleIds };
+        // The member holds no Owner role and has no pending admin invitation, so nothing changes
+        if (!unprivatization.makeAdmin) {
+            return { confirmed: true, changed: false, desiredRoleIds };
+        }
+
+        // The user cancels a pending admin invitation
+        const { diff } = await dispatch(
+            editMember({
+                member,
+                memberDiff: { role: MEMBER_ROLE.ORGANIZATION_MEMBER },
+                memberKeyPacketPayload: payload,
+                api,
+            })
+        );
+        return { confirmed: true, changed: diff, desiredRoleIds };
     };
 };
 
