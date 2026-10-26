@@ -21,10 +21,11 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { LumoIcon } from '../../../../components/LumoIcon/LumoIcon';
 import { RecurrenceRuleFieldset } from '../../../../components/RecurrenceRuleFieldset/RecurrenceRuleFieldset';
 import type { RecurrenceRule } from '../../../../components/RecurrenceRuleFieldset/types';
+import type { SpaceId } from '../../../../types';
 import type { ScheduleDetails } from '../../types';
 import { ScheduleConnectorPicker } from '../ScheduleConnectorPicker';
 import type { ScheduleDetailsValidationField } from '../utils/schedules';
-import { getEmptyScheduleDetails, getScheduleDetailsValidationErrors } from '../utils/schedules';
+import { getScheduleDetailsValidationErrors } from '../utils/schedules';
 import { DeleteScheduledTaskPrompt } from './DeleteScheduledTaskPrompt';
 import { DiscardScheduledTaskEditsPrompt } from './DiscardScheduledTaskEditsPrompt';
 
@@ -32,17 +33,20 @@ import './ScheduledTaskEditorModal.scss';
 
 interface ScheduledTaskEditorModalProps extends ModalStateProps {
     /** The initial values for the scheduled task (e.g. from a template). */
-    initialValues?: ScheduleDetails;
+    initialValues: ScheduleDetails;
+    /** The space that owns the scheduled task. */
+    spaceId: SpaceId;
     /** The mode of the scheduled task editor modal (e.g. create a new task or edit an existing task). */
     mode?: 'create' | 'edit';
     /** The function to call when the user deletes the scheduled task (edit mode). */
-    onDelete?: (scheduleId: string) => void;
+    onDelete?: (id: SpaceId) => void;
     /** The function to call when the user saves the scheduled task details. */
-    onSave?: (values: ScheduleDetails) => void;
+    onSave?: (id: SpaceId, values: ScheduleDetails) => boolean | void;
 }
 
 export const ScheduledTaskEditorModal = ({
     initialValues,
+    spaceId,
     mode = 'create',
     onClose: closeModal,
     onDelete,
@@ -51,7 +55,7 @@ export const ScheduledTaskEditorModal = ({
 }: ScheduledTaskEditorModalProps) => {
     const formId = useId();
     const { createNotification } = useNotifications();
-    const [values, setValues] = useState<ScheduleDetails>(() => initialValues ?? getEmptyScheduleDetails());
+    const [values, setValues] = useState<ScheduleDetails>(() => initialValues);
     const [fieldErrors, setFieldErrors] = useState<Partial<Record<ScheduleDetailsValidationField, string>>>({});
     const hasEditedRef = useRef(false);
     const discardEditsPrompt = useModalStateObject();
@@ -91,11 +95,12 @@ export const ScheduledTaskEditorModal = ({
         setFieldErrors(errors);
 
         if (Object.keys(errors).length === 0) {
-            onSave?.({
+            const saved = onSave?.(spaceId, {
                 ...values,
                 name: values.name.trim(),
                 instructions: values.instructions.trim(),
             });
+            if (saved === false) return;
             closeModal();
         } else {
             createNotification({
@@ -293,7 +298,7 @@ export const ScheduledTaskEditorModal = ({
                 <DeleteScheduledTaskPrompt
                     {...deleteTaskPrompt.modalProps}
                     onConfirm={() => {
-                        onDelete?.(values.id);
+                        onDelete?.(spaceId);
                         closeModal();
                     }}
                     taskName={taskDisplayName}
