@@ -1526,7 +1526,8 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen"
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -1723,6 +1724,9 @@
       ],
       "Subscribe": [
         "Tilaa"
+      ],
+      "Create a booking page": [
+        "Luo varaussivu"
       ]
     },
     "action": {
@@ -7592,8 +7596,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -9093,6 +9096,21 @@
       ],
       "We'll get back to you shortly.": [
         "Palaamme asiaan pian."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Pyydä ylläpitoasi päivittämään tilauksesi tai poista sivu Varaussivut-sivupalkista."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Lisätäksesi varaussivuja, pyydä ylläpitoasi päivittämään tilauksesi."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Lisätäksesi varaussivun, poista jokin nykyisistä sivuista Varaussivut-sivupalkista."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Lisätäksesi varaussivuja, päivitä tilauksesi."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Olet saavuttanut tilaukseesi sisältyvien varaussivujen enimmäismäärän."
       ]
     },
     "info": {
@@ -16374,6 +16392,12 @@
       ],
       "Request sent": [
         "Pyyntö lähetetty"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Cannot create more Booking pages": [
+        "Varaussivuja ei voida luoda enempää."
       ]
     },
     "Title header for keys table": {

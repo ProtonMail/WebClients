@@ -1573,7 +1573,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1799,6 +1802,9 @@
       ],
       "Add ${ name }": [
         "Pridať ${ name }"
+      ],
+      "Create a booking page": [
+        "Vytvoriť stránku rezervácií"
       ]
     },
     "action": {
@@ -8425,10 +8431,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10316,6 +10319,27 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Vaša bezplatná skúšobná verzia vypršala. Predplaťte si službu hneď teraz, aby mal váš tím nepretržitý prístup a aby boli účty v bezpečí."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Požiadajte svojho správcu, aby zvýšil úroveň plánu alebo odstránil stránku z bočného panela stránok Rezervácií v ${ CALENDAR_APP_NAME }."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Požiadajte svojho správcu, aby zvýšil úroveň plánu alebo odstránil stránku z bočného panela stránok Rezervácií."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Ak chcete pridať novú rezervačnú stránku, požiadajte svojho správcu, aby zvýšil úroveň vášho plánu."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Ak chcete pridať novú stránku rezervácií, odstráňte existujúcu z bočného panela stránok rezervácií v ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Ak chcete pridať novú stránku rezervácií, odstráňte existujúcu z bočného panela stránok rezervácií."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Ak chcete pridať novú rezervačnú stránku, zvýšte úroveň svojho plánu."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Dosiahli ste maximálny počet rezervačných stránok dostupných vo vašom pláne."
       ]
     },
     "info": {
@@ -18299,6 +18323,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Odoberať ${ planTitle }"
+      ],
+      "Cannot create more Booking pages": [
+        "Nemožno vytvoriť viac rezervačných stránok"
       ]
     },
     "Title header for keys table": {

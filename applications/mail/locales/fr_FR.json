@@ -1565,7 +1565,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1771,6 +1772,15 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the left": [
         "Déplacer ${ LUMO_SHORT_APP_NAME } sur la gauche"
+      ],
+      "About ${ name }": [
+        "À propos de ${ name }"
+      ],
+      "Add ${ name }": [
+        "Ajouter ${ name }"
+      ],
+      "Create a booking page": [
+        "Créer une page de réservation"
       ]
     },
     "action": {
@@ -8014,8 +8024,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9758,6 +9767,21 @@
       ],
       "You have an open invoice ${ payInvoiceLink }": [
         "Vous avez une facture ouverte ${ payInvoiceLink }"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Demandez à votre administrateur de changer d'abonnement ou de retirer une page de la barre latérale des pages de réservation."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Pour ajouter une nouvelle page de réservation, demandez à votre administrateur de changer votre abonnement."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Pour ajouter une nouvelle page de réservation, retirez-en une existante de la barre latérale des pages de réservation."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Pour ajouter une nouvelle page de réservation, changez votre abonnement."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Vous avez atteint le nombre maximum de pages de réservation prévues dans votre abonnement."
       ]
     },
     "info": {
@@ -11091,6 +11115,9 @@
       ],
       "Why would you like to cancel?": [
         "Pourquoi voulez-vous annuler votre abonnement ?"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "Assistant ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16045,6 +16072,12 @@
       ],
       "Invoice paid": [
         "La facture a été payée."
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "Assistant ${ LUMO_SHORT_APP_NAME } désactivé"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "Assistant ${ LUMO_SHORT_APP_NAME } activé"
       ]
     },
     "Success notification": {
@@ -17374,6 +17407,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "S’abonner à ${ planTitle }"
+      ],
+      "Cannot create more Booking pages": [
+        "Vous ne pouvez pas créer de pages de réservation supplémentaire."
       ]
     },
     "Title header for keys table": {
