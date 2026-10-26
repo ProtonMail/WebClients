@@ -1780,6 +1780,15 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the right": [
         "Flyt ${ LUMO_SHORT_APP_NAME } til højre"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Tilføj ${ name }"
+      ],
+      "Create a booking page": [
+        "Opret en bookingside"
       ]
     },
     "action": {
@@ -8189,8 +8198,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -9993,6 +10001,27 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Bed din administrator om at opgradere abonnementet eller fjerne en side fra sidepanelet med reservationssider i ${ CALENDAR_APP_NAME }."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Bed din administrator om at opgradere abonnementet eller fjerne en side fra sidepanelet med reservationssider."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "For at tilføje en ny reservationsside, skal du bede din administrator om at opgradere dit abonnement."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "For at tilføje en ny reservationsside, skal du fjerne en eksisterende fra sidepanelet for reservationssider i ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "For at tilføje en ny reservationsside, skal du fjerne en eksisterende fra sidepanelet for reservationssider."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "For at tilføje en ny reservationsside skal du opgradere dit abonnement."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du har nået det maksimale antal reservationssider, der er tilgængelige i dit abonnement."
       ]
     },
     "info": {
@@ -11350,6 +11379,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME }-assistent"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16198,6 +16230,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har nu opsagt dit abonnement."
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME }-assistent deaktiveret"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME }-assistent aktiveret"
       ]
     },
     "Success notification": {
@@ -17524,6 +17562,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortere adresse er nu klar"
+      ],
+      "Cannot create more Booking pages": [
+        "Kan ikke oprette flere reservationssider"
       ]
     },
     "Title header for keys table": {

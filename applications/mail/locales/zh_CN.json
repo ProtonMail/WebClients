@@ -1772,6 +1772,21 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "About ${ name }": [
+        "关于 ${ name }"
+      ],
+      "Add ${ name }": [
+        "添加 ${ name }"
+      ],
+      "Create a booking page": [
+        "创建预约页面"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "将 ${ LUMO_SHORT_APP_NAME } 向左移动"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "将 ${ LUMO_SHORT_APP_NAME } 向右移动"
       ]
     },
     "action": {
@@ -9806,6 +9821,27 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需几步即可拥有清爽收件箱"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "请您的管理员升级计划或从预约页面侧边栏中移除一个页面"
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "要添加新的预约页面，请让您的管理员升级您的计划。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "要添加新的预约页面，请从预约页面侧边栏中移除一个现有的页面。"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "要添加新的预约页面，请升级您的计划。"
+      ],
+      "UnionPay logo": [
+        "UnionPay 标志"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "您已达到您计划中允许的预约页面最大数量"
       ]
     },
     "info": {
@@ -11155,6 +11191,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } 助手"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11511,6 +11550,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "您需要重新激活密钥才能查看更新的邀请"
+      ],
+      "Customer Support": [
+        "客户支持"
       ]
     },
     "Link to calendar event": {
@@ -13724,6 +13766,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有折扣优惠，转用新的促销意味着现有折扣将不再适用。"
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "在订阅生效期间无法购买 Born Private 账户。"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private 套餐需要捐款。"
+      ],
+      "You already own a Born Private account.": [
+        "您已经拥有一个 Born Private 账户。"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
       ]
     },
     "Payments.Error": {
@@ -15867,6 +15921,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "您已成功取消订阅"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "已禁用 ${ LUMO_SHORT_APP_NAME } 助手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "已启用 ${ LUMO_SHORT_APP_NAME } 助手"
       ]
     },
     "Success notification": {
@@ -17170,6 +17230,9 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Cannot create more Booking pages": [
+        "无法创建更多预约页面"
       ]
     },
     "Title header for keys table": {
@@ -17386,6 +17449,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "用户接受邀请后，您即可为其分配角色。"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "该用户下次登录时将获得管理员权限。"
       ]
     },
     "Validation": {
@@ -17811,6 +17877,11 @@
     "Payment Method": {
       "Bank Account": [
         "银行账户"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
       ]
     }
   }
