@@ -1620,6 +1620,12 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "About ${ name }": [
+        "Despre ${ name }"
+      ],
+      "Add ${ name }": [
+        "Adăugare ${ name }"
       ]
     },
     "action": {
@@ -10124,6 +10130,9 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Când autentificarea este restricționată, doar numele de utilizator ${ primaryEmailElement } poate fi utilizat pentru a vă autentifica. Celelalte adrese nu vă pot fi asociate cu contul, chiar dacă cineva le cunoaște."
       ]
     },
     "info": {
@@ -11330,6 +11339,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Restrict sign-in to email address": [
+        "Restricționare autentificarea la o adresă de e-mail"
       ]
     },
     "label": {

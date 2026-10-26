@@ -1620,6 +1620,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "About ${ name }": [
+        "Pel que fa a ${ name }"
+      ],
+      "Add ${ name }": [
+        "Afegir ${ name }"
       ]
     },
     "action": {
@@ -9992,6 +9998,9 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió està restringit, només el vostre correu ${ primaryEmailElement } es pot utilitzar per a iniciar sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
       ]
     },
     "info": {
@@ -11190,6 +11199,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Restrict sign-in to email address": [
+        "Restringeix l'inici de sessió a l'adreça de correu electrònic"
       ]
     },
     "label": {

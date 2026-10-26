@@ -1620,6 +1620,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "About ${ name }": [
+        "O ${ name }"
+      ],
+      "Add ${ name }": [
+        "Pridať ${ name }"
       ]
     },
     "action": {
@@ -10266,6 +10272,9 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba váš email ${ primaryEmailElement }. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
       ]
     },
     "info": {
@@ -11480,6 +11489,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Restrict sign-in to email address": [
+        "Obmedziť prihlásenie na emailovú adresu"
       ]
     },
     "label": {
@@ -14639,6 +14651,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Účet Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Iniciatíva Born Private si vyžaduje finančný príspevok."
+      ],
+      "You already own a Born Private account.": [
+        "Už vlastníte účet Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Váš účet je príliš starý na iniciatívu Born Private."
       ]
     },
     "Payments.Error": {
@@ -16054,6 +16078,27 @@
       ],
       "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Používatelia s nastavením „súkromné“ musia prijať pozvánku, aby dokončili nastavenie. Pozvánku im zašleme hneď, ako ju schválite."
+      ],
+      "${ cleanUpCount } clean up action required.": [
+        "Je potrebné vykonať ${ cleanUpCount } čistenie.",
+        "Je potrebné vykonať ${ cleanUpCount } čistenia.",
+        "Je potrebné vykonať ${ cleanUpCount } čistení.",
+        "Je potrebné vykonať ${ cleanUpCount } čistení."
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "Je potrebné vykonať ${ numberOfCleanUps } čistenie",
+        "Je potrebné vykonať ${ numberOfCleanUps } čistenia",
+        "Je potrebné vykonať ${ numberOfCleanUps } čistení",
+        "Je potrebné vykonať ${ numberOfCleanUps } čistení"
+      ],
+      "Approve permission changes for your organization": [
+        "Schváľte zmeny oprávnení pre vašu organizáciu"
+      ],
+      "Final approval needed to remove organization key access.": [
+        "Na zrušenie prístupového kľúča organizácie je potrebné konečné schválenie."
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "Na zrušenie ich organizačných kľúčov je potrebné konečné schválenie."
       ]
     },
     "scim: Action": {

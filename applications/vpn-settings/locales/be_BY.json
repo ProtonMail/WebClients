@@ -1620,6 +1620,12 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "About ${ name }": [
+        "Аб ${ name }"
+      ],
+      "Add ${ name }": [
+        "Дадаць ${ name }"
       ]
     },
     "action": {
@@ -2613,6 +2619,9 @@
       ],
       "Your password remains the same.": [
         "Ваш пароль застаецца без змяненняў."
+      ],
+      "Your address has been claimed": [
+        "Ваш адрас быў заяўлены"
       ]
     },
     "Collapsible tooltip": {
@@ -6501,6 +6510,9 @@
       ],
       "User - ${ userPrice }": [
         "Карыстальнік - ${ userPrice }"
+      ],
+      "Enforce identity-based access controls": [
+        "Забяспечце кантроль доступу на аснове ідэнтыфікацыі"
       ]
     },
     "Get help": {
@@ -10085,6 +10097,9 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Your account and password stay the same.": [
+        "Ваш уліковы запіс і пароль не зменяцца."
       ]
     },
     "info": {
@@ -11293,6 +11308,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Абмежаваць уваход з асноўным адрасам электроннай пошты"
+      ],
+      "Restrict sign-in to username": [
+        "Абмежаваць уваход імем карыстальніка"
       ]
     },
     "label": {
@@ -11605,6 +11626,9 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "Customer Support": [
+        "Служба падтрымкі"
       ]
     },
     "Link (Scribe)": {
@@ -14392,6 +14416,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "You already own a Born Private account.": [
+        "Вы ўжо валодаеце ўліковым запісам Born Private."
       ]
     },
     "Payments.Error": {
@@ -16981,6 +17008,12 @@
       ],
       "Verify ${ value }": [
         "Спраўджанне ${ value }"
+      ],
+      "key removal scheduled": [
+        "запланаванае выдаленне ключа"
+      ],
+      "remove organization key": [
+        "выдаліць ключа арганізацыі"
       ]
     },
     "Storage": {
@@ -19540,6 +19573,9 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "API для ${ LUMO_APP_NAME }"
       ]
     },
     "Title for payment methods table": {

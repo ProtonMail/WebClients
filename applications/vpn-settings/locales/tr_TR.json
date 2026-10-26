@@ -1620,6 +1620,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "About ${ name }": [
+        "${ name } hakkında"
+      ],
+      "Add ${ name }": [
+        "${ name } ekle"
       ]
     },
     "action": {
@@ -9992,6 +9998,9 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Oturum açma kısıtlandığında oturum açmak için yalnızca ${ primaryEmailElement } e-posta adresiniz kullanılabilir. Diğer adresleriniz birisi bunları biliyor olsa bile hesabınızla ilişkilendirilemez."
       ]
     },
     "info": {
@@ -11190,6 +11199,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Restrict sign-in to email address": [
+        "Oturum açma e-posta adresi ile kısıtlansın"
       ]
     },
     "label": {

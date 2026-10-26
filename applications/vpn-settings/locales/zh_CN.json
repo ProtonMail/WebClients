@@ -1620,6 +1620,12 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "About ${ name }": [
+        "关于 ${ name }"
+      ],
+      "Add ${ name }": [
+        "添加 ${ name }"
       ]
     },
     "action": {
@@ -9832,6 +9838,12 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
+      ],
+      "UnionPay logo": [
+        "UnionPay 标志"
       ]
     },
     "info": {
@@ -11331,6 +11343,9 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "Customer Support": [
+        "客户支持"
       ]
     },
     "Link (Scribe)": {
@@ -14004,6 +14019,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有折扣优惠，转用新的促销意味着现有折扣将不再适用。"
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "在订阅生效期间无法购买 Born Private 账户。"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private 套餐需要捐款。"
+      ],
+      "You already own a Born Private account.": [
+        "您已经拥有一个 Born Private 账户。"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
       ]
     },
     "Payments.Error": {
@@ -19636,6 +19663,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "用户接受邀请后，您即可为其分配角色。"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "该用户下次登录时将获得管理员权限。"
       ]
     },
     "Users table: badge": {
@@ -19948,6 +19978,11 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "验证成功后请勿删除该 TXT 记录，我们需要根据它确认您是否仍持有该域名。"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
       ]
     }
   }
