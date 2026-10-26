@@ -1577,7 +1577,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1795,6 +1796,9 @@
       ],
       "Add ${ name }": [
         "${ name } hinzufügen"
+      ],
+      "Create a booking page": [
+        "Buchungsseite erstellen"
       ]
     },
     "action": {
@@ -8261,8 +8265,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -10074,6 +10077,27 @@
       ],
       "UnionPay logo": [
         "Union Pay-Logo"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Bitte deinen Administrator, das Abonnement zu upgraden oder eine Seite aus der Seitenleiste der Buchungsseiten in ${ CALENDAR_APP_NAME } zu entfernen."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Bitte deinen Administrator, das Abonnement zu upgraden oder eine Seite aus der Seitenleiste der Buchungsseiten zu entfernen."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Um eine neue Buchungsseite hinzuzufügen, bitte deinen Administrator, dein Abonnement zu upgraden."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Um eine neue Buchungsseite hinzuzufügen, entferne eine bestehende aus der Seitenleiste der Buchungsseiten in ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Um eine neue Buchungsseite hinzuzufügen, entferne eine bestehende aus der Seitenleiste der Buchungsseiten."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Um eine neue Buchungsseite hinzuzufügen, upgrade dein Abonnement."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du hast die maximale Anzahl an Buchungsseiten in deinem Abonnement erreicht."
       ]
     },
     "info": {
@@ -17677,6 +17701,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "${ planTitle } abonnieren"
+      ],
+      "Cannot create more Booking pages": [
+        "Du kannst keine weiteren Buchungsseiten erstellen."
       ]
     },
     "Title header for keys table": {

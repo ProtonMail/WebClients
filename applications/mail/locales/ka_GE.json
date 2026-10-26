@@ -1514,7 +1514,8 @@
         "ნდობა"
       ],
       "Trust key": [
-        "გასაღების სანდოობა"
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -1711,6 +1712,9 @@
       ],
       "Subscribe": [
         "გამოწერა"
+      ],
+      "Create a booking page": [
+        "დაჯავშნის გვერდის შექმნა"
       ]
     },
     "action": {
@@ -7517,8 +7521,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -8978,6 +8981,21 @@
       ],
       "We'll get back to you shortly.": [
         "მალე დავბრუნდები."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "სთხოვეთ თქვენს ადმინისტრატორს, ასწიოს სატარიფო გეგმა, ან წაშალოს გვერდი დაჯავშნის გვერდების გვერდითი პანელიდან."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "ახალი დაჯავშნის გვერდის დასამატებლად, სთხოვეთ თქვენს ადმინისტრატორს, გააუმჯობესოს თქვენი სატარიფო გეგმა."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "ახალი დაჯავშნის გვერდის დასამატებლად წაშალეთ არსებული დაჯავშნის გვერდების გვერდითი პანელიდან."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "ახალი დაჯავშნის გვერდის დასამატებლად გააუმჯობესეთ თქვენი სატარიფო გეგმა."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "თქვენ მიაღწიეთ თქვენს გეგმაში ხელმისაწვდომი დაჯავშნის გვერდების მაქსიმალურ რაოდენობას."
       ]
     },
     "info": {
@@ -16134,6 +16152,12 @@
       ],
       "Pay invoice": [
         "ინვოისის გადახდა"
+      ],
+      "Black Friday": [
+        "შავი პარასკევი"
+      ],
+      "Cannot create more Booking pages": [
+        "მეტი დაჯავშნის გვერდის შექმნა შეუძლებელია"
       ]
     },
     "Title header for keys table": {
