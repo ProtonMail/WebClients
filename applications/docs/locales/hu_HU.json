@@ -817,6 +817,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
         "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "Actions message": {
@@ -5185,6 +5188,12 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "Not selected": [
+        "Nincs kijelölve"
+      ],
+      "Selected": [
+        "Kiválasztva"
       ]
     },
     "Label for contact group color": {

@@ -5697,6 +5697,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } выбраны",
+        "${ selection.selectedIds.length } выбраны",
+        "${ selection.selectedIds.length } выбраны",
+        "${ selection.selectedIds.length } выбраны"
       ]
     },
     "info": {
@@ -6172,6 +6178,27 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Назва не паддаецца расшыфроўцы"
+      ],
+      "Created by ${ displayName }": [
+        "Створана ${ displayName }"
+      ],
+      "Document": [
+        "Дакумент"
+      ],
+      "Location ${ locationLabel }": [
+        "Размяшчэнне ${ locationLabel }"
+      ],
+      "Not selected": [
+        "Не выбрана"
+      ],
+      "Select ${ document.name }": [
+        "Выберыце ${ document.name }"
+      ],
+      "Selected": [
+        "Выбрана"
+      ],
+      "Spreadsheet": [
+        "Электронная табліца"
       ]
     },
     "Label for contact group color": {
@@ -6303,6 +6330,9 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "Customer Support": [
+        "Служба падтрымкі"
       ]
     },
     "List title": {
@@ -8124,6 +8154,9 @@
       ],
       "Trial plans don’t support this many members.": [
         "Тарыфныя планы з пробным перыядам не падтрымліваюць вялікую колькасць удзельнікаў."
+      ],
+      "You already own a Born Private account.": [
+        "Вы ўжо валодаеце ўліковым запісам Born Private."
       ]
     },
     "PGP key encryption warning": {
