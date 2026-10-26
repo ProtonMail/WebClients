@@ -33,6 +33,7 @@ interface Props {
     buttonText?: string;
     onComplete?: () => Promise<void>;
     onBYOEFlowStart?: () => void;
+    onClick?: () => void;
     source: EASY_SWITCH_SOURCES;
 }
 
@@ -42,6 +43,7 @@ const ConnectGmailButton = ({
     buttonText = c('Action').t`Set up auto-forwarding from Gmail`,
     onComplete,
     onBYOEFlowStart,
+    onClick,
     source,
 }: Props) => {
     const { createNotification } = useNotifications();
@@ -105,6 +107,8 @@ const ConnectGmailButton = ({
     };
 
     const handleAddForwarding = () => {
+        onClick?.();
+
         if (!addresses) {
             return;
         }
