@@ -1,0 +1,101 @@
+.api-docs-pricing-summary {
+	border: 1px solid var(--border-norm);
+	border-radius: 0.75rem;
+	overflow: hidden;
+	background: var(--background-norm);
+}
+
+.api-docs-pricing-summary-table {
+	inline-size: 100%;
+	border-collapse: collapse;
+	text-align: start;
+
+	th,
+	td {
+		padding-block: 0.9rem;
+		padding-inline: 1.25rem;
+		text-align: start;
+		vertical-align: middle;
+		font-weight: inherit;
+	}
+
+	thead th {
+		padding-block: 0.55rem;
+		background: var(--background-weak);
+		font-size: 0.6875rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--text-hint);
+	}
+
+	tbody tr + tr {
+		border-block-start: 1px solid var(--border-weak);
+	}
+
+	th:first-child {
+		inline-size: 40%;
+	}
+}
+
+.api-docs-pricing-summary-model {
+	strong {
+		display: block;
+		font-size: 0.9375rem;
+		font-weight: bold;
+		margin-block-end: 0.15rem;
+	}
+
+	code {
+		font-size: 0.75rem;
+		font-weight: normal;
+		color: var(--text-weak);
+	}
+}
+
+.api-docs-pricing-summary-price {
+	font-size: 1.125rem;
+	font-weight: bold;
+	font-variant-numeric: tabular-nums;
+	color: var(--text-norm);
+}
+
+.api-docs-pricing-summary-na {
+	font-size: 0.875rem;
+	color: var(--text-hint);
+}
+
+@media (width <= 640px) {
+	.api-docs-pricing-summary-table {
+		thead {
+			display: none;
+		}
+
+		tbody tr {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 0.5rem;
+			padding-block: 0.9rem;
+			padding-inline: 1.25rem;
+		}
+
+		th,
+		td {
+			padding: 0;
+		}
+
+		th:first-child {
+			inline-size: auto;
+			grid-column: 1 / -1;
+		}
+
+		td[data-label]::before {
+			content: attr(data-label);
+			display: block;
+			font-size: 0.6875rem;
+			font-weight: 600;
+			color: var(--text-hint);
+			margin-block-end: 0.15rem;
+		}
+	}
+}

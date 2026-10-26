@@ -8,7 +8,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { PLANS } from '@proton/payments/core/constants';
 import { hasBundleBiz2025, hasVisionary } from '@proton/payments/core/subscription/helpers';
 import { isOrganization, isOrganizationB2B } from '@proton/shared/lib/organization/helper';
-import { canPay, isDelinquent, isFree, isMember, isPaid } from '@proton/shared/lib/user/helpers';
+import { canPay, isAdmin, isDelinquent, isFree, isMember, isPaid } from '@proton/shared/lib/user/helpers';
 
 import { LUMO_USER_TYPE } from '../types';
 import { useIsGuest } from './IsGuestProvider';
@@ -41,6 +41,7 @@ export interface LumoPlanData {
 
     // Management capabilities
     hasLumoAndCanManageSubscription: boolean;
+    isOrgAdmin: boolean;
 
     // Loading state
     isLumoPlanLoading: boolean;
@@ -76,6 +77,7 @@ const GuestLumoPlanProvider = ({ children }: { children: ReactNode }) => {
 
         // Management capabilities
         hasLumoAndCanManageSubscription: false,
+        isOrgAdmin: false,
 
         // Loading state
         isLumoPlanLoading: false,
@@ -119,6 +121,7 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
 
             // Management capabilities
             hasLumoAndCanManageSubscription: false,
+            isOrgAdmin: false,
 
             // Loading state
             isLumoPlanLoading: true,
@@ -159,6 +162,7 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
         const showLumoUpsellB2B = !hasLumoPlus && hasOrganization && userCanPay && !hasBundleBiz2025(subscription);
         const showTalkToAdminLumoUpsell = hasOrganization && isMember(user);
         const hasLumoAndCanManageSubscription = hasLumoPlus && canPay(user);
+        const isOrgAdmin = hasOrganization && isAdmin(user);
         const userIsMember = isMember(user);
 
         // Show "For Business" link unless user has a business organization plan with lumo seat included
@@ -187,6 +191,7 @@ const AuthenticatedLumoPlanProvider = ({ children }: { children: ReactNode }) =>
 
             // Management capabilities
             hasLumoAndCanManageSubscription,
+            isOrgAdmin,
 
             // Loading state
             isLumoPlanLoading: false, // Not loading when we have all data

@@ -8,6 +8,7 @@ import { useLumoSelector } from '../../redux/hooks';
 import { selectConversationById } from '../../redux/selectors';
 import type { ConversationId, SpaceId } from '../../types';
 import { isInternalLumoHost } from '../../util/internalHost';
+import { ApiUsageTab } from './ApiUsageTab';
 import { NotificationsTab } from './NotificationsTab';
 import { PerformanceTab } from './PerformanceTab';
 import { RenderingTab } from './RenderingTab';
@@ -24,7 +25,7 @@ interface ProjectRouteParams {
     projectId: SpaceId;
 }
 
-type ActiveTab = 'performance' | 'rendering' | 'search' | 'notifications' | 'storage';
+type ActiveTab = 'performance' | 'rendering' | 'search' | 'notifications' | 'storage' | 'api-usage';
 
 const DEBUG_FLAG_KEY = 'lumo_debug_perf';
 
@@ -68,7 +69,10 @@ const DebugView = () => {
 
     // Derive the active tab so a hidden tab can't be shown even briefly.
     const isTabHidden =
-        (!isLoggedIn && (activeTabState === 'search' || activeTabState === 'storage')) ||
+        (!isLoggedIn &&
+            (activeTabState === 'search' ||
+                activeTabState === 'storage' ||
+                activeTabState === 'api-usage')) ||
         (!isInternalHost && (activeTabState === 'rendering' || activeTabState === 'notifications'));
     const activeTab: ActiveTab = isTabHidden ? 'performance' : activeTabState;
 
@@ -79,6 +83,7 @@ const DebugView = () => {
         ...(isInternalHost ? [{ id: 'rendering' as const, label: c('lumo: Debug View').t`Rendering` }] : []),
         ...(isLoggedIn ? [{ id: 'search' as const, label: c('lumo: Debug View').t`Search` }] : []),
         ...(isInternalHost ? [{ id: 'notifications' as const, label: c('lumo: Debug View').t`Notifications` }] : []),
+        ...(isLoggedIn ? [{ id: 'api-usage' as const, label: c('lumo: Debug View').t`API usage` }] : []),
         ...(isLoggedIn ? [{ id: 'storage' as const, label: c('lumo: Debug View').t`Storage` }] : []),
     ];
 
@@ -92,6 +97,8 @@ const DebugView = () => {
                 return (
                     <NotificationsTab currentConversationId={currentConversationId} currentSpaceId={currentSpaceId} />
                 );
+            case 'api-usage':
+                return <ApiUsageTab />;
             case 'storage':
                 return <StorageTab currentConversationId={currentConversationId} showInternalTools={isInternalHost} />;
             case 'performance':

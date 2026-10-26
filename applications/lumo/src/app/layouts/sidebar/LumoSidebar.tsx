@@ -1,4 +1,5 @@
 import { Suspense, lazy, memo, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -12,6 +13,7 @@ import { GuestSidebarSignInSection } from '../../components/Guest/ChatHistoryUps
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { SearchModal } from '../../components/Modals/SearchModal/SearchModal';
 import SettingsModal from '../../components/Modals/SettingsModal/SettingsModal';
+import { hasVisitedApiDocs } from '../../features/api-docs/apiDocsVisit';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSearchModal } from '../../providers/SearchModalProvider';
@@ -38,6 +40,7 @@ const ProjectsSidebarSection = lazy(() =>
 
 const LumoSidebarContent = () => {
     const { isSmallScreen, toggle, closeOnItemClick } = useSidebar();
+    const history = useHistory();
     const { showMobileHeader, showSearch, showGallery, showLibrary, showSchedules } = useSidebarVisibility();
     const isGuest = useIsGuest();
     const settingsModal = useModalStateObject();
@@ -98,11 +101,13 @@ const LumoSidebarContent = () => {
                         )}
                         {showLibrary && <LibrarySidebarButton onItemClick={closeOnItemClick} />}
                         {apiKeyManagement && (
-                            <SidebarRouteButton
+                            <SidebarItem
                                 icon="CodeXml"
                                 label={c('collider_2025:Button').t`API`}
-                                onItemClick={closeOnItemClick}
-                                pathname="/docs/api"
+                                onClick={() => {
+                                    history.push(hasVisitedApiDocs() ? '/docs/api#api-usage' : '/docs/api');
+                                    closeOnItemClick?.();
+                                }}
                             />
                         )}
                         {!isGuest && (

@@ -5,15 +5,44 @@ import { useApi } from '@proton/app-context/useApi';
 import type { PersonalAccessTokenUsageDay } from '../remote/personalAccessToken';
 import { getPersonalAccessTokenUsageRequest } from '../remote/personalAccessToken';
 
+export interface TokenUsageDay {
+    Date: string;
+    TokenCount: number;
+    InputTokenCount: number;
+    OutputTokenCount: number;
+    ApiCalls: number;
+}
+
 export interface TokenUsageState {
-    days: PersonalAccessTokenUsageDay[];
+    days: TokenUsageDay[];
     totalTokenCount: number;
+    totalInputTokenCount: number;
+    totalOutputTokenCount: number;
     totalApiCalls: number;
     isLoading: boolean;
     error: boolean;
 }
 
 const toISODate = (date: Date) => date.toISOString().slice(0, 10);
+
+const toValidCount = (value: unknown) =>
+    typeof value === 'number' && Number.isFinite(value) && value >= 0 ? value : 0;
+
+export const normalizePersonalAccessTokenUsageDay = (
+    day: PersonalAccessTokenUsageDay,
+    fallbackDate?: string
+): TokenUsageDay => {
+    const inputTokenCount = toValidCount(day.InputTokenCount);
+    const outputTokenCount = toValidCount(day.OutputTokenCount ?? day.TokenCount);
+
+    return {
+        Date: typeof day.Date === 'string' ? day.Date : (fallbackDate ?? ''),
+        InputTokenCount: inputTokenCount,
+        OutputTokenCount: outputTokenCount,
+        TokenCount: inputTokenCount + outputTokenCount,
+        ApiCalls: toValidCount(day.ApiCalls),
+    };
+};
 
 /**
  * Fetches usage for one PAT (shared by the per-token hook and aggregate overview).
@@ -37,23 +66,38 @@ const fetchPersonalAccessTokenUsage = async (
 
         const rawDays = response.Usage ?? [];
         const dateMap = new Map(rawDays.map((d) => [d.Date, d]));
-        const paddedDays: PersonalAccessTokenUsageDay[] = Array.from({ length: windowDays }, (_, i) => {
+        const paddedDays: TokenUsageDay[] = Array.from({ length: windowDays }, (_, i) => {
             const d = new Date(from);
             d.setDate(from.getDate() + i);
             const dateStr = toISODate(d);
-            return dateMap.get(dateStr) ?? { Date: dateStr, TokenCount: 0, ApiCalls: 0 };
+            return normalizePersonalAccessTokenUsageDay(
+                dateMap.get(dateStr) ?? { Date: dateStr, TokenCount: 0, ApiCalls: 0 },
+                dateStr
+            );
         });
         const totalTokenCount = paddedDays.reduce((sum, day) => sum + day.TokenCount, 0);
+        const totalInputTokenCount = paddedDays.reduce((sum, day) => sum + day.InputTokenCount, 0);
+        const totalOutputTokenCount = paddedDays.reduce((sum, day) => sum + day.OutputTokenCount, 0);
         const totalApiCalls = paddedDays.reduce((sum, day) => sum + (day.ApiCalls ?? 0), 0);
         return {
             days: paddedDays,
             totalTokenCount,
+            totalInputTokenCount,
+            totalOutputTokenCount,
             totalApiCalls,
             isLoading: false,
             error: false,
         };
     } catch {
-        return { days: [], totalTokenCount: 0, totalApiCalls: 0, isLoading: false, error: true };
+        return {
+            days: [],
+            totalTokenCount: 0,
+            totalInputTokenCount: 0,
+            totalOutputTokenCount: 0,
+            totalApiCalls: 0,
+            isLoading: false,
+            error: true,
+        };
     }
 };
 
@@ -111,8 +155,10 @@ export const useAllPersonalAccessTokensUsage = (tokenIds: string[], windowDays =
     const aggregate = useMemo(() => {
         const list = Object.values(state.byId);
         const totalTokens = list.reduce((s, u) => s + u.totalTokenCount, 0);
+        const totalInputTokens = list.reduce((s, u) => s + u.totalInputTokenCount, 0);
+        const totalOutputTokens = list.reduce((s, u) => s + u.totalOutputTokenCount, 0);
         const totalApiCalls = list.reduce((s, u) => s + u.totalApiCalls, 0);
-        return { totalTokens, totalApiCalls };
+        return { totalTokens, totalInputTokens, totalOutputTokens, totalApiCalls };
     }, [state.byId]);
 
     return { ...state, aggregate };
@@ -121,6 +167,8 @@ export const useAllPersonalAccessTokensUsage = (tokenIds: string[], windowDays =
 export const getLoadingUsageState = (): TokenUsageState => ({
     days: [],
     totalTokenCount: 0,
+    totalInputTokenCount: 0,
+    totalOutputTokenCount: 0,
     totalApiCalls: 0,
     isLoading: true,
     error: false,

@@ -1,0 +1,28 @@
+.api-docs-base-url-bar {
+	display: inline-flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem 0.75rem;
+	max-inline-size: 100%;
+	padding-block: 0.4rem;
+	padding-inline: 0.9rem 0.5rem;
+	border: 1px solid var(--border-norm);
+	border-radius: 999px;
+	background: var(--background-norm);
+}
+
+.api-docs-base-url-label {
+	font-size: 0.6875rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--text-hint);
+}
+
+.api-docs-base-url-value {
+	min-inline-size: 0;
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: var(--text-norm);
+	overflow-wrap: anywhere;
+}
