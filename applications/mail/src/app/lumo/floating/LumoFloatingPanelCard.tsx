@@ -23,8 +23,13 @@ const LumoFloatingPanelCard = ({ onClose }: Props) => {
             onKeyDown={handleKeyDown}
         >
             <div className="flex flex-column flex-nowrap flex-1 lumo-floating-panel-card-body">
-                {/* The cat's thinking pose stands in for the in-chat thinking row */}
-                <ConnectedLumoAgentPanel onClose={onClose} showPromptInput={false} showThinking={false} />
+                {/* The cat on screen stands in for the in-chat thinking row and the idle mark */}
+                <ConnectedLumoAgentPanel
+                    onClose={onClose}
+                    showPromptInput={false}
+                    showThinking={false}
+                    showIdleMark={false}
+                />
             </div>
         </div>
     );
