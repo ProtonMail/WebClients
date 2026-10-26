@@ -24,6 +24,9 @@ const AllChatsView = lazy(() => import('../features/allChats/AllChatsView').then
 const SchedulesView = lazy(() =>
     import('../features/schedules/SchedulesView').then((m) => ({ default: m.SchedulesView }))
 );
+const ScheduleHomeView = lazy(() =>
+    import('../features/schedules/ScheduleHomeView').then((m) => ({ default: m.ScheduleHomeView }))
+);
 
 export function InnerApp() {
     const { url } = useRouteMatch(); // either "/guest" or "/u/:sessionId"
@@ -66,6 +69,9 @@ export function InnerApp() {
                                     {apiKeyManagement && <Route exact path="/docs/api" component={ApiDocsPage} />}
                                     <Route exact path="/chats" component={AllChatsView} />
                                     {schedules && <Route exact path="/schedules" component={SchedulesView} />}
+                                    {schedules && (
+                                        <Route exact path="/schedules/:scheduleId" component={ScheduleHomeView} />
+                                    )}
 
                                     <Route exact path="/" component={ConversationPage} />
                                     <Route path="/c/:conversationId" component={ConversationPage} />

@@ -33,7 +33,7 @@ export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => (
                 <LumoLink
                     to={to}
                     className={clsx(
-                        'absolute inset-0 flex items-center gap-2 pl-2 hover:text-primary',
+                        'absolute inset-0 flex items-center gap-2 pl-1.5 hover:text-primary',
                         trailingContent ? 'pr-8' : 'pr-2'
                     )}
                     onClick={onItemClick}

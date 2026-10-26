@@ -1,0 +1,12 @@
+.scheduled-task-run-panel {
+	&__run.button {
+		justify-content: flex-start;
+		text-align: start;
+	}
+
+	&__run--current.button {
+		--button-default-background-color: var(--control-fill-mid);
+		--button-hover-background-color: var(--control-fill-mid);
+		--button-active-background-color: var(--control-fill-strong);
+	}
+}

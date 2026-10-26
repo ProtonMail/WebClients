@@ -1,0 +1,21 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.connector-list__add-connector-chip {
+	padding-block: #{rem(5)};
+	padding-inline: #{rem(8)} #{rem(10)};
+	font-size: #{rem(13)};
+	line-height: #{rem(16)};
+
+	&.border {
+		border-color: var(--border-mid);
+	}
+
+	&:hover,
+	&:focus-visible {
+		background-color: var(--control-fill-low) !important;
+	}
+
+	&:active {
+		background-color: var(--control-fill-mid) !important;
+	}
+}
