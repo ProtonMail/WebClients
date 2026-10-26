@@ -6,12 +6,15 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist'
 
 import { useGetStartedChecklist } from '../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { deleteCheckedItemsForUser } from '../../../helpers/checklist/checkedItemsStorage';
+import { CHECKLIST_REDUCE_TRIGGERS } from '../../../telemetry/checklistEvents';
+import { useChecklistTracking } from '../../../telemetry/useChecklistTracking';
 import { useOnboardingChecklistModalsContext } from './OnboardingChecklistModalsProvider';
 
 const useOnboardingChecklist = () => {
     const [user] = useUser();
     const { isModalOpened, displayModal } = useOnboardingChecklistModalsContext();
     const { changeChecklistDisplay, isChecklistFinished, userWasRewarded } = useGetStartedChecklist();
+    const tracking = useChecklistTracking();
     const [rewardShowed, setRewardShowed] = useLocalState(false, `checklist-reward-showed-${user.ID}`);
 
     const areAllModalsClosed = !isModalOpened('protectLogin') && !isModalOpened('mobileApps');
@@ -27,6 +30,7 @@ const useOnboardingChecklist = () => {
     useEffect(() => {
         if (canOpenStorageReward) {
             displayModal('storageReward', true);
+            tracking.trackFlowFinished();
             setRewardShowed(true);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-78C2E3
@@ -38,8 +42,11 @@ const useOnboardingChecklist = () => {
             deleteCheckedItemsForUser(user.ID);
         }
 
-        const newState = isChecklistFinished ? CHECKLIST_DISPLAY_TYPE.HIDDEN : CHECKLIST_DISPLAY_TYPE.REDUCED;
-        changeChecklistDisplay(newState);
+        if (isChecklistFinished) {
+            changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.HIDDEN);
+        } else {
+            changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED, CHECKLIST_REDUCE_TRIGGERS.user);
+        }
     };
 
     return { handleDismiss };

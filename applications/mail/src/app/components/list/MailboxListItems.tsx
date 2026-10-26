@@ -25,6 +25,7 @@ import {
     selectSearch,
 } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
+import { CHECKLIST_REDUCE_TRIGGERS } from '../../telemetry/checklistEvents';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
 import { HIGHLIGHTED_ITEM_INDEX } from '../categoryView/categoriesOnboarding/onboardingInterface';
@@ -113,7 +114,7 @@ const MailboxListItems = ({
         // However, if the user is in the middle of the BYOE flow, we want to keep the checklist expanded
         // in case the import started but the user is going through the upgrade flow.
         if (elements.length >= 5 && displayState === CHECKLIST_DISPLAY_TYPE.FULL && !byoeFlowInProgress) {
-            changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED);
+            changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED, CHECKLIST_REDUCE_TRIGGERS.inboxLimit);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-A1D418
     }, [elements, byoeFlowInProgress]);
