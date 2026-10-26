@@ -1409,6 +1409,12 @@
       ],
       "Subscribe": [
         "Predplatiť"
+      ],
+      "About ${ name }": [
+        "O ${ name }"
+      ],
+      "Add ${ name }": [
+        "Pridať ${ name }"
       ]
     },
     "Action: Docs": {
@@ -12227,6 +12233,18 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Toto predplatné momentálne nie je možné dokončiť. Skúste to neskôr, prosím."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Účet Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Iniciatíva Born Private si vyžaduje finančný príspevok."
+      ],
+      "You already own a Born Private account.": [
+        "Už vlastníte účet Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Váš účet je príliš starý na iniciatívu Born Private."
       ]
     },
     "Payments.Error": {
@@ -16444,6 +16462,16 @@
       ],
       "Protection for two in a single plan": [
         "Ochrana pre dvoch v jednom pláne"
+      ]
+    },
+    "collider_2025: Error": {
+      "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
+        "Táto konverzácia je príliš dlhá na to, aby sme v nej pokračovali. Začnite nový chat, aby aplikácia ${ LUMO_SHORT_APP_NAME } fungovala plynule a rýchlo."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankový účet"
       ]
     }
   }
