@@ -1063,6 +1063,12 @@
       ],
       "Subscribe": [
         "Predplatiť"
+      ],
+      "About ${ name }": [
+        "O ${ name }"
+      ],
+      "Add ${ name }": [
+        "Pridať ${ name }"
       ]
     },
     "action": {
@@ -7115,6 +7121,12 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Vaša bezplatná skúšobná verzia vypršala. Predplaťte si službu hneď teraz, aby mal váš tím nepretržitý prístup a aby boli účty v bezpečí."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Požiadajte svojho správcu, aby zvýšil úroveň plánu alebo odstránil stránku z bočného panela stránok Rezervácií v ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Ak chcete pridať novú stránku rezervácií, odstráňte existujúcu z bočného panela stránok rezervácií v ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -10445,6 +10457,18 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Toto predplatné momentálne nie je možné dokončiť. Skúste to neskôr, prosím."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Účet Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Iniciatíva Born Private si vyžaduje finančný príspevok."
+      ],
+      "You already own a Born Private account.": [
+        "Už vlastníte účet Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Váš účet je príliš starý na iniciatívu Born Private."
       ]
     },
     "Payments.Error": {
@@ -14257,6 +14281,11 @@
       ],
       "Other": [
         "Iné"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Bankový účet"
       ]
     }
   }

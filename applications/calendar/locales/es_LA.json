@@ -1055,6 +1055,12 @@
       ],
       "Subscribe": [
         "Suscribirse"
+      ],
+      "About ${ name }": [
+        "Acerca de ${ name }"
+      ],
+      "Add ${ name }": [
+        "Añadir ${ name }"
       ]
     },
     "action": {
@@ -6920,6 +6926,12 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Finalizó su prueba gratuita. Suscríbase ahora para mantener el acceso de su equipo ininterrumpido y las cuentas seguras."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pida a su administrador que actualice el plan o borre una página de la barra lateral de Páginas de reserva en ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Para añadir una página de reservas, borre una existente de la barra lateral de Páginas de reservas en ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -10088,6 +10100,18 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Esta suscripción no se puede completar ahora. Intente de nuevo."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "No se pueden comprar cuentas Born Private con una suscripción activa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requiere de una donación."
+      ],
+      "You already own a Born Private account.": [
+        "Ya posee una cuenta Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Su cuenta es demasiado antigua para la iniciativa Born Private."
       ]
     },
     "Payments.Error": {
@@ -13707,6 +13731,11 @@
       ],
       "Other": [
         "Otro"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Cuenta bancaria"
       ]
     }
   }

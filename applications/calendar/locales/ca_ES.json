@@ -1055,6 +1055,12 @@
       ],
       "Subscribe": [
         "Subscriu-me"
+      ],
+      "About ${ name }": [
+        "Pel que fa a ${ name }"
+      ],
+      "Add ${ name }": [
+        "Afegir ${ name }"
       ]
     },
     "action": {
@@ -6925,6 +6931,12 @@
       ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "La prova gratuïta ha finalitzat. Subscriviu-vos ara per mantenir l'accés del vostre equip sense interrupcions i els comptes segurs."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Demaneu a l'administrador que millori el pla o elimineu una pàgina de la barra lateral de pàgines de reserves a ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Per afegir una pàgina de reserves nova, elimineu-ne una d'existent de la barra lateral de pàgines de reserves a ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -10093,6 +10105,18 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Aquesta subscripció no es pot completar ara mateix. Torneu-ho a provar."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Els comptes de Born Private no es poden adquirir amb una subscripció activa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requereix una donació."
+      ],
+      "You already own a Born Private account.": [
+        "Ja teniu un compte de Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "El vostre compte és massa antic per a la iniciativa Born Private."
       ]
     },
     "Payments.Error": {
@@ -13148,7 +13172,7 @@
         "Podreu assignar rols un cop l'usuari hagi acceptat la invitació."
       ],
       "This user gets administrator rights the next time they sign in.": [
-        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que inicieu sessió."
+        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciïn sessió."
       ]
     },
     "Validation": {
@@ -13710,6 +13734,11 @@
       ],
       "Other": [
         "Altre"
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Compte bancari"
       ]
     }
   }
