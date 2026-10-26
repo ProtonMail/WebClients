@@ -115,6 +115,7 @@ const idExtractorMap: Record<ResourceName, (json: object) => RemoteId | undefine
     settings: () => undefined,
 };
 
+// eslint-disable-next-line no-redeclare -- interface and class declaration merging
 export interface LumoApi {
     postSpace(spaceArgs: NewSpaceToApi, priority: Priority): Promise<RemoteId | null>;
     putSpace(spaceArgs: SpaceToApi, priority: Priority): Promise<RemoteStatus>;
