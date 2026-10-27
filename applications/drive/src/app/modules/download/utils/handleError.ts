@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { EnrichedError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
+import { EnrichedError, sendErrorReport, shouldTrackError } from '@proton/drive/legacy/errorHandling';
 import { getNodeName } from '@proton/drive/modules/nodes';
 import type { NodeEntity } from '@proton/drive/sdk';
 import { getFileExtension } from '@proton/shared/lib/helpers/mimetype';
@@ -20,6 +20,10 @@ function trackError(error: unknown, downloadId: string, nodes: NodeEntity[]) {
             ? new Error(c('Error').t`Not enough browser storage`, { cause: errorToHandle })
             : errorToHandle;
     updateDownloadItem(downloadId, { status: DownloadStatus.Failed, error: errorToShow });
+
+    if (!shouldTrackError(errorToHandle)) {
+        return;
+    }
 
     sendErrorReport(
         new EnrichedError(errorToHandle.message, {

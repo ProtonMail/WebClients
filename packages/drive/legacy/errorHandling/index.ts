@@ -8,6 +8,6 @@ export {
     logError,
     sendErrorReport,
 } from './sendErrorReport';
-export { handleSdkError } from './handleSdkError';
+export { handleSdkError, shouldTrackError } from './handleSdkError';
 export { showAggregatedErrorNotification } from './errorNotifications';
 export { getWebpackChunkFailedToLoadError } from './WebpackChunkFailedToLoadError';

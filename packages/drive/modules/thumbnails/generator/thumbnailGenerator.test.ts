@@ -2,7 +2,7 @@ import { ThumbnailType } from '@protontech/drive-sdk';
 
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
-import { CanvasError, NoHandlerError, ThumbnailSizeError, wrapError } from './thumbnailError';
+import { CanvasError, NoHandlerError, ThumbnailSizeError, UnsupportedFormatError, wrapError } from './thumbnailError';
 import { generateThumbnail } from './thumbnailGenerator';
 
 jest.mock('./handlerRegistry');
@@ -223,19 +223,43 @@ describe('generateThumbnail', () => {
         expect(context.tags).not.toHaveProperty('mimeType');
     });
 
-    it('should report NoHandlerError to Sentry tagged with mimeType, not handler/errorType', async () => {
+    it('should count NoHandlerError in the metric without reporting it to Sentry', async () => {
         mockProcess.mockRejectedValue(new NoHandlerError('image/unknown'));
 
         const blob = new Blob(['test'], { type: 'image/unknown' });
         const { thumbnailsPromise } = generateThumbnail(blob, 'test.unknown', blob.size);
         await thumbnailsPromise;
 
-        expect(mockTraceError).toHaveBeenCalledWith(
-            expect.anything(),
-            expect.objectContaining({
-                level: 'debug',
-                tags: { component: 'drive-thumbnail-generator', mimeType: 'image/unknown' },
+        expect(mockNoHandlerIncrement).toHaveBeenCalledWith({});
+        expect(mockTraceError).not.toHaveBeenCalled();
+    });
+
+    it('should not report UnsupportedFormatError to Sentry for a known mimeType, but still count it', async () => {
+        mockProcess.mockRejectedValue(
+            new UnsupportedFormatError('video format not supported by browser', {
+                context: { handler: 'VideoHandler', inputMimeType: 'video/avi' },
             })
         );
+
+        const blob = new Blob(['test'], { type: 'video/avi' });
+        const { thumbnailsPromise } = generateThumbnail(blob, 'test.avi', blob.size);
+        await thumbnailsPromise;
+
+        expect(mockErrorsIncrement).toHaveBeenCalledWith({ handler: 'video', errorType: 'unsupported_format' });
+        expect(mockTraceError).not.toHaveBeenCalled();
+    });
+
+    it('should report UnsupportedFormatError to Sentry for a mimeType not seen yet', async () => {
+        mockProcess.mockRejectedValue(
+            new UnsupportedFormatError('HEVC codec not supported for thumbnail generation', {
+                context: { handler: 'VideoHandler', inputMimeType: 'video/mp4' },
+            })
+        );
+
+        const blob = new Blob(['test'], { type: 'video/mp4' });
+        const { thumbnailsPromise } = generateThumbnail(blob, 'test.mp4', blob.size);
+        await thumbnailsPromise;
+
+        expect(mockTraceError).toHaveBeenCalledTimes(1);
     });
 });
