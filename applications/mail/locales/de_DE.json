@@ -39,6 +39,9 @@
       "A to Z": [
         "A bis Z"
       ],
+      "About ${ name }": [
+        "Über ${ name }"
+      ],
       "Activate": [
         "Aktivieren"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hinzufügen"
+      ],
+      "Add ${ name }": [
+        "${ name } hinzufügen"
       ],
       "Add a payment method": [
         "Zahlungsmethode hinzufügen"
@@ -354,6 +360,9 @@
       ],
       "Copy version number to clipboard": [
         "Versionsnummer in die Zwischenablage kopieren"
+      ],
+      "Create a booking page": [
+        "Buchungsseite erstellen"
       ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
@@ -4261,6 +4270,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Die Kontaktliste, die du importieren möchtest, enthält anscheinend Gruppen. Bitte lege fest, wie diese Gruppen importiert werden sollen."
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Ermögliche es deinen Interessenten, direkt über deine E-Mails Termine mit dir zu vereinbaren – ganz ohne langes Hin und Her."
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Hiermit kannst du sofort Meeting-Links zu deinen Termin-Einladungen hinzufügen."
       ],
@@ -7183,6 +7195,12 @@
       "Are you sure you want to permanently delete this message?": [
         "Möchtest du diese Nachricht wirklich dauerhaft löschen?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Bitte deinen Administrator, das Abonnement zu upgraden oder eine Seite aus der Seitenleiste der Buchungsseiten in ${ CALENDAR_APP_NAME } zu entfernen."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Bitte deinen Administrator, das Abonnement zu upgraden oder eine Seite aus der Seitenleiste der Buchungsseiten zu entfernen."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindestens ${ BETTER_PASSWORD_LENGTH } Zeichen"
       ],
@@ -7756,6 +7774,9 @@
       "here": [
         "hier"
       ],
+      "Here is my availability:": [
+        "Hier meine verfügbaren Termine:"
+      ],
       "Here's what happens when you continue:": [
         "Folgendes passiert, wenn Sie fortfahren:"
       ],
@@ -8104,6 +8125,9 @@
       ],
       "No action selected": [
         "Keine Aktion ausgewählt"
+      ],
+      "No booking pages yet": [
+        "Bisher noch keine Buchungsseiten"
       ],
       "No change will be made to the selected emails": [
         "Es werden keine Änderungen an den ausgewählten E-Mails durchgeführt."
@@ -8997,6 +9021,18 @@
       "to ${ destinationElement } folder.": [
         "in den Ordner ${ destinationElement } verschoben."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Um eine neue Buchungsseite hinzuzufügen, bitte deinen Administrator, dein Abonnement zu upgraden."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Um eine neue Buchungsseite hinzuzufügen, entferne eine bestehende aus der Seitenleiste der Buchungsseiten in ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Um eine neue Buchungsseite hinzuzufügen, entferne eine bestehende aus der Seitenleiste der Buchungsseiten."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Um eine neue Buchungsseite hinzuzufügen, upgrade dein Abonnement."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Verwende die Desktopanwendung, um nicht von den offenen Tabs in deinem Browser abgelenkt zu werden."
       ],
@@ -9521,6 +9557,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Du hast die maximale Anzahl von Adressen in der Kontaktgruppe erreicht."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du hast die maximale Anzahl an Buchungsseiten in deinem Abonnement erreicht."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
       ],
@@ -9964,6 +10003,9 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } Zeichen"
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME }-Assistent"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } Schreibassistent"
       ],
@@ -9991,6 +10033,9 @@
       ],
       "Active filter:": [
         "Aktive Filter:"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Füge deiner E-Mail eine Buchungsseite hinzu und gib damit den Empfängern die Möglichkeit, einen passenden Termin auszuwählen."
       ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
@@ -10087,6 +10132,9 @@
       ],
       "Blind Carbon Copy": [
         "Blindkopie"
+      ],
+      "Booking page": [
+        "Buchungsseite"
       ],
       "Bookings, billings, and orders": [
         "Buchungen, Abrechnungen und Bestellungen"
@@ -15586,6 +15634,12 @@
         "${ elementsCount } Nachricht aus \"Markiert\" entfernt.",
         "${ elementsCount } Nachrichten aus „Markiert“ entfernt."
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME }-Assistent deaktiviert"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME }-Assistent aktiviert"
+      ],
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"
       ],
@@ -16154,6 +16208,9 @@
       "Cannot add more addresses": [
         "Es können keine weiteren Adressen hinzugefügt werden."
       ],
+      "Cannot create more Booking pages": [
+        "Du kannst keine weiteren Buchungsseiten erstellen."
+      ],
       "Carbon Copy": [
         "Kopie"
       ],
@@ -16495,6 +16552,9 @@
       ],
       "Information exposed in breach": [
         "Informationen, die beim Datenleck offengelegt wurden"
+      ],
+      "Insert a booking page": [
+        "Buchungsseite einfügen"
       ],
       "Insert contacts": [
         "Kontakte einfügen"
@@ -16898,6 +16958,9 @@
       ],
       "Settings": [
         "Einstellungen"
+      ],
+      "Share your availability": [
+        "Teile deine Verfügbarkeit"
       ],
       "Share your calendar with your team": [
         "Teile deinen Kalender mit deinem Team"

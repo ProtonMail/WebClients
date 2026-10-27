@@ -351,6 +351,9 @@
       "Copy version number to clipboard": [
         "Скопировать номер версии в буфер обмена"
       ],
+      "Create a booking page": [
+        "Создать страницу бронирования"
+      ],
       "Create a new contact group": [
         "Создать новую группу контактов"
       ],
@@ -7195,6 +7198,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Вы уверены, что хотите безвозвратно удалить это сообщение?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Попросите своего администратора улучшить тариф или удалите страницу с боковой панели страниц бронирования."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "По крайней мере ${ BETTER_PASSWORD_LENGTH } символов"
       ],
@@ -8680,6 +8686,15 @@
       "to ${ destinationElement } folder.": [
         "в папку ${ destinationElement }."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Чтобы добавить новую страницу бронирования, попросите администратора улучшить тариф."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Чтобы добавить новую страницу бронирования, удалите одну из существующих на боковой панели страниц бронирования."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Чтобы добавить новую страницу бронирования, улучшите свой тариф."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Чтобы вам не мешали открытые вкладки в вашем браузере, используйте настольное приложение."
       ],
@@ -9186,6 +9201,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Вы достигли лимита количества адресов в группе контактов."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Вы достигли максимального количества страниц бронирования, доступных на вашем тарифе."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, пожалуйста, оплатите все просроченные счета."
@@ -15709,6 +15727,9 @@
       "Birthday": [
         "День рождения"
       ],
+      "Black Friday": [
+        "Чёрная пятница"
+      ],
       "Blind Carbon Copy": [
         "Скрытая копия"
       ],
@@ -15726,6 +15747,9 @@
       ],
       "Cannot add more addresses": [
         "Невозможно добавить больше адресов"
+      ],
+      "Cannot create more Booking pages": [
+        "Невозможно создать больше страниц бронирования"
       ],
       "Carbon Copy": [
         "Копия"

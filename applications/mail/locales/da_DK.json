@@ -39,6 +39,9 @@
       "A to Z": [
         "A til Z"
       ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
       "Activate": [
         "Aktivér"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Tilføj ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Tilføj ${ name }"
       ],
       "Add a payment method": [
         "Tilføj en betalingsmetode"
@@ -354,6 +360,9 @@
       ],
       "Copy version number to clipboard": [
         "Kopier versionsnummer til udklipsholder"
+      ],
+      "Create a booking page": [
+        "Opret en bookingside"
       ],
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
@@ -4261,6 +4270,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Lad folk booke tid med dig direkte fra dine e-mails, uden kommunikation frem og tilbage."
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Giver dig mulighed for øjeblikkeligt at tilføje mødelinks til dine begivenhedsinvitationer."
       ],
@@ -7183,6 +7195,12 @@
       "Are you sure you want to permanently delete this message?": [
         "Er du sikker på, at du vil slette denne besked permanent?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Bed din administrator om at opgradere abonnementet eller fjerne en side fra sidepanelet med reservationssider i ${ CALENDAR_APP_NAME }."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Bed din administrator om at opgradere abonnementet eller fjerne en side fra sidepanelet med reservationssider."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Mindst ${ BETTER_PASSWORD_LENGTH } tegn"
       ],
@@ -7756,6 +7774,9 @@
       "here": [
         "her"
       ],
+      "Here is my availability:": [
+        "Her er jeg tilgængelig:"
+      ],
       "Here's what happens when you continue:": [
         "Dette sker når du fortsætter:"
       ],
@@ -8104,6 +8125,9 @@
       ],
       "No action selected": [
         "Ingen handling valgt"
+      ],
+      "No booking pages yet": [
+        "Ingen bookingsider endnu"
       ],
       "No change will be made to the selected emails": [
         "Der vil ikke blive foretaget nogen ændring af de valgte e-mails"
@@ -8997,6 +9021,18 @@
       "to ${ destinationElement } folder.": [
         "til ${ destinationElement } mappe."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "For at tilføje en ny reservationsside, skal du bede din administrator om at opgradere dit abonnement."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "For at tilføje en ny reservationsside, skal du fjerne en eksisterende fra sidepanelet for reservationssider i ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "For at tilføje en ny reservationsside, skal du fjerne en eksisterende fra sidepanelet for reservationssider."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "For at tilføje en ny reservationsside skal du opgradere dit abonnement."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Brug skrivebordsappen for at undgå forvirring over de åbne faner i din browser."
       ],
@@ -9521,6 +9557,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nået det maksimale antal adresser i kontaktgruppen."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du har nået det maksimale antal reservationssider, der er tilgængelige i dit abonnement."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Efter 28 dage vil e-mails ikke længere blive leveret til din indbakke, dine Drive-delingslinks vil blive blokeret, og du vil ikke længere kunne uploade nye filer. For at genoptage normal service skal du betale alle forfaldne fakturaer."
       ],
@@ -9964,6 +10003,9 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } tegn"
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME }-assistent"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME }-skriveassistent"
       ],
@@ -9991,6 +10033,9 @@
       ],
       "Active filter:": [
         "Aktivt filter:"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Tilføj en bookingside til din e-mail, og lad folk vælge et tidspunkt der fungerer."
       ],
       "Add email address": [
         "Tilføj e-mailadresse"
@@ -10087,6 +10132,9 @@
       ],
       "Blind Carbon Copy": [
         "Blind karbonkopi"
+      ],
+      "Booking page": [
+        "Bookingside"
       ],
       "Bookings, billings, and orders": [
         "Bookinger, faktureringer og ordrer"
@@ -15586,6 +15634,12 @@
         "${ elementsCount } besked fjernet fra Stjernemarkeret.",
         "${ elementsCount } beskeder fjernet fra Stjernemarkeret."
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME }-assistent deaktiveret"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME }-assistent aktiveret"
+      ],
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"
       ],
@@ -16154,6 +16208,9 @@
       "Cannot add more addresses": [
         "Kan ikke tilføje flere adresser"
       ],
+      "Cannot create more Booking pages": [
+        "Kan ikke oprette flere reservationssider"
+      ],
       "Carbon Copy": [
         "Karbonkopi"
       ],
@@ -16495,6 +16552,9 @@
       ],
       "Information exposed in breach": [
         "Information afsløret i en datalækage"
+      ],
+      "Insert a booking page": [
+        "Indsæt en bookingside"
       ],
       "Insert contacts": [
         "Indsæt kontakter"
@@ -16898,6 +16958,9 @@
       ],
       "Settings": [
         "Indstillinger"
+      ],
+      "Share your availability": [
+        "Del din tilgængelighed"
       ],
       "Share your calendar with your team": [
         "Del din kalender med dit team"

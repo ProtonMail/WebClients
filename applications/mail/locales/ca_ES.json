@@ -39,6 +39,9 @@
       "A to Z": [
         "De la A a la Z"
       ],
+      "About ${ name }": [
+        "Pel que fa a ${ name }"
+      ],
       "Activate": [
         "Activa"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Afegir ${ name }"
       ],
       "Add a payment method": [
         "Afegiu un mètode de pagament"
@@ -354,6 +360,9 @@
       ],
       "Copy version number to clipboard": [
         "Copia el número de versió al porta-retalls"
+      ],
+      "Create a booking page": [
+        "Crea una pàgina de reserves"
       ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
@@ -4261,6 +4270,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Permeteu que la gent reservi temps amb vosaltres directament des dels vostres correus electrònics, sense anades i vingudes."
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Us permet afegir instantàniament enllaços de reunió a les invitacions d'esdeveniments."
       ],
@@ -7183,6 +7195,12 @@
       "Are you sure you want to permanently delete this message?": [
         "Segur que voleu eliminar aquest missatge permanentment?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Demaneu a l'administrador que millori el pla o elimineu una pàgina de la barra lateral de pàgines de reserves a ${ CALENDAR_APP_NAME }."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Demaneu a l'administrador que millori el pla o esborri una pàgina de la barra lateral de Pàgines de reserves."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Almenys ${ BETTER_PASSWORD_LENGTH } caràcters"
       ],
@@ -7756,6 +7774,9 @@
       "here": [
         "aquí"
       ],
+      "Here is my availability:": [
+        "Aquí teniu la meva disponibilitat:"
+      ],
       "Here's what happens when you continue:": [
         "Això és el que passa quan continueu:"
       ],
@@ -8104,6 +8125,9 @@
       ],
       "No action selected": [
         "No s'ha seleccionat cap acció"
+      ],
+      "No booking pages yet": [
+        "Encara no hi ha cap pàgina de reserves"
       ],
       "No change will be made to the selected emails": [
         "No es farà cap canvi als correus electrònics seleccionats"
@@ -8997,6 +9021,18 @@
       "to ${ destinationElement } folder.": [
         "a la carpeta ${ destinationElement }."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Per a afegir una pàgina de reserves nova, demaneu al vostre administrador/a que us millori el pla."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Per afegir una pàgina de reserves nova, elimineu-ne una d'existent de la barra lateral de pàgines de reserves a ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Per a afegir una pàgina de reserves nova, esborreu-ne una d’existent de la barra lateral de pàgines de reserves."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Per a afegir una pàgina de reserves nova, milloreu el pla."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Per a evitar que les pestanyes obertes del navegador us distreguin, utilitzeu l'aplicació d'escriptori."
       ],
@@ -9521,6 +9557,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Heu assolit el nombre màxim d'adreces en el grup de contactes."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Heu assolit el nombre màxim de pàgines de reserva disponibles amb el vostre pla."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte de ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els enllaços compartits de Drive es bloquejaran i no podreu carregar-hi fitxers nous. Per a restablir el servei normal, pagueu les factures vençudes."
       ],
@@ -9995,6 +10034,9 @@
       "Active filter:": [
         "Filtre actiu:"
       ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Afegiu una pàgina de reserves al vostre correu electrònic i deixeu que la gent hi triï un horari que li vagi bé."
+      ],
       "Add email address": [
         "Afegeix una adreça de correu electrònic"
       ],
@@ -10090,6 +10132,9 @@
       ],
       "Blind Carbon Copy": [
         "Còpia oculta"
+      ],
+      "Booking page": [
+        "Pàgina de reserves"
       ],
       "Bookings, billings, and orders": [
         "Reserves, factures i comandes"
@@ -15590,10 +15635,10 @@
         "S'han eliminat ${ elementsCount } missatges de Destacats."
       ],
       "${ LUMO_SHORT_APP_NAME } assistant disabled": [
-        "Assistent de ${ LUMO_SHORT_APP_NAME } deshabitat"
+        "S'ha deshabilitat l'assistent de ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ LUMO_SHORT_APP_NAME } assistant enabled": [
-        "Assistent de ${ LUMO_SHORT_APP_NAME } habilitat"
+        "S'ha habilitat l'assistent de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Address copied to clipboard": [
         "Adreça copiada al porta-retalls"
@@ -16163,6 +16208,9 @@
       "Cannot add more addresses": [
         "No es poden afegir més adreces."
       ],
+      "Cannot create more Booking pages": [
+        "No es poden crear més pàgines de reserves"
+      ],
       "Carbon Copy": [
         "Copia"
       ],
@@ -16504,6 +16552,9 @@
       ],
       "Information exposed in breach": [
         "Informació exposada en la filtració"
+      ],
+      "Insert a booking page": [
+        "Inseriu una pàgina de reserves"
       ],
       "Insert contacts": [
         "Introduiu els contactes"
@@ -16907,6 +16958,9 @@
       ],
       "Settings": [
         "Preferències"
+      ],
+      "Share your availability": [
+        "Compartiu la vostra disponibilitat"
       ],
       "Share your calendar with your team": [
         "Compartiu el calendari amb el vostre equip"

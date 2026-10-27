@@ -39,6 +39,9 @@
       "A to Z": [
         "A-Z"
       ],
+      "About ${ name }": [
+        "${ name } hakkında"
+      ],
       "Activate": [
         "Kullanıma al"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
+      ],
+      "Add ${ name }": [
+        "${ name } ekle"
       ],
       "Add a payment method": [
         "Bir ödeme yöntemi ekleyin"
@@ -354,6 +360,9 @@
       ],
       "Copy version number to clipboard": [
         "Sürüm numarasını panoya kopyala"
+      ],
+      "Create a booking page": [
+        "Bir rezervasyon sayfası oluştur"
       ],
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
@@ -4261,6 +4270,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "İnsanların başka yerlere gitmeden doğrudan e-postalarınızdan sizinle rezervasyon yapmasını sağlayın."
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Etkinlik davetlerinize anında görüşme bağlantıları ekleyin."
       ],
@@ -7183,6 +7195,12 @@
       "Are you sure you want to permanently delete this message?": [
         "Bu iletiyi kalıcı olarak silmek istediğinize emin misiniz?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Yöneticinizden tarifeyi yükseltmesini veya ${ CALENDAR_APP_NAME } içindeki Rezervasyon sayfaları kenar çubuğundan bir sayfayı kaldırmasını isteyin."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Yöneticinizden tarifeyi yükseltmesini veya Rezervasyon sayfaları kenar çubuğundan bir sayfayı kaldırmasını isteyin."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "En az ${ BETTER_PASSWORD_LENGTH } karakter"
       ],
@@ -7756,6 +7774,9 @@
       "here": [
         "buraya"
       ],
+      "Here is my availability:": [
+        "Uygunluğum:"
+      ],
       "Here's what happens when you continue:": [
         "İlerlediğinizde şunlar olacak:"
       ],
@@ -8104,6 +8125,9 @@
       ],
       "No action selected": [
         "Herhangi bir işlem seçilmemiş"
+      ],
+      "No booking pages yet": [
+        "Henüz bir rezervasyon sayfası yok"
       ],
       "No change will be made to the selected emails": [
         "Seçilmiş e-postalarda herhangi bir değişiklik yapılmayacak"
@@ -8997,6 +9021,18 @@
       "to ${ destinationElement } folder.": [
         "${ destinationElement } klasörüne."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Yeni bir rezervasyon sayfası eklemek için yöneticinizden tarifenizi yükseltmesini isteyin."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Yeni bir rezervasyon sayfası eklemek için ${ CALENDAR_APP_NAME } içindeki Rezervasyon sayfaları kenar çubuğundan var olan bir sayfayı kaldırın."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Yeni bir rezervasyon sayfası eklemek için Rezervasyon sayfaları kenar çubuğundan var olan bir sayfayı kaldırın."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Yeni bir rezervasyon sayfası eklemek için tarifenizi yükseltin."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Tarayıcınızdaki açık sekmelerin dikkatinizi dağıtmasını önlemek için bilgisayar uygulamasını kullanın."
       ],
@@ -9521,6 +9557,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Kişi grubunda bulunabilecek en fazla adres sayısına ulaştınız:"
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Tarifenizle kullanılabilecek en fazla rezervasyon sayfası sayısına ulaştınız."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
@@ -9964,6 +10003,9 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } karakter"
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } yardımcı"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } yazma yardımcısı"
       ],
@@ -9991,6 +10033,9 @@
       ],
       "Active filter:": [
         "Kullanılan süzgeç:"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "E-postanıza bir rezervasyon sayfası ekleyin ve insanların uygun bir zaman seçmesini sağlayın."
       ],
       "Add email address": [
         "E-posta adresi ekle"
@@ -10087,6 +10132,9 @@
       ],
       "Blind Carbon Copy": [
         "Gizli kopya"
+      ],
+      "Booking page": [
+        "Rezervasyon sayfası"
       ],
       "Bookings, billings, and orders": [
         "Rezervasyonlar, faturalar ve siparişler"
@@ -15586,6 +15634,12 @@
         "${ elementsCount } iletinin yıldızı kaldırıldı.",
         "${ elementsCount } iletinin yıldızı kaldırıldı."
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } yardımcı kapalı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } yardımcı açık"
+      ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
       ],
@@ -16154,6 +16208,9 @@
       "Cannot add more addresses": [
         "Daha fazla adres eklenemez"
       ],
+      "Cannot create more Booking pages": [
+        "Daha fazla Rezervasyon sayfası oluşturulamıyor"
+      ],
       "Carbon Copy": [
         "Kopya"
       ],
@@ -16495,6 +16552,9 @@
       ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"
+      ],
+      "Insert a booking page": [
+        "Bir rezervasyon sayfası ekle"
       ],
       "Insert contacts": [
         "Kişileri ekle"
@@ -16898,6 +16958,9 @@
       ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Share your availability": [
+        "Uygunluğunuzu paylaşın"
       ],
       "Share your calendar with your team": [
         "Takviminizi ekibinizle paylaşın"

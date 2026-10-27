@@ -349,6 +349,9 @@
       "Copy version number to clipboard": [
         "Copiar o número da versão para a área de transferência"
       ],
+      "Create a booking page": [
+        "Criar uma página de agendamento"
+      ],
       "Create a new contact group": [
         "Criar um grupo de contactos"
       ],
@@ -6974,6 +6977,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Tem a certeza de que pretende eliminar permanentemente esta mensagem?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Peça ao seu administrador para atualizar o plano ou remova uma página da barra lateral de Páginas de agendamento."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Pelo menos ${ BETTER_PASSWORD_LENGTH } carateres"
       ],
@@ -8433,6 +8439,15 @@
       "to ${ destinationElement } folder.": [
         "para a pasta ${ destinationElement }."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Para adicionar uma nova página de agendamento, peça ao seu administrador para atualizar o seu plano."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Para adicionar uma nova página de agendamento, remova uma existente da barra lateral de Páginas de agendamento."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Para adicionar uma nova página de agendamento, atualize o seu plano."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Para evitar ser desviado pelos separadores abertos no seu navegador, utilize a aplicação para computador."
       ],
@@ -8899,6 +8914,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Atingiu o número máximo de endereços no grupo de contacto."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Atingiu o número máximo de páginas de agendamento disponíveis no seu plano."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as ligações de partilha do Drive serão bloqueadas e não poderá carregar novos ficheiros. Para retomar o serviço normal, efetue o pagamento das faturas em atraso."
@@ -15152,6 +15170,9 @@
       "Birthday": [
         "Data de nascimento"
       ],
+      "Black Friday": [
+        "Black Friday"
+      ],
       "Blind Carbon Copy": [
         "Cópia Oculta de Carbono (BCC)"
       ],
@@ -15169,6 +15190,9 @@
       ],
       "Cannot add more addresses": [
         "Não é possível adicionar mais endereços"
+      ],
+      "Cannot create more Booking pages": [
+        "Não é possível criar mais páginas de agendamento"
       ],
       "Carbon Copy": [
         "Cópia Carbono (CC)"

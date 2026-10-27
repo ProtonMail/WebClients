@@ -39,6 +39,9 @@
       "A to Z": [
         "Α έως Ω"
       ],
+      "About ${ name }": [
+        "Σχετικά με το ${ name }"
+      ],
       "Activate": [
         "Ενεργοποίηση"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Προσθήκη ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Προσθέστε το ${ name }"
       ],
       "Add a payment method": [
         "Προσθέστε μία μέθοδο πληρωμής"
@@ -354,6 +360,9 @@
       ],
       "Copy version number to clipboard": [
         "Αντιγραφή αριθμού έκδοσης στο πρόχειρο"
+      ],
+      "Create a booking page": [
+        "Δημιουργήστε μια σελίδα κρατήσεων"
       ],
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
@@ -972,6 +981,12 @@
       ],
       "Move": [
         "Μετακίνηση"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "Μετακίνηση του ${ LUMO_SHORT_APP_NAME } προς τα αριστερά"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Μετακίνηση του ${ LUMO_SHORT_APP_NAME } προς τα δεξιά"
       ],
       "Move all to archive": [
         "Μετακίνηση όλων στα αρχειοθετημένα"
@@ -6976,6 +6991,9 @@
       "1 vault per user": [
         "1 κρύπτη ανά χρήστη"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Εγγύηση επιστροφής χρημάτων 30 ημερών: ακυρώστε εντός 30 ημερών από την αγορά σας και επικοινωνήστε με το ${ customerSupportLink } για να λάβετε επιστροφή χρημάτων."
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
       ],
@@ -7173,6 +7191,9 @@
       ],
       "Are you sure you want to permanently delete this message?": [
         "Θέλετε σίγουρα να διαγράψετε οριστικά αυτό το μήνυμα;"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Ζητήστε από τον διαχειριστή σας να αναβαθμίσει το πλάνο ή να αφαιρέσει μια σελίδα από την πλαϊνή στήλη των Σελίδων Κρατήσεων."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Τουλάχιστον ${ BETTER_PASSWORD_LENGTH } χαρακτήρες"
@@ -8988,6 +9009,15 @@
       "to ${ destinationElement } folder.": [
         "στον φάκελο ${ destinationElement }."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, ζητήστε από τον διαχειριστή σας να αναβαθμίσει το πλάνο σας."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, αφαιρέστε μια υπάρχουσα από την πλαϊνή στήλη των σελίδων κρατήσεων."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, αναβαθμίστε το πλάνο σας."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Για να αποφύγετε την παρακολούθηση από τις ανοιχτές καρτέλες στο πρόγραμμα περιήγησής σας, χρησιμοποιήστε την εφαρμογή για υπολογιστές."
       ],
@@ -9511,6 +9541,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στην ομάδα επαφών."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό σελίδων κρατήσεων που είναι διαθέσιμες στο πλάνο σας."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Μετά από 28 ημέρες, δεν θα μπορείτε να λάβετε μηνύματα στα εισερχόμενα, οι Drive σύνδεσμοι θα αποκλειστούν, και δεν θα μπορείτε να ανεβάσετε καινούργια αρχεία. Για να συνεχίσετε ομαλά τις υπηρεσίες σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
@@ -10078,6 +10111,9 @@
       ],
       "Blind Carbon Copy": [
         "Κρυφή Κοινοποίηση"
+      ],
+      "Booking page": [
+        "Σελίδα κρατήσεων"
       ],
       "Bookings, billings, and orders": [
         "Κρατήσεις, λογαριασμοί και παραγγελίες"
@@ -16133,6 +16169,9 @@
       "Cannot add more addresses": [
         "Αδυναμία προσθήκης περισσότερων διευθύνσεων"
       ],
+      "Cannot create more Booking pages": [
+        "Δεν είναι δυνατή η δημιουργία περισσότερων Σελίδων Κρατήσεων"
+      ],
       "Carbon Copy": [
         "Κοινοποίηση"
       ],
@@ -16877,6 +16916,9 @@
       ],
       "Settings": [
         "Ρυθμίσεις"
+      ],
+      "Share your availability": [
+        "Μοιραστείτε τη διαθεσιμότητά σας"
       ],
       "Share your calendar with your team": [
         "Κοινοποιήστε το ημερολόγιό σας με την ομάδα σας"
