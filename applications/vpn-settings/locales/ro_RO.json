@@ -280,6 +280,9 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Despre ${ name }"
+      ],
       "activate": [
         "activare"
       ],
@@ -300,6 +303,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Adăugare adresă ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Adăugare ${ name }"
       ],
       "Add a payment method": [
         "Adăugați o metodă de plată"
@@ -9720,6 +9726,9 @@
       "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Atunci când autentificarea este restricționată, doar ${ primaryEmailElement } și numele de utilizator ${ usernameElement } pot fi utilizate pentru a vă autentifica. Celelalte adrese nu le mai puteți asocia cu contul personal, chiar dacă cineva le cunoaște."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Când autentificarea este restricționată, doar numele de utilizator ${ primaryEmailElement } poate fi utilizat pentru a vă autentifica. Celelalte adrese nu vă pot fi asociate cu contul, chiar dacă cineva le cunoaște."
+      ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Când autentificarea este restricționată, doar numele de utilizator ${ usernameElement } poate fi utilizat pentru a vă autentifica. Celelalte adrese nu vă pot fi asociate cu contul, chiar dacă cineva le cunoaște."
       ],
@@ -11091,6 +11100,9 @@
       ],
       "Require password check-ins": [
         "Necesită confirmarea parolei"
+      ],
+      "Restrict sign-in to email address": [
+        "Restricționare autentificarea la o adresă de e-mail"
       ],
       "Restrict sign-in to primary email address": [
         "Restricționare autentificare la adresa de e-mail principală"

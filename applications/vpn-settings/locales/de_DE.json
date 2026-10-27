@@ -280,6 +280,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
+      "About ${ name }": [
+        "Über ${ name }"
+      ],
       "activate": [
         "aktivieren"
       ],
@@ -300,6 +303,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "${ BRAND_NAME }-E-Mail-Adresse hinzufügen"
+      ],
+      "Add ${ name }": [
+        "${ name } hinzufügen"
       ],
       "Add a payment method": [
         "Zahlungsmethode hinzufügen"
@@ -9600,6 +9606,9 @@
       "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Wenn die Anmeldung eingeschränkt ist, können nur ${ primaryEmailElement } und dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn jemand sie kennt."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, kann nur deine E-Mail-Adresse ${ primaryEmailElement } zur Anmeldung verwendet werden. Deine weiteren E-Mail-Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn jemand sie kennen sollte."
+      ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Wenn die Anmeldung eingeschränkt ist, kann nur dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto in Verbindung gebracht werden, selbst wenn jemand sie kennt."
       ],
@@ -10952,6 +10961,9 @@
       ],
       "Require password check-ins": [
         "Passwort-Check-ins verlangen"
+      ],
+      "Restrict sign-in to email address": [
+        "Anmeldung auf E-Mail-Adresse beschränken"
       ],
       "Restrict sign-in to primary email address": [
         "Anmeldung auf die Haupt-E-Mail-Adresse beschränken"

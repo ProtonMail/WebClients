@@ -280,6 +280,9 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Аб ${ name }"
+      ],
       "activate": [
         "актываваць"
       ],
@@ -300,6 +303,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Дадаць адрас ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Дадаць ${ name }"
       ],
       "Add a payment method": [
         "Дадаць спосаб аплаты"
@@ -2604,6 +2610,9 @@
       ],
       "Your address": [
         "Ваш адрас"
+      ],
+      "Your address has been claimed": [
+        "Ваш адрас быў заяўлены"
       ],
       "Your address has changed": [
         "Ваш адрас змяніўся"
@@ -6487,6 +6496,9 @@
       "Dedicated server - ${ serverPrice }": [
         "Вылучаны сервер - ${ serverPrice }"
       ],
+      "Enforce identity-based access controls": [
+        "Забяспечце кантроль доступу на аснове ідэнтыфікацыі"
+      ],
       "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
         "Акрамя маніторынгу падключэнняў, прыватныя шлюзы дазваляюць даваць доступ карыстальнікам або групам — усе яны працуюць на вылучаных серверах са статычнымі IP-адрасамі."
       ],
@@ -9978,6 +9990,9 @@
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Вашы ўліковыя запісы ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } звязаны паміж сабой. Каб выдаліць іх абодва, увайдзіце праз ${ loginLink } і там выдаліце свой уліковы запіс."
       ],
+      "Your account and password stay the same.": [
+        "Ваш уліковы запіс і пароль не зменяцца."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да сэрвісу неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
@@ -11060,6 +11075,12 @@
       "Require password check-ins": [
         "Патрабуе рэгістрацыі пароля"
       ],
+      "Restrict sign-in to primary email address": [
+        "Абмежаваць уваход з асноўным адрасам электроннай пошты"
+      ],
+      "Restrict sign-in to username": [
+        "Абмежаваць уваход імем карыстальніка"
+      ],
       "Reveal password": [
         "Паказаць пароль"
       ],
@@ -11437,6 +11458,9 @@
       ],
       "Create an alias": [
         "Стварыць псеўданім"
+      ],
+      "Customer Support": [
+        "Служба падтрымкі"
       ],
       "data recovery option": [
         "параметр аднаўлення даных"
@@ -14372,6 +14396,9 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
+      "You already own a Born Private account.": [
+        "Вы ўжо валодаеце ўліковым запісам Born Private."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
       ],
@@ -16955,6 +16982,9 @@
       "Generate a recovery phrase": [
         "Згенерыраваць фразу аднаўлення"
       ],
+      "key removal scheduled": [
+        "запланаванае выдаленне ключа"
+      ],
       "Last changed ${ formattedDate }": [
         "Апошняя змена ${ formattedDate }"
       ],
@@ -16969,6 +16999,9 @@
       ],
       "Outdated": [
         "Састарэлы"
+      ],
+      "remove organization key": [
+        "выдаліць ключа арганізацыі"
       ],
       "Saved": [
         "Захавана"
@@ -18118,6 +18151,9 @@
         "${ friendsSubscribed } сябры падпісалася",
         "${ friendsSubscribed } сяброў падпісалася",
         "${ friendsSubscribed } сяброў падпісалася"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "API для ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
