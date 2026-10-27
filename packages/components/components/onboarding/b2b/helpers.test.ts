@@ -2,6 +2,7 @@ import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-
 import { EntitlementScope, EntitlementType } from '@proton/payments/core/entitlements/interface';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
+import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import {
     APPS,
     CALENDAR_APP_NAME,
@@ -14,9 +15,9 @@ import {
 import { getFeatures, getSections } from './helpers';
 import type { B2BFeaturesSection } from './interface';
 
-const entitlementsWithGroups = createEntitlementResolverForOrgAndUser(
-    undefined,
-    makeEntitlements([
+const entitlementsWithGroups = createEntitlementResolverForOrgAndUser({
+    entitlementCatalog: undefined,
+    entitlements: makeEntitlements([
         {
             Name: EntitlementName.Groups,
             Quantity: 1,
@@ -24,9 +25,15 @@ const entitlementsWithGroups = createEntitlementResolverForOrgAndUser(
             Scope: EntitlementScope.Organization,
         },
     ]),
-    []
-);
-const entitlementsWithoutGroups = createEntitlementResolverForOrgAndUser(undefined, makeEntitlements(), []);
+    subscriptions: [],
+    ...regularAdmin,
+});
+const entitlementsWithoutGroups = createEntitlementResolverForOrgAndUser({
+    entitlementCatalog: undefined,
+    entitlements: makeEntitlements(),
+    subscriptions: [],
+    ...regularAdmin,
+});
 
 describe('b2b onboarding helpers', () => {
     describe('getFeatures', () => {

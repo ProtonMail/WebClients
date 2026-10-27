@@ -25,6 +25,7 @@ import type { KtState } from '../kt';
 import { getKTUserContext } from '../kt/actions';
 import { type MemberState, memberThunk } from '../member';
 import { getPendingUnprivatizationRequest, memberAcceptUnprivatization } from '../member/actions';
+import { organizationThunk } from '../organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import type { SubscriptionState } from '../subscription';
 import { userThunk } from '../user';
@@ -212,16 +213,20 @@ export const unprivatizeSelfForMsp = ({
 > => {
     return async (dispatch) => {
         try {
-            const [allEntitlements, allSubscriptions, entitlementCatalog] = await Promise.all([
+            const [allEntitlements, allSubscriptions, entitlementCatalog, user, organization] = await Promise.all([
                 dispatch(entitlementsThunk()),
                 dispatch(allSubscriptionsThunk()),
                 dispatch(entitlementCatalogThunk()),
+                dispatch(userThunk()),
+                dispatch(organizationThunk()),
             ]);
-            const entitlements = createEntitlementResolverForOrgAndUser(
+            const entitlements = createEntitlementResolverForOrgAndUser({
                 entitlementCatalog,
-                allEntitlements,
-                allSubscriptions
-            );
+                entitlements: allEntitlements,
+                subscriptions: allSubscriptions,
+                user,
+                organization,
+            });
             if (!entitlements.isMspEligible) {
                 return;
             }

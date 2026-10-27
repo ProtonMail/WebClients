@@ -20,15 +20,19 @@ jest.mock('@proton/account/user/hooks', () => ({
 const renderIsB2BAdmin = ({
     role = USER_ROLES.ADMIN_ROLE,
     subscriptionPlans,
-    organizationPlans,
+    isSubsidiary = false,
 }: {
     role?: USER_ROLES;
     subscriptionPlans: CataloguedPlan[];
-    organizationPlans?: CataloguedPlan[];
+    isSubsidiary?: boolean;
 }) => {
     jest.mocked(useUser).mockReturnValue([buildUser({ Role: role }), false]);
     jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
-        buildOrgAndUserEntitlementChecks({ subscriptionPlans, organizationPlans }),
+        buildOrgAndUserEntitlementChecks({
+            subscriptionPlans,
+            user: { Role: role },
+            organization: { IsSubsidiary: isSubsidiary },
+        }),
         false,
     ]);
     return renderHook(() => useIsB2BAdmin()).result.current;
@@ -50,16 +54,15 @@ describe('useIsB2BAdmin', () => {
         expect(renderIsB2BAdmin({ subscriptionPlans: [PLANS.MAIL, PLANS.VPN_BUSINESS] })).toBe(true);
     });
 
-    it('is true for an admin who cannot read the subscriptions of a business organization', () => {
-        expect(renderIsB2BAdmin({ subscriptionPlans: [], organizationPlans: [PLANS.PASS_BUSINESS] })).toBe(true);
+    it('is true for an admin of an MSP subsidiary of a business organization', () => {
+        expect(renderIsB2BAdmin({ subscriptionPlans: [PLANS.PASS_BUSINESS], isSubsidiary: true })).toBe(true);
     });
 
     it('is false for a member of a business organization', () => {
         expect(
             renderIsB2BAdmin({
                 role: USER_ROLES.MEMBER_ROLE,
-                subscriptionPlans: [],
-                organizationPlans: [PLANS.MAIL_PRO],
+                subscriptionPlans: [PLANS.MAIL_PRO],
             })
         ).toBe(false);
     });

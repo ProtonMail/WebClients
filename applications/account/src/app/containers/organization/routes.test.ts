@@ -56,10 +56,10 @@ describe('getOrganizationAppRoutes', () => {
     it('shows Activity monitor without an upgrade badge to a Pass Professional MSP subsidiary that cannot read its subscription', () => {
         const subsidiary = buildOrganizationWithKeys({ PlanName: PLANS.PASS_BUSINESS, IsSubsidiary: true });
 
-        expect(
-            getPassBadgeRoutes({ plan: PLANS.PASS_BUSINESS, hasReadableSubscription: false, organization: subsidiary })
-                .activityMonitor
-        ).toEqual({ available: true, upgradeRequired: false });
+        expect(getPassBadgeRoutes({ plan: PLANS.PASS_BUSINESS, organization: subsidiary }).activityMonitor).toEqual({
+            available: true,
+            upgradeRequired: false,
+        });
     });
 
     it('shows Activity monitor without an upgrade badge to an MSP subsidiary that has no Pass entitlements', () => {
@@ -395,9 +395,10 @@ describe('getOrganizationAppRoutes single sign-on', () => {
     it('shows SSO to a Pass Professional MSP subsidiary that cannot read its subscription', () => {
         const subsidiary = buildOrganizationWithKeys({ IsSubsidiary: true });
 
-        expect(
-            getSsoRoute({ plan: PLANS.PASS_BUSINESS, hasReadableSubscription: false, organization: subsidiary })
-        ).toEqual({ available: true, upgradeRequired: false });
+        expect(getSsoRoute({ plan: PLANS.PASS_BUSINESS, organization: subsidiary })).toEqual({
+            available: true,
+            upgradeRequired: false,
+        });
     });
 
     it('hides SSO from an admin without the SSO read permission', () => {

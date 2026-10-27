@@ -4,6 +4,7 @@ import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCa
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { PLANS } from '@proton/payments/core/constants';
 import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
+import { organizationMember } from '@proton/payments/testing/usersWhoCannotReadSubscriptions';
 import type { GroupMembershipReturn } from '@proton/shared/lib/interfaces/GroupMember';
 
 import GroupMembershipSection from './GroupMembershipSection';
@@ -30,14 +31,14 @@ const membership: GroupMembershipReturn = {
 };
 
 const renderSection = ({
-    organizationPlans,
+    subscriptionPlans,
     loadingEntitlements = false,
 }: {
-    organizationPlans: CataloguedPlan[];
+    subscriptionPlans: CataloguedPlan[];
     loadingEntitlements?: boolean;
 }) => {
     jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
-        buildOrgAndUserEntitlementChecks({ subscriptionPlans: [], organizationPlans }),
+        buildOrgAndUserEntitlementChecks({ subscriptionPlans, ...organizationMember }),
         loadingEntitlements,
     ]);
     jest.mocked(useGroupMemberships).mockReturnValue([[membership], false]);
@@ -46,21 +47,21 @@ const renderSection = ({
 
 describe('GroupMembershipSection', () => {
     it('shows the group address to a member of an organization with group mail', () => {
-        renderSection({ organizationPlans: [PLANS.VISIONARY] });
+        renderSection({ subscriptionPlans: [PLANS.VISIONARY] });
 
         expect(screen.getByText('Sales')).toBeInTheDocument();
         expect(screen.getByText('sales@example.com')).toBeInTheDocument();
     });
 
     it('hides the group address in an organization without mail', () => {
-        renderSection({ organizationPlans: [PLANS.DRIVE_BUSINESS] });
+        renderSection({ subscriptionPlans: [PLANS.DRIVE_BUSINESS] });
 
         expect(screen.getByText('Sales')).toBeInTheDocument();
         expect(screen.queryByText('sales@example.com')).not.toBeInTheDocument();
     });
 
     it('shows no groups while entitlements load', () => {
-        renderSection({ organizationPlans: [PLANS.VISIONARY], loadingEntitlements: true });
+        renderSection({ subscriptionPlans: [PLANS.VISIONARY], loadingEntitlements: true });
 
         expect(screen.queryByText('Sales')).not.toBeInTheDocument();
     });

@@ -1,6 +1,14 @@
 import { buildEntitlementCatalog, catalogEntry } from '../../testing/buildEntitlementCatalog';
+import {
+    type CataloguedPlan,
+    buildOrgAndUserEntitlementChecks,
+    prodCatalogGrants,
+} from '../../testing/prodCatalogGrants';
+import { regularAdmin } from '../../testing/regularAdmin';
+import { usersWhoCannotReadSubscriptions } from '../../testing/usersWhoCannotReadSubscriptions';
 import { PLANS } from '../constants';
 import type { Subscription } from '../subscription/interface';
+import { entitlementChecksForOrgAndUser } from './checks';
 import { getEntitlementsPerPlan } from './entitlement-grants';
 import { EntitlementName } from './entitlement-names';
 import {
@@ -108,9 +116,12 @@ describe('entitlement resolver parity on quantity semantics', () => {
 
     const resolvers = {
         selection: createEntitlementResolverForSelection(entitlementCatalog, planName),
-        orgAndUser: createEntitlementResolverForOrgAndUser(entitlementCatalog, mirrorGrantsIntoBackend(catalogGrants), [
-            subscription,
-        ]),
+        orgAndUser: createEntitlementResolverForOrgAndUser({
+            entitlementCatalog,
+            entitlements: mirrorGrantsIntoBackend(catalogGrants),
+            subscriptions: [subscription],
+            ...regularAdmin,
+        }),
     };
 
     it('folds the plan into the concrete quantities the parity cases rely on', () => {
@@ -158,14 +169,18 @@ describe('entitlement resolver parity on quantity semantics', () => {
         });
 
         const selection = createEntitlementResolverForSelection(catalog, planName);
-        const orgAndUser = createEntitlementResolverForOrgAndUser(catalog, mirrorGrantsIntoBackend(grants), [
-            subscription,
-        ]);
-        const businessAbsent = createEntitlementResolverForOrgAndUser(
-            catalog,
-            mirrorGrantsIntoBackend(grants.filter(({ name }) => name !== EntitlementName.Business)),
-            [subscription]
-        );
+        const orgAndUser = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: catalog,
+            entitlements: mirrorGrantsIntoBackend(grants),
+            subscriptions: [subscription],
+            ...regularAdmin,
+        });
+        const businessAbsent = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: catalog,
+            entitlements: mirrorGrantsIntoBackend(grants.filter(({ name }) => name !== EntitlementName.Business)),
+            subscriptions: [subscription],
+            ...regularAdmin,
+        });
 
         for (const resolver of [selection, orgAndUser, businessAbsent]) {
             expect(resolver.hasEntitlement(EntitlementName.Business)).toBe(false);
@@ -185,15 +200,16 @@ describe('entitlement resolver parity on quantity semantics', () => {
     });
 
     it('lets backend quantities and the catalog fold disagree, in both directions', () => {
-        const businessRevoked = createEntitlementResolverForOrgAndUser(
+        const businessRevoked = createEntitlementResolverForOrgAndUser({
             entitlementCatalog,
-            mirrorGrantsIntoBackend(
+            entitlements: mirrorGrantsIntoBackend(
                 catalogGrants.map((grant) =>
                     grant.name === EntitlementName.Business ? { ...grant, quantity: 0 } : grant
                 )
             ),
-            [subscription]
-        );
+            subscriptions: [subscription],
+            ...regularAdmin,
+        });
 
         expect(businessRevoked.hasEntitlement(EntitlementName.Business)).toBe(false);
         expect(businessRevoked.isB2B).toBe(false);
@@ -206,9 +222,9 @@ describe('entitlement resolver parity on quantity semantics', () => {
         // the org is therefore reported as neither business nor B2C multi-user
         expect(businessRevoked.isB2cMultiUser).toBe(false);
 
-        const vpnGrantedOutsideTheCatalog = createEntitlementResolverForOrgAndUser(
+        const vpnGrantedOutsideTheCatalog = createEntitlementResolverForOrgAndUser({
             entitlementCatalog,
-            asEntitlements([
+            entitlements: asEntitlements([
                 ...catalogGrants.map(asOrganizationEntitlement),
                 {
                     Name: nameOutsideThePlan,
@@ -217,12 +233,48 @@ describe('entitlement resolver parity on quantity semantics', () => {
                     Scope: EntitlementScope.Organization,
                 },
             ]),
-            [subscription]
-        );
+            subscriptions: [subscription],
+            ...regularAdmin,
+        });
 
         expect(vpnGrantedOutsideTheCatalog.quantityTotal(nameOutsideThePlan)).toBe(1);
         expect(vpnGrantedOutsideTheCatalog.hasVpn).toBe(true);
         expect(vpnGrantedOutsideTheCatalog.hasMatchingSubscription(includesOnly(nameOutsideThePlan))).toBe(false);
         expect(vpnGrantedOutsideTheCatalog.hasMatchingSubscription(anchoredExcludes(nameOutsideThePlan))).toBe(true);
+    });
+});
+
+describe('entitlement checks give users who cannot read subscriptions the same answers as the admin', () => {
+    const checkNames = Object.keys(entitlementChecksForOrgAndUser) as (keyof typeof entitlementChecksForOrgAndUser)[];
+    const cataloguedPlans = Object.keys(prodCatalogGrants) as CataloguedPlan[];
+
+    const answersPerCheck = (resolver: ReturnType<typeof buildOrgAndUserEntitlementChecks>) =>
+        Object.fromEntries(checkNames.map((name) => [name, resolver[name]]));
+
+    const adminAnswers = (plan: CataloguedPlan) =>
+        answersPerCheck(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }));
+
+    const cases: ({ plan: CataloguedPlan } & (typeof usersWhoCannotReadSubscriptions)[number])[] =
+        cataloguedPlans.flatMap((plan) => usersWhoCannotReadSubscriptions.map((userType) => ({ plan, ...userType })));
+
+    it.each(cases)(
+        'answers every check for $case of a $plan organization like its admin',
+        ({ plan, user, organization }) => {
+            const answers = answersPerCheck(
+                buildOrgAndUserEntitlementChecks({
+                    subscriptionPlans: [plan],
+                    user,
+                    organization,
+                })
+            );
+
+            expect(answers).toEqual(adminAnswers(plan));
+        }
+    );
+
+    it('compares answers that depend on the subscription', () => {
+        expect(adminAnswers(PLANS.PASS_BUSINESS)).toMatchObject({ isPassB2B: true, isVpnB2B: false });
+        expect(adminAnswers(PLANS.FAMILY)).toMatchObject({ isB2cMultiUser: true, isPassB2B: false });
+        expect(adminAnswers(PLANS.VPN_BUSINESS)).toMatchObject({ isVpnB2B: true, hasDedicatedIpsOrIsVpnB2B: true });
     });
 });

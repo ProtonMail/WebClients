@@ -1,5 +1,13 @@
+import { buildEntitlementCatalog } from '../../testing/buildEntitlementCatalog';
 import { buildSubscription } from '../../testing/buildSubscription';
 import { makeEntitlements } from '../../testing/makeEntitlements';
+import {
+    buildOrgAndUserEntitlementChecks,
+    prodCatalogGrants,
+    toOrganizationEntitlement,
+} from '../../testing/prodCatalogGrants';
+import { regularAdmin } from '../../testing/regularAdmin';
+import { usersWhoCannotReadSubscriptions } from '../../testing/usersWhoCannotReadSubscriptions';
 import { ADDON_NAMES, FREE_SUBSCRIPTION, PLANS } from '../constants';
 import { EntitlementName } from './entitlement-names';
 import {
@@ -33,7 +41,12 @@ const zeroQuantityEntry = (name: EntitlementName) => ({ ...switchEntry(name), Qu
 
 describe('createEntitlementResolver', () => {
     it('exposes the full method surface', () => {
-        const resolver = createEntitlementResolverForOrgAndUser(emptyCatalog, undefined, []);
+        const resolver = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: emptyCatalog,
+            entitlements: undefined,
+            subscriptions: [],
+            ...regularAdmin,
+        });
         expect(typeof resolver.resolveForMember).toBe('function');
         expect(typeof resolver.resolveTotal).toBe('function');
         expect(typeof resolver.quantityForMember).toBe('function');
@@ -43,7 +56,12 @@ describe('createEntitlementResolver', () => {
     });
 
     it('handles undefined entitlements without throwing', () => {
-        const resolver = createEntitlementResolverForOrgAndUser(emptyCatalog, undefined, []);
+        const resolver = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: emptyCatalog,
+            entitlements: undefined,
+            subscriptions: [],
+            ...regularAdmin,
+        });
         expect(resolver.quantityForMember(EntitlementName.MaxSpace)).toBe(0);
         expect(resolver.quantityTotal(EntitlementName.MaxSpace)).toBe(0);
         expect(resolver.resolveForMember(EntitlementName.Business)).toEqual({
@@ -85,7 +103,12 @@ describe('createEntitlementResolver', () => {
                 },
             ]
         );
-        const resolver = createEntitlementResolverForOrgAndUser(emptyCatalog, entitlements, []);
+        const resolver = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: emptyCatalog,
+            entitlements,
+            subscriptions: [],
+            ...regularAdmin,
+        });
 
         expect(resolver.resolveForMember(EntitlementName.MaxSpace)).toEqual({
             name: EntitlementName.MaxSpace,
@@ -102,9 +125,9 @@ describe('createEntitlementResolver', () => {
     });
 
     it('binds named checks built on top of the resolver under .checks', () => {
-        const business = createEntitlementResolverForOrgAndUser(
-            emptyCatalog,
-            makeEntitlements(
+        const business = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: emptyCatalog,
+            entitlements: makeEntitlements(
                 [
                     {
                         Name: EntitlementName.Business,
@@ -116,9 +139,15 @@ describe('createEntitlementResolver', () => {
                 [],
                 []
             ),
-            [buildSubscription(PLANS.DUO)]
-        );
-        const consumer = createEntitlementResolverForOrgAndUser(emptyCatalog, makeEntitlements([], [], []), []);
+            subscriptions: [buildSubscription(PLANS.DUO)],
+            ...regularAdmin,
+        });
+        const consumer = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: emptyCatalog,
+            entitlements: makeEntitlements([], [], []),
+            subscriptions: [],
+            ...regularAdmin,
+        });
 
         expect(business.isB2B).toBe(true);
         expect(consumer.isB2B).toBe(false);
@@ -126,37 +155,45 @@ describe('createEntitlementResolver', () => {
 
     describe('isB2cMultiUser', () => {
         it('should be true for a multi-user personal plan', () => {
-            const resolver = createEntitlementResolverForOrgAndUser(
-                catalogWith(PLANS.DUO, [EntitlementName.MultiUser]),
-                makeEntitlements([], [], []),
-                [buildSubscription(PLANS.DUO)]
-            );
+            const resolver = createEntitlementResolverForOrgAndUser({
+                entitlementCatalog: catalogWith(PLANS.DUO, [EntitlementName.MultiUser]),
+                entitlements: makeEntitlements([], [], []),
+                subscriptions: [buildSubscription(PLANS.DUO)],
+                ...regularAdmin,
+            });
 
             expect(resolver.isB2cMultiUser).toBe(true);
         });
 
         it('should be false for a multi-user business plan', () => {
-            const resolver = createEntitlementResolverForOrgAndUser(
-                catalogWith(PLANS.DUO, [EntitlementName.MultiUser, EntitlementName.Business]),
-                makeEntitlements([], [], []),
-                [buildSubscription(PLANS.DUO)]
-            );
+            const resolver = createEntitlementResolverForOrgAndUser({
+                entitlementCatalog: catalogWith(PLANS.DUO, [EntitlementName.MultiUser, EntitlementName.Business]),
+                entitlements: makeEntitlements([], [], []),
+                subscriptions: [buildSubscription(PLANS.DUO)],
+                ...regularAdmin,
+            });
 
             expect(resolver.isB2cMultiUser).toBe(false);
         });
 
         it('should be false for a single-user plan', () => {
-            const resolver = createEntitlementResolverForOrgAndUser(
-                catalogWith(PLANS.DRIVE, []),
-                makeEntitlements([], [], []),
-                [buildSubscription(PLANS.DRIVE)]
-            );
+            const resolver = createEntitlementResolverForOrgAndUser({
+                entitlementCatalog: catalogWith(PLANS.DRIVE, []),
+                entitlements: makeEntitlements([], [], []),
+                subscriptions: [buildSubscription(PLANS.DRIVE)],
+                ...regularAdmin,
+            });
 
             expect(resolver.isB2cMultiUser).toBe(false);
         });
 
         it('should be false when there are no subscriptions at all', () => {
-            const resolver = createEntitlementResolverForOrgAndUser(emptyCatalog, undefined, []);
+            const resolver = createEntitlementResolverForOrgAndUser({
+                entitlementCatalog: emptyCatalog,
+                entitlements: undefined,
+                subscriptions: [],
+                ...regularAdmin,
+            });
 
             expect(resolver.isB2cMultiUser).toBe(false);
         });
@@ -164,9 +201,9 @@ describe('createEntitlementResolver', () => {
 
     describe('a zero quantity means the entitlement is not granted', () => {
         it('reads a zero org entitlement as absent', () => {
-            const resolver = createEntitlementResolverForOrgAndUser(
-                emptyCatalog,
-                makeEntitlements([
+            const resolver = createEntitlementResolverForOrgAndUser({
+                entitlementCatalog: emptyCatalog,
+                entitlements: makeEntitlements([
                     {
                         Name: EntitlementName.Business,
                         Type: EntitlementType.Switch,
@@ -174,8 +211,9 @@ describe('createEntitlementResolver', () => {
                         Scope: EntitlementScope.Organization,
                     },
                 ]),
-                []
-            );
+                subscriptions: [],
+                ...regularAdmin,
+            });
 
             expect(resolver.quantityTotal(EntitlementName.Business)).toBe(0);
             expect(resolver.hasEntitlement(EntitlementName.Business)).toBe(false);
@@ -195,9 +233,12 @@ describe('createEntitlementResolver', () => {
                 ],
                 Addons: [],
             };
-            const resolver = createEntitlementResolverForOrgAndUser(catalog, makeEntitlements([], [], []), [
-                buildSubscription(PLANS.DUO),
-            ]);
+            const resolver = createEntitlementResolverForOrgAndUser({
+                entitlementCatalog: catalog,
+                entitlements: makeEntitlements([], [], []),
+                subscriptions: [buildSubscription(PLANS.DUO)],
+                ...regularAdmin,
+            });
 
             // eslint-disable-next-line custom-rules/no-single-entitlement-condition -- testing `hasMatchingSubscription` itself
             expect(resolver.hasMatchingSubscription({ includes: [EntitlementName.Business] })).toBe(false);
@@ -397,7 +438,12 @@ describe('isMspEligible', () => {
     const subscription = buildSubscription(PLANS.PASS_BUSINESS);
 
     const resolverGranting = (entitlements: Entitlement[]) =>
-        createEntitlementResolverForOrgAndUser(catalog, makeEntitlements(entitlements), [subscription]);
+        createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: catalog,
+            entitlements: makeEntitlements(entitlements),
+            subscriptions: [subscription],
+            ...regularAdmin,
+        });
 
     it('is true when the backend grants all three', () => {
         const resolver = resolverGranting(granted);
@@ -429,15 +475,16 @@ describe('isMspEligible', () => {
     });
 
     it('follows the member allocation for Pass Business, not the organization total', () => {
-        const notAllocatedToThisMember = createEntitlementResolverForOrgAndUser(
-            catalog,
-            makeEntitlements([
+        const notAllocatedToThisMember = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: catalog,
+            entitlements: makeEntitlements([
                 { ...passBusiness(1), Scope: EntitlementScope.MemberAssignable },
                 maxSubsidiaries(200),
                 maxMembersSubsidiaries(1000),
             ]),
-            [subscription]
-        );
+            subscriptions: [subscription],
+            ...regularAdmin,
+        });
 
         expect(notAllocatedToThisMember.quantityTotal(EntitlementName.PassBusiness)).toBe(1);
         expect(notAllocatedToThisMember.quantityForMember(EntitlementName.PassBusiness)).toBe(0);
@@ -463,10 +510,12 @@ describe('createEntitlementResolverForOrgAndUser subscription queries', () => {
     const mailPro = buildSubscription(PLANS.MAIL_PRO);
     const vpn = buildSubscription(PLANS.VPN2024);
 
-    const resolver = createEntitlementResolverForOrgAndUser(mailProCatalog, makeEntitlements([], [], []), [
-        mailPro,
-        vpn,
-    ]);
+    const resolver = createEntitlementResolverForOrgAndUser({
+        entitlementCatalog: mailProCatalog,
+        entitlements: makeEntitlements([], [], []),
+        subscriptions: [mailPro, vpn],
+        ...regularAdmin,
+    });
 
     it('reports which subscription grants the requested entitlements', () => {
         // eslint-disable-next-line custom-rules/no-single-entitlement-condition -- testing `findSubscriptionsMatching` itself
@@ -509,20 +558,124 @@ describe('createEntitlementResolverForOrgAndUser with several subscriptions', ()
     };
 
     it('matches a combined check when any one subscription grants all of it', () => {
-        const resolver = createEntitlementResolverForOrgAndUser(catalog, emptyEntitlements, [
-            buildSubscription(PLANS.MAIL),
-            buildSubscription(PLANS.VPN_BUSINESS),
-        ]);
+        const resolver = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: catalog,
+            entitlements: emptyEntitlements,
+            subscriptions: [buildSubscription(PLANS.MAIL), buildSubscription(PLANS.VPN_BUSINESS)],
+            ...regularAdmin,
+        });
 
         expect(resolver.isVpnB2B).toBe(true);
     });
 
     it('does not match a combined check split across two subscriptions', () => {
-        const resolver = createEntitlementResolverForOrgAndUser(catalog, emptyEntitlements, [
-            buildSubscription(PLANS.MAIL_PRO),
-            buildSubscription(PLANS.VPN2024),
-        ]);
+        const resolver = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: catalog,
+            entitlements: emptyEntitlements,
+            subscriptions: [buildSubscription(PLANS.MAIL_PRO), buildSubscription(PLANS.VPN2024)],
+            ...regularAdmin,
+        });
 
         expect(resolver.isVpnB2B).toBe(false);
+    });
+});
+
+describe('createEntitlementResolverForOrgAndUser when the subscriptions are unreadable', () => {
+    it.each(usersWhoCannotReadSubscriptions)(
+        'treats the organization entitlements as the single subscription for $case',
+        ({ user, organization }) => {
+            const resolver = buildOrgAndUserEntitlementChecks({
+                subscriptionPlans: [PLANS.PASS_BUSINESS],
+                user,
+                organization,
+            });
+
+            expect(resolver.isPassB2B).toBe(true);
+            expect(resolver.isVpnB2B).toBe(false);
+            expect(resolver.isB2cMultiUser).toBe(false);
+            expect(
+                resolver.findSubscriptionsMatching({
+                    includes: [EntitlementName.Business, EntitlementName.FlagsPass],
+                })
+            ).toEqual({ result: true, subscriptions: [] });
+        }
+    );
+
+    it.each(usersWhoCannotReadSubscriptions)(
+        'matches a B2C multi-user organization for $case',
+        ({ user, organization }) => {
+            const resolver = buildOrgAndUserEntitlementChecks({
+                subscriptionPlans: [PLANS.FAMILY],
+                user,
+                organization,
+            });
+
+            expect(resolver.isB2cMultiUser).toBe(true);
+            expect(resolver.isPassB2B).toBe(false);
+        }
+    );
+
+    it.each(usersWhoCannotReadSubscriptions)(
+        'matches entitlements granted by an addon of the organization for $case',
+        ({ user, organization }) => {
+            const resolver = createEntitlementResolverForOrgAndUser({
+                entitlementCatalog: buildEntitlementCatalog(prodCatalogGrants),
+                entitlements: makeEntitlements(
+                    [...prodCatalogGrants[PLANS.MAIL_PRO], EntitlementName.FlagsLumo].map(toOrganizationEntitlement)
+                ),
+                subscriptions: [],
+                user,
+                organization,
+            });
+
+            expect(
+                resolver.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsLumo] })
+            ).toBe(true);
+        }
+    );
+
+    it.each(usersWhoCannotReadSubscriptions)('ignores the given subscriptions for $case', ({ user, organization }) => {
+        const resolver = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: buildEntitlementCatalog(prodCatalogGrants),
+            entitlements: makeEntitlements(prodCatalogGrants[PLANS.PASS_BUSINESS].map(toOrganizationEntitlement)),
+            subscriptions: [buildSubscription(PLANS.MAIL)],
+            user,
+            organization,
+        });
+
+        expect(resolver.isPassB2B).toBe(true);
+        expect(
+            resolver.findSubscriptionsMatching({
+                includes: [EntitlementName.FlagsInbox, EntitlementName.CustomDomainAddresses],
+            })
+        ).toEqual({ result: false, subscriptions: [] });
+    });
+
+    it('does not fall back to the organization entitlements for an admin', () => {
+        const resolver = createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: buildEntitlementCatalog(prodCatalogGrants),
+            entitlements: makeEntitlements(prodCatalogGrants[PLANS.PASS_BUSINESS].map(toOrganizationEntitlement)),
+            subscriptions: [],
+            ...regularAdmin,
+        });
+
+        expect(resolver.isPassB2B).toBe(false);
+        expect(resolver.isB2B).toBe(true);
+    });
+
+    it('keeps matching per subscription when the user can read the subscriptions', () => {
+        const resolver = buildOrgAndUserEntitlementChecks({
+            subscriptionPlans: [PLANS.MAIL, PLANS.PASS_PRO],
+        });
+
+        expect(resolver.isPassB2B).toBe(true);
+        expect(resolver.isVpnB2B).toBe(false);
+        expect(
+            resolver
+                .findSubscriptionsMatching({
+                    includes: [EntitlementName.Business, EntitlementName.FlagsPass],
+                })
+                .subscriptions.flatMap(({ Plans }) => Plans.map(({ Name }) => Name))
+        ).toEqual([PLANS.PASS_PRO]);
     });
 });

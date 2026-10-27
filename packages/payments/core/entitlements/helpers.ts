@@ -103,6 +103,19 @@ export function checkConditions(
     return allIncludesMatch && allExcludesMatch;
 }
 
+export const checkConditionsForOrganization = (
+    conditions: EntitlementResolveConditions,
+    entitlements: Entitlements | undefined
+): boolean =>
+    checkConditions(
+        conditions,
+        (entitlements?.OrganizationEntitlements ?? []).map(({ Name, Quantity, Scope }) => ({
+            name: Name,
+            quantity: Quantity,
+            scope: Scope,
+        }))
+    );
+
 export type EntitlementsPerSubscription = { subscription: Subscription; entitlements: ResolvedEntitlement[] }[];
 
 export const findSubscriptionsMatching = (
