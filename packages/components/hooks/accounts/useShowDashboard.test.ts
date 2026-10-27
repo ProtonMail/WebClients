@@ -2,7 +2,9 @@ import { renderHook } from '@testing-library/react';
 
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { PLANS } from '@proton/payments/core/constants';
+import type { UserAndOrganizationForSubscriptions } from '@proton/payments/core/entitlements/unreadable-subscriptions';
 import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
+import { organizationMember } from '@proton/payments/testing/usersWhoCannotReadSubscriptions';
 import { APPS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
@@ -21,29 +23,37 @@ jest.mock('@proton/unleash/useVariant', () => ({
     useVariant: jest.fn(),
 }));
 
-const mockEntitlements = (subscriptionPlans: CataloguedPlan[], organizationPlans?: CataloguedPlan[]) => {
+type EntitlementsCase = {
+    subscriptionPlans: readonly CataloguedPlan[];
+    viewer?: UserAndOrganizationForSubscriptions;
+};
+
+const mockEntitlements = ({ subscriptionPlans, viewer }: EntitlementsCase) => {
     jest.mocked(useEntitlementChecksForOrgAndUser).mockReturnValue([
-        buildOrgAndUserEntitlementChecks({ subscriptionPlans, organizationPlans }),
+        buildOrgAndUserEntitlementChecks({ subscriptionPlans: [...subscriptionPlans], ...viewer }),
         false,
     ]);
 };
 
 const consumerCases = [
-    { name: 'a free user', subscriptionPlans: [], organizationPlans: undefined },
-    { name: 'a Mail Plus user', subscriptionPlans: [PLANS.MAIL], organizationPlans: undefined },
-    { name: 'a Family admin', subscriptionPlans: [PLANS.FAMILY], organizationPlans: undefined },
-    { name: 'a Family member', subscriptionPlans: [], organizationPlans: [PLANS.FAMILY] },
+    { name: 'a free user', subscriptionPlans: [] },
+    { name: 'a Mail Plus user', subscriptionPlans: [PLANS.MAIL] },
+    { name: 'a Family admin', subscriptionPlans: [PLANS.FAMILY] },
+    { name: 'a Family member', subscriptionPlans: [PLANS.FAMILY], viewer: organizationMember },
 ] as const;
 
 const businessCases = [
-    { name: 'a Mail Professional admin', subscriptionPlans: [PLANS.MAIL_PRO], organizationPlans: undefined },
-    { name: 'a VPN Business admin', subscriptionPlans: [PLANS.VPN_BUSINESS], organizationPlans: undefined },
+    { name: 'a Mail Professional admin', subscriptionPlans: [PLANS.MAIL_PRO] },
+    { name: 'a VPN Business admin', subscriptionPlans: [PLANS.VPN_BUSINESS] },
     {
         name: 'a user with Mail Plus and VPN Business',
         subscriptionPlans: [PLANS.MAIL, PLANS.VPN_BUSINESS],
-        organizationPlans: undefined,
     },
-    { name: 'a member of a VPN Essentials organization', subscriptionPlans: [], organizationPlans: [PLANS.VPN_PRO] },
+    {
+        name: 'a member of a VPN Essentials organization',
+        subscriptionPlans: [PLANS.VPN_PRO],
+        viewer: organizationMember,
+    },
 ] as const;
 
 beforeEach(() => {
@@ -52,28 +62,28 @@ beforeEach(() => {
 });
 
 describe('useShowDashboard', () => {
-    it.each(consumerCases)('shows the Mail dashboard to $name', ({ subscriptionPlans, organizationPlans }) => {
-        mockEntitlements([...subscriptionPlans], organizationPlans && [...organizationPlans]);
+    it.each(consumerCases)('shows the Mail dashboard to $name', (testCase) => {
+        mockEntitlements(testCase);
 
         expect(renderHook(() => useShowDashboard(APPS.PROTONMAIL)).result.current.showDashboard).toBe(true);
     });
 
-    it.each(businessCases)('hides the Mail dashboard from $name', ({ subscriptionPlans, organizationPlans }) => {
-        mockEntitlements([...subscriptionPlans], organizationPlans && [...organizationPlans]);
+    it.each(businessCases)('hides the Mail dashboard from $name', (testCase) => {
+        mockEntitlements(testCase);
 
         expect(renderHook(() => useShowDashboard(APPS.PROTONMAIL)).result.current.showDashboard).toBe(false);
     });
 
     it('hides the dashboard in apps without one', () => {
-        mockEntitlements([PLANS.MAIL]);
+        mockEntitlements({ subscriptionPlans: [PLANS.MAIL] });
 
         expect(renderHook(() => useShowDashboard(APPS.PROTONVPN_SETTINGS)).result.current.showDashboard).toBe(false);
     });
 });
 
 describe('useShowDriveDashboard', () => {
-    it.each(consumerCases)('shows the Drive dashboard to $name', ({ subscriptionPlans, organizationPlans }) => {
-        mockEntitlements([...subscriptionPlans], organizationPlans && [...organizationPlans]);
+    it.each(consumerCases)('shows the Drive dashboard to $name', (testCase) => {
+        mockEntitlements(testCase);
 
         const { result } = renderHook(() => useShowDriveDashboard(APPS.PROTONDRIVE));
 
@@ -81,8 +91,8 @@ describe('useShowDriveDashboard', () => {
         expect(result.current.showDashboard).toBe(true);
     });
 
-    it.each(businessCases)('hides the Drive dashboard from $name', ({ subscriptionPlans, organizationPlans }) => {
-        mockEntitlements([...subscriptionPlans], organizationPlans && [...organizationPlans]);
+    it.each(businessCases)('hides the Drive dashboard from $name', (testCase) => {
+        mockEntitlements(testCase);
 
         const { result } = renderHook(() => useShowDriveDashboard(APPS.PROTONDRIVE));
 
@@ -92,14 +102,14 @@ describe('useShowDriveDashboard', () => {
 });
 
 describe('useShowGenericDashboard', () => {
-    it.each(consumerCases)('shows the account dashboard to $name', ({ subscriptionPlans, organizationPlans }) => {
-        mockEntitlements([...subscriptionPlans], organizationPlans && [...organizationPlans]);
+    it.each(consumerCases)('shows the account dashboard to $name', (testCase) => {
+        mockEntitlements(testCase);
 
         expect(renderHook(() => useShowGenericDashboard(APPS.PROTONACCOUNT)).result.current).toBe(true);
     });
 
-    it.each(businessCases)('hides the account dashboard from $name', ({ subscriptionPlans, organizationPlans }) => {
-        mockEntitlements([...subscriptionPlans], organizationPlans && [...organizationPlans]);
+    it.each(businessCases)('hides the account dashboard from $name', (testCase) => {
+        mockEntitlements(testCase);
 
         expect(renderHook(() => useShowGenericDashboard(APPS.PROTONACCOUNT)).result.current).toBe(false);
     });

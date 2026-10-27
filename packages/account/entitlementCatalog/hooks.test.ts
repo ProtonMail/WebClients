@@ -6,14 +6,36 @@ import { EntitlementScope, EntitlementType } from '@proton/payments/core/entitle
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
+import {
+    type CataloguedPlan,
+    prodCatalogGrants,
+    toOrganizationEntitlement,
+} from '@proton/payments/testing/prodCatalogGrants';
+import { USER_ROLES } from '@proton/shared/lib/constants';
+import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 
 import { useAllSubscriptions } from '../allSubscriptions/hooks';
 import { useAllEntitlements } from '../entitlements/hooks';
+import { useOrganization } from '../organization/hooks';
+import { buildUser } from '../testing/buildUser';
+import { useUser } from '../user/hooks';
 import { useEntitlementChecksForOrgAndUser } from './hooks';
 
 const mockUseEntitlementCatalog = jest.fn();
 const mockUseAllEntitlements = jest.mocked(useAllEntitlements);
 const mockUseAllSubscriptions = jest.mocked(useAllSubscriptions);
+const mockUseUser = jest.mocked(useUser);
+const mockUseOrganization = jest.mocked(useOrganization);
+
+jest.mock('@proton/account/user/hooks', () => ({
+    useUser: jest.fn(),
+    useGetUser: jest.fn(),
+}));
+
+jest.mock('@proton/account/organization/hooks', () => ({
+    useOrganization: jest.fn(),
+    useGetOrganization: jest.fn(),
+}));
 
 jest.mock('@proton/account/entitlements/hooks', () => ({
     useAllEntitlements: jest.fn(),
@@ -35,6 +57,8 @@ jest.mock('@proton/redux-utilities/hooks', () => ({
 beforeEach(() => {
     mockUseEntitlementCatalog.mockReturnValue([undefined as any, false]);
     mockUseAllSubscriptions.mockReturnValue([undefined, false]);
+    mockUseUser.mockReturnValue([buildUser(), false]);
+    mockUseOrganization.mockReturnValue([undefined, false]);
 });
 
 describe('useEntitlements', () => {
@@ -224,5 +248,53 @@ describe('useEntitlements', () => {
 
         expect(result.current[0].isVpnB2B).toBe(true);
         expect(result.current[0].isPassB2B).toBe(false);
+    });
+
+    it('returns loading=true while the organization is loading', () => {
+        mockUseAllEntitlements.mockReturnValue([makeEntitlements(), false]);
+        mockUseOrganization.mockReturnValue([undefined, true]);
+
+        const { result } = renderHook(() => useEntitlementChecksForOrgAndUser());
+
+        expect(result.current[1]).toBe(true);
+    });
+
+    describe('users who cannot read the subscriptions of their organization', () => {
+        const mockOrganizationWithPlan = (plan: CataloguedPlan, organization: Partial<OrganizationExtended>) => {
+            mockUseEntitlementCatalog.mockReturnValue([buildEntitlementCatalog(prodCatalogGrants), false]);
+            mockUseAllEntitlements.mockReturnValue([
+                makeEntitlements(prodCatalogGrants[plan].map(toOrganizationEntitlement)),
+                false,
+            ]);
+            mockUseAllSubscriptions.mockReturnValue([[], false]);
+            mockUseOrganization.mockReturnValue([organization as OrganizationExtended, false]);
+        };
+
+        it.each([
+            { case: 'a member', role: USER_ROLES.MEMBER_ROLE, IsSubsidiary: false },
+            { case: 'a member of an MSP subsidiary', role: USER_ROLES.MEMBER_ROLE, IsSubsidiary: true },
+            { case: 'an admin of an MSP subsidiary', role: USER_ROLES.ADMIN_ROLE, IsSubsidiary: true },
+        ] as const)(
+            'matches subscription checks against the organization entitlements for $case',
+            ({ role, IsSubsidiary }) => {
+                mockOrganizationWithPlan(PLANS.PASS_BUSINESS, { IsSubsidiary });
+                mockUseUser.mockReturnValue([buildUser({ Role: role }), false]);
+
+                const { result } = renderHook(() => useEntitlementChecksForOrgAndUser());
+
+                expect(result.current[0].isPassB2B).toBe(true);
+                expect(result.current[0].isVpnB2B).toBe(false);
+            }
+        );
+
+        it('does not match subscription checks for an admin whose subscriptions are empty', () => {
+            mockOrganizationWithPlan(PLANS.PASS_BUSINESS, { IsSubsidiary: false });
+            mockUseUser.mockReturnValue([buildUser({ Role: USER_ROLES.ADMIN_ROLE }), false]);
+
+            const { result } = renderHook(() => useEntitlementChecksForOrgAndUser());
+
+            expect(result.current[0].isPassB2B).toBe(false);
+            expect(result.current[0].isB2B).toBe(true);
+        });
     });
 });

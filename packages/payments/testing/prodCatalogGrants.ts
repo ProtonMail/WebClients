@@ -2,9 +2,14 @@ import { PLANS } from '../core/constants';
 import { EntitlementName } from '../core/entitlements/entitlement-names';
 import { type Entitlement, EntitlementScope, EntitlementType } from '../core/entitlements/interface';
 import { createEntitlementResolverForOrgAndUser } from '../core/entitlements/resolver';
+import {
+    type UserAndOrganizationForSubscriptions,
+    getUnreadableSubscriptionsReason,
+} from '../core/entitlements/unreadable-subscriptions';
 import { buildEntitlementCatalog } from './buildEntitlementCatalog';
 import { buildSubscription } from './buildSubscription';
 import { makeEntitlements } from './makeEntitlements';
+import { regularAdmin } from './regularAdmin';
 
 export const prodCatalogGrants = {
     [PLANS.MAIL]: [EntitlementName.FlagsInbox, EntitlementName.CustomDomainAddresses],
@@ -104,16 +109,19 @@ export const toOrganizationEntitlement = (name: EntitlementName): Entitlement =>
 
 export const buildOrgAndUserEntitlementChecks = ({
     subscriptionPlans,
-    organizationPlans = subscriptionPlans,
+    user = regularAdmin.user,
+    organization = regularAdmin.organization,
 }: {
     subscriptionPlans: CataloguedPlan[];
-    organizationPlans?: CataloguedPlan[];
-}) => {
-    const grantedNames = [...new Set(organizationPlans.flatMap((plan) => prodCatalogGrants[plan]))];
+} & Partial<UserAndOrganizationForSubscriptions>) => {
+    const grantedNames = [...new Set(subscriptionPlans.flatMap((plan) => prodCatalogGrants[plan]))];
+    const canReadSubscriptions = getUnreadableSubscriptionsReason({ user, organization }) === undefined;
 
-    return createEntitlementResolverForOrgAndUser(
-        buildEntitlementCatalog(prodCatalogGrants),
-        makeEntitlements(grantedNames.map(toOrganizationEntitlement)),
-        subscriptionPlans.map((plan) => buildSubscription(plan))
-    );
+    return createEntitlementResolverForOrgAndUser({
+        entitlementCatalog: buildEntitlementCatalog(prodCatalogGrants),
+        entitlements: makeEntitlements(grantedNames.map(toOrganizationEntitlement)),
+        subscriptions: canReadSubscriptions ? subscriptionPlans.map((plan) => buildSubscription(plan)) : [],
+        user,
+        organization,
+    });
 };

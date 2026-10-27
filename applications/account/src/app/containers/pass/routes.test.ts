@@ -57,9 +57,7 @@ describe('getPassAppRoutes', () => {
     it('shows every Pass page without an upgrade badge to a Pass Professional MSP subsidiary that cannot read its subscription', () => {
         const subsidiary = buildOrganizationWithKeys({ PlanName: PLANS.PASS_BUSINESS, IsSubsidiary: true });
 
-        expect(
-            getPassBadgeRoutes({ plan: PLANS.PASS_BUSINESS, hasReadableSubscription: false, organization: subsidiary })
-        ).toEqual({
+        expect(getPassBadgeRoutes({ plan: PLANS.PASS_BUSINESS, organization: subsidiary })).toEqual({
             activityLogs: { available: true, upgradeRequired: false },
             policies: { available: true, upgradeRequired: false },
             reports: { available: true, upgradeRequired: false },

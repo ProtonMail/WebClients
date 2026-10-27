@@ -8,6 +8,7 @@ import type { EntitlementName } from './entitlement-names';
 import {
     type EntitlementsPerSubscription,
     checkConditions,
+    checkConditionsForOrganization,
     findSubscriptionsMatching,
     getEntitlementQuantityForMember,
     getTotalEntitlementQuantity,
@@ -28,6 +29,7 @@ import type {
     PlanSelectionForEntitlementChecks,
     ResolvedEntitlement,
 } from './interface';
+import { type UserAndOrganizationForSubscriptions, getUnreadableSubscriptionsReason } from './unreadable-subscriptions';
 
 const isSubscriptionSelection = (selection: Subscription | PlanIDs): selection is Subscription =>
     'ID' in selection && typeof selection.ID === 'string';
@@ -122,21 +124,46 @@ export const createEntitlementResolverForSelection = (
  * whenever possible.
  *
  * @example
- * const resolver = createEntitlementResolverForOrgAndUser(entitlementCatalog, entitlements, [subscription]);
+ * const resolver = createEntitlementResolverForOrgAndUser({
+ *     entitlementCatalog,
+ *     entitlements,
+ *     subscriptions: [subscription],
+ *     user,
+ *     organization,
+ * });
  * const isB2B = resolver.isB2B;
  * const memberSpace = resolver.quantityForMember(EntitlementName.MaxSpace);
  */
-export const createEntitlementResolverForOrgAndUser = (
-    entitlementCatalog: EntitlementCatalog | undefined,
-    entitlements: Entitlements | undefined,
-    subscriptions: Subscription[]
-): EntitlementChecksForOrgAndUser => {
+export const createEntitlementResolverForOrgAndUser = ({
+    entitlementCatalog,
+    entitlements,
+    subscriptions,
+    user,
+    organization,
+}: {
+    entitlementCatalog: EntitlementCatalog | undefined;
+    entitlements: Entitlements | undefined;
+    subscriptions: Subscription[];
+} & UserAndOrganizationForSubscriptions): EntitlementChecksForOrgAndUser => {
     const resolvedEntitlementsPerSubscription: EntitlementsPerSubscription = subscriptions.map((subscription) => {
         const entitlements = getEntitlementsPerSubscription(entitlementCatalog, subscription);
         return { subscription, entitlements };
     });
 
     const quantityTotal = (name: EntitlementName) => getTotalEntitlementQuantity(entitlements, name);
+
+    const unreadableSubscriptionsReason = getUnreadableSubscriptionsReason({ user, organization });
+
+    const findMatching = (conditions: EntitlementResolveConditions) => {
+        switch (unreadableSubscriptionsReason) {
+            case 'msp-subsidiary':
+            case 'member':
+                return { result: checkConditionsForOrganization(conditions, entitlements), subscriptions: [] };
+
+            default:
+                return findSubscriptionsMatching(conditions, resolvedEntitlementsPerSubscription);
+        }
+    };
 
     /**
      * The checks in {@link entitlementChecksForSelection} are shared: {@link entitlementChecksForOrgAndUser} spreads
@@ -164,8 +191,7 @@ export const createEntitlementResolverForOrgAndUser = (
      * still answers as strongly as this resolver can.
      */
     const resolverForSelection: EntitlementResolverForSelection = {
-        hasMatchingSubscription: (conditions) =>
-            findSubscriptionsMatching(conditions, resolvedEntitlementsPerSubscription).result,
+        hasMatchingSubscription: (conditions) => findMatching(conditions).result,
         hasEntitlement: (name) => quantityTotal(name) > 0,
         resolveTotal: (name) => resolveTotalEntitlement(entitlements, name),
         quantityTotal,
@@ -174,8 +200,7 @@ export const createEntitlementResolverForOrgAndUser = (
     const resolver: EntitlementResolverForOrgAndUser = {
         resolveForMember: (name) => resolveEntitlementForMember(entitlements, name),
         quantityForMember: (name) => getEntitlementQuantityForMember(entitlements, name),
-        findSubscriptionsMatching: (conditions) =>
-            findSubscriptionsMatching(conditions, resolvedEntitlementsPerSubscription),
+        findSubscriptionsMatching: findMatching,
         withSelection: (selection: PlanSelectionForEntitlementChecks) =>
             createEntitlementResolverForSelection(entitlementCatalog, selection),
 
