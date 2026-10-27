@@ -1054,6 +1054,9 @@ importers:
       '@proton/payments':
         specifier: workspace:^
         version: link:../../packages/payments
+      '@proton/payments-ui':
+        specifier: workspace:^
+        version: link:../../packages/payments-ui
       '@proton/polyfill':
         specifier: workspace:^
         version: link:../../packages/polyfill
