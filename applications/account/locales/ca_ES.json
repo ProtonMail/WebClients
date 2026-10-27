@@ -368,6 +368,9 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Pel que fa a ${ name }"
+      ],
       "Accept": [
         "Accepta"
       ],
@@ -406,6 +409,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Afegiu l'adreça de ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Afegir ${ name }"
       ],
       "Add a payment method": [
         "Afegiu un mètode de pagament"
@@ -13885,6 +13891,9 @@
       "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Quan l'inici de sessió està restringit, només ${ primaryEmailElement } i el nom d'usuari ${ usernameElement } es poden utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió està restringit, només el vostre correu ${ primaryEmailElement } es pot utilitzar per a iniciar sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
+      ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Quan l'inici de sessió està restringit, només el nom d'usuari ${ usernameElement } es pot utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
       ],
@@ -14309,6 +14318,9 @@
       ],
       "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
         "Els vostres fitxers estan xifrats i es desen de manera segura a ${ DRIVE_APP_NAME }."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Els fitxers s'han importat i xifrat correctament des de Google Drive a ${ DRIVE_APP_NAME }."
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
@@ -16358,6 +16370,9 @@
       ],
       "Reserved email address": [
         "Adreça de correu electrònic reservada"
+      ],
+      "Restrict sign-in to email address": [
+        "Restringeix l'inici de sessió a l'adreça de correu electrònic"
       ],
       "Restrict sign-in to primary email address": [
         "Restringeix l'inici de sessió a l'adreça de correu electrònic principal"
@@ -27984,6 +27999,9 @@
       "Your exposed information": [
         "La vostra informació exposada"
       ],
+      "Your import is finished!": [
+        "Ha finalitzat la importació."
+      ],
       "Your plan": [
         "El vostre pla"
       ],
@@ -28460,6 +28478,9 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Quan moveu un correu electrònic al correu brossa, se us cancel·larà automàticament la subscripció a les llistes de distribució del remitent."
+      ],
+      "Your ${ DRIVE_APP_NAME } storage is almost full": [
+        "L'emmagatzematge del vostre ${ DRIVE_APP_NAME } és gairebé ple"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "La vostra safata d'entrada de ${ MAIL_APP_NAME } està gairebé plena."

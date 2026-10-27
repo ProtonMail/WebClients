@@ -2095,6 +2095,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Če naročnino prekličete, se vaša brezplačna preizkusna različica ne bo spremenila v plačljivo naročnino in do konca preizkusnega obdobja lahko uživate v ugodnostih paketa."
+      ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } mest."
       ],
@@ -4737,6 +4740,9 @@
       "QR code sign-in enabled": [
         "Omogočena prijava s kodo QR"
       ],
+      "Scan QR code on your mobile device to sign in.": [
+        "Za prijavo skenirajte QR kodo na svoji mobilni napravi."
+      ],
       "Security tips": [
         "Varnostni nasveti"
       ],
@@ -7311,6 +7317,9 @@
       "Enjoying ${ planName }?": [
         "Uživate v ${ planName }?"
       ],
+      "Invited friends": [
+        "Povabljeni prijatelji"
+      ],
       "Upgrade your privacy": [
         "Nadgradite svojo zasebnost"
       ],
@@ -8080,6 +8089,9 @@
         "Vse (${ totalFoldersCount } oznake)",
         "Vse (${ totalFoldersCount } oznak)"
       ],
+      "All admins": [
+        "Vsi skrbniki"
+      ],
       "All inactive members deleted": [
         "Vsi nedejavni člani so bili izbrisani"
       ],
@@ -8274,6 +8286,9 @@
       ],
       "Choose a plan that works best for you.": [
         "Izberite paket, ki vam najbolj ustreza"
+      ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Izberite močno geslo za ${ BRAND_NAME } in ga ne uporabljajte tudi za druge račune."
       ],
       "Choose your service to connect with": [
         "Izberite storitev, s katero se želite povezati"
@@ -8817,6 +8832,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Če izgubite svojo napravo z omogočenim dvojnim preverjanjem pristnosti, lahko te kode uporabite namesto 6-mestne kode za dvojno preverjanje pristnosti za prijavo v svoj račun. Vsako kodo lahko uporabite samo enkrat."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite 1 od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Če ste kupili darilno kodo ali ste jo prejeli od naše podporne ekipe, jo lahko vnesete tukaj."
@@ -10441,6 +10459,9 @@
       "Your plan is limited to 10 versions for up to 7 days": [
         "Vaš paket je omejen na 10 različic do 7 dni"
       ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Vaš profil in vse spremembe, ki jih opravite, bodo vidne drugim uporabnikom ${ BRAND_NAME }."
+      ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Vaše nedavne spremembe so bile objavljene. Uporabnikom bodo vidne v naslednjih nekaj urah."
       ],
@@ -11616,6 +11637,9 @@
       ],
       "Mail Server (IMAP)": [
         "Poštni strežnik (IMAP)"
+      ],
+      "Mailbox settings": [
+        "Nastavitve poštnega predala"
       ],
       "Main": [
         "Glavno"
@@ -14753,6 +14777,9 @@
       "Mark as read": [
         "Označi kot prebrano"
       ],
+      "Mute notifications": [
+        "Utišaj obvestila"
+      ],
       "My reason isn't listed": [
         "Moj razlog ni naveden"
       ],
@@ -15209,6 +15236,9 @@
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Povabljeni ste, da se pridružite organizaciji ${ PASS_APP_NAME }"
+      ],
+      "Your ${ discount }% End of Year discount has been applied": [
+        "Vaš ${ discount }% popust ob koncu leta je bil uporabljen"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Vaša organizacija ima dostop do ${ free }. Če želite dostopati do premijskih funkcij aplikacije ${ appName }, prosimo, da zaprosite skrbnika organizacije za nadgradnjo."
@@ -18850,6 +18880,9 @@
       "Billing cycle": [
         "Cikel obračunavanja"
       ],
+      "Black Friday": [
+        "Črni petek"
+      ],
       "Block trackers and malware": [
         "Blokiranje sledilnikov in zlonamerne programske opreme"
       ],
@@ -19974,6 +20007,9 @@
       ],
       "User": [
         "Uporabnik"
+      ],
+      "User profile": [
+        "Uporabniški profil"
       ],
       "Users": [
         "Uporabniki"

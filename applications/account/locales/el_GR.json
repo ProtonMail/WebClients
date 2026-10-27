@@ -368,6 +368,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "About ${ name }": [
+        "Σχετικά με το ${ name }"
+      ],
       "Accept": [
         "Αποδοχή"
       ],
@@ -406,6 +409,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Προσθήκη διεύθυνσης ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Προσθέστε το ${ name }"
       ],
       "Add a payment method": [
         "Προσθέστε μία μέθοδο πληρωμής"
@@ -1481,6 +1487,9 @@
       "Maybe later": [
         "Ίσως αργότερα"
       ],
+      "Migrate": [
+        "Μετεγκατάσταση"
+      ],
       "More": [
         "Περισσότερα"
       ],
@@ -1537,6 +1546,9 @@
       ],
       "OK": [
         "ΟΚ"
+      ],
+      "OneDrive": [
+        "OneDrive"
       ],
       "Open": [
         "Άνοιγμα"
@@ -7246,6 +7258,9 @@
       "Address is already added to your account": [
         "Η διεύθυνση έχει ήδη προστεθεί στον λογαριασμό σας"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Η διεύθυνση χρησιμοποιείται ήδη από χρήστη εκτός του οργανισμού σας. Για επίλυση, παρακαλούμε απευθυνθείτε στην υποστήριξη πελατών."
+      ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
       ],
@@ -7620,6 +7635,9 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Μέγιστα ${ displayMaxValue } επιτρέπονται"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Η διεύθυνση μέλους δε βρέθηκε. Επικοινωνήστε με την υποστήριξη πελατών για να επιλύσετε αυτό το πρόβλημα."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
@@ -7629,6 +7647,12 @@
       ],
       "Missing key packet": [
         "Λείπει πακέτο κλειδιού"
+      ],
+      "Missing organization private key": [
+        "Λείπει το ιδιωτικό κλειδί του οργανισμού"
+      ],
+      "Missing organization public key": [
+        "Λείπει το δημόσιο κλειδί του οργανισμού"
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
@@ -7708,6 +7732,12 @@
       ],
       "Operation failed, try again later": [
         "Η λειτουργία απέτυχε, δοκιμάστε ξανά αργότερα"
+      ],
+      "Organization does not have enough seats available": [
+        "Ο οργανισμός δε διαθέτει αρκετές θέσεις διαθέσιμες"
+      ],
+      "Organization does not have enough storage available": [
+        "Ο οργανισμός δεν διαθέτει αρκετό χώρο αποθήκευσης"
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
@@ -9139,6 +9169,29 @@
         "Terabytes"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Ενεργοποιήθηκε"
+      ],
+      "All": [
+        "Όλα"
+      ],
+      "Errors": [
+        "Σφάλματα"
+      ],
+      "In progress": [
+        "Σε εξέλιξη"
+      ],
+      "Migrated": [
+        "Μετεγκαταστάθηκε"
+      ],
+      "Not activated": [
+        "Δεν έχει ενεργοποιηθεί"
+      ],
+      "Pending": [
+        "Σε εκκρεμότητα"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Αρχειοθετημένα"
@@ -10090,6 +10143,9 @@
       "Failed": [
         "Απέτυχε"
       ],
+      "Has errors": [
+        "Έχει σφάλματα"
+      ],
       "Import completed successfully": [
         "Η εισαγωγή ολοκληρώθηκε επιτυχώς"
       ],
@@ -10107,6 +10163,9 @@
       ],
       "Paused": [
         "Σε παύση"
+      ],
+      "Pending": [
+        "Σε εκκρεμότητα"
       ],
       "Queued": [
         "Σε αναμονή"
@@ -10556,6 +10615,9 @@
       ],
       "30-day money-back guarantee": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Εγγύηση επιστροφής χρημάτων 30 ημερών: ακυρώστε εντός 30 ημερών από την αγορά σας και επικοινωνήστε με το ${ customerSupportLink } για να λάβετε επιστροφή χρημάτων."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Ένα ${ protonSubdomain } φιλοξενείται από το ${ BRAND_NAME }, το οποίο σας επιτρέπει να ρυθμίσετε γρήγορα έναν υποτομέα. ${ learnMoreLink }"
@@ -11669,6 +11731,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Τα φίλτρα λειτουργούν σε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου, συμπεριλαμβανομένων των εισερχόμενων καθώς και των απεσταλμένων μηνυμάτων ηλεκτρονικού ταχυδρομείου. Κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα, μια συνθήκη και μια ενέργεια."
       ],
+      "Find out what can be migrated.": [
+        "Μάθετε τι μπορεί να μετεγκατασταθεί."
+      ],
       "for ${ price }": [
         "για ${ price }"
       ],
@@ -12335,6 +12400,9 @@
       "No single sign-on": [
         "Χωρίς καθολική σύνδεση"
       ],
+      "No users to display": [
+        "Δεν υπάρχουν χρήστες για εμφάνιση"
+      ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
@@ -12783,6 +12851,9 @@
       "Select a group to view its members and settings.": [
         "Επιλέξτε μια ομάδα για να δείτε τα μέλη και τις ρυθμίσεις της."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Επιλέξτε ακριβώς αυτό που θέλετε να μετεγκαταστήσετε. Θα εφαρμοστεί για όλους τους χρήστες του οργανισμού."
+      ],
       "Select one or multiple user affiliations": [
         "Επιλέξτε μία ή περισσότερες συνεργασίες χρηστών"
       ],
@@ -13225,6 +13296,12 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Αυτός ο σύνδεσμος κατάργησης εγγραφής έχει λήξει. Ανοίξτε ένα πιο πρόσφατο μήνυμα ηλεκτρονικού ταχυδρομείου από αυτήν τη λίστα αλληλογραφίας."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Δεν είναι δυνατή η μετεγκατάσταση αυτού του χρήστη επειδή η διεύθυνση ηλεκτρονικού ταχυδρομείου του δεν είναι διαθέσιμη στο ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Αυτός ο χρήστης είναι προς το παρόν υπεύθυνος για τις πληρωμές του οργανισμού σας. Με την υποβάθμιση αυτού του μέλους, θα είστε εσείς υπεύθυνοι για τις πληρωμές του οργανισμού σας."
       ],
@@ -13365,6 +13442,27 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Για να ακολουθείτε την τελευταία εξέλιξη στα προϊόντα ${ BRAND_NAME }, μπορείτε να εγγραφείτε στα διάφορα email μας και ${ blogLink } κατά διαστήματα."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, προσθέστε και επαληθεύστε τον τομέα ηλεκτρονικού ταχυδρομείου στο ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στο ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τον λογαριασμό του στην ενότητα ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, ενεργοποιήστε τη διεύθυνσή του στην περιοχή ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Για να μετεγκαταστήσει αυτόν τον χρήστη, πρέπει να αποδεχτεί την πρόσκλησή του για να γίνει μέλος του ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αρχειοθέτησή του από το ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Για να μετεγκαταστήσετε αυτόν τον χρήστη, καταργήστε την αναστολή του στον φάκελο ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Για να αποτραπεί η κατάχρηση ή η απάτη, ζητάμε μια ελάχιστη δωρεά ${ minimumDonation }. Αυτό στηρίζει το έργο της ${ protonFoundationLink } στην υπεράσπιση της ψηφιακής ιδιωτικότητας παγκοσμίως και βοηθά στην προστασία της επόμενης γενιάς."
@@ -13843,6 +13941,9 @@
       "Yearly": [
         "Ετησίως"
       ],
+      "You": [
+        "Εσείς"
+      ],
       "You already have a free account": [
         "Έχετε ήδη έναν δωρεάν λογαριασμό"
       ],
@@ -14192,6 +14293,9 @@
       ],
       "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
         "Τα αρχεία σας είναι κρυπτογραφημένα και αποθηκευμένα με ασφάλεια στο ${ DRIVE_APP_NAME }."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Τα αρχεία σας εισήχθησαν και κρυπτογραφήθηκαν με επιτυχία από το Google Drive στο ${ DRIVE_APP_NAME }."
       ],
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
@@ -24266,6 +24370,9 @@
       "Disabled": [
         "Απενεργοποιημένο"
       ],
+      "failed": [
+        "αποτυχημένα"
+      ],
       "finalizing": [
         "οριστικοποιείται"
       ],
@@ -25487,11 +25594,23 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "Ενεργοποιήθηκε"
+      ],
+      "Estimated size": [
+        "Εκτιμώμενο μέγεθος"
+      ],
+      "Migration status": [
+        "Κατάσταση μετεγκατάστασης"
+      ],
       "Size": [
         "Μέγεθος"
       ],
       "Status": [
         "Κατάσταση"
+      ],
+      "User": [
+        "Χρήστης"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25679,6 +25798,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } Φίλος εγγράφηκε",
         "${ friendsSubscribed } Φίλοι εγγεγράφηκαν"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "${ LUMO_APP_NAME } API"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
@@ -26079,6 +26201,9 @@
       ],
       "Configure Always-on VPN device profile": [
         "Ρύθμιση παραμέτρων Always-on VPN προφίλ συσκευής"
+      ],
+      "Configure migration": [
+        "Διαμόρφωση μετεγκατάστασης"
       ],
       "Configure your domain": [
         "Ρυθμίστε τον τομέα σας"
@@ -27290,6 +27415,9 @@
       "Select the way to send this notification": [
         "Επιλέξτε πώς θα σταλεί αυτή η ειδοποίηση"
       ],
+      "Select users to migrate": [
+        "Επιλογή χρηστών για μετεγκατάσταση"
+      ],
       "Select when you want this notification to be sent": [
         "Επιλέξτε πότε θέλετε να σταλεί αυτή η ειδοποίηση"
       ],
@@ -27726,6 +27854,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
       ],
+      "What are you migrating?": [
+        "Τι μετεγκαταστάτε;"
+      ],
       "What changes if you switch to the Free plan": [
         "Τι αλλάζει αν μεταβείτε στο Free πλάνο"
       ],
@@ -27791,6 +27922,9 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Your import is finished!": [
+        "Η εισαγωγή σας ολοκληρώθηκε!"
       ],
       "Your plan": [
         "Το πακέτο σας"
@@ -28007,6 +28141,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Προσαρμόστε την εισαγωγή για μείωση του αριθμού των ετικετών"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Κατάσταση μετεγκατάστασης δεδομένων από το ${ providerName } στο ${ BRAND_NAME }"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Εξαλείψτε οριστικά τα μηνύματα στα Διαγραμμένα και τα Ενοχλητικά μετά από 30 ημέρες. Η ενεργοποίηση της αυτόματης διαγραφής, εφαρμόζει στα διαγραμμένα/ενοχλητικά μηνύματα ημερομηνία αυτόματης εξάλειψης βάσει της ημερομηνίας μετακίνησής τους εκεί."
@@ -28229,6 +28366,9 @@
       ],
       "User's approximate location (based on their IP address)": [
         "Κατά προσέγγιση τοποθεσία του χρήστη (βάσει της διεύθυνσης IP του)"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Χρήστες που έχουν κάνει πρόσβαση στον λογαριασμό τους ${ BRAND_NAME }"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Οι χρήστες θα βλέπουν το λογότυπό σας αντί για το εικονίδιο του ${ BRAND_NAME } όταν είναι συνδεδεμένοι στις εφαρμογές ιστού μας."

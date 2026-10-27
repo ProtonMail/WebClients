@@ -368,6 +368,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
+      "About ${ name }": [
+        "Über ${ name }"
+      ],
       "Accept": [
         "Annehmen"
       ],
@@ -406,6 +409,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "${ BRAND_NAME }-E-Mail-Adresse hinzufügen"
+      ],
+      "Add ${ name }": [
+        "${ name } hinzufügen"
       ],
       "Add a payment method": [
         "Zahlungsmethode hinzufügen"
@@ -1483,6 +1489,9 @@
       ],
       "Maybe later": [
         "Vielleicht später"
+      ],
+      "Migrate": [
+        "Übertragen"
       ],
       "More": [
         "Mehr"
@@ -7262,6 +7271,9 @@
       "Address is already added to your account": [
         "E-Mail-Adresse wurde bereits zu deinem Konto hinzugefügt"
       ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Die E-Mail-Adresse wird bereits von einem Nutzer außerhalb Ihrer Organisation verwendet. Bitte wende dich an den Kundensupport, um dieses Problem zu beheben."
+      ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
       ],
@@ -7636,6 +7648,9 @@
       "Maximum ${ displayMaxValue } allowed": [
         "Maximal ${ displayMaxValue } erlaubt"
       ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Die E-Mail-Adresse des Mitglieds fehlt. Bitte wende dich an den Kundensupport, um das Problem zu beheben."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Mindestens ${ calendarsToFixCount } Kalender mit einem bestehenden ${ BRAND_NAME }-Kalender zusammenführen",
         "Mindestens ${ calendarsToFixCount } Kalender mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen"
@@ -7645,6 +7660,12 @@
       ],
       "Missing key packet": [
         "Fehlendes Schlüsselpaket"
+      ],
+      "Missing organization private key": [
+        "Privater Schlüssel der Organisation fehlt"
+      ],
+      "Missing organization public key": [
+        "Öffentlicher Schlüssel der Organisation fehlt"
       ],
       "Missing signature": [
         "Fehlende Signatur"
@@ -7724,6 +7745,12 @@
       ],
       "Operation failed, try again later": [
         "Vorgang fehlgeschlagen, versuche es später erneut"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisation verfügt nicht über genügend freie Lizenzen"
+      ],
+      "Organization does not have enough storage available": [
+        "Der Organisation steht nicht genügend Speicherplatz zur Verfügung"
       ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
@@ -9155,6 +9182,29 @@
         "Terabyte"
       ]
     },
+    "Filter": {
+      "Activated": [
+        "Aktiviert"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fehler"
+      ],
+      "In progress": [
+        "In Bearbeitung"
+      ],
+      "Migrated": [
+        "Übertragen"
+      ],
+      "Not activated": [
+        "Nicht aktiviert"
+      ],
+      "Pending": [
+        "Ausstehend"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Archiv"
@@ -10106,6 +10156,9 @@
       "Failed": [
         "Fehlgeschlagen"
       ],
+      "Has errors": [
+        "Enthält Fehler"
+      ],
       "Import completed successfully": [
         "Import erfolgreich abgeschlossen"
       ],
@@ -10123,6 +10176,9 @@
       ],
       "Paused": [
         "Angehalten"
+      ],
+      "Pending": [
+        "Ausstehend"
       ],
       "Queued": [
         "In Warteschlange"
@@ -11694,6 +11750,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter wirken auf alle E-Mails, sowohl auf eingehende als auch auf gesendete Nachrichten. Jeder Filter muss mindestens einen Namen, eine Bedingung und eine Aktion enthalten."
       ],
+      "Find out what can be migrated.": [
+        "Erfahre, was übertragen werden kann."
+      ],
       "for ${ price }": [
         "für ${ price }"
       ],
@@ -12360,6 +12419,9 @@
       "No single sign-on": [
         "Kein Single Sign-on"
       ],
+      "No users to display": [
+        "Keine Benutzer vorhanden"
+      ],
       "Not a valid URL": [
         "Ungültige URL"
       ],
@@ -12808,6 +12870,9 @@
       "Select a group to view its members and settings.": [
         "Eine Gruppe auswählen, um deren Mitglieder und Einstellungen anzuzeigen."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Wähle genau aus, was übertragen werden soll. Diese Auswahl gilt für alle Benutzer der Organisation."
+      ],
       "Select one or multiple user affiliations": [
         "Wähle eine oder mehrere Benutzerzugehörigkeiten"
       ],
@@ -13250,6 +13315,12 @@
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "Der Abmeldelink ist abgelaufen. Bitte öffne eine aktuellere E-Mail von dieser Verteilerliste."
       ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Dieser Benutzer konnte nicht übertragen werden, da seine E-Mail-Adresse bei ${ BRAND_NAME } nicht verfügbar ist."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Dieser Benutzer konnte aufgrund von Plattforminkompatibilitäten nicht übertragen werden."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zurzeit für Zahlungen für deine Organisation zuständig. Wenn du den Benutzer zurückstufst, wirst du für die Zahlungen deiner Organisation zuständig."
       ],
@@ -13390,6 +13461,27 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Um über die neuesten Entwicklungen bei ${ BRAND_NAME }-Produkten auf dem Laufenden zu bleiben, kannst du unsere verschiedenen Newsletter abonnieren und von Zeit zu Zeit unseren ${ blogLink }."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Um diesen Benutzer zu übertragen, füge die E-Mail-Domain unter ${ domainNamesLink } hinzu und überprüfe sie."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übertragen, aktiviere dessen Konto in deiner ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu übertragen, aktiviere dessen Konto unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Um diesen Benutzer zu übertragen, aktiviere dessen E-Mail-Adresse unter ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Um diesen Menutzer zu übertragen, muss dieser die Einladung zum Beitritt zu ${ BRAND_NAME } annehmen."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übertragen, entpacke ihn in deiner ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Um diesen Benutzer zu übertragen, hebe die Sperre in deiner ${ provider.adminConsoleName } auf."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Um Missbrauch oder Betrug zu verhindern, bitten wir um eine Mindestspende von ${ minimumDonation }. Dies unterstützt die Arbeit der ${ protonFoundationLink } zur Verteidigung der digitalen Privatsphäre weltweit und hilft, die nächste Generation zu schützen."
@@ -13799,6 +13891,9 @@
       "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Wenn die Anmeldung eingeschränkt ist, können nur ${ primaryEmailElement } und dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn jemand sie kennt."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, kann nur deine E-Mail-Adresse ${ primaryEmailElement } zur Anmeldung verwendet werden. Deine weiteren E-Mail-Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn jemand sie kennen sollte."
+      ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Wenn die Anmeldung eingeschränkt ist, kann nur dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto in Verbindung gebracht werden, selbst wenn jemand sie kennt."
       ],
@@ -13870,6 +13965,9 @@
       ],
       "Yearly": [
         "Jährlich"
+      ],
+      "You": [
+        "Du"
       ],
       "You already have a free account": [
         "Du verfügst bereits über ein kostenloses Konto."
@@ -14220,6 +14318,9 @@
       ],
       "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
         "Deine Dateien sind verschlüsselt und werden sicher in ${ DRIVE_APP_NAME } gespeichert."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Deine Dateien wurden erfolgreich von Google Drive in ${ DRIVE_APP_NAME } importiert und verschlüsselt."
       ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
@@ -16269,6 +16370,9 @@
       ],
       "Reserved email address": [
         "Reservierte E-Mail-Adresse"
+      ],
+      "Restrict sign-in to email address": [
+        "Anmeldung auf E-Mail-Adresse beschränken"
       ],
       "Restrict sign-in to primary email address": [
         "Anmeldung auf die Haupt-E-Mail-Adresse beschränken"
@@ -25560,11 +25664,23 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "Aktiviert"
+      ],
+      "Estimated size": [
+        "Geschätzte Größe"
+      ],
+      "Migration status": [
+        "Übertragungsstatus"
+      ],
       "Size": [
         "Größe"
       ],
       "Status": [
         "Status"
+      ],
+      "User": [
+        "Benutzer"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -26155,6 +26271,9 @@
       ],
       "Configure Always-on VPN device profile": [
         "Always-on-VPN Geräteprofil konfigurieren"
+      ],
+      "Configure migration": [
+        "Übernahme konfigurieren"
       ],
       "Configure your domain": [
         "Deine Domain konfigurieren"
@@ -27366,6 +27485,9 @@
       "Select the way to send this notification": [
         "Auswählen, wie diese Benachrichtigung gesendet werden soll"
       ],
+      "Select users to migrate": [
+        "Benutzer für die Übernahme auswählen"
+      ],
       "Select when you want this notification to be sent": [
         "Auswählen, wann diese Benachrichtigung gesendet werden soll"
       ],
@@ -27802,6 +27924,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Willkommen bei ${ BRAND_NAME } for Business"
       ],
+      "What are you migrating?": [
+        "Was möchtest du übertragen?"
+      ],
       "What changes if you switch to the Free plan": [
         "Was sich ändert, wenn du zum kostenlosen Abonnement wechselst"
       ],
@@ -27870,6 +27995,9 @@
       ],
       "Your exposed information": [
         "Deine exponierten Informationen"
+      ],
+      "Your import is finished!": [
+        "Dein Import ist abgeschlossen."
       ],
       "Your plan": [
         "Dein Abonnement"
@@ -28086,6 +28214,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "Import anpassen, um die Anzahl der Kategorien zu reduzieren"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status der Datenübertragung von ${ providerName } zu ${ BRAND_NAME }"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Nachrichten im Papierkorb und Spam- Nachrichten nach 30 Tagen löschen. Durch Aktivieren des automatischen Löschens wird für Nachrichten, die sich bereits im Papierkorb/Spam befinden, ein Löschdatum festgelegt, das sich nach dem Datum richtet, an dem sie dorthin verschoben wurden."
@@ -28309,6 +28440,9 @@
       "User's approximate location (based on their IP address)": [
         "Ungefährer Standort des Nutzers (basierend auf dessen IP-Adresse)"
       ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Benutzer, die auf deren ${ BRAND_NAME }-Konto zugegriffen haben"
+      ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
         "Die Benutzer sehen dein Logo anstelle des ${ BRAND_NAME }-Symbols, wenn sie sich bei unseren Webanwendungen anmelden."
       ],
@@ -28341,6 +28475,9 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Wenn du eine E-Mail in den Spam-Ordner verschiebst, wirst du automatisch von den Verteilerlisten des Absenders abgemeldet."
+      ],
+      "Your ${ DRIVE_APP_NAME } storage is almost full": [
+        "Dein Speicherplatz unter ${ DRIVE_APP_NAME } ist fast aufgebraucht"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Dein ${ MAIL_APP_NAME }-Posteingang ist fast voll."

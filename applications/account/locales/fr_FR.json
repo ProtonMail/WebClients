@@ -200,6 +200,9 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "À propos de ${ name }"
+      ],
       "Accept": [
         "Accepter"
       ],
@@ -238,6 +241,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Ajouter l'adresse ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Ajouter ${ name }"
       ],
       "Add a payment method": [
         "Ajouter une méthode de paiement"
@@ -13257,6 +13263,9 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Quand les notifications sont activées, nous envoyons une alerte à votre adresse de récupération si vous recevez de nouveaux messages sur votre compte ${ MAIL_APP_NAME }."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Lorsque la connexion est restreinte, seule votre adresse e-mail ${ primaryEmailElement } peut être utilisée pour vous connecter. Vos autres adresses ne peuvent pas être associées à votre compte, même si quelqu'un les connaît."
+      ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez votre abonnement, ce dernier ne sera pas renouvelé. Toutefois, vous pourrez toujours profiter des avantages jusqu'à la fin de la période. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
       ],
@@ -13657,6 +13666,9 @@
       ],
       "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
         "Vos fichiers sont chiffrés et stockés en toute sécurité dans ${ DRIVE_APP_NAME }."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vos fichiers ont été importés et chiffrés avec succès depuis Google Drive vers ${ DRIVE_APP_NAME }."
       ],
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
@@ -15686,6 +15698,9 @@
       ],
       "Reserved email address": [
         "Adresse e-mail réservée"
+      ],
+      "Restrict sign-in to email address": [
+        "Restreindre la connexion à l'adresse e-mail"
       ],
       "Reveal password": [
         "Afficher le mot de passe"
@@ -27015,6 +27030,9 @@
       "Your exposed information": [
         "Vos informations exposées"
       ],
+      "Your import is finished!": [
+        "L'importation est terminée !"
+      ],
       "Your plan": [
         "Votre abonnement"
       ],
@@ -27479,6 +27497,9 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Lorsque vous marquez un message comme indésirable, vous serez automatiquement désabonné des listes de diffusion de l'expéditeur."
+      ],
+      "Your ${ DRIVE_APP_NAME } storage is almost full": [
+        "Votre ${ DRIVE_APP_NAME } est presque pleine."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Votre boite de réception ${ MAIL_APP_NAME } est presque pleine."
