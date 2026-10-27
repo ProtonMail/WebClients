@@ -1,9 +1,8 @@
 import type { PropsWithChildren, ReactNode } from 'react'
 import { useState } from 'react'
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
-import type { CommentInterface } from '@proton/docs-shared/CommentInterface'
-import type { CommentThreadInterface } from '@proton/docs-shared/CommentThreadInterface'
-import { CommentThreadState } from '@proton/docs-shared/CommentThreadState'
+import type { DocsComment, DocsCommentThread } from '../../contract/DocsCommentThread'
+import { CommentThreadStates } from '../../contract/DocsCommentThread'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { useCommentsContext } from './CommentsContext'
 import { DeleteCommentDialog, type DeleteCommentDialogOptions } from './DeleteCommentDialog'
@@ -97,13 +96,13 @@ function renderComment({
     modifyTime: time,
     isPlaceholder: false,
     verificationResult: { verified, verificationAvailable: true },
-  } as unknown as CommentInterface
+  } as unknown as DocsComment
   const thread = {
     id: 'thread-id',
     markID: 'mark-id',
-    state: CommentThreadState.Active,
+    state: CommentThreadStates.Active,
     isPlaceholder: false,
-  } as unknown as CommentThreadInterface
+  } as unknown as DocsCommentThread
 
   render(
     <CommentsPanelListComment
