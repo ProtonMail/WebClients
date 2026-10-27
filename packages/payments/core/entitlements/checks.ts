@@ -85,6 +85,12 @@ export const entitlementChecksForSelection = {
      */
     hasGroupMail: (r) => r.hasEntitlement(EntitlementName.Groups) && r.hasEntitlement(EntitlementName.FlagsInbox),
 
+    /**
+     * Temporary: no entitlement names this capability yet. Replace with `org-mailbox-migration` once P2-2865 adds it.
+     */
+    hasOrgMailboxMigration: (r) =>
+        r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsInbox] }),
+
     hasAllCoreProductsB2C: (r) =>
         r.hasMatchingSubscription({
             includes: [
