@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
-import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { useBookmarks } from '../../store/_bookmarks/useBookmarks';
 import { usePublicSessionUser } from '../../store/_user/usePublicSessionUser';
@@ -11,17 +10,14 @@ export interface Props {
     token: string;
     urlPassword: string;
     customPassword?: string;
-    // Passed on the Drive SDK path, where usePublicSessionUser has no user. Temporary until bookmarks are migrated to the SDK.
-    user?: UserModel;
 }
 
-export const useDocsBookmarks = ({ token, urlPassword, customPassword, user: userParam }: Props) => {
+export const useDocsBookmarks = ({ token, urlPassword, customPassword }: Props) => {
     const { listBookmarks, addBookmark } = useBookmarks();
     const [bookmarksTokens, setBookmarksTokens] = useState<Set<string>>(new Set());
     const [isLoading, withLoading] = useLoading(false);
 
-    const { user: sessionUser, UID } = usePublicSessionUser();
-    const user = userParam ?? sessionUser;
+    const { user, UID } = usePublicSessionUser();
 
     useEffect(() => {
         if (!user || !UID) {

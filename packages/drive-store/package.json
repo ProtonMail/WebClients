@@ -16,8 +16,7 @@
         "./store/_user/usePublicSessionUser": "./store/_user/usePublicSessionUser.ts",
         "./store/_views/useTrashView": "./store/_views/useTrashView.ts",
         "./store/_volumes/interface": "./store/_volumes/interface.ts",
-        "./utils/metrics/userSuccessMetrics": "./utils/metrics/userSuccessMetrics.ts",
-        "./utils/publicRedirectSpotlight": "./utils/publicRedirectSpotlight.ts"
+        "./utils/metrics/userSuccessMetrics": "./utils/metrics/userSuccessMetrics.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
