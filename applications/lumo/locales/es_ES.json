@@ -390,6 +390,9 @@
       "Take a tour": [
         "Explora ahora"
       ],
+      "Top up": [
+        "Recargar"
+      ],
       "Try again": [
         "Inténtalo de nuevo"
       ],
@@ -1291,9 +1294,6 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Añade tus propios recuerdos, edita cualquier entrada generada automáticamente o borra todo en cualquier momento. Los recuerdos generados que edites se convierten en propios."
       ],
-      "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
-        "Las claves de API permiten acceder a ${ LUMO_SHORT_APP_NAME } de forma programática. Cada clave solo se muestra una vez al crearla."
-      ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Crea una clave para integrar ${ LUMO_SHORT_APP_NAME } con tus scripts y herramientas."
       ],
@@ -1651,21 +1651,9 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
       ],
-      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
-        "${ LUMO_SHORT_APP_NAME }+: el acceso y las claves de la API se incluyen con una suscripción a ${ LUMO_SHORT_APP_NAME }+ (inicia sesión para mejorar el plan o gestionar las claves)"
-      ],
-      "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
-        "${ LUMO_SHORT_APP_NAME }+ — la API de ${ LUMO_SHORT_APP_NAME } y las claves de API requieren una suscripción activa a ${ LUMO_SHORT_APP_NAME }+. "
-      ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "${ urgentTotal } chat expirará en menos de 24 horas",
         "${ urgentTotal } chats expirarán en menos de 24 horas"
-      ],
-      ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
-        ". Sigue el esquema de la API de OpenAI — integra tu cliente actual con un cambio de una sola línea."
-      ],
-      "A ${ LUMO_SHORT_APP_NAME } account": [
-        "Una cuenta de ${ LUMO_SHORT_APP_NAME }"
       ],
       "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
         "Un flujo de trabajo que carga una carpeta de archivos PDF, extrae texto, le pide a ${ LUMO_SHORT_APP_NAME } que resuma cada archivo y escribe un resumen en Markdown por documento."
@@ -1693,12 +1681,6 @@
       ],
       "All files in this chat": [
         "Todos los archivos de este chat"
-      ],
-      "An API key — generate one in ": [
-        "Una clave de API — genera una en "
-      ],
-      "An HTTP client or official SDK (Python, TypeScript, Rust)": [
-        "Un cliente HTTP o SDK oficial (Python, TypeScript, Rust)"
       ],
       "API calls": [
         "Llamadas a la API"
@@ -1748,9 +1730,6 @@
       "Conversation": [
         "Conversación"
       ],
-      "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
-        "Crea y revoca claves de API para el acceso programático. Las claves se muestran solo una vez al crearlas."
-      ],
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Describe un flujo de trabajo con un lenguaje sencillo y obtén un gráfico además de código ejecutable. Inicia sesión para usar esta función."
       ],
@@ -1798,9 +1777,6 @@
       ],
       "Files automatically retrieved based on your questions.": [
         "Archivos recuperados automáticamente según tus preguntas."
-      ],
-      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
-        "Para cada día, promedio de tokens por llamada a la API (tokens ÷ llamadas, o 0 si no hay llamadas)."
       ],
       "Free accounts keep chat history for 7 days from when a chat was created.": [
         "Las cuentas gratuitas conservan el historial de chat durante 7 días desde su creación."
@@ -1867,9 +1843,6 @@
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Nunca incrustes claves de API en paquetes del lado del cliente. Usa variables de entorno y un proxy del lado del servidor en producción."
-      ],
-      "No calls": [
-        "Sin llamadas"
       ],
       "No content available.": [
         "No hay contenido disponible."
@@ -1979,17 +1952,8 @@
       "Table view": [
         "Vista de tabla"
       ],
-      "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
-        "La API de ${ LUMO_SHORT_APP_NAME } y las claves de API están incluidas con ${ LUMO_SHORT_APP_NAME }+. Pídele al administrador de tu organización que asigne una licencia de ${ LUMO_SHORT_APP_NAME } a tu cuenta."
-      ],
       "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
         "La API de ${ LUMO_SHORT_APP_NAME } te ofrece acceso programático a modelos de lenguaje con la arquitectura de privacidad de ${ BRAND_NAME } integrada. Sin entrenamiento de datos con tus solicitudes. Sin rastreo."
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
-        "La API de ${ LUMO_SHORT_APP_NAME } es una interfaz RESTful en "
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
-        "La API de ${ LUMO_SHORT_APP_NAME } está disponible para suscriptores de ${ LUMO_SHORT_APP_NAME }+. Mejora tu plan para crear claves de API y usar la API de forma programática."
       ],
       "There was an error processing this file.": [
         "Se produjo un error al procesar este archivo."
@@ -2060,6 +2024,9 @@
       "You've reached your image limit for this period.": [
         "Has alcanzado tu límite de imágenes para este periodo."
       ],
+      "You've reached your image limit for this period. Upgrade to keep creating images.": [
+        "Has llegado al límite de imágenes de este periodo. Mejora tu plan para seguir creando imágenes."
+      ],
       "Your memories are already up to date.": [
         "Tus recuerdos ya están actualizados."
       ]
@@ -2112,12 +2079,6 @@
       ],
       "API calls": [
         "Llamadas a la API"
-      ],
-      "API calls (30d)": [
-        "Llamadas a la API (30 d)"
-      ],
-      "Avg tokens / call": [
-        "Promedio de tokens por llamada"
       ],
       "Basic": [
         "Básico"
@@ -2218,12 +2179,6 @@
       "Thinking mode": [
         "Modo pensamiento"
       ],
-      "Tokens (30d)": [
-        "Tokens (30 d)"
-      ],
-      "Tokens generated": [
-        "Tokens generados"
-      ],
       "Tool calls": [
         "Llamadas a herramientas"
       ],
@@ -2283,9 +2238,6 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "contrata ${ LUMO_SHORT_APP_NAME } Plus."
-      ],
-      "View plans": [
-        "Ver planes"
       ]
     },
     "collider_2025: Nav": {
@@ -2294,9 +2246,6 @@
       ],
       "Endpoints": [
         "Puntos de conexión"
-      ],
-      "Models": [
-        "Modelos"
       ],
       "Overview": [
         "Información general"
@@ -2464,12 +2413,6 @@
       ]
     },
     "collider_2025: Tab": {
-      "API": [
-        "API"
-      ],
-      "Manage keys": [
-        "Administrar claves"
-      ],
       "Workflow Builder": [
         "Creador de flujos de trabajo"
       ]
@@ -2506,9 +2449,6 @@
       ],
       "Animated background": [
         "Fondo animado"
-      ],
-      "API calls per day": [
-        "Llamadas a la API por día"
       ],
       "API docs sections": [
         "Secciones de la documentación de la API"
@@ -2561,9 +2501,6 @@
       "Invalid Link": [
         "Enlace no válido"
       ],
-      "Manage keys": [
-        "Administrar claves"
-      ],
       "Models": [
         "Modelos"
       ],
@@ -2584,9 +2521,6 @@
       ],
       "Personalizes general chats": [
         "Personaliza los chats generales"
-      ],
-      "Prerequisites": [
-        "Requisitos previos"
       ],
       "Privacy included by default.": [
         "Privacidad incluida por defecto."
@@ -2612,9 +2546,6 @@
       "Theme": [
         "Tema"
       ],
-      "Tokens per call (daily)": [
-        "Tokens por llamada (diario)"
-      ],
       "Tokens per day": [
         "Tokens por día"
       ],
@@ -2623,9 +2554,6 @@
       ],
       "Upload files": [
         "Cargar archivos"
-      ],
-      "Usage (all keys, last 30 days)": [
-        "Uso (todas las claves, últimos 30 días)"
       ],
       "Visionary": [
         "Visionary"
@@ -2762,9 +2690,6 @@
       ],
       "tokens": [
         "tokens"
-      ],
-      "tokens/call": [
-        "tokens/llamada"
       ]
     },
     "collider_2025: UploadAction": {
@@ -5969,6 +5894,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
       ],
+      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
+        "Recarga tu cuenta con créditos que puedes utilizar para suscribirte a un plan nuevo o renovar el actual. Obtienes un crédito por cada ${ i18nCurrency } gastado."
+      ],
       "Total conversations:": [
         "Total de conversaciones:"
       ],
@@ -6098,6 +6026,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Tu próxima fecha de facturación es el ${ renewalTime }. Puedes cancelar en cualquier momento. Ponte en contacto con el servicio de asistencia si necesitas cambiar de plan de inmediato."
       ],
+      "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
+        "Los detalles de pago están protegidos con cifrado TLS y por las leyes de privacidad suizas."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono se utilizará solo para esta verificación única."
       ],
@@ -6158,6 +6089,9 @@
       ],
       "Address": [
         "Dirección"
+      ],
+      "Amount": [
+        "Cantidad"
       ],
       "Anderson": [
         "García"
@@ -6308,6 +6242,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "Other amount": [
+        "Otra cantidad"
       ],
       "Password": [
         "Contraseña"
@@ -6830,6 +6767,44 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_MEET_SEATS } licencias de ${ MEET_SHORT_APP_NAME } durante el período de prueba."
+      ]
+    },
+    "Monetary unit": {
+      "Australian dollar": [
+        "Dólar australiano"
+      ],
+      "Brazilian real": [
+        "Real brasileño"
+      ],
+      "British pound": [
+        "Libra esterlina"
+      ],
+      "Canadian dollar": [
+        "Dólar canadiense"
+      ],
+      "Euro": [
+        "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dólar de Hong Kong"
+      ],
+      "Japanese yen": [
+        "Yen japonés"
+      ],
+      "Polish złoty": [
+        "Złoty polaco"
+      ],
+      "Singapore dollar": [
+        "Dólar de Singapur"
+      ],
+      "South Korean won": [
+        "Won surcoreano"
+      ],
+      "Swiss franc": [
+        "Franco suizo"
+      ],
+      "US Dollar": [
+        "Dólar estadounidense "
       ]
     },
     "New Label form": {
@@ -7857,6 +7832,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
+      "Processing payment": [
+        "Procesando el pago"
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Precio de renovación sujeta a cambios de acuerdo a ${ termsAndConditionsLink }"
       ],
@@ -7898,6 +7876,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "La oferta especial por ${ priceWithDiscount } es válida durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puedes cancelarla en cualquier momento."
       ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Se ha detectado la transacción. Los créditos se añadirán a la cuenta una vez que se confirme la transacción por completo."
+      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puedes cancelar en cualquier momento.",
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puedes cancelar en cualquier momento."
@@ -7925,6 +7906,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Ya tienes una suscripción a este plan. Puedes cambiar tu suscripción en ${ subscriptionPlatform }."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Se te cobrará ${ amountToCharge } a tu método de pago seleccionado."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
@@ -8087,6 +8071,9 @@
       ],
       "Organization name": [
         "Nombre de la organización"
+      ],
+      "Other": [
+        "Otro"
       ],
       "Password": [
         "Contraseña"
@@ -8604,6 +8591,9 @@
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
+      "Credits added": [
+        "Créditos añadidos"
+      ],
       "Email address copied to clipboard": [
         "Dirección de correo electrónico copiada al portapapeles"
       ],
@@ -8721,6 +8711,9 @@
       "Add credit/debit card": [
         "Añadir tarjeta de crédito/débito"
       ],
+      "Add credits": [
+        "Añadir créditos"
+      ],
       "Add user": [
         "Añadir un usuario"
       ],
@@ -8738,6 +8731,9 @@
       ],
       "Billing cycle": [
         "Ciclo de facturación"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar la subscripción a ${ MAIL_SHORT_APP_NAME }"

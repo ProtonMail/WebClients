@@ -163,6 +163,9 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "À propos de ${ name }"
+      ],
       "activate": [
         "activer"
       ],
@@ -183,6 +186,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Ajouter l'adresse ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Ajouter ${ name }"
       ],
       "Add a payment method": [
         "Ajouter une méthode de paiement"
@@ -9383,6 +9389,9 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quand vous activez SAML pour ${ appName } dans votre fournisseur d'identité, vous pouvez être invité à utiliser l'URL de rappel (ACS) et l'ID de l'émetteur. Il vous suffit de copier-coller les données ci-dessous dans les champs de votre fournisseur d'identité."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Lorsque la connexion est restreinte, seule votre adresse e-mail ${ primaryEmailElement } peut être utilisée pour vous connecter. Vos autres adresses ne peuvent pas être associées à votre compte, même si quelqu'un les connaît."
+      ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez votre abonnement, ce dernier ne sera pas renouvelé. Toutefois, vous pourrez toujours profiter des avantages jusqu'à la fin de la période. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
       ],
@@ -10723,6 +10732,9 @@
       ],
       "Require 2FA for everyone": [
         "Exiger l'A2F pour tout le monde"
+      ],
+      "Restrict sign-in to email address": [
+        "Restreindre la connexion à l'adresse e-mail"
       ],
       "Reveal password": [
         "Afficher le mot de passe"

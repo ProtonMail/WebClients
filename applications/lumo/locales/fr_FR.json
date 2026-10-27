@@ -8,11 +8,17 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "À propos de ${ name }"
+      ],
       "Add": [
         "Ajouter"
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Ajouter ${ name }"
       ],
       "Add account": [
         "Ajouter un compte"
@@ -396,6 +402,9 @@
       ],
       "Take a tour": [
         "Laissez-vous guider"
+      ],
+      "Top up": [
+        "Recharger"
       ],
       "Try again": [
         "Réessayer"
@@ -992,6 +1001,9 @@
       "Add to active": [
         "Ajouter aux éléments actifs"
       ],
+      "Add user": [
+        "Ajouter un utilisateur"
+      ],
       "Already in KB": [
         "Déjà dans la base de connaissances"
       ],
@@ -1055,6 +1067,9 @@
       "Edit memory": [
         "Modifier la mémoire"
       ],
+      "Export CSV": [
+        "Exporter en CSV"
+      ],
       "Generate from chats": [
         "Générer depuis les chats"
       ],
@@ -1072,6 +1087,12 @@
       ],
       "Light": [
         "Clair"
+      ],
+      "Manage": [
+        "Gérer"
+      ],
+      "Manage API keys": [
+        "Gérer les clés API"
       ],
       "Manage connectors": [
         "Gérer les connecteurs"
@@ -1108,6 +1129,9 @@
       ],
       "Save": [
         "Enregistrer"
+      ],
+      "Save settings": [
+        "Enregistrer les paramètres"
       ],
       "Select all": [
         "Tout sélectionner"
@@ -1380,6 +1404,14 @@
         "Hier"
       ]
     },
+    "collider_2025: Date range": {
+      "Last 7 days": [
+        "Les 7 derniers jours"
+      ],
+      "Last 90 days": [
+        "Les 90 derniers jours"
+      ]
+    },
     "collider_2025: Description": {
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } se base sur vos souvenirs enregistrés pour personnaliser ses réponses : style de communication, expertise, outils fréquemment utilisés et projets à long terme."
@@ -1395,9 +1427,6 @@
       ],
       "Adjust the size of text across the app": [
         "Régler la taille du texte dans l'ensemble de l'application"
-      ],
-      "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
-        "Les clés API vous permettent d'accéder à ${ LUMO_SHORT_APP_NAME } par programmation. Chaque clé n'est affichée qu'une seule fois lors de sa création."
       ],
       "Configure app preferences, keyboard shortcuts, and updates in the desktop settings window.": [
         "Configurez les préférences d'application, les raccourcis clavier et les mises à jour dans les paramètres de l'application de bureau."
@@ -1803,21 +1832,9 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
       ],
-      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
-        "${ LUMO_SHORT_APP_NAME }+ , L’accès à l’API et les clés sont inclus dans un abonnement ${ LUMO_SHORT_APP_NAME }+ (connectez-vous pour changer d'abonnement ou gérer les clés)"
-      ],
-      "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
-        "${ LUMO_SHORT_APP_NAME }+ , l'API ${ LUMO_SHORT_APP_NAME } et les clés API nécessitent un abonnement actif à ${ LUMO_SHORT_APP_NAME }+ "
-      ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "${ urgentTotal } conversation expirera dans 24 heures",
         "${ urgentTotal } conversations expireront dans 24 heures"
-      ],
-      ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
-        ". Il respecte le schéma de l'API OpenAI : il suffit d'y intégrer votre client existant en modifiant une seule ligne."
-      ],
-      "A ${ LUMO_SHORT_APP_NAME } account": [
-        "Un compte ${ LUMO_SHORT_APP_NAME }"
       ],
       "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
         "Un workflow qui importe un dossier de PDFs, extrait le texte, demande à ${ LUMO_SHORT_APP_NAME } de résumer chaque fichier, et écrit un résumé Markdown par document."
@@ -1845,12 +1862,6 @@
       ],
       "All files in this chat": [
         "Tous les fichiers contenus dans cette discussion"
-      ],
-      "An API key — generate one in ": [
-        "Une clé d'API, générez-en une dans "
-      ],
-      "An HTTP client or official SDK (Python, TypeScript, Rust)": [
-        "Un client HTTP ou un SDK officiel (Python, TypeScript, Rust)"
       ],
       "API calls": [
         "Appels d'API"
@@ -1899,9 +1910,6 @@
       ],
       "Conversation": [
         "Conversation"
-      ],
-      "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
-        "Créez et révoquez des clés API pour un accès par programme. Les clés ne sont affichées qu'une seule fois lors de leur création."
       ],
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Décrivez un workflow en langage clair et obtenez un graphique plus un code exécutable. Connectez-vous pour utiliser cette fonctionnalité."
@@ -1966,9 +1974,6 @@
       "Files automatically retrieved based on your questions.": [
         "Les fichiers ont été automatiquement récupérés en fonction de vos questions."
       ],
-      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
-        "Pour chaque jour, jetons moyens par appel API (jetons ÷ appels, ou 0 si aucun appel)."
-      ],
       "For this chat": [
         "Pour cette discussion"
       ],
@@ -2014,6 +2019,9 @@
       "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
         "Traitez un message client, déterminez son niveau d'urgence et son sujet à l'aide de ${ LUMO_SHORT_APP_NAME }, décidez s'il doit être transmis à un niveau supérieur, puis rédigez une réponse ou transférez-le à un humain."
       ],
+      "Last 30 days": [
+        "Les 30 derniers jours"
+      ],
       "Load two versions of a policy, ask ${ LUMO_SHORT_APP_NAME } to list differences and risks, then produce a short recommendation for which version to adopt.": [
         "Chargez deux versions d'une politique, demandez à ${ LUMO_SHORT_APP_NAME } de lister les différences et les risques, puis produisez une courte recommandation sur la version à adopter."
       ],
@@ -2040,9 +2048,6 @@
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "N'intégrez jamais de clés API dans des paquets côté client. En production, utilisez des variables d'environnement et un proxy côté serveur."
-      ],
-      "No calls": [
-        "Aucun appel"
       ],
       "No connected connectors": [
         "Aucun connecteur connecté"
@@ -2185,17 +2190,8 @@
       "Telling us which language you speak helps dictation transcribe your voice accurately.": [
         "Nous indiquer quelle langue vous parlez nous aide à effectuer une transcription plus précise de votre voix."
       ],
-      "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
-        "L'API ${ LUMO_SHORT_APP_NAME } et les clés d'API sont incluses avec ${ LUMO_SHORT_APP_NAME }+. Demandez à votre administrateur d'organisation de vous attribuer un accès ${ LUMO_SHORT_APP_NAME } dans votre compte."
-      ],
       "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
         "L'API de ${ LUMO_SHORT_APP_NAME } vous offre un accès programmatique aux modèles linguistiques avec l'architecture de confidentialité de ${ BRAND_NAME } intégrée. Aucun apprentissage des données à partir de vos requêtes. Aucun suivi."
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
-        "L'API ${ LUMO_SHORT_APP_NAME } est une interface RESTful à "
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
-        "L'API de ${ LUMO_SHORT_APP_NAME } est disponible pour les abonnés ${ LUMO_SHORT_APP_NAME }+. Mettez à niveau pour créer des clés d'API et utiliser l'API par programme."
       ],
       "There was an error processing this file.": [
         "Une erreur s'est produite lors du traitement de ce fichier."
@@ -2349,11 +2345,8 @@
       "API calls": [
         "Appels API"
       ],
-      "API calls (30d)": [
-        "Appels d'API (30 j)"
-      ],
-      "Avg tokens / call": [
-        "Moyenne des jetons / appel"
+      "Base URL": [
+        "URL de base"
       ],
       "Basic": [
         "Basique"
@@ -2397,6 +2390,12 @@
       "From chats": [
         "Issu de chats"
       ],
+      "Input": [
+        "Entrée"
+      ],
+      "Limit": [
+        "Limite"
+      ],
       "Loop": [
         "Boucle"
       ],
@@ -2405,6 +2404,9 @@
       ],
       "Method": [
         "Méthode"
+      ],
+      "Model": [
+        "Modèle"
       ],
       "Model and response mode": [
         "Modèle et mode de réponse"
@@ -2442,6 +2444,9 @@
       "Rust": [
         "Rust"
       ],
+      "Search members": [
+        "Rechercher des membres"
+      ],
       "Status": [
         "État"
       ],
@@ -2454,11 +2459,8 @@
       "Thinking mode": [
         "Mode de réflexion"
       ],
-      "Tokens (30d)": [
-        "Jetons (30 j)"
-      ],
-      "Tokens generated": [
-        "Le jeton a été généré"
+      "Token type": [
+        "Type de jeton"
       ],
       "Tool calls": [
         "Appels d'outils"
@@ -2522,9 +2524,6 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "je passe à ${ LUMO_SHORT_APP_NAME } Plus."
-      ],
-      "View plans": [
-        "Voir les abonnements"
       ]
     },
     "collider_2025: Nav": {
@@ -2533,9 +2532,6 @@
       ],
       "Endpoints": [
         "Points de terminaison"
-      ],
-      "Models": [
-        "Modèles"
       ],
       "Overview": [
         "Vue d'ensemble"
@@ -2685,6 +2681,9 @@
       "Active": [
         "Actif"
       ],
+      "Blocked": [
+        "Bloqué"
+      ],
       "Copied!": [
         "Copié !"
       ],
@@ -2729,12 +2728,6 @@
       ]
     },
     "collider_2025: Tab": {
-      "API": [
-        "API"
-      ],
-      "Manage keys": [
-        "Gérer les clés"
-      ],
       "Workflow Builder": [
         "Constructeur de Workflow"
       ]
@@ -2775,8 +2768,8 @@
       "Animated background": [
         "Arrière-plan animé"
       ],
-      "API calls per day": [
-        "Appels d'API par jour"
+      "API access is not enabled": [
+        "L'accès à l'API n'est pas activé"
       ],
       "API docs sections": [
         "Sections de la documentation API"
@@ -2835,6 +2828,9 @@
       "Don't lose the thread": [
         "Ne perdez pas le fil"
       ],
+      "Generate an API key": [
+        "Générer une clé API"
+      ],
       "Generated code": [
         "Code généré"
       ],
@@ -2850,9 +2846,6 @@
       "Invalid Link": [
         "Le lien n'est pas valide."
       ],
-      "Manage keys": [
-        "Gérer les clés"
-      ],
       "Models": [
         "Modèles"
       ],
@@ -2861,6 +2854,9 @@
       ],
       "No API keys yet": [
         "Aucune clé API pour l'instant"
+      ],
+      "No API usage yet": [
+        "Aucune utilisation de l'API pour l'instant"
       ],
       "No memories yet": [
         "Aucun souvenir pour le moment"
@@ -2877,8 +2873,8 @@
       "Personalizes general chats": [
         "Personnalise les discussions générales"
       ],
-      "Prerequisites": [
-        "Prérequis"
+      "Pricing": [
+        "Tarifs"
       ],
       "Privacy included by default.": [
         "Respect de la vie privée par défaut."
@@ -2907,9 +2903,6 @@
       "Theme": [
         "Thème"
       ],
-      "Tokens per call (daily)": [
-        "Jetons par appel (quotidien)"
-      ],
       "Tokens per day": [
         "Jetons par jour"
       ],
@@ -2919,8 +2912,8 @@
       "Upload files": [
         "Importer des fichiers"
       ],
-      "Usage (all keys, last 30 days)": [
-        "Utilisation (toutes les clés, 30 derniers jours)"
+      "Usage": [
+        "Utilisation"
       ],
       "Visionary": [
         "Visionary"
@@ -2945,6 +2938,9 @@
       ],
       "You stay in control": [
         "Vous gardez le contrôle"
+      ],
+      "Your API keys": [
+        "Votre clé API"
       ],
       "Your new API key": [
         "Votre nouvelle clé API"
@@ -3063,9 +3059,6 @@
       ],
       "tokens": [
         "jetons"
-      ],
-      "tokens/call": [
-        "jetons/appel"
       ]
     },
     "collider_2025: UploadAction": {
@@ -3271,6 +3264,9 @@
       "Continue": [
         "Continuer"
       ],
+      "Continue to next question": [
+        "Passer à la question suivante"
+      ],
       "Copy link & caption": [
         "Copier le lien et la légende"
       ],
@@ -3318,6 +3314,9 @@
       ],
       "Discard changes": [
         "Abandonner les modifications"
+      ],
+      "Dismiss questions": [
+        "Fermer les questions"
       ],
       "Divider": [
         "Séparateur"
@@ -3430,6 +3429,9 @@
       "Next message": [
         "Message suivant"
       ],
+      "Next question": [
+        "Prochaine question"
+      ],
       "Numbered list": [
         "Liste numérotée"
       ],
@@ -3459,6 +3461,9 @@
       ],
       "Previous message": [
         "Message précédent"
+      ],
+      "Previous question": [
+        "Question précédente"
       ],
       "Quote": [
         "Citer"
@@ -3505,6 +3510,9 @@
       "Reveal my profile": [
         "Révéler mon profil"
       ],
+      "Run now": [
+        "Exécuter maintenant"
+      ],
       "Save": [
         "Enregistrer"
       ],
@@ -3532,6 +3540,9 @@
       "Show sidebar": [
         "Afficher la barre latérale"
       ],
+      "Skip": [
+        "Ignorer"
+      ],
       "Slides": [
         "Diapositives"
       ],
@@ -3546,6 +3557,9 @@
       ],
       "Strikethrough": [
         "Barré"
+      ],
+      "Submit": [
+        "Envoyer"
       ],
       "Task options": [
         "Options de la tâche"
@@ -3748,6 +3762,9 @@
       "Cannot link the root folder. Please select a subfolder.": [
         "Le dossier racine n'a pas pu être associé. Veuillez sélectionner un sous-dossier."
       ],
+      "Could not save this task. Reload the page and try again.": [
+        "Impossible d'enregistrer cette tâche. Actualisez la page et réessayez."
+      ],
       "Database connection lost. Please refresh the page to continue.": [
         "La connexion à la base de données a été perdue. Veuillez actualiser la page pour continuer."
       ],
@@ -3798,6 +3815,9 @@
       ],
       "Project not found": [
         "Projet non trouvé"
+      ],
+      "This scheduled task no longer exists. Reload the page and try again.": [
+        "Cette tâche planifiée n'existe plus. Actualisez la page et réessayez."
       ]
     },
     "collider_2025:Feature": {
@@ -4045,6 +4065,15 @@
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Découvrez ce que l'IA des géants du numérique sait sur vous. Réalisé avec ${ LUMO_SHORT_APP_NAME }."
       ],
+      "Select all that apply.": [
+        "Sélectionnez toutes celles qui s'appliquent."
+      ],
+      "Select one answer.": [
+        "Sélectionnez une réponse."
+      ],
+      "Skipped": [
+        "Ignoré"
+      ],
       "Some content, such as images and attachments, may not be included in the exported file.": [
         "Certains contenus, tels que les images et les pièces jointes, peuvent ne pas être inclus dans le fichier exporté."
       ],
@@ -4178,6 +4207,9 @@
       ]
     },
     "collider_2025:Label": {
+      "${ current } of ${ total }": [
+        "${ current } sur ${ total }"
+      ],
       "${ file.tokenCount } token": [
         "${ file.tokenCount } jeton",
         "${ file.tokenCount } jetons"
@@ -4438,6 +4470,9 @@
       "Scams": [
         "Arnaques"
       ],
+      "Scheduled": [
+        "Programmé"
+      ],
       "Selected:": [
         "Sélectionné :"
       ],
@@ -4470,6 +4505,9 @@
       ],
       "Today": [
         "Aujourd'hui"
+      ],
+      "Today, ${ time }": [
+        "Aujourd'hui, ${ time }"
       ],
       "TOML File": [
         "Fichier TOML"
@@ -4509,6 +4547,9 @@
       ],
       "YAML File": [
         "Fichier YAML"
+      ],
+      "Your answer": [
+        "Votre réponse"
       ]
     },
     "collider_2025:Notification": {
@@ -4593,6 +4634,9 @@
       ],
       "Sign in required": [
         "Connexion requise"
+      ],
+      "Something else…": [
+        "Autre chose…"
       ]
     },
     "collider_2025:Prefill": {
@@ -4734,6 +4778,12 @@
       ],
       "What should I know about emergency funds and where to keep them?": [
         "Que dois-je savoir sur les fonds d'urgence et où les conserver ?"
+      ]
+    },
+    "collider_2025:Question selection": {
+      "${ selectedCount } selected": [
+        "${ selectedCount } sélectionné",
+        "${ selectedCount } sélectionnés"
       ]
     },
     "collider_2025:Reasoning": {
@@ -5169,6 +5219,9 @@
       "Review privacy settings": [
         "Vérifier les paramètres de confidentialité"
       ],
+      "Scheduled": [
+        "Programmé"
+      ],
       "Scheduled tasks": [
         "Tâches planifiées"
       ],
@@ -5213,6 +5266,9 @@
       ],
       "What do you want to create today?": [
         "Que voulez-vous créer aujourd'hui ?"
+      ],
+      "What it does": [
+        "Ce que ça fait"
       ],
       "What this profile exposes": [
         "Ce que ce profil révèle"
@@ -7297,6 +7353,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
+      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
+        "Rechargez votre compte avec des crédits que vous pouvez utiliser pour vous abonner ou renouveler votre abonnement actuel. Vous obtenez un crédit pour chaque ${ i18nCurrency } dépensé."
+      ],
       "Total conversations:": [
         "Nombre total de conversations :"
       ],
@@ -7429,6 +7488,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Votre prochaine date de facturation est le ${ renewalTime }. Vous pouvez annuler à tout moment. Veuillez contacter le support si vous avez besoin d'un changement de plan immédiat."
       ],
+      "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
+        "Vos informations de paiement sont protégées par le chiffrement TLS et les lois suisses sur la protection de la vie privée."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
       ],
@@ -7492,6 +7554,9 @@
       ],
       "Address": [
         "Adresse"
+      ],
+      "Amount": [
+        "Montant"
       ],
       "Anderson": [
         "Durant"
@@ -7648,6 +7713,9 @@
       ],
       "Optional": [
         "Facultatif"
+      ],
+      "Other amount": [
+        "Autre montant"
       ],
       "Password": [
         "Mot de passe"
@@ -7832,6 +7900,15 @@
       "Acceleration": [
         "Accélération"
       ],
+      "Allow API access": [
+        "Autoriser l'accès à l'API"
+      ],
+      "Allowed": [
+        "Autorisé"
+      ],
+      "API usage": [
+        "Utilisation de l’API"
+      ],
       "Assets": [
         "Ressources"
       ],
@@ -7873,6 +7950,9 @@
       ],
       "Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.": [
         "Cela envoie une erreur de limite 422 simulée, qui sera affichée par le système de notification intégré à l'application."
+      ],
+      "Empty": [
+        "Vide"
       ],
       "Export all chats (JSON)": [
         "Exporter tous les chats (JSON)"
@@ -7955,8 +8035,14 @@
       "Open a conversation to enable generation error testing.": [
         "Ouvrez une conversation pour activer les tests de génération d'erreurs."
       ],
+      "Org admin": [
+        "Administrateur de l'organisation"
+      ],
       "Performance": [
         "Performance"
+      ],
+      "Personal": [
+        "Personnel"
       ],
       "Preview \"IndexedDB unavailable\" screen": [
         "Prévisualiser l'écran « IndexedDB indisponible »"
@@ -8227,6 +8313,44 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_MEET_SEATS } accès à ${ MEET_SHORT_APP_NAME } pendant la période d’essai."
+      ]
+    },
+    "Monetary unit": {
+      "Australian dollar": [
+        "Dollar australien"
+      ],
+      "Brazilian real": [
+        "Real brésilien (BRL)"
+      ],
+      "British pound": [
+        "Livre sterling"
+      ],
+      "Canadian dollar": [
+        "Dollar canadien"
+      ],
+      "Euro": [
+        "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dollar de Hong Kong"
+      ],
+      "Japanese yen": [
+        "Yen japonais"
+      ],
+      "Polish złoty": [
+        "Złoty polonais"
+      ],
+      "Singapore dollar": [
+        "Dollar singapourien"
+      ],
+      "South Korean won": [
+        "Won sud-coréen"
+      ],
+      "Swiss franc": [
+        "Franc suisse"
+      ],
+      "US Dollar": [
+        "Dollar américain (USD)"
       ]
     },
     "New Label form": {
@@ -9311,6 +9435,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
+      "Processing payment": [
+        "Traitement du paiement"
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Le tarif du renouvellement est susceptible de changer en accord avec ${ termsAndConditionsLink }."
       ],
@@ -9370,6 +9497,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ renewPriceStr } par mois. Vous pouvez résilier l'abonnement à tout moment."
       ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "La transaction a été détectée. Les crédits seront ajoutés à votre compte une fois la transaction entièrement confirmée."
+      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment.",
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
@@ -9424,6 +9554,9 @@
       ],
       "You already own a Born Private account.": [
         "Vous possédez déjà un compte Born Private."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Un montant de ${ amountToCharge } sera débité selon votre méthode de paiement sélectionnée."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
@@ -9616,6 +9749,9 @@
       ],
       "Organization name": [
         "Nom de l'organisation"
+      ],
+      "Other": [
+        "Autre"
       ],
       "Password": [
         "Mot de passe"
@@ -10159,6 +10295,9 @@
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
+      "Credits added": [
+        "Les crédits ont été ajoutés."
+      ],
       "Email address copied to clipboard": [
         "L'adresse e-mail a été copiée dans le presse-papiers."
       ],
@@ -10287,6 +10426,9 @@
       ],
       "Add credit/debit card": [
         "Ajouter une carte de paiement"
+      ],
+      "Add credits": [
+        "Ajouter des crédits"
       ],
       "Add user": [
         "Ajouter un utilisateur"

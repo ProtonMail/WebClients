@@ -368,6 +368,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
       "Accept": [
         "Accepter"
       ],
@@ -406,6 +409,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Tilføj ${ BRAND_NAME }-adresse"
+      ],
+      "Add ${ name }": [
+        "Tilføj ${ name }"
       ],
       "Add a payment method": [
         "Tilføj en betalingsmetode"
@@ -13799,6 +13805,9 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Når notifikationer er aktiveret, sender vi dig en advarsel til din e-mailadresse til gendannelse, hvis du har nye beskeder på din ${ MAIL_APP_NAME }-konto."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Kun din e-mail ${ primaryEmailElement } kan bruges til logge ind når login er begrænset. Dine andre adresser kan ikke spores tilbage til din konto, selv hvis nogen kender dem."
+      ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ved opsigelsen bliver dit abonnement ikke fornyet, men du kan stadig nyde godt af abonnementets fordele indtil udløb af abonnementsperioden. Herefter nedgraderes du til ${ BRAND_NAME } Free-abonnement."
       ],
@@ -14217,6 +14226,9 @@
       ],
       "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
         "Dine filer bliver krypteret og opbevaret sikkert i ${ DRIVE_APP_NAME }."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Dine filer blev importeret og krypteret fra Google Drive til ${ DRIVE_APP_NAME }."
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
@@ -16266,6 +16278,9 @@
       ],
       "Reserved email address": [
         "Reserveret e-mailadresse"
+      ],
+      "Restrict sign-in to email address": [
+        "Begræns login til e-mailadresse"
       ],
       "Restrict sign-in to primary email address": [
         "Begræns log-ind til primær e-mailadresse"
@@ -27868,6 +27883,9 @@
       "Your exposed information": [
         "Dine blotlagte oplysninger"
       ],
+      "Your import is finished!": [
+        "Din import er afsluttet."
+      ],
       "Your plan": [
         "Dit abonnement"
       ],
@@ -28338,6 +28356,9 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Når du flytter en e-mail til spam, bliver du automatisk afmeldt fra afsenderens mailinglister."
+      ],
+      "Your ${ DRIVE_APP_NAME } storage is almost full": [
+        "Din lagerplads i ${ DRIVE_APP_NAME } er næsten brugt op"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Din indbakke i ${ MAIL_APP_NAME } er næsten fuld"

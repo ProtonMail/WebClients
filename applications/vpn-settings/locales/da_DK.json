@@ -280,6 +280,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
       "activate": [
         "aktivér"
       ],
@@ -300,6 +303,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Tilføj ${ BRAND_NAME }-adresse"
+      ],
+      "Add ${ name }": [
+        "Tilføj ${ name }"
       ],
       "Add a payment method": [
         "Tilføj en betalingsmetode"
@@ -9600,6 +9606,9 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ved aktivering af SAML for ${ appName } i din identitetsudbyder, kan du blive bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Kopier og indsæt blot nedenstående data i din identitetsudbyders felter."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Kun din e-mail ${ primaryEmailElement } kan bruges til logge ind når login er begrænset. Dine andre adresser kan ikke spores tilbage til din konto, selv hvis nogen kender dem."
+      ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ved opsigelsen bliver dit abonnement ikke fornyet, men du kan stadig nyde godt af abonnementets fordele indtil udløb af abonnementsperioden. Herefter nedgraderes du til ${ BRAND_NAME } Free-abonnement."
       ],
@@ -10949,6 +10958,9 @@
       ],
       "Require password check-ins": [
         "Kræv adgangskodetjek"
+      ],
+      "Restrict sign-in to email address": [
+        "Begræns login til e-mailadresse"
       ],
       "Restrict sign-in to primary email address": [
         "Begræns log-ind til primær e-mailadresse"

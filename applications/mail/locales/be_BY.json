@@ -39,6 +39,9 @@
       "A to Z": [
         "Ад А да Я"
       ],
+      "About ${ name }": [
+        "Аб ${ name }"
+      ],
       "Activate": [
         "Актываваць"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Дадаць ${ name }"
       ],
       "Add a payment method": [
         "Дадаць спосаб аплаты"
@@ -356,6 +362,9 @@
       ],
       "Copy version number to clipboard": [
         "Скапіяваць нумар версіі ў буфер абмену"
+      ],
+      "Create a booking page": [
+        "Стварыць старонку браніравання"
       ],
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
@@ -980,6 +989,12 @@
       ],
       "Move": [
         "Перамясціць"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "Перамясціць ${ LUMO_SHORT_APP_NAME } улева"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Перамясціць ${ LUMO_SHORT_APP_NAME } управа"
       ],
       "Move all to archive": [
         "Перамясціць усё ў архіў"
@@ -7384,6 +7399,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Вы сапраўды хочаце незваротна выдаліць гэта паведамленне?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Папрасіце свайго адміністратара палепшыць тарыфны план або выдаліць старонку з бакавой панэлі браніравання старонак."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Прынамсі ${ BETTER_PASSWORD_LENGTH } сімвалаў"
       ],
@@ -9208,6 +9226,15 @@
       "to ${ destinationElement } folder.": [
         "у папку ${ destinationElement }."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Папрасіце свайго адміністратара палепшыць ваш тарыфны план, каб дадаць новую старонку браніравання."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Выдаліце існуючую старонку з бакавой панэлі браніравання старонак, каб дадаць новую старонку браніравання."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Палепшыце свой тарыфны план, каб дадаць новую старонку браніравання."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Выкарыстоўвайце праграму для камп'ютара, каб не адцягваць увагу на іншыя адкрытыя ўкладкі ў вашым браўзеры."
       ],
@@ -9765,6 +9792,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Вы дасягнулі максімальнай колькасці адрасоў у групе кантактаў."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Вы дасягнулі максімальнай колькасці старонак браніравання, якія даступны на вашым тарыфным плане."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень лісты больш не будуць трапляць у вашу паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы больш не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
@@ -11398,6 +11428,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Стварыць новы каляндар, каб кіраваць вашымі запрашэннямі"
+      ],
+      "Customer Support": [
+        "Служба падтрымкі"
       ],
       "Deleted": [
         "Выдалена"
@@ -13914,6 +13947,9 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
+      "You already own a Born Private account.": [
+        "Вы ўжо валодаеце ўліковым запісам Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
@@ -16026,6 +16062,12 @@
         "З пазначаных зорачкай выдалена ${ elementsCount } паведамленняў.",
         "З пазначаных зорачкай выдалена ${ elementsCount } паведамленняў."
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "Памочнік ${ LUMO_SHORT_APP_NAME } адключаны"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "Памочнік ${ LUMO_SHORT_APP_NAME } уключаны"
+      ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
       ],
@@ -16630,6 +16672,9 @@
       "Cannot add more addresses": [
         "Немагчыма дадаць больш адрасоў"
       ],
+      "Cannot create more Booking pages": [
+        "Немагчыма стварыць больш старонак браніравання"
+      ],
       "Carbon Copy": [
         "Копія"
       ],
@@ -17022,6 +17067,9 @@
       ],
       "Make a secure connection your default": [
         "Зрабіце бяспечнае падключэнне сваім прадвызначаным"
+      ],
+      "Make Categories work better for you": [
+        "Падладзьце катэгорыі пад сябе"
       ],
       "Make your inbox your own": [
         "Зрабіце паштовую скрыню сваёй уласнасцю"
@@ -17424,6 +17472,9 @@
       ],
       "Subject missing": [
         "Няма тэмы"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Падпіска на тарыфны план ${ planTitle }"
       ],
       "Subscription canceled": [
         "Падпіска скасавана"

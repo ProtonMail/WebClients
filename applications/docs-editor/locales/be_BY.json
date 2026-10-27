@@ -122,6 +122,9 @@
       "Fit table to page width": [
         "Падагнаць табліцу да шырыні старонкі"
       ],
+      "Header column": [
+        "Загаловак слупка"
+      ],
       "Header row": [
         "Радок загалоўка"
       ],
@@ -312,6 +315,9 @@
       ],
       "Symbols": [
         "Сімвалы"
+      ],
+      "Travel and places": [
+        "Падарожжы і месцы"
       ]
     },
     "Error": {
@@ -535,6 +541,9 @@
       "Emoji": [
         "Эмодзі"
       ],
+      "Emoji suggestions": [
+        "Прапановы эмодзі"
+      ],
       "Format": [
         "Фармат"
       ],
@@ -582,6 +591,9 @@
       ],
       "Replace link": [
         "Замяніць спасылку"
+      ],
+      "Resize outline": [
+        "Змяніць памер контура"
       ],
       "Search emoji": [
         "Пошук эмодзі"
@@ -979,6 +991,15 @@
       "Last quarter": [
         "Апошні квартал"
       ],
+      "Last week": [
+        "Мінулы тыдзень"
+      ],
+      "Last year": [
+        "У мінулым годзе"
+      ],
+      "Less than": [
+        "Менш за"
+      ],
       "Less than or equal to": [
         "Менш або роўнае"
       ],
@@ -997,6 +1018,15 @@
       "Next quarter": [
         "За наступны квартал"
       ],
+      "Next week": [
+        "Наступны тыдзень"
+      ],
+      "Next year": [
+        "Наступны год"
+      ],
+      "No errors": [
+        "Без памылак"
+      ],
       "Not between": [
         "Не паміж"
       ],
@@ -1012,11 +1042,26 @@
       "Quarter 1": [
         "1-шы квартал"
       ],
+      "Quarter 2": [
+        "2-і квартал"
+      ],
+      "Quarter 3": [
+        "3-ці квартал"
+      ],
+      "Quarter 4": [
+        "4-ты квартал"
+      ],
+      "September": [
+        "Верасень"
+      ],
       "Text contains": [
         "Тэкст змяшчае"
       ],
       "Text does not contain": [
         "Тэкст не змяшчае"
+      ],
+      "Text ends with": [
+        "Тэкст, які заканчваецца на"
       ],
       "Text is email": [
         "Тэкст з'яўляецца адрасам электроннай пошты"
@@ -1024,14 +1069,26 @@
       "Text is exactly": [
         "Тэкст з'яўляецца дакладным"
       ],
+      "Text is not equal": [
+        "Тэкст не роўны"
+      ],
       "Text is URL": [
         "Тэкст з'яўляецца URL-адрасам"
+      ],
+      "Text starts with": [
+        "Тэкст, які пачынаецца з"
       ],
       "This month": [
         "У гэтым месяцы"
       ],
       "This quarter": [
         "За гэты квартал"
+      ],
+      "This week": [
+        "Бягучы тыдзень"
+      ],
+      "This year": [
+        "Гэты год"
       ],
       "Today": [
         "Сёння"
@@ -1047,6 +1104,9 @@
       ],
       "Year to date": [
         "За апошні год"
+      ],
+      "Yesterday": [
+        "Учора"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -1881,6 +1941,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } з ${ total }"
+      ],
       "Close": [
         "Закрыць"
       ],
@@ -2147,6 +2210,9 @@
       "Cancel": [
         "Скасаваць"
       ],
+      "Default ${ size }": [
+        "Прадвызначана ${ size }"
+      ],
       "OK": [
         "OK"
       ],
@@ -2155,6 +2221,9 @@
       ],
       "Resize row ${ title }": [
         "Змяніць памер радка ${ title }"
+      ],
+      "Specify column width (px)": [
+        "Укажыце шырыню слупка (px)"
       ],
       "Specify row height (px)": [
         "Укажыце вышыню радка (px)"

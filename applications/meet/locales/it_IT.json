@@ -34,6 +34,9 @@
       "${ name } lowered their hand": [
         "${ name } ha abbassato la mano"
       ],
+      "${ name } mentioned you: ${ message }": [
+        "${ name } ti ha menzionato: ${ message }"
+      ],
       "${ name } raised their hand": [
         "${ name } ha alzato la mano"
       ],
@@ -45,6 +48,10 @@
       ],
       "${ name }: ${ message }": [
         "${ name }: ${ message }"
+      ],
+      "${ suggestionCount } mention suggestion available": [
+        "${ suggestionCount } suggerimento di menzione disponibile",
+        "${ suggestionCount } suggerimenti di menzione disponibili"
       ],
       "A participant joined the meeting": [
         "Un partecipante si è unito alla riunione"
@@ -154,6 +161,9 @@
       "You have been muted by the host": [
         "Sei stato silenziato dall'organizzatore"
       ],
+      "You were mentioned: ${ message }": [
+        "Sei stato menzionato: ${ message }"
+      ],
       "Your camera has been turned off by the host": [
         "La tua fotocamera è stata spenta dall'organizzatore"
       ],
@@ -164,6 +174,10 @@
     "Action": {
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
+      ],
+      "${ newMentionCount } new mention": [
+        "${ newMentionCount } nuova menzione",
+        "${ newMentionCount } nuove menzioni"
       ],
       "${ newMessageCount } new": [
         "${ newMessageCount } nuovo",
@@ -313,6 +327,9 @@
       "Dismiss": [
         "Ignora"
       ],
+      "Dismiss new mentions": [
+        "Ignora le nuove menzioni"
+      ],
       "Dismiss new messages": [
         "Ignora nuovi messaggi"
       ],
@@ -367,6 +384,9 @@
       "Full size": [
         "Dimensione intera"
       ],
+      "Gallery": [
+        "Galleria"
+      ],
       "Generate a new meeting link.": [
         "Genera un nuovo link per la riunione."
       ],
@@ -403,6 +423,9 @@
       "Join and leave sounds": [
         "Suoni di ingresso e di uscita"
       ],
+      "Join from ${ MEET_APP_NAME } app": [
+        "Partecipa dall'app ${ MEET_APP_NAME }"
+      ],
       "Join in browser": [
         "Accedi dal browser"
       ],
@@ -435,6 +458,9 @@
       ],
       "Lower hand": [
         "Abbassa la mano"
+      ],
+      "Meeting debug": [
+        "Debug della riunione"
       ],
       "Meeting info": [
         "Informazioni sulla riunione"
@@ -474,6 +500,9 @@
       ],
       "Open link": [
         "Apri link"
+      ],
+      "Open mention from ${ senderName } in chat": [
+        "Menzione pubblica da parte di ${ senderName } nella chat"
       ],
       "Participants": [
         "Partecipanti"
@@ -588,6 +617,9 @@
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Programma in ${ CALENDAR_APP_NAME }"
       ],
+      "Screen share": [
+        "Condivisione schermo"
+      ],
       "Search countries": [
         "Cerca tra i paesi"
       ],
@@ -635,6 +667,9 @@
       ],
       "Skip to main content": [
         "Passa direttamente al contenuto principale"
+      ],
+      "Speaker": [
+        "Vivavoce"
       ],
       "Start an instant meeting": [
         "Avvia una riunione istantanea"
@@ -740,6 +775,9 @@
       ],
       "View invoice": [
         "Visualizza fattura"
+      ],
+      "View security details": [
+        "Visualizza i dettagli sulla sicurezza"
       ],
       "Virtual backgrounds": [
         "Sfondi virtuali"
@@ -875,6 +913,9 @@
       ],
       "Device settings": [
         "Impostazioni dispositivo"
+      ],
+      "Layouts": [
+        "Layout"
       ],
       "Meeting details": [
         "Dettagli della riunione"
@@ -2050,6 +2091,9 @@
       "Live captions have stopped.": [
         "I sottotitoli in tempo reale si sono interrotti."
       ],
+      "Message is too long to send": [
+        "Il messaggio è troppo lungo per essere inviato"
+      ],
       "Microphone not detected": [
         "Microfono non rilevato"
       ],
@@ -2102,6 +2146,9 @@
       "Screen share is not supported on mobile browsers": [
         "La condivisione dello schermo non è supportata sui browser mobili"
       ],
+      "Screen share is not supported on your device": [
+        "La condivisione dello schermo non è supportata sul tuo dispositivo"
+      ],
       "Signature is missing": [
         "Manca la firma"
       ],
@@ -2125,6 +2172,12 @@
       ],
       "The meeting password is invalid": [
         "La password della riunione non è valida"
+      ],
+      "The mention could not be added because the message is at its character limit": [
+        "Non è stato possibile aggiungere la menzione perché il messaggio ha raggiunto il limite di caratteri"
+      ],
+      "The message field is unavailable. Please reload the page.": [
+        "Il campo del messaggio non è disponibile. Si prega di ricaricare la pagina."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Il file caricato non corrisponde all'originale. Riprova."
@@ -2253,6 +2306,12 @@
       ],
       "Security key": [
         "Chiave di sicurezza"
+      ],
+      "Still waiting?": [
+        "Stai ancora aspettando?"
+      ],
+      "Touch your security key to continue.": [
+        "Tocca la tua chiave di sicurezza per continuare."
       ]
     },
     "fido2: Label": {
@@ -2402,6 +2461,17 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necessita di WebRTC per funzionare. Per favore, aggiorna il tuo browser o dispositivo a una versione che supporti WebRTC, prova un altro browser, o disattiva qualsiasi estensione che potrebbe bloccarlo."
       ],
+      "${ meetingName } has ended": [
+        "La riunione ${ meetingName } è terminata"
+      ],
+      "${ mlsMemberCount } member": [
+        "${ mlsMemberCount } membro",
+        "${ mlsMemberCount } membri"
+      ],
+      "${ participantCount } participant is connected, while the secure group has ${ mlsMemberCountText }. This may happen temporarily after someone joins or leaves.": [
+        "${ participantCount } partecipante è connesso, mentre il gruppo protetto ne conta ${ mlsMemberCountText }. Ciò può verificarsi temporaneamente dopo che qualcuno si è unito o ha lasciato la riunione.",
+        "${ participantCount } partecipanti sono connessi, mentre il gruppo protetto ne conta ${ mlsMemberCountText }. Ciò può verificarsi temporaneamente dopo che qualcuno si è unito o ha lasciato la riunione."
+      ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } e altre ${ otherParticipantsCount } persone stanno registrando"
       ],
@@ -2423,6 +2493,12 @@
       "${ replyCount } reply": [
         "${ replyCount } risposta",
         "${ replyCount } risposte"
+      ],
+      "${ senderNameNode } mentioned you": [
+        "${ senderNameNode } ti ha menzionato"
+      ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } è l'oratore di turno"
       ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } di un massimo di ${ maxParticipants } partecipanti"
@@ -2455,6 +2531,9 @@
       ],
       "Admitting": [
         "Ammesso"
+      ],
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Modalità avanzata: regola ogni costante di sfocatura, quindi fai clic su “Applica” per aggiornare l'anteprima. Le impostazioni personalizzate hanno la precedenza sui valori del file e su quelli di Unleash."
       ],
       "Allow camera access to preview your background": [
         "Consenti l'accesso alla fotocamera per l'anteprima dello sfondo"
@@ -2612,6 +2691,9 @@
       "End-to-end encryption is active for this chat.": [
         "La crittografia end-to-end è attiva per questa chat."
       ],
+      "enter": [
+        "Invio"
+      ],
       "Enter code": [
         "Inserisci il codice"
       ],
@@ -2687,6 +2769,9 @@
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Se stai usando Firefox, assicurati che PeerConnection sia attivato."
       ],
+      "Incoming video off": [
+        "Video in entrata disattivato"
+      ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
       ],
@@ -2741,6 +2826,9 @@
       "Loading…": [
         "Caricamento in corso…"
       ],
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Riproduci in loop un video caricato o le immagini della tua videocamera in diretta con lo sfondo sfocato."
+      ],
       "Lower participant's hand": [
         "Abbassare la mano del partecipante"
       ],
@@ -2785,6 +2873,9 @@
       ],
       "Member": [
         "Membro"
+      ],
+      "Mention from ${ senderName }": [
+        "Menzione da parte di ${ senderName }"
       ],
       "Message actions": [
         "Azioni del messaggio"
@@ -2861,6 +2952,9 @@
       "Not sent, check your connection.": [
         "Messaggio non inviato. Controlla la connessione."
       ],
+      "notify everyone here": [
+        "avvisare tutti i presenti"
+      ],
       "Only a partial meeting recording was available.": [
         "Era disponibile solo una registrazione parziale della riunione."
       ],
@@ -2882,17 +2976,26 @@
       "Participant": [
         "Partecipante"
       ],
+      "Participant counts don’t match": [
+        "Il numero dei partecipanti non corrisponde"
+      ],
       "Participants can turn live captions on. Turn on your own under Display.": [
         "I partecipanti possono attivare i sottotitoli in tempo reale. Attiva i tuoi nelle impostazioni Schermo."
       ],
       "Participants can’t use live captions": [
         "I partecipanti non possono utilizzare i sottotitoli in tempo reale."
       ],
+      "Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.": [
+        "La sezione “Partecipanti” mostra chi è attualmente connesso. La sezione “Membri MLS” mostra chi fa parte del gruppo di sicurezza della riunione. Questi numeri possono variare momentaneamente, ma questa differenza è durata più a lungo del previsto."
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Incolla il tuo link di ${ MEET_APP_NAME } per unirti a una riunione sicura"
       ],
       "Permissions not given.": [
         "Autorizzazioni non concesse."
+      ],
+      "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
+        "Clicca su ${ downloadLink } e installa l'app, quindi clicca nuovamente su “Partecipa” nell'app ${ MEET_APP_NAME }."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Abilita l’accesso al tuo ${ microphoneLinkButton }${ andString }${ cameraLinkButton } per un’esperienza ottimale."
@@ -2962,6 +3065,9 @@
       ],
       "Rejecting": [
         "Rifiutato"
+      ],
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "Elabora il video in diretta della tua videocamera tramite il processore per sfondi personalizzati. Carica un'immagine da utilizzare come sfondo."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Programma il tuo prossimo meeting. Crea un account per pianificare riunioni con il tuo calendario."
@@ -3068,6 +3174,9 @@
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
       ],
+      "Time is up for ${ meetingName }": [
+        "Il tempo a disposizione per ${ meetingName } è scaduto"
+      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Per creare una stanza, ti serve **un account ${ BRAND_NAME } gratuito** in modo da poterla salvare. Richiede solo pochi secondi."
       ],
@@ -3170,11 +3279,17 @@
       "You have too many meetings in progress": [
         "Hai troppe riunioni in corso"
       ],
+      "You left ${ meetingName }": [
+        "Hai lasciato ${ meetingName }"
+      ],
       "You left the meeting": [
         "Hai lasciato la riunione"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
         "Per questa funzionalità è necessario un piano Workspace o ${ MEET_SHORT_APP_NAME } a pagamento. Contatta l'amministratore della tua organizzazione per effettuare l'upgrade."
+      ],
+      "You were removed from ${ meetingName }": [
+        "Sei stato rimosso da ${ meetingName }"
       ],
       "You were removed from the meeting": [
         "Ti hanno rimosso dalla riunione"
@@ -3359,6 +3474,9 @@
       "Every year": [
         "Ogni anno"
       ],
+      "everyone": [
+        "chiunque"
+      ],
       "Google Calendar": [
         "Calendario di Google"
       ],
@@ -3404,6 +3522,9 @@
       "Meeting link": [
         "Link della riunione"
       ],
+      "Mention a participant": [
+        "Menziona un partecipante"
+      ],
       "Message": [
         "Messaggio"
       ],
@@ -3445,6 +3566,9 @@
       ],
       "Phone number": [
         "Numero di telefono"
+      ],
+      "Preview": [
+        "Anteprima"
       ],
       "Raw": [
         "Grezzo"
@@ -3491,6 +3615,9 @@
       "Track SID": [
         "Traccia SID"
       ],
+      "unknown": [
+        "sconosciuto"
+      ],
       "Uploaded image": [
         "Immagine caricata"
       ],
@@ -3519,6 +3646,9 @@
     "Link": {
       "clearing your browser cache": [
         "cancellare la cache del browser"
+      ],
+      "download": [
+        "download"
       ],
       "Learn more": [
         "Scopri di più"
@@ -3594,6 +3724,9 @@
       ],
       "Successfully rotated your personal meeting": [
         "Riunione personale ruotata con successo"
+      ],
+      "Thanks! Your feedback has been submitted.": [
+        "Grazie! Il tuo feedback è stato inviato."
       ],
       "You can't send a feedback for a meeting you haven't been to": [
         "Non puoi inviare un feedback per una riunione a cui non hai partecipato"
@@ -3890,6 +4023,9 @@
       "Background": [
         "Sfondo"
       ],
+      "Background blur preview": [
+        "Anteprima della sfocatura dello sfondo"
+      ],
       "Backgrounds": [
         "Sfondi"
       ],
@@ -4011,11 +4147,17 @@
       "Minicalendar": [
         "Mini calendario"
       ],
+      "MLS members": [
+        "Membri della MLS"
+      ],
       "No one is waiting": [
         "Nessuno è in attesa"
       ],
       "No results found": [
         "Nessun risultato trovato"
+      ],
+      "Participant counts don’t match": [
+        "Il numero dei partecipanti non corrisponde"
       ],
       "Participants": [
         "Partecipanti"
@@ -4137,6 +4279,12 @@
       ],
       "Instant AI assistance, human expert on hand!": [
         "Assistenza IA istantanea, esperto umano a tua disposizione!"
+      ],
+      "People currently connected to the meeting": [
+        "Persone attualmente connesse alla riunione"
+      ],
+      "People included in meeting's MLS group": [
+        "Persone incluse nel gruppo MLS della riunione"
       ],
       "Recurring meeting": [
         "Riunione ricorrente"

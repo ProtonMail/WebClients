@@ -44,6 +44,9 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Informazioni su ${ name }"
+      ],
       "Activate recovery": [
         "Attiva il ripristino"
       ],
@@ -53,8 +56,14 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Aggiungi ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ name }": [
+        "Aggiungi ${ name }"
+      ],
       "Add a date": [
         "Aggiungi una data"
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
       ],
       "Add account": [
         "Aggiungi un account"
@@ -463,6 +472,9 @@
       ],
       "Go to the next available appointment": [
         "Vai al prossimo appuntamento disponibile"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ],
       "Got it": [
         "Ho capito"
@@ -1305,6 +1317,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gestore di password premium"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanzia di rimborso entro 30 giorni: annulla l'ordine entro 30 giorni dall'acquisto e contatta il nostro servizio clienti ${ customerSupportLink } per ottenere un rimborso."
       ]
     },
     "BF2024: Deal details": {
@@ -3544,6 +3561,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai su Impostazioni > Identità e indirizzi > Dominio breve (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Esiste già un contatto con questo indirizzo e-mail"
+      ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
@@ -4458,6 +4478,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Hai delle fatture non pagate. Si prega di pagarle prima di aderire ad un piano famiglia."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ti invitiamo a collegare il tuo account ${ BRAND_NAME } a questo gruppo familiare e a usufruire di tutte le sue funzionalità premium."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Il tuo account ha più indirizzi email rispetto alla disponibilità di questo piano. ${ addressSettingsLink }"
       ],
@@ -4515,6 +4538,12 @@
       ],
       "Security key": [
         "Chiave di sicurezza"
+      ],
+      "Still waiting?": [
+        "Stai ancora aspettando?"
+      ],
+      "Touch your security key to continue.": [
+        "Tocca la tua chiave di sicurezza per continuare."
       ]
     },
     "fido2: Label": {
@@ -5105,6 +5134,12 @@
       "${ storage } storage": [
         "${ storage } di archiviazione"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per evitare di perdere l'accesso. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per mantenere l'abbonamento. ${ learnMoreLink }"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contatto aggiornato con successo.",
         "${ updated } contatti aggiornati con successo."
@@ -5142,6 +5177,9 @@
       ],
       "1 vault per user": [
         "1 cassaforte per utente"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanzia di rimborso entro 30 giorni: annulla l'ordine entro 30 giorni dall'acquisto e contatta il nostro servizio clienti ${ customerSupportLink } per ottenere un rimborso."
       ],
       "A cancellation email will be sent to removed participants.": [
         "Una email di cancellazione verrà inviata ai partecipanti rimossi."
@@ -6171,6 +6209,9 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
       ],
+      "UnionPay logo": [
+        "Logo UnionPay"
+      ],
       "Upgrade anytime to bring over the rest": [
         "Effettua l'upgrade in qualsiasi momento per trasferire il resto"
       ],
@@ -6365,6 +6406,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Hai un abbonamento di prova a ${ planTitle }. In questo momento non è richiesto alcun pagamento. Il tuo abbonamento verrà rinnovato automaticamente al termine del periodo di prova."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Hai una fattura in sospeso ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Hai una fattura in sospeso con scadenza il ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Hai riattivato le tue chiavi e gli eventi collegati ai seguenti calendari possono ora essere decriptati."
       ],
@@ -6452,6 +6499,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Il periodo di prova gratuito è terminato. Abbonati subito per garantire al tuo team un accesso ininterrotto e la sicurezza degli account."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "La tua prova gratuita è stata convertita con successo in un abbonamento di ${ cycle } mesi. La tua data di rinnovo è ${ nextBillingDate }."
@@ -7370,6 +7420,9 @@
       "clearing your browser cache": [
         "cancellare la cache del browser"
       ],
+      "Customer Support": [
+        "Assistenza clienti"
+      ],
       "Enforcing 2FA for organizations": [
         "Imporre l'autenticazione a 2 fattori (2FA) per le organizzazioni"
       ],
@@ -7432,6 +7485,9 @@
       ],
       "Pay invoice": [
         "Pagamento della fattura"
+      ],
+      "Pay it": [
+        "Paga"
       ],
       "Reactivate now": [
         "Riattiva"
@@ -8399,6 +8455,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } che termina con ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB di archiviazione cloud che ti consente di archiviare, sincronizzare e condividere i file facilmente. Protetto da crittografia end-to-end."
       ],
@@ -8977,6 +9036,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Ultima chance per approfittare dell'80% di sconto sul tuo primo mese di ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "È l'ultima occasione per ottenere il primo mese di ${ plan } a questo prezzo."
+      ],
       "Last day to save": [
         "Ultimo giorno per risparmiare"
       ],
@@ -9059,6 +9121,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Indirizzo email breve @pm.me"
+      ],
       "Storage": [
         "Archiviazione"
       ],
@@ -9109,6 +9174,21 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visita il nostro ${ helpCenterLink } o ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Aggiungi un metodo di pagamento** per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puoi disdire in qualsiasi momento prima di allora.** Potrai utilizzare ${ planTitle } gratuitamente fino al termine del periodo di prova."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Se decidi di continuare dopo il periodo di prova,** puoi annullare l'abbonamento entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Una volta che l'abbonamento completo avrà inizio...** Potrai comunque disdirlo entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Annulla in qualsiasi momento prima del ${ cancelDate }."
       ],
@@ -9124,11 +9204,20 @@
       "help center": [
         "centro assistenza"
       ],
+      "If you continue after your trial,": [
+        "Se decidi di continuare dopo il periodo di prova,"
+      ],
       "If you need help,": [
         "Se hai bisogno di aiuto,"
       ],
       "Once your full subscription starts...": [
         "Una volta iniziato l'abbonamento completo..."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "È possibile recedere dal contratto entro 30 giorni e ottenere un rimborso proporzionale."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Puoi ancora annullare entro 30 giorni e ottenere un rimborso proporzionale."
@@ -9373,6 +9462,9 @@
       "Billing Country": [
         "Paese di fatturazione"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Gli account Born Private non possono essere acquistati se si dispone di un abbonamento attivo."
+      ],
       "Buying credits requires a separate purchase.": [
         "L'acquisto dei crediti richiede un acquisto separato."
       ],
@@ -9427,6 +9519,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Serve un metodo di pagamento per attivare l'abbonamento una volta terminata la prova."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Il cambio di piano non è compatibile per i seguenti motivi:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Ti preghiamo di chiudere eventuali conti aggiuntivi del portafoglio prima di cambiare piano."
       ],
@@ -9435,6 +9530,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "I posti a sedere al Proton Meet devono corrispondere al numero dei partecipanti."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "I prezzi di rinnovo sono soggetti a modifiche in base a ${ termsAndConditionsLink }."
@@ -9453,6 +9551,9 @@
       ],
       "terms and conditions": [
         "Termini e Condizioni"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "L'iniziativa “Born Private” richiede una donazione."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Lo sconto è valido per ${ renewalsWithCoupon } rinnovo.",
@@ -9508,8 +9609,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Questo piano non supporta le funzionalità gestite del tuo account."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Questo piano non include l'assistenza per gli utenti associati al tuo account."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Al momento non è possibile completare l'iscrizione. Riprova più tardi."
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
@@ -9544,11 +9651,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Possiedi già ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Hai già un account Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
       "You will soon be redirected to verify your payment.": [
         "Sarai presto reindirizzato per verificare il pagamento."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Il tuo account è troppo vecchio per partecipare all'iniziativa Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
@@ -9594,12 +9707,22 @@
         "Qualcosa è andato storto. La verifica di Google Pay non è riuscita."
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Confermando, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a prelevare i futuri pagamenti relativi al tuo abbonamento da questo conto corrente tramite addebito diretto SEPA, e la tua banca ad addebitare tali importi. Il tuo primo pagamento viene effettuato ora da ${ IDEAL_WERO_BRAND_NAME }. Il tuo abbonamento si rinnova automaticamente fino a quando non lo disdici; ti avviseremo prima di ogni addebito. Per gli addebiti diretti, puoi richiedere un rimborso alla tua banca entro 8 settimane dalla data dell'addebito, secondo i termini del contratto stipulato con la tua banca. Ciò non si applica al pagamento di ${ IDEAL_WERO_BRAND_NAME } che stai effettuando ora."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
       ],
       "Credits will be added to your balance": [
         "I crediti verranno aggiunti al tuo saldo."
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modifica dell'indirizzo di fatturazione potrebbe influire sulle imposte relative alle fatture future."
       ]
     },
     "Payments.ModificationWarning": {
@@ -9639,6 +9762,12 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carta che termina con ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bonifico bancario - ${ iban }"
+      ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - carta che termina con ${ Last4 }"
       ]
@@ -12088,6 +12217,9 @@
       "Start import process": [
         "Avvia il processo d'importazione"
       ],
+      "Subscribe to ${ planTitle }": [
+        "Abbonati a ${ planTitle }"
+      ],
       "Subscription canceled": [
         "Abbonamento annullato"
       ],
@@ -12422,8 +12554,14 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Questo utente otterrà i diritti di amministratore al prossimo accesso."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Passa a un piano supportato per utilizzare i ruoli amministratore"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Non puoi modificare i tuoi ruoli. Chiedi a un altro amministratore di modificarli."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."

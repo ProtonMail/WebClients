@@ -1613,6 +1613,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "Če naročnino prekličete, se vaša brezplačna preizkusna različica ne bo spremenila v plačljivo naročnino in do konca preizkusnega obdobja lahko uživate v ugodnostih paketa."
+      ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Med preskusnim obdobjem imate lahko do ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } mest."
       ],
@@ -5502,6 +5505,9 @@
       "Enjoying ${ planName }?": [
         "Uživate v ${ planName }?"
       ],
+      "Invited friends": [
+        "Povabljeni prijatelji"
+      ],
       "Upgrade your privacy": [
         "Nadgradite svojo zasebnost"
       ],
@@ -6308,6 +6314,9 @@
       "Choose a plan that works best for you.": [
         "Izberite paket, ki vam najbolj ustreza"
       ],
+      "Choose a strong ${ BRAND_NAME } password and don’t reuse it for other accounts.": [
+        "Izberite močno geslo za ${ BRAND_NAME } in ga ne uporabljajte tudi za druge račune."
+      ],
       "Choose your service to connect with": [
         "Izberite storitev, s katero se želite povezati"
       ],
@@ -6706,6 +6715,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Če izgubite svojo napravo z omogočenim dvojnim preverjanjem pristnosti, lahko te kode uporabite namesto 6-mestne kode za dvojno preverjanje pristnosti za prijavo v svoj račun. Vsako kodo lahko uporabite samo enkrat."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite 1 od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
       ],
       "If your organization has public figures, handles sensitive data, or may be targeted in cyber attacks, you are highly encouraged to enable ${ PROTON_SENTINEL_NAME } for everyone in your organization.": [
         "Če ima vaša organizacija javne osebnosti, obravnava občutljive podatke ali je lahko tarča kibernetskih napadov, vam toplo priporočamo, da za vse v vaši organizaciji omogočite ${ PROTON_SENTINEL_NAME }."
@@ -7984,6 +7996,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
+      ],
+      "Your profile and changes to it will be visible to other ${ BRAND_NAME } users.": [
+        "Vaš profil in vse spremembe, ki jih opravite, bodo vidne drugim uporabnikom ${ BRAND_NAME }."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Vaše nedavne spremembe so bile objavljene. Uporabnikom bodo vidne v naslednjih nekaj urah."
@@ -14055,6 +14070,9 @@
       "Billing cycle": [
         "Cikel obračunavanja"
       ],
+      "Black Friday": [
+        "Črni petek"
+      ],
       "Block trackers and malware": [
         "Blokiranje sledilnikov in zlonamerne programske opreme"
       ],
@@ -14861,6 +14879,9 @@
       ],
       "User": [
         "Uporabnik"
+      ],
+      "User profile": [
+        "Uporabniški profil"
       ],
       "Users": [
         "Uporabniki"

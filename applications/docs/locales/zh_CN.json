@@ -1103,6 +1103,11 @@
         "高级密码管理器"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
@@ -5834,6 +5839,9 @@
       "Not active": [
         "未激活"
       ],
+      "Not selected": [
+        "未选中"
+      ],
       "Notification": [
         "通知"
       ],
@@ -5881,6 +5889,9 @@
       ],
       "Reveal password": [
         "显示密码"
+      ],
+      "Selected": [
+        "已选中"
       ],
       "Set a password to limit access via link": [
         "设置密码以限制通过链接访问"
@@ -6024,6 +6035,9 @@
     "Link": {
       "clearing your browser cache": [
         "清除浏览器缓存"
+      ],
+      "Customer Support": [
+        "客户支持"
       ],
       "Enforcing 2FA for organizations": [
         "强制组织启用 2FA"
@@ -7687,6 +7701,9 @@
       "An organization is required for this plan.": [
         "此套餐需要组织！"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "在订阅生效期间无法购买 Born Private 账户。"
+      ],
       "Buying credits requires a separate purchase.": [
         "购买额度需要单独进行！"
       ],
@@ -7716,6 +7733,9 @@
       ],
       "terms and conditions": [
         "服务条款"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private 套餐需要捐款。"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "该折扣适用于 ${ renewalsWithCoupon } 次续订"
@@ -7779,6 +7799,12 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "您已经拥有 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
+      ],
+      "You already own a Born Private account.": [
+        "您已经拥有一个 Born Private 账户。"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
       ]
     },
     "PGP key encryption warning": {
@@ -9722,6 +9748,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "该用户下次登录时将获得管理员权限。"
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "升级至受支持的套餐以使用管理员角色。"
       ],

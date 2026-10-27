@@ -232,6 +232,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Crea un account ${ BRAND_NAME }"
       ],
+      "Create a login": [
+        "Crea un login"
+      ],
       "Create a new vault": [
         "Crea una nuova cassaforte"
       ],
@@ -334,6 +337,9 @@
       "Do not suggest on this website": [
         "Non suggerire su questo sito"
       ],
+      "Download for Linux": [
+        "Scarica per Linux"
+      ],
       "Download for macOS": [
         "Scarica per macOS"
       ],
@@ -408,6 +414,9 @@
       ],
       "Hide": [
         "Nascondi"
+      ],
+      "Hide passwords": [
+        "Nascondi password"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Come posso esportare i miei dati da ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
@@ -493,6 +502,9 @@
       "Maximum views": [
         "Visualizzazioni massime"
       ],
+      "More details about how to export": [
+        "Maggiori dettagli su come esportare"
+      ],
       "More info": [
         "Altre informazioni"
       ],
@@ -540,6 +552,9 @@
       ],
       "Open navigation": [
         "Apri navigazione"
+      ],
+      "Open platform selection dropdown": [
+        "Menu a tendina per la selezione della piattaforma aperta"
       ],
       "Organize vaults": [
         "Gestisci le casseforti"
@@ -714,6 +729,9 @@
       ],
       "Sign out": [
         "Esci dall'account"
+      ],
+      "Skip for now": [
+        "Salta per ora"
       ],
       "Start from scratch": [
         "Comincia da zero"
@@ -910,6 +928,9 @@
       "Change your passwords": [
         "Cambia le tue password"
       ],
+      "Check if you're reusing passwords": [
+        "Verifica se stai riutilizzando le password"
+      ],
       "Check if your passwords have been exposed": [
         "Verifica se le tue password sono state esposte"
       ],
@@ -1036,6 +1057,9 @@
       ],
       "Authentication failure: ${ message }": [
         "Autenticazione non riuscita: ${ message }"
+      ],
+      "Biometric authentication cancelled.": [
+        "Autenticazione biometrica annullata."
       ],
       "Biometric authentication failed.": [
         "Autenticazione biometrica non riuscita."
@@ -1189,6 +1213,10 @@
       "Failed to delete email address from monitoring": [
         "Impossibile eliminare l'indirizzo email dal monitoraggio"
       ],
+      "Failed to delete folder": [
+        "Impossibile creare la cartella",
+        "Impossibile creare le cartelle"
+      ],
       "Failed to delete selected items": [
         "Impossibile eliminare gli elementi selezionati"
       ],
@@ -1270,6 +1298,9 @@
       "Failed to update domain name.": [
         "Impossibile aggiornare il nome del dominio."
       ],
+      "Failed to update folder": [
+        "Impossibile aggiornare la cartella"
+      ],
       "Failed to update monitoring settings": [
         "Impossibile aggiornare le impostazioni di monitoraggio"
       ],
@@ -1299,6 +1330,9 @@
       ],
       "File does not match expected format": [
         "Il formato del file non è corretto"
+      ],
+      "Folder name does not match": [
+        "Il nome della cartella non corrisponde"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Importazione non riuscita per la cassaforte \"${ vaultData.name }\": ${ errorMessage }"
@@ -1644,6 +1678,173 @@
         "Usa i tasti Su e Giù per accedere e sfogliare i suggerimenti dopo l'input. Premi Invio per confermare la tua scelta o Esc per chiudere la casella dei suggerimenti."
       ]
     },
+    "Import Tutorial": {
+      "${ name } saves your passwords in the ${ passwords } app. Open it and go to ${ file } → ${ exportAll }.": [
+        "${ name } salva le tue password nell'app ${ passwords }. Aprila e vai su ${ file } → ${ exportAll }."
+      ],
+      "Account & Data": [
+        "Account & Dati"
+      ],
+      "Advanced Options": [
+        "Impostazioni Avanzate"
+      ],
+      "As a security measure, LastPass will email you to confirm the request. Open the email and click ${ continueExport }.": [
+        "Per motivi di sicurezza, LastPass ti invierà un’e-mail per confermare la richiesta. Apri l’e-mail e clicca su ${ continueExport }."
+      ],
+      "At the confirmation screen, log back into your ${ name } Vault and to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel } again.": [
+        "Nella schermata di conferma, accedi nuovamente al tuo Vault ${ name } e vai di nuovo su ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Autofill and passwords": [
+        "Compilazione automatica e password"
+      ],
+      "Choose ${ formatJson } as the file format, click ${ exportLabel } and confirm with your master password.": [
+        "Scegli ${ formatJson } come formato del file, fai clic su ${ exportLabel } e conferma inserendo la tua password principale."
+      ],
+      "Choose JSON downloads": [
+        "Scegli i download in formato JSON"
+      ],
+      "Choose the file format → Select ${ exportLabel }.": [
+        "Scegli il formato del file → Seleziona ${ exportLabel }."
+      ],
+      "Continue export": [
+        "Continua l'esportazione"
+      ],
+      "Download file": [
+        "Scarica il file"
+      ],
+      "Enter your 1Password master password, ensure ${ format1pux } is selected, and click ${ exportData }.": [
+        "Inserisci la password principale di 1Password, assicurati che sia selezionato ${ format1pux } e fai clic su ${ exportData }."
+      ],
+      "Export": [
+        "Esporta"
+      ],
+      "Export All Passwords to File": [
+        "Esporta tutte le password in un file"
+      ],
+      "Export Data": [
+        "Esporta Dati"
+      ],
+      "Export data": [
+        "Esportazione dati"
+      ],
+      "Export file format: 1PUX": [
+        "Formato del file di esportazione: 1PUX"
+      ],
+      "Export items": [
+        "Esporta elementi"
+      ],
+      "Export passwords": [
+        "Esporta password"
+      ],
+      "Export to CSV": [
+        "Esporta in file CSV"
+      ],
+      "Export to TXT": [
+        "Vai a ${ password }."
+      ],
+      "File": [
+        "File"
+      ],
+      "Go to ${ exportPasswords } and select ${ downloadFile }.": [
+        "Vai su ${ exportPasswords } e seleziona ${ downloadFile }."
+      ],
+      "Go to ${ passwords }.": [
+        "Vai a ${ passwords }."
+      ],
+      "Go to the settings to locate the export action.": [
+        "Vai alle impostazioni per individuare l'azione di esportazione."
+      ],
+      "Go to ☰ → ⚙ ${ settings } → Click ${ downloadFile }.": [
+        "Vai su ☰ → ⚙ ${ settings } → Fai clic su ${ downloadFile }."
+      ],
+      "Google Password Manager": [
+        "Gestione password di Google"
+      ],
+      "Identify your password manager.": [
+        "Indica quale gestore di password utilizzi."
+      ],
+      "Manage your vault": [
+        "Gestisci il tuo archivio"
+      ],
+      "Microsoft password manager": [
+        "Gestore di password Microsoft"
+      ],
+      "More actions": [
+        "Altre azioni"
+      ],
+      "Navigate to ${ settings } tab.": [
+        "Accedi alla scheda ${ settings }."
+      ],
+      "Open ${ name } and go to ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }.": [
+        "Apri ${ name } e vai su ${ advancedOptions } → ${ manageYourVault } → ${ exportLabel }."
+      ],
+      "Open ${ name } and go to ${ file } → ${ exportLabel } → your 1Password username.": [
+        "Apri ${ name } e vai su ${ file } → ${ exportLabel } → il tuo nome utente 1Password."
+      ],
+      "Open ${ name } and go to ${ menu } → ${ option }.": [
+        "Apri ${ name } e vai su ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "Apri ${ name } e vai su ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "Apri ${ name } e vai su ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Apri ${ name } e seleziona ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "Apri ${ name } e seleziona ${ settings }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Apri ${ name } e seleziona ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Apri ${ name } e seleziona ☰ → ${ passwords }."
+      ],
+      "Passwords": [
+        "Password"
+      ],
+      "Passwords and Autofill": [
+        "Password e compilazione automatica"
+      ],
+      "Passwords and autofill": [
+        "Password e compilazione automatica"
+      ],
+      "Select ${ exportLabel } → ${ chooseJson } → ${ exportAgain }.": [
+        "Seleziona ${ exportLabel } → ${ chooseJson } → ${ exportAgain }."
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Veldu ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Seleziona ${ option }."
+      ],
+      "Select the export format CSV.": [
+        "Seleziona il formato di esportazione CSV."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Selezionare ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Impostazioni"
+      ],
+      "Submit": [
+        "Invia"
+      ],
+      "This time, you’ll be asked to re-confirm your ${ name } username and password. Click ${ submit }.": [
+        "Questa volta ti verrà chiesto di confermare nuovamente il tuo nome utente e la tua password, ${ name }. Fai clic su ${ submit }."
+      ],
+      "Vault": [
+        "Cassaforte"
+      ],
+      "Vault options": [
+        "Opzioni della cassaforte"
+      ],
+      "your username": [
+        "il tuo nome utente"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "L'elemento «${ payload.itemName }» è stato ignorato."
@@ -1670,6 +1871,12 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } inoltrata",
         "${ forwardedEmailsCount } inoltrate"
+      ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Ciò non impedisce agli utenti di recuperare le password con altri mezzi."
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } su${ total }(${ percentage }%)"
       ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } vuole condividere un elemento con un gruppo che amministri."
@@ -1806,6 +2013,9 @@
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Accedi alle tue password in movimento grazie alle nostre applicazioni mobili."
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Aggiungi un metodo di pagamento in modo che l'abbonamento continui al termine del periodo di prova."
       ],
       "Add your custom email address to monitor:": [
         "Aggiungi il tuo indirizzo email personalizzato da monitorare:"
@@ -1996,6 +2206,9 @@
       "Creating alias...": [
         "Creazione dell'alias in corso"
       ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "Il formato CSV offre una soluzione pratica per visualizzare i tuoi dati. Tuttavia, data la sua semplicità, alcuni dati non saranno inclusi (campi personalizzati, struttura delle cartelle, ecc.). Per un’esportazione completa, ti consigliamo di utilizzare un formato diverso."
+      ],
       "Current version": [
         "Versione attuale"
       ],
@@ -2031,6 +2244,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Dominio: ${ domainPath } o @"
+      ],
+      "Don’t close this tab": [
+        "Non chiudere questa scheda"
       ],
       "Download pass-cli from ${ passCliLink }.": [
         "Scarica pass-cli da ${ passCliLink }."
@@ -2140,8 +2356,20 @@
       "Failed updating your vault organization": [
         "Aggiornamento dell’organizzazione del vault non riuscito"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Campo nascosto. È comunque possibile compilarlo automaticamente."
+      ],
       "Fill in the CSV with your data": [
         "Compila il file CSV con i tuoi dati"
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Cartella “${ payload.folder.name }” creata"
+      ],
+      "Folder deleted": [
+        "Cartella eliminata"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "La cartella è stata rinominata in “${ payload.folder.name }”"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Segui quei passaggi per importare i tuoi dati con un file CSV generico:"
@@ -2161,6 +2389,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "L'indirizzo d'inoltro è stato copiato negli appunti. Invia un'e-mail a questo indirizzo e ${ Email } la riceverà."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Sincronizzazione completa dei dati per migliorare le prestazioni dell'app. Grazie per la pazienza."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Le password generate verranno memorizzate per ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana.",
@@ -2189,6 +2420,9 @@
       ],
       "Import the CSV file below.": [
         "Importa il file CSV qui sotto."
+      ],
+      "Important:": [
+        "Importante:"
       ],
       "Imported on ${ date }": [
         "Importato il ${ date }"
@@ -2319,8 +2553,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2361,6 +2594,9 @@
       "No login found": [
         "Nessun login trovato"
       ],
+      "No matching service. Try a different name.": [
+        "Nessun risultato corrispondente. Prova con un nome diverso."
+      ],
       "No network connection": [
         "Nessuna connessione alla rete"
       ],
@@ -2388,6 +2624,14 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accesso online a ${ PASS_APP_NAME } richiederà un codice PIN per sbloccare la sessione. Verrai disconnesso dopo 3 tentativi falliti."
       ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Verrà spostato solo ${ count } elemento presente in “${ folderName }”. Gli elementi contenuti nelle sottocartelle non verranno spostati.",
+        "Verrà spostato solo ${ count } elemento presente in “${ folderName }”. Gli elementi contenuti nelle sottocartelle non verranno spostati."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Verrà spostato solo ${ count } elemento. Gli elementi contenuti nelle cartelle non verranno spostati.",
+        "Verranno spostati solo ${ count } elementi. Gli elementi contenuti nelle cartelle non verranno spostati."
+      ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Vengono mostrati solo i token scaduti negli ultimi 30 giorni. I token più vecchi vengono eliminati automaticamente."
       ],
@@ -2396,6 +2640,12 @@
       ],
       "Open the ${ PASS_APP_NAME } popup": [
         "Apri il popup di ${ PASS_APP_NAME }"
+      ],
+      "Open the extension here.": [
+        "Apri l'estensione qui."
+      ],
+      "Open the extension to unlock it": [
+        "Apri l'estensione per sbloccarla"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Apri le impostazioni di Safari, trova ${ PASS_APP_NAME }, vai su \"Permessi\" e attiva i permessi del sito."
@@ -2414,6 +2664,9 @@
       ],
       "Passkey sign-in": [
         "Accesso con passkey"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Password nascosta. È comunque possibile inserirla automaticamente."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Blocco con password impostato correttamente. Utilizzalo per sbloccare ${ PASS_APP_NAME }"
@@ -2647,6 +2900,9 @@
       "Scan to download": [
         "Scansiona per scaricare"
       ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scansiona il codice per scaricare ${ PASS_APP_NAME } per iOS e Android"
+      ],
       "Secure links": [
         "Link sicuri"
       ],
@@ -2721,6 +2977,9 @@
       ],
       "Suggested": [
         "Suggeriti"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Passa a un'altra cartella oppure crea un elemento in questa cartella"
       ],
       "Switch to another vault or create an item in this vault": [
         "Passa a un'altra cassaforte o crea un elemento in questa"
@@ -2942,6 +3201,12 @@
       ],
       "Viewer": [
         "Visualizzatore"
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Gli utenti possono comunque compilare automaticamente le password, ma non le vedranno in ${ PASS_APP_NAME }. Ciò scoraggia la consultazione casuale e riduce il rischio di divulgazione accidentale."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Gli utenti possono comunque utilizzare la compilazione automatica. I redattori e gli amministratori vedono sempre le password."
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Stiamo avendo problemi nel sincronizzare i dati con la tua archiviazione locale. Assicurati di avere abbastanza spazio sul disco per eseguire ${ PASS_SHORT_APP_NAME } correttamente."
@@ -3234,6 +3499,9 @@
       "Account Type": [
         "Tipo di conto"
       ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Aggiungi un prefisso casuale per questo dominio quando crei un nuovo alias."
       ],
@@ -3269,6 +3537,9 @@
       ],
       "All items": [
         "Tutti gli elementi"
+      ],
+      "Allow viewers to see passwords": [
+        "Consenti agli utenti di visualizzare le password"
       ],
       "Alphabetical": [
         "Alfabetico"
@@ -3369,6 +3640,9 @@
       "Company": [
         "Azienda"
       ],
+      "Confirm folder name": [
+        "Conferma il nome della cartella"
+      ],
       "Confirm vault name": [
         "Conferma il nome della cassaforte"
       ],
@@ -3401,6 +3675,9 @@
       ],
       "Create a custom item": [
         "Crea un elemento personalizzato"
+      ],
+      "Create a folder": [
+        "Crea una cartella"
       ],
       "Create a hide-my-email alias": [
         "Crea un alias Hide-my-email"
@@ -3563,6 +3840,9 @@
       ],
       "Folder": [
         "Cartella"
+      ],
+      "Folders": [
+        "Cartelle"
       ],
       "For a one-off sharing": [
         "Per una condivisione unica"
@@ -3729,6 +4009,9 @@
       "LinkedIn account": [
         "Account Linkedin"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Login"
       ],
@@ -3737,6 +4020,9 @@
       ],
       "Logins": [
         "Login"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Caselle email"
@@ -4053,6 +4339,9 @@
       "Server": [
         "Server"
       ],
+      "Service": [
+        "Servizio"
+      ],
       "Settings": [
         "Impostazioni"
       ],
@@ -4271,6 +4560,9 @@
       ],
       "WiFi network": [
         "Rete WiFi"
+      ],
+      "Windows": [
+        "Windows"
       ],
       "Work details": [
         "Dettagli di lavoro"
@@ -4565,6 +4857,9 @@
       "E.g., ": [
         "Ad es "
       ],
+      "E.g.: Google": [
+        "Ad esempio: Google"
+      ],
       "Email address": [
         "Indirizzo email"
       ],
@@ -4582,6 +4877,9 @@
       ],
       "Enter username": [
         "Inserisci il nome utente"
+      ],
+      "Folder name": [
+        "Nome cartella"
       ],
       "Full Name": [
         "Nome completo"
@@ -4609,6 +4907,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Descrivi il problema e includi eventuali messaggi di errore"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Digita nuovamente “${ name }” per confermare l'eliminazione"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Cerca ${ pluralItemType } in ${ vaultName }"
@@ -4862,6 +5163,9 @@
       "Add mailbox": [
         "Aggiungi casella email"
       ],
+      "Add one account": [
+        "Aggiungi un account"
+      ],
       "Adjust autofill behaviors to change where logins are suggested.": [
         "Regola i comportamenti del riempimento automatico per modificare i punti in cui vengono suggeriti i login."
       ],
@@ -4897,6 +5201,9 @@
       ],
       "Browser permission required": [
         "Autorizzazione del browser necessaria"
+      ],
+      "Browsers": [
+        "Browser"
       ],
       "Cancel changing your email?": [
         "Vuoi annullare la modifica della tua email?"
@@ -4934,11 +5241,20 @@
       "Create contact": [
         "Crea contatto"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Crea una cartella in “${ vaultName }”"
+      ],
       "Create new access token": [
         "Crea un nuovo token di accesso"
       ],
       "Create PIN code": [
         "Creare codice PIN"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Crea una sottocartella in “${ folderName }”"
+      ],
+      "Create your first login": [
+        "Crea il tuo primo account"
       ],
       "Created": [
         "Creazione"
@@ -4974,11 +5290,17 @@
       "Delete domain": [
         "Elimina il dominio"
       ],
+      "Delete folder \"${ name }\"?": [
+        "Elimina la cartella “${ name }”?"
+      ],
       "Delete mailbox": [
         "Elimina la casella email"
       ],
       "Delete this item?": [
         "Eliminare questo elemento?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Eliminare il vault “${ name }”?"
       ],
       "Did you know?": [
         "Lo sapevi?"
@@ -5034,17 +5356,32 @@
       "Export": [
         "Esporta"
       ],
+      "Export from ${ provider.title }": [
+        "Esporta da ${ provider.title }"
+      ],
       "Fill & copy password": [
         "Compila e copia la password"
+      ],
+      "Fill in your details": [
+        "Inserisci i tuoi dati"
       ],
       "Fill password": [
         "Inserisci password"
       ],
+      "First login created": [
+        "Creato il primo accesso"
+      ],
       "Folder options": [
         "Opzioni cartella"
       ],
+      "For security purposes, delete your exported file.": [
+        "Per motivi di sicurezza, elimina il file esportato."
+      ],
       "Get mobile and desktop apps": [
         "Scarica le app per dispositivi mobili e desktop."
+      ],
+      "Get mobile apps": [
+        "Scarica le app per dispositivi mobili"
       ],
       "Get Started": [
         "Inizia ora"
@@ -5061,6 +5398,9 @@
       "Hide my email": [
         "Nascondi la mia email"
       ],
+      "Hide passwords from viewers?": [
+        "Nascondere le password agli utenti?"
+      ],
       "Hide-my-email aliases": [
         "Alias Hide-my-email"
       ],
@@ -5073,11 +5413,29 @@
       "Import - ${ date }": [
         "Importa - ${ date }"
       ],
+      "Import completed with warnings": [
+        "Importazione completata con avvisi"
+      ],
       "Import failed": [
         "Importazione non riuscita"
       ],
+      "Import successful": [
+        "Importazione conclusa con successo"
+      ],
       "Import to vault(s)": [
         "Importa in una o più casseforti"
+      ],
+      "Import your passwords in less than a minute": [
+        "Importa le tue password in meno di un minuto"
+      ],
+      "Important: Once your data has been imported, delete the exported file.": [
+        "Importante: una volta importati i dati, elimina il file esportato."
+      ],
+      "Imported from:": [
+        "Importato da:"
+      ],
+      "Imported items:": [
+        "Articoli importati:"
       ],
       "Importing your data": [
         "Importazione dei tuoi dati"
@@ -5090,6 +5448,9 @@
       ],
       "Item": [
         "Elemento"
+      ],
+      "Keep your subscription active": [
+        "Mantieni attivo il tuo abbonamento"
       ],
       "Last autofill": [
         "Ultima compilazione automatica"
@@ -5136,12 +5497,25 @@
       "Modified": [
         "Modificato"
       ],
+      "Move ${ count } item to ${ target }": [
+        "Sposta ${ count } elemento in ${ target }",
+        "Sposta ${ count } elementi in ${ target }"
+      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Spostare ${ trashedItemsCount } elemento nel cestino?",
         "Spostare ${ trashedItemsCount } elementi nel cestino?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Vuoi spostare tutti gli elementi in \"${ vaultName }\"?"
+      ],
+      "Move all items?": [
+        "Spostare tutti gli elementi?"
+      ],
+      "Move everything at once": [
+        "Sposta tutto in una volta sola"
+      ],
+      "Move item to \"${ target }\"": [
+        "Move item to \"${ target }\""
       ],
       "MX record": [
         "Record MX"
@@ -5176,6 +5550,9 @@
       "No shared secure links": [
         "Nessun link sicuro condiviso"
       ],
+      "None of your items could be imported. See the details below.": [
+        "Non è stato possibile importare nessuno dei tuoi articoli. Consulta i dettagli riportati di seguito."
+      ],
       "Open pagination": [
         "Apri paginazione"
       ],
@@ -5193,6 +5570,9 @@
       ],
       "Password Health": [
         "Stato di integrità della password"
+      ],
+      "Password managers": [
+        "Gestori di password"
       ],
       "Pause monitoring?": [
         "Vuoi mettere in pausa il monitoraggio?"
@@ -5237,6 +5617,9 @@
       "Remove secure link?": [
         "Vuoi rimuovere il link sicuro?"
       ],
+      "Rename folder": [
+        "Rinomina cartella"
+      ],
       "Reset history for this item?": [
         "Reimpostare la cronologia per questo elemento?"
       ],
@@ -5265,6 +5648,9 @@
       "Select the default domain for aliases": [
         "Seleziona il dominio predefinito per gli alias"
       ],
+      "Select your password manager": [
+        "Scegli il tuo gestore di password"
+      ],
       "Set access level": [
         "Imposta livello di accesso"
       ],
@@ -5289,8 +5675,14 @@
       "Shared via": [
         "Condiviso tramite"
       ],
+      "Some of your items could not be imported. See the details below.": [
+        "Non è stato possibile importare alcuni dei tuoi articoli. Consulta i dettagli riportati di seguito."
+      ],
       "SPF (Optional)": [
         "SPF (Opzionale)"
+      ],
+      "Starting the extension": [
+        "Avvio dell'estensione"
       ],
       "Status": [
         "Stato"
@@ -5337,6 +5729,15 @@
       "Upgrade to check for compromised passwords": [
         "Passa a un piano superiore per verificare le password compromesse"
       ],
+      "Upgrade to check for reused passwords": [
+        "Esegui l'aggiornamento per verificare la presenza di password riutilizzate"
+      ],
+      "Upload": [
+        "Carica"
+      ],
+      "Upload your data": [
+        "Carica i tuoi dati"
+      ],
       "URL matching": [
         "Corrispondenza URL"
       ],
@@ -5358,6 +5759,9 @@
       "Want to learn more?": [
         "Vuoi saperne di più?"
       ],
+      "We'll guide you through the process. First choose where you currently store your passwords.": [
+        "Ti guideremo passo passo attraverso la procedura. Per prima cosa, scegli dove conservi attualmente le tue password."
+      ],
       "Weak password": [
         "Password debole"
       ],
@@ -5376,6 +5780,12 @@
       "What is the difference between ${ PASS_SHORT_APP_NAME } note and SimpleLogin note?": [
         "Qual è la differenza tra la nota ${ PASS_SHORT_APP_NAME } e la nota SimpleLogin?"
       ],
+      "Which service do you want to create the login for?": [
+        "Per quale servizio desideri creare le credenziali di accesso?"
+      ],
+      "You are ready to get the most out of ${ PASS_APP_NAME }.": [
+        "Sei pronto a sfruttare al massimo ${ PASS_APP_NAME }."
+      ],
       "You don't have any vaults": [
         "Non hai alcune casseforti"
       ],
@@ -5385,6 +5795,9 @@
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
       ],
+      "Your folder is empty": [
+        "La tua cartella è vuota"
+      ],
       "Your new access token": [
         "Il tuo nuovo token di accesso"
       ],
@@ -5393,6 +5806,9 @@
       ],
       "Your welcome gift": [
         "Il tuo regalo di benvenuto"
+      ],
+      "You’re a step away from autofill magic!": [
+        "Ti manca solo un passo per scoprire la magia del riempimento automatico!"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Stai per eliminare definitivamente ${ aliasCount } alias.",
@@ -5495,6 +5911,9 @@
       "Aliases in trash will continue forwarding emails.": [
         "Gli alias nel cestino continueranno a inoltrare le email."
       ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Tutti gli elementi contenuti in questa cartella, comprese le sottocartelle, verranno eliminati. Non è possibile annullare questa operazione."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tutti gli elementi nel cestino verranno eliminati definitivamente. Non puoi annullare questa azione."
       ],
@@ -5580,6 +5999,9 @@
       ],
       "Failed to load breaches.": [
         "Impossibile caricare le violazioni di dati."
+      ],
+      "Folder name is required": [
+        "Nome della cartella richiesto"
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Concedi l'accesso agli appunti per attivare la cancellazione automatica delle password e dei dati copiati."
@@ -5708,6 +6130,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Impossibile accedere a ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Il vault “${ name }” e tutti i suoi elementi verranno eliminati definitivamente. Non è possibile annullare questa azione."
+      ],
       "Vault name is required": [
         "Nome cassaforte richiesto"
       ],
@@ -5740,6 +6165,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Non avrai più accesso a questa cassaforte. Per unirti nuovamente avrai bisogno di un nuovo invito."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "È stato raggiunto il livello massimo di nidificazione delle cartelle"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Hai raggiunto il numero massimo di cartelle a questo livello"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Hai raggiunto il numero massimo di cartelle consentito per questo archivio"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Il Vostro amministratore deve creare una cassaforte per Voi prima che Voi possiate creare oggetti."

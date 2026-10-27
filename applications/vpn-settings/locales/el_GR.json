@@ -280,6 +280,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "About ${ name }": [
+        "Σχετικά με το ${ name }"
+      ],
       "activate": [
         "ενεργοποιήστε"
       ],
@@ -300,6 +303,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Προσθήκη διεύθυνσης ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Προσθέστε το ${ name }"
       ],
       "Add a payment method": [
         "Προσθέστε μία μέθοδο πληρωμής"
@@ -7329,6 +7335,9 @@
       ],
       "30-day money-back guarantee": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Εγγύηση επιστροφής χρημάτων 30 ημερών: ακυρώστε εντός 30 ημερών από την αγορά σας και επικοινωνήστε με το ${ customerSupportLink } για να λάβετε επιστροφή χρημάτων."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Ένα ${ protonSubdomain } φιλοξενείται από το ${ BRAND_NAME }, το οποίο σας επιτρέπει να ρυθμίσετε γρήγορα έναν υποτομέα. ${ learnMoreLink }"
@@ -16698,6 +16707,9 @@
       "Disable recovery by phone": [
         "Απενεργοποίηση ανάκτησης μέσω τηλεφώνου"
       ],
+      "failed": [
+        "αποτυχημένα"
+      ],
       "finalizing": [
         "οριστικοποιείται"
       ],
@@ -17807,6 +17819,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } Φίλος εγγράφηκε",
         "${ friendsSubscribed } Φίλοι εγγεγράφηκαν"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "${ LUMO_APP_NAME } API"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"

@@ -368,6 +368,9 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Аб ${ name }"
+      ],
       "Accept": [
         "Прыняць"
       ],
@@ -406,6 +409,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Дадаць адрас ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Дадаць ${ name }"
       ],
       "Add a payment method": [
         "Дадаць спосаб аплаты"
@@ -1979,6 +1985,9 @@
       "Sign in": [
         "Увайсці"
       ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Увайсці ў ${ PASS_APP_NAME }"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Увайсці з ${ BRAND_NAME }"
       ],
@@ -2161,6 +2170,9 @@
       ],
       "Upgrade to Business": [
         "Палепшыць да Business"
+      ],
+      "Upgrade to connect": [
+        "Палепшыць, каб падключыцца"
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Палепшыце свой тарыфны план, каб уключыць ${ PROTON_SENTINEL_NAME }"
@@ -3861,6 +3873,9 @@
       "Your address": [
         "Ваш адрас"
       ],
+      "Your address has been claimed": [
+        "Ваш адрас быў заяўлены"
+      ],
       "Your address has changed": [
         "Ваш адрас змяніўся"
       ],
@@ -5414,6 +5429,9 @@
       "A checked box means the feature is disabled.": [
         "Сцяжок азначае, што функцыя адключана."
       ],
+      "Access your passwords on all your devices": [
+        "Атрымлівайце доступ да сваіх пароляў на ўсіх сваіх прыладах"
+      ],
       "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
         "Дадайце дадатковыя адрасы да вашага ўліковага запісу або выкарыстоўвайце псеўданімы Hide My Email, каб захаваць прыватнасць сваёй паштовай скрыні."
       ],
@@ -5422,6 +5440,9 @@
       ],
       "Also included": [
         "Таксама ўключае"
+      ],
+      "Autofill logins instantly on any site": [
+        "Імгненнае аўтазапаўненне на любым вэб-сайце"
       ],
       "Automatically clear out emails moved to Trash and Spam more than 30 days ago.": [
         "Аўтаматычна ачышчайце лісты, якія перамешчаны ў Сметніцу і Спам больш за 30 дзён таму."
@@ -5464,6 +5485,9 @@
       ],
       "Create policies to decide who can connect to shared servers in each country.": [
         "Стварыце палітыку, каб вырашаць, хто можа падключацца да абагуленых сервераў у кожнай краіне."
+      ],
+      "Create strong password with one click": [
+        "Стварыце надзейны адным націскам"
       ],
       "Easily access your email and calendar on desktop and mobile.": [
         "Лёгкі доступ да вашай электроннай пошты і календара на камп’ютары або мабільнай прыладзе."
@@ -6163,6 +6187,9 @@
       ]
     },
     "Easy switch": {
+      "Sign in to ${ providerName }": [
+        "Увайсці ў ${ providerName }"
+      ],
       "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў."
       ],
@@ -8124,6 +8151,9 @@
       "Verification keys for ${ signatureType } are not available": [
         "Ключы спраўджання для ${ signatureType } недаступны"
       ],
+      "We couldn't reconnect this address.": [
+        "Немагчыма паўторна падключыць гэты адрас."
+      ],
       "We couldn't sign you in": [
         "Не ўдалося ўвайсці ў сістэму"
       ],
@@ -9152,6 +9182,9 @@
       ]
     },
     "Filter": {
+      "Activated": [
+        "Актывавана"
+      ],
       "All": [
         "Усе"
       ],
@@ -9163,6 +9196,9 @@
       ],
       "Migrated": [
         "Перанесеныя"
+      ],
+      "Not activated": [
+        "Не актываваны"
       ],
       "Pending": [
         "У чаканні"
@@ -9375,6 +9411,9 @@
       ],
       "Dedicated server - ${ serverPrice }": [
         "Вылучаны сервер - ${ serverPrice }"
+      ],
+      "Enforce identity-based access controls": [
+        "Забяспечце кантроль доступу на аснове ідэнтыфікацыі"
       ],
       "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
         "Акрамя маніторынгу падключэнняў, прыватныя шлюзы дазваляюць даваць доступ карыстальнікам або групам — усе яны працуюць на вылучаных серверах са статычнымі IP-адрасамі."
@@ -11184,6 +11223,9 @@
       "Connect and manage your external mailboxes in ${ MAIL_APP_NAME }.": [
         "Падключыце і кіруйце вашай знешняй паштовай скрыняй у ${ MAIL_APP_NAME }."
       ],
+      "Connected": [
+        "Падключана"
+      ],
       "Connection data will be available in around 1 hour.": [
         "Даныя аб падключэнні будуць даступны прыблізна праз 1 гадзіну."
       ],
@@ -12399,6 +12441,9 @@
       "No single sign-on": [
         "Няма адзінага ўваходу"
       ],
+      "No users to display": [
+        "Няма карыстальнікаў для адлюстравання"
+      ],
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
       ],
@@ -12866,6 +12911,9 @@
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Адпраўлена з дапамогай бяспечнай электроннай пошты <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+      ],
+      "SEPA Bank transfer": [
+        "Банкаўскі перавод SEPA"
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "У дадзены момант плацяжы SEPA недаступны. Паўтарыце спробу пазней."
@@ -14168,6 +14216,9 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Вашы ўліковыя запісы ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } звязаны паміж сабой. Каб выдаліць іх абодва, увайдзіце праз ${ loginLink } і там выдаліце свой уліковы запіс."
+      ],
+      "Your account and password stay the same.": [
+        "Ваш уліковы запіс і пароль не зменяцца."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да сэрвісу неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
@@ -16266,6 +16317,12 @@
       "Reserved email address": [
         "Зарэзерваваны адрас электроннай пошты"
       ],
+      "Restrict sign-in to primary email address": [
+        "Абмежаваць уваход з асноўным адрасам электроннай пошты"
+      ],
+      "Restrict sign-in to username": [
+        "Абмежаваць уваход імем карыстальніка"
+      ],
       "Reveal password": [
         "Паказаць пароль"
       ],
@@ -16418,6 +16475,9 @@
       ],
       "Start weekday": [
         "Першы дзень тыдня"
+      ],
+      "Start with your most recent": [
+        "Пачаць з самых апошніх"
       ],
       "Starts with": [
         "Пачынаецца з"
@@ -16930,6 +16990,9 @@
       ],
       "Create an alias": [
         "Стварыць псеўданім"
+      ],
+      "Customer Support": [
+        "Служба падтрымкі"
       ],
       "data recovery option": [
         "параметр аднаўлення даных"
@@ -20956,6 +21019,9 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
+      "You already own a Born Private account.": [
+        "Вы ўжо валодаеце ўліковым запісам Born Private."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
       ],
@@ -22229,6 +22295,9 @@
     "Rollback state": {
       "Undo finished": [
         "Адрабленне завершана"
+      ],
+      "Undo in progress": [
+        "Выконваецца адрабленне"
       ]
     },
     "Safety review": {
@@ -23292,6 +23361,11 @@
       ],
       "Open in ${ appName } (Beta)": [
         "Адкрыць у ${ appName } (бэта-версія)"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "Увайсці ў ${ providerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -24459,6 +24533,9 @@
       "Generate a recovery phrase": [
         "Згенерыраваць фразу аднаўлення"
       ],
+      "key removal scheduled": [
+        "запланаванае выдаленне ключа"
+      ],
       "Last changed ${ formattedDate }": [
         "Апошняя змена ${ formattedDate }"
       ],
@@ -24476,6 +24553,9 @@
       ],
       "Outdated": [
         "Састарэлы"
+      ],
+      "remove organization key": [
+        "выдаліць ключа арганізацыі"
       ],
       "Saved": [
         "Захавана"
@@ -25721,6 +25801,15 @@
       ]
     },
     "Table header": {
+      "Activated": [
+        "Актывавана"
+      ],
+      "Estimated size": [
+        "Прыблізны памер"
+      ],
+      "Migration status": [
+        "Статус пераносу"
+      ],
       "Size": [
         "Памер"
       ],
@@ -25941,11 +26030,17 @@
         "${ friendsSubscribed } сяброў падпісалася",
         "${ friendsSubscribed } сяброў падпісалася"
       ],
+      "${ LUMO_APP_NAME } API": [
+        "API для ${ LUMO_APP_NAME }"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Вітаем"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor Report"
@@ -26042,6 +26137,12 @@
       ],
       "Activity monitor": [
         "Манітор актыўнасці"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "Дадаць ${ PASS_APP_NAME } у ${ browserName }"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Дадаць ${ PASS_APP_NAME } у ваш браўзер"
       ],
       "Add ${ totalServerCount } server?": [
         "Дадаць ${ totalServerCount } сервер?",
@@ -26330,6 +26431,9 @@
       ],
       "Configure Always-on VPN device profile": [
         "Канфігурацыя профілю прылады пастаяннай VPN"
+      ],
+      "Configure migration": [
+        "Сканфігурыраваць перанос"
       ],
       "Configure your domain": [
         "Сканфігурыруйце свой дамен"
@@ -27285,6 +27389,9 @@
       "Our fight against censorship in Russia": [
         "Наша барацьба супраць цэнзуры ў Расіі"
       ],
+      "Over 95% of users love our extension": [
+        "Больш за 95% карыстальнікаў у захапленні ад нашых пашырэнняў"
+      ],
       "Password": [
         "Пароль"
       ],
@@ -27534,6 +27641,9 @@
       "Select the way to send this notification": [
         "Выберыце спосаб адпраўкі гэтага апавяшчэння"
       ],
+      "Select users to migrate": [
+        "Выберыце карыстальнікаў для пераносу"
+      ],
       "Select when you want this notification to be sent": [
         "Выберыце, калі гэта апавяшчэнне павінна быць адпраўлена"
       ],
@@ -27722,6 +27832,9 @@
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Умацуйце сваю бяспеку на ўсіх вашых прыладах з дапамогай ${ passPlusPlanName }. ${ upgradeButton }"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Падпіска на тарыфны план ${ planTitle }"
       ],
       "Subscription": [
         "Падпіска"
@@ -27960,6 +28073,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
       ],
+      "What are you migrating?": [
+        "Што вы плануеце перанесці?"
+      ],
       "What changes if you switch to the Free plan": [
         "Што зменіцца пры пераходзе на тарыфны план Free"
       ],
@@ -27996,6 +28112,9 @@
       "You have no resolved alerts": [
         "У вас няма вырашаных абвестак"
       ],
+      "You need a ${ BRAND_NAME } address": [
+        "Вам неабходны адрас ${ BRAND_NAME }"
+      ],
       "You're all set!": [
         "Усё гатова!"
       ],
@@ -28025,6 +28144,9 @@
       ],
       "Your exposed information": [
         "Вашы скампраметаваныя звесткі"
+      ],
+      "Your import is finished!": [
+        "Ваш імпарт завершаны!"
       ],
       "Your plan": [
         "Ваш тарыфны план"

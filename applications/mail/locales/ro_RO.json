@@ -39,6 +39,9 @@
       "A to Z": [
         "De la A la Z"
       ],
+      "About ${ name }": [
+        "Despre ${ name }"
+      ],
       "Activate": [
         "Activare"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adăugați ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Adăugare ${ name }"
       ],
       "Add a payment method": [
         "Adăugați o metodă de plată"
@@ -355,6 +361,9 @@
       ],
       "Copy version number to clipboard": [
         "Copiere număr versiune în memorie"
+      ],
+      "Create a booking page": [
+        "Creare pagină de rezervări"
       ],
       "Create a new contact group": [
         "Creare grup de contacte"
@@ -4288,6 +4297,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Permiteți-le oamenilor să planifice o întâlnire cu dvs. direct din e-mailuri, fără schimburi repetate de mesaje."
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Vă permite să adăugați imediat legături web de întâlnire în invitațiile la evenimente."
       ],
@@ -7305,6 +7317,12 @@
       "Are you sure you want to permanently delete this message?": [
         "Ștergeți definitiv mesajul?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Solicitați administratorului să facă modifice abonament sau să elimine o pagină din bara laterală „Pagini de rezervări” în ${ CALENDAR_APP_NAME }."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Solicitați-i administratorului să modifice planul actual sau să elimine o pagină din bara laterală a paginilor de rezervări."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Cel puțin ${ BETTER_PASSWORD_LENGTH } caractere"
       ],
@@ -7890,6 +7908,9 @@
       "here": [
         "aici"
       ],
+      "Here is my availability:": [
+        "Iată disponibilitatea mea:"
+      ],
       "Here's what happens when you continue:": [
         "Iată ce se va întâmpla după ce continuați:"
       ],
@@ -8239,6 +8260,9 @@
       ],
       "No action selected": [
         "Nicio acțiune selectată"
+      ],
+      "No booking pages yet": [
+        "Încă nu există pagini de rezervări"
       ],
       "No change will be made to the selected emails": [
         "Nu va fi efectuată nicio modificare asupra mesajelor selectate."
@@ -9145,6 +9169,18 @@
       "to ${ destinationElement } folder.": [
         "în folderul „${ destinationElement }”."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Pentru a adăuga o pagină nouă de rezervări, solicitați-i administratorului să modifice planul actual."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pentru a adăuga o pagină de rezervări nouă, elimină una existentă din bara laterală „Pagini de rezervări” din ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Pentru a adăuga o pagină de rezervări nouă, eliminați una existentă din bara laterală a paginilor de rezervări."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Pentru a adăuga o pagină nouă de rezervări, modificați-vă planul."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Pentru a evita distragerea de la filele deschise din navigatorul web, utilizați aplicația desktop."
       ],
@@ -9689,6 +9725,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Ați atins numărul maxim de adrese din grupul de contacte."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Ați atins numărul maxim de pagini de rezervare disponibile în planul actual."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, trebuie să plătiți toate facturile restante."
       ],
@@ -10173,6 +10212,9 @@
       "Active filter:": [
         "Filtru activ:"
       ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Adăugați o pagină de rezervări în e-mailuri și permiteți-le oamenilor să aleagă un moment convenabil."
+      ],
       "Add email address": [
         "Adăugare e-mail"
       ],
@@ -10268,6 +10310,9 @@
       ],
       "Blind Carbon Copy": [
         "Copie ascunsă"
+      ],
+      "Booking page": [
+        "Pagină de rezervare"
       ],
       "Bookings, billings, and orders": [
         "Rezervări, facturări și comenzi"
@@ -16476,6 +16521,9 @@
       "Cannot add more addresses": [
         "Nu se mai pot adăuga adrese"
       ],
+      "Cannot create more Booking pages": [
+        "Nu se mai pot crea pagini de rezervare"
+      ],
       "Carbon Copy": [
         "Copie"
       ],
@@ -16823,6 +16871,9 @@
       ],
       "Information exposed in breach": [
         "Informații expuse în breșă"
+      ],
+      "Insert a booking page": [
+        "Inserare pagină de rezervări"
       ],
       "Insert contacts": [
         "Inserare contacte"
@@ -17227,6 +17278,9 @@
       ],
       "Settings": [
         "Setări"
+      ],
+      "Share your availability": [
+        "Partajați-vă disponibilitatea"
       ],
       "Share your calendar with your team": [
         "Partajați-vă calendarul cu echipa proprie"

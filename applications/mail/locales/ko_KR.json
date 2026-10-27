@@ -354,6 +354,9 @@
       "Copy version number to clipboard": [
         "버전 넘버를 클립보드에 복사하기"
       ],
+      "Create a booking page": [
+        "예약 페이지 만들기"
+      ],
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
@@ -6989,6 +6992,9 @@
       "Are you sure you want to permanently delete this message?": [
         "이 메시지를 영구적으로 삭제하시겠습니까?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "관리자에게 플랜을 업그레이드하거나 예약 페이지 사이드바에서 페이지를 삭제하도록 요청하십시오."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "최소 ${ BETTER_PASSWORD_LENGTH }글자"
       ],
@@ -8735,6 +8741,15 @@
       "to ${ destinationElement } folder.": [
         "(${ destinationElement } 폴더)"
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "예약 페이지를 생성하려면, 관리자에게 플랜 업그레이드를 요청하십시오."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "예약 페이지를 생성하려면, 예약 페이지 사이드바에서 기존 페이지를 제거해야 합니다."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "예약 페이지를 생성하려면, 플랜 업그레이드가 필요합니다."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "브라우저의 열린 탭들이 주는 혼란을 피하고 싶다면, 데스크톱 앱을 이용하세요."
       ],
@@ -9220,6 +9235,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "이 연락처 그룹의 최대 주소 개수에 도달했습니다."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "사용자 플랜의 사용 가능한 최대 수의 예약 페이지에 도달했습니다."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, Drive 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
@@ -15651,6 +15669,9 @@
       ],
       "Cannot add more addresses": [
         "더 많이 주소를 추가할 수 없습니다."
+      ],
+      "Cannot create more Booking pages": [
+        "예약 페이지를 더 생성할 수 없음"
       ],
       "Carbon Copy": [
         "참조"

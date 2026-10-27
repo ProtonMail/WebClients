@@ -39,6 +39,9 @@
       "A to Z": [
         "De A à Z"
       ],
+      "About ${ name }": [
+        "À propos de ${ name }"
+      ],
       "Activate": [
         "Activer"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Ajouter ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Ajouter ${ name }"
       ],
       "Add a payment method": [
         "Ajouter une méthode de paiement"
@@ -354,6 +360,9 @@
       ],
       "Copy version number to clipboard": [
         "Copier le numéro de version dans le presse-papiers"
+      ],
+      "Create a booking page": [
+        "Créer une page de réservation"
       ],
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
@@ -4244,6 +4253,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Permettez à vos interlocuteurs de prendre rendez-vous avec vous directement depuis vos e-mails, sans échanges interminables."
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Vous permet d’ajouter instantanément des liens de réunion aux invitations de vos événements."
       ],
@@ -7157,6 +7169,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Voulez-vous vraiment supprimer définitivement ce message ?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Demandez à votre administrateur de changer d'abonnement ou de retirer une page de la barre latérale des pages de réservation."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Au moins ${ BETTER_PASSWORD_LENGTH } caractères"
       ],
@@ -7712,6 +7727,9 @@
       "here": [
         "ici"
       ],
+      "Here is my availability:": [
+        "Voici mes disponibilités :"
+      ],
       "Here's what happens when you continue:": [
         "Voici ce qui se passe lorsque vous continuez :"
       ],
@@ -8042,6 +8060,9 @@
       ],
       "No action selected": [
         "Aucune action n'est sélectionnée."
+      ],
+      "No booking pages yet": [
+        "Il n'y a pas encore de pages de réservation"
       ],
       "No change will be made to the selected emails": [
         "Aucun changement ne sera apporté aux messages sélectionnés."
@@ -8914,6 +8935,15 @@
       "to ${ destinationElement } folder.": [
         "vers le dossier ${ destinationElement }."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Pour ajouter une nouvelle page de réservation, demandez à votre administrateur de changer votre abonnement."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Pour ajouter une nouvelle page de réservation, retirez-en une existante de la barre latérale des pages de réservation."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Pour ajouter une nouvelle page de réservation, changez votre abonnement."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Pour éviter de vous laisser distraire par les onglets ouverts de votre navigateur, utilisez l'application de bureau."
       ],
@@ -9420,6 +9450,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Vous avez atteint le nombre maximum d'adresses dans le groupe de contacts."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Vous avez atteint le nombre maximum de pages de réservation prévues dans votre abonnement."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
@@ -9863,6 +9896,9 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } caractères"
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "Assistant ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -9890,6 +9926,9 @@
       ],
       "Active filter:": [
         "Filtre actif :"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Ajoutez une page de réservation à votre e-mail et permettez aux personnes de choisir un créneau qui leur convient."
       ],
       "Add email address": [
         "Ajouter une adresse e-mail"
@@ -9986,6 +10025,9 @@
       ],
       "Blind Carbon Copy": [
         "Copie carbone invisible"
+      ],
+      "Booking page": [
+        "Page de réservation"
       ],
       "Bookings, billings, and orders": [
         "Réservations, facturations et commandes"
@@ -15440,6 +15482,12 @@
         "${ elementsCount } message a été retiré des favoris.",
         "${ elementsCount } messages ont été retirés des favoris."
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "Assistant ${ LUMO_SHORT_APP_NAME } désactivé"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "Assistant ${ LUMO_SHORT_APP_NAME } activé"
+      ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
       ],
@@ -16008,6 +16056,9 @@
       "Cannot add more addresses": [
         "Impossible d'ajouter plus d'adresses"
       ],
+      "Cannot create more Booking pages": [
+        "Vous ne pouvez pas créer de pages de réservation supplémentaire."
+      ],
       "Carbon Copy": [
         "Copie carbone"
       ],
@@ -16349,6 +16400,9 @@
       ],
       "Information exposed in breach": [
         "Informations divulguées lors de la fuite de données"
+      ],
+      "Insert a booking page": [
+        "Insérer une page de réservation"
       ],
       "Insert contacts": [
         "Insérer des contacts"
@@ -16752,6 +16806,9 @@
       ],
       "Settings": [
         "Paramètres"
+      ],
+      "Share your availability": [
+        "Partagez vos disponibilités"
       ],
       "Share your calendar with your team": [
         "Partagez votre calendrier avec votre équipe"

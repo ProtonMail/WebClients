@@ -624,6 +624,9 @@
       "Get in touch": [
         "Oglasite se nam!"
       ],
+      "Get index size on disk": [
+        "Pridobi velikost indeksa na disku"
+      ],
       "Get started": [
         "Začnite"
       ],
@@ -7035,6 +7038,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Ali ste prepričani, da želite trajno izbrisati to sporočilo?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Pooblastite skrbnika, da nadgradi paket ali odstrani stran iz stranske vrstice strani za rezervacije."
+      ],
       "Attach public key": [
         "Pripni javni ključ"
       ],
@@ -7103,6 +7109,9 @@
       ],
       "Change your theme": [
         "Spremenite temo"
+      ],
+      "Checked Proton support": [
+        "Preverjeno s strani podpore Proton"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Preverjanje stika ${ progress } od ${ max } ..."
@@ -7196,6 +7205,9 @@
       ],
       "Create in": [
         "Ustvari v"
+      ],
+      "Create label": [
+        "Ustvarite oznako"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "Ustvarjanje več brezplačnih računov ni dovoljeno v skladu z našimi ${ termsLink }."
@@ -7488,6 +7500,12 @@
       "Forgot password?": [
         "Pozabljeno geslo?"
       ],
+      "Found ${ count } contact": [
+        "Najden ${ count } stik",
+        "Najdena ${ count } stika",
+        "Najdeni ${ count } stiki",
+        "Najdenih ${ count } stikov"
+      ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "Najden je bil aktualni šifrirani iskalni indeks, ki vsebuje ${ oldIndexSize } sporočilo.",
         "Najden je bil aktualni šifrirani iskalni indeks, ki vsebuje ${ oldIndexSize } sporočili.",
@@ -7559,6 +7577,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite 1 od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Če je vaš vzdevek prodan ali zlorabljen, ga preprosto onemogočite in tako prenehajte dobivati neželeno pošto."
@@ -8178,6 +8199,9 @@
       "Searched for “${ keyword }”": [
         "Iskalo se je po \"${ keyword }\""
       ],
+      "Searched the web": [
+        "Preiskano na spletu"
+      ],
       "Searched your mail": [
         "Vaša pošta je bila preiskana"
       ],
@@ -8567,6 +8591,15 @@
       ],
       "to ${ destinationElement } folder.": [
         "v mapo ${ destinationElement }."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Če želite dodati novo stran za rezervacije, prosite svojega skrbnika, da nadgradi vaš paket."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Če želite dodati novo stran za rezervacije, odstranite obstoječo s stranske vrstice strani za rezervacije."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Če želite dodati novo stran z rezervacijo, nadgradite svoj paket."
       ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Da vas odprti zavihki v brskalniku ne zavedejo, uporabite namizno aplikacijo."
@@ -9526,6 +9559,9 @@
       ],
       "Active filter:": [
         "Aktivni filter:"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "E-poštnemu sporočilu dodajte povezavo na stran z rezervacijo in prejemniki lahko izberejo čas, ki jim najbolj ustreza."
       ],
       "Add email address": [
         "Dodaj e-poštni naslov"
@@ -15298,6 +15334,9 @@
       ],
       "Birthday": [
         "Rojstni dan"
+      ],
+      "Black Friday": [
+        "Črni petek"
       ],
       "Blind Carbon Copy": [
         "Skrita kopija"
