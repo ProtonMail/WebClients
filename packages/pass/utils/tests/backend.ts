@@ -1,6 +1,8 @@
 import type { HttpResponseResolver, RequestHandler } from 'msw';
-import { HttpResponse, delay, http } from 'msw';
+import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
+
+import noop from '@proton/utils/noop';
 
 import type { MaybeNull, MaybePromise } from '../../types/utils';
 import type { TestPersistedSession } from './fixtures/session';
@@ -8,7 +10,7 @@ import type { TestPersistedSession } from './fixtures/session';
 export const TEST_API_URL = 'https://pass.test/api';
 
 type JsonBody = Record<string, unknown>;
-type HttpMethod = 'get' | 'post' | 'put' | 'delete';
+type HttpMethod = 'all' | 'get' | 'post' | 'put' | 'delete';
 
 /** The API factory rejects any response without a `date` header */
 const withDate = (headers: Record<string, string> = {}) => ({ date: new Date().toUTCString(), ...headers });
@@ -52,14 +54,9 @@ export const BACKEND_FAILURES: BackendFailure[] = [
         respond: () => respond.raw(200, '<html><body>Maintenance</body></html>', 'text/html'),
     },
     { label: 'network error', status: null, respond: () => HttpResponse.error() },
-    {
-        label: 'timeout',
-        status: null,
-        respond: async () => {
-            await delay('infinite');
-            return respond.ok();
-        },
-    },
+    /** Never settles, so the request hits the client timeout. Not MSW's `delay('infinite')`:
+     * it throws under jest fake timers and MSW answers with a 500 instead. */
+    { label: 'timeout', status: null, respond: () => new Promise<never>(noop) },
 ];
 
 export const getSessionResumeHandlers = ({ clientKey, session }: TestPersistedSession): RequestHandler[] => [
@@ -94,5 +91,7 @@ export const createTestBackend = () => {
         use: (...handlers: RequestHandler[]) => server.use(...handlers),
         on: (method: HttpMethod, path: string, resolver: HttpResponseResolver) =>
             server.use(http[method](`${TEST_API_URL}/${path}`, resolver)),
+        /** Drops the handlers registered through `use`/`on`: every route succeeds again */
+        reset: () => server.resetHandlers(),
     };
 };
