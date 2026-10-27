@@ -1,4 +1,10 @@
-import { EnrichedError, isValidationError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
+import {
+    EnrichedError,
+    errorToString,
+    isValidationError,
+    logError,
+    sendErrorReport,
+} from '@proton/drive/legacy/errorHandling';
 import { AbortError } from '@proton/drive/sdk';
 import metrics from '@proton/metrics/metricsInstance';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
@@ -156,8 +162,8 @@ export class FileSaver {
                 });
                 stream.pipeTo(saveStream, { preventCancel: true }).then(resolve).catch(reject);
             });
-        } catch (err: any) {
-            log(`Save via download failed. Reason: ${err.message}`);
+        } catch (err: unknown) {
+            log(`Save via download failed. Reason: ${errorToString(err)}`);
             throw err;
         }
     }
@@ -249,11 +255,11 @@ export class FileSaver {
             };
             window.addEventListener('beforeunload', removeEntry);
             setTimeout(removeEntry, timeout);
-        } catch (err: any) {
+        } catch (err: unknown) {
             if (root) {
-                await root.removeEntry(meta.filename);
+                await root.removeEntry(meta.filename).catch(logError);
             }
-            log(`Save via OPFS failed. Reason: ${err.message}`);
+            log(`Save via OPFS failed. Reason: ${errorToString(err)}`);
             throw err;
         }
     }
@@ -265,8 +271,8 @@ export class FileSaver {
         try {
             const chunks = await streamToBuffer(stream);
             downloadFile(new Blob(chunks, { type: meta.mimeType }), meta.filename);
-        } catch (err: any) {
-            log(`Save via buffer failed. Reason: ${err.message}`);
+        } catch (err: unknown) {
+            log(`Save via buffer failed. Reason: ${errorToString(err)}`);
             if (!isTransferCancelError(err)) {
                 if (isValidationError(err)) {
                     throw err;
@@ -276,7 +282,7 @@ export class FileSaver {
                     throw err;
                 }
 
-                throw new EnrichedError(`Download failed: ${err.message || err}`, {
+                throw new EnrichedError(`Download failed: ${errorToString(err)}`, {
                     extra: { err },
                 });
             }
