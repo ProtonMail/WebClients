@@ -76,6 +76,15 @@ export const entitlementChecksForSelection = {
 
     hasGroups: (r) => r.hasEntitlement(EntitlementName.Groups),
 
+    /**
+     * Should be `r.hasMatchingSubscription({ includes: [EntitlementName.Groups, EntitlementName.FlagsInbox] })`:
+     * group mail needs one subscription that grants both. It checks the organization instead because non-admin
+     * members (and MSP subsidiary admins) can't read the subscriptions, so `hasMatchingSubscription` is always false
+     * for them, and they use the groups pages. Migrate once members can read per-subscription entitlements; the same
+     * blocker affects every other `hasMatchingSubscription` check in this registry.
+     */
+    hasGroupMail: (r) => r.hasEntitlement(EntitlementName.Groups) && r.hasEntitlement(EntitlementName.FlagsInbox),
+
     hasAllCoreProductsB2C: (r) =>
         r.hasMatchingSubscription({
             includes: [

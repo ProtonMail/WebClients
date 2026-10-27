@@ -1,5 +1,6 @@
 import { buildEntitlementCatalog } from '../../testing/buildEntitlementCatalog';
 import { buildSubscription } from '../../testing/buildSubscription';
+import { buildOrgAndUserEntitlementChecks } from '../../testing/prodCatalogGrants';
 import { PLANS } from '../constants';
 import { EntitlementName } from './entitlement-names';
 import { createEntitlementResolverForSelection } from './resolver';
@@ -201,5 +202,39 @@ describe('hasCustomDomainAddresses', () => {
 
     it('returns false for a plan that has domains only for SSO', () => {
         expect(hasCustomDomainAddresses(PLANS.VPN_BUSINESS)).toBe(false);
+    });
+});
+
+describe('hasGroupMail', () => {
+    it.each([PLANS.VISIONARY, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025] as const)('returns true for %s', (plan) => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).hasGroupMail).toBe(true);
+    });
+
+    it.each([
+        PLANS.DRIVE_BUSINESS,
+        PLANS.VPN_BUSINESS,
+        PLANS.PASS_BUSINESS,
+        PLANS.VPN_PRO,
+        PLANS.MAIL,
+        PLANS.MAIL_PRO,
+    ] as const)('returns false for %s', (plan) => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).hasGroupMail).toBe(false);
+    });
+
+    it('returns true when groups and mail come from different subscriptions', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.DRIVE_BUSINESS, PLANS.MAIL] }).hasGroupMail
+        ).toBe(true);
+    });
+
+    it('returns true for a member who cannot read the organization subscriptions', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [], organizationPlans: [PLANS.VISIONARY] })
+                .hasGroupMail
+        ).toBe(true);
+    });
+
+    it('returns false without entitlements', () => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [] }).hasGroupMail).toBe(false);
     });
 });

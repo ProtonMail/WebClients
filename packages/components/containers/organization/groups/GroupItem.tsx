@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
-import { useOrganization } from '@proton/account/organization/hooks';
 import { getTranslatedRoleName } from '@proton/account/organizationRoles/helpers';
 import { Button } from '@proton/atoms/Button/Button';
 import type { EnhancedGroup } from '@proton/shared/lib/interfaces/Group';
@@ -11,7 +11,6 @@ import RoleAssignmentStatusIcon from '../../members/rolesAndPermissions/RoleAssi
 import GroupIcon from './GroupIcon';
 import GroupItemMoreOptionsDropdown from './GroupItemMoreOptionsDropdown';
 import { useGroupsManagement } from './context/GroupsManagementContext';
-import shouldShowMail from './shouldShowMail';
 import { GROUPS_RESTRICTION_REASON, type GroupsManagementReturn } from './types';
 
 interface Props {
@@ -24,9 +23,9 @@ interface Props {
 }
 
 const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGroup }: Props) => {
-    const [organization] = useOrganization();
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
     const { groupRolesMap, restrictedBy } = useGroupsManagement();
-    const showMailFeatures = shouldShowMail(organization?.PlanName);
+    const showMailFeatures = entitlements.hasGroupMail;
 
     const groupOrganizationRoles = group ? groupRolesMap[group.ID] : undefined;
     const roleNames = groupOrganizationRoles

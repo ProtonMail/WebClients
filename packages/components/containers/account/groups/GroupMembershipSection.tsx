@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
-import { useOrganization } from '@proton/account/organization/hooks';
 import type { GroupMembership } from '@proton/shared/lib/interfaces/GroupMember';
 
 import Loader from '../../../components/loader/Loader';
@@ -10,7 +10,6 @@ import TableBody from '../../../components/table/TableBody';
 import TableCell from '../../../components/table/TableCell';
 import TableHeader from '../../../components/table/TableHeader';
 import TableRow from '../../../components/table/TableRow';
-import shouldShowMail from '../../organization/groups/shouldShowMail';
 import SettingsParagraph from '../SettingsParagraph';
 import SettingsSectionWide from '../SettingsSectionWide';
 import GroupActions from './GroupActions';
@@ -81,9 +80,10 @@ const GroupsTable = ({
 };
 
 const GroupMembershipSection = () => {
-    const [organization] = useOrganization();
-    const showMailFeatures = shouldShowMail(organization?.PlanName);
-    const [originalGroupMemberships, loading] = useGroupMemberships();
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
+    const showMailFeatures = entitlements.hasGroupMail;
+    const [originalGroupMemberships, loadingGroupMemberships] = useGroupMemberships();
+    const loading = loadingGroupMemberships || loadingEntitlements;
 
     const groupMemberships: GroupMembership[] = (originalGroupMemberships ?? []).map(
         ({ Group, State, ForwardingKeys, AddressID, ID, Permissions }) => ({
