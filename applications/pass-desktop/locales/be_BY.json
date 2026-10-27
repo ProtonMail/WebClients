@@ -421,6 +421,9 @@
       "Hide": [
         "Схаваць"
       ],
+      "Hide passwords": [
+        "Схаваць паролі"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Як экспартаваць даныя з ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -1062,6 +1065,9 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш другі пароль, каб працягнуць экспартаванне"
+      ],
+      "Biometric authentication cancelled.": [
+        "Біяметрычная аўтэнтыфікацыя скасавана."
       ],
       "Biometric authentication failed.": [
         "Збой аўтэнтыфікацыі біяметрыі."
@@ -2138,6 +2144,9 @@
       "Failed updating your vault organization": [
         "Не ўдалося абнавіць вашу арганізацыю сховішча"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Поле схавана. Вы ўсё яшчэ можаце аўтазапоўніць яго."
+      ],
       "Fill in the CSV with your data": [
         "Запоўніце CSV сваімі данымі"
       ],
@@ -2206,6 +2215,9 @@
       ],
       "Import the CSV file below.": [
         "Імпартуйце файл CSV ніжэй."
+      ],
+      "Important:": [
+        "Важна:"
       ],
       "Imported on ${ date }": [
         "Імпартавана ${ date }"
@@ -5221,6 +5233,9 @@
       "Hidden vaults": [
         "Схаваныя сховішчы"
       ],
+      "Hide passwords from viewers?": [
+        "Хаваць паролі ад праглядальнікаў?"
+      ],
       "Hide-my-email aliases": [
         "Псеўданімы Hide-my-email"
       ],
@@ -5523,6 +5538,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Палепшыце, каб праверыць скампраметаваныя паролі"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Палепшыце, каб праверыць наяўнасць паўторна выкарыстаных пароляў"
       ],
       "URL matching": [
         "Супадзенне URL-адраса"

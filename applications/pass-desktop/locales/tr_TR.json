@@ -421,6 +421,9 @@
       "Hide": [
         "Gizle"
       ],
+      "Hide passwords": [
+        "Parolaları gizle"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "${ PROVIDER_INFO_MAP[form.values.provider].title } üzerindeki verilerimi nasıl dışa aktarabilirim?"
       ],
@@ -941,6 +944,9 @@
       ],
       "Change your passwords": [
         "Parolalarınızı değiştirin"
+      ],
+      "Check if you're reusing passwords": [
+        "Parolaları yeniden kullanıp kullanmadığınızı denetleyin"
       ],
       "Check if your passwords have been exposed": [
         "Parolalarınızın açığa çıkıp çıkmadığını kontrol edin"
@@ -1705,6 +1711,9 @@
         "${ forwardedEmailsCount } iletildi",
         "${ forwardedEmailsCount } iletildi"
       ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Bu önlem, izleyicilerin parolaları başka yollarla almasını engellemez."
+      ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail }, bir ögeyi yönettiğiniz bir grupla paylaşmak istiyor."
       ],
@@ -2113,6 +2122,9 @@
       "Failed updating your vault organization": [
         "Kasa kuruluşunuz güncellenemedi."
       ],
+      "Field hidden. You can still autofill it.": [
+        "Alan gizli. Otomatik olarak doldurmayı sürdürebilirsiniz."
+      ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
       ],
@@ -2183,6 +2195,9 @@
       ],
       "Import the CSV file below.": [
         "Aşağıdan CSV dosyasını içe aktarın."
+      ],
+      "Important:": [
+        "Önemli"
       ],
       "Imported on ${ date }": [
         "${ date } tarihinde içe aktarıldı"
@@ -2412,6 +2427,9 @@
       ],
       "Pass Plus trial": [
         "Proton Pass Plus denemesi"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Parola gizli. Hala otomatik olarak doldurabilirsiniz."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Parola ile kilitleme kullanıma alındı. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
@@ -2920,6 +2938,12 @@
       "Viewer": [
         "Görüntüleyici"
       ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "İzleyiciler parolaları otomatik olarak doldurmayı sürdürebilir. Ancak bunları ${ PASS_APP_NAME } içinde göremezler. Bu, önlem sıradan görüntülemeyi engeller ve yanlışlıkla açığa çıkma riskini azaltır."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "İzleyiciler otomatik doldurmayı sürdürebilir. Düzenleyiciler ve yöneticiler parolaları her zaman görür."
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Verileri yerel depolamanızla eşitlerken sorun çıktı. ${ PASS_SHORT_APP_NAME } uygulamasının sorunsuz çalışması için lütfen yeterli boş disk alanınızın olduğundan emin olun."
       ],
@@ -3249,6 +3273,9 @@
       ],
       "All items": [
         "Tüm ögeler"
+      ],
+      "Allow viewers to see passwords": [
+        "İzleyiciler parolaları görebilsin"
       ],
       "Alphabetical": [
         "Alfabetik"
@@ -5159,6 +5186,9 @@
       "Hidden vaults": [
         "Gizli kasalar"
       ],
+      "Hide passwords from viewers?": [
+        "Parolalar izleyenlerden gizlensin mi?"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email takma adları"
       ],
@@ -5453,6 +5483,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Açığa çıkmış parolaları kontrol etmek için tarifenizi yükseltin"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Yeniden kullanılan parolaları denetlemek için tarifenizi yükseltin"
       ],
       "URL matching": [
         "Adres eşleştirme"

@@ -421,6 +421,9 @@
       "Hide": [
         "Ausblenden"
       ],
+      "Hide passwords": [
+        "Passwörter ausblenden"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Wie exportiere ich meine Daten aus ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -941,6 +944,9 @@
       ],
       "Change your passwords": [
         "Ändere deine Passwörter"
+      ],
+      "Check if you're reusing passwords": [
+        "Überprüfen, ob Passwörter wiederverwendet werden"
       ],
       "Check if your passwords have been exposed": [
         "Prüfe, ob deine Passwörter offengelegt wurden"
@@ -1705,6 +1711,9 @@
         "${ forwardedEmailsCount } weitergeleitet",
         "${ forwardedEmailsCount } weitergeleitet"
       ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Dies kann jedoch nicht verhindern, dass Zuschauer Passwörter auf andere Weise in Erfahrung bringen."
+      ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } möchte einen Eintrag mit einer Gruppe teilen, die du verwaltest."
       ],
@@ -2113,6 +2122,9 @@
       "Failed updating your vault organization": [
         "Fehler beim Aktualisieren deiner Tresor-Organisation"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Feld ausgeblendet. Es kann dennoch automatisch ausgefüllt werden."
+      ],
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
       ],
@@ -2183,6 +2195,9 @@
       ],
       "Import the CSV file below.": [
         "Importiere die CSV-Datei unten."
+      ],
+      "Important:": [
+        "Wichtig:"
       ],
       "Imported on ${ date }": [
         "Importiert am ${ date }"
@@ -2412,6 +2427,9 @@
       ],
       "Pass Plus trial": [
         "Pass Plus-Testversion"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Das Passwort ist ausgeblendet. Es kann dennoch automatisch ausgefüllt werden."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Passwortsperre erfolgreich registriert. Verwenden es, um ${ PASS_APP_NAME } zu entsperren."
@@ -2920,6 +2938,12 @@
       "Viewer": [
         "Betrachter"
       ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Zuschauer können Passwörter weiterhin automatisch ausfüllen, werden ihnen jedoch nicht in ${ PASS_APP_NAME } angezeigt. Dies verhindert eine beiläufige Einsichtnahme und verringert das Risiko einer versehentlichen Offenlegung."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Zuschauer können weiterhin die automatische Ausfüllfunktion nutzen. Redakteure und Administratoren werden die Passwörter immer angezeigt."
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Wir haben Probleme bei der Synchronisierung von Daten mit deinem lokalen Speicher. Bitte vergewissere dich, dass du genügend Speicherplatz für ${ PASS_SHORT_APP_NAME } hast, damit die Synchronisation reibungslos funktioniert."
       ],
@@ -3249,6 +3273,9 @@
       ],
       "All items": [
         "Alle Elemente"
+      ],
+      "Allow viewers to see passwords": [
+        "Zuschauern ermöglichen, Passwörter einzusehen"
       ],
       "Alphabetical": [
         "Alphabetisch"
@@ -5159,6 +5186,9 @@
       "Hidden vaults": [
         "Unsichtbare Tresore"
       ],
+      "Hide passwords from viewers?": [
+        "Passwörter vor Zuschauern ausblenden?"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-Aliasse"
       ],
@@ -5453,6 +5483,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Führe ein Upgrade durch, um nach kompromittierten Passwörtern zu suchen"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Umsteigen, um auf wiederverwendete Passwörter prüfen zu können"
       ],
       "URL matching": [
         "URL-Übereinstimmung"
