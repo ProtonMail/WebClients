@@ -1,7 +1,7 @@
 import { createActor, fromCallback, fromPromise, setup, waitFor } from 'xstate';
 
 import { PasswordError, TOTPError } from '@proton/shared/lib/authentication/error';
-import type { SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
+import type { InfoResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { ExternalSSOError } from '@proton/shared/lib/authentication/ssoExternalLogin';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -24,6 +24,7 @@ import type { PrepareSSOResult, SSOSignInResult } from '../auth/sso';
 import type {
     AccountType,
     CredentialsFormValues,
+    PasswordLoginInput,
     PrimaryAuthResult,
     SSOProviderResult,
     UsernameFormValues,
@@ -62,7 +63,11 @@ const form: CredentialsFormValues = {
     payload: { challenge: 'result' },
 };
 const usernameForm: UsernameFormValues = { username: form.username, persistent: false };
+const authInfo = { Modulus: 'modulus' } as InfoResponse;
 const session = { data: { User: { Flags: {} } } } as unknown as AuthSession;
+/** The password step, for the username the page starts with (`startActor`'s); the password login's tests start here. */
+const passwordStep: AuthTypeData = { type: AuthType.AutoSrp, username: 'initial@example.com' };
+
 const primaryAuth = { authType: AuthType.Srp, username: 'user@example.com' } as unknown as PrimaryAuthResult;
 
 interface AuthOptions {
@@ -132,7 +137,7 @@ interface Overrides {
     startAuthSession?: () => Promise<void>;
     fetchAccountType?: () => Promise<AccountType>;
     fetchSSOInfo?: () => Promise<SSOInfoResponse>;
-    authenticateWithPassword?: (values: CredentialsFormValues) => Promise<PrimaryAuthResult>;
+    authenticateWithPassword?: (values: PasswordLoginInput) => Promise<PrimaryAuthResult>;
     authorizeWithSSOProvider?: (args: {
         input: { token: string | undefined; persistent: boolean };
     }) => Promise<SSOProviderResult>;
@@ -165,7 +170,7 @@ function startActor(overrides: Overrides = {}, input: Partial<SignInMachineInput
             overrides.authenticateWithClaimedAddress ?? ((_input: unknown) => Promise.resolve(primaryAuth))
         ),
         authenticateWithPassword: jest.fn(
-            overrides.authenticateWithPassword ?? ((_values: CredentialsFormValues) => Promise.resolve(primaryAuth))
+            overrides.authenticateWithPassword ?? ((_values: PasswordLoginInput) => Promise.resolve(primaryAuth))
         ),
         navigateBack: jest.fn(),
         redirectToAccountSSO: jest.fn(),
@@ -220,7 +225,8 @@ function startActor(overrides: Overrides = {}, input: Partial<SignInMachineInput
                 actors: {
                     startAuthSession: fromPromise(() => spies.startAuthSession()),
                     fetchAccountType: fromPromise(
-                        overrides.fetchAccountType ?? (() => Promise.resolve<AccountType>({ type: 'srp' }))
+                        overrides.fetchAccountType ??
+                            (() => Promise.resolve<AccountType>({ type: 'srp', info: authInfo }))
                     ),
                     fetchSSOInfo: fromPromise(
                         overrides.fetchSSOInfo ??
@@ -302,7 +308,7 @@ function startActor(overrides: Overrides = {}, input: Partial<SignInMachineInput
     const actor = createActor(machine, {
         input: {
             username: 'initial@example.com',
-            authTypeData: { type: AuthType.Srp },
+            authTypeData: passwordStep,
             canNavigateBack: false,
             setupVPN: false,
             redirectsSSOToAccount: false,
@@ -398,7 +404,7 @@ const startWith = (authTypeData: AuthTypeData, overrides: Overrides = {}, input:
 describe('SignInStateMachine', () => {
     describe('credentials', () => {
         it.each([
-            [{ type: AuthType.Srp }, 'srp'],
+            [passwordStep, 'autoSrp'],
             [{ type: AuthType.Auto }, 'auto'],
             [{ type: AuthType.ExternalSSO }, 'externalSSO'],
         ] as const)('starts on the form for %o', (authTypeData, mode) => {
@@ -426,7 +432,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'signingIn' } } })
+                    .matches({ form: { signIn: { autoSrp: 'signingIn' } } })
             ).toBe(true);
             expect(credentialsFlow(actor).getSnapshot().hasTag('submitting')).toBe(true);
             // One-password mode: the flow completes without a screen of its own, so the form stays up
@@ -436,7 +442,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'submitted' } } })
+                    .matches({ form: { signIn: { autoSrp: 'submitted' } } })
             ).toBe(true);
             expect(credentialsFlow(actor).getSnapshot().hasTag('submitting')).toBe(true);
             pending.resolve();
@@ -672,6 +678,42 @@ describe('SignInStateMachine', () => {
                 expect(claimedScreen(actor)).toBe('claimedChoice');
             });
 
+            it('asks only for the password when the fresh SSO info says the account has none', async () => {
+                const tokens: (string | undefined)[] = [];
+                const error = new SwitchToSRPError(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SRP));
+                const { actor, errors } = startWith(
+                    { type: AuthType.Auto },
+                    {
+                        fetchAccountType: claimedSSOAccount,
+                        fetchSSOInfo: () => Promise.reject(error),
+                        authorizeWithSSOProvider: ({ input }) => {
+                            tokens.push(input.token);
+                            return Promise.reject(new ExternalSSOError('closed'));
+                        },
+                    }
+                );
+                await submitUsername(actor);
+                credentialsFlow(actor).send({ type: 'claimed.ssoRequested' });
+                await waitUntil(
+                    () =>
+                        tokens.length === 1 &&
+                        credentialsFlow(actor)
+                            .getSnapshot()
+                            .matches({ form: { claimedAddress: 'choice' } })
+                );
+
+                // The window used up the token, so this opening loads the SSO info again
+                credentialsFlow(actor).send({ type: 'claimed.ssoRequested' });
+                await waitUntilSettled(actor);
+                expect(
+                    credentialsFlow(actor)
+                        .getSnapshot()
+                        .matches({ form: { signIn: { autoSrp: 'idle' } } })
+                ).toBe(true);
+                expect(credentialsFlow(actor).getSnapshot().context.username).toBe(usernameForm.username);
+                expect(errors()).toContain(error);
+            });
+
             it('recovers with the candidates it was entered with, whatever SSO info loads after', async () => {
                 const { actor, spies } = await openTwice();
 
@@ -718,7 +760,7 @@ describe('SignInStateMachine', () => {
                 ).toBe(true);
             });
 
-            it('starts a new attempt when the SSO form switches to the password form', async () => {
+            it('starts a new attempt when the SSO form switches to the password step', async () => {
                 const { actor } = startWith(
                     { type: AuthType.ExternalSSO },
                     {
@@ -739,7 +781,7 @@ describe('SignInStateMachine', () => {
                 });
 
                 const { context } = credentialsFlow(actor).getSnapshot();
-                expect(claimedScreen(actor)).toBe('srp');
+                expect(claimedScreen(actor)).toBe('autoSrp');
                 expect(context.username).toBe('other@example.com');
                 // The SSO info, with the claimed address's candidates, doesn't carry over
                 expect(context.ssoInfo).toBeUndefined();
@@ -755,7 +797,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             expect(credentialsFlow(actor).getSnapshot().context.errorMessage).toBe(
                 `error ${API_CUSTOM_ERROR_CODES.INVALID_LOGIN}`
@@ -792,7 +834,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             expect(spies.redirectToAccountSSO).toHaveBeenCalledWith({ username: form.username });
         });
@@ -804,9 +846,37 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             expect(errors()).toEqual([error]);
+        });
+
+        it("signs in with the account type check's auth info once, then fetches it again", async () => {
+            const { actor, spies } = startWith(
+                { type: AuthType.Auto },
+                {
+                    authenticateWithPassword: () =>
+                        Promise.reject(new InvalidLoginError(apiError(API_CUSTOM_ERROR_CODES.INVALID_LOGIN))),
+                }
+            );
+            await submitUsername(actor);
+            await submitCredentials(actor);
+            await submitCredentials(actor);
+            expect(spies.authenticateWithPassword.mock.calls.map(([values]) => values.info)).toEqual([
+                authInfo,
+                undefined,
+            ]);
+        });
+
+        it("fetches the auth info again once the account type check's is too old", async () => {
+            const { actor, spies } = startWith({ type: AuthType.Auto });
+            await submitUsername(actor);
+            // The clock moves on without any timer firing, like after the device slept
+            const now = Date.now;
+            const later = jest.spyOn(Date, 'now').mockImplementation(() => now() + 2 * 60 * 1000);
+            await submitCredentials(actor);
+            later.mockRestore();
+            expect(spies.authenticateWithPassword.mock.calls[0][0].info).toBeUndefined();
         });
 
         it('keeps the password only in the login request, not in the step', async () => {
@@ -816,7 +886,7 @@ describe('SignInStateMachine', () => {
             await waitUntil(() =>
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'signingIn' } } })
+                    .matches({ form: { signIn: { autoSrp: 'signingIn' } } })
             );
             expect(JSON.stringify(credentialsFlow(actor).getSnapshot().context)).not.toContain(form.password);
             login.resolve(primaryAuth);
@@ -824,7 +894,7 @@ describe('SignInStateMachine', () => {
             await waitUntil(() =>
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'submitted' } } })
+                    .matches({ form: { signIn: { autoSrp: 'submitted' } } })
             );
             expect(JSON.stringify(credentialsFlow(actor).getSnapshot().context)).not.toContain(form.password);
         });
@@ -849,7 +919,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             // The new step works: a sign-in goes through it
             spies.redirectToAccountSSO.mockReset();
@@ -858,27 +928,28 @@ describe('SignInStateMachine', () => {
         });
 
         it('navigates back only when the page allows it', () => {
-            const withoutBack = startActor();
+            const withoutBack = startWith({ type: AuthType.Auto });
             credentialsFlow(withoutBack.actor).send({ type: 'decision.back' });
             expect(withoutBack.spies.navigateBack).not.toHaveBeenCalled();
 
-            const withBack = startActor({}, { canNavigateBack: true });
+            const withBack = startWith({ type: AuthType.Auto }, {}, { canNavigateBack: true });
             credentialsFlow(withBack.actor).send({ type: 'decision.back' });
             expect(withBack.spies.navigateBack).toHaveBeenCalledTimes(1);
         });
 
         it('ignores back while a request runs', async () => {
-            const { actor, spies } = startActor(
-                { authenticateWithPassword: () => new Promise(() => {}) },
+            const { actor, spies } = startWith(
+                { type: AuthType.Auto },
+                { fetchAccountType: () => new Promise(() => {}) },
                 { canNavigateBack: true }
             );
-            credentialsFlow(actor).send({ type: 'credentials.submitted', payload: form });
+            credentialsFlow(actor).send({ type: 'credentials.usernameSubmitted', payload: usernameForm });
             credentialsFlow(actor).send({ type: 'decision.back' });
             expect(spies.navigateBack).not.toHaveBeenCalled();
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'signingIn' } } })
+                    .matches({ form: { signIn: { auto: 'checkingAccountType' } } })
             ).toBe(true);
         });
 
@@ -995,22 +1066,6 @@ describe('SignInStateMachine', () => {
             ).toBe(true);
         });
 
-        it('keeps the page back waiting for the password login', async () => {
-            const { actor, spies } = startWith(
-                { type: AuthType.Srp },
-                { authenticateWithPassword: () => new Promise<PrimaryAuthResult>(() => {}) },
-                { canNavigateBack: true }
-            );
-            credentialsFlow(actor).send({ type: 'credentials.submitted', payload: form });
-            credentialsFlow(actor).send({ type: 'decision.back' });
-            expect(spies.navigateBack).not.toHaveBeenCalled();
-            expect(
-                credentialsFlow(actor)
-                    .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'signingIn' } } })
-            ).toBe(true);
-        });
-
         it('opens the SSO provider when the account uses SSO, keeping the auto form', async () => {
             const provider = deferred<SSOProviderResult>();
             const { actor, spies } = startWith(
@@ -1096,7 +1151,7 @@ describe('SignInStateMachine', () => {
             expect(errors()).toEqual([]);
         });
 
-        it('falls back to the password form when the account has no SSO', async () => {
+        it('falls back to the password step when the account has no SSO', async () => {
             const error = new SwitchToSRPError(apiError(API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SRP));
             const { actor, errors } = startWith(
                 { type: AuthType.ExternalSSO },
@@ -1106,7 +1161,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             expect(errors()).toEqual([error]);
         });
@@ -1128,7 +1183,7 @@ describe('SignInStateMachine', () => {
             expect(credentials.getSnapshot().context.errorMessage).toBeUndefined();
         });
 
-        it("doesn't carry the API's refusal of the SSO sign-in over to the password form", async () => {
+        it("doesn't carry the API's refusal of the SSO sign-in over to the password step", async () => {
             const error = new SSOSignInRejectedError({ status: 422, data: { Code: 2011, Error: 'SSO misconfigured' } });
             const { actor } = startWith(
                 { type: AuthType.ExternalSSO },
@@ -1142,7 +1197,7 @@ describe('SignInStateMachine', () => {
                 type: 'credentials.passwordSignInRequested',
                 payload: { username: 'typed@example.com' },
             });
-            expect(credentials.getSnapshot().matches({ form: { signIn: { srp: 'idle' } } })).toBe(true);
+            expect(credentials.getSnapshot().matches({ form: { signIn: { autoSrp: 'idle' } } })).toBe(true);
             expect(credentials.getSnapshot().context.errorMessage).toBeUndefined();
         });
 
@@ -1164,7 +1219,7 @@ describe('SignInStateMachine', () => {
             expect(errors()).toEqual([error]);
         });
 
-        it('switches to the password form on request', () => {
+        it('switches to the password step on request', () => {
             const { actor } = startWith({ type: AuthType.ExternalSSO });
             credentialsFlow(actor).send({
                 type: 'credentials.passwordSignInRequested',
@@ -1173,7 +1228,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             expect(credentialsFlow(actor).getSnapshot().context.username).toBe('typed@example.com');
         });
@@ -1292,7 +1347,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             // The reopened form keeps what was submitted
             expect(credentialsFlow(actor).getSnapshot().context.username).toBe(form.username);
@@ -1312,7 +1367,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             expect(spies.completeSignIn).not.toHaveBeenCalled();
         });
@@ -1486,7 +1541,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
         });
 
@@ -1504,7 +1559,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
         });
 
@@ -1520,7 +1575,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
         });
 
@@ -1586,7 +1641,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             expect(credentialsFlow(actor).getSnapshot().context.username).toBe(form.username);
             // The next attempt gets a fresh auth session
@@ -1791,7 +1846,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             expect(errors()).toEqual([error]);
             expect(polls[0].stopped).toBe(true);
@@ -1806,7 +1861,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             expect(ssoData?.organizationData.logo?.cleanup).toHaveBeenCalledTimes(1);
         });
@@ -2481,7 +2536,7 @@ describe('SignInStateMachine', () => {
             expect(
                 credentialsFlow(actor)
                     .getSnapshot()
-                    .matches({ form: { signIn: { srp: 'idle' } } })
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
             ).toBe(true);
             expect(errors()).toEqual([error]);
         });

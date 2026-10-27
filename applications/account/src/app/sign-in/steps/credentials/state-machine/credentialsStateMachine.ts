@@ -1,6 +1,6 @@
 /**
  * The credentials step: the sign-in machine runs this as a child for the whole page. Its forms (`auto`, `autoSrp`,
- * `srp`, `externalSSO`) decide what a submission does; each runs its own requests and keeps the form up while they
+ * `externalSSO`) decide what a submission does; each runs its own requests and keeps the form up while they
  * run. A password the account rejects but an account its address belonged to accepts signs in to that one, to
  * recover it. When the address's domain has an identity provider, the forms that use it ask first
  * (`claimedAddress`), and back returns to the form it came from. A successful first authentication is sent to the
@@ -12,7 +12,7 @@
 import { type SnapshotFrom, and, assertEvent, assign, emit, enqueueActions, sendParent, setup, stateIn } from 'xstate';
 
 import type { ChallengeResult } from '@proton/challenge/interface';
-import type { ClaimedAddressID, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
+import type { ClaimedAddressID, InfoResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { ExternalSSOError } from '@proton/shared/lib/authentication/ssoExternalLogin';
 
 import { AuthType, type AuthTypeData } from '../../../auth/interface';
@@ -55,7 +55,7 @@ export interface CredentialsMachineInput {
  * claimed whose domain has an identity provider: the choice between it and recovering the account the address
  * belonged to, and proving ownership of that account with its password.
  */
-export type CredentialsForm = 'auto' | 'autoSrp' | 'srp' | 'externalSSO' | 'claimedChoice' | 'claimedVerify';
+export type CredentialsForm = 'auto' | 'autoSrp' | 'externalSSO' | 'claimedChoice' | 'claimedVerify';
 
 interface CredentialsMachineContext {
     canNavigateBack: boolean;
@@ -88,6 +88,8 @@ interface CredentialsMachineContext {
     claimedAddresses: ClaimedAddressID[];
     /** Shown inline in the credentials form (wrong username or password, or the API refused the SSO sign-in). */
     errorMessage: string | undefined;
+    /** The account type check's auth info and when it came, for the password step's first try only. */
+    authInfo: { info: InfoResponse; fetchedAt: number } | undefined;
 }
 
 type CredentialsEvent =
@@ -122,10 +124,12 @@ enum CredentialsStateMachineTags {
     awaitingProvider = 'awaitingProvider',
 }
 
-const initialForms: Record<AuthType, CredentialsForm> = {
+/** How long the account type check's auth info is reused; the API's SRP session lasts 10 minutes. */
+const AUTH_INFO_TTL = 2 * 60 * 1000;
+
+const initialForms: Record<AuthTypeData['type'], CredentialsForm> = {
     [AuthType.Auto]: 'auto',
     [AuthType.AutoSrp]: 'autoSrp',
-    [AuthType.Srp]: 'srp',
     [AuthType.ExternalSSO]: 'externalSSO',
 };
 
@@ -176,6 +180,13 @@ const credentialsSetup = setup({
                     : undefined,
         })),
         clearErrorMessage: assign({ errorMessage: undefined }),
+        setAuthInfo: assign((_, params: { accountType: AccountType }) => ({
+            authInfo:
+                params.accountType.type === 'srp'
+                    ? { info: params.accountType.info, fetchedAt: Date.now() }
+                    : undefined,
+        })),
+        discardAuthInfo: assign({ authInfo: undefined }),
         setSSOInfo: assign((_, params: { ssoInfo: SSOInfoResponse | undefined }) => ({ ssoInfo: params.ssoInfo })),
         setSSOProviderResult: assign((_, params: { result: SSOProviderResult }) => ({
             ssoProviderResult: params.result,
@@ -245,15 +256,19 @@ const submitted = credentialsSetup.createStateConfig({
     },
 });
 
-/** The password login, for the password forms (`srp` and `autoSrp`). */
+/** The password login, for the password step (`autoSrp`). */
 const signingIn = credentialsSetup.createStateConfig({
     tags: [CredentialsStateMachineTags.submitting],
+    exit: 'discardAuthInfo',
     invoke: {
         src: 'authenticateWithPassword',
-        // Only the password forms' submission gets here; its password goes to the request only
-        input: ({ event }) => {
+        // Only the password step's submission gets here; its password goes to the request only
+        input: ({ context: { authInfo }, event }) => {
             assertEvent(event, 'credentials.submitted');
-            return event.payload;
+            return {
+                ...event.payload,
+                info: authInfo && Date.now() - authInfo.fetchedAt < AUTH_INFO_TTL ? authInfo.info : undefined,
+            };
         },
         onDone: {
             target: 'submitted',
@@ -379,7 +394,12 @@ const loadingSSOInfo = credentialsSetup.createStateConfig({
             },
         ],
         onError: [
-            { guard: errorOf(SwitchToSRPError), target: '#credentials.form.signIn.srp', actions: reportActorError },
+            {
+                // The username is known: ask for the password only
+                guard: errorOf(SwitchToSRPError),
+                target: '#credentials.form.signIn.autoSrp',
+                actions: reportActorError,
+            },
             { target: 'idle', actions: reportActorError },
         ],
     },
@@ -400,6 +420,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
         ssoProviderResult: undefined,
         claimedAddresses: [],
         errorMessage: undefined,
+        authInfo: undefined,
     }),
     entry: enqueueActions(({ enqueue, check }) => {
         if (check('shouldShowSSONotice')) {
@@ -440,9 +461,8 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                     guard: { type: 'isInitialForm', params: { form: 'externalSSO' } },
                                     target: 'externalSSO',
                                 },
-                                { guard: { type: 'isInitialForm', params: { form: 'auto' } }, target: 'auto' },
                                 { guard: { type: 'isInitialForm', params: { form: 'autoSrp' } }, target: 'autoSrp' },
-                                { target: 'srp' },
+                                { target: 'auto' },
                             ],
                         },
 
@@ -500,7 +520,13 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                                     }),
                                                 },
                                             },
-                                            { target: '#credentials.form.signIn.autoSrp' },
+                                            {
+                                                target: '#credentials.form.signIn.autoSrp',
+                                                actions: {
+                                                    type: 'setAuthInfo',
+                                                    params: ({ event }) => ({ accountType: event.output }),
+                                                },
+                                            },
                                         ],
                                         onError: [
                                             redirectSSOToAccount,
@@ -523,6 +549,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                          */
                         autoSrp: {
                             initial: 'idle',
+                            exit: 'discardAuthInfo',
                             on: {
                                 'decision.back': { target: 'auto' },
                             },
@@ -539,29 +566,6 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                     },
                                 },
                                 signingIn,
-                                submitted,
-                            },
-                        },
-
-                        srp: {
-                            initial: 'idle',
-                            on: {
-                                'decision.back': { guard: 'canNavigateBack', actions: 'navigateBack' },
-                            },
-                            states: {
-                                idle: {
-                                    on: {
-                                        'credentials.submitted': {
-                                            target: 'signingIn',
-                                            actions: {
-                                                type: 'storeForm',
-                                                params: ({ event }) => ({ form: event.payload }),
-                                            },
-                                        },
-                                    },
-                                },
-                                // The page's back, which leaves the page, waits for the request
-                                signingIn: { ...signingIn, on: { 'decision.back': {} } },
                                 submitted,
                             },
                         },
@@ -587,8 +591,9 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                                 params: ({ event }) => ({ form: event.payload }),
                                             },
                                         },
+                                        // The form asks for the email first, so only the password is left to ask
                                         'credentials.passwordSignInRequested': {
-                                            target: '#credentials.form.signIn.srp',
+                                            target: '#credentials.form.signIn.autoSrp',
                                             // A new attempt: the last one's claimed address, SSO state and error
                                             // don't carry over
                                             actions: [
@@ -613,7 +618,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                  * An address an organization claimed, on a domain with its identity provider: registering a domain
                  * disables the addresses on it, so the address can no longer be found by email, and the candidate IDs
                  * found for it are the way into the account it belonged to. Both destinations are legitimate, so it
-                 * asks. (Without an identity provider, the password forms sign in to that account directly.) Back
+                 * asks. (Without an identity provider, the password step signs in to that account directly.) Back
                  * returns to the form it came from.
                  */
                 claimedAddress: {
@@ -648,8 +653,9 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                 },
                                 onError: [
                                     {
+                                        // The username is known: ask for the password only
                                         guard: errorOf(SwitchToSRPError),
-                                        target: '#credentials.form.signIn.srp',
+                                        target: '#credentials.form.signIn.autoSrp',
                                         actions: reportActorError,
                                     },
                                     { target: 'choice', actions: reportActorError },
@@ -726,9 +732,6 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
 
 type CredentialsSnapshot = SnapshotFrom<typeof credentialsStateMachine>;
 
-/** The announcement applies only to the sign-in that starts with username and password on one page. */
-export const selectStartsOnOneStepSignIn = (snapshot: CredentialsSnapshot) => snapshot.context.initialForm === 'srp';
-
 /** Which credentials form shows, for the UI. */
 export const selectCredentialsForm = (snapshot: CredentialsSnapshot): CredentialsForm => {
     if (snapshot.matches({ form: { claimedAddress: 'verify' } })) {
@@ -744,10 +747,7 @@ export const selectCredentialsForm = (snapshot: CredentialsSnapshot): Credential
     if (snapshot.matches({ form: { signIn: 'autoSrp' } })) {
         return 'autoSrp';
     }
-    if (snapshot.matches({ form: { signIn: 'externalSSO' } })) {
-        return 'externalSSO';
-    }
-    return 'srp';
+    return 'externalSSO';
 };
 
 /** A request runs, or the next step is being prepared; the form shows its loading state. */

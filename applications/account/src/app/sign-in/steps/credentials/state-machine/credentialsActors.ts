@@ -36,6 +36,11 @@ export interface CredentialsFormValues extends UsernameFormValues {
     payload: ChallengeResult;
 }
 
+/** The password login; with the account type check's auth info, it skips fetching it again. */
+export interface PasswordLoginInput extends CredentialsFormValues {
+    info?: InfoResponse;
+}
+
 /** A successful first authentication (password or SSO), before second factors and key unlock. */
 export interface PrimaryAuthResult {
     authType: AuthType;
@@ -55,7 +60,7 @@ export interface SSOProviderResult {
 }
 
 /** How the account signs in, from the username alone: with its SSO provider, or with a password. */
-export type AccountType = { type: 'sso'; ssoInfo: SSOInfoResponse } | { type: 'srp' };
+export type AccountType = { type: 'sso'; ssoInfo: SSOInfoResponse } | { type: 'srp'; info: InfoResponse };
 
 /** The token the identity provider handed over, from its window (with the session `uid`) or its redirect. */
 export interface SSOTokenInput {
@@ -93,7 +98,7 @@ export const createCredentialsActors = (services: SignInActorServices) => {
                 return { type: 'sso', ssoInfo: info };
             }
             if ('Modulus' in info) {
-                return { type: 'srp' };
+                return { type: 'srp', info };
             }
             throw new Error('Invalid response from server');
         }),
@@ -107,7 +112,7 @@ export const createCredentialsActors = (services: SignInActorServices) => {
          * A password the address's account rejects may still be the one of an account the address belonged to before an
          * organization claimed it: then it signs in to that account instead, to recover it.
          */
-        authenticateWithPassword: fromPromise<PrimaryAuthResult, CredentialsFormValues>(async ({ input, signal }) => {
+        authenticateWithPassword: fromPromise<PrimaryAuthResult, PasswordLoginInput>(async ({ input, signal }) => {
             await beforeRequest();
             const { result, authVersion, claimedAddressID } = await loginWithPassword({ ...input, api, signal }).catch(
                 rethrowCredentialsError

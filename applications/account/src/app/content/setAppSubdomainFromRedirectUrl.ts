@@ -20,13 +20,12 @@ export const maybeSetAppSubdomainFromRedirectUrl = (url: URL) => {
     }
     const appUrl = new URL(getAppHref('/', app, undefined, url));
     const validatedRedirectUrl = getValidatedRedirectUrl({ url: appUrl, redirectUrl, app });
-    if (!validatedRedirectUrl) {
+    // Only an https redirect on the Proton domain names an app subdomain; localhost and proton:// ones need consent
+    if (!validatedRedirectUrl || validatedRedirectUrl.consent !== undefined) {
         return;
     }
-    if (validatedRedirectUrl.hostname === 'localhost') {
-        return;
-    }
-    const secondLevelDomain = getSecondLevelDomain(validatedRedirectUrl.host);
-    const newSubdomain = validatedRedirectUrl.host.replace(`.${secondLevelDomain}`, '');
+    const { host } = validatedRedirectUrl.url;
+    const secondLevelDomain = getSecondLevelDomain(host);
+    const newSubdomain = host.replace(`.${secondLevelDomain}`, '');
     APPS_CONFIGURATION[app].subdomain = newSubdomain;
 };

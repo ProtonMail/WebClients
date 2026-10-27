@@ -16,6 +16,7 @@ import { CredentialsUsernameField } from '../fields/CredentialsUsernameField';
 import { SignUpPrompt } from '../fields/SignUpPrompt';
 import { StaySignedInCheckbox, useStaySignedIn } from '../fields/StaySignedInCheckbox';
 import { SubmitButton } from '../fields/SubmitButton';
+import { TroubleSigningInDropdown } from '../fields/TroubleSigningInDropdown';
 import { getHelpLinks } from '../helpLinks';
 import {
     selectAwaitingProvider,
@@ -85,6 +86,7 @@ export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                         <CancelSSOButton onClick={() => actorRef.send({ type: 'externalSSO.cancelled' })} />
                     )}
                     {!compactForm && !isPorkbun && <SignUpPrompt paths={paths} className="text-center mt-6" />}
+                    {!compactForm && <TroubleSigningInDropdown paths={paths} {...getHelpLinks(paths, username)} />}
                 </form>
             </layout.Body>
         </>

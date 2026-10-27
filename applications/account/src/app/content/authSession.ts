@@ -8,7 +8,7 @@ export type { OnLoginCallbackResult };
 
 export type AuthFlows = 'signup' | 'reset' | 'switch' | 'login' | 'auto-resume' | undefined;
 
-export type AuthInterruption = 'fork-redirect-consent' | 'oauth-consent' | 'reauth';
+export type AuthInterruption = 'fork-redirect-consent' | 'desktop-fork-consent' | 'oauth-consent' | 'reauth';
 
 export interface AppIntent {
     app: APP_NAMES;
