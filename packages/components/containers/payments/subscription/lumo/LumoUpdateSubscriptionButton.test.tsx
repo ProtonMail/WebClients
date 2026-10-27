@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
-import { buildUser } from '@proton/account/testing/buildUser';
 import { useUser } from '@proton/account/user/hooks';
 import { PLANS } from '@proton/payments/core/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import LumoUpdateSubscriptionButton from './LumoUpdateSubscriptionButton';
 

@@ -1,11 +1,11 @@
 import { screen } from '@testing-library/react';
 
-import { buildUser } from '@proton/account/testing/buildUser';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { buildUser } from '@proton/shared/testing/buildUser';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { OnboardingChecklistContext } from '../containers/onboardingChecklist/provider/GetStartedChecklistProvider';

@@ -1,10 +1,10 @@
-import { buildUser } from '@proton/account/testing/buildUser';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { Renew, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { getSubscriptionRenewData, getSubscriptionRows } from './getSubscriptionRows';
 

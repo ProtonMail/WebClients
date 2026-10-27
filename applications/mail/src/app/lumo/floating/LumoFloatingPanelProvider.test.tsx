@@ -4,7 +4,6 @@ import { useEffect, useReducer } from 'react';
 import { act, renderHook } from '@testing-library/react';
 
 import { defaultApiStatus } from '@proton/account/apiStatus';
-import { buildUser } from '@proton/account/testing/buildUser';
 import { useUser } from '@proton/account/user/hooks';
 import useLumoInMail from '@proton/components/components/drawer/views/lumoAgent/useLumoInMail';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
@@ -13,6 +12,7 @@ import useOnline from '@proton/components/hooks/useOnline';
 import { getLocalStorageUserDrawerKey } from '@proton/shared/lib/drawer/helpers';
 import type { DrawerApp } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { useMailSelector } from '../../store/hooks';
 import { LumoFloatingPanelProvider, useHasLumoFloatingPanel, useLumoFloatingPanel } from './LumoFloatingPanelProvider';

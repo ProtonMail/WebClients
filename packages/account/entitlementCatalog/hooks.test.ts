@@ -13,11 +13,11 @@ import {
 } from '@proton/payments/testing/prodCatalogGrants';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { useAllSubscriptions } from '../allSubscriptions/hooks';
 import { useAllEntitlements } from '../entitlements/hooks';
 import { useOrganization } from '../organization/hooks';
-import { buildUser } from '../testing/buildUser';
 import { useUser } from '../user/hooks';
 import { useEntitlementChecksForOrgAndUser } from './hooks';
 

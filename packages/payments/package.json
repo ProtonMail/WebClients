@@ -97,7 +97,6 @@
         "./telemetry/telemetry": "./telemetry/telemetry.ts",
         "./testing/api-endpoints": "./testing/api-endpoints.ts",
         "./testing/buildEntitlementCatalog": "./testing/buildEntitlementCatalog.ts",
-        "./testing/buildPreloadedState": "./testing/buildPreloadedState.ts",
         "./testing/buildSubscription": "./testing/buildSubscription.ts",
         "./testing/data-plans": "./testing/data-plans.ts",
         "./testing/data-user": "./testing/data-user.ts",
@@ -132,7 +131,6 @@
         "vat-validation": "^3.0.0"
     },
     "devDependencies": {
-        "@proton/account": "workspace:^",
         "@proton/app-context": "workspace:^",
         "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",

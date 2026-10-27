@@ -656,6 +656,7 @@
         "./lib/webauthn/interface": "./lib/webauthn/interface.ts",
         "./lib/webpack.constants": "./lib/webpack.constants.ts",
         "./lib/window": "./lib/window.ts",
+        "./testing/buildUser": "./testing/buildUser.ts",
         "./tests/keys/keyDataHelper": "./tests/keys/keyDataHelper.ts"
     },
     "scripts": {

@@ -1,6 +1,5 @@
 import type { ComponentType } from 'react';
 
-import { buildUser } from '@proton/account/testing/buildUser';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getOrganizationState } from '@proton/account/testing/redux-state';
 import type { Entitlements } from '@proton/payments/core/entitlements/interface';
@@ -13,6 +12,7 @@ import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces/ApiEnvi
 import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { type RootState, setupStore } from '../store';
 

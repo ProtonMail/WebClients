@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { defaultApiStatus } from '@proton/account/apiStatus';
-import { buildUser } from '@proton/account/testing/buildUser';
 import { useUser } from '@proton/account/user/hooks';
 import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
 import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
@@ -12,6 +11,7 @@ import useApiStatus from '@proton/components/hooks/useApiStatus';
 import useOnline from '@proton/components/hooks/useOnline';
 import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
+import { buildUser } from '@proton/shared/testing/buildUser';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { LumoFloatingPanelProvider } from '../../lumo/floating/LumoFloatingPanelProvider';
