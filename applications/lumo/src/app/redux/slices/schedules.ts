@@ -1,9 +1,9 @@
 import type { Dispatch } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { generateSpaceKeyBase64 } from '../../crypto';
 import type { ScheduleDetails } from '../../features/schedules/types';
-import type { Space, SpaceId } from '../../types';
+import { createScheduleSpace } from '../../services/schedules/scheduleSpace';
+import type { SpaceId } from '../../types';
 import { SpaceType } from '../../types';
 import type { LumoState } from '../store';
 import { addSpace, locallyDeleteSpaceFromLocalRequest, pushSpaceRequest } from './core/spaces';
@@ -19,15 +19,7 @@ export const saveSchedule =
                 c('collider_2025:Error').t`This scheduled task no longer exists. Reload the page and try again.`
             );
         }
-        const now = new Date().toISOString();
-        const space: Space = {
-            id,
-            spaceType: SpaceType.Schedule,
-            createdAt: existing?.createdAt ?? now,
-            updatedAt: now,
-            spaceKey: existing?.spaceKey ?? generateSpaceKeyBase64(),
-            schedule,
-        };
+        const space = createScheduleSpace(id, schedule, existing);
         dispatch(addSpace(space));
         dispatch(pushSpaceRequest({ id }));
         return id;

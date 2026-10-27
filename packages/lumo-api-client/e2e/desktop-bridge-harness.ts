@@ -52,6 +52,68 @@ function firstPendingId(): string {
     return node('pending-id').textContent ?? '';
 }
 
+/** Schedule actions use the real clients adapters and native IPC, just like tool actions above. */
+async function wireSchedules(): Promise<void> {
+    const { getDesktopSchedulesApi } = await import('../core/desktop-schedules');
+    const api = getDesktopSchedulesApi();
+    if (!api) throw new Error('Desktop schedule bridge is missing');
+    const executors = new Map<string, ReturnType<typeof createDesktopClientToolExecutor>>();
+    const notices: unknown[] = [];
+    let unsubscribe: (() => void) | undefined;
+    const listen = () => {
+        unsubscribe?.();
+        unsubscribe = api.onWorkAvailable((notice) => {
+            notices.push(notice);
+            set('schedule-notices', JSON.stringify(notices));
+        });
+    };
+    listen();
+    set('schedule-notices', '[]');
+    node('schedule-run').addEventListener('click', () => {
+        set('schedule-result', '');
+        const act = async () => {
+            const { operation, input: args } = JSON.parse(input('schedule-request').value);
+            switch (operation) {
+                case 'connect':
+                    return api.connect(args);
+                case 'replace':
+                    return api.replaceSchedules(args);
+                case 'pending':
+                    return api.getPendingRuns(args);
+                case 'unsettled':
+                    return api.getUnsettledRuns(args);
+                case 'report':
+                    return api.reportRunStatus(args);
+                case 'listen':
+                    listen();
+                    return;
+                case 'unsubscribe':
+                    unsubscribe?.();
+                    unsubscribe = undefined;
+                    return;
+                case 'createExecutor': {
+                    const executor = createDesktopClientToolExecutor(args.schedule);
+                    // Registration happens before advertising tools, through the real client adapter.
+                    await executor.getClientTools?.();
+                    executors.set(args.id, executor);
+                    return;
+                }
+                case 'execute': {
+                    const executor = executors.get(args.id);
+                    if (!executor) throw new Error('Unknown schedule executor');
+                    return executor.execute(args.calls);
+                }
+                default:
+                    throw new Error(`Unknown schedule action: ${operation}`);
+            }
+        };
+        void act().then(
+            (data) => set('schedule-result', JSON.stringify({ ok: true, data: data ?? null })),
+            (error) => set('schedule-result', JSON.stringify({ ok: false, error: String(error) }))
+        );
+    });
+}
+
 async function main(): Promise<void> {
     initDesktopToolApprovals();
 
@@ -73,6 +135,7 @@ async function main(): Promise<void> {
     node('approve').addEventListener('click', () => resolveToolApproval(firstPendingId(), true));
     node('deny').addEventListener('click', () => resolveToolApproval(firstPendingId(), false));
 
+    await wireSchedules();
     set('ready', '1');
 }
 

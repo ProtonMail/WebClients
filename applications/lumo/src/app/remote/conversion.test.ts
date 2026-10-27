@@ -75,18 +75,19 @@ describe('remote - conversion', () => {
             expect(result.deletedAssets).toEqual([]);
         });
 
-        it.each([SpaceType.Default, SpaceType.Project, SpaceType.Schedule])(
-            'preserves the public %s type through API conversion',
-            (type) => {
-                const result = convertSpaceFromApi({ ...validSpaceFromApi, SpaceType: type });
-                if (result.space.deleted) throw new Error('Expected an active space');
-                expect(result.space.spaceType).toBe(type);
-                expect(convertNewSpaceToApi({ ...result.space, spaceType: type }).SpaceType).toBe(type);
-                expect(
-                    convertSpaceFromApi({ ...validSpaceFromApi, SpaceType: type, DeleteTime: nowStr }).space.spaceType
-                ).toBe(type);
-            }
-        );
+        it.each([
+            [SpaceType.Default, 0],
+            [SpaceType.Project, 1],
+            [SpaceType.Schedule, 3],
+        ] as const)('maps internal %s to API value %s in both directions', (type, apiType) => {
+            const result = convertSpaceFromApi({ ...validSpaceFromApi, SpaceType: apiType });
+            if (result.space.deleted) throw new Error('Expected an active space');
+            expect(result.space.spaceType).toBe(type);
+            expect(convertNewSpaceToApi({ ...result.space, spaceType: type }).SpaceType).toBe(apiType);
+            expect(
+                convertSpaceFromApi({ ...validSpaceFromApi, SpaceType: apiType, DeleteTime: nowStr }).space.spaceType
+            ).toBe(type);
+        });
 
         it('keeps legacy records without a public type available for encrypted migration', () => {
             const result = convertSpaceFromApi(validSpaceFromApi);
@@ -94,8 +95,8 @@ describe('remote - conversion', () => {
             expect(result.space.spaceType).toBeUndefined();
         });
 
-        it('rejects an unknown public type', () => {
-            expect(() => convertSpaceFromApi({ ...validSpaceFromApi, SpaceType: 'future-type' })).toThrow(
+        it.each([99, 2, 'schedule', '3', 'future-type'])('rejects unsupported API space type %s', (type) => {
+            expect(() => convertSpaceFromApi({ ...validSpaceFromApi, SpaceType: type })).toThrow(
                 'Invalid space SpaceType'
             );
         });

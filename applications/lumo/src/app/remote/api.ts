@@ -44,6 +44,7 @@ import type {
     UserSettingsFromApi,
     UserSettingsToApi,
 } from './types';
+import { SpaceTypeInt } from './types';
 import { objectToPascalCaseKeys, oldestDateReducer } from './util';
 
 export type RemoteStatus = 'ok' | 'deleted';
@@ -597,7 +598,17 @@ export class LumoApi {
     public async getSpace(spaceId: RemoteId): Promise<GetSpaceRemote | null> {
         const data = await this.callGetJson('spaces', spaceId);
         if (data === null) return null;
-        return convertSpaceFromApi(data.Space);
+        const space = data.Space;
+        // Code-session spaces are not supported by this client.
+        if (
+            space &&
+            typeof space === 'object' &&
+            'SpaceType' in space &&
+            space.SpaceType === SpaceTypeInt.CodeSession
+        ) {
+            return null;
+        }
+        return convertSpaceFromApi(space);
     }
 
     public async getConversation(id: RemoteId, spaceTag: SpaceTag): Promise<GetConversationRemote | null> {

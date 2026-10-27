@@ -16,7 +16,7 @@ import { getMessageBlocks } from '../../../messageHelpers';
 import { useOptionalArtifactPanelHostActions } from '../../../providers/ArtifactPanelHostProvider';
 import { useOptionalRightPanel } from '../../../providers/RightPanelProvider';
 import { useLumoDispatch } from '../../../redux/hooks';
-import { syncArtifactAssetRequest } from '../../../redux/slices/artifactAssetSync';
+import { syncArtifactAssets } from '../../../services/generation/syncArtifactAssets';
 import type { Message } from '../../../types';
 import { Role } from '../../../types-api';
 import {
@@ -30,7 +30,6 @@ import {
     sendArtifactRevisedEvent,
     sendArtifactToolCallInvalidEvent,
 } from '../../../util/telemetry';
-import { artifactTypeSupportsAssetSync } from './artifactAssetSyncSupport';
 import {
     isArtifactGenerationLoading,
     isArtifactPanelGenerationLoading,
@@ -294,27 +293,7 @@ export const ArtifactProvider = ({
             return;
         }
 
-        for (const [artifactId, entry] of Object.entries(registry)) {
-            const latestVersion = entry.versions.at(-1);
-            if (!latestVersion || latestVersion.provisional) {
-                continue;
-            }
-            if (!artifactTypeSupportsAssetSync(entry.type)) {
-                continue;
-            }
-
-            dispatch(
-                syncArtifactAssetRequest({
-                    conversationId,
-                    artifactId,
-                    messageId: latestVersion.messageId,
-                    title: entry.title,
-                    type: entry.type,
-                    content: latestVersion.content,
-                    language: latestVersion.language ?? entry.language,
-                })
-            );
-        }
+        syncArtifactAssets(dispatch, conversationId, registry);
     }, [conversationId, dispatch, isArtifactsViewFlagEnabled, registry]);
 
     const isLoadingPanelOpen = !panelUserClosed && selectedId === null && artifactPanelGenerationLoading;

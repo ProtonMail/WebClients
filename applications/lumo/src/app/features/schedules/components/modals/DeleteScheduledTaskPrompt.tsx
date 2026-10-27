@@ -38,7 +38,7 @@ export const DeleteScheduledTaskPrompt = ({ onConfirm, taskName, ...modalProps }
                 {
                     // translator: Warning before deleting a scheduled task. ${taskName} is the task name.
                     c('collider_2025:Info')
-                        .t`Are you sure you want to delete "${taskName}"? This action cannot be undone.`
+                        .t`Are you sure you want to delete "${taskName}"? Its run history will also be deleted. This action cannot be undone.`
                 }
             </p>
         </Prompt>
