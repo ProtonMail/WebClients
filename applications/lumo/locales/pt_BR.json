@@ -406,6 +406,9 @@
       "Take a tour": [
         "Faça um tour"
       ],
+      "Top up": [
+        "Recarregar"
+      ],
       "Try again": [
         "Tentar novamente"
       ],
@@ -1395,9 +1398,6 @@
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "Após você prosseguir, o Apertus aparecerá como o modelo selecionado no menu de modelos. Você poderá usar este menu para alternar para outro modelo a qualquer momento."
       ],
-      "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
-        "As chaves de API permitem acessar o ${ LUMO_SHORT_APP_NAME } por meio de programação. Cada chave é exibida apenas uma vez após a criação."
-      ],
       "Choose the language you speak when using dictation.": [
         "Escolha o idioma que você fala ao usar o recurso de ditado."
       ],
@@ -1823,21 +1823,9 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
       ],
-      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
-        "${ LUMO_SHORT_APP_NAME }+ — O acesso e as chaves da API estão incluídos em uma assinatura do ${ LUMO_SHORT_APP_NAME }+ (inicie a sessão para fazer upgrade ou gerenciar as chaves)"
-      ],
-      "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
-        "${ LUMO_SHORT_APP_NAME }+ — a API do ${ LUMO_SHORT_APP_NAME } e as chaves de API exigem uma assinatura ativa do ${ LUMO_SHORT_APP_NAME }+. "
-      ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "${ urgentTotal } conversa expirará em até 24 horas",
         "${ urgentTotal } conversas expirarão em até 24 horas"
-      ],
-      ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
-        "Segue o esquema da API da OpenAI — basta inserir seu cliente existente com uma única alteração."
-      ],
-      "A ${ LUMO_SHORT_APP_NAME } account": [
-        "Uma conta do ${ LUMO_SHORT_APP_NAME }"
       ],
       "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
         "Um fluxo de trabalho que envia uma pasta de PDFs, extrai o texto, pede para o ${ LUMO_SHORT_APP_NAME } resumir cada arquivo e grava um resumo em Markdown por documento."
@@ -1865,12 +1853,6 @@
       ],
       "All files in this chat": [
         "Todos os arquivos deste bate-papo"
-      ],
-      "An API key — generate one in ": [
-        "Uma chave de API — gere uma em "
-      ],
-      "An HTTP client or official SDK (Python, TypeScript, Rust)": [
-        "Um cliente HTTP ou um SDK oficial (Python, TypeScript, Rust)"
       ],
       "API calls": [
         "Chamadas de API"
@@ -1919,9 +1901,6 @@
       ],
       "Conversation": [
         "Conversação"
-      ],
-      "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
-        "Crie e revogue chaves de API para acesso programático. As chaves são exibidas apenas uma vez após a criação."
       ],
       "Created by ${ LUMO_SHORT_APP_NAME } in this conversation.": [
         "Criado por ${ LUMO_SHORT_APP_NAME } nesta conversa."
@@ -1985,9 +1964,6 @@
       ],
       "Files automatically retrieved based on your questions.": [
         "Arquivos recuperados automaticamente com base em suas perguntas."
-      ],
-      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
-        "Para cada dia, a média de tokens por chamada de API (tokens ÷ chamadas, ou 0 se não houver chamadas)."
       ],
       "For this chat": [
         "Para este bate-papo"
@@ -2060,9 +2036,6 @@
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Nunca inclua chaves de API em pacotes do lado do cliente. Em produção, utilize variáveis ​​de ambiente e um proxy do lado do servidor."
-      ],
-      "No calls": [
-        "Nenhuma chamada"
       ],
       "No connected connectors": [
         "Sem conectores conectados"
@@ -2196,23 +2169,11 @@
       "Space usage: ": [
         "Espaço utilizado: "
       ],
-      "Specify a model ID directly for predictable latency or capability targeting.": [
-        "Especifique um ID de modelo diretamente para latência previsível ou direcionamento por capacidade."
-      ],
       "Table view": [
         "Visualização em tabela"
       ],
-      "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
-        "A API do ${ LUMO_SHORT_APP_NAME } e as chaves de API estão incluídas no ${ LUMO_SHORT_APP_NAME }+. Peça ao administrador da sua organização para atribuir uma licença do ${ LUMO_SHORT_APP_NAME } à sua conta."
-      ],
       "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
         "A API do ${ LUMO_SHORT_APP_NAME } oferece a você acesso programático a modelos de linguagem com a arquitetura de privacidade integrada da ${ BRAND_NAME }. Sem treinamento de dados com as suas solicitações. Sem rastreamento."
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
-        "A API do ${ LUMO_SHORT_APP_NAME } é uma interface RESTful disponível em "
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
-        "A API do ${ LUMO_SHORT_APP_NAME } está disponível para assinantes do ${ LUMO_SHORT_APP_NAME }+. Faça upgrade para criar chaves de API e usar a API programaticamente."
       ],
       "There was an error processing this file.": [
         "Houve um erro ao processar este arquivo."
@@ -2348,12 +2309,6 @@
       "API calls": [
         "Chamadas de API"
       ],
-      "API calls (30d)": [
-        "Chamadas de API (30d)"
-      ],
-      "Avg tokens / call": [
-        "Média tokens/chamada"
-      ],
       "Basic": [
         "Básico"
       ],
@@ -2453,12 +2408,6 @@
       "Thinking mode": [
         "Modo de pensamento"
       ],
-      "Tokens (30d)": [
-        "Tokens (30d)"
-      ],
-      "Tokens generated": [
-        "Tokens gerados"
-      ],
       "Tool calls": [
         "Chamadas de ferramenta"
       ],
@@ -2524,9 +2473,6 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus."
-      ],
-      "View plans": [
-        "Ver planos"
       ]
     },
     "collider_2025: Nav": {
@@ -2535,9 +2481,6 @@
       ],
       "Endpoints": [
         "Pontos de extremidade"
-      ],
-      "Models": [
-        "Modelos"
       ],
       "Overview": [
         "Visão geral"
@@ -2743,12 +2686,6 @@
       ]
     },
     "collider_2025: Tab": {
-      "API": [
-        "API"
-      ],
-      "Manage keys": [
-        "Gerenciar chaves"
-      ],
       "Workflow Builder": [
         "Construtor de fluxo de trabalho"
       ]
@@ -2788,9 +2725,6 @@
       ],
       "Animated background": [
         "Plano de fundo animado"
-      ],
-      "API calls per day": [
-        "Chamadas de API por dia"
       ],
       "API docs sections": [
         "Seções da documentação da API"
@@ -2867,9 +2801,6 @@
       "Invalid Link": [
         "Link inválido"
       ],
-      "Manage keys": [
-        "Gerenciar chaves"
-      ],
       "Meet Apertus 1.5": [
         "Conheça Apertus 1.5"
       ],
@@ -2896,9 +2827,6 @@
       ],
       "Personalizes general chats": [
         "Personaliza os bate-papos gerais"
-      ],
-      "Prerequisites": [
-        "Pré-requisitos"
       ],
       "Privacy included by default.": [
         "Privacidade incluída por padrão."
@@ -2930,9 +2858,6 @@
       "Theme": [
         "Tema"
       ],
-      "Tokens per call (daily)": [
-        "Tokens por chamada (diário)"
-      ],
       "Tokens per day": [
         "Tokens por dia"
       ],
@@ -2941,9 +2866,6 @@
       ],
       "Upload files": [
         "Enviar arquivos"
-      ],
-      "Usage (all keys, last 30 days)": [
-        "Uso (todas as chaves, últimos 30 dias)"
       ],
       "Visionary": [
         "Visionary"
@@ -3086,9 +3008,6 @@
       ],
       "tokens": [
         "tokens"
-      ],
-      "tokens/call": [
-        "tokens/chamada"
       ]
     },
     "collider_2025: UploadAction": {
@@ -8180,6 +8099,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
+      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
+        "Recarregue sua conta com créditos que podem ser usados para assinar um novo plano ou renovar seu plano atual. Você recebe um crédito a cada ${ i18nCurrency } gasto."
+      ],
       "Total conversations:": [
         "Total de conversas:"
       ],
@@ -8315,6 +8237,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sua próxima data de cobrança é ${ renewalTime }. Você pode cancelar a qualquer momento. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
       ],
+      "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
+        "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
       ],
@@ -8378,6 +8303,9 @@
       ],
       "Address": [
         "Endereço"
+      ],
+      "Amount": [
+        "Valor"
       ],
       "Anderson": [
         "Braga"
@@ -8534,6 +8462,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "Other amount": [
+        "Outra quantia"
       ],
       "Password": [
         "Senha"
@@ -9104,6 +9035,44 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
+      ]
+    },
+    "Monetary unit": {
+      "Australian dollar": [
+        "Dólar australiano"
+      ],
+      "Brazilian real": [
+        "Real brasileiro"
+      ],
+      "British pound": [
+        "Libra britânica"
+      ],
+      "Canadian dollar": [
+        "Dólar canadense"
+      ],
+      "Euro": [
+        "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dólar de Hong Kong"
+      ],
+      "Japanese yen": [
+        "Iene Japonês"
+      ],
+      "Polish złoty": [
+        "Złoty polonês"
+      ],
+      "Singapore dollar": [
+        "Dólar de Singapura"
+      ],
+      "South Korean won": [
+        "Won sul-coreano"
+      ],
+      "Swiss franc": [
+        "Franco suíço"
+      ],
+      "US Dollar": [
+        "Dólar americano"
       ]
     },
     "New Label form": {
@@ -10197,6 +10166,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reative sua assinatura primeiro para diminuir o número de complementos."
       ],
+      "Processing payment": [
+        "Processando pagamento"
+      ],
       "Proton Meet seats must match the number of members.": [
         "Os assentos do Proton Meet devem corresponder ao número de membros."
       ],
@@ -10256,6 +10228,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
       ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "A transação foi detectada com sucesso. Os créditos serão adicionados à sua conta assim que a transação for totalmente confirmada."
+      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } mês. Você pode cancelar a qualquer momento.",
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
@@ -10310,6 +10285,9 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Você será cobrado em ${ amountToCharge } no método de pagamento selecionado."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
@@ -10499,6 +10477,9 @@
       ],
       "Organization name": [
         "Nome da organização"
+      ],
+      "Other": [
+        "Outro"
       ],
       "Password": [
         "Senha"
@@ -11045,6 +11026,9 @@
       "Copied to clipboard": [
         "Copiado para a área de transferência"
       ],
+      "Credits added": [
+        "Créditos adicionados"
+      ],
       "Email address copied to clipboard": [
         "Endereço de e-mail copiado para a área de transferência"
       ],
@@ -11173,6 +11157,9 @@
       ],
       "Add credit/debit card": [
         "Adicionar cartão de crédito/débito"
+      ],
+      "Add credits": [
+        "Adicionar créditos"
       ],
       "Add user": [
         "Adicionar usuário"

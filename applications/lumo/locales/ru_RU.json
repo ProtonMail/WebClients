@@ -386,6 +386,9 @@
       "Take a tour": [
         "Ознакомительный тур"
       ],
+      "Top up": [
+        "Пополнить"
+      ],
       "Try again": [
         "Попробовать снова"
       ],
@@ -1315,9 +1318,6 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Добавляйте собственные воспоминания, изменяйте автоматически созданные записи или очищайте всю историю в любое время. Измененные вами автоматически созданные воспоминания переносятся в категорию ваших собственных."
       ],
-      "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
-        "API-ключи позволяют получать программный доступ к ${ LUMO_SHORT_APP_NAME }. Каждый ключ показывается только один раз при создании."
-      ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Создайте ключ для интеграции ${ LUMO_SHORT_APP_NAME } со своими скриптами и инструментами."
       ],
@@ -1681,23 +1681,11 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } — это искусственный интеллект, ориентированный на конфиденциальность, который помогает вам выполнять больше задач, сохраняя ваши данные в безопасности. Раскройте его полный потенциал и наслаждайтесь ранним доступом к новым функциям по мере их появления."
       ],
-      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
-        "${ LUMO_SHORT_APP_NAME }+ — доступ к API и ключи включены в подписку ${ LUMO_SHORT_APP_NAME }+ (войдите, чтобы улучшить подписку или управлять ключами)"
-      ],
-      "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
-        "${ LUMO_SHORT_APP_NAME }+ — для использования API и ключей API ${ LUMO_SHORT_APP_NAME } требуется активная подписка ${ LUMO_SHORT_APP_NAME }+. "
-      ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "Срок действия ${ urgentTotal } чата истекает в течение 24 часов",
         "Срок действия ${ urgentTotal } чатов истекает в течение 24 часов",
         "Срок действия ${ urgentTotal } чатов истекает в течение 24 часов",
         "Срок действия ${ urgentTotal } чатов истекает в течение 24 часов"
-      ],
-      ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
-        ". Оно соответствует схеме API OpenAI — подключите ваш существующий клиент, изменив всего одну строку."
-      ],
-      "A ${ LUMO_SHORT_APP_NAME } account": [
-        "Аккаунт ${ LUMO_SHORT_APP_NAME }"
       ],
       "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
         "Рабочий процесс, который загружает папку с PDF, извлекает текст, запрашивает у ${ LUMO_SHORT_APP_NAME } краткое содержание каждого файла и записывает по одному резюме в формате Markdown для каждого документа."
@@ -1725,12 +1713,6 @@
       ],
       "All files in this chat": [
         "Все файлы в этом чате"
-      ],
-      "An API key — generate one in ": [
-        "Ключ API — создайте его в "
-      ],
-      "An HTTP client or official SDK (Python, TypeScript, Rust)": [
-        "HTTP-клиент или официальный SDK (Python, TypeScript, Rust)"
       ],
       "API calls": [
         "Запросы к API"
@@ -1780,9 +1762,6 @@
       "Conversation": [
         "Цепочка писем"
       ],
-      "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
-        "Создавайте и отзывайте ключи API для программного доступа. Ключи показываются только один раз при создании."
-      ],
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Опишите рабочий процесс простыми словами и получите граф, а также готовый к запуску код. Войдите, чтобы использовать эту функцию."
       ],
@@ -1830,9 +1809,6 @@
       ],
       "Files automatically retrieved based on your questions.": [
         "Файлы автоматически подобраны на основе ваших вопросов."
-      ],
-      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
-        "Для каждого дня: среднее количество токенов на вызов API (токены ÷ вызовы, или 0, если вызовов нет)."
       ],
       "Free accounts keep chat history for 7 days from when a chat was created.": [
         "В бесплатных аккаунтах история чатов хранится в течение 7 дней с момента создания чата."
@@ -1896,9 +1872,6 @@
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Никогда не встраивайте API-ключи в клиентские сборки. В рабочей среде используйте переменные окружения и прокси-сервер на стороне сервера."
-      ],
-      "No calls": [
-        "Нет вызовов"
       ],
       "No content available.": [
         "Нет доступного содержимого."
@@ -2008,17 +1981,8 @@
       "Table view": [
         "Табличный вид"
       ],
-      "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
-        "API и ключи API ${ LUMO_SHORT_APP_NAME } входят в подписку ${ LUMO_SHORT_APP_NAME }+. Попросите администратора вашей организации назначить лицензию ${ LUMO_SHORT_APP_NAME } вашему аккаунту."
-      ],
       "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
         "API ${ LUMO_SHORT_APP_NAME } предоставляет вам программный доступ к языковым моделям со встроенной архитектурой конфиденциальности от ${ BRAND_NAME }. Никакого обучения моделей на ваших запросах. Никакого отслеживания."
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
-        "API ${ LUMO_SHORT_APP_NAME } представляет собой REST-интерфейс по адресу "
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
-        "API ${ LUMO_SHORT_APP_NAME } доступен для подписчиков ${ LUMO_SHORT_APP_NAME }+. Обновите подписку, чтобы создавать ключи API и использовать API программно."
       ],
       "There was an error processing this file.": [
         "При обработке этого файла произошла ошибка."
@@ -2139,12 +2103,6 @@
       "API calls": [
         "Вызовы API"
       ],
-      "API calls (30d)": [
-        "Вызовы API (за 30 дн.)"
-      ],
-      "Avg tokens / call": [
-        "Среднее кол-во токенов на запрос"
-      ],
       "Basic": [
         "Базовый"
       ],
@@ -2244,12 +2202,6 @@
       "Thinking mode": [
         "Режим размышления"
       ],
-      "Tokens (30d)": [
-        "Токены (30 д.)"
-      ],
-      "Tokens generated": [
-        "Сгенерировано токенов"
-      ],
       "Tool calls": [
         "Вызовы инструментов"
       ],
@@ -2309,9 +2261,6 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "улучшить до ${ LUMO_SHORT_APP_NAME } Plus."
-      ],
-      "View plans": [
-        "Посмотреть тарифы"
       ]
     },
     "collider_2025: Nav": {
@@ -2320,9 +2269,6 @@
       ],
       "Endpoints": [
         "Конечные точки"
-      ],
-      "Models": [
-        "Модели"
       ],
       "Overview": [
         "Обзор"
@@ -2492,12 +2438,6 @@
       ]
     },
     "collider_2025: Tab": {
-      "API": [
-        "API"
-      ],
-      "Manage keys": [
-        "Управление ключами"
-      ],
       "Workflow Builder": [
         "Конструктор рабочих процессов"
       ]
@@ -2534,9 +2474,6 @@
       ],
       "Animated background": [
         "Анимированный фон"
-      ],
-      "API calls per day": [
-        "Запросы к API в день"
       ],
       "API docs sections": [
         "Разделы документации API"
@@ -2589,9 +2526,6 @@
       "Invalid Link": [
         "Недействительная ссылка"
       ],
-      "Manage keys": [
-        "Управление ключами"
-      ],
       "Models": [
         "Модели"
       ],
@@ -2612,9 +2546,6 @@
       ],
       "Personalizes general chats": [
         "Персонализирует общие чаты"
-      ],
-      "Prerequisites": [
-        "Предварительные требования"
       ],
       "Privacy included by default.": [
         "Конфиденциальность включена по умолчанию."
@@ -2640,9 +2571,6 @@
       "Theme": [
         "Тема"
       ],
-      "Tokens per call (daily)": [
-        "Токенов на вызов (в день)"
-      ],
       "Tokens per day": [
         "Токены в день"
       ],
@@ -2651,9 +2579,6 @@
       ],
       "Upload files": [
         "Загрузить файлы"
-      ],
-      "Usage (all keys, last 30 days)": [
-        "Использование (все ключи, за последние 30 дней)"
       ],
       "Visionary": [
         "Visionary"
@@ -2792,9 +2717,6 @@
       ],
       "tokens": [
         "токены"
-      ],
-      "tokens/call": [
-        "токенов/вызов"
       ]
     },
     "collider_2025: UploadAction": {
@@ -5980,6 +5902,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
+      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
+        "Пополняйте свой счет кредитами, которые вы можете использовать для подписки на новый тариф или продления своего текущего тарифа. Вы получаете один кредит за каждый потраченный ${ i18nCurrency }."
+      ],
       "Total conversations:": [
         "Всего цепочек писем:"
       ],
@@ -6115,6 +6040,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Ваша следующая дата платежа: ${ renewalTime }. Вы можете отменить подписку в любое время. Обратитесь в поддержку, если вам требуется немедленное изменение тарифа."
       ],
+      "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
+        "Ваши платежные данные защищены шифрованием TLS и законами о Швейцарии о частной жизни."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
       ],
@@ -6176,6 +6104,9 @@
       ],
       "Address": [
         "Адрес"
+      ],
+      "Amount": [
+        "Сумма"
       ],
       "Anderson": [
         "Андерсон"
@@ -6326,6 +6257,9 @@
       ],
       "Optional": [
         "Необязательно"
+      ],
+      "Other amount": [
+        "Другая сумма"
       ],
       "Password": [
         "Пароль"
@@ -6861,6 +6795,44 @@
         "Включено ${ seats } лицензии",
         "Включено ${ seats } лицензий",
         "Включено ${ seats } лицензий"
+      ]
+    },
+    "Monetary unit": {
+      "Australian dollar": [
+        "Австралийский доллар"
+      ],
+      "Brazilian real": [
+        "Бразильский реал"
+      ],
+      "British pound": [
+        "Британский фунт"
+      ],
+      "Canadian dollar": [
+        "Канадский доллар"
+      ],
+      "Euro": [
+        "Евро"
+      ],
+      "Hong Kong dollar": [
+        "Гонконгский доллар"
+      ],
+      "Japanese yen": [
+        "Японская иена"
+      ],
+      "Polish złoty": [
+        "Польский злотый"
+      ],
+      "Singapore dollar": [
+        "Сингапурский доллар"
+      ],
+      "South Korean won": [
+        "Южнокорейская вона"
+      ],
+      "Swiss franc": [
+        "Швейцарский франк"
+      ],
+      "US Dollar": [
+        "Доллар США"
       ]
     },
     "New Label form": {
@@ -7939,6 +7911,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
+      "Processing payment": [
+        "Обработка платежа"
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Цены продления могут быть изменены в соответствии с ${ termsAndConditionsLink }."
       ],
@@ -7990,6 +7965,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } каждый месяц. Вы можете отказаться в любое время."
       ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Транзакция успешно распознана. Остаток на счету будут добавлен на ваш счет как только транзакция будет полностью подтверждена."
+      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяц. Вы можете отменить его в любое время.",
         "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяца. Вы можете отменить его в любое время.",
@@ -8019,6 +7997,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас уже есть подписка на этот тариф. Вы можете изменить свою подписку на ${ subscriptionPlatform }."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "При выбранном способе оплаты с вас будет снято ${ amountToCharge }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения платежа."
@@ -8178,6 +8159,9 @@
       ],
       "Organization name": [
         "Название организации"
+      ],
+      "Other": [
+        "Другое"
       ],
       "Password": [
         "Пароль"
@@ -8725,6 +8709,9 @@
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
       ],
+      "Credits added": [
+        "Кредиты добавлены"
+      ],
       "Email address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
       ],
@@ -8854,6 +8841,9 @@
       "Add credit/debit card": [
         "Добавить кредитную/дебетовую карту"
       ],
+      "Add credits": [
+        "Пополнить счёт"
+      ],
       "Add user": [
         "Добавить пользователя"
       ],
@@ -8871,6 +8861,9 @@
       ],
       "Billing cycle": [
         "Период оплаты"
+      ],
+      "Black Friday": [
+        "Чёрная пятница"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Отменить подписку ${ MAIL_SHORT_APP_NAME }"

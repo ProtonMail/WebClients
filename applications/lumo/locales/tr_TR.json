@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
+      "About ${ name }": [
+        "${ name } hakkında"
+      ],
       "Accept dictation": [
         "Yazdırmayı onayla"
       ],
@@ -16,6 +19,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } ekle"
+      ],
+      "Add ${ name }": [
+        "${ name } ekle"
       ],
       "Add account": [
         "Hesap ekle"
@@ -405,6 +411,9 @@
       ],
       "Take a tour": [
         "Keşfedin"
+      ],
+      "Top up": [
+        "Doldur"
       ],
       "Try again": [
         "Yeniden dene"
@@ -1009,6 +1018,9 @@
       "Add to active": [
         "Etkin olana ekle"
       ],
+      "Add user": [
+        "Kullanıcı ekle"
+      ],
       "Already in KB": [
         "Zaten bilgi bankasında"
       ],
@@ -1072,6 +1084,9 @@
       "Edit memory": [
         "Belleği düzenle"
       ],
+      "Export CSV": [
+        "CSV olarak dışa aktar"
+      ],
       "Generate from chats": [
         "Sohbetlerden oluştur"
       ],
@@ -1081,6 +1096,9 @@
       "Hide safety information": [
         "Güvenlik bilgilerini gizle"
       ],
+      "Hide usage details for ${ member.name }": [
+        "${ member.name } için kullanım ayrıntılarını gizle"
+      ],
       "I like this response": [
         "Bu yanıtı beğendim"
       ],
@@ -1089,6 +1107,18 @@
       ],
       "Light": [
         "Açık"
+      ],
+      "Manage": [
+        "Yönetim"
+      ],
+      "Manage API keys": [
+        "API anahtarları yönetimi"
+      ],
+      "Manage automatic top-up and spending limit": [
+        "Otomatik birikim artırma ve harcama sınırı yönetimi"
+      ],
+      "Manage balance": [
+        "Birikim yönetimi"
       ],
       "Manage connectors": [
         "Bağlayıcı yönetimi"
@@ -1126,6 +1156,9 @@
       "Save": [
         "Kaydet"
       ],
+      "Save settings": [
+        "Ayarları kaydet"
+      ],
       "Select all": [
         "Tümünü seç"
       ],
@@ -1137,6 +1170,9 @@
       ],
       "Show safety information": [
         "Güvenlik bilgilerini görüntüle"
+      ],
+      "Show usage details for ${ member.name }": [
+        "${ member.name } için kullanım ayrıntılarını görüntüle"
       ],
       "Start generating": [
         "Üretmeye başlayın"
@@ -1155,6 +1191,12 @@
       ],
       "System": [
         "Sistem"
+      ],
+      "Toggle API access for ${ member.name }": [
+        "${ member.name } için API erişimini aç/kapat"
+      ],
+      "Top up balance": [
+        "Birikimi artır"
       ],
       "Try again": [
         "Yeniden dene"
@@ -1192,6 +1234,15 @@
       ],
       "Use Apertus": [
         "Apertus kullanın"
+      ],
+      "View all models": [
+        "Tüm modelleri görüntüle"
+      ],
+      "View authentication": [
+        "Kimlik doğrulamayı görüntüle"
+      ],
+      "View my usage": [
+        "Kullanımımı görüntüle"
       ],
       "Web search": [
         "İnternet araması"
@@ -1430,6 +1481,20 @@
         "Dün"
       ]
     },
+    "collider_2025: Date range": {
+      "Last 30 days": [
+        "Son 30 gün"
+      ],
+      "Last 7 days": [
+        "Son 7 gün"
+      ],
+      "Last 90 days": [
+        "Son 90 gün"
+      ],
+      "Previous 30 days": [
+        "Önceki 30 gün"
+      ]
+    },
     "collider_2025: Description": {
       "${ apertusArticleLink } is a fully open, Swiss-made AI model developed with leading Swiss universities. It is best suited to lighter everyday tasks.": [
         "${ apertusArticleLink }, önde gelen İsviçre üniversiteleriyle birlikte geliştirilen tümüyle açık, İsviçre yapımı bir yapay zeka modelidir. Daha hafif günlük görevler için en uygunudur."
@@ -1452,9 +1517,6 @@
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "İlerlediğinizde, model menüsünde seçilmiş model olarak Apertus görüntülenir. Bu menüden istediğiniz zaman başka bir modele geçebilirsiniz."
       ],
-      "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
-        "API anahtarları ${ LUMO_SHORT_APP_NAME } uygulamasına programlama ile erişmenizi sağlar. Oluşturulan her yalnızca bir kez görüntülenir."
-      ],
       "Choose the language you speak when using dictation.": [
         "Yazıya dönüştürme kullanırken konuşacağınız dili seçin."
       ],
@@ -1463,6 +1525,9 @@
       ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Betikleriniz ve araçlarınız ile ${ LUMO_SHORT_APP_NAME } bütünleştirmesi için bir anahtar oluşturun."
+      ],
+      "Create and revoke keys for your own programmatic access. Each key is shown only once.": [
+        "Programlama ile erişim için anahtarlarlarınızı oluşturun veya geçersiz kılın. Her anahtar yalnızca bir kez görüntülenir."
       ],
       "Enable web search by default in new chats.": [
         "Yeni sohbetlerde varsayılan olarak internet araması kullanılsın."
@@ -1574,6 +1639,9 @@
       ]
     },
     "collider_2025: Error": {
+      "Available models could not be loaded.": [
+        "Kullanılabilecek modeller yüklenemedi."
+      ],
       "Could not download this file.": [
         "Bu dosya indirilemedi."
       ],
@@ -1914,33 +1982,27 @@
         "${ fileCount } dosya",
         "${ fileCount } dosya"
       ],
+      "${ formattedSpend } of ${ formattedLimit } used this month": [
+        "Bu ay ${ formattedSpend } / ${ formattedLimit } kullanıldı"
+      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
       ],
       "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space. When it fills up, older messages are summarized — not deleted — so you can keep chatting. Your full chat history stays in the conversation.": [
         "${ LUMO_SHORT_APP_NAME } her sohbet için sınırlı miktarda bilgiyi işleyebilir. Burada bu alanın şu anda ne tarafından kullanıldığı görüntülenir. Alan dolduğunda sohbetinizi sürdürebilmeniz için eski iletiler silinmez, yalnızca özetlenir. Sohbet geçmişinizin tümü sohbetin içinde kalır."
       ],
-      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
-        "${ LUMO_SHORT_APP_NAME }+ — API erişimi ve anahtarları ${ LUMO_SHORT_APP_NAME }+ tarifesinde bulunur (yükseltmek veya anahtarları yönetmek için oturum açın)"
-      ],
-      "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
-        "${ LUMO_SHORT_APP_NAME }+ — ${ LUMO_SHORT_APP_NAME } API ve API anahtarları için etkin bir ${ LUMO_SHORT_APP_NAME }+ aboneliği gerekir. "
-      ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "${ urgentTotal } sohbetin geçerlilik süresi 24 saat içinde sona erecek",
         "${ urgentTotal } sohbetin geçerlilik süresi 24 saat içinde sona erecek"
       ],
       "${ used } / ${ maximum } tokens (${ percentageUsed }%)": [
-        "${ used } / ${ maximum } kod (%${ percentageUsed })"
-      ],
-      ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
-        ". OpenAI API şemasına uyar — Var olan istemcinizi tek satırda değiştirerek kullanmaya başlayın."
-      ],
-      "A ${ LUMO_SHORT_APP_NAME } account": [
-        "Bir ${ LUMO_SHORT_APP_NAME } hesabı"
+        "${ used } / ${ maximum } belirteç (%${ percentageUsed })"
       ],
       "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
         "PDF dosyalarından oluşan bir klasörü yükleyen, yazıları ayıklayan, ${ LUMO_SHORT_APP_NAME } ile her dosyanın özetlenmesini isteyen ve belge başına bir Markdown özeti yazan bir iş akışı."
+      ],
+      "About ${ estimatedDays } days left at current usage": [
+        "Geçerli kullanım düzeyi ile yaklaşık ${ estimatedDays } gün kaldı"
       ],
       "Access ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } erişimi"
@@ -1957,6 +2019,12 @@
       "Add to active": [
         "Etkin olana ekle"
       ],
+      "Add your key to the authorization header and call a model.": [
+        "Anahtarınızı yetkilendirme üst bilgisine ekleyin ve bir modeli çağırın."
+      ],
+      "Adding ${ formattedAmount } when your balance falls below ${ formattedThreshold }": [
+        "Birikiminiz ${ formattedThreshold } altına düştüğünde ${ formattedAmount } eklenir"
+      ],
       "Advanced account and network security in one plan": [
         "Gelişmiş hesap ve ağ güvenliği tek bir tarifede"
       ],
@@ -1966,20 +2034,29 @@
       "All files in this chat": [
         "Bu sohbetteki tüm dosyalar"
       ],
-      "An API key — generate one in ": [
-        "Bir API anahtarı — Şuradan bir tane oluşturun "
-      ],
-      "An HTTP client or official SDK (Python, TypeScript, Rust)": [
-        "Bir HTTP istemcisi veya resmi SDK (Python, TypeScript, Rust)"
-      ],
       "API calls": [
         "API çağrıları"
       ],
       "API key management is not available for your account at the moment.": [
         "Hesabınızda şu anda API anahtarı yönetimi kullanılamıyor."
       ],
+      "API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
+        "API anahtarları ${ LUMO_SHORT_APP_NAME }+ ile birlikte gelir. Hesabınıza bir ${ LUMO_SHORT_APP_NAME } koltuğu ataması için kuruluş yöneticiniz ile görüşün."
+      ],
+      "API usage and balance are available for ${ LUMO_SHORT_APP_NAME }+ subscribers.": [
+        "API kullanımı ve birikimini ${ LUMO_SHORT_APP_NAME }+ aboneleri kullanabilir."
+      ],
+      "API usage is available with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
+        "API ${ LUMO_SHORT_APP_NAME }+ tarifesi ile kullanılabilir. Kuruluş yöneticinizden hesabınıza ${ LUMO_SHORT_APP_NAME } lisansı atamasını isteyin."
+      ],
+      "API usage is not available for your account at the moment.": [
+        "Şu anda hesabınızda API kullanımı yok."
+      ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } yardımcısına istediğiniz her şeyi sorun"
+      ],
+      "Assign a ${ LUMO_SHORT_APP_NAME } seat to create a personal API key.": [
+        "Kişisel bir API anahtarı oluşturmak için bir ${ LUMO_SHORT_APP_NAME } koltuğu atayın."
       ],
       "Attached files": [
         "Eklenmiş dosyalar"
@@ -1999,6 +2076,9 @@
       "Build privacy-first assistants with streaming and persistent context.": [
         "Yayın akışı ve kalıcı bağlam özellikleriyle gizlilik odaklı yardımcılar oluşturun."
       ],
+      "Cached input ${ formattedCacheInput } per 1M tokens. Prices shown in USD.": [
+        "1 milyon belirteç başına ön belleğe alınmış giriş ${ formattedCacheInput }. Fiyatlar ABD dolarıdır."
+      ],
       "Chain tool calls to orchestrate multi-step pipelines end-to-end.": [
         "Zincir araç çağrıları, uçtan uca çok adımlı işlem hatlarını düzenlemek için."
       ],
@@ -2014,6 +2094,9 @@
       "Check this is the site you expect to visit": [
         "Bunun ziyaret etmeyi beklediğiniz site olduğundan emin olun"
       ],
+      "Configure member access for when a balance is available. Usage shown for ${ periodLabel }.": [
+        "Birikim olduğunda üye erişimini yapılandırın. ${ periodLabel } kullanım bilgileri görüntüleniyor."
+      ],
       "Context usage for this conversation": [
         "Bu yazışmanın bağlam kullanımı"
       ],
@@ -2026,14 +2109,17 @@
       "Couldn't open the rich text editor, so you're editing the Markdown source.": [
         "Zengin yazı düzenleyici açılamadı. Bu nedenle Markdown kaynağını düzenliyorsunuz."
       ],
-      "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
-        "Programlama ile erişim için API anahtarları oluşturabilir ve geçersiz kılabilirsiniz. Anahtarlar oluşturulduklarında yalnızca bir kez görüntülenir."
+      "Create a key and store it securely. It is only shown once.": [
+        "Bir anahtar oluşturun ve güvenli bir yerde saklayın. Bu anahtar yalnızca bir kez görüntülenir."
       ],
       "Created by ${ LUMO_SHORT_APP_NAME } in this conversation.": [
         "Bu yazışmada ${ LUMO_SHORT_APP_NAME } tarafından oluşturuldu."
       ],
       "creations": [
         "yapıt"
+      ],
+      "Daily usage by token type": [
+        "Belirteç türüne göre günlük kullanım"
       ],
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Bir iş akışını sade bir dille tarif edin ve karşılığında bir çizelge ile çalıştırılabilir bir kod alın. Bu özelliği kullanmak için oturum açın."
@@ -2058,6 +2144,9 @@
       ],
       "Error processing attachment": [
         "Ek dosya işlenirken sorun çıktı"
+      ],
+      "Estimated API spend": [
+        "Öngörülen API harcaması"
       ],
       "Exceeds ${ maxSize } limit": [
         "${ maxSize } sınırını aşıyor"
@@ -2100,9 +2189,6 @@
       ],
       "Files automatically retrieved based on your questions.": [
         "Sorularınıza göre otomatik olarak alınan dosyalar."
-      ],
-      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
-        "Günlük API çağrısı başına ortalama kod sayısı (kod sayısı ÷ çağrı sayısı; çağrı yoksa 0)."
       ],
       "For this chat": [
         "Bu sohbet için"
@@ -2149,11 +2235,23 @@
       "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
         "Bir müşteri iletisini al, ${ LUMO_SHORT_APP_NAME } ile önceliğini ve konusunu sınıflandır, bir üste çıkarmak gerekip gerekmediğine karar ver, ardından bir yanıt taslağı oluştur veya bir insana devret."
       ],
+      "Keep API requests running when your balance gets low.": [
+        "Birikiminiz azaldığında API isteklerinin sürmesini sağlayın."
+      ],
+      "Last 30 days": [
+        "Son 30 gün"
+      ],
+      "Less than one day left at current usage": [
+        "Geçerli kullanım düzeyiyle bir günden az süre kaldı"
+      ],
       "Load two versions of a policy, ask ${ LUMO_SHORT_APP_NAME } to list differences and risks, then produce a short recommendation for which version to adopt.": [
         "Bir ilkenin iki sürümünü yükleyin, ${ LUMO_SHORT_APP_NAME } ile farklılıkların ve risklerin listelenmesini isteyin. Ardından uyulacak sürüm için kısa bir öneri hazırlayın."
       ],
       "Loading": [
         "Yükleniyor"
+      ],
+      "Loading available models…": [
+        "Kullanılabilecek modeller yükleniyor…"
       ],
       "Loading usage…": [
         "Kullanım yükleniyor…"
@@ -2173,11 +2271,32 @@
       "Matching files": [
         "Eşleşen dosyalar"
       ],
+      "Model responses": [
+        "Model yanıtları"
+      ],
+      "Monitor your API balance, tokens, and spending controls.": [
+        "API birikiminizi, belirteçlerinizi ve harcama denetimlerinizi izleyin."
+      ],
+      "Monitor your API usage and organization balance status.": [
+        "API kullanımınızı ve kuruluşunuzun birikim durumunu izleyin."
+      ],
+      "Monitor your balance, usage, spending controls, and access.": [
+        "Birikiminizi, kullanımınızı, harcama sınırlarınızı ve erişim durumunuzu izleyin."
+      ],
+      "Monitor your organization's API balance and token usage.": [
+        "Kuruluşunuzun API birikimini ve belirteç kullanımını izleyin."
+      ],
+      "Monthly spending limit reached. API requests are paused until next month.": [
+        "Aylık harcama sınırı aşıldı. API istekleri bir sonraki aya kadar duraklatıldı."
+      ],
+      "Monthly spending limit: ${ formattedSpend } of ${ formattedLimit } used (${ limitUsagePercent }%)": [
+        "Aylık harcama sınırı: ${ formattedSpend } / ${ formattedLimit } kullanıldı (%${ limitUsagePercent })"
+      ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "API anahtarlarını asla istemci tarafındaki paketlere eklemeyin. Üretim ortamında ortam değişkenlerini ve sunucu tarafındaki bir vekil sunucunu kullanın."
       ],
-      "No calls": [
-        "Herhangi bir çağrı yok"
+      "No API models are currently available.": [
+        "Şu anda kullanılabilecek bir API modeli yok."
       ],
       "No connected connectors": [
         "Bağlı bir bağlayıcı yok"
@@ -2190,6 +2309,12 @@
       ],
       "No files or creations yet": [
         "Henüz bir dosya veya yapıt yok"
+      ],
+      "No members match your search.": [
+        "Aramanız ile eşleşen bir üye yok."
+      ],
+      "No monthly spending limit": [
+        "Aylık harcama sınırı yok"
       ],
       "No new memories were found in your recent chats.": [
         "Son sohbetlerinizde yeni bellek bulunamadı."
@@ -2211,6 +2336,18 @@
       ],
       "Partial content": [
         "İçeriği bir bölümü"
+      ],
+      "Pass a model ID in your request. Prices are list prices in USD per million tokens (MTok).": [
+        "İsteğinizde bir model kimliği verin. Fiyatlar, milyon belirteç başına ABD Doları (MTok) olarak liste fiyatlarıdır."
+      ],
+      "Pause API requests until next month once this is reached.": [
+        "Bu eşiğe ulaşıldığında API istekleri gelecek aya kadar duraklatılsın."
+      ],
+      "Pay only for the tokens you use. Prices in USD per 1M tokens.": [
+        "Yalnızca kullandığınız belirteçleri ödeyin. Fiyatlar 1 milyon belirteç için ABD dolarıdır."
+      ],
+      "Pay per token. Prices in USD per 1 million tokens (MTok).": [
+        "Belirteç başına ödeme. Fiyatlar 1 milyon belirteç (MTok) başına ABD dolarıdır."
       ],
       "PDF": [
         "PDF"
@@ -2239,6 +2376,12 @@
       "Preparing ${ formatLabel }… (${ current } of ${ total })": [
         "${ formatLabel } hazırlanıyor… (${ current } / ${ total })"
       ],
+      "Prices shown in USD.": [
+        "Fiyatlar ABD dolarıdır."
+      ],
+      "Pricing not yet listed": [
+        "Fiyatlar henüz listelenmemiş"
+      ],
       "Private video calls for the conversations that matter.": [
         "Önemli görüşmeler için gizliliği koruyan görüntülü çağrılar."
       ],
@@ -2250,6 +2393,9 @@
       ],
       "Project knowledge": [
         "Proje bilgileri"
+      ],
+      "Prompts and context": [
+        "İstemler ve bağlam"
       ],
       "Ran out": [
         "Tükendi"
@@ -2278,11 +2424,20 @@
       "Reserved to keep chatting": [
         "Sohbete ilerlemek için ayrıldı"
       ],
+      "Review spending and control API access by member for ${ periodLabel }.": [
+        "${ periodLabel } dönemi için üye bazında harcamaları inceleyin ve API erişimini denetleyin."
+      ],
+      "Review token usage and balance deductions over time.": [
+        "Belirteç kullanımını ve zaman içinde birikimin azalmasını gözden geçirin."
+      ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Tüm sohbetlerinizi yalnızca sizin görebileceğiniz bir sohbet geçmişine kaydedin. Oturum veya bir hesap açın."
       ],
       "Secure connection (encrypted)": [
         "Güvenli bağlantı (şifrelenmiş)"
+      ],
+      "Set up billing and authentication before making your first API request.": [
+        "İlk API isteğinizi yapmadan önce faturalama ve kimlik doğrulamayı ayarlayın."
       ],
       "Shared by ${ file.sharedBy }": [
         "${ file.sharedBy } tarafından paylaşıldı"
@@ -2308,6 +2463,9 @@
       "Sign in to generate workflows with ${ LUMO_SHORT_APP_NAME }.": [
         "${ LUMO_SHORT_APP_NAME } ile iş akışları oluşturmak için oturum açın."
       ],
+      "Sign in to view API usage and balance for ${ LUMO_SHORT_APP_NAME }.": [
+        "${ LUMO_SHORT_APP_NAME } API kullanımını ve birikimini görüntülemek için oturum açın."
+      ],
       "Sorted by creation time": [
         "Oluşturulma zamanına göre sıralandı"
       ],
@@ -2317,26 +2475,17 @@
       "Space usage: ": [
         "Kullanılan alan: "
       ],
-      "Specify a model ID directly for predictable latency or capability targeting.": [
-        "Öngörülebilir gecikme süresi veya kapasite hedeflemesi için doğrudan bir model kimliği belirtin."
-      ],
       "Table view": [
         "Tablo görünümü"
       ],
       "Telling us which language you speak helps dictation transcribe your voice accurately.": [
         "Bize hangi dili konuştuğunuzu söylemeniz, yazıya dönüştürmenin sesinizi doğru şekilde kopyalamasına yardımcı olur."
       ],
-      "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
-        "${ LUMO_SHORT_APP_NAME } API uygulaması ve API anahtarları ${ LUMO_SHORT_APP_NAME }+ ile birlikte gelir. Hesabınıza bir ${ LUMO_SHORT_APP_NAME } koltuğu ataması için kuruluş yöneticinizle görüşün."
-      ],
       "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
         "${ LUMO_SHORT_APP_NAME } API, gizlilik mimarisi ${ BRAND_NAME } tarafından hazır gelen dil modellerine programlama ile erişim sağlar. İstekleriniz ile veriler eğitilmez. İzleme yoktur."
       ],
-      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
-        "${ LUMO_SHORT_APP_NAME } API, şuradaki bir RESTful arayüzüdür: "
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
-        "${ LUMO_SHORT_APP_NAME } API uygulaması, ${ LUMO_SHORT_APP_NAME }+ aboneleri tarafından kullanılabilir. API anahtarları oluşturmak ve API uygulamasını programlama ile kullanmak için tarifenizi yükseltin."
+      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface that follows the OpenAI API schema — drop in your existing client with a one-line change.": [
+        "${ LUMO_SHORT_APP_NAME } API, OpenAI API şemasına uygun bir RESTful arayüzüdür. Tek satırlık bir değişiklik ile kolayca kullandığınız istemci ile bütünleştirebilirsiniz."
       ],
       "There was an error processing this file.": [
         "Bu dosya işlenirken bir sorun çıktı."
@@ -2384,10 +2533,13 @@
         "Bu sohbete daha sonra geri dönmek için oturum veya bir hesap açın."
       ],
       "tokens / 30d": [
-        "kod / 30 gün"
+        "belirteç / 30 gün"
       ],
       "Tool calls": [
         "Araç çağrıları"
+      ],
+      "Top up your API balance so requests can run without interruption.": [
+        "API birikiminizi artırın. Böylece istekler kesintisiz olarak işlenebilir."
       ],
       "Trying...": [
         "Deneniyor..."
@@ -2400,6 +2552,9 @@
       ],
       "Upgrade for unlimited chats, projects, larger file uploads, and more.": [
         "Sınırsız sohbet, proje, daha büyük dosya yükleme ve diğer şeyler için tarifenizi yükseltin."
+      ],
+      "Upgrade to ${ LUMO_SHORT_APP_NAME }+ to create API keys and use the API programmatically.": [
+        "API anahtarları oluşturmak ve program içinde API kullanmak için ${ LUMO_SHORT_APP_NAME }+ tarifesine yükseltin."
       ],
       "Upload files or add them from ${ DRIVE_APP_NAME } to give ${ LUMO_SHORT_APP_NAME } context. ${ LUMO_SHORT_APP_NAME } creations from this chat will appear here.": [
         "${ LUMO_SHORT_APP_NAME } bağlamını vermek için dosyaları yükleyin veya ${ DRIVE_APP_NAME } adresinden ekleyin. Bu sohbette oluşturulan ${ LUMO_SHORT_APP_NAME } yapıtları burada görüntülenir."
@@ -2418,6 +2573,15 @@
       ],
       "Uploading to ${ DRIVE_SHORT_APP_NAME }… ${ progressPercent }%": [
         "${ DRIVE_SHORT_APP_NAME } yükleniyor… %${ progressPercent }"
+      ],
+      "Usage charts and request totals will appear here after this key makes its first API request.": [
+        "Bu anahtar ilk API isteğini yaptıktan sonra kullanım çizelgeleri ve istek toplamları burada görüntülenir."
+      ],
+      "Usage estimate unavailable": [
+        "Kullanım öngörüsü kullanılamıyor"
+      ],
+      "Usage will appear here after organization members make API requests.": [
+        "Kuruluş üyelerinin gönderdiği API isteklerinin kullanım bilgileri burada görüntülenir."
       ],
       "used": [
         "kullanılmış"
@@ -2446,11 +2610,17 @@
       "You've reached your image limit for this period. Upgrade to keep creating images.": [
         "Bu dönem için görsel oluşturma sınırınıza ulaştınız. Görsel oluşturmayı sürdürmek için tarfienizi yükseltin."
       ],
+      "Your administrator manages the shared API balance for your organization.": [
+        "Kuruluşunuzun paylaşılan API birikimini yöneticiniz tarafından yönetilir."
+      ],
       "Your memories are already up to date.": [
         "Bellekleriniz zaten güncel."
       ],
       "Your memories are already well organized.": [
         "Bellekleriniz zaten iyi düzenlenmiş durumda."
+      ],
+      "Your organization has not allowed API access for your account. Contact your organization administrator to request access.": [
+        "Kuruluşunuz hesabınız için API erişimine izin vermiyor. Erişim istemek için kuruluş yöneticiniz ile görüşün."
       ]
     },
     "collider_2025: Job": {
@@ -2493,8 +2663,17 @@
       ]
     },
     "collider_2025: Label": {
+      "${ formattedAmount } per 1M tokens": [
+        "1 milyon belirteç başına ${ formattedAmount }"
+      ],
       "AI model": [
         "Yapay zeka modeli"
+      ],
+      "All models": [
+        "Tüm modeller"
+      ],
+      "Allowed API access": [
+        "API erişimine izin verildi"
       ],
       "Answer mode": [
         "Yanıt kipi"
@@ -2502,14 +2681,20 @@
       "API calls": [
         "API çağrıları"
       ],
-      "API calls (30d)": [
-        "API çağrıları (30 gün)"
+      "Automatic top-up": [
+        "Otomatik birikim artırma"
       ],
-      "Avg tokens / call": [
-        "Ortalama kod / çağrı"
+      "Balance used": [
+        "Kullanılan birikim"
+      ],
+      "Base URL": [
+        "Temel adres"
       ],
       "Basic": [
         "Temel"
+      ],
+      "Cached input": [
+        "Ön belleğe alınmış giriş"
       ],
       "Code language": [
         "Kod dili"
@@ -2547,11 +2732,26 @@
       "File upload": [
         "Dosya yükleme"
       ],
+      "Filter token usage by model": [
+        "Model bazında belirteç kullanımını süz"
+      ],
       "From chats": [
         "Sohbetlerden"
       ],
+      "Input": [
+        "Giriş"
+      ],
+      "Input tokens": [
+        "Giriş belirteçleri"
+      ],
+      "Limit": [
+        "Sınır"
+      ],
       "Loop": [
         "Döngü"
+      ],
+      "Members": [
+        "Üyeler"
       ],
       "Merge": [
         "Birleştir"
@@ -2559,8 +2759,17 @@
       "Method": [
         "Yöntem"
       ],
+      "Model": [
+        "Model"
+      ],
       "Model and response mode": [
         "Model ve yanıt kipi"
+      ],
+      "Monthly spending limit": [
+        "Aylık harcama sınırı"
+      ],
+      "Not billed": [
+        "Fatura kesilmedi"
       ],
       "Not factually correct": [
         "Aslında doğru değil"
@@ -2568,20 +2777,32 @@
       "optional": [
         "i̇steğe bağlı"
       ],
+      "Organization API balance": [
+        "Kuruluş API birikimi"
+      ],
       "Other": [
         "Diğer"
       ],
       "Output": [
         "Çıktı"
       ],
+      "Output tokens": [
+        "Çıkış belirteçleri"
+      ],
       "Path": [
         "Yol"
+      ],
+      "per 1M tokens": [
+        "1 milyon belirteç başına"
       ],
       "Prompt": [
         "İstem"
       ],
       "Python": [
         "Python"
+      ],
+      "Remaining balance": [
+        "Kalan birikim"
       ],
       "required": [
         "zorunlu"
@@ -2595,6 +2816,9 @@
       "Rust": [
         "Rust"
       ],
+      "Search members": [
+        "Üye ara"
+      ],
       "Status": [
         "Durum"
       ],
@@ -2607,20 +2831,26 @@
       "Thinking mode": [
         "Düşünme kipi"
       ],
-      "Tokens (30d)": [
-        "Kodlar (30 gün)"
-      ],
-      "Tokens generated": [
-        "Oluşturulan kodlar"
+      "Token type": [
+        "Belirteç türü"
       ],
       "Tool calls": [
         "Araç çağrıları"
+      ],
+      "Top up by": [
+        "Birikimi şöyle artır"
       ],
       "TypeScript": [
         "TypeScript"
       ],
       "Unsafe or problematic": [
         "Güvenli değil ya da sorunlu"
+      ],
+      "Usage period": [
+        "Kullanım dönemi"
+      ],
+      "When balance falls below": [
+        "Birikim şu düzeyin altına düştüğünde"
       ],
       "You": [
         "Siz"
@@ -2678,9 +2908,11 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
-      ],
-      "View plans": [
-        "Tarifeleri görüntüle"
+      ]
+    },
+    "collider_2025: Model capability": {
+      "chat": [
+        "sohbet"
       ]
     },
     "collider_2025: Nav": {
@@ -2690,8 +2922,8 @@
       "Endpoints": [
         "Uç noktalar"
       ],
-      "Models": [
-        "Modeller"
+      "Models & pricing": [
+        "Modeller ve ücretler"
       ],
       "Overview": [
         "Özet"
@@ -2790,6 +3022,9 @@
       ],
       "Please share what you expected": [
         "Lütfen ne beklediğinizi paylaşın"
+      ],
+      "Search members": [
+        "Üye ara"
       ]
     },
     "collider_2025: Plan Name": {
@@ -2856,6 +3091,15 @@
       "Active": [
         "Kullanıma alınmış"
       ],
+      "Allowed": [
+        "İzin verilen"
+      ],
+      "API requests are paused. Top up your balance to resume requests.": [
+        "API istekleri duraklatıldı. İstekleri sürdürmek için birikiminizi artırın."
+      ],
+      "Blocked": [
+        "Engellendi"
+      ],
       "Copied!": [
         "Kopyalandı!"
       ],
@@ -2864,6 +3108,15 @@
       ],
       "Expiring soon": [
         "Yakında süresi dolacak"
+      ],
+      "Organization API requests are paused. Contact your organization administrator to top up the balance.": [
+        "Kuruluş API istekleri duraklatıldı. Birikiminizi doldurmak için kuruluş yöneticiniz ile görüşün."
+      ],
+      "Your API balance is running low. Top up your balance to avoid interruptions.": [
+        "API birikiminiz azalıyor. Kesinti olmaması için birikiminizi artırın."
+      ],
+      "Your organization API balance is running low. Contact your organization administrator to avoid interruptions.": [
+        "Kuruluşunuzun API birikimi azalıyor. Kesintiyi önlemek için kuruluş yöneticiniz ile görüşün."
       ]
     },
     "collider_2025: Success": {
@@ -2900,11 +3153,14 @@
       ]
     },
     "collider_2025: Tab": {
-      "API": [
-        "API"
+      "API keys": [
+        "API anahtarları"
       ],
-      "Manage keys": [
-        "Anahtar yönetimi"
+      "Docs": [
+        "Belgeler"
+      ],
+      "Overview": [
+        "Özet"
       ],
       "Workflow Builder": [
         "İş akışı oluşturucu"
@@ -2912,7 +3168,7 @@
     },
     "collider_2025: Tip": {
       "Avoid passwords, tokens, or sensitive personal identifiers.": [
-        "Parolalardan, kodlardan veya önemli kişisel tanımlayıcılardan kaçının."
+        "Parolalardan, belirteçlerden veya önemli kişisel tanımlayıcılardan kaçının."
       ],
       "Include how you like to communicate (tone, format, language).": [
         "Nasıl iletişim kurmak istediğinizi (üslup, tarz, dil) ekleyin."
@@ -2946,8 +3202,8 @@
       "Animated background": [
         "Canlandırmalı arka plan"
       ],
-      "API calls per day": [
-        "Günlük API çağrıları"
+      "API access is not enabled": [
+        "API erişimi açılmamış"
       ],
       "API docs sections": [
         "API belgeleri bölümleri"
@@ -2958,17 +3214,38 @@
       "API endpoints overview": [
         "API uç noktaları özeti"
       ],
+      "API overview": [
+        "API özeti"
+      ],
+      "API usage & balance": [
+        "API kullanımı ve birikim"
+      ],
+      "API usage dashboard": [
+        "API kullanımı panosu"
+      ],
       "Authentication": [
         "Kimlik doğrulama"
       ],
       "Auto update memory": [
         "Bellek otomatik olarak güncellensin"
       ],
+      "Automatic top-up enabled": [
+        "Otomatik birikim artırma açık"
+      ],
+      "Automatic top-up off": [
+        "Otomatik birikim artırma kapalı"
+      ],
+      "Balance settings": [
+        "Birikim ayarları"
+      ],
       "Build intelligent apps.": [
         "Akıllı uygulamalar oluşturun."
       ],
       "Chat": [
         "Sohbet"
+      ],
+      "Check organization access": [
+        "Kuruluş erişimini denetleyin"
       ],
       "Choose your dictation language": [
         "Yazıya dönüştürme dilinizi seçin"
@@ -3006,8 +3283,14 @@
       "Don't lose the thread": [
         "Konudan uzaklaşmayın"
       ],
+      "Generate an API key": [
+        "API anahtarı oluştur"
+      ],
       "Generated code": [
         "Oluşturulan kod"
+      ],
+      "Getting started": [
+        "Başlangıç"
       ],
       "Got a minute?": [
         "Bir dakikanız var mı?"
@@ -3024,14 +3307,20 @@
       "Invalid Link": [
         "Bağlantı geçersiz"
       ],
-      "Manage keys": [
-        "Anahtarları yönet"
+      "Make your first request": [
+        "İlk isteğinizi yapın"
       ],
       "Meet Apertus 1.5": [
         "Apertus 1.5 ile tanışın"
       ],
+      "Member usage": [
+        "Üyelerin kullanımı"
+      ],
       "Models": [
         "Modeller"
+      ],
+      "Models & pricing": [
+        "Modeller ve ücretler"
       ],
       "Never used inside projects": [
         "Projelerde hiç kullanılmadı"
@@ -3039,8 +3328,17 @@
       "No API keys yet": [
         "Henüz API anahtarı yok"
       ],
+      "No API usage yet": [
+        "Henüz API kullanımı yok"
+      ],
+      "No member API usage yet": [
+        "Henüz herhangi bir üyenin API kullanımı yok"
+      ],
       "No memories yet": [
         "Henüz bir bellek yok"
+      ],
+      "No usage in the last 30 days": [
+        "Son 30 günde bir kullanım yok"
       ],
       "Opening External Link": [
         "Dış bağlantı açılıyor"
@@ -3051,11 +3349,14 @@
       "Parameters": [
         "Parametreler"
       ],
+      "Pay as you go": [
+        "Kullandıkça öde"
+      ],
       "Personalizes general chats": [
         "Genel sohbetleri kişiselleştirir"
       ],
-      "Prerequisites": [
-        "Ön koşullar"
+      "Pricing": [
+        "Ücretler"
       ],
       "Privacy included by default.": [
         "Varsayılan olarak gizlilik odaklıdır."
@@ -3087,11 +3388,14 @@
       "Theme": [
         "Tema"
       ],
-      "Tokens per call (daily)": [
-        "Çağrı başına kod sayısı (günlük)"
+      "Token usage": [
+        "Belirteç kullanımı"
       ],
       "Tokens per day": [
-        "Günlük kodlar"
+        "Gün başına belirteç"
+      ],
+      "Top up balance": [
+        "Birikimi artır"
       ],
       "Turn off memory?": [
         "Bellek kapatılsın mı?"
@@ -3099,8 +3403,8 @@
       "Upload files": [
         "Dosya yükle"
       ],
-      "Usage (all keys, last 30 days)": [
-        "Kullanım (tüm anahtarlar, son 30 gün)"
+      "Usage": [
+        "Kullanım"
       ],
       "Visionary": [
         "Visionary"
@@ -3125,6 +3429,9 @@
       ],
       "You stay in control": [
         "Kontrol sizde kalır"
+      ],
+      "Your API keys": [
+        "API anahtarlarınız"
       ],
       "Your new API key": [
         "Yeni API anahtarınız"
@@ -3242,10 +3549,7 @@
         "çağrı"
       ],
       "tokens": [
-        "kodlar"
-      ],
-      "tokens/call": [
-        "kod/çağrı"
+        "belirteçler"
       ]
     },
     "collider_2025: UploadAction": {
@@ -3466,6 +3770,9 @@
       "Continue": [
         "İlerle"
       ],
+      "Continue to next question": [
+        "Sonraki soruya geç"
+      ],
       "Copy": [
         "Kopyala"
       ],
@@ -3522,6 +3829,9 @@
       ],
       "Discard changes": [
         "Değişiklikleri yok say"
+      ],
+      "Dismiss questions": [
+        "Soruları yok say"
       ],
       "Divider": [
         "Ayırıcı"
@@ -3652,6 +3962,9 @@
       "Next message": [
         "Sonraki ileti"
       ],
+      "Next question": [
+        "Sonraki soru"
+      ],
       "Numbered list": [
         "Numaralı liste"
       ],
@@ -3687,6 +4000,9 @@
       ],
       "Previous message": [
         "Önceki ileti"
+      ],
+      "Previous question": [
+        "Önceki soru"
       ],
       "Quote": [
         "Alıntı"
@@ -3733,6 +4049,9 @@
       "Reveal my profile": [
         "Profilimi göster"
       ],
+      "Run now": [
+        "Şimdi yürüt"
+      ],
       "Save": [
         "Kaydet"
       ],
@@ -3769,6 +4088,9 @@
       "Show sidebar": [
         "Kenar çubuğunu görüntüle"
       ],
+      "Skip": [
+        "Atla"
+      ],
       "Slides": [
         "Slaytlar"
       ],
@@ -3783,6 +4105,9 @@
       ],
       "Strikethrough": [
         "Üzeri çizili"
+      ],
+      "Submit": [
+        "Gönder"
       ],
       "Task options": [
         "Görev seçenekleri"
@@ -4058,6 +4383,9 @@
       "Could not read this file.": [
         "Bu dosya okunamadı."
       ],
+      "Could not save this task. Reload the page and try again.": [
+        "Bu görev kaydedilemedi. Sayfayı yeniden yükleyip yeniden deneyin."
+      ],
       "Database connection lost. Please refresh the page to continue.": [
         "Veri tabanı bağlantısı kesildi. İlerlemek için sayfayı yenileyin."
       ],
@@ -4171,6 +4499,9 @@
       ],
       "This does not look like a ChatGPT or Claude export.": [
         "Bu bir ChatGPT veya Claude dışa aktarması gibi görünmüyor."
+      ],
+      "This scheduled task no longer exists. Reload the page and try again.": [
+        "Bu zamanlanmış görev artık yok. Sayfayı yeniden yükleyip yeniden deneyin."
       ],
       "We could not read this Excel workbook. It may be encrypted, corrupted, or not a valid .xlsx file. Please save it as .xlsx or CSV and try again.": [
         "Bu Excel çalışma kitabı okunamadı. Şifrelenmiş, bozuk veya geçersiz bir .xlsx dosyası olabilir. Lütfen .xlsx veya CSV olarak kaydedip yeniden deneyin."
@@ -4549,6 +4880,12 @@
       "No projects yet": [
         "Henüz bir proje yok"
       ],
+      "No runs yet. Results from each run will open here.": [
+        "Henüz yürütülmemiş. Her yürütülmenin sonuçları burada açılır."
+      ],
+      "No scheduled tasks yet.": [
+        "Henüz bir zamanlanmış görev yok."
+      ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "iPhone veya iPad üzerinde Ayarlar → Uygulamalar → Safari → İleri Düzey yolunu izleyin ve \"Tüm Çerezleri Engelle\" seçeneğinin kapalı olduğundan emin olun. Ardından sayfayı yeniden yükleyin."
       ],
@@ -4607,11 +4944,20 @@
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Big Tech şirketlerinin yapay zekalarının sizinle ilgili neler bildiğini görün. ${ LUMO_SHORT_APP_NAME } ile hazırlanmıştır."
       ],
+      "Select all that apply.": [
+        "Uyanların tümünü seçin."
+      ],
+      "Select one answer.": [
+        "Bir yanıt seçin."
+      ],
       "Sign in to your ChatGPT account on chatgpt.com": [
         "Chatgpt.com adresinden ChatGPT hesabınızda oturum açın"
       ],
       "Sign in to your Claude account at claude.ai": [
         "claude.ai adresinden Claude hesabınızda oturum açın"
+      ],
+      "Skipped": [
+        "Atlandı"
       ],
       "Some content, such as images and attachments, may not be included in the exported file.": [
         "Görseller ve ek dosyaları gibi bazı içerikler dışa aktarılan dosyaya eklenmeyebilir."
@@ -4708,6 +5054,9 @@
       ],
       "Webpage · HTML": [
         "Site sayfası · HTML"
+      ],
+      "When this task ran.": [
+        "Bu görev yürütüldüğünde."
       ],
       "You": [
         "Siz"
@@ -4815,6 +5164,9 @@
       ]
     },
     "collider_2025:Label": {
+      "${ current } of ${ total }": [
+        "${ current } / ${ total }"
+      ],
       "${ data.pressure } hPa": [
         "${ data.pressure } hPa"
       ],
@@ -4825,8 +5177,8 @@
         "${ data.wind_speed } m/s ${ direction }"
       ],
       "${ file.tokenCount } token": [
-        "${ file.tokenCount } kod",
-        "${ file.tokenCount } kod"
+        "${ file.tokenCount } belirteç",
+        "${ file.tokenCount } belirteç"
       ],
       "${ progress.indexed }/${ progress.total } file (${ percentage }%)": [
         "${ progress.indexed }/${ progress.total } dosya (%${ percentage })",
@@ -5351,6 +5703,9 @@
       "Scams": [
         "Dolandırıcılık"
       ],
+      "Scheduled": [
+        "Zamanlanmış"
+      ],
       "SE": [
         "GD"
       ],
@@ -5419,6 +5774,9 @@
       ],
       "Today": [
         "Bugün"
+      ],
+      "Today, ${ time }": [
+        "Bugün, ${ time }"
       ],
       "TOML File": [
         "TOML dosyası"
@@ -5500,6 +5858,12 @@
       ],
       "Yesterday": [
         "Dün"
+      ],
+      "Yesterday, ${ time }": [
+        "Dün, ${ time }"
+      ],
+      "Your answer": [
+        "Yanıtınız"
       ]
     },
     "collider_2025:Notification": {
@@ -5602,6 +5966,9 @@
       ],
       "Sign in required": [
         "Oturum açmalısınız"
+      ],
+      "Something else…": [
+        "Başka birşey…"
       ]
     },
     "collider_2025:Prefill": {
@@ -5770,6 +6137,12 @@
       ],
       "What should I know about emergency funds and where to keep them?": [
         "Acil durum fonları hakkında neleri bilmeliyim ve bunları nerede saklamalıyım?"
+      ]
+    },
+    "collider_2025:Question selection": {
+      "${ selectedCount } selected": [
+        "${ selectedCount } seçilmiş",
+        "${ selectedCount } seçilmiş"
       ]
     },
     "collider_2025:Reasoning": {
@@ -6436,11 +6809,17 @@
       "Review privacy settings": [
         "Gizlilik ayarlarını gözden geçirin"
       ],
+      "Runs": [
+        "Yürütülmeler"
+      ],
       "Save as": [
         "Farklı kaydet"
       ],
       "Save to ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } üzerine kaydet"
+      ],
+      "Scheduled": [
+        "Zamanlanmış"
       ],
       "Scheduled tasks": [
         "Zamanlanmış görevler"
@@ -6519,6 +6898,9 @@
       ],
       "What do you want to create today?": [
         "Bugün ne oluşturmak istersiniz?"
+      ],
+      "What it does": [
+        "Ne yapar"
       ],
       "What this profile exposes": [
         "Bu profilin açığa çıkardıkları"
@@ -8700,7 +9082,7 @@
         "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
       ],
       "This information is zero-access encrypted.": [
-        "Bu bilgilere sıfır erişim şifrelemesi uygulanmıştır."
+        "Bu bilgiler sıfır erişim şifrelemesi ile korunuyor."
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Kullanıcılarınıza görüntülenecek kuruluş adınız veya kısaltmanız. İstediğiniz zaman değiştirebilirsiniz."
@@ -8719,6 +9101,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
+      ],
+      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
+        "Hesabınıza yeni bir tarifeye abone olmak ya da geçerli tarifenizi yenilemek için kullanabileceğiniz bir miktar kredi ekleyin. Bir kredi için ${ i18nCurrency } ödersiniz."
       ],
       "Total conversations:": [
         "Toplam yazışma:"
@@ -8855,6 +9240,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz. Tarifenizi acil olarak değiştirmeniz gerekiyorsa lütfen destek ekibiyle görüşün."
       ],
+      "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
+        "Ödeme bilgileriniz TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
@@ -8918,6 +9306,9 @@
       ],
       "Address": [
         "Adres"
+      ],
+      "Amount": [
+        "Tutar"
       ],
       "Anderson": [
         "Kaya"
@@ -9074,6 +9465,9 @@
       ],
       "Optional": [
         "İsteğe bağlı"
+      ],
+      "Other amount": [
+        "Diğer tutar"
       ],
       "Password": [
         "Parola"
@@ -9261,6 +9655,24 @@
       "Acceleration": [
         "Hızlandırma"
       ],
+      "Allow API access": [
+        "API erişimini aç"
+      ],
+      "Allowed": [
+        "İzin verilen"
+      ],
+      "API access": [
+        "API erişimi"
+      ],
+      "API balance": [
+        "API birikimi"
+      ],
+      "API usage": [
+        "API kullanımı"
+      ],
+      "API usage and balance": [
+        "API kullanımı ve birikim"
+      ],
       "Assets": [
         "Varlıklar"
       ],
@@ -9297,6 +9709,9 @@
       "Current conversation": [
         "Geçerli yazışma"
       ],
+      "Dashboard view": [
+        "Pano görünümü"
+      ],
       "Debug View": [
         "Hata ayıklama görünümü"
       ],
@@ -9305,6 +9720,12 @@
       ],
       "Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.": [
         "Uygulama içi bildirimler tarafından gösterilecek benzetilmiş bir 422 sınırı uyarısı görüntüler."
+      ],
+      "Empty": [
+        "Boş"
+      ],
+      "Empty balance": [
+        "Birikim yok"
       ],
       "Export all chats (JSON)": [
         "Tüm sohbetleri dışa aktar (JSON)"
@@ -9340,13 +9761,16 @@
         "Gecikme"
       ],
       "Last token": [
-        "Son kod"
+        "Son belirteç"
       ],
       "Local storage (IndexedDB)": [
         "Yerel depolama alanı (IndexedDB)"
       ],
       "Locked": [
         "Kilitli"
+      ],
+      "Low balance ($5)": [
+        "Birikim azaldı (5$)"
       ],
       "max": [
         "max"
@@ -9378,6 +9802,9 @@
       "None open": [
         "Hiçbiri açık değil"
       ],
+      "Not allowed": [
+        "İzin verilmiyor"
+      ],
       "Notifications": [
         "Bildirimler"
       ],
@@ -9393,14 +9820,38 @@
       "Open a conversation to simulate the server message limit.": [
         "Sunucu ileti sınırı benzetimi için bir yazışma açın."
       ],
+      "Org admin": [
+        "Kuruluş yöneticisi"
+      ],
+      "Org member": [
+        "Kuruluş üyesi"
+      ],
+      "Organization admin": [
+        "Kuruluş yöneticisi"
+      ],
+      "Organization member": [
+        "Kuruluş üyesi"
+      ],
       "Performance": [
         "Başarım"
+      ],
+      "Personal": [
+        "Kişisel"
       ],
       "Preview \"IndexedDB unavailable\" screen": [
         "\"IndexedDB kullanılamıyor\" ekranının ön izlemesi"
       ],
+      "Preview access denied": [
+        "Ön izleme erişimi reddedildi"
+      ],
+      "Preview empty usage": [
+        "Boşalma kullanımı ön izlemesi"
+      ],
       "Rate": [
         "Oran"
+      ],
+      "Real balance": [
+        "Gerçek birikim"
       ],
       "Redux updates": [
         "Redux güncellemeleri"
@@ -9426,6 +9877,9 @@
       "Runs the compaction engine over the displayed branch and inserts a compaction boundary, without generating a reply. \"Force summarization\" always runs the LLM summary step even when cheaper strategies already free up enough space.": [
         "Görüntülenen dal üzerinde sıkıştırma işlemini yapar ve bir yanıt oluşturmadan bir sıkıştırma sınırı ekler. “Zorla özetleme” seçeneği, daha verimli stratejiler zaten yeterli alan açmış olsa bile her zaman LLM özetleme adımını uygular."
       ],
+      "Sample data": [
+        "Örnek veriler"
+      ],
       "Search": [
         "Ara"
       ],
@@ -9443,6 +9897,12 @@
       ],
       "Server message limit (current chat)": [
         "Sunucu ileti sınırı (geçerli yazışma)"
+      ],
+      "Show sample usage": [
+        "Kullanım örneğini görüntüle"
+      ],
+      "Simulate $50 purchase": [
+        "50 dolarlık bir satın almayı taklit et"
       ],
       "Simulate server rejection": [
         "Sunucu reddi benzetimi"
@@ -9481,10 +9941,10 @@
         "açmak/kapatmak için"
       ],
       "Token delays": [
-        "Kod gecikmeleri"
+        "Belirteç gecikmeleri"
       ],
       "Tokens/sec": [
-        "Kod/sn"
+        "Belirteç/sn"
       ],
       "Trigger assets limit": [
         "Tetikleyici varlıklar sınırı"
@@ -9530,6 +9990,12 @@
       ],
       "Unsynced spaces": [
         "Eşitlenmemiş alanlar"
+      ],
+      "Usage data": [
+        "Kullanım verileri"
+      ],
+      "Use real balance": [
+        "Gerçek birikimi kullan"
       ],
       "Weekly chat limit upsell": [
         "Haftalık sohbet sınırı ek satış"
@@ -9671,6 +10137,44 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_MEET_SEATS } tane ${ MEET_SHORT_APP_NAME } koltuğunuz olabilir."
+      ]
+    },
+    "Monetary unit": {
+      "Australian dollar": [
+        "Avustralya doları"
+      ],
+      "Brazilian real": [
+        "Brezilya reali"
+      ],
+      "British pound": [
+        "İngiliz sterlini"
+      ],
+      "Canadian dollar": [
+        "Kanada doları"
+      ],
+      "Euro": [
+        "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hong Kong Doları"
+      ],
+      "Japanese yen": [
+        "Japon Yeni"
+      ],
+      "Polish złoty": [
+        "Polonya Zlotisi"
+      ],
+      "Singapore dollar": [
+        "Singapur Doları"
+      ],
+      "South Korean won": [
+        "Güney Kore Wonu"
+      ],
+      "Swiss franc": [
+        "İsviçre frangı"
+      ],
+      "US Dollar": [
+        "ABD Doları"
       ]
     },
     "New Label form": {
@@ -10761,6 +11265,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden kullanıma alın."
       ],
+      "Processing payment": [
+        "Ödeme işleniyor"
+      ],
       "Proton Meet seats must match the number of members.": [
         "Proton Meet koltuk sayısı üye sayısı ile aynı olmalıdır."
       ],
@@ -10823,6 +11330,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Daha sonra her ay otomatik olarak ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "İşlem bulundu. İşlem tam olarak onaylandığında krediler hesabınıza eklenecek."
+      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
@@ -10883,6 +11393,9 @@
       ],
       "You already own a Born Private account.": [
         "Zaten bir Born Private hesabınız var."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Seçilmiş ödeme yönteminizden ${ amountToCharge } ödeme alınacak."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
@@ -11075,6 +11588,9 @@
       ],
       "Organization name": [
         "Kuruluş adı"
+      ],
+      "Other": [
+        "Diğer"
       ],
       "Password": [
         "Parola"
@@ -11621,6 +12137,9 @@
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
+      "Credits added": [
+        "Kredi eklendi"
+      ],
       "Email address copied to clipboard": [
         "E-posta adresi panoya kopyalandı"
       ],
@@ -11749,6 +12268,9 @@
       ],
       "Add credit/debit card": [
         "Kredi ya da banka kartı ekle"
+      ],
+      "Add credits": [
+        "Kredi ekle"
       ],
       "Add user": [
         "Kullanıcı ekleyin"
