@@ -13,6 +13,8 @@ import { createHooks } from '@proton/redux-utilities/hooks';
 
 import { useAllSubscriptions } from '../allSubscriptions/hooks';
 import { useAllEntitlements } from '../entitlements/hooks';
+import { useOrganization } from '../organization/hooks';
+import { useUser } from '../user/hooks';
 import { entitlementCatalogThunk, selectEntitlementCatalog } from './index';
 
 const hooks = createHooks(entitlementCatalogThunk, selectEntitlementCatalog);
@@ -60,12 +62,20 @@ export const useEntitlementChecksForOrgAndUser = (): [EntitlementChecksForOrgAnd
     const [allEntitlements, loadingEntitlements] = useAllEntitlements();
     const [allSubscriptions, loadingAllSubscriptions] = useAllSubscriptions();
     const [entitlementCatalog, loadingEntitlementCatalog] = useEntitlementCatalog();
+    const [user] = useUser();
+    const [organization, loadingOrganization] = useOrganization();
 
     const resolver = useMemo(() => {
-        return createEntitlementResolverForOrgAndUser(entitlementCatalog, allEntitlements, allSubscriptions ?? []);
-    }, [entitlementCatalog, allEntitlements, allSubscriptions]);
+        return createEntitlementResolverForOrgAndUser({
+            entitlementCatalog,
+            entitlements: allEntitlements,
+            subscriptions: allSubscriptions ?? [],
+            user,
+            organization,
+        });
+    }, [entitlementCatalog, allEntitlements, allSubscriptions, user, organization]);
 
-    const loading = loadingEntitlements || loadingAllSubscriptions || loadingEntitlementCatalog;
+    const loading = loadingEntitlements || loadingAllSubscriptions || loadingEntitlementCatalog || loadingOrganization;
     return [resolver, loading];
 };
 

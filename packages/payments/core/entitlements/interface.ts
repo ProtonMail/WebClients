@@ -88,7 +88,9 @@ export interface EntitlementResolveConditions {
 export interface EntitlementResolverForSelection {
     /**
      * Checks if current plan selection has all the given entitlements. In case of EntitlementResolverForOrgAndUser,
-     * checks if there is a single subscription that has all the given entitlements.
+     * checks if there is a single subscription that has all the given entitlements. When the current user can't read
+     * the subscriptions (a non-admin member, or any user of an MSP subsidiary), checks the organization entitlements
+     * instead, as if they were one subscription. See {@link EntitlementResolverForOrgAndUser.findSubscriptionsMatching}.
      */
     hasMatchingSubscription: (conditions: EntitlementResolveConditions) => boolean;
 
@@ -152,6 +154,10 @@ export interface EntitlementResolverForOrgAndUser extends EntitlementResolverFor
      *   findSubscriptionsMatching({ includes: [business, vpn] }).result returns true;
      *   findSubscriptionsMatching({ includes: [mail] }).result returns true;
      *   findSubscriptionsMatching({ includes: [business, mail] }).result returns false.
+     *
+     * When the current user can't read the subscriptions (see `getUnreadableSubscriptionsReason`), the conditions
+     * are checked against the organization entitlements as one whole, and `subscriptions` is always empty, even when
+     * `result` is true. Don't expect a subscription object for every match.
      **/
     findSubscriptionsMatching: (conditions: EntitlementResolveConditions) => SubscriptionsMatchingEntitlements;
 

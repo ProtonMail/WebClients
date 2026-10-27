@@ -4,15 +4,17 @@ import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/en
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
+import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 
 import { ADMIN_CONSOLE_SURVEY_MIN_USERS, getIsAdminConsoleSurveyEligible } from './adminConsoleSurveyEligibility';
 
 const createEntitlements = (names: EntitlementName[]) =>
-    createEntitlementResolverForOrgAndUser(
-        buildEntitlementCatalog({ [PLANS.VPN_BUSINESS]: names }),
-        makeEntitlements(),
-        [buildSubscription(PLANS.VPN_BUSINESS)]
-    );
+    createEntitlementResolverForOrgAndUser({
+        entitlementCatalog: buildEntitlementCatalog({ [PLANS.VPN_BUSINESS]: names }),
+        entitlements: makeEntitlements(),
+        subscriptions: [buildSubscription(PLANS.VPN_BUSINESS)],
+        ...regularAdmin,
+    });
 
 const eligibleParams = {
     entitlements: createEntitlements([EntitlementName.Business, EntitlementName.FlagsVpn]),
@@ -47,14 +49,15 @@ describe('getIsAdminConsoleSurveyEligible', () => {
         });
 
         it('rejects an org where business and VPN come from different subscriptions', () => {
-            const entitlements = createEntitlementResolverForOrgAndUser(
-                buildEntitlementCatalog({
+            const entitlements = createEntitlementResolverForOrgAndUser({
+                entitlementCatalog: buildEntitlementCatalog({
                     [PLANS.MAIL_PRO]: [EntitlementName.Business],
                     [PLANS.VPN2024]: [EntitlementName.FlagsVpn],
                 }),
-                makeEntitlements(),
-                [buildSubscription(PLANS.MAIL_PRO), buildSubscription(PLANS.VPN2024)]
-            );
+                entitlements: makeEntitlements(),
+                subscriptions: [buildSubscription(PLANS.MAIL_PRO), buildSubscription(PLANS.VPN2024)],
+                ...regularAdmin,
+            });
             expect(getIsAdminConsoleSurveyEligible({ ...eligibleParams, entitlements })).toBe(false);
         });
     });
