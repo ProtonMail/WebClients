@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 
 import { useCustomDomains } from '@proton/account/domains/hooks';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
-import shouldShowMail from '../shouldShowMail';
 import type { DomainSuggestion } from '../types';
 import useGroupsProtonMeDomain from '../useGroupsProtonMeDomain';
 import usePmMeDomain from '../usePmMeDomain';
@@ -74,7 +74,8 @@ const getAllSuggestions = (
 
 const useGroupAvailableAddressDomains = (): UseGroupAvailableAddressDomainsReturn => {
     const [organization] = useOrganization();
-    const showMailFeatures = shouldShowMail(organization?.PlanName);
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
+    const showMailFeatures = entitlements.hasGroupMail;
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const [pmMeDomain, loadingPmMeDomain] = usePmMeDomain();
     const [groupsProtonMeDomain, loadingGroupsProtonMeDomain] = useGroupsProtonMeDomain();
@@ -106,7 +107,7 @@ const useGroupAvailableAddressDomains = (): UseGroupAvailableAddressDomainsRetur
         [primarySuggestion, customDomains, pmMeDomain, groupsProtonMeDomain, showMailFeatures]
     );
 
-    const loading = loadingCustomDomains || loadingPmMeDomain || loadingGroupsProtonMeDomain;
+    const loading = loadingCustomDomains || loadingPmMeDomain || loadingGroupsProtonMeDomain || loadingEntitlements;
 
     return { allSuggestions, primarySuggestion, pmMeDomain, loading };
 };

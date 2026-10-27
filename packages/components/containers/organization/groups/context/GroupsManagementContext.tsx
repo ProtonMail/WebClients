@@ -33,26 +33,22 @@ import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces/Grou
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
 import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces/GroupMember';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
-import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import setsContainSameElements from '@proton/utils/setsContainSameElements';
 
 import Loader from '../../../../components/loader/Loader';
 import useErrorHandler from '../../../../hooks/useErrorHandler';
 import { useResumeRoleAssignment } from '../../../members/rolesAndPermissions/useResumeRoleAssignment';
 import useGroupAvailableAddressDomains from '../hooks/useGroupAvailableAddressDomains';
-import shouldShowMail from '../shouldShowMail';
 import { GROUPS_RESTRICTION_REASON, GROUPS_STATE } from '../types';
 import type { GroupFormData, GroupsManagementReturn, GroupsRestriction } from '../types';
 import useGroupKeys from '../useGroupKeys';
 import useGroupsProtonMeDomain from '../useGroupsProtonMeDomain';
 
-const INITIAL_FORM_VALUES = (organization?: Organization): GroupFormData => ({
+const INITIAL_FORM_VALUES = (hasGroupMail: boolean): GroupFormData => ({
     name: '',
     description: '',
     address: '',
-    permissions: shouldShowMail(organization?.PlanName)
-        ? GroupPermissions.EveryoneCanSend
-        : GroupPermissions.NobodyCanSend,
+    permissions: hasGroupMail ? GroupPermissions.EveryoneCanSend : GroupPermissions.NobodyCanSend,
     members: '',
     adminRoles: [],
 });
@@ -150,7 +146,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     };
 
     const form = useFormik({
-        initialValues: INITIAL_FORM_VALUES(organization),
+        initialValues: INITIAL_FORM_VALUES(entitlements.hasGroupMail),
         onSubmit: () => {},
         validateOnChange: true,
         validateOnMount: false,
@@ -393,7 +389,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const handleCreateGroup = () => {
         setUiState(GROUPS_STATE.NEW);
         resetForm({
-            values: INITIAL_FORM_VALUES(organization),
+            values: INITIAL_FORM_VALUES(entitlements.hasGroupMail),
         });
         setSelectedGroupId(undefined);
     };
@@ -401,7 +397,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const handleDiscardChanges = () => {
         setUiState(groups.length === 0 ? GROUPS_STATE.EMPTY : GROUPS_STATE.VIEW);
         resetForm({
-            values: INITIAL_FORM_VALUES(organization),
+            values: INITIAL_FORM_VALUES(entitlements.hasGroupMail),
         });
     };
 
