@@ -5,6 +5,7 @@
     "globalPassThroughEnv": [
         "CI_COMMIT_REF_NAME",
         "CI_COMMIT_SHA",
+        "CI_MERGE_REQUEST_LABELS",
         "COLLECT_COVERAGE",
         "DOCS_SHEETS_KEY",
         "HTTP_PROXY",

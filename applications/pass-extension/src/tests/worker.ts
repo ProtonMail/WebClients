@@ -8,6 +8,9 @@ import { setMockMessageSender } from '../__mocks__/mocks';
 import browser from '../__mocks__/webextension-polyfill';
 import { WorkerContext } from '../app/worker/context/inject';
 import { createAutoFillService } from '../app/worker/services/autofill';
+import { createAutoSaveService } from '../app/worker/services/autosave';
+import { createFormTrackerService } from '../app/worker/services/form.tracker';
+import { parseSender } from '../lib/utils/sender';
 
 const TEST_TAB_ID = 1;
 
@@ -31,25 +34,48 @@ const bridgeTabMessages = () => {
     );
 };
 
-export type TestWorkerInit = { url: string; state?: TestStateInit };
+/** `storage` stands in for the worker's `storage.local`, read by the autofill service on init */
+export type TestWorkerInit = { url: string; state?: TestStateInit; storage?: Record<string, string> };
 
 afterEach(() => WorkerContext.clear());
 
-export const setupWorker = ({ url, state: init }: TestWorkerInit) => {
+export const setupWorker = ({ url, state: init, storage = {} }: TestWorkerInit) => {
     const state: State = createTestState(init);
 
     bridgeTabMessages();
     setMockMessageSender(url, TEST_TAB_ID);
     browser.tabs.get.mockResolvedValue({ id: TEST_TAB_ID, url });
+    browser.webNavigation.getAllFrames.mockResolvedValue([{ frameId: 0, parentFrameId: -1, url }]);
+
+    const autosave = createAutoSaveService();
+    const formTracker = createFormTrackerService();
 
     WorkerContext.set({
         ensureReady: jest.fn().mockResolvedValue(undefined),
         getState: jest.fn(() => ({ authorized: true })),
         service: {
-            storage: { local: { getItems: jest.fn().mockResolvedValue({}), setItem: jest.fn() } },
+            autosave,
+            formTracker,
+            storage: { local: { getItems: jest.fn().mockResolvedValue(storage), setItem: jest.fn() } },
             store: { dispatch: jest.fn(), getState: jest.fn(() => state) },
         },
     } as any);
 
-    return { autofill: createAutoFillService(), state };
+    return { autofill: createAutoFillService(), autosave, formTracker, state };
+};
+
+/** The tab now shows `url`, as after a form submit navigation */
+export const navigateTab = (url: string) => {
+    setMockMessageSender(url, TEST_TAB_ID);
+    browser.tabs.get.mockResolvedValue({ id: TEST_TAB_ID, url });
+};
+
+/** Form submission the worker tracks for the tab while it shows `url` */
+export const getTabSubmission = async (formTracker: ReturnType<typeof createFormTrackerService>, url: string) => {
+    const { tabId, url: components } = await parseSender({
+        tab: { id: TEST_TAB_ID, url },
+        url,
+        frameId: 0,
+    } as Runtime.MessageSender);
+    return formTracker.get(tabId, components);
 };

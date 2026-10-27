@@ -5,6 +5,9 @@ import { join } from 'path';
 /** Recorded third-party pages shared with the Playwright suite */
 const RECORDED_PAGES_DIR = join(__dirname, '../../../../../tests/pass/html');
 
+/** Our own form pages, shared with the Playwright suite */
+const AUTOFILL_FIXTURES_DIR = join(__dirname, '../../../../../tests/pass/fixtures/autofill');
+
 export type RecordedPage =
     | 'amazon'
     | 'bitwarden'
@@ -35,3 +38,23 @@ export const readRecordedPage = async (name: RecordedPage): Promise<string> => {
     if (html === undefined) throw new Error(`Recorded page "${name}" has no ${name}.html`);
     return stripScripts(html);
 };
+
+export type AutofillFixture =
+    | 'login-username'
+    | 'login-email'
+    | 'login-2-steps'
+    | 'login-2-steps-otp'
+    | 'login-3-steps'
+    | 'login-3-steps-password'
+    | 'login-with-newsletter'
+    | 'logged-in'
+    | 'register-email'
+    | 'account-created'
+    | 'otp'
+    | 'identity'
+    | 'identity-sections'
+    | 'checkout-inline';
+
+export const readAutofillFixture = (name: AutofillFixture): Promise<string> =>
+    // nosemgrep: path-join-resolve-traversal -- `name` is constrained to the `AutofillFixture` literal union
+    readFile(join(AUTOFILL_FIXTURES_DIR, `${name}.html`), 'utf8');
