@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { getUpgradeForAdminRolesText } from '@proton/account/organizationKey/actions';
@@ -39,7 +40,6 @@ import { useGroupsManagement } from './context/GroupsManagementContext';
 import { getAddressSuggestedLocalPart } from './helpers';
 import useGroupAvailableAddressDomains from './hooks/useGroupAvailableAddressDomains';
 import useTriggerDiscardModal from './hooks/useTriggerDiscardModal';
-import shouldShowMail from './shouldShowMail';
 import { GROUPS_STATE } from './types';
 
 const EditGroupModal = () => {
@@ -60,6 +60,7 @@ const EditGroupModal = () => {
 
     const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
 
     const [adminRolesUIState, loadingAdminRolesUI] = useAdminRolesUI();
 
@@ -98,7 +99,7 @@ const EditGroupModal = () => {
         }
     }, [uiState, primarySuggestion.domain]);
 
-    const hideMail = !shouldShowMail(organization?.PlanName);
+    const hideMail = !entitlements.hasGroupMail;
     const primaryGroupAddressKey = groupData?.Address.Keys[0];
     const isE2EEEnabled = !hasBit(primaryGroupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
     useEffect(() => {

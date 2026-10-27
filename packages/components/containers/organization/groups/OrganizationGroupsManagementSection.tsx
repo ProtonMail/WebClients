@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { groupOwnerInvitesThunk } from '@proton/account/groupOwnerInvites';
-import { useOrganization } from '@proton/account/organization/hooks';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
@@ -29,7 +29,6 @@ import { useSubscriptionModal } from '../../payments/subscription/SubscriptionMo
 import ScimSetupBannerAndModal from '../ScimSetupBannerAndModal';
 import GroupsMemberManagementPanel from './components/GroupsMemberManagementPanel';
 import { useGroupsManagement, withGroupsManagementContext } from './context/GroupsManagementContext';
-import shouldShowMail from './shouldShowMail';
 import { GROUPS_RESTRICTION_REASON } from './types';
 
 import './OrganizationGroupsManagementSection.scss';
@@ -40,7 +39,7 @@ interface Props {
 }
 
 const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) => {
-    const [organization] = useOrganization();
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
     const { groups, actions, restrictedBy } = useGroupsManagement();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const isUserGroupsGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
@@ -106,7 +105,7 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
         );
     }
 
-    const showMailFeatures = shouldShowMail(organization?.PlanName);
+    const showMailFeatures = entitlements.hasGroupMail;
     const mailDescription = c('Info')
         .t`With groups, you can quickly and easily send emails to all the people in a specified group.`;
     const genericDescription = c('Info')
