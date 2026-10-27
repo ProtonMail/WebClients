@@ -8,14 +8,41 @@ import {
 
 const isFixMode = process.argv.includes('--fix')
 
+const hostImports = ['@proton/**', 'ttag']
+
+const sheetsIconsPattern = {
+  group: ['@proton/icons', '@proton/icons/**', '@rowsncolumns/icons', '@rowsncolumns/icons/**'],
+  message:
+    'Use icons from Spreadsheet/components/icons so standalone Sheets does not depend on an external icon registry or package.',
+}
+
+const driveStorePattern = {
+  group: ['@proton/drive-store*'],
+  message: 'docs-editor should not import from drive-store. Use @proton/docs-shared or @proton/docs-core instead.',
+}
+
+const testFiles = ['**/*.{test,spec}.{ts,tsx}']
+
 export default defineConfig([
   defaultConfig,
   createRestrictedImportsConfig({
     patterns: [
+      driveStorePattern,
       {
-        group: ['@proton/drive-store*'],
-        message:
-          'docs-editor should not import from drive-store. Use @proton/docs-shared or @proton/docs-core instead.',
+        group: ['**/Docs/**', '!**/Docs/public'],
+        caseSensitive: true,
+        message: 'Import Containers/Docs only through its public.ts, or its testing.ts from tests.',
+      },
+    ],
+  }),
+  createRestrictedImportsConfig({
+    files: testFiles,
+    patterns: [
+      driveStorePattern,
+      {
+        group: ['**/Docs/**', '!**/Docs/public', '!**/Docs/testing'],
+        caseSensitive: true,
+        message: 'Import Containers/Docs only through its public.ts or testing.ts.',
       },
     ],
   }),
@@ -63,16 +90,23 @@ export default defineConfig([
     },
   },
   {
-    files: ['src/app/Containers/Spreadsheet/**/*.{ts,tsx}', 'src/standalone-sheet/**/*.{ts,tsx}'],
+    files: ['src/standalone-sheet/**/*.{ts,tsx}'],
+    rules: {
+      '@typescript-eslint/no-restricted-imports': ['error', { patterns: [sheetsIconsPattern] }],
+    },
+  },
+  {
+    files: ['src/app/Containers/Spreadsheet/**/*.{ts,tsx}'],
     rules: {
       '@typescript-eslint/no-restricted-imports': [
         'error',
         {
           patterns: [
+            sheetsIconsPattern,
             {
-              group: ['@proton/icons', '@proton/icons/**', '@rowsncolumns/icons', '@rowsncolumns/icons/**'],
+              group: hostImports,
               message:
-                'Use icons from Spreadsheet/components/icons so standalone Sheets does not depend on an external icon registry or package.',
+                'Containers/Spreadsheet is host-independent: get host values from useSheetsDependencies() and strings from useSheetsMessages().',
             },
           ],
         },
@@ -90,6 +124,11 @@ export default defineConfig([
               group: ['@proton/icons', '@proton/icons/**'],
               message:
                 'Use Docs/Components/Icon with data from Docs/Components/icons so the Docs editor does not depend on the Proton icon registry.',
+            },
+            {
+              group: hostImports,
+              message:
+                'Containers/Docs is host-independent: get host values from useDocsDependencies() and strings from useDocsMessages().',
             },
           ],
         },

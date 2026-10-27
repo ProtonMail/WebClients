@@ -7,6 +7,8 @@ import { useMemo, useCallback, useEffect, useState } from 'react'
 import {
   DocsDependenciesProvider,
   type DocsDependencies,
+  DocsEditorTelemetryEvents,
+  type DocsEditorTelemetryEvent,
   type DocsLogger,
   type SuggestionSummaryType,
 } from '../../Docs/public'
@@ -14,7 +16,6 @@ import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/Edi
 import { EditorEvent } from '@proton/docs-shared/Bridge/EditorEvent'
 import { reportErrorToSentry } from '../../../Utils/errorMessage'
 import { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
-import { DocsEditorTelemetryEvents, type DocsEditorTelemetryEvent } from '../../Docs/contract/DocsEditorTelemetry'
 import { useApplication } from '../../ApplicationProvider'
 import { useSyncedState } from '../../../Hooks/useSyncedState'
 import { useContactEmails } from '../../../Hooks/useContactEmails'
