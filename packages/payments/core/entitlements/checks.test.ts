@@ -239,3 +239,35 @@ describe('hasGroupMail', () => {
         expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [] }).hasGroupMail).toBe(false);
     });
 });
+
+describe('hasOrgMailboxMigration', () => {
+    it.each([PLANS.MAIL_PRO, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025] as const)('returns true for %s', (plan) => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).hasOrgMailboxMigration).toBe(true);
+    });
+
+    it.each([
+        PLANS.MAIL,
+        PLANS.FAMILY,
+        PLANS.VISIONARY,
+        PLANS.VPN_BUSINESS,
+        PLANS.PASS_BUSINESS,
+        PLANS.DRIVE_BUSINESS,
+        PLANS.MEET_BUSINESS,
+    ] as const)('returns false for %s', (plan) => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).hasOrgMailboxMigration).toBe(false);
+    });
+
+    it('returns false when business and mail come from different subscriptions', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.MAIL, PLANS.VPN_BUSINESS] })
+                .hasOrgMailboxMigration
+        ).toBe(false);
+    });
+
+    it('returns true for a member who cannot read the organization subscriptions', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.BUNDLE_PRO_2024], ...organizationMember })
+                .hasOrgMailboxMigration
+        ).toBe(true);
+    });
+});

@@ -1,4 +1,4 @@
-import { useOrganization } from '@proton/account/organization/hooks';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys/accountType';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -9,7 +9,7 @@ const useBYOEFeatureStatus = (
     authorizeBYOEOnlyAccounts = true // In Settings, for example, we want to show BYOE options to BYOE only accounts. However, in the checklist, only normal accounts can see the option
 ) => {
     const [user, loadingUser] = useUser();
-    const [organization, loadingOrganization] = useOrganization();
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const killSwitchEnabled = useFlag('InboxBringYourOwnEmail');
     const clientFeatureEnabled = useFlag('InboxBringYourOwnEmailClient');
 
@@ -35,9 +35,9 @@ const useBYOEFeatureStatus = (
 
     const BYOEFeatureEnabled = getBYOEFeatureEnabled();
 
-    const userCanSeeBYOE = getCanSeeBYOE(user, organization);
+    const userCanSeeBYOE = !loadingEntitlements && getCanSeeBYOE({ user, entitlements });
 
-    return [BYOEFeatureEnabled && userCanSeeBYOE, loadingOrganization || loadingUser] as const;
+    return [BYOEFeatureEnabled && userCanSeeBYOE, loadingEntitlements || loadingUser] as const;
 };
 
 export default useBYOEFeatureStatus;

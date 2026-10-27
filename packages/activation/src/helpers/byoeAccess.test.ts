@@ -1,6 +1,7 @@
 import { PLANS } from '@proton/payments/core/constants';
+import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
+import { organizationMember } from '@proton/payments/testing/usersWhoCannotReadSubscriptions';
 import { USER_ROLES } from '@proton/shared/lib/constants';
-import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { UserType } from '@proton/shared/lib/interfaces/User';
 
@@ -11,47 +12,53 @@ const memberUser = { Role: USER_ROLES.MEMBER_ROLE, Type: UserType.PROTON } as un
 const managedAdminUser = { Role: USER_ROLES.ADMIN_ROLE, Type: UserType.MANAGED } as unknown as UserModel;
 const managedMemberUser = { Role: USER_ROLES.MEMBER_ROLE, Type: UserType.MANAGED } as unknown as UserModel;
 
-const b2bOrg = { PlanName: PLANS.BUNDLE_PRO_2024 } as Organization;
-const consumerOrg = { PlanName: PLANS.MAIL } as Organization;
+const entitlementsForAdmin = (subscriptionPlans: CataloguedPlan[]) =>
+    buildOrgAndUserEntitlementChecks({ subscriptionPlans });
+
+const entitlementsForMember = (subscriptionPlans: CataloguedPlan[]) =>
+    buildOrgAndUserEntitlementChecks({ subscriptionPlans, ...organizationMember });
 
 describe('getCanSeeBYOE', () => {
     describe('B2B plans', () => {
-        it('allows admins', () => {
-            expect(getCanSeeBYOE(adminUser, b2bOrg)).toBe(true);
+        it.each([PLANS.BUNDLE_PRO_2024, PLANS.VPN_BUSINESS, PLANS.PASS_PRO] as const)('allows admins of %s', (plan) => {
+            expect(getCanSeeBYOE({ user: adminUser, entitlements: entitlementsForAdmin([plan]) })).toBe(true);
         });
 
-        it('blocks non-admins', () => {
-            expect(getCanSeeBYOE(memberUser, b2bOrg)).toBe(false);
+        it.each([PLANS.BUNDLE_PRO_2024, PLANS.VPN_BUSINESS, PLANS.PASS_PRO] as const)(
+            'blocks non-admins of %s',
+            (plan) => {
+                expect(getCanSeeBYOE({ user: memberUser, entitlements: entitlementsForMember([plan]) })).toBe(false);
+            }
+        );
+
+        it('allows an admin whose B2B plan is one of several subscriptions', () => {
+            expect(
+                getCanSeeBYOE({ user: adminUser, entitlements: entitlementsForAdmin([PLANS.MAIL, PLANS.VPN_BUSINESS]) })
+            ).toBe(true);
         });
     });
 
     describe('managed users (Visionary/Duo)', () => {
         it('allows managed admins', () => {
-            expect(getCanSeeBYOE(managedAdminUser, consumerOrg)).toBe(true);
+            expect(
+                getCanSeeBYOE({ user: managedAdminUser, entitlements: entitlementsForAdmin([PLANS.VISIONARY]) })
+            ).toBe(true);
         });
 
         it('blocks managed non-admins', () => {
-            expect(getCanSeeBYOE(managedMemberUser, consumerOrg)).toBe(false);
-        });
-    });
-
-    describe('Invited users (Visionary/Duo)', () => {
-        it('allows managed admins', () => {
-            expect(getCanSeeBYOE(managedAdminUser, consumerOrg)).toBe(true);
-        });
-
-        it('blocks managed non-admins', () => {
-            expect(getCanSeeBYOE(managedMemberUser, consumerOrg)).toBe(false);
+            expect(
+                getCanSeeBYOE({ user: managedMemberUser, entitlements: entitlementsForMember([PLANS.VISIONARY]) })
+            ).toBe(false);
         });
     });
 
     describe('regular users', () => {
-        it('allows users with a consumer plan', () => {
-            expect(getCanSeeBYOE(memberUser, consumerOrg)).toBe(true);
+        it.each([PLANS.MAIL, PLANS.FAMILY, PLANS.VISIONARY] as const)('allows users with %s', (plan) => {
+            expect(getCanSeeBYOE({ user: memberUser, entitlements: entitlementsForMember([plan]) })).toBe(true);
         });
 
-        it('allows users with no organization', () => {
-            expect(getCanSeeBYOE(memberUser, undefined)).toBe(true);
+        it('allows users without a subscription', () => {
+            expect(getCanSeeBYOE({ user: memberUser, entitlements: entitlementsForAdmin([]) })).toBe(true);
         });
     });
 });
