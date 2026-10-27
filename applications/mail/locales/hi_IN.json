@@ -355,6 +355,9 @@
       "Copy version number to clipboard": [
         "संस्करण संख्या को क्लिपबोर्ड पर कॉपी करें"
       ],
+      "Create a booking page": [
+        "एक बुकिंग पेज बनाएं"
+      ],
       "Create a new contact group": [
         "नया संपर्क ग्रुप बनाएं"
       ],
@@ -7124,6 +7127,9 @@
       "Are you sure you want to permanently delete this message?": [
         "क्या वाकई इस संदेश को स्थायी रूप से मिटाना है?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "अपने एडमिन से प्लान अपग्रेड करने या बुकिंग पेज साइडबार से एक पेज हटाने के लिए कहें।"
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "कम से कम ${ BETTER_PASSWORD_LENGTH } अक्षर"
       ],
@@ -8938,6 +8944,15 @@
       "to ${ destinationElement } folder.": [
         "${ destinationElement } फोल्डर में।"
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "एक नया बुकिंग पेज जोड़ने के लिए, अपने एडमिन से अपना प्लान अपग्रेड करने के लिए कहें।"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "एक नया बुकिंग पेज जोड़ने के लिए, बुकिंग पेज साइडबार से किसी मौजूदा पेज को हटाएं।"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "एक नया बुकिंग पेज जोड़ने के लिए, अपना प्लान अपग्रेड करें।"
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "अपने ब्राउज़र में खुले टैब से विचलित होने से बचने के लिए, डेस्कटॉप ऐप का उपयोग करें।"
       ],
@@ -9450,6 +9465,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "संपर्क ग्रुप में, इससे ज़्यादा पते नहीं जोड़े जा सकते।"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "आप अपने प्लान में उपलब्ध बुकिंग पेजों की अधिकतम संख्या तक पहुँच चुके हैं।"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "आपका ${ BRAND_NAME } खाता वर्तमान में निलंबित है। 28 दिनों के बाद, ईमेल आपके इन्बॉक्स में वितरित नहीं किए जाएंगे, आपके ड्राइव साझाकरण लिंक ब्लॉक कर दिए जाएंगे और नई फाइलें अपलोड नहीं की जा सकेंगी। सामान्य सेवा फिर से शुरू करने के लिए, कृपया किसी भी ओवरड्यू चालान का भुगतान करें।"
@@ -15948,6 +15966,9 @@
       "Birthday": [
         "जन्मदिन"
       ],
+      "Black Friday": [
+        "ब्लैक फ्राइडे"
+      ],
       "Blind Carbon Copy": [
         "गुप्त कार्बन कॉपी"
       ],
@@ -15965,6 +15986,9 @@
       ],
       "Cannot add more addresses": [
         "और पते नहीं जोड़ सकते"
+      ],
+      "Cannot create more Booking pages": [
+        "और बुकिंग पेज नहीं बनाए जा सकते"
       ],
       "Carbon Copy": [
         "कार्बन कॉपी"

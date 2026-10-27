@@ -39,6 +39,9 @@
       "A to Z": [
         "od A po Z"
       ],
+      "About ${ name }": [
+        "O ${ name }"
+      ],
       "Activate": [
         "Aktivovať"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Pridať ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Pridať ${ name }"
       ],
       "Add a payment method": [
         "Pridať spôsob platby"
@@ -356,6 +362,9 @@
       ],
       "Copy version number to clipboard": [
         "Skopírovať číslo verzie do schránky"
+      ],
+      "Create a booking page": [
+        "Vytvoriť stránku rezervácií"
       ],
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
@@ -4315,6 +4324,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Umožnite ľuďom rezervovať si u vás termín priamo z vašich emailov, bez zbytočného dopisovania."
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Umožňuje okamžite pridávať odkazy na schôdze do vašich pozvánok na udalosti."
       ],
@@ -7427,6 +7439,12 @@
       "Are you sure you want to permanently delete this message?": [
         "Naozaj chcete natrvalo vymazať túto správu?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Požiadajte svojho správcu, aby zvýšil úroveň plánu alebo odstránil stránku z bočného panela stránok Rezervácií v ${ CALENDAR_APP_NAME }."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Požiadajte svojho správcu, aby zvýšil úroveň plánu alebo odstránil stránku z bočného panela stránok Rezervácií."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Najmenej ${ BETTER_PASSWORD_LENGTH } znakov"
       ],
@@ -8024,6 +8042,9 @@
       "here": [
         "tu"
       ],
+      "Here is my availability:": [
+        "Tu je moja dostupnosť:"
+      ],
       "Here's what happens when you continue:": [
         "V prípade, že budete pokračovať, udeje sa nasledovné:"
       ],
@@ -8374,6 +8395,9 @@
       ],
       "No action selected": [
         "Nie je vybratá žiadna akcia"
+      ],
+      "No booking pages yet": [
+        "Zatiaľ nie sú k dispozícii žiadne rezervačné stránky"
       ],
       "No change will be made to the selected emails": [
         "Vybrané emaily nebudú nijak zmenené."
@@ -9293,6 +9317,18 @@
       "to ${ destinationElement } folder.": [
         "do priečinka ${ destinationElement }."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Ak chcete pridať novú rezervačnú stránku, požiadajte svojho správcu, aby zvýšil úroveň vášho plánu."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Ak chcete pridať novú stránku rezervácií, odstráňte existujúcu z bočného panela stránok rezervácií v ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Ak chcete pridať novú stránku rezervácií, odstráňte existujúcu z bočného panela stránok rezervácií."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Ak chcete pridať novú rezervačnú stránku, zvýšte úroveň svojho plánu."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Ak sa chcete vyhnúť odvádzaniu pozornosti od otvorených kariet v prehliadači, použite aplikáciu pre počítače."
       ],
@@ -9857,6 +9893,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Dosiahli ste maximálny počet adries v skupine kontaktov."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Dosiahli ste maximálny počet rezervačných stránok dostupných vo vašom pláne."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
       ],
@@ -10318,6 +10357,9 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } znakov"
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistent"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistent písania ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -10347,6 +10389,9 @@
       ],
       "Active filter:": [
         "Aktívny filter:"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Pridajte do svojho emailu rezervačnú stránku a umožnite ľuďom vybrať si termín, ktorý im vyhovuje."
       ],
       "Add email address": [
         "Pridať emailovú adresu"
@@ -10443,6 +10488,9 @@
       ],
       "Blind Carbon Copy": [
         "Skrytá kópia"
+      ],
+      "Booking page": [
+        "Stránka rezervácií"
       ],
       "Bookings, billings, and orders": [
         "Rezervácie, fakturácie a objednávky"
@@ -13852,6 +13900,9 @@
       "Billing Country": [
         "Krajina fakturácie"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Účet Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
+      ],
       "Buying credits requires a separate purchase.": [
         "Nákup kreditov si vyžaduje samostatnú platbu."
       ],
@@ -13938,6 +13989,9 @@
       ],
       "terms and conditions": [
         "zmluvnými podmienkami používania"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Iniciatíva Born Private si vyžaduje finančný príspevok."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Zľava je platná na ${ renewalsWithCoupon } obnovenie.",
@@ -14047,11 +14101,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Už vlastníte ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Už vlastníte účet Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu na PayPal."
       ],
       "You will soon be redirected to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Váš účet je príliš starý na iniciatívu Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_WERO_BRAND_NAME } podporuje platby len v eurách."
@@ -16164,6 +16224,12 @@
         "${ elementsCount } správ bolo odstránených z obľúbených.",
         "${ elementsCount } správ bolo odstránených z obľúbených."
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } asistent deaktivovaný"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } asistent povolený"
+      ],
       "Address copied to clipboard": [
         "Adresa bola skopírovaná do schránky"
       ],
@@ -16768,6 +16834,9 @@
       "Cannot add more addresses": [
         "Nie je možné pridať viac adries"
       ],
+      "Cannot create more Booking pages": [
+        "Nemožno vytvoriť viac rezervačných stránok"
+      ],
       "Carbon Copy": [
         "Kópia"
       ],
@@ -17121,6 +17190,9 @@
       ],
       "Information exposed in breach": [
         "Informácie odhalené pri úniku"
+      ],
+      "Insert a booking page": [
+        "Vložiť stránku rezervácií"
       ],
       "Insert contacts": [
         "Vložte kontakty"
@@ -17526,6 +17598,9 @@
       ],
       "Settings": [
         "Nastavenia"
+      ],
+      "Share your availability": [
+        "Zdieľajte svoju dostupnosť"
       ],
       "Share your calendar with your team": [
         "Zdieľajte svoj kalendár so svojím tímom"

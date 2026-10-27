@@ -39,6 +39,9 @@
       "A to Z": [
         "A till Ö"
       ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
       "Activate": [
         "Aktivera"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Lägg till ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Lägg till ${ name }"
       ],
       "Add a payment method": [
         "Lägg till en betalningsmetod"
@@ -354,6 +360,9 @@
       ],
       "Copy version number to clipboard": [
         "Kopiera versionsnummer till urklipp"
+      ],
+      "Create a booking page": [
+        "Skapa en bokningssida"
       ],
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
@@ -7112,6 +7121,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Är du säker på att du vill ta bort detta meddelande permanent?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Be din admin att uppgradera ditt paket eller ta bort en sida från sidofältet för bokningssidor."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tecken"
       ],
@@ -8812,6 +8824,15 @@
       "to ${ destinationElement } folder.": [
         "till ${ destinationElement }-mapp."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "För att lägga till en ny bokningssida, be din administratör att uppgradera ditt paket."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "För att lägga till en ny bokningssida, ta bort en befintlig från sidofältet för bokningssidor."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "För att lägga till en ny bokningssida, uppgradera ditt paket."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "För att undvika att bli av med de öppna flikarna i din webbläsare, använd appen för stationär dator."
       ],
@@ -9305,6 +9326,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nått det maximala antalet adresser i kontaktgruppen."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Du har nått det maximala antalet bokningssidor tillgängliga i ditt paket."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
@@ -10532,6 +10556,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Dela din tillgänglighet med bokningssidor i ${ CALENDAR_APP_NAME } och håll säkra möten med ${ MEET_APP_NAME }."
+      ],
+      "Sieve script": [
+        "Sieve-skript"
       ],
       "Sign emails": [
         "Signera e-post"
@@ -15791,6 +15818,9 @@
       "Cannot add more addresses": [
         "Kan inte lägga till fler adresser"
       ],
+      "Cannot create more Booking pages": [
+        "Kan inte skapa fler bokningssidor"
+      ],
       "Carbon Copy": [
         "Kopia"
       ],
@@ -16571,6 +16601,9 @@
       ],
       "Subject missing": [
         "Ämne saknas"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Prenumerera på ${ planTitle }"
       ],
       "Subscription canceled": [
         "Prenumeration avslutad"
