@@ -432,6 +432,9 @@
       "Join and leave sounds": [
         "Unirse y dejar sonidos"
       ],
+      "Join from ${ MEET_APP_NAME } app": [
+        "Unirse desde la aplicación ${ MEET_APP_NAME }"
+      ],
       "Join in browser": [
         "Unirse en el navegador"
       ],
@@ -3222,6 +3225,9 @@
       "Permissions not given.": [
         "Permisos no otorgados."
       ],
+      "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
+        "Por favor ${ downloadLink } e instale la aplicación, luego pulse Unirse en la aplicación ${ MEET_APP_NAME } de nuevo."
+      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Active el acceso a su ${ microphoneLinkButton }${ andString }${ cameraLinkButton } para una mejor experiencia."
       ],
@@ -3898,6 +3904,9 @@
     "Link": {
       "clearing your browser cache": [
         "vaciar la caché del navegador"
+      ],
+      "download": [
+        "descargue"
       ],
       "Learn more": [
         "Más información"

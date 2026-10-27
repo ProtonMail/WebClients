@@ -714,6 +714,9 @@
       "Start meeting": [
         "Пачаць сустрэчу"
       ],
+      "Start meeting in browser": [
+        "Пачаць сустрэчу ў браўзеры"
+      ],
       "Start new meeting": [
         "Пачаць новую сустрэчу"
       ],
@@ -1978,6 +1981,9 @@
       "Cannot verify who uploaded this file": [
         "Немагчыма спраўдзіць хто запампаваў гэты файл"
       ],
+      "Check your audio settings and try again": [
+        "Праверце свае налады аўдыя і паўтарыце спробу"
+      ],
       "Copy operation aborted": [
         "Аперацыя капіявання перарвана"
       ],
@@ -2395,6 +2401,9 @@
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
+      "Unable to generate captions": [
+        "Немагчыма згенерыраваць цітры"
+      ],
       "Unknown error": [
         "Невядомая памылка"
       ],
@@ -2649,6 +2658,9 @@
       ],
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "Для працы ${ MEET_APP_NAME } патрэбны WebRTC. Абнавіце свой браўзер або прыладу да версіі, якую падтрымлівае WebRTC, паспрабуйце іншы браўзер, або адключыце любыя пашырэнні, якія могуць блакіраваць яго."
+      ],
+      "${ meetingName } has ended": [
+        "${ meetingName } завяршылася"
       ],
       "${ mlsMemberCount } member": [
         "${ mlsMemberCount } удзельнік",
@@ -2985,6 +2997,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
+      ],
+      "Loading captions…": [
+        "Загрузка цітраў..."
       ],
       "Loading meeting details...": [
         "Загрузка падрабязнасцяў сустрэчы"
@@ -3454,11 +3469,17 @@
       "You have too many meetings in progress": [
         "У вас выконваецца занадта шмат сустрэч"
       ],
+      "You left ${ meetingName }": [
+        "Вы выйшлі з ${ meetingName }"
+      ],
       "You left the meeting": [
         "Вы выйшлі з сустрэчы"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
         "Для гэтай функцыі вам спатрэбіцца платны тарыфны план ${ MEET_SHORT_APP_NAME } або Workspace. Звярніцеся да адміністратара вашай арганізацыі, каб палепшыць яго."
+      ],
+      "You were removed from ${ meetingName }": [
+        "Вас былі выдалены з ${ meetingName }"
       ],
       "You were removed from the meeting": [
         "Вас выдалілі з сустрэчы"
@@ -3815,6 +3836,9 @@
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
       ],
+      "download": [
+        "спампаваць"
+      ],
       "Learn more": [
         "Даведацца больш"
       ],
@@ -3849,6 +3873,9 @@
       ],
       "Cheers": [
         "Віншую"
+      ],
+      "Chef's kiss": [
+        "Пацалунак шэф-кухара"
       ],
       "Coffee": [
         "Кава"
@@ -3895,6 +3922,12 @@
       "Sad": [
         "Сумна"
       ],
+      "Schrödinger in a box": [
+        "Шродзінгер у скрынцы"
+      ],
+      "Schrödinger out of the box": [
+        "Шродзінгер па-за межамі скрынкі"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -3916,8 +3949,14 @@
       "Think": [
         "Думаю"
       ],
+      "This is fine": [
+        "Гэта нармальна"
+      ],
       "Watch left": [
         "Погляд улева"
+      ],
+      "Watch right": [
+        "Погляд справа"
       ],
       "Write": [
         "Пішу"
