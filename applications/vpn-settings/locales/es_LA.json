@@ -280,6 +280,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Acerca de ${ name }"
+      ],
       "activate": [
         "activar"
       ],
@@ -300,6 +303,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Añadir dirección de ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Añadir ${ name }"
       ],
       "Add a payment method": [
         "Añadir un método de pago"
@@ -3882,6 +3888,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Traiga su correo electrónico, eventos de calendario y contactos desde otro proveedor."
+      ],
+      "Bring over your files and folders from another provider.": [
+        "Traiga sus archivos y carpetas de cualquier otro proveedor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Genere confianza y reconocimiento de marca con direcciones de correo profesionales en su propio dominio."
@@ -7479,6 +7488,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permita que los usuarios se conecten a servidores compartidos seguros desde la sección **Países** de la aplicación ${ VPN_APP_NAME }."
       ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Permita a su organización usar la API de ${ LUMO_APP_NAME }"
+      ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Permitir el inicio de sesión mediante código QR le permitirá iniciar sesión escaneando un código QR si olvida la contraseña. Solo necesita haber iniciado sesión en un servicio de ${ BRAND_NAME } en otro dispositivo."
       ],
@@ -9597,6 +9609,9 @@
       "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Cuando el inicio de sesión está restringido, solo se pueden usar ${ primaryEmailElement } y su nombre de usuario ${ usernameElement } para iniciar sesión. Sus otras direcciones no se pueden vincular a tSu cuenta, incluso si alguien las conoce."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Cuando el inicio de sesión está restringido, solo puede usar su dirección de correo ${ primaryEmailElement } para iniciar sesión. Sus otras direcciones no se pueden vincular a tSu cuenta, incluso si alguien las conoce."
+      ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Cuando el inicio de sesión está restringido, solo puede usar su nombre de usuario ${ usernameElement } para iniciar sesión. Sus otras direcciones no se pueden vincular a tSu cuenta, incluso si alguien las conoce."
       ],
@@ -10949,6 +10964,9 @@
       ],
       "Require password check-ins": [
         "Requerir comprobaciones de contraseña"
+      ],
+      "Restrict sign-in to email address": [
+        "Restringir el inicio de sesión a la dirección de correo"
       ],
       "Restrict sign-in to primary email address": [
         "Restringir el inicio de sesión a la dirección de correo principal"
@@ -14018,6 +14036,9 @@
       "Billing Country": [
         "País de facturación"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "No se pueden comprar cuentas Born Private con una suscripción activa."
+      ],
       "Buying credits requires a separate purchase.": [
         "La compra de créditos requiere una compra separada."
       ],
@@ -14110,6 +14131,9 @@
       ],
       "terms and conditions": [
         "términos y condiciones"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requiere de una donación."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descuento es válido para ${ renewalsWithCoupon } renovación.",
@@ -14210,6 +14234,9 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ya posee ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Ya posee una cuenta Born Private."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se le cobrará ${ amountToCharge } de su método de pago seleccionado."
       ],
@@ -14218,6 +14245,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Pronto se le redirigirá para verificar el pago."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Su cuenta es demasiado antigua para la iniciativa Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_WERO_BRAND_NAME } solo admite pagos en euros."
@@ -17850,6 +17880,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } amistad suscrita",
         "${ friendsSubscribed } amistades suscritas"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "API de ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"

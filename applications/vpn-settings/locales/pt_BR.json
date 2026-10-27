@@ -114,6 +114,9 @@
       "Download recovery file": [
         "Baixar o arquivo de recuperação"
       ],
+      "Enable or disable apps for members": [
+        "Ativar ou desativar aplicativos para membros"
+      ],
       "Encryption backup file": [
         "Arquivo de backup criptografado"
       ],
@@ -2564,8 +2567,14 @@
       "Your address": [
         "Seu endereço"
       ],
+      "Your address has changed": [
+        "Seu endereço foi alterado"
+      ],
       "Your new address": [
         "Seu novo endereço"
+      ],
+      "Your password remains the same.": [
+        "Sua senha continua a mesma"
       ]
     },
     "Collapsible tooltip": {
@@ -4735,6 +4744,9 @@
       ],
       "Recover data": [
         "Recuperar dados"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Recupere seus dados antes der adicionar um novo contato."
       ],
       "Recovery approved": [
         "Recuperação aprovada"
@@ -7206,6 +7218,9 @@
       "**This will disable 2-factor authentication.**": [
         "**Isso desativará a autenticação de 2 fatores.**"
       ],
+      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
+        "**Estamos mudando a página de início de sessão da ${ BRAND_NAME }.** Sua conta e sua senha continuam as mesmas."
+      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Ganhe ${ referrerRewardAmount }** créditos para cada amigo que se inscrever."
       ],
@@ -7366,6 +7381,9 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permitir que os usuários se conectem a servidores compartilhados seguros na seção **Países** do aplicativo ${ VPN_APP_NAME }."
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Permite que sua organização use a API do ${ LUMO_APP_NAME }"
       ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Ao ativar o início de sessão por código QR, você poderá fazer o início de sessão digitalizando um código QR caso esqueça sua senha. Basta estar conectado a um serviço da ${ BRAND_NAME } em outro dispositivo."
@@ -8844,6 +8862,9 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Alguns servidores podem não aparecer na lista acima. Pesquise pelo nome do servidor (por exemplo, AT#62) para encontrá-los."
       ],
+      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
+        "Em breve, você inserirá seu endereço de e-mail (ou nome de usuário) e sua senha em duas etapas distintas, em vez de fazer isso em uma única página."
+      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifique o domínio com permissão para autenticação SAML SSO."
       ],
@@ -9699,6 +9720,9 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Suas contas do ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
+      ],
+      "Your account and password stay the same.": [
+        "Sua conta e sua senha continuam as mesmas."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -10765,6 +10789,9 @@
       ],
       "Require password check-ins": [
         "Exigir a verificação da senha"
+      ],
+      "Restrict sign-in to primary email address": [
+        "Restringir início de sessão para o endereço de e-mail principal"
       ],
       "Reveal password": [
         "Mostrar senha"
@@ -15338,6 +15365,9 @@
       "Approve changes from your identity provider": [
         "Aprove as alterações do seu provedor de identidade"
       ],
+      "Approve permission changes for your organization": [
+        "Aprove as alterações de permissões para sua organização"
+      ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Aprovação final necessária para conceder acesso em todos os serviços do ${ BRAND_NAME }."
       ],
@@ -16461,6 +16491,9 @@
       "Outdated": [
         "Desatualizado"
       ],
+      "remove organization key": [
+        "remover chave da organização"
+      ],
       "Saved": [
         "Salvo"
       ],
@@ -17549,6 +17582,9 @@
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } amigo(a) inscrito(a)",
         "${ friendsSubscribed } amigos(as) inscritos(as)"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "API do ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
@@ -18662,6 +18698,9 @@
       "Signed-in reset": [
         "Sessão iniciado por redefinição"
       ],
+      "Signing in is changing": [
+        "Início de sessão está mudando"
+      ],
       "Simplify email distribution": [
         "Simplifique a distribuição dos e-mails"
       ],
@@ -19277,6 +19316,11 @@
       ],
       "Waiting for user to accept the invitation": [
         "Esperando o usuário aceitar o convite"
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user connected to one of your organization's Gateways.": [
+        "Última vez que este usuário conectou a um gateways da sua organização."
       ]
     },
     "Tor out of date": {
