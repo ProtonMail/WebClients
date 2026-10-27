@@ -1,11 +1,11 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import { hookWrapper } from '../../../../../testing/hocs/helpers';
 import { withApi } from '../../../../../testing/hocs/with-api';

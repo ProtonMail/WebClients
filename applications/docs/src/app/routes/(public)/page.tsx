@@ -11,7 +11,7 @@ import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoa
 import { useState } from 'react'
 import { Router } from 'react-router-dom'
 import { CompatRouter } from 'react-router-dom-v5-compat'
-import { FlagProvider } from '@proton/unleash/proxy'
+import { FlagProvider } from '@unleash/proxy-client-react'
 
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider'

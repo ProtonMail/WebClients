@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContacts } from '@proton/mail/store/contacts/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';

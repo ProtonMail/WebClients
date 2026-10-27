@@ -11,6 +11,7 @@ import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { DARK_WEB_MONITORING_NAME, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -19,7 +20,6 @@ import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPayment
 import type { PlanCardFeatureDefinition } from '../../../../features/interface';
 import { get2FAAuthenticatorText, getNVaultsText, getUnlimitedHideMyEmailAliasesText } from '../../../../features/pass';
 import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../../constants';
 import type { GetPlanUpsellArgs } from '../../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
 import { PlanIcon } from '../../PlanIcon';

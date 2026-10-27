@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 
 import type { PublicKeyReference } from '@protontech/crypto';
 
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { removeEmailsFromEncryptionPreferencesCache } from '@proton/mail/store/messages/encryptionPreferences';
 import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';

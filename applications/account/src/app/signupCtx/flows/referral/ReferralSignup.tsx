@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
+import { useFlagsStatus } from '@unleash/proxy-client-react';
+
 import { useEligibleTrials } from '@proton/account/eligibleTrials/hooks';
 import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recoveryKit/usePrefetchGenerateRecoveryKit';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
@@ -9,7 +11,6 @@ import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
-import { useFlagsStatus } from '@proton/unleash/proxy';
 
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';

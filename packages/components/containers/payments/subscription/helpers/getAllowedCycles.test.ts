@@ -1,11 +1,11 @@
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { getDefaultMainCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { PLANS_MAP, getLongTestPlans, getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import { type PlanCapRule, getAllowedCycles, planSupportsIrregularCycle } from './getAllowedCycles';
 

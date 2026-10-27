@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import type { MemberUsageColumnState } from '@proton/shared/lib/api/members';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import monitorGatewaysIllustration from '@proton/styles/assets/img/vpn/users/monitor-gateways-illustration.png';
@@ -12,7 +13,6 @@ import useModalState from '../../../components/modalTwo/useModalState';
 import TogglingMonitoringModal from '../../b2bDashboard/VPN/TogglingMonitoringModal';
 import { updateMonitoringSetting } from '../../b2bDashboard/VPN/api';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import GatewayMonitorUpsellModal from './GatewayMonitorUpsellModal';
 import useUserActivityTelemetry from './useUserActivityTelemetry';
 

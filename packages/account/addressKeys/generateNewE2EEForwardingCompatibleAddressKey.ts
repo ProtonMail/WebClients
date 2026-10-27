@@ -1,4 +1,4 @@
-import type { KTVerifier } from '@proton/key-transparency/helpers';
+import type { KTVerifier } from '@proton/key-transparency/helpers/createKTVerifier';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Api } from '@proton/shared/lib/interfaces/Api';

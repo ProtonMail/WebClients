@@ -1,6 +1,6 @@
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { getBYOEMobileAudience, getDaysSinceAccountCreation } from './dimensions';
 import type { BYOEMobileConnectErrorType } from './events';

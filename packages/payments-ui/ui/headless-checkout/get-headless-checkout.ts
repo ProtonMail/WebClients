@@ -6,10 +6,7 @@ import { computeOptimisticCheckResult } from '@proton/payments/core/computeOptim
 import type { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { getAddonType } from '@proton/payments/core/plan/addons';
-import { getIsB2BAudienceFromPlan, isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
-import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import type {
     Subscription,
@@ -17,6 +14,9 @@ import type {
     SubscriptionEstimation,
 } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { getIsB2BAudienceFromPlan, isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { ADDONS_LINE_ITEM_TYPE, type AddonLineItem, createAddonItem } from './items/addons';
 import { AMOUNT_DUE_LINE_ITEM_TYPE, type AmountDueLineItem, createAmountDueItem } from './items/amount-due';

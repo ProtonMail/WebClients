@@ -15,10 +15,10 @@ import { ADDON_PREFIXES, TRIAL_DURATION_DAYS } from '@proton/payments/core/const
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
-import type { Plan } from '@proton/payments/core/plan/interface';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { type APP_NAMES, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import clsx from '@proton/utils/clsx';
 
 import RightSummary from './RightSummary';

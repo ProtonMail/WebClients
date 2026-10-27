@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -8,7 +9,6 @@ import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import noop from '@proton/utils/noop';

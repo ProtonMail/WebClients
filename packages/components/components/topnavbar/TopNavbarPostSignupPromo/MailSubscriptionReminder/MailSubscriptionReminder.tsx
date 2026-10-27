@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import {
     APPS,
     type APP_NAMES,
@@ -13,7 +14,6 @@ import {
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 
-import { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
 import useSettingsLink from '../../../link/useSettingsLink';
 import Spotlight from '../../../spotlight/Spotlight';
 import useSpotlightShow from '../../../spotlight/useSpotlightShow';

@@ -1,10 +1,10 @@
 import type { TelemetryPaymentFlow } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
 import type { ADDON_PREFIXES, PLANS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
-import type { Audience } from '@proton/payments/core/subscription/constants';
+import type { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import type { UpsellTelemetryContext } from '@proton/payments/telemetry/shared-checkout-telemetry';
+import type { Audience } from '@proton/shared/lib/payments/subscription/constants';
 
-import type { SUBSCRIPTION_STEPS } from './constants';
 import type { SelectedProductPlans } from './helpers/payment';
 
 export type SubscriptionOverridableStep = SUBSCRIPTION_STEPS.UPGRADE | SUBSCRIPTION_STEPS.THANKS;

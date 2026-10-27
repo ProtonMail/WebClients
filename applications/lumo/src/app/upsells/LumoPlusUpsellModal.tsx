@@ -4,10 +4,10 @@ import { usePlans } from '@proton/account/plans/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LUMO_BUSINESS_PATH } from '../constants';

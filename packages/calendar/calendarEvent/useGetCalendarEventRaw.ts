@@ -17,7 +17,7 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contac
 import type { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import type { GetVerificationPreferences } from '@proton/shared/lib/interfaces/hooks/GetVerificationPreferences';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { useGetCalendarBootstrap } from '../calendarBootstrap/hooks';
 import { useGetCalendarKeys } from '../calendarBootstrap/keys';

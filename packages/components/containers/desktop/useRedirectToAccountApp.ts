@@ -4,16 +4,16 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import type { COUPON_CODES } from '@proton/payments/core/constants';
-import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import type { SubscriptionContainerProps } from '../payments/subscription/SubscriptionContainer';
-import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
 import { openLinkInBrowser } from './openExternalLink';
 import { useHasInboxDesktopInAppPayments } from './useHasInboxDesktopInAppPayments';
 

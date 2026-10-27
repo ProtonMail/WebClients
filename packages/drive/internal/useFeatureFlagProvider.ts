@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 
 import type { FeatureFlagProvider, FeatureFlags } from '@protontech/drive-sdk';
+import { useUnleashClient } from '@unleash/proxy-client-react';
 
 import type { FeatureFlag } from '@proton/unleash/Flags';
-import { useUnleashClient } from '@proton/unleash/proxy';
 
 export function useFeatureFlagProvider(): FeatureFlagProvider {
     const unleashClient = useUnleashClient();

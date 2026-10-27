@@ -1,7 +1,7 @@
 import { CYCLE, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Pricing } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { APPS } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 export const makePricing = (monthly: number, yearly?: number, twoYears?: number): Pricing =>
     ({

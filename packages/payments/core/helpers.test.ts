@@ -1,6 +1,7 @@
+import { correctDeprecatedPlanName } from '@proton/shared/lib/payments/plan/helpers';
+
 import { ADDON_NAMES, PLANS } from './constants';
 import { fixPlanIDs } from './helpers';
-import { correctDeprecatedPlanName } from './plan/helpers';
 
 describe('helpers', () => {
     describe('correctDeprecatedPlanName', () => {

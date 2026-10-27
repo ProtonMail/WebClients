@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { PLANS } from '@proton/payments/core/constants';
-import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import ModalTwo, { type ModalProps } from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';

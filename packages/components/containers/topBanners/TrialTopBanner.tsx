@@ -10,13 +10,13 @@ import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useDateCountdown from '@proton/hooks/useDateCountdown';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import { getSoonestEndingSubscription, isTrial } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DAY } from '@proton/shared/lib/constants';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import SettingsLink from '../../components/link/SettingsLink';
 import useModalState from '../../components/modalTwo/useModalState';

@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
+import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { InclusiveVatText } from './VatText';
 

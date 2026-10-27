@@ -15,13 +15,13 @@ import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/i
 import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getAddonType } from '@proton/payments/core/plan/addons';
 import { getAddonMultiplier } from '@proton/payments/core/plan/feature-limits';
-import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { setQuantity } from '@proton/payments/core/planIDs';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import { showAddonCustomizer } from '../subscription/modal-components/helpers/showAddonCustomizer';
 import type { NumberCustomiserProps } from './NumberCustomiser';

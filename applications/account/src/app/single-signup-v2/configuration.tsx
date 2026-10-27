@@ -46,8 +46,8 @@ import {
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
 import type { IconSize } from '@proton/icons/types';
 import { PLANS } from '@proton/payments/core/constants';
-import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import { APPS, type APP_NAMES, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
+import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles/constants';
 
 import bundleVpnPass from './bundle-vpn-pass.svg';

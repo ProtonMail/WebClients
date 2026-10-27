@@ -1,6 +1,7 @@
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+
 import type { FreeSubscription } from '../../interface';
 import { isFreeSubscription } from '../../type-guards';
-import { SubscriptionPlatform } from '../constants';
 import type { Subscription } from '../interface';
 import { hasLumo } from './plan-matching';
 

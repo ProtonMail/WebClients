@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { TelemetryAlwaysOnUpsellEvents } from '@proton/shared/lib/api/telemetry';
 import { SECOND, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 
-import { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
 import useSettingsLink from '../../../link/useSettingsLink';
 import useSpotlightShow from '../../../spotlight/useSpotlightShow';
 import useUpsellConfig from '../../../upsell/config/useUpsellConfig';

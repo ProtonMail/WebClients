@@ -15,9 +15,9 @@ import { getVatFormErrors } from '@proton/payments/core/billing-address/vat-help
 import type { ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
 import { hasWrongBillingAddressError } from '@proton/payments/core/errors';
 import type { PaymentsApi } from '@proton/payments/core/interface';
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

@@ -4,9 +4,9 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { HIDE_OFFER } from '../helpers/interface';

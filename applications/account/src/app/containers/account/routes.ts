@@ -16,7 +16,6 @@ import { IcPassGroup } from '@proton/icons/icons/IcPassGroup';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcSquaresInSquare } from '@proton/icons/icons/IcSquaresInSquare';
 import { IcUser } from '@proton/icons/icons/IcUser';
-import { getIsConsumerPassPlan } from '@proton/payments/core/plan/helpers';
 import {
     type MaybeFreeSubscription,
     getHasVpnB2BPlan,
@@ -44,6 +43,7 @@ import {
     getIsSSOVPNOnlyAccount,
 } from '@proton/shared/lib/keys/accountType';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
+import { getIsConsumerPassPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { isSubscriptionRenewEnabled } from '@proton/shared/lib/payments/subscription/helpers/renew';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 

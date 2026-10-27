@@ -1,5 +1,7 @@
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { EitherOr } from '@proton/shared/lib/interfaces/utils';
+import { getPlanNameFromIDs, isMultiUserPersonalPlan } from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import { ALL_ADDON_PREFIXES, getAddonConfigByName, getTransferOrder } from './addon/addons';
 import type { AddonTransferStrategy } from './addon/interfaces';
@@ -8,8 +10,6 @@ import { getDefaultMainCurrency } from './currencies';
 import type { FeatureLimitKey, FreeSubscription, PlanIDs } from './interface';
 import { getSupportedAddons, isAddonType } from './plan/addons';
 import { getPlanFeatureLimit, getPlansLimit } from './plan/feature-limits';
-import { getPlanNameFromIDs, isMultiUserPersonalPlan } from './plan/helpers';
-import type { Plan } from './plan/interface';
 import { getSubscriptionsArray, isManagedExternally } from './subscription/helpers/external-management';
 import { getPlanIDs } from './subscription/helpers/plan-ids';
 import { hasLumo } from './subscription/helpers/plan-matching';
@@ -17,7 +17,7 @@ import type { Subscription } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from './type-guards';
 
-export { getPlanFromIDs, hasFreePlanIDs, hasPlanIDs } from './plan/helpers';
+export { getPlanFromIDs, hasFreePlanIDs, hasPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 const getMeetWithEnoughSeats = ({
     planIDs,

@@ -6,7 +6,7 @@ import type { DirectMember } from '../interfaces';
 import { MemberType } from '../interfaces';
 import { DirectSharingListing } from './DirectSharingListing';
 
-jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
+jest.mock('@proton/account/contactEmails/hooks', () => ({
     useContactEmails: jest.fn(() => [[]]),
 }));
 

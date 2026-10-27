@@ -1,11 +1,11 @@
 import { subDays } from 'date-fns';
 
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { getIsEligible } from './eligibility';
 

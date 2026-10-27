@@ -1,8 +1,8 @@
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import CycleItemView from './CycleItemView';
 

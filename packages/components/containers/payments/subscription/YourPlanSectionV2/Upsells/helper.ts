@@ -6,10 +6,10 @@ import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface'
 import { getPrice } from '@proton/payments/core/price-helpers';
 import { getMaximumCycleForApp, getPlan, getPlanIDs } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES, DASHBOARD_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
-import { SUBSCRIPTION_STEPS } from '../../constants';
 import {
     type GetPlanUpsellArgs,
     type MaybeUpsell,

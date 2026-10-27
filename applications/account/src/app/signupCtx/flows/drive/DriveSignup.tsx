@@ -7,9 +7,9 @@ import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler'
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import { hasFreePlanIDs } from '@proton/payments/core/planIDs';
 import { APPS } from '@proton/shared/lib/constants';
+import { getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import { SignupType } from '../../../signup/interfaces';
 import { type BaseSignupContextProps, SignupContextProvider, useSignup } from '../../context/SignupContext';

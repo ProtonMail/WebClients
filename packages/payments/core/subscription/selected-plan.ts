@@ -1,5 +1,11 @@
 import isEqual from 'lodash/isEqual';
 
+import {
+    getAddonNameByPlan,
+    getIsB2BAudienceFromPlan,
+    getPlanNameFromIDs,
+} from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
@@ -16,8 +22,6 @@ import { getDefaultMainCurrency } from '../currencies';
 import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
 import { type AddonGuard, type SupportedAddons, getAddonType, getSupportedAddons, isAddonType } from '../plan/addons';
 import { getPlanFeatureLimit } from '../plan/feature-limits';
-import { getAddonNameByPlan, getIsB2BAudienceFromPlan, getPlanNameFromIDs } from '../plan/helpers';
-import type { Plan, PlansMap } from '../plan/interface';
 import { FREE_PLAN } from './freePlans';
 import { getPlanIDs } from './helpers/plan-ids';
 import type { Subscription } from './interface';

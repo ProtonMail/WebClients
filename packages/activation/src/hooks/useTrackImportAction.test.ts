@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { ApiImportProvider } from '../api/api.interface';
 import { ImportType } from '../interface';
@@ -13,7 +13,7 @@ jest.mock('./useGetIsBYOE', () => ({
     useGetIsBYOE: () => mockGetIsBYOE,
 }));
 
-jest.mock('@proton/telemetry-tracker/tracker', () => ({
+jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
     tracker: { emit: jest.fn() },
 }));
 

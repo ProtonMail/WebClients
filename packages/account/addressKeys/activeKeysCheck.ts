@@ -1,7 +1,7 @@
 import { serverTime, wasServerTimeEverUpdated } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { createKTVerifier } from '@proton/key-transparency/helpers';
+import { createKTVerifier } from '@proton/key-transparency/helpers/createKTVerifier';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';

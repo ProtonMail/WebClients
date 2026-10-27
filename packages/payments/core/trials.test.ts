@@ -1,8 +1,9 @@
+import { TrialType } from '@proton/shared/lib/payments/subscription/constants';
+
 import { buildEntitlementCatalog } from '../testing/buildEntitlementCatalog';
 import { buildSubscription } from '../testing/buildSubscription';
 import { PLANS } from './constants';
 import { EntitlementName } from './entitlements/entitlement-names';
-import { TrialType } from './subscription/constants';
 import { getTrialInfo, getTrialInfoForSingleSubscription, getTrialSubscription } from './trials';
 
 const entitlementCatalog = buildEntitlementCatalog({

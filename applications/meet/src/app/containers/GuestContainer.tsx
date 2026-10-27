@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Router } from 'react-router-dom';
 
+import { FlagProvider } from '@unleash/proxy-client-react';
+
 import { useNotifications } from '@proton/app-context/useNotifications';
 import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
@@ -14,7 +16,6 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
-import { FlagProvider } from '@proton/unleash/proxy';
 
 import { bootstrapGuestApp } from '../bootstrap';
 import config from '../config';

@@ -2,7 +2,7 @@
 
 One tracker, reachable from anywhere, with type-safe event definitions owned by each consumer. No hook per measurement group.
 
-- Entry points: `/events` (define events and timers), `/tracker` (`initTracker`, `tracker`), `/testing`. No catch-all barrel.
+- Entry points: `/lib/defineEvent`, `/lib/dimensions` and `/lib/timers` (define events and timers), `/lib/tracker` (`initTracker`, `tracker`), `/testing`. No barrels.
 - Initialised once in the app bootstrap: `initTracker({ api })` (account: `applications/account/src/app/content/bootstrap.ts`).
 - Sending, batching, random delay and the user opt-out are delegated to `sendTelemetryReport` (`@proton/shared/lib/helpers/metrics`). No feature flag logic here.
 - Used before `initTracker`: throws outside of production, reports once to Sentry and no-ops in production.
@@ -25,7 +25,9 @@ Telemetry sends dimensions as strings (booleans become `'true'`/`'false'`). Anal
 
 ```ts
 import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { allowed, bool, defineEvent, defineTimer, duration, number, topValues } from '@proton/telemetry-tracker/events';
+import { defineEvent } from '@proton/telemetry-tracker/lib/defineEvent';
+import { allowed, bool, duration, number, topValues } from '@proton/telemetry-tracker/lib/dimensions';
+import { defineTimer } from '@proton/telemetry-tracker/lib/timers';
 
 export const importTimer = defineTimer('byoeImport');
 
@@ -49,7 +51,7 @@ export const importCompleted = defineEvent({
 2. Emit it where the action happens:
 
 ```ts
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 tracker.emit(importCompleted, {
     dimensions: { source: 'settings', provider, isBYOE: true },

@@ -1,5 +1,4 @@
 import { COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import {
     getAutoCoupon,
     notHigherThanAvailableOnBackend,
@@ -7,6 +6,7 @@ import {
 } from '@proton/payments/core/subscription/helpers';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { PLANS_MAP } from '@proton/payments/testing/data-plans';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 describe('subscriptionExpires()', () => {
     it('should handle the case when subscription is free', () => {

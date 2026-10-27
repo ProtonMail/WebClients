@@ -12,7 +12,7 @@ jest.mock('../../hooks/useGetIsBYOE', () => ({
     useGetIsBYOE: () => jest.fn().mockResolvedValue(false),
 }));
 
-jest.mock('@proton/telemetry-tracker/tracker', () => ({
+jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
     tracker: { emit: jest.fn() },
 }));
 

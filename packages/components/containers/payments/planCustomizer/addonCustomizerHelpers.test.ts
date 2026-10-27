@@ -10,10 +10,10 @@ import {
     TRIAL_MAX_USERS,
 } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { PLANS_MAP } from '@proton/payments/testing/data-plans';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import { computeAddonCustomizerItems, getAddonCustomizerProperties } from './addonCustomizerHelpers';
 

@@ -17,7 +17,7 @@ import GenericError from '@proton/components/containers/error/GenericError';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
+import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
 import { authJwt, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 // eslint-disable-next-line proton/restricted-imports

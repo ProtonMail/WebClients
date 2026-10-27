@@ -7,7 +7,6 @@ import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PLANS } from '@proton/payments/core/constants';
-import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
@@ -28,6 +27,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 

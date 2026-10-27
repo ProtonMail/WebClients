@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useHandler } from '@proton/hooks/useHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import {
     addVCardProperty,
     getSortedProperties,

@@ -7,8 +7,10 @@ import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
-import { allowed, defineEvent, defineTimer, duration, number, topValues } from '@proton/telemetry-tracker/events';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { defineEvent } from '@proton/telemetry-tracker/lib/defineEvent';
+import { allowed, duration, number, topValues } from '@proton/telemetry-tracker/lib/dimensions';
+import { defineTimer } from '@proton/telemetry-tracker/lib/timers';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 import isTruthy from '@proton/utils/isTruthy';
 
 type OnboardingThemeLabel = (typeof ONBOARDING_THEMES)[number]['label'];

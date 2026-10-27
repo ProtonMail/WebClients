@@ -5,9 +5,9 @@ import { buildUser } from '@proton/account/testing/buildUser';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PreviousSubscription } from '@proton/payments/core/interface';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { UserLockedFlags } from '@proton/shared/lib/interfaces/User';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { renderWithProviders } from '../../testing/renderWithProviders';
 import { LockedStateTopBanner } from './LockedStateTopBanner';

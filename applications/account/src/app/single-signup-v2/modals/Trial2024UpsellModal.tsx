@@ -14,8 +14,8 @@ import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PaymentsApi, PlanIDs } from '@proton/payments/core/interface';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import SaveLabel from '../SaveLabel';
 import type { SignupUpsellTelemetryHook } from './useMailSignupUpsellTelemetry';

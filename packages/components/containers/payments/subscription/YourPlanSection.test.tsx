@@ -12,6 +12,7 @@ import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { EntitlementType } from '@proton/payments/core/entitlements/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { buildPreloadedState } from '@proton/payments/testing/buildPreloadedState';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -21,7 +22,6 @@ import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 import { renderWithProviders } from '../../../testing/renderWithProviders';
 import YourPlanSection from './YourPlanSection';
 import { addresses, calendars, organization, pendingInvite, subscriptionBundle, user } from './__mocks__/data';
-import { SUBSCRIPTION_STEPS } from './constants';
 
 jest.mock('@proton/app-context/useConfig');
 const mockUseConfig = useConfig as jest.MockedFunction<any>;

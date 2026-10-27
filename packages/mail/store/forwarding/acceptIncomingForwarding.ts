@@ -1,6 +1,6 @@
 import { CryptoProxy, type PrivateKeyReferenceV4 } from '@protontech/crypto';
 
-import { getAndVerifyApiKeys } from '@proton/key-transparency/keys';
+import { getAndVerifyApiKeys } from '@proton/key-transparency/keys/getAndVerifyApiKeys';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { IncomingAddressForwarding } from '@proton/shared/lib/interfaces/AddressForwarding';
 import type { Api } from '@proton/shared/lib/interfaces/Api';

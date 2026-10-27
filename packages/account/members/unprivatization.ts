@@ -3,7 +3,8 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { fetchSignedKeyLists } from '@proton/key-transparency/helpers/apiHelpers';
-import { getAndVerifyApiKeys, getVerifiedPublicKeys } from '@proton/key-transparency/keys';
+import { getAndVerifyApiKeys } from '@proton/key-transparency/keys/getAndVerifyApiKeys';
+import { getVerifiedPublicKeys } from '@proton/key-transparency/keys/getVerifiedPublicKeys';
 import { setupKeys } from '@proton/shared/lib/api/keys';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Api } from '@proton/shared/lib/interfaces/Api';

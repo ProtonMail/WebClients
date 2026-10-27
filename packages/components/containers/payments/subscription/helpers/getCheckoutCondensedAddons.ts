@@ -1,8 +1,8 @@
 import { PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import { getHasPlusPlan } from '@proton/payments/core/plan/helpers';
 import { type MaybeFreeSubscription, getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getHasPlusPlan } from '@proton/shared/lib/payments/plan/helpers';
 import type { FeatureFlagVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 export type CheckoutCondensedAddonsArm = 'control' | 'condensed';

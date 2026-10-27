@@ -21,8 +21,6 @@ import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
-import { getIsPassB2BPlan } from '@proton/payments/core/plan/helpers';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     getHasVpnB2BPlan,
@@ -49,6 +47,8 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getIsPassB2BPlan } from '@proton/shared/lib/payments/plan/helpers';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';

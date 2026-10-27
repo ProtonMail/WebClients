@@ -1,9 +1,9 @@
 import { type ReactNode, Suspense, lazy } from 'react';
 
+import { FlagProvider } from '@unleash/proxy-client-react';
 import type { UnleashClient } from 'unleash-proxy-client';
 
 import { isUnleashToolbarEnabled } from './isUnleashToolbarEnabled';
-import { FlagProvider } from './proxy';
 
 const LazyUnleashToolbarFlagProvider = lazy(() => import('./UnleashToolbarFlagProvider'));
 

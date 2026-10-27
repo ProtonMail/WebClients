@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 
+import { useFlagsStatus } from '@unleash/proxy-client-react';
+
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
-import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useVariant } from '@proton/unleash/useVariant';
 
 import {

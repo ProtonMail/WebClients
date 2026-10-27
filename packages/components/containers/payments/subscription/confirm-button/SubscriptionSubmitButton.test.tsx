@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 
 import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { type Props, SubscriptionSubmitButton } from './SubscriptionSubmitButton';
 

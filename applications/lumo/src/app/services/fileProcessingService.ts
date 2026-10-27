@@ -64,7 +64,8 @@ export interface ProcessingError {
     unsupported?: boolean;
 }
 
-export type FileProcessingResponse = TextProcessingResult | ImageProcessingResult | ProcessingError | ExcelSheetsListResult;
+export type FileProcessingResponse =
+    TextProcessingResult | ImageProcessingResult | ProcessingError | ExcelSheetsListResult;
 
 async function reduceImageSize(
     fileData: FileData

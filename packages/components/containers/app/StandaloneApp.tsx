@@ -2,6 +2,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import { configureStore } from '@reduxjs/toolkit';
+import { FlagProvider } from '@unleash/proxy-client-react';
 
 import { apiStatusReducer } from '@proton/account/apiStatus';
 import { createAuthentication, createUnauthenticatedApi, createUnleash } from '@proton/account/bootstrap';
@@ -13,7 +14,6 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
-import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
 import ApiProvider from '../api/ApiProvider';

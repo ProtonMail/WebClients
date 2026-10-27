@@ -17,7 +17,7 @@ import { getNormalizedPlanTitles } from '@proton/components/containers/payments/
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { PLANS } from '@proton/payments/core/constants';
-import type { FreePlanDefault, Plan, PlansMap, SubscriptionPlan } from '@proton/payments/core/plan/interface';
+import type { FreePlanDefault, Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/payments/plan/interface';
 
 import type { SubscriptionData } from '../../signup/interfaces';
 import svg from '../welcome-suite.svg';

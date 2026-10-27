@@ -1,8 +1,7 @@
 import { useApi } from '@proton/app-context/useApi';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { TelemetryMeasurementGroups, TelemetrySubscriptionModalEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-
-import { SUBSCRIPTION_STEPS } from './constants';
 
 const getInitialStep = (step?: SUBSCRIPTION_STEPS) => {
     switch (step) {

@@ -5,7 +5,6 @@ import userEvent from '@testing-library/user-event';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
 import type { Coupon } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
@@ -15,6 +14,7 @@ import {
     createMockSignupParameters,
 } from '@proton/payments/testing/signup';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import Step1 from './Step1';
 import { SignupMode, UpsellTypes } from './interface';

@@ -1,4 +1,5 @@
 import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import { getTestPlans } from '../testing/data-plans';
 import { DEFAULT_PAYMENT_VENDOR_STATES, FREE_SUBSCRIPTION, PLANS } from './constants';
@@ -19,7 +20,6 @@ import {
     mapRegionalCurrencyToCountry,
 } from './currencies';
 import type { Currency, PaymentStatus } from './interface';
-import type { Plan } from './plan/interface';
 import type { Subscription } from './subscription/interface';
 
 describe('currencies', () => {

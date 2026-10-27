@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import isTruthy from '@proton/utils/isTruthy';

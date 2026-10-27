@@ -5,7 +5,8 @@
  */
 import { fromPromise } from 'xstate';
 
-import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '@proton/key-transparency/shared';
+import { createKeyMigrationKTVerifier } from '@proton/key-transparency/shared/createKeyMigrationKTVerifier';
+import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
 import { type AuthTypes, getAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 

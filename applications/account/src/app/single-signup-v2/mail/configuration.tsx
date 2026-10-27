@@ -43,7 +43,6 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     APPS,
     BRAND_NAME,
@@ -54,6 +53,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { everythingInPlanOrAppNamePlusText } from '@proton/shared/lib/i18n/ttag';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';

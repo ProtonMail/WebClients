@@ -1,4 +1,5 @@
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { semver } from '@proton/utils/semver';
 
 import { ItemState } from '../../../../types/data/items';
 import type { ItemImportIntent } from '../../../../types/data/items.dto';
@@ -7,7 +8,6 @@ import type { MaybeNull } from '../../../../types/utils';
 import { partition } from '../../../../utils/array/partition';
 import { prop } from '../../../../utils/fp/lens';
 import { logger } from '../../../../utils/logger';
-import { semver } from '../../../../utils/string/semver';
 import { uniqueId } from '../../../../utils/string/unique-id';
 import { archivePath } from '../../../export/archive';
 import type { ExportData, ExportedFolder, ExportedItem } from '../../../export/types';

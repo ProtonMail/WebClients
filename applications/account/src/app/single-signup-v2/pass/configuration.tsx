@@ -59,7 +59,6 @@ import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     APPS,
     BRAND_NAME,
@@ -75,6 +74,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';

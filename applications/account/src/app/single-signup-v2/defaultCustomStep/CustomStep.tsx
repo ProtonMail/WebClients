@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
-import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
 
 import type { SignupCacheResult } from '../../signup/interfaces';

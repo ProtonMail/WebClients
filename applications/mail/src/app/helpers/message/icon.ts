@@ -9,7 +9,7 @@ import { IcLockOpenCheckFilled } from '@proton/icons/icons/IcLockOpenCheckFilled
 import { IcLockOpenExclamationFilled } from '@proton/icons/icons/IcLockOpenExclamationFilled';
 import { IcLockOpenPenFilled } from '@proton/icons/icons/IcLockOpenPenFilled';
 import { IcLockPenFilled } from '@proton/icons/icons/IcLockPenFilled';
-import { KEY_VERIFICATION_ERROR_MESSAGE } from '@proton/key-transparency/keys';
+import { KEY_VERIFICATION_ERROR_MESSAGE } from '@proton/key-transparency/keys/getPublicKeysEmailHelper';
 import type {
     MessageState,
     MessageVerification,

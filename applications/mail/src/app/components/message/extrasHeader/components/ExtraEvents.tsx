@@ -5,6 +5,7 @@ import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
@@ -15,7 +16,6 @@ import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonic
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import useLoading from '@proton/hooks/useLoading';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import type { MessageErrors, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import {
     getCanCreateCalendar,

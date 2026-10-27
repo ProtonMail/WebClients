@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useContacts } from '@proton/mail/store/contacts/hooks';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { toMap } from '@proton/shared/lib/helpers/object';

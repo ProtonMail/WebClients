@@ -44,9 +44,6 @@ import type {
 } from '@proton/payments/core/interface';
 import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/currencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
-import type { Plan, StrictPlan } from '@proton/payments/core/plan/interface';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { isV5PaymentToken } from '@proton/payments/core/type-guards';
@@ -68,11 +65,14 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { generatePassword } from '@proton/shared/lib/password';
+import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan, StrictPlan } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { getVpnServers } from '@proton/shared/lib/vpn/features';
+import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';

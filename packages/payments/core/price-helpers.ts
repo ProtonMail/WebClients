@@ -1,7 +1,8 @@
+import { isLifetimePlan, isMultiUserPersonalPlan } from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
+
 import { ADDON_NAMES, CYCLE, PLANS } from './constants';
 import type { Cycle, PlanIDs, Pricing } from './interface';
-import { isLifetimePlan, isMultiUserPersonalPlan } from './plan/helpers';
-import type { Plan, PlansMap } from './plan/interface';
 import { allCycles, customCycles } from './subscription/helpers';
 
 export const INCLUDED_IP_PRICING = {

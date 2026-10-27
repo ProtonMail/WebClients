@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import illustration from '@proton/styles/assets/img/illustrations/activity-monitor-illustration.svg';
@@ -10,7 +11,6 @@ import illustration from '@proton/styles/assets/img/illustrations/activity-monit
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 
 interface Props {
     organization?: Organization;

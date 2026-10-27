@@ -11,7 +11,6 @@ import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import type { FreeSubscription, PaymentsApi, PlainPaymentMethodType } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';
 import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
@@ -23,16 +22,17 @@ import {
     isSubscriptionSelectionEqual,
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getApiErrorMessage, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { forceAddonsMinMaxConstraints } from '../planCustomizer/helpers';
 import type { Model } from './SubscriptionContainer';
-import { SUBSCRIPTION_STEPS } from './constants';
 import { reportPlanIDsIfChangedTelemetry } from './helpers/subscriptionTelemetry';
 import { switchCycle } from './helpers/switchCycle';
 

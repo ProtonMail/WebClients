@@ -1,8 +1,9 @@
+import type { FreePlanDefault } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+
 import { CYCLE, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_SERVICES, PLAN_TYPES } from '../constants';
 import { getDefaultMainCurrency } from '../currencies';
 import type { Currency, Cycle } from '../interface';
-import type { FreePlanDefault } from '../plan/interface';
-import { SubscriptionMode } from './constants';
 import type { SubscriptionEstimation } from './interface';
 
 export const FREE_PLAN: FreePlanDefault = {

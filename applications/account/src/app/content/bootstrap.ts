@@ -39,7 +39,7 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { telemetry } from '@proton/shared/lib/telemetry';
-import { initTracker } from '@proton/telemetry-tracker/tracker';
+import { initTracker } from '@proton/telemetry-tracker/lib/tracker';
 import noop from '@proton/utils/noop';
 
 import locales from '../locales';

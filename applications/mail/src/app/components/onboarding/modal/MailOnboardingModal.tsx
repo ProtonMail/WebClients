@@ -5,7 +5,7 @@ import { logger } from '@protontech/logger';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 

@@ -1,8 +1,8 @@
 import { COUPON_CODES, CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Pricing } from '@proton/payments/core/interface';
-import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
-import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import { APPS } from '@proton/shared/lib/constants';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { createHeadlessCheckoutContextInner, getHeadlessCheckout } from './get-headless-checkout';
 

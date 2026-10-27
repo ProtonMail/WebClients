@@ -1,7 +1,8 @@
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
+
 import { capturePaymentMessage } from '../sentry/capture';
 import { PLANS, signupFlows } from './constants';
 import type { Invoice, PaymentMethodFlow, PlanIDs } from './interface';
-import { getPlanNameFromIDs } from './plan/helpers';
 
 export function isSignupFlow(flow: PaymentMethodFlow): boolean {
     return signupFlows.includes(flow);

@@ -1,8 +1,6 @@
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
-import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlansMap } from '@proton/payments/testing/data-plans';
@@ -10,6 +8,8 @@ import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { User } from '@proton/shared/lib/interfaces/User';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { getAccessiblePlans, getSessionCycle, getSubscriptionData, getUserInfo } from './helper';
 import type { PlanCard, SignupParameters2 } from './interface';

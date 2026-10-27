@@ -3,7 +3,7 @@ import { act, renderHook } from '@testing-library/react';
 import { buildAddress } from '@proton/account/testing/buildAddress';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { loadSyncList } from '../logic/sync/sync.actions';
 import { BYOEAddressAction } from '../telemetry/events';
@@ -28,7 +28,9 @@ jest.mock('../logic/sync/sync.actions', () => ({ loadSyncList: jest.fn(() => 'lo
 jest.mock('../thunks/updateBYOEAddressConnection', () => ({
     updateBYOEAddressConnection: jest.fn((args) => ({ thunk: args })),
 }));
-jest.mock('@proton/telemetry-tracker/tracker', () => ({ tracker: { emit: jest.fn() } }));
+jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
+    tracker: { emit: jest.fn() },
+}));
 
 jest.mock('@proton/shared/lib/helpers/address', () => ({ getIsBYOEOnlyAccount: jest.fn() }));
 jest.mock('@proton/shared/lib/user/helpers', () => ({ isAdmin: jest.fn() }));

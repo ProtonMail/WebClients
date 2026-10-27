@@ -1,6 +1,7 @@
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+
 import { PLANS_MAP } from '../testing/data-plans';
 import { ADDON_NAMES, CYCLE, PLANS } from './constants';
-import type { Plan } from './plan/interface';
 import { getPriceStartsFrom } from './price-helpers';
 
 describe('getPriceStartsFrom', () => {

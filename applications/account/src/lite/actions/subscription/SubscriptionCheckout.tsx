@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react';
 import { useAppName } from '@proton/account/appName';
 import CalendarDowngradeModal from '@proton/components/containers/payments/subscription/CalendarDowngradeModal';
 import type { Model } from '@proton/components/containers/payments/subscription/SubscriptionContainer';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { PaymentsContextProvider, usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
-import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
 import noop from '@proton/utils/noop';
 
 import SubscriptionCheckoutAddonSection from './sections/SubscriptionCheckoutAddonSection';

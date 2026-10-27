@@ -17,11 +17,11 @@ import {
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { FreePlanDefault, Plan } from '@proton/payments/core/plan/interface';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getSubscriptionPlanTitle, isManagedExternally } from '@proton/payments/core/subscription/helpers';
 import { getPlanByName, getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -36,6 +36,7 @@ import {
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
+import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
 import Loader from '../../../components/loader/Loader';
@@ -60,7 +61,6 @@ import {
 } from '../../payments/features/pass';
 import { PlanCardFeatureList } from '../../payments/subscription/PlanCardFeatures';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import bundleLogo from './illustrations/bundle.svg';
 import drive from './illustrations/drive.jpg';
 import mail from './illustrations/mail.jpg';

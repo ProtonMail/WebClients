@@ -1,5 +1,6 @@
+import { getPlanName } from '@proton/shared/lib/payments/subscription/helpers/plan-info';
+
 import type { FreeSubscription } from '../core/interface';
-import { getPlanName } from '../core/subscription/helpers/plan-info';
 import type { Subscription } from '../core/subscription/interface';
 import { isFreeSubscription } from '../core/type-guards';
 
