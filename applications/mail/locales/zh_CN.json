@@ -39,6 +39,9 @@
       "A to Z": [
         "A 到 Z"
       ],
+      "About ${ name }": [
+        "关于 ${ name }"
+      ],
       "Activate": [
         "启用"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "添加 ${ name }"
       ],
       "Add a payment method": [
         "添加支付方式"
@@ -353,6 +359,9 @@
       ],
       "Copy version number to clipboard": [
         "复制版本号"
+      ],
+      "Create a booking page": [
+        "创建预约页面"
       ],
       "Create a new contact group": [
         "创建联系人群组"
@@ -968,6 +977,12 @@
       ],
       "Move": [
         "移动"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "将 ${ LUMO_SHORT_APP_NAME } 向左移动"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "将 ${ LUMO_SHORT_APP_NAME } 向右移动"
       ],
       "Move all to archive": [
         "全部归档"
@@ -2096,6 +2111,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "高级密码管理器"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
       ]
     },
     "BF2024: Deal details": {
@@ -6855,6 +6875,9 @@
       "1 vault per user": [
         "1 保险库/用户"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
@@ -7046,6 +7069,9 @@
       ],
       "Are you sure you want to permanently delete this message?": [
         "确定要永久删除此邮件吗？"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "请您的管理员升级计划或从预约页面侧边栏中移除一个页面"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "至少 ${ BETTER_PASSWORD_LENGTH } 个字符"
@@ -8835,6 +8861,15 @@
       "to ${ destinationElement } folder.": [
         "移至 ${ destinationElement } 文件夹"
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "要添加新的预约页面，请让您的管理员升级您的计划。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "要添加新的预约页面，请从预约页面侧边栏中移除一个现有的页面。"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "要添加新的预约页面，请升级您的计划。"
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "为避免被浏览器中打开的标签页分散注意力，请使用桌面应用。"
       ],
@@ -8915,6 +8950,9 @@
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "无法访问浏览器的储存功能，我们需要此权限才能启用邮件内容搜索。"
+      ],
+      "UnionPay logo": [
+        "UnionPay 标志"
       ],
       "Unlock message": [
         "解锁邮件"
@@ -9335,6 +9373,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "此群组中的邮箱地址数量已达上限。"
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "您已达到您计划中允许的预约页面最大数量"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "您的 ${ BRAND_NAME } 账户已被停用，28 天后将无法收取新邮件，并且网盘分享链接将失效，新文件将无法上传。如需恢复账户正常功能，请付清逾期账单。"
@@ -9769,6 +9810,9 @@
       ],
       "${ length }/${ maxLength } characters": [
         "${ length } / ${ maxLength } 个字符"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } 助手"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 写作助手"
@@ -10944,6 +10988,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "创建新日历以管理您的邀请"
+      ],
+      "Customer Support": [
+        "客户支持"
       ],
       "Deleted": [
         "已删除"
@@ -13166,6 +13213,9 @@
       "Billing Country": [
         "计费国家/地区"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "在订阅生效期间无法购买 Born Private 账户。"
+      ],
       "Buying credits requires a separate purchase.": [
         "购买额度需要单独进行！"
       ],
@@ -13252,6 +13302,9 @@
       ],
       "terms and conditions": [
         "服务条款"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private 套餐需要捐款。"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "该折扣适用于 ${ renewalsWithCoupon } 次续订"
@@ -13343,11 +13396,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "您已经拥有 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
       ],
+      "You already own a Born Private account.": [
+        "您已经拥有一个 Born Private 账户。"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "您即将被重定向至 PayPal 以验证付款。"
       ],
       "You will soon be redirected to verify your payment.": [
         "您即将被重定向以验证付款"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "您的货币已更改为欧元 (€)，因为 ${ IDEAL_WERO_BRAND_NAME } 仅支持欧元支付。"
@@ -15259,6 +15318,12 @@
       "${ elementsCount } message removed from Starred.": [
         "${ elementsCount } 封邮件已移出星标邮件"
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "已禁用 ${ LUMO_SHORT_APP_NAME } 助手"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "已启用 ${ LUMO_SHORT_APP_NAME } 助手"
+      ],
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
       ],
@@ -15808,6 +15873,9 @@
       ],
       "Cannot add more addresses": [
         "无法添加更多地址"
+      ],
+      "Cannot create more Booking pages": [
+        "无法创建更多预约页面"
       ],
       "Carbon Copy": [
         "抄送"
@@ -16952,6 +17020,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "该用户下次登录时将获得管理员权限。"
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "升级至受支持的套餐以使用管理员角色。"
       ],

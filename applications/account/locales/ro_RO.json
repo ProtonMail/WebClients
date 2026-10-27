@@ -368,6 +368,9 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Despre ${ name }"
+      ],
       "Accept": [
         "Acceptare"
       ],
@@ -406,6 +409,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Adăugare adresă ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Adăugare ${ name }"
       ],
       "Add a payment method": [
         "Adăugați o metodă de plată"
@@ -14021,6 +14027,9 @@
       "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Atunci când autentificarea este restricționată, doar ${ primaryEmailElement } și numele de utilizator ${ usernameElement } pot fi utilizate pentru a vă autentifica. Celelalte adrese nu le mai puteți asocia cu contul personal, chiar dacă cineva le cunoaște."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Când autentificarea este restricționată, doar numele de utilizator ${ primaryEmailElement } poate fi utilizat pentru a vă autentifica. Celelalte adrese nu vă pot fi asociate cu contul, chiar dacă cineva le cunoaște."
+      ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Când autentificarea este restricționată, doar numele de utilizator ${ usernameElement } poate fi utilizat pentru a vă autentifica. Celelalte adrese nu vă pot fi asociate cu contul, chiar dacă cineva le cunoaște."
       ],
@@ -14456,6 +14465,9 @@
       ],
       "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
         "Fișierele sunt criptate și stocate în siguranță în ${ DRIVE_APP_NAME }."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Fișierele v-au fost importate și criptate cu succes din Google Drive în ${ DRIVE_APP_NAME }."
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
@@ -16514,6 +16526,9 @@
       ],
       "Reserved email address": [
         "Adresă de e-mail rezervată"
+      ],
+      "Restrict sign-in to email address": [
+        "Restricționare autentificarea la o adresă de e-mail"
       ],
       "Restrict sign-in to primary email address": [
         "Restricționare autentificare la adresa de e-mail principală"
@@ -28310,6 +28325,9 @@
       "Your exposed information": [
         "Informații expuse"
       ],
+      "Your import is finished!": [
+        "Importarea s-a finalizat!"
+      ],
       "Your plan": [
         "Plan actual"
       ],
@@ -28786,6 +28804,9 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Când mutați un mesaj în „Nedorite”, se va face și dezabonarea automată de la lista de adrese a expeditorului."
+      ],
+      "Your ${ DRIVE_APP_NAME } storage is almost full": [
+        "Spațiul de stocare din ${ DRIVE_APP_NAME } este aproape plin"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Spațiul de stocare din ${ MAIL_APP_NAME } este aproape plin."

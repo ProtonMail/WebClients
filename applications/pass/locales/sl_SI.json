@@ -3016,6 +3016,17 @@
         "Uporabljeno na ${ url }"
       ]
     },
+    "Result": {
+      "Enter a URL to check if it matches the current rule": [
+        "Vnesite URL in preverite, če ustreza trenutnemu pravilu"
+      ],
+      "URL doesn't match the rule": [
+        "URL ne ustreza pravilu"
+      ],
+      "URL matches the rule": [
+        "URL ustreza pravilu"
+      ]
+    },
     "Security Center - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details. ${ link }": [
         "Zaznani ${ name } in ${ remainingCount } drugih možnih uhajanj podatkov. Za ogled podrobnosti vklopite ${ DARK_WEB_MONITORING_NAME }. ${ link }"

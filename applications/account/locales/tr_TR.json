@@ -368,6 +368,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
+      "About ${ name }": [
+        "${ name } hakkında"
+      ],
       "Accept": [
         "Kabul et"
       ],
@@ -406,6 +409,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresini ekle"
+      ],
+      "Add ${ name }": [
+        "${ name } ekle"
       ],
       "Add a payment method": [
         "Bir ödeme yöntemi ekleyin"
@@ -13885,6 +13891,9 @@
       "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Oturum açma kısıtlandığında, oturum açmak için yalnızca ${ primaryEmailElement } ve ${ usernameElement } kullanıcı adınız kullanılabilir. Diğer adresleriniz, birileri onları bilse bile hesabınıza bağlanamaz."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Oturum açma kısıtlandığında oturum açmak için yalnızca ${ primaryEmailElement } e-posta adresiniz kullanılabilir. Diğer adresleriniz birisi bunları biliyor olsa bile hesabınızla ilişkilendirilemez."
+      ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Oturum açma kısıtlandığında, oturum açmak için yalnızca ${ usernameElement } kullanıcı adınız kullanılabilir. Diğer adresleriniz, birileri onları bilse bile hesabınıza bağlanamaz."
       ],
@@ -14309,6 +14318,9 @@
       ],
       "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
         "Dosyalarınız ${ DRIVE_APP_NAME } üzerinde şifrelenmiş ve güvenli olarak tutulur."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Dosyalarınız Google Drive üzerinden ${ DRIVE_APP_NAME } üzerine aktarıldı ve şifrelendi."
       ],
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
@@ -16358,6 +16370,9 @@
       ],
       "Reserved email address": [
         "Ayırtılmış e-posta adresi"
+      ],
+      "Restrict sign-in to email address": [
+        "Oturum açma e-posta adresi ile kısıtlansın"
       ],
       "Restrict sign-in to primary email address": [
         "Oturum açma birincil e-posta adresi ile kısıtlansın"
@@ -27981,6 +27996,9 @@
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
       ],
+      "Your import is finished!": [
+        "İçe aktarma işleminiz tamamlandı!"
+      ],
       "Your plan": [
         "Tarifeniz"
       ],
@@ -28457,6 +28475,9 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Bir e-postayı İstenmeyen kutusuna taşımanız göndericinin e-posta listesinden otomatik olarak ayrılmanızı sağlar."
+      ],
+      "Your ${ DRIVE_APP_NAME } storage is almost full": [
+        "${ DRIVE_APP_NAME } depolama alanınız dolmak üzere"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "${ MAIL_APP_NAME } gelen kutunuz dolmak üzere"

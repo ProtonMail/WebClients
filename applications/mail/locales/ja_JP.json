@@ -39,6 +39,9 @@
       "A to Z": [
         "A～Z"
       ],
+      "About ${ name }": [
+        "${ name } について"
+      ],
       "Activate": [
         "有効化"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }を追加"
+      ],
+      "Add ${ name }": [
+        "${ name } を追加"
       ],
       "Add a payment method": [
         "お支払い方法を追加"
@@ -353,6 +359,9 @@
       ],
       "Copy version number to clipboard": [
         "バージョン番号をクリップボードにコピー"
+      ],
+      "Create a booking page": [
+        "予約ページを作成"
       ],
       "Create a new contact group": [
         "新規連絡先グループを作成"
@@ -4226,6 +4235,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "メールの往復をすることなく、相手がメールから直接あなたの予定を予約できるようにします。"
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "イベントの招待状に会議リンクを即座に追加できます。"
       ],
@@ -7053,6 +7065,12 @@
       "Are you sure you want to permanently delete this message?": [
         "このメッセージを完全に削除してよろしいですか？"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "管理者にプランのアップグレードを依頼するか、${ CALENDAR_APP_NAME } の「予約ページ」サイドバーからページを削除してください。"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "管理者に、プランをアップグレードしていただくか、予約ページサイドバーからページを削除していただくよう依頼してください。"
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "少なくとも ${ BETTER_PASSWORD_LENGTH } 文字以上"
       ],
@@ -7614,6 +7632,9 @@
       "here": [
         "こちら"
       ],
+      "Here is my availability:": [
+        "私の空き時間は以下のとおりです:"
+      ],
       "Here's what happens when you continue:": [
         "続行すると、次の処理が行われます:"
       ],
@@ -7961,6 +7982,9 @@
       ],
       "No action selected": [
         "アクションが選択されていません"
+      ],
+      "No booking pages yet": [
+        "予約ページはまだありません"
       ],
       "No change will be made to the selected emails": [
         "選択されたメールには変更は加えられません。"
@@ -8841,6 +8865,18 @@
       "to ${ destinationElement } folder.": [
         "${ destinationElement } フォルダへ"
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "新しい予約ページを追加するには、管理者にお客様のプランをアップグレードするよう依頼してください。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "新しい予約ページを追加するには、${ CALENDAR_APP_NAME } の「予約ページ」サイドバーから既存のページを削除してください。"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "新しい予約ページを追加するには、予約ページサイドバーから既存のページを削除してください。"
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "新しい予約ページを追加するには、お客様のプランをアップグレードしてください。"
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "ブラウザでタブを開いて脱線することを避けるには、デスクトップアプリを使用してください。"
       ],
@@ -9342,6 +9378,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "連絡先グループのアドレス数の上限に達しました。"
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "このプランで利用できる予約ページの最大数に達しました。"
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
       ],
@@ -9776,6 +9815,9 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } 文字"
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } アシスタント"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } ライティングアシスタント"
       ],
@@ -9802,6 +9844,9 @@
       ],
       "Active filter:": [
         "有効なフィルター:"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "メールに予約ページを追加して、相手が都合の良い時間を選べるようにします。"
       ],
       "Add email address": [
         "メールアドレスの追加"
@@ -9898,6 +9943,9 @@
       ],
       "Blind Carbon Copy": [
         "ブラインドカーボンコピー"
+      ],
+      "Booking page": [
+        "予約ページ"
       ],
       "Bookings, billings, and orders": [
         "予約、請求、注文"
@@ -13170,6 +13218,9 @@
       "Billing Country": [
         "請求先の国"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "サブスクリプションの利用中は Born Private アカウントを購入することはできません。"
+      ],
       "Buying credits requires a separate purchase.": [
         "クレジットの購入には、別途個別のお手続きが必要です。"
       ],
@@ -13256,6 +13307,9 @@
       ],
       "terms and conditions": [
         "利用規約"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private プログラムに参加するには寄付が必要です。"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "この割引は ${ renewalsWithCoupon } の更新で有効です。"
@@ -13347,11 +13401,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "お客様はすでに ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } を所有しています。"
       ],
+      "You already own a Born Private account.": [
+        "お客様はすでに Born Private アカウントを所有しています。"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへ転送されます。"
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "お使いのアカウントは、Born Private プログラムの対象期間より前に作成されています。"
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "${ IDEAL_WERO_BRAND_NAME } はユーロでの支払いにのみ対応しているため、通貨がユーロ (€) に変更されました。"
@@ -15263,6 +15323,12 @@
       "${ elementsCount } message removed from Starred.": [
         "${ elementsCount } 件のメッセージがスター付きから削除されました。"
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } アシスタントが無効になりました"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } アシスタントが有効になりました"
+      ],
       "Address copied to clipboard": [
         "アドレスをコピーしました"
       ],
@@ -15813,6 +15879,9 @@
       "Cannot add more addresses": [
         "これ以上アドレスを追加できません"
       ],
+      "Cannot create more Booking pages": [
+        "予約ページはこれ以上作成できません"
+      ],
       "Carbon Copy": [
         "カーボンコピー"
       ],
@@ -16148,6 +16217,9 @@
       ],
       "Information exposed in breach": [
         "侵害で漏洩した情報"
+      ],
+      "Insert a booking page": [
+        "予約ページを挿入"
       ],
       "Insert contacts": [
         "連絡先を挿入"
@@ -16550,6 +16622,9 @@
       ],
       "Settings": [
         "設定"
+      ],
+      "Share your availability": [
+        "空き時間を共有"
       ],
       "Share your calendar with your team": [
         "カレンダーをチームと共有"

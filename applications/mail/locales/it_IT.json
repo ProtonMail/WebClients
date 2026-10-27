@@ -39,6 +39,9 @@
       "A to Z": [
         "Dalla A alla Z"
       ],
+      "About ${ name }": [
+        "Informazioni su ${ name }"
+      ],
       "Activate": [
         "Attiva"
       ],
@@ -53,6 +56,12 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Aggiungi ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Aggiungi ${ name }"
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
       ],
       "Add account": [
         "Aggiungi un account"
@@ -86,6 +95,9 @@
       ],
       "Add group": [
         "Aggiungi un gruppo"
+      ],
+      "Add more details": [
+        "Aggiungi ulteriori dettagli"
       ],
       "Add new group": [
         "Aggiungi un nuovo gruppo"
@@ -349,6 +361,9 @@
       "Copy version number to clipboard": [
         "Copia il numero di versione negli appunti"
       ],
+      "Create a booking page": [
+        "Crea pagina di prenotazione"
+      ],
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
       ],
@@ -458,6 +473,9 @@
       ],
       "Display navigation bar": [
         "Visualizza la barra di navigazione"
+      ],
+      "Dock to side panel": [
+        "Agganciare al pannello laterale"
       ],
       "Don't show this offer again": [
         "Non mostrare più quest'offerta"
@@ -674,6 +692,9 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ],
       "Got it": [
         "Ho capito"
@@ -1720,6 +1741,9 @@
       "Yes, I'll attend": [
         "Sì, parteciperò"
       ],
+      "Yes, organize it": [
+        "Sì, organizzalo"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
@@ -1746,6 +1770,16 @@
     "action": {
       "Search messages": [
         "Cerca nei messaggi"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "Rinomina ${ folder } in…"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Rinomina ${ label } in…"
       ]
     },
     "Action: Sheets": {
@@ -2070,6 +2104,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gestore di password premium"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanzia di rimborso entro 30 giorni: annulla l'ordine entro 30 giorni dall'acquisto e contatta il nostro servizio clienti ${ customerSupportLink } per ottenere un rimborso."
       ]
     },
     "BF2024: Deal details": {
@@ -4207,11 +4246,17 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Consenti ai clienti di prenotare un appuntamento con te direttamente dalle tue e-mail, senza bisogno di scambi di messaggi."
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Ti consente di aggiungere immediatamente i link per le riunioni ai tuoi inviti a un evento."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Unione dei contatti in corso... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
+      ],
+      "Move emails to the right category to improve categorization.": [
+        "Sposta le e-mail nella categoria corretta per migliorare la classificazione."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "Nuove email da ${ senderEmailAddress } e ${ otherSendersCount } altro non saranno consegnate e verranno eliminate definitivamente.",
@@ -4695,6 +4740,9 @@
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai su Impostazioni > Identità e indirizzi > Dominio breve (pm.me)"
+      ],
+      "A contact with this email address already exists": [
+        "Esiste già un contatto con questo indirizzo e-mail"
       ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
@@ -5717,6 +5765,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Hai delle fatture non pagate. Si prega di pagarle prima di aderire ad un piano famiglia."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ti invitiamo a collegare il tuo account ${ BRAND_NAME } a questo gruppo familiare e a usufruire di tutte le sue funzionalità premium."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Il tuo account ha più indirizzi email rispetto alla disponibilità di questo piano. ${ addressSettingsLink }"
       ],
@@ -5777,6 +5828,12 @@
       ],
       "Security key": [
         "Chiave di sicurezza"
+      ],
+      "Still waiting?": [
+        "Stai ancora aspettando?"
+      ],
+      "Touch your security key to continue.": [
+        "Tocca la tua chiave di sicurezza per continuare."
       ]
     },
     "fido2: Label": {
@@ -6817,6 +6874,12 @@
         "${ subscription.UnreadMessageCount } non letto",
         "${ subscription.UnreadMessageCount } non letti"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per evitare di perdere l'accesso. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per mantenere l'abbonamento. ${ learnMoreLink }"
+      ],
       "${ total } conversation": [
         "${ total } conversazione",
         "${ total } conversazioni"
@@ -6895,8 +6958,14 @@
       "1 vault per user": [
         "1 cassaforte per utente"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanzia di rimborso entro 30 giorni: annulla l'ordine entro 30 giorni dall'acquisto e contatta il nostro servizio clienti ${ customerSupportLink } per ottenere un rimborso."
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Ecco una breve panoramica di ciò che posso fare per te riguardo alla tua casella di posta, dalla ricerca di vecchi messaggi alla stesura delle risposte, e di ciò che invece non posso fare."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Verrà inviata una richiesta di disiscrizione dalla mailing list al mittente della newsletter, verrà elaborata automaticamente."
@@ -6934,8 +7003,17 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Aggiungi ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ contact } to your contacts": [
+        "Aggiungi ${ contact } ai tuoi contatti"
+      ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Aggiungi ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Aggiungi un contatto"
+      ],
+      "Add contact": [
+        "Aggiungi contatto"
       ],
       "Add image URL": [
         "Aggiungi URL immagine"
@@ -7081,6 +7159,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Sei sicuro di voler eliminare definitivamente questo messaggio?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Chiedi al tuo amministratore di effettuare l’upgrade al piano o di rimuovere una pagina dalla barra laterale delle pagine di prenotazione."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Almeno ${ BETTER_PASSWORD_LENGTH } caratteri"
       ],
@@ -7153,8 +7234,23 @@
       "Center": [
         "Centra"
       ],
+      "Change a display setting": [
+        "Modifica un'impostazione dello schermo"
+      ],
       "Change display setting": [
         "Modifica delle impostazioni di visualizzazione"
+      ],
+      "Change how your mail is grouped": [
+        "Modifica il modo in cui vengono raggruppate le tue e-mail"
+      ],
+      "Change your list density": [
+        "Modifica la densità dell'elenco"
+      ],
+      "Change your mailbox layout": [
+        "Modifica la struttura della tua casella di posta"
+      ],
+      "Change your theme": [
+        "Cambia il tema"
       ],
       "Checked Proton support": [
         "Consultato il supporto Proton."
@@ -7229,8 +7325,17 @@
         "Crea ${ calendarsToBeCreatedCount } nuovo calendario",
         "Crea ${ calendarsToBeCreatedCount } nuovi calendari"
       ],
+      "Create a filter": [
+        "Creare un filtro"
+      ],
+      "Create a folder": [
+        "Crea una cartella"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Crea una cartella come \"${ suggestedFolderName }\" per tenere tutte le tue ricevute online in un unico posto."
+      ],
+      "Create a label": [
+        "Crea un'etichetta"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le cartelle che desideri importare."
@@ -7244,6 +7349,9 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Crea un cloud sicuro per ${ memberCount } membro",
         "Crea un cloud sicuro per ${ memberCount } membri"
+      ],
+      "Create filter": [
+        "Crea filtro"
       ],
       "Create folder": [
         "Crea una cartella"
@@ -7333,6 +7441,12 @@
       "Do you want to re-sign the contact details?": [
         "Desideri firmare nuovamente i dettagli del contatto?"
       ],
+      "Document in foundation-search index": [
+        "Documento nell'indice di ricerca delle fondazioni"
+      ],
+      "Document lookup failed": [
+        "Impossibile trovare il documento"
+      ],
       "Don't forget to share the password with the recipient": [
         "Non dimenticare di condividere la tua password con il destinatario"
       ],
@@ -7369,11 +7483,29 @@
       "Draft": [
         "Bozza"
       ],
+      "Draft a ${ kind }": [
+        "Redigi un ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Redigi un ${ kind } a ${ recipient }"
+      ],
+      "Draft an ${ kind }": [
+        "Redigi un ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Redigi un ${ kind }a ${ recipient }"
+      ],
       "Draft discarded": [
         "Bozza scartata"
       ],
       "Draft saved.": [
         "Bozza salvata."
+      ],
+      "Drafted a ${ kind }": [
+        "Redatto un ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Redatto un ${ kind }"
       ],
       "Drop file here to upload": [
         "Trascina qui i file da caricare."
@@ -7395,6 +7527,15 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gestisci facilmente e annulla l'iscrizione a newsletter e mailing list."
+      ],
+      "Edit ${ contact }": [
+        "Modifica ${ contact }"
+      ],
+      "Edit a contact": [
+        "Modifica di un contatto"
+      ],
+      "Edit contact": [
+        "Modifica contatto"
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
@@ -7548,6 +7689,9 @@
       "Forgot password?": [
         "Hai dimenticato la password?"
       ],
+      "forward": [
+        "avanti"
+      ],
       "Found ${ count } contact": [
         "Trovato ${ count } contatto",
         "Trovati ${ count } contatti"
@@ -7591,8 +7735,23 @@
       "here": [
         "qui"
       ],
+      "Here is my availability:": [
+        "Ecco la mia disponibilità:"
+      ],
       "Here's what happens when you continue:": [
         "Ecco cosa succede se continui:"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Ehi Lumo, dai un'occhiata a cosa ricevo più spesso nella mia casella di posta, alle cartelle e ai filtri che ho già impostato, poi suggeriscimi come mantenerla organizzata: cosa cambiare in quelli che ho già e se c'è qualcosa di nuovo che vale la pena aggiungere. Spiegami prima il piano e non spostare nulla finché non ti darò il via libera."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Ehi Lumo, sto per partire e vorrei impostare un messaggio di assenza dall'ufficio. Chiedimi le date e cosa deve dire, poi mostrami il messaggio prima di attivarlo."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Ehi Lumo, cerca le mie e-mail degli ultimi 7 giorni e dimmi quali richiedono effettivamente una mia risposta. Fammi sapere in breve di cosa si tratta in ciascuna di esse e tralascia tutto ciò che posso ignorare."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Ehi Lumo, spiegami come puoi aiutarmi con la mia casella di posta. Che tipo di cose posso chiederti di fare e in cosa non puoi aiutarmi?"
       ],
       "Hide original message": [
         "Nascondi il messaggio originale"
@@ -7602,6 +7761,12 @@
       ],
       "How hide-my-email aliases works": [
         "Come funzionano gli alias Hide-my-email"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Darò un'occhiata alla posta della settimana scorsa e selezionerò ciò a cui è davvero necessario rispondere, così potrai occupartene tutto in una volta sola."
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Darò un'occhiata a ciò che ricevi più spesso e alle cartelle e ai filtri che hai già, poi ti suggerirò cosa migliorare e cosa manca. Non cambierò nulla finché non me lo dirai tu."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Sto inviando questo messaggio ad un utente non-${ MAIL_APP_NAME }."
@@ -7727,6 +7892,12 @@
       "Key fingerprint": [
         "Impronta digitale della chiave"
       ],
+      "Label ${ emails }": [
+        "Etichetta ${ emails }"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Assegna a ${ emails } il nome ${ names }"
+      ],
       "Label all imported messages as": [
         "Etichetta tutti i messaggi importati come"
       ],
@@ -7772,6 +7943,9 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Ricerca del documento ${ lookup.result.docId }"
+      ],
       "Low Priority": [
         "Priorità bassa"
       ],
@@ -7784,6 +7958,12 @@
       "Manage your labels": [
         "Gestisci le tue etichette"
       ],
+      "Mark ${ emails } as read": [
+        "Contrassegna ${ emails } come letti"
+      ],
+      "Mark ${ emails } as unread": [
+        "Contrassegna ${ emails } come non letti"
+      ],
       "Mark all as read": [
         "Segna tutti come letti"
       ],
@@ -7795,6 +7975,12 @@
       ],
       "Mark as unread": [
         "Segna come non letto"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Contrassegna l'intero contenuto di ${ place } come letto"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Contrassegna l'intero contenuto di ${ place } come non letto"
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -7865,8 +8051,17 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La maggior parte delle reti WiFi pubbliche sono sicure, ma alcune sono carenti di sicurezza, esponendoti a minacce informatiche. Una VPN crittografa il tuo traffico, mantenendoti protetto."
       ],
+      "Move ${ emails }": [
+        "Sposta ${ emails }"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "Sposta ${ emails } in ${ destination }"
+      ],
       "Move emails": [
         "Sposta e-mail"
+      ],
+      "Move here": [
+        "Sposta qui"
       ],
       "Move to Primary": [
         "Sposta in Principale"
@@ -7886,6 +8081,9 @@
       "No action selected": [
         "Nessuna azione selezionata"
       ],
+      "No booking pages yet": [
+        "Non ci sono ancora pagine di prenotazione"
+      ],
       "No change will be made to the selected emails": [
         "Alle email selezionate non verranno apportate modifiche"
       ],
@@ -7898,11 +8096,17 @@
       "No conversation to read": [
         "Nessuna conversazione da leggere"
       ],
+      "No draft open": [
+        "Non ci sono bozze aperte"
+      ],
       "No email address": [
         "Nessun indirizzo email"
       ],
       "No email open": [
         "Nessuna email aperta"
+      ],
+      "No emails selected": [
+        "Nessuna e-mail selezionata"
       ],
       "No folder found": [
         "Nessuna cartella trovata"
@@ -7921,6 +8125,9 @@
       ],
       "No links cleaned": [
         "Nessun link ripulito"
+      ],
+      "No location selected": [
+        "Nessuna posizione selezionata"
       ],
       "No messages to show": [
         "Nessun messaggio da mostrare"
@@ -7955,6 +8162,12 @@
       "Not connected": [
         "Non connesso"
       ],
+      "Not found in the encrypted search index.": [
+        "Non trovato nell'indice di ricerca crittografato."
+      ],
+      "Not found in the foundation-search index.": [
+        "Non presente nell'indice di ricerca della fondazione."
+      ],
       "Not supported by this browser": [
         "Non supportato da questo browser"
       ],
@@ -7979,6 +8192,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o più chiavi attendibili sono state contrassegnate come \"compromesse\" dal loro proprietario. Ti consigliamo di \"non considerare attendibili\" queste chiavi."
       ],
+      "open draft": [
+        "bozza aperta"
+      ],
       "Open shortcut cheat sheet": [
         "Apri le istruzioni per le scorciatoie"
       ],
@@ -7987,6 +8203,9 @@
       ],
       "Opened ${ location }": [
         "Inaugurato a ${ location }"
+      ],
+      "Opened a draft": [
+        "Ho aperto una bozza"
       ],
       "Opened a problem report": [
         "È stata aperta una segnalazione di problema"
@@ -8172,11 +8391,33 @@
         "Leggi ${ count } messaggio in questa conversazione",
         "Leggi ${ count } messaggi in questa conversazione"
       ],
+      "Read ${ count } open draft": [
+        "Leggi ${ count } bozza aperta",
+        "Leggi ${ count } bozze aperte"
+      ],
+      "Read draft \"${ subject }\"": [
+        "Leggi la bozza “${ subject }”"
+      ],
       "Read open email “${ subject }”": [
         "Leggi l'email aperta \"${ subject }\""
       ],
+      "Read the open draft": [
+        "Leggi la bozza aperta"
+      ],
+      "Read your auto-reply": [
+        "Leggi la tua risposta automatica"
+      ],
       "Read your display settings": [
         "Leggi le impostazioni dello schermo"
+      ],
+      "Read your signature": [
+        "Leggi la tua firma"
+      ],
+      "Readdressed": [
+        "Rinviato"
+      ],
+      "Readdressed the draft": [
+        "Si è proceduto a una revisione della bozza"
       ],
       "Recipient: ": [
         "Destinatario: "
@@ -8199,8 +8440,32 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Ricordati di aggiornarlo nel tuo gestore di password o dove conservi il tuo account e le informazioni di accesso."
       ],
+      "Remove signature": [
+        "Rimuovi firma"
+      ],
+      "Remove the star from ${ emails }": [
+        "Rimuovi l'asterisco da ${ emails }"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Rimuove tutti i dati associati a questa app (inclusi i messaggi scaricati, …)"
+      ],
+      "Rename folder": [
+        "Rinomina cartella"
+      ],
+      "Rename label": [
+        "Rinomina etichetta"
+      ],
+      "Rename this folder": [
+        "Rinomina cartella"
+      ],
+      "Rename this label": [
+        "RInomina questa etichetta"
+      ],
+      "reply": [
+        "rispondi"
+      ],
+      "reply all": [
+        "Rispondi a tutti"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Sei sicuro voler segnalare questo messaggio come tentativo di phishing? Il contenuto del messaggio verrà visionato integralmente e analizzato per migliorare i filtri."
@@ -8210,6 +8475,24 @@
       ],
       "Restore": [
         "Ripristina"
+      ],
+      "Results came from the local search.": [
+        "I risultati provengono dalla ricerca locale."
+      ],
+      "Results came from the server.": [
+        "I risultati sono stati inviati dal server."
+      ],
+      "Revise the ${ draft }": [
+        "Revisiona il ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Riscritto e rindirizzato"
+      ],
+      "Rewrote and readdressed the draft": [
+        "Ho riscritto e rielaborato la bozza"
+      ],
+      "Rewrote the draft": [
+        "Ho riscritto la bozza"
       ],
       "Right to Left": [
         "Da destra a sinistra"
@@ -8323,8 +8606,20 @@
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Imposta ${ MAIL_APP_NAME } come applicazione mail predefinita. ${ MAIL_APP_NAME } si aprirà automaticamente quando clicchi su un collegamento di posta."
       ],
+      "Set auto-reply": [
+        "Imposta risposta automatica"
+      ],
+      "Set my out of office": [
+        "Imposta la mia assenza dall'ufficio"
+      ],
+      "Set signature": [
+        "Imposta firma"
+      ],
       "Set up your organization": [
         "Configura la tua organizzazione"
+      ],
+      "Set your signature": [
+        "Imposta la tua firma"
       ],
       "Setting up ${ feature }…": [
         "Configurazione di ${ feature }…"
@@ -8370,6 +8665,12 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Siamo spiacenti, questo messaggio non esiste o è già scaduto."
+      ],
+      "Source document in encrypted search index": [
+        "Documento sorgente nell'indice di ricerca crittografato"
+      ],
+      "Star ${ emails }": [
+        "Importante ${ emails }"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
@@ -8422,6 +8723,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Sincronizza e gestisci i file con l'app ${ DRIVE_APP_NAME }.\nCrea e condividi documenti in ${ DOCS_APP_NAME }, e archiviali in sicurezza. Sia su ${ ios }, ${ android } e ${ desktop }"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Dimmi quando sarai assente e cosa vorresti che dicesse, e potrai vedere il risultato completo prima che venga salvato."
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporaneamente non disponibile a causa dell'elevato traffico. Riprova più tardi."
@@ -8648,8 +8952,20 @@
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
       ],
+      "Tidy up my inbox": [
+        "Metti in ordine la mia casella di posta"
+      ],
       "to ${ destinationElement } folder.": [
         "nella cartella ${ destinationElement }."
+      ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Per aggiungere una nuova pagina di prenotazione, chiedi al tuo amministratore di effettuare l\"upgrade del tuo piano."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Per aggiungere una nuova pagina di prenotazione, rimuovi una esistente dalla barra laterale delle pagine di prenotazione."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Per aggiungere una nuova pagina di prenotazione, effettua l'upgrade del tuo piano."
       ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Per evitare di essere disturbati dalle schede aperte nel tuo browser, usa l'app desktop."
@@ -8720,8 +9036,20 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
       ],
+      "Turn off auto-reply": [
+        "Disattiva la risposta automatica"
+      ],
+      "Turn off your away message": [
+        "Disattiva il messaggio di assenza"
+      ],
+      "Turn on your away message": [
+        "Attiva il messaggio di assenza"
+      ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Impossibile accedere alle funzionalità di archiviazione in questo browser, abbiamo bisogno di questo accesso per abilitare la ricerca del contenuto dei messaggi."
+      ],
+      "UnionPay logo": [
+        "Logo UnionPay"
       ],
       "Unlock message": [
         "Sblocca messaggio"
@@ -8740,6 +9068,12 @@
       ],
       "Unsupported file": [
         "File non supportato"
+      ],
+      "Update the filter ${ filter }": [
+        "Aggiorna il filtro ${ filter }"
+      ],
+      "Update this filter": [
+        "Aggiorna questo filtro"
       ],
       "Updating message content search...": [
         "Aggiornamento della ricerca nel contenuto dei messaggi..."
@@ -8897,6 +9231,12 @@
       "Week": [
         "Settimana"
       ],
+      "What can you do?": [
+        "Cosa puoi fare?"
+      ],
+      "What needs handling?": [
+        "Cosa bisogna gestire?"
+      ],
       "When do you want your message to be automatically deleted from the recipient's inbox and your sent folder?": [
         "Quando vorresti che il messaggio venga automaticamente eliminato dalla cartella posta in arrivo del destinatario e dalla tua cartella inviati?"
       ],
@@ -9046,6 +9386,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Hai un abbonamento di prova a ${ planTitle }. In questo momento non è richiesto alcun pagamento. Il tuo abbonamento verrà rinnovato automaticamente al termine del periodo di prova."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Hai una fattura in sospeso ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Hai una fattura in sospeso con scadenza il ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no conversations in this category": [
         "Non hai conversazioni in questa categoria"
       ],
@@ -9136,6 +9482,9 @@
       "You've reached the maximum number of addresses in the contact group.": [
         "Hai raggiunto il numero massimo d'indirizzi nel gruppo di contatti."
       ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Hai raggiunto il numero massimo di calendari disponibili nel tuo piano."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
@@ -9165,6 +9514,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Il periodo di prova gratuito è terminato. Abbonati subito per garantire al tuo team un accesso ininterrotto e la sicurezza degli account."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "La tua prova gratuita è stata convertita con successo in un abbonamento di ${ cycle } mesi. La tua data di rinnovo è ${ nextBillingDate }."
@@ -9359,6 +9711,9 @@
       "Cancel / close": [
         "Annulla / chiudi"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Chiudi ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Chiudi bozza"
       ],
@@ -9458,6 +9813,9 @@
       "New message": [
         "Scrivi un messaggio"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Apri ${ LUMO_SHORT_APP_NAME } / metti in primo piano l'input"
+      ],
       "Open command panel": [
         "Apri il pannello dei comandi"
       ],
@@ -9515,6 +9873,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "Scorciatoie per ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Action shortcuts": [
         "Tasti di scelta rapida"
       ],
@@ -9567,6 +9928,9 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } caratteri"
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } assistente"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -9594,6 +9958,9 @@
       ],
       "Active filter:": [
         "Filtro attivo:"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Aggiungi una pagina di prenotazione alla tua e-mail e consenti alle persone di scegliere l'orario che preferiscono."
       ],
       "Add email address": [
         "Aggiungi indirizzo email"
@@ -9676,6 +10043,9 @@
       "Automated confirmations and alerts": [
         "Conferme e avvisi automatici"
       ],
+      "Away message": [
+        "Tono messaggio"
+      ],
       "BCC": [
         "CCN"
       ],
@@ -9687,6 +10057,9 @@
       ],
       "Blind Carbon Copy": [
         "Copia conoscenza nascosta"
+      ],
+      "Booking page": [
+        "Pagina prenotazione"
       ],
       "Bookings, billings, and orders": [
         "Prenotazioni, fatturazioni e ordini"
@@ -9732,6 +10105,9 @@
       ],
       "CC": [
         "CC"
+      ],
+      "Cc": [
+        "Cc"
       ],
       "Choose what to do instead": [
         "Scegli che altro fare"
@@ -9973,6 +10349,12 @@
       "From": [
         "Da"
       ],
+      "From date": [
+        "Dalla data"
+      ],
+      "From time": [
+        "Dall’ora"
+      ],
       "From:": [
         "Da:"
       ],
@@ -10164,6 +10546,9 @@
       ],
       "Never fill on this exact URL": [
         "Non compilare mai su questo URL esatto"
+      ],
+      "New name": [
+        "Nuovo nome"
       ],
       "New password": [
         "Nuova password"
@@ -10441,6 +10826,9 @@
       "Time": [
         "Ora"
       ],
+      "To": [
+        "A"
+      ],
       "To:": [
         "A:"
       ],
@@ -10467,6 +10855,12 @@
       ],
       "Unsubscribed from ${ truncatedName }.": [
         "L'abbonamento a ${ truncatedName } è annullato."
+      ],
+      "Until date": [
+        "Fino alla data"
+      ],
+      "Until time": [
+        "Fino a ora"
       ],
       "Updates": [
         "Aggiornamenti"
@@ -10671,6 +11065,12 @@
       "Add a gift code": [
         "Aggiungi un codice regalo"
       ],
+      "Add formatting, links or images": [
+        "Aggiungi formattazione, link o immagini"
+      ],
+      "Advanced auto-reply options": [
+        "Opzioni avanzate di risposta automatica"
+      ],
       "All mail": [
         "Tutta la posta"
       ],
@@ -10694,6 +11094,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Crea un nuovo calendario per gestire i tuoi inviti"
+      ],
+      "Customer Support": [
+        "Assistenza clienti"
       ],
       "Deleted": [
         "Eliminato"
@@ -10808,6 +11211,9 @@
       ],
       "Pay invoice": [
         "Pagamento della fattura"
+      ],
+      "Pay it": [
+        "Paga"
       ],
       "Privacy policy": [
         "Informativa sulla privacy"
@@ -11854,6 +12260,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } che termina con ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB di archiviazione cloud che ti consente di archiviare, sincronizzare e condividere i file facilmente. Protetto da crittografia end-to-end."
       ],
@@ -12306,6 +12715,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Ultima chance per approfittare dell'80% di sconto sul tuo primo mese di ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "È l'ultima occasione per ottenere il primo mese di ${ plan } a questo prezzo."
+      ],
       "Last day to save": [
         "Ultimo giorno per risparmiare"
       ],
@@ -12387,6 +12799,9 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Short @pm.me address": [
+        "Indirizzo email breve @pm.me"
       ],
       "Storage": [
         "Archiviazione"
@@ -12579,6 +12994,21 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visita il nostro ${ helpCenterLink } o ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Aggiungi un metodo di pagamento** per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puoi disdire in qualsiasi momento prima di allora.** Potrai utilizzare ${ planTitle } gratuitamente fino al termine del periodo di prova."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Se decidi di continuare dopo il periodo di prova,** puoi annullare l'abbonamento entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Una volta che l'abbonamento completo avrà inizio...** Potrai comunque disdirlo entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Annulla in qualsiasi momento prima del ${ cancelDate }."
       ],
@@ -12594,11 +13024,20 @@
       "help center": [
         "centro assistenza"
       ],
+      "If you continue after your trial,": [
+        "Se decidi di continuare dopo il periodo di prova,"
+      ],
       "If you need help,": [
         "Se hai bisogno di aiuto,"
       ],
       "Once your full subscription starts...": [
         "Una volta iniziato l'abbonamento completo..."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "È possibile recedere dal contratto entro 30 giorni e ottenere un rimborso proporzionale."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Puoi ancora annullare entro 30 giorni e ottenere un rimborso proporzionale."
@@ -12909,6 +13348,9 @@
       "Billing Country": [
         "Paese di fatturazione"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Gli account Born Private non possono essere acquistati se si dispone di un abbonamento attivo."
+      ],
       "Buying credits requires a separate purchase.": [
         "L'acquisto dei crediti richiede un acquisto separato."
       ],
@@ -12963,6 +13405,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Serve un metodo di pagamento per attivare l'abbonamento una volta terminata la prova."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Il cambio di piano non è compatibile per i seguenti motivi:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Ti preghiamo di chiudere eventuali conti aggiuntivi del portafoglio prima di cambiare piano."
       ],
@@ -12971,6 +13416,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "I posti a sedere al Proton Meet devono corrispondere al numero dei partecipanti."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "I prezzi di rinnovo sono soggetti a modifiche in base a ${ termsAndConditionsLink }."
@@ -12989,6 +13437,9 @@
       ],
       "terms and conditions": [
         "Termini e Condizioni"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "L'iniziativa “Born Private” richiede una donazione."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Lo sconto è valido per ${ renewalsWithCoupon } rinnovo.",
@@ -13044,8 +13495,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Questo piano non supporta le funzionalità gestite del tuo account."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Questo piano non include l'assistenza per gli utenti associati al tuo account."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Al momento non è possibile completare l'iscrizione. Riprova più tardi."
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
@@ -13080,11 +13537,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Possiedi già ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Hai già un account Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
       "You will soon be redirected to verify your payment.": [
         "Sarai presto reindirizzato per verificare il pagamento."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Il tuo account è troppo vecchio per partecipare all'iniziativa Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
@@ -13130,12 +13593,22 @@
         "Qualcosa è andato storto. La verifica di Google Pay non è riuscita."
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Confermando, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a prelevare i futuri pagamenti relativi al tuo abbonamento da questo conto corrente tramite addebito diretto SEPA, e la tua banca ad addebitare tali importi. Il tuo primo pagamento viene effettuato ora da ${ IDEAL_WERO_BRAND_NAME }. Il tuo abbonamento si rinnova automaticamente fino a quando non lo disdici; ti avviseremo prima di ogni addebito. Per gli addebiti diretti, puoi richiedere un rimborso alla tua banca entro 8 settimane dalla data dell'addebito, secondo i termini del contratto stipulato con la tua banca. Ciò non si applica al pagamento di ${ IDEAL_WERO_BRAND_NAME } che stai effettuando ora."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
       ],
       "Credits will be added to your balance": [
         "I crediti verranno aggiunti al tuo saldo."
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modifica dell'indirizzo di fatturazione potrebbe influire sulle imposte relative alle fatture future."
       ]
     },
     "Payments.ModificationWarning": {
@@ -13175,6 +13648,12 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carta che termina con ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bonifico bancario - ${ iban }"
+      ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - carta che termina con ${ Last4 }"
       ]
@@ -14150,6 +14629,12 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } email → ${ wakeTime }",
         "${ count } email → ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Silenzia ${ emails }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "Posticipa ${ emails } fino alle ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -15041,6 +15526,12 @@
         "${ elementsCount } messaggio rimosso da Speciali.",
         "${ elementsCount } messaggi rimossi da Speciali."
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME }: assistente disattivato"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME }: assistente abilitato"
+      ],
       "Address copied to clipboard": [
         "Indirizzo copiato negli appunti"
       ],
@@ -15609,6 +16100,9 @@
       "Cannot add more addresses": [
         "Impossibile aggiungere più indirizzi"
       ],
+      "Cannot create more Booking pages": [
+        "Impossibile creare altre pagine di prenotazione"
+      ],
       "Carbon Copy": [
         "Copia conoscenza"
       ],
@@ -15948,6 +16442,9 @@
       "Information exposed in breach": [
         "Informazioni esposte in caso di violazioni"
       ],
+      "Insert a booking page": [
+        "Inserisci una pagina di prenotazione"
+      ],
       "Insert contacts": [
         "Inserisci dei contatti"
       ],
@@ -15984,6 +16481,12 @@
       ],
       "Make a secure connection your default": [
         "Rendi la connessione sicura la tua connessione predefinita"
+      ],
+      "Make Categories work better for you": [
+        "Ottimizza l'uso delle categorie"
+      ],
+      "Make your inbox your own": [
+        "Personalizza la tua casella di posta"
       ],
       "Mark all messages as read": [
         "Segna tutti i messaggi come letti"
@@ -16345,6 +16848,9 @@
       "Settings": [
         "Impostazioni"
       ],
+      "Share your availability": [
+        "Condividi la tua disponibilità"
+      ],
       "Share your calendar with your team": [
         "Condividi il tuo calendario con il tuo team"
       ],
@@ -16383,6 +16889,9 @@
       ],
       "Subject missing": [
         "Soggetto mancante"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abbonati a ${ planTitle }"
       ],
       "Subscription canceled": [
         "Abbonamento annullato"
@@ -16749,8 +17258,14 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Questo utente otterrà i diritti di amministratore al prossimo accesso."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Passa a un piano supportato per utilizzare i ruoli amministratore"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Non puoi modificare i tuoi ruoli. Chiedi a un altro amministratore di modificarli."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."

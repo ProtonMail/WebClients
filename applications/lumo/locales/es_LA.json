@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Acerca de ${ name }"
+      ],
       "Accept dictation": [
         "Aceptar dictado"
       ],
@@ -16,6 +19,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Añadir ${ name }"
       ],
       "Add account": [
         "Agregar una cuenta"
@@ -405,6 +411,9 @@
       ],
       "Take a tour": [
         "Explore ahora"
+      ],
+      "Top up": [
+        "Recargar"
       ],
       "Try again": [
         "Volver a intentar"
@@ -1452,9 +1461,6 @@
       "After you continue, Apertus will appear as the selected model in the model menu. You can use that menu to switch to another model at any time.": [
         "Después de continuar, Apertus aparecerá como el modelo seleccionado en el menú de modelos. Puede usar ese menú para cambiar a otro modelo en cualquier momento."
       ],
-      "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
-        "Las claves de API le permiten acceder a ${ LUMO_SHORT_APP_NAME } mediante programación. Cada clave se muestra solo una vez al momento de su creación."
-      ],
       "Choose the language you speak when using dictation.": [
         "Elija el idioma que habla cuando use el dictado."
       ],
@@ -1920,24 +1926,12 @@
       "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space. When it fills up, older messages are summarized — not deleted — so you can keep chatting. Your full chat history stays in the conversation.": [
         "${ LUMO_SHORT_APP_NAME } puede procesar una cantidad limitada de información por conversación. Esto muestra qué está usando ese espacio actualmente. Cuando se llena, los mensajes más antiguos se resumen (no se eliminan) para que pueda seguir chateando. Su historial de chat completo permanece en la conversación."
       ],
-      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
-        "El acceso a la API y las claves de ${ LUMO_SHORT_APP_NAME }+ están incluidos con una suscripción a ${ LUMO_SHORT_APP_NAME }+ (inicie sesión o gestione las claves)"
-      ],
-      "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
-        "${ LUMO_SHORT_APP_NAME }+: la API de ${ LUMO_SHORT_APP_NAME } y las claves de API requieren una suscripción activa a ${ LUMO_SHORT_APP_NAME }+ "
-      ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "${ urgentTotal } chat expirará en 24 horas",
         "${ urgentTotal } chats expirarán en 24 horas"
       ],
       "${ used } / ${ maximum } tokens (${ percentageUsed }%)": [
         "${ used } / ${ maximum } tokens (${ percentageUsed }%)"
-      ],
-      ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
-        ". Siga el esquema de la API de OpenAI — integre su cliente actual con un cambio de una línea."
-      ],
-      "A ${ LUMO_SHORT_APP_NAME } account": [
-        "Una cuenta de ${ LUMO_SHORT_APP_NAME }"
       ],
       "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
         "Un flujo de trabajo que carga una carpeta de archivos PDF, extrae el texto, solicita a ${ LUMO_SHORT_APP_NAME } que resuma cada archivo y escribe un resumen en formato Markdown por documento."
@@ -1965,12 +1959,6 @@
       ],
       "All files in this chat": [
         "Todos los archivos en este chat"
-      ],
-      "An API key — generate one in ": [
-        "Una clave de la API — generar una en "
-      ],
-      "An HTTP client or official SDK (Python, TypeScript, Rust)": [
-        "Un cliente HTTP o un SDK oficial (Python, TypeScript, Rust)"
       ],
       "API calls": [
         "Llamadas de la API"
@@ -2025,9 +2013,6 @@
       ],
       "Couldn't open the rich text editor, so you're editing the Markdown source.": [
         "No se pudo abrir el editor de texto enriquecido así que está editando el código fuente Markdown."
-      ],
-      "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
-        "Cree y revoque claves de API para acceder mediante programación. Las claves solo se muestran una vez luego de crearlas."
       ],
       "Created by ${ LUMO_SHORT_APP_NAME } in this conversation.": [
         "Creado por ${ LUMO_SHORT_APP_NAME } en esta conversación."
@@ -2101,9 +2086,6 @@
       "Files automatically retrieved based on your questions.": [
         "Archivos recuperados automáticamente en función de sus preguntas."
       ],
-      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
-        "Por cada día, promedio de tokens por llamada a la API (tokens ÷ llamadas, o 0 si no hay llamadas)."
-      ],
       "For this chat": [
         "Para este chat"
       ],
@@ -2175,9 +2157,6 @@
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Nunca incluya claves de API en paquetes del lado del cliente. Use variables de entorno y un proxy del lado del servidor en producción."
-      ],
-      "No calls": [
-        "Sin llamadas"
       ],
       "No connected connectors": [
         "No hay conectores conectados"
@@ -2317,26 +2296,14 @@
       "Space usage: ": [
         "Uso de espacio: "
       ],
-      "Specify a model ID directly for predictable latency or capability targeting.": [
-        "Especifique el ID del modelo directamente para una latencia predecible o una capacidad objetivo."
-      ],
       "Table view": [
         "Vista de tabla"
       ],
       "Telling us which language you speak helps dictation transcribe your voice accurately.": [
         "Díganos cuál idioma habla para ayudar al sistema de dictado a transcribir su voz con precisión."
       ],
-      "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
-        "La API de ${ LUMO_SHORT_APP_NAME } y las claves de API se incluyen con ${ LUMO_SHORT_APP_NAME }+. Solicite al administrador de su organización que asigne una licencia de ${ LUMO_SHORT_APP_NAME } a su cuenta."
-      ],
       "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
         "La API de ${ LUMO_SHORT_APP_NAME } le brinda acceso programático a modelos de lenguaje con la arquitectura de privacidad integrada de ${ BRAND_NAME }. Sin entrenamiento de datos en sus solicitudes. Sin seguimiento."
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
-        "La API de ${ LUMO_SHORT_APP_NAME } es una interfaz RESTful en "
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
-        "La API de ${ LUMO_SHORT_APP_NAME } está disponible para suscriptores de ${ LUMO_SHORT_APP_NAME }+. Mejore para crear claves de API y usar la API mediante programación."
       ],
       "There was an error processing this file.": [
         "Ocurrió un error al procesar este archivo."
@@ -2502,12 +2469,6 @@
       "API calls": [
         "Llamadas de la API"
       ],
-      "API calls (30d)": [
-        "Llamadas de API (30 días)"
-      ],
-      "Avg tokens / call": [
-        "Tokens promedio / llamada"
-      ],
       "Basic": [
         "Básico"
       ],
@@ -2607,12 +2568,6 @@
       "Thinking mode": [
         "Modo pensante"
       ],
-      "Tokens (30d)": [
-        "Tokens (30d)"
-      ],
-      "Tokens generated": [
-        "Tokens generados"
-      ],
       "Tool calls": [
         "Llamadas de herramientas"
       ],
@@ -2678,9 +2633,6 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "actualice a ${ LUMO_SHORT_APP_NAME } Plus."
-      ],
-      "View plans": [
-        "Ver planes"
       ]
     },
     "collider_2025: Nav": {
@@ -2689,9 +2641,6 @@
       ],
       "Endpoints": [
         "Puntos finales"
-      ],
-      "Models": [
-        "Modelos"
       ],
       "Overview": [
         "Resumen"
@@ -2900,12 +2849,6 @@
       ]
     },
     "collider_2025: Tab": {
-      "API": [
-        "API"
-      ],
-      "Manage keys": [
-        "Gestionar claves"
-      ],
       "Workflow Builder": [
         "Creador de flujos de trabajo"
       ]
@@ -2945,9 +2888,6 @@
       ],
       "Animated background": [
         "Fondo animado"
-      ],
-      "API calls per day": [
-        "Llamadas de la API por día"
       ],
       "API docs sections": [
         "Secciones de la documentación de la API"
@@ -3024,9 +2964,6 @@
       "Invalid Link": [
         "Enlace no válido"
       ],
-      "Manage keys": [
-        "Gestionar claves"
-      ],
       "Meet Apertus 1.5": [
         "Conozca Apertus 1.5"
       ],
@@ -3053,9 +2990,6 @@
       ],
       "Personalizes general chats": [
         "Personaliza los chats generales"
-      ],
-      "Prerequisites": [
-        "Prerrequisitos"
       ],
       "Privacy included by default.": [
         "Privacidad incluida por defecto."
@@ -3087,9 +3021,6 @@
       "Theme": [
         "Tema"
       ],
-      "Tokens per call (daily)": [
-        "Tokens por llamada (diario)"
-      ],
       "Tokens per day": [
         "Tokens por día"
       ],
@@ -3098,9 +3029,6 @@
       ],
       "Upload files": [
         "Cargar archivos"
-      ],
-      "Usage (all keys, last 30 days)": [
-        "Uso (todas las claves, últimos 30 días)"
       ],
       "Visionary": [
         "Visionary"
@@ -3243,9 +3171,6 @@
       ],
       "tokens": [
         "tokens"
-      ],
-      "tokens/call": [
-        "tokens/llamada"
       ]
     },
     "collider_2025: UploadAction": {
@@ -3466,6 +3391,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue to next question": [
+        "Continuar a la pregunta siguiente"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -3522,6 +3450,9 @@
       ],
       "Discard changes": [
         "Descartar cambios"
+      ],
+      "Dismiss questions": [
+        "Descartar preguntas"
       ],
       "Divider": [
         "Divisor"
@@ -3652,6 +3583,9 @@
       "Next message": [
         "Mensaje siguiente"
       ],
+      "Next question": [
+        "Pregunta siguiente"
+      ],
       "Numbered list": [
         "Lista numerada"
       ],
@@ -3687,6 +3621,9 @@
       ],
       "Previous message": [
         "Mensaje anterior"
+      ],
+      "Previous question": [
+        "Pregunta anterior"
       ],
       "Quote": [
         "Citar"
@@ -3733,6 +3670,9 @@
       "Reveal my profile": [
         "Revelar mi perfil"
       ],
+      "Run now": [
+        "Ejecutar ahora"
+      ],
       "Save": [
         "Guardar"
       ],
@@ -3769,6 +3709,9 @@
       "Show sidebar": [
         "Mostrar la barra lateral"
       ],
+      "Skip": [
+        "Omitir"
+      ],
       "Slides": [
         "Diapositivas"
       ],
@@ -3783,6 +3726,9 @@
       ],
       "Strikethrough": [
         "Tachado"
+      ],
+      "Submit": [
+        "Enviar"
       ],
       "Task options": [
         "Opciones de tarea"
@@ -4058,6 +4004,9 @@
       "Could not read this file.": [
         "No se pudo leer este archivo."
       ],
+      "Could not save this task. Reload the page and try again.": [
+        "No se pudo guardar esta tarea. Recargue la página e intente de nuevo."
+      ],
       "Database connection lost. Please refresh the page to continue.": [
         "Se perdió la conexión con la base de datos. Actualice la página para continuar."
       ],
@@ -4171,6 +4120,9 @@
       ],
       "This does not look like a ChatGPT or Claude export.": [
         "Esto no parece una exportación de ChatGPT o Claude."
+      ],
+      "This scheduled task no longer exists. Reload the page and try again.": [
+        "Esta tarea programada ya no existe. Recargue la página e intente de nuevo."
       ],
       "We could not read this Excel workbook. It may be encrypted, corrupted, or not a valid .xlsx file. Please save it as .xlsx or CSV and try again.": [
         "No pudimos leer este libro de Excel. Es posible que esté cifrado, dañado o que no sea un archivo .xlsx válido. Guárdelo como .xlsx o CSV e intente de nuevo."
@@ -4549,6 +4501,12 @@
       "No projects yet": [
         "Aún no hay proyectos"
       ],
+      "No runs yet. Results from each run will open here.": [
+        "Aún no hay ejecuciones. Los resultados de cada ejecución se abrirán aquí."
+      ],
+      "No scheduled tasks yet.": [
+        "Aún sin tareas programadas."
+      ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "En iPhone o iPad, abra Ajustes → Aplicación → Safari y asegúrese de que la opción «Bloquear todas las cookies» está desactivada, luego actualice la página."
       ],
@@ -4607,11 +4565,20 @@
       "See what Big Tech AI knows about you. Made with ${ LUMO_SHORT_APP_NAME }.": [
         "Mire lo que las Big Tech de IA saben de usted. Hecho con ${ LUMO_SHORT_APP_NAME }."
       ],
+      "Select all that apply.": [
+        "Seleccione todas las que apliquen."
+      ],
+      "Select one answer.": [
+        "Seleccione una rspuesta."
+      ],
       "Sign in to your ChatGPT account on chatgpt.com": [
         "Inicie sesión en su cuenta de ChatGPT en chatgpt.com"
       ],
       "Sign in to your Claude account at claude.ai": [
         "Inicie sesión en su cuenta de Claude en claude.ai"
+      ],
+      "Skipped": [
+        "Omitido"
       ],
       "Some content, such as images and attachments, may not be included in the exported file.": [
         "Es posible que algunos contenidos, como imágenes y archivos adjuntos, no se incluyan en el archivo exportado."
@@ -4708,6 +4675,9 @@
       ],
       "Webpage · HTML": [
         "Página web · HTML"
+      ],
+      "When this task ran.": [
+        "Cuándo se ejecutó esta tarea."
       ],
       "You": [
         "Usted"
@@ -4815,6 +4785,9 @@
       ]
     },
     "collider_2025:Label": {
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
+      ],
       "${ data.pressure } hPa": [
         "${ data.pressure } hPa"
       ],
@@ -5351,6 +5324,9 @@
       "Scams": [
         "Estafas"
       ],
+      "Scheduled": [
+        "Programado"
+      ],
       "SE": [
         "SE"
       ],
@@ -5419,6 +5395,9 @@
       ],
       "Today": [
         "Hoy"
+      ],
+      "Today, ${ time }": [
+        "Hoy, ${ time }"
       ],
       "TOML File": [
         "Archivo TOML"
@@ -5500,6 +5479,12 @@
       ],
       "Yesterday": [
         "Ayer"
+      ],
+      "Yesterday, ${ time }": [
+        "Ayer, ${ time }"
+      ],
+      "Your answer": [
+        "Su respuesta"
       ]
     },
     "collider_2025:Notification": {
@@ -5602,6 +5587,9 @@
       ],
       "Sign in required": [
         "Se requiere iniciar sesión"
+      ],
+      "Something else…": [
+        "Algo más…"
       ]
     },
     "collider_2025:Prefill": {
@@ -5770,6 +5758,12 @@
       ],
       "What should I know about emergency funds and where to keep them?": [
         "¿Qué debo saber sobre los fondos de emergencia y dónde guardarlos?"
+      ]
+    },
+    "collider_2025:Question selection": {
+      "${ selectedCount } selected": [
+        "${ selectedCount } seleccionado",
+        "${ selectedCount } seleccionados"
       ]
     },
     "collider_2025:Reasoning": {
@@ -6436,11 +6430,17 @@
       "Review privacy settings": [
         "Revisar ajustes de privacidad"
       ],
+      "Runs": [
+        "Ejecuciones"
+      ],
       "Save as": [
         "Guardar como"
       ],
       "Save to ${ DRIVE_SHORT_APP_NAME }": [
         "Guardar en ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Scheduled": [
+        "Programado"
       ],
       "Scheduled tasks": [
         "Tareas programadas"
@@ -6519,6 +6519,9 @@
       ],
       "What do you want to create today?": [
         "¿Qué desea crear hoy?"
+      ],
+      "What it does": [
+        "Lo que hace"
       ],
       "What this profile exposes": [
         "Lo que expone este perfil"
@@ -8720,6 +8723,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
+      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
+        "Recargue la cuenta con créditos que puede utilizar para suscribirse a un plan nuevo o renovar el actual. Obtiene un crédito por cada ${ i18nCurrency } gastado."
+      ],
       "Total conversations:": [
         "Total de conversaciones:"
       ],
@@ -8855,6 +8861,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento. Póngase en contacto con el servicio de asistencia si necesita cambiar de plan de inmediato."
       ],
+      "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
+        "Sus detalles de pago están protegidos con el cifrado TLS y las leyes de privacidad suizas."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "El número de teléfono sólo se usará para esta verificación única."
       ],
@@ -8918,6 +8927,9 @@
       ],
       "Address": [
         "Dirección"
+      ],
+      "Amount": [
+        "Monto"
       ],
       "Anderson": [
         "García"
@@ -9074,6 +9086,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "Other amount": [
+        "Otra cantidad"
       ],
       "Password": [
         "Contraseña"
@@ -9671,6 +9686,44 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_MEET_SEATS } licencias de ${ MEET_SHORT_APP_NAME } durante el período de prueba."
+      ]
+    },
+    "Monetary unit": {
+      "Australian dollar": [
+        "Dólar australiano"
+      ],
+      "Brazilian real": [
+        "Real brasileño"
+      ],
+      "British pound": [
+        "Libra esterlina"
+      ],
+      "Canadian dollar": [
+        "Dólar canadiense"
+      ],
+      "Euro": [
+        "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Dólar de Hong Kong"
+      ],
+      "Japanese yen": [
+        "Yen japonés"
+      ],
+      "Polish złoty": [
+        "Złoty polaco"
+      ],
+      "Singapore dollar": [
+        "Dólar de Singapur"
+      ],
+      "South Korean won": [
+        "Won surcoreano"
+      ],
+      "Swiss franc": [
+        "Franco suizo"
+      ],
+      "US Dollar": [
+        "Dólar estadounidense"
       ]
     },
     "New Label form": {
@@ -10692,6 +10745,9 @@
       "Billing Country": [
         "País de facturación"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "No se pueden comprar cuentas Born Private con una suscripción activa."
+      ],
       "Buying credits requires a separate purchase.": [
         "La compra de créditos requiere una compra separada."
       ],
@@ -10758,6 +10814,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactive primero la suscripción para disminuir la cantidad de complementos."
       ],
+      "Processing payment": [
+        "Procesando el pago"
+      ],
       "Proton Meet seats must match the number of members.": [
         "Las licencias de Proton Meet deben coincidir con el número de miembros."
       ],
@@ -10778,6 +10837,9 @@
       ],
       "terms and conditions": [
         "términos y condiciones"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requiere de una donación."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descuento es válido para ${ renewalsWithCoupon } renovación.",
@@ -10816,6 +10878,9 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "La oferta especial por ${ priceWithDiscount } es válida durante el primer mes. Después se renovará automáticamente por ${ renewPriceStr } cada mes. Puede cancelarla en cualquier momento."
+      ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "La transacción se detectó. Los créditos se agregarán a la cuenta una vez que se confirme la transacción por completo."
       ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puede cancelar en cualquier momento.",
@@ -10875,11 +10940,20 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ya posee ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Ya posee una cuenta Born Private."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Se le cobrará ${ amountToCharge } de su método de pago seleccionado."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto se le redirigirá a PayPal para verificar el pago."
       ],
       "You will soon be redirected to verify your payment.": [
         "Pronto se le redirigirá para verificar el pago."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Su cuenta es demasiado antigua para la iniciativa Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_WERO_BRAND_NAME } solo admite pagos en euros."
@@ -11063,6 +11137,9 @@
       ],
       "Organization name": [
         "Nombre de la organización"
+      ],
+      "Other": [
+        "Otro"
       ],
       "Password": [
         "Contraseña"
@@ -11609,6 +11686,9 @@
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
+      "Credits added": [
+        "Créditos agregados"
+      ],
       "Email address copied to clipboard": [
         "Dirección de correo copiada al portapapeles"
       ],
@@ -11737,6 +11817,9 @@
       ],
       "Add credit/debit card": [
         "Agregar tarjeta de crédito/débito"
+      ],
+      "Add credits": [
+        "Agregar créditos"
       ],
       "Add user": [
         "Agregar usuario"

@@ -280,6 +280,9 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Pel que fa a ${ name }"
+      ],
       "activate": [
         "activar"
       ],
@@ -300,6 +303,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Afegiu l'adreça de ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Afegir ${ name }"
       ],
       "Add a payment method": [
         "Afegiu un mètode de pagament"
@@ -9600,6 +9606,9 @@
       "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Quan l'inici de sessió està restringit, només ${ primaryEmailElement } i el nom d'usuari ${ usernameElement } es poden utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió està restringit, només el vostre correu ${ primaryEmailElement } es pot utilitzar per a iniciar sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
+      ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Quan l'inici de sessió està restringit, només el nom d'usuari ${ usernameElement } es pot utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
       ],
@@ -10952,6 +10961,9 @@
       ],
       "Require password check-ins": [
         "Requereix verificacions de contrasenya"
+      ],
+      "Restrict sign-in to email address": [
+        "Restringeix l'inici de sessió a l'adreça de correu electrònic"
       ],
       "Restrict sign-in to primary email address": [
         "Restringeix l'inici de sessió a l'adreça de correu electrònic principal"

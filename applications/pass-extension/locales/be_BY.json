@@ -415,6 +415,9 @@
       "Hide": [
         "Схаваць"
       ],
+      "Hide passwords": [
+        "Схаваць паролі"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Як экспартаваць даныя з ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -1047,6 +1050,9 @@
       ],
       "Authentication failure: ${ message }": [
         "Збой аўтэнтыфікацыі: ${ message }"
+      ],
+      "Biometric authentication cancelled.": [
+        "Біяметрычная аўтэнтыфікацыя скасавана."
       ],
       "Biometric authentication failed.": [
         "Збой аўтэнтыфікацыі біяметрыі."
@@ -1689,6 +1695,9 @@
       "Account & Data": [
         "Уліковы запіс і даныя"
       ],
+      "Advanced Options": [
+        "Пашыраныя параметры"
+      ],
       "Autofill and passwords": [
         "Аўтазапаўненне і паролі"
       ],
@@ -1704,6 +1713,9 @@
       "Export": [
         "Экспарт"
       ],
+      "Export All Passwords to File": [
+        "Экспартаваць усе паролі ў файл"
+      ],
       "Export Data": [
         "Экспарт даных"
       ],
@@ -1715,6 +1727,9 @@
       ],
       "Export items": [
         "Экспарт элементаў"
+      ],
+      "Export passwords": [
+        "Экспарт пароляў"
       ],
       "Export to CSV": [
         "Экспартаваць у CSV"
@@ -1731,8 +1746,23 @@
       "Google Password Manager": [
         "Менеджар пароляў Google"
       ],
+      "Manage your vault": [
+        "Кіраванне вашым сховішчам"
+      ],
+      "Microsoft password manager": [
+        "Менеджар пароляў Microsoft"
+      ],
       "More actions": [
         "Больш дзеянняў"
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "Адкрыйце ${ name } і выберыце ${ settings }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Адкрыць ${ name } і выбраць ⋯."
+      ],
+      "Passwords": [
+        "Паролі"
       ],
       "Passwords and Autofill": [
         "Паролі і аўтазапаўненне"
@@ -1742,6 +1772,9 @@
       ],
       "Select ${ option }.": [
         "Выберыце ${ option }."
+      ],
+      "Select the export format CSV.": [
+        "Выберыце фармат экспарту CSV."
       ],
       "Settings": [
         "Налады"
@@ -2279,6 +2312,9 @@
       "Failed updating your vault organization": [
         "Не ўдалося абнавіць вашу арганізацыю сховішча"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Поле схавана. Вы ўсё яшчэ можаце аўтазапоўніць яго."
+      ],
       "Fill in the CSV with your data": [
         "Запоўніце CSV сваімі данымі"
       ],
@@ -2341,6 +2377,9 @@
       ],
       "Import the CSV file below.": [
         "Імпартуйце файл CSV ніжэй."
+      ],
+      "Important:": [
+        "Важна:"
       ],
       "Imported on ${ date }": [
         "Імпартавана ${ date }"
@@ -2475,10 +2514,7 @@
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да выдалення яго бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2518,6 +2554,9 @@
       ],
       "No login found": [
         "Запіс уваходу не знойдзены"
+      ],
+      "No matching service. Try a different name.": [
+        "Няма адпаведнага сэрвісу. Паспрабуйце іншую назву."
       ],
       "No network connection": [
         "Адсутнічае падключэнне да сеткі"
@@ -5337,6 +5376,9 @@
       "Hide my email": [
         "Схаваць маю электронную пошту"
       ],
+      "Hide passwords from viewers?": [
+        "Хаваць паролі ад праглядальнікаў?"
+      ],
       "Hide-my-email aliases": [
         "Псеўданімы Hide-my-email"
       ],
@@ -5351,6 +5393,9 @@
       ],
       "Import failed": [
         "Не ўдалося імпартаваць"
+      ],
+      "Import successful": [
+        "Імпарт завершаны"
       ],
       "Import to vault(s)": [
         "Імпартаванне ў сховішча(-ы)"
@@ -5496,6 +5541,9 @@
       "Password Health": [
         "Якасць пароля"
       ],
+      "Password managers": [
+        "Менеджары пароляў"
+      ],
       "Pause monitoring?": [
         "Прыпыніць назіранне?"
       ],
@@ -5574,6 +5622,9 @@
       "Select the default domain for aliases": [
         "Выберыце прадвызначаныя дамены для псеўданімаў"
       ],
+      "Select your password manager": [
+        "Выберыце менеджар пароляў"
+      ],
       "Set access level": [
         "Задаць узровень доступу"
       ],
@@ -5649,8 +5700,14 @@
       "Upgrade to check for compromised passwords": [
         "Палепшыце, каб праверыць скампраметаваныя паролі"
       ],
+      "Upgrade to check for reused passwords": [
+        "Палепшыце, каб праверыць наяўнасць паўторна выкарыстаных пароляў"
+      ],
       "Upload": [
         "Запампоўванне"
+      ],
+      "Upload your data": [
+        "Запампаваць свае даныя"
       ],
       "URL matching": [
         "Супадзенне URL-адраса"
@@ -5711,6 +5768,9 @@
       ],
       "Your welcome gift": [
         "Ваш прывітальны падарунак"
+      ],
+      "You’re a step away from autofill magic!": [
+        "Вы ў кроку ад магіі аўтазапаўнення!"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданім.",

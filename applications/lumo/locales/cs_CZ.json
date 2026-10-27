@@ -386,6 +386,9 @@
       "Take a tour": [
         "Absolvujte prohlídku"
       ],
+      "Top up": [
+        "Dobít"
+      ],
       "Try again": [
         "Zkuste to znovu"
       ],
@@ -1318,9 +1321,6 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Kdykoli můžete přidat vlastní vzpomínky, upravit automaticky vygenerované, nebo vše smazat. Vygenerované vzpomínky, které upravíte, budou povýšeny na vaše vlastní."
       ],
-      "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
-        "Klíče API vám umožní programový přístup k ${ LUMO_SHORT_APP_NAME }. Každý klíč je po vytvoření zobrazen jen jednou."
-      ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Vytvořte klíč pro integraci ${ LUMO_SHORT_APP_NAME } do svých skriptů a nástrojů."
       ],
@@ -1684,23 +1684,11 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } je umělá inteligence s prioritou ochrany soukromí, která vám pomáhá zvládnout více a zároveň chrání vaše data. Využijte její plný potenciál a získejte přístup k novým funkcím ihned po jejich představení."
       ],
-      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
-        "${ LUMO_SHORT_APP_NAME }+ - Přístup k API a klíče jsou součástí předplatného ${ LUMO_SHORT_APP_NAME }+ (pro navýšení nebo správu klíčů se přihlaste)"
-      ],
-      "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
-        "${ LUMO_SHORT_APP_NAME }+ - API a API klíče ${ LUMO_SHORT_APP_NAME } vyžadují aktivní předplatné ${ LUMO_SHORT_APP_NAME }+. "
-      ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "${ urgentTotal } chat vyprší během 24 hodin",
         "${ urgentTotal } chaty vyprší během 24 hodin",
         "${ urgentTotal } chatů vyprší během 24 hodin",
         "${ urgentTotal } chatů vyprší během 24 hodin"
-      ],
-      ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
-        ". Je v souladu se schématem API OpenAI - stačí ve vašem stávajícím klientu změnit jeden řádek."
-      ],
-      "A ${ LUMO_SHORT_APP_NAME } account": [
-        "${ LUMO_SHORT_APP_NAME } účet"
       ],
       "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
         "Pracovní postup, který nahraje složku souborů PDF, extrahuje z nich text, požádá aplikaci ${ LUMO_SHORT_APP_NAME } o shrnutí každého souboru a pro každý dokument vytvoří jedno shrnutí ve formátu Markdown."
@@ -1728,12 +1716,6 @@
       ],
       "All files in this chat": [
         "Všechny soubory v tomto chatu"
-      ],
-      "An API key — generate one in ": [
-        "API klíč – vygenerujte si jej v "
-      ],
-      "An HTTP client or official SDK (Python, TypeScript, Rust)": [
-        "HTTP klient nebo oficiální SDK (Python, TypeScript, Rust)"
       ],
       "API calls": [
         "volání API"
@@ -1783,9 +1765,6 @@
       "Conversation": [
         "Konverzace"
       ],
-      "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
-        "Vytvořte a zrušte klíče API pro programový přístup. Klíče se po vytvoření zobrazí pouze jednou."
-      ],
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Popište pracovní postup srozumitelným jazykem a získejte graf i kód, který lze spustit. Chcete-li tuto funkci využít, přihlaste se."
       ],
@@ -1833,9 +1812,6 @@
       ],
       "Files automatically retrieved based on your questions.": [
         "Soubory automaticky načtené na základě vašich dotazů."
-      ],
-      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
-        "Pro každý den průměrný počet tokenů na jedno volání API (počet tokenů dělený počtem volání, případně 0, pokud nedošlo k žádnému volání)."
       ],
       "Free accounts keep chat history for 7 days from when a chat was created.": [
         "Bezplatné účty uchovávají historii chatů po dobu 7 dní od vytvoření chatu."
@@ -1899,9 +1875,6 @@
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Nikdy nevkládávejte klíče API do balíčků na straně klienta. V produkčním prostředí používejte proměnné prostředí a proxy na straně serveru."
-      ],
-      "No calls": [
-        "Žádné hovory"
       ],
       "No content available.": [
         "Obsah není k dispozici."
@@ -2011,17 +1984,8 @@
       "Table view": [
         "Tabulkové zobrazení"
       ],
-      "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
-        "API rozhraní a klíče API pro ${ LUMO_SHORT_APP_NAME } jsou součástí balíčku ${ LUMO_SHORT_APP_NAME }+. Požádejte správce vaší organizace, aby vašemu účtu přidělil licenci pro ${ LUMO_SHORT_APP_NAME }."
-      ],
       "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
         "API ${ LUMO_SHORT_APP_NAME } vám poskytuje programový přístup k jazykovým modelům s integrovanou architekturou ochrany soukromí společnosti ${ BRAND_NAME }. Žádné trénování dat na základě vašich požadavků. Žádné sledování."
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
-        "${ LUMO_SHORT_APP_NAME } API je rozhraní typu REST, které je na "
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
-        "${ LUMO_SHORT_APP_NAME } API je k dispozici pro předplatitele ${ LUMO_SHORT_APP_NAME }+. Navyšte svůj účet, abyste mohli vytvářet klíče API a využívat API programově."
       ],
       "There was an error processing this file.": [
         "Došlo k chybě při zpracování tohoto souboru."
@@ -2142,12 +2106,6 @@
       "API calls": [
         "volání API"
       ],
-      "API calls (30d)": [
-        "API volání (30d)"
-      ],
-      "Avg tokens / call": [
-        "Průměr tokenů / volání"
-      ],
       "Basic": [
         "Základní"
       ],
@@ -2247,12 +2205,6 @@
       "Thinking mode": [
         "Režim přemýšlení"
       ],
-      "Tokens (30d)": [
-        "Tokeny (30d)"
-      ],
-      "Tokens generated": [
-        "Vygenerované tokeny"
-      ],
       "Tool calls": [
         "Volání nástrojů"
       ],
@@ -2312,9 +2264,6 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "navýšit na ${ LUMO_SHORT_APP_NAME } Plus."
-      ],
-      "View plans": [
-        "Zobrazit tarify"
       ]
     },
     "collider_2025: Nav": {
@@ -2323,9 +2272,6 @@
       ],
       "Endpoints": [
         "Koncové body"
-      ],
-      "Models": [
-        "Modely"
       ],
       "Overview": [
         "Přehled"
@@ -2495,12 +2441,6 @@
       ]
     },
     "collider_2025: Tab": {
-      "API": [
-        "API"
-      ],
-      "Manage keys": [
-        "Spravovat klíče"
-      ],
       "Workflow Builder": [
         "Tvůrce pracovních postupů"
       ]
@@ -2537,9 +2477,6 @@
       ],
       "Animated background": [
         "Animované pozadí"
-      ],
-      "API calls per day": [
-        "Počet volání API za den"
       ],
       "API docs sections": [
         "Části dokumentace k API"
@@ -2592,9 +2529,6 @@
       "Invalid Link": [
         "Neplatný odkaz"
       ],
-      "Manage keys": [
-        "Spravovat klíče"
-      ],
       "Models": [
         "Modely"
       ],
@@ -2615,9 +2549,6 @@
       ],
       "Personalizes general chats": [
         "Personalizuje obecné chaty"
-      ],
-      "Prerequisites": [
-        "Požadavky"
       ],
       "Privacy included by default.": [
         "Ochrana soukromí ve výchozím stavu."
@@ -2643,9 +2574,6 @@
       "Theme": [
         "Motiv"
       ],
-      "Tokens per call (daily)": [
-        "Počet tokenů na volání (denně)"
-      ],
       "Tokens per day": [
         "Tokenů za den"
       ],
@@ -2654,9 +2582,6 @@
       ],
       "Upload files": [
         "Nahrát soubory"
-      ],
-      "Usage (all keys, last 30 days)": [
-        "Využití (všechny klíče, posledních 30 dní)"
       ],
       "Visionary": [
         "Visionary"
@@ -2795,9 +2720,6 @@
       ],
       "tokens": [
         "tokeny"
-      ],
-      "tokens/call": [
-        "tokenů / volání"
       ]
     },
     "collider_2025: UploadAction": {
@@ -5983,6 +5905,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
+      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
+        "Dobijte na svůj účet kredity, za které si můžete předplatit nový tarif nebo prodloužit předplatné vašeho současného tarifu. Získáte jeden kredit za každý/každou/každé ${ i18nCurrency }."
+      ],
       "Total conversations:": [
         "Celkový počet konverzací:"
       ],
@@ -6118,6 +6043,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Datum vaší další fakturace je ${ renewalTime }. Můžete kdykoli zrušit. Pokud potřebujete okamžitou změnu tarifu, kontaktujte prosím podporu."
       ],
+      "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
+        "Vaše platební údaje jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
       ],
@@ -6179,6 +6107,9 @@
       ],
       "Address": [
         "Adresa"
+      ],
+      "Amount": [
+        "Částka"
       ],
       "Anderson": [
         "Příjmení"
@@ -6329,6 +6260,9 @@
       ],
       "Optional": [
         "Volitelné"
+      ],
+      "Other amount": [
+        "Jiná částka"
       ],
       "Password": [
         "Heslo"
@@ -6867,6 +6801,44 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Můžete mít až ${ TRIAL_MAX_MEET_SEATS } licencí ${ MEET_SHORT_APP_NAME } během zkušební doby."
+      ]
+    },
+    "Monetary unit": {
+      "Australian dollar": [
+        "Australský dolar"
+      ],
+      "Brazilian real": [
+        "Brazilský real"
+      ],
+      "British pound": [
+        "Britská libra"
+      ],
+      "Canadian dollar": [
+        "Kanadský dolar"
+      ],
+      "Euro": [
+        "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hongkongský dolar"
+      ],
+      "Japanese yen": [
+        "Japonský jen"
+      ],
+      "Polish złoty": [
+        "Polský zlotý"
+      ],
+      "Singapore dollar": [
+        "Singapurský dolar"
+      ],
+      "South Korean won": [
+        "Jihokorejský won"
+      ],
+      "Swiss franc": [
+        "Švýcarský frank"
+      ],
+      "US Dollar": [
+        "Americký dolar"
       ]
     },
     "New Label form": {
@@ -7945,6 +7917,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
+      "Processing payment": [
+        "Zpracovávání platby"
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Ceny za obnovení se mohou změnit podle ${ termsAndConditionsLink }."
       ],
@@ -7996,6 +7971,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
       ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "Transakce byla úspěšně rozpoznána. Kredity budou připsány na váš účet po úplném potvrzení transakce."
+      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíc. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíce. Předplatné můžete kdykoli zrušit.",
@@ -8025,6 +8003,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Již máte předplatné tohoto tarifu. Můžete si změnit své předplatné na ${ subscriptionPlatform }."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Z vybrané platební metody vám bude účtována částka ${ amountToCharge }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
@@ -8184,6 +8165,9 @@
       ],
       "Organization name": [
         "Název organizace"
+      ],
+      "Other": [
+        "Ostatní"
       ],
       "Password": [
         "Heslo"
@@ -8731,6 +8715,9 @@
       "Copied to clipboard": [
         "Zkopírováno do schránky"
       ],
+      "Credits added": [
+        "Kredity byly přidány"
+      ],
       "Email address copied to clipboard": [
         "E-mailová adresa zkopírována do schránky"
       ],
@@ -8860,6 +8847,9 @@
       "Add credit/debit card": [
         "Přidat kreditní/debetní kartu"
       ],
+      "Add credits": [
+        "Přidat kredit"
+      ],
       "Add user": [
         "Přidat uživatele"
       ],
@@ -8877,6 +8867,9 @@
       ],
       "Billing cycle": [
         "Fakturační cyklus"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Zrušit předplatné ${ MAIL_SHORT_APP_NAME }"

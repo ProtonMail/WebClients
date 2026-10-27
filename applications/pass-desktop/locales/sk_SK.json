@@ -421,6 +421,9 @@
       "Hide": [
         "Skryť"
       ],
+      "Hide passwords": [
+        "Skryť heslá"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Ako môžem exportovať svoje údaje z ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -947,6 +950,9 @@
       ],
       "Change your passwords": [
         "Zmeňte vaše heslá"
+      ],
+      "Check if you're reusing passwords": [
+        "Skontrolujte, či nepoužívate rovnaké heslá"
       ],
       "Check if your passwords have been exposed": [
         "Skontrolujte, či vaše heslá neboli zverejnené"
@@ -1739,6 +1745,9 @@
         "${ forwardedEmailsCount } preposlaných",
         "${ forwardedEmailsCount } preposlaných"
       ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } To však nezabráni používateľom v získaní hesiel inými spôsobmi."
+      ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } chce zdieľať položku so skupinou, ktorú spravujete."
       ],
@@ -2159,6 +2168,9 @@
       "Failed updating your vault organization": [
         "Nepodarilo sa aktualizovať organizáciu vášho trezoru"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Pole je skryté. Stále ho však môžete automaticky vyplniť."
+      ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV súbor svojimi údajmi"
       ],
@@ -2233,6 +2245,9 @@
       ],
       "Import the CSV file below.": [
         "Importovať CSV súbor nižšie."
+      ],
+      "Important:": [
+        "Dôležité:"
       ],
       "Imported on ${ date }": [
         "Importované ${ date }"
@@ -2470,6 +2485,9 @@
       ],
       "Pass Plus trial": [
         "Skúšobná verzia Pass Plus"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Heslo je skryté. Stále ho však môžete automaticky vyplniť."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Heslo na uzamknutie bolo úspešne zaregistrované. Použite ho na odomknutie ${ PASS_APP_NAME }"
@@ -2984,6 +3002,12 @@
       "Viewer": [
         "Čitateľ"
       ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Čitateľom sa stále môžu automaticky vyplňovať heslá, ale v ${ PASS_APP_NAME } sa im nezobrazia. To odrádza od náhodného prezerania a znižuje riziko neúmyselného prezradenia."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Čitatelia môžu naďalej využívať automatické vypĺňanie. Redaktori a správcovia majú heslá vždy na očiach."
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Máme problém so synchronizáciou údajov do vášho lokálneho úložiska. Uistite sa, prosím, že máte dostatok miesta na disku pre správne fungovanie ${ PASS_SHORT_APP_NAME }."
       ],
@@ -3347,6 +3371,9 @@
       ],
       "All items": [
         "Všetky položky"
+      ],
+      "Allow viewers to see passwords": [
+        "Umožnite čitateľom zobraziť heslá"
       ],
       "Alphabetical": [
         "Abecedne"
@@ -5269,6 +5296,9 @@
       "Hidden vaults": [
         "Skryté trezory"
       ],
+      "Hide passwords from viewers?": [
+        "Skryť heslá čitateľom?"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
       ],
@@ -5571,6 +5601,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Aktualizujte, aby ste skontrolovali, či nie sú vaše heslá ohrozené"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Aktualizujte, aby ste skontrolovali, či sa heslá nepoužívajú opakovane"
       ],
       "URL matching": [
         "Zhoda URL"

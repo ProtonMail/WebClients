@@ -350,6 +350,9 @@
       "Copy version number to clipboard": [
         "Kopiraj broj verzije u međuspremnik"
       ],
+      "Create a booking page": [
+        "Izradi stranicu za zakazivanje"
+      ],
       "Create a new contact group": [
         "Kreiraj novu grupu kontakata"
       ],
@@ -7063,6 +7066,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Jeste li sigurni da želite trajno izbrisati ovu poruku?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
+        "Zatražite od svog administratora da nadogradi plan ili ukloni stranicu s bočne trake Stranice za zakazivanje."
+      ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Najmanje ${ BETTER_PASSWORD_LENGTH } znakova"
       ],
@@ -8525,6 +8531,15 @@
       "to ${ destinationElement } folder.": [
         "u mapu ${ destinationElement }."
       ],
+      "To add a new booking page, ask your admin to upgrade your plan.": [
+        "Da biste dodali novu stranicu za zakazivanje, zatražite od svog administratora da nadogradi vaš plan."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
+        "Da biste dodali novu stranicu za zakazivanje, uklonite postojeću s bočne trake Stranice za zakazivanje."
+      ],
+      "To add a new booking page, upgrade your plan.": [
+        "Da biste dodali novu stranicu za zakazivanje, nadogradite svoj plan."
+      ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
         "Kako biste izbjegli skretanje pažnje otvorenim karticama u pregledniku, koristite apl. za radnu površinu."
       ],
@@ -9011,6 +9026,9 @@
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Dosegli ste maksimalan broj adresa u grupi kontakata."
+      ],
+      "You've reached the maximum number of booking pages available in your plan.": [
+        "Dosegnuli ste maksimalan broj stranica za zakazivanje dostupnih u vašem planu."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Vaš ${ BRAND_NAME } korisnički račun je trenutno suspendiran. Nakon 28 dana, e-pošta se više neće isporučivati u vašu pristiglu poštu, poveznice za dijeljenje na vašem disku bit će blokirane, a nećete moći učitati nove datoteke. Kako biste nastavili koristiti uobičajenu uslugu, molimo vas da platite sve neplaćene fakture."
@@ -15393,6 +15411,9 @@
       "Birthday": [
         "Rođendan"
       ],
+      "Black Friday": [
+        "Crni petak"
+      ],
       "Blind Carbon Copy": [
         "Slijepa indigo kopija"
       ],
@@ -15410,6 +15431,9 @@
       ],
       "Cannot add more addresses": [
         "Nije moguće dodati više adresa"
+      ],
+      "Cannot create more Booking pages": [
+        "Nije moguće izraditi više stranica za zakazivanje"
       ],
       "Carbon Copy": [
         "Kopija"

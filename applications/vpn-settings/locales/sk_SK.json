@@ -280,6 +280,9 @@
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "O ${ name }"
+      ],
       "activate": [
         "aktivovať"
       ],
@@ -300,6 +303,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Pridať ${ BRAND_NAME } adresu"
+      ],
+      "Add ${ name }": [
+        "Pridať ${ name }"
       ],
       "Add a payment method": [
         "Pridať spôsob platby"
@@ -9850,6 +9856,9 @@
       "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba ${ primaryEmailElement } a vaše používateľské meno ${ usernameElement }. Vaše ostatné emailové adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba váš email ${ primaryEmailElement }. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
+      ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba vaše používateľské meno ${ usernameElement }. Vaše ostatné emailové adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
       ],
@@ -11240,6 +11249,9 @@
       ],
       "Require password check-ins": [
         "Vyžadovať prihlásenie pomocou hesla"
+      ],
+      "Restrict sign-in to email address": [
+        "Obmedziť prihlásenie na emailovú adresu"
       ],
       "Restrict sign-in to primary email address": [
         "Obmedziť prihlásenie na primárnu emailovú adresu"
@@ -14415,6 +14427,9 @@
       "Billing Country": [
         "Krajina fakturácie"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Účet Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
+      ],
       "Buying credits requires a separate purchase.": [
         "Nákup kreditov si vyžaduje samostatnú platbu."
       ],
@@ -14507,6 +14522,9 @@
       ],
       "terms and conditions": [
         "zmluvnými podmienkami používania"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Iniciatíva Born Private si vyžaduje finančný príspevok."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Zľava je platná na ${ renewalsWithCoupon } obnovenie.",
@@ -14619,6 +14637,9 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Už vlastníte ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Už vlastníte účet Born Private."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Z vybraného spôsobu platby vám bude účtovaná suma ${ amountToCharge }."
       ],
@@ -14627,6 +14648,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Za účelom overenia platby dôjde o chvíľu k presmerovaniu."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Váš účet je príliš starý na iniciatívu Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_WERO_BRAND_NAME } podporuje platby len v eurách."
@@ -15977,6 +16001,12 @@
       ]
     },
     "scim": {
+      "${ cleanUpCount } clean up action required.": [
+        "Je potrebné vykonať ${ cleanUpCount } čistenie.",
+        "Je potrebné vykonať ${ cleanUpCount } čistenia.",
+        "Je potrebné vykonať ${ cleanUpCount } čistení.",
+        "Je potrebné vykonať ${ cleanUpCount } čistení."
+      ],
       "${ cleanUpCount } user's permissions have changed.": [
         "Zmenili sa oprávnenia ${ cleanUpCount } používateľa.",
         "Zmenili sa oprávnenia ${ cleanUpCount } používateľov.",
@@ -15988,6 +16018,12 @@
         "${ memberCount } noví členovia",
         "${ memberCount } nových členov",
         "${ memberCount } nových členov"
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "Je potrebné vykonať ${ numberOfCleanUps } čistenie",
+        "Je potrebné vykonať ${ numberOfCleanUps } čistenia",
+        "Je potrebné vykonať ${ numberOfCleanUps } čistení",
+        "Je potrebné vykonať ${ numberOfCleanUps } čistení"
       ],
       "${ numberOfPendingGroups } group synced": [
         "${ numberOfPendingGroups } skupina synchronizovaná",
@@ -16031,8 +16067,17 @@
       "Approve changes from your identity provider": [
         "Schváľte zmeny od vášho poskytovateľa identít"
       ],
+      "Approve permission changes for your organization": [
+        "Schváľte zmeny oprávnení pre vašu organizáciu"
+      ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Na udelenie prístupu ku všetkým službám ${ BRAND_NAME } je potrebné konečné schválenie."
+      ],
+      "Final approval needed to remove organization key access.": [
+        "Na zrušenie prístupového kľúča organizácie je potrebné konečné schválenie."
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "Na zrušenie ich organizačných kľúčov je potrebné konečné schválenie."
       ],
       "From your identity provider": [
         "Od vášho poskytovateľa identít"
