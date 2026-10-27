@@ -49,9 +49,24 @@ describe('getValidatedProtonProtocol', () => {
             output: 'protoncalendar:',
         },
         {
-            name: 'should return proton-foo for proton-foo',
+            name: 'should return undefined for an app name protocol outside the list',
             input: { app: 'proton-foo' as unknown as APP_NAMES, protocol: 'proton-foo://' },
-            output: 'proton-foo:',
+            output: undefined,
+        },
+        {
+            name: 'should return proton-spaces for proton-spaces protocol',
+            input: { app: APPS.PROTONSPACES, protocol: 'proton-spaces://' },
+            output: 'proton-spaces:',
+        },
+        {
+            name: 'should return undefined for proton-docs protocol',
+            input: { app: APPS.PROTONDOCS, protocol: 'proton-docs://' },
+            output: undefined,
+        },
+        {
+            name: 'should return undefined for proton-account protocol',
+            input: { app: APPS.PROTONACCOUNT, protocol: 'proton-account://' },
+            output: undefined,
         },
     ].forEach(({ name, input, output }) => {
         it(name, () => {

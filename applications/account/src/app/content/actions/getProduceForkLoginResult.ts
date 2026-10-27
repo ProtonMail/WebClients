@@ -1,5 +1,5 @@
 import { signInWithAnotherDevicePush } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePush';
-import { pushForkSession } from '@proton/shared/lib/api/auth';
+import { getForkCodeLocation, pushForkSession } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { type OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
@@ -7,10 +7,9 @@ import { getClientID, isExtension } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { produceExtensionFork } from '@proton/shared/lib/authentication/fork/extension';
 import { getValidatedProtonProtocol } from '@proton/shared/lib/authentication/fork/getValidatedProtonProtocol';
-import { getIsLocalhostRedirectUrl } from '@proton/shared/lib/authentication/fork/getValidatedRedirectUrl';
 import { produceOAuthFork } from '@proton/shared/lib/authentication/fork/oauth';
 import { getProduceForkUrl, getShouldReAuth, produceFork } from '@proton/shared/lib/authentication/fork/produce';
-import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
+import type { ForkCodeLocation, PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
@@ -114,6 +113,19 @@ export const getProduceForkLoginResult = async ({
             }
 
             if (desktopForkParameters) {
+                if (!hasInterruption(session, 'desktop-fork-consent')) {
+                    const { userCode, childClientId } = desktopForkParameters.qrCodePayload;
+                    // Where the device showing the code is, for the user to check; the consent works without it
+                    const location = await api<ForkCodeLocation>({ ...getForkCodeLocation(userCode), silence: true })
+                        .then(({ IP, CountryCode }) => ({ IP, CountryCode }))
+                        .catch(() => undefined);
+                    return {
+                        type: 'desktop-fork-consent',
+                        location: '/auth-desktop/confirm',
+                        payload: { session, app, childClientId, location },
+                    };
+                }
+
                 let result: AuthDesktopState['result'];
                 try {
                     await signInWithAnotherDevicePush({
@@ -141,17 +153,21 @@ export const getProduceForkLoginResult = async ({
                 };
             }
 
-            if (
-                !hasInterruption(session, 'fork-redirect-consent') &&
-                redirectUrl &&
-                getIsLocalhostRedirectUrl(redirectUrl)
-            ) {
+            if (!hasInterruption(session, 'desktop-fork-consent') && redirectUrl?.consent === 'desktop') {
+                return {
+                    type: 'desktop-fork-consent',
+                    location: '/auth-desktop/confirm',
+                    payload: { session, app, childClientId: forkParameters.childClientID || getClientID(app) },
+                };
+            }
+
+            if (!hasInterruption(session, 'fork-redirect-consent') && redirectUrl?.consent === 'redirect') {
                 return {
                     type: 'fork-redirect-consent',
                     location: SSO_PATHS.AUTHORIZE_REDIRECT_CONSENT,
                     payload: {
                         session,
-                        redirectUrl: redirectUrl.href,
+                        redirectUrl: redirectUrl.url.href,
                     },
                 };
             }

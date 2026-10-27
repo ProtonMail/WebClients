@@ -7,14 +7,12 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 
 import TroubleshootWithLumo from '../../../public/TroubleshootWithLumo';
 import PorkbunHeader from '../../../single-signup-v2/mail/PorkbunHeader';
-import { SignInChangeTopBanner } from '../../components/SignInChangeTopBanner';
 import { signInRoute } from '../../routes/signInRoute';
 import { useSignInProps } from '../../wizard/SignInProvider';
 import { CredentialsContext } from './CredentialsContext';
 import { LoginChallengeProvider } from './LoginChallengeContext';
 import { AutoPasswordScreen } from './screens/AutoPasswordScreen';
 import { AutoScreen } from './screens/AutoScreen';
-import { PasswordScreen } from './screens/PasswordScreen';
 import { SSOScreen } from './screens/SSOScreen';
 import {
     ClaimedAddressChoiceScreen,
@@ -69,7 +67,6 @@ const PorkbunBeforeMain = () => {
 export const credentialsRoute = signInRoute({
     provider: CredentialsContext.Provider,
     Frame: CredentialsFrame,
-    TopBanner: SignInChangeTopBanner,
     BeforeMain: PorkbunBeforeMain,
     BottomRight: TroubleshootWithLumo,
     decorated: true,
@@ -79,7 +76,6 @@ export const credentialsRoute = signInRoute({
     screens: {
         auto: AutoScreen,
         autoSrp: AutoPasswordScreen,
-        srp: PasswordScreen,
         externalSSO: SSOScreen,
         claimedChoice: ClaimedAddressChoiceScreen,
         claimedVerify: ClaimedAddressVerifyScreen,

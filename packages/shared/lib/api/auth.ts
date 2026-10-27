@@ -110,6 +110,12 @@ export const setLocalKey = (Key: string) => ({
         Key,
     },
 });
+/** Where the device that created a fork's user code is, for the user approving it. */
+export const getForkCodeLocation = (userCode: string) => ({
+    method: 'get',
+    url: `auth/v4/sessions/forks/code/${encodeURIComponent(userCode)}`,
+});
+
 export const pushForkSession = (data: {
     Payload?: string;
     ChildClientID: APP_CLIENT_IDS;

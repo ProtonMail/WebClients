@@ -1,7 +1,7 @@
 import type { APP_NAMES } from '../../constants';
 
 export const getValidatedProtonProtocolRedirect = (redirect: string | null | undefined) => {
-    return redirect && /^proton-?(vpn|mail|calendar|drive|pass|lumo|meet|wallet)?:\/\//.test(redirect)
+    return redirect && /^proton-?(vpn|mail|calendar|drive|pass|lumo|meet|wallet|spaces)?:\/\//.test(redirect)
         ? redirect
         : undefined;
 };
@@ -12,10 +12,6 @@ export const getValidatedProtonProtocol = (app: APP_NAMES, redirectUrl: string) 
         return;
     }
     if (getValidatedProtonProtocolRedirect(`${protocol}//`)) {
-        return protocol;
-    }
-    // Special case for internal apps
-    if (`${app}:` === protocol) {
         return protocol;
     }
 };

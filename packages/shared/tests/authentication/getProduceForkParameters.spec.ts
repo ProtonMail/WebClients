@@ -1,7 +1,7 @@
 import { getProduceForkParameters } from '../../lib/authentication/fork/produce';
 
-const getRedirectUrl = (value?: string) => {
-    const searchParams = new URLSearchParams();
+const getRedirectUrl = (value?: string, app = 'proton-mail') => {
+    const searchParams = new URLSearchParams({ app });
     if (value !== undefined) {
         searchParams.set('redirectUrl', value);
     }
@@ -27,12 +27,19 @@ const getChildClientID = (value?: string) => {
 describe('getProduceForkParameters', () => {
     describe('redirectUrl', () => {
         [
-            { name: 'should parse an https url', value: 'https://mail.proton.me/callback' },
+            {
+                name: 'should parse an https url on the app hostname',
+                value: `https://mail.${window.location.hostname}/callback`,
+            },
+            {
+                name: 'should parse an https url on the new- prefixed app hostname',
+                value: `https://new-mail.${window.location.hostname}/callback`,
+            },
             { name: 'should parse a localhost url with a port', value: 'http://localhost:8080/login' },
             { name: 'should parse a proton protocol url', value: 'proton-mail://' },
         ].forEach(({ name, value }) => {
             it(name, () => {
-                expect(getRedirectUrl(value)?.href).toBe(new URL(value).href);
+                expect(getRedirectUrl(value)?.url.href).toBe(new URL(value).href);
             });
         });
 
@@ -42,11 +49,19 @@ describe('getProduceForkParameters', () => {
             { name: 'should be null for a non-parseable value', value: 'not a url' },
             { name: 'should be null for a path-relative value', value: '/\\\\evil.com' },
             { name: 'should be null for a protocol-relative value', value: '//evil.com' },
+            // The fork would not go there, so nothing should ask to confirm it
+            { name: 'should be null for an https url on another domain', value: 'https://calendar.example.com/' },
+            { name: 'should be null for a plain http url', value: 'http://example.com/' },
+            { name: 'should be null for a javascript url', value: 'javascript:alert(1)' },
         ].forEach(({ name, value }) => {
             it(name, () => {
                 expect(getRedirectUrl(value)).toBe(null);
             });
         });
+    });
+
+    it('should drop the redirectUrl when the app is unknown', () => {
+        expect(getRedirectUrl('http://localhost:8080/login', 'not-an-app')).toBe(null);
     });
 
     describe('forkChallenge', () => {

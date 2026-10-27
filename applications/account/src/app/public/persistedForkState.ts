@@ -1,3 +1,4 @@
+import { getForkRedirectUrl } from '@proton/shared/lib/authentication/fork/produce';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 
 import { type ProduceForkData, SSOType } from '../content/actions/forkInterface';
@@ -8,6 +9,16 @@ export const saveForkState = (state: ProduceForkData) => {
 
 export const clearForkState = () => {
     removeItem('fork-state');
+};
+
+/** The saved redirect's href: JSON keeps a URL as its href, inside `url` or, in older saves, as the whole value. */
+const getSavedRedirectHref = (saved: unknown) => {
+    if (typeof saved === 'string') {
+        return saved;
+    }
+    if (typeof saved === 'object' && saved !== null && 'url' in saved && typeof saved.url === 'string') {
+        return saved.url;
+    }
 };
 
 export const readForkState = (): ProduceForkData | null => {
@@ -23,8 +34,8 @@ export const readForkState = (): ProduceForkData | null => {
             if (!forkParameters) {
                 return null;
             }
-            // A URL does not survive JSON, it serializes to its href. Parse it back so that consumers
-            // get the URL the type promises rather than a string. Both forms are accepted here.
+            // A URL does not survive JSON, it serializes to its href. Parse it back, and validate it again since
+            // session storage may hold one saved before validation or changed since.
             const { redirectUrl } = forkParameters;
             return {
                 ...forkState,
@@ -32,7 +43,7 @@ export const readForkState = (): ProduceForkData | null => {
                     ...forkState.payload,
                     forkParameters: {
                         ...forkParameters,
-                        redirectUrl: redirectUrl && URL.canParse(redirectUrl) ? new URL(redirectUrl) : null,
+                        redirectUrl: getForkRedirectUrl(getSavedRedirectHref(redirectUrl), forkParameters.app),
                     },
                 },
             };

@@ -6,7 +6,6 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getIsLumoApp, getIsPassApp, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { endOfTrialIPCCall } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -74,14 +73,8 @@ const getDefaultUsername = (searchParams?: URLSearchParams) => {
     return searchParams.get('username') || searchParams.get('email');
 };
 
-const getInitialAuthTypeData = (state: SignInLocationState | undefined, toApp: APP_NAMES | undefined): AuthTypeData => {
-    if (state?.authTypeData) {
-        return state.authTypeData;
-    }
-    if (getIsVPNApp(toApp) || getIsPassApp(toApp) || getIsLumoApp(toApp)) {
-        return { type: AuthType.Auto };
-    }
-    return { type: AuthType.Srp };
+const getInitialAuthTypeData = (state: SignInLocationState | undefined): AuthTypeData => {
+    return state?.authTypeData ?? { type: AuthType.Auto };
 };
 
 const SignInFlow = ({
@@ -146,7 +139,7 @@ const SignInFlow = ({
         }
     };
 
-    const authTypeData = getInitialAuthTypeData(state, toApp);
+    const authTypeData = getInitialAuthTypeData(state);
     const externalSSOToken = authTypeData.type === AuthType.ExternalSSO ? state?.externalSSO?.token : undefined;
 
     return (
