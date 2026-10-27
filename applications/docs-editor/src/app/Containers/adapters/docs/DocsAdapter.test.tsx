@@ -11,13 +11,16 @@ import { getDateFnLocaleWithSettings } from '@proton/shared/lib/i18n/dateFnLocal
 import { enGBLocale, enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales'
 import { loadLocale } from '@proton/shared/lib/i18n/loadLocale'
 import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings'
-import { DocsEditorTelemetryEvents } from '../../Docs/contract/DocsEditorTelemetry'
-import type { SafeDocsUserState } from '../../Docs/public'
-import { useDocsDependencies, type DocsDependencies } from '../../Docs/DocsDependenciesProvider'
+import {
+  DocsEditorTelemetryEvents,
+  useDocsDependencies,
+  type DocsCommentEvent,
+  type DocsDependencies,
+  type SafeDocsUserState,
+} from '../../Docs/public'
 import { ApplicationProvider } from '../../ApplicationProvider'
 import { Application } from '../../../Lib/Application'
 import { reportErrorToSentry } from '../../../Utils/errorMessage'
-import type { DocsCommentEvent } from '../../Docs/contract/DocsComments'
 import { createClientInvokerFixture } from './create-client-invoker-fixture'
 import { DocsAdapter } from './DocsAdapter'
 

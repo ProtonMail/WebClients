@@ -31,11 +31,11 @@ jest.mock('../Theme/EditorThemeProvider', () => {
   const setTheme = jest.fn()
   return { useEditorTheme: () => ({ setTheme }) }
 })
-jest.mock('./Docs/Conversion/Exporter/ExportDataFromEditorState', () => ({ exportDataFromEditorState: jest.fn() }))
-jest.mock('./Docs/PreviewModeEditor', () => ({ PreviewModeEditor: () => null }))
 jest.mock('./Docs/public', () => ({
+  ...jest.requireActual('./Docs/public'),
+  exportDataFromEditorState: jest.fn(),
+  PreviewModeEditor: () => null,
   StandaloneDocsEditor: jest.fn(() => null),
-  EditorSystemMode: jest.requireActual('./Docs/contract/EditorSystemMode').EditorSystemMode,
   DocsLayoutContainer: ({ children }: { children: ReactNode }) => children,
   getDocsLayoutScrollContainer: () => null,
 }))

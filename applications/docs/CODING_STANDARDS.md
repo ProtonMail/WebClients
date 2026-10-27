@@ -155,11 +155,12 @@ The editor has three layers. Each change belongs in exactly one:
 
 - **Host shell** (`src/app/` outside `Containers/Docs` and `Containers/Spreadsheet`): the bridge, the editor `Application`, `Containers/App.tsx`. It knows about the client.
 - **Adapters** (`Containers/adapters/docs/`, `Containers/adapters/sheets/`): turn the bridge, the editor `Application` and synced state into `DocsDependencies` / `SheetsDependencies`. This is where translated strings, feature flags and client calls are wired in.
-- **Standalone editors** (`Containers/Docs/`, `Containers/Spreadsheet/`): host-independent. They read everything host-provided through `useDocsDependencies()` / `useSheetsDependencies()`, expose their API to the rest of the app only through `public.ts`, and keep host-facing types in their own `contract/` directory.
+- **Standalone editors** (`Containers/Docs/`, `Containers/Spreadsheet/`): host-independent. They read everything host-provided through `useDocsDependencies()` / `useSheetsDependencies()`, expose their API to the rest of the app only through `public.ts` (and Docs test helpers through `testing.ts`), and keep host-facing types in their own `contract/` directory.
 
 Rules that follow:
 
-- In the standalone editors, imports stay inside the directory: no `@proton/*`, no `ttag`, no `ClientInvoker`, no editor `Application`. `Containers/Spreadsheet` is fully clean; `Containers/Docs` is still being migrated, so add no new host imports there. Check with `pnpm --filter proton-docs-editor docs:scan-imports` / `sheets:scan-imports`.
+- In the standalone editors, imports stay inside the directory: no `@proton/*`, no `ttag`, no `ClientInvoker`, no editor `Application`. Both containers are clean, and `pnpm --filter proton-docs-editor lint` keeps them so: ESLint bans `@proton/*` and `ttag` in them, and lint runs `docs:scan-imports` / `sheets:scan-imports`, which fail on any of these or on an import leaving the directory. The Docs scan also reads `require` and Jest module paths (`jest.mock`, `jest.requireActual`...), and its stylesheets, so `@use`/`@import` of `@proton/styles`, `url()` form included, fails it.
+- Outside `Containers/Docs`, import it only from `Containers/Docs/public.ts`, in `jest.mock` paths too. Test helpers that tests outside the container need go in `Containers/Docs/testing.ts`, which only test files may import. `docs:scan-imports` fails on any other script path into the container, `require` and Jest paths included, and ESLint flags such import statements in most of the editor.
 - A new host capability (a client call, a flag, a setting) goes into the `DocsDependencies` / `SheetsDependencies` type and is supplied by the adapter.
 - When a standalone editor and its consumer (the adapter or host shell) need the same type, define it once in the standalone editor's `contract/`, export it from `public.ts`, and import it from there in the consumer.
 - When a `contract/` type mirrors one in `packages/docs-shared` (e.g. `SuggestionType`), change both together.
@@ -179,9 +180,14 @@ Rules that follow:
 - Bridge arguments cross `postMessage`, so pass plain data only.
 - `postMessage` always targets `BridgeOriginProvider.GetClientOrigin()`, and incoming messages are accepted only from `window.parent`.
 
+### Docs (`Containers/Docs`)
+
+- UI strings live in the typed `DocsMessages` catalogue (`messages/`); components read them with `useDocsMessages()`. To add a string, add its key to the defaults object exported next to the component and spread in `defaultDocsMessages`, and its ttag translation in `Containers/adapters/docs/docsMessages/`. A host passes the translated catalogue as `DocsDependencies.messages`; `defaultMessages` is the fallback when neither it nor an outer `DocsDependenciesProvider` supplies one.
+- Style scope: `StandaloneDocsEditor` and `PreviewModeEditor` render inside `DocsStyleScope`, the `.docs-editor-root` element that loads `docs.scss` and holds the portal root for Ariakit popovers and dialogs, so they stay inside the scope. UI rendered outside it, such as `DocsLayoutContainer`, reads the host's variables instead.
+- Tokens: `docs.scss` defines the colour, border, radius and shadow variables on `.docs-editor-root`, light by default and dark under `[data-theme-mode='dark']`. A host only selects the mode; Docs owns the values.
+
 ### Lexical (`Containers/Docs`)
 
-- UI strings live in the typed `DocsMessages` catalogue (`messages/`); components read them with `useDocsMessages()`. To add a string, add its key to the defaults object exported next to the component and spread in `defaultDocsMessages`, and its ttag translation in `Containers/adapters/docs/docsMessages/`. Some `Containers/Docs` files still call ttag directly until they are migrated.
 - A node's `createDOM` runs outside React, so it cannot read `useDocsMessages()`. Set translated DOM text from the node's decorator component instead. Model: `Plugins/PageBreak/PageBreakNode.tsx`.
 - A plugin is a function component named `<Feature>Plugin` in `Plugins/<Feature>/`. It gets the editor from `useLexicalComposerContext()`, registers listeners in a `useEffect` that returns the unregister function (combine with `mergeRegister`), and returns `null` unless it renders UI. Mount it in `Containers/Docs/Editor.tsx`. Model: `Plugins/PageBreak/PageBreakPlugin.tsx`.
 - Commands: `export const X_COMMAND = createCommand('X_COMMAND')`, in a `Commands.ts` next to the feature.

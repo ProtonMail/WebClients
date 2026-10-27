@@ -51,6 +51,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 - **Adapter** (`DocsAdapter` / `SheetsAdapter`, `editor/Containers/adapters/`): the boundary that turns the bridge, the editor `Application` and synced state into a standalone editor's dependencies.
 - **`DocsDependencies` / `SheetsDependencies`**: everything host-provided that a standalone editor uses (logger, `reportError`, comments, flags, messages...), read with `useDocsDependencies()` / `useSheetsDependencies()`.
 - **`public.ts` / `contract/`**: a standalone editor's export surface, and the host-facing types copied into it so it doesn't depend on docs-shared or docs-core.
+- **`testing.ts`**: `Containers/Docs`' test-only entry, the helpers that tests outside the container need. Only test files may import it.
 
 ### Lexical (text documents)
 
@@ -61,7 +62,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 - **`CommentThreadMarkNode` / mark node**: the node (`'comment-thread-mark'`) wrapping the text a comment thread refers to. `editor/Containers/Docs/Plugins/Comments/`.
 - **`MarkNodeMap`**: map from comment or suggestion id to the keys of its nodes; drives hover and active state. `editor/Containers/Docs/Plugins/MarkNodesContext.tsx`.
 - **`*AsSuggestion` operations**: suggestion-mode versions of edits (`formatTextAsSuggestion`, `setBlocksTypeAsSuggestion`...). `editor/Containers/Docs/Plugins/Suggestions/`.
-- **`DocsMessages`**: the typed catalogue of Docs UI strings (`typeof defaultDocsMessages`), translated in the adapter and read with `useDocsMessages()`. It holds the strings migrated so far; the rest still call ttag. `editor/Containers/Docs/messages/`.
+- **`DocsMessages`**: the typed catalogue of Docs UI strings (`typeof defaultDocsMessages`), translated in the adapter and read with `useDocsMessages()`. `editor/Containers/Docs` calls no ttag itself. `editor/Containers/Docs/messages/`.
 
 ### rowsncolumns (sheets)
 

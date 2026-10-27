@@ -14,20 +14,37 @@ const failOnFound = args.includes('--fail-on-found')
 const json = args.includes('--json')
 const rootArgIndex = args.indexOf('--root')
 const scanRoot = rootArgIndex === -1 ? defaultRoot : path.resolve(process.cwd(), args[rootArgIndex + 1] ?? defaultRoot)
+const defaultConsumersRoot = path.resolve(packageRoot, 'src')
+const consumersArgIndex = args.indexOf('--consumers')
+const consumersRoot =
+  consumersArgIndex === -1
+    ? defaultConsumersRoot
+    : path.resolve(process.cwd(), args[consumersArgIndex + 1] ?? defaultConsumersRoot)
+const publicEntry = path.join(scanRoot, 'public')
+const testingEntry = path.join(scanRoot, 'testing')
+const testFilePattern = /\.(test|spec)\.tsx?$/
 
 const importPatterns = [
   /import\s+(?:type\s+)?[\s\S]*?\s+from\s+['"]([^'"]+)['"]/g,
   /import\s+['"]([^'"]+)['"]/g,
   /export\s+(?:type\s+)?[\s\S]*?\s+from\s+['"]([^'"]+)['"]/g,
   /import\s*\(\s*['"]([^'"]+)['"]\s*\)/g,
+  /(?:\brequire|\bjest\.(?:mock|doMock|unmock|dontMock|setMock|requireActual|requireMock|createMockFromModule))\s*(?:<[^;]*?>)?\s*\(\s*['"]([^'"]+)['"]/g,
+]
+
+const styleImportPatterns = [
+  /@(?:use|import|forward)\s+['"]([^'"]+)['"]/g,
+  /@import\s+url\(\s*['"]?([^'")\s]+)['"]?\s*\)/g,
 ]
 
 const sourceExtensions = new Set(['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'])
+const styleExtensions = new Set(['.scss', '.css'])
 
 const hostImportMatchers = [
   {
     label: 'proton package',
-    matches: (specifier) => specifier.startsWith('@proton/'),
+    // `~` is how Sass loads a package through webpack.
+    matches: (specifier) => /^~?@proton\//.test(specifier),
   },
   {
     label: 'proton i18n',
@@ -60,7 +77,8 @@ const findings = []
 
 for (const file of files) {
   const source = await readFile(file, 'utf8')
-  for (const importRecord of extractImports(source)) {
+  const patterns = styleExtensions.has(path.extname(file)) ? styleImportPatterns : importPatterns
+  for (const importRecord of extractImports(source, patterns)) {
     const resolvedPath = resolveImportPath(file, importRecord.specifier)
     const labels = hostImportMatchers
       .filter((matcher) => matcher.matches(importRecord.specifier, resolvedPath))
@@ -75,6 +93,33 @@ for (const file of files) {
       line: lineNumberAt(source, importRecord.index),
       specifier: importRecord.specifier,
       labels,
+    })
+  }
+}
+
+const consumerFiles = existsSync(consumersRoot)
+  ? (await collectSourceFiles(consumersRoot)).filter(
+      (file) => !isInside(file, scanRoot) && sourceExtensions.has(path.extname(file)),
+    )
+  : []
+
+for (const file of consumerFiles) {
+  const source = await readFile(file, 'utf8')
+  for (const importRecord of extractImports(source, importPatterns)) {
+    const resolvedPath = resolveImportPath(file, importRecord.specifier)
+    if (resolvedPath === undefined || !isInside(resolvedPath, scanRoot)) {
+      continue
+    }
+    const entry = resolvedPath.replace(/\.[cm]?[jt]sx?$/, '')
+    if (entry === publicEntry || (entry === testingEntry && testFilePattern.test(file))) {
+      continue
+    }
+
+    findings.push({
+      file: path.relative(packageRoot, file),
+      line: lineNumberAt(source, importRecord.index),
+      specifier: importRecord.specifier,
+      labels: [entry === testingEntry ? 'Docs test entry' : 'Docs internals'],
     })
   }
 }
@@ -106,7 +151,8 @@ async function collectSourceFiles(root) {
       continue
     }
 
-    if (entry.isFile() && sourceExtensions.has(path.extname(entry.name))) {
+    const extension = path.extname(entry.name)
+    if (entry.isFile() && (sourceExtensions.has(extension) || styleExtensions.has(extension))) {
       files.push(fullPath)
     }
   }
@@ -114,8 +160,8 @@ async function collectSourceFiles(root) {
   return files
 }
 
-function extractImports(source) {
-  return importPatterns.flatMap((pattern) => {
+function extractImports(source, patterns) {
+  return patterns.flatMap((pattern) => {
     const matches = []
     let match
 

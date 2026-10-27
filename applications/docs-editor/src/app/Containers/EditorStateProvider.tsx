@@ -1,8 +1,7 @@
 import { createContext, useCallback, useContext, useState } from 'react'
 import { useStore, createStore } from 'zustand'
-import { EditorSystemMode } from './Docs/public'
+import { EditorSystemMode, EditorUserMode } from './Docs/public'
 import type { StoreApi } from 'zustand'
-import { EditorUserMode } from '../Lib/EditorUserMode'
 
 type EditorState = {
   userMode: EditorUserMode
