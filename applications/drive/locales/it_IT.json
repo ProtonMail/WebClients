@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Informazioni su ${ name }"
+      ],
       "Accept": [
         "Accetta"
       ],
@@ -48,9 +51,15 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Aggiungi ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add ${ name }": [
+        "Aggiungi ${ name }"
+      ],
       "Add ${ photoCount } photo to a new album": [
         "Aggiungi ${ photoCount } foto a un nuovo album",
         "Aggiungi ${ photoCount } foto a un nuovo album"
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
       ],
       "Add account": [
         "Aggiungi un account"
@@ -533,6 +542,9 @@
       "Go to settings": [
         "Vai alle impostazioni"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "Ho capito"
       ],
@@ -589,6 +601,9 @@
       ],
       "Import paused": [
         "mettere in pausa"
+      ],
+      "Importing from Google": [
+        "Importazione da Google"
       ],
       "Increase": [
         "Aumenta"
@@ -944,6 +959,9 @@
       "Search is unavailable": [
         "La ricerca non è disponibile"
       ],
+      "Search recent items": [
+        "Cerca gli articoli recenti"
+      ],
       "See how": [
         "Scopri come"
       ],
@@ -1045,6 +1063,9 @@
       ],
       "Show side panel": [
         "Mostra pannello laterale"
+      ],
+      "Sign in with Google": [
+        "Accedi con Google"
       ],
       "Sign out": [
         "Esci dall'account"
@@ -1469,6 +1490,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gestore di password premium"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanzia di rimborso entro 30 giorni: annulla l'ordine entro 30 giorni dall'acquisto e contatta il nostro servizio clienti ${ customerSupportLink } per ottenere un rimborso."
       ]
     },
     "BF2024: Deal details": {
@@ -3350,6 +3376,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai su Impostazioni > Identità e indirizzi > Dominio breve (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Esiste già un contatto con questo indirizzo e-mail"
+      ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
@@ -4326,6 +4355,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Hai delle fatture non pagate. Si prega di pagarle prima di aderire ad un piano famiglia."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ti invitiamo a collegare il tuo account ${ BRAND_NAME } a questo gruppo familiare e a usufruire di tutte le sue funzionalità premium."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Il tuo account ha più indirizzi email rispetto alla disponibilità di questo piano. ${ addressSettingsLink }"
       ],
@@ -4372,6 +4404,12 @@
       ],
       "Security key": [
         "Chiave di sicurezza"
+      ],
+      "Still waiting?": [
+        "Stai ancora aspettando?"
+      ],
+      "Touch your security key to continue.": [
+        "Tocca la tua chiave di sicurezza per continuare."
       ]
     },
     "fido2: Label": {
@@ -4859,6 +4897,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } utilizza questo accesso esclusivamente per l'importazione. Google non ha mai accesso al tuo account ${ BRAND_NAME }."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
@@ -4940,6 +4981,9 @@
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "Marchio ${ IDEAL_WERO_BRAND_NAME }"
       ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (mittente non verificato)"
+      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } invito in sospeso",
         "${ invitationsCount } inviti in sospeso"
@@ -5017,6 +5061,12 @@
       "${ storage } storage": [
         "${ storage } di archiviazione"
       ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per evitare di perdere l'accesso. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per mantenere l'abbonamento. ${ learnMoreLink }"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contatto aggiornato con successo.",
         "${ updated } contatti aggiornati con successo."
@@ -5057,6 +5107,9 @@
       ],
       "1 vault per user": [
         "1 cassaforte per utente"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanzia di rimborso entro 30 giorni: annulla l'ordine entro 30 giorni dall'acquisto e contatta il nostro servizio clienti ${ customerSupportLink } per ottenere un rimborso."
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
         "È disponibile una nuova versione di ${ DRIVE_APP_NAME }. Ricarica per continuare a usare la ricerca."
@@ -5150,6 +5203,9 @@
       ],
       "An issue occurred during the restore process.": [
         "Si è verificato un problema durante il processo di ripristino"
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Si è verificato un errore imprevisto durante l'importazione dei dati. Riprova più tardi."
       ],
       "and": [
         "e"
@@ -5280,6 +5336,9 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connettiti a ${ VPN_APP_NAME } per navigare in privato"
       ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Collegarsi a Google Drive e preparare l'importazione."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Il contatto è assegnato al gruppo ${ contactGroupName }."
       ],
@@ -5409,6 +5468,9 @@
       ],
       "Downloading": [
         "Scaricamento"
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Trascina qui i tuoi file e le tue cartelle oppure usa il pulsante “Nuovo” per caricarli"
       ],
       "Drop file here to upload": [
         "Trascina qui i file da caricare."
@@ -5600,6 +5662,9 @@
       "Import mailbox": [
         "Importa casella di posta"
       ],
+      "Import your files and folders": [
+        "Importa i tuoi file e le tue cartelle"
+      ],
       "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
         "Importa i tuoi file e le tue cartelle da Google Drive e mantienili privati in ${ DRIVE_APP_NAME }."
       ],
@@ -5707,6 +5772,9 @@
       ],
       "Key fingerprint": [
         "Impronta digitale della chiave"
+      ],
+      "Know when it's done": [
+        "Capire quando è pronto"
       ],
       "Label all imported messages as": [
         "Etichetta tutti i messaggi importati come"
@@ -5823,6 +5891,9 @@
       "New": [
         "Nuovo"
       ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "A questo punto, accedi al tuo account Google e consenti a ${ BRAND_NAME } di accedere a Google Drive. Importeremo i tuoi file e le tue cartelle su ${ DRIVE_APP_NAME }."
+      ],
       "No": [
         "No"
       ],
@@ -5909,6 +5980,9 @@
       ],
       "or discover other features:": [
         "o scopri altre funzionalità:"
+      ],
+      "Or import your files from": [
+        "Oppure importa i tuoi file da"
       ],
       "Or use the \"+ New\" button": [
         "Oppure usa il pulsante \"+ Nuovo\""
@@ -6011,6 +6085,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Riprova utilizzando un altro metodo di pagamento oppure contatta PayPal per assistenza."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Si prega di eseguire l'aggiornamento per garantire che l'importazione venga completata correttamente."
+      ],
       "Please use another browser or download the file.": [
         "Usa un altro browser o scarica il file."
       ],
@@ -6055,6 +6132,9 @@
       ],
       "Primary": [
         "Principale"
+      ],
+      "Private and encrypted": [
+        "Privato e crittografato"
       ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navigazione privata (o modalità \"incognito\") è utile solo per tenere nascosta la tua attività sul tuo dispositivo. Impedisce al tuo browser di salvare cronologia e cookie, ma non ti rende invisibile. Il tuo ISP, l'amministratore di rete e i siti Web che visiti possono comunque vedere cosa fai online."
@@ -6127,6 +6207,9 @@
       ],
       "Scan to download": [
         "Scansiona per scaricare"
+      ],
+      "Search covers your recent items": [
+        "La ricerca include i tuoi articoli recenti"
       ],
       "Search data can't be read": [
         "Impossibile leggere i dati di ricerca"
@@ -6235,6 +6318,9 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alcuni dei tuoi file non sono più accessibili. Ripristina l'accesso ai tuoi file. ${ StartRecoveryButton }"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Alcuni file più vecchi non sono indicizzati perché il tuo Drive è troppo grande per poter essere indicizzato completamente."
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Alcune foto in questo album non sono salvate nella tua cronologia. Eliminando questo album, quelle foto verranno eliminate definitivamente."
@@ -6467,6 +6553,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Sfortunatamente, sembra che il file o alcuni dei suoi dati non possano essere decriptati."
       ],
+      "UnionPay logo": [
+        "Logo UnionPay"
+      ],
       "Unknown date": [
         "Data sconosciuta"
       ],
@@ -6586,8 +6675,17 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Sarai reindirizzato su PayPal in una nuova scheda del browser per completare questa transazione. Se utilizzi un blocco pop-up, disattivalo per continuare."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Li copieremo da Google Drive su ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Ti invieremo un'email una volta completata l'importazione."
+      ],
+      "We'll email you when your import is complete.": [
+        "Ti invieremo un'e-mail quando l'importazione sarà completata."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Ti invieremo un'e-mail quando l'importazione sarà completata. I tuoi file appariranno in una cartella all'interno di ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Ti risponderemo a breve."
@@ -6725,6 +6823,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Hai un abbonamento di prova a ${ planTitle }. In questo momento non è richiesto alcun pagamento. Il tuo abbonamento verrà rinnovato automaticamente al termine del periodo di prova."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Hai una fattura in sospeso ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Hai una fattura in sospeso con scadenza il ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You may be redirected to your bank’s website.": [
         "Potresti essere reindirizzato al sito web della tua banca."
       ],
@@ -6787,6 +6891,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account ${ BRAND_NAME }."
       ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Il tuo Drive è troppo grande per essere indicizzato interamente in questo browser, quindi la ricerca prende in considerazione solo gli elementi più recenti. I file più vecchi potrebbero non comparire nei risultati."
+      ],
       "Your email address and password were leaked:": [
         "Il tuo indirizzo email e la tua password sono stati resi pubblici:"
       ],
@@ -6799,8 +6906,14 @@
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "I tuoi file vengono indicizzati nuovamente. Puoi continuare a cercare, ma i risultati potrebbero essere incompleti fino al termine dell'operazione. Ti faremo sapere quando sarà completata."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "I tuoi file sono crittografati e archiviati in modo sicuro in ${ DRIVE_APP_NAME }."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "I tuoi file non sono più accessibili a causa del ripristino della password. Carica di nuovo la vecchia chiave di crittografia per riottenere l'accesso. ${ KeyReactivationButton }"
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "I tuoi file sono stati importati e crittografati con successo da Google Drive a ${ DRIVE_APP_NAME }."
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
@@ -6808,11 +6921,17 @@
       "Your files will be encrypted and then saved.": [
         "I tuoi file verranno crittografati e poi salvati."
       ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Il periodo di prova gratuito è terminato. Abbonati subito per garantire al tuo team un accesso ininterrotto e la sicurezza degli account."
+      ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "La tua prova gratuita è stata convertita con successo in un abbonamento di ${ cycle } mesi. La tua data di rinnovo è ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "La tua prova gratuita è stata convertita con successo in un abbonamento mensile. La tua data di rinnovo è il ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Il tuo Google Drive potrebbe essere vuoto oppure contenere solo file non supportati."
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "L'importazione è bloccata. Esegui subito l'aggiornamento per importare il resto dei tuoi file."
@@ -7771,6 +7890,9 @@
       "clearing your browser cache": [
         "cancellare la cache del browser"
       ],
+      "Customer Support": [
+        "Assistenza clienti"
+      ],
       "Enforcing 2FA for organizations": [
         "Imporre l'autenticazione a 2 fattori (2FA) per le organizzazioni"
       ],
@@ -7827,6 +7949,9 @@
       ],
       "Pay invoice": [
         "Pagamento della fattura"
+      ],
+      "Pay it": [
+        "Paga"
       ],
       "Photos": [
         "Foto"
@@ -8850,6 +8975,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } che termina con ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB di archiviazione cloud che ti consente di archiviare, sincronizzare e condividere i file facilmente. Protetto da crittografia end-to-end."
       ],
@@ -9479,6 +9607,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Ultima chance per approfittare dell'80% di sconto sul tuo primo mese di ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "È l'ultima occasione per ottenere il primo mese di ${ plan } a questo prezzo."
+      ],
       "Last day to save": [
         "Ultimo giorno per risparmiare"
       ],
@@ -9560,6 +9691,9 @@
       ],
       "Plus": [
         "Plus"
+      ],
+      "Short @pm.me address": [
+        "Indirizzo email breve @pm.me"
       ],
       "Storage": [
         "Archiviazione"
@@ -9743,6 +9877,21 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visita il nostro ${ helpCenterLink } o ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Aggiungi un metodo di pagamento** per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puoi disdire in qualsiasi momento prima di allora.** Potrai utilizzare ${ planTitle } gratuitamente fino al termine del periodo di prova."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Se decidi di continuare dopo il periodo di prova,** puoi annullare l'abbonamento entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Una volta che l'abbonamento completo avrà inizio...** Potrai comunque disdirlo entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Annulla in qualsiasi momento prima del ${ cancelDate }."
       ],
@@ -9758,11 +9907,20 @@
       "help center": [
         "centro assistenza"
       ],
+      "If you continue after your trial,": [
+        "Se decidi di continuare dopo il periodo di prova,"
+      ],
       "If you need help,": [
         "Se hai bisogno di aiuto,"
       ],
       "Once your full subscription starts...": [
         "Una volta iniziato l'abbonamento completo..."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "È possibile recedere dal contratto entro 30 giorni e ottenere un rimborso proporzionale."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Puoi ancora annullare entro 30 giorni e ottenere un rimborso proporzionale."
@@ -9963,6 +10121,9 @@
       "Billing Country": [
         "Paese di fatturazione"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Gli account Born Private non possono essere acquistati se si dispone di un abbonamento attivo."
+      ],
       "Buying credits requires a separate purchase.": [
         "L'acquisto dei crediti richiede un acquisto separato."
       ],
@@ -10017,6 +10178,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Serve un metodo di pagamento per attivare l'abbonamento una volta terminata la prova."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Il cambio di piano non è compatibile per i seguenti motivi:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Ti preghiamo di chiudere eventuali conti aggiuntivi del portafoglio prima di cambiare piano."
       ],
@@ -10025,6 +10189,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Riattiva prima l'abbonamento per ridurre il numero di componenti aggiuntivi."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "I posti a sedere al Proton Meet devono corrispondere al numero dei partecipanti."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "I prezzi di rinnovo sono soggetti a modifiche in base a ${ termsAndConditionsLink }."
@@ -10043,6 +10210,9 @@
       ],
       "terms and conditions": [
         "Termini e Condizioni"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "L'iniziativa “Born Private” richiede una donazione."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Lo sconto è valido per ${ renewalsWithCoupon } rinnovo.",
@@ -10098,8 +10268,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Questo diventerà il tuo nuovo metodo di pagamento predefinito per tutti i rinnovi futuri."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Questo piano non supporta le funzionalità gestite del tuo account."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Questo piano non include l'assistenza per gli utenti associati al tuo account."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Al momento non è possibile completare l'iscrizione. Riprova più tardi."
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
@@ -10134,11 +10310,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Possiedi già ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Hai già un account Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
       "You will soon be redirected to verify your payment.": [
         "Sarai presto reindirizzato per verificare il pagamento."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Il tuo account è troppo vecchio per partecipare all'iniziativa Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
@@ -10184,12 +10366,22 @@
         "Qualcosa è andato storto. La verifica di Google Pay non è riuscita."
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Confermando, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a prelevare i futuri pagamenti relativi al tuo abbonamento da questo conto corrente tramite addebito diretto SEPA, e la tua banca ad addebitare tali importi. Il tuo primo pagamento viene effettuato ora da ${ IDEAL_WERO_BRAND_NAME }. Il tuo abbonamento si rinnova automaticamente fino a quando non lo disdici; ti avviseremo prima di ogni addebito. Per gli addebiti diretti, puoi richiedere un rimborso alla tua banca entro 8 settimane dalla data dell'addebito, secondo i termini del contratto stipulato con la tua banca. Ciò non si applica al pagamento di ${ IDEAL_WERO_BRAND_NAME } che stai effettuando ora."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Credito per la parte non usata del tuo precedente abbonamento"
       ],
       "Credits will be added to your balance": [
         "I crediti verranno aggiunti al tuo saldo."
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "La modifica dell'indirizzo di fatturazione potrebbe influire sulle imposte relative alle fatture future."
       ]
     },
     "Payments.ModificationWarning": {
@@ -10229,6 +10421,12 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - carta che termina con ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Bonifico bancario - ${ iban }"
+      ],
       "Google Pay - card ending in ${ Last4 }": [
         "Google Pay - carta che termina con ${ Last4 }"
       ]
@@ -11625,6 +11823,9 @@
       "Albums you've shared will appear here": [
         "Gli album che hai condiviso appariranno qui"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importa i tuoi file e le tue cartelle da Google Drive e mantienili privati in ${ DRIVE_APP_NAME }."
+      ],
       "Shared by ${ sharedBy }": [
         "Condiviso da ${ sharedBy }"
       ],
@@ -12211,6 +12412,12 @@
       "Drop to upload": [
         "Trascina per caricare"
       ],
+      "Easy switch": [
+        "Cambio facile"
+      ],
+      "Easy Switch from Google Drive": [
+        "Passaggio semplice da Google Drive"
+      ],
       "Edit billing address": [
         "Modifica indirizzo di fatturazione"
       ],
@@ -12347,6 +12554,12 @@
       ],
       "Import groups": [
         "Importa gruppi"
+      ],
+      "Import started": [
+        "Importazione iniziata"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "L'importazione è stata avviata, ma lo spazio di archiviazione a disposizione non è sufficiente per completarla"
       ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importato da ${ PRODUCT_NAMES.EASY_SWITCH }"
@@ -12527,6 +12740,9 @@
       ],
       "Photos": [
         "Foto"
+      ],
+      "Preparing your import": [
+        "Preparazione dell'importazione"
       ],
       "Preview": [
         "Anteprima"
@@ -12709,6 +12925,9 @@
       "Stop transfers?": [
         "Interrompere i trasferimenti?"
       ],
+      "Subscribe to ${ planTitle }": [
+        "Abbonati a ${ planTitle }"
+      ],
       "Subscription canceled": [
         "Abbonamento annullato"
       ],
@@ -12814,6 +13033,9 @@
       "Warning: suspected fake website": [
         "Attenzione: sospetto sito web falso"
       ],
+      "We could not find anything to import": [
+        "Non siamo riusciti a trovare nulla da importare"
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "Non siamo riusciti a verificare che ${ author } abbia creato questo file."
       ],
@@ -12853,6 +13075,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Benvenuto in ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Benvenuto su ${ DRIVE_APP_NAME }"
+      ],
       "What can a VPN protect you from?": [
         "Da cosa può proteggerti una VPN?"
       ],
@@ -12891,6 +13116,9 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
+      ],
+      "Your import is finished!": [
+        "L'importazione è terminata!"
       ],
       "Your plan": [
         "Il tuo piano"
@@ -13105,8 +13333,14 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Questo utente otterrà i diritti di amministratore al prossimo accesso."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Passa a un piano supportato per utilizzare i ruoli amministratore"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Non puoi modificare i tuoi ruoli. Chiedi a un altro amministratore di modificarli."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."
