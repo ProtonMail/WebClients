@@ -1,7 +1,7 @@
 import { buildAddress } from '@proton/account/testing/buildAddress';
-import { buildUser } from '@proton/account/testing/buildUser';
 import type { SharedStore } from '@proton/redux-shared-store/sharedStore';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { shouldDisplayShortDomainTourStep } from './ShortDomainTourStep';
 

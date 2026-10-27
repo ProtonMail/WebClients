@@ -6,10 +6,10 @@ import { getTestStore } from '@proton/redux-shared-store/test';
 import { APPS, USER_ROLES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { bootstrapEvent } from '../bootstrap/action';
 import { organizationReducer } from '../organization';
-import { buildUser } from '../testing/buildUser';
 import { getModelState } from '../testing/getModelState';
 import { userReducer } from '../user';
 import { availableAppsReducer, fetchAvailableApps, selectAvailableApps } from './index';

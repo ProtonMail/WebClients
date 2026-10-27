@@ -1,13 +1,13 @@
 import { screen } from '@testing-library/react';
 
 import { useGetPreviousSubscription } from '@proton/account/previousSubscription/hooks';
-import { buildUser } from '@proton/account/testing/buildUser';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PreviousSubscription } from '@proton/payments/core/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { UserLockedFlags } from '@proton/shared/lib/interfaces/User';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { renderWithProviders } from '../../testing/renderWithProviders';
 import { LockedStateTopBanner } from './LockedStateTopBanner';

@@ -13,12 +13,12 @@ import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { EntitlementType } from '@proton/payments/core/entitlements/interface';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
-import { buildPreloadedState } from '@proton/payments/testing/buildPreloadedState';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
+import { buildPreloadedState } from '../../../testing/buildPreloadedState';
 import { renderWithProviders } from '../../../testing/renderWithProviders';
 import YourPlanSection from './YourPlanSection';
 import { addresses, calendars, organization, pendingInvite, subscriptionBundle, user } from './__mocks__/data';

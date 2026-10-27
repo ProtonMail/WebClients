@@ -1,10 +1,10 @@
 import { screen } from '@testing-library/react';
 
-import { buildUser } from '@proton/account/testing/buildUser';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { UserType } from '@proton/shared/lib/interfaces/User';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import SetupAddressContainer from './SetupAddressContainer';
 

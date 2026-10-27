@@ -1,9 +1,9 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { buildUser } from '@proton/account/testing/buildUser';
 import { useUser } from '@proton/account/user/hooks';
 import { mockUseConfig } from '@proton/app-context/testing/mockUseConfig';
 import { APPS } from '@proton/shared/lib/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useLumoInMail from './useLumoInMail';

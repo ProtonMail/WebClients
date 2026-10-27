@@ -1,9 +1,9 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
-import { buildUser } from '@proton/account/testing/buildUser';
 import { Autopay, DEFAULT_PAYMENT_VENDOR_STATES, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, PaymentStatus, SavedPaymentMethod } from '@proton/payments/core/interface';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { buildUser } from '@proton/shared/testing/buildUser';
 import { addApiMock, apiMock } from '@proton/test-api/api';
 
 import { getStoreWrapper } from '../testing/renderWithProviders';

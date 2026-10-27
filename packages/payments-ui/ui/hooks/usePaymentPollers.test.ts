@@ -1,9 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { buildUser } from '@proton/account/testing/buildUser';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { usePaymentPollers } from './usePaymentPollers';
 

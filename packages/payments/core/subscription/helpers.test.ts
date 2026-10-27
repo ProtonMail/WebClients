@@ -1,5 +1,5 @@
-import { buildUser } from '@proton/account/testing/buildUser';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { buildSubscription } from '../../testing/buildSubscription';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '../constants';
