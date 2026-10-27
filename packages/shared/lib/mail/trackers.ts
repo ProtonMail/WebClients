@@ -47,6 +47,11 @@ export const getUTMTrackersFromURL = (originalURL: string) => {
 
         return { url: originalURL, info, utmTracker: undefined };
     } catch (error: any) {
+        // TidyURL throws on some links (e.g. numeric values parsed as URL). The link is left uncleaned, nothing to report.
+        if (typeof error?.message === 'string' && error.message.startsWith('Invalid URL')) {
+            return undefined;
+        }
+
         traceError(error, {
             tags: {
                 initiative: SentryMailInitiatives.REMOVE_EMAIL_TRACKERS,
