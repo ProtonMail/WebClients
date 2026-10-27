@@ -28,6 +28,7 @@ export class VideoMixerClient {
     private encoderDoneResolve: (() => void) | null = null;
     private audioCodec: string | null = null;
     private encoderStarted = false;
+    private workerFailedToLoad = false;
 
     constructor({
         initialScene,
@@ -65,11 +66,16 @@ export class VideoMixerClient {
         };
 
         this.worker.onerror = (event) => {
+            if (!(event instanceof ErrorEvent)) {
+                this.workerFailedToLoad = true;
+            }
+
             this.reportMeetError('MeetingRecording Error: renderWorker uncaught error', {
                 context: {
                     message: event.message,
                     filename: event.filename,
                     lineno: event.lineno,
+                    workerFailedToLoad: this.workerFailedToLoad,
                 },
             });
 
@@ -142,6 +148,10 @@ export class VideoMixerClient {
     }
 
     public stopEncoder(): Promise<void> {
+        if (this.workerFailedToLoad) {
+            return Promise.resolve();
+        }
+
         return new Promise((resolve) => {
             this.encoderDoneResolve = resolve;
             this.worker.postMessage({ type: VideoMixerMessageType.STOP_ENCODER });
