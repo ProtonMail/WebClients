@@ -8,7 +8,11 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { PAYMENTS_API_ERROR_CODES } from '@proton/payments/core/api-error-codes';
-import { type CheckSubscriptionData, getPaymentMethodStatus } from '@proton/payments/core/api/api';
+import {
+    type CheckSubscriptionData,
+    checkSubscriptionQuery,
+    getPaymentMethodStatus,
+} from '@proton/payments/core/api/api';
 import {
     putFullBillingAddress,
     putInvoiceBillingAddress,
@@ -19,7 +23,6 @@ import { getLifetimeProductType } from '@proton/payments/core/api/createPaymentS
 import {
     DEFAULT_TAX_BILLING_ADDRESS,
     type FullBillingAddress,
-    getBillingAddressPayload,
 } from '@proton/payments/core/billing-address/billing-address';
 import { getInformedOptimisticSubscriptionEstimation, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import {
@@ -48,29 +51,6 @@ import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/const
 import isTruthy from '@proton/utils/isTruthy';
 
 import { usePreferredPlansMap } from '../ui/hooks/usePreferredPlansMap';
-
-const checkSubscriptionQuery = (data: CheckSubscriptionData) => {
-    const normalizedData: CheckSubscriptionData = {
-        ...data,
-    };
-
-    if (normalizedData.BillingAddress) {
-        normalizedData.BillingAddress = getBillingAddressPayload({
-            billingAddress: normalizedData.BillingAddress,
-            vatId: data.VatId,
-        });
-    }
-
-    if (!normalizedData.VatId) {
-        delete normalizedData.VatId;
-    }
-
-    return {
-        url: `payments/v5/subscription/check`,
-        method: 'post',
-        data: normalizedData,
-    };
-};
 
 const checkProduct = (data: CheckSubscriptionData) => {
     return {
