@@ -405,6 +405,10 @@
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },
+        "packages/mail-composer": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
         "packages/mail-renderer": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
