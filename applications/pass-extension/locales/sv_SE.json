@@ -409,6 +409,9 @@
       "Hide": [
         "Dölj"
       ],
+      "Hide passwords": [
+        "Dölj lösenord"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Hur exporterar jag mina data från ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -1697,6 +1700,9 @@
       "Export to CSV": [
         "Exportera till CSV"
       ],
+      "Export to TXT": [
+        "Exportera till TXT"
+      ],
       "File": [
         "Fil"
       ],
@@ -2334,6 +2340,9 @@
       "Import the CSV file below.": [
         "Importera CSV-filen nedan."
       ],
+      "Important:": [
+        "Viktig:"
+      ],
       "Imported on ${ date }": [
         "Importerad den ${ date }"
       ],
@@ -2463,8 +2472,7 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -5285,6 +5293,9 @@
       ],
       "Imported from:": [
         "Importerad från:"
+      ],
+      "Imported items:": [
+        "Importerade objekt:"
       ],
       "Importing your data": [
         "Importerar din data"
