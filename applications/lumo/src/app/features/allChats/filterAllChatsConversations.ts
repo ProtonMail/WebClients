@@ -32,7 +32,7 @@ export const filterAllChatsConversations = ({
     getState,
 }: FilterAllChatsConversationsInput): Conversation[] => {
     const nonGhostConversations = conversations.filter((conversation) => {
-        return !conversation.ghost;
+        return !conversation.ghost && !conversation.scheduleRun;
     });
 
     const accessibleConversations = applyRetentionPolicy(nonGhostConversations, hasLumoPlus);

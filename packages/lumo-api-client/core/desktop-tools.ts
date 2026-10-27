@@ -14,24 +14,32 @@ type NativeToolResultMessage = {
     is_error?: boolean;
 };
 
+export type ScheduleToolContext = { connectionId: string; runId: string };
+export type ScheduleExecutionInput = { runId: string; connectorIds: string[]; autoApprove: boolean };
+
 export type DesktopExternalTools = {
+    registerScheduleExecutionContext?: (input: ScheduleExecutionInput) => Promise<ScheduleToolContext>;
     ready?: Promise<void>;
     getTools?: () => ChatCompletionsFlatFunctionTool[] | ChatCompletionsFunctionTool[];
     getFlatApiTools?: () => ChatCompletionsFlatFunctionTool[];
     isNativeTool?: (name: string) => boolean;
-    executeToolCall?: (toolCall: {
-        id?: string;
-        function?: { name?: string; arguments?: string };
-        name?: string;
-        arguments?: string;
-    }) => Promise<NativeToolResultMessage>;
+    executeToolCall?: (
+        toolCall: {
+            id?: string;
+            function?: { name?: string; arguments?: string };
+            name?: string;
+            arguments?: string;
+        },
+        scheduleContext?: ScheduleToolContext
+    ) => Promise<NativeToolResultMessage>;
     executeToolCalls?: (
         toolCalls: {
             id?: string;
             function?: { name?: string; arguments?: string };
             name?: string;
             arguments?: string;
-        }[]
+        }[],
+        scheduleContext?: ScheduleToolContext
     ) => Promise<NativeToolResultMessage[]>;
 };
 
@@ -231,7 +239,10 @@ function normalizeDesktopToolCalls(calls: PendingClientToolCall[]): PendingClien
     }));
 }
 
-async function executeBridgeToolCalls(toolCalls: PendingClientToolCall[]): Promise<NativeToolResultMessage[]> {
+async function executeBridgeToolCalls(
+    toolCalls: PendingClientToolCall[],
+    scheduleContext?: ScheduleToolContext
+): Promise<NativeToolResultMessage[]> {
     const bridge = getDesktopBridge();
     if (!bridge) {
         throw new Error('Desktop tools are not available');
@@ -247,11 +258,11 @@ async function executeBridgeToolCalls(toolCalls: PendingClientToolCall[]): Promi
     }));
 
     if (bridge.executeToolCalls) {
-        return bridge.executeToolCalls(openAiCalls);
+        return bridge.executeToolCalls(openAiCalls, scheduleContext);
     }
 
     if (bridge.executeToolCall) {
-        return Promise.all(openAiCalls.map((call) => bridge.executeToolCall!(call)));
+        return Promise.all(openAiCalls.map((call) => bridge.executeToolCall!(call, scheduleContext)));
     }
 
     throw new Error('Desktop tool bridge does not support execution');
@@ -352,15 +363,35 @@ export function initDesktopToolApprovals(): void {
     window.addEventListener(TOOL_APPROVAL_RESOLVED_EVENT, handleApprovalResolved);
 }
 
-export function createDesktopClientToolExecutor(): ClientToolExecutor {
+export function createDesktopClientToolExecutor(schedule?: ScheduleExecutionInput): ClientToolExecutor {
     initDesktopToolApprovals();
+    // Capture permissions once for this executor; never mutate shared bridge or global policies.
+    const permissions = schedule ? { ...schedule, connectorIds: [...schedule.connectorIds] } : undefined;
+    let registration: Promise<ScheduleToolContext> | undefined;
+    const registerContext = () => {
+        if (!permissions) return Promise.resolve(undefined);
+        if (!registration) {
+            registration = (async () => {
+                await waitForDesktopTools();
+                const bridge = getDesktopBridge();
+                if (!bridge?.registerScheduleExecutionContext) {
+                    throw new Error('Desktop does not support scheduled tool approval contexts');
+                }
+                return bridge.registerScheduleExecutionContext(permissions);
+            })();
+        }
+        return registration;
+    };
 
     return {
-        getClientTools: getDesktopOpenAITools,
+        getClientTools: async () => {
+            await registerContext();
+            return getDesktopOpenAITools();
+        },
         canExecute: isDesktopNativeTool,
         normalizeCalls: normalizeDesktopToolCalls,
         execute: async (calls) => {
-            const results = await executeBridgeToolCalls(calls);
+            const results = await executeBridgeToolCalls(calls, await registerContext());
             return results.map((result): ClientToolResult => ({
                 content: result.content,
                 is_error: result.is_error,

@@ -10,6 +10,7 @@ import { ConversationProvider } from '../../providers/ConversationProvider';
 import { IsGuestProvider } from '../../providers/IsGuestProvider';
 import { LumoPlanProvider } from '../../providers/LumoPlanProvider';
 import { OnboardingProvider } from '../../providers/OnboardingProvider';
+import { ScheduleServiceProvider } from '../../providers/ScheduleServiceProvider';
 import { UsageLimitsTierSync } from '../../providers/UsageLimitsTierSync';
 import { LumoUpsellModalProvider } from '../../upsells/providers/LumoUpsellModalProvider';
 import { InnerApp } from '../InnerApp';
@@ -28,19 +29,21 @@ const RouterContainer = () => {
                 <ConversationProvider>
                     <IsGuestProvider isGuest={false}>
                         <LumoPlanProvider>
-                            <LumoUpsellModalProvider>
-                                <UsageLimitsTierSync />
-                                <ChatRetentionEnforcer />
-                                <SafeUserProvider>
-                                    <Router>
-                                        <Switch>
-                                            <Route path="/u/:sessionId">
-                                                <InnerApp />
-                                            </Route>
-                                        </Switch>
-                                    </Router>
-                                </SafeUserProvider>
-                            </LumoUpsellModalProvider>
+                            <ScheduleServiceProvider>
+                                <LumoUpsellModalProvider>
+                                    <UsageLimitsTierSync />
+                                    <ChatRetentionEnforcer />
+                                    <SafeUserProvider>
+                                        <Router>
+                                            <Switch>
+                                                <Route path="/u/:sessionId">
+                                                    <InnerApp />
+                                                </Route>
+                                            </Switch>
+                                        </Router>
+                                    </SafeUserProvider>
+                                </LumoUpsellModalProvider>
+                            </ScheduleServiceProvider>
                         </LumoPlanProvider>
                     </IsGuestProvider>
                 </ConversationProvider>

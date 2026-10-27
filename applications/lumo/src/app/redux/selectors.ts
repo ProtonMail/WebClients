@@ -196,7 +196,7 @@ const selectChatHistoryDateField = (state: LumoState) => state.lumoUserSettings.
 // Sidebar favorites use this order regardless of the history sort preference.
 export const selectStarredConversationsSorted = createSelector([selectConversations], (conversations) =>
     Object.values(conversations)
-        .filter((c: Conversation) => !c.ghost && c.starred === true)
+        .filter((c: Conversation) => !c.ghost && !c.scheduleRun && c.starred === true)
         .sort(sortByDate<Conversation>('desc', 'createdAt'))
 );
 
@@ -239,7 +239,7 @@ export const selectHistoryConversationRows = createSelector(
     (conversations, dateField): ConversationHistoryRow[] => {
         const now = startOfDay(new Date());
         return Object.values(conversations)
-            .filter((c: Conversation) => !c.ghost && !c.starred)
+            .filter((c: Conversation) => !c.ghost && !c.scheduleRun && !c.starred)
             .sort(sortByDate<Conversation>('desc', dateField))
             .map((c: Conversation) => {
                 const dateValue = (c[dateField as keyof Conversation] as string | undefined) ?? c.updatedAt;

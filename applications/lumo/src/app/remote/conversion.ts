@@ -10,10 +10,9 @@ import type {
     SerializedMessage,
     SerializedSpace,
     SpaceId,
-    SpaceType,
     Status,
 } from '../types';
-import { Role, isOldEncryptedData, isRemoteId, isSpaceType } from '../types';
+import { Role, SpaceType, isOldEncryptedData, isRemoteId } from '../types';
 import { mapify } from '../util/collections';
 import { topoSortMessagesFromApi } from '../util/sorting';
 import type {
@@ -48,6 +47,7 @@ import {
     RoleInt,
     type SpaceFromApi,
     type SpaceToApi,
+    SpaceTypeInt,
     StatusInt,
     isRoleInt,
     isStatusInt,
@@ -84,7 +84,7 @@ export function convertSpaceFromApi(input: unknown): GetSpaceRemote {
         Conversations,
         Assets,
     } = input as SpaceFromApi;
-    if (spaceType != null && !isSpaceType(spaceType)) throw new Error('Invalid space SpaceType');
+    const localSpaceType = spaceType == null ? undefined : convertSpaceTypeFromApi(spaceType);
     if (!isRemoteId(ID)) throw new Error('Invalid ID: expected non-empty string');
     if (!isValidDateString(CreateTime)) throw new Error('Invalid CreateTime: expected Date');
     // UpdateTime is optional for backward compatibility - fallback to CreateTime if not present
@@ -102,7 +102,7 @@ export function convertSpaceFromApi(input: unknown): GetSpaceRemote {
     const space = {
         remoteId: ID as SpaceId,
         id: SpaceTag as LocalId,
-        spaceType: spaceType as SpaceType,
+        spaceType: localSpaceType,
         createdAt: new Date(CreateTime as string).toISOString(),
         updatedAt: new Date((UpdateTime || CreateTime) as string).toISOString(), // Fallback to CreateTime for backward compatibility
         wrappedSpaceKey: SpaceKey as Base64,
@@ -421,7 +421,7 @@ export function convertNewSpaceToApi(space: SerializedSpace): NewSpaceToApi {
     return {
         SpaceKey: wrappedSpaceKey,
         SpaceTag: id,
-        SpaceType: spaceType,
+        SpaceType: convertSpaceTypeToApi(spaceType),
         Encrypted: encryptedConcat,
     };
 }
@@ -447,6 +447,32 @@ export function convertNewAttachmentToApi(
         AssetTag: id,
         ...(assetType !== undefined && { AssetType: assetType }),
     };
+}
+
+function convertSpaceTypeToApi(type: SpaceType): SpaceTypeInt {
+    switch (type) {
+        case SpaceType.Default:
+            return SpaceTypeInt.Default;
+        case SpaceType.Project:
+            return SpaceTypeInt.Project;
+        case SpaceType.Schedule:
+            return SpaceTypeInt.Schedule;
+        default:
+            throw new Error(`Unsupported space type ${type}`);
+    }
+}
+
+function convertSpaceTypeFromApi(type: unknown): SpaceType {
+    switch (type) {
+        case SpaceTypeInt.Default:
+            return SpaceType.Default;
+        case SpaceTypeInt.Project:
+            return SpaceType.Project;
+        case SpaceTypeInt.Schedule:
+            return SpaceType.Schedule;
+        default:
+            throw new Error('Invalid space SpaceType');
+    }
 }
 
 export function convertRoleToApi(role: Role): RoleInt {

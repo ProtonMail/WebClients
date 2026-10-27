@@ -6,6 +6,7 @@ import { MAX_ASSETS_PER_SPACE } from '../../constants/limits';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import type { DbApi } from '../../indexedDb/db';
 import { isGeneratedArtifactAttachment } from '../../lib/generatedArtifactAttachment';
+import { serializeCachedAttachment } from '../../lib/serializeCachedAttachment';
 import type { LumoApi, RemoteStatus } from '../../remote/api';
 import { AssetType } from '../../remote/api';
 import { convertNewAttachmentToApi } from '../../remote/conversion';
@@ -18,7 +19,7 @@ import type {
     RemoteId,
     ResourceType,
 } from '../../remote/types';
-import { deserializeAttachment, deserializeFilledAttachment, serializeAttachment } from '../../serialization';
+import { deserializeAttachment, deserializeFilledAttachment } from '../../serialization';
 import { attachmentDataCache } from '../../services/attachmentDataCache';
 import {
     type Attachment,
@@ -153,16 +154,9 @@ function* serializeAttachmentSaga(
         spaceDek_ = yield call(getSpaceDek, space);
     }
 
-    // Restore binary data from cache for serialization
-    const attachmentWithData: Attachment = {
-        ...attachment,
-        data: attachmentDataCache.getData(localId),
-        imagePreview: attachmentDataCache.getImagePreview(localId),
-    };
-
     const serializedAttachment: SerializedAttachment | undefined = yield call(
-        serializeAttachment,
-        attachmentWithData,
+        serializeCachedAttachment,
+        attachment,
         spaceDek_
     );
     if (!serializedAttachment) {

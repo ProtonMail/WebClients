@@ -359,7 +359,7 @@ export class SearchService {
 
         const hasLumoPlus = options?.hasLumoPlus ?? true;
         // Exclude ghost conversations from search - they are transient and should never surface in results
-        const nonGhostConversations = Object.values(conversations).filter((c) => !c.ghost);
+        const nonGhostConversations = Object.values(conversations).filter((c) => !c.ghost && !c.scheduleRun);
         const accessibleConversations = applyRetentionPolicy(nonGhostConversations, hasLumoPlus);
 
         const results: SearchResult[] = accessibleConversations.map((conversation) => {
@@ -442,7 +442,7 @@ export class SearchService {
 
         const hasLumoPlus = options?.hasLumoPlus ?? true;
         // Exclude ghost conversations from search - they are transient and should never surface in results
-        const nonGhostConversations = Object.values(conversations).filter((c) => !c.ghost);
+        const nonGhostConversations = Object.values(conversations).filter((c) => !c.ghost && !c.scheduleRun);
         const accessibleConversations = applyRetentionPolicy(nonGhostConversations, hasLumoPlus);
         const accessibleConversationIds = new Set(accessibleConversations.map((c) => c.id));
 
@@ -520,7 +520,7 @@ export class SearchService {
             const content = message.content?.toLowerCase() || '';
             if (content.includes(normalizedQuery)) {
                 const conversation = conversations[message.conversationId];
-                if (!conversation || conversation.ghost) return;
+                if (!conversation || conversation.ghost || conversation.scheduleRun) return;
 
                 const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
                 const timestamp = new Date(message.createdAt).getTime();
