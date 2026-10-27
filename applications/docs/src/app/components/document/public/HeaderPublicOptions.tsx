@@ -16,12 +16,8 @@ import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 import { RedirectAction } from '@proton/docs-shared/DocumentAction'
 import { useDocsUrlPublicToken } from '@proton/docs-shared/Hooks/useDocsUrlPublicToken'
 import { TooltipKey, useTooltipOnce } from '@proton/docs-shared/Hooks/useTooltipOnce'
-import { useDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
-import {
-  needPublicRedirectSpotlight,
-  publicRedirectSpotlightWasShown,
-  setPublicRedirectSpotlightToShown,
-} from '@proton/drive-store/utils/publicRedirectSpotlight'
+import { useDocsBookmarks } from './useDocsBookmarks'
+import { useDocsBookmarks as useLegacyDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import useLoading from '@proton/hooks/useLoading'
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled'
@@ -47,6 +43,11 @@ import { DocumentActiveUsers } from '../DocumentLayout/DocumentHeader/DocumentAc
 import './HeaderPublicOptions.scss'
 import { useSignupFlowModal } from './SignupFlowModal'
 import { redirectToAccountSwitcher, redirectToSignUp, usePublicDocumentCopying } from './utils'
+import {
+  needPublicRedirectSpotlight,
+  publicRedirectSpotlightWasShown,
+  setPublicRedirectSpotlightToShown,
+} from './publicRedirectSpotlight'
 
 type UserInfoProps = {
   user: UserModel
@@ -125,21 +126,38 @@ export type HeaderPublicOptionsProps = {
   documentType: DocumentType | ProtonDocumentType
 }
 
-export function HeaderPublicOptions({ editorController, documentState, documentType }: HeaderPublicOptionsProps) {
+// Separate components so a flag change remounts instead of swapping hooks in place
+export function HeaderPublicOptions(props: HeaderPublicOptionsProps) {
+  const { surePublicContext } = useDocsContext()
+  const Header = surePublicContext.compat ? HeaderWithLegacyBookmarks : HeaderWithBookmarks
+  return <Header {...props} />
+}
+
+function HeaderWithBookmarks(props: HeaderPublicOptionsProps) {
+  const { surePublicContext } = useDocsContext()
+  const bookmarks = useDocsBookmarks({ ...getLinkDetails(surePublicContext.compat), user: surePublicContext.user })
+  return <HeaderPublicOptionsContent {...props} bookmarks={bookmarks} />
+}
+
+function HeaderWithLegacyBookmarks(props: HeaderPublicOptionsProps) {
+  const { surePublicContext } = useDocsContext()
+  const bookmarks = useLegacyDocsBookmarks(getLinkDetails(surePublicContext.compat))
+  return <HeaderPublicOptionsContent {...props} bookmarks={bookmarks} />
+}
+
+function HeaderPublicOptionsContent({
+  editorController,
+  documentState,
+  documentType,
+  bookmarks: { addBookmark, isAlreadyBookmarked, isLoading },
+}: HeaderPublicOptionsProps & { bookmarks: ReturnType<typeof useDocsBookmarks> }) {
   const { surePublicContext } = useDocsContext()
   const { removeActionFromUrl } = useDocsUrlBar()
   const application = useApplication()
   const role = documentState.getProperty('userRole')
 
-  const { token, linkId, urlPassword, customPassword, isSharedUrlAFolder } = getLinkDetails(surePublicContext.compat)
+  const { token, linkId, urlPassword, isSharedUrlAFolder } = getLinkDetails(surePublicContext.compat)
   const { user, openParams } = surePublicContext
-  // Drive SDK path doesn't set the drive-store session user, so pass it in. Bookmarks will be migrated to the SDK later.
-  const { addBookmark, isAlreadyBookmarked, isLoading } = useDocsBookmarks({
-    token,
-    urlPassword,
-    customPassword,
-    user,
-  })
   const { createCopy } = usePublicDocumentCopying({
     context: surePublicContext,
     editorController,
