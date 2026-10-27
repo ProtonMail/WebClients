@@ -1,11 +1,16 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import type { DownloadController, ProtonDriveClient, SeekableReadableStream } from '@proton/drive/sdk';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { initDownloadSW } from '../../modules/fileSaver/download';
 import { useVideoStreaming } from './streaming';
 
 jest.mock('../../modules/fileSaver/download');
+jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+    ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
+    traceError: jest.fn(),
+}));
 const mockedInitDownloadSW = jest.mocked(initDownloadSW);
 
 // Force the Service Worker path: MSE detection is irrelevant to this test, and stubbing it
@@ -54,6 +59,7 @@ async function waitForUrl(getUrl: () => string | undefined, expected: string) {
 
 describe('useVideoStreaming', () => {
     beforeEach(() => {
+        jest.clearAllMocks();
         mockedInitDownloadSW.mockResolvedValue(undefined);
 
         Object.defineProperty(navigator, 'serviceWorker', {
@@ -82,6 +88,48 @@ describe('useVideoStreaming', () => {
         const secondUrl = result.current?.url;
 
         expect(secondUrl).not.toBe(firstUrl);
+
+        unmount();
+    });
+
+    it('reports playback errors with the mimeType and media error code as tags', async () => {
+        jest.spyOn(HTMLMediaElement.prototype, 'canPlayType').mockReturnValue('probably');
+        const { result, unmount } = renderHook(() =>
+            useVideoStreaming({ drive: createFakeDrive(), nodeUid: 'node-1', mimeType: 'video/mp4' })
+        );
+        await waitForUrl(() => result.current?.url, '/sw/stream/stream-id-for-node-1');
+
+        act(() => {
+            result.current?.onVideoPlaybackError({
+                type: 'error',
+                target: { error: { code: 4 } },
+            });
+        });
+
+        expect(traceError).toHaveBeenCalledTimes(1);
+        expect(traceError).toHaveBeenCalledWith(
+            expect.any(Error),
+            expect.objectContaining({ tags: { mimeType: 'video/mp4', mediaErrorCode: 4 } })
+        );
+
+        unmount();
+    });
+
+    it('does not report playback errors for containers the browser cannot decode', async () => {
+        jest.spyOn(HTMLMediaElement.prototype, 'canPlayType').mockReturnValue('');
+        const { result, unmount } = renderHook(() =>
+            useVideoStreaming({ drive: createFakeDrive(), nodeUid: 'node-1', mimeType: 'video/x-msvideo' })
+        );
+        await waitForUrl(() => result.current?.url, '/sw/stream/stream-id-for-node-1');
+
+        act(() => {
+            result.current?.onVideoPlaybackError({
+                type: 'error',
+                target: { error: { code: 4 } },
+            });
+        });
+
+        expect(traceError).not.toHaveBeenCalled();
 
         unmount();
     });
