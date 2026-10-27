@@ -1,13 +1,17 @@
 import {
     getIsLocalhostRedirectUrl,
+    getRedirectForkUrl,
     getValidatedRedirectUrl,
 } from '../../lib/authentication/fork/getValidatedRedirectUrl';
 import { APPS } from '../../lib/constants';
 
 const makeUrl = (href: string) => new URL(href);
 
-const call = (redirectUrl: string, url: string, app = APPS.PROTONMAIL) =>
-    getValidatedRedirectUrl({ redirectUrl: makeUrl(redirectUrl), url: makeUrl(url), app });
+// Validates, then builds where the fork goes, as a fork does
+const call = (redirectUrl: string, url: string, app = APPS.PROTONMAIL) => {
+    const validatedRedirectUrl = getValidatedRedirectUrl({ redirectUrl: makeUrl(redirectUrl), url: makeUrl(url), app });
+    return validatedRedirectUrl && getRedirectForkUrl({ redirectUrl: validatedRedirectUrl, url: makeUrl(url), app });
+};
 
 const href = (result: ReturnType<typeof call>) => result?.href;
 
@@ -244,6 +248,22 @@ describe('getValidatedRedirectUrl', () => {
             it(name, () => {
                 expect(href(call(redirectUrl, url))).toBe(output);
             });
+        });
+    });
+
+    describe('consent', () => {
+        it.each([
+            ['a proton protocol redirect', 'proton-mail://', 'desktop'],
+            ['a localhost redirect', 'http://localhost:3000/', 'redirect'],
+            ['an https redirect on the same hostname', 'https://mail.proton.me/', undefined],
+            ['an https redirect on the new- prefixed hostname', 'https://new-mail.proton.me/', undefined],
+        ])('for %s: %s', (_, redirectUrl, consent) => {
+            const validatedRedirectUrl = getValidatedRedirectUrl({
+                redirectUrl: makeUrl(redirectUrl),
+                url: makeUrl('https://mail.proton.me/login'),
+                app: APPS.PROTONMAIL,
+            });
+            expect(validatedRedirectUrl?.consent).toBe(consent);
         });
     });
 });

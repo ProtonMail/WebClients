@@ -66,7 +66,7 @@ describe('createCredentialsActors', () => {
         services.api.mockResolvedValueOnce({ SSOChallengeToken: 'challenge' });
         await expect(run()).resolves.toEqual({ type: 'sso', ssoInfo: { SSOChallengeToken: 'challenge' } });
         services.api.mockResolvedValueOnce({ Modulus: 'm' });
-        await expect(run()).resolves.toEqual({ type: 'srp' });
+        await expect(run()).resolves.toEqual({ type: 'srp', info: { Modulus: 'm' } });
         services.api.mockResolvedValueOnce({});
         await expect(run()).rejects.toThrow('Invalid response from server');
     });

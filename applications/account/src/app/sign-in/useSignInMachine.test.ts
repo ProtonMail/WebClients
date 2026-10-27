@@ -37,7 +37,7 @@ describe('useSignInMachine', () => {
         const actor = createActor(machine, {
             input: {
                 username: '',
-                authTypeData: { type: AuthType.Srp },
+                authTypeData: { type: AuthType.Auto },
                 canNavigateBack: true,
                 redirectsSSOToAccount: false,
                 externalSSO: undefined,

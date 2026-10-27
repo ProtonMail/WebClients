@@ -84,12 +84,15 @@ export const SSOScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                                 type="button"
                                 color="norm"
                                 disabled={submitting}
-                                onClick={() =>
-                                    actorRef.send({
-                                        type: 'credentials.passwordSignInRequested',
-                                        payload: { username },
-                                    })
-                                }
+                                onClick={() => {
+                                    // The password step only asks for the password, so the email comes first
+                                    if (onFormSubmit()) {
+                                        actorRef.send({
+                                            type: 'credentials.passwordSignInRequested',
+                                            payload: { username },
+                                        });
+                                    }
+                                }}
                             >
                                 {c('Action').t`Sign in with password`}
                             </InlineLinkButton>

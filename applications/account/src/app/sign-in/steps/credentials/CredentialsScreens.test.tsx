@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { fromPromise } from 'xstate';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
-import type { SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
+import type { InfoResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -40,7 +40,7 @@ const paths = {
 } as unknown as Paths;
 
 const renderForm = ({
-    authTypeData = { type: AuthType.Srp },
+    authTypeData = { type: AuthType.Auto },
     compactForm = false,
     testflight,
     authenticateWithPassword = jest.fn((_values: CredentialsFormValues) => new Promise<PrimaryAuthResult>(() => {})),
@@ -59,7 +59,9 @@ const renderForm = ({
             credentialsFlow: credentialsStateMachine.provide({
                 actors: {
                     startAuthSession: fromPromise(() => Promise.resolve()),
-                    fetchAccountType: fromPromise(() => Promise.resolve<AccountType>({ type: 'srp' })),
+                    fetchAccountType: fromPromise(() =>
+                        Promise.resolve<AccountType>({ type: 'srp', info: {} as InfoResponse })
+                    ),
                     authenticateWithPassword: fromPromise(({ input }) => authenticateWithPassword(input)),
                     ...(authenticateWithSSOToken && {
                         fetchSSOInfo: fromPromise(() =>
@@ -108,32 +110,23 @@ const renderForm = ({
     return { authenticateWithPassword };
 };
 
+/** The username step's Continue, to the password step (the account type check finds a password account). */
+const continueToPassword = async (user: ReturnType<typeof userEvent.setup>, username = 'user@example.com') => {
+    await user.type(screen.getByLabelText('Email or username'), username);
+    await user.click(screen.getByRole('button', { name: 'Continue' }));
+    return screen.findByLabelText('Enter your password');
+};
+
 describe('the credentials screens', () => {
     afterEach(() => {
         jest.mocked(useFlag).mockReset();
     });
 
-    it.each([
-        ['one-page password sign-in', { type: AuthType.Srp }, true],
-        ['username-first sign-in', { type: AuthType.Auto }, false],
-        ['second password step', { type: AuthType.AutoSrp, username: 'member@example.com' }, false],
-        ['SSO sign-in', { type: AuthType.ExternalSSO }, false],
-    ] as const)('shows the sign-in change banner only for %s', (_, authTypeData, showsBanner) => {
-        renderForm({ authTypeData });
-        if (showsBanner) {
-            expect(screen.getByTestId('sign-in-change-banner')).toBeInTheDocument();
-        } else {
-            expect(screen.queryByTestId('sign-in-change-banner')).not.toBeInTheDocument();
-        }
-    });
-
-    it('asks for username and password, then submits them defaulting remember to true', async () => {
+    it('asks for the username, then the password, and submits them defaulting remember to true', async () => {
         const { authenticateWithPassword } = renderForm();
         const user = userEvent.setup();
 
-        expect(screen.getByTestId('login-form')).toBeInTheDocument();
-        await user.type(screen.getByLabelText('Email or username'), 'user@example.com');
-        await user.type(screen.getByLabelText('Password'), 'secret');
+        await user.type(await continueToPassword(user), 'secret');
         await user.click(screen.getByRole('button', { name: 'Sign in' }));
 
         await waitFor(() =>
@@ -142,6 +135,7 @@ describe('the credentials screens', () => {
                 password: 'secret',
                 persistent: true,
                 payload: undefined,
+                info: {},
             })
         );
     });
@@ -150,13 +144,11 @@ describe('the credentials screens', () => {
         const { authenticateWithPassword } = renderForm({ authTypeData: { type: AuthType.Auto } });
         const user = userEvent.setup();
 
-        expect(screen.queryByTestId('sign-in-change-banner')).not.toBeInTheDocument();
         expect(screen.getByLabelText('Keep me signed in')).toBeChecked();
         await user.click(screen.getByLabelText('Keep me signed in'));
         await user.type(screen.getByLabelText('Email or username'), 'user@example.com');
         await user.click(screen.getByRole('button', { name: 'Continue' }));
         await user.type(await screen.findByLabelText('Enter your password'), 'secret');
-        expect(screen.queryByTestId('sign-in-change-banner')).not.toBeInTheDocument();
         await user.click(screen.getByRole('button', { name: 'Sign in' }));
 
         await waitFor(() =>
@@ -164,13 +156,20 @@ describe('the credentials screens', () => {
         );
     });
 
-    it('does not submit empty fields', async () => {
+    it('does not submit an empty username or password', async () => {
         const { authenticateWithPassword } = renderForm();
-        await userEvent.setup().click(screen.getByRole('button', { name: 'Sign in' }));
+        const user = userEvent.setup();
+
+        await user.click(screen.getByRole('button', { name: 'Continue' }));
+        expect(screen.getByText('This field is required')).toBeInTheDocument();
+        expect(screen.queryByLabelText('Enter your password')).not.toBeInTheDocument();
+
+        await continueToPassword(user);
+        await user.click(screen.getByRole('button', { name: 'Sign in' }));
         expect(authenticateWithPassword).not.toHaveBeenCalled();
     });
 
-    it('shows a wrong password inline and clears it when the user edits a field', async () => {
+    it('shows a wrong password inline and clears it when the user edits it', async () => {
         renderForm({
             authenticateWithPassword: jest.fn(() =>
                 Promise.reject(
@@ -182,17 +181,15 @@ describe('the credentials screens', () => {
         });
         const user = userEvent.setup();
 
-        await user.type(screen.getByLabelText('Email or username'), 'user@example.com');
-        await user.type(screen.getByLabelText('Password'), 'wrong');
+        await user.type(await continueToPassword(user), 'wrong');
         await user.click(screen.getByRole('button', { name: 'Sign in' }));
 
         expect(await screen.findByTestId('login:error-block')).toHaveTextContent('Wrong password');
-        await user.type(screen.getByLabelText('Password'), 'x');
+        await user.type(screen.getByLabelText('Enter your password'), 'x');
         await waitFor(() => expect(screen.queryByTestId('login:error-block')).not.toBeInTheDocument());
     });
 
     it.each([
-        ['password', { type: AuthType.Srp }],
         ['auto', { type: AuthType.Auto }],
         ['SSO', { type: AuthType.ExternalSSO }],
     ] as const)(
@@ -258,7 +255,7 @@ describe('the credentials screens', () => {
         await waitFor(() => expect(screen.queryByTestId('login:error-block')).not.toBeInTheDocument());
     });
 
-    it('asks only for the email with SSO, and switches to the password form on request', async () => {
+    it('asks only for the email with SSO, and switches to the password step on request', async () => {
         renderForm({ authTypeData: { type: AuthType.ExternalSSO } });
         expect(screen.getByLabelText('Email')).toBeInTheDocument();
         expect(screen.queryByLabelText('Password')).not.toBeInTheDocument();
@@ -267,10 +264,18 @@ describe('the credentials screens', () => {
         await user.type(screen.getByLabelText('Email'), 'member@company.com');
         await user.click(screen.getByRole('button', { name: 'Sign in with password' }));
 
-        expect(await screen.findByLabelText('Password')).toBeInTheDocument();
-        expect(screen.getByTestId('login-form')).toBeInTheDocument();
+        expect(await screen.findByLabelText('Enter your password')).toBeInTheDocument();
+        expect(screen.getByTestId('login-form-auto')).toBeInTheDocument();
         // The email typed in the SSO form carries over
-        expect(screen.getByLabelText('Email or username')).toHaveValue('member@company.com');
+        expect(screen.getByRole('button', { name: 'member@company.com' })).toBeInTheDocument();
+        expect(screen.queryByLabelText('Email or username')).not.toBeInTheDocument();
+    });
+
+    it('asks for the email before switching to the password step', async () => {
+        renderForm({ authTypeData: { type: AuthType.ExternalSSO } });
+        await userEvent.setup().click(screen.getByRole('button', { name: 'Sign in with password' }));
+        expect(screen.getByText('This field is required')).toBeInTheDocument();
+        expect(screen.queryByLabelText('Enter your password')).not.toBeInTheDocument();
     });
 
     it('keeps the Lumo help open, with its conversation, across a mode switch', async () => {
@@ -283,8 +288,9 @@ describe('the credentials screens', () => {
         const conversation = screen.getByTitle('Troubleshoot with Lumo');
         const page = screen.getByRole('main');
 
+        await user.type(screen.getByLabelText('Email'), 'member@company.com');
         await user.click(screen.getByRole('button', { name: 'Sign in with password' }));
-        expect(await screen.findByLabelText('Password')).toBeInTheDocument();
+        expect(await screen.findByLabelText('Enter your password')).toBeInTheDocument();
 
         // The layout is rendered once, so the switch keeps the page, and the panel in it
         expect(screen.getByRole('main')).toBe(page);

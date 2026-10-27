@@ -137,6 +137,7 @@ export const loginWithPassword = async ({
     persistent,
     api,
     signal,
+    info,
 }: {
     username: string;
     password: string;
@@ -145,8 +146,10 @@ export const loginWithPassword = async ({
     api: Api;
     /** Stops trying the claimed addresses' candidates, aborting the request in flight. */
     signal?: AbortSignal;
+    /** The username's auth info, already fetched; used instead of fetching it again. */
+    info?: InfoResponse;
 }) => {
-    const infoResult = await api<InfoResponse>(getInfo({ username }));
+    const infoResult = info ?? (await api<InfoResponse>(getInfo({ username })));
     try {
         const { result, authVersion } = await loginWithFallback({
             api,

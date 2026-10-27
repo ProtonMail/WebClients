@@ -28,8 +28,6 @@ import './Layout.scss';
 
 interface Props {
     children: ReactNode;
-    /** Below the public banners, at the top of the page. */
-    topBanner?: ReactNode;
     hasFooter?: boolean;
     bottomRight?: ReactNode;
     topRight?: ReactNode;
@@ -82,7 +80,6 @@ const getLinkTarget = (appName: APP_NAMES | undefined): HTMLAttributeAnchorTarge
 const Layout = ({
     toApp,
     children,
-    topBanner,
     stepper,
     hasDecoration,
     bottomRight,
@@ -140,7 +137,7 @@ const Layout = ({
                 layoutClassName
             )}
         >
-            <PublicTopBanners>{topBanner}</PublicTopBanners>
+            <PublicTopBanners />
             <header
                 className={clsx(
                     headerClassName,
