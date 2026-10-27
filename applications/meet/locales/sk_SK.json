@@ -438,6 +438,9 @@
       "Join and leave sounds": [
         "Zvuky pri vstupe a odchode"
       ],
+      "Join from ${ MEET_APP_NAME } app": [
+        "Pripojte sa cez aplikáciu ${ MEET_APP_NAME }"
+      ],
       "Join in browser": [
         "Pripojiť sa cez prehliadač"
       ],
@@ -3256,6 +3259,9 @@
       "Permissions not given.": [
         "Oprávnenia neboli udelené."
       ],
+      "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
+        "Kliknite na ${ downloadLink } a nainštalujte si aplikáciu, prosím. Potom v aplikácii ${ MEET_APP_NAME } opäť kliknite na „Pripojiť sa“."
+      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Prosím, povoľte prístup k vášmu ${ microphoneLinkButton }${ andString }${ cameraLinkButton } pre čo najlepší zážitok."
       ],
@@ -3934,6 +3940,9 @@
     "Link": {
       "clearing your browser cache": [
         "vymazanie medzipamäte prehliadača"
+      ],
+      "download": [
+        "stiahnuť"
       ],
       "Learn more": [
         "Zistiť viac"
