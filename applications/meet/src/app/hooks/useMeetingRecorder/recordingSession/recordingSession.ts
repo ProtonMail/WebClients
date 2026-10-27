@@ -3,6 +3,8 @@ import { logger } from '@protontech/logger';
 
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
+import { withIdleTimeout } from '@proton/meet/utils/withTimeout';
+import { SECOND } from '@proton/shared/lib/constants';
 
 import type { RecordingStopTelemetry } from '../../telemetry/types';
 import { type AudioMixer, type AudioMixerDiagnostics, createAudioMixer } from '../audioMixer/audioMixer';
@@ -24,6 +26,8 @@ import type {
     RecordingSessionStartOptions,
     RecordingStopReport,
 } from './types';
+
+const STOP_IDLE_TIMEOUT_MS = 15 * SECOND;
 
 const isOlderThan = (timestamp: number | null, thresholdMs: number) =>
     timestamp === null || performance.now() - timestamp > thresholdMs;
@@ -59,6 +63,7 @@ export class RecordingSession {
     private outcomeError: string | null = null;
     private finalAudioDiagnostics: AudioMixerDiagnostics | null = null;
     private stallSummary: StallSummary | null = null;
+    private stopResult: Promise<OpfsRecording | null> | null = null;
 
     constructor({
         codec,
@@ -254,21 +259,30 @@ export class RecordingSession {
     }
 
     public async stop(): Promise<OpfsRecording | null> {
-        if (!this.active || !this.mediaRecorder || !this.storage) {
+        const { mediaRecorder, storage, stats } = this;
+        if (!this.active || !mediaRecorder || !storage) {
             return null;
         }
 
-        this.stopStartedAt = performance.now();
-        this.bytesBeforeStop = this.stats?.snapshot().totalBytes ?? 0;
+        if (this.stopResult) {
+            return this.stopResult;
+        }
+
+        const stopStartedAt = performance.now();
+        this.stopStartedAt = stopStartedAt;
+        this.bytesBeforeStop = stats?.snapshot().totalBytes ?? 0;
+
+        const getLastStopProgressAt = () =>
+            Math.max(stopStartedAt, stats?.snapshot().lastChunkAt ?? 0, storage.getLastChunkWrittenAt() ?? 0);
 
         try {
-            await this.mediaRecorder.stop();
-            this.stallSummary = this.watchdog?.getStallSummary() ?? null;
-            this.watchdog?.stop();
-            this.watchdog = null;
-
-            this.file = await this.storage.finalize();
-            return this.file;
+            this.stopResult = withIdleTimeout(
+                this.stopRecorderAndFinalize(mediaRecorder, storage),
+                'Stop recording',
+                STOP_IDLE_TIMEOUT_MS,
+                getLastStopProgressAt
+            );
+            return await this.stopResult;
         } finally {
             this.stopFinishedAt = performance.now();
             const snapshot = this.stats?.snapshot();
@@ -279,6 +293,19 @@ export class RecordingSession {
                 lastChunkAt: snapshot?.lastChunkAt,
             });
         }
+    }
+
+    private async stopRecorderAndFinalize(
+        mediaRecorder: RecorderAPI,
+        storage: RecordingStorageClient
+    ): Promise<OpfsRecording | null> {
+        await mediaRecorder.stop();
+        this.stallSummary = this.watchdog?.getStallSummary() ?? null;
+        this.watchdog?.stop();
+        this.watchdog = null;
+
+        this.file = await storage.finalize();
+        return this.file;
     }
 
     public async cleanup(): Promise<void> {
@@ -370,15 +397,16 @@ export class RecordingSession {
 
     public getStopTelemetry(): RecordingStopTelemetry {
         const totalBytes = this.stats?.snapshot().totalBytes ?? 0;
+        const stallSummary = this.stallSummary ?? this.watchdog?.getStallSummary() ?? null;
 
         return {
             recordingBackend: this.isWebCodecs ? 'webcodecs' : 'mediarecorder',
             recordingBytesBeforeStop: this.bytesBeforeStop,
             recordingBytesFlushedAtStop: totalBytes - this.bytesBeforeStop,
-            recordingStallCount: this.stallSummary?.stallCount ?? 0,
-            recordingStallTotalMs: this.stallSummary?.stallTotalMs ?? 0,
-            recordingStallLongestMs: this.stallSummary?.stallLongestMs ?? 0,
-            recordingLongestStallCause: this.stallSummary?.longestStallCause ?? null,
+            recordingStallCount: stallSummary?.stallCount ?? 0,
+            recordingStallTotalMs: stallSummary?.stallTotalMs ?? 0,
+            recordingStallLongestMs: stallSummary?.stallLongestMs ?? 0,
+            recordingLongestStallCause: stallSummary?.longestStallCause ?? null,
         };
     }
 

@@ -27,3 +27,30 @@ export const withTimeout = <T>(
         }
     });
 };
+
+export const withIdleTimeout = <T>(
+    promise: Promise<T>,
+    label: string,
+    idleTimeoutMs: number,
+    getLastActivityAt: () => number
+): Promise<T> => {
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    return Promise.race([
+        promise,
+        new Promise<T>((_, reject) => {
+            const checkIdle = () => {
+                const idleMs = performance.now() - getLastActivityAt();
+                if (idleMs >= idleTimeoutMs) {
+                    reject(new TimeoutError(`${label} made no progress for ${Math.round(idleMs)}ms`));
+                    return;
+                }
+                timeoutId = setTimeout(checkIdle, idleTimeoutMs - idleMs);
+            };
+            timeoutId = setTimeout(checkIdle, idleTimeoutMs);
+        }),
+    ]).finally(() => {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+    });
+};
