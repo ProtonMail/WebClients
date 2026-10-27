@@ -26,20 +26,13 @@ import { getKTUserContext } from '../kt/actions';
 import { type MemberState, memberThunk } from '../member';
 import { getPendingUnprivatizationRequest, memberAcceptUnprivatization } from '../member/actions';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
-import type { OrganizationRolesState } from '../organizationRoles';
-import { isOrgKeyRequired } from '../organizationRoles/helpers';
 import type { SubscriptionState } from '../subscription';
 import { userThunk } from '../user';
 import { userKeysThunk } from '../userKeys';
 import MemberCreationValidationError from './errors/MemberCreationValidationError';
-import { type MembersState, getMemberAddresses, getMemberRoles } from './index';
-import {
-    getIsMemberInAutomaticApproveState,
-    getIsMemberInManualAcceptState,
-    getMemberUnprivatizationMode,
-} from './memberUnprivatization';
+import { type MembersState, getMemberAddresses } from './index';
+import { getIsMemberInAutomaticApproveState, getIsMemberInManualAcceptState } from './memberUnprivatization';
 import { getInvitationData, getSignedInvitationData, getUnprivatizeMemberPayload } from './unprivatization';
-import { updateOwnerRole } from './updateOwnerRole';
 
 export const unprivatizeMember = ({
     member,
@@ -53,7 +46,7 @@ export const unprivatizeMember = ({
     api: Api;
 }): ThunkAction<
     Promise<void>,
-    KtState & MemberState & MembersState & OrganizationKeyState & OrganizationRolesState,
+    KtState & MemberState & MembersState & OrganizationKeyState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -72,14 +65,6 @@ export const unprivatizeMember = ({
             ktUserContext,
             options,
         });
-        if (getMemberUnprivatizationMode(member).makeAdmin) {
-            const roles = await dispatch(getMemberRoles({ member, cache: CacheType.None }));
-            // Assigning a role requiring the org key asks for this promotion too, but holds that role already:
-            // only the legacy admin toggle relies on the owner role being assigned here
-            if (!roles.some(({ Role }) => isOrgKeyRequired(Role))) {
-                await dispatch(updateOwnerRole({ member, makeAdmin: true, api }));
-            }
-        }
         await api(unprivatizeMemberKeysRoute(member.ID, payload));
         if (member.Self) {
             await Promise.all([
@@ -145,7 +130,7 @@ export const unprivatizeSelf = ({
     member: Member;
 }): ThunkAction<
     Promise<void>,
-    KtState & MemberState & MembersState & OrganizationKeyState & OrganizationRolesState,
+    KtState & MemberState & MembersState & OrganizationKeyState,
     ProtonThunkArguments,
     UnknownAction
 > => {
@@ -220,7 +205,6 @@ export const unprivatizeSelfForMsp = ({
         MembersState &
         OrganizationKeyState &
         EntitlementsState &
-        OrganizationRolesState &
         SubscriptionState &
         EntitlementCatalogState,
     ProtonThunkArguments,
