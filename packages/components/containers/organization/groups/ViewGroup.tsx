@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { getIsScimGroup, getIsScimGroupPendingKeys } from '@proton/account/groups/groupFlags';
-import { useOrganization } from '@proton/account/organization/hooks';
 import { getTranslatedRoleName, isOrgKeyRequired } from '@proton/account/organizationRoles/helpers';
 import { selectIsKeylessSsoOrganizationPlan } from '@proton/account/scimSetup/selectors';
 import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
@@ -37,7 +37,6 @@ import GroupIcon from './GroupIcon';
 import GroupInfoBanner from './GroupInfoBanner';
 import GroupMemberList from './GroupMemberList';
 import { useGroupsManagement } from './context/GroupsManagementContext';
-import shouldShowMail from './shouldShowMail';
 import { GROUPS_RESTRICTION_REASON, PANEL_HEADER_HEIGHT } from './types';
 
 const ViewGroup = () => {
@@ -54,7 +53,7 @@ const ViewGroup = () => {
         groupRolesMap,
     } = useGroupsManagement();
     const isKeylessSsoOrganizationPlan = useSelector(selectIsKeylessSsoOrganizationPlan);
-    const [organization] = useOrganization();
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
     const addUsersToGroupModal = useModalStateObject();
     const deleteGroupPrompt = useModalStateObject();
     const [addingMembers, withAddingMembers] = useLoading();
@@ -87,7 +86,7 @@ const ViewGroup = () => {
         restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT && restrictedBy.groupId === group.ID;
     const isFrozen = restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED || isResumingRoleAssignment;
 
-    const showMailFeatures = shouldShowMail(organization?.PlanName);
+    const showMailFeatures = entitlements.hasGroupMail;
     const primaryGroupAddressKey = Address.Keys[0];
     const isE2eeEnabled = !hasBit(primaryGroupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
 
