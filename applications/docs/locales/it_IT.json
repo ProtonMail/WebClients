@@ -51,6 +51,9 @@
       "Add": [
         "Aggiungi"
       ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
+      ],
       "Add account": [
         "Aggiungi un account"
       ],
@@ -360,6 +363,9 @@
       "Export this version (as docx)": [
         "Esporta questa versione (come docx)"
       ],
+      "Export this version (as odt) (Beta)": [
+        "Esporta questa versione (in formato odt) (Beta)"
+      ],
       "Export this version (as xlsx)": [
         "Esporta questa versione (in formato xlsx)"
       ],
@@ -398,6 +404,9 @@
       ],
       "Go to label": [
         "Vai all'etichetta"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ],
       "Got it": [
         "Ho capito"
@@ -563,6 +572,9 @@
       ],
       "Open navigation": [
         "Apri navigazione"
+      ],
+      "OpenDocument Text (.odt) (Beta)": [
+        "OpenDocument Text (.odt) (Beta)"
       ],
       "PDF (.pdf)": [
         "PDF (.pdf)"
@@ -1091,6 +1103,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gestore di password premium"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanzia di rimborso entro 30 giorni: annulla l'ordine entro 30 giorni dall'acquisto e contatta il nostro servizio clienti ${ customerSupportLink } per ottenere un rimborso."
       ]
     },
     "BF2024: Deal details": {
@@ -2848,6 +2865,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai su Impostazioni > Identità e indirizzi > Dominio breve (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Esiste già un contatto con questo indirizzo e-mail"
+      ],
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
@@ -3671,6 +3691,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Hai delle fatture non pagate. Si prega di pagarle prima di aderire ad un piano famiglia."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Ti invitiamo a collegare il tuo account ${ BRAND_NAME } a questo gruppo familiare e a usufruire di tutte le sue funzionalità premium."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Il tuo account ha più indirizzi email rispetto alla disponibilità di questo piano. ${ addressSettingsLink }"
       ],
@@ -3717,6 +3740,12 @@
       ],
       "Security key": [
         "Chiave di sicurezza"
+      ],
+      "Still waiting?": [
+        "Stai ancora aspettando?"
+      ],
+      "Touch your security key to continue.": [
+        "Tocca la tua chiave di sicurezza per continuare."
       ]
     },
     "fido2: Label": {
@@ -4248,6 +4277,12 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etichetta selezionata",
         "${ selectedFoldersCountLocalized } etichette selezionate"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per evitare di perdere l'accesso. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per mantenere l'abbonamento. ${ learnMoreLink }"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contatto aggiornato con successo.",
@@ -5205,6 +5240,12 @@
       "You don't have access": [
         "Non hai accesso"
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Hai una fattura in sospeso ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Hai una fattura in sospeso con scadenza il ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Potresti non avere le autorizzazioni necessarie per visualizzarlo con l'account selezionato. Prova un account diverso o contatta il proprietario per l'accesso."
       ],
@@ -5501,6 +5542,9 @@
       "Country": [
         "Paese"
       ],
+      "Created by ${ displayName }": [
+        "Creato da ${ displayName }"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -5512,6 +5556,9 @@
       ],
       "Disable this link on a specific date": [
         "Disattiva questo link in una data specifica"
+      ],
+      "Document": [
+        "Documento"
       ],
       "Don't ask again": [
         "Non chiederlo più"
@@ -5615,6 +5662,9 @@
       "Last month only": [
         "Solo il mese scorso"
       ],
+      "Location ${ locationLabel }": [
+        "Località ${ locationLabel }"
+      ],
       "Log in or sign up ": [
         "Accedi o iscriviti"
       ],
@@ -5653,6 +5703,9 @@
       ],
       "Not active": [
         "Inattivo"
+      ],
+      "Not selected": [
+        "Non selezionato"
       ],
       "Notification": [
         "Notifica"
@@ -5702,6 +5755,9 @@
       "Reveal password": [
         "Mostra la password"
       ],
+      "Selected": [
+        "Selezionato"
+      ],
       "Set a password to limit access via link": [
         "Imposta una password per limitare l'accesso tramite link"
       ],
@@ -5713,6 +5769,9 @@
       ],
       "Skip feedback": [
         "Ignora feedback"
+      ],
+      "Spreadsheet": [
+        "Foglio di calcolo"
       ],
       "Stop sharing": [
         "Interrompi la condivisione"
@@ -5845,6 +5904,9 @@
       "clearing your browser cache": [
         "cancellare la cache del browser"
       ],
+      "Customer Support": [
+        "Assistenza clienti"
+      ],
       "Enforcing 2FA for organizations": [
         "Imporre l'autenticazione a 2 fattori (2FA) per le organizzazioni"
       ],
@@ -5898,6 +5960,9 @@
       ],
       "Pay invoice": [
         "Pagamento della fattura"
+      ],
+      "Pay it": [
+        "Paga"
       ],
       "Reactivate now": [
         "Riattiva"
@@ -7122,6 +7187,9 @@
       "Failed to load sharing details": [
         "Impossibile caricare i dettagli di condivisione"
       ],
+      "Failed to reject invitation": [
+        "Impossibile rifiutare l'invito"
+      ],
       "Failed to reject share invitation": [
         "Impossibile rifiutare l'invito alla condivisione"
       ],
@@ -7240,6 +7308,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Ultima chance per approfittare dell'80% di sconto sul tuo primo mese di ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "È l'ultima occasione per ottenere il primo mese di ${ plan } a questo prezzo."
+      ],
       "Last day to save": [
         "Ultimo giorno per risparmiare"
       ],
@@ -7322,6 +7393,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Indirizzo email breve @pm.me"
+      ],
       "Storage": [
         "Archiviazione"
       ],
@@ -7335,6 +7409,21 @@
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visita il nostro ${ helpCenterLink } o ${ contactSupportLink }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Aggiungi un metodo di pagamento** per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Puoi disdire in qualsiasi momento prima di allora.** Potrai utilizzare ${ planTitle } gratuitamente fino al termine del periodo di prova."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Se decidi di continuare dopo il periodo di prova,** puoi annullare l'abbonamento entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Una volta che l'abbonamento completo avrà inizio...** Potrai comunque disdirlo entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "Add a payment method": [
+        "Aggiungi un metodo di pagamento"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "Annulla in qualsiasi momento prima del ${ cancelDate }."
@@ -7351,11 +7440,20 @@
       "help center": [
         "centro assistenza"
       ],
+      "If you continue after your trial,": [
+        "Se decidi di continuare dopo il periodo di prova,"
+      ],
       "If you need help,": [
         "Se hai bisogno di aiuto,"
       ],
       "Once your full subscription starts...": [
         "Una volta iniziato l'abbonamento completo..."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "per continuare a utilizzare tutte le funzionalità al termine del periodo di prova."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "È possibile recedere dal contratto entro 30 giorni e ottenere un rimborso proporzionale."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Puoi ancora annullare entro 30 giorni e ottenere un rimborso proporzionale."
@@ -7505,6 +7603,9 @@
       "An organization is required for this plan.": [
         "Per questo piano è necessaria un'organizzazione."
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Gli account Born Private non possono essere acquistati se si dispone di un abbonamento attivo."
+      ],
       "Buying credits requires a separate purchase.": [
         "L'acquisto dei crediti richiede un acquisto separato."
       ],
@@ -7520,6 +7621,9 @@
       "Please close extra wallets before changing your plan.": [
         "Ti preghiamo di chiudere i portafogli in più prima di modificare il tuo piano."
       ],
+      "Proton Meet seats must match the number of members.": [
+        "I posti a sedere al Proton Meet devono corrispondere al numero dei partecipanti."
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "I prezzi di rinnovo sono soggetti a modifiche in base a ${ termsAndConditionsLink }."
       ],
@@ -7531,6 +7635,9 @@
       ],
       "terms and conditions": [
         "Termini e Condizioni"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "L'iniziativa “Born Private” richiede una donazione."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Lo sconto è valido per ${ renewalsWithCoupon } rinnovo.",
@@ -7577,6 +7684,9 @@
       "This dedicated server is assigned to a gateway and can’t be changed.": [
         "Questo server dedicato è assegnato a un gateway e non può essere modificato."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Questo piano non supporta le funzionalità gestite del tuo account."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Questo piano non include l'assistenza per gli utenti associati al tuo account."
       ],
@@ -7597,6 +7707,12 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Possiedi già ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own a Born Private account.": [
+        "Hai già un account Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Il tuo account è troppo vecchio per partecipare all'iniziativa Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -9564,8 +9680,14 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Questo utente otterrà i diritti di amministratore al prossimo accesso."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Passa a un piano supportato per utilizzare i ruoli amministratore"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Non puoi modificare i tuoi ruoli. Chiedi a un altro amministratore di modificarli."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Potrai assegnare i ruoli non appena l'utente avrà accettato l'invito."

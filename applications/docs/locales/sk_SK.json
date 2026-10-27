@@ -5908,6 +5908,9 @@
       "Country": [
         "Krajina"
       ],
+      "Created by ${ displayName }": [
+        "Vytvoril/-a ${ displayName }"
+      ],
       "Delete": [
         "Odstrániť"
       ],
@@ -5919,6 +5922,9 @@
       ],
       "Disable this link on a specific date": [
         "Deaktivovať tento odkaz k určitému dátumu"
+      ],
+      "Document": [
+        "Dokument"
       ],
       "Don't ask again": [
         "Viac sa nepýtať"
@@ -6031,6 +6037,9 @@
       "Last month only": [
         "Iba minulý mesiac"
       ],
+      "Location ${ locationLabel }": [
+        "Umiestnenie (${ locationLabel }"
+      ],
       "Log in or sign up ": [
         "Prihláste sa alebo zaregistrujte "
       ],
@@ -6069,6 +6078,9 @@
       ],
       "Not active": [
         "Neaktívne"
+      ],
+      "Not selected": [
+        "Nezvolené"
       ],
       "Notification": [
         "Notifikácia"
@@ -6124,6 +6136,9 @@
       "Select all": [
         "Vybrať všetko"
       ],
+      "Selected": [
+        "Vybrané"
+      ],
       "Set a password to limit access via link": [
         "Nastavte heslo, aby ste obmedzili prístup prostredníctvom odkazu"
       ],
@@ -6135,6 +6150,9 @@
       ],
       "Skip feedback": [
         "Preskočiť spätnú väzbu"
+      ],
+      "Spreadsheet": [
+        "Tabuľka"
       ],
       "Stop sharing": [
         "Ukončiť zdieľanie"
@@ -8094,6 +8112,9 @@
       "An organization is required for this plan.": [
         "Tento plán si vyžaduje organizáciu."
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Účet Born Private nie je možné zakúpiť, ak máte aktívne predplatné."
+      ],
       "Buying credits requires a separate purchase.": [
         "Nákup kreditov si vyžaduje samostatnú platbu."
       ],
@@ -8123,6 +8144,9 @@
       ],
       "terms and conditions": [
         "zmluvnými podmienkami používania"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Iniciatíva Born Private si vyžaduje finančný príspevok."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Zľava je platná na ${ renewalsWithCoupon } obnovenie.",
@@ -8204,6 +8228,12 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Už vlastníte ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own a Born Private account.": [
+        "Už vlastníte účet Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Váš účet je príliš starý na iniciatívu Born Private."
       ]
     },
     "PGP key encryption warning": {
