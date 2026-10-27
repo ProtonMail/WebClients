@@ -394,6 +394,9 @@
       "Take a tour": [
         "Volg een rondleiding"
       ],
+      "Top up": [
+        "Saldo verhogen"
+      ],
       "Try again": [
         "Opnieuw proberen"
       ],
@@ -1341,9 +1344,6 @@
       "Add your own memories, edit any auto-generated entry, or clear everything at any time. Generated memories you edit are promoted to your own.": [
         "Voeg uw eigen herinneringen toe, bewerk automatisch gegenereerde gegevens of wis alles op elk gewenst moment. Gegenereerde herinneringen die u bewerkt, worden gepromoveerd tot uw eigen herinneringen."
       ],
-      "API keys let you access ${ LUMO_SHORT_APP_NAME } programmatically. Each key is shown only once upon creation.": [
-        "Met API-sleutels krijgt u programmatisch toegang tot ${ LUMO_SHORT_APP_NAME }. Elke sleutel wordt bij het aanmaken slechts één keer getoond."
-      ],
       "Create a key to integrate ${ LUMO_SHORT_APP_NAME } with your scripts and tools.": [
         "Maak een sleutel aan om ${ LUMO_SHORT_APP_NAME } te integreren met uw scripts en tools."
       ],
@@ -1719,21 +1719,9 @@
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
       ],
-      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
-        "${ LUMO_SHORT_APP_NAME }+ — API-toegang en sleutels zijn inbegrepen bij een ${ LUMO_SHORT_APP_NAME }+ abonnement (log in om sleutels te upgraden of te beheren)"
-      ],
-      "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
-        "${ LUMO_SHORT_APP_NAME }+ — voor de ${ LUMO_SHORT_APP_NAME }-API en API-sleutels is een actief ${ LUMO_SHORT_APP_NAME }+-abonnement vereist. "
-      ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "${ urgentTotal } chat verloopt binnen 24 uur",
         "${ urgentTotal } chats verlopen binnen 24 uur"
-      ],
-      ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
-        ". Het volgt het OpenAI API-schema; te integreren in uw bestaande client met een wijziging van slechts één regel."
-      ],
-      "A ${ LUMO_SHORT_APP_NAME } account": [
-        "Een ${ LUMO_SHORT_APP_NAME }-account"
       ],
       "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
         "Een workflow die een map met PDF's oplaadt, tekst extraheert, ${ LUMO_SHORT_APP_NAME } vraagt om elk bestand samen te vatten en één Markdown-samenvatting per document schrijft."
@@ -1761,12 +1749,6 @@
       ],
       "All files in this chat": [
         "Alle bestanden in dit gesprek"
-      ],
-      "An API key — generate one in ": [
-        "Een API-sleutel — genereer er een in "
-      ],
-      "An HTTP client or official SDK (Python, TypeScript, Rust)": [
-        "Een HTTP-client of officiële SDK (Python, TypeScript, Rust)"
       ],
       "API calls": [
         "API-aanroepen"
@@ -1815,9 +1797,6 @@
       ],
       "Conversation": [
         "Gesprek"
-      ],
-      "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
-        "Maak en trek API-sleutels in voor programmatische toegang. Sleutels worden slechts één keer weergegeven wanneer ze worden gemaakt."
       ],
       "Created by ${ LUMO_SHORT_APP_NAME } in this conversation.": [
         "Gemaakt door ${ LUMO_SHORT_APP_NAME } in dit gesprek."
@@ -1881,9 +1860,6 @@
       ],
       "Files automatically retrieved based on your questions.": [
         "Bestanden automatisch opgehaald op basis van uw vragen."
-      ],
-      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
-        "Gemiddeld aantal tokens per API-aanroep per dag (tokens ÷ aanroepen, of 0 indien geen aanroepen)."
       ],
       "For this chat": [
         "Voor dit gesprek"
@@ -1953,9 +1929,6 @@
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Insluit nooit API-sleutels in client-side bundels. Gebruik omgevingsvariabelen en een server-side proxy in productie."
-      ],
-      "No calls": [
-        "Geen oproepen"
       ],
       "No connected connectors": [
         "Geen aangesloten connectoren"
@@ -2068,23 +2041,11 @@
       "Space usage: ": [
         "Opslaggebruik: "
       ],
-      "Specify a model ID directly for predictable latency or capability targeting.": [
-        "Geef rechtstreeks een model-ID op voor voorspelbare latentie- of capaciteitstargeting."
-      ],
       "Table view": [
         "Tabelweergave"
       ],
-      "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
-        "De ${ LUMO_SHORT_APP_NAME }-API en API-sleutels zijn inbegrepen bij ${ LUMO_SHORT_APP_NAME }+. Vraag de beheerder van uw organisatie om een ${ LUMO_SHORT_APP_NAME }-licentie toe te wijzen aan uw account."
-      ],
       "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
         "De ${ LUMO_SHORT_APP_NAME } API biedt u programmatische toegang tot taalmodellen met de privacyarchitectuur van ${ BRAND_NAME } ingebouwd. Geen datatraining op uw verzoeken. Geen tracking."
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
-        "De ${ LUMO_SHORT_APP_NAME }-API is een RESTful-interface op "
-      ],
-      "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
-        "De ${ LUMO_SHORT_APP_NAME }-API is beschikbaar voor ${ LUMO_SHORT_APP_NAME }+-abonnees. Upgrade om API-sleutels aan te maken en de API programmatisch te gebruiken."
       ],
       "There was an error processing this file.": [
         "Er is een fout opgetreden bij het verwerken van dit bestand."
@@ -2229,12 +2190,6 @@
       "API calls": [
         "API-oproepen"
       ],
-      "API calls (30d)": [
-        "API-aanroepen (30d)"
-      ],
-      "Avg tokens / call": [
-        "Gem. tokens / aanroep"
-      ],
       "Basic": [
         "Basis"
       ],
@@ -2334,12 +2289,6 @@
       "Thinking mode": [
         "Denkmodus"
       ],
-      "Tokens (30d)": [
-        "Tokens (30d)"
-      ],
-      "Tokens generated": [
-        "Gegenereerde tokens"
-      ],
       "Tool calls": [
         "Tool-aanroepen"
       ],
@@ -2399,9 +2348,6 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "upgrade naar ${ LUMO_SHORT_APP_NAME } Plus."
-      ],
-      "View plans": [
-        "Bekijk abonnementen"
       ]
     },
     "collider_2025: Nav": {
@@ -2410,9 +2356,6 @@
       ],
       "Endpoints": [
         "Endpoints"
-      ],
-      "Models": [
-        "Modellen"
       ],
       "Overview": [
         "Overzicht"
@@ -2603,12 +2546,6 @@
       ]
     },
     "collider_2025: Tab": {
-      "API": [
-        "API"
-      ],
-      "Manage keys": [
-        "Beheer sleutels"
-      ],
       "Workflow Builder": [
         "Workflow Builder"
       ]
@@ -2645,9 +2582,6 @@
       ],
       "Animated background": [
         "Geanimerde achtergrond"
-      ],
-      "API calls per day": [
-        "API-aanroepen per dag"
       ],
       "API docs sections": [
         "API-documentatiesecties"
@@ -2703,9 +2637,6 @@
       "Invalid Link": [
         "Ongeldige link"
       ],
-      "Manage keys": [
-        "Beheer sleutels"
-      ],
       "Models": [
         "Modellen"
       ],
@@ -2729,9 +2660,6 @@
       ],
       "Personalizes general chats": [
         "Personaliseert algemene chats"
-      ],
-      "Prerequisites": [
-        "Vereisten"
       ],
       "Privacy included by default.": [
         "Privacy standaard inbegrepen."
@@ -2757,9 +2685,6 @@
       "Theme": [
         "Thema"
       ],
-      "Tokens per call (daily)": [
-        "Tokens per aanroep (dagelijks)"
-      ],
       "Tokens per day": [
         "Tokens per dag"
       ],
@@ -2768,9 +2693,6 @@
       ],
       "Upload files": [
         "Bestanden uploaden"
-      ],
-      "Usage (all keys, last 30 days)": [
-        "Gebruik (alle sleutels, afgelopen 30 dagen)"
       ],
       "Visionary": [
         "Visionary"
@@ -2907,9 +2829,6 @@
       ],
       "tokens": [
         "tokens"
-      ],
-      "tokens/call": [
-        "tokens/oproep"
       ]
     },
     "collider_2025: UploadAction": {
@@ -7092,6 +7011,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
+      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
+        "Vul uw account op met credits die u kunt gebruiken om zich aan te melden bij een nieuw plan of uw huidige abonnement te vernieuwen. U krijgt één krediet voor elke ${ i18nCurrency } die u gebruikt."
+      ],
       "Total conversations:": [
         "Totaal aantal gesprekken:"
       ],
@@ -7227,6 +7149,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Uw volgende factuurdatum is ${ renewalTime }. U kunt op elk moment annuleren. Neem contact op met de klantenservice als u een onmiddellijke wijziging van uw abonnement nodig heeft."
       ],
+      "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
+        "Uw betalingsgegevens zijn beschermd met TLS encryptie en Zwitserse privacywetten."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
@@ -7287,6 +7212,9 @@
       ],
       "Address": [
         "Adres"
+      ],
+      "Amount": [
+        "Bedrag"
       ],
       "Anderson": [
         "Anderson"
@@ -7443,6 +7371,9 @@
       ],
       "Optional": [
         "Optioneel"
+      ],
+      "Other amount": [
+        "Ander bedrag"
       ],
       "Password": [
         "Wachtwoord"
@@ -7995,6 +7926,44 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
+      ]
+    },
+    "Monetary unit": {
+      "Australian dollar": [
+        "Australische dollar"
+      ],
+      "Brazilian real": [
+        "Braziliaanse real"
+      ],
+      "British pound": [
+        "Britse pond"
+      ],
+      "Canadian dollar": [
+        "Canadese dollar"
+      ],
+      "Euro": [
+        "Euro"
+      ],
+      "Hong Kong dollar": [
+        "Hong Kong dollar"
+      ],
+      "Japanese yen": [
+        "Japanse yen"
+      ],
+      "Polish złoty": [
+        "Poolse złoty"
+      ],
+      "Singapore dollar": [
+        "Singapore dollar"
+      ],
+      "South Korean won": [
+        "Zuid-Koreaanse won"
+      ],
+      "Swiss franc": [
+        "Zwitserse Frank"
+      ],
+      "US Dollar": [
+        "Amerikaanse dollar"
       ]
     },
     "New Label form": {
@@ -9038,6 +9007,9 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
       ],
+      "Processing payment": [
+        "Betaling wordt verwerkt"
+      ],
       "Proton Meet seats must match the number of members.": [
         "Proton Meet licenties moeten overeenkomen met het aantal leden."
       ],
@@ -9082,6 +9054,9 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elke moment annuleren"
       ],
+      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
+        "De transactie is succesvol gedetecteerd. Het tegoed wordt aan uw account toegevoegd zodra de transactie volledig is bevestigd."
+      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
         "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
@@ -9115,6 +9090,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "U heeft al een abonnement op dit abonnement. U kunt uw abonnement wijzigen op ${ subscriptionPlatform }."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Via de geselecteerde betaalmethode wordt ${ amountToCharge } in rekening gebracht."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
@@ -9293,6 +9271,9 @@
       ],
       "Organization name": [
         "Organisatienaam"
+      ],
+      "Other": [
+        "Anders"
       ],
       "Password": [
         "Wachtwoord"
@@ -9833,6 +9814,9 @@
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
+      "Credits added": [
+        "Tegoed toegevoegd"
+      ],
       "Email address copied to clipboard": [
         "E-mailadres gekopieerd naar het klembord"
       ],
@@ -9950,6 +9934,9 @@
       "Add credit/debit card": [
         "Krediet/debietkaart toevoegen"
       ],
+      "Add credits": [
+        "Tegoed toevoegen"
+      ],
       "Add user": [
         "Gebruiker toevoegen"
       ],
@@ -9967,6 +9954,9 @@
       ],
       "Billing cycle": [
         "Factuurperiode"
+      ],
+      "Black Friday": [
+        "Black Friday"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
