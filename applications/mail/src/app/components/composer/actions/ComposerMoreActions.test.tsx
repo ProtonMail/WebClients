@@ -9,6 +9,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { mailTestRender } from '../../../helpers/tests/render';
+import { BookingUpsellSource, useComposerBookingsTracking } from '../../../telemetry/composerBookingsEvents';
 import ComposerMoreActions from './ComposerMoreActions';
 
 const mockGetInternalBooking = jest.fn();
@@ -16,6 +17,10 @@ jest.mock('@proton/calendar/bookings/store/hooks', () => ({
     useGetInternalBooking: () => mockGetInternalBooking,
 }));
 jest.mock('@proton/unleash/useFlag');
+jest.mock('../../../telemetry/composerBookingsEvents', () => ({
+    ...jest.requireActual('../../../telemetry/composerBookingsEvents'),
+    useComposerBookingsTracking: jest.fn(),
+}));
 jest.mock('@proton/components/hooks/useActiveBreakpoint');
 const mockSpotlightClose = jest.fn();
 const mockUseComposerBookingSpotlight = jest.fn();
@@ -29,24 +34,51 @@ jest.mock('./MoreActionsExtension', () => ({
 }));
 jest.mock('./ComposerBookingDropdownContent', () => ({
     __esModule: true,
-    default: jest.fn(({ onLimitReached, onUpsell }: { onLimitReached: () => void; onUpsell: () => void }) => (
-        <div data-testid="composer:booking-dropdown">
-            <button
-                type="button"
-                aria-label="Limit reached"
-                data-testid="mock:booking-limit-reached"
-                onClick={onLimitReached}
-            />
-            <button type="button" aria-label="Upsell" data-testid="mock:booking-upsell" onClick={onUpsell} />
-        </div>
-    )),
+    default: jest.fn(
+        ({ onLimitReached, onUpsell }: { onLimitReached: () => void; onUpsell: (pageCount: string) => void }) => (
+            <div data-testid="composer:booking-dropdown">
+                <button
+                    type="button"
+                    aria-label="Limit reached"
+                    data-testid="mock:booking-limit-reached"
+                    onClick={onLimitReached}
+                />
+                <button
+                    type="button"
+                    aria-label="Upsell"
+                    data-testid="mock:booking-upsell"
+                    onClick={() => onUpsell('1')}
+                />
+            </div>
+        )
+    ),
 }));
 jest.mock('@proton/components/containers/calendar/BookingsLimitReached', () => ({
     BookingsLimitReached: jest.fn(() => <div data-testid="composer:booking-limit-modal" />),
 }));
 jest.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => ({
     __esModule: true,
-    default: jest.fn(({ 'data-testid': dataTestId }: { 'data-testid': string }) => <div data-testid={dataTestId} />),
+    default: jest.fn(
+        ({
+            'data-testid': dataTestId,
+            onClose,
+            onSubscribed,
+        }: {
+            'data-testid': string;
+            onClose: () => void;
+            onSubscribed: () => void;
+        }) => (
+            <div data-testid={dataTestId}>
+                <button type="button" aria-label="Dismiss upsell" data-testid="mock:upsell-dismiss" onClick={onClose} />
+                <button
+                    type="button"
+                    aria-label="Subscribed"
+                    data-testid="mock:upsell-subscribed"
+                    onClick={onSubscribed}
+                />
+            </div>
+        )
+    ),
 }));
 
 const mockViewport = (isSmallViewport: boolean) => {
@@ -88,11 +120,22 @@ const setup = async ({
     );
 };
 
+const mockTracking = {
+    trackBookingActionClick: jest.fn(),
+    trackBookingPageInserted: jest.fn(),
+    trackCreateBookingPageClick: jest.fn(),
+    trackBookingUpsellDisplayed: jest.fn(),
+    trackBookingLimitDisplayed: jest.fn(),
+    trackBookingUpsellDismissed: jest.fn(),
+    trackBookingUpsellSubscribed: jest.fn(),
+};
+
 describe('ComposerMoreActions booking action', () => {
     beforeEach(() => {
         jest.mocked(useFlag).mockImplementation((flag) => {
             return flag === 'BookingsInComposerEnabled';
         });
+        jest.mocked(useComposerBookingsTracking).mockReturnValue(mockTracking);
         mockViewport(false);
         mockUseComposerBookingSpotlight.mockReturnValue({
             shouldShowSpotlight: false,
@@ -112,6 +155,10 @@ describe('ComposerMoreActions booking action', () => {
         expect(screen.getByTestId('composer:booking-upsell-modal')).toBeInTheDocument();
         expect(screen.queryByTestId('composer:booking-dropdown')).not.toBeInTheDocument();
         expect(mockGetInternalBooking).not.toHaveBeenCalled();
+        expect(mockTracking.trackBookingActionClick).toHaveBeenCalledTimes(1);
+        expect(mockTracking.trackBookingUpsellDisplayed).toHaveBeenCalledWith({
+            source: BookingUpsellSource.booking_action,
+        });
     });
 
     it('should open the booking dropdown instead of the upsell for a free user who cannot pay', async () => {
@@ -120,6 +167,8 @@ describe('ComposerMoreActions booking action', () => {
 
         expect(screen.getByTestId('composer:booking-dropdown')).toBeInTheDocument();
         expect(screen.queryByTestId('composer:booking-upsell-modal')).not.toBeInTheDocument();
+        expect(mockTracking.trackBookingActionClick).toHaveBeenCalledTimes(1);
+        expect(mockTracking.trackBookingUpsellDisplayed).not.toHaveBeenCalled();
     });
 
     it('should open the booking dropdown for a paid user', async () => {
@@ -128,6 +177,8 @@ describe('ComposerMoreActions booking action', () => {
 
         expect(screen.getByTestId('composer:booking-dropdown')).toBeInTheDocument();
         expect(screen.queryByTestId('composer:booking-upsell-modal')).not.toBeInTheDocument();
+        expect(mockTracking.trackBookingActionClick).toHaveBeenCalledTimes(1);
+        expect(mockTracking.trackBookingUpsellDisplayed).not.toHaveBeenCalled();
     });
 
     it('should refetch the booking pages when the dropdown opens', async () => {
@@ -138,13 +189,14 @@ describe('ComposerMoreActions booking action', () => {
         expect(mockGetInternalBooking).toHaveBeenCalledWith({ cache: CacheType.None });
     });
 
-    it('should close the booking dropdown without refetching when the button is clicked again', async () => {
+    it('should close the booking dropdown without refetching or reporting a click when the button is clicked again', async () => {
         await setup({ isFree: false });
         fireEvent.click(screen.getByTestId('composer:booking-button'));
         fireEvent.click(screen.getByTestId('composer:booking-button'));
 
         expectBookingDropdownClosing();
         expect(mockGetInternalBooking).toHaveBeenCalledTimes(1);
+        expect(mockTracking.trackBookingActionClick).toHaveBeenCalledTimes(1);
     });
 
     it('should close the booking spotlight when the more options menu opens', async () => {
@@ -175,6 +227,36 @@ describe('ComposerMoreActions booking action', () => {
         expectBookingDropdownClosing();
     });
 
+    it.each([
+        ['dismissed', 'mock:upsell-dismiss', 'trackBookingUpsellDismissed'],
+        ['subscribed', 'mock:upsell-subscribed', 'trackBookingUpsellSubscribed'],
+    ] as const)('should report the direct upsell as %s with its source', async (_, testId, track) => {
+        await setup({ isFree: true });
+        fireEvent.click(screen.getByTestId('composer:booking-button'));
+        fireEvent.click(screen.getByTestId(testId));
+
+        expect(mockTracking[track]).toHaveBeenCalledTimes(1);
+        expect(mockTracking[track]).toHaveBeenCalledWith({ source: BookingUpsellSource.booking_action });
+    });
+
+    it.each([
+        ['dismissed', 'mock:upsell-dismiss', 'trackBookingUpsellDismissed'],
+        ['subscribed', 'mock:upsell-subscribed', 'trackBookingUpsellSubscribed'],
+    ] as const)(
+        'should report the upsell from Create a booking page as %s with its source and page count',
+        async (_, testId, track) => {
+            await setup({ isFree: false });
+            fireEvent.click(screen.getByTestId('composer:booking-button'));
+            fireEvent.click(screen.getByTestId('mock:booking-upsell'));
+            fireEvent.click(screen.getByTestId(testId));
+
+            expect(mockTracking[track]).toHaveBeenCalledWith({
+                source: BookingUpsellSource.create_booking_page,
+                pageCount: '1',
+            });
+        }
+    );
+
     it('should open the booking limit modal with the Mail copy', async () => {
         await setup({ isFree: false });
         fireEvent.click(screen.getByTestId('composer:booking-button'));
@@ -202,6 +284,7 @@ describe('ComposerMoreActions booking action', () => {
         fireEvent.click(screen.getByTestId('composer:booking-button'));
 
         expect(screen.getByTestId('composer:booking-dropdown')).toBeInTheDocument();
+        expect(mockTracking.trackBookingActionClick).toHaveBeenCalledTimes(1);
     });
 
     it('should close the booking dropdown when the more options menu opens again on small viewports', async () => {
