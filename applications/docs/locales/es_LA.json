@@ -5759,6 +5759,9 @@
       "Country": [
         "País"
       ],
+      "Created by ${ displayName }": [
+        "Creado por ${ displayName }"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -5770,6 +5773,9 @@
       ],
       "Disable this link on a specific date": [
         "Desactive este enlace en una fecha específica"
+      ],
+      "Document": [
+        "Documento"
       ],
       "Don't ask again": [
         "No volver a preguntar"
@@ -5882,6 +5888,9 @@
       "Last month only": [
         "Solo el último mes"
       ],
+      "Location ${ locationLabel }": [
+        "Ubicación ${ locationLabel }"
+      ],
       "Log in or sign up ": [
         "Iniciar sesión o registrarse "
       ],
@@ -5920,6 +5929,9 @@
       ],
       "Not active": [
         "No activo"
+      ],
+      "Not selected": [
+        "Sin selección"
       ],
       "Notification": [
         "Notificación"
@@ -5975,6 +5987,9 @@
       "Select all": [
         "Seleccionar todo"
       ],
+      "Selected": [
+        "Seleccionado"
+      ],
       "Set a password to limit access via link": [
         "Establezca una contraseña para limitar el acceso mediante enlace"
       ],
@@ -5986,6 +6001,9 @@
       ],
       "Skip feedback": [
         "Omitir comentarios"
+      ],
+      "Spreadsheet": [
+        "Hoja de cálculo"
       ],
       "Stop sharing": [
         "Dejar de compartir"
@@ -7839,6 +7857,9 @@
       "An organization is required for this plan.": [
         "Se requiere una organización para este plan."
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "No se pueden comprar cuentas Born Private con una suscripción activa."
+      ],
       "Buying credits requires a separate purchase.": [
         "La compra de créditos requiere una compra separada."
       ],
@@ -7868,6 +7889,9 @@
       ],
       "terms and conditions": [
         "términos y condiciones"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requiere de una donación."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descuento es válido para ${ renewalsWithCoupon } renovación.",
@@ -7937,6 +7961,12 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ya posee ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own a Born Private account.": [
+        "Ya posee una cuenta Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Su cuenta es demasiado antigua para la iniciativa Born Private."
       ]
     },
     "PGP key encryption warning": {

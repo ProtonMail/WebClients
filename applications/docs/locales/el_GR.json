@@ -4452,6 +4452,10 @@
         "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
         "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
       ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } επιλεγμένο",
+        "${ selection.selectedIds.length } επιλεγμένα"
+      ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "Απομένουν ${ timeRemaining } στη δοκιμαστική σας περίοδο. ${ addPaymentMethodLink } για να αποφύγετε την απώλεια πρόσβασης. ${ learnMoreLink }"
       ],
@@ -5752,6 +5756,9 @@
       "Country": [
         "Χώρα"
       ],
+      "Created by ${ displayName }": [
+        "Δημιουργήθηκε από ${ displayName }"
+      ],
       "Delete": [
         "Διαγραφή"
       ],
@@ -5763,6 +5770,9 @@
       ],
       "Disable this link on a specific date": [
         "Απενεργοποιήστε αυτόν τον σύνδεσμο σε μια συγκεκριμένη ημερομηνία"
+      ],
+      "Document": [
+        "Έγγραφο"
       ],
       "Don't ask again": [
         "Να μην ερωτηθώ ξανά"
@@ -5875,6 +5885,9 @@
       "Last month only": [
         "Τελευταίος μήνας μόνο"
       ],
+      "Location ${ locationLabel }": [
+        "Τοποθεσία ${ locationLabel }"
+      ],
       "Log in or sign up ": [
         "Σύνδεση ή Eγγραφή "
       ],
@@ -5913,6 +5926,9 @@
       ],
       "Not active": [
         "Μη ενεργό"
+      ],
+      "Not selected": [
+        "Δεν είναι επιλεγμένο"
       ],
       "Notification": [
         "Ειδοποίηση"
@@ -5962,6 +5978,15 @@
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
+      "Select ${ document.name }": [
+        "Επιλογή ${ document.name }"
+      ],
+      "Select all": [
+        "Επιλογή όλων"
+      ],
+      "Selected": [
+        "Επιλεγμένα"
+      ],
       "Set a password to limit access via link": [
         "Ορίστε έναν κωδικό πρόσβασης για να περιορίσετε την πρόσβαση μέσω συνδέσμου"
       ],
@@ -5973,6 +5998,9 @@
       ],
       "Skip feedback": [
         "Παράλειψη σχολίων"
+      ],
+      "Spreadsheet": [
+        "Υπολογιστικό φύλλο"
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"
@@ -7318,6 +7346,10 @@
       ],
       "\"Document deleted permanently": [
         "\"Το έγγραφο διαγράφηκε οριστικά"
+      ],
+      "${ count } item could not be moved to trash": [
+        "Δεν ήταν δυνατή η μετακίνηση ${ count } στοιχείου στον κάδο απορριμμάτων",
+        "Δεν ήταν δυνατή η μετακίνηση ${ count } στοιχείων στον κάδο απορριμμάτων"
       ],
       "${ count } item failed to be decrypted": [
         "${ count } αντικείμενο απέτυχε να αποκρυπτογραφηθεί",

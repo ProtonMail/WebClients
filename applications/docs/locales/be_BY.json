@@ -4561,6 +4561,12 @@
         "Выбрана ${ selectedFoldersCountLocalized } метак",
         "Выбрана ${ selectedFoldersCountLocalized } метак"
       ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } выбраны",
+        "${ selection.selectedIds.length } выбраны",
+        "${ selection.selectedIds.length } выбраны",
+        "${ selection.selectedIds.length } выбраны"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } кантакт паспяхова абноўлены.",
         "${ updated } кантакты паспяхова абноўлены.",
@@ -5870,6 +5876,9 @@
       "Country": [
         "Краіна"
       ],
+      "Created by ${ displayName }": [
+        "Створана ${ displayName }"
+      ],
       "Delete": [
         "Выдаліць"
       ],
@@ -5881,6 +5890,9 @@
       ],
       "Disable this link on a specific date": [
         "Адключыць гэту спасылку на ўказаную дату"
+      ],
+      "Document": [
+        "Дакумент"
       ],
       "Don't ask again": [
         "Больш не пытаць"
@@ -5993,6 +6005,9 @@
       "Last month only": [
         "Толькі за апошні месяц"
       ],
+      "Location ${ locationLabel }": [
+        "Размяшчэнне ${ locationLabel }"
+      ],
       "Log in or sign up ": [
         "Уваход або рэгістрацыя "
       ],
@@ -6031,6 +6046,9 @@
       ],
       "Not active": [
         "Не актыўна"
+      ],
+      "Not selected": [
+        "Не выбрана"
       ],
       "Notification": [
         "Апавяшчэнне"
@@ -6080,8 +6098,14 @@
       "Reveal password": [
         "Паказаць пароль"
       ],
+      "Select ${ document.name }": [
+        "Выберыце ${ document.name }"
+      ],
       "Select all": [
         "Выбраць усе"
+      ],
+      "Selected": [
+        "Выбрана"
       ],
       "Set a password to limit access via link": [
         "Задаць пароль для абмежавання доступу праз спасылку"
@@ -6094,6 +6118,9 @@
       ],
       "Skip feedback": [
         "Прапусціць водгук"
+      ],
+      "Spreadsheet": [
+        "Электронная табліца"
       ],
       "Stop sharing": [
         "Спыніць абагульванне"
@@ -6225,6 +6252,9 @@
     "Link": {
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
+      ],
+      "Customer Support": [
+        "Служба падтрымкі"
       ],
       "Enforcing 2FA for organizations": [
         "Прымусовае ўключэнне 2ФА для арганізацый"
@@ -8124,6 +8154,9 @@
       ],
       "Trial plans don’t support this many members.": [
         "Тарыфныя планы з пробным перыядам не падтрымліваюць вялікую колькасць удзельнікаў."
+      ],
+      "You already own a Born Private account.": [
+        "Вы ўжо валодаеце ўліковым запісам Born Private."
       ]
     },
     "PGP key encryption warning": {
