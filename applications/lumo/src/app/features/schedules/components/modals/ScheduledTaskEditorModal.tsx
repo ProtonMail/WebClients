@@ -16,6 +16,8 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
+import { requestDesktopNotificationPermission } from '@proton/lumo-api-client/core/desktop-notifications';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../../../components/LumoIcon/LumoIcon';
@@ -57,6 +59,7 @@ export const ScheduledTaskEditorModal = ({
     const { createNotification } = useNotifications();
     const [values, setValues] = useState<ScheduleDetails>(() => initialValues);
     const [fieldErrors, setFieldErrors] = useState<Partial<Record<ScheduleDetailsValidationField, string>>>({});
+    const [saving, setSaving] = useState(false);
     const hasEditedRef = useRef(false);
     const discardEditsPrompt = useModalStateObject();
     const deleteTaskPrompt = useModalStateObject();
@@ -90,18 +93,48 @@ export const ScheduledTaskEditorModal = ({
         }
     };
 
-    const handleSave = () => {
+    const requestCompletionNotifications = async () => {
+        let granted = false;
+        try {
+            granted = await requestDesktopNotificationPermission();
+        } catch (error) {
+            console.warn('Could not enable scheduled task notifications', error);
+        }
+        if (!granted) {
+            createNotification({
+                text: c('collider_2025:Info').t`Task saved, but desktop notifications could not be enabled.`,
+                type: 'warning',
+            });
+        }
+    };
+
+    const handleSave = async () => {
+        if (saving) return;
         const errors = getScheduleDetailsValidationErrors(values);
         setFieldErrors(errors);
 
         if (Object.keys(errors).length === 0) {
-            const saved = onSave?.(spaceId, {
-                ...values,
-                name: values.name.trim(),
-                instructions: values.instructions.trim(),
-            });
-            if (saved === false) return;
-            closeModal();
+            setSaving(true);
+            try {
+                const saved = await onSave?.(spaceId, {
+                    ...values,
+                    name: values.name.trim(),
+                    instructions: values.instructions.trim(),
+                });
+                if (saved === false) return;
+                closeModal();
+                if (values.notifyOnComplete) {
+                    void requestCompletionNotifications();
+                }
+            } catch (error) {
+                console.error('Could not save scheduled task', error);
+                createNotification({
+                    text: getNonEmptyErrorMessage(error, typeof error === 'string' ? error : undefined),
+                    type: 'error',
+                });
+            } finally {
+                setSaving(false);
+            }
         } else {
             createNotification({
                 text: c('collider_2025:Alert').t`Please fix the form errors and try again.`,
@@ -192,7 +225,7 @@ export const ScheduledTaskEditorModal = ({
                                     {
                                         // translator: Help text explaining the timing of the scheduled task.
                                         c('collider_2025:Info')
-                                            .t`Runs on this computer while ${LUMO_SHORT_APP_NAME} is open. If your computer is asleep, it runs when ${LUMO_SHORT_APP_NAME} next opens.`
+                                            .t`Runs on an available computer while ${LUMO_SHORT_APP_NAME} is open. Computers in the same timezone share one run for each occurrence.`
                                     }
                                 </span>
                             </p>

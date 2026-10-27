@@ -62,6 +62,26 @@ describe('filterAllChatsConversations', () => {
         expect(filterConversations(conversations).map((conversation) => conversation.id)).toEqual(['real']);
     });
 
+    it('keeps scheduled runs out of ordinary chat lists, including favorites', () => {
+        const run = createTestConversation(0, 'scheduled', {
+            starred: true,
+            scheduleRun: {
+                run: {
+                    runId: 'run',
+                    scheduleId: 'schedule',
+                    timingRevision: 1,
+                    scheduledFor: new Date().toISOString(),
+                    updatedAt: new Date().toISOString(),
+                    status: 'succeeded',
+                },
+                status: 'succeeded',
+                messageIds: [],
+            },
+        });
+        expect(filterConversations([run])).toEqual([]);
+        expect(filterConversations([run], { filter: 'favorites' })).toEqual([]);
+    });
+
     it('shows only starred chats when filter is favorites', () => {
         const conversations = [
             createTestConversation(0, 'starred', { starred: true }),

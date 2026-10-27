@@ -49,6 +49,11 @@ type ForwardedSendOptions = AssistantCallOptions & {
     enableAskUserQuestionsTool?: boolean;
 };
 
+export type ConversationGenerationResult = {
+    assistantMessageId: MessageId;
+    status: 'succeeded' | 'failed';
+};
+
 export type GenerationWithCompactionParams = {
     api: Api;
     conversationId: ConversationId;
@@ -73,6 +78,8 @@ export type GenerationWithCompactionParams = {
     preferSibling?: (message: Message) => void;
     /** Max number of compaction+retry cycles before giving up. */
     maxCompactions?: number;
+    /** Background runs must not replay a generation after a client tool may have acted. */
+    retryAfterToolExecution?: boolean;
     /**
      * Compact pre-emptively when the estimated request size already exceeds the
      * threshold, instead of waiting for the backend to reject it. Enabled by default.
@@ -107,7 +114,9 @@ function resolveClientToolExecutor(sendOptions: ForwardedSendOptions): ClientToo
         );
     }
 
-    if (isDesktopEnvironment()) {
+    if (sendOptions.clientToolExecutor) {
+        executors.push(sendOptions.clientToolExecutor);
+    } else if (sendOptions.enableDesktopTools !== false && isDesktopEnvironment()) {
         executors.push(createDesktopClientToolExecutor());
     }
 
@@ -129,7 +138,7 @@ function resolveClientToolExecutor(sendOptions: ForwardedSendOptions): ClientToo
  * preserved elsewhere in the tree.
  */
 export function runGenerationWithCompaction(params: GenerationWithCompactionParams) {
-    return async (dispatch: LumoDispatch): Promise<void> => {
+    return async (dispatch: LumoDispatch): Promise<ConversationGenerationResult> => {
         const {
             api,
             conversationId,
@@ -144,6 +153,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             sendOptions,
             preferSibling,
             maxCompactions = DEFAULT_MAX_COMPACTIONS,
+            retryAfterToolExecution = true,
             enableProactiveCompaction = true,
             proactiveThresholdTokens: proactiveThresholdTokensParam,
             compactionTargetTokens: compactionTargetTokensParam,
@@ -158,6 +168,15 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
         let currentAssistantId = assistantMessageId;
         let currentParentId = parentMessageId;
         let compactions = 0;
+        let toolExecutionStarted = false;
+        const resolvedExecutor = resolveClientToolExecutor(sendOptions);
+        const clientToolExecutor = resolvedExecutor && {
+            ...resolvedExecutor,
+            execute: async (...args: Parameters<ClientToolExecutor['execute']>) => {
+                toolExecutionStarted = true;
+                return resolvedExecutor.execute(...args);
+            },
+        };
 
         /** Run compaction, materialize the branch, and advance the local cursors. */
         const compactAndAdvance = async (): Promise<void> => {
@@ -221,18 +240,22 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             }
             try {
                 const turns = buildTurns(currentChain);
-                await dispatch(
+                const result = await dispatch(
                     sendMessageWithRedux(api, turns, {
                         ...sendOptions,
-                        clientToolExecutor: resolveClientToolExecutor(sendOptions),
+                        clientToolExecutor,
                         messageId: currentAssistantId,
                         conversationId,
                         spaceId,
                     })
                 );
-                return;
+                return { assistantMessageId: currentAssistantId, status: result.status };
             } catch (error) {
-                if (!isContextLengthExceededError(error) || compactions >= maxCompactions) {
+                if (
+                    !isContextLengthExceededError(error) ||
+                    compactions >= maxCompactions ||
+                    (!retryAfterToolExecution && toolExecutionStarted)
+                ) {
                     throw error;
                 }
 

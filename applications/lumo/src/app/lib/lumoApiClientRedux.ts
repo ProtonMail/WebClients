@@ -21,6 +21,8 @@ import { postProcessTitle } from '@proton/lumo-api-client/utils';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
+import { buildArtifactRegistry } from '../components/Conversation/artifact/artifactRegistry';
+import type { ArtifactToolMode } from '../components/Conversation/helper';
 import { selectAttachmentsBySpaceId } from '../redux/selectors';
 import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';
 import {
@@ -43,6 +45,7 @@ import {
 import type { LumoDispatch, LumoState } from '../redux/store';
 import { attachmentDataCache } from '../services/attachmentDataCache';
 import { recordLastRequest } from '../services/feedback/lastRequestStore';
+import { syncArtifactAssets } from '../services/generation/syncArtifactAssets';
 import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
 import { ConversationStatus, Role } from '../types';
 import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../types-api';
@@ -74,6 +77,7 @@ export function sendMessageWithRedux(
         spaceId?: string;
         role?: Role;
         errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
+        artifactToolMode?: ArtifactToolMode;
     } = {} as any
 ) {
     return async (dispatch: LumoDispatch, getState: () => LumoState): Promise<AssistantCallResult> => {
@@ -84,6 +88,7 @@ export function sendMessageWithRedux(
             spaceId,
             role = Role.Assistant,
             errorHandler,
+            artifactToolMode,
             ...assistantOptions
         } = options;
 
@@ -400,6 +405,12 @@ export function sendMessageWithRedux(
                                 ...(servingModelID !== undefined ? { modelID: servingModelID } : {}),
                             })
                         );
+                        if (artifactToolMode && artifactToolMode !== 'off') {
+                            const completedMessage = getState().messages[messageId];
+                            if (completedMessage) {
+                                syncArtifactAssets(dispatch, conversationId, buildArtifactRegistry([completedMessage]));
+                            }
+                        }
                         // Always persist the message to IDB, even if generation failed.
                         // Failed messages have content the user can see (partial response,
                         // reasoning tokens, tool calls). Without this push, the message

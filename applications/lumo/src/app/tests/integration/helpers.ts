@@ -24,7 +24,7 @@ import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/
 import type { LumoDispatch, LumoSaga, LumoSagaContext } from '../../redux/store';
 import { setStoreRef } from '../../redux/storeRef';
 import { LumoApi } from '../../remote/api';
-import type { RemoteId } from '../../remote/types';
+import { type RemoteId, SpaceTypeInt } from '../../remote/types';
 import { serializeSpace } from '../../serialization';
 import type {
     AttachmentId,
@@ -427,7 +427,7 @@ export async function generateTestSpacesOnMockServer(count: number, masterKey: A
         const remoteId = await mockDb.getNextSpaceId();
         const mockSpace: MockDbSpace = {
             ID: remoteId,
-            SpaceType: serializedSpace.spaceType,
+            SpaceType: SpaceTypeInt.Default,
             CreateTime: serializedSpace.createdAt,
             UpdateTime: serializedSpace.updatedAt,
             SpaceKey: serializedSpace.wrappedSpaceKey!,
