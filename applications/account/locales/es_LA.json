@@ -368,6 +368,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Acerca de ${ name }"
+      ],
       "Accept": [
         "Aceptar"
       ],
@@ -406,6 +409,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Añadir dirección de ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Añadir ${ name }"
       ],
       "Add a payment method": [
         "Añadir un método de pago"
@@ -995,6 +1001,9 @@
       "Download updated file": [
         "Descargar archivo actualizado"
       ],
+      "Dropbox": [
+        "Dropbox"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -1540,6 +1549,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "OneDrive": [
+        "OneDrive"
       ],
       "Open": [
         "Abrir"
@@ -5462,6 +5474,9 @@
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Traiga su correo electrónico, eventos de calendario y contactos desde otro proveedor."
+      ],
+      "Bring over your files and folders from another provider.": [
+        "Traiga sus archivos y carpetas de cualquier otro proveedor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Genere confianza y reconocimiento de marca con direcciones de correo profesionales en su propio dominio."
@@ -10801,6 +10816,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permita que los usuarios se conecten a servidores compartidos seguros desde la sección **Países** de la aplicación ${ VPN_APP_NAME }."
       ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Permita a su organización usar la API de ${ LUMO_APP_NAME }"
+      ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Permitir el inicio de sesión mediante código QR le permitirá iniciar sesión escaneando un código QR si olvida la contraseña. Solo necesita haber iniciado sesión en un servicio de ${ BRAND_NAME } en otro dispositivo."
       ],
@@ -13876,6 +13894,9 @@
       "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Cuando el inicio de sesión está restringido, solo se pueden usar ${ primaryEmailElement } y su nombre de usuario ${ usernameElement } para iniciar sesión. Sus otras direcciones no se pueden vincular a tSu cuenta, incluso si alguien las conoce."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Cuando el inicio de sesión está restringido, solo puede usar su dirección de correo ${ primaryEmailElement } para iniciar sesión. Sus otras direcciones no se pueden vincular a tSu cuenta, incluso si alguien las conoce."
+      ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Cuando el inicio de sesión está restringido, solo puede usar su nombre de usuario ${ usernameElement } para iniciar sesión. Sus otras direcciones no se pueden vincular a tSu cuenta, incluso si alguien las conoce."
       ],
@@ -14300,6 +14321,9 @@
       ],
       "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
         "Sus archivos están cifrados y almacenados con seguridad en ${ DRIVE_APP_NAME }."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Sus archivos fueron importados y cifrados con éxito desde Google Drive a ${ DRIVE_APP_NAME }."
       ],
       "Your files will be encrypted and then saved": [
         "Los archivos serán cifrados y luego guardados."
@@ -16350,6 +16374,9 @@
       "Reserved email address": [
         "Dirección de correo reservada"
       ],
+      "Restrict sign-in to email address": [
+        "Restringir el inicio de sesión a la dirección de correo"
+      ],
       "Restrict sign-in to primary email address": [
         "Restringir el inicio de sesión a la dirección de correo principal"
       ],
@@ -17211,6 +17238,9 @@
       ],
       "Visit our support site": [
         "Visite nuestro sitio de soporte"
+      ],
+      "Want to import email, calendar and contacts?": [
+        "¿Desea importar correos, calendario y contactos?"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
@@ -20771,6 +20801,9 @@
       "Billing Country": [
         "País de facturación"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "No se pueden comprar cuentas Born Private con una suscripción activa."
+      ],
       "Buying credits requires a separate purchase.": [
         "La compra de créditos requiere una compra separada."
       ],
@@ -20869,6 +20902,9 @@
       ],
       "terms and conditions": [
         "términos y condiciones"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requiere de una donación."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descuento es válido para ${ renewalsWithCoupon } renovación.",
@@ -20969,6 +21005,9 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ya posee ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Ya posee una cuenta Born Private."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se le cobrará ${ amountToCharge } de su método de pago seleccionado."
       ],
@@ -20977,6 +21016,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Pronto se le redirigirá para verificar el pago."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Su cuenta es demasiado antigua para la iniciativa Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_WERO_BRAND_NAME } solo admite pagos en euros."
@@ -25830,6 +25872,9 @@
         "${ friendsSubscribed } amistad suscrita",
         "${ friendsSubscribed } amistades suscritas"
       ],
+      "${ LUMO_APP_NAME } API": [
+        "API de ${ LUMO_APP_NAME }"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -27954,6 +27999,9 @@
       "Your exposed information": [
         "Sus datos expuestos"
       ],
+      "Your import is finished!": [
+        "¡Su importación finalizó!"
+      ],
       "Your plan": [
         "El plan"
       ],
@@ -28430,6 +28478,9 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Cuando mueve un correo a spam, la suscripción se cancelará automáticamente de esa lista de correo."
+      ],
+      "Your ${ DRIVE_APP_NAME } storage is almost full": [
+        "Su almacenamiento de ${ DRIVE_APP_NAME } está casi lleno"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "El buzón de ${ MAIL_APP_NAME } está casi lleno"

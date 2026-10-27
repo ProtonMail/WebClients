@@ -323,6 +323,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
       "Accept": [
         "Acceptera"
       ],
@@ -361,6 +364,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Lägg till ${ BRAND_NAME }-adress"
+      ],
+      "Add ${ name }": [
+        "Lägg till ${ name }"
       ],
       "Add a payment method": [
         "Lägg till en betalningsmetod"
@@ -7432,6 +7438,9 @@
       "Missing key packet": [
         "Saknar nyckelpaket"
       ],
+      "Missing organization private key": [
+        "Saknar organisationens privata nyckel"
+      ],
       "Missing signature": [
         "Signatur saknas"
       ],
@@ -12012,6 +12021,9 @@
       ],
       "No single sign-on": [
         "Ingen enkel inloggning"
+      ],
+      "No users to display": [
+        "Inga användare att visa"
       ],
       "Not a valid URL": [
         "Ogiltig URL"
@@ -23579,6 +23591,9 @@
       "Outdated": [
         "Föråldrad"
       ],
+      "remove organization key": [
+        "ta bort organisationsnyckel"
+      ],
       "Saved": [
         "Sparat"
       ],
@@ -24773,6 +24788,9 @@
       "Activated": [
         "Aktiverad"
       ],
+      "Estimated size": [
+        "Beräknad storlek"
+      ],
       "Migration status": [
         "Migreringsstatus"
       ],
@@ -25076,6 +25094,9 @@
       ],
       "Activity monitor": [
         "Aktivitetsövervakare"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "Lägg till ${ PASS_APP_NAME } till ${ browserName }"
       ],
       "Add ${ PASS_APP_NAME } to your browser": [
         "Lägg till ${ PASS_APP_NAME } i din webbläsare"
@@ -26726,6 +26747,9 @@
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Stärk din säkerhet på alla dina enheter med ${ passPlusPlanName }. ${ upgradeButton }"
       ],
+      "Subscribe to ${ planTitle }": [
+        "Prenumerera på ${ planTitle }"
+      ],
       "Subscription": [
         "Prenumeration"
       ],
@@ -27026,6 +27050,9 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
+      ],
+      "Your import is finished!": [
+        "Din import är klar!"
       ],
       "Your plan": [
         "Ditt paket"
