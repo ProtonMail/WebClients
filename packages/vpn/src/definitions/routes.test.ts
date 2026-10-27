@@ -9,6 +9,7 @@ import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/en
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
+import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
@@ -62,23 +63,25 @@ describe('resolveNavigation', () => {
         [PLANS.VPN2024]: [EntitlementName.FlagsVpn],
     });
 
-    const b2bEntitlements = createEntitlementResolverForOrgAndUser(
+    const b2bEntitlements = createEntitlementResolverForOrgAndUser({
         entitlementCatalog,
-        makeEntitlements([
+        entitlements: makeEntitlements([
             orgSwitch(EntitlementName.Business),
             orgSwitch(EntitlementName.FlagsVpn),
             orgSwitch(EntitlementName.MaxDedicatedIps),
             orgSwitch(EntitlementName.VpnLocationFilter),
             orgSwitch(EntitlementName.ActivityMonitorVpn),
         ]),
-        [buildSubscription(PLANS.VPN_BUSINESS)]
-    );
+        subscriptions: [buildSubscription(PLANS.VPN_BUSINESS)],
+        ...regularAdmin,
+    });
 
-    const b2cEntitlements = createEntitlementResolverForOrgAndUser(
+    const b2cEntitlements = createEntitlementResolverForOrgAndUser({
         entitlementCatalog,
-        makeEntitlements([orgSwitch(EntitlementName.FlagsVpn)]),
-        [buildSubscription(PLANS.VPN2024)]
-    );
+        entitlements: makeEntitlements([orgSwitch(EntitlementName.FlagsVpn)]),
+        subscriptions: [buildSubscription(PLANS.VPN2024)],
+        ...regularAdmin,
+    });
 
     const b2bOrganization = {
         Name: 'org',
@@ -148,11 +151,14 @@ describe('resolveNavigation', () => {
     const collectIds = (nodes: NavNode[]): string[] =>
         nodes.flatMap((node) => [node.id, ...collectIds(node.children ?? [])]);
 
-    const vpnProEntitlements = createEntitlementResolverForOrgAndUser(
-        buildEntitlementCatalog({ [PLANS.VPN_PRO]: [EntitlementName.Business, EntitlementName.FlagsVpn] }),
-        makeEntitlements([orgSwitch(EntitlementName.Business), orgSwitch(EntitlementName.FlagsVpn)]),
-        [buildSubscription(PLANS.VPN_PRO)]
-    );
+    const vpnProEntitlements = createEntitlementResolverForOrgAndUser({
+        entitlementCatalog: buildEntitlementCatalog({
+            [PLANS.VPN_PRO]: [EntitlementName.Business, EntitlementName.FlagsVpn],
+        }),
+        entitlements: makeEntitlements([orgSwitch(EntitlementName.Business), orgSwitch(EntitlementName.FlagsVpn)]),
+        subscriptions: [buildSubscription(PLANS.VPN_PRO)],
+        ...regularAdmin,
+    });
 
     it.each([
         { name: 'a VPN Business admin', entitlements: b2bEntitlements },
@@ -181,11 +187,12 @@ describe('resolveNavigation', () => {
         const ssoPermissions = getOrgPermissions(['account.sso_config.read'], false);
 
         const buildSsoEntitlements = (names: EntitlementName[], plan: PLANS) =>
-            createEntitlementResolverForOrgAndUser(
-                buildEntitlementCatalog({ [plan]: names }),
-                makeEntitlements(names.map(orgSwitch)),
-                [buildSubscription(plan)]
-            );
+            createEntitlementResolverForOrgAndUser({
+                entitlementCatalog: buildEntitlementCatalog({ [plan]: names }),
+                entitlements: makeEntitlements(names.map(orgSwitch)),
+                subscriptions: [buildSubscription(plan)],
+                ...regularAdmin,
+            });
 
         it('shows single sign-on when the organization has the sso entitlement', () => {
             const nav = resolveNavigation({

@@ -1,6 +1,7 @@
 import { buildEntitlementCatalog } from '../../testing/buildEntitlementCatalog';
 import { buildSubscription } from '../../testing/buildSubscription';
 import { buildOrgAndUserEntitlementChecks } from '../../testing/prodCatalogGrants';
+import { organizationMember } from '../../testing/usersWhoCannotReadSubscriptions';
 import { PLANS } from '../constants';
 import { EntitlementName } from './entitlement-names';
 import { createEntitlementResolverForSelection } from './resolver';
@@ -229,7 +230,7 @@ describe('hasGroupMail', () => {
 
     it('returns true for a member who cannot read the organization subscriptions', () => {
         expect(
-            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [], organizationPlans: [PLANS.VISIONARY] })
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.VISIONARY], ...organizationMember })
                 .hasGroupMail
         ).toBe(true);
     });

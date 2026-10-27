@@ -5,6 +5,7 @@ import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { APPS } from '@proton/shared/lib/constants';
 import { Renew, SubscriptionPlatform, TrialType } from '@proton/shared/lib/payments/subscription/constants';
 
@@ -25,7 +26,12 @@ jest.mock('@proton/account/paymentMethods/hooks', () => ({
 }));
 
 describe('SubscriptionPanel', () => {
-    const defaultEntitlements = createEntitlementResolverForOrgAndUser(buildEntitlementCatalog(), undefined, []);
+    const defaultEntitlements = createEntitlementResolverForOrgAndUser({
+        entitlementCatalog: buildEntitlementCatalog(),
+        entitlements: undefined,
+        subscriptions: [],
+        ...regularAdmin,
+    });
 
     const defaultProps = {
         app: APPS.PROTONMAIL,

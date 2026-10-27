@@ -4,6 +4,7 @@ import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/en
 import { hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
+import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { APPS } from '@proton/shared/lib/constants';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
@@ -42,7 +43,12 @@ function buildDefaultParams({ flags: flagOverrides, ...rest }: Overrides = {}): 
         user: buildUser(),
         subscription: { Renew: Renew.Enabled } as Subscription,
         allSubscriptions: [],
-        entitlements: createEntitlementResolverForOrgAndUser(buildEntitlementCatalog(), undefined, []),
+        entitlements: createEntitlementResolverForOrgAndUser({
+            entitlementCatalog: buildEntitlementCatalog(),
+            entitlements: undefined,
+            subscriptions: [],
+            ...regularAdmin,
+        }),
         recoveryNotification: undefined,
         accountRecoveryRouterFlags,
         organization: undefined,

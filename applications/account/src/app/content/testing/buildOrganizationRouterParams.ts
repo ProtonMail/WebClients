@@ -1,15 +1,8 @@
 import { buildUser } from '@proton/account/testing/buildUser';
 import { getOrgPermissions } from '@proton/account/userPermissions';
-import type { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
-import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
-import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
+import { getUnreadableSubscriptionsReason } from '@proton/payments/core/entitlements/unreadable-subscriptions';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
-import {
-    type CataloguedPlan,
-    prodCatalogGrants,
-    toOrganizationEntitlement,
-} from '@proton/payments/testing/prodCatalogGrants';
+import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { Group, GroupFlags } from '@proton/shared/lib/interfaces/Group';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
@@ -31,16 +24,6 @@ export const defaultFlags: Flags = {
     isRetentionPoliciesEnabled: false,
     isCategoryViewEnabled: false,
     isLumoApiEnabled: false,
-};
-
-const buildEntitlementsForPlan = (plan: CataloguedPlan | undefined, subscriptionPlan: CataloguedPlan | undefined) => {
-    const grantedNames: EntitlementName[] = plan ? prodCatalogGrants[plan] : [];
-
-    return createEntitlementResolverForOrgAndUser(
-        buildEntitlementCatalog(prodCatalogGrants),
-        makeEntitlements(grantedNames.map(toOrganizationEntitlement)),
-        subscriptionPlan ? [buildSubscription(subscriptionPlan)] : []
-    );
 };
 
 export const buildOrganizationWithKeys = (overrides: Partial<OrganizationExtended> = {}): OrganizationExtended =>
@@ -71,25 +54,31 @@ export const permissionsWithout = (missingPermission: (typeof PERMISSIONS)[numbe
 
 type Options = {
     plan?: CataloguedPlan;
-    hasReadableSubscription?: boolean;
     organization?: OrganizationExtended;
 } & Partial<Omit<OrganizationRouterParams, 'entitlements' | 'subscription' | 'organization'>>;
 
 export const buildOrganizationRouterParams = ({
     plan,
-    hasReadableSubscription = true,
     organization,
     ...rest
 }: Options = {}): OrganizationRouterParams => {
-    const subscriptionPlan = hasReadableSubscription ? plan : undefined;
+    const user = rest.user ?? buildUser();
+    const resolvedOrganization = organization ?? buildOrganizationWithKeys({ PlanName: plan });
+    const canReadSubscriptions =
+        getUnreadableSubscriptionsReason({ user, organization: resolvedOrganization }) === undefined;
+    const subscriptionPlan = canReadSubscriptions ? plan : undefined;
 
     return {
         app: APPS.PROTONACCOUNT,
-        user: buildUser(),
+        user,
         subscription: subscriptionPlan ? buildSubscription(subscriptionPlan) : undefined,
         allSubscriptions: subscriptionPlan ? [buildSubscription(subscriptionPlan)] : [],
-        entitlements: buildEntitlementsForPlan(plan, subscriptionPlan),
-        organization: organization ?? buildOrganizationWithKeys({ PlanName: plan }),
+        entitlements: buildOrgAndUserEntitlementChecks({
+            subscriptionPlans: plan ? [plan] : [],
+            user,
+            organization: resolvedOrganization,
+        }),
+        organization: resolvedOrganization,
         isB2BDrive: false,
         isGroupOwner: null,
         isOrganizationOwner: false,
