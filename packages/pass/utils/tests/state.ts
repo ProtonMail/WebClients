@@ -12,6 +12,7 @@ export type TestStateInit = {
     items?: ItemRevision[];
     settings?: Partial<SettingsState>;
     features?: FeatureFlagState;
+    featureVariants?: State['user']['featureVariants'];
 };
 
 const indexItems = (items: ItemRevision[]) =>
@@ -20,7 +21,13 @@ const indexItems = (items: ItemRevision[]) =>
         return acc;
     }, {});
 
-export const createTestState = ({ shares = [], items = [], settings = {}, features }: TestStateInit = {}): State => {
+export const createTestState = ({
+    shares = [],
+    items = [],
+    settings = {},
+    features,
+    featureVariants,
+}: TestStateInit = {}): State => {
     const state = reducer(
         undefined,
         bootSuccess({
@@ -34,7 +41,11 @@ export const createTestState = ({ shares = [], items = [], settings = {}, featur
 
     return {
         ...state,
-        user: features ? { ...state.user, features } : state.user,
         settings: { ...state.settings, clipboard: { timeoutMs: DEFAULT_CLIPBOARD_TTL }, ...settings },
+        user: {
+            ...state.user,
+            ...(features && { features }),
+            ...(featureVariants && { featureVariants }),
+        },
     };
 };

@@ -346,6 +346,53 @@ describe('AutosaveService [worker]', () => {
 
             expect(autosave.resolve(submission)).toEqual({ shouldPrompt: false });
         });
+
+        describe('register', () => {
+            const registration: FormEntry<FormEntryStatus.COMMITTED> = { ...submission, type: 'register' };
+
+            const withSavedLogin = (itemEmail: string, password: string) => {
+                const item = itemBuilder('login');
+                item.get('metadata').set('name', 'Domain.com');
+                item.get('content')
+                    .set('itemEmail', itemEmail)
+                    .set('password', password)
+                    .set('autofillUrls', [{ url: 'https://domain.com/', mode: AutofillMode.Default }]);
+
+                const revision = getMockItemRevision({ data: item.data });
+                const state = getMockState();
+                state.items.byShareId[mockShareId][revision.itemId] = revision;
+                store.getState.mockReturnValueOnce(state);
+
+                return revision;
+            };
+
+            test('should prompt for a new item if no saved login shares the password', () => {
+                withSavedLogin('other@proton.me', 'other-password');
+                expect(autosave.resolve(registration)).toEqual({
+                    shouldPrompt: true,
+                    data: { type: AutosaveMode.NEW },
+                });
+            });
+
+            test('should prompt for an update of the saved logins sharing the password', () => {
+                const revision = withSavedLogin('other@proton.me', registration.data.password);
+
+                expect(autosave.resolve(registration)).toEqual({
+                    shouldPrompt: true,
+                    data: {
+                        type: AutosaveMode.UPDATE,
+                        candidates: [
+                            expect.objectContaining({ itemId: revision.itemId, userIdentifier: 'other@proton.me' }),
+                        ],
+                    },
+                });
+            });
+
+            test('should not prompt if the exact credentials are already saved', () => {
+                withSavedLogin(registration.data.userIdentifier, registration.data.password);
+                expect(autosave.resolve(registration)).toEqual({ shouldPrompt: false });
+            });
+        });
     });
 
     describe('`AUTOSAVE_REQUEST`', () => {
