@@ -18,7 +18,6 @@ import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
 import { PLANS } from '@proton/payments/core/constants';
-import { getHasSsoUpsell, getIsSsoAvailable } from '@proton/payments/core/plan/helpers';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
     APPS,
@@ -35,6 +34,7 @@ import {
     isOrganizationOneOf,
     isOrganizationPassFamily,
 } from '@proton/shared/lib/organization/helper';
+import { getHasSsoUpsell, getIsSsoAvailable } from '@proton/shared/lib/payments/plan/helpers';
 
 import type { OrganizationRouterParams } from '../../content/router-params';
 import type { FeatureAccessVisibility } from './components/FeatureAccessSection';

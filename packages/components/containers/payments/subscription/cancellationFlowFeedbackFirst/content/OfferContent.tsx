@@ -4,13 +4,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLAN_NAMES } from '@proton/payments/core/constants';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 
 import ModalTwoContent from '../../../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../../components/modalTwo/ModalHeader';
 import Price from '../../../../../components/price/Price';
 import { useSubscriptionModal } from '../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../constants';
 import FreePlanCard from '../components/FreePlanCard';
 import OfferPlanCard from '../components/OfferPlanCard';
 import { getOfferConfig } from '../config/offerConfig';

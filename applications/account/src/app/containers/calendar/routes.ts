@@ -5,11 +5,11 @@ import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowRightArrowLeft } from '@proton/icons/icons/IcArrowRightArrowLeft';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcGrid2 } from '@proton/icons/icons/IcGrid2';
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 
 import type { OrganizationRouterParams } from '../../content/router-params';
 

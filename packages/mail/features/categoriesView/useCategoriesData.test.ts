@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { useFlagsStatus } from '@unleash/proxy-client-react';
 
 import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { CategoryViewVariantVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
-import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
 
@@ -17,7 +17,7 @@ import type { CategoryTab } from './categoriesConstants';
 import { CATEGORIES_COLOR_SHADES } from './categoriesConstants';
 import { useCategoriesData } from './useCategoriesData';
 
-jest.mock('@proton/unleash/proxy');
+jest.mock('@unleash/proxy-client-react');
 jest.mock('@proton/react-redux-store/ProtonStoreContext');
 jest.mock('@proton/unleash/useFlag');
 jest.mock('@proton/unleash/useVariant');

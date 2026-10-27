@@ -1,6 +1,7 @@
+import { hasLifetimeCoupon } from '@proton/shared/lib/payments/coupons';
+
 import { buildSubscription } from '../testing/buildSubscription';
 import { COUPON_CODES } from './constants';
-import { hasLifetimeCoupon } from './coupons';
 
 describe('hasLifetime', () => {
     it('should have LIFETIME', () => {

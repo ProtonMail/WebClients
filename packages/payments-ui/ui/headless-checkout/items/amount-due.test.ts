@@ -1,6 +1,6 @@
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
-import { TaxMode } from '@proton/payments/core/subscription/constants';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { getHeadlessCheckout } from '../get-headless-checkout';
 import { defaultApp as app, makeCheckResult, makePlan, makePricing } from './test-helpers';

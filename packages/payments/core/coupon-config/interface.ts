@@ -1,9 +1,9 @@
 import type { StrictRequired } from '@proton/shared/lib/interfaces/utils';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import type { CouponHideFlag } from '../addon/interfaces';
 import type { CYCLE, PLANS } from '../constants';
 import type { Currency, Cycle, PlanIDs } from '../interface';
-import type { PlansMap } from '../plan/interface';
 import type { CouponDiscountBreakdownBE, SubscriptionEstimation } from '../subscription/interface';
 
 export type CouponConfigProps = {

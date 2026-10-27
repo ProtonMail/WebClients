@@ -1,8 +1,7 @@
 import { defineConfig } from 'eslint/config';
 
 import { extraneousDependenciesDevDependencies } from '@proton/oxlint-config/extraneousDependencies';
-
-import { allGlobs } from './globs.js';
+import { allGlobs } from '@proton/oxlint-config/globs';
 
 export { extraneousDependenciesDevDependencies };
 

@@ -8,7 +8,7 @@ import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { renderWithProviders } from '../../../testing/renderWithProviders';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import LegacyReferralTopBanner from './LegacyReferralTopBanner';
 
 jest.mock('@proton/app-context/useConfig');

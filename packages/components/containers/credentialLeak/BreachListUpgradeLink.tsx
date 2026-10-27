@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 
 import { useSubscriptionModal } from '../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
 
 interface Props {
     total: number;

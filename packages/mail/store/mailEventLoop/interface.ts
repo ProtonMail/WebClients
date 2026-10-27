@@ -3,7 +3,8 @@ import type { MailEventV6Response } from '@proton/shared/lib/api/events';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { MailFiltersState } from '../filters';
-import type { IncomingAddressForwardingState, OutgoingAddressForwardingState } from '../forwarding';
+import type { IncomingAddressForwardingState } from '../forwarding/incoming';
+import type { OutgoingAddressForwardingState } from '../forwarding/outgoing';
 import type { CategoriesState } from '../labels';
 import type { MailSettingState } from '../mailSettings';
 

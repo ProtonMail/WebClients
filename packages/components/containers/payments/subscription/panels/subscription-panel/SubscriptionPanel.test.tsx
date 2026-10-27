@@ -3,10 +3,10 @@ import { screen } from '@testing-library/react';
 import { buildUser } from '@proton/account/testing/buildUser';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
-import { Renew, SubscriptionPlatform, TrialType } from '@proton/payments/core/subscription/constants';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
+import { Renew, SubscriptionPlatform, TrialType } from '@proton/shared/lib/payments/subscription/constants';
 
 import { renderWithProviders } from '../../../../../testing/renderWithProviders';
 import SubscriptionPanel from './SubscriptionPanel';

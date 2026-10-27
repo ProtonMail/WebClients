@@ -4,7 +4,6 @@ import { buildUser } from '@proton/account/testing/buildUser';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getOrganizationState } from '@proton/account/testing/redux-state';
 import type { Entitlements } from '@proton/payments/core/entitlements/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
@@ -17,6 +16,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces/ApiEnvironmentConfig';
 import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/OrganizationKey';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import { type RootState, setupStore } from './store';
 

@@ -19,6 +19,7 @@ import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { DASHBOARD_UPSELL_PATHS, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -43,7 +44,6 @@ import {
     getVideoMeetingsFeature,
 } from '../../../../features/meet';
 import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../../constants';
 import type { GetPlanUpsellArgs } from '../../../helpers/dashboard-upsells';
 import { type Upsell, type UpsellFeature, getUpsell } from '../../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';

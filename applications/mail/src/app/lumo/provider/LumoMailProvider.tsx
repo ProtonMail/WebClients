@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
@@ -23,7 +24,6 @@ import LumoAgentDrawerContext from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawer
 import useLumoAgent from '@proton/llm/lib/lumoAgent/ui/useLumoAgent';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { addFilter as addFilterAction, updateFilter as updateFilterAction } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
 import { createLabel as createLabelAction, updateLabel as updateLabelAction } from '@proton/mail/store/labels/actions';

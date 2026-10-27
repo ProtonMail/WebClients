@@ -9,9 +9,9 @@ import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { getNUsersText } from '@proton/components/containers/payments/features/highlights';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import svg from '../welcome-suite.svg';
 

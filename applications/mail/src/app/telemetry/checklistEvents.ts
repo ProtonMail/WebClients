@@ -5,8 +5,9 @@ import { ImportProvider } from '@proton/activation/src/interface';
 import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import { ChecklistKey, ChecklistType } from '@proton/shared/lib/interfaces/Checklist';
-import { allowed, defineEvent, number, topValues } from '@proton/telemetry-tracker/events';
-import { tracker } from '@proton/telemetry-tracker/tracker';
+import { defineEvent } from '@proton/telemetry-tracker/lib/defineEvent';
+import { allowed, number, topValues } from '@proton/telemetry-tracker/lib/dimensions';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import type { OnlineServicesKey } from '../components/onboarding/checklist/constants';
 import { ONLINE_SERVICES } from '../components/onboarding/checklist/constants';

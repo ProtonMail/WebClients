@@ -6,8 +6,8 @@ import { getAllPlatforms, getFreeFeatures, getRefundable } from '@proton/compone
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
-import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { getPrice } from '@proton/payments/core/price-helpers';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
 

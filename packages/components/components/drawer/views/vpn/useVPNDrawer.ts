@@ -1,8 +1,8 @@
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { getIsB2BAudienceFromPlan } from '@proton/payments/core/plan/helpers';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useAllowedProducts from '../../../../containers/organization/accessControl/useAllowedProducts';

@@ -3,12 +3,12 @@ import { type ReactNode, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import {
     type ForwardModalKeyState,
     editFilter,

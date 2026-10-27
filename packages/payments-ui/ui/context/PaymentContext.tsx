@@ -19,6 +19,7 @@ import {
     type FullBillingAddressFlat,
 } from '@proton/payments/core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
+import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
 import { type PaymentsCheckoutUI, getCheckoutUi, type getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { computeOptimisticCheckResult } from '@proton/payments/core/computeOptimisticCheckResult';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
@@ -38,8 +39,6 @@ import type {
     PaymentsApi,
     PlanIDs,
 } from '@proton/payments/core/interface';
-import { getPlanFromPlanIDs, hasFreePlanIDs } from '@proton/payments/core/plan/helpers';
-import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     type SubscriptionSelection,
@@ -59,6 +58,8 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { getPlanFromPlanIDs, hasFreePlanIDs } from '@proton/shared/lib/payments/plan/helpers';
+import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import noop from '@proton/utils/noop';
 
 import { useCurrencies } from '../../client-extensions/useCurrencies';
@@ -66,7 +67,6 @@ import type { OnChargeable } from '../../client-extensions/usePaymentFacade';
 import { usePaymentsApi } from '../../react-extensions/usePaymentsApi';
 import { getStaticCouponConfig } from '../coupon-config/get-static-coupon-config';
 import { type CouponConfigRendered, useCouponConfig } from '../coupon-config/useCouponConfig';
-import { loadInitialBillingAddress } from '../helpers/load-initial-billing-address';
 import { getPreferredPlansMap } from '../hooks/usePreferredPlansMap';
 import { checkMultiplePlans, getPlanToCheck, getSubscriptionDataFromPlanToCheck } from './helpers';
 import { type MultiCheckGroupsResult, useMultiCheckGroups } from './useMultiCheckGroups';

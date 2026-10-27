@@ -1,4 +1,5 @@
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import { semver } from '@proton/utils/semver';
 
 import { isB2BAdmin } from '../lib/organization/helpers';
 import type { PassCryptoSnapshot, SerializedCryptoContext } from '../types/crypto/pass-crypto';
@@ -9,7 +10,6 @@ import { logId, logger } from '../utils/logger';
 import { type XorObfuscation, obfuscate } from '../utils/obfuscate/xor';
 import { objectFilter } from '../utils/object/filter';
 import { objectMap } from '../utils/object/map';
-import { semver } from '../utils/string/semver';
 import { unwrapOptimisticState } from './optimistic/utils/transformers';
 import type { FiltersState } from './reducers';
 import { INITIAL_ORGANIZATION_SETTINGS } from './reducers/organization';

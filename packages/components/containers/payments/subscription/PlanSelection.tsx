@@ -18,11 +18,8 @@ import type {
     PlanIDs,
 } from '@proton/payments/core/interface';
 import { getPlanFeatureLimit } from '@proton/payments/core/plan/feature-limits';
-import { getIsB2BAudienceFromPlan, isPlan } from '@proton/payments/core/plan/helpers';
-import type { FreePlanDefault, Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { switchPlan } from '@proton/payments/core/planIDs';
 import { getIpPricePerMonth } from '@proton/payments/core/price-helpers';
-import { Renew } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getAutoCoupon,
@@ -53,6 +50,9 @@ import { selectPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import { getIsB2BAudienceFromPlan, isPlan } from '@proton/shared/lib/payments/plan/helpers';
+import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';

@@ -1,9 +1,10 @@
 import { useCallback } from 'react';
 
-import { getKTActivationValueFromFlags } from '@proton/key-transparency/helpers';
+import { useUnleashClient } from '@unleash/proxy-client-react';
+
+import { getKTActivationValueFromFlags } from '@proton/key-transparency/helpers/ktActivation';
 import { APPS } from '@proton/shared/lib/constants';
 import { getUnleashReadyPromise } from '@proton/unleash/getUnleashReadyPromise';
-import { useUnleashClient } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
 /**

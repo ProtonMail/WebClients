@@ -1,6 +1,6 @@
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { createHeadlessCheckoutContextInner } from '../get-headless-checkout';
 import { BASE_RENEW_AMOUNT_LINE_ITEM_TYPE, createBaseRenewAmountItem } from './base-renew-amount';

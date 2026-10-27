@@ -9,6 +9,7 @@
  */
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import type { BillingAddress } from '../core/billing-address/billing-address';
@@ -20,7 +21,6 @@ import type {
     PlainPaymentMethodType,
     PlanIDs,
 } from '../core/interface';
-import { getPlanNameFromIDs } from '../core/plan/helpers';
 import { getPlanIDs } from '../core/subscription/helpers/plan-ids';
 import type { Subscription } from '../core/subscription/interface';
 import {

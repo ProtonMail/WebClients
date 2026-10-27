@@ -21,7 +21,6 @@ import type {
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';
@@ -29,6 +28,7 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { User } from '@proton/shared/lib/interfaces/User';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import type { OnMethodChangedHandler } from '../react-extensions/useMethods';
 import type { Operations, OperationsData } from '../react-extensions/usePaymentFacade';

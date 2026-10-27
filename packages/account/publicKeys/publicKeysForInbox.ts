@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { getPublicKeysEmailHelper } from '@proton/key-transparency/keys';
+import getPublicKeysEmailHelper from '@proton/key-transparency/keys/getPublicKeysEmailHelper';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { MINUTE } from '@proton/shared/lib/constants';
 import type { ApiKeysConfig } from '@proton/shared/lib/interfaces/EncryptionPreferences';

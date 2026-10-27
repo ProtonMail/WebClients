@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react';
 
+import type { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+
 import type { FeatureTourStepId } from '../../../../components/featureTour/interface';
 import type { ModalStateProps } from '../../../../components/modalTwo/useModalState';
-import type { SUBSCRIPTION_STEPS } from '../constants';
 
 export type PostSubscriptionFlowName =
     // Generic flow is used from specific plans

@@ -4,10 +4,10 @@ import cloneDeep from 'lodash/cloneDeep';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { formatSubscription } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { mockOrganizationApi } from '../../../hooks/helpers/tests/useOrganization';
 import { mockStatusApi } from '../../../hooks/helpers/tests/usePaymentStatus';

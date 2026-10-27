@@ -1,11 +1,11 @@
 import { useCallback, useMemo } from 'react';
 
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { hasSomeAddonOrPlan } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 
 // subscription with family, duo and unlimited are the TA for visionary plan
 const VISIONARY_TA_PLAN_LIST = [PLANS.DUO, PLANS.FAMILY, PLANS.BUNDLE];

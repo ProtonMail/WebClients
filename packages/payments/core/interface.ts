@@ -29,6 +29,8 @@ import type {
     PaymentVendorStates,
     PlanIDs,
 } from '@proton/shared/lib/payments/interface';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import type { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import type { CheckSubscriptionData } from './api/api';
 import type { BillingAddress, FullBillingAddress } from './billing-address/billing-address';
@@ -42,8 +44,6 @@ import type {
     TransactionType,
 } from './constants';
 import type { PaymentProcessorType } from './payment-processors/interface';
-import type { PlansMap } from './plan/interface';
-import type { SubscriptionPlatform } from './subscription/constants';
 import type { SubscriptionEstimation } from './subscription/interface';
 
 export interface CreateCardDetailsBackend {

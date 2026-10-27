@@ -1,9 +1,9 @@
 import { PLANS } from '@proton/payments/core/constants';
 import type { FeatureLimitKey, FreeSubscription } from '@proton/payments/core/interface';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { getHasPassB2BPlan } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>;
 

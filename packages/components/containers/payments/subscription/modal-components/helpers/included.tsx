@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { ADDON_PREFIXES, PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
-import type { FreePlanDefault, PlansMap } from '@proton/payments/core/plan/interface';
 import {
     CALENDAR_SHORT_APP_NAME,
     DARK_WEB_MONITORING_NAME,
@@ -17,6 +16,7 @@ import type { Included } from '@proton/shared/lib/helpers/checkout';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
+import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import {
     type APP_NAMES,
     PROTON_SENTINEL_NAME,
@@ -15,7 +16,6 @@ import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import PromotionButton from '../../components/button/PromotionButton/PromotionButton';
 import SettingsParagraph from '../account/SettingsParagraph';
 import { useSubscriptionModal } from '../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../payments/subscription/constants';
 
 interface Props {
     app: APP_NAMES;

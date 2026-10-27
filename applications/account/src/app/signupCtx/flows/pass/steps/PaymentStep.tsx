@@ -16,10 +16,10 @@ import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { ADDON_PREFIXES, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
-import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import { getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import { useSignup } from '../../../context/SignupContext';
 import { Layout } from '../components/Layout';

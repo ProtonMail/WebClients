@@ -120,13 +120,13 @@ jest.mock('../../../modules/flags', () => ({
 }));
 jest.mock('../../../legacy/errorHandling');
 jest.mock('../../../modules/busDriver');
-jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
+jest.mock('@proton/account/contactEmails/hooks', () => ({
     useContactEmails: jest.fn(() => [[]]),
 }));
 jest.mock('@protontech/drive-sdk');
 jest.mock('@protontech/drive-sdk/dist/internal/uids');
 
-const { useContactEmails } = require('@proton/mail/store/contactEmails/hooks');
+const { useContactEmails } = require('@proton/account/contactEmails/hooks');
 const mockedUseContactEmails = jest.mocked(useContactEmails);
 
 const expectedDirectMembers: DirectMember[] = [

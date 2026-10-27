@@ -15,9 +15,9 @@ import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { PLANS } from '@proton/payments/core/constants';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getSupportContactURL } from '@proton/shared/lib/helpers/url';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import { FeatureItem } from '../components/FeatureItem';
 import { freeFeatures, paidFeatures } from '../utils/features';

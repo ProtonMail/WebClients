@@ -1,11 +1,11 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { OpenCallbackProps } from '../../containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../containers/payments/subscription/constants';
 import { getAssistantUpsellConfigPlanAndCycle } from './assistantUpsellConfig';
 
 interface Props {

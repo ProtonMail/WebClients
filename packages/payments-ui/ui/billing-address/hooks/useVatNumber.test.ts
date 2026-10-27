@@ -42,7 +42,7 @@ jest.mock('@proton/payments/core/billing-address/vat-helpers', () => ({
     }),
 }));
 
-jest.mock('@proton/payments/core/plan/helpers', () => ({
+jest.mock('@proton/shared/lib/payments/plan/helpers', () => ({
     getIsB2BAudienceFromPlan: (plan: string | undefined) => {
         const b2bPlans = new Set([
             PLANS.MAIL_PRO,

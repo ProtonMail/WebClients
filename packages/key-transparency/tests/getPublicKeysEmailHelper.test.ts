@@ -3,7 +3,7 @@ import { vi } from 'vitest';
 import { KEY_FLAG, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { type KTUserContext, KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 
-import { getPublicKeysEmailHelper } from '../lib/keys';
+import getPublicKeysEmailHelper from '../lib/keys/getPublicKeysEmailHelper';
 
 const getApiError = ({ message, response = { headers: { get: () => '' } }, data, status }: any) => {
     const error: any = new Error(message);

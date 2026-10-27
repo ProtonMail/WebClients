@@ -16,9 +16,9 @@ import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentCont
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { PAYMENT_METHOD_TYPES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 import noop from '@proton/utils/noop';
 
 import { useSignup } from '../../../context/SignupContext';

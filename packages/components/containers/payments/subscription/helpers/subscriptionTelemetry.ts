@@ -2,8 +2,8 @@ import isEqual from 'lodash/isEqual';
 
 import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
-import { getPlanNameFromIDs } from '@proton/payments/core/plan/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import type {
     PaymentTelemetryContext,
     SubscriptionModificationStepTelemetry,
@@ -14,9 +14,9 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { RequireOnly } from '@proton/shared/lib/interfaces/utils';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import type { Model } from '../SubscriptionContainer';
-import { SUBSCRIPTION_STEPS } from '../constants';
 
 export interface SubscriptionTelemetryDeps {
     user: UserModel;

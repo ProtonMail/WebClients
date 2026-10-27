@@ -9,15 +9,15 @@ import { useUser } from '@proton/account/user/hooks';
 import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { getPriceStartsFrom } from '@proton/payments/core/price-helpers';
 import { getCanSubscriptionAccessDuoPlan } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { SUBSCRIPTION_STEPS } from '../../../containers/payments/subscription/constants';
 import ModalTwo, { type ModalProps } from '../../modalTwo/Modal';
 import ModalTwoContent from '../../modalTwo/ModalContent';
 import ModalTwoHeader from '../../modalTwo/ModalHeader';

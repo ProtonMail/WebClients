@@ -2,10 +2,10 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 
 import { useItemContextMenu } from '../../legacy/components/FileBrowser';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';

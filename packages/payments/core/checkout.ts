@@ -3,6 +3,13 @@ import { c, msgid } from 'ttag';
 
 import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { pick } from '@proton/shared/lib/helpers/object';
+import {
+    getIsB2BAudienceFromPlan,
+    getPlanFromPlanIDs,
+    getPlanNameFromIDs,
+} from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { AddonFeatureLimitKeyMapping, getAddonConfigByName, getAddonConfigByType } from './addon/addons';
 import type { CheckSubscriptionData } from './api/api';
@@ -11,10 +18,7 @@ import { InvalidCouponError } from './errors';
 import type { Currency, PlanIDs, Pricing } from './interface';
 import { getAddonType, isAddonType, supportsMemberAddon } from './plan/addons';
 import { getAddonMultiplier, getMembersFromPlanIDs } from './plan/feature-limits';
-import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from './plan/helpers';
-import type { Plan, PlansMap } from './plan/interface';
 import { INCLUDED_IP_PRICING, getPrice, getPricingPerMember } from './price-helpers';
-import { SubscriptionMode } from './subscription/constants';
 import { customCycles, getHas2025OfferCoupon } from './subscription/helpers';
 import { getPlanIDs } from './subscription/helpers/plan-ids';
 import type { Subscription, SubscriptionEstimation } from './subscription/interface';

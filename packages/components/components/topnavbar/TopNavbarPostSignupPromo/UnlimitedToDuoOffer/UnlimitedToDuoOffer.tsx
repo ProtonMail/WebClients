@@ -9,6 +9,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { TelemetryUnlimitedToDuoOffer } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
@@ -16,7 +17,6 @@ import { APPS, APPS_WITH_IN_APP_PAYMENTS, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } 
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 
 import { useSubscriptionModal } from '../../../../containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
 import useSettingsLink from '../../../link/useSettingsLink';
 import { SpotlightWithPromo } from '../common/SpotlightWithPromo';
 import { UnlimitedToDuoOfferContent } from './components/UnlimitedToDuoOfferContent';

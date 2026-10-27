@@ -1,8 +1,8 @@
 import type { FreeSubscription } from '@proton/payments/core/interface';
-import { getIsVpnPlan } from '@proton/payments/core/plan/helpers';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import type { Subscription, SubscriptionCheckForbiddenReason } from '@proton/payments/core/subscription/interface';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import { getIsVpnPlan } from '@proton/shared/lib/payments/plan/helpers';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 export function show30DaysMoneyBackGuarantee({
     plansMap,

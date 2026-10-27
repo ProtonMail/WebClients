@@ -16,10 +16,10 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import EmptyViewContainer from '@proton/components/containers/app/EmptyViewContainer';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useSortedList from '@proton/components/hooks/useSortedList';
 import { PLANS } from '@proton/payments/core/constants';
 import { getCountryOptions } from '@proton/payments/core/countries';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { MINUTE, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';

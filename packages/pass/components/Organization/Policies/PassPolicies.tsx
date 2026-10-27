@@ -18,9 +18,9 @@ import { PromotionBanner } from '@proton/components/containers/banner/PromotionB
 import GenericError from '@proton/components/containers/error/GenericError';
 import SubSettingsSection from '@proton/components/containers/layout/SubSettingsSection';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 

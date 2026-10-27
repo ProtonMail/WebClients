@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { FreeSubscription } from '@proton/payments/core/interface';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription, isPaidSubscription } from '@proton/payments/core/type-guards';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import ModalTwo from '../../../components/modalTwo/Modal';

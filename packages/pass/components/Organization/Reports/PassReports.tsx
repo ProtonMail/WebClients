@@ -9,10 +9,10 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import SubSettingsSection from '@proton/components/containers/layout/SubSettingsSection';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { dateLocale } from '@proton/shared/lib/i18n';

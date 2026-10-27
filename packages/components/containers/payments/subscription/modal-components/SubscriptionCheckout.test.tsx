@@ -7,11 +7,11 @@ import { useTaxCountry } from '@proton/payments-ui/ui/billing-address/hooks/useT
 import { getIdealAuthorizationText } from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
-import { SubscriptionMode, TaxMode } from '@proton/payments/core/subscription/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlansMap } from '@proton/payments/testing/data-plans';
+import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import SubscriptionCheckout, { type SubscriptionCheckoutProps } from './SubscriptionCheckout';

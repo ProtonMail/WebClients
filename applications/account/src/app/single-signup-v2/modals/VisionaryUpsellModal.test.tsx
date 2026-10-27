@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
 import { PLANS } from '@proton/payments/core/constants';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import VisionaryUpsellModal from './VisionaryUpsellModal';
 

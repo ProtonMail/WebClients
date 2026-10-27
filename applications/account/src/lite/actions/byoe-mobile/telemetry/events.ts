@@ -1,6 +1,7 @@
 import type { ConnectBYOEAddressFailure } from '@proton/activation/src/byoe/connectBYOEAddress.interface';
 import { TelemetryMailBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { allowed, defineEvent } from '@proton/telemetry-tracker/events';
+import { defineEvent } from '@proton/telemetry-tracker/lib/defineEvent';
+import { allowed } from '@proton/telemetry-tracker/lib/dimensions';
 
 // Definition: mail.any.bring_your_own_email (shared with the native clients).
 //

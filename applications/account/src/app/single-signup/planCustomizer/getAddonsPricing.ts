@@ -3,7 +3,7 @@ import { type ADDON_NAMES, ADDON_PREFIXES } from '@proton/payments/core/constant
 import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getSupportedAddons, isAddonType } from '@proton/payments/core/plan/addons';
 import { getAddonMultiplier, getPlanFeatureLimit } from '@proton/payments/core/plan/feature-limits';
-import type { Plan } from '@proton/payments/core/plan/interface';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 export default function getAddonsPricing({

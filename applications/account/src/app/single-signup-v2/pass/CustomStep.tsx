@@ -1,4 +1,4 @@
-import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 
 import type { SignupCustomStepProps } from '../interface';
 import CustomStepB2B from './CustomStepB2B';

@@ -12,6 +12,7 @@ import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrenci
 import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getSubscriptionForApp } from '@proton/payments/core/subscription/subscription-for-app';
+import type { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
@@ -19,7 +20,6 @@ import { useGetFlag } from '@proton/unleash/useGetFlag';
 import noop from '@proton/utils/noop';
 
 import { useOptionalSubscriptionModalRaw } from '../../../../containers/payments/subscription/SubscriptionModalProvider';
-import type { SUBSCRIPTION_STEPS } from '../../../../containers/payments/subscription/constants';
 import { getUpsellConfig } from '../../config/getUpsellConfig';
 import { getMailUpsellConfig } from '../config/getUpsellModalConfig';
 import type { UpsellModalConfig } from '../interface';

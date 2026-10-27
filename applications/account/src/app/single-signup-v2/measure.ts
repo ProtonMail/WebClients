@@ -1,11 +1,11 @@
 import { Clients } from '@proton/pass/constants';
 import { type CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
-import { getPlanFromPlanIDs } from '@proton/payments/core/plan/helpers';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
+import { getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import type { SessionData, SignupCacheResult } from '../signup/interfaces';
 

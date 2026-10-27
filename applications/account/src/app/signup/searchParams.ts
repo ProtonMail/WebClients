@@ -4,8 +4,6 @@ import { type ADDON_NAMES, ADDON_PREFIXES, CURRENCIES, PLANS } from '@proton/pay
 import type { Currency } from '@proton/payments/core/interface';
 import { getSupportedAddons, isAddonType } from '@proton/payments/core/plan/addons';
 import { getPlanMaxIPs } from '@proton/payments/core/plan/feature-limits';
-import { correctDeprecatedPlanName } from '@proton/payments/core/plan/helpers';
-import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getValidCycle } from '@proton/payments/core/subscription/helpers';
 import { getPlanByName, planToPlanIDs } from '@proton/payments/core/subscription/plans-map-wrapper';
@@ -14,6 +12,8 @@ import { otherProductParamValues } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
+import { correctDeprecatedPlanName } from '@proton/shared/lib/payments/plan/helpers';
+import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import clamp from '@proton/utils/clamp';
 
 import type { PlanParameters, SignupDefaults } from '../single-signup-v2/interface';

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
+import { FlagContext } from '@unleash/proxy-client-react';
 
 import metrics from '@proton/metrics/metricsInstance';
-import { FlagContext } from '@proton/unleash/proxy';
 
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 import StandardErrorPage from './StandardErrorPage';

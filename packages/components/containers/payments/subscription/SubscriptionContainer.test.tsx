@@ -5,17 +5,18 @@ import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-addre
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { CYCLE, DEFAULT_PAYMENT_VENDOR_STATES, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { addApiMock, apiMock } from '@proton/test-api/api';
 
 import { organizationDefaultResponse } from '../../../hooks/helpers/tests/useOrganization';
@@ -29,7 +30,6 @@ import {
     mockCheckResult,
 } from '../../../testing/subscriptionContainer';
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
-import { SUBSCRIPTION_STEPS } from './constants';
 
 jest.mock('@proton/atoms/Portal/Portal', () => ({
     __esModule: true,
@@ -39,10 +39,6 @@ jest.mock('@proton/atoms/Portal/Portal', () => ({
 jest.mock('../../../hooks/assistant/useAssistantFeatureEnabled', () => ({
     __esModule: true,
     default: jest.fn(() => ({ paymentsEnabled: false, enabled: false })),
-}));
-
-jest.mock('@proton/unleash/proxy', () => ({
-    useFlagsStatus: jest.fn(() => ({ flagsReady: true })),
 }));
 
 jest.mock('@proton/unleash/useVariant', () => ({

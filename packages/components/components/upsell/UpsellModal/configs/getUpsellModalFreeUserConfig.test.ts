@@ -1,7 +1,7 @@
 import * as checkoutModule from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Currency, PaymentsApi } from '@proton/payments/core/interface';
-import type { Plan } from '@proton/payments/core/plan/interface';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
 import type { UpsellModalConfigParams } from '../interface';
 import { ONE_DOLLAR_PROMO_DEFAULT_AMOUNT_DUE, getUpsellModalFreeUserConfig } from './getUpsellModalFreeUserConfig';

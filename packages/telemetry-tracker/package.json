@@ -5,8 +5,10 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
-        "./events": "./events/index.ts",
-        "./tracker": "./tracker/index.ts",
+        "./lib/defineEvent": "./lib/defineEvent.ts",
+        "./lib/dimensions": "./lib/dimensions.ts",
+        "./lib/timers": "./lib/timers.ts",
+        "./lib/tracker": "./lib/tracker.ts",
         "./testing": "./testing/index.ts"
     },
     "scripts": {

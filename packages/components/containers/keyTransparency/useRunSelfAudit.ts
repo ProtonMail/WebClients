@@ -8,17 +8,17 @@ import { getKTUserContext } from '@proton/account/kt/actions';
 import { userKeysThunk } from '@proton/account/userKeys';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
+import { getLatestEpoch } from '@proton/key-transparency/helpers/getLatestEpoch';
 import {
     KT_ERROR_TYPE,
     StaleEpochError,
-    getLatestEpoch,
     getSelfAuditInterval,
     ktSentryReportError,
-} from '@proton/key-transparency/helpers';
+} from '@proton/key-transparency/helpers/utils';
 import type { SelfAuditResult, SelfAuditState } from '@proton/key-transparency/interfaces';
-import { reportSelfAuditErrors } from '@proton/key-transparency/shared';
-import { getKTLocalStorage } from '@proton/key-transparency/storage';
-import { selfAudit } from '@proton/key-transparency/verification';
+import { reportSelfAuditErrors } from '@proton/key-transparency/shared/reportSelfAuditErrors';
+import { getKTLocalStorage } from '@proton/key-transparency/storage/ktStorageAPI';
+import { selfAudit } from '@proton/key-transparency/verification/self-audit/selfAudit';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

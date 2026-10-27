@@ -10,14 +10,14 @@ import { type PaymentsCheckoutUI, getCheckoutUi } from '@proton/payments/core/ch
 import { type CheckoutModifiers, getCheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
-import { getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
-import type { PlansMap } from '@proton/payments/core/plan/interface';
-import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { getPlanName, getPlanTitle, isTaxExclusive } from '@proton/payments/core/subscription/helpers';
 import type { Coupon, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { type APP_NAMES, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getTermsURL } from '@proton/shared/lib/helpers/url';
+import { getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
 const getRenewalPricingSubjectToChangeText = (app: APP_NAMES | undefined): string | string[] | null => {
     const termsAndConditionsUrl = getTermsURL(app);

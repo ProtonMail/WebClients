@@ -1,10 +1,10 @@
+import { getHasPlusPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
+import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
 import type { FreeSubscription, PlanIDs } from '../interface';
 import { getSupportedAddons, hasAddonFromPlanIDs, isAddonType } from '../plan/addons';
-import { getHasPlusPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from '../plan/helpers';
-import type { PlansMap } from '../plan/interface';
 import { clearPlanIDs } from '../planIDs';
 import { isFreeSubscription } from '../type-guards';
 import { getPlan } from './helpers';

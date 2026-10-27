@@ -26,6 +26,7 @@ import {
     willTrialExpireInLessThan1Week,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -54,7 +55,6 @@ import {
 } from '../../payments/features/pass';
 import type { SubscriptionContainerProps } from '../../payments/subscription/SubscriptionContainer';
 import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import type { UpsellFeature } from '../../payments/subscription/helpers/dashboard-upsells';
 import { ReferralTrialInfoModal } from '../../referral/components/ReferralTrialInfo/ReferralTrialInfo';
 import TopBanner from '../TopBanner';

@@ -2,7 +2,7 @@ import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import type { SessionKey } from '@protontech/crypto';
 import type { ThunkAction, ThunkDispatch, UnknownAction } from '@reduxjs/toolkit';
 
-import { getAndVerifyApiKeys } from '@proton/key-transparency/keys';
+import { getAndVerifyApiKeys } from '@proton/key-transparency/keys/getAndVerifyApiKeys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { acceptGroupOwnerInvite as acceptGroupOwnerInviteApi } from '@proton/shared/lib/api/groups';

@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { getVerifiedPublicKeys } from '@proton/key-transparency/keys';
+import { getVerifiedPublicKeys } from '@proton/key-transparency/keys/getVerifiedPublicKeys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { validateOrganizationKeySignature } from '@proton/shared/lib/keys/organizationKeys';

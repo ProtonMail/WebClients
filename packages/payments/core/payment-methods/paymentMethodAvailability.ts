@@ -1,4 +1,5 @@
 import type { User } from '@proton/shared/lib/interfaces/User';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { isDelinquent } from '@proton/shared/lib/user/helpers';
 
 import {
@@ -21,7 +22,6 @@ import type {
     PlanIDs,
     SavedPaymentMethod,
 } from '../interface';
-import { getIsB2BAudienceFromPlan } from '../plan/helpers';
 import { getHas2025OfferCoupon } from '../subscription/helpers';
 import type { Subscription } from '../subscription/interface';
 import { isFreeSubscription } from '../type-guards';

@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { isFreeSubscriptionResult, subscriptionExpires } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import SettingsLink from '../../components/link/SettingsLink';
 import Time from '../../components/time/Time';

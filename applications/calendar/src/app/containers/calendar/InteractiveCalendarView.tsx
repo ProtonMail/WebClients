@@ -7,6 +7,7 @@ import { addMinutes, differenceInMinutes, isBefore } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
@@ -38,7 +39,6 @@ import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import usePreventCloseTab from '@proton/components/hooks/usePreventCloseTab';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
     attendeeDeleteSingleEdit,

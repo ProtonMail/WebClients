@@ -1,5 +1,6 @@
 import { type FC, useEffect, useState } from 'react';
 
+import { useFlagsStatus } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
@@ -16,7 +17,6 @@ import { TelemetryMeasurementGroups, TelemetryPassExtensionEvents } from '@proto
 import { ACCOUNT_APP_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isSafari, replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { useFlagsStatus } from '@proton/unleash/proxy';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 

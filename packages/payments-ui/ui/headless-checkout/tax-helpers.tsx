@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { TaxMode } from '@proton/payments/core/subscription/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
 export const formatTax = (checkResult: SubscriptionEstimation) => {

@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { getIsVpnPlan } from '@proton/payments/core/plan/helpers';
 import type { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getIsVpnPlan } from '@proton/shared/lib/payments/plan/helpers';
 
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 

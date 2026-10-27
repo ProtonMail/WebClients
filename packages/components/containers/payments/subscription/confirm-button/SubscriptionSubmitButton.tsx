@@ -9,7 +9,6 @@ import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
 import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { PAYMENT_METHOD_TYPES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, FreeSubscription } from '@proton/payments/core/interface';
-import { SubscriptionMode, SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 import { hasMigrationDiscount, isTrial } from '@proton/payments/core/subscription/helpers';
 import type {
     Subscription,
@@ -18,6 +17,7 @@ import type {
 } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { SubscriptionMode, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { getSimplePriceString } from '../../../../components/price/helper';
 import { getSubscriptionManagerName } from '../InAppPurchaseModal';

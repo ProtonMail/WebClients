@@ -7,8 +7,8 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
 import PmMeUpsellModal from '@proton/components/components/upsell/modals/PmMeUpsellModal';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useLoading from '@proton/hooks/useLoading';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import {
     APP_UPSELL_REF_PATH,
     MAIL_UPSELL_BANNER_LINK_ID_REF_PATH,

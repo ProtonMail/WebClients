@@ -1,8 +1,8 @@
 import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
 import { type ThunkAction, type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
 
-import { getAndVerifyApiKeys } from '@proton/key-transparency/keys';
-import { verifyAddressKeyToRecover } from '@proton/key-transparency/verification';
+import { getAndVerifyApiKeys } from '@proton/key-transparency/keys/getAndVerifyApiKeys';
+import { verifyAddressKeyToRecover } from '@proton/key-transparency/verification/verifyKeys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { previousSelector } from '@proton/redux-utilities/creator';
 import { CacheType } from '@proton/redux-utilities/interface';

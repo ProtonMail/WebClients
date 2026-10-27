@@ -39,13 +39,13 @@ import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
 import { IcBrandWindows } from '@proton/icons/icons/IcBrandWindows';
 import type { IconSize } from '@proton/icons/types';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
-import type { Plan } from '@proton/payments/core/plan/interface';
 import { getFreeTitle } from '@proton/payments/core/subscription/freePlans';
 import { APPS, BRAND_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
+import { VPN_SERVERS } from '@proton/shared/lib/vpn/vpnServers';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles/constants';
 import isTruthy from '@proton/utils/isTruthy';
-import { VPN_SERVERS } from '@proton/vpn/constants/vpnServers';
 
 import bundleVpnPass from '../single-signup-v2/bundle-vpn-pass.svg';
 import bundle from '../single-signup-v2/bundle.svg';
