@@ -15,7 +15,7 @@ napi-derive = "3.3"
 shared = { path = "../shared" }
 tokio = { version = "1.47", features = ["full"] }
 tokio-util = "0.7.17"
-russh = "0.62"
+russh = "0.65"
 futures = "0.3.31"
 
 [target.'cfg(unix)'.dependencies]
