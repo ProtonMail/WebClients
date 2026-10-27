@@ -4,7 +4,7 @@ import type { FreePlanDefault, SubscriptionPlan } from '@proton/shared/lib/payme
 import type { Renew, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
-import type { BillingAddressExtended } from '../billing-address/billing-address';
+import { type BillingAddressExtended, getBillingAddressPayload } from '../billing-address/billing-address';
 import type {
     ADDON_NAMES,
     Autopay,
@@ -96,6 +96,29 @@ export type CheckSubscriptionData = {
     ValidateBillingAddress?: boolean;
     VatId?: string;
     ValidateGuards?: boolean;
+};
+
+export const checkSubscriptionQuery = (data: CheckSubscriptionData) => {
+    const normalizedData: CheckSubscriptionData = {
+        ...data,
+    };
+
+    if (normalizedData.BillingAddress) {
+        normalizedData.BillingAddress = getBillingAddressPayload({
+            billingAddress: normalizedData.BillingAddress,
+            vatId: data.VatId,
+        });
+    }
+
+    if (!normalizedData.VatId) {
+        delete normalizedData.VatId;
+    }
+
+    return {
+        url: `payments/v5/subscription/check`,
+        method: 'post',
+        data: normalizedData,
+    };
 };
 
 export enum InvoiceDocument {
