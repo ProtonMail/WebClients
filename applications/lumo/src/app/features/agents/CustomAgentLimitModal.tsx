@@ -1,138 +1,19 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import Loader from '@proton/components/components/loader/Loader';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
-import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
-import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
-import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg';
 
-import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';
-import { sendSubscriptionModalSubscribedEvent } from '../../util/telemetry';
+import { LumoPlusLimitModal } from '../../components/Modals/LumoPlusLimitModal';
 
-import '../projects/modals/ProjectLimitModal.scss';
+export const CustomAgentLimitModal = (modalProps: ModalProps) => {
+    // translator: Title of the custom agent upgrade modal. ${LUMO_SHORT_APP_NAME} is the app name, also used to name custom agents; ${PLAN_NAMES[PLANS.LUMO]} is the paid plan name.
+    const title = c('collider_2025:Title').t`More custom ${LUMO_SHORT_APP_NAME}s with ${PLAN_NAMES[PLANS.LUMO]}`;
+    // translator: Upgrade description. ${LUMO_SHORT_APP_NAME} is the app name, also used to name custom agents; ${PLAN_NAMES[PLANS.LUMO]} is the paid plan name.
+    const description = c('collider_2025:Info')
+        .t`Upgrade to ${PLAN_NAMES[PLANS.LUMO]} to create unlimited custom ${LUMO_SHORT_APP_NAME}s, unlock advanced AI models, and more.`;
+    // translator: Paid-plan benefit. ${LUMO_SHORT_APP_NAME} is the app name, also used to name custom agents.
+    const limitFeature = c('collider_2025:Feature').t`Unlimited custom ${LUMO_SHORT_APP_NAME}s`;
 
-export const CustomAgentLimitModal = ({ ...modalProps }: ModalProps) => {
-    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const { plansMapLoading } = usePreferredPlansMap();
-
-    const handleSubscriptionModalSubscribed = () => {
-        modalProps.onClose?.();
-        sendSubscriptionModalSubscribedEvent();
-    };
-
-    const handleUpgrade = () => {
-        void openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CHECKOUT,
-            disablePlanSelection: true,
-            maximumCycle: CYCLE.YEARLY,
-            plan: PLANS.LUMO,
-            onSubscribed: () => {
-                handleSubscriptionModalSubscribed();
-            },
-        });
-    };
-
-    if (plansMapLoading) {
-        return <Loader />;
-    }
-
-    return (
-        <ModalTwo {...modalProps} size="small">
-            <ModalTwoHeader title={''} />
-            <ModalTwoContent>
-                <div className="project-limit-modal-content">
-                    <div className="modal-two-illustration-container mb-2 relative text-center">
-                        <img src={lumoCatLoaf} alt="Get Lumo Plus" width={160} />
-                    </div>
-                    <h3 className="text-bold mb-2">
-                        {c('collider_2025:Title')
-                            .t`More custom ${LUMO_SHORT_APP_NAME}s with ${LUMO_SHORT_APP_NAME} Plus`}
-                    </h3>
-
-                    <p className="color-weak mb-4">
-                        {c('collider_2025:Info')
-                            .t`Upgrade to ${LUMO_SHORT_APP_NAME} Plus to create unlimited custom ${LUMO_SHORT_APP_NAME}s, unlock advanced AI models, and more.`}
-                    </p>
-
-                    <div className="project-limit-features">
-                        <div className="project-limit-feature">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M7 10L9 12L13 8M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z"
-                                    stroke="#6D4AFF"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                            <span>{c('collider_2025:Feature').t`Unlimited custom ${LUMO_SHORT_APP_NAME}s`}</span>
-                        </div>
-                        <div className="project-limit-feature">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M7 10L9 12L13 8M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z"
-                                    stroke="#6D4AFF"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                            <span>{c('collider_2025:Feature').t`Advanced AI models`}</span>
-                        </div>
-                        <div className="project-limit-feature">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 20 20"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M7 10L9 12L13 8M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z"
-                                    stroke="#6D4AFF"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                            <span>{c('collider_2025:Feature').t`Priority access & faster responses`}</span>
-                        </div>
-                    </div>
-                </div>
-            </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button onClick={modalProps.onClose} shape="outline">
-                    {c('collider_2025:Action').t`Cancel`}
-                </Button>
-                <Button
-                    color="norm"
-                    loading={loadingSubscriptionModal}
-                    onClick={handleUpgrade}
-                    className={LUMO_UPGRADE_TRIGGER_CLASS}
-                >
-                    {c('collider_2025:Action').t`Upgrade to Plus`}
-                </Button>
-            </ModalTwoFooter>
-        </ModalTwo>
-    );
+    return <LumoPlusLimitModal {...modalProps} title={title} description={description} limitFeature={limitFeature} />;
 };
