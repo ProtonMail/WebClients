@@ -1,18 +1,17 @@
-import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
-import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { PLANS } from '@proton/payments/core/constants';
+import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
+import { organizationMember } from '@proton/payments/testing/usersWhoCannotReadSubscriptions';
 import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
-import { isUserOLESEligible as isOLESEligible } from './eligibility';
+import { isOrganizationOLESEligible, isUserOLESEligible } from './eligibility';
 
 const baseOrganization: Partial<Organization> = {
     RequiresKey: 1,
     HasKeys: 1,
     State: ORGANIZATION_STATE.ACTIVE,
     MaxMembers: 1,
-    PlanName: PLANS.BUNDLE_PRO_2024,
 };
 
 const baseUser: Partial<UserModel> = {
@@ -20,43 +19,42 @@ const baseUser: Partial<UserModel> = {
     isSelf: true,
 };
 
-const baseSubscription = buildSubscription(baseOrganization.PlanName);
+const entitlementsForAdmin = (subscriptionPlans: CataloguedPlan[]) =>
+    buildOrgAndUserEntitlementChecks({ subscriptionPlans });
 
 const eligibleArgs = () => ({
     user: baseUser as UserModel,
     organization: baseOrganization as Organization,
-    subscription: baseSubscription as MaybeFreeSubscription,
+    entitlements: entitlementsForAdmin([PLANS.BUNDLE_PRO_2024]),
     hasOrgMigrationPermission: true,
 });
 
-describe('isOLESEligible', () => {
+describe('isUserOLESEligible', () => {
     it('returns true when all conditions are met', () => {
-        expect(isOLESEligible(eligibleArgs())).toBe(true);
+        expect(isUserOLESEligible(eligibleArgs())).toBe(true);
     });
 
     it('returns false when organization is undefined', () => {
-        expect(isOLESEligible({ ...eligibleArgs(), organization: undefined })).toBe(false);
+        expect(isUserOLESEligible({ ...eligibleArgs(), organization: undefined })).toBe(false);
     });
 
     it('returns false when user is undefined', () => {
-        expect(isOLESEligible({ ...eligibleArgs(), user: undefined })).toBe(false);
-    });
-
-    it('returns false when subscription is undefined', () => {
-        expect(isOLESEligible({ ...eligibleArgs(), subscription: undefined })).toBe(false);
+        expect(isUserOLESEligible({ ...eligibleArgs(), user: undefined })).toBe(false);
     });
 
     it('returns false when user lacks the organization migration permission', () => {
-        expect(isOLESEligible({ ...eligibleArgs(), hasOrgMigrationPermission: false })).toBe(false);
+        expect(isUserOLESEligible({ ...eligibleArgs(), hasOrgMigrationPermission: false })).toBe(false);
     });
 
     it('returns false when user is not self', () => {
-        expect(isOLESEligible({ ...eligibleArgs(), user: { ...baseUser, isSelf: false } as UserModel })).toBe(false);
+        expect(isUserOLESEligible({ ...eligibleArgs(), user: { ...baseUser, isSelf: false } as UserModel })).toBe(
+            false
+        );
     });
 
     it('returns false when organization has no keys (RequiresKey unset)', () => {
         expect(
-            isOLESEligible({
+            isUserOLESEligible({
                 ...eligibleArgs(),
                 organization: { ...baseOrganization, RequiresKey: 0 } as Organization,
             })
@@ -65,7 +63,7 @@ describe('isOLESEligible', () => {
 
     it('returns false when organization keys have not been generated (HasKeys unset)', () => {
         expect(
-            isOLESEligible({
+            isUserOLESEligible({
                 ...eligibleArgs(),
                 organization: { ...baseOrganization, HasKeys: 0 } as Organization,
             })
@@ -74,42 +72,60 @@ describe('isOLESEligible', () => {
 
     it('returns false when organization is delinquent', () => {
         expect(
-            isOLESEligible({
+            isUserOLESEligible({
                 ...eligibleArgs(),
                 organization: { ...baseOrganization, State: ORGANIZATION_STATE.DELINQUENT } as Organization,
             })
         ).toBe(false);
     });
 
-    it('returns false when organization plan is not B2B', () => {
-        expect(
-            isOLESEligible({
-                ...eligibleArgs(),
-                organization: { ...baseOrganization, PlanName: PLANS.BUNDLE } as Organization,
-            })
-        ).toBe(false);
+    it('returns false without a subscription', () => {
+        expect(isUserOLESEligible({ ...eligibleArgs(), entitlements: entitlementsForAdmin([]) })).toBe(false);
+    });
+});
+
+describe('isOrganizationOLESEligible', () => {
+    const organization = baseOrganization as Organization;
+
+    it.each([PLANS.MAIL_PRO, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025] as const)(
+        'returns true for an admin of %s',
+        (plan) => {
+            expect(
+                isOrganizationOLESEligible({
+                    organization,
+                    entitlements: entitlementsForAdmin([plan]),
+                })
+            ).toBe(true);
+        }
+    );
+
+    it.each([PLANS.MAIL, PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS] as const)(
+        'returns false for an admin of %s',
+        (plan) => {
+            expect(
+                isOrganizationOLESEligible({
+                    organization,
+                    entitlements: entitlementsForAdmin([plan]),
+                })
+            ).toBe(false);
+        }
+    );
+
+    it('returns true for a non-admin member of a bundlepro2024 organization', () => {
+        const entitlements = buildOrgAndUserEntitlementChecks({
+            subscriptionPlans: [PLANS.BUNDLE_PRO_2024],
+            ...organizationMember,
+        });
+
+        expect(isOrganizationOLESEligible({ organization, entitlements })).toBe(true);
     });
 
-    describe('plan coverage', () => {
-        const supportedPlans: PLANS[] = [
-            PLANS.MAIL_BUSINESS,
-            PLANS.MAIL_PRO,
-            PLANS.BUNDLE_PRO,
-            PLANS.BUNDLE_PRO_2024,
-            PLANS.BUNDLE_BIZ_2025,
-        ];
-
-        const unsupportedPlans = Object.values(PLANS).filter((k) => !supportedPlans.includes(k));
-
-        const planExpectations: [boolean, PLANS][] = [
-            ...supportedPlans.map((p): [boolean, PLANS] => [true, p]),
-            ...unsupportedPlans.map((p): [boolean, PLANS] => [false, p]),
-        ];
-
-        it.each(planExpectations)('returns %s for plan %s', (expected, plan) => {
-            const organization = { ...baseOrganization, PlanName: plan } as Organization;
-            const subscription = plan === PLANS.FREE ? FREE_SUBSCRIPTION : buildSubscription(plan);
-            expect(isOLESEligible({ ...eligibleArgs(), organization, subscription })).toBe(expected);
-        });
+    it('returns false for an admin with mail2022 and vpnbiz2023 as separate subscriptions', () => {
+        expect(
+            isOrganizationOLESEligible({
+                organization,
+                entitlements: entitlementsForAdmin([PLANS.MAIL, PLANS.VPN_BUSINESS]),
+            })
+        ).toBe(false);
     });
 });
