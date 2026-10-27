@@ -24,6 +24,7 @@ const transform: Config['transform'] = {
 
 const jestConfig: Config = {
     setupFilesAfterEnv: ['./jest.setup.js'],
+    globalSetup: '@proton/pass/utils/tests/fixtures/models.download',
     testEnvironment: '@proton/jest-env',
     preset: '@proton/jest-swc-preset',
     transform,

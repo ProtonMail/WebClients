@@ -35,11 +35,15 @@ const createPort = (name: string) =>
         disconnect: jest.fn(),
     }) as unknown as Runtime.Port;
 
+/** The custom elements registry outlives each test: a random
+ * hash would eventually collide and fail the content-script boot */
+let elementsCount = 0;
+
 /** Worker replies the content-script needs to boot, owned by worker
  * services other than autofill (activation, injection). */
 const registerBootHandlers = () => {
     mockHandlers.set(WorkerMessageType.REGISTER_ELEMENTS, () => {
-        const hash = uniqueId(4);
+        const hash = `t${(elementsCount++).toString(16)}`;
         customElements.define(ProtonPassRoot.getTagName(hash), class extends ProtonPassRoot {});
         customElements.define(ProtonPassControl.getTagName(hash), class extends ProtonPassControl {});
         return { hash, scriptFallback: false };
@@ -125,6 +129,15 @@ export const startContentScript = async () => {
     return controller;
 };
 
+/** Replaces the page with `html` under a new content-script, as after a navigation:
+ * the worker, and the form submissions it tracks, carry over */
+export const navigatePage = async (html: string) => {
+    controller?.destroy('navigation');
+    clearDetectionCache();
+    loadPage(html);
+    return startContentScript();
+};
+
 /** Registered on import, like testing-library's auto cleanup: every
  * journey starts from a blank page without a live content-script */
 afterEach(() => {
@@ -151,6 +164,10 @@ const waitForForm = (formType: FormType) =>
     });
 
 export const waitForLoginForm = () => waitForForm(FormType.LOGIN);
+
+export const waitForRegisterForm = () => waitForForm(FormType.REGISTER);
+
+export const getDetectedForms = () => getContentScript().service.formManager.getForms();
 
 export const getField = <T extends FieldType>(form: FormHandle, fieldType: T) => {
     const [field] = form.getFieldsFor(fieldType);
