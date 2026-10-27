@@ -14,15 +14,9 @@ import { SheetImportEvent } from '@proton/docs-shared/SheetImportData'
 import { bootstrapEditorApp } from '../Lib/Bootstrap'
 import { c } from 'ttag'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
-import { EditorUserMode } from '../Lib/EditorUserMode'
-import { exportDataFromEditorState } from './Docs/Conversion/Exporter/ExportDataFromEditorState'
 import { loadLocales } from '@proton/account/bootstrap'
 import { dateLocale } from '@proton/shared/lib/i18n'
-import { PreviewModeEditor } from './Docs/PreviewModeEditor'
-import { rejectAllSuggestions } from './Docs/Plugins/Suggestions/rejectAllSuggestions'
-import { removeCommentThreadMarks } from './Docs/Utils/removeCommentThreadMarks'
 import { reportErrorToSentry } from '../Utils/errorMessage'
-import { SHOW_ALL_COMMENTS_COMMAND } from './Docs/Commands'
 import {
   $getSelection,
   $isRangeSelection,
@@ -42,7 +36,6 @@ import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { useEditorState, useMigrationEditingLockCallback } from './EditorStateProvider'
 import { IS_CHROME } from '../Shared/environment'
 import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
-import { getEditorStateFromSerializedNodes } from './Docs/Conversion/get-editor-state-from-nodes'
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 import { useStore } from 'zustand'
 import { SheetsAdapter } from './adapters/sheets/SheetsAdapter'
@@ -54,7 +47,14 @@ import { DocsAdapter } from './adapters/docs/DocsAdapter'
 import {
   DocsLayoutContainer,
   EditorSystemMode,
+  EditorUserMode,
+  exportDataFromEditorState,
   getDocsLayoutScrollContainer,
+  getEditorStateFromSerializedNodes,
+  PreviewModeEditor,
+  rejectAllSuggestions,
+  removeCommentThreadMarks,
+  SHOW_ALL_COMMENTS_COMMAND,
   StandaloneDocsEditor,
   type EditorInitializationConfig as DocsEditorInitializationConfig,
 } from './Docs/public'

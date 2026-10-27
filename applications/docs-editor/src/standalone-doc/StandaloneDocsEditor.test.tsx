@@ -9,15 +9,15 @@ import {
   DocsLayoutContainer,
   EditorSystemMode,
   EditorUserMode,
+  PreviewModeEditor,
+  SHOW_ALL_COMMENTS_COMMAND,
   StandaloneDocsEditor,
+  type DocsCommentEvent,
   type DocsCommentThread,
   type DocsDependencies,
   type DocsComments,
 } from '../app/Containers/Docs/public'
-import { PreviewModeEditor } from '../app/Containers/Docs/PreviewModeEditor'
-import { SHOW_ALL_COMMENTS_COMMAND } from '../app/Containers/Docs/Commands'
-import type { DocsCommentEvent } from '../app/Containers/Docs/contract/DocsComments'
-import { polyfillSelectionRelatedThingsForTests } from '../app/Containers/Docs/Plugins/Suggestions/TestUtils'
+import { polyfillSelectionRelatedThingsForTests } from '../app/Containers/Docs/testing'
 import { createStandaloneDocClient } from './client'
 import { createStandaloneDocSession } from './session'
 

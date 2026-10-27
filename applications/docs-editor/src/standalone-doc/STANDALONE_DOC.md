@@ -26,10 +26,14 @@ The harness supplies local Docs dependencies directly, including the in-memory c
 It loads no Proton styles, only Tailwind (`standalone-doc.tailwind.scss`) and the editor's own tokens in `Containers/Docs/docs.scss`, so a Proton class in `Containers/Docs` shows up here as missing styling.
 `standalone-doc.css` sets the same tokens on `.app-root` for what renders outside `.docs-editor-root`: the header and `DocsLayoutContainer`.
 
-`StandaloneDocsEditor` requires a surrounding `DocsDependenciesProvider`. Supply a complete `DocsMessages`
-object via `dependencies.messages` to localize the UI, and use `dependencies.defaultMessages` to supply
-fallback messages. The demo supplies the English `defaultDocsMessages`.
-
+`StandaloneDocsEditor` needs no Proton providers, styles or translations, only a surrounding `DocsDependenciesProvider`.
 It does not require application, editor-state, or notification providers, or create a parent bridge or network transport.
+
+Messages: pass a complete, translated `DocsMessages` object as `dependencies.messages` to localize the UI.
+`dependencies.defaultMessages` is the fallback when neither `messages` nor an outer `DocsDependenciesProvider` supplies one.
+The demo passes only the English `defaultDocsMessages` as `defaultMessages`, and loads no ttag locale.
+
+Theme: the editor's tokens are light by default and switch to dark when an ancestor has `data-theme-mode="dark"`.
+The demo's `EditorThemeProvider` sets it on `<html>` from the header's theme menu or `?theme=dark`; a host only picks the mode.
 The in-memory document is preserved when the page enters the browser's back/forward cache and disposed on exit or unmount.
 Do not enable `STANDALONE_DOC` and `STANDALONE_SHEET` together.
