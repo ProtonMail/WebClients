@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Acerca de ${ name }"
+      ],
       "Accept": [
         "Aceptar"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Agregar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Añadir ${ name }"
       ],
       "Add ${ photoCount } photo to a new album": [
         "Añadir ${ photoCount } foto a un álbum nuevo",
@@ -10325,6 +10331,9 @@
       "Billing Country": [
         "País de facturación"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "No se pueden comprar cuentas Born Private con una suscripción activa."
+      ],
       "Buying credits requires a separate purchase.": [
         "La compra de créditos requiere una compra separada."
       ],
@@ -10411,6 +10420,9 @@
       ],
       "terms and conditions": [
         "términos y condiciones"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requiere de una donación."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descuento es válido para ${ renewalsWithCoupon } renovación.",
@@ -10508,11 +10520,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ya posee ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Ya posee una cuenta Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto se le redirigirá a PayPal para verificar el pago."
       ],
       "You will soon be redirected to verify your payment.": [
         "Pronto se le redirigirá para verificar el pago."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Su cuenta es demasiado antigua para la iniciativa Born Private."
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_WERO_BRAND_NAME } solo admite pagos en euros."
