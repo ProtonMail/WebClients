@@ -14,9 +14,11 @@ import { ScheduleTemplateGrid } from './components/ScheduleTemplateGrid';
 import { ScheduledTaskGrid } from './components/ScheduledTaskGrid';
 import { SchedulesEmptyState } from './components/SchedulesEmptyState';
 import { SchedulesPageHeader } from './components/SchedulesPageHeader';
+import { ScheduleLimitModal } from './components/modals/ScheduleLimitModal';
 import { ScheduledTaskEditorModal } from './components/modals/ScheduledTaskEditorModal';
 import { createScheduleDetailsFrom, getEmptyScheduleDetails } from './components/utils/schedules';
 import type { ScheduleDetails, ScheduleTemplate } from './types';
+import { useScheduleLimit } from './useScheduleLimit';
 
 import './SchedulesView.scss';
 
@@ -26,6 +28,7 @@ export const SchedulesView = () => {
     const dispatch = useLumoDispatch();
     const schedules = useLumoSelector(selectSchedules);
     const { createNotification } = useNotifications();
+    const { checkCanCreateSchedule, scheduleLimitModal } = useScheduleLimit();
     const [{ data, ...scheduledTaskEditorModalProps }, openScheduledTaskEditorModal, renderScheduledTaskEditorModal] =
         useModalStateWithData<{
             initialValues: ScheduleDetails;
@@ -34,6 +37,7 @@ export const SchedulesView = () => {
         }>();
 
     const handleNewTaskClick = () => {
+        if (!checkCanCreateSchedule()) return;
         openScheduledTaskEditorModal({
             initialValues: getEmptyScheduleDetails(),
             spaceId: newSpaceId(),
@@ -42,6 +46,7 @@ export const SchedulesView = () => {
     };
 
     const handleSelectTemplate = (template: ScheduleTemplate) => {
+        if (!checkCanCreateSchedule()) return;
         openScheduledTaskEditorModal({
             initialValues: createScheduleDetailsFrom(template),
             spaceId: newSpaceId(),
@@ -50,6 +55,8 @@ export const SchedulesView = () => {
     };
 
     const handleSaveSchedule = (id: SpaceId, schedule: ScheduleDetails) => {
+        if (data?.mode !== 'edit' && !checkCanCreateSchedule()) return false;
+
         try {
             dispatch(saveSchedule(id, schedule, data?.mode ?? 'create'));
         } catch (error) {
@@ -85,6 +92,9 @@ export const SchedulesView = () => {
                 />
                 <ScheduleTemplateGrid onSelect={handleSelectTemplate} />
             </div>
+
+            {scheduleLimitModal.render && <ScheduleLimitModal {...scheduleLimitModal.modalProps} />}
+
             {renderScheduledTaskEditorModal && data && (
                 <ScheduledTaskEditorModal
                     initialValues={data.initialValues}
