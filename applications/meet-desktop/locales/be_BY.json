@@ -104,6 +104,9 @@
     "Clear application data prompt": {
       "Cancel": [
         "Скасаваць"
+      ],
+      "Clear application data": [
+        "Ачысціць даныя праграмы"
       ]
     },
     "Download warning": {
@@ -162,19 +165,52 @@
       ]
     },
     "Screen share permission": {
+      "Allow screen recording": [
+        "Дазволіць запіс экрана"
+      ],
       "Cancel": [
         "Скасаваць"
+      ],
+      "Open System Settings": [
+        "Адкрыць сістэмныя налады"
       ]
     },
     "Screen share picker": {
+      "Built-in": [
+        "Убудавана"
+      ],
       "Cancel": [
         "Скасаваць"
       ],
       "Close": [
         "Закрыць"
       ],
+      "Display ${ screenNumber }": [
+        "Адлюстраваць ${ screenNumber }"
+      ],
+      "Entire screen": [
+        "Увесь экран"
+      ],
+      "External": [
+        "Знешні"
+      ],
+      "Hide advanced options": [
+        "Схаваць дадатковыя параметры"
+      ],
+      "Just one app": [
+        "Толькі адна праграма"
+      ],
       "Share": [
         "Абагуліць"
+      ],
+      "Share system audio": [
+        "Абагуліць сістэмнае аўдыя"
+      ],
+      "Share your screen": [
+        "Абагуліць свой экран"
+      ],
+      "Show advanced options": [
+        "Паказаць дадатковыя параметры"
       ]
     },
     "Unload warning": {
@@ -192,6 +228,9 @@
       ]
     },
     "Update prompt": {
+      "${ MEET_APP_NAME } update": [
+        "Абнаўленне ${ MEET_APP_NAME }"
+      ],
       "Later": [
         "Пазней"
       ],
