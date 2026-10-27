@@ -397,6 +397,9 @@
       "Hide": [
         "Dölj"
       ],
+      "Hide passwords": [
+        "Dölj lösenord"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Hur exporterar jag mina data från ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -2066,6 +2069,9 @@
       ],
       "Import the CSV file below.": [
         "Importera CSV-filen nedan."
+      ],
+      "Important:": [
+        "Viktig:"
       ],
       "Imported on ${ date }": [
         "Importerad den ${ date }"

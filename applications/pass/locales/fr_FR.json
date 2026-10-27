@@ -403,6 +403,9 @@
       "Hide": [
         "Masquer"
       ],
+      "Hide passwords": [
+        "Masquer les mots de passe"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Comment exporter mes données depuis ${ PROVIDER_INFO_MAP[form.values.provider].title } ?"
       ],
@@ -2032,6 +2035,9 @@
       "Failed updating your vault organization": [
         "La mise à jour de votre coffre-fort d'organisation n'a pas abouti"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Champ masqué. Vous pouvez tout de même le remplir automatiquement."
+      ],
       "Fill in the CSV with your data": [
         "Remplir le fichier CSV avec vos données"
       ],
@@ -2090,6 +2096,9 @@
       ],
       "Import the CSV file below.": [
         "Importez le fichier CSV ci-dessous."
+      ],
+      "Important:": [
+        "Important :"
       ],
       "Imported on ${ date }": [
         "Importé le ${ date }"
@@ -2305,6 +2314,9 @@
       ],
       "Pass Plus trial": [
         "Version d'essai de Proton Pass Plus"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Mot de passe masqué. Vous pouvez tout de même le remplir automatiquement."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Le verrouillage par mot de passe a été enregistré. Utilisez-le pour débloquer ${ PASS_APP_NAME }."
@@ -3109,6 +3121,9 @@
       ],
       "All items": [
         "Tous les éléments"
+      ],
+      "Allow viewers to see passwords": [
+        "Permettre aux lecteurs de voir les mots de passe"
       ],
       "Alphabetical": [
         "Ordre alphabétique"
@@ -5239,6 +5254,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Changer d'abonnement pour vérifier si certains mots de passe ont été compromis"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Changer d'abonnement pour vérifier si certains mots de passe ont été réutilisés"
       ],
       "URL matching": [
         "Correspondance d'URL"

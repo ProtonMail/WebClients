@@ -403,6 +403,9 @@
       "Hide": [
         "Ocultar"
       ],
+      "Hide passwords": [
+        "Ocultar contraseñas"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "¿Cómo exporto mis datos desde ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -888,6 +891,9 @@
       ],
       "Change your passwords": [
         "Cambie las contraseñas"
+      ],
+      "Check if you're reusing passwords": [
+        "Compruebe si está reusando contraseñas"
       ],
       "Check if your passwords have been exposed": [
         "Compruebe si sus contraseñas han sido expuestas"
@@ -1627,6 +1633,9 @@
         "${ forwardedEmailsCount } reenvío",
         "${ forwardedEmailsCount } reenvíos"
       ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } esto no evita a los lectores de recuperar contraseñas con otros métodos."
+      ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } desea compartir un elemento con un grupo que usted administra."
       ],
@@ -2038,6 +2047,9 @@
       "Failed updating your vault organization": [
         "Error al actualizar la bóveda de su organización"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Campo oculto. Aún puede completarlo automáticamente."
+      ],
       "Fill in the CSV with your data": [
         "Complete el CSV con los datos"
       ],
@@ -2096,6 +2108,9 @@
       ],
       "Import the CSV file below.": [
         "Importe el archivo CSV a continuación."
+      ],
+      "Important:": [
+        "Importante:"
       ],
       "Imported on ${ date }": [
         "Importado el ${ date }"
@@ -2314,6 +2329,9 @@
       ],
       "Pass Plus trial": [
         "Prueba de Proton Pass Plus"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Contraseña oculta. Aún puede completarla automáticamente."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Se registró el bloqueo por contraseña. Úsela para desbloquear ${ PASS_APP_NAME }"
@@ -2804,6 +2822,12 @@
       "Viewer": [
         "Lector"
       ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Los lectores aún pueden autocompletar las contraseñas, pero no las verán en ${ PASS_APP_NAME }. Esto desalienta la visualización casual y reduce el riesgo de divulgación accidental."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Los lectores todavía pueden completar automáticamente. Los editores y administradores siempre ven las contraseñas."
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estamos teniendo problemas en sincronizar los datos a el almacenamiento local. Asegúrese de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione corectamente."
       ],
@@ -3124,6 +3148,9 @@
       ],
       "All items": [
         "Todos los elementos"
+      ],
+      "Allow viewers to see passwords": [
+        "Permitir a lectores ver contraseñas"
       ],
       "Alphabetical": [
         "Por orden alfabético"
@@ -4969,6 +4996,9 @@
       "Hidden vaults": [
         "Bóvedas ocultas"
       ],
+      "Hide passwords from viewers?": [
+        "¿Ocultar contraseñas de los lectores?"
+      ],
       "Hide-my-email aliases": [
         "Alias de hide-my-email"
       ],
@@ -5257,6 +5287,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Actualice para comprobar contraseñas comprometidas"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Actualice para comprobar contraseñas reusadas"
       ],
       "URL matching": [
         "Coincidencia de URL"
