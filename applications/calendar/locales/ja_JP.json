@@ -44,6 +44,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
       ],
+      "About ${ name }": [
+        "${ name } について"
+      ],
       "Activate recovery": [
         "回復を有効にする"
       ],
@@ -52,6 +55,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }を追加"
+      ],
+      "Add ${ name }": [
+        "${ name } を追加"
       ],
       "Add a date": [
         "日付を追加"
@@ -9315,6 +9321,9 @@
       "Billing Country": [
         "請求先の国"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "サブスクリプションの利用中は Born Private アカウントを購入することはできません。"
+      ],
       "Buying credits requires a separate purchase.": [
         "クレジットの購入には、別途個別のお手続きが必要です。"
       ],
@@ -9401,6 +9410,9 @@
       ],
       "terms and conditions": [
         "利用規約"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private プログラムに参加するには寄付が必要です。"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "この割引は ${ renewalsWithCoupon } の更新で有効です。"
@@ -9492,11 +9504,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "お客様はすでに ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } を所有しています。"
       ],
+      "You already own a Born Private account.": [
+        "お客様はすでに Born Private アカウントを所有しています。"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへ転送されます。"
       ],
       "You will soon be redirected to verify your payment.": [
         "支払いの検証のため、まもなくリダイレクトされます。"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "お使いのアカウントは、Born Private プログラムの対象期間より前に作成されています。"
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "${ IDEAL_WERO_BRAND_NAME } はユーロでの支払いにのみ対応しているため、通貨がユーロ (€) に変更されました。"

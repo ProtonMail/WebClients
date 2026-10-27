@@ -44,6 +44,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
+      "About ${ name }": [
+        "关于 ${ name }"
+      ],
       "Activate recovery": [
         "激活恢复"
       ],
@@ -52,6 +55,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "添加 ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "添加 ${ name }"
       ],
       "Add a date": [
         "添加日期"
@@ -1304,6 +1310,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "高级密码管理器"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
       ]
     },
     "BF2024: Deal details": {
@@ -5105,6 +5116,9 @@
       "1 vault per user": [
         "1 保险库/用户"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
+      ],
       "A cancellation email will be sent to removed participants.": [
         "活动取消邮件将发送至已移除的参与者"
       ],
@@ -6124,6 +6138,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
+      ],
+      "UnionPay logo": [
+        "UnionPay 标志"
       ],
       "Upgrade anytime to bring over the rest": [
         "随时升级以迁移剩余内容"
@@ -7322,6 +7339,9 @@
       ],
       "clearing your browser cache": [
         "清除浏览器缓存"
+      ],
+      "Customer Support": [
+        "客户支持"
       ],
       "Enforcing 2FA for organizations": [
         "强制组织启用 2FA"
@@ -9308,6 +9328,9 @@
       "Billing Country": [
         "计费国家/地区"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "在订阅生效期间无法购买 Born Private 账户。"
+      ],
       "Buying credits requires a separate purchase.": [
         "购买额度需要单独进行！"
       ],
@@ -9394,6 +9417,9 @@
       ],
       "terms and conditions": [
         "服务条款"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private 套餐需要捐款。"
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "此折扣适用于 ${ renewalsWithCoupon } 次续订。"
@@ -9485,11 +9511,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "您已经拥有 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
       ],
+      "You already own a Born Private account.": [
+        "您已经拥有一个 Born Private 账户。"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "您即将被重定向至 PayPal 以验证付款。"
       ],
       "You will soon be redirected to verify your payment.": [
         "您即将被重定向以验证付款"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
       ],
       "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
         "您的货币已更改为欧元 (€)，因为 ${ IDEAL_WERO_BRAND_NAME } 仅支持欧元支付。"
@@ -12327,6 +12359,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "该用户下次登录时将获得管理员权限。"
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "升级至受支持的套餐以使用管理员角色。"
       ],
