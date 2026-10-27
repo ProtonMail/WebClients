@@ -16,7 +16,6 @@ import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ROLE_SOURCE } from '@proton/shared/lib/interfaces/OrganizationRole';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import SettingsPageTitle from '../../account/SettingsPageTitle';
@@ -42,7 +41,6 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
     const [entitlements] = useEntitlementChecksForOrgAndUser();
     const { groups, actions, restrictedBy } = useGroupsManagement();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
-    const isUserGroupsGroupOwnerEnabled = useFlag('UserGroupsGroupOwner');
     const dispatch = useDispatch();
     const [adminRolesUIState] = useAdminRolesUI();
     const {
@@ -55,11 +53,8 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
         adminRolesUIState === AdminRolesUIState.Enabled && !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
 
     useEffect(() => {
-        // On plans without the groups feature (e.g. Pass Essentials, shown as an upsell
-        // preview), the group owner invites endpoint returns NOT_ALLOWED. Don't fetch it.
-        if (isUserGroupsGroupOwnerEnabled && !upgradeRequired) {
-            dispatch(groupOwnerInvitesThunk()).catch(noop);
-        }
+        // The thunk checks the UserGroupsGroupOwner flag and the groups entitlement itself.
+        dispatch(groupOwnerInvitesThunk()).catch(noop);
     }, []);
 
     // In the Pass admin panel, link to the Pass-specific groups article.
