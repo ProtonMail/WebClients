@@ -1,13 +1,10 @@
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-shared-store/test';
-import { CacheType } from '@proton/redux-utilities/interface';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KTUserContext } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { MemberReadyForAutomaticUnprivatization } from '@proton/shared/lib/interfaces/Member';
-import type { OrganizationRole, RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
-import { PREDEFINED_ROLE_NAME } from '@proton/shared/lib/interfaces/OrganizationRole';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { entitlementCatalogReducer } from '../entitlementCatalog';
@@ -126,9 +123,6 @@ describe('unprivatizeSelfForMsp', () => {
 });
 
 describe('unprivatizeMember', () => {
-    const getRoleAssignment = (Name: PREDEFINED_ROLE_NAME) =>
-        ({ Role: { OrganizationRoleID: `${Name}-id`, Name } as OrganizationRole }) as RoleAssignment;
-
     const getMember = (Admin: boolean) =>
         ({
             ID: 'member-id',
@@ -139,37 +133,19 @@ describe('unprivatizeMember', () => {
 
     const unprivatizeApi = jest.fn(() => Promise.resolve({}));
 
-    const run = async (member: MemberReadyForAutomaticUnprivatization, roles: RoleAssignment[]) => {
-        const dispatch = jest.fn(async (action: unknown) => (action === 'getMemberRoles' ? roles : undefined));
-        await unprivatizeMember({
-            member,
-            ktUserContext: {} as KTUserContext,
-            api: unprivatizeApi as unknown as Api,
-        })(dispatch as any, jest.fn(), {} as ProtonThunkArguments);
-    };
-
     beforeEach(() => {
         jest.clearAllMocks();
     });
 
-    it('assigns the owner role when no role requiring the org key asked for the admin invitation', async () => {
-        const member = getMember(true);
-        await run(member, []);
-
-        expect(getMemberRoles).toHaveBeenCalledWith({ member, cache: CacheType.None });
-        expect(updateOwnerRole).toHaveBeenCalledWith({ member, makeAdmin: true, api: unprivatizeApi });
-        expect(unprivatizeApi).toHaveBeenCalledTimes(1);
-    });
-
-    it('does not assign the owner role when the member holds a role requiring the org key', async () => {
-        await run(getMember(true), [getRoleAssignment(PREDEFINED_ROLE_NAME.USER_ADMIN)]);
-
-        expect(updateOwnerRole).not.toHaveBeenCalled();
-        expect(unprivatizeApi).toHaveBeenCalledTimes(1);
-    });
-
-    it('does not assign any role to a member invited without admin access', async () => {
-        await run(getMember(false), []);
+    it.each([
+        { invitation: 'an admin invitation', Admin: true },
+        { invitation: 'an invitation without admin access', Admin: false },
+    ])('completes $invitation without reading or assigning roles', async ({ Admin }) => {
+        await unprivatizeMember({
+            member: getMember(Admin),
+            ktUserContext: {} as KTUserContext,
+            api: unprivatizeApi as unknown as Api,
+        })(jest.fn() as any, jest.fn(), {} as ProtonThunkArguments);
 
         expect(getMemberRoles).not.toHaveBeenCalled();
         expect(updateOwnerRole).not.toHaveBeenCalled();
