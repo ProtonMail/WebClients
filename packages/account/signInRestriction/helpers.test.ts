@@ -3,9 +3,9 @@ import {
     LOGIN_IDENTIFIER_POLICY,
     RESTRICTED_LOGIN_IDENTIFIER_POLICY,
 } from '@proton/shared/lib/interfaces/UserSettings';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { buildAddress } from '../testing/buildAddress';
-import { buildUser } from '../testing/buildUser';
 import { getCanShowSignInRestriction, getIsSignInRestricted, getSignInIdentifiers } from './helpers';
 
 describe('getSignInIdentifiers', () => {

@@ -1,8 +1,8 @@
-import { buildUser } from '@proton/account/testing/buildUser';
 import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';
 import type { EntitlementChecksForOrgAndUser } from '@proton/payments/core/entitlements/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import type { Flags, OrganizationRouterParams } from '../../content/router-params';
 import { getMspAppRoutes } from './routes';

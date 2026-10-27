@@ -1,5 +1,5 @@
-import { buildUser } from '@proton/account/testing/buildUser';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { isB2BAdmin } from './isB2BAdmin';
 

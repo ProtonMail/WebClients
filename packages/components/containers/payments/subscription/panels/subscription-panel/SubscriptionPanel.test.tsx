@@ -1,6 +1,5 @@
 import { screen } from '@testing-library/react';
 
-import { buildUser } from '@proton/account/testing/buildUser';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
@@ -8,6 +7,7 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { APPS } from '@proton/shared/lib/constants';
 import { Renew, SubscriptionPlatform, TrialType } from '@proton/shared/lib/payments/subscription/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { renderWithProviders } from '../../../../../testing/renderWithProviders';
 import SubscriptionPanel from './SubscriptionPanel';
