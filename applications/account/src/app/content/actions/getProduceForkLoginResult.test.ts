@@ -1,7 +1,12 @@
+/** @jest-environment-options {"url": "https://account.proton.me"} */
 import { getAvailableAppsForUser } from '@proton/account/availableApps/apps';
 import { buildUser } from '@proton/account/testing/buildUser';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import { type ProduceForkParametersFull, produceFork } from '@proton/shared/lib/authentication/fork/produce';
+import {
+    type ProduceForkParametersFull,
+    getForkRedirectUrl,
+    produceFork,
+} from '@proton/shared/lib/authentication/fork/produce';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
@@ -9,6 +14,7 @@ import { type UserModel, UserType } from '@proton/shared/lib/interfaces/User';
 
 import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';
+import { withInterruption } from '../interruptions';
 import { type ProduceForkData, SSOType } from './forkInterface';
 import { getProduceForkLoginResult } from './getProduceForkLoginResult';
 
@@ -164,6 +170,110 @@ describe('getProduceForkLoginResult', () => {
             });
         }
     );
+
+    it('asks for the desktop consent, without a location, before forking to a proton:// redirect', async () => {
+        const data: ProduceForkData = {
+            type: SSOType.Proton,
+            payload: {
+                forkParameters: {
+                    app: APPS.PROTONMAIL,
+                    state: 'state',
+                    redirectUrl: getForkRedirectUrl('proton-mail://login', APPS.PROTONMAIL),
+                } as ProduceForkParametersFull,
+            },
+        };
+        const api = jest.fn() as unknown as Api;
+        const session = getSession(SessionSource.Proton, {});
+
+        const result = await getProduceForkLoginResult({ api, data, session, paths });
+        expect(result).toMatchObject({ type: 'desktop-fork-consent', payload: { app: APPS.PROTONMAIL } });
+        expect(result.payload).not.toHaveProperty('location');
+        expect(api).not.toHaveBeenCalled();
+        expect(mockProduceFork).not.toHaveBeenCalled();
+
+        await getProduceForkLoginResult({
+            api,
+            data,
+            session: withInterruption(session, 'desktop-fork-consent'),
+            paths,
+        });
+        expect(mockProduceFork).toHaveBeenCalled();
+    });
+
+    it.each([
+        ['a localhost redirect', 'http://localhost:32167', true],
+        ['an https redirect on the Proton domain', 'https://new-calendar.proton.me', false],
+    ])('asks for consent for %s: %s', async (_, redirectUrl, asks) => {
+        const data: ProduceForkData = {
+            type: SSOType.Proton,
+            payload: {
+                forkParameters: {
+                    app: APPS.PROTONCALENDAR,
+                    state: 'state',
+                    redirectUrl: getForkRedirectUrl(redirectUrl, APPS.PROTONCALENDAR),
+                } as ProduceForkParametersFull,
+            },
+        };
+
+        const result = await getProduceForkLoginResult({
+            api: jest.fn() as unknown as Api,
+            data,
+            session: getSession(SessionSource.Proton, {}),
+            paths,
+        });
+
+        expect(result.type === 'fork-redirect-consent').toBe(asks);
+        expect(mockProduceFork).toHaveBeenCalledTimes(asks ? 0 : 1);
+    });
+
+    describe('the code desktop flow', () => {
+        const userCode = 'ABCD2345';
+        const data: ProduceForkData = {
+            type: SSOType.Proton,
+            payload: {
+                forkParameters: { app: APPS.PROTONPASS, state: 'state' } as ProduceForkParametersFull,
+                desktopForkParameters: {
+                    app: APPS.PROTONPASS,
+                    redirectUrl: undefined,
+                    qrCodePayload: { version: 0, userCode, encodedBytes: undefined, childClientId: 'macos-pass' },
+                },
+            },
+        };
+
+        it('shows where the device with the code is on the desktop consent', async () => {
+            const api = jest.fn(async () => ({ Code: 1000, IP: '1.2.3.4', CountryCode: 'CH' }));
+
+            const result = await getProduceForkLoginResult({
+                api: api as unknown as Api,
+                data,
+                session: getSession(SessionSource.Proton, {}),
+                paths,
+            });
+
+            expect(api).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    method: 'get',
+                    url: `auth/v4/sessions/forks/code/${userCode}`,
+                    silence: true,
+                })
+            );
+            expect(result).toMatchObject({
+                type: 'desktop-fork-consent',
+                payload: { location: { IP: '1.2.3.4', CountryCode: 'CH' } },
+            });
+        });
+
+        it('still asks for the desktop consent when the location cannot be loaded', async () => {
+            const result = await getProduceForkLoginResult({
+                api: jest.fn(async () => Promise.reject(new Error('offline'))) as unknown as Api,
+                data,
+                session: getSession(SessionSource.Proton, {}),
+                paths,
+            });
+
+            expect(result).toMatchObject({ type: 'desktop-fork-consent', payload: { location: undefined } });
+        });
+    });
 
     it('lets an external account that cannot create a Proton address fork to Drive', async () => {
         const result = await setup({ user: externalUserWithoutProtonAddressCreation, app: APPS.PROTONDRIVE });

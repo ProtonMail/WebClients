@@ -34,6 +34,7 @@ import AuthDesktop from '../public/AuthDesktop';
 import AuthExtension from '../public/AuthExtension';
 import CallScheduledPage from '../public/CallScheduledPage';
 import CloseTicketContainer from '../public/CloseTicketContainer';
+import ConfirmDesktopForkContainer from '../public/ConfirmDesktopForkContainer';
 import ConfirmForkRedirectContainer from '../public/ConfirmForkRedirectContainer';
 import DisableAccountContainer from '../public/DisableAccountContainer';
 import EmailForwardingContainer, { EmailForwardingRequest } from '../public/EmailForwardingContainer';
@@ -631,6 +632,30 @@ const PublicAppInteractive = ({
                                                         }}
                                                         onCancel={() => {
                                                             window.location.pathname = SSO_PATHS.SWITCH;
+                                                        }}
+                                                    />
+                                                </UnAuthenticated>
+                                            </Route>
+                                        )}
+                                        {locationState?.type === 'desktop-fork-consent' && (
+                                            <Route path="/auth-desktop/confirm">
+                                                <UnAuthenticated>
+                                                    <ConfirmDesktopForkContainer
+                                                        app={locationState.payload.app}
+                                                        childClientId={locationState.payload.childClientId}
+                                                        location={locationState.payload.location}
+                                                        onConfirm={async () => {
+                                                            if (locationState?.type !== 'desktop-fork-consent') {
+                                                                throw new Error('Missing state');
+                                                            }
+                                                            const { session } = locationState.payload;
+                                                            await handleLogin(
+                                                                withInterruption(session, 'desktop-fork-consent')
+                                                            );
+                                                        }}
+                                                        onCancel={() => {
+                                                            // Soft navigation keeps the desktop fork state, so another account can be picked
+                                                            history.push(SSO_PATHS.SWITCH);
                                                         }}
                                                     />
                                                 </UnAuthenticated>

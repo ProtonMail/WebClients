@@ -4,21 +4,19 @@ import type { AuthDeviceOutput, DeviceData, DeviceSecretData } from '@proton/sha
 import type { UnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 
 export enum AuthType {
+    /** Two-step sign-in: the username first, then the password (`AutoSrp`) or the SSO provider. */
     Auto = 0,
-    // AutoSrp references step 2 of the auto login with srp authentication.
-    // This is an intermediate phase, when we rollout auto login style
-    // everywhere, it can be replaced with the `Srp` type
+    /** The password step of the `Auto` sign-in, for the username it checked. */
     AutoSrp = 1,
+    /** Username and password, authenticated with SRP. */
     Srp = 2,
+    /** Sign-in through the organization's identity provider, including the return from its redirect. */
     ExternalSSO = 3,
 }
 
 /** Which credentials form the sign-in shows; the auto mode's password step shows the username it checked. */
 export type AuthTypeData =
-    | { type: AuthType.Auto }
-    | { type: AuthType.AutoSrp; username: string }
-    | { type: AuthType.Srp }
-    | { type: AuthType.ExternalSSO };
+    { type: AuthType.Auto } | { type: AuthType.AutoSrp; username: string } | { type: AuthType.ExternalSSO };
 
 export enum SSOLoginCapabilites {
     SETUP_BACKUP_PASSWORD = 0,

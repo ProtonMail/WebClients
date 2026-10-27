@@ -15,7 +15,7 @@ import { type ReturnUrlResult, getReturnUrl } from '../returnUrl';
 import { getForkEncryptedBlob } from './blob';
 import type { ForkPayloadVersion, ForkType } from './constants';
 import { ForkSearchParameters } from './constants';
-import { getValidatedRedirectUrl } from './getValidatedRedirectUrl';
+import { type ValidatedRedirectUrl, getRedirectForkUrl, getValidatedRedirectUrl } from './getValidatedRedirectUrl';
 import {
     getEmailSessionForkSearchParameter,
     getLocalIDForkSearchParameter,
@@ -161,10 +161,7 @@ export const getProduceForkUrl = (
 
     const redirectUrl = produceForkParameters.redirectUrl;
     if (redirectUrl) {
-        const validatedRedirectUrl = getValidatedRedirectUrl({ url, redirectUrl, app: produceForkParameters.app });
-        if (validatedRedirectUrl) {
-            return validatedRedirectUrl;
-        }
+        return getRedirectForkUrl({ url, redirectUrl, app: produceForkParameters.app });
     }
 
     const returnUrl = produceForkParameters.returnUrl;
@@ -194,7 +191,7 @@ export interface ProduceForkParameters {
     payloadVersion: ForkPayloadVersion;
     unauthenticatedReturnUrl: string;
     returnUrl: ReturnUrlResult | undefined;
-    redirectUrl: URL | null;
+    redirectUrl: ValidatedRedirectUrl | null;
     email?: string;
     partnerId?: string;
     /**
@@ -206,6 +203,15 @@ export interface ProduceForkParameters {
 export interface ProduceForkParametersFull extends ProduceForkParameters {
     localID: number | undefined;
 }
+
+/** The redirect url of a fork, from the url or saved fork state, validated before anything asks to confirm it. */
+export const getForkRedirectUrl = (value: string | null | undefined, app: APP_NAMES | undefined) => {
+    if (!app || !value || !URL.canParse(value)) {
+        return null;
+    }
+    const forkUrl = new URL(getAppHref(SSO_PATHS.FORK, app));
+    return getValidatedRedirectUrl({ redirectUrl: new URL(value), url: forkUrl, app }) ?? null;
+};
 
 export const getProduceForkParameters = (
     searchParams: URLSearchParams
@@ -233,10 +239,8 @@ export const getProduceForkParameters = (
         return '';
     })();
     const returnUrl = getReturnUrl(searchParams);
-    const redirectUrl = (() => {
-        const value = searchParams.get('redirectUrl') || '';
-        return value && URL.canParse(value) ? new URL(value) : null;
-    })();
+    const validatedApp = getValidatedApp(app);
+    const redirectUrl = getForkRedirectUrl(searchParams.get('redirectUrl'), validatedApp);
     const payloadType = (() => {
         const value = searchParams.get(ForkSearchParameters.PayloadType) || '';
         if (value === 'offline') {
@@ -268,7 +272,7 @@ export const getProduceForkParameters = (
         childClientID,
         state: state.slice(0, 100),
         localID,
-        app: getValidatedApp(app),
+        app: validatedApp,
         forkType: getValidatedForkType(forkType),
         prompt: prompt === 'login' ? 'login' : undefined,
         promptType,

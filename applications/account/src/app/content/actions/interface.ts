@@ -1,5 +1,8 @@
 import type { LocationDescriptor } from 'history';
 
+import type { ForkCodeLocation } from '@proton/shared/lib/authentication/interface';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+
 import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import type { AuthDesktopState } from '../../public/AuthDesktop';
 import type { AuthExtensionState } from '../../public/AuthExtension';
@@ -27,6 +30,16 @@ export type LoginLocationState =
           {
               session: AuthSession;
               redirectUrl: string;
+          }
+      >
+    | LoginLocationStateData<
+          'desktop-fork-consent',
+          {
+              session: AuthSession;
+              app: APP_NAMES;
+              childClientId: string;
+              /** Where the device showing the code is; only the code flow has one. */
+              location?: ForkCodeLocation;
           }
       >
     | LoginLocationStateData<'login', null>

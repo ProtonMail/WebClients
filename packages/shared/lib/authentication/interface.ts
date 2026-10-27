@@ -39,6 +39,11 @@ export interface PushForkResponse {
     Selector: string;
 }
 
+export interface ForkCodeLocation {
+    IP: string | null;
+    CountryCode: string | null;
+}
+
 export interface PullForkResponse {
     Payload: string;
     LocalID: number;

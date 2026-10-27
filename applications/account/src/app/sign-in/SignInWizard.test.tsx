@@ -784,9 +784,9 @@ describe('SignInWizard', () => {
             expect(await screen.findByRole('heading', { name: 'Two-factor authentication' })).toBeInTheDocument();
             const page = screen.getByRole('main');
             clickBack();
-            // The reopened credentials step, its redirect token used: the SSO form, then the password form
+            // The reopened credentials step, its redirect token used: the SSO form, then the password step
             fireEvent.click(await screen.findByRole('button', { name: 'Sign in with password' }));
-            fireEvent.change(await screen.findByLabelText('Password'), { target: { value: 'secret' } });
+            fireEvent.change(await screen.findByLabelText('Enter your password'), { target: { value: 'secret' } });
             fireEvent.click(screen.getByRole('button', { name: 'Sign in' }));
             // A new password account flow, the sign-in's child under the stopped one's id
             expect(await screen.findByRole('heading', { name: 'Two-factor authentication' })).toBeInTheDocument();
