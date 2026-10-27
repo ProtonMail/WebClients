@@ -31,7 +31,7 @@ export type MessageFromApi = {
 
 // prettier-ignore
 export type SpaceFromApi = {
-    SpaceType?: unknown;     // Expecting SpaceType; absent on legacy records
+    SpaceType?: unknown;     // Expecting SpaceTypeInt; absent on legacy records
     ID?: any;                // Expecting type SpaceId
     CreateTime?: any;        // Expecting a serialized Date
     UpdateTime?: any;        // Expecting a serialized Date
@@ -151,9 +151,17 @@ export type MessageToApi = {
     MessageTag: MessageTag;
 };
 
+/** Public space discriminator used by Slim-API. */
+export enum SpaceTypeInt {
+    Default = 0,
+    Project = 1,
+    CodeSession = 2,
+    Schedule = 3,
+}
+
 export type SpaceToApi = {
     ID: RemoteId;
-    SpaceType: SpaceType;
+    SpaceType: SpaceTypeInt;
     Encrypted?: Base64;
     SpaceKey: Base64;
     SpaceTag: SpaceTag;

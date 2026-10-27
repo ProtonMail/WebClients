@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Badge, type BadgeType } from '@proton/components/components/badge/Badge';
 
 import type { ConversationArtifactDrawerEntry } from '../../../components/Conversation/artifact/conversationArtifactDrawerList';
 import { KnowledgeBasePanel } from '../../../components/Files/KnowledgeBase/KnowledgeBasePanel';
@@ -16,6 +17,23 @@ import type { Conversation, Message } from '../../../types';
 import { getScheduleRunTimestampLabel } from './utils/run-timestamp-label';
 
 import './ScheduledTaskRunPanel.scss';
+
+type RunStatus = NonNullable<Conversation['scheduleRun']>['status'];
+
+const RunStatusBadge = ({ status }: { status: RunStatus }) => {
+    const statuses: Record<RunStatus, { label: string; type: BadgeType }> = {
+        running: { label: c('collider_2025:Status').t`Running`, type: 'info' },
+        succeeded: { label: c('collider_2025:Status').t`Succeeded`, type: 'success' },
+        failed: { label: c('collider_2025:Status').t`Failed`, type: 'error' },
+        interrupted: { label: c('collider_2025:Status').t`Interrupted`, type: 'warning' },
+    };
+    const { label, type } = statuses[status];
+    return (
+        <Badge className="shrink-0" type={type}>
+            {label}
+        </Badge>
+    );
+};
 
 interface ScheduledTaskRunPanelProps {
     conversation: Conversation;
@@ -113,7 +131,12 @@ export const ScheduledTaskRunPanel = ({
                                     state: { ...location.state, expandedScheduleRuns: conversation.spaceId },
                                 }}
                             >
-                                {getScheduleRunTimestampLabel(run.createdAt)}
+                                <span className="flex flex-nowrap items-center gap-2 w-full">
+                                    <span className="flex-1 text-ellipsis">
+                                        {getScheduleRunTimestampLabel(run.createdAt)}
+                                    </span>
+                                    {run.scheduleRun && <RunStatusBadge status={run.scheduleRun.status} />}
+                                </span>
                             </ButtonLike>
                         ))}
                     </div>

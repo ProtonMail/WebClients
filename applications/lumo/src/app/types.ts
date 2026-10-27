@@ -1,8 +1,11 @@
+import type { ScheduleDefinition, ScheduleRun } from '@proton/lumo-api-client/core/desktop-schedules';
+
 import { type ArtifactType, isArtifactType } from './components/Conversation/artifact/parseArtifacts';
 import { deriveDataEncryptionKey } from './crypto';
 import type { Base64, EncryptedData } from './crypto/encryptedData';
 import type { AesGcmCryptoKey } from './crypto/types';
 import type { ScheduleDetails } from './features/schedules/types';
+import type { ScheduleOutcome } from './services/schedules/types';
 import {
     type GenerationResponseMessage,
     IMAGE_ASPECT_RATIOS,
@@ -83,13 +86,15 @@ type SimpleSpacePriv = {};
 
 export type ScheduleSpacePriv = {
     schedule: ScheduleDetails;
+    /** Timing revision and resolved one-off timestamp used by desktop execution. */
+    scheduleDefinition?: ScheduleDefinition;
 };
 
 export type SpacePriv = ProjectSpacePriv | SimpleSpacePriv | ScheduleSpacePriv;
 
 export type ProjectSpace = SpacePub<SpaceType.Project> & ProjectSpacePriv;
 type SimpleSpace = SpacePub<SpaceType.Default> & SimpleSpacePriv;
-type ScheduleSpace = SpacePub<SpaceType.Schedule> & ScheduleSpacePriv;
+export type ScheduleSpace = SpacePub<SpaceType.Schedule> & ScheduleSpacePriv;
 
 export type SpaceKeyClear = {
     spaceKey: Base64; // type: HkdfCryptoKey
@@ -110,6 +115,18 @@ export type Space = (ProjectSpace | SimpleSpace | ScheduleSpace) & SpaceKeyClear
 export type SerializedSpace = SpacePub & Partial<Encrypted> & MaybeSpaceKey & LocalFlagsForSpace;
 export type SerializedSpaceMap = Record<SpaceId, SerializedSpace>;
 
+export function isScheduleSpace(value: unknown): value is ScheduleSpace & SpaceKeyClear {
+    if (typeof value !== 'object' || value === null) return false;
+    const space = value as { spaceType?: SpaceType; schedule?: ScheduleSpacePriv['schedule'] };
+    return (
+        space.spaceType === SpaceType.Schedule &&
+        !!space.schedule &&
+        typeof space.schedule.name === 'string' &&
+        typeof space.schedule.instructions === 'string' &&
+        !!space.schedule.recurrenceRule
+    );
+}
+
 export function isSpaceType(value: unknown): value is SpaceType {
     return value === SpaceType.Default || value === SpaceType.Project || value === SpaceType.Schedule;
 }
@@ -123,7 +140,8 @@ function getSpacePriv(s: Space): SpacePriv {
         case SpaceType.Default:
             return {};
         case SpaceType.Schedule:
-            return { schedule: s.schedule };
+            if (!isScheduleSpace(s)) throw new Error('Invalid schedule space');
+            return { schedule: s.schedule, ...(s.scheduleDefinition && { scheduleDefinition: s.scheduleDefinition }) };
         default:
             throw new Error('Unsupported space type');
     }
@@ -784,8 +802,18 @@ export type ConversationPub = {
     starred?: boolean;
 };
 
+type ScheduleRunMetadata = {
+    run: ScheduleRun;
+    status: 'running' | ScheduleOutcome;
+    finishedAt?: string;
+    /** Messages belonging to the original execution, excluding later chat replies. */
+    messageIds: string[];
+    promptMessageId?: string;
+};
+
 export type ConversationPriv = {
     title: string;
+    scheduleRun?: ScheduleRunMetadata;
     agentId?: string; // id of an active custom agent (see LumoUserSettings.customAgents)
     // Per-conversation override of LumoUserSettings.automaticArtifactCreation, set from the composer
     // tool menu. Undefined means the conversation follows the global default.
@@ -819,9 +847,10 @@ export function getConversationPub(c: ConversationPub): ConversationPub {
 }
 
 export function getConversationPriv(c: ConversationPriv): ConversationPriv {
-    const { title, agentId, artifactCreation, artifactAssets } = c;
+    const { title, agentId, artifactCreation, artifactAssets, scheduleRun } = c;
     return {
         title,
+        ...(scheduleRun !== undefined && { scheduleRun }),
         ...(agentId && { agentId }),
         // Explicit `false` is meaningful (the user turned creation off for this chat), so don't drop it.
         ...(artifactCreation !== undefined && { artifactCreation }),
@@ -849,6 +878,7 @@ export function cleanConversation(conversation: Conversation): Conversation {
         agentId,
         artifactCreation,
         artifactAssets,
+        scheduleRun,
         starred,
         status,
         ghost,
@@ -859,6 +889,7 @@ export function cleanConversation(conversation: Conversation): Conversation {
         createdAt,
         updatedAt,
         title,
+        ...(scheduleRun !== undefined && { scheduleRun }),
         ...(agentId && { agentId }),
         ...(artifactCreation !== undefined && { artifactCreation }),
         ...(artifactAssets !== undefined && { artifactAssets }),

@@ -35,7 +35,7 @@ export const deleteConversationsWithSemantics = async ({
 
         const space = spacesMap[conversation.spaceId];
 
-        if (space?.spaceType === SpaceType.Project) {
+        if (space?.spaceType === SpaceType.Project || space?.spaceType === SpaceType.Schedule) {
             conversationIdsToDelete.add(conversationId);
         } else {
             spaceIdsToDelete.add(conversation.spaceId);

@@ -519,7 +519,7 @@ export function* expireConversations({
             selectConversationsBySpaceId(conversation.spaceId)
         );
         const deleteConversationOnly =
-            space?.spaceType === SpaceType.Project || Object.keys(conversationsInSpace).length > 1;
+            space?.spaceType === SpaceType.Project || space?.spaceType === SpaceType.Schedule || Object.keys(conversationsInSpace).length > 1;
 
         if (deleteConversationOnly) {
             yield put(locallyDeleteConversationFromLocalRequest(conversation.id));

@@ -1,3 +1,4 @@
+import type { ClientToolExecutor } from '@proton/lumo-api-client/core/client-tools';
 import type { LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
@@ -64,7 +65,7 @@ import {
 } from '../../util/resolveProjectFiles';
 import { type ArtifactGenerationType, sendArtifactTurnContextEvent } from '../../util/telemetry';
 import { buildArtifactRegistry } from './artifact/artifactRegistry';
-import { runGenerationWithCompaction } from './compactionFlow';
+import { type ConversationGenerationResult, runGenerationWithCompaction } from './compactionFlow';
 import type { ConversationContext } from './conversationContext';
 
 const createLumoErrorHandler =
@@ -368,12 +369,14 @@ export function resolveArtifactCreationSetting(
  * selected in the composer (`pendingAgentId`), stamp it onto the conversation so it
  * persists, and clear the pending selection.
  */
-function resolveAgentInstructions(conversationId: ConversationId) {
+function resolveAgentInstructions(conversationId: ConversationId, consumeComposerSelection = true) {
     return (dispatch: LumoDispatch, getState: () => LumoState): string | undefined => {
         const state = getState();
         const conversation = state.conversations[conversationId];
         let agentId = conversation?.agentId;
-        const pendingAgentId = state.composerActions?.pendingAgentId ?? undefined;
+        const pendingAgentId = consumeComposerSelection
+            ? (state.composerActions?.pendingAgentId ?? undefined)
+            : undefined;
 
         if (!agentId && pendingAgentId) {
             agentId = pendingAgentId;
@@ -414,20 +417,32 @@ function updateUi(userMessage: Message, conversationId: ConversationId, ui: UiCo
     if (isEdit && updateSibling) updateSibling(userMessage);
 }
 
-export function sendMessage({
+/** Execution controls independent of the composer and visible conversation. */
+export type ConversationExecutionContext = {
+    clientToolExecutor?: ClientToolExecutor;
+    messages?: { user: Message; assistant: Message };
+    background?: boolean;
+};
+
+export function executeConversationTurn({
     applicationContext: a,
     newMessageData: m,
     conversationContext: c,
     uiContext: ui,
     settingsContext: s,
+    executionContext: execution,
 }: {
     applicationContext: ApplicationContext;
     newMessageData: NewMessageData;
     conversationContext: ConversationContext;
     uiContext: UiContext;
     settingsContext: SettingsContext;
+    executionContext?: ConversationExecutionContext;
 }) {
-    return async (dispatch: AppDispatch, getState: () => any): Promise<Message | undefined> => {
+    return async (
+        dispatch: AppDispatch,
+        getState: () => any
+    ): Promise<(ConversationGenerationResult & { userMessage: Message }) | undefined> => {
         if (!m.content.trim() && m.attachments.length === 0) {
             return undefined;
         }
@@ -511,6 +526,11 @@ export function sendMessage({
             m.questionAnswers
         );
 
+        if (execution?.messages) {
+            userMessage = execution.messages.user;
+            assistantMessage = execution.messages.assistant;
+        }
+
         // Save the user message to Redux and request push to persistence HTTP API
         dispatch(addMessage(userMessage));
         dispatch(
@@ -557,7 +577,7 @@ export function sendMessage({
         // Resolve the active custom agent (conversation-scoped persona). An existing
         // conversation stores its agent id; a brand-new conversation consumes the agent
         // selected in the composer (pendingAgentId) and stamps it onto the conversation.
-        const agentInstructions = dispatch(resolveAgentInstructions(conversationId));
+        const agentInstructions = dispatch(resolveAgentInstructions(conversationId, !execution?.background));
 
         const allAttachments = state.attachments;
 
@@ -578,6 +598,7 @@ export function sendMessage({
         }
 
         // Call the LLM.
+        let generation: ConversationGenerationResult;
         try {
             // Extract the user's query from the last user message for RAG retrieval
             const lastUserMessage = linearChain.filter((m) => m.role === Role.User).pop();
@@ -717,7 +738,7 @@ export function sendMessage({
                     !!s.isArtifactSlidesFeatureEnabled
                 );
 
-            await dispatch(
+            generation = await dispatch(
                 runGenerationWithCompaction({
                     api: a.api,
                     conversationId,
@@ -730,7 +751,9 @@ export function sendMessage({
                     contextFilters: updatedC.contextFilters,
                     messageMap: updatedC.messageMap,
                     preferSibling: ui.updateSibling,
+                    retryAfterToolExecution: execution?.background ? false : undefined,
                     sendOptions: {
+                        clientToolExecutor: execution?.clientToolExecutor,
                         signal: a.signal,
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
@@ -756,7 +779,15 @@ export function sendMessage({
             throw error;
         }
 
-        return userMessage;
+        return { userMessage, ...generation };
+    };
+}
+
+/** Composer adapter retaining the existing user-message return value. */
+export function sendMessage(params: Parameters<typeof executeConversationTurn>[0]) {
+    return async (dispatch: LumoDispatch): Promise<Message | undefined> => {
+        const result = await dispatch(executeConversationTurn(params));
+        return result?.userMessage;
     };
 }
 

@@ -20,7 +20,7 @@ import { getScheduleCadenceLabel } from './utils/cadence-label';
 import './ScheduledTaskCard.scss';
 
 interface ScheduledTaskCardProps {
-    onDelete?: () => void;
+    onDelete?: () => void | Promise<void>;
     onEdit?: () => void;
     schedule: ScheduleDetails;
 }

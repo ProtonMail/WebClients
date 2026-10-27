@@ -112,6 +112,19 @@ describe('expireConversations saga', () => {
         expect(dispatched).toEqual([locallyDeleteConversationFromLocalRequest('eligible')]);
     });
 
+    it('preserves a schedule space when its last run expires', async () => {
+        const eligible = createConversation(
+            FREE_USER_CHAT_RETENTION_DAYS + FREE_USER_CHAT_DELETION_GRACE_DAYS,
+            'run',
+            'schedule'
+        );
+        const state = createState({
+            conversations: { run: eligible },
+            spaces: { schedule: { id: 'schedule', spaceType: SpaceType.Schedule } as Space },
+        });
+        expect(await runExpireConversations(state, false)).toEqual([locallyDeleteConversationFromLocalRequest('run')]);
+    });
+
     it('soft deletes the whole space for an eligible legacy 1:1 chat', async () => {
         const eligible = createConversation(
             FREE_USER_CHAT_RETENTION_DAYS + FREE_USER_CHAT_DELETION_GRACE_DAYS,
