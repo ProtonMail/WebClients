@@ -288,9 +288,38 @@
         "Leggi o stampa il documento finale"
       ]
     },
+    "Emoji category": {
+      "Activities": [
+        "Attività"
+      ],
+      "Animals and nature": [
+        "Animali e natura"
+      ],
+      "Flags": [
+        "Bandiere"
+      ],
+      "Food and drink": [
+        "Cibo e bevande"
+      ],
+      "Objects": [
+        "Oggetti"
+      ],
+      "Smileys and people": [
+        "Emoticon e persone"
+      ],
+      "Symbols": [
+        "Simboli"
+      ],
+      "Travel and places": [
+        "Viaggi e luoghi"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
         "Si è verificato un errore durante il caricamento del documento. Per prevenire la corruzione del documento, l'editor è stato bloccato. Ricarica la pagina e riprova. Se l'errore persiste, apri Cronologia versioni dalle opzioni del menu per tentare di ripristinare il documento a una versione precedente."
+      ],
+      "Could not load emoji. Close the picker and try again.": [
+        "Impossibile caricare l'emoji. Chiudi il menu di selezione e riprova."
       ],
       "Failed to export document.": [
         "Impossibile esportare il documento."
@@ -303,6 +332,9 @@
       ],
       "Failed to import Markdown due to unknown error.": [
         "Impossibile importare Markdown a causa di un errore sconosciuto."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "Impossibile importare il file OpenDocument a causa di un errore sconosciuto."
       ],
       "Failed to import Word document due to unknown error.": [
         "Impossibile importare il documento Word a causa di un errore sconosciuto."
@@ -397,6 +429,12 @@
       "Loading": [
         "Caricamento in corso"
       ],
+      "Loading emoji…": [
+        "Caricamento emoji…"
+      ],
+      "Loading spreadsheet content...": [
+        "Caricamento del contenuto del foglio di calcolo in corso..."
+      ],
       "NEW": [
         "NOVITA'"
       ],
@@ -406,8 +444,14 @@
       "No comments": [
         "Nessun commento"
       ],
+      "No emoji found": [
+        "Nessuna emoji trovata"
+      ],
       "No title": [
         "Nessun titolo"
+      ],
+      "Open the link to download the image, then use \"Insert image\" to add it to this document.": [
+        "Apri il link per scaricare l'immagine, quindi utilizza la funzione “Inserisci immagine” per aggiungerla a questo documento."
       ],
       "Remote image blocked": [
         "Immagine remota bloccata"
@@ -462,6 +506,9 @@
       "Clear formatting": [
         "Cancella formattazione"
       ],
+      "Comments": [
+        "Commenti"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -491,6 +538,12 @@
       ],
       "Duplicate table row": [
         "Duplica riga tabella"
+      ],
+      "Emoji": [
+        "Emoji"
+      ],
+      "Emoji suggestions": [
+        "Suggerimenti emoji"
       ],
       "Format": [
         "Formato"
@@ -539,6 +592,12 @@
       ],
       "Replace link": [
         "Sostituisci collegamento"
+      ],
+      "Search emoji": [
+        "Cerca emoji"
+      ],
+      "Search results": [
+        "Risultati della ricerca"
       ],
       "Text and highlight color": [
         "Colore del testo e dell'evidenziazione"
@@ -631,6 +690,11 @@
       ],
       "Rename": [
         "Rinomina"
+      ]
+    },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Esiste già un foglio con questo nome"
       ]
     },
     "sheets_2025:Spreadsheet border editor menu": {
@@ -1584,6 +1648,9 @@
       ],
       "New spreadsheet": [
         "Nuovo foglio di calcolo"
+      ],
+      "Open Proton Drive": [
+        "Apri Proton Drive"
       ],
       "OpenDocument Spreadsheet (.ods) (Beta)": [
         "Foglio di calcolo OpenDocument (.ods) (Beta)"
@@ -2656,6 +2723,9 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Non è supportato fornire suggerimenti all'interno di blocchi di codice"
+      ],
+      "Pasting remote images is not supported. Download the image and use \"Insert image\" instead.": [
+        "L'inserimento di immagini da remoto non è supportato. Scarica l'immagine e utilizza invece la funzione “Inserisci immagine”."
       ]
     }
   }
