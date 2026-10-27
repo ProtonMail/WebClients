@@ -21,6 +21,7 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { liftSort } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
+import { sendToE2eTests } from '@proton/pass/utils/tests/e2e';
 import { DOM_SETTLE_MS } from '@proton/pass/utils/time/next-tick';
 import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -248,6 +249,8 @@ export const createDetectorService = (config: DetectorConfig) => {
                     })
                     .catch(noop),
             ]);
+
+            sendToE2eTests('model', modelId);
         },
 
         applyRules: () => {

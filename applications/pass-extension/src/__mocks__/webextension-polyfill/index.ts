@@ -56,6 +56,12 @@ const browser = {
         onUpdated: {
             addListener: jest.fn(),
         },
+        onRemoved: { addListener: jest.fn() },
+    },
+    webRequest: {
+        onBeforeRequest: { addListener: jest.fn() },
+        onCompleted: { addListener: jest.fn() },
+        onErrorOccurred: { addListener: jest.fn() },
     },
     windows: {
         WINDOW_ID_NONE: -1,

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-type E2eMessageType = 'shadowRoot';
+type E2eMessageType = 'shadowRoot' | 'model';
 
 /**
  * Send pointers to e2e tests, aka playwright, only when E2E_TESTS flag is set
