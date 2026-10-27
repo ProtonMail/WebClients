@@ -1,5 +1,13 @@
+import { TidyURL } from '@protontech/tidy-url';
+
+import { traceError } from '../../lib/helpers/sentry';
 import { getUTMTrackersFromURL } from '../../lib/mail/trackers';
 import type { MessageUTMTracker } from '../../lib/models/mailUtmTrackers';
+
+vi.mock('../../lib/helpers/sentry', () => ({
+    SentryMailInitiatives: { REMOVE_EMAIL_TRACKERS: 'remove-email-trackers' },
+    traceError: vi.fn(),
+}));
 
 // Complete to verify that links are cleaned as expected
 const links: { originalLink: string; cleanedLink: string }[] = [
@@ -56,6 +64,31 @@ describe('trackers', () => {
 
             expect(result!.url).toEqual(originalURL);
             expect(result!.utmTracker).toEqual(undefined);
+        });
+
+        describe('errors', () => {
+            afterEach(() => {
+                vi.restoreAllMocks();
+                vi.mocked(traceError).mockClear();
+            });
+
+            it('should not report Invalid URL errors', () => {
+                vi.spyOn(TidyURL, 'clean').mockImplementation(() => {
+                    throw new Error('Invalid URL: 61590048325007');
+                });
+
+                expect(getUTMTrackersFromURL('https://facebook.com/profile.php?id=61590048325007')).toBeUndefined();
+                expect(traceError).not.toHaveBeenCalled();
+            });
+
+            it('should report other errors', () => {
+                vi.spyOn(TidyURL, 'clean').mockImplementation(() => {
+                    throw new Error('boom');
+                });
+
+                expect(getUTMTrackersFromURL('https://proton.me')).toBeUndefined();
+                expect(traceError).toHaveBeenCalledTimes(1);
+            });
         });
     });
 });
