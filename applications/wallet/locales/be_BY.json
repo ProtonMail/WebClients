@@ -25,6 +25,9 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Аб ${ name }"
+      ],
       "Activate recovery": [
         "Актываваць аднаўленне"
       ],
@@ -33,6 +36,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Дадаць ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Дадаць ${ name }"
       ],
       "Add account": [
         "Дадаць уліковы запіс"
@@ -311,7 +317,7 @@
         "Пошук краін"
       ],
       "Secure your wallet": [
-        "Абараніць свой кашалёк"
+        "Абараніце свой кашалёк"
       ],
       "Select ${ planOrAppName }": [
         "Выбраць ${ planOrAppName }"
@@ -3615,6 +3621,9 @@
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
       ],
+      "Customer Support": [
+        "Служба падтрымкі"
+      ],
       "Enforcing 2FA for organizations": [
         "Прымусовае ўключэнне 2ФА для арганізацый"
       ],
@@ -5022,6 +5031,9 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
+      "You already own a Born Private account.": [
+        "Вы ўжо валодаеце ўліковым запісам Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
@@ -6314,10 +6326,10 @@
     },
     "Wallet discover": {
       "Backup this wallet's seed phrase": [
-        "Стварыце рэзервовую копію seed-фразы гэтага кашалька"
+        "Стварыць рэзервовую копію seed-фразы гэтага кашалька"
       ],
       "Backup your ${ BRAND_NAME } account data": [
-        "Стварыце рэзервовыя копіі даных уліковага запісу ${ BRAND_NAME }"
+        "Стварыць рэзервовыя копіі даных уліковага запісу ${ BRAND_NAME }"
       ],
       "Discover": [
         "Знаёмства"
@@ -6326,7 +6338,7 @@
         "Абараніце свой кашалёк"
       ],
       "Set up 2FA to secure your account": [
-        "Наладзьце 2ФА для бяспекі свайго ўліковага запісу"
+        "Наладзіць 2ФА для бяспекі свайго ўліковага запісу"
       ]
     },
     "Wallet header": {
