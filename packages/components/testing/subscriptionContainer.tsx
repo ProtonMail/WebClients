@@ -1,11 +1,11 @@
 import { screen, waitFor } from '@testing-library/react';
 
-import { buildUser } from '@proton/account/testing/buildUser';
 import { withPaymentContext } from '@proton/payments-ui/testing/with-payment-context';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
+import { buildUser } from '@proton/shared/testing/buildUser';
 import { addApiMock } from '@proton/test-api/api';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 

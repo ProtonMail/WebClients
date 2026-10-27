@@ -1,4 +1,3 @@
-import { buildUser } from '@proton/account/testing/buildUser';
 import { getOrgPermissions } from '@proton/account/userPermissions';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
 import { hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments/core/subscription/helpers';
@@ -7,6 +6,7 @@ import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitleme
 import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { APPS } from '@proton/shared/lib/constants';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import type { AccountRecoveryRouterFlags, AccountRouterParams, Flags } from '../../content/router-params';
 import { defaultFlags } from '../../content/testing/buildOrganizationRouterParams';

@@ -1,4 +1,3 @@
-import { buildUser } from '@proton/account/testing/buildUser';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -9,6 +8,7 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import {
     bundle2024Upsell,

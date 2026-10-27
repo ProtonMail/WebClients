@@ -8732,9 +8732,6 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
     devDependencies:
-      '@proton/account':
-        specifier: workspace:^
-        version: link:../account
       '@proton/app-context':
         specifier: workspace:^
         version: link:../app-context

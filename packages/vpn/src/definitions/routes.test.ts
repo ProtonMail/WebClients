@@ -1,4 +1,3 @@
-import { buildUser } from '@proton/account/testing/buildUser';
 import { getOrgPermissions } from '@proton/account/userPermissions';
 import type { NavResolved } from '@proton/nav/types/nav';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
@@ -14,6 +13,7 @@ import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { OrgPermissions } from '@proton/shared/lib/interfaces/UserPermission';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { findNavItem, resolveNavigation } from './routes';
 

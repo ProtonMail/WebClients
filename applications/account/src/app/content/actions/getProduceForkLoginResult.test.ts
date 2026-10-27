@@ -1,6 +1,5 @@
 /** @jest-environment-options {"url": "https://account.proton.me"} */
 import { getAvailableAppsForUser } from '@proton/account/availableApps/apps';
-import { buildUser } from '@proton/account/testing/buildUser';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import {
     type ProduceForkParametersFull,
@@ -11,6 +10,7 @@ import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/con
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { type UserModel, UserType } from '@proton/shared/lib/interfaces/User';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';

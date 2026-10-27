@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 
 import { screen } from '@testing-library/react';
 
-import { buildUser } from '@proton/account/testing/buildUser';
 import { useTaxCountry } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import { getIdealAuthorizationText } from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
@@ -12,6 +11,7 @@ import type { SubscriptionEstimation } from '@proton/payments/core/subscription/
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import SubscriptionCheckout, { type SubscriptionCheckoutProps } from './SubscriptionCheckout';
