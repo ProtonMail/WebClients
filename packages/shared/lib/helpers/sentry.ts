@@ -221,6 +221,8 @@ const getDefaultDenyUrls = (): SentryDenyUrls => {
         /chrome-extension:\/\//i,
         /moz-extension:\/\//i,
         /webkit-masked-url:\/\//i,
+        // Facebook in-app browser scripts
+        /iabjs:\/\//i,
         // Other plugins
         /127\.0\.0\.1:4001\/isrunning/i, // Cacaoweb
         /webappstoolbarba\.texthelp\.com\//i,
@@ -278,6 +280,8 @@ const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
         // React DOM throwing this error, however it seems it has no impact on user experience.
         'Permission denied to access property "type"',
         "Can't find variable: FileReader", // Ignore FileReader error as it is thrown by bots crawling our apps
+        /__firefox__/, // Firefox for iOS injected scripts
+        "Can't find variable: EmptyRanges", // Injected script on iOS Safari
     ];
 };
 

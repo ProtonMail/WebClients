@@ -13,7 +13,7 @@ import { getNotificationsManager } from '../../modules/notifications';
 import { EnrichedError } from './EnrichedError';
 import { sendErrorReport } from './sendErrorReport';
 
-const shouldTrackError = (err: Error) =>
+export const shouldTrackError = (err: Error) =>
     !(err instanceof ValidationError) &&
     !(err instanceof AbortError) &&
     !(err instanceof RateLimitedError) &&

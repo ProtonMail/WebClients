@@ -2,7 +2,7 @@ import metrics from '@proton/metrics/metricsInstance';
 import type { HttpsProtonMeDriveThumbnailErrorsTotalV1SchemaJson } from '@proton/metrics/types/drive_thumbnail_errors_total_v1.schema';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
-import { NoHandlerError, ThumbnailError, wrapError } from './thumbnailError';
+import { NoHandlerError, ThumbnailError, UnsupportedFormatError, wrapError } from './thumbnailError';
 
 type ThumbnailErrorMetricLabels = HttpsProtonMeDriveThumbnailErrorsTotalV1SchemaJson['Labels'];
 type ThumbnailHandler = ThumbnailErrorMetricLabels['handler'];
@@ -27,6 +27,21 @@ const HANDLER_NAME_TO_LABEL: Record<string, ThumbnailHandler> = {
     CbzHandler: 'cbz',
 };
 
+// Already seen in Sentry: still counted in metrics, but no longer sent, so only new types show up.
+const KNOWN_UNSUPPORTED_MIME_TYPES = new Set([
+    'video/avi',
+    'video/vnd.avi',
+    'video/x-msvideo',
+    'video/x-ms-wmv',
+    'video/x-ms-vob',
+    'video/x-flv',
+    'video/mpeg',
+    'video/mp2t',
+    'video/vnd.dlna.mpeg-tts',
+    'video/matroska',
+    'video/x-matroska',
+]);
+
 export function reportThumbnailSuccess(handlerName: string): void {
     const handler = HANDLER_NAME_TO_LABEL[handlerName];
     if (handler) {
@@ -35,18 +50,8 @@ export function reportThumbnailSuccess(handlerName: string): void {
 }
 
 // Not an error: the file's format is simply one we don't attempt thumbnails for.
-function reportNoHandler(noHandlerError: NoHandlerError): void {
+function reportNoHandler(): void {
     metrics.drive_thumbnail_no_handler_total.increment({});
-
-    const mimeType = noHandlerError.context.mimeType;
-    traceError(noHandlerError, {
-        level: 'debug',
-        tags: {
-            component: 'drive-thumbnail-generator',
-            ...(typeof mimeType === 'string' && { mimeType }),
-        },
-        extra: noHandlerError.context,
-    });
 }
 
 function reportGenerationError(thumbnailError: ThumbnailError): void {
@@ -64,6 +69,13 @@ function reportGenerationError(thumbnailError: ThumbnailError): void {
     }
 
     const mimeType = thumbnailError.context.inputMimeType;
+    if (
+        thumbnailError instanceof UnsupportedFormatError &&
+        typeof mimeType === 'string' &&
+        KNOWN_UNSUPPORTED_MIME_TYPES.has(mimeType)
+    ) {
+        return;
+    }
 
     // The metric only carries the coarse handler/errorType buckets; Sentry keeps the
     // per-file detail (exact MIME type, message) needed to spot trends, e.g. which
@@ -86,7 +98,7 @@ function reportGenerationError(thumbnailError: ThumbnailError): void {
 export function reportThumbnailError(error: unknown): void {
     const thumbnailError = error instanceof ThumbnailError ? error : wrapError(error);
     if (thumbnailError instanceof NoHandlerError) {
-        reportNoHandler(thumbnailError);
+        reportNoHandler();
     } else {
         reportGenerationError(thumbnailError);
     }

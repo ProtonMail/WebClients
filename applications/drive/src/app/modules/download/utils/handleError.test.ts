@@ -1,3 +1,7 @@
+import { RateLimitedError, ValidationError } from '@protontech/drive-sdk';
+
+import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
+
 import { DownloadStatus, useDownloadManagerStore } from '../downloadManager.store';
 import { handleDownloadError } from './handleError';
 
@@ -15,6 +19,10 @@ describe('handleDownloadError', () => {
             nodeUids: ['node-uid'],
             downloadedBytes: 0,
         });
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+
     const getError = (downloadId: string) => useDownloadManagerStore.getState().getQueueItem(downloadId)?.error;
 
     it('should show a short message for storage quota errors', () => {
@@ -31,4 +39,22 @@ describe('handleDownloadError', () => {
 
         expect(getError(downloadId)?.message).toBe('Not enough browser storage');
     });
+
+    it('should report unexpected errors', () => {
+        handleDownloadError(addItem(), [], new Error('Unexpected'));
+
+        expect(sendErrorReport).toHaveBeenCalledTimes(1);
+    });
+
+    it.each([new ValidationError('No permission'), new RateLimitedError('Too many requests')])(
+        'should mark the download as failed without reporting $name',
+        (error) => {
+            const downloadId = addItem();
+
+            handleDownloadError(downloadId, [], error);
+
+            expect(getError(downloadId)).toBe(error);
+            expect(sendErrorReport).not.toHaveBeenCalled();
+        }
+    );
 });

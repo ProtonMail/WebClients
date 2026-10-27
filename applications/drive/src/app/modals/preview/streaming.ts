@@ -6,7 +6,6 @@ import { canHtmlVideoPlay } from '@proton/drive/modules/thumbnails';
 import type { ProtonDriveClient, SeekableReadableStream } from '@proton/drive/sdk';
 import metrics from '@proton/metrics/metricsInstance';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { initDownloadSW } from '../../modules/fileSaver/download';
 import type { MseStreamHandle } from './mseStreaming';
@@ -123,10 +122,12 @@ export function useVideoStreaming({ drive, nodeUid, mimeType, mediaDuration }: U
             }
 
             let videoError;
+            let mediaErrorCode;
             if (error instanceof Error) {
                 videoError = error;
             } else {
                 const eventDetails = serializaEventPayload(error);
+                mediaErrorCode = eventDetails?.mediaErrorCode;
                 const logMessage = eventDetails ? JSON.stringify(eventDetails) : errorToString(error);
 
                 logger.warn(`Video streaming failed because of error: ${logMessage}`);
@@ -144,17 +145,15 @@ export function useVideoStreaming({ drive, nodeUid, mimeType, mediaDuration }: U
                 metrics.drive_warnings_total.increment({ warning: 'cannot_init_sw' });
             } else if (!canHtmlVideoPlay(mimeType)) {
                 // The browser can't decode this container (real AVI/MKV/WMV), so degrading to Buffer
-                // mode is expected. Reported at "debug" level to keep the mimeType trend without noise.
+                // mode is expected and not reported to Sentry.
                 logger.debug(`Video streaming unavailable for undecodable mimeType ${mimeType}`);
-                traceError(videoError, {
-                    level: 'debug',
+            } else {
+                sendErrorReport(videoError, {
                     tags: {
-                        component: 'drive-preview-streaming',
                         ...(mimeType && { mimeType }),
+                        ...(typeof mediaErrorCode === 'number' && { mediaErrorCode }),
                     },
                 });
-            } else {
-                sendErrorReport(videoError);
             }
 
             clearSerwiceWorkerTimeout();
