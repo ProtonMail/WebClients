@@ -53,7 +53,6 @@ const slice = createSlice({
 export const selectRecordingStatus = (state: MeetState) => state.recordings.status;
 export const selectRecording = (state: MeetState) => state.recordings.recording;
 export const selectRecordings = (state: MeetState) => state.recordings.recordings;
-export const selectHasRecordings = (state: MeetState) => state.recordings.recordings.length > 0;
 
 export const { recordingProcessing, recordingReady, recordingFailed, clearRecording, setRecordings } = slice.actions;
 
