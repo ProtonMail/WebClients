@@ -81,6 +81,7 @@ const setup = async (
             isSelected={false}
             attachmentsMetadata={filterAttachmentToPreview(attachmentsMetadata)}
             shouldShowPrimaryBadge={false}
+            showHoverButtons={false}
         />,
         {
             preloadedState: {

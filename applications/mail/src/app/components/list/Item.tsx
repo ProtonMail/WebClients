@@ -1,5 +1,5 @@
 import type { ChangeEvent, DragEvent, MouseEvent } from 'react';
-import { memo, useMemo, useRef } from 'react';
+import { memo, useMemo, useRef, useState } from 'react';
 
 import ItemCheckbox from '@proton/components/containers/items/ItemCheckbox';
 import { isCustomLabel } from '@proton/mail/helpers/location';
@@ -24,7 +24,7 @@ import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { useCategoryViewConversationPrefetch } from '../../hooks/conversation/useCategoryViewConversationPrefetch';
 import type { Element } from '../../models/element';
 import { useMailSelector } from '../../store/hooks';
-import { selectSnoozeDropdownState } from '../../store/snooze/snoozeSliceSelectors';
+import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { HIGHLIGHTED_ITEM_INDEX } from '../categoryView/categoriesOnboarding/onboardingInterface';
 import ItemColumnLayout from './ItemColumnLayout';
@@ -95,6 +95,7 @@ const Item = ({
     const { listSpotlightStep, userIsInB2COnboardingFlow } = useCategoriesOnboarding();
 
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
+    const snoozedElement = useMailSelector(selectSnoozeElement);
     const isOneTimePasscodeEnabled = useFlag(MailFeatureFlag.OneTimePasscode);
     const { reportResultOpened } = useEncryptedSearchContext();
 
@@ -117,6 +118,11 @@ const Item = ({
     const recipientsOrGroup = getRecipientsOrGroups(recipients);
     const recipientsLabels = getRecipientsOrGroupsLabels(recipientsOrGroup);
 
+    const [hovered, setHovered] = useState(false);
+    // The snooze dropdown is anchored to the hover buttons, they must stay mounted while it is open for this row
+    const isSnoozeOpenForThisRow =
+        (snoozeDropdownState === 'open' || snoozeDropdownState === 'forceOpen') && snoozedElement?.ID === element.ID;
+    const showHoverButtons = hovered || isSnoozeOpenForThisRow;
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element, labelID);
     const firstRecipients = displayRecipients ? recipients : senders;
@@ -209,7 +215,14 @@ const Item = ({
     const dimItems = listSpotlightStep !== undefined ? index !== HIGHLIGHTED_ITEM_INDEX : userIsInB2COnboardingFlow;
 
     return (
-        <div className="item-container-wrapper relative" data-shortcut-target="item-container-wrapper">
+        <div
+            className="item-container-wrapper relative"
+            data-shortcut-target="item-container-wrapper"
+            onMouseEnter={() => setHovered(true)}
+            // After a reload with the cursor already over the row, no mouseenter fires: the first move mounts the buttons
+            onMouseMove={hovered ? undefined : () => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+        >
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/prefer-tag-over-role */}
             <div
                 onContextMenu={handleContextMenu}
@@ -238,6 +251,7 @@ const Item = ({
                 data-shortcut-target-selected={isSelected}
                 data-testid={`message-item:${element.Subject}`}
                 data-testorder={element.Order}
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 role="region"
                 aria-labelledby={toValidHtmlId(`message-subject-${element.ID}`)}
             >
@@ -269,6 +283,7 @@ const Item = ({
                     userSettings={userSettings}
                     oneTimeCode={oneTimeCode}
                     shouldShowPrimaryBadge={shouldShowPrimaryBadge}
+                    showHoverButtons={showHoverButtons}
                 />
             </div>
         </div>

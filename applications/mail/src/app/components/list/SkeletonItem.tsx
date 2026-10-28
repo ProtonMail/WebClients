@@ -56,6 +56,7 @@ const SkeletonItem = ({ labelID, conversationMode, isCompactView, loading, eleme
                     unread={false}
                     isSelected={false}
                     shouldShowPrimaryBadge={false}
+                    showHoverButtons={false}
                 />
             </div>
         </div>
