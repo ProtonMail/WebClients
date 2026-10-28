@@ -39,6 +39,7 @@ export const prodCatalogGrants = {
         EntitlementName.Groups,
         EntitlementName.MultiUser,
         EntitlementName.CustomDomainAddresses,
+        EntitlementName.CustomOrganizationLogo,
     ],
     [PLANS.BUNDLE_BIZ_2025]: [
         EntitlementName.FlagsInbox,
@@ -51,6 +52,7 @@ export const prodCatalogGrants = {
         EntitlementName.Groups,
         EntitlementName.MultiUser,
         EntitlementName.CustomDomainAddresses,
+        EntitlementName.CustomOrganizationLogo,
     ],
     [PLANS.VISIONARY]: [
         EntitlementName.FlagsInbox,
@@ -60,6 +62,7 @@ export const prodCatalogGrants = {
         EntitlementName.Groups,
         EntitlementName.MultiUser,
         EntitlementName.CustomDomainAddresses,
+        EntitlementName.CustomOrganizationLogo,
     ],
     [PLANS.DRIVE_BUSINESS]: [
         EntitlementName.Business,
@@ -67,6 +70,7 @@ export const prodCatalogGrants = {
         EntitlementName.Groups,
         EntitlementName.MultiUser,
         EntitlementName.ExternalManagedMembers,
+        EntitlementName.CustomOrganizationLogo,
     ],
     [PLANS.VPN_PRO]: [
         EntitlementName.FlagsVpn,
@@ -85,6 +89,7 @@ export const prodCatalogGrants = {
         EntitlementName.MultiUser,
         EntitlementName.ExternalManagedMembers,
         EntitlementName.Sso,
+        EntitlementName.CustomOrganizationLogo,
     ],
     [PLANS.VPN_BUSINESS]: [
         EntitlementName.FlagsVpn,
@@ -95,6 +100,17 @@ export const prodCatalogGrants = {
         EntitlementName.MultiUser,
         EntitlementName.ExternalManagedMembers,
         EntitlementName.Sso,
+        EntitlementName.CustomOrganizationLogo,
+    ],
+    [PLANS.LUMO_BUSINESS]: [
+        EntitlementName.FlagsLumo,
+        EntitlementName.Business,
+        EntitlementName.OrganizationPolicy,
+        EntitlementName.Groups,
+        EntitlementName.MultiUser,
+        EntitlementName.ExternalManagedMembers,
+        EntitlementName.Sso,
+        EntitlementName.CustomOrganizationLogo,
     ],
 } satisfies Partial<Record<PLANS, EntitlementName[]>>;
 

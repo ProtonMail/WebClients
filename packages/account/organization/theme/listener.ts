@@ -1,25 +1,19 @@
-import { PLANS } from '@proton/payments/core/constants';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
+import { getTotalEntitlementQuantity } from '@proton/payments/core/entitlements/helpers';
+import type { Entitlements } from '@proton/payments/core/entitlements/interface';
 import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { getOrganizationLogo } from '@proton/shared/lib/api/organization';
-import type { Organization } from '@proton/shared/lib/interfaces/Organization';
+import noop from '@proton/utils/noop';
 
 import { bootstrapEvent } from '../../bootstrap/action';
+import { type EntitlementsState, entitlementsThunk, selectEntitlements } from '../../entitlements';
+import { selectUser } from '../../user';
 import { type OrganizationState, selectOrganization } from '../index';
 import { getOrganizationThemeFromCookie, serializeOrgTheme, syncToCookie } from './cookie';
 import { organizationThemeSlice } from './slice';
 
-const getHasAccess = (organization: Organization | undefined) => {
-    return [
-        PLANS.BUNDLE_PRO,
-        PLANS.BUNDLE_PRO_2024,
-        PLANS.BUNDLE_BIZ_2025,
-        PLANS.MAIL_BUSINESS,
-        PLANS.DRIVE_BUSINESS,
-        PLANS.PASS_BUSINESS,
-        PLANS.VPN_BUSINESS,
-        PLANS.VISIONARY,
-    ].includes(organization?.PlanName as any);
-};
+const getHasAccess = (entitlements: Entitlements) =>
+    getTotalEntitlementQuantity(entitlements, EntitlementName.CustomOrganizationLogo) > 0;
 
 const getOrganizationLogoURL = (data: { logoID: string | null; API_URL: string; UID: string }) => {
     if (!data.logoID) {
@@ -29,7 +23,9 @@ const getOrganizationLogoURL = (data: { logoID: string | null; API_URL: string; 
     return `${data.API_URL}/${config.url}?UID=${data.UID}`;
 };
 
-export const organizationThemeListener = (startListening: SharedStartListening<OrganizationState>) => {
+export const organizationThemeListener = (
+    startListening: SharedStartListening<OrganizationState & EntitlementsState>
+) => {
     startListening({
         predicate: (action, currentState, previousState) => {
             const currentOrganization = selectOrganization(currentState).value;
@@ -39,11 +35,12 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                 Boolean(
                     currentOrganization?.PlanName !== previousOrganization?.PlanName ||
                     currentOrganization?.Settings !== previousOrganization?.Settings ||
-                    currentOrganization?.Name !== previousOrganization?.Name
+                    currentOrganization?.Name !== previousOrganization?.Name ||
+                    selectEntitlements(currentState).value !== selectEntitlements(previousState).value
                 )
             );
         },
-        effect: async (_, listenerApi) => {
+        effect: (_, listenerApi) => {
             const authentication = listenerApi.extra.authentication;
             const config = listenerApi.extra.config;
 
@@ -70,7 +67,15 @@ export const organizationThemeListener = (startListening: SharedStartListening<O
                 }
             }
 
-            const access = getHasAccess(organization);
+            const canHaveLogo = !!selectUser(state).value?.isPaid;
+            const entitlements = selectEntitlements(state).value;
+            if (canHaveLogo && !entitlements) {
+                listenerApi.dispatch(entitlementsThunk()).catch(noop);
+                return;
+            }
+
+            const access = canHaveLogo && !!entitlements && getHasAccess(entitlements);
+
             if (!organization || !organizationSettings || !access) {
                 if (!access) {
                     syncToCookie(serializeOrgTheme(undefined, authentication.localID));
