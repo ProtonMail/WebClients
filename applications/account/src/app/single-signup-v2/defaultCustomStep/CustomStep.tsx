@@ -20,6 +20,7 @@ import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
 import Step2 from '../Step2';
 import type { SignupCustomStepProps, SignupModelV2 } from '../interface';
+import { trackSignupDisplayNameCompleted, trackSignupRecoveryLoaded } from '../telemetry/signupFunnelEvents';
 import CongratulationsStep from './CongratulationsStep';
 import OrgSetupStep from './OrgSetupStep';
 import RecoveryStep from './RecoveryStep';
@@ -75,6 +76,13 @@ const CustomStep = ({
     ].filter((step) => step !== false);
 
     const [step, setStep] = useState<Step>(steps[0]);
+
+    const telemetryPlan = plan?.Name ?? 'free';
+    useEffect(() => {
+        if (step === Step.MnemonicRecovery || step === Step.SaveRecovery) {
+            trackSignupRecoveryLoaded(product, telemetryPlan);
+        }
+    }, [step]);
 
     if (model.cache?.type !== 'signup') {
         throw new Error('Unknown type');
@@ -172,6 +180,7 @@ const CustomStep = ({
                             });
                             if (validateFlow()) {
                                 cacheRef.current = updatedCache;
+                                trackSignupDisplayNameCompleted(product, telemetryPlan);
                                 void handleNextStep();
                             }
                         } catch (error) {

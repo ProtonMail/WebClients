@@ -52,6 +52,8 @@ export enum TelemetryMeasurementGroups {
     mailExpandBlockquotes = 'mail.web.expand_blockquotes',
     categoriesView = 'mail.any.categories_view',
     mailOnboarding = 'mail.any.signup_onboarding',
+    /** Temporary (DAWG-99): validates the unauthenticated to authenticated switch of the signup. Replaced by `mailOnboarding` once Data confirms. */
+    mailSignupOnboardingPoc = 'mail.any.signup_onboarding_account_poc',
     passNudge = 'mail.web.pass_nudge',
     /** Shared with mobile clients: compares Encrypted Search (searchVersion 'v1') against Content Search (searchVersion 'v2') */
     contentSearch = 'mail.any.search',

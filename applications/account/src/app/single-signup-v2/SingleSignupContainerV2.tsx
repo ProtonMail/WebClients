@@ -118,6 +118,7 @@ import UpsellModal from './modals/UpsellModal';
 import VisionaryUpsellModal from './modals/VisionaryUpsellModal';
 import { getSignupConfiguration } from './signupConfiguration';
 import { getSignupParameters } from './signupParameters';
+import { trackSignupAccountCreated, trackSignupPlanSelectionLoaded } from './telemetry/signupFunnelEvents';
 
 const getPorkbunPaymentUrl = ({ data }: { data: Extract<SignupInviteParameters, { type: 'porkbun' }>['data'] }) => {
     return getAppHref(
@@ -362,6 +363,13 @@ const SingleSignupContainerV2 = ({
     }, []);
 
     usePrefetchGenerateRecoveryKit();
+
+    const isSignedIn = !!model.session;
+    useEffect(() => {
+        if (model.step === Steps.Account && !isSignedIn) {
+            trackSignupPlanSelectionLoaded(product);
+        }
+    }, [model.step, isSignedIn]);
 
     const measure = (data: TelemetryMeasurementData) => {
         const values = 'values' in data ? data.values : {};
@@ -1596,6 +1604,7 @@ const SingleSignupContainerV2 = ({
                                     }
                                     if (cache.type === 'signup') {
                                         const result = await handleSetupNewUser(cache);
+                                        trackSignupAccountCreated(product);
                                         if (onboarding.signup) {
                                             setModelDiff({
                                                 cache: result,
