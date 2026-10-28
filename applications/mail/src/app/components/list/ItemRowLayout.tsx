@@ -44,6 +44,7 @@ interface Props {
     attachmentsMetadata?: AttachmentsMetadata[];
     oneTimeCode?: string | null;
     shouldShowPrimaryBadge: boolean;
+    showHoverButtons: boolean;
 }
 
 const ItemRowLayout = ({
@@ -60,6 +61,7 @@ const ItemRowLayout = ({
     attachmentsMetadata = [],
     oneTimeCode,
     shouldShowPrimaryBadge,
+    showHoverButtons,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -179,14 +181,16 @@ const ItemRowLayout = ({
                 <span className="m-auto"></span>
 
                 <span className="flex flex-nowrap items-center shrink-0 justify-end">
-                    <ItemHoverButtons
-                        element={element}
-                        labelID={labelID}
-                        onBack={onBack}
-                        hasStar={false}
-                        size="small"
-                        shouldShowPrimaryBadge={shouldShowPrimaryBadge}
-                    />
+                    {showHoverButtons && (
+                        <ItemHoverButtons
+                            element={element}
+                            labelID={labelID}
+                            onBack={onBack}
+                            hasStar={false}
+                            size="small"
+                            shouldShowPrimaryBadge={shouldShowPrimaryBadge}
+                        />
+                    )}
                     {loading && <div className="item-senddate-row w-custom" style={{ '--w-custom': '5rem' }} />}
                     <span
                         className={clsx(
