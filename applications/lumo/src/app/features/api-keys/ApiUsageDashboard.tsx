@@ -15,7 +15,7 @@ import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { CreditsModal } from '@proton/components/containers/payments/CreditsModal';
+import { LumoCreditsModal } from '@proton/components/containers/payments/LumoCreditsModal';
 import type { Currency } from '@proton/payments/core/interface';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
@@ -34,6 +34,7 @@ import {
     MOCK_API_USAGE_MEMBERS,
     getMockApiUsageDays,
 } from './apiUsageMockData';
+import { useCanBuyLumoCredits } from './useCanBuyLumoCredits';
 
 type UsagePeriod = 'last-7-days' | 'last-30-days' | 'previous-30-days' | 'last-90-days';
 
@@ -461,6 +462,7 @@ const ApiBalanceCard = ({
     isOrgMember,
     topUpDisabled,
     onTopUp,
+    canTopUp,
 }: {
     balance: number;
     currency: Currency;
@@ -469,6 +471,7 @@ const ApiBalanceCard = ({
     isOrgMember: boolean;
     topUpDisabled: boolean;
     onTopUp: () => void;
+    canTopUp: boolean;
 }) => {
     const [balanceSettings, setBalanceSettings] = useState<ApiBalanceSettings>({
         autoTopUp: { enabled: false, amount: 50, threshold: 10 },
@@ -507,7 +510,7 @@ const ApiBalanceCard = ({
                                   : c('collider_2025: Info').t`About ${estimatedDays} days left at current usage`}
                         </small>
                     </div>
-                    {!isOrgMember && (
+                    {canTopUp && (
                         <Button color="norm" className="shrink-0" disabled={topUpDisabled} onClick={onTopUp}>
                             {c('collider_2025: Action').t`Top up balance`}
                         </Button>
@@ -580,6 +583,7 @@ export const ApiUsageDashboard = ({ isOrgAdmin, isOrgMember }: { isOrgAdmin: boo
     const [{ Credit, Currency }] = useUser();
     const [paymentStatus, paymentStatusLoading] = usePaymentStatus();
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
+    const canTopUp = useCanBuyLumoCredits();
     const creditBalanceOverride = useDebugApiCreditBalance();
     const emptyUsageEnabled = useDebugApiEmptyUsage();
     const displayedCreditBalance = creditBalanceOverride ?? Credit;
@@ -628,6 +632,7 @@ export const ApiUsageDashboard = ({ isOrgAdmin, isOrgMember }: { isOrgAdmin: boo
                     isOrgMember={isOrgMember}
                     topUpDisabled={paymentStatusLoading || !paymentStatus}
                     onTopUp={() => setCreditModalOpen(true)}
+                    canTopUp={canTopUp}
                 />
                 <ApiPayAsYouGoCard />
             </div>
@@ -681,8 +686,8 @@ export const ApiUsageDashboard = ({ isOrgAdmin, isOrgMember }: { isOrgAdmin: boo
                 </section>
             )}
 
-            {!isOrgMember && renderCreditModal && paymentStatus && (
-                <CreditsModal app={APP_NAME} paymentStatus={paymentStatus} {...creditModalProps} />
+            {canTopUp && renderCreditModal && paymentStatus && (
+                <LumoCreditsModal app={APP_NAME} paymentStatus={paymentStatus} {...creditModalProps} />
             )}
         </section>
     );
