@@ -3,6 +3,7 @@ import { useConfirmActionModal } from '@proton/components/components/confirmActi
 import { useNotifications } from '@proton/app-context/useNotifications'
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
+import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react'
@@ -164,7 +165,17 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
         return
       }
     } else {
-      await application.recentDocumentsService.trashDocument(document)
+      try {
+        await application.recentDocumentsService.trashDocument(document)
+      } catch (error) {
+        traceError(error)
+        createNotification({
+          type: 'error',
+          text: c('Error').t`Failed to trash document`,
+        })
+        setCurrentlyTrashingId(undefined)
+        return
+      }
     }
 
     setCurrentlyTrashingId(undefined)
@@ -194,7 +205,14 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
         return
       }
     } else {
-      await application.recentDocumentsService.restoreDocument(document)
+      try {
+        await application.recentDocumentsService.restoreDocument(document)
+      } catch (error) {
+        traceError(error)
+        createNotification({ type: 'error', text: c('Notification').t`Failed to restore document` })
+        setCurrentlyRestoringId(undefined)
+        return
+      }
     }
 
     setCurrentlyRestoringId(undefined)
