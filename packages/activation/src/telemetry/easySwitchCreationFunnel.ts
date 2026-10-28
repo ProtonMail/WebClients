@@ -5,6 +5,14 @@ import { defineTimer } from '@proton/telemetry-tracker/lib/timers';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType, type TIME_PERIOD } from '../interface';
+import {
+    trackAccountImportEasySwitchCustomizeViewed,
+    trackAccountImportEasySwitchError,
+    trackAccountImportEasySwitchFinished,
+    trackAccountImportEasySwitchInstructionsViewed,
+    trackAccountImportEasySwitchProductsSubmitted,
+    trackAccountImportEasySwitchStarted,
+} from './accountImportFlow';
 
 /**
  * Funnel of the creation of an Easy Switch import (Outlook, Yahoo and "More import options").
@@ -147,6 +155,7 @@ export const trackEasySwitchCreationStarted = ({
         // Flushed right away so the funnel events are not batched with the same timestamp
         { flushImmediately: true }
     );
+    trackAccountImportEasySwitchStarted({ source, provider });
 };
 
 export const trackEasySwitchProductsSubmitted = ({
@@ -159,6 +168,7 @@ export const trackEasySwitchProductsSubmitted = ({
         { dimensions: { source, provider: toProvider(provider), ...getTelemetryProducts(products) } },
         { durationFrom: easySwitchCreationTimer, flushImmediately: true }
     );
+    trackAccountImportEasySwitchProductsSubmitted({ source, provider, products });
 };
 
 export const trackEasySwitchInstructionsViewed = ({ provider, products }: FunnelContext) => {
@@ -170,6 +180,7 @@ export const trackEasySwitchInstructionsViewed = ({ provider, products }: Funnel
         { dimensions: { provider: toProvider(provider), ...getTelemetryProducts(products) } },
         { durationFrom: easySwitchCreationTimer, flushImmediately: true }
     );
+    trackAccountImportEasySwitchInstructionsViewed({ provider, products });
 };
 
 export const trackEasySwitchPrepareImportViewed = ({
@@ -191,6 +202,7 @@ export const trackEasySwitchPrepareImportViewed = ({
         },
         { durationFrom: easySwitchCreationTimer, flushImmediately: true }
     );
+    trackAccountImportEasySwitchCustomizeViewed({ provider, products, importPeriod });
 };
 
 export const trackEasySwitchImporterCreated = ({
@@ -212,6 +224,7 @@ export const trackEasySwitchImporterCreated = ({
         },
         { durationFrom: easySwitchCreationTimer, stopTimer: true, flushImmediately: true }
     );
+    trackAccountImportEasySwitchFinished({ provider, products, importPeriod });
 };
 
 export const trackEasySwitchCreationError = ({
@@ -228,4 +241,5 @@ export const trackEasySwitchCreationError = ({
         // The timer keeps running: the user can retry, and the next creation_started restarts it anyway
         { durationFrom: easySwitchCreationTimer, flushImmediately: true }
     );
+    trackAccountImportEasySwitchError({ provider, products, errorStep });
 };

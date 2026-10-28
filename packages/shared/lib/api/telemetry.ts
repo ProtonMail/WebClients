@@ -83,6 +83,8 @@ export enum TelemetryMeasurementGroups {
     bringYourOwnEmail = 'any.web.bring_your_own_email',
     mailBringYourOwnEmail = 'mail.any.bring_your_own_email',
     byoeCreationFunnel = 'any.web.byoe_creation_funnel',
+    /** BYOE and Easy Switch flows, modelled like `mailOnboarding` (flow, step, action) */
+    accountImportFlow = 'any.web.account_import_flow',
     appSwitcher = 'any.web.app_switcher',
     accountExploreApps = 'account.web.explore_apps',
     preventWasmLoading = 'any.web.prevent_wasm_loading',
@@ -642,6 +644,14 @@ export enum TelemetryBYOECreationFunnelEvents {
     creationError = 'creation_error',
 }
 
+export enum TelemetryAccountImportFlowEvents {
+    stepLoad = 'step_load',
+    stepInteracted = 'step_interacted',
+    stepCompleted = 'step_completed',
+    flowFinished = 'flow_finished',
+    flowError = 'flow_error',
+}
+
 // Offers telemetry events
 export enum TelemetryMailDrivePostSignupOneDollarEvents {
     automaticModalOpen = 'automatic_modal_open',
@@ -809,6 +819,7 @@ export type TelemetryEvents =
     | TelemetryBringYourOwnEmailEvents
     | TelemetryMailBringYourOwnEmailEvents
     | TelemetryBYOECreationFunnelEvents
+    | TelemetryAccountImportFlowEvents
     | TelemetryPostSubscriptionTourEvents
     | TelemetryMailDrivePostSignupOneDollarEvents
     | TelemetryPaidUsersNudge

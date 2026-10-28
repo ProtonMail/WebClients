@@ -1,9 +1,9 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { mockTracker } from '@proton/telemetry-tracker/testing';
 
 import { EASY_SWITCH_SOURCES, TIME_PERIOD } from '../../../interface';
+import { mockBYOECreationFunnelTracker } from '../../../telemetry/mockTrackerOfGroup';
 import { easySwitchRender } from '../../../tests/render';
 import GmailSyncModal from './GmailSyncModal';
 
@@ -65,7 +65,7 @@ describe('GmailSyncModal', () => {
     });
 
     it('should send creation_started when the BYOE modal is shown, with the source and whether it converts a forwarding', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockBYOECreationFunnelTracker();
 
         easySwitchRender(
             <GmailSyncModal
@@ -86,7 +86,7 @@ describe('GmailSyncModal', () => {
     });
 
     it('should not send creation_started for the forwarding modal', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockBYOECreationFunnelTracker();
 
         easySwitchRender(
             <GmailSyncModal
@@ -101,7 +101,7 @@ describe('GmailSyncModal', () => {
     });
 
     it('should send google_sign_in_clicked with the import choices when pressing connect', async () => {
-        const { reports } = mockTracker();
+        const { reports } = mockBYOECreationFunnelTracker();
 
         easySwitchRender(
             <GmailSyncModal

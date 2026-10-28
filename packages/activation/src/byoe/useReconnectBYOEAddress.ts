@@ -16,6 +16,7 @@ import {
     deleteSyncItem,
     loadSyncList,
 } from '../logic/sync/sync.actions';
+import { trackAccountImportBYOEAddressAction } from '../telemetry/accountImportFlow';
 import { BYOEAddressAction } from '../telemetry/events';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import type { ReconnectBYOEAddressFailure, ReconnectBYOEAddressResult } from './reconnectBYOEAddress.interface';
@@ -75,6 +76,7 @@ export const useReconnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCE
         }
 
         tracker.emit(BYOEAddressAction, { dimensions: { addressAction: 'reconnect', provider: 'google' } });
+        trackAccountImportBYOEAddressAction('reconnect');
         void easySwitchDispatch(loadSyncList());
 
         return { status: 'success', address };

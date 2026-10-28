@@ -5,6 +5,17 @@ import { defineTimer } from '@proton/telemetry-tracker/lib/timers';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import type { EASY_SWITCH_SOURCES, TIME_PERIOD } from '../interface';
+import {
+    type AccountImportFlowVariant,
+    VARIANTS,
+    resumeAccountImportBYOE,
+    trackAccountImportBYOEAuthenticated,
+    trackAccountImportBYOEError,
+    trackAccountImportBYOEFinished,
+    trackAccountImportBYOESignInClicked,
+    trackAccountImportBYOEStarted,
+    trackAccountImportBYOEUpsellViewed,
+} from './accountImportFlow';
 
 /**
  * Funnel of the creation of a BYOE address (connecting a Gmail address).
@@ -34,12 +45,7 @@ const group = TelemetryMeasurementGroups.byoeCreationFunnel;
 const providerSpec = allowed(PROVIDERS);
 const importPeriodSpec = allowed(IMPORT_PERIODS);
 
-/**
- * Arm of the import period experiment (`InboxBringYourOwnEmailImportPeriodExperiment`) the user is in.
- * `n/a` when the experiment does not apply: flag off, or a flow without the experiment (mobile).
- */
-const VARIANTS = ['n/a', 'control', 'treatment'] as const;
-export type BYOEImportPeriodVariant = (typeof VARIANTS)[number];
+export type BYOEImportPeriodVariant = AccountImportFlowVariant;
 const variantSpec = allowed(VARIANTS);
 
 /**
@@ -148,6 +154,7 @@ export const trackBYOECreationStarted = ({
         // Every funnel event is flushed right away: batched events share the same timestamp and cannot be ordered
         { flushImmediately: true }
     );
+    trackAccountImportBYOEStarted({ source, provider, isConversion, variant });
 };
 
 /**
@@ -167,6 +174,7 @@ export const resumeBYOECreation = (startedAt: number | undefined) => {
     // The experiment does not run in the flows that resume after a redirect
     currentVariant = 'n/a';
     tracker.startTimer(byoeCreationTimer, { restart: true, elapsedMs: Date.now() - startedAt });
+    resumeAccountImportBYOE(startedAt);
 };
 
 export const trackBYOEGoogleSignInClicked = ({
@@ -190,6 +198,7 @@ export const trackBYOEGoogleSignInClicked = ({
         },
         { durationFrom: byoeCreationTimer, flushImmediately: true }
     );
+    trackAccountImportBYOESignInClicked({ provider, hasImportEmails, importPeriod, variant: currentVariant });
 };
 
 export const trackBYOEAuthenticated = (provider: BYOEProvider = DEFAULT_PROVIDER) => {
@@ -198,10 +207,12 @@ export const trackBYOEAuthenticated = (provider: BYOEProvider = DEFAULT_PROVIDER
         { dimensions: { provider, variant: currentVariant } },
         { durationFrom: byoeCreationTimer, flushImmediately: true }
     );
+    trackAccountImportBYOEAuthenticated({ provider, variant: currentVariant });
 };
 
 export const trackBYOEUpsellModalViewed = (provider: BYOEProvider = DEFAULT_PROVIDER) => {
     tracker.emit(UpsellModalViewed, { dimensions: { provider, variant: currentVariant } }, { flushImmediately: true });
+    trackAccountImportBYOEUpsellViewed({ provider, variant: currentVariant });
 };
 
 export const trackBYOEImporterCreated = ({
@@ -232,6 +243,14 @@ export const trackBYOEImporterCreated = ({
         },
         { durationFrom: byoeCreationTimer, stopTimer: true, flushImmediately: true }
     );
+    trackAccountImportBYOEFinished({
+        provider,
+        hasImportEmails,
+        importPeriod,
+        isUpsellShown,
+        isClaimedAddress,
+        variant: currentVariant,
+    });
 };
 
 export const trackBYOECreationError = (errorStep: BYOECreationErrorStep, provider: BYOEProvider = DEFAULT_PROVIDER) => {
@@ -241,4 +260,5 @@ export const trackBYOECreationError = (errorStep: BYOECreationErrorStep, provide
         { dimensions: { provider, errorStep, variant: currentVariant } },
         { durationFrom: byoeCreationTimer, flushImmediately: true }
     );
+    trackAccountImportBYOEError({ provider, errorStep, variant: currentVariant });
 };

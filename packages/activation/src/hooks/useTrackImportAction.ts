@@ -2,6 +2,7 @@ import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import type { ApiImportProvider } from '../api/api.interface';
 import type { ImportType } from '../interface';
+import { trackAccountImportReportAction } from '../telemetry/accountImportFlow';
 import { telemetryProduct, telemetryProvider } from '../telemetry/dimensions';
 import type { ImportAction } from '../telemetry/events';
 import { easySwitchImportReportAction } from '../telemetry/events';
@@ -28,6 +29,12 @@ export const useTrackImportAction = ({ account, provider, product }: Props) => {
                 provider: telemetryProvider[provider],
                 product: telemetryProduct[product],
             },
+        });
+        trackAccountImportReportAction({
+            action: importAction,
+            isBYOE,
+            provider: telemetryProvider[provider],
+            product: telemetryProduct[product],
         });
     };
 };

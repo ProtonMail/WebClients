@@ -4,11 +4,11 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
-import { mockTracker } from '@proton/telemetry-tracker/testing';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
 import { useDriveSdk } from '../../../logic/driveContext';
+import { mockEasySwitchCreationFunnelTracker } from '../../../telemetry/mockTrackerOfGroup';
 import { easySwitchRender } from '../../../tests/render';
 import { ProductSelectionModal } from './ProductSelectionModal';
 
@@ -286,7 +286,7 @@ describe('ProductSelectionModal - BYOE account', () => {
 
 describe('ProductSelectionModal - telemetry', () => {
     it('sends creation_started with the source and the preselected provider when the modal is shown', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockEasySwitchCreationFunnelTracker();
 
         renderModal(ImportProvider.OUTLOOK);
 
