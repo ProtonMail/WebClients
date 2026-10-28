@@ -25,6 +25,34 @@ const isWeekdaySet = (days: WeekdayToken[], expected: readonly WeekdayToken[]): 
     return expected.every((day) => selected.has(day));
 };
 
+/** Compact cadence without a time, using a localized calendar date for one-time tasks. */
+export const getScheduleShortCadenceLabel = (rule: RecurrenceRule): string => {
+    switch (rule.frequency) {
+        case 'DAILY':
+            // translator: Short sidebar cadence label for a scheduled task that runs every day. No time is shown.
+            return c('collider_2025:Label').t`Daily`;
+        case 'WEEKLY':
+            if (isWeekdaySet(rule.byWeekDay, ['MO', 'TU', 'WE', 'TH', 'FR'])) {
+                // translator: Short sidebar cadence label for a task that runs Monday through Friday. No time is shown.
+                return c('collider_2025:Label').t`Weekdays`;
+            }
+            // translator: Short sidebar cadence label for a task that runs on selected days of the week. No time is shown.
+            return c('collider_2025:Label').t`Weekly`;
+        case 'MONTHLY':
+            // translator: Short sidebar cadence label for a task that runs on selected days of the month. No time is shown.
+            return c('collider_2025:Label').t`Monthly`;
+        case 'ONCE': {
+            const [year, month, day] = rule.date.split('-').map(Number);
+            return formatIntlDate(new Date(Date.UTC(year, month - 1, day)), {
+                year: '2-digit',
+                month: '2-digit',
+                day: '2-digit',
+                timeZone: 'UTC',
+            });
+        }
+    }
+};
+
 /**
  * Creates a human-readable cadence label for the schedule.
  * @param rule - The recurrence rule to get the cadence label for, e.g.

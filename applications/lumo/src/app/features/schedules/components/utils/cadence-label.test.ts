@@ -5,7 +5,7 @@ import { setDateLocales, setLocales } from '@proton/shared/lib/i18n';
 
 import type { RecurrenceRule } from '../../../../components/RecurrenceRuleFieldset/types';
 import { ALWAYS_LOCAL_TIMEZONE_ID } from '../../../../components/RecurrenceRuleFieldset/types';
-import { getScheduleCadenceLabel } from './cadence-label';
+import { getScheduleCadenceLabel, getScheduleShortCadenceLabel } from './cadence-label';
 
 const time = { hour: 7, minute: 45, timezone: ALWAYS_LOCAL_TIMEZONE_ID };
 
@@ -116,5 +116,27 @@ describe('getScheduleCadenceLabel', () => {
         expect(getScheduleCadenceLabel({ ...time, frequency: 'WEEKLY', byWeekDay: ['FR'] }, 1)).toBe(
             'Every vendredi at 07:45'
         );
+    });
+});
+
+describe('getScheduleShortCadenceLabel', () => {
+    afterEach(() => setLocales({ localeCode: 'en_US' }));
+
+    it.each<[RecurrenceRule, string]>([
+        [{ ...time, frequency: 'DAILY' }, 'Daily'],
+        [{ ...time, frequency: 'WEEKLY', byWeekDay: ['FR', 'TU', 'WE', 'MO', 'TH'] }, 'Weekdays'],
+        [{ ...time, frequency: 'WEEKLY', byWeekDay: ['MO'] }, 'Weekly'],
+        [{ ...time, frequency: 'WEEKLY', byWeekDay: ['SA', 'SU'] }, 'Weekly'],
+        [{ ...time, frequency: 'MONTHLY', byMonthDay: [1, 15] }, 'Monthly'],
+    ])('formats %j without a time', (rule, expected) => {
+        expect(getScheduleShortCadenceLabel(rule)).toBe(expected);
+    });
+
+    it.each([
+        ['en_US', '12/30/26'],
+        ['en_GB', '30/12/26'],
+    ])('localizes a one-time date in %s', (localeCode, expected) => {
+        setLocales({ localeCode });
+        expect(getScheduleShortCadenceLabel({ ...time, frequency: 'ONCE', date: '2026-12-30' })).toBe(expected);
     });
 });
