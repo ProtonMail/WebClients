@@ -1,4 +1,4 @@
-import { enGB, enUS, zhCN } from 'date-fns/locale';
+import { enGB, enUS, sv, zhCN } from 'date-fns/locale';
 
 import { setDateLocales } from '@proton/shared/lib/i18n';
 import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
@@ -270,6 +270,15 @@ describe('formatMeetingSchedule recurrence', () => {
         });
 
         expect(recurrence).toBe('Repeats every year on 27 Feb');
+    });
+
+    it('puts the day first for the locale default when the numeric date is year-first but the written date is day-first', () => {
+        setDateLocales({ dateLocale: sv });
+        try {
+            expect(recurrenceFor('FREQ=YEARLY')).toBe('Repeats every year on 27 feb.');
+        } finally {
+            setDateLocales({ dateLocale: enUS });
+        }
     });
 
     it('falls back to the frequency for a monthly rule with an ordinal weekday', () => {
