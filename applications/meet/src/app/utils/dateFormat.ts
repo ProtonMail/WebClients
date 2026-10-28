@@ -1,44 +1,50 @@
+import { format } from 'date-fns';
+import { formatInTimeZone } from 'date-fns-tz';
+
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
-type DateOrder = 'dayFirst' | 'monthFirst' | 'yearFirst';
+interface DateFormatOptions {
+    month: 'short' | 'long';
+    withYear: boolean;
+    withWeekday?: boolean;
+    timeZone?: string;
+}
 
-const getDateOrderFromLocale = (): DateOrder => {
-    const mediumPattern = dateLocale.formatLong?.date({ width: 'medium' }) ?? '';
-    const firstLetter = mediumPattern.match(/[a-zA-Z]/)?.[0];
-    switch (firstLetter) {
-        case 'd':
-            return 'dayFirst';
-        case 'y':
-            return 'yearFirst';
-        default:
-            return 'monthFirst';
-    }
-};
-
-const getDateOrder = (dateFormat: SETTINGS_DATE_FORMAT): DateOrder => {
+const getExplicitPattern = (
+    dateFormat: Exclude<SETTINGS_DATE_FORMAT, SETTINGS_DATE_FORMAT.LOCALE_DEFAULT>,
+    { month, withYear }: DateFormatOptions
+): string => {
+    const monthToken = month === 'short' ? 'MMM' : 'MMMM';
     switch (dateFormat) {
         case SETTINGS_DATE_FORMAT.DDMMYYYY:
-            return 'dayFirst';
+            return `d ${monthToken}${withYear ? ', yyyy' : ''}`;
         case SETTINGS_DATE_FORMAT.MMDDYYYY:
-            return 'monthFirst';
+            return `${monthToken} d${withYear ? ', yyyy' : ''}`;
         case SETTINGS_DATE_FORMAT.YYYYMMDD:
-            return 'yearFirst';
-        default:
-            return getDateOrderFromLocale();
+            return `${withYear ? 'yyyy, ' : ''}${monthToken} d`;
+        default: {
+            const unhandled: never = dateFormat;
+            return unhandled;
+        }
     }
 };
 
-export const getDateFormatPattern = (
-    dateFormat: SETTINGS_DATE_FORMAT,
-    { month, withYear }: { month: 'MMM' | 'MMMM'; withYear: boolean }
-): string => {
-    switch (getDateOrder(dateFormat)) {
-        case 'dayFirst':
-            return `d ${month}${withYear ? ', yyyy' : ''}`;
-        case 'yearFirst':
-            return `${withYear ? 'yyyy, ' : ''}${month} d`;
-        case 'monthFirst':
-            return `${month} d${withYear ? ', yyyy' : ''}`;
+export const formatDateForSetting = (date: Date, dateFormat: SETTINGS_DATE_FORMAT, options: DateFormatOptions) => {
+    const { month, withYear, withWeekday = false, timeZone } = options;
+
+    if (dateFormat === SETTINGS_DATE_FORMAT.LOCALE_DEFAULT) {
+        return new Intl.DateTimeFormat(dateLocale.code, {
+            timeZone,
+            month,
+            day: 'numeric',
+            ...(withWeekday ? { weekday: 'short' } : {}),
+            ...(withYear ? { year: 'numeric' } : {}),
+        }).format(date);
     }
+
+    const pattern = `${withWeekday ? 'EEE, ' : ''}${getExplicitPattern(dateFormat, options)}`;
+    return timeZone
+        ? formatInTimeZone(date, timeZone, pattern, { locale: dateLocale })
+        : format(date, pattern, { locale: dateLocale });
 };

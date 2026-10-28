@@ -1,5 +1,5 @@
 import type { Locale } from 'date-fns';
-import { enGB, enUS } from 'date-fns/locale';
+import { de, enGB, enUS, ja } from 'date-fns/locale';
 
 import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
@@ -145,17 +145,20 @@ describe('formatMeetingDate', () => {
             expect(formatMeetingDate('2025-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT)).toBe('June 15, 2025');
         });
 
-        it('should take the day-first order from the date locale', () => {
-            mockedI18n.dateLocale = { ...enUS, formatLong: enGB.formatLong };
+        it('should use the day-first form of a day-first locale', () => {
+            mockedI18n.dateLocale = enGB;
             expect(formatMeetingDate('2026-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT)).toBe('15 June');
         });
 
-        it('should take the year-first order from the date locale', () => {
-            mockedI18n.dateLocale = {
-                ...enUS,
-                formatLong: { ...enUS.formatLong, date: () => 'yyyy/MM/dd' } as Locale['formatLong'],
-            };
-            expect(formatMeetingDate('2025-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT)).toBe('2025, June 15');
+        it('should keep the punctuation of the locale', () => {
+            mockedI18n.dateLocale = de;
+            expect(formatMeetingDate('2026-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT)).toBe('15. Juni');
+        });
+
+        it('should keep the native form of a year-first locale', () => {
+            mockedI18n.dateLocale = ja;
+            expect(formatMeetingDate('2026-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT)).toBe('6月15日');
+            expect(formatMeetingDate('2025-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT)).toBe('2025年6月15日');
         });
     });
 

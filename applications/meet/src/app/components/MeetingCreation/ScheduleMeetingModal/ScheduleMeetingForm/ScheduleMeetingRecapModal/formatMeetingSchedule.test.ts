@@ -1,4 +1,4 @@
-import { enGB, enUS, sv, zhCN } from 'date-fns/locale';
+import { de, enGB, enUS, sv, zhCN } from 'date-fns/locale';
 
 import { setDateLocales } from '@proton/shared/lib/i18n';
 import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
@@ -122,16 +122,40 @@ describe('formatMeetingSchedule dateTime', () => {
                 endTime: new Date('2026-02-27T02:30:00Z'),
             });
 
-            expect(dateTime).toBe('周五, 2月 27, 上午3:00 to 上午3:30');
+            expect(dateTime).toBe('2月27日周五, 上午3:00 to 上午3:30');
         } finally {
             setDateLocales({ dateLocale: enUS });
         }
     });
 
-    it('takes the day-first order from the date locale for the locale default', () => {
-        setDateLocales({ dateLocale: { ...enUS, formatLong: enGB.formatLong } });
+    it('uses the written date of the locale for the locale default', () => {
+        setDateLocales({ dateLocale: enGB });
         try {
-            expect(formatMeetingSchedule(baseInput).dateTime).toBe('Fri, 27 Feb, 11am to 12pm');
+            expect(formatMeetingSchedule(baseInput).dateTime).toBe('Fri 27 Feb, 11am to 12pm');
+        } finally {
+            setDateLocales({ dateLocale: enUS });
+        }
+    });
+
+    it('keeps the punctuation of the locale for the locale default', () => {
+        setDateLocales({ dateLocale: de });
+        try {
+            const { dateTime } = formatMeetingSchedule({ ...baseInput, timeFormat: SETTINGS_TIME_FORMAT.H24 });
+            expect(dateTime).toBe('Fr., 27. Feb., 11:00 to 12:00');
+        } finally {
+            setDateLocales({ dateLocale: enUS });
+        }
+    });
+
+    it('uses the chosen order for an explicit date format', () => {
+        setDateLocales({ dateLocale: de });
+        try {
+            const { dateTime } = formatMeetingSchedule({
+                ...baseInput,
+                timeFormat: SETTINGS_TIME_FORMAT.H24,
+                dateFormat: SETTINGS_DATE_FORMAT.MMDDYYYY,
+            });
+            expect(dateTime).toBe('Fr., Feb. 27, 11:00 to 12:00');
         } finally {
             setDateLocales({ dateLocale: enUS });
         }
@@ -272,7 +296,7 @@ describe('formatMeetingSchedule recurrence', () => {
         expect(recurrence).toBe('Repeats every year on 27 Feb');
     });
 
-    it('puts the day first for the locale default when the numeric date is year-first but the written date is day-first', () => {
+    it('uses the written date of the locale for a yearly rule with the locale default', () => {
         setDateLocales({ dateLocale: sv });
         try {
             expect(recurrenceFor('FREQ=YEARLY')).toBe('Repeats every year on 27 feb.');
