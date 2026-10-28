@@ -1,0 +1,19 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.schedule-run-primary-label--chip {
+	max-inline-size: min(rem(200), 50%);
+	background-color: var(--signal-success-minor-1);
+	padding-block: rem(2);
+	padding-inline: rem(6);
+	border-radius: rem(6);
+
+	&.schedule-run-primary-label--active {
+		color: var(--interaction-norm);
+		background-color: color-mix(in srgb, var(--interaction-norm) 10%, var(--background-norm));
+	}
+
+	&.schedule-run-primary-label--paused {
+		color: var(--text-weak);
+		background-color: var(--control-fill-mid);
+	}
+}

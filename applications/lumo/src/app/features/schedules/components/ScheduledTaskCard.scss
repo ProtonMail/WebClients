@@ -1,27 +1,34 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .scheduled-task-card {
-	gap: #{rem(10)};
+	gap: rem(10);
 
 	&__title {
-		font-size: #{rem(15)};
+		font-size: rem(15);
 	}
 
 	&__status-dot {
-		inline-size: #{rem(8)};
-		block-size: #{rem(8)};
+		inline-size: rem(8);
+		block-size: rem(8);
 		background-color: var(--glyph-low);
+
+		&--enabled {
+			background-color: var(--signal-success);
+		}
 	}
 
 	&__menu-button {
-		margin-inline-end: #{rem(-6)};
+		margin-inline-end: rem(-6);
 	}
 
-	&__schedule-chip {
-		max-inline-size: min(#{rem(200)}, 50%);
-		background-color: var(--signal-success-minor-1);
-		padding-block: #{rem(2)};
-		padding-inline: #{rem(6)};
-		border-radius: #{rem(6)};
+	&__running-icon {
+		color: var(--interaction-norm);
+		animation: scheduled-task-spin 1s linear infinite;
+	}
+}
+
+@keyframes scheduled-task-spin {
+	to {
+		transform: rotate(360deg);
 	}
 }

@@ -2,12 +2,10 @@ import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
@@ -19,9 +17,9 @@ import { deleteSchedule, saveSchedule } from '../../redux/slices/schedules';
 import type { SpaceId } from '../../types';
 import { ConnectorList } from './components/ConnectorList';
 import { ScheduleBreadcrumbs } from './components/ScheduleBreadcrumbs';
-import { ScheduleNextRunLabel } from './components/ScheduleNextRunLabel';
+import { ScheduleRunPrimaryLabel } from './components/ScheduleRunPrimaryLabel';
+import { ScheduleRunSecondaryLabel } from './components/ScheduleRunSecondaryLabel';
 import { ScheduledTaskEditorModal } from './components/modals/ScheduledTaskEditorModal';
-import { getScheduleCadenceLabel } from './components/utils/cadence-label';
 import type { ScheduleDetails } from './types';
 import { useRunScheduleNow } from './useRunScheduleNow';
 
@@ -35,7 +33,6 @@ export const ScheduleHomeView = () => {
     const schedule = useLumoSelector(selectSchedules)[scheduleId];
     const latestRun = useLumoSelector(selectLatestRunsByScheduleId)[scheduleId];
     const isHydrating = useIsChatHistoryHydrating();
-    const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const editor = useModalStateObject();
 
@@ -76,12 +73,9 @@ export const ScheduleHomeView = () => {
                         </div>
                         <h1 className="m-0 mb-2 text-bold">{schedule.name}</h1>
                         <div className="flex flex-wrap items-center gap-1.5 text-rg color-weak">
-                            <LumoIcon aria-hidden name="Clock" size={14} />
-                            <span>
-                                {getScheduleCadenceLabel(schedule.recurrenceRule, getWeekStartsOn(userSettings))}
-                            </span>
+                            <ScheduleRunPrimaryLabel rule={schedule.recurrenceRule} scheduleId={scheduleId} />
                             <span aria-hidden>·</span>
-                            <ScheduleNextRunLabel rule={schedule.recurrenceRule} />
+                            <ScheduleRunSecondaryLabel rule={schedule.recurrenceRule} scheduleId={scheduleId} />
                         </div>
                     </div>
 

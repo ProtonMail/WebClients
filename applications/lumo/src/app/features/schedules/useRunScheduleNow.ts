@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 
-import { ScheduleServiceContext } from '../../providers/ScheduleServiceContext';
+import { useScheduleService } from '../../providers/ScheduleServiceContext';
 import { useLumoSelector } from '../../redux/hooks';
 import { scheduleConversationId } from '../../services/schedules/ConversationScheduleRunRepository';
 import { STOPPED_SCHEDULE_SNAPSHOT } from '../../services/schedules/types';
@@ -16,7 +16,7 @@ const getStoppedSnapshot = () => STOPPED_SCHEDULE_SNAPSHOT;
 
 /** Shared controls for the schedule home and the run drawer. */
 export function useRunScheduleNow(scheduleId: string) {
-    const service = useContext(ScheduleServiceContext);
+    const service = useScheduleService();
     const snapshot = useSyncExternalStore(
         service?.subscribe ?? subscribeStopped,
         service?.getSnapshot ?? getStoppedSnapshot
