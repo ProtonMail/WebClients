@@ -1051,6 +1051,12 @@
       ],
       "Preview logs": [
         "ログをプレビュー"
+      ],
+      "About ${ name }": [
+        "${ name } について"
+      ],
+      "Add ${ name }": [
+        "${ name } を追加"
       ]
     },
     "action": {
@@ -9861,6 +9867,18 @@
       ],
       "Trial plans don’t support this many members.": [
         "トライアルプランでは、この人数のメンバーをサポートしていません。"
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "サブスクリプションの利用中は Born Private アカウントを購入することはできません。"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private プログラムに参加するには寄付が必要です。"
+      ],
+      "You already own a Born Private account.": [
+        "お客様はすでに Born Private アカウントを所有しています。"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "お使いのアカウントは、Born Private プログラムの対象期間より前に作成されています。"
       ]
     },
     "Payments.Error": {
