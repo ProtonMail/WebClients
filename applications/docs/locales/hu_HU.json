@@ -876,6 +876,12 @@
       ],
       "Writing assistant": [
         "Írási segéd"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licenc"
+      ],
+      "Writing assistant seats": [
+        "Írási segéd licencek"
       ]
     },
     "Alert": {
@@ -4822,6 +4828,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Átmenetileg nem érhető el, a túlzott érdeklődés miatt. Próbálja meg később."
       ]
     },
     "info": {
@@ -5194,6 +5203,9 @@
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
+      ],
+      "Last 6 months only": [
+        "Csak az utolsó 6 hónap"
       ]
     },
     "Label for contact group color": {
@@ -6766,6 +6778,15 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja.",
         "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "A Proton Meet licencek száma meg kell egyezzen a tagok számával."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "A kiválasztott csomag nem biztosít elegendő tárhelyet a fiókjához."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "A próbaidős csomagokban nem érhető el ${ LUMO_SHORT_APP_NAME } licenc."
       ]
     },
     "PGP key encryption warning": {

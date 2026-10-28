@@ -5572,6 +5572,10 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } selecionado",
+        "${ selection.selectedIds.length } selecionados"
       ]
     },
     "info": {
@@ -6046,6 +6050,24 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrável"
+      ],
+      "Created by ${ displayName }": [
+        "Criado por ${ displayName }"
+      ],
+      "Document": [
+        "Documento"
+      ],
+      "Location ${ locationLabel }": [
+        "Localização ${ locationLabel }"
+      ],
+      "Select ${ document.name }": [
+        "Selecione ${ document.name }"
+      ],
+      "Select all": [
+        "Selecionar tudo"
+      ],
+      "Spreadsheet": [
+        "Planilha"
       ]
     },
     "Label for contact group color": {
@@ -7906,6 +7928,9 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Esse plano não suporta recursos gerenciados na sua conta."
       ]
     },
     "PGP key encryption warning": {
