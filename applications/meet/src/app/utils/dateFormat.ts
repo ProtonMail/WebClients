@@ -1,10 +1,6 @@
 import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
 
-/**
- * Returns a date-fns pattern ordering day, month and year as set in the user's date format setting,
- * or null when the setting is the locale default and the locale order should be used instead.
- */
-export const getMonthDayPattern = (
+export const getExplicitDateFormatPattern = (
     dateFormat: SETTINGS_DATE_FORMAT,
     { month, withYear }: { month: 'MMM' | 'MMMM'; withYear: boolean }
 ): string | null => {
