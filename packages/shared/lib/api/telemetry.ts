@@ -59,6 +59,7 @@ export enum TelemetryMeasurementGroups {
     /** Shared with mobile clients: indexing telemetry for the same v1/v2 comparison as `contentSearch` */
     contentSearchIndex = 'mail.any.search_index',
     mailNewsletterSubscriptions = 'mail.web.newsletter_subscriptions',
+    mailComposerBookings = 'mail.web.composer_bookings',
     unlimitedOffer2025 = 'any.web.unlimited_offer_2025',
     unlimitedToDuoOffer = 'any.web.unlimited_to_duo_offer',
     unlimitedToDuoDiscountedOffer = 'any.web.unlimited_to_duo_discounted_offer',
@@ -669,6 +670,16 @@ export enum TelemetryPassNudgeEvents {
     pass_cta_click = 'pass_cta_click',
 }
 
+export enum TelemetryComposerBookingsEvents {
+    booking_action_click = 'booking_action_click',
+    booking_page_inserted = 'booking_page_inserted',
+    create_booking_page_click = 'create_booking_page_click',
+    booking_upsell_displayed = 'booking_upsell_displayed',
+    booking_upsell_dismissed = 'booking_upsell_dismissed',
+    booking_upsell_subscribed = 'booking_upsell_subscribed',
+    booking_limit_displayed = 'booking_limit_displayed',
+}
+
 export enum TelemetryPassExtensionEvents {
     pass_extension_installed = 'fe.pass_extension_installed',
 }
@@ -827,7 +838,8 @@ export type TelemetryEvents =
     | TelemetryMeetPerformanceEvents
     | TelemetryEasySwitchEvents
     | TelemetryEasySwitchCreationFunnelEvents
-    | TelemetryMailOnboardingEvents;
+    | TelemetryMailOnboardingEvents
+    | TelemetryComposerBookingsEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
