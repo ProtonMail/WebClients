@@ -13,6 +13,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import { BookingsLimitReached } from '@proton/components/containers/calendar/BookingsLimitReached';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
@@ -36,6 +37,10 @@ import type { ExternalEditorActions } from '../editor/EditorWrapper';
 import ComposerBookingDropdownContent from './ComposerBookingDropdownContent';
 import ComposerMoreOptionsDropdown from './ComposerMoreOptionsDropdown';
 import MoreActionsExtension from './MoreActionsExtension';
+import {
+    ComposerBookingSpotlightContent,
+    useComposerBookingSpotlight,
+} from './bookingSpotlight/useComposerBookingSpotlight';
 
 /**
  * Reuses the calendar booking-page feature path so paid Mail users get the dedicated bookings
@@ -89,6 +94,11 @@ const ComposerMoreActions = ({
     const [user] = useUser();
 
     const showBookingAction = !bookingsDisabled && bookingsInComposerEnabled;
+    const bookingSpotlight = useComposerBookingSpotlight(
+        bookingsDisabled,
+        bookingsInComposerEnabled,
+        editorMetadata.isPlainText
+    );
     const moreOptionsAnchorRef = useRef<HTMLDivElement>(null);
 
     const breakpoints = useActiveBreakpoint();
@@ -117,6 +127,8 @@ const ComposerMoreActions = ({
     };
 
     const handleBookingAction = () => {
+        bookingSpotlight.onClose();
+
         if (bookingDropdown.isOpen) {
             bookingDropdown.close();
             return;
@@ -137,25 +149,36 @@ const ComposerMoreActions = ({
     return (
         <>
             {showBookingAction && !isSmallViewport && (
-                <Tooltip title={titleBooking}>
-                    <Button
-                        ref={bookingDropdown.anchorRef}
-                        icon
-                        shape="ghost"
-                        onClick={handleBookingAction}
-                        disabled={lock || editorMetadata.isPlainText}
-                        aria-expanded={bookingDropdown.isOpen}
-                        className="flex"
-                        data-testid="composer:booking-button"
-                    >
-                        <IcCalendarList alt={titleBooking} />
-                    </Button>
-                </Tooltip>
+                <Spotlight
+                    originalPlacement="top-end"
+                    show={bookingSpotlight.shouldShowSpotlight}
+                    onDisplayed={bookingSpotlight.onDisplayed}
+                    onClose={bookingSpotlight.onClose}
+                    anchorRef={bookingDropdown.anchorRef}
+                    content={<ComposerBookingSpotlightContent />}
+                    borderRadius="lg"
+                >
+                    <Tooltip title={titleBooking}>
+                        <Button
+                            ref={bookingDropdown.anchorRef}
+                            icon
+                            shape="ghost"
+                            onClick={handleBookingAction}
+                            disabled={lock || editorMetadata.isPlainText}
+                            aria-expanded={bookingDropdown.isOpen}
+                            className="flex"
+                            data-testid="composer:booking-button"
+                        >
+                            <IcCalendarList alt={titleBooking} />
+                        </Button>
+                    </Tooltip>
+                </Spotlight>
             )}
             <div ref={moreOptionsAnchorRef} className="flex">
                 <ComposerMoreOptionsDropdown
                     titleTooltip={titleMoreOptions}
                     className="button button-medium button-ghost-weak button-for-icon composer-more-dropdown"
+                    onOpen={bookingSpotlight.onClose}
                     content={
                         <IcThreeDotsHorizontal
                             alt={titleMoreOptions}

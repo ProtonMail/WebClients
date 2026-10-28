@@ -42,6 +42,7 @@ const ComposerMoreOptionsDropdown = ({
 
     const handleClick = () => {
         if (!isOpen) {
+            onOpen?.();
             toggle();
         }
         toggle();
