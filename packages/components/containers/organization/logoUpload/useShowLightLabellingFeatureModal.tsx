@@ -6,7 +6,6 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
 import { useOrganizationTheme } from './useOrganizationTheme';
 
@@ -14,7 +13,6 @@ export const useShowLightLabellingFeatureModal = () => {
     const { APP_NAME } = useConfig();
     const [{ isAdmin }] = useUser();
     const [organization] = useOrganization();
-    const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const organizationTheme = useOrganizationTheme();
     const { welcomeFlags } = useWelcomeFlags();
@@ -27,7 +25,6 @@ export const useShowLightLabellingFeatureModal = () => {
         ((APP_NAME !== APPS.PROTONACCOUNT && welcomeFlags.isDone) || APP_NAME === APPS.PROTONACCOUNT) &&
         hasOrganizationKey &&
         seenLightLabellingFeatureModal.feature?.Value === false &&
-        !isPartOfFamily &&
         isAdmin &&
         hasOrganizationUsage &&
         organizationTheme.access &&
