@@ -205,10 +205,14 @@ export function* pushMessage({ payload }: { payload: PushMessageRequest }): Saga
     const { id: localId } = payload;
     const priority = payload.priority || 'urgent';
 
-    // In ghost mode, skip remote persistence
-    const isGhostMode: boolean = yield select((state: LumoState) => state.ghostChat?.isGhostChatMode || false);
-    if (isGhostMode) {
-        console.log('pushMessage: Ghost mode is enabled, skipping remote persistence');
+    // A generation can finish after navigation to another chat. Persistence belongs
+    // to this message's conversation, not the mode of the currently displayed chat.
+    const pendingMessage: Message | undefined = yield select(selectMessageById(localId));
+    const conversation: Conversation | undefined = pendingMessage
+        ? yield select(selectConversationById(pendingMessage.conversationId))
+        : undefined;
+    if (conversation?.ghost) {
+        console.log('pushMessage: Ghost conversation, skipping persistence');
         yield put(pushMessageSuccess(payload));
         return;
     }

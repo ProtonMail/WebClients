@@ -23,6 +23,7 @@ const createDeletedDirtyTombstone = (): SerializedMessage =>
 const createState = (): LumoState =>
     ({
         messages: {},
+        conversations: {},
         ghostChat: { isGhostChatMode: false },
     }) as LumoState;
 
