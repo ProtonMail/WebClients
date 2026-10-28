@@ -213,8 +213,8 @@ const phraseRecurrence = (pattern: RecurrencePattern): string => {
             }
             const weekdayList = formatWeekdayList(weekdays);
             return interval === 1
-                ? c('Meeting schedule').t`Repeats every ${weekdayList}`
-                : c('Meeting schedule').ngettext(
+                ? c('Meeting schedule, several weekdays').t`Repeats every ${weekdayList}`
+                : c('Meeting schedule, several weekdays').ngettext(
                       msgid`Repeats every ${interval} week on ${weekdayList}`,
                       `Repeats every ${interval} weeks on ${weekdayList}`,
                       interval
