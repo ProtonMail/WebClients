@@ -14,6 +14,7 @@ import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import { useLumoMemoSelector, useLumoSelector } from '../../../redux/hooks';
 import { selectConversationsBySpaceId, selectProvisionalAttachments } from '../../../redux/selectors';
 import type { Conversation, Message } from '../../../types';
+import { useRunScheduleNow } from '../useRunScheduleNow';
 import { getScheduleRunTimestampLabel } from './utils/run-timestamp-label';
 
 import './ScheduledTaskRunPanel.scss';
@@ -52,6 +53,7 @@ export const ScheduledTaskRunPanel = ({
     onOpenArtifact,
     onClose,
 }: ScheduledTaskRunPanelProps) => {
+    const runControls = useRunScheduleNow(conversation.spaceId);
     const location = useLocation<{ expandedScheduleRuns?: string }>();
     const conversations = useLumoMemoSelector(selectConversationsBySpaceId, [conversation.spaceId]);
     const currentAttachments = useLumoSelector(selectProvisionalAttachments);
@@ -66,7 +68,13 @@ export const ScheduledTaskRunPanel = ({
             drawerArtifacts={artifacts}
             filesContainerRef={filesContainerRef}
             headerActions={
-                <Button shape="outline" size="small">
+                <Button
+                    disabled={runControls.disabled}
+                    loading={runControls.loading}
+                    onClick={runControls.runNow}
+                    shape="outline"
+                    size="small"
+                >
                     <span className="flex flex-nowrap items-center gap-1">
                         <LumoIcon aria-hidden name="Play" size={14} />
                         {
