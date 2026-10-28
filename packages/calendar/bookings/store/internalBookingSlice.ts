@@ -6,6 +6,7 @@ import { getVerificationPreferencesThunk } from '@proton/account/publicKeys/veri
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
+import { CacheType } from '@proton/redux-utilities/interface';
 import { deleteBookingPage, getUserBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { InternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
@@ -37,13 +38,30 @@ const modelThunk = createAsyncModelThunk<Model, InternalBookingState, ProtonThun
         const pagesArray: InternalBookingPage[] = [];
         const bookingsOrigin = getBookingsOrigin();
         try {
-            const [calendars, bookingPages] = await Promise.all([
+            let [calendars, bookingPages] = await Promise.all([
                 dispatch(calendarsThunk()),
                 extraArgument.api<{ BookingPages: InternalBookingPagePayload[] }>(getUserBookingPage()),
             ]);
 
+            // Calendars and pages are fetched concurrently, and consumers such as Mail never populate the
+            // calendars model on bootstrap. A calendar created moments earlier can therefore be absent here,
+            // which drops the page entirely. Refetch once, only when a page fails to resolve, so the common
+            // path stays free and a page pointing at a deleted calendar still falls through to the trace.
+            let hasRefreshedCalendars = false;
+            const getCalendarData = async (calendarID: string) => {
+                const calData = getCalendarAndOwner(calendarID, calendars);
+                if (calData || hasRefreshedCalendars) {
+                    return calData;
+                }
+
+                hasRefreshedCalendars = true;
+                calendars = await dispatch(calendarsThunk({ cache: CacheType.None }));
+
+                return getCalendarAndOwner(calendarID, calendars);
+            };
+
             for (const bookingPage of bookingPages.BookingPages) {
-                const calData = getCalendarAndOwner(bookingPage.CalendarID, calendars);
+                const calData = await getCalendarData(bookingPage.CalendarID);
                 if (!calData) {
                     traceInitiativeError(
                         SentryCalendarInitiatives.BOOKINGS,
