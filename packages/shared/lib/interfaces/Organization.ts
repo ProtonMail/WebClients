@@ -16,7 +16,7 @@ export interface Organization {
     ID: string;
     Name: string;
     DisplayName: string; // DEPRECATED
-    /** @deprecated An organization can hold several subscriptions, so it has no single plan. See .cursor/rules/payments/no-single-plan-name.mdc. */
+    /** @deprecated An organization can hold several subscriptions, so it has no single plan. See .agents/skills/subscriptions-and-entitlements/SKILL.md. */
     PlanName: PLANS;
     VPNPlanName: string;
     TwoFactorRequired: ORGANIZATION_TWOFA_SETTING; // If 0, 2FA not required, if 1, 2FA required for admins only, if 2, 2FA required for all
