@@ -336,6 +336,11 @@ export interface ApiCreateImporterOrganization {
     Provider: ApiImportProvider;
     Products: ApiImporterProduct[];
     ImportOrganizationSettings: boolean;
+    DomainName?: string;
+}
+
+export interface ApiImporterOrganizationDomains {
+    DomainsNames: string[];
 }
 
 export interface ApiCreateImporterOrganizationMigration {

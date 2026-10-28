@@ -255,6 +255,12 @@ export const getOrganizationUsers = (
     },
 });
 
+export const getOrganizationDomains = (provider: ApiImportProvider) => ({
+    url: `importer/v1/organizations/domains`,
+    method: 'GET',
+    params: { Provider: provider },
+});
+
 export const getOrganizationImporter = () => ({
     url: `importer/v1/organizations`,
     method: 'GET',

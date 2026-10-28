@@ -8,6 +8,7 @@ import { OLES_PROVIDERS, getProviderFromRouteSlug } from '../providers';
 import { ConnectionStateProvider } from '../useConnectionState';
 import { ImporterOrganizationsProvider } from '../useImporterOrganizations';
 import useOLESFeatureStatus from '../useOLESFeatureStatus';
+import { ProviderDomainsProvider } from '../useProviderDomains';
 import { ProviderTokensProvider } from '../useProviderTokens';
 import { ProviderUsersProvider } from '../useProviderUsers';
 import MigrationFlow from './MigrationFlow';
@@ -38,7 +39,9 @@ const SettingsArea = ({ providerParam = '', easySwitchPath }: { providerParam?: 
             <ImporterOrganizationsProvider>
                 <ProviderUsersProvider>
                     <ConnectionStateProvider>
-                        <MigrationFlow provider={provider} />
+                        <ProviderDomainsProvider>
+                            <MigrationFlow provider={provider} />
+                        </ProviderDomainsProvider>
                     </ConnectionStateProvider>
                 </ProviderUsersProvider>
             </ImporterOrganizationsProvider>

@@ -163,6 +163,7 @@ export const setupMigration = createAsyncThunk<
             Provider: payload.provider.apiProvider,
             Products: payload.selectedProducts,
             ImportOrganizationSettings: payload.importOrganizationSettings,
+            DomainName: payload.domainName,
         })
     );
 
