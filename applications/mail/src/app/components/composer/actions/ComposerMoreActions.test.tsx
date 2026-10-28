@@ -17,6 +17,12 @@ jest.mock('@proton/calendar/bookings/store/hooks', () => ({
 }));
 jest.mock('@proton/unleash/useFlag');
 jest.mock('@proton/components/hooks/useActiveBreakpoint');
+const mockSpotlightClose = jest.fn();
+const mockUseComposerBookingSpotlight = jest.fn();
+jest.mock('./bookingSpotlight/useComposerBookingSpotlight', () => ({
+    useComposerBookingSpotlight: () => mockUseComposerBookingSpotlight(),
+    ComposerBookingSpotlightContent: () => null,
+}));
 jest.mock('./MoreActionsExtension', () => ({
     __esModule: true,
     default: jest.fn(() => null),
@@ -88,6 +94,11 @@ describe('ComposerMoreActions booking action', () => {
             return flag === 'BookingsInComposerEnabled';
         });
         mockViewport(false);
+        mockUseComposerBookingSpotlight.mockReturnValue({
+            shouldShowSpotlight: false,
+            onDisplayed: jest.fn(),
+            onClose: mockSpotlightClose,
+        });
     });
 
     afterEach(() => {
@@ -134,6 +145,13 @@ describe('ComposerMoreActions booking action', () => {
 
         expectBookingDropdownClosing();
         expect(mockGetInternalBooking).toHaveBeenCalledTimes(1);
+    });
+
+    it('should close the booking spotlight when the more options menu opens', async () => {
+        await setup({ isFree: false });
+        fireEvent.click(screen.getByTestId('composer:more-options-button'));
+
+        expect(mockSpotlightClose).toHaveBeenCalledTimes(1);
     });
 
     it('should close the booking dropdown and open the booking limit modal when the dropdown reports the limit is reached', async () => {
