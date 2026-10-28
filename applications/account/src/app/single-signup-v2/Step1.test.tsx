@@ -548,6 +548,45 @@ describe('Step1 - subscription guards', () => {
         return { requests, nextRequest };
     };
 
+    /**
+     * Regression for P2-2735: the getSubscriptionPrices arguments are going to be deduplicated across the signup
+     * Step1s. Pins the full check payload Step1 sends for a selection and for a cycle change.
+     */
+    it('sends the full check payload for a selected plan', async () => {
+        const { nextRequest } = renderSignedInStep1();
+
+        await userEvent.click(await screen.findByTestId('select-vpn'));
+
+        expect((await nextRequest(0)).data).toEqual({
+            Plans: { [PLANS.VPN2024]: 1 },
+            Currency: 'CHF',
+            Cycle: CYCLE.MONTHLY,
+            ValidateBillingAddress: true,
+            BillingAddress: { State: '', CountryCode: 'CH' },
+            ValidateGuards: true,
+            Codes: [],
+        });
+    });
+
+    it('sends the payload with the new cycle and its auto coupon when the cycle changes', async () => {
+        const { nextRequest } = renderSignedInStep1();
+        await userEvent.click(await screen.findByTestId('select-vpn'));
+        await act(async () => (await nextRequest(0)).resolve());
+
+        await userEvent.click(screen.getByTestId('change-cycle'));
+
+        expect((await nextRequest(1)).data).toEqual({
+            Plans: { [PLANS.VPN2024]: 1 },
+            Currency: 'CHF',
+            Cycle: CYCLE.YEARLY,
+            ValidateBillingAddress: true,
+            BillingAddress: { State: '', CountryCode: 'CH' },
+            ValidateGuards: true,
+            CouponCode: COUPON_CODES.VPN_INTRO_2025,
+            Codes: [COUPON_CODES.VPN_INTRO_2025],
+        });
+    });
+
     it('sends no check request while the user has not selected anything', async () => {
         const { requests } = renderSignedInStep1();
 

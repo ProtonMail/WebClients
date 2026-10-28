@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { GUARD_ERROR_CODES, type GuardError } from '@proton/payments/core/subscription/guard';
+import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import SubscriptionCheckoutPaymentSection from './SubscriptionCheckoutPaymentSection';
@@ -124,5 +125,70 @@ describe('SubscriptionCheckoutPaymentSection guards', () => {
         render(section());
 
         expect(screen.queryByText(/allowed|eligible|available/i)).not.toBeInTheDocument();
+    });
+});
+
+/**
+ * Regression for P2-2741: the Codes sent on subscribe are built by getCodesForSubscription, which is going to move to
+ * packages/payments/core. Asserted through the submit of the lite checkout so the move cannot change them.
+ */
+describe('SubscriptionCheckoutPaymentSection subscription codes', () => {
+    const submitWith = ({
+        coupon,
+        Coupon,
+        Gift,
+    }: {
+        coupon: string;
+        Coupon: { Code: string } | null;
+        Gift?: number;
+    }) => {
+        const payments = mockPayments([]);
+        const value = payments.getMockImplementation()!();
+        payments.mockReturnValue({
+            ...value,
+            coupon,
+            checkResult: { ...value.checkResult, Coupon: Coupon as SubscriptionEstimation['Coupon'], Gift },
+        });
+
+        const setSubscriptionData = jest.fn();
+        const processPaymentToken = jest.fn(async () => {});
+        render(
+            <SubscriptionCheckoutPaymentSection
+                paymentFacade={{
+                    ...paymentFacade,
+                    paymentContext: { setSubscriptionData },
+                    selectedProcessor: { processPaymentToken },
+                }}
+                subscribing={false}
+                onClose={jest.fn()}
+                renderVisionaryDowngradeWarningText={false}
+            />
+        );
+        fireEvent.click(screen.getByTestId('confirm'));
+        return { setSubscriptionData, processPaymentToken };
+    };
+
+    it('sends the coupon applied by the check', async () => {
+        const { setSubscriptionData, processPaymentToken } = submitWith({
+            coupon: 'TYPED',
+            Coupon: { Code: 'APPLIED' },
+        });
+
+        await waitFor(() => expect(processPaymentToken).toHaveBeenCalled());
+        expect(setSubscriptionData).toHaveBeenCalledWith(expect.objectContaining({ Codes: ['APPLIED'] }));
+    });
+
+    it('sends the user entered gift code together with the applied coupon', async () => {
+        const { setSubscriptionData } = submitWith({ coupon: 'GIFT', Coupon: { Code: 'APPLIED' }, Gift: 500 });
+
+        await waitFor(() =>
+            expect(setSubscriptionData).toHaveBeenCalledWith(expect.objectContaining({ Codes: ['GIFT', 'APPLIED'] }))
+        );
+    });
+
+    it('sends no codes when there is no coupon', async () => {
+        const { setSubscriptionData } = submitWith({ coupon: '', Coupon: null });
+
+        await waitFor(() => expect(setSubscriptionData).toHaveBeenCalledWith(expect.objectContaining({ Codes: [] })));
     });
 });
