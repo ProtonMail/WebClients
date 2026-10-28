@@ -3,11 +3,7 @@ import { waitFor } from '@testing-library/react';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Entitlements } from '@proton/payments/core/entitlements/interface';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
-import {
-    type CataloguedPlan,
-    prodCatalogGrants,
-    toOrganizationEntitlement,
-} from '@proton/payments/testing/prodCatalogGrants';
+import { type CataloguedPlan, buildOrganizationEntitlements } from '@proton/payments/testing/prodCatalogGrants';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -65,10 +61,8 @@ const paidAdmin = { Subscribed: 1, isPaid: true, Role: USER_ROLES.ADMIN_ROLE } a
 const paidMember = { Subscribed: 1, isPaid: true, Role: USER_ROLES.MEMBER_ROLE } as UserModel;
 const freeUser = { Subscribed: 0, isPaid: false } as UserModel;
 
-const entitlementsForOrganizationOn = (plans: CataloguedPlan[]): Entitlements => {
-    const grantedNames = [...new Set(plans.flatMap((plan) => prodCatalogGrants[plan]))];
-    return makeEntitlements(grantedNames.map(toOrganizationEntitlement));
-};
+const entitlementsForOrganizationOn = (plans: CataloguedPlan[]): Entitlements =>
+    makeEntitlements(buildOrganizationEntitlements(plans));
 
 const settle = () => new Promise((resolve) => setTimeout(resolve, 0));
 

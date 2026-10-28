@@ -271,3 +271,29 @@ describe('hasOrgMailboxMigration', () => {
         ).toBe(true);
     });
 });
+
+describe('isDriveB2B', () => {
+    it.each([PLANS.DRIVE_PRO, PLANS.DRIVE_BUSINESS, PLANS.BUNDLE_PRO_2024] as const)('returns true for %s', (plan) => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).isDriveB2B).toBe(true);
+    });
+
+    it.each([PLANS.DRIVE, PLANS.DRIVE_LITE, PLANS.BUNDLE, PLANS.MAIL_PRO, PLANS.VPN_BUSINESS] as const)(
+        'returns false for %s',
+        (plan) => {
+            expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).isDriveB2B).toBe(false);
+        }
+    );
+
+    it('returns false when business and Drive come from different subscriptions', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.MAIL_PRO, PLANS.DRIVE_LITE] }).isDriveB2B
+        ).toBe(false);
+    });
+
+    it('returns true for a member who cannot read the organization subscriptions', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.DRIVE_BUSINESS], ...organizationMember })
+                .isDriveB2B
+        ).toBe(true);
+    });
+});
