@@ -23,12 +23,14 @@ import { ScheduleNextRunLabel } from './components/ScheduleNextRunLabel';
 import { ScheduledTaskEditorModal } from './components/modals/ScheduledTaskEditorModal';
 import { getScheduleCadenceLabel } from './components/utils/cadence-label';
 import type { ScheduleDetails } from './types';
+import { useRunScheduleNow } from './useRunScheduleNow';
 
 import './ScheduleHomeView.scss';
 
 export const ScheduleHomeView = () => {
     const { scheduleId } = useParams<{ scheduleId: string }>();
     const history = useHistory();
+    const runControls = useRunScheduleNow(scheduleId);
     const dispatch = useLumoDispatch();
     const schedule = useLumoSelector(selectSchedules)[scheduleId];
     const latestRun = useLumoSelector(selectLatestRunsByScheduleId)[scheduleId];
@@ -99,7 +101,12 @@ export const ScheduleHomeView = () => {
 
                     {/* Schedule actions */}
                     <div className="flex gap-2">
-                        <Button color="norm">
+                        <Button
+                            color="norm"
+                            disabled={runControls.disabled}
+                            loading={runControls.loading}
+                            onClick={runControls.runNow}
+                        >
                             <span className="flex items-center gap-2">
                                 <LumoIcon aria-hidden name="Play" size={16} />
                                 {

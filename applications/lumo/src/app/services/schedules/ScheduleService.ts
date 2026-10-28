@@ -96,6 +96,26 @@ export class ScheduleService {
     /** UI/API changes may request a fresh snapshot without remounting the service. */
     refresh = (): Promise<void> => this.requestRefresh(true);
 
+    /** Persist manual work in native storage, then deliver it through the normal execution loop. */
+    runNow = async (scheduleId: string): Promise<ScheduleRun> => {
+        const session = this.session;
+        if (!session || !this.options.source || !this.options.executor) {
+            throw new Error('Schedule execution is unavailable');
+        }
+        this.guard(session);
+        await this.refresh();
+        this.guard(session);
+        const connectionId = session.connection?.connectionId;
+        if (!connectionId || this.snapshot.status !== 'ready') {
+            throw new Error('Schedule execution is not ready');
+        }
+        const run = await this.options.bridge.runNow({ connectionId, scheduleId });
+        this.guard(session);
+        this.update({ ...this.snapshot, pendingRuns: [...this.snapshot.pendingRuns, run] });
+        void this.requestRefresh(false);
+        return run;
+    };
+
     private active(session: Session): boolean {
         return this.session === session && !session.controller.signal.aborted && this.options.isCurrentAccount();
     }
