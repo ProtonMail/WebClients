@@ -44,9 +44,7 @@ export const useChat = () => {
     const { reportMeetError } = useMeetErrorReporting();
 
     const handleDataReceiveNew = useCallback(
-        // This is the actual typing LiveKit uses for the payload
-        // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
-        async (payload: Uint8Array, participant: RemoteParticipant) => {
+        async (payload: Uint8Array<ArrayBuffer>, participant: RemoteParticipant) => {
             try {
                 const decodedPayload = new TextDecoder().decode(payload);
 
@@ -176,9 +174,7 @@ export const useChat = () => {
     );
 
     const handleDataReceiveLegacy = useCallback(
-        // This is the actual typing LiveKit uses for the payload
-        // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
-        async (payload: Uint8Array, participant: RemoteParticipant) => {
+        async (payload: Uint8Array<ArrayBuffer>, participant: RemoteParticipant) => {
             try {
                 const decodedPayload = new TextDecoder().decode(payload);
 
@@ -274,9 +270,7 @@ export const useChat = () => {
     );
 
     const handleDataReceive = useCallback(
-        // This is the actual typing LiveKit uses for the payload
-        // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
-        async (payload: Uint8Array, participant?: RemoteParticipant) => {
+        async (payload: Uint8Array<ArrayBuffer>, participant?: RemoteParticipant) => {
             if (!participant || !payload) {
                 return;
             }

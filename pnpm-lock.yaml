@@ -3549,12 +3549,12 @@ importers:
         specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
     devDependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
       '@proton/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../../packages/oxlint-config
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../../packages/vitest-config
@@ -3591,15 +3591,18 @@ importers:
       dotenv:
         specifier: ^17.4.2
         version: 17.4.2
-      eslint:
-        specifier: 'catalog:'
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       happy-dom:
         specifier: 'catalog:'
         version: 21.0.4
       html-webpack-plugin:
         specifier: 'catalog:'
         version: 5.6.8(webpack@5.111.1)
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
       path-browserify:
         specifier: ^1.0.1
         version: 1.0.1

@@ -81,9 +81,7 @@ const useFlagMock = useFlag as Mock;
 
 const getDataReceivedHandler = (room: ReturnType<typeof createMockRoom>) =>
     room.on.mock.calls.find((call) => call[0] === 'dataReceived')?.[1] as (
-        // Matches LiveKit's payload typing used by the hook under test
-        // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
-        payload: Uint8Array,
+        payload: Uint8Array<ArrayBuffer>,
         participant?: RemoteParticipant
     ) => Promise<void>;
 
