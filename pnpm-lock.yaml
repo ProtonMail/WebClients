@@ -10066,8 +10066,8 @@ importers:
         specifier: 0.2.2
         version: 0.2.2(@playwright/test@1.64.1)(encoding@0.1.13)(supports-color@11.0.0)
       '@tpe/minimum-test-set':
-        specifier: 0.1.2
-        version: 0.1.2(supports-color@11.0.0)
+        specifier: 0.2.0
+        version: 0.2.0(supports-color@11.0.0)
       '@tpe/mock-proxy-web-client':
         specifier: 1.1.1
         version: 1.1.1(@playwright/test@1.64.1)
@@ -18025,8 +18025,9 @@ packages:
     peerDependencies:
       '@playwright/test': '>=1.52.0'
 
-  '@tpe/minimum-test-set@0.1.2':
-    resolution: {integrity: sha1-5SgHbSKyoFBQQONHu8Xpps1FqLo=, tarball: https://gitlab.protontech.ch/api/v4/projects/4357/packages/npm/@tpe/minimum-test-set/-/@tpe/minimum-test-set-0.1.2.tgz}
+  '@tpe/minimum-test-set@0.2.0':
+    resolution: {integrity: sha1-qIpmlYeVMUlQtGNab1PfH6YEaOg=, tarball: https://gitlab.protontech.ch/api/v4/projects/4357/packages/npm/@tpe/minimum-test-set/-/@tpe/minimum-test-set-0.2.0.tgz}
+    hasBin: true
 
   '@tpe/mock-proxy-web-client@1.1.1':
     resolution: {integrity: sha1-xsNWAfw2+s5TEHbT3aElSKVcwm0=, tarball: https://gitlab.protontech.ch/api/v4/projects/4357/packages/npm/@tpe/mock-proxy-web-client/-/@tpe/mock-proxy-web-client-1.1.1.tgz}
@@ -37476,7 +37477,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@tpe/minimum-test-set@0.1.2(supports-color@11.0.0)':
+  '@tpe/minimum-test-set@0.2.0(supports-color@11.0.0)':
     dependencies:
       simple-git: 4.0.2(supports-color@11.0.0)
       ts-morph: 26.0.0
