@@ -24,6 +24,7 @@ jest.mock('proton-mail/containers/CheckAllRefProvider', () => ({
 }));
 
 jest.mock('proton-mail/store/hooks', () => ({
+    ...jest.requireActual('proton-mail/store/hooks'),
     useMailSelector: jest.fn(() => ({ labelID: '0', sort: {}, filter: {}, search: {}, page: 0 })),
 }));
 

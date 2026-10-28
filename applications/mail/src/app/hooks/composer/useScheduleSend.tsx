@@ -6,15 +6,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
-
-import { useMailDispatch } from '../../store/hooks';
 
 import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
 import { SCHEDULED_MESSAGES_LIMIT } from '../../constants';
+import { useMailDispatch } from '../../store/hooks';
 import { updateScheduled } from '../../store/messages/scheduled/scheduledActions';
-import { useMailboxCounter } from '../mailboxCounter/useMailboxCounter';
+import { useComposerHost } from './useComposerHost';
 import { useSendVerifications } from './useSendVerifications';
 
 interface Props {
@@ -54,8 +52,7 @@ export const useScheduleSend = ({
         handleNoReplyEmail
     );
 
-    const { getLocationCount, loading } = useMailboxCounter();
-    const scheduleCount = getLocationCount(MAILBOX_LABEL_IDS.SCHEDULED);
+    const { scheduledCount, scheduledCountLoading } = useComposerHost();
 
     const modal = (
         <Prompt
@@ -72,7 +69,7 @@ export const useScheduleSend = ({
     );
 
     const handleScheduleSendModal = async () => {
-        if (scheduleCount.Total && scheduleCount.Total >= SCHEDULED_MESSAGES_LIMIT) {
+        if (scheduledCount >= SCHEDULED_MESSAGES_LIMIT) {
             setWaitBeforeScheduleModalOpen(true);
         } else {
             try {
@@ -89,7 +86,7 @@ export const useScheduleSend = ({
     };
 
     const handleScheduleSend = async (scheduledAt: number) => {
-        if (scheduleCount.Total && scheduleCount.Total >= SCHEDULED_MESSAGES_LIMIT) {
+        if (scheduledCount >= SCHEDULED_MESSAGES_LIMIT) {
             setWaitBeforeScheduleModalOpen(true);
         } else {
             try {
@@ -120,8 +117,8 @@ export const useScheduleSend = ({
     // thus we can safely remove the check for draft expiration
     return {
         canScheduleSend: canScheduleSend && (isRetentionPoliciesEnabled || !hasExpiration),
-        scheduleCount,
-        loadingScheduleCount: loading,
+        scheduleCount: scheduledCount,
+        loadingScheduleCount: scheduledCountLoading,
         handleScheduleSendModal,
         handleScheduleSend,
         modal,
