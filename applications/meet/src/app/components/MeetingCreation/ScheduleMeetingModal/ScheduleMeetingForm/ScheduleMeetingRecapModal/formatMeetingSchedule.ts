@@ -1,10 +1,12 @@
+import { formatInTimeZone } from 'date-fns-tz';
 import { c, msgid } from 'ttag';
 
 import { fromRruleString } from '@proton/shared/lib/calendar/vcal';
 import { getShortenDayFormat } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
+import type { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 
+import { getMonthDayPattern } from '../../../../../utils/dateFormat';
 import { shouldUse12HourClock } from '../../../../../utils/timeFormat';
 
 interface MeetingScheduleInput {
@@ -13,6 +15,7 @@ interface MeetingScheduleInput {
     timeZone: string;
     rrule: string | null;
     timeFormat: SETTINGS_TIME_FORMAT;
+    dateFormat: SETTINGS_DATE_FORMAT;
     now: Date;
     deviceTimeZone: string;
 }
@@ -61,22 +64,31 @@ const getWeekdayCode = (calendarDate: CalendarDate): WeekdayCode => {
     return WEEKDAY_CODES[(sundayFirstIndex + 6) % 7];
 };
 
-const formatMonthDay = (date: Date, timeZone: string) =>
-    new Intl.DateTimeFormat(getLocale(), { timeZone, month: 'short', day: 'numeric' }).format(date);
+const formatMonthDay = (date: Date, timeZone: string, dateFormat: SETTINGS_DATE_FORMAT) => {
+    const pattern = getMonthDayPattern(dateFormat, { month: 'MMM', withYear: false });
+    if (pattern) {
+        return formatInTimeZone(date, timeZone, pattern, { locale: dateLocale });
+    }
+    return new Intl.DateTimeFormat(getLocale(), { timeZone, month: 'short', day: 'numeric' }).format(date);
+};
 
-const formatDateLabel = (date: Date, now: Date, timeZone: string) => {
+const formatDateLabel = (date: Date, now: Date, timeZone: string, dateFormat: SETTINGS_DATE_FORMAT) => {
     const dayDifference = getDayNumber(getCalendarDate(date, timeZone)) - getDayNumber(getCalendarDate(now, timeZone));
 
     if (dayDifference === 0) {
-        const monthDay = formatMonthDay(date, timeZone);
+        const monthDay = formatMonthDay(date, timeZone, dateFormat);
         return c('Meeting schedule').t`Today · ${monthDay}`;
     }
     if (dayDifference === 1) {
-        const monthDay = formatMonthDay(date, timeZone);
+        const monthDay = formatMonthDay(date, timeZone, dateFormat);
         return c('Meeting schedule').t`Tomorrow · ${monthDay}`;
     }
 
     const isCurrentYear = getCalendarDate(date, timeZone).year === getCalendarDate(now, timeZone).year;
+    const pattern = getMonthDayPattern(dateFormat, { month: 'MMM', withYear: !isCurrentYear });
+    if (pattern) {
+        return formatInTimeZone(date, timeZone, `EEE, ${pattern}`, { locale: dateLocale });
+    }
     return new Intl.DateTimeFormat(getLocale(), {
         timeZone,
         weekday: 'short',
@@ -184,7 +196,7 @@ const formatWeekdayList = (weekdays: WeekdayCode[]) => {
 const isWorkWeek = (weekdays: WeekdayCode[]) =>
     weekdays.length === WORK_WEEK.length && WORK_WEEK.every((code) => weekdays.includes(code));
 
-const phraseRecurrence = (pattern: RecurrencePattern): string => {
+const phraseRecurrence = (pattern: RecurrencePattern, dateFormat: SETTINGS_DATE_FORMAT): string => {
     switch (pattern.kind) {
         case 'daily': {
             const { interval } = pattern;
@@ -233,7 +245,11 @@ const phraseRecurrence = (pattern: RecurrencePattern): string => {
         }
         case 'yearly': {
             const { interval } = pattern;
-            const monthDay = formatMonthDay(new Date(Date.UTC(2024, pattern.month - 1, pattern.dayOfMonth)), 'UTC');
+            const monthDay = formatMonthDay(
+                new Date(Date.UTC(2024, pattern.month - 1, pattern.dayOfMonth)),
+                'UTC',
+                dateFormat
+            );
             return interval === 1
                 ? c('Meeting schedule').t`Repeats every year on ${monthDay}`
                 : c('Meeting schedule').ngettext(
@@ -262,20 +278,21 @@ export const formatMeetingSchedule = ({
     timeZone,
     rrule,
     timeFormat,
+    dateFormat,
     now,
     deviceTimeZone,
 }: MeetingScheduleInput): { dateTime: string; recurrence: string | null } => {
     const startDate = getCalendarDate(startTime, timeZone);
     const endsOnSameDay = getDayNumber(startDate) === getDayNumber(getCalendarDate(endTime, timeZone));
 
-    const startDateLabel = formatDateLabel(startTime, now, timeZone);
+    const startDateLabel = formatDateLabel(startTime, now, timeZone, dateFormat);
     const startTimeLabel = formatTime(startTime, timeZone, timeFormat);
     const endTimeLabel = formatTime(endTime, timeZone, timeFormat);
 
     const schedule = endsOnSameDay
         ? c('Meeting schedule').t`${startDateLabel}, ${startTimeLabel} to ${endTimeLabel}`
         : (() => {
-              const endDateLabel = formatDateLabel(endTime, now, timeZone);
+              const endDateLabel = formatDateLabel(endTime, now, timeZone, dateFormat);
               return c('Meeting schedule').t`${startDateLabel}, ${startTimeLabel} to ${endDateLabel}, ${endTimeLabel}`;
           })();
 
@@ -283,5 +300,5 @@ export const formatMeetingSchedule = ({
 
     const pattern = rrule === null ? null : parseRecurrencePattern(rrule, startDate);
 
-    return { dateTime, recurrence: pattern === null ? null : phraseRecurrence(pattern) };
+    return { dateTime, recurrence: pattern === null ? null : phraseRecurrence(pattern, dateFormat) };
 };

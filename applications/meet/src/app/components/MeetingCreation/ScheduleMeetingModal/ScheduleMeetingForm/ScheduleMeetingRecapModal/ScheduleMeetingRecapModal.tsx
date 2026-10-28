@@ -92,6 +92,7 @@ export const ScheduleMeetingRecapModal = ({
         timeZone,
         rrule,
         timeFormat,
+        dateFormat: userSettings.DateFormat,
         now: new Date(),
         deviceTimeZone: getTimezone(),
     });
