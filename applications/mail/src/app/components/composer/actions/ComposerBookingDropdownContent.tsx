@@ -14,27 +14,42 @@ import { escape } from '@proton/sanitize/escape';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
+import type { BookingPageCount } from '../../../telemetry/composerBookingsEvents';
+import {
+    BookingLimitReason,
+    BookingUpsellSource,
+    getBookingPageCountDimension,
+    useComposerBookingsTracking,
+} from '../../../telemetry/composerBookingsEvents';
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
 
 interface Props {
     editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
     onClose: () => void;
-    onUpsell: () => void;
+    onUpsell: (pageCount: BookingPageCount) => void;
     onLimitReached: () => void;
 }
 
 const ComposerBookingDropdownContent = ({ editorActionsRef, onClose, onUpsell, onLimitReached }: Props) => {
     const [internalBooking, loading] = useInternalBooking();
-    const { getCreateBookingAction, loadingLimits } = useBookingUpsell();
+    const { getCreateBookingAction, shouldShowLimitModal, loadingLimits } = useBookingUpsell();
     const authentication = useAuthentication();
+    const {
+        trackBookingPageInserted,
+        trackCreateBookingPageClick,
+        trackBookingUpsellDisplayed,
+        trackBookingLimitDisplayed,
+    } = useComposerBookingsTracking();
 
     const bookingPages = internalBooking?.bookingPages;
+    const pageCount = getBookingPageCountDimension(bookingPages?.length ?? 0);
 
     const handleInsert = (page: InternalBookingPage) => {
         const name = page.summary || c('Label').t`Booking page`;
         const link = `<a href="${escape(page.link)}">${escape(name)}</a>`;
 
         editorActionsRef.current?.insertContent(`<p>${c('Info').t`Here is my availability:`} ${link}</p>`);
+        trackBookingPageInserted(pageCount);
         onClose();
     };
 
@@ -42,15 +57,23 @@ const ComposerBookingDropdownContent = ({ editorActionsRef, onClose, onUpsell, o
         const createBookingAction = getCreateBookingAction();
 
         if (createBookingAction === BookingCreateAction.LimitReached) {
+            trackBookingLimitDisplayed(
+                shouldShowLimitModal().bookingPageLimitReached
+                    ? BookingLimitReason.max_pages
+                    : BookingLimitReason.plan_limit,
+                pageCount
+            );
             onLimitReached();
             return;
         }
 
         if (createBookingAction === BookingCreateAction.Upsell) {
-            onUpsell();
+            trackBookingUpsellDisplayed({ source: BookingUpsellSource.create_booking_page, pageCount });
+            onUpsell(pageCount);
             return;
         }
 
+        trackCreateBookingPageClick(pageCount);
         onClose();
         window.open(
             getAppHref('/?action=create-booking', APPS.PROTONCALENDAR, authentication.getLocalID()),
