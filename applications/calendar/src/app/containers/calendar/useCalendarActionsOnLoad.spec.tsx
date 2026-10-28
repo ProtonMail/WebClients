@@ -1,7 +1,6 @@
 import { Router } from 'react-router-dom';
 
 import { renderHook } from '@testing-library/react-hooks';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
 import { changeCalendarVisiblity } from '@proton/calendar/calendars/actions';
@@ -30,14 +29,18 @@ describe('useCalendarActionsOnLoad', () => {
         activeAddresses: [{ ID: '1', Email: 'test@proton.me' }],
         createEventCalendar: { ID: '1', Name: 'Test Calendar' },
         createEventCalendarBootstrap: { ID: '1', Name: 'Test Calendar' },
+        canCreateBooking: true,
+        isWelcomeFlowDone: true,
     };
 
     const setupTest = ({
         create,
         update,
+        openBookingCreationSidebar = jest.fn(),
         dependencies,
         searchParams,
-    }: Omit<UseCalendarActionsOnLoadParameters, 'dependencies'> & {
+    }: Omit<UseCalendarActionsOnLoadParameters, 'dependencies' | 'openBookingCreationSidebar'> & {
+        openBookingCreationSidebar?: () => void;
         dependencies?: Partial<UseCalendarActionsOnLoadParameters['dependencies']>;
         searchParams: string;
     }) => {
@@ -51,8 +54,13 @@ describe('useCalendarActionsOnLoad', () => {
 
         const { result } = renderHook(
             () =>
-                // @ts-expect-error - dependencies is optional
-                useCalendarActionsOnLoad({ create, update, dependencies: { ...defaultDependencies, ...dependencies } }),
+                useCalendarActionsOnLoad({
+                    create,
+                    update,
+                    openBookingCreationSidebar,
+                    // @ts-expect-error - dependencies is optional
+                    dependencies: { ...defaultDependencies, ...dependencies },
+                }),
             { wrapper }
         );
 
@@ -188,5 +196,72 @@ describe('useCalendarActionsOnLoad', () => {
         });
 
         expect(changeCalendarVisiblity).toHaveBeenCalledWith({ calendarID: calendarId, display: true });
+    });
+
+    describe('create-booking action', () => {
+        it('should open the booking creation sidebar and clean up the search params', () => {
+            const create = jest.fn();
+            const update = jest.fn();
+            const openBookingCreationSidebar = jest.fn();
+            (useCalendarDispatch as jest.Mock).mockReturnValue(jest.fn());
+
+            const { history } = setupTest({
+                create,
+                update,
+                openBookingCreationSidebar,
+                searchParams: '?action=create-booking',
+            });
+
+            expect(openBookingCreationSidebar).toHaveBeenCalledTimes(1);
+            expect(create).not.toHaveBeenCalled();
+            expect(update).not.toHaveBeenCalled();
+            expect(history.location.search).toBe('');
+        });
+
+        it('should wait until a booking page can be created', () => {
+            const openBookingCreationSidebar = jest.fn();
+            (useCalendarDispatch as jest.Mock).mockReturnValue(jest.fn());
+
+            const { history } = setupTest({
+                create: jest.fn(),
+                update: jest.fn(),
+                openBookingCreationSidebar,
+                searchParams: '?action=create-booking',
+                dependencies: { canCreateBooking: false },
+            });
+
+            expect(openBookingCreationSidebar).not.toHaveBeenCalled();
+            expect(history.location.search).toBe('?action=create-booking');
+        });
+
+        it('should wait until the welcome flow is done', () => {
+            const openBookingCreationSidebar = jest.fn();
+            (useCalendarDispatch as jest.Mock).mockReturnValue(jest.fn());
+
+            setupTest({
+                create: jest.fn(),
+                update: jest.fn(),
+                openBookingCreationSidebar,
+                searchParams: '?action=create-booking',
+                dependencies: { isWelcomeFlowDone: false },
+            });
+
+            expect(openBookingCreationSidebar).not.toHaveBeenCalled();
+        });
+
+        it('should keep other search params when cleaning up', () => {
+            const openBookingCreationSidebar = jest.fn();
+            (useCalendarDispatch as jest.Mock).mockReturnValue(jest.fn());
+
+            const { history } = setupTest({
+                create: jest.fn(),
+                update: jest.fn(),
+                openBookingCreationSidebar,
+                searchParams: '?action=create-booking&foo=bar',
+            });
+
+            expect(openBookingCreationSidebar).toHaveBeenCalledTimes(1);
+            expect(history.location.search).toBe('?foo=bar');
+        });
     });
 });

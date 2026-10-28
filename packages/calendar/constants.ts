@@ -12,4 +12,5 @@ export const calendarUrlQueryParams = {
 export const calendarUrlQueryParamsActions = {
     create: 'create',
     edit: 'edit',
+    createBooking: 'create-booking',
 };
