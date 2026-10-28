@@ -20,7 +20,7 @@ import { withDeprecatedModals } from '../../testing/with-deprecated-modals';
 import { withEventManager } from '../../testing/with-event-manager';
 import { withNotifications } from '../../testing/with-notifications';
 import { withReduxStore } from '../../testing/with-redux-store';
-import CreditsModal from './CreditsModal';
+import { CreditsModal } from './CreditsModal';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import PaymentMethodSelector from './methods/PaymentMethodSelector';
 
