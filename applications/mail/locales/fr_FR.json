@@ -1562,7 +1562,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -4440,6 +4441,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Permettez à vos interlocuteurs de prendre rendez-vous avec vous directement depuis vos e-mails, sans échanges interminables."
       ]
     },
     "description": {
@@ -9807,6 +9811,12 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Vous avez atteint le nombre maximum de pages de réservation prévues dans votre abonnement."
+      ],
+      "Here is my availability:": [
+        "Voici mes disponibilités :"
+      ],
+      "No booking pages yet": [
+        "Il n'y a pas encore de pages de réservation"
       ]
     },
     "info": {
@@ -11143,6 +11153,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } assistant": [
         "Assistant ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Ajoutez une page de réservation à votre e-mail et permettez aux personnes de choisir un créneau qui leur convient."
+      ],
+      "Booking page": [
+        "Page de réservation"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17296,6 +17312,12 @@
       ],
       "Cannot create more Booking pages": [
         "Vous ne pouvez pas créer de pages de réservation supplémentaire."
+      ],
+      "Insert a booking page": [
+        "Insérer une page de réservation"
+      ],
+      "Share your availability": [
+        "Partagez vos disponibilités"
       ]
     },
     "Title header for keys table": {

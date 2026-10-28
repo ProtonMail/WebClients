@@ -1582,7 +1582,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4431,6 +4434,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Umožnite ľuďom rezervovať si u vás termín priamo z vašich emailov, bez zbytočného dopisovania."
       ]
     },
     "description": {
@@ -10269,6 +10275,12 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Dosiahli ste maximálny počet rezervačných stránok dostupných vo vašom pláne."
+      ],
+      "Here is my availability:": [
+        "Tu je moja dostupnosť:"
+      ],
+      "No booking pages yet": [
+        "Zatiaľ nie sú k dispozícii žiadne rezervačné stránky"
       ]
     },
     "info": {
@@ -11645,6 +11657,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } assistant": [
         "${ LUMO_SHORT_APP_NAME } asistent"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Pridajte do svojho emailu rezervačnú stránku a umožnite ľuďom vybrať si termín, ktorý im vyhovuje."
+      ],
+      "Booking page": [
+        "Stránka rezervácií"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -18116,6 +18134,12 @@
       ],
       "Cannot create more Booking pages": [
         "Nemožno vytvoriť viac rezervačných stránok"
+      ],
+      "Insert a booking page": [
+        "Vložiť stránku rezervácií"
+      ],
+      "Share your availability": [
+        "Zdieľajte svoju dostupnosť"
       ]
     },
     "Title header for keys table": {
