@@ -95,6 +95,7 @@ const VideoSettingsDropdownComponent = ({
                                 }}
                                 loading={isCameraLoading(camera.deviceId)}
                                 Icon={IcCheckmark}
+                                // oxlint-disable-next-line jsx-a11y/role-has-required-aria-props -- aria-selected is set by OptionButton from ariaSelected
                                 role="option"
                                 ariaSelected={camera.deviceId === videoDeviceId}
                             />

@@ -21,6 +21,7 @@ export const LayoutOptions = ({ options, onClose, className }: Props) => (
                 label={label}
                 LabelIcon={Icon}
                 showIcon={isSelected}
+                // oxlint-disable-next-line jsx-a11y/role-has-required-aria-props -- aria-selected is set by OptionButton from ariaSelected
                 role="option"
                 ariaSelected={isSelected}
                 onClick={() => {
