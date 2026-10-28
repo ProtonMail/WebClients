@@ -4,7 +4,6 @@ import { getUnixTime } from 'date-fns';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { buildAddress } from '@proton/account/testing/buildAddress';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
-import { mockTracker } from '@proton/telemetry-tracker/testing';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { startEasySwitchSignupImportTask } from '../api/api';
@@ -18,6 +17,7 @@ import {
     TIME_PERIOD,
 } from '../interface';
 import { createTokenItem } from '../logic/sync/sync.actions';
+import { mockBYOECreationFunnelTracker } from '../telemetry/mockTrackerOfGroup';
 import type { ConnectBYOEAddressResult } from './connectBYOEAddress.interface';
 import { useConnectBYOEAddress } from './useConnectBYOEAddress';
 
@@ -547,7 +547,7 @@ describe('useConnectBYOEAddress', () => {
         };
 
         it('sends authenticated then importer_created, without upsell, when the address is connected', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
 
             await connectWithCode();
 
@@ -568,7 +568,7 @@ describe('useConnectBYOEAddress', () => {
             ['Invalid code', 'authentication'],
             ['wrong_account', 'wrong_account'],
         ])('sends creation_error when the token fails with "%s"', async (error, errorStep) => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             mockEasySwitchDispatch.mockResolvedValue({
                 type: 'token/create/rejected',
                 meta: { requestStatus: 'rejected' },
@@ -582,7 +582,7 @@ describe('useConnectBYOEAddress', () => {
         });
 
         it('sends creation_error when the address is already connected', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             mockFindUserAddress.mockReturnValue(buildAddress({ Email: mockToken.Account }));
             mockGetIsBYOEAddress.mockReturnValue(true);
 
@@ -593,7 +593,7 @@ describe('useConnectBYOEAddress', () => {
         });
 
         it('sends creation_error when the address is linked to another account and cannot be claimed', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             mockApi.mockRejectedValue({
                 data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
             });
@@ -604,7 +604,7 @@ describe('useConnectBYOEAddress', () => {
         });
 
         it('does not send an error when the address can be claimed', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             mockUseFlag.mockReturnValue(true);
             mockApi
                 .mockRejectedValueOnce({
@@ -618,7 +618,7 @@ describe('useConnectBYOEAddress', () => {
         });
 
         it('sends creation_error when creating the address fails', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             mockDispatch.mockRejectedValue(new Error('nope'));
 
             await connectWithCode();

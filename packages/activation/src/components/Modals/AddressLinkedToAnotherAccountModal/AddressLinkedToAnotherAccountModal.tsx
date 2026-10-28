@@ -18,6 +18,10 @@ import {
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
+import {
+    trackAccountImportLinkedAddressModalAction,
+    trackAccountImportLinkedAddressModalShown,
+} from '../../../telemetry/accountImportFlow';
 import { BYOEAddressLinkedModalAction, BYOEAddressLinkedModalShown } from '../../../telemetry/events';
 
 interface Props extends ModalStateProps {}
@@ -25,19 +29,23 @@ interface Props extends ModalStateProps {}
 const AddressLinkedToAnotherAccountModal = ({ ...rest }: Props) => {
     useEffect(() => {
         tracker.emit(BYOEAddressLinkedModalShown);
+        trackAccountImportLinkedAddressModalShown();
     }, []);
 
     const handleViewGuideClick = () => {
         tracker.emit(BYOEAddressLinkedModalAction, { dimensions: { linkedAddressAction: 'view_guide' } });
+        trackAccountImportLinkedAddressModalAction('view_guide');
     };
 
     const handleGotItClick = () => {
         tracker.emit(BYOEAddressLinkedModalAction, { dimensions: { linkedAddressAction: 'got_it' } });
+        trackAccountImportLinkedAddressModalAction('got_it');
         rest.onClose();
     };
 
     const handleClose = () => {
         tracker.emit(BYOEAddressLinkedModalAction, { dimensions: { linkedAddressAction: 'close' } });
+        trackAccountImportLinkedAddressModalAction('close');
         rest.onClose();
     };
 

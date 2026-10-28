@@ -6,13 +6,13 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
-import { mockTracker } from '@proton/telemetry-tracker/testing';
 
 import type { LaunchImportPayload } from '../../../../interface';
 import { IMPORT_ERROR, ImportProvider, ImportType, TIME_PERIOD } from '../../../../interface';
 import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import type { ImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.interface';
 import { easySwitchCreationTimer } from '../../../../telemetry/easySwitchCreationFunnel';
+import { mockEasySwitchCreationFunnelTracker } from '../../../../telemetry/mockTrackerOfGroup';
 import { createImporterTask } from './useStepLoadingImporting.helpers';
 
 // We only need splitNodeUid - node UIDs are `${volumeId}~${nodeId}`.
@@ -182,7 +182,7 @@ describe('createImporterTask', () => {
 
     describe('telemetry', () => {
         it('sends importer_created with the products, the period and the elapsed time once the import started', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockEasySwitchCreationFunnelTracker();
             tracker.startTimer(easySwitchCreationTimer);
             const { props } = setup({
                 products: [ImportType.MAIL, ImportType.CONTACTS],
@@ -218,7 +218,7 @@ describe('createImporterTask', () => {
         });
 
         it('sends creation_error when the import task fails to start', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockEasySwitchCreationFunnelTracker();
             const { props } = setup({
                 products: [ImportType.CONTACTS],
                 api: jest.fn().mockRejectedValue(alreadyExistsError),
@@ -234,7 +234,7 @@ describe('createImporterTask', () => {
         });
 
         it('sends creation_error when the calendars cannot be created', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockEasySwitchCreationFunnelTracker();
             const { props } = setup({
                 products: [ImportType.CALENDAR],
                 importerData: {
@@ -258,7 +258,7 @@ describe('createImporterTask', () => {
         });
 
         it('sends creation_error when the import payload cannot be built', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockEasySwitchCreationFunnelTracker();
             // Mail without any email fields: building the payload throws
             const { props } = setup({ products: [ImportType.MAIL] });
 
@@ -272,7 +272,7 @@ describe('createImporterTask', () => {
         });
 
         it('sends importer_created only, when the import started but refreshing the events fails', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockEasySwitchCreationFunnelTracker();
             const { props, call } = setup({ products: [ImportType.CONTACTS] });
             call.mockRejectedValueOnce(new Error('event loop'));
 
@@ -282,7 +282,7 @@ describe('createImporterTask', () => {
         });
 
         it('does not track drive-only imports', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockEasySwitchCreationFunnelTracker();
             const { props } = setup({ products: [ImportType.DRIVE], driveClient: makeDriveClient() });
 
             await createImporterTask(props);

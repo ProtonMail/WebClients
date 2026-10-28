@@ -1,5 +1,3 @@
-import { mockTracker } from '@proton/telemetry-tracker/testing';
-
 import { EASY_SWITCH_SOURCES, TIME_PERIOD } from '../interface';
 import {
     getBYOECreationStartedAt,
@@ -11,10 +9,11 @@ import {
     trackBYOEImporterCreated,
     trackBYOEUpsellModalViewed,
 } from './byoeCreationFunnel';
+import { mockBYOECreationFunnelTracker } from './mockTrackerOfGroup';
 
 describe('BYOE creation funnel telemetry', () => {
     it('sends one event per step, with the duration on every step after the start', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockBYOECreationFunnelTracker();
 
         trackBYOECreationStarted({ source: EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST_BYOE, isConversion: false });
         trackBYOEGoogleSignInClicked({ hasImportEmails: true, importPeriod: TIME_PERIOD.LAST_YEAR });
@@ -53,7 +52,7 @@ describe('BYOE creation funnel telemetry', () => {
     });
 
     it('sends the variant of the experiment on every step', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockBYOECreationFunnelTracker();
 
         trackBYOECreationStarted({
             source: EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST_BYOE,
@@ -81,7 +80,7 @@ describe('BYOE creation funnel telemetry', () => {
 
     it('keeps the duration across a page reload', () => {
         const now = jest.spyOn(Date, 'now').mockReturnValue(100_000);
-        const { reports } = mockTracker();
+        const { reports } = mockBYOECreationFunnelTracker();
         expect(getBYOECreationStartedAt()).toBeUndefined();
 
         // Back on a fresh page: the in-memory timer is gone, it is restored from the saved timestamp
@@ -96,14 +95,14 @@ describe('BYOE creation funnel telemetry', () => {
     });
 
     it('does not start a timer when there is no saved timestamp', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockBYOECreationFunnelTracker();
         resumeBYOECreation(undefined);
         trackBYOEAuthenticated();
         expect(reports[0].values).toEqual({});
     });
 
     it('has no period when the user does not import emails or could not choose one', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockBYOECreationFunnelTracker();
 
         trackBYOEGoogleSignInClicked({ hasImportEmails: false, importPeriod: TIME_PERIOD.BIG_BANG });
         trackBYOEGoogleSignInClicked({ hasImportEmails: true, importPeriod: undefined });
@@ -113,7 +112,7 @@ describe('BYOE creation funnel telemetry', () => {
     });
 
     it('flushes every event right away so they keep their order', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockBYOECreationFunnelTracker();
 
         trackBYOECreationStarted({ source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS, isConversion: false });
         trackBYOEGoogleSignInClicked({ hasImportEmails: true, importPeriod: undefined });
@@ -132,7 +131,7 @@ describe('BYOE creation funnel telemetry', () => {
     });
 
     it('keeps the timer running after an error so a retry is still timed, and restarts it on a new creation', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockBYOECreationFunnelTracker();
 
         trackBYOECreationStarted({ source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS, isConversion: true });
         trackBYOECreationError('address_creation');
