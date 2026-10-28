@@ -215,8 +215,13 @@ html:is(
 		color: inherit;
 	}
 
-	.scroll-child {
-		overflow-y: scroll;
+	// Above small, Offer.scss makes .scroll-child the scroll area of a one-deal modal. At small and below,
+	// .scroll-inner scrolls instead, so .scroll-child must not be a scroll container there: with
+	// overscroll-behavior none it would catch the wheel and stop it chaining to .scroll-inner (Chrome).
+	@include im.media('>small') {
+		.scroll-child {
+			overflow-y: scroll;
+		}
 	}
 
 	// Safari and Firefox bounce the scroll area past its edges, dragging the header image down and showing
@@ -228,9 +233,14 @@ html:is(
 
 	&.offer-modal--one-deal {
 		&#{&} {
-			.scroll-outer-vertical .scroll-inner,
-			.scroll-outer-vertical .scroll-child {
+			.scroll-outer-vertical .scroll-inner {
 				overflow: overlay;
+			}
+
+			@include im.media('>small') {
+				.scroll-outer-vertical .scroll-child {
+					overflow: overlay;
+				}
 			}
 		}
 	}
