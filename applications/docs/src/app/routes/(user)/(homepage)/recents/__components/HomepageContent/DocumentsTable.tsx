@@ -16,6 +16,7 @@ import { DateFormatter } from '@proton/docs-core/VersionHistory/DateFormatter'
 import type { IconComponent } from '@proton/icons/component'
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown'
 import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp'
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
 import { IcFolder } from '@proton/icons/icons/IcFolder'
 import { IcInbox } from '@proton/icons/icons/IcInbox'
@@ -37,12 +38,14 @@ import type { ComponentPropsWithoutRef, KeyboardEvent, MouseEvent, ReactNode } f
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { c, msgid } from 'ttag'
 import { useApplication } from '~/utils/application-context'
-import { useBulkTrashEnabled } from '~/utils/flags'
+import { useBulkMoveEnabled, useBulkTrashEnabled } from '~/utils/flags'
+import { useEvent } from '~/utils/misc'
 import { useDocumentActions } from '../../__utils/document-actions'
 import { getOwnerName } from '../../__utils/get-owner-name'
 import type { RecentsSort } from '../../__utils/homepage-view'
 import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../../__utils/homepage-view'
 import { isMyDocument } from '../../__utils/is-my-document'
+import { useBulkMove } from '../../__utils/useBulkMove'
 import { useBulkTrash } from '../../__utils/useBulkTrash'
 import { useDoubleClick } from '../../__utils/useDoubleClick'
 import { useRowSelection, type RowSelection } from '../../__utils/useRowSelection'
@@ -60,7 +63,7 @@ export type DocumentsTableProps = { itemsSections: ItemsSection[]; variant: Tabl
 
 export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) {
   const [addresses] = useAddresses()
-  const { type, state } = useHomepageView()
+  const { type, state, myFilesRootUid } = useHomepageView()
   const contextMenuAnchorRef = useRef<HTMLDivElement>(null)
   const contextMenu = useContextMenu()
   const isRecents = variant.startsWith('recents')
@@ -76,19 +79,38 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   const resetKey = `${state.view}|${'query' in state ? state.query : ''}|${type}`
   const selection = useRowSelection(selectableIds, resetKey)
   const { trash, isTrashing } = useBulkTrash()
+  const { move, moveItemsModal } = useBulkMove()
   const hasSelection = selection.selectedIds.length > 0
+  const selectedDocuments = allItems.filter((item) => selection.isSelected(item.uniqueId()))
+  const bulkMoveEnabled = useBulkMoveEnabled()
+  // The move modal fails on nodes from more than one root, and the user's own documents can also sit on a device.
+  const canBulkMove = bulkMoveEnabled && selectedDocuments.every((document) => isInMyFiles(document, myFilesRootUid))
+  useDeselectMoved(selectedDocuments, selection, bulkMoveEnabled)
+  const moveSelection = () => move(selectedDocuments)
+  const trashSelection = async () => {
+    const failed = await trash(selectedDocuments)
+    if (failed.length) {
+      selection.set(failed.map((item) => item.uniqueId()))
+    } else {
+      selection.clear()
+    }
+  }
+  const { currentDocument } = contextMenu
+  const isSelectionMenu =
+    bulkMoveEnabled &&
+    selection.selectedIds.length > 1 &&
+    currentDocument !== undefined &&
+    selection.isSelected(currentDocument.uniqueId())
   // The title is hidden on mobile, so the selection controls move to the head, like in Drive.
   const isNarrow = useActiveBreakpoint().viewportWidth['<=small']
   const hasSelectionControls = selectableIds.length > 0
 
   const label = isRecents || isSearch ? recentsLabelByType(type) : c('Info').t`Trash`
-  const bulkTrashButton = (
-    <BulkTrashButton
-      selection={selection}
-      documents={allItems.filter((item) => selection.isSelected(item.uniqueId()))}
-      trash={trash}
-      isTrashing={isTrashing}
-    />
+  const bulkActions = (
+    <span className="ml-auto flex shrink-0 items-center">
+      {canBulkMove && <BulkMoveButton onMove={moveSelection} disabled={isTrashing} />}
+      <BulkTrashButton onTrash={trashSelection} isTrashing={isTrashing} />
+    </span>
   )
 
   return (
@@ -124,7 +146,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
             ) : (
               label
             )}
-            {hasSelection && !isNarrow ? bulkTrashButton : isRecents && <SortSelect />}
+            {hasSelection && !isNarrow ? bulkActions : isRecents && <SortSelect />}
           </Table.Title>
           <Head
             variant={variant}
@@ -138,7 +160,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
                     isTrashing={isTrashing}
                     label={getSectionLabel(itemsSections[0].id)}
                   />
-                  {hasSelection && bulkTrashButton}
+                  {hasSelection && bulkActions}
                 </div>
               ) : undefined
             }
@@ -160,13 +182,19 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
         </Table.Table>
       </ContentSheet>
       <DocContextMenu
-        currentDocument={contextMenu.currentDocument}
+        currentDocument={currentDocument}
+        selectionActions={
+          isSelectionMenu
+            ? { move: canBulkMove ? moveSelection : undefined, trash: trashSelection, disabled: isTrashing }
+            : undefined
+        }
         anchorRef={contextMenuAnchorRef}
         close={contextMenu.close}
         isOpen={contextMenu.isOpen}
         open={contextMenu.open}
         position={contextMenu.position}
       />
+      {moveItemsModal}
     </>
   )
 }
@@ -207,31 +235,61 @@ function SelectAllCheckbox({ selection, isTrashing }: SelectAllCheckboxProps) {
   )
 }
 
-type BulkTrashButtonProps = {
-  selection: RowSelection
-  documents: RecentDocumentsItem[]
-  trash: (documents: RecentDocumentsItem[]) => Promise<RecentDocumentsItem[]>
-  isTrashing: boolean
+// Ancestors run from the parent to the root.
+function isInMyFiles(document: RecentDocumentsItem, myFilesRootUid: string | undefined) {
+  return myFilesRootUid !== undefined && document.ancestorsNodeUids?.at(-1) === myFilesRootUid
 }
 
-function BulkTrashButton({ selection, documents, trash, isTrashing }: BulkTrashButtonProps) {
+// The move modal can't report back, so a move shows only as a new parent in the document's update.
+function useDeselectMoved(selectedDocuments: RecentDocumentsItem[], selection: RowSelection, enabled: boolean) {
+  const parentLinkIds = useRef(new Map<string, string | undefined>())
+  const deselectMoved = useEvent(() => {
+    const previous = parentLinkIds.current
+    parentLinkIds.current = new Map(selectedDocuments.map((document) => [document.uniqueId(), document.parentLinkId]))
+    const movedIds = selectedDocuments
+      .map((document) => document.uniqueId())
+      .filter((id) => previous.has(id) && previous.get(id) !== parentLinkIds.current.get(id))
+    if (enabled && movedIds.length) {
+      selection.set(selection.selectedIds.filter((id) => !movedIds.includes(id)))
+    }
+  })
+  const parentsKey = selectedDocuments.map((document) => `${document.uniqueId()}/${document.parentLinkId}`).join()
+  useEffect(deselectMoved, [parentsKey, deselectMoved])
+}
+
+type BulkMoveButtonProps = { onMove: () => void; disabled: boolean }
+
+function BulkMoveButton({ onMove, disabled }: BulkMoveButtonProps) {
+  return (
+    <Tooltip title={c('Action').t`Move`}>
+      <Button
+        icon
+        shape="ghost"
+        className="shrink-0 px-2"
+        disabled={disabled}
+        aria-label={c('Action').t`Move`}
+        onClick={onMove}
+        data-testid="bulk-move-button"
+      >
+        <IcArrowsCross className="shrink-0" />
+      </Button>
+    </Tooltip>
+  )
+}
+
+type BulkTrashButtonProps = { onTrash: () => Promise<void>; isTrashing: boolean }
+
+function BulkTrashButton({ onTrash, isTrashing }: BulkTrashButtonProps) {
   return (
     <Tooltip title={c('Action').t`Move to trash`}>
       <Button
         icon
         shape="ghost"
-        className="ml-auto shrink-0 px-2"
+        className="shrink-0 px-2"
         loading={isTrashing}
         disabled={isTrashing}
         aria-label={c('Action').t`Move to trash`}
-        onClick={async () => {
-          const failed = await trash(documents)
-          if (failed.length) {
-            selection.set(failed.map((item) => item.uniqueId()))
-          } else {
-            selection.clear()
-          }
-        }}
+        onClick={onTrash}
         data-testid="bulk-trash-button"
       >
         <IcTrash className="shrink-0" />
@@ -527,6 +585,9 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
   }
 
   const contextMenu = useContextMenu()
+  const isMenuOpen = contextMenu.isOpen && contextMenu.currentDocument?.uniqueId() === document.uniqueId()
+  const bulkMoveEnabled = useBulkMoveEnabled()
+  const showActionsOnHover = bulkMoveEnabled && !isMenuOpen
 
   const isRenaming = documentActions.isRenaming(document)
   const DocumentTypeIcon = ICON_BY_TYPE[document.type]
@@ -685,11 +746,18 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
             <Button
               onClick={(event) => {
                 event.stopPropagation()
+                if (bulkMoveEnabled && !isTrashing) {
+                  if (isSelectable) {
+                    selection?.select(document.uniqueId())
+                  } else {
+                    selection?.clear()
+                  }
+                }
                 contextMenu.setCurrentDocument(document)
                 contextMenu.handleContextMenu(event)
               }}
               shape="ghost"
-              className={clsx('ml-auto shrink-0 px-2', RAISED)}
+              className={clsx('ml-auto shrink-0 px-2', RAISED, showActionsOnHover && 'mouse:group-hover:opacity-100')}
               aria-label={c('Action').t`Actions`}
             >
               <IcThreeDotsVertical />
