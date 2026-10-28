@@ -62,10 +62,12 @@ import type { SheetsDatabaseSchema } from '../../Database/SheetsDBSchema'
 import { CURRENT_SHEETS_DB_VERSION, SHEETS_DATABASE_NAME, sheetsDBMigrations } from '../../Database/SheetsDBSchema'
 import { SheetsStorageService } from '../../Services/SheetsStorage/SheetsStorageService'
 import type { PublicKeyReference } from '@protontech/crypto'
+import type { CreateDocumentNode } from '../../Crypto/useCreateDocumentNode'
 
 export type AppDependenciesOptions = {
   cacheConfig?: CacheConfig
   getVerificationKey?: (email: string) => Promise<PublicKeyReference[]>
+  createDocumentNode?: CreateDocumentNode
   logger?: LoggerInterface
 }
 
@@ -82,6 +84,7 @@ export class AppDependencies extends DependencyContainer {
     {
       cacheConfig: providedCacheConfig,
       getVerificationKey: providedGetVerificationKey,
+      createDocumentNode: providedCreateDocumentNode,
       logger: providedLogger,
     }: AppDependenciesOptions = {},
   ) {
@@ -236,6 +239,7 @@ export class AppDependencies extends DependencyContainer {
         compatWrapper.getUserCompat(),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         unleashClient,
+        providedCreateDocumentNode,
       )
     })
 
@@ -336,6 +340,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         this.get<SeedInitialCommit>(App_TYPES.CreateInitialCommit),
         unleashClient,
+        providedCreateDocumentNode,
       )
     })
 
@@ -351,6 +356,7 @@ export class AppDependencies extends DependencyContainer {
         compatWrapper.getUserCompat(),
         this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         unleashClient,
+        providedCreateDocumentNode,
       )
     })
 

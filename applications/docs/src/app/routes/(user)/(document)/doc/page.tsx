@@ -31,10 +31,14 @@ import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import { useDriveCompatSDK } from '~/utils/flags'
 import { getMyFilesNodeMeta } from '@proton/docs-core/DriveSDK/getMyFilesNodeMeta'
 import { getNodeContents as getNodeContentsSDK } from '@proton/docs-core/DriveSDK/getNodeContents'
+import { useCreateDocumentNode } from '@proton/docs-core/Crypto/useCreateDocumentNode'
+import { useApi } from '@proton/app-context/useApi'
 
 export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCompat }) {
   const application = useApplication()
   const replaceDriveCompat = useDriveCompatSDK()
+  const api = useApi()
+  const createDocumentNode = useCreateDocumentNode(api)
 
   const [user] = useUser()
 
@@ -81,14 +85,11 @@ export default function UserDocumentPage({ driveCompat }: { driveCompat: DriveCo
             linkId: openAction.parentLinkId,
           }
         : await getRoot()
-    const result = await driveCompat.createDocumentNode(
-      root,
-      name,
-      tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc'),
-    )
+    const createNode = replaceDriveCompat ? createDocumentNode : driveCompat.createDocumentNode
+    const result = await createNode(root, name, tmpConvertNewDocTypeToOld(openAction?.type ?? 'doc'))
 
     return result
-  }, [application.logger, driveCompat, openAction, replaceDriveCompat])
+  }, [application.logger, createDocumentNode, driveCompat, openAction, replaceDriveCompat])
 
   useEffect(() => {
     if (isCreatingNewDocument) {

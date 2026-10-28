@@ -12,6 +12,7 @@ import { getMyFilesNodeMeta } from '../DriveSDK/getMyFilesNodeMeta'
 import { findAvailableNodeName } from '../DriveSDK/findAvailableNodeName'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
+import type { CreateDocumentNode } from '../Crypto/useCreateDocumentNode'
 
 /**
  * Creates a new empty document shell file. This file will then be opened, and the contents will be converted by the editor.
@@ -21,6 +22,7 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
     private driveCompat: DriveCompat,
     private getDocumentMeta: GetDocumentMeta,
     private unleashClient: UnleashClient,
+    private providedCreateDocumentNode?: CreateDocumentNode,
   ) {}
 
   async execute({
@@ -48,7 +50,8 @@ export class CreateEmptyDocumentForConversion implements UseCaseInterface<FileTo
       const mimeType = node.mimeType
       const documentType = isConvertibleToProtonDocsSpreadsheet(mimeType) ? 'sheet' : 'doc'
 
-      const shellResult = await this.driveCompat.createDocumentNode(parentMeta, newDocName, documentType)
+      const createDocumentNode = this.providedCreateDocumentNode ?? this.driveCompat.createDocumentNode
+      const shellResult = await createDocumentNode(parentMeta, newDocName, documentType)
 
       const documentMetaResult = await this.getDocumentMeta.execute({
         volumeId: shellResult.volumeId,
