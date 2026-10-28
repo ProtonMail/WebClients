@@ -35,6 +35,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - previewModelAvailable: Enable the internal Lumo Preview model in the composer model picker
  * - dictationV2: Show the dictation mic button in the composer toolbar
  * - schedules: Enable scheduled tasks (sidebar nav, /schedules page)
+ * - createScheduleTool: Enable the create-schedule client tool when scheduled tasks are also enabled
  */
 export const useLumoFlags = () => {
     const imageTools = useFlag('LumoImageTools');
@@ -68,6 +69,7 @@ export const useLumoFlags = () => {
     const previewModelAvailable = useFlag('LumoPreviewModel');
     const dictationV2 = useFlag('LumoDictationV2');
     const schedules = useFlag('LumoSchedules');
+    const createScheduleTool = useFlag('LumoCreateScheduleTool');
 
     return {
         memory,
@@ -101,5 +103,6 @@ export const useLumoFlags = () => {
         previewModelAvailable,
         dictationV2,
         schedules,
+        createScheduleTool,
     };
 };

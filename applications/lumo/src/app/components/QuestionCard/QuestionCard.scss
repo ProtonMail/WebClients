@@ -3,11 +3,14 @@
 .question-card {
 	--border-weak: var(--border);
 
-	&__title {
-		outline: none !important;
+	border: 1px solid var(--composer-glow-border);
+	max-block-size: 100%;
+
+	& > *:not(.question-card__body) {
+		flex-shrink: 0;
 	}
 
-	&__body .scroll-inner {
-		max-block-size: 40vh;
+	&__title {
+		outline: none !important;
 	}
 }

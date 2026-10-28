@@ -1,0 +1,28 @@
+.create-schedule-card {
+	--border-weak: var(--border);
+	--border-norm: var(--border);
+
+	border: 1px solid var(--composer-glow-border);
+	max-block-size: 100%;
+
+	& > * {
+		flex-shrink: 0;
+	}
+
+	&__body {
+		flex-shrink: 1;
+	}
+
+	&__details-button {
+		font-weight: 500;
+		inline-size: fit-content;
+	}
+
+	&__instructions {
+		background-color: var(--control-fill-low);
+	}
+
+	&__auto-approve-label {
+		font-weight: 500;
+	}
+}

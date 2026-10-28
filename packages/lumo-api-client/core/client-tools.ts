@@ -9,6 +9,8 @@ export type PendingClientToolCall = {
 export type ClientToolResult = {
     content: string;
     is_error?: boolean;
+    /** End the assistant turn after recording this successful result, without requesting another completion. */
+    endTurn?: boolean;
 };
 
 /**

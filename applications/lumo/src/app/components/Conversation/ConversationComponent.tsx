@@ -332,7 +332,7 @@ const ConversationLayout = ({
                         <ConversationSurvey isGenerating={isGenerating} />
                         <div
                             ref={composerContainerRef}
-                            className="lumo-chat-item flex flex-column no-print w-full md:w-2/3 mx-auto max-w-custom"
+                            className="lumo-chat-item flex flex-column flex-nowrap shrink-0 w-full max-w-custom mx-auto no-print md:w-2/3"
                             style={{ '--max-w-custom': '51.25rem' } as React.CSSProperties}
                         >
                             <ImageLimitNotice exceedsLimit={imageLimitExceeded} />

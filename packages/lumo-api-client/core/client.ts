@@ -271,16 +271,17 @@ export class LumoApiClient {
                     break;
                 }
 
-                currentTurns = await this.appendClientToolResults(
+                const toolRound = await this.appendClientToolResults(
                     this.withAssistantReply(currentTurns, roundReply),
                     executableCalls,
                     resolvedClientToolExecutor,
                     chunkCallback
                 );
+                currentTurns = toolRound.turns;
                 roundReply = '';
 
-                // A stop that lands while a tool runs must not start another round.
-                if (signal?.aborted) {
+                // Stop if a tool ended the turn or the user cancelled generation.
+                if (toolRound.endTurn || signal?.aborted) {
                     break;
                 }
             }
@@ -500,7 +501,7 @@ export class LumoApiClient {
         calls: PendingClientToolCall[],
         executor: ClientToolExecutor,
         chunkCallback: ChunkCallback | undefined
-    ): Promise<Turn[]> {
+    ): Promise<{ turns: Turn[]; endTurn: boolean }> {
         const results = await executor.execute(calls);
         // An executor that answers fewer calls than it was given must not take the whole turn down
         // with it; the model can recover from a per-call error.
@@ -549,12 +550,16 @@ export class LumoApiClient {
             }
         }
 
-        nextTurns.push({
-            role: Role.Assistant,
-            content: '',
-        });
+        // Errors must remain eligible for a correction round, even if an executor mistakenly marks them terminal.
+        const endTurn = executed.some(({ result }) => result.endTurn === true && !result.is_error);
+        if (!endTurn) {
+            nextTurns.push({
+                role: Role.Assistant,
+                content: '',
+            });
+        }
 
-        return nextTurns;
+        return { turns: nextTurns, endTurn };
     }
 
     private async runTargetedGeneration(
