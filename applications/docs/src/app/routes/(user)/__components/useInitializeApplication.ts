@@ -12,6 +12,7 @@ import config from '~/config'
 import { loggerForSDK } from '~/drive-sdk/logger'
 import { useGetCacheConfig } from '@proton/docs-core/Crypto/useGetCacheConfig'
 import { useGetVerificationKey } from '@proton/docs-core/Crypto/useGetVerificationKey'
+import { useCreateDocumentNode } from '@proton/docs-core/Crypto/useCreateDocumentNode'
 import { isDriveCompatSDKEnabled } from '@proton/docs-core/Util/isDriveCompatSDKEnabled'
 
 export function useInitializeApplication({ driveCompat }: { driveCompat: DriveCompat }) {
@@ -22,6 +23,7 @@ export function useInitializeApplication({ driveCompat }: { driveCompat: DriveCo
   const unleashClient = useUnleashClient()
   const getCacheConfig = useGetCacheConfig()
   const getVerificationKey = useGetVerificationKey(api)
+  const createDocumentNode = useCreateDocumentNode(api)
 
   const application = useMemo(() => {
     const replaceDriveCompat = isDriveCompatSDKEnabled(unleashClient)
@@ -40,6 +42,7 @@ export function useInitializeApplication({ driveCompat }: { driveCompat: DriveCo
       {
         cacheConfig: replaceDriveCompat ? getCacheConfig() : undefined,
         getVerificationKey: replaceDriveCompat ? getVerificationKey : undefined,
+        createDocumentNode: replaceDriveCompat ? createDocumentNode : undefined,
       },
     )
 

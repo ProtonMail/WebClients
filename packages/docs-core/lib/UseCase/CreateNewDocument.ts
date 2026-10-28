@@ -9,6 +9,7 @@ import { getMyFilesNodeMeta } from '../DriveSDK/getMyFilesNodeMeta'
 import { findAvailableNodeName } from '../DriveSDK/findAvailableNodeName'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
+import type { CreateDocumentNode } from '../Crypto/useCreateDocumentNode'
 
 /**
  * Creates a new document from within the Docs client. This is used when selecting "New Document" from the UI.
@@ -18,6 +19,7 @@ export class CreateNewDocument {
     private driveCompat: DriveCompat,
     private getDocumentMeta: GetDocumentMeta,
     private unleashClient: UnleashClient,
+    private providedCreateDocumentNode?: CreateDocumentNode,
   ) {}
 
   async execute(
@@ -39,7 +41,8 @@ export class CreateNewDocument {
       const name = replaceDriveCompat
         ? await findAvailableNodeName(parentMeta, desiredName)
         : await this.driveCompat.findAvailableNodeName(parentMeta, desiredName)
-      const shellResult = await this.driveCompat.createDocumentNode(parentMeta, name, documentType)
+      const createDocumentNode = this.providedCreateDocumentNode ?? this.driveCompat.createDocumentNode
+      const shellResult = await createDocumentNode(parentMeta, name, documentType)
 
       const createResult = await this.getDocumentMeta.execute({
         volumeId: shellResult.volumeId,

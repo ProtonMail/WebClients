@@ -13,6 +13,7 @@ import { findAvailableNodeName } from '../DriveSDK/findAvailableNodeName'
 import { getDecryptedNode } from '../DriveSDK/getDecryptedNode'
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { isDriveCompatSDKEnabled } from '../Util/isDriveCompatSDKEnabled'
+import type { CreateDocumentNode } from '../Crypto/useCreateDocumentNode'
 
 export class DuplicateDocument {
   constructor(
@@ -20,6 +21,7 @@ export class DuplicateDocument {
     private getDocumentMeta: GetDocumentMeta,
     private seedInitialCommit: SeedInitialCommit,
     private unleashClient: UnleashClient,
+    private providedCreateDocumentNode?: CreateDocumentNode,
   ) {}
 
   /** Execute for a private document */
@@ -82,7 +84,8 @@ export class DuplicateDocument {
       const name = isDriveCompatSDKEnabled(this.unleashClient)
         ? await findAvailableNodeName(parentMeta, newName)
         : await this.driveCompat.findAvailableNodeName(parentMeta, newName)
-      const shellResult = await this.driveCompat.createDocumentNode(parentMeta, name, documentType)
+      const createDocumentNode = this.providedCreateDocumentNode ?? this.driveCompat.createDocumentNode
+      const shellResult = await createDocumentNode(parentMeta, name, documentType)
 
       const documentMetaResult = await this.getDocumentMeta.execute({
         volumeId: shellResult.volumeId,

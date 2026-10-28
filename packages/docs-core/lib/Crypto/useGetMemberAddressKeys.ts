@@ -4,6 +4,7 @@ import { useGetAddressKeys } from '@proton/account/addressKeys/hooks'
 import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
 import { generateNodeUid, getDrive, type NodeEntity } from '@proton/drive/sdk'
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share'
+import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address'
 import type { Api } from '@proton/shared/lib/interfaces/Api'
 import type { ShareMeta } from '@proton/shared/lib/interfaces/drive/share'
 import type { PrimaryAddressKeys } from '../DriveSDK/getDocumentKeys'
@@ -29,7 +30,7 @@ export function useGetMemberAddressKeys(api: Api) {
   )
 }
 
-async function getRootShare(api: Api, hierarchy: NodeEntity[]) {
+export async function getRootShare(api: Api, hierarchy: NodeEntity[]) {
   const shareId = hierarchy[0].deprecatedShareId
   if (!shareId) {
     throw new Error('Root node has no share')
@@ -41,13 +42,13 @@ async function getRootShare(api: Api, hierarchy: NodeEntity[]) {
   return share
 }
 
-async function getOwnAddressKeys(
+export async function getOwnAddressKeys(
   getAddresses: ReturnType<typeof useGetAddresses>,
   getAddressKeys: ReturnType<typeof useGetAddressKeys>,
   addressId: string,
 ): Promise<PrimaryAddressKeys> {
   const [addresses, keys] = await Promise.all([getAddresses(), getAddressKeys(addressId)])
-  const address = addresses.find(({ ID }) => ID === addressId)
+  const address = addresses.find((address) => address.ID === addressId && getIsAddressEnabled(address))
   if (!address || !keys[0]?.privateKey) {
     throw new Error('Address is not available')
   }
