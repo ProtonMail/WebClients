@@ -267,10 +267,9 @@ export function* pushConversation({ payload }: { payload: PushConversationReques
     const { id: localId } = payload;
     const priority = payload.priority || 'urgent';
 
-    // Check if phantom chat mode is enabled - if so, skip remote persistence
-    const isGhostChatMode: boolean = yield select((state: LumoState) => state.ghostChat?.isGhostChatMode || false);
-    if (isGhostChatMode) {
-        console.log('pushConversation: Phantom chat mode is enabled, skipping remote persistence');
+    const pendingConversation: Conversation | undefined = yield select(selectConversationById(localId));
+    if (pendingConversation?.ghost) {
+        console.log('pushConversation: Ghost conversation, skipping persistence');
         yield put(pushConversationSuccess(payload));
         return;
     }

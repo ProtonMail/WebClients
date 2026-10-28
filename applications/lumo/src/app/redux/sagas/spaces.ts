@@ -322,8 +322,10 @@ export function* pushSpace({ payload }: { payload: PushSpaceRequest }): SagaIter
     const { id: localId, skipInGhostChatMode = true } = payload;
     const priority = payload.priority || 'urgent';
 
-    const isGhostChatMode: boolean = yield select((state: LumoState) => state.ghostChat?.isGhostChatMode || false);
-    if (isGhostChatMode && skipInGhostChatMode) {
+    const conversations: ConversationMap = yield select(selectConversationsBySpaceId(localId));
+    // A ghost chat normally has its own space. Treat any space with a ghost conversation as a ghost space.
+    const isGhostSpace = Object.values(conversations).some((conversation) => conversation.ghost);
+    if (skipInGhostChatMode && isGhostSpace) {
         yield put(pushSpaceSuccess(payload));
         return;
     }
