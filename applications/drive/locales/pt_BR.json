@@ -1392,6 +1392,12 @@
       ],
       "Subscribe": [
         "Inscrever-me"
+      ],
+      "About ${ name }": [
+        "Sobre o ${ name }"
+      ],
+      "Add ${ name }": [
+        "Adicionar ${ name }"
       ]
     },
     "Action: Docs": {
@@ -11740,6 +11746,9 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Esta assinatura não pode ser concluída agora. Por favor, tente de novo."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Esse plano não suporta recursos gerenciados na sua conta."
       ]
     },
     "Payments.Error": {
