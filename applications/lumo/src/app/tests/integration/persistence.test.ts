@@ -1,11 +1,14 @@
 import { type SetupServer, setupServer } from 'msw/node';
 
+import { initializeNewSpaceAndConversation } from '../../components/Conversation/helper';
 import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { CONVERSATION_STORE, DbApi, MESSAGE_STORE, SPACE_STORE } from '../../indexedDb/db';
 import { requestToPromise } from '../../indexedDb/util';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import { _getCallbacks } from '../../llm';
+import { compactConversation } from '../../llm/compaction';
+import { buildLinearChain } from '../../messageTree';
 import { setRetryPushEveryMs } from '../../redux/sagas';
 import {
     selectAttachmentById,
@@ -33,7 +36,9 @@ import {
     addMessage,
     finishMessage,
     newMessageId,
+    pushMessageFailure,
     pushMessageRequest,
+    pushMessageSuccess,
 } from '../../redux/slices/core/messages';
 import {
     addSpace,
@@ -48,6 +53,7 @@ import {
     pullSpacesSuccess,
     pushSpaceRequest,
 } from '../../redux/slices/core/spaces';
+import { setGhostChatMode } from '../../redux/slices/ghostChat';
 import { updateLumoUserSettings } from '../../redux/slices/lumoUserSettings';
 import { deleteSchedule, saveSchedule } from '../../redux/slices/schedules';
 import { LumoApi } from '../../remote/api';
@@ -199,6 +205,175 @@ describe('Lumo Persistence Integration Tests', () => {
                 dispatch(stopRootSaga());
             }
         });
+
+        it('does not persist a ghost conversation after the displayed chat mode changes', async () => {
+            const env = await setupTestEnvironment();
+            const { spaceId, conversationId } = env.dispatch(
+                initializeNewSpaceAndConversation(new Date().toISOString(), true)
+            );
+            const space = env.store.getState().spaces[spaceId];
+            const conversation = env.store.getState().conversations[conversationId];
+            const message = createTestMessage(conversation.id, Role.User);
+            try {
+                env.dispatch(addSpace(space));
+                env.dispatch(addConversation(conversation));
+                env.dispatch(addMessage(message));
+                env.dispatch(setGhostChatMode(false));
+                env.dispatch(pushSpaceRequest({ id: space.id }));
+                env.dispatch(pushConversationRequest({ id: conversation.id }));
+                env.dispatch(pushMessageRequest({ id: message.id }));
+                await waitForCondition(async () =>
+                    env.actionHistory.actions.some(
+                        (action) => action.type === 'lumo/message/pushSuccess' && action.payload.id === message.id
+                    )
+                );
+                expect(await env.dbApi.getSpaceById(space.id)).toBeUndefined();
+                expect(await env.dbApi.getConversationById(conversation.id)).toBeUndefined();
+                expect(await env.dbApi.getMessageById(message.id)).toBeUndefined();
+                expect(selectRemoteIdFromLocal('space', space.id)(env.store.getState())).toBeUndefined();
+                expect(selectRemoteIdFromLocal('conversation', conversation.id)(env.store.getState())).toBeUndefined();
+                expect(selectRemoteIdFromLocal('message', message.id)(env.store.getState())).toBeUndefined();
+            } finally {
+                env.dispatch(stopRootSaga());
+            }
+        });
+
+        it.each([
+            { backgroundGhostMode: false, rejectBoundary: false },
+            { backgroundGhostMode: true, rejectBoundary: false },
+            { backgroundGhostMode: false, rejectBoundary: true },
+        ])(
+            'preserves a compacted conversation when reopened (%j)',
+            async ({ backgroundGhostMode, rejectBoundary }) => {
+                const masterKeyBase64 = generateMasterKeyBase64();
+                const first = await setupTestEnvironment({ masterKeyBase64 });
+                const space = createTestSpace();
+                const conversationId = newConversationId();
+                const now = new Date().toISOString();
+                const messages: Message[] = [];
+                for (let index = 0; index < 12; index++) {
+                    messages.push({
+                        id: newMessageId(),
+                        conversationId,
+                        parentId: messages.at(-1)?.id,
+                        createdAt: new Date(Date.now() + index).toISOString(),
+                        role: index % 2 === 0 ? Role.User : Role.Assistant,
+                        status: 'succeeded',
+                        content: `Turn ${index}: ${'Long conversation content. '.repeat(100)}`,
+                    });
+                }
+                const originalMessages = structuredClone(messages);
+                const result = await compactConversation(messages, undefined, {
+                    keepRecentTokenBudget: 0,
+                    keepMinRecentMessages: 2,
+                    forceLlmSummary: true,
+                    summarize: async () => 'Summary of earlier turns',
+                });
+                expect(messages).toEqual(originalMessages);
+                expect(result.summarizedMessageIds.length).toBeGreaterThan(0);
+                const boundary: Message = {
+                    id: newMessageId(),
+                    conversationId,
+                    parentId: messages.at(-1)!.id,
+                    createdAt: new Date(Date.now() + 20).toISOString(),
+                    role: Role.Assistant,
+                    status: 'succeeded',
+                    blocks: [],
+                    compaction: { ...result, status: 'done', createdAt: now },
+                };
+                const followUp: Message = {
+                    id: newMessageId(),
+                    conversationId,
+                    parentId: boundary.id,
+                    createdAt: new Date(Date.now() + 21).toISOString(),
+                    role: Role.User,
+                    status: 'succeeded',
+                    content: 'Continue after compression',
+                };
+                const expectedChain = [...messages, boundary, followUp];
+                try {
+                    first.dispatch(addSpace(space));
+                    first.dispatch(pushSpaceRequest({ id: space.id }));
+                    first.dispatch(
+                        addConversation({
+                            id: conversationId,
+                            spaceId: space.id,
+                            createdAt: now,
+                            updatedAt: now,
+                            title: 'Compacted conversation',
+                            status: ConversationStatus.COMPLETED,
+                        })
+                    );
+                    first.dispatch(pushConversationRequest({ id: conversationId }));
+                    for (const message of expectedChain) {
+                        if (message.id === boundary.id) {
+                            await waitForMessageSyncWithServer(first.dbApi, messages.at(-1)!.id);
+                            first.dispatch(setGhostChatMode(backgroundGhostMode));
+                            if (rejectBoundary) {
+                                allowConsoleError = true;
+                                mockErrorHandler.injectError('/api/lumo/v1/conversations/', 'POST', 422);
+                            }
+                        }
+                        if (message.id === followUp.id) {
+                            first.dispatch(setGhostChatMode(false));
+                        }
+                        first.dispatch(addMessage(message));
+                        first.dispatch(pushMessageRequest({ id: message.id }));
+                        if (backgroundGhostMode && message.id === boundary.id) {
+                            await waitForCondition(async () =>
+                                first.actionHistory.actions.some(
+                                    (action) => pushMessageSuccess.match(action) && action.payload.id === boundary.id
+                                )
+                            );
+                        }
+                    }
+                    if (rejectBoundary) {
+                        await waitForCondition(async () =>
+                            first.actionHistory.actions.some(
+                                (action) => pushMessageFailure.match(action) && action.payload.id === boundary.id
+                            )
+                        );
+                        expect((await first.dbApi.getMessageById(boundary.id))?.dirty).toBe(true);
+                        expect((await first.dbApi.getMessageById(followUp.id))?.dirty).toBe(true);
+                    } else if (backgroundGhostMode) {
+                        await waitForValue(() => first.dbApi.getMessageById(followUp.id));
+                    } else {
+                        await waitForMessageSyncWithServer(first.dbApi, followUp.id);
+                    }
+                    first.dispatch(reloadReduxRequest());
+                    await waitForCondition(async () => !!first.store.getState().messages[followUp.id]);
+                    const restored = selectMessagesByConversationId(conversationId)(first.store.getState());
+                    expect(buildLinearChain(restored, null, []).map((message) => message.id)).toEqual(
+                        expectedChain.map((message) => message.id)
+                    );
+                    for (const message of originalMessages) {
+                        expect(restored[message.id].content).toBe(message.content);
+                    }
+                    expect(restored[boundary.id].compaction).toEqual(boundary.compaction);
+                } finally {
+                    first.dispatch(stopRootSaga());
+                }
+                const reopened = await setupTestEnvironment({
+                    masterKeyBase64,
+                    existingUserId: first.userId,
+                    existingDbApi: first.dbApi,
+                });
+                try {
+                    await waitForCondition(async () => !!reopened.store.getState().messages[followUp.id]);
+                    const restored = selectMessagesByConversationId(conversationId)(reopened.store.getState());
+                    expect(buildLinearChain(restored, null, []).map((message) => message.id)).toEqual(
+                        expectedChain.map((message) => message.id)
+                    );
+                    for (const message of originalMessages) {
+                        expect(restored[message.id].content).toBe(message.content);
+                    }
+                    expect(restored[boundary.id].compaction).toEqual(boundary.compaction);
+                } finally {
+                    reopened.dispatch(stopRootSaga());
+                }
+            },
+            20000
+        );
 
         it('should create a space and persist it to both Redux and IndexedDB', async () => {
             const { store, dispatch, dbApi } = await setupTestEnvironment();

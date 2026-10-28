@@ -1263,8 +1263,8 @@ export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode
                 spaceKey: generateSpaceKeyBase64(),
             })
         );
-        dispatch(pushSpaceRequest({ id: spaceId }));
 
+        // The conversation, not the space, records whether this is a ghost chat.
         const conversationId = newConversationId();
         dispatch(
             addConversation({
@@ -1279,6 +1279,8 @@ export function initializeNewSpaceAndConversation(createdAt: string, isGhostMode
                 ...(pendingArtifactCreation !== null && { artifactCreation: pendingArtifactCreation }),
             })
         );
+        // pushSpace needs the conversation in Redux to decide whether to save this space remotely.
+        dispatch(pushSpaceRequest({ id: spaceId }));
         dispatch(pushConversationRequest({ id: conversationId }));
         if (pendingArtifactCreation !== null) {
             dispatch(clearPendingArtifactCreation());
