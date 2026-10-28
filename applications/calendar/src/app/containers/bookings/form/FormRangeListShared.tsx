@@ -65,6 +65,7 @@ export const EndTimeInput = ({ id, range, duration, onChange, className }: Input
             id={id}
             value={range.end}
             min={isRangeInTwoDays ? startOfDay(range.end) : addMinutes(range.start, duration)}
+            interval={Math.min(duration, 30)}
             onChange={onChange}
             className={className}
             error={range?.error === BookingRangeError.TOO_SHORT}
