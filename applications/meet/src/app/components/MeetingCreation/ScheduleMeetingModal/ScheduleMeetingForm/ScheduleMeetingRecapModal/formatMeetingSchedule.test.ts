@@ -1,3 +1,6 @@
+import { enUS, zhCN } from 'date-fns/locale';
+
+import { setDateLocales } from '@proton/shared/lib/i18n';
 import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 
 import { formatMeetingSchedule } from './formatMeetingSchedule';
@@ -99,6 +102,31 @@ describe('formatMeetingSchedule dateTime', () => {
         expect(dateTime).toBe('Fri, Feb 27, 11pm to Sat, Feb 28, 1am');
     });
 
+    it('keeps both relative labels when a meeting crosses midnight', () => {
+        const { dateTime } = formatMeetingSchedule({
+            ...baseInput,
+            startTime: new Date('2026-02-24T22:45:00Z'),
+            endTime: new Date('2026-02-24T23:15:00Z'),
+        });
+
+        expect(dateTime).toBe('Today · Feb 24, 11:45pm to Tomorrow · Feb 25, 12:15am');
+    });
+
+    it('keeps the locale time format outside English', () => {
+        setDateLocales({ dateLocale: zhCN });
+        try {
+            const { dateTime } = formatMeetingSchedule({
+                ...baseInput,
+                startTime: new Date('2026-02-27T02:00:00Z'),
+                endTime: new Date('2026-02-27T02:30:00Z'),
+            });
+
+            expect(dateTime).toBe('2月27日周五, 上午3:00 to 上午3:30');
+        } finally {
+            setDateLocales({ dateLocale: enUS });
+        }
+    });
+
     it('appends the timezone when it differs from the device timezone', () => {
         const { dateTime } = formatMeetingSchedule({
             ...baseInput,
@@ -143,18 +171,18 @@ describe('formatMeetingSchedule recurrence', () => {
     });
 
     it('lists several weekly days Monday first', () => {
-        expect(recurrenceFor('FREQ=WEEKLY;BYDAY=FR,MO,WE')).toBe('Repeats every Mon, Wed, and Fri');
+        expect(recurrenceFor('FREQ=WEEKLY;BYDAY=FR,MO,WE')).toBe('Repeats every Mon, Wed and Fri');
     });
 
     it('lists several days for a weekly interval', () => {
         expect(recurrenceFor('FREQ=WEEKLY;INTERVAL=3;BYDAY=MO,WE,FR')).toBe(
-            'Repeats every 3 weeks on Mon, Wed, and Fri'
+            'Repeats every 3 weeks on Mon, Wed and Fri'
         );
     });
 
     it('does not treat a weekday preset with an interval as every weekday', () => {
         expect(recurrenceFor('FREQ=WEEKLY;INTERVAL=2;BYDAY=MO,TU,WE,TH,FR')).toBe(
-            'Repeats every 2 weeks on Mon, Tue, Wed, Thu, and Fri'
+            'Repeats every 2 weeks on Mon, Tue, Wed, Thu and Fri'
         );
     });
 

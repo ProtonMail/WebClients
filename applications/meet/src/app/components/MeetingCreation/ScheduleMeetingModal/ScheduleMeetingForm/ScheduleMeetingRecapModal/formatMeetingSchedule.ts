@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { fromRruleString } from '@proton/shared/lib/calendar/vcal';
+import { getShortenDayFormat } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 
@@ -87,17 +88,20 @@ const formatDateLabel = (date: Date, now: Date, timeZone: string) => {
 
 const formatTime = (date: Date, timeZone: string, timeFormat: SETTINGS_TIME_FORMAT) => {
     const use12Hour = shouldUse12HourClock(timeFormat);
-    const parts = new Intl.DateTimeFormat(getLocale(), {
+    const locale = getLocale();
+    const formatter = new Intl.DateTimeFormat(locale, {
         timeZone,
         hour: use12Hour ? 'numeric' : '2-digit',
         minute: '2-digit',
         hourCycle: use12Hour ? 'h12' : 'h23',
-    }).formatToParts(date);
-    const read = (type: string) => parts.find((part) => part.type === type)?.value ?? '';
+    });
 
-    if (!use12Hour) {
-        return `${read('hour')}:${read('minute')}`;
+    if (!use12Hour || !locale.startsWith('en')) {
+        return formatter.format(date);
     }
+
+    const parts = formatter.formatToParts(date);
+    const read = (type: string) => parts.find((part) => part.type === type)?.value ?? '';
     const minutes = read('minute') === '00' ? '' : `:${read('minute')}`;
     return `${read('hour')}${minutes}${read('dayPeriod').toLowerCase()}`;
 };
@@ -163,25 +167,18 @@ const parseRecurrencePattern = (rrule: string, startDate: CalendarDate): Recurre
     }
 };
 
-const formatOrdinal = (value: number) => {
-    const locale = getLocale();
-    if (!locale.startsWith('en')) {
-        return String(value);
-    }
-    const suffixes: Record<string, string> = { one: 'st', two: 'nd', few: 'rd', other: 'th' };
-    return `${value}${suffixes[new Intl.PluralRules('en', { type: 'ordinal' }).select(value)]}`;
-};
-
-const formatWeekdays = (weekdays: WeekdayCode[]) => {
-    const sorted = WEEKDAY_CODES.filter((code) => weekdays.includes(code));
-    const mondayReference = Date.UTC(2024, 0, 1);
-    const names = sorted.map((code) =>
-        new Intl.DateTimeFormat(getLocale(), {
-            timeZone: 'UTC',
-            weekday: sorted.length === 1 ? 'long' : 'short',
-        }).format(mondayReference + WEEKDAY_CODES.indexOf(code) * MILLISECONDS_PER_DAY)
+const formatWeekdayName = (code: WeekdayCode, weekday: 'long' | 'short') =>
+    new Intl.DateTimeFormat(getLocale(), { timeZone: 'UTC', weekday }).format(
+        Date.UTC(2024, 0, 1) + WEEKDAY_CODES.indexOf(code) * MILLISECONDS_PER_DAY
     );
-    return new Intl.ListFormat(getLocale(), { style: 'long', type: 'conjunction' }).format(names);
+
+const sortWeekdays = (weekdays: WeekdayCode[]) => WEEKDAY_CODES.filter((code) => weekdays.includes(code));
+
+const formatWeekdayList = (weekdays: WeekdayCode[]) => {
+    const names = sortWeekdays(weekdays).map((code) => formatWeekdayName(code, 'short'));
+    const lastWeekday = names[names.length - 1];
+    const leadingWeekdays = names.slice(0, -1).join(', ');
+    return c('Meeting schedule').t`${leadingWeekdays} and ${lastWeekday}`;
 };
 
 const isWorkWeek = (weekdays: WeekdayCode[]) =>
@@ -204,18 +201,28 @@ const phraseRecurrence = (pattern: RecurrencePattern): string => {
             if (interval === 1 && isWorkWeek(weekdays)) {
                 return c('Meeting schedule').t`Repeats every weekday`;
             }
-            const days = formatWeekdays(weekdays);
+            if (weekdays.length === 1) {
+                const weekdayName = formatWeekdayName(weekdays[0], 'long');
+                return interval === 1
+                    ? c('Meeting schedule').t`Repeats every ${weekdayName}`
+                    : c('Meeting schedule').ngettext(
+                          msgid`Repeats every ${interval} week on ${weekdayName}`,
+                          `Repeats every ${interval} weeks on ${weekdayName}`,
+                          interval
+                      );
+            }
+            const weekdayList = formatWeekdayList(weekdays);
             return interval === 1
-                ? c('Meeting schedule').t`Repeats every ${days}`
+                ? c('Meeting schedule').t`Repeats every ${weekdayList}`
                 : c('Meeting schedule').ngettext(
-                      msgid`Repeats every ${interval} week on ${days}`,
-                      `Repeats every ${interval} weeks on ${days}`,
+                      msgid`Repeats every ${interval} week on ${weekdayList}`,
+                      `Repeats every ${interval} weeks on ${weekdayList}`,
                       interval
                   );
         }
         case 'monthly': {
             const { interval } = pattern;
-            const ordinalDay = formatOrdinal(pattern.dayOfMonth);
+            const ordinalDay = getShortenDayFormat(new Date(2024, 0, pattern.dayOfMonth));
             return interval === 1
                 ? c('Meeting schedule').t`Repeats on the ${ordinalDay} of each month`
                 : c('Meeting schedule').ngettext(
