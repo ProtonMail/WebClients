@@ -22,6 +22,7 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
+import { composersInitialState } from '@proton/mail-composer/store/composers/composersSlice';
 import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
@@ -51,7 +52,6 @@ import ChecklistsProvider from '../../containers/onboardingChecklist/provider/Ch
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { MailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
 import type { AttachmentsState } from '../../store/attachments/attachmentsTypes';
-import { composersInitialState } from '../../store/composers/composersSlice';
 import { mailContactsInitialState } from '../../store/contacts/contactsSlice';
 import type { ConversationsState } from '../../store/conversations/conversationsTypes';
 import { newElementsState } from '../../store/elements/elementsSlice';

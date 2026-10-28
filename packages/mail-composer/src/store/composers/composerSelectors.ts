@@ -1,11 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { MailState } from '../store';
-import type { ComposerID } from './composerTypes';
+import type { ComposerID, ComposersStoreState } from './composerTypes';
 
-const composers = (state: MailState) => state.composers.composers;
-const composerID = (_: MailState, ID: ComposerID) => ID;
-const hasFocusedComposer = (state: MailState) => state.composers.hasFocusedComposer;
+const composers = (state: ComposersStoreState) => state.composers.composers;
+const composerID = (_: ComposersStoreState, ID: ComposerID) => ID;
+const hasFocusedComposer = (state: ComposersStoreState) => state.composers.hasFocusedComposer;
 
 export const selectComposersCount = createSelector([composers], (composers) => Object.values(composers).length);
 

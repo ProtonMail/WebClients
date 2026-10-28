@@ -7,18 +7,17 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Label from '@proton/components/components/label/Label';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
-
-import { useMailSelector } from '../../../store/hooks';
 
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import type { RecipientType } from '../../../models/address';
 import { recipientTypes } from '../../../models/address';
 import type { MapSendInfo } from '../../../models/crypto';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
-import { selectComposer } from '../../../store/composers/composerSelectors';
+import { useMailSelector } from '../../../store/hooks';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import AddressesCCButton from './AddressesCCButton';
 
@@ -61,12 +60,13 @@ const AddressesSummary = ({
                 ])}
                 data-testid="composer:address"
             >
-                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/prefer-tag-over-role */}
+                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
                 <span
                     className="text-ellipsis flex-1 composer-addresses-fakefield-inner pr-4"
                     title={title}
                     onClick={onFocus}
                     onFocus={onFocus}
+                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                     role="button"
                     tabIndex={0}
                 >

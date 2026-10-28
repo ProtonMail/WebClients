@@ -1,4 +1,4 @@
-import type { ComposerID } from '../../store/composers/composerTypes';
+import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 
 export interface ComposerKeyedManager<TValue> {
     get: (composerID: ComposerID) => TValue | undefined;

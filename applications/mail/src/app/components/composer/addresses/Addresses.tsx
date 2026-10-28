@@ -4,15 +4,14 @@ import { useEffect, useRef, useState } from 'react';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
 import ContactSelectorModal from '@proton/components/containers/contacts/selector/ContactSelectorModal';
-import useToggle from '@proton/hooks/useToggle'
+import useToggle from '@proton/hooks/useToggle';
+import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
+import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import noop from '@proton/utils/noop';
-
-import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import type { RecipientType } from '../../../models/address';
-import { selectComposer } from '../../../store/composers/composerSelectors';
-import { composerActions } from '../../../store/composers/composersSlice';
+import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 

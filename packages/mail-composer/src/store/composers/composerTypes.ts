@@ -1,13 +1,13 @@
-import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import type { Optional } from '@proton/shared/lib/interfaces/utils';
 
-import type { RecipientType } from '../../models/address';
+export type ComposerRecipients = Pick<MessageMetadata, 'ToList' | 'CCList' | 'BCCList'>;
 
 type ComposerFields = {
     ID: string;
     messageID: string;
     senderEmailAddress: string;
-    recipients: Record<RecipientType, Recipient[]>;
+    recipients: ComposerRecipients;
     /** TODO: Remove later. Used to trigger changes from a hook while moving to Redux */
     changesCount: number;
     forceOpenScheduleSend?: boolean;
@@ -34,4 +34,9 @@ export type ComposerID = string;
 export interface ComposersState {
     composers: Record<ComposerID, Composer>;
     hasFocusedComposer: boolean;
+}
+
+/** The part of the host application's store that holds the composers slice. */
+export interface ComposersStoreState {
+    composers: ComposersState;
 }

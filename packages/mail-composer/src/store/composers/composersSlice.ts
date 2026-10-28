@@ -1,12 +1,10 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { RecipientType } from '../../models/address';
-import { globalReset } from '../actions';
-import type { Composer, ComposerID, ComposersState } from './composerTypes';
+import type { Composer, ComposerID, ComposerRecipients, ComposersState } from './composerTypes';
 
 export const composersInitialState: ComposersState = {
     composers: {},
@@ -23,7 +21,13 @@ const composersSlice = createSlice({
         addComposer(state, action: PayloadAction<Composer>) {
             state.composers[action.payload.ID] = action.payload;
         },
-        setInitialized(state, action: PayloadAction<{ ID: ComposerID; message: MessageState }>) {
+        setInitialized(
+            state,
+            action: PayloadAction<{
+                ID: ComposerID;
+                message: { data?: Pick<MessageMetadata, 'Sender' | 'ToList' | 'CCList' | 'BCCList'> };
+            }>
+        ) {
             state.composers[action.payload.ID].senderEmailAddress = action.payload.message?.data?.Sender?.Address;
             state.composers[action.payload.ID].recipients = {
                 ToList: action.payload.message.data?.ToList || [],
@@ -39,7 +43,10 @@ const composersSlice = createSlice({
             state.composers[ID].senderEmailAddress = emailAddress;
             state.composers[ID].changesCount += 1;
         },
-        setRecipients(state, action: PayloadAction<{ ID: ComposerID; type: RecipientType; recipients: Recipient[] }>) {
+        setRecipients(
+            state,
+            action: PayloadAction<{ ID: ComposerID; type: keyof ComposerRecipients; recipients: Recipient[] }>
+        ) {
             const { ID, type, recipients } = action.payload;
             state.composers[ID].recipients[type] = recipients;
             state.composers[ID].changesCount += 1;
@@ -56,11 +63,6 @@ const composersSlice = createSlice({
         setHasFocusedComposer(state, action: PayloadAction<boolean>) {
             state.hasFocusedComposer = action.payload;
         },
-    },
-    extraReducers: (builder) => {
-        builder.addCase(globalReset, (state) => {
-            Object.keys(state.composers).forEach((key) => delete state.composers[key]);
-        });
     },
 });
 
