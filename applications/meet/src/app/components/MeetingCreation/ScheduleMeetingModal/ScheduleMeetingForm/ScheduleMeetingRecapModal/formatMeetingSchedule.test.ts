@@ -1,7 +1,7 @@
 import { enUS, zhCN } from 'date-fns/locale';
 
 import { setDateLocales } from '@proton/shared/lib/i18n';
-import { SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
+import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
 
 import { formatMeetingSchedule } from './formatMeetingSchedule';
 
@@ -13,6 +13,7 @@ const baseInput = {
     timeZone: 'Europe/Zurich',
     rrule: null,
     timeFormat: SETTINGS_TIME_FORMAT.H12,
+    dateFormat: SETTINGS_DATE_FORMAT.LOCALE_DEFAULT,
     now,
     deviceTimeZone: 'Europe/Zurich',
 };
@@ -137,6 +138,56 @@ describe('formatMeetingSchedule dateTime', () => {
 
         expect(dateTime).toBe('Fri, Feb 27, 11am to 12pm (America/New_York)');
     });
+
+    it('puts the day before the month for the DD/MM/YYYY date format', () => {
+        const { dateTime } = formatMeetingSchedule({ ...baseInput, dateFormat: SETTINGS_DATE_FORMAT.DDMMYYYY });
+
+        expect(dateTime).toBe('Fri, 27 Feb, 11am to 12pm');
+    });
+
+    it('puts the month before the day for the MM/DD/YYYY date format', () => {
+        const { dateTime } = formatMeetingSchedule({
+            ...baseInput,
+            dateFormat: SETTINGS_DATE_FORMAT.MMDDYYYY,
+            startTime: new Date('2027-03-05T10:00:00Z'),
+            endTime: new Date('2027-03-05T11:00:00Z'),
+        });
+
+        expect(dateTime).toBe('Fri, Mar 5, 2027, 11am to 12pm');
+    });
+
+    it('puts the year first for the YYYY/MM/DD date format', () => {
+        const { dateTime } = formatMeetingSchedule({
+            ...baseInput,
+            dateFormat: SETTINGS_DATE_FORMAT.YYYYMMDD,
+            startTime: new Date('2027-03-05T10:00:00Z'),
+            endTime: new Date('2027-03-05T11:00:00Z'),
+        });
+
+        expect(dateTime).toBe('Fri, 2027, Mar 5, 11am to 12pm');
+    });
+
+    it('uses the date format next to relative labels', () => {
+        const { dateTime } = formatMeetingSchedule({
+            ...baseInput,
+            dateFormat: SETTINGS_DATE_FORMAT.DDMMYYYY,
+            startTime: new Date('2026-02-24T10:00:00Z'),
+            endTime: new Date('2026-02-24T11:00:00Z'),
+        });
+
+        expect(dateTime).toBe('Today · 24 Feb, 11am to 12pm');
+    });
+
+    it('formats the date in the meeting timezone for an explicit date format', () => {
+        const { dateTime } = formatMeetingSchedule({
+            ...baseInput,
+            dateFormat: SETTINGS_DATE_FORMAT.DDMMYYYY,
+            startTime: new Date('2026-02-27T23:30:00Z'),
+            endTime: new Date('2026-02-28T00:00:00Z'),
+        });
+
+        expect(dateTime).toBe('Sat, 28 Feb, 12:30am to 1am');
+    });
 });
 
 describe('formatMeetingSchedule recurrence', () => {
@@ -200,6 +251,16 @@ describe('formatMeetingSchedule recurrence', () => {
 
     it('describes a yearly rule with an interval', () => {
         expect(recurrenceFor('FREQ=YEARLY;INTERVAL=2')).toBe('Repeats every 2 years on Feb 27');
+    });
+
+    it('uses the date format for a yearly rule', () => {
+        const { recurrence } = formatMeetingSchedule({
+            ...baseInput,
+            rrule: 'FREQ=YEARLY',
+            dateFormat: SETTINGS_DATE_FORMAT.DDMMYYYY,
+        });
+
+        expect(recurrence).toBe('Repeats every year on 27 Feb');
     });
 
     it('falls back to the frequency for a monthly rule with an ordinal weekday', () => {
