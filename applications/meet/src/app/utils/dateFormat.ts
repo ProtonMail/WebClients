@@ -1,4 +1,4 @@
-import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
+import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 export const getExplicitDateFormatPattern = (
     dateFormat: SETTINGS_DATE_FORMAT,

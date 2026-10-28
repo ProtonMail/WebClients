@@ -1,7 +1,7 @@
 import { enUS, zhCN } from 'date-fns/locale';
 
 import { setDateLocales } from '@proton/shared/lib/i18n';
-import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
+import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { formatMeetingSchedule } from './formatMeetingSchedule';
 

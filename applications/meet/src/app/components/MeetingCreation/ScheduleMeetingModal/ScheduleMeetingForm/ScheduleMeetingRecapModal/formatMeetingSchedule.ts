@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 import { fromRruleString } from '@proton/shared/lib/calendar/vcal';
 import { getShortenDayFormat } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import type { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces';
+import type { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { getExplicitDateFormatPattern } from '../../../../../utils/dateFormat';
 import { shouldUse12HourClock } from '../../../../../utils/timeFormat';
