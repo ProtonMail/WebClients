@@ -84,7 +84,7 @@ const getMeetCoreInitParams = (
     const env = `${window.location.origin}/api`;
     const userAgent = navigator.userAgent;
     const dbPath = '';
-    const host = `${window.location.hostname}/meet/api/`;
+    const host = `${window.location.host}/meet/api/`;
 
     return { env, appVersion, userAgent, dbPath, httpHost: host, wsHost: host, userId, uid };
 };
