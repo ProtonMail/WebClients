@@ -80,6 +80,8 @@ export type HomepageViewValue = {
   updateRenamedDocumentInCache: (uniqueId: string, name: string) => Promise<void>
   isRecentsUpdating: boolean
   type: ProtonDocumentType | undefined
+  /** Known only with recents loaded through the Drive SDK, once the My files folder has loaded. */
+  myFilesRootUid?: string
 }
 
 export const HomepageViewContext = createContext<HomepageViewValue | undefined>(undefined)
