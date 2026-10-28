@@ -6655,6 +6655,12 @@
       ],
       "We'll get back to you shortly.": [
         "Brzy se vám ozveme."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Požádejte správce o navýšení tarifu, nebo odeberte stránku z postraního panelu Rezervačních stránek v ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pro přidání nové rezervační stránky odeberte již existující stránku z postranního panelu Rezervačních stránek v ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -13457,6 +13463,11 @@
       ],
       "Protection for two in a single plan": [
         "Ochrana pro dva v jednom plánu"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } desktopová aplikace"
       ]
     }
   }
