@@ -62,6 +62,8 @@ export const entitlementChecksForSelection = {
 
     isPassB2B: (r) => r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsPass] }),
 
+    isDriveB2B: (r) => r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsDrive] }),
+
     isVpnOrPassB2B: (r) =>
         r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsVpn] }) ||
         r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsPass] }),

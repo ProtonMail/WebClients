@@ -57,7 +57,6 @@ import useShowDashboard, {
     useShowGenericDashboard,
 } from '@proton/components/hooks/accounts/useShowDashboard';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
-import { useDrivePlan } from '@proton/components/hooks/drive/useDrivePlan';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
@@ -246,8 +245,6 @@ const MainContainer = () => {
 
     const canShowGenericDashboard = useShowGenericDashboard(app);
 
-    const { isB2B: isB2BDrive } = useDrivePlan();
-
     const [isGroupOwner, loadingIsGroupOwner] = useIsGroupOwner();
 
     const canDisplayNonPrivateEmailPhone = useFlag('B2BNonPrivateEmailPhone');
@@ -286,7 +283,6 @@ const MainContainer = () => {
     const organizationSettingsRouterParams: OrganizationSettingsRouterParams = {
         groups,
         organization,
-        isB2BDrive,
         isGroupOwner,
         isOrganizationOwner,
         permissions: permissions ?? EMPTY_ORG_PERMISSIONS,

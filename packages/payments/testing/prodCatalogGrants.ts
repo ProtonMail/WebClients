@@ -1,23 +1,37 @@
 import { PLANS } from '../core/constants';
 import { EntitlementName } from '../core/entitlements/entitlement-names';
-import { type Entitlement, EntitlementScope, EntitlementType } from '../core/entitlements/interface';
+import { type Entitlement, EntitlementType } from '../core/entitlements/interface';
 import { createEntitlementResolverForOrgAndUser } from '../core/entitlements/resolver';
 import {
     type UserAndOrganizationForSubscriptions,
     getUnreadableSubscriptionsReason,
 } from '../core/entitlements/unreadable-subscriptions';
-import { buildEntitlementCatalog } from './buildEntitlementCatalog';
+import { type Grant, buildEntitlementCatalog, catalogEntry } from './buildEntitlementCatalog';
 import { buildSubscription } from './buildSubscription';
 import { makeEntitlements } from './makeEntitlements';
 import { regularAdmin } from './regularAdmin';
 
+const maxRevisionDays = (Quantity: number) =>
+    catalogEntry(EntitlementName.MaxRevisionDays, { Type: EntitlementType.Value, Quantity });
+
 export const prodCatalogGrants = {
+    [PLANS.DRIVE]: [EntitlementName.FlagsDrive, maxRevisionDays(3650)],
+    [PLANS.DRIVE_LITE]: [EntitlementName.FlagsDrive, maxRevisionDays(7)],
+    [PLANS.BUNDLE]: [
+        EntitlementName.FlagsInbox,
+        EntitlementName.FlagsVpn,
+        EntitlementName.FlagsPass,
+        EntitlementName.FlagsDrive,
+        EntitlementName.CustomDomainAddresses,
+        maxRevisionDays(3650),
+    ],
     [PLANS.MAIL]: [EntitlementName.FlagsInbox, EntitlementName.CustomDomainAddresses],
     [PLANS.FAMILY]: [
         EntitlementName.FlagsInbox,
         EntitlementName.FlagsVpn,
         EntitlementName.MultiUser,
         EntitlementName.CustomDomainAddresses,
+        maxRevisionDays(3650),
     ],
     [PLANS.MAIL_PRO]: [
         EntitlementName.FlagsInbox,
@@ -35,11 +49,13 @@ export const prodCatalogGrants = {
     [PLANS.BUNDLE_PRO_2024]: [
         EntitlementName.FlagsInbox,
         EntitlementName.FlagsVpn,
+        EntitlementName.FlagsDrive,
         EntitlementName.Business,
         EntitlementName.Groups,
         EntitlementName.MultiUser,
         EntitlementName.CustomDomainAddresses,
         EntitlementName.CustomOrganizationLogo,
+        maxRevisionDays(3650),
     ],
     [PLANS.BUNDLE_BIZ_2025]: [
         EntitlementName.FlagsInbox,
@@ -53,6 +69,7 @@ export const prodCatalogGrants = {
         EntitlementName.MultiUser,
         EntitlementName.CustomDomainAddresses,
         EntitlementName.CustomOrganizationLogo,
+        maxRevisionDays(3650),
     ],
     [PLANS.VISIONARY]: [
         EntitlementName.FlagsInbox,
@@ -63,14 +80,23 @@ export const prodCatalogGrants = {
         EntitlementName.MultiUser,
         EntitlementName.CustomDomainAddresses,
         EntitlementName.CustomOrganizationLogo,
+        maxRevisionDays(3650),
+    ],
+    [PLANS.DRIVE_PRO]: [
+        EntitlementName.FlagsDrive,
+        EntitlementName.Business,
+        EntitlementName.MultiUser,
+        maxRevisionDays(3650),
     ],
     [PLANS.DRIVE_BUSINESS]: [
+        EntitlementName.FlagsDrive,
         EntitlementName.Business,
         EntitlementName.OrganizationPolicy,
         EntitlementName.Groups,
         EntitlementName.MultiUser,
         EntitlementName.ExternalManagedMembers,
         EntitlementName.CustomOrganizationLogo,
+        maxRevisionDays(365),
     ],
     [PLANS.VPN_PRO]: [
         EntitlementName.FlagsVpn,
@@ -112,16 +138,28 @@ export const prodCatalogGrants = {
         EntitlementName.Sso,
         EntitlementName.CustomOrganizationLogo,
     ],
-} satisfies Partial<Record<PLANS, EntitlementName[]>>;
+} satisfies Partial<Record<PLANS, Grant[]>>;
 
 export type CataloguedPlan = keyof typeof prodCatalogGrants;
 
-export const toOrganizationEntitlement = (name: EntitlementName): Entitlement => ({
-    Name: name,
-    Type: EntitlementType.Switch,
-    Quantity: 1,
-    Scope: EntitlementScope.Organization,
-});
+export const toOrganizationEntitlement = (grant: Grant): Entitlement => {
+    const { Name, Type, Quantity, Scope } = typeof grant === 'string' ? catalogEntry(grant) : grant;
+    return { Name, Type, Quantity, Scope } as Entitlement;
+};
+
+export const buildOrganizationEntitlements = (plans: CataloguedPlan[]): Entitlement[] => {
+    const entitlementsByName = new Map<EntitlementName, Entitlement>();
+    const grants = plans.flatMap((plan): Grant[] => prodCatalogGrants[plan]);
+
+    for (const entitlement of grants.map(toOrganizationEntitlement)) {
+        const granted = entitlementsByName.get(entitlement.Name);
+        if (!granted || granted.Quantity < entitlement.Quantity) {
+            entitlementsByName.set(entitlement.Name, entitlement);
+        }
+    }
+
+    return [...entitlementsByName.values()];
+};
 
 export const buildOrgAndUserEntitlementChecks = ({
     subscriptionPlans,
@@ -130,12 +168,11 @@ export const buildOrgAndUserEntitlementChecks = ({
 }: {
     subscriptionPlans: CataloguedPlan[];
 } & Partial<UserAndOrganizationForSubscriptions>) => {
-    const grantedNames = [...new Set(subscriptionPlans.flatMap((plan) => prodCatalogGrants[plan]))];
     const canReadSubscriptions = getUnreadableSubscriptionsReason({ user, organization }) === undefined;
 
     return createEntitlementResolverForOrgAndUser({
         entitlementCatalog: buildEntitlementCatalog(prodCatalogGrants),
-        entitlements: makeEntitlements(grantedNames.map(toOrganizationEntitlement)),
+        entitlements: makeEntitlements(buildOrganizationEntitlements(subscriptionPlans)),
         subscriptions: canReadSubscriptions ? subscriptionPlans.map((plan) => buildSubscription(plan)) : [],
         user,
         organization,

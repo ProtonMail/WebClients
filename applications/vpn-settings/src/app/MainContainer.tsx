@@ -156,7 +156,6 @@ const MainContainer: FunctionComponent = () => {
     const organizationSettingsRouterParams: OrganizationSettingsRouterParams = {
         groups,
         organization,
-        isB2BDrive: false,
         isGroupOwner,
         isOrganizationOwner,
         permissions: permissions ?? EMPTY_ORG_PERMISSIONS,
