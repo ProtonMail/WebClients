@@ -426,6 +426,9 @@ test('the service executes through the new repository and persists a normal conv
         isCurrentAccount: () => true,
         bridge: {
             connect: async () => ({ connectionId: 'connection', protocolVersion: 1 }),
+            runNow: async () => {
+                throw new Error('Not used by this fixture');
+            },
             replaceSchedules: async ({ schedules }) => {
                 expect(schedules[0].id).toBe(details.id);
             },

@@ -60,6 +60,11 @@ function harness({
             connectionId: `connection-${++connections}`,
             protocolVersion: 1 as const,
         })),
+        runNow: mockMethod<DesktopSchedulesApi['runNow']>(async ({ scheduleId }) => {
+            const run = { ...pendingRun, runId: 'manual-run', scheduleId };
+            records.set(run.runId, { ...run });
+            return run;
+        }),
         replaceSchedules: mockMethod<DesktopSchedulesApi['replaceSchedules']>(async () => {}),
         getPendingRuns: mockMethod<DesktopSchedulesApi['getPendingRuns']>(async () =>
             [...records.values()].filter((run) => run.status === 'pending').map((run) => ({ ...run }))
@@ -390,5 +395,33 @@ it('stops processing after the account changes during a failed claim', async () 
     await h.service.start();
     expect(h.runExecutor.claim).toHaveBeenCalledTimes(1);
     expect(h.bridge.reportRunStatus).not.toHaveBeenCalled();
+    expect(h.runExecutor.execute).not.toHaveBeenCalled();
+});
+
+it('queues an immediate run through native and executes it using the normal durable lifecycle', async () => {
+    const h = harness({ runs: [] });
+    await h.service.start();
+    const run = await h.service.runNow(definition.id);
+    await h.service.refresh();
+    expect(h.bridge.runNow).toHaveBeenCalledWith({ connectionId: 'connection-1', scheduleId: definition.id });
+    expect(h.runExecutor.claim).toHaveBeenCalledWith(run, expect.anything());
+    expect(h.runExecutor.execute).toHaveBeenCalledTimes(1);
+    expect(h.records.get(run.runId)?.status).toBe('succeeded');
+});
+
+it('rejects manual execution when stopped or missing its executor', async () => {
+    const h = harness({ executor: false, runs: [] });
+    await expect(h.service.runNow(definition.id)).rejects.toThrow('unavailable');
+    await h.service.start();
+    await expect(h.service.runNow(definition.id)).rejects.toThrow('unavailable');
+    expect(h.bridge.runNow).not.toHaveBeenCalled();
+});
+
+it('surfaces manual queue errors without executing work', async () => {
+    const h = harness({ runs: [] });
+    await h.service.start();
+    h.bridge.runNow.mockRejectedValueOnce(new Error('disk unavailable'));
+    await expect(h.service.runNow(definition.id)).rejects.toThrow('disk unavailable');
+    expect(h.runExecutor.claim).not.toHaveBeenCalled();
     expect(h.runExecutor.execute).not.toHaveBeenCalled();
 });
