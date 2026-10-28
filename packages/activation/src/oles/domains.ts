@@ -32,6 +32,26 @@ export const getRecordHost = (host: string | undefined, subdomain: string | unde
     return host ? `${host}.${subdomain}` : subdomain;
 };
 
+const findDomainName = (domainNames: string[], domainName: string | undefined) =>
+    domainName ? domainNames.find((name) => name.toLowerCase() === domainName.toLowerCase()) : undefined;
+
+/**
+ * Returns the provider's spelling of the selected domain, else the first domain.
+ */
+export const resolveMigrationDomainName = (
+    domainNames: string[],
+    selectedDomainName: string | undefined
+): string | undefined => findDomainName(domainNames, selectedDomainName) ?? domainNames[0];
+
+export const sortMigrationDomainNames = (domainNames: string[], adminDomainName: string | undefined): string[] => {
+    const isAdminDomain = (name: string) => name.toLowerCase() === adminDomainName?.toLowerCase();
+    return [...domainNames].sort(
+        (a, b) =>
+            Number(isAdminDomain(b)) - Number(isAdminDomain(a)) ||
+            a.localeCompare(b, undefined, { sensitivity: 'base' })
+    );
+};
+
 export const KNOWN_REGISTRARS = new Map<number, { name: string; url?: string }>([
     [1068, { name: 'Namecheap', url: getKnowledgeBaseUrl('/custom-domain-namecheap') }],
     [1910, { name: 'Cloudflare', url: getKnowledgeBaseUrl('/custom-domain-cloudflare') }],

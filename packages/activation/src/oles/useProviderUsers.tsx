@@ -10,7 +10,6 @@ import {
 } from 'react';
 
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import noop from '@proton/utils/noop';
 
 import { getOrganizationUsers } from '../api/api';
 import type {
@@ -44,6 +43,7 @@ export const ProviderUsersProvider = ({ children }: { children: ReactNode }) => 
 };
 
 export const useProviderUsers = (
+    importerOrganizationId: string | undefined,
     domainName: string | undefined,
     provider: ApiImportProvider,
     useCachedData: boolean = false
@@ -51,31 +51,50 @@ export const useProviderUsers = (
     const api = useSilentApi();
     const { data, setData, loading, setLoading, fetchedKeyRef } = useContext(Context);
 
+    const key = importerOrganizationId && domainName ? `${provider}:${domainName}` : undefined;
+
     const refresh = useCallback(async () => {
         setLoading(true);
 
-        if (!domainName) {
+        if (!key || !domainName) {
             setData({ Users: [] });
             setLoading(false);
             return;
         }
 
+        // The key can change while the request is in flight
+        const isCurrent = () => fetchedKeyRef.current === key;
+
         return api<ApiImporterOrganizationUsers>(
             getOrganizationUsers({ DomainName: domainName, Provider: provider }, useCachedData)
         )
-            .then((r) => setData({ Users: r.Users, TooManyUsers: r.TooManyUsers }))
-            .catch(data ? noop : () => setData({ Users: [] }))
-            .finally(() => setLoading(false));
-    }, [domainName, provider, useCachedData]);
+            .then((r) => {
+                if (isCurrent()) {
+                    setData({ Users: r.Users, TooManyUsers: r.TooManyUsers });
+                }
+            })
+            .catch(() => {
+                if (isCurrent() && !data) {
+                    setData({ Users: [] });
+                }
+            })
+            .finally(() => {
+                if (isCurrent()) {
+                    setLoading(false);
+                }
+            });
+    }, [key, useCachedData]);
 
     useEffect(() => {
-        const key = domainName ? `${provider}:${domainName}` : undefined;
         if (key && fetchedKeyRef.current === key) {
             return;
         }
         fetchedKeyRef.current = key;
         void refresh();
-    }, [domainName, provider]);
+    }, [key]);
 
-    return [data?.Users, loading, refresh, data?.TooManyUsers ?? false];
+    // The effect starts fetching a new key only after this render
+    const isLoading = loading || (key !== undefined && fetchedKeyRef.current !== key);
+
+    return [data?.Users, isLoading, refresh, data?.TooManyUsers ?? false];
 };
