@@ -2,12 +2,10 @@ import { renderHook } from '@testing-library/react-hooks';
 import loudRejection from 'loud-rejection';
 
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { SafeLabelCount } from '@proton/shared/lib/interfaces/Label';
 
 import { clearAll } from '../../helpers/tests/helper';
 import { mockUseScheduleSendFeature } from '../../helpers/tests/mockUseScheduleSendFeature';
-import { useMailboxCounter } from '../mailboxCounter/useMailboxCounter';
+import { useComposerHost } from './useComposerHost';
 import { useScheduleSend } from './useScheduleSend';
 
 loudRejection();
@@ -58,9 +56,8 @@ jest.mock('ttag', () => ({
     }),
 }));
 
-jest.mock('../mailboxCounter/useMailboxCounter');
-const mockUseMailboxCounter = useMailboxCounter as jest.Mock;
-const mockGetLocationCount = jest.fn();
+jest.mock('./useComposerHost');
+const mockUseComposerHost = useComposerHost as jest.Mock;
 
 jest.mock('./useSendVerifications', () => ({
     useSendVerifications: () => ({
@@ -119,18 +116,11 @@ describe('useScheduleSend', () => {
 
         mockUseFlag.mockReturnValue(mockOverrides?.isRetentionPoliciesEnabled ?? false);
 
-        // Setup mailbox counter mock
-        const scheduleCount: SafeLabelCount = {
-            LabelID: MAILBOX_LABEL_IDS.SCHEDULED,
-            Total: mockOverrides?.scheduleCount ?? 0,
-            Unread: 0,
-        };
-        mockGetLocationCount.mockReturnValue(scheduleCount);
-        mockUseMailboxCounter.mockReturnValue({
-            loading: mockOverrides?.loadingScheduleCount ?? false,
-            counterMap: {},
-            getLocationCount: mockGetLocationCount,
-            getCurrentLocationCount: jest.fn(),
+        mockUseComposerHost.mockReturnValue({
+            scheduledCount: mockOverrides?.scheduleCount ?? 0,
+            scheduledCountLoading: mockOverrides?.loadingScheduleCount ?? false,
+            onMessageSent: jest.fn(),
+            onDraftDiscarded: jest.fn(),
         });
 
         const { result } = renderHook(() =>
@@ -209,13 +199,12 @@ describe('useScheduleSend', () => {
     });
 
     describe('scheduleCount', () => {
-        it('should return the scheduled location count from the mailbox counter', () => {
+        it('should return the scheduled count from the composer host', () => {
             const modelMessage = createMockMessage();
 
             const { scheduleCount } = setup(modelMessage, { scheduleCount: 10 });
 
-            expect(mockGetLocationCount).toHaveBeenCalledWith(MAILBOX_LABEL_IDS.SCHEDULED);
-            expect(scheduleCount.Total).toBe(10);
+            expect(scheduleCount).toBe(10);
         });
 
         it('should handle zero scheduled messages', () => {
@@ -223,12 +212,12 @@ describe('useScheduleSend', () => {
 
             const { scheduleCount } = setup(modelMessage, { scheduleCount: 0 });
 
-            expect(scheduleCount.Total).toBe(0);
+            expect(scheduleCount).toBe(0);
         });
     });
 
     describe('loadingScheduleCount', () => {
-        it('should expose the loading state from the mailbox counter', () => {
+        it('should expose the loading state from the composer host', () => {
             const modelMessage = createMockMessage();
 
             const { loadingScheduleCount } = setup(modelMessage, { loadingScheduleCount: true });
@@ -236,7 +225,7 @@ describe('useScheduleSend', () => {
             expect(loadingScheduleCount).toBe(true);
         });
 
-        it('should be false once the mailbox counter has loaded', () => {
+        it('should be false once the composer host has loaded the count', () => {
             const modelMessage = createMockMessage();
 
             const { loadingScheduleCount } = setup(modelMessage, { loadingScheduleCount: false });
