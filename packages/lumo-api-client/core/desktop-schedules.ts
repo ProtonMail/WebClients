@@ -31,6 +31,8 @@ export interface DesktopSchedulesApi {
     connect(input: { accountId: string; protocolVersion: 1 }): Promise<ScheduleConnection>;
     /** Complete snapshot for this device. A fetch failure must never become an empty snapshot. */
     replaceSchedules(input: { connectionId: string; schedules: ScheduleDefinition[] }): Promise<void>;
+    /** Queues an immediate run without changing the recurring schedule. */
+    runNow(input: { connectionId: string; scheduleId: string }): Promise<ScheduleRun>;
     getPendingRuns(input: { connectionId: string }): Promise<ScheduleRun[]>;
     getUnsettledRuns(input: { connectionId: string }): Promise<ScheduleRun[]>;
     reportRunStatus(input: {
