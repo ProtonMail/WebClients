@@ -24,16 +24,16 @@ import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
+import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
-import { dateLocale } from '@proton/shared/lib/i18n';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConditionalTooltip } from '../../../../../atoms/ConditionalTooltip/ConditionalTooltip';
 import type { MeetingVariant } from '../../../../../types';
-import { formatDate, formatTimeHHMM } from '../../../../../utils/timeFormat';
 import { DeleteMeetingModal } from '../../../../DashboardMeetingList/DeleteMeetingModal';
 import { TranslucentModal } from '../../../../TranslucentModal/TranslucentModal';
 import { ScheduleMeetingRecapAnimatedIcon } from './ScheduleMeetingRecapAnimatedIcon';
+import { formatMeetingSchedule } from './formatMeetingSchedule';
 import { calendarDateFormats } from './utils';
 
 import './ScheduleMeetingRecapModal.scss';
@@ -86,19 +86,15 @@ export const ScheduleMeetingRecapModal = ({
     const notifications = useNotifications();
     const [isDeleteMeetingModalOpen, setIsDeleteMeetingModalOpen] = useState(false);
 
-    const endsOnSameDay = (() => {
-        const formatter = new Intl.DateTimeFormat(dateLocale.code, {
-            timeZone: timeZone,
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-        });
-
-        const startDateStr = formatter.format(startTime);
-        const endDateStr = formatter.format(endTime);
-
-        return startDateStr === endDateStr;
-    })();
+    const { dateTime, recurrence } = formatMeetingSchedule({
+        startTime,
+        endTime,
+        timeZone,
+        rrule,
+        timeFormat,
+        now: new Date(),
+        deviceTimeZone: getTimezone(),
+    });
 
     const uriMeetingLink = encodeURIComponent(meetingLink);
     const uriTitle = encodeURIComponent(meetingName);
@@ -252,34 +248,19 @@ export const ScheduleMeetingRecapModal = ({
                                 {isEdit ? c('Title').t`Meeting edited` : c('Title').t`Meeting created`}
                             </span>
                         </div>
-                        <div className="create-container-title mb-3 w-full text-center text-wrap-balance text-break">
+                        <div className="create-container-title mb-4 w-full text-center text-wrap-balance text-break">
                             {meetingName}
                         </div>
                     </h1>
                 </div>
 
-                <p className="color-weak mt-0 text-center w-full">
-                    {endsOnSameDay ? (
-                        <span className="inline-flex justify-center flex-row items-center color-weak gap-1">
-                            <span>{formatDate(startTime, timeZone)}</span>
-                            <span>
-                                {formatTimeHHMM(startTime, timeFormat, timeZone)} -{' '}
-                                {formatTimeHHMM(endTime, timeFormat, timeZone)} ({timeZone})
-                            </span>
-                        </span>
-                    ) : (
-                        <span className="inline-flex justify-center flex-row items-center color-weak gap-1">
-                            <span>
-                                {formatDate(startTime, timeZone)} {formatTimeHHMM(startTime, timeFormat, timeZone)} (
-                                {timeZone})
-                            </span>
-                            <span>
-                                {formatDate(endTime, timeZone)} {formatTimeHHMM(endTime, timeFormat, timeZone)} (
-                                {timeZone})
-                            </span>
-                        </span>
-                    )}
-                </p>
+                <div
+                    style={{ fontWeight: 'var(--font-weight-medium)', lineHeight: 1.5 }}
+                    className="color-weak text-rg text-center text-break text-wrap-balance flex flex-column gap-1 m-0 w-full"
+                >
+                    <p className="m-0">{dateTime}</p>
+                    {recurrence && <p className="m-0">{recurrence}</p>}
+                </div>
                 <div className="flex flex-column items-center align-center mt-10 gap-10">
                     <div className="w-full">
                         <Card
