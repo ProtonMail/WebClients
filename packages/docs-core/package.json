@@ -10,6 +10,7 @@
     "./Bridge/ClientToEditorBridge": "./lib/Bridge/ClientToEditorBridge.ts",
     "./Bridge/EditorInvoker": "./lib/Bridge/EditorInvoker.ts",
     "./Bridge/Events": "./lib/Bridge/Events.ts",
+    "./Crypto/useCreateDocumentNode": "./lib/Crypto/useCreateDocumentNode.ts",
     "./Crypto/useGetCacheConfig": "./lib/Crypto/useGetCacheConfig.ts",
     "./Crypto/useGetDefaultShareAddressKeys": "./lib/Crypto/useGetDefaultShareAddressKeys.ts",
     "./Crypto/useGetMemberAddressKeys": "./lib/Crypto/useGetMemberAddressKeys.ts",

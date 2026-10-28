@@ -1,6 +1,7 @@
 import { useGetAddresses } from '@proton/account/addresses/hooks'
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks'
 import type { Author } from '@proton/drive/sdk'
+import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address'
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email'
 import { useCallback } from 'react'
 import { getMyFilesRootFolder } from '../DriveSDK/getMyFilesNodeMeta'
@@ -19,7 +20,9 @@ export function useGetDefaultShareAddressKeys() {
       const email = getAuthorEmail(myFiles.keyAuthor)
       const address = email
         ? (await getAddresses()).find(
-            ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(email),
+            (address) =>
+              canonicalizeInternalEmail(address.Email) === canonicalizeInternalEmail(email) &&
+              getIsAddressEnabled(address),
           )
         : undefined
       if (!address) {
