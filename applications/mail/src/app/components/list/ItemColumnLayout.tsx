@@ -47,6 +47,7 @@ interface Props {
     userSettings?: UserSettings;
     oneTimeCode?: string | null;
     shouldShowPrimaryBadge: boolean;
+    showHoverButtons: boolean;
 }
 
 const ItemColumnLayout = ({
@@ -63,6 +64,7 @@ const ItemColumnLayout = ({
     userSettings,
     oneTimeCode,
     shouldShowPrimaryBadge,
+    showHoverButtons,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -247,13 +249,15 @@ const ItemColumnLayout = ({
                         </div>
                     </div>
                 </div>
-                <ItemHoverButtons
-                    element={element}
-                    labelID={labelID}
-                    onBack={onBack}
-                    size="small"
-                    shouldShowPrimaryBadge={shouldShowPrimaryBadge}
-                />
+                {showHoverButtons && (
+                    <ItemHoverButtons
+                        element={element}
+                        labelID={labelID}
+                        onBack={onBack}
+                        size="small"
+                        shouldShowPrimaryBadge={shouldShowPrimaryBadge}
+                    />
+                )}
             </div>
 
             {hasLabels && !isCompactView && (
