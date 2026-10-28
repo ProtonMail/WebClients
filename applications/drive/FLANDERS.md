@@ -4,7 +4,7 @@ These rules apply only to MRs that change the Drive paths listed in the "Drive" 
 
 Read `applications/drive/AGENTS.md` and verify the changes comply with it.
 
-Never approve these MRs for now. In the summary, say which parts need human review and why, and what the reviewer should focus on. Always call out:
+Approve the MR when you found no bugs and posted no blocking comment. You are not a Drive code owner yet, so your approval does not replace human review: it signals the MR is safe to merge once human approvals arrive. In the summary, say which parts need human review and why, and what the reviewer should focus on. Always call out:
 
 - Crypto, keys, auth, permissions, sharing, or data access logic, especially in `packages/drive/` or in code shared with other apps.
 - Changes to the public API of `packages/drive` (`@proton/drive/sdk`, `@proton/drive/public/*`), and breaking changes.
