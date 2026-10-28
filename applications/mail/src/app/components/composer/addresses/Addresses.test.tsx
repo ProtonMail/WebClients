@@ -3,6 +3,7 @@ import type { MutableRefObject } from 'react';
 import { act, fireEvent, getAllByRole, getByText, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -15,7 +16,6 @@ import { minimalCache } from '../../../helpers/tests/cache';
 import { clearAll } from '../../../helpers/tests/helper';
 import { mailTestRender } from '../../../helpers/tests/render';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { addComposerAction } from '../../../store/composers/composerActions';
 import Addresses from './Addresses';
 
 jest.mock('@proton/shared/lib/helpers/dom', () => ({

@@ -3112,6 +3112,9 @@ importers:
       '@proton/mail':
         specifier: workspace:^
         version: link:../../packages/mail
+      '@proton/mail-composer':
+        specifier: workspace:^
+        version: link:../../packages/mail-composer
       '@proton/mail-renderer':
         specifier: workspace:^
         version: link:../../packages/mail-renderer
@@ -7858,6 +7861,13 @@ importers:
         version: '@typescript/typescript6@6.0.2'
 
   packages/mail-composer:
+    dependencies:
+      '@proton/shared':
+        specifier: workspace:^
+        version: link:../shared
+      '@reduxjs/toolkit':
+        specifier: 'catalog:'
+        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@19.3.0)(redux@5.0.1))(react@19.3.0)
     devDependencies:
       '@proton/jest-swc-preset':
         specifier: workspace:^
@@ -36536,6 +36546,18 @@ snapshots:
       react: 18.3.1
       react-redux: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
 
+  '@reduxjs/toolkit@2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@19.3.0)(redux@5.0.1))(react@19.3.0)':
+    dependencies:
+      '@standard-schema/spec': 1.1.0
+      '@standard-schema/utils': 0.3.0
+      immer: 11.1.21
+      redux: 5.0.1
+      redux-thunk: 3.1.0(redux@5.0.1)
+      reselect: 5.2.0
+    optionalDependencies:
+      react: 19.3.0
+      react-redux: 9.3.0(@types/react@18.3.31)(react@19.3.0)(redux@5.0.1)
+
   '@remix-run/router@1.23.4': {}
 
   '@ricky0123/vad-web@0.0.30':
@@ -48550,6 +48572,16 @@ snapshots:
       '@types/react': 18.3.31
       redux: 5.0.1
 
+  react-redux@9.3.0(@types/react@18.3.31)(react@19.3.0)(redux@5.0.1):
+    dependencies:
+      '@types/use-sync-external-store': 0.0.6
+      react: 19.3.0
+      use-sync-external-store: 1.6.0(react@19.3.0)
+    optionalDependencies:
+      '@types/react': 18.3.31
+      redux: 5.0.1
+    optional: true
+
   react-refresh@0.17.0: {}
 
   react-refresh@0.19.0: {}
@@ -51267,6 +51299,11 @@ snapshots:
   use-sync-external-store@1.6.0(react@18.3.1):
     dependencies:
       react: 18.3.1
+
+  use-sync-external-store@1.6.0(react@19.3.0):
+    dependencies:
+      react: 19.3.0
+    optional: true
 
   usehooks-ts@3.1.1(react@18.3.1):
     dependencies:

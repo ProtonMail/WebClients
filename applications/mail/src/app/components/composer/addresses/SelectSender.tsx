@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
+import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
+import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import generateUID from '@proton/utils/generateUID';
 
 import useGetSenderOptions from '../../../hooks/composer/useGetSenderOptions';
-import { selectComposer } from '../../../store/composers/composerSelectors';
-import type { ComposerID } from '../../../store/composers/composerTypes';
-import { composerActions } from '../../../store/composers/composersSlice';
 import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 
 interface Props {

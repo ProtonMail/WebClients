@@ -16,6 +16,8 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useHandler } from '@proton/hooks/useHandler';
+import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
+import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
@@ -31,8 +33,6 @@ import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
 import { isDirtyAddress } from '../../helpers/addresses';
 import { insertBodyIntoNewDraft } from '../../helpers/composer/contentFromComposerMessage';
-import { addComposerAction } from '../../store/composers/composerActions';
-import { composerActions } from '../../store/composers/composersSlice';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
 import { openDraft, updateDraftContent } from '../../store/messages/draft/messagesDraftActions';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';

@@ -1,11 +1,9 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import type { MailSettingState } from '@proton/mail/store/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Optional } from '@proton/shared/lib/interfaces/utils';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import type { MailState } from '../rootReducer';
-import type { MailThunkArguments } from '../thunk';
 import type { Composer } from './composerTypes';
 import { composerActions } from './composersSlice';
 
@@ -19,9 +17,13 @@ type AddComposerActionPayload = Optional<
     'recipients'
 > & { ID?: string };
 
+interface AddComposerState {
+    mailSettings: { value?: Pick<MailSettings, 'ComposerMode'> };
+}
+
 export const addComposerAction = (
     payload: AddComposerActionPayload
-): ThunkAction<Promise<void>, MailState & MailSettingState, MailThunkArguments, UnknownAction> => {
+): ThunkAction<Promise<void>, AddComposerState, unknown, UnknownAction> => {
     return async (dispatch, getState) => {
         const state = getState();
 

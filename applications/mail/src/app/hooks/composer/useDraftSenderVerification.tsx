@@ -6,13 +6,13 @@ import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type { MessageChange } from '../../components/composer/Composer';
 import { getAddressFromEmail, getFromAddress } from '../../helpers/addresses';
-import { composerActions } from '../../store/composers/composersSlice';
 import { useMailDispatch } from '../../store/hooks';
 
 interface Props {

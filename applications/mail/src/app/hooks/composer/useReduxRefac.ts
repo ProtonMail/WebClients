@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
+import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
@@ -12,8 +14,6 @@ import type { MessageChange } from '../../components/composer/Composer';
 import { getAddressFromEmail } from '../../helpers/addresses';
 import { changeSignature } from '../../helpers/message/messageSignature';
 import type { RecipientType } from '../../models/address';
-import { selectComposer } from '../../store/composers/composerSelectors';
-import type { ComposerID } from '../../store/composers/composerTypes';
 import { useMailSelector } from '../../store/hooks';
 
 interface Props {
