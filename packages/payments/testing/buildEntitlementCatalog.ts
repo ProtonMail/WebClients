@@ -9,7 +9,7 @@ import {
     EntitlementType,
 } from '../core/entitlements/interface';
 
-type Grant = EntitlementName | EntitlementCatalogEntry;
+export type Grant = EntitlementName | EntitlementCatalogEntry;
 
 export const catalogEntry = (
     Name: EntitlementName,

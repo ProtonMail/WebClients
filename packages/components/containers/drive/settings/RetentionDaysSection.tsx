@@ -19,12 +19,12 @@ export const RetentionDaysSection = () => {
     const { revisionRetentionDays, hasValueChanged, isLoading, isSubmitLoading, handleSubmit, handleChange } =
         useRevisionRetentionDays(hasPaidDrive, showConfirmActionModal);
 
-    const { options, canUpsellFree, canUpsellB2B } = useRetentionOptions(revisionRetentionDays);
+    const { options, canUpsellFree, canContactSalesForLongerHistory } = useRetentionOptions(revisionRetentionDays);
 
     return (
         <div className="max-w-custom" style={{ '--max-w-custom': '41em' }}>
             {canUpsellFree && <FreeUpgradeBanner />}
-            {canUpsellB2B && isAdmin && <BusinessUpgradeBanner />}
+            {canContactSalesForLongerHistory && isAdmin && <BusinessUpgradeBanner />}
             <form className="flex flex-column items-start gap-2 mt-6" onSubmit={handleSubmit}>
                 <span className="sr-only" id="id_desc_history">
                     {c('Info').t`Version history`}
