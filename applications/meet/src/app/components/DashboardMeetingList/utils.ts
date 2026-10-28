@@ -6,7 +6,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
-import { getExplicitDateFormatPattern } from '../../utils/dateFormat';
+import { getDateFormatPattern } from '../../utils/dateFormat';
 
 export interface MeetingsByDay {
     [date: string]: Meeting[];
@@ -71,17 +71,8 @@ const getRelativeDate = (dateString: string, absoluteDate: string): string | nul
 };
 
 const formatAbsoluteDate = (date: Date, isCurrentYear: boolean, dateFormat: SETTINGS_DATE_FORMAT): string => {
-    const pattern = getExplicitDateFormatPattern(dateFormat, { month: 'MMMM', withYear: !isCurrentYear });
-    if (pattern) {
-        return format(date, pattern, { locale: dateLocale });
-    }
-
-    // Format according to locale
-    return new Intl.DateTimeFormat(dateLocale.code, {
-        month: 'long',
-        day: 'numeric',
-        ...(isCurrentYear ? {} : { year: 'numeric' }),
-    }).format(date);
+    const pattern = getDateFormatPattern(dateFormat, { month: 'MMMM', withYear: !isCurrentYear });
+    return format(date, pattern, { locale: dateLocale });
 };
 
 export const formatMeetingDate = (

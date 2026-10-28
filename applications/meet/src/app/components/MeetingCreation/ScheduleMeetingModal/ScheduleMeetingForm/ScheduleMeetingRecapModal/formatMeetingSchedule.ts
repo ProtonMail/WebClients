@@ -6,7 +6,7 @@ import { getShortenDayFormat } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
-import { getExplicitDateFormatPattern } from '../../../../../utils/dateFormat';
+import { getDateFormatPattern } from '../../../../../utils/dateFormat';
 import { shouldUse12HourClock } from '../../../../../utils/timeFormat';
 
 interface MeetingScheduleInput {
@@ -65,11 +65,8 @@ const getWeekdayCode = (calendarDate: CalendarDate): WeekdayCode => {
 };
 
 const formatMonthDay = (date: Date, timeZone: string, dateFormat: SETTINGS_DATE_FORMAT) => {
-    const pattern = getExplicitDateFormatPattern(dateFormat, { month: 'MMM', withYear: false });
-    if (pattern) {
-        return formatInTimeZone(date, timeZone, pattern, { locale: dateLocale });
-    }
-    return new Intl.DateTimeFormat(getLocale(), { timeZone, month: 'short', day: 'numeric' }).format(date);
+    const pattern = getDateFormatPattern(dateFormat, { month: 'MMM', withYear: false });
+    return formatInTimeZone(date, timeZone, pattern, { locale: dateLocale });
 };
 
 const formatDateLabel = (date: Date, now: Date, timeZone: string, dateFormat: SETTINGS_DATE_FORMAT) => {
@@ -85,17 +82,8 @@ const formatDateLabel = (date: Date, now: Date, timeZone: string, dateFormat: SE
     }
 
     const isCurrentYear = getCalendarDate(date, timeZone).year === getCalendarDate(now, timeZone).year;
-    const pattern = getExplicitDateFormatPattern(dateFormat, { month: 'MMM', withYear: !isCurrentYear });
-    if (pattern) {
-        return formatInTimeZone(date, timeZone, `EEE, ${pattern}`, { locale: dateLocale });
-    }
-    return new Intl.DateTimeFormat(getLocale(), {
-        timeZone,
-        weekday: 'short',
-        month: 'short',
-        day: 'numeric',
-        ...(isCurrentYear ? {} : { year: 'numeric' }),
-    }).format(date);
+    const pattern = getDateFormatPattern(dateFormat, { month: 'MMM', withYear: !isCurrentYear });
+    return formatInTimeZone(date, timeZone, `EEE, ${pattern}`, { locale: dateLocale });
 };
 
 const formatTime = (date: Date, timeZone: string, timeFormat: SETTINGS_TIME_FORMAT) => {

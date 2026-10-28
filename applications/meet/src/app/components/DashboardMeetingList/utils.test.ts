@@ -1,15 +1,21 @@
-import { enUS } from 'date-fns/locale';
+import type { Locale } from 'date-fns';
+import { enGB, enUS } from 'date-fns/locale';
 
 import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { formatMeetingDate } from './utils';
 
+const mockedI18n = vi.hoisted(() => ({ dateLocale: undefined as unknown as Locale }));
+
 vi.mock('@proton/shared/lib/i18n', () => ({
-    dateLocale: enUS,
+    get dateLocale() {
+        return mockedI18n.dateLocale;
+    },
 }));
 
 describe('formatMeetingDate', () => {
     beforeEach(() => {
+        mockedI18n.dateLocale = enUS;
         vi.useFakeTimers();
         vi.setSystemTime(new Date('2026-03-17T12:00:00Z'));
     });
@@ -131,18 +137,25 @@ describe('formatMeetingDate', () => {
     });
 
     describe('LOCALE_DEFAULT format', () => {
-        it('should use Intl.DateTimeFormat for locale default - same year', () => {
-            const result = formatMeetingDate('2026-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT);
-            expect(result).toContain('June');
-            expect(result).toContain('15');
-            expect(result).not.toContain('2026');
+        it('should put the month first for a month-first locale - same year', () => {
+            expect(formatMeetingDate('2026-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT)).toBe('June 15');
         });
 
-        it('should include year in Intl.DateTimeFormat for different year', () => {
-            const result = formatMeetingDate('2025-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT);
-            expect(result).toContain('June');
-            expect(result).toContain('15');
-            expect(result).toContain('2025');
+        it('should put the month first for a month-first locale - different year', () => {
+            expect(formatMeetingDate('2025-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT)).toBe('June 15, 2025');
+        });
+
+        it('should take the day-first order from the date locale', () => {
+            mockedI18n.dateLocale = { ...enUS, formatLong: enGB.formatLong };
+            expect(formatMeetingDate('2026-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT)).toBe('15 June');
+        });
+
+        it('should take the year-first order from the date locale', () => {
+            mockedI18n.dateLocale = {
+                ...enUS,
+                formatLong: { ...enUS.formatLong, date: () => 'yyyy/MM/dd' } as Locale['formatLong'],
+            };
+            expect(formatMeetingDate('2025-06-15', SETTINGS_DATE_FORMAT.LOCALE_DEFAULT)).toBe('2025, June 15');
         });
     });
 
