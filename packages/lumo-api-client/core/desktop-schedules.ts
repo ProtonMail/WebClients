@@ -22,6 +22,10 @@ export type ScheduleRun = {
     scheduledFor: string;
     status: ScheduleRunStatus;
     updatedAt: string;
+    /** User-requested extra run that does not advance the recurrence. */
+    manual?: boolean;
+    /** Whether this run was late (e.g. computer was asleep). */
+    late?: boolean;
 };
 
 export type ScheduleConnection = { connectionId: string; protocolVersion: 1 };

@@ -1,21 +1,18 @@
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
-import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
-import { ALWAYS_LOCAL_TIMEZONE_ID } from '../../../components/RecurrenceRuleFieldset/types';
 import type { ScheduleDetails } from '../types';
-import { ScheduleNextRunLabel } from './ScheduleNextRunLabel';
+import { useScheduleRunState } from '../useScheduleRunState';
+import { ScheduleRunPrimaryLabel } from './ScheduleRunPrimaryLabel';
+import { ScheduleRunSecondaryLabel } from './ScheduleRunSecondaryLabel';
 import { DeleteScheduledTaskPrompt } from './modals/DeleteScheduledTaskPrompt';
-import { getScheduleCadenceLabel } from './utils/cadence-label';
 
 import './ScheduledTaskCard.scss';
 
@@ -23,15 +20,14 @@ interface ScheduledTaskCardProps {
     onDelete?: () => void | Promise<void>;
     onEdit?: () => void;
     schedule: ScheduleDetails;
+    scheduleId: string;
 }
 
-export const ScheduledTaskCard = ({ onDelete, onEdit, schedule }: ScheduledTaskCardProps) => {
+export const ScheduledTaskCard = ({ onDelete, onEdit, schedule, scheduleId }: ScheduledTaskCardProps) => {
     const deleteTaskPrompt = useModalStateObject();
-    const [userSettings] = useUserSettings();
+    const { isRunning, isPaused } = useScheduleRunState(scheduleId);
 
     const { recurrenceRule } = schedule;
-    const cadenceLabel = getScheduleCadenceLabel(recurrenceRule, getWeekStartsOn(userSettings));
-    const usesFixedTimezone = recurrenceRule.timezone !== ALWAYS_LOCAL_TIMEZONE_ID;
     const taskDisplayName =
         schedule.name.trim() ||
         // translator: Display name for an untitled task.
@@ -42,7 +38,21 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule }: ScheduledTaskC
             <div className="scheduled-task-card flex flex-column px-5 py-4 border rounded-xl bg-norm">
                 <div className="flex flex-nowrap items-center gap-2 w-full">
                     <h4 className="scheduled-task-card__title flex-1 m-0 text-semibold">{schedule.name}</h4>
-                    <span aria-hidden className="scheduled-task-card__status-dot shrink-0 rounded-full" />
+                    {isRunning ? (
+                        <LumoIcon
+                            aria-hidden
+                            className="scheduled-task-card__running-icon shrink-0"
+                            name="LoaderCircle"
+                            size={16}
+                        />
+                    ) : (
+                        <span
+                            aria-hidden
+                            className={clsx('scheduled-task-card__status-dot shrink-0 rounded-full', {
+                                'scheduled-task-card__status-dot--enabled': !isPaused,
+                            })}
+                        />
+                    )}
                     <div className="relative shrink-0 flex">
                         <SimpleDropdown
                             as={Button}
@@ -87,13 +97,12 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule }: ScheduledTaskC
                 <p className="m-0 text-rg text-ellipsis-two-lines color-weak">{schedule.instructions}</p>
 
                 <div className="flex flex-nowrap items-center justify-space-between gap-2 w-full">
-                    <Tooltip title={usesFixedTimezone ? `${cadenceLabel} (${recurrenceRule.timezone})` : cadenceLabel}>
-                        <span className="scheduled-task-card__schedule-chip inline-flex flex-nowrap items-center gap-1 min-w-0 text-sm">
-                            {usesFixedTimezone && <LumoIcon aria-hidden className="shrink-0" name="Globe" size={12} />}
-                            <span className="min-w-0 text-ellipsis">{cadenceLabel}</span>
-                        </span>
-                    </Tooltip>
-                    <ScheduleNextRunLabel className="text-sm color-weak" rule={recurrenceRule} />
+                    <ScheduleRunPrimaryLabel chip rule={recurrenceRule} scheduleId={scheduleId} />
+                    <ScheduleRunSecondaryLabel
+                        className="text-sm color-hint"
+                        rule={recurrenceRule}
+                        scheduleId={scheduleId}
+                    />
                     <LumoIcon aria-hidden className="shrink-0 color-hint" name="LaptopMinimal" size={14} />
                 </div>
             </div>

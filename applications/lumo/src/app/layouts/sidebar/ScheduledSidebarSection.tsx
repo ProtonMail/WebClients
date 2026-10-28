@@ -2,6 +2,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { ScheduleSidebarLabel } from '../../features/schedules/components/ScheduleSidebarLabel';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectLatestRunsByScheduleId, selectSchedulesSortedByLatestRun } from '../../redux/selectors';
 import { CollapsibleSidebarSection } from './components/CollapsibleSidebarSection';
@@ -36,6 +37,7 @@ export const ScheduledSidebarSection = ({ onItemClick }: { onItemClick?: () => v
                                 id,
                                 to: run ? `/c/${run.id}` : `/schedules/${id}`,
                                 label: schedule.name,
+                                trailingLabel: <ScheduleSidebarLabel rule={schedule.recurrenceRule} scheduleId={id} />,
                                 isSelected: id === currentSpaceId || id === scheduleRoute?.params.scheduleId,
                             };
                         })}

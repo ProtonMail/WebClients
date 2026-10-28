@@ -2,7 +2,12 @@ import { DAY, HOUR, MINUTE } from '@proton/shared/lib/constants';
 
 import type { RecurrenceRule } from '../../../../components/RecurrenceRuleFieldset/types';
 import { ALWAYS_LOCAL_TIMEZONE_ID } from '../../../../components/RecurrenceRuleFieldset/types';
-import { getNextScheduleRun, getScheduleNextRunLabel } from './next-run';
+import {
+    getNextScheduleRun,
+    getScheduleNextRunLabel,
+    getScheduleRunHistoryLabel,
+    getScheduleRunLabel,
+} from './run-label';
 
 const time = { hour: 7, minute: 45, timezone: 'UTC' };
 
@@ -185,5 +190,89 @@ describe('getScheduleNextRunLabel', () => {
         expect(
             getScheduleNextRunLabel({ ...time, frequency: 'WEEKLY', byWeekDay: [] }, new Date(runAt))
         ).toBeUndefined();
+    });
+});
+
+describe('getScheduleRunLabel', () => {
+    beforeEach(() => {
+        jest.useFakeTimers();
+        jest.setSystemTime(new Date('2026-10-27T10:00:00Z'));
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
+    it('distinguishes the first queued task from other queued tasks', () => {
+        const queued = { isRunning: false, isQueued: true, isFirstInQueue: false, isPaused: false };
+        expect(getScheduleRunLabel(queued)).toBe('Queued');
+        expect(getScheduleRunLabel({ ...queued, isFirstInQueue: true })).toBe('Queued · Running next');
+    });
+    const now = new Date('2026-10-27T10:00:00Z');
+    const idle = { isRunning: false, isQueued: false, isFirstInQueue: false, isPaused: false };
+
+    it.each([
+        [0, 'Started just now'],
+        [MINUTE - 1, 'Started just now'],
+        [MINUTE, 'Started 1 minute ago'],
+        [5 * MINUTE, 'Started 5 minutes ago'],
+        [HOUR, 'Started 1 hour ago'],
+        [2 * HOUR, 'Started 2 hours ago'],
+        [DAY, 'Started 1 day ago'],
+        [2 * DAY, 'Started 2 days ago'],
+        [-MINUTE, 'Started just now'],
+    ])('formats elapsed time %s', (elapsed, expected) => {
+        expect(
+            getScheduleRunLabel({ ...idle, isRunning: true, startedAt: new Date(+now - elapsed).toISOString() })
+        ).toBe(expected);
+    });
+
+    it('falls back to the next run after execution ends', () => {
+        expect(getScheduleRunLabel(idle)).toBeUndefined();
+    });
+
+    it('shows queued runs', () => {
+        expect(getScheduleRunLabel({ ...idle, isQueued: true })).toBe('Queued');
+    });
+
+    it('shows queued manual runs on paused schedules, and elapsed time during execution', () => {
+        expect(getScheduleRunLabel({ ...idle, isQueued: true, isPaused: true })).toBe('Queued');
+        expect(getScheduleRunLabel({ ...idle, isPaused: true })).toBe('Resume to run again');
+        expect(getScheduleRunLabel({ ...idle, isRunning: true, isPaused: true })).toBe('Started just now');
+    });
+});
+
+describe('getScheduleRunHistoryLabel', () => {
+    const scheduledFor = '2026-10-27T09:00:00Z';
+    const run = {
+        runId: 'run',
+        scheduleId: 'schedule',
+        timingRevision: 1,
+        scheduledFor,
+        updatedAt: scheduledFor,
+        status: 'pending' as const,
+    };
+    const metadata = { run, status: 'succeeded' as const, messageIds: [] };
+
+    it.each([undefined, false, true])('uses the scheduler late flag: %s', (late) => {
+        expect(getScheduleRunHistoryLabel({ ...metadata, run: { ...run, late } })).toBe(
+            late ? 'Ran late' : 'On schedule'
+        );
+    });
+
+    it('prioritizes manual runs over the late flag', () => {
+        expect(getScheduleRunHistoryLabel({ ...metadata, run: { ...run, manual: true, late: true } })).toBe(
+            'Ran manually'
+        );
+    });
+
+    it.each(['running', 'failed', 'interrupted'] as const)('preserves the %s outcome', (status) => {
+        expect(getScheduleRunHistoryLabel({ ...metadata, run: { ...run, manual: true, late: true }, status })).toBe(
+            status[0].toUpperCase() + status.slice(1)
+        );
+    });
+
+    it('omits the label when run metadata is missing', () => {
+        expect(getScheduleRunHistoryLabel(undefined)).toBeUndefined();
     });
 });
