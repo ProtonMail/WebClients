@@ -38,16 +38,45 @@ describe('BYOE creation funnel telemetry', () => {
             source: 'mail-web-checklist-byoe',
             provider: 'google',
             isConversion: 'false',
+            variant: 'n/a',
         });
         expect(reports[0].values).toEqual({});
         expect(reports[1].dimensions).toEqual({
             provider: 'google',
             hasImportEmails: 'true',
             importPeriodSelected: 'last_year',
+            variant: 'n/a',
         });
         [1, 2, 3].forEach((index) => expect(reports[index].values).toHaveProperty('durationMs'));
         // The creation is over once the address exists, the upsell modal comes after
         expect(reports[4].values).toEqual({});
+    });
+
+    it('sends the variant of the experiment on every step', () => {
+        const { reports } = mockTracker();
+
+        trackBYOECreationStarted({
+            source: EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST_BYOE,
+            isConversion: false,
+            variant: 'treatment',
+        });
+        trackBYOEGoogleSignInClicked({ hasImportEmails: true, importPeriod: TIME_PERIOD.LAST_YEAR });
+        trackBYOEAuthenticated();
+        trackBYOECreationError('address_creation');
+        trackBYOEImporterCreated({
+            hasImportEmails: true,
+            importPeriod: TIME_PERIOD.LAST_YEAR,
+            isUpsellShown: true,
+            isClaimedAddress: false,
+        });
+        trackBYOEUpsellModalViewed();
+
+        expect(reports).toHaveLength(6);
+        reports.forEach((report) => expect(report.dimensions).toHaveProperty('variant', 'treatment'));
+
+        // A new creation starts without a variant unless told otherwise
+        trackBYOECreationStarted({ source: EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST_BYOE, isConversion: false });
+        expect(reports[6].dimensions).toHaveProperty('variant', 'n/a');
     });
 
     it('keeps the duration across a page reload', () => {

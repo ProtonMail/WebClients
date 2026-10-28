@@ -11,6 +11,11 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn(() => true),
 }));
 
+jest.mock('@proton/unleash/useVariant', () => ({
+    __esModule: true,
+    useVariant: jest.fn(() => ({ name: 'Treatment', enabled: true })),
+}));
+
 describe('AddBYOEModal', () => {
     beforeEach(() => {
         jest.mocked(useFlag).mockReturnValue(true);

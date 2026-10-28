@@ -12,6 +12,11 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: jest.fn(() => true),
 }));
 
+jest.mock('@proton/unleash/useVariant', () => ({
+    __esModule: true,
+    useVariant: jest.fn(() => ({ name: 'Treatment', enabled: true })),
+}));
+
 jest.mock('../../../logic/StoreProvider', () => ({
     __esModule: true,
     default: ({ children }: any) => children,
@@ -114,6 +119,7 @@ describe('GmailSyncModal', () => {
             provider: 'google',
             hasImportEmails: 'true',
             importPeriodSelected: 'big_bang',
+            variant: 'treatment',
         });
         expect(click?.values).toHaveProperty('durationMs');
     });
