@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
-import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
+import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { tracker } from '@proton/telemetry-tracker/tracker';
 
 import { ONBOARDING_STEPS, useOnboardingTracking } from './onboardingEvents';
@@ -24,7 +24,11 @@ const setReplay = (isReplay: boolean) => {
     });
 };
 
-const getEmittedEvents = () => jest.mocked(tracker.emit).mock.calls.map(([event]) => event.event);
+const getEmittedEvents = () =>
+    jest
+        .mocked(tracker.emit)
+        .mock.calls.filter(([event]) => event.group === TelemetryMeasurementGroups.mailOnboarding)
+        .map(([event]) => event.event);
 
 describe('onboarding flow dismissal', () => {
     beforeEach(() => {
@@ -87,5 +91,47 @@ describe('onboarding flow dismissal', () => {
         result.current.trackFlowDismissed();
 
         expect(tracker.emit).not.toHaveBeenCalled();
+    });
+});
+
+describe('signup proof of concept', () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+        sessionStorage.clear();
+        setReplay(false);
+        jest.mocked(useAllSubscriptions).mockReturnValue([[], false]);
+    });
+
+    const getPocEvents = () =>
+        jest
+            .mocked(tracker.emit)
+            .mock.calls.filter(([event]) => event.group === TelemetryMeasurementGroups.mailSignupOnboardingPoc);
+
+    it('sends the welcome step to the PoC group as authenticated, once', () => {
+        const { result } = renderHook(() => useOnboardingTracking());
+
+        result.current.trackStepLoaded(ONBOARDING_STEPS.welcome);
+        result.current.trackStepLoaded(ONBOARDING_STEPS.themeSelection);
+
+        const pocEvents = getPocEvents();
+        expect(pocEvents).toHaveLength(1);
+        expect(pocEvents[0][1]).toMatchObject({
+            dimensions: {
+                flow: 'onboarding',
+                product: 'mail',
+                authState: 'authenticated',
+                step: ONBOARDING_STEPS.welcome,
+                plan: 'free',
+            },
+        });
+    });
+
+    it('does not send it on a replay', () => {
+        setReplay(true);
+        const { result } = renderHook(() => useOnboardingTracking());
+
+        result.current.trackStepLoaded(ONBOARDING_STEPS.welcome);
+
+        expect(getPocEvents()).toHaveLength(0);
     });
 });
