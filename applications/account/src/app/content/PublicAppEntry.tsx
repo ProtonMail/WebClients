@@ -23,6 +23,7 @@ import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { telemetry } from '@proton/shared/lib/telemetry';
+import { initTracker } from '@proton/telemetry-tracker/tracker';
 
 import config from '../config';
 import locales from '../locales';
@@ -55,6 +56,8 @@ const bootstrapApp = () => {
     initMainHost();
     initElectronClassnames();
     initSafariFontFixClassnames();
+    // The unauthenticated signup is served by this entry: without it the telemetry tracker is never initialised
+    initTracker({ api });
     const unauthenticatedApi = createUnauthenticatedApi(api);
     const unleashClient = createUnleash({ api: unauthenticatedApi.apiCallback });
     extendStore({ config, api, authentication, unleashClient, unauthenticatedApi });
