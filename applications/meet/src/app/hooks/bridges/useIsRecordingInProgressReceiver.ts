@@ -57,12 +57,7 @@ export const useIsRecordingInProgressReceiver = () => {
     );
 
     const handleDataReceive = useCallback(
-        // This is the actual typing LiveKit uses for the payload
-        async (
-            // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
-            payload: Uint8Array,
-            participant?: RemoteParticipant
-        ) => {
+        async (payload: Uint8Array<ArrayBuffer>, participant?: RemoteParticipant) => {
             if (!participant || !payload) {
                 return;
             }

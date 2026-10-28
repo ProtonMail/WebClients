@@ -94,6 +94,7 @@ export const CaptionLanguageSelect = () => {
                                     void handleSelect(option.value);
                                 }}
                                 className={clsx('caption-language-option', isSelected && 'is-selected')}
+                                // oxlint-disable-next-line jsx-a11y/role-has-required-aria-props -- aria-selected is set by OptionButton from ariaSelected
                                 role="option"
                                 ariaSelected={isSelected}
                             />

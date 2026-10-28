@@ -115,6 +115,7 @@ const AudioSettingsDropdownComponent = ({
                                 loading={isMicrophoneLoading(DEFAULT_DEVICE_ID)}
                                 label={microphoneState.systemDefaultLabel}
                                 Icon={IcCheckmark}
+                                // oxlint-disable-next-line jsx-a11y/role-has-required-aria-props -- aria-selected is set by OptionButton from ariaSelected
                                 role="option"
                                 ariaSelected={shouldShowSystemDefaultCheckmark(audioDeviceId, microphoneState)}
                             />
@@ -140,6 +141,7 @@ const AudioSettingsDropdownComponent = ({
                                 loading={isMicrophoneLoading(mic.deviceId)}
                                 label={mic.label}
                                 Icon={IcCheckmark}
+                                // oxlint-disable-next-line jsx-a11y/role-has-required-aria-props -- aria-selected is set by OptionButton from ariaSelected
                                 role="option"
                                 ariaSelected={shouldShowDeviceCheckmark(mic.deviceId, audioDeviceId!, microphoneState)}
                             />
@@ -198,6 +200,7 @@ const AudioSettingsDropdownComponent = ({
                                     loading={isSpeakerLoading(DEFAULT_DEVICE_ID)}
                                     label={speakerState.systemDefaultLabel}
                                     Icon={IcCheckmark}
+                                    // oxlint-disable-next-line jsx-a11y/role-has-required-aria-props -- aria-selected is set by OptionButton from ariaSelected
                                     role="option"
                                     ariaSelected={shouldShowSystemDefaultCheckmark(activeOutputDeviceId, speakerState)}
                                 />
@@ -227,6 +230,7 @@ const AudioSettingsDropdownComponent = ({
                                         );
                                     }}
                                     Icon={IcCheckmark}
+                                    // oxlint-disable-next-line jsx-a11y/role-has-required-aria-props -- aria-selected is set by OptionButton from ariaSelected
                                     role="option"
                                     ariaSelected={shouldShowDeviceCheckmark(
                                         speaker.deviceId,

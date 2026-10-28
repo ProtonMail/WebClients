@@ -149,13 +149,7 @@ export const useRoomEventHandlers = ({
     });
 
     const handleDataReceived = useStableCallback(
-        (
-            // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
-            payload: Uint8Array,
-            participant?: RemoteParticipant,
-            _kind?: unknown,
-            topic?: string
-        ) => {
+        (payload: Uint8Array<ArrayBuffer>, participant?: RemoteParticipant, _kind?: unknown, topic?: string) => {
             // Ignore participants publishing on the same topic to avoid impersonation
             if (topic !== ROOM_DELETED_TOPIC || participant) {
                 return;
