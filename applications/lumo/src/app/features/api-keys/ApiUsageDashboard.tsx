@@ -10,12 +10,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Input } from '@proton/atoms/Input/Input';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import CreditsModal from '@proton/components/containers/payments/CreditsModal';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import { CreditsModal } from '@proton/components/containers/payments/CreditsModal';
 import type { Currency } from '@proton/payments/core/interface';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
@@ -262,7 +262,8 @@ const ApiUsageMembers = ({
         <div className="api-usage-members flex flex-column gap-4 w-full max-w-full min-w-0">
             <div className="api-usage-members-toolbar flex flex-column items-stretch justify-space-between gap-3 md:flex-row md:items-center">
                 <div>
-                    <h3 className="text-lg text-semibold color-norm m-0">{c('collider_2025: Title').t`Member usage`}</h3>
+                    <h3 className="text-lg text-semibold color-norm m-0">{c('collider_2025: Title')
+                        .t`Member usage`}</h3>
                     <p className="text-sm color-weak m-0 mt-1">
                         {hasCredits
                             ? c('collider_2025: Info')
@@ -438,7 +439,8 @@ const ApiBalanceStatusMessage = ({ balance, isOrgMember }: { balance: number; is
         }
         return status === 'empty'
             ? c('collider_2025: Status').t`API requests are paused. Top up your balance to resume requests.`
-            : c('collider_2025: Status').t`Your API balance is running low. Top up your balance to avoid interruptions.`;
+            : c('collider_2025: Status')
+                  .t`Your API balance is running low. Top up your balance to avoid interruptions.`;
     })();
 
     return (
