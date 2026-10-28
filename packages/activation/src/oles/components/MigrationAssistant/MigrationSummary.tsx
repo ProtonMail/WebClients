@@ -22,7 +22,12 @@ import type { UserWithExtendedErrors } from './ImportJournalModal';
 import ImportJournalModal, { transferErrorUserFilter } from './ImportJournalModal';
 
 const MigrationSummary: FC<{ model: MigrationModel }> = ({ model }) => {
-    const [providerUsers] = useProviderUsers(model.domainName, model.provider.apiProvider, true);
+    const [providerUsers, providerUsersLoading] = useProviderUsers(
+        model.importerOrganizationId,
+        model.domainName,
+        model.provider.apiProvider,
+        true
+    );
     const [reportUser, setReportUser] = useState<UserWithExtendedErrors>();
     const [finishModalProps, setFinishModalOpen, renderFinishModal] = useModalState();
 
@@ -143,6 +148,7 @@ const MigrationSummary: FC<{ model: MigrationModel }> = ({ model }) => {
 
                         <ProviderUsersTable
                             users={users}
+                            loading={providerUsersLoading}
                             currentUser={model.tokens?.at(0)?.Account}
                             provider={model.provider}
                             hiddenFilters={

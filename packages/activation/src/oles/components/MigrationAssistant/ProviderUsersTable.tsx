@@ -3,6 +3,7 @@ import { type FC, useEffect, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import SearchInput from '@proton/components/components/input/SearchInput';
@@ -51,6 +52,7 @@ export enum ProviderUserFilter {
 
 type Props = {
     users: ApiImporterOrganizationUser[];
+    loading?: boolean;
     currentUser: string | undefined;
     provider: OlesProvider;
     selected?: string[];
@@ -89,6 +91,7 @@ const domainNamesLink = <SettingsLink path="/domain-names">{c('Title').t`Domain 
 
 const ProviderUsersTable: FC<Props> = ({
     users,
+    loading = false,
     currentUser,
     provider,
     selected = [],
@@ -139,6 +142,9 @@ const ProviderUsersTable: FC<Props> = ({
     const filteredSelectable = selectable.filter((id) => filteredSearchProviderUsers.some((u) => u.ID === id));
 
     const total = filteredSearchProviderUsers.length;
+
+    // Refreshes keep the current users on screen
+    const showLoader = loading && !users.length;
 
     const allChecked = filteredSelectable.length > 0 && selected.length === filteredSelectable.length;
 
@@ -225,7 +231,7 @@ const ProviderUsersTable: FC<Props> = ({
                             <Button
                                 color="norm"
                                 onClick={onMigrate}
-                                disabled={disabled}
+                                disabled={disabled || showLoader}
                                 className="flex flex-nowrap items-center gap-2 shrink-0 text-semibold"
                             >
                                 <IcUserArrowRight />
@@ -247,7 +253,7 @@ const ProviderUsersTable: FC<Props> = ({
                                         onChange={handleSelectAll}
                                         checked={allChecked}
                                         indeterminate={!allChecked && selected.length > 0}
-                                        disabled={!filteredSelectable.length || total === 0}
+                                        disabled={showLoader || !filteredSelectable.length || total === 0}
                                     />
                                 )}
                                 <label htmlFor="select-all" className="m-0 flex-1">{c('Table header').t`User`}</label>
@@ -361,7 +367,16 @@ const ProviderUsersTable: FC<Props> = ({
                             )}
                         </TableRow>
                     ))}
-                    {total === 0 && (
+                    {showLoader && (
+                        <TableRow>
+                            <TableCell colSpan={4}>
+                                <div className="p-4 text-center">
+                                    <CircleLoader />
+                                </div>
+                            </TableCell>
+                        </TableRow>
+                    )}
+                    {!showLoader && total === 0 && (
                         <TableRow>
                             <TableCell colSpan={4}>
                                 <div className="p-4 text-center color-weak">{c('Info').t`No users to display`}</div>
