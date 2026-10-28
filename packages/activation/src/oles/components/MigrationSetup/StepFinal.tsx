@@ -34,7 +34,11 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
     const handleError = useErrorHandler();
     const mailAppName = model.provider.mailAppName;
 
-    const [providerUsers] = useProviderUsers(model.domainName, model.provider.apiProvider);
+    const [providerUsers] = useProviderUsers(
+        model.importerOrganizationId,
+        model.domainName,
+        model.provider.apiProvider
+    );
     const [loading, withLoading] = useLoading();
     const [confirmed, setConfirmed] = useState(false);
     const [warningModalProps, setWarningModalOpen, renderWarningModal] = useModalState();

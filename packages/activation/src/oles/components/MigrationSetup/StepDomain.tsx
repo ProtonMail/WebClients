@@ -3,18 +3,23 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { createDomain, syncDomain } from '@proton/account/domains/actions';
+import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import Radio from '@proton/components/components/input/Radio';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { DEFAULT_REGISTRAR_ID, KNOWN_REGISTRARS, getRegistrarByIANAId } from '../../domains';
+import { useProviderDomains } from '../../useProviderDomains';
 import type { StepComponentProps } from './MigrationSetup';
 
 const StepDomain: FC<StepComponentProps> = ({ model, onNext }) => {
@@ -22,6 +27,33 @@ const StepDomain: FC<StepComponentProps> = ({ model, onNext }) => {
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
+    const [domainNames, domainNamesLoading, domainNamesError, refreshDomainNames] = useProviderDomains(
+        model.provider.apiProvider,
+        model.tokens,
+        !model.importerOrganizationId
+    );
+    const [customDomains] = useCustomDomains();
+
+    const isDomainLocked = Boolean(model.importerOrganizationId);
+    const radioDomainNames = isDomainLocked && model.domainName ? [model.domainName] : (domainNames ?? []);
+    const isDomainAdded = (domainName: string) =>
+        Boolean(customDomains?.some((d) => d.DomainName.toLowerCase() === domainName.toLowerCase()));
+
+    // Nothing to choose from: show the domain as a plain card instead of a pre-selected radio.
+    const isSingleDomain = radioDomainNames.length === 1;
+
+    const renderDomainLabel = (domainName: string) => (
+        <span className="flex-1 min-w-0">
+            <span className="block text-ellipsis" title={domainName}>
+                {domainName}
+            </span>
+            <span className="block text-sm color-weak">
+                {isDomainAdded(domainName)
+                    ? c('Info').t`Added to ${BRAND_NAME}`
+                    : c('Info').t`Not added to ${BRAND_NAME}`}
+            </span>
+        </span>
+    );
 
     const handleAddDomain = () =>
         dispatch(createDomain({ name: model.domainName! }))
@@ -43,6 +75,8 @@ const StepDomain: FC<StepComponentProps> = ({ model, onNext }) => {
         }
         return [...byName.values()];
     })();
+
+    const providerName = model.provider.displayName;
 
     const selectedRegistrarId = getRegistrarByIANAId(model.domainRegistrarId)
         ? model.domainRegistrarId
@@ -66,29 +100,63 @@ const StepDomain: FC<StepComponentProps> = ({ model, onNext }) => {
             </div>
             <p className="color-weak mt-0">{c('Info').t`Add your organization email domain to ${BRAND_NAME}.`}</p>
 
-            <div className="relative flex flex-row flex-nowrap items-center justify-space-between gap-2 border border-weak rounded-xl p-4 mt-2 mb-8">
-                <div>
-                    <p className="text-ellipsis flex-1 m-0" title={model.domainName}>
-                        {model.domainName}
-                    </p>
-                    {!model.domain && <p className="m-0 text-sm color-weak">{c('Info').t`Not confirmed`}</p>}
+            {!model.domainName && domainNamesLoading && <CircleLoader />}
+
+            {!model.domainName && !domainNamesLoading && (domainNamesError || domainNames) && (
+                <Banner
+                    variant="danger"
+                    opaqueVariant
+                    largeRadius
+                    noIcon
+                    className="p-2 mt-2 mb-8"
+                    action={<Button onClick={() => refreshDomainNames()}>{c('Action').t`Try again`}</Button>}
+                >
+                    {domainNamesError ??
+                        c('Error')
+                            .t`No verified domain found in your ${providerName} account. Verify your domain with ${providerName}, then try again.`}
+                </Banner>
+            )}
+
+            {model.domainName && (
+                <div className="flex flex-column gap-4 mt-2 mb-8">
+                    {isSingleDomain ? (
+                        <div className="flex flex-nowrap items-center border border-weak rounded-xl p-4">
+                            {renderDomainLabel(radioDomainNames[0])}
+                        </div>
+                    ) : (
+                        <div className="flex flex-column gap-2">
+                            {radioDomainNames.map((domainName, index) => {
+                                const checked = domainName === model.domainName;
+                                return (
+                                    <Radio
+                                        key={domainName}
+                                        id={`migration-domain-${index}`}
+                                        name="migration-domain"
+                                        checked={checked}
+                                        onChange={() => model.update({ domainName })}
+                                        className={clsx(
+                                            'flex flex-nowrap items-center border rounded-xl p-4',
+                                            checked ? 'border-primary' : 'border-weak'
+                                        )}
+                                    >
+                                        {renderDomainLabel(domainName)}
+                                    </Radio>
+                                );
+                            })}
+                        </div>
+                    )}
+                    {!model.domain && (
+                        <Button
+                            className="text-semibold self-start"
+                            color="norm"
+                            loading={loading}
+                            onClick={() => withLoading(handleAddDomain())}
+                        >
+                            {c('Action').t`Add domain`}
+                        </Button>
+                    )}
                 </div>
-                {!model.domain ? (
-                    <Button
-                        className="text-semibold shrink-0"
-                        color="norm"
-                        loading={loading}
-                        onClick={() => withLoading(handleAddDomain())}
-                    >
-                        {c('Action').t`Add domain`}
-                    </Button>
-                ) : (
-                    <div className="flex gap-1 text-semibold color-primary items-center py-2">
-                        <IcCheckmarkCircleFilled />
-                        <span>{c('Info').t`Domain added`}</span>
-                    </div>
-                )}
-            </div>
+            )}
 
             {model.domain && (
                 <div>

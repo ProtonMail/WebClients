@@ -55,10 +55,14 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
     const [organization] = useOrganization();
     const [members] = useMembers();
     const { value: memberAddressesMap } = useMemberAddresses({ members, partial: true });
-    const [providerUsers, , refreshProviderUsers, tooManyUsers] = useProviderUsers(
+    const [providerUsers, providerUsersLoading, refreshProviderUsers, tooManyUsers] = useProviderUsers(
+        model.importerOrganizationId,
         model.domainName,
         model.provider.apiProvider
     );
+    // The step opens while the importer organization is still being created, and users are only fetched after
+    const usersLoading = !model.importerOrganizationId || providerUsersLoading;
+    const showUsersLoader = usersLoading && !providerUsers?.length;
     const dispatch = useDispatch();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [reportUser, setReportUser] = useState<UserWithExtendedErrors>();
@@ -269,7 +273,11 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
                         <div className="px-6">
                             <div className="color-weak pb-2">{c('Label').t`Users migrated`}</div>
                             <div className="text-bold color-primary text-xl text-tabular-nums">
-                                {c('Info').t`${relevantCount} of ${totalCount}`}
+                                {showUsersLoader ? (
+                                    <CircleLoader size="small" />
+                                ) : (
+                                    c('Info').t`${relevantCount} of ${totalCount}`
+                                )}
                             </div>
                         </div>
 
@@ -286,6 +294,7 @@ const MigrationAssistant: FC<StepComponentProps> = ({ model, onNext }) => {
                     currentUser={model.tokens?.at(0)?.Account}
                     provider={model.provider}
                     users={providerUsers ?? []}
+                    loading={usersLoading}
                     selected={filteredSelected}
                     setSelected={setSelectedUsers}
                     selectable={selectableUsers}

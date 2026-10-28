@@ -24,7 +24,11 @@ const StepInviteUsers: FC<StepComponentProps> = ({ model, onNext }) => {
     const { createNotification } = useNotifications();
     const messageRef = useRef<HTMLParagraphElement>(null);
     const handleCopy = () => createNotification({ text: c('Success').t`Copied to clipboard` });
-    const [providerUsers] = useProviderUsers(model.domainName, model.provider.apiProvider);
+    const [providerUsers, providerUsersLoading] = useProviderUsers(
+        model.importerOrganizationId,
+        model.domainName,
+        model.provider.apiProvider
+    );
     const [messageExpanded, setMessageExpanded] = useState(false);
     const mailAppName = model.provider.mailAppName;
 
@@ -165,6 +169,7 @@ Then, when everyone has made the move, we will retire ${mailAppName}. We'll remi
             >
                 <ProviderUsersTable
                     users={users}
+                    loading={providerUsersLoading}
                     currentUser={model.tokens?.at(0)?.Account}
                     provider={model.provider}
                     hiddenColumns={ProviderUserColumn.Migration}

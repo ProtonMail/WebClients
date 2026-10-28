@@ -9,17 +9,17 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import usePrevious from '@proton/hooks/usePrevious';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { ApiImporterOrganizationState } from '../../api/api.interface';
 import { EASY_SWITCH_FEATURES } from '../../interface';
-import { getSubdomain } from '../domains';
+import { getSubdomain, resolveMigrationDomainName } from '../domains';
 import type { OlesProvider } from '../providers';
 import { setupMigration } from '../thunk';
 import type { MigrationConfiguration, MigrationModel, MigrationSetupModel } from '../types';
 import { useConnectionState } from '../useConnectionState';
 import { useImporterOrganizations } from '../useImporterOrganizations';
+import { useProviderDomains } from '../useProviderDomains';
 import { useProviderTokens } from '../useProviderTokens';
 import { useProviderUsers } from '../useProviderUsers';
 import { CircledLogoWithProton } from './CircledLogoWithProton';
@@ -52,7 +52,19 @@ const MigrationFlow = ({ provider }: { provider: OlesProvider }) => {
     const [tokens] = useProviderTokens(provider.oauthProvider, [EASY_SWITCH_FEATURES.OLES]);
     const [connectionState] = useConnectionState(provider, tokens);
     const [migrationConfig, setMigrationConfig] = useState<MigrationConfiguration>();
-    const [providerUsers] = useProviderUsers(migrationConfig?.domainName, provider.apiProvider);
+    const hasImporterOrganization =
+        Boolean(migrationConfig?.importerOrganizationId) ||
+        Boolean(importerOrganizations?.some((io) => io.Provider === provider.apiProvider));
+    const [providerDomainNames] = useProviderDomains(
+        provider.apiProvider,
+        tokens,
+        Boolean(importerOrganizations) && !hasImporterOrganization
+    );
+    const [providerUsers] = useProviderUsers(
+        migrationConfig?.importerOrganizationId,
+        migrationConfig?.domainName,
+        provider.apiProvider
+    );
     const [finishModalProps, setFinishModalOpen, renderFinishModal] = useModalState();
     const loading = !customDomains || !importerOrganizations || !tokens || !connectionState || !providerUsers;
 
@@ -84,18 +96,18 @@ const MigrationFlow = ({ provider }: { provider: OlesProvider }) => {
     }, [importerOrganizations]);
 
     const domainName = (() => {
-        if (migrationConfig?.domainName) {
+        if (migrationConfig?.importerOrganizationId) {
             return migrationConfig.domainName;
         }
 
-        if (!tokens || !tokens.length) {
+        if (!providerDomainNames) {
             return undefined;
         }
 
-        return getEmailParts(tokens[0].Account)[1];
+        return resolveMigrationDomainName(providerDomainNames, migrationConfig?.domainName);
     })();
 
-    const domain = customDomains?.find((d) => d.DomainName === domainName);
+    const domain = customDomains?.find((d) => d.DomainName.toLowerCase() === domainName?.toLowerCase());
 
     const model: MigrationSetupModel = {
         ...(migrationConfig || SETUP_DEFAULTS),

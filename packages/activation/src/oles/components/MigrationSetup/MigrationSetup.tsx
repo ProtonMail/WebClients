@@ -189,7 +189,11 @@ const MigrationNavigationListStepButton = ({
 const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
     const api = useSilentApi();
     const STEPS = useMemo(() => buildSteps(model.provider), [model.provider]);
-    const [providerUsers, , refreshProviderUsers] = useProviderUsers(model.domainName, model.provider.apiProvider);
+    const [providerUsers, , refreshProviderUsers] = useProviderUsers(
+        model.importerOrganizationId,
+        model.domainName,
+        model.provider.apiProvider
+    );
     const [state, setState] = useState<MigrationSetupState>({
         currentStep: model.importerOrganizationId ? 'migrate-accounts' : 'configure-migration',
         expanded: model.importerOrganizationId ? ['configure-users'] : [],
@@ -262,6 +266,10 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
         })();
     }, [model.domain?.ID]);
 
+    // Opening "Migrate accounts" creates the importer organization, which needs a verified domain
+    const isDomainVerified = model.domain?.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD;
+    const canConfigureUsers = Boolean(model.importerOrganizationId) || isDomainVerified;
+
     const stepConfigs: Record<StepId, StepConfig> = {
         'configure-migration': {
             text: c('Step').t`Configure migration`,
@@ -284,7 +292,7 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
         'domain-setup': {
             text: c('Step').t`Configure domain`,
             isCompleted: () => Boolean(model.domain),
-            isDisabled: !model.selectedProducts.length || !model.domainName,
+            isDisabled: !model.selectedProducts.length || !model.tokens?.length,
         },
         'domain-verify': {
             text: c('Step').t`Verify your domain`,
@@ -312,12 +320,12 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
         'configure-users': {
             text: c('Step').t`Configure users`,
             isCompleted: () => true,
-            isDisabled: !model.tokens?.length,
+            isDisabled: !model.tokens?.length || !canConfigureUsers,
         },
         'migrate-accounts': {
             text: c('Step').t`Migrate accounts`,
             isCompleted: () => hasAllSubmittedMigrated,
-            isDisabled: !model.tokens?.length,
+            isDisabled: !model.tokens?.length || !canConfigureUsers,
         },
         'invite-users': {
             text: c('Step').t`Onboard your team`,
@@ -434,13 +442,13 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
 
     useEffect(() => {
         void (async () => {
-            if (activeStep.id === 'migrate-accounts' && !model.importerOrganizationId) {
+            if (activeStep.id === 'migrate-accounts' && !model.importerOrganizationId && isDomainVerified) {
                 setState((state) => ({ ...state, loading: true }));
                 await onSubmit(model);
                 setState((state) => ({ ...state, loading: false }));
             }
         })();
-    }, [model.importerOrganizationId, activeStep.id]);
+    }, [model.importerOrganizationId, activeStep.id, isDomainVerified]);
 
     return (
         <>
