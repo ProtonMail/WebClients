@@ -1211,6 +1211,12 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "About ${ name }": [
+        "A ${ name } névjegye"
+      ],
+      "Add ${ name }": [
+        "${ name } hozzáadása"
       ]
     },
     "Actions": {
@@ -1272,6 +1278,12 @@
       ],
       "Writing assistant": [
         "Írási segéd"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licenc"
+      ],
+      "Writing assistant seats": [
+        "Írási segéd licencek"
       ]
     },
     "Alert": {
@@ -3770,6 +3782,9 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Hibás helyreállító jelmondat. Próbálja meg újra vagy próbáljon másik helyreállítási módszert."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "A legkisebb lehetséges adomány ${ price }"
       ]
     },
     "error": {
@@ -6588,6 +6603,12 @@
       ],
       "We'll get back to you shortly.": [
         "Hamarosan válaszolunk."
+      ],
+      "No payment is required.": [
+        "Nem szükséges fizetés."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Átmenetileg nem érhető el, a túlzott érdeklődés miatt. Próbálja meg később."
       ]
     },
     "info": {
@@ -7309,6 +7330,9 @@
       ],
       "Why would you like to cancel?": [
         "Miért szeretne törölni?"
+      ],
+      "Last 6 months only": [
+        "Csak az utolsó 6 hónap"
       ]
     },
     "Label for contact group color": {
@@ -9598,6 +9622,24 @@
       ],
       "Edit billing address": [
         "Számlázási cím szerkesztése"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "A Proton Meet licencek száma meg kell egyezzen a tagok számával."
+      ],
+      "Tax ${ rate }%": [
+        "${ rate }% adó"
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "A kiválasztott csomag nem biztosít elegendő tárhelyet a fiókjához."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "A előfizetés létrehozása jelenleg nem fejezhető be. Próbálja meg később."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "A próbaidős csomagokban nem érhető el ${ LUMO_SHORT_APP_NAME } licenc."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "A pénznem átállítva Euróra (€), mert az ${ IDEAL_WERO_BRAND_NAME } csak ebben teszi lehetővé a fizetést."
       ]
     },
     "Payments.Error": {
@@ -9838,6 +9880,9 @@
       ],
       "Please select the main reason": [
         "Válassza ki a fő okot"
+      ],
+      "Ask anything…": [
+        "Kérdezzen bármit…"
       ]
     },
     "Placeholder for contact group name": {
@@ -10926,6 +10971,9 @@
       "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
         "Videós megbeszélések, ${ PAID_PREMIUM_MAX_PARTICIPANTS } résztvevővel",
         "Videós megbeszélések, akár ${ PAID_PREMIUM_MAX_PARTICIPANTS } résztvevővel"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } és ${ LUMO_APP_NAME } prémium lehetőségekkel"
       ]
     },
     "subscription reminder": {
@@ -12284,6 +12332,12 @@
       ],
       "Request sent": [
         "Kérés elküldve"
+      ],
+      "Black Friday": [
+        "Black Friday"
+      ],
+      "Reverse charge not supported": [
+        "A fordított adózás nem támogatott"
       ]
     },
     "Today icon tooltip in mini calendar": {
