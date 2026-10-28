@@ -254,10 +254,7 @@ export const ScheduleMeetingRecapModal = ({
                     </h1>
                 </div>
 
-                <div
-                    style={{ fontWeight: 'var(--font-weight-medium)', lineHeight: 1.5 }}
-                    className="color-weak text-rg text-center text-break text-wrap-balance flex flex-column gap-1 m-0 w-full"
-                >
+                <div className="meeting-schedule color-weak text-rg text-center text-break text-wrap-balance flex flex-column gap-1 m-0 w-full">
                     <p className="m-0">{dateTime}</p>
                     {recurrence && <p className="m-0">{recurrence}</p>}
                 </div>
