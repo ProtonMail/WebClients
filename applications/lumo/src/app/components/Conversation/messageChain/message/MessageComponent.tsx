@@ -4,13 +4,20 @@ import type { HandleEditMessage, HandleRegenerateMessage } from '../../../..//ho
 import { useLumoFlags } from '../../../..//hooks/useLumoFlags';
 import type { SiblingInfo } from '../../../..//hooks/usePreferredSiblings';
 import type { Attachment, Message } from '../../../../types';
-import { Role, isCompactionMessage, isManualArtifactEditMessage, isQuestionAnswerMessage } from '../../../../types';
+import {
+    Role,
+    isCompactionMessage,
+    isCreateScheduleResponseMessage,
+    isManualArtifactEditMessage,
+    isQuestionAnswerMessage,
+} from '../../../../types';
 import ChatContainerItem from '../../../ChatContainerItem';
 import { ArtifactEditMarker } from './ArtifactEditMarker/ArtifactEditMarker';
 import AssistantMessage from './AssistantMessage/AssistantMessage';
 import { CompactionMarker } from './CompactionMarker/CompactionMarker';
 import UserMessage from './UserMessage/UserMessage';
 import { AskUserQuestionsResponseMessage } from './askUserQuestions/AskUserQuestionsResponseMessage';
+import { CreateScheduleResponseMessage } from './createSchedule/CreateScheduleResponseMessage';
 
 export type MessageComponentProps = {
     message: Message;
@@ -54,7 +61,8 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
         prevProps.message.thinkingTimeline?.length !== nextProps.message.thinkingTimeline?.length ||
         prevProps.message.suggestedQuestions?.length !== nextProps.message.suggestedQuestions?.length ||
         prevProps.message.artifactAction !== nextProps.message.artifactAction ||
-        prevProps.message.questionAnswers !== nextProps.message.questionAnswers;
+        prevProps.message.askUserQuestionsToolResponse !== nextProps.message.askUserQuestionsToolResponse ||
+        prevProps.message.createScheduleToolResponse !== nextProps.message.createScheduleToolResponse;
 
     // Compare siblingInfo by its key properties
     const siblingInfoChanged =
@@ -122,6 +130,18 @@ const MessageComponentPure = ({
         );
     }
 
+    if (isCreateScheduleResponseMessage(message)) {
+        return (
+            <ChatContainerItem
+                className="user-msg justify-end mb-6"
+                data-message-id={message.id}
+                data-message-role="create-schedule-response"
+            >
+                <CreateScheduleResponseMessage createScheduleToolResponse={message.createScheduleToolResponse} />
+            </ChatContainerItem>
+        );
+    }
+
     if (isQuestionAnswerMessage(message)) {
         return (
             <ChatContainerItem
@@ -129,7 +149,7 @@ const MessageComponentPure = ({
                 data-message-role="question-answer"
                 data-message-id={message.id}
             >
-                <AskUserQuestionsResponseMessage questionAnswers={message.questionAnswers} />
+                <AskUserQuestionsResponseMessage askUserQuestionsToolResponse={message.askUserQuestionsToolResponse} />
             </ChatContainerItem>
         );
     }

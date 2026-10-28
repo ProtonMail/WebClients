@@ -102,7 +102,8 @@ const ConversationPageComponentInner = () => {
         messageChain,
         handleSendMessage,
         handleSendArtifactAction,
-        handleSendQuestionAnswers,
+        handleSendAskUserQuestionsToolResponse,
+        handleSendCreateScheduleToolResponse,
         handleSaveManualArtifactEdit,
         handleEditMessage,
         handleRegenerateMessage,
@@ -222,7 +223,8 @@ const ConversationPageComponentInner = () => {
         <ConversationActionsProvider
             handleSendMessage={handleSendMessage}
             handleSendArtifactAction={handleSendArtifactAction}
-            handleSendQuestionAnswers={handleSendQuestionAnswers}
+            handleSendAskUserQuestionsToolResponse={handleSendAskUserQuestionsToolResponse}
+            handleSendCreateScheduleToolResponse={handleSendCreateScheduleToolResponse}
             handleSaveManualArtifactEdit={handleSaveManualArtifactEdit}
             handleAbort={handleAbort}
             handleEditMessage={handleEditMessage}

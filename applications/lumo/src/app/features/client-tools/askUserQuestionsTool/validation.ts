@@ -1,18 +1,8 @@
 import type { QuestionCardQuestionData } from '../../../components/QuestionCard/types';
-import type { AskUserQuestionsToolArguments, AskUserQuestionsToolSuccessResult } from './askUserQuestionsTool';
+import type { ClientToolSuccessResult, ValidationResult } from '../validationUtils';
+import { getUnexpectedProperty, invalidArguments, isNonBlankString, isRecord } from '../validationUtils';
+import type { AskUserQuestionsToolArguments } from './askUserQuestionsTool';
 import { askUserQuestionsSchema } from './schema';
-
-const isRecord = (value: unknown): value is Record<string, unknown> =>
-    typeof value === 'object' && value !== null && !Array.isArray(value);
-
-type ValidationResult<T> = { ok: true; value: T } | { ok: false; error: string };
-
-const isNonBlankString = (value: unknown): value is string => typeof value === 'string' && /\S/.test(value);
-
-const getUnexpectedProperty = (value: Record<string, unknown>, properties: Record<string, unknown>) =>
-    Object.keys(value).find((key) => !Object.prototype.hasOwnProperty.call(properties, key));
-
-const invalidArguments = (error: string): ValidationResult<never> => ({ ok: false, error });
 
 /**
  * Check decoded arguments before executing a call or rendering persisted questions.
@@ -85,6 +75,6 @@ export function validateAskUserQuestionsToolArguments(value: unknown): Validatio
 }
 
 /** Recognize the successful acknowledgement paired with an ask_user_questions call. */
-export function isAskUserQuestionsToolSuccessResult(value: unknown): value is AskUserQuestionsToolSuccessResult {
+export function isAskUserQuestionsToolSuccessResult(value: unknown): value is ClientToolSuccessResult {
     return isRecord(value) && value.ok === true && typeof value.message === 'string';
 }

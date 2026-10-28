@@ -69,7 +69,7 @@ export const QuestionCard = ({ questions, onSubmit, onDismiss }: QuestionCardPro
     return (
         <section
             aria-labelledby={`${id}-title`}
-            className="question-card w-full overflow-hidden border border-weak rounded-xl bg-norm"
+            className="question-card flex flex-column flex-nowrap w-full rounded-xl bg-norm"
         >
             {/* Header */}
             <div className="flex flex-nowrap items-start gap-3 p-4 pb-2 pl-5">
@@ -104,7 +104,7 @@ export const QuestionCard = ({ questions, onSubmit, onDismiss }: QuestionCardPro
             </div>
 
             {/* Question body */}
-            <Scroll className="question-card__body overflow-hidden" scrollContained>
+            <Scroll className="question-card__body flex flex-column flex-nowrap overflow-hidden" scrollContained>
                 {adapter.renderBody({
                     idPrefix: id,
                     titleId: `${id}-title`,

@@ -1,7 +1,7 @@
 @use '~@proton/styles/scss/lib' as *;
 
 .choice-question-body {
-	&__option-title:not(:only-child) {
+	&__option-title {
 		font-size: rem(13);
 		font-weight: 500;
 	}
