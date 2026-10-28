@@ -32,6 +32,8 @@ import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch } from '../../../store/hooks';
 import { updateExpires } from '../../../store/messages/draft/messagesDraftActions';
+import type { BookingUpsellContext } from '../../../telemetry/composerBookingsEvents';
+import { BookingUpsellSource, useComposerBookingsTracking } from '../../../telemetry/composerBookingsEvents';
 import type { MessageChange, MessageChangeFlag } from '../Composer';
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
 import ComposerBookingDropdownContent from './ComposerBookingDropdownContent';
@@ -91,6 +93,14 @@ const ComposerMoreActions = ({
     const bookingUpsellModal = useModalStateObject();
     const bookingLimitModal = useModalStateObject();
     const getInternalBooking = useGetInternalBooking();
+    const {
+        trackBookingActionClick,
+        trackBookingUpsellDisplayed,
+        trackBookingUpsellDismissed,
+        trackBookingUpsellSubscribed,
+    } = useComposerBookingsTracking();
+    // Set when the upsell opens, so dismissing it or subscribing from it reports the same source and page count
+    const bookingUpsellContextRef = useRef<BookingUpsellContext>({ source: BookingUpsellSource.booking_action });
     const [user] = useUser();
 
     const showBookingAction = !bookingsDisabled && bookingsInComposerEnabled;
@@ -134,7 +144,11 @@ const ComposerMoreActions = ({
             return;
         }
 
+        trackBookingActionClick();
+
         if (user.isFree && user.canPay) {
+            bookingUpsellContextRef.current = { source: BookingUpsellSource.booking_action };
+            trackBookingUpsellDisplayed(bookingUpsellContextRef.current);
             bookingUpsellModal.openModal(true);
             return;
         }
@@ -292,7 +306,11 @@ const ComposerMoreActions = ({
                     <ComposerBookingDropdownContent
                         editorActionsRef={editorActionsRef}
                         onClose={bookingDropdown.close}
-                        onUpsell={() => {
+                        onUpsell={(pageCount) => {
+                            bookingUpsellContextRef.current = {
+                                source: BookingUpsellSource.create_booking_page,
+                                pageCount,
+                            };
                             bookingDropdown.close();
                             bookingUpsellModal.openModal(true);
                         }}
@@ -312,6 +330,12 @@ const ComposerMoreActions = ({
                     illustration={bookingImg}
                     modalProps={bookingUpsellModal.modalProps}
                     upsellRef={bookingUpsellRef}
+                    onClose={() => {
+                        trackBookingUpsellDismissed(bookingUpsellContextRef.current);
+                    }}
+                    onSubscribed={() => {
+                        trackBookingUpsellSubscribed(bookingUpsellContextRef.current);
+                    }}
                     data-testid="composer:booking-upsell-modal"
                 />
             )}
