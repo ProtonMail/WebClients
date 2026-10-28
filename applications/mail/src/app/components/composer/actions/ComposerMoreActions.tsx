@@ -144,6 +144,13 @@ const ComposerMoreActions = ({
         bookingDropdown.open();
     };
 
+    // On small viewports the booking dropdown is anchored to the More options wrapper, so clicking More options
+    // doesn't count as an outside click and the booking dropdown has to be closed here
+    const handleMoreOptionsOpen = () => {
+        bookingSpotlight.onClose();
+        bookingDropdown.close();
+    };
+
     const dotsInColor = isExpiration || isPassword;
 
     return (
@@ -179,7 +186,7 @@ const ComposerMoreActions = ({
                     titleTooltip={titleMoreOptions}
                     className="button button-medium button-ghost-weak button-for-icon composer-more-dropdown"
                     size={{ width: DropdownSizeUnit.Dynamic, height: DropdownSizeUnit.Dynamic }}
-                    onOpen={bookingSpotlight.onClose}
+                    onOpen={handleMoreOptionsOpen}
                     content={
                         <IcThreeDotsHorizontal
                             alt={titleMoreOptions}

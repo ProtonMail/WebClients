@@ -203,4 +203,16 @@ describe('ComposerMoreActions booking action', () => {
 
         expect(screen.getByTestId('composer:booking-dropdown')).toBeInTheDocument();
     });
+
+    it('should close the booking dropdown when the more options menu opens again on small viewports', async () => {
+        mockViewport(true);
+        await setup({ isFree: false });
+
+        fireEvent.click(screen.getByTestId('composer:more-options-button'));
+        fireEvent.click(screen.getByTestId('composer:booking-button'));
+        fireEvent.click(screen.getByTestId('composer:more-options-button'));
+
+        expectBookingDropdownClosing();
+        expect(screen.getByTestId('composer:expiration-button')).toBeInTheDocument();
+    });
 });
