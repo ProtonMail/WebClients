@@ -1,5 +1,3 @@
-import { mockTracker } from '@proton/telemetry-tracker/testing';
-
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType, TIME_PERIOD } from '../interface';
 import {
     getTelemetryImportPeriod,
@@ -11,6 +9,7 @@ import {
     trackEasySwitchPrepareImportViewed,
     trackEasySwitchProductsSubmitted,
 } from './easySwitchCreationFunnel';
+import { mockEasySwitchCreationFunnelTracker } from './mockTrackerOfGroup';
 
 describe('easy switch creation funnel telemetry', () => {
     describe('getTelemetryProducts', () => {
@@ -36,7 +35,7 @@ describe('easy switch creation funnel telemetry', () => {
     });
 
     it('sends one event per step, and the duration on every step after the start', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockEasySwitchCreationFunnelTracker();
         const provider = ImportProvider.DEFAULT;
         const products = [ImportType.MAIL];
 
@@ -69,7 +68,7 @@ describe('easy switch creation funnel telemetry', () => {
     });
 
     it('stops the timer on importer_created, and keeps it running after an error so a retry is still timed', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockEasySwitchCreationFunnelTracker();
         const context = { provider: ImportProvider.YAHOO, products: [ImportType.MAIL] };
 
         trackEasySwitchCreationStarted({
@@ -87,7 +86,7 @@ describe('easy switch creation funnel telemetry', () => {
     });
 
     it('ignores the steps of drive-only imports after the products are submitted', () => {
-        const { reports } = mockTracker();
+        const { reports } = mockEasySwitchCreationFunnelTracker();
         const context = { provider: ImportProvider.GOOGLE, products: [ImportType.DRIVE] };
 
         trackEasySwitchProductsSubmitted({ source: EASY_SWITCH_SOURCES.DRIVE_WEB_SIDEBAR, ...context });

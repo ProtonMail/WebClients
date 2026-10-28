@@ -12,6 +12,7 @@ import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeSetupSuccess from '@proton/styles/assets/img/illustrations/byoe-setup-success.svg';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
+import { trackAccountImportBYOEAddressAction } from '../../../telemetry/accountImportFlow';
 import { BYOEAddressAction } from '../../../telemetry/events';
 
 interface Props extends ModalProps {
@@ -41,6 +42,7 @@ export const BYOESetupSuccessModal = ({ onClose, onComplete, connectedAddress, s
                 provider: 'google',
             },
         });
+        trackAccountImportBYOEAddressAction('manage_address');
 
         await onComplete?.();
         goToSettings('/identity-addresses#addresses', APPS.PROTONMAIL);

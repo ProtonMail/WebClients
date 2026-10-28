@@ -10,6 +10,7 @@ import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { useEasySwitchDispatch } from '../logic/store';
 import { loadSyncList } from '../logic/sync/sync.actions';
+import { trackAccountImportBYOEAddressAction } from '../telemetry/accountImportFlow';
 import { BYOEAddressAction } from '../telemetry/events';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 
@@ -45,6 +46,7 @@ export const useDisconnectBYOEAddress = (address: Address) => {
                     provider: 'google',
                 },
             });
+            trackAccountImportBYOEAddressAction('disconnect');
         });
     };
 
