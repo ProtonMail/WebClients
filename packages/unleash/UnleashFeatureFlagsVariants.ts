@@ -20,6 +20,7 @@ export const FLAGS_WITH_VARIANT = [
     'CategoryViewVariant',
     'MeetScreenShareAudioSupportedElectronVersion',
     'CheckoutCondensedAddons',
+    'InboxBringYourOwnEmailImportPeriodExperiment',
 ] satisfies FeatureFlag[];
 
 /**
@@ -42,6 +43,8 @@ export type MeetScreenShareAudioSupportedElectronVersionVariant = 'version';
 export type EnableVpn2024AddonsExperimentVariant =
     'lumo-addon-only' | 'meet-addon-only' | 'pass-addon-only' | 'no-addon';
 export type CheckoutCondensedAddonsVariant = 'control' | 'condensed';
+export type InboxBringYourOwnEmailImportPeriodExperimentVariant = 'Control' | 'Treatment';
+
 /**
  * The important variant for the client is `RecategorizationButton`. Users with this variant will see the move to primary badge.
  * The other variants are used for other experiments and are here for reference.
@@ -87,6 +90,7 @@ type FeatureFlagVariantMap = {
     CategoryViewVariant: VariantReturnType<CategoryViewVariantVariant>;
     MeetScreenShareAudioSupportedElectronVersion: VariantReturnType<MeetScreenShareAudioSupportedElectronVersionVariant>;
     CheckoutCondensedAddons: VariantReturnType<CheckoutCondensedAddonsVariant>;
+    InboxBringYourOwnEmailImportPeriodExperiment: VariantReturnType<InboxBringYourOwnEmailImportPeriodExperimentVariant>;
 };
 
 /**
