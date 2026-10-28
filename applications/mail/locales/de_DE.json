@@ -1574,7 +1574,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -4458,6 +4459,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Ermögliche es deinen Interessenten, direkt über deine E-Mails Termine mit dir zu vereinbaren – ganz ohne langes Hin und Her."
       ]
     },
     "description": {
@@ -10020,6 +10024,12 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Du hast die maximale Anzahl an Buchungsseiten in deinem Abonnement erreicht."
+      ],
+      "Here is my availability:": [
+        "Hier meine verfügbaren Termine:"
+      ],
+      "No booking pages yet": [
+        "Bisher noch keine Buchungsseiten"
       ]
     },
     "info": {
@@ -11380,6 +11390,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } assistant": [
         "${ LUMO_SHORT_APP_NAME }-Assistent"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Füge deiner E-Mail eine Buchungsseite hinzu und gib damit den Empfängern die Möglichkeit, einen passenden Termin auszuwählen."
+      ],
+      "Booking page": [
+        "Buchungsseite"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17563,6 +17579,12 @@
       ],
       "Cannot create more Booking pages": [
         "Du kannst keine weiteren Buchungsseiten erstellen."
+      ],
+      "Insert a booking page": [
+        "Buchungsseite einfügen"
+      ],
+      "Share your availability": [
+        "Teile deine Verfügbarkeit"
       ]
     },
     "Title header for keys table": {

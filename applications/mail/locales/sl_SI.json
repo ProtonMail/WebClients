@@ -1507,7 +1507,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -9312,6 +9315,15 @@
       ],
       "To add a new booking page, upgrade your plan.": [
         "Če želite dodati novo stran z rezervacijo, nadgradite svoj paket."
+      ],
+      "1 vault per user": [
+        "1 trezor na uporabnika"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pooblastite skrbnika, da nadgradi paket ali odstrani stran iz stranske vrstice strani za rezervacije v ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Če želite dodati novo stran za rezervacije, odstranite obstoječo s stranske vrstice strani za rezervacije v ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -10520,6 +10532,9 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "E-poštnemu sporočilu dodajte povezavo na stran z rezervacijo in prejemniki lahko izberejo čas, ki jim najbolj ustreza."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10861,6 +10876,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Za ogled posodobljenega povabila morate ponovno aktivirati vaše ključe."
+      ],
+      "Pay it": [
+        "Plačaj"
       ]
     },
     "Link to calendar event": {
