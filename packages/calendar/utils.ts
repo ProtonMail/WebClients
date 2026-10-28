@@ -10,6 +10,8 @@ export const getQueryParamsStatus = (search: string) => {
 
     const isCreateMode = searchParams.get(calendarUrlQueryParams.action) === calendarUrlQueryParamsActions.create;
     const isEditMode = searchParams.get(calendarUrlQueryParams.action) === calendarUrlQueryParamsActions.edit;
+    const isCreateBookingMode =
+        searchParams.get(calendarUrlQueryParams.action) === calendarUrlQueryParamsActions.createBooking;
     const calendarIdFromQueryParams = searchParams.get(calendarUrlQueryParams.calendarId);
 
     const eventId = searchParams.get(calendarUrlQueryParams.eventId);
@@ -17,6 +19,7 @@ export const getQueryParamsStatus = (search: string) => {
     return {
         isCreateMode,
         isEditMode,
+        isCreateBookingMode,
         calendarIdFromQueryParams,
         eventId,
     };
