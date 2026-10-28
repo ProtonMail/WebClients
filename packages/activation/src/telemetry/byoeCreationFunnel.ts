@@ -34,6 +34,20 @@ const group = TelemetryMeasurementGroups.byoeCreationFunnel;
 const providerSpec = allowed(PROVIDERS);
 const importPeriodSpec = allowed(IMPORT_PERIODS);
 
+/**
+ * Arm of the import period experiment (`InboxBringYourOwnEmailImportPeriodExperiment`) the user is in.
+ * `n/a` when the experiment does not apply: flag off, or a flow without the experiment (mobile).
+ */
+const VARIANTS = ['n/a', 'control', 'treatment'] as const;
+export type BYOEImportPeriodVariant = (typeof VARIANTS)[number];
+const variantSpec = allowed(VARIANTS);
+
+/**
+ * Variant of the running creation, set by `trackBYOECreationStarted`. Kept here so that the steps emitted from
+ * hooks far from the modal carry it without having it passed down to each of them.
+ */
+let currentVariant: BYOEImportPeriodVariant = 'n/a';
+
 /** The period only applies to emails: `n/a` when they are not imported or the user could not choose one */
 const getTelemetryImportPeriod = (importPeriod: TIME_PERIOD | undefined): (typeof IMPORT_PERIODS)[number] =>
     importPeriod ?? 'n/a';
@@ -48,6 +62,7 @@ const CreationStarted = defineEvent({
         source: topValues(),
         provider: providerSpec,
         isConversion: bool(),
+        variant: variantSpec,
     },
 });
 
@@ -56,7 +71,12 @@ const GoogleSignInClicked = defineEvent({
     target: 'telemetry',
     group,
     event: TelemetryBYOECreationFunnelEvents.googleSignInClicked,
-    dimensions: { provider: providerSpec, hasImportEmails: bool(), importPeriodSelected: importPeriodSpec },
+    dimensions: {
+        provider: providerSpec,
+        hasImportEmails: bool(),
+        importPeriodSelected: importPeriodSpec,
+        variant: variantSpec,
+    },
     values: { durationMs: duration() },
 });
 
@@ -65,7 +85,7 @@ const Authenticated = defineEvent({
     target: 'telemetry',
     group,
     event: TelemetryBYOECreationFunnelEvents.authenticated,
-    dimensions: { provider: providerSpec },
+    dimensions: { provider: providerSpec, variant: variantSpec },
     values: { durationMs: duration() },
 });
 
@@ -74,7 +94,7 @@ const UpsellModalViewed = defineEvent({
     target: 'telemetry',
     group,
     event: TelemetryBYOECreationFunnelEvents.upsellModalViewed,
-    dimensions: { provider: providerSpec },
+    dimensions: { provider: providerSpec, variant: variantSpec },
 });
 
 /**
@@ -91,6 +111,7 @@ const ImporterCreated = defineEvent({
         importPeriodSelected: importPeriodSpec,
         isUpsellShown: bool(),
         isClaimedAddress: bool(),
+        variant: variantSpec,
     },
     values: { durationMs: duration() },
 });
@@ -100,7 +121,7 @@ const CreationError = defineEvent({
     target: 'telemetry',
     group,
     event: TelemetryBYOECreationFunnelEvents.creationError,
-    dimensions: { provider: providerSpec, errorStep: topValues() },
+    dimensions: { provider: providerSpec, errorStep: topValues(), variant: variantSpec },
     values: { durationMs: duration() },
 });
 
@@ -110,17 +131,20 @@ const DEFAULT_PROVIDER: BYOEProvider = 'google';
 export const trackBYOECreationStarted = ({
     source,
     isConversion,
+    variant = 'n/a',
     provider = DEFAULT_PROVIDER,
 }: {
     source: EASY_SWITCH_SOURCES;
     isConversion: boolean;
+    variant?: BYOEImportPeriodVariant;
     provider?: BYOEProvider;
 }) => {
     // Restart: a creation left unfinished earlier must not leak its time into this one
     tracker.startTimer(byoeCreationTimer, { restart: true });
+    currentVariant = variant;
     tracker.emit(
         CreationStarted,
-        { dimensions: { source, provider, isConversion } },
+        { dimensions: { source, provider, isConversion, variant } },
         // Every funnel event is flushed right away: batched events share the same timestamp and cannot be ordered
         { flushImmediately: true }
     );
@@ -140,6 +164,8 @@ export const resumeBYOECreation = (startedAt: number | undefined) => {
     if (startedAt === undefined || !Number.isFinite(startedAt)) {
         return;
     }
+    // The experiment does not run in the flows that resume after a redirect
+    currentVariant = 'n/a';
     tracker.startTimer(byoeCreationTimer, { restart: true, elapsedMs: Date.now() - startedAt });
 };
 
@@ -159,6 +185,7 @@ export const trackBYOEGoogleSignInClicked = ({
                 provider,
                 hasImportEmails,
                 importPeriodSelected: hasImportEmails ? getTelemetryImportPeriod(importPeriod) : 'n/a',
+                variant: currentVariant,
             },
         },
         { durationFrom: byoeCreationTimer, flushImmediately: true }
@@ -168,13 +195,13 @@ export const trackBYOEGoogleSignInClicked = ({
 export const trackBYOEAuthenticated = (provider: BYOEProvider = DEFAULT_PROVIDER) => {
     tracker.emit(
         Authenticated,
-        { dimensions: { provider } },
+        { dimensions: { provider, variant: currentVariant } },
         { durationFrom: byoeCreationTimer, flushImmediately: true }
     );
 };
 
 export const trackBYOEUpsellModalViewed = (provider: BYOEProvider = DEFAULT_PROVIDER) => {
-    tracker.emit(UpsellModalViewed, { dimensions: { provider } }, { flushImmediately: true });
+    tracker.emit(UpsellModalViewed, { dimensions: { provider, variant: currentVariant } }, { flushImmediately: true });
 };
 
 export const trackBYOEImporterCreated = ({
@@ -200,6 +227,7 @@ export const trackBYOEImporterCreated = ({
                 importPeriodSelected: hasImportEmails ? getTelemetryImportPeriod(importPeriod) : 'n/a',
                 isUpsellShown,
                 isClaimedAddress,
+                variant: currentVariant,
             },
         },
         { durationFrom: byoeCreationTimer, stopTimer: true, flushImmediately: true }
@@ -210,7 +238,7 @@ export const trackBYOECreationError = (errorStep: BYOECreationErrorStep, provide
     // The timer keeps running: the user can retry, and the next creation_started restarts it anyway
     tracker.emit(
         CreationError,
-        { dimensions: { provider, errorStep } },
+        { dimensions: { provider, errorStep, variant: currentVariant } },
         { durationFrom: byoeCreationTimer, flushImmediately: true }
     );
 };

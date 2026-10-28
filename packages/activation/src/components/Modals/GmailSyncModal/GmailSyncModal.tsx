@@ -8,6 +8,7 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 import { getBYOEFailNotification, getSyncSuccessNotification } from '../../../constants';
+import { useImportPeriodExperiment } from '../../../hooks/useImportPeriodExperiment';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import type { EASY_SWITCH_SOURCES, ImportToken, OAuthProps, TIME_PERIOD } from '../../../interface';
 import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '../../../interface';
@@ -97,10 +98,12 @@ const GmailSyncModal = ({
         });
     };
 
+    const { variant } = useImportPeriodExperiment();
+
     useEffect(() => {
         // Without access to BYOE this modal only sets up a Gmail forwarding, which is not a BYOE creation
         if (hasAccessToBYOE) {
-            trackBYOECreationStarted({ source, isConversion: !!expectedEmailAddress });
+            trackBYOECreationStarted({ source, isConversion: !!expectedEmailAddress, variant });
         }
     }, []);
 

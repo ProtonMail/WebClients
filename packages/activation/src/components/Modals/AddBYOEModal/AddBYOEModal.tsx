@@ -12,9 +12,9 @@ import byoeConnectGmail from '@proton/styles/assets/img/illustrations/byoe-conne
 import byoeForwarding from '@proton/styles/assets/img/illustrations/byoe-forwarding.svg';
 import byoeProfiling from '@proton/styles/assets/img/illustrations/byoe-profiling.svg';
 import stopHandSign from '@proton/styles/assets/img/illustrations/stop-hand-sign.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { getTimeUnitLabels } from '../../../constants';
+import { useImportPeriodExperiment } from '../../../hooks/useImportPeriodExperiment';
 import { TIME_PERIOD } from '../../../interface';
 import SignInWithGoogle from '../GmailSyncModal/SignInWithGoogle';
 
@@ -36,7 +36,8 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
     const [importEmails, setImportEmails] = useState(!expectedEmailAddress);
     const [importPeriod, setImportPeriod] = useState(TIME_PERIOD.BIG_BANG);
     const timeUnitLabels = getTimeUnitLabels();
-    const isImportPeriodEnabled = useFlag('InboxBringYourOwnEmailImportPeriod');
+
+    const { isImportPeriodEnabled, seeImportTimeline } = useImportPeriodExperiment();
 
     return (
         <ModalTwo
@@ -78,7 +79,7 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                         >
                             <span>{c('Label').t`Import your emails`}</span>
                         </Checkbox>
-                        {isImportPeriodEnabled && (
+                        {seeImportTimeline && (
                             <SelectTwo<TIME_PERIOD>
                                 value={importPeriod}
                                 onChange={({ value }) => setImportPeriod(value)}
