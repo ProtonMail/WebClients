@@ -30,8 +30,7 @@ export const useChatMessageReactionReceiver = () => {
         }
 
         const processDataReceived = async (
-            // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
-            payload: Uint8Array<ArrayBufferLike>,
+            payload: Uint8Array<ArrayBuffer>,
             participant: RemoteParticipant,
             topic: string
         ) => {
@@ -99,8 +98,7 @@ export const useChatMessageReactionReceiver = () => {
         };
 
         const handleDataReceived = (
-            // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
-            payload: Uint8Array<ArrayBufferLike>,
+            payload: Uint8Array<ArrayBuffer>,
             participant?: RemoteParticipant,
             _kind?: unknown,
             topic?: string
