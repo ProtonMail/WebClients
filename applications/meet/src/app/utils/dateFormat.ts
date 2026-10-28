@@ -4,8 +4,8 @@ import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings
 type DateOrder = 'dayFirst' | 'monthFirst' | 'yearFirst';
 
 const getDateOrderFromLocale = (): DateOrder => {
-    const shortPattern = dateLocale.formatLong?.date({ width: 'short' }) ?? '';
-    const firstLetter = shortPattern.match(/[a-zA-Z]/)?.[0];
+    const mediumPattern = dateLocale.formatLong?.date({ width: 'medium' }) ?? '';
+    const firstLetter = mediumPattern.match(/[a-zA-Z]/)?.[0];
     switch (firstLetter) {
         case 'd':
             return 'dayFirst';
