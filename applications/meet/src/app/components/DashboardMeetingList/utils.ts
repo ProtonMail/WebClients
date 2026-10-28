@@ -1,12 +1,11 @@
-import { addDays, format } from 'date-fns';
+import { addDays } from 'date-fns';
 import { formatInTimeZone, utcToZonedTime } from 'date-fns-tz';
 import { c } from 'ttag';
 
-import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
-import { getDateFormatPattern } from '../../utils/dateFormat';
+import { formatDateForSetting } from '../../utils/dateFormat';
 
 export interface MeetingsByDay {
     [date: string]: Meeting[];
@@ -70,10 +69,8 @@ const getRelativeDate = (dateString: string, absoluteDate: string): string | nul
     return null;
 };
 
-const formatAbsoluteDate = (date: Date, isCurrentYear: boolean, dateFormat: SETTINGS_DATE_FORMAT): string => {
-    const pattern = getDateFormatPattern(dateFormat, { month: 'MMMM', withYear: !isCurrentYear });
-    return format(date, pattern, { locale: dateLocale });
-};
+const formatAbsoluteDate = (date: Date, isCurrentYear: boolean, dateFormat: SETTINGS_DATE_FORMAT): string =>
+    formatDateForSetting(date, dateFormat, { month: 'long', withYear: !isCurrentYear });
 
 export const formatMeetingDate = (
     dateString: string,
