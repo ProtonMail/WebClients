@@ -3,12 +3,12 @@ import { getUnixTime } from 'date-fns';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
-import { mockTracker } from '@proton/telemetry-tracker/testing';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { startEasySwitchSignupImportTask } from '../api/api';
 import type { ImportToken } from '../interface';
 import { BYOE_ADDRESS_ERROR, EASY_SWITCH_SOURCES, OAUTH_PROVIDER, TIME_PERIOD } from '../interface';
+import { mockBYOECreationFunnelTracker } from '../telemetry/mockTrackerOfGroup';
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 import useSetupGmailBYOEAddress from './useSetupGmailBYOEAddress';
 
@@ -680,7 +680,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('sends authenticated then importer_created when the address is created', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             const result = setup();
 
             await callback(result);
@@ -699,7 +699,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('does not upsell, and has no period, when the user does not import emails', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             const result = setup();
 
             await callback(result, { importEmails: false });
@@ -712,7 +712,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('sends creation_error when the Google sign-in failed', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             const result = setup();
 
             await callback(result, { hasError: true, token: undefined });
@@ -725,7 +725,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('sends creation_error when the address is already connected', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             mockFindUserAddress.mockReturnValue({ Email: 'test@gmail.com' } as any);
             mockGetIsBYOEAddress.mockReturnValue(true);
             const result = setup();
@@ -737,7 +737,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('sends creation_error when the address is linked to another account and cannot be claimed', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             mockApi.mockRejectedValue({
                 data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
             });
@@ -750,7 +750,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('does not send an error when the address is claimable: the user goes on with the claim modal', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
             mockApi
                 .mockRejectedValueOnce({
@@ -765,7 +765,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('sends importer_created flagged as claimed when the address was claimed', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
             const result = setup();
 
@@ -785,7 +785,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('sends creation_error when creating the address fails', async () => {
-            const { reports } = mockTracker();
+            const { reports } = mockBYOECreationFunnelTracker();
             mockDispatch.mockRejectedValue(new Error('nope'));
             const result = setup();
 
