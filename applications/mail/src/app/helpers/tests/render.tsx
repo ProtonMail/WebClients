@@ -44,6 +44,7 @@ import { MAIN_ROUTE_PATH } from '../../constants';
 import { CheckAllRefProvider } from '../../containers/CheckAllRefProvider';
 import { ComposeProvider } from '../../containers/ComposeProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
+import { MailComposerHost } from '../../containers/MailComposerHost';
 import { GlobalModalProvider } from '../../containers/globalModals/GlobalModalProvider';
 import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
 import ChecklistsProvider from '../../containers/onboardingChecklist/provider/ChecklistsProvider';
@@ -123,7 +124,9 @@ const TestProvider = ({ children, history }: Props) => {
                                                                                     <EncryptedSearchProvider>
                                                                                         <LabelActionsContextProvider>
                                                                                             <MailboxLayoutProvider>
-                                                                                                {children}
+                                                                                                <MailComposerHost>
+                                                                                                    {children}
+                                                                                                </MailComposerHost>
                                                                                             </MailboxLayoutProvider>
                                                                                         </LabelActionsContextProvider>
                                                                                     </EncryptedSearchProvider>

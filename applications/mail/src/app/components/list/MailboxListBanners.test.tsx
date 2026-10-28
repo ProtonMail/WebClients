@@ -37,6 +37,7 @@ const baseProps = {
 };
 
 jest.mock('../../store/hooks', () => ({
+    ...jest.requireActual('../../store/hooks'),
     useMailSelector: jest.fn().mockReturnValue(jest.fn()),
 }));
 const useMailSelectorMock = useMailSelector as jest.Mock;

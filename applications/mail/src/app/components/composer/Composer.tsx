@@ -26,6 +26,7 @@ import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces/UserSettings';
+import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { getPublicRecipients, getRecipients, getSender } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
@@ -36,7 +37,6 @@ import { useComposerContent } from '../../hooks/composer/useComposerContent';
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHasScroll } from '../../hooks/useHasScroll';
-import type { Event } from '../../models/event';
 import { useMailStore } from '../../store/hooks';
 import ComposerAssistant from '../assistant/ComposerAssistant';
 import ComposerContent from './ComposerContent';
@@ -46,6 +46,10 @@ import type { ExternalEditorActions } from './editor/EditorWrapper';
 import ComposerInnerModals from './modals/ComposerInnerModals';
 
 type MessageUpdate = PartialMessageState | ((message: MessageState) => PartialMessageState);
+
+interface ContactsEvent {
+    Contacts?: { Action: EVENT_ACTIONS; Contact?: Contact }[];
+}
 
 export interface MessageChange {
     (update: MessageUpdate, reloadSendInfo?: boolean): void;
@@ -228,7 +232,7 @@ const Composer = (
     }, [modelMessage.data?.Subject]);
 
     // Listen to event manager to trigger reload send info
-    useSubscribeEventManager(({ Contacts = [] }: Event) => {
+    useSubscribeEventManager(({ Contacts = [] }: ContactsEvent) => {
         if (!Contacts.length) {
             return;
         }
