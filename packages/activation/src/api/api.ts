@@ -232,10 +232,10 @@ export const createSignupOAuthToken = (
     data,
 });
 
-export const createBYOEAddress = ({ Email, OrganizationId }: { Email: string; OrganizationId?: string }) => ({
+export const createBYOEAddress = (Email: string) => ({
     url: 'mail/v4/byoe-address',
     method: 'POST',
-    data: { Email, OrganizationId },
+    data: { Email },
 });
 
 export const convertToBYOEAddress = (addressID: string) => ({
