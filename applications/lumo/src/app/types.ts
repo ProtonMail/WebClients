@@ -459,6 +459,25 @@ function isQuestionAnswers(value: unknown): value is QuestionAnswer[] {
     );
 }
 
+/** User response to a schedule draft, attached to the user's message. */
+export interface CreateScheduleToolResponse {
+    scheduleId?: SpaceId;
+    name: string;
+    metadataLabel?: string;
+    cancelled?: boolean;
+}
+
+function isCreateScheduleToolResponse(value: any): value is CreateScheduleToolResponse {
+    return (
+        typeof value === 'object' &&
+        value !== null &&
+        (value.scheduleId === undefined || typeof value.scheduleId === 'string') &&
+        typeof value.name === 'string' &&
+        (value.metadataLabel === undefined || typeof value.metadataLabel === 'string') &&
+        (value.cancelled === undefined || typeof value.cancelled === 'boolean')
+    );
+}
+
 export type MessagePriv = {
     // Legacy fields (kept for backward compatibility)
     context?: string;
@@ -499,7 +518,10 @@ export type MessagePriv = {
     artifactAction?: ArtifactActionMeta;
 
     /** Structured question-card answers; content still carries the plain-text model input. */
-    questionAnswers?: QuestionAnswer[];
+    askUserQuestionsToolResponse?: QuestionAnswer[];
+
+    /** Schedule draft response; content carries the plain-text model input. */
+    createScheduleToolResponse?: CreateScheduleToolResponse;
 
     /** Reserved for explicit create-artifact mode (phase 2). Not used for loading state. */
     artifactCreateModeActive?: boolean;
@@ -596,7 +618,8 @@ export function isMessagePriv(value: any): value is MessagePriv {
         (value.compaction === undefined || (typeof value.compaction === 'object' && value.compaction !== null)) &&
         (value.usage === undefined || (typeof value.usage === 'object' && value.usage !== null)) &&
         (value.artifactAction === undefined || isArtifactActionMeta(value.artifactAction)) &&
-        (value.questionAnswers === undefined || isQuestionAnswers(value.questionAnswers)) &&
+        (value.askUserQuestionsToolResponse === undefined || isQuestionAnswers(value.askUserQuestionsToolResponse)) &&
+        (value.createScheduleToolResponse === undefined || isCreateScheduleToolResponse(value.createScheduleToolResponse)) &&
         (value.artifactCreateModeActive === undefined || typeof value.artifactCreateModeActive === 'boolean') &&
         (value.artifactRevisionTargetId === undefined || typeof value.artifactRevisionTargetId === 'string') &&
         (value.artifactManualEdit === undefined || isArtifactManualEditMeta(value.artifactManualEdit))
@@ -625,7 +648,8 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         requestedModel,
         compaction,
         artifactAction,
-        questionAnswers,
+        askUserQuestionsToolResponse,
+        createScheduleToolResponse,
         artifactCreateModeActive,
         artifactRevisionTargetId,
         artifactManualEdit,
@@ -647,7 +671,8 @@ export function getMessagePriv(m: MessagePriv): MessagePriv {
         requestedModel,
         compaction,
         artifactAction,
-        questionAnswers,
+        askUserQuestionsToolResponse,
+        createScheduleToolResponse,
         artifactCreateModeActive,
         artifactRevisionTargetId,
         artifactManualEdit,
@@ -662,8 +687,15 @@ export function isCompactionMessage(message: MessagePriv): boolean {
 /** Question-card submissions use their own renderer while remaining ordinary user turns for the model. */
 export function isQuestionAnswerMessage(
     message: MessagePriv
-): message is MessagePriv & { questionAnswers: QuestionAnswer[] } {
-    return message.questionAnswers !== undefined;
+): message is MessagePriv & { askUserQuestionsToolResponse: QuestionAnswer[] } {
+    return message.askUserQuestionsToolResponse !== undefined;
+}
+
+/** Schedule responses have a dedicated UI while remaining ordinary user turns for the model. */
+export function isCreateScheduleResponseMessage(
+    message: MessagePriv
+): message is MessagePriv & { createScheduleToolResponse: CreateScheduleToolResponse } {
+    return message.createScheduleToolResponse !== undefined;
 }
 
 export function isManualArtifactEditMessage(message: MessagePriv): boolean {
@@ -694,7 +726,8 @@ export function cleanMessage(message: Message): Message {
         requestedModel,
         compaction,
         artifactAction,
-        questionAnswers,
+        askUserQuestionsToolResponse,
+        createScheduleToolResponse,
         artifactCreateModeActive,
         artifactRevisionTargetId,
         artifactManualEdit,
@@ -723,7 +756,8 @@ export function cleanMessage(message: Message): Message {
         ...(requestedModel !== undefined && { requestedModel }),
         ...(compaction !== undefined && { compaction }),
         ...(artifactAction !== undefined && { artifactAction }),
-        ...(questionAnswers !== undefined && { questionAnswers }),
+        ...(askUserQuestionsToolResponse !== undefined && { askUserQuestionsToolResponse }),
+        ...(createScheduleToolResponse !== undefined && { createScheduleToolResponse }),
         ...(artifactCreateModeActive !== undefined && { artifactCreateModeActive }),
         ...(artifactRevisionTargetId !== undefined && { artifactRevisionTargetId }),
         ...(artifactManualEdit !== undefined && { artifactManualEdit }),
@@ -780,7 +814,8 @@ export function isEmptyMessagePriv(value: MessagePriv): boolean {
         value.requestedModel === undefined &&
         value.compaction === undefined &&
         value.artifactAction === undefined &&
-        value.questionAnswers === undefined &&
+        value.askUserQuestionsToolResponse === undefined &&
+        value.createScheduleToolResponse === undefined &&
         value.artifactCreateModeActive === undefined &&
         value.artifactRevisionTargetId === undefined &&
         value.usage === undefined
@@ -1299,7 +1334,9 @@ export interface ActionParams {
     imageOptions?: ImageGenerationOptions;
     artifactAction?: ArtifactActionMeta;
     /** Structured question-card answers; content still carries the plain-text model input. */
-    questionAnswers?: QuestionAnswer[];
+    askUserQuestionsToolResponse?: QuestionAnswer[];
+    /** Schedule draft response; content carries the plain-text model input. */
+    createScheduleToolResponse?: CreateScheduleToolResponse;
     artifactRevisionTargetId?: string;
     /** True when the message was auto-sent from a ?q= URL parameter. */
     isFromQueryParam?: boolean;

@@ -10,6 +10,11 @@ import type { LumoState } from '../../store';
 export type PushSpaceRequest = {
     id: SpaceId;
     priority?: Priority;
+    /**
+     * Skip persistence while global ghost chat mode is active. Defaults to true.
+     * Set to false for explicitly saved spaces, such as created schedules, that may outlive the ghost chat.
+     */
+    skipInGhostChatMode?: boolean;
 };
 export type PushSpaceSuccess = PushSpaceRequest & {
     space?: Space;

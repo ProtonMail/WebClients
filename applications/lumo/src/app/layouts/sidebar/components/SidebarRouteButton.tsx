@@ -13,21 +13,22 @@ interface SidebarRouteButtonProps {
 
 export const SidebarRouteButton = ({ icon, label, onItemClick, pathname }: SidebarRouteButtonProps) => {
     const history = useHistory();
-    const isActive = !!useRouteMatch(pathname);
+    const match = useRouteMatch(pathname);
+    const isExactMatch = match?.isExact ?? false;
 
     const handleClick = useCallback(() => {
-        if (!isActive) {
+        if (!isExactMatch) {
             history.push(pathname);
         }
         onItemClick();
-    }, [history, isActive, onItemClick, pathname]);
+    }, [history, isExactMatch, onItemClick, pathname]);
 
     return (
         <SidebarItem
             icon={icon}
             label={label}
             onClick={handleClick}
-            className={isActive ? 'sidebar-item--active' : undefined}
+            className={match ? 'sidebar-item--active' : undefined}
         />
     );
 };

@@ -5,6 +5,7 @@ import type { AssistantCallOptions, ClientToolExecutor, LumoApiClientConfig } fr
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { askUserQuestionsToolExecutor } from '../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
+import { createScheduleToolExecutor } from '../../features/client-tools/createScheduleTool/createScheduleTool';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import type { ContextFilter } from '../../llm';
 import { compactConversation, estimateTurnsTokens } from '../../llm/compaction';
@@ -47,6 +48,8 @@ type ForwardedSendOptions = AssistantCallOptions & {
     artifactPresentationEnabled?: boolean;
     /** Advertise the ask_user_questions tool only when its feature flag is enabled. */
     enableAskUserQuestionsTool?: boolean;
+    /** Offer schedule drafts for review when schedules are enabled. */
+    enableCreateScheduleTool?: boolean;
 };
 
 export type ConversationGenerationResult = {
@@ -103,6 +106,10 @@ const DEFAULT_MAX_COMPACTIONS = 1;
  */
 function resolveClientToolExecutor(sendOptions: ForwardedSendOptions): ClientToolExecutor | undefined {
     const executors: ClientToolExecutor[] = [];
+
+    if (sendOptions.enableCreateScheduleTool) {
+        executors.push(createScheduleToolExecutor);
+    }
 
     if (sendOptions.enableAskUserQuestionsTool) {
         executors.push(askUserQuestionsToolExecutor);

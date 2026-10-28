@@ -47,6 +47,7 @@ export type DesktopExternalTools = {
 export type DesktopConnector = {
     id: string;
     display_name: string;
+    description?: string;
     icon?: string | null;
     /** Defaults to enabled when omitted by a gateway manifest. Only explicit false disables the connector. */
     enabled?: boolean;
@@ -146,7 +147,7 @@ export async function getDesktopOpenAITools(): Promise<ChatCompletionsFunctionTo
 }
 
 export async function getDesktopConnectors(): Promise<DesktopConnector[]> {
-    const api = window.LumoConnectors;
+    const api = getDesktopConnectorsApi();
     if (!api) {
         return [];
     }
@@ -154,6 +155,17 @@ export async function getDesktopConnectors(): Promise<DesktopConnector[]> {
         await api.ready;
     }
     return api.getConnectors?.() ?? api.getManifests?.() ?? [];
+}
+
+export async function getDesktopManifests(): Promise<DesktopConnector[]> {
+    const api = getDesktopConnectorsApi();
+    if (!api) {
+        return [];
+    }
+    if (api.ready) {
+        await api.ready;
+    }
+    return api.getManifests?.() ?? [];
 }
 
 export async function setDesktopConnectorEnabled(connectorId: string, enabled: boolean): Promise<void> {

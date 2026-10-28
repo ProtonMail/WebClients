@@ -21,7 +21,7 @@ export const saveSchedule =
         }
         const space = createScheduleSpace(id, schedule, existing);
         dispatch(addSpace(space));
-        dispatch(pushSpaceRequest({ id }));
+        dispatch(pushSpaceRequest({ id, skipInGhostChatMode: false }));
         return id;
     };
 

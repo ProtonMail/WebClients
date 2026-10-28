@@ -26,6 +26,10 @@ const isUsableWithWarningStatus = (connector: DesktopConnector) =>
     isUsable(connector) && connector.status?.state === 'warning';
 
 type ConnectorListProps = {
+    /** Whether to display the connector list in a compact mode. */
+    compact?: boolean;
+    /** The header for the connector list. */
+    header?: string;
     /** The class name for the header. */
     headerClassName?: string;
     /** The connectors that are currently selected. */
@@ -48,11 +52,14 @@ type ConnectorListReadyViewProps = ConnectorListProps & {
 };
 
 const ConnectorListReadyView = ({
-    value: selectedConnectors,
-    onChange,
-    editMode,
+    compact,
     connectors,
+    editMode,
+    header,
+    headerClassName,
     labelId,
+    onChange,
+    value: selectedConnectors,
 }: ConnectorListReadyViewProps) => {
     const addConnectorButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -68,14 +75,27 @@ const ConnectorListReadyView = ({
 
     return (
         <>
-            <fieldset aria-labelledby={labelId} className="flex flex-wrap gap-2 m-0 p-0 border-none">
+            <fieldset
+                aria-labelledby={labelId}
+                className={clsx('flex flex-wrap m-0 p-0 border-none', compact ? 'gap-1.5' : 'gap-2')}
+            >
+                {/* Compact header */}
+                {compact && (
+                    <span
+                        className={clsx('connector-list__header--compact self-center text-sm', headerClassName)}
+                        id={labelId}
+                    >
+                        {header}
+                    </span>
+                )}
+
                 {/* Selected connectors */}
                 {selectedConnectors.map((connector) => {
                     const manifest = connectors.find(({ id }) => id === connector.id);
                     const unavailable = !manifest || !isUsable(manifest);
                     return (
                         <ConnectorChip
-                            key={connector.id}
+                            compact={compact}
                             connector={
                                 manifest ?? {
                                     id: connector.id,
@@ -86,6 +106,7 @@ const ConnectorListReadyView = ({
                                     status: { state: 'not_ready', reason: 'Not connected yet' },
                                 }
                             }
+                            key={connector.id}
                             onRemove={
                                 editMode
                                     ? () => {
@@ -102,12 +123,16 @@ const ConnectorListReadyView = ({
                 {/* Add connector button */}
                 {editMode && (
                     <SimpleDropdown
-                        ref={addConnectorButtonRef}
                         as="button"
-                        className="connector-list__add-connector-chip button-ghost-norm inline-flex flex-nowrap shrink-0 items-center gap-1.5 border border-dashed rounded cursor-pointer interactive interactive--no-background"
+                        className={clsx(
+                            'connector-list__add-connector-chip button-ghost-norm inline-flex flex-nowrap shrink-0 items-center border border-dashed rounded cursor-pointer interactive interactive--no-background',
+                            compact
+                                ? 'connector-list__add-connector-chip--compact gap-1'
+                                : 'connector-list__add-connector-chip--regular gap-1.5'
+                        )}
                         content={
                             <>
-                                <LumoIcon aria-hidden className="shrink-0" name="Plus" size={14} />
+                                <LumoIcon aria-hidden className="shrink-0" name="Plus" size={compact ? 12 : 14} />
                                 <span>{
                                     // translator: Button opening the scheduled task's connector picker.
                                     c('collider_2025:Action').t`Add connector`
@@ -116,6 +141,7 @@ const ConnectorListReadyView = ({
                         }
                         dropdownSize={{ width: DropdownSizeUnit.Dynamic }}
                         hasCaret={false}
+                        ref={addConnectorButtonRef}
                         type="button"
                     >
                         <DropdownMenu>
@@ -216,6 +242,9 @@ export const ConnectorList = (props: ConnectorListProps) => {
     const labelId = `${id}-label`;
     const { manifests, status } = useDesktopManifests();
 
+    // translator: Heading for the scheduled task's allowed connectors (external tools and services).
+    const header = props.header ?? c('collider_2025:Label').t`Connectors this task can use`;
+
     const renderView = () => {
         switch (status) {
             case 'loading':
@@ -223,18 +252,17 @@ export const ConnectorList = (props: ConnectorListProps) => {
             case 'error':
                 return <ConnectorListErrorView />;
             case 'ready':
-                return <ConnectorListReadyView {...props} connectors={manifests} labelId={labelId} />;
+                return <ConnectorListReadyView {...props} connectors={manifests} header={header} labelId={labelId} />;
         }
     };
 
     return (
-        <section className="flex flex-column gap-3">
-            <span className={clsx('m-0 text-semibold', props.headerClassName)} id={labelId}>
-                {
-                    // translator: Heading for the scheduled task's allowed connectors (external tools and services).
-                    c('collider_2025:Label').t`Connectors this task can use`
-                }
-            </span>
+        <section className="flex flex-column flex-nowrap gap-3">
+            {!props.compact && (
+                <span className={clsx('text-semibold', props.headerClassName)} id={labelId}>
+                    {header}
+                </span>
+            )}
             {renderView()}
         </section>
     );

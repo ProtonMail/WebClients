@@ -12,6 +12,7 @@ import './ConnectorChip.scss';
 
 interface ConnectorChipProps {
     className?: string;
+    compact?: boolean;
     connector: DesktopConnector;
     onRemove?: () => void;
     unavailable?: boolean;
@@ -55,7 +56,7 @@ export const ConnectorIcon = ({
         <LumoIcon aria-hidden className={className} name="Blocks" size={size} />
     );
 
-export const ConnectorChip = ({ connector, onRemove, unavailable, warning }: ConnectorChipProps) => {
+export const ConnectorChip = ({ compact, connector, onRemove, unavailable, warning }: ConnectorChipProps) => {
     const label = connector.display_name;
     const statusLabel = getConnectorStatusLabel(connector);
     const statusAccessibleLabel = getConnectorStatusLabel(connector, { a11y: true });
@@ -64,9 +65,13 @@ export const ConnectorChip = ({ connector, onRemove, unavailable, warning }: Con
         <span
             className={clsx(
                 'connector-chip',
-                warning && 'connector-chip--warning',
+                compact ? 'connector-chip--compact' : 'connector-chip--regular',
                 unavailable && 'connector-chip--unavailable',
-                'relative inline-flex flex-nowrap shrink-0 items-center gap-1.5 px-2 pr-1.5 border rounded'
+                warning && 'connector-chip--warning',
+                'relative inline-flex flex-nowrap shrink-0 items-center',
+                compact ? 'gap-1' : 'gap-1.5',
+                onRemove && 'pr-1.5',
+                'border rounded'
             )}
         >
             <Tooltip openDelay={300} title={unavailable || warning ? statusLabel : undefined}>
@@ -74,7 +79,7 @@ export const ConnectorChip = ({ connector, onRemove, unavailable, warning }: Con
                     <ConnectorIcon
                         className="connector-chip__icon"
                         icon={connector.icon}
-                        size={14}
+                        size={compact ? 12 : 14}
                         unavailable={unavailable}
                         warning={warning}
                     />
@@ -83,14 +88,14 @@ export const ConnectorChip = ({ connector, onRemove, unavailable, warning }: Con
             </Tooltip>
             {(unavailable || warning) && (
                 <span className="sr-only">{
-                    // translator: Accessibility label for the connector's status. ${statusLabel} is the connector's status label.
+                    // translator: Accessible status of an external tool or service. ${statusAccessibleLabel} describes whether it is connected, unavailable, or needs attention.
                     c('collider_2025:Info').t`Status: ${statusAccessibleLabel}`
                 }</span>
             )}
             {onRemove && (
                 <Button
                     aria-label={
-                        // translator: Accessibility label for the remove button to remove a Connector (bridge to external systems/tools) from a schedule. ${label} is the connector's display name.
+                        // translator: Accessible label for removing an external tool or service from this task, not uninstalling it. ${label} is its display name.
                         c('collider_2025:Action').t`Remove ${label}`
                     }
                     className="connector-chip__remove inline-flex shrink-0 items-center justify-center p-0 border border-transparent rounded-sm"

@@ -3,20 +3,16 @@ import type { ChatCompletionsFunctionTool } from '@proton/lumo-api-client/types-
 
 import type { QuestionCardQuestionData } from '../../../components/QuestionCard/types';
 import type { QuestionAnswer } from '../../../types';
+import type { ClientToolSuccessResult } from '../validationUtils';
 import { askUserQuestionsSchema } from './schema';
 import { validateAskUserQuestionsToolArguments } from './validation';
 
 export const ASK_USER_QUESTIONS_TOOL_NAME = 'ask_user_questions';
+const ASK_USER_QUESTIONS_TOOL_RESPONSE_IDENTIFIER = 'ask_user_questions_response';
 
 /** Fully parsed tool arguments, ready to pass to QuestionCard after validation. */
 export interface AskUserQuestionsToolArguments {
     questions: QuestionCardQuestionData[];
-}
-
-/** Acknowledges that validated questions can be shown; their content stays in the tool-call arguments. */
-export interface AskUserQuestionsToolSuccessResult {
-    ok: true;
-    message: string;
 }
 
 const askUserQuestionsTool = {
@@ -28,7 +24,7 @@ const askUserQuestionsTool = {
             "Group concise choice questions together in the user's language. " +
             'Prefer at most 5 options per question, including the custom-answer input when allowCustomAnswer is true (at most 4 listed options plus the custom input). ' +
             "Set allowMultiple to true when several options can apply, or false for a single selection; respect the user's requested selection mode. " +
-            'Set allowCustomAnswer to true to accept an answer outside the listed options. ' +
+            'Prefer allowCustomAnswer true when useful answers are likely to fall outside the listed options. ' +
             'This supplies a custom input, so do not add an "Other" option. ' +
             'The UI renders questions directly from the tool call. ' +
             "Never print the arguments, JSON, or Markdown questions, or mention the tool's name to the user. " +
@@ -51,7 +47,7 @@ const invalidCall = (error: string): ClientToolResult => ({
 /**
  * Advertise ask_user_questions and validate its calls on the client.
  * Return validation errors for the model to correct, or acknowledge success so the UI can render
- * the questions from the call arguments. Ask the model to end its turn and wait for the user;
+ * the questions from the call arguments. Successful results end the client tool loop without another completion;
  * submitted answers are sent separately as a new user message.
  */
 export const askUserQuestionsToolExecutor: ClientToolExecutor = {
@@ -71,15 +67,16 @@ export const askUserQuestionsToolExecutor: ClientToolExecutor = {
             const validation = validateAskUserQuestionsToolArguments(args);
             if (!validation.ok) return invalidCall(validation.error);
 
-            const result: AskUserQuestionsToolSuccessResult = {
-                ok: true,
-                message:
-                    'The UI has rendered the questions directly from this tool call. Never print the tool arguments, JSON, ' +
-                    "or a Markdown version of the questions, and do not answer on the user's behalf. " +
-                    'End your turn with no additional text or tool calls. ' +
-                    "Wait for the user's answers in a new message before continuing.",
+            return {
+                endTurn: true,
+                content: JSON.stringify({
+                    ok: true,
+                    message:
+                        'The question UI will render the validated questions directly from this tool call. ' +
+                        `Answers submitted through the UI will arrive in the next user message, prefixed with ${ASK_USER_QUESTIONS_TOOL_RESPONSE_IDENTIFIER}. ` +
+                        'A message typed directly by the user without using the question UI will not have this prefix.',
+                } satisfies ClientToolSuccessResult),
             };
-            return { content: JSON.stringify(result) };
         }),
 };
 
@@ -87,8 +84,8 @@ export const askUserQuestionsToolExecutor: ClientToolExecutor = {
  * Compose the user message submitted to backend from a question card, pairing each question title with the user's
  * selected answers or custom text and explicitly identifying skipped questions.
  */
-export function formatQuestionAnswersForModel(questionAnswers: QuestionAnswer[]): string {
-    return questionAnswers
+export function formatAskUserQuestionsToolResponseForModel(askUserQuestionsToolResponse: QuestionAnswer[]): string {
+    const askUserQuestionsToolResponseText = askUserQuestionsToolResponse
         .map(({ title, answers, skipped }) => {
             if (skipped || !answers?.length) {
                 return `Question: ${title}\nThe user skipped this question.`;
@@ -98,4 +95,5 @@ export function formatQuestionAnswersForModel(questionAnswers: QuestionAnswer[])
             return `Question: ${title}\nUser answered: ${answerText}`;
         })
         .join('\n\n');
+    return `${ASK_USER_QUESTIONS_TOOL_RESPONSE_IDENTIFIER}:\n` + askUserQuestionsToolResponseText;
 }

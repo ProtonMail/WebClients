@@ -511,14 +511,17 @@ const ComposerComponentInner = ({
                  * Also kept outside the native-composer visibility wrapper so limit cards
                  * stay visible and dismissible when the native composer is active.
                  */}
-                <div className="composer-pre-input flex flex-column flex-nowrap items-center gap-2 w-full">
+                <div
+                    className="composer-pre-input flex flex-column flex-nowrap items-center gap-2 w-full max-h-custom"
+                    style={{ '--max-h-custom': '50dvh' }}
+                >
                     {composerPreInputContent}
                 </div>
 
                 {!isConversationClosed && (
                     <div
                         style={{ visibility: nativeComposerVisibilityApi.showWebComposer() ? 'visible' : 'hidden' }}
-                        className="w-full"
+                        className="shrink-0 w-full"
                         ref={inputContainerRef}
                     >
                         <section

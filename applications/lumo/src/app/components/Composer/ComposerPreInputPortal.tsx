@@ -21,7 +21,7 @@ export const ComposerPreInputPortalProvider = ({ children }: { children: ReactNo
 export const ComposerPreInputPortalRoot = () => {
     const context = useContext(ComposerPreInputPortalContext);
 
-    return <div className="w-full mb-2 empty:hidden" ref={context?.setRoot} />;
+    return <div className="w-full mb-2 px-1.5 empty:hidden" ref={context?.setRoot} />;
 };
 
 /** Render children above the composer once its root is available. */
