@@ -178,6 +178,7 @@ const ComposerMoreActions = ({
                 <ComposerMoreOptionsDropdown
                     titleTooltip={titleMoreOptions}
                     className="button button-medium button-ghost-weak button-for-icon composer-more-dropdown"
+                    size={{ width: DropdownSizeUnit.Dynamic, height: DropdownSizeUnit.Dynamic }}
                     onOpen={bookingSpotlight.onClose}
                     content={
                         <IcThreeDotsHorizontal
