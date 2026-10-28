@@ -19,16 +19,32 @@ import { RestoreFromTrashButton } from './buttons/RestoreFromTrash'
 import { DeletePermanentlyButton } from './buttons/DeletePermanently'
 import { useLoadRecentsWithSdkEnabled, useTrashWithSDK } from '~/utils/flags'
 import { MemberRole } from '@proton/drive/sdk'
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
+import { IcTrash } from '@proton/icons/icons/IcTrash'
+import { c } from 'ttag'
+import { ContextMenuButton } from './ContextMenuButton'
+
+export type SelectionActions = { move?: () => void; trash: () => void; disabled: boolean }
 
 export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
   currentDocument: RecentDocumentsItem | undefined
+  /** Replaces the document's actions when the menu acts on the whole selection. */
+  selectionActions?: SelectionActions
   // NOTE: copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx
   // Unsure why it's necessary if the base ContextMenu doesn't take this prop. Its purpose may
   // be related to the effect below.
   open: () => void
 }
 
-export function DocContextMenu({ anchorRef, isOpen, position, open, close, currentDocument }: DocContextMenuProps) {
+export function DocContextMenu({
+  anchorRef,
+  isOpen,
+  position,
+  open,
+  close,
+  currentDocument,
+  selectionActions,
+}: DocContextMenuProps) {
   const canShare = useCanShare(currentDocument)
   const canTrash = useCanTrash()
 
@@ -89,7 +105,9 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
         size={{ maxHeight: DropdownSizeUnit.Viewport, maxWidth: DropdownSizeUnit.Viewport }}
         anchorRef={anchorRef}
       >
-        {!isTrash ? (
+        {selectionActions ? (
+          <SelectionMenuItems actions={selectionActions} close={close} />
+        ) : !isTrash ? (
           <>
             <OpenButton currentDocument={currentDocument} close={close} />
             {canShare ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
@@ -111,6 +129,34 @@ export function DocContextMenu({ anchorRef, isOpen, position, open, close, curre
           </>
         )}
       </ContextMenu>
+    </>
+  )
+}
+
+type SelectionMenuItemsProps = { actions: SelectionActions; close: () => void }
+
+function SelectionMenuItems({ actions: { move, trash, disabled }, close }: SelectionMenuItemsProps) {
+  return (
+    <>
+      {move ? (
+        <>
+          <ContextMenuButton
+            name={c('Action').t`Move`}
+            icon={<IcArrowsCross className="mr-2" />}
+            action={move}
+            close={close}
+            disabled={disabled}
+          />
+          <ContextSeparator className="my-1" />
+        </>
+      ) : null}
+      <ContextMenuButton
+        name={c('Action').t`Move to trash`}
+        icon={<IcTrash className="mr-2" />}
+        action={trash}
+        close={close}
+        disabled={disabled}
+      />
     </>
   )
 }

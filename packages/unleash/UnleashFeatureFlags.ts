@@ -164,6 +164,7 @@ enum DocsFeatureFlag {
     DocsDarkTheme = 'DocsDarkTheme',
     DocsEmojiPicker = 'DocsEmojiPicker',
     DocsGatePrivateInviteAccess = 'DocsGatePrivateInviteAccess',
+    DocsHomepageBulkMove = 'DocsHomepageBulkMove',
     DocsHomepageBulkTrash = 'DocsHomepageBulkTrash',
     DocsODTEnabled = 'DocsODTEnabled',
     DocsOpenTracer = 'DocsOpenTracer',

@@ -13,6 +13,9 @@ SDK switch flags:
 
 Other flags:
 - DocsHomepageBulkTrash - requires DocsTrashWithDriveSDK
+- DocsHomepageBulkMove - requires DocsHomepageBulkTrash (with DocsTrashWithDriveSDK), DocsMoveModalDriveSDK
+  and DocsLoadRecentsWithDriveSDK.
+  It also shows row actions on hover only, and gives a selection's row menu just Move and Move to trash.
 */
 
 export function useLoadRecentsWithSdkEnabled() {
@@ -45,6 +48,14 @@ export function useBulkTrashEnabled() {
   const bulk = useFlag('DocsHomepageBulkTrash')
   const trashWithSDK = useTrashWithSDK()
   return bulk && trashWithSDK
+}
+
+export function useBulkMoveEnabled() {
+  const bulkMove = useFlag('DocsHomepageBulkMove')
+  const bulkTrash = useBulkTrashEnabled()
+  const moveModalDriveSdk = useMoveModalDriveSdkEnabled()
+  const recentsWithSdk = useLoadRecentsWithSdkEnabled()
+  return bulkMove && bulkTrash && moveModalDriveSdk && recentsWithSdk
 }
 
 export function useIsOpenTracerEnabled() {
