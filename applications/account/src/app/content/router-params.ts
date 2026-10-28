@@ -60,7 +60,6 @@ export type Flags = {
 
 export type OrganizationSettingsRouterParams = {
     organization: OrganizationExtended | undefined;
-    isB2BDrive: boolean;
     isGroupOwner: boolean | null;
     isOrganizationOwner: boolean;
     memberships: GroupMembershipReturn[] | undefined;

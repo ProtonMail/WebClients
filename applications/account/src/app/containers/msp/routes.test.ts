@@ -15,7 +15,6 @@ const buildParams = (overrides: Partial<OrganizationRouterParams>): Organization
     entitlements: { isMspEligible: true } as EntitlementChecksForOrgAndUser,
     flags: {} as Flags,
     organization: undefined,
-    isB2BDrive: false,
     isGroupOwner: null,
     isOrganizationOwner: false,
     memberships: undefined,

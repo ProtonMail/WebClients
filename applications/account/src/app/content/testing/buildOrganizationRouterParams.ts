@@ -79,7 +79,6 @@ export const buildOrganizationRouterParams = ({
             organization: resolvedOrganization,
         }),
         organization: resolvedOrganization,
-        isB2BDrive: false,
         isGroupOwner: null,
         isOrganizationOwner: false,
         memberships: undefined,
