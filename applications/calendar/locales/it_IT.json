@@ -1043,6 +1043,9 @@
       ],
       "Add a payment method": [
         "Aggiungi un metodo di pagamento"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "action": {
@@ -6546,6 +6549,21 @@
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
         "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per mantenere l'abbonamento. ${ learnMoreLink }"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanzia di rimborso entro 30 giorni: annulla l'ordine entro 30 giorni dall'acquisto e contatta il nostro servizio clienti ${ customerSupportLink } per ottenere un rimborso."
+      ],
+      "UnionPay logo": [
+        "Logo UnionPay"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Hai una fattura in sospeso ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Hai una fattura in sospeso con scadenza il ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Il periodo di prova gratuito è terminato. Abbonati subito per garantire al tuo team un accesso ininterrotto e la sicurezza degli account."
       ]
     },
     "info": {
@@ -7483,6 +7501,12 @@
       ],
       "What’s this?": [
         "Cos'è questo?"
+      ],
+      "Customer Support": [
+        "Assistenza clienti"
+      ],
+      "Pay it": [
+        "Paga"
       ]
     },
     "Link label (optional)": {
@@ -9051,6 +9075,9 @@
       ],
       "Your subscription renews soon": [
         "Il tuo abbonamento si rinnoverà presto"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "È l'ultima occasione per ottenere il primo mese di ${ plan } a questo prezzo."
       ]
     },
     "Offer fearue": {
@@ -9097,6 +9124,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Alias illimitati per proteggere la tua identità"
+      ],
+      "Short @pm.me address": [
+        "Indirizzo email breve @pm.me"
       ]
     },
     "Onboarding": {
@@ -9627,6 +9657,18 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Il tuo account è troppo vecchio per partecipare all'iniziativa Born Private."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Il cambio di piano non è compatibile per i seguenti motivi:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "I posti a sedere al Proton Meet devono corrispondere al numero dei partecipanti."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Questo piano non supporta le funzionalità gestite del tuo account."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Al momento non è possibile completare l'iscrizione. Riprova più tardi."
       ]
     },
     "Payments.Error": {
@@ -12297,6 +12339,9 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abbonati a ${ planTitle }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12502,6 +12547,9 @@
       ],
       "This user gets administrator rights the next time they sign in.": [
         "Questo utente otterrà i diritti di amministratore al prossimo accesso."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Non puoi modificare i tuoi ruoli. Chiedi a un altro amministratore di modificarli."
       ]
     },
     "Validation": {
@@ -12965,6 +13013,16 @@
     "Payments.InfoBanner": {
       "Changing your billing address may affect taxes on future invoices.": [
         "La modifica dell'indirizzo di fatturazione potrebbe influire sulle imposte relative alle fatture future."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garanzia di rimborso entro 30 giorni: annulla l'ordine entro 30 giorni dall'acquisto e contatta il nostro servizio clienti ${ customerSupportLink } per ottenere un rimborso."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Confermando, autorizzi ${ BRAND_NAME } e Stripe, il nostro fornitore di servizi di pagamento, a prelevare i futuri pagamenti relativi al tuo abbonamento da questo conto corrente tramite addebito diretto SEPA, e la tua banca ad addebitare tali importi. Il tuo primo pagamento viene effettuato ora da ${ IDEAL_WERO_BRAND_NAME }. Il tuo abbonamento si rinnova automaticamente fino a quando non lo disdici; ti avviseremo prima di ogni addebito. Per gli addebiti diretti, puoi richiedere un rimborso alla tua banca entro 8 settimane dalla data dell'addebito, secondo i termini del contratto stipulato con la tua banca. Ciò non si applica al pagamento di ${ IDEAL_WERO_BRAND_NAME } che stai effettuando ora."
       ]
     }
   }
