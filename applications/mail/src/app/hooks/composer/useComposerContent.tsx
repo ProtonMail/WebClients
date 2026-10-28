@@ -33,7 +33,6 @@ import {
     getMessageContentBeforeBlockquote,
     setMessageContentBeforeBlockquote,
 } from '../../helpers/composer/contentFromComposerMessage';
-import { getDate } from '../../helpers/elements';
 import { getComposerDefaultFontStyles, getContent, setContent } from '../../helpers/message/messageContent';
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
@@ -44,8 +43,6 @@ import { composerActions } from '../../store/composers/composersSlice';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
 import { removeInitialAttachments, updateDraftContent } from '../../store/messages/draft/messagesDraftActions';
 import { messageByID } from '../../store/messages/messagesSelectors';
-import { MOVE_BACK_ACTION_TYPES } from '../actions/moveBackAction/interfaces';
-import { useMoveBackAction } from '../actions/moveBackAction/useMoveBackAction';
 import { useInitializeMessage } from '../message/useInitializeMessage';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from '../message/useLoadImages';
 import { useGetMessage, useMessage } from '../message/useMessage';
@@ -54,6 +51,7 @@ import { useMessageSendInfo, useReloadSendInfo } from '../useSendInfo';
 import { useAttachments } from './useAttachments/useAttachments';
 import { useAutoSave } from './useAutoSave';
 import { useCloseHandler } from './useCloseHandler';
+import { useComposerHost } from './useComposerHost';
 import { useComposerHotkeys } from './useComposerHotkeys';
 import { useComposerInnerModals } from './useComposerInnerModals';
 import { useDraftBodyWriterRegistration } from './useDraftBodyWriterRegistration';
@@ -90,7 +88,7 @@ export const useComposerContent = (args: EditorArgs) => {
     const dispatch = useMailDispatch();
     const store = useMailStore();
 
-    const handleOnBackMoveAction = useMoveBackAction();
+    const { onDraftDiscarded } = useComposerHost();
 
     const { onClose, composerFrameRef, isFocused, editorReady } = args;
 
@@ -151,8 +149,8 @@ export const useComposerContent = (args: EditorArgs) => {
     const modelMessageRef = useRef(modelMessage);
     modelMessageRef.current = modelMessage;
 
-    const date = getDate(syncedMessage.data, '');
-    const timestamp = date ? date.getTime() : 0;
+    const date = syncedMessage.data ? new Date((syncedMessage.data.Time || 0) * 1000) : new Date();
+    const timestamp = date.getTime();
 
     // Handles message already sent error
     const onMessageAlreadySent = useHandleMessageAlreadySent({
@@ -549,9 +547,8 @@ export const useComposerContent = (args: EditorArgs) => {
     }, [modelMessage.messageDocument?.initialized]);
 
     const handleDiscard = async (hasChanges = true) => {
-        // Handle message move out if necessary
         if (modelMessage.data?.ID) {
-            handleOnBackMoveAction({ type: MOVE_BACK_ACTION_TYPES.PERMANENT_DELETE, elements: [modelMessage.data] });
+            onDraftDiscarded(modelMessage.data);
         }
 
         const message = getMessage(messageID);

@@ -1,5 +1,4 @@
 import { useCallback } from 'react';
-import { useHistory } from 'react-router';
 
 import { logger } from '@protontech/logger';
 import { c } from 'ttag';
@@ -21,7 +20,6 @@ import LoadingNotificationContent from '../../components/notifications/LoadingNo
 import type { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
 import { MIN_DELAY_SENT_NOTIFICATION, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
 import { pickMessageInfosForSentry } from '../../helpers/errors';
-import { getParamsFromPathname, setParamsInLocation } from '../../helpers/mailboxUrl';
 import { encryptPackages } from '../../helpers/send/sendEncrypt';
 import { sendFormatter } from '../../helpers/send/sendFormatter';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
@@ -37,6 +35,7 @@ import { useGetMessage } from '../message/useMessage';
 import useDelaySendSeconds from '../useDelaySendSeconds';
 import type { OnCompose } from './useCompose';
 import { ComposeTypes } from './useCompose';
+import { useComposerHost } from './useComposerHost';
 import { useSendModifications } from './useSendModifications';
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
@@ -58,7 +57,7 @@ export const useSendMessage = () => {
     const dispatch = useMailDispatch();
     const { call } = useEventManager();
     const getMessage = useGetMessage();
-    const history = useHistory<any>();
+    const { onMessageSent } = useComposerHost();
     const delaySendSeconds = useDelaySendSeconds();
     const { createNotification, hideNotification } = useNotifications();
     const sendModification = useSendModifications();
@@ -227,19 +226,7 @@ export const useSendMessage = () => {
 
                 dispatch(sent(Sent));
 
-                // Navigation to the sent message
-                const {
-                    params: { labelID, elementID },
-                } = getParamsFromPathname(history.location.pathname);
-                if (elementID === Sent.ConversationID) {
-                    history.push(
-                        setParamsInLocation(history.location, {
-                            labelID,
-                            elementID: Sent.ConversationID,
-                            messageID: Sent.ID,
-                        })
-                    );
-                }
+                onMessageSent(Sent);
             } catch (error: any) {
                 logger.error('Failed to send message', error);
 
