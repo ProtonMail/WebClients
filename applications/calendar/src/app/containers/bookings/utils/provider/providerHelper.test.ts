@@ -46,11 +46,26 @@ describe('Provider helpers', () => {
             expect(result).toBe(BookingErrorMessages.RANGE_MULTIPLE_DAYS);
         });
 
-        it('should return null when adding range is on single day', () => {
+        it('should return error when updating range spans multiple days', () => {
             const result = validateRangeOperation({
-                operation: 'add',
+                operation: 'update',
                 start: futureStart,
-                end: futureEnd,
+                end: addDays(futureEnd, 1),
+                rangeId: 'new-range',
+                existingRanges: [],
+                recurring: false,
+                timezone: 'Europe/Zurich',
+            });
+
+            expect(result).toBe(BookingErrorMessages.RANGE_MULTIPLE_DAYS);
+        });
+
+        it('should allow range ending at next day midnight', () => {
+            const start = set(futureDate, { hours: 23, minutes: 0, seconds: 0, milliseconds: 0 });
+            const result = validateRangeOperation({
+                operation: 'update',
+                start,
+                end: set(addDays(futureDate, 1), { hours: 0, minutes: 0, seconds: 0, milliseconds: 0 }),
                 rangeId: 'new-range',
                 existingRanges: [],
                 recurring: false,
@@ -60,12 +75,26 @@ describe('Provider helpers', () => {
             expect(result).toBeNull();
         });
 
-        it('should allow range update spanning multiple days for update operation', () => {
+        it('should not check multiple days on recurring update', () => {
             const result = validateRangeOperation({
                 operation: 'update',
                 start: futureStart,
                 end: addDays(futureEnd, 1),
-                rangeId: 'existing-range',
+                rangeId: 'new-range',
+                existingRanges: [],
+                recurring: true,
+                timezone: 'Europe/Zurich',
+            });
+
+            expect(result).toBeNull();
+        });
+
+        it('should return null when adding range is on single day', () => {
+            const result = validateRangeOperation({
+                operation: 'add',
+                start: futureStart,
+                end: futureEnd,
+                rangeId: 'new-range',
                 existingRanges: [],
                 recurring: false,
                 timezone: 'Europe/Zurich',

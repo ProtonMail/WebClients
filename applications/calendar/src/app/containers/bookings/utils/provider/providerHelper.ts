@@ -1,4 +1,12 @@
-import { areIntervalsOverlapping, differenceInMinutes, isBefore, isSameDay, subMinutes } from 'date-fns';
+import {
+    addDays,
+    areIntervalsOverlapping,
+    differenceInMinutes,
+    isBefore,
+    isSameDay,
+    startOfDay,
+    subMinutes,
+} from 'date-fns';
 
 import type { InternalBookingPage } from '@proton/calendar/bookings/store/interface';
 import { BookingLocation } from '@proton/calendar/bookings/types';
@@ -199,8 +207,12 @@ export const validateRangeOperation = ({
     recurring: boolean;
     timezone: string;
 }): string | null => {
-    if (operation === 'add') {
-        if (!isSameDay(start, end)) {
+    // Recurring updates can wrap past the end of the week and are split afterwards
+    const shouldCheckMultipleDays = operation === 'add' || !recurring;
+    if (shouldCheckMultipleDays) {
+        // A range ending exactly at midnight of the following day is valid
+        const endsAtNextMidnight = isSameDay(addDays(start, 1), end) && startOfDay(end).getTime() === end.getTime();
+        if (!isSameDay(start, end) && !endsAtNextMidnight) {
             return BookingErrorMessages.RANGE_MULTIPLE_DAYS;
         }
     }
