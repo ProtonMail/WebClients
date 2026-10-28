@@ -1,47 +1,16 @@
-import { useMemo, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import useLoading from '@proton/hooks/useLoading';
-import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
-import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
-import { ChargebeeIdealButton } from '@proton/payments-ui/ui/components/ChargebeeIdealButton';
-import { ChargebeePaypalButton } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
-import {
-    IdealAuthorizationText,
-    isIdealAuthorizationNoteShown,
-} from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { usePaymentPollers } from '@proton/payments-ui/ui/hooks/usePaymentPollers';
-import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import type { Currency, PaymentStatus, PlainPaymentMethodType } from '@proton/payments/core/interface';
-import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
-import { tracePaymentError } from '@proton/payments/sentry/capture';
+import type { Currency } from '@proton/payments/core/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import Form from '../../components/form/Form';
-import useDebounceInput from '../../components/input/useDebounceInput';
-import Loader from '../../components/loader/Loader';
-import type { ModalProps } from '../../components/modalTwo/Modal';
-import ModalTwo from '../../components/modalTwo/Modal';
-import ModalTwoContent from '../../components/modalTwo/ModalContent';
-import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
-import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
-import Price from '../../components/price/Price';
-import AmountRow from './AmountRow';
-import PaymentInfo from './PaymentInfo';
-import PaymentWrapper from './PaymentWrapper';
+import { TopUpModal, type TopUpModalProps } from './TopUpModal';
 
 const getCurrenciesI18N = (): Record<Currency, string> => ({
     EUR: c('Monetary unit').t`Euro`,
@@ -58,45 +27,38 @@ const getCurrenciesI18N = (): Record<Currency, string> => ({
     HKD: c('Monetary unit').t`Hong Kong dollar`,
 });
 
-type Props = {
-    app: APP_NAMES;
-    paymentStatus: PaymentStatus;
-} & ModalProps;
-
-const DEFAULT_CREDITS_AMOUNT = 5000;
-
-const nonChargeableMethods = new Set<PlainPaymentMethodType | undefined>([
-    PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
-    PAYMENT_METHOD_TYPES.CASH,
-]);
-
-const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
+export const CreditsModal = (props: TopUpModalProps) => {
     const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
-    const [loading, withLoading] = useLoading();
-
-    const [preferredCurrency] = useAutomaticCurrency();
-    const [currency, setCurrency] = useState<Currency>(preferredCurrency);
-    const [amount, setAmount] = useState(DEFAULT_CREDITS_AMOUNT);
-    const debouncedAmount = useDebounceInput(amount);
-    const amountLoading = debouncedAmount !== amount;
-    const i18n = getCurrenciesI18N();
-    const i18nCurrency = i18n[currency];
     const { createCreditsPoller } = usePaymentPollers();
     const getPaymentMethods = useGetPaymentMethods();
-    const [subscription, loadingSubscription] = useSubscription();
-    const [user, loadingUser] = useUser();
 
-    const { CountryCode, State } = paymentStatus;
-    const billingAddress = useMemo(() => ({ CountryCode, State }), [CountryCode, State]);
-
-    const paymentFacade = usePaymentFacade({
-        amount: debouncedAmount,
-        currency,
-        paymentStatus,
-        billingAddress,
-        onChargeable: (operations, data) => {
-            const run = async () => {
+    return (
+        <TopUpModal
+            {...props}
+            title={c('Title').t`Add credits`}
+            renderDescription={(currency) => {
+                const i18nCurrency = getCurrenciesI18N()[currency];
+                return (
+                    <>
+                        <div>
+                            {c('Info')
+                                .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}
+                        </div>
+                        <Href
+                            href={
+                                APP_NAME === APPS.PROTONVPN_SETTINGS
+                                    ? 'https://protonvpn.com/support/vpn-credit-proration/'
+                                    : getKnowledgeBaseUrl('/credit-proration-coupons')
+                            }
+                        >
+                            {c('Link').t`Learn more`}
+                        </Href>
+                    </>
+                );
+            }}
+            sentryComponent="credits-modal"
+            onTopUp={async (operations, data) => {
                 const pollCredits = createCreditsPoller();
                 await operations.buyCredit();
 
@@ -115,197 +77,7 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
 
                     createNotification({ text: c('Success').t`Credits added` });
                 }
-
-                props.onClose?.();
-            };
-
-            return withLoading(run());
-        },
-        flow: 'credit',
-        user,
-        product: app,
-        telemetryContext: 'other',
-    });
-
-    if (loadingSubscription || loadingUser) {
-        return <Loader />;
-    }
-
-    const methodValue = paymentFacade.selectedMethodValue;
-
-    const minCreditAmount = getMinCreditAmount(currency);
-    const lowAmount = debouncedAmount < minCreditAmount;
-
-    const submit = (() => {
-        const bitcoinAmountInRange =
-            debouncedAmount >= getMinBitcoinAmount(currency) && debouncedAmount <= getMaxBitcoinAmount(currency);
-        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN && !bitcoinAmountInRange) {
-            return null;
-        }
-
-        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-            if (loading) {
-                return (
-                    <ButtonLike disabled loading={true}>
-                        {c('Payments').t`Processing payment`}
-                    </ButtonLike>
-                );
-            }
-
-            return (
-                <div>
-                    <ChargebeePaypalButton
-                        chargebeePaypal={paymentFacade.chargebeePaypal}
-                        iframeHandles={paymentFacade.iframeHandles}
-                    />
-                </div>
-            );
-        }
-
-        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
-            if (loading) {
-                return (
-                    <ButtonLike disabled loading={true}>
-                        {c('Payments').t`Processing payment`}
-                    </ButtonLike>
-                );
-            }
-
-            return (
-                <div>
-                    <ChargebeeIdealButton
-                        chargebeeIdeal={paymentFacade.chargebeeIdeal}
-                        iframeHandles={paymentFacade.iframeHandles}
-                    />
-                </div>
-            );
-        }
-
-        const topUpText = c('Action').t`Top up`;
-        if (methodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
-            return (
-                <Button
-                    color="norm"
-                    loading={paymentFacade.bitcoinChargebee.bitcoinLoading}
-                    disabled={true}
-                    data-testid="top-up-button"
-                >
-                    {paymentFacade.bitcoinChargebee.awaitingBitcoinPayment
-                        ? c('Info').t`Awaiting transaction`
-                        : topUpText}
-                </Button>
-            );
-        }
-
-        return (
-            <Button
-                color="norm"
-                loading={loading}
-                disabled={paymentFacade.methods.loading || amountLoading || lowAmount}
-                type="submit"
-                data-testid="top-up-button"
-            >
-                {topUpText}
-            </Button>
-        );
-    })();
-
-    const process = async (processor?: PaymentProcessorHook) =>
-        withLoading(async () => {
-            if (!processor) {
-                return;
-            }
-
-            try {
-                await processor.processPaymentToken();
-            } catch (e) {
-                tracePaymentError(e, {
-                    component: 'credits-modal',
-                    subscription,
-                    extra: {
-                        app: APP_NAME,
-                        currency,
-                        amount,
-                        debouncedAmount,
-                        processorType: paymentFacade.selectedProcessor?.meta.type,
-                        paymentMethod: paymentFacade.selectedMethodType,
-                        paymentMethodValue: paymentFacade.selectedMethodValue,
-                    },
-                });
-            }
-        });
-
-    const disableCurrencySelector = !isFreeSubscription(subscription);
-
-    const amountToCharge =
-        amountLoading || nonChargeableMethods.has(paymentFacade.selectedMethodType) || lowAmount ? null : (
-            <Price currency={currency} key="amount-to-charge">
-                {debouncedAmount}
-            </Price>
-        );
-
-    return (
-        <ModalTwo
-            className="credits-modal"
-            size="large"
-            as={Form}
-            onSubmit={() => process(paymentFacade.selectedProcessor)}
-            {...props}
-        >
-            <ModalTwoHeader title={c('Title').t`Add credits`} />
-            <ModalTwoContent>
-                <PaymentInfo paymentMethodType={paymentFacade.selectedMethodType} />
-                <div className="mb-4">
-                    <div>
-                        {c('Info')
-                            .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}
-                    </div>
-                    <Href
-                        href={
-                            APP_NAME === APPS.PROTONVPN_SETTINGS
-                                ? 'https://protonvpn.com/support/vpn-credit-proration/'
-                                : getKnowledgeBaseUrl('/credit-proration-coupons')
-                        }
-                    >
-                        {c('Link').t`Learn more`}
-                    </Href>
-                </div>
-                <AmountRow
-                    paymentStatus={paymentStatus}
-                    paymentMethodType={paymentFacade.selectedMethodType}
-                    amount={amount}
-                    onChangeAmount={setAmount}
-                    currency={currency}
-                    onChangeCurrency={setCurrency}
-                    disableCurrencySelector={disableCurrencySelector}
-                />
-                <PaymentWrapper {...paymentFacade} noMaxWidth onCurrencyChange={setCurrency} />
-                {amountToCharge && (
-                    <p
-                        className="text-sm text-center color-weak min-h-custom"
-                        style={{
-                            '--min-h-custom': '1.5rem',
-                        }}
-                        data-testid="amountToCharge-text"
-                    >
-                        {c('Payments').jt`You will be charged ${amountToCharge} from your selected payment method.`}
-                    </p>
-                )}
-                {isIdealAuthorizationNoteShown(paymentFacade) && (
-                    <div className="mt-4">
-                        <IdealAuthorizationText />
-                    </div>
-                )}
-            </ModalTwoContent>
-
-            <ModalTwoFooter>
-                <div className="w-full flex justify-space-between">
-                    <Button onClick={props.onClose}>{c('Action').t`Close`}</Button>
-                    {submit}
-                </div>
-            </ModalTwoFooter>
-        </ModalTwo>
+            }}
+        />
     );
 };
-
-export default CreditsModal;

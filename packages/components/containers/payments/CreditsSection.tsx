@@ -19,7 +19,7 @@ import Price from '../../components/price/Price';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
 import { openLinkInBrowser } from '../desktop/openExternalLink';
-import CreditsModal from './CreditsModal';
+import { CreditsModal } from './CreditsModal';
 import InAppPurchaseModal from './subscription/InAppPurchaseModal';
 
 const redirectFromDesktop = '?open=credit-modal';
