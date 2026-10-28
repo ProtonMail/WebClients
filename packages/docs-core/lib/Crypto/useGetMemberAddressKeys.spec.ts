@@ -1,6 +1,7 @@
 import { useGetAddresses } from '@proton/account/addresses/hooks'
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks'
 import { generateNodeUid, getDrive } from '@proton/drive/sdk'
+import { ADDRESS_STATUS } from '@proton/shared/lib/constants'
 import type { Api } from '@proton/shared/lib/interfaces/Api'
 import { renderHook } from '@testing-library/react'
 import { traceErrorSDK } from '../DriveSDK/traceErrorSDK'
@@ -33,8 +34,8 @@ describe('useGetMemberAddressKeys', () => {
     jest.mocked(getDrive).mockReturnValue({ getNodeHierarchy } as any)
     jest.mocked(useGetAddresses).mockReturnValue(
       jest.fn().mockResolvedValue([
-        { ID: 'primary-address-id', Email: 'primary@pm.me' },
-        { ID: 'member-address-id', Email: 'member@pm.me' },
+        { ID: 'primary-address-id', Email: 'primary@pm.me', Status: ADDRESS_STATUS.STATUS_ENABLED },
+        { ID: 'member-address-id', Email: 'member@pm.me', Status: ADDRESS_STATUS.STATUS_ENABLED },
       ]),
     )
     jest.mocked(useGetAddressKeys).mockReturnValue(jest.fn().mockResolvedValue(addressKeys))
@@ -47,6 +48,20 @@ describe('useGetMemberAddressKeys', () => {
     await expect(getMemberAddressKeys()).resolves.toEqual({ keys: addressKeys, address: 'member@pm.me' })
     expect(getNodeHierarchy).toHaveBeenCalledWith(generateNodeUid('volume', 'document'))
     expect(api).toHaveBeenCalledWith(expect.objectContaining({ url: 'drive/shares/share-id' }))
+  })
+
+  it('fails when member address is disabled', async () => {
+    jest
+      .mocked(useGetAddresses)
+      .mockReturnValue(
+        jest
+          .fn()
+          .mockResolvedValue([
+            { ID: 'member-address-id', Email: 'member@pm.me', Status: ADDRESS_STATUS.STATUS_DISABLED },
+          ]),
+      )
+
+    await expect(getMemberAddressKeys()).rejects.toThrow('Address is not available')
   })
 
   it('traces errors', async () => {
