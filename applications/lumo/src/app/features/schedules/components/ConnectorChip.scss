@@ -1,10 +1,20 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .connector-chip {
-	padding-block: #{rem(5)};
-	font-size: #{rem(13)};
-	line-height: #{rem(16)};
-	background-color: var(--control-fill-mid);
+	line-height: rem(16);
+
+	&--regular {
+		font-size: rem(13);
+		background-color: var(--control-fill-mid);
+		padding-block: rem(5);
+		padding-inline: rem(8) rem(10);
+	}
+
+	&--compact {
+		font-size: rem(12);
+		padding-block: rem(3);
+		padding-inline: rem(6) rem(8);
+	}
 
 	&--unavailable {
 		--border-norm: color-mix(in srgb, var(--signal-danger) 15%, var(--background-norm));
@@ -31,7 +41,7 @@
 		--button-hover-text-color: var(--glyph);
 		--button-active-text-color: var(--glyph);
 
-		inline-size: #{rem(14)};
-		block-size: #{rem(14)};
+		inline-size: rem(14);
+		block-size: rem(14);
 	}
 }

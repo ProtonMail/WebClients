@@ -7,6 +7,7 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ASK_USER_QUESTIONS_TOOL_NAME } from '../../../../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
+import { CREATE_SCHEDULE_TOOL_NAME } from '../../../../../features/client-tools/createScheduleTool/createScheduleTool';
 import { useChatLimitGate } from '../../../../../hooks/useChatLimitGate';
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import type { HandleRegenerateMessage } from '../../../../../hooks/useLumoActions';
@@ -43,6 +44,7 @@ import {
 import type { ParsedArtifact } from '../../../artifact/parseArtifacts';
 import LumoCopyButton from '../actionToolbar/LumoCopyButton';
 import { AskUserQuestionsToolMessage } from '../askUserQuestions/AskUserQuestionsToolMessage';
+import { CreateScheduleToolMessage } from '../createSchedule/CreateScheduleToolMessage';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
 import { SuggestedQuestions } from './SuggestedQuestions';
@@ -328,7 +330,10 @@ const AssistantMessage = ({
             parentUserMessage,
         });
 
-    // Question cards and artifact chips render these tools outside the generic tool-call timeline.
+    // Hide tool calls and results rendered by dedicated UI outside the generic timeline:
+    // - create_schedule: schedule draft.
+    // - ask_user_questions: question card.
+    // - create_artifact: artifact chip.
     const cleanedBlocks = useMemo(() => {
         const hiddenBlocks = new Set<ContentBlock>();
         for (const block of blocks) {
@@ -336,7 +341,9 @@ const AssistantMessage = ({
 
             const name = getToolCallNameFromBlock(block);
             const isArtifactTool = isArtifactsViewFlagEnabled && hasArtifacts && name === CREATE_ARTIFACT_TOOL_NAME;
-            if (name !== ASK_USER_QUESTIONS_TOOL_NAME && !isArtifactTool) continue;
+            if (name !== ASK_USER_QUESTIONS_TOOL_NAME && name !== CREATE_SCHEDULE_TOOL_NAME && !isArtifactTool) {
+                continue;
+            }
 
             hiddenBlocks.add(block);
             const result = findToolResultForCall(blocks, block);
@@ -440,6 +447,12 @@ const AssistantMessage = ({
                                                 messageContentContainerRef={markdownContainerRef}
                                                 reasoning={message.reasoning}
                                             />
+                                            {isLastMessage && (
+                                                <CreateScheduleToolMessage
+                                                    blocks={blocks}
+                                                    isGenerating={isGenerating}
+                                                />
+                                            )}
                                             {isLastMessage && !isGenerating && (
                                                 <AskUserQuestionsToolMessage blocks={blocks} />
                                             )}

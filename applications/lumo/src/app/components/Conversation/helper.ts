@@ -45,6 +45,7 @@ import type {
     ArtifactActionMeta,
     Attachment,
     ConversationId,
+    CreateScheduleToolResponse,
     GenerationError,
     ImageAspectRatio,
     Message,
@@ -115,7 +116,8 @@ export type NewMessageData = {
     content: string;
     attachments: Attachment[];
     artifactAction?: ArtifactActionMeta;
-    questionAnswers?: QuestionAnswer[];
+    askUserQuestionsToolResponse?: QuestionAnswer[];
+    createScheduleToolResponse?: CreateScheduleToolResponse;
     artifactCreateModeActive?: boolean;
     artifactRevisionTargetId?: string;
 };
@@ -185,6 +187,7 @@ export type UiContext = {
     enableExternalTools: boolean;
     enableImageTools: boolean;
     enableAskUserQuestionsTool?: boolean;
+    enableCreateScheduleTool?: boolean;
     enableReasoning?: boolean;
     modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15' | 'lumo-preview';
     generateTitle?: boolean;
@@ -523,7 +526,8 @@ export function executeConversationTurn({
             m.artifactAction,
             m.artifactCreateModeActive,
             m.artifactRevisionTargetId,
-            m.questionAnswers
+            m.askUserQuestionsToolResponse,
+            m.createScheduleToolResponse
         );
 
         if (execution?.messages) {
@@ -765,6 +769,7 @@ export function executeConversationTurn({
                         artifactToolMode,
                         artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
                         enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
+                        enableCreateScheduleTool: ui.enableCreateScheduleTool,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -999,6 +1004,7 @@ export function regenerateMessage({
                         artifactToolMode,
                         artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
                         enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
+                        enableCreateScheduleTool: ui.enableCreateScheduleTool,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -1222,6 +1228,7 @@ export function retrySendMessage({
                         artifactToolMode,
                         artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
                         enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
+                        enableCreateScheduleTool: ui.enableCreateScheduleTool,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -1291,7 +1298,8 @@ function createMessagePair(
     artifactAction?: ArtifactActionMeta,
     artifactCreateModeActive?: boolean,
     artifactRevisionTargetId?: string,
-    questionAnswers?: QuestionAnswer[]
+    askUserQuestionsToolResponse?: QuestionAnswer[],
+    createScheduleToolResponse?: CreateScheduleToolResponse
 ) {
     const context = flattenAttachmentsForLlm(attachments);
     const shallowAttachments = stripDataFromAttachments(attachments);
@@ -1308,7 +1316,8 @@ function createMessagePair(
         blocks: [{ type: 'text', content }],
         ...(shallowAttachments.length && { attachments: shallowAttachments }),
         ...(artifactAction && { artifactAction }),
-        ...(questionAnswers && { questionAnswers }),
+        ...(askUserQuestionsToolResponse && { askUserQuestionsToolResponse }),
+        ...(createScheduleToolResponse && { createScheduleToolResponse }),
         ...(artifactCreateModeActive && { artifactCreateModeActive: true }),
         ...(artifactRevisionTargetId && { artifactRevisionTargetId }),
     };

@@ -319,11 +319,11 @@ function* httpDeleteSpace(localId: LocalId, remoteId: RemoteId, priority: Priori
 export function* pushSpace({ payload }: { payload: PushSpaceRequest }): SagaIterator<any> {
     console.log('Saga triggered: pushSpace', payload);
     const type: ResourceType = 'space';
-    const { id: localId } = payload;
+    const { id: localId, skipInGhostChatMode = true } = payload;
     const priority = payload.priority || 'urgent';
 
     const isGhostChatMode: boolean = yield select((state: LumoState) => state.ghostChat?.isGhostChatMode || false);
-    if (isGhostChatMode) {
+    if (isGhostChatMode && skipInGhostChatMode) {
         yield put(pushSpaceSuccess(payload));
         return;
     }
