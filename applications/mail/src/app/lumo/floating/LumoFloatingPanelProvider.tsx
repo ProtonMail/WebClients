@@ -7,12 +7,12 @@ import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import useOnline from '@proton/components/hooks/useOnline';
+import { selectComposersCount } from '@proton/mail-composer/store/composers/composerSelectors';
 import { getLocalStorageUserDrawerKey, isAppInView } from '@proton/shared/lib/drawer/helpers';
 import type { DrawerLocalStorageValue } from '@proton/shared/lib/drawer/interfaces';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
-import { selectComposersCount } from '../../store/composers/composerSelectors';
 import { useMailSelector } from '../../store/hooks';
 import type { PublisherProps } from '../provider/PublishedProvider';
 import { PublishedProvider } from '../provider/PublishedProvider';

@@ -4,12 +4,12 @@ import { securityCenterReducer } from '@proton/account/accountSecurity/accountSe
 import { breachesCountReducer } from '@proton/account/breaches/breachNotificationsSlice';
 import { protonDomainsReducer } from '@proton/account/protonDomains';
 import { retentionPoliciesReducer } from '@proton/account/retentionPolicies';
-
 import { internalBookingReducer } from '@proton/calendar/bookings/store';
 import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';
 import { calendarSettingsReducer } from '@proton/calendar/calendarUserSettings';
 import { calendarsReducer } from '@proton/calendar/calendars';
 import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectory';
+import { composersReducer } from '@proton/mail-composer/store/composers/composersSlice';
 import { conversationCountsReducer } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsReducer } from '@proton/mail/store/counts/messageCountsSlice';
 import { filtersReducer } from '@proton/mail/store/filters';
@@ -17,7 +17,6 @@ import { offersDeliveryReducer } from '@proton/offers-delivery/store/slice';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 
 import { attachmentsReducer } from './attachments/attachmentsSlice';
-import { composersReducer } from './composers/composersSlice';
 import { contactsReducer } from './contacts/contactsSlice';
 import { conversationsReducer } from './conversations/conversationsSlice';
 import { elementsReducer } from './elements/elementsSlice';

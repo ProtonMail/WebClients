@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import Commander from '@proton/components/components/commander/Commander';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { selectComposersCount } from '@proton/mail-composer/store/composers/composerSelectors';
 import clsx from '@proton/utils/clsx';
 
 import { useCategoryFlagWatcher } from '../components/categoryView/useCategoryFlagWatcher';
@@ -20,7 +21,6 @@ import { useMailboxFocus } from '../hooks/mailbox/useMailboxFocus';
 import { useMailboxHotkeys } from '../hooks/mailbox/useMailboxHotkeys';
 import { useWelcomeFlag } from '../hooks/mailbox/useWelcomeFlag';
 import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from '../hooks/useResizableUtils';
-import { selectComposersCount } from '../store/composers/composerSelectors';
 import { selectElementID, selectLabelID, selectMessageID } from '../store/elements/elementsSelectors';
 import { useMailSelector } from '../store/hooks';
 import { RouterElementContainer } from './RouterElementContainer';
