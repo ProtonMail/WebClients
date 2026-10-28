@@ -1781,6 +1781,12 @@
       ],
       "Create a booking page": [
         "予約ページを作成"
+      ],
+      "About ${ name }": [
+        "${ name } について"
+      ],
+      "Add ${ name }": [
+        "${ name } を追加"
       ]
     },
     "action": {
@@ -4358,6 +4364,9 @@
       ],
       "No ads. No trackers": [
         "広告もトラッカーも一切ありません"
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "メールの往復をすることなく、相手がメールから直接あなたの予定を予約できるようにします。"
       ]
     },
     "description": {
@@ -9745,6 +9754,12 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "このプランで利用できる予約ページの最大数に達しました。"
+      ],
+      "Here is my availability:": [
+        "私の空き時間は以下のとおりです:"
+      ],
+      "No booking pages yet": [
+        "予約ページはまだありません"
       ]
     },
     "info": {
@@ -11094,6 +11109,15 @@
       ],
       "Until date": [
         "終了日"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME } アシスタント"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "メールに予約ページを追加して、相手が都合の良い時間を選べるようにします。"
+      ],
+      "Booking page": [
+        "予約ページ"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13701,6 +13725,18 @@
       ],
       "Trial plans don’t support this many members.": [
         "トライアルプランでは、この人数のメンバーをサポートしていません。"
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "サブスクリプションの利用中は Born Private アカウントを購入することはできません。"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Born Private プログラムに参加するには寄付が必要です。"
+      ],
+      "You already own a Born Private account.": [
+        "お客様はすでに Born Private アカウントを所有しています。"
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "お使いのアカウントは、Born Private プログラムの対象期間より前に作成されています。"
       ]
     },
     "Payments.Error": {
@@ -15837,6 +15873,12 @@
       ],
       "Invoice paid": [
         "支払い済み請求書"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } アシスタントが無効になりました"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } アシスタントが有効になりました"
       ]
     },
     "Success notification": {
@@ -17152,6 +17194,12 @@
       ],
       "Cannot create more Booking pages": [
         "予約ページはこれ以上作成できません"
+      ],
+      "Insert a booking page": [
+        "予約ページを挿入"
+      ],
+      "Share your availability": [
+        "空き時間を共有"
       ]
     },
     "Title header for keys table": {

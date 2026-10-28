@@ -1787,6 +1787,18 @@
       ],
       "Create a booking page": [
         "Δημιουργήστε μια σελίδα κρατήσεων"
+      ],
+      "About ${ name }": [
+        "Σχετικά με το ${ name }"
+      ],
+      "Add ${ name }": [
+        "Προσθέστε το ${ name }"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "Μετακίνηση του ${ LUMO_SHORT_APP_NAME } προς τα αριστερά"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Μετακίνηση του ${ LUMO_SHORT_APP_NAME } προς τα δεξιά"
       ]
     },
     "action": {
@@ -4461,6 +4473,9 @@
       ],
       "Move emails to the right category to improve categorization.": [
         "Μετακινήστε τα ηλεκτρονικά μηνύματα στην κατάλληλη κατηγορία για να βελτιώσετε την κατηγοριοποίηση."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Επιτρέψτε στους άλλους να κλείνουν ραντεβού μαζί σας απευθείας μέσα από τα ηλεκτρονικά μηνύματά σας, χωρίς περιττές ανταλλαγές μηνυμάτων."
       ]
     },
     "description": {
@@ -10077,6 +10092,15 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό σελίδων κρατήσεων που είναι διαθέσιμες στο πλάνο σας."
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Εγγύηση επιστροφής χρημάτων 30 ημερών: ακυρώστε εντός 30 ημερών από την αγορά σας και επικοινωνήστε με το ${ customerSupportLink } για να λάβετε επιστροφή χρημάτων."
+      ],
+      "Here is my availability:": [
+        "Ορίστε η διαθεσιμότητά μου:"
+      ],
+      "No booking pages yet": [
+        "Δεν υπάρχουν ακόμα σελίδες κρατήσεων"
       ]
     },
     "info": {
@@ -11434,6 +11458,15 @@
       ],
       "Credits used": [
         "Χρησιμοποιημένες μονάδες"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "Βοηθός ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Προσθέστε μια σελίδα κρατήσεων στο email σας και επιτρέψτε στους χρήστες να επιλέξουν μια ώρα που τους εξυπηρετεί."
+      ],
+      "Booking page": [
+        "Σελίδα κρατήσεων"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16324,6 +16357,12 @@
       ],
       "Invoice paid": [
         "Το τιμολόγιο πληρώθηκε"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "Ο βοηθός ${ LUMO_SHORT_APP_NAME } απενεργοποιήθηκε"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "Ο βοηθός ${ LUMO_SHORT_APP_NAME } ενεργοποιήθηκε"
       ]
     },
     "Success notification": {
@@ -17662,6 +17701,12 @@
       ],
       "Cannot create more Booking pages": [
         "Δεν είναι δυνατή η δημιουργία περισσότερων Σελίδων Κρατήσεων"
+      ],
+      "Insert a booking page": [
+        "Εισαγάγετε μια σελίδα κρατήσεων"
+      ],
+      "Share your availability": [
+        "Μοιραστείτε τη διαθεσιμότητά σας"
       ]
     },
     "Title header for keys table": {
