@@ -25,6 +25,7 @@ export type PaymentsComponent =
     | 'credits-modal'
     | 'drive-ctx-payment-step'
     | 'edit-card-modal'
+    | 'lumo-credits-modal'
     | 'meet-b2c-plan-ctx-payment-step'
     | 'pass-ctx-payment-step'
     | 'pay-invoice-modal'

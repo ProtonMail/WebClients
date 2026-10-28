@@ -14,6 +14,7 @@ import {
 } from '../billing-address/billing-address';
 import { PLANS } from '../constants';
 import { isCountryWithRequiredPostalCode, isCountryWithStates } from '../countries';
+import { getCurrencyFormattingConfig } from '../currencies';
 import { captureWrongPlanIDs } from '../helpers';
 import type {
     AmountAndCurrency,
@@ -32,7 +33,7 @@ import type { Subscription } from '../subscription/interface';
 import { isTokenPaymentMethod, isV5PaymentToken } from '../type-guards';
 
 interface BuyProductConfigParams {
-    PaymentToken: string;
+    PaymentToken: string | undefined;
     ProductType: string;
     Amount: number;
     Currency: Currency;
@@ -121,6 +122,18 @@ export function getBuyProductConfig(product: ProductParam, params: BuyProductCon
         }),
         timeout: 60000 * 2,
     };
+}
+
+export function getBuyLumoCreditConfig(
+    product: ProductParam,
+    params: Omit<BuyProductConfigParams, 'ProductType' | 'Quantity'>
+) {
+    const { divisor } = getCurrencyFormattingConfig(params.Currency);
+    return getBuyProductConfig(product, {
+        ...params,
+        ProductType: 'lumo-credit',
+        Quantity: params.Amount / divisor,
+    });
 }
 
 const buyProduct = (rawData: SubscribeData, product: ProductParam) => {

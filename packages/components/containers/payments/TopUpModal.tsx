@@ -50,6 +50,8 @@ type Props = {
     renderDescription: (currency: Currency) => ReactNode;
     sentryComponent: PaymentsComponent;
     onTopUp: OnChargeable;
+    initialCurrency?: Currency;
+    excludedMethods?: PlainPaymentMethodType[];
 } & TopUpModalProps;
 
 const DEFAULT_TOP_UP_AMOUNT = 5000;
@@ -66,13 +68,15 @@ export const TopUpModal = ({
     renderDescription,
     sentryComponent,
     onTopUp,
+    initialCurrency,
+    excludedMethods = [],
     ...props
 }: Props) => {
     const { APP_NAME } = useConfig();
     const [loading, withLoading] = useLoading();
 
     const [preferredCurrency] = useAutomaticCurrency();
-    const [currency, setCurrency] = useState<Currency>(preferredCurrency);
+    const [currency, setCurrency] = useState<Currency>(initialCurrency ?? preferredCurrency);
     const [amount, setAmount] = useState(DEFAULT_TOP_UP_AMOUNT);
     const debouncedAmount = useDebounceInput(amount);
     const amountLoading = debouncedAmount !== amount;
@@ -99,6 +103,8 @@ export const TopUpModal = ({
         user,
         product: app,
         telemetryContext: 'other',
+        sortNewMethods: (methods) =>
+            methods.filter(({ type }) => !excludedMethods.includes(type as PlainPaymentMethodType)),
     });
 
     if (loadingSubscription || loadingUser) {
