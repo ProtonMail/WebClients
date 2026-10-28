@@ -1,4 +1,4 @@
-import { enUS, zhCN } from 'date-fns/locale';
+import { enGB, enUS, zhCN } from 'date-fns/locale';
 
 import { setDateLocales } from '@proton/shared/lib/i18n';
 import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
@@ -122,7 +122,16 @@ describe('formatMeetingSchedule dateTime', () => {
                 endTime: new Date('2026-02-27T02:30:00Z'),
             });
 
-            expect(dateTime).toBe('2月27日周五, 上午3:00 to 上午3:30');
+            expect(dateTime).toBe('周五, 2月 27, 上午3:00 to 上午3:30');
+        } finally {
+            setDateLocales({ dateLocale: enUS });
+        }
+    });
+
+    it('takes the day-first order from the date locale for the locale default', () => {
+        setDateLocales({ dateLocale: { ...enUS, formatLong: enGB.formatLong } });
+        try {
+            expect(formatMeetingSchedule(baseInput).dateTime).toBe('Fri, 27 Feb, 11am to 12pm');
         } finally {
             setDateLocales({ dateLocale: enUS });
         }
