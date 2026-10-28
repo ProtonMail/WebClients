@@ -28,11 +28,13 @@ export const ConfirmVaultMove: FC<Props> = ({ targetShareId, shareId, onCancel, 
                     message={
                         <div className="flex flex-column gap-y-2">
                             <span>
-                                {hasLinks
-                                    ? c('Info')
-                                          .t`Moving items to another vault will erase their history and all secure links.`
-                                    : c('Info').t`Moving items to another vault will erase their history.`}
+                                {c('Info')
+                                    .t`When moving items between vaults we will preserve up to the last 50 modifications performed to each item.`}
                             </span>
+
+                            {hasLinks && (
+                                <span>{c('Info').t`Moving items to another vault will erase their secure links.`}</span>
+                            )}
 
                             {folders.length > 0 && (
                                 <span>
