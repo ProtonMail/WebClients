@@ -1,10 +1,10 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 
+import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 
 import { useOptionalDraftBodyWriters } from '../../containers/DraftBodyWriterProvider';
 import { hasSignatureContainer } from '../../helpers/composer/contentFromComposerMessage';
-import type { ComposerID } from '../../store/composers/composerTypes';
 
 interface Props {
     composerID: ComposerID;

@@ -5,18 +5,17 @@ import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
 import Label from '@proton/components/components/label/Label';
+import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import ComposerBYOEClaimAddressButton from './addresses/ComposerBYOEClaimAddressButton';
-
 import type { MessageSendInfo } from '../../hooks/useSendInfo';
-import type { ComposerID } from '../../store/composers/composerTypes';
 import type { MessageChange } from './Composer';
 import ComposerExpirationTime from './ComposerExpirationTime';
 import ComposerShortDomainSpotlight from './ComposerShortDomainSpotlight';
 import ComposerAddresses from './addresses/Addresses';
+import ComposerBYOEClaimAddressButton from './addresses/ComposerBYOEClaimAddressButton';
 import SelectSender from './addresses/SelectSender';
 
 interface Props {

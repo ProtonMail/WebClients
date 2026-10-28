@@ -3,6 +3,7 @@ import { memo, useEffect, useRef } from 'react';
 
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import useToggle from '@proton/hooks/useToggle';
+import { selectComposersCount } from '@proton/mail-composer/store/composers/composerSelectors';
 import { useLabels } from '@proton/mail/store/labels/hooks';
 import { isEditing } from '@proton/shared/lib/busy/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -22,7 +23,6 @@ import { useConversationFocus } from '../../hooks/conversation/useConversationFo
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import useUnreadNotifications from '../../hooks/useUnreadNotifications';
-import { selectComposersCount } from '../../store/composers/composerSelectors';
 import { useMailSelector } from '../../store/hooks';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import type { MessageViewRef } from '../message/MessageView';

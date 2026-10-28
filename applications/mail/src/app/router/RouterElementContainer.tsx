@@ -4,11 +4,11 @@ import { logger } from '@protontech/logger';
 
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { selectComposersCount } from '@proton/mail-composer/store/composers/composerSelectors';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import ConversationView from '../components/conversation/ConversationView';
 import MessageOnlyView from '../components/message/MessageOnlyView';
-import { selectComposersCount } from '../store/composers/composerSelectors';
 import { selectElementID, selectLabelID, selectMessageID } from '../store/elements/elementsSelectors';
 import { useMailSelector } from '../store/hooks';
 import { useMailboxLayoutProvider } from './components/MailboxLayoutContext';

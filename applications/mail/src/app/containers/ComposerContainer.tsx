@@ -6,14 +6,14 @@ import { c } from 'ttag';
 import useDrawerWidth from '@proton/components/hooks/drawer/useDrawerWidth';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
+import { selectOpenedComposersIds } from '@proton/mail-composer/store/composers/composerSelectors';
+import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 
 import { ComposerAssistantProvider } from '../components/assistant/provider/ComposerAssistantProvider';
 import ComposerFrame from '../components/composer/ComposerFrame';
 import { MAX_ACTIVE_COMPOSER_LARGE_SCREEN, MAX_ACTIVE_COMPOSER_SMALL_SCREEN } from '../helpers/composerPositioning';
 import { useCompose } from '../hooks/composer/useCompose';
 import { useClickMailContent } from '../hooks/useClickMailContent';
-import { selectOpenedComposersIds } from '../store/composers/composerSelectors';
-import { composerActions } from '../store/composers/composersSlice';
 import { useMailDispatch, useMailSelector } from '../store/hooks';
 import { ComposeProvider } from './ComposeProvider';
 import { DraftBodyWriterProvider } from './DraftBodyWriterProvider';
