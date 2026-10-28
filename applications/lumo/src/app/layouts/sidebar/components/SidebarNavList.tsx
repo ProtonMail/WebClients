@@ -11,6 +11,7 @@ interface SidebarNavItem {
     isSelected: boolean;
     leadingContent?: React.ReactNode;
     trailingContent?: React.ReactNode;
+    trailingLabel?: React.ReactNode;
 }
 
 interface SidebarNavListProps {
@@ -20,7 +21,7 @@ interface SidebarNavListProps {
 
 export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => (
     <ul className="unstyled flex flex-column flex-nowrap gap-0.5 min-w-0 w-full my-0">
-        {items.map(({ id, to, label, isSelected, leadingContent, trailingContent }) => (
+        {items.map(({ id, to, label, isSelected, leadingContent, trailingContent, trailingLabel }) => (
             <li
                 key={id}
                 className={clsx(
@@ -42,6 +43,7 @@ export const SidebarNavList = ({ items, onItemClick }: SidebarNavListProps) => (
                     <span className="sidebar-nav-list--label text-ellipsis flex-1 min-w-0" title={label}>
                         {label}
                     </span>
+                    {trailingLabel}
                 </LumoLink>
                 {trailingContent && <div className="relative z-1 ml-auto pl-1 flex-shrink-0">{trailingContent}</div>}
             </li>

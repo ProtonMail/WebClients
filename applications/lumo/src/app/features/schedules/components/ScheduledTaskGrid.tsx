@@ -43,22 +43,22 @@ export const ScheduledTaskGrid = ({ onDeleteSchedule, onEditSchedule, schedules 
                 role="grid"
             >
                 {scheduleRows.map((row, rowIndex) => (
-                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                     <div
                         aria-rowindex={rowIndex + 1}
                         className="flex flex-nowrap gap-5 w-full"
                         key={rowIndex}
+                        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                         role="row"
                     >
                         {Array.from({ length: columnCount }, (_, columnIndex) => {
                             const [id, schedule] = row[columnIndex] ?? [];
 
                             return (
-                                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                                 <div
                                     aria-colindex={columnIndex + 1}
                                     className="flex-1 min-w-0"
                                     key={id ?? columnIndex}
+                                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                                     role={schedule ? 'gridcell' : undefined}
                                 >
                                     {schedule && (
@@ -66,6 +66,7 @@ export const ScheduledTaskGrid = ({ onDeleteSchedule, onEditSchedule, schedules 
                                             onDelete={() => onDeleteSchedule?.(id)}
                                             onEdit={() => onEditSchedule?.(id, schedule)}
                                             schedule={schedule}
+                                            scheduleId={id}
                                         />
                                     )}
                                 </div>

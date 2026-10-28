@@ -1,4 +1,4 @@
-import { useId, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { clsx } from 'clsx';
@@ -6,7 +6,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Badge, type BadgeType } from '@proton/components/components/badge/Badge';
 
 import type { ConversationArtifactDrawerEntry } from '../../../components/Conversation/artifact/conversationArtifactDrawerList';
 import { KnowledgeBasePanel } from '../../../components/Files/KnowledgeBase/KnowledgeBasePanel';
@@ -15,26 +14,10 @@ import { useLumoMemoSelector, useLumoSelector } from '../../../redux/hooks';
 import { selectConversationsBySpaceId, selectProvisionalAttachments } from '../../../redux/selectors';
 import type { Conversation, Message } from '../../../types';
 import { useRunScheduleNow } from '../useRunScheduleNow';
+import { getScheduleRunHistoryLabel } from './utils/run-label';
 import { getScheduleRunTimestampLabel } from './utils/run-timestamp-label';
 
 import './ScheduledTaskRunPanel.scss';
-
-type RunStatus = NonNullable<Conversation['scheduleRun']>['status'];
-
-const RunStatusBadge = ({ status }: { status: RunStatus }) => {
-    const statuses: Record<RunStatus, { label: string; type: BadgeType }> = {
-        running: { label: c('collider_2025:Status').t`Running`, type: 'info' },
-        succeeded: { label: c('collider_2025:Status').t`Succeeded`, type: 'success' },
-        failed: { label: c('collider_2025:Status').t`Failed`, type: 'error' },
-        interrupted: { label: c('collider_2025:Status').t`Interrupted`, type: 'warning' },
-    };
-    const { label, type } = statuses[status];
-    return (
-        <Badge className="shrink-0" type={type}>
-            {label}
-        </Badge>
-    );
-};
 
 interface ScheduledTaskRunPanelProps {
     conversation: Conversation;
@@ -61,6 +44,10 @@ export const ScheduledTaskRunPanel = ({
     const runsId = useId();
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const runs = Object.values(conversations).sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
+
+    useEffect(() => {
+        if (location.state?.expandedScheduleRuns === conversation.spaceId) setShowRuns(true);
+    }, [location.key, location.state?.expandedScheduleRuns, conversation.spaceId]);
 
     return (
         <KnowledgeBasePanel
@@ -120,33 +107,41 @@ export const ScheduledTaskRunPanel = ({
                         c('collider_2025:Info').t`When this task ran.`
                     }</p>
                     <div className="flex flex-column flex-nowrap gap-1.5 mt-3">
-                        {runs.map((run) => (
-                            <ButtonLike
-                                key={run.id}
-                                aria-current={run.id === conversation.id ? 'page' : undefined}
-                                as={Link}
-                                className={clsx(
-                                    'scheduled-task-run-panel__run py-2 text-sm',
-                                    run.id === conversation.id && 'scheduled-task-run-panel__run--current'
-                                )}
-                                color="weak"
-                                fullWidth
-                                selected={run.id === conversation.id}
-                                shape="ghost"
-                                size="small"
-                                to={{
-                                    pathname: `/c/${run.id}`,
-                                    state: { ...location.state, expandedScheduleRuns: conversation.spaceId },
-                                }}
-                            >
-                                <span className="flex flex-nowrap items-center gap-2 w-full">
-                                    <span className="flex-1 text-ellipsis">
-                                        {getScheduleRunTimestampLabel(run.createdAt)}
+                        {runs.map((run) => {
+                            const statusLabel = getScheduleRunHistoryLabel(run.scheduleRun);
+                            return (
+                                <ButtonLike
+                                    key={run.id}
+                                    aria-current={run.id === conversation.id ? 'page' : undefined}
+                                    as={Link}
+                                    className={clsx(
+                                        'scheduled-task-run-panel__run py-2 text-rg',
+                                        run.id === conversation.id && 'scheduled-task-run-panel__run--current'
+                                    )}
+                                    color="weak"
+                                    fullWidth
+                                    selected={run.id === conversation.id}
+                                    shape="ghost"
+                                    size="small"
+                                    to={{
+                                        pathname: `/c/${run.id}`,
+                                        state: { ...location.state, expandedScheduleRuns: conversation.spaceId },
+                                    }}
+                                >
+                                    <span className="flex flex-nowrap items-center gap-2 w-full text-normal">
+                                        <span className="shrink-0">{getScheduleRunTimestampLabel(run.createdAt)}</span>
+                                        {statusLabel && (
+                                            <>
+                                                <span aria-hidden className="color-hint">
+                                                    ·
+                                                </span>
+                                                <span className="color-hint text-wrap">{statusLabel}</span>
+                                            </>
+                                        )}
                                     </span>
-                                    {run.scheduleRun && <RunStatusBadge status={run.scheduleRun.status} />}
-                                </span>
-                            </ButtonLike>
-                        ))}
+                                </ButtonLike>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
