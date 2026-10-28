@@ -164,8 +164,9 @@ export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps)
       updateRenamedDocumentInCache,
       isRecentsUpdating,
       type,
+      myFilesRootUid: myFilesNode?.uid,
     }),
-    [state, setRecentsSort, setSearch, loadData, updateRenamedDocumentInCache, isRecentsUpdating, type],
+    [state, setRecentsSort, setSearch, loadData, updateRenamedDocumentInCache, isRecentsUpdating, type, myFilesNode],
   )
 
   return <HomepageViewContext.Provider value={value}>{children}</HomepageViewContext.Provider>

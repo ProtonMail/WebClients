@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { HomepageContent } from './HomepageContent'
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { DocumentActionsContext } from '../../__utils/document-actions'
@@ -12,6 +12,7 @@ import userEvent from '@testing-library/user-event'
 import { ApplicationProvider } from '~/utils/application-context'
 import type { HomepageViewState } from '../../__utils/homepage-view'
 import { HomepageViewContext } from '../../__utils/homepage-view'
+import { MemberRole } from '@proton/drive/sdk'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 
@@ -43,9 +44,15 @@ jest.mock('@proton/app-context/useNotifications', () => ({
 }))
 
 let mockBulkEnabled = false
+let mockBulkMoveEnabled = false
+// Switches `useCanTrash` to the role check, which lets shared documents with the admin role be selected.
+let mockTrashAndRecentsWithSDK = false
 jest.mock('~/utils/flags', () => ({
   ...jest.requireActual('~/utils/flags'),
   useBulkTrashEnabled: () => mockBulkEnabled,
+  useBulkMoveEnabled: () => mockBulkMoveEnabled,
+  useTrashWithSDK: () => mockTrashAndRecentsWithSDK,
+  useLoadRecentsWithSdkEnabled: () => mockTrashAndRecentsWithSDK,
 }))
 
 let mockIsNarrow = false
@@ -55,8 +62,14 @@ jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
 }))
 
 const mockBulkTrash = jest.fn()
+let mockIsTrashing = false
 jest.mock('../../__utils/useBulkTrash', () => ({
-  useBulkTrash: () => ({ trash: mockBulkTrash, isTrashing: false }),
+  useBulkTrash: () => ({ trash: mockBulkTrash, isTrashing: mockIsTrashing }),
+}))
+
+const mockBulkMove = jest.fn()
+jest.mock('../../__utils/useBulkMove', () => ({
+  useBulkMove: () => ({ move: mockBulkMove, moveItemsModal: null }),
 }))
 
 function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItem {
@@ -76,6 +89,8 @@ function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}):
   })
 }
 
+const MY_FILES_ROOT_UID = 'volume1~myFilesRoot'
+
 const MOCK_DATA = [
   createMockRecentDocument({
     name: 'Document1',
@@ -83,12 +98,16 @@ const MOCK_DATA = [
     parentLinkId: 'parentLink1',
     location: { type: 'path', path: ['location', 'Document1'] },
     isSharedWithMe: false,
+    effectiveRole: MemberRole.Admin,
+    ancestorsNodeUids: ['volume1~parentLink1', 'volume1~location', MY_FILES_ROOT_UID],
   }),
   createMockRecentDocument({
     name: 'Test Document',
     linkId: 'link2',
     location: { type: 'root' },
     isSharedWithMe: false,
+    effectiveRole: MemberRole.Admin,
+    ancestorsNodeUids: [MY_FILES_ROOT_UID],
   }),
   createMockRecentDocument({
     name: 'Test Doc',
@@ -96,8 +115,32 @@ const MOCK_DATA = [
     createdBy: 'Creator',
     location: { type: 'shared-with-me' },
     isSharedWithMe: true,
+    effectiveRole: MemberRole.Admin,
+    ancestorsNodeUids: ['volume2~sharedFolder'],
   }),
 ]
+
+const DEVICE_DOCUMENT = createMockRecentDocument({
+  name: 'Device Document',
+  linkId: 'link4',
+  parentLinkId: 'deviceFolder',
+  location: { type: 'path', path: ['Documents'] },
+  isSharedWithMe: false,
+  effectiveRole: MemberRole.Admin,
+  ancestorsNodeUids: ['volume1~deviceFolder', 'volume1~deviceRoot'],
+})
+
+let mockItems = MOCK_DATA
+let mockMyFilesRootUid: string | undefined = MY_FILES_ROOT_UID
+let mockReceiveRecentsUpdate: (items: RecentDocumentsItem[]) => void = () => {}
+
+const moveToArchive = (document: RecentDocumentsItem) =>
+  createMockRecentDocument({
+    ...document.value,
+    parentLinkId: 'archive',
+    location: { type: 'path', path: ['Archive'] },
+    ancestorsNodeUids: ['volume1~archive', MY_FILES_ROOT_UID],
+  })
 
 describe('HomepageContent', () => {
   test('Show loading spinner whilst fetching', async () => {
@@ -150,7 +193,12 @@ describe('HomepageContent', () => {
 
     afterEach(() => {
       mockBulkEnabled = false
+      mockBulkMoveEnabled = false
+      mockTrashAndRecentsWithSDK = false
       mockIsNarrow = false
+      mockIsTrashing = false
+      mockItems = MOCK_DATA
+      mockMyFilesRootUid = MY_FILES_ROOT_UID
     })
 
     const expectNoSelectionUI = () => {
@@ -381,6 +429,298 @@ describe('HomepageContent', () => {
       await userEvent.dblClick((await screen.findAllByRole('button', { name: /Actions/ }))[0])
       expect(mockOpen).not.toHaveBeenCalled()
     })
+
+    describe('bulk move', () => {
+      beforeEach(() => {
+        mockBulkMoveEnabled = true
+        mockBulkMove.mockReset()
+      })
+
+      test('does not render the move button when bulk move is off', async () => {
+        mockBulkMoveEnabled = false
+        renderWithProviders(<HomepageContent />)
+        await screen.findByRole('table')
+        await selectAll()
+
+        expect(screen.getByTestId('bulk-trash-button')).toBeInTheDocument()
+        expect(screen.queryByTestId('bulk-move-button')).toBeNull()
+      })
+
+      test('does not render the move button without a selection', async () => {
+        renderWithProviders(<HomepageContent />)
+        await screen.findByRole('table')
+
+        expect(screen.queryByTestId('bulk-move-button')).toBeNull()
+      })
+
+      test('opens the move modal for the selected documents and keeps the selection, as in Drive', async () => {
+        renderWithProviders(<HomepageContent />)
+        await screen.findByRole('table')
+        await selectAll()
+
+        await userEvent.click(screen.getByTestId('bulk-move-button'))
+
+        expect(mockBulkMove).toHaveBeenCalledWith([
+          expect.objectContaining(MOCK_DATA[0]),
+          expect.objectContaining(MOCK_DATA[1]),
+        ])
+        expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+      })
+
+      test('drops each document from the selection once it has moved, as moved items leave a Drive folder', async () => {
+        const [first, second, shared] = MOCK_DATA
+        renderWithProviders(<HomepageContent />)
+        await screen.findByRole('table')
+        await selectAll()
+        await userEvent.click(screen.getByTestId('bulk-move-button'))
+
+        act(() => mockReceiveRecentsUpdate([moveToArchive(first), second, shared]))
+
+        expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('1 selected')
+        expect(screen.getByRole('checkbox', { name: 'Select Test Document' })).toBeChecked()
+
+        act(() => mockReceiveRecentsUpdate([moveToArchive(first), moveToArchive(second), shared]))
+
+        expect(screen.queryByTestId('bulk-selected-count')).toBeNull()
+      })
+
+      test('keeps updated documents that have not moved in the selection', async () => {
+        const [first, second, shared] = MOCK_DATA
+        renderWithProviders(<HomepageContent />)
+        await screen.findByRole('table')
+        await selectAll()
+
+        act(() => mockReceiveRecentsUpdate([createMockRecentDocument({ ...first.value, name: 'Renamed' }), second, shared]))
+
+        expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+      })
+
+      test('keeps moved documents in the selection when bulk move is off', async () => {
+        mockBulkMoveEnabled = false
+        const [first, second, shared] = MOCK_DATA
+        renderWithProviders(<HomepageContent />)
+        await screen.findByRole('table')
+        await selectAll()
+
+        act(() => mockReceiveRecentsUpdate([moveToArchive(first), moveToArchive(second), shared]))
+
+        expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+      })
+
+      test('hides the move button when the selection includes a document shared with the user', async () => {
+        mockTrashAndRecentsWithSDK = true
+        renderWithProviders(<HomepageContent />)
+        await userEvent.click(await screen.findByRole('checkbox', { name: 'Select Document1' }))
+        expect(screen.getByTestId('bulk-move-button')).toBeInTheDocument()
+
+        await userEvent.click(screen.getByRole('checkbox', { name: 'Select Test Doc' }))
+
+        expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+        expect(screen.queryByTestId('bulk-move-button')).toBeNull()
+        expect(screen.getByTestId('bulk-trash-button')).toBeInTheDocument()
+      })
+
+      test('hides the move button for a document on a device', async () => {
+        mockItems = [...MOCK_DATA, DEVICE_DOCUMENT]
+        renderWithProviders(<HomepageContent />)
+        await userEvent.click(await screen.findByRole('checkbox', { name: 'Select Device Document' }))
+
+        expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('1 selected')
+        expect(screen.queryByTestId('bulk-move-button')).toBeNull()
+        expect(screen.getByTestId('bulk-trash-button')).toBeInTheDocument()
+      })
+
+      test('hides the move button when the selection mixes My files and a device', async () => {
+        mockItems = [...MOCK_DATA, DEVICE_DOCUMENT]
+        renderWithProviders(<HomepageContent />)
+        await userEvent.click(await screen.findByRole('checkbox', { name: 'Select Document1' }))
+        expect(screen.getByTestId('bulk-move-button')).toBeInTheDocument()
+
+        await userEvent.click(screen.getByRole('checkbox', { name: 'Select Device Document' }))
+
+        expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+        expect(screen.queryByTestId('bulk-move-button')).toBeNull()
+      })
+
+      test('hides the move button while the My files root is unknown', async () => {
+        mockMyFilesRootUid = undefined
+        renderWithProviders(<HomepageContent />)
+        await screen.findByRole('table')
+        await selectAll()
+
+        expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+        expect(screen.queryByTestId('bulk-move-button')).toBeNull()
+      })
+
+      test('on mobile, the move button is in the head', async () => {
+        mockIsNarrow = true
+        renderWithProviders(<HomepageContent />)
+        const table = await screen.findByRole('table')
+        const head = within(table).getAllByRole('rowgroup')[0]
+        await userEvent.click(await findRow('Document1'))
+
+        expect(within(head).getByTestId('bulk-move-button')).toBeInTheDocument()
+        expect(within(head).getByTestId('bulk-trash-button')).toBeInTheDocument()
+      })
+
+      describe('row Actions button', () => {
+        // Proton's utility hides it on mouse devices until the row is hovered or focused, and keeps it on touch devices.
+        const HOVER_ONLY = 'mouse:group-hover:opacity-100'
+        const findActionsButtons = () => screen.findAllByRole('button', { name: /Actions/ })
+
+        test('shows only on hover', async () => {
+          renderWithProviders(<HomepageContent />)
+
+          ;(await findActionsButtons()).forEach((button) => expect(button).toHaveClass(HOVER_ONLY))
+        })
+
+        test('stays visible while its menu is open', async () => {
+          renderWithProviders(<HomepageContent />)
+          const [first, second] = await findActionsButtons()
+          await userEvent.click(first)
+          await screen.findByText('Open folder')
+
+          expect(first).not.toHaveClass(HOVER_ONLY)
+          expect(second).toHaveClass(HOVER_ONLY)
+        })
+
+        test('always shows when bulk move is off', async () => {
+          mockBulkMoveEnabled = false
+          renderWithProviders(<HomepageContent />)
+
+          ;(await findActionsButtons()).forEach((button) => expect(button).not.toHaveClass(HOVER_ONLY))
+        })
+
+        test('selects only its row, as in Drive', async () => {
+          renderWithProviders(<HomepageContent />)
+          await screen.findByRole('table')
+          await selectAll()
+
+          await userEvent.click((await findActionsButtons())[1])
+
+          await screen.findByText('Open folder')
+          expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('1 selected')
+          expect(screen.getByRole('checkbox', { name: 'Select Test Document' })).toBeChecked()
+        })
+
+        test('clears the selection on a row that cannot be selected', async () => {
+          renderWithProviders(<HomepageContent />)
+          await screen.findByRole('table')
+          await selectAll()
+
+          await userEvent.click((await findActionsButtons())[2])
+
+          await screen.findByText('Open folder')
+          expect(screen.queryByTestId('bulk-selected-count')).toBeNull()
+        })
+
+        test('keeps the selection when bulk move is off', async () => {
+          mockBulkMoveEnabled = false
+          renderWithProviders(<HomepageContent />)
+          await screen.findByRole('table')
+          await selectAll()
+
+          await userEvent.click((await findActionsButtons())[1])
+
+          await screen.findByText('Open folder')
+          expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+        })
+      })
+
+      describe('row menu with several documents selected', () => {
+        const openMenu = async (name: string) => fireEvent.contextMenu(await findRow(name))
+        const findMenuItemNames = async () => {
+          await screen.findByText('Move to trash')
+          return [...document.querySelectorAll('.dropdown-item-button')].map((button) => button.textContent)
+        }
+        const DOCUMENT_MENU = ['Open', 'Share', 'Move', 'Open folder', 'Rename', 'Move to trash']
+
+        test('offers only Move and Move to trash, for the whole selection', async () => {
+          renderWithProviders(<HomepageContent />)
+          await screen.findByRole('table')
+          await selectAll()
+          await openMenu('Document1')
+
+          expect(await findMenuItemNames()).toEqual(['Move', 'Move to trash'])
+
+          await userEvent.click(screen.getByText('Move'))
+
+          expect(mockBulkMove).toHaveBeenCalledWith([
+            expect.objectContaining(MOCK_DATA[0]),
+            expect.objectContaining(MOCK_DATA[1]),
+          ])
+          expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+        })
+
+        test('Move to trash trashes the whole selection and clears it', async () => {
+          mockBulkTrash.mockResolvedValue([])
+          const { mockTrash } = renderWithProviders(<HomepageContent />)
+          await screen.findByRole('table')
+          await selectAll()
+          await openMenu('Test Document')
+
+          await userEvent.click(await screen.findByText('Move to trash'))
+
+          expect(mockBulkTrash).toHaveBeenCalledWith([
+            expect.objectContaining(MOCK_DATA[0]),
+            expect.objectContaining(MOCK_DATA[1]),
+          ])
+          expect(mockTrash).not.toHaveBeenCalled()
+          await waitFor(() => expect(screen.queryByTestId('bulk-selected-count')).toBeNull())
+        })
+
+        test('disables Move and Move to trash while the selection is being trashed', async () => {
+          renderWithProviders(<HomepageContent />)
+          await screen.findByRole('table')
+          await selectAll()
+          mockIsTrashing = true
+          await openMenu('Document1')
+
+          expect(await findMenuItemNames()).toEqual(['Move', 'Move to trash'])
+          document.querySelectorAll('.dropdown-item-button').forEach((button) => expect(button).toBeDisabled())
+        })
+
+        test('offers only Move to trash when the selection includes a document shared with the user', async () => {
+          mockTrashAndRecentsWithSDK = true
+          renderWithProviders(<HomepageContent />)
+          await userEvent.click(await screen.findByRole('checkbox', { name: 'Select Document1' }))
+          await userEvent.click(screen.getByRole('checkbox', { name: 'Select Test Doc' }))
+          await openMenu('Document1')
+
+          expect(await findMenuItemNames()).toEqual(['Move to trash'])
+        })
+
+        test('keeps the document menu when bulk move is off', async () => {
+          mockBulkMoveEnabled = false
+          renderWithProviders(<HomepageContent />)
+          await screen.findByRole('table')
+          await selectAll()
+          await openMenu('Document1')
+
+          expect(await findMenuItemNames()).toEqual(DOCUMENT_MENU)
+        })
+
+        test('keeps the document menu when one document is selected', async () => {
+          renderWithProviders(<HomepageContent />)
+          await openMenu('Document1')
+
+          expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('1 selected')
+          expect(await findMenuItemNames()).toEqual(DOCUMENT_MENU)
+        })
+
+        test('selects a row outside the selection alone, with its document menu', async () => {
+          mockItems = [...MOCK_DATA, DEVICE_DOCUMENT]
+          renderWithProviders(<HomepageContent />)
+          await userEvent.click(await screen.findByRole('checkbox', { name: 'Select Document1' }))
+          await userEvent.click(screen.getByRole('checkbox', { name: 'Select Test Document' }))
+          await userEvent.click(screen.getAllByRole('button', { name: /Actions/ })[3])
+
+          expect(await findMenuItemNames()).toEqual(DOCUMENT_MENU)
+          expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('1 selected')
+          expect(screen.getByRole('checkbox', { name: 'Select Device Document' })).toBeChecked()
+        })
+      })
+    })
   })
 
   function DocumentActionsMockProvider({
@@ -428,10 +768,11 @@ describe('HomepageContent', () => {
     flow: 'one_document' | 'empty_recents' | 'delayed' | 'trash'
   }) {
     const [state, setState] = useState<HomepageViewState>({ view: 'recents-initial' })
+    mockReceiveRecentsUpdate = (items) => setState({ view: 'recents', sort: 'viewed', itemSections: [{ id: 'today', items }] })
 
     useEffect(() => {
       if (flow === 'one_document') {
-        setState({ view: 'recents', sort: 'viewed', itemSections: [{ id: 'today', items: MOCK_DATA }] })
+        setState({ view: 'recents', sort: 'viewed', itemSections: [{ id: 'today', items: mockItems }] })
       }
 
       if (flow === 'trash') {
@@ -458,6 +799,7 @@ describe('HomepageContent', () => {
           isRecentsUpdating: false,
           state,
           type: undefined,
+          myFilesRootUid: mockMyFilesRootUid,
         }}
       >
         {children}
