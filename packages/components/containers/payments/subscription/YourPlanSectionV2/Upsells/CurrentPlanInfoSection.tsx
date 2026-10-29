@@ -455,7 +455,7 @@ const CurrentPlanInfoWithUpsellSection = ({
     return (
         <>
             {/* Subscription ends banner needs to be here as we don't show the Your Plan section in this case */}
-            <SubscriptionEndsBannerV2 app={app} />
+            <SubscriptionEndsBannerV2 app={app} subscription={subscription} />
             <DashboardGrid>
                 <DashboardGridSectionHeader
                     title={c('Headline').t`Upgrade your privacy`}
