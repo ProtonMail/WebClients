@@ -1,5 +1,5 @@
-import { toText } from '@proton/mail-message/helpers/parserHtml';
-import type { MessageState, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import type { MessageState, PartialMessageState } from '../../store/messages/messagesTypes';
+import { toText } from '../parserHtml';
 
 export const getPlainTextContent = (message: PartialMessageState) => {
     return message.messageDocument?.plainText || '';

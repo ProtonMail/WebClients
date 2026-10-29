@@ -1,3 +1,4 @@
+import type { Conversation, ConversationLabel } from '@proton/mail-message/models/conversation';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
@@ -5,7 +6,6 @@ import type { Attachment, Message, MessageMetadata } from '@proton/shared/lib/in
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 
 import { getElementContextIdentifier } from '../../../helpers/elements';
-import type { Conversation, ConversationLabel } from '../../../models/conversation';
 
 export const CUSTOM_LABEL_ID1 = 'custom-label-1';
 export const CUSTOM_LABEL_ID2 = 'custom-label-2';

@@ -1,4 +1,5 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -9,7 +10,6 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { fromFields, recipients } from '../../components/composer/tests/Composer.test.data';
-import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import {
     findSender,

@@ -1,4 +1,5 @@
 import { useHandler } from '@proton/hooks/useHandler';
+import type { ConversationState } from '@proton/mail-message/store/conversations/conversationsTypes';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { conversationCountsActions, selectConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
@@ -11,7 +12,6 @@ import {
     optimisticDeleteConversationMessages as optimisticDeleteConversationMessagesAction,
     optimisticRestore as optimisticRestoreConversationsAction,
 } from '../../store/conversations/conversationsActions';
-import type { ConversationState } from '../../store/conversations/conversationsTypes';
 import {
     optimisticEmptyLabel as optimisticEmptyLabelElements,
     optimisticRestoreEmptyLabel as optimisticRestoreEmptyLabelElements,

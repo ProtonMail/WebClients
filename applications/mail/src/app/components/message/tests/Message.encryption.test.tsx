@@ -3,6 +3,7 @@ import { findByText, screen } from '@testing-library/react';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { IcLockCheckFilled } from '@proton/icons/icons/IcLockCheckFilled';
 import { IcLockExclamationFilled } from '@proton/icons/icons/IcLockExclamationFilled';
+import { X_PM_HEADERS } from '@proton/mail-message/models/crypto';
 import type { MessageKeys } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
@@ -25,7 +26,6 @@ import {
 } from '../../../helpers/tests/crypto';
 import { clearAll } from '../../../helpers/tests/helper';
 import { encryptMessage } from '../../../helpers/tests/message';
-import { X_PM_HEADERS } from '../../../models/crypto';
 import { addressID, body, getIframeRootDiv, localID, messageID, setup, subject } from './Message.test.helpers';
 
 jest.setTimeout(20000);

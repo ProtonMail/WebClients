@@ -1,6 +1,10 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import type {
+    ConversationParams,
+    ConversationResult,
+} from '@proton/mail-message/store/conversations/conversationsTypes';
 import { getConversation } from '@proton/shared/lib/api/conversations';
 import {
     labelAll as labelAllRequest,
@@ -15,7 +19,6 @@ import unique from '@proton/utils/unique';
 
 import { isElementMessage } from '../../helpers/elements';
 import type { Element } from '../../models/element';
-import type { ConversationParams, ConversationResult } from '../conversations/conversationsTypes';
 import type { MailState, MailThunkExtra } from '../store';
 import { selectCurrentContextIdentifier } from './elementsSelectors';
 import { refreshTaskRunningTimeout } from './elementsTaskRunning';

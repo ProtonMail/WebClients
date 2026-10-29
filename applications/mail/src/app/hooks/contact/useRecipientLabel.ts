@@ -1,3 +1,4 @@
+import type { RecipientGroup, RecipientOrGroup } from '@proton/mail-message/models/address';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import {
@@ -6,7 +7,6 @@ import {
     getRecipientLabelDetailed as computeRecipientLabelDetailed,
     recipientsToRecipientOrGroup,
 } from '../../helpers/message/messageRecipients';
-import type { RecipientGroup, RecipientOrGroup } from '../../models/address';
 import {
     useContactGroupsMap,
     useContactsMap,

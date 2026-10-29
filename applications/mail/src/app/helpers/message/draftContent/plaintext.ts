@@ -1,6 +1,11 @@
 import { c } from 'ttag';
 
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { formatFullDate } from '@proton/mail-message/helpers/date';
+import { exportPlainText } from '@proton/mail-message/helpers/message/messageContentPlainText';
+import { getDocumentContent } from '@proton/mail-message/helpers/message/messageContentQuery';
+import { formatRecipientsString } from '@proton/mail-message/helpers/message/messageDraftFormat';
+import { exportPlainTextSignature, templateBuilder } from '@proton/mail-message/helpers/message/messageSignature';
 import type { PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
@@ -8,13 +13,8 @@ import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { FORWARDED_MESSAGE, isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { formatFullDate } from '../../date';
 import { getDate } from '../../elementTypeGuards';
-import { exportPlainText } from '../messageContentPlainText';
-import { getDocumentContent } from '../messageContentQuery';
-import { formatRecipientsString } from '../messageDraftFormat';
 import { restoreImages } from '../messageImages';
-import { exportPlainTextSignature, templateBuilder } from '../messageSignature';
 
 export const generatePlaintextPreviousMessageInfos = (
     referenceMessage: PartialMessageState,

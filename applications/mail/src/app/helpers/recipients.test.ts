@@ -1,7 +1,7 @@
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { Conversation } from '../models/conversation';
 import { getElementSenders } from './recipients';
 
 describe('recipients helpers', () => {

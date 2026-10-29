@@ -1,12 +1,16 @@
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import { templateBuilder } from '@proton/mail-message/helpers/message/messageSignature';
 import { toText } from '@proton/mail-message/helpers/parserHtml';
+import {
+    SIGNATURE_PLACEHOLDER,
+    escapeBackslash,
+    extractContentFromPtag,
+    getMarkdownParser,
+} from '@proton/mail-message/helpers/textToHtmlUtils';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
-import { templateBuilder } from './message/messageSignature';
-import { SIGNATURE_PLACEHOLDER, escapeBackslash, extractContentFromPtag, getMarkdownParser } from './textToHtmlUtils';
-
-export { extractContentFromPtag } from './textToHtmlUtils';
+export { extractContentFromPtag } from '@proton/mail-message/helpers/textToHtmlUtils';
 
 const generatePlaceHolder = (text: string) => {
     let placeholder = '';

@@ -1,6 +1,7 @@
 import { serverTime } from '@protontech/crypto';
 import { getUnixTime } from 'date-fns';
 
+import { hasIcalExtension } from '@proton/mail-message/helpers/attachment/attachment';
 import type { MessageStateWithData, MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { TelemetryIcsSurgeryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { generateAttendeeToken, getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
@@ -78,7 +79,6 @@ import type { RequireSome, SimpleMap, Unwrap } from '@proton/shared/lib/interfac
 import { getOriginalTo, hasSimpleLoginSender } from '@proton/shared/lib/mail/messages';
 import unary from '@proton/utils/unary';
 
-import { hasIcalExtension } from '../attachment/attachment';
 import type { FetchAllEventsByUID } from './inviteApi';
 
 export enum EVENT_TIME_STATUS {

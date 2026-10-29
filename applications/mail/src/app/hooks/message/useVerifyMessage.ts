@@ -6,10 +6,10 @@ import { getMatchingSigningKey } from '@protontech/crypto';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
+import { isNetworkError } from '@proton/mail-message/helpers/errors';
 import type { MessageErrors, MessageStateWithDataFull } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { isNetworkError } from '../../helpers/errors';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';
 import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';

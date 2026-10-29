@@ -16,10 +16,10 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
+import { getMessageExpirationDate } from '@proton/mail-message/helpers/message/messageExpirationTime';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { getMessageExpirationDate } from '../../../helpers/message/messageExpirationTime';
 import useExpiration from '../../../hooks/useExpiration';
 
 interface Props {

@@ -15,8 +15,9 @@ import {
 } from 'date-fns';
 import { c } from 'ttag';
 
+import { getMinScheduleTime } from '@proton/mail-message/helpers/schedule';
+
 import { FUTURE_MESSAGES_BUFFER } from '../../constants';
-import { getMinScheduleTime } from '../../helpers/schedule';
 
 interface Props {
     defaultDate: Date;

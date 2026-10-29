@@ -4,9 +4,9 @@ import { differenceInDays, differenceInHours, endOfDay, fromUnixTime, isAfter } 
 import { c, msgid } from 'ttag';
 
 import useInterval from '@proton/hooks/useInterval';
+import { formatFullDate } from '@proton/mail-message/helpers/date';
 import { MINUTE } from '@proton/shared/lib/constants';
 
-import { formatFullDate } from '../../../helpers/date';
 import { isElementConversation } from '../../../helpers/elements';
 import type { Element } from '../../../models/element';
 

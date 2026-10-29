@@ -1,3 +1,4 @@
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import {
     getContextNumAttachments,
     getContextNumMessages,
@@ -20,7 +21,6 @@ import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message
 import { isDraft, isReceived, isSent } from '@proton/shared/lib/mail/messages';
 
 import { hasLabel } from '../../helpers/elements';
-import type { Conversation } from '../../models/conversation';
 
 export const applyLabelToMessage = (
     message: MessageMetadata,

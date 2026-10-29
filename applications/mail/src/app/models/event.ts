@@ -1,4 +1,5 @@
 import type { EventLoop } from '@proton/account/eventLoop';
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces/Checklist';
@@ -6,8 +7,6 @@ import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-
-import type { Conversation } from './conversation';
 
 interface EventType {
     ID: string;

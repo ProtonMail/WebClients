@@ -4,8 +4,8 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import type { ActionRequest } from '@proton/llm/lib/lumoAgent/contracts/types';
 import sentenceText from '@proton/llm/lib/lumoAgent/ui/sentenceText';
+import { formatSimpleDate } from '@proton/mail-message/helpers/date';
 
-import { formatSimpleDate } from '../../../helpers/date';
 import {
     emailCountDetail,
     emailSelectionSentence,

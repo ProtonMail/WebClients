@@ -1,11 +1,15 @@
 import type { Draft } from 'immer';
 
+import type { Conversation } from '@proton/mail-message/models/conversation';
+import type {
+    ConversationState,
+    ConversationsState,
+} from '@proton/mail-message/store/conversations/conversationsTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { Conversation } from '../../models/conversation';
 import {
     labelConversationsPending,
     labelMessagesPending,
@@ -16,7 +20,6 @@ import {
     unlabelConversationsPending,
     unlabelMessagesPending,
 } from './conversationsReducers';
-import type { ConversationState, ConversationsState } from './conversationsTypes';
 
 describe('conversationsReducers', () => {
     const conversationID = 'conversation-1';

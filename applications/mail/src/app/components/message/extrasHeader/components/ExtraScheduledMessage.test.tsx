@@ -2,11 +2,11 @@ import { fireEvent, screen } from '@testing-library/react';
 import { act } from '@testing-library/react-hooks';
 import { addHours, addSeconds } from 'date-fns';
 
+import { formatDateToHuman } from '@proton/mail-message/helpers/date';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
-import { formatDateToHuman } from '../../../../helpers/date';
 import { addApiMock } from '../../../../helpers/tests/api';
 import { clearAll } from '../../../../helpers/tests/helper';
 import { mailTestRender } from '../../../../helpers/tests/render';

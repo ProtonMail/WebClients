@@ -2,6 +2,8 @@ import type { FocusEvent, FocusEventHandler, Ref, RefObject } from 'react';
 import { forwardRef, memo, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
+import type { MessageViewIcons } from '@proton/mail-message/helpers/message/icon';
+import { getReceivedStatusIcon, getSentStatusIconInfo } from '@proton/mail-message/helpers/message/icon';
 import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import createScrollIntoView from '@proton/shared/lib/helpers/createScrollIntoView';
@@ -16,8 +18,6 @@ import noop from '@proton/utils/noop';
 import { LOAD_RETRY_COUNT } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { hasLabel, isUnread } from '../../helpers/elements';
-import type { MessageViewIcons } from '../../helpers/message/icon';
-import { getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
 import { isElementReminded } from '../../helpers/snooze';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';

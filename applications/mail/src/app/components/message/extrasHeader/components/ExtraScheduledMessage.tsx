@@ -12,6 +12,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { IcPaperPlaneClock } from '@proton/icons/icons/IcPaperPlaneClock';
+import { formatDateToHuman } from '@proton/mail-message/helpers/date';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { cancelSend } from '@proton/shared/lib/api/messages';
@@ -23,7 +24,6 @@ import { isScheduled } from '@proton/shared/lib/mail/messages';
 
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../../constants';
 import { useOnCompose } from '../../../../containers/ComposeProvider';
-import { formatDateToHuman } from '../../../../helpers/date';
 import { ComposeTypes } from '../../../../hooks/composer/useCompose';
 import { useMailDispatch } from '../../../../store/hooks';
 import { cancelScheduled } from '../../../../store/messages/scheduled/scheduledActions';

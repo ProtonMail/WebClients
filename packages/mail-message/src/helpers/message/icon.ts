@@ -10,11 +10,6 @@ import { IcLockOpenExclamationFilled } from '@proton/icons/icons/IcLockOpenExcla
 import { IcLockOpenPenFilled } from '@proton/icons/icons/IcLockOpenPenFilled';
 import { IcLockPenFilled } from '@proton/icons/icons/IcLockPenFilled';
 import { KEY_VERIFICATION_ERROR_MESSAGE } from '@proton/key-transparency/keys/getPublicKeysEmailHelper';
-import type {
-    MessageState,
-    MessageVerification,
-    MessageWithOptionalBody,
-} from '@proton/mail-message/store/messages/messagesTypes';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
@@ -25,6 +20,7 @@ import { getParsedHeadersFirstValue, hasProtonSender, inSigningPeriod } from '@p
 
 import type { MapStatusIcons, StatusIcon } from '../../models/crypto';
 import { STATUS_ICONS_FILLS, X_PM_HEADERS } from '../../models/crypto';
+import type { MessageState, MessageVerification, MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 
 // The logic for determining the status icons can be found in Confluence under the title
 // Encryption status for outgoing and incoming email

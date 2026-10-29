@@ -1,11 +1,11 @@
 import { addDays, getUnixTime } from 'date-fns';
 
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { formatFullDate } from '@proton/mail-message/helpers/date';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
-import { formatFullDate } from '../../date';
 import {
     createPlaintextDraftContent,
     generatePlaintextBlockquote,

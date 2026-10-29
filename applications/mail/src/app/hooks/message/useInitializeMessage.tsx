@@ -6,6 +6,9 @@ import { useApi } from '@proton/app-context/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { getPureAttachments } from '@proton/mail-message/helpers/attachment/attachment';
+import { isNetworkError } from '@proton/mail-message/helpers/errors';
+import { loadMessage } from '@proton/mail-message/helpers/message/messageRead';
 import { useBase64Cache } from '@proton/mail-message/hooks/useBase64Cache';
 import type {
     LoadEmbeddedParams,
@@ -30,16 +33,13 @@ import uniqueBy from '@proton/utils/uniqueBy';
 
 import { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
-import { getPureAttachments } from '../../helpers/attachment/attachment';
 import { isUnreadMessage } from '../../helpers/elements';
-import { isNetworkError } from '../../helpers/errors';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
 import {
     handleDispatchLoadFakeImagesProxy,
     handleDispatchLoadImagesProxy,
     handleDispatchLoadRemoteImagesDirect,
 } from '../../helpers/message/messageImages';
-import { loadMessage } from '../../helpers/message/messageRead';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';

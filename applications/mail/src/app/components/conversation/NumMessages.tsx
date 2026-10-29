@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import type { Conversation } from '../../models/conversation';
+import type { Conversation } from '@proton/mail-message/models/conversation';
 
 import './NumMessages.scss';
 

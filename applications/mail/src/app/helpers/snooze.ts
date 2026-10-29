@@ -1,11 +1,11 @@
 import { addDays, getUnixTime, nextMonday, nextSaturday, set } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { SNOOZE_DURATION } from '../components/list/snooze/constant';
-import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
 import { getDate, isElementConversation, isElementMessage } from './elementTypeGuards';
 

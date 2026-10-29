@@ -1,9 +1,8 @@
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import type { Conversation } from '../../../models/conversation';
 import type { Element } from '../../../models/element';
-
 import {
     CUSTOM_FOLDER_KEY,
     CUSTOM_LABEL_KEY,
