@@ -1,7 +1,7 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
-import type { MessageState, PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState, PublicPrivateKey } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import range from '@proton/utils/range';

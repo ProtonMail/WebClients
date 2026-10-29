@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import type { Cancellable } from '@proton/hooks/useHandler';
 import { useHandler } from '@proton/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { SavingDraftNotificationAction } from '../../components/notifications/SavingDraftNotification';

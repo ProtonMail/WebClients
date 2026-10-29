@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import type { Tracker } from '../../hooks/message/useMessageTrackers';
 

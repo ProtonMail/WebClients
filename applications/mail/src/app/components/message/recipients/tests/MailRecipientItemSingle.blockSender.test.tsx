@@ -2,7 +2,7 @@ import type { RenderResult } from '@testing-library/react';
 import { act, fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';

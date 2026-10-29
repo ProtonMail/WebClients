@@ -1,4 +1,4 @@
-import type { MessageKeys, MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageKeys, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Package, PackageStatus, Packages, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';

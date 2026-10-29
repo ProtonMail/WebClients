@@ -1,8 +1,8 @@
 import { act, fireEvent, getByTestId as getByTestIdDefault, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces/Label';

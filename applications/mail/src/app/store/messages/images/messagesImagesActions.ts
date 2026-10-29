@@ -8,7 +8,7 @@ import type {
     LoadRemoteParams,
     LoadRemoteResults,
     MessageRemoteImage,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { getImage } from '@proton/shared/lib/api/images';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { encodeImageUri } from '@proton/shared/lib/helpers/image';

@@ -1,3 +1,4 @@
+import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import {
     getHumanLabelID,
     getLabelNameAnonymised,
@@ -12,7 +13,6 @@ import {
     isSystemLabel,
     isSystemLocation,
 } from '@proton/mail/helpers/location';
-import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';

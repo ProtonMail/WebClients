@@ -1,5 +1,5 @@
 import type { getReportInfo } from '@proton/components/helpers/report';
-import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 
 const FEEDBACK_ADDRESS = 'lumomailfeedback@proton.ch';

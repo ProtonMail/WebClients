@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import type { MessageKeys, MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageKeys, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { EOReply } from '@proton/shared/lib/api/eo';
 import { blobURLtoBlob } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';

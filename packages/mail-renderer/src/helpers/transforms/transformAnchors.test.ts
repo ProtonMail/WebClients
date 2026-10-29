@@ -1,4 +1,4 @@
-import { removeLineBreaks } from '@proton/mail/helpers/string';
+import { removeLineBreaks } from '@proton/mail-message/helpers/string';
 
 import { transformAnchors } from './transformAnchors';
 

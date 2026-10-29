@@ -1,6 +1,6 @@
 import tinycolor from 'tinycolor2';
 
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { escape } from '@proton/sanitize/escape';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 

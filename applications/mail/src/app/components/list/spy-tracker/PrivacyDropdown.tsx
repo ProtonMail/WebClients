@@ -12,8 +12,8 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { FeatureCode } from '@proton/features/interface';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { TelemetryMailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import noTrackersImage from '@proton/styles/assets/img/illustrations/no-trackers-found.svg';

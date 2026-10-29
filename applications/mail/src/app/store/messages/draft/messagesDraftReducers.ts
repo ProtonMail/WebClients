@@ -7,7 +7,7 @@ import type {
     MessageState,
     MessagesState,
     PartialMessageState,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';

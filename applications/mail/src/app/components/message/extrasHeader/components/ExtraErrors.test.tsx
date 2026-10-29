@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import ExtraErrors from './ExtraErrors';
 

@@ -14,10 +14,10 @@ import { IcEnvelopeMagnifyingGlass } from '@proton/icons/icons/IcEnvelopeMagnify
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';

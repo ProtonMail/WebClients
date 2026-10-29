@@ -6,10 +6,7 @@ import { useApi } from '@proton/app-context/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
-import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
-import { useBase64Cache } from '@proton/mail/hooks/useBase64Cache';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { useBase64Cache } from '@proton/mail-message/hooks/useBase64Cache';
 import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
@@ -19,7 +16,10 @@ import type {
     MessageRemoteImage,
     MessageState,
     MessageStateWithDataFull,
-} from '@proton/mail/store/messages/messagesTypes';
+    Preparation,
+} from '@proton/mail-message/store/messages/messagesTypes';
+import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';

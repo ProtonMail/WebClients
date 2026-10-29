@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { CALENDAR_V1 } from '@proton/shared/lib/api/calendars';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';

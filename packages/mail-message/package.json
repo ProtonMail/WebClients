@@ -1,0 +1,53 @@
+{
+    "name": "@proton/mail-message",
+    "private": true,
+    "description": "Message domain types and helpers shared by the mail application, the renderer and the composer",
+    "license": "GPL-3.0",
+    "sideEffects": false,
+    "exports": {
+        "./constants": "./src/constants.ts",
+        "./helpers/composer": "./src/helpers/composer.ts",
+        "./helpers/dom": "./src/helpers/dom.ts",
+        "./helpers/locateHead": "./src/helpers/locateHead.ts",
+        "./helpers/message/cleanProblematicImagesFromClipboardContent": "./src/helpers/message/cleanProblematicImagesFromClipboardContent.ts",
+        "./helpers/message/messageImages/getAnchor": "./src/helpers/message/messageImages/getAnchor.ts",
+        "./helpers/parseDOMStringToBodyElement": "./src/helpers/parseDOMStringToBodyElement.ts",
+        "./helpers/parserHtml": "./src/helpers/parserHtml.ts",
+        "./helpers/string": "./src/helpers/string.ts",
+        "./hooks/useBase64Cache": "./src/hooks/useBase64Cache.ts",
+        "./store/attachments/attachmentsTypes": "./src/store/attachments/attachmentsTypes.ts",
+        "./store/messages/messagesTypes": "./src/store/messages/messagesTypes.ts"
+    },
+    "scripts": {
+        "check:types": "tsc --checkers 1",
+        "lint": "oxlint --quiet",
+        "test": "jest --logHeapUsage --forceExit",
+        "test:ci": "jest --runInBand --ci --forceExit --logHeapUsage",
+        "test:watch": "jest --watch --coverage=false"
+    },
+    "dependencies": {
+        "@proton/app-context": "workspace:^",
+        "@proton/shared": "workspace:^",
+        "@proton/utils": "workspace:^",
+        "@protontech/crypto": "catalog:",
+        "react": "catalog:",
+        "turndown": "^7.2.4"
+    },
+    "devDependencies": {
+        "@proton/jest-swc-preset": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
+        "@proton/types": "workspace:^",
+        "@testing-library/jest-dom": "catalog:",
+        "@types/jest": "catalog:",
+        "@types/node": "catalog:",
+        "@types/react": "catalog:",
+        "@types/turndown": "^5.0.6",
+        "@types/webpack-env": "catalog:",
+        "@typescript/native": "catalog:",
+        "jest": "catalog:",
+        "jest-environment-jsdom": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
+        "typescript": "catalog:"
+    }
+}

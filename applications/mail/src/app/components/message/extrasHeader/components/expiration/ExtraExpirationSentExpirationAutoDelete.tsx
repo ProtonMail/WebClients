@@ -1,7 +1,7 @@
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import useExpiration from '../../../../../hooks/useExpiration';
 

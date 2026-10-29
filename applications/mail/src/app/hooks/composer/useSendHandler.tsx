@@ -7,7 +7,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { getOnlineStatus } from '@proton/components/hooks/useOnline';
 import type { Cancellable } from '@proton/hooks/useHandler';
 import { useHandler } from '@proton/hooks/useHandler';
-import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';

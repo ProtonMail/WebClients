@@ -1,5 +1,5 @@
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';

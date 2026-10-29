@@ -1,10 +1,10 @@
-import type { Base64Cache } from '@proton/mail/hooks/useBase64Cache';
+import type { Base64Cache } from '@proton/mail-message/hooks/useBase64Cache';
 import type {
     MessageEmbeddedImage,
-    MessageImage,
     MessageRemoteImage,
     MessageState,
-} from '@proton/mail/store/messages/messagesTypes';
+    Preparation,
+} from '@proton/mail-message/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -20,18 +20,6 @@ import { transformRawLinks } from './transformRawLinks';
 import { transformStyleAttributes } from './transformStyleAttributes';
 import { transformStylesheet } from './transformStylesheet';
 import { transformWelcome } from './transformWelcome';
-
-export interface Preparation {
-    plainText?: string;
-    document?: Element;
-    showEmbeddedImages?: boolean;
-    showRemoteImages?: boolean;
-    hasRemoteImages?: boolean;
-    hasEmbeddedImages?: boolean;
-    remoteImages?: MessageImage[];
-    embeddedImages?: MessageImage[];
-    isRawLinkDisabled?: boolean;
-}
 
 export const prepareHtml = async (
     message: MessageState,

@@ -13,13 +13,13 @@ import { useHandler } from '@proton/hooks/useHandler';
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib/helpers';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
-import { removeLineBreaks } from '@proton/mail/helpers/string';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { removeLineBreaks } from '@proton/mail-message/helpers/string';
 import type {
     MessageState,
     MessageStateWithData,
     PartialMessageState,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailBlockquotes, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';

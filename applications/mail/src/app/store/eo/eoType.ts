@@ -1,13 +1,13 @@
 import type { PublicKeyReference } from '@protontech/crypto';
 
-import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type {
     MessageErrors,
     MessageImages,
     MessageRemoteImage,
     MessageState,
     MessageVerification,
-} from '@proton/mail/store/messages/messagesTypes';
+    Preparation,
+} from '@proton/mail-message/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Api } from '@proton/shared/lib/interfaces/Api';

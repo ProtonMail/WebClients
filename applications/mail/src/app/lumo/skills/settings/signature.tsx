@@ -6,8 +6,8 @@ import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/cont
 import SettingsLinkBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/SettingsLinkBody';
 import TextFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/TextFieldBody';
 import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
-import { toText } from '@proton/mail/helpers/parserHtml';
-import { htmlEntities, replaceLineBreaks } from '@proton/mail/helpers/string';
+import { toText } from '@proton/mail-message/helpers/parserHtml';
+import { htmlEntities, replaceLineBreaks } from '@proton/mail-message/helpers/string';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 
 import type { MailToolDeps, MailToolModule } from '../../toolModule';

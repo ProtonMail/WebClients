@@ -4,8 +4,8 @@ import type { PublicKeyReference } from '@protontech/crypto';
 
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { useHandler } from '@proton/hooks/useHandler';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import type { MessageState, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { MessageState, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import { EO_DEFAULT_MAILSETTINGS, EO_DEFAULT_USER_SETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';

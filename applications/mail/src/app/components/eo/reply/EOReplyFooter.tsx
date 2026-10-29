@@ -6,13 +6,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { MessageKeys, MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageKeys, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
-
-import AttachmentsButton from '../../message/extrasFooter/attachment/AttachmentsButton';
 
 import { EO_MAX_REPLIES_NUMBER, EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
 import { useSendEO } from '../../../hooks/eo/useSendEO';
+import AttachmentsButton from '../../message/extrasFooter/attachment/AttachmentsButton';
 
 interface Props {
     id: string;

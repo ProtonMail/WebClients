@@ -1,5 +1,5 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
-import type { MessageStateWithData, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageStateWithData, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { AUTO_SAVE_CONTACTS } from '@proton/shared/lib/mail/mailSettings';
 import generateUID from '@proton/utils/generateUID';
@@ -10,7 +10,6 @@ import { useSendMessage } from '../../../../../hooks/composer/useSendMessage';
 import { useSendVerifications } from '../../../../../hooks/composer/useSendVerifications';
 import { useGetMessage } from '../../../../../hooks/message/useMessage';
 import { useSaveDraft } from '../../../../../hooks/message/useSaveDraft';
-
 import type { PropsWithNewsletterSubscription } from '../../interface';
 
 export const useSendUnsubscribeEmail = ({ subscription }: PropsWithNewsletterSubscription) => {

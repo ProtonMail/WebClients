@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';

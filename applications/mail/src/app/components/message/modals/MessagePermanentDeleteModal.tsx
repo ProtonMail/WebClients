@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 
 import {

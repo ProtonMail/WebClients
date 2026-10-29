@@ -7,7 +7,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
-import type { MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';

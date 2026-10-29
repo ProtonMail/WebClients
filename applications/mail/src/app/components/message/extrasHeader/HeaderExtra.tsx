@@ -1,12 +1,10 @@
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isReceived, isScheduled, isSnoozed } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import ExtraPassNudge from './components/ExtraPassNudge';
 import { hasLabel } from '../../../helpers/elements';
-
 import { getMessageHasData } from '../../../helpers/message/messages';
 import useScheduleSendFeature from '../../composer/actions/scheduleSend/useScheduleSendFeature';
 import ExtraAskResign from './components/ExtraAskResign';
@@ -17,6 +15,7 @@ import ExtraDecryptedSubject from './components/ExtraDecryptedSubject';
 import ExtraErrors from './components/ExtraErrors';
 import ExtraEvents from './components/ExtraEvents';
 import ExtraImages from './components/ExtraImages';
+import ExtraPassNudge from './components/ExtraPassNudge';
 import ExtraPinKey from './components/ExtraPinKey';
 import ExtraReadReceipt from './components/ExtraReadReceipt';
 import ExtraScheduledMessage from './components/ExtraScheduledMessage';

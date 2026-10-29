@@ -1,5 +1,5 @@
-import { uniqID } from '@proton/mail/helpers/string';
-import type { Base64Cache } from '@proton/mail/hooks/useBase64Cache';
+import { uniqID } from '@proton/mail-message/helpers/string';
+import type { Base64Cache } from '@proton/mail-message/hooks/useBase64Cache';
 import { protonizer as purifyHTML } from '@proton/sanitize/purify';
 import { removeHTMLComments } from '@proton/shared/lib/helpers/string';
 

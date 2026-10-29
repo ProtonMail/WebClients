@@ -1,9 +1,9 @@
 import { act, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

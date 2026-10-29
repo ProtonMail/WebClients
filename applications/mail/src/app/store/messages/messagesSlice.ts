@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessagesState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { globalReset } from '../actions';
 import { load as loadElements } from '../elements/elementsActions';

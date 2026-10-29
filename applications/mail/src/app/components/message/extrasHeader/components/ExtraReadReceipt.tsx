@@ -8,7 +8,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import { IcBell } from '@proton/icons/icons/IcBell';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { readReceipt } from '@proton/shared/lib/api/messages';
 import { isReadReceiptSent, requireReadReceipt } from '@proton/shared/lib/mail/messages';
 

@@ -15,7 +15,7 @@ import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import generateUID from '@proton/utils/generateUID';
 

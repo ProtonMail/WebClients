@@ -12,7 +12,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcBoltFilled } from '@proton/icons/icons/IcBoltFilled';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { selectHasFocusedComposer } from '@proton/mail-composer/store/composers/composerSelectors';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { OfferDealModal } from '@proton/offers-delivery/components/OfferDealModal';
 import { OfferNavbarButton } from '@proton/offers-delivery/components/OfferNavbarButton';

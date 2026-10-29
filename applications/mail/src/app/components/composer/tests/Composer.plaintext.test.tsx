@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
 import { clearAll, waitForSpyCall } from '../../../helpers/tests/helper';

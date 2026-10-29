@@ -1,6 +1,6 @@
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import type { MessageStateWithData, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { MessageStateWithData, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';

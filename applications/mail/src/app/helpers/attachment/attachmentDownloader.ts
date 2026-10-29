@@ -1,7 +1,7 @@
 import { logger } from '@protontech/logger';
 import JSZip from 'jszip';
 
-import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageKeys, MessageVerification } from '@proton/mail-message/store/messages/messagesTypes';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { splitExtension } from '@proton/shared/lib/helpers/file';

@@ -2,7 +2,7 @@ import type { PrivateKeyReference, PrivateKeyReferenceV4, PublicKeyReference, Se
 import { CryptoProxy } from '@protontech/crypto';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageKeys } from '@proton/mail-message/store/messages/messagesTypes';
 import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';

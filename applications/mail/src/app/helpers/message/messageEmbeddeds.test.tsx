@@ -1,9 +1,11 @@
-import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+
+import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import type {
     MessageEmbeddedImage,
     MessageImage,
     PartialMessageState,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import {
@@ -25,7 +27,6 @@ import {
     setEmbeddedAttr,
     trimQuotes,
 } from './messageEmbeddeds';
-import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 const contentID = 'my-content-id';
 const contentLocation = 'my-content-location';
