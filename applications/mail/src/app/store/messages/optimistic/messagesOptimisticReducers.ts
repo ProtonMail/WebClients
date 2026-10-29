@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
-import type { MessageState, MessagesState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState, MessagesState } from '@proton/mail-message/store/messages/messagesTypes';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 
 import { hasLabel } from '../../../helpers/elements';

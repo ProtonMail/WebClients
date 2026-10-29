@@ -114,6 +114,7 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
             '@proton/lumo-ui',
             '@proton/mail',
             '@proton/mail-composer',
+            '@proton/mail-message',
             '@proton/mail-renderer',
             '@proton/meet',
             '@proton/metrics',

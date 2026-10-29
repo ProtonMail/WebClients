@@ -6,13 +6,13 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useCache } from '@proton/app-context/useCache';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import type {
     MessageState,
     MessageStateWithData,
     PartialMessageState,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
+import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailBlockquotes, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { isPaid } from '@proton/shared/lib/user/helpers';

@@ -8,7 +8,7 @@ import type {
     MessageState,
     MessagesState,
     VerificationParams,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

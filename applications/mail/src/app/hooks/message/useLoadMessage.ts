@@ -1,9 +1,8 @@
 import { useCallback } from 'react';
 
-import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { useMailDispatch } from '../../store/hooks';
-
 import { load, reload } from '../../store/messages/read/messagesReadActions';
 import { useInitializeMessage } from './useInitializeMessage';
 

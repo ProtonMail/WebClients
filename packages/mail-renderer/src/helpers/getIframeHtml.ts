@@ -1,5 +1,5 @@
-import { locateHead } from '@proton/mail/helpers/locateHead';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { locateHead } from '@proton/mail-message/helpers/locateHead';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { neutralizeStyleBreakout } from '@proton/sanitize/escape';
 
 import {

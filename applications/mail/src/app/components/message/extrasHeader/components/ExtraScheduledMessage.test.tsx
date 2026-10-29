@@ -2,7 +2,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { act } from '@testing-library/react-hooks';
 import { addHours, addSeconds } from 'date-fns';
 
-import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 

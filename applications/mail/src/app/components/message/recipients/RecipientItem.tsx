@@ -4,7 +4,7 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import type { RecipientOrGroup } from '../../../models/address';

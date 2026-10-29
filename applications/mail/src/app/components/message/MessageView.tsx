@@ -2,7 +2,7 @@ import type { FocusEvent, FocusEventHandler, Ref, RefObject } from 'react';
 import { forwardRef, memo, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
-import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import createScrollIntoView from '@proton/shared/lib/helpers/createScrollIntoView';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
@@ -402,6 +402,7 @@ const MessageView = (
             ])}
             style={{ '--index': conversationIndex * 2 }}
             data-testid={`message-view-${conversationIndex}`}
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- focus target for the message keyboard shortcuts
             tabIndex={0}
             data-message-id={message.data?.ID}
             data-shortcut-target="message-container"

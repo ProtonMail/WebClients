@@ -9,7 +9,7 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';

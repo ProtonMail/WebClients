@@ -22,7 +22,7 @@ import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';

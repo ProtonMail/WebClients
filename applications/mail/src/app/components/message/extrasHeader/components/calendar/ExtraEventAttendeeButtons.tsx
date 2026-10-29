@@ -10,7 +10,7 @@ import Loader from '@proton/components/components/loader/Loader';
 import CalendarInviteButtons from '@proton/components/containers/calendar/CalendarInviteButtons';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useLoading from '@proton/hooks/useLoading';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';

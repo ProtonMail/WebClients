@@ -23,7 +23,7 @@ import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
 import { composersInitialState } from '@proton/mail-composer/store/composers/composersSlice';
-import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessagesState } from '@proton/mail-message/store/messages/messagesTypes';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';

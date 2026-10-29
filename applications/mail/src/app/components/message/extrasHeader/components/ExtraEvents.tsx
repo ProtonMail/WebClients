@@ -16,7 +16,7 @@ import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonic
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import useLoading from '@proton/hooks/useLoading';
-import type { MessageErrors, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageErrors, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import {
     getCanCreateCalendar,
     getDefaultCalendar,

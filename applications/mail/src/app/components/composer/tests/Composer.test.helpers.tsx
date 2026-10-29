@@ -5,7 +5,7 @@ import { fireEvent } from '@testing-library/react';
 
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
 import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
-import type { MessageStateWithData, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageStateWithData, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 

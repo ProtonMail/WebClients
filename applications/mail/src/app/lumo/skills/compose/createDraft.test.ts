@@ -1,5 +1,5 @@
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';

@@ -1,6 +1,6 @@
 import type { Draft, PayloadAction } from '@reduxjs/toolkit';
 
-import type { MessagesState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessagesState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { getMessage } from '../helpers/messagesReducer';
 

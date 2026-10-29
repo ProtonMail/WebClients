@@ -3,8 +3,8 @@ import { findByTestId, fireEvent, screen } from '@testing-library/react';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
 import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
-import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -51,8 +51,8 @@ const content = `<div>
   </div>
 </div>`;
 
-jest.mock('@proton/mail/helpers/dom', () => ({
-    ...jest.requireActual('@proton/mail/helpers/dom'),
+jest.mock('@proton/mail-message/helpers/dom', () => ({
+    ...jest.requireActual('@proton/mail-message/helpers/dom'),
 }));
 
 const windowHostname = 'https://mail.proton.pink';

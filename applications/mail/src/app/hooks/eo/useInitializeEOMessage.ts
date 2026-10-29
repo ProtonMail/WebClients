@@ -4,9 +4,7 @@ import type { PrivateKeyReference } from '@protontech/crypto';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { useApi } from '@proton/app-context/useApi';
-import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
-import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
-import { useBase64Cache } from '@proton/mail/hooks/useBase64Cache';
+import { useBase64Cache } from '@proton/mail-message/hooks/useBase64Cache';
 import type {
     LoadEmbeddedResults,
     MessageErrors,
@@ -14,7 +12,9 @@ import type {
     MessageRemoteImage,
     MessageState,
     MessageStateWithDataFull,
-} from '@proton/mail/store/messages/messagesTypes';
+    Preparation,
+} from '@proton/mail-message/store/messages/messagesTypes';
+import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';

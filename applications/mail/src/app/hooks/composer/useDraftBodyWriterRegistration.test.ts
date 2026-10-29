@@ -1,4 +1,4 @@
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 
 import { CLASSNAME_SIGNATURE_CONTAINER } from '../../helpers/message/messageSignature';
 import { canPreserveQuote } from './useDraftBodyWriterRegistration';

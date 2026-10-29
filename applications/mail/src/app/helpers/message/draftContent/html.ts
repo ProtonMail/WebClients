@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { escape } from '@proton/sanitize/escape';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';

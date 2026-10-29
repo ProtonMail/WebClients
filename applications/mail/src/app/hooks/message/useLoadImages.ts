@@ -2,13 +2,13 @@ import { useCallback } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type {
     LoadEmbeddedResults,
     MessageRemoteImage,
     MessageState,
     MessageStateWithData,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import {

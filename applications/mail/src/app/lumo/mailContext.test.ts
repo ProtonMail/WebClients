@@ -1,5 +1,5 @@
 import type { Composer } from '@proton/mail-composer/store/composers/composerTypes';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Category } from '@proton/shared/lib/interfaces/Category';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

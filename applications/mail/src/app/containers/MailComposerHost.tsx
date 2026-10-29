@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { useHistory } from 'react-router';
 
 import { useHandler } from '@proton/hooks/useHandler';
-import type { MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 

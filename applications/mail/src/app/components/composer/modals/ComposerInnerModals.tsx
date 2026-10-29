@@ -5,13 +5,12 @@ import { Href } from '@proton/atoms/Href/Href';
 import Alert from '@proton/components/components/alert/Alert';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import useLocalState from '@proton/components/hooks/useLocalState';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import type { AddAttachmentsParams } from '../../../hooks/composer/useAttachments/interface';
-
 import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../../constants';
+import type { AddAttachmentsParams } from '../../../hooks/composer/useAttachments/interface';
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
 import type { MessageChange } from '../Composer';
 import ComposerAssistantSettingModal from './ComposerAssistantSettingModal';

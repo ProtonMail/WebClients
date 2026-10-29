@@ -1,5 +1,5 @@
 import { clearCache, mockCache } from '@proton/components/testing/cache';
-import type { Base64Cache } from '@proton/mail/hooks/useBase64Cache';
+import type { Base64Cache } from '@proton/mail-message/hooks/useBase64Cache';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { Address } from '@proton/shared/lib/interfaces/Address';

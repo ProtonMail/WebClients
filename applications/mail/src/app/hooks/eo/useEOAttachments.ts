@@ -5,7 +5,7 @@ import type { PublicKeyReference } from '@protontech/crypto';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useHandler } from '@proton/hooks/useHandler';
-import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';

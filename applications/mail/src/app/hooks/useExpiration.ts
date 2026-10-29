@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { differenceInHours, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MINUTE } from '@proton/shared/lib/constants';
 
 import {

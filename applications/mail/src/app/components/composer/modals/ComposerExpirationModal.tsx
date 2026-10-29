@@ -24,7 +24,7 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import TimeInput from '@proton/components/components/input/TimeInput';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { isValidDate } from '@proton/shared/lib/date/date';
 import { setBit } from '@proton/shared/lib/helpers/bitset';

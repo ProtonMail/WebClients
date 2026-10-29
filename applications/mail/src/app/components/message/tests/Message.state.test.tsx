@@ -1,6 +1,6 @@
 import { findByText } from '@testing-library/react';
 
-import type { PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
+import type { PublicPrivateKey } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 

@@ -1,9 +1,9 @@
-import { hash, removeLineBreaks, toUnsignedString } from '@proton/mail/helpers/string';
+import { hash, removeLineBreaks, toUnsignedString } from '@proton/mail-message/helpers/string';
 import type {
     LoadEmbeddedResults,
     MessageEmbeddedImage,
     PartialMessageState,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import { couldPotentiallyBeRenderedAsSVG } from '@proton/shared/lib/helpers/mimetype';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';

@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
-import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageRemoteImage, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { markEmbeddedImagesAsLoaded } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../helpers/message/messageImages';

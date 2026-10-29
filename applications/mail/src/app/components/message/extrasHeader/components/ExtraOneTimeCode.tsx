@@ -1,11 +1,10 @@
 import { useMemo } from 'react';
 
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 
 import OneTimeCodeDetector from '../../../../helpers/message/otp/OneTimeCodeDetector';
 import { shouldRunOtpExtraction } from '../../../../helpers/message/otp/shouldRunOtpExtraction';
-
 import OneTimeCodeCopyButton from '../../../onetimecode/OneTimeCodeCopyButton';
 import { useOneTimeCodeCopy } from '../../../onetimecode/useOneTimeCodeCopy';
 

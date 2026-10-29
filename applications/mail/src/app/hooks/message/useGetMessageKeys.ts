@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import { useGetAddressKeysByUsage } from '@proton/components/hooks/useGetAddressKeysByUsage';
-import type { PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
+import type { PublicPrivateKey } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export type GetMessageKeys = (message: Pick<Message, 'AddressID'>) => Promise<PublicPrivateKey>;

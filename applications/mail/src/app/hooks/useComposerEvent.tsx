@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { OPEN_COMPOSER_WITH_MAILTO_EVENT } from '@proton/shared/lib/constants';
 
 import { useOnCompose, useOnMailTo } from '../containers/ComposeProvider';

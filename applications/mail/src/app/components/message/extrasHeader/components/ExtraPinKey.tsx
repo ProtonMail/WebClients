@@ -13,9 +13,9 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
+import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { canonicalizeInternalEmail, extractEmailFromUserID } from '@proton/shared/lib/helpers/email';

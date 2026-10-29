@@ -2,7 +2,7 @@ import type {
     LoadEmbeddedResults,
     MessageEmbeddedImage,
     MessageState,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { couldPotentiallyBeRenderedAsSVG, isSupportedImage } from '@proton/shared/lib/helpers/mimetype';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';

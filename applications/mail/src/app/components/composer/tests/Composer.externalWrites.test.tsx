@@ -1,8 +1,8 @@
 import { act } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 
 import { getCompleteAddress } from '../../../helpers/tests/cache';
