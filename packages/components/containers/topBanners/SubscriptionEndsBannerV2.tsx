@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { hasDeprecatedVPN, hasVPN2024, subscriptionExpires } from '@proton/payments/core/subscription/helpers';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -19,9 +19,13 @@ import {
     getSubscriptionExpiresText,
 } from '../payments/subscription/helpers/subscriptionExpires';
 
-const SubscriptionEndsBannerV2 = ({ app }: { app: APP_NAMES }) => {
+interface Props {
+    app: APP_NAMES;
+    subscription: MaybeFreeSubscription;
+}
+
+const SubscriptionEndsBannerV2 = ({ app, subscription }: Props) => {
     const { APP_NAME } = useConfig();
-    const [subscription] = useSubscription();
 
     if (isFreeSubscription(subscription)) {
         return null;
