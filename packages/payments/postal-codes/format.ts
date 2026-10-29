@@ -17,7 +17,11 @@ function normalizeCanadianPostalCode(postalCode: string): string {
     return postalCode.trim();
 }
 
-export function normalizePostalCode(postalCode: string, countryCode: string | null) {
+/**
+ * `keepPostalCode` keeps the postal code of a country that doesn't require one instead of dropping it, for an address
+ * that comes from a stored record rather than from a form default (a sales-provisioned one).
+ */
+export function normalizePostalCode(postalCode: string, countryCode: string | null, keepPostalCode = false) {
     if (!countryCode) {
         return null;
     }
@@ -26,7 +30,7 @@ export function normalizePostalCode(postalCode: string, countryCode: string | nu
     // it is because it may have gotten set to a default value. And that's problematic because the user wouldn't be able to
     // change it.
     if (!isCountryWithRequiredPostalCode(normalizedCountryCode)) {
-        return null;
+        return keepPostalCode ? postalCode : null;
     }
     switch (normalizedCountryCode) {
         case 'US':
