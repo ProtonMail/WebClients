@@ -4,10 +4,9 @@ import { getUnixTime, parseISO } from 'date-fns';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
-import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { UserIdentity } from '@proton/atoms/UserIdentity/UserIdentity';
 import { getShareID } from '@proton/shared/lib/api/b2bevents';
 import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 import isTruthy from '@proton/utils/isTruthy';
 
 import AppLink from '../../../components/link/AppLink';
@@ -206,30 +205,18 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
                     const key = index;
 
                     const shareId = vaultId ? shareIds[vaultId] : undefined;
-                    const initials = name ? getInitials(name) : email.charAt(0);
                     const formattedTime = getUnixTime(parseISO(time));
 
                     return (
                         <TableRow
                             key={key}
                             cells={[
-                                <div className="flex flex-row items-center my-2">
-                                    <Avatar className="mr-2" color="weak">
-                                        {initials}
-                                    </Avatar>
-                                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                                    <div
-                                        className="flex flex-column cursor-pointer w-2/3"
-                                        onClick={() => onEmailOrIpClick(email)}
-                                    >
-                                        <span title={name} className="text-ellipsis max-w-full">
-                                            {name}
-                                        </span>
-                                        <span title={email} className="color-weak text-ellipsis max-w-full">
-                                            {email}
-                                        </span>
-                                    </div>
-                                </div>,
+                                <UserIdentity
+                                    className="my-2"
+                                    name={name}
+                                    email={email}
+                                    onClick={() => onEmailOrIpClick(email)}
+                                />,
                                 <div className="flex flex-column cursor-pointer">
                                     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                                     <div
