@@ -1,6 +1,13 @@
 import type { FolderData } from '../../types/data/folders';
 import type { MaybeNull } from '../../types/utils';
-import { getFolderAndDescendantIds, getFolderChildren, getFolderScope, resolveFolderPath } from './folder.utils';
+import {
+    getFolderAndDescendantIds,
+    getFolderChildren,
+    getFolderMoveBlockReason,
+    getFolderScope,
+    getFolderSubtreeHeight,
+    resolveFolderPath,
+} from './folder.utils';
 
 const mockFolder = (folderId: string, parentFolderId: MaybeNull<string>): FolderData => ({
     folderId,
@@ -92,5 +99,48 @@ describe('getFolderScope', () => {
 
     test('includes the selected folder and its descendants when searching', () => {
         expect(getFolderScope(buildTree(), 'a', true)).toEqual(new Set(['a', 'b', 'c', 'd']));
+    });
+});
+
+describe('getFolderSubtreeHeight', () => {
+    test('returns the number of levels below a folder', () => {
+        const tree = buildTree();
+        expect(getFolderSubtreeHeight(tree, 'a')).toBe(2);
+        expect(getFolderSubtreeHeight(tree, 'b')).toBe(1);
+        expect(getFolderSubtreeHeight(tree, 'c')).toBe(0);
+        expect(getFolderSubtreeHeight(tree, 'e')).toBe(0);
+    });
+});
+
+describe('getFolderMoveBlockReason', () => {
+    const limits = { maxCountPerVault: 100, maxChildren: 10, maxDepth: 5 };
+
+    test('allows moving to another folder or to the vault root', () => {
+        const tree = buildTree();
+        expect(getFolderMoveBlockReason(tree, 'e', 'c', limits)).toBeNull();
+        expect(getFolderMoveBlockReason(tree, 'b', null, limits)).toBeNull();
+    });
+
+    test('blocks moving to the current parent', () => {
+        const tree = buildTree();
+        expect(getFolderMoveBlockReason(tree, 'b', 'a', limits)).toBe('current');
+        expect(getFolderMoveBlockReason(tree, 'a', null, limits)).toBe('current');
+    });
+
+    test('blocks moving into itself or one of its sub-folders', () => {
+        const tree = buildTree();
+        expect(getFolderMoveBlockReason(tree, 'a', 'a', limits)).toBe('descendant');
+        expect(getFolderMoveBlockReason(tree, 'a', 'c', limits)).toBe('descendant');
+    });
+
+    test('blocks when the target has too many sub-folders', () => {
+        const tree = buildTree();
+        expect(getFolderMoveBlockReason(tree, 'e', 'a', { ...limits, maxChildren: 2 })).toBe('children');
+    });
+
+    test('blocks when the moved folder and its sub-folders would be too deep', () => {
+        const tree = buildTree();
+        expect(getFolderMoveBlockReason(tree, 'a', 'e', { ...limits, maxDepth: 4 })).toBeNull();
+        expect(getFolderMoveBlockReason(tree, 'a', 'e', { ...limits, maxDepth: 3 })).toBe('depth');
     });
 });

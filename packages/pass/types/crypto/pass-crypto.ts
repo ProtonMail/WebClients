@@ -11,6 +11,7 @@ import type {
     EncodedItemKeyRotation,
     FolderCreateInputDto,
     FolderDataResponse,
+    FolderMoveInputDto,
     FolderUpdateContentInputDto,
     InviteAcceptRequest,
     InviteCreateRequest,
@@ -115,6 +116,11 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         folderId: string;
         content: Uint8Array<ArrayBuffer>;
     }) => Promise<FolderUpdateContentInputDto>;
+    moveFolder: (data: {
+        shareId: ShareId;
+        folderId: string;
+        targetParentFolderId: MaybeNull<string>;
+    }) => Promise<FolderMoveInputDto>;
     moveItem: (data: {
         encryptedItemKeys: EncodedItemKeyRotation[];
         itemId: ItemId;

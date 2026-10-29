@@ -44,7 +44,10 @@ export type VaultSelectProps = Omit<ModalProps, 'onSubmit'> & {
     shareId?: string;
     folderId?: MaybeNull<string>;
     showFolders?: boolean;
+    /** Only list the vault of `shareId` */
+    currentVaultOnly?: boolean;
     title?: string;
+    getDisabledReason?: (shareId: string, folderId: MaybeNull<string>) => MaybeNull<string>;
     onSubmit: (shareId: string, folderId: MaybeNull<string>) => void;
 };
 
@@ -62,7 +65,9 @@ export const VaultSelect: FC<VaultSelectProps> = ({
     shareId,
     folderId,
     showFolders,
+    currentVaultOnly,
     title,
+    getDisabledReason,
     onSubmit,
     ...props
 }) => {
@@ -72,16 +77,16 @@ export const VaultSelect: FC<VaultSelectProps> = ({
     const { canUseFolders } = useFoldersAccess();
     const withFolders = canUseFolders && Boolean(showFolders);
 
-    const sortedVaults = useMemo(
-        () =>
-            /* make the current vault appear first in the list */
-            vaults.slice().sort((a, b) => {
-                if (a.shareId === shareId) return -1;
-                else if (b.shareId === shareId) return 1;
-                else return 0;
-            }),
-        [vaults]
-    );
+    const sortedVaults = useMemo(() => {
+        if (currentVaultOnly) return vaults.filter((vault) => vault.shareId === shareId);
+
+        /* make the current vault appear first in the list */
+        return vaults.slice().sort((a, b) => {
+            if (a.shareId === shareId) return -1;
+            else if (b.shareId === shareId) return 1;
+            else return 0;
+        });
+    }, [vaults, shareId, currentVaultOnly]);
 
     const { expandedKeys, toggle } = useFolderTreeExpand(folders, shareId ?? null, folderId ?? null);
 
@@ -92,12 +97,23 @@ export const VaultSelect: FC<VaultSelectProps> = ({
 
     const currentKey = getFolderKey(shareId ?? '', folderId ?? null);
 
+    const getRowDisabledReason = (row: VaultFolderRow<WithItemCount<VaultShareItem>>) => {
+        const { shareId: rowShareId, folderId: rowFolderId } = fromFolderKey(row.key);
+        return getDisabledReason?.(rowShareId, rowFolderId) ?? null;
+    };
+
     return (
         <SidebarModal {...props}>
             <Panel
                 header={
                     <PanelHeader
-                        title={title && <h3 className="text-semibold">{title}</h3>}
+                        title={
+                            title && (
+                                <h3 className="text-semibold text-ellipsis" title={title}>
+                                    {title}
+                                </h3>
+                            )
+                        }
                         actions={[
                             <Button
                                 key="close-modal-button"
@@ -124,7 +140,7 @@ export const VaultSelect: FC<VaultSelectProps> = ({
 
                 <RadioButtonGroup
                     name="vault-select"
-                    className="flex-column"
+                    className="flex-column flex-nowrap"
                     value={currentKey}
                     onChange={(key: string) => {
                         const { shareId: nextShareId, folderId: nextFolderId } = fromFolderKey(key);
@@ -132,6 +148,9 @@ export const VaultSelect: FC<VaultSelectProps> = ({
                     }}
                 >
                     {rows.map((row) => {
+                        const disabledReason = getRowDisabledReason(row);
+                        const disabled = row.key === currentKey || disabledReason !== null;
+                        const tooltip = disabledReason ?? undefined;
                         const canExpand = row.type === 'vault' ? row.hasFolders : row.hasChildren;
 
                         const expandButton = withFolders && (
@@ -146,7 +165,7 @@ export const VaultSelect: FC<VaultSelectProps> = ({
                         );
 
                         return row.type === 'vault' ? (
-                            <RadioLabelledButton value={row.key} key={row.key} disabled={row.key === currentKey}>
+                            <RadioLabelledButton value={row.key} key={row.key} disabled={disabled} tooltip={tooltip}>
                                 {expandButton}
                                 <VaultIcon
                                     size={5}
@@ -162,7 +181,7 @@ export const VaultSelect: FC<VaultSelectProps> = ({
                                 </div>
                             </RadioLabelledButton>
                         ) : (
-                            <RadioLabelledButton value={row.key} key={row.key} disabled={row.key === currentKey}>
+                            <RadioLabelledButton value={row.key} key={row.key} disabled={disabled} tooltip={tooltip}>
                                 <div
                                     className="flex flex-1 min-w-0 flex-nowrap items-center gap-x-3 ml-custom"
                                     style={{ '--ml-custom': `${row.depth * 0.75}rem` }}

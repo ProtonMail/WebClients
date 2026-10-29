@@ -10,6 +10,8 @@ import type {
     FolderDeleteSuccess,
     FolderEditDTO,
     FolderEditSuccess,
+    FolderMoveDTO,
+    FolderMoveSuccess,
 } from '../../../types/data/folders';
 import { pipe } from '../../../utils/fp/pipe';
 import { requestActionsFactory } from '../../request/flow';
@@ -55,6 +57,28 @@ export const folderEdit = requestActionsFactory<FolderEditDTO, FolderEditSuccess
             withNotification({
                 type: 'error',
                 text: c('Error').t`Failed to update folder`,
+                error,
+            })({ payload, error }),
+    },
+});
+
+export const folderMove = requestActionsFactory<FolderMoveDTO, FolderMoveSuccess>('folder::move')({
+    key: (dto) => `${dto.shareId}::${dto.folderId}`,
+    success: {
+        prepare: (payload) =>
+            pipe(
+                withCache,
+                withNotification({
+                    type: 'success',
+                    text: c('Info').t`Folder "${payload.folder.name}" moved`,
+                })
+            )({ payload }),
+    },
+    failure: {
+        prepare: (error, payload) =>
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Failed to move folder`,
                 error,
             })({ payload, error }),
     },
