@@ -132,8 +132,10 @@ export const getProduceForkLoginResult = async ({
                         api,
                         qrCodePayload: desktopForkParameters.qrCodePayload,
                         keyPassword: session.data.keyPassword,
+                        offlineKey: session.data.offlineKey,
                         forkParameters: {
                             payloadVersion: forkParameters.payloadVersion,
+                            payloadType: forkParameters.payloadType,
                         },
                     });
                     result = { type: 'success' };

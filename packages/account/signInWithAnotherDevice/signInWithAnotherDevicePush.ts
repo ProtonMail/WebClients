@@ -1,9 +1,10 @@
 import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
 import { pushForkSession } from '@proton/shared/lib/api/auth';
-import { getForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
+import { getForkBlobData, getForkEncryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import type { ProduceForkParameters } from '@proton/shared/lib/authentication/fork/produce';
 import type { PushForkResponse } from '@proton/shared/lib/authentication/interface';
+import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { QRCodePayload } from './qrCodePayload';
@@ -22,22 +23,21 @@ export const signInWithAnotherDevicePush = async ({
     api,
     qrCodePayload,
     keyPassword,
+    offlineKey,
     forkParameters,
 }: {
     api: Api;
     qrCodePayload: QRCodePayload;
     keyPassword: string;
-    forkParameters: Pick<ProduceForkParameters, 'payloadVersion'>;
+    offlineKey?: OfflineKey;
+    forkParameters: Pick<ProduceForkParameters, 'payloadVersion'> & Partial<Pick<ProduceForkParameters, 'payloadType'>>;
 }) => {
     let payload: string | undefined;
     // When encoded bytes is empty, no payload is expected
     if (qrCodePayload.encodedBytes) {
         payload = await getForkEncryptedBlob(
             await getKey(qrCodePayload.encodedBytes),
-            {
-                type: 'default',
-                keyPassword,
-            },
+            getForkBlobData({ keyPassword, offlineKey, payloadType: forkParameters.payloadType }),
             forkParameters.payloadVersion
         );
     }
