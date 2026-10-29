@@ -1,0 +1,15 @@
+diff --git a/dist/api/package.js b/dist/api/package.js
+index 8fb0bea..312d2ee 100644
+--- a/dist/api/package.js
++++ b/dist/api/package.js
+@@ -163,7 +163,9 @@ const listrPackage = (childTrace, { dir: providedDir = process.cwd(), interactiv
+                         done();
+                     }),
+                     hidePromiseFromPromisify(async (buildPath, electronVersion, pPlatform, pArch, done) => {
+-                        const bins = await (0, fast_glob_1.default)(node_path_1.default.join(buildPath, '**/.bin/**/*'));
++                        // Patched (backport of forge 8): a Windows buildPath joined into the pattern is read as escapes,
++                        // so fast-glob walked process.cwd() through pnpm's cyclic junctions forever.
++                        const bins = await (0, fast_glob_1.default)('**/.bin/**/*', { cwd: buildPath, absolute: true });
+                         for (const bin of bins) {
+                             await fs_extra_1.default.remove(bin);
+                         }
