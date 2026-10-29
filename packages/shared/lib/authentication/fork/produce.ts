@@ -12,7 +12,7 @@ import { SessionSource } from '../SessionInterface';
 import type { PushForkResponse } from '../interface';
 import type { ResumedSessionResult } from '../persistedSessionHelper';
 import { type ReturnUrlResult, getReturnUrl } from '../returnUrl';
-import { getForkEncryptedBlob } from './blob';
+import { getForkBlobData, getForkEncryptedBlob } from './blob';
 import type { ForkPayloadVersion, ForkType } from './constants';
 import { ForkSearchParameters } from './constants';
 import { type ValidatedRedirectUrl, getRedirectForkUrl, getValidatedRedirectUrl } from './getValidatedRedirectUrl';
@@ -62,17 +62,7 @@ export const produceFork = async ({
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const base64StringKey = rawKey.toBase64({ alphabet: 'base64url', omitPadding: true });
     const encryptedPayload = await (async () => {
-        const forkData = (() => {
-            if (payloadType === 'offline' && offlineKey && offlineKey.salt && offlineKey.password) {
-                return {
-                    type: 'offline',
-                    keyPassword,
-                    offlineKeyPassword: offlineKey.password,
-                    offlineKeySalt: offlineKey.salt,
-                } as const;
-            }
-            return { type: 'default', keyPassword } as const;
-        })();
+        const forkData = getForkBlobData({ keyPassword, offlineKey, payloadType });
         return {
             blob: await getForkEncryptedBlob(await importKey(rawKey), forkData, payloadVersion),
             payloadType: forkData.type,
