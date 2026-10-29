@@ -7498,6 +7498,9 @@
       "Failed to get inviter keys": [
         "Kunne ikke hente invitationsnøgler"
       ],
+      "Failed to get the organization domains": [
+        "Kunne ikke hente organisationsdomænerne"
+      ],
       "Failed to load OAuth": [
         "Kunne ikke indlæse OAuth"
       ],
@@ -7712,6 +7715,9 @@
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "Intet bekræftet domæne blev fundet på din ${ providerName }-konto. Bekræft dit domæne med ${ providerName }, og prøv igen."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Ikke en ${ BRAND_NAME }-konto"
@@ -10515,6 +10521,12 @@
       "(formerly Twitter)": [
         "(tidligere Twitter)"
       ],
+      "**${ applicationName }** requested to sign in from:": [
+        "**${ applicationName }** anmod om logge ind fra:"
+      ],
+      "**${ applicationName }** requested to sign in.": [
+        "**${ applicationName }** anmod om at logge ind."
+      ],
       "**${ appName }** is not available for your account.": [
         "**${ appName }** er ikke tilgængelig for din konto."
       ],
@@ -10550,9 +10562,6 @@
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Dette vil deaktivere end-to-end krypterede e-mail-videresendelser:** Du kan sætte dem op igen senere."
-      ],
-      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
-        "**Vi ændrer ${ BRAND_NAME }s log-ind side.** Din konto og din adgangskode forbliver uændret."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Du får ${ referrerRewardAmount }** i kredit for hver ven, der tegner et abonnement."
@@ -10675,6 +10684,9 @@
       ],
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "Tilføj din organisations e-maildomæne til ${ BRAND_NAME }."
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "Tilføjet til ${ BRAND_NAME }"
       ],
       "Adding ${ total } gateway server": [
         "Tilføjer ${ total } gateway-server",
@@ -11378,9 +11390,6 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Vil du tilbagekalde alle andre sessioner end den nuværende?"
       ],
-      "Domain added": [
-        "Domæne tilføjet"
-      ],
       "Domain ownership failed verification.": [
         "Verifikation af domæneejerskab mislykkedes."
       ],
@@ -11910,6 +11919,9 @@
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
         "Hvis du ombestemmer dig, kan du abonnere igen når som helst. Ked af at miste dig!"
       ],
+      "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
+        "Hvis du ikke prøvede at logge ind på **${ applicationName }** lige nu på en af dine enheder, så klik **Annuller**."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
@@ -12062,6 +12074,9 @@
       ],
       "Invited": [
         "Inviteret"
+      ],
+      "IP address: ${ IP }": [
+        "IP-adresse: ${ IP }"
       ],
       "It can take up to 24 hours for these changes to propagate.": [
         "Det kan tage op til 24 timer for ændringerne at gå igennem."
@@ -12372,8 +12387,8 @@
       "Not a valid URL": [
         "Ugyldig URL"
       ],
-      "Not confirmed": [
-        "Ikke bekræftet"
+      "Not added to ${ BRAND_NAME }": [
+        "Ikke tilføjet til ${ BRAND_NAME }"
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Er det ikke rigtigt registeret? Vælg din udbyder fra listen."
@@ -12955,9 +12970,6 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Noget gik galt. Prøv igen eller kontakt kundesupport."
-      ],
-      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
-        "Snart vil du skulle indtaste din e-mailadresse (eller brugernavn) og adgangskode i 2 separate trin, i stedet for på én side."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."
@@ -14178,9 +14190,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Dine ${ VPN_APP_NAME } og ${ MAIL_APP_NAME } konti er forbundet. Hvis du vil slette dem begge, skal du logge ind på ${ loginLink } og slette din konto der."
-      ],
-      "Your account and password stay the same.": [
-        "Din konto og din adgangskode forbliver uændret."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
@@ -26174,6 +26183,9 @@
       "Confirm": [
         "Bekræft"
       ],
+      "Confirm sign in": [
+        "Bekræft login"
+      ],
       "Confirm where to sign in": [
         "Bekræft hvor der skal logges ind"
       ],
@@ -27491,9 +27503,6 @@
       ],
       "Signed-in reset": [
         "Nulstilling logget ind"
-      ],
-      "Signing in is changing": [
-        "Måden du logger ind på ændrer sig"
       ],
       "Simplify email distribution": [
         "Forenkl e-maildistribution"

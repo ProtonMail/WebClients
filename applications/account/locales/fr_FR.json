@@ -10923,9 +10923,6 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Voulez-vous révoquer toutes les autres sessions à l'exception de celle qui est en cours ?"
       ],
-      "Domain added": [
-        "Domaine ajouté"
-      ],
       "Domain ownership failed verification.": [
         "La propriété du domaine n'a pas pu être vérifiée."
       ],
@@ -11592,6 +11589,9 @@
       ],
       "Invited": [
         "Invité"
+      ],
+      "IP address: ${ IP }": [
+        "Adresse IP : ${ IP }"
       ],
       "It can take up to 24 hours for these changes to propagate.": [
         "La propagation de ces changements peut prendre jusqu'à 24 heures."
@@ -12455,9 +12455,6 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Quelque chose n'a pas fonctionné. Veuillez réessayer ou contacter le service clients."
-      ],
-      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
-        "Bientôt, vous entrerez votre adresse e-mail (ou nom d'utilisateur) et votre mot de passe en 2 étapes séparées au lieu de sur une seule page."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Indiquez le domaine autorisant l'authentification unique (SSO) SAML."
@@ -25390,6 +25387,9 @@
       "Confirm": [
         "Confirmer"
       ],
+      "Confirm sign in": [
+        "Confirmer la connexion"
+      ],
       "Confirm where to sign in": [
         "Confirmer où vous devez vous connecter"
       ],
@@ -26659,9 +26659,6 @@
       ],
       "Signed-in reset": [
         "Réinitialisation lorsque connecté"
-      ],
-      "Signing in is changing": [
-        "La connexion évolue"
       ],
       "Simplify email distribution": [
         "Simplifiez la distribution des messages"

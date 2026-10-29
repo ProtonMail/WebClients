@@ -47,6 +47,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
+      "About ${ name }": [
+        "A ${ name } névjegye"
+      ],
       "Accept": [
         "Elfogadás"
       ],
@@ -76,6 +79,9 @@
       ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } fiók hozzáadása"
+      ],
+      "Add ${ name }": [
+        "${ name } hozzáadása"
       ],
       "Add account": [
         "Fiók hozzáadása"
@@ -754,6 +760,9 @@
       ],
       "Later": [
         "Később"
+      ],
+      "Learn how this works": [
+        "Hogyan működik?"
       ],
       "Learn more": [
         "További információk"
@@ -1459,6 +1468,9 @@
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
       ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licenc"
+      ],
       "${ price } per dedicated server": [
         "${ price } / dedikált szerver"
       ],
@@ -1491,6 +1503,9 @@
       ],
       "Writing assistant": [
         "Írási segéd"
+      ],
+      "Writing assistant seats": [
+        "Írási segéd licencek"
       ]
     },
     "Address action": {
@@ -4976,6 +4991,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Legalább ${ price } kredit feltöltése szükséges"
       ],
+      "The minimum donation amount is ${ price }": [
+        "A legkisebb lehetséges adomány ${ price }"
+      ],
       "The policy name must be between 3 and 40 characters.": [
         "A házirend neve 3-40 karakter hosszúságú lehet."
       ],
@@ -7918,6 +7936,9 @@
       "No payment is required at this time.": [
         "Jelenleg nincs fizetendő számla."
       ],
+      "No payment is required.": [
+        "Nem szükséges fizetés."
+      ],
       "No results found": [
         "Nincs találat"
       ],
@@ -8362,6 +8383,9 @@
       ],
       "TechRadar Pro recommended with a rating of 4.2 out of 5 stars": [
         "A TechRadar Pro az 5 csillagból 4,2 csillaggal ajánlotta."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Átmenetileg nem érhető el, a túlzott érdeklődés miatt. Próbálja meg később."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
@@ -10176,6 +10200,9 @@
       ],
       "Last 3 months only": [
         "Csak az utolsó 3 hónap"
+      ],
+      "Last 6 months only": [
+        "Csak az utolsó 6 hónap"
       ],
       "Last month only": [
         "Csak az utolsó hónap"
@@ -13628,11 +13655,17 @@
       "Processing payment": [
         "Fizetés feldolgozása"
       ],
+      "Proton Meet seats must match the number of members.": [
+        "A Proton Meet licencek száma meg kell egyezzen a tagok számával."
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "A megújítási árak a ${ termsAndConditionsLink } szerint változhatnak."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Az előfizetés megújul ${ renewPriceStr }, de bármikor lemondhatja."
+      ],
+      "Tax ${ rate }%": [
+        "${ rate }% adó"
       ],
       "terms and conditions": [
         "felhasználási feltételek"
@@ -13640,6 +13673,9 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes.",
         "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "A kiválasztott csomag nem biztosít elegendő tárhelyet a fiókjához."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
@@ -13679,8 +13715,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Ez a fizetési mód lesz az új alapértelmezett minden jövőbeli megújításhoz."
       ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "A előfizetés létrehozása jelenleg nem fejezhető be. Próbálja meg később."
+      ],
       "Timeout exceeded": [
         "Időtúllépés"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "A próbaidős csomagokban nem érhető el ${ LUMO_SHORT_APP_NAME } licenc."
       ],
       "VAT number": [
         "Áfa-szám"
@@ -13699,6 +13741,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítjuk."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "A pénznem átállítva Euróra (€), mert az ${ IDEAL_WERO_BRAND_NAME } csak ebben teszi lehetővé a fizetést."
       ],
       "Your payment is still being processed": [
         "A kifizetés még feldolgozás alatt van"
@@ -15881,6 +15926,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } és ${ LUMO_APP_NAME } prémium lehetőségekkel"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
       ],
@@ -16959,6 +17007,9 @@
       "Change second password": [
         "Második jelszó megváltoztatása"
       ],
+      "Choose a provider": [
+        "Szolgáltató kiválasztása"
+      ],
       "Choose an account": [
         "Válasszon egy fiókot"
       ],
@@ -17685,6 +17736,9 @@
       ],
       "Reused passwords": [
         "Újrahasznált jelszavak"
+      ],
+      "Reverse charge not supported": [
+        "A fordított adózás nem támogatott"
       ],
       "Same inbox, shorter email address": [
         "Ugyanaz a postafiók, rövidebb e-mail cím"

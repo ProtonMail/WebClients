@@ -7504,6 +7504,9 @@
       "Failed to get inviter keys": [
         "No s'han pogut obtenir les claus de qui convida"
       ],
+      "Failed to get the organization domains": [
+        "No s'han pogut obtenir els dominis de l'organització"
+      ],
       "Failed to load OAuth": [
         "No s'ha pogut carregar OAuth"
       ],
@@ -7727,6 +7730,9 @@
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "No s'ha trobat cap domini verificat al vostre compte de ${ providerName }. Verifiqueu el domini amb ${ providerName } i torneu-ho a provar."
       ],
       "Not a ${ BRAND_NAME } account": [
         "No és un compte de ${ BRAND_NAME }"
@@ -10562,6 +10568,12 @@
       "(formerly Twitter)": [
         "(abansTwitter)"
       ],
+      "**${ applicationName }** requested to sign in from:": [
+        "**${ applicationName }** ha sol·licitat iniciar sessió des de:"
+      ],
+      "**${ applicationName }** requested to sign in.": [
+        "**${ applicationName }** ha sol·licitat iniciar sessió."
+      ],
       "**${ appName }** is not available for your account.": [
         "**${ appName }** no està disponible per al vostre compte."
       ],
@@ -10597,9 +10609,6 @@
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Això desactivarà els reenviaments de correu electrònic xifrats d’extrem a extrem:** Els podreu configurar de nou més tard."
-      ],
-      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
-        "**Estem canviant la pàgina d'inici de sessió de ${ BRAND_NAME }**. El vostre compte i la contrasenya es mantenen iguals."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Rebeu ${ referrerRewardAmount }** en crèdits per cada amistat que se subscrigui."
@@ -10722,6 +10731,9 @@
       ],
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "Afegiu el domini de correu electrònic de la vostra organització a ${ BRAND_NAME }."
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "S'ha afegit a ${ BRAND_NAME }"
       ],
       "Adding ${ total } gateway server": [
         "S'està afegint ${ total } servidor de passarel·la",
@@ -11425,9 +11437,6 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Voleu revocar totes les altres sessions i l’actual?"
       ],
-      "Domain added": [
-        "S'ha afegit el domini"
-      ],
       "Domain ownership failed verification.": [
         "No s'ha pogut verificar la propietat del domini."
       ],
@@ -11960,6 +11969,9 @@
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
         "Si canvieu d'opinió, us podeu tornar a subscriure en qualsevol moment. Ens sap greu que marxeu!"
       ],
+      "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
+        "Si no heu intentat iniciar sessió recentment a **${ applicationName }** en un dispositiu vostre, feu clic a **Cancel·la**."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
@@ -12112,6 +12124,9 @@
       ],
       "Invited": [
         "Convidat"
+      ],
+      "IP address: ${ IP }": [
+        "Adreça IP: ${ IP }"
       ],
       "It can take up to 24 hours for these changes to propagate.": [
         "Aquests canvis poden tardar fins a 24 hores a propagar-se."
@@ -12425,8 +12440,8 @@
       "Not a valid URL": [
         "No és un URL vàlid."
       ],
-      "Not confirmed": [
-        "Sense confirmar"
+      "Not added to ${ BRAND_NAME }": [
+        "No s'ha afegit a ${ BRAND_NAME }"
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "No s'ha detectat correctament? Trieu el vostre proveïdor de la llista."
@@ -13011,9 +13026,6 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Alguna cosa ha anat malament. Torneu-ho a provar o poseu-vos en contacte amb el servei d'atenció al client."
-      ],
-      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
-        "D'aquí a poc, introduireu la vostra adreça de correu electrònic (o nom d'usuari) i la contrasenya en dos passos separats en comptes d'en una sola pàgina."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifiqueu el domini que es pot autenticar amb SSO basat en SAML."
@@ -14270,9 +14282,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Els vostres comptes ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } estan enllaçats. Per eliminar-los, inicieu la sessió a ${ loginLink } i elimineu-hi el compte."
-      ],
-      "Your account and password stay the same.": [
-        "El vostre compte i la contrasenya es mantenen iguals."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
@@ -26284,6 +26293,9 @@
       "Confirm": [
         "Confirma"
       ],
+      "Confirm sign in": [
+        "Confirmeu l'inici de sessió"
+      ],
       "Confirm where to sign in": [
         "Confirmeu on iniciar sessió"
       ],
@@ -27604,9 +27616,6 @@
       ],
       "Signed-in reset": [
         "Restabliment amb la sessió iniciada"
-      ],
-      "Signing in is changing": [
-        "L'inici de sessió està canviant"
       ],
       "Simplify email distribution": [
         "Simplifiqueu la distribució de correu electrònic"

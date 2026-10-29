@@ -5505,6 +5505,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Ni uspelo dobiti aktivnih sej. Prosimo ${ refresh } ali poskusite znova pozneje."
       ],
+      "Failed to get the organization domains": [
+        "Pridobivanje domen vaše organizacije ni uspelo"
+      ],
       "Failed to load OAuth modal.": [
         "Ni bilo mogoče naložiti modal OAuth."
       ],
@@ -5678,6 +5681,9 @@
       ],
       "No valid address found": [
         "Nobenega veljavnega naslova ni bilo mogoče najti."
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "V vašem računu ${ providerName } ni bila najdena nobena preverjena domena. Preverite svojo domeno pri ponudniku ${ providerName } in poskusite znova."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Ni ${ BRAND_NAME } račun"
@@ -7966,6 +7972,12 @@
       "(formerly Twitter)": [
         "(prej Twitter)"
       ],
+      "**${ applicationName }** requested to sign in from:": [
+        "Aplikacija **${ applicationName }** je zahtevala prijavo z naslova:"
+      ],
+      "**${ applicationName }** requested to sign in.": [
+        "Aplikacija **${ applicationName }** je zahtevala prijavo."
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Pridobite si naslov ${ BRAND_NAME }**, ki ga uporabite za vse storitve ${ BRAND_NAME_TWO }, vključno z ${ MAIL_SHORT_APP_NAME } in ${ CALENDAR_SHORT_APP_NAME }."
       ],
@@ -7986,6 +7998,9 @@
         "+ ${ invisibleCount } Več",
         "+ ${ invisibleCount } Več",
         "+ ${ invisibleCount } Več"
+      ],
+      "1 vault per user": [
+        "1 trezor na uporabnika"
       ],
       "2FA disabled": [
         "2FA onemogočena"
@@ -8046,6 +8061,9 @@
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Dodajte svoje ime in logotip ter ustvarite bolj osebno izkušnjo za svojo organizacijo."
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "Dodano k ${ BRAND_NAME }"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
         "Dodajam prehodni strežnik: ${ serverNumber } / ${ total }",
@@ -8821,6 +8839,9 @@
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
         "Če si premislite, se lahko kadarkoli ponovno naročite. Žal nam je, da odhajate!"
       ],
+      "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
+        "Če se niste pravkar poskusili prijaviti v aplikacijo **${ applicationName }** v napravi, ki je v vaši lasti, kliknite **Prekliči**."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
       ],
@@ -8955,6 +8976,9 @@
       ],
       "Invited": [
         "Povabljeni"
+      ],
+      "IP address: ${ IP }": [
+        "IP naslov: ${ IP }"
       ],
       "It's better to have:": [
         "Bolje je imeti:"
@@ -9168,6 +9192,9 @@
       ],
       "Not a valid URL": [
         "Neveljaven URL"
+      ],
+      "Not added to ${ BRAND_NAME }": [
+        "Ni dodano k ${ BRAND_NAME }"
       ],
       "Number of dedicated servers in the organization": [
         "Število namenskih strežnikov v organizaciji"
@@ -12470,6 +12497,9 @@
       ],
       "Pay invoice": [
         "Plačilo računa"
+      ],
+      "Pay it": [
+        "Plačaj"
       ],
       "Privacy policy": [
         "Pravilnik o zasebnosti"
@@ -18948,6 +18978,9 @@
       ],
       "Confirm": [
         "Potrdi"
+      ],
+      "Confirm sign in": [
+        "Potrdite prijavo"
       ],
       "Confirm where to sign in": [
         "Potrdite, kje se želite prijaviti"
