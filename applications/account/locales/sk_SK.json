@@ -7600,6 +7600,9 @@
       "Failed to get inviter keys": [
         "Nepodarilo sa získať kľúče pozývajúceho"
       ],
+      "Failed to get the organization domains": [
+        "Nepodarilo sa načítať domény organizácie"
+      ],
       "Failed to load OAuth": [
         "Nepodarilo sa načítať OAuth"
       ],
@@ -7827,6 +7830,9 @@
       ],
       "No valid address found": [
         "Nebola nájdená žiadna platná adresa"
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "Vo vašom účte u ${ providerName } nebola nájdená žiadna overená doména. Overte si doménu u ${ providerName } a potom to skúste znova."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Nie je ${ BRAND_NAME } účet"
@@ -10786,6 +10792,12 @@
       "(formerly Twitter)": [
         "(bývalý Twitter)"
       ],
+      "**${ applicationName }** requested to sign in from:": [
+        "**${ applicationName }** žiada o prihlásenie z:"
+      ],
+      "**${ applicationName }** requested to sign in.": [
+        "**${ applicationName }** žiada o prihlásenie."
+      ],
       "**${ appName }** is not available for your account.": [
         "**${ appName }** nie je pre váš účet k dispozícii."
       ],
@@ -10821,9 +10833,6 @@
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Týmto sa deaktivuje end-to-end šifrované preposielanie emailov:** môžete ich neskôr znovu nastaviť."
-      ],
-      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
-        "**Meníme prihlasovaciu stránku ${ BRAND_NAME }.** Váš účet a heslo zostávajú nezmenené."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "Za každého priateľa, ktorý sa prihlási k odberu, získate kredit v hodnote **${ referrerRewardAmount }**."
@@ -10950,6 +10959,9 @@
       ],
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "Pridajte emailovú doménu vašej organizácie do ${ BRAND_NAME }."
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "Pridané do ${ BRAND_NAME }"
       ],
       "Adding ${ total } gateway server": [
         "Pridávanie ${ total } servera brány",
@@ -11677,9 +11689,6 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Chcete zrušiť všetky ostatné relácie okrem tejto?"
       ],
-      "Domain added": [
-        "Doména pridaná"
-      ],
       "Domain ownership failed verification.": [
         "Zlyhalo overenie vlastníctva domény."
       ],
@@ -12214,6 +12223,9 @@
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
         "Ak si to rozmyslíte, môžete sa kedykoľvek znova prihlásiť. Je nám ľúto, že odchádzate."
       ],
+      "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
+        "Ak ste sa práve nepokúsili prihlásiť do aplikácie **${ applicationName }** na zariadení, ktoré vlastníte, kliknite na **Zrušiť**."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
       ],
@@ -12372,6 +12384,9 @@
       ],
       "Invited": [
         "Pozvaný/á"
+      ],
+      "IP address: ${ IP }": [
+        "IP adresa: ${ IP }"
       ],
       "It can take up to 24 hours for these changes to propagate.": [
         "Tieto zmeny sa môžu prejaviť až do 24 hodín."
@@ -12685,8 +12700,8 @@
       "Not a valid URL": [
         "Neplatný odkaz"
       ],
-      "Not confirmed": [
-        "Nepotvrdené"
+      "Not added to ${ BRAND_NAME }": [
+        "Nepridané do ${ BRAND_NAME }"
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Nenašlo sa to správne? Vyberte si svojho poskytovateľa zo zoznamu."
@@ -13281,9 +13296,6 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Niečo sa pokazilo. Skúste to znovu alebo kontaktujte zákaznícku podporu, prosím."
-      ],
-      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
-        "Čoskoro budete zadávať svoju emailovú adresu (alebo používateľské meno) a heslo v dvoch samostatných krokoch namiesto toho, aby ste to robili na jednej stránke."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Zadajte doménu, ktorá sa môže overovať pomocou SAML SSO."
@@ -14574,9 +14586,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Vaše účty ${ VPN_APP_NAME } a ${ MAIL_APP_NAME } sú prepojené. Ak chcete obidva odstrániť, prihláste sa na ${ loginLink } a odstráňte tam svoj účet."
-      ],
-      "Your account and password stay the same.": [
-        "Váš účet a heslo zostávajú nezmenené."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
@@ -26939,6 +26948,9 @@
       "Confirm": [
         "Potvrdiť"
       ],
+      "Confirm sign in": [
+        "Potvrďte prihlásenie"
+      ],
       "Confirm where to sign in": [
         "Potvrďte, kde sa chcete prihlásiť"
       ],
@@ -28267,9 +28279,6 @@
       ],
       "Signed-in reset": [
         "Resetovanie prihlásených relácií"
-      ],
-      "Signing in is changing": [
-        "Prihlásovanie sa mení"
       ],
       "Simplify email distribution": [
         "Zjednodušte distribúciu emailov"

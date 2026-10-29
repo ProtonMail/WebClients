@@ -2341,6 +2341,9 @@
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
       ],
+      "The emoji could not be added because the message is at its character limit": [
+        "Το emoji δεν μπόρεσε να προστεθεί επειδή το μήνυμα έχει φτάσει στο όριο χαρακτήρων του."
+      ],
       "The meeting password is incorrect": [
         "Ο κωδικός πρόσβασης της σύσκεψης είναι λανθασμένος"
       ],
@@ -3219,6 +3222,9 @@
       "Permissions not given.": [
         "Δεν δόθηκαν δικαιώματα."
       ],
+      "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
+        "Παρακαλούμε ${ downloadLink } και εγκαταστήστε την εφαρμογή, στη συνέχεια κάντε ξανά κλικ στο Συμμετοχή μέσα στην εφαρμογή ${ MEET_APP_NAME }."
+      ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Παρακαλούμε ενεργοποιήστε την πρόσβαση στο ${ microphoneLinkButton }${ andString }${ cameraLinkButton } για βέλτιστη εμπειρία."
       ],
@@ -3946,11 +3952,20 @@
       "Gaming": [
         "Παιχνίδια"
       ],
+      "Halo": [
+        "Φωτοστέφανο"
+      ],
       "Happy": [
         "Χαρούμενος"
       ],
       "Love": [
         "Αγάπη"
+      ],
+      "Mind blown": [
+        "Εξωπραγματικό"
+      ],
+      "Nine lives": [
+        "Εννέα ζωές"
       ],
       "Party": [
         "Πάρτι"
@@ -3964,11 +3979,20 @@
       "Sad": [
         "Λυπημένο"
       ],
+      "Schrödinger in a box": [
+        "Ο Σρέντινγκερ σε ένα κουτί"
+      ],
+      "Schrödinger out of the box": [
+        "Ο Σρέντινγκερ έξω από το κουτί"
+      ],
       "Search": [
         "Αναζήτηση"
       ],
       "Sit": [
         "Κάτσε"
+      ],
+      "Slay": [
+        "Εξολόθρευση"
       ],
       "Sleepy": [
         "Νυσταγμένος"
@@ -3984,6 +4008,12 @@
       ],
       "This is fine": [
         "Αυτό είναι μια χαρά"
+      ],
+      "Watch left": [
+        "Κοίτα αριστερά"
+      ],
+      "Watch right": [
+        "Κοίτα δεξιά"
       ],
       "Write": [
         "Εγγραφή"

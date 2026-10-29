@@ -2553,16 +2553,14 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
       ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Başka bir kasaya taşınan ögelerin geçmişleri ve tüm güvenli bağlantıları silinir."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Başka bir kasaya taşınan ögelerin geçmişi silinir."
+      "Moving items to another vault will erase their secure links.": [
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items to trash": [
         "Ögeler çöpe atılıyor"
@@ -3229,6 +3227,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Bu seçeneği açarsanız, internet bağlantınız kesilirse veya ${ BRAND_NAME } sunucularına ulaşılamazsa ${ PASS_SHORT_APP_NAME } verilerinize erişebilirsiniz."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Ögeleri kasalar arasında taşırken, her öge üzerinde yapılmış son 50 değişikliği koruruz."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Bu takma addan gönderilecek e-postaların göndericisi olarak ${ emailSender } görüntülenecek."

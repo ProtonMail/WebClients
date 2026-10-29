@@ -764,6 +764,9 @@
       "Create": [
         "Стварыць"
       ],
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Стварыць ${ ACCOUNT_APP_NAME }"
+      ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Стварыць спасылку для абагульвання з любым карыстальнікам па-за межамі ${ BRAND_NAME }"
       ],
@@ -2044,6 +2047,9 @@
       ],
       "Start subscription": [
         "Пачаць падпіску"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Пачаць выкарыстоўваць ${ PASS_APP_NAME }"
       ],
       "Start using ${ PASS_APP_NAME } now": [
         "Пачаць выкарыстоўваць ${ PASS_APP_NAME }"
@@ -7377,6 +7383,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Немагчыма загрузіць трансакцыі. Паўтарыце спробу пазней."
       ],
+      "Couldn't load your connections": [
+        "Немагчыма загрузіць вашы падключэнні"
+      ],
       "Creating documents in non-folders is not allowed": [
         "Стварэнне дакументаў па-за іх межамі забаронена"
       ],
@@ -11466,9 +11475,6 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Вы сапраўды хочаце адклікаць усе іншыя сеансы, акрамя бягучага?"
       ],
-      "Domain added": [
-        "Дамены дададзены"
-      ],
       "Domain ownership failed verification.": [
         "Збой праверкі ўладальніка дамена."
       ],
@@ -11792,6 +11798,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтры працуюць для ўсіх лістоў, уключаючы ўваходныя і выходныя лісты. Кожны фільтр павінен змяшчаць прынамсі назву, умову і дзеянне."
+      ],
+      "Find out what can be migrated.": [
+        "Даведайцеся, што можна перанесці."
       ],
       "for ${ price }": [
         "за ${ price }"
@@ -12446,9 +12455,6 @@
       ],
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
-      ],
-      "Not confirmed": [
-        "Не пацверджана"
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Сістэма не змагла вызначыць аўтаматычна? Выберыце пастаўшчыка са спіса ўручную."
@@ -14216,9 +14222,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Вашы ўліковыя запісы ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } звязаны паміж сабой. Каб выдаліць іх абодва, увайдзіце праз ${ loginLink } і там выдаліце свой уліковы запіс."
-      ],
-      "Your account and password stay the same.": [
-        "Ваш уліковы запіс і пароль не зменяцца."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да сэрвісу неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
@@ -27757,9 +27760,6 @@
       ],
       "Signed-in reset": [
         "Скіданне пры актыўным сеансе"
-      ],
-      "Signing in is changing": [
-        "Адбываецца змена ўваходу ў сістэму"
       ],
       "Simplify email distribution": [
         "Спрашчэнне распаўсюджвання электроннай пошты"

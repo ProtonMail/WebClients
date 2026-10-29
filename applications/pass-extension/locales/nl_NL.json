@@ -2296,16 +2296,11 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
-      ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Bij het verplaatsen van items naar een andere kluis worden de geschiedenis en alle beveiligde koppelingen gewist."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items to trash": [
         "Items verplaatsen naar prullenbak"

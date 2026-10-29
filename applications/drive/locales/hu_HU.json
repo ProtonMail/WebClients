@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } bolt"
       ],
+      "About ${ name }": [
+        "A ${ name } névjegye"
+      ],
       "Accept": [
         "Elfogadás"
       ],
@@ -44,6 +47,9 @@
       ],
       "Add": [
         "Hozzáadás"
+      ],
+      "Add ${ name }": [
+        "${ name } hozzáadása"
       ],
       "Add account": [
         "Fiók hozzáadása"
@@ -996,6 +1002,9 @@
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
       ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licenc"
+      ],
       "${ price } per dedicated server": [
         "${ price } / dedikált szerver"
       ],
@@ -1028,6 +1037,9 @@
       ],
       "Writing assistant": [
         "Írási segéd"
+      ],
+      "Writing assistant seats": [
+        "Írási segéd licencek"
       ]
     },
     "Alert": {
@@ -3262,6 +3274,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Legalább ${ price } kredit feltöltése szükséges"
       ],
+      "The minimum donation amount is ${ price }": [
+        "A legkisebb lehetséges adomány ${ price }"
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
       ],
@@ -4708,6 +4723,9 @@
       "No payment is required at this time.": [
         "Jelenleg nincs fizetendő számla."
       ],
+      "No payment is required.": [
+        "Nem szükséges fizetés."
+      ],
       "No results found": [
         "Nincs találat"
       ],
@@ -4949,6 +4967,9 @@
       ],
       "Symbols (#$&)": [
         "Szimbólumok (#$&)"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Átmenetileg nem érhető el, a túlzott érdeklődés miatt. Próbálja meg később."
       ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Köszönjük, hogy a ${ BRAND_NAME }-t választotta szervezete biztonsága érdekében."
@@ -5668,6 +5689,9 @@
       ],
       "Last 3 months only": [
         "Csak az utolsó 3 hónap"
+      ],
+      "Last 6 months only": [
+        "Csak az utolsó 6 hónap"
       ],
       "Last month only": [
         "Csak az utolsó hónap"
@@ -7702,11 +7726,17 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Kérjük, először aktiválja újra az előfizetését, hogy csökkenthesse a bővítmények számát."
       ],
+      "Proton Meet seats must match the number of members.": [
+        "A Proton Meet licencek száma meg kell egyezzen a tagok számával."
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "A megújítási árak a ${ termsAndConditionsLink } szerint változhatnak."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Az előfizetés megújul ${ renewPriceStr }, de bármikor lemondhatja."
+      ],
+      "Tax ${ rate }%": [
+        "${ rate }% adó"
       ],
       "terms and conditions": [
         "felhasználási feltételek"
@@ -7714,6 +7744,9 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes.",
         "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "A kiválasztott csomag nem biztosít elegendő tárhelyet a fiókjához."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
@@ -7750,8 +7783,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Ez a fizetési mód lesz az új alapértelmezett minden jövőbeli megújításhoz."
       ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "A előfizetés létrehozása jelenleg nem fejezhető be. Próbálja meg később."
+      ],
       "Timeout exceeded": [
         "Időtúllépés"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "A próbaidős csomagokban nem érhető el ${ LUMO_SHORT_APP_NAME } licenc."
       ],
       "VAT number": [
         "Áfa-szám"
@@ -7767,6 +7806,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítjuk."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "A pénznem átállítva Euróra (€), mert az ${ IDEAL_WERO_BRAND_NAME } csak ebben teszi lehetővé a fizetést."
       ],
       "Your payment is still being processed": [
         "A kifizetés még feldolgozás alatt van"
@@ -7894,6 +7936,9 @@
       ],
       "Anytown": [
         "Bárholváros"
+      ],
+      "Ask anything…": [
+        "Kérdezzen bármit…"
       ],
       "Choose password": [
         "Jelszó választása"
@@ -8727,6 +8772,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } és ${ LUMO_APP_NAME } prémium lehetőségekkel"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
       ],
@@ -9790,6 +9838,9 @@
       ],
       "Request sent": [
         "Kérés elküldve"
+      ],
+      "Reverse charge not supported": [
+        "A fordított adózás nem támogatott"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Mentse el későbbre a ${ DRIVE_APP_NAME } alkalmazásban"

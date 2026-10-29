@@ -415,6 +415,9 @@
       "Hide": [
         "Ocultar"
       ],
+      "Hide passwords": [
+        "Ocultar senhas"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Como eu exporto meus dados do ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -1673,6 +1676,12 @@
       "Autofill and passwords": [
         "Preenchimento automático e senhas"
       ],
+      "Choose JSON downloads": [
+        "Escolha downloads JSON"
+      ],
+      "Choose the file format → Select ${ exportLabel }.": [
+        "Escolha o formato de arquivo → Selecione ${ exportLabel }."
+      ],
       "Continue export": [
         "Continuar exportação"
       ],
@@ -1687,6 +1696,9 @@
       ],
       "Export data": [
         "Exportar dados"
+      ],
+      "Export file format: 1PUX": [
+        "Formato de arquivo de exportação: 1PUX"
       ],
       "Export items": [
         "Exportar itens"
@@ -1709,6 +1721,9 @@
       "Google Password Manager": [
         "Gerenciador de Senhas do Google"
       ],
+      "Identify your password manager.": [
+        "Identifique seu gerenciador de senhas."
+      ],
       "Manage your vault": [
         "Gerencie seu cofre"
       ],
@@ -1718,6 +1733,12 @@
       "More actions": [
         "Mais ações"
       ],
+      "Open ${ name } and select ⋯.": [
+        "Abra ${ name } e selecione⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Abra ${ name } e selecione ☰ → ${ passwords }."
+      ],
       "Passwords": [
         "Senhas"
       ],
@@ -1726,6 +1747,15 @@
       ],
       "Passwords and autofill": [
         "Senhas e preenchimento automático"
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Selecione ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Selecione ${ option }."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Selecione ⋯ → ${ exportPasswords }."
       ],
       "Settings": [
         "Configurações"
@@ -1769,6 +1799,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } encaminhado",
         "${ forwardedEmailsCount } encaminhados"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } de ${ total } (${ percentage }%)"
       ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } quer compartilhar um item com um grupo que você administra."
@@ -2131,6 +2164,9 @@
       "Domain: ${ domainPath } or @": [
         "Domínio: ${ domainPath } ou @"
       ],
+      "Don’t close this tab": [
+        "Não feche esta guia"
+      ],
       "Download pass-cli from ${ passCliLink }.": [
         "Baixar pass-cli de ${ passCliLink }."
       ],
@@ -2298,6 +2334,9 @@
       "Import the CSV file below.": [
         "Importe o arquivo CSV abaixo."
       ],
+      "Important:": [
+        "Importante:"
+      ],
       "Imported on ${ date }": [
         "Importado em ${ date }"
       ],
@@ -2427,16 +2466,11 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
-      ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Mover itens para outro cofre apagará seu histórico e todos os links seguros."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Movendo item para outro cofre apagará seus históricos."
       ],
       "Moving items to trash": [
         "Movendo itens para a lixeira"
@@ -2506,6 +2540,9 @@
       ],
       "Open the ${ PASS_APP_NAME } popup": [
         "Abrir o pop-up do ${ PASS_APP_NAME }"
+      ],
+      "Open the extension here.": [
+        "Abra a extensão aqui."
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Abra as configurações do Safari, encontre ${ PASS_APP_NAME }, vá para \"Permissões\" e ative as permissões do site."
@@ -4996,6 +5033,9 @@
       "Add mailbox": [
         "Adicionar caixa de correio"
       ],
+      "Add one account": [
+        "Adicionar uma conta"
+      ],
       "Adjust autofill behaviors to change where logins are suggested.": [
         "Ajuste os comportamentos do preenchimento automático para alterar onde os inícios de sessão são sugeridos."
       ],
@@ -5082,6 +5122,9 @@
       ],
       "Create subfolder in \"${ folderName }\"": [
         "Criar subpasta em \"${ folderName }\""
+      ],
+      "Create your first login": [
+        "Crie seu primeiro início de sessão"
       ],
       "Created": [
         "Criado"
@@ -5183,11 +5226,17 @@
       "Export": [
         "Exportar"
       ],
+      "Export from ${ provider.title }": [
+        "Exportar de ${ provider.title }"
+      ],
       "Fill & copy password": [
         "Preencher e copiar senha"
       ],
       "Fill password": [
         "Preencher senha"
+      ],
+      "First login created": [
+        "Primeiro inicio de sessão criado"
       ],
       "Folder options": [
         "Opções da pasta"
@@ -5225,6 +5274,9 @@
       "Import - ${ date }": [
         "Importar - ${ date }"
       ],
+      "Import completed with warnings": [
+        "Importação completada com avisos"
+      ],
       "Import failed": [
         "Erro na importação"
       ],
@@ -5233,6 +5285,9 @@
       ],
       "Import to vault(s)": [
         "Importar para cofre(s)"
+      ],
+      "Imported from:": [
+        "Importado de:"
       ],
       "Imported items:": [
         "Itens importados"
@@ -5474,6 +5529,9 @@
       ],
       "SPF (Optional)": [
         "SPF (Opcional)"
+      ],
+      "Starting the extension": [
+        "Iniciando a extensão"
       ],
       "Status": [
         "Status"

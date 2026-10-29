@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Acerca de ${ name }"
+      ],
       "Accept": [
         "Aceptar"
       ],
@@ -47,6 +50,16 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Añadir ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Añadir ${ name }"
+      ],
+      "Add ${ photoCount } photo to a new album": [
+        "Añadir ${ photoCount } foto a un álbum nuevo",
+        "Añadir ${ photoCount } fotos a un álbum nuevo"
+      ],
+      "Add a payment method": [
+        "Añadir un método de pago"
       ],
       "Add account": [
         "Añadir una cuenta"
@@ -84,11 +97,24 @@
       "Add phone number": [
         "Añadir número telefónico"
       ],
+      "Add photos": [
+        "Añadir fotos"
+      ],
       "Add storage": [
         "Añadir almacenamiento"
       ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Añadir a \"${ name }\" (${ photoCount } foto)",
+        "Añadir a \"${ name }\" (${ photoCount } fotos)"
+      ],
+      "Add to album": [
+        "Añadir al álbum"
+      ],
       "Add to group": [
         "Añadir al grupo"
+      ],
+      "Album name": [
+        "Nombre del álbum"
       ],
       "Apply": [
         "Aplicar"
@@ -199,6 +225,9 @@
       "Collaborate on documents": [
         "Colabora en documentos"
       ],
+      "Collapse folder": [
+        "Contraer carpeta"
+      ],
       "Collapse navigation bar": [
         "Minimizar la barra de navegación"
       ],
@@ -268,11 +297,20 @@
       "Create a new contact group": [
         "Crear un grupo de contactos"
       ],
+      "Create album": [
+        "Crear álbum"
+      ],
+      "Create business account": [
+        "Crear cuenta de empresa"
+      ],
       "Create folder": [
         "Crear una carpeta"
       ],
       "Create new password": [
         "Crear una contraseña nueva"
+      ],
+      "Create new text file": [
+        "Crear nuevo archivo de texto"
       ],
       "Current plan": [
         "Plan actual"
@@ -303,6 +341,9 @@
         "Eliminar ${ selectedCount } grupo de contactos",
         "Eliminar ${ selectedCount } grupos de contactos"
       ],
+      "Delete album": [
+        "Eliminar álbum"
+      ],
       "Delete contact": [
         "Eliminar contacto"
       ],
@@ -312,11 +353,26 @@
       "Delete permanently": [
         "Eliminar permanentemente"
       ],
+      "Delete this version": [
+        "Eliminar esta versión"
+      ],
+      "Delete version": [
+        "Eliminar versión"
+      ],
+      "Delete without saving": [
+        "Eliminar sin guardar"
+      ],
       "Deselect all": [
         "Anular la selección de todo"
       ],
+      "Detach": [
+        "Desacoplar"
+      ],
       "Details": [
         "Detalles"
+      ],
+      "Diagnostics": [
+        "Diagnóstico"
       ],
       "Discard": [
         "Descartar"
@@ -326,6 +382,12 @@
       ],
       "Display navigation bar": [
         "Mostrar la barra de navegación"
+      ],
+      "Display next": [
+        "Mostrar siguiente"
+      ],
+      "Display previous": [
+        "Mostrar anterior"
       ],
       "Done": [
         "Hecho"
@@ -342,14 +404,26 @@
       "Download anyway": [
         "Descargar de todos modos"
       ],
+      "Download for Mac": [
+        "Descargar para Mac"
+      ],
       "Download for macOS": [
         "Descargar para macOS"
       ],
       "Download for Windows": [
         "Descargar para Windows"
       ],
+      "Download info": [
+        "Información de descarga"
+      ],
       "Download logs": [
         "Descargar los registros"
+      ],
+      "Download results": [
+        "Descargar resultados"
+      ],
+      "Drive Locked": [
+        "Drive bloqueado"
       ],
       "Edit": [
         "Editar"
@@ -381,8 +455,17 @@
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
       ],
+      "Enable drive search": [
+        "Activar la búsqueda de Drive"
+      ],
       "Encrypted": [
         "Cifrado"
+      ],
+      "Expand folder": [
+        "Expandir carpeta"
+      ],
+      "Explore more": [
+        "Explorar más"
       ],
       "Explore other plans": [
         "Explorar otros planes"
@@ -395,6 +478,9 @@
       ],
       "Export selection as .vcf": [
         "Exportar la selección en formato *.vcf"
+      ],
+      "Export system log": [
+        "Exportar registro del sistema"
       ],
       "Fit to window": [
         "Ajustar a la ventana"
@@ -441,14 +527,26 @@
       "Go back": [
         "Regresar"
       ],
+      "Go back to album \"${ ellipsedAlbumName }\"": [
+        "Volver al álbum «${ ellipsedAlbumName }»"
+      ],
       "Go to ${ planOrAppName }": [
         "Accede a ${ planOrAppName }"
       ],
       "Go to label": [
         "Ir a la etiqueta"
       ],
+      "Go to my files": [
+        "Ir a mis archivos"
+      ],
+      "Go to parent": [
+        "Ir a la carpeta superior"
+      ],
       "Go to settings": [
         "Ir a los ajustes"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ],
       "Got it": [
         "Entendido"
@@ -501,8 +599,20 @@
       "Import from Outlook": [
         "Importar desde Outlook"
       ],
+      "Import now": [
+        "Importar ahora"
+      ],
+      "Import paused": [
+        "Importación en pausa"
+      ],
+      "Importing from Google": [
+        "Importando desde Google"
+      ],
       "Increase": [
         "Aumentar"
+      ],
+      "Join album": [
+        "Unirse al álbum"
       ],
       "Keep my subscription": [
         "Mantener mi suscripción"
@@ -518,6 +628,9 @@
       ],
       "Leave": [
         "Salir"
+      ],
+      "Leave album": [
+        "Salir del álbum"
       ],
       "Let's talk": [
         "Habla con nosotros"
@@ -548,6 +661,9 @@
       ],
       "Manage labels": [
         "Administrar etiquetas"
+      ],
+      "Manage share": [
+        "Gestionar el uso compartido"
       ],
       "Manage users/addresses": [
         "Administrar usuarios/direcciones"
@@ -606,6 +722,18 @@
       "Move to trash": [
         "Mover a la papelera"
       ],
+      "Name your album": [
+        "Pon nombre a tu álbum"
+      ],
+      "New": [
+        "Nuevo"
+      ],
+      "New album": [
+        "Nuevo álbum"
+      ],
+      "New chat": [
+        "Nuevo chat"
+      ],
       "New document": [
         "Nuevo documento"
       ],
@@ -614,6 +742,9 @@
       ],
       "New message": [
         "Nuevo mensaje"
+      ],
+      "New shared album": [
+        "Nuevo álbum compartido"
       ],
       "New spreadsheet": [
         "Nueva hoja de cálculo"
@@ -657,6 +788,9 @@
       "Preview contact": [
         "Vista previa de contacto"
       ],
+      "Preview logs": [
+        "Vista previa de los registros"
+      ],
       "Previous": [
         "Anterior"
       ],
@@ -669,8 +803,17 @@
       "Quit": [
         "Salir"
       ],
+      "Re-index": [
+        "Volver a indexar"
+      ],
+      "Re-indexing in progress": [
+        "Reindexación en curso"
+      ],
       "Re-sign": [
         "Volver a firmar"
+      ],
+      "Rebuild index": [
+        "Volver a crear el índice"
       ],
       "Reconnect": [
         "Reconectar"
@@ -683,6 +826,9 @@
       ],
       "Refer a friend": [
         "Recomendar a un amigo"
+      ],
+      "Refetch index": [
+        "Volver a cargar el índice"
       ],
       "Refresh the page": [
         "Actualizar la página"
@@ -702,17 +848,32 @@
       "Remove button": [
         "Eliminar el botón"
       ],
+      "Remove device": [
+        "Eliminar dispositivo"
+      ],
+      "Remove from album": [
+        "Quitar del álbum"
+      ],
       "Remove from favorites": [
         "Eliminar de favoritos"
       ],
       "Remove gift code": [
         "Eliminar el código de regalo"
       ],
+      "Remove me": [
+        "Eliminarme"
+      ],
       "Remove my access": [
         "Eliminar mi acceso"
       ],
+      "Remove without saving": [
+        "Quitar sin guardar"
+      ],
       "Rename": [
         "Renombrar"
+      ],
+      "Rename album": [
+        "Cambiar nombre del álbum"
       ],
       "Replace file": [
         "Reemplazar archivo"
@@ -722,6 +883,9 @@
       ],
       "Report a problem": [
         "Notificar un problema"
+      ],
+      "Report abuse": [
+        "Notificar abuso"
       ],
       "Report an issue": [
         "Notificar un problema"
@@ -753,17 +917,32 @@
       "Restore this version": [
         "Restaurar esta versión"
       ],
+      "Restore version": [
+        "Restaurar versión"
+      ],
       "Retry": [
         "Reintentar"
       ],
       "Retry failed items": [
         "Reintentar elementos fallidos"
       ],
+      "Run diagnostics": [
+        "Ejecutar diagnóstico"
+      ],
       "Save": [
         "Guardar"
       ],
+      "Save and remove": [
+        "Guardar y eliminar"
+      ],
       "Save changes": [
         "Guardar los cambios"
+      ],
+      "Save photo to your gallery": [
+        "Guardar foto en tu galería"
+      ],
+      "Save photos and remove": [
+        "Guardar fotos y eliminar"
       ],
       "Scan & Download": [
         "Escanear y descargar"
@@ -779,6 +958,15 @@
       ],
       "Search countries": [
         "Buscar países"
+      ],
+      "Search drive": [
+        "Buscar en Drive"
+      ],
+      "Search is unavailable": [
+        "La búsqueda no está disponible"
+      ],
+      "Search recent items": [
+        "Buscar en elementos recientes"
       ],
       "See how": [
         "Ver cómo"
@@ -813,6 +1001,9 @@
       "Set as album cover": [
         "Establecer como portada de álbum"
       ],
+      "Set as cover": [
+        "Establecer como portada"
+      ],
       "Set password or expiration date": [
         "Establecer contraseña o fecha de expiración"
       ],
@@ -836,6 +1027,12 @@
       ],
       "Share": [
         "Compartir"
+      ],
+      "Share album": [
+        "Compartir álbum"
+      ],
+      "Share file": [
+        "Compartir archivo"
       ],
       "Share item": [
         "Compartir elemento"
@@ -873,6 +1070,9 @@
       "Show side panel": [
         "Mostrar el panel lateral"
       ],
+      "Sign in with Google": [
+        "Iniciar sesión con Google"
+      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -888,11 +1088,20 @@
       "Skip verification": [
         "Omitir verificación"
       ],
+      "Start": [
+        "Empezar"
+      ],
       "Start import": [
         "Iniciar la importación"
       ],
+      "Start recovering": [
+        "Empezar la recuperación"
+      ],
       "Stay": [
         "Permanecer"
+      ],
+      "Stop": [
+        "Detener"
       ],
       "Stop sharing": [
         "Dejar de compartir"
@@ -915,8 +1124,17 @@
       "Switch or add account": [
         "Cambiar o añadir cuenta"
       ],
+      "Switch to ${ planName }": [
+        "Cambiar a ${ planName }"
+      ],
       "Take a tour": [
         "Explora ahora"
+      ],
+      "This album is empty": [
+        "Este álbum está vacío"
+      ],
+      "Toggle ${ LUMO_SHORT_APP_NAME }": [
+        "Mostrar u ocultar ${ LUMO_SHORT_APP_NAME }"
       ],
       "Toggle Calendar app": [
         "Cambiar a la aplicación Calendar"
@@ -932,6 +1150,9 @@
       ],
       "Trust": [
         "Confiar"
+      ],
+      "Try ${ BRAND_NAME } Workspace": [
+        "Prueba ${ BRAND_NAME } Workspace"
       ],
       "Try again": [
         "Inténtalo de nuevo"
@@ -987,6 +1208,12 @@
       "Upload folder": [
         "Cargar carpeta"
       ],
+      "Upload from computer": [
+        "Subir desde el ordenador"
+      ],
+      "Upload photos": [
+        "Subir fotos"
+      ],
       "Upload picture": [
         "Cargar imagen"
       ],
@@ -1035,9 +1262,18 @@
       "What do I get?": [
         "¿Qué obtengo?"
       ],
+      "Windows 11 (ARM64)": [
+        "Windows 11 (ARM64)"
+      ],
+      "Windows 11/10 (x64)": [
+        "Windows 11/10 (x64)"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto.",
         "No puedes enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "Your 3 GB bonus": [
+        "Tu bonificación de 3 GB"
       ],
       "Zoom in": [
         "Acercar"
@@ -1054,6 +1290,11 @@
     "Action: Sheets": {
       "Open in ${ SHEETS_APP_NAME }": [
         "Abrir en ${ SHEETS_APP_NAME }"
+      ]
+    },
+    "Actions": {
+      "Upload": [
+        "Subir"
       ]
     },
     "Actions message": {
@@ -1099,6 +1340,10 @@
       "${ LUMO_APP_NAME } seats": [
         "Plazas de ${ LUMO_APP_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuarios)"
+      ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
       ],
@@ -1141,6 +1386,12 @@
       "Domains": [
         "Dominios"
       ],
+      "Managed Service Provider": [
+        "Managed Service Provider"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Las organizaciones con el complemento Managed Service Provider pueden crear y gestionar organizaciones subsidiarias."
+      ],
       "Servers": [
         "Servidores"
       ],
@@ -1170,6 +1421,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ BRAND_NAME } Scribe te ayude a escribir, responder y revisar tus correos electrónicos."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ LUMO_SHORT_APP_NAME } te ayude a escribir, responder y revisar tus correos electrónicos."
       ]
     },
     "Attached ics file error": {
@@ -1211,6 +1465,9 @@
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licencias durante el periodo de prueba."
       ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias del asistente de escritura ${ LUMO_SHORT_APP_NAME } durante el periodo de prueba."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
       ],
@@ -1237,9 +1494,19 @@
         "Tu periodo de prueba gratuito termina en ${ timeRemaining }"
       ]
     },
+    "Badge": {
+      "Invited": [
+        "Invitado"
+      ]
+    },
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantía de devolución del dinero en 30 días: cancela en un plazo de 30 días desde tu compra y contacta con nuestro ${ customerSupportLink } para obtener un reembolso."
       ]
     },
     "BF2024: Deal details": {
@@ -1401,6 +1668,11 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Aplicación de escritorio de ${ appName }"
       ]
     },
     "Bug category": {
@@ -1591,6 +1863,15 @@
         "${ users } usuario",
         "${ users } usuarios"
       ],
+      "Amount due": [
+        "Importe a pagar"
+      ],
+      "Amount due after trial": [
+        "Importe a pagar tras la prueba"
+      ],
+      "Amount due now": [
+        "Importe a pagar ahora"
+      ],
       "Subtotal": [
         "Subtotal"
       ],
@@ -1600,6 +1881,10 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ cycle } month": [
+        "Total de ${ cycle } mes",
+        "Total de ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -2863,6 +3148,14 @@
         "Se han detectado los siguientes campos en el archivo CSV que has cargado. Verifica los que quieres importar."
       ]
     },
+    "Docs Info": {
+      "Collaborating just got easier. Now anyone can suggest edits without changing the document.": [
+        "Colaborar ahora es todavía más fácil. Ahora cualquiera puede sugerir cambios sin modificar el documento."
+      ],
+      "Suggestion mode is here": [
+        "Ya está aquí el modo de sugerencias"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Errores o problemas de calidad"
@@ -3095,8 +3388,14 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } es tu nombre de usuario. Para crear ${ emailAddress }, ve a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
+      "A contact with this email address already exists": [
+        "Ya existe un contacto con esta dirección de correo electrónico"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "Es necesario incluir un mensaje al denunciar una infracción de derechos de autor o datos robados"
       ],
       "Address could not be added.": [
         "No se ha podido añadir la dirección."
@@ -3122,14 +3421,41 @@
       "Authentication error.": [
         "Error de autenticación."
       ],
+      "Bookmark password is not available": [
+        "La contraseña del marcador no está disponible"
+      ],
       "Calendar limit reached": [
         "Se ha alcanzado el límite de calendarios."
+      ],
+      "Can't find any secure link": [
+        "No se ha encontrado ningún enlace seguro"
+      ],
+      "Can't retrieve device name": [
+        "No se ha podido obtener el nombre del dispositivo"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "No se puede añadir la foto al álbum sin un nombre válido"
+      ],
+      "Cannot download a folder": [
+        "No se puede descargar una carpeta"
       ],
       "Cannot export this contact": [
         "No se puede exportar este contacto"
       ],
       "Cannot find move target": [
         "No se puede encontrar el destino"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "No se puede mover el elemento sin un nombre válido. Cambia primero su nombre"
+      ],
+      "Cannot share root folder": [
+        "No se puede compartir la carpeta raíz"
+      ],
+      "Cannot verify the author of this file": [
+        "No se puede verificar el autor de este archivo"
+      ],
+      "Cannot verify who uploaded this file": [
+        "No se puede verificar quién subió este archivo"
       ],
       "Checkout expired, please try again": [
         "La compra ha expirado. Inténtalo de nuevo."
@@ -3146,8 +3472,47 @@
       "Contact signature not verified": [
         "Firma del contacto no verificada"
       ],
+      "Copy operation aborted": [
+        "Operación de copia cancelada"
+      ],
+      "Copying item to a non-folder is not allowed": [
+        "No se permite copiar el elemento en uno que no es una carpeta"
+      ],
+      "Could not add to favorites": [
+        "No se ha podido añadir a favoritos"
+      ],
+      "Could not find an available name": [
+        "No se ha encontrado un nombre disponible"
+      ],
       "Could not grant access to the organization key": [
         "No se ha podido conceder acceso a la clave de la organización"
+      ],
+      "Could not load sharing details": [
+        "No se han podido cargar los detalles de uso compartido"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "No se ha podido cargar la vista previa de la imagen: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "No se ha podido leer una parte de este archivo: ${ message }"
+      ],
+      "Could not remove from favorites": [
+        "No se ha podido quitar de favoritos"
+      ],
+      "Could not unlock the parent folder": [
+        "No se ha podido desbloquear la carpeta superior"
+      ],
+      "Could not unlock this item": [
+        "No se ha podido desbloquear este elemento"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "No se permite crear documentos en elementos que no son carpetas"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "No se permite crear archivos en elementos que no son carpetas"
+      ],
+      "Creating folders in non-folders is not allowed": [
+        "No se permite crear carpetas en elementos que no son carpetas"
       ],
       "Data integrity check failed": [
         "Error en la comprobación de integridad de los datos"
@@ -3160,8 +3525,20 @@
         "Anula la selección de al menos ${ calendarsToFixCount } calendario o",
         "Anula la selección de al menos ${ calendarsToFixCount } calendarios o"
       ],
+      "Device name does not match": [
+        "El nombre del dispositivo no coincide"
+      ],
+      "Device not found": [
+        "No se ha encontrado el dispositivo"
+      ],
+      "Diagnostics failed": [
+        "El diagnóstico ha fallado"
+      ],
       "Domain not available, try again later": [
         "Dominio no disponible. Inténtalo de nuevo más tarde."
+      ],
+      "Downloads of desktop apps are currently unavailable": [
+        "Las descargas de las aplicaciones de escritorio no están disponibles actualmente"
       ],
       "Editing billing address is not available at the moment. Please try again later.": [
         "La edición de la dirección de facturación no está disponible en este momento. Inténtalo de nuevo más tarde."
@@ -3184,6 +3561,15 @@
       "Error decrypting a computer": [
         "Error al descifrar el ordenador"
       ],
+      "Error reading file": [
+        "Error al leer el archivo"
+      ],
+      "Expected structure attached": [
+        "Estructura esperada adjunta"
+      ],
+      "Expiration date cannot be in the past": [
+        "La fecha de caducidad no puede ser una fecha pasada"
+      ],
       "External invitations are temporarily disabled.": [
         "Las invitaciones externas están desactivadas temporalmente."
       ],
@@ -3199,6 +3585,27 @@
       "Failed to create public share node": [
         "Error al crear el nodo compartido"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "No se ha podido descifrar la clave del marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "No se ha podido descifrar el nombre del marcador: ${ message }"
+      ],
+      "Failed to decrypt bookmark password: ${ message }": [
+        "No se ha podido descifrar la contraseña del marcador: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "No se ha podido descifrar la clave de contenido: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "No se ha podido descifrar el nombre del elemento: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "No se ha podido descifrar la clave del nodo: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "No se han podido descifrar los metadatos de la revisión"
+      ],
       "Failed to expand folder": [
         "Error al expandir la carpeta"
       ],
@@ -3210,6 +3617,9 @@
       ],
       "Failed to get details, please try again later": [
         "Error al obtener los detalles, por favor intente de nuevo más tarde"
+      ],
+      "Failed to get inviter keys": [
+        "No se han podido obtener las claves de la persona que invitó"
       ],
       "Failed to load signature details, please try again later": [
         "No se han podido cargar los detalles de la firma; vuelve a intentarlo más tarde."
@@ -3235,11 +3645,26 @@
       "Failed to update public share node": [
         "Error al actualizar el nodo compartido"
       ],
+      "Failed to verify invitation": [
+        "No se ha podido verificar la invitación"
+      ],
+      "File download failed due to empty response": [
+        "La descarga del archivo ha fallado porque la respuesta está vacía"
+      ],
+      "File has no revision": [
+        "El archivo no tiene ninguna revisión"
+      ],
       "First name is too long": [
         "El nombre es demasiado largo."
       ],
       "Folder name cannot be empty.": [
         "El nombre de la carpeta no puede estar vacío."
+      ],
+      "Folder not found": [
+        "No se ha encontrado la carpeta"
+      ],
+      "Image preview not found": [
+        "No se ha encontrado la vista previa de la imagen"
       ],
       "Image upload failed": [
         "Error al cargar la imagen"
@@ -3268,6 +3693,9 @@
       "Invalid IBAN": [
         "El IBAN no es válido."
       ],
+      "Invalid JSON file": [
+        "Archivo JSON no válido"
+      ],
       "Invalid name": [
         "Nombre no válido"
       ],
@@ -3286,21 +3714,52 @@
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
+      "Invitation not found": [
+        "No se ha encontrado la invitación"
+      ],
+      "Item not found": [
+        "No se ha encontrado el elemento"
+      ],
       "Label name cannot be empty.": [
         "El nombre de la etiqueta no puede estar vacío."
       ],
       "Last name is too long": [
         "El apellido es demasiado largo."
       ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "El enlace público antiguo no se puede actualizar. Vuelve a crear un enlace público nuevo."
+      ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combina al menos ${ calendarsToFixCount } calendario con un calendario ${ BRAND_NAME } existente.",
         "Combina al menos ${ calendarsToFixCount } calendarios con un calendario ${ BRAND_NAME } existente."
+      ],
+      "Missing inviter email": [
+        "Falta el correo electrónico de quien envió la invitación"
       ],
       "Missing key packet": [
         "Falta el paquete de claves."
       ],
       "Missing signature": [
         "Falta la firma."
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Falta la firma de ${ signatureType }"
+      ],
+      "Move operation aborted": [
+        "Se ha cancelado la operación de mover"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "No se permite mover elementos a un elemento que no es una carpeta"
+      ],
+      "Moving root item is not allowed": [
+        "No se permite mover el elemento raíz"
+      ],
+      "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
+        "El nombre debe tener ${ MAX_NODE_NAME_LENGTH } carácter como máximo",
+        "El nombre debe tener ${ MAX_NODE_NAME_LENGTH } caracteres como máximo"
+      ],
+      "Name must not be empty": [
+        "El nombre no puede estar vacío"
       ],
       "No calendars found to import": [
         "No se han encontrado calendarios para importar."
@@ -3314,6 +3773,9 @@
       "No emails found to import - the account does not have an inbox": [
         "No se han encontrado correos para importar. La cuenta no tiene una bandeja de entrada."
       ],
+      "No file data was received. Please try again.": [
+        "No se han recibido datos del archivo. Inténtalo de nuevo."
+      ],
       "No file to upload": [
         "No hay ningún archivo para cargar"
       ],
@@ -3323,6 +3785,9 @@
       "Not a valid number": [
         "No es un número válido."
       ],
+      "Not enough browser storage": [
+        "No hay suficiente almacenamiento en el navegador."
+      ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Uno de los contactos no tiene dirección de correo electrónico: ${ noEmailsContactNamesList }",
         "Algunos contactos no tienen dirección de correo electrónico: ${ noEmailsContactNamesList } "
@@ -3330,6 +3795,15 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
         "Algunos grupos no tienen contactos: ${ noContactGroupList } "
+      ],
+      "Only admins can convert external invitations": [
+        "Solo los administradores pueden convertir invitaciones externas"
+      ],
+      "Operation aborted": [
+        "Operación cancelada"
+      ],
+      "Operation failed, try again later": [
+        "Error en la operación. Inténtalo más tarde."
       ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
@@ -3339,6 +3813,9 @@
       ],
       "Organization key must be activated to create non-private users": [
         "La clave de la organización debe activarse para crear usuarios no privados."
+      ],
+      "Part of the file appears to be corrupted": [
+        "Parte del archivo parece estar dañada"
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -3357,6 +3834,12 @@
       ],
       "Payment process not supported": [
         "Proceso de pago no soportado"
+      ],
+      "Photo is already in the target album": [
+        "La foto ya está en el álbum de destino"
+      ],
+      "Photo not found": [
+        "No se ha encontrado la foto"
       ],
       "Please check if your ABN is registered for cross-border VAT": [
         "Comprueba si tu ABN está registrado para el IVA transfronterizo"
@@ -3411,8 +3894,14 @@
         "Invitado duplicado eliminado: ${ joinedInvitee }",
         "Invitados duplicados eliminados: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "No se permite cambiar el nombre del elemento raíz"
+      ],
       "Report failed to be sent": [
         "Error al enviar el informe"
+      ],
+      "Request aborted": [
+        "Solicitud cancelada"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -3420,17 +3909,41 @@
       "Reverse charge scheme is not supported for this plan": [
         "El régimen de inversión del sujeto pasivo no es compatible con este plan"
       ],
+      "Search failed": [
+        "Error en la búsqueda"
+      ],
+      "Signature is missing": [
+        "Falta la firma"
+      ],
       "Signature not verified": [
         "Firma no verificada"
       ],
       "Signature verification failed": [
         "Error al verificar la firma"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Error al verificar la firma: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Error al verificar la firma de ${ signatureType }"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Error al verificar la firma de ${ signatureType }: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "No se han podido eliminar algunos contactos."
       ],
+      "Some file data failed to upload. Please try again.": [
+        "No se han podido cargar algunos datos del archivo. Inténtalo de nuevo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "No se han podido subir algunas partes del archivo. Inténtalo de nuevo."
+      ],
       "Some groups could not be deleted": [
         "No se han podido eliminar algunos grupos."
+      ],
+      "Some items could not be loaded": [
+        "No se han podido cargar algunos elementos"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Algunos de tus nombres de carpetas no están disponibles. Personaliza la importación para editar estos nombres."
@@ -3450,8 +3963,20 @@
       "Something went wrong": [
         "Se ha producido un error."
       ],
+      "Something went wrong during folder listing": [
+        "Ha ocurrido un error al cargar las carpetas"
+      ],
       "Something went wrong while fetching available domains": [
         "Algo salió mal al obtener los dominios disponibles"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Ha ocurrido un error en la búsqueda. Inténtalo de nuevo más tarde."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Ha ocurrido un error en la búsqueda: no hay suficiente espacio de almacenamiento."
+      ],
+      "Something went wrong, please try again later": [
+        "Se ha producido un error. Inténtalo de nuevo más tarde"
       ],
       "Something went wrong. Please try again.": [
         "Se ha producido un error. Inténtalo de nuevo."
@@ -3501,6 +4026,9 @@
       "The minimum donation amount is ${ price }": [
         "El importe mínimo de la donación es de ${ price }"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "El archivo cargado no coincide con el original. Inténtalo de nuevo."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hay demasiadas carpetas en tu cuenta externa. Personaliza la importación para eliminar algunas carpetas."
       ],
@@ -3519,14 +4047,38 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
+      "This file has missing crypto material": [
+        "A este archivo le falta material criptográfico"
+      ],
+      "This file has no version available to download": [
+        "Este archivo no tiene ninguna versión disponible para descargar"
+      ],
+      "This file version could not be uploaded": [
+        "No se ha podido cargar esta versión del archivo"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Este nombre de carpeta no está disponible. Elige un nombre diferente."
+      ],
+      "This item has no image preview": [
+        "Este elemento no tiene vista previa de imagen"
+      ],
+      "This item is no longer shared": [
+        "Este elemento ya no está compartido"
+      ],
+      "This item is not shared": [
+        "Este elemento no está compartido"
       ],
       "This label name is not available. Please choose a different name.": [
         "Este nombre de etiqueta no está disponible. Elige un nombre diferente."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Este mensaje podría contener enlaces a un URL que no se pueden abrir correctamente en tu navegador actual."
+      ],
+      "Too many server errors, please try again later": [
+        "Demasiados errores del servidor. Inténtalo de nuevo más tarde"
+      ],
+      "Too many server requests, please try again later": [
+        "Demasiadas solicitudes al servidor. Inténtalo más tarde."
       ],
       "Try using only letters, numerals, and _.-": [
         "Utiliza solo letras, números y _.-"
@@ -3570,14 +4122,47 @@
       "VAT number must start with ${ prefixes }": [
         "El número de IVA debe empezar por ${ prefixes }."
       ],
+      "Verification keys are not available": [
+        "Las claves de verificación no están disponibles"
+      ],
+      "Verification keys for ${ signatureType } are not available": [
+        "Las claves de verificación de ${ signatureType } no están disponibles"
+      ],
+      "We cannot retrieve this item": [
+        "No podemos recuperar este elemento"
+      ],
       "We couldn’t send a verification code using this method.": [
         "No hemos podido enviar un código de verificación con este método."
+      ],
+      "We were not able to load some invitations": [
+        "No se han podido cargar algunas invitaciones"
       ],
       "We were not able to load some items": [
         "No pudimos cargar algunos elementos"
       ],
+      "We were not able to load some items shared with you": [
+        "No hemos podido cargar algunos elementos compartidos contigo"
+      ],
+      "We were not able to load some of your invitation to shared items": [
+        "No se han podido cargar algunas de tus invitaciones a elementos compartidos"
+      ],
+      "We were not able to load some of your saved shared links": [
+        "No hemos podido cargar algunos de tus enlaces compartidos guardados"
+      ],
+      "We were not able to load some of your shared items": [
+        "No hemos podido cargar algunos de tus elementos compartidos"
+      ],
+      "We were not able to load some search results": [
+        "No hemos podido cargar algunos resultados de búsqueda"
+      ],
+      "We were not able to load the file history": [
+        "No se ha podido cargar el historial del archivo"
+      ],
       "We were not able to load the folder contents": [
         "No se ha podido cargar el contenido de la carpeta"
+      ],
+      "We're sorry, but free upload is not available right now.": [
+        "Lo sentimos, la subida gratuita no está disponible en este momento."
       ],
       "Wrong billing address": [
         "Dirección de facturación incorrecta"
@@ -3585,9 +4170,27 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperación incorrecta. Inténtalo de nuevo o utiliza otro método de recuperación."
       ],
+      "You can create public links for your own files only": [
+        "Solo puedes crear enlaces públicos para tus propios archivos"
+      ],
+      "You can only leave items that are shared with you": [
+        "Solo puedes abandonar elementos que se han compartido contigo"
+      ],
+      "You can only upload a new version to a file": [
+        "Solo puedes subir una nueva versión a un archivo"
+      ],
+      "You can update a public link for your own files only": [
+        "Solo puedes actualizar un enlace público de tus propios archivos"
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "No puedes enviar un correo a más de ${ maxContacts } destinatario.",
         "No puedes enviar un correo a más de ${ maxContacts } destinatarios."
+      ],
+      "You do not have access to this item": [
+        "No tienes acceso a este elemento"
+      ],
+      "You do not have access to this shared item": [
+        "No tienes acceso a este elemento compartido"
       ],
       "You have reached the maximum number of calendars.": [
         "Ha alcanzado la cantidad máxima de calendarios."
@@ -3597,6 +4200,9 @@
       ],
       "You must set a name": [
         "Debes establecer un nombre."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Has alcanzado el número máximo de direcciones conectadas"
       ],
       "Your import will not be processed.": [
         "No se procesará tu importación."
@@ -3743,11 +4349,23 @@
       ]
     },
     "Error message": {
+      "Access denied": [
+        "Acceso denegado"
+      ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
       ],
+      "Brace yourself till we get the error fixed.": [
+        "Ten paciencia mientras solucionamos el error."
+      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
+      ],
+      "Internal server error": [
+        "Error interno del servidor"
+      ],
+      "Not found": [
+        "No encontrado"
       ],
       "Oops, something went wrong": [
         "Se ha producido un error."
@@ -3766,6 +4384,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
+      ],
+      "You may also refresh the page or try again later.": [
+        "También puedes volver a cargar la página o intentarlo más tarde."
       ]
     },
     "Error notification": {
@@ -3827,6 +4448,12 @@
     "Event title": {
       "(no title)": [
         "(sin título)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } fallido",
+        "${ countOfFailedLinks } fallidos"
       ]
     },
     "familyOffer_2023:Action": {
@@ -3899,6 +4526,9 @@
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Tienes facturas pendientes de pago. Por favor, págalas antes de unirte a un plan familiar."
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Has recibido una invitación para vincular tu cuenta de ${ BRAND_NAME } a este grupo familiar y disfrutar de todas sus funciones premium."
+      ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
       ],
@@ -3945,6 +4575,12 @@
       ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Still waiting?": [
+        "¿Sigues esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toca tu llave de seguridad para continuar."
       ]
     },
     "fido2: Label": {
@@ -4043,6 +4679,12 @@
       "Contacts": [
         "Contactos"
       ],
+      "Create new album": [
+        "Crear nuevo álbum"
+      ],
+      "Create new shared album": [
+        "Crear nuevo álbum compartido"
+      ],
       "Domain": [
         "Dominio"
       ],
@@ -4052,11 +4694,33 @@
       "Password ends with": [
         "La contraseña termina con"
       ],
+      "Rename album": [
+        "Cambiar nombre del álbum"
+      ],
       "Security Center": [
         "Centro de seguridad"
       ],
       "Username": [
         "Nombre de usuario"
+      ]
+    },
+    "Heading": {
+      "Add ${ photoCount } photo to": [
+        "Añadir ${ photoCount } foto a",
+        "Añadir ${ photoCount } fotos a"
+      ],
+      "Add to shared album": [
+        "Añadir a álbum compartido"
+      ],
+      "All albums": [
+        "Todos los álbumes"
+      ],
+      "Recent": [
+        "Recientes"
+      ],
+      "Share ${ photoCount } photo via": [
+        "Compartir ${ photoCount } foto mediante",
+        "Compartir ${ photoCount } fotos mediante"
       ]
     },
     "Hint": {
@@ -4394,11 +5058,24 @@
         "${ addressCount } dirección de correo electrónico",
         "${ addressCount } direcciones de correo electrónico"
       ],
+      "${ albumName } has been successfully deleted": [
+        "${ albumName } se ha eliminado correctamente"
+      ],
+      "${ albums } album": [
+        "${ albums } álbum",
+        "${ albums } álbumes"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } solo usa este acceso para la importación. Google nunca tendrá acceso a tu cuenta de ${ BRAND_NAME }."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
+        "${ BRAND_NAME } Workspace permite a tu equipo colaborar de forma eficiente sin poner nunca en riesgo los datos de tu empresa."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnología de cifrado de ${ BRAND_NAME } conlleva que nadie tiene acceso a tu contraseña - ni siquiera nosotros."
@@ -4439,18 +5116,57 @@
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Los archivos de ${ DOCS_APP_NAME } y ${ SHEETS_APP_NAME } no se pueden descargar directamente y no se incluirán en esta descarga. Puedes descargar los demás archivos haciendo clic en 'Continuar con la descarga'."
       ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } no ha podido descifrar el índice de búsqueda local. Vuelve a crear el índice para restaurar la búsqueda."
+      ],
+      "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
+        "${ DRIVE_APP_NAME } ha detectado que el índice de búsqueda local está dañado y ya no se puede usar. Vuelve a crear el índice para restaurar la búsqueda."
+      ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } en App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } en Play Store"
+      ],
+      "${ email } invited you to join ${ albumName }": [
+        "${ email } te ha invitado a unirte a ${ albumName }"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagen de tamaño completo"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: vista previa de baja resolución"
       ],
+      "${ files } file": [
+        "${ files } archivo",
+        "${ files } archivos"
+      ],
+      "${ folders } folder": [
+        "${ folders } carpeta",
+        "${ folders } carpetas"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (remitente no verificado)"
+      ],
+      "${ invitationsCount } pending invitation": [
+        "${ invitationsCount } invitación pendiente",
+        "${ invitationsCount } invitaciones pendientes"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } es una solución de videoconferencia cifrada de extremo a extremo. Añádelo a tu plan para organizar reuniones seguras."
@@ -4466,6 +5182,14 @@
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } no tiene precio de renovación. Es un pago único para acceso de por vida a ${ PASS_SHORT_APP_NAME }. El precio y la fecha de renovación de tu suscripción ${ planTitle } se mantienen sin cambios."
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } elemento",
+        "${ photoCount } elementos"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } fotos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -4508,8 +5232,17 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entradas"
+      ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Te quedan ${ timeRemaining } de prueba. ${ addPaymentMethodLink } para evitar perder el acceso. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Te quedan ${ timeRemaining } de prueba. ${ addPaymentMethodLink } para mantener tu suscripción. ${ learnMoreLink }"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado.",
@@ -4545,6 +5278,18 @@
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Consigues ${ referrerRewardAmount }** en créditos por cada persona que se suscriba."
+      ],
+      "1 device per user": [
+        "1 dispositivo por usuario"
+      ],
+      "1 vault per user": [
+        "1 caja fuerte por usuario"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantía de devolución del dinero en 30 días: cancela en un plazo de 30 días desde tu compra y contacta con nuestro ${ customerSupportLink } para obtener un reembolso."
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Hay disponible una nueva versión de ${ DRIVE_APP_NAME }. Recarga la página para seguir usando la búsqueda."
       ],
       "A number will be added to the filename": [
         "Se añadirá un número al nombre del archivo."
@@ -4618,6 +5363,9 @@
       "Already in your library": [
         "Ya está en tu biblioteca"
       ],
+      "Also try looking in Trash.": [
+        "Busca también en la papelera."
+      ],
       "American Express SafeKey logo": [
         "Logo de American Express SafeKey"
       ],
@@ -4627,11 +5375,26 @@
       "Amount below minimum (${ amount }).": [
         "Cantidad por debajo del mínimo (${ amount })."
       ],
+      "An active recovery file": [
+        "Un archivo de recuperación activo"
+      ],
+      "An issue occurred during the restore process.": [
+        "Ha ocurrido un error durante el proceso de restauración."
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Ha ocurrido un error inesperado al importar tus datos. Inténtalo de nuevo más tarde."
+      ],
       "and": [
         "y"
       ],
+      "And access it from anywhere": [
+        "Y accede desde cualquier lugar"
+      ],
       "Anonymous": [
         "Anónimo"
+      ],
+      "Apr": [
+        "abr"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
@@ -4642,11 +5405,17 @@
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "¿Estás seguro de que quieres vaciar la papelera y eliminar permanentemente todos los elementos?"
       ],
+      "Are you sure you want to permanently delete": [
+        "¿Seguro que quieres eliminar permanentemente"
+      ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "¿Estás seguro de que quieres eliminar \"${ itemName }\" de la papelera de forma permanente?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "¿Estás seguro de que quieres eliminar permanentemente los elementos seleccionados de la papelera?"
+      ],
+      "Are you sure you want to proceed?": [
+        "¿Seguro que quieres continuar?"
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Al menos ${ BETTER_PASSWORD_LENGTH } caracteres"
@@ -4657,14 +5426,26 @@
       "Attention required": [
         "Atención requerida"
       ],
+      "Aug": [
+        "ago"
+      ],
+      "Author is not provided on public link": [
+        "El enlace público no incluye el autor"
+      ],
       "Awaiting transaction": [
         "Esperando la transacción"
       ],
       "Balance from your previous subscription": [
         "Saldo de tu suscripción anterior"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "Como ${ DRIVE_APP_NAME } tiene cifrado de extremo a extremo, no podemos acceder ni descifrar tus archivos por ti. Para desbloquear tu unidad tras restablecer la contraseña, debes tener una de las siguientes opciones:"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
+      ],
+      "Better in the app": [
+        "Mejor en la app"
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
@@ -4690,11 +5471,20 @@
       "Can't move a folder into itself": [
         "No se puede mover una carpeta dentro de sí misma"
       ],
+      "Can't read this file": [
+        "No se puede leer este archivo"
+      ],
+      "Can't rename to same name": [
+        "No se puede cambiar el nombre por el mismo"
+      ],
       "Can't write into folder": [
         "No se puede escribir en la carpeta"
       ],
       "Canceled": [
         "Cancelado"
+      ],
+      "Cannot load links": [
+        "No se pueden cargar los enlaces"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No puedes recordar tu contraseña? Podemos ayudarte a eliminar los datos cifrados de todos los contactos cifrados con esta clave y desactivar la alerta al mismo tiempo."
@@ -4705,8 +5495,17 @@
       "Choose a plan that works best for you.": [
         "Elige el plan que mejor se adapte a ti."
       ],
+      "Clear all search data": [
+        "Borrar todos los datos de búsqueda"
+      ],
       "Clear data": [
         "Limpiar datos"
+      ],
+      "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
+        "Borrar los datos del navegador borrará el índice de búsqueda en este dispositivo. Todos los archivos deberán volver a indexarse para utilizar la función de búsqueda."
+      ],
+      "Clears browser data related to the search.": [
+        "Borra los datos del navegador relacionados con la búsqueda."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
@@ -4717,6 +5516,9 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conéctate a ${ VPN_APP_NAME } para navegar de forma privada."
       ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Conectando con Google Drive y preparando la importación."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contacto asignado al grupo ${ contactGroupName }"
       ],
@@ -4725,6 +5527,9 @@
       ],
       "Continue": [
         "Continuar"
+      ],
+      "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
+        "Seguir usando ${ DRIVE_APP_NAME } y desbloquear tu almacenamiento más tarde"
       ],
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
@@ -4758,6 +5563,9 @@
       "Create in": [
         "Crear en"
       ],
+      "Create links and share your files with others.": [
+        "Crea enlaces y comparte tus archivos con otras personas."
+      ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
       ],
@@ -4769,6 +5577,12 @@
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"
+      ],
+      "Data integrity check failed": [
+        "Ha fallado la comprobación de integridad de los datos"
+      ],
+      "Dec": [
+        "dic"
       ],
       "Decrypting files": [
         "Descifrando archivos"
@@ -4782,6 +5596,10 @@
       "default email address": [
         "dirección de correo electrónico por defecto"
       ],
+      "Delete locked drive": [
+        "Eliminar unidad bloqueada",
+        "Eliminar unidades bloqueadas"
+      ],
       "Details": [
         "Detalles"
       ],
@@ -4793,6 +5611,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
+      ],
+      "Do you remember your password?": [
+        "¿Recuerdas tu contraseña?"
       ],
       "Do you still want to upload it?": [
         "¿Aún quieres subirlo?",
@@ -4806,6 +5627,9 @@
       ],
       "Downgrade": [
         "Pasar a un plan inferior"
+      ],
+      "Download ${ name } app": [
+        "Descargar la aplicación ${ name }"
       ],
       "Download current logs": [
         "Descargar los registros actuales"
@@ -4825,8 +5649,14 @@
       "Downloading": [
         "Descargando"
       ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Arrastra aquí tus archivos y carpetas o usa el botón «Nuevo» para subirlos"
+      ],
       "Drop file here to upload": [
         "Suelta tus archivos aquí para cargarlos"
+      ],
+      "Drop files here": [
+        "Suelta los archivos aquí"
       ],
       "Drop files here to upload or click on the upload button": [
         "Arrastra los archivos aquí para cargar o haz clic en el botón para cargar."
@@ -4852,8 +5682,14 @@
       "Emails moved to Trash and Spam more than 30 days ago will be cleared automatically.": [
         "Los correos electrónicos movidos a las carpetas Papelera y Spam hace más de 30 días se eliminarán automáticamente."
       ],
+      "Empty folder": [
+        "Carpeta vacía"
+      ],
       "Enabling auto-deletion…": [
         "Activando la eliminación automática…"
+      ],
+      "Enabling drive search": [
+        "Activando la búsqueda en Drive"
       ],
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
@@ -4894,6 +5730,12 @@
       "Expired": [
         "Expirado"
       ],
+      "Export diagnostic logs for technical support and troubleshooting": [
+        "Exporta los registros de diagnóstico para el soporte técnico y la resolución de problemas"
+      ],
+      "Feb": [
+        "feb"
+      ],
       "File could not be scanned": [
         "No se pudo escanear el archivo"
       ],
@@ -4903,11 +5745,17 @@
       "File will not be updated": [
         "El archivo no se actualizará."
       ],
+      "Files and folders that others shared with you will appear here": [
+        "Aquí aparecerán los archivos y las carpetas que otros han compartido contigo"
+      ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
         "Solo archivos (sin fotos, ${ DOCS_APP_NAME } ni ${ SHEETS_APP_NAME }) - hasta 100 GB en total, 100.000 archivos y 50 GB por archivo"
       ],
       "Folder will not be uploaded": [
         "La carpeta no se cargará."
+      ],
+      "Folders you sync from your computer will appear here.": [
+        "Las carpetas que sincronices desde tu ordenador aparecerán aquí."
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -4921,8 +5769,23 @@
       "Free 5GB encrypted storage to get started": [
         "Almacenamiento encriptado gratuito de 5GB para empezar"
       ],
+      "from the version history?": [
+        "del historial de versiones?"
+      ],
       "Geoblocking": [
         "Bloqueo geográfico"
+      ],
+      "Get logs and other information for technical support and troubleshooting": [
+        "Obtén registros y otra información para el soporte técnico y la solución de problemas"
+      ],
+      "Get the app to backup photos from your phone or upload them here.": [
+        "Descarga la aplicación para hacer copias de seguridad de tus fotos desde el teléfono o súbelas aquí."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Descarga la aplicación de escritorio para sincronizar archivos desde tu ordenador."
+      ],
+      "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
+        "¡Conoce ${ DRIVE_APP_NAME } y consigue tu bonificación de 3 GB de almacenamiento! Actúa hoy."
       ],
       "Google Pay mark": [
         "marca de Google Pay"
@@ -4939,6 +5802,9 @@
       "I hereby confirm, in good faith, that the information and statements contained in the report are correct and complete.": [
         "Por la presente confirmo que, de buena fe, la información y las declaraciones contenidas en el informe son correctas y completas."
       ],
+      "If those files are not fully downloaded locally on ${ deviceName } you will lose access to them.": [
+        "Si esos archivos no se han descargado por completo en ${ deviceName }, perderás el acceso a ellos."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
       ],
@@ -4951,8 +5817,17 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "Si tienes uno de estos, ve a los ajustes de la cuenta de ${ BRAND_NAME } para iniciar el proceso de desbloqueo."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si pierdes el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación de respaldo que te proporcionamos al configurar la autenticación de dos factores. ${ learnMoreLink }"
+      ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Si te eliminas de la lista, perderás el acceso a «${ fileName }» y no podrás volver a abrirlo a menos que el propietario lo comparta contigo de nuevo."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Si ya has mejorado tu plan, puedes reanudar la importación en ${ easySwitchSettingsLink }. También puedes cancelarla allí."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -4966,6 +5841,12 @@
       ],
       "Import mailbox": [
         "Importar buzón"
+      ],
+      "Import your files and folders": [
+        "Importa tus archivos y carpetas"
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importa tus archivos y carpetas de Google Drive y mantenlos privados en ${ DRIVE_APP_NAME }."
       ],
       "Important note": [
         "Aviso importante"
@@ -4985,8 +5866,32 @@
       "Included": [
         "Incluido"
       ],
+      "Index is empty.": [
+        "El índice está vacío."
+      ],
+      "Indexed ${ first }": [
+        "Indexados ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexados ${ first } y ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexados ${ first }, ${ second } y ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexados ${ first }, ${ second }, ${ third } y ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "La indexación ha llegado a un estado inesperado y no puede continuar. Reconstruye el índice para solucionarlo."
+      ],
+      "Indexing in progress": [
+        "Indexación en curso"
+      ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
+      ],
+      "Integrity issues found": [
+        "Se han encontrado problemas de integridad"
       ],
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
@@ -4997,8 +5902,17 @@
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
       ],
+      "Invitation confirmed": [
+        "Invitación confirmada"
+      ],
       "Invite link copied": [
         "Se ha copiado el enlace de la invitación."
+      ],
+      "iOS and Android Apps": [
+        "Apps para iOS y Android"
+      ],
+      "Issues found": [
+        "Problemas encontrados"
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "Parece ser que recientemente has intentado cargar ${ uploadName }. Si no se ha podido cargar, ${ replaceFile }. Si la carga está en proceso, reemplazarla cancela la carga en curso."
@@ -5006,11 +5920,29 @@
       "It's better to have:": [
         "Es mejor tener:"
       ],
+      "Items in the trash will stay here until you delete them permanently": [
+        "Los elementos de la papelera se mantendrán aquí hasta que los elimines de forma permanente"
+      ],
+      "Items moved to the trash will stay here until deleted": [
+        "Los elementos movidos a la papelera permanecerán aquí hasta que se eliminen"
+      ],
       "It’s best to use a VPN at all times. But here’s when cybersecurity threats can be the highest:": [
         "Es mejor usar una VPN en todo momento. Pero estos son los casos en que las amenazas de ciberseguridad pueden ser mayores:"
       ],
+      "It’s easy and secure": [
+        "Es fácil y seguro"
+      ],
+      "Jan": [
+        "Ene"
+      ],
       "JCB logo": [
         "Logo de JCB"
+      ],
+      "Jul": [
+        "jul"
+      ],
+      "Jun": [
+        "jun"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Solo tienes que confirmar tu selección y nosotros haremos el resto."
@@ -5021,6 +5953,9 @@
       "Key fingerprint": [
         "Huella digital de la clave"
       ],
+      "Know when it's done": [
+        "Sabrás cuándo termina"
+      ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
       ],
@@ -5029,6 +5964,9 @@
       ],
       "Large imports can take several days.": [
         "Las grandes importaciones pueden tardar varios días."
+      ],
+      "Last week": [
+        "Semana pasada"
       ],
       "Learn more": [
         "Más información"
@@ -5057,17 +5995,35 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Espera ya que se está cargando el calendario. Se te redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
       ],
+      "Loading folder": [
+        "Cargando carpeta"
+      ],
+      "Loading links": [
+        "Cargando enlaces"
+      ],
       "Loading preview": [
         "Cargando vista previa"
       ],
       "Loading...": [
         "Cargando..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Los registros nos ayudan a entender qué ocurrió antes del problema. Incluyen acciones de la aplicación y mensajes de error, pero no el contenido de los mensajes."
+      ],
+      "Looked at this image": [
+        "Analizó esta imagen"
+      ],
       "Low Priority": [
         "Prioridad baja"
       ],
+      "Makes your account safer": [
+        "Hace tu cuenta más segura"
+      ],
       "Malware detected": [
         "Malware detectado"
+      ],
+      "Mar": [
+        "mar"
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -5075,6 +6031,9 @@
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carácter",
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
+      ],
+      "May": [
+        "may"
       ],
       "Medium Priority": [
         "Prioridad media"
@@ -5088,8 +6047,26 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Los mensajes de todas tus direcciones de correo electrónico se enviarán a tu bandeja de entrada."
       ],
+      "More": [
+        "Más"
+      ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La mayoría de las redes WiFi públicas son seguras, pero algunas carecen de seguridad, exponiéndote a amenazas cibernéticas. Una VPN cifra tu tráfico, manteniéndote protegido."
+      ],
+      "Move ${ dragCount } item": [
+        "Mover ${ dragCount } elemento",
+        "Mover ${ dragCount } elementos"
+      ],
+      "Move ${ fileCount } file": [
+        "Mover ${ fileCount } archivo",
+        "Mover ${ fileCount } archivos"
+      ],
+      "Move ${ folderCount } folder": [
+        "Mover ${ folderCount } carpeta",
+        "Mover ${ folderCount } carpetas"
+      ],
+      "My Links": [
+        "Mis enlaces"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
@@ -5097,8 +6074,14 @@
       "New": [
         "Nuevo"
       ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "A continuación, inicia sesión en tu cuenta de Google y permite que ${ BRAND_NAME } acceda a Google Drive. Importaremos tus archivos y carpetas a ${ DRIVE_APP_NAME }."
+      ],
       "No": [
         "No"
+      ],
+      "No Albums": [
+        "No hay álbumes"
       ],
       "No contacts added yet": [
         "Todavía no se han añadido contactos."
@@ -5109,11 +6092,23 @@
       "No group found": [
         "No se ha encontrado ningún grupo."
       ],
+      "No issue found": [
+        "No se ha encontrado ningún problema"
+      ],
       "No payment is required at this time.": [
         "En este momento no se requiere ningún pago."
       ],
+      "No payment is required.": [
+        "No se requiere un pago."
+      ],
+      "No populator states found.": [
+        "No se han encontrado estados de populator."
+      ],
       "No results found": [
         "No se han encontrado resultados."
+      ],
+      "No synced folders": [
+        "No hay carpetas sincronizadas"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ninguna de las claves cargadas es válida para cifrar los datos. Para enviar mensajes a esta dirección, carga una clave válida o desactiva \"Cifrar correos electrónicos\"."
@@ -5124,6 +6119,18 @@
       "Not connected": [
         "No conectado"
       ],
+      "Not enough storage space": [
+        "No hay suficiente espacio de almacenamiento"
+      ],
+      "Not in My files": [
+        "No está en Mis archivos"
+      ],
+      "Note: data may still be available locally on devices where you have installed ${ DRIVE_APP_NAME }.": [
+        "Nota: es posible que los datos sigan disponibles de forma local en los dispositivos en los que hayas instalado ${ DRIVE_APP_NAME }."
+      ],
+      "Nov": [
+        "nov"
+      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
       ],
@@ -5133,11 +6140,20 @@
       "Numbers": [
         "Números"
       ],
+      "Oct": [
+        "oct"
+      ],
       "of": [
         "de"
       ],
       "On public WiFi networks": [
         "En redes wifi públicas"
+      ],
+      "One encrypted suite. Full business protection.": [
+        "Una suite cifrada. Protección empresarial completa."
+      ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "Una de tus unidades cifradas está bloqueada. Lo más probable es que se deba a un restablecimiento reciente de la contraseña."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
@@ -5147,6 +6163,12 @@
       ],
       "or discover other features:": [
         "o descubre otras funciones:"
+      ],
+      "Or import your files from": [
+        "O importa tus archivos desde"
+      ],
+      "Or use the \"+ New\" button": [
+        "O usa el botón «+ Nuevo»"
       ],
       "Organization size": [
         "Tamaño de la organización"
@@ -5175,11 +6197,30 @@
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Los pagos están protegidos con cifrado TLS y por las leyes de privacidad suizas."
       ],
+      "Permanently delete all files in your locked drive": [
+        "Eliminar permanentemente todos los archivos de tu unidad bloqueada"
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "El formato PGP/Inline solo es compatible con el formato de texto plano."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "El formato PGP/MIME automáticamente envía el mensaje usando el modo de composición actual."
+      ],
+      "Photo is not saved to your library": [
+        "La foto no se ha guardado en tu biblioteca"
+      ],
+      "Photo is set as album cover": [
+        "La foto se ha definido como portada del álbum"
+      ],
+      "Photo saved to your Drive": [
+        "Foto guardada en tu Drive",
+        "Fotos guardadas en tu Drive"
+      ],
+      "Photo was copied to stream and marked favorite there.": [
+        "La foto se ha copiado a Stream y se ha marcado como favorita allí."
+      ],
+      "Photos have been successfully recovered.": [
+        "Las fotos se han recuperado correctamente."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Pide al propietario que te invite directamente al documento."
@@ -5227,6 +6268,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Inténtalo de nuevo con otro método de pago o ponte en contacto con tu banco."
       ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Mejora tu plan para asegurarte de que la importación se complete correctamente."
+      ],
       "Please use another browser or download the file.": [
         "Usa otro navegador o descarga el archivo."
       ],
@@ -5260,23 +6304,50 @@
       "Preview of documents is not yet supported.": [
         "La previsualización de documentos aún no está disponible."
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "Las versiones anteriores se conservan durante ${ retentionLabel }"
+      ],
+      "Previous versions are not saved": [
+        "No se guardan versiones anteriores"
+      ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
       ],
       "Primary": [
         "Principal"
       ],
+      "Private and encrypted": [
+        "Privado y cifrado"
+      ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "La navegación privada (o modo «incógnito») solo es útil para mantener oculta tu actividad en tu dispositivo. Evita que tu navegador guarde el historial y las cookies, pero no te hace invisible. Tu ISP, administrador de red y los sitios web que visitas aún pueden ver lo que haces en línea."
       ],
+      "Public link": [
+        "Enlace público"
+      ],
       "Public sharing of documents is not yet supported.": [
         "La compartición pública de documentos aún no está disponible."
+      ],
+      "Re-indexing in progress": [
+        "Reindexación en curso"
+      ],
+      "Read folder context": [
+        "Leer contexto de la carpeta"
+      ],
+      "Read this file": [
+        "Leyó este archivo"
+      ],
+      "Ready to add some photos?": [
+        "¿Listo para añadir algunas fotos?"
       ],
       "RECOMMENDED": [
         "RECOMENDADO"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
+      ],
+      "Recovery process might take some time.": [
+        "El proceso de recuperación puede tardar algún tiempo."
       ],
       "Referral link copied to your clipboard": [
         "El enlace de referido se ha copiado en el portapapeles"
@@ -5290,14 +6361,26 @@
       "Report has been sent": [
         "Se ha enviado el informe."
       ],
+      "Request access, or switch to an account with access.": [
+        "Solicita acceso o cambia a una cuenta que tenga acceso."
+      ],
       "Requested item doesn't exist anymore": [
         "El elemento solicitado ya no existe."
       ],
       "Restore": [
         "Restaurar"
       ],
+      "Restore Photos": [
+        "Restaurar fotos"
+      ],
       "Restored files ${ formattedDate }": [
         "Archivos restaurados ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Restaurando fotos... Mantén la pestaña abierta"
+      ],
+      "Running diagnostics...": [
+        "Ejecutando diagnósticos..."
       ],
       "Saving...": [
         "Guardando..."
@@ -5305,17 +6388,68 @@
       "Scan the QR code with your mobile device": [
         "Escanea el código QR con tu dispositivo móvil."
       ],
+      "Scan to download": [
+        "Escanea para descargar"
+      ],
+      "Search covers your recent items": [
+        "La búsqueda abarca tus elementos recientes"
+      ],
+      "Search data can't be read": [
+        "No se pueden leer los datos de búsqueda"
+      ],
+      "Search data is corrupted": [
+        "Los datos de búsqueda están dañados"
+      ],
+      "Search Enabled": [
+        "Búsqueda activada"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Búsqueda activada. Ya puedes cerrar este diálogo y buscar archivos y carpetas."
+      ],
+      "Search encountered an internal error. Rebuild the index to recover.": [
+        "Se ha producido un error interno en la búsqueda. Vuelve a crear el índice para solucionarlo."
+      ],
+      "Search engine error": [
+        "Error del motor de búsqueda"
+      ],
+      "Search error": [
+        "Error de búsqueda"
+      ],
+      "Search is in an invalid state": [
+        "Hay un problema con la búsqueda"
+      ],
+      "Search is ready. Your files have been indexed.": [
+        "La búsqueda está lista. Tus archivos se han indexado."
+      ],
+      "Search module is not available.": [
+        "El módulo de búsqueda no está disponible."
+      ],
       "Select a destination folder": [
         "Selecciona una carpeta de destino"
       ],
+      "Select a folder to make the copy in": [
+        "Selecciona una carpeta donde hacer la copia"
+      ],
       "Select a folder to move to.": [
         "Selecciona una carpeta para mover."
+      ],
+      "Select all items for": [
+        "Seleccionar todos los elementos de"
+      ],
+      "Select an uploaded file or folder and create a link to it.": [
+        "Selecciona un archivo o una carpeta subidos y crea un enlace a él."
+      ],
+      "Select item": [
+        "Seleccionar elemento"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que quieres utilizar por defecto al enviar un correo electrónico a esta dirección."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
         "Selecciona los calendarios que quieres importar. Se creará un calendario para cada calendario importado de acuerdo con el número de calendarios disponibles en tu plan."
+      ],
+      "Sep": [
+        "sept."
       ],
       "SEPA payments are not available at the moment. Please try again later.": [
         "Los pagos SEPA no están disponibles en este momento. Intenta de nuevo más tarde."
@@ -5338,8 +6472,23 @@
       "Setting up your new address…": [
         "Configurando tu nueva dirección…"
       ],
+      "Share files with links": [
+        "Comparte archivos con enlaces"
+      ],
+      "Shared": [
+        "Compartido"
+      ],
+      "Shared by ": [
+        "Compartido por "
+      ],
       "Shared link not found": [
         "Enlace compartido no encontrado"
+      ],
+      "Shared with me": [
+        "Compartido conmigo"
+      ],
+      "Shared with you": [
+        "Compartido contigo"
       ],
       "Signature check will be ignored": [
         "Se ignorará la verificación de la firma."
@@ -5349,6 +6498,15 @@
       ],
       "Some items failed": [
         "Algunos elementos fallaron"
+      ],
+      "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
+        "Algunos de tus archivos ya no están accesibles. Restaura el acceso a tus archivos. ${ StartRecoveryButton }"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Algunos archivos antiguos no están indexados porque tu Drive es demasiado grande para indexarlo por completo."
+      ],
+      "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
+        "Algunas fotos de este álbum no se han guardado en tu cronología. Al eliminar este álbum, se eliminarán esas fotos de forma permanente."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Algunos sitios web y servicios de streaming bloquean los contenidos por región. Una VPN te permite evitar estas restricciones y acceder a internet."
@@ -5396,6 +6554,9 @@
       "that": [
         "que"
       ],
+      "The albums you create are shown here.": [
+        "Aquí se mostrarán los álbumes que crees."
+      ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "El recuento de descargas incluye las descargas reales y las instancias en las que se obtiene una vista previa de los archivos."
       ],
@@ -5408,11 +6569,20 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario deberá volver a activar el cifrado de extremo a extremo."
       ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "El motor de búsqueda ha encontrado un error interno. Vuelve a crear el índice para recuperarlo."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "El proceso de verificación abrirá una nueva pestaña en el navegador. Desactiva cualquier bloqueador de ventanas emergentes activo."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Hay archivos que aún se deben transferir. Al cerrar el administrador de transferencias se terminan todas las operaciones."
+      ],
+      "There is nothing to see here": [
+        "No hay nada que ver aquí"
+      ],
+      "Thinking about this": [
+        "Pensando en ello"
       ],
       "This action will delete the link and revoke access for all users.": [
         "Esta acción eliminará el enlace y revocará el acceso de todos los usuarios."
@@ -5422,6 +6592,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descarga el archivo."
+      ],
+      "This can NOT be undone. Please enter the device name to confirm removal.": [
+        "Esta acción NO se puede deshacer. Introduce el nombre del dispositivo para confirmar la eliminación."
       ],
       "This file appears to be empty:": [
         "Este archivo parece estar vacío:",
@@ -5442,6 +6615,10 @@
       "This is now your ${ defaultEmailAddress } for sending new messages.": [
         "Esta es ahora tu ${ defaultEmailAddress } para enviar mensajes nuevos."
       ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Este elemento no está guardado en tu biblioteca de Fotos. Si lo quitas de este álbum, perderás el acceso a él de forma permanente.",
+        "Algunos de los elementos seleccionados no están guardados en tu biblioteca de Fotos. Si los quitas de este álbum, perderás el acceso a ellos de forma permanente."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
       ],
@@ -5450,6 +6627,9 @@
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
         "Esto significa que tu proveedor de servicios de internet y los sitios web que visitas no pueden conectar tu información personal con tu actividad en línea."
+      ],
+      "This month": [
+        "Este mes"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Los sitios web y los ISP (proveedores de servicios de internet) pueden usar este código único para vincular tu ubicación e historial de navegación a tu dispositivo."
@@ -5462,6 +6642,9 @@
       ],
       "This will cancel any remaining uploads. Cancelled files won't be saved in ${ DRIVE_APP_NAME }.": [
         "Esto cancelará cualquier subida pendiente. Los archivos cancelados no se guardarán en ${ DRIVE_APP_NAME }."
+      ],
+      "This will only delete the album. Your photos will remain in your timeline. This action cannot be undone.": [
+        "Solo se eliminará el álbum. Tus fotos seguirán en tu cronología. Esta acción no se puede deshacer."
       ],
       "This will permanently delete the file you uploaded.": [
         "Esto eliminará permanentemente el archivo cargado."
@@ -5481,11 +6664,20 @@
       "This will sign you out of all accounts currently logged in.": [
         "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
       ],
+      "Time": [
+        "Hora"
+      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Para completar tu pago, envía ${ btcAmountBold } a la dirección de abajo."
       ],
       "To download these files, open them in ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME } and export them.": [
         "Para descargar estos archivos, ábrelos en ${ DOCS_APP_NAME } o ${ SHEETS_APP_NAME } y expórtalos."
+      ],
+      "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
+        "Para activar la búsqueda, necesitamos indexar tus archivos en local. Puedes seguir usando ${ DRIVE_APP_NAME } con normalidad y te avisaremos cuando termine la indexación. Si sales de esta página, la indexación se pausará y se reanudará cuando vuelvas."
+      ],
+      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
+        "Para activar una búsqueda realmente privada, ${ DRIVE_APP_NAME } necesita indexar tus archivos localmente."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, necesitamos verificar que eres humano."
@@ -5505,6 +6697,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para utilizar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
+      "Today": [
+        "Hoy"
+      ],
       "Total email addresses": [
         "Direcciones de correo electrónico totales"
       ],
@@ -5523,17 +6718,32 @@
       "Trash": [
         "Papelera"
       ],
+      "Trash is empty": [
+        "La papelera está vacía"
+      ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Confía en la clave «${ activeSignerText }» para verificar los nuevos mensajes de este contacto."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
+      "Try searching by file name, date, or type.": [
+        "Prueba a buscar por nombre de archivo, fecha o tipo."
+      ],
       "Unexpected download error": [
         "Error de descarga inesperado"
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Lamentablemente, parece que el archivo o algunos de sus datos no pueden descifrarse."
+      ],
+      "UnionPay logo": [
+        "Logotipo de UnionPay"
+      ],
+      "Unknown date": [
+        "Fecha desconocida"
+      ],
+      "Unlock drive to recover files": [
+        "Desbloquea tu unidad para recuperar archivos"
       ],
       "Unsaved changes": [
         "Cambios no guardados"
@@ -5543,6 +6753,9 @@
       ],
       "Unsupported file type for Photos": [
         "Formato de archivo no compatible con Fotos"
+      ],
+      "Update required": [
+        "Se requiere una actualización"
       ],
       "Upgrade anytime to bring over the rest": [
         "Mejora tu plan en cualquier momento para traer el resto."
@@ -5558,6 +6771,9 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Mejora para mantener tus beneficios de ${ planTitle }."
+      ],
+      "upgrade your storage": [
+        "mejora tu almacenamiento"
       ],
       "Upload Failed": [
         "Error de carga"
@@ -5586,6 +6802,12 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificación abrirá una nueva pestaña, desactiva cualquier bloqueador de ventanas emergentes. No se te cobrará este proceso. Cualquier monto utilizado para verificar la tarjeta te será reembolsado inmediatamente."
       ],
+      "Version is deleted": [
+        "La versión se ha eliminado"
+      ],
+      "Version is restored": [
+        "Versión restaurada"
+      ],
       "Version number successfully copied to clipboard": [
         "El número de versión fue copiado en el portapapeles."
       ],
@@ -5598,8 +6820,18 @@
       "Waiting": [
         "Esperando"
       ],
+      "Want to sync files faster?": [
+        "¿Quieres sincronizar archivos más rápido?"
+      ],
       "Warning": [
         "Advertencia"
+      ],
+      "Way to go, you've just increased your storage to 5 GB!": [
+        "¡Muy bien, has ampliado tu almacenamiento a 5 GB!"
+      ],
+      "We couldn't save this photo to your Drive": [
+        "No hemos podido guardar esta foto en tu drive",
+        "No hemos podido guardar varias fotos en tu drive"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ nodeName }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "No se pudo verificar que ${ nameAuthor } subiera ${ nodeName }. El orden de los datos del archivo podría haber sido manipulado. Ábrelo solo si confías en él."
@@ -5616,11 +6848,27 @@
       "We use 3-D Secure to protect your payments": [
         "Se utiliza 3-D Secure para proteger tus pagos."
       ],
+      "We were not able to add this photo to your album": [
+        "No hemos podido añadir esta foto a tu álbum",
+        "No hemos podido añadir algunas fotos a tu álbum"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Te redirigiremos a ${ IDEAL_WERO_BRAND_NAME } en una nueva pestaña del navegador para completar esta transacción. Si utilizas algún bloqueador de ventanas emergentes, desactívalo para continuar."
+      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Te redirigiremos a PayPal en una nueva pestaña del navegador para completar esta transacción. Si utilizas cualquier bloqueador emergente, desactívalo para continuar."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Las copiaremos de Google Drive a ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Te enviaremos un correo electrónico cuando la importación se complete."
+      ],
+      "We'll email you when your import is complete.": [
+        "Te enviaremos un correo cuando termine la importación."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Te enviaremos un correo cuando termine la importación. Tus archivos aparecerán en una carpeta de ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Te contactaremos en breve."
@@ -5637,7 +6885,13 @@
       "Week": [
         "Semana"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }, for the first 10 minutes, any files you upload don't count toward your storage quota.": [
+        "Te damos la bienvenida a ${ DRIVE_APP_NAME }: durante los primeros 10 minutos, los archivos que subas no contarán para tu cuota de almacenamiento."
+      ],
       "What do you want to do?": [
+        "¿Qué quieres hacer?"
+      ],
+      "What would you like to do?": [
         "¿Qué quieres hacer?"
       ],
       "When working remotely": [
@@ -5646,11 +6900,17 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Cuando te conectas a una VPN, usas tecnología de cifrado para ocultar tu dirección IP (un código único asignado a tu dispositivo)."
       ],
+      "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
+        "Al eliminar ${ deviceName } como dispositivo sincronizado, todas las carpetas añadidas a Mis ordenadores desde este dispositivo se eliminarán permanentemente de ${ DRIVE_APP_NAME }."
+      ],
       "who": [
         "quién"
       ],
       "Who has access": [
         "Quién tiene acceso"
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "se restaurará a la versión del ${ formattedRevisionDate }. Todas las demás versiones se seguirán guardando."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
@@ -5658,17 +6918,33 @@
       "Would you like to receive a new verification code?": [
         "¿Quieres recibir un nuevo código de verificación?"
       ],
+      "Would you like to restore your files?": [
+        "¿Quieres restaurar tus archivos?"
+      ],
+      "Would you like to save it before removing?": [
+        "¿Quieres guardarla antes de eliminarla?",
+        "¿Quieres guardarlas antes de eliminarlas?"
+      ],
+      "Would you like to save them before removing?": [
+        "¿Quieres guardarlas antes de eliminarlas?"
+      ],
       "Writing assistant": [
         "Asistente de escritura"
       ],
       "Yes": [
         "Sí"
       ],
+      "Yesterday": [
+        "Ayer"
+      ],
       "you": [
         "tú"
       ],
       "You already have a free account": [
         "Ya tienes una cuenta gratuita."
+      ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Estás a punto de salir del elemento compartido. No podrás volver a acceder a él hasta que el propietario lo comparta de nuevo contigo."
       ],
       "You are about to open another browser tab and visit:": [
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
@@ -5714,8 +6990,15 @@
       "You cannot undo this action.": [
         "No se puede deshacer esta acción."
       ],
+      "You don't have permission to copy files to this folder.": [
+        "No tienes permiso para copiar archivos en esta carpeta."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Recibe notificaciones si tu contraseña u otro dato fue filtrado desde un servicio de terceros."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Te queda ${ expiresInDays } día para reclamar tu bonus de bienvenida de 3 GB y ",
+        "Te quedan ${ expiresInDays } días para reclamar tu bonus de bienvenida de 3 GB y "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Tiene una suscripción de prueba ${ planTitle }. Si deseas continuar tu suscripción después del periodo de prueba, añade un método de pago."
@@ -5723,8 +7006,17 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Tiene una suscripción de prueba ${ planTitle }. No se requiere un pago en este momento. Tu suscripción será renovada automáticamente al finalizar el periodo de prueba."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Tienes una factura pendiente ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Tienes una factura pendiente con vencimiento el ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You may be redirected to your bank’s website.": [
         "Puedes ser redirigido al sitio web de tu banco."
+      ],
+      "You need access": [
+        "Necesitas acceso"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderás el acceso a las funciones de ${ planTitle } en esta fecha."
@@ -5732,8 +7024,15 @@
       "You will lose all unsaved changes.": [
         "Perderás todos los cambios no guardados."
       ],
+      "You will need to save it again from the public link page.": [
+        "Tendrás que volver a guardarla desde la página del enlace público.",
+        "Tendrás que volver a guardarlas desde la página del enlace público."
+      ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se te cobrará si cancelas antes del ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "No podrás compartir «${ fileName }» después de cambiar tu acceso a visor. El propietario o un editor con acceso para compartir puede restaurar tu acceso de edición. No puedes deshacer este cambio por tu cuenta."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Recibirás la recompensa en créditos 1 mes después de que tu amigo se suscriba a un plan anual, y 2 meses después de que se suscriba a un plan mensual."
@@ -5769,8 +7068,14 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Tu cuenta está configurada actualmente para aplicar el régimen de inversión del sujeto pasivo, pero este no es compatible con el plan seleccionado. Para continuar, elimina el número de IVA de la dirección de facturación o selecciona un plan diferente."
       ],
+      "Your browser ran out of space while indexing files for search. Free up storage, then rebuild the index.": [
+        "Tu navegador se ha quedado sin espacio mientras indexaba archivos para la búsqueda. Libera espacio de almacenamiento y, a continuación, vuelve a crear el índice."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Tu Drive es demasiado grande para indexarlo por completo en este navegador, así que la búsqueda solo revisa tus elementos más recientes. Es posible que los archivos más antiguos no aparezcan en los resultados."
       ],
       "Your email address and password were leaked:": [
         "Tu dirección de correo electrónico y contraseña fueron filtradas:"
@@ -5781,17 +7086,38 @@
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
       ],
+      "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
+        "Tus archivos se están volviendo a indexar. Puedes seguir buscando, pero los resultados podrían estar incompletos hasta que termine. Te avisaremos cuando haya terminado."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Tus archivos están cifrados y almacenados de forma segura en ${ DRIVE_APP_NAME }."
+      ],
+      "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
+        "Tus archivos ya no son accesibles debido a un restablecimiento de contraseña. Vuelve a cargar la clave de cifrado antigua para recuperar el acceso. ${ KeyReactivationButton }"
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Tus archivos se han importado y cifrado correctamente de Google Drive a ${ DRIVE_APP_NAME }."
+      ],
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
       ],
       "Your files will be encrypted and then saved.": [
         "Se cifrarán y luego se guardarán tus archivos."
       ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Tu prueba gratuita ha terminado. Suscríbete ahora para mantener el acceso de tu equipo sin interrupciones y las cuentas seguras."
+      ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Tu prueba gratuita se convirtió correctamente en una suscripción ${ cycle }-mensual. Tu fecha de renovación es ${ nextBillingDate }."
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Tu prueba gratuita se convirtió correctamente en una suscripción mensual. Tu fecha de renovación es ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Es posible que tu Google Drive esté vacío o que solo contenga archivos no compatibles."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "La importación está bloqueada. Mejora tu plan ahora para traer el resto de tus archivos."
       ],
       "Your information was found on ${ displayedDate }": [
         "Se han encontrado tus datos el ${ displayedDate }."
@@ -5828,6 +7154,12 @@
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
         "Tu plan está limitado a 10 versiones y hasta 7 días."
+      ],
+      "Your previous password": [
+        "Tu contraseña anterior"
+      ],
+      "Your previous recovery phrase": [
+        "Tu frase de recuperación anterior"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
         "Tu plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } mes.",
@@ -5921,8 +7253,20 @@
       ]
     },
     "Label": {
+      "# of downloads": [
+        "Número de descargas"
+      ],
+      "${ albumProgress.added } of ${ albumProgress.total }": [
+        "${ albumProgress.added } de ${ albumProgress.total }"
+      ],
       "${ BRAND_NAME } username": [
         "Nombre de usuario de ${ BRAND_NAME }"
+      ],
+      "${ downloads } downloads": [
+        "${ downloads } descargas"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
       ],
       "${ n } month": [
         "${ n } mes",
@@ -5935,6 +7279,9 @@
       "${ nbYear } year": [
         "${ nbYear } año",
         "${ nbYear } años"
+      ],
+      "(Expired)": [
+        "(Caducado)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
@@ -5978,6 +7325,9 @@
       "Allow editors to change permissions and share": [
         "Permitir que los editores cambien los permisos y compartan"
       ],
+      "Allow editors to change permissions and share.": [
+        "Permitir a los editores cambiar los permisos y compartir."
+      ],
       "Amount": [
         "Cantidad"
       ],
@@ -5996,6 +7346,9 @@
       "App password": [
         "Contraseña de la aplicación"
       ],
+      "Applications in a business setting": [
+        "Aplicaciones para empresas"
+      ],
       "Apply to all duplicated files": [
         "Aplicar a todos los archivos duplicados"
       ],
@@ -6004,6 +7357,9 @@
       ],
       "Apply to all unverified items": [
         "Aplicar a todos los elementos no verificados"
+      ],
+      "Asset": [
+        "Recurso"
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
@@ -6062,6 +7418,12 @@
       "City": [
         "Ciudad"
       ],
+      "Client": [
+        "Cliente"
+      ],
+      "Client version": [
+        "Versión del cliente"
+      ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios."
       ],
@@ -6107,8 +7469,14 @@
       "Country": [
         "País"
       ],
+      "Create ${ BRAND_NAME } account": [
+        "Crear cuenta de ${ BRAND_NAME }"
+      ],
       "Created": [
         "Creado"
+      ],
+      "Created ${ created }": [
+        "Creado ${ created }"
       ],
       "Credits": [
         "Créditos"
@@ -6119,14 +7487,33 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete drive?": [
+        "¿Eliminar unidad?",
+        "¿Eliminar unidades?"
+      ],
       "Delete link and remove access for everyone": [
         "Eliminar enlace y quitar el acceso a todos"
       ],
       "Delete recovery-related information.": [
         "Eliminar la información de recuperación."
       ],
+      "Deleted": [
+        "Eliminado"
+      ],
+      "Deleted ${ deleted }": [
+        "Eliminado ${ deleted }"
+      ],
       "Device": [
         "Dispositivo"
+      ],
+      "Device #${ position }": [
+        "Dispositivo n.º ${ position }"
+      ],
+      "Device name": [
+        "Nombre del dispositivo"
+      ],
+      "Device: ${ name }": [
+        "Dispositivo: ${ name }"
       ],
       "Disable this link on a specific date": [
         "Desactivar este enlace en una fecha específica"
@@ -6176,8 +7563,20 @@
       "Encrypt emails": [
         "Cifrar correos electrónicos"
       ],
+      "Enter device name": [
+        "Nombre del dispositivo"
+      ],
+      "Environment compatible": [
+        "Entorno compatible"
+      ],
+      "Expired on ${ formatted }": [
+        "Caducado el ${ formatted }"
+      ],
       "Expires": [
         "Expira"
+      ],
+      "Expires ${ formatted }": [
+        "Caduca ${ formatted }"
       ],
       "Expiry": [
         "Caducidad"
@@ -6224,6 +7623,9 @@
       "IBAN": [
         "IBAN"
       ],
+      "Image": [
+        "Imagen"
+      ],
       "Import all messages": [
         "Importar todos los mensajes"
       ],
@@ -6241,6 +7643,12 @@
       ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
+      ],
+      "Index kinds": [
+        "Tipos de índice"
+      ],
+      "Indexing": [
+        "Indexación"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -6272,6 +7680,9 @@
       "Location": [
         "Ubicación"
       ],
+      "Location: ${ item.location }": [
+        "Ubicación: ${ item.location }"
+      ],
       "Log in or sign up ": [
         "Iniciar sesión o registrarte "
       ],
@@ -6293,6 +7704,9 @@
       "Modified": [
         "Modificado"
       ],
+      "Modified ${ modified }": [
+        "Modificado ${ modified }"
+      ],
       "Move to Archive": [
         "Mover al archivo"
       ],
@@ -6302,6 +7716,9 @@
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
       ],
+      "My Albums": [
+        "Mis álbumes"
+      ],
       "Name": [
         "Nombre"
       ],
@@ -6310,6 +7727,9 @@
       ],
       "Never": [
         "Nunca"
+      ],
+      "Never expires": [
+        "No caduca nunca"
       ],
       "New password": [
         "Nueva contraseña"
@@ -6338,6 +7758,9 @@
       "Other": [
         "Otros"
       ],
+      "Outdated version": [
+        "Versión obsoleta"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -6353,11 +7776,17 @@
       "Payment method": [
         "Método de pago"
       ],
+      "Pending invitation": [
+        "Invitación pendiente"
+      ],
       "PGP scheme": [
         "Esquema PGP"
       ],
       "Phone number": [
         "Número de teléfono"
+      ],
+      "Photo": [
+        "Foto"
       ],
       "Please provide full details to help us take appropriate action": [
         "Indica todos los detalles para ayudarnos a actuar de forma apropiada."
@@ -6395,6 +7824,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
       ],
+      "Searchable": [
+        "Buscable"
+      ],
       "Select type of abuse": [
         "Selecciona el tipo de abuso."
       ],
@@ -6404,8 +7836,29 @@
       "Set a password to limit access via link": [
         "Establece una contraseña para limitar el acceso mediante enlace"
       ],
+      "Set recovery method": [
+        "Configurar método de recuperación"
+      ],
+      "Share a file, folder, or album": [
+        "Comparte un archivo, una carpeta o un álbum"
+      ],
       "Shared": [
         "Compartido"
+      ],
+      "Shared by": [
+        "Compartido por"
+      ],
+      "Shared by ${ sharedBy }": [
+        "Compartido por ${ sharedBy }"
+      ],
+      "Shared by Public link": [
+        "Compartido mediante enlace público"
+      ],
+      "Shared on": [
+        "Compartido el"
+      ],
+      "Shared on ${ sharedOn }": [
+        "Compartido el ${ sharedOn }"
       ],
       "Shared with me": [
         "Compartido conmigo"
@@ -6464,6 +7917,9 @@
       "Theme": [
         "Tema"
       ],
+      "This will permanently delete all files in your locked drive.": [
+        "Esto eliminará permanentemente todos los archivos de tu unidad bloqueada."
+      ],
       "Thomas": [
         "Andrea"
       ],
@@ -6473,11 +7929,26 @@
       "Toolbar": [
         "Barra de herramientas"
       ],
+      "Unlock drive": [
+        "Desbloquear Drive"
+      ],
+      "Unlock drive (recommended)": [
+        "Desbloquear Drive (recomendado)"
+      ],
+      "Unlock later": [
+        "Desbloquear más tarde"
+      ],
       "Upload picture": [
         "Cargar imagen"
       ],
+      "Upload your first file": [
+        "Sube tu primer archivo"
+      ],
       "Uploaded by": [
         "Cargado por"
+      ],
+      "User opted in": [
+        "Usuario inscrito"
       ],
       "Username": [
         "Nombre de usuario"
@@ -6490,6 +7961,9 @@
       ],
       "Viewer": [
         "Lector"
+      ],
+      "Visible columns:": [
+        "Columnas visibles:"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -6508,6 +7982,9 @@
       ],
       "Why would you like to cancel?": [
         "¿Por qué quieres cancelar?"
+      ],
+      "Yes, I want to permanently delete my old files": [
+        "Sí, quiero eliminar permanentemente mis archivos antiguos"
       ],
       "Your IP": [
         "Tu IP"
@@ -6593,8 +8070,14 @@
       "Add a gift code": [
         "Añadir código promocional"
       ],
+      "Albums": [
+        "Álbumes"
+      ],
       "clearing your browser cache": [
         "limpiando la memoria caché de tu navegador"
+      ],
+      "Customer Support": [
+        "Servicio al cliente"
       ],
       "Enforcing 2FA for organizations": [
         "Implementar 2FA para organizaciones"
@@ -6653,6 +8136,12 @@
       "Pay invoice": [
         "Pagar factura"
       ],
+      "Pay it": [
+        "Págala"
+      ],
+      "Photos": [
+        "Fotos"
+      ],
       "Reactivate now": [
         "Reactivar"
       ],
@@ -6667,6 +8156,12 @@
       ],
       "settings": [
         "ajustes"
+      ],
+      "Shared": [
+        "Compartidos"
+      ],
+      "Shared with me": [
+        "Compartido conmigo"
       ],
       "Terms and conditions": [
         "Términos y condiciones"
@@ -6766,8 +8261,14 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Añadir el asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Añadir el asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ],
       "Add-on with free trial": [
         "Complemento con prueba gratuita"
@@ -6786,6 +8287,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "Plazas de ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } por usuario"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
@@ -7189,6 +8693,15 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ],
       "${ n } calendar": [
         "${ n } calendario",
@@ -7672,6 +9185,9 @@
       ]
     },
     "new_plans: info": {
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } que termina en ${ Last4 }"
+      ],
       "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "1 TB de almacenamiento en la nube que te permite almacenar, sincronizar y compartir archivos fácilmente. Asegurado por cifrado de extremo a extremo."
       ],
@@ -8013,12 +9529,31 @@
         "Soporte para ${ n } dominios de correo electrónico personalizado"
       ]
     },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Pruébalo ahora"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ya tienes acceso al nuevo ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" copiado"
+      ],
       "\"${ ellipsedName }\" created successfully": [
         "\"${ ellipsedName }\" creado"
       ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "Se ha eliminado permanentemente \"${ ellipsedName }\" de la papelera."
+      ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" se ha movido"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" se ha restaurado de la papelera"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" compartido"
@@ -8038,13 +9573,33 @@
       "\"${ newName }\" renamed successfully": [
         "Se ha renombrado \"${ newName }\"."
       ],
+      "${ addedUids.length } photo have been added to \"${ albumName }\"": [
+        "${ addedUids.length } foto se ha añadido a «${ albumName }»",
+        "${ addedUids.length } fotos se han añadido a «${ albumName }»"
+      ],
       "${ count } item failed to be decrypted": [
         "Error al descifrar ${ count } elemento",
         "Error al descifrar ${ count } elementos"
       ],
+      "${ errors.length } item failed to be copied": [
+        "No se ha podido copiar ${ errors.length } elemento",
+        "No se han podido copiar ${ errors.length } elementos"
+      ],
       "${ errors.length } item failed to be deleted": [
         "No se pudo eliminar ${ errors.length } elemento",
         "No se pudieron eliminar ${ errors.length } elementos"
+      ],
+      "${ errors.length } item failed to be trashed": [
+        "No se ha podido mover a la papelera ${ errors.length } elemento",
+        "No se han podido mover a la papelera ${ errors.length } elementos"
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } elemento copiado movido a la papelera",
+        "${ numberOfItems } elementos copiados movidos a la papelera"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } elemento copiado",
+        "${ numberOfItems } elementos copiados"
       ],
       "${ numberOfItems } item deleted permanently": [
         "${ numberOfItems } elemento eliminado permanentemente",
@@ -8076,11 +9631,18 @@
       "${ reason } has been enabled": [
         "Se ha activado ${ reason }."
       ],
+      "${ removed } photo have been removed from \"${ albumName }\"": [
+        "Se ha eliminado ${ removed } foto de \"${ albumName }\"",
+        "Se han eliminado ${ removed } fotos de \"${ albumName }\""
+      ],
       "Access for the member removed": [
         "Se ha eliminado el acceso para el miembro."
       ],
       "Access updated": [
         "Se ha actualizado el acceso."
+      ],
+      "All items deleted permanently from trash": [
+        "Todos los elementos se han eliminado permanentemente de la papelera"
       ],
       "Cannot load next page": [
         "Error al cargar la siguiente página"
@@ -8091,11 +9653,17 @@
       "Contact group updated": [
         "Grupo de contactos actualizado"
       ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "La copia de «${ ellipsedName }» se ha movido a la papelera"
+      ],
       "Device removed": [
         "El dispositivo está eliminado."
       ],
       "Device renamed": [
         "Dispositivo renombrado"
+      ],
+      "Error while listing devices": [
+        "Error al cargar los dispositivos"
       ],
       "Failed to accept share invitation": [
         "Se ha producido un error al aceptar la invitación compartida"
@@ -8108,6 +9676,18 @@
       ],
       "Failed to reject share invitation": [
         "Se ha producido un error al rechazar la invitación compartida."
+      ],
+      "Failed to remove device": [
+        "Error al eliminar el dispositivo"
+      ],
+      "Failed to remove the file": [
+        "No se ha podido eliminar el archivo."
+      ],
+      "Failed to rename device": [
+        "Error al cambiar el nombre del dispositivo"
+      ],
+      "File removed": [
+        "Archivo eliminado"
       ],
       "Invitation's email was sent again": [
         "Se ha enviado de nuevo el correo de invitación."
@@ -8130,6 +9710,14 @@
       "Public link access updated": [
         "Se ha actualizado el acceso al enlace público."
       ],
+      "Selected item was not removed from your list": [
+        "No se ha podido quitar el elemento seleccionado de tu lista",
+        "No se han podido quitar los elementos seleccionados de tu lista"
+      ],
+      "Selected item was successfully removed from your list": [
+        "Se ha quitado el elemento seleccionado de tu lista",
+        "Se han quitado los elementos seleccionados de tu lista"
+      ],
       "Setting updated. Editors can change permissions and share.": [
         "Configuración actualizada. Los editores pueden cambiar permisos y compartir."
       ],
@@ -8145,8 +9733,17 @@
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"
       ],
+      "The item was not added to your drive": [
+        "El elemento no se ha añadido a tu drive"
+      ],
+      "The item was successfully added to your drive": [
+        "El elemento se ha añadido correctamente a tu unidad"
+      ],
       "The link to your item was deleted": [
         "Se ha eliminado el enlace a tu elemento."
+      ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "Este enlace seguro ha caducado. Cambia la fecha de caducidad en los ajustes de uso compartido"
       ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
@@ -8157,6 +9754,9 @@
       "Your ${ BRAND_NAME } address is ready to use": [
         "Tu dirección de ${ BRAND_NAME } ya está lista para usar"
       ],
+      "Your old files will be deleted in 72 hours": [
+        "Tus archivos antiguos se eliminarán en 72 horas"
+      ],
       "Your settings have been changed successfully": [
         "Se ha modificado tu configuración."
       ]
@@ -8164,6 +9764,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Algunas imágenes no se han cargado debido a archivos duplicados en la selección actual."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "El álbum se ha renombrado correctamente"
       ]
     },
     "Oauth instructions": {
@@ -8211,6 +9816,9 @@
       ],
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Última oportunidad para obtener un 80 % de descuento en tu primer mes de ${ plan }."
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunidad de obtener tu primer mes de ${ plan } a este precio."
       ],
       "Last day to save": [
         "Último día para ahorrar"
@@ -8294,6 +9902,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Dirección corta @pm.me"
+      ],
       "Storage": [
         "Almacenamiento"
       ],
@@ -8309,9 +9920,187 @@
         "Te damos la bienvenida a ${ appName }"
       ]
     },
+    "Onboarding Action": {
+      "Continue": [
+        "Continuar"
+      ],
+      "Create a document": [
+        "Crear un documento"
+      ],
+      "Get started": [
+        "Empezar"
+      ],
+      "Install and continue": [
+        "Instalar y continuar"
+      ],
+      "Install later": [
+        "Instalar más tarde"
+      ],
+      "Invite members": [
+        "Invitar a miembros"
+      ],
+      "Maybe Later": [
+        "Quizá más tarde"
+      ],
+      "Maybe later": [
+        "Quizás más tarde"
+      ],
+      "Select theme": [
+        "Selecciona el tema"
+      ],
+      "Skip": [
+        "Omitir"
+      ],
+      "Skip for now": [
+        "Omitir por ahora"
+      ],
+      "Try the app": [
+        "Prueba la aplicación"
+      ],
+      "Upload file": [
+        "Subir archivo"
+      ],
+      "Upload folder": [
+        "Subir carpeta"
+      ],
+      "Upload more files": [
+        "Subir más archivos"
+      ]
+    },
+    "Onboarding Info": {
+      "10 minutes": [
+        "10 minutos"
+      ],
+      "Access your files on the go": [
+        "Accede a tus archivos allá donde estés"
+      ],
+      "Back up your photos and memories": [
+        "Haz una copia de seguridad de tus fotos y recuerdos"
+      ],
+      "Backup your photos and memories": [
+        "Haz copia de seguridad de tus fotos y recuerdos"
+      ],
+      "Choose your favorite theme": [
+        "Elige tu tema favorito"
+      ],
+      "Collaborate on documents": [
+        "Colabora en documentos"
+      ],
+      "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
+        "¿Prefieres ${ DRIVE_APP_NAME } en modo claro u oscuro? Selecciona el color que más te inspire."
+      ],
+      "Drag and drop your files here": [
+        "Arrastra y suelta tus archivos aquí"
+      ],
+      "Edit documents online": [
+        "Edita documentos en línea"
+      ],
+      "End-to-end encrypted storage for your files": [
+        "Almacenamiento cifrado de extremo a extremo para tus archivos"
+      ],
+      "Faster uploads for large or multiple files": [
+        "Cargas más rápidas para archivos grandes o varios archivos"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Los archivos que subas durante este tiempo no contarán para tu límite de almacenamiento."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Los archivos que subas ahora no contarán para tu límite de almacenamiento"
+      ],
+      "Final approval in progress": [
+        "Aprobación final en curso"
+      ],
+      "Final approval pending": [
+        "Aprobación final pendiente"
+      ],
+      "Free up hard drive space on your computer": [
+        "Libera espacio en el disco duro de tu ordenador"
+      ],
+      "Get the desktop app": [
+        "Obtén la aplicación de escritorio"
+      ],
+      "Get the mobile app": [
+        "Descarga la app para móvil"
+      ],
+      "Got an Android? We've got you covered.": [
+        "¿Tienes Android? Te tenemos cubierto."
+      ],
+      "Got an iPhone? We've got you covered.": [
+        "¿Tienes un iPhone? Tenemos todo lo que necesitas."
+      ],
+      "Hang tight": [
+        "Espera un momento"
+      ],
+      "Invitation accepted": [
+        "Invitación aceptada"
+      ],
+      "Invitation received": [
+        "Invitación recibida"
+      ],
+      "Invite team members": [
+        "Invita a los miembros del equipo"
+      ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Sigue así y sube más archivos con el almacenamiento incluido en tu plan."
+      ],
+      "Manage access": [
+        "Gestionar acceso"
+      ],
+      "Organize files right from your desktop": [
+        "Organiza tus archivos directamente desde tu escritorio"
+      ],
+      "Protect your financial documents, ID cards, project files, photos, and more with end-to-end encryption.": [
+        "Protege tus documentos financieros, tarjetas de identidad, archivos de proyectos, fotos y más con cifrado de extremo a extremo."
+      ],
+      "Scan the QR code to install the mobile app": [
+        "Escanea el código QR para instalar la aplicación móvil"
+      ],
+      "Secure your files": [
+        "Protege tus archivos"
+      ],
+      "Securely share files and folders": [
+        "Comparte archivos y carpetas de forma segura"
+      ],
+      "Share files & folders": [
+        "Comparte archivos y carpetas"
+      ],
+      "Sync and access your files from anywhere": [
+        "Sincroniza y accede a tus archivos desde cualquier lugar"
+      ],
+      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
+        "El propietario debe confirmar el acceso compartido. Recibirás un correo electrónico cuando lo haya confirmado."
+      ],
+      "Upload your first file": [
+        "Sube tu primer archivo"
+      ],
+      "Work faster, smarter": [
+        "Trabaja más rápido y de forma más inteligente"
+      ],
+      "Work together": [
+        "Trabaja en equipo"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "¡Acabas de conseguir datos gratis y has protegido tus archivos con cifrado de extremo a extremo － en tiempo récord!"
+      ]
+    },
     "Onboarding Trial": {
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " visita nuestro ${ helpCenterLink } o contacta a nuestro ${ contactSupportLink }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Añade un método de pago** para seguir usando todas las funciones cuando termine tu prueba."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancela en cualquier momento antes de esa fecha.** Podrás usar ${ planTitle } hasta que termine la prueba, sin coste."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si continúas después de tu prueba,** puedes cancelar en un plazo de 30 días y obtener un reembolso prorrateado."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Cuando empiece tu suscripción completa...** Aún puedes cancelar en un plazo de 30 días y obtener un reembolso prorrateado."
+      ],
+      "Add a payment method": [
+        "Añade un método de pago"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancela en cualquier momento antes del ${ cancelDate }."
@@ -8328,11 +10117,20 @@
       "help center": [
         "centro de ayuda"
       ],
+      "If you continue after your trial,": [
+        "Si continúas después de tu prueba,"
+      ],
       "If you need help,": [
         "Si necesitas ayuda,"
       ],
       "Once your full subscription starts...": [
         "Una vez que comience tu suscripción completa..."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "para seguir usando todas las funciones cuando termine tu prueba."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puedes cancelar en un plazo de 30 días y obtener un reembolso prorrateado."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Todavía puedes cancelar en un plazo de 30 días y obtener un reembolso proporcional."
@@ -8357,11 +10155,29 @@
       "Create new group": [
         "Crear grupo"
       ],
+      "Expected structure": [
+        "Estructura esperada"
+      ],
       "Ignore group": [
         "Ignorar grupo"
       ],
       "No parent folder": [
         "No hay carpeta superior."
+      ],
+      "Only current location": [
+        "Solo ubicación actual"
+      ],
+      "Only current location: ${ name }": [
+        "Solo ubicación actual: ${ name }"
+      ],
+      "Select JSON file": [
+        "Selecciona el archivo JSON"
+      ],
+      "Verify content": [
+        "Verificar contenido"
+      ],
+      "Verify thumbnails": [
+        "Verificar miniaturas"
       ]
     },
     "Option group label": {
@@ -8494,6 +10310,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (impuestos no incluidos)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "No se puede combinar ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } con ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } solo está disponible en los planes para empresas."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% de impuesto: ${ taxAmountElement }"
       ],
@@ -8503,8 +10325,20 @@
       "Amount due after trial on ${ formattedDate }": [
         "Cantidad a pagar después de la prueba el ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Este plan requiere una organización."
+      ],
       "Billing Country": [
         "País de facturación"
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "No se pueden comprar cuentas Born Private con una suscripción activa."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Para comprar créditos se requiere una compra aparte."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Al cambiar, aceptas nuestros ${ termsLink }."
       ],
       "Card number": [
         "Número de tarjeta"
@@ -8545,17 +10379,38 @@
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas."
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Solo se puede comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Paga con ${ IDEAL_WERO_BRAND_NAME }"
+      ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pago necesario para que la suscripción se active después de que termine la prueba."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "El cambio de plan no es compatible por los siguientes motivos:"
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Cierra las cuentas de cartera adicionales antes de cambiar de plan."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Cierra las carteras adicionales antes de cambiar de plan."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Las plazas de Proton Meet deben coincidir con el número de miembros."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Precio de renovación sujeta a cambios de acuerdo a ${ termsAndConditionsLink }"
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Las licencias de Scribe no pueden superar el número de miembros."
       ],
       "Tax ${ rate }%": [
         "Impuesto ${ rate }%"
@@ -8566,9 +10421,24 @@
       "terms and conditions": [
         "términos y condiciones"
       ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requiere una donación."
+      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "El descuento es válido para ${ renewalsWithCoupon } renovación.",
         "El descuento es válido para ${ renewalsWithCoupon } renovaciones."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "El plan seleccionado no ofrece suficientes direcciones para tu cuenta."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "El plan seleccionado no ofrece suficientes dominios para tu cuenta."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "El plan seleccionado no ofrece suficientes miembros para tu cuenta."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "El plan seleccionado no ofrece suficiente almacenamiento para tu cuenta."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "El precio con descuento especial es válido durante ${ couponRedemptions } mes. Después, se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puedes cancelar en cualquier momento.",
@@ -8599,14 +10469,41 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Esta acción amplía la suscripción existente. Se te cobrará solo por los nuevos complementos y el tiempo restante del ciclo de facturación actual. La fecha de renovación de tu suscripción no cambiará."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Este servidor dedicado está asignado a una pasarela y no se puede cambiar."
+      ],
       "This offer is not available with your current plan.": [
         "Esta oferta no está disponible con tu plan actual."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este se convertirá en tu nuevo método de pago por defecto para todas las futuras renovaciones."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Este plan no admite las funciones gestionadas de tu cuenta."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Este plan no admite los miembros de tu cuenta."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "No se puede completar esta suscripción en este momento. Vuelve a intentarlo."
+      ],
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Los planes de prueba no admiten licencias de ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Los planes de prueba no admiten dominios personalizados."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Los planes de prueba no admiten IP dedicadas."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Los planes de prueba no admiten licencias de Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Los planes de prueba no admiten tantos miembros."
       ],
       "VAT number": [
         "Número de IVA"
@@ -8620,11 +10517,23 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Ya tienes una suscripción a este plan. Puedes cambiar tu suscripción en ${ subscriptionPlatform }."
       ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Ya tienes ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own a Born Private account.": [
+        "Ya tienes una cuenta Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
       "You will soon be redirected to verify your payment.": [
         "Pronto serás redirigido para verificar tu pago."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Tu cuenta es demasiado antigua para la iniciativa Born Private."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Tu moneda se ha cambiado a euros (€) porque ${ IDEAL_WERO_BRAND_NAME } solo admite pagos en euros."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Tu moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo soportan pagos en euros."
@@ -8637,6 +10546,9 @@
       ]
     },
     "Payments.Error": {
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "No se ha podido inicializar ${ IDEAL_WERO_BRAND_NAME }. Inténtalo de nuevo más tarde."
+      ],
       "Invalid card number": [
         "El número de tarjeta ingresado no es válido."
       ],
@@ -8664,12 +10576,22 @@
         "Se ha producido un error. Falló la verificación de Google Pay."
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Al confirmar, autorizas a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a cobrar los pagos futuros de tu suscripción desde esta cuenta bancaria mediante adeudo directo SEPA, y a tu banco a realizar esos cargos. Tu primer pago se realiza ahora mediante ${ IDEAL_WERO_BRAND_NAME }. Tu plan se renueva automáticamente hasta que canceles; te avisaremos antes de cada cobro. En los cobros por adeudo directo puedes solicitar un reembolso a tu banco en un plazo de 8 semanas desde la fecha del cargo, según las condiciones de tu acuerdo con tu banco. Esto no se aplica al pago con ${ IDEAL_WERO_BRAND_NAME } que estás realizando ahora."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no utilizada de tu suscripción al plan anterior"
       ],
       "Credits will be added to your balance": [
         "Se añadirán créditos a tu saldo."
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Cambiar tu dirección de facturación puede afectar a los impuestos de las próximas facturas."
       ]
     },
     "Payments.ModificationWarning": {
@@ -8706,6 +10628,17 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "El precio de renovación depende de la región de facturación y del número de IVA."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - tarjeta que termina en ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferencia bancaria - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - tarjeta que termina en ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -8794,6 +10727,9 @@
       "Anytown": [
         "Valclaro"
       ],
+      "Ask anything…": [
+        "Pregunta lo que quieras…"
+      ],
       "Choose password": [
         "Elegir una contraseña"
       ],
@@ -8812,8 +10748,14 @@
       "Enter a name": [
         "Introduce un nombre"
       ],
+      "Enter a new file name": [
+        "Introduce un nuevo nombre de archivo"
+      ],
       "Enter a new folder name": [
         "Introduce un nombre nuevo para la carpeta."
+      ],
+      "Enter device name": [
+        "Introduce el nombre del dispositivo"
       ],
       "Enter your email address": [
         "Introduce tu dirección de correo electrónico."
@@ -8965,6 +10907,26 @@
         "Progreso: ${ combinedProgress }%"
       ]
     },
+    "Property": {
+      "attributes": [
+        "atributos"
+      ],
+      "content key": [
+        "clave de contenido"
+      ],
+      "hash key": [
+        "clave hash"
+      ],
+      "key": [
+        "clave"
+      ],
+      "membership": [
+        "pertenencia"
+      ],
+      "name": [
+        "nombre"
+      ]
+    },
     "Property type": {
       "Address": [
         "Dirección"
@@ -9091,6 +11053,9 @@
       ]
     },
     "Role": {
+      "Organization Admin": [
+        "Administrador de la organización"
+      ],
       "Security Admin": [
         "Administrador de seguridad"
       ],
@@ -10074,14 +12039,57 @@
       ]
     },
     "Subtitle": {
+      "Albums shared with you will appear here": [
+        "Los álbumes compartidos contigo aparecerán aquí"
+      ],
+      "Albums you've shared will appear here": [
+        "Aquí aparecerán los álbumes que compartas"
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importa tus archivos y carpetas de Google Drive y mantenlos privados en ${ DRIVE_APP_NAME }."
+      ],
       "Shared by ${ sharedBy }": [
         "Compartido por ${ sharedBy }"
+      ],
+      "Your favorited photos will appear here": [
+        "Tus fotos favoritas aparecerán aquí"
+      ],
+      "Your Live Photos will appear here": [
+        "Tus Live Photos aparecerán aquí"
+      ],
+      "Your panorama photos will appear here": [
+        "Tus fotos panorámicas aparecerán aquí"
+      ],
+      "Your photo bursts will appear here": [
+        "Tus ráfagas de fotos aparecerán aquí"
+      ],
+      "Your portraits photos will appear here": [
+        "Tus fotos de retratos aparecerán aquí"
+      ],
+      "Your RAW photos will appear here": [
+        "Tus fotos RAW aparecerán aquí"
+      ],
+      "Your screenshots will appear here": [
+        "Tus capturas de pantalla aparecerán aquí"
+      ],
+      "Your selfies photos will appear here": [
+        "Tus selfies aparecerán aquí"
+      ],
+      "Your tagged photos will appear here": [
+        "Tus fotos etiquetadas aparecerán aquí"
+      ],
+      "Your videos will appear here": [
+        "Tus vídeos aparecerán aquí"
       ]
     },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contacto parece idéntico.",
         "${ countMergeableContacts } contactos parecen idénticos."
+      ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } restante",
+        "${ countOfUnrecoveredLinksLeft } restantes"
       ],
       "Address copied to clipboard": [
         "Dirección copiada al portapapeles"
@@ -10144,6 +12152,9 @@
       ],
       "Problem reported": [
         "Se ha notificado el problema."
+      ],
+      "Recovery has started": [
+        "La recuperación ha comenzado"
       ],
       "Secure link copied": [
         "Se ha copiado el enlace seguro."
@@ -10254,6 +12265,35 @@
         "Campo vCard"
       ]
     },
+    "Tag": {
+      "Bursts": [
+        "Ráfagas"
+      ],
+      "Favorites": [
+        "Favoritos"
+      ],
+      "Live Photos": [
+        "Live Photos"
+      ],
+      "Panoramas": [
+        "Panorámicas"
+      ],
+      "Portraits": [
+        "Retratos"
+      ],
+      "RAW": [
+        "RAW"
+      ],
+      "Screenshots": [
+        "Capturas de pantalla"
+      ],
+      "Selfies": [
+        "Selfies"
+      ],
+      "Videos": [
+        "Vídeos"
+      ]
+    },
     "Time unit": {
       "${ ceilDays } day": [
         "${ ceilDays } día",
@@ -10282,6 +12322,9 @@
       ],
       "${ feature } is now active": [
         "La funcionalidad ${ feature } ya está activada."
+      ],
+      "${ freeUploadLength } of free uploads.": [
+        "${ freeUploadLength } de subidas gratuitas."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Asistente de escritura de ${ LUMO_SHORT_APP_NAME }"
@@ -10332,6 +12375,9 @@
       "Album details": [
         "Detalles del álbum"
       ],
+      "Albums": [
+        "Álbumes"
+      ],
       "All settings": [
         "Todos los ajustes"
       ],
@@ -10350,6 +12396,10 @@
       "Are you sure you want to close the preview?": [
         "¿Estás seguro de que quieres cerrar la previsualización?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "¿Seguro que quieres quitar este elemento de tu lista?",
+        "¿Seguro que quieres quitar esos elementos de tu lista?"
+      ],
       "Are you sure?": [
         "¿Estás seguro?"
       ],
@@ -10364,6 +12414,9 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
+        "Trae tus archivos de Google Drive a ${ DRIVE_APP_NAME }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar la subscripción a ${ MAIL_SHORT_APP_NAME }"
@@ -10410,6 +12463,9 @@
       "Computers": [
         "Ordenadores"
       ],
+      "Confirmation required": [
+        "Se requiere confirmación"
+      ],
       "Connect apps and devices": [
         "Conectar aplicaciones y dispositivos"
       ],
@@ -10439,6 +12495,9 @@
       ],
       "Coupon": [
         "Cupón"
+      ],
+      "Create a new file": [
+        "Crear un archivo nuevo"
       ],
       "Create a new folder": [
         "Crear una carpeta"
@@ -10515,6 +12574,9 @@
       "Devices": [
         "Dispositivos"
       ],
+      "Diagnostics": [
+        "Diagnóstico"
+      ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Firma digital parcialmente verificada. Este archivo fue creado usando un enlace compartido de acceso público por un usuario sin una cuenta ${ BRAND_NAME }, por lo que su identidad no puede ser verificada."
       ],
@@ -10566,8 +12628,17 @@
       "Download unverified folder?": [
         "¿Descargar carpeta no verificada?"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Drop to upload": [
         "Soltar para cargar"
+      ],
+      "Easy switch": [
+        "Easy Switch"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch desde Google Drive"
       ],
       "Edit billing address": [
         "Editar la dirección de la factura"
@@ -10602,6 +12673,9 @@
       "Enable advanced account protection": [
         "Activar la protección avanzada de la cuenta"
       ],
+      "Enable drive search": [
+        "Activar la búsqueda de Drive"
+      ],
       "Enhance security with 2FA": [
         "Mejora la seguridad con 2FA"
       ],
@@ -10617,11 +12691,21 @@
       "File details": [
         "Detalles del archivo"
       ],
+      "File recovery process": [
+        "Proceso de recuperación de archivos"
+      ],
       "Folder": [
         "Carpeta"
       ],
       "Folder details": [
         "Detalles de la carpeta"
+      ],
+      "Found ${ resultCount } result": [
+        "Se ha encontrado ${ resultCount } resultado",
+        "Se han encontrado ${ resultCount } resultados"
+      ],
+      "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
+        "Descarga ${ DRIVE_SHORT_APP_NAME } en tu teléfono"
       ],
       "Get **${ referralInfo.uiData.refereeRewardAmount }** in credits with ${ planTitle }": [
         "Consigue **${ referralInfo.uiData.refereeRewardAmount }** en créditos con ${ planTitle }"
@@ -10629,17 +12713,26 @@
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Obtén acceso completo a ${ CALENDAR_APP_NAME }"
       ],
+      "Get mobile and desktop apps": [
+        "Descarga las aplicaciones para móvil y escritorio"
+      ],
       "Get more from your VPN": [
         "Obtén más de tu VPN"
       ],
       "Get more storage with ${ MAIL_APP_NAME } Plus": [
         "Consigue más almacenamiento con ${ MAIL_APP_NAME } Plus"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Empieza con 10 minutos de subidas gratis, por cuenta de la casa."
+      ],
       "Get the apps": [
         "Obtener las aplicaciones"
       ],
       "Gift": [
         "Regalo"
+      ],
+      "Global": [
+        "Global"
       ],
       "Groups": [
         "Grupos"
@@ -10684,8 +12777,17 @@
       "Import groups": [
         "Importar grupos"
       ],
+      "Import started": [
+        "Importación iniciada"
+      ],
+      "Import started, but your storage won't be enough for this import": [
+        "La importación se ha iniciado, pero tu almacenamiento no será suficiente para esta importación"
+      ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importado por ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Index populators": [
+        "Generadores de índice"
       ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
@@ -10699,11 +12801,23 @@
       "Last uploaded by": [
         "Subido por última vez por"
       ],
+      "Level": [
+        "Nivel"
+      ],
       "Link confirmation": [
         "Confirmación de enlace"
       ],
       "Location": [
         "Ubicación"
+      ],
+      "Logger": [
+        "Registro"
+      ],
+      "Logs": [
+        "Registros"
+      ],
+      "Make a copy": [
+        "Crear una copia"
       ],
       "Make a secure connection your default": [
         "Elige una conexión segura como opción predeterminada"
@@ -10717,6 +12831,9 @@
       "Merging contacts": [
         "Combinando contactos"
       ],
+      "Message": [
+        "Mensaje"
+      ],
       "Migrate your organization to ${ BRAND_NAME }": [
         "Migra tu organización a ${ BRAND_NAME }."
       ],
@@ -10728,6 +12845,9 @@
       ],
       "Modified": [
         "Modificado"
+      ],
+      "More storage needed to finish your import": [
+        "Necesitas más almacenamiento para terminar la importación"
       ],
       "My files": [
         "Mis archivos"
@@ -10747,17 +12867,56 @@
       "Night theme": [
         "Tema de noche"
       ],
+      "No albums shared with me": [
+        "No hay álbumes compartidos contigo"
+      ],
       "No breaches detected": [
         "No se han detectado vulneraciones."
       ],
+      "No bursts": [
+        "No hay ráfagas"
+      ],
+      "No favorites": [
+        "No hay favoritos"
+      ],
+      "No Live Photos": [
+        "No hay Live Photos"
+      ],
+      "No panorama": [
+        "Sin panorámicas"
+      ],
+      "No photos": [
+        "No hay fotos"
+      ],
+      "No portraits": [
+        "No hay retratos"
+      ],
+      "No RAW": [
+        "No hay archivos RAW"
+      ],
       "No results found": [
         "No hay resultados"
+      ],
+      "No screenshots": [
+        "No hay capturas de pantalla"
+      ],
+      "No selfies": [
+        "No hay selfis"
+      ],
+      "No shared albums": [
+        "No hay álbumes compartidos"
+      ],
+      "No videos": [
+        "No hay vídeos"
       ],
       "Notes": [
         "Notas"
       ],
       "Number of downloads": [
         "Número de descargas"
+      ],
+      "Number of items": [
+        "Número de elementos"
       ],
       "One email, many recipients": [
         "Un correo electrónico, varios destinatarios"
@@ -10804,6 +12963,9 @@
       "Photos": [
         "Fotos"
       ],
+      "Preparing your import": [
+        "Preparando la importación"
+      ],
       "Preview": [
         "Vista previa"
       ],
@@ -10828,6 +12990,9 @@
       "Re-signing contacts": [
         "Volviendo a firmar los contactos"
       ],
+      "Ready, set, upload.": [
+        "Preparados, listos, ¡sube!"
+      ],
       "Recommended": [
         "Recomendado"
       ],
@@ -10846,6 +13011,10 @@
       "Remove device?": [
         "¿Eliminar el dispositivo?"
       ],
+      "Remove item?": [
+        "¿Quitar elemento?",
+        "¿Quitar elementos?"
+      ],
       "Remove your access?": [
         "¿Eliminar tu acceso?"
       ],
@@ -10854,6 +13023,9 @@
       ],
       "Rename a folder": [
         "Renombrar una carpeta"
+      ],
+      "Rename device": [
+        "Cambiar el nombre del dispositivo"
       ],
       "Report a problem": [
         "Notificar un problema"
@@ -10864,11 +13036,23 @@
       "Request sent": [
         "Solicitud enviada"
       ],
+      "Restore your files": [
+        "Restaura tus archivos"
+      ],
       "Reverse charge not supported": [
         "Inversión del sujeto pasivo no admitida"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Guardarlo para después en ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Buscar"
+      ],
+      "Search results": [
+        "Resultados de búsqueda"
+      ],
+      "Searching…": [
+        "Buscando…"
       ],
       "Security center": [
         "Centro de seguridad"
@@ -10921,6 +13105,9 @@
       "Shared with me": [
         "Compartido conmigo"
       ],
+      "Show actions": [
+        "Mostrar acciones"
+      ],
       "Sign in and grant access": [
         "Iniciar sesión y permitir acceso"
       ],
@@ -10960,6 +13147,9 @@
       "Stop transfers?": [
         "¿Parar transferencias?"
       ],
+      "Subscribe to ${ planTitle }": [
+        "Suscríbete a ${ planTitle }"
+      ],
       "Subscription canceled": [
         "Se ha cancelado la suscripción."
       ],
@@ -10986,6 +13176,12 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para previsualizar esta hoja de cálculo, ábrela en ${ SHEETS_APP_NAME } o descárgala."
+      ],
+      "Total size": [
+        "Tamaño total"
+      ],
+      "Trash": [
+        "Papelera"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activar ${ DARK_WEB_MONITORING_NAME }"
@@ -11059,6 +13255,9 @@
       "Warning: suspected fake website": [
         "Advertencia: sospecha de sitio web falso"
       ],
+      "We could not find anything to import": [
+        "No hemos encontrado nada que importar"
+      ],
       "We couldn’t verify that ${ author } created this file.": [
         "No se ha podido verificar que ${ author } haya creado este archivo."
       ],
@@ -11083,6 +13282,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "No pudimos verificar que un usuario anónimo subió esta carpeta."
       ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "No hemos podido confirmar que el contenido del archivo lo subiera ${ claimedContentAuthor }. El motivo es: ${ node.activeRevision.contentAuthor.error.error }"
+      ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "No hemos podido confirmar que ${ claimedNameAuthor } haya creado o modificado el nombre. El motivo es el siguiente: ${ node.nameAuthor.error.error }"
       ],
@@ -11092,8 +13294,14 @@
       "We'd love to hear from you!": [
         "Nos encantaría saber tu opinión"
       ],
+      "Welcome offer": [
+        "Oferta de bienvenida"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Te damos la bienvenida a ${ BRAND_NAME } for Business"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Te damos la bienvenida a ${ DRIVE_APP_NAME }"
       ],
       "What can a VPN protect you from?": [
         "¿De qué te puede proteger una VPN?"
@@ -11110,11 +13318,17 @@
       "You can now create unlimited folders and labels": [
         "Ahora puedes crear carpetas y etiquetas ilimitadas."
       ],
+      "You have inaccessible files": [
+        "Tienes archivos inaccesibles"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Tu prueba gratuita de ${ planName } Plus termina el ${ textDate }."
       ],
       "Your ${ planTitle } subscription has started": [
         "Tu suscripción a ${ planTitle } ha comenzado"
+      ],
+      "Your 3 GB bonus": [
+        "Tu bonificación de 3 GB"
       ],
       "Your account is protected": [
         "Tu cuenta está protegida."
@@ -11128,11 +13342,23 @@
       "Your exposed information": [
         "Tus datos expuestos"
       ],
+      "Your import is finished!": [
+        "¡Tu importación ha finalizado!"
+      ],
       "Your plan": [
         "Tu plan"
       ],
       "Your shorter address is now ready": [
         "Tu dirección en formato más corto ya está lista."
+      ],
+      "Your welcome actions": [
+        "Tus acciones de bienvenida"
+      ],
+      "You’re off to a great start!": [
+        "¡Vas muy bien encaminado!"
+      ],
+      "You’ve got 5 GB of storage": [
+        "Tienes 5 GB de almacenamiento"
       ]
     },
     "Title header for keys table": {
@@ -11245,6 +13471,9 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
       ],
+      "This link has expired. Please extend expiration date": [
+        "Este enlace ha caducado. Amplía la fecha de caducidad"
+      ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
       ],
@@ -11323,7 +13552,21 @@
         "El usuario debe tener una dirección para solicitar acceso a los datos"
       ]
     },
+    "Upsell": {
+      "Get Drive for Business": [
+        "Obtener Drive for Business"
+      ]
+    },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Este usuario obtendrá derechos de administrador la próxima vez que inicie sesión."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Mejora a un plan compatible para usar roles de administrador."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "No puedes cambiar tus propios roles. Pide a otro administrador que los cambie."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrás asignar roles una vez que el usuario haya aceptado la invitación."
       ]

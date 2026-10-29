@@ -4901,6 +4901,10 @@
       "They may ask to access your account in case of an emergency.": [
         "Μπορεί να ζητήσουν πρόσβαση στον λογαριασμό σας σε περίπτωση έκτακτης ανάγκης."
       ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Θα αποκτήσουν πρόσβαση αυτόματα σε **${ days } ημέρα**, στις **${ formattedAccessibleAt }**. Μπορείτε να απορρίψετε το αίτημά τους ή να τους δώσετε πρόσβαση άμεσα, οποιαδήποτε στιγμή.",
+        "Θα αποκτήσουν πρόσβαση αυτόματα σε **${ days } ημέρες**, στις **${ formattedAccessibleAt }**. Μπορείτε να απορρίψετε το αίτημά τους ή να τους δώσετε πρόσβαση άμεσα, οποιαδήποτε στιγμή."
+      ],
       "This will take effect immediately.": [
         "Αυτό θα τεθεί σε ισχύ άμεσα."
       ],
@@ -7308,9 +7312,6 @@
       "**This will disable 2-factor authentication.**": [
         "**Αυτό θα απενεργοποιήσει την ταυτοποίηση δύο παραγόντων.**"
       ],
-      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
-        "**Αλλάζουμε τη σελίδα σύνδεσης του ${ BRAND_NAME }.** Ο λογαριασμός και ο κωδικός πρόσβασής σας παραμένουν ίδιοι."
-      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Λαμβάνετε ${ referrerRewardAmount }** σε πιστώσεις για κάθε φίλο που εγγράφεται."
       ],
@@ -7474,6 +7475,9 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Επιτρέψτε στους χρήστες να συνδέονται σε διασφαλισμένους κοινόχρηστους διακομιστές από την ενότητα **Χώρες** της εφαρμογής ${ VPN_APP_NAME }."
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Επιτρέψτε στον οργανισμό σας να χρησιμοποιεί το ${ LUMO_APP_NAME } API"
       ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Αν επιτρέψετε τη σύνδεση με κωδικό QR, θα μπορείτε να συνδεθείτε σαρώνοντας έναν κωδικό QR σε περίπτωση που ξεχάσετε τον κωδικό πρόσβασής σας. Το μόνο που χρειάζεστε είναι να είστε συνδεδεμένοι σε μια υπηρεσία ${ BRAND_NAME } σε άλλη συσκευή."
@@ -8976,9 +8980,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Ορισμένοι διακομιστές ενδέχεται να μην εμφανίζονται στην παραπάνω λίστα. Αναζητήστε τους με βάση το όνομα του διακομιστή (π.χ. AT#62)."
       ],
-      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
-        "Σύντομα, θα εισάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου (ή το όνομα χρήστη) και τον κωδικό πρόσβασής σας σε δύο ξεχωριστά βήματα, αντί για μία μόνο σελίδα."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Καθορίστε τον τομέα στον οποίο επιτρέπεται ο έλεγχος ταυτότητας με SAML SSO."
       ],
@@ -9593,6 +9594,9 @@
       "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Όταν η είσοδος είναι περιορισμένη, μόνο το ${ primaryEmailElement } και το όνομα χρήστη σας ${ usernameElement } μπορούν να χρησιμοποιηθούν για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
       ],
+      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Όταν η είσοδος είναι περιορισμένη, μόνο η διεύθυνση ηλεκτρονικού ταχυδρομείου σας ${ primaryEmailElement } μπορεί να χρησιμοποιηθεί για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
+      ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Όταν η είσοδος είναι περιορισμένη, μόνο το όνομα χρήστη σας ${ usernameElement } μπορεί να χρησιμοποιηθεί για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
       ],
@@ -9873,9 +9877,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Οι λογαριασμοί σας ${ VPN_APP_NAME } και ${ MAIL_APP_NAME } συνδέονται. Για να διαγράψετε και τους δύο, παρακαλούμε συνδεθείτε στο ${ loginLink } και διαγράψτε τον εκεί λογαριασμό σας."
-      ],
-      "Your account and password stay the same.": [
-        "Ο λογαριασμός και ο κωδικός πρόσβασής σας παραμένουν ίδιοι."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
@@ -10945,6 +10946,9 @@
       ],
       "Require password check-ins": [
         "Απαιτείται έλεγχος κωδικού πρόσβασης"
+      ],
+      "Restrict sign-in to email address": [
+        "Περιορισμός της σύνδεσης σε διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Restrict sign-in to primary email address": [
         "Περιορισμός της σύνδεσης στην κύρια διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -14014,6 +14018,9 @@
       "Billing Country": [
         "Χώρα χρέωσης"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Οι λογαριασμοί Born Private δεν μπορούν να αγοραστούν όσο υπάρχει ενεργή συνδρομή."
+      ],
       "Buying credits requires a separate purchase.": [
         "Η αγορά μονάδων απαιτεί ξεχωριστή αγορά."
       ],
@@ -15548,9 +15555,21 @@
       ]
     },
     "scim": {
+      "${ cleanUpCount } clean up action required.": [
+        "Απαιτείται ${ cleanUpCount } ενέργεια καθαρισμού.",
+        "Απαιτούνται ${ cleanUpCount } ενέργειες καθαρισμού."
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "Τα δικαιώματα ${ cleanUpCount } χρήστη έχουν αλλάξει.",
+        "Τα δικαιώματα ${ cleanUpCount } χρηστών έχουν αλλάξει."
+      ],
       "${ memberCount } new member": [
         "${ memberCount } νέο μέλος",
         "${ memberCount } νέα μέλη"
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "Απαιτείται ${ numberOfCleanUps } ενέργεια καθαρισμού",
+        "Απαιτούνται ${ numberOfCleanUps } ενέργειες καθαρισμού"
       ],
       "${ numberOfPendingGroups } group synced": [
         "${ numberOfPendingGroups } ομάδα συγχρονίστηκε",
@@ -15584,6 +15603,9 @@
       ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Απαιτείται τελική έγκριση για την παραχώρηση πρόσβασης σε όλες τις υπηρεσίες ${ BRAND_NAME }."
+      ],
+      "Final approval needed to remove organization key access.": [
+        "Απαιτείται τελική έγκριση για την κατάργηση της πρόσβασης μέσω κλειδιού οργανισμού."
       ],
       "From your identity provider": [
         "Από τον πάροχο ταυτότητάς σας"
@@ -16730,6 +16752,9 @@
       ],
       "Outdated": [
         "Απαρχαιωμένο"
+      ],
+      "remove organization key": [
+        "αφαίρεση κλειδιού οργανισμού"
       ],
       "Saved": [
         "Αποθηκεύτηκε"
@@ -18940,9 +18965,6 @@
       ],
       "Signed-in reset": [
         "Επαναφορά συνδεδεμένου χρήστη"
-      ],
-      "Signing in is changing": [
-        "Η διαδικασία σύνδεσης αλλάζει."
       ],
       "Simplify email distribution": [
         "Απλοποιήστε τη διανομή μηνυμάτων ηλεκτρονικού ταχυδρομείου"
