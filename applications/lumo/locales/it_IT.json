@@ -3947,6 +3947,12 @@
       "Open conversation": [
         "Apri conversazione"
       ],
+      "Open scheduled task: ${ name }": [
+        "Apri attività pianificata: ${ name }"
+      ],
+      "Open task": [
+        "Apri attività"
+      ],
       "PDF": [
         "PDF"
       ],
@@ -4021,6 +4027,9 @@
       ],
       "Save to ${ DRIVE_APP_NAME }": [
         "Salva in ${ DRIVE_APP_NAME }"
+      ],
+      "Schedule task: ${ taskName }": [
+        "Pianifica attività: ${ taskName }"
       ],
       "Select all": [
         "Seleziona tutto"
@@ -4265,6 +4274,9 @@
       "Save here": [
         "Salva qui"
       ],
+      "Schedule": [
+        "Programma"
+      ],
       "Scheduled": [
         "Programmato"
       ],
@@ -4296,6 +4308,9 @@
     "collider_2025:Description": {
       "Big Tech AI built a scarily accurate profile of me from my chat history. See what yours knows about you 👀": [
         "L'intelligenza artificiale delle grandi aziende tecnologiche ha creato un profilo di me incredibilmente accurato basandosi sulla mia cronologia delle chat. Scopri cosa sa di te la tua 👀"
+      ],
+      "Run without asking, using only the connectors you allow. Off: pause and notify you before each tool that requires confirmation.": [
+        "Esegui senza chiedere conferma, utilizzando solo i connettori da te autorizzati. Disattivato: mette in pausa e ti avvisa prima di ogni strumento che richiede conferma."
       ],
       "Use the connectors above without asking. Off: pause and notify me before each Ask tool.": [
         "Usa i connettori qui sopra senza chiedere. Disattivato: metti in pausa e avvisami prima di ogni strumento Ask."
@@ -4337,6 +4352,9 @@
       ],
       "Could not save this task. Reload the page and try again.": [
         "Impossibile salvare questa attività. Aggiorna la pagina e riprova."
+      ],
+      "Could not start this task. Please try again.": [
+        "Impossibile avviare questa attività. Riprovare."
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "Connessione al database persa. Aggiorna la pagina per continuare."
@@ -4445,6 +4463,9 @@
       ],
       "We could not read this file. Select it again, or move it out of cloud storage before uploading.": [
         "Non siamo riusciti a leggere questo file. Selezionalo di nuovo oppure spostalo fuori dall'archivio cloud prima di caricarlo."
+      ],
+      "You've reached your plan's scheduled task limit (${ scheduleLimit }). Delete a task to create another.": [
+        "Hai raggiunto il limite di attività pianificate previsto dal tuo piano (${ scheduleLimit }). Elimina un'attività per crearne un'altra."
       ]
     },
     "collider_2025:Error (validation)": {
@@ -4464,6 +4485,9 @@
       ],
       "Unlimited projects": [
         "Progetti illimitati"
+      ],
+      "Up to 3 scheduled tasks": [
+        "Fino a 3 attività pianificate"
       ]
     },
     "collider_2025:Filter": {
@@ -4524,6 +4548,9 @@
       "${ LUMO_SHORT_APP_NAME } remembers your preferences, so each conversation can build on the last. It can also handle longer chats and larger documents.": [
         "${ LUMO_SHORT_APP_NAME } ricorda le tue preferenze, così ogni conversazione può basarsi sulla precedente. Può anche gestire chat più lunghe e documenti più grandi."
       ],
+      "${ name } completed.": [
+        "${ name } completato."
+      ],
       "${ project.conversationCount } conversation": [
         "${ project.conversationCount } conversazione"
       ],
@@ -4570,6 +4597,9 @@
       "Applying your changes…": [
         "Si stanno applicando le modifiche…"
       ],
+      "Are you sure you want to delete \"${ taskName }\"? Its run history will also be deleted. This action cannot be undone.": [
+        "Sei sicuro di voler eliminare “${ taskName }”? Verrà eliminata anche la cronologia delle esecuzioni. Questa azione non può essere annullata."
+      ],
       "Are you sure you want to delete \"${ taskName }\"? This action cannot be undone.": [
         "Sei sicuro di voler eliminare “${ taskName }”? Questa azione non può essere annullata."
       ],
@@ -4590,6 +4620,9 @@
       ],
       "Chats from your projects will appear here.": [
         "Le chat dei tuoi progetti verranno visualizzate qui."
+      ],
+      "Checking your plan, try again in a moment.": [
+        "Verifica il tuo piano e riprova tra un attimo."
       ],
       "Choose a format to export \"${ conversation.title }\":": [
         "Scegli un formato per esportare “${ conversation.title }”:"
@@ -4759,6 +4792,9 @@
       "red flags": [
         "campanelli d'allarme"
       ],
+      "Resume to run again": [
+        "Riprendere a correre"
+      ],
       "Revised": [
         "Revisonato"
       ],
@@ -4768,8 +4804,8 @@
       "Run tasks on a schedule or whenever you need them. Tasks run on this computer while ${ LUMO_SHORT_APP_NAME } is open.": [
         "Esegui le attività secondo una pianificazione o ogni volta che ne hai bisogno. Le attività vengono eseguite su questo computer finché ${ LUMO_SHORT_APP_NAME } rimane aperto."
       ],
-      "Runs on this computer while ${ LUMO_SHORT_APP_NAME } is open. If your computer is asleep, it runs when ${ LUMO_SHORT_APP_NAME } next opens.": [
-        "Viene eseguito su questo computer mentre ${ LUMO_SHORT_APP_NAME } è aperto. Se il computer è in modalità di sospensione, viene eseguito alla successiva apertura di ${ LUMO_SHORT_APP_NAME }."
+      "Runs on an available computer while ${ LUMO_SHORT_APP_NAME } is open. Computers in the same timezone share one run for each occurrence.": [
+        "Viene eseguito su un computer disponibile mentre ${ LUMO_SHORT_APP_NAME } è aperto. I computer che si trovano nello stesso fuso orario condividono un'unica esecuzione per ogni istanza."
       ],
       "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
         "Salvataggio come ${ formatLabel }. Individua la cartella ${ DRIVE_SHORT_APP_NAME } che desideri utilizzare, quindi fai clic su “Salva qui”."
@@ -4802,8 +4838,26 @@
       "Start a new chat to see it here.": [
         "Avvia una nuova chat per visualizzarla qui."
       ],
+      "Started ${ count } day ago": [
+        "Iniziato ${ count } giorni fa",
+        "Iniziato ${ count } giorni fa"
+      ],
+      "Started ${ count } hour ago": [
+        "Iniziato ${ count } ore fa",
+        "Iniziato ${ count } ore fa"
+      ],
+      "Started ${ count } minute ago": [
+        "Iniziato ${ count } minuti fa",
+        "Iniziato ${ count } minuti fa"
+      ],
+      "Started just now": [
+        "Ho appena iniziato"
+      ],
       "Structured data, aiming for compatibility with the ChatGPT export format": [
         "Dati strutturati, pensati per garantire la compatibilità con il formato di esportazione di ChatGPT"
+      ],
+      "Task saved, but desktop notifications could not be enabled.": [
+        "L'attività è stata salvata, ma non è stato possibile abilitare le notifiche sul desktop."
       ],
       "Text formatted with markdown, easy to read or share": [
         "Testo formattato con Markdown, facile da leggere o condividere"
@@ -4835,8 +4889,11 @@
       "Updating content…": [
         "Aggiornamento dei contenuti…"
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
-        "Effettua l’upgrade a ${ LUMO_SHORT_APP_NAME } Plus per creare ${ LUMO_SHORT_APP_NAME } personalizzati illimitati, sbloccare modelli di IA avanzati e altro ancora."
+      "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
+        "Passa al piano ${ PLAN_NAMES[PLANS.LUMO] } per creare un numero illimitato di ${ LUMO_SHORT_APP_NAME } personalizzate, sbloccare modelli di IA avanzati e molto altro ancora."
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create up to 3 scheduled tasks, unlock advanced AI models, and more.": [
+        "Passa al piano ${ PLAN_NAMES[PLANS.LUMO] } per creare fino a 3 attività pianificate, sbloccare modelli di IA avanzati e molto altro ancora."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Usa il modello Max per lavori complessi o il modello Lite per le attività quotidiane. Scegli la modalità Veloce per risposte rapide o la modalità Ragionamento per domande più difficili."
@@ -4991,6 +5048,12 @@
       "All traits have been selected": [
         "Sono stati selezionati tutti i tratti"
       ],
+      "Auto-approve off": [
+        "Disattiva l'approvazione automatica"
+      ],
+      "Auto-approve on": [
+        "Attiva l'approvazione automatica"
+      ],
       "Canvas": [
         "Canvas"
       ],
@@ -5033,6 +5096,9 @@
       "Crunching the cat-able numbers…": [
         "Analizziamo i dati relativi ai gatti…"
       ],
+      "Daily": [
+        "Giornaliero"
+      ],
       "Data brokers": [
         "Data broker"
       ],
@@ -5050,6 +5116,9 @@
       ],
       "Description (optional)": [
         "Descrizione (opzionale)"
+      ],
+      "Details": [
+        "Dettagli"
       ],
       "Digital oversharing": [
         "Condivisione eccessiva di contenuti digitali"
@@ -5189,6 +5258,9 @@
       "Minimal": [
         "Minimal"
       ],
+      "Monthly": [
+        "Mensilmente"
+      ],
       "My AI Paper Trail": [
         "La mia traccia documentale sull'IA"
       ],
@@ -5258,6 +5330,9 @@
       "Scheduled": [
         "Programmato"
       ],
+      "Scheduled task": [
+        "Attività pianificata"
+      ],
       "SE": [
         "SE"
       ],
@@ -5321,6 +5396,9 @@
       "Untitled task": [
         "Attività senza nome"
       ],
+      "Uses": [
+        "Utilizza"
+      ],
       "Value": [
         "Valore"
       ],
@@ -5329,6 +5407,12 @@
       ],
       "W": [
         "W"
+      ],
+      "Weekdays": [
+        "Giorni della settimana"
+      ],
+      "Weekly": [
+        "Settimanale"
       ],
       "What AI Knows About Me": [
         "Cosa sa di me l'intelligenza artificiale"
@@ -5982,6 +6066,9 @@
       "Error": [
         "Errore"
       ],
+      "Failed": [
+        "Fallito"
+      ],
       "Indexing": [
         "Indicizzazione"
       ],
@@ -5993,6 +6080,36 @@
       ],
       "Indexing for search": [
         "Indicizzazione per la ricerca"
+      ],
+      "Interrupted": [
+        "Interrotto"
+      ],
+      "On schedule": [
+        "Con pianificazione"
+      ],
+      "Paused": [
+        "Pausa"
+      ],
+      "Queued": [
+        "In coda"
+      ],
+      "Queued · Running next": [
+        "In coda · Prossimo in esecuzione"
+      ],
+      "Ran late": [
+        "Ho fatto tardi"
+      ],
+      "Ran manually": [
+        "Eseguito manualmente"
+      ],
+      "Running": [
+        "In corso"
+      ],
+      "Running now…": [
+        "In corso…"
+      ],
+      "Running soon…": [
+        "Prossimamente…"
       ]
     },
     "collider_2025:Subline": {
@@ -6196,11 +6313,14 @@
       "Memory": [
         "Memoria"
       ],
-      "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Più ${ LUMO_SHORT_APP_NAME } personalizzati con ${ LUMO_SHORT_APP_NAME } Plus"
+      "More custom ${ LUMO_SHORT_APP_NAME }s with ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "Altre ${ LUMO_SHORT_APP_NAME } personalizzate con ${ PLAN_NAMES[PLANS.LUMO] }"
       ],
       "More options": [
         "Altre opzioni"
+      ],
+      "More scheduled tasks with ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "Altre attività pianificate con ${ PLAN_NAMES[PLANS.LUMO] }"
       ],
       "Most revealing": [
         "Più rivelatori"
@@ -6262,11 +6382,23 @@
       "Save to ${ DRIVE_SHORT_APP_NAME }": [
         "Salva in ${ DRIVE_SHORT_APP_NAME }"
       ],
+      "Schedule draft cancelled · ${ name }": [
+        "Bozza del programma annullata · ${ name }"
+      ],
+      "Schedule task": [
+        "Pianifica attività"
+      ],
+      "Schedule task, currently loading…": [
+        "Pianifica attività, caricamento in corso…"
+      ],
       "Scheduled": [
         "Programmato"
       ],
       "Scheduled tasks": [
         "Attività programmate"
+      ],
+      "Scheduled · ${ name }": [
+        "In programma · ${ name }"
       ],
       "See your AI paper trail": [
         "Vedi la tua traccia dell'IA"
@@ -8339,9 +8471,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
-      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Ricarica il tuo account con crediti che puoi utilizzare per sottoscrivere un nuovo piano o rinnovare il piano attuale. Si ottiene un credito per ogni ${ i18nCurrency } speso."
-      ],
       "Total conversations:": [
         "Conversazioni totali:"
       ],
@@ -9371,44 +9500,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_MEET_SEATS } licenze ${ MEET_SHORT_APP_NAME } durante il periodo di prova."
-      ]
-    },
-    "Monetary unit": {
-      "Australian dollar": [
-        "Dollaro Australiano"
-      ],
-      "Brazilian real": [
-        "Real Brasiliano"
-      ],
-      "British pound": [
-        "Sterlina Britannica"
-      ],
-      "Canadian dollar": [
-        "Dollaro canadese"
-      ],
-      "Euro": [
-        "Euro"
-      ],
-      "Hong Kong dollar": [
-        "Dollaro di Hong Kong"
-      ],
-      "Japanese yen": [
-        "Yen Giapponese"
-      ],
-      "Polish złoty": [
-        "Złoty polacco"
-      ],
-      "Singapore dollar": [
-        "Dollaro di Singapore"
-      ],
-      "South Korean won": [
-        "Won Sud Coreano"
-      ],
-      "Swiss franc": [
-        "Franco svizzero"
-      ],
-      "US Dollar": [
-        "Dollaro USA"
       ]
     },
     "New Label form": {
@@ -10555,9 +10646,6 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "La tariffa scontata, con prezzo speciale di ${ priceWithDiscount } è valida per il primo mese. Il piano si rinnoverà poi automaticamente al prezzo di ${ renewPriceStr } per mese. Puoi disdire quando vuoi."
       ],
-      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
-        "La transazione è stata correttamente rilevata. I crediti saranno aggiunti al tuo account quando la transazione sarà totalmente confermata."
-      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
@@ -11350,9 +11438,6 @@
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
-      "Credits added": [
-        "Credito aggiunto"
-      ],
       "Email address copied to clipboard": [
         "Indirizzo email copiato negli appunti"
       ],
@@ -11481,9 +11566,6 @@
       ],
       "Add credit/debit card": [
         "Aggiungi carta di credito/debito"
-      ],
-      "Add credits": [
-        "Aggiungi crediti"
       ],
       "Add user": [
         "Aggiungi utente"
