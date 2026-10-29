@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -14,8 +15,11 @@ import type { DriveNode } from '../../hooks/useDriveSDK';
 import type { Message, SpaceId } from '../../types';
 import { isImeComposing } from '../../util/keyboard';
 import { FileMentionComponent } from './FileMentionComponent';
+import { SkillCommandMenu } from './SkillCommandMenu';
+import { SkillTokenHighlight, useSkillTokens } from './SkillTokenHighlight';
 import { type DriveSDKFunctions, useFileMentionAutocomplete } from './hooks/useFileMentionAutocomplete';
 import { useMobilePromptHandler } from './hooks/useMobilePromptHandler';
+import { useSkillCommandAutocomplete } from './hooks/useSkillCommandAutocomplete';
 
 export interface ComposerEditorAreaProps {
     composerInput: ReturnType<typeof useComposerInput>;
@@ -94,38 +98,61 @@ export const ComposerEditorArea = ({
         messageChain
     );
 
+    const { skillCommandState, skillCommands, skillHandles, selectSkillCommand, closeSkillCommand } =
+        useSkillCommandAutocomplete(textareaRef, value, setValue);
+    const skillTokens = useSkillTokens(value, skillHandles);
+
     const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const selectFileRef = useRef(selectFile);
-    const closeMentionRef = useRef(closeMention);
+    // At most one menu is open: `/` and `@` triggers can't both end at the cursor.
+    const autocomplete = skillCommandState.isActive
+        ? {
+              kind: 'skill' as const,
+              count: skillCommands.length,
+              select: (index: number) => {
+                  if (skillCommands[index]) selectSkillCommand(skillCommands[index]);
+              },
+              close: closeSkillCommand,
+          }
+        : mentionState.isActive
+          ? {
+                kind: 'file' as const,
+                count: files.length,
+                select: (index: number) => {
+                    if (files[index]) void selectFile(files[index]);
+                },
+                close: closeMention,
+            }
+          : undefined;
+
+    const autocompleteRef = useRef(autocomplete);
     const onSubmitRef = useRef(onSubmit);
 
     useEffect(() => {
-        selectFileRef.current = selectFile;
-    }, [selectFile]);
-    useEffect(() => {
-        closeMentionRef.current = closeMention;
-    }, [closeMention]);
+        autocompleteRef.current = autocomplete;
+    });
     useEffect(() => {
         onSubmitRef.current = onSubmit;
     }, [onSubmit]);
 
-    const prevIsActiveRef = useRef(false);
+    const activeKind = autocomplete?.kind;
+    const prevActiveKindRef = useRef<typeof activeKind>(undefined);
     useEffect(() => {
         if (isAutocompleteActiveRef) {
-            isAutocompleteActiveRef.current = mentionState.isActive;
+            isAutocompleteActiveRef.current = !!activeKind;
         }
-        if (mentionState.isActive && !prevIsActiveRef.current) {
+        if (activeKind && activeKind !== prevActiveKindRef.current) {
             setSelectedIndex(0);
         }
-        prevIsActiveRef.current = mentionState.isActive;
-    }, [mentionState.isActive, isAutocompleteActiveRef]);
+        prevActiveKindRef.current = activeKind;
+    }, [activeKind, isAutocompleteActiveRef]);
 
+    const optionCount = autocomplete?.count ?? 0;
     useEffect(() => {
-        if (selectedIndex >= files.length && files.length > 0) {
-            setSelectedIndex(files.length - 1);
+        if (selectedIndex >= optionCount && optionCount > 0) {
+            setSelectedIndex(optionCount - 1);
         }
-    }, [files.length, selectedIndex]);
+    }, [optionCount, selectedIndex]);
 
     // Handle autocomplete keyboard navigation on top of the normal handleKeyDown
     const handleKeyDownWithAutocomplete = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -134,15 +161,16 @@ export const ComposerEditorArea = ({
         if (e.key === 'Enter' && isImeComposing(e)) {
             return;
         }
-        if (isDictating && e.key === 'Enter' && !e.shiftKey && !mentionState.isActive && !isImeComposing(e)) {
+        const active = autocompleteRef.current;
+        if (isDictating && e.key === 'Enter' && !e.shiftKey && !active && !isImeComposing(e)) {
             e.preventDefault();
             return;
         }
-        if (mentionState.isActive) {
+        if (active) {
             if (e.key === 'ArrowDown') {
                 e.preventDefault();
                 e.stopPropagation();
-                setSelectedIndex((prev) => (prev < files.length - 1 ? prev + 1 : prev));
+                setSelectedIndex((prev) => (prev < active.count - 1 ? prev + 1 : prev));
                 return;
             }
             if (e.key === 'ArrowUp') {
@@ -151,18 +179,15 @@ export const ComposerEditorArea = ({
                 setSelectedIndex((prev) => (prev > 0 ? prev - 1 : 0));
                 return;
             }
-            if (e.key === 'Enter') {
-                if (files.length > 0) {
+            if (e.key === 'Enter' || (e.key === 'Tab' && active.kind === 'skill' && active.count > 0)) {
+                if (active.count > 0) {
                     e.preventDefault();
                     e.stopPropagation();
-                    const fileToSelect = files[selectedIndex];
-                    if (fileToSelect) {
-                        selectFileRef.current?.(fileToSelect);
-                    }
+                    active.select(selectedIndex);
                 } else if (!e.shiftKey) {
                     e.preventDefault();
                     e.stopPropagation();
-                    closeMentionRef.current?.();
+                    active.close();
                     onSubmitRef.current?.();
                 }
                 return;
@@ -170,7 +195,7 @@ export const ComposerEditorArea = ({
             if (e.key === 'Escape') {
                 e.preventDefault();
                 e.stopPropagation();
-                closeMentionRef.current?.();
+                active.close();
                 return;
             }
         }
@@ -183,27 +208,30 @@ export const ComposerEditorArea = ({
 
     return (
         <div className="lumo-input border-none flex-grow w-full z-30 flex flex-row flex-nowrap items-end gap-3 p-2 pl-3 my-auto bg-norm relative">
-            <TextareaAutosize
-                ref={textareaRef}
-                value={value}
-                onChange={handleChange}
-                onKeyDown={handleKeyDownWithAutocomplete}
-                onPaste={handlePaste}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                onSelect={updateCursorPosition}
-                onMouseUp={updateCursorPosition}
-                placeholder={placeholder ?? c('collider_2025:Placeholder').t`Ask anything…`}
-                className="tiptap ProseMirror composer flex-grow w-full resize-none p-1 bg-transparent border-0 outline-none shadow-none"
-                maxRows={8}
-                minRows={1}
-                autoFocus={!isMobile()}
-                autoCorrect="on"
-                autoComplete="on"
-                autoCapitalize="sentences"
-                spellCheck
-                readOnly={isDictating}
-            />
+            <div className={clsx('composer-text-wrapper', skillTokens.isActive && 'has-skill-tokens')}>
+                {skillTokens.isActive && <SkillTokenHighlight textareaRef={textareaRef} parts={skillTokens.parts} />}
+                <TextareaAutosize
+                    ref={textareaRef}
+                    value={value}
+                    onChange={handleChange}
+                    onKeyDown={handleKeyDownWithAutocomplete}
+                    onPaste={handlePaste}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                    onSelect={updateCursorPosition}
+                    onMouseUp={updateCursorPosition}
+                    placeholder={placeholder ?? c('collider_2025:Placeholder').t`Ask anything…`}
+                    className="tiptap ProseMirror composer flex-grow w-full resize-none p-1 bg-transparent border-0 outline-none shadow-none"
+                    maxRows={8}
+                    minRows={1}
+                    autoFocus={!isMobile()}
+                    autoCorrect="on"
+                    autoComplete="on"
+                    autoCapitalize="sentences"
+                    spellCheck
+                    readOnly={isDictating}
+                />
+            </div>
 
             <FileMentionComponent
                 mentionState={mentionState}
@@ -211,6 +239,13 @@ export const ComposerEditorArea = ({
                 selectedIndex={selectedIndex}
                 setSelectedIndex={setSelectedIndex}
                 selectFile={selectFile}
+            />
+            <SkillCommandMenu
+                state={skillCommandState}
+                commands={skillCommands}
+                selectedIndex={selectedIndex}
+                setSelectedIndex={setSelectedIndex}
+                onSelect={selectSkillCommand}
             />
 
             {canShowSendButton && (

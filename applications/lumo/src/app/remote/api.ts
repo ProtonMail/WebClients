@@ -18,6 +18,14 @@ import {
     convertUserSettingsFromApi,
 } from './conversion';
 import { type Priority, RequestScheduler } from './scheduler';
+import {
+    type NewSkillFileToApi,
+    type NewSkillToApi,
+    type RemoteSkill,
+    type SkillToApi,
+    convertSkillFileContentFromApi,
+    convertSkillsFromApi,
+} from './skills';
 import type {
     ConversationTag,
     ConversationToApi,
@@ -48,7 +56,16 @@ import { SpaceTypeInt } from './types';
 import { objectToPascalCaseKeys, oldestDateReducer } from './util';
 
 export type RemoteStatus = 'ok' | 'deleted';
-type ResourceName = 'masterkeys' | 'spaces' | 'conversations' | 'messages' | 'assets' | 'personalization' | 'settings';
+type ResourceName =
+    | 'masterkeys'
+    | 'spaces'
+    | 'conversations'
+    | 'messages'
+    | 'assets'
+    | 'personalization'
+    | 'settings'
+    | 'skills'
+    | 'skill-files';
 
 // prettier-ignore
 type PostableResource =
@@ -58,6 +75,9 @@ type PostableResource =
     | NewAssetToApi
     | MasterKeyFromApi
     | UserSettingsToApi
+    | NewSkillToApi
+    | SkillToApi
+    | NewSkillFileToApi
     ;
 
 // prettier-ignore
@@ -111,6 +131,8 @@ const idExtractorMap: Record<ResourceName, (json: object) => RemoteId | undefine
     conversations: (json) => (json as any)?.Conversation?.ID,
     spaces: (json) => (json as any)?.Space?.ID,
     assets: (json) => (json as any)?.Asset?.ID,
+    skills: (json) => (json as any)?.Skill?.ID,
+    'skill-files': (json) => (json as any)?.SkillFile?.ID,
     masterkeys: () => undefined,
     personalization: () => undefined,
     settings: () => undefined,
@@ -648,6 +670,63 @@ export class LumoApi {
         spaceId: LocalId
     ): Promise<RemoteFilledAttachment | RemoteDeletedAttachment | null> {
         return this.getAsset(attachmentId, spaceId);
+    }
+
+    public async listSkills(): Promise<RemoteSkill[]> {
+        const data = await this.callListJson('skills');
+        return convertSkillsFromApi(data?.Skills);
+    }
+
+    /** Throws `ConflictClientError` when the tag was already used, including by a deleted skill. */
+    public postSkill(skill: NewSkillToApi, priority: Priority): Promise<RemoteId> {
+        const fn = () => this.callPostJson('skills', skill);
+        return this.scheduler.schedule(fn, priority);
+    }
+
+    public putSkill(remoteId: RemoteId, skill: SkillToApi, priority: Priority): Promise<RemoteStatus> {
+        const fn = async (): Promise<RemoteStatus> => {
+            const response = await this.sendPutJson('skills', skill, `/skills/${remoteId}`);
+            if (response.ok) {
+                return 'ok';
+            }
+            if (response.status === 422) {
+                const json = await response.json();
+                if (isProtonApiResponse(json) && json.Code === 2501) {
+                    return 'deleted';
+                }
+                throw new ClientError(
+                    `Error during PUT skills: got code ${isProtonApiResponse(json) ? json.Code : '?'}`
+                );
+            }
+            if (response.status >= 400 && response.status < 500) {
+                throw new ClientError(`Error during PUT skills: got ${response.status}`);
+            }
+            throw new Error(`Error during PUT skills: got ${response.status}`);
+        };
+        return this.scheduler.schedule(fn, priority);
+    }
+
+    public deleteSkill(remoteId: RemoteId, priority: Priority): Promise<RemoteStatus> {
+        const fn = () => this.callDelete('skills', remoteId);
+        return this.scheduler.schedule(fn, priority);
+    }
+
+    /** Throws `ConflictClientError` when a file with this tag was already uploaded. */
+    public postSkillFile(skillRemoteId: RemoteId, file: NewSkillFileToApi, priority: Priority): Promise<RemoteId> {
+        const fn = () => this.callPostJson('skill-files', file, `/skills/${skillRemoteId}/files`);
+        return this.scheduler.schedule(fn, priority);
+    }
+
+    /** The encrypted file, or null when the file or its skill is gone. */
+    public async getSkillFile(remoteId: RemoteId): Promise<Base64 | null> {
+        const data = await this.callGetJson('skill-files', remoteId);
+        if (data === null) return null;
+        return convertSkillFileContentFromApi((data as { SkillFile?: unknown }).SkillFile);
+    }
+
+    public deleteSkillFile(remoteId: RemoteId, priority: Priority): Promise<RemoteStatus> {
+        const fn = () => this.callDelete('skill-files', remoteId);
+        return this.scheduler.schedule(fn, priority);
     }
 
     public async listGeneratedAssets(params?: ListGeneratedAssetsParams): Promise<GeneratedAssetFromApi[]> {

@@ -152,6 +152,32 @@ export async function deriveDataEncryptionKey(spaceKeyBytes: Uint8Array<ArrayBuf
     };
 }
 
+const SKILL_KEY_DERIVATION_SALT = 'C/ZOK6odiQmPuRbGF794EqkrihH560JlFwBPYnAGfjo=';
+const SKILL_DEK_CONTEXT = 'dek.skill.lumo';
+const HKDF_PARAMS_SKILL_DATA_ENCRYPTION = {
+    salt: Uint8Array.fromBase64(SKILL_KEY_DERIVATION_SALT),
+    info: utf8StringToUint8Array(SKILL_DEK_CONTEXT),
+};
+
+export const generateSkillKeyBase64 = () => generateAesGcmKeyBytes().toBase64();
+export const base64ToSkillKey = base64ToAesGcmCryptoKey;
+
+/**
+ * Derives the DEK for a skill and its assets from the skill key. Separate HKDF context from
+ * spaces so a skill key can never decrypt space data and vice versa.
+ */
+export async function deriveSkillDataEncryptionKey(skillKeyBytes: Uint8Array<ArrayBuffer>): Promise<AesGcmCryptoKey> {
+    const encryptKey = await deriveKey(
+        skillKeyBytes,
+        HKDF_PARAMS_SKILL_DATA_ENCRYPTION.salt,
+        HKDF_PARAMS_SKILL_DATA_ENCRYPTION.info
+    );
+    return {
+        type: 'AesGcmCryptoKey',
+        encryptKey,
+    };
+}
+
 /**
  * Generate a new search index key (same as space key generation).
  */

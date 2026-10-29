@@ -128,6 +128,32 @@ describe('prepareTurns — attachment content blocks', () => {
         expect(turns.some((turn) => turn.content?.includes('[Visualization]'))).toBe(false);
     });
 
+    it('adds invoked skill instructions after agent instructions', () => {
+        const message = {
+            id: 'msg-1',
+            role: Role.User,
+            content: '/ux-copy rewrite this',
+            conversationId: 'conv-1',
+        } as unknown as Message;
+
+        const turns = prepareTurns(
+            [message],
+            personalization,
+            undefined,
+            undefined,
+            undefined,
+            'Be terse',
+            false,
+            'off',
+            false,
+            undefined,
+            false,
+            '[Skill /ux-copy: Write clearly]'
+        );
+        expect(turns[0]?.role).toBe(Role.System);
+        expect(turns[0]?.content).toBe('[Agent instructions: Be terse]\n\n[Skill /ux-copy: Write clearly]');
+    });
+
     it('prepends a query param warning on the first inference from a ?q= link', () => {
         const message = {
             id: 'msg-1',

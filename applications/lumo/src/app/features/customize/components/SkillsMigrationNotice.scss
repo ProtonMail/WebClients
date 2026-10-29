@@ -1,0 +1,8 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.skills-migration-notice {
+	background-color: var(--control-fill-mid);
+	border-radius: rem(12);
+	padding-block: rem(14);
+	padding-inline: rem(16) rem(12);
+}

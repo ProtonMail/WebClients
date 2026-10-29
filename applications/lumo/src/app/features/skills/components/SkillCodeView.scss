@@ -1,0 +1,69 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.skill-code-view {
+	block-size: 100%;
+	min-block-size: rem(240);
+	font-family: var(--optional-font-family-monospace, monospace);
+	font-size: rem(13);
+	line-height: rem(20);
+
+	&__gutter {
+		overflow: hidden;
+		padding-block: rem(12);
+		padding-inline: rem(16) rem(12);
+		user-select: none;
+	}
+
+	&__textarea {
+		padding-block: rem(12);
+		padding-inline: 0 rem(16);
+		resize: none;
+		font: inherit;
+		line-height: inherit;
+		color: var(--text-norm);
+		white-space: pre;
+		overflow: auto;
+		outline: none;
+
+		&::placeholder {
+			color: var(--text-hint);
+		}
+	}
+
+	&--preview,
+	&--binary {
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	&__document {
+		max-inline-size: rem(760);
+		padding-block: rem(24) rem(40);
+		padding-inline: rem(32);
+		margin-inline: auto;
+	}
+
+	&__properties {
+		margin-block: 0 rem(28);
+		margin-inline: 0;
+		padding-block: rem(10);
+		padding-inline: rem(14);
+		border: 1px solid var(--border-weak);
+		border-radius: rem(10);
+		background-color: var(--background-weak);
+		font-size: rem(13);
+		line-height: 1.5;
+
+		> div + div {
+			margin-block-start: rem(6);
+		}
+	}
+
+	&__property-key {
+		inline-size: rem(112);
+		color: var(--text-weak);
+		font-family: var(--optional-font-family-monospace, monospace);
+		font-size: rem(12);
+	}
+}

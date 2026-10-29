@@ -1,0 +1,10 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.customize-connectors-list__row {
+	padding-block: rem(14);
+}
+
+.customize-connectors-list__icon {
+	block-size: rem(36);
+	inline-size: rem(36);
+}

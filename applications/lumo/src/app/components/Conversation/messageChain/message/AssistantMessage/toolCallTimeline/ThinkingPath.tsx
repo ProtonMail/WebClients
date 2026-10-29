@@ -54,6 +54,9 @@ function getToolCallIcon(toolCall: ToolCallData | ToolCallAnnouncement): IconNam
             return 'Image';
         case 'proton_info':
             return 'Shield';
+        case 'use_skill':
+        case 'read_skill_file':
+            return 'BookOpen';
         default:
             return 'Wrench';
     }
@@ -211,6 +214,10 @@ function getToolCallLabel(toolCall: ToolCallData | ToolCallAnnouncement): [strin
                 c('collider_2025:Reasoning').t`Extracting content from page...`,
                 c('collider_2025:Reasoning').t`Extracted page content`,
             ];
+        case 'use_skill':
+        case 'read_skill_file':
+            // translator: Assistant activity status. A skill is a set of instructions the user saved.
+            return [c('collider_2025:Reasoning').t`Reading a skill...`, c('collider_2025:Reasoning').t`Read a skill`];
         default:
             // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];
@@ -437,6 +444,10 @@ function getToolCallShortLabel(toolCall: ToolCallData | ToolCallAnnouncement): [
                 c('collider_2025:Reasoning').t`Extracting content from page...`,
                 c('collider_2025:Reasoning').t`Extracted page content`,
             ];
+        case 'use_skill':
+        case 'read_skill_file':
+            // translator: Assistant activity status. A skill is a set of instructions the user saved.
+            return [c('collider_2025:Reasoning').t`Reading a skill...`, c('collider_2025:Reasoning').t`Read a skill`];
         default:
             // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];

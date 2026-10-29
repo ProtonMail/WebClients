@@ -20,6 +20,7 @@ type ThinkingPhase =
     | 'proton_info'
     | 'web_extract'
     | 'create_artifact'
+    | 'use_skill'
     | 'other';
 
 function hashString(value: string): number {
@@ -56,6 +57,9 @@ function toolCallToPhase(toolCall: ToolCallData | ToolCallAnnouncement): Thinkin
             return 'web_extract';
         case 'create_artifact':
             return 'create_artifact';
+        case 'use_skill':
+        case 'read_skill_file':
+            return 'use_skill';
         default:
             return 'other';
     }
@@ -139,6 +143,7 @@ const PHASE_ACTIVE: Record<ThinkingPhase, readonly (() => string)[]> = {
         () => c('collider_2025:Reasoning').t`Working on your creation`,
         () => c('collider_2025:Reasoning').t`Preparing your canvas`,
     ],
+    use_skill: [() => c('collider_2025:Reasoning').t`Reading a skill`],
     other: [() => c('collider_2025:Reasoning').t`Using a tool`],
 };
 
@@ -180,6 +185,7 @@ const PHASE_COMPLETE: Record<ThinkingPhase, readonly (() => string)[]> = {
         () => c('collider_2025:Reasoning').t`Finished your creation`,
         () => c('collider_2025:Reasoning').t`Prepared your canvas`,
     ],
+    use_skill: [() => c('collider_2025:Reasoning').t`Read a skill`],
     other: [() => c('collider_2025:Reasoning').t`Used a tool`],
 };
 

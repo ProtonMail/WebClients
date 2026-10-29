@@ -12,6 +12,8 @@ interface ComposerActionsState {
     pendingArtifactCreation: boolean | null;
     // Whether the agent picker modal is open. Triggered from the Tools menu or the active badge.
     agentPickerOpen: boolean;
+    // Skill handle picked from the Tools menu, waiting for the composer to insert it as `/handle `.
+    pendingSkillHandle: string | null;
 }
 
 const initialState: ComposerActionsState = {
@@ -19,6 +21,7 @@ const initialState: ComposerActionsState = {
     pendingAgentId: null,
     pendingArtifactCreation: null,
     agentPickerOpen: false,
+    pendingSkillHandle: null,
 };
 
 const composerActionsSlice = createSlice({
@@ -49,6 +52,12 @@ const composerActionsSlice = createSlice({
         closeAgentPicker: (state) => {
             state.agentPickerOpen = false;
         },
+        insertSkillCommand: (state, action: PayloadAction<string>) => {
+            state.pendingSkillHandle = action.payload;
+        },
+        clearPendingSkillCommand: (state) => {
+            state.pendingSkillHandle = null;
+        },
     },
 });
 
@@ -61,5 +70,7 @@ export const {
     clearPendingArtifactCreation,
     openAgentPicker,
     closeAgentPicker,
+    insertSkillCommand,
+    clearPendingSkillCommand,
 } = composerActionsSlice.actions;
 export default composerActionsSlice.reducer;

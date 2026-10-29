@@ -13,6 +13,7 @@ import type { LumoThunkArguments } from '../thunk';
 import { startFeatureFlagsListeners } from './featureFlagsListener';
 import { startLumoUserSettingsListeners } from './lumoUserSettingsListener';
 import { startPersonalizationListeners } from './personalizationListener';
+import { startSkillsSyncListeners } from './skillsSyncListener';
 
 const persistReducer: Partial<{ [key in keyof LumoState]: any }> = {
     ...sharedPersistReducer,
@@ -35,6 +36,7 @@ export const start = (startListening: AppStartListening) => {
     startPersonalizationListeners(startListening);
     startFeatureFlagsListeners(startListening);
     startLumoUserSettingsListeners(startListening);
+    startSkillsSyncListeners(startListening);
 };
 
 export const createLumoListenerMiddleware = ({ extra }: { extra: LumoThunkArguments }): LumoListener => {

@@ -1,0 +1,141 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.skill-detail {
+	&__icon {
+		block-size: rem(40);
+		inline-size: rem(40);
+		border: 1px solid var(--border-weak);
+		border-radius: rem(10);
+	}
+
+	&__tabs {
+		border-block-end: 1px solid var(--border-weak);
+	}
+
+	&__tab {
+		position: relative;
+		padding-block: rem(8);
+		padding-inline: rem(4);
+		color: var(--text-weak);
+		cursor: pointer;
+
+		&.is-active {
+			color: var(--text-norm);
+			font-weight: 600;
+
+			&::after {
+				content: '';
+				position: absolute;
+				inset-inline: 0;
+				inset-block-end: -1px;
+				block-size: 2px;
+				background-color: var(--text-norm);
+			}
+		}
+	}
+
+	&__overview {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) rem(240);
+		gap: rem(32);
+
+		@media (max-width: #{rem(760)}) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__aside {
+		align-self: start;
+		padding: rem(16);
+		border-radius: rem(12);
+		background-color: var(--background-weak);
+	}
+
+	&__handle {
+		padding-block: rem(2);
+		padding-inline: rem(6);
+		border-radius: rem(6);
+		background-color: var(--background-weak);
+	}
+
+	&__readme {
+		border: 1px solid var(--border-weak);
+		border-radius: rem(12);
+		overflow: hidden;
+	}
+
+	&__row {
+		padding-block: rem(12);
+		border-block-end: 1px solid var(--border-weak);
+	}
+
+	&__row-main {
+		color: inherit;
+		cursor: pointer;
+	}
+
+	&__connector-icon {
+		block-size: rem(32);
+		inline-size: rem(32);
+		border-radius: rem(8);
+		background-color: var(--background-weak);
+	}
+
+	&__metadata > div {
+		padding-block: rem(4);
+	}
+
+	&__contents {
+		flex: 1 1 auto;
+		min-block-size: rem(360);
+		border: 1px solid var(--border-weak);
+		border-radius: rem(12);
+		background-color: var(--background-norm);
+		overflow: hidden;
+
+		> :first-child {
+			inline-size: rem(240);
+			flex-shrink: 0;
+		}
+	}
+
+	&__file-header {
+		min-block-size: rem(44);
+		padding-block: rem(6);
+		padding-inline: rem(16) rem(8);
+		border-block-end: 1px solid var(--border-weak);
+	}
+
+	&__breadcrumb {
+		font-size: rem(13);
+
+		.is-current {
+			color: var(--text-norm);
+			font-weight: 600;
+		}
+	}
+
+	&__mode-toggle {
+		padding: rem(2);
+		border-radius: rem(8);
+		background-color: var(--background-weak);
+	}
+
+	&__mode-button {
+		padding-block: rem(4);
+		padding-inline: rem(10);
+		border: none;
+		border-radius: rem(6);
+		background: transparent;
+		color: var(--text-weak);
+		font-size: rem(12);
+		font-weight: 500;
+		cursor: pointer;
+
+		&.is-active {
+			background-color: var(--background-norm);
+			box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+			color: var(--text-norm);
+		}
+	}
+}

@@ -1,0 +1,17 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.desktop-connectors-notice {
+	padding-block: rem(14);
+	padding-inline: rem(16);
+	border: 1px solid var(--border-weak);
+	border-radius: rem(12);
+	background-color: var(--background-weak);
+
+	&__icon {
+		block-size: rem(32);
+		inline-size: rem(32);
+		border-radius: rem(8);
+		background-color: var(--background-norm);
+		color: var(--primary);
+	}
+}
