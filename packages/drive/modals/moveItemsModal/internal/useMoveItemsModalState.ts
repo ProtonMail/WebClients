@@ -10,7 +10,7 @@ import type { DirectoryTreeItem } from '../../../components/DirectoryTree/Direct
 import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
 import { getNodeEntity } from '../../../legacy/sdkUtils/getNodeEntity';
 import { directoryTreeFactory, getNodeUidFromTreeItemId, makeTreeItemId } from '../../../modules/directoryTree';
-import { type MoveNodesItemMap, useMoveNodes } from '../../../modules/moveNodes';
+import { type MoveNodesItemMap, type MoveNodesResult, useMoveNodes } from '../../../modules/moveNodes';
 import { getMissingUid, isMissingNode } from '../../../modules/nodes';
 import type { NodeEntity, ProtonDriveClient, Result } from '../../../sdk';
 import { NodeType, getDrive } from '../../../sdk';
@@ -18,6 +18,7 @@ import { useCreateFolderModal } from '../../createFolderModal';
 
 export type MoveItemsModalInnerProps = {
     nodeUids: string[];
+    onMoved?: (result: MoveNodesResult) => void;
 };
 
 export type UseMoveItemsModalStateProps = ModalStateProps & MoveItemsModalInnerProps;
@@ -77,7 +78,7 @@ const resolveTreeScopeRootUid = async (
     return { ok: true, value: commonRootUid };
 };
 
-export const useMoveItemsModalState = ({ onClose, nodeUids, ...modalProps }: UseMoveItemsModalStateProps) => {
+export const useMoveItemsModalState = ({ onClose, nodeUids, onMoved, ...modalProps }: UseMoveItemsModalStateProps) => {
     const [directoryTreeLoading, setDirectoryTreeLoading] = useState(true);
     const [scopeMoveNodeUid, setScopeMoveNodeUid] = useState<string | null>(null);
 
@@ -212,11 +213,18 @@ export const useMoveItemsModalState = ({ onClose, nodeUids, ...modalProps }: Use
             return;
         }
 
-        await moveNodes(itemMap, moveTargetUid);
+        return moveNodes(itemMap, moveTargetUid);
     };
 
     const handleSubmit = async () => {
-        await moveItemsToFolder();
+        const result = await moveItemsToFolder();
+        if (result) {
+            try {
+                onMoved?.(result);
+            } catch (e) {
+                sendErrorReport(e);
+            }
+        }
         customOnClose();
     };
 
