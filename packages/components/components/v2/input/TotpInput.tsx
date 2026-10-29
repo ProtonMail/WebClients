@@ -1,4 +1,12 @@
-import type { ChangeEvent, ForwardRefRenderFunction, KeyboardEvent, MutableRefObject, ReactNode } from 'react';
+import type {
+    ChangeEvent,
+    CompositionEvent,
+    ForwardRefRenderFunction,
+    KeyboardEvent,
+    MutableRefObject,
+    ReactNode,
+    SyntheticEvent,
+} from 'react';
 import { Fragment, forwardRef, useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
@@ -12,6 +20,10 @@ const getIsValidValue = (value: string, type: TotpInputProps['type']) => {
     }
     return /[0-9A-Za-z]/.test(value);
 };
+
+// Input methods (e.g. ibus or fcitx on Linux) send composition input events, also empty ones on focus.
+// They're applied on compositionend instead, so they can't clear a digit or move the focus.
+const getIsComposing = (event: SyntheticEvent) => (event.nativeEvent as InputEvent).isComposing;
 
 type TotpInputProps = {
     length: number;
@@ -227,16 +239,22 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
                                 }
                             }}
                             onInput={(event: ChangeEvent<HTMLInputElement>) => {
-                                if (disableChange) {
+                                if (disableChange || getIsComposing(event)) {
                                     return;
                                 }
                                 // onChange won't trigger if the values are the same
-                                if (event.target.value === value) {
+                                if (value && event.target.value === value) {
                                     focus(i + 1);
                                 }
                             }}
-                            onChange={(event) => {
+                            onCompositionEnd={(event: CompositionEvent<HTMLInputElement>) => {
                                 if (disableChange) {
+                                    return;
+                                }
+                                handleMultipleValues(event.data, i);
+                            }}
+                            onChange={(event) => {
+                                if (disableChange || getIsComposing(event)) {
                                     return;
                                 }
                                 if (event.target.value.length > 1) {

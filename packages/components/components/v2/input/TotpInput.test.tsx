@@ -153,6 +153,46 @@ describe('TotpInput component', () => {
         expect(inputNodes[2]).toHaveFocus();
     });
 
+    describe('Input methods', () => {
+        const Test = () => {
+            const [value, setValue] = useState('1');
+            return <TotpInput value={value} onValue={setValue} length={4} />;
+        };
+
+        it('should not move focus on an empty input event', () => {
+            const { container } = render(<Test />);
+            const inputNodes = container.querySelectorAll('input');
+            inputNodes[1].focus();
+
+            fireEvent.input(inputNodes[1], { target: { value: '' } });
+
+            expectValues('1   ', inputNodes);
+            expect(inputNodes[1]).toHaveFocus();
+        });
+
+        it('should ignore composing input and apply the committed value', () => {
+            const { container } = render(<Test />);
+            const inputNodes = container.querySelectorAll('input');
+            inputNodes[0].focus();
+
+            fireEvent.compositionStart(inputNodes[0]);
+            fireEvent.input(inputNodes[0], { target: { value: '' }, isComposing: true });
+
+            expectValues('1   ', inputNodes);
+            expect(inputNodes[0]).toHaveFocus();
+
+            fireEvent.input(inputNodes[0], { target: { value: '2' }, isComposing: true });
+
+            expectValues('1   ', inputNodes);
+            expect(inputNodes[0]).toHaveFocus();
+
+            fireEvent.compositionEnd(inputNodes[0], { data: '2' });
+
+            expectValues('2   ', inputNodes);
+            expect(inputNodes[1]).toHaveFocus();
+        });
+    });
+
     it('should move focus when pasting', () => {
         const Test = () => {
             const [value, setValue] = useState('');
