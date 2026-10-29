@@ -115,7 +115,7 @@ interface CompiledPattern extends RestrictedPattern {
 }
 
 const compilePattern = (pattern: RestrictedPattern): CompiledPattern => {
-    const matcher = ignore({ allowRelativePaths: true, ignorecase: true }).add(pattern.group);
+    const matcher = ignore({ allowRelativePaths: true, ignorecase: !pattern.caseSensitive }).add(pattern.group);
     return { ...pattern, matches: (importSource) => matcher.ignores(importSource) };
 };
 

@@ -134,7 +134,7 @@ export function createMenusMessages(): Pick<
         .t`Tab Separated Values (.tsv)`,
       Help: c('sheets_2025:Spreadsheet editor menubar file menu').t`Help`,
       'View recent spreadsheets': c('sheets_2025:Spreadsheet editor menubar file menu').t`View recent spreadsheets`,
-      // eslint-disable-next-line no-restricted-syntax -- Keep the existing literal gettext identity for catalog compatibility.
+      // eslint-disable-next-line proton/restricted-syntax -- Keep the existing literal gettext identity for catalog compatibility.
       'Open Proton Drive': c('sheets_2025:Spreadsheet editor menubar file menu').t`Open Proton Drive`,
       'Download logs': c('sheets_2025:Spreadsheet editor menubar file menu').t`Download logs`,
       'Toggle debug mode': c('sheets_2025:Spreadsheet editor menubar file menu').t`Toggle debug mode`,

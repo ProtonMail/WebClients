@@ -95,6 +95,20 @@ ruleTester.run('restricted-imports: matching client additions', rule, {
     ],
 });
 
+const caseSensitivePattern = { group: ['**/Docs/**'], caseSensitive: true, message: 'Use public.' };
+const caseSensitiveAdditions = [{ patterns: [caseSensitivePattern] }];
+
+ruleTester.run('restricted-imports: case sensitive patterns', rule, {
+    valid: [{ code: `import thing from './adapters/docs/thing';`, options: caseSensitiveAdditions }],
+    invalid: [
+        {
+            code: `import thing from './Containers/Docs/thing';`,
+            options: caseSensitiveAdditions,
+            errors: [{ messageId: 'patterns' }],
+        },
+    ],
+});
+
 ruleTester.run('restricted-imports: base restrictions', rule, {
     valid: [
         { code: `import { Button } from '@proton/atoms/Button/Button';`, filename: appFile },
