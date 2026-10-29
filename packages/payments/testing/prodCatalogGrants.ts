@@ -119,7 +119,7 @@ export const prodCatalogGrants = {
     ],
     [PLANS.PASS]: [EntitlementName.FlagsPass],
     [PLANS.VPN2024]: [EntitlementName.FlagsVpn],
-    [PLANS.PASS_PRO]: [EntitlementName.FlagsPass, EntitlementName.Business],
+    [PLANS.PASS_PRO]: [EntitlementName.FlagsPass, EntitlementName.Business, EntitlementName.MultiUser],
     [PLANS.PASS_BUSINESS]: [
         EntitlementName.FlagsPass,
         EntitlementName.Business,
@@ -151,6 +151,17 @@ export const prodCatalogGrants = {
         EntitlementName.ExternalManagedMembers,
         EntitlementName.Sso,
         EntitlementName.CustomOrganizationLogo,
+    ],
+    [PLANS.VPN_PASS_BUNDLE_BUSINESS]: [
+        EntitlementName.FlagsVpn,
+        EntitlementName.FlagsPass,
+        EntitlementName.Business,
+        EntitlementName.OrganizationPolicy,
+        EntitlementName.ActivityMonitorPass,
+        EntitlementName.Groups,
+        EntitlementName.MultiUser,
+        EntitlementName.ExternalManagedMembers,
+        EntitlementName.Sso,
     ],
 } satisfies Partial<Record<PLANS, Grant[]>>;
 

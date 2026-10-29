@@ -1,50 +1,6 @@
-import { PLANS } from '@proton/payments/core/constants';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
-import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
-import { getBusySlotSettingValue, isUserEligibleForBusySlots } from './busySlots';
-
-describe('isUserEligibleForBusySlots', () => {
-    it('should return true if the user has a bundle pro organisation', () => {
-        const organisation = {
-            PlanName: PLANS.BUNDLE_PRO,
-        } as Organization;
-
-        const result = isUserEligibleForBusySlots(organisation);
-
-        expect(result).toBe(true);
-    });
-
-    it('should return true if the user has a family organisation', () => {
-        const organisation = {
-            PlanName: PLANS.FAMILY,
-        } as Organization;
-
-        const result = isUserEligibleForBusySlots(organisation);
-
-        expect(result).toBe(true);
-    });
-
-    it('should return true if the user has a visionary organisation', () => {
-        const organisation = {
-            PlanName: PLANS.VISIONARY,
-        } as Organization;
-
-        const result = isUserEligibleForBusySlots(organisation);
-
-        expect(result).toBe(true);
-    });
-
-    it('should return false if the user does not have an eligible organisation', () => {
-        const organisation = {
-            PlanName: PLANS.FREE,
-        } as Organization;
-
-        const result = isUserEligibleForBusySlots(organisation);
-
-        expect(result).toBe(false);
-    });
-});
+import { getBusySlotSettingValue } from './busySlots';
 
 describe('getBusyTimeSlotCalSettingValue', () => {
     it('should share Personal calendar and user owns it', () => {

@@ -121,6 +121,18 @@ export const entitlementChecksForSelection = {
     isPassB2BWithoutGroups: (r) =>
         r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsPass] }) &&
         !r.hasEntitlement(EntitlementName.Groups),
+
+    isPassB2BWithoutMail: (r) =>
+        r.hasMatchingSubscription({
+            includes: [EntitlementName.Business, EntitlementName.FlagsPass],
+            excludes: [EntitlementName.FlagsInbox],
+        }),
+
+    /**
+     * Temporary: no entitlement names this capability yet. Replace with `calendar-busy-slots` once P2-2864 adds it.
+     */
+    hasBusySlots: (r) =>
+        r.hasMatchingSubscription({ includes: [EntitlementName.MultiUser, EntitlementName.FlagsInbox] }),
 } satisfies Record<string, EntitlementCheckForSelection>;
 
 /**
