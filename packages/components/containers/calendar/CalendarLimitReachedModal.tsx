@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
@@ -18,10 +18,10 @@ interface Props {
     open?: boolean;
     isFreeUser: boolean;
     user: UserModel;
-    subscription: MaybeFreeSubscription;
 }
 
-const CalendarLimitReachedModal = ({ open, onClose, isFreeUser, user, subscription }: Props) => {
+const CalendarLimitReachedModal = ({ open, onClose, isFreeUser, user }: Props) => {
+    const [subscription] = useSubscriptionForApp(APPS.PROTONCALENDAR);
     const { maxReachedText, addNewCalendarText } = getCalendarsLimitReachedText(isFreeUser);
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,

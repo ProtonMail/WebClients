@@ -2,7 +2,6 @@ import { useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { selectCalendarsBootstrap } from '@proton/calendar/calendarBootstrap';
@@ -43,7 +42,6 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [calendars] = useCalendars();
     const [user] = useUser();
-    const [subscription] = useSubscription();
     const { pathname } = useLocation();
     const calendarBootstrap = useCalendarSelector(selectCalendarsBootstrap);
 
@@ -136,7 +134,6 @@ const MainContainer = () => {
     return (
         <MainContainerSetup
             user={user}
-            subscription={subscription}
             addresses={memoedAddresses}
             calendars={memoedCalendars}
             drawerView={drawerView}

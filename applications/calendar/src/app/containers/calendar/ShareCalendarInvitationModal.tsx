@@ -13,7 +13,6 @@ import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useCalendarShareInvitationActions from '@proton/components/hooks/useCalendarShareInvitationActions';
 import useLoading from '@proton/hooks/useLoading';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { ShareCalendarSignatureVerificationError } from '@proton/shared/lib/calendar/sharing/shareProton/ShareCalendarSignatureVerificationError';
@@ -30,13 +29,12 @@ interface SharedCalendarModalOwnProps {
     addresses: Address[];
     calendars: VisualCalendar[];
     user: UserModel;
-    subscription: MaybeFreeSubscription;
     invitation: CalendarMemberInvitation;
 }
 
 interface Props extends ModalProps, SharedCalendarModalOwnProps {}
 
-const ShareCalendarInvitationModal = ({ addresses, calendars, user, subscription, invitation, ...rest }: Props) => {
+const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
     const goToSettings = useSettingsLink();
@@ -141,7 +139,7 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, subscription
     );
 
     if (isOtherCalendarsLimitReached && !isInvitedAddressDisabled) {
-        return <CalendarLimitReachedModal {...rest} isFreeUser={isFreeUser} user={user} subscription={subscription} />;
+        return <CalendarLimitReachedModal {...rest} isFreeUser={isFreeUser} user={user} />;
     }
 
     const title = isInvitedAddressDisabled

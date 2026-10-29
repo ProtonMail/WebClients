@@ -24,7 +24,6 @@ import MobileAppSettingsSection from '@proton/components/containers/mobile/Mobil
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import { useLoadAllowedTimeZones } from '@proton/components/hooks/useLoadAllowedTimeZones';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
@@ -44,10 +43,9 @@ interface Props {
     user: UserModel;
     calendarAppRoutes: ReturnType<typeof getCalendarAppRoutes>;
     redirect: ReactNode;
-    subscription: MaybeFreeSubscription;
 }
 
-const CalendarSettingsRouter = ({ user, subscription, calendarAppRoutes, redirect }: Props) => {
+const CalendarSettingsRouter = ({ user, calendarAppRoutes, redirect }: Props) => {
     const { path } = useRouteMatch();
     useLoadAllowedTimeZones();
 
@@ -128,7 +126,6 @@ const CalendarSettingsRouter = ({ user, subscription, calendarAppRoutes, redirec
                 <CalendarsSettingsSection
                     config={calendarsRoute}
                     user={user}
-                    subscription={subscription}
                     addresses={memoizedAddresses}
                     calendars={visualCalendars}
                     myCalendars={myCalendars}
@@ -147,7 +144,6 @@ const CalendarSettingsRouter = ({ user, subscription, calendarAppRoutes, redirec
                     holidaysCalendars={holidaysCalendars}
                     defaultCalendar={defaultCalendar}
                     user={user}
-                    subscription={subscription}
                 />
             </Route>
             <Route path={getSectionPath(path, interopsRoute)} exact>

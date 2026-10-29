@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
 import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
@@ -41,7 +40,6 @@ interface Props {
     defaultCalendar?: VisualCalendar;
     addresses?: Address[];
     user: UserModel;
-    subscription: MaybeFreeSubscription;
 }
 
 const CalendarSubpage = ({
@@ -51,7 +49,6 @@ const CalendarSubpage = ({
     defaultCalendar,
     addresses,
     user,
-    subscription,
 }: Props) => {
     const { calendarId } = useParams<{ calendarId: string }>();
     const history = useHistory();
@@ -177,7 +174,6 @@ const CalendarSubpage = ({
                         calendar={calendar}
                         addresses={addresses}
                         user={user}
-                        subscription={subscription}
                         isLoading={loadingShareData}
                         members={members}
                         invitations={invitations}
