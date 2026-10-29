@@ -12,12 +12,13 @@ export interface SidebarVisibility {
     showUserDropdown: boolean;
     showCollapseToggle: boolean;
     showSchedules: boolean;
+    showCustomize: boolean;
 }
 
 export const useSidebarVisibility = (): SidebarVisibility => {
     const { isSmallScreen } = useSidebar();
     const isGuest = useIsGuest();
-    const { imageTools, artifactsView, schedules } = useLumoFlags();
+    const { imageTools, artifactsView, schedules, customAgents } = useLumoFlags();
 
     return {
         isSmallScreen,
@@ -32,5 +33,6 @@ export const useSidebarVisibility = (): SidebarVisibility => {
         // Collapse toggle is desktop-only regardless of auth state
         showCollapseToggle: !isSmallScreen,
         showSchedules: schedules && !isGuest,
+        showCustomize: customAgents && !isGuest,
     };
 };

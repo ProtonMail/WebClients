@@ -6,6 +6,9 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { askUserQuestionsToolExecutor } from '../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
 import { createScheduleToolExecutor } from '../../features/client-tools/createScheduleTool/createScheduleTool';
+import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
+import { createSkillToolExecutor } from '../../features/skills/skillTool';
+import { loadSkillInstructions, readSkillFile } from '../../features/skills/skillsThunks';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import type { ContextFilter } from '../../llm';
 import { compactConversation, estimateTurnsTokens } from '../../llm/compaction';
@@ -50,6 +53,17 @@ type ForwardedSendOptions = AssistantCallOptions & {
     enableAskUserQuestionsTool?: boolean;
     /** Offer schedule drafts for review when schedules are enabled. */
     enableCreateScheduleTool?: boolean;
+    /** Skills the model may load or read files from; each tool is only registered when it has skills. */
+    skillTools?: SkillToolHandles;
+};
+
+export type SkillToolHandles = {
+    /** Skills use_skill may load. */
+    loadable: string[];
+    /** Skills the user invoked whose files read_skill_file may also read. */
+    readable: string[];
+    /** Lumo Desktop's connectors, so a loaded skill learns which tools stand for its `~~placeholders`. */
+    desktopConnectors?: DesktopConnectorState;
 };
 
 export type ConversationGenerationResult = {
@@ -104,7 +118,10 @@ const DEFAULT_MAX_COMPACTIONS = 1;
  * Client-side tools for a send. Artifact and Lumo Desktop connectors each have their own
  * {@link ClientToolExecutor}; compose them so enabling create_artifact does not replace desktop tools.
  */
-function resolveClientToolExecutor(sendOptions: ForwardedSendOptions): ClientToolExecutor | undefined {
+function resolveClientToolExecutor(
+    sendOptions: ForwardedSendOptions,
+    dispatch: LumoDispatch
+): ClientToolExecutor | undefined {
     const executors: ClientToolExecutor[] = [];
 
     if (sendOptions.enableCreateScheduleTool) {
@@ -113,6 +130,21 @@ function resolveClientToolExecutor(sendOptions: ForwardedSendOptions): ClientToo
 
     if (sendOptions.enableAskUserQuestionsTool) {
         executors.push(askUserQuestionsToolExecutor);
+    }
+
+    const { skillTools } = sendOptions;
+    if (skillTools && (skillTools.loadable.length || skillTools.readable.length)) {
+        executors.push(
+            createSkillToolExecutor({
+                loadableHandles: skillTools.loadable,
+                readableHandles: skillTools.readable,
+                loadSkill: (handle) =>
+                    dispatch(
+                        loadSkillInstructions({ handle, desktopConnectors: skillTools.desktopConnectors })
+                    ).unwrap(),
+                readFile: (handle, path) => dispatch(readSkillFile({ handle, path })).unwrap(),
+            })
+        );
     }
 
     if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
@@ -176,7 +208,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
         let currentParentId = parentMessageId;
         let compactions = 0;
         let toolExecutionStarted = false;
-        const resolvedExecutor = resolveClientToolExecutor(sendOptions);
+        const resolvedExecutor = resolveClientToolExecutor(sendOptions, dispatch);
         const clientToolExecutor = resolvedExecutor && {
             ...resolvedExecutor,
             execute: async (...args: Parameters<ClientToolExecutor['execute']>) => {

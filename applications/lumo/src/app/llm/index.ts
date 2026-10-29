@@ -179,7 +179,8 @@ export function prepareTurns(
     artifactToolMode: ArtifactToolMode = 'off',
     isFromQueryParam = false,
     contextLimits: ContextLimits = DEFAULT_CONTEXT_LIMITS,
-    artifactPresentationEnabled = false
+    artifactPresentationEnabled = false,
+    skillInstructions?: string
 ): Turn[] {
     // Step 0: Apply any context-compaction boundary. Summarized messages are
     // replaced by a single summary turn and dropped from the chain, so the model
@@ -302,6 +303,9 @@ export function prepareTurns(
     }
     if (agentInstructions) {
         instructionParts.push(`[Agent instructions: ${agentInstructions}]`);
+    }
+    if (skillInstructions) {
+        instructionParts.push(skillInstructions);
     }
     if (personalizationPrompt) {
         instructionParts.push(`${PERSONALIZATION_MARKER} ${personalizationPrompt}]`);

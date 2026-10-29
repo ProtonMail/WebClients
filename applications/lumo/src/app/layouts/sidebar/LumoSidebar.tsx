@@ -22,6 +22,7 @@ import { LumoSidebarUpsell } from '../../upsells';
 import LumoLogoHeader from '../header/LumoLogo';
 import { ScheduledSidebarSection } from './ScheduledSidebarSection';
 import { ChatsSidebarSection } from './components/ChatsSidebarSection';
+import { CustomizeSidebarButton } from './components/CustomizeSidebarButton';
 import { LibrarySidebarButton } from './components/LibrarySidebarButton';
 import { NewChatSidebarButton } from './components/NewChatSidebarButton';
 import { SearchSection } from './components/SearchSection';
@@ -41,7 +42,8 @@ const ProjectsSidebarSection = lazy(() =>
 const LumoSidebarContent = () => {
     const { isSmallScreen, toggle, closeOnItemClick } = useSidebar();
     const history = useHistory();
-    const { showMobileHeader, showSearch, showGallery, showLibrary, showSchedules } = useSidebarVisibility();
+    const { showMobileHeader, showSearch, showGallery, showLibrary, showSchedules, showCustomize } =
+        useSidebarVisibility();
     const isGuest = useIsGuest();
     const settingsModal = useModalStateObject();
     const {
@@ -100,6 +102,7 @@ const LumoSidebarContent = () => {
                             />
                         )}
                         {showLibrary && <LibrarySidebarButton onItemClick={closeOnItemClick} />}
+                        {showCustomize && <CustomizeSidebarButton onItemClick={closeOnItemClick} />}
                         {apiKeyManagement && (
                             <SidebarItem
                                 icon="CodeXml"

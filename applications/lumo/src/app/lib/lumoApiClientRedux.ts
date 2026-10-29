@@ -52,6 +52,12 @@ import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../types-api';
 import { getLumoFeatureFlagsForChatCompletions } from '../util/unleashFeatureFlagsForObservability';
 import { createImageAttachment, generateImageMarkdown } from './imageAttachment';
 
+/**
+ * Message tokens are dispatched at most this often. A dispatch per token re-renders synchronously
+ * (useSyncExternalStore), which floods React and trips its nested-update warning on fast streams.
+ */
+const CHUNK_FLUSH_INTERVAL_MS = 32;
+
 export const getTerminalTypeForApiError = (error: unknown) => {
     if (
         typeof error === 'object' &&
@@ -113,11 +119,32 @@ export function sendMessageWithRedux(
 
         const featureFlags = getLumoFeatureFlagsForChatCompletions();
 
+        let pendingContent = '';
+        let flushTimer: ReturnType<typeof setTimeout> | undefined;
+        // Must run before any other dispatch for this message, so updates keep their stream order.
+        const flushContent = () => {
+            if (flushTimer !== undefined) {
+                clearTimeout(flushTimer);
+                flushTimer = undefined;
+            }
+            if (pendingContent && messageId) {
+                dispatch(appendChunk({ messageId, content: pendingContent }));
+            }
+            pendingContent = '';
+        };
+        const queueContent = (content: string) => {
+            pendingContent += content;
+            flushTimer ??= setTimeout(flushContent, CHUNK_FLUSH_INTERVAL_MS);
+        };
+
         try {
             return await client.callAssistant(api, turns, {
                 ...assistantOptions,
                 featureFlags,
                 chunkCallback: async (message: GenerationResponseMessage) => {
+                    if (message.type !== 'token_data' || message.target !== 'message') {
+                        flushContent();
+                    }
                     switch (message.type) {
                         case 'tool-error':
                             // The model reported a context-window overflow mid-stream. Surface a
@@ -209,12 +236,7 @@ export function sendMessageWithRedux(
                                 case 'message':
                                     accumulatedContent += message.content;
                                     if (messageId) {
-                                        dispatch(
-                                            appendChunk({
-                                                messageId,
-                                                content: message.content,
-                                            })
-                                        );
+                                        queueContent(message.content);
                                     }
                                     break;
 
@@ -390,6 +412,7 @@ export function sendMessageWithRedux(
                     }
                 },
                 finishCallback: async (status) => {
+                    flushContent();
                     if (messageId && conversationId && spaceId) {
                         // Always finish the message (even if failed) to preserve any content that was streamed
                         // This includes reasoning tokens, partial message content, or tool calls
@@ -485,6 +508,8 @@ export function sendMessageWithRedux(
             }
 
             throw error;
+        } finally {
+            flushContent();
         }
     };
 }

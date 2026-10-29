@@ -1,0 +1,35 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.skill-token-highlight {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	margin: 0;
+	border-color: transparent;
+	border-style: solid;
+	color: inherit;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+	pointer-events: none;
+
+	// Only colour and box-shadow here: anything that changes glyph widths would misalign the caret.
+	&__token {
+		border-radius: rem(4);
+		background-color: color-mix(in srgb, var(--primary) 12%, transparent);
+		box-shadow: 0 0 0 rem(2) color-mix(in srgb, var(--primary) 12%, transparent);
+		color: var(--primary);
+	}
+}
+
+.composer-text-wrapper {
+	position: relative;
+	display: flex;
+	flex: 1 1 auto;
+	min-inline-size: 0;
+
+	&.has-skill-tokens textarea {
+		position: relative;
+		color: transparent;
+		caret-color: var(--text-norm);
+	}
+}

@@ -1,0 +1,69 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.skill-file-tree {
+	block-size: 100%;
+	border-inline-end: 1px solid var(--border-weak);
+	background-color: var(--background-weak);
+
+	&__list {
+		padding: rem(8) rem(6);
+	}
+
+	&__row {
+		min-block-size: rem(28);
+		padding-block: rem(4);
+		padding-inline: calc(#{rem(8)} + var(--skill-file-depth, 0) * #{rem(14)}) rem(8);
+		border: none;
+		border-radius: rem(6);
+		background: transparent;
+		font-size: rem(13);
+		cursor: pointer;
+
+		&:hover {
+			background-color: var(--interaction-default-hover);
+		}
+
+		&:focus-visible {
+			outline: 2px solid var(--focus-outline);
+			outline-offset: -2px;
+		}
+	}
+
+	&__folder {
+		color: var(--text-weak);
+	}
+
+	&__chevron {
+		color: var(--text-hint);
+		transition: transform 0.15s ease;
+
+		&.is-open {
+			transform: rotate(90deg);
+		}
+	}
+
+	&__file {
+		color: var(--text-norm);
+
+		&.is-active {
+			background-color: var(--background-norm);
+			box-shadow: 0 0 0 1px var(--border-weak);
+			font-weight: 600;
+
+			.skill-file-tree__icon {
+				color: var(--primary);
+			}
+		}
+	}
+
+	&__icon {
+		color: var(--text-hint);
+	}
+
+	&__dot {
+		inline-size: rem(6);
+		block-size: rem(6);
+		border-radius: 50%;
+		background-color: var(--interaction-norm);
+	}
+}

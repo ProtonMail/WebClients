@@ -1,0 +1,26 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.skill-connector {
+	&__row--unavailable {
+		opacity: 0.5;
+
+		.text-semibold {
+			font-weight: var(--font-weight-normal);
+		}
+	}
+
+	&__status.is-connected {
+		color: var(--signal-success);
+	}
+
+	&__dot {
+		block-size: rem(8);
+		inline-size: rem(8);
+		border-radius: 50%;
+		background-color: var(--border-norm);
+
+		&.is-connected {
+			background-color: var(--signal-success);
+		}
+	}
+}

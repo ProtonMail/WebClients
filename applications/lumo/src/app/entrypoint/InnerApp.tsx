@@ -3,6 +3,7 @@ import { Redirect, Route, BrowserRouter as Router, Switch, useRouteMatch } from 
 
 import ConversationSkeleton from '../components/ConversationSkeleton';
 import DebugView from '../features/dev/DebugView';
+import { useSkillsSync } from '../features/skills/useSkillsSync';
 import { useLumoFlags } from '../hooks/useLumoFlags';
 import { MainLayout } from '../layouts/MainLayout';
 import { GhostChatProvider } from '../providers/GhostChatProvider';
@@ -27,10 +28,20 @@ const SchedulesView = lazy(() =>
 const ScheduleHomeView = lazy(() =>
     import('../features/schedules/ScheduleHomeView').then((m) => ({ default: m.ScheduleHomeView }))
 );
+const CustomizeView = lazy(() =>
+    import('../features/customize/CustomizeView').then((m) => ({ default: m.CustomizeView }))
+);
+const UploadSkillView = lazy(() =>
+    import('../features/customize/UploadSkillView').then((m) => ({ default: m.UploadSkillView }))
+);
+const SkillDetailView = lazy(() =>
+    import('../features/customize/SkillDetailView').then((m) => ({ default: m.SkillDetailView }))
+);
 
 export function InnerApp() {
     const { url } = useRouteMatch(); // either "/guest" or "/u/:sessionId"
-    const { apiKeyManagement, imageTools, artifactsView, aiPaperTrailRoute, schedules } = useLumoFlags();
+    const { apiKeyManagement, imageTools, artifactsView, aiPaperTrailRoute, schedules, customAgents } = useLumoFlags();
+    useSkillsSync();
 
     return (
         <PandocProvider>
@@ -71,6 +82,13 @@ export function InnerApp() {
                                     {schedules && <Route exact path="/schedules" component={SchedulesView} />}
                                     {schedules && (
                                         <Route exact path="/schedules/:scheduleId" component={ScheduleHomeView} />
+                                    )}
+                                    {customAgents && <Route exact path="/customize" component={CustomizeView} />}
+                                    {customAgents && (
+                                        <Route exact path="/customize/upload" component={UploadSkillView} />
+                                    )}
+                                    {customAgents && (
+                                        <Route exact path="/customize/skills/:skillId" component={SkillDetailView} />
                                     )}
 
                                     <Route exact path="/" component={ConversationPage} />

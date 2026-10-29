@@ -6,15 +6,13 @@ import { c } from 'ttag';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
-import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useArtifactCreation } from '../../providers/ArtifactCreationProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
-import { useLumoDispatch } from '../../redux/hooks';
-import { openAgentPicker } from '../../redux/slices/composerActions';
 import { isLimitExhausted, useRemainingLimits } from '../../services/usageLimitsStore';
 import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
 import useLumoPlusUpsellButtonConfig from '../../upsells/useLumoPlusUpsellButtonConfig';
@@ -22,6 +20,7 @@ import { sendUpgradeButtonClickedEvent } from '../../util/telemetry';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { NewLabel } from '../NewLabel';
 import { ConnectorList } from './ConnectorList';
+import { SkillMenuList } from './SkillMenuList';
 import { MenuDropdown, type MenuDropdownProps, MenuItem } from './components/MenuDropdown';
 
 import './ToolMenuDropdown.scss';
@@ -55,8 +54,7 @@ export const ToolMenuDropdown = ({
     const remainingLimits = useRemainingLimits();
     const imageLimitExhausted = isLimitExhausted(remainingLimits?.images);
     const imageUpsellConfig = useLumoPlusUpsellButtonConfig(LUMO_UPSELL_PATHS.COMPOSER_IMAGE_SELECTOR);
-    const dispatch = useLumoDispatch();
-    const [view, setView] = useState<'main' | 'connectors'>('main');
+    const [view, setView] = useState<'main' | 'connectors' | 'skills'>('main');
     const showConnectors = isToolsFlagEnabled && isDesktopEnvironment();
 
     useEffect(() => {
@@ -122,17 +120,8 @@ export const ToolMenuDropdown = ({
             canShow: isToolsFlagEnabled && isImageToolsFlagEnabled,
             isDisabled: imageLimitExhausted,
         },
-        {
-            icon: <LumoIcon name="Bot" size={16} />,
-            getLabel: () => c('collider_2025: Action').t`Custom ${LUMO_SHORT_APP_NAME}s`,
-            getDescription: isGuest ? () => c('collider_2025:Placeholder').t`Sign in required` : undefined,
-            onClick: () => dispatch(openAgentPicker()),
-            onClose: onClose,
-            canShow: isToolsFlagEnabled && isCustomAgentsFlagEnabled && (canUseAgents || isGuest),
-            isDisabled: isGuest,
-            isSignInRequired: isGuest,
-        },
     ];
+    const showSkills = isToolsFlagEnabled && isCustomAgentsFlagEnabled && (canUseAgents || isGuest);
     const visibleToolMenuItems = toolMenuItems.filter((item) => item.canShow);
     const showImageUpsellFooter =
         imageLimitExhausted && !hasLumoPlus && Boolean(imageUpsellConfig?.onUpgrade || imageUpsellConfig?.path);
@@ -147,25 +136,47 @@ export const ToolMenuDropdown = ({
             width="200px"
             autoClose={false}
         >
-            {view === 'connectors' ? (
-                <ConnectorList onBack={() => setView('main')} />
-            ) : (
+            {view === 'connectors' && <ConnectorList onBack={() => setView('main')} />}
+            {view === 'skills' && <SkillMenuList onBack={() => setView('main')} onClose={onClose} />}
+            {view === 'main' && (
                 <>
                     {visibleToolMenuItems.map((item, index) => (
                         <div
                             key={index}
                             className={clsx(
-                                item.isSignInRequired && 'tool-menu-item--sign-in-required',
-                                item.isDisabled &&
-                                    !item.isSignInRequired &&
-                                    'tool-menu-item--disabled pointer-events-none opacity-55'
+                                item.isDisabled && 'tool-menu-item--disabled pointer-events-none opacity-55'
                             )}
                         >
                             <MenuItem {...item} />
                         </div>
                     ))}
 
-                    {visibleToolMenuItems.length > 0 && showToolToggles && (
+                    {showSkills && (
+                        <div className={clsx(isGuest && 'tool-menu-item--sign-in-required')}>
+                            <DropdownMenuButton
+                                className="justify-start"
+                                disabled={isGuest}
+                                onClick={() => setView('skills')}
+                            >
+                                <div className="flex items-center gap-3 w-full">
+                                    <span className="shrink-0 flex">
+                                        <LumoIcon name="Sparkles" size={16} />
+                                    </span>
+                                    <div className="flex flex-column flex-1 min-w-0 text-left">
+                                        <span className="text-sm font-medium">{c('collider_2025: Action')
+                                            .t`Skills`}</span>
+                                        {isGuest && (
+                                            <span className="text-xs color-hint">{c('collider_2025:Placeholder')
+                                                .t`Sign in required`}</span>
+                                        )}
+                                    </div>
+                                    {!isGuest && <LumoIcon name="ChevronRight" size={16} />}
+                                </div>
+                            </DropdownMenuButton>
+                        </div>
+                    )}
+
+                    {(visibleToolMenuItems.length > 0 || showSkills) && showToolToggles && (
                         <hr className="my-1 w-custom mx-auto" style={{ '--w-custom': '90%' }} />
                     )}
 
