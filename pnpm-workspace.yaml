@@ -197,6 +197,7 @@ allowBuilds:
     ttag-cli: false
 
 patchedDependencies:
+    '@electron-forge/core@7.11.2': patches/@electron-forge__core@7.11.2.patch
     # Touch-only fix: tapping from a cell in one table into another threw "Cell not found in table." and
     # locked the Docs editor. Upstream has the same check (0.52.0 has it); drop this when upgrading Lexical.
     '@lexical/table@0.31.2': patches/@lexical__table@0.31.2.patch

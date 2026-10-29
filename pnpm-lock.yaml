@@ -654,6 +654,7 @@ overrides:
 packageExtensionsChecksum: sha256-1OxnDB4AOH7PfhLmp48x2LtWyermcwyh8QynApSetqA=
 
 patchedDependencies:
+  '@electron-forge/core@7.11.2': 49614044de5a377cfe0ae6415e228fd51f43bd38b5283b09e1c81af07b31eb36
   '@lexical/table@0.31.2': 3e35bf4fec82c0652d2811d1266298cf3b7ce54a64e8f9099c1a4106cadfd2f9
   '@mlc-ai/web-llm@0.2.32': f2db861fd9b2307065c0dd450cb8471d7a1aff76a29cd7e383fb2555e831b1eb
   '@pdf-lib/standard-fonts@1.0.0': d6f2355d44f27790cc3b1497d17218c245fcceb9d07c5c7f48b7419c6d4b41f6
@@ -31635,7 +31636,7 @@ snapshots:
 
   '@electron-forge/cli@7.11.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(bluebird@3.7.2)(clean-css@5.3.3)(csso@5.0.5)(encoding@0.1.13)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.2.3)':
     dependencies:
-      '@electron-forge/core': 7.11.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(bluebird@3.7.2)(clean-css@5.3.3)(csso@5.0.5)(encoding@0.1.13)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.2.3)
+      '@electron-forge/core': 7.11.2(patch_hash=49614044de5a377cfe0ae6415e228fd51f43bd38b5283b09e1c81af07b31eb36)(@swc/core@1.16.18(@swc/helpers@0.5.17))(bluebird@3.7.2)(clean-css@5.3.3)(csso@5.0.5)(encoding@0.1.13)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.2.3)
       '@electron-forge/core-utils': 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/shared-types': 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron/get': 3.1.0(supports-color@11.0.0)
@@ -31686,7 +31687,7 @@ snapshots:
       - bluebird
       - supports-color
 
-  '@electron-forge/core@7.11.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(bluebird@3.7.2)(clean-css@5.3.3)(csso@5.0.5)(encoding@0.1.13)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.2.3)':
+  '@electron-forge/core@7.11.2(patch_hash=49614044de5a377cfe0ae6415e228fd51f43bd38b5283b09e1c81af07b31eb36)(@swc/core@1.16.18(@swc/helpers@0.5.17))(bluebird@3.7.2)(clean-css@5.3.3)(csso@5.0.5)(encoding@0.1.13)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.2.3)':
     dependencies:
       '@electron-forge/core-utils': 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
       '@electron-forge/maker-base': 7.11.2(bluebird@3.7.2)(supports-color@11.0.0)
