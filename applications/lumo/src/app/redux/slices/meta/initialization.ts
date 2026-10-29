@@ -1,6 +1,6 @@
 import { type PayloadAction, createAction, createReducer } from '@reduxjs/toolkit';
 
-import { pullSpacesSuccess } from '../core/spaces';
+import { pullSpacesFailure, pullSpacesSuccess } from '../core/spaces';
 
 export const setReduxLoadedFromIdb = createAction('lumo/meta/setReduxLoadedFromIdb');
 /** Set after the addMasterKey settings listener finishes (remote or localStorage fallback). */
@@ -27,6 +27,8 @@ interface InitializationState {
     lumoUserSettingsBootstrapped: boolean;
     /** Bumped after each successful pullSpaces so retention enforcement can re-run. */
     lastSpacesPullAt: number;
+    /** True once the first pullSpaces has finished, successfully or not. */
+    spacesPullSettled: boolean;
     remoteUserSettingsUndecryptable: boolean;
 }
 
@@ -34,6 +36,7 @@ const initialState: InitializationState = {
     reduxLoadedFromIdb: false,
     lumoUserSettingsBootstrapped: false,
     lastSpacesPullAt: 0,
+    spacesPullSettled: false,
     remoteUserSettingsUndecryptable: false,
 };
 
@@ -48,6 +51,10 @@ const initializationReducer = createReducer<InitializationState>(initialState, (
         })
         .addCase(pullSpacesSuccess, (state) => {
             state.lastSpacesPullAt = Date.now();
+            state.spacesPullSettled = true;
+        })
+        .addCase(pullSpacesFailure, (state) => {
+            state.spacesPullSettled = true;
         })
         .addCase(setRemoteUserSettingsUndecryptable, (state, action: PayloadAction<boolean>) => {
             state.remoteUserSettingsUndecryptable = action.payload;

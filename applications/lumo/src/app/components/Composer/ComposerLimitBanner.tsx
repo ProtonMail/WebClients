@@ -68,7 +68,7 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
                 description: c('collider_2025: Warning')
                     .t`That's a lot of files for ${LUMO_SHORT_APP_NAME} to juggle. Remove some before uploading new ones to keep things purring.`,
                 action: onOpenFiles
-                    ? { label: c('collider_2025: Action').t`Manage files`, onClick: onOpenFiles }
+                    ? { label: c('collider_2025: Action').t`Manage files`, onClick: () => onOpenFiles() }
                     : undefined,
             };
         }
@@ -92,7 +92,7 @@ export const ComposerLimitBanner = ({ conversationId, spaceId, onOpenFiles }: Pr
                 description: c('collider_2025: Warning')
                     .t`Tidying away files you no longer need keeps ${LUMO_SHORT_APP_NAME} purring.`,
                 action: onOpenFiles
-                    ? { label: c('collider_2025: Action').t`Manage files`, onClick: onOpenFiles }
+                    ? { label: c('collider_2025: Action').t`Manage files`, onClick: () => onOpenFiles() }
                     : undefined,
             };
         }
