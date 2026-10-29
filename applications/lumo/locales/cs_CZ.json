@@ -759,6 +759,11 @@
         "Ročně"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } desktopová aplikace"
+      ]
+    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "Problém s ${ LUMO_SHORT_APP_NAME }"
@@ -3374,9 +3379,6 @@
       "Type @filename to ask questions about a specific file": [
         "Zadejte @filename pro dotaz ke konkrétnímu souboru"
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
-        "Navyšte na ${ LUMO_SHORT_APP_NAME } Plus, abyste mohli vytvářet neomezené množství vlastních ${ LUMO_SHORT_APP_NAME }, odemknout pokročilé modely AI a další."
-      ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Pro komplexní práci použijte model Max nebo model Lite pro každodenní úkoly. Pro rychlé odpovědi zvolte režim Rychlý nebo režim Přemýšlení pro náročnější otázky."
       ],
@@ -3944,9 +3946,6 @@
       ],
       "Memory": [
         "Paměť"
-      ],
-      "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Více vlastních ${ LUMO_SHORT_APP_NAME } s ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "More options": [
         "Více možností"
@@ -5905,9 +5904,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
-      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Dobijte na svůj účet kredity, za které si můžete předplatit nový tarif nebo prodloužit předplatné vašeho současného tarifu. Získáte jeden kredit za každý/každou/každé ${ i18nCurrency }."
-      ],
       "Total conversations:": [
         "Celkový počet konverzací:"
       ],
@@ -6801,44 +6797,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Můžete mít až ${ TRIAL_MAX_MEET_SEATS } licencí ${ MEET_SHORT_APP_NAME } během zkušební doby."
-      ]
-    },
-    "Monetary unit": {
-      "Australian dollar": [
-        "Australský dolar"
-      ],
-      "Brazilian real": [
-        "Brazilský real"
-      ],
-      "British pound": [
-        "Britská libra"
-      ],
-      "Canadian dollar": [
-        "Kanadský dolar"
-      ],
-      "Euro": [
-        "Euro"
-      ],
-      "Hong Kong dollar": [
-        "Hongkongský dolar"
-      ],
-      "Japanese yen": [
-        "Japonský jen"
-      ],
-      "Polish złoty": [
-        "Polský zlotý"
-      ],
-      "Singapore dollar": [
-        "Singapurský dolar"
-      ],
-      "South Korean won": [
-        "Jihokorejský won"
-      ],
-      "Swiss franc": [
-        "Švýcarský frank"
-      ],
-      "US Dollar": [
-        "Americký dolar"
       ]
     },
     "New Label form": {
@@ -7971,9 +7929,6 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
       ],
-      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
-        "Transakce byla úspěšně rozpoznána. Kredity budou připsány na váš účet po úplném potvrzení transakce."
-      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíc. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíce. Předplatné můžete kdykoli zrušit.",
@@ -8715,9 +8670,6 @@
       "Copied to clipboard": [
         "Zkopírováno do schránky"
       ],
-      "Credits added": [
-        "Kredity byly přidány"
-      ],
       "Email address copied to clipboard": [
         "E-mailová adresa zkopírována do schránky"
       ],
@@ -8846,9 +8798,6 @@
       ],
       "Add credit/debit card": [
         "Přidat kreditní/debetní kartu"
-      ],
-      "Add credits": [
-        "Přidat kredit"
       ],
       "Add user": [
         "Přidat uživatele"

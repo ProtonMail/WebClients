@@ -1217,6 +1217,9 @@
       "Use Apertus": [
         "Apertus verwenden"
       ],
+      "View all models": [
+        "Alle Modelle anzeigen"
+      ],
       "Web search": [
         "Websuche"
       ]
@@ -1463,6 +1466,9 @@
       ],
       "Last 90 days": [
         "Letzte 90 Tage"
+      ],
+      "Previous 30 days": [
+        "Letzte 30 Tage"
       ]
     },
     "collider_2025: Description": {
@@ -1977,6 +1983,9 @@
       "Add to active": [
         "Zur aktuellen Unterhaltung hinzufügen"
       ],
+      "Add your key to the authorization header and call a model.": [
+        "Füge deinen Schlüssel in den Autorisierungskopfzeile ein und rufe ein Modell auf."
+      ],
       "Advanced account and network security in one plan": [
         "Erweiterte Konto- und Netzwerksicherheit in einem Abonnement"
       ],
@@ -2198,6 +2207,9 @@
       ],
       "No files or creations yet": [
         "Noch keine Dateien oder erstellten Inhalte"
+      ],
+      "No monthly spending limit": [
+        "Keine monatliche Ausgabenlimite"
       ],
       "No new memories were found in your recent chats.": [
         "In deinen letzten Chats wurden keine neuen Erinnerungen gefunden."
@@ -2495,11 +2507,17 @@
       "All models": [
         "Alle Modelle"
       ],
+      "Allowed API access": [
+        "API-Zugriff erlauben"
+      ],
       "Answer mode": [
         "Antwortmodus"
       ],
       "API calls": [
         "API-Aufrufe"
+      ],
+      "Base URL": [
+        "Basis-URL"
       ],
       "Basic": [
         "Basis"
@@ -2564,6 +2582,9 @@
       "Model and response mode": [
         "Modell und Antwortmodus"
       ],
+      "Monthly spending limit": [
+        "Monatliche Ausgabenlimite"
+      ],
       "Not factually correct": [
         "Faktisch nicht korrekt"
       ],
@@ -2611,6 +2632,9 @@
       ],
       "Thinking mode": [
         "Denkmodus"
+      ],
+      "Token type": [
+        "Token-Typ"
       ],
       "Tool calls": [
         "Tool-Aufrufe"
@@ -2860,6 +2884,9 @@
       "Allowed": [
         "Erlaubt"
       ],
+      "Blocked": [
+        "Blockiert"
+      ],
       "Copied!": [
         "Kopiert"
       ],
@@ -3015,6 +3042,9 @@
       ],
       "Generated code": [
         "Generierter Code"
+      ],
+      "Getting started": [
+        "Erste Schritte"
       ],
       "Got a minute?": [
         "Hast du kurz Zeit?"
@@ -3674,6 +3704,12 @@
       "Open conversation": [
         "Unterhaltung öffnen"
       ],
+      "Open scheduled task: ${ name }": [
+        "Geplante Aufgabe öffnen: ${ name }"
+      ],
+      "Open task": [
+        "Aufgabe öffnen"
+      ],
       "PDF": [
         "PDF"
       ],
@@ -3751,6 +3787,9 @@
       ],
       "Save to ${ DRIVE_APP_NAME }": [
         "In ${ DRIVE_APP_NAME } speichern"
+      ],
+      "Schedule task: ${ taskName }": [
+        "Aufgabe planen: ${ taskName }"
       ],
       "Select all": [
         "Alles auswählen"
@@ -4004,6 +4043,9 @@
       "Save here": [
         "Hier speichern"
       ],
+      "Schedule": [
+        "Planen"
+      ],
       "Scheduled": [
         "Geplant"
       ],
@@ -4035,6 +4077,9 @@
     "collider_2025:Description": {
       "Big Tech AI built a scarily accurate profile of me from my chat history. See what yours knows about you 👀": [
         "Die KI der Big-Tech-Unternehmen hat anhand meines Chat-Verlaufs ein erschreckend genaues Profil von mir erstellt. Schau mal, was deine über dich weiß 👀"
+      ],
+      "Run without asking, using only the connectors you allow. Off: pause and notify you before each tool that requires confirmation.": [
+        "Ohne Nachfrage ausführen, wobei nur die von dir zugelassenen Konnektoren verwendet werden. „Deaktiviert“: Vor jedem Tool, das eine Bestätigung erfordert, wird eine Pause eingelegt und du wirst benachrichtigt."
       ],
       "Use the connectors above without asking. Off: pause and notify me before each Ask tool.": [
         "Die oben genannten Konnektoren ohne Nachfrage verwenden. Ausschalten: Vor jeder Anfrage pausieren und mich benachrichtigen."
@@ -4079,6 +4124,9 @@
       ],
       "Could not save this task. Reload the page and try again.": [
         "Diese Aufgabe konnte nicht gespeichert werden. Lade die Seite neu und versuche es erneut."
+      ],
+      "Could not start this task. Please try again.": [
+        "Diese Aufgabe konnte nicht gestartet werden. Bitte versuche es erneut."
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "Datenbankverbindung verloren. Bitte lade die Seite neu, um fortzufahren."
@@ -4202,6 +4250,9 @@
       ],
       "We could not read this file. Select it again, or move it out of cloud storage before uploading.": [
         "Diese Datei konnte nicht eingelesen werden. Wähle sie erneut aus oder verschiebe sie vor dem Hochladen aus dem Cloud-Speicher."
+      ],
+      "You've reached your plan's scheduled task limit (${ scheduleLimit }). Delete a task to create another.": [
+        "Du hast das für dein Abonnement festgelegte Limit für geplante Aufgaben (${ scheduleLimit }) erreicht. Lösche eine Aufgabe, um eine neue erstellen zu können."
       ]
     },
     "collider_2025:Error (validation)": {
@@ -4221,6 +4272,9 @@
       ],
       "Unlimited projects": [
         "Unbegrenzte Projekte"
+      ],
+      "Up to 3 scheduled tasks": [
+        "Bis zu drei geplante Aufgaben"
       ]
     },
     "collider_2025:Filter": {
@@ -4287,6 +4341,9 @@
       "${ LUMO_SHORT_APP_NAME } remembers your preferences, so each conversation can build on the last. It can also handle longer chats and larger documents.": [
         "${ LUMO_SHORT_APP_NAME } merkt sich deine Einstellungen, sodass jede Unterhaltung auf der vorherigen aufbauen kann. Es kann auch längere Chats und größere Dokumente verarbeiten."
       ],
+      "${ name } completed.": [
+        "${ name } abgeschlossen."
+      ],
       "${ project.conversationCount } conversation": [
         "${ project.conversationCount } Unterhaltung"
       ],
@@ -4339,6 +4396,9 @@
       "Applying your changes…": [
         "Deine Änderungen werden angewendet…"
       ],
+      "Are you sure you want to delete \"${ taskName }\"? Its run history will also be deleted. This action cannot be undone.": [
+        "Möchtest du „${ taskName }“ wirklich löschen? Der Ausführungsverlauf wird ebenfalls gelöscht. Diese Aktion kann nicht widerrufen werden."
+      ],
       "Are you sure you want to delete \"${ taskName }\"? This action cannot be undone.": [
         "Möchtest du \"${ taskName }\" wirklich löschen? Diese Aktion kann nicht widerrufen werden."
       ],
@@ -4371,6 +4431,9 @@
       ],
       "Check what your AIs store about you and delete what you no longer need.": [
         "Überprüfe, welche Daten deine KI-Systeme über dich speichern, und lösche diejenigen, die du nicht mehr benötigst."
+      ],
+      "Checking your plan, try again in a moment.": [
+        "Dein Abonnement wird derzeit überprüft. Bitte versuche es in einem Moment erneut."
       ],
       "Choose a format to export \"${ conversation.title }\":": [
         "Wähle ein Format für den Export von „${ conversation.title }“ aus:"
@@ -4616,6 +4679,9 @@
       "red flags": [
         "Warnsignale"
       ],
+      "Resume to run again": [
+        "Fortsetzen, um erneut auszuführen"
+      ],
       "Revised": [
         "Überarbeitet"
       ],
@@ -4625,8 +4691,8 @@
       "Run tasks on a schedule or whenever you need them. Tasks run on this computer while ${ LUMO_SHORT_APP_NAME } is open.": [
         "Führe Aufgaben nach einem Zeitplan oder bei Bedarf aus. Die Aufgaben werden auf diesem Computer ausgeführt, solange ${ LUMO_SHORT_APP_NAME } geöffnet bleibt."
       ],
-      "Runs on this computer while ${ LUMO_SHORT_APP_NAME } is open. If your computer is asleep, it runs when ${ LUMO_SHORT_APP_NAME } next opens.": [
-        "Wird auf diesem Computer ausgeführt, solange ${ LUMO_SHORT_APP_NAME } geöffnet ist. Befindet sich dein Computer im Ruhezustand, wird die Anwendung ausgeführt, sobald ${ LUMO_SHORT_APP_NAME } das nächste Mal geöffnet wird."
+      "Runs on an available computer while ${ LUMO_SHORT_APP_NAME } is open. Computers in the same timezone share one run for each occurrence.": [
+        "Wird auf einem verfügbaren Computer ausgeführt, solange ${ LUMO_SHORT_APP_NAME } geöffnet ist. Computer in derselben Zeitzone teilen sich jeweils einen Durchlauf pro Instanz."
       ],
       "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
         "Als ${ formatLabel } speichern. Gehe zum Ordner ${ DRIVE_SHORT_APP_NAME }, den du verwenden möchtest, und klicke dann auf «Hier speichern»."
@@ -4671,11 +4737,29 @@
       "Start a new chat to see it here.": [
         "Starte einen neuen Chat, um ihn hier zu sehen."
       ],
+      "Started ${ count } day ago": [
+        "Begonnen vor ${ count } Tag",
+        "Begonnen vor ${ count } Tagen"
+      ],
+      "Started ${ count } hour ago": [
+        "Begonnen vor ${ count } Stunde",
+        "Begonnen vor ${ count } Stunden"
+      ],
+      "Started ${ count } minute ago": [
+        "Begonnen vor ${ count } Minute",
+        "Begonnen vor ${ count } Minuten"
+      ],
+      "Started just now": [
+        "Gerade gestartet"
+      ],
       "Status: ${ statusAccessibleLabel }": [
         "Status: ${ statusAccessibleLabel }"
       ],
       "Structured data, aiming for compatibility with the ChatGPT export format": [
         "Strukturierte Daten, die auf Kompatibilität mit dem ChatGPT-Exportformat abzielen"
+      ],
+      "Task saved, but desktop notifications could not be enabled.": [
+        "Die Aufgabe wurde gespeichert, die Desktop-Benachrichtigungen konnten jedoch nicht aktiviert werden."
       ],
       "Text formatted with markdown, easy to read or share": [
         "Mit Markdown formatierter Text, der sich leicht lesen und teilen lässt"
@@ -4728,11 +4812,14 @@
       "Updating content…": [
         "Inhalt wird aktualisiert…"
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
-        "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus, um unbegrenzt benutzerdefinierte ${ LUMO_SHORT_APP_NAME }s zu erstellen, fortschrittliche KI-Modelle freizuschalten und mehr."
+      "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
+        "Wechsle zu ${ PLAN_NAMES[PLANS.LUMO] }, um unbegrenzt viele benutzerdefinierte ${ LUMO_SHORT_APP_NAME } zu erstellen, erweiterte KI-Modelle freizuschalten und vieles mehr."
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited projects, unlock advanced AI models, and more.": [
         "Auf ${ PLAN_NAMES[PLANS.LUMO] } upgraden, um unbegrenzt Projekte zu erstellen, erweiterte KI-Modelle freizuschalten und vieles mehr."
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create up to 3 scheduled tasks, unlock advanced AI models, and more.": [
+        "Wechsle auf ${ PLAN_NAMES[PLANS.LUMO] }, um bis zu drei geplante Aufgaben zu erstellen, erweiterte KI-Modelle freizuschalten und vieles mehr."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Nutze das Max-Modell für komplexe Arbeiten oder das Lite-Modell für alltägliche Aufgaben. Wähle den schnellen Modus für kurze Antworten oder den Denk-Modus für schwierigere Fragen."
@@ -4908,6 +4995,12 @@
       "AsciiDoc Document": [
         "AsciiDoc-Dokument"
       ],
+      "Auto-approve off": [
+        "Automatisches Genehmigen deaktivieren"
+      ],
+      "Auto-approve on": [
+        "Automatisches Genehmigen aktivieren"
+      ],
       "Batch File": [
         "Stapelverarbeitungsdatei"
       ],
@@ -4986,6 +5079,9 @@
       "Currently disabled by your settings": [
         "Derzeit in deinen Einstellungen deaktiviert"
       ],
+      "Daily": [
+        "Täglich"
+      ],
       "Daily at ${ timeLabel }": [
         "Täglich um ${ timeLabel }"
       ],
@@ -5009,6 +5105,9 @@
       ],
       "Description (optional)": [
         "Beschreibung (optional)"
+      ],
+      "Details": [
+        "Details"
       ],
       "Digital oversharing": [
         "Übermäßiges Teilen digitaler Inhalte"
@@ -5244,6 +5343,9 @@
       "Minimal": [
         "Minimal"
       ],
+      "Monthly": [
+        "Monatlich"
+      ],
       "Monthly on ${ days } at ${ timeLabel }": [
         "Monatlich am ${ days } um ${ timeLabel }"
       ],
@@ -5391,6 +5493,9 @@
       "Scheduled": [
         "Geplant"
       ],
+      "Scheduled task": [
+        "Geplante Aufgabe"
+      ],
       "SE": [
         "SO"
       ],
@@ -5481,6 +5586,9 @@
       "Upload": [
         "Hochladen"
       ],
+      "Uses": [
+        "Verwendet"
+      ],
       "Value": [
         "Wert"
       ],
@@ -5502,8 +5610,14 @@
       "WebP Image": [
         "WebP-Bild"
       ],
+      "Weekdays": [
+        "Wochentags"
+      ],
       "Weekdays at ${ timeLabel }": [
         "An Werktagen um ${ timeLabel }"
+      ],
+      "Weekly": [
+        "Wöchentlich"
       ],
       "Weekly on ${ dayNames } at ${ timeLabel }": [
         "Wöchentlich am ${ dayNames } um ${ timeLabel }"
@@ -6187,6 +6301,9 @@
       "Error": [
         "Fehler"
       ],
+      "Failed": [
+        "Fehlgeschlagen"
+      ],
       "Indexing": [
         "Indizieren"
       ],
@@ -6198,6 +6315,36 @@
       ],
       "Indexing for search": [
         "Indizierung für Suche"
+      ],
+      "Interrupted": [
+        "Unterbrochen"
+      ],
+      "On schedule": [
+        "Planmäßig"
+      ],
+      "Paused": [
+        "Angehalten"
+      ],
+      "Queued": [
+        "In Warteschlange"
+      ],
+      "Queued · Running next": [
+        "In Warteschlange · Wird als Nächstes ausgeführt"
+      ],
+      "Ran late": [
+        "Verspätet ausgeführt"
+      ],
+      "Ran manually": [
+        "Manuell gestartet"
+      ],
+      "Running": [
+        "Wird ausgeführt"
+      ],
+      "Running now…": [
+        "Wird derzeit ausgeführt …"
+      ],
+      "Running soon…": [
+        "Wird in Kürze begonnen …"
       ]
     },
     "collider_2025:Subline": {
@@ -6425,14 +6572,17 @@
       "Memory": [
         "Erinnerung"
       ],
-      "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Mehr benutzerdefinierte ${ LUMO_SHORT_APP_NAME }s mit ${ LUMO_SHORT_APP_NAME } Plus"
+      "More custom ${ LUMO_SHORT_APP_NAME }s with ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "Weitere benutzerdefinierte ${ LUMO_SHORT_APP_NAME } mit ${ PLAN_NAMES[PLANS.LUMO] }"
       ],
       "More options": [
         "Weitere Optionen"
       ],
       "More Projects with ${ PLAN_NAMES[PLANS.LUMO] }": [
         "Mehr Projekte mit ${ PLAN_NAMES[PLANS.LUMO] }"
+      ],
+      "More scheduled tasks with ${ PLAN_NAMES[PLANS.LUMO] }": [
+        "Weitere geplante Aufgaben mit ${ PLAN_NAMES[PLANS.LUMO] }"
       ],
       "Most revealing": [
         "Am aufschlussreichsten"
@@ -6500,11 +6650,23 @@
       "Save to ${ DRIVE_SHORT_APP_NAME }": [
         "In ${ DRIVE_SHORT_APP_NAME } speichern"
       ],
+      "Schedule draft cancelled · ${ name }": [
+        "Entwurf des Zeitplans abgebrochen · ${ name }"
+      ],
+      "Schedule task": [
+        "Aufgabe planen"
+      ],
+      "Schedule task, currently loading…": [
+        "Aufgabe planen, wird gerade geladen…"
+      ],
       "Scheduled": [
         "Geplant"
       ],
       "Scheduled tasks": [
         "Geplante Aufgaben"
+      ],
+      "Scheduled · ${ name }": [
+        "Geplant · ${ name }"
       ],
       "See what Big Tech AI already knows about you": [
         "Finden heraus, was die KI der großen Tech-Konzerne bereits über dich weiß"
@@ -8784,8 +8946,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
-      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Lade dein Konto mit Guthaben auf, mit dem du ein anderes Abonnement abschließen oder dein aktuelles Abonnement verlängern kannst. Du erhältst ein Guthaben für jeden ${ i18nCurrency }, der ausgegeben wird."
+      "Top up your ${ LUMO_SHORT_APP_NAME } API balance. API usage is deducted from this balance.": [
+        "Lade dein ${ LUMO_SHORT_APP_NAME }-API-Guthaben auf. Die Kosten für die API-Nutzung werden von diesem Guthaben abgezogen."
       ],
       "Total conversations:": [
         "Gesamtanzahl Unterhaltungen:"
@@ -9481,6 +9643,15 @@
       "Open a conversation to simulate the server message limit.": [
         "Öffne eine Unterhaltung, um das Nachrichtenlimit des Servers zu simulieren."
       ],
+      "Org admin": [
+        "Organisationsadministrator"
+      ],
+      "Org member": [
+        "Organisationsmitglied"
+      ],
+      "Organization admin": [
+        "Organisationsadministrator"
+      ],
       "Performance": [
         "Leistung"
       ],
@@ -9762,44 +9933,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Du kannst während der Testphase bis zu ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-Lizenzen haben."
-      ]
-    },
-    "Monetary unit": {
-      "Australian dollar": [
-        "Australischer Dollar"
-      ],
-      "Brazilian real": [
-        "Brasilianischer Real"
-      ],
-      "British pound": [
-        "Britisches Pfund"
-      ],
-      "Canadian dollar": [
-        "Kanadischer Dollar"
-      ],
-      "Euro": [
-        "Euro"
-      ],
-      "Hong Kong dollar": [
-        "Hongkong-Dollar"
-      ],
-      "Japanese yen": [
-        "Japanischer Yen"
-      ],
-      "Polish złoty": [
-        "Polnischer Zloty"
-      ],
-      "Singapore dollar": [
-        "Singapur-Dollar"
-      ],
-      "South Korean won": [
-        "Südkoreanischer Won"
-      ],
-      "Swiss franc": [
-        "Schweizer Franken"
-      ],
-      "US Dollar": [
-        "US-Dollar"
       ]
     },
     "New Label form": {
@@ -10955,9 +11088,6 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPriceStr } verlängert. Du kannst jederzeit kündigen."
       ],
-      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
-        "Die Transaktion wurde erfolgreich erkannt. Das Guthaben wird deinem Konto gutgeschrieben, sobald die Transaktion vollständig bestätigt ist."
-      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monat verlängert. Du kannst jederzeit kündigen.",
         "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monate verlängert. Du kannst jederzeit kündigen."
@@ -11762,11 +11892,11 @@
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
       ],
-      "Credits added": [
-        "Guthaben hinzugefügt"
-      ],
       "Email address copied to clipboard": [
         "E-Mail-Adresse in die Zwischenablage kopiert"
+      ],
+      "Funds added": [
+        "Guthaben aufgeladen"
       ],
       "Payment method added": [
         "Zahlungsmethode hinzugefügt"
@@ -11894,8 +12024,8 @@
       "Add credit/debit card": [
         "Kredit-/Debitkarte hinzufügen"
       ],
-      "Add credits": [
-        "Guthaben hinzufügen"
+      "Add funds": [
+        "Guthaben aufladen"
       ],
       "Add user": [
         "Benutzer hinzufügen"

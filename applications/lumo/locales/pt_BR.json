@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Sobre o ${ name }"
+      ],
       "Accept dictation": [
         "Aceitar ditado"
       ],
@@ -16,6 +19,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Adicionar ${ name }"
       ],
       "Add account": [
         "Adicionar conta"
@@ -1007,6 +1013,9 @@
       "Add to active": [
         "Adicionar a ativos"
       ],
+      "Add user": [
+        "Adicionar usuário"
+      ],
       "Already in KB": [
         "Já na KB"
       ],
@@ -1070,6 +1079,9 @@
       "Edit memory": [
         "Editar memória"
       ],
+      "Export CSV": [
+        "Exportar CSV"
+      ],
       "Generate from chats": [
         "Gerar a partir de bate-papos"
       ],
@@ -1087,6 +1099,15 @@
       ],
       "Light": [
         "Claro"
+      ],
+      "Manage": [
+        "Gerenciar"
+      ],
+      "Manage API keys": [
+        "Gerenciar chaves de API"
+      ],
+      "Manage balance": [
+        "Gerenciar saldo"
       ],
       "Manage connectors": [
         "Gerenciar conectores"
@@ -1123,6 +1144,9 @@
       ],
       "Save": [
         "Salvar"
+      ],
+      "Save settings": [
+        "Salvar configurações"
       ],
       "Select all": [
         "Selecionar tudo"
@@ -1190,6 +1214,9 @@
       ],
       "Use Apertus": [
         "Usar Apertus"
+      ],
+      "View authentication": [
+        "Ver autenticação"
       ],
       "Web search": [
         "Pesquisa na web"
@@ -1382,6 +1409,17 @@
         "Ontem"
       ]
     },
+    "collider_2025: Date range": {
+      "Last 30 days": [
+        "Últimos 30 dias"
+      ],
+      "Last 90 days": [
+        "Últimos 90 Dias"
+      ],
+      "Previous 30 days": [
+        "Últimos 30 dias"
+      ]
+    },
     "collider_2025: Description": {
       "${ apertusArticleLink } is a fully open, Swiss-made AI model developed with leading Swiss universities. It is best suited to lighter everyday tasks.": [
         "${ apertusArticleLink } é um modelo de IA totalmente aberto, desenvolvido na Suíça em parceria com as principais universidades suíças. É mais adequado para tarefas cotidianas mais simples."
@@ -1448,6 +1486,9 @@
       ],
       "More thorough answers, but can take longer": [
         "Respostas mais detalhadas, mas podem demorar mais"
+      ],
+      "Permanently delete your projects, chats, and saved memories. This cannot be undone.": [
+        "Exclua permanentemente seus projetos, bate-papos e memórias salvas. Essa ação não pode ser revertida."
       ],
       "Project chats are kept fully isolated. They rely on their own instructions and files, and ignore your global memories entirely.": [
         "Os chats do projeto são mantidos totalmente isolados. Eles contam com suas próprias instruções e arquivos e ignoram totalmente suas memórias globais."
@@ -2010,6 +2051,9 @@
       "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
         "Receba uma mensagem do cliente, classifique a urgência e o tópico com ${ LUMO_SHORT_APP_NAME }, determine se é necessário escaloná-la e, em seguida, redija uma resposta ou a encaminhe para um atendente humano."
       ],
+      "Last 30 days": [
+        "Últimos 30 dias"
+      ],
       "Load two versions of a policy, ask ${ LUMO_SHORT_APP_NAME } to list differences and risks, then produce a short recommendation for which version to adopt.": [
         "Carregue duas versões de uma política, solicite ao ${ LUMO_SHORT_APP_NAME } que liste as diferenças e os riscos e, em seguida, elabore uma recomendação sucinta sobre qual versão adotar."
       ],
@@ -2300,14 +2344,26 @@
       ]
     },
     "collider_2025: Label": {
+      "${ formattedAmount } per 1M tokens": [
+        "${ formattedAmount } por 1M de tokens"
+      ],
       "AI model": [
         "Modelo de IA"
+      ],
+      "All models": [
+        "Todos os modelos"
       ],
       "Answer mode": [
         "Modo de resposta"
       ],
       "API calls": [
         "Chamadas de API"
+      ],
+      "Balance used": [
+        "Saldo usado"
+      ],
+      "Base URL": [
+        "URL de base"
       ],
       "Basic": [
         "Básico"
@@ -2351,8 +2407,17 @@
       "From chats": [
         "De bate-papos"
       ],
+      "Input": [
+        "Entrada"
+      ],
+      "Limit": [
+        "Limite"
+      ],
       "Loop": [
         "Laço"
+      ],
+      "Members": [
+        "Membros"
       ],
       "Merge": [
         "Mesclar"
@@ -2360,8 +2425,14 @@
       "Method": [
         "Método"
       ],
+      "Model": [
+        "Modelo"
+      ],
       "Model and response mode": [
         "Modelo e modo de resposta"
+      ],
+      "Not billed": [
+        "Não faturado"
       ],
       "Not factually correct": [
         "Não é factualmente correto"
@@ -2377,6 +2448,9 @@
       ],
       "Path": [
         "Caminho"
+      ],
+      "per 1M tokens": [
+        "por 1M de tokens"
       ],
       "Prompt": [
         "Prompt"
@@ -2396,6 +2470,9 @@
       "Rust": [
         "Rust"
       ],
+      "Search members": [
+        "Pesquisar membros"
+      ],
       "Status": [
         "Status"
       ],
@@ -2408,6 +2485,9 @@
       "Thinking mode": [
         "Modo de pensamento"
       ],
+      "Token type": [
+        "Tipo de token"
+      ],
       "Tool calls": [
         "Chamadas de ferramenta"
       ],
@@ -2416,6 +2496,9 @@
       ],
       "Unsafe or problematic": [
         "Inseguro ou problemático"
+      ],
+      "Usage period": [
+        "Período de uso"
       ],
       "You": [
         "Você"
@@ -2475,12 +2558,20 @@
         "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus."
       ]
     },
+    "collider_2025: Model capability": {
+      "chat": [
+        "bate-papo"
+      ]
+    },
     "collider_2025: Nav": {
       "Authentication": [
         "Autenticação"
       ],
       "Endpoints": [
         "Pontos de extremidade"
+      ],
+      "Models & pricing": [
+        "Modelos e preços"
       ],
       "Overview": [
         "Visão geral"
@@ -2579,6 +2670,9 @@
       ],
       "Please share what you expected": [
         "Compartilhe o que você esperava"
+      ],
+      "Search members": [
+        "Pesquisar membros"
       ]
     },
     "collider_2025: Plan Name": {
@@ -2642,6 +2736,12 @@
       "Active": [
         "Ativo"
       ],
+      "Allowed": [
+        "Permitido"
+      ],
+      "Blocked": [
+        "Bloqueado"
+      ],
       "Copied!": [
         "Copiado!"
       ],
@@ -2686,6 +2786,15 @@
       ]
     },
     "collider_2025: Tab": {
+      "API keys": [
+        "Chaves de API"
+      ],
+      "Docs": [
+        "Documentos"
+      ],
+      "Overview": [
+        "Visão geral"
+      ],
       "Workflow Builder": [
         "Construtor de fluxo de trabalho"
       ]
@@ -2726,6 +2835,9 @@
       "Animated background": [
         "Plano de fundo animado"
       ],
+      "API access is not enabled": [
+        "Acesso à API não está ativado"
+      ],
       "API docs sections": [
         "Seções da documentação da API"
       ],
@@ -2740,6 +2852,9 @@
       ],
       "Auto update memory": [
         "Atualizar memória automaticamente"
+      ],
+      "Balance settings": [
+        "Configurações de saldo"
       ],
       "Build intelligent apps.": [
         "Crie aplicativos inteligentes."
@@ -2786,6 +2901,9 @@
       "Generated code": [
         "Código gerado"
       ],
+      "Getting started": [
+        "Começando"
+      ],
       "Got a minute?": [
         "Tem um minuto?"
       ],
@@ -2804,14 +2922,23 @@
       "Meet Apertus 1.5": [
         "Conheça Apertus 1.5"
       ],
+      "Member usage": [
+        "Uso de membro"
+      ],
       "Models": [
         "Modelos"
+      ],
+      "Models & pricing": [
+        "Modelos e preços"
       ],
       "Never used inside projects": [
         "Nunca usado em projetos"
       ],
       "No API keys yet": [
         "Ainda não há chaves de API"
+      ],
+      "No API usage yet": [
+        "Nenhum uso de API ainda"
       ],
       "No memories yet": [
         "Sem memórias ainda"
@@ -2827,6 +2954,9 @@
       ],
       "Personalizes general chats": [
         "Personaliza os bate-papos gerais"
+      ],
+      "Pricing": [
+        "Preços"
       ],
       "Privacy included by default.": [
         "Privacidade incluída por padrão."
@@ -2858,6 +2988,9 @@
       "Theme": [
         "Tema"
       ],
+      "Token usage": [
+        "Uso de tokem"
+      ],
       "Tokens per day": [
         "Tokens por dia"
       ],
@@ -2866,6 +2999,9 @@
       ],
       "Upload files": [
         "Enviar arquivos"
+      ],
+      "Usage": [
+        "Uso"
       ],
       "Visionary": [
         "Visionary"
@@ -2890,6 +3026,9 @@
       ],
       "You stay in control": [
         "Você segue no controle"
+      ],
+      "Your API keys": [
+        "Suas chaves de API"
       ],
       "Your new API key": [
         "Sua nova chave de API"
@@ -3423,6 +3562,9 @@
       "Open conversation": [
         "Abrir conversa"
       ],
+      "Open task": [
+        "Abrir tarefa"
+      ],
       "PDF": [
         "PDF"
       ],
@@ -3491,6 +3633,9 @@
       ],
       "Reveal my profile": [
         "Revelar meu perfil"
+      ],
+      "Run now": [
+        "Executar agora"
       ],
       "Save": [
         "Salvar"
@@ -3744,6 +3889,9 @@
       ],
       "Save here": [
         "Salvar aqui"
+      ],
+      "Schedule": [
+        "Agendamento"
       ],
       "Scheduled": [
         "Agendado"
@@ -4268,9 +4416,6 @@
       "Updating content…": [
         "Atualizando conteúdo…"
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
-        "Faça upgrade para o ${ LUMO_SHORT_APP_NAME } Plus para criar ${ LUMO_SHORT_APP_NAME }s personalizados ilimitados, desbloquear modelos de IA avançados e muito mais."
-      ],
       "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited projects, unlock advanced AI models, and more.": [
         "Faça upgrade para o ${ PLAN_NAMES[PLANS.LUMO] } para criar projetos ilimitados, desbloquear modelos avançados de IA e muito mais."
       ],
@@ -4442,6 +4587,9 @@
       "Cargo File": [
         "Arquivo Cargo"
       ],
+      "Chart": [
+        "Gráfico"
+      ],
       "Chart: ${ text }": [
         "Gráfico: ${ text }"
       ],
@@ -4513,6 +4661,9 @@
       ],
       "Description (optional)": [
         "Descrição (opcional)"
+      ],
+      "Details": [
+        "Detalhes"
       ],
       "Disabled": [
         "Desativado"
@@ -4850,6 +5001,9 @@
       "Scams": [
         "Golpes"
       ],
+      "Scheduled": [
+        "Agendado"
+      ],
       "SE": [
         "SE"
       ],
@@ -4861,6 +5015,9 @@
       ],
       "Series": [
         "Séries"
+      ],
+      "Series ${ seriesNumber }": [
+        "Séries ${ seriesNumber }"
       ],
       "Settings": [
         "Configurações"
@@ -4910,6 +5067,9 @@
       "Today": [
         "Hoje"
       ],
+      "Today, ${ time }": [
+        "Hoje, ${ time }"
+      ],
       "TOML File": [
         "ArquivoTOML"
       ],
@@ -4930,6 +5090,9 @@
       ],
       "Upload": [
         "Enviar"
+      ],
+      "Uses": [
+        "Usos"
       ],
       "Value": [
         "Valor"
@@ -4975,6 +5138,9 @@
       ],
       "Yesterday": [
         "Ontem"
+      ],
+      "Yesterday, ${ time }": [
+        "Ontem, ${ time }"
       ],
       "Your answer": [
         "Sua resposta"
@@ -5220,6 +5386,12 @@
         "O que devo saber sobre fundos de emergência e onde guardá-los?"
       ]
     },
+    "collider_2025:Question selection": {
+      "${ selectedCount } selected": [
+        "${ selectedCount } selecionado",
+        "${ selectedCount } selecionados"
+      ]
+    },
     "collider_2025:Reasoning": {
       "${ failedCount } failed": [
         "${ failedCount } erro",
@@ -5410,6 +5582,9 @@
       "Profit Margin": [
         "Margem de lucro"
       ],
+      "Ran ${ shortName }": [
+        "Executar ${ shortName }"
+      ],
       "Ran command": [
         "Comando Ran"
       ],
@@ -5540,6 +5715,9 @@
       ],
       "Indexing for search": [
         "Indexando para pesquisa"
+      ],
+      "Running": [
+        "Executando"
       ]
     },
     "collider_2025:Subline": {
@@ -5764,9 +5942,6 @@
       "Memory": [
         "Memória"
       ],
-      "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Mais ${ LUMO_SHORT_APP_NAME }s personalizado com o ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "More options": [
         "Mais opções"
       ],
@@ -5827,11 +6002,17 @@
       "Review privacy settings": [
         "Revise as configurações de privacidade"
       ],
+      "Runs": [
+        "Execuções"
+      ],
       "Save as": [
         "Salvar como"
       ],
       "Save to ${ DRIVE_SHORT_APP_NAME }": [
         "Salvar no ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Scheduled": [
+        "Agendado"
       ],
       "Scheduled tasks": [
         "Tarefas agendadas"
@@ -8099,9 +8280,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
-      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Recarregue sua conta com créditos que podem ser usados para assinar um novo plano ou renovar seu plano atual. Você recebe um crédito a cada ${ i18nCurrency } gasto."
-      ],
       "Total conversations:": [
         "Total de conversas:"
       ],
@@ -8652,6 +8830,15 @@
       "Acceleration": [
         "Aceleração"
       ],
+      "API access": [
+        "Acesso à API"
+      ],
+      "API balance": [
+        "Saldo da API"
+      ],
+      "API usage": [
+        "Uso de API"
+      ],
       "Assets": [
         "Ativos"
       ],
@@ -8685,6 +8872,9 @@
       "Current conversation": [
         "Conversa atual"
       ],
+      "Dashboard view": [
+        "Visualização do painel de controle"
+      ],
       "Debug View": [
         "Visualizar depuração"
       ],
@@ -8693,6 +8883,9 @@
       ],
       "Dispatches a simulated 422 limit error, which will be surfaced by the in-app notifier.": [
         "Dispara um erro de limite 422 simulado, que será exibido pelo notificador interno do aplicativo."
+      ],
+      "Empty": [
+        "Vazio"
       ],
       "Export all chats (JSON)": [
         "Exportar todas os bate-papos (JSON)"
@@ -8730,6 +8923,9 @@
       "Locked": [
         "Bloqueado"
       ],
+      "Low balance ($5)": [
+        "Saldo baixo ($5)"
+      ],
       "max": [
         "máx."
       ],
@@ -8760,6 +8956,9 @@
       "None open": [
         "Nenhum aberto"
       ],
+      "Not allowed": [
+        "Não permitido"
+      ],
       "Notifications": [
         "Notificações"
       ],
@@ -8772,14 +8971,29 @@
       "Open a conversation to enable generation error testing.": [
         "Abra uma conversa para ativar o teste de erro de geração."
       ],
+      "Organization admin": [
+        "Adminsitrador da organização"
+      ],
+      "Organization member": [
+        "Membros da organização"
+      ],
       "Performance": [
         "Desempenho"
+      ],
+      "Personal": [
+        "Pessoal"
       ],
       "Preview \"IndexedDB unavailable\" screen": [
         "Pré-visualização da tela \"IIndexedDB não disponível\""
       ],
+      "Preview access denied": [
+        "Acesso prévio negado"
+      ],
       "Rate": [
         "Avaliar"
+      ],
+      "Real balance": [
+        "Saldo real"
       ],
       "Redux updates": [
         "Atualizações do Redux"
@@ -8801,6 +9015,9 @@
       ],
       "Resource limit notifications": [
         "Notificações de limite de recursos"
+      ],
+      "Sample data": [
+        "Dados de amostra"
       ],
       "Search": [
         "Pesquisar"
@@ -8900,6 +9117,9 @@
       ],
       "Unsynced spaces": [
         "Espaços não sincronizados"
+      ],
+      "Usage data": [
+        "Dados de uso"
       ],
       "Yes": [
         "Sim"
@@ -9035,44 +9255,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
-      ]
-    },
-    "Monetary unit": {
-      "Australian dollar": [
-        "Dólar australiano"
-      ],
-      "Brazilian real": [
-        "Real brasileiro"
-      ],
-      "British pound": [
-        "Libra britânica"
-      ],
-      "Canadian dollar": [
-        "Dólar canadense"
-      ],
-      "Euro": [
-        "Euro"
-      ],
-      "Hong Kong dollar": [
-        "Dólar de Hong Kong"
-      ],
-      "Japanese yen": [
-        "Iene Japonês"
-      ],
-      "Polish złoty": [
-        "Złoty polonês"
-      ],
-      "Singapore dollar": [
-        "Dólar de Singapura"
-      ],
-      "South Korean won": [
-        "Won sul-coreano"
-      ],
-      "Swiss franc": [
-        "Franco suíço"
-      ],
-      "US Dollar": [
-        "Dólar americano"
       ]
     },
     "New Label form": {
@@ -10228,9 +10410,6 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "O preço com desconto especial de ${ priceWithDiscount } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ renewPriceStr } todo mês. Você pode cancelar a qualquer momento."
       ],
-      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
-        "A transação foi detectada com sucesso. Os créditos serão adicionados à sua conta assim que a transação for totalmente confirmada."
-      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } mês. Você pode cancelar a qualquer momento.",
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
@@ -10246,6 +10425,9 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este se tornará seu novo método de pagamento padrão para todas as futuras renovações."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Esse plano não suporta recursos gerenciados na sua conta."
       ],
       "This plan doesn’t support the members on your account.": [
         "Esse plano não suporta membros na sua conta."
@@ -11026,9 +11208,6 @@
       "Copied to clipboard": [
         "Copiado para a área de transferência"
       ],
-      "Credits added": [
-        "Créditos adicionados"
-      ],
       "Email address copied to clipboard": [
         "Endereço de e-mail copiado para a área de transferência"
       ],
@@ -11157,9 +11336,6 @@
       ],
       "Add credit/debit card": [
         "Adicionar cartão de crédito/débito"
-      ],
-      "Add credits": [
-        "Adicionar créditos"
       ],
       "Add user": [
         "Adicionar usuário"

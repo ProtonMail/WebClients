@@ -3885,6 +3885,9 @@
       "${ LUMO_SHORT_APP_NAME } remembers your preferences, so each conversation can build on the last. It can also handle longer chats and larger documents.": [
         "${ LUMO_SHORT_APP_NAME } mémorise vos préférences, afin que chaque conversation puisse s'appuyer sur la précédente. Il peut également gérer des discussions plus longues et des documents volumineux."
       ],
+      "${ name } completed.": [
+        "${ name } a été complété."
+      ],
       "${ project.conversationCount } conversation": [
         "${ project.conversationCount } conversations"
       ],
@@ -4109,9 +4112,6 @@
       ],
       "Updating content…": [
         "Mise à jour du contenu…"
-      ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
-        "Passez à ${ LUMO_SHORT_APP_NAME } Plus pour créer un nombre illimité de ${ LUMO_SHORT_APP_NAME }s personnalisés, déverrouiller des modèles d'IA avancés, et plus encore."
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Utilisez le modèle Max pour les travaux complexes ou le modèle Lite pour les tâches quotidiennes. Choisissez le mode Rapide pour des réponses rapides ou le mode Réflexion pour des questions plus ardues."
@@ -4472,6 +4472,9 @@
       ],
       "Scheduled": [
         "Programmé"
+      ],
+      "Scheduled task": [
+        "Tâche planifiée"
       ],
       "Selected:": [
         "Sélectionné :"
@@ -4999,6 +5002,9 @@
       "Error": [
         "Erreur"
       ],
+      "Failed": [
+        "N'a pas abouti"
+      ],
       "Indexing": [
         "Indexation en cours..."
       ],
@@ -5010,6 +5016,12 @@
       ],
       "Indexing for search": [
         "Indexation pour la recherche en cours..."
+      ],
+      "Interrupted": [
+        "Interrompu"
+      ],
+      "Running": [
+        "En cours"
       ]
     },
     "collider_2025:Subline": {
@@ -5176,9 +5188,6 @@
       ],
       "Memory": [
         "Mémoire"
-      ],
-      "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Plus de ${ LUMO_SHORT_APP_NAME }s personnalisés avec ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "More options": [
         "Plus d'options"
@@ -7353,9 +7362,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
-      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Rechargez votre compte avec des crédits que vous pouvez utiliser pour vous abonner ou renouveler votre abonnement actuel. Vous obtenez un crédit pour chaque ${ i18nCurrency } dépensé."
-      ],
       "Total conversations:": [
         "Nombre total de conversations :"
       ],
@@ -8313,44 +8319,6 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_MEET_SEATS } accès à ${ MEET_SHORT_APP_NAME } pendant la période d’essai."
-      ]
-    },
-    "Monetary unit": {
-      "Australian dollar": [
-        "Dollar australien"
-      ],
-      "Brazilian real": [
-        "Real brésilien (BRL)"
-      ],
-      "British pound": [
-        "Livre sterling"
-      ],
-      "Canadian dollar": [
-        "Dollar canadien"
-      ],
-      "Euro": [
-        "Euro"
-      ],
-      "Hong Kong dollar": [
-        "Dollar de Hong Kong"
-      ],
-      "Japanese yen": [
-        "Yen japonais"
-      ],
-      "Polish złoty": [
-        "Złoty polonais"
-      ],
-      "Singapore dollar": [
-        "Dollar singapourien"
-      ],
-      "South Korean won": [
-        "Won sud-coréen"
-      ],
-      "Swiss franc": [
-        "Franc suisse"
-      ],
-      "US Dollar": [
-        "Dollar américain (USD)"
       ]
     },
     "New Label form": {
@@ -9497,9 +9465,6 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ renewPriceStr } par mois. Vous pouvez résilier l'abonnement à tout moment."
       ],
-      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
-        "La transaction a été détectée. Les crédits seront ajoutés à votre compte une fois la transaction entièrement confirmée."
-      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment.",
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
@@ -10295,9 +10260,6 @@
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
-      "Credits added": [
-        "Les crédits ont été ajoutés."
-      ],
       "Email address copied to clipboard": [
         "L'adresse e-mail a été copiée dans le presse-papiers."
       ],
@@ -10426,9 +10388,6 @@
       ],
       "Add credit/debit card": [
         "Ajouter une carte de paiement"
-      ],
-      "Add credits": [
-        "Ajouter des crédits"
       ],
       "Add user": [
         "Ajouter un utilisateur"

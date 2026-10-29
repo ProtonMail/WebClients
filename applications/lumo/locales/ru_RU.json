@@ -3371,9 +3371,6 @@
       "Type @filename to ask questions about a specific file": [
         "Введите @имя_файла, чтобы задать вопросы по конкретному файлу"
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
-        "Перейдите на ${ LUMO_SHORT_APP_NAME } Plus, чтобы создавать неограниченное количество пользовательских ${ LUMO_SHORT_APP_NAME }, открыть доступ к продвинутым моделям ИИ и многому другому."
-      ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Используйте модель Max для сложной работы или модель Lite для повседневных задач. Выберите режим Fast для быстрых ответов или режим Thinking для более сложных вопросов."
       ],
@@ -3941,9 +3938,6 @@
       ],
       "Memory": [
         "Память"
-      ],
-      "More custom ${ LUMO_SHORT_APP_NAME }s with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Больше пользовательских ${ LUMO_SHORT_APP_NAME } с подпиской ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "More options": [
         "Дополнительные параметры"
@@ -5902,9 +5896,6 @@
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
-      "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Пополняйте свой счет кредитами, которые вы можете использовать для подписки на новый тариф или продления своего текущего тарифа. Вы получаете один кредит за каждый потраченный ${ i18nCurrency }."
-      ],
       "Total conversations:": [
         "Всего цепочек писем:"
       ],
@@ -6795,44 +6786,6 @@
         "Включено ${ seats } лицензии",
         "Включено ${ seats } лицензий",
         "Включено ${ seats } лицензий"
-      ]
-    },
-    "Monetary unit": {
-      "Australian dollar": [
-        "Австралийский доллар"
-      ],
-      "Brazilian real": [
-        "Бразильский реал"
-      ],
-      "British pound": [
-        "Британский фунт"
-      ],
-      "Canadian dollar": [
-        "Канадский доллар"
-      ],
-      "Euro": [
-        "Евро"
-      ],
-      "Hong Kong dollar": [
-        "Гонконгский доллар"
-      ],
-      "Japanese yen": [
-        "Японская иена"
-      ],
-      "Polish złoty": [
-        "Польский злотый"
-      ],
-      "Singapore dollar": [
-        "Сингапурский доллар"
-      ],
-      "South Korean won": [
-        "Южнокорейская вона"
-      ],
-      "Swiss franc": [
-        "Швейцарский франк"
-      ],
-      "US Dollar": [
-        "Доллар США"
       ]
     },
     "New Label form": {
@@ -7965,9 +7918,6 @@
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } каждый месяц. Вы можете отказаться в любое время."
       ],
-      "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
-        "Транзакция успешно распознана. Остаток на счету будут добавлен на ваш счет как только транзакция будет полностью подтверждена."
-      ],
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяц. Вы можете отменить его в любое время.",
         "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяца. Вы можете отменить его в любое время.",
@@ -8709,9 +8659,6 @@
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
       ],
-      "Credits added": [
-        "Кредиты добавлены"
-      ],
       "Email address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
       ],
@@ -8840,9 +8787,6 @@
       ],
       "Add credit/debit card": [
         "Добавить кредитную/дебетовую карту"
-      ],
-      "Add credits": [
-        "Пополнить счёт"
       ],
       "Add user": [
         "Добавить пользователя"
