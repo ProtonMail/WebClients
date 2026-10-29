@@ -1,0 +1,75 @@
+@use '~@proton/styles/scss/lib' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.customize-discover-hero {
+	border: 1px solid var(--border-weak);
+	background:
+		radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--primary) 12%, transparent) 0%, transparent 55%),
+		radial-gradient(90% 120% at 100% 100%, color-mix(in srgb, var(--signal-info) 10%, transparent) 0%, transparent 60%),
+		var(--background-norm);
+}
+
+.customize-discover-grid {
+	display: grid;
+	gap: rem(16);
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	> :last-child:nth-child(odd) {
+		grid-column: 1 / -1;
+	}
+
+	@include im.media('<=small') {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.customize-plugin-icon {
+	--plugin-accent: var(--primary);
+
+	color: var(--plugin-accent);
+	background-color: color-mix(in srgb, var(--plugin-accent) 14%, transparent);
+
+	&--info {
+		--plugin-accent: var(--signal-info);
+	}
+
+	&--success {
+		--plugin-accent: var(--signal-success);
+	}
+
+	&--warning {
+		--plugin-accent: var(--signal-warning);
+	}
+}
+
+.customize-plugin-card {
+	transition:
+		border-color 0.15s easing(ease-out-quad),
+		box-shadow 0.15s easing(ease-out-quad),
+		transform 0.15s easing(ease-out-quad);
+
+	.expand-click-area:focus-visible {
+		outline: none;
+	}
+
+	&:hover {
+		border-color: var(--border-norm);
+		box-shadow: var(--shadow-raised);
+		transform: translateY(-1px);
+	}
+
+	&:has(.expand-click-area:focus-visible) {
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+
+		&:hover {
+			transform: none;
+		}
+	}
+}

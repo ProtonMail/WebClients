@@ -12,4 +12,5 @@ export interface LumoEventResponse extends EventV6Defaults {
     LumoMessages?: EventV6Response;
     LumoAssets?: EventV6Response;
     LumoUserSettings?: EventV6Response;
+    LumoSkills?: EventV6Response;
 }

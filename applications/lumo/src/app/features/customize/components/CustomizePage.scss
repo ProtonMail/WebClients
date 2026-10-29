@@ -1,0 +1,20 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.customize-page {
+	display: flex;
+	flex-direction: column;
+
+	&__inner {
+		display: flex;
+		flex: 1 0 auto;
+		flex-flow: column nowrap;
+		inline-size: 100%;
+		max-inline-size: rem(960);
+		margin-inline: auto;
+
+		&--fill {
+			flex: 1 1 0;
+			min-block-size: 0;
+		}
+	}
+}

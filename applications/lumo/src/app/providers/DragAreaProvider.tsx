@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useRef, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 
 import { AttachmentArea } from '../components/Files';
 
@@ -88,6 +88,19 @@ export const DragAreaProvider = ({ children }: DragAreaProviderProps) => {
         },
         [onDrop]
     );
+
+    // A drop handled elsewhere (e.g. the skill upload dropzone) never reaches the overlay, so reset on
+    // any drop or cancelled drag; otherwise the count stays up and the overlay reappears later, stuck.
+    // Bubble phase on purpose: the overlay's own drop handler must run before it is unmounted.
+    useEffect(() => {
+        const reset = () => setCount(0);
+        window.addEventListener('drop', reset);
+        window.addEventListener('dragend', reset);
+        return () => {
+            window.removeEventListener('drop', reset);
+            window.removeEventListener('dragend', reset);
+        };
+    }, []);
 
     const isDragging = count > 0;
 

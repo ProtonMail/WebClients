@@ -5,9 +5,10 @@ import { lumoEventLoop } from './index';
 import { conversationsLoop } from './loops/conversations';
 import { lumoUserSettingsLoop } from './loops/lumoUserSettings';
 import { refreshLoop } from './loops/refresh';
+import { skillsLoop } from './loops/skills';
 import { spacesLoop } from './loops/spaces';
 
-const loops = [refreshLoop, spacesLoop, conversationsLoop, lumoUserSettingsLoop];
+const loops = [refreshLoop, spacesLoop, conversationsLoop, lumoUserSettingsLoop, skillsLoop];
 Object.freeze(loops);
 
 export const lumoEventLoopListener = (startListening: AppStartListening) => {

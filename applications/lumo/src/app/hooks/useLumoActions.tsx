@@ -147,6 +147,7 @@ export const useLumoActions = ({
         createScheduleTool: ffCreateScheduleTool,
         schedules: ffSchedules,
         visualizationInstructions: ffVisualizationInstructions,
+        customAgents: ffCustomAgents,
     } = useLumoFlags();
     const contextFilters = useLumoSelector(selectContextFilters);
     const conversation = useLumoSelector(selectConversationById(conversationId));
@@ -347,6 +348,7 @@ export const useLumoActions = ({
                     hasLumoPlus,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                     isGuestUser: isGuest,
+                    isSkillsFeatureEnabled: ffCustomAgents,
                 },
             })
         );
@@ -444,6 +446,7 @@ export const useLumoActions = ({
                     isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                     isGuestUser: isGuest,
+                    isSkillsFeatureEnabled: ffCustomAgents,
                 },
                 retryData: {
                     lastUserMessage,
@@ -516,6 +519,7 @@ export const useLumoActions = ({
                     isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                     isGuestUser: isGuest,
+                    isSkillsFeatureEnabled: ffCustomAgents,
                 },
             })
         );
@@ -620,6 +624,7 @@ export const useLumoActions = ({
                     isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                     isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
                     isGuestUser: isGuest,
+                    isSkillsFeatureEnabled: ffCustomAgents,
                 },
                 regenerateData: {
                     assistantMessageId,

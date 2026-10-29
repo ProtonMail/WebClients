@@ -16,6 +16,7 @@ import errorsReducer from './meta/errors';
 import initializationReducer from './meta/initialization';
 import { remainingInvitesReducer } from './meta/remainingInvites';
 import personalizationReducer from './personalization';
+import skillsReducer from './skills';
 
 export const lumoReducers = {
     composerActions: composerActionsReducer,
@@ -34,6 +35,7 @@ export const lumoReducers = {
     personalization: personalizationReducer,
     featureFlags: featureFlagsReducer,
     lumoUserSettings: lumoUserSettingsReducer,
+    skills: skillsReducer,
     initialization: initializationReducer,
     ...remainingInvitesReducer,
 };

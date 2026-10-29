@@ -1,0 +1,58 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.skill-editor {
+	&__workspace {
+		block-size: min(#{rem(460)}, 55vh);
+		border: 1px solid var(--border-norm);
+		border-radius: rem(12);
+		background-color: var(--background-weak);
+		overflow: hidden;
+
+		&:focus-within:not(&--split) {
+			border-color: var(--focus-outline);
+		}
+
+		&--split > :first-child {
+			inline-size: rem(200);
+			flex-shrink: 0;
+		}
+	}
+
+	&__file-header {
+		padding-block: rem(8);
+		padding-inline: rem(12);
+
+		&--single {
+			padding-block-end: 0;
+		}
+	}
+
+	&__mode-toggle {
+		padding: rem(2);
+		border-radius: rem(8);
+		background-color: var(--background-norm);
+
+		.is-active {
+			background-color: var(--interaction-default-active);
+		}
+	}
+
+	&__add-file {
+		padding: rem(12);
+		border-block-start: 1px solid var(--border-weak) !important;
+		color: var(--text-norm);
+		cursor: pointer;
+		font-size: rem(14);
+	}
+
+	&__status {
+		padding-block: rem(4);
+		padding-inline: rem(8);
+		border: 1px solid var(--border-weak);
+		border-radius: rem(6);
+
+		&:empty {
+			visibility: hidden;
+		}
+	}
+}
