@@ -319,3 +319,98 @@ describe('isDriveB2B', () => {
         ).toBe(true);
     });
 });
+
+describe('isPassB2BWithoutMail', () => {
+    it.each([PLANS.PASS_PRO, PLANS.PASS_BUSINESS, PLANS.VPN_PASS_BUNDLE_BUSINESS] as const)(
+        'returns true for %s',
+        (plan) => {
+            expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).isPassB2BWithoutMail).toBe(true);
+        }
+    );
+
+    it.each([
+        PLANS.BUNDLE_PRO_2024,
+        PLANS.BUNDLE_BIZ_2025,
+        PLANS.VPN_BUSINESS,
+        PLANS.MAIL_PRO,
+        PLANS.PASS,
+        PLANS.FAMILY,
+        PLANS.VISIONARY,
+    ] as const)('returns false for %s', (plan) => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).isPassB2BWithoutMail).toBe(false);
+    });
+
+    it('returns true when Pass Business sits next to a Mail Plus subscription', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.MAIL, PLANS.PASS_BUSINESS] })
+                .isPassB2BWithoutMail
+        ).toBe(true);
+    });
+
+    it('returns false when business and Pass come from different subscriptions', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.PASS, PLANS.VPN_BUSINESS] })
+                .isPassB2BWithoutMail
+        ).toBe(false);
+    });
+
+    it('returns true for a member of a Pass Business organization', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.PASS_BUSINESS], ...organizationMember })
+                .isPassB2BWithoutMail
+        ).toBe(true);
+    });
+
+    it('returns false for a member of a Workspace organization', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.BUNDLE_PRO_2024], ...organizationMember })
+                .isPassB2BWithoutMail
+        ).toBe(false);
+    });
+});
+
+describe('hasBusySlots', () => {
+    it.each([
+        PLANS.BUNDLE_PRO_2024,
+        PLANS.BUNDLE_BIZ_2025,
+        PLANS.VISIONARY,
+        PLANS.FAMILY,
+        PLANS.DUO,
+        PLANS.MAIL_PRO,
+    ] as const)('returns true for %s', (plan) => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).hasBusySlots).toBe(true);
+    });
+
+    it.each([
+        PLANS.MAIL,
+        PLANS.BUNDLE,
+        PLANS.VPN_BUSINESS,
+        PLANS.PASS_BUSINESS,
+        PLANS.DRIVE_BUSINESS,
+        PLANS.MEET_BUSINESS,
+    ] as const)('returns false for %s', (plan) => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).hasBusySlots).toBe(false);
+    });
+
+    it('returns false when mail and multi-user come from different subscriptions', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.MAIL, PLANS.VPN_BUSINESS] }).hasBusySlots
+        ).toBe(false);
+    });
+
+    it.each([PLANS.FAMILY, PLANS.BUNDLE_PRO_2024] as const)(
+        'returns true for a member of a %s organization',
+        (plan) => {
+            expect(
+                buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan], ...organizationMember }).hasBusySlots
+            ).toBe(true);
+        }
+    );
+
+    it('returns false for a member of a VPN Business organization', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.VPN_BUSINESS], ...organizationMember })
+                .hasBusySlots
+        ).toBe(false);
+    });
+});
