@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { groupOwnerInvitesThunk } from '@proton/account/groupOwnerInvites';
 import { PLANS } from '@proton/payments/core/constants';
-import { buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
+import { buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrantsForTesting';
 
 import OrganizationGroupsManagementSection from './OrganizationGroupsManagementSection';
 import { useGroupsManagement } from './context/GroupsManagementContext';

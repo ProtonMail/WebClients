@@ -14,7 +14,7 @@ import { regularAdmin } from './regularAdmin';
 const maxRevisionDays = (Quantity: number) =>
     catalogEntry(EntitlementName.MaxRevisionDays, { Type: EntitlementType.Value, Quantity });
 
-export const prodCatalogGrants = {
+export const prodCatalogGrantsForTesting = {
     [PLANS.DRIVE]: [EntitlementName.FlagsDrive, maxRevisionDays(3650)],
     [PLANS.DRIVE_LITE]: [EntitlementName.FlagsDrive, maxRevisionDays(7)],
     [PLANS.BUNDLE]: [
@@ -165,7 +165,7 @@ export const prodCatalogGrants = {
     ],
 } satisfies Partial<Record<PLANS, Grant[]>>;
 
-export type CataloguedPlan = keyof typeof prodCatalogGrants;
+export type CataloguedPlan = keyof typeof prodCatalogGrantsForTesting;
 
 export const toOrganizationEntitlement = (grant: Grant): Entitlement => {
     const { Name, Type, Quantity, Scope } = typeof grant === 'string' ? catalogEntry(grant) : grant;
@@ -174,7 +174,7 @@ export const toOrganizationEntitlement = (grant: Grant): Entitlement => {
 
 export const buildOrganizationEntitlements = (plans: CataloguedPlan[]): Entitlement[] => {
     const entitlementsByName = new Map<EntitlementName, Entitlement>();
-    const grants = plans.flatMap((plan): Grant[] => prodCatalogGrants[plan]);
+    const grants = plans.flatMap((plan): Grant[] => prodCatalogGrantsForTesting[plan]);
 
     for (const entitlement of grants.map(toOrganizationEntitlement)) {
         const granted = entitlementsByName.get(entitlement.Name);
@@ -196,7 +196,7 @@ export const buildOrgAndUserEntitlementChecks = ({
     const canReadSubscriptions = getUnreadableSubscriptionsReason({ user, organization }) === undefined;
 
     return createEntitlementResolverForOrgAndUser({
-        entitlementCatalog: buildEntitlementCatalog(prodCatalogGrants),
+        entitlementCatalog: buildEntitlementCatalog(prodCatalogGrantsForTesting),
         entitlements: makeEntitlements(buildOrganizationEntitlements(subscriptionPlans)),
         subscriptions: canReadSubscriptions ? subscriptionPlans.map((plan) => buildSubscription(plan)) : [],
         user,

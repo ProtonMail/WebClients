@@ -1,6 +1,6 @@
 import { buildEntitlementCatalog } from '../../testing/buildEntitlementCatalog';
 import { buildSubscription } from '../../testing/buildSubscription';
-import { buildOrgAndUserEntitlementChecks } from '../../testing/prodCatalogGrants';
+import { buildOrgAndUserEntitlementChecks } from '../../testing/prodCatalogGrantsForTesting';
 import { organizationMember } from '../../testing/usersWhoCannotReadSubscriptions';
 import { PLANS } from '../constants';
 import { EntitlementName } from './entitlement-names';

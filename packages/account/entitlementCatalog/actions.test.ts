@@ -6,8 +6,8 @@ import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 import {
     type CataloguedPlan,
     buildOrganizationEntitlements,
-    prodCatalogGrants,
-} from '@proton/payments/testing/prodCatalogGrants';
+    prodCatalogGrantsForTesting,
+} from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import { getEntitlementsState, getSubscriptionState } from '@proton/payments/testing/redux-state';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-shared-store/test';
@@ -44,7 +44,7 @@ const setup = ({ role, subscriptionPlans }: { role: USER_ROLES; subscriptionPlan
             organization: getOrganizationState({ IsSubsidiary: false } as OrganizationExtended),
             subscription: getSubscriptionState(subscription),
             entitlements: getEntitlementsState(makeEntitlements(buildOrganizationEntitlements(subscriptionPlans))),
-            entitlementCatalog: getModelState(buildEntitlementCatalog(prodCatalogGrants)),
+            entitlementCatalog: getModelState(buildEntitlementCatalog(prodCatalogGrantsForTesting)),
         },
         extraThunkArguments: { api } as unknown as ProtonThunkArguments,
     });
