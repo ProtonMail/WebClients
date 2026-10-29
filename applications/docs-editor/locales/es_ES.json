@@ -74,6 +74,9 @@
       "Close": [
         "Cerrar"
       ],
+      "Close outline": [
+        "Cerrar esquema"
+      ],
       "Code block": [
         "Bloque de códigos"
       ],
@@ -118,6 +121,12 @@
       ],
       "Fit table to page width": [
         "Ajustar la tabla al ancho de la página"
+      ],
+      "Header column": [
+        "Columna de encabezado"
+      ],
+      "Header row": [
+        "Fila de encabezado"
       ],
       "Indent": [
         "Aumentar sangría"
@@ -166,6 +175,9 @@
       ],
       "OK": [
         "Aceptar"
+      ],
+      "Open outline": [
+        "Abrir esquema"
       ],
       "Options": [
         "Opciones"
@@ -282,18 +294,53 @@
         "Leer o imprimir el documento final"
       ]
     },
+    "Emoji category": {
+      "Activities": [
+        "Actividades"
+      ],
+      "Animals and nature": [
+        "Animales y naturaleza"
+      ],
+      "Flags": [
+        "Banderas"
+      ],
+      "Food and drink": [
+        "Comida y bebida"
+      ],
+      "Objects": [
+        "Objetos"
+      ],
+      "Smileys and people": [
+        "Caras y personas"
+      ],
+      "Symbols": [
+        "Símbolos"
+      ],
+      "Travel and places": [
+        "Viajes y lugares"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
         "Se ha producido un error al cargar el documento. Para evitar la corrupción del documento, se ha bloqueado el editor. Vuelve a cargar la página e inténtalo de nuevo. Si el error persiste, abre el historial de versiones desde las opciones del menú para intentar restaurar el documento a una versión anterior."
       ],
+      "Could not load emoji. Close the picker and try again.": [
+        "No se han podido cargar los emoji. Cierra el selector e inténtalo de nuevo."
+      ],
       "Failed to export document.": [
         "Error al exportar el documento."
+      ],
+      "Failed to import document due to unsupported file format.": [
+        "No se ha podido importar el documento porque el formato de archivo no es compatible."
       ],
       "Failed to import HTML due to unknown error.": [
         "Error al importar el HTML debido a un error desconocido."
       ],
       "Failed to import Markdown due to unknown error.": [
         "Error al importar el markdown debido a un error desconocido."
+      ],
+      "Failed to import OpenDocument file due to unknown error.": [
+        "No se ha podido importar el archivo OpenDocument debido a un error desconocido."
       ],
       "Failed to import Word document due to unknown error.": [
         "Error al importar el documento de Word debido a un error desconocido."
@@ -388,14 +435,32 @@
       "Loading": [
         "Cargando"
       ],
+      "Loading emoji…": [
+        "Cargando emoji…"
+      ],
+      "Loading spreadsheet content...": [
+        "Cargando el contenido de la hoja de cálculo..."
+      ],
+      "NEW": [
+        "NUEVO"
+      ],
       "New": [
         "Nuevo"
       ],
       "No comments": [
         "Sin comentarios"
       ],
+      "No emoji found": [
+        "No se ha encontrado ningún emoji"
+      ],
       "No title": [
         "Sin título"
+      ],
+      "Open the link to download the image, then use \"Insert image\" to add it to this document.": [
+        "Abre el enlace para descargar la imagen y, a continuación, usa «Insertar imagen» para añadirla a este documento."
+      ],
+      "Remote image blocked": [
+        "Imagen remota bloqueada"
       ],
       "Something went wrong:": [
         "Se ha producido un error:"
@@ -411,6 +476,9 @@
       ],
       "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
         "El idioma que estás usando no está actualmente disponible con el modo de sugerencia. Cambia al modo de edición o cambia el idioma."
+      ],
+      "This paste was blocked because the text contains invalid characters.": [
+        "Se ha bloqueado este pegado porque el texto contiene caracteres no válidos."
       ],
       "Viewing": [
         "Ver"
@@ -444,6 +512,9 @@
       "Clear formatting": [
         "Borrar el formato"
       ],
+      "Comments": [
+        "Comentarios"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -473,6 +544,12 @@
       ],
       "Duplicate table row": [
         "Duplicar una fila en la tabla"
+      ],
+      "Emoji": [
+        "Emoji"
+      ],
+      "Emoji suggestions": [
+        "Sugerencias de emoji"
       ],
       "Format": [
         "Formato"
@@ -521,6 +598,18 @@
       ],
       "Replace link": [
         "Reemplazar el enlace"
+      ],
+      "Resize outline": [
+        "Redimensionar esquema"
+      ],
+      "Search emoji": [
+        "Buscar emoji"
+      ],
+      "Search results": [
+        "Resultados de búsqueda"
+      ],
+      "Table": [
+        "Tabla"
       ],
       "Text and highlight color": [
         "Color del texto y del resaltado"
@@ -615,6 +704,11 @@
         "Cambiar nombre"
       ]
     },
+    "sheets_2025:Sheet tab rename": {
+      "A sheet with this name already exists": [
+        "Ya existe una hoja con este nombre"
+      ]
+    },
     "sheets_2025:Spreadsheet border editor menu": {
       "All borders": [
         "Todos los bordes"
@@ -676,7 +770,377 @@
         "Nota"
       ]
     },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Contabilidad"
+      ],
+      "Bottom": [
+        "Inferior"
+      ],
+      "Center": [
+        "Centrar"
+      ],
+      "Clip": [
+        "Recortar"
+      ],
+      "Currency": [
+        "Moneda"
+      ],
+      "Currency formats are used for general monetary values.": [
+        "Los formatos de moneda se usan para valores monetarios generales."
+      ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Date": [
+        "Fecha"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Los formatos de fecha muestran los números de serie de fecha y hora como valores de fecha."
+      ],
+      "Fraction": [
+        "Fracción"
+      ],
+      "General": [
+        "General"
+      ],
+      "General format cells have no specific number format.": [
+        "Las celdas con formato General no tienen un formato numérico específico."
+      ],
+      "Left": [
+        "Izquierda"
+      ],
+      "Number": [
+        "Número"
+      ],
+      "Number is used for general display of numbers.": [
+        "El formato Número se usa para mostrar números en general."
+      ],
+      "Overflow": [
+        "Desbordamiento"
+      ],
+      "Percentage": [
+        "Porcentaje"
+      ],
+      "Right": [
+        "Derecha"
+      ],
+      "Scientific": [
+        "Científico"
+      ],
+      "Text": [
+        "Texto"
+      ],
+      "Time": [
+        "Hora"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Los formatos de hora muestran los números de serie de fecha y hora como valores de fecha."
+      ],
+      "Top": [
+        "Superior"
+      ],
+      "Wrap": [
+        "Ajustar"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Promedio"
+      ],
+      "Count": [
+        "Recuento"
+      ],
+      "Max": [
+        "Máx."
+      ],
+      "Median": [
+        "Mediana"
+      ],
+      "Min": [
+        "Mín."
+      ],
+      "Sum": [
+        "Suma"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Ninguno"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "Circular 2D"
+      ],
+      "Clustered Column": [
+        "Columnas agrupadas"
+      ],
+      "Column": [
+        "Columna"
+      ],
+      "Doughnut": [
+        "Anillo"
+      ],
+      "Hierarchy": [
+        "Jerarquía"
+      ],
+      "Line": [
+        "Línea"
+      ],
+      "Pie": [
+        "Circular"
+      ],
+      "Smooth line": [
+        "Línea suavizada"
+      ],
+      "Stacked column": [
+        "Columna apilada"
+      ],
+      "Stacked line": [
+        "Línea apilada"
+      ],
+      "Sunburst": [
+        "Sunburst"
+      ],
+      "Treemap": [
+        "Mapa de árbol"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Por encima de la media"
+      ],
+      "April": [
+        "Abril"
+      ],
+      "August": [
+        "Agosto"
+      ],
+      "Below average": [
+        "Por debajo de la media"
+      ],
+      "Between": [
+        "Entre"
+      ],
+      "Bottom N items": [
+        "N elementos inferiores"
+      ],
+      "Bottom N percent": [
+        "Inferior N por ciento"
+      ],
+      "Checkbox": [
+        "Casilla de verificación"
+      ],
+      "Custom formula": [
+        "Fórmula personalizada"
+      ],
+      "Date is after": [
+        "La fecha es posterior a"
+      ],
+      "Date is before": [
+        "La fecha es anterior a"
+      ],
+      "Date is between": [
+        "La fecha está entre"
+      ],
+      "Date is equal to": [
+        "La fecha es igual a"
+      ],
+      "Date is not between": [
+        "La fecha no está entre"
+      ],
+      "Date is not equal to": [
+        "La fecha no es igual a"
+      ],
+      "Date is on or after": [
+        "La fecha es igual o posterior a"
+      ],
+      "Date is on or before": [
+        "La fecha es igual o anterior a"
+      ],
+      "Date is valid": [
+        "La fecha es válida"
+      ],
+      "December": [
+        "Diciembre"
+      ],
+      "Dropdown": [
+        "Desplegable"
+      ],
+      "Dropdown (from a range)": [
+        "Desplegable (de un rango)"
+      ],
+      "Equal to": [
+        "Igual a"
+      ],
+      "Errors": [
+        "Errores"
+      ],
+      "February": [
+        "Febrero"
+      ],
+      "Greater than": [
+        "Mayor que"
+      ],
+      "Greater than or equal to": [
+        "Mayor o igual que"
+      ],
+      "Greater than or equal to previous": [
+        "Mayor o igual que el anterior"
+      ],
+      "Greater than previous": [
+        "Mayor que el anterior"
+      ],
+      "Is empty": [
+        "Está vacío"
+      ],
+      "Is not empty": [
+        "No está vacía"
+      ],
+      "January": [
+        "Enero"
+      ],
+      "July": [
+        "Julio"
+      ],
+      "June": [
+        "Junio"
+      ],
+      "Last 7 days": [
+        "Últimos 7 días"
+      ],
+      "Last month": [
+        "Último mes"
+      ],
+      "Last quarter": [
+        "Último trimestre"
+      ],
+      "Last week": [
+        "La semana pasada"
+      ],
+      "Last year": [
+        "Último año"
+      ],
+      "Less than": [
+        "Menor que"
+      ],
+      "Less than or equal to": [
+        "Menor o igual que"
+      ],
+      "Less than or equal to previous": [
+        "Menor o igual que el anterior"
+      ],
+      "Less than previous": [
+        "Menor que el anterior"
+      ],
+      "March": [
+        "Marzo"
+      ],
+      "May": [
+        "Mayo"
+      ],
+      "Next month": [
+        "Mes siguiente"
+      ],
+      "Next quarter": [
+        "Trimestre siguiente"
+      ],
+      "Next week": [
+        "Semana siguiente"
+      ],
+      "Next year": [
+        "Año siguiente"
+      ],
+      "No errors": [
+        "Sin errores"
+      ],
+      "Not between": [
+        "No entre"
+      ],
+      "Not equal to": [
+        "No es igual a"
+      ],
+      "November": [
+        "Noviembre"
+      ],
+      "October": [
+        "Octubre"
+      ],
+      "Quarter 1": [
+        "Trimestre 1"
+      ],
+      "Quarter 2": [
+        "Trimestre 2"
+      ],
+      "Quarter 3": [
+        "Trimestre 3"
+      ],
+      "Quarter 4": [
+        "Trimestre 4"
+      ],
+      "September": [
+        "Septiembre"
+      ],
+      "Text contains": [
+        "El texto contiene"
+      ],
+      "Text does not contain": [
+        "El texto no contiene"
+      ],
+      "Text ends with": [
+        "El texto termina en"
+      ],
+      "Text is email": [
+        "El texto es un correo electrónico"
+      ],
+      "Text is exactly": [
+        "El texto es exactamente"
+      ],
+      "Text is not equal": [
+        "El texto no es igual a"
+      ],
+      "Text is URL": [
+        "El texto es una URL"
+      ],
+      "Text starts with": [
+        "El texto empieza por"
+      ],
+      "This month": [
+        "Este mes"
+      ],
+      "This quarter": [
+        "Este trimestre"
+      ],
+      "This week": [
+        "Esta semana"
+      ],
+      "This year": [
+        "Este año"
+      ],
+      "Today": [
+        "Hoy"
+      ],
+      "Tomorrow": [
+        "Mañana"
+      ],
+      "Top N items": [
+        "N elementos superiores"
+      ],
+      "Top N percent": [
+        "N por ciento superior"
+      ],
+      "Year to date": [
+        "Año hasta la fecha"
+      ],
+      "Yesterday": [
+        "Ayer"
+      ]
+    },
     "sheets_2025:Spreadsheet context menu": {
+      "(Blanks)": [
+        "(Vacíos)"
+      ],
       "AI Quick Edit": [
         "Edición rápida con IA"
       ],
@@ -1022,6 +1486,14 @@
         "Año"
       ]
     },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Formato"
+      ],
+      "Symbol": [
+        "Símbolo"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "¿Seguro que quieres eliminar ${ sheetName }?"
@@ -1048,6 +1520,11 @@
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "Tu pantalla es demasiado pequeña para editar esta hoja de cálculo. Estás en modo de solo lectura. Para realizar cambios, abre esta hoja en una pantalla más grande o expande la ventana del navegador."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Editar"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1183,6 +1660,9 @@
       ],
       "New spreadsheet": [
         "Nueva hoja de cálculo"
+      ],
+      "Open Proton Drive": [
+        "Abrir Proton Drive"
       ],
       "OpenDocument Spreadsheet (.ods) (Beta)": [
         "Hoja de cálculo OpenDocument (.ods) (Beta)"
@@ -1481,6 +1961,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -1512,8 +1995,29 @@
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
+      "Apply border": [
+        "Aplicar borde"
+      ],
+      "Apply fill color": [
+        "Aplicar color de relleno"
+      ],
+      "Apply text color": [
+        "Aplicar color de texto"
+      ],
       "Bold": [
         "Negrita"
+      ],
+      "Border": [
+        "Borde"
+      ],
+      "Choose border": [
+        "Elegir borde"
+      ],
+      "Choose fill color": [
+        "Elegir color de relleno"
+      ],
+      "Choose text color": [
+        "Elegir color de texto"
       ],
       "Clear formatting": [
         "Borrar formato"
@@ -1529,6 +2033,9 @@
       ],
       "Default (${ defaultFont })": [
         "Predeterminada (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Color de relleno"
       ],
       "Find": [
         "Buscar"
@@ -1593,6 +2100,9 @@
       "Strikethrough": [
         "Tachado"
       ],
+      "Text color": [
+        "Color del texto"
+      ],
       "Text wrapping": [
         "Ajuste de texto"
       ],
@@ -1656,6 +2166,35 @@
         "Ordenar Z → A"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Ninguno"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Próximamente..."
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Editar"
+      ],
+      "Remove": [
+        "Eliminar"
+      ],
+      "View": [
+        "Ver"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Añadir"
+      ],
+      "more rows at the bottom": [
+        "más filas en la parte inferior"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
         "Aplicar"
@@ -1691,8 +2230,23 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Default ${ size }": [
+        "${ size } predeterminado"
+      ],
       "OK": [
         "Aceptar"
+      ],
+      "Resize column ${ title }": [
+        "Cambiar el tamaño de la columna ${ title }"
+      ],
+      "Resize row ${ title }": [
+        "Cambiar el tamaño de la fila ${ title }"
+      ],
+      "Specify column width (px)": [
+        "Especificar el ancho de columna (px)"
+      ],
+      "Specify row height (px)": [
+        "Especifica la altura de la fila (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -1867,6 +2421,18 @@
       ],
       "Series": [
         "Serie"
+      ],
+      "Series ${ seriesNumber }": [
+        "Serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "Agregado de la serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Nombre de la serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "Rango de la serie ${ seriesNumber }"
       ],
       "Show data in hidden rows and columns": [
         "Mostrar datos en filas y columnas ocultas"
@@ -2132,6 +2698,26 @@
         "Título de la tabla"
       ]
     },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 columna"
+      ],
+      "1 row": [
+        "1 fila"
+      ],
+      "2 columns": [
+        "2 columnas"
+      ],
+      "2 rows": [
+        "2 filas"
+      ],
+      "No columns": [
+        "Ninguna columna"
+      ],
+      "No rows": [
+        "Ninguna fila"
+      ]
+    },
     "Title": {
       "Delete comment": [
         "Eliminar el comentario"
@@ -2149,6 +2735,9 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "No se admite hacer sugerencias dentro de bloques de código."
+      ],
+      "Pasting remote images is not supported. Download the image and use \"Insert image\" instead.": [
+        "No se admite pegar imágenes remotas. Descarga la imagen y usa «Insertar imagen» en su lugar."
       ]
     }
   }
