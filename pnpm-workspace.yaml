@@ -172,6 +172,7 @@ minimumReleaseAgeExclude:
     - '@protontech/*'
     - '@openpgp/*'
     - '@tpe/*'
+    - electron@43.8.4
 
 allowBuilds:
     '@parcel/watcher': true

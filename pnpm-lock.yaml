@@ -2542,7 +2542,7 @@ importers:
         version: 5.4.4
       electron-store:
         specifier: 'catalog:'
-        version: 8.2.0(electron@43.8.3(supports-color@11.0.0))
+        version: 8.2.0(electron@43.8.4(supports-color@11.0.0))
       execa:
         specifier: ^8.0.1
         version: 8.0.1
@@ -2644,8 +2644,8 @@ importers:
         specifier: ^17.4.2
         version: 17.4.2
       electron:
-        specifier: 43.8.3
-        version: 43.8.3(supports-color@11.0.0)
+        specifier: 43.8.4
+        version: 43.8.4(supports-color@11.0.0)
       eslint:
         specifier: 'catalog:'
         version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
@@ -21599,6 +21599,11 @@ packages:
 
   electron@43.8.3:
     resolution: {integrity: sha512-KgvSm3bHXz96hSXzqxyRjLeli80rIdszbDQFKlRSfckmGazTPCH/CxUN31Dp9c5rFKTQSNf9gPJRWl1yWNB3pA==}
+    engines: {node: '>= 22.12.0'}
+    hasBin: true
+
+  electron@43.8.4:
+    resolution: {integrity: sha512-Vt1SigFO1Oe5ZX5aJYtkAtGaB4XZFipr9l565/ghd4IA/FYJCnRbp5I2PhKqPKoDJESXBitaK6NMBkl+bTGy6Q==}
     engines: {node: '>= 22.12.0'}
     hasBin: true
 
@@ -41653,6 +41658,13 @@ snapshots:
     optionalDependencies:
       electron: 43.8.3(supports-color@11.0.0)
 
+  electron-store@8.2.0(electron@43.8.4(supports-color@11.0.0)):
+    dependencies:
+      conf: 10.2.0
+      type-fest: 2.19.0
+    optionalDependencies:
+      electron: 43.8.4(supports-color@11.0.0)
+
   electron-store@8.2.0(electron@44.9.3(supports-color@11.0.0)):
     dependencies:
       conf: 10.2.0
@@ -41688,6 +41700,14 @@ snapshots:
     optional: true
 
   electron@43.8.3(supports-color@11.0.0):
+    dependencies:
+      '@electron-internal/extract-zip': 1.0.5
+      '@electron/get': 5.0.0(supports-color@11.0.0)
+      '@types/node': 24.19.0
+    transitivePeerDependencies:
+      - supports-color
+
+  electron@43.8.4(supports-color@11.0.0):
     dependencies:
       '@electron-internal/extract-zip': 1.0.5
       '@electron/get': 5.0.0(supports-color@11.0.0)
