@@ -346,6 +346,23 @@ describe('remote - conversion', () => {
             expect(result.spaces[LOCAL_SPACE_ID]?.id).toBe(LOCAL_SPACE_ID);
         });
 
+        it('convertSpacesFromApi reports the oldest raw CreateTime even when every space is skipped', () => {
+            const older = '2026-01-01T00:00:00.000Z';
+            const codeSession = {
+                ID: REMOTE_SPACE_ID,
+                CreateTime: nowStr,
+                Encrypted: validBase64,
+                SpaceKey: validBase64,
+                SpaceTag: LOCAL_SPACE_ID,
+                Conversations: [],
+                Assets: [],
+                SpaceType: 2,
+            };
+            const result = convertSpacesFromApi([codeSession, { ...codeSession, CreateTime: older }]);
+            expect(result.spaces).toEqual({});
+            expect(result.oldestCreatedAt).toBe(older);
+        });
+
         it('convertConversationsFromApi handles empty input', () => {
             const result = convertConversationsFromApi([], LOCAL_SPACE_ID as LocalId);
             expect(result.conversations).toEqual([]);

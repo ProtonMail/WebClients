@@ -23,10 +23,10 @@ import { prepareTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
 import { getContextLimitsForModelTier } from '../../llm/modelContextLimits';
-import { selectMessagesByConversationId } from '../../redux/selectors';
+import { selectMessagesByConversationId, selectRemoteIdFromLocal } from '../../redux/selectors';
 import { clearPendingAgent, clearPendingArtifactCreation } from '../../redux/slices/composerActions';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
-import { pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
+import { deleteAttachment, pushAttachmentRequest, upsertAttachment } from '../../redux/slices/core/attachments';
 import {
     addConversation,
     newConversationId,
@@ -65,6 +65,7 @@ import type {
 } from '../../types';
 import { ConversationStatus, Role, SpaceType, getAttachmentPriv, getAttachmentPub } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
+import { findReusableSpaceAttachments } from '../../util/attachmentHelpers';
 import { getDefaultNewConversationTitle } from '../../util/conversationTitle';
 import { parseFileReferences } from '../../util/fileReferences';
 import {
@@ -575,9 +576,22 @@ export function executeConversationTurn({
             messageAttachments,
             conversationAttachments
         );
-        const uploadedAttachments = messageAttachments.filter(
+        const candidateUploads = messageAttachments.filter(
             (att) => !fileReferences.some((ref) => ref.fileName.toLowerCase() === att.filename.toLowerCase())
         );
+        const reusedAttachments = findReusableSpaceAttachments(
+            candidateUploads,
+            state.attachments ?? {},
+            spaceId,
+            (id) => Boolean(selectRemoteIdFromLocal('attachment', id)(state))
+        );
+        if (reusedAttachments.size > 0) {
+            const seen = new Set<string>();
+            messageAttachments = messageAttachments
+                .map((att) => reusedAttachments.get(att.id) ?? att)
+                .filter((att) => (seen.has(att.id) ? false : (seen.add(att.id), true)));
+        }
+        const uploadedAttachments = candidateUploads.filter((att) => !reusedAttachments.has(att.id));
 
         // Create the new messages (user and assistant)
         const lastMessage = c.messageChain.at(-1);
@@ -626,6 +640,7 @@ export function executeConversationTurn({
 
         // Assign uploaded (non-mentioned) files to the space so they become project files.
         dispatch(assignProvisionalAttachmentsToSpace(uploadedAttachments, spaceId));
+        reusedAttachments.forEach((_, provisionalId) => dispatch(deleteAttachment(provisionalId)));
 
         // Update navigation and siblings preference
         updateUi(userMessage, conversationId, ui);

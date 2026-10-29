@@ -481,18 +481,11 @@ export function* pullSpaces(): SagaIterator<void> {
             const pageResult: ListSpacesRemote = yield call([lumoApi, lumoApi.listSpaces], listSpacesArgs);
             yield put(pullSpacesPageResponse(pageResult));
 
-            const allSpaces = [...listify(pageResult.spaces), ...listify(pageResult.deletedSpaces)];
-            if (allSpaces.length === 0) break;
+            // Use the raw page's oldest CreateTime: spaces skipped during conversion still advance the cursor.
+            if (!pageResult.oldestCreatedAt) break;
+            const newLastTimestamp = isoToUnixTimestamp(pageResult.oldestCreatedAt);
 
-            const newLastTimestamp = allSpaces
-                .map((s) => s.createdAt)
-                .map((iso: string): number => isoToUnixTimestamp(iso))
-                .reduce((oldest, current) => {
-                    if (!oldest) return current;
-                    return current <= oldest ? current : oldest;
-                }, lastTimestamp);
-
-            if (!newLastTimestamp || (lastTimestamp && newLastTimestamp >= lastTimestamp)) break;
+            if (lastTimestamp && newLastTimestamp >= lastTimestamp) break;
 
             lastTimestamp = newLastTimestamp;
             yield delay(1000);

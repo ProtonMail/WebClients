@@ -189,7 +189,7 @@ export async function deserializeSpace(
 }
 
 /**
- * Infer {@link SpaceType} from decrypted private JSON when the record has no public `spaceType`.
+ * Infer {@link SpaceType} from decrypted private JSON when the record has no specific public `spaceType`.
  * First match wins: `schedule` → Schedule, `isProject === true` → Project, else Simple.
  */
 const getInferredType = (spacePriv: SpacePriv): SpaceType => {
@@ -232,13 +232,18 @@ export async function deserializeSpaceWithMasterKeys(
             throw new Error('Invalid space data');
         }
 
-        // Legacy space records (IndexedDB or API) may omit public `spaceType`; if so, use the decrypted private JSON to
-        // infer the type.
+        // Legacy space records (IndexedDB or API) may omit public `spaceType`, or carry Default because the API backfills
+        // it for records created before the field existed. In both cases use the decrypted private JSON to infer the
+        // type, so legacy projects and schedules (`isProject` / `schedule` markers) keep their type.
         // Also strip `isProject` from the in-memory space. Serialize may write it back for backends that still expect it;
         // deserialize does not rewrite storage.
         const { isProject, ...spacePriv } = parsedSpacePriv as ProjectSpacePriv &
             Partial<ScheduleSpacePriv> & { isProject?: boolean };
-        const spaceType = serializedSpace.spaceType ?? getInferredType(parsedSpacePriv);
+        const publicSpaceType = serializedSpace.spaceType;
+        const spaceType =
+            publicSpaceType === undefined || publicSpaceType === null || publicSpaceType === SpaceType.Default
+                ? getInferredType(parsedSpacePriv)
+                : publicSpaceType;
         if (!isSpaceType(spaceType)) throw new Error('Unsupported space type');
         const spacePub = getSpacePub({ ...serializedSpace, spaceType });
         return {

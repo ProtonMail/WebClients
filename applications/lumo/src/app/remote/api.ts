@@ -5,7 +5,6 @@ import config from '../config';
 import { ClientError, ConflictClientError, LimitReachedError } from '../redux/sagas/sagaErrors';
 import type { Base64, MasterKey, MessageId, ProtonApiResponse } from '../types';
 import { LUMO_ELIGIBILITY, isProtonApiResponse, isRemoteId } from '../types';
-import { listify } from '../util/collections';
 import { dateToUnixTimestamp } from '../util/date';
 import { objectFilterV } from '../util/objects';
 import {
@@ -53,7 +52,7 @@ import type {
     UserSettingsToApi,
 } from './types';
 import { SpaceTypeInt } from './types';
-import { objectToPascalCaseKeys, oldestDateReducer } from './util';
+import { objectToPascalCaseKeys } from './util';
 
 export type RemoteStatus = 'ok' | 'deleted';
 type ResourceName =
@@ -600,10 +599,9 @@ export class LumoApi {
         while (true) {
             const createTimeUntil = lastTimestamp ? dateToUnixTimestamp(lastTimestamp) : undefined;
             const next = await this.listSpaces({ createTimeUntil });
-            const newLastTimestamp = listify({ ...next.spaces, ...next.deletedSpaces })
-                .map((s) => new Date(s.createdAt))
-                .reduce(oldestDateReducer, lastTimestamp);
-            if (!newLastTimestamp || (lastTimestamp && newLastTimestamp >= lastTimestamp)) break;
+            if (!next.oldestCreatedAt) break;
+            const newLastTimestamp = new Date(next.oldestCreatedAt);
+            if (lastTimestamp && newLastTimestamp >= lastTimestamp) break;
             lastTimestamp = newLastTimestamp;
             result = {
                 spaces: { ...result.spaces, ...next.spaces },

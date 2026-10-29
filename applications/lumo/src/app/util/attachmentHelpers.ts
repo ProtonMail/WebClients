@@ -6,7 +6,7 @@ import { getApproximateTokenCount } from '../llm/tokenizer';
 import { upsertAttachment } from '../redux/slices/core/attachments';
 import type { LumoDispatch } from '../redux/store';
 import { attachmentDataCache } from '../services/attachmentDataCache';
-import type { Attachment, SpaceId } from '../types';
+import type { Attachment, AttachmentId, SpaceId } from '../types';
 
 function attachmentMatchesProjectFile(
     attachment: Pick<Attachment, 'filename' | 'driveNodeId'>,
@@ -53,6 +53,46 @@ export function isAttachmentRemovedFromProjectKnowledge(
         return false;
     }
     return !isFileInProjectKnowledge(attachment, spaceAttachments);
+}
+
+/**
+ * Maps each uploaded document that is an exact copy (same filename and content) of a file already
+ * stored in the space to that stored file, so re-attaching it doesn't create another asset counting
+ * against the space's hard limit. Only files already on the server qualify as targets: local-only
+ * copies (RAG, @mentions) would leave the message pointing at an asset that doesn't exist remotely.
+ */
+export function findReusableSpaceAttachments(
+    uploadedAttachments: Attachment[],
+    allAttachments: Record<AttachmentId, Attachment>,
+    spaceId: SpaceId,
+    isOnServer: (id: AttachmentId) => boolean
+): Map<AttachmentId, Attachment> {
+    const reusable = new Map<AttachmentId, Attachment>();
+    const candidates = Object.values(allAttachments).filter(
+        (candidate) =>
+            candidate.spaceId === spaceId &&
+            candidate.markdown &&
+            !candidate.autoRetrieved &&
+            !candidate.error &&
+            !candidate.processing &&
+            isOnServer(candidate.id)
+    );
+    if (candidates.length === 0) {
+        return reusable;
+    }
+
+    for (const attachment of uploadedAttachments) {
+        if (attachment.spaceId || !attachment.markdown || attachment.mimeType?.startsWith('image/')) {
+            continue;
+        }
+        const match = candidates.find(
+            (candidate) => candidate.filename === attachment.filename && candidate.markdown === attachment.markdown
+        );
+        if (match) {
+            reusable.set(attachment.id, match);
+        }
+    }
+    return reusable;
 }
 
 /**

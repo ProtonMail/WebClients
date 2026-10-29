@@ -1,4 +1,5 @@
-import { createAction, createReducer } from '@reduxjs/toolkit';
+import { createAction, createReducer, prepareAutoBatched } from '@reduxjs/toolkit';
+import isEqual from 'lodash/isEqual';
 import { v4 as uuidv4 } from 'uuid';
 
 import { type LumoFile, getLumoFileType } from '../../../remote/nativeComposerBridge';
@@ -56,7 +57,7 @@ export type ClearProvisionalAttachmentsPayload = {
 export const clearProvisionalAttachments = createAction<ClearProvisionalAttachmentsPayload | undefined>(
     'lumo/attachment/clearProvisional'
 );
-export const addAttachment = createAction<Attachment>('lumo/attachment/add');
+export const addAttachment = createAction('lumo/attachment/add', prepareAutoBatched<Attachment>());
 
 // High-level Redux-saga requests and events.
 export const pushAttachmentRequest = createAction<PushAttachmentRequest>('lumo/attachment/pushRequest');
@@ -73,8 +74,9 @@ export const locallyDeleteAttachmentFromRemoteRequest = createAction<AttachmentI
 export const locallyRefreshFilledAttachmentFromRemoteRequest = createAction<RemoteFilledAttachment>(
     'lumo/attachment/refreshFilledFromRemoteRequest'
 );
-export const locallyRefreshShallowAttachmentFromRemoteRequest = createAction<RemoteShallowAttachmentRequest>(
-    'lumo/attachment/refreshShallowFromRemoteRequest'
+export const locallyRefreshShallowAttachmentFromRemoteRequest = createAction(
+    'lumo/attachment/refreshShallowFromRemoteRequest',
+    prepareAutoBatched<RemoteShallowAttachmentRequest>()
 );
 export const pullAttachmentRequest = createAction<PullAttachmentRequest>('lumo/attachment/pullRequest');
 export const pullAttachmentSuccess = createAction<RemoteFilledAttachment | RemoteDeletedAttachment>(
@@ -112,6 +114,10 @@ const attachmentsReducer = createReducer<AttachmentMap>(EMPTY_ATTACHMENT_MAP, (b
         .addCase(addAttachment, (state, action) => {
             console.log('Action triggered: addAttachment', action.payload);
             const attachment = action.payload;
+            const existing = state[attachment.id];
+            if (existing && isEqual(existing, attachment)) {
+                return;
+            }
             state[attachment.id] = attachment;
         })
         .addCase(deleteAttachment, (state, action) => {

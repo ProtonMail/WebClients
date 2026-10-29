@@ -1,4 +1,4 @@
-import { createAction, createReducer } from '@reduxjs/toolkit';
+import { createAction, createReducer, prepareAutoBatched } from '@reduxjs/toolkit';
 
 import type { IdMapEntry, LocalId, RemoteId, ResourceType } from '../../../remote/types';
 
@@ -23,7 +23,7 @@ const EMPTY_ID_MAP = {
     } satisfies Record<ResourceType, Record<RemoteId, LocalId>>,
 };
 
-export const addIdMapEntry = createAction<IdMapEntry & { saveToIdb: boolean }>('lumo/idmap/add');
+export const addIdMapEntry = createAction('lumo/idmap/add', prepareAutoBatched<IdMapEntry & { saveToIdb: boolean }>());
 export const deleteAllIdMaps = createAction('lumo/idmap/deleteAll');
 
 const initialState: IdMap = EMPTY_ID_MAP;
