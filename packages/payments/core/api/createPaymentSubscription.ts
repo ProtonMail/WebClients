@@ -177,6 +177,7 @@ const createSubscriptionQuery = (rawData: SubscribeData, product: ProductParam) 
         sanitizedData.BillingAddress = getBillingAddressPayload({
             billingAddress: sanitizedData.BillingAddress,
             vatId: sanitizedData.VatId,
+            keepPostalCode: !!sanitizedData.ProvisioningToken,
         });
     }
 

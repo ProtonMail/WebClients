@@ -72,6 +72,16 @@ describe('normalizePostalCode', () => {
             expect(normalizePostalCode('1000', 'BE')).toBe(null);
         });
 
+        it('should keep postal codes for countries where it is not required when asked to', () => {
+            expect(normalizePostalCode('1204', 'CH', true)).toBe('1204');
+            expect(normalizePostalCode('10115', 'DE', true)).toBe('10115');
+        });
+
+        it('should still normalize postal codes for countries where it is required when asked to keep them', () => {
+            expect(normalizePostalCode('m5h2n2', 'CA', true)).toBe('M5H 2N2');
+            expect(normalizePostalCode(' 12345 ', 'US', true)).toBe('12345');
+        });
+
         it('should handle undefined/null country codes', () => {
             expect(normalizePostalCode('12345', undefined as any)).toBe(null);
             expect(normalizePostalCode('12345', null as any)).toBe(null);
