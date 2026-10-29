@@ -93,6 +93,15 @@ describe('processFoldersUpdated', () => {
         expect(dispatched).toContainEqual(foldersUpdated([createFolder('f1')]));
     });
 
+    test('returns `true` and skips dispatch when the folder share was removed', async () => {
+        fetchFolder.mockResolvedValue(undefined);
+
+        const { result, dispatched } = await run(processFoldersUpdated, [createEvent('s1', 'f1')]);
+
+        expect(result).toBe(true);
+        expect(dispatched).toHaveLength(0);
+    });
+
     test('returns `true` and skips dispatch when a folder cannot be decrypted', async () => {
         fetchFolder.mockResolvedValue(encryptedFolder('f1'));
         parseFolderResponse.mockRejectedValue(new Error('Could not resolve folder key'));

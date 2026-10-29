@@ -35,7 +35,7 @@ import { logger } from '../../utils/logger';
 import { createPubSub } from '../../utils/pubsub/factory';
 import { authStore } from '../auth/store';
 import { withQARefreshStatus } from '../qa/api';
-import { PassErrorCode, isAbortError } from './errors';
+import { PassErrorCode, isAbortError, isShareRemovedError } from './errors';
 import { withApiHandlers } from './handlers';
 import { refreshHandlerFactory } from './refresh';
 import {
@@ -177,8 +177,10 @@ export const createApi = ({
                  * `getIsUnreachableError` only covers 5xx. Only a success clears the count:
                  * losing the network or the session says nothing about server health.
                  * `status > 0` excludes errors thrown before the request left the client
-                 * (`handlers.ts` short-circuits on a bad app version or a locked session). */
-                const counts = online && e.status > 0 && !getIsSessionInvalid(e);
+                 * (`handlers.ts` short-circuits on a bad app version or a locked session).
+                 * A removed share fails every request on its items and folders: a healthy
+                 * answer that must not stop event polling. */
+                const counts = online && e.status > 0 && !getIsSessionInvalid(e) && !isShareRemovedError(e);
                 const failureCount = state.get('failureCount') + (counts ? 1 : 0);
                 const unreachable = getIsUnreachableError(e) || failureCount >= API_FAILURE_THRESHOLD;
                 const broadcast = state.get('online') !== online || state.get('unreachable') !== unreachable;
