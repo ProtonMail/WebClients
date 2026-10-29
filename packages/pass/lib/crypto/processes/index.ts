@@ -8,6 +8,7 @@ export * from './file/create-file-descriptor';
 export * from './file/open-file-chunk';
 export * from './file/open-file-descriptor';
 export * from './folder/create-folder';
+export * from './folder/move-folder';
 export * from './folder/open-folder';
 export * from './folder/update-folder';
 export * from './invite/create-invite-keys';
