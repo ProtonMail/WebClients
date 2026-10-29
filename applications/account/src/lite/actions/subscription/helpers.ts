@@ -12,7 +12,6 @@ import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organiz
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
-import isTruthy from '@proton/utils/isTruthy';
 
 const getMonthsText = (n: number) => {
     return c('Checkout row').ngettext(msgid`${n} month`, `${n} months`, n);
@@ -20,10 +19,6 @@ const getMonthsText = (n: number) => {
 
 const getDaysText = (n: number) => {
     return c('Checkout row').ngettext(msgid`${n} day`, `${n} days`, n);
-};
-
-export const getCodesForSubscription = (userEnteredCouponCode: string | undefined, coupon: string | undefined) => {
-    return [userEnteredCouponCode, coupon].filter(isTruthy);
 };
 
 export function getDisplayName(organization: OrganizationExtended | undefined, user: UserModel | undefined) {

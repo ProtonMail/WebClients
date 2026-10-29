@@ -9,6 +9,7 @@ import {
     canModify,
     getAutoCoupon,
     getAvailableSubscriptionActions,
+    getCodes,
     getSoonestEndingSubscription,
     getSubscriptionPlanTitle,
     hasBlackFriday2026Coupon,
@@ -1387,5 +1388,17 @@ describe('getSoonestEndingSubscription', () => {
 
     it('returns the subscription object itself', () => {
         expect(getSoonestEndingSubscription([mailEndingLater, driveEndingSooner], isNotPass)).toBe(driveEndingSooner);
+    });
+});
+
+describe('getCodes', () => {
+    it('returns gift then coupon', () => {
+        expect(getCodes({ gift: 'GIFT', coupon: 'COUPON' })).toEqual(['GIFT', 'COUPON']);
+    });
+
+    it('drops empty and missing values', () => {
+        expect(getCodes({ gift: '', coupon: 'COUPON' })).toEqual(['COUPON']);
+        expect(getCodes({ gift: 'GIFT' })).toEqual(['GIFT']);
+        expect(getCodes({})).toEqual([]);
     });
 });

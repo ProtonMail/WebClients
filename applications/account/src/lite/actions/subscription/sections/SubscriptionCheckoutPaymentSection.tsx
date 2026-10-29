@@ -19,7 +19,7 @@ import { DisplayablePaymentError } from '@proton/payments/core/errors';
 import type { PaymentMethodType } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
-import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/subscription/helpers';
+import { getCodes, isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/subscription/helpers';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
@@ -28,7 +28,6 @@ import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import noop from '@proton/utils/noop';
 
-import { getCodesForSubscription } from '../helpers';
 import PaymentMethodForm from './payment-section/PaymentMethodForm';
 import PaymentMethodSelector from './payment-section/PaymentMethodSelector';
 
@@ -116,7 +115,7 @@ const SubscriptionCheckoutPaymentSection = ({
         try {
             paymentFacade.paymentContext.setSubscriptionData({
                 Plans: planIDs,
-                Codes: getCodesForSubscription(checkResult.Gift ? coupon : '', checkResult.Coupon?.Code),
+                Codes: getCodes({ gift: checkResult.Gift ? coupon : '', coupon: checkResult.Coupon?.Code }),
                 Cycle: cycle,
                 product: appName,
                 taxBillingAddress: billingAddress,

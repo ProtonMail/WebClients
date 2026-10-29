@@ -11,6 +11,7 @@ import { disableStorageSelection } from '@proton/components/containers/members/h
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
+import { getCodes } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
@@ -378,6 +379,7 @@ export const handleSubscribeUser = async ({
 
     try {
         const isTrial = subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
+        const Codes = getCodes({ coupon: subscriptionData.checkResult.Coupon?.Code });
 
         const { Subscription } = await createPaymentSubscription(
             api,
@@ -390,9 +392,7 @@ export const handleSubscribeUser = async ({
                 ...{
                     Payment: subscriptionData.payment,
                     Amount: subscriptionData.checkResult.AmountDue,
-                    ...(subscriptionData.checkResult.Coupon?.Code
-                        ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
-                        : undefined),
+                    ...(Codes.length ? { Codes } : undefined),
                     ...(isTrial ? { StartTrial: true } : {}),
                     // Redeems a sales-provisioned link in the same request.
                     ...(provisioningToken ? { ProvisioningToken: provisioningToken } : {}),
