@@ -122,7 +122,13 @@ type PayloadBillingAddress = BillingAddressExtended & {
     VatId?: string | null;
 };
 
-function normalizeZipCodeInBillingAddress({ billingAddress }: { billingAddress: BillingAddress }): BillingAddress {
+function normalizeZipCodeInBillingAddress({
+    billingAddress,
+    keepPostalCode,
+}: {
+    billingAddress: BillingAddress;
+    keepPostalCode?: boolean;
+}): BillingAddress {
     if (billingAddress.ZipCode === '') {
         return { ...billingAddress, ZipCode: null };
     }
@@ -133,7 +139,7 @@ function normalizeZipCodeInBillingAddress({ billingAddress }: { billingAddress: 
 
     return {
         ...billingAddress,
-        ZipCode: normalizePostalCode(billingAddress.ZipCode, billingAddress.CountryCode),
+        ZipCode: normalizePostalCode(billingAddress.ZipCode, billingAddress.CountryCode, keepPostalCode),
     };
 }
 
@@ -154,16 +160,23 @@ function normalizeVatIdInBillingAddress({
 
 /**
  * Use it before sending the billing address to the backend. Either /check endpoint or /subscription endpoint.
+ *
+ * `keepPostalCode` keeps the postal code of countries where it isn't required, which are otherwise dropped. A
+ * sales-provisioned address comes from the stored record, not from a form default, and the backend only redeems the
+ * link when it matches. Postal codes of countries that require one are still normalized.
  */
 export function getBillingAddressPayload({
     billingAddress,
     vatId,
+    keepPostalCode,
 }: {
     billingAddress: BillingAddressExtended;
     vatId: string | undefined;
+    keepPostalCode?: boolean;
 }): PayloadBillingAddress {
     const withNormalizedZipCode = normalizeZipCodeInBillingAddress({
         billingAddress,
+        keepPostalCode,
     });
 
     const withNormalizedVatId = normalizeVatIdInBillingAddress({

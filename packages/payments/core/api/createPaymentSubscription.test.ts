@@ -118,4 +118,48 @@ describe('createPaymentSubscription', () => {
             })
         );
     });
+
+    it('should keep the postal code of a provisioned address', async () => {
+        const api = jest.fn().mockResolvedValue({ Subscription: {} });
+
+        await createPaymentSubscription(
+            api as unknown as Api,
+            { ...buildData({ [PLANS.BUNDLE_PRO_2024]: 1 }), ProvisioningToken: 'prov-token' },
+            {
+                build: 'proton-account' as APP_NAMES,
+                telemetryContext: undefined,
+                userCurrency: 'USD',
+                subscription: undefined,
+                product: 'generic',
+                paymentMethodType: undefined,
+                paymentMethodValue: undefined,
+            } as any
+        );
+
+        expect(api).toHaveBeenCalledWith(
+            expect.objectContaining({
+                data: expect.objectContaining({ BillingAddress: expect.objectContaining({ ZipCode: '1234' }) }),
+            })
+        );
+    });
+
+    it('should drop the postal code of a country where it is not required without a provisioning token', async () => {
+        const api = jest.fn().mockResolvedValue({ Subscription: {} });
+
+        await createPaymentSubscription(api as unknown as Api, buildData({ [PLANS.BUNDLE_PRO_2024]: 1 }), {
+            build: 'proton-account' as APP_NAMES,
+            telemetryContext: undefined,
+            userCurrency: 'USD',
+            subscription: undefined,
+            product: 'generic',
+            paymentMethodType: undefined,
+            paymentMethodValue: undefined,
+        } as any);
+
+        expect(api).toHaveBeenCalledWith(
+            expect.objectContaining({
+                data: expect.objectContaining({ BillingAddress: expect.objectContaining({ ZipCode: null }) }),
+            })
+        );
+    });
 });
