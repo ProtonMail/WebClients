@@ -1580,7 +1580,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4269,6 +4270,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Επιτρέψτε στους άλλους να κλείνουν ραντεβού μαζί σας απευθείας μέσα από τα ηλεκτρονικά μηνύματά σας, χωρίς περιττές ανταλλαγές μηνυμάτων."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Σας επιτρέπει να προσθέτετε άμεσα συνδέσμους συσκέψεων στις προσκλήσεις εκδηλώσεων."
@@ -7768,6 +7772,9 @@
       "here": [
         "εδώ"
       ],
+      "Here is my availability:": [
+        "Ορίστε η διαθεσιμότητά μου:"
+      ],
       "Here's what happens when you continue:": [
         "Ορίστε τι συμβαίνει όταν συνεχίζετε:"
       ],
@@ -8116,6 +8123,9 @@
       ],
       "No action selected": [
         "Δεν έχει επιλεγεί καμία ενέργεια"
+      ],
+      "No booking pages yet": [
+        "Δεν υπάρχουν ακόμα σελίδες κρατήσεων"
       ],
       "No change will be made to the selected emails": [
         "Δεν θα γίνει καμία αλλαγή στις επιλεγμένες ηλεκτρονικές διευθύνσεις"
@@ -9988,6 +9998,9 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } χαρακτήρες"
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "Βοηθός ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } βοηθός γραφής"
       ],
@@ -10015,6 +10028,9 @@
       ],
       "Active filter:": [
         "Ενεργό φίλτρο:"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Προσθέστε μια σελίδα κρατήσεων στο email σας και επιτρέψτε στους χρήστες να επιλέξουν μια ώρα που τους εξυπηρετεί."
       ],
       "Add email address": [
         "Προσθήκη διεύθυνσης E-mail"
@@ -13435,6 +13451,9 @@
       "Billing Country": [
         "Χώρα χρέωσης"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Οι λογαριασμοί Born Private δεν μπορούν να αγοραστούν όσο υπάρχει ενεργή συνδρομή."
+      ],
       "Buying credits requires a separate purchase.": [
         "Η αγορά μονάδων απαιτεί ξεχωριστή αγορά."
       ],
@@ -15601,6 +15620,12 @@
         "${ elementsCount } μήνυμα αφαιρέθηκε από τα Σημασμένα.",
         "${ elementsCount } μηνύματα αφαιρέθηκαν από τα Σημασμένα."
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "Ο βοηθός ${ LUMO_SHORT_APP_NAME } απενεργοποιήθηκε"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "Ο βοηθός ${ LUMO_SHORT_APP_NAME } ενεργοποιήθηκε"
+      ],
       "Address copied to clipboard": [
         "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
@@ -16513,6 +16538,9 @@
       ],
       "Information exposed in breach": [
         "Πληροφορίες που εκτέθηκαν κατά την παραβίαση"
+      ],
+      "Insert a booking page": [
+        "Εισαγάγετε μια σελίδα κρατήσεων"
       ],
       "Insert contacts": [
         "Εισαγωγή επαφών"

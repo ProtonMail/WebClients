@@ -1522,7 +1522,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -2224,6 +2227,11 @@
       ],
       "Yearly": [
         "Ročně"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } desktopová aplikace"
       ]
     },
     "Bug category": {
@@ -7181,6 +7189,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Jste si jist(a), že chcete trvale smazat tuto zprávu?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Požádejte správce o navýšení tarifu, nebo odeberte stránku z postraního panelu Rezervačních stránek v ${ CALENDAR_APP_NAME }."
+      ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Požádejte svého správce o navýšení tarifu nebo o odebrání stránky z postranního panelu stránek rezervací."
       ],
@@ -8665,6 +8676,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "Pro přidání nové rezervační stránky požádejte svého správce o navýšení vašeho tarifu."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pro přidání nové rezervační stránky odeberte již existující stránku z postranního panelu Rezervačních stránek v ${ CALENDAR_APP_NAME }."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Pro přidání nové rezervační stránky odeberte některou z těch stávajících z postranního panelu rezervačních stránek."

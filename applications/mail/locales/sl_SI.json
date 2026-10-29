@@ -1510,7 +1510,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -6849,6 +6852,9 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Pridobite ${ referrerRewardAmount }** kot dobropis za vsakega prijatelja, ki se naroči na paket."
       ],
+      "1 vault per user": [
+        "1 trezor na uporabnika"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "S telefonsko številko lahko preverite samo en ${ BRAND_NAME } račun"
       ],
@@ -7037,6 +7043,9 @@
       ],
       "Are you sure you want to permanently delete this message?": [
         "Ali ste prepričani, da želite trajno izbrisati to sporočilo?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pooblastite skrbnika, da nadgradi paket ali odstrani stran iz stranske vrstice strani za rezervacije v ${ CALENDAR_APP_NAME }."
       ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Pooblastite skrbnika, da nadgradi paket ali odstrani stran iz stranske vrstice strani za rezervacije."
@@ -8594,6 +8603,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "Če želite dodati novo stran za rezervacije, prosite svojega skrbnika, da nadgradi vaš paket."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Če želite dodati novo stran za rezervacije, odstranite obstoječo s stranske vrstice strani za rezervacije v ${ CALENDAR_APP_NAME }."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Če želite dodati novo stran za rezervacije, odstranite obstoječo s stranske vrstice strani za rezervacije."
@@ -10665,6 +10677,9 @@
       ],
       "Pay invoice": [
         "Plačilo računa"
+      ],
+      "Pay it": [
+        "Plačaj"
       ],
       "Privacy policy": [
         "Pravilnik o zasebnosti"

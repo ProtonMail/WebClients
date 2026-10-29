@@ -39,6 +39,9 @@
       "A to Z": [
         "A-tól Z-ig"
       ],
+      "About ${ name }": [
+        "A ${ name } névjegye"
+      ],
       "Activate": [
         "Aktiválás"
       ],
@@ -50,6 +53,9 @@
       ],
       "Add": [
         "Hozzáadás"
+      ],
+      "Add ${ name }": [
+        "${ name } hozzáadása"
       ],
       "Add account": [
         "Fiók hozzáadása"
@@ -781,6 +787,9 @@
       "Later this week": [
         "Később ezen a héten"
       ],
+      "Learn how this works": [
+        "Hogyan működik?"
+      ],
       "Learn more": [
         "További információk"
       ],
@@ -1478,7 +1487,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1722,6 +1732,9 @@
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
       ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licenc"
+      ],
       "${ price } per dedicated server": [
         "${ price } / dedikált szerver"
       ],
@@ -1754,6 +1767,9 @@
       ],
       "Writing assistant": [
         "Írási segéd"
+      ],
+      "Writing assistant seats": [
+        "Írási segéd licencek"
       ]
     },
     "Alert": {
@@ -4831,7 +4847,7 @@
         "újra aktiválhatja az előző kulcsot"
       ],
       "re-importing": [
-        "újraimportálás"
+        "újraimportálni"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Kettőzött címzett eltávolítása: ${ recipents }",
@@ -4933,6 +4949,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Legalább ${ price } kredit feltöltése szükséges"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "A legkisebb lehetséges adomány ${ price }"
       ],
       "The sending key is not valid": [
         "A küldő kulcs érvénytelen"
@@ -5046,6 +5065,9 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Az üzenet visszafejtése nem sikerült. Amennyiben törölte valamelyik címéhez tartozó egyik kulcsot, próbálja meg ${ reimportKeyLink }. ${ learnMoreLink }"
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
@@ -5490,6 +5512,12 @@
       ],
       "Filter and sort emails": [
         "E-mailek szűrése és rendezése"
+      ],
+      "Has attachments": [
+        "Mellékletet tartalmaz"
+      ],
+      "Reset": [
+        "Visszaállítás"
       ]
     },
     "Filter Actions": {
@@ -5833,6 +5861,9 @@
       ],
       "Security Center": [
         "Biztonsági központ"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } írási segéd beállítása"
       ],
       "Set up the writing assistant": [
         "Az írási segéd beállítása"
@@ -6721,6 +6752,9 @@
       "Center": [
         "Középre"
       ],
+      "Change your theme": [
+        "Téma módosítása"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Névjegy ellenőrzése ${ progress }/${ max }..."
       ],
@@ -6787,6 +6821,12 @@
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } új naptár létrehozása",
         "${ calendarsToBeCreatedCount } új naptár létrehozása"
+      ],
+      "Create a filter": [
+        "Szűrő létrehozása"
+      ],
+      "Create a folder": [
+        "Mappa létrehozása"
       ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Csináljon egy mappát például \"${ suggestedFolderName }\" névvel, hogy minden online visszaigazolását egy helyen tárolja."
@@ -6933,6 +6973,9 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Könnyedén kezelheti és leiratkozhat hírlevelekről és levelezőlistákról."
+      ],
+      "Edit a contact": [
+        "Névjegy szerkesztése"
       ],
       "Edit contact": [
         "Névjegy szerkesztése"
@@ -7379,6 +7422,9 @@
       "No contacts added yet": [
         "Még nincsenek névjegyek"
       ],
+      "No contacts found": [
+        "Nem található névjegy"
+      ],
       "No email address": [
         "Nincs e-mail cím"
       ],
@@ -7408,6 +7454,9 @@
       ],
       "No payment is required at this time.": [
         "Jelenleg nincs fizetendő számla."
+      ],
+      "No payment is required.": [
+        "Nem szükséges fizetés."
       ],
       "No results found": [
         "Nincs találat"
@@ -7669,6 +7718,12 @@
       "Restore": [
         "Helyreállítás"
       ],
+      "Revise the ${ draft }": [
+        "${ draft } áttekintése"
+      ],
+      "Rewrote and readdressed": [
+        "Átírva és átcímezve"
+      ],
       "Right to Left": [
         "Jobbról balra"
       ],
@@ -7762,6 +7817,12 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Állítsa be ${ MAIL_APP_NAME }-t alapértelmezett e-mail alkalmazásnak. ${ MAIL_APP_NAME } automatikusan megnyílik, amikor egy e-mail linkre kattint."
+      ],
+      "Set my out of office": [
+        "Távolléti üzenet beállítása"
+      ],
+      "Set signature": [
+        "Aláírás beállítása"
       ],
       "Set up your organization": [
         "Állítsa be a szervezet adatait"
@@ -7862,6 +7923,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Fájlok szinkronizálása és kezelése a ${ DRIVE_APP_NAME } alkalmazással. Hozzon létre és osszon meg dokumentumokat a ${ DOCS_APP_NAME } alkalmazásban, és tárolja azokat biztonságosan. Mindezt ${ ios }, ${ android } és ${ desktop } platformokon."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Átmenetileg nem érhető el, a túlzott érdeklődés miatt. Próbálja meg később."
       ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
@@ -8066,6 +8130,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Ez minden jelenleg bejelentkezett fiókjából kilépteti."
+      ],
+      "Tidy up my inbox": [
+        "A beérkezett üzenetek rendbe rakása"
       ],
       "to ${ destinationElement } folder.": [
         "${ destinationElement } mappa áthelyezése."
@@ -9076,6 +9143,9 @@
       "Colors": [
         "Színek"
       ],
+      "Compact": [
+        "Tömör"
+      ],
       "Company": [
         "Cég"
       ],
@@ -9316,6 +9386,9 @@
       "Last 3 months only": [
         "Csak az utolsó 3 hónap"
       ],
+      "Last 6 months only": [
+        "Csak az utolsó 6 hónap"
+      ],
       "Last month only": [
         "Csak az utolsó hónap"
       ],
@@ -9534,6 +9607,9 @@
       ],
       "Signature": [
         "Aláírás"
+      ],
+      "Single messages": [
+        "Külön üzenetek"
       ],
       "Size:": [
         "Méret:"
@@ -9766,6 +9842,9 @@
       ]
     },
     "Labels": {
+      "Loading your newsletter subscriptions...": [
+        "Hírlevél feliratkozások betöltése..."
+      ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Itt fognak megjelenni azok a hírlevelek vagy levelezőlisták, amelyekről leiratkozik."
       ],
@@ -11397,6 +11476,9 @@
       ],
       "Maybe later": [
         "Talán később"
+      ],
+      "Protect your accounts": [
+        "Védje meg a fiókját"
       ]
     },
     "Onboarding modal": {
@@ -11774,11 +11856,17 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Kérjük, először aktiválja újra az előfizetését, hogy csökkenthesse a bővítmények számát."
       ],
+      "Proton Meet seats must match the number of members.": [
+        "A Proton Meet licencek száma meg kell egyezzen a tagok számával."
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "A megújítási árak a ${ termsAndConditionsLink } szerint változhatnak."
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Az előfizetés megújul ${ renewPriceStr }, de bármikor lemondhatja."
+      ],
+      "Tax ${ rate }%": [
+        "${ rate }% adó"
       ],
       "terms and conditions": [
         "felhasználási feltételek"
@@ -11786,6 +11874,9 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes.",
         "A kedvezmény ${ renewalsWithCoupon } megújításra érvényes."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "A kiválasztott csomag nem biztosít elegendő tárhelyet a fiókjához."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "A kedvezményes ár ${ couponRedemptions } hónapig érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja.",
@@ -11822,8 +11913,14 @@
       "This payment method will become your new default for all future renewals.": [
         "Ez a fizetési mód lesz az új alapértelmezett minden jövőbeli megújításhoz."
       ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "A előfizetés létrehozása jelenleg nem fejezhető be. Próbálja meg később."
+      ],
       "Timeout exceeded": [
         "Időtúllépés"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "A próbaidős csomagokban nem érhető el ${ LUMO_SHORT_APP_NAME } licenc."
       ],
       "VAT number": [
         "Áfa-szám"
@@ -11839,6 +11936,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítjuk."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "A pénznem átállítva Euróra (€), mert az ${ IDEAL_WERO_BRAND_NAME } csak ebben teszi lehetővé a fizetést."
       ],
       "Your payment is still being processed": [
         "A kifizetés még feldolgozás alatt van"
@@ -11966,6 +12066,9 @@
       ],
       "Anytown": [
         "Bárholváros"
+      ],
+      "Ask anything…": [
+        "Kérdezzen bármit…"
       ],
       "Company name": [
         "Cégnév"
@@ -12317,6 +12420,9 @@
       ]
     },
     "Search - no results": {
+      "An action is being processed": [
+        "A művelet feldolgozás alatt"
+      ],
       "No messages found": [
         "Nincsenek üzenetek"
       ],
@@ -13183,6 +13289,9 @@
       ]
     },
     "Subscription reminder": {
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } és ${ LUMO_APP_NAME } prémium lehetőségekkel"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
       ],
@@ -14186,6 +14295,9 @@
       "Change password": [
         "Jelszó megváltoztatása"
       ],
+      "Choose a provider": [
+        "Szolgáltató kiválasztása"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Igényelje a ${ MAIL_APP_NAME } címét"
       ],
@@ -14783,6 +14895,9 @@
       ],
       "Request sent": [
         "Kérés elküldve"
+      ],
+      "Reverse charge not supported": [
+        "A fordított adózás nem támogatott"
       ],
       "Same inbox, shorter email address": [
         "Ugyanaz a postafiók, rövidebb e-mail cím"
