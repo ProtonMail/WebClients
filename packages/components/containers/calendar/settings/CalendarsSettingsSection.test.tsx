@@ -3,6 +3,8 @@ import { Router } from 'react-router';
 import { render, screen, within } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import {
     addressBuilder,
     generateHolidaysCalendars,
@@ -11,7 +13,10 @@ import {
     generateSubscribedCalendars,
 } from '@proton/calendar/testing/builders';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
-import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { PLANS } from '@proton/payments/core/constants';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     ADDRESS_RECEIVE,
@@ -72,6 +77,13 @@ jest.mock('@proton/app-context/useNotifications', () => ({
 jest.mock('@proton/features/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
 jest.mock('../../../hooks/useEarlyAccess', () => () => ({}));
 
+jest.mock('@proton/account/allSubscriptions/hooks', () => ({
+    useAllSubscriptions: jest.fn(),
+}));
+jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
+    useEntitlementCatalog: jest.fn(),
+}));
+
 jest.mock('@proton/calendar/holidaysDirectory/hooks', () => ({
     __esModule: true,
     default: jest.fn(() => []),
@@ -103,7 +115,6 @@ const renderComponent = ({
         ],
     };
 
-    const subscription = {} as Subscription;
     mockUseAuthentication({ mode: '' } as any);
 
     render(
@@ -111,7 +122,6 @@ const renderComponent = ({
             <CalendarsSettingsSection
                 config={config}
                 user={user}
-                subscription={subscription}
                 addresses={addresses}
                 calendars={calendars}
                 myCalendars={myCalendars}
@@ -125,6 +135,11 @@ const renderComponent = ({
 };
 
 describe('My calendars section', () => {
+    beforeEach(() => {
+        jest.mocked(useAllSubscriptions).mockReturnValue([[], false]);
+        jest.mocked(useEntitlementCatalog).mockReturnValue([undefined, false]);
+    });
+
     const createCalendarText = `Create calendar`;
     const addCalendarText = `Add calendar from URL`;
     const addHolidaysCalendarText = `Add public holidays`;
@@ -173,6 +188,35 @@ describe('My calendars section', () => {
             expect(screen.queryAllByText(limitReachedFreeText)).toHaveLength(2);
             expect(screen.queryAllByText(createCalendarText)).toHaveLength(0);
             expect(screen.queryAllByText(addCalendarText)).toHaveLength(0);
+        });
+
+        it('links both limit reached messages to an upgrade from the first subscription when none covers Calendar', () => {
+            jest.mocked(useEntitlementCatalog).mockReturnValue([
+                buildEntitlementCatalog({
+                    [PLANS.PASS]: [EntitlementName.FlagsPass],
+                    [PLANS.VPN2024]: [EntitlementName.FlagsVpn],
+                }),
+                false,
+            ]);
+            jest.mocked(useAllSubscriptions).mockReturnValue([
+                [buildSubscription(PLANS.PASS), buildSubscription(PLANS.VPN2024)],
+                false,
+            ]);
+            const user = { isFree: false, hasPaidMail: false } as UserModel;
+            const myCalendars = generateOwnedPersonalCalendars(MAX_CALENDARS_FREE);
+
+            renderComponent({
+                user,
+                calendars: myCalendars,
+                myCalendars,
+                sharedCalendars: [],
+                subscribedCalendars: [],
+            });
+
+            expect(screen.getAllByRole('link', { name: 'Upgrade' }).map((link) => link.getAttribute('href'))).toEqual([
+                '/calendar/dashboard?ref=upsell_calendar-banner-multi-cal_settings&target=compare&plan=pass2023',
+                '/calendar/dashboard?ref=upsell_calendar-banner-multi-cal_settings&target=compare&plan=pass2023',
+            ]);
         });
 
         it('displays the limit reached message only in "Other calendars" section when the user reached the calendar limit with shared and subscribed calendars (only possible for pre-plans-migration users), and allows creation of owned personal calendars', () => {

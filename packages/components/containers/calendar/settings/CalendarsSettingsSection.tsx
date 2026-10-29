@@ -1,4 +1,3 @@
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import {
     filterOutExpiredInvitations,
@@ -20,7 +19,6 @@ import OtherCalendarsSection from './OtherCalendarsSection';
 export interface CalendarsSettingsSectionProps {
     config: SectionConfig;
     user: UserModel;
-    subscription: MaybeFreeSubscription;
     addresses: Address[];
     calendars: VisualCalendar[];
     myCalendars: VisualCalendar[];
@@ -35,7 +33,6 @@ export interface CalendarsSettingsSectionProps {
 const CalendarsSettingsSection = ({
     config,
     user,
-    subscription,
     addresses,
     calendars,
     myCalendars,
@@ -64,7 +61,6 @@ const CalendarsSettingsSection = ({
                 defaultCalendar={defaultCalendar}
                 addresses={addresses}
                 user={user}
-                subscription={subscription}
                 canAdd={canAddCalendar}
                 isCalendarsLimitReached={isCalendarsLimitReached}
             />
@@ -76,7 +72,6 @@ const CalendarsSettingsSection = ({
                 holidaysDirectory={holidaysDirectory}
                 unknownCalendars={unknownCalendars}
                 addresses={addresses}
-                subscription={subscription}
                 user={user}
                 canAdd={canAddCalendar}
                 isCalendarsLimitReached={isOtherCalendarsLimitReached}
