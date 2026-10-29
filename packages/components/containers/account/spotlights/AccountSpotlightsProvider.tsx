@@ -1,10 +1,12 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { getHasPassB2BPlan } from '@proton/payments/core/subscription/helpers';
+import { getUnreadableSubscriptionsReason } from '@proton/payments/core/entitlements/unreadable-subscriptions';
 
 type AccountSpotlightsContextFunctions = {
     passOnboardingSpotlights: {
@@ -24,8 +26,11 @@ const AccountSpotlightsContext = createContext<AccountSpotlightsContextFunctions
 type SpotlightStep = 'SetupOrg' | 'UsePass' | 'Done';
 
 const usePassOnBoardingSpotlights = () => {
-    const [subscription] = useSubscription();
-    const hasPassB2BPlan = getHasPassB2BPlan(subscription);
+    const [user] = useUser();
+    const [organization] = useOrganization();
+    const [entitlements] = useEntitlementChecksForOrgAndUser();
+    const canReadSubscriptions = getUnreadableSubscriptionsReason({ user, organization }) === undefined;
+    const isPassOnboardingAudience = canReadSubscriptions && entitlements.isPassB2BWithoutMail;
 
     const { feature, update, loading } = useFeature<SpotlightStep>(FeatureCode.PassOnboardingSpotlights);
     const [step, setStep] = useState<SpotlightStep>();
@@ -44,7 +49,7 @@ const usePassOnBoardingSpotlights = () => {
     };
 
     const getIsOpen = (currentStep: SpotlightStep) => {
-        return hasPassB2BPlan && step === currentStep;
+        return isPassOnboardingAudience && step === currentStep;
     };
 
     return {
