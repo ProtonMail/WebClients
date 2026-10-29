@@ -7,12 +7,13 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import {
+    APPS,
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
     CALENDAR_UPSELL_PATHS,
@@ -60,7 +61,6 @@ interface CalendarShareSectionProps {
     calendar: VisualCalendar;
     addresses: Address[];
     user: UserModel;
-    subscription: MaybeFreeSubscription;
     isLoading: boolean;
     invitations: CalendarMemberInvitation[];
     members: CalendarMember[];
@@ -72,13 +72,13 @@ const CalendarShareSection = ({
     calendar,
     addresses,
     user,
-    subscription,
     isLoading,
     invitations,
     members,
     setInvitations,
     setMembers,
 }: CalendarShareSectionProps) => {
+    const [subscription] = useSubscriptionForApp(APPS.PROTONCALENDAR);
     const api = useApi();
     const { createNotification } = useNotifications();
 

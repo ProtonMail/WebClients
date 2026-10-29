@@ -5,7 +5,6 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useCalendarsInfoListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getPreferredActiveWritableCalendar,
@@ -39,19 +38,11 @@ interface Props {
     calendars: VisualCalendar[];
     addresses: Address[];
     user: UserModel;
-    subscription: MaybeFreeSubscription;
     drawerView?: VIEWS;
     hasReactivatedCalendarsRef: React.MutableRefObject<boolean>;
 }
 
-const MainContainerSetup = ({
-    user,
-    subscription,
-    addresses,
-    calendars,
-    drawerView,
-    hasReactivatedCalendarsRef,
-}: Props) => {
+const MainContainerSetup = ({ user, addresses, calendars, drawerView, hasReactivatedCalendarsRef }: Props) => {
     const [userSettings] = useUserSettings();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
 
@@ -121,7 +112,6 @@ const MainContainerSetup = ({
                                 setCustomTzid={setCustomTzid}
                                 drawerView={drawerView}
                                 user={user}
-                                subscription={subscription}
                                 addresses={addresses}
                                 activeAddresses={activeAddresses}
                                 visibleCalendars={visibleCalendars}

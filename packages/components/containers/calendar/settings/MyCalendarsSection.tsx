@@ -8,12 +8,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Card } from '@proton/atoms/Card/Card';
 import { Href } from '@proton/atoms/Href/Href';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
-import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APPS, APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -52,7 +52,6 @@ type ModalsMap = {
 interface Props {
     addresses: Address[];
     user: UserModel;
-    subscription: MaybeFreeSubscription;
     myCalendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
     isCalendarsLimitReached: boolean;
@@ -62,12 +61,12 @@ interface Props {
 const MyCalendarsSection = ({
     addresses,
     user,
-    subscription,
     myCalendars,
     defaultCalendar,
     isCalendarsLimitReached,
     canAdd,
 }: Props) => {
+    const [subscription] = useSubscriptionForApp(APPS.PROTONCALENDAR);
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
