@@ -12,6 +12,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { ComingSoon } from './components/ComingSoon/ComingSoon';
+import { MacSigningMigrationTopBanner } from './components/MacSigningMigrationTopBanner/MacSigningMigrationTopBanner';
 import { WasmUnsupportedError } from './components/WasmUnsupportedError';
 import config from './config';
 import { DashboardContainer } from './containers/DashboardContainer/DashboardContainer';
@@ -120,6 +121,13 @@ const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
     return children;
 };
 
+const AppLayout = ({ children }: { children: React.ReactNode }) => (
+    <div className="w-full h-full flex flex-column flex-nowrap">
+        <MacSigningMigrationTopBanner />
+        <div className="flex-1 min-h-0">{children}</div>
+    </div>
+);
+
 export const App = () => {
     const isGuest = getIsGuestFromUrl();
 
@@ -139,23 +147,27 @@ export const App = () => {
                 ) : null}
                 {isGuest ? (
                     <GuestContainer>
-                        <RedirectWrapper>
-                            <ComingSoonWrapper>
-                                <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
-                                <Route path="/dashboard" component={GuestDashboardContainer} />
-                            </ComingSoonWrapper>
-                        </RedirectWrapper>
+                        <AppLayout>
+                            <RedirectWrapper>
+                                <ComingSoonWrapper>
+                                    <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
+                                    <Route path="/dashboard" component={GuestDashboardContainer} />
+                                </ComingSoonWrapper>
+                            </RedirectWrapper>
+                        </AppLayout>
                     </GuestContainer>
                 ) : (
                     <ProviderContainer>
                         <MeetAppTelemetry />
-                        <RedirectWrapper>
-                            <ComingSoonWrapper>
-                                <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
-                                <Route path="/dashboard" component={DashboardContainer} />
-                                <Route path="/manage-recordings" component={ManageRecordingsContainer} />
-                            </ComingSoonWrapper>
-                        </RedirectWrapper>
+                        <AppLayout>
+                            <RedirectWrapper>
+                                <ComingSoonWrapper>
+                                    <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
+                                    <Route path="/dashboard" component={DashboardContainer} />
+                                    <Route path="/manage-recordings" component={ManageRecordingsContainer} />
+                                </ComingSoonWrapper>
+                            </RedirectWrapper>
+                        </AppLayout>
                     </ProviderContainer>
                 )}
             </div>
