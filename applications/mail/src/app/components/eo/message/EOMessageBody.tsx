@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from 'react';
 
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import { locateBlockquote } from '@proton/mail-message/helpers/message/messageBlockquote';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import MessageBodyIframe from '@proton/mail-renderer/components/MessageBodyIframe';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
@@ -10,7 +11,6 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
-import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import MessageBodyPlaceholder from '../../message/MessageBodyPlaceholder';
 import MessageBodyPrint from '../../message/MessageBodyPrint';
 import useMessageImagesLoadError from '../../message/hooks/useMessageImagesLoadError';

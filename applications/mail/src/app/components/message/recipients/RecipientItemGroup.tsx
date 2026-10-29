@@ -16,6 +16,8 @@ import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { RecipientGroup } from '@proton/mail-message/models/address';
+import type { MapStatusIcons, StatusIcon } from '@proton/mail-message/models/crypto';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import generateUID from '@proton/utils/generateUID';
 
@@ -23,8 +25,6 @@ import { useOnCompose } from '../../../containers/ComposeProvider';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import type { RecipientGroup } from '../../../models/address';
-import type { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import GroupModal from '../modals/GroupModal';
 import RecipientItemLayout from './RecipientItemLayout';
 

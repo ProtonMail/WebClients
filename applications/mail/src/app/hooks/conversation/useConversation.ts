@@ -2,20 +2,23 @@ import { useCallback, useEffect, useState } from 'react';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { hasError, hasErrorType } from '@proton/mail-message/helpers/errors';
+import type { Conversation } from '@proton/mail-message/models/conversation';
+import type {
+    ConversationErrors,
+    ConversationState,
+} from '@proton/mail-message/store/conversations/conversationsTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
-import { hasError, hasErrorType } from '../../helpers/errors';
-import type { Conversation } from '../../models/conversation';
 import { initialize, load as loadAction, retryLoading } from '../../store/conversations/conversationsActions';
 import {
     allConversations,
     conversationByID,
     conversationsByIDs,
 } from '../../store/conversations/conversationsSelectors';
-import type { ConversationErrors, ConversationState } from '../../store/conversations/conversationsTypes';
 import { selectLabelID } from '../../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
 import { useGetElementsFromIDs } from '../mailbox/useElements';

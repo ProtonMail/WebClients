@@ -16,6 +16,7 @@ import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
+import { updateKeyPackets } from '@proton/mail-message/helpers/attachment/attachment';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { sanitizeComposerReply } from '@proton/sanitize/purify';
@@ -29,7 +30,6 @@ import noop from '@proton/utils/noop';
 
 import type { MessageChange } from '../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
-import { updateKeyPackets } from '../../helpers/attachment/attachment';
 import type { ComposerReturnType } from '../../helpers/composer/contentFromComposerMessage';
 import {
     getAddressPlainTextSignature,

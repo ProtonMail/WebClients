@@ -4,11 +4,11 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import type { RecipientOrGroup } from '@proton/mail-message/models/address';
+import type { MapStatusIcons, StatusIcon } from '@proton/mail-message/models/crypto';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
-import type { RecipientOrGroup } from '../../../models/address';
-import type { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import EORecipientSingle from '../../eo/message/recipients/EORecipientSingle';
 import MailRecipientItemSingle from './MailRecipientItemSingle';
 import RecipientItemGroup from './RecipientItemGroup';

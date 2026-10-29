@@ -7,6 +7,15 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useModals from '@proton/components/hooks/useModals';
+import { getAddressFromEmail } from '@proton/mail-message/helpers/addresses';
+import { removeMessageRecipients, uniqueMessageRecipients } from '@proton/mail-message/helpers/message/cleanMessage';
+import {
+    locateBlockquote,
+    locatePlaintextInternalBlockquotes,
+    removeSignatureFromHTMLMessage,
+    removeSignatureFromPlainTextMessage,
+} from '@proton/mail-message/helpers/message/messageBlockquote';
+import type { MapSendInfo } from '@proton/mail-message/models/crypto';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { HOUR } from '@proton/shared/lib/constants';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
@@ -28,15 +37,6 @@ import SendWithErrorsModal from '../../components/composer/addresses/SendWithErr
 import SendWithExpirationModal from '../../components/composer/addresses/SendWithExpirationModal';
 import SendWithWarningsModal from '../../components/composer/addresses/SendWithWarningsModal';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../constants';
-import { getAddressFromEmail } from '../../helpers/addresses';
-import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
-import {
-    locateBlockquote,
-    locatePlaintextInternalBlockquotes,
-    removeSignatureFromHTMLMessage,
-    removeSignatureFromPlainTextMessage,
-} from '../../helpers/message/messageBlockquote';
-import type { MapSendInfo } from '../../models/crypto';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetMessage } from '../message/useMessage';
 

@@ -1,6 +1,3 @@
-import { isHTMLEmpty } from '@proton/mail-message/helpers/dom';
-import { containsHTMLTag, replaceLineBreaks } from '@proton/mail-message/helpers/string';
-import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
@@ -11,7 +8,10 @@ import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import isTruthy from '@proton/utils/isTruthy';
 
+import type { MessageState } from '../../store/messages/messagesTypes';
 import { dedentTpl } from '../dedent';
+import { isHTMLEmpty } from '../dom';
+import { containsHTMLTag, replaceLineBreaks } from '../string';
 import { exportPlainText, getPlainTextContent } from './messageContentPlainText';
 import { CLASSNAME_BLOCKQUOTE } from './messageDraftConstants';
 

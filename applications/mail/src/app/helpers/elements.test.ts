@@ -1,9 +1,9 @@
+import type { Conversation, ConversationLabel } from '@proton/mail-message/models/conversation';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
-import type { Conversation, ConversationLabel } from '../models/conversation';
 import type { Element } from '../models/element';
 import {
     filterElementsInState,

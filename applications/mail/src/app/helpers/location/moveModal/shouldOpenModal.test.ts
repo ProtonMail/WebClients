@@ -1,3 +1,4 @@
+import type { ConversationState } from '@proton/mail-message/store/conversations/conversationsTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -8,7 +9,6 @@ import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { HIDE_SNOOZE_CONFIRMATION_LS_KEY } from '../../../components/list/snooze/constant';
 import { ModalType } from '../../../containers/globalModals/inteface';
 import type { Element } from '../../../models/element';
-import type { ConversationState } from '../../../store/conversations/conversationsTypes';
 import {
     shouldOpenConfirmationModalForConverversation,
     shouldOpenConfirmationModalForMessages,

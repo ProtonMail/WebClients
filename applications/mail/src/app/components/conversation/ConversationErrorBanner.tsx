@@ -4,9 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
-
-import { hasError } from '../../helpers/errors';
-import type { ConversationErrors } from '../../store/conversations/conversationsTypes';
+import { hasError } from '@proton/mail-message/helpers/errors';
+import type { ConversationErrors } from '@proton/mail-message/store/conversations/conversationsTypes';
 
 const getTranslations = (key: keyof ConversationErrors) => {
     switch (key) {

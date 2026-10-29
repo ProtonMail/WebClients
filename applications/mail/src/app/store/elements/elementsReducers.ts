@@ -2,6 +2,11 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 import isDeepEqual from 'lodash/isEqual';
 
+import type { Conversation } from '@proton/mail-message/models/conversation';
+import type {
+    ConversationParams,
+    ConversationResult,
+} from '@proton/mail-message/store/conversations/conversationsTypes';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -23,9 +28,7 @@ import {
     isElementMessage,
     parseLabelIDsInEvent,
 } from '../../helpers/elements';
-import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
-import type { ConversationParams, ConversationResult } from '../conversations/conversationsTypes';
 import {
     applyLabelToConversation,
     applyLabelToConversationMessage,

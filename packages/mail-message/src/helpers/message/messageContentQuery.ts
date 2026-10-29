@@ -1,5 +1,6 @@
-import type { PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
+
+import type { PartialMessageState } from '../../store/messages/messagesTypes';
 
 export const getDocumentContent = (document: Element | undefined) => {
     const root = document?.querySelector('body') || document;

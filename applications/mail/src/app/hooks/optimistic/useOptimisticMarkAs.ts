@@ -1,7 +1,6 @@
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import { isSystemLocation } from '@proton/mail/helpers/location';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
-
-import type { Conversation } from '../../models/conversation';
 
 export type MarkAsChanges = { status: MARK_AS_STATUS; displaySnoozedReminder?: boolean };
 

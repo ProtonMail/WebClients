@@ -24,6 +24,8 @@ import LumoAgentDrawerContext from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawer
 import useLumoAgent from '@proton/llm/lib/lumoAgent/ui/useLumoAgent';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { RecipientType } from '@proton/mail-message/models/address';
+import type { ConversationResult } from '@proton/mail-message/store/conversations/conversationsTypes';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { addFilter as addFilterAction, updateFilter as updateFilterAction } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
@@ -55,9 +57,7 @@ import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import useSnooze from '../../hooks/actions/useSnooze';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
-import type { RecipientType } from '../../models/address';
 import { load as loadConversationAction } from '../../store/conversations/conversationsActions';
-import type { ConversationResult } from '../../store/conversations/conversationsTypes';
 import { backendActionStarted, markAll as markAllAction } from '../../store/elements/elementsActions';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
 import { useHasLumoFloatingPanel, useLumoFloatingPanel } from '../floating/LumoFloatingPanelProvider';

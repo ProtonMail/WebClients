@@ -17,6 +17,7 @@ import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { STATUS_ICONS_FILLS } from '@proton/mail-message/models/crypto';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -31,7 +32,6 @@ import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { useUpdateRecipientSendInfo } from '../../../hooks/useSendInfo';
-import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 
 interface Props {
@@ -208,6 +208,7 @@ const AddressesRecipientItem = ({
                         </span>
                     )}
                     <Tooltip title={title}>
+                        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions -- contentEditable label, its role depends on editableMode */}
                         <span
                             className={clsx([
                                 'composer-addresses-item-label my-auto text-ellipsis pr-2',

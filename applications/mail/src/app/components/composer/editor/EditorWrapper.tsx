@@ -9,6 +9,7 @@ import { useToolbar } from '@proton/components/components/editor/hooks/useToolba
 import type { EditorActions, EditorMetadata } from '@proton/components/components/editor/interface';
 import { useHandler } from '@proton/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { locateBlockquote } from '@proton/mail-message/helpers/message/messageBlockquote';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { sanitizeComposerBlockquoteHtml } from '@proton/sanitize/purify';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
@@ -21,7 +22,6 @@ import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages
 import clsx from '@proton/utils/clsx';
 import diff from '@proton/utils/diff';
 
-import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import { getContent } from '../../../helpers/message/messageContent';
 import {
     createBlob,

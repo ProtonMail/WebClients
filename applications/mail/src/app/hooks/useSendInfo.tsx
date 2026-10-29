@@ -9,6 +9,10 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { getAddressFromEmail } from '@proton/mail-message/helpers/addresses';
+import { getSendStatusIcon } from '@proton/mail-message/helpers/message/icon';
+import type { MapSendInfo } from '@proton/mail-message/models/crypto';
+import { STATUS_ICONS_FILLS } from '@proton/mail-message/models/crypto';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
@@ -24,10 +28,6 @@ import noop from '@proton/utils/noop';
 
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
-import { getAddressFromEmail } from '../helpers/addresses';
-import { getSendStatusIcon } from '../helpers/message/icon';
-import type { MapSendInfo } from '../models/crypto';
-import { STATUS_ICONS_FILLS } from '../models/crypto';
 import { useContactsMap } from './contact/useContacts';
 
 const getSignText = (n: number, contactNames: string, contactAddresses: string) => {

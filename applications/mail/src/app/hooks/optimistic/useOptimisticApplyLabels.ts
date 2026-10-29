@@ -1,4 +1,5 @@
 import { useHandler } from '@proton/hooks/useHandler';
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { conversationCountsActions, selectConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
@@ -23,7 +24,6 @@ import {
     applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
 } from '../../helpers/labels';
-import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import {
     applyLabelsOnConversation,

@@ -8,11 +8,11 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { highlightNode } from '@proton/encrypted-search/esHelpers/esHighlight';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import { useHotkeys } from '@proton/hooks/useHotkeys';
+import type { RecipientOrGroup } from '@proton/mail-message/models/address';
 import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import type { RecipientOrGroup } from '../../../models/address';
 
 interface Props {
     label?: ReactNode;

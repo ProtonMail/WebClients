@@ -1,7 +1,7 @@
+import { markdownToHTML } from '@proton/mail-message/helpers/assistant/markdown';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 
-import { markdownToHTML } from './markdown';
 import { restoreURLs } from './url';
 
 // Prepare generated markdown result before displaying it

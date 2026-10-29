@@ -1,5 +1,6 @@
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { getFromAddress } from '@proton/mail-message/helpers/addresses';
 import type { MessageStateWithData, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
@@ -22,14 +23,13 @@ import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
-import { getFromAddress } from '../addresses';
 import { convertToFile } from '../attachment/attachmentConverter';
 import { getExpiresIn } from '../expiration';
 import { createHTMLDraftContent } from './draftContent/html';
 import { createPlaintextDraftContent } from './draftContent/plaintext';
 import { getEmbeddedImages, getRemoteImages, updateImages } from './messageImages';
 
-export { formatRecipientsString } from './messageDraftFormat';
+export { formatRecipientsString } from '@proton/mail-message/helpers/message/messageDraftFormat';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 

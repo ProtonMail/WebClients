@@ -1,4 +1,5 @@
 import { apiHelper } from '@proton/encrypted-search/esHelpers/esAPI';
+import { locateBlockquote } from '@proton/mail-message/helpers/message/messageBlockquote';
 import { removeBase64 } from '@proton/mail-renderer/helpers/transforms/transformEscape';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { removeHTMLComments } from '@proton/shared/lib/helpers/string';
@@ -7,7 +8,6 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import type { ESBaseMessage, ESMessage, ESMessageContent } from '../../models/encryptedSearch';
-import { locateBlockquote } from '../message/messageBlockquote';
 import { decryptMessage } from '../message/messageDecrypt';
 import { queryMessage } from './esAPI';
 

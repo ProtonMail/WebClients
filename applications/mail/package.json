@@ -35,7 +35,6 @@
         "@proton/file-icons": "workspace:^",
         "@proton/hooks": "workspace:^",
         "@proton/icons": "workspace:^",
-        "@proton/key-transparency": "workspace:^",
         "@proton/llm": "workspace:^",
         "@proton/lumo-api-client": "workspace:^",
         "@proton/lumo-ui": "workspace:^",
@@ -79,7 +78,6 @@
         "jszip": "catalog:",
         "lodash": "catalog:",
         "loud-rejection": "^2.2.0",
-        "markdown-it": "^14.3.2",
         "path-to-regexp": "^6.3.0",
         "react": "catalog:",
         "react-dom": "catalog:",
@@ -88,8 +86,7 @@
         "react-router-dom": "catalog:",
         "roosterjs-editor-types": "^8.62.0",
         "tinycolor2": "catalog:",
-        "ttag": "catalog:",
-        "turndown": "^7.2.4"
+        "ttag": "catalog:"
     },
     "devDependencies": {
         "@jest/globals": "catalog:",
@@ -107,10 +104,8 @@
         "@types/history": "catalog:",
         "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
-        "@types/markdown-it": "^13.0.9",
         "@types/react-router": "catalog:",
         "@types/tinycolor2": "catalog:",
-        "@types/turndown": "^5.0.6",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
         "@webgpu/types": "^0.1.74",
