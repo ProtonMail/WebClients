@@ -1,6 +1,7 @@
 import isEqual from 'lodash/isEqual';
 
 import { computeSha256AsBase64 } from '../crypto';
+import type { SerializedSkill, SerializedSkillAsset, SkillId } from '../features/skills/types';
 import { handleIndexedDBVersionDowngrade } from '../helpers/indexedDBVersionHandler';
 import type { IdMapEntry, LocalId, RemoteId, ResourceType } from '../remote/types';
 import type { SerializedConversationMap, SerializedMessageMap, SerializedSpaceMap } from '../types';
@@ -36,6 +37,9 @@ export const ATTACHMENT_STORE = 'attachments_v4';
 export const ASSET_STORE = 'assets_v1';
 export const REMOTE_ID_STORE = 'remote_ids_v4';
 const FOUNDATION_SEARCH_STORE = 'foundation_search_v1';
+const SKILL_STORE = 'skills_v1';
+const SKILL_ASSET_STORE = 'skill_assets_v1';
+const SKILL_ASSET_SKILL_ID_INDEX = 'idx_skillId';
 
 const DB_BASE_NAME = 'LumoDB';
 const DB_NAME_SALT = 'AT8hqCBf9sDXLeCNXbaWXD769XdpPDfk';
@@ -1197,7 +1201,7 @@ export class DbApi {
             const userAndSalt = `${userId}:${DB_NAME_SALT}`;
             const userHash = userId ? await computeSha256AsBase64(userAndSalt) : undefined;
             const dbName = userHash ? `${DB_BASE_NAME}_${userHash}` : DB_BASE_NAME;
-            const dbVersion = 11;
+            const dbVersion = 12;
 
             // Handle version downgrade by deleting the database if needed
             try {
@@ -1301,6 +1305,17 @@ export class DbApi {
                         console.log('Successfully created FOUNDATION_SEARCH_STORE');
                     }
                 }
+
+                // Migration 11 -> 12: skills and their attached files
+                if (event.oldVersion < 12) {
+                    if (!db.objectStoreNames.contains(SKILL_STORE)) {
+                        db.createObjectStore(SKILL_STORE, { keyPath: 'id' });
+                    }
+                    if (!db.objectStoreNames.contains(SKILL_ASSET_STORE)) {
+                        const skillAssetStore = db.createObjectStore(SKILL_ASSET_STORE, { keyPath: 'id' });
+                        skillAssetStore.createIndex(SKILL_ASSET_SKILL_ID_INDEX, 'skillId', { unique: false });
+                    }
+                }
             };
 
             request.onsuccess = () => {
@@ -1334,6 +1349,170 @@ export class DbApi {
         const unsyncedAttachments = mapify(allAttachments.filter((a) => a.dirty === true));
 
         return { unsyncedMessages, unsyncedConversations, unsyncedSpaces, unsyncedAttachments };
+    };
+
+    // Skills. Every local write is dirty until it is synced with the skills endpoints.
+    public getAllSkills = async (): Promise<SerializedSkill[]> => {
+        const tx = (await this.db).transaction([SKILL_STORE], 'readonly');
+        return requestToPromise(tx.objectStore(SKILL_STORE).getAll() as IDBRequest<SerializedSkill[]>);
+    };
+
+    public putSkill = async (skill: SerializedSkill): Promise<void> => {
+        const tx = (await this.db).transaction([SKILL_STORE], 'readwrite');
+        await requestToPromise(tx.objectStore(SKILL_STORE).put({ ...skill, dirty: true }));
+    };
+
+    public getSkillAssets = async (skillId: SkillId): Promise<SerializedSkillAsset[]> => {
+        const tx = (await this.db).transaction([SKILL_ASSET_STORE], 'readonly');
+        const index = tx.objectStore(SKILL_ASSET_STORE).index(SKILL_ASSET_SKILL_ID_INDEX);
+        return requestToPromise(index.getAll(skillId) as IDBRequest<SerializedSkillAsset[]>);
+    };
+
+    /** Writes the skill and replaces its live assets in one transaction. */
+    public putSkillWithAssets = async (skill: SerializedSkill, assets: SerializedSkillAsset[]): Promise<void> => {
+        const tx = (await this.db).transaction([SKILL_STORE, SKILL_ASSET_STORE], 'readwrite');
+        const skillStore = tx.objectStore(SKILL_STORE);
+        const assetStore = tx.objectStore(SKILL_ASSET_STORE);
+        const existing = await requestToPromise(
+            assetStore.index(SKILL_ASSET_SKILL_ID_INDEX).getAll(skill.id) as IDBRequest<SerializedSkillAsset[]>
+        );
+        const keptIds = new Set(assets.map(({ id }) => id));
+        const now = new Date().toISOString();
+        for (const asset of existing) {
+            if (!asset.deleted && !keptIds.has(asset.id)) {
+                const { id, skillId, createdAt } = asset;
+                await requestToPromise(
+                    assetStore.put({ id, skillId, createdAt, updatedAt: now, deleted: true, dirty: true })
+                );
+            }
+        }
+        for (const asset of assets) {
+            await requestToPromise(assetStore.put({ ...asset, dirty: true }));
+        }
+        await requestToPromise(skillStore.put({ ...skill, dirty: true }));
+    };
+
+    /** Leaves tombstones so deletions can be synced, and so migrations do not recreate the skill. */
+    public softDeleteSkill = async (skillId: SkillId): Promise<void> => {
+        const tx = (await this.db).transaction([SKILL_STORE, SKILL_ASSET_STORE], 'readwrite');
+        const skillStore = tx.objectStore(SKILL_STORE);
+        const assetStore = tx.objectStore(SKILL_ASSET_STORE);
+        const now = new Date().toISOString();
+        const skill = await requestToPromise(skillStore.get(skillId) as IDBRequest<SerializedSkill | undefined>);
+        if (!skill) {
+            return;
+        }
+        const assets = await requestToPromise(
+            assetStore.index(SKILL_ASSET_SKILL_ID_INDEX).getAll(skillId) as IDBRequest<SerializedSkillAsset[]>
+        );
+        for (const { id, createdAt } of assets) {
+            await requestToPromise(
+                assetStore.put({ id, skillId, createdAt, updatedAt: now, deleted: true, dirty: true })
+            );
+        }
+        const { id, createdAt, legacyAgentId } = skill;
+        await requestToPromise(
+            skillStore.put({
+                id,
+                createdAt,
+                updatedAt: now,
+                ...(legacyAgentId && { legacyAgentId }),
+                deleted: true,
+                dirty: true,
+            })
+        );
+    };
+
+    public getAllSkillAssets = async (): Promise<SerializedSkillAsset[]> => {
+        const tx = (await this.db).transaction([SKILL_ASSET_STORE], 'readonly');
+        return requestToPromise(tx.objectStore(SKILL_ASSET_STORE).getAll() as IDBRequest<SerializedSkillAsset[]>);
+    };
+
+    /** Clears the dirty flags of what was pushed, unless the skill was edited again since. */
+    public markSkillSynced = async (skillId: SkillId, pushedUpdatedAt: string, assetIds: string[]): Promise<void> => {
+        const tx = (await this.db).transaction([SKILL_STORE, SKILL_ASSET_STORE], 'readwrite');
+        const skillStore = tx.objectStore(SKILL_STORE);
+        const assetStore = tx.objectStore(SKILL_ASSET_STORE);
+        const skill = await requestToPromise(skillStore.get(skillId) as IDBRequest<SerializedSkill | undefined>);
+        if (skill?.dirty && skill.updatedAt === pushedUpdatedAt) {
+            await requestToPromise(skillStore.put({ ...skill, dirty: false }));
+        }
+        for (const id of assetIds) {
+            const asset = await requestToPromise(assetStore.get(id) as IDBRequest<SerializedSkillAsset | undefined>);
+            if (asset?.dirty && !asset.deleted) {
+                await requestToPromise(assetStore.put({ ...asset, dirty: false }));
+            }
+        }
+    };
+
+    public dropSkillAssets = async (assetIds: string[]): Promise<void> => {
+        if (!assetIds.length) {
+            return;
+        }
+        const tx = (await this.db).transaction([SKILL_ASSET_STORE], 'readwrite');
+        const assetStore = tx.objectStore(SKILL_ASSET_STORE);
+        for (const id of assetIds) {
+            await requestToPromise(assetStore.delete(id));
+        }
+    };
+
+    /** Stores a skill and files pulled from the server, unless they were changed locally meanwhile. */
+    public putRemoteSkill = async (
+        skill: SerializedSkill | undefined,
+        assets: SerializedSkillAsset[]
+    ): Promise<void> => {
+        const tx = (await this.db).transaction([SKILL_STORE, SKILL_ASSET_STORE], 'readwrite');
+        const skillStore = tx.objectStore(SKILL_STORE);
+        const assetStore = tx.objectStore(SKILL_ASSET_STORE);
+        if (skill) {
+            const existing = await requestToPromise(
+                skillStore.get(skill.id) as IDBRequest<SerializedSkill | undefined>
+            );
+            if (existing?.dirty) {
+                return;
+            }
+            const legacyAgentId = skill.legacyAgentId ?? existing?.legacyAgentId;
+            await requestToPromise(skillStore.put({ ...skill, ...(legacyAgentId && { legacyAgentId }), dirty: false }));
+        }
+        for (const asset of assets) {
+            const existing = await requestToPromise(
+                assetStore.get(asset.id) as IDBRequest<SerializedSkillAsset | undefined>
+            );
+            if (!existing?.dirty) {
+                await requestToPromise(assetStore.put({ ...asset, dirty: false }));
+            }
+        }
+    };
+
+    /**
+     * Turns a skill deleted elsewhere into a clean tombstone and forgets its files. Local edits are
+     * kept unless `force` is set, for when the server refused them because the skill is gone.
+     */
+    public markSkillDeletedFromRemote = async (skillId: SkillId, force = false): Promise<void> => {
+        const tx = (await this.db).transaction([SKILL_STORE, SKILL_ASSET_STORE], 'readwrite');
+        const skillStore = tx.objectStore(SKILL_STORE);
+        const assetStore = tx.objectStore(SKILL_ASSET_STORE);
+        const skill = await requestToPromise(skillStore.get(skillId) as IDBRequest<SerializedSkill | undefined>);
+        if (!skill || (skill.dirty && !skill.deleted && !force)) {
+            return;
+        }
+        const assets = await requestToPromise(
+            assetStore.index(SKILL_ASSET_SKILL_ID_INDEX).getAll(skillId) as IDBRequest<SerializedSkillAsset[]>
+        );
+        for (const { id } of assets) {
+            await requestToPromise(assetStore.delete(id));
+        }
+        const { id, createdAt, updatedAt, legacyAgentId } = skill;
+        await requestToPromise(
+            skillStore.put({
+                id,
+                createdAt,
+                updatedAt,
+                ...(legacyAgentId && { legacyAgentId }),
+                deleted: true,
+                dirty: false,
+            })
+        );
     };
 
     // Foundation Search blob management

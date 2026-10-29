@@ -54,6 +54,27 @@ export type DesktopConnector = {
     readiness?: { state: 'ready' } | { state: 'blocked'; reason: string };
     status: { state: 'ready' } | { state: 'warning'; error: string } | { state: 'not_ready'; reason: string };
     tools?: { name: string; title?: string; description?: string }[];
+    /** Desktop catalog category. Absent on older desktop builds. */
+    category?: string;
+    /** MCP server id (the connector id without `mcp-`). Absent on older desktop builds. */
+    server_id?: string;
+    /** Endpoint of an HTTP MCP connector. Absent on older desktop builds. */
+    url?: string;
+};
+
+/** A connector the desktop app can set up, whether or not the user has added it. */
+export type DesktopCatalogEntry = {
+    id: string;
+    server_id?: string;
+    category: string;
+    name: string;
+    description: string;
+    url?: string;
+};
+
+export type DesktopConnectorCatalog = {
+    categories: { id: string; label: string }[];
+    connectors: DesktopCatalogEntry[];
 };
 
 export type LumoConnectorsApi = DesktopExternalTools & {
@@ -66,7 +87,9 @@ export type LumoConnectorsApi = DesktopExternalTools & {
     getManifests?: () => DesktopConnector[];
     setConnectorEnabled?: (connectorId: string, enabled: boolean) => Promise<void>;
     respondToolApproval?: (requestId: string, approved: boolean) => Promise<void>;
-    openSettings?: (tab?: DesktopSettingsTab) => Promise<void>;
+    /** Older desktop builds ignore `connectorId` and open the tab. */
+    openSettings?: (tab?: DesktopSettingsTab, connectorId?: string) => Promise<void>;
+    getCatalog?: () => DesktopConnectorCatalog;
 };
 
 export type DesktopSettingsTab = 'general' | 'connectors';
@@ -99,8 +122,13 @@ export async function respondDesktopToolApproval(requestId: string, approved: bo
     await getDesktopConnectorsApi()?.respondToolApproval?.(requestId, approved);
 }
 
-export async function openDesktopSettings(tab?: DesktopSettingsTab): Promise<void> {
-    await getDesktopConnectorsApi()?.openSettings?.(tab);
+export async function openDesktopSettings(tab?: DesktopSettingsTab, connectorId?: string): Promise<void> {
+    await getDesktopConnectorsApi()?.openSettings?.(tab, connectorId);
+}
+
+/** Empty on the web and on desktop builds that predate the catalog. */
+export function getDesktopConnectorCatalog(): DesktopConnectorCatalog {
+    return getDesktopConnectorsApi()?.getCatalog?.() ?? { categories: [], connectors: [] };
 }
 
 export function isDesktopEnvironment(): boolean {

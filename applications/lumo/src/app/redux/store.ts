@@ -12,8 +12,24 @@ import type { DbApi } from '../indexedDb/db';
 import type { LumoApi } from '../remote/api';
 import { start } from './listeners';
 import { rootReducer } from './rootReducer';
+import {
+    addAttachment,
+    locallyRefreshFilledAttachmentFromRemoteRequest,
+    pullAttachmentSuccess,
+    pushAttachmentSuccess,
+    upsertAttachment,
+} from './slices/core/attachments';
 import type { LumoThunkArguments } from './thunk';
 import { extraThunkArguments } from './thunk';
+
+// Attachments carry file bytes (Uint8Array); the `attachments` state is already ignored below.
+const ATTACHMENT_ACTIONS_WITH_DATA = [
+    addAttachment.type,
+    upsertAttachment.type,
+    pushAttachmentSuccess.type,
+    locallyRefreshFilledAttachmentFromRemoteRequest.type,
+    pullAttachmentSuccess.type,
+];
 
 export const setupStore = ({
     preloadedState,
@@ -34,7 +50,7 @@ export const setupStore = ({
             const m1 = getDefaultMiddleware({
                 serializableCheck: isDevMode &&
                     !isTest && {
-                        ignoredActions: [...ignoredActions],
+                        ignoredActions: [...ignoredActions, ...ATTACHMENT_ACTIONS_WITH_DATA],
                         ignoredPaths: [...ignoredPaths, 'attachments'],
                     },
                 immutableCheck: isDevMode && !isTest,

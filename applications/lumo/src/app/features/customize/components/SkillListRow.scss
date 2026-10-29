@@ -1,0 +1,82 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.skill-group {
+	&__header {
+		padding-block-end: rem(6);
+		border-block-end: 1px solid var(--border-weak);
+	}
+
+	&__title-link:hover,
+	&__title-link:focus-visible {
+		text-decoration: underline;
+	}
+
+	&__title {
+		font-size: rem(14);
+		font-weight: 600;
+	}
+
+	&__count {
+		padding-block: rem(1);
+		padding-inline: rem(6);
+		border-radius: rem(6);
+		background-color: var(--background-weak);
+		color: var(--text-weak);
+		font-size: rem(11);
+		font-weight: 500;
+	}
+
+	&__meta {
+		color: var(--text-hint);
+		font-size: rem(12);
+	}
+}
+
+.skill-list-row {
+	padding-block: rem(8);
+	border-block-end: 1px solid var(--border-weak);
+
+	&__main {
+		padding: 0;
+		border: none;
+		background: transparent;
+		color: inherit;
+		cursor: pointer;
+
+		&:hover .skill-list-row__name {
+			text-decoration: underline;
+		}
+	}
+
+	&__icon {
+		block-size: rem(32);
+		inline-size: rem(32);
+		border: 1px solid var(--border-weak);
+		border-radius: rem(8);
+		color: var(--text-weak);
+	}
+
+	&__name {
+		font-size: rem(14);
+		font-weight: 500;
+	}
+
+	&__description {
+		color: var(--text-weak);
+		font-size: rem(12);
+	}
+}
+
+.skill-actions-menu {
+	&__button,
+	&__placeholder {
+		block-size: rem(32);
+		inline-size: rem(32);
+	}
+
+	&__button {
+		padding: 0;
+		border: none;
+		background: transparent;
+	}
+}

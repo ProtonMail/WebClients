@@ -1,5 +1,6 @@
 import { Suspense, lazy, useCallback, useState } from 'react';
 
+import { READ_SKILL_FILE_TOOL_NAME, USE_SKILL_TOOL_NAME } from '../../../../../../features/skills/skillTool';
 import type { NativeToolCallData } from '../../../../../../lib/toolCall/types';
 import { tryParseToolCall, tryParseToolCallAnnouncement } from '../../../../../../lib/toolCall/types';
 import { findToolResultForCall } from '../../../../../../messageHelpers';
@@ -168,10 +169,14 @@ function toToolCallStep(
 
     if (!toolCall) {
         const toolCallName = getToolCallNameFromBlock(block);
-        if (toolCallName === CREATE_ARTIFACT_TOOL_NAME) {
+        if (
+            toolCallName === CREATE_ARTIFACT_TOOL_NAME ||
+            toolCallName === USE_SKILL_TOOL_NAME ||
+            toolCallName === READ_SKILL_FILE_TOOL_NAME
+        ) {
             return {
                 type: 'tool_call',
-                toolCall: { name: CREATE_ARTIFACT_TOOL_NAME },
+                toolCall: { name: toolCallName },
                 isActive: isInProgress,
             };
         }

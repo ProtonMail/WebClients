@@ -1,0 +1,65 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+@use '~@proton/styles/scss/lib/rem' as *;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.skill-command-menu {
+	pointer-events: none;
+
+	&__list {
+		pointer-events: auto;
+		inline-size: rem(256);
+		max-inline-size: calc(100vw - #{rem(32)});
+		padding-block: rem(4);
+		overflow: hidden auto;
+		scrollbar-width: none;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	&__group {
+		padding-block: rem(6) rem(2);
+		padding-inline: rem(12);
+		font-size: rem(11);
+
+		&.has-separator {
+			margin-block-start: rem(4);
+			border-block-start: 1px solid var(--border-weak);
+		}
+	}
+
+	&__option {
+		display: flex;
+		box-sizing: border-box;
+		inline-size: calc(100% - #{rem(8)});
+		block-size: rem(32);
+		padding-inline: rem(8);
+		margin-inline: rem(4);
+		border: none;
+		border-radius: rem(6);
+		background-color: transparent;
+		font-size: rem(14);
+		color: var(--text-norm);
+
+		&.is-selected {
+			background-color: var(--interaction-default-hover);
+		}
+	}
+
+	&__detail {
+		inline-size: rem(288);
+		padding: rem(10) rem(12);
+		border-radius: rem(8);
+		background-color: var(--background-invert);
+		color: var(--text-invert);
+		font-size: rem(13);
+		line-height: 1.45;
+
+		@include im.media('<=medium') {
+			display: none;
+		}
+	}
+}

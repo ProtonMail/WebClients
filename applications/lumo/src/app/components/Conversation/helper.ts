@@ -1,9 +1,18 @@
 import type { ClientToolExecutor } from '@proton/lumo-api-client/core/client-tools';
+import {
+    getDesktopConnectorCatalog,
+    getDesktopConnectors,
+    isDesktopEnvironment,
+} from '@proton/lumo-api-client/core/desktop-tools';
 import type { LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { findAgentById } from '../../features/agents/registry';
+import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
+import { formatSkillCatalogue } from '../../features/skills/skillInvocation';
+import { USE_SKILL_TOOL_NAME } from '../../features/skills/skillTool';
+import { resolveSkillContext } from '../../features/skills/skillsThunks';
 import {
     collectContextAttachmentIds,
     normalizeRagQuery,
@@ -66,7 +75,7 @@ import {
 } from '../../util/resolveProjectFiles';
 import { type ArtifactGenerationType, sendArtifactTurnContextEvent } from '../../util/telemetry';
 import { buildArtifactRegistry } from './artifact/artifactRegistry';
-import { type ConversationGenerationResult, runGenerationWithCompaction } from './compactionFlow';
+import { type ConversationGenerationResult, type SkillToolHandles, runGenerationWithCompaction } from './compactionFlow';
 import type { ConversationContext } from './conversationContext';
 
 const createLumoErrorHandler =
@@ -261,6 +270,8 @@ export type SettingsContext = {
     hasLumoPlus?: boolean;
     isVisualizationInstructionsFeatureEnabled?: boolean;
     isGuestUser?: boolean;
+    /** `LumoCustomAgents`: skills apply to the request and the model may load them. */
+    isSkillsFeatureEnabled?: boolean;
 };
 
 function isArtifactCreationEnabledForRequest(
@@ -396,6 +407,60 @@ function resolveAgentInstructions(conversationId: ConversationId, consumeCompose
         const agent = findAgentById(agentId, state.lumoUserSettings?.customAgents ?? []);
         return agent?.instructions?.trim() || undefined;
     };
+}
+
+type ChainSkills = {
+    /** Instructions of skills invoked with `/handle`, plus the catalogue of skills the model may load. */
+    instructions?: string;
+    /** Skills the use_skill and read_skill_file tools accept; unset when the tools aren't offered. */
+    tools?: SkillToolHandles;
+};
+
+/** Skills are a signed-in feature behind the custom agents flag. */
+const isSkillsEnabledForRequest = (s: SettingsContext) => !!s.isSkillsFeatureEnabled && !s.isGuestUser;
+
+/** Lumo Desktop's connectors, when the desktop tools are offered with this send. */
+async function loadDesktopConnectorState(): Promise<DesktopConnectorState | undefined> {
+    if (!isDesktopEnvironment()) {
+        return undefined;
+    }
+    try {
+        return { manifests: await getDesktopConnectors(), catalog: getDesktopConnectorCatalog() };
+    } catch {
+        return undefined;
+    }
+}
+
+/**
+ * Skills invoked with `/handle` anywhere in the chat keep applying. Other enabled skills are listed so the
+ * model can load them with use_skill, and read_skill_file reads the files of either kind. No tools are
+ * offered when `offerSkillTools` is false: a prompt from a link the user hasn't reviewed yet must not be
+ * able to pull private skills into the conversation.
+ */
+async function resolveChainSkills(
+    dispatch: LumoDispatch,
+    chain: Message[],
+    { enabled, offerSkillTools }: { enabled: boolean; offerSkillTools: boolean }
+): Promise<ChainSkills> {
+    if (!enabled) {
+        return {};
+    }
+    const texts = chain.filter((message) => message.role === Role.User).map((message) => message.content ?? '');
+    try {
+        const desktopConnectors = offerSkillTools ? await loadDesktopConnectorState() : undefined;
+        const { instructions, loadable, readable } = await dispatch(
+            resolveSkillContext({ texts, listFiles: offerSkillTools, desktopConnectors })
+        ).unwrap();
+        const catalogue = offerSkillTools ? formatSkillCatalogue(loadable, USE_SKILL_TOOL_NAME) : undefined;
+        return {
+            instructions: [instructions, catalogue].filter(Boolean).join('\n\n') || undefined,
+            tools: offerSkillTools
+                ? { loadable: catalogue ? loadable.map(({ handle }) => handle) : [], readable, desktopConnectors }
+                : undefined,
+        };
+    } catch {
+        return {};
+    }
 }
 
 function populateMessageContext(message: Message, messageChain: Message[], c: ConversationContext) {
@@ -582,6 +647,10 @@ export function executeConversationTurn({
         // conversation stores its agent id; a brand-new conversation consumes the agent
         // selected in the composer (pendingAgentId) and stamps it onto the conversation.
         const agentInstructions = dispatch(resolveAgentInstructions(conversationId, !execution?.background));
+        const chainSkills = await resolveChainSkills(dispatch, newMessageChain, {
+            enabled: isSkillsEnabledForRequest(s),
+            offerSkillTools: !ui.isFromQueryParam,
+        });
 
         const allAttachments = state.attachments;
 
@@ -739,7 +808,8 @@ export function executeConversationTurn({
                     artifactToolMode,
                     ui.isFromQueryParam,
                     contextLimits,
-                    !!s.isArtifactSlidesFeatureEnabled
+                    !!s.isArtifactSlidesFeatureEnabled,
+                    chainSkills.instructions
                 );
 
             generation = await dispatch(
@@ -770,6 +840,7 @@ export function executeConversationTurn({
                         artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
                         enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
                         enableCreateScheduleTool: ui.enableCreateScheduleTool,
+                        skillTools: chainSkills.tools,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -930,6 +1001,10 @@ export function regenerateMessage({
                     : '';
 
             const agentInstructions = dispatch(resolveAgentInstructions(c.conversationId));
+            const chainSkills = await resolveChainSkills(dispatch, c.messageChain, {
+                enabled: isSkillsEnabledForRequest(s),
+                offerSkillTools: true,
+            });
 
             const artifactToolMode = resolveArtifactToolMode(
                 ui.canvasModeActive,
@@ -960,7 +1035,8 @@ export function regenerateMessage({
                     artifactToolMode,
                     false,
                     contextLimits,
-                    !!s.isArtifactSlidesFeatureEnabled
+                    !!s.isArtifactSlidesFeatureEnabled,
+                    chainSkills.instructions
                 );
 
                 // Add retry instructions if provided
@@ -1005,6 +1081,7 @@ export function regenerateMessage({
                         artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
                         enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
                         enableCreateScheduleTool: ui.enableCreateScheduleTool,
+                        skillTools: chainSkills.tools,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -1169,6 +1246,10 @@ export function retrySendMessage({
                 : '';
 
         const agentInstructions = c.conversationId ? dispatch(resolveAgentInstructions(c.conversationId)) : undefined;
+        const chainSkills = await resolveChainSkills(dispatch, updatedLinearChain, {
+            enabled: isSkillsEnabledForRequest(s),
+            offerSkillTools: true,
+        });
 
         const artifactToolMode = resolveArtifactToolMode(
             ui.canvasModeActive,
@@ -1199,7 +1280,8 @@ export function retrySendMessage({
                 artifactToolMode,
                 false,
                 contextLimits,
-                !!s.isArtifactSlidesFeatureEnabled
+                !!s.isArtifactSlidesFeatureEnabled,
+                chainSkills.instructions
             );
 
         // Call the LLM
@@ -1229,6 +1311,7 @@ export function retrySendMessage({
                         artifactPresentationEnabled: !!s.isArtifactSlidesFeatureEnabled,
                         enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
                         enableCreateScheduleTool: ui.enableCreateScheduleTool,
+                        skillTools: chainSkills.tools,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
