@@ -1,7 +1,10 @@
 import { getOrgPermissions } from '@proton/account/userPermissions';
 import { getUnreadableSubscriptionsReason } from '@proton/payments/core/entitlements/unreadable-subscriptions';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
+import {
+    type CataloguedPlan,
+    buildOrgAndUserEntitlementChecks,
+} from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import type { Group, GroupFlags } from '@proton/shared/lib/interfaces/Group';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';

@@ -8,9 +8,9 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
 import {
     type CataloguedPlan,
-    prodCatalogGrants,
+    prodCatalogGrantsForTesting,
     toOrganizationEntitlement,
-} from '@proton/payments/testing/prodCatalogGrants';
+} from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import { buildUser } from '@proton/shared/testing/buildUser';
@@ -261,9 +261,9 @@ describe('useEntitlements', () => {
 
     describe('users who cannot read the subscriptions of their organization', () => {
         const mockOrganizationWithPlan = (plan: CataloguedPlan, organization: Partial<OrganizationExtended>) => {
-            mockUseEntitlementCatalog.mockReturnValue([buildEntitlementCatalog(prodCatalogGrants), false]);
+            mockUseEntitlementCatalog.mockReturnValue([buildEntitlementCatalog(prodCatalogGrantsForTesting), false]);
             mockUseAllEntitlements.mockReturnValue([
-                makeEntitlements(prodCatalogGrants[plan].map(toOrganizationEntitlement)),
+                makeEntitlements(prodCatalogGrantsForTesting[plan].map(toOrganizationEntitlement)),
                 false,
             ]);
             mockUseAllSubscriptions.mockReturnValue([[], false]);

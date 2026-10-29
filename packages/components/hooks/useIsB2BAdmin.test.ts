@@ -3,7 +3,10 @@ import { renderHook } from '@testing-library/react';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { PLANS } from '@proton/payments/core/constants';
-import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
+import {
+    type CataloguedPlan,
+    buildOrgAndUserEntitlementChecks,
+} from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 

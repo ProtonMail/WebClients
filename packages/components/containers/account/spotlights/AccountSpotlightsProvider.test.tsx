@@ -5,7 +5,10 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import useFeature from '@proton/features/useFeature';
 import { PLANS } from '@proton/payments/core/constants';
-import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
+import {
+    type CataloguedPlan,
+    buildOrgAndUserEntitlementChecks,
+} from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { mspSubsidiaryAdmin, organizationMember } from '@proton/payments/testing/usersWhoCannotReadSubscriptions';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';

@@ -3,9 +3,9 @@ import { buildSubscription } from '../../testing/buildSubscription';
 import { makeEntitlements } from '../../testing/makeEntitlements';
 import {
     buildOrgAndUserEntitlementChecks,
-    prodCatalogGrants,
+    prodCatalogGrantsForTesting,
     toOrganizationEntitlement,
-} from '../../testing/prodCatalogGrants';
+} from '../../testing/prodCatalogGrantsForTesting';
 import { regularAdmin } from '../../testing/regularAdmin';
 import { usersWhoCannotReadSubscriptions } from '../../testing/usersWhoCannotReadSubscriptions';
 import { ADDON_NAMES, FREE_SUBSCRIPTION, PLANS } from '../constants';
@@ -619,9 +619,11 @@ describe('createEntitlementResolverForOrgAndUser when the subscriptions are unre
         'matches entitlements granted by an addon of the organization for $case',
         ({ user, organization }) => {
             const resolver = createEntitlementResolverForOrgAndUser({
-                entitlementCatalog: buildEntitlementCatalog(prodCatalogGrants),
+                entitlementCatalog: buildEntitlementCatalog(prodCatalogGrantsForTesting),
                 entitlements: makeEntitlements(
-                    [...prodCatalogGrants[PLANS.MAIL_PRO], EntitlementName.FlagsLumo].map(toOrganizationEntitlement)
+                    [...prodCatalogGrantsForTesting[PLANS.MAIL_PRO], EntitlementName.FlagsLumo].map(
+                        toOrganizationEntitlement
+                    )
                 ),
                 subscriptions: [],
                 user,
@@ -636,8 +638,10 @@ describe('createEntitlementResolverForOrgAndUser when the subscriptions are unre
 
     it.each(usersWhoCannotReadSubscriptions)('ignores the given subscriptions for $case', ({ user, organization }) => {
         const resolver = createEntitlementResolverForOrgAndUser({
-            entitlementCatalog: buildEntitlementCatalog(prodCatalogGrants),
-            entitlements: makeEntitlements(prodCatalogGrants[PLANS.PASS_BUSINESS].map(toOrganizationEntitlement)),
+            entitlementCatalog: buildEntitlementCatalog(prodCatalogGrantsForTesting),
+            entitlements: makeEntitlements(
+                prodCatalogGrantsForTesting[PLANS.PASS_BUSINESS].map(toOrganizationEntitlement)
+            ),
             subscriptions: [buildSubscription(PLANS.MAIL)],
             user,
             organization,
@@ -653,8 +657,10 @@ describe('createEntitlementResolverForOrgAndUser when the subscriptions are unre
 
     it('does not fall back to the organization entitlements for an admin', () => {
         const resolver = createEntitlementResolverForOrgAndUser({
-            entitlementCatalog: buildEntitlementCatalog(prodCatalogGrants),
-            entitlements: makeEntitlements(prodCatalogGrants[PLANS.PASS_BUSINESS].map(toOrganizationEntitlement)),
+            entitlementCatalog: buildEntitlementCatalog(prodCatalogGrantsForTesting),
+            entitlements: makeEntitlements(
+                prodCatalogGrantsForTesting[PLANS.PASS_BUSINESS].map(toOrganizationEntitlement)
+            ),
             subscriptions: [],
             ...regularAdmin,
         });
