@@ -3,7 +3,10 @@ import { renderHook } from '@testing-library/react';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { PLANS } from '@proton/payments/core/constants';
 import type { UserAndOrganizationForSubscriptions } from '@proton/payments/core/entitlements/unreadable-subscriptions';
-import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
+import {
+    type CataloguedPlan,
+    buildOrgAndUserEntitlementChecks,
+} from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import { organizationMember } from '@proton/payments/testing/usersWhoCannotReadSubscriptions';
 import { APPS } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';

@@ -2,7 +2,10 @@ import { renderHook } from '@testing-library/react';
 
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { PLANS } from '@proton/payments/core/constants';
-import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
+import {
+    type CataloguedPlan,
+    buildOrgAndUserEntitlementChecks,
+} from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import { organizationMember } from '@proton/payments/testing/usersWhoCannotReadSubscriptions';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { useFlag } from '@proton/unleash/useFlag';
