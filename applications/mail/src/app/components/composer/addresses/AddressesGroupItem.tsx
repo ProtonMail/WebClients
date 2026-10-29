@@ -16,6 +16,7 @@ import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
+import type { RecipientGroup } from '@proton/mail-message/models/address';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -24,7 +25,6 @@ import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { useUpdateGroupSendInfo } from '../../../hooks/useSendInfo';
-import type { RecipientGroup } from '../../../models/address';
 import AddressesGroupModal from './AddressesGroupModal';
 
 interface Props {
@@ -112,6 +112,7 @@ const AddressesGroupItem = ({
                         <IcUsers size={3} color={recipientGroup?.group?.Color} className="m-auto" />
                     </span>
                     <Tooltip title={c('Info').t`Click to view group details`}>
+                        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events -- group details are mouse-only, keyboard access needs a design change */}
                         <span
                             className="composer-addresses-item-label my-auto pl-1 pr-2 text-ellipsis"
                             onClick={() => showModalCallback(true)}

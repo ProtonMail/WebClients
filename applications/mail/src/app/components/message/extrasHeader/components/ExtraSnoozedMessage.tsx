@@ -6,11 +6,11 @@ import { c } from 'ttag';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcClock } from '@proton/icons/icons/IcClock';
+import { formatDateToHuman } from '@proton/mail-message/helpers/date';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { isSnoozed } from '@proton/shared/lib/mail/messages';
 
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../../constants';
-import { formatDateToHuman } from '../../../../helpers/date';
 import { getSnoozeTimeFromElement } from '../../../../helpers/snooze';
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import { useGetElementsFromIDs } from '../../../../hooks/mailbox/useElements';

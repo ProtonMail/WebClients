@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { useMailSelector } from '../../store/hooks';
+import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '@proton/mail-message/helpers/date';
 
-import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';
 import { getSnoozeTimeFromElement, isElementReminded, isElementSnoozed } from '../../helpers/snooze';
 import type { Element } from '../../models/element';
 import { selectConversationMode } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 import ItemDateRender from './ItemDateRender';
 import ItemDateSnoozedMessage from './ItemDateSnoozedMessage';
 

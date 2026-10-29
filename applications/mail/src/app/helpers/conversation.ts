@@ -1,5 +1,5 @@
-import type { Conversation } from '../models/conversation';
-import type { ConversationState } from '../store/conversations/conversationsTypes';
+import type { Conversation } from '@proton/mail-message/models/conversation';
+import type { ConversationState } from '@proton/mail-message/store/conversations/conversationsTypes';
 
 type LabelValue = 'NumMessages' | 'NumUnread' | 'Time' | 'Size' | 'NumAttachments';
 type LabelContextValue =

@@ -10,6 +10,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import AddressesAutocomplete from '@proton/components/components/addressesAutocomplete/AddressesAutocomplete';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import type { RecipientGroup } from '@proton/mail-message/models/address';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { rootFontSize, scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -22,7 +23,6 @@ import { useContactsMap, useGroupsWithContactsMap } from '../../../hooks/contact
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { useAddressesInputDrag } from '../../../hooks/useAddressesInputDrag';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
-import type { RecipientGroup } from '../../../models/address';
 import AddressesGroupItem from './AddressesGroupItem';
 import AddressesRecipientItem from './AddressesRecipientItem';
 

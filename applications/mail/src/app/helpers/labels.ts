@@ -13,6 +13,7 @@ import { IcPaperPlaneClock } from '@proton/icons/icons/IcPaperPlaneClock';
 import { IcStar } from '@proton/icons/icons/IcStar';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { labelIncludes } from '@proton/mail/helpers/location';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
@@ -27,7 +28,6 @@ import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 import orderBy from '@proton/utils/orderBy';
 
-import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
 import { getLabelIDs } from './elements';
 

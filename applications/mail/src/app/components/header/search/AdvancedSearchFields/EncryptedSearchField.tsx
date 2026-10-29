@@ -12,10 +12,10 @@ import Progress from '@proton/components/components/progress/Progress';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import type { ESIndexingState } from '@proton/encrypted-search/models/interfaces';
 import { useIndexedDBSupport } from '@proton/encrypted-search/useIndexedDBSupport';
+import { formatSimpleDate } from '@proton/mail-message/helpers/date';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
-import { formatSimpleDate } from '../../../../helpers/date';
 import EnableEncryptedSearchModal from '../AdvancedSearchFields/EnableEncryptedSearchModal';
 
 interface Props {

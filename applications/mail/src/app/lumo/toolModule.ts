@@ -6,6 +6,8 @@ import type { ESStatusBooleans } from '@proton/encrypted-search/models/interface
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import type { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { RecipientType } from '@proton/mail-message/models/address';
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import type {
@@ -36,8 +38,6 @@ import type {
 } from '../hooks/actions/applyLocation/interface';
 import type { MarkAsParams } from '../hooks/actions/markAs/useMarkAs';
 import type { SnoozeProps } from '../hooks/actions/useSnooze';
-import type { RecipientType } from '../models/address';
-import type { Conversation } from '../models/conversation';
 import type { markAll as markAllAction } from '../store/elements/elementsActions';
 import type { MailStore } from '../store/store';
 

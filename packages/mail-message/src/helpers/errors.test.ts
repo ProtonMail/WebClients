@@ -1,8 +1,7 @@
-import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
-import type { MessageErrors, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
-
 import type { ConversationErrors } from '../store/conversations/conversationsTypes';
+import type { MessageErrors, MessageState } from '../store/messages/messagesTypes';
 import { hasError, hasErrorType, isDecryptionError, isNetworkError, pickMessageInfosForSentry } from './errors';
+import { parseDOMStringToBodyElement } from './parseDOMStringToBodyElement';
 
 describe('isNetworkError', () => {
     it('should be a network error', () => {

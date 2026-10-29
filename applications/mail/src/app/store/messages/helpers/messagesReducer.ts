@@ -1,6 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { MessagesState } from '@proton/mail-message/store/messages/messagesTypes';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
@@ -10,7 +11,6 @@ import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mai
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import { isElementMessage } from '../../../helpers/elements';
-import type { Conversation } from '../../../models/conversation';
 import type { QueryParams, QueryResults, TaskRunningInfo } from '../../elements/elementsTypes';
 import { applyLabelToMessage, removeLabelFromMessage } from '../../mailbox/locationHelpers';
 import type { MailState } from '../../store';

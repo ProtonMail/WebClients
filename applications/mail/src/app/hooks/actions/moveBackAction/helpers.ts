@@ -1,3 +1,5 @@
+import type { Conversation } from '@proton/mail-message/models/conversation';
+import type { ConversationState } from '@proton/mail-message/store/conversations/conversationsTypes';
 import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -5,9 +7,7 @@ import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { hasLabel, isElementMessage } from '../../../helpers/elements';
-import type { Conversation } from '../../../models/conversation';
 import type { Element } from '../../../models/element';
-import type { ConversationState } from '../../../store/conversations/conversationsTypes';
 
 const folderConditions = {
     [MAILBOX_LABEL_IDS.DRAFTS]: [

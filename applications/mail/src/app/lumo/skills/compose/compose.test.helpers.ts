@@ -2,13 +2,13 @@ import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import type { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { RecipientType } from '@proton/mail-message/models/address';
 import type { MessageState, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { RecipientType } from '../../../models/address';
 import type { DraftChangeability, MailToolDeps } from '../../toolModule';
 
 /** An open composer that will take both a rewrite and a readdress. */

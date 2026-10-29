@@ -1,6 +1,7 @@
 import { act, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import { DEFAULT_MAIL_PAGE_SIZE, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -8,7 +9,6 @@ import { DEFAULT_PLACEHOLDERS_COUNT } from '../../../constants';
 import { addApiResolver, api } from '../../../helpers/tests/api';
 import { clearAll } from '../../../helpers/tests/helper';
 import { mailTestRender } from '../../../helpers/tests/render';
-import type { Conversation } from '../../../models/conversation';
 import type { MessageEvent } from '../../../models/event';
 import { RouterMailboxContainer } from '../../../router/RouterMailboxContainer';
 import {

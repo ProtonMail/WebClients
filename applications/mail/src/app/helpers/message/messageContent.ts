@@ -1,5 +1,12 @@
 import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '@proton/components/components/editor/constants';
 import type { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { locateBlockquote } from '@proton/mail-message/helpers/message/messageBlockquote';
+import {
+    exportPlainText,
+    getPlainTextContent,
+    setPlainTextContent,
+} from '@proton/mail-message/helpers/message/messageContentPlainText';
+import { getDocumentContent, setDocumentContent } from '@proton/mail-message/helpers/message/messageContentQuery';
 import { toText } from '@proton/mail-message/helpers/parserHtml';
 import type { MessageState, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { unescape } from '@proton/sanitize/escape';
@@ -10,13 +17,10 @@ import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages
 
 import { parseModelResult } from '../assistant/result';
 import { generateBlockquote } from './draftContent/html';
-import { locateBlockquote } from './messageBlockquote';
-import { exportPlainText, getPlainTextContent, setPlainTextContent } from './messageContentPlainText';
-import { getDocumentContent, setDocumentContent } from './messageContentQuery';
 
 export { plainTextToHTML } from './messageContentConversion';
-export { exportPlainText } from './messageContentPlainText';
-export { querySelectorAll, setDocumentContent } from './messageContentQuery';
+export { exportPlainText } from '@proton/mail-message/helpers/message/messageContentPlainText';
+export { querySelectorAll, setDocumentContent } from '@proton/mail-message/helpers/message/messageContentQuery';
 
 /**
  * Get current processed message document html content

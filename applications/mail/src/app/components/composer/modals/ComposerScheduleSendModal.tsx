@@ -8,13 +8,13 @@ import { Href } from '@proton/atoms/Href/Href';
 import TimeInput from '@proton/components/components/input/TimeInput';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
+import { getMinScheduleTime } from '@proton/mail-message/helpers/schedule';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';
 
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
-import { getMinScheduleTime } from '../../../helpers/schedule';
 import useFutureTimeDate from '../../../hooks/message/useFutureTimeDate';
 import { useMailDispatch } from '../../../store/hooks';
 import { updateScheduled } from '../../../store/messages/scheduled/scheduledActions';

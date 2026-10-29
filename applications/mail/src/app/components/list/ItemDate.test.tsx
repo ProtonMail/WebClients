@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 
-import { useMailSelector } from '../../store/hooks';
+import type { Conversation } from '@proton/mail-message/models/conversation';
 
-import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
+import { useMailSelector } from '../../store/hooks';
 import ItemDate from './ItemDate';
 
 jest.mock('../../store/hooks');

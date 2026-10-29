@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import { getContextNumMessages } from '@proton/mail/helpers/conversation';
 import { conversationCountsActions } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsActions } from '@proton/mail/store/counts/messageCountsSlice';
@@ -27,7 +28,6 @@ import UndoActionNotification from '../../components/notifications/UndoActionNot
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { getFilteredUndoTokens, runParallelChunkedActions } from '../../helpers/chunk';
 import { hasLabel } from '../../helpers/elements';
-import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import type { MailThunkExtra } from '../store';
 import type { MailThunkArguments } from '../thunk';

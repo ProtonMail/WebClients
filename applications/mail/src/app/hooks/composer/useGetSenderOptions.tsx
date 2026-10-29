@@ -5,12 +5,11 @@ import { useUser } from '@proton/account/user/hooks';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Option from '@proton/components/components/option/Option';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
+import { getFromAddresses } from '@proton/mail-message/helpers/addresses';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { splitExternalAddresses } from '@proton/shared/lib/mail/addresses';
-
-import { getFromAddresses } from '../../helpers/addresses';
 
 const useGetSenderOptions = (message: MessageState) => {
     const [addresses = []] = useAddresses();

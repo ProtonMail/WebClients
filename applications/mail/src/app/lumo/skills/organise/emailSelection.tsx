@@ -8,8 +8,7 @@ import type { CardBodyProps } from '@proton/llm/lib/lumoAgent/ui/types';
 import MoveItemsCard from '@proton/lumo-ui/confirmCards/MoveItemsCard';
 import type { CheckListItem } from '@proton/lumo-ui/primitives/ItemCheckList';
 import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
-
-import { formatSimpleDate } from '../../../helpers/date';
+import { formatSimpleDate } from '@proton/mail-message/helpers/date';
 
 export const referenceName = (reference: unknown, labels: ReferenceLabels): string => {
     const key = String(reference);

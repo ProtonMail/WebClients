@@ -1,11 +1,9 @@
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { useMailDispatch } from '../../store/hooks';
-
 import { parseLabelIDsInEvent } from '../../helpers/elements';
-import type { Conversation } from '../../models/conversation';
 import type { Event, LabelIDsChanges } from '../../models/event';
 import {
     eventConversationUpdate,
@@ -13,6 +11,7 @@ import {
     eventMessageUpdate,
     load as loadAction,
 } from '../../store/conversations/conversationsActions';
+import { useMailDispatch } from '../../store/hooks';
 import { useGetConversation } from '../conversation/useConversation';
 
 export const useConversationsEvent = () => {

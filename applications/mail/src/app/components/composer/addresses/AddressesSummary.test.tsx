@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 
+import type { RecipientType } from '@proton/mail-message/models/address';
 import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
@@ -7,7 +8,6 @@ import noop from '@proton/utils/noop';
 import { getRecipientLabel } from '../../../helpers/message/messageRecipients';
 import { clearAll } from '../../../helpers/tests/helper';
 import { mailTestRender } from '../../../helpers/tests/render';
-import type { RecipientType } from '../../../models/address';
 import { refresh } from '../../../store/contacts/contactsActions';
 import { prepareMessage } from '../tests/Composer.test.helpers';
 import AddressesSummary from './AddressesSummary';

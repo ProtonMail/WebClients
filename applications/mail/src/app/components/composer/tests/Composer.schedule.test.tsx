@@ -14,6 +14,7 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import { mockPlansApi } from '@proton/components/hooks/helpers/tests/usePlans';
 import { FeatureCode } from '@proton/features/interface';
 import { getFeatureFlagsState } from '@proton/features/testing/features';
+import { getMinScheduleTime } from '@proton/mail-message/helpers/schedule';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -23,7 +24,6 @@ import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { getMinScheduleTime } from '../../../helpers/schedule';
 import { addApiMock } from '../../../helpers/tests/api';
 import { minimalCache } from '../../../helpers/tests/cache';
 import { addApiKeys } from '../../../helpers/tests/crypto';

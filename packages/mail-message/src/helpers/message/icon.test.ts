@@ -7,7 +7,6 @@ import { IcLockOpenCheckFilled } from '@proton/icons/icons/IcLockOpenCheckFilled
 import { IcLockOpenExclamationFilled } from '@proton/icons/icons/IcLockOpenExclamationFilled';
 import { IcLockOpenPenFilled } from '@proton/icons/icons/IcLockOpenPenFilled';
 import { IcLockPenFilled } from '@proton/icons/icons/IcLockPenFilled';
-import type { MessageState, MessageVerification } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -20,6 +19,7 @@ import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
 import type { StatusIcon } from '../../models/crypto';
 import { STATUS_ICONS_FILLS, X_PM_HEADERS } from '../../models/crypto';
+import type { MessageState, MessageVerification } from '../../store/messages/messagesTypes';
 import {
     getGlobalSentStatusIcon,
     getReceivedStatusIcon,

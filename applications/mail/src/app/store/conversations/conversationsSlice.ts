@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import type { ConversationsState } from '@proton/mail-message/store/conversations/conversationsTypes';
+
 import { globalReset } from '../actions';
 import { eventUpdates, load as loadElements } from '../elements/elementsActions';
 import {
@@ -59,7 +61,6 @@ import {
     updateFromLoadElements,
     updateMessageOnSend,
 } from './conversationsReducers';
-import type { ConversationsState } from './conversationsTypes';
 
 const name = 'conversations';
 const conversationSlice = createSlice({

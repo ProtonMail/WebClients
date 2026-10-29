@@ -1,6 +1,11 @@
 import { c } from 'ttag';
 
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { formatFullDate } from '@proton/mail-message/helpers/date';
+import { getDocumentContent } from '@proton/mail-message/helpers/message/messageContentQuery';
+import { CLASSNAME_BLOCKQUOTE } from '@proton/mail-message/helpers/message/messageDraftConstants';
+import { formatRecipientsString } from '@proton/mail-message/helpers/message/messageDraftFormat';
+import { insertSignature } from '@proton/mail-message/helpers/message/messageSignature';
 import type { PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { escape } from '@proton/sanitize/escape';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
@@ -10,14 +15,9 @@ import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { FORWARDED_MESSAGE, isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { formatFullDate } from '../../date';
 import { getDate } from '../../elementTypeGuards';
 import { plainTextToHTML } from '../messageContentConversion';
-import { getDocumentContent } from '../messageContentQuery';
-import { CLASSNAME_BLOCKQUOTE } from '../messageDraftConstants';
-import { formatRecipientsString } from '../messageDraftFormat';
 import { restoreImages } from '../messageImages';
-import { insertSignature } from '../messageSignature';
 
 export const generatePreviousMessageInfos = (referenceMessage: PartialMessageState, action: MESSAGE_ACTIONS) => {
     /**
