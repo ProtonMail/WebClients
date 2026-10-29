@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { organizationThunk } from '@proton/account/organization';
+import { entitlementChecksForOrgAndUserThunk } from '@proton/account/entitlementCatalog/actions';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import { PLANS } from '@proton/payments/core/constants';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isLinux, isMac, isMobile } from '@proton/shared/lib/helpers/browser';
 import {
@@ -25,9 +24,9 @@ import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 const VPN_DESKTOP_URL = isMac() ? VPN_DESKTOP_MAC_URL : isLinux() ? VPN_DESKTOP_LINUX_URL : VPN_DESKTOP_WINDOWS_URL;
 
 export const shouldDisplayProtonVPNTourStep: ShouldDisplayTourStep = async (dispatch) => {
-    const [organization] = await Promise.all([dispatch(organizationThunk())]);
+    const entitlements = await dispatch(entitlementChecksForOrgAndUserThunk());
     return {
-        canDisplay: [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO].includes(organization.PlanName),
+        canDisplay: entitlements.hasAllCoreProductsB2C,
         preloadUrls: [logoVpn, vpnAppBackground],
     };
 };

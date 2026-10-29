@@ -93,6 +93,9 @@ export const entitlementChecksForSelection = {
     hasOrgMailboxMigration: (r) =>
         r.hasMatchingSubscription({ includes: [EntitlementName.Business, EntitlementName.FlagsInbox] }),
 
+    isMailB2C: (r) =>
+        r.hasMatchingSubscription({ includes: [EntitlementName.FlagsInbox], excludes: [EntitlementName.Business] }),
+
     hasAllCoreProductsB2C: (r) =>
         r.hasMatchingSubscription({
             includes: [
