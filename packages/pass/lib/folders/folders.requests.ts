@@ -6,8 +6,10 @@ import type {
 } from '../../types/api/pass';
 import type { FolderId, ShareId } from '../../types/crypto/pass-types';
 import type { FolderData, FolderDeleteDTO } from '../../types/data/folders';
+import type { Maybe } from '../../types/utils';
 import { logId, logger } from '../../utils/logger';
 import { api } from '../api/api';
+import { isShareRemovedError } from '../api/errors';
 import { createPageIterator } from '../api/utils';
 import { parseFolderResponse } from './folders.parser';
 
@@ -34,9 +36,16 @@ export const hasFoldersApi = async (shareId: ShareId): Promise<boolean> => {
     return (Folders ?? []).length > 0;
 };
 
-export const fetchFolder = async (shareId: ShareId, folderId: FolderId): Promise<FolderDataResponse> => {
-    const { Folder } = await api({ url: `pass/v1/share/${shareId}/folder/${folderId}`, method: 'get' });
-    return Folder;
+/** Resolves `undefined` when the share has been removed (an event
+ * referencing a deleted/disabled share). Throws on any other fetch error. */
+export const fetchFolder = async (shareId: ShareId, folderId: FolderId): Promise<Maybe<FolderDataResponse>> => {
+    try {
+        const { Folder } = await api({ url: `pass/v1/share/${shareId}/folder/${folderId}`, method: 'get' });
+        return Folder;
+    } catch (err) {
+        if (isShareRemovedError(err)) return undefined;
+        throw err;
+    }
 };
 
 /** A folder key is encrypted with its parent folder key, so parents are decrypted first.

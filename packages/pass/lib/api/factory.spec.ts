@@ -400,9 +400,9 @@ describe('API factory', () => {
     describe('Consecutive failures', () => {
         /** `retry-after` above `RETRY_DELAY_MAX` so a 429 escapes `retryHandler`
          * instead of being absorbed by a retry. This is the outage condition. */
-        const failWith = async (status: number) => {
+        const failWith = async (status: number, body = {}) => {
             fetchMock.mockResolvedValueOnce(
-                mockAPIResponse({}, status, { date: TEST_SERVER_TIME.toUTCString(), 'retry-after': '30' })
+                mockAPIResponse(body, status, { date: TEST_SERVER_TIME.toUTCString(), 'retry-after': '30' })
             );
             await expect(api({ url: 'some/endpoint' })).rejects.toThrow(ApiError);
         };
@@ -431,6 +431,15 @@ describe('API factory', () => {
             await failWith(404);
 
             expect(api.getState().unreachable).toBe(true);
+        });
+
+        test('should not count errors of a removed share', async () => {
+            await failWith(422, { Code: PassErrorCode.DISABLED_SHARE, Error: 'Share disabled' });
+            await failWith(422, { Code: PassErrorCode.NOT_EXIST_SHARE, Error: 'Share does not exist' });
+            await failWith(422, { Code: PassErrorCode.DISABLED_SHARE, Error: 'Share disabled' });
+
+            expect(api.getState().failureCount).toBe(0);
+            expect(api.getState().unreachable).toBe(false);
         });
 
         test('should clear the count on a successful response', async () => {
