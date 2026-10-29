@@ -1,4 +1,4 @@
-import { createAction, createReducer } from '@reduxjs/toolkit';
+import { createAction, createReducer, prepareAutoBatched } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
 import { countAttachmentToken, countAttachmentTokenVersion } from '../../../llm/utils';
@@ -57,9 +57,10 @@ export type SetToolResultAction = ChunkAction & {
 
 // Low-level Redux store operations without side effects.
 export const addMessage = createAction<MessagePub>('lumo/message/add');
-export const appendChunk = createAction<ChunkAction>('lumo/message/appendChunk');
-export const appendReasoning = createAction<ChunkAction>('lumo/message/appendReasoning');
-export const setToolCall = createAction<ChunkAction>('lumo/message/setToolCall');
+// Streaming dispatches these once per token; auto-batching coalesces subscriber notifications to one per frame.
+export const appendChunk = createAction('lumo/message/appendChunk', prepareAutoBatched<ChunkAction>());
+export const appendReasoning = createAction('lumo/message/appendReasoning', prepareAutoBatched<ChunkAction>());
+export const setToolCall = createAction('lumo/message/setToolCall', prepareAutoBatched<ChunkAction>());
 export const setToolResult = createAction<SetToolResultAction>('lumo/message/setToolResult');
 export const setSuggestedQuestions = createAction<SetSuggestedQuestionsAction>('lumo/message/setSuggestedQuestions');
 export const setMessageUsage = createAction<SetMessageUsageAction>('lumo/message/setUsage');

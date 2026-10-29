@@ -383,25 +383,16 @@ export function* refreshConversationFromRemote({
     }
     const cleanRemote = cleanConversation(deserializedRemoteConversation);
 
-    // Ensure the local<->remote id mapping is recorded before any equality short-circuit below.
-    // The equality checks only compare conversation *content* (cleanConversation/cleanSerializedConversation
-    // both drop the remoteId), so a conversation can exist locally with matching content but with a missing
-    // idmap entry. In that case the early returns would skip persisting the mapping, leaving the conversation
-    // unreachable ("Remote ID not found" on pull). We persist the mapping here, idempotently, regardless of content.
-    const existingRemoteId: RemoteId | undefined = yield select(selectRemoteIdFromLocal(type, localId));
-    if (existingRemoteId !== remoteId) {
-        yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
-    }
-
     const localConversation: Conversation | undefined = yield select(selectConversationById(localId));
     const { conversation: mergedConversation, preserveLocalTitle } = mergeConversationFromRemote(
         localConversation,
         cleanRemote
     );
 
-    // Always persist the local->remote id mapping, even when the conversation object itself is
-    // unchanged (equal in Redux/IDB) or dirty. Otherwise the mapping can be missing from IDB after
-    // a reload, which makes pullConversation fail with "Remote ID not found".
+    // Always persist the local->remote id mapping before the equality short-circuits below, even when the
+    // conversation object itself is unchanged (equal in Redux/IDB) or dirty: those checks drop the remoteId.
+    // Otherwise the mapping can be missing from IDB after a reload, which makes pullConversation fail with
+    // "Remote ID not found".
     yield put(addIdMapEntry({ type, localId, remoteId, saveToIdb: true }));
 
     if (localConversation) {

@@ -5,6 +5,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { useLumoUserSettings } from '../hooks';
 import { useFileProcessing } from '../hooks/useFileProcessing';
 import { type DriveEvent, type EventSubscription, useDriveSDK } from '../hooks/useDriveSDK';
+import { useLumoSelector } from '../redux/hooks';
 import type { IndexedDriveFolder } from '../redux/slices/lumoUserSettings';
 import { registerDriveIndexingCancelHandler } from '../services/driveFolderIndexingState';
 import { SearchService } from '../services/search/searchService';
@@ -64,6 +65,8 @@ const DEFAULT_EVENT_INDEXING_STATUS: EventIndexingStatus = {
 
 const noop = () => {};
 
+const EMPTY_INDEXED_FOLDERS: IndexedDriveFolder[] = [];
+
 const DEFAULT_CONTEXT_VALUE: DriveIndexingContextType = {
     isSubscribed: false,
     subscribedScopes: [],
@@ -88,6 +91,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         isInitialized: isDriveInitialized,
     } = useDriveSDK();
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
+    const spacesPullSettled = useLumoSelector((state) => state.initialization.spacesPullSettled);
     const [isSubscribed, setIsSubscribed] = useState(false);
     const fileProcessingService = useFileProcessing();
     const [subscribedScopes, setSubscribedScopes] = useState<string[]>([]);
@@ -101,7 +105,8 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         setDriveIndexRevision((revision) => revision + 1);
     }, []);
 
-    const indexedFolders = lumoUserSettings.indexedDriveFolders || [];
+    // Must stay referentially stable: the subscription effect depends on it and resets state.
+    const indexedFolders = lumoUserSettings.indexedDriveFolders ?? EMPTY_INDEXED_FOLDERS;
 
     // Refs for subscription management
     const subscriptionsRef = useRef<Map<string, EventSubscription>>(new Map());
@@ -129,16 +134,23 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
             subscription.dispose();
         }
         subscriptionsRef.current.clear();
-        setSubscribedScopes([]);
+        setSubscribedScopes((previous) => (previous.length === 0 ? previous : []));
         setIsSubscribed(false);
     }, []);
 
     useEffect(() => registerDriveIndexingCancelHandler(clearPendingTreeEvents), [clearPendingTreeEvents]);
 
     // Auto-rehydrate folders on startup if folders exist in settings but manifest is empty
-    // This handles the case when opening the app in a new browser where IndexedDB is empty
+    // This handles the case when opening the app in a new browser where IndexedDB is empty.
+    // Waits for the initial spaces pull: downloading and parsing every Drive file competes with it for the main
+    // thread and IndexedDB, which delays projects and chats from appearing.
     useEffect(() => {
-        if (hasCheckedRehydrationRef.current || !isDriveInitialized || indexedFolders.length === 0) {
+        if (
+            hasCheckedRehydrationRef.current ||
+            !isDriveInitialized ||
+            !spacesPullSettled ||
+            indexedFolders.length === 0
+        ) {
             return;
         }
 
@@ -252,7 +264,7 @@ const DriveIndexingProviderInner = ({ children, userId }: { children: ReactNode;
         };
 
         void checkAndRehydrate();
-    }, [isDriveInitialized, indexedFolders, userId, browseFolderChildren, downloadFile, bumpDriveIndexRevision, fileProcessingService]);
+    }, [isDriveInitialized, spacesPullSettled, indexedFolders, userId, browseFolderChildren, downloadFile, bumpDriveIndexRevision, fileProcessingService]);
 
     const findFoldersByScope = useCallback((treeEventScopeId: string): IndexedDriveFolder[] => {
         return indexedFoldersRef.current.filter((f) => f.isActive !== false && f.treeEventScopeId === treeEventScopeId);

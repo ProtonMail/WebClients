@@ -53,7 +53,7 @@ export const setupStore = ({
                         ignoredActions: [...ignoredActions, ...ATTACHMENT_ACTIONS_WITH_DATA],
                         ignoredPaths: [...ignoredPaths, 'attachments'],
                     },
-                immutableCheck: isDevMode && !isTest,
+                immutableCheck: isDevMode && !isTest && { ignoredPaths: ['attachments'] },
                 thunk: { extraArgument: extraThunkArguments },
             });
             const m2 = m1.prepend(listenerMiddleware.middleware);

@@ -1,4 +1,5 @@
-import { createAction, createReducer, createSelector } from '@reduxjs/toolkit';
+import { createAction, createReducer, createSelector, prepareAutoBatched } from '@reduxjs/toolkit';
+import isEqual from 'lodash/isEqual';
 import { v4 as uuidv4 } from 'uuid';
 
 import type { Priority } from '../../../remote/scheduler';
@@ -32,8 +33,9 @@ export type DeleteAllSpacesFailure = {
 };
 
 // Low-level Redux store operations without side-effects.
-export const addSpace = createAction<Space>('lumo/space/add');
-export const deleteSpace = createAction<SpaceId>('lumo/space/delete');
+// Sync dispatches these once per item; auto-batching coalesces subscriber notifications to one per frame.
+export const addSpace = createAction('lumo/space/add', prepareAutoBatched<Space>());
+export const deleteSpace = createAction('lumo/space/delete', prepareAutoBatched<SpaceId>());
 export const deleteAllSpaces = createAction('lumo/space/deleteAll');
 
 // High-level Redux-saga requests and events.
@@ -43,8 +45,14 @@ export const pushSpaceNoop = createAction<PushSpaceRequest>('lumo/space/push/noo
 export const pushSpaceNeedsRetry = createAction<PushSpaceRequest>('lumo/space/push/needsRetry');
 export const pushSpaceFailure = createAction<PushSpaceFailure>('lumo/space/push/failure');
 export const locallyDeleteSpaceFromLocalRequest = createAction<SpaceId>('lumo/space/localDelete');
-export const locallyDeleteSpaceFromRemoteRequest = createAction<SpaceId>('lumo/space/remoteDelete');
-export const locallyRefreshSpaceFromRemoteRequest = createAction<RemoteSpace>('lumo/space/remoteRefresh');
+export const locallyDeleteSpaceFromRemoteRequest = createAction(
+    'lumo/space/remoteDelete',
+    prepareAutoBatched<SpaceId>()
+);
+export const locallyRefreshSpaceFromRemoteRequest = createAction(
+    'lumo/space/remoteRefresh',
+    prepareAutoBatched<RemoteSpace>()
+);
 export const pullSpaceRequest = createAction<PullSpaceRequest>('lumo/space/pull/request');
 export const pullSpaceSuccess = createAction<GetSpaceRemote>('lumo/space/pull/success');
 export const pullSpaceFailure = createAction<SpaceId>('lumo/space/pull/failure');
@@ -83,6 +91,9 @@ const spacesReducer = createReducer<SpaceMap>(EMPTY_SPACE_MAP, (builder) => {
                 });
             }
 
+            if (existing && isEqual(existing, space)) {
+                return;
+            }
             state[space.id] = space;
         })
         .addCase(deleteSpace, (state, action) => {

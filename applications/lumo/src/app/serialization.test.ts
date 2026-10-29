@@ -153,6 +153,17 @@ describe('serialization', () => {
             });
         });
 
+        it.each([SpaceType.Project, SpaceType.Schedule])(
+            'keeps a legacy %s whose public SpaceType was backfilled as Default',
+            async (type) => {
+                const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
+                const space = createSpace(type);
+                const serialized = await serializeSpace(space, masterKey);
+                const backendResponse = { ...serialized, spaceType: SpaceType.Default };
+                expect(await deserializeSpace(backendResponse, masterKey)).toEqual(space);
+            }
+        );
+
         it('rejects unknown future types without changing the stored ciphertext', async () => {
             const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
             const serialized = await serializeSpace(mockSpace, masterKey);
