@@ -20,7 +20,12 @@ import {
 } from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import type { Currency, PaymentStatus, PlainPaymentMethodType } from '@proton/payments/core/interface';
+import type {
+    Currency,
+    PaymentMethodFlow,
+    PaymentStatus,
+    PlainPaymentMethodType,
+} from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { PaymentsComponent } from '@proton/payments/sentry/capture';
@@ -51,7 +56,7 @@ type Props = {
     sentryComponent: PaymentsComponent;
     onTopUp: OnChargeable;
     initialCurrency?: Currency;
-    excludedMethods?: PlainPaymentMethodType[];
+    flow?: Extract<PaymentMethodFlow, 'credit' | 'lumo-credit'>;
 } & TopUpModalProps;
 
 const DEFAULT_TOP_UP_AMOUNT = 5000;
@@ -69,7 +74,7 @@ export const TopUpModal = ({
     sentryComponent,
     onTopUp,
     initialCurrency,
-    excludedMethods = [],
+    flow = 'credit',
     ...props
 }: Props) => {
     const { APP_NAME } = useConfig();
@@ -99,12 +104,10 @@ export const TopUpModal = ({
 
             return withLoading(run());
         },
-        flow: 'credit',
+        flow,
         user,
         product: app,
         telemetryContext: 'other',
-        sortNewMethods: (methods) =>
-            methods.filter(({ type }) => !excludedMethods.includes(type as PlainPaymentMethodType)),
     });
 
     if (loadingSubscription || loadingUser) {

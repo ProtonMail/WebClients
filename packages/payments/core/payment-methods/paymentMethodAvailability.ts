@@ -139,6 +139,8 @@ const isBF2025Offer = ({ coupon }: PaymentMethodsContext) => getHas2025OfferCoup
 
 const flowSupportsSepaDirectDebit = ({ flow }: PaymentMethodsContext) => directDebitEnabledFlows.includes(flow);
 
+const isLumoCreditFlow = ({ flow }: PaymentMethodsContext) => flow === 'lumo-credit';
+
 const isChargebeeCardAvailable = ({ paymentStatus }: PaymentMethodsContext) => paymentStatus.VendorStates.Card;
 
 const isChargebeePaypalAvailable = (context: PaymentMethodsContext) => {
@@ -209,7 +211,14 @@ const isSepaDirectDebitAvailable = (context: PaymentMethodsContext) => {
 const isCashAvailable = (context: PaymentMethodsContext) => {
     const { paymentStatus, flow, coupon, isTrial } = context;
 
-    return paymentStatus.VendorStates.Cash && !isSignupFlow(flow) && !isBF2025Offer(context) && !coupon && !isTrial;
+    return (
+        paymentStatus.VendorStates.Cash &&
+        !isSignupFlow(flow) &&
+        !isLumoCreditFlow(context) &&
+        !isBF2025Offer(context) &&
+        !coupon &&
+        !isTrial
+    );
 };
 
 const isApplePayAvailable = ({
@@ -232,19 +241,19 @@ const isGooglePayAvailable = ({ paymentStatus, amount, currency, flow, isTrial }
     googlePayEnabledFlows.includes(flow) &&
     !isTrial;
 
-const isChargebeeIdealAvailable = ({
-    paymentStatus,
-    paymentMethods,
-    billingAddress,
-    isTrial,
-    enableIdeal,
-}: PaymentMethodsContext) => {
+const isChargebeeIdealAvailable = (context: PaymentMethodsContext) => {
+    const { paymentStatus, paymentMethods, billingAddress, isTrial, enableIdeal } = context;
     const alreadyHasIdeal = paymentMethods.some(({ Type }) => Type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL);
 
     const billingCountryIsNetherlands = billingAddress?.CountryCode === 'NL';
 
     return (
-        paymentStatus.VendorStates.Ideal && billingCountryIsNetherlands && !alreadyHasIdeal && !isTrial && !!enableIdeal
+        paymentStatus.VendorStates.Ideal &&
+        billingCountryIsNetherlands &&
+        !alreadyHasIdeal &&
+        !isTrial &&
+        !!enableIdeal &&
+        !isLumoCreditFlow(context)
     );
 };
 
@@ -284,6 +293,10 @@ export const getUsedMethods = (context: PaymentMethodsContext): AvailablePayment
     const isSavedMethodUsable = ({ Type }: SavedPaymentMethod) => {
         const config = getPaymentMethodConfig(Type);
         if (!config?.savable || !config.vendorStateKey || !paymentStatus.VendorStates[config.vendorStateKey]) {
+            return false;
+        }
+
+        if (Type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL && isLumoCreditFlow(context)) {
             return false;
         }
 

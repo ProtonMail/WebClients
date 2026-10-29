@@ -1,7 +1,8 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { buyCredit } from '@proton/payments/core/api/api';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type { SavedPaymentMethod } from '@proton/payments/core/interface';
 import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/payments/testing/api-endpoints';
 import { APPS } from '@proton/shared/lib/constants';
 import { addApiMock } from '@proton/test-api/api';
@@ -69,6 +70,22 @@ const getOfferedNewMethodTypes = async () => {
     await waitFor(() => expect(mockFacadeResults.at(-1)?.methods.loading).toBe(false));
     return mockFacadeResults.at(-1).methods.newMethods.map(({ type }: { type: string }) => type);
 };
+
+const getOfferedMethodTypes = async () => {
+    await waitFor(() => expect(mockFacadeResults.at(-1)?.methods.loading).toBe(false));
+    return mockFacadeResults.at(-1).methods.allMethods.map(({ type }: { type: string }) => type);
+};
+
+const productRefusedMethods = [
+    PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+    PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+    PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+];
+
+const enableIdealFlag = () =>
+    jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag').mockImplementation((flag) => flag === 'EnableIdeal');
+
+const bankAccount = { AccountName: 'Arthur Morgan', Country: 'NL', Last4: '1234' };
 
 it('should render the Lumo top-up copy', async () => {
     mockPaymentMethods().noSaved();
@@ -146,4 +163,79 @@ it('should not offer Bitcoin, unlike the regular credits modal', async () => {
     const lumoMethods = await getOfferedNewMethodTypes();
     expect(lumoMethods).toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
     expect(lumoMethods).not.toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN);
+});
+
+it('should not offer Cash, unlike the regular credits modal', async () => {
+    mockPaymentMethods().noSaved();
+
+    const { unmount } = render(
+        <ContextCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONMAIL} />
+    );
+    expect(await getOfferedNewMethodTypes()).toContain(PAYMENT_METHOD_TYPES.CASH);
+    unmount();
+    mockFacadeResults.length = 0;
+
+    render(<ContextLumoCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONLUMO} />);
+    const lumoMethods = await getOfferedNewMethodTypes();
+    expect(lumoMethods).toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+    expect(lumoMethods).not.toContain(PAYMENT_METHOD_TYPES.CASH);
+});
+
+describe('payment methods the BE refuses for products', () => {
+    afterEach(() => {
+        jest.restoreAllMocks();
+    });
+
+    it('should not offer a new iDEAL, unlike the regular credits modal', async () => {
+        enableIdealFlag();
+        mockPaymentMethods().noSaved();
+        const dutchPaymentStatus = { ...MOCK_PAYMENT_STATUS, CountryCode: 'NL' };
+
+        const { unmount } = render(
+            <ContextCreditsModal paymentStatus={dutchPaymentStatus} open={true} app={APPS.PROTONMAIL} />
+        );
+        expect(await getOfferedMethodTypes()).toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL);
+        unmount();
+        mockFacadeResults.length = 0;
+
+        render(<ContextLumoCreditsModal paymentStatus={dutchPaymentStatus} open={true} app={APPS.PROTONLUMO} />);
+        const lumoMethods = await getOfferedMethodTypes();
+        expect(lumoMethods).toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+        productRefusedMethods.forEach((type) => expect(lumoMethods).not.toContain(type));
+    });
+
+    it('should not offer or select a saved iDEAL mandate, unlike the regular credits modal, nor a saved SEPA one', async () => {
+        const savedMethods: SavedPaymentMethod[] = [
+            {
+                ID: 'sepa',
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+                Order: 500,
+                Autopay: Autopay.ENABLE,
+                Details: bankAccount,
+            },
+            {
+                ID: 'ideal',
+                Type: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+                Order: 501,
+                Autopay: Autopay.ENABLE,
+                Details: bankAccount,
+            },
+        ];
+        mockPaymentMethods({ PaymentMethods: savedMethods });
+
+        const { unmount } = render(
+            <ContextCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONMAIL} />
+        );
+        const regularMethods = await getOfferedMethodTypes();
+        expect(regularMethods).toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL);
+        expect(regularMethods).not.toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT);
+        unmount();
+        mockFacadeResults.length = 0;
+
+        render(<ContextLumoCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONLUMO} />);
+        const lumoMethods = await getOfferedMethodTypes();
+        expect(lumoMethods).toContain(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+        productRefusedMethods.forEach((type) => expect(lumoMethods).not.toContain(type));
+        expect(mockFacadeResults.at(-1).methods.selectedMethod?.type).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+    });
 });

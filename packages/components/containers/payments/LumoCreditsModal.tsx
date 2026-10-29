@@ -5,7 +5,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { getBuyLumoCreditConfig } from '@proton/payments/core/api/createPaymentSubscription';
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -32,7 +31,7 @@ export const LumoCreditsModal = (props: TopUpModalProps) => {
                 c('Info').t`Top up your ${LUMO_SHORT_APP_NAME} API balance. API usage is deducted from this balance.`
             }
             sentryComponent="lumo-credits-modal"
-            excludedMethods={[PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]}
+            flow="lumo-credit"
             initialCurrency={subscription?.Currency}
             onTopUp={async (_, { chargeablePaymentParameters }) => {
                 const { PaymentToken, Amount, Currency } = chargeablePaymentParameters;

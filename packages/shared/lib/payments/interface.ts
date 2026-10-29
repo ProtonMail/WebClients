@@ -31,6 +31,7 @@ export type PaymentMethodFlow =
     | 'signup-v2-upgrade'
     | 'signup-vpn'
     | 'credit'
+    | 'lumo-credit'
     | 'subscription'
     | 'add-card'
     | 'add-paypal'

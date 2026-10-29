@@ -67,6 +67,10 @@ function mapFlows(flow: TelemetryPaymentFlow): DimensionFlows {
         return 'signup';
     }
 
+    if (flow === 'lumo-credit') {
+        return 'credit';
+    }
+
     return flow;
 }
 
