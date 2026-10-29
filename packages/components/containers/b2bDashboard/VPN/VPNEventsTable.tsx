@@ -3,10 +3,9 @@ import { useState } from 'react';
 import { getUnixTime, parseISO } from 'date-fns';
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { UserIdentity } from '@proton/atoms/UserIdentity/UserIdentity';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import { SortingTableHeader } from '../../../components/table/SortingTableHeader';
@@ -83,7 +82,6 @@ const VPNEventsTable = ({
                     const { name: gatewayName, countryCode } = gateway;
                     const { location, ip, countryCode: originCountryCode } = origin;
                     const key = index;
-                    const initials = name ? getInitials(name) : email.charAt(0);
                     const formattedTime = getUnixTime(parseISO(time));
                     const EventIcon = getVPNEventIcon(eventType);
 
@@ -91,22 +89,12 @@ const VPNEventsTable = ({
                         <TableRow
                             key={key}
                             cells={[
-                                <div className="flex flex-row items-center my-2">
-                                    <Avatar className="mr-2" color="weak">
-                                        {initials}
-                                    </Avatar>
-                                    <div
-                                        className="flex flex-column cursor-pointer w-2/3"
-                                        onClick={() => onEmailOrIpClick(email)}
-                                    >
-                                        <span title={name} className="text-ellipsis max-w-full">
-                                            {name}
-                                        </span>
-                                        <span title={email} className="color-weak text-ellipsis max-w-full">
-                                            {email}
-                                        </span>
-                                    </div>
-                                </div>,
+                                <UserIdentity
+                                    className="my-2"
+                                    name={name}
+                                    email={email}
+                                    onClick={() => onEmailOrIpClick(email)}
+                                />,
                                 <div className="cursor-pointer">
                                     <div className="flex flex-row mb-1">
                                         <EventIcon
@@ -114,6 +102,7 @@ const VPNEventsTable = ({
                                             className={clsx('mr-2', 'align-top', getVPNEventColor(eventType))}
                                         />
                                         <div className="flex flex-column">
+                                            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                                             <span
                                                 className={clsx('text-semibold', getVPNEventColor(eventType))}
                                                 onClick={() => onEventClick(eventType)}
@@ -155,6 +144,7 @@ const VPNEventsTable = ({
                                         <span className="w-full text-ellipsis">
                                             {getLocalizedCountryByAbbr(location, countryOptions)}
                                         </span>
+                                        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                                         <span
                                             onClick={() => onEmailOrIpClick(ip)}
                                             className="cursor-pointer color-weak mt-1 w-full text-ellipsis"

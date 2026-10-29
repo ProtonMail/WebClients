@@ -3,9 +3,8 @@ import { useState } from 'react';
 import { getUnixTime, parseISO } from 'date-fns';
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { UserIdentity } from '@proton/atoms/UserIdentity/UserIdentity';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import { SortingTableHeader } from '../../../components/table/SortingTableHeader';
 import Table from '../../../components/table/Table';
@@ -77,25 +76,16 @@ const OrganizationEventsTable = ({
                         <TableRow
                             key={key}
                             cells={[
-                                <div className="flex flex-row items-center my-2">
-                                    <Avatar className="mr-2" color="weak">
-                                        {getInitials(userName)}
-                                    </Avatar>
-                                    <div
-                                        className="flex flex-column cursor-pointer w-2/3"
-                                        onClick={() => onEmailOrDetailsClick?.(user)}
-                                    >
-                                        <span title={userName} className="text-ellipsis max-w-full">
-                                            {userName}
-                                        </span>
-                                        <span title={user} className="color-weak text-ellipsis max-w-full mt-1">
-                                            {user}
-                                        </span>
-                                    </div>
-                                </div>,
+                                <UserIdentity
+                                    className="my-2"
+                                    name={userName}
+                                    email={user}
+                                    onClick={() => onEmailOrDetailsClick(user)}
+                                />,
                                 <div className="cursor-pointer">
                                     <div className="flex flex-row mb-1">
                                         <div className="flex flex-column">
+                                            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                                             <span className="text-semibold" onClick={() => onEventClick(eventType)}>
                                                 {eventTypeName}
                                             </span>

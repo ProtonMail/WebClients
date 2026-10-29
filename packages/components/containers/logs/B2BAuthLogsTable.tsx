@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms/Avatar/Avatar';
+import { UserIdentity } from '@proton/atoms/UserIdentity/UserIdentity';
 import type { B2BAuthLog } from '@proton/shared/lib/authlog/AuthLog';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 
 import Alert from '../../components/alert/Alert';
 import Info from '../../components/link/Info';
@@ -113,28 +112,17 @@ const B2BAuthLogsTable = ({ logs, loading, error, onEmailOrIPClick, onTimeClick,
                         index
                     ) => {
                         const key = `${index}${User.Email}${Description}${IP}${time}`;
-                        const initials = getInitials(User.Name);
 
                         return (
                             <TableRow
                                 key={key}
                                 cells={[
-                                    <div className="flex flex-row items-center my-2">
-                                        <Avatar className="mr-2 p-5 content-center" color="weak">
-                                            {initials}
-                                        </Avatar>
-                                        <div
-                                            className="cursor-pointer w-2/3"
-                                            onClick={() => onEmailOrIPClick?.(User.Email)}
-                                        >
-                                            <div title={User.Name} className="text-ellipsis">
-                                                {User.Name}
-                                            </div>
-                                            <div title={User.Email} className="color-weak text-ellipsis mt-1">
-                                                {User.Email}
-                                            </div>
-                                        </div>
-                                    </div>,
+                                    <UserIdentity
+                                        className="my-2"
+                                        name={User.Name}
+                                        email={User.Email}
+                                        onClick={onEmailOrIPClick ? () => onEmailOrIPClick(User.Email) : undefined}
+                                    />,
                                     <div className="cursor-pointer">
                                         <div className="flex flex-column my-1">
                                             <EventCell description={Description} status={Status} isB2B />
