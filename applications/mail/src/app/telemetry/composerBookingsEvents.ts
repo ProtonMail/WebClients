@@ -3,9 +3,8 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { TelemetryComposerBookingsEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getBaseTelemetryDimensions } from '@proton/shared/lib/helpers/metrics';
-import { defineEvent } from '@proton/telemetry-tracker/lib/defineEvent';
-import { allowed, topValues } from '@proton/telemetry-tracker/lib/dimensions';
-import { tracker } from '@proton/telemetry-tracker/lib/tracker';
+import { allowed, defineEvent, topValues } from '@proton/telemetry-tracker/events';
+import { tracker } from '@proton/telemetry-tracker/tracker';
 
 /** Which click surfaced the booking upsell: the composer booking action directly, or "Create a booking page" in the booking dropdown */
 export enum BookingUpsellSource {
