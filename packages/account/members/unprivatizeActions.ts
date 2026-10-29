@@ -1,7 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import {
@@ -18,14 +17,14 @@ import type { Member, MemberReadyForAutomaticUnprivatization } from '@proton/sha
 import { getIsMemberSetup } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';
 
-import { allSubscriptionsThunk } from '../allSubscriptions';
-import { type EntitlementCatalogState, entitlementCatalogThunk } from '../entitlementCatalog';
-import { type EntitlementsState, entitlementsThunk } from '../entitlements';
+import type { EntitlementCatalogState } from '../entitlementCatalog';
+import { entitlementChecksForOrgAndUserThunk } from '../entitlementCatalog/actions';
+import type { EntitlementsState } from '../entitlements';
 import type { KtState } from '../kt';
 import { getKTUserContext } from '../kt/actions';
 import { type MemberState, memberThunk } from '../member';
 import { getPendingUnprivatizationRequest, memberAcceptUnprivatization } from '../member/actions';
-import { organizationThunk } from '../organization';
+import type { OrganizationState } from '../organization';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import type { SubscriptionState } from '../subscription';
 import { userThunk } from '../user';
@@ -207,26 +206,14 @@ export const unprivatizeSelfForMsp = ({
         OrganizationKeyState &
         EntitlementsState &
         SubscriptionState &
+        OrganizationState &
         EntitlementCatalogState,
     ProtonThunkArguments,
     UnknownAction
 > => {
     return async (dispatch) => {
         try {
-            const [allEntitlements, allSubscriptions, entitlementCatalog, user, organization] = await Promise.all([
-                dispatch(entitlementsThunk()),
-                dispatch(allSubscriptionsThunk()),
-                dispatch(entitlementCatalogThunk()),
-                dispatch(userThunk()),
-                dispatch(organizationThunk()),
-            ]);
-            const entitlements = createEntitlementResolverForOrgAndUser({
-                entitlementCatalog,
-                entitlements: allEntitlements,
-                subscriptions: allSubscriptions,
-                user,
-                organization,
-            });
+            const entitlements = await dispatch(entitlementChecksForOrgAndUserThunk());
             if (!entitlements.isMspEligible) {
                 return;
             }

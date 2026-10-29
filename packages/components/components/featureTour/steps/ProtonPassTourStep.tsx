@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { organizationThunk } from '@proton/account/organization';
+import { entitlementChecksForOrgAndUserThunk } from '@proton/account/entitlementCatalog/actions';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import { PLANS } from '@proton/payments/core/constants';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isMobile } from '@proton/shared/lib/helpers/browser';
 import { PASS_ANDROID_URL, PASS_DOWNLOAD_URL, PASS_IOS_URL, PASS_WEB_APP_URL } from '@proton/shared/lib/pass/constants';
@@ -15,9 +14,9 @@ import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
 export const shouldDisplayProtonPassTourStep: ShouldDisplayTourStep = async (dispatch) => {
-    const [organization] = await Promise.all([dispatch(organizationThunk())]);
+    const entitlements = await dispatch(entitlementChecksForOrgAndUserThunk());
     return {
-        canDisplay: [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO].includes(organization.PlanName),
+        canDisplay: entitlements.hasAllCoreProductsB2C,
         preloadUrls: [logoPass, passAppBackground],
     };
 };

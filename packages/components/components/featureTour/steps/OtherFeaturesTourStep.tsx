@@ -2,12 +2,11 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { organizationThunk } from '@proton/account/organization';
+import { entitlementChecksForOrgAndUserThunk } from '@proton/account/entitlementCatalog/actions';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcEarth } from '@proton/icons/icons/IcEarth';
 import { IcPaperPlaneClock } from '@proton/icons/icons/IcPaperPlaneClock';
 import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
-import { PLANS } from '@proton/payments/core/constants';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -16,9 +15,9 @@ import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
 export const shouldDisplayOtherFeaturesTourStep: ShouldDisplayTourStep = async (dispatch) => {
-    const [organization] = await Promise.all([dispatch(organizationThunk())]);
+    const entitlements = await dispatch(entitlementChecksForOrgAndUserThunk());
     return {
-        canDisplay: [PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY].includes(organization.PlanName),
+        canDisplay: entitlements.isMailB2C,
     };
 };
 
