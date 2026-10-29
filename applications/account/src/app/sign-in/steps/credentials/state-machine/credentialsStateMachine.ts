@@ -549,7 +549,8 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                          */
                         autoSrp: {
                             initial: 'idle',
-                            exit: 'discardAuthInfo',
+                            // A wrong password is this form's error, not the username's
+                            exit: ['discardAuthInfo', 'clearErrorMessage'],
                             on: {
                                 'decision.back': { target: 'auto' },
                             },
