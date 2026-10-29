@@ -34,8 +34,9 @@ export interface RestrictedPath {
 }
 
 export interface RestrictedPattern {
-    /** gitignore-style globs, `!` re-allows, matched case-insensitively. */
+    /** gitignore-style globs, `!` re-allows, matched case-insensitively unless `caseSensitive` is set. */
     group: string[];
+    caseSensitive?: boolean;
     importNames?: string[];
     message?: string;
     allowTypeImports?: boolean;
