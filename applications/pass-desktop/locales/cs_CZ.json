@@ -867,6 +867,11 @@
         "Odinstalovat ${ PASS_APP_NAME }"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } desktopová aplikace"
+      ]
+    },
     "Button": {
       "More info": [
         "Další informace"
@@ -1027,6 +1032,9 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Ověření selhalo. Potvrďte své druhé heslo, abyste mohli pokračovat v exportu"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrické ověření zrušeno."
       ],
       "Biometric authentication failed.": [
         "Biometrické ověření selhalo."
@@ -1268,6 +1276,9 @@
       "Failed to update domain name.": [
         "Aktualizace domény selhala."
       ],
+      "Failed to update folder": [
+        "Nepodařilo se aktualizovat složku."
+      ],
       "Failed to update monitoring settings": [
         "Aktualizace nastavení sledování selhala"
       ],
@@ -1297,6 +1308,9 @@
       ],
       "File does not match expected format": [
         "Soubor neodpovídá očekávanému formátu"
+      ],
+      "Folder name does not match": [
+        "Název složky není shodný"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Import pro trezor \"${ vaultData.name }\" selhal: ${ errorMessage }"
@@ -1357,6 +1371,12 @@
       ],
       "PIN codes do not match": [
         "PIN kódy se neshodují"
+      ],
+      "Regex invalid": [
+        "Regex neplatný"
+      ],
+      "Regex unsafe": [
+        "Regex není bezpečný"
       ],
       "Request timed out": [
         "Vypršel časový limit žádosti"
@@ -1429,6 +1449,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
+      ],
+      "This invite is no longer available": [
+        "Tato pozvánka už není dostupná"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Příliš mnoho neúspěšných pokusů. Přihlaste se znovu."
@@ -2085,6 +2108,15 @@
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Najděte „OpenSSH Authentication Agent“, klikněte pravým tlačítkem a zvolte Vlastnosti."
       ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Složka \"${ payload.folder.name }\" vytvořena"
+      ],
+      "Folder deleted": [
+        "Složka smazána"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Nový název složky je \"${ payload.folder.name }\""
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Postupujte podle těchto kroků pro import vašich dat pomocí obecného CSV:"
       ],
@@ -2102,6 +2134,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Adresa přeposílání zkopírována do schránky. Na tuto adresu odešlete e-mail a ${ Email } jej obdrží."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Úplná synchronizace dat pro lepší výkon aplikace. Děkujeme za trpělivost."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Vygenerovaná hesla budou uložena po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týdne.",
@@ -2132,6 +2167,9 @@
       ],
       "If you do not plan to use the SSH agent on another paid account, remember to disable this setting before switching to that account.": [
         "Pokud neplánujete používat SSH agenta na jiném placeném účtu, nezapomeňte toto nastavení před přepnutím na daný účet deaktivovat."
+      ],
+      "If you sign your Git commits with your SSH key, also run this command:": [
+        "Pokud svoje Git commity podepisujete vlastním SSH klíčem, spusťte tento příkaz:"
       ],
       "Import the CSV file below.": [
         "CSV soubor importujte níže."
@@ -2279,12 +2317,6 @@
       ],
       "Moving items": [
         "Přesouvání položek"
-      ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Přesunutím položek do jiného trezoru se smaže jejich historie a všechny bezpečné odkazy."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Přesunutím položek do jiného trezoru se smaže jejich historie."
       ],
       "Moving items to trash": [
         "Přesouvání položek do koše"
@@ -2643,6 +2675,9 @@
       "Suggested": [
         "Doporučeno"
       ],
+      "Switch to another folder or create an item in this folder": [
+        "Přejděte do jiné složky, nebo vytvořte položku v této složce"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Přejděte do jiného trezoru nebo vytvořte položku v tomto trezoru"
       ],
@@ -2754,6 +2789,9 @@
       "To keep your personal email address hidden, you can create an alias contact that masks your address.": [
         "Chcete-li, aby vaše osobní e-mailová adresa zůstala skrytá, můžete si vytvořit alias kontaktu, který vaši adresu zamaskuje."
       ],
+      "To make Git work with ${ PASS_APP_NAME } SSH agent, Git must use Windows OpenSSH. This can be done by running this command:": [
+        "Aby Git fungoval s SSH agentem pro ${ PASS_APP_NAME }, musí Git používat Windows OpenSSH. To lze nastavit příkazem:"
+      ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
         "Chcete-li přenést data z jiného správce hesel, přejděte do správce hesel, exportujte data a poté je nahrajte do ${ PASS_APP_NAME }. Po importu dat exportovaný soubor smažte."
       ],
@@ -2846,6 +2884,9 @@
       ],
       "Verification code sent.": [
         "Ověřovací kód byl odeslán."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Prohlédnout offline položky z ${ PASS_SHORT_APP_NAME }. Povolení vyžaduje heslo."
       ],
       "Viewer": [
         "Prohlížející"
@@ -3298,6 +3339,9 @@
       "Company": [
         "Společnost"
       ],
+      "Confirm folder name": [
+        "Potvrďte název složky"
+      ],
       "Confirm vault name": [
         "Potvrdit název trezoru"
       ],
@@ -3327,6 +3371,9 @@
       ],
       "Create a custom item": [
         "Vytvořit vlastní položku"
+      ],
+      "Create a folder": [
+        "Vytvořit složku"
       ],
       "Create a hide-my-email alias": [
         "Vytvořit alias hide-my-email"
@@ -3501,6 +3548,9 @@
       ],
       "Folder": [
         "Složka"
+      ],
+      "Folders": [
+        "Složky"
       ],
       "For a one-off sharing": [
         "Pro jednorázové sdílení"
@@ -4624,6 +4674,9 @@
       "Enter username": [
         "Zadejte uživatelské jméno"
       ],
+      "Folder name": [
+        "Název složky"
+      ],
       "Full Name": [
         "Celé jméno"
       ],
@@ -4650,6 +4703,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Popište prosím problém a uveďte jakékoli chybové zprávy"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Znovu napište \"${ name }\" pro potvrzení smazání"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Hledat ${ pluralItemType } v ${ vaultName }"
@@ -4688,6 +4744,12 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Tato URL NEBUDE blokována pro automatické vyplňování"
+      ],
+      "URL doesn't match the rule": [
+        "URL neodpovídá pravidlu"
+      ],
+      "URL matches the rule": [
+        "URL splňuje pravidlo"
       ]
     },
     "Security Center - Info": {
@@ -4964,11 +5026,17 @@
       "Create contact": [
         "Vytvořit kontakt"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Vytvořit složku v \"${ vaultName }\""
+      ],
       "Create new access token": [
         "Vytvořit nový přístupový token"
       ],
       "Create PIN code": [
         "Vytvořit PIN kód"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Vytvořit podsložku v \"${ folderName }\""
       ],
       "Created": [
         "Vytvořeno"
@@ -5006,11 +5074,17 @@
       "Delete domain": [
         "Smazat doménu"
       ],
+      "Delete folder \"${ name }\"?": [
+        "Smazat složku \"${ name }\"?"
+      ],
       "Delete mailbox": [
         "Smazat e-mailovou schránku"
       ],
       "Delete this item?": [
         "Smazat tuto položku?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Smazat trezor \"${ name }\"?"
       ],
       "Did you know?": [
         "Věděli jste?"
@@ -5029,6 +5103,9 @@
       ],
       "Domain ownership verification": [
         "Ověření vlastnictví domény"
+      ],
+      "Enable offline mode": [
+        "Aktivovat offline režim"
       ],
       "Encrypted import": [
         "Šifrovaný import"
@@ -5147,6 +5224,12 @@
       "Move all items to \"${ vaultName }\"?": [
         "Přesunout všechny položky do \"${ vaultName }\"?"
       ],
+      "Move all items?": [
+        "Přesunout všechny položky?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Přesunout položku do \"${ target }\""
+      ],
       "MX record": [
         "MX záznam"
       ],
@@ -5239,6 +5322,9 @@
       ],
       "Remove secure link?": [
         "Odebrat bezpečný odkaz?"
+      ],
+      "Rename folder": [
+        "Přejmenovat složku"
       ],
       "Reset history for this item?": [
         "Resetovat historii této položky?"
@@ -5390,6 +5476,9 @@
       "Your exposed information": [
         "Vaše uniklé informace"
       ],
+      "Your folder is empty": [
+        "Vaše složka je prázdná"
+      ],
       "Your new access token": [
         "Váš nový přístupový token"
       ],
@@ -5497,6 +5586,9 @@
       "Aliases in trash will continue forwarding emails.": [
         "Aliasy v koši budou i nadále přeposílat e-maily."
       ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Dojde ke smazání všech položek v této složce a jejích podsložkách. Akci nelze vrátit."
+      ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Všechny položky v koši budou trvale smazány. Tuto akci nelze vrátit zpět."
       ],
@@ -5583,6 +5675,9 @@
       ],
       "Failed to load breaches.": [
         "Nelze načíst úniky informací."
+      ],
+      "Folder name is required": [
+        "Název Složky je povinný"
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Povolte přístup ke schránce, abyste umožnili automatické mazání zkopírovaných hesel a dat."
@@ -5751,6 +5846,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "K tomuto trezoru již nebudete mít přístup. Chcete-li do něj znovu vstoupit, budete potřebovat novou pozvánku."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Dosáhli jste nejvyššího možného zanoření složky"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Na této úrovni jste dosáhli maximálního počtu složek"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "V tomto trezoru jste dosáhli maximálního počtu složek"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Než budete moci vytvářet položky, musí vám váš správce vytvořit trezor"

@@ -274,6 +274,9 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Sobre o ${ name }"
+      ],
       "activate": [
         "ativar"
       ],
@@ -294,6 +297,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Adicionar endereço da ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Adicionar ${ name }"
       ],
       "Add a payment method": [
         "Adicionar um método de pagamento"
@@ -2566,6 +2572,9 @@
       ],
       "Your address": [
         "Seu endereço"
+      ],
+      "Your address has been claimed": [
+        "Seu endereço foi revindicado"
       ],
       "Your address has changed": [
         "Seu endereço foi alterado"
@@ -7218,9 +7227,6 @@
       "**This will disable 2-factor authentication.**": [
         "**Isso desativará a autenticação de 2 fatores.**"
       ],
-      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
-        "**Estamos mudando a página de início de sessão da ${ BRAND_NAME }.** Sua conta e sua senha continuam as mesmas."
-      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Ganhe ${ referrerRewardAmount }** créditos para cada amigo que se inscrever."
       ],
@@ -8862,9 +8868,6 @@
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Alguns servidores podem não aparecer na lista acima. Pesquise pelo nome do servidor (por exemplo, AT#62) para encontrá-los."
       ],
-      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
-        "Em breve, você inserirá seu endereço de e-mail (ou nome de usuário) e sua senha em duas etapas distintas, em vez de fazer isso em uma única página."
-      ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifique o domínio com permissão para autenticação SAML SSO."
       ],
@@ -9720,9 +9723,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Suas contas do ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
-      ],
-      "Your account and password stay the same.": [
-        "Sua conta e sua senha continuam as mesmas."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -13949,6 +13949,9 @@
       ],
       "This payment method will become your new default for all future renewals.": [
         "Este se tornará seu novo método de pagamento padrão para todas as futuras renovações."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Esse plano não suporta recursos gerenciados na sua conta."
       ],
       "This plan doesn’t support the members on your account.": [
         "Esse plano não suporta membros na sua conta."
@@ -18697,9 +18700,6 @@
       ],
       "Signed-in reset": [
         "Sessão iniciado por redefinição"
-      ],
-      "Signing in is changing": [
-        "Início de sessão está mudando"
       ],
       "Simplify email distribution": [
         "Simplifique a distribuição dos e-mails"

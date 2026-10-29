@@ -7504,6 +7504,9 @@
       "Failed to get inviter keys": [
         "Davet edilenin anahtarları alınamadı"
       ],
+      "Failed to get the organization domains": [
+        "Kuruluş etki alanları alınamadı"
+      ],
       "Failed to load OAuth": [
         "OAuth yüklenemedi"
       ],
@@ -7727,6 +7730,9 @@
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "${ providerName } hesabınızda doğrulanmış bir etki alanı bulunamadı. Etki alanınızı ${ providerName } ile doğruladıktan sonra yeniden deneyin."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı değil"
@@ -10562,6 +10568,12 @@
       "(formerly Twitter)": [
         "(eski adıyla Twitter)"
       ],
+      "**${ applicationName }** requested to sign in from:": [
+        "**${ applicationName }** şuradan oturum açmak istedi:"
+      ],
+      "**${ applicationName }** requested to sign in.": [
+        "**${ applicationName }** oturum açmak istedi."
+      ],
       "**${ appName }** is not available for your account.": [
         "**${ appName }** hesabınız ile kullanılamıyor."
       ],
@@ -10597,9 +10609,6 @@
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Bu işlem uçtan uca şifrelenmiş e-posta yönlendirmelerini kullanımdan kaldırır:** Bunları daha sonra yeniden ayarlayabilirsiniz."
-      ],
-      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
-        "**${ BRAND_NAME } oturum açma sayfasını yeniliyoruz.** Hesabınız ve parolanız aynı kalacak."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "Abone olan her arkadaşınız için **${ referrerRewardAmount } tutarında kredi kazanırsınız**."
@@ -10722,6 +10731,9 @@
       ],
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "Kuruluşunuzun e-posta etki alanını ${ BRAND_NAME } üzerine ekleyin."
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "${ BRAND_NAME } üzerine eklendi"
       ],
       "Adding ${ total } gateway server": [
         "${ total } ağ geçidi sunucusu ekleniyor",
@@ -11425,9 +11437,6 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Geçerli oturum dışındaki diğer tüm oturumları kapatmak istiyor musunuz?"
       ],
-      "Domain added": [
-        "Etki alanı eklendi"
-      ],
       "Domain ownership failed verification.": [
         "Etki alanının sahipliği doğrulanamadı."
       ],
@@ -11960,6 +11969,9 @@
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
         "Fikrinizi değiştirirseniz, istediğiniz zaman yeniden abone olabilirsiniz. Ayrılmanıza üzüldük!"
       ],
+      "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
+        "Az önce size ait bir aygıttan **${ applicationName }** uygulamasına oturum açmaya çalışmadıysanız **İptal** üzerine tıklayın."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
@@ -12112,6 +12124,9 @@
       ],
       "Invited": [
         "Davet edilmiş"
+      ],
+      "IP address: ${ IP }": [
+        "IP adresi: ${ IP }"
       ],
       "It can take up to 24 hours for these changes to propagate.": [
         "Bu değişikliklerin yayılması 24 saat kadar sürebilir."
@@ -12425,8 +12440,8 @@
       "Not a valid URL": [
         "Adres geçersiz"
       ],
-      "Not confirmed": [
-        "Onaylanmamış"
+      "Not added to ${ BRAND_NAME }": [
+        "${ BRAND_NAME } üzerine eklenmedi"
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Doğru değil mi? Listeden hizmet sağlayıcınızı seçin."
@@ -13011,9 +13026,6 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin ya da müşteri destek ekibi ile görüşün."
-      ],
-      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
-        "Yakında, e-posta adresinizi (veya kullanıcı adınızı) ve parolanızı 1 sayfa yerine 2 ayrı adımda yazacaksınız."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin."
@@ -14270,9 +14282,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
-      ],
-      "Your account and password stay the same.": [
-        "Hesabınız ve parolanız aynı kalır."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
@@ -26281,6 +26290,9 @@
       "Confirm": [
         "Onayla"
       ],
+      "Confirm sign in": [
+        "Oturum açmayı onayla"
+      ],
       "Confirm where to sign in": [
         "Nerede oturum açacağınızı onaylayın"
       ],
@@ -27601,9 +27613,6 @@
       ],
       "Signed-in reset": [
         "Oturum açmış sıfırlama"
-      ],
-      "Signing in is changing": [
-        "Oturum açma değişiyor"
       ],
       "Simplify email distribution": [
         "E-posta dağıtımını kolaylaştırın"

@@ -4447,6 +4447,10 @@
         "${ selectedFoldersCountLocalized } marcador selecionado",
         "${ selectedFoldersCountLocalized } marcadores selecionados"
       ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } selecionado",
+        "${ selection.selectedIds.length } selecionados"
+      ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "${ timeRemaining } deixado em sua avaliação. ${ addPaymentMethodLink } para evitar perder acesso. ${ learnMoreLink }"
       ],
@@ -5741,6 +5745,9 @@
       "Country": [
         "País"
       ],
+      "Created by ${ displayName }": [
+        "Criado por ${ displayName }"
+      ],
       "Delete": [
         "Excluir"
       ],
@@ -5752,6 +5759,9 @@
       ],
       "Disable this link on a specific date": [
         "Desativar este link em uma data específica"
+      ],
+      "Document": [
+        "Documento"
       ],
       "Don't ask again": [
         "Não perguntar novamente"
@@ -5864,6 +5874,9 @@
       "Last month only": [
         "Apenas no mês passado"
       ],
+      "Location ${ locationLabel }": [
+        "Localização ${ locationLabel }"
+      ],
       "Log in or sign up ": [
         "Iniciar sessão ou criar conta "
       ],
@@ -5954,6 +5967,12 @@
       "Reveal password": [
         "Mostrar senha"
       ],
+      "Select ${ document.name }": [
+        "Selecione ${ document.name }"
+      ],
+      "Select all": [
+        "Selecionar tudo"
+      ],
       "Selected": [
         "Selecionado"
       ],
@@ -5968,6 +5987,9 @@
       ],
       "Skip feedback": [
         "Pular feedback"
+      ],
+      "Spreadsheet": [
+        "Planilha"
       ],
       "Stop sharing": [
         "Parar de compartilhar"
@@ -7885,6 +7907,9 @@
       ],
       "This dedicated server is assigned to a gateway and can’t be changed.": [
         "Este servidor dedicado é atribuído a um gateway e não pode ser alterado."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Esse plano não suporta recursos gerenciados na sua conta."
       ],
       "This plan doesn’t support the members on your account.": [
         "Esse plano não suporta membros na sua conta."

@@ -39,6 +39,9 @@
       "A to Z": [
         "A a Z"
       ],
+      "About ${ name }": [
+        "Sobre o ${ name }"
+      ],
       "Activate": [
         "Ativar"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Adicionar ${ name }"
       ],
       "Add a payment method": [
         "Adicionar um método de pagamento"
@@ -1574,7 +1580,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -7751,6 +7758,9 @@
       "here": [
         "aqui"
       ],
+      "Here is my availability:": [
+        "Aqui está minha disponibilidade:"
+      ],
       "Here's what happens when you continue:": [
         "Veja o que acontece ao prosseguir:"
       ],
@@ -8099,6 +8109,9 @@
       ],
       "No action selected": [
         "Nenhuma ação selecionada"
+      ],
+      "No booking pages yet": [
+        "Nenhuma página de agendamentos ainda"
       ],
       "No change will be made to the selected emails": [
         "Nenhuma alteração será feita nos e-mails selecionados"
@@ -9965,6 +9978,9 @@
       "${ length }/${ maxLength } characters": [
         "${ length }/${ maxLength } caracteres"
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "Assistente do ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Assistente de escrita do ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -10088,6 +10104,9 @@
       ],
       "Blind Carbon Copy": [
         "Com cópia oculta"
+      ],
+      "Booking page": [
+        "Página de agendamento"
       ],
       "Bookings, billings, and orders": [
         "Reservas, cobranças e pedidos"
@@ -13553,6 +13572,9 @@
       "This payment method will become your new default for all future renewals.": [
         "Este se tornará seu novo método de pagamento padrão para todas as futuras renovações."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Esse plano não suporta recursos gerenciados na sua conta."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Esse plano não suporta membros na sua conta."
       ],
@@ -15575,6 +15597,12 @@
         "${ elementsCount } mensagem removida dos Favoritos.",
         "${ elementsCount } mensagens removidas dos Favoritos."
       ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "Assistente do ${ LUMO_SHORT_APP_NAME } desativado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "Assistente do ${ LUMO_SHORT_APP_NAME } ativado"
+      ],
       "Address copied to clipboard": [
         "O endereço foi copiado para a área de transferência"
       ],
@@ -16488,6 +16516,9 @@
       "Information exposed in breach": [
         "Informação exposta na violação"
       ],
+      "Insert a booking page": [
+        "Inserir uma página de agendamentos"
+      ],
       "Insert contacts": [
         "Inserir contatos"
       ],
@@ -16887,6 +16918,9 @@
       ],
       "Settings": [
         "Configurações"
+      ],
+      "Share your availability": [
+        "Compartilhe sua disponibilidade"
       ],
       "Share your calendar with your team": [
         "Compartilhar seu calendário com sua equipe"

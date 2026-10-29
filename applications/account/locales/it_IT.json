@@ -7263,6 +7263,9 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Impossibile ottenere sessioni attive. ${ refresh } o riprova più tardi."
       ],
+      "Failed to get the organization domains": [
+        "Impossibile recuperare i domini dell'organizzazione"
+      ],
       "Failed to load OAuth": [
         "Impossibile caricare OAuth"
       ],
@@ -7450,6 +7453,9 @@
       ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "Non è stato trovato alcun dominio verificato nel tuo account ${ providerName }. Verifica il tuo dominio con ${ providerName }, quindi riprova."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Non è un account ${ BRAND_NAME }"
@@ -10149,6 +10155,12 @@
       "(formerly Twitter)": [
         "(precedentemente Twitter)"
       ],
+      "**${ applicationName }** requested to sign in from:": [
+        "**${ applicationName }** ha richiesto di effettuare l'accesso da:"
+      ],
+      "**${ applicationName }** requested to sign in.": [
+        "**${ applicationName }** ha richiesto di effettuare l'accesso."
+      ],
       "**${ appName }** is not available for your account.": [
         "**${ appName }** non è disponibile per il tuo account."
       ],
@@ -10184,9 +10196,6 @@
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Questo disabiliterà l’inoltro delle email con crittografia end-to-end: ** potrai configurarlo di nuovo in un secondo momento."
-      ],
-      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
-        "**Stiamo modificando la pagina di accesso a ${ BRAND_NAME }.** Il tuo account e la tua password rimangono invariati."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Ottieni ${ referrerRewardAmount }** in crediti per ogni amico che si abbona."
@@ -10306,6 +10315,9 @@
       ],
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "Aggiungi il dominio email della tua organizzazione a ${ BRAND_NAME }."
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "Aggiunto a ${ BRAND_NAME }"
       ],
       "Adding ${ total } gateway server": [
         "Aggiunta di ${ total } server gateway",
@@ -11006,9 +11018,6 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Vuoi revocare tutte le sessioni diverse da quella attuale?"
       ],
-      "Domain added": [
-        "Dominio aggiunto"
-      ],
       "Domain ownership failed verification.": [
         "Verifica del possesso del dominio fallita"
       ],
@@ -11538,6 +11547,9 @@
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
         "Se cambi idea, puoi abbonarti di nuovo in qualsiasi momento. Ci dispiace vederti andare via!"
       ],
+      "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
+        "Se non hai appena provato ad accedere a **${ applicationName }** su un dispositivo di tua proprietà, fai clic su **Annulla**."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella casella di posta, controlla la cartella spam."
       ],
@@ -11690,6 +11702,9 @@
       ],
       "Invited": [
         "Invitato"
+      ],
+      "IP address: ${ IP }": [
+        "Indirizzo IP: ${ IP }"
       ],
       "It can take up to 24 hours for these changes to propagate.": [
         "L'applicazione di queste modifiche può richiedere fino a 24 ore."
@@ -11997,8 +12012,8 @@
       "Not a valid URL": [
         "URL non valido"
       ],
-      "Not confirmed": [
-        "Non confermato"
+      "Not added to ${ BRAND_NAME }": [
+        "Non aggiunto a ${ BRAND_NAME }"
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Non è stato rilevato correttamente? Scegli il tuo provider dall'elenco."
@@ -12577,9 +12592,6 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Qualcosa è andato storto. Riprova o contatta l'assistenza clienti."
-      ],
-      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
-        "A breve, dovrai inserire il tuo indirizzo e-mail (o nome utente) e la password in due passaggi distinti, anziché in un'unica pagina."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Specifica il dominio autorizzato all'autenticazione con SAML SSO."
@@ -13794,9 +13806,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "I tuoi account ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } sono collegati. Per eliminarli entrambi, accedi a ${ loginLink } ed elimina il tuo account da lì."
-      ],
-      "Your account and password stay the same.": [
-        "Il tuo account e la tua password rimangono gli stessi."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
@@ -25722,6 +25731,9 @@
       "Confirm": [
         "Conferma"
       ],
+      "Confirm sign in": [
+        "Conferma l'accesso"
+      ],
       "Connect ${ name }": [
         "Connetti ${ name }"
       ],
@@ -27030,9 +27042,6 @@
       ],
       "Signed-in reset": [
         "Reimpostazione da connesso"
-      ],
-      "Signing in is changing": [
-        "Il processo di accesso sta cambiando"
       ],
       "Simplify email distribution": [
         "Semplifica la distribuzione di email"

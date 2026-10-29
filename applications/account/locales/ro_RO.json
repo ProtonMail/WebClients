@@ -7552,6 +7552,9 @@
       "Failed to get inviter keys": [
         "Eșuare obținere cheie a celui care a invitat."
       ],
+      "Failed to get the organization domains": [
+        "Nu s-au putut obține domeniile organizației."
+      ],
       "Failed to load OAuth": [
         "Încărcarea OAuth a eșuat."
       ],
@@ -7777,6 +7780,9 @@
       ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "Nu a fost găsit niciun domeniu verificat în contul ${ providerName }. Verificați-vă domeniul cu ${ providerName }, apoi reîncercați."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Nu este un cont ${ BRAND_NAME }."
@@ -10674,6 +10680,12 @@
       "(formerly Twitter)": [
         "(fost Twitter)"
       ],
+      "**${ applicationName }** requested to sign in from:": [
+        "**${ applicationName }** a solicitat autentificarea de la:"
+      ],
+      "**${ applicationName }** requested to sign in.": [
+        "**${ applicationName }** a solicitat autentificarea."
+      ],
       "**${ appName }** is not available for your account.": [
         "**${ appName }** nu este disponibilă pentru acest cont."
       ],
@@ -10709,9 +10721,6 @@
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Aceasta va dezactiva transferurile mesajelor criptate bilateral:** le veți putea configura din nou mai târziu."
-      ],
-      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
-        "**Modificăm pagina de conectare ${ BRAND_NAME }.** Contul și parola vă rămân neschimbate."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Primiți ${ referrerRewardAmount }** în credite pentru fiecare persoană care se abonează."
@@ -10836,6 +10845,9 @@
       ],
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "Adăugați domeniul de e-mail al organizației proprii la ${ BRAND_NAME }."
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "Adăugat la ${ BRAND_NAME }"
       ],
       "Adding ${ total } gateway server": [
         "Se adaugă porți de acces servere: ${ total }",
@@ -11551,9 +11563,6 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Doriți să anulați toate celelalte sesiuni în afară de cea curentă?"
       ],
-      "Domain added": [
-        "Domeniu adăugat"
-      ],
       "Domain ownership failed verification.": [
         "Verificarea deținerii domeniului a eșuat."
       ],
@@ -12087,6 +12096,9 @@
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
         "Dacă vă răzgândiți, vă puteți reabona oricând. Ne pare rău că plecați!"
       ],
+      "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
+        "Dacă nu ați încercat chiar acum să vă conectați la **${ applicationName }** de pe un dispozitiv care vă aparține, apăsați pe **Anulare**."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
@@ -12242,6 +12254,9 @@
       ],
       "Invited": [
         "Invitat"
+      ],
+      "IP address: ${ IP }": [
+        "Adresa IP: ${ IP }"
       ],
       "It can take up to 24 hours for these changes to propagate.": [
         "Propagarea acestor modificări poate dura până la 24 de ore."
@@ -12555,8 +12570,8 @@
       "Not a valid URL": [
         "URL nevalid"
       ],
-      "Not confirmed": [
-        "Neconfirmat"
+      "Not added to ${ BRAND_NAME }": [
+        "Neadăugat la ${ BRAND_NAME }"
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Nu a fost detectat corect? Alegeți furnizorul din listă."
@@ -13146,9 +13161,6 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "A apărut o problemă. Reîncercați sau contactați asistența pentru clienți."
-      ],
-      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
-        "În curând, veți introduce adresa de e-mail (sau numele de utilizator) și parola în doi pași separați, în loc să le introduceți pe o singură pagină."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Specificați domeniul căruia i se permite autentificarea cu SAML SSO."
@@ -14417,9 +14429,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Conturile de ${ VPN_APP_NAME } și ${ MAIL_APP_NAME } sunt conectate. Pentru a le șterge pe ambele, conectați-vă la ${ loginLink } și ștergeți contul de acolo."
-      ],
-      "Your account and password stay the same.": [
-        "Contul și parola vă rămân neschimbate."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
@@ -16459,7 +16468,7 @@
         "Promoții - Mesaje cu oferte, promoții și de marketing"
       ],
       "Prompt to trust keys": [
-        "Solicitare chei de încredere"
+        "Solicitare aprobare chei"
       ],
       "Proration": [
         "Taxe zilnice"
@@ -18703,7 +18712,7 @@
         "Acordul de prelucrare a datelor GDPR"
       ],
       "Generate emails with a prompt": [
-        "Generați mesaje cu o solicitare"
+        "Generați mesaje cu o comandă"
       ],
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
@@ -26605,6 +26614,9 @@
       "Confirm": [
         "Confirmare"
       ],
+      "Confirm sign in": [
+        "Confirmare autentificare"
+      ],
       "Confirm where to sign in": [
         "Confirmați unde să vă conectați"
       ],
@@ -27929,9 +27941,6 @@
       ],
       "Signed-in reset": [
         "Resetare cu sesiune activă"
-      ],
-      "Signing in is changing": [
-        "Modul de conectare se schimbă"
       ],
       "Simplify email distribution": [
         "Simplificați distribuirea mesajelor"

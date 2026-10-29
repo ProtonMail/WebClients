@@ -7504,6 +7504,9 @@
       "Failed to get inviter keys": [
         "Schlüssel des Einladers konnten nicht abgerufen werden"
       ],
+      "Failed to get the organization domains": [
+        "Die Domains der Organisation konnten nicht abgerufen werden"
+      ],
       "Failed to load OAuth": [
         "OAuth konnte nicht geladen werden"
       ],
@@ -7727,6 +7730,9 @@
       ],
       "No valid address found": [
         "Keine gültige E-Mail-Adresse gefunden"
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "In deinem ${ providerName }-Konto ist keine verifizierte Domain vorhanden. Verifiziere deine Domain bei ${ providerName } und versuche es anschließend erneut."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Kein ${ BRAND_NAME }-Konto"
@@ -10562,6 +10568,12 @@
       "(formerly Twitter)": [
         "(vormals Twitter)"
       ],
+      "**${ applicationName }** requested to sign in from:": [
+        "**${ applicationName }** fordert zur Anmeldung von folgendem Ort aus auf:"
+      ],
+      "**${ applicationName }** requested to sign in.": [
+        "**${ applicationName }** forderte zur Anmeldung auf."
+      ],
       "**${ appName }** is not available for your account.": [
         "**${ appName }** ist für dein Konto nicht verfügbar"
       ],
@@ -10597,9 +10609,6 @@
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Dies deaktiviert Ende-zu-Ende-verschlüsselte E-Mail-Weiterleitungen:** du kannst sie später wieder einrichten."
-      ],
-      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
-        "**Die Anmeldeseite von ${ BRAND_NAME } wird derzeit überarbeitet.** Dein Konto und dein Passwort bleiben unverändert."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Du erhältst ${ referrerRewardAmount }** Guthaben für jeden Freund, der abonniert."
@@ -10722,6 +10731,9 @@
       ],
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "E-Mail-Domain deiner Organisation zu ${ BRAND_NAME } hinzufügen."
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "Zu ${ BRAND_NAME } hinzugefügt"
       ],
       "Adding ${ total } gateway server": [
         "${ total } Gateway-Server wird hinzugefügt",
@@ -11425,9 +11437,6 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Möchtest du alle anderen (außer der aktuellen) Sitzungen widerrufen?"
       ],
-      "Domain added": [
-        "Domain hinzugefügt"
-      ],
       "Domain ownership failed verification.": [
         "Die Überprüfung der Domaininhaberschaft schlug fehl."
       ],
@@ -11960,6 +11969,9 @@
       "If you change your mind, you can subscribe again at any time. Sorry to see you go!": [
         "Wenn du deine Meinung änderst, kannst du jederzeit wieder abonnieren. Schade, dass du gehst."
       ],
+      "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
+        "Falls du nicht gerade versucht hast, dich auf einem Gerät, welches dir gehört, bei **${ applicationName }** anzumelden, klicke auf **Abbrechen**."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
@@ -12112,6 +12124,9 @@
       ],
       "Invited": [
         "Eingeladen"
+      ],
+      "IP address: ${ IP }": [
+        "IP-Adresse: ${ IP }"
       ],
       "It can take up to 24 hours for these changes to propagate.": [
         "Es kann bis zu 24 Stunden dauern, bis diese Änderungen wirksam werden."
@@ -12425,8 +12440,8 @@
       "Not a valid URL": [
         "Ungültige URL"
       ],
-      "Not confirmed": [
-        "Nicht bestätigt"
+      "Not added to ${ BRAND_NAME }": [
+        "Nicht zu ${ BRAND_NAME } hinzugefügt"
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Nicht richtig erkannt? Wähle deinen Anbieter aus der Liste aus."
@@ -13011,9 +13026,6 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Etwas ist schiefgelaufen. Bitte versuche es erneut oder kontaktiere den Kundensupport."
-      ],
-      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
-        "In Kürze werden deine E-Mail-Adresse (oder dein Benutzername) und dein Passwort in zwei separaten Schritten statt auf einer einzigen Seite eingegeben."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
@@ -14270,9 +14282,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Deine ${ VPN_APP_NAME } und ${ MAIL_APP_NAME } Konten sind miteinander verknüpft. Um beide zu löschen, melde dich bitte unter ${ loginLink } an und lösche dort dein Konto."
-      ],
-      "Your account and password stay the same.": [
-        "Dein Konto und dein Passwort bleiben unverändert."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
@@ -26281,6 +26290,9 @@
       "Confirm": [
         "Bestätigen"
       ],
+      "Confirm sign in": [
+        "Anmeldung bestätigen"
+      ],
       "Confirm where to sign in": [
         "Bestätige, wo du dich anmelden möchtest"
       ],
@@ -27601,9 +27613,6 @@
       ],
       "Signed-in reset": [
         "Zurücksetzen im angemeldeten Zustand"
-      ],
-      "Signing in is changing": [
-        "Der Anmeldevorgang wurde geändert"
       ],
       "Simplify email distribution": [
         "E-Mail-Verteilung vereinfachen"
