@@ -1,10 +1,11 @@
-import { addDays, format } from 'date-fns';
+import { addDays } from 'date-fns';
 import { formatInTimeZone, utcToZonedTime } from 'date-fns-tz';
 import { c } from 'ttag';
 
-import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
-import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
+import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
+
+import { formatDateForSetting } from '../../utils/dateFormat';
 
 export interface MeetingsByDay {
     [date: string]: Meeting[];
@@ -68,34 +69,8 @@ const getRelativeDate = (dateString: string, absoluteDate: string): string | nul
     return null;
 };
 
-const formatAbsoluteDate = (
-    date: Date,
-    year: number,
-    isCurrentYear: boolean,
-    dateFormat: SETTINGS_DATE_FORMAT
-): string => {
-    if (dateFormat === SETTINGS_DATE_FORMAT.DDMMYYYY) {
-        // Format the date as "19 January" or "19 January, 2025"
-        return format(date, `d MMMM${isCurrentYear ? '' : `, ${year}`}`, { locale: dateLocale });
-    }
-
-    if (dateFormat === SETTINGS_DATE_FORMAT.MMDDYYYY) {
-        // Format the date as "January 19" or "January 19, 2025"
-        return format(date, `MMMM d${isCurrentYear ? '' : `, ${year}`}`, { locale: dateLocale });
-    }
-
-    if (dateFormat === SETTINGS_DATE_FORMAT.YYYYMMDD) {
-        // Format the date as "January 19" or "2025, January 19"
-        return format(date, `${isCurrentYear ? '' : `${year}, `}MMMM d`, { locale: dateLocale });
-    }
-
-    // Format according to locale
-    return new Intl.DateTimeFormat(dateLocale.code, {
-        month: 'long',
-        day: 'numeric',
-        ...(isCurrentYear ? {} : { year: 'numeric' }),
-    }).format(date);
-};
+const formatAbsoluteDate = (date: Date, isCurrentYear: boolean, dateFormat: SETTINGS_DATE_FORMAT): string =>
+    formatDateForSetting(date, dateFormat, { month: 'long', withYear: !isCurrentYear });
 
 export const formatMeetingDate = (
     dateString: string,
@@ -110,7 +85,7 @@ export const formatMeetingDate = (
     const currentYear = zonedNow.getFullYear();
     const isCurrentYear = year === currentYear;
 
-    const absoluteDate = formatAbsoluteDate(date, year, isCurrentYear, dateFormat);
+    const absoluteDate = formatAbsoluteDate(date, isCurrentYear, dateFormat);
 
     if (!showRelativeDate) {
         return absoluteDate;
