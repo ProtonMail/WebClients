@@ -2583,16 +2583,12 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
-      ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Mutarea articolelor într-un alt seif le va șterge istoricul și toate legăturile web securizate."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Mutarea articolelor în alt seif le va șterge istoricul."
       ],
       "Moving items to trash": [
         "Se mută articolele în gunoi."

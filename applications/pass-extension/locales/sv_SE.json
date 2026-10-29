@@ -2472,16 +2472,11 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
-      ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Att flytta objekt till annat valv kommer att radera dess historik och alla säkra länkar."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Att flytta objekt till annat valv kommer radera dess historik."
       ],
       "Moving items to trash": [
         "Flyttar objekt till papperskorg"
