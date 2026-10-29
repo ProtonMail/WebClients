@@ -2037,7 +2037,7 @@
     },
     "Assistant feedback": {
       "By submitting this feedback, the prompt and your comments will be visible to ${ BRAND_NAME }'s moderation team.": [
-        "Prin trimiterea acestui feedback, echipa de moderare responsabilă de ${ BRAND_NAME } va vedea și solicitarea și comentariile pe care le-ați introdus."
+        "Prin trimiterea acestui feedback, echipa de moderare responsabilă de ${ BRAND_NAME } va vedea și comanda și comentariile pe care le-ați introdus."
       ]
     },
     "Assistant option": {
@@ -4492,6 +4492,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Permiteți-le oamenilor să planifice o întâlnire cu dvs. direct din e-mailuri, fără schimburi repetate de mesaje."
       ]
     },
     "description": {
@@ -5586,7 +5589,7 @@
         "Fișierul încărcat nu corespunde cu originalul. Reîncercați."
       ],
       "The writing assistant cannot proceed with your request. Please try a different prompt.": [
-        "Asistentul de scriere nu poate continua cu solicitarea efectuată. Mai încercați o altă solicitare."
+        "Asistentul de scriere nu poate continua cu comanda solicitată. Reîncercați o altă comandă."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Aveți prea multe foldere în contul extern. Modificați opțiunile de importare pentru a șterge unele foldere."
@@ -8315,7 +8318,7 @@
         "Includere Nedorite/Gunoi."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
-        "Includeți solicitarea dvs. și răspunsul pentru a ne ajuta să îmbunătățim acuratețea."
+        "Includeți comanda și răspunsul pentru a ne ajuta să îmbunătățim acuratețea."
       ],
       "Included": [
         "Inclus"
@@ -10192,6 +10195,12 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Ați atins numărul maxim de pagini de rezervare disponibile în planul actual."
+      ],
+      "Here is my availability:": [
+        "Iată disponibilitatea mea:"
+      ],
+      "No booking pages yet": [
+        "Încă nu există pagini de rezervări"
       ]
     },
     "info": {
@@ -11560,6 +11569,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } assistant": [
         "Asistentul ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Adăugați o pagină de rezervări în e-mailuri și permiteți-le oamenilor să aleagă un moment convenabil."
+      ],
+      "Booking page": [
+        "Pagină de rezervare"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12678,7 +12693,7 @@
         "Acordul de prelucrare a datelor GDPR"
       ],
       "Generate emails with a prompt": [
-        "Generați mesaje cu o solicitare"
+        "Generați mesaje cu o comandă"
       ],
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
@@ -17887,6 +17902,12 @@
       ],
       "Cannot create more Booking pages": [
         "Nu se mai pot crea pagini de rezervare"
+      ],
+      "Insert a booking page": [
+        "Inserare pagină de rezervări"
+      ],
+      "Share your availability": [
+        "Partajați-vă disponibilitatea"
       ]
     },
     "Title header for keys table": {

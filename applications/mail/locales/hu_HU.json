@@ -1666,6 +1666,15 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "About ${ name }": [
+        "A ${ name } névjegye"
+      ],
+      "Add ${ name }": [
+        "${ name } hozzáadása"
+      ],
+      "Learn how this works": [
+        "Hogyan működik?"
       ]
     },
     "action": {
@@ -1754,6 +1763,12 @@
       ],
       "Writing assistant": [
         "Írási segéd"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licenc"
+      ],
+      "Writing assistant seats": [
+        "Írási segéd licencek"
       ]
     },
     "Alert": {
@@ -4759,7 +4774,7 @@
         "újra aktiválhatja az előző kulcsot"
       ],
       "re-importing": [
-        "újraimportálás"
+        "újraimportálni"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Kettőzött címzett eltávolítása: ${ recipents }",
@@ -4986,6 +5001,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "A legkisebb lehetséges adomány ${ price }"
+      ],
+      "Your message cannot be decrypted. If you deleted any of your address keys, try ${ reimportKeyLink } them. ${ learnMoreLink }": [
+        "Az üzenet visszafejtése nem sikerült. Amennyiben törölte valamelyik címéhez tartozó egyik kulcsot, próbálja meg ${ reimportKeyLink }. ${ learnMoreLink }"
       ]
     },
     "error": {
@@ -5427,6 +5448,12 @@
       ],
       "Filter and sort emails": [
         "E-mailek szűrése és rendezése"
+      ],
+      "Has attachments": [
+        "Mellékletet tartalmaz"
+      ],
+      "Reset": [
+        "Visszaállítás"
       ]
     },
     "Filter Actions": {
@@ -5779,6 +5806,9 @@
       ],
       "Username": [
         "Felhasználónév"
+      ],
+      "Set up ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } írási segéd beállítása"
       ]
     },
     "Hint": {
@@ -8553,6 +8583,42 @@
       ],
       "Rename this folder": [
         "Mappa átnevezése"
+      ],
+      "Change your theme": [
+        "Téma módosítása"
+      ],
+      "Create a filter": [
+        "Szűrő létrehozása"
+      ],
+      "Create a folder": [
+        "Mappa létrehozása"
+      ],
+      "Edit a contact": [
+        "Névjegy szerkesztése"
+      ],
+      "No contacts found": [
+        "Nem található névjegy"
+      ],
+      "No payment is required.": [
+        "Nem szükséges fizetés."
+      ],
+      "Revise the ${ draft }": [
+        "${ draft } áttekintése"
+      ],
+      "Rewrote and readdressed": [
+        "Átírva és átcímezve"
+      ],
+      "Set my out of office": [
+        "Távolléti üzenet beállítása"
+      ],
+      "Set signature": [
+        "Aláírás beállítása"
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Átmenetileg nem érhető el, a túlzott érdeklődés miatt. Próbálja meg később."
+      ],
+      "Tidy up my inbox": [
+        "A beérkezett üzenetek rendbe rakása"
       ]
     },
     "info": {
@@ -9627,6 +9693,15 @@
       ],
       "Away message": [
         "Távolléti üzenet"
+      ],
+      "Compact": [
+        "Tömör"
+      ],
+      "Last 6 months only": [
+        "Csak az utolsó 6 hónap"
+      ],
+      "Single messages": [
+        "Külön üzenetek"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9711,6 +9786,9 @@
       ],
       "You don't have any newsletters or mailing list subscriptions.": [
         "Nincsenek hírlevelei vagy levelezőlista feliratkozásai."
+      ],
+      "Loading your newsletter subscriptions...": [
+        "Hírlevél feliratkozások betöltése..."
       ]
     },
     "Landmarks": {
@@ -11334,6 +11412,9 @@
       ],
       "Maybe later": [
         "Talán később"
+      ],
+      "Protect your accounts": [
+        "Védje meg a fiókját"
       ]
     },
     "Onboarding modal": {
@@ -11782,6 +11863,24 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Az Ön előfizetése jelenleg kedvezménnyel rendelkezik. Az új promócióra való áttérés esetén, a meglévő kedvezmény a továbbiakban nem kerül alkalmazásra."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "A Proton Meet licencek száma meg kell egyezzen a tagok számával."
+      ],
+      "Tax ${ rate }%": [
+        "${ rate }% adó"
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "A kiválasztott csomag nem biztosít elegendő tárhelyet a fiókjához."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "A előfizetés létrehozása jelenleg nem fejezhető be. Próbálja meg később."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "A próbaidős csomagokban nem érhető el ${ LUMO_SHORT_APP_NAME } licenc."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "A pénznem átállítva Euróra (€), mert az ${ IDEAL_WERO_BRAND_NAME } csak ebben teszi lehetővé a fizetést."
       ]
     },
     "Payments.Error": {
@@ -12056,6 +12155,9 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Ask anything…": [
+        "Kérdezzen bármit…"
       ]
     },
     "Placeholder for contact group name": {
@@ -12271,6 +12373,9 @@
       ],
       "No unread messages found": [
         "Nincs olvasatlan üzenet"
+      ],
+      "An action is being processed": [
+        "A művelet feldolgozás alatt"
       ]
     },
     "Section": {
@@ -13381,6 +13486,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } és ${ LUMO_APP_NAME } prémium lehetőségekkel"
       ]
     },
     "subscription reminder": {
@@ -14995,6 +15103,12 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Choose a provider": [
+        "Szolgáltató kiválasztása"
+      ],
+      "Reverse charge not supported": [
+        "A fordított adózás nem támogatott"
       ]
     },
     "Today icon tooltip in mini calendar": {
