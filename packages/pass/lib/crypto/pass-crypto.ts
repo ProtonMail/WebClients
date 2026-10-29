@@ -508,6 +508,17 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             return processes.updateFolder({ content, folderKey });
         },
 
+        async moveFolder({ shareId, folderId, targetParentFolderId }) {
+            assertHydrated(context);
+            const folderKey = worker.getFolderKey({ shareId, folderId });
+
+            const targetKey = targetParentFolderId
+                ? worker.getFolderKey({ shareId, folderId: targetParentFolderId })
+                : getShareManager(shareId).getVaultShareKey(folderKey.rotation);
+
+            return processes.moveFolder({ folderKey, targetKey, targetParentFolderId });
+        },
+
         async moveItem({ targetShareId, itemId, shareId, encryptedItemKeys, folderId, targetFolderId }) {
             assertHydrated(context);
 

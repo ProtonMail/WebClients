@@ -7,12 +7,14 @@ import { FolderCreateModal } from './FolderCreateModal';
 import { FolderDeleteConfirm } from './FolderDeleteConfirm';
 import { FolderEditModal } from './FolderEditModal';
 import { FolderMoveItemsConfirm } from './FolderMoveItemsConfirm';
+import { FolderMoveModal } from './FolderMoveModal';
 
 type FolderActionsContextValue = {
     /** Open folder creation modal for the given vault, optionally nesting
      * the new folder under `parentFolderId` (defaults to the vault root). */
     create: (shareId: string, parentFolderId?: MaybeNull<string>) => void;
     edit: (shareId: string, folderId: string, folderName: string) => void;
+    move: (shareId: string, folderId: string, folderName: string) => void;
     delete: (shareId: string, folderId: string, folderName: string) => void;
     moveItems: (shareId: string, folderId: string, folderName: string) => void;
 };
@@ -20,6 +22,7 @@ type FolderActionsContextValue = {
 type FolderActionState =
     | { view: 'create'; shareId: string; parentFolderId: MaybeNull<string> }
     | { view: 'edit'; shareId: string; folderId: string; folderName: string }
+    | { view: 'move'; shareId: string; folderId: string; folderName: string }
     | { view: 'delete'; shareId: string; folderId: string; folderName: string }
     | { view: 'move-items'; shareId: string; folderId: string; folderName: string };
 
@@ -34,6 +37,7 @@ export const FolderActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         () => ({
             create: (shareId, parentFolderId = null) => setState({ view: 'create', shareId, parentFolderId }),
             edit: (shareId, folderId, folderName) => setState({ view: 'edit', shareId, folderId, folderName }),
+            move: (shareId, folderId, folderName) => setState({ view: 'move', shareId, folderId, folderName }),
             delete: (shareId, folderId, folderName) => setState({ view: 'delete', shareId, folderId, folderName }),
             moveItems: (shareId, folderId, folderName) =>
                 setState({ view: 'move-items', shareId, folderId, folderName }),
@@ -59,6 +63,15 @@ export const FolderActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     case 'edit':
                         return (
                             <FolderEditModal
+                                shareId={state.shareId}
+                                folderId={state.folderId}
+                                folderName={state.folderName}
+                                onClose={reset}
+                            />
+                        );
+                    case 'move':
+                        return (
+                            <FolderMoveModal
                                 shareId={state.shareId}
                                 folderId={state.folderId}
                                 folderName={state.folderName}

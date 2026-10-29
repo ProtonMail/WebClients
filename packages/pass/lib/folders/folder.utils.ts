@@ -97,3 +97,40 @@ export const getFolderLimitReason = (
     if (parentDepth >= maxDepth) return 'depth';
     return null;
 };
+
+/** Number of folder levels below folderId, 0 for a folder without sub-folders. */
+export const getFolderSubtreeHeight = (shareFolders: Maybe<FoldersById>, folderId: FolderId): number => {
+    const children = getFolderChildren(shareFolders).get(folderId) ?? [];
+    let height = 0;
+
+    for (const child of children) {
+        const childHeight = 1 + getFolderSubtreeHeight(shareFolders, child.folderId);
+        height = Math.max(height, childHeight);
+    }
+
+    return height;
+};
+
+export type FolderMoveBlockReason = 'current' | 'descendant' | Exclude<FolderLimitReason, 'count'>;
+
+/** Truthy if the move should be blocked, null if the move is allowed. */
+export const getFolderMoveBlockReason = (
+    shareFolders: Maybe<FoldersById>,
+    folderId: FolderId,
+    targetParentFolderId: MaybeNull<FolderId>,
+    { maxChildren, maxDepth }: FolderLimits
+): MaybeNull<FolderMoveBlockReason> => {
+    const folder = shareFolders?.[folderId];
+    if (!folder || folder.parentFolderId === targetParentFolderId) return 'current';
+    const movesIntoItself =
+        targetParentFolderId && getFolderAndDescendantIds(shareFolders, folderId).has(targetParentFolderId);
+    if (movesIntoItself) return 'descendant';
+
+    const siblings = getFolderChildren(shareFolders).get(targetParentFolderId)?.length ?? 0;
+    if (siblings >= maxChildren) return 'children';
+
+    const targetDepth = resolveFolderPath(shareFolders, targetParentFolderId).length;
+    if (targetDepth + 1 + getFolderSubtreeHeight(shareFolders, folderId) > maxDepth) return 'depth';
+
+    return null;
+};

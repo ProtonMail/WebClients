@@ -8,7 +8,7 @@ import { objectDelete } from '../../utils/object/delete';
 import { fullMerge } from '../../utils/object/merge';
 import { shareLeaveSuccess } from '../actions/creators/access';
 import { matchSyncAction } from '../actions/creators/client';
-import { folderCreate, folderDelete, folderEdit, foldersDeletedEvent, foldersUpdated } from '../actions/creators/folders';
+import { folderCreate, folderDelete, folderEdit, folderMove, foldersDeletedEvent, foldersUpdated } from '../actions/creators/folders';
 import { inviteAccept } from '../actions/creators/invite';
 import { shareCreated, shareDeleted, sharesEventNew } from '../actions/creators/share';
 import { vaultDeleteSuccess } from '../actions/creators/vault';
@@ -47,7 +47,7 @@ const foldersReducer: Reducer<FoldersByShareId> = (state = {}, action: Action) =
         return fullMerge(state, { [share.shareId]: intoFoldersById(folders) });
     }
 
-    if (folderEdit.success.match(action)) {
+    if (or(folderEdit.success.match, folderMove.success.match)(action)) {
         const { shareId, folder } = action.payload;
         return fullMerge(state, { [shareId]: { [folder.folderId]: folder } });
     }
