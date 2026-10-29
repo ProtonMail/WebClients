@@ -9,7 +9,9 @@ import { selectShareFolders } from '../../../store/selectors/folders';
 import type { FolderDataResponse, SyncEventShareFolderOutput } from '../../../types/api/pass';
 import type { ShareId } from '../../../types/crypto/pass-types';
 import type { FolderData } from '../../../types/data/folders';
+import type { Maybe } from '../../../types/utils';
 import { prop } from '../../../utils/fp/lens';
+import { truthy } from '../../../utils/fp/predicates';
 import { PassCrypto } from '../../crypto';
 import { getFolderAndDescendantIds } from '../../folders/folder.utils';
 import { fetchFolder, parseFoldersInOrder } from '../../folders/folders.requests';
@@ -21,9 +23,10 @@ type FetchedFolder = { shareId: ShareId; folder: FolderDataResponse };
  * (including create/rename/move), dispatching `foldersUpdated` per share.
  * Every folder is fetched before any is decrypted: a folder key is encrypted with
  * its parent folder key, and a parent/child pair can land in the same event, so
- * `parseFoldersInOrder` resolves parents first. Folders that still fail to decrypt
- * are omitted from the dispatch without blocking the parent event cursor. Any
- * failed fetch flips the result to `false` so the batch is retried on the next poll. */
+ * `parseFoldersInOrder` resolves parents first. Folders that belong to a removed
+ * share or still fail to decrypt are omitted from the dispatch without blocking
+ * the parent event cursor. Any other failed fetch flips the result to `false` so
+ * the batch is retried on the next poll. */
 export function* processFoldersUpdated(updated: SyncEventShareFolderOutput[]): EventProcessor {
     if (updated.length === 0) return true;
     let processed = true;
@@ -31,21 +34,21 @@ export function* processFoldersUpdated(updated: SyncEventShareFolderOutput[]): E
     const fetched: FetchedFolder[] = [];
 
     for (const batch of chunk(updated, MIN_MAX_BATCH_PER_REQUEST)) {
-        const results: PromiseSettledResult<FetchedFolder>[] = yield call(() =>
+        const results: PromiseSettledResult<Maybe<FetchedFolder>>[] = yield call(() =>
             Promise.allSettled(
-                batch.map(async ({ ShareID, FolderID }) => ({
-                    shareId: ShareID,
-                    folder: await fetchFolder(ShareID, FolderID),
-                }))
+                batch.map(async ({ ShareID, FolderID }) => {
+                    const folder = await fetchFolder(ShareID, FolderID);
+                    return folder ? { shareId: ShareID, folder } : undefined;
+                })
             )
         );
 
         const fulfilled = results
-            .filter((res): res is PromiseFulfilledResult<FetchedFolder> => res.status === 'fulfilled')
+            .filter((res): res is PromiseFulfilledResult<Maybe<FetchedFolder>> => res.status === 'fulfilled')
             .map(prop('value'));
 
         if (fulfilled.length < batch.length) processed = false;
-        fetched.push(...fulfilled);
+        fetched.push(...fulfilled.filter(truthy));
     }
 
     const byShareId = groupBy(fetched, prop('shareId'));
