@@ -1025,6 +1025,30 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Tu prueba gratuita de la aplicación de escritorio finaliza en ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "Acerca de ${ name }"
+      ],
+      "Add ${ name }": [
+        "Añadir ${ name }"
+      ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "Preview logs": [
+        "Vista previa de los registros"
+      ],
+      "Special Offer": [
+        "Oferta especial"
+      ],
+      "Switch to ${ planName }": [
+        "Cambiar a ${ planName }"
       ]
     },
     "action": {
@@ -1144,6 +1168,16 @@
       ],
       "Writing assistant seats": [
         "Licencias del asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuario)",
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "Managed Service Provider": [
+        "Managed Service Provider"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Las organizaciones con el complemento Managed Service Provider pueden crear y gestionar organizaciones subsidiarias."
       ]
     },
     "Alarm notification": {
@@ -1206,6 +1240,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ BRAND_NAME } Scribe te ayude a escribir, responder y revisar tus correos electrónicos."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ LUMO_SHORT_APP_NAME } te ayude a escribir, responder y revisar tus correos electrónicos."
       ]
     },
     "Attached ics file error": {
@@ -1263,6 +1300,9 @@
       ],
       "You have reached the trial limit.": [
         "Has alcanzado el límite del periodo de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias del asistente de escritura ${ LUMO_SHORT_APP_NAME } durante el periodo de prueba."
       ]
     },
     "b2b_trials_Action": {
@@ -1824,6 +1864,19 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Amount due": [
+        "Importe a pagar"
+      ],
+      "Amount due after trial": [
+        "Importe a pagar tras la prueba"
+      ],
+      "Amount due now": [
+        "Importe a pagar ahora"
+      ],
+      "Total for ${ cycle } month": [
+        "Total de ${ cycle } mes",
+        "Total de ${ cycle } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -4057,6 +4110,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Tu conexión de Zoom ha expirado. Vuelve a conectarte para continuar."
+      ],
+      "A contact with this email address already exists": [
+        "Ya existe un contacto con esta dirección de correo electrónico"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Has alcanzado el número máximo de direcciones conectadas"
       ]
     },
     "error": {
@@ -4423,6 +4482,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+      ],
+      "You're invited to link your ${ BRAND_NAME } Account to this family group and enjoy all its premium features.": [
+        "Has recibido una invitación para vincular tu cuenta de ${ BRAND_NAME } a este grupo familiar y disfrutar de todas sus funciones premium."
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -4475,6 +4537,12 @@
       ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Still waiting?": [
+        "¿Sigues esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toca tu llave de seguridad para continuar."
       ]
     },
     "fido2: Label": {
@@ -6449,6 +6517,72 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Has alcanzado el límite de franjas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ IDEAL_WERO_BRAND_NAME } mark": [
+        "Marca de ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } incluye el asistente de escritura"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
+        "Te quedan ${ timeRemaining } de prueba. ${ addPaymentMethodLink } para evitar perder el acceso. ${ learnMoreLink }"
+      ],
+      "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to keep your subscription. ${ learnMoreLink }": [
+        "Te quedan ${ timeRemaining } de prueba. ${ addPaymentMethodLink } para mantener tu suscripción. ${ learnMoreLink }"
+      ],
+      "1 device per user": [
+        "1 dispositivo por usuario"
+      ],
+      "1 vault per user": [
+        "1 caja fuerte por usuario"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantía de devolución del dinero en 30 días: cancela en un plazo de 30 días desde tu compra y contacta con nuestro ${ customerSupportLink } para obtener un reembolso."
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Tras actualizar, es posible que tu Mac pida una contraseña. Escribe la contraseña que usas para desbloquear tu Mac y, a continuación, haz clic en Permitir siempre para seguir con la sesión iniciada. ${ learnMore }"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pide a tu administrador que mejore el plan o que elimine una página de la barra lateral Páginas de reservas en ${ CALENDAR_APP_NAME }."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se calculan sobre el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Do you remember your password?": [
+        "¿Recuerdas tu contraseña?"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si pierdes el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación de respaldo que te proporcionamos al configurar la autenticación de dos factores. ${ learnMoreLink }"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "Los registros nos ayudan a entender qué ocurrió antes del problema. Incluyen acciones de la aplicación y mensajes de error, pero no el contenido de los mensajes."
+      ],
+      "No payment is required.": [
+        "No se requiere un pago."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Actualiza ${ MAIL_APP_NAME } para seguir usando la aplicación. ${ downloadUpdate }"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Para añadir una nueva página de reservas, elimina una existente de la barra lateral Páginas de reservas en ${ CALENDAR_APP_NAME }."
+      ],
+      "UnionPay logo": [
+        "Logotipo de UnionPay"
+      ],
+      "We will redirect you to ${ IDEAL_WERO_BRAND_NAME } in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Te redirigiremos a ${ IDEAL_WERO_BRAND_NAME } en una nueva pestaña del navegador para completar esta transacción. Si utilizas algún bloqueador de ventanas emergentes, desactívalo para continuar."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Tienes una factura pendiente ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Tienes una factura pendiente con vencimiento el ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Tu prueba gratuita ha terminado. Suscríbete ahora para mantener el acceso de tu equipo sin interrupciones y las cuentas seguras."
       ]
     },
     "info": {
@@ -7198,6 +7332,15 @@
       ],
       "Zoom meeting": [
         "Reunión de Zoom"
+      ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
+      ],
+      "Client": [
+        "Cliente"
+      ],
+      "Client version": [
+        "Versión del cliente"
       ]
     },
     "label": {
@@ -7377,6 +7520,12 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "Customer Support": [
+        "Servicio al cliente"
+      ],
+      "Pay it": [
+        "Págala"
       ]
     },
     "Link label (optional)": {
@@ -7482,6 +7631,12 @@
       ],
       "for ${ price }": [
         "para ${ price }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Añadir el asistente de escritura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Addon": {
@@ -7498,6 +7653,9 @@
       "${ seats } ${ MEET_APP_NAME } seat": [
         "${ seats } licencia de ${ MEET_APP_NAME }",
         "${ seats } licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ price } per seat": [
+        "${ price } por usuario"
       ]
     },
     "meet_2025: Feature": {
@@ -8285,6 +8443,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ]
     },
     "new_plans: feature highlight": {
@@ -8379,6 +8546,9 @@
       ],
       "Unlimited privacy and more storage for up to 2 people.": [
         "Privacidad ilimitada y más almacenamiento para hasta 2 personas."
+      ],
+      "${ Brand } ending in ${ Last4 }": [
+        "${ Brand } que termina en ${ Last4 }"
       ]
     },
     "new_plans: label": {
@@ -8929,6 +9099,9 @@
       ],
       "Your subscription renews soon": [
         "Tu suscripción se renueva pronto."
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Última oportunidad de obtener tu primer mes de ${ plan } a este precio."
       ]
     },
     "Offer fearue": {
@@ -8975,6 +9148,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Alias ilimitados para proteger tu identidad"
+      ],
+      "Short @pm.me address": [
+        "Dirección corta @pm.me"
       ]
     },
     "Onboarding": {
@@ -9049,6 +9225,30 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tu suscripción completa a ${ planTitle } comienza el ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Añade un método de pago** para seguir usando todas las funciones cuando termine tu prueba."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Cancela en cualquier momento antes de esa fecha.** Podrás usar ${ planTitle } hasta que termine la prueba, sin coste."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Si continúas después de tu prueba,** puedes cancelar en un plazo de 30 días y obtener un reembolso prorrateado."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Cuando empiece tu suscripción completa...** Aún puedes cancelar en un plazo de 30 días y obtener un reembolso prorrateado."
+      ],
+      "Add a payment method": [
+        "Añade un método de pago"
+      ],
+      "If you continue after your trial,": [
+        "Si continúas después de tu prueba,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "para seguir usando todas las funciones cuando termine tu prueba."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "puedes cancelar en un plazo de 30 días y obtener un reembolso prorrateado."
       ]
     },
     "Option": {
@@ -9400,6 +9600,99 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tu suscripción tiene un descuento existente. Al cambiarte a esta nueva promoción, el descuento existente ya no se aplicará."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "No se puede combinar ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } con ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } solo está disponible en los planes para empresas."
+      ],
+      "An organization is required for this plan.": [
+        "Este plan requiere una organización."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "No se pueden comprar cuentas Born Private con una suscripción activa."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Para comprar créditos se requiere una compra aparte."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Al cambiar, aceptas nuestros ${ termsLink }."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Solo se puede comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Paga con ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "El cambio de plan no es compatible por los siguientes motivos:"
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Cierra las cuentas de cartera adicionales antes de cambiar de plan."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Cierra las carteras adicionales antes de cambiar de plan."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Las plazas de Proton Meet deben coincidir con el número de miembros."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Las licencias de Scribe no pueden superar el número de miembros."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "La iniciativa Born Private requiere una donación."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "El plan seleccionado no ofrece suficientes direcciones para tu cuenta."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "El plan seleccionado no ofrece suficientes dominios para tu cuenta."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "El plan seleccionado no ofrece suficientes miembros para tu cuenta."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "El plan seleccionado no ofrece suficiente almacenamiento para tu cuenta."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Este servidor dedicado está asignado a una pasarela y no se puede cambiar."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Este plan no admite las funciones gestionadas de tu cuenta."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Este plan no admite los miembros de tu cuenta."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "No se puede completar esta suscripción en este momento. Vuelve a intentarlo."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Los planes de prueba no admiten licencias de ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Los planes de prueba no admiten dominios personalizados."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Los planes de prueba no admiten IP dedicadas."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Los planes de prueba no admiten licencias de Scribe."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Los planes de prueba no admiten tantos miembros."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Ya tienes ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own a Born Private account.": [
+        "Ya tienes una cuenta Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Tu cuenta es demasiado antigua para la iniciativa Born Private."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "Tu moneda se ha cambiado a euros (€) porque ${ IDEAL_WERO_BRAND_NAME } solo admite pagos en euros."
       ]
     },
     "Payments.Error": {
@@ -9423,6 +9716,9 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Tu tarjeta ha sido rechazada. Prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
+      ],
+      "Failed to initialize ${ IDEAL_WERO_BRAND_NAME }. Please try again later.": [
+        "No se ha podido inicializar ${ IDEAL_WERO_BRAND_NAME }. Inténtalo de nuevo más tarde."
       ]
     },
     "Payments.error": {
@@ -9896,6 +10192,9 @@
       ],
       "User Admin": [
         "Administrador de usuarios"
+      ],
+      "Organization Admin": [
+        "Administrador de la organización"
       ]
     },
     "RSVP Note": {
@@ -12053,6 +12352,9 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Suscríbete a ${ planTitle }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12252,6 +12554,15 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Podrás asignar roles una vez que el usuario haya aceptado la invitación."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Este usuario obtendrá derechos de administrador la próxima vez que inicie sesión."
+      ],
+      "Upgrade to a supported plan to use admin roles.": [
+        "Mejora a un plan compatible para usar roles de administrador."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "No puedes cambiar tus propios roles. Pide a otro administrador que los cambie."
       ]
     },
     "Validation": {
@@ -12710,6 +13021,47 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantía de devolución del dinero en 30 días: cancela en un plazo de 30 días desde tu compra y contacta con nuestro ${ customerSupportLink } para obtener un reembolso."
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Aplicación de escritorio de ${ appName }"
+      ]
+    },
+    "ngc_access_banner: action": {
+      "Try it now": [
+        "Pruébalo ahora"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Ya tienes acceso al nuevo ${ CALENDAR_APP_NAME }. ${ link }"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Al confirmar, autorizas a ${ BRAND_NAME } y a Stripe, nuestro proveedor de servicios de pago, a cobrar los pagos futuros de tu suscripción desde esta cuenta bancaria mediante adeudo directo SEPA, y a tu banco a realizar esos cargos. Tu primer pago se realiza ahora mediante ${ IDEAL_WERO_BRAND_NAME }. Tu plan se renueva automáticamente hasta que canceles; te avisaremos antes de cada cobro. En los cobros por adeudo directo puedes solicitar un reembolso a tu banco en un plazo de 8 semanas desde la fecha del cargo, según las condiciones de tu acuerdo con tu banco. Esto no se aplica al pago con ${ IDEAL_WERO_BRAND_NAME } que estás realizando ahora."
+      ]
+    },
+    "Payments.InfoBanner": {
+      "Changing your billing address may affect taxes on future invoices.": [
+        "Cambiar tu dirección de facturación puede afectar a los impuestos de las próximas facturas."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ Last4 }": [
+        "Apple Pay - tarjeta que termina en ${ Last4 }"
+      ],
+      "Bank transfer - ${ iban }": [
+        "Transferencia bancaria - ${ iban }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - tarjeta que termina en ${ Last4 }"
       ]
     }
   }
