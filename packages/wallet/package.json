@@ -67,7 +67,7 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "test": "TZ=UTC vitest",
         "test:ci": "pnpm run test --run",
         "test:ui": "pnpm run test --ui",
@@ -95,7 +95,7 @@
         "ttag": "catalog:"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@proton/polyfill": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/vitest-config": "workspace:^",
@@ -110,7 +110,8 @@
         "@vitejs/plugin-react": "^6.1.2",
         "@vitest/coverage-v8": "catalog:",
         "@vitest/ui": "catalog:",
-        "eslint": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
         "typescript": "catalog:",
         "vite-plugin-wasm": "^3.6.0",
         "vitest": "catalog:"
