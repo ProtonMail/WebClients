@@ -12,6 +12,12 @@ type MoveNodeItem = {
 
 export type MoveNodesItemMap = Record<string, MoveNodeItem>;
 
+export type MoveNodesResult = {
+    movedUids: string[];
+    failedItems: { uid: string; error: Error }[];
+    targetFolderUid: string;
+};
+
 export const useMoveNodes = () => {
     const { drive } = useDrive();
     const { createMovedItemsNotifications } = useMovedItemsNotification();
@@ -55,7 +61,7 @@ export const useMoveNodes = () => {
         createMovedItemsNotifications(successItems, failedItems);
     };
 
-    const moveNodes = async (itemMap: MoveNodesItemMap, targetFolderUid: string) => {
+    const moveNodes = async (itemMap: MoveNodesItemMap, targetFolderUid: string): Promise<MoveNodesResult> => {
         const successItems = [];
         const failedItems = [];
         const eventItems = [];
@@ -89,6 +95,8 @@ export const useMoveNodes = () => {
                 },
                 getDrive()
             );
+
+            return { movedUids: successItems.map((item) => item.uid), failedItems, targetFolderUid };
         } catch (e) {
             handleSdkError(e, { extra: { itemsUId: uids, targetFolderUid } });
             throw e;

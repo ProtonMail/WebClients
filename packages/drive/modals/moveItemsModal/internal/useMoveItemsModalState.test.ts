@@ -4,7 +4,7 @@ import { sendErrorReport } from '../../../legacy/errorHandling';
 import { directoryTreeFactory, makeTreeItemId } from '../../../modules/directoryTree';
 import { createMockNodeEntity } from '../../../modules/testing';
 import { generateNodeUid } from '../../../sdk';
-import { useMoveItemsModalState } from './useMoveItemsModalState';
+import { type UseMoveItemsModalStateProps, useMoveItemsModalState } from './useMoveItemsModalState';
 
 const mockInitializeTree = jest.fn();
 const mockToggleExpand = jest.fn();
@@ -68,6 +68,7 @@ const mockSendErrorReport = sendErrorReport as jest.MockedFunction<typeof sendEr
 
 const ROOT_UID = generateNodeUid('vol1', 'root');
 const NODE1_UID = generateNodeUid('vol1', 'node1');
+const NODE2_UID = generateNodeUid('vol1', 'node2');
 const FOLDER1_UID = generateNodeUid('vol1', 'folder1');
 
 async function* makeAsyncIterable<T>(items: T[]): AsyncIterable<T> {
@@ -84,7 +85,7 @@ const createMockHierarchy = (rootUid: string, ...leafUids: string[]) => [
     ...leafUids.map((uid) => createMockNodeEntity({ uid })),
 ];
 
-const defaultProps = {
+const defaultProps: UseMoveItemsModalStateProps = {
     nodeUids: [NODE1_UID],
     onClose: mockOnClose,
     onExit: mockOnExit,
@@ -291,6 +292,75 @@ describe('useMoveItemsModalState', () => {
                 FOLDER1_UID
             );
             expect(mockOnClose).toHaveBeenCalled();
+        });
+
+        it('passes the move result to onMoved before closing', async () => {
+            const moveResult = {
+                movedUids: [NODE1_UID],
+                failedItems: [{ uid: NODE2_UID, error: new Error('Name conflict') }],
+                targetFolderUid: FOLDER1_UID,
+            };
+            mockMoveNodes.mockResolvedValue(moveResult);
+            const onMoved = jest.fn(() => {
+                expect(mockOnClose).not.toHaveBeenCalled();
+            });
+            const { result } = await renderLoaded({ ...defaultProps, onMoved });
+
+            const treeItemId = makeTreeItemId(ROOT_UID, FOLDER1_UID);
+            act(() => {
+                result.current.handleSelect(treeItemId, makeFolderItem(treeItemId));
+            });
+
+            await act(async () => {
+                await result.current.handleSubmit();
+            });
+
+            expect(onMoved).toHaveBeenCalledWith(moveResult);
+            expect(mockOnClose).toHaveBeenCalledTimes(1);
+        });
+
+        it('reports the error and still closes when onMoved throws', async () => {
+            const moveResult = {
+                movedUids: [NODE1_UID],
+                failedItems: [],
+                targetFolderUid: FOLDER1_UID,
+            };
+            mockMoveNodes.mockResolvedValue(moveResult);
+            const callbackError = new Error('Callback failure');
+            const onMoved = jest.fn(() => {
+                throw callbackError;
+            });
+            const { result } = await renderLoaded({ ...defaultProps, onMoved });
+
+            const treeItemId = makeTreeItemId(ROOT_UID, FOLDER1_UID);
+            act(() => {
+                result.current.handleSelect(treeItemId, makeFolderItem(treeItemId));
+            });
+
+            await act(async () => {
+                await expect(result.current.handleSubmit()).resolves.toBeUndefined();
+            });
+
+            expect(onMoved).toHaveBeenCalledWith(moveResult);
+            expect(mockSendErrorReport).toHaveBeenCalledWith(callbackError);
+            expect(mockOnClose).toHaveBeenCalledTimes(1);
+        });
+
+        it('does not call onMoved when the move throws', async () => {
+            mockMoveNodes.mockRejectedValue(new Error('Network error'));
+            const onMoved = jest.fn();
+            const { result } = await renderLoaded({ ...defaultProps, onMoved });
+
+            const treeItemId = makeTreeItemId(ROOT_UID, FOLDER1_UID);
+            act(() => {
+                result.current.handleSelect(treeItemId, makeFolderItem(treeItemId));
+            });
+
+            await act(async () => {
+                await expect(result.current.handleSubmit()).rejects.toThrow('Network error');
+            });
+
+            expect(onMoved).not.toHaveBeenCalled();
         });
     });
 
