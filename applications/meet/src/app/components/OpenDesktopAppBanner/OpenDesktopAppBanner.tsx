@@ -28,7 +28,7 @@ export const OpenDesktopAppBanner = () => {
 
     const handleDownloadApp = () => {
         sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_clicked, { action: 'download' });
-        window.open(DOWNLOAD_URL, '_blank');
+        window.open(DOWNLOAD_URL, '_blank', 'noopener,noreferrer');
     };
 
     return (

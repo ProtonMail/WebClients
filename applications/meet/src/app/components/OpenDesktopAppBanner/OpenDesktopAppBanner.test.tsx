@@ -61,7 +61,7 @@ describe('OpenDesktopAppBanner', () => {
         expect(sendMeetActionsEvent).toHaveBeenCalledWith(TelemetryMeetActionsEvents.desktop_app_banner_clicked, {
             action: 'download',
         });
-        expect(openSpy).toHaveBeenCalledWith('https://proton.me/meet/download', '_blank');
+        expect(openSpy).toHaveBeenCalledWith('https://proton.me/meet/download', '_blank', 'noopener,noreferrer');
     });
 
     it('hides itself on close without sending an event or storing anything', () => {
