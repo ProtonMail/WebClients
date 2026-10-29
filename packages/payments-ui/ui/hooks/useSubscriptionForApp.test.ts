@@ -44,6 +44,17 @@ describe('useSubscriptionForApp', () => {
         expect(result.current).toEqual([mail, false]);
     });
 
+    it('returns the subscription that covers the requested app instead of the current one', () => {
+        const vpn = buildSubscription(PLANS.VPN2024);
+        const mail = buildSubscription(PLANS.MAIL);
+        jest.mocked(useAllSubscriptions).mockReturnValue([[vpn, mail], false]);
+        jest.mocked(useConfig).mockReturnValue({ APP_NAME: APPS.PROTONACCOUNT } as ReturnType<typeof useConfig>);
+
+        const { result } = renderHook(() => useSubscriptionForApp(APPS.PROTONCALENDAR));
+
+        expect(result.current).toEqual([mail, false]);
+    });
+
     it('reports loading while the subscriptions load', () => {
         jest.mocked(useAllSubscriptions).mockReturnValue([undefined, true]);
         jest.mocked(useConfig).mockReturnValue({ APP_NAME: APPS.PROTONMAIL } as ReturnType<typeof useConfig>);

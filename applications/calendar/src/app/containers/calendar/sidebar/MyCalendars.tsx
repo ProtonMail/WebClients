@@ -177,12 +177,7 @@ export const MyCalendars = ({ myCalendars, calendars, holidaysCalendars, dropdow
                 <HolidaysCalendarModal {...holidaysCalModal} holidaysCalendars={holidaysCalendars} />
             )}
             {renderLimitReachedModal && (
-                <CalendarLimitReachedModal
-                    subscription={undefined}
-                    user={user}
-                    {...limitReachedModal}
-                    isFreeUser={!user.hasPaidMail}
-                />
+                <CalendarLimitReachedModal user={user} {...limitReachedModal} isFreeUser={!user.hasPaidMail} />
             )}
             {renderCalModal && (
                 <PersonalCalendarModal

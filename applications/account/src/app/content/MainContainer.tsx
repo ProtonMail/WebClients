@@ -539,7 +539,6 @@ const MainContainer = () => {
                                 <ContactEmailsProvider>
                                     <CalendarSettingsRouter
                                         user={user}
-                                        subscription={subscription}
                                         calendarAppRoutes={routes.calendar}
                                         redirect={redirect}
                                     />

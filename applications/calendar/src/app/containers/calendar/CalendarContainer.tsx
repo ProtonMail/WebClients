@@ -11,7 +11,6 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useObserveDrawerIframeAppLocation from '@proton/components/hooks/drawer/useObserveDrawerIframeAppLocation';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getInvitation } from '@proton/shared/lib/api/calendars';
 import { getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -105,7 +104,6 @@ interface Props {
     setCustomTzid: (tzid: string) => void;
     drawerView?: VIEWS;
     user: UserModel;
-    subscription: MaybeFreeSubscription;
     addresses: Address[];
     activeAddresses: Address[];
     visibleCalendars: VisualCalendar[];
@@ -127,7 +125,6 @@ const CalendarContainer = ({
     setCustomTzid,
     drawerView,
     user,
-    subscription,
     addresses,
     activeAddresses,
     calendars,
@@ -589,7 +586,6 @@ const CalendarContainer = ({
                     addresses={addresses}
                     calendars={calendars}
                     user={user}
-                    subscription={subscription}
                     invitation={shareCalendarInvitation}
                 />
             )}
