@@ -124,7 +124,7 @@ export const PreJoinDetails = ({
                     : []),
                 <Button
                     key="join-meeting"
-                    className="primary py-4 px-5 md:py-5 rounded-full"
+                    className="secondary py-4 px-5 md:py-5 rounded-full"
                     size="large"
                     fullWidth
                     onClick={handleJoinMeeting}
