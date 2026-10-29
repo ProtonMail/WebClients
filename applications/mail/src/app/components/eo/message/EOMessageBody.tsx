@@ -2,8 +2,8 @@ import { useMemo, useRef, useState } from 'react';
 
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import MessageBodyIframe from '@proton/mail-renderer/components/MessageBodyIframe';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { isAutoFlaggedPhishing, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';

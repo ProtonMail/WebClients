@@ -9,7 +9,7 @@ import { useToolbar } from '@proton/components/components/editor/hooks/useToolba
 import type { EditorActions, EditorMetadata } from '@proton/components/components/editor/interface';
 import { useHandler } from '@proton/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { sanitizeComposerBlockquoteHtml } from '@proton/sanitize/purify';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';

@@ -13,7 +13,7 @@ import { ASSISTANT_SERVER_THROTTLE_TIMEOUT } from '@proton/llm/lib/constants';
 import { getHasAssistantStatus } from '@proton/llm/lib/helpers';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
-import { removeLineBreaks } from '@proton/mail/helpers/string';
+import { removeLineBreaks } from '@proton/mail-message/helpers/string';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';

@@ -7,7 +7,7 @@ import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import type { EditorProps } from '@proton/components/components/editor/Editor';
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
-import type { MessageState, MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';

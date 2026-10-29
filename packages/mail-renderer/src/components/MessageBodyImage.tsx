@@ -7,8 +7,8 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcFileImage } from '@proton/icons/icons/IcFileImage';
 import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
-import { getAnchor } from '@proton/mail/helpers/message/messageImages/getAnchor';
-import type { MessageImage, OnMessageImageLoadError } from '@proton/mail/store/messages/messagesTypes';
+import { getAnchor } from '@proton/mail-message/helpers/message/messageImages/getAnchor';
+import type { MessageImage, OnMessageImageLoadError } from '@proton/mail-message/store/messages/messagesTypes';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 

@@ -1,7 +1,7 @@
 import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '@proton/components/components/editor/constants';
-import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import { toText } from '@proton/mail/helpers/parserHtml';
-import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { toText } from '@proton/mail-message/helpers/parserHtml';
+import type { MessageState, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { unescape } from '@proton/sanitize/escape';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';

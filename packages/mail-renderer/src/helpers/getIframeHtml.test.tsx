@@ -1,4 +1,4 @@
-import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 
 import {
     MESSAGE_IFRAME_PRINT_CLASS,

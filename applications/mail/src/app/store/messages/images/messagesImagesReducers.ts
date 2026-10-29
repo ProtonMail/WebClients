@@ -11,7 +11,7 @@ import type {
     MessageRemoteImage,
     MessageState,
     MessagesState,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
 
 import config from '../../../config';

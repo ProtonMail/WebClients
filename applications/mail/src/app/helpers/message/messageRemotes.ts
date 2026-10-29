@@ -1,5 +1,5 @@
+import type { MessageImage, MessageRemoteImage } from '@proton/mail-message/store/messages/messagesTypes';
 import { MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
-import type { MessageImage, MessageRemoteImage } from '@proton/mail/store/messages/messagesTypes';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { getRemoteSelector } from './messageImages';

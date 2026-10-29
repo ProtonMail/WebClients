@@ -3,7 +3,7 @@ import { addHours } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
 import { addApiMock } from '../../../helpers/tests/api';

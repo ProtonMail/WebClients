@@ -1,12 +1,12 @@
 import type { PrivateAuthenticationStore } from '@proton/components/containers/app/interface';
-import { MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
-import { getAnchor } from '@proton/mail/helpers/message/messageImages/getAnchor';
+import { getAnchor } from '@proton/mail-message/helpers/message/messageImages/getAnchor';
 import type {
     LoadRemoteResults,
     MessageImages,
     MessageRemoteImage,
     MessageState,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
+import { MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import uniqueBy from '@proton/utils/uniqueBy';

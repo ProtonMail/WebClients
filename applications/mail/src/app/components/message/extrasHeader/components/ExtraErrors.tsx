@@ -8,7 +8,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
-import type { MessageErrors, MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageErrors, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { useReloadMessage } from '../../../../hooks/message/useLoadMessage';

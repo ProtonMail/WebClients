@@ -2,8 +2,6 @@ import type { MutableRefObject } from 'react';
 
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 
-import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KeyTransparencyVerificationResult } from '@proton/shared/lib/interfaces/KeyTransparency';
@@ -17,6 +15,7 @@ import type {
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
+import type { MESSAGE_ACTIONS } from '../../constants';
 import type { DecryptedAttachment } from '../attachments/attachmentsTypes';
 
 export interface OutsideKey {
@@ -147,6 +146,18 @@ export interface MessageEmbeddedImage extends AbstractMessageImage {
 }
 
 export type MessageImage = MessageRemoteImage | MessageEmbeddedImage;
+
+export interface Preparation {
+    plainText?: string;
+    document?: Element;
+    showEmbeddedImages?: boolean;
+    showRemoteImages?: boolean;
+    hasRemoteImages?: boolean;
+    hasEmbeddedImages?: boolean;
+    remoteImages?: MessageImage[];
+    embeddedImages?: MessageImage[];
+    isRawLinkDisabled?: boolean;
+}
 
 export type OnMessageImageLoadError = (
     image: MessageImage,

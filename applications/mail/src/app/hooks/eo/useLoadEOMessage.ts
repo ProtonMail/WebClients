@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
-import type { OutsideKey } from '@proton/mail/store/messages/messagesTypes';
+import type { OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { initEncryptedToken, loadEOToken } from '../../store/eo/eoActions';
 import {

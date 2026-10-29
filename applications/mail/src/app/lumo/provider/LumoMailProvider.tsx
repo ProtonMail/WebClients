@@ -23,7 +23,7 @@ import type { LumoAgentDrawerValue } from '@proton/llm/lib/lumoAgent/ui/lumoAgen
 import LumoAgentDrawerContext from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
 import useLumoAgent from '@proton/llm/lib/lumoAgent/ui/useLumoAgent';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { addFilter as addFilterAction, updateFilter as updateFilterAction } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';

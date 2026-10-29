@@ -1,7 +1,7 @@
 import type { RefObject } from 'react';
 import { useCallback, useEffect } from 'react';
 
-import { cleanProblematicImagesFromClipboardContent } from '@proton/mail/helpers/message/cleanProblematicImagesFromClipboardContent';
+import { cleanProblematicImagesFromClipboardContent } from '@proton/mail-message/helpers/message/cleanProblematicImagesFromClipboardContent';
 import { cloneEvent, isKeyboardEvent } from '@proton/shared/lib/helpers/events';
 import { useFlag } from '@proton/unleash/useFlag';
 

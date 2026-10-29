@@ -20,7 +20,7 @@ import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
 import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { selectHasFocusedComposer } from '@proton/mail-composer/store/composers/composerSelectors';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import {
     COLLAPSE_EVENTS,

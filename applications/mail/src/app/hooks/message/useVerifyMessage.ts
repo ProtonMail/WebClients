@@ -6,7 +6,7 @@ import { getMatchingSigningKey } from '@protontech/crypto';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
-import type { MessageErrors, MessageStateWithDataFull } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageErrors, MessageStateWithDataFull } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { isNetworkError } from '../../helpers/errors';

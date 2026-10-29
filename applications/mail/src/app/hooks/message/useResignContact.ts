@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useMailDispatch } from '../../store/hooks';

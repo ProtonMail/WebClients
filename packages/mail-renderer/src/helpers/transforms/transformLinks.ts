@@ -1,4 +1,4 @@
-import { matches } from '@proton/mail/helpers/dom';
+import { matches } from '@proton/mail-message/helpers/dom';
 import { getUTMTrackersFromURL } from '@proton/shared/lib/mail/trackers';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 

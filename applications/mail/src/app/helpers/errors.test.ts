@@ -1,5 +1,5 @@
-import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
-import type { MessageErrors, MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
+import type { MessageErrors, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import type { ConversationErrors } from '../store/conversations/conversationsTypes';
 import { hasError, hasErrorType, isDecryptionError, isNetworkError, pickMessageInfosForSentry } from './errors';

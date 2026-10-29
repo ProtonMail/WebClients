@@ -1,6 +1,6 @@
-import { isHTMLEmpty } from '@proton/mail/helpers/dom';
-import { containsHTMLTag, replaceLineBreaks } from '@proton/mail/helpers/string';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { isHTMLEmpty } from '@proton/mail-message/helpers/dom';
+import { containsHTMLTag, replaceLineBreaks } from '@proton/mail-message/helpers/string';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';

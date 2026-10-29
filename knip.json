@@ -38,7 +38,7 @@
                 "@typescript/native",
                 "oxlint",
                 "oxlint-tsgolint",
-                "^@proton/(account|activation|calendar|components|docs-core|mail-renderer|nav|payments|payments-ui|redux-shared-store|shared|types)$|^@types/global-types-monorepo$"
+                "^@proton/(account|activation|calendar|components|docs-core|nav|payments|payments-ui|redux-shared-store|shared|types)$|^@types/global-types-monorepo$"
             ]
         },
         "applications/account": {
@@ -406,6 +406,10 @@
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/mail-composer": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
+        "packages/mail-message": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },

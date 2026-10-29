@@ -1,12 +1,12 @@
 import { addDays, differenceInDays, getUnixTime, isSameDay } from 'date-fns';
 
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import type {
     MessageEmbeddedImage,
     MessageImages,
     MessageRemoteImage,
     MessageStateWithData,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { addPlusAlias } from '@proton/shared/lib/helpers/email';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getSender } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';

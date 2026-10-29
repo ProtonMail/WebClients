@@ -1,4 +1,4 @@
-import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 
 export const getDocumentContent = (document: Element | undefined) => {

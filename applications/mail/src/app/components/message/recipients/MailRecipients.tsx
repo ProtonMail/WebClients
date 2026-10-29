@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 
 import type { RecipientOrGroup } from '../../../models/address';

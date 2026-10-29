@@ -14,7 +14,7 @@ import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
 import { IcStar } from '@proton/icons/icons/IcStar';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 
 import { useApi } from '@proton/app-context/useApi';
 import Loader from '@proton/components/components/loader/Loader';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { EO_REDIRECT_PATH, LOAD_RETRY_COUNT } from '../../constants';
 import { useInitializeEOMessage } from '../../hooks/eo/useInitializeEOMessage';

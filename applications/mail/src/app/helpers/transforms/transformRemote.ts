@@ -1,6 +1,6 @@
+import { removeEncodedAndUnencodedLineBreaks } from '@proton/mail-message/helpers/string';
+import type { MessageRemoteImage, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MESSAGE_IMAGE_ATTRIBUTES_TO_FIND, MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD } from '@proton/mail/constants';
-import { removeEncodedAndUnencodedLineBreaks } from '@proton/mail/helpers/string';
-import type { MessageRemoteImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { hasShowRemote } from '@proton/shared/lib/mail/images';

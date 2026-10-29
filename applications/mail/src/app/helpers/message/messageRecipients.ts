@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { isBlockedIncomingDefaultAddress } from '@proton/shared/lib/helpers/incomingDefaults';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';

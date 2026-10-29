@@ -1,13 +1,13 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
 
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import type {
     MessageKeys,
     MessageState,
     MessageStateWithData,
     PublicPrivateKey,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';

@@ -1,6 +1,7 @@
 import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
-import type { MessageState, PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
+
+import type { MessageState, PublicPrivateKey } from '@proton/mail-message/store/messages/messagesTypes';
 import { AES256, MIME_TYPES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';

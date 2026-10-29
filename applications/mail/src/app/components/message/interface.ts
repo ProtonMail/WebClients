@@ -1,1 +1,1 @@
-export type { OnMessageImageLoadError } from '@proton/mail/store/messages/messagesTypes';
+export type { OnMessageImageLoadError } from '@proton/mail-message/store/messages/messagesTypes';

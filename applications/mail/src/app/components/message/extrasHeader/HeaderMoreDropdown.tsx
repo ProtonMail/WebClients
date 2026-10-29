@@ -42,14 +42,14 @@ import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
 import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
-import { getCurrentFolderID } from '@proton/mail/helpers/location';
-import { useFolders } from '@proton/mail/store/labels/hooks';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type {
     MessageState,
     MessageStateWithData,
     MessageWithOptionalBody,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
+import { getCurrentFolderID } from '@proton/mail/helpers/location';
+import { useFolders } from '@proton/mail/store/labels/hooks';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';

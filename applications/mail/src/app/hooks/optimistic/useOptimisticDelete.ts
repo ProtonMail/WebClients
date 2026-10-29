@@ -1,11 +1,9 @@
 import { useHandler } from '@proton/hooks/useHandler';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { conversationCountsActions, selectConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import isTruthy from '@proton/utils/isTruthy';
-
-import { useMailDispatch, useMailStore } from '../../store/hooks';
 
 import { replaceCounter } from '../../helpers/counter';
 import { isElementConversation, isUnread } from '../../helpers/elements';
@@ -20,6 +18,7 @@ import {
     optimisticDelete as optimisticDeleteElementAction,
     optimisticRestoreDelete as optimisticRestoreDeleteElementAction,
 } from '../../store/elements/elementsActions';
+import { useMailDispatch, useMailStore } from '../../store/hooks';
 import {
     optimisticDelete as optimisticDeleteMessageAction,
     optimisticRestore as optimisticRestoreMessageAction,

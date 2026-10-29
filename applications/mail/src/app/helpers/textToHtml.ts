@@ -1,5 +1,5 @@
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
-import { toText } from '@proton/mail/helpers/parserHtml';
+import { toText } from '@proton/mail-message/helpers/parserHtml';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
