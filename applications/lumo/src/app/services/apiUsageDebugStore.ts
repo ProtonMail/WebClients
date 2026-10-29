@@ -49,8 +49,8 @@ export const useDebugApiOrganizationMemberView = () =>
 const getCreditBalanceSnapshot = () => creditBalanceOverride;
 
 /**
- * Debug-only account credit override in base currency units (cents for USD).
- * A null value uses the real account balance.
+ * Debug-only Lumo credit override in whole credits.
+ * A null value uses the real Lumo balance.
  */
 export const setDebugApiCreditBalance = (balance: number | null) => {
     creditBalanceOverride = balance === null ? null : Math.max(0, Math.round(balance));

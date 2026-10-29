@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
 import { CryptoProxy } from '@protontech/crypto';
 import type { PublicKeyReference } from '@protontech/crypto';
@@ -51,6 +52,9 @@ export const formatTokenCount = (n: number): string => {
 /** Formats an amount in major currency units (e.g. 12.5 → "CHF 12.50"). */
 export const formatApiCurrency = (value: number, currency: Currency) =>
     new Intl.NumberFormat(undefined, { style: 'currency', currency }).format(value);
+
+export const toCurrencyBaseUnits = (amount: number, currency: Currency) =>
+    amount * getCurrencyFormattingConfig(currency).divisor;
 
 /** Parses a user-entered amount; returns null for empty, non-numeric, or negative input. */
 export const parseApiAmount = (value: string): number | null => {
