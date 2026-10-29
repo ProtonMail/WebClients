@@ -362,6 +362,9 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Sobre o ${ name }"
+      ],
       "Accept": [
         "Aceitar"
       ],
@@ -400,6 +403,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Adicionar endereço da ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Adicionar ${ name }"
       ],
       "Add a payment method": [
         "Adicionar um método de pagamento"
@@ -988,6 +994,9 @@
       ],
       "Download updated file": [
         "Baixar arquivo atualizado"
+      ],
+      "Dropbox": [
+        "Dropbox"
       ],
       "Edit": [
         "Editar"
@@ -3825,6 +3834,9 @@
       ],
       "Your address": [
         "Seu endereço"
+      ],
+      "Your address has been claimed": [
+        "Seu endereço foi revindicado"
       ],
       "Your address has changed": [
         "Seu endereço foi alterado"
@@ -10438,9 +10450,6 @@
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Isso desativará os encaminhamentos de e-mail criptografados de ponta a ponta:** você pode configurá-los novamente mais tarde."
       ],
-      "**We're changing the ${ BRAND_NAME } sign-in page.** Your account and password stay the same.": [
-        "**Estamos mudando a página de início de sessão da ${ BRAND_NAME }.** Sua conta e sua senha continuam as mesmas."
-      ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Ganhe ${ referrerRewardAmount }** créditos para cada amigo que se inscrever."
       ],
@@ -11240,9 +11249,6 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Você deseja revogar todas as outras sessões deixando apenas a atual?"
-      ],
-      "Domain added": [
-        "Domínio adicionado"
       ],
       "Domain ownership failed verification.": [
         "Falha na verificação da propriedade do domínio."
@@ -12202,9 +12208,6 @@
       "Not a valid URL": [
         "Não é uma URL válida"
       ],
-      "Not confirmed": [
-        "Não confirmado"
-      ],
       "Not detected correctly? Choose your provider from the list.": [
         "Não detectado corretamente? Escolha seu provedor na lista."
       ],
@@ -12770,9 +12773,6 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Ocorreu um erro. Tente novamente ou contate o suporte ao cliente."
-      ],
-      "Soon, you'll enter your email address (or username) and password in 2 separate steps instead of on 1 page.": [
-        "Em breve, você inserirá seu endereço de e-mail (ou nome de usuário) e sua senha em duas etapas distintas, em vez de fazer isso em uma única página."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifique o domínio com permissão para autenticação SAML SSO."
@@ -13933,9 +13933,6 @@
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please sign in at ${ loginLink } and delete your account there.": [
         "Suas contas do ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicia sessão em ${ loginLink } e exclua sua conta lá."
-      ],
-      "Your account and password stay the same.": [
-        "Sua conta e sua senha continuam as mesmas."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
@@ -20538,6 +20535,9 @@
       "This payment method will become your new default for all future renewals.": [
         "Este se tornará seu novo método de pagamento padrão para todas as futuras renovações."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Esse plano não suporta recursos gerenciados na sua conta."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Esse plano não suporta membros na sua conta."
       ],
@@ -25378,6 +25378,9 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "Ferramenta de exportação do ${ MAIL_APP_NAME }"
       ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Bem-vindos"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor Report"
       ],
@@ -27078,9 +27081,6 @@
       "Signed-in reset": [
         "Sessão iniciado por redefinição"
       ],
-      "Signing in is changing": [
-        "Início de sessão está mudando"
-      ],
       "Simplify email distribution": [
         "Simplifique a distribuição dos e-mails"
       ],
@@ -27921,6 +27921,9 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Ao mover um e-mail para spam, você será automaticamente descadastrado das listas de e-mail do remetente."
+      ],
+      "Your ${ DRIVE_APP_NAME } storage is almost full": [
+        "Seu armazenamento do ${ DRIVE_APP_NAME } está quase cheio"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Sua caixa de entrada do ${ MAIL_APP_NAME } está quase cheia"
