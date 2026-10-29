@@ -1,9 +1,12 @@
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import noop from '@proton/utils/noop';
 
 import type { FolderDataResponse } from '../../types/api/pass';
 import { logger } from '../../utils/logger';
+import { createShareRemovedError } from '../../utils/tests/fixtures/shares';
 import { exposeApi } from '../api/api';
-import { requestFoldersForShareId } from './folders.requests';
+import { PassErrorCode } from '../api/errors';
+import { fetchFolder, requestFoldersForShareId } from './folders.requests';
 
 const api = jest.fn();
 exposeApi(api as any);
@@ -64,5 +67,20 @@ describe('requestFoldersForShareId', () => {
     test('resolves an empty list when the share has no folders', async () => {
         mockFolders([]);
         await expect(requestFoldersForShareId('share1')).resolves.toEqual([]);
+    });
+});
+
+describe('fetchFolder', () => {
+    afterEach(() => jest.clearAllMocks());
+
+    test('resolves `undefined` when the share has been removed', async () => {
+        api.mockRejectedValue(createShareRemovedError(PassErrorCode.NOT_EXIST_SHARE));
+        await expect(fetchFolder('share1', 'folder1')).resolves.toBeUndefined();
+    });
+
+    test('throws on any other error', async () => {
+        const err = new ApiError('', 500, 'TestError');
+        api.mockRejectedValue(err);
+        await expect(fetchFolder('share1', 'folder1')).rejects.toBe(err);
     });
 });
