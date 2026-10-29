@@ -10,6 +10,7 @@ import {
     type GetActiveSessionsResult,
     getActiveSessions,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { ProduceDesktopForkParameters } from '../actions/desktopForkInterface';
@@ -76,9 +77,8 @@ export const handleDesktopFork = async ({ api }: { api: Api; paths: Paths }): Pr
         ...forkParameters,
         localID: undefined,
         app: desktopForkParameters.app,
-        // Force reauth for cli-pass
-        // TODO: This can potentially be done for all pass forks, but starting out like this
-        prompt: desktopForkParameters.qrCodePayload.childClientId === 'cli-pass' ? 'login' : forkParameters.prompt,
+        // Force reauth for all Pass clients
+        prompt: desktopForkParameters.app === APPS.PROTONPASS ? 'login' : forkParameters.prompt,
     };
 
     return {
