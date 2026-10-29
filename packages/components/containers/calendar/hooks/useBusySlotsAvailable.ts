@@ -1,8 +1,7 @@
-import { useOrganization } from '@proton/account/organization/hooks';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { isUserEligibleForBusySlots } from '../../../helpers/busySlots';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 
 /**
@@ -12,23 +11,19 @@ import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
  */
 const useBusySlotsAvailable = (view?: VIEWS, skipResponsiveCheck = false) => {
     const isBusySlotsFlagEnabled = useFlag('CalendarBusyTimeSlots');
-    const [organization] = useOrganization();
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
     const breakpoint = useActiveBreakpoint();
 
-    /**
-     * If the flag is not enabled or the organization is not available or the viewport is small
-     * Don't display busy time slots
-     */
     if (
         !isBusySlotsFlagEnabled ||
-        !organization ||
+        loadingEntitlements ||
         (!skipResponsiveCheck && breakpoint.viewportWidth['<=small']) ||
         view === VIEWS.MONTH
     ) {
         return false;
     }
 
-    return isUserEligibleForBusySlots(organization);
+    return entitlements.hasBusySlots;
 };
 
 export default useBusySlotsAvailable;

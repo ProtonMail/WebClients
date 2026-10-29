@@ -1,7 +1,6 @@
-import { useOrganization } from '@proton/account/organization/hooks';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
-import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 
 import AutomaticallySaveContacts from './AutomaticallySaveContacts';
 import { KeyboardShortcut } from './KeyboardShortcut';
@@ -10,11 +9,10 @@ import { TipsAndInsights } from './TipsAndInsights';
 import { UnreadFaviconCounter } from './UnreadFaviconCounter';
 
 export const OtherMailPreferencesSection = () => {
-    const [organization] = useOrganization();
     const [user] = useUser();
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
 
-    const isB2BAudience = getIsB2BAudienceFromPlan(organization?.PlanName);
-    const canToggleTips = user.isPaid && !isB2BAudience;
+    const canToggleTips = !loadingEntitlements && user.isPaid && !entitlements.isB2B;
 
     return (
         <>
