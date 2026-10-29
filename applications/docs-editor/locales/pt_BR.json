@@ -122,6 +122,9 @@
       "Fit table to page width": [
         "Ajustar a tabela na largura da página"
       ],
+      "Header column": [
+        "Coluna de cabeçalho"
+      ],
       "Header row": [
         "Linha de cabeçalho"
       ],
@@ -298,11 +301,20 @@
       "Animals and nature": [
         "Animais e natureza"
       ],
+      "Flags": [
+        "Bandeiras"
+      ],
+      "Food and drink": [
+        "Comida e bebida"
+      ],
       "Objects": [
         "Objetos"
       ],
       "Symbols": [
         "Símbolos"
+      ],
+      "Travel and places": [
+        "Viagem e lugares"
       ]
     },
     "Error": {
@@ -428,6 +440,9 @@
       ],
       "No comments": [
         "Nenhum comentário"
+      ],
+      "No emoji found": [
+        "Nenhum emoji encontrado"
       ],
       "No title": [
         "Sem título"
@@ -569,8 +584,14 @@
       "Replace link": [
         "Substituir link"
       ],
+      "Resize outline": [
+        "Redimensionar contorno"
+      ],
       "Search emoji": [
         "Pesquisar emoji"
+      ],
+      "Search results": [
+        "Resultados de pesquisa"
       ],
       "Table": [
         "Tabela"
@@ -819,6 +840,9 @@
       ]
     },
     "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "Pizza 2D"
+      ],
       "Clustered Column": [
         "Coluna agrupada"
       ],
@@ -869,6 +893,9 @@
       "Between": [
         "Entre"
       ],
+      "Bottom N items": [
+        "Itens N inferiores"
+      ],
       "Bottom N percent": [
         "Porcentagem N inferior"
       ],
@@ -886,6 +913,9 @@
       ],
       "Date is between": [
         "A data está entre"
+      ],
+      "Date is equal to": [
+        "Data é igual a"
       ],
       "Date is not between": [
         "Data não está entre"
@@ -913,6 +943,15 @@
       ],
       "Greater than": [
         "Maior que"
+      ],
+      "Greater than or equal to": [
+        "Maior ou igual"
+      ],
+      "Greater than or equal to previous": [
+        "Maior ou igual que a anterior"
+      ],
+      "Greater than previous": [
+        "Maior que anterior"
       ],
       "Is empty": [
         "Está vazio"
@@ -950,6 +989,9 @@
       "Less than or equal to": [
         "Menor ou igual à"
       ],
+      "Less than or equal to previous": [
+        "Menos ou igual que a anterior"
+      ],
       "Less than previous": [
         "Menos que anterior"
       ],
@@ -985,6 +1027,18 @@
       ],
       "October": [
         "Outubro"
+      ],
+      "Quarter 1": [
+        "Primeiro trimestre"
+      ],
+      "Quarter 2": [
+        "Segundo trimestre"
+      ],
+      "Quarter 3": [
+        "Terceiro trimestre"
+      ],
+      "Quarter 4": [
+        "Quarto trimestre"
       ],
       "September": [
         "Setembro"
@@ -1030,6 +1084,12 @@
       ],
       "Tomorrow": [
         "Amanhã"
+      ],
+      "Top N items": [
+        "Itens N superiores"
+      ],
+      "Top N percent": [
+        "Porcentagem N superior"
       ],
       "Yesterday": [
         "Ontem"
@@ -1109,7 +1169,7 @@
         "Editar tabela"
       ],
       "Filter": [
-        "Filtrar"
+        "Filtro"
       ],
       "Formatting only": [
         "Apenas formatação"
@@ -1250,7 +1310,7 @@
         "Formatos personalizados de data e hora"
       ],
       "Format": [
-        "Formatar"
+        "Formato"
       ],
       "Sample": [
         "Exemplo"
@@ -1843,7 +1903,7 @@
         "Científico"
       ],
       "Time": [
-        "Tempo"
+        "Hora"
       ],
       "£ Pound": [
         "£ Libra"
@@ -1859,6 +1919,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } de ${ total }"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -2061,6 +2124,11 @@
         "Ordenar Z → A"
       ]
     },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Nenhum"
+      ]
+    },
     "sheets_2025:Spreadsheet formatMenu": {
       "Coming soon...": [
         "Em breve..."
@@ -2122,6 +2190,12 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Resize column ${ title }": [
+        "Redimensionar coluna ${ title }"
+      ],
+      "Resize row ${ title }": [
+        "Redirecionar linha ${ title }"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
