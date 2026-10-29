@@ -1,5 +1,6 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
+import type { OfflineKey } from '../offlineKey';
 import { getDecryptedBlob, getDecryptedBlobV3, getEncryptedBlob, getEncryptedBlobV3 } from '../sessionBlobCryptoHelper';
 import type { ForkPayloadVersion } from './constants';
 
@@ -14,6 +15,26 @@ export type ForkEncryptedBlob =
           offlineKeyPassword: string;
           offlineKeySalt: string;
       };
+
+export const getForkBlobData = ({
+    keyPassword,
+    offlineKey,
+    payloadType,
+}: {
+    keyPassword: string;
+    offlineKey: OfflineKey | undefined;
+    payloadType: ForkEncryptedBlob['type'] | undefined;
+}): ForkEncryptedBlob => {
+    if (payloadType === 'offline' && offlineKey && offlineKey.salt && offlineKey.password) {
+        return {
+            type: 'offline',
+            keyPassword,
+            offlineKeyPassword: offlineKey.password,
+            offlineKeySalt: offlineKey.salt,
+        };
+    }
+    return { type: 'default', keyPassword };
+};
 
 export const getForkEncryptedBlob = async (
     key: CryptoKey,
