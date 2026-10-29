@@ -43,6 +43,7 @@
         "./core/currencies": "./core/currencies.ts",
         "./core/ensureTokenChargeable": "./core/ensureTokenChargeable.ts",
         "./core/entitlements/empty-entitlement-catalog": "./core/entitlements/empty-entitlement-catalog.ts",
+        "./core/entitlements/entitlement-grants": "./core/entitlements/entitlement-grants.ts",
         "./core/entitlements/entitlement-names": "./core/entitlements/entitlement-names.ts",
         "./core/entitlements/helpers": "./core/entitlements/helpers.ts",
         "./core/entitlements/interface": "./core/entitlements/interface.ts",
