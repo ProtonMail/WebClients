@@ -2250,11 +2250,8 @@
       "Moving items": [
         "S'estan movent elements"
       ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Si moveu elements a una altra caixa forta, se n'esborrarà l'historial i tots els enllaços segurs."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà l'historial."
+      "Moving items to another vault will erase their secure links.": [
+        "Si moveu els elements a una altra caixa forta, se n'esborraran els enllaços segurs."
       ],
       "Moving items to trash": [
         "S'estan desplaçant els elements a la paperera…"
@@ -2846,6 +2843,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Quan estigui habilitada, encara podreu accedir a les vostres dades de ${ PASS_SHORT_APP_NAME } si perdeu la connexió a internet o si no es pot accedir als servidors de ${ BRAND_NAME }."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "En moure elements entre caixes fortes, conservarem fins a les últimes 50 modificacions realitzades a cada element."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Quan envieu un correu electrònic des d'aquest àlies, el correu electrònic mostrarà ${ emailSender } com a remitent."
