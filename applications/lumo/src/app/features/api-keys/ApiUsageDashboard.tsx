@@ -4,6 +4,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
@@ -25,7 +26,7 @@ import { ApiPayAsYouGoCard } from './ApiPayAsYouGoCard';
 import { ApiTokenUsageChart } from './ApiTokenUsageChart';
 import { ApiUsageMetricCard } from './ApiUsageMetricCard';
 import { ApiUsageModelStats } from './ApiUsageModelStats';
-import { formatApiCurrency, formatTokenCount } from './apiKeysHelpers';
+import { formatApiCurrency, formatTokenCount, toCurrencyBaseUnits } from './apiKeysHelpers';
 import {
     type ApiModelUsage,
     type ApiUsageDay,
@@ -35,6 +36,7 @@ import {
     getMockApiUsageDays,
 } from './apiUsageMockData';
 import { useCanBuyLumoCredits } from './useCanBuyLumoCredits';
+import { useLumoCredits } from './useLumoCredits';
 
 type UsagePeriod = 'last-7-days' | 'last-30-days' | 'previous-30-days' | 'last-90-days';
 
@@ -421,7 +423,7 @@ const getBalanceStatus = (balance: number) => {
     if (balance <= 0) {
         return 'empty';
     }
-    return balance <= 1_000 ? 'low' : 'available';
+    return balance <= 10 ? 'low' : 'available';
 };
 
 const ApiBalanceStatusMessage = ({ balance, isOrgMember }: { balance: number; isOrgMember: boolean }) => {
@@ -456,6 +458,7 @@ const ApiBalanceStatusMessage = ({ balance, isOrgMember }: { balance: number; is
 
 const ApiBalanceCard = ({
     balance,
+    isBalanceLoading,
     currency,
     averageDailySpend,
     monthlySpend,
@@ -464,7 +467,8 @@ const ApiBalanceCard = ({
     onTopUp,
     canTopUp,
 }: {
-    balance: number;
+    balance: number | undefined;
+    isBalanceLoading: boolean;
     currency: Currency;
     averageDailySpend: number;
     monthlySpend: number;
@@ -480,7 +484,8 @@ const ApiBalanceCard = ({
     const { autoTopUp, spendingLimit } = balanceSettings;
     const [settingsModalProps, setSettingsModalOpen, renderSettingsModal] = useModalState();
 
-    const estimatedDays = averageDailySpend > 0 ? Math.floor(balance / 100 / averageDailySpend) : null;
+    const estimatedDays =
+        balance !== undefined && averageDailySpend > 0 ? Math.floor(balance / averageDailySpend) : null;
     const limitUsagePercent = spendingLimit.limit > 0 ? Math.round((monthlySpend / spendingLimit.limit) * 100) : 0;
     const isOverLimit = spendingLimit.enabled && monthlySpend >= spendingLimit.limit;
     const formattedSpend = formatApiCurrency(monthlySpend, currency);
@@ -499,16 +504,27 @@ const ApiBalanceCard = ({
                                 ? c('collider_2025: Label').t`Organization API balance`
                                 : c('collider_2025: Label').t`Remaining balance`}
                         </span>
-                        <Price currency={currency} className="api-usage-balance-amount">
-                            {balance}
-                        </Price>
-                        <small className="color-weak">
-                            {estimatedDays === null
-                                ? c('collider_2025: Info').t`Usage estimate unavailable`
-                                : estimatedDays === 0
-                                  ? c('collider_2025: Info').t`Less than one day left at current usage`
-                                  : c('collider_2025: Info').t`About ${estimatedDays} days left at current usage`}
-                        </small>
+                        {balance === undefined ? (
+                            <small className="color-weak">
+                                {isBalanceLoading
+                                    ? c('collider_2025: Info').t`Loading balance…`
+                                    : c('collider_2025: Info').t`Balance unavailable`}
+                            </small>
+                        ) : (
+                            <>
+                                <Price currency={currency} className="api-usage-balance-amount">
+                                    {toCurrencyBaseUnits(balance, currency)}
+                                </Price>
+                                <small className="color-weak">
+                                    {estimatedDays === null
+                                        ? c('collider_2025: Info').t`Usage estimate unavailable`
+                                        : estimatedDays === 0
+                                          ? c('collider_2025: Info').t`Less than one day left at current usage`
+                                          : c('collider_2025: Info')
+                                                .t`About ${estimatedDays} days left at current usage`}
+                                </small>
+                            </>
+                        )}
                     </div>
                     {canTopUp && (
                         <Button color="norm" className="shrink-0" disabled={topUpDisabled} onClick={onTopUp}>
@@ -516,7 +532,7 @@ const ApiBalanceCard = ({
                         </Button>
                     )}
                 </div>
-                <ApiBalanceStatusMessage balance={balance} isOrgMember={isOrgMember} />
+                {balance !== undefined && <ApiBalanceStatusMessage balance={balance} isOrgMember={isOrgMember} />}
             </div>
 
             {!isOrgMember && (
@@ -580,14 +596,16 @@ const ApiBalanceCard = ({
 
 export const ApiUsageDashboard = ({ isOrgAdmin, isOrgMember }: { isOrgAdmin: boolean; isOrgMember: boolean }) => {
     const { APP_NAME } = useConfig();
-    const [{ Credit, Currency }] = useUser();
+    const [{ Currency }] = useUser();
+    const [subscription] = useSubscription();
     const [paymentStatus, paymentStatusLoading] = usePaymentStatus();
+    const lumoCredits = useLumoCredits();
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
     const canTopUp = useCanBuyLumoCredits();
     const creditBalanceOverride = useDebugApiCreditBalance();
     const emptyUsageEnabled = useDebugApiEmptyUsage();
-    const displayedCreditBalance = creditBalanceOverride ?? Credit;
-    const hasCredits = displayedCreditBalance > 0;
+    const displayedCreditBalance = creditBalanceOverride ?? lumoCredits.balance;
+    const hasCredits = displayedCreditBalance !== undefined && displayedCreditBalance > 0;
     const [usagePeriod, setUsagePeriod] = useState<UsagePeriod>('last-30-days');
     const mockUsageDays = useMemo(() => getMockApiUsageDays(90), []);
     const allUsageDays = emptyUsageEnabled ? [] : mockUsageDays;
@@ -626,7 +644,8 @@ export const ApiUsageDashboard = ({ isOrgAdmin, isOrgMember }: { isOrgAdmin: boo
             <div className="api-usage-account-grid">
                 <ApiBalanceCard
                     balance={displayedCreditBalance}
-                    currency={Currency}
+                    isBalanceLoading={lumoCredits.loading}
+                    currency={subscription?.Currency ?? Currency}
                     averageDailySpend={averageDailySpend}
                     monthlySpend={monthlySpend}
                     isOrgMember={isOrgMember}
