@@ -175,7 +175,7 @@ export const PaymentsNoApi = ({
     const loadingBitcoin = useStableLoading([loadingHookProps, !!loadingBitcoinProp]);
 
     const minCreditAmount = getMinCreditAmount(currency);
-    if (flow === 'credit' && amount < minCreditAmount) {
+    if ((flow === 'credit' || flow === 'lumo-credit') && amount < minCreditAmount) {
         const price = (
             <Price key="price" currency={currency}>
                 {minCreditAmount}
