@@ -43,7 +43,7 @@ const YourPlanSectionV2 = ({ app, editBillingCycle = false, cta }: YourPlanSecti
         <>
             <DashboardGrid>
                 <DashboardGridSectionHeader title={c('Headline').t`Your plan`} cta={cta} />
-                <SubscriptionEndsBannerV2 app={app} />
+                <SubscriptionEndsBannerV2 app={app} subscription={subscription} />
                 <DashboardCard>
                     <DashboardCardContent>
                         <CurrentPlanInfoSection

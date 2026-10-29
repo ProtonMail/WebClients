@@ -10,13 +10,17 @@ import {
     getSubscriptionExpiresDaysLeft,
     getSubscriptionExpiresText,
 } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
-import { subscriptionExpires } from '@proton/payments/core/subscription/helpers';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
+import { getEntitlementsPerSubscription } from '@proton/payments/core/entitlements/entitlement-grants';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
+import { hasGrantedEntitlement } from '@proton/payments/core/entitlements/helpers';
+import { getSoonestEndingSubscription, subscriptionExpires } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { SECOND } from '@proton/shared/lib/constants';
 import isBetween from '@proton/utils/isBetween';
 
+import { useAllSubscriptions } from '../../../allSubscriptions/hooks';
+import { useEntitlementCatalog } from '../../../entitlementCatalog/hooks';
 import { usePreviousSubscription } from '../../../previousSubscription/hooks';
-import { useSubscription } from '../../../subscription/hooks';
 import { useOutgoingController } from '../../shared/OutgoingDelegatedAccessProvider';
 
 const subscriptionDaysLeftBeforeWarning = 7;
@@ -61,28 +65,43 @@ const OutgoingSubscriptionExpiredBanner = () => {
     );
 };
 
-const OutgoingSubscriptionExpiresBanner = () => {
-    const [subscription] = useSubscription();
+const useSubscriptionEndingEmergencyAccess = (): Subscription | undefined => {
+    const [subscriptions = []] = useAllSubscriptions();
+    const [entitlementCatalog] = useEntitlementCatalog();
 
-    if (isFreeSubscription(subscription)) {
+    const grantingSubscriptions = subscriptions.filter((subscription) =>
+        hasGrantedEntitlement(
+            getEntitlementsPerSubscription(entitlementCatalog, subscription),
+            EntitlementName.MaxEmergencyAccessContacts
+        )
+    );
+
+    const isEnding = (subscription: Subscription) => subscriptionExpires(subscription).subscriptionExpiresSoon;
+
+    if (!grantingSubscriptions.every(isEnding)) {
+        return undefined;
+    }
+
+    return getSoonestEndingSubscription(grantingSubscriptions, isEnding);
+};
+
+const OutgoingSubscriptionExpiresBanner = () => {
+    const subscription = useSubscriptionEndingEmergencyAccess();
+
+    if (!subscription) {
         return null;
     }
 
     const { subscriptionExpiresSoon, planName, expirationDate } = subscriptionExpires(subscription);
-    if (!subscriptionExpiresSoon || !subscription) {
+    if (!subscriptionExpiresSoon) {
         return null;
     }
 
     const subscriptionDaysLeft = getSubscriptionExpiresDaysLeft(expirationDate, new Date());
     const subscriptionExpiresText = getSubscriptionExpiresText(planName, subscriptionDaysLeft);
 
-    const showSubscriptionExpiring =
-        subscription &&
-        isBetween(subscriptionDaysLeft, 0, subscriptionDaysLeftBeforeWarning) &&
-        subscriptionExpiresSoon;
-
-    if (!showSubscriptionExpiring) {
-        return;
+    if (!isBetween(subscriptionDaysLeft, 0, subscriptionDaysLeftBeforeWarning)) {
+        return null;
     }
 
     const reactivateSubscriptionAction = getReactivateSubscriptionAction(subscription);

@@ -2,7 +2,8 @@ import { fromUnixTime, isFuture, subDays } from 'date-fns';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { type ADDON_NAMES, PLANS } from '@proton/payments/core/constants';
-import { type MaybeFreeSubscription, isTrial } from '@proton/payments/core/subscription/helpers';
+import { getSoonestEndingSubscription, isTrial, subscriptionExpires } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { SubscriptionPlan } from '@proton/shared/lib/payments/plan/interface';
@@ -27,36 +28,33 @@ function shouldHideBannerForDistantExpiration(
     return isFuture(threshold);
 }
 
-export function useHideBanner(
-    app: APP_NAMES,
-    subscription: MaybeFreeSubscription,
-    subscriptionExpiresSoon: boolean,
-    expirationDate: number | null
-): boolean {
+function canShowBannerForSubscription(subscription: Subscription): boolean {
+    if (isTrial(subscription)) {
+        return false;
+    }
+
+    const { subscriptionExpiresSoon, expirationDate } = subscriptionExpires(subscription);
+
+    if (!subscriptionExpiresSoon || !expirationDate) {
+        return false;
+    }
+
+    return !shouldHideBannerForDistantExpiration(subscription.Plans, expirationDate);
+}
+
+export function useSubscriptionWithEndsBanner(app: APP_NAMES, subscriptions: Subscription[]): Subscription | undefined {
     const { APP_NAME } = useConfig();
     const { showVPNDashboard } = useShowVPNDashboard(app);
     const { showDashboard } = useShowDashboard(app);
     const { showDashboard: showDriveDashboard } = useShowDriveDashboard(app);
 
     if (!([APPS.PROTONACCOUNT, APPS.PROTONVPN_SETTINGS] as APP_NAMES[]).includes(APP_NAME)) {
-        return true;
+        return undefined;
     }
 
     if (showVPNDashboard || showDashboard || showDriveDashboard) {
-        return true;
+        return undefined;
     }
 
-    if (isTrial(subscription)) {
-        return true;
-    }
-
-    if (!subscriptionExpiresSoon || !expirationDate) {
-        return true;
-    }
-
-    if (shouldHideBannerForDistantExpiration(subscription?.Plans, expirationDate)) {
-        return true;
-    }
-
-    return false;
+    return getSoonestEndingSubscription(subscriptions, canShowBannerForSubscription);
 }
