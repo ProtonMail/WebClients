@@ -4,10 +4,10 @@ import { PassCrypto } from '../../../lib/crypto';
 import { encodeFolder } from '../../../lib/folders/folder-proto.transformer';
 import { getFolderAndDescendantIds } from '../../../lib/folders/folder.utils';
 import { parseFolderResponse } from '../../../lib/folders/folders.parser';
-import { createFolderApi, deleteFoldersApi, updateFolderApi } from '../../../lib/folders/folders.requests';
+import { createFolderApi, deleteFoldersApi, moveFolderApi, updateFolderApi } from '../../../lib/folders/folders.requests';
 import type { FolderId } from '../../../types/crypto/pass-types';
 import type { FolderCreateDTO, FolderData } from '../../../types/data/folders';
-import { folderCreate, folderDelete, folderEdit } from '../../actions/creators/folders';
+import { folderCreate, folderDelete, folderEdit, folderMove } from '../../actions/creators/folders';
 import { createRequestSaga } from '../../request/sagas';
 import { selectShareFolders } from '../../selectors/folders';
 
@@ -47,6 +47,17 @@ const editFolderSaga = createRequestSaga({
     },
 });
 
+const moveFolderSaga = createRequestSaga({
+    actions: folderMove,
+    call: async ({ shareId, folderId, targetParentFolderId }) => {
+        const move = await PassCrypto.moveFolder({ shareId, folderId, targetParentFolderId });
+        const { Folder } = await moveFolderApi({ shareId, folderId, ...move });
+        const folder = await parseFolderResponse(shareId, Folder);
+
+        return { shareId, folder };
+    },
+});
+
 const deleteFoldersSaga = createRequestSaga({
     actions: folderDelete,
     call: function* ({ shareId, folderIds }) {
@@ -61,4 +72,4 @@ const deleteFoldersSaga = createRequestSaga({
     },
 });
 
-export default [createFolderSaga, editFolderSaga, deleteFoldersSaga];
+export default [createFolderSaga, editFolderSaga, moveFolderSaga, deleteFoldersSaga];

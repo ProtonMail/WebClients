@@ -11,6 +11,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../../hooks/useFieldControl';
 import type { MaybeArray } from '../../../types/utils';
+import { MaybeTooltip } from '../../Layout/Tooltip/MaybeTooltip';
 import type { RadioValue } from './RadioGroupField';
 
 import './RadioButtonGroupField.scss';
@@ -44,7 +45,7 @@ export const RadioButton = <T,>({ onChange, id, checked, value, name, color, ico
     );
 };
 
-type RadioLabelledButtonProps<T> = BaseRadioProps<T> & { children: MaybeArray<ReactNode> };
+type RadioLabelledButtonProps<T> = BaseRadioProps<T> & { children: MaybeArray<ReactNode>; tooltip?: string };
 
 export const RadioLabelledButton = <T extends RadioValue>({
     id,
@@ -54,29 +55,32 @@ export const RadioLabelledButton = <T extends RadioValue>({
     checked,
     onChange,
     children,
+    tooltip,
 }: RadioLabelledButtonProps<T>) => {
     return (
-        <label
-            htmlFor={id}
-            className={clsx([
-                'pass-radio-group--labelled-button w-full expand-click-area relative',
-                disabled && 'opacity-50 pointer-events-none',
-            ])}
-        >
-            <input
-                id={id}
-                type="radio"
-                className="radio"
-                name={name}
-                disabled={disabled}
-                value={value}
-                onChange={(e) => e.target.checked && onChange?.(value)}
-            />
-            <div className="flex items-center gap-x-3 py-1">
-                {children}
-                {checked && <IcCheckmark size={6} color="var(--interaction-norm)" />}
-            </div>
-        </label>
+        <MaybeTooltip active={Boolean(tooltip)} title={tooltip} placement="top-start">
+            <label
+                htmlFor={id}
+                className={clsx([
+                    'pass-radio-group--labelled-button w-full expand-click-area relative',
+                    disabled && 'opacity-50 pointer-events-none',
+                ])}
+            >
+                <input
+                    id={id}
+                    type="radio"
+                    className="radio"
+                    name={name}
+                    disabled={disabled}
+                    value={value}
+                    onChange={(e) => e.target.checked && onChange?.(value)}
+                />
+                <div className="flex items-center gap-x-3 py-1">
+                    {children}
+                    {checked && <IcCheckmark size={6} color="var(--interaction-norm)" />}
+                </div>
+            </label>
+        </MaybeTooltip>
     );
 };
 

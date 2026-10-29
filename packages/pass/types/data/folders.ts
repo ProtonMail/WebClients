@@ -21,6 +21,12 @@ export type FolderEditDTO = {
     name: string;
 };
 
+export type FolderMoveDTO = {
+    shareId: string;
+    folderId: string;
+    targetParentFolderId: MaybeNull<string>;
+};
+
 export type FolderDeleteDTO = {
     shareId: string;
     folderIds: string[];
@@ -32,6 +38,11 @@ export type FolderCreateSuccess = {
 };
 
 export type FolderEditSuccess = {
+    shareId: string;
+    folder: FolderData;
+};
+
+export type FolderMoveSuccess = {
     shareId: string;
     folder: FolderData;
 };

@@ -3,12 +3,12 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 
 import { useMemoSelector } from '../../hooks/useMemoSelector';
 import { selectItemsInFolder } from '../../store/selectors/items';
+import { DropdownMenuButton } from '../Layout/Dropdown/DropdownMenuButton';
 import { useFolderActions } from './FolderActionsProvider';
 import { useFoldersAccess } from './useFoldersAccess';
 
@@ -32,11 +32,9 @@ const MoveAllItemsButton: FC<Pick<Props, 'shareId' | 'folderId' | 'folderName'>>
 
     return (
         <DropdownMenuButton
-            className="text-left"
+            label={c('Action').t`Move all items`}
             onClick={() => folderActions.moveItems(shareId, folderId, folderName)}
-        >
-            {c('Action').t`Move all items`}
-        </DropdownMenuButton>
+        />
     );
 };
 
@@ -62,19 +60,22 @@ export const PassFolderActions: FC<Props> = ({ shareId, folderId, folderName, on
         >
             {canUseFolders && (
                 <DropdownMenuButton
-                    className="text-left"
+                    label={c('Action').t`Rename`}
                     onClick={() => folderActions.edit(shareId, folderId, folderName)}
-                >
-                    {c('Action').t`Rename`}
-                </DropdownMenuButton>
+                />
+            )}
+            {canUseFolders && (
+                <DropdownMenuButton
+                    label={c('Action').t`Move folder`}
+                    onClick={() => folderActions.move(shareId, folderId, folderName)}
+                />
             )}
             <MoveAllItemsButton shareId={shareId} folderId={folderId} folderName={folderName} />
             <DropdownMenuButton
-                className="text-left color-danger"
+                danger
+                label={c('Action').t`Delete`}
                 onClick={() => folderActions.delete(shareId, folderId, folderName)}
-            >
-                {c('Action').t`Delete`}
-            </DropdownMenuButton>
+            />
         </SimpleDropdown>
     );
 };

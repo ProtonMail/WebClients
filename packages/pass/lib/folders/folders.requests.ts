@@ -1,4 +1,9 @@
-import type { FolderCreateInputDto, FolderDataResponse, FolderUpdateInputDto } from '../../types/api/pass';
+import type {
+    FolderCreateInputDto,
+    FolderDataResponse,
+    FolderMoveInputDto,
+    FolderUpdateInputDto,
+} from '../../types/api/pass';
 import type { FolderId, ShareId } from '../../types/crypto/pass-types';
 import type { FolderData, FolderDeleteDTO } from '../../types/data/folders';
 import { logId, logger } from '../../utils/logger';
@@ -94,6 +99,17 @@ export const updateFolderApi = async ({
 }: { shareId: string; folderId: string } & FolderUpdateInputDto): Promise<{ Folder: FolderDataResponse }> =>
     api({
         url: `pass/v1/share/${shareId}/folder/${folderId}`,
+        method: 'put',
+        data,
+    });
+
+export const moveFolderApi = async ({
+    shareId,
+    folderId,
+    ...data
+}: { shareId: string; folderId: string } & FolderMoveInputDto): Promise<{ Folder: FolderDataResponse }> =>
+    api({
+        url: `pass/v1/share/${shareId}/folder/${folderId}/move`,
         method: 'put',
         data,
     });
