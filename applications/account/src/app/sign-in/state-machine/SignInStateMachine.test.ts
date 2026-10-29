@@ -807,6 +807,26 @@ describe('SignInStateMachine', () => {
             expect(credentialsFlow(actor).getSnapshot().context.errorMessage).toBeUndefined();
         });
 
+        it('does not carry a wrong password over to the username step on back', async () => {
+            const { actor } = startWith(
+                { type: AuthType.Auto },
+                {
+                    authenticateWithPassword: () =>
+                        Promise.reject(new InvalidLoginError(apiError(API_CUSTOM_ERROR_CODES.INVALID_LOGIN))),
+                }
+            );
+            await submitUsername(actor);
+            await submitCredentials(actor);
+            expect(credentialsFlow(actor).getSnapshot().context.errorMessage).toBeDefined();
+
+            credentialsFlow(actor).send({ type: 'decision.back' });
+
+            const snapshot = credentialsFlow(actor).getSnapshot();
+            expect(snapshot.matches({ form: { signIn: { auto: 'idle' } } })).toBe(true);
+            expect(snapshot.context.username).toBe(usernameForm.username);
+            expect(snapshot.context.errorMessage).toBeUndefined();
+        });
+
         it('switches to the SSO form when the account uses SSO', async () => {
             const { actor, notices } = startActor({
                 authenticateWithPassword: () =>
