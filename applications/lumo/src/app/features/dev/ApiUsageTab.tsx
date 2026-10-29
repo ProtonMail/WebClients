@@ -125,7 +125,7 @@ export const ApiUsageTab = () => {
                         {creditBalanceOverride === null
                             ? c('lumo: Debug View').t`Real balance`
                             : new Intl.NumberFormat(undefined, { style: 'currency', currency: 'USD' }).format(
-                                  creditBalanceOverride / 100
+                                  creditBalanceOverride
                               )}
                     </span>
                 </div>
@@ -140,14 +140,14 @@ export const ApiUsageTab = () => {
                     <button
                         type="button"
                         className="debug-view-btn debug-view-btn--secondary"
-                        onClick={() => setDebugApiCreditBalance(500)}
+                        onClick={() => setDebugApiCreditBalance(5)}
                     >
                         ⚠️ {c('lumo: Debug View').t`Low balance ($5)`}
                     </button>
                     <button
                         type="button"
                         className="debug-view-btn debug-view-btn--primary"
-                        onClick={() => setDebugApiCreditBalance((creditBalanceOverride ?? 0) + 5_000)}
+                        onClick={() => setDebugApiCreditBalance((creditBalanceOverride ?? 0) + 50)}
                     >
                         💳 {c('lumo: Debug View').t`Simulate $50 purchase`}
                     </button>
