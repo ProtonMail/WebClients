@@ -3,7 +3,10 @@ import { waitFor } from '@testing-library/react';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Entitlements } from '@proton/payments/core/entitlements/interface';
 import { makeEntitlements } from '@proton/payments/testing/makeEntitlements';
-import { type CataloguedPlan, buildOrganizationEntitlements } from '@proton/payments/testing/prodCatalogGrants';
+import {
+    type CataloguedPlan,
+    buildOrganizationEntitlements,
+} from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { CacheType } from '@proton/redux-utilities/interface';

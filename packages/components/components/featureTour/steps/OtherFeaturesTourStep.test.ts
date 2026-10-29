@@ -1,5 +1,8 @@
 import { PLANS } from '@proton/payments/core/constants';
-import { type CataloguedPlan, buildOrgAndUserEntitlementChecks } from '@proton/payments/testing/prodCatalogGrants';
+import {
+    type CataloguedPlan,
+    buildOrgAndUserEntitlementChecks,
+} from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import { organizationMember } from '@proton/payments/testing/usersWhoCannotReadSubscriptions';
 import type { SharedStore } from '@proton/redux-shared-store/sharedStore';
 

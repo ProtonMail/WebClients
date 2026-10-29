@@ -2,8 +2,8 @@ import { buildEntitlementCatalog, catalogEntry } from '../../testing/buildEntitl
 import {
     type CataloguedPlan,
     buildOrgAndUserEntitlementChecks,
-    prodCatalogGrants,
-} from '../../testing/prodCatalogGrants';
+    prodCatalogGrantsForTesting,
+} from '../../testing/prodCatalogGrantsForTesting';
 import { regularAdmin } from '../../testing/regularAdmin';
 import { usersWhoCannotReadSubscriptions } from '../../testing/usersWhoCannotReadSubscriptions';
 import { PLANS } from '../constants';
@@ -246,7 +246,7 @@ describe('entitlement resolver parity on quantity semantics', () => {
 
 describe('entitlement checks give users who cannot read subscriptions the same answers as the admin', () => {
     const checkNames = Object.keys(entitlementChecksForOrgAndUser) as (keyof typeof entitlementChecksForOrgAndUser)[];
-    const cataloguedPlans = Object.keys(prodCatalogGrants) as CataloguedPlan[];
+    const cataloguedPlans = Object.keys(prodCatalogGrantsForTesting) as CataloguedPlan[];
 
     const answersPerCheck = (resolver: ReturnType<typeof buildOrgAndUserEntitlementChecks>) =>
         Object.fromEntries(checkNames.map((name) => [name, resolver[name]]));
