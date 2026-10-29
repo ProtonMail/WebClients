@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import WalletLogo from '@proton/components/components/logo/WalletLogo';
-import { getNUsersText } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getNDomainsFeatureText } from '@proton/components/containers/payments/features/mail';
 import {
@@ -11,9 +10,6 @@ import {
     UNLIMITED_WALLETS,
     UNLIMITED_WALLET_ACCOUNTS,
     UNLIMITED_WALLET_EMAIL,
-    VISIONARY_WALLETS,
-    VISIONARY_WALLET_ACCOUNTS,
-    VISIONARY_WALLET_EMAIL,
     getBitcoinViaEmail,
     getWalletAccounts,
     getWalletEmailAddresses,
@@ -28,7 +24,6 @@ import {
     APPS,
     BRAND_NAME,
     PROTON_SENTINEL_NAME,
-    VISIONARY_MAX_USERS,
     WALLET_APP_NAME,
     WALLET_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
@@ -156,35 +151,6 @@ const getUnlimitedFeatures = ({ plan }: { plan: Plan | undefined }) => {
     ];
 };
 
-const getVisionaryFeatures = ({ plan }: { plan: Plan | undefined }) => {
-    if (!plan) {
-        return [];
-    }
-    return [
-        getWallets(VISIONARY_WALLETS),
-        getWalletAccounts(VISIONARY_WALLET_ACCOUNTS),
-        getWalletEmailAddresses(VISIONARY_WALLET_EMAIL),
-        getBitcoinViaEmail(),
-        getStorageFeature(plan.MaxSpace),
-        {
-            id: 'n-domains',
-            text: getNDomainsFeatureText(plan.MaxDomains),
-            included: true,
-        },
-
-        getVpnFeature(),
-        getPasswordManagerFeature(),
-        getDriveFeature(),
-        getSentinelFeature(),
-
-        {
-            id: 'users',
-            text: getNUsersText(VISIONARY_MAX_USERS),
-            included: true,
-        },
-    ];
-};
-
 export const getWalletConfiguration = ({
     mode,
     audience,
@@ -242,20 +208,6 @@ export const getWalletConfiguration = ({
                     />
                 ),
                 type: 'best' as const,
-                guarantee: true,
-            },
-            {
-                plan: PLANS.VISIONARY,
-                subline: c('wallet_signup_2024: Info')
-                    .t`Our most exclusive plan. Get early access to new features and all premium ${BRAND_NAME} services.`,
-                subsection: (
-                    <PlanCardFeatureList
-                        {...planCardFeatureProps}
-                        tooltip
-                        features={getVisionaryFeatures({ plan: plansMap?.[PLANS.VISIONARY] })}
-                    />
-                ),
-                type: 'standard' as const,
                 guarantee: true,
             },
         ].filter(isTruthy),
