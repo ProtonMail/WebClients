@@ -1,5 +1,3 @@
-/* eslint @typescript-eslint/no-use-before-define: 0 */
-
 /**
  * Returns `true` if the passed parameter is an `Error`.
  */
