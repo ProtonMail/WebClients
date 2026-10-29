@@ -147,12 +147,13 @@ export function convertSpacesFromApi(input: unknown): ListSpacesRemote {
         assets: {},
         deletedAssets: {},
     };
-    return input.reduce((acc: ListSpacesRemote, item: unknown): ListSpacesRemote => {
+    const result = input.reduce((acc: ListSpacesRemote, item: unknown): ListSpacesRemote => {
         let converted: GetSpaceRemote;
         try {
             converted = convertSpaceFromApi(item);
         } catch (error) {
-            console.warn('Skipping invalid space from API list:', error);
+            const { ID, SpaceTag, SpaceType } = (item ?? {}) as Partial<SpaceFromApi>;
+            console.warn('Skipping invalid space from API list:', { ID, SpaceTag, SpaceType }, error);
             return acc;
         }
         const { space, conversations, deletedConversations, assets, deletedAssets } = converted;
@@ -186,6 +187,19 @@ export function convertSpacesFromApi(input: unknown): ListSpacesRemote {
             return { ...base, spaces: { ...acc.spaces, [space.id]: space } };
         }
     }, zero);
+    const oldestCreatedAt = getOldestCreateTime(input);
+    return oldestCreatedAt ? { ...result, oldestCreatedAt } : result;
+}
+
+function getOldestCreateTime(items: unknown[]): string | undefined {
+    let oldest: number | undefined;
+    for (const item of items) {
+        const createTime = typeof item === 'object' && item !== null ? (item as SpaceFromApi).CreateTime : undefined;
+        if (!isValidDateString(createTime)) continue;
+        const time = new Date(createTime as string).getTime();
+        if (oldest === undefined || time < oldest) oldest = time;
+    }
+    return oldest === undefined ? undefined : new Date(oldest).toISOString();
 }
 
 export function convertConversationFromApi(input: unknown, spaceTag: SpaceTag): GetConversationRemote {

@@ -74,13 +74,13 @@ export const useMessagesLimitStatus = (conversationId: ConversationId | null | u
 export const useAssetsLimitStatus = (spaceId: SpaceId | null | undefined): ResourceLimitStatus => {
     const attachments = useLumoSelector(selectAttachmentsBySpaceId(spaceId));
     const overrideState = useLumoSelector(selectDebugLimitOverride('assets'));
-    return useMemo(
-        () =>
-            buildStatus(
-                'assets',
-                Object.keys(attachments).length,
-                spaceId && overrideState.spaceId === spaceId ? overrideState.override : null
-            ),
-        [attachments, spaceId, overrideState]
-    );
+    return useMemo(() => {
+        // Auto-retrieved RAG copies stay local and never count towards the backend's asset limit.
+        const storedCount = Object.values(attachments).filter((attachment) => !attachment.autoRetrieved).length;
+        return buildStatus(
+            'assets',
+            storedCount,
+            spaceId && overrideState.spaceId === spaceId ? overrideState.override : null
+        );
+    }, [attachments, spaceId, overrideState]);
 };

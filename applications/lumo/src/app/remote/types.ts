@@ -207,6 +207,11 @@ export type ListSpacesRemote = {
     deletedSpaces: Record<SpaceId, RemoteDeletedSpace>;
     deletedConversations: Record<ConversationId, RemoteDeletedConversation>;
     deletedAssets: Record<AssetId, RemoteDeletedAsset>;
+    /**
+     * Oldest CreateTime in the raw API page, including spaces skipped during conversion (e.g. unsupported types).
+     * Pagination must use this: a page whose spaces were all skipped is not the end of the list.
+     */
+    oldestCreatedAt?: string;
 };
 export type PullSpacesRemote = ListSpacesRemote & {
     requestFull: boolean;

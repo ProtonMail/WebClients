@@ -20,6 +20,7 @@ function makeState(remoteUserSettingsUndecryptable: boolean): LumoState {
             reduxLoadedFromIdb: true,
             lumoUserSettingsBootstrapped: true,
             lastSpacesPullAt: 0,
+            spacesPullSettled: false,
             remoteUserSettingsUndecryptable,
         },
     } as unknown as LumoState;

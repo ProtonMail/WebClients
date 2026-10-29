@@ -1,4 +1,5 @@
-import { createAction, createReducer } from '@reduxjs/toolkit';
+import { createAction, createReducer, prepareAutoBatched } from '@reduxjs/toolkit';
+import isEqual from 'lodash/isEqual';
 import { v4 as uuidv4 } from 'uuid';
 
 import type { Priority } from '../../../remote/scheduler';
@@ -40,7 +41,7 @@ export type SetConversationArtifactCreationAction = {
     artifactCreation: boolean;
 };
 
-export const addConversation = createAction<Conversation>('lumo/conversation/add');
+export const addConversation = createAction('lumo/conversation/add', prepareAutoBatched<Conversation>());
 export const changeConversationTitle = createAction<EditConversation>('lumo/conversation/changeTitle');
 export const setConversationAgent = createAction<SetConversationAgentAction>('lumo/conversation/setAgent');
 export const setConversationArtifactCreation = createAction<SetConversationArtifactCreationAction>(
@@ -57,7 +58,7 @@ export const setConversationArtifactAsset = createAction<SetConversationArtifact
     'lumo/conversation/setArtifactAsset'
 );
 export const toggleConversationStarred = createAction<ConversationId>('lumo/conversation/toggleStarred');
-export const deleteConversation = createAction<ConversationId>('lumo/conversation/delete');
+export const deleteConversation = createAction('lumo/conversation/delete', prepareAutoBatched<ConversationId>());
 export const deleteAllConversations = createAction('lumo/conversation/deleteAll');
 export const updateConversationStatus = createAction<UpdateConversationStatusAction>('lumo/conversation/updateStatus');
 
@@ -75,8 +76,8 @@ export const expireConversationsRequest = createAction<ExpireConversationsReques
     'lumo/conversation/expireConversationsRequest'
 );
 export const locallyDeleteConversationFromLocalRequest = createAction<ConversationId>('lumo/conversation/locallyDeleteFromLocalRequest'); // prettier-ignore
-export const locallyDeleteConversationFromRemoteRequest = createAction<ConversationId>('lumo/conversation/locallyDeleteFromRemoteRequest'); // prettier-ignore
-export const locallyRefreshConversationFromRemoteRequest = createAction<RemoteConversation>('lumo/conversation/refreshFromRemoteRequest'); // prettier-ignore
+export const locallyDeleteConversationFromRemoteRequest = createAction('lumo/conversation/locallyDeleteFromRemoteRequest', prepareAutoBatched<ConversationId>()); // prettier-ignore
+export const locallyRefreshConversationFromRemoteRequest = createAction('lumo/conversation/refreshFromRemoteRequest', prepareAutoBatched<RemoteConversation>()); // prettier-ignore
 export const pullConversationRequest = createAction<PullConversationRequest>('lumo/conversation/pullRequest');
 export const pullConversationSuccess = createAction<GetConversationRemote>('lumo/conversation/pullSuccess');
 export const pullConversationFailure = createAction<ConversationId>('lumo/conversation/pullFailure');
@@ -103,6 +104,9 @@ const conversationsReducer = createReducer<ConversationMap>(EMPTY_CONVERSATION_M
                 merged.ghost = existing.ghost;
             }
 
+            if (existing && isEqual(existing, merged)) {
+                return;
+            }
             state[conversation.id] = merged;
         })
         .addCase(changeConversationTitle, (state, action) => {
