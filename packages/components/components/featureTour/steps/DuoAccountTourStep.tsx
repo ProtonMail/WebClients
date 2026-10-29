@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
+import { allSubscriptionsThunk } from '@proton/account/allSubscriptions';
 import { organizationThunk } from '@proton/account/organization';
 import { userThunk } from '@proton/account/user';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { hasSubscriptionWithPlan } from '@proton/shared/lib/payments/plan/helpers';
 import duoPlanBackground from '@proton/styles/assets/img/onboarding/duoPlan.svg';
 
 import SettingsLink from '../../link/SettingsLink';
@@ -12,9 +14,14 @@ import FeatureTourStepCTA from './components/FeatureTourStepCTA';
 import FeatureTourStepsContent from './components/FeatureTourStepsContent';
 
 export const shouldDisplayDuoAccountTourStep: ShouldDisplayTourStep = async (dispatch) => {
-    const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
+    const [user, organization, subscriptions] = await Promise.all([
+        dispatch(userThunk()),
+        dispatch(organizationThunk()),
+        dispatch(allSubscriptionsThunk()),
+    ]);
     return {
-        canDisplay: user.isAdmin && organization.PlanName === PLANS.DUO && organization.UsedMembers <= 1,
+        canDisplay:
+            user.isAdmin && hasSubscriptionWithPlan(subscriptions, [PLANS.DUO]) && organization.UsedMembers <= 1,
         preloadUrls: [duoPlanBackground],
     };
 };
