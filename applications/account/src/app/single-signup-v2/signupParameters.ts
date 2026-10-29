@@ -24,7 +24,7 @@ export const getSignupParameters = ({
     partner?: 'porkbun';
 }): SignupParameters2 => {
     const searchParams = new URLSearchParams(location.search);
-    if (toApp !== APPS.PROTONWALLET && !visionarySignupEnabled && searchParams.get('plan') === PLANS.VISIONARY) {
+    if (!visionarySignupEnabled && searchParams.get('plan') === PLANS.VISIONARY) {
         searchParams.delete('plan');
     }
     const result = getSignupSearchParams(location.pathname, searchParams);
