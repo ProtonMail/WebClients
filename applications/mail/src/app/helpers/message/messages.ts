@@ -4,7 +4,7 @@ import type {
     MessageStateWithData,
     MessageWithOptionalBody,
     PartialMessageState,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';

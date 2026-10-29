@@ -3,8 +3,8 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
-import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
-import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
+import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey } from '@proton/shared/lib/interfaces/Key';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';

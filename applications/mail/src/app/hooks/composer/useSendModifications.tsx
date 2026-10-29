@@ -1,17 +1,16 @@
 import { useCallback } from 'react';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import type { MessageEmbeddedImage, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageEmbeddedImage, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { isAttachPublicKey, isPlainText } from '@proton/shared/lib/mail/messages';
-
-import { useMailDispatch } from '../../store/hooks';
 
 import { upload } from '../../helpers/attachment/attachmentUploader';
 import { attachPublicKey } from '../../helpers/message/messageAttachPublicKey';
 import { replaceDataUrl } from '../../helpers/message/messageDataUrl';
 import { createEmbeddedImageFromUpload } from '../../helpers/message/messageEmbeddeds';
+import { useMailDispatch } from '../../store/hooks';
 import { sendModifications } from '../../store/messages/draft/messagesDraftActions';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';

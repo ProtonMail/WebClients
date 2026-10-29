@@ -7,7 +7,7 @@ import { IcLockOpenCheckFilled } from '@proton/icons/icons/IcLockOpenCheckFilled
 import { IcLockOpenExclamationFilled } from '@proton/icons/icons/IcLockOpenExclamationFilled';
 import { IcLockOpenPenFilled } from '@proton/icons/icons/IcLockOpenPenFilled';
 import { IcLockPenFilled } from '@proton/icons/icons/IcLockPenFilled';
-import type { MessageState, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState, MessageVerification } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

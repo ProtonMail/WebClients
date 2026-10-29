@@ -1,5 +1,5 @@
-import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

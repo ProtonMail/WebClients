@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 import loudRejection from 'loud-rejection';
 
-import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { clearAll } from '../../helpers/tests/helper';
 import { mockUseScheduleSendFeature } from '../../helpers/tests/mockUseScheduleSendFeature';

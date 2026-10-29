@@ -12,8 +12,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { IcPaperPlaneClock } from '@proton/icons/icons/IcPaperPlaneClock';
+import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

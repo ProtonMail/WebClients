@@ -22,7 +22,7 @@ import { IcTextStyle } from '@proton/icons/icons/IcTextStyle';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { getIsAssistantOpened } from '@proton/llm/lib/helpers';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces/UserSettings';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';

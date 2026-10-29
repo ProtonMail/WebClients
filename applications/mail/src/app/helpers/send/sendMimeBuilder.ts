@@ -6,7 +6,7 @@ import type {
     MessageImages,
     MessageKeys,
     MessageState,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';

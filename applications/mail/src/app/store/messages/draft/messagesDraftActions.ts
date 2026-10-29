@@ -1,6 +1,10 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import type { MessageDraftFlags, MessageEmbeddedImage, MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type {
+    MessageDraftFlags,
+    MessageEmbeddedImage,
+    MessageState,
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { cancelSend as cancelSendApiCall } from '@proton/shared/lib/api/messages';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 

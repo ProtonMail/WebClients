@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 

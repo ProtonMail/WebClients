@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { isPlainText, isSent } from '@proton/shared/lib/mail/messages';
 
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';

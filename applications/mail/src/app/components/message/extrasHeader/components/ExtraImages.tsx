@@ -5,7 +5,7 @@ import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import LoadRemoteImageBanner from '@proton/components/containers/banner/LoadRemoteImageBanner';
 import { IcFileImage } from '@proton/icons/icons/IcFileImage';
-import type { MessageImages } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageImages } from '@proton/mail-message/store/messages/messagesTypes';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { hasShowEmbedded, hasShowRemote } from '@proton/shared/lib/mail/images';

@@ -1,5 +1,5 @@
-import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
-import type { MessageImage, MessageImages, MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
+import type { MessageImage, MessageImages, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import type { Tracker } from '../../hooks/message/useMessageTrackers';

@@ -1,4 +1,4 @@
-import type { MessageErrors, MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageErrors, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import type { ConversationErrors } from '../store/conversations/conversationsTypes';
 

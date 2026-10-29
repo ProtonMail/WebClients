@@ -1,4 +1,4 @@
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { ICAL_EXTENSIONS } from '@proton/shared/lib/calendar/constants';
 import { KEY_EXTENSION } from '@proton/shared/lib/constants';
 import { splitExtension } from '@proton/shared/lib/helpers/file';

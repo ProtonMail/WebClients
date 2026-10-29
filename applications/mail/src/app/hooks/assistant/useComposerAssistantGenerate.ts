@@ -15,7 +15,7 @@ import type {
     RefineLocation,
 } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus, isPredefinedRefineActionType, isRefineActionType } from '@proton/llm/lib/types';
-import { removeLineBreaks } from '@proton/mail/helpers/string';
+import { removeLineBreaks } from '@proton/mail-message/helpers/string';
 import { ASSISTANT_INSERT_TYPE, ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant/types';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';

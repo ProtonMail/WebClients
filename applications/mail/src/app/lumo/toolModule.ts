@@ -5,13 +5,13 @@ import type { ThemeContextInterface } from '@proton/components/containers/themes
 import type { ESStatusBooleans } from '@proton/encrypted-search/models/interfaces';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
-import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import type { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { CategoryTab } from '@proton/mail/features/categoriesView/categoriesConstants';
 import type {
     createLabel as createLabelAction,
     updateLabel as updateLabelAction,
 } from '@proton/mail/store/labels/actions';
-import type { PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import type { DENSITY } from '@proton/shared/lib/constants';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';

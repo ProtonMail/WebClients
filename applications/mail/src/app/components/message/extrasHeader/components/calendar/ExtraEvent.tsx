@@ -4,7 +4,7 @@ import { useApi } from '@proton/app-context/useApi';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import useLoading from '@proton/hooks/useLoading';
-import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { EventInvitationError } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { INVITATION_ERROR_TYPE } from '@proton/shared/lib/calendar/icsSurgery/errors/icsSurgeryErrorTypes';
 import { APPS } from '@proton/shared/lib/constants';

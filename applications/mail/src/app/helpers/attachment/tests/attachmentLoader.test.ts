@@ -1,6 +1,6 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageKeys, MessageVerification } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { addApiMock, api } from '../../tests/api';

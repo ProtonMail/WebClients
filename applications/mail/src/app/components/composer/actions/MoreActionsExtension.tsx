@@ -9,8 +9,8 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {

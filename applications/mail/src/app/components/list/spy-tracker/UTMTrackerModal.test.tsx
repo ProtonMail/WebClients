@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import { mailTestRender } from '../../../helpers/tests/render';

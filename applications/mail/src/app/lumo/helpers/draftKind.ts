@@ -1,4 +1,4 @@
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 
 export enum DraftKind {
     NEW = 'new',

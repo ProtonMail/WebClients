@@ -24,7 +24,7 @@ import type {
     MessageStateWithData,
     MessageWithOptionalBody,
     PartialMessageState,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { markAsUnsubscribed, oneClickUnsubscribe } from '@proton/shared/lib/api/messages';
 import { MIME_TYPES, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';

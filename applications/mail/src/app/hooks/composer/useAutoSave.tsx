@@ -4,7 +4,7 @@ import { logger } from '@protontech/logger';
 
 import type { Cancellable } from '@proton/hooks/useHandler';
 import { useHandler } from '@proton/hooks/useHandler';
-import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { isDecryptionError, isNetworkError } from '../../helpers/errors';

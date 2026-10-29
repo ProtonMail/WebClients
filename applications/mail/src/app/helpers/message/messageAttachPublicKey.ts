@@ -1,5 +1,10 @@
 import { CryptoProxy } from '@protontech/crypto';
-import type { MessageState, MessageStateWithData, PublicPrivateKey } from '@proton/mail/store/messages/messagesTypes';
+
+import type {
+    MessageState,
+    MessageStateWithData,
+    PublicPrivateKey,
+} from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 

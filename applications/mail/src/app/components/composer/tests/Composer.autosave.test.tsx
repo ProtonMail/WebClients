@@ -2,7 +2,7 @@ import { act, fireEvent, getByTestId } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
-import { parseDOMStringToBodyElement } from '@proton/mail/helpers/parseDOMStringToBodyElement';
+import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 

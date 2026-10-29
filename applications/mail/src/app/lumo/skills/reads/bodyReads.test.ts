@@ -1,7 +1,7 @@
 /** The three body reads share the open-then-decrypt path, so they share one fake-store harness. */
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { protonizer } from '@proton/sanitize/purify';
 import { API_CODES, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

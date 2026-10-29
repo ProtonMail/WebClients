@@ -6,7 +6,7 @@ import type {
     MessageErrors,
     MessageState,
     VerificationParams,
-} from '@proton/mail/store/messages/messagesTypes';
+} from '@proton/mail-message/store/messages/messagesTypes';
 import { getMessage } from '@proton/shared/lib/api/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';

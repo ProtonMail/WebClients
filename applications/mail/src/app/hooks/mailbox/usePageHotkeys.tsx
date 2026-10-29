@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
 import { useHotkeys } from '@proton/hooks/useHotkeys';
-import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';

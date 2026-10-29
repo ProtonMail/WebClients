@@ -1,6 +1,6 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';

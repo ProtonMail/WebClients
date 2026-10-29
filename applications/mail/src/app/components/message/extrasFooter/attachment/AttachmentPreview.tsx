@@ -4,7 +4,7 @@ import { forwardRef, useEffect, useRef, useState } from 'react';
 import { Portal } from '@proton/atoms/Portal/Portal';
 import FilePreview from '@proton/components/containers/filePreview/FilePreview';
 import NavigationControl from '@proton/components/containers/filePreview/NavigationControl';
-import type { MessageStateWithData, OutsideKey } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import { couldPotentiallyBeRenderedAsSVG } from '@proton/shared/lib/helpers/mimetype';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';

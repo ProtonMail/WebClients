@@ -24,8 +24,8 @@ import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
+import type { MessageErrors } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';
 import { getEvent } from '@proton/shared/lib/api/calendars';
 import { getPaginatedEventsByUID } from '@proton/shared/lib/calendar/api';
 import {

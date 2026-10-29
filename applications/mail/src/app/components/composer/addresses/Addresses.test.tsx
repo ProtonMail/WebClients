@@ -4,7 +4,7 @@ import { act, fireEvent, getAllByRole, getByText, screen } from '@testing-librar
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';

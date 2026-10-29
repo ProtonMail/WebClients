@@ -1,4 +1,4 @@
-import type { Base64Cache } from '@proton/mail/hooks/useBase64Cache';
+import type { Base64Cache } from '@proton/mail-message/hooks/useBase64Cache';
 import createCache from '@proton/shared/lib/helpers/cache';
 
 import { attachBase64, removeBase64, transformEscape } from './transformEscape';

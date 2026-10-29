@@ -1,8 +1,8 @@
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
-import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
-import type { MessageState, PartialMessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import type { MessageState, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';

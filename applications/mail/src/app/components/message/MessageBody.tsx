@@ -3,10 +3,10 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import MessageBodyIframe from '@proton/mail-renderer/components/MessageBodyIframe';
 import { getPlainTextToRender } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { isAutoFlaggedPhishing, isDraft, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';

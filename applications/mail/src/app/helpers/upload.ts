@@ -1,4 +1,4 @@
-import { createErrorHandler } from '@proton/mail/helpers/dom';
+import { createErrorHandler } from '@proton/mail-message/helpers/dom';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { serializeData } from '@proton/shared/lib/fetch/serialize';

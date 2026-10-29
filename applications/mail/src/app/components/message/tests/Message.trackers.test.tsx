@@ -2,7 +2,7 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';

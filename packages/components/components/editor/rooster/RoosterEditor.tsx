@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { getIframeSandboxAttributes } from '@proton/mail/helpers/composer';
+import { getIframeSandboxAttributes } from '@proton/mail-message/helpers/composer';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import clsx from '@proton/utils/clsx';
 

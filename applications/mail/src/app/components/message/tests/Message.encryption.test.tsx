@@ -3,7 +3,7 @@ import { findByText, screen } from '@testing-library/react';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { IcLockCheckFilled } from '@proton/icons/icons/IcLockCheckFilled';
 import { IcLockExclamationFilled } from '@proton/icons/icons/IcLockExclamationFilled';
-import type { MessageKeys } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageKeys } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';

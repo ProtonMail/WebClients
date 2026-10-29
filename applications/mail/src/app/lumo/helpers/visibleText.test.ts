@@ -1,7 +1,7 @@
 /** Each concealment technique driven through the real DOMPurify + turndown path the model's body text comes from. */
 import tinycolor from 'tinycolor2';
 
-import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { protonizer } from '@proton/sanitize/purify';
 
 import { toVisibleText } from './visibleText';
