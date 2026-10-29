@@ -938,6 +938,12 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "About ${ name }": [
+        "A ${ name } névjegye"
+      ],
+      "Add ${ name }": [
+        "${ name } hozzáadása"
       ]
     },
     "action": {
@@ -1015,6 +1021,12 @@
       ],
       "Writing assistant": [
         "Írási segéd"
+      ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME } AI licenc"
+      ],
+      "Writing assistant seats": [
+        "Írási segéd licencek"
       ]
     },
     "Alarm notification": {
@@ -3701,6 +3713,9 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "The minimum donation amount is ${ price }": [
+        "A legkisebb lehetséges adomány ${ price }"
       ]
     },
     "error": {
@@ -5839,6 +5854,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
+      ],
+      "No payment is required.": [
+        "Nem szükséges fizetés."
+      ],
+      "Temporarily unavailable due to high demand. Please try again later.": [
+        "Átmenetileg nem érhető el, a túlzott érdeklődés miatt. Próbálja meg később."
       ]
     },
     "info": {
@@ -6509,6 +6530,9 @@
       ],
       "Zoom meeting": [
         "Zoom találkozó"
+      ],
+      "Last 6 months only": [
+        "Csak az utolsó 6 hónap"
       ]
     },
     "Label for contact group color": {
@@ -8538,6 +8562,24 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Az Ön előfizetése jelenleg kedvezménnyel rendelkezik. Az új promócióra való áttérés esetén, a meglévő kedvezmény a továbbiakban nem kerül alkalmazásra."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "A Proton Meet licencek száma meg kell egyezzen a tagok számával."
+      ],
+      "Tax ${ rate }%": [
+        "${ rate }% adó"
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "A kiválasztott csomag nem biztosít elegendő tárhelyet a fiókjához."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "A előfizetés létrehozása jelenleg nem fejezhető be. Próbálja meg később."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "A próbaidős csomagokban nem érhető el ${ LUMO_SHORT_APP_NAME } licenc."
+      ],
+      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
+        "A pénznem átállítva Euróra (€), mert az ${ IDEAL_WERO_BRAND_NAME } csak ebben teszi lehetővé a fizetést."
       ]
     },
     "Payments.Error": {
@@ -9851,6 +9893,9 @@
       ],
       "Your own short @pm.me email alias": [
         "Az Ön saját rövid @pm.me e-mail álnévcíme"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } és ${ LUMO_APP_NAME } prémium lehetőségekkel"
       ]
     },
     "subscription reminder": {
@@ -10966,6 +11011,9 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Reverse charge not supported": [
+        "A fordított adózás nem támogatott"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
