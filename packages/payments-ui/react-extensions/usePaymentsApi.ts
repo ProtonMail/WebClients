@@ -61,6 +61,7 @@ const checkProduct = (data: CheckSubscriptionData) => {
             Currency: data.Currency,
             ProductType: getLifetimeProductType(data),
             BillingAddress: data.BillingAddress,
+            ValidateGuards: data.ValidateGuards,
         },
     };
 };
