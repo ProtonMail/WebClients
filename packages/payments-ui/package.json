@@ -70,7 +70,7 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --logHeapUsage",
         "test:watch": "jest --watch"
@@ -101,11 +101,11 @@
         "ttag": "catalog:"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
         "@proton/features": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
         "@proton/metrics": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@proton/redux-shared-store-types": "workspace:^",
         "@proton/test-api": "workspace:^",
         "@testing-library/jest-dom": "catalog:",
@@ -122,9 +122,10 @@
         "@types/react-router-dom": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "eslint": "catalog:",
         "history": "catalog:",
         "jest": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
         "react-router": "catalog:",
         "typescript": "catalog:"
     }
