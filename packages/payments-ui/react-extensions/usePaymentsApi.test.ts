@@ -106,6 +106,53 @@ describe('usePaymentsApi', () => {
         expect(checkResult).not.toHaveProperty('GuardResultCode');
     });
 
+    describe('lifetime plan check (products/check)', () => {
+        const getLifetimeCheckData = (ValidateGuards?: boolean): CheckSubscriptionData => ({
+            Plans: { [PLANS.PASS_LIFETIME]: 1 },
+            Currency: 'EUR',
+            Cycle: 12,
+            ValidateGuards,
+        });
+
+        const mockProductsCheck = (response: object = {}) =>
+            addApiMock('payments/v5/products/check', () => ({ Amount: 19900, Currency: 'EUR', ...response }), 'post');
+
+        it('sends ValidateGuards when requested', async () => {
+            mockProductsCheck();
+            const { result } = renderHook(() => usePaymentsApi(), { wrapper: getWrapper() });
+
+            await result.current.paymentsApi.checkSubscription(getLifetimeCheckData(true));
+
+            expect(apiMock).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    url: 'payments/v5/products/check',
+                    data: expect.objectContaining({ ValidateGuards: true }),
+                })
+            );
+        });
+
+        it('does not send ValidateGuards when not requested', async () => {
+            mockProductsCheck();
+            const { result } = renderHook(() => usePaymentsApi(), { wrapper: getWrapper() });
+
+            await result.current.paymentsApi.checkSubscription(getLifetimeCheckData());
+
+            const request = apiMock.mock.calls.find(([call]) => call.url === 'payments/v5/products/check')?.[0];
+            expect(JSON.parse(JSON.stringify(request?.data))).not.toHaveProperty('ValidateGuards');
+        });
+
+        it('returns the guard refusals from the response', async () => {
+            mockProductsCheck({
+                GuardResult: [{ Code: 801003000, Message: 'raw backend message' }],
+            });
+            const { result } = renderHook(() => usePaymentsApi(), { wrapper: getWrapper() });
+
+            const checkResult = await result.current.paymentsApi.checkSubscription(getLifetimeCheckData(true));
+
+            expect(checkResult.GuardResult).toEqual([{ Code: 801003000, Message: 'raw backend message' }]);
+        });
+    });
+
     it.each([
         {
             appName: APPS.PROTONACCOUNTLITE,
