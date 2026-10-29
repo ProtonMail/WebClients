@@ -2250,11 +2250,8 @@
       "Moving items": [
         "Einträge verschieben"
       ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Das Verschieben eines Eintrags in einen anderen Tresor löscht seinen Verlauf und alle sicheren Links."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Das Verschieben eines Eintrags in einen anderen Tresor löscht seinen Verlauf."
+      "Moving items to another vault will erase their secure links.": [
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden deren sichere Verknüpfungen gelöscht."
       ],
       "Moving items to trash": [
         "Einträge werden in den Papierkorb verschoben"
@@ -2846,6 +2843,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Wenn aktiviert, kannst du immer noch auf deine ${ PASS_SHORT_APP_NAME }-Daten zugreifen, wenn du keine Internetverbindung hast oder die ${ BRAND_NAME }-Server nicht erreichbar sind."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Beim Verschieben von Einträgen zwischen Tresoren werden die letzten 50 Änderungen, die an jedem Eintrag vorgenommen wurden, beibehalten."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Wenn du eine E-Mail von diesem Alias aus versendest, wird ${ emailSender } als Absender in der E-Mail erscheinen."
