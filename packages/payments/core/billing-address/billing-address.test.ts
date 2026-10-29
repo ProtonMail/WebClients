@@ -453,4 +453,49 @@ describe('getBillingAddressPayload', () => {
 
         expect(payload).not.toHaveProperty('ZipCode');
     });
+
+    it('drops the postal code of a country where it is not required', () => {
+        const payload = getBillingAddressPayload({
+            billingAddress: { CountryCode: 'CH', State: null, ZipCode: '1204' },
+            vatId: undefined,
+        });
+
+        expect(payload.ZipCode).toBeNull();
+    });
+
+    it('keeps the postal code of a country where it is not required when asked to', () => {
+        const payload = getBillingAddressPayload({
+            billingAddress: { CountryCode: 'CH', State: null, ZipCode: '1204' },
+            vatId: undefined,
+            keepPostalCode: true,
+        });
+
+        expect(payload.ZipCode).toBe('1204');
+    });
+
+    it.each([
+        { CountryCode: 'US', State: 'NY', ZipCode: ' 10001 ', expected: '10001' },
+        { CountryCode: 'CA', State: 'ON', ZipCode: 'k1a0b1', expected: 'K1A 0B1' },
+    ])(
+        'still normalizes the postal code $ZipCode of $CountryCode when keeping it',
+        ({ expected, ...billingAddress }) => {
+            const payload = getBillingAddressPayload({
+                billingAddress,
+                vatId: undefined,
+                keepPostalCode: true,
+            });
+
+            expect(payload.ZipCode).toBe(expected);
+        }
+    );
+
+    it('still sends an empty postal code as null when keeping it', () => {
+        const payload = getBillingAddressPayload({
+            billingAddress: { CountryCode: 'CH', State: null, ZipCode: '' },
+            vatId: undefined,
+            keepPostalCode: true,
+        });
+
+        expect(payload.ZipCode).toBeNull();
+    });
 });
