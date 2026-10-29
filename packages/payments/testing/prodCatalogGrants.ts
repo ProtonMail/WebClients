@@ -26,9 +26,19 @@ export const prodCatalogGrants = {
         maxRevisionDays(3650),
     ],
     [PLANS.MAIL]: [EntitlementName.FlagsInbox, EntitlementName.CustomDomainAddresses],
+    [PLANS.DUO]: [
+        EntitlementName.FlagsInbox,
+        EntitlementName.FlagsDrive,
+        EntitlementName.FlagsVpn,
+        EntitlementName.FlagsPass,
+        EntitlementName.MultiUser,
+        EntitlementName.CustomDomainAddresses,
+    ],
     [PLANS.FAMILY]: [
         EntitlementName.FlagsInbox,
+        EntitlementName.FlagsDrive,
         EntitlementName.FlagsVpn,
+        EntitlementName.FlagsPass,
         EntitlementName.MultiUser,
         EntitlementName.CustomDomainAddresses,
         maxRevisionDays(3650),
@@ -48,8 +58,9 @@ export const prodCatalogGrants = {
     ],
     [PLANS.BUNDLE_PRO_2024]: [
         EntitlementName.FlagsInbox,
-        EntitlementName.FlagsVpn,
         EntitlementName.FlagsDrive,
+        EntitlementName.FlagsVpn,
+        EntitlementName.FlagsPass,
         EntitlementName.Business,
         EntitlementName.Groups,
         EntitlementName.MultiUser,
@@ -73,6 +84,7 @@ export const prodCatalogGrants = {
     ],
     [PLANS.VISIONARY]: [
         EntitlementName.FlagsInbox,
+        EntitlementName.FlagsDrive,
         EntitlementName.FlagsVpn,
         EntitlementName.FlagsPass,
         EntitlementName.FlagsMeet,
@@ -105,6 +117,8 @@ export const prodCatalogGrants = {
         EntitlementName.MultiUser,
         EntitlementName.ExternalManagedMembers,
     ],
+    [PLANS.PASS]: [EntitlementName.FlagsPass],
+    [PLANS.VPN2024]: [EntitlementName.FlagsVpn],
     [PLANS.PASS_PRO]: [EntitlementName.FlagsPass, EntitlementName.Business],
     [PLANS.PASS_BUSINESS]: [
         EntitlementName.FlagsPass,

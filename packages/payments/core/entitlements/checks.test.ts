@@ -48,6 +48,28 @@ describe('hasAllCoreProductsB2C', () => {
     });
 });
 
+describe('isMailB2C', () => {
+    it.each([PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY] as const)(
+        'returns true for %s',
+        (plan) => {
+            expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).isMailB2C).toBe(true);
+        }
+    );
+
+    it.each([PLANS.MAIL_PRO, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025, PLANS.PASS, PLANS.VPN2024] as const)(
+        'returns false for %s',
+        (plan) => {
+            expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).isMailB2C).toBe(false);
+        }
+    );
+
+    it('returns true when Mail and business come from different subscriptions', () => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.MAIL, PLANS.PASS_PRO] }).isMailB2C).toBe(
+            true
+        );
+    });
+});
+
 describe('isPassB2B', () => {
     const passBusinessCatalog = buildEntitlementCatalog({
         [PLANS.PASS_BUSINESS]: [EntitlementName.Business, EntitlementName.FlagsPass],
