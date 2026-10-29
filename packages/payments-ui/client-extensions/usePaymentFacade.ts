@@ -407,7 +407,13 @@ export const usePaymentFacade = ({
             return false;
         }
 
-        const flowsWithoutTaxCountry: PaymentMethodFlow[] = ['invoice', 'credit', 'add-card', 'add-paypal'];
+        const flowsWithoutTaxCountry: PaymentMethodFlow[] = [
+            'invoice',
+            'credit',
+            'lumo-credit',
+            'add-card',
+            'add-paypal',
+        ];
 
         const showTaxCountry = !flowsWithoutTaxCountry.includes(flow);
         return showTaxCountry;

@@ -54,6 +54,7 @@ const ALL_FLOWS = Object.keys({
     'signup-v2-upgrade': true,
     'signup-vpn': true,
     credit: true,
+    'lumo-credit': true,
     subscription: true,
     'add-card': true,
     'add-paypal': true,
@@ -1841,6 +1842,18 @@ describe('getUsedMethods() saved method types', () => {
     it('should return an empty list when there are no saved methods', () => {
         expect(getUsedMethods(buildMethods({ paymentMethods: [] }))).toEqual([]);
     });
+
+    it.each([PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT, PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL])(
+        'should drop a saved %s in the lumo-credit flow',
+        (Type) => {
+            const paymentMethods = [savedMethod(Type), savedMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)];
+            const usedTypes = (flow: PaymentMethodFlow) =>
+                getUsedMethods(buildMethods({ paymentMethods, flow })).map(({ type }) => type);
+
+            expect(usedTypes('lumo-credit')).toEqual([PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]);
+            expect(usedTypes('subscription')).toEqual([Type, PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]);
+        }
+    );
 });
 
 describe('availability per flow', () => {
@@ -1864,7 +1877,7 @@ describe('availability per flow', () => {
             'signup-vpn',
             'subscription',
         ],
-        [PAYMENT_METHOD_TYPES.CASH]: ALL_FLOWS.filter((flow) => !signupFlows.includes(flow)),
+        [PAYMENT_METHOD_TYPES.CASH]: ALL_FLOWS.filter((flow) => !signupFlows.includes(flow) && flow !== 'lumo-credit'),
         [PAYMENT_METHOD_TYPES.APPLE_PAY]: [
             'signup',
             'signup-pass',
@@ -2044,6 +2057,12 @@ describe('iDEAL', () => {
 
     it('should not offer iDEAL in trial mode', () => {
         expect(hasNewMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, { ...idealEnabled, isTrial: true })).toBe(false);
+    });
+
+    it('should not offer iDEAL in the lumo-credit flow', () => {
+        expect(hasNewMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, { ...idealEnabled, flow: 'lumo-credit' })).toBe(
+            false
+        );
     });
 });
 
