@@ -2342,11 +2342,8 @@
       "Moving items": [
         "Moviendo los elementos"
       ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Mover los elementos a otra bóveda eliminará el historial y todos los enlaces seguros."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Mover los elementos a otra bóveda eliminará el historial."
+      "Moving items to another vault will erase their secure links.": [
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items to trash": [
         "Moviendo los elementos a la papelera"
@@ -2962,6 +2959,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Al activarlo, podrá seguir accediendo a sus datos de ${ PASS_SHORT_APP_NAME } en caso de que pierda la conexión a internet o si no puede establecer contacto con los servidores de ${ BRAND_NAME }."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Al mover elementos entre bóvedas conservaremos hasta las últimas 50 modificaciones realizadas de cada elemento."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Cuando envíe un correo electrónico desde este alias, el correo electrónico mostrará ${ emailSender } como remitente."

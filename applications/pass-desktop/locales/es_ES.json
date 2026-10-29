@@ -118,8 +118,14 @@
       "Bulk restore items from trash": [
         "Restaurar un grupo de elementos de la papelera"
       ],
+      "Bulk select items": [
+        "Seleccionar elementos en bloque"
+      ],
       "Cancel": [
         "Cancelar"
+      ],
+      "Cancel bulk selection": [
+        "Cancelar selección múltiple"
       ],
       "Cancel email change": [
         "Cancelar el cambio de correo electrónico"
@@ -142,8 +148,14 @@
       "Clear": [
         "Borrar"
       ],
+      "Clear item type filter": [
+        "Borrar filtro por tipo de elemento"
+      ],
       "Clear search": [
         "Borrar la búsqueda"
+      ],
+      "Clear sort filter": [
+        "Borrar filtro de ordenación"
       ],
       "Close": [
         "Cerrar"
@@ -328,6 +340,9 @@
       "Done": [
         "Hecho"
       ],
+      "Download for Linux": [
+        "Descargar para Linux"
+      ],
       "Download for macOS": [
         "Descargar para macOS"
       ],
@@ -405,6 +420,9 @@
       ],
       "Hide": [
         "Ocultar"
+      ],
+      "Hide passwords": [
+        "Ocultar contraseñas"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "¿Cómo exporto mis datos desde ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
@@ -517,6 +535,9 @@
       "Move to Trash": [
         "Mover a la papelera"
       ],
+      "Multiple select": [
+        "Selección múltiple"
+      ],
       "New token": [
         "Nuevo token"
       ],
@@ -540,6 +561,9 @@
       ],
       "Open navigation": [
         "Abrir la navegación"
+      ],
+      "Open platform selection dropdown": [
+        "Abrir el desplegable de selección de plataforma"
       ],
       "Organize vaults": [
         "Organizar cajas fuertes"
@@ -624,6 +648,9 @@
       ],
       "Reset": [
         "Restablecer"
+      ],
+      "Reset filters": [
+        "Restablecer filtros"
       ],
       "Reset history": [
         "Restablecer el historial"
@@ -726,6 +753,9 @@
       ],
       "Submitting report...": [
         "Enviando informe..."
+      ],
+      "Switch vault": [
+        "Cambiar de caja fuerte"
       ],
       "Sync alias": [
         "Sincronizar el alias",
@@ -863,6 +893,11 @@
         "Desinstalar ${ PASS_APP_NAME }"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "Aplicación de escritorio de ${ appName }"
+      ]
+    },
     "Button": {
       "More info": [
         "Más información"
@@ -904,8 +939,20 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de correo funciona como una dirección de correo electrónico, pero reduce el spam y mantiene tu dirección e identidad real ocultas."
       ],
+      "Change these passwords immediately": [
+        "Cambia estas contraseñas inmediatamente"
+      ],
       "Change your passwords": [
         "Cambia las contraseñas"
+      ],
+      "Check if you're reusing passwords": [
+        "Comprueba si reutilizas contraseñas"
+      ],
+      "Check if your passwords have been exposed": [
+        "Comprueba si tus contraseñas han quedado expuestas"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Crea contraseñas únicas"
@@ -960,6 +1007,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta cuenta es vulnerable. Visita el servicio y cambia tu contraseña."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "Esta contraseña de inicio de sesión aparece en una filtración de datos. Visita el servicio y cambia la contraseña."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este servicio ofrece la 2FA. Actívala para aumentar la seguridad de la cuenta."
@@ -1021,6 +1071,9 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Error de autenticación. Confirma tu segunda contraseña para continuar con la exportación"
+      ],
+      "Biometric authentication cancelled.": [
+        "Se ha cancelado la autenticación biométrica."
       ],
       "Biometric authentication failed.": [
         "Error en la autenticación biométrica."
@@ -1171,6 +1224,10 @@
       "Failed to delete email address from monitoring": [
         "Error al eliminar la dirección de correo electrónico del monitoreo."
       ],
+      "Failed to delete folder": [
+        "Error al eliminar la carpeta",
+        "Error al eliminar las carpetas"
+      ],
       "Failed to delete selected items": [
         "No se han podido eliminar los elementos seleccionados."
       ],
@@ -1258,6 +1315,9 @@
       "Failed to update domain name.": [
         "Error al actualizar el nombre del dominio"
       ],
+      "Failed to update folder": [
+        "No se ha podido actualizar la carpeta"
+      ],
       "Failed to update monitoring settings": [
         "Error al actualizar los ajustes de monitoreo"
       ],
@@ -1287,6 +1347,9 @@
       ],
       "File does not match expected format": [
         "El archivo no coincide con el formato esperado."
+      ],
+      "Folder name does not match": [
+        "El nombre de la carpeta no coincide"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Error al importar la caja fuerte «${ vaultData.name }»: ${ errorMessage }"
@@ -1426,6 +1489,9 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
+      "This invite is no longer available": [
+        "Esta invitación ya no está disponible"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Demasiados intentos erróneos. Inicia sesión de nuevo."
       ],
@@ -1464,6 +1530,9 @@
       ],
       "Unsupported Bitwarden file format": [
         "Formato de archivo de Bitwarden no soportado"
+      ],
+      "Unsupported file type": [
+        "Tipo de archivo no compatible"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
         "Error al actualizar la caja fuerte \"${ payload.content.name }\""
@@ -1642,6 +1711,9 @@
         "${ forwardedEmailsCount } reenvío",
         "${ forwardedEmailsCount } reenvíos"
       ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Esto no impide que los visualizadores obtengan las contraseñas por otros medios."
+      ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } quiere compartir un elemento con un grupo que administras."
       ],
@@ -1743,6 +1815,9 @@
       ],
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Los tokens de acceso, que se usan junto con ${ passCliLink }, te permiten automatizar la CI/CD o darle a tu agente de IA un acceso acotado a lo que necesita para ejecutar sus tareas."
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Añade un método de pago para que tu suscripción continúe cuando termine la prueba."
       ],
       "Add your custom email address to monitor:": [
         "Añade tu dirección de correo personalizado para monitorear:"
@@ -1870,6 +1945,9 @@
       "Can view this item.": [
         "Puede ver este elemento."
       ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total } contraseñas"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirma tu contraseña adicional para proceder con la eliminación."
       ],
@@ -1905,6 +1983,9 @@
       ],
       "Created item": [
         "Elemento creado"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "El formato CSV es una forma cómoda de ver tus datos. Sin embargo, por su sencillez, algunos datos no se incluirán (campos personalizados, estructura de carpetas, etc.). Para una exportación completa, te recomendamos usar otro formato."
       ],
       "Current version": [
         "Versión actual"
@@ -2041,11 +2122,26 @@
       "Failed updating your vault organization": [
         "No se pudo actualizar la organización de tu caja fuerte"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Campo oculto. Aún puedes rellenarlo automáticamente."
+      ],
       "Fill in the CSV with your data": [
         "Rellenar el CSV con tus datos"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Busca \"Agente de autenticación OpenSSH\", haz clic derecho y selecciona Propiedades."
+      ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Termina de iniciar sesión en la ventana del navegador que se acaba de abrir. ${ PASS_APP_NAME } se detectará automáticamente cuando termines."
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Carpeta «${ payload.folder.name }» creada"
+      ],
+      "Folder deleted": [
+        "Carpeta eliminada"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Carpeta renombrada a «${ payload.folder.name }»"
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Sigue estos pasos para importar tus datos con un archivo CSV genérico:"
@@ -2062,6 +2158,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Se ha copiado la dirección de reenvío al portapapeles. Envía un correo electrónico a esta dirección y ${ Email } lo recibirá."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Sincronización completa de datos para mejorar el rendimiento de la aplicación. Gracias por tu paciencia."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Las contraseñas generadas se almacenarán por un periodo de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana.",
@@ -2097,6 +2196,9 @@
       "Import the CSV file below.": [
         "Importa el archivo CSV a continuación."
       ],
+      "Important:": [
+        "Importante:"
+      ],
       "Imported on ${ date }": [
         "Importado el ${ date }"
       ],
@@ -2129,6 +2231,9 @@
       ],
       "invites you to access items in": [
         "te invita a acceder a elementos de"
+      ],
+      "iOS and Android Apps": [
+        "Apps para iOS y Android"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que ya habías iniciado sesión en ${ PASS_APP_NAME }. Si quieres iniciar sesión con una cuenta diferente, cierra previamente la sesión actual."
@@ -2237,11 +2342,8 @@
       "Moving items": [
         "Moviendo elementos"
       ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Mover los elementos a otra caja fuerte eliminará el historial y todos los enlaces seguros."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Mover los elementos a otra caja fuerte eliminará su historial."
+      "Moving items to another vault will erase their secure links.": [
+        "Mover elementos a otra caja fuerte borrará sus enlaces seguros."
       ],
       "Moving items to trash": [
         "Moviendo los elementos a la papelera"
@@ -2276,6 +2378,9 @@
       "None": [
         "Ninguno"
       ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Ninguna de tus contraseñas guardadas ha aparecido en una filtración de datos conocida."
+      ],
       "None selected": [
         "No se ha seleccionado ninguno"
       ],
@@ -2290,6 +2395,14 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN. Se cerrará la sesión después de 3 intentos incorrectos."
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Solo se moverá ${ count } elemento de «${ folderName }». Los elementos de las subcarpetas no se moverán.",
+        "Solo se moverán ${ count } elementos de «${ folderName }». Los elementos de las subcarpetas no se moverán."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Solo se moverá ${ count } elemento. Los elementos de las carpetas no se moverán.",
+        "Solo se moverán ${ count } elementos. Los elementos de las carpetas no se moverán."
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Solo se muestran los tokens que expiraron en los últimos 30 días. Los tokens más antiguos se eliminan automáticamente."
@@ -2311,6 +2424,9 @@
       ],
       "Pass Plus trial": [
         "Prueba de Pass Plus"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Contraseña oculta. Aún puedes rellenarla automáticamente."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Se ha registrado el bloqueo por contraseña. Utilízalo para desbloquear ${ PASS_APP_NAME }."
@@ -2517,6 +2633,12 @@
       "Restoring trashed items...": [
         "Restaurando elementos de la papelera..."
       ],
+      "Scan to download": [
+        "Escanea para descargar"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Escanea para descargar ${ PASS_APP_NAME } para iOS y Android"
+      ],
       "Secure links": [
         "Enlaces seguros"
       ],
@@ -2597,6 +2719,9 @@
       ],
       "Suggested": [
         "Sugerido"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Cambia a otra carpeta o crea un elemento en esta carpeta"
       ],
       "Switch to another vault or create an item in this vault": [
         "Cambia a otra caja fuerte o crea un elemento en esta caja fuerte."
@@ -2716,6 +2841,9 @@
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Para verificar los datos importados, haz clic en el ícono de ${ PASS_APP_NAME } en la barra de herramientas del navegador."
       ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "Para configurar el desbloqueo con biometría, ${ PASS_APP_NAME } necesita un nuevo permiso del navegador."
+      ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Para configurar el desbloqueo biométrico, ${ PASS_APP_NAME } necesita un nuevo permiso del navegador. Tras aceptarlo, la extensión se recarga. Vuelve a abrir esta página después."
       ],
@@ -2801,8 +2929,17 @@
       "Verification code sent.": [
         "Se ha enviado el código de verificación."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Consulta tus elementos de ${ PASS_SHORT_APP_NAME } sin conexión. Necesitas tu contraseña para activarlo."
+      ],
       "Viewer": [
         "Lector"
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Los visualizadores aún podrán rellenar automáticamente las contraseñas, pero no las verán en ${ PASS_APP_NAME }. Esto desalienta la visualización casual y reduce el riesgo de divulgación accidental."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Los visualizadores aún pueden rellenar automáticamente. Los editores y administradores siempre ven las contraseñas."
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estamos teniendo problemas en sincronizar los datos a tu almacenamiento local. Asegúrate de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione correctamente."
@@ -2822,6 +2959,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Al activarlo, podrás seguir accediendo a tus datos de ${ PASS_SHORT_APP_NAME } en caso de que pierdas la conexión a internet o si no puedes establecer contacto con los servidores de ${ BRAND_NAME }."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Al mover elementos entre cajas fuertes, conservaremos hasta las últimas 50 modificaciones realizadas en cada elemento."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Cuando envíes un correo electrónico desde este alias, el correo electrónico mostrará ${ emailSender } como remitente."
@@ -2987,6 +3127,9 @@
         "${ hours } hora",
         "${ hours } horas"
       ],
+      "${ length }/${ maxLength } characters": [
+        "${ length }/${ maxLength } caracteres"
+      ],
       "${ minutes } minute": [
         "${ minutes } minuto",
         "${ minutes } minutos"
@@ -3092,6 +3235,9 @@
       "Account Type": [
         "Tipo de cuenta"
       ],
+      "Add a payment method": [
+        "Añadir un método de pago"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Añade un prefijo aleatorio para este dominio al crear un nuevo alias."
       ],
@@ -3127,6 +3273,9 @@
       ],
       "All items": [
         "Todos los elementos"
+      ],
+      "Allow viewers to see passwords": [
+        "Permitir que los visualizadores vean las contraseñas"
       ],
       "Alphabetical": [
         "Por orden alfabético"
@@ -3218,6 +3367,9 @@
       "Company": [
         "Empresa"
       ],
+      "Confirm folder name": [
+        "Confirma el nombre de la carpeta"
+      ],
       "Confirm vault name": [
         "Confirmar el nombre de la caja fuerte"
       ],
@@ -3247,6 +3399,9 @@
       ],
       "Create a custom item": [
         "Crear un elemento personalizado"
+      ],
+      "Create a folder": [
+        "Crear una carpeta"
       ],
       "Create a hide-my-email alias": [
         "Crear un alias de Hide-my-email"
@@ -3421,6 +3576,9 @@
       ],
       "Folder": [
         "Carpeta"
+      ],
+      "Folders": [
+        "Carpetas"
       ],
       "For a one-off sharing": [
         "Para un uso único"
@@ -3614,11 +3772,17 @@
       "LinkedIn account": [
         "Cuenta de LinkedIn"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Inicio de sesión"
       ],
       "Logins": [
         "Inicios de sesión"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Buzones"
@@ -4208,6 +4372,9 @@
       "WiFi network": [
         "Red wifi"
       ],
+      "Windows": [
+        "Windows"
+      ],
       "Work details": [
         "Detalles de trabajo"
       ],
@@ -4538,6 +4705,9 @@
       "Enter username": [
         "Ingresa el nombre de usuario"
       ],
+      "Folder name": [
+        "Nombre de la carpeta"
+      ],
       "Full Name": [
         "Nombre completo"
       ],
@@ -4564,6 +4734,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Describe el problema e incluye cualquier mensaje de error."
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Vuelve a escribir «${ name }» para confirmar la eliminación"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Buscar ${ pluralItemType } en ${ vaultName }"
@@ -4597,11 +4770,20 @@
       ]
     },
     "Result": {
+      "Enter a URL to check if it matches the current rule": [
+        "Introduce una URL para comprobar si coincide con la regla actual"
+      ],
       "This URL will be blocked from autofill": [
         "Esta URL se bloqueará del relleno automático"
       ],
       "This URL will NOT be blocked from autofill": [
         "Esta URL NO se bloqueará del relleno automático"
+      ],
+      "URL doesn't match the rule": [
+        "La URL no coincide con la regla"
+      ],
+      "URL matches the rule": [
+        "La URL coincide con la regla"
       ]
     },
     "Security Center - Info": {
@@ -4853,6 +5035,12 @@
       "Clear clipboard": [
         "Vaciar portapapeles"
       ],
+      "Compromised password": [
+        "Contraseña comprometida"
+      ],
+      "Compromised passwords": [
+        "Contraseñas comprometidas"
+      ],
       "Confirm extra password": [
         "Confirmar la contraseña adicional"
       ],
@@ -4868,17 +5056,26 @@
       "Contacts": [
         "Contactos"
       ],
+      "Continue in your browser": [
+        "Continúa en tu navegador"
+      ],
       "Create a vault": [
         "Crear una caja fuerte"
       ],
       "Create contact": [
         "Crear contacto"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Crear carpeta en «${ vaultName }»"
+      ],
       "Create new access token": [
         "Crear un nuevo token de acceso"
       ],
       "Create PIN code": [
         "Crear un código PIN"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Crear subcarpeta en «${ folderName }»"
       ],
       "Created": [
         "Creado"
@@ -4914,11 +5111,17 @@
       "Delete domain": [
         "Eliminar el dominio"
       ],
+      "Delete folder \"${ name }\"?": [
+        "¿Eliminar la carpeta «${ name }»?"
+      ],
       "Delete mailbox": [
         "Eliminar el buzón"
       ],
       "Delete this item?": [
         "¿Eliminar este elemento?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "¿Eliminar la caja fuerte «${ name }»?"
       ],
       "Did you know?": [
         "¿Lo sabías?"
@@ -4937,6 +5140,9 @@
       ],
       "Domain ownership verification": [
         "Verificación de la propiedad del dominio"
+      ],
+      "Enable offline mode": [
+        "Activar el modo sin conexión"
       ],
       "Encrypted import": [
         "Importación cifrada"
@@ -4968,11 +5174,20 @@
       "Folder options": [
         "Opciones de carpeta"
       ],
+      "Get mobile and desktop apps": [
+        "Descarga las aplicaciones para móvil y escritorio"
+      ],
+      "Get mobile apps": [
+        "Obtener las aplicaciones móviles"
+      ],
       "Get Started": [
         "Comenzar"
       ],
       "Hidden vaults": [
         "Cajas fuertes ocultas"
+      ],
+      "Hide passwords from viewers?": [
+        "¿Ocultar las contraseñas a los visualizadores?"
       ],
       "Hide-my-email aliases": [
         "Alias de hide-my-email"
@@ -5003,6 +5218,9 @@
       ],
       "Item": [
         "Elemento"
+      ],
+      "Keep your subscription active": [
+        "Mantén tu suscripción activa"
       ],
       "Last autofill": [
         "Último relleno automático"
@@ -5046,12 +5264,22 @@
       "Modified": [
         "Modificado"
       ],
+      "Move ${ count } item to ${ target }": [
+        "Mover ${ count } elemento a ${ target }",
+        "Mover ${ count } elementos a ${ target }"
+      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "¿Mover ${ trashedItemsCount } elemento a la papelera?",
         "¿Mover ${ trashedItemsCount } elementos a la papelera?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "¿Mover todos los elementos a «${ vaultName }»?"
+      ],
+      "Move all items?": [
+        "¿Mover todos los elementos?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Mover elemento a «${ target }»"
       ],
       "MX record": [
         "Registro MX"
@@ -5061,6 +5289,9 @@
       ],
       "No access tokens yet": [
         "Aún no hay tokens de acceso"
+      ],
+      "No compromised passwords": [
+        "No hay contraseñas comprometidas"
       ],
       "No excluded items": [
         "No hay elementos excluidos."
@@ -5143,6 +5374,9 @@
       ],
       "Remove secure link?": [
         "¿Eliminar el enlace seguro?"
+      ],
+      "Rename folder": [
+        "Renombrar carpeta"
       ],
       "Reset history for this item?": [
         "¿Deseas restablecer el historial de este elemento?"
@@ -5247,6 +5481,12 @@
       "Update available": [
         "Actualización disponible"
       ],
+      "Upgrade to check for compromised passwords": [
+        "Mejora tu plan para comprobar contraseñas comprometidas"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Mejora para comprobar contraseñas reutilizadas"
+      ],
       "URL matching": [
         "Coincidencia de URL"
       ],
@@ -5291,6 +5531,9 @@
       ],
       "Your exposed information": [
         "Tus datos expuestos"
+      ],
+      "Your folder is empty": [
+        "Tu carpeta está vacía"
       ],
       "Your new access token": [
         "Tu nuevo token de acceso"
@@ -5373,6 +5616,22 @@
       "${ BRAND_NAME } password is required": [
         "Se necesita la contraseña de ${ BRAND_NAME }."
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } carpeta se ha fusionado con su carpeta principal porque se alcanzó el nivel máximo de anidación.",
+        "${ count } carpetas se han fusionado con su carpeta principal porque se alcanzó el nivel máximo de anidación."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } carpeta no se ha importado porque su carpeta principal alcanzó el número máximo de subcarpetas. Sus elementos se han importado en la carpeta disponible más cercana.",
+        "${ count } carpetas no se han importado porque su carpeta principal alcanzó el número máximo de subcarpetas. Sus elementos se han importado en la carpeta disponible más cercana."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } carpeta no se ha importado porque esta caja fuerte alcanzó su límite de carpetas. Sus elementos se han importado en la carpeta disponible más cercana.",
+        "${ count } carpetas no se han importado porque esta caja fuerte alcanzó su límite de carpetas. Sus elementos se han importado en la carpeta disponible más cercana."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "No se ha podido crear ${ failed } carpeta. Sus elementos se han importado en la carpeta disponible más cercana.",
+        "No se han podido crear ${ failed } carpetas. Sus elementos se han importado en la carpeta disponible más cercana."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } ofrece un control potente, pero un solo error puede hacer que el relleno automático coincida y rellene datos en sitios web fraudulentos o de suplantación de identidad."
       ],
@@ -5390,6 +5649,9 @@
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Los alias en la papelera seguirán reenviando correos electrónicos."
+      ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Se eliminarán todos los elementos de esta carpeta, incluidas sus subcarpetas. No puedes deshacer esta acción."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Todos tus elementos en la papelera serán eliminados permanentemente. No puedes deshacer esta acción."
@@ -5473,6 +5735,9 @@
       ],
       "Failed to load breaches.": [
         "Error al cargar las vulneraciones."
+      ],
+      "Folder name is required": [
+        "El nombre de la carpeta es obligatorio"
       ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Concede acceso al portapapeles para activar el borrado automático de contraseñas y datos copiados."
@@ -5607,6 +5872,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No se puede iniciar sesión en ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "La caja fuerte «${ name }» y todos sus elementos se eliminarán permanentemente. No puedes deshacer esta acción."
+      ],
       "Vault name is required": [
         "El nombre de la caja fuerte es requerido."
       ],
@@ -5639,6 +5907,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ya no tendrás acceso a esta caja fuerte. Para unirte de nuevo necesitarás una invitación."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Has alcanzado el nivel máximo de carpetas anidadas"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Has alcanzado el número máximo de carpetas en este nivel"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Has alcanzado el número máximo de carpetas de esta caja fuerte"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Tu administrador necesita crear una caja fuerte antes de que puedas crear elementos."

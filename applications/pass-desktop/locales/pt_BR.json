@@ -421,6 +421,9 @@
       "Hide": [
         "Ocultar"
       ],
+      "Hide passwords": [
+        "Ocultar senhas"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Como eu exporto meus dados do ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -2163,6 +2166,9 @@
       "Import the CSV file below.": [
         "Importe o arquivo CSV abaixo."
       ],
+      "Important:": [
+        "Importante:"
+      ],
       "Imported on ${ date }": [
         "Importado em ${ date }"
       ],
@@ -2305,12 +2311,6 @@
       ],
       "Moving items": [
         "Movendo itens"
-      ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Mover itens para outro cofre apagará seu histórico e todos os links seguros."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Movendo item para outro cofre apagará seus históricos."
       ],
       "Moving items to trash": [
         "Movendo itens para a lixeira"
