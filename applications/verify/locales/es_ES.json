@@ -78,6 +78,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ BRAND_NAME } Scribe te ayude a escribir, responder y revisar tus correos electrónicos."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ LUMO_SHORT_APP_NAME } te ayude a escribir, responder y revisar tus correos electrónicos."
       ]
     },
     "BF2024: Deal details": {
@@ -940,6 +943,12 @@
       ],
       "Security key": [
         "Clave de seguridad"
+      ],
+      "Still waiting?": [
+        "¿Sigues esperando?"
+      ],
+      "Touch your security key to continue.": [
+        "Toca tu llave de seguridad para continuar."
       ]
     },
     "fido2: Label": {
@@ -1033,6 +1042,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede utilizarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
@@ -1083,6 +1095,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Si pierdes el acceso a tu aplicación de autenticación, puedes usar uno de los 16 códigos de recuperación de respaldo que te proporcionamos al configurar la autenticación de dos factores. ${ learnMoreLink }"
       ],
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
@@ -1192,6 +1207,15 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso ampliado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Asistente de escritura ${ LUMO_SHORT_APP_NAME } con acceso limitado"
       ],
       "${ n } custom email domain": [
         "${ n } dominio de correo electrónico personalizado",
