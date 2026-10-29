@@ -1,3 +1,5 @@
+import { querySelectorAll } from '@proton/mail-message/helpers/message/messageContentQuery';
+import { getEmbeddedImages, updateImages } from '@proton/mail-message/helpers/message/messageImagesUtils';
 import { hash, removeLineBreaks, toUnsignedString } from '@proton/mail-message/helpers/string';
 import type {
     LoadEmbeddedResults,
@@ -11,8 +13,6 @@ import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
 import { ENCRYPTED_STATUS } from '../../constants';
-import { querySelectorAll } from './messageContentQuery';
-import { getEmbeddedImages, updateImages } from './messageImagesUtils';
 
 const embeddableTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/bmp'];
 /**
@@ -71,9 +71,9 @@ export const generateCid = (input: string, email: string) => {
     return `${hashValue}@${domain}`;
 };
 
-export { setEmbeddedAttr } from './messageEmbeddedAttributes';
+export { setEmbeddedAttr } from '@proton/mail-message/helpers/message/messageEmbeddedAttributes';
 
-export { createBlob } from './messageEmbeddedBlob';
+export { createBlob } from '@proton/mail-message/helpers/message/messageEmbeddedBlob';
 
 /**
  * Prepare MessageEmbeddedImage structure based on an upload result

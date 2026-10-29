@@ -1,11 +1,11 @@
 import type { Composer } from '@proton/mail-composer/store/composers/composerTypes';
+import type { ConversationState } from '@proton/mail-message/store/conversations/conversationsTypes';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Category } from '@proton/shared/lib/interfaces/Category';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
-import type { ConversationState } from '../store/conversations/conversationsTypes';
 import type { MailState } from '../store/store';
 import { setupStore } from '../store/store';
 import { buildMailContext } from './mailContext';

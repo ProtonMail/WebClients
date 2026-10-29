@@ -1,11 +1,10 @@
 import tinycolor from 'tinycolor2';
 
+import { exportPlainText, getPlainTextContent } from '@proton/mail-message/helpers/message/messageContentPlainText';
+import { getDocumentContent } from '@proton/mail-message/helpers/message/messageContentQuery';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { escape } from '@proton/sanitize/escape';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
-
-import { exportPlainText, getPlainTextContent } from '../../helpers/message/messageContentPlainText';
-import { getDocumentContent } from '../../helpers/message/messageContentQuery';
 
 /** Far below the 4.5 accessibility floor: unreadable, not merely low-contrast. */
 const UNREADABLE_CONTRAST = 1.5;

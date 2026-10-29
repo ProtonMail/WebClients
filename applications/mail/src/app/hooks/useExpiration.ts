@@ -3,14 +3,13 @@ import { useEffect, useState } from 'react';
 import { differenceInHours, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
-import { MINUTE } from '@proton/shared/lib/constants';
-
 import {
     getAutoDeleteOnMessage,
     getExpiresOnMessage,
     getMessageExpirationDate,
-} from '../helpers/message/messageExpirationTime';
+} from '@proton/mail-message/helpers/message/messageExpirationTime';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import { MINUTE } from '@proton/shared/lib/constants';
 
 const useExpiration = (message: MessageState, autoDelete = false) => {
     const [expiresInLessThan24Hours, setExpiresInLessThan24Hours] = useState(false);

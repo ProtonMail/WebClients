@@ -1,18 +1,18 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { getConversation } from '@proton/shared/lib/api/conversations';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-
-import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
-import type { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
-import type { Conversation } from '../../models/conversation';
-import type { MailThunkExtra } from '../store';
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import type {
     ConversationEvent,
     ConversationParams,
     ConversationResult,
     ConversationState,
-} from './conversationsTypes';
+} from '@proton/mail-message/store/conversations/conversationsTypes';
+import { getConversation } from '@proton/shared/lib/api/conversations';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
+import type { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
+import type { MailThunkExtra } from '../store';
 
 export const initialize = createAction<ConversationState>('conversations/initialize');
 

@@ -3,7 +3,7 @@ import type {
     MessageImages,
     MessageRemoteImage,
     PartialMessageState,
-} from '@proton/mail-message/store/messages/messagesTypes';
+} from '../../store/messages/messagesTypes';
 
 export const getRemoteImages = ({ messageImages }: PartialMessageState) =>
     (messageImages?.images.filter(({ type }) => type === 'remote') || []) as MessageRemoteImage[];

@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { RecipientType } from '@proton/mail-message/models/address';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
-import type { RecipientType } from '../../../models/address';
 import { resolveTypedId } from '../../helpers/references';
 import type { DraftChangeability, MailToolDeps, MailToolModule } from '../../toolModule';
 import { assertRecipientShape, toRecipients } from './recipients';

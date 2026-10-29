@@ -7,13 +7,13 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { canPreviewAttachment } from '@proton/mail-message/helpers/attachment/attachment';
 import type { MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
-import { canPreviewAttachment } from '../../../../helpers/attachment/attachment';
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
 import { useDownload, useDownloadAll } from '../../../../hooks/attachments/useDownload';
 import { isDummyAttachmentUpload } from '../../../../hooks/composer/useAttachments/helpers';

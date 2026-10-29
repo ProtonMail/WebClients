@@ -1,6 +1,6 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { CLASSNAME_SIGNATURE_CONTAINER } from '@proton/mail-message/helpers/message/messageSignature';
 
-import { CLASSNAME_SIGNATURE_CONTAINER } from '../../helpers/message/messageSignature';
 import { canPreserveQuote } from './useDraftBodyWriterRegistration';
 
 const SIGNED_HTML = `<div>Tuesday works.</div><div class="${CLASSNAME_SIGNATURE_CONTAINER}"><div>Alice</div></div><blockquote class="protonmail_quote">The original</blockquote>`;

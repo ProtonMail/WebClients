@@ -4,9 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { RecipientType } from '@proton/mail-message/models/address';
 import clsx from '@proton/utils/clsx';
-
-import type { RecipientType } from '../../../models/address';
 
 interface Props {
     type: Exclude<RecipientType, 'ToList'>;

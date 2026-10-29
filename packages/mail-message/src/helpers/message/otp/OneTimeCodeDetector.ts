@@ -24,7 +24,7 @@ const ACTIVE_EXTRACTORS: Extractor[] = EXTRACTORS.filter((extractor) => WEIGHTS[
  *
  * ### Example Usage:
  * ```typescript
- * import OneTimeCodeDetector from 'proton-mail/helpers/message/otp/OneTimeCodeDetector';
+ * import OneTimeCodeDetector from '@proton/mail-message/helpers/message/otp/OneTimeCodeDetector';
  * const { code } = OneTimeCodeDetector.extract({ subject, body, mimeType, timestamp });
  * ```
  *

@@ -7,11 +7,11 @@ import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib
 import DateTimeBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/DateTimeBody';
 import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
 import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
+import { formatDateToHuman } from '@proton/mail-message/helpers/date';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isValidDate } from '@proton/shared/lib/date/date';
 
 import { SOURCE_ACTION } from '../../../components/list/list-telemetry/useListTelemetry';
-import { formatDateToHuman } from '../../../helpers/date';
 import { hasLabel, isElementMessage } from '../../../helpers/elements';
 import { getSnoozeUnixTime } from '../../../helpers/snooze';
 import type { Element } from '../../../models/element';

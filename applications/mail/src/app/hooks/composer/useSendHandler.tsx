@@ -7,6 +7,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { getOnlineStatus } from '@proton/components/hooks/useOnline';
 import type { Cancellable } from '@proton/hooks/useHandler';
 import { useHandler } from '@proton/hooks/useHandler';
+import type { MapSendInfo } from '@proton/mail-message/models/crypto';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -21,7 +22,6 @@ import {
     STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
 } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import type { MapSendInfo } from '../../models/crypto';
 import { useMailDispatch } from '../../store/hooks';
 import { endSending, startSending } from '../../store/messages/draft/messagesDraftActions';
 import { cancelScheduled } from '../../store/messages/scheduled/scheduledActions';

@@ -1,6 +1,16 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import { isNetworkError } from '@proton/mail-message/helpers/errors';
+import type { Conversation } from '@proton/mail-message/models/conversation';
+import type {
+    ConversationErrors,
+    ConversationEvent,
+    ConversationParams,
+    ConversationResult,
+    ConversationState,
+    ConversationsState,
+} from '@proton/mail-message/store/conversations/conversationsTypes';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
 import { isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -14,13 +24,11 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { mergeConversations } from '../../helpers/conversation';
 import { hasLabel, isElementConversation, parseLabelIDsInEvent } from '../../helpers/elements';
-import { isNetworkError } from '../../helpers/errors';
 import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
 import { applyLabelChangesOnConversation, applyLabelChangesOnMessage } from '../../helpers/labels';
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 import type { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
 import { applyMarkAsChangesOnConversation } from '../../hooks/optimistic/useOptimisticMarkAs';
-import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
 import type { EventUpdates, QueryParams, QueryResults, TaskRunningInfo } from '../elements/elementsTypes';
 import {
@@ -33,14 +41,6 @@ import {
 } from '../mailbox/locationHelpers';
 import type { MailState } from '../store';
 import { allConversations, conversationByID } from './conversationsSelectors';
-import type {
-    ConversationErrors,
-    ConversationEvent,
-    ConversationParams,
-    ConversationResult,
-    ConversationState,
-    ConversationsState,
-} from './conversationsTypes';
 
 export const globalReset = (state: Draft<ConversationsState>) => {
     Object.keys(state).forEach((key) => delete state[key]);

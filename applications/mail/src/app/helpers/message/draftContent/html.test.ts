@@ -1,9 +1,9 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { formatFullDate } from '@proton/mail-message/helpers/date';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
-import { formatFullDate } from '../../date';
 import { createHTMLDraftContent, generateBlockquote, generatePreviousMessageInfos } from './html';
 
 // Mock dependencies to avoid DOM and other issues in tests
@@ -13,13 +13,13 @@ jest.mock('../messageContentConversion', () => ({
     }),
 }));
 
-jest.mock('../messageContentQuery', () => ({
+jest.mock('@proton/mail-message/helpers/message/messageContentQuery', () => ({
     getDocumentContent: jest.fn((doc: any) => {
         return doc?.innerHTML || '<p>HTML content</p>';
     }),
 }));
 
-jest.mock('../messageSignature', () => ({
+jest.mock('@proton/mail-message/helpers/message/messageSignature', () => ({
     insertSignature: jest.fn((content, signature) => {
         if (signature) {
             // Mimics real insertSignature which prepends signature before content

@@ -1,6 +1,8 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
+import type { Conversation } from '@proton/mail-message/models/conversation';
+import type { ConversationState } from '@proton/mail-message/store/conversations/conversationsTypes';
 import type { MessageState, PublicPrivateKey } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -14,12 +16,10 @@ import { clearAll, mockConsole, waitForSpyCall } from '../../helpers/tests/helpe
 import { mailTestRender } from '../../helpers/tests/render';
 // mock useGetMessageKeys on-the-fly when needed
 import { useGetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import type { Conversation } from '../../models/conversation';
 import {
     initialize as initializeConversation,
     updateConversation,
 } from '../../store/conversations/conversationsActions';
-import type { ConversationState } from '../../store/conversations/conversationsTypes';
 import * as messageDraftActions from '../../store/messages/draft/messagesDraftActions';
 import { initialize as initializeMessage } from '../../store/messages/read/messagesReadActions';
 import ConversationView from './ConversationView';

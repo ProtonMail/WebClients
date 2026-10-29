@@ -1,4 +1,6 @@
 import type { PrivateAuthenticationStore } from '@proton/components/containers/app/interface';
+import { getDocumentContent } from '@proton/mail-message/helpers/message/messageContentQuery';
+import { setEmbeddedAttr } from '@proton/mail-message/helpers/message/messageEmbeddedAttributes';
 import { getAnchor } from '@proton/mail-message/helpers/message/messageImages/getAnchor';
 import type {
     LoadRemoteResults,
@@ -16,10 +18,12 @@ import {
     loadRemoteDirectFromURL,
     loadRemoteProxyFromURL,
 } from '../../store/messages/images/messagesImagesActions';
-import { getDocumentContent } from './messageContentQuery';
-import { setEmbeddedAttr } from './messageEmbeddedAttributes';
 
-export { getEmbeddedImages, getRemoteImages, updateImages } from './messageImagesUtils';
+export {
+    getEmbeddedImages,
+    getRemoteImages,
+    updateImages,
+} from '@proton/mail-message/helpers/message/messageImagesUtils';
 
 const REGEXP_FIXER = (() => {
     const str = MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.map((key) => `proton-${key}`).join('|');

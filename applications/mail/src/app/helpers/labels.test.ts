@@ -1,3 +1,4 @@
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import {
     getHumanLabelID,
@@ -18,7 +19,6 @@ import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import type { Conversation } from '../models/conversation';
 import {
     appendCategoryIDsInInbox,
     applyLabelChangesOnConversation,

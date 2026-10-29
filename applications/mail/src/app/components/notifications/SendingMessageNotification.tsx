@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { formatDateToHuman } from '@proton/mail-message/helpers/date';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { formatDateToHuman } from '../../helpers/date';
 import { isScheduledSendTodayMorning } from '../composer/actions/scheduleSend/helpers';
 import UndoNotificationButton from './UndoNotificationButton';
 

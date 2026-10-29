@@ -5,15 +5,15 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
+import { getAddressFromEmail } from '@proton/mail-message/helpers/addresses';
+import { changeSignature } from '@proton/mail-message/helpers/message/messageSignature';
+import type { RecipientType } from '@proton/mail-message/models/address';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
 import type { MessageChange } from '../../components/composer/Composer';
-import { getAddressFromEmail } from '../../helpers/addresses';
-import { changeSignature } from '../../helpers/message/messageSignature';
-import type { RecipientType } from '../../models/address';
 import { useMailSelector } from '../../store/hooks';
 
 interface Props {

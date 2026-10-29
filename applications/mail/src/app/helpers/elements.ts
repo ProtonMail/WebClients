@@ -1,5 +1,6 @@
 import { fromUnixTime } from 'date-fns';
 
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
@@ -19,7 +20,6 @@ import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/sea
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
-import type { Conversation } from '../models/conversation';
 import type { Element } from '../models/element';
 import type { LabelIDsChanges } from '../models/event';
 import {

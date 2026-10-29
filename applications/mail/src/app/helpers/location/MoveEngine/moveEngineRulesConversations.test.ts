@@ -1,11 +1,11 @@
 import { describe } from '@jest/globals';
 
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { Conversation } from '../../../models/conversation';
 import { ERROR_ELEMENT_NOT_CONVERSATION, MoveEngineRuleResult } from './moveEngineInterface';
 import {
     conversationAllDraftRules,

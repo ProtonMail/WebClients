@@ -7,10 +7,10 @@ import ContactSelectorModal from '@proton/components/containers/contacts/selecto
 import useToggle from '@proton/hooks/useToggle';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
+import type { RecipientType } from '@proton/mail-message/models/address';
 import noop from '@proton/utils/noop';
 
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
-import type { RecipientType } from '../../../models/address';
 import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';

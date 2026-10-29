@@ -1,8 +1,9 @@
 import type { Draft } from '@reduxjs/toolkit';
 
+import type { Conversation, ConversationLabel } from '@proton/mail-message/models/conversation';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import type { Conversation, ConversationLabel } from '../../../models/conversation';
+import { unlabelConversationsPending } from '../elementsReducers';
 import type { ElementsState } from '../elementsTypes';
 import {
     CONVERSATION_ID,
@@ -12,8 +13,6 @@ import {
     expectConversationLabelsSameArray,
     setupConversation,
 } from './elementsReducer.test.helpers';
-
-import { unlabelConversationsPending } from '../elementsReducers';
 
 describe('unLabelConversationsPending', () => {
     let testState: Draft<ElementsState>;

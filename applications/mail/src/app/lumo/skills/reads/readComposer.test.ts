@@ -1,12 +1,12 @@
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { CLASSNAME_SIGNATURE_CONTAINER } from '@proton/mail-message/helpers/message/messageSignature';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { getAddressPlainTextSignature } from '../../../helpers/composer/contentFromComposerMessage';
-import { CLASSNAME_SIGNATURE_CONTAINER } from '../../../helpers/message/messageSignature';
 import { DraftKind } from '../../helpers/draftKind';
 import type { MailToolDeps } from '../../toolModule';
 import { createReadComposerHandler, readComposerDefinition } from './readComposer';

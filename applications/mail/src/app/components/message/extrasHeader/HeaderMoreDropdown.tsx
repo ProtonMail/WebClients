@@ -42,6 +42,8 @@ import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
 import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
+import { formatFileNameDate } from '@proton/mail-message/helpers/date';
+import type { MessageViewIcons } from '@proton/mail-message/helpers/message/icon';
 import type {
     MessageState,
     MessageStateWithData,
@@ -58,11 +60,9 @@ import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, MARK_AS_STATUS } from '@proton/share
 import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { formatFileNameDate } from '../../../helpers/date';
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
 import { canSetExpiration, getExpirationTime } from '../../../helpers/expiration';
 import { isConversationMode } from '../../../helpers/mailSettings';
-import type { MessageViewIcons } from '../../../helpers/message/icon';
 import { exportBlob } from '../../../helpers/message/messageExport';
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
 import { useApplyLocation } from '../../../hooks/actions/applyLocation/useApplyLocation';

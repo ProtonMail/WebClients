@@ -1,11 +1,11 @@
 import { fromUnixTime, getUnixTime } from 'date-fns';
 
+import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { renderHook } from '../helpers/tests/render';
-import type { Conversation } from '../models/conversation';
 import { initialize } from '../store/messages/read/messagesReadActions';
 import { useExpiringElement } from './useExpiringElement';
 

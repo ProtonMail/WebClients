@@ -2,6 +2,7 @@ import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto
 import { CryptoProxy } from '@protontech/crypto';
 
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { getPlainTextContent } from '@proton/mail-message/helpers/message/messageContentPlainText';
 import type {
     MessageKeys,
     MessageState,
@@ -19,7 +20,6 @@ import type { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { combineHeaders, splitMail } from '../mail';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
-import { getPlainTextContent } from './messageContentPlainText';
 import { prepareExport } from './messageExportPrepare';
 
 export { prepareExport } from './messageExportPrepare';

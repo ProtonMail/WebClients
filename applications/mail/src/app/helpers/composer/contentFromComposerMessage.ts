@@ -1,3 +1,8 @@
+import {
+    CLASSNAME_SIGNATURE_CONTAINER,
+    exportPlainTextSignature,
+    insertSignature,
+} from '@proton/mail-message/helpers/message/messageSignature';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
@@ -9,7 +14,6 @@ import {
     insertTextBeforeContent,
     prepareContentToInsert,
 } from '../message/messageContent';
-import { CLASSNAME_SIGNATURE_CONTAINER, exportPlainTextSignature, insertSignature } from '../message/messageSignature';
 
 export type ComposerReturnType = 'html' | 'plaintext';
 

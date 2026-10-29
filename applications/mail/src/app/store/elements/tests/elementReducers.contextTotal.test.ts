@@ -1,9 +1,7 @@
 import type { Draft } from '@reduxjs/toolkit';
 
+import type { ConversationLabel } from '@proton/mail-message/models/conversation';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-
-import type { ConversationLabel } from '../../../models/conversation';
-import type { ElementsState } from '../elementsTypes';
 
 import {
     labelConversationsPending,
@@ -11,6 +9,7 @@ import {
     unlabelConversationsPending,
     unlabelMessagesPending,
 } from '../elementsReducers';
+import type { ElementsState } from '../elementsTypes';
 import {
     CONVERSATION_ID,
     CUSTOM_LABEL_ID1,

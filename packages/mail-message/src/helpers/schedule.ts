@@ -26,9 +26,5 @@ export const getMinScheduleTime = (date: Date) => {
     // If it's 9:20 => return 9:30
     // If it's 9:55 => return 10:00
     // If it's 9:58 => return 10:30
-    return limit <= nextIntervals[0]
-        ? nextIntervals[0]
-        : limit <= nextIntervals[1]
-          ? nextIntervals[1]
-          : nextIntervals[2];
+    return nextIntervals.find((interval) => limit <= interval) ?? nextIntervals[2];
 };

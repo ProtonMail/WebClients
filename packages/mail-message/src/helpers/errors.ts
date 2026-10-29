@@ -1,6 +1,5 @@
-import type { MessageErrors, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
-
 import type { ConversationErrors } from '../store/conversations/conversationsTypes';
+import type { MessageErrors, MessageState } from '../store/messages/messagesTypes';
 
 /**
  * Define wether or not the error comes from a network error

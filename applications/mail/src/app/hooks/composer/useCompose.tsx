@@ -19,6 +19,7 @@ import { useHandler } from '@proton/hooks/useHandler';
 import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import type { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { isDirtyAddress } from '@proton/mail-message/helpers/addresses';
 import type { MessageState, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
@@ -31,7 +32,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
-import { isDirtyAddress } from '../../helpers/addresses';
 import { insertBodyIntoNewDraft } from '../../helpers/composer/contentFromComposerMessage';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
 import { openDraft, updateDraftContent } from '../../store/messages/draft/messagesDraftActions';

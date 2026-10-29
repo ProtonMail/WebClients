@@ -1,7 +1,7 @@
+import { htmlToMarkdown } from '@proton/mail-message/helpers/assistant/markdown';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 
 import { simplifyHTML } from './html';
-import { htmlToMarkdown } from './markdown';
 import { replaceURLs } from './url';
 
 // Prepare content to be send to the AI model

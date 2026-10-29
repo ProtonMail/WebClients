@@ -15,6 +15,12 @@ import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
 import { IcArrowsUpAndLeftBig } from '@proton/icons/icons/IcArrowsUpAndLeftBig';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { isSelfAddress } from '@proton/mail-message/helpers/addresses';
+import type { MessageViewIcons } from '@proton/mail-message/helpers/message/icon';
+import {
+    getExpiresOnMessage,
+    getMessageExpirationDate,
+} from '@proton/mail-message/helpers/message/messageExpirationTime';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -35,10 +41,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
-import { isSelfAddress } from '../../../helpers/addresses';
 import { hasLabel } from '../../../helpers/elements';
-import type { MessageViewIcons } from '../../../helpers/message/icon';
-import { getExpiresOnMessage, getMessageExpirationDate } from '../../../helpers/message/messageExpirationTime';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
