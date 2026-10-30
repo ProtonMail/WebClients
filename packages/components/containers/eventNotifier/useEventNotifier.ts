@@ -55,7 +55,7 @@ export const useEventNotifier = ({
             onPing: ({ type }) => {
                 debug(`Event notifier: ping received for the ${type} event loop`);
                 // Pings received while a call is in flight are coalesced by the event manager.
-                void call().catch(noop);
+                void call('Ping').catch(noop);
             },
             onError: (message, error) => {
                 const sentryError = getSentryError(error);

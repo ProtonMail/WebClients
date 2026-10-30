@@ -18,7 +18,7 @@ export const queryEvents = async (api: Api, lastEvent?: string, signal?: AbortSi
             signal,
             options: {
                 ...getEvents(lastEvent),
-                params: getEventLoopParams({ source: 'encrypted-search' }),
+                params: getEventLoopParams({ source: 'encrypted-search', trigger: 'Code' }),
             },
             callingContext: 'getEvents',
         });

@@ -7,7 +7,7 @@ import createListeners from '../helpers/listeners';
 import { onceWithQueue } from '../helpers/onceWithQueue';
 import { type TimeoutIntervalsState, getTimeoutIntervalsStateSingleton } from './TimeoutIntervalsState';
 import { type VisibilityState, getVisibilityStateSingleton } from './VisibilityState';
-import { type EventLoopParams, getEventLoopParams } from './eventLoopParams';
+import { type EventLoopParams, type EventLoopTrigger, getEventLoopParams } from './eventLoopParams';
 import { getIntervalTypeFromVisibility } from './getIntervalTypeFromVisibility';
 
 interface DefaultEventResult {
@@ -57,7 +57,7 @@ export type EventManager<EventResult> = {
     getEventID: () => string | undefined;
     start: () => void;
     stop: () => void;
-    call: () => Promise<void>;
+    call: (trigger?: EventLoopTrigger) => Promise<void>;
     reset: () => void;
     subscribe: SubscribeFn<[EventResult]>;
 };
@@ -147,7 +147,7 @@ const createEventManager = <EventResult = DefaultEventResult>({
         STATE.timeoutStartTime = now;
         STATE.timeoutStartDelay = delay;
         // eslint-disable-next-line
-        STATE.timeoutHandle = setTimeout(call, delay);
+        STATE.timeoutHandle = setTimeout(() => call('Timer'), delay);
     };
 
     const unsubscribeVisibilityState = visibilityState.subscribe((isVisible) => {
@@ -257,7 +257,7 @@ const createEventManager = <EventResult = DefaultEventResult>({
     /**
      * Call the event manager. Either does it immediately, or queues the call until after the current call has finished.
      */
-    const call = onceWithQueue(async () => {
+    const call = onceWithQueue(async (trigger: EventLoopTrigger = 'Code') => {
         try {
             stop();
 
@@ -300,6 +300,7 @@ const createEventManager = <EventResult = DefaultEventResult>({
                         silence: true,
                         params: getEventLoopParams({
                             intervalType: getIntervalTypeFromVisibility(visibilityState.visible),
+                            trigger,
                         }),
                     });
                 } catch (error: any) {
