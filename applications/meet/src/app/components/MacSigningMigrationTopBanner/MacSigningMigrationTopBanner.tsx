@@ -29,7 +29,7 @@ export const MacSigningMigrationTopBanner = () => {
     const learnMore = <Href href={MAC_KEYCHAIN_PROMPT_KB_URL} key="learn-more">{c('Link').t`Learn more`}</Href>;
 
     return (
-        <TopBanner className="bg-warning">
+        <TopBanner className="bg-warning mt-6">
             <span>{c('Info').jt`Please update ${MEET_APP_NAME} to keep using the app. ${downloadUpdate}`}</span>
             <span className="block text-normal">
                 {c('Info')
