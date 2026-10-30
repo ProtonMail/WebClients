@@ -41,6 +41,7 @@ import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerExpirationBanner } from './ComposerExpirationBanner';
 import { ComposerLimitBanner } from './ComposerLimitBanner';
 import { ComposerModelLimitUpsell } from './ComposerModelLimitUpsell';
+import { ComposerNativeNotificationPermissionBanner } from './ComposerNativeNotificationPermissionBanner';
 import { ComposerPreInputPortalRoot } from './ComposerPreInputPortal';
 import { ComposerToolbar } from './ComposerToolbar';
 import { DictationLanguageModal } from './DictationLanguageModal';
@@ -496,6 +497,10 @@ const ComposerComponentInner = ({
                     }}
                     className="justify-center mb-1"
                 />
+            )}
+
+            {composerMode === ComposerMode.CONVERSATION && (
+                <ComposerNativeNotificationPermissionBanner messageChain={messageChain} spaceId={spaceId} />
             )}
 
             <ComposerPreInputPortalRoot />
