@@ -8,9 +8,9 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
+import { canSetExpiration } from '@proton/mail-message/helpers/expiration';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 
-import { canSetExpiration } from '../../../../../helpers/expiration';
 import useExpiration from '../../../../../hooks/useExpiration';
 import { useMailDispatch } from '../../../../../store/hooks';
 import { expireMessages } from '../../../../../store/messages/expire/messagesExpireActions';

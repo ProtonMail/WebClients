@@ -12,7 +12,7 @@ import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettin
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
-import { getSendersToBlock } from '../helpers/message/messageRecipients';
+import { getSendersToBlock } from '../helpers/recipients';
 import type { Element } from '../models/element';
 import { useMailDispatch } from '../store/hooks';
 import { addBlockAddresses } from '../store/incomingDefaults/incomingDefaultsActions';

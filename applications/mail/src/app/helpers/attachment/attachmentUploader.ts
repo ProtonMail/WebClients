@@ -2,6 +2,7 @@ import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto
 import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
+import { generateCid, isEmbeddable } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import type {
     MessageState,
     MessageStateWithData,
@@ -26,7 +27,6 @@ import {
     STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
     UPLOAD_ATTACHMENT_ERROR_CODES,
 } from '../../constants';
-import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
 import type { RequestParams, Upload } from '../upload';
 import { upload as uploadHelper } from '../upload';
 

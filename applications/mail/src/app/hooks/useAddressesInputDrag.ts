@@ -4,12 +4,15 @@ import { useEffect, useState } from 'react';
 import { useCache } from '@proton/app-context/useCache';
 import useDragOver from '@proton/components/hooks/useDragOver';
 import { useHandler } from '@proton/hooks/useHandler';
+import {
+    matchRecipientOrGroup,
+    recipientOrGroupToRecipients,
+} from '@proton/mail-message/helpers/message/messageRecipients';
 import type { RecipientOrGroup } from '@proton/mail-message/models/address';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import generateUID from '@proton/utils/generateUID';
 
 import { DRAG_ADDRESS_KEY } from '../constants';
-import { matchRecipientOrGroup, recipientOrGroupToRecipients } from '../helpers/message/messageRecipients';
 
 const ADDRESS_DRAG_CACHE_KEY = 'ADDRESS_DRAG';
 

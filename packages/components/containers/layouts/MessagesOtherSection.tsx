@@ -15,10 +15,14 @@ import {
 } from '@proton/shared/lib/api/mailSettings';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import {
+    DEFAULT_FONT_FACE,
+    DEFAULT_FONT_SIZE,
+    getFontFaceIdFromValue,
+    getFontFaceValueFromId,
+} from '@proton/shared/lib/mail/fontFace';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
-import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/constants';
-import { getFontFaceIdFromValue, getFontFaceValueFromId } from '../../components/editor/helpers/fontFace';
 import Label from '../../components/label/Label';
 import Info from '../../components/link/Info';
 import SettingsLayout from '../account/SettingsLayout';

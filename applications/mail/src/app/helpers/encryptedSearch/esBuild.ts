@@ -1,14 +1,14 @@
 import { apiHelper } from '@proton/encrypted-search/esHelpers/esAPI';
 import { locateBlockquote } from '@proton/mail-message/helpers/message/messageBlockquote';
+import { decryptMessage } from '@proton/mail-message/helpers/message/messageDecrypt';
+import type { GetMessageKeys } from '@proton/mail-message/store/messages/messagesTypes';
 import { removeBase64 } from '@proton/mail-renderer/helpers/transforms/transformEscape';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { removeHTMLComments } from '@proton/shared/lib/helpers/string';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import type { ESBaseMessage, ESMessage, ESMessageContent } from '../../models/encryptedSearch';
-import { decryptMessage } from '../message/messageDecrypt';
 import { queryMessage } from './esAPI';
 
 export enum CONTENT_VERSION {

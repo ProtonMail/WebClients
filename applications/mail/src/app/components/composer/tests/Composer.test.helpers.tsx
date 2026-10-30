@@ -5,13 +5,13 @@ import { fireEvent } from '@testing-library/react';
 
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
 import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
+import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
 import type { MessageStateWithData, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { DraftBodyWriterManager } from '../../../containers/DraftBodyWriterProvider';
 import { DraftBodyWriterProvider, useDraftBodyWriters } from '../../../containers/DraftBodyWriterProvider';
-import { mergeMessages } from '../../../helpers/message/messages';
 import { addApiMock, parseFormData } from '../../../helpers/tests/api';
 import { addApiKeys, apiKeys } from '../../../helpers/tests/crypto';
 import { waitForNoNotification, waitForNotification } from '../../../helpers/tests/helper';

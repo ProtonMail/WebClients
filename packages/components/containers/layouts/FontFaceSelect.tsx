@@ -1,4 +1,5 @@
-import { DEFAULT_FONT_FACE, FONT_FACES } from '../../components/editor/constants';
+import { DEFAULT_FONT_FACE, FONT_FACES } from '@proton/shared/lib/mail/fontFace';
+
 import Option from '../../components/option/Option';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
 

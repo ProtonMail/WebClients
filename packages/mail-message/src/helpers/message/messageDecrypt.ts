@@ -1,0 +1,214 @@
+import type {
+    WorkerProcessMIMEResult as MimeProcessResult,
+    PrivateKeyReference,
+    PublicKeyReference,
+    VERIFICATION_STATUS,
+} from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
+import { c } from 'ttag';
+
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { getParsedHeadersFirstValue, getSender, isAutoForwardee, isMIME } from '@proton/shared/lib/mail/messages';
+import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
+
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import type { DecryptMessageResult } from '../../store/messages/messagesTypes';
+import { convert } from '../attachment/attachmentConverter';
+
+const binaryToString = (data: Uint8Array<ArrayBuffer>) =>
+    uint8ArrayToUtf8String(data)
+        .replace(/\r\n/g, '\n')
+        // nbsp can be contained in message body and "crash" DOMPurify
+        .replace(/\u00A0/g, ' ');
+
+export type { DecryptMessageResult };
+
+const decryptMimeMessage = async (
+    message: Message,
+    privateKeys: PrivateKeyReference[],
+    onUpdateAttachment?: (ID: string, attachment: DecryptedAttachment) => void
+): Promise<DecryptMessageResult> => {
+    const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
+    const sender = getSender(message)?.Address;
+
+    try {
+        const decryption = await CryptoProxy.decryptMessage({
+            armoredMessage: message.Body,
+            decryptionKeys: privateKeys,
+            verificationKeys: [],
+            format: 'binary',
+            config: {
+                allowForwardedMessages: isAutoForwardee(message),
+            },
+        });
+
+        const decryptedStringData = binaryToString(decryption.data);
+        let processing: MimeProcessResult;
+        try {
+            processing = await CryptoProxy.processMIME({
+                data: decryptedStringData,
+                headerFilename,
+                sender,
+            });
+        } catch (e) {
+            // eslint-disable-next-line no-console
+            console.log('Failed to process decrypted MIME message:', decryptedStringData);
+            throw e;
+        }
+
+        const decryptedRawContent = decryption.data;
+        return {
+            decryptedBody: processing.body,
+            decryptedRawContent,
+            attachments: onUpdateAttachment ? convert(message, processing.attachments, onUpdateAttachment) : undefined,
+            decryptedSubject: processing.encryptedSubject,
+            signature: decryption.signatures[0],
+            mimetype: processing.mimeType as MIME_TYPES,
+        };
+    } catch (error: any) {
+        return {
+            decryptedBody: '',
+            decryptedRawContent: new Uint8Array(),
+            attachments: [],
+            errors: {
+                decryption: [error],
+            },
+        };
+    }
+};
+
+/**
+ * Decrypt a message body of any kind: plaintext/html, multipart/simple, as well as EO.
+ * Willingly not dealing with public keys and signature verification
+ * It will be done separately when public keys will be ready
+ */
+export const decryptMessage = async (
+    message: Message,
+    privateKeys: PrivateKeyReference[],
+    onUpdateAttachment?: (ID: string, attachment: DecryptedAttachment) => void,
+    password?: string
+): Promise<DecryptMessageResult> => {
+    if (isMIME(message)) {
+        return decryptMimeMessage(message, privateKeys, onUpdateAttachment);
+    }
+
+    try {
+        const decryption = await CryptoProxy.decryptMessage({
+            armoredMessage: message.Body,
+            decryptionKeys: privateKeys,
+            verificationKeys: [],
+            passwords: password, // EO messages
+            format: 'binary',
+            config: {
+                allowForwardedMessages: isAutoForwardee(message),
+            },
+        });
+
+        const { data: decryptedRawContent, signatures } = decryption;
+
+        const decryptedBody = binaryToString(decryptedRawContent);
+
+        return {
+            decryptedBody,
+            decryptedRawContent,
+            signature: signatures.length > 0 ? mergeUint8Arrays(signatures) : undefined,
+        };
+    } catch (error: any) {
+        return {
+            decryptedBody: '',
+            decryptedRawContent: new Uint8Array(),
+            errors: {
+                decryption: [error],
+            },
+        };
+    }
+};
+
+/**
+ * Verify the extracted `signature` of a decryption result against its `decryptedRawContent`
+ * Also parse mime messages to look for embedded signature
+ * The `publicKeys` are the public keys on which the compare the signature
+ * The `message` is only used to detect mime format
+ */
+export const verifyMessage = async (
+    decryptedRawContent: Uint8Array<ArrayBuffer>,
+    cryptoSignature: Uint8Array<ArrayBuffer> | undefined,
+    message: Message,
+    publicKeys: PublicKeyReference[]
+): Promise<{
+    verificationStatus: MAIL_VERIFICATION_STATUS;
+    signature?: Uint8Array<ArrayBuffer>;
+    verificationErrors?: Error[];
+}> => {
+    try {
+        let cryptoVerified: VERIFICATION_STATUS | undefined;
+        let mimeSignature: Uint8Array<ArrayBuffer> | undefined;
+        let mimeVerified: VERIFICATION_STATUS | undefined;
+
+        const contentType = getParsedHeadersFirstValue(message, 'Content-Type');
+
+        if (publicKeys.length && cryptoSignature) {
+            const cryptoVerify = await CryptoProxy.verifyMessage({
+                binaryData: decryptedRawContent,
+                binarySignature: cryptoSignature,
+                verificationKeys: publicKeys,
+            });
+            cryptoVerified = cryptoVerify.verificationStatus;
+        }
+
+        if (contentType === MIME_TYPES.MIME) {
+            const mimeVerify = await CryptoProxy.processMIME({
+                data: binaryToString(decryptedRawContent),
+                verificationKeys: publicKeys,
+            });
+            [mimeSignature] = mimeVerify.signatures;
+            mimeVerified = mimeVerify.verificationStatus;
+        }
+
+        if (!cryptoSignature && !mimeSignature) {
+            return { verificationStatus: MAIL_VERIFICATION_STATUS.NOT_SIGNED, signature: undefined };
+        }
+
+        if (!publicKeys.length) {
+            return { verificationStatus: MAIL_VERIFICATION_STATUS.NOT_VERIFIED, signature: cryptoSignature };
+        }
+
+        if (cryptoSignature) {
+            return { verificationStatus: getMailVerificationStatus(cryptoVerified!), signature: cryptoSignature };
+        }
+
+        // mimeSignature can't be undefined at this point
+        return { verificationStatus: getMailVerificationStatus(mimeVerified!), signature: mimeSignature };
+    } catch (error: any) {
+        return {
+            verificationStatus: MAIL_VERIFICATION_STATUS.NOT_VERIFIED,
+            verificationErrors: [error],
+        };
+    }
+};
+
+/**
+ * Find the address key the message is encrypted to.
+ * The key might not be found if the user has deleted the address key, or if the message was encrypted
+ * to a key that the user does not own, or never imported into their Proton account.
+ * @return  if found among the address keys: the keyID of the address key encrypting the message, and whether the key is inactive
+ */
+export const getMessageDecryptionKeyInfoFromAddress = async (address: Address, message: Message) => {
+    const { encryptionKeyIDs } = await CryptoProxy.getMessageInfo({
+        armoredMessage: message.Body,
+    });
+
+    for (const { PrivateKey: armoredKey, Active } of address.Keys) {
+        const { keyIDs: addressKeyIDs } = await CryptoProxy.getKeyInfo({ armoredKey });
+        const matchingKeyID = addressKeyIDs.find((keyID) => encryptionKeyIDs.includes(keyID));
+
+        if (matchingKeyID) {
+            return { keyID: matchingKeyID, isKeyInactive: Active !== 1 };
+        }
+    }
+};

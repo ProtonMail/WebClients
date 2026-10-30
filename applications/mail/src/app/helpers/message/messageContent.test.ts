@@ -1,4 +1,10 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { generateBlockquote } from '@proton/mail-message/helpers/message/draftContent/html';
+import {
+    getContentWithBlockquotes,
+    getContentWithoutBlockquotes,
+    isMessageContentEmpty,
+} from '@proton/mail-message/helpers/message/messageContent';
 import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import type { MessageDecryption, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -13,8 +19,6 @@ import { addressID, messageID, subject } from '../../components/message/tests/Me
 import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../tests/crypto';
 import { clearAll } from '../tests/helper';
 import { removeLineBreaks } from '../tests/message';
-import { generateBlockquote } from './draftContent/html';
-import { getContentWithBlockquotes, getContentWithoutBlockquotes, isMessageContentEmpty } from './messageContent';
 
 const getMessage = (isPlainText: boolean, isReferenceMessage: boolean, content: string) => {
     return {

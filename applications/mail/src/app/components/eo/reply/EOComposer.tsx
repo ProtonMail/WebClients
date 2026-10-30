@@ -5,15 +5,15 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { useHandler } from '@proton/hooks/useHandler';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { setContent } from '@proton/mail-message/helpers/message/messageContent';
+import { createNewDraft } from '@proton/mail-message/helpers/message/messageDraft';
+import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
 import type { MessageState, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import { EO_DEFAULT_MAILSETTINGS, EO_DEFAULT_USER_SETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
-import { setContent } from '../../../helpers/message/messageContent';
-import { createNewDraft } from '../../../helpers/message/messageDraft';
-import { mergeMessages } from '../../../helpers/message/messages';
 import { useEOAttachments } from '../../../hooks/eo/useEOAttachments';
 import type { MessageChange } from '../../composer/Composer';
 import ComposerContent from '../../composer/ComposerContent';

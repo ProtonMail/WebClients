@@ -3185,9 +3185,6 @@ importers:
       '@protontech/logger':
         specifier: 'catalog:'
         version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
-      '@protontech/mimemessage':
-        specifier: ~v1.1.4
-        version: 1.1.4(supports-color@11.0.0)
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -3224,9 +3221,6 @@ importers:
       idb:
         specifier: 'catalog:'
         version: 8.0.3
-      jszip:
-        specifier: 'catalog:'
-        version: 3.10.2
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
@@ -7942,9 +7936,18 @@ importers:
       '@protontech/crypto':
         specifier: 'catalog:'
         version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      '@protontech/logger':
+        specifier: 'catalog:'
+        version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
+      '@protontech/mimemessage':
+        specifier: ~v1.1.4
+        version: 1.1.4(supports-color@11.0.0)
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
+      jszip:
+        specifier: 'catalog:'
+        version: 3.10.2
       markdown-it:
         specifier: 14.3.3
         version: 14.3.3

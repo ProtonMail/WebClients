@@ -1,3 +1,4 @@
+import { isCustomLabelOrFolder } from '@proton/mail-message/helpers/location';
 import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import {
@@ -6,7 +7,6 @@ import {
     isCategoryLabel,
     isCustomFolder,
     isCustomLabel,
-    isCustomLabelOrFolder,
     isHumalLabelIDKey,
     isHumanCustomViewKey,
     isStringHumanLabelID,

@@ -1,20 +1,14 @@
 import { useMemo } from 'react';
 
-import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
-
 import {
     getImageTrackerText,
     getImageTrackersFromMessage,
     getUTMTrackerText,
     getUTMTrackersFromMessage,
-} from '../../helpers/message/trackers';
-
-export interface Tracker {
-    name: string;
-    urls: string[];
-}
+} from '@proton/mail-message/helpers/message/trackers';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
 export const useMessageTrackers = (message: MessageState) => {
     const [mailSettings] = useMailSettings();

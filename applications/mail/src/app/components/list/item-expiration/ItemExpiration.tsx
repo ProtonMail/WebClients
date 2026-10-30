@@ -1,12 +1,12 @@
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
+import { isAllowedAutoDeleteLabelID } from '@proton/mail-message/helpers/autoDelete';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { isExpiringByRetentionRule, isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { isAllowedAutoDeleteLabelID } from '../../../helpers/autoDelete';
 import { isElementConversation, isElementMessage } from '../../../helpers/elements';
 import type { Element } from '../../../models/element';
 import useItemExpiration from './useItemExpiration';

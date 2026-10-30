@@ -1,6 +1,13 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import {
+    insertBlobImages,
+    markEmbeddedAsLoaded,
+    replaceEmbeddedUrls,
+} from '@proton/mail-message/helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, getRemoteImages, updateImages } from '@proton/mail-message/helpers/message/messageImages';
+import { loadBackgroundImages, loadImages, urlCreator } from '@proton/mail-message/helpers/message/messageRemotes';
 import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
@@ -15,9 +22,6 @@ import type {
 import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
 
 import config from '../../../config';
-import { insertBlobImages, markEmbeddedAsLoaded, replaceEmbeddedUrls } from '../../../helpers/message/messageEmbeddeds';
-import { getEmbeddedImages, getRemoteImages, updateImages } from '../../../helpers/message/messageImages';
-import { loadBackgroundImages, loadImages, urlCreator } from '../../../helpers/message/messageRemotes';
 import { getMessage } from '../helpers/messagesReducer';
 
 // Get image refs in the state for those in data

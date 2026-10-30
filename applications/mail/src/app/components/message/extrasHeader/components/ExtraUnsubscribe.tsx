@@ -20,6 +20,7 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { findSender } from '@proton/mail-message/helpers/message/messageRecipients';
 import type {
     MessageStateWithData,
     MessageWithOptionalBody,
@@ -37,7 +38,6 @@ import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useOnCompose } from '../../../../containers/ComposeProvider';
-import { findSender } from '../../../../helpers/message/messageRecipients';
 import { useSendMessage } from '../../../../hooks/composer/useSendMessage';
 import { useSendVerifications } from '../../../../hooks/composer/useSendVerifications';
 import { useGetMessage } from '../../../../hooks/message/useMessage';

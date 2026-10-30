@@ -4,13 +4,17 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import {
+    DEFAULT_FONT_FACE,
+    FONT_FACES,
+    getFontFaceIdFromValue,
+    getFontFaceValueFromId,
+} from '@proton/shared/lib/mail/fontFace';
 import clsx from '@proton/utils/clsx';
 
 import { Badge } from '../../badge/Badge';
 import DropdownMenu from '../../dropdown/DropdownMenu';
 import DropdownMenuContainer from '../../dropdown/DropdownMenuContainer';
-import { DEFAULT_FONT_FACE, FONT_FACES } from '../constants';
-import { getFontFaceIdFromValue, getFontFaceValueFromId } from '../helpers/fontFace';
 import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {

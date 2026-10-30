@@ -1,8 +1,8 @@
+import { readContentIDandLocation } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
-import { readContentIDandLocation } from '../../../helpers/message/messageEmbeddeds';
 import { attachmentByID } from '../../../store/attachments/attachmentsSelectors';
 import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import { messageByID } from '../../../store/messages/messagesSelectors';

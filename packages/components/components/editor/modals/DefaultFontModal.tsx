@@ -8,6 +8,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSettings';
+import {
+    DEFAULT_FONT_FACE,
+    DEFAULT_FONT_SIZE,
+    getFontFaceIdFromValue,
+    getFontFaceValueFromId,
+} from '@proton/shared/lib/mail/fontFace';
 
 import FontFaceSelect from '../../../containers/layouts/FontFaceSelect';
 import FontSizeSelect from '../../../containers/layouts/FontSizeSelect';
@@ -16,8 +22,6 @@ import ModalTwo from '../../modalTwo/Modal';
 import ModalTwoContent from '../../modalTwo/ModalContent';
 import ModalTwoFooter from '../../modalTwo/ModalFooter';
 import ModalTwoHeader from '../../modalTwo/ModalHeader';
-import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
-import { getFontFaceIdFromValue, getFontFaceValueFromId } from '../helpers/fontFace';
 
 interface Props {
     onClose?: () => void;

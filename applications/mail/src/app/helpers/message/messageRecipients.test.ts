@@ -1,4 +1,12 @@
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import {
+    findSender,
+    getRecipientGroupLabel,
+    getRecipientLabel,
+    getRecipients,
+    getReplyRecipientListAsString,
+    recipientsToRecipientOrGroup,
+} from '@proton/mail-message/helpers/message/messageRecipients';
 import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
@@ -11,16 +19,7 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { fromFields, recipients } from '../../components/composer/tests/Composer.test.data';
 import type { Element } from '../../models/element';
-import {
-    findSender,
-    getNumParticipants,
-    getRecipientGroupLabel,
-    getRecipientLabel,
-    getRecipients,
-    getReplyRecipientListAsString,
-    getSendersToBlock,
-    recipientsToRecipientOrGroup,
-} from './messageRecipients';
+import { getNumParticipants, getSendersToBlock } from '../recipients';
 
 const recipient1: Recipient = { Name: '', Address: 'address1' };
 const recipient2: Recipient = { Name: 'recipient2', Address: 'address2' };

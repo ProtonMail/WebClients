@@ -3,23 +3,23 @@ import type { MutableRefObject } from 'react';
 import { act, findByTestId, fireEvent, waitFor } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import * as messageDecrypt from '@proton/mail-message/helpers/message/messageDecrypt';
+import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
 import type { MessageState, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MESSAGE_IFRAME_ROOT_ID } from '@proton/mail-renderer/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
 
-import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
-import { mergeMessages } from '../../../helpers/message/messages';
 import { mailTestRender, tick } from '../../../helpers/tests/render';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import type { MailStore } from '../../../store/store';
 import type { MessageViewRef } from '../MessageView';
 import MessageView from '../MessageView';
 
-jest.mock('../../../helpers/message/messageDecrypt', () => ({
-    ...jest.requireActual('../../../helpers/message/messageDecrypt'),
-    decryptMessage: jest.fn(jest.requireActual('../../../helpers/message/messageDecrypt').decryptMessage),
+jest.mock('@proton/mail-message/helpers/message/messageDecrypt', () => ({
+    ...jest.requireActual('@proton/mail-message/helpers/message/messageDecrypt'),
+    decryptMessage: jest.fn(jest.requireActual('@proton/mail-message/helpers/message/messageDecrypt').decryptMessage),
 }));
 
 loudRejection();
