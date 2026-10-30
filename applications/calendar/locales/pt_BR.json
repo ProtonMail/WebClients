@@ -6576,6 +6576,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Peça ao seu administrador para fazer upgrade do plano ou remover uma página da barra lateral de Páginas de agendamento em ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Para adicionar uma nova página de agendamento, remova uma existente da barra lateral de Páginas de agendamento em ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
