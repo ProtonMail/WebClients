@@ -7,6 +7,7 @@ import SubscriptionModalProvider from '@proton/components/containers/payments/su
 import { ChatRetentionEnforcer } from '../../components/ChatRetentionEnforcer';
 import { SafeUserProvider } from '../../contexts/SafeUserContext';
 import { ConversationProvider } from '../../providers/ConversationProvider';
+import { DeviceSettingsProvider } from '../../providers/DeviceSettingsProvider';
 import { IsGuestProvider } from '../../providers/IsGuestProvider';
 import { LumoPlanProvider } from '../../providers/LumoPlanProvider';
 import { OnboardingProvider } from '../../providers/OnboardingProvider';
@@ -24,31 +25,33 @@ const RouterContainer = () => {
     const { APP_NAME } = useConfig();
 
     return (
-        <SubscriptionModalProvider app={APP_NAME}>
-            <OnboardingProvider>
-                <ConversationProvider>
-                    <IsGuestProvider isGuest={false}>
-                        <LumoPlanProvider>
-                            <ScheduleServiceProvider>
-                                <LumoUpsellModalProvider>
-                                    <UsageLimitsTierSync />
-                                    <ChatRetentionEnforcer />
-                                    <SafeUserProvider>
-                                        <Router>
-                                            <Switch>
-                                                <Route path="/u/:sessionId">
-                                                    <InnerApp />
-                                                </Route>
-                                            </Switch>
-                                        </Router>
-                                    </SafeUserProvider>
-                                </LumoUpsellModalProvider>
-                            </ScheduleServiceProvider>
-                        </LumoPlanProvider>
-                    </IsGuestProvider>
-                </ConversationProvider>
-            </OnboardingProvider>
-        </SubscriptionModalProvider>
+        <DeviceSettingsProvider>
+            <SubscriptionModalProvider app={APP_NAME}>
+                <OnboardingProvider>
+                    <ConversationProvider>
+                        <IsGuestProvider isGuest={false}>
+                            <LumoPlanProvider>
+                                <ScheduleServiceProvider>
+                                    <LumoUpsellModalProvider>
+                                        <UsageLimitsTierSync />
+                                        <ChatRetentionEnforcer />
+                                        <SafeUserProvider>
+                                            <Router>
+                                                <Switch>
+                                                    <Route path="/u/:sessionId">
+                                                        <InnerApp />
+                                                    </Route>
+                                                </Switch>
+                                            </Router>
+                                        </SafeUserProvider>
+                                    </LumoUpsellModalProvider>
+                                </ScheduleServiceProvider>
+                            </LumoPlanProvider>
+                        </IsGuestProvider>
+                    </ConversationProvider>
+                </OnboardingProvider>
+            </SubscriptionModalProvider>
+        </DeviceSettingsProvider>
     );
 };
 

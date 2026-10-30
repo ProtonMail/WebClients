@@ -16,13 +16,14 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
-import { requestDesktopNotificationPermission } from '@proton/lumo-api-client/core/desktop-notifications';
-import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 
 import { LumoIcon } from '../../../../components/LumoIcon/LumoIcon';
+import { NativeNotificationPermissionBanner } from '../../../../components/Notifications/NativeNotificationPermissionBanner';
 import { RecurrenceRuleFieldset } from '../../../../components/RecurrenceRuleFieldset/RecurrenceRuleFieldset';
 import type { RecurrenceRule } from '../../../../components/RecurrenceRuleFieldset/types';
+import { useDeviceSettings } from '../../../../providers/DeviceSettingsProvider';
 import type { SpaceId } from '../../../../types';
 import type { ScheduleDetails } from '../../types';
 import { ConnectorList } from '../ConnectorList';
@@ -57,6 +58,9 @@ export const ScheduledTaskEditorModal = ({
 }: ScheduledTaskEditorModalProps) => {
     const formId = useId();
     const { createNotification } = useNotifications();
+    const {
+        notificationSettings: { requestPermission },
+    } = useDeviceSettings();
     const [values, setValues] = useState<ScheduleDetails>(() => initialValues);
     const [fieldErrors, setFieldErrors] = useState<Partial<Record<ScheduleDetailsValidationField, string>>>({});
     const [saving, setSaving] = useState(false);
@@ -96,7 +100,7 @@ export const ScheduledTaskEditorModal = ({
     const requestCompletionNotifications = async () => {
         let granted = false;
         try {
-            granted = await requestDesktopNotificationPermission();
+            granted = await requestPermission();
         } catch (error) {
             console.warn('Could not enable scheduled task notifications', error);
         }
@@ -286,6 +290,7 @@ export const ScheduledTaskEditorModal = ({
                                 c('collider_2025:Label').t`Notify me when a run finishes`
                             }
                         </Checkbox>
+                        {values.notifyOnComplete && <NativeNotificationPermissionBanner />}
                     </div>
                 </ModalTwoContent>
                 <ModalTwoFooter
