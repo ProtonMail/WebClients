@@ -1,12 +1,5 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import type {
-    DocumentInitializeParams,
-    LoadParams,
-    MessageErrors,
-    MessageState,
-    VerificationParams,
-} from '@proton/mail-message/store/messages/messagesTypes';
 import { getMessage } from '@proton/shared/lib/api/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -14,8 +7,15 @@ import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTracker
 
 import { LOAD_RETRY_DELAY } from '../../../constants';
 import type { MessageEvent } from '../../../models/event';
-import type { MailState, MailThunkExtra } from '../../store';
 import { messageByID } from '../messagesSelectors';
+import type {
+    DocumentInitializeParams,
+    LoadParams,
+    MessageErrors,
+    MessageState,
+    MessagesThunkExtra,
+    VerificationParams,
+} from '../messagesTypes';
 
 export const initialize = createAction<MessageState>('messages/initialize');
 
@@ -25,10 +25,10 @@ export const errors = createAction<{ ID: string; errors: MessageErrors }>('messa
 
 export const event = createAction<MessageEvent>('messages/event');
 
-export const load = createAsyncThunk<Message, LoadParams, MailThunkExtra>(
+export const load = createAsyncThunk<Message, LoadParams, MessagesThunkExtra>(
     'messages/load',
     async ({ ID }, { getState, extra }) => {
-        const messageState = messageByID(getState() as MailState, { ID });
+        const messageState = messageByID(getState(), { ID });
         const actualID = messageState?.data?.ID || ID;
 
         // If the Body is already there, no need to send a request

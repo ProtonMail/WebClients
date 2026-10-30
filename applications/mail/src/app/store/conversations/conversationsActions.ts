@@ -1,5 +1,6 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
+import type { LabelChanges, UnreadStatus } from '@proton/mail-message/helpers/labels';
 import type { MarkAsChanges } from '@proton/mail-message/helpers/message/messages';
 import type { Conversation } from '@proton/mail-message/models/conversation';
 import type {
@@ -11,7 +12,6 @@ import type {
 import { getConversation } from '@proton/shared/lib/api/conversations';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
 import type { MailThunkExtra } from '../store';
 
 export const initialize = createAction<ConversationState>('conversations/initialize');

@@ -23,6 +23,7 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { getIsAssistantOpened } from '@proton/llm/lib/helpers';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { getAttachmentCounts } from '@proton/mail-message/helpers/message/messages';
+import { updateExpires } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces/UserSettings';
@@ -33,7 +34,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useMailDispatch } from '../../../../store/hooks';
-import { updateExpires } from '../../../../store/messages/draft/messagesDraftActions';
 import { useComposerAssistantProvider } from '../../../assistant/provider/ComposerAssistantProvider';
 import ComposerAssistantSpotlight from '../../../assistant/spotlights/ComposerAssistantSpotlight';
 import AttachmentsButton from '../../../message/extrasFooter/attachment/AttachmentsButton';

@@ -7,6 +7,7 @@ import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActive
 import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
 import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
 import type { MessageStateWithData, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import { initialize } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -16,7 +17,6 @@ import { addApiMock, parseFormData } from '../../../helpers/tests/api';
 import { addApiKeys, apiKeys } from '../../../helpers/tests/crypto';
 import { waitForNoNotification, waitForNotification } from '../../../helpers/tests/helper';
 import { mailTestRender } from '../../../helpers/tests/render';
-import { initialize } from '../../../store/messages/read/messagesReadActions';
 import type { MailStore } from '../../../store/store';
 import Composer from '../Composer';
 

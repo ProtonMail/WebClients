@@ -7,11 +7,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCircleHalfFilled } from '@proton/icons/icons/IcCircleHalfFilled';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
+import { removeDarkStyle } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import { METRICS_LOG } from '@proton/shared/lib/constants';
 import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 
 import { useMailDispatch } from '../../../../store/hooks';
-import { removeDarkStyle } from '../../../../store/messages/read/messagesReadActions';
 
 interface Props {
     message: MessageStateWithData;

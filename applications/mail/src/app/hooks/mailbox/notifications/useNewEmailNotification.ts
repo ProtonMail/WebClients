@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
+import type { ConversationEvent, MessageEvent } from '@proton/mail-message/models/event';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders } from '@proton/mail/store/labels/hooks';
@@ -12,10 +13,9 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isImported } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useMailSelector } from '../../../store/hooks';
-
 import { isElementReminded } from '../../../helpers/snooze';
-import type { ConversationEvent, Event, MessageEvent } from '../../../models/event';
+import type { Event } from '../../../models/event';
+import { useMailSelector } from '../../../store/hooks';
 import { displayGroupedNotification, displayNotification } from './notificationHelpers';
 
 const MAX_WINDOWS_NOTIFICATIONS = 3;

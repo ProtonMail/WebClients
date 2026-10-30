@@ -1,16 +1,16 @@
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
+import type { ConversationEvent, MessageEvent } from '@proton/mail-message/models/event';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
-import type { ElementsState } from '../../store/elements/elementsTypes';
-import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
-
 import type { Element } from '../../models/element';
-import type { ConversationEvent, Event, MessageEvent } from '../../models/event';
+import type { Event } from '../../models/event';
 import { eventUpdates, invalidate } from '../../store/elements/elementsActions';
 import {
     shouldInvalidateElementsState as shouldInvalidateElementsStateSelector,
     taskRunning as taskRunningSelector,
 } from '../../store/elements/elementsSelectors';
+import type { ElementsState } from '../../store/elements/elementsTypes';
+import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
 
 const elementExists = (elementsState: ElementsState, ID: string): boolean => {
     return !!elementsState.elements[ID];

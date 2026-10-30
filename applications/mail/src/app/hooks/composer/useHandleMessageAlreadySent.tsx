@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useHandler } from '@proton/hooks/useHandler';
+import { deleteDraft } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { useMailDispatch } from '../../store/hooks';
-import { deleteDraft } from '../../store/messages/draft/messagesDraftActions';
 import { useGetMessage } from '../message/useMessage';
 import { useCreateDraft } from '../message/useSaveDraft';
 

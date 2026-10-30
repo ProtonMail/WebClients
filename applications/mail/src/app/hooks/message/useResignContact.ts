@@ -4,9 +4,9 @@ import { useApi } from '@proton/app-context/useApi';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import { loadMessage } from '@proton/mail-message/helpers/message/messageRead';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import { resign } from '@proton/mail-message/store/messages/read/messagesReadActions';
 
 import { useMailDispatch } from '../../store/hooks';
-import { resign } from '../../store/messages/read/messagesReadActions';
 import { useGetMessage } from './useMessage';
 
 export const useResignContact = (localID: string) => {

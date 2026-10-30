@@ -1,22 +1,22 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
-import { setDocumentContent } from '@proton/mail-message/helpers/message/messageContent';
-import { replaceEmbeddedAttachments } from '@proton/mail-message/helpers/message/messageEmbeddeds';
-import { getEmbeddedImages, updateImages } from '@proton/mail-message/helpers/message/messageImages';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { isPlainText, setFlag } from '@proton/shared/lib/mail/messages';
+
+import { setDocumentContent } from '../../../helpers/message/messageContent';
+import { replaceEmbeddedAttachments } from '../../../helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, updateImages } from '../../../helpers/message/messageImages';
+import { getLocalID, getMessage } from '../helpers/messagesReducer';
 import type {
     MessageDraftFlags,
     MessageEmbeddedImage,
     MessageState,
     MessagesState,
     PartialMessageState,
-} from '@proton/mail-message/store/messages/messagesTypes';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { isPlainText, setFlag } from '@proton/shared/lib/mail/messages';
-
-import { getLocalID, getMessage } from '../helpers/messagesReducer';
+} from '../messagesTypes';
 
 export const createDraft = (state: Draft<MessagesState>, { payload: message }: PayloadAction<MessageState>) => {
     (state as MessagesState)[message.localID] = message;

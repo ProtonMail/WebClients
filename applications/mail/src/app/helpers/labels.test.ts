@@ -1,3 +1,4 @@
+import { applyLabelChangesOnMessage } from '@proton/mail-message/helpers/labels';
 import { isCustomLabelOrFolder } from '@proton/mail-message/helpers/location';
 import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
@@ -22,7 +23,6 @@ import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/s
 import {
     appendCategoryIDsInInbox,
     applyLabelChangesOnConversation,
-    applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
     canMoveAll,
     convertCustomViewLabelsToAlmostAllMail,

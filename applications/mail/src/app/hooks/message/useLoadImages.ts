@@ -3,6 +3,9 @@ import { useCallback } from 'react';
 import { useApi } from '@proton/app-context/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { updateImages } from '@proton/mail-message/helpers/message/messageImages';
+import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
+import { loadEmbedded } from '@proton/mail-message/store/messages/images/messagesImagesActions';
 import type {
     LoadEmbeddedResults,
     MessageRemoteImage,
@@ -14,10 +17,7 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
-import { updateAttachment } from '../../store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../store/hooks';
-import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
 import {
     handleDispatchLoadFakeImagesProxy,
     handleDispatchLoadImagesProxy,

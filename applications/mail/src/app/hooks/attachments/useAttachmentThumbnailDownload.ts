@@ -7,14 +7,14 @@ import {
     decryptAndVerify,
     getVerificationStatusFromKeys,
 } from '@proton/mail-message/helpers/attachment/attachmentLoader';
+import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import { getAttachment as getAttachmentRequest, getAttachmentsMetadata } from '@proton/shared/lib/api/attachments';
 import type { AttachmentFullMetadata, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS, MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
 import ConfirmDownloadAttachments from '../../components/message/extrasFooter/attachment/ConfirmDownloadAttachments';
-import { updateAttachment } from '../../store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../store/hooks';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';

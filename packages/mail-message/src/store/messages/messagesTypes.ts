@@ -2,6 +2,7 @@ import type { MutableRefObject } from 'react';
 
 import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 
+import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KeyTransparencyVerificationResult } from '@proton/shared/lib/interfaces/KeyTransparency';
@@ -366,6 +367,15 @@ export interface MessageStateWithFullMessage extends Omit<MessageState, 'data'> 
 
 export type MessagesState = SimpleMap<MessageState>;
 
+export interface MessagesStoreState {
+    messages: MessagesState;
+}
+
+export interface MessagesThunkExtra {
+    state: MessagesStoreState;
+    extra: Pick<ProtonThunkArguments, 'api' | 'eventManager'>;
+}
+
 /**
  * Common helper to have a MessageExtended with the data props required
  */
@@ -429,6 +439,10 @@ export interface LoadRemoteFromURLParams {
     ID: string;
     imagesToLoad: MessageRemoteImage[];
     uid?: string;
+}
+
+export interface LoadRemoteProxyFromURLParams extends LoadRemoteFromURLParams {
+    apiUrl: string;
 }
 
 export interface LoadRemoteResults {

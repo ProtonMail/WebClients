@@ -11,6 +11,7 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import type { LabelChanges } from '@proton/mail-message/helpers/labels';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -24,7 +25,6 @@ import useListTelemetry, {
 } from '../../../components/list/list-telemetry/useListTelemetry';
 import { runParallelChunkedActions } from '../../../helpers/chunk';
 import { isElementConversation } from '../../../helpers/elements';
-import type { LabelChanges } from '../../../helpers/labels';
 import type { Element } from '../../../models/element';
 import { backendActionFinished, backendActionStarted } from '../../../store/elements/elementsActions';
 import { useMailDispatch } from '../../../store/hooks';

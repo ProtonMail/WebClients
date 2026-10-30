@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { allMessages, localID, messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import { initialize } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
-import { allMessages, localID, messageByID } from '../../store/messages/messagesSelectors';
-import { initialize } from '../../store/messages/read/messagesReadActions';
 import type { MailState } from '../../store/store';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementsFromIDs } from '../mailbox/useElements';

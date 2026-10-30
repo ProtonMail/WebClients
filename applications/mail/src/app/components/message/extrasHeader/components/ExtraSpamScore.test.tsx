@@ -1,10 +1,10 @@
 import { act, fireEvent, screen } from '@testing-library/react';
 
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
+import { optimisticUpdateFlag } from '@proton/mail-message/store/messages/optimistic/messagesOptimisticActions';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { mailTestRender } from '../../../../helpers/tests/render';
-import { optimisticUpdateFlag } from '../../../../store/messages/optimistic/messagesOptimisticActions';
 import ExtraSpamScore from './ExtraSpamScore';
 
 const mockDispatch = jest.fn();

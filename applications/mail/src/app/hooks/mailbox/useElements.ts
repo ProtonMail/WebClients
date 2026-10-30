@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
 import { LEGACY_FORUM_CATEGORY_ID } from '@proton/mail/helpers/location';
 // eslint-disable-next-line proton/restricted-imports
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
@@ -65,7 +66,6 @@ import {
 } from '../../store/elements/elementsSelectors';
 import { getTotal } from '../../store/elements/helpers/elementTotal';
 import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
-import { messageByID } from '../../store/messages/messagesSelectors';
 import type { MailState } from '../../store/store';
 import { useElementsEvents } from '../events/useElementsEvents';
 import { useExpirationCheck } from '../useExpirationCheck';

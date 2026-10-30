@@ -2,6 +2,7 @@ import { act, fireEvent, getByTestId as getByTestIdDefault, screen, waitFor } fr
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import { initialize } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
@@ -12,7 +13,6 @@ import { minimalCache } from '../../../helpers/tests/cache';
 import { mailTestRender } from '../../../helpers/tests/render';
 import type { Element } from '../../../models/element';
 import * as mailboxActions from '../../../store/mailbox/mailboxActions';
-import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import LabelDropdown, { getInitialState } from '../LabelDropdown';
 

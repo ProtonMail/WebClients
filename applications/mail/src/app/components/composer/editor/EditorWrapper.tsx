@@ -18,6 +18,7 @@ import {
     removeEmbeddedHTML,
 } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import { getEmbeddedImages } from '@proton/mail-message/helpers/message/messageImages';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { sanitizeComposerBlockquoteHtml } from '@proton/sanitize/purify';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
@@ -31,7 +32,6 @@ import clsx from '@proton/utils/clsx';
 import diff from '@proton/utils/diff';
 
 import type { AddAttachmentsParams } from '../../../hooks/composer/useAttachments/interface';
-import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import type { MailState } from '../../../store/store';
 import type { MessageChange } from '../Composer';
 import { getAttachedCIDs, getInlineImagesToRestore, getRemovedInlineImageData } from './editorWrapperHelpers';

@@ -1,5 +1,11 @@
 import { useHandler } from '@proton/hooks/useHandler';
+import type { LabelChanges, UnreadStatus } from '@proton/mail-message/helpers/labels';
+import { applyLabelChangesOnMessage } from '@proton/mail-message/helpers/labels';
 import type { Conversation } from '@proton/mail-message/models/conversation';
+import {
+    optimisticApplyLabels as optimisticApplyLabelsMessageAction,
+    optimisticMarkAs as optimisticMarkAsMessageAction,
+} from '@proton/mail-message/store/messages/optimistic/messagesOptimisticActions';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { conversationCountsActions, selectConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
@@ -18,12 +24,7 @@ import {
     isElementMessage,
     isElementOutsideFolders,
 } from '../../helpers/elements';
-import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
-import {
-    applyLabelChangesOnConversation,
-    applyLabelChangesOnMessage,
-    applyLabelChangesOnOneMessageOfAConversation,
-} from '../../helpers/labels';
+import { applyLabelChangesOnConversation, applyLabelChangesOnOneMessageOfAConversation } from '../../helpers/labels';
 import type { Element } from '../../models/element';
 import {
     applyLabelsOnConversation,
@@ -34,10 +35,6 @@ import {
     optimisticMarkAs as optimisticMarkAsElementsAction,
 } from '../../store/elements/elementsActions';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
-import {
-    optimisticApplyLabels as optimisticApplyLabelsMessageAction,
-    optimisticMarkAs as optimisticMarkAsMessageAction,
-} from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 

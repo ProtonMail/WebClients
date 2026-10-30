@@ -9,13 +9,13 @@ import useGetVerificationPreferences from '@proton/components/hooks/useGetVerifi
 import { isNetworkError } from '@proton/mail-message/helpers/errors';
 import { verifyMessage } from '@proton/mail-message/helpers/message/messageDecrypt';
 import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '@proton/mail-message/helpers/message/messageKeys';
+import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import type { MessageErrors, MessageStateWithDataFull } from '@proton/mail-message/store/messages/messagesTypes';
+import { verificationComplete } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { updateAttachment } from '../../store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../store/hooks';
-import { verificationComplete } from '../../store/messages/read/messagesReadActions';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetMessageKeys } from './useGetMessageKeys';
