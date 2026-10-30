@@ -1,3 +1,8 @@
+import {
+    getAddressPlainTextSignature,
+    getMessageContentBeforeBlockquote,
+    hasSignatureContainer,
+} from '@proton/mail-composer/helpers/composer/contentFromComposerMessage';
 import { exportPlainText, getPlainTextContent } from '@proton/mail-message/helpers/message/messageContentPlainText';
 import { CLASSNAME_BLOCKQUOTE } from '@proton/mail-message/helpers/message/messageDraftConstants';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
@@ -5,12 +10,6 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
-
-import {
-    getAddressPlainTextSignature,
-    getMessageContentBeforeBlockquote,
-    hasSignatureContainer,
-} from '../../helpers/composer/contentFromComposerMessage';
 
 interface DraftBodyOptions {
     message: MessageState;

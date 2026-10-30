@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useConfig } from '@proton/app-context/useConfig';
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -91,6 +92,7 @@ const useComposerAssistantGenerate = ({
     const { sendUseAnswerAssistantReport } = useAssistantTelemetry();
 
     const authentication = useAuthentication();
+    const config = useConfig();
 
     const handleCheckValidPrompt = (action: Action) => {
         const isValidPrompt = isPromptSizeValid(action);
@@ -246,7 +248,7 @@ const useComposerAssistantGenerate = ({
             composerContent = removeLineBreaks(contentBeforeBlockquote);
         } else {
             const uid = authentication.getUID();
-            composerContent = prepareContentToModel(contentBeforeBlockquote, uid, messageID);
+            composerContent = prepareContentToModel(contentBeforeBlockquote, uid, messageID, config.API_URL);
         }
 
         if (expanded && generationResult) {

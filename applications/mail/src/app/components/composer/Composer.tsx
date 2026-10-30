@@ -13,6 +13,9 @@ import { useHandler } from '@proton/hooks/useHandler';
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib/helpers';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import ComposerAssistant from '@proton/mail-composer/components/assistant/ComposerAssistant';
+import { DRAG_ADDRESS_KEY } from '@proton/mail-composer/constants';
+import { ComposerInnerModalStates } from '@proton/mail-composer/hooks/composer/useComposerInnerModals';
 import { insertTextBeforeContent, prepareContentToInsert } from '@proton/mail-message/helpers/message/messageContent';
 import { removeLineBreaks } from '@proton/mail-message/helpers/string';
 import type {
@@ -32,13 +35,10 @@ import { getPublicRecipients, getRecipients, getSender } from '@proton/shared/li
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import { DRAG_ADDRESS_KEY } from '../../constants';
 import { useComposerContent } from '../../hooks/composer/useComposerContent';
-import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHasScroll } from '../../hooks/useHasScroll';
 import { useMailStore } from '../../store/hooks';
-import ComposerAssistant from '../assistant/ComposerAssistant';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
 import ComposerActions from './actions/ComposerActions/ComposerActions';

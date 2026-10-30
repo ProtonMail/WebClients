@@ -1,4 +1,5 @@
 import type { ComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
+import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import EncryptionStatusIcon from '../components/message/EncryptionStatusIcon';
 import AttachmentList from '../components/message/extrasFooter/attachment/AttachmentList';
@@ -17,6 +18,8 @@ export const mailComposerMessageHost: ComposerMessageHost = {
     useCreateDraft,
     useSaveDraft,
     useDeleteDraft,
+    useMailSettings,
+    useGetMailSettings,
     EncryptionStatusIcon,
     AttachmentList,
 };

@@ -10,6 +10,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import AddressesAutocomplete from '@proton/components/components/addressesAutocomplete/AddressesAutocomplete';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { useAddressesInputDrag } from '@proton/mail-composer/hooks/useAddressesInputDrag';
+import type { MessageSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
 import { getRecipientOrGroupKey, recipientsWithoutGroup } from '@proton/mail-message/helpers/message/messageRecipients';
 import { useContactsMap, useGroupsWithContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
@@ -21,8 +23,6 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useAddressesInputDrag } from '../../../hooks/useAddressesInputDrag';
-import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import AddressesGroupItem from './AddressesGroupItem';
 import AddressesRecipientItem from './AddressesRecipientItem';
 

@@ -16,14 +16,14 @@ import type {
     MessageStateWithData,
     PartialMessageState,
 } from '@proton/mail-message/store/messages/messagesTypes';
-import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { baseUseDispatch } from '@proton/react-redux-store/ProtonStoreContext';
 import { TelemetryMailBlockquotes, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import generateUID from '@proton/utils/generateUID';
 
 import SendingFromDefaultAddressModal from '../components/composer/modals/SendingFromDefaultAddressModal';
-import { useMailDispatch } from '../store/hooks';
+import { useComposerMessageHost } from '../host/composerMessageHost';
 
 const CACHE_KEY = 'Draft';
 
@@ -57,9 +57,10 @@ const useDraftVerifications = () => {
 export const useDraft = () => {
     const silentApi = useSilentApi();
     const cache = useCache();
+    const { useGetMailSettings, useMailSettings } = useComposerMessageHost();
     const getMailSettings = useGetMailSettings();
     const getAddresses = useGetAddresses();
-    const dispatch = useMailDispatch();
+    const dispatch = baseUseDispatch();
     const { handleDraftVerifications: draftVerifications, sendingFromDefaultAddressModal } = useDraftVerifications();
     const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();

@@ -16,7 +16,6 @@ export const EXPIRATION_CHECK_FREQUENCY = 10000; // each 10 seconds
 export const MAX_EXPIRATION_TIME = 672; // hours
 export const DEFAULT_EO_EXPIRATION_DAYS = 28;
 export const DEFAULT_PLACEHOLDERS_COUNT = DEFAULT_MAIL_PAGE_SIZE;
-export const ATTACHMENT_MAX_SIZE = 25000000; // bytes -> 25MB
 export const LOAD_RETRY_COUNT = 3;
 export const PREVENT_CANCEL_SEND_INTERVAL = 30000; // Prevent form cancelling a message about to be sent 30s before
 
@@ -44,16 +43,6 @@ export enum SAVE_DRAFT_ERROR_CODES {
 export enum SEND_EMAIL_ERROR_CODES {
     MESSAGE_ALREADY_SENT = 2500,
 }
-
-export enum UPLOAD_ATTACHMENT_ERROR_CODES {
-    MESSAGE_ALREADY_SENT = 11114,
-    STORAGE_QUOTA_EXCEEDED = 11100,
-}
-
-export const MESSAGE_ALREADY_SENT_INTERNAL_ERROR = 'Message already sent';
-export const STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR = 'Storage quota exceeded';
-
-export const DRAG_ADDRESS_KEY = 'drag-address';
 
 export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
 
