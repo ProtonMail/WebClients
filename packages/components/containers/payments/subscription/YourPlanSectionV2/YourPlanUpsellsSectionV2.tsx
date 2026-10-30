@@ -31,7 +31,6 @@ import {
     hasDuo,
     hasFamily,
     hasFreeOrPlus,
-    hasLumo,
     hasMail,
     hasPass,
     hasPassFamily,
@@ -134,13 +133,11 @@ const useUpsellSection = ({ subscription, app, user, plansMap, freePlan }: GetUp
     const hasPassFree = isFree && app === APPS.PROTONPASS && !user.hasPassLifetime;
     const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
     const hasMeetFree = isFree && app === APPS.PROTONMEET;
-    const hasLumoPlus = hasLumo(subscription);
 
     // For users on Ex-Family Unlimited trial, show Unlimited 1m + 12m upsell
     const exFamilyTrial = getTrialInfoForSingleSubscription(entitlementCatalog, subscription).isFamilyTrial;
 
-    // We want to show the VPN upsells to users with Lumo plan since they migrate from the Lumo plan to having a Lumo addon
-    const isFreeUser = hasMailFree || hasDriveFree || hasPassFree || hasVPNFree || hasLumoPlus || hasMeetFree;
+    const isFreeUser = hasMailFree || hasDriveFree || hasPassFree || hasVPNFree || hasMeetFree;
 
     // Allow 24-month plan for VPN app and VPN plans. Update the condition based on requirements
     const userCanHave24MonthPlan = app === APPS.PROTONVPN_SETTINGS || getHasConsumerVpnPlan(subscription);
