@@ -1,5 +1,10 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
+import {
+    getAndVerifyAttachment,
+    getDecryptedAttachment,
+    getRequest,
+} from '@proton/mail-message/helpers/attachment/attachmentLoader';
 import type { MessageKeys, MessageVerification } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -11,7 +16,6 @@ import {
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../tests/crypto';
-import { getAndVerifyAttachment, getDecryptedAttachment, getRequest } from '../attachmentLoader';
 
 const me = 'me@pm.me';
 const attachmentID = 'attachmentID';

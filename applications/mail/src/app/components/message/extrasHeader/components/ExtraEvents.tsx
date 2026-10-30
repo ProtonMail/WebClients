@@ -16,7 +16,9 @@ import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonic
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import useLoading from '@proton/hooks/useLoading';
+import { formatDownload } from '@proton/mail-message/helpers/attachment/attachmentDownloader';
 import { isNetworkError } from '@proton/mail-message/helpers/errors';
+import { getMessageHasData } from '@proton/mail-message/helpers/message/messages';
 import type { MessageErrors, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import {
     getCanCreateCalendar,
@@ -47,14 +49,12 @@ import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
-import { formatDownload } from '../../../../helpers/attachment/attachmentDownloader';
 import type { EventInvitation } from '../../../../helpers/calendar/invite';
 import {
     filterAttachmentsForEvents,
     getSupportedEventInvitation,
     parseVcalendar,
 } from '../../../../helpers/calendar/invite';
-import { getMessageHasData } from '../../../../helpers/message/messages';
 import { useGetAttachment } from '../../../../hooks/attachments/useAttachment';
 import { useContactsMap } from '../../../../hooks/contact/useContacts';
 import { useGetMessageKeys } from '../../../../hooks/message/useGetMessageKeys';

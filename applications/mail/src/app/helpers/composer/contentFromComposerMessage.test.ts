@@ -1,6 +1,7 @@
 import { buildAddress } from '@proton/account/testing/buildAddress';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { locateBlockquote } from '@proton/mail-message/helpers/message/messageBlockquote';
+import { createNewDraft } from '@proton/mail-message/helpers/message/messageDraft';
 import { CLASSNAME_SIGNATURE_CONTAINER } from '@proton/mail-message/helpers/message/messageSignature';
 import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
@@ -9,7 +10,6 @@ import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { DRAFT_MIME_TYPES } from '@proton/shared/lib/mail/mailSettings';
 
-import { createNewDraft } from '../message/messageDraft';
 import {
     getMessageContentBeforeBlockquote,
     insertBodyIntoNewDraft,

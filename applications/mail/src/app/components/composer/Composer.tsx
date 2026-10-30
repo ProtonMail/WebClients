@@ -13,6 +13,7 @@ import { useHandler } from '@proton/hooks/useHandler';
 import { getHasAssistantStatus, getIsAssistantOpened } from '@proton/llm/lib/helpers';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import { insertTextBeforeContent, prepareContentToInsert } from '@proton/mail-message/helpers/message/messageContent';
 import { removeLineBreaks } from '@proton/mail-message/helpers/string';
 import type {
     MessageState,
@@ -32,7 +33,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
-import { insertTextBeforeContent, prepareContentToInsert } from '../../helpers/message/messageContent';
 import { useComposerContent } from '../../hooks/composer/useComposerContent';
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';

@@ -15,6 +15,7 @@ import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { getContactEmail } from '@proton/mail-message/helpers/message/messageRecipients';
 import type { MapStatusIcons, StatusIcon } from '@proton/mail-message/models/crypto';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
@@ -27,7 +28,6 @@ import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 
 import { useOnCompose } from '../../../containers/ComposeProvider';
-import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';

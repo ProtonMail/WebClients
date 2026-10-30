@@ -5,6 +5,13 @@ import type { PublicKeyReference } from '@protontech/crypto';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useHandler } from '@proton/hooks/useHandler';
+import {
+    createEmbeddedImageFromUpload,
+    isEmbeddable,
+    matchSameCidOrLoc,
+    readContentIDandLocation,
+} from '@proton/mail-message/helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, updateImages } from '@proton/mail-message/helpers/message/messageImages';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
@@ -14,13 +21,6 @@ import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 import type { MessageChange } from '../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 import { checkSizeAndLength, uploadEO } from '../../helpers/attachment/attachmentUploader';
-import {
-    createEmbeddedImageFromUpload,
-    isEmbeddable,
-    matchSameCidOrLoc,
-    readContentIDandLocation,
-} from '../../helpers/message/messageEmbeddeds';
-import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
 import type { AddAttachmentsParams } from '../composer/useAttachments/interface';
 
 interface Props {

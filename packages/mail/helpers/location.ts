@@ -50,9 +50,6 @@ export const isCustomLabel = (labelID: string, labels: Label[] = []) => labels.s
 export const isCustomFolder = (labelID: string, folders: Folder[] = []) =>
     folders.some((folder) => folder.ID === labelID);
 
-export const isCustomLabelOrFolder = (labelID: string) =>
-    !Object.values(MAILBOX_LABEL_IDS).includes(labelID as MAILBOX_LABEL_IDS);
-
 export const getHumanLabelID = (labelID: string) => LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] || labelID;
 
 export const getLabelNameAnonymised = (labelID: string) => {

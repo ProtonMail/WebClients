@@ -1,0 +1,178 @@
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+
+import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { CREATE_DRAFT_MESSAGE_ACTION } from '@proton/shared/lib/interfaces/message';
+import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
+import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
+
+import { MESSAGE_ACTIONS } from '../../constants';
+import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
+import type {
+    GetMessageKeys,
+    MessageKeys,
+    MessageState,
+    MessageStateWithData,
+    PublicPrivateKey,
+} from '../../store/messages/messagesTypes';
+import { combineHeaders, splitMail } from '../mail';
+import { constructMimeFromSource } from '../send/sendMimeBuilder';
+import { getPlainTextContent } from './messageContentPlainText';
+import { prepareExport } from './messageExportPrepare';
+
+export { prepareExport } from './messageExportPrepare';
+
+const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
+    Password: undefined,
+    PasswordHint: undefined,
+};
+
+const restorePasswordFromResults = (
+    resultMessage: Message,
+    originalMessage: Pick<Message, 'Password' | 'PasswordHint'>
+): Message => ({
+    ...resultMessage,
+    Password: originalMessage.Password,
+    PasswordHint: originalMessage.PasswordHint,
+});
+
+const encryptBody = async (content: string, messageKeys: PublicPrivateKey) => {
+    const { message: data } = await CryptoProxy.encryptMessage({
+        textData: content,
+        stripTrailingSpaces: true,
+        encryptionKeys: messageKeys.encryptionKey,
+        signingKeys: messageKeys.signingKeys,
+    });
+
+    return data;
+};
+
+const prepareAndEncryptBody = async (message: MessageState, messageKeys: MessageKeys) => {
+    const plainText = isPlainText(message.data);
+    const content = plainText ? getPlainTextContent(message) : prepareExport(message);
+    return encryptBody(content, messageKeys as PublicPrivateKey);
+};
+
+const encryptAttachmentKeyPackets = async (
+    attachments: Attachment[],
+    previousAddressDecryptionKeys: PrivateKeyReference[] = [],
+    newAddressEncryptionKey: PublicKeyReference,
+    messageFlags?: number
+) => {
+    return Object.fromEntries(
+        await Promise.all(
+            attachments
+                .filter(({ ID = '' }) => ID.indexOf('PGPAttachment'))
+                .map(async (attachment) => {
+                    const sessionKey = await getSessionKey(attachment, previousAddressDecryptionKeys, messageFlags);
+                    const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
+                        data: sessionKey.data,
+                        algorithm: sessionKey.algorithm,
+                        encryptionKeys: newAddressEncryptionKey,
+                        format: 'binary',
+                    });
+                    return [attachment.ID || '', encryptedSessionKey.toBase64()];
+                })
+        )
+    );
+};
+
+export const createMessage = async (
+    message: MessageStateWithData,
+    api: Api,
+    getMessageKeys: GetMessageKeys
+): Promise<Message> => {
+    const messageKeys = await getMessageKeys(message.data);
+    const Body = await prepareAndEncryptBody(message, messageKeys);
+    const attachments = getAttachments(message.data);
+
+    let AttachmentKeyPackets;
+    if (attachments?.length) {
+        const originalMessageKeys = await getMessageKeys({
+            AddressID: message.draftFlags?.originalAddressID || message.data?.AddressID,
+        });
+        AttachmentKeyPackets = await encryptAttachmentKeyPackets(
+            attachments,
+            originalMessageKeys.decryptionKeys,
+            messageKeys.encryptionKey,
+            message.draftFlags?.originalMessageFlags
+        );
+    }
+
+    const getMessageAction = (action: MESSAGE_ACTIONS | undefined): CREATE_DRAFT_MESSAGE_ACTION | undefined => {
+        if (action !== MESSAGE_ACTIONS.NEW && action !== undefined) {
+            return action as unknown as CREATE_DRAFT_MESSAGE_ACTION;
+        }
+
+        return undefined;
+    };
+
+    const { Message: updatedMessage } = await api(
+        createDraft({
+            Action: getMessageAction(message.draftFlags?.action),
+            Message: { ...message.data, Body, ...removePasswordFromRequests },
+            ParentID: message.draftFlags?.ParentID,
+            AttachmentKeyPackets,
+        })
+    );
+
+    return restorePasswordFromResults(updatedMessage, message.data);
+};
+
+/**
+ * Update an already existing message by encrypting it then send the API request to the API
+ * @param message The message to update containing the right keys related to the address
+ * @param senderHasChanged Things are different if the sender has changed since the last version
+ * @param previousAddressPrivateKeys Only needed if senderHasChanged to decrypt attachments sessionKeys and re-encrypt with the new address key
+ * @param api Api handler to use
+ */
+export const updateMessage = async (
+    message: MessageStateWithData,
+    previousAddressID: string,
+    api: Api,
+    getMessageKeys: GetMessageKeys
+): Promise<Message> => {
+    const messageKeys = await getMessageKeys(message.data);
+    const Body = await prepareAndEncryptBody(message, messageKeys);
+    const attachments = getAttachments(message.data);
+    let AttachmentKeyPackets;
+    if (attachments?.length && previousAddressID !== message.data.AddressID) {
+        const previousMessageKeys = await getMessageKeys({ AddressID: previousAddressID });
+        AttachmentKeyPackets = await encryptAttachmentKeyPackets(
+            attachments,
+            previousMessageKeys.decryptionKeys,
+            messageKeys.encryptionKey
+        );
+    }
+    const { Message: updatedMessage } = await api({
+        ...updateDraft(message.data?.ID, {
+            Message: { ...message.data, Body, ...removePasswordFromRequests },
+            AttachmentKeyPackets,
+        }),
+        silence: true,
+    });
+
+    return restorePasswordFromResults(updatedMessage, message.data);
+};
+
+/**
+ * Prepare a message a blob to download
+ * Use mime format, don't encrypt,
+ */
+export const exportBlob = async (
+    message: MessageState,
+    messageKeys: MessageKeys,
+    getAttachment: (ID: string) => DecryptedAttachment | undefined,
+    onUpdateAttachment: (ID: string, attachment: DecryptedAttachment) => void,
+    api: Api
+) => {
+    const mimeMessage = await constructMimeFromSource(message, messageKeys, getAttachment, onUpdateAttachment, api);
+    const { body, headers: mimeHeaders } = splitMail(mimeMessage);
+    const headers = await combineHeaders(message.data?.Header || '', mimeHeaders);
+
+    return new Blob([`${headers}\r\n${body}`], {
+        type: 'data:text/plain;charset=utf-8;',
+    });
+};

@@ -13,12 +13,12 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
+import { getMinExpirationTime } from '@proton/mail-message/helpers/expiration';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
 import { EXPIRATION_TIME_MAX_DAYS } from '../../../constants';
-import { getMinExpirationTime } from '../../../helpers/expiration';
 import { getChooseDateText } from '../../composer/modals/helper';
 
 interface Props extends Omit<ModalProps, 'onSubmit'> {

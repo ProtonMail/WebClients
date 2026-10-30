@@ -1,3 +1,4 @@
+import { getMessageHasData } from '@proton/mail-message/helpers/message/messages';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -5,7 +6,6 @@ import { isReceived, isScheduled, isSnoozed } from '@proton/shared/lib/mail/mess
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { hasLabel } from '../../../helpers/elements';
-import { getMessageHasData } from '../../../helpers/message/messages';
 import useScheduleSendFeature from '../../composer/actions/scheduleSend/useScheduleSendFeature';
 import ExtraAskResign from './components/ExtraAskResign';
 import ExtraAutoReply from './components/ExtraAutoReply';

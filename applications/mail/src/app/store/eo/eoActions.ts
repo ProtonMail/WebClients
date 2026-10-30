@@ -2,13 +2,13 @@ import { CryptoProxy } from '@protontech/crypto';
 import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
+import { getAndVerifyAttachment } from '@proton/mail-message/helpers/attachment/attachmentLoader';
+import { createBlob } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import type { MessageState, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import { getEOMessage, getEOToken } from '@proton/shared/lib/api/eo';
 
 import { EO_DECRYPTED_TOKEN_KEY, EO_PASSWORD_KEY, EO_TOKEN_KEY } from '../../constants';
-import { getAndVerifyAttachment } from '../../helpers/attachment/attachmentLoader';
 import { convertEOtoMessageState, eoDecrypt } from '../../helpers/eo/message';
-import { createBlob } from '../../helpers/message/messageEmbeddeds';
 import type {
     EODocumentInitializeParams,
     EOInitParams,

@@ -20,6 +20,7 @@ import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcFire } from '@proton/icons/icons/IcFire';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { getMessagesAuthorizedToMove } from '@proton/mail-message/helpers/message/messages';
 import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders } from '@proton/mail/store/labels/hooks';
@@ -35,7 +36,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { isElementMessage } from '../../helpers/elements';
-import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 import { MoveAllType, useMoveAllToFolder } from '../../hooks/actions/move/useMoveAllToFolder';

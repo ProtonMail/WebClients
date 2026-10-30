@@ -2,11 +2,11 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 
-import { mergeMessages } from '../../../../helpers/message/messages';
 import { addApiMock } from '../../../../helpers/tests/api';
 import { getCompleteAddress, minimalCache } from '../../../../helpers/tests/cache';
 import {

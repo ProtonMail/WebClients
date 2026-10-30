@@ -3,13 +3,13 @@ import { findByText, screen } from '@testing-library/react';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { IcLockCheckFilled } from '@proton/icons/icons/IcLockCheckFilled';
 import { IcLockExclamationFilled } from '@proton/icons/icons/IcLockExclamationFilled';
+import { constructMime } from '@proton/mail-message/helpers/send/sendMimeBuilder';
 import { X_PM_HEADERS } from '@proton/mail-message/models/crypto';
 import type { MessageKeys } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { constructMime } from '../../../helpers/send/sendMimeBuilder';
 import { addApiMock, api } from '../../../helpers/tests/api';
 import { assertIconComponent } from '../../../helpers/tests/assertion';
 import { getCompleteAddress } from '../../../helpers/tests/cache';

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useToggle from '@proton/hooks/useToggle';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { recipientsToRecipientOrGroup } from '@proton/mail-message/helpers/message/messageRecipients';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
@@ -12,7 +13,6 @@ import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { recipientsToRecipientOrGroup } from '../../../helpers/message/messageRecipients';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ExtraImages from '../../message/extrasHeader/components/ExtraImages';

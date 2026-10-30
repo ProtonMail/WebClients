@@ -1,7 +1,7 @@
+import { recipientsToRecipientOrGroup } from '@proton/mail-message/helpers/message/messageRecipients';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import noop from '@proton/utils/noop';
 
-import { recipientsToRecipientOrGroup } from '../../../../helpers/message/messageRecipients';
 import RecipientsList from '../../../message/recipients/RecipientsList';
 
 interface Props {

@@ -1,14 +1,13 @@
 import { useUser } from '@proton/account/user/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-
 import {
     isAllowedAutoDeleteLabelID,
     isAutoDeleteEnabled,
     isAutoDeleteExplicitlyDisabled,
     isAutoDeleteNotEnabled,
-} from '../../../../helpers/autoDelete';
+} from '@proton/mail-message/helpers/autoDelete';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 export type AutoDeleteBannerType = 'disabled' | 'enabled' | 'paid-banner' | 'free-banner' | 'hide';
 

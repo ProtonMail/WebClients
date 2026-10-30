@@ -7,6 +7,8 @@ import { useCache } from '@proton/app-context/useCache';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { cloneDraft, createNewDraft } from '@proton/mail-message/helpers/message/messageDraft';
+import { findSender } from '@proton/mail-message/helpers/message/messageRecipients';
 import type {
     MessageState,
     MessageStateWithData,
@@ -19,8 +21,6 @@ import { isPaid } from '@proton/shared/lib/user/helpers';
 import generateUID from '@proton/utils/generateUID';
 
 import SendingFromDefaultAddressModal from '../components/composer/modals/SendingFromDefaultAddressModal';
-import { cloneDraft, createNewDraft } from '../helpers/message/messageDraft';
-import { findSender } from '../helpers/message/messageRecipients';
 import { useMailDispatch } from '../store/hooks';
 import { createDraft as createDraftAction } from '../store/messages/draft/messagesDraftActions';
 import { useGetAttachment } from './attachments/useAttachment';

@@ -7,6 +7,7 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { isDecryptionError, isNetworkError, pickMessageInfosForSentry } from '@proton/mail-message/helpers/errors';
+import { createMessage, updateMessage } from '@proton/mail-message/helpers/message/messageExport';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
@@ -15,7 +16,6 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
-import { createMessage, updateMessage } from '../../helpers/message/messageExport';
 import { deleteConversation } from '../../store/conversations/conversationsActions';
 import { useMailDispatch } from '../../store/hooks';
 import { deleteDraft, draftSaved } from '../../store/messages/draft/messagesDraftActions';

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { getMessagesAuthorizedToMove } from '@proton/mail-message/helpers/message/messages';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -23,7 +24,6 @@ import MoveAllModal from '../../../components/list/select-all/modals/MoveAllModa
 import SelectAllMoveModal from '../../../components/list/select-all/modals/SelectAllMoveModal';
 import { isElementMessage } from '../../../helpers/elements';
 import { isConversationMode } from '../../../helpers/mailSettings';
-import { getMessagesAuthorizedToMove } from '../../../helpers/message/messages';
 import {
     getCleanedFolderID,
     getNotificationTextUnauthorized,
