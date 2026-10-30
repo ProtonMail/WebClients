@@ -1,9 +1,9 @@
 import type { Conversation } from '@proton/mail-message/models/conversation';
+import type { ConversationEvent, MessageEvent } from '@proton/mail-message/models/event';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Element } from '../../models/element';
-import type { ConversationEvent, MessageEvent } from '../../models/event';
 import type { ElementsState } from '../../store/elements/elementsTypes';
 import { processElementEvents } from './useElementsEvents';
 

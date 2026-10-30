@@ -3,6 +3,7 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import { initialize } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -20,7 +21,6 @@ import {
 } from '../../../helpers/tests/crypto';
 import { encryptMessage } from '../../../helpers/tests/message';
 import { mailTestRender } from '../../../helpers/tests/render';
-import { initialize } from '../../../store/messages/read/messagesReadActions';
 import MessageView from '../MessageView';
 import { addressID, labelID, messageID } from './Message.test.helpers';
 

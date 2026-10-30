@@ -1,6 +1,7 @@
 import { findByText } from '@testing-library/react';
 
 import type { PublicPrivateKey } from '@proton/mail-message/store/messages/messagesTypes';
+import { initialize } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -9,7 +10,6 @@ import { addApiKeys } from '../../../helpers/tests/crypto';
 import { clearAll } from '../../../helpers/tests/helper';
 // mock useGetMessageKeys on-the-fly when needed
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { addressID, getIframeRootDiv, messageID, setup } from './Message.test.helpers';
 
 jest.mock('../../../hooks/message/useGetMessageKeys');

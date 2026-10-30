@@ -6,12 +6,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
+import { updateScheduled } from '@proton/mail-message/store/messages/scheduled/scheduledActions';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
 import { SCHEDULED_MESSAGES_LIMIT } from '../../constants';
 import { useMailDispatch } from '../../store/hooks';
-import { updateScheduled } from '../../store/messages/scheduled/scheduledActions';
 import { useComposerHost } from './useComposerHost';
 import { useSendVerifications } from './useSendVerifications';
 

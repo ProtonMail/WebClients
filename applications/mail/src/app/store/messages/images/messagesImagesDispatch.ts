@@ -1,9 +1,14 @@
 import type { PrivateAuthenticationStore } from '@proton/components/containers/app/interface';
+import {
+    loadFakeProxy,
+    loadRemoteDirectFromURL,
+    loadRemoteProxyFromURL,
+} from '@proton/mail-message/store/messages/images/messagesImagesActions';
 import type { LoadRemoteResults, MessageRemoteImage } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { loadFakeProxy, loadRemoteDirectFromURL, loadRemoteProxyFromURL } from './messagesImagesActions';
+import config from '../../../config';
 
 export const handleDispatchLoadImagesProxy = (
     ID: string,
@@ -11,7 +16,9 @@ export const handleDispatchLoadImagesProxy = (
     authentication: PrivateAuthenticationStore,
     dispatch: (action: any) => void
 ) => {
-    const dispatchResult = dispatch(loadRemoteProxyFromURL({ ID, imagesToLoad, uid: authentication.getUID() }));
+    const dispatchResult = dispatch(
+        loadRemoteProxyFromURL({ ID, imagesToLoad, uid: authentication.getUID(), apiUrl: config.API_URL })
+    );
     return dispatchResult as any as Promise<LoadRemoteResults[]>;
 };
 

@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 
-import { useMailStore } from '../../store/hooks';
+import { attachmentByID } from '@proton/mail-message/store/attachments/attachmentsSelectors';
 
-import { attachmentByID } from '../../store/attachments/attachmentsSelectors';
+import { useMailStore } from '../../store/hooks';
 
 export const useGetAttachment = () => {
     const store = useMailStore();

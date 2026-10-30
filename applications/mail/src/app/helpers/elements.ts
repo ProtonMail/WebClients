@@ -1,6 +1,8 @@
 import { fromUnixTime } from 'date-fns';
 
+import { parseMessageLabelIDsInEvent } from '@proton/mail-message/helpers/labels';
 import type { Conversation } from '@proton/mail-message/models/conversation';
+import type { LabelIDsChanges } from '@proton/mail-message/models/event';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
@@ -17,11 +19,8 @@ import {
     numAttachments as messageNumAttachments,
 } from '@proton/shared/lib/mail/messages';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
-import diff from '@proton/utils/diff';
-import unique from '@proton/utils/unique';
 
 import type { Element } from '../models/element';
-import type { LabelIDsChanges } from '../models/event';
 import {
     getLabelIDs as conversationGetLabelIDs,
     getSenders as conversationGetSenders,
@@ -135,19 +134,12 @@ export const getNumAttachments = (element: Element, includeInlineCount?: boolean
  * Starting from the element LabelIDs list, add and remove labels from an event manager event
  */
 export const parseLabelIDsInEvent = <T extends Element>(element: T, changes: T & LabelIDsChanges): T => {
-    const omitted = omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']);
     if (isElementMessage(element)) {
-        if (omitted?.LabelIDs) {
-            return { ...element, ...omitted };
-        }
-        const LabelIDs = unique(
-            diff((element as Message).LabelIDs || [], changes.LabelIDsRemoved || []).concat(changes.LabelIDsAdded || [])
-        );
-        return { ...element, ...omitted, LabelIDs };
+        return parseMessageLabelIDsInEvent(element, changes as Message & LabelIDsChanges);
     }
     // Conversation don't use LabelIDs even if these properties are still present in update events
     // The conversation.Labels object is fully updated each time so we can safely ignore them
-    return { ...element, ...omitted };
+    return { ...element, ...omit(changes, ['LabelIDsRemoved', 'LabelIDsAdded']) };
 };
 
 /**

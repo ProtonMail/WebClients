@@ -1,8 +1,7 @@
 import type { Draft, PayloadAction } from '@reduxjs/toolkit';
 
-import type { MessagesState } from '@proton/mail-message/store/messages/messagesTypes';
-
 import { getMessage } from '../helpers/messagesReducer';
+import type { MessagesState } from '../messagesTypes';
 
 export const updateScheduled = (
     state: Draft<MessagesState>,

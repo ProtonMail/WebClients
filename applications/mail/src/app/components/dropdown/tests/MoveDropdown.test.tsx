@@ -2,6 +2,7 @@ import { act, fireEvent, getByTestId as getByTestIdDefault, screen, waitFor } fr
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import { initialize } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -11,7 +12,6 @@ import { addApiMock } from '../../../helpers/tests/api';
 import { minimalCache } from '../../../helpers/tests/cache';
 import { mailTestRender } from '../../../helpers/tests/render';
 import * as mailboxActions from '../../../store/mailbox/mailboxActions';
-import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { mockActiveCategoriesData } from '../../categoryView/testUtils/helpers';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import MoveDropdown from '../MoveDropdown';

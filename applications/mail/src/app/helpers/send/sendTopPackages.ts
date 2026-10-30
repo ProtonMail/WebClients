@@ -1,6 +1,7 @@
 import { getPlainText } from '@proton/mail-message/helpers/message/messageContent';
 import { prepareExport } from '@proton/mail-message/helpers/message/messageExport';
 import { constructMime } from '@proton/mail-message/helpers/send/sendMimeBuilder';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import type { MessageKeys, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
@@ -9,8 +10,6 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { addReceived } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
-
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 
 // Reference: Angular/src/app/composer/services/encryptMessage.js
 // Reference: Angular/src/app/composer/services/generateTopPackages.js

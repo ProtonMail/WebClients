@@ -12,14 +12,14 @@ import {
     generateDownloadAll,
 } from '@proton/mail-message/helpers/attachment/attachmentDownloader';
 import { getAttachmentCounts } from '@proton/mail-message/helpers/message/messages';
+import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import type { MessageKeys, MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import ConfirmDownloadAttachments from '../../components/message/extrasFooter/attachment/ConfirmDownloadAttachments';
-import { updateAttachment } from '../../store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../store/hooks';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';

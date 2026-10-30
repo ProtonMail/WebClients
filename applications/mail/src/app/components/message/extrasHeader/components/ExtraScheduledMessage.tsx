@@ -14,6 +14,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { IcPaperPlaneClock } from '@proton/icons/icons/IcPaperPlaneClock';
 import { formatDateToHuman } from '@proton/mail-message/helpers/date';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
+import { cancelScheduled } from '@proton/mail-message/store/messages/scheduled/scheduledActions';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -26,7 +27,6 @@ import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../../constants';
 import { useOnCompose } from '../../../../containers/ComposeProvider';
 import { ComposeTypes } from '../../../../hooks/composer/useCompose';
 import { useMailDispatch } from '../../../../store/hooks';
-import { cancelScheduled } from '../../../../store/messages/scheduled/scheduledActions';
 import { isScheduledSendTodayMorning } from '../../../composer/actions/scheduleSend/helpers';
 
 interface Props {

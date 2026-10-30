@@ -4,6 +4,8 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import { MimeImage } from '@proton/file-icons/icons/MimeImage';
 import { MimePdf } from '@proton/file-icons/icons/MimePdf';
 import type { Conversation } from '@proton/mail-message/models/conversation';
+import { addAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
@@ -26,8 +28,6 @@ import {
 import { clearAll } from '../../helpers/tests/helper';
 import { createAttachment } from '../../helpers/tests/message';
 import { mailTestRender } from '../../helpers/tests/render';
-import { addAttachment } from '../../store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import ItemColumnLayout from './ItemColumnLayout';
 
 jest.mock('@proton/shared/lib/helpers/downloadFile'); // mocking left to individual tests

@@ -16,7 +16,7 @@ import {
     markMessagesAsUnreadPending,
     unlabelConversationsPending,
     unlabelMessagesPending,
-} from './messagesReducer';
+} from './messagesMailboxReducers';
 
 describe('messagesReducer', () => {
     describe('markMessagesAsReadPending', () => {

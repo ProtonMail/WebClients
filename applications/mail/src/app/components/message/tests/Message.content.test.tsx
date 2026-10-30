@@ -1,5 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 
+import { initialize } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import {
     MESSAGE_IFRAME_PRINT_CLASS,
     MESSAGE_IFRAME_PRINT_FOOTER_ID,
@@ -10,7 +11,6 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import { addApiKeys } from '../../../helpers/tests/crypto';
-import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { getIframeRootDiv, setup } from './Message.test.helpers';
 
 describe('Message content', () => {
