@@ -133,6 +133,70 @@ describe('event manager', () => {
         eventManager.reset();
     });
 
+    describe('trigger param', () => {
+        const getTrigger = (getEvents: ReturnType<typeof mockApi>, index: number) =>
+            (getEvents.mock.calls[index] as any)[0].params.Trigger;
+
+        it('sends Code by default and the given trigger otherwise', async () => {
+            const getEvents = mockApi([
+                { EventID: '2', More: 0 },
+                { EventID: '3', More: 0 },
+            ]);
+            const eventManager = createEventManager({
+                eventID: '1',
+                getEvents,
+                timeoutIntervalsState: createMockTimeoutIntervalsState({ foreground: 1000, background: 1000 }),
+            });
+
+            await eventManager.call();
+            await eventManager.call('Ping');
+
+            expect(getTrigger(getEvents, 0)).toBe('Code');
+            expect(getTrigger(getEvents, 1)).toBe('Ping');
+
+            eventManager.reset();
+        });
+
+        it('keeps the trigger for every page of a More batch', async () => {
+            const getEvents = mockApi([
+                { EventID: '2', More: 1 },
+                { EventID: '3', More: 0 },
+            ]);
+            const eventManager = createEventManager({
+                eventID: '1',
+                getEvents,
+                timeoutIntervalsState: createMockTimeoutIntervalsState({ foreground: 1000, background: 1000 }),
+            });
+
+            await eventManager.call('User');
+
+            expect(getTrigger(getEvents, 0)).toBe('User');
+            expect(getTrigger(getEvents, 1)).toBe('User');
+
+            eventManager.reset();
+        });
+
+        it('sends Timer for scheduled calls', async () => {
+            vi.useFakeTimers();
+            const getEvents = mockApi([{ EventID: '2', More: 0 }]);
+            const eventManager = createEventManager({
+                eventID: '1',
+                getEvents,
+                timeoutIntervalsState: createMockTimeoutIntervalsState({ foreground: 1000, background: 1000 }),
+                visibilityState: createMockVisibilityState(true),
+            });
+
+            eventManager.start();
+            vi.advanceTimersByTime(1000);
+            await flushPromises();
+
+            expect(getTrigger(getEvents, 0)).toBe('Timer');
+
+            eventManager.reset();
+            vi.useRealTimers();
+        });
+    });
+
     describe('visibility state rescheduling', () => {
         beforeEach(() => {
             vi.useFakeTimers();

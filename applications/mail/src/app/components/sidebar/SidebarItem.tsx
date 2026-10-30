@@ -128,7 +128,7 @@ const SidebarItem = ({
         if (currentUrl === link) {
             event.preventDefault();
             if (!refreshing) {
-                void withRefreshing(Promise.all([call(), wait(1000)]));
+                void withRefreshing(Promise.all([call('User'), wait(1000)]));
             }
         }
 
@@ -136,7 +136,7 @@ const SidebarItem = ({
     };
 
     const handleRefresh = () => {
-        void withRefreshing(Promise.all([call(), wait(1000)]));
+        void withRefreshing(Promise.all([call('User'), wait(1000)]));
     };
 
     // Excludes current label and all custom views as drop targets.
