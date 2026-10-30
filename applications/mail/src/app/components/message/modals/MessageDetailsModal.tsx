@@ -13,6 +13,7 @@ import useFeatures from '@proton/features/useFeatures';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcFilingCabinet } from '@proton/icons/icons/IcFilingCabinet';
 import type { MessageViewIcons } from '@proton/mail-message/helpers/message/icon';
+import { getAttachmentCounts } from '@proton/mail-message/helpers/message/messages';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { CategoryIcon } from '@proton/mail/features/categoriesView/CategoryIcon';
 import { getCategoryData } from '@proton/mail/features/categoriesView/categoriesHelpers';
@@ -28,7 +29,6 @@ import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import { getSize } from '../../../helpers/elements';
 import { getCurrentFolders } from '../../../helpers/labels';
-import { getAttachmentCounts } from '../../../helpers/message/messages';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import type { Element } from '../../../models/element';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';

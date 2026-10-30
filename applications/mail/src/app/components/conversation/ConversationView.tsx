@@ -4,6 +4,7 @@ import { memo, useEffect, useRef } from 'react';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import useToggle from '@proton/hooks/useToggle';
 import { selectComposersCount } from '@proton/mail-composer/store/composers/composerSelectors';
+import { findMessageToExpand } from '@proton/mail-message/helpers/message/messageExpandable';
 import { useLabels } from '@proton/mail/store/labels/hooks';
 import { isEditing } from '@proton/shared/lib/busy/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -15,7 +16,6 @@ import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
-import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import { isElementReminded } from '../../helpers/snooze';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { useConversation } from '../../hooks/conversation/useConversation';

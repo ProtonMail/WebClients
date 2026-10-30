@@ -4,6 +4,7 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { PLACEHOLDER_ID_PREFIX } from '@proton/mail-message/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
@@ -14,7 +15,6 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { isElementMessage } from '../../helpers/elements';
-import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
 import type { ESMessage } from '../../models/encryptedSearch';
 import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
 import {

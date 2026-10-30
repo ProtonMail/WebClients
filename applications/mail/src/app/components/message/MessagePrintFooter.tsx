@@ -3,13 +3,12 @@ import { c, msgid } from 'ttag';
 import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { getAttachmentCounts } from '@proton/mail-message/helpers/message/messages';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
-
-import { getAttachmentCounts } from '../../helpers/message/messages';
 
 interface Props {
     message: MessageState;

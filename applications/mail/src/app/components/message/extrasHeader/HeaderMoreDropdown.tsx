@@ -43,7 +43,9 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcWindowImage } from '@proton/icons/icons/IcWindowImage';
 import { IcWindowTerminal } from '@proton/icons/icons/IcWindowTerminal';
 import { formatFileNameDate } from '@proton/mail-message/helpers/date';
+import { canSetExpiration, getExpirationTime } from '@proton/mail-message/helpers/expiration';
 import type { MessageViewIcons } from '@proton/mail-message/helpers/message/icon';
+import { exportBlob } from '@proton/mail-message/helpers/message/messageExport';
 import type {
     MessageState,
     MessageStateWithData,
@@ -61,9 +63,7 @@ import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
-import { canSetExpiration, getExpirationTime } from '../../../helpers/expiration';
 import { isConversationMode } from '../../../helpers/mailSettings';
-import { exportBlob } from '../../../helpers/message/messageExport';
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';
 import { useApplyLocation } from '../../../hooks/actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../../../hooks/actions/markAs/useMarkAs';

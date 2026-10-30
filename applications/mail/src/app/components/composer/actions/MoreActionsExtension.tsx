@@ -6,20 +6,24 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import {
+    exportPlainText,
+    plainTextToHTML,
+    setDocumentContent,
+} from '@proton/mail-message/helpers/message/messageContent';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { defaultFontStyle } from '@proton/shared/lib/mail/fontFace';
 import {
     isAttachPublicKey as testIsAttachPublicKey,
     isRequestReadReceipt as testIsRequestReadReceipt,
 } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { exportPlainText, plainTextToHTML, setDocumentContent } from '../../../helpers/message/messageContent';
 import type { MessageChange, MessageChangeFlag } from '../Composer';
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
 

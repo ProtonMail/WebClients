@@ -1,4 +1,9 @@
 import {
+    getComposerDefaultFontStyles,
+    insertTextBeforeContent,
+    prepareContentToInsert,
+} from '@proton/mail-message/helpers/message/messageContent';
+import {
     CLASSNAME_SIGNATURE_CONTAINER,
     exportPlainTextSignature,
     insertSignature,
@@ -8,12 +13,6 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-
-import {
-    getComposerDefaultFontStyles,
-    insertTextBeforeContent,
-    prepareContentToInsert,
-} from '../message/messageContent';
 
 export type ComposerReturnType = 'html' | 'plaintext';
 

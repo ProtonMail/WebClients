@@ -1,11 +1,10 @@
 import { useMemo } from 'react';
 
+import { PLACEHOLDER_ID_PREFIX } from '@proton/mail-message/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import range from '@proton/utils/range';
 
 import type { Element } from '../models/element';
-
-export const PLACEHOLDER_ID_PREFIX = 'placeholder';
 
 type ElementOrPlaceholder =
     | Element

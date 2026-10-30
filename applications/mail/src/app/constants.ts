@@ -17,7 +17,6 @@ export const MAX_EXPIRATION_TIME = 672; // hours
 export const DEFAULT_EO_EXPIRATION_DAYS = 28;
 export const DEFAULT_PLACEHOLDERS_COUNT = DEFAULT_MAIL_PAGE_SIZE;
 export const ATTACHMENT_MAX_SIZE = 25000000; // bytes -> 25MB
-export const LARGE_KEY_SIZE = 50 * 1024;
 export const LOAD_RETRY_COUNT = 3;
 export const LOAD_RETRY_DELAY = 3000; // in ms => 3s
 export const PREVENT_CANCEL_SEND_INTERVAL = 30000; // Prevent form cancelling a message about to be sent 30s before
@@ -36,10 +35,6 @@ export const FUTURE_MESSAGES_BUFFER = 120;
 export const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
 export const MAIL_ACTION_DEFAULT_CHUNK_SIZE = 10;
-
-export enum ENCRYPTED_STATUS {
-    PGP_MIME = 8, // Used for attachment
-}
 
 export const MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM = `mailto`;
 // Path: /inbox/#mailto=%s

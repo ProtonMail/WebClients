@@ -1,11 +1,11 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { findSender } from '@proton/mail-message/helpers/message/messageRecipients';
 import type { MessageStateWithData, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { AUTO_SAVE_CONTACTS } from '@proton/shared/lib/mail/mailSettings';
 import generateUID from '@proton/utils/generateUID';
 
 import { useOnCompose } from '../../../../../containers/ComposeProvider';
-import { findSender } from '../../../../../helpers/message/messageRecipients';
 import { useSendMessage } from '../../../../../hooks/composer/useSendMessage';
 import { useSendVerifications } from '../../../../../hooks/composer/useSendVerifications';
 import { useGetMessage } from '../../../../../hooks/message/useMessage';

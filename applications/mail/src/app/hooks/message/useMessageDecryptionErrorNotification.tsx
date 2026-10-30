@@ -2,13 +2,13 @@ import type { KeyID } from '@protontech/crypto';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { getMessageDecryptionKeyInfoFromAddress } from '@proton/mail-message/helpers/message/messageDecrypt';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import DecryptionErrorNotification from '../../components/notifications/DecryptionErrorNotification';
-import { getMessageDecryptionKeyInfoFromAddress } from '../../helpers/message/messageDecrypt';
 
 const getIsExternalMessageWithE2EE = (message: Message) =>
     hasBit(message.Flags, MESSAGE_FLAGS.FLAG_E2E) && !hasBit(message.Flags, MESSAGE_FLAGS.FLAG_INTERNAL);

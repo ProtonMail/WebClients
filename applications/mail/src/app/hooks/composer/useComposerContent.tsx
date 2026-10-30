@@ -17,6 +17,14 @@ import { selectComposer } from '@proton/mail-composer/store/composers/composerSe
 import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import { updateKeyPackets } from '@proton/mail-message/helpers/attachment/attachment';
+import {
+    getComposerDefaultFontStyles,
+    getContent,
+    setContent,
+} from '@proton/mail-message/helpers/message/messageContent';
+import { isNewDraft } from '@proton/mail-message/helpers/message/messageDraft';
+import { replaceEmbeddedAttachments } from '@proton/mail-message/helpers/message/messageEmbeddeds';
+import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { sanitizeComposerReply } from '@proton/sanitize/purify';
@@ -36,10 +44,6 @@ import {
     getMessageContentBeforeBlockquote,
     setMessageContentBeforeBlockquote,
 } from '../../helpers/composer/contentFromComposerMessage';
-import { getComposerDefaultFontStyles, getContent, setContent } from '../../helpers/message/messageContent';
-import { isNewDraft } from '../../helpers/message/messageDraft';
-import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
-import { mergeMessages } from '../../helpers/message/messages';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
 import { removeInitialAttachments, updateDraftContent } from '../../store/messages/draft/messagesDraftActions';
 import { messageByID } from '../../store/messages/messagesSelectors';

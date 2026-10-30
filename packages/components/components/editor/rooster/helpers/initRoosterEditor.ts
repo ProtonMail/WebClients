@@ -5,16 +5,10 @@ import { Direction } from 'roosterjs-editor-types';
 
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE, getFontFaceValueFromId } from '@proton/shared/lib/mail/fontFace';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
-import {
-    DEFAULT_BACKGROUND,
-    DEFAULT_FONT_COLOR,
-    DEFAULT_FONT_FACE,
-    DEFAULT_FONT_SIZE,
-    ROOSTER_SNAPSHOTS_MAX_SIZE,
-} from '../../constants';
-import { getFontFaceValueFromId } from '../../helpers/fontFace';
+import { DEFAULT_BACKGROUND, DEFAULT_FONT_COLOR, ROOSTER_SNAPSHOTS_MAX_SIZE } from '../../constants';
 import type { ModalLinkProps } from '../../hooks/interface';
 import type { EditorActions, OnEditorEventListened } from '../../interface';
 import EditorCustomPastePlugin from '../plugins/EditorCustomPastePlugin';

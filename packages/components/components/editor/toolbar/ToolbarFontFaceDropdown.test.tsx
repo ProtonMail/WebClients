@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { DEFAULT_FONT_FACE, FONT_FACES } from '../constants';
-import { getFontFaceIdFromValue } from '../helpers/fontFace';
+import { DEFAULT_FONT_FACE, FONT_FACES, getFontFaceIdFromValue } from '@proton/shared/lib/mail/fontFace';
+
 import ToolbarFontFaceDropdown from './ToolbarFontFaceDropdown';
 
 describe('Toolbar font face dropdown', () => {

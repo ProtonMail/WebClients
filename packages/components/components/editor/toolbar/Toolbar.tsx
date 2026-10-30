@@ -17,12 +17,12 @@ import { IcTextUnderline } from '@proton/icons/icons/IcTextUnderline';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '@proton/shared/lib/mail/fontFace';
 import clsx from '@proton/utils/clsx';
 
 import ErrorBoundary from '../../../containers/app/ErrorBoundary';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 import { ButtonGroup } from '../../button/ButtonGroup';
-import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '../constants';
 import type { ToolbarConfig } from '../helpers/getToolbarConfig';
 import type { EditorMetadata } from '../interface';
 import ToolbarAlignmentDropdown from './ToolbarAlignmentDropdown';

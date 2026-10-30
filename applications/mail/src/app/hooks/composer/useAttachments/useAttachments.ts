@@ -7,6 +7,13 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useHandler } from '@proton/hooks/useHandler';
+import {
+    createEmbeddedImageFromUpload,
+    isEmbeddable,
+    matchSameCidOrLoc,
+    readContentIDandLocation,
+} from '@proton/mail-message/helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, updateImages } from '@proton/mail-message/helpers/message/messageImages';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import removeExifMetadata from '@proton/shared/lib/helpers/exif';
@@ -23,13 +30,6 @@ import type { MessageChange } from '../../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../../components/composer/editor/EditorWrapper';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR } from '../../../constants';
 import { checkSizeAndLength, upload } from '../../../helpers/attachment/attachmentUploader';
-import {
-    createEmbeddedImageFromUpload,
-    isEmbeddable,
-    matchSameCidOrLoc,
-    readContentIDandLocation,
-} from '../../../helpers/message/messageEmbeddeds';
-import { getEmbeddedImages, updateImages } from '../../../helpers/message/messageImages';
 import { addAttachment, addImageIdentifierAction } from '../../../store/attachments/attachmentsActions';
 import { useMailDispatch } from '../../../store/hooks';
 import { useGetMessageKeys } from '../../message/useGetMessageKeys';

@@ -1,6 +1,9 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import { setDocumentContent } from '@proton/mail-message/helpers/message/messageContent';
+import { replaceEmbeddedAttachments } from '@proton/mail-message/helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, updateImages } from '@proton/mail-message/helpers/message/messageImages';
 import type {
     MessageDraftFlags,
     MessageEmbeddedImage,
@@ -13,9 +16,6 @@ import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Mes
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { isPlainText, setFlag } from '@proton/shared/lib/mail/messages';
 
-import { setDocumentContent } from '../../../helpers/message/messageContent';
-import { replaceEmbeddedAttachments } from '../../../helpers/message/messageEmbeddeds';
-import { getEmbeddedImages, updateImages } from '../../../helpers/message/messageImages';
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
 
 export const createDraft = (state: Draft<MessagesState>, { payload: message }: PayloadAction<MessageState>) => {

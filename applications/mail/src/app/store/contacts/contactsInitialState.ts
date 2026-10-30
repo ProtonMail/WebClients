@@ -1,4 +1,4 @@
-import type { ContactsState } from './contactsTypes';
+import type { ContactsState } from '@proton/mail-message/store/contacts/contactsTypes';
 
 export const mailContactsInitialState: ContactsState = {
     contactsMap: {},
