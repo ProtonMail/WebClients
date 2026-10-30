@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
+import { updateImages } from '@proton/mail-message/helpers/message/messageImages';
 import type { MessageRemoteImage, MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 
-import { updateImages } from '../../helpers/message/messageImages';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { EOLoadEmbedded, EOLoadRemote } from '../../store/eo/eoActions';

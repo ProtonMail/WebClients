@@ -4,13 +4,13 @@ import { act, fireEvent, getAllByRole, getByText, screen } from '@testing-librar
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
+import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { mergeMessages } from '../../../helpers/message/messages';
 import { addApiMock } from '../../../helpers/tests/api';
 import { minimalCache } from '../../../helpers/tests/cache';
 import { clearAll } from '../../../helpers/tests/helper';

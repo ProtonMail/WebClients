@@ -31,77 +31,6 @@ export const IFRAME_EVENTS_LIST: Event['type'][] = [
     'input',
 ];
 
-type FontFace =
-    | 'SANS_SERIF'
-    | 'SERIF'
-    | 'GEORGIA'
-    | 'ARIAL'
-    | 'HELVETICA'
-    | 'MONOSPACE'
-    | 'TAHOMA'
-    | 'VERDANA'
-    | 'TIMES_NEW_ROMAN'
-    | 'TREBUCHET_MS';
-
-/**
- * Used in composer font selector
- */
-export const FONT_FACES: Record<FontFace, { id: string; label: string; value: string }> = {
-    SANS_SERIF: {
-        id: 'Sans-serif',
-        label: 'Sans Serif',
-        value: 'sans-serif',
-    },
-    SERIF: {
-        id: 'Serif',
-        label: 'Serif',
-        value: 'serif',
-    },
-    GEORGIA: {
-        id: 'Georgia',
-        label: 'Georgia',
-        value: 'Georgia, serif',
-    },
-    ARIAL: {
-        id: 'Arial',
-        label: 'Arial',
-        value: 'Arial, sans-serif',
-    },
-    HELVETICA: {
-        id: 'Helvetica',
-        label: 'Helvetica',
-        value: 'Helvetica, sans-serif',
-    },
-    MONOSPACE: {
-        id: 'Menlo, Consolas, Courier New, Monospace',
-        label: 'Monospace',
-        value: 'Menlo, Consolas, Courier New, Monospace',
-    },
-    TAHOMA: {
-        id: 'Tahoma, sans-serif',
-        label: 'Tahoma',
-        value: 'Tahoma, sans-serif',
-    },
-    VERDANA: {
-        id: 'Verdana',
-        label: 'Verdana',
-        value: 'Verdana, sans-serif',
-    },
-    TIMES_NEW_ROMAN: {
-        id: 'Times New Roman',
-        label: 'Times New Roman',
-        value: 'Times New Roman, serif',
-    },
-    TREBUCHET_MS: {
-        id: 'Trebuchet MS',
-        label: 'Trebuchet MS',
-        value: 'Trebuchet MS, sans-serif',
-    },
-};
-
-export const DEFAULT_FONT_FACE = FONT_FACES.ARIAL.value;
-export const DEFAULT_FONT_FACE_ID = FONT_FACES.ARIAL.id;
-
 export enum FONT_SIZES {
     '10px' = '7.5pt',
     '12px' = '9pt',
@@ -113,7 +42,6 @@ export enum FONT_SIZES {
     '24px' = '18pt',
     '26px' = '19.5pt',
 }
-export const DEFAULT_FONT_SIZE = 14;
 
 export const DEFAULT_FONT_COLOR = '#000000';
 export const DEFAULT_BACKGROUND = '#FFFFFF';

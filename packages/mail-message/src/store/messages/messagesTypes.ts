@@ -34,6 +34,8 @@ export interface PublicPrivateKey {
 
 export type MessageKeys = PublicPrivateKey | OutsideKey;
 
+export type GetMessageKeys = (message: Pick<Message, 'AddressID'>) => Promise<PublicPrivateKey>;
+
 export interface MessageErrors {
     network?: Error[];
     decryption?: Error[];

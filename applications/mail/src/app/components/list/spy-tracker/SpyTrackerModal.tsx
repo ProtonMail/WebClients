@@ -11,12 +11,12 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import type { Tracker } from '@proton/mail-message/helpers/message/trackers';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import trackersImg from '@proton/styles/assets/img/illustrations/trackers-found.svg';
 import clsx from '@proton/utils/clsx';
 
 import { emailTrackerProtectionURL } from '../../../constants';
-import type { Tracker } from '../../../hooks/message/useMessageTrackers';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import NumberOfElementsBubble from './NumberOfElementsBubble';
 

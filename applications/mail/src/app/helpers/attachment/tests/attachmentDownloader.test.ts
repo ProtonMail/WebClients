@@ -1,5 +1,13 @@
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
+import type { Download } from '@proton/mail-message/helpers/attachment/attachmentDownloader';
+import {
+    formatDownload,
+    formatDownloadAll,
+    generateDownload,
+    generateDownloadAll,
+    getZipAttachmentName,
+} from '@proton/mail-message/helpers/attachment/attachmentDownloader';
 import type { MessageKeys, MessageVerification } from '@proton/mail-message/store/messages/messagesTypes';
 import * as browser from '@proton/shared/lib/helpers/browser';
 import * as downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -14,14 +22,6 @@ import {
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../tests/crypto';
-import type { Download } from '../attachmentDownloader';
-import {
-    formatDownload,
-    formatDownloadAll,
-    generateDownload,
-    generateDownloadAll,
-    getZipAttachmentName,
-} from '../attachmentDownloader';
 
 jest.mock('@proton/shared/lib/helpers/downloadFile', () => ({
     __esModule: true,

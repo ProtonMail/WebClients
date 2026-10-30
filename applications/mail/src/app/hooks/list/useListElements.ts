@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 
-import { useMailELDTMetric } from '../../metrics/useMailELDTMetric';
-import { useMailPTTMetric } from '../../metrics/useMailPTTMetric';
+import { PLACEHOLDER_ID_PREFIX } from '@proton/mail-message/constants';
 
 import useEncryptedSearchList from '../../components/list/useEncryptedSearchList';
-import { PLACEHOLDER_ID_PREFIX, usePlaceholders } from '../../hooks/usePlaceholders';
+import { usePlaceholders } from '../../hooks/usePlaceholders';
+import { useMailELDTMetric } from '../../metrics/useMailELDTMetric';
+import { useMailPTTMetric } from '../../metrics/useMailPTTMetric';
 import type { Element } from '../../models/element';
 
 /**

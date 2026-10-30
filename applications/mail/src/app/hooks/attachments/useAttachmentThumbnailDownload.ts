@@ -1,15 +1,18 @@
 import { useApi } from '@proton/app-context/useApi';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
+import type { Download } from '@proton/mail-message/helpers/attachment/attachmentDownloader';
+import { generateDownload } from '@proton/mail-message/helpers/attachment/attachmentDownloader';
+import {
+    decryptAndVerify,
+    getVerificationStatusFromKeys,
+} from '@proton/mail-message/helpers/attachment/attachmentLoader';
 import { getAttachment as getAttachmentRequest, getAttachmentsMetadata } from '@proton/shared/lib/api/attachments';
 import type { AttachmentFullMetadata, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS, MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
 import ConfirmDownloadAttachments from '../../components/message/extrasFooter/attachment/ConfirmDownloadAttachments';
-import type { Download } from '../../helpers/attachment/attachmentDownloader';
-import { generateDownload } from '../../helpers/attachment/attachmentDownloader';
-import { decryptAndVerify, getVerificationStatusFromKeys } from '../../helpers/attachment/attachmentLoader';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../store/hooks';

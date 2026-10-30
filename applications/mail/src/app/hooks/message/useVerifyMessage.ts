@@ -7,11 +7,11 @@ import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
 import { isNetworkError } from '@proton/mail-message/helpers/errors';
+import { verifyMessage } from '@proton/mail-message/helpers/message/messageDecrypt';
+import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '@proton/mail-message/helpers/message/messageKeys';
 import type { MessageErrors, MessageStateWithDataFull } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { verifyMessage } from '../../helpers/message/messageDecrypt';
-import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../store/hooks';

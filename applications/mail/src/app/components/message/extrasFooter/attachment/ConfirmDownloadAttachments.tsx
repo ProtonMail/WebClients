@@ -4,10 +4,9 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import type { Download } from '@proton/mail-message/helpers/attachment/attachmentDownloader';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-
-import type { Download } from '../../../../helpers/attachment/attachmentDownloader';
 
 interface Props extends ModalProps {
     downloads: Download[];

@@ -1,3 +1,4 @@
+import { findMessageToExpand } from '@proton/mail-message/helpers/message/messageExpandable';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -8,7 +9,6 @@ import { isDraft, isOutbox, isScheduled, isSentAutoReply } from '@proton/shared/
 import { getCurrentFolderIDs, hasLabel, isElementMessage } from '../../helpers/elements';
 import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
-import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import type { Element } from '../../models/element';
 import { selectParams } from '../../store/elements/elementsSelectors';
 import type { MailToolDeps, ToolStore } from '../toolModule';

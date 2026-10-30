@@ -8,6 +8,7 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { getPureAttachments } from '@proton/mail-message/helpers/attachment/attachment';
 import { isNetworkError } from '@proton/mail-message/helpers/errors';
+import { decryptMessage } from '@proton/mail-message/helpers/message/messageDecrypt';
 import { loadMessage } from '@proton/mail-message/helpers/message/messageRead';
 import { useBase64Cache } from '@proton/mail-message/hooks/useBase64Cache';
 import type {
@@ -34,18 +35,17 @@ import uniqueBy from '@proton/utils/uniqueBy';
 import { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { isUnreadMessage } from '../../helpers/elements';
-import { decryptMessage } from '../../helpers/message/messageDecrypt';
-import {
-    handleDispatchLoadFakeImagesProxy,
-    handleDispatchLoadImagesProxy,
-    handleDispatchLoadRemoteImagesDirect,
-} from '../../helpers/message/messageImages';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../store/hooks';
 import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
+import {
+    handleDispatchLoadFakeImagesProxy,
+    handleDispatchLoadImagesProxy,
+    handleDispatchLoadRemoteImagesDirect,
+} from '../../store/messages/images/messagesImagesDispatch';
 import {
     cleanUTMTrackers,
     documentInitializeFulfilled,

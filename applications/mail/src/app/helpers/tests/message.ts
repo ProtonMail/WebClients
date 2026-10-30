@@ -1,6 +1,7 @@
 import type { PrivateKeyReference, PublicKeyReference, SessionKey, WorkerDecryptionOptions } from '@protontech/crypto';
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
+import { readContentIDandLocation } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import type {
     MessageEmbeddedImage,
     MessageImage,
@@ -8,7 +9,6 @@ import type {
 } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { readContentIDandLocation } from '../message/messageEmbeddeds';
 import type { GeneratedKey } from './crypto';
 import { encryptSessionKey, generateSessionKey } from './crypto';
 

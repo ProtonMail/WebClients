@@ -1,0 +1,199 @@
+import { unescape } from '@proton/sanitize/escape';
+import type { Address } from '@proton/shared/lib/interfaces/Address';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
+import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '@proton/shared/lib/mail/fontFace';
+import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+
+import type { MESSAGE_ACTIONS } from '../../constants';
+import type { MessageState, PartialMessageState } from '../../store/messages/messagesTypes';
+import { parseModelResult } from '../assistant/result';
+import { toText } from '../parserHtml';
+import { generateBlockquote } from './draftContent/html';
+import { locateBlockquote } from './messageBlockquote';
+import { exportPlainText, getPlainTextContent, setPlainTextContent } from './messageContentPlainText';
+import { getDocumentContent, setDocumentContent } from './messageContentQuery';
+
+export { plainTextToHTML } from './messageContentConversion';
+export { exportPlainText } from './messageContentPlainText';
+export { querySelectorAll, setDocumentContent } from './messageContentQuery';
+
+/**
+ * Get current processed message document html content
+ */
+export const getContent = (message: PartialMessageState) => {
+    if (testIsPlainText(message.data)) {
+        return getPlainTextContent(message);
+    }
+
+    return getDocumentContent(message.messageDocument?.document);
+};
+
+/**
+ * Set current processed message document html
+ */
+export const setContent = (message: MessageState, content: string) => {
+    if (testIsPlainText(message.data)) {
+        setPlainTextContent(message, content);
+    } else {
+        const document = setDocumentContent(message.messageDocument?.document, content);
+        if (message.messageDocument) {
+            message.messageDocument.document = document;
+        } else {
+            message.messageDocument = { document };
+        }
+    }
+};
+
+/**
+ * Generates/Gets the plaintext body from the message. If the message is not composed in plaintext, it will downconvert
+ * the html body to plaintext if downconvert is set. If downconvert is disabled it will return false.
+ */
+export const getPlainText = (message: MessageState, downconvert: boolean) => {
+    if (testIsPlainText(message.data)) {
+        return getPlainTextContent(message);
+    }
+
+    if (!downconvert) {
+        return undefined;
+    }
+
+    return exportPlainText(getContent(message));
+};
+
+export const getContentWithoutBlockquotes = (
+    message: MessageState,
+    referenceMessage: MessageState,
+    mailSettings: MailSettings,
+    userSettings: UserSettings,
+    addresses: Address[],
+    action: MESSAGE_ACTIONS
+) => {
+    if (testIsPlainText(message.data)) {
+        const blockquotes = generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses, action);
+        const plainBlockquotes = toText(blockquotes);
+
+        return message.messageDocument?.plainText?.replace(plainBlockquotes, '');
+    }
+
+    const [contentBeforeBlockquotes] = locateBlockquote(message.messageDocument?.document);
+
+    return contentBeforeBlockquotes;
+};
+
+export const getContentWithBlockquotes = (
+    content: string,
+    isPlainText: boolean,
+    referenceMessage: MessageState,
+    mailSettings: MailSettings,
+    userSettings: UserSettings,
+    addresses: Address[],
+    action: MESSAGE_ACTIONS
+) => {
+    const blockquotes = generateBlockquote(referenceMessage || {}, mailSettings, userSettings, addresses, action);
+
+    if (isPlainText) {
+        const plainBlockquotes = toText(blockquotes);
+
+        return `${content}${plainBlockquotes}`;
+    } else {
+        return `${content}${blockquotes.toString()}`;
+    }
+};
+
+/**
+ * @param mailSettings
+ * @returns string containing fon styles. to be inserted in `style` attribute of an HTML element
+ * @example
+ * ```
+ * This usage
+ * <div style="${getComposerDefaultFontStyles(mailSettings)}">...</div>
+ * Becomes
+ * <div style="font-family: Arial, serif; font-size: 12px;">...</div>
+ * ```
+ */
+export const getComposerDefaultFontStyles = (mailSettings: MailSettings) =>
+    `font-family: ${mailSettings?.FontFace || DEFAULT_FONT_FACE_ID}; font-size: ${mailSettings?.FontSize || DEFAULT_FONT_SIZE}px`;
+
+export const prepareContentToInsert = (textToInsert: string, isPlainText: boolean, messageID: string) => {
+    if (isPlainText) {
+        return unescape(textToInsert);
+    }
+
+    return parseModelResult(textToInsert, messageID);
+};
+
+export const insertTextBeforeContent = (
+    message: MessageState,
+    textToInsert: string,
+    mailSettings: MailSettings,
+    needsSeparator: boolean
+) => {
+    let newBody;
+    // In both cases, add a separator only if there is already some content in the composer
+    // However we still need to add message body after because message might contain signature or blockquotes
+    if (testIsPlainText(message.data)) {
+        const separator = '--------------------';
+        const messageBody = message.messageDocument?.plainText;
+
+        newBody = needsSeparator ? `${textToInsert}\n${separator}\n${messageBody}` : `${textToInsert}\n${messageBody}`;
+    } else {
+        const separator = `<hr/>`;
+        const messageBody = message.messageDocument?.document?.innerHTML;
+        const textToInsertHTML = textToInsert.replaceAll('\n', '<br>');
+        const fontStyles = getComposerDefaultFontStyles(mailSettings);
+
+        newBody = needsSeparator
+            ? `<div style="${fontStyles}">${textToInsertHTML}</div><br>${separator}<br>${messageBody}`
+            : `<div style="${fontStyles}">${textToInsertHTML}</div><br>${messageBody}`;
+    }
+    return newBody;
+};
+
+export const isMessageContentEmpty = (messageContent: string, plain: boolean) => {
+    if (!messageContent) {
+        return true;
+    }
+
+    // In plaintext mode, we can simply check if the string contains text
+    if (plain) {
+        return messageContent.trim().length === 0;
+    }
+
+    // For HTML mode, we can expand blockquotes when the content has no text or media (img, video, svg, etc...)
+    const doc = new DOMParser().parseFromString(messageContent, 'text/html');
+
+    const hasText = (doc.body.textContent?.trim() || '').length > 0;
+
+    // Early return to prevent searching for images for no reason in large content
+    if (hasText) {
+        return false;
+    }
+
+    // We should replace images in the body with a span because we are showing them in a portal
+    const hasImagePlaceholder = doc.body.querySelectorAll('.proton-image-anchor').length > 0;
+
+    if (hasImagePlaceholder) {
+        return false;
+    }
+
+    // Elements can be placed in links, such as videos
+    const hasLinks = doc.body.querySelectorAll('a').length > 0;
+
+    if (hasLinks) {
+        return false;
+    }
+
+    const hasTables = doc.body.querySelectorAll('table').length > 0;
+
+    if (hasTables) {
+        return false;
+    }
+
+    // Some images can also be present in styles
+    const hasUrlInStyle = Array.from(doc.querySelectorAll('[style]')).some((el) =>
+        el.getAttribute('style')?.includes('url(')
+    );
+
+    return !hasUrlInStyle;
+};

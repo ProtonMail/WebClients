@@ -4,20 +4,20 @@ import { useApi } from '@proton/app-context/useApi';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import type { Download } from '@proton/mail-message/helpers/attachment/attachmentDownloader';
+import {
+    formatDownload,
+    formatDownloadAll,
+    generateDownload,
+    generateDownloadAll,
+} from '@proton/mail-message/helpers/attachment/attachmentDownloader';
+import { getAttachmentCounts } from '@proton/mail-message/helpers/message/messages';
 import type { MessageKeys, MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import ConfirmDownloadAttachments from '../../components/message/extrasFooter/attachment/ConfirmDownloadAttachments';
-import type { Download } from '../../helpers/attachment/attachmentDownloader';
-import {
-    formatDownload,
-    formatDownloadAll,
-    generateDownload,
-    generateDownloadAll,
-} from '../../helpers/attachment/attachmentDownloader';
-import { getAttachmentCounts } from '../../helpers/message/messages';
 import { updateAttachment } from '../../store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../store/hooks';
