@@ -1766,6 +1766,12 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Detach": [
+        "Scollega"
+      ],
+      "View guide": [
+        "Visualizza la guida"
       ]
     },
     "action": {
@@ -2027,6 +2033,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porta la produttività delle email a nuovi livelli. Lascia che ${ BRAND_NAME } Scribe ti aiuti a scrivere, rispondere e correggere le tue email."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Porta la produttività delle email a nuovi livelli. Lascia che ${ LUMO_SHORT_APP_NAME } ti aiuti a scrivere, rispondere e correggere le tue email."
       ]
     },
     "Attached ics file error": {
@@ -9601,6 +9610,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } include l'assistente di scrittura."
+      ],
+      "Update filter": [
+        "Aggiorna filtro"
       ]
     },
     "info": {
@@ -10949,6 +10964,15 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Document ID": [
+        "ID documento"
+      ],
+      "Filter name": [
+        "Nome del filtro"
+      ],
+      "v2": [
+        "v2"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11408,6 +11432,9 @@
       ],
       "for ${ price }": [
         "per ${ price }"
+      ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Aggiungi assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Mailbox": {
@@ -12229,6 +12256,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } con accesso limitato"
       ]
     },
     "new_plans: feature highlight": {
@@ -17057,6 +17087,9 @@
       ],
       "Your shorter address is now ready": [
         "Il tuo indirizzo breve ora è pronto"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Avviso: questo account Gmail è collegato a un altro account ${ BRAND_NAME }"
       ]
     },
     "Title header for keys table": {
