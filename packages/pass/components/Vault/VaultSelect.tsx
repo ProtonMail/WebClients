@@ -95,6 +95,8 @@ export const VaultSelect: FC<VaultSelectProps> = ({
         [sortedVaults, folders, withFolders, expandedKeys]
     );
 
+    const hasFolders = rows.some((row) => row.type === 'vault' && row.hasFolders);
+
     const currentKey = getFolderKey(shareId ?? '', folderId ?? null);
 
     const getRowDisabledReason = (row: VaultFolderRow<WithItemCount<VaultShareItem>>) => {
@@ -153,7 +155,7 @@ export const VaultSelect: FC<VaultSelectProps> = ({
                         const tooltip = disabledReason ?? undefined;
                         const canExpand = row.type === 'vault' ? row.hasFolders : row.hasChildren;
 
-                        const expandButton = withFolders && (
+                        const expandButton = hasFolders && (
                             <PassExpandButton
                                 expanded={row.expanded}
                                 onClick={() => toggle(row.key)}

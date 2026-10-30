@@ -3,11 +3,15 @@ import { useSelector } from 'react-redux';
 
 import noop from '@proton/utils/noop';
 
+import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
+import { getFolderChildren } from '../../../lib/folders/folder.utils';
 import { isShareManageable } from '../../../lib/shares/share.predicates';
 import { isWritableVault } from '../../../lib/vaults/vault.predicates';
+import { selectFolders } from '../../../store/selectors/folders';
 import { selectActiveSharedWithMeCount } from '../../../store/selectors/shared';
 import { selectShare } from '../../../store/selectors/shares';
 import { selectVisibleVaultsWithCount } from '../../../store/selectors/vaults';
+import { PassFeature } from '../../../types/api/features';
 import type { ShareType } from '../../../types/data/shares';
 import { useNavigationFilters } from '../../Navigation/NavigationFilters';
 import { useItemScope } from '../../Navigation/NavigationMatches';
@@ -36,9 +40,13 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
     const selectedVaultOption = getVaultOptionInfo(selectedVault || (inTrash ? 'trash' : 'all'));
     const vaultActions = useVaultActions();
     const totalSharedWithMe = useSelector(selectActiveSharedWithMeCount);
+    const foldersEnabled = useFeatureFlag(PassFeature.PassFolder);
+    const folders = useSelector(selectFolders);
 
     const menu = useMemo(() => {
         const totalItems = vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0) + totalSharedWithMe;
+        const hasFolders =
+            foldersEnabled && vaults.some(({ shareId }) => getFolderChildren(folders[shareId]).has(null));
 
         return (
             <>
@@ -56,6 +64,7 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
                         canInvite={!vault.shared}
                         canManage={isShareManageable(vault)}
                         canLeave={vault.shared && !vault.owner && !vault.groupId}
+                        withExpandButton={hasFolders}
                         onAction={onAction}
                     />
                 ))}
@@ -63,7 +72,7 @@ export const VaultMenu: FC<Props> = ({ render, onAction = noop }) => {
                 <VaultMenuTrash selected={scope === 'trash'} onAction={onAction} />
             </>
         );
-    }, [vaults, vaultActions, selectedShareId, selectedFolderId, scope, totalSharedWithMe]);
+    }, [vaults, vaultActions, selectedShareId, selectedFolderId, scope, totalSharedWithMe, foldersEnabled, folders]);
 
     return render?.(selectedVaultOption, menu) ?? menu;
 };
