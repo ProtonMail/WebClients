@@ -3,5 +3,5 @@ export interface MyLocationResponse {
     Lat: number;
     Long: number;
     Country: string;
-    ISP: string;
+    ISP: string | null;
 }
