@@ -1,17 +1,16 @@
-import { defineConfig } from 'eslint/config';
-
-import defaultConfig from '@proton/eslint-config-proton/all';
+import { createOxlintConfig } from '@proton/oxlint-config/createOxlintConfig';
 import {
     createExtraneousDependenciesRule,
     extraneousDependenciesDevDependencies,
-} from '@proton/eslint-config-proton/extraneousDependencies';
+} from '@proton/oxlint-config/extraneousDependencies';
+import { allGlobs } from '@proton/oxlint-config/globs';
 
 /**
- * lint-staged runs ESLint from the monorepo root with repo-relative file paths
+ * lint-staged runs the linter from the monorepo root with repo-relative file paths
  * (e.g. `applications/pass-desktop/src/lib/**`). Duplicate each package-local
- * glob so `import/no-extraneous-dependencies` still allows electron there.
+ * glob so `proton/no-extraneous-dependencies` still allows electron there.
  */
-const withLintStagedPaths = (patterns) => patterns.flatMap((pattern) => [pattern, `**/pass-desktop/${pattern}`]);
+const withLintStagedPaths = (patterns: string[]) => patterns.flatMap((pattern) => [pattern, `**/pass-desktop/${pattern}`]);
 
 /** Main-process sources import electron (devDependency required by Electron Forge). Renderer `src/app/**` is excluded. */
 const passDesktopMainProcessDevDependencies = withLintStagedPaths([
@@ -41,21 +40,18 @@ const passDesktopDevDependencies = [
     ]),
 ];
 
-export default defineConfig([
-    { ignores: ['native/target/**'] },
-    defaultConfig,
-    {
-        rules: {
-            'no-console': ['error', { allow: ['warn', 'error'] }],
-            curly: ['error', 'multi-line'],
+export default createOxlintConfig({
+    ignorePatterns: ['native/target/**'],
+    overrides: [
+        {
+            files: allGlobs,
+            rules: {
+                'no-console': ['error', { allow: ['warn', 'error'] }],
+                curly: ['error', 'multi-line'],
+                'proton/no-extraneous-dependencies': createExtraneousDependenciesRule({
+                    devDependencies: passDesktopDevDependencies,
+                }),
+            },
         },
-    },
-    {
-        name: 'pass-desktop-extraneous-dependencies',
-        rules: {
-            'import/no-extraneous-dependencies': createExtraneousDependenciesRule({
-                devDependencies: passDesktopDevDependencies,
-            }),
-        },
-    },
-]);
+    ],
+});
