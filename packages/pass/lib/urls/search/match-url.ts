@@ -21,6 +21,18 @@ export enum ItemUrlMatch {
 }
 const BEST_MATCH = ItemUrlMatch.EXACT_MATCH;
 
+/** Where a login saved for a host can autofill, in the `Default` autofill mode */
+export enum DomainMatch {
+    /** Saved host, its subdomains and sibling subdomains */
+    DEFAULT = 0,
+    /** Saved host and its subdomains */
+    HOST_AND_SUBDOMAINS = 1,
+    /** Saved host only */
+    EXACT_HOST = 2,
+}
+
+type MatchOptions = { domainMatch: DomainMatch; regexEnabled: boolean };
+
 const sharePort = (item: ParsedUrl, match: ParsedUrl) => !match.port || item.port === match.port;
 
 const shareProtocol = (item: ParsedUrl, match: ParsedUrl) =>
@@ -32,13 +44,14 @@ const shareProtocol = (item: ParsedUrl, match: ParsedUrl) =>
  * - direct descendant returns top match
  * - common ancestor return sub match
  */
-const matchDefault = (item: ParsedUrl, match: ParsedUrl, strict: boolean): ItemUrlMatch => {
+const matchDefault = (item: ParsedUrl, match: ParsedUrl, domainMatch: DomainMatch): ItemUrlMatch => {
     if (!sharePort(item, match) || !shareProtocol(item, match)) return ItemUrlMatch.NO_MATCH;
 
     const itemSubdomain = resolveSubdomain(item);
     const matchSubdomain = resolveSubdomain(match);
     if (!itemSubdomain || !matchSubdomain) return ItemUrlMatch.NO_MATCH;
     if (itemSubdomain === matchSubdomain) return ItemUrlMatch.EXACT_MATCH;
+    if (domainMatch === DomainMatch.EXACT_HOST) return ItemUrlMatch.NO_MATCH;
 
     if (match.isPrivate) {
         // For private domains, only consider direct top domain match
@@ -47,7 +60,9 @@ const matchDefault = (item: ParsedUrl, match: ParsedUrl, strict: boolean): ItemU
     // Direct descendant
     if (domainEndsWith(matchSubdomain, itemSubdomain)) return ItemUrlMatch.TOP_MATCH;
     // Common ancestor
-    if (!strict && match.domain && domainEndsWith(itemSubdomain, match.domain)) return ItemUrlMatch.SUB_MATCH;
+    if (domainMatch === DomainMatch.DEFAULT && match.domain && domainEndsWith(itemSubdomain, match.domain)) {
+        return ItemUrlMatch.SUB_MATCH;
+    }
     return ItemUrlMatch.NO_MATCH;
 };
 
@@ -121,7 +136,7 @@ const matchRegex = (autofillUrl: AutofillUrl, match: ParsedUrl): ItemUrlMatch =>
 const priorityFor = (
     autofillUrl: AutofillUrl,
     match: ParsedUrl,
-    { strict, regexEnabled }: { strict: boolean; regexEnabled: boolean }
+    { domainMatch, regexEnabled }: MatchOptions
 ): ItemUrlMatch => {
     switch (autofillUrl.mode) {
         case AutofillMode.Never:
@@ -145,7 +160,7 @@ const priorityFor = (
         case AutofillMode.Exact:
             return matchExact(item, match);
         case AutofillMode.Default:
-            return matchDefault(item, match, strict);
+            return matchDefault(item, match, domainMatch);
     }
 
     return ItemUrlMatch.NO_MATCH;
@@ -161,12 +176,11 @@ const isBlocker = (autofillUrl: AutofillUrl, matchUrl: ParsedUrl): boolean => {
 };
 
 /** Return a ItemUrlMatch priority given the match url against the autofill urls inside the given item.
- * If any autofill url has the Never mode and matches, the item is fully blocked.
- * Strict option will ignore all but exact matches. */
+ * If any autofill url has the Never mode and matches, the item is fully blocked. */
 export const getItemPriorityForUrl = (
     matchUrl: ParsedUrl,
     item: ItemRevision<'login'>,
-    options: { strict: boolean; regexEnabled: boolean }
+    options: MatchOptions
 ): ItemUrlMatch => {
     if (!matchUrl.domain) return ItemUrlMatch.NO_MATCH;
     const urls = item.data.content.autofillUrls;
