@@ -7,8 +7,8 @@
     "incremental": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "module": "node16",
+    "moduleResolution": "node16",
     "noFallthroughCasesInSwitch": true,
     "jsx": "preserve",
     "noImplicitAny": true,
@@ -21,7 +21,8 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "esnext",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "rootDir": "."
   },
   "include": ["lib/**/*", "bin/**/*", "tsconfig.json"],
   "exclude": ["**/*.spec.ts", "dist"]
