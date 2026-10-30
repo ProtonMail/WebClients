@@ -94,7 +94,7 @@ export const VaultFolderPickerFieldCore: FC<VaultFolderPickerFieldCoreProps> = (
                 return row.type === 'vault' ? (
                     <Option key={row.key} value={row.key} title={row.vault.content.name}>
                         <div className="flex flex-nowrap gap-x-2 items-center">
-                            {showFolders && expandButton}
+                            {hasFolders && expandButton}
                             <VaultIcon
                                 icon={row.vault.content.display.icon}
                                 color={row.vault.content.display.color}

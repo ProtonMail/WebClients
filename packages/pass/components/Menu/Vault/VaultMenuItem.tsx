@@ -55,6 +55,7 @@ type Props = {
     label: string;
     selected: boolean;
     vault: VaultShareItem;
+    withExpandButton: boolean;
     onAction?: () => void;
 };
 
@@ -71,7 +72,19 @@ const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
 };
 
 export const VaultMenuItem = memo(
-    ({ canDelete, canInvite, canLeave, canManage, canMove, count, label, selected, vault, onAction = noop }: Props) => {
+    ({
+        canDelete,
+        canInvite,
+        canLeave,
+        canManage,
+        canMove,
+        count,
+        label,
+        selected,
+        vault,
+        withExpandButton,
+        onAction = noop,
+    }: Props) => {
         const [isExpanded, setIsExpanded] = useState(false);
 
         const foldersEnabled = useFeatureFlag(PassFeature.PassFolder);
@@ -216,11 +229,13 @@ export const VaultMenuItem = memo(
                     extraClassname="pr-4"
                     icon={
                         <>
-                            <PassExpandButton
-                                expanded={isExpanded}
-                                onClick={() => setIsExpanded(!isExpanded)}
-                                hidden={!showFolders}
-                            />
+                            {withExpandButton && (
+                                <PassExpandButton
+                                    expanded={isExpanded}
+                                    onClick={() => setIsExpanded(!isExpanded)}
+                                    hidden={!showFolders}
+                                />
+                            )}
                             <VaultIcon
                                 background
                                 className="shrink-0 mr-1"
