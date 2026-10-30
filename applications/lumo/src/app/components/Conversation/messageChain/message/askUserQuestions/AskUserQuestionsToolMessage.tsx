@@ -5,22 +5,45 @@ import {
     isAskUserQuestionsToolSuccessResult,
     validateAskUserQuestionsToolArguments,
 } from '../../../../../features/client-tools/askUserQuestionsTool/validation';
+import { findToolResultForCall } from '../../../../../messageHelpers';
 import { useConversationActions } from '../../../../../providers/ConversationActionsProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import type { ContentBlock } from '../../../../../types';
 import { ComposerPreInputPortal } from '../../../../Composer/ComposerPreInputPortal';
 import { QuestionCard } from '../../../../QuestionCard/QuestionCard';
 import type { QuestionCardAnswerData } from '../../../../QuestionCard/types';
+import { getToolCallNameFromBlock } from '../../../artifact/artifactGenerationState';
 import { getLastValidatedToolCall } from '../getLastValidatedToolCall';
+import { AskUserQuestionsToolMessageSkeleton } from './AskUserQuestionsToolMessageSkeleton';
 
 /**
- * Render the ask_user_questions tool result as a question card above the composer.
+ * Render a pending skeleton or validated question card above the composer.
  * The successful result acknowledges validation; the questions come from the matching tool-call arguments.
  */
-export const AskUserQuestionsToolMessage = ({ blocks }: { blocks: ContentBlock[] }) => {
+export const AskUserQuestionsToolMessage = ({
+    blocks,
+    isGenerating,
+}: {
+    blocks: ContentBlock[];
+    isGenerating: boolean;
+}) => {
     const { handleSendAskUserQuestionsToolResponse } = useConversationActions();
     const { isWebSearchButtonToggled } = useWebSearch();
     const [isClosed, setIsClosed] = useState(false);
+    const latestCall = blocks.findLast(
+        (block) => block.type === 'tool_call' && getToolCallNameFromBlock(block) === ASK_USER_QUESTIONS_TOOL_NAME
+    );
+
+    if (isGenerating && latestCall?.type === 'tool_call' && !findToolResultForCall(blocks, latestCall)) {
+        return (
+            <ComposerPreInputPortal>
+                <AskUserQuestionsToolMessageSkeleton />
+            </ComposerPreInputPortal>
+        );
+    }
+
+    if (isGenerating) return null;
+
     const latestQuestionSet = getLastValidatedToolCall(
         blocks,
         ASK_USER_QUESTIONS_TOOL_NAME,

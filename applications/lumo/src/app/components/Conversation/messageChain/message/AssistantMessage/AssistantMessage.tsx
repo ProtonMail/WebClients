@@ -453,8 +453,11 @@ const AssistantMessage = ({
                                                     isGenerating={isGenerating}
                                                 />
                                             )}
-                                            {isLastMessage && !isGenerating && (
-                                                <AskUserQuestionsToolMessage blocks={blocks} />
+                                            {isLastMessage && (
+                                                <AskUserQuestionsToolMessage
+                                                    blocks={blocks}
+                                                    isGenerating={isGenerating}
+                                                />
                                             )}
                                             {isArtifactsViewFlagEnabled && (
                                                 <AssistantMessageArtifactSection
