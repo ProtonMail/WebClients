@@ -49,7 +49,7 @@
   },
   "scripts": {
     "check:types": "tsc --checkers 1",
-    "lint": "eslint --quiet",
+    "lint": "oxlint --quiet",
     "test": "jest",
     "test:ci": "jest --runInBand --ci --logHeapUsage",
     "test:watch": "jest --watch"
@@ -79,9 +79,9 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-class-properties": "^7.29.7",
-    "@proton/eslint-config-proton": "workspace:^",
     "@proton/jest-env": "workspace:^",
     "@proton/jest-swc-preset": "workspace:^",
+    "@proton/oxlint-config": "workspace:^",
     "@proton/raw-images": "workspace:^",
     "@testing-library/dom": "catalog:",
     "@testing-library/jest-dom": "catalog:",
@@ -94,11 +94,11 @@
     "babel-jest": "catalog:",
     "browserslist": "catalog:",
     "core-js": "catalog:",
-    "eslint": "catalog:",
     "fake-indexeddb": "catalog:",
     "jest": "catalog:",
     "jest-junit": "catalog:",
-    "prettier": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
     "react-dom": "catalog:",
     "typescript": "catalog:"
   }

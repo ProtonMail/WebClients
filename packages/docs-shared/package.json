@@ -95,7 +95,7 @@
   },
   "scripts": {
     "check:types": "tsc --checkers 1",
-    "lint": "eslint --quiet",
+    "lint": "oxlint --quiet",
     "test": "jest",
     "test:ci": "jest --runInBand --ci --logHeapUsage",
     "test:watch": "jest --watch"
@@ -124,9 +124,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
-    "@proton/eslint-config-proton": "workspace:^",
     "@proton/jest-env": "workspace:^",
     "@proton/jest-swc-preset": "workspace:^",
+    "@proton/oxlint-config": "workspace:^",
     "@proton/unleash": "workspace:^",
     "@testing-library/jest-dom": "catalog:",
     "@types/jest": "catalog:",
@@ -137,9 +137,10 @@
     "babel-jest": "catalog:",
     "browserslist": "catalog:",
     "core-js": "catalog:",
-    "eslint": "catalog:",
     "jest": "catalog:",
     "jest-junit": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
     "typescript": "catalog:"
   }
 }
