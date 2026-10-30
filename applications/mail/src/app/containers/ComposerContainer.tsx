@@ -6,17 +6,20 @@ import { c } from 'ttag';
 import useDrawerWidth from '@proton/components/hooks/drawer/useDrawerWidth';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
+import { ComposerAssistantProvider } from '@proton/mail-composer/components/assistant/provider/ComposerAssistantProvider';
+import { DraftBodyWriterProvider } from '@proton/mail-composer/containers/DraftBodyWriterProvider';
+import {
+    MAX_ACTIVE_COMPOSER_LARGE_SCREEN,
+    MAX_ACTIVE_COMPOSER_SMALL_SCREEN,
+} from '@proton/mail-composer/helpers/composerPositioning';
 import { selectOpenedComposersIds } from '@proton/mail-composer/store/composers/composerSelectors';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 
-import { ComposerAssistantProvider } from '../components/assistant/provider/ComposerAssistantProvider';
 import ComposerFrame from '../components/composer/ComposerFrame';
-import { MAX_ACTIVE_COMPOSER_LARGE_SCREEN, MAX_ACTIVE_COMPOSER_SMALL_SCREEN } from '../helpers/composerPositioning';
 import { useCompose } from '../hooks/composer/useCompose';
 import { useClickMailContent } from '../hooks/useClickMailContent';
 import { useMailDispatch, useMailSelector } from '../store/hooks';
 import { ComposeProvider } from './ComposeProvider';
-import { DraftBodyWriterProvider } from './DraftBodyWriterProvider';
 
 import '../components/composer/composer.scss';
 

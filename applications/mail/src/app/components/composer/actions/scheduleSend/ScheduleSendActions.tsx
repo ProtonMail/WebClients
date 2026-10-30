@@ -9,6 +9,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
+import { isScheduledDuringNight } from '@proton/mail-composer/components/composer/actions/scheduleSend/helpers';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import { FUTURE_MESSAGES_BUFFER } from '@proton/mail-message/constants';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -20,7 +21,6 @@ import scheduleSendImg from '@proton/styles/assets/img/illustrations/new-upsells
 import clsx from '@proton/utils/clsx';
 
 import { useMailSelector } from '../../../../store/hooks';
-import { isScheduledDuringNight } from './helpers';
 import useScheduleSendFeature from './useScheduleSendFeature';
 
 interface Props {

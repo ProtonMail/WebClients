@@ -22,6 +22,7 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
+import { ComposerAssistantProvider } from '@proton/mail-composer/components/assistant/provider/ComposerAssistantProvider';
 import { composersInitialState } from '@proton/mail-composer/store/composers/composersSlice';
 import type { AttachmentsState } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import { mailContactsInitialState } from '@proton/mail-message/store/contacts/contactsInitialState';
@@ -42,7 +43,6 @@ import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calenda
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
-import { ComposerAssistantProvider } from '../../components/assistant/provider/ComposerAssistantProvider';
 import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';
 import { MAIN_ROUTE_PATH } from '../../constants';
 import { CheckAllRefProvider } from '../../containers/CheckAllRefProvider';

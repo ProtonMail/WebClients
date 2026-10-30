@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useHandler } from '@proton/hooks/useHandler';
@@ -12,6 +13,12 @@ import type {
     AttachmentUpload,
     PendingUpload,
 } from '@proton/mail-composer/attachments/uploadTypes';
+import {
+    MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
+    STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
+} from '@proton/mail-composer/constants';
+import { checkSizeAndLength, upload } from '@proton/mail-composer/helpers/attachment/attachmentUploader';
+import { usePromise } from '@proton/mail-composer/hooks/usePromise';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import {
     createEmbeddedImageFromUpload,
@@ -36,11 +43,8 @@ import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 
 import type { MessageChange } from '../../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../../components/composer/editor/EditorWrapper';
-import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR } from '../../../constants';
-import { checkSizeAndLength, upload } from '../../../helpers/attachment/attachmentUploader';
 import { useMailDispatch } from '../../../store/hooks';
 import { useLongLivingState } from '../../useLongLivingState';
-import { usePromise } from '../../usePromise';
 import { createDummyUpload, isAttachmentUpload, isDummyAttachmentUpload } from './helpers';
 
 interface UseAttachmentsParameters {
@@ -72,6 +76,7 @@ export const useAttachments = ({
     const api = useApi();
     const { createNotification } = useNotifications();
     const auth = useAuthentication();
+    const config = useConfig();
     const getMessage = useGetMessage();
     const { useGetMessageKeys } = useComposerMessageHost();
     const getMessageKeys = useGetMessageKeys();
@@ -240,7 +245,7 @@ export const useAttachments = ({
                 removeImageMetadata ? removeExifMetadata(file).catch(() => file) : file
             );
             const strippedFiles = await Promise.all(promises);
-            const uploads = upload(strippedFiles, messageFromState, messageKeys, action, auth.UID, cid);
+            const uploads = upload(strippedFiles, messageFromState, messageKeys, action, auth.UID, config, cid);
             const pendingUploads = strippedFiles.map<AttachmentUpload>((file, i) => ({ file, upload: uploads[i] }));
 
             // Add real pending uploads

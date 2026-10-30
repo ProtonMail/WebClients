@@ -7890,18 +7890,69 @@ importers:
 
   packages/mail-composer:
     dependencies:
+      '@proton/account':
+        specifier: workspace:^
+        version: link:../account
+      '@proton/app-context':
+        specifier: workspace:^
+        version: link:../app-context
+      '@proton/atoms':
+        specifier: workspace:^
+        version: link:../atoms
+      '@proton/components':
+        specifier: workspace:^
+        version: link:../components
+      '@proton/features':
+        specifier: workspace:^
+        version: link:../features
+      '@proton/hooks':
+        specifier: workspace:^
+        version: link:../hooks
+      '@proton/icons':
+        specifier: workspace:^
+        version: link:../icons
+      '@proton/llm':
+        specifier: workspace:^
+        version: link:../llm
       '@proton/mail-message':
         specifier: workspace:^
         version: link:../mail-message
+      '@proton/react-redux-store':
+        specifier: workspace:^
+        version: link:../react-redux-store
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
+      '@proton/styles':
+        specifier: workspace:^
+        version: link:../styles
+      '@proton/unleash':
+        specifier: workspace:^
+        version: link:../unleash
+      '@proton/utils':
+        specifier: workspace:^
+        version: link:../utils
+      '@protontech/crypto':
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      '@protontech/logger':
+        specifier: 'catalog:'
+        version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+      date-fns:
+        specifier: ^2.30.0
+        version: 2.30.0
+      lodash:
+        specifier: 'catalog:'
+        version: 4.18.1
       react:
         specifier: 'catalog:'
         version: 18.3.1
+      ttag:
+        specifier: 'catalog:'
+        version: 1.8.12
     devDependencies:
       '@proton/jest-swc-preset':
         specifier: workspace:^
@@ -7918,6 +7969,9 @@ importers:
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
+      '@types/lodash':
+        specifier: 'catalog:'
+        version: 4.17.25
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0

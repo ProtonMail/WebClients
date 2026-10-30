@@ -11,7 +11,7 @@ import { ID, prepareMessage, props } from './Composer.test.helpers';
 
 jest.setTimeout(20000);
 
-jest.mock('proton-mail/hooks/usePromise', () => ({
+jest.mock('@proton/mail-composer/hooks/usePromise', () => ({
     usePromise: () => {
         return {
             promise: Promise.resolve(),

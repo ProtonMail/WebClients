@@ -4,12 +4,11 @@ import { logger } from '@protontech/logger';
 
 import type { Cancellable } from '@proton/hooks/useHandler';
 import { useHandler } from '@proton/hooks/useHandler';
+import { usePromise } from '@proton/mail-composer/hooks/usePromise';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { isDecryptionError, isNetworkError } from '@proton/mail-message/helpers/errors';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-
-import { usePromise } from '../usePromise';
 
 interface AutoSaveArgs {
     onMessageAlreadySent?: () => void;

@@ -59,7 +59,7 @@ jest.mock('@proton/components/hooks/useEventManager', () => {
 });
 
 // Globally mocked upload helper (standard requests are mocked through context)
-jest.mock('./src/app/helpers/upload');
+jest.mock('@proton/mail-composer/helpers/upload', () => jest.requireActual('./src/__mocks__/mailComposerUpload'));
 
 global.MutationObserver = class {
     disconnect() {}

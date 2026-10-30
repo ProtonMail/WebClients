@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Label from '@proton/components/components/label/Label';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import type { MessageSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import type { RecipientType } from '@proton/mail-message/models/address';
@@ -14,7 +15,6 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 import AddressesCCButton from './AddressesCCButton';
 import AddressesInput from './AddressesInput';

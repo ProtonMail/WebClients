@@ -5,12 +5,12 @@ import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
 import Label from '@proton/components/components/label/Label';
+import type { MessageSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
 import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import type { MessageSendInfo } from '../../hooks/useSendInfo';
 import type { MessageChange } from './Composer';
 import ComposerExpirationTime from './ComposerExpirationTime';
 import ComposerShortDomainSpotlight from './ComposerShortDomainSpotlight';

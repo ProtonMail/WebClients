@@ -10,13 +10,18 @@ import { useHandler } from '@proton/hooks/useHandler';
 import { getHasAssistantStatus } from '@proton/llm/lib/helpers';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import { DRAG_ADDRESS_KEY } from '@proton/mail-composer/constants';
+import {
+    computeComposerStyle,
+    getComposerDimension,
+    shouldBeMaximized,
+} from '@proton/mail-composer/helpers/composerPositioning';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import clsx from '@proton/utils/clsx';
 
-import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
-import { computeComposerStyle, getComposerDimension, shouldBeMaximized } from '../../helpers/composerPositioning';
+import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../constants';
 import useComposerDrag from '../../hooks/composer/useComposerDrag';
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import type { ComposerAction } from './Composer';
