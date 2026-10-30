@@ -1,17 +1,9 @@
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Loader from '@proton/components/components/loader/Loader';
+import type { EncryptionStatusIconProps as Props } from '@proton/mail-composer/host/composerMessageHost';
 import { getSendIconHref, getStatusIconComponent } from '@proton/mail-message/helpers/message/icon';
-import type { StatusIcon } from '@proton/mail-message/models/crypto';
 import clsx from '@proton/utils/clsx';
-
-interface Props extends Partial<StatusIcon> {
-    loading?: boolean;
-    disabled?: boolean;
-    useTooltip?: boolean;
-    className?: string;
-    shouldHaveHref?: boolean;
-}
 
 const EncryptionStatusIcon = ({
     isEncrypted,

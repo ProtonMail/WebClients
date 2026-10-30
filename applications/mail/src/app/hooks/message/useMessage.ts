@@ -1,34 +1,15 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { allMessages, localID, messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
+import { useGetLocalID, useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
+import { messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { initialize } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
+import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import type { MailState } from '../../store/store';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
-
-export const useGetLocalID = () => {
-    const store = useMailStore();
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3CD77B
-    return useCallback((ID: string) => localID(store.getState(), { ID }), []);
-};
-
-export const useGetMessage = () => {
-    const store = useMailStore();
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-422E9C
-    return useCallback((ID: string) => messageByID(store.getState(), { ID }), []);
-};
-
-export const useGetAllMessages = () => {
-    const store = useMailStore();
-    return useCallback(() => {
-        return allMessages(store.getState());
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-B335AA
-    }, []);
-};
 
 interface ReturnValue {
     message: MessageState;

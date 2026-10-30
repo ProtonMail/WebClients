@@ -15,3 +15,7 @@ export type ContactsState = {
     recipientsLabelCache: SimpleMap<string>;
     groupsLabelCache: SimpleMap<string>;
 };
+
+export interface ContactsStoreState {
+    mailContacts: ContactsState;
+}

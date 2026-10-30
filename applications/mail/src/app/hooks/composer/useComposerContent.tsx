@@ -13,6 +13,7 @@ import { useHandler } from '@proton/hooks/useHandler';
 import { getHasAssistantStatus } from '@proton/llm/lib/helpers';
 import type { OpenedAssistant } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
@@ -25,6 +26,7 @@ import {
 import { isNewDraft } from '@proton/mail-message/helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import {
     removeInitialAttachments,
     updateDraftContent,
@@ -50,9 +52,6 @@ import {
     setMessageContentBeforeBlockquote,
 } from '../../helpers/composer/contentFromComposerMessage';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
-import { useInitializeMessage } from '../message/useInitializeMessage';
-import { useLoadEmbeddedImages, useLoadRemoteImages } from '../message/useLoadImages';
-import { useGetMessage, useMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
 import { useMessageSendInfo, useReloadSendInfo } from '../useSendInfo';
 import { useAttachments } from './useAttachments/useAttachments';
@@ -118,6 +117,7 @@ export const useComposerContent = (args: EditorArgs) => {
     });
 
     const newDraftImageLoadingStatus = useRef<'not-loaded' | 'loading' | 'loaded'>('not-loaded');
+    const { useLoadRemoteImages, useLoadEmbeddedImages, useMessage, useInitializeMessage } = useComposerMessageHost();
     const loadRemoteImages = useLoadRemoteImages(messageID);
     const loadEmbeddedImages = useLoadEmbeddedImages(messageID);
 

@@ -11,6 +11,8 @@ import { getPureAttachments } from '@proton/mail-message/helpers/attachment/atta
 import { isNetworkError } from '@proton/mail-message/helpers/errors';
 import { decryptMessage } from '@proton/mail-message/helpers/message/messageDecrypt';
 import { loadMessage } from '@proton/mail-message/helpers/message/messageRead';
+import { useGetAttachment } from '@proton/mail-message/hooks/attachments/useAttachment';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import { useBase64Cache } from '@proton/mail-message/hooks/useBase64Cache';
 import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
@@ -54,9 +56,7 @@ import {
     handleDispatchLoadRemoteImagesDirect,
 } from '../../store/messages/images/messagesImagesDispatch';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
-import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from './useGetMessageKeys';
-import { useGetMessage } from './useMessage';
 import { useMessageDecryptionErrorNotification } from './useMessageDecryptionErrorNotification';
 
 export const useInitializeMessage = () => {

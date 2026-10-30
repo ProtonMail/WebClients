@@ -3,12 +3,12 @@ import { act } from 'react';
 import type { PublicKeyReference } from '@protontech/crypto';
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import type { MessageVerification } from '@proton/mail-message/store/messages/messagesTypes';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { message } from '../../../../helpers/tests/pinKeys';
 import { tick } from '../../../../helpers/tests/render';
-import { useContactsMap } from '../../../../hooks/contact/useContacts';
 import ExtraAskResign from './ExtraAskResign';
 
 jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
@@ -24,7 +24,7 @@ jest.mock('@proton/app-context/useNotifications', () => ({
 }));
 jest.mock('@proton/account/userKeys/hooks', () => ({ useGetUserKeys: () => jest.fn() }));
 
-jest.mock('../../../../hooks/contact/useContacts');
+jest.mock('@proton/mail-message/hooks/contact/useContacts');
 const mockUseContactsMap = jest.mocked(useContactsMap);
 
 const getMessageVerification = (pinnedKeysVerified: boolean, pinnedKeys?: PublicKeyReference[]) => {

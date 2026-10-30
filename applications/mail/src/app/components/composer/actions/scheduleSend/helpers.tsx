@@ -1,6 +1,6 @@
 import { add, fromUnixTime, isToday, set } from 'date-fns';
 
-import { FUTURE_MESSAGES_BUFFER } from '../../../../constants';
+import { FUTURE_MESSAGES_BUFFER } from '@proton/mail-message/constants';
 
 /**
  * If now is between midnight and 8am (minus buffer)

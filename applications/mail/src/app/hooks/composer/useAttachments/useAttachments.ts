@@ -7,6 +7,12 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { useHandler } from '@proton/hooks/useHandler';
+import type {
+    AddAttachmentsParams,
+    AttachmentUpload,
+    PendingUpload,
+} from '@proton/mail-composer/attachments/uploadTypes';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import {
     createEmbeddedImageFromUpload,
     isEmbeddable,
@@ -14,6 +20,7 @@ import {
     readContentIDandLocation,
 } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '@proton/mail-message/helpers/message/messageImages';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import { addAttachment, addImageIdentifierAction } from '@proton/mail-message/store/attachments/attachmentsActions';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
@@ -32,12 +39,9 @@ import type { ExternalEditorActions } from '../../../components/composer/editor/
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR } from '../../../constants';
 import { checkSizeAndLength, upload } from '../../../helpers/attachment/attachmentUploader';
 import { useMailDispatch } from '../../../store/hooks';
-import { useGetMessageKeys } from '../../message/useGetMessageKeys';
-import { useGetMessage } from '../../message/useMessage';
 import { useLongLivingState } from '../../useLongLivingState';
 import { usePromise } from '../../usePromise';
 import { createDummyUpload, isAttachmentUpload, isDummyAttachmentUpload } from './helpers';
-import type { AddAttachmentsParams, AttachmentUpload, PendingUpload } from './interface';
 
 interface UseAttachmentsParameters {
     message: MessageState;
@@ -69,6 +73,7 @@ export const useAttachments = ({
     const { createNotification } = useNotifications();
     const auth = useAuthentication();
     const getMessage = useGetMessage();
+    const { useGetMessageKeys } = useComposerMessageHost();
     const getMessageKeys = useGetMessageKeys();
     const dispatch = useMailDispatch();
 

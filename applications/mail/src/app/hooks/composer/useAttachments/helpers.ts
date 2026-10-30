@@ -1,4 +1,8 @@
-import type { AttachmentUpload, DummyAttachmentUpload, PendingUpload } from './interface';
+import type {
+    AttachmentUpload,
+    DummyAttachmentUpload,
+    PendingUpload,
+} from '@proton/mail-composer/attachments/uploadTypes';
 
 export const createDummyUpload = (file: File) => ({
     file,

@@ -1,7 +1,9 @@
 import { useCallback } from 'react';
 
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { createEmbeddedImageFromUpload } from '@proton/mail-message/helpers/message/messageEmbeddeds';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import { sendModifications } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageEmbeddedImage, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -12,12 +14,11 @@ import { upload } from '../../helpers/attachment/attachmentUploader';
 import { attachPublicKey } from '../../helpers/message/messageAttachPublicKey';
 import { replaceDataUrl } from '../../helpers/message/messageDataUrl';
 import { useMailDispatch } from '../../store/hooks';
-import { useGetMessageKeys } from '../message/useGetMessageKeys';
-import { useGetMessage } from '../message/useMessage';
 
 export const useSendModifications = () => {
     const getMessage = useGetMessage();
     const dispatch = useMailDispatch();
+    const { useGetMessageKeys } = useComposerMessageHost();
     const getMessageKeys = useGetMessageKeys();
     const auth = useAuthentication();
 

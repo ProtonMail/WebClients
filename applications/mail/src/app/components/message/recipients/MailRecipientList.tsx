@@ -1,8 +1,8 @@
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 import type { MapStatusIcons } from '@proton/mail-message/models/crypto';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import RecipientsList from './RecipientsList';
 
 interface Props {

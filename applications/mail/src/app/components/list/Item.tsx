@@ -4,6 +4,7 @@ import { memo, useMemo, useRef, useState } from 'react';
 import ItemCheckbox from '@proton/components/containers/items/ItemCheckbox';
 import OneTimeCodeDetector from '@proton/mail-message/helpers/message/otp/OneTimeCodeDetector';
 import { shouldRunOtpExtraction } from '@proton/mail-message/helpers/message/otp/shouldRunOtpExtraction';
+import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { DAY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
@@ -20,7 +21,6 @@ import { filterAttachmentToPreview } from '../../helpers/attachment/attachmentTh
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
 import { getDate, isElementMessage, isUnread } from '../../helpers/elements';
 import { getDisplayRecipients } from '../../helpers/recipients';
-import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { useCategoryViewConversationPrefetch } from '../../hooks/conversation/useCategoryViewConversationPrefetch';
 import type { Element } from '../../models/element';
 import { useMailSelector } from '../../store/hooks';

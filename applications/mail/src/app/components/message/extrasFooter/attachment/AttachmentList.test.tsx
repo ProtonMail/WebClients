@@ -1,9 +1,10 @@
+import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentListTypes';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { clearAll } from '../../../../helpers/tests/helper';
 import { createEmbeddedImage, createMessageImages } from '../../../../helpers/tests/message';
 import { mailTestRender } from '../../../../helpers/tests/render';
-import AttachmentList, { AttachmentAction } from './AttachmentList';
+import AttachmentList from './AttachmentList';
 
 const localID = 'localID';
 const cid = 'cid';

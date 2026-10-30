@@ -16,13 +16,13 @@ import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { useGroupsWithContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
+import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 import type { RecipientGroup } from '@proton/mail-message/models/address';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { DRAG_ADDRESS_KEY } from '../../../constants';
-import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { useUpdateGroupSendInfo } from '../../../hooks/useSendInfo';
 import AddressesGroupModal from './AddressesGroupModal';

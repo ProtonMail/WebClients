@@ -1,5 +1,6 @@
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { findSender } from '@proton/mail-message/helpers/message/messageRecipients';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import type { MessageStateWithData, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { AUTO_SAVE_CONTACTS } from '@proton/shared/lib/mail/mailSettings';
@@ -8,7 +9,6 @@ import generateUID from '@proton/utils/generateUID';
 import { useOnCompose } from '../../../../../containers/ComposeProvider';
 import { useSendMessage } from '../../../../../hooks/composer/useSendMessage';
 import { useSendVerifications } from '../../../../../hooks/composer/useSendVerifications';
-import { useGetMessage } from '../../../../../hooks/message/useMessage';
 import { useSaveDraft } from '../../../../../hooks/message/useSaveDraft';
 import type { PropsWithNewsletterSubscription } from '../../interface';
 
