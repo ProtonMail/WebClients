@@ -6,13 +6,13 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import type { Cancellable } from '@proton/hooks/useHandler';
 import { useHandler } from '@proton/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import type { SavingDraftNotificationAction } from '@proton/mail-composer/components/notifications/SavingDraftNotification';
+import SavingDraftNotification from '@proton/mail-composer/components/notifications/SavingDraftNotification';
+import type { PromiseHandlers } from '@proton/mail-composer/hooks/usePromise';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import type { SavingDraftNotificationAction } from '../../components/notifications/SavingDraftNotification';
-import SavingDraftNotification from '../../components/notifications/SavingDraftNotification';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import type { PromiseHandlers } from '../usePromise';
 import { ComposeTypes } from './useCompose';
 
 export interface UseCloseHandlerParameters {

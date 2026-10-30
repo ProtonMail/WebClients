@@ -11,6 +11,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import type { MessageSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import type { RecipientGroup } from '@proton/mail-message/models/address';
 import { STATUS_ICONS_FILLS } from '@proton/mail-message/models/crypto';
@@ -19,8 +20,6 @@ import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encr
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
-
-import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 
 interface Props {
     recipientGroup: RecipientGroup;

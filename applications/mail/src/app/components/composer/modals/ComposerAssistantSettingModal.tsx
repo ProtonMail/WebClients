@@ -17,6 +17,7 @@ import { FeatureCode } from '@proton/features/interface';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
+import { useComposerAssistantProvider } from '@proton/mail-composer/components/assistant/provider/ComposerAssistantProvider';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -27,7 +28,6 @@ import serverImg from '@proton/styles/assets/img/illustrations/servers.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { useComposerAssistantProvider } from '../../assistant/provider/ComposerAssistantProvider';
 import ComposerInnerModal from './ComposerInnerModal';
 
 interface Props {

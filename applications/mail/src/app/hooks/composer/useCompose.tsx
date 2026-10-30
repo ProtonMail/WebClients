@@ -16,6 +16,8 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useHandler } from '@proton/hooks/useHandler';
+import { insertBodyIntoNewDraft } from '@proton/mail-composer/helpers/composer/contentFromComposerMessage';
+import { useDraft } from '@proton/mail-composer/hooks/useDraft';
 import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import type { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
@@ -34,9 +36,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
-import { insertBodyIntoNewDraft } from '../../helpers/composer/contentFromComposerMessage';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
-import { useDraft } from '../useDraft';
 
 export enum ComposeTypes {
     existingDraft = 0,

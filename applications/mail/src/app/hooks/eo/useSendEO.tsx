@@ -6,6 +6,10 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import SendingMessageNotification, {
+    createSendingMessageNotificationManager,
+} from '@proton/mail-composer/components/notifications/SendingMessageNotification';
+import { encryptFile } from '@proton/mail-composer/helpers/attachment/attachmentUploader';
 import { getDecryptedAttachment } from '@proton/mail-message/helpers/attachment/attachmentLoader';
 import { createBlob, readContentIDandLocation } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import { prepareExport } from '@proton/mail-message/helpers/message/messageExport';
@@ -15,11 +19,7 @@ import { blobURLtoBlob } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import SendingMessageNotification, {
-    createSendingMessageNotificationManager,
-} from '../../components/notifications/SendingMessageNotification';
 import { EO_MESSAGE_REDIRECT_PATH, MIN_DELAY_SENT_NOTIFICATION } from '../../constants';
-import { encryptFile } from '../../helpers/attachment/attachmentUploader';
 import { EOAddReply } from '../../store/eo/eoActions';
 import type { EOMessageReply } from '../../store/eo/eoType';
 import { useMailDispatch } from '../../store/hooks';
