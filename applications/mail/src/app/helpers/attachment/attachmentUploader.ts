@@ -2,6 +2,7 @@ import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto
 import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
+import type { Upload, UploadResult } from '@proton/mail-composer/attachments/uploadTypes';
 import { generateCid, isEmbeddable } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import type {
     MessageState,
@@ -27,7 +28,7 @@ import {
     STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
     UPLOAD_ATTACHMENT_ERROR_CODES,
 } from '../../constants';
-import type { RequestParams, Upload } from '../upload';
+import type { RequestParams } from '../upload';
 import { upload as uploadHelper } from '../upload';
 
 type UploadQueryResult = Promise<{
@@ -35,12 +36,6 @@ type UploadQueryResult = Promise<{
     Attachment: Attachment;
     Error?: string;
 }>;
-
-export interface UploadResult {
-    attachment: Attachment;
-    packets: Packets;
-    addressID: string; // The addressID used to encrypt packets
-}
 
 const getAttachementEncryptionFailedErrorMessage = () => {
     return c('Error').t`Failed to encrypt attachment. Please try again.`;

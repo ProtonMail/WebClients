@@ -4,11 +4,11 @@ import { logger } from '@protontech/logger';
 
 import type { Cancellable } from '@proton/hooks/useHandler';
 import { useHandler } from '@proton/hooks/useHandler';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { isDecryptionError, isNetworkError } from '@proton/mail-message/helpers/errors';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import { useDeleteDraft, useSaveDraft } from '../message/useSaveDraft';
 import { usePromise } from '../usePromise';
 
 interface AutoSaveArgs {
@@ -22,6 +22,8 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
     const pendingSave = usePromise<void>();
     const pauseDebouncer = useRef<boolean>(false);
     const lastCall = useRef<MessageState>();
+
+    const { useSaveDraft, useDeleteDraft } = useComposerMessageHost();
 
     const saveDraft = useSaveDraft({ onMessageAlreadySent });
     const deleteDraftSource = useDeleteDraft();

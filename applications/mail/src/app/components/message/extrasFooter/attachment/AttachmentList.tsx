@@ -7,9 +7,10 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentListTypes';
+import type { AttachmentListProps as Props } from '@proton/mail-composer/host/composerMessageHost';
 import { canPreviewAttachment } from '@proton/mail-message/helpers/attachment/attachment';
 import { getAttachmentCounts } from '@proton/mail-message/helpers/message/messages';
-import type { MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -17,28 +18,10 @@ import clsx from '@proton/utils/clsx';
 
 import { useDownload, useDownloadAll } from '../../../../hooks/attachments/useDownload';
 import { isDummyAttachmentUpload } from '../../../../hooks/composer/useAttachments/helpers';
-import type { PendingUpload } from '../../../../hooks/composer/useAttachments/interface';
 import { useHasScroll } from '../../../../hooks/useHasScroll';
 import AttachmentItem from './AttachmentItem';
 import type { AttachmentPreviewControls } from './AttachmentPreview';
 import AttachmentPreview from './AttachmentPreview';
-import { AttachmentAction } from './attachmentListTypes';
-
-export { AttachmentAction } from './attachmentListTypes';
-
-interface Props {
-    attachments: Attachment[];
-    pendingUploads?: PendingUpload[];
-    message: MessageStateWithData;
-    primaryAction: AttachmentAction;
-    secondaryAction: AttachmentAction;
-    collapsable: boolean;
-    onRemoveAttachment?: (attachment: Attachment) => Promise<void>;
-    onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
-    className?: string;
-    outsideKey?: OutsideKey;
-    noPaddingTop?: boolean;
-}
 
 const AttachmentList = ({
     attachments,

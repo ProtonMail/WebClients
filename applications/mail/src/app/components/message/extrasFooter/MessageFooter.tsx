@@ -1,7 +1,8 @@
+import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentListTypes';
 import type { MessageState, MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
-import AttachmentList, { AttachmentAction } from './attachment/AttachmentList';
+import AttachmentList from './attachment/AttachmentList';
 
 interface Props {
     message: MessageState;

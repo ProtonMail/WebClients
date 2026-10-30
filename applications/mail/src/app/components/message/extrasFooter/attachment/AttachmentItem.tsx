@@ -12,6 +12,9 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import type { AttachmentHandler } from '@proton/mail-composer/attachments/attachmentListTypes';
+import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentListTypes';
+import type { PendingUpload } from '@proton/mail-composer/attachments/uploadTypes';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -19,9 +22,6 @@ import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import { isAttachmentUpload } from '../../../../hooks/composer/useAttachments/helpers';
-import type { PendingUpload } from '../../../../hooks/composer/useAttachments/interface';
-import type { AttachmentHandler } from './attachmentListTypes';
-import { AttachmentAction } from './attachmentListTypes';
 
 const getActionTitle = (action: AttachmentAction, attachmentName: string) => {
     switch (action) {

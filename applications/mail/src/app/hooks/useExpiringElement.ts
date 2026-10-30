@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 
 import { getUnixTime } from 'date-fns';
 
-import { isElementConversation } from '../helpers/elements';
+import { useGetAllMessages, useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 
+import { isElementConversation } from '../helpers/elements';
 import type { Element } from '../models/element';
-import { useGetAllMessages, useGetMessage } from './message/useMessage';
 
 export const useExpiringElement = (element: Element, labelID: string) => {
     const getAllMessages = useGetAllMessages();

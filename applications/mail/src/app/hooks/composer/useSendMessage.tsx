@@ -6,7 +6,10 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { pickMessageInfosForSentry } from '@proton/mail-message/helpers/errors';
+import { useGetAttachment } from '@proton/mail-message/hooks/attachments/useAttachment';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import {
@@ -34,9 +37,6 @@ import { sendFormatter } from '../../helpers/send/sendFormatter';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { useMailDispatch } from '../../store/hooks';
-import { useGetAttachment } from '../attachments/useAttachment';
-import { useGetMessageKeys } from '../message/useGetMessageKeys';
-import { useGetMessage } from '../message/useMessage';
 import useDelaySendSeconds from '../useDelaySendSeconds';
 import type { OnCompose } from './useCompose';
 import { ComposeTypes } from './useCompose';
@@ -57,6 +57,7 @@ interface UseSendMessageParameters {
 
 export const useSendMessage = () => {
     const api = useApi();
+    const { useGetMessageKeys } = useComposerMessageHost();
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
     const dispatch = useMailDispatch();

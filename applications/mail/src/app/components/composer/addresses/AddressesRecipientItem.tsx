@@ -17,7 +17,9 @@ import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { getContactEmail } from '@proton/mail-message/helpers/message/messageRecipients';
+import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import { STATUS_ICONS_FILLS } from '@proton/mail-message/models/crypto';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -29,10 +31,8 @@ import noop from '@proton/utils/noop';
 
 import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useOnMailTo } from '../../../containers/ComposeProvider';
-import { useContactsMap } from '../../../hooks/contact/useContacts';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { useUpdateRecipientSendInfo } from '../../../hooks/useSendInfo';
-import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 
 interface Props {
     recipient: Recipient;
@@ -56,6 +56,7 @@ const AddressesRecipientItem = ({
     onDragOver,
     ...rest
 }: Props) => {
+    const { EncryptionStatusIcon } = useComposerMessageHost();
     const { createNotification } = useNotifications();
 
     const contactsMap = useContactsMap();

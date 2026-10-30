@@ -16,6 +16,7 @@ import { RightToLeftProvider } from '@proton/components/containers/rightToLeft/P
 import ThemeProvider from '@proton/components/containers/themes/ThemeProvider';
 import { PreventLeaveProvider } from '@proton/components/hooks/usePreventLeave';
 import useInstance from '@proton/hooks/useInstance';
+import { ComposerMessageHostProvider } from '@proton/mail-composer/host/composerMessageHost';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import createCache from '@proton/shared/lib/helpers/cache';
@@ -24,6 +25,7 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 import NotificationManagerInjector from './components/notification/NotificationManagerInjector';
 import config from './config';
 import EOContainer from './containers/eo/EOContainer';
+import { mailComposerMessageHost } from './containers/mailComposerMessageHost';
 import locales from './locales';
 import { setupStore } from './store/eo/eoStore';
 
@@ -67,7 +69,11 @@ const App = () => {
                                                                 locales={locales}
                                                             >
                                                                 <NotificationManagerInjector />
-                                                                <EOContainer />
+                                                                <ComposerMessageHostProvider
+                                                                    host={mailComposerMessageHost}
+                                                                >
+                                                                    <EOContainer />
+                                                                </ComposerMessageHostProvider>
                                                             </StandardPublicApp>
                                                         </CacheProvider>
                                                     </ApiProvider>

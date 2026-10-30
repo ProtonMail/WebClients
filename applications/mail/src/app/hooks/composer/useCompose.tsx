@@ -20,6 +20,7 @@ import { addComposerAction } from '@proton/mail-composer/store/composers/compose
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import type { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { isDirtyAddress } from '@proton/mail-message/helpers/addresses';
+import { useGetLocalID, useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import { openDraft, updateDraftContent } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageState, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -35,7 +36,6 @@ import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
 import { insertBodyIntoNewDraft } from '../../helpers/composer/contentFromComposerMessage';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
-import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
 
 export enum ComposeTypes {

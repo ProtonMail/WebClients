@@ -1,12 +1,12 @@
+import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+
 import {
     getRecipientGroupLabel as computeRecipientGroupLabel,
     getRecipientLabel as computeRecipientLabel,
     getRecipientLabelDetailed as computeRecipientLabelDetailed,
     recipientsToRecipientOrGroup,
-} from '@proton/mail-message/helpers/message/messageRecipients';
-import type { RecipientGroup, RecipientOrGroup } from '@proton/mail-message/models/address';
-import type { Recipient } from '@proton/shared/lib/interfaces/Address';
-
+} from '../../helpers/message/messageRecipients';
+import type { RecipientGroup, RecipientOrGroup } from '../../models/address';
 import {
     useContactGroupsMap,
     useContactsMap,

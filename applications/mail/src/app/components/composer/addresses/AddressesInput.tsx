@@ -11,6 +11,8 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import AddressesAutocomplete from '@proton/components/components/addressesAutocomplete/AddressesAutocomplete';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { getRecipientOrGroupKey, recipientsWithoutGroup } from '@proton/mail-message/helpers/message/messageRecipients';
+import { useContactsMap, useGroupsWithContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
+import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 import type { RecipientGroup } from '@proton/mail-message/models/address';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { rootFontSize, scrollIntoView } from '@proton/shared/lib/helpers/dom';
@@ -19,8 +21,6 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useContactsMap, useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { useAddressesInputDrag } from '../../../hooks/useAddressesInputDrag';
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import AddressesGroupItem from './AddressesGroupItem';

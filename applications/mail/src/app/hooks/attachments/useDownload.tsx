@@ -12,6 +12,8 @@ import {
     generateDownloadAll,
 } from '@proton/mail-message/helpers/attachment/attachmentDownloader';
 import { getAttachmentCounts } from '@proton/mail-message/helpers/message/messages';
+import { useGetAttachment } from '@proton/mail-message/hooks/attachments/useAttachment';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import type { MessageKeys, MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
@@ -22,8 +24,6 @@ import { getAttachments } from '@proton/shared/lib/mail/messages';
 import ConfirmDownloadAttachments from '../../components/message/extrasFooter/attachment/ConfirmDownloadAttachments';
 import { useMailDispatch } from '../../store/hooks';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
-import { useGetMessage } from '../message/useMessage';
-import { useGetAttachment } from './useAttachment';
 
 /**
  * Returns the keys from the sender of the message version in cache

@@ -1,3 +1,4 @@
+import type { Upload } from '@proton/mail-composer/attachments/uploadTypes';
 import { createErrorHandler } from '@proton/mail-message/helpers/dom';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
@@ -34,28 +35,6 @@ const defaultHeaders: HTTPHeaders = {
     Accept: 'application/vnd.protonmail.v1+json',
     ...appVersionHeaders,
 };
-
-export interface Upload<T> {
-    /**
-     * Open reference to the actual XHR, but other fields should be more practical
-     */
-    xhr: XMLHttpRequest;
-
-    /**
-     * Add listener to the upload progress events
-     */
-    addProgressListener: (listener: (event: ProgressEvent) => void) => void;
-
-    /**
-     * Executing ths function will abort the current upload
-     */
-    abort: () => void;
-
-    /**
-     * Promise resolved at the end of the upload and containing the JSON content returned by the server
-     */
-    resultPromise: Promise<T>;
-}
 
 export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<RequestParams>): Upload<T> => {
     const xhr = new XMLHttpRequest();

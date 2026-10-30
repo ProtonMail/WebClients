@@ -21,6 +21,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { findSender } from '@proton/mail-message/helpers/message/messageRecipients';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import type {
     MessageStateWithData,
     MessageWithOptionalBody,
@@ -40,7 +41,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import { useOnCompose } from '../../../../containers/ComposeProvider';
 import { useSendMessage } from '../../../../hooks/composer/useSendMessage';
 import { useSendVerifications } from '../../../../hooks/composer/useSendVerifications';
-import { useGetMessage } from '../../../../hooks/message/useMessage';
 import { useSaveDraft } from '../../../../hooks/message/useSaveDraft';
 import { selectLabelID } from '../../../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../../../store/hooks';

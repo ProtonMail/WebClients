@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { globalReset } from '../actions';
-import { refresh } from './contactsActions';
-import { mailContactsInitialState } from './contactsInitialState';
-import { refresh as refreshReducer, reset } from './contactsReducers';
+import { addContactsCases } from '@proton/mail-message/store/contacts/contactsCases';
+import { mailContactsInitialState } from '@proton/mail-message/store/contacts/contactsInitialState';
+import { reset } from '@proton/mail-message/store/contacts/contactsReducers';
 
-export { mailContactsInitialState } from './contactsInitialState';
+import { globalReset } from '../actions';
 
 const name = 'mailContacts';
 const contactsSlice = createSlice({
@@ -14,7 +13,7 @@ const contactsSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(globalReset, reset);
-        builder.addCase(refresh, refreshReducer);
+        addContactsCases(builder);
     },
 });
 
