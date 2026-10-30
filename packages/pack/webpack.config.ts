@@ -86,6 +86,7 @@ export const getConfig = (webpackOptions: WebpackOptions): Configuration => {
                         },
                         secure: false,
                         target: webpackOptions.api,
+                        ws: true,
                     },
                 ],
             }),
