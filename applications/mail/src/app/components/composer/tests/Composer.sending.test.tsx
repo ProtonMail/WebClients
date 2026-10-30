@@ -4,6 +4,8 @@ import loudRejection from 'loud-rejection';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
+import { addAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey } from '@proton/shared/lib/interfaces/Key';
@@ -32,8 +34,6 @@ import {
     decryptMessageMultipart,
     readSessionKey,
 } from '../../../helpers/tests/message';
-import { addAttachment } from '../../../store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import type { MailState } from '../../../store/store';
 import { ID, clickSend, getMessage, renderComposer, send } from './Composer.test.helpers';
 

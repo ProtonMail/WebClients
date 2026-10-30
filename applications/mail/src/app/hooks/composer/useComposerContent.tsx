@@ -25,6 +25,11 @@ import {
 import { isNewDraft } from '@proton/mail-message/helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
+import {
+    removeInitialAttachments,
+    updateDraftContent,
+} from '@proton/mail-message/store/messages/draft/messagesDraftActions';
+import { messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { sanitizeComposerReply } from '@proton/sanitize/purify';
@@ -45,8 +50,6 @@ import {
     setMessageContentBeforeBlockquote,
 } from '../../helpers/composer/contentFromComposerMessage';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
-import { removeInitialAttachments, updateDraftContent } from '../../store/messages/draft/messagesDraftActions';
-import { messageByID } from '../../store/messages/messagesSelectors';
 import { useInitializeMessage } from '../message/useInitializeMessage';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from '../message/useLoadImages';
 import { useGetMessage, useMessage } from '../message/useMessage';

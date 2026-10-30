@@ -3,6 +3,8 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
+import { addAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -17,8 +19,6 @@ import {
     setupCryptoProxyForTesting,
 } from '../../../helpers/tests/crypto';
 import { clearAll } from '../../../helpers/tests/helper';
-import { addAttachment } from '../../../store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import { AddressID, fromAddress, renderComposer } from './Composer.test.helpers';
 
 loudRejection();

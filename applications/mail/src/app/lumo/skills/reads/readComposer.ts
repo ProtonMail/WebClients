@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
+import { messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
 
-import { messageByID } from '../../../store/messages/messagesSelectors';
 import { writtenDraftBody } from '../../helpers/draftBody';
 import { DRAFT_KIND_FOR, DraftKind } from '../../helpers/draftKind';
 import { truncateBody } from '../../helpers/messages';

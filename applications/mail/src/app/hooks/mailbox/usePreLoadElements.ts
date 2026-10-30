@@ -5,6 +5,7 @@ import { unwrapResult } from '@reduxjs/toolkit';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { findMessageToExpand } from '@proton/mail-message/helpers/message/messageExpandable';
+import { initialize } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { isElementConversation } from '../../helpers/elements';
@@ -12,7 +13,6 @@ import type { Element } from '../../models/element';
 import { load } from '../../store/conversations/conversationsActions';
 import { allConversations } from '../../store/conversations/conversationsSelectors';
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
-import { initialize } from '../../store/messages/read/messagesReadActions';
 
 interface Props {
     elements: Element[];

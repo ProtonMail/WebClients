@@ -1,7 +1,10 @@
 import { useApi } from '@proton/app-context/useApi';
+import {
+    failedRemoteDirectLoading,
+    loadRemoteProxy,
+} from '@proton/mail-message/store/messages/images/messagesImagesActions';
 
 import { useMailDispatch } from '../../../store/hooks';
-import { failedRemoteDirectLoading, loadRemoteProxy } from '../../../store/messages/images/messagesImagesActions';
 import type { OnMessageImageLoadError } from '../interface';
 
 interface Props {

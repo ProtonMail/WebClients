@@ -2,6 +2,8 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import { isNetworkError } from '@proton/mail-message/helpers/errors';
+import type { LabelChanges, UnreadStatus } from '@proton/mail-message/helpers/labels';
+import { applyLabelChangesOnMessage } from '@proton/mail-message/helpers/labels';
 import { applyMarkAsChangesOnMessage } from '@proton/mail-message/helpers/message/messages';
 import type { MarkAsChanges } from '@proton/mail-message/helpers/message/messages';
 import type { Conversation } from '@proton/mail-message/models/conversation';
@@ -26,8 +28,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { mergeConversations } from '../../helpers/conversation';
 import { hasLabel, isElementConversation, parseLabelIDsInEvent } from '../../helpers/elements';
-import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
-import { applyLabelChangesOnConversation, applyLabelChangesOnMessage } from '../../helpers/labels';
+import { applyLabelChangesOnConversation } from '../../helpers/labels';
 import { applyMarkAsChangesOnConversation } from '../../hooks/optimistic/useOptimisticMarkAs';
 import type { Element } from '../../models/element';
 import type { EventUpdates, QueryParams, QueryResults, TaskRunningInfo } from '../elements/elementsTypes';

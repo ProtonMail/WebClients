@@ -1,6 +1,9 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
+import { deleteDraft } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
+import { expireMessages } from '@proton/mail-message/store/messages/expire/messagesExpireActions';
+
 import { globalReset } from '../actions';
 import {
     labelConversations,
@@ -12,8 +15,6 @@ import {
     unlabelConversations,
     unlabelMessages,
 } from '../mailbox/mailboxActions';
-import { deleteDraft } from '../messages/draft/messagesDraftActions';
-import { expireMessages } from '../messages/expire/messagesExpireActions';
 import { filterSubscriptionList } from '../newsletterSubscriptions/newsletterSubscriptionsActions';
 import {
     addESResults,

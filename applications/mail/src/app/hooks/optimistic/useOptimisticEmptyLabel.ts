@@ -1,6 +1,10 @@
 import { useHandler } from '@proton/hooks/useHandler';
 import type { ConversationState } from '@proton/mail-message/store/conversations/conversationsTypes';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import {
+    optimisticEmptyLabel as optimisticEmptyLabelMessage,
+    optimisticRestore as optimisticRestoreMessage,
+} from '@proton/mail-message/store/messages/optimistic/messagesOptimisticActions';
 import { conversationCountsActions, selectConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { messageCountsActions, selectMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';
@@ -17,10 +21,6 @@ import {
     optimisticRestoreEmptyLabel as optimisticRestoreEmptyLabelElements,
 } from '../../store/elements/elementsActions';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
-import {
-    optimisticEmptyLabel as optimisticEmptyLabelMessage,
-    optimisticRestore as optimisticRestoreMessage,
-} from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetAllConversations } from '../conversation/useConversation';
 
 export const useOptimisticEmptyLabel = () => {

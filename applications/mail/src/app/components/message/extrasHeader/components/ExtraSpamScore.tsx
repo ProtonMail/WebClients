@@ -9,6 +9,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
+import { optimisticUpdateFlag } from '@proton/mail-message/store/messages/optimistic/messagesOptimisticActions';
 import { markAsHam } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getBlogURL, getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -21,7 +22,6 @@ import {
 } from '@proton/shared/lib/mail/messages';
 
 import { useMailDispatch } from '../../../../store/hooks';
-import { optimisticUpdateFlag } from '../../../../store/messages/optimistic/messagesOptimisticActions';
 
 interface Props {
     message: MessageStateWithData;

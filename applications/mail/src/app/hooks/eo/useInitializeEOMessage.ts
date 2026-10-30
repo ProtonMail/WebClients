@@ -4,6 +4,7 @@ import type { PrivateKeyReference } from '@protontech/crypto';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 import { useApi } from '@proton/app-context/useApi';
+import { LOAD_RETRY_DELAY } from '@proton/mail-message/constants';
 import { isNetworkError } from '@proton/mail-message/helpers/errors';
 import { decryptMessage } from '@proton/mail-message/helpers/message/messageDecrypt';
 import { useBase64Cache } from '@proton/mail-message/hooks/useBase64Cache';
@@ -23,7 +24,7 @@ import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
-import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
+import { LOAD_RETRY_COUNT } from '../../constants';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
 import {

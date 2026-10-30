@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 
+import { messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
 import { selectCategories } from '@proton/mail/store/labels';
 import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales';
@@ -10,7 +11,6 @@ import { isSearch } from '../helpers/elementSearch';
 import { isElementConversation, isElementMessage } from '../helpers/elementTypeGuards';
 import { getStandardFolders } from '../helpers/labels';
 import { selectParams } from '../store/elements/elementsSelectors';
-import { messageByID } from '../store/messages/messagesSelectors';
 import type { MailState } from '../store/store';
 import { formatLocalDateTime } from './helpers/formatting';
 

@@ -1,9 +1,8 @@
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
-
-import { useMailDispatch } from '../../store/hooks';
+import { event } from '@proton/mail-message/store/messages/read/messagesReadActions';
 
 import type { Event } from '../../models/event';
-import { event } from '../../store/messages/read/messagesReadActions';
+import { useMailDispatch } from '../../store/hooks';
 import { useGetMessage } from '../message/useMessage';
 
 export const useMessagesEvents = () => {

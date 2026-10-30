@@ -1,19 +1,21 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { getAndVerifyAttachment } from '@proton/mail-message/helpers/attachment/attachmentLoader';
-import { createBlob } from '@proton/mail-message/helpers/message/messageEmbeddedBlob';
+import { getImage } from '@proton/shared/lib/api/images';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { encodeImageUri } from '@proton/shared/lib/helpers/image';
+
+import { getAndVerifyAttachment } from '../../../helpers/attachment/attachmentLoader';
+import { createBlob } from '../../../helpers/message/messageEmbeddedBlob';
 import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
     LoadFakeRemoteParams,
     LoadRemoteFromURLParams,
     LoadRemoteParams,
+    LoadRemoteProxyFromURLParams,
     LoadRemoteResults,
     MessageRemoteImage,
-} from '@proton/mail-message/store/messages/messagesTypes';
-import { getImage } from '@proton/shared/lib/api/images';
-import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
-import { encodeImageUri } from '@proton/shared/lib/helpers/image';
+} from '../messagesTypes';
 
 export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedParams>(
     'messages/embeddeds/load',
@@ -38,7 +40,7 @@ export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedPa
     }
 );
 
-const REMOTE_PROXY_CACHE = {} as { [url: string]: Promise<Response> };
+const REMOTE_PROXY_CACHE: { [url: string]: Promise<Response> | undefined } = {};
 
 export const loadRemoteProxy = createAsyncThunk<LoadRemoteResults, LoadRemoteParams>(
     'messages/remote/load/proxy',
@@ -88,7 +90,7 @@ export const loadRemoteProxy = createAsyncThunk<LoadRemoteResults, LoadRemotePar
     }
 );
 
-export const loadRemoteProxyFromURL = createAction<LoadRemoteFromURLParams>('messages/remote/load/proxy/url');
+export const loadRemoteProxyFromURL = createAction<LoadRemoteProxyFromURLParams>('messages/remote/load/proxy/url');
 
 export const loadFakeProxy = createAsyncThunk<(LoadRemoteResults | undefined)[] | undefined, LoadFakeRemoteParams>(
     'messages/remote/fake/proxy',

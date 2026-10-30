@@ -1,28 +1,24 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
-import {
-    insertBlobImages,
-    markEmbeddedAsLoaded,
-    replaceEmbeddedUrls,
-} from '@proton/mail-message/helpers/message/messageEmbeddeds';
-import { getEmbeddedImages, getRemoteImages, updateImages } from '@proton/mail-message/helpers/message/messageImages';
-import { loadBackgroundImages, loadImages, urlCreator } from '@proton/mail-message/helpers/message/messageRemotes';
+import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
+
+import { insertBlobImages, markEmbeddedAsLoaded, replaceEmbeddedUrls } from '../../../helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, getRemoteImages, updateImages } from '../../../helpers/message/messageImages';
+import { loadBackgroundImages, loadImages, urlCreator } from '../../../helpers/message/messageRemotes';
+import { getMessage } from '../helpers/messagesReducer';
 import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
     LoadFakeRemoteParams,
     LoadRemoteFromURLParams,
     LoadRemoteParams,
+    LoadRemoteProxyFromURLParams,
     LoadRemoteResults,
     MessageRemoteImage,
     MessageState,
     MessagesState,
-} from '@proton/mail-message/store/messages/messagesTypes';
-import { encodeImageUri, forgeImageURL } from '@proton/shared/lib/helpers/image';
-
-import config from '../../../config';
-import { getMessage } from '../helpers/messagesReducer';
+} from '../messagesTypes';
 
 // Get image refs in the state for those in data
 const getStateImage = <T extends { image: MessageRemoteImage }>(data: T, messageState: MessageState) => {
@@ -127,8 +123,11 @@ export const loadRemoteProxyFulFilled = (
     }
 };
 
-export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: PayloadAction<LoadRemoteFromURLParams>) => {
-    const { imagesToLoad, ID, uid } = action.payload;
+export const loadRemoteProxyFromURL = (
+    state: Draft<MessagesState>,
+    action: PayloadAction<LoadRemoteProxyFromURLParams>
+) => {
+    const { imagesToLoad, ID, uid, apiUrl } = action.payload;
 
     const messageState = getMessage(state, ID);
 
@@ -144,7 +143,7 @@ export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: Payl
                 if (imageToLoad.url && uid) {
                     const encodedImageUrl = encodeImageUri(imageToLoad.url);
                     const loadingURL = forgeImageURL({
-                        apiUrl: config.API_URL,
+                        apiUrl,
                         url: encodedImageUrl,
                         uid,
                         origin: window.location.origin,

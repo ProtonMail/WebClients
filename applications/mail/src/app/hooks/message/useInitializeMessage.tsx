@@ -6,11 +6,15 @@ import { useApi } from '@proton/app-context/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { LOAD_RETRY_DELAY } from '@proton/mail-message/constants';
 import { getPureAttachments } from '@proton/mail-message/helpers/attachment/attachment';
 import { isNetworkError } from '@proton/mail-message/helpers/errors';
 import { decryptMessage } from '@proton/mail-message/helpers/message/messageDecrypt';
 import { loadMessage } from '@proton/mail-message/helpers/message/messageRead';
 import { useBase64Cache } from '@proton/mail-message/hooks/useBase64Cache';
+import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
+import { loadEmbedded } from '@proton/mail-message/store/messages/images/messagesImagesActions';
 import type {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
@@ -22,6 +26,12 @@ import type {
     MessageStateWithDataFull,
     Preparation,
 } from '@proton/mail-message/store/messages/messagesTypes';
+import {
+    cleanUTMTrackers,
+    documentInitializeFulfilled,
+    documentInitializePending,
+    load,
+} from '@proton/mail-message/store/messages/read/messagesReadActions';
 import { prepareHtml, preparePlainText } from '@proton/mail-renderer/helpers/transforms/transforms';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -33,25 +43,16 @@ import { useFlag } from '@proton/unleash/useFlag';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
-import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
+import { LOAD_RETRY_COUNT } from '../../constants';
 import { isUnreadMessage } from '../../helpers/elements';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
-import { updateAttachment } from '../../store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../store/hooks';
-import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
 import {
     handleDispatchLoadFakeImagesProxy,
     handleDispatchLoadImagesProxy,
     handleDispatchLoadRemoteImagesDirect,
 } from '../../store/messages/images/messagesImagesDispatch';
-import {
-    cleanUTMTrackers,
-    documentInitializeFulfilled,
-    documentInitializePending,
-    load,
-} from '../../store/messages/read/messagesReadActions';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from './useGetMessageKeys';
