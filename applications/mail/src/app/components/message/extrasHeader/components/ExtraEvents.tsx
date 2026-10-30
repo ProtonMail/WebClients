@@ -19,6 +19,8 @@ import useLoading from '@proton/hooks/useLoading';
 import { formatDownload } from '@proton/mail-message/helpers/attachment/attachmentDownloader';
 import { isNetworkError } from '@proton/mail-message/helpers/errors';
 import { getMessageHasData } from '@proton/mail-message/helpers/message/messages';
+import { useGetAttachment } from '@proton/mail-message/hooks/attachments/useAttachment';
+import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import type { MessageErrors, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
@@ -58,8 +60,6 @@ import {
     getSupportedEventInvitation,
     parseVcalendar,
 } from '../../../../helpers/calendar/invite';
-import { useGetAttachment } from '../../../../hooks/attachments/useAttachment';
-import { useContactsMap } from '../../../../hooks/contact/useContacts';
 import { useGetMessageKeys } from '../../../../hooks/message/useGetMessageKeys';
 import { useMailDispatch } from '../../../../store/hooks';
 import ExtraEvent from './calendar/ExtraEvent';

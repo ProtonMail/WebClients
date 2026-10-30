@@ -2,10 +2,10 @@ import { act } from 'react';
 
 import { screen } from '@testing-library/react';
 
+import { refresh } from '@proton/mail-message/store/contacts/contactsActions';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { clearAll } from '../../../helpers/tests/helper';
-import { refresh } from '../../../store/contacts/contactsActions';
 import { setup } from './Message.test.helpers';
 
 describe('Message recipients rendering', () => {

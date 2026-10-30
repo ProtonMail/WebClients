@@ -11,6 +11,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import type { RecipientGroup } from '@proton/mail-message/models/address';
 import { STATUS_ICONS_FILLS } from '@proton/mail-message/models/crypto';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
@@ -20,7 +21,6 @@ import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
-import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 
 interface Props {
     recipientGroup: RecipientGroup;
@@ -40,6 +40,7 @@ interface RowProps {
 }
 
 const AddressesGroupModalRow = ({ contact, uid, isChecked, messageSendInfo, onChange }: RowProps) => {
+    const { EncryptionStatusIcon } = useComposerMessageHost();
     const id = `${uid}-${contact.ID}`;
     const sendInfo = messageSendInfo?.mapSendInfo[contact.Email];
     const icon = sendInfo?.sendIcon;

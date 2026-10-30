@@ -7881,12 +7881,18 @@ importers:
 
   packages/mail-composer:
     dependencies:
+      '@proton/mail-message':
+        specifier: workspace:^
+        version: link:../mail-message
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@19.3.0)(redux@5.0.1))(react@19.3.0)
+        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
     devDependencies:
       '@proton/jest-swc-preset':
         specifier: workspace:^
@@ -7906,6 +7912,9 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0
+      '@types/react':
+        specifier: 'catalog:'
+        version: 18.3.31
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -7939,6 +7948,9 @@ importers:
       '@proton/key-transparency':
         specifier: workspace:^
         version: link:../key-transparency
+      '@proton/react-redux-store':
+        specifier: workspace:^
+        version: link:../react-redux-store
       '@proton/redux-shared-store-types':
         specifier: workspace:^
         version: link:../redux-shared-store-types
@@ -7997,6 +8009,9 @@ importers:
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
+      '@testing-library/react-hooks':
+        specifier: 'catalog:'
+        version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -36695,18 +36710,6 @@ snapshots:
       react: 18.3.1
       react-redux: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
 
-  '@reduxjs/toolkit@2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@19.3.0)(redux@5.0.1))(react@19.3.0)':
-    dependencies:
-      '@standard-schema/spec': 1.1.0
-      '@standard-schema/utils': 0.3.0
-      immer: 11.1.21
-      redux: 5.0.1
-      redux-thunk: 3.1.0(redux@5.0.1)
-      reselect: 5.2.0
-    optionalDependencies:
-      react: 19.3.0
-      react-redux: 9.3.0(@types/react@18.3.31)(react@19.3.0)(redux@5.0.1)
-
   '@remix-run/router@1.23.4': {}
 
   '@ricky0123/vad-web@0.0.30':
@@ -48721,16 +48724,6 @@ snapshots:
       '@types/react': 18.3.31
       redux: 5.0.1
 
-  react-redux@9.3.0(@types/react@18.3.31)(react@19.3.0)(redux@5.0.1):
-    dependencies:
-      '@types/use-sync-external-store': 0.0.6
-      react: 19.3.0
-      use-sync-external-store: 1.6.0(react@19.3.0)
-    optionalDependencies:
-      '@types/react': 18.3.31
-      redux: 5.0.1
-    optional: true
-
   react-refresh@0.17.0: {}
 
   react-refresh@0.19.0: {}
@@ -51448,11 +51441,6 @@ snapshots:
   use-sync-external-store@1.6.0(react@18.3.1):
     dependencies:
       react: 18.3.1
-
-  use-sync-external-store@1.6.0(react@19.3.0):
-    dependencies:
-      react: 19.3.0
-    optional: true
 
   usehooks-ts@3.1.1(react@18.3.1):
     dependencies:

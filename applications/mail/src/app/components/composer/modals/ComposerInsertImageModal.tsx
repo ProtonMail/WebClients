@@ -6,10 +6,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
+import type { AddAttachmentsParams } from '@proton/mail-composer/attachments/uploadTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
-import type { AddAttachmentsParams } from '../../../hooks/composer/useAttachments/interface';
 import ComposerInnerModal from './ComposerInnerModal';
 
 interface Props {

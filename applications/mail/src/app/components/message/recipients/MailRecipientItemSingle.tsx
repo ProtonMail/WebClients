@@ -16,6 +16,8 @@ import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { getContactEmail } from '@proton/mail-message/helpers/message/messageRecipients';
+import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
+import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 import type { MapStatusIcons, StatusIcon } from '@proton/mail-message/models/crypto';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
@@ -29,8 +31,6 @@ import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
-import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import useBlockSender from '../../../hooks/useBlockSender';
 import type { Element } from '../../../models/element';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';

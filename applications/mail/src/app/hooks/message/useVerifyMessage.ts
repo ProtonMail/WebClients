@@ -9,6 +9,9 @@ import useGetVerificationPreferences from '@proton/components/hooks/useGetVerifi
 import { isNetworkError } from '@proton/mail-message/helpers/errors';
 import { verifyMessage } from '@proton/mail-message/helpers/message/messageDecrypt';
 import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '@proton/mail-message/helpers/message/messageKeys';
+import { useGetAttachment } from '@proton/mail-message/hooks/attachments/useAttachment';
+import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import type { MessageErrors, MessageStateWithDataFull } from '@proton/mail-message/store/messages/messagesTypes';
@@ -16,10 +19,7 @@ import { verificationComplete } from '@proton/mail-message/store/messages/read/m
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { useMailDispatch } from '../../store/hooks';
-import { useGetAttachment } from '../attachments/useAttachment';
-import { useContactsMap } from '../contact/useContacts';
 import { useGetMessageKeys } from './useGetMessageKeys';
-import { useGetMessage } from './useMessage';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();

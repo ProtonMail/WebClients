@@ -7,7 +7,9 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Label from '@proton/components/components/label/Label';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
+import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 import type { RecipientType } from '@proton/mail-message/models/address';
 import { recipientTypes } from '@proton/mail-message/models/address';
 import type { MapSendInfo } from '@proton/mail-message/models/crypto';
@@ -16,9 +18,7 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { useMailSelector } from '../../../store/hooks';
-import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import AddressesCCButton from './AddressesCCButton';
 
 interface Props {
@@ -38,6 +38,7 @@ const AddressesSummary = ({
     onFocus,
     handleContactModal,
 }: Props) => {
+    const { EncryptionStatusIcon } = useComposerMessageHost();
     const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
     const composer = useMailSelector((store) => selectComposer(store, composerID));
     const recipients = getRecipients(composer?.recipients);

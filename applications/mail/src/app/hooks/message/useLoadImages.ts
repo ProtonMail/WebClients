@@ -3,6 +3,8 @@ import { useCallback } from 'react';
 import { useApi } from '@proton/app-context/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { updateImages } from '@proton/mail-message/helpers/message/messageImages';
+import { useGetAttachment } from '@proton/mail-message/hooks/attachments/useAttachment';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import { loadEmbedded } from '@proton/mail-message/store/messages/images/messagesImagesActions';
@@ -23,9 +25,7 @@ import {
     handleDispatchLoadImagesProxy,
     handleDispatchLoadRemoteImagesDirect,
 } from '../../store/messages/images/messagesImagesDispatch';
-import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from './useGetMessageKeys';
-import { useGetMessage } from './useMessage';
 
 export const useLoadRemoteImages = (localID: string) => {
     const dispatch = useMailDispatch();

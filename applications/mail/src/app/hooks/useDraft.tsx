@@ -9,6 +9,7 @@ import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { cloneDraft, createNewDraft } from '@proton/mail-message/helpers/message/messageDraft';
 import { findSender } from '@proton/mail-message/helpers/message/messageRecipients';
+import { useGetAttachment } from '@proton/mail-message/hooks/attachments/useAttachment';
 import { createDraft as createDraftAction } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type {
     MessageState,
@@ -23,7 +24,6 @@ import generateUID from '@proton/utils/generateUID';
 
 import SendingFromDefaultAddressModal from '../components/composer/modals/SendingFromDefaultAddressModal';
 import { useMailDispatch } from '../store/hooks';
-import { useGetAttachment } from './attachments/useAttachment';
 
 const CACHE_KEY = 'Draft';
 

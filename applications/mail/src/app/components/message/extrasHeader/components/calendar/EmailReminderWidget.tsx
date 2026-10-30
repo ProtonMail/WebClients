@@ -24,6 +24,7 @@ import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import type { MessageErrors } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getEvent } from '@proton/shared/lib/api/calendars';
@@ -51,7 +52,6 @@ import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 
 import { getEventLocalStartEndDates } from '../../../../../helpers/calendar/emailReminder';
 import { getParticipantsList } from '../../../../../helpers/calendar/invite';
-import { useContactsMap } from '../../../../../hooks/contact/useContacts';
 import { EmailReminderWidgetSkeleton } from './EmailReminderWidgetSkeleton';
 import EventReminderBanner from './EventReminderBanner';
 import ExtraEventParticipants from './ExtraEventParticipants';

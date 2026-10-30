@@ -25,11 +25,6 @@ export const ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT = 'advancedsearchclose';
 export const SCHEDULED_MESSAGES_LIMIT = 1000;
 export const SCHEDULED_MAX_DATE_DAYS = 90;
 export const EXPIRATION_TIME_MAX_DAYS = 730; // 2 years
-/**
- * We can't schedule a message before this 120sec buffer
- * This can be applied to snoozed message and schedule send
- */
-export const FUTURE_MESSAGES_BUFFER = 120;
 
 export const MIN_DELAY_SENT_NOTIFICATION = 2500;
 

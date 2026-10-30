@@ -7,6 +7,8 @@ import {
     decryptAndVerify,
     getVerificationStatusFromKeys,
 } from '@proton/mail-message/helpers/attachment/attachmentLoader';
+import { useGetAttachment } from '@proton/mail-message/hooks/attachments/useAttachment';
+import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import { getAttachment as getAttachmentRequest, getAttachmentsMetadata } from '@proton/shared/lib/api/attachments';
@@ -16,9 +18,7 @@ import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
 import ConfirmDownloadAttachments from '../../components/message/extrasFooter/attachment/ConfirmDownloadAttachments';
 import { useMailDispatch } from '../../store/hooks';
-import { useContactsMap } from '../contact/useContacts';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
-import { useGetAttachment } from './useAttachment';
 
 /**
  * Get this value as an exact Number (max 53 bits)
