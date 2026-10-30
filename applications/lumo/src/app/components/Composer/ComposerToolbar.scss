@@ -1,0 +1,13 @@
+@use '../../styles/lumo-container-names' as *;
+@use '~@proton/styles/scss/lib' as *;
+
+.composer-toolbar {
+	container-type: inline-size;
+	container-name: $container-name-composer-toolbar;
+
+	&__action-label {
+		@container #{$container-name-composer-toolbar} (max-width: 300px) {
+			display: none;
+		}
+	}
+}

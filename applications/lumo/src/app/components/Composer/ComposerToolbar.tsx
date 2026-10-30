@@ -19,6 +19,8 @@ import { ToolMenuDropdown } from './ToolMenuDropdown';
 import { UploadMenuDropdown } from './UploadMenuDropdown';
 import type { FileUploadMode } from './hooks/useFileHandling';
 
+import './ComposerToolbar.scss';
+
 interface UploadMenuSectionProps {
     onFilesSelected: (files: File[]) => void;
     onBrowseDrive: () => void;
@@ -182,85 +184,88 @@ export const ComposerToolbar = ({
     }
 
     return (
-        <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
-            <div className="flex flex-row flex-nowrap items-center gap-1 pl-2">
-                <UploadMenuSection {...uploadSectionProps} />
-                {(isToolsFlagEnabled || isArtifactsViewFlagEnabled) && !isCreateImageMode && !isAgent && (
-                    <>
-                        <Button
-                            ref={anchorRef}
-                            className={clsx(
-                                'border-0 shrink-0 flex flex-row flex-nowrap gap-2 items-center py-1.5 rounded-full',
-                                showToolsMenu && 'is-active'
-                            )}
-                            onClick={handleToolsButtonClick}
-                            shape="ghost"
-                            size="small"
-                        >
-                            <LumoIcon name="SlidersHorizontal" />
-                            <span className="hidden sm:block text-sm">{c('collider_2025: Button').t`Tools`}</span>
-                        </Button>
-                        <ToolMenuDropdown
-                            isOpen={showToolsMenu}
-                            anchorRef={anchorRef}
-                            onClose={() => setShowToolsMenu(false)}
-                            onClickCreateImageOption={() => onCreateImageModeChange(true)}
-                            canUseAgents={canUseAgents}
-                            showArtifactNewLabel={showNewLabel}
-                        />
-                    </>
-                )}
-                {isCreateImageMode && (
+        <div className="composer-toolbar flex flex-row items-center justify-space-between column-gap-1.5 w-full px-2 py-1">
+            <UploadMenuSection {...uploadSectionProps} />
+            {(isToolsFlagEnabled || isArtifactsViewFlagEnabled) && !isCreateImageMode && !isAgent && (
+                <>
                     <Button
-                        onClick={() => onCreateImageModeChange(false)}
-                        className="border-none shrink-0 flex flex-row flex-nowrap gap-2 items-center color-primary py-1.5 rounded-full group-hover-opacity-container hover:color-primary"
+                        ref={anchorRef}
+                        className={clsx(
+                            'border-0 shrink-0 flex flex-row flex-nowrap gap-2 items-center px-2 py-1.5 rounded-full',
+                            showToolsMenu && 'is-active'
+                        )}
+                        onClick={handleToolsButtonClick}
                         shape="ghost"
                         size="small"
-                        title={c('collider_2025: Button').t`Create image`}
-                        aria-label={c('collider_2025: Button').t`Create image`}
+                        title={c('collider_2025: Button').t`Tools`}
+                        aria-label={c('collider_2025: Button').t`Tools`}
                     >
-                        <LumoIcon name="Palette" size={16} />
-                        <span className="text-sm hidden sm:block">{c('collider_2025: Button').t`Create image`}</span>
-                        <LumoIcon name="X" width={12} height={12} className="group-hover:opacity-100" />
+                        <LumoIcon name="SlidersHorizontal" />
+                        <span className="composer-toolbar__action-label text-sm">{c('collider_2025: Button')
+                            .t`Tools`}</span>
                     </Button>
-                )}
-            </div>
-            <div className="flex flex-row flex-nowrap items-center gap-2 mr-2">
-                <div
-                    className={clsx('flex flex-row flex-nowrap gap-2 color-hint', !isDictationV2Enabled && 'hidden')}
-                    id="voice-entry-mobile"
+                    <ToolMenuDropdown
+                        isOpen={showToolsMenu}
+                        anchorRef={anchorRef}
+                        onClose={() => setShowToolsMenu(false)}
+                        onClickCreateImageOption={() => onCreateImageModeChange(true)}
+                        canUseAgents={canUseAgents}
+                        showArtifactNewLabel={showNewLabel}
+                    />
+                </>
+            )}
+            {isCreateImageMode && (
+                <Button
+                    onClick={() => onCreateImageModeChange(false)}
+                    className="border-none shrink-0 flex flex-row flex-nowrap gap-2 items-center color-primary py-1.5 rounded-full group-hover-opacity-container hover:color-primary"
+                    shape="ghost"
+                    size="small"
+                    title={c('collider_2025: Button').t`Create image`}
+                    aria-label={c('collider_2025: Button').t`Create image`}
                 >
-                    <DictationControl
-                        isDictating={isDictating}
-                        isConnected={isDictationConnected}
-                        hasError={dictationError}
-                        getAudioLevel={getDictationAudioLevel}
-                        onCancel={handleCancelDictation}
-                        onAccept={handleAcceptDictation}
+                    <LumoIcon name="Palette" size={16} />
+                    <span className="composer-toolbar__action-label text-sm">{c('collider_2025: Button')
+                        .t`Create image`}</span>
+                    <LumoIcon name="X" width={12} height={12} className="group-hover:opacity-100" />
+                </Button>
+            )}
+
+            <div className="ml-auto" />
+
+            <div
+                className={clsx('flex flex-row flex-nowrap gap-2 color-hint', !isDictationV2Enabled && 'hidden')}
+                id="voice-entry-mobile"
+            >
+                <DictationControl
+                    isDictating={isDictating}
+                    isConnected={isDictationConnected}
+                    hasError={dictationError}
+                    getAudioLevel={getDictationAudioLevel}
+                    onCancel={handleCancelDictation}
+                    onAccept={handleAcceptDictation}
+                >
+                    <Button
+                        icon
+                        id="voice-entry-mobile-button"
+                        className="border-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center rounded-full"
+                        shape="ghost"
+                        size="small"
+                        onClick={handleVoiceEntryClick}
+                        title={c('collider_2025: Button').t`Dictate`}
+                        aria-label={c('collider_2025: Button').t`Dictate`}
                     >
-                        <Button
-                            icon
-                            id="voice-entry-mobile-button"
-                            className="border-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center"
-                            shape="ghost"
-                            size="small"
-                            onClick={handleVoiceEntryClick}
-                            title={c('collider_2025: Button').t`Dictate`}
-                            aria-label={c('collider_2025: Button').t`Dictate`}
-                        >
-                            <LumoIcon name="Mic" size={16} />
-                        </Button>
-                    </DictationControl>
-                </div>
-                {isImageToolsFlagEnabled &&
-                    !isAgent &&
-                    !isDictating &&
-                    (isCreateImageMode ? (
-                        <AspectRatioDropdown selectedRatio={selectedAspectRatio} onSelect={onAspectRatioChange} />
-                    ) : (
-                        <ModelModeDropdown />
-                    ))}
+                        <LumoIcon name="Mic" size={16} />
+                    </Button>
+                </DictationControl>
             </div>
+            {isImageToolsFlagEnabled &&
+                !isAgent &&
+                !isDictating &&
+                (isCreateImageMode ? (
+                    <AspectRatioDropdown selectedRatio={selectedAspectRatio} onSelect={onAspectRatioChange} />
+                ) : (
+                    <ModelModeDropdown />
+                ))}
         </div>
     );
 };

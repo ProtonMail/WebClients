@@ -91,7 +91,8 @@ export const ModelModeDropdown = () => {
                 onClick={() => setIsOpen((prev) => !prev)}
             >
                 <span className={clsx('font-medium', !isSmallScreen && 'hidden sm:block')}>
-                    {currentModelOption.getLabel()}
+                    <span className="model-mode-trigger__label">{currentModelOption.getLabel()}</span>
+                    <span className="model-mode-trigger__short-label">{currentModelOption.getShortLabel()}</span>
                 </span>
                 <LumoIcon name="ChevronDown" width={12} height={12} />
             </Button>
