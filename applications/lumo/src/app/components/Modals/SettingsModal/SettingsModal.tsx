@@ -37,6 +37,7 @@ import { LumoSettingsUpsellSection } from '../../../upsells/composed/LumoSetting
 import { sendArtifactCreationDefaultChangedEvent } from '../../../util/telemetry';
 import { getInitials } from '../../../util/username';
 import LumoThemeButton from '../../Buttons/LumoThemeButton';
+import { ChatSearchSelect } from '../../ChatSearchSelect/ChatSearchSelect';
 import { DictationLanguageSelect } from '../../Composer/DictationLanguageSelect';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBanner';
@@ -51,7 +52,7 @@ import MemoryPanel from './MemoryPanel';
 import MobileManageSubscriptionButton from './MobileManageSubscriptionButton';
 import PersonalizationPanel from './PersonalizationPanel';
 import { SearchIndexManagement } from './SearchIndex/SearchIndexManagement';
-import { SettingsSectionItem } from './SettingsSectionItem';
+import { SettingsGroup, SettingsSectionItem } from './SettingsSectionItem';
 
 import './SettingsModal.scss';
 
@@ -205,6 +206,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
         externalTools: isLumoToolingEnabled,
         artifactsView: isArtifactsViewEnabled,
         visualizationInstructions: isVisualizationInstructionsEnabled,
+        retrievalTools: isRetrievalToolsEnabled,
     } = useLumoFlags();
     const [user] = useUser();
     const userId = user?.ID;
@@ -214,6 +216,8 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const automaticWebSearch = lumoUserSettings.automaticWebSearch ?? false;
     const automaticArtifactCreation = lumoUserSettings.automaticArtifactCreation ?? true;
     const visualizationInstructionsEnabled = lumoUserSettings.isVisualizationInstructionsEnabled ?? true;
+    const conversationSearch = lumoUserSettings.conversationSearch ?? 'none';
+    const crossProjectSearchEnabled = lumoUserSettings.isCrossProjectSearchEnabled ?? false;
 
     // Index management state
     const conversations = useLumoSelector(selectConversations);
@@ -292,139 +296,197 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const showIndexingProgress = isDriveIndexing && driveIndexingStatus;
     const hasError = indexError || messageIndexingStatus.error;
 
+    const hasToolSettings = isLumoToolingEnabled || isArtifactsViewEnabled || isVisualizationInstructionsEnabled;
+
     return (
-        <div className="flex flex-column flex-nowrap *:min-size-auto gap-4">
-            {/* Project conversations in history toggle */}
-            <SettingsSectionItem
-                icon="Folder"
-                text={c('collider_2025: Title').t`Project chats in Recent`}
-                subtext={c('collider_2025: Description')
-                    .t`Show chats from your projects alongside other chats in the Recent section of the sidebar.`}
-                button={
-                    <Toggle
-                        id="show-project-conversations-toggle"
-                        checked={showProjectConversationsInHistory}
-                        onChange={() => {
-                            updateSettings({
-                                showProjectConversationsInHistory: !showProjectConversationsInHistory,
-                                _autoSave: true,
-                            });
-                        }}
-                    />
-                }
-            />
-
-            {/* Automatic web search toggle */}
-            {isLumoToolingEnabled && (
+        <div className="flex flex-column flex-nowrap *:min-size-auto gap-6">
+            <SettingsGroup title={c('collider_2025: Title').t`Chats`}>
                 <SettingsSectionItem
-                    icon="Globe"
-                    text={c('collider_2025: Title').t`Web search`}
-                    subtext={c('collider_2025: Description').t`Enable web search by default in new chats.`}
-                    button={
-                        <Toggle
-                            id="automatic-web-search-toggle"
-                            checked={automaticWebSearch}
-                            onChange={() => {
-                                updateSettings({
-                                    automaticWebSearch: !automaticWebSearch,
-                                    _autoSave: true,
-                                });
-                            }}
-                        />
-                    }
-                />
-            )}
-
-            {isArtifactsViewEnabled && (
-                <SettingsSectionItem
-                    icon="FileText"
-                    text={c('collider_2025: Title').t`Creations`}
+                    icon="Folder"
+                    text={c('collider_2025: Title').t`Project chats in Recent`}
                     subtext={c('collider_2025: Description')
-                        .t`Let ${LUMO_SHORT_APP_NAME} open documents, code, and web pages in a canvas beside your chat. Change this for individual chats in Tools.`}
+                        .t`Show chats from your projects alongside other chats in the Recent section of the sidebar.`}
                     button={
                         <Toggle
-                            id="automatic-artifact-creation-toggle"
-                            checked={automaticArtifactCreation}
+                            id="show-project-conversations-toggle"
+                            checked={showProjectConversationsInHistory}
                             onChange={() => {
-                                const enabled = !automaticArtifactCreation;
-                                sendArtifactCreationDefaultChangedEvent(enabled);
                                 updateSettings({
-                                    automaticArtifactCreation: enabled,
+                                    showProjectConversationsInHistory: !showProjectConversationsInHistory,
                                     _autoSave: true,
                                 });
                             }}
                         />
                     }
                 />
-            )}
-
-            {isVisualizationInstructionsEnabled && (
                 <SettingsSectionItem
-                    icon="ChartLine"
-                    text={c('collider_2025: Title').t`Data visualizations`}
-                    subtext={c('collider_2025: Description')
-                        .t`Let ${LUMO_SHORT_APP_NAME} generate charts when they help explain an answer.`}
+                    icon="Mic"
+                    text={c('collider_2025: Title').t`Dictation language`}
+                    subtext={c('collider_2025: Description').t`Choose the language you speak when using dictation.`}
                     button={
-                        <Toggle
-                            id="visualization-instructions-toggle"
-                            checked={visualizationInstructionsEnabled}
-                            onChange={() => {
-                                updateSettings({
-                                    isVisualizationInstructionsEnabled: !visualizationInstructionsEnabled,
-                                    _autoSave: true,
-                                });
-                            }}
-                        />
-                    }
-                />
-            )}
-
-            <SettingsSectionItem
-                icon="Mic"
-                text={c('collider_2025: Title').t`Dictation language`}
-                subtext={c('collider_2025: Description').t`Choose the language you speak when using dictation.`}
-                button={
-                    <div className="min-w-custom" style={{ '--min-w-custom': '10rem' }}>
-                        <DictationLanguageSelect
-                            id="dictation-language-select"
-                            value={dictationLanguage}
-                            onChange={setDictationLanguage}
-                        />
-                    </div>
-                }
-            />
-
-            {/* Search Index Management */}
-            <SettingsSectionItem
-                icon="Search"
-                text={c('collider_2025: Title').t`Search index`}
-                subtext={
-                    <div className="flex flex-column gap-1">
-                        <span className="color-weak">{c('collider_2025: Description')
-                            .t`Reset the encrypted search index for your chats and Drive files.`}</span>
-
-                        {showIndexingProgress && (
-                            <IndexingStatusBanner
-                                indexingStatus={driveIndexingStatus}
-                                isIndexing={isDriveIndexing}
-                                inline
+                        <div className="min-w-custom" style={{ '--min-w-custom': '10rem' }}>
+                            <DictationLanguageSelect
+                                id="dictation-language-select"
+                                value={dictationLanguage}
+                                onChange={setDictationLanguage}
                             />
-                        )}
-                        {hasError && (
-                            <span className="color-danger text-sm">{indexError || messageIndexingStatus.error}</span>
-                        )}
-                    </div>
-                }
-                button={<SearchIndexManagement onReindex={handleReindex} disabled={isIndexing || isDriveIndexing} />}
-            />
+                        </div>
+                    }
+                />
+            </SettingsGroup>
 
-            <SettingsSectionItem
-                icon="MessageSquare"
-                text={c('collider_2025: Title').t`Delete all data`}
-                subtext={c('collider_2025: Description')
-                    .t`Permanently delete your projects, chats, and saved memories. This cannot be undone.`}
-                button={<DeleteAllButton onClose={onClose} />}
-            />
+            {hasToolSettings && (
+                <SettingsGroup title={c('collider_2025: Title').t`Tools`}>
+                    {isLumoToolingEnabled && (
+                        <SettingsSectionItem
+                            icon="Globe"
+                            text={c('collider_2025: Title').t`Web search`}
+                            subtext={c('collider_2025: Description').t`Enable web search by default in new chats.`}
+                            button={
+                                <Toggle
+                                    id="automatic-web-search-toggle"
+                                    checked={automaticWebSearch}
+                                    onChange={() => {
+                                        updateSettings({
+                                            automaticWebSearch: !automaticWebSearch,
+                                            _autoSave: true,
+                                        });
+                                    }}
+                                />
+                            }
+                        />
+                    )}
+                    {isArtifactsViewEnabled && (
+                        <SettingsSectionItem
+                            icon="FileText"
+                            text={c('collider_2025: Title').t`Creations`}
+                            subtext={c('collider_2025: Description')
+                                .t`Let ${LUMO_SHORT_APP_NAME} open documents, code, and web pages in a canvas beside your chat. Change this for individual chats in Tools.`}
+                            button={
+                                <Toggle
+                                    id="automatic-artifact-creation-toggle"
+                                    checked={automaticArtifactCreation}
+                                    onChange={() => {
+                                        const enabled = !automaticArtifactCreation;
+                                        sendArtifactCreationDefaultChangedEvent(enabled);
+                                        updateSettings({
+                                            automaticArtifactCreation: enabled,
+                                            _autoSave: true,
+                                        });
+                                    }}
+                                />
+                            }
+                        />
+                    )}
+                    {isVisualizationInstructionsEnabled && (
+                        <SettingsSectionItem
+                            icon="ChartLine"
+                            text={c('collider_2025: Title').t`Data visualizations`}
+                            subtext={c('collider_2025: Description')
+                                .t`Let ${LUMO_SHORT_APP_NAME} generate charts when they help explain an answer.`}
+                            button={
+                                <Toggle
+                                    id="visualization-instructions-toggle"
+                                    checked={visualizationInstructionsEnabled}
+                                    onChange={() => {
+                                        updateSettings({
+                                            isVisualizationInstructionsEnabled: !visualizationInstructionsEnabled,
+                                            _autoSave: true,
+                                        });
+                                    }}
+                                />
+                            }
+                        />
+                    )}
+                </SettingsGroup>
+            )}
+
+            <SettingsGroup
+                title={c('collider_2025: Title').t`Search`}
+                description={
+                    isRetrievalToolsEnabled
+                        ? c('collider_2025: Description')
+                              .t`These are the defaults for all chats. Each project can set its own in its Search section.`
+                        : undefined
+                }
+            >
+                {isRetrievalToolsEnabled && (
+                    <>
+                        <SettingsSectionItem
+                            icon="MessagesSquare"
+                            text={c('collider_2025: Title').t`Search past chats`}
+                            subtext={c('collider_2025: Description')
+                                .t`Let ${LUMO_SHORT_APP_NAME} look up your other chats when they help answer. With "Same project only", chats in a project only search that project's chats.`}
+                            button={
+                                <div className="min-w-custom" style={{ '--min-w-custom': '10rem' }}>
+                                    <ChatSearchSelect
+                                        id="conversation-search-select"
+                                        context="settings"
+                                        value={conversationSearch}
+                                        onChange={(value) => {
+                                            updateSettings({ conversationSearch: value, _autoSave: true });
+                                        }}
+                                    />
+                                </div>
+                            }
+                        />
+                        <SettingsSectionItem
+                            icon="FolderSearch"
+                            text={c('collider_2025: Title').t`Search across projects`}
+                            subtext={c('collider_2025: Description')
+                                .t`Let ${LUMO_SHORT_APP_NAME} look up files from all your projects, not only the one a chat belongs to.`}
+                            button={
+                                <Toggle
+                                    id="cross-project-search-toggle"
+                                    checked={crossProjectSearchEnabled}
+                                    onChange={() => {
+                                        updateSettings({
+                                            isCrossProjectSearchEnabled: !crossProjectSearchEnabled,
+                                            _autoSave: true,
+                                        });
+                                    }}
+                                />
+                            }
+                        />
+                    </>
+                )}
+                <SettingsSectionItem
+                    icon="Search"
+                    text={c('collider_2025: Title').t`Search index`}
+                    subtext={
+                        <div className="flex flex-column gap-1">
+                            <span className="color-weak">{c('collider_2025: Description')
+                                .t`Reset the encrypted search index for your chats and Drive files.`}</span>
+
+                            {showIndexingProgress && (
+                                <IndexingStatusBanner
+                                    indexingStatus={driveIndexingStatus}
+                                    isIndexing={isDriveIndexing}
+                                    inline
+                                />
+                            )}
+                            {hasError && (
+                                <span className="color-danger text-sm">
+                                    {indexError || messageIndexingStatus.error}
+                                </span>
+                            )}
+                        </div>
+                    }
+                    button={
+                        <SearchIndexManagement onReindex={handleReindex} disabled={isIndexing || isDriveIndexing} />
+                    }
+                />
+            </SettingsGroup>
+
+            <SettingsGroup title={c('collider_2025: Title').t`Your data`}>
+                <SettingsSectionItem
+                    icon="MessageSquare"
+                    text={c('collider_2025: Title').t`Delete all data`}
+                    subtext={c('collider_2025: Description')
+                        .t`Permanently delete your projects, chats, and saved memories. This cannot be undone.`}
+                    button={<DeleteAllButton onClose={onClose} />}
+                />
+            </SettingsGroup>
         </div>
     );
 };

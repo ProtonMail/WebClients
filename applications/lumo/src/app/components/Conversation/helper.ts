@@ -9,6 +9,9 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { findAgentById } from '../../features/agents/registry';
+import { formatRetrievalInstructions } from '../../features/client-tools/retrievalTool/instructions';
+import type { RetrievalContext } from '../../features/client-tools/retrievalTool/retrievalTool';
+import { resolveSearchReach } from '../../features/client-tools/retrievalTool/searchReach';
 import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
 import { formatSkillCatalogue } from '../../features/skills/skillInvocation';
 import { USE_SKILL_TOOL_NAME } from '../../features/skills/skillTool';
@@ -21,8 +24,9 @@ import {
 } from '../../lib/rag';
 import { prepareTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
+import { collapseCompactedChain } from '../../llm/compaction';
 import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
-import { getContextLimitsForModelTier } from '../../llm/modelContextLimits';
+import { resolveRequestBudget } from '../../llm/requestBudget';
 import { selectMessagesByConversationId, selectRemoteIdFromLocal } from '../../redux/selectors';
 import { clearPendingAgent, clearPendingArtifactCreation } from '../../redux/slices/composerActions';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
@@ -76,7 +80,11 @@ import {
 } from '../../util/resolveProjectFiles';
 import { type ArtifactGenerationType, sendArtifactTurnContextEvent } from '../../util/telemetry';
 import { buildArtifactRegistry } from './artifact/artifactRegistry';
-import { type ConversationGenerationResult, type SkillToolHandles, runGenerationWithCompaction } from './compactionFlow';
+import {
+    type ConversationGenerationResult,
+    type SkillToolHandles,
+    runGenerationWithCompaction,
+} from './compactionFlow';
 import type { ConversationContext } from './conversationContext';
 
 const createLumoErrorHandler =
@@ -114,6 +122,68 @@ function storeRagAttachments(
     for (const id of toPushIds) {
         dispatch(pushAttachmentRequest({ id }));
     }
+}
+
+/**
+ * Knowledge lookup for one send: the tool scope and the system-turn instructions listing what
+ * the model can look up. Ghost chats and guests have no search index, so they only see their
+ * own chat, held in memory and never written to the index.
+ */
+async function resolveRetrieval({
+    enabled,
+    getState,
+    conversationId,
+    spaceId,
+    isProject,
+    userId,
+    chain,
+    messageMap,
+    chatAttachments,
+    hasLumoPlus,
+}: {
+    enabled: boolean;
+    getState: () => LumoState;
+    conversationId: ConversationId;
+    spaceId: SpaceId;
+    isProject: boolean;
+    userId?: string;
+    chain: Message[];
+    messageMap?: Record<MessageId, Message>;
+    chatAttachments: Attachment[];
+    hasLumoPlus: boolean;
+}): Promise<{ tools?: RetrievalContext; instructions?: string }> {
+    if (!enabled) {
+        return {};
+    }
+    const state = getState();
+    const isGhost = state.conversations[conversationId]?.ghost === true;
+    const { chatSearch, searchOtherSpaces } = resolveSearchReach(state.lumoUserSettings, state.spaces[spaceId]);
+    const index = userId && !isGhost ? SearchService.get(userId) : undefined;
+    const projectFiles = isProject && index ? await index.listDocuments({ spaceId }).catch(() => []) : [];
+    // Replaced by the chain actually sent once the compaction flow runs (see compactionFlow).
+    const visibleMessageIds = new Set(collapseCompactedChain(chain, messageMap).chain.map((message) => message.id));
+    return {
+        tools: {
+            conversationId,
+            spaceId,
+            isProject,
+            allowWideScopes: !!index,
+            chatSearch,
+            searchOtherSpaces,
+            hasLumoPlus,
+            getVisibleMessageIds: () => visibleMessageIds,
+            chatAttachments,
+            getState,
+            index,
+        },
+        instructions: formatRetrievalInstructions({
+            isProject,
+            allowWideScopes: !!index,
+            chatSearch,
+            searchOtherSpaces,
+            projectFiles,
+        }),
+    };
 }
 
 export type ApplicationContext = {
@@ -198,6 +268,8 @@ export type UiContext = {
     enableImageTools: boolean;
     enableAskUserQuestionsTool?: boolean;
     enableCreateScheduleTool?: boolean;
+    /** Let the model search files and chats with lookup tools instead of retrieving project files before sending. */
+    enableRetrievalTools?: boolean;
     enableReasoning?: boolean;
     modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15' | 'lumo-preview';
     generateTitle?: boolean;
@@ -699,10 +771,12 @@ export function executeConversationTurn({
                 ui.isEdit &&
                 ui.editOriginalContent !== undefined &&
                 normalizeRagQuery(ui.editOriginalContent) === normalizeRagQuery(userQuery);
+            const offerRetrieval = !!ui.enableRetrievalTools && !ui.isFromQueryParam;
 
-            // Retrieve relevant documents from the project search index (RAG)
+            // Retrieve relevant documents from the project search index (RAG), unless the model
+            // looks them up itself with the knowledge tools.
             const ragResult =
-                shouldSkipRagForExplicitFiles(m.content) || skipRagForCosmeticEdit
+                shouldSkipRagForExplicitFiles(m.content) || skipRagForCosmeticEdit || offerRetrieval
                     ? undefined
                     : await retrieveDocumentContextForProject(
                           userQuery,
@@ -810,7 +884,19 @@ export function executeConversationTurn({
                 artifactCreationSettingForRequest(getState(), conversationId, s)
             );
 
-            const contextLimits = getContextLimitsForModelTier(ui.modelTier);
+            const retrieval = await resolveRetrieval({
+                enabled: offerRetrieval,
+                getState,
+                conversationId,
+                spaceId,
+                isProject,
+                userId,
+                chain: updatedLinearChain,
+                messageMap: updatedC.messageMap,
+                chatAttachments: updatedC.allConversationAttachments,
+                hasLumoPlus: !!s.hasLumoPlus,
+            });
+
             const buildTurns = (chain: Message[]) =>
                 prepareTurns(
                     chain,
@@ -822,9 +908,10 @@ export function executeConversationTurn({
                     shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
                     artifactToolMode,
                     ui.isFromQueryParam,
-                    contextLimits,
+                    resolveRequestBudget({ modelTier: ui.modelTier, reasoning: ui.enableReasoning, conversationId }),
                     !!s.isArtifactSlidesFeatureEnabled,
-                    chainSkills.instructions
+                    chainSkills.instructions,
+                    retrieval.instructions
                 );
 
             generation = await dispatch(
@@ -856,6 +943,7 @@ export function executeConversationTurn({
                         enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
                         enableCreateScheduleTool: ui.enableCreateScheduleTool,
                         skillTools: chainSkills.tools,
+                        retrievalTools: retrieval.tools,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -941,18 +1029,20 @@ export function regenerateMessage({
             const lastUserMessage = messagesWithContext.filter((m) => m.role === Role.User).pop();
             const userQuery = lastUserMessage?.content || '';
             const conversationMessages = Object.values(conversationMessageMap ?? {});
-            const ragResult = shouldSkipRagForExplicitFiles(userQuery)
-                ? undefined
-                : await retrieveDocumentContextForProject(
-                      userQuery,
-                      c.spaceId,
-                      userId,
-                      isProject,
-                      messagesWithContext,
-                      allAttachments,
-                      new Set(),
-                      conversationMessages
-                  );
+            const offerRetrieval = !!ui.enableRetrievalTools;
+            const ragResult =
+                shouldSkipRagForExplicitFiles(userQuery) || offerRetrieval
+                    ? undefined
+                    : await retrieveDocumentContextForProject(
+                          userQuery,
+                          c.spaceId,
+                          userId,
+                          isProject,
+                          messagesWithContext,
+                          allAttachments,
+                          new Set(),
+                          conversationMessages
+                      );
 
             // If we have RAG attachments, store them and add to the user message
             let updatedMessagesWithContext = messagesWithContext;
@@ -1037,7 +1127,19 @@ export function regenerateMessage({
                 artifactCreationSettingForRequest(state, c.conversationId, s)
             );
 
-            const contextLimits = getContextLimitsForModelTier(ui.modelTier);
+            const retrieval = await resolveRetrieval({
+                enabled: offerRetrieval,
+                getState,
+                conversationId: c.conversationId!,
+                spaceId: c.spaceId!,
+                isProject,
+                userId,
+                chain: c.messageChain,
+                messageMap: conversationMessageMap,
+                chatAttachments: c.allConversationAttachments,
+                hasLumoPlus: !!s.hasLumoPlus,
+            });
+
             const buildTurns = (chain: Message[]) => {
                 const builtTurns = prepareTurns(
                     chain,
@@ -1049,9 +1151,14 @@ export function regenerateMessage({
                     shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
                     artifactToolMode,
                     false,
-                    contextLimits,
+                    resolveRequestBudget({
+                        modelTier: ui.modelTier,
+                        reasoning: ui.enableReasoning,
+                        conversationId: c.conversationId,
+                    }),
                     !!s.isArtifactSlidesFeatureEnabled,
-                    chainSkills.instructions
+                    chainSkills.instructions,
+                    retrieval.instructions
                 );
 
                 // Add retry instructions if provided
@@ -1097,6 +1204,7 @@ export function regenerateMessage({
                         enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
                         enableCreateScheduleTool: ui.enableCreateScheduleTool,
                         skillTools: chainSkills.tools,
+                        retrievalTools: retrieval.tools,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,
@@ -1178,19 +1286,22 @@ export function retrySendMessage({
         const userQuery = lastUserMessage?.content || '';
         const conversationMessages = Object.values(conversationMessageMap ?? {});
 
-        // Retrieve relevant documents from the project search index (RAG)
-        const ragResult = shouldSkipRagForExplicitFiles(r.lastUserMessage.content || '')
-            ? undefined
-            : await retrieveDocumentContextForProject(
-                  userQuery,
-                  c.spaceId,
-                  a.userId,
-                  p.isProject,
-                  linearChain,
-                  p.allAttachments || {},
-                  referencedFileNames,
-                  conversationMessages
-              );
+        // Retrieve relevant documents from the project search index (RAG), unless the model
+        // looks them up itself with the knowledge tools.
+        const offerRetrieval = !!ui.enableRetrievalTools;
+        const ragResult =
+            shouldSkipRagForExplicitFiles(r.lastUserMessage.content || '') || offerRetrieval
+                ? undefined
+                : await retrieveDocumentContextForProject(
+                      userQuery,
+                      c.spaceId,
+                      a.userId,
+                      p.isProject,
+                      linearChain,
+                      p.allAttachments || {},
+                      referencedFileNames,
+                      conversationMessages
+                  );
 
         // If we have RAG attachments, store them and add to the user message
         let updatedLinearChain = linearChain;
@@ -1282,7 +1393,19 @@ export function retrySendMessage({
             artifactCreationSettingForRequest(state, c.conversationId, s)
         );
 
-        const contextLimits = getContextLimitsForModelTier(ui.modelTier);
+        const retrieval = await resolveRetrieval({
+            enabled: offerRetrieval,
+            getState,
+            conversationId: c.conversationId,
+            spaceId: c.spaceId,
+            isProject: p.isProject,
+            userId: a.userId,
+            chain: updatedLinearChain,
+            messageMap: conversationMessageMap,
+            chatAttachments: c2.allConversationAttachments,
+            hasLumoPlus: !!s.hasLumoPlus,
+        });
+
         const buildTurns = (chain: Message[]) =>
             prepareTurns(
                 chain,
@@ -1294,9 +1417,14 @@ export function retrySendMessage({
                 shouldIncludeVisualizationInstructions(s, state.lumoUserSettings),
                 artifactToolMode,
                 false,
-                contextLimits,
+                resolveRequestBudget({
+                    modelTier: ui.modelTier,
+                    reasoning: ui.enableReasoning,
+                    conversationId: c.conversationId,
+                }),
                 !!s.isArtifactSlidesFeatureEnabled,
-                chainSkills.instructions
+                chainSkills.instructions,
+                retrieval.instructions
             );
 
         // Call the LLM
@@ -1327,6 +1455,7 @@ export function retrySendMessage({
                         enableAskUserQuestionsTool: ui.enableAskUserQuestionsTool,
                         enableCreateScheduleTool: ui.enableCreateScheduleTool,
                         skillTools: chainSkills.tools,
+                        retrievalTools: retrieval.tools,
                         config: {
                             enableU2LEncryption: ENABLE_U2L_ENCRYPTION,
                             enableSmoothing: ui.enableSmoothing,

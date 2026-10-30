@@ -85,13 +85,33 @@ type RankedAttachment = {
     order: number;
 };
 
+/** Smallest excerpt of a manually attached file worth sending; below this it is dropped. */
+const MIN_EXCERPT_TOKENS = 2_000;
+
 export type RequestContextFileSelection = {
-    /** Files that will be expanded into the next request, in chain order. */
+    /**
+     * Files that will be expanded into the next request, in chain order. Excerpted files
+     * appear with `tokenCount` set to their excerpt size.
+     */
     files: Attachment[];
     /** Ids of the non-image files above; `prepareTurns` sends exactly these. */
     sentDocumentIds: Set<string>;
     /** Files left out only because the file budget ran out, in the order they were shed. */
     droppedForBudget: Attachment[];
+    /** Manually attached files sent as an excerpt because they exceed the budget: id → excerpt tokens. */
+    excerptedForBudget: Map<string, number>;
+    /**
+     * Files sent as a card pointing at the lookup tools, and why: `size` when the file is over
+     * the inline limit, `budget` when it no longer fits the room left.
+     */
+    cardedFiles: Map<string, 'size' | 'budget'>;
+};
+
+/** Set when the lookup tools are registered: large files then travel as cards, read on demand. */
+export type FileCardPolicy = {
+    /** Larger documents are never sent in full, so one file cannot crowd out the rest. */
+    maxInlineTokens: number;
+    cardTokens: (attachment: Attachment) => number;
 };
 
 /**
@@ -99,13 +119,18 @@ export type RequestContextFileSelection = {
  * `fileTokenBudget`. Summarizing history cannot shrink file content, so without this a
  * single question carrying many auto-retrieved documents overflows the window no matter
  * how many times the conversation is compacted.
+ *
+ * Nothing is sent over budget: a file the user attached that does not fit is excerpted to
+ * the room left, and an auto-retrieved one is dropped. With `fileCards`, files over the inline
+ * limit or the room left are sent as cards instead.
  */
 export function resolveRequestContextFiles(
     effectiveChain: Message[],
     contextFilters: ContextFilter[],
     allAttachments: Record<string, Attachment>,
     extraAttachments: Attachment[] = [],
-    fileTokenBudget = Number.POSITIVE_INFINITY
+    fileTokenBudget = Number.POSITIVE_INFINITY,
+    fileCards?: FileCardPolicy
 ): RequestContextFileSelection {
     const collected = collectRequestContextFiles(effectiveChain, contextFilters, allAttachments, extraAttachments);
 
@@ -125,22 +150,53 @@ export function resolveRequestContextFiles(
 
     const keptDocumentIds = new Set<string>();
     const droppedForBudget: Attachment[] = [];
+    const excerptedForBudget = new Map<string, number>();
+    const cardedFiles = new Map<string, 'size' | 'budget'>();
+    const sentTokens = new Map<string, number>();
     let documentTokens = 0;
 
     for (const ranked of [...documents].sort(compareSheddingPriority)) {
         const tokens = countAttachmentToken(ranked.attachment);
-        if (keptDocumentIds.size > 0 && documentTokens + tokens > documentBudget) {
-            droppedForBudget.push(ranked.attachment);
+        const remaining = documentBudget - documentTokens;
+        const overInlineLimit = fileCards !== undefined && tokens > fileCards.maxInlineTokens;
+        if (fileCards && (overInlineLimit || tokens > remaining)) {
+            const cardTokens = fileCards.cardTokens(ranked.attachment);
+            if (cardTokens <= remaining) {
+                documentTokens += cardTokens;
+                keptDocumentIds.add(ranked.attachment.id);
+                cardedFiles.set(ranked.attachment.id, overInlineLimit ? 'size' : 'budget');
+                sentTokens.set(ranked.attachment.id, cardTokens);
+            } else {
+                droppedForBudget.push(ranked.attachment);
+            }
             continue;
         }
-        documentTokens += tokens;
-        keptDocumentIds.add(ranked.attachment.id);
+        if (tokens <= remaining) {
+            documentTokens += tokens;
+            keptDocumentIds.add(ranked.attachment.id);
+            continue;
+        }
+        if (!ranked.attachment.autoRetrieved && remaining >= MIN_EXCERPT_TOKENS) {
+            documentTokens += remaining;
+            keptDocumentIds.add(ranked.attachment.id);
+            excerptedForBudget.set(ranked.attachment.id, remaining);
+            sentTokens.set(ranked.attachment.id, remaining);
+            continue;
+        }
+        droppedForBudget.push(ranked.attachment);
     }
 
     return {
-        files: collected.filter((attachment) => isImageAttachment(attachment) || keptDocumentIds.has(attachment.id)),
+        files: collected
+            .filter((attachment) => isImageAttachment(attachment) || keptDocumentIds.has(attachment.id))
+            .map((attachment) => {
+                const tokens = sentTokens.get(attachment.id);
+                return tokens === undefined ? attachment : { ...attachment, tokenCount: tokens };
+            }),
         sentDocumentIds: keptDocumentIds,
         droppedForBudget,
+        excerptedForBudget,
+        cardedFiles,
     };
 }
 

@@ -144,6 +144,7 @@ export const useLumoActions = ({
         artifactsView: ffArtifactsView,
         artifactSlides: ffArtifactSlides,
         askUserQuestionsTool: ffAskUserQuestionsTool,
+        retrievalTools: ffRetrievalTools,
         createScheduleTool: ffCreateScheduleTool,
         schedules: ffSchedules,
         visualizationInstructions: ffVisualizationInstructions,
@@ -328,6 +329,7 @@ export const useLumoActions = ({
                 },
                 uiContext: {
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
+                    enableRetrievalTools: ffRetrievalTools,
                     enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool,
                     enableExternalTools,
                     enableImageTools,
@@ -427,6 +429,7 @@ export const useLumoActions = ({
                 },
                 uiContext: {
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
+                    enableRetrievalTools: ffRetrievalTools,
                     enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool,
                     // Pin the freshly created assistant message so the regenerated answer is the
                     // one displayed. Without this, the new assistant is added as a hidden sibling
@@ -501,6 +504,7 @@ export const useLumoActions = ({
                 },
                 uiContext: {
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
+                    enableRetrievalTools: ffRetrievalTools,
                     enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool,
                     isEdit: true,
                     editOriginalContent: originalMessage.content,
@@ -609,6 +613,7 @@ export const useLumoActions = ({
                 },
                 uiContext: {
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
+                    enableRetrievalTools: ffRetrievalTools,
                     enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool,
                     enableExternalTools,
                     enableImageTools,

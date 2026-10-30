@@ -59,6 +59,22 @@ export const SettingsSectionItem = ({
     );
 };
 
+interface SettingsGroupProps {
+    title: string;
+    description?: string;
+    children: React.ReactNode;
+}
+
+export const SettingsGroup = ({ title, description, children }: SettingsGroupProps) => (
+    <section className="flex flex-column flex-nowrap *:min-size-auto gap-2">
+        <div className="flex flex-column px-2">
+            <h3 className="m-0 text-sm text-semibold color-weak">{title}</h3>
+            {description && <p className="m-0 text-sm color-weak">{description}</p>}
+        </div>
+        {children}
+    </section>
+);
+
 interface SettingsSectionItemButtonProps extends SettingsSectionItemProps {
     onClick: () => void;
 }

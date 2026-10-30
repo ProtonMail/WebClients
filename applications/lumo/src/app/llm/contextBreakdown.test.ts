@@ -1,18 +1,18 @@
-import { PROACTIVE_COMPACTION_THRESHOLD_TOKENS } from './compaction';
 import { buildContextBreakdown } from './contextBreakdown';
+import { getReservedOutputTokens } from './requestBudget';
 
 const tokensOf = (b: ReturnType<typeof buildContextBreakdown>, id: string) =>
     b.segments.find((s) => s.id === id)!.tokens;
 
 describe('buildContextBreakdown', () => {
-    it('lays out conversation, files, reserved buffer and free space within the window', () => {
+    it('lays out conversation, files, reserved reply and free space within the window', () => {
         const b = buildContextBreakdown({ conversationTokens: 20_000, fileTokens: 20_000, maxTokens: 128_000 });
 
+        const expectedBuffer = getReservedOutputTokens(128_000, false);
         expect(b.overCapacity).toBe(false);
         expect(b.usedTokens).toBe(40_000);
-        expect(b.percentageUsed).toBe(31);
-        // Default reserved buffer is max - proactive threshold (~10% of the window).
-        const expectedBuffer = 128_000 - PROACTIVE_COMPACTION_THRESHOLD_TOKENS;
+        // Percentages are against the window minus the reply reservation.
+        expect(b.percentageUsed).toBe(Math.round((40_000 / (128_000 - expectedBuffer)) * 100));
         expect(tokensOf(b, 'buffer')).toBe(expectedBuffer);
         expect(tokensOf(b, 'free')).toBe(128_000 - 40_000 - expectedBuffer);
 
@@ -20,11 +20,23 @@ describe('buildContextBreakdown', () => {
         expect(Math.round(sum)).toBe(100);
     });
 
-    it('scales segments to fill the bar and zeroes buffer/free when over capacity', () => {
+    it('is over capacity once usage eats into the reserved reply', () => {
+        const b = buildContextBreakdown({
+            conversationTokens: 90_000,
+            fileTokens: 0,
+            maxTokens: 100_000,
+            bufferTokens: 20_000,
+        });
+
+        expect(b.overCapacity).toBe(true);
+        expect(b.percentageUsed).toBe(113);
+        expect(tokensOf(b, 'buffer')).toBe(10_000);
+    });
+
+    it('scales segments to fill the bar and zeroes buffer/free when over the whole window', () => {
         const b = buildContextBreakdown({ conversationTokens: 120_000, fileTokens: 80_000, maxTokens: 128_000 });
 
         expect(b.overCapacity).toBe(true);
-        expect(b.percentageUsed).toBe(156);
         expect(tokensOf(b, 'buffer')).toBe(0);
         expect(tokensOf(b, 'free')).toBe(0);
 

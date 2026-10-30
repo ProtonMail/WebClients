@@ -1,5 +1,9 @@
 import { Suspense, lazy, useCallback, useState } from 'react';
 
+import {
+    READ_KNOWLEDGE_TOOL_NAME,
+    SEARCH_KNOWLEDGE_TOOL_NAME,
+} from '../../../../../../features/client-tools/retrievalTool/schema';
 import { READ_SKILL_FILE_TOOL_NAME, USE_SKILL_TOOL_NAME } from '../../../../../../features/skills/skillTool';
 import type { NativeToolCallData } from '../../../../../../lib/toolCall/types';
 import { tryParseToolCall, tryParseToolCallAnnouncement } from '../../../../../../lib/toolCall/types';
@@ -172,7 +176,9 @@ function toToolCallStep(
         if (
             toolCallName === CREATE_ARTIFACT_TOOL_NAME ||
             toolCallName === USE_SKILL_TOOL_NAME ||
-            toolCallName === READ_SKILL_FILE_TOOL_NAME
+            toolCallName === READ_SKILL_FILE_TOOL_NAME ||
+            toolCallName === SEARCH_KNOWLEDGE_TOOL_NAME ||
+            toolCallName === READ_KNOWLEDGE_TOOL_NAME
         ) {
             return {
                 type: 'tool_call',

@@ -1,12 +1,8 @@
-import { DEFAULT_CONTEXT_WINDOW_CONFIG } from '../contextLimits';
-
-/** @deprecated Default-window only — production sends pass model-specific `targetTokens`. */
-export const COMPACTION_TARGET_TOKENS = DEFAULT_CONTEXT_WINDOW_CONFIG.compactionTargetTokens;
-
 /**
  * Recent conversation tail that is always preserved verbatim (never summarized),
  * expressed as an estimated-token budget. The most recent user question is always
- * kept regardless of this budget.
+ * kept regardless of this budget. Production sends pass the model-specific
+ * `RequestBudget.keepRecentTokens`; this is the default for direct engine calls.
  */
 export const KEEP_RECENT_TOKEN_BUDGET = 24_000;
 
@@ -27,16 +23,6 @@ export const MAX_SUMMARY_INPUT_TOKENS = 90_000;
 
 /** Flat token estimate per image turn (image bytes are not counted as text). */
 export const IMAGE_TOKEN_ESTIMATE = 2_000;
-
-/**
- * When the estimated request size (history + expanded attachments) reaches this
- * threshold, compaction runs pre-emptively *before* sending — rather than
- * waiting for the backend to reject an over-budget request. Set just below the
- * model window so we compact before hitting the wall.
- */
-/** @deprecated Default-window only — production sends use `getContextWindowConfigForModelTier`. */
-export const PROACTIVE_COMPACTION_THRESHOLD_TOKENS =
-    DEFAULT_CONTEXT_WINDOW_CONFIG.proactiveCompactionThresholdTokens;
 
 /** Refuse compaction that reclaims fewer than this many tokens — avoids duplicate boundary markers. */
 export const MIN_COMPACTION_TOKENS_RECLAIMED = 1_000;

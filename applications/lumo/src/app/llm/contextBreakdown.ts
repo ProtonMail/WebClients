@@ -1,4 +1,5 @@
-import { DEFAULT_CONTEXT_LIMITS, DEFAULT_CONTEXT_WINDOW_CONFIG } from './contextLimits';
+import { DEFAULT_CONTEXT_LIMITS } from './contextLimits';
+import { getReservedOutputTokens } from './requestBudget';
 
 export type ContextSegmentId = 'conversation' | 'tool_calls' | 'files' | 'buffer' | 'free';
 
@@ -14,8 +15,9 @@ export type ContextBreakdown = {
     usedTokens: number;
     bufferTokens: number;
     freeTokens: number;
-    /** Used / max as a percentage; may exceed 100 when over capacity. */
+    /** Used / (max − reserved reply) as a percentage; may exceed 100 when over capacity. */
     percentageUsed: number;
+    /** The next request no longer fits next to the reserved reply. */
     overCapacity: boolean;
     segments: ContextSegment[];
 };
@@ -24,18 +26,19 @@ export type ContextBreakdownInput = {
     conversationTokens: number;
     toolCallTokens?: number;
     fileTokens: number;
+    /** Model window, in the same units as the token counts. */
     maxTokens?: number;
-    /** Headroom reserved so auto-compaction can trigger before the hard limit. */
+    /** Room reserved for the reply; defaults to the non-reasoning reservation for `maxTokens`. */
     bufferTokens?: number;
-    /** Proactive compaction threshold for this model; defaults to the legacy fixed window. */
-    proactiveCompactionThresholdTokens?: number;
 };
 
 /**
  * Turn measured token contributions into a stacked-bar breakdown of the context
- * window: conversation history, tool calls, files, a reserved auto-compaction buffer,
- * and free space. When usage exceeds the window, segments are scaled to fill the bar
- * and `overCapacity` is set (buffer/free collapse to zero).
+ * window: conversation history, tool calls, files, the room reserved for the reply,
+ * and free space. Usage percentages are against the window minus that reservation —
+ * the same denominator as the context indicator — since a request that eats into it
+ * no longer fits. When usage exceeds the whole window, segments are scaled to fill
+ * the bar (buffer/free collapse to zero).
  */
 export function buildContextBreakdown({
     conversationTokens,
@@ -43,24 +46,24 @@ export function buildContextBreakdown({
     fileTokens,
     maxTokens = DEFAULT_CONTEXT_LIMITS.MAX_CONTEXT,
     bufferTokens,
-    proactiveCompactionThresholdTokens = DEFAULT_CONTEXT_WINDOW_CONFIG.proactiveCompactionThresholdTokens,
 }: ContextBreakdownInput): ContextBreakdown {
     const max = Math.max(1, maxTokens);
-    const reservedBuffer = Math.max(0, bufferTokens ?? max - proactiveCompactionThresholdTokens);
+    const reservedBuffer = Math.min(max - 1, Math.max(0, bufferTokens ?? getReservedOutputTokens(max, false)));
+    const usable = max - reservedBuffer;
 
     const conversation = Math.max(0, conversationTokens);
     const toolCalls = Math.max(0, toolCallTokens);
     const files = Math.max(0, fileTokens);
     const used = conversation + toolCalls + files;
-    const overCapacity = used > max;
+    const overWindow = used > max;
 
-    // Over capacity: scale the real segments to fill the bar; otherwise lay them
+    // Over the whole window: scale the real segments to fill the bar; otherwise lay them
     // out against the full window with the reserved buffer and remaining free space.
-    const denominator = overCapacity ? used : max;
+    const denominator = overWindow ? used : max;
     const toPercentage = (tokens: number) => (denominator > 0 ? (tokens / denominator) * 100 : 0);
 
-    const effectiveBuffer = overCapacity ? 0 : Math.min(reservedBuffer, Math.max(0, max - used));
-    const free = overCapacity ? 0 : Math.max(0, max - used - effectiveBuffer);
+    const effectiveBuffer = overWindow ? 0 : Math.min(reservedBuffer, Math.max(0, max - used));
+    const free = overWindow ? 0 : Math.max(0, max - used - effectiveBuffer);
 
     const segments: ContextSegment[] = [
         { id: 'conversation', tokens: conversation, percentage: toPercentage(conversation) },
@@ -75,8 +78,8 @@ export function buildContextBreakdown({
         usedTokens: used,
         bufferTokens: effectiveBuffer,
         freeTokens: free,
-        percentageUsed: Math.round((used / max) * 100),
-        overCapacity,
+        percentageUsed: Math.round((used / usable) * 100),
+        overCapacity: used > usable,
         segments,
     };
 }

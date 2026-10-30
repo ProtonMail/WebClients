@@ -1,3 +1,4 @@
+import type { ChatSearchReach } from '../../types';
 import type { FeatureFlag } from './featureFlags';
 import type { PersonalizationSettings } from './personalization';
 
@@ -62,6 +63,10 @@ export interface LumoUserSettings {
     isMemoryEnabled?: boolean;
     isMemoryAutoSaveEnabled?: boolean;
     isVisualizationInstructionsEnabled?: boolean;
+    /** Which other chats knowledge lookup may search. Projects can override it. */
+    conversationSearch?: ChatSearchReach;
+    /** Let knowledge lookup reach files of other projects. Projects can override it. */
+    isCrossProjectSearchEnabled?: boolean;
     memoryPromptsSinceAutoSave?: number;
     /** Newest chat prompt included in a scan that successfully persisted at least one memory. */
     memoryLastProcessedMessageAt?: string;

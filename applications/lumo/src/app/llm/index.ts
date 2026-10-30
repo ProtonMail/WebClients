@@ -1,6 +1,7 @@
 import { CREATE_ARTIFACT_TOOL_NAME } from '../components/Conversation/artifact/createArtifactTool';
 import type { ArtifactToolMode, ConversationContext } from '../components/Conversation/helper';
 import { decryptString } from '../crypto';
+import { fileCardPolicy, formatFileCard } from '../features/client-tools/retrievalTool/instructions';
 import type { AesGcmCryptoKey } from '../crypto/types';
 import {
     createImageAttachment,
@@ -52,9 +53,9 @@ import {
 } from './attachments';
 import { collapseCompactedChain } from './compaction';
 import type { ContextFilter } from './contextFilter';
-import type { ContextLimits } from './contextLimits';
-import { DEFAULT_CONTEXT_LIMITS, computeFileTokenBudget } from './contextLimits';
+import { excerptToTokens } from './excerpt';
 import { formatPersonalization } from './formatPersonalization';
+import { type RequestBudget, getFileTokenBudget, getRequestBudget } from './requestBudget';
 import { resolveRequestContextFiles } from './requestContextFiles';
 import { countTokens } from './tokenizer';
 import { calculateMessageContentTokens } from './utils';
@@ -178,9 +179,11 @@ export function prepareTurns(
     includeVisualizationInstructions = false,
     artifactToolMode: ArtifactToolMode = 'off',
     isFromQueryParam = false,
-    contextLimits: ContextLimits = DEFAULT_CONTEXT_LIMITS,
+    budget: RequestBudget = getRequestBudget(),
     artifactPresentationEnabled = false,
-    skillInstructions?: string
+    skillInstructions?: string,
+    /** Set when the knowledge lookup tools are registered; large files then become file cards. */
+    retrievalInstructions?: string
 ): Turn[] {
     // Step 0: Apply any context-compaction boundary. Summarized messages are
     // replaced by a single summary turn and dropped from the chain, so the model
@@ -199,13 +202,34 @@ export function prepareTurns(
     const attachmentLookup = Object.fromEntries(
         (c?.allConversationAttachments ?? []).map((attachment) => [attachment.id, attachment])
     );
-    const { sentDocumentIds } = resolveRequestContextFiles(
+    const { sentDocumentIds, excerptedForBudget, cardedFiles } = resolveRequestContextFiles(
         effectiveChain,
         c?.contextFilters ?? [],
         attachmentLookup,
         [],
-        computeFileTokenBudget(calculateMessageContentTokens(effectiveChain) + summaryTokens, contextLimits)
+        getFileTokenBudget(budget, calculateMessageContentTokens(effectiveChain) + summaryTokens),
+        retrievalInstructions ? fileCardPolicy : undefined
     );
+    const requestAttachments = (c?.allConversationAttachments ?? []).map((attachment) => {
+        if (!attachment.markdown) {
+            return attachment;
+        }
+        if (cardedFiles.has(attachment.id)) {
+            return { ...attachment, markdown: formatFileCard({ ...attachment, markdown: attachment.markdown }) };
+        }
+        const excerptTokens = excerptedForBudget.get(attachment.id);
+        if (excerptTokens === undefined) {
+            return attachment;
+        }
+        return {
+            ...attachment,
+            markdown: excerptToTokens(
+                attachment.markdown,
+                excerptTokens,
+                '\n\n[... middle of this file omitted: it does not fit in the context window ...]\n\n'
+            ),
+        };
+    });
 
     // Step 1: Transform messages to turns by iterating over blocks
     let turns: TurnInProgress[] = [];
@@ -267,7 +291,7 @@ export function prepareTurns(
             const lastTurn = turns[lastTurnIndex];
             const attachmentTurns = expandAttachmentsIntoTurns(
                 { ...lastTurn, attachments: filteredAttachments } as TurnInProgress,
-                c.allConversationAttachments,
+                requestAttachments,
                 keptImageIds,
                 omittedImageCount
             );
@@ -306,6 +330,9 @@ export function prepareTurns(
     }
     if (skillInstructions) {
         instructionParts.push(skillInstructions);
+    }
+    if (retrievalInstructions) {
+        instructionParts.push(retrievalInstructions);
     }
     if (personalizationPrompt) {
         instructionParts.push(`${PERSONALIZATION_MARKER} ${personalizationPrompt}]`);

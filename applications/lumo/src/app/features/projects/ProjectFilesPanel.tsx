@@ -20,6 +20,7 @@ import type { UploadProgress } from '../../components/Files/DriveBrowser/UploadP
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { MAX_ASSET_SIZE } from '../../constants';
 import { useFileProcessing } from '../../hooks';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useSearchService } from '../../hooks/useSearchService';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectAttachmentsBySpaceId, selectSpaceById } from '../../redux/selectors';
@@ -30,6 +31,7 @@ import { SpaceType } from '../../types';
 import { isSupportedFile } from '../../util/fileTypeHelpers';
 import { getAcceptAttributeString } from '../../util/filetypes';
 import { ProjectKnowledgeSection } from './ProjectKnowledgeSection';
+import { ProjectSearchSection } from './components/ProjectSearchSection';
 import { ConfirmRemoveAllFilesModal } from './modals/ConfirmRemoveAllFilesModal';
 import { CreateFolderModal } from './modals/CreateFolderModal';
 import { LinkDriveFolderModal } from './modals/LinkDriveFolderModal';
@@ -61,6 +63,7 @@ export const ProjectFilesPanel = ({
     const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbItem[]>([]);
     const searchService = useSearchService();
     const fileProcessingService = useFileProcessing();
+    const { retrievalTools: isRetrievalToolsEnabled } = useLumoFlags();
 
     const space = useLumoSelector(selectSpaceById(projectId));
     const spaceProject = space?.spaceType === SpaceType.Project ? (space satisfies ProjectSpace) : undefined;
@@ -247,6 +250,8 @@ export const ProjectFilesPanel = ({
                         )}
                     </div>
                 </div>
+
+                {isRetrievalToolsEnabled && spaceProject && <ProjectSearchSection space={spaceProject} />}
 
                 {/* Knowledge Section */}
                 <ProjectKnowledgeSection

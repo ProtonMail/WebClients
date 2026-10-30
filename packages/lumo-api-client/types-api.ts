@@ -248,6 +248,8 @@ export type LumoModelsListResponse = {
 };
 
 export type LumoStreamUsage = {
+    /** Real size of the prompt, used to calibrate local token estimates. */
+    prompt_tokens?: number;
     completion_tokens?: number;
     remaining_limits?: LumoRemainingLimits;
     applied_limit_category?: string;
