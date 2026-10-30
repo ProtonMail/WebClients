@@ -16,3 +16,9 @@ export const MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD = ['url', 'xlink:href', 'src', 'sv
 export const PLACEHOLDER_ID_PREFIX = 'placeholder';
 
 export const LOAD_RETRY_DELAY = 3000; // in ms => 3s
+
+/**
+ * We can't schedule a message before this 120sec buffer
+ * This can be applied to snoozed message and schedule send
+ */
+export const FUTURE_MESSAGES_BUFFER = 120;

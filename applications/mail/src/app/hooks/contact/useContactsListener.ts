@@ -5,6 +5,7 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { useContactEmails } from '@proton/account/contactEmails/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { refresh } from '@proton/mail-message/store/contacts/contactsActions';
 import { resetVerification } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { removeEmailsFromEncryptionPreferencesCache } from '@proton/mail/store/messages/encryptionPreferences';
@@ -15,7 +16,6 @@ import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { refresh } from '../../store/contacts/contactsActions';
 import { useMailDispatch } from '../../store/hooks';
 
 /**

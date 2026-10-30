@@ -2,12 +2,12 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useHandler } from '@proton/hooks/useHandler';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import { deleteDraft } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { useMailDispatch } from '../../store/hooks';
-import { useGetMessage } from '../message/useMessage';
-import { useCreateDraft } from '../message/useSaveDraft';
 
 interface UseHandleMessageAlreadySentParameters {
     modelMessage: MessageState;
@@ -16,6 +16,7 @@ interface UseHandleMessageAlreadySentParameters {
 
 export const useHandleMessageAlreadySent = ({ modelMessage, onClose }: UseHandleMessageAlreadySentParameters) => {
     const { createNotification } = useNotifications();
+    const { useCreateDraft } = useComposerMessageHost();
     const createDraft = useCreateDraft();
     const getMessage = useGetMessage();
     const dispatch = useMailDispatch();

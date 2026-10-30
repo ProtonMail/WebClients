@@ -21,6 +21,7 @@ import {
     getExpiresOnMessage,
     getMessageExpirationDate,
 } from '@proton/mail-message/helpers/message/messageExpirationTime';
+import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -43,7 +44,6 @@ import clsx from '@proton/utils/clsx';
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { hasLabel } from '../../../helpers/elements';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';

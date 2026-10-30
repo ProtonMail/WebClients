@@ -1,4 +1,5 @@
 import { useHandler } from '@proton/hooks/useHandler';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import type { ConversationState } from '@proton/mail-message/store/conversations/conversationsTypes';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import {
@@ -25,7 +26,6 @@ import {
 import { useMailDispatch, useMailStore } from '../../store/hooks';
 import { useGetAllConversations } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
-import { useGetMessage } from '../message/useMessage';
 
 const useOptimisticDelete = () => {
     const store = useMailStore();

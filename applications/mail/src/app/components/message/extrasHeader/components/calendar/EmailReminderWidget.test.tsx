@@ -26,6 +26,7 @@ import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { mockNotifications } from '@proton/components/testing/mockNotifications';
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
+import { refresh } from '@proton/mail-message/store/contacts/contactsActions';
 import { EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
@@ -39,7 +40,6 @@ import { mockApiWithServer } from '@proton/test-api/mockApiWithServer';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { authentication, getStoreWrapper, tick } from '../../../../../helpers/tests/render';
-import { refresh } from '../../../../../store/contacts/contactsActions';
 import EmailReminderWidget from './EmailReminderWidget';
 
 const server = setupServer(...(getHandlers() as RequestHandler[]));

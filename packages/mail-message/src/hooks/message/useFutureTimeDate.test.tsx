@@ -1,9 +1,9 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import { addDays, addHours, format, isSameDay, isSameHour, set, startOfTomorrow, startOfYesterday } from 'date-fns';
 
-import { getMinScheduleTime } from '@proton/mail-message/helpers/schedule';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import { getMinScheduleTime } from '../../helpers/schedule';
 import useFutureTimeDate from './useFutureTimeDate';
 
 describe('useFutureTimeDate', () => {

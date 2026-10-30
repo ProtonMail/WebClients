@@ -7,6 +7,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { getOnlineStatus } from '@proton/components/hooks/useOnline';
 import type { Cancellable } from '@proton/hooks/useHandler';
 import { useHandler } from '@proton/hooks/useHandler';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import type { MapSendInfo } from '@proton/mail-message/models/crypto';
 import { endSending, startSending } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
@@ -25,7 +26,6 @@ import {
 } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useMailDispatch } from '../../store/hooks';
-import { useGetMessage } from '../message/useMessage';
 import type { PromiseHandlers } from '../usePromise';
 import { ComposeTypes } from './useCompose';
 import { useSendMessage } from './useSendMessage';

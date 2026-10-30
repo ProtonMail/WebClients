@@ -1,5 +1,7 @@
+import type { Upload } from '@proton/mail-composer/attachments/uploadTypes';
+
 import { api } from '../tests/api';
-import type { RequestParams, Upload } from '../upload';
+import type { RequestParams } from '../upload';
 
 export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<RequestParams>): Upload<T> => {
     const asyncResolution = async () => {

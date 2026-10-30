@@ -11,6 +11,7 @@ import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncrypti
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getAddressFromEmail } from '@proton/mail-message/helpers/addresses';
 import { getSendStatusIcon } from '@proton/mail-message/helpers/message/icon';
+import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import type { MapSendInfo } from '@proton/mail-message/models/crypto';
 import { STATUS_ICONS_FILLS } from '@proton/mail-message/models/crypto';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
@@ -28,7 +29,6 @@ import noop from '@proton/utils/noop';
 
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
-import { useContactsMap } from './contact/useContacts';
 
 const getSignText = (n: number, contactNames: string, contactAddresses: string) => {
     return c('Info').ngettext(

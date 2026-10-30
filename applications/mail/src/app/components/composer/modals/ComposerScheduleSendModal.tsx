@@ -9,6 +9,7 @@ import TimeInput from '@proton/components/components/input/TimeInput';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import { getMinScheduleTime } from '@proton/mail-message/helpers/schedule';
+import useFutureTimeDate from '@proton/mail-message/hooks/message/useFutureTimeDate';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { updateScheduled } from '@proton/mail-message/store/messages/scheduled/scheduledActions';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -16,7 +17,6 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';
 
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
-import useFutureTimeDate from '../../../hooks/message/useFutureTimeDate';
 import { useMailDispatch } from '../../../store/hooks';
 import ComposerInnerModal from './ComposerInnerModal';
 import { getChooseDateText } from './helper';

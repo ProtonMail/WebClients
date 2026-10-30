@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getSender } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
-import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import ItemDate from '../list/ItemDate';
 import RecipientType from './recipients/RecipientType';
 import RecipientsDetails from './recipients/RecipientsDetails';

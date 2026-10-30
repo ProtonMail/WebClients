@@ -10,11 +10,11 @@ import TimeInput from '@proton/components/components/input/TimeInput';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
 import { getMinScheduleTime } from '@proton/mail-message/helpers/schedule';
+import useFutureTimeDate from '@proton/mail-message/hooks/message/useFutureTimeDate';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';
 
 import { getSnoozeTimeFromSnoozeLabel } from '../../../../helpers/snooze';
-import useFutureTimeDate from '../../../../hooks/message/useFutureTimeDate';
 import type { Element } from '../../../../models/element';
 import type { SNOOZE_DURATION } from '../constant';
 import SnoozeHeader from './SnoozeHeader';

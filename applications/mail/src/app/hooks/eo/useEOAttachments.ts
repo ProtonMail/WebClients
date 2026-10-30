@@ -5,6 +5,7 @@ import type { PublicKeyReference } from '@protontech/crypto';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useHandler } from '@proton/hooks/useHandler';
+import type { AddAttachmentsParams } from '@proton/mail-composer/attachments/uploadTypes';
 import {
     createEmbeddedImageFromUpload,
     isEmbeddable,
@@ -21,7 +22,6 @@ import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 import type { MessageChange } from '../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 import { checkSizeAndLength, uploadEO } from '../../helpers/attachment/attachmentUploader';
-import type { AddAttachmentsParams } from '../composer/useAttachments/interface';
 
 interface Props {
     message: MessageState;

@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import useAddAttendees from '@proton/components/containers/calendar/hooks/useAddAttendees';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useLoading from '@proton/hooks/useLoading';
+import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { getAttendeeEmail, withPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
@@ -23,7 +24,6 @@ import noop from '@proton/utils/noop';
 
 import type { InvitationModel } from '../../../../../helpers/calendar/invite';
 import { UPDATE_ACTION, getDisableButtons } from '../../../../../helpers/calendar/invite';
-import { useContactsMap } from '../../../../../hooks/contact/useContacts';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs' | 'invitationApi'>;

@@ -3,10 +3,10 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import ProtonBadgeType from '@proton/components/components/protonBadge/ProtonBadgeType';
+import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getUniqueElementSenders } from '../../helpers/recipients';
-import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import type { Element } from '../../models/element';
 
 interface Props {

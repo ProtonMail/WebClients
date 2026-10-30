@@ -5,10 +5,13 @@
     "license": "GPL-3.0",
     "sideEffects": false,
     "exports": {
+        "./attachments/attachmentListTypes": "./src/attachments/attachmentListTypes.ts",
+        "./attachments/uploadTypes": "./src/attachments/uploadTypes.ts",
+        "./host/composerMessageHost": "./src/host/composerMessageHost.tsx",
         "./store/composers/composerActions": "./src/store/composers/composerActions.ts",
         "./store/composers/composerSelectors": "./src/store/composers/composerSelectors.ts",
-        "./store/composers/composerTypes": "./src/store/composers/composerTypes.ts",
-        "./store/composers/composersSlice": "./src/store/composers/composersSlice.ts"
+        "./store/composers/composersSlice": "./src/store/composers/composersSlice.ts",
+        "./store/composers/composerTypes": "./src/store/composers/composerTypes.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
@@ -18,8 +21,10 @@
         "test:watch": "jest --watch --coverage=false"
     },
     "dependencies": {
+        "@proton/mail-message": "workspace:^",
         "@proton/shared": "workspace:^",
-        "@reduxjs/toolkit": "catalog:"
+        "@reduxjs/toolkit": "catalog:",
+        "react": "catalog:"
     },
     "devDependencies": {
         "@proton/jest-swc-preset": "workspace:^",
@@ -28,6 +33,7 @@
         "@testing-library/jest-dom": "catalog:",
         "@types/jest": "catalog:",
         "@types/node": "catalog:",
+        "@types/react": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
         "jest": "catalog:",

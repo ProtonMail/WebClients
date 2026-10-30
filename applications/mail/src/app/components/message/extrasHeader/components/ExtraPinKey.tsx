@@ -14,6 +14,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { getContactEmail } from '@proton/mail-message/helpers/message/messageRecipients';
+import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
@@ -28,7 +29,6 @@ import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { PROMPT_PIN } from '@proton/shared/lib/mail/mailSettings';
 import { isInternal } from '@proton/shared/lib/mail/messages';
 
-import { useContactsMap } from '../../../../hooks/contact/useContacts';
 import TrustPublicKeyModal from '../../modals/TrustPublicKeyModal';
 
 enum PROMPT_KEY_PINNING_TYPE {

@@ -2,13 +2,13 @@ import { screen } from '@testing-library/react';
 
 import { getRecipientLabel } from '@proton/mail-message/helpers/message/messageRecipients';
 import type { RecipientType } from '@proton/mail-message/models/address';
+import { refresh } from '@proton/mail-message/store/contacts/contactsActions';
 import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
 
 import { clearAll } from '../../../helpers/tests/helper';
 import { mailTestRender } from '../../../helpers/tests/render';
-import { refresh } from '../../../store/contacts/contactsActions';
 import { prepareMessage } from '../tests/Composer.test.helpers';
 import AddressesSummary from './AddressesSummary';
 
