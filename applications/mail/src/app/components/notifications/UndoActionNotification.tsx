@@ -2,8 +2,7 @@ import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import type { CustomNotificationProps } from '@proton/app-context/notifications/interfaces';
-
-import UndoNotificationButton from './UndoNotificationButton';
+import UndoNotificationButton from '@proton/mail-composer/components/notifications/UndoNotificationButton';
 
 interface Props extends CustomNotificationProps {
     children: ReactNode;

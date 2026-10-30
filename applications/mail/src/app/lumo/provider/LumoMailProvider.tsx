@@ -22,6 +22,7 @@ import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { LumoAgentDrawerValue } from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
 import LumoAgentDrawerContext from '@proton/llm/lib/lumoAgent/ui/lumoAgentDrawerContext';
 import useLumoAgent from '@proton/llm/lib/lumoAgent/ui/useLumoAgent';
+import { useDraftBodyWriters } from '@proton/mail-composer/containers/DraftBodyWriterProvider';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import type { RecipientType } from '@proton/mail-message/models/address';
@@ -50,7 +51,6 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { useDraftBodyWriters } from '../../containers/DraftBodyWriterProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';

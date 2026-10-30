@@ -4,11 +4,10 @@ import { useCallback, useEffect, useReducer, useRef } from 'react';
 import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 
+import type { ComposerDimension } from '@proton/mail-composer/helpers/composerPositioning';
+import { computeLeftPosition } from '@proton/mail-composer/helpers/composerPositioning';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
-
-import type { ComposerDimension } from '../../helpers/composerPositioning';
-import { computeLeftPosition } from '../../helpers/composerPositioning';
 
 interface Props {
     composerDimension: ComposerDimension;

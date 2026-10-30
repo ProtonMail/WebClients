@@ -9,6 +9,7 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import { upload } from '../attachment/attachmentUploader';
+import type { UploadConfig } from '../upload';
 
 interface KeyInfoForFile {
     fingerprint: string;
@@ -41,7 +42,12 @@ const fileFromKeyInfo = (message: MessageState, { publicKeyArmored, fingerprint 
 /**
  * Attaches the senders public key to the message
  */
-export const attachPublicKey = async (message: MessageStateWithData, messageKeys: PublicPrivateKey, uid: string) => {
+export const attachPublicKey = async (
+    message: MessageStateWithData,
+    messageKeys: PublicPrivateKey,
+    uid: string,
+    config: UploadConfig
+) => {
     const attachments = message.data?.Attachments || [];
 
     // we always attach the v4 key, since the v6-PQC one is not standardized (TODO update logic to attach the v6 key if it's standardized)
@@ -57,7 +63,7 @@ export const attachPublicKey = async (message: MessageStateWithData, messageKeys
         return undefined;
     }
 
-    const [uploadInfo] = upload([file], message, messageKeys, ATTACHMENT_DISPOSITION.ATTACHMENT, uid);
+    const [uploadInfo] = upload([file], message, messageKeys, ATTACHMENT_DISPOSITION.ATTACHMENT, uid, config);
     const uploadResult = await uploadInfo.resultPromise;
     return uploadResult.attachment;
 };

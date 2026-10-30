@@ -2,7 +2,6 @@ import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto
 import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
-import type { Upload, UploadResult } from '@proton/mail-composer/attachments/uploadTypes';
 import { generateCid, isEmbeddable } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import type {
     MessageState,
@@ -22,13 +21,14 @@ import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import generateUID from '@proton/utils/generateUID';
 
+import type { Upload, UploadResult } from '../../attachments/uploadTypes';
 import {
     ATTACHMENT_MAX_SIZE,
     MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
     STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
     UPLOAD_ATTACHMENT_ERROR_CODES,
 } from '../../constants';
-import type { RequestParams } from '../upload';
+import type { RequestParams, UploadConfig } from '../upload';
 import { upload as uploadHelper } from '../upload';
 
 type UploadQueryResult = Promise<{
@@ -80,6 +80,7 @@ const uploadFile = (
     messageKeys: PublicPrivateKey,
     inline: boolean,
     uid: string,
+    config: UploadConfig,
     cid = ''
 ): Upload<UploadResult> => {
     const uploadStartTime = Date.now();
@@ -105,7 +106,7 @@ const uploadFile = (
         }) as RequestParams;
     };
 
-    const upload = uploadHelper(uid, getParams()) as Upload<UploadQueryResult>;
+    const upload = uploadHelper(uid, getParams(), config) as Upload<UploadQueryResult>;
 
     const attachPackets = async () => {
         try {
@@ -211,11 +212,12 @@ export const upload = (
     messageKeys: PublicPrivateKey,
     action = ATTACHMENT_DISPOSITION.ATTACHMENT,
     uid: string,
+    config: UploadConfig,
     cid = ''
 ): Upload<UploadResult>[] => {
     return files.map((file) => {
         const inline = isEmbeddable(file.type) && action === ATTACHMENT_DISPOSITION.INLINE;
-        return uploadFile(file, message, messageKeys, inline, uid, cid);
+        return uploadFile(file, message, messageKeys, inline, uid, config, cid);
     });
 };
 

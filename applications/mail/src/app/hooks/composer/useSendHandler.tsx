@@ -7,6 +7,15 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { getOnlineStatus } from '@proton/components/hooks/useOnline';
 import type { Cancellable } from '@proton/hooks/useHandler';
 import { useHandler } from '@proton/hooks/useHandler';
+import type { SendingMessageNotificationManager } from '@proton/mail-composer/components/notifications/SendingMessageNotification';
+import SendingMessageNotification, {
+    createSendingMessageNotificationManager,
+} from '@proton/mail-composer/components/notifications/SendingMessageNotification';
+import {
+    MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
+    STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
+} from '@proton/mail-composer/constants';
+import type { PromiseHandlers } from '@proton/mail-composer/hooks/usePromise';
 import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import type { MapSendInfo } from '@proton/mail-message/models/crypto';
 import { endSending, startSending } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
@@ -14,19 +23,9 @@ import type { MessageState, MessageStateWithData } from '@proton/mail-message/st
 import { cancelScheduled } from '@proton/mail-message/store/messages/scheduled/scheduledActions';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import type { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
-import SendingMessageNotification, {
-    createSendingMessageNotificationManager,
-} from '../../components/notifications/SendingMessageNotification';
-import {
-    MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
-    SAVE_DRAFT_ERROR_CODES,
-    SEND_EMAIL_ERROR_CODES,
-    STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
-} from '../../constants';
+import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useMailDispatch } from '../../store/hooks';
-import type { PromiseHandlers } from '../usePromise';
 import { ComposeTypes } from './useCompose';
 import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';

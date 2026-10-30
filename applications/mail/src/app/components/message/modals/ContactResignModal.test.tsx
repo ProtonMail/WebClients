@@ -1,6 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import ContactResignModal from '@proton/mail-composer/components/message/modals/ContactResignModal';
 import { removeEmailsFromEncryptionPreferencesCache } from '@proton/mail/store/messages/encryptionPreferences';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import noop from '@proton/utils/noop';
@@ -10,7 +11,6 @@ import { getCompleteAddress } from '../../../helpers/tests/cache';
 import { getStoredUserKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/tests/crypto';
 import { contactID, receiver, sender, setupContactsForPinKeys } from '../../../helpers/tests/pinKeys';
 import { mailTestRender, tick } from '../../../helpers/tests/render';
-import ContactResignModal from './ContactResignModal';
 
 const contacts = [{ contactID: contactID }];
 const title = 'Contact Resign Modal title';

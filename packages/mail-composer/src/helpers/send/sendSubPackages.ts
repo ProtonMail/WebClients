@@ -50,6 +50,7 @@ const sendPMEncryptedOutside = async (message: Message, api: Api) => {
         };
     } catch (err: any) {
         // TODO: mark encryption failed
+        // eslint-disable-next-line no-console
         console.error(err);
         throw err;
     }

@@ -1,11 +1,11 @@
-import type { Upload } from '@proton/mail-composer/attachments/uploadTypes';
 import { createErrorHandler } from '@proton/mail-message/helpers/dom';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { serializeData } from '@proton/shared/lib/fetch/serialize';
 import createListeners from '@proton/shared/lib/helpers/listeners';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
-import config from '../config';
+import type { Upload } from '../attachments/uploadTypes';
 
 type HTTPHeaders = { [key: string]: string };
 
@@ -27,17 +27,21 @@ export interface RequestParams {
     data: { [key: string]: Blob | string | undefined };
 }
 
-const clientID = getClientID(config.APP_NAME);
-const appVersionHeaders = getAppVersionHeaders(clientID, config.APP_VERSION);
+export type UploadConfig = Pick<ProtonConfig, 'API_URL' | 'APP_NAME' | 'APP_VERSION'>;
 
-const defaultHeaders: HTTPHeaders = {
+const getDefaultHeaders = (config: UploadConfig): HTTPHeaders => ({
     'X-Requested-With': 'XMLHttpRequest',
     Accept: 'application/vnd.protonmail.v1+json',
-    ...appVersionHeaders,
-};
+    ...getAppVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION),
+});
 
-export const upload = <T>(uid: string, paramsPromise: RequestParams | Promise<RequestParams>): Upload<T> => {
+export const upload = <T>(
+    uid: string,
+    paramsPromise: RequestParams | Promise<RequestParams>,
+    config: UploadConfig
+): Upload<T> => {
     const xhr = new XMLHttpRequest();
+    const defaultHeaders = getDefaultHeaders(config);
     const { notify, subscribe } = createListeners<[ProgressEvent], void>();
     const authHeaders = getUIDHeaders(uid) as HTTPHeaders;
 

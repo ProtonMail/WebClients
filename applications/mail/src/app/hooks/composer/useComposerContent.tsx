@@ -13,6 +13,14 @@ import { useHandler } from '@proton/hooks/useHandler';
 import { getHasAssistantStatus } from '@proton/llm/lib/helpers';
 import type { OpenedAssistant } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
+import type { ComposerReturnType } from '@proton/mail-composer/helpers/composer/contentFromComposerMessage';
+import {
+    getAddressPlainTextSignature,
+    getMessageContentBeforeBlockquote,
+    setMessageContentBeforeBlockquote,
+} from '@proton/mail-composer/helpers/composer/contentFromComposerMessage';
+import { useComposerInnerModals } from '@proton/mail-composer/hooks/composer/useComposerInnerModals';
+import { useMessageSendInfo, useReloadSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
@@ -45,21 +53,13 @@ import noop from '@proton/utils/noop';
 
 import type { MessageChange } from '../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
-import type { ComposerReturnType } from '../../helpers/composer/contentFromComposerMessage';
-import {
-    getAddressPlainTextSignature,
-    getMessageContentBeforeBlockquote,
-    setMessageContentBeforeBlockquote,
-} from '../../helpers/composer/contentFromComposerMessage';
 import { useMailDispatch, useMailStore } from '../../store/hooks';
 import { useLongLivingState } from '../useLongLivingState';
-import { useMessageSendInfo, useReloadSendInfo } from '../useSendInfo';
 import { useAttachments } from './useAttachments/useAttachments';
 import { useAutoSave } from './useAutoSave';
 import { useCloseHandler } from './useCloseHandler';
 import { useComposerHost } from './useComposerHost';
 import { useComposerHotkeys } from './useComposerHotkeys';
-import { useComposerInnerModals } from './useComposerInnerModals';
 import { useDraftBodyWriterRegistration } from './useDraftBodyWriterRegistration';
 import { useDraftSenderVerification } from './useDraftSenderVerification';
 import { useHandleMessageAlreadySent } from './useHandleMessageAlreadySent';

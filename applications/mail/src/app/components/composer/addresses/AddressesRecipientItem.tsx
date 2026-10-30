@@ -17,6 +17,9 @@ import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { DRAG_ADDRESS_KEY } from '@proton/mail-composer/constants';
+import type { MessageSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
+import { useUpdateRecipientSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { getContactEmail } from '@proton/mail-message/helpers/message/messageRecipients';
 import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
@@ -29,10 +32,7 @@ import { inputToRecipient, recipientToInput } from '@proton/shared/lib/mail/reci
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useOnMailTo } from '../../../containers/ComposeProvider';
-import type { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { useUpdateRecipientSendInfo } from '../../../hooks/useSendInfo';
 
 interface Props {
     recipient: Recipient;
