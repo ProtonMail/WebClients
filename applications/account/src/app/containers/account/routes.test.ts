@@ -1,8 +1,10 @@
 import { getOrgPermissions } from '@proton/account/userPermissions';
+import { PLANS } from '@proton/payments/core/constants';
 import { createEntitlementResolverForOrgAndUser } from '@proton/payments/core/entitlements/resolver';
 import { hasCancellablePlan, isCancellableOnlyViaSupport } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { regularAdmin } from '@proton/payments/testing/regularAdmin';
 import { APPS } from '@proton/shared/lib/constants';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
@@ -18,7 +20,6 @@ jest.mock('@proton/payments/core/subscription/helpers', () => ({
     isCancellableOnlyViaSupport: jest.fn(),
     getHasVpnB2BPlan: jest.fn().mockReturnValue(false),
     isManagedExternally: jest.fn().mockReturnValue(false),
-    hasLumo: jest.fn().mockReturnValue(false),
 }));
 
 const mockedHasCancellablePlan = jest.mocked(hasCancellablePlan);
@@ -243,6 +244,43 @@ describe('getAccountAppRoutes', () => {
 
             expect(result.routes.password.available).toBe(false);
             expect(getTwoFaSubsection(result)?.available).toBe(false);
+        });
+    });
+
+    describe('YourPlanV2 subsection in the VPN dashboard', () => {
+        function getYourPlanAvailability(overrides: Overrides) {
+            return getAccountAppRoutes(
+                buildDefaultParams({
+                    app: APPS.PROTONVPN_SETTINGS,
+                    showVPNDashboard: true,
+                    showVPNDashboardVariant: 'B',
+                    ...overrides,
+                })
+            ).routes.vpnDashboardV2.subsections.find((subsection) => subsection.id === 'YourPlanV2')?.available;
+        }
+
+        it('is hidden in variant B for a free user', () => {
+            expect(getYourPlanAvailability({ user: buildUser({ isFree: true, isPaid: false }) })).toBe(false);
+        });
+
+        it('is shown in variant B for a user on the Lumo plan', () => {
+            const lumoSubscription = buildSubscription(PLANS.LUMO);
+            expect(
+                getYourPlanAvailability({
+                    user: buildUser({ isFree: false, isPaid: true }),
+                    subscription: lumoSubscription,
+                    allSubscriptions: [lumoSubscription],
+                })
+            ).toBe(true);
+        });
+
+        it('is shown in variant A for a free user', () => {
+            expect(
+                getYourPlanAvailability({
+                    user: buildUser({ isFree: true, isPaid: false }),
+                    showVPNDashboardVariant: 'A',
+                })
+            ).toBe(true);
         });
     });
 });
