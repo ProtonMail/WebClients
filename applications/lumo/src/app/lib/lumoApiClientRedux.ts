@@ -23,6 +23,8 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { buildArtifactRegistry } from '../components/Conversation/artifact/artifactRegistry';
 import type { ArtifactToolMode } from '../components/Conversation/helper';
+import { estimateTurnsTokens } from '../llm/compaction/tokens';
+import { recordOverflow, recordPromptUsage } from '../llm/requestCalibration';
 import { selectAttachmentsBySpaceId } from '../redux/selectors';
 import { addAttachment, pushAttachmentRequest } from '../redux/slices/core/attachments';
 import {
@@ -107,6 +109,15 @@ export function sendMessageWithRedux(
         // them locally to keep collision suffixes ((2), (3), …) correct within one response.
         const generatedImageFilenames = new Set<string>();
         let servingModelID: string | undefined;
+        // Local estimate of the first request, compared with the backend's real prompt size.
+        const estimatedTokens = estimateTurnsTokens(turns);
+        let failedPushPending = false;
+        const pushPendingFailure = () => {
+            if (failedPushPending && messageId) {
+                failedPushPending = false;
+                dispatch(pushMessageRequest({ id: messageId }));
+            }
+        };
         const requestedModel = formatRequestedModel(
             resolveChatModel(assistantOptions.modelTier ?? 'auto'),
             assistantOptions.enableReasoning ?? false
@@ -138,7 +149,7 @@ export function sendMessageWithRedux(
         };
 
         try {
-            return await client.callAssistant(api, turns, {
+            const result = await client.callAssistant(api, turns, {
                 ...assistantOptions,
                 featureFlags,
                 chunkCallback: async (message: GenerationResponseMessage) => {
@@ -345,6 +356,9 @@ export function sendMessageWithRedux(
                             if (messageId) {
                                 dispatch(recordMessageUsage(messageId, message.usage));
                             }
+                            if (conversationId && !sawToolActivity && message.usage?.prompt_tokens) {
+                                recordPromptUsage(conversationId, estimatedTokens, message.usage.prompt_tokens);
+                            }
                             break;
 
                         case 'server_tool_call':
@@ -434,7 +448,7 @@ export function sendMessageWithRedux(
                                 syncArtifactAssets(dispatch, conversationId, buildArtifactRegistry([completedMessage]));
                             }
                         }
-                        // Always persist the message to IDB, even if generation failed.
+                        // Persist the message to IDB, even if generation failed.
                         // Failed messages have content the user can see (partial response,
                         // reasoning tokens, tool calls). Without this push, the message
                         // exists only in Redux and vanishes on page reload.
@@ -442,7 +456,15 @@ export function sendMessageWithRedux(
                         // non-persisted message, the entire child subtree is at risk:
                         // persistence relies on the message tree topology, and a missing
                         // parent means children cannot be persisted either.
-                        dispatch(pushMessageRequest({ id: messageId }));
+                        // A failure is pushed once its cause is known (below): a context
+                        // overflow is left to the compaction flow, which retries into a new
+                        // message and persists or discards this attempt itself, since
+                        // messages cannot be deleted once persisted.
+                        if (status === 'failed') {
+                            failedPushPending = true;
+                        } else {
+                            dispatch(pushMessageRequest({ id: messageId }));
+                        }
 
                         // Handle final title processing
                         // translator: Default chat title when no usable title is available.
@@ -489,15 +511,27 @@ export function sendMessageWithRedux(
                     assistantOptions.recordRequestCallback?.(body);
                 },
             });
+            pushPendingFailure();
+            return result;
         } catch (error) {
-            // A plain HTTP 400 (no SSE stream) can also signal context overflow.
-            // Normalise it so the orchestration layer handles it like the SSE event.
-            if (!isContextLengthExceededError(error) && isContextLengthExceededApiError(error)) {
-                throw new ContextLengthExceededError({
-                    conversationId,
-                    upstreamMessage: getContextLengthExceededUpstreamMessage(error),
-                });
+            const overflow = isContextLengthExceededError(error)
+                ? error
+                : isContextLengthExceededApiError(error)
+                  ? // A plain HTTP 400 (no SSE stream) can also signal context overflow.
+                    // Normalise it so the orchestration layer handles it like the SSE event.
+                    new ContextLengthExceededError({
+                        conversationId,
+                        upstreamMessage: getContextLengthExceededUpstreamMessage(error),
+                    })
+                  : undefined;
+            if (overflow) {
+                // Later tool rounds grow past the estimated turns, so only the first one calibrates.
+                if (conversationId && !sawToolActivity) {
+                    recordOverflow(conversationId, estimatedTokens, overflow.upstreamMessage);
+                }
+                throw overflow;
             }
+            pushPendingFailure();
 
             // Preserve HTTP 429 so the action error handler can identify it as a
             // rate/tier limit. Converting a nested generic `error` code here would

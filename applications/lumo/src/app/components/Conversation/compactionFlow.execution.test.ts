@@ -5,6 +5,7 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import type { LumoDispatch } from '../../redux/store';
+import { markModelsUnavailable } from '../../services/modelsStore';
 import { runGenerationWithCompaction } from './compactionFlow';
 
 jest.mock('../../lib/lumoApiClientRedux', () => ({ sendMessageWithRedux: jest.fn() }));
@@ -40,6 +41,7 @@ function run(executor?: ClientToolExecutor, artifacts = true, retryAfterToolExec
     );
 }
 
+beforeAll(() => markModelsUnavailable());
 beforeEach(() => jest.clearAllMocks());
 
 it('composes artifacts with supplied connector permissions without creating a default desktop executor', async () => {

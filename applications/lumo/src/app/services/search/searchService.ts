@@ -36,6 +36,24 @@ const getProjectInfo = (spaceId: string, spaces: SpaceMap): { projectName?: stri
     return {};
 };
 
+/** Characters of a chunk's start looked for in the previous chunk to find their overlap. */
+const OVERLAP_PROBE_CHARS = 200;
+
+/** Rejoin chunks in order, dropping the text each chunk repeats from the end of the previous one. */
+function joinChunks(contents: string[]): string {
+    return contents.reduce((joined, next) => {
+        if (!joined) {
+            return next;
+        }
+        const start = joined.lastIndexOf(next.slice(0, OVERLAP_PROBE_CHARS));
+        const overlap = start >= 0 ? joined.slice(start) : '';
+        if (overlap && next.startsWith(overlap)) {
+            return joined + next.slice(overlap.length);
+        }
+        return `${joined}\n\n${next}`;
+    }, '');
+}
+
 export class SearchService {
     private static instances: Map<string, SearchService> = new Map();
     private static defaultInstance: SearchService | null = null;
@@ -1111,15 +1129,41 @@ export class SearchService {
         topK: number = 50,
         minScore: number = 0
     ): Promise<{ id: string; name: string; content: string; score: number; coverage: number }[]> {
-        if (this.userId && !this.manifestReady) {
-            this.manifestReady = this.loadManifest();
-        }
-        if (this.manifestReady) {
-            await this.manifestReady;
-        }
+        return this.rankDocumentsInScope(query, { spaceId }, topK, minScore);
+    }
 
+    /**
+     * Rank indexed documents for a query, keeping the best-scoring chunk of each document.
+     * `spaceId` restricts to one space; `documentIds` to specific documents (by parent id).
+     */
+    async rankDocumentsInScope(
+        query: string,
+        scope: { spaceId?: string; documentIds?: ReadonlySet<string> } = {},
+        topK: number = 50,
+        minScore: number = 0
+    ): Promise<
+        {
+            id: string;
+            name: string;
+            content: string;
+            score: number;
+            coverage: number;
+            spaceId?: string;
+            isChunk?: boolean;
+            chunkIndex?: number;
+            totalChunks?: number;
+            chunkTitle?: string;
+        }[]
+    > {
+        await this.ensureManifestReady();
+
+        const { spaceId, documentIds } = scope;
         const spaceDocuments = this.driveDocuments.filter(
-            (doc) => doc.spaceId === spaceId && doc.content && doc.content.length > 0
+            (doc) =>
+                doc.content &&
+                doc.content.length > 0 &&
+                (spaceId === undefined || doc.spaceId === spaceId) &&
+                (documentIds === undefined || documentIds.has(doc.parentDocumentId || doc.id))
         );
 
         if (spaceDocuments.length === 0) {
@@ -1158,6 +1202,7 @@ export class SearchService {
             content: doc.content,
             score,
             coverage,
+            spaceId: doc.spaceId,
             ...(doc.isChunk && {
                 isChunk: true,
                 chunkIndex: doc.chunkIndex,
@@ -1165,6 +1210,47 @@ export class SearchService {
                 chunkTitle: doc.chunkTitle,
             }),
         }));
+    }
+
+    /**
+     * Full text of an indexed document, rebuilt from its chunks when it was split.
+     */
+    async getIndexedDocument(
+        documentId: string
+    ): Promise<{ id: string; name: string; spaceId?: string; text: string } | undefined> {
+        await this.ensureManifestReady();
+        const whole = this.driveDocuments.find((doc) => doc.id === documentId && !doc.isChunk && doc.content);
+        if (whole) {
+            return { id: whole.id, name: whole.name, spaceId: whole.spaceId, text: whole.content };
+        }
+        const chunks = this.driveDocuments
+            .filter((doc) => doc.parentDocumentId === documentId && doc.isChunk && doc.content)
+            .sort((a, b) => (a.chunkIndex || 0) - (b.chunkIndex || 0));
+        if (chunks.length === 0) {
+            return undefined;
+        }
+        return {
+            id: documentId,
+            name: chunks[0]!.name,
+            spaceId: chunks[0]!.spaceId,
+            text: joinChunks(chunks.map((chunk) => chunk.content)),
+        };
+    }
+
+    /**
+     * Distinct indexed documents (chunks folded into their parent), optionally of one space.
+     * `folderPath` is the Drive folder, or "Uploaded Files" for uploads.
+     */
+    async listDocuments(scope: { spaceId?: string } = {}): Promise<{ id: string; name: string; folderPath?: string }[]> {
+        await this.ensureManifestReady();
+        const byId = new Map<string, { id: string; name: string; folderPath?: string }>();
+        for (const doc of this.driveDocuments) {
+            if ((scope.spaceId === undefined || doc.spaceId === scope.spaceId) && doc.content) {
+                const id = doc.parentDocumentId || doc.id;
+                byId.set(id, { id, name: doc.name, folderPath: doc.folderPath || undefined });
+            }
+        }
+        return Array.from(byId.values());
     }
 
     static formatRAGContext(

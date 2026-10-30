@@ -282,6 +282,81 @@ describe('prepareTurns — attachment content blocks', () => {
         expect(joined).toContain('Manual copy content');
         expect(joined).not.toContain('Auto-retrieved copy content');
     });
+
+    describe('a file too large for the request', () => {
+        const huge = {
+            id: 'huge',
+            filename: 'huge.pdf',
+            mimeType: 'application/pdf',
+            markdown: `# Chapter one\n${'lorem ipsum dolor sit amet '.repeat(60_000)}`,
+        } as unknown as Attachment;
+        const send = (retrievalInstructions?: string) =>
+            prepareTurns(
+                [makeUserMessage(['huge'])],
+                personalization,
+                undefined,
+                makeContext([huge]),
+                undefined,
+                undefined,
+                false,
+                'off',
+                false,
+                undefined,
+                false,
+                undefined,
+                retrievalInstructions
+            )
+                .map((t) => t.content)
+                .join('\n');
+
+        it('is excerpted when the lookup tools are off', () => {
+            const joined = send();
+
+            expect(joined).toContain('middle of this file omitted');
+            expect(joined).not.toContain('file_id "huge"');
+        });
+
+        it('becomes a file card pointing at the lookup tools when they are on', () => {
+            const joined = send('LOOKUP TOOLS INSTRUCTIONS');
+
+            expect(joined).toContain('file_id "huge"');
+            expect(joined).toContain('# Chapter one');
+            expect(joined).not.toContain('middle of this file omitted');
+            expect(joined).toContain('LOOKUP TOOLS INSTRUCTIONS');
+            expect(joined.length).toBeLessThan(20_000);
+        });
+    });
+
+    it('sends a file that fits but is over the inline limit as a card when the lookup tools are on', () => {
+        const medium = {
+            id: 'medium',
+            filename: 'medium.pdf',
+            mimeType: 'application/pdf',
+            markdown: 'lorem ipsum dolor sit amet '.repeat(3_000),
+        } as unknown as Attachment;
+        const send = (retrievalInstructions?: string) =>
+            prepareTurns(
+                [makeUserMessage(['medium'])],
+                personalization,
+                undefined,
+                makeContext([medium]),
+                undefined,
+                undefined,
+                false,
+                'off',
+                false,
+                undefined,
+                false,
+                undefined,
+                retrievalInstructions
+            )
+                .map((t) => t.content)
+                .join('\n');
+
+        expect(send()).toContain(medium.markdown!.trim());
+        expect(send('LOOKUP TOOLS INSTRUCTIONS')).toContain('file_id "medium"');
+        expect(send('LOOKUP TOOLS INSTRUCTIONS')).not.toContain(medium.markdown!.trim());
+    });
 });
 
 describe('prepareTurns — image attachments', () => {

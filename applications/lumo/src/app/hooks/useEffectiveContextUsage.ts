@@ -1,8 +1,11 @@
 import { useMemo } from 'react';
 
+import { useFlag } from '@proton/unleash/useFlag';
+
 import type { ContextFilter } from '../llm/contextFilter';
-import { estimateEffectiveContextUsage } from '../llm/effectiveContextUsage';
-import { useContextLimits } from './useContextLimits';
+import { type EffectiveContextUsage, estimateEffectiveContextUsage } from '../llm/effectiveContextUsage';
+import type { RequestBudget } from '../llm/requestBudget';
+import { useRequestBudget } from './useContextLimits';
 import { useLumoMemoSelector, useLumoSelector } from '../redux/hooks';
 import { selectAttachments, selectContextFilters, selectMessagesByConversationId } from '../redux/selectors';
 import type { Attachment, Message } from '../types';
@@ -12,24 +15,24 @@ function useConversationMessageMap(messageChain: Message[]) {
     return useLumoMemoSelector(selectMessagesByConversationId, [conversationId]);
 }
 
-export function useEffectiveContextUsage(messageChain: Message[], currentAttachments: Attachment[] = []) {
-    const allAttachments = useLumoSelector(selectAttachments);
-    const contextFilters = useLumoSelector(selectContextFilters);
-    const messageMap = useConversationMessageMap(messageChain);
-    const contextLimits = useContextLimits();
+/**
+ * Express the local estimate in real tokens using the conversation's calibration, so the
+ * indicator reads against the real window like the send path does.
+ */
+function toCalibratedUsage(usage: EffectiveContextUsage, budget: RequestBudget): EffectiveContextUsage {
+    const scale = (tokens: number) => Math.round(tokens * budget.calibration);
+    return {
+        ...usage,
+        conversationTokens: scale(usage.conversationTokens),
+        toolCallTokens: scale(usage.toolCallTokens),
+        fileTokens: scale(usage.fileTokens),
+        usedTokens: scale(usage.usedTokens),
+    };
+}
 
-    return useMemo(
-        () =>
-            estimateEffectiveContextUsage({
-                messageChain,
-                contextFilters,
-                currentAttachments,
-                allAttachments,
-                messageMap,
-                contextLimits,
-            }),
-        [messageChain, contextFilters, currentAttachments, allAttachments, messageMap, contextLimits]
-    );
+export function useEffectiveContextUsage(messageChain: Message[], currentAttachments: Attachment[] = []) {
+    const contextFilters = useLumoSelector(selectContextFilters);
+    return useEffectiveContextUsageWithFilters(messageChain, contextFilters, currentAttachments);
 }
 
 export function useEffectiveContextUsageWithFilters(
@@ -39,18 +42,23 @@ export function useEffectiveContextUsageWithFilters(
 ) {
     const allAttachments = useLumoSelector(selectAttachments);
     const messageMap = useConversationMessageMap(messageChain);
-    const contextLimits = useContextLimits();
+    const budget = useRequestBudget(messageChain[0]?.conversationId);
+    const fileCards = useFlag('LumoRetrievalTools');
 
     return useMemo(
         () =>
-            estimateEffectiveContextUsage({
-                messageChain,
-                contextFilters,
-                currentAttachments,
-                allAttachments,
-                messageMap,
-                contextLimits,
-            }),
-        [messageChain, contextFilters, currentAttachments, allAttachments, messageMap, contextLimits]
+            toCalibratedUsage(
+                estimateEffectiveContextUsage({
+                    messageChain,
+                    contextFilters,
+                    currentAttachments,
+                    allAttachments,
+                    messageMap,
+                    budget,
+                    fileCards,
+                }),
+                budget
+            ),
+        [messageChain, contextFilters, currentAttachments, allAttachments, messageMap, budget, fileCards]
     );
 }

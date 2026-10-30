@@ -89,6 +89,7 @@ const ProjectDetailViewInner = () => {
         visualizationInstructions: ffVisualizationInstructions,
         artifactsView: ffArtifactsView,
         artifactSlides: ffArtifactSlides,
+        retrievalTools: ffRetrievalTools,
     } = useLumoFlags();
 
     const space = useLumoSelector(selectSpaceById(projectId));
@@ -186,12 +187,14 @@ const ProjectDetailViewInner = () => {
                             enableSmoothing: ffSmoothRendering,
                             imageAspectRatio: imageOptions?.aspectRatio,
                             canvasModeActive: false,
+                            enableRetrievalTools: ffRetrievalTools,
                         },
                         settingsContext: {
                             personalization,
                             isArtifactsViewFeatureEnabled: ffArtifactsView,
                             isArtifactSlidesFeatureEnabled: ffArtifactSlides,
                             isVisualizationInstructionsFeatureEnabled: ffVisualizationInstructions,
+                            hasLumoPlus,
                         },
                     })
                 );
@@ -218,8 +221,10 @@ const ProjectDetailViewInner = () => {
             ffSmoothRendering,
             ffArtifactsView,
             ffArtifactSlides,
+            ffRetrievalTools,
             ffVisualizationInstructions,
             personalization,
+            hasLumoPlus,
         ]
     );
 

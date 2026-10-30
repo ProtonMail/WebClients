@@ -6,6 +6,10 @@ import { c, msgid } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import {
+    READ_KNOWLEDGE_TOOL_NAME,
+    SEARCH_KNOWLEDGE_TOOL_NAME,
+} from '../../../../../../features/client-tools/retrievalTool/schema';
 import type { ToolCallAnnouncement, ToolCallData } from '../../../../../../lib/toolCall/types';
 import { isNativeToolCallData } from '../../../../../../lib/toolCall/types';
 import type { Message } from '../../../../../../types';
@@ -57,6 +61,9 @@ function getToolCallIcon(toolCall: ToolCallData | ToolCallAnnouncement): IconNam
         case 'use_skill':
         case 'read_skill_file':
             return 'BookOpen';
+        case SEARCH_KNOWLEDGE_TOOL_NAME:
+        case READ_KNOWLEDGE_TOOL_NAME:
+            return 'FileSearch';
         default:
             return 'Wrench';
     }
@@ -218,6 +225,15 @@ function getToolCallLabel(toolCall: ToolCallData | ToolCallAnnouncement): [strin
         case 'read_skill_file':
             // translator: Assistant activity status. A skill is a set of instructions the user saved.
             return [c('collider_2025:Reasoning').t`Reading a skill...`, c('collider_2025:Reasoning').t`Read a skill`];
+        case SEARCH_KNOWLEDGE_TOOL_NAME:
+            // translator: Assistant activity status, while looking through the user's files and earlier chats.
+            return [
+                c('collider_2025:Reasoning').t`Searching your files and chats...`,
+                c('collider_2025:Reasoning').t`Searched your files and chats`,
+            ];
+        case READ_KNOWLEDGE_TOOL_NAME:
+            // translator: Assistant activity status, while reading one of the user's files or earlier messages.
+            return [c('collider_2025:Reasoning').t`Reading a file...`, c('collider_2025:Reasoning').t`Read a file`];
         default:
             // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];
@@ -448,6 +464,15 @@ function getToolCallShortLabel(toolCall: ToolCallData | ToolCallAnnouncement): [
         case 'read_skill_file':
             // translator: Assistant activity status. A skill is a set of instructions the user saved.
             return [c('collider_2025:Reasoning').t`Reading a skill...`, c('collider_2025:Reasoning').t`Read a skill`];
+        case SEARCH_KNOWLEDGE_TOOL_NAME:
+            // translator: Assistant activity status, while looking through the user's files and earlier chats.
+            return [
+                c('collider_2025:Reasoning').t`Searching your files and chats...`,
+                c('collider_2025:Reasoning').t`Searched your files and chats`,
+            ];
+        case READ_KNOWLEDGE_TOOL_NAME:
+            // translator: Assistant activity status, while reading one of the user's files or earlier messages.
+            return [c('collider_2025:Reasoning').t`Reading a file...`, c('collider_2025:Reasoning').t`Read a file`];
         default:
             // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];

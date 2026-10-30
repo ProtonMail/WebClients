@@ -1,11 +1,10 @@
 import type { ContextFilter } from './contextFilter';
 import { collapseCompactedChain } from './compaction/collapse';
 import { getSummarizedMessageIds } from './compaction';
+import { fileCardPolicy } from '../features/client-tools/retrievalTool/instructions';
 import { resolveRequestContextFiles } from './requestContextFiles';
 import { countTokens } from './tokenizer';
-import type { ContextLimits } from './contextLimits';
-import { DEFAULT_CONTEXT_LIMITS } from './contextLimits';
-import { computeFileTokenBudget } from './contextLimits';
+import { type RequestBudget, getFileTokenBudget, getRequestBudget } from './requestBudget';
 import { calculateAttachmentContextSize, calculateMessageTokenBreakdown } from './utils';
 import type { Attachment, Message, MessageId } from '../types';
 
@@ -17,8 +16,10 @@ export type EffectiveContextUsageInput = {
     allAttachments: Record<string, Attachment>;
     /** Conversation-scoped messages; enables shared-history compaction on edit forks. */
     messageMap?: Record<MessageId, Message>;
-    /** Model context window used for file budgeting on the next request. */
-    contextLimits?: ContextLimits;
+    /** Budget of the next request, used for file budgeting. */
+    budget?: RequestBudget;
+    /** The lookup tools are registered, so large files are sent as cards. */
+    fileCards?: boolean;
 };
 
 export type EffectiveContextUsage = {
@@ -33,6 +34,10 @@ export type EffectiveContextUsage = {
     activeFiles: Attachment[];
     /** Files held back because they no longer fit the request's file budget. */
     droppedForBudget: Attachment[];
+    /** Attached files sent only as an excerpt because they exceed the file budget: id → excerpt tokens. */
+    excerptedForBudget: Map<string, number>;
+    /** Files sent as a card pointing at the lookup tools, and why. */
+    cardedFiles: Map<string, 'size' | 'budget'>;
 };
 
 /**
@@ -48,7 +53,8 @@ export function estimateEffectiveContextUsage({
     currentAttachments = [],
     allAttachments,
     messageMap,
-    contextLimits = DEFAULT_CONTEXT_LIMITS,
+    budget = getRequestBudget(),
+    fileCards = false,
 }: EffectiveContextUsageInput): EffectiveContextUsage {
     const summarizedIds = getSummarizedMessageIds(messageChain, messageMap);
     const { summaryTurn, chain: effectiveChain } = collapseCompactedChain(messageChain, messageMap);
@@ -70,12 +76,18 @@ export function estimateEffectiveContextUsage({
         (attachment) => !summarizedAttachmentIds.has(attachment.id)
     );
 
-    const { files: activeFiles, droppedForBudget } = resolveRequestContextFiles(
+    const {
+        files: activeFiles,
+        droppedForBudget,
+        excerptedForBudget,
+        cardedFiles,
+    } = resolveRequestContextFiles(
         effectiveChain,
         contextFilters,
         allAttachments,
         unsummarizedCurrentAttachments,
-        computeFileTokenBudget(messageContentTokens, contextLimits)
+        getFileTokenBudget(budget, messageContentTokens),
+        fileCards ? fileCardPolicy : undefined
     );
 
     const fileTokens = calculateAttachmentContextSize(activeFiles);
@@ -88,5 +100,7 @@ export function estimateEffectiveContextUsage({
         hasCompaction: summarizedIds.size > 0,
         activeFiles,
         droppedForBudget,
+        excerptedForBudget,
+        cardedFiles,
     };
 }
