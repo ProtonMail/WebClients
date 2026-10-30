@@ -500,8 +500,6 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(pullSpacesPageResponse, processPullSpacesPage)},
         function*() { yield takeEvery(pullSpacesSuccess, logPullSpacesSuccess)},
         function*() { yield takeEvery(pullSpacesFailure, logPullSpacesFailure)},
-        function*() { yield takeEvery(pullSpaceRequest, pullSpace)},
-        function*() { yield takeEvery(pullSpaceSuccess, processPullSpaceResult)},
         function*() { yield takeEvery(locallyDeleteSpaceFromLocalRequest, softDeleteSpaceFromLocal)},
         function*() { yield takeEvery(locallyDeleteSpaceFromRemoteRequest, softDeleteSpaceFromRemote)},
         function*() { yield takeEvery(locallyRefreshSpaceFromRemoteRequest, refreshSpaceFromRemote)},

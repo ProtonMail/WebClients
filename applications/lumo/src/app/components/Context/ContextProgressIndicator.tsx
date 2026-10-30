@@ -15,7 +15,7 @@ interface ContextProgressIndicatorProps {
 
 export const ContextProgressIndicator = ({ attachments, messageChain }: ContextProgressIndicatorProps) => {
     const { usedTokens, fileTokens } = useEffectiveContextUsage(messageChain, attachments);
-    const contextLimits = useContextLimits();
+    const contextLimits = useContextLimits(messageChain[0]?.conversationId);
 
     const { totalPercentage, warningLevel } = React.useMemo(() => {
         return {

@@ -1,12 +1,6 @@
 import { resolveChatModel, type LumoApiModelTier } from '@proton/lumo-api-client/core/chat-completions';
 
-import {
-    DEFAULT_CONTEXT_LIMITS,
-    type ContextLimits,
-    type ContextWindowConfig,
-    deriveContextLimits,
-    getContextWindowConfig,
-} from './contextLimits';
+import { DEFAULT_CONTEXT_LIMITS, type ContextLimits, deriveContextLimits } from './contextLimits';
 import { getMaxContextLengthForModelId } from '../services/modelsStore';
 
 export function getContextLimitsForModelId(modelId: string): ContextLimits {
@@ -19,8 +13,4 @@ export function getContextLimitsForModelId(modelId: string): ContextLimits {
 
 export function getContextLimitsForModelTier(modelTier: LumoApiModelTier | undefined): ContextLimits {
     return getContextLimitsForModelId(resolveChatModel(modelTier ?? 'auto'));
-}
-
-export function getContextWindowConfigForModelTier(modelTier: LumoApiModelTier | undefined): ContextWindowConfig {
-    return getContextWindowConfig(getContextLimitsForModelTier(modelTier));
 }

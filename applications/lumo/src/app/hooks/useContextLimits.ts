@@ -2,28 +2,31 @@ import { useMemo } from 'react';
 
 import type { LumoApiModelTier } from '@proton/lumo-api-client/core/chat-completions';
 
-import type { ContextLimits, ContextWindowConfig } from '../llm/contextLimits';
-import { getContextLimitsForModelTier, getContextWindowConfigForModelTier } from '../llm/modelContextLimits';
+import type { ContextLimits } from '../llm/contextLimits';
+import { useCalibrationRevision } from '../llm/requestCalibration';
+import { type RequestBudget, getDisplayContextLimits, resolveRequestBudget } from '../llm/requestBudget';
 import { getSelectedModelTier, useModelTier } from '../providers/ModelTierProvider';
 import { useModelsRevision } from '../services/modelsStore';
 
-export function useContextLimits(modelTierOverride?: LumoApiModelTier): ContextLimits {
-    const { modelTier } = useModelTier();
+/** Budget the next request of this conversation would be sized against — same as the send path. */
+export function useRequestBudget(conversationId?: string, modelTierOverride?: LumoApiModelTier): RequestBudget {
+    const { modelTier, isThinkingEnabled } = useModelTier();
     const modelsRevision = useModelsRevision();
+    const calibrationRevision = useCalibrationRevision();
 
-    return useMemo(() => {
-        const tier = modelTierOverride ?? getSelectedModelTier(modelTier);
-        return getContextLimitsForModelTier(tier);
-    }, [modelTier, modelTierOverride, modelsRevision]);
+    return useMemo(
+        () =>
+            resolveRequestBudget({
+                modelTier: modelTierOverride ?? getSelectedModelTier(modelTier),
+                reasoning: isThinkingEnabled,
+                conversationId,
+            }),
+        [modelTier, modelTierOverride, isThinkingEnabled, conversationId, modelsRevision, calibrationRevision]
+    );
 }
 
-/** Model window plus derived compaction and file budgets — single source for UI and send paths. */
-export function useContextWindowConfig(modelTierOverride?: LumoApiModelTier): ContextWindowConfig {
-    const { modelTier } = useModelTier();
-    const modelsRevision = useModelsRevision();
-
-    return useMemo(() => {
-        const tier = modelTierOverride ?? getSelectedModelTier(modelTier);
-        return getContextWindowConfigForModelTier(tier);
-    }, [modelTier, modelTierOverride, modelsRevision]);
+/** Indicator limits in real tokens: the model window minus the room reserved for the reply. */
+export function useContextLimits(conversationId?: string, modelTierOverride?: LumoApiModelTier): ContextLimits {
+    const budget = useRequestBudget(conversationId, modelTierOverride);
+    return useMemo(() => getDisplayContextLimits(budget), [budget]);
 }

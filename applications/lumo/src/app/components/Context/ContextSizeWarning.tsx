@@ -19,7 +19,7 @@ interface ContextSizeWarningProps {
 
 export const ContextSizeWarning = ({ attachments, messageChain, onOpenFiles }: ContextSizeWarningProps) => {
     const { usedTokens, fileTokens } = useEffectiveContextUsage(messageChain, attachments);
-    const contextLimits = useContextLimits();
+    const contextLimits = useContextLimits(messageChain[0]?.conversationId);
 
     const warningLevel = getContextSizeWarning(usedTokens, contextLimits) === 'critical' ? 'critical' : 'none';
 

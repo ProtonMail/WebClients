@@ -34,6 +34,7 @@ import {
 import {
     EMPTY_MESSAGE_MAP,
     addMessage,
+    deleteAllMessages,
     finishMessage,
     newMessageId,
     pushMessageFailure,
@@ -340,8 +341,13 @@ describe('Lumo Persistence Integration Tests', () => {
                     } else {
                         await waitForMessageSyncWithServer(first.dbApi, followUp.id);
                     }
+                    const actionsBeforeReload = first.actionHistory.actions.length;
                     first.dispatch(reloadReduxRequest());
-                    await waitForCondition(async () => !!first.store.getState().messages[followUp.id]);
+                    await waitForCondition(
+                        async () =>
+                            first.actionHistory.actions.slice(actionsBeforeReload).some(deleteAllMessages.match) &&
+                            expectedChain.every((message) => !!first.store.getState().messages[message.id])
+                    );
                     const restored = selectMessagesByConversationId(conversationId)(first.store.getState());
                     expect(buildLinearChain(restored, null, []).map((message) => message.id)).toEqual(
                         expectedChain.map((message) => message.id)
