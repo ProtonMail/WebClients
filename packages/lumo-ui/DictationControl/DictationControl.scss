@@ -1,7 +1,7 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .lumo-dictation-control {
-	inline-size: rem(20);
+	inline-size: rem(28);
 	block-size: rem(40);
 	transition: inline-size 0.2s ease-out;
 

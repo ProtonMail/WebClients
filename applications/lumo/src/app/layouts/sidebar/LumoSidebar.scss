@@ -344,3 +344,151 @@ im.$media-expressions: $media-expressions;
 .bg-white {
 	background-color: white !important;
 }
+
+// Main sidebar container - handles positioning and transitions
+.sidebar.lumo-sidebar-container {
+	font-weight: 500;
+	contain: none;
+	display: flex;
+	flex-direction: column;
+	block-size: 100%;
+	max-block-size: 100%;
+	min-block-size: 0;
+	overflow: hidden;
+
+	// Only user actions should animate; breakpoint changes should snap.
+	transition: none;
+
+	// Hardware acceleration
+	will-change: inline-size, transform !important;
+	backface-visibility: hidden;
+
+	// Only apply translateZ on desktop to avoid conflicts with mobile translateX
+	@include im.media('>small') {
+		transform: translateZ(0);
+
+		&.sidebar--animate {
+			transition: inline-size var(--lumo-sidebar-transition-duration) ease-in-out;
+		}
+	}
+
+	// Desktop: Expanded state
+	&.sidebar--large-screen-expanded {
+		@include im.media('>small') {
+			inline-size: var(--lumo-sidebar-expanded-width); // comfortable for text
+		}
+	}
+
+	// Desktop: Hidden state (0px width)
+	&.sidebar--large-screen-collapsed {
+		@include im.media('>small') {
+			inline-size: 0;
+			overflow: hidden;
+		}
+	}
+
+	// Mobile sidebar transitions - true overlay that doesn't affect layout
+	@include im.media('<=small') {
+		position: fixed !important;
+		inset-block-start: 0 !important;
+		inset-inline-start: 0 !important;
+		block-size: 100% !important;
+		max-block-size: none !important;
+		z-index: 100 !important;
+
+		// Override global .sidebar max-inline-size (272px) from structure.scss
+		inline-size: 80vw !important;
+		max-inline-size: 80vw !important;
+		padding-block-start: 0 !important;
+		border-radius: 0 !important;
+
+		// White background for clean mobile appearance
+		background-color: var(--background-norm) !important;
+
+		// Elegant drop shadow for mobile overlay
+		box-shadow:
+			2px 0 8px rgb(0 0 0 / 0.02),
+			0 0 20px rgb(0 0 0 / 0.04);
+		transition: none !important;
+
+		&.sidebar--animate {
+			transition: transform var(--lumo-sidebar-transition-duration) ease-in-out !important;
+		}
+
+		// Mobile overlay state - slide into view as overlay
+		&.sidebar--small-screen-expanded {
+			transform: translateX(0) !important;
+		}
+
+		// Ensure transition works both ways
+		&.sidebar--small-screen-collapsed {
+			transform: translateX(-100%) !important;
+			box-shadow: none;
+		}
+
+		// Ensure sidebar doesn't affect main content layout
+		margin: 0 !important;
+		padding: 0 !important;
+
+		// Remove any width that might affect layout calculations
+		flex: none !important;
+		flex-basis: auto !important;
+	}
+
+	// Desktop sidebar z-index to ensure it's above disclaimers and other content
+	z-index: 10; // Higher than disclaimer (z-1) but lower than mobile overlay (z-100)
+	position: relative;
+}
+
+.lumo-sidebar-inner {
+	// Clip the content instead of squeezing it during the outer width transition.
+	@include im.media('>small') {
+		inline-size: var(--lumo-sidebar-expanded-width);
+		min-inline-size: var(--lumo-sidebar-expanded-width);
+	}
+}
+
+// Sidebar expanded state (used for mobile overlay styling)
+.sidebar--small-screen-expanded {
+	@include im.media('<=small') {
+		background-color: var(--background-weak);
+
+		// Safari performance optimizations for expanded state
+		will-change: transform;
+		backface-visibility: hidden;
+		transform: translateZ(0);
+
+		.lumo-guest-disclaimer {
+			background-color: var(--background-weak);
+		}
+	}
+}
+
+// Keep the backdrop mounted so both opening and closing can fade.
+.lumo-sidebar-backdrop {
+	display: none;
+
+	@include im.media('<=small') {
+		display: block;
+		position: fixed;
+		inset: 0;
+		z-index: 90;
+		background-color: var(--backdrop-norm);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+
+		&.lumo-sidebar-backdrop--animate {
+			transition:
+				opacity var(--lumo-sidebar-transition-duration) ease-in-out,
+				visibility 0s linear var(--lumo-sidebar-transition-duration);
+		}
+
+		&.lumo-sidebar-backdrop--expanded {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: auto;
+			transition-delay: 0s;
+		}
+	}
+}

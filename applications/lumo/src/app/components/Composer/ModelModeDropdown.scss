@@ -1,5 +1,22 @@
 @use 'sass:map';
 @use '~@proton/styles/scss/lib' as *;
+@use '../../styles/lumo-container-names' as *;
+
+.model-mode-trigger {
+	&__label {
+		@container #{$container-name-composer-toolbar} (max-width: 300px) {
+			display: none;
+		}
+	}
+
+	&__short-label {
+		display: none;
+
+		@container #{$container-name-composer-toolbar} (max-width: 300px) {
+			display: inline;
+		}
+	}
+}
 
 .model-mode-dropdown {
 	--border-norm: var(--border-weak);
