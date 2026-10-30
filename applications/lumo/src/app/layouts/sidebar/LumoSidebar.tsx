@@ -32,7 +32,6 @@ import { SidebarRouteButton } from './components/SidebarRouteButton';
 import { useNativeComposerAccountApi } from './hooks/useNativeComposerAccountApi';
 import { useSidebarVisibility } from './hooks/useSidebarVisibility';
 
-import '../sidebar/Sidebar.scss';
 import './LumoSidebar.scss';
 
 const ProjectsSidebarSection = lazy(() =>
@@ -156,23 +155,38 @@ const LumoSidebarHeader = () => {
 };
 
 const LumoSidebar = () => {
-    const { isVisible, isOverlay, toggle } = useSidebar();
+    const { smallScreenMode, largeScreenMode, animateTransitions, closeOverlay } = useSidebar();
 
     return (
         <>
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-            {isOverlay && <div className="sidebar-backdrop" onClick={toggle}></div>}
             <div
                 className={clsx(
-                    'sidebar lumo-sidebar-container h-full min-h-0 flex flex-column overflow-hidden no-print outline-none bg-norm rounded-xl',
-                    !isVisible && 'sidebar--hidden',
-                    isOverlay && 'sidebar-expanded'
+                    'lumo-sidebar-backdrop',
+                    smallScreenMode === 'overlay' && 'lumo-sidebar-backdrop--expanded',
+                    animateTransitions && 'lumo-sidebar-backdrop--animate'
+                )}
+                aria-hidden="true"
+                onClick={closeOverlay}
+            />
+            <div
+                className={clsx(
+                    'lumo-sidebar-container sidebar rounded-xl bg-norm no-print',
+                    largeScreenMode === 'expanded'
+                        ? 'sidebar--large-screen-expanded'
+                        : 'sidebar--large-screen-collapsed',
+                    smallScreenMode === 'overlay'
+                        ? 'sidebar--small-screen-expanded'
+                        : 'sidebar--small-screen-collapsed',
+                    animateTransitions && 'sidebar--animate'
                 )}
             >
-                <div className="shrink-0">
-                    <LumoSidebarHeader />
+                <div className="lumo-sidebar-inner flex flex-column flex-nowrap flex-1 min-h-0">
+                    <div className="shrink-0">
+                        <LumoSidebarHeader />
+                    </div>
+                    <LumoSidebarContent />
                 </div>
-                <LumoSidebarContent />
             </div>
         </>
     );

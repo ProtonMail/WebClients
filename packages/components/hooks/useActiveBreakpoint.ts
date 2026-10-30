@@ -4,7 +4,7 @@ import debounce from 'lodash/debounce';
 
 export type ActiveBreakpoint = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | '2xlarge';
 
-const getActiveBreakpoint = (): ActiveBreakpoint | '' => {
+export const getActiveBreakpoint = (): ActiveBreakpoint | '' => {
     const bodyEl = document.querySelector('body');
     if (!bodyEl) {
         return '';
