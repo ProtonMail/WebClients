@@ -18,7 +18,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { setCategoryInUrl } from '../../../helpers/mailboxUrl';
-
 import { useCategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboardingContext';
 import { OnboardingStep } from '../categoriesOnboarding/onboardingInterface';
 import { TabBadge } from './TabBadge';
@@ -62,7 +61,7 @@ export const Tab = ({ category, tabState, userIsDragging }: Props) => {
         }
 
         if (tabState === TabState.ACTIVE && !refreshing) {
-            void withRefreshing(Promise.all([call(), wait(1000)]));
+            void withRefreshing(Promise.all([call('User'), wait(1000)]));
         }
 
         if (tabState !== TabState.ACTIVE) {

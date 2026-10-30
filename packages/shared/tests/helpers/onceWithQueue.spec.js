@@ -81,4 +81,19 @@ describe('onceWithQueue', () => {
             expect(count).toEqual(3);
         });
     });
+
+    it('should run the queued call with the arguments of the last call', async () => {
+        const calls = [];
+
+        const cb = onceWithQueue(async (arg) => {
+            await wait(DELAY);
+            calls.push(arg);
+        });
+
+        cb('a');
+        cb('b');
+        await cb('c');
+
+        expect(calls).toEqual(['a', 'c']);
+    });
 });
