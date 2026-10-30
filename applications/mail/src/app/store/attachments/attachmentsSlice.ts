@@ -1,13 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { addAttachmentsCases } from '@proton/mail-message/store/attachments/attachmentsCases';
+import { globalReset as globalResetReducer } from '@proton/mail-message/store/attachments/attachmentsReducers';
+import type { AttachmentsState } from '@proton/mail-message/store/attachments/attachmentsTypes';
+
 import { globalReset } from '../actions';
-import { addAttachment, addImageIdentifierAction, updateAttachment } from './attachmentsActions';
-import {
-    addImageIdentifierReducer,
-    globalReset as globalResetReducer,
-    setAttachment as setAttachmentReducer,
-} from './attachmentsReducers';
-import type { AttachmentsState } from './attachmentsTypes';
 
 const name = 'attachments';
 
@@ -17,9 +14,7 @@ const attachmentsSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(globalReset, globalResetReducer);
-        builder.addCase(addAttachment, setAttachmentReducer);
-        builder.addCase(updateAttachment, setAttachmentReducer);
-        builder.addCase(addImageIdentifierAction, addImageIdentifierReducer);
+        addAttachmentsCases(builder);
     },
 });
 

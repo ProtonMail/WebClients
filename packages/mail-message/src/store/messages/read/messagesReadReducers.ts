@@ -1,6 +1,15 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
+import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { isScheduledSend, isSent, isDraft as testIsDraft } from '@proton/shared/lib/mail/messages';
+import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
+
+import { parseMessageLabelIDsInEvent } from '../../../helpers/labels';
+import type { LabelIDsChanges, MessageEvent } from '../../../models/event';
+import { getLocalID, getMessage } from '../helpers/messagesReducer';
 import type {
     DocumentInitializeParams,
     LoadParams,
@@ -8,16 +17,7 @@ import type {
     MessageState,
     MessagesState,
     VerificationParams,
-} from '@proton/mail-message/store/messages/messagesTypes';
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { isScheduledSend, isSent, isDraft as testIsDraft } from '@proton/shared/lib/mail/messages';
-import type { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
-
-import { parseLabelIDsInEvent } from '../../../helpers/elements';
-import type { LabelIDsChanges, MessageEvent } from '../../../models/event';
-import { getLocalID, getMessage } from '../helpers/messagesReducer';
+} from '../messagesTypes';
 
 export const reset = (state: Draft<MessagesState>) => {
     Object.keys(state).forEach((ID) => {
@@ -79,7 +79,10 @@ export const event = (state: Draft<MessagesState>, action: PayloadAction<Message
                 delete (messageUpdate as Partial<Message>).NumAttachments;
             }
 
-            currentValue.data = parseLabelIDsInEvent(currentValue.data, messageUpdate as Message & LabelIDsChanges);
+            currentValue.data = parseMessageLabelIDsInEvent(
+                currentValue.data,
+                messageUpdate as Message & LabelIDsChanges
+            );
 
             // Draft updates can contains body updates but will not contains it in the event
             // By removing the current body value in the cache, we will reload it next time we need it

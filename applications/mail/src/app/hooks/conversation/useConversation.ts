@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { LOAD_RETRY_DELAY } from '@proton/mail-message/constants';
 import { hasError, hasErrorType } from '@proton/mail-message/helpers/errors';
 import type { Conversation } from '@proton/mail-message/models/conversation';
 import type {
@@ -12,7 +13,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
+import { LOAD_RETRY_COUNT } from '../../constants';
 import { initialize, load as loadAction, retryLoading } from '../../store/conversations/conversationsActions';
 import {
     allConversations,

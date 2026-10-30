@@ -1,8 +1,8 @@
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import type { MailState } from '../../../store/store';
 import { getInlineImagesToRestore, getRemovedInlineImageData } from './editorWrapperHelpers';
 

@@ -7,7 +7,16 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { pickMessageInfosForSentry } from '@proton/mail-message/helpers/errors';
+import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
+import {
+    cancelSendMessage,
+    endUndo,
+    sent,
+    updateExpires,
+} from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageStateWithData, MessageStateWithDataFull } from '@proton/mail-message/store/messages/messagesTypes';
+import { cancelScheduled } from '@proton/mail-message/store/messages/scheduled/scheduledActions';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -24,11 +33,7 @@ import { encryptPackages } from '../../helpers/send/sendEncrypt';
 import { sendFormatter } from '../../helpers/send/sendFormatter';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
-import { updateAttachment } from '../../store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from '../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../store/hooks';
-import { cancelSendMessage, endUndo, sent, updateExpires } from '../../store/messages/draft/messagesDraftActions';
-import { cancelScheduled } from '../../store/messages/scheduled/scheduledActions';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';

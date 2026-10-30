@@ -1,12 +1,12 @@
 import { ToolInputError, UnknownReferenceError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ReferenceKind, ReferenceLabel, ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
+import { messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
 
 import { isElementConversation } from '../../helpers/elements';
 import type { Element } from '../../models/element';
 import { conversationByID } from '../../store/conversations/conversationsSelectors';
-import { messageByID } from '../../store/messages/messagesSelectors';
 import type { MailToolDeps, ToolStore } from '../toolModule';
 
 /** Resolve a reference to its real backend id, or reject it as a hallucination the model must recover from. */

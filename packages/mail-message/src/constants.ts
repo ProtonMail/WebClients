@@ -14,3 +14,5 @@ export const LARGE_KEY_SIZE = 50 * 1024;
 export const MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD = ['url', 'xlink:href', 'src', 'svg', 'background', 'poster'];
 
 export const PLACEHOLDER_ID_PREFIX = 'placeholder';
+
+export const LOAD_RETRY_DELAY = 3000; // in ms => 3s

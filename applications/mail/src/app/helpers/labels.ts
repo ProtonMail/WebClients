@@ -13,8 +13,8 @@ import { IcPaperPlaneClock } from '@proton/icons/icons/IcPaperPlaneClock';
 import { IcStar } from '@proton/icons/icons/IcStar';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
+import type { LabelChanges, UnreadStatus } from '@proton/mail-message/helpers/labels';
 import type { Conversation } from '@proton/mail-message/models/conversation';
-import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { labelIncludes } from '@proton/mail/helpers/location';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -30,8 +30,6 @@ import orderBy from '@proton/utils/orderBy';
 
 import type { Element } from '../models/element';
 import { getLabelIDs } from './elements';
-
-export type LabelChanges = { [labelID: string]: boolean };
 
 export interface FolderInfo {
     icon: IconComponent;
@@ -191,40 +189,6 @@ export const getElementLabels = (element: Element | undefined, labelID: string, 
         .filter(isTruthy);
 
     return orderBy(elementLabels, 'Order');
-};
-
-export interface UnreadStatus {
-    id: string;
-    unread: number;
-}
-
-export const applyLabelChangesOnMessage = <T>(
-    message: MessageWithOptionalBody & T,
-    changes: LabelChanges,
-    unreadStatuses?: UnreadStatus[]
-): MessageWithOptionalBody & T => {
-    const { LabelIDs: inputLabelIDs } = message;
-    const LabelIDs = [...inputLabelIDs];
-
-    Object.keys(changes).forEach((labelID) => {
-        const index = LabelIDs.findIndex((existingLabelID) => existingLabelID === labelID);
-        if (changes[labelID]) {
-            if (index === -1) {
-                LabelIDs.push(labelID);
-            }
-        } else if (index >= 0) {
-            LabelIDs.splice(index, 1);
-        }
-    });
-
-    if (unreadStatuses) {
-        const elementUnreadStatus = unreadStatuses.find((element) => element.id === message.ID)?.unread;
-        if (elementUnreadStatus) {
-            return { ...message, LabelIDs, Unread: elementUnreadStatus };
-        }
-    }
-
-    return { ...message, LabelIDs };
 };
 
 export const applyLabelChangesOnConversation = (

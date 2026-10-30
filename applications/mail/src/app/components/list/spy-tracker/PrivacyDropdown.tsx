@@ -12,6 +12,7 @@ import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeatur
 import { FeatureCode } from '@proton/features/interface';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { loadFakeTrackers } from '@proton/mail-message/store/messages/images/messagesImagesActions';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -22,7 +23,6 @@ import trackersImage from '@proton/styles/assets/img/illustrations/trackers-foun
 import { emailTrackerProtectionURL } from '../../../constants';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import { useMailDispatch } from '../../../store/hooks';
-import { loadFakeTrackers } from '../../../store/messages/images/messagesImagesActions';
 import SpyTrackerIcon from './SpyTrackerIcon';
 import SpyTrackerModal from './SpyTrackerModal';
 import UTMTrackerModal from './UTMTrackerModal';

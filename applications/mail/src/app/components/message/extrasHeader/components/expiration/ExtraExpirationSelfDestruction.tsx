@@ -9,11 +9,11 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { canSetExpiration } from '@proton/mail-message/helpers/expiration';
+import { expireMessages } from '@proton/mail-message/store/messages/expire/messagesExpireActions';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 
 import useExpiration from '../../../../../hooks/useExpiration';
 import { useMailDispatch } from '../../../../../store/hooks';
-import { expireMessages } from '../../../../../store/messages/expire/messagesExpireActions';
 
 interface Props {
     message: MessageState;

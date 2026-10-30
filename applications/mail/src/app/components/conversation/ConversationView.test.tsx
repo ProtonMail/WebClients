@@ -1,14 +1,16 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
+import { LOAD_RETRY_DELAY } from '@proton/mail-message/constants';
 import type { Conversation } from '@proton/mail-message/models/conversation';
 import type { ConversationState } from '@proton/mail-message/store/conversations/conversationsTypes';
+import * as messageDraftActions from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageState, PublicPrivateKey } from '@proton/mail-message/store/messages/messagesTypes';
+import { initialize as initializeMessage } from '@proton/mail-message/store/messages/read/messagesReadActions';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import range from '@proton/utils/range';
 
-import { LOAD_RETRY_DELAY } from '../../constants';
 import { addApiMock } from '../../helpers/tests/api';
 import { assertFocus } from '../../helpers/tests/assertion';
 import { addApiKeys } from '../../helpers/tests/crypto';
@@ -20,8 +22,6 @@ import {
     initialize as initializeConversation,
     updateConversation,
 } from '../../store/conversations/conversationsActions';
-import * as messageDraftActions from '../../store/messages/draft/messagesDraftActions';
-import { initialize as initializeMessage } from '../../store/messages/read/messagesReadActions';
 import ConversationView from './ConversationView';
 
 jest.mock('../../hooks/message/useGetMessageKeys');

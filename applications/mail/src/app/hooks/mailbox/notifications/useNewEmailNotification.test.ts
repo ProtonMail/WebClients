@@ -1,7 +1,7 @@
+import type { MessageEvent } from '@proton/mail-message/models/event';
 import { EVENT_ACTIONS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { MessageEvent } from '../../../models/event';
 import { messageFilter } from './useNewEmailNotification';
 
 const createMessageEvent = (labelIDs: string[]): MessageEvent => ({

@@ -2,12 +2,12 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { DRAFT_ID_PREFIX } from '@proton/shared/lib/mail/messages';
 
-import type { MailState } from '../store';
+import type { MessagesStoreState } from './messagesTypes';
 
-const messages = (state: MailState) => state.messages;
+const messages = (state: MessagesStoreState) => state.messages;
 
-const currentID = (_: MailState, { ID }: { ID: string }) => ID;
-const conversationID = (_: MailState, { ConversationID }: { ConversationID: string }) => ConversationID;
+const currentID = (_: MessagesStoreState, { ID }: { ID: string }) => ID;
+const conversationID = (_: MessagesStoreState, { ConversationID }: { ConversationID: string }) => ConversationID;
 
 export const localID = createSelector([messages, currentID], (messages, currentID) => {
     const localID = [...Object.keys(messages)]

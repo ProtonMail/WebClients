@@ -23,6 +23,7 @@ import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
 import { composersInitialState } from '@proton/mail-composer/store/composers/composersSlice';
+import type { AttachmentsState } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import type { ConversationsState } from '@proton/mail-message/store/conversations/conversationsTypes';
 import type { MessagesState } from '@proton/mail-message/store/messages/messagesTypes';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
@@ -52,7 +53,6 @@ import { MailboxContainerContextProvider } from '../../containers/mailbox/Mailbo
 import ChecklistsProvider from '../../containers/onboardingChecklist/provider/ChecklistsProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { MailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
-import type { AttachmentsState } from '../../store/attachments/attachmentsTypes';
 import { mailContactsInitialState } from '../../store/contacts/contactsSlice';
 import { newElementsState } from '../../store/elements/elementsSlice';
 import { incomingDefaultsInitialState } from '../../store/incomingDefaults/incomingDefaultsSlice';

@@ -1,15 +1,14 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
-import { applyMarkAsChangesOnMessage } from '@proton/mail-message/helpers/message/messages';
-import type { MarkAsChanges } from '@proton/mail-message/helpers/message/messages';
-import type { MessageState, MessagesState } from '@proton/mail-message/store/messages/messagesTypes';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 
-import { hasLabel } from '../../../helpers/elements';
 import type { LabelChanges } from '../../../helpers/labels';
-import { applyLabelChangesOnMessage } from '../../../helpers/labels';
+import { applyLabelChangesOnMessage, hasMessageLabel } from '../../../helpers/labels';
+import { applyMarkAsChangesOnMessage } from '../../../helpers/message/messages';
+import type { MarkAsChanges } from '../../../helpers/message/messages';
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
+import type { MessageState, MessagesState } from '../messagesTypes';
 
 export const optimisticApplyLabels = (
     state: Draft<MessagesState>,
@@ -44,7 +43,7 @@ export const optimisticDelete = (state: Draft<MessagesState>, { payload: IDs }: 
 
 export const optimisticEmptyLabel = (state: Draft<MessagesState>, { payload: labelID }: PayloadAction<string>) => {
     Object.entries(state).forEach(([ID, message]) => {
-        if (message && message.data && hasLabel(message.data, labelID)) {
+        if (message && message.data && hasMessageLabel(message.data, labelID)) {
             delete state[ID];
         }
     });

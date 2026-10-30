@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ConversationsState } from '@proton/mail-message/store/conversations/conversationsTypes';
+import * as messageDraftAction from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 
 import { globalReset } from '../actions';
 import { eventUpdates, load as loadElements } from '../elements/elementsActions';
@@ -14,7 +15,6 @@ import {
     unlabelConversations,
     unlabelMessages,
 } from '../mailbox/mailboxActions';
-import * as messageDraftAction from '../messages/draft/messagesDraftActions';
 import {
     applyLabelsOnConversation,
     applyLabelsOnConversationMessages,

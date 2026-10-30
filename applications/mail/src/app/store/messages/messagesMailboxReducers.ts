@@ -2,6 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import type { Conversation } from '@proton/mail-message/models/conversation';
+import { getMessage, getMessagesByConversationID } from '@proton/mail-message/store/messages/helpers/messagesReducer';
 import type { MessagesState } from '@proton/mail-message/store/messages/messagesTypes';
 import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
@@ -10,20 +11,9 @@ import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
-import { isElementMessage } from '../../../helpers/elements';
-import type { QueryParams, QueryResults, TaskRunningInfo } from '../../elements/elementsTypes';
-import { applyLabelToMessage, removeLabelFromMessage } from '../../mailbox/locationHelpers';
-import type { MailState } from '../../store';
-import { localID as localIDSelector, messageByID, messagesByConversationID } from '../messagesSelectors';
-
-export const getLocalID = (state: Draft<MessagesState>, ID: string) =>
-    localIDSelector({ messages: state } as MailState, { ID });
-
-export const getMessage = (state: Draft<MessagesState>, ID: string) =>
-    messageByID({ messages: state } as MailState, { ID });
-
-const getMessagesByConversationID = (state: Draft<MessagesState>, ConversationID: string) =>
-    messagesByConversationID({ messages: state } as MailState, { ConversationID });
+import { isElementMessage } from '../../helpers/elements';
+import type { QueryParams, QueryResults, TaskRunningInfo } from '../elements/elementsTypes';
+import { applyLabelToMessage, removeLabelFromMessage } from '../mailbox/locationHelpers';
 
 export const updateFromElements = (
     state: Draft<MessagesState>,
@@ -130,9 +120,7 @@ export const markConversationsAsReadPending = (
             return;
         }
 
-        const messageStates = messagesByConversationID({ messages: state } as MailState, {
-            ConversationID: conversation.ID,
-        });
+        const messageStates = getMessagesByConversationID(state, conversation.ID);
 
         // Update all messages attach to the same conversation in message state
         messageStates.forEach((messageState) => {
@@ -158,9 +146,7 @@ export const markConversationsAsUnreadPending = (
         }
 
         // Get all messages attached to the conversation
-        const messageStates = messagesByConversationID({ messages: state } as MailState, {
-            ConversationID: conversations.ID,
-        });
+        const messageStates = getMessagesByConversationID(state, conversations.ID);
 
         // Mark the last message as unread
         const lastMessageState = messageStates

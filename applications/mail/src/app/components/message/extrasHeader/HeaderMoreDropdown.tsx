@@ -46,6 +46,9 @@ import { formatFileNameDate } from '@proton/mail-message/helpers/date';
 import { canSetExpiration, getExpirationTime } from '@proton/mail-message/helpers/expiration';
 import type { MessageViewIcons } from '@proton/mail-message/helpers/message/icon';
 import { exportBlob } from '@proton/mail-message/helpers/message/messageExport';
+import { updateAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
+import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
+import { expireMessages } from '@proton/mail-message/store/messages/expire/messagesExpireActions';
 import type {
     MessageState,
     MessageStateWithData,
@@ -70,10 +73,7 @@ import { useMarkAs } from '../../../hooks/actions/markAs/useMarkAs';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import type { Element } from '../../../models/element';
-import { updateAttachment } from '../../../store/attachments/attachmentsActions';
-import type { DecryptedAttachment } from '../../../store/attachments/attachmentsTypes';
 import { useMailDispatch } from '../../../store/hooks';
-import { expireMessages } from '../../../store/messages/expire/messagesExpireActions';
 import { newsletterSubscriptionsActions } from '../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
