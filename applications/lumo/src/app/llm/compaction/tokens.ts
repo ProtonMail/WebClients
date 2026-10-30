@@ -1,5 +1,6 @@
 import { getMessageBlocks } from '../../messageHelpers';
 import type { Attachment, Message, Turn } from '../../types';
+import { getAttachmentDocumentKey } from '../../util/resolveProjectFiles';
 import { countTokens } from '../tokenizer';
 import { countAttachmentToken } from '../utils';
 import { IMAGE_TOKEN_ESTIMATE } from './constants';
@@ -85,6 +86,47 @@ export function estimateChainAttachmentTokens(
         (total, message) => total + estimateMessageAttachmentTokens(message, allAttachments, exclusions),
         0
     );
+}
+
+/** Document keys of the files the messages contribute, after exclusions. */
+export function collectChainDocumentKeys(
+    messages: Message[],
+    allAttachments: Attachment[],
+    exclusions: AttachmentExclusion[]
+): Set<string> {
+    const keys = new Set<string>();
+    for (const message of messages) {
+        for (const attachment of activeMessageAttachments(message, allAttachments, exclusions)) {
+            keys.add(getAttachmentDocumentKey(attachment));
+        }
+    }
+    return keys;
+}
+
+/**
+ * Attachment tokens that dropping `messages` actually removes from the request: each document
+ * once, and none that `keptDocumentKeys` (the kept tail) still sends, since a request carries
+ * each document only once.
+ */
+export function estimateReclaimableAttachmentTokens(
+    messages: Message[],
+    allAttachments: Attachment[],
+    exclusions: AttachmentExclusion[],
+    keptDocumentKeys: Set<string>
+): number {
+    const seen = new Set(keptDocumentKeys);
+    let total = 0;
+    for (const message of messages) {
+        for (const attachment of activeMessageAttachments(message, allAttachments, exclusions)) {
+            const key = getAttachmentDocumentKey(attachment);
+            if (seen.has(key)) {
+                continue;
+            }
+            seen.add(key);
+            total += countAttachmentToken(attachment);
+        }
+    }
+    return total;
 }
 
 /** Estimate token cost of a raw string. */

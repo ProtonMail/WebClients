@@ -3,7 +3,9 @@ import React from 'react';
 import { clsx } from 'clsx';
 import { c, msgid } from 'ttag';
 
-import { useContextWindowConfig } from '../../../hooks/useContextLimits';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+
+import { useRequestBudget } from '../../../hooks/useContextLimits';
 import { useEffectiveContextUsageWithFilters } from '../../../hooks/useEffectiveContextUsage';
 import type { ContextFilter } from '../../../llm';
 import { type ContextSegmentId, buildContextBreakdown } from '../../../llm/contextBreakdown';
@@ -54,9 +56,10 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
     currentAttachments = [],
     showDetails = false,
 }) => {
-    const { limits, proactiveCompactionThresholdTokens } = useContextWindowConfig();
-    const { conversationTokens, toolCallTokens, fileTokens, hasCompaction, droppedForBudget } =
+    const { window: windowTokens, reservedOutput } = useRequestBudget(messageChain[0]?.conversationId);
+    const { conversationTokens, toolCallTokens, fileTokens, hasCompaction, droppedForBudget, cardedFiles } =
         useEffectiveContextUsageWithFilters(messageChain, contextFilters, currentAttachments);
+    const onDemandCount = cardedFiles.size;
 
     const breakdown = React.useMemo(
         () =>
@@ -64,10 +67,10 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
                 conversationTokens,
                 toolCallTokens,
                 fileTokens,
-                maxTokens: limits.MAX_CONTEXT,
-                proactiveCompactionThresholdTokens,
+                maxTokens: windowTokens,
+                bufferTokens: reservedOutput,
             }),
-        [conversationTokens, toolCallTokens, fileTokens, limits.MAX_CONTEXT, proactiveCompactionThresholdTokens]
+        [conversationTokens, toolCallTokens, fileTokens, windowTokens, reservedOutput]
     );
 
     const { segments, usedTokens, maxTokens, percentageUsed, overCapacity } = breakdown;
@@ -128,6 +131,17 @@ export const ContextUsageBreakdown: React.FC<ContextUsageBreakdownProps> = ({
                         msgid`${droppedForBudget.length} least relevant file was left out of this reply so the rest fits.`,
                         `${droppedForBudget.length} least relevant files were left out of this reply so the rest fits.`,
                         droppedForBudget.length
+                    )}
+                </p>
+            )}
+
+            {onDemandCount > 0 && (
+                <p className="context-usage-note m-0 mt-2 text-xs color-weak">
+                    {/* translator: ${onDemandCount} is a number of files; ${LUMO_SHORT_APP_NAME} is the app name, "Lumo". */}
+                    {c('collider_2025: Info').ngettext(
+                        msgid`${onDemandCount} large file is read on demand: ${LUMO_SHORT_APP_NAME} looks up the parts it needs instead of loading it all.`,
+                        `${onDemandCount} large files are read on demand: ${LUMO_SHORT_APP_NAME} looks up the parts it needs instead of loading them all.`,
+                        onDemandCount
                     )}
                 </p>
             )}

@@ -73,6 +73,9 @@ export const enum SpaceType {
     Schedule = 3,
 }
 
+/** Which other chats knowledge lookup may search: none, the same project's, or all of them. */
+export type ChatSearchReach = 'none' | 'project' | 'all';
+
 export type ProjectSpacePriv = {
     // Project metadata (optional - only for spaces used as projects)
     projectName?: string;
@@ -80,6 +83,9 @@ export type ProjectSpacePriv = {
     projectIcon?: string; // Icon identifier for the project (e.g., 'health', 'finance', 'legal')
     // Linked Drive folder (optional - only for projects with linked Drive folders)
     linkedDriveFolder?: LinkedDriveFolder;
+    // Knowledge lookup reach for this project's chats; unset follows the user's settings
+    chatSearch?: ChatSearchReach;
+    searchOtherProjects?: boolean;
 };
 
 type SimpleSpacePriv = {};
@@ -134,8 +140,22 @@ export function isSpaceType(value: unknown): value is SpaceType {
 function getSpacePriv(s: Space): SpacePriv {
     switch (s.spaceType) {
         case SpaceType.Project: {
-            const { projectName, projectInstructions, projectIcon, linkedDriveFolder } = s;
-            return { projectName, projectInstructions, projectIcon, linkedDriveFolder };
+            const {
+                projectName,
+                projectInstructions,
+                projectIcon,
+                linkedDriveFolder,
+                chatSearch,
+                searchOtherProjects,
+            } = s;
+            return {
+                projectName,
+                projectInstructions,
+                projectIcon,
+                linkedDriveFolder,
+                chatSearch,
+                searchOtherProjects,
+            };
         }
         case SpaceType.Default:
             return {};
@@ -312,7 +332,7 @@ export type CompactionStrategyName =
 export type CompactionStats = {
     tokensBefore: number; // Estimated tokens of the summarized region before compaction
     tokensAfter: number; // Estimated tokens of the produced summary
-    tokensRemoved: number; // tokensBefore - tokensAfter (never negative)
+    tokensRemoved: number; // Estimated reduction of the next request's size, files and deduplication included
     summarizedMessageCount: number; // Messages collapsed into the summary
     keptMessageCount: number; // Recent messages preserved verbatim
     clearedToolResultCount: number; // Tool results cleared/dropped during reduction

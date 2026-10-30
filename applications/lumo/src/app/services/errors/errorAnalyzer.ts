@@ -1,4 +1,5 @@
 // utils/errorAnalyzer.ts
+import { isContextLengthExceededError } from '@proton/lumo-api-client/core/context-length';
 import { getTerminalTypeFromApiError } from '@proton/lumo-api-client/core/generation-terminal';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -34,6 +35,16 @@ export function analyzeError(error: any): AnalyzedError {
             isRetryable: false,
             shouldShowToUser: true,
             lumoErrorType: LUMO_API_ERRORS.TIER_LIMIT,
+        };
+    }
+
+    // The conversation no longer fits the model even after compaction and retries.
+    if (isContextLengthExceededError(error)) {
+        return {
+            category: 'api',
+            isRetryable: false,
+            shouldShowToUser: true,
+            lumoErrorType: LUMO_API_ERRORS.CONTEXT_WINDOW_EXCEEDED,
         };
     }
 

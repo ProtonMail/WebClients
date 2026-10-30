@@ -6,14 +6,22 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { askUserQuestionsToolExecutor } from '../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
 import { createScheduleToolExecutor } from '../../features/client-tools/createScheduleTool/createScheduleTool';
+import {
+    type RetrievalContext,
+    createRetrievalToolExecutor,
+} from '../../features/client-tools/retrievalTool/retrievalTool';
 import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
 import { createSkillToolExecutor } from '../../features/skills/skillTool';
 import { loadSkillInstructions, readSkillFile } from '../../features/skills/skillsThunks';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import type { ContextFilter } from '../../llm';
 import { compactConversation, estimateTurnsTokens } from '../../llm/compaction';
+import { collapseCompactedChain } from '../../llm/compaction/collapse';
+import { MIN_COMPACTION_TOKENS_RECLAIMED } from '../../llm/compaction/constants';
 import { NotEnoughToCompactError } from '../../llm/compaction/partition';
-import { getContextWindowConfigForModelTier } from '../../llm/modelContextLimits';
+import { estimateEffectiveContextUsage } from '../../llm/effectiveContextUsage';
+import { type RequestBudget, resolveRequestBudget } from '../../llm/requestBudget';
+import { countTokens } from '../../llm/tokenizer';
 import { updateConversationStatus } from '../../redux/slices/core/conversations';
 import {
     addMessage,
@@ -24,6 +32,7 @@ import {
 } from '../../redux/slices/core/messages';
 import type { LumoDispatch } from '../../redux/store';
 import { isAbortError, throwIfAborted } from '../../services/generation/abortGeneration';
+import { waitForModels } from '../../services/modelsStore';
 import {
     type Attachment,
     type CompactionMeta,
@@ -55,6 +64,8 @@ type ForwardedSendOptions = AssistantCallOptions & {
     enableCreateScheduleTool?: boolean;
     /** Skills the model may load or read files from; each tool is only registered when it has skills. */
     skillTools?: SkillToolHandles;
+    /** Registers search_knowledge and read_knowledge over this scope. */
+    retrievalTools?: RetrievalContext;
 };
 
 export type SkillToolHandles = {
@@ -81,7 +92,10 @@ export type GenerationWithCompactionParams = {
     parentMessageId: MessageId;
     /** Linear chain up to and including the user question (excludes the assistant placeholder). */
     chain: Message[];
-    /** Rebuilds turns for a (possibly compacted) chain. Must call prepareTurns under the hood. */
+    /**
+     * Rebuilds turns for a (possibly compacted) chain. Must call prepareTurns under the hood,
+     * resolving the request budget at call time so recalibration after an overflow applies.
+     */
     buildTurns: (chain: Message[]) => Turn[];
     /** Full conversation attachments, so compaction can account for real attachment token cost. */
     attachments?: Attachment[];
@@ -93,26 +107,30 @@ export type GenerationWithCompactionParams = {
     sendOptions: ForwardedSendOptions;
     /** Pins a sibling in the UI so the compacted branch is the one displayed. */
     preferSibling?: (message: Message) => void;
-    /** Max number of compaction+retry cycles before giving up. */
-    maxCompactions?: number;
     /** Background runs must not replay a generation after a client tool may have acted. */
     retryAfterToolExecution?: boolean;
     /**
-     * Compact pre-emptively when the estimated request size already exceeds the
-     * threshold, instead of waiting for the backend to reject it. Enabled by default.
+     * Compact pre-emptively when the planned request no longer fits the budget, instead of
+     * waiting for the backend to reject it. Enabled by default.
      */
     enableProactiveCompaction?: boolean;
-    /** Estimated-token threshold that triggers proactive compaction. */
-    proactiveThresholdTokens?: number;
-    /** Compaction engine target size for the summarized region. */
-    compactionTargetTokens?: number;
 };
 
-// One boundary per send. A second pass on the same request only re-summarizes an
-// already-condensed head — it stacks another marker in the UI without freeing
-// meaningful space, because what remains over the limit is file content, which the
-// per-request file budget handles instead.
-const DEFAULT_MAX_COMPACTIONS = 1;
+/**
+ * One boundary before sending and one after a backend overflow, counted separately so a
+ * proactive pass never uses up the reactive retry. More passes on the same request only
+ * re-summarize an already condensed head; what is left over the budget is file content,
+ * which the per-request file budget handles.
+ */
+const MAX_PROACTIVE_COMPACTIONS = 1;
+const MAX_REACTIVE_COMPACTIONS = 1;
+/** Retries after a backend overflow, with or without compaction. Each must plan a smaller request. */
+const MAX_OVERFLOW_RETRIES = 2;
+/** Bounded wait for model metadata so a send right after load uses the real window. */
+const MODELS_WAIT_MS = 1_500;
+
+/** Compactions in progress per conversation, so concurrent sends do not fold the same history twice. */
+const compactionsInFlight = new Map<ConversationId, Promise<unknown>>();
 
 /**
  * Client-side tools for a send. Artifact and Lumo Desktop connectors each have their own
@@ -120,7 +138,8 @@ const DEFAULT_MAX_COMPACTIONS = 1;
  */
 function resolveClientToolExecutor(
     sendOptions: ForwardedSendOptions,
-    dispatch: LumoDispatch
+    dispatch: LumoDispatch,
+    getVisibleMessageIds?: () => ReadonlySet<MessageId>
 ): ClientToolExecutor | undefined {
     const executors: ClientToolExecutor[] = [];
 
@@ -147,6 +166,15 @@ function resolveClientToolExecutor(
         );
     }
 
+    if (sendOptions.retrievalTools) {
+        executors.push(
+            createRetrievalToolExecutor({
+                ...sendOptions.retrievalTools,
+                getVisibleMessageIds: getVisibleMessageIds ?? sendOptions.retrievalTools.getVisibleMessageIds,
+            })
+        );
+    }
+
     if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
         executors.push(
             createArtifactToolExecutor({ presentationEnabled: sendOptions.artifactPresentationEnabled ?? false })
@@ -166,15 +194,41 @@ function resolveClientToolExecutor(
     return composeClientToolExecutors(...executors);
 }
 
+/** Client tool definitions travel with every request but are not part of the turns. */
+async function estimateClientToolSchemaTokens(executor: ClientToolExecutor | undefined): Promise<number> {
+    try {
+        const tools = (await executor?.getClientTools?.()) ?? [];
+        return tools.length > 0 ? countTokens(JSON.stringify(tools)) : 0;
+    } catch {
+        return 0;
+    }
+}
+
+function newAssistantPlaceholder(conversationId: ConversationId, parentId: MessageId): Message {
+    return {
+        id: newMessageId(),
+        parentId,
+        conversationId,
+        createdAt: createDate(),
+        role: Role.Assistant,
+        content: '',
+        placeholder: true,
+        blocks: [],
+    };
+}
+
 /**
- * Run a generation, transparently recovering from `context_length_exceeded`.
+ * Run a generation, sized against the request budget and recovering from
+ * `context_length_exceeded`.
  *
- * On overflow it runs the compaction engine over the current chain, inserts a
- * compaction-boundary message (a new branch under the user question) recording
- * what was condensed, creates a fresh assistant message under that boundary, and
- * retries — so the model only ever sees the compacted context going forward. The
- * failed attempt is discarded from the active branch but the full history is
- * preserved elsewhere in the tree.
+ * Before sending, a request that does not fit the budget (or that sheds files because
+ * history crowds them out) is compacted: the compaction engine condenses older turns into
+ * a compaction-boundary message (a new branch under the user question) and a fresh
+ * assistant message under that boundary receives the generation. On a backend overflow the
+ * budget is recalibrated from the overflow and the request is compacted or re-planned and
+ * retried, as long as each retry is smaller. An attempt that overflowed is never persisted;
+ * when nothing is left to try, the last attempt is persisted as failed (no compaction) or
+ * discarded behind its persisted boundary, and the overflow error is surfaced.
  */
 export function runGenerationWithCompaction(params: GenerationWithCompactionParams) {
     return async (dispatch: LumoDispatch): Promise<ConversationGenerationResult> => {
@@ -191,24 +245,28 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             messageMap,
             sendOptions,
             preferSibling,
-            maxCompactions = DEFAULT_MAX_COMPACTIONS,
             retryAfterToolExecution = true,
             enableProactiveCompaction = true,
-            proactiveThresholdTokens: proactiveThresholdTokensParam,
-            compactionTargetTokens: compactionTargetTokensParam,
         } = params;
-
-        const windowConfig = getContextWindowConfigForModelTier(sendOptions.modelTier ?? 'auto');
-        const proactiveThresholdTokens =
-            proactiveThresholdTokensParam ?? windowConfig.proactiveCompactionThresholdTokens;
-        const compactionTargetTokens = compactionTargetTokensParam ?? windowConfig.compactionTargetTokens;
 
         let currentChain = chain;
         let currentAssistantId = assistantMessageId;
         let currentParentId = parentMessageId;
-        let compactions = 0;
+        let proactiveCompactions = 0;
+        let reactiveCompactions = 0;
+        let overflowRetries = 0;
         let toolExecutionStarted = false;
-        const resolvedExecutor = resolveClientToolExecutor(sendOptions, dispatch);
+        // The lookup tools skip messages the request carries in full. Read from the chain being
+        // sent, so messages a compaction in this send summarized away become searchable at once.
+        let visibleFor: { chain: Message[]; ids: ReadonlySet<MessageId> } | undefined;
+        const getVisibleMessageIds = () => {
+            if (visibleFor?.chain !== currentChain) {
+                const sent = collapseCompactedChain(currentChain, messageMap).chain;
+                visibleFor = { chain: currentChain, ids: new Set(sent.map((message) => message.id)) };
+            }
+            return visibleFor.ids;
+        };
+        const resolvedExecutor = resolveClientToolExecutor(sendOptions, dispatch, getVisibleMessageIds);
         const clientToolExecutor = resolvedExecutor && {
             ...resolvedExecutor,
             execute: async (...args: Parameters<ClientToolExecutor['execute']>) => {
@@ -217,9 +275,64 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             },
         };
 
+        await waitForModels(MODELS_WAIT_MS);
+        const toolSchemaTokens = await estimateClientToolSchemaTokens(resolvedExecutor);
+        const getBudget = (): RequestBudget =>
+            resolveRequestBudget({
+                modelTier: sendOptions.modelTier,
+                reasoning: sendOptions.enableReasoning,
+                conversationId,
+            });
+        const attachmentLookup = Object.fromEntries((attachments ?? []).map((a) => [a.id, a]));
+
+        /** Estimated size of the request `buildTurns` produces for a chain, tool definitions included. */
+        const estimateRequest = (candidate: Message[]): number => {
+            try {
+                return estimateTurnsTokens(buildTurns(candidate)) + toolSchemaTokens;
+            } catch {
+                return 0;
+            }
+        };
+
+        /**
+         * Compact when the planned request is over budget, or when it only fits by shedding or
+         * excerpting files while there is enough history to make room for them.
+         */
+        const shouldCompact = (candidate: Message[]): boolean => {
+            const budget = getBudget();
+            if (estimateRequest(candidate) > budget.inputBudget) {
+                return true;
+            }
+            try {
+                const usage = estimateEffectiveContextUsage({
+                    messageChain: candidate,
+                    contextFilters: contextFilters ?? [],
+                    allAttachments: attachmentLookup,
+                    messageMap,
+                    budget,
+                    fileCards: !!sendOptions.retrievalTools,
+                });
+                const shedsFiles =
+                    usage.droppedForBudget.length > 0 ||
+                    usage.excerptedForBudget.size > 0 ||
+                    [...usage.cardedFiles.values()].includes('budget');
+                return shedsFiles && usage.conversationTokens + usage.toolCallTokens > budget.keepRecentTokens;
+            } catch {
+                return false;
+            }
+        };
+
         /** Run compaction, materialize the branch, and advance the local cursors. */
-        const compactAndAdvance = async (): Promise<void> => {
-            const branch = await dispatch(
+        const compactAndAdvance = async ({ skipIfBusy }: { skipIfBusy: boolean }): Promise<void> => {
+            const inFlight = compactionsInFlight.get(conversationId);
+            if (inFlight) {
+                // Another send is already folding this history; this chain predates its boundary.
+                if (skipIfBusy) {
+                    throw new NotEnoughToCompactError();
+                }
+                await inFlight.catch(() => undefined);
+            }
+            const run = dispatch(
                 compactAndBranch({
                     api,
                     conversationId,
@@ -231,31 +344,56 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                     messageMap,
                     signal: sendOptions.signal,
                     preferSibling,
-                    compactionTargetTokens,
+                    budget: getBudget(),
+                    estimateRequest,
                 })
             );
+            compactionsInFlight.set(conversationId, run);
+            let branch: Awaited<typeof run>;
+            try {
+                branch = await run;
+            } finally {
+                if (compactionsInFlight.get(conversationId) === run) {
+                    compactionsInFlight.delete(conversationId);
+                }
+            }
             preferSibling?.(branch.boundary);
             currentChain = [...currentChain, branch.boundary];
             currentAssistantId = branch.assistant.id;
             currentParentId = branch.boundary.id;
-            compactions += 1;
         };
 
-        // Proactive pass: if the request is already too large to fit, compact
-        // before the first send. This summarizes older turns (dropping their
-        // re-sent attachments) while keeping the recent tail — including the
-        // current question's attachments — intact.
-        if (enableProactiveCompaction && compactions < maxCompactions) {
-            throwIfAborted(sendOptions.signal);
-            let estimatedTokens = 0;
-            try {
-                estimatedTokens = estimateTurnsTokens(buildTurns(currentChain));
-            } catch {
-                estimatedTokens = 0;
+        /** Replace the overflowed attempt (never persisted) with a fresh one under the same parent. */
+        const restartAttempt = () => {
+            const assistant = newAssistantPlaceholder(conversationId, currentParentId);
+            dispatch(deleteMessage(currentAssistantId));
+            dispatch(addMessage(assistant));
+            preferSibling?.(assistant);
+            currentAssistantId = assistant.id;
+        };
+
+        /**
+         * Stop retrying. An attempt that overflowed was not persisted. Without a compaction
+         * boundary it is the question's only reply (a retry without compaction replaced the
+         * original), so keep it as the failed turn; under a persisted boundary, drop it, since
+         * the boundary already continues the branch.
+         */
+        const giveUp = (error: unknown): never => {
+            dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.COMPLETED }));
+            if (currentParentId === parentMessageId) {
+                dispatch(pushMessageRequest({ id: currentAssistantId }));
+            } else {
+                dispatch(deleteMessage(currentAssistantId));
             }
-            if (estimatedTokens >= proactiveThresholdTokens) {
+            throw error;
+        };
+
+        if (enableProactiveCompaction && proactiveCompactions < MAX_PROACTIVE_COMPACTIONS) {
+            throwIfAborted(sendOptions.signal);
+            if (shouldCompact(currentChain)) {
                 try {
-                    await compactAndAdvance();
+                    await compactAndAdvance({ skipIfBusy: true });
+                    proactiveCompactions += 1;
                 } catch (proactiveError) {
                     if (isAbortError(proactiveError)) {
                         throw proactiveError;
@@ -277,6 +415,7 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                     artifactToolMode: sendOptions.artifactToolMode,
                 });
             }
+            const attemptEstimate = estimateRequest(currentChain);
             try {
                 const turns = buildTurns(currentChain);
                 const result = await dispatch(
@@ -290,23 +429,32 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                 );
                 return { assistantMessageId: currentAssistantId, status: result.status };
             } catch (error) {
-                if (
-                    !isContextLengthExceededError(error) ||
-                    compactions >= maxCompactions ||
-                    (!retryAfterToolExecution && toolExecutionStarted)
-                ) {
+                if (!isContextLengthExceededError(error)) {
                     throw error;
                 }
+                if ((!retryAfterToolExecution && toolExecutionStarted) || overflowRetries >= MAX_OVERFLOW_RETRIES) {
+                    giveUp(error);
+                }
+                overflowRetries += 1;
 
-                try {
-                    await compactAndAdvance();
-                } catch (compactionError) {
-                    dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.COMPLETED }));
-                    // Nothing to compact, or compaction itself failed — surface the original overflow.
-                    if (compactionError instanceof NotEnoughToCompactError) {
-                        throw error;
+                // The overflow already recalibrated the budget, so both paths below plan smaller.
+                let compacted = false;
+                if (reactiveCompactions < MAX_REACTIVE_COMPACTIONS) {
+                    try {
+                        await compactAndAdvance({ skipIfBusy: false });
+                        reactiveCompactions += 1;
+                        compacted = true;
+                    } catch (compactionError) {
+                        if (isAbortError(compactionError) || !(compactionError instanceof NotEnoughToCompactError)) {
+                            giveUp(compactionError);
+                        }
                     }
-                    throw compactionError;
+                }
+                if (!compacted) {
+                    if (estimateRequest(currentChain) >= attemptEstimate) {
+                        giveUp(error);
+                    }
+                    restartAttempt();
                 }
             }
         }
@@ -325,7 +473,9 @@ type CompactAndBranchParams = {
     signal?: AbortSignal;
     /** Pins a sibling so the in-progress boundary is shown while compaction runs. */
     preferSibling?: (message: Message) => void;
-    compactionTargetTokens: number;
+    budget: RequestBudget;
+    /** Estimated request size for a chain, used to report and require a real reduction. */
+    estimateRequest: (chain: Message[]) => number;
 };
 
 const EMPTY_COMPACTION_STATS = {
@@ -346,9 +496,11 @@ const EMPTY_COMPACTION_STATS = {
  *
  * The boundary is created up-front in a `compacting` state and pinned, so the UI
  * shows that compaction is underway (the engine — especially its LLM summary
- * step — can take a while), then filled in once the summary is ready. The failed
- * attempt is only discarded on success; if compaction itself fails we remove the
- * placeholder boundary and re-pin the original attempt so the error surfaces.
+ * step — can take a while), then filled in once the summary is ready. The boundary
+ * is only kept when the next request actually shrinks by at least
+ * `MIN_COMPACTION_TOKENS_RECLAIMED`; its reported saving is that reduction. The failed
+ * attempt is only discarded on success; if compaction fails or frees nothing we remove
+ * the placeholder boundary and re-pin the original attempt.
  */
 function compactAndBranch(params: CompactAndBranchParams) {
     return async (dispatch: LumoDispatch): Promise<{ boundary: Message; assistant: Message }> => {
@@ -363,7 +515,8 @@ function compactAndBranch(params: CompactAndBranchParams) {
             messageMap,
             signal,
             preferSibling,
-            compactionTargetTokens,
+            budget,
+            estimateRequest,
         } = params;
 
         dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.GENERATING }));
@@ -394,19 +547,40 @@ function compactAndBranch(params: CompactAndBranchParams) {
         dispatch(addMessage(inProgressBoundary));
         preferSibling?.(inProgressBoundary);
 
-        let result;
+        const revert = () => {
+            dispatch(deleteMessage(boundaryId));
+            preferSibling?.({ id: failedAssistantId } as Message);
+        };
+
+        let boundary: Message;
         try {
-            result = await compactConversation(chain, api, {
+            const result = await compactConversation(chain, api, {
                 signal,
                 attachments,
                 contextFilters,
                 messageMap,
-                targetTokens: compactionTargetTokens,
+                targetTokens: budget.compactionTargetTokens,
+                keepRecentTokenBudget: budget.keepRecentTokens,
             });
+
+            const compaction: CompactionMeta = {
+                status: 'done',
+                summary: result.summary,
+                summarizedMessageIds: result.summarizedMessageIds,
+                keptMessageIds: result.keptMessageIds,
+                stats: result.stats,
+                createdAt: now,
+            };
+            boundary = { ...inProgressBoundary, compaction };
+
+            // What the next request actually loses, files and deduplication included.
+            const reclaimed = estimateRequest(chain) - estimateRequest([...chain, boundary]);
+            if (reclaimed < MIN_COMPACTION_TOKENS_RECLAIMED) {
+                throw new NotEnoughToCompactError();
+            }
+            compaction.stats = { ...result.stats, tokensRemoved: reclaimed };
         } catch (error) {
-            // Revert: drop the placeholder boundary and restore the original attempt.
-            dispatch(deleteMessage(boundaryId));
-            preferSibling?.({ id: failedAssistantId } as Message);
+            revert();
             throw error;
         }
 
@@ -414,29 +588,10 @@ function compactAndBranch(params: CompactAndBranchParams) {
         // via the original messages, which are still summarized into the boundary).
         dispatch(deleteMessage(failedAssistantId));
 
-        const compaction: CompactionMeta = {
-            status: 'done',
-            summary: result.summary,
-            summarizedMessageIds: result.summarizedMessageIds,
-            keptMessageIds: result.keptMessageIds,
-            stats: result.stats,
-            createdAt: now,
-        };
-
-        const boundary: Message = { ...inProgressBoundary, compaction };
         dispatch(addMessage(boundary));
         dispatch(pushMessageRequest({ id: boundary.id }));
 
-        const assistant: Message = {
-            id: newMessageId(),
-            parentId: boundary.id,
-            conversationId,
-            createdAt: createDate(),
-            role: Role.Assistant,
-            content: '',
-            placeholder: true,
-            blocks: [],
-        };
+        const assistant = newAssistantPlaceholder(conversationId, boundary.id);
         dispatch(addMessage(assistant));
 
         return { boundary, assistant };

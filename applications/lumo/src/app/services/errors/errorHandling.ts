@@ -61,6 +61,19 @@ export const handleGenerationError = (error: GenerationError, userType: LUMO_USE
             );
             break;
 
+        case LUMO_API_ERRORS.CONTEXT_WINDOW_EXCEEDED:
+            dispatch(
+                addConversationError({
+                    conversationId: error.conversationId,
+                    errorTitle: c('collider_2025: Error Title').t`This conversation is too long`,
+                    errorMessage: c('collider_2025: Error Message')
+                        .t`Even after summarizing earlier messages, this conversation and its files don't fit. Remove some files or start a new chat.`,
+                    errorType: error.type,
+                    actionParams: error.actionParams,
+                })
+            );
+            break;
+
         case LUMO_API_ERRORS.HIGH_DEMAND:
             dispatch(
                 addConversationError({

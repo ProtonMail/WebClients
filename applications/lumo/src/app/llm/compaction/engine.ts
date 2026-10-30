@@ -4,9 +4,10 @@ import { getMessageBlocks } from '../../messageHelpers';
 import type { Attachment, CompactionStats, CompactionStrategyName, Message, MessageId } from '../../types';
 import { buildCompactionAudit, collectClearedToolNames, collectDroppedToolNames } from './audit';
 import { SUMMARY_TURN_PREFIX, collapseCompactedChain } from './collapse';
+import { excerptToTokens } from '../excerpt';
+import { getRequestBudget } from '../requestBudget';
 import {
     CLEARED_TOOL_RESULT_PLACEHOLDER,
-    COMPACTION_TARGET_TOKENS,
     KEEP_RECENT_TOOL_RESULTS,
     MAX_SUMMARY_INPUT_TOKENS,
     MIN_COMPACTION_TOKENS_RECLAIMED,
@@ -16,9 +17,10 @@ import { clearOldToolResults, dropToolPairs, stripContext } from './strategies';
 import { summarizeWithLlm } from './summarize';
 import {
     type AttachmentExclusion,
-    estimateChainAttachmentTokens,
+    collectChainDocumentKeys,
     estimateChainContentTokens,
     estimateChainTokens,
+    estimateReclaimableAttachmentTokens,
     estimateTextTokens,
 } from './tokens';
 import { buildTranscript } from './transcript';
@@ -107,17 +109,11 @@ function stripSummaryTurnPrefix(content: string | undefined): string {
 }
 
 function truncateTranscriptForSummary(transcript: string): string {
-    if (estimateTextTokens(transcript) <= MAX_SUMMARY_INPUT_TOKENS) {
-        return transcript;
-    }
     // Keep the oldest and newest portions, drop the middle (where redundancy concentrates).
-    const maxChars = MAX_SUMMARY_INPUT_TOKENS * 4;
-    const headChars = Math.floor(maxChars * 0.6);
-    const tailChars = maxChars - headChars;
-    return (
-        transcript.slice(0, headChars) +
-        '\n\n[... middle of conversation omitted for length ...]\n\n' +
-        transcript.slice(transcript.length - tailChars)
+    return excerptToTokens(
+        transcript,
+        MAX_SUMMARY_INPUT_TOKENS,
+        '\n\n[... middle of conversation omitted for length ...]\n\n'
     );
 }
 
@@ -153,7 +149,7 @@ export async function compactConversation(
         contextFilters: options.contextFilters,
     });
 
-    const target = options.targetTokens ?? COMPACTION_TARGET_TOKENS;
+    const target = options.targetTokens ?? getRequestBudget().compactionTargetTokens;
     const tailTokens = estimateChainTokens(tail);
     const headBudget = Math.max(0, target - tailTokens);
 
@@ -180,10 +176,16 @@ export async function compactConversation(
         return body ? `${seeded}\n\n${body}` : seeded;
     };
 
+    // A document the kept tail still sends is not reclaimed by dropping the head's copy.
     const tokensBefore =
         estimateTextTokens(priorSummary) +
         estimateChainContentTokens(head) +
-        estimateChainAttachmentTokens(head, allAttachments, exclusions);
+        estimateReclaimableAttachmentTokens(
+            head,
+            allAttachments,
+            exclusions,
+            collectChainDocumentKeys(tail, allAttachments, exclusions)
+        );
 
     const initialToolResults = countToolResults(head);
     const appliedStrategies: CompactionStrategyName[] = [];
