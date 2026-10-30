@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useLayoutEffect, useMemo, useState } from 'react';
 
 import { useIsLumoSmallScreen } from '../hooks/useIsLumoSmallScreen';
 import { readScopedLocalStorageJson, writeScopedLocalStorageJson } from '../util/lumoScopedLocalStorage';
@@ -17,10 +17,11 @@ const SIDEBAR_MODE_STORAGE_KEY = 'lumo-sidebar-mode';
  */
 type SmallScreenMode = 'hidden' | 'overlay';
 type LargeScreenMode = 'hidden' | 'expanded';
-type SidebarMode = SmallScreenMode | LargeScreenMode;
 
 interface SidebarState {
-    mode: SidebarMode;
+    smallScreenMode: SmallScreenMode;
+    largeScreenMode: LargeScreenMode;
+    animateTransitions: boolean;
     isSmallScreen: boolean;
 
     toggle: () => void; // Universal toggle (works on all screens)
@@ -28,15 +29,13 @@ interface SidebarState {
     closeOnItemClick: () => void; // Context-aware item click handler
 
     isVisible: boolean;
-    isExpanded: boolean;
-    isOverlay: boolean;
 }
 
 const SidebarContext = createContext<SidebarState | null>(null);
 
 interface SidebarProviderProps {
     children: React.ReactNode;
-    defaultMode?: SidebarMode;
+    defaultMode?: LargeScreenMode;
 }
 
 export const SidebarProvider = ({ children, defaultMode = 'expanded' }: SidebarProviderProps) => {
@@ -50,18 +49,22 @@ export const SidebarProvider = ({ children, defaultMode = 'expanded' }: SidebarP
         const stored = readScopedLocalStorageJson<LargeScreenMode | null>(SIDEBAR_MODE_STORAGE_KEY, null);
         return stored === 'hidden' || stored === 'expanded' ? stored : fallback;
     });
+    const [animateTransitions, setAnimateTransitions] = useState(false);
+
+    // Breakpoint layout changes should snap; only user actions should animate.
+    useLayoutEffect(() => {
+        setAnimateTransitions(false);
+    }, [isSmallScreen]);
 
     // Persist large screen mode so the sidebar state survives reloads.
     useEffect(() => {
         writeScopedLocalStorageJson(SIDEBAR_MODE_STORAGE_KEY, largeScreenMode);
     }, [largeScreenMode]);
 
-    // Compute the effective mode based on screen size
-    const mode = useMemo((): SidebarMode => {
-        return isSmallScreen ? smallScreenMode : largeScreenMode;
-    }, [isSmallScreen, smallScreenMode, largeScreenMode]);
+    const isVisible = isSmallScreen ? smallScreenMode === 'overlay' : largeScreenMode === 'expanded';
 
     const toggle = useCallback(() => {
+        setAnimateTransitions(true);
         if (isSmallScreen) {
             setSmallScreenMode((current) => (current === 'hidden' ? 'overlay' : 'hidden'));
         } else {
@@ -73,6 +76,7 @@ export const SidebarProvider = ({ children, defaultMode = 'expanded' }: SidebarP
         if (!isSmallScreen) {
             return;
         }
+        setAnimateTransitions(true);
         setSmallScreenMode('hidden');
     }, [isSmallScreen]);
 
@@ -81,28 +85,27 @@ export const SidebarProvider = ({ children, defaultMode = 'expanded' }: SidebarP
         closeOverlay();
     }, [closeOverlay, setGhostChatMode]);
 
-    const computedValues = useMemo(() => {
-        const isVisible = mode !== 'hidden';
-        const isExpanded = mode === 'expanded';
-        const isOverlay = mode === 'overlay';
-
-        return {
-            isVisible,
-            isExpanded,
-            isOverlay,
-        };
-    }, [mode]);
-
     const value: SidebarState = useMemo(
         () => ({
-            mode,
+            smallScreenMode,
+            largeScreenMode,
+            animateTransitions,
             isSmallScreen,
             toggle,
             closeOverlay,
             closeOnItemClick,
-            ...computedValues,
+            isVisible,
         }),
-        [mode, isSmallScreen, toggle, closeOverlay, closeOnItemClick, computedValues]
+        [
+            smallScreenMode,
+            largeScreenMode,
+            animateTransitions,
+            isSmallScreen,
+            toggle,
+            closeOverlay,
+            closeOnItemClick,
+            isVisible,
+        ]
     );
 
     return <SidebarContext.Provider value={value}>{children}</SidebarContext.Provider>;

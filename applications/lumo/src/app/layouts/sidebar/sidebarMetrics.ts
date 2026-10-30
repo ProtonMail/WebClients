@@ -44,7 +44,7 @@ const parseCssDuration = (value: string, fallback: number): number => {
 
 /**
  * Reads the sidebar layout tokens declared in index.scss. Those custom properties are the single
- * source of truth: Sidebar.scss applies the same values to `inline-size` and to the transition, so
+ * source of truth: LumoSidebar.scss applies the same values to `inline-size` and to the transition, so
  * a design change reaches native without touching this file.
  */
 export const readSidebarMetrics = (): SidebarMetrics => {

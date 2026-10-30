@@ -15,6 +15,7 @@ type ModelModePanelLayout = 'dropdown' | 'sheet';
 export interface ModelModeOption {
     tier: ModelTier;
     getLabel: () => string;
+    getShortLabel: () => string;
     getDescription: () => string;
     getRemaining?: () => number | undefined;
     getUnavailableReason?: () => 'high-load' | null;
@@ -339,6 +340,7 @@ export const buildModelModeOptions = (
               {
                   tier: 'apertus-15' as const,
                   getLabel: () => 'Apertus 1.5 🇨🇭',
+                  getShortLabel: () => 'Apertus',
                   getDescription: () =>
                       c('collider_2025: Description').t`Fully open, Swiss-made model for lighter tasks`,
                   getRemaining: () => remainingLimits?.lite,
@@ -349,6 +351,7 @@ export const buildModelModeOptions = (
     {
         tier: 'lumo-lite',
         getLabel: () => `${LUMO_SHORT_APP_NAME} 2.0 Lite`,
+        getShortLabel: () => `Lite`,
         getDescription: () => c('collider_2025: Description').t`Lightweight model for everyday tasks`,
         getRemaining: () => remainingLimits?.lite,
         isDisabled: () => isLimitExhausted(remainingLimits?.lite),
@@ -356,6 +359,7 @@ export const buildModelModeOptions = (
     {
         tier: 'lumo-max',
         getLabel: () => `${LUMO_SHORT_APP_NAME} 2.0 Max`,
+        getShortLabel: () => `Max`,
         getDescription: () =>
             isMaxAvailableByFlag
                 ? c('collider_2025: Description').t`High-performance model for complex tasks`
@@ -369,6 +373,7 @@ export const buildModelModeOptions = (
               {
                   tier: 'lumo-preview' as const,
                   getLabel: () => `${getModelDisplayName('lumo-preview')} ✨`,
+                  getShortLabel: () => `Preview`,
                   getDescription: () => c('collider_2025: Description').t`Internal preview of an upcoming model`,
               },
           ]
