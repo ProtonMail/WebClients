@@ -239,7 +239,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
     this.setNeedsBroadcastCurrentAwarenessState(BroadcastSource.AwarenessUpdateHandler)
   }
 
-  // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
+  // eslint-disable-next-line proton/enforce-uint8array-arraybuffer
   handleYDocUpdate = (_update: Uint8Array<ArrayBufferLike>, origin: any) => {
     const update = _update as Uint8Array<ArrayBuffer> /* upcast Uint8Array<ArrayBuffer> to make TS happy */
     const isNonUserInitiatedChange = origin === this || origin === DocUpdateOrigin.BaseCommit

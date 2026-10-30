@@ -25,17 +25,18 @@
     "./Version": "./lib/Version.ts"
   },
   "scripts": {
-    "lint": "eslint --quiet",
+    "lint": "oxlint --quiet",
     "sync": "./scripts/sync.sh ."
   },
   "dependencies": {
     "@standardnotes/domain-core": "1.41.3"
   },
   "devDependencies": {
-    "@proton/eslint-config-proton": "workspace:^",
+    "@proton/oxlint-config": "workspace:^",
     "@types/google-protobuf": "^3.15.12",
-    "eslint": "catalog:",
     "google-protobuf": "^3.21.4",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
     "typescript": "^6.0.3"
   }
 }
