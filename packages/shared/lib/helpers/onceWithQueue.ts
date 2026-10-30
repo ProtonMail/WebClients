@@ -7,10 +7,11 @@
  * the queued promise resolves.
  *
  */
-export const onceWithQueue = <R>(fn: () => Promise<R>): (() => Promise<R>) => {
+export const onceWithQueue = <A extends unknown[], R>(fn: (...args: A) => Promise<R>): ((...args: A) => Promise<R>) => {
     let STATE: {
         promise?: Promise<R>;
         queued?: Promise<R>;
+        queuedArgs?: A;
     } = {};
 
     const clear = () => {
@@ -22,25 +23,28 @@ export const onceWithQueue = <R>(fn: () => Promise<R>): (() => Promise<R>) => {
     };
 
     const next = (): Promise<R> => {
+        const args = STATE.queuedArgs as A;
         clear();
         // eslint-disable-next-line
-        return run();
+        return run(...args);
     };
 
-    const run = () => {
+    const run = (...args: A) => {
         // If a queue has already been set up, update the arguments.
         if (STATE.queued) {
+            STATE.queuedArgs = args;
             return STATE.queued;
         }
 
         // If a promise is running, set up the queue.
         if (STATE.promise) {
+            STATE.queuedArgs = args;
             STATE.queued = STATE.promise.then(next);
             return STATE.queued;
         }
 
         // Cache the promise.
-        STATE.promise = fn();
+        STATE.promise = fn(...args);
         // Set up independent resolve handlers.
         STATE.promise.then(clearPromise).catch(clear);
 

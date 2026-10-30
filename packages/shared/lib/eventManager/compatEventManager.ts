@@ -22,8 +22,8 @@ const createCompatEventManager = <EventResult>({
         stop: () => {
             eventManagers.forEach((eventManager) => eventManager.stop());
         },
-        call: async () => {
-            await Promise.all(eventManagers.map((eventManager) => eventManager.call()));
+        call: async (trigger) => {
+            await Promise.all(eventManagers.map((eventManager) => eventManager.call(trigger)));
         },
         reset: () => {
             eventManagers.forEach((eventManager) => eventManager.reset());
