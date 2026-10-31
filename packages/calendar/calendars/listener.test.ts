@@ -413,5 +413,12 @@ describe('calendar listener', () => {
             })
         );
         expect(getCalendarBootstrap('123')).toBe(oldCalendar);
+
+        store.dispatch(
+            getServerEvent({
+                CalendarMembers: [{ ID: 'memberId', Action: EVENT_ACTIONS.DELETE }],
+            })
+        );
+        expect(getCalendarBootstrap('123')).toEqual({ ...initialCalendar.value, Members: [updatedCalendarMember] });
     });
 });
