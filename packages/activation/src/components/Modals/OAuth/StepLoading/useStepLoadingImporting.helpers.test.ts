@@ -5,14 +5,12 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { Calendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import type { LaunchImportPayload } from '../../../../interface';
 import { IMPORT_ERROR, ImportProvider, ImportType, TIME_PERIOD } from '../../../../interface';
 import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import type { ImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.interface';
-import { easySwitchCreationTimer } from '../../../../telemetry/easySwitchCreationFunnel';
-import { mockEasySwitchCreationFunnelTracker } from '../../../../telemetry/mockTrackerOfGroup';
+import { mockAccountImportFlowTracker } from '../../../../telemetry/mockTrackerOfGroup';
 import { createImporterTask } from './useStepLoadingImporting.helpers';
 
 // We only need splitNodeUid - node UIDs are `${volumeId}~${nodeId}`.
@@ -181,9 +179,8 @@ describe('createImporterTask', () => {
     });
 
     describe('telemetry', () => {
-        it('sends importer_created with the products, the period and the elapsed time once the import started', async () => {
-            const { reports } = mockEasySwitchCreationFunnelTracker();
-            tracker.startTimer(easySwitchCreationTimer);
+        it('sends flow_finished with the products and the period once the import started', async () => {
+            const { reports } = mockAccountImportFlowTracker();
             const { props } = setup({
                 products: [ImportType.MAIL, ImportType.CONTACTS],
                 importerData: {
@@ -205,8 +202,8 @@ describe('createImporterTask', () => {
 
             expect(reports).toHaveLength(1);
             expect(reports[0]).toMatchObject({
-                measurementGroup: 'any.web.easy_switch_creation_funnel',
-                event: 'importer_created',
+                measurementGroup: 'any.web.account_import_flow',
+                event: 'flow_finished',
                 dimensions: {
                     provider: 'outlook',
                     importsMail: 'true',
@@ -214,11 +211,11 @@ describe('createImporterTask', () => {
                     importPeriodSelected: 'last_3_months',
                 },
             });
-            expect(reports[0].values).toHaveProperty('durationMs');
+            expect(reports[0].values).toHaveProperty('timestampMs');
         });
 
         it('sends creation_error when the import task fails to start', async () => {
-            const { reports } = mockEasySwitchCreationFunnelTracker();
+            const { reports } = mockAccountImportFlowTracker();
             const { props } = setup({
                 products: [ImportType.CONTACTS],
                 api: jest.fn().mockRejectedValue(alreadyExistsError),
@@ -228,13 +225,13 @@ describe('createImporterTask', () => {
 
             expect(reports).toHaveLength(1);
             expect(reports[0]).toMatchObject({
-                event: 'creation_error',
+                event: 'flow_error',
                 dimensions: { provider: 'outlook', importsContacts: 'true', errorStep: 'import_start' },
             });
         });
 
         it('sends creation_error when the calendars cannot be created', async () => {
-            const { reports } = mockEasySwitchCreationFunnelTracker();
+            const { reports } = mockAccountImportFlowTracker();
             const { props } = setup({
                 products: [ImportType.CALENDAR],
                 importerData: {
@@ -252,13 +249,13 @@ describe('createImporterTask', () => {
 
             expect(reports).toHaveLength(1);
             expect(reports[0]).toMatchObject({
-                event: 'creation_error',
+                event: 'flow_error',
                 dimensions: { importsCalendar: 'true', errorStep: 'calendar_creation' },
             });
         });
 
         it('sends creation_error when the import payload cannot be built', async () => {
-            const { reports } = mockEasySwitchCreationFunnelTracker();
+            const { reports } = mockAccountImportFlowTracker();
             // Mail without any email fields: building the payload throws
             const { props } = setup({ products: [ImportType.MAIL] });
 
@@ -266,23 +263,23 @@ describe('createImporterTask', () => {
 
             expect(reports).toHaveLength(1);
             expect(reports[0]).toMatchObject({
-                event: 'creation_error',
+                event: 'flow_error',
                 dimensions: { importsMail: 'true', errorStep: 'import_payload' },
             });
         });
 
         it('sends importer_created only, when the import started but refreshing the events fails', async () => {
-            const { reports } = mockEasySwitchCreationFunnelTracker();
+            const { reports } = mockAccountImportFlowTracker();
             const { props, call } = setup({ products: [ImportType.CONTACTS] });
             call.mockRejectedValueOnce(new Error('event loop'));
 
             await createImporterTask(props);
 
-            expect(reports.map((report) => report.event)).toEqual(['importer_created']);
+            expect(reports.map((report) => report.event)).toEqual(['flow_finished']);
         });
 
         it('does not track drive-only imports', async () => {
-            const { reports } = mockEasySwitchCreationFunnelTracker();
+            const { reports } = mockAccountImportFlowTracker();
             const { props } = setup({ products: [ImportType.DRIVE], driveClient: makeDriveClient() });
 
             await createImporterTask(props);

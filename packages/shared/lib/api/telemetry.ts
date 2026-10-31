@@ -13,8 +13,6 @@ export enum TelemetryMeasurementGroups {
     accountUnauthLost2FA = 'account.web.unauth_lost_2fa',
     accountDashboard = 'account.web.dashboard',
     accountUpgradePage = 'account.web.upgrade_page',
-    easySwitch = 'any.web.easy_switch',
-    easySwitchCreationFunnel = 'any.web.easy_switch_creation_funnel',
     referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
@@ -80,9 +78,7 @@ export enum TelemetryMeasurementGroups {
     clientInstalls = 'common.any.client_installs',
     clientSearch = 'any.web.client_search',
     b2bOnboarding = 'any.web.b2b_onboarding',
-    bringYourOwnEmail = 'any.web.bring_your_own_email',
     mailBringYourOwnEmail = 'mail.any.bring_your_own_email',
-    byoeCreationFunnel = 'any.web.byoe_creation_funnel',
     /** BYOE and Easy Switch flows, modelled like `mailOnboarding` (flow, step, action) */
     accountImportFlow = 'any.web.account_import_flow',
     appSwitcher = 'any.web.app_switcher',
@@ -126,30 +122,12 @@ export enum TelemetryMailTrial2024UpsellModal {
     upsell = 'upsell',
 }
 
-export enum TelemetryEasySwitchEvents {
-    importReportAction = 'import_report_action',
-    byoeAddressAction = 'byoe_address_action',
-    byoeClaimableAddressModalShown = 'byoe_claimable_address_modal_shown',
-    byoeClaimableAddressModalAction = 'byoe_claimable_address_modal_action',
-    byoeAddressLinkedModalShown = 'byoe_address_linked_modal_shown',
-    byoeAddressLinkedModalAction = 'byoe_address_linked_modal_action',
-}
-
 export enum TelemetryMailOnboardingEvents {
     stepLoad = 'step_load',
     stepCompleted = 'step_completed',
     stepInteracted = 'step_interacted',
     flowFinished = 'flow_finished',
     flowDismissed = 'flow_dismissed',
-}
-
-export enum TelemetryEasySwitchCreationFunnelEvents {
-    creationStarted = 'creation_started',
-    productsSubmitted = 'products_submitted',
-    instructionsViewed = 'instructions_viewed',
-    prepareImportViewed = 'prepare_import_viewed',
-    importerCreated = 'importer_created',
-    creationError = 'creation_error',
 }
 
 export enum TelemetryMailPagingControlsEvents {
@@ -623,25 +601,12 @@ export enum TelemetryB2BOnboardingEvents {
     hide_navbar_button = 'hide_navbar_button',
 }
 
-export enum TelemetryBringYourOwnEmailEvents {
-    claim_proton_address = 'claim_proton_address',
-}
-
 export enum TelemetryMailBringYourOwnEmailEvents {
     settingsView = 'settings_view',
     settingsListOnlyShown = 'settings_list_only_shown',
     connectStarted = 'connect_started',
     connectSucceeded = 'connect_succeeded',
     connectFailed = 'connect_failed',
-}
-
-export enum TelemetryBYOECreationFunnelEvents {
-    creationStarted = 'creation_started',
-    googleSignInClicked = 'google_sign_in_clicked',
-    authenticated = 'authenticated',
-    upsellModalViewed = 'upsell_modal_viewed',
-    importerCreated = 'importer_created',
-    creationError = 'creation_error',
 }
 
 export enum TelemetryAccountImportFlowEvents {
@@ -816,9 +781,7 @@ export type TelemetryEvents =
     | TelemetryContentSearchEvents
     | TelemetryContentSearchIndexEvents
     | TelemetryB2BOnboardingEvents
-    | TelemetryBringYourOwnEmailEvents
     | TelemetryMailBringYourOwnEmailEvents
-    | TelemetryBYOECreationFunnelEvents
     | TelemetryAccountImportFlowEvents
     | TelemetryPostSubscriptionTourEvents
     | TelemetryMailDrivePostSignupOneDollarEvents
@@ -849,8 +812,6 @@ export type TelemetryEvents =
     | TelemetryMeetActionsEvents
     | TelemetryMeetDashboardEvents
     | TelemetryMeetPerformanceEvents
-    | TelemetryEasySwitchEvents
-    | TelemetryEasySwitchCreationFunnelEvents
     | TelemetryMailOnboardingEvents
     | TelemetryComposerBookingsEvents;
 

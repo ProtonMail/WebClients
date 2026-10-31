@@ -4,7 +4,7 @@ import { buildAddress } from '@proton/account/testing/buildAddress';
 import type { ReconnectBYOEAddressResult } from '@proton/activation/src/byoe/reconnectBYOEAddress.interface';
 import type { OAuthCallbackResult } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
 import type { ImportToken } from '@proton/activation/src/interface';
-import { trackBYOECreationError } from '@proton/activation/src/telemetry/byoeCreationFunnel';
+import { trackAccountImportBYOEError } from '@proton/activation/src/telemetry/accountImportFlow';
 
 import { useBYOEMobileConnection } from './useBYOEMobileConnection';
 
@@ -46,7 +46,7 @@ jest.mock('@proton/activation/src/hooks/useBYOEAddresses', () => ({
     useBYOEAddresses: () => ({ addresses: [disconnectedAddress], loading: false }),
 }));
 
-jest.mock('@proton/activation/src/telemetry/byoeCreationFunnel', () => ({ trackBYOECreationError: jest.fn() }));
+jest.mock('@proton/activation/src/telemetry/accountImportFlow', () => ({ trackAccountImportBYOEError: jest.fn() }));
 
 const redirectUri = 'https://account.proton.me/oauth/callback';
 const token = { ID: 'token-id', Account: 'jane@gmail.com' } as ImportToken;
@@ -233,7 +233,7 @@ describe('useBYOEMobileConnection reconnection', () => {
             });
             expect(result.current.error).toBeNull();
             expect(setStatus).not.toHaveBeenCalled();
-            expect(trackBYOECreationError).not.toHaveBeenCalled();
+            expect(trackAccountImportBYOEError).not.toHaveBeenCalled();
             expect(mockReconnectWithCode).not.toHaveBeenCalled();
         });
     });

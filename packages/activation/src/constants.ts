@@ -87,17 +87,17 @@ export const MAX_SYNC_FREE_USER = 1;
 export const MAX_SYNC_PAID_USER = 3;
 
 export const enum BYOE_CLAIM_PROTON_ADDRESS_SOURCE {
-    MAIL_ONBOARDING = 'MAIL_ONBOARDING',
-    MAIL_COMPOSER = 'MAIL_COMPOSER',
-    MAIL_TOOLBAR = 'MAIL_TOOLBAR',
-    CALENDAR_WIDGET = 'CALENDAR_WIDGET',
-    CALENDAR_DRAWER = 'CALENDAR_DRAWER',
-    OPEN_CALENDAR_APP = 'OPEN_CALENDAR_APP',
-    IMPORT = 'IMPORT',
-    EASY_SWITCH = 'EASY_SWITCH',
-    ADD_ADDRESS = 'ADD_ADDRESS',
-    ADD_ADDRESS_FREE = 'ADD_ADDRESS_FREE',
-    SHARED_PLAN_PENDING_INVITATION = 'SHARED_PLAN_PENDING_INVITATION',
+    MAIL_ONBOARDING = 'mail-onboarding',
+    MAIL_COMPOSER = 'mail-composer',
+    MAIL_TOOLBAR = 'mail-toolbar',
+    CALENDAR_WIDGET = 'calendar-widget',
+    CALENDAR_DRAWER = 'calendar-drawer',
+    OPEN_CALENDAR_APP = 'open-calendar-app',
+    IMPORT = 'import',
+    EASY_SWITCH = 'easy-switch',
+    ADD_ADDRESS = 'add-address',
+    ADD_ADDRESS_FREE = 'add-address-free',
+    SHARED_PLAN_PENDING_INVITATION = 'shared-plan-pending-invitation',
 }
 
 export type ProviderDisplay = {

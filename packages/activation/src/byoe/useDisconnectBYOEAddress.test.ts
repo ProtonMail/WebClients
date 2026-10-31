@@ -6,7 +6,6 @@ import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { loadSyncList } from '../logic/sync/sync.actions';
-import { BYOEAddressAction } from '../telemetry/events';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import { useDisconnectBYOEAddress } from './useDisconnectBYOEAddress';
 
@@ -101,9 +100,6 @@ describe('useDisconnectBYOEAddress', () => {
 
             expect(loadSyncList).toHaveBeenCalledTimes(1);
             expect(mockEasySwitchDispatch).toHaveBeenCalledWith('loadSyncList');
-            expect(tracker.emit).toHaveBeenCalledWith(BYOEAddressAction, {
-                dimensions: { addressAction: 'disconnect', provider: 'google' },
-            });
         });
 
         it('does not reload syncs or emit telemetry when the thunk fails', async () => {

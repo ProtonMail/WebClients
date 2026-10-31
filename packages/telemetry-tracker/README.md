@@ -24,7 +24,7 @@ Telemetry sends dimensions as strings (booleans become `'true'`/`'false'`). Anal
 1. Declare it in the events file of your package (convention: `<package>/src/telemetry/events.ts`):
 
 ```ts
-import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { TelemetryAccountImportFlowEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { defineEvent } from '@proton/telemetry-tracker/lib/defineEvent';
 import { allowed, bool, duration, number, topValues } from '@proton/telemetry-tracker/lib/dimensions';
 import { defineTimer } from '@proton/telemetry-tracker/lib/timers';
@@ -33,8 +33,8 @@ export const importTimer = defineTimer('byoeImport');
 
 export const importCompleted = defineEvent({
     target: 'telemetry', // 'telemetry' | 'analytics' | 'both'
-    group: TelemetryMeasurementGroups.bringYourOwnEmail,
-    event: TelemetryBringYourOwnEmailEvents.claim_proton_address,
+    group: TelemetryMeasurementGroups.accountImportFlow,
+    event: TelemetryAccountImportFlowEvents.stepCompleted,
     dimensions: {
         source: allowed(['settings', 'sidebar']), // closed list (allowed_values)
         provider: topValues(), // free string (top_values)

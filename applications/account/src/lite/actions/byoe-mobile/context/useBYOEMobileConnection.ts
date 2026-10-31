@@ -13,7 +13,7 @@ import { useReconnectBYOEAddress } from '@proton/activation/src/byoe/useReconnec
 import { getBYOEDisabledNotification } from '@proton/activation/src/constants';
 import { useBYOEAddresses } from '@proton/activation/src/hooks/useBYOEAddresses';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
-import { trackBYOECreationError } from '@proton/activation/src/telemetry/byoeCreationFunnel';
+import { trackAccountImportBYOEError } from '@proton/activation/src/telemetry/accountImportFlow';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -179,7 +179,7 @@ export const useBYOEMobileConnection = ({ redirectUri, defaultImportEmails, setS
         }
 
         if (callback.type === 'error') {
-            trackBYOECreationError('authentication');
+            trackAccountImportBYOEError({ errorStep: 'authentication' });
             setError({ type: 'token-failed' });
             trackConnectFailed('token-failed');
             return;

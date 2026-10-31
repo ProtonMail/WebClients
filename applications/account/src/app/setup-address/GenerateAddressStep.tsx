@@ -3,15 +3,14 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
+import { trackAccountImportClaimProtonAddressClicked } from '@proton/activation/src/telemetry/accountImportFlow';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import AuthModal from '@proton/components/containers/password/AuthModal';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { queryCheckUsernameAvailability, queryUnlock } from '@proton/shared/lib/api/user';
 import { APPS, APPS_CONFIGURATION, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
-import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { AddressGenerationPayload } from '@proton/shared/lib/keys/setupAddress';
 import { ClaimableAddressType } from '@proton/shared/lib/keys/setupAddress';
@@ -75,15 +74,7 @@ const GenerateAddressStep = ({
 
         const openCalendar = toAppName === APPS_CONFIGURATION[APPS.PROTONCALENDAR].name;
         if (openCalendar && externalEmailAddressValue && getIsBYOEAddress(externalEmailAddressValue)) {
-            await sendTelemetryReport({
-                api,
-                measurementGroup: TelemetryMeasurementGroups.bringYourOwnEmail,
-                event: TelemetryBringYourOwnEmailEvents.claim_proton_address,
-                dimensions: {
-                    source: BYOE_CLAIM_PROTON_ADDRESS_SOURCE.OPEN_CALENDAR_APP,
-                },
-                delay: false,
-            });
+            trackAccountImportClaimProtonAddressClicked(BYOE_CLAIM_PROTON_ADDRESS_SOURCE.OPEN_CALENDAR_APP);
         }
 
         return onSubmit({

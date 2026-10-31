@@ -27,10 +27,10 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '../logic/store';
 import { loadSyncList } from '../logic/sync/sync.actions';
 import { getAllSync } from '../logic/sync/sync.selectors';
 import {
-    trackBYOEAuthenticated,
-    trackBYOECreationError,
-    trackBYOEImporterCreated,
-} from '../telemetry/byoeCreationFunnel';
+    trackAccountImportBYOEAuthenticated,
+    trackAccountImportBYOEError,
+    trackAccountImportBYOEFinished,
+} from '../telemetry/accountImportFlow';
 import { convertBYOEAddress, createBYOEAddress } from '../thunks/byoeAddresses';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
@@ -78,7 +78,7 @@ const useSetupGmailBYOEAddress = ({
             return address;
         } catch (e) {
             handleError(e);
-            trackBYOECreationError('address_creation');
+            trackAccountImportBYOEError({ errorStep: 'address_creation' });
             onError();
             onComplete();
         }
@@ -104,7 +104,7 @@ const useSetupGmailBYOEAddress = ({
                 await dispatch(updateBYOEAddressConnection({ address: existingAddress, type: 'reconnect' }));
             } catch (e) {
                 handleError(e);
-                trackBYOECreationError('address_creation');
+                trackAccountImportBYOEError({ errorStep: 'address_creation' });
                 createNotification({
                     type: 'error',
                     text: c('Error').t`Something went wrong while converting the address`,
@@ -125,7 +125,7 @@ const useSetupGmailBYOEAddress = ({
         }
 
         if (address) {
-            trackBYOEImporterCreated({
+            trackAccountImportBYOEFinished({
                 hasImportEmails: importEmails,
                 importPeriod,
                 isUpsellShown: !hasPaidMail(user) && importEmails,
@@ -152,18 +152,18 @@ const useSetupGmailBYOEAddress = ({
         // If setting up the token failed or user has no access to BYOE, close the modal
         if (!hasAccessToBYOE || hasError) {
             if (hasAccessToBYOE) {
-                trackBYOECreationError('authentication');
+                trackAccountImportBYOEError({ errorStep: 'authentication' });
             }
             onComplete();
             return;
         }
 
         if (!hasError && token) {
-            trackBYOEAuthenticated();
+            trackAccountImportBYOEAuthenticated();
             const existingAddress = findUserAddress(token.Account, addresses);
 
             if (existingAddress && getIsBYOEAddress(existingAddress)) {
-                trackBYOECreationError('address_already_connected');
+                trackAccountImportBYOEError({ errorStep: 'address_already_connected' });
                 createNotification({
                     type: 'error',
                     text: c('Error').t`Address is already added to your account`,
@@ -204,7 +204,7 @@ const useSetupGmailBYOEAddress = ({
                     if (isClaimable) {
                         showClaimableAddressModal(token.Account, importEmails, importPeriod);
                     } else {
-                        trackBYOECreationError('address_linked_to_another_account');
+                        trackAccountImportBYOEError({ errorStep: 'address_linked_to_another_account' });
                         showAddressLinkedToAnotherAccountModal();
                     }
                     onComplete();
@@ -212,7 +212,7 @@ const useSetupGmailBYOEAddress = ({
                 }
 
                 handleError(e);
-                trackBYOECreationError('address_creation');
+                trackAccountImportBYOEError({ errorStep: 'address_creation' });
                 onComplete();
                 return;
             }
@@ -253,7 +253,7 @@ const useSetupGmailBYOEAddress = ({
             );
         } catch (e) {
             handleError(e);
-            trackBYOECreationError('address_creation');
+            trackAccountImportBYOEError({ errorStep: 'address_creation' });
             onComplete();
             return false;
         }
