@@ -18,6 +18,7 @@ import MobileSectionLabel from '../../components/MobileSectionLabel';
 import MobileSectionRow from '../../components/MobileSectionRow';
 import { BYOEMobileConnecting } from './BYOEMobileConnecting';
 import { BYOEMobileConnections } from './components/BYOEMobileConnections/BYOEMobileConnections';
+import { BYOEMobileGate } from './components/BYOEMobileGate';
 import { ErrorPrompt } from './components/ErrorPrompt';
 import { BYOEMobileProvider, useBYOEMobile } from './context/BYOEMobileProvider';
 
@@ -133,9 +134,11 @@ export const BYOEMobile = ({ layout, redirect, initialSearchParams }: Props) => 
         <div className="mobile-settings byoe-mobile">
             <EasySwitchStoreProvider>
                 <EasySwitchStoreInitializer>
-                    <BYOEMobileProvider redirect={redirect} initialSearchParams={initialSearchParams}>
-                        <BYOEMobileContent />
-                    </BYOEMobileProvider>
+                    <BYOEMobileGate>
+                        <BYOEMobileProvider redirect={redirect} initialSearchParams={initialSearchParams}>
+                            <BYOEMobileContent />
+                        </BYOEMobileProvider>
+                    </BYOEMobileGate>
                 </EasySwitchStoreInitializer>
             </EasySwitchStoreProvider>
         </div>,
