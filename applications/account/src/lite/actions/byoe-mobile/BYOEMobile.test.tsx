@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { BYOEMobile } from './BYOEMobile';
@@ -5,23 +7,26 @@ import { BYOEMobile } from './BYOEMobile';
 const mockStartOAuthFlowIfAllowed = jest.fn();
 let mockContext: any;
 jest.mock('./context/BYOEMobileProvider', () => ({
-    BYOEMobileProvider: ({ children }: any) => <>{children}</>,
+    BYOEMobileProvider: ({ children }: { children: ReactNode }) => <>{children}</>,
     useBYOEMobile: () => mockContext,
 }));
 
 jest.mock('@proton/activation/src/logic/EasySwitchStoreInitializer', () => ({
     __esModule: true,
-    default: ({ children }: any) => <>{children}</>,
+    default: ({ children }: { children: ReactNode }) => <>{children}</>,
 }));
 jest.mock('@proton/activation/src/logic/StoreProvider', () => ({
     __esModule: true,
-    default: ({ children }: any) => <>{children}</>,
+    default: ({ children }: { children: ReactNode }) => <>{children}</>,
 }));
 jest.mock('@proton/activation/src/components/Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal', () => ({
     __esModule: true,
     default: () => <div>paid limit prompt</div>,
 }));
 jest.mock('./components/BYOEMobileConnections/BYOEMobileConnections', () => ({ BYOEMobileConnections: () => null }));
+jest.mock('./components/BYOEMobileGate', () => ({
+    BYOEMobileGate: ({ children }: { children: ReactNode }) => <>{children}</>,
+}));
 jest.mock('./components/ErrorPrompt', () => ({ ErrorPrompt: () => null }));
 
 const renderBYOEMobile = () =>

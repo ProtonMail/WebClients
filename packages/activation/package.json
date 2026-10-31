@@ -60,6 +60,7 @@
         "./src/logic/reports/reports.selectors": "./src/logic/reports/reports.selectors.ts",
         "./src/logic/store": "./src/logic/store.ts",
         "./src/logic/StoreProvider": "./src/logic/StoreProvider.tsx",
+        "./src/logic/sync/sync.actions": "./src/logic/sync/sync.actions.ts",
         "./src/logic/sync/sync.interface": "./src/logic/sync/sync.interface.ts",
         "./src/logic/sync/sync.selectors": "./src/logic/sync/sync.selectors.ts",
         "./src/telemetry/byoeCreationFunnel": "./src/telemetry/byoeCreationFunnel.ts"
