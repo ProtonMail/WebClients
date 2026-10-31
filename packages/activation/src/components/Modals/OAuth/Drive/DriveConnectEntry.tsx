@@ -15,7 +15,7 @@ import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../.
 import { useDriveSdk } from '../../../../logic/driveContext';
 import EasySwitchOauthImportButton from '../../../OAuthImportButton/EasySwitchOAuthImportButton';
 
-// TODO: also send the Easy Switch creation funnel (any.web.easy_switch_creation_funnel) for Dropbox/OneDrive
+// TODO: also send the account import flow events (any.web.account_import_flow) for Dropbox/OneDrive
 // once they have a real import (needs `dropbox`/`onedrive` added to the funnel's provider list)
 const getKnowledgeBaseProviders = () => [
     {

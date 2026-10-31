@@ -1,12 +1,10 @@
-import { tracker } from '@proton/telemetry-tracker/lib/tracker';
-
 import type { ApiImportProvider } from '../api/api.interface';
 import type { ImportType } from '../interface';
 import { trackAccountImportReportAction } from '../telemetry/accountImportFlow';
 import { telemetryProduct, telemetryProvider } from '../telemetry/dimensions';
-import type { ImportAction } from '../telemetry/events';
-import { easySwitchImportReportAction } from '../telemetry/events';
 import { useGetIsBYOE } from './useGetIsBYOE';
+
+type ImportAction = 'cancel_import' | 'resume_import' | 'undo_import' | 'delete_report';
 
 interface Props {
     account: string;
@@ -22,14 +20,6 @@ export const useTrackImportAction = ({ account, provider, product }: Props) => {
 
     return async (importAction: ImportAction) => {
         const isBYOE = await getIsBYOE(account);
-        tracker.emit(easySwitchImportReportAction, {
-            dimensions: {
-                importAction,
-                isBYOE,
-                provider: telemetryProvider[provider],
-                product: telemetryProduct[product],
-            },
-        });
         trackAccountImportReportAction({
             action: importAction,
             isBYOE,

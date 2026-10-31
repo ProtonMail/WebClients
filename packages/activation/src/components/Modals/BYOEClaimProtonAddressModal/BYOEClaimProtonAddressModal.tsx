@@ -3,7 +3,6 @@ import { type FormEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { setupExternalUserForProton } from '@proton/account/addresses/actions';
-import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
@@ -20,7 +19,6 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { type APP_NAMES, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
@@ -31,12 +29,12 @@ import {
     usernameNoEmailValidator,
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import claimProtonAddressImg from '@proton/styles/assets/img/illustrations/claim-proton-address.svg';
 
 import type { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../constants';
 import useBYOEAddressData from '../../../hooks/useBYOEAddressData';
+import { trackAccountImportClaimProtonAddressCompleted } from '../../../telemetry/accountImportFlow';
 
 interface Props extends ModalProps {
     toApp: APP_NAMES;
@@ -59,7 +57,6 @@ const BYOEClaimProtonAddressModal = ({
     source,
     ...rest
 }: Props) => {
-    const api = useApi();
     const { createNotification } = useNotifications();
     const silentApi = useSilentApi();
     const { call } = useEventManager();
@@ -118,15 +115,7 @@ const BYOEClaimProtonAddressModal = ({
             });
             onCreateCallback?.();
 
-            void sendTelemetryReport({
-                api,
-                measurementGroup: TelemetryMeasurementGroups.bringYourOwnEmail,
-                event: TelemetryBringYourOwnEmailEvents.claim_proton_address,
-                dimensions: {
-                    source,
-                },
-                delay: false,
-            });
+            trackAccountImportClaimProtonAddressCompleted(source);
 
             // Call the event manager so that we update the get-started checklist items
             void call();

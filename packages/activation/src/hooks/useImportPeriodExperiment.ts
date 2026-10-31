@@ -1,14 +1,14 @@
 import { useFlag } from '@proton/unleash/useFlag';
 import { useVariant } from '@proton/unleash/useVariant';
 
-import type { BYOEImportPeriodVariant } from '../telemetry/byoeCreationFunnel';
+import type { AccountImportFlowVariant } from '../telemetry/accountImportFlow';
 
 /** Import period experiment of the BYOE connection modal: whether the user sees the period selector, and their arm */
 export const useImportPeriodExperiment = () => {
     const isImportPeriodEnabled = useFlag('InboxBringYourOwnEmailImportPeriod');
     const importVariant = useVariant('InboxBringYourOwnEmailImportPeriodExperiment');
 
-    const getVariant = (): BYOEImportPeriodVariant => {
+    const getVariant = (): AccountImportFlowVariant => {
         if (!isImportPeriodEnabled) {
             return 'n/a';
         }

@@ -1,6 +1,4 @@
-import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
-import { mockTracker } from '@proton/telemetry-tracker/testing';
-
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../constants';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType, TIME_PERIOD } from '../interface';
 import {
     getAccountImportBYOEStartedAt,
@@ -12,6 +10,8 @@ import {
     trackAccountImportBYOESignInClicked,
     trackAccountImportBYOEStarted,
     trackAccountImportBYOEUpsellViewed,
+    trackAccountImportClaimProtonAddressClicked,
+    trackAccountImportClaimProtonAddressCompleted,
     trackAccountImportClaimableAddressModalAction,
     trackAccountImportClaimableAddressModalShown,
     trackAccountImportEasySwitchCustomizeViewed,
@@ -24,13 +24,46 @@ import {
     trackAccountImportLinkedAddressModalShown,
     trackAccountImportReportAction,
 } from './accountImportFlow';
-import { trackBYOECreationStarted } from './byoeCreationFunnel';
-import { mockTrackerOfGroup } from './mockTrackerOfGroup';
-
-const mockAccountImportFlowTracker = () => mockTrackerOfGroup(TelemetryMeasurementGroups.accountImportFlow);
+import { mockAccountImportFlowTracker } from './mockTrackerOfGroup';
 
 describe('account import flow telemetry', () => {
     describe('BYOE', () => {
+        it('describes the claim of a Proton address with its source and no time', () => {
+            const { reports } = mockAccountImportFlowTracker();
+
+            trackAccountImportClaimProtonAddressClicked(BYOE_CLAIM_PROTON_ADDRESS_SOURCE.OPEN_CALENDAR_APP);
+            trackAccountImportClaimProtonAddressCompleted(BYOE_CLAIM_PROTON_ADDRESS_SOURCE.MAIL_COMPOSER);
+
+            expect(reports.map(({ event }) => event)).toEqual(['step_interacted', 'step_completed']);
+            expect(reports[0].dimensions).toEqual({
+                flow: 'byoe',
+                step: 'claim_proton_address',
+                action: 'claim',
+                source: 'open-calendar-app',
+            });
+            expect(reports[1].dimensions).toEqual({
+                flow: 'byoe',
+                step: 'claim_proton_address',
+                source: 'mail-composer',
+            });
+            expect(reports[1].values).not.toHaveProperty('activeMs');
+        });
+
+        it('gives the variant of the start to the following steps, and forgets it when the flow is resumed', () => {
+            const { reports } = mockAccountImportFlowTracker();
+
+            trackAccountImportBYOEStarted({
+                source: EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST_BYOE,
+                isConversion: false,
+                variant: 'treatment',
+            });
+            trackAccountImportBYOEAuthenticated();
+            resumeAccountImportBYOE(Date.now());
+            trackAccountImportBYOEAuthenticated();
+
+            expect(reports.map(({ dimensions }) => dimensions?.variant)).toEqual(['treatment', 'treatment', 'n/a']);
+        });
+
         it('describes the creation with flow, step and action, and times it from the first step', () => {
             const { reports } = mockAccountImportFlowTracker();
 
@@ -44,18 +77,16 @@ describe('account import flow telemetry', () => {
                 provider: 'google',
                 hasImportEmails: true,
                 importPeriod: TIME_PERIOD.LAST_YEAR,
-                variant: 'treatment',
             });
-            trackAccountImportBYOEAuthenticated({ provider: 'google', variant: 'treatment' });
+            trackAccountImportBYOEAuthenticated({ provider: 'google' });
             trackAccountImportBYOEFinished({
                 provider: 'google',
                 hasImportEmails: true,
                 importPeriod: TIME_PERIOD.LAST_YEAR,
                 isUpsellShown: true,
                 isClaimedAddress: false,
-                variant: 'treatment',
             });
-            trackAccountImportBYOEUpsellViewed({ provider: 'google', variant: 'treatment' });
+            trackAccountImportBYOEUpsellViewed({ provider: 'google' });
 
             expect(reports.map(({ event }) => event)).toEqual([
                 'step_load',
@@ -117,7 +148,6 @@ describe('account import flow telemetry', () => {
                 provider: 'google',
                 hasImportEmails: false,
                 importPeriod: TIME_PERIOD.LAST_YEAR,
-                variant: 'n/a',
             });
 
             expect(reports[0].dimensions).toMatchObject({ hasImportEmails: 'false', importPeriodSelected: 'n/a' });
@@ -132,8 +162,8 @@ describe('account import flow telemetry', () => {
                 isConversion: false,
                 variant: 'n/a',
             });
-            trackAccountImportBYOEError({ provider: 'google', errorStep: 'authentication', variant: 'n/a' });
-            trackAccountImportBYOEAuthenticated({ provider: 'google', variant: 'n/a' });
+            trackAccountImportBYOEError({ provider: 'google', errorStep: 'authentication' });
+            trackAccountImportBYOEAuthenticated({ provider: 'google' });
 
             expect(reports[1].event).toBe('flow_error');
             expect(reports[1].dimensions).toEqual({
@@ -174,7 +204,7 @@ describe('account import flow telemetry', () => {
 
             resumeAccountImportBYOE(100_000 - 12_000);
             expect(getAccountImportBYOEStartedAt()).toBe(88_000);
-            trackAccountImportBYOEAuthenticated({ provider: 'google', variant: 'n/a' });
+            trackAccountImportBYOEAuthenticated({ provider: 'google' });
 
             expect(reports[0].values).toMatchObject({ activeMs: 12_000, timestampMs: 100_000 });
             now.mockRestore();
@@ -292,20 +322,5 @@ describe('account import flow telemetry', () => {
                 product: 'mail',
             });
         });
-    });
-
-    it('is sent next to the BYOE creation funnel, which keeps its events', () => {
-        const { reports } = mockTracker();
-
-        trackBYOECreationStarted({
-            source: EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST_BYOE,
-            isConversion: false,
-            variant: 'control',
-        });
-
-        expect(reports.map(({ measurementGroup }) => measurementGroup)).toEqual([
-            TelemetryMeasurementGroups.byoeCreationFunnel,
-            TelemetryMeasurementGroups.accountImportFlow,
-        ]);
     });
 });

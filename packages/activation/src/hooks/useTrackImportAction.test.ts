@@ -1,10 +1,7 @@
 import { renderHook } from '@testing-library/react';
 
-import { tracker } from '@proton/telemetry-tracker/lib/tracker';
-
 import { ApiImportProvider } from '../api/api.interface';
 import { ImportType } from '../interface';
-import { easySwitchImportReportAction } from '../telemetry/events';
 import { useTrackImportAction } from './useTrackImportAction';
 
 const mockGetIsBYOE = jest.fn();
@@ -36,8 +33,5 @@ describe('useTrackImportAction', () => {
         await result.current('cancel_import');
 
         expect(mockGetIsBYOE).toHaveBeenCalledWith('user@gmail.com');
-        expect(tracker.emit).toHaveBeenCalledWith(easySwitchImportReportAction, {
-            dimensions: { importAction: 'cancel_import', isBYOE: true, provider: 'google', product: 'mail' },
-        });
     });
 });

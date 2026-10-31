@@ -3,7 +3,7 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { EASY_SWITCH_SOURCES, TIME_PERIOD } from '../../../interface';
-import { mockBYOECreationFunnelTracker } from '../../../telemetry/mockTrackerOfGroup';
+import { mockAccountImportFlowTracker } from '../../../telemetry/mockTrackerOfGroup';
 import { easySwitchRender } from '../../../tests/render';
 import GmailSyncModal from './GmailSyncModal';
 
@@ -64,8 +64,8 @@ describe('GmailSyncModal', () => {
         screen.getByText(`Bring your Gmail into ${MAIL_APP_NAME}`);
     });
 
-    it('should send creation_started when the BYOE modal is shown, with the source and whether it converts a forwarding', () => {
-        const { reports } = mockBYOECreationFunnelTracker();
+    it('should send step_load when the BYOE modal is shown, with the source and whether it converts a forwarding', () => {
+        const { reports } = mockAccountImportFlowTracker();
 
         easySwitchRender(
             <GmailSyncModal
@@ -79,14 +79,14 @@ describe('GmailSyncModal', () => {
 
         expect(reports).toHaveLength(1);
         expect(reports[0]).toMatchObject({
-            measurementGroup: 'any.web.byoe_creation_funnel',
-            event: 'creation_started',
+            measurementGroup: 'any.web.account_import_flow',
+            event: 'step_load',
             dimensions: { source: 'account-web-settings', provider: 'google', isConversion: 'true' },
         });
     });
 
-    it('should not send creation_started for the forwarding modal', () => {
-        const { reports } = mockBYOECreationFunnelTracker();
+    it('should not send step_load for the forwarding modal', () => {
+        const { reports } = mockAccountImportFlowTracker();
 
         easySwitchRender(
             <GmailSyncModal
@@ -100,8 +100,8 @@ describe('GmailSyncModal', () => {
         expect(reports).toHaveLength(0);
     });
 
-    it('should send google_sign_in_clicked with the import choices when pressing connect', async () => {
-        const { reports } = mockBYOECreationFunnelTracker();
+    it('should send step_interacted with the import choices when pressing connect', async () => {
+        const { reports } = mockAccountImportFlowTracker();
 
         easySwitchRender(
             <GmailSyncModal
@@ -113,15 +113,18 @@ describe('GmailSyncModal', () => {
         );
         fireEvent.click(screen.getByText('Connect your email'));
 
-        await waitFor(() => expect(reports.map((report) => report.event)).toContain('google_sign_in_clicked'));
-        const click = reports.find((report) => report.event === 'google_sign_in_clicked');
+        await waitFor(() => expect(reports.map((report) => report.event)).toContain('step_interacted'));
+        const click = reports.find((report) => report.event === 'step_interacted');
         expect(click?.dimensions).toEqual({
+            flow: 'byoe',
+            step: 'connect_modal',
+            action: 'sign_in',
             provider: 'google',
             hasImportEmails: 'true',
             importPeriodSelected: 'big_bang',
             variant: 'treatment',
         });
-        expect(click?.values).toHaveProperty('durationMs');
+        expect(click?.values).toHaveProperty('activeMs');
     });
 
     it('should show the forwarding modal', () => {

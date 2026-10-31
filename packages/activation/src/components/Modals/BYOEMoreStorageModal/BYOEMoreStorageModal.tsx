@@ -24,7 +24,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
 
-import { trackBYOEUpsellModalViewed } from '../../../telemetry/byoeCreationFunnel';
+import { trackAccountImportBYOEUpsellViewed } from '../../../telemetry/accountImportFlow';
 
 const BYTES_450MB = 450 * 1024 * 1024;
 const BYTES_500MB = 500 * 1024 * 1024;
@@ -86,7 +86,7 @@ export const BYOEMoreStorageModal = ({ onClose, onComplete, ...rest }: Props) =>
     const appSpace = getAppSpace(getSpace(user), APPS.PROTONMAIL);
 
     useEffect(() => {
-        trackBYOEUpsellModalViewed();
+        trackAccountImportBYOEUpsellViewed();
     }, []);
 
     const upsellRef =

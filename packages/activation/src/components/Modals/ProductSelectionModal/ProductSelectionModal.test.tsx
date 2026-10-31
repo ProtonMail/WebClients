@@ -8,7 +8,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
 import { useDriveSdk } from '../../../logic/driveContext';
-import { mockEasySwitchCreationFunnelTracker } from '../../../telemetry/mockTrackerOfGroup';
+import { mockAccountImportFlowTracker } from '../../../telemetry/mockTrackerOfGroup';
 import { easySwitchRender } from '../../../tests/render';
 import { ProductSelectionModal } from './ProductSelectionModal';
 
@@ -286,14 +286,14 @@ describe('ProductSelectionModal - BYOE account', () => {
 
 describe('ProductSelectionModal - telemetry', () => {
     it('sends creation_started with the source and the preselected provider when the modal is shown', () => {
-        const { reports } = mockEasySwitchCreationFunnelTracker();
+        const { reports } = mockAccountImportFlowTracker();
 
         renderModal(ImportProvider.OUTLOOK);
 
         expect(reports).toHaveLength(1);
         expect(reports[0]).toMatchObject({
-            measurementGroup: 'any.web.easy_switch_creation_funnel',
-            event: 'creation_started',
+            measurementGroup: 'any.web.account_import_flow',
+            event: 'step_load',
             dimensions: { source: 'account-web-settings', provider: 'outlook' },
         });
     });

@@ -4,15 +4,13 @@ import { allowed, bool, duration, number, topValues } from '@proton/telemetry-tr
 import { defineTimer } from '@proton/telemetry-tracker/lib/timers';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
+import type { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../constants';
 import { type EASY_SWITCH_SOURCES, ImportProvider, ImportType, type TIME_PERIOD } from '../interface';
 
 /**
  * Telemetry of the BYOE and Easy Switch flows, modelled like the Mail onboarding (`onboardingEvents.ts`): a few
  * generic events (`step_load`, `step_interacted`, `step_completed`, `flow_finished`, `flow_error`) described by
  * `flow`, `step` and `action`, all in one group.
- *
- * It runs next to the earlier groups (`byoeCreationFunnel`, `easySwitchCreationFunnel`, `events`), which still
- * receive their events until the Data team has moved to this one.
  */
 
 const FLOWS = ['byoe', 'easy_switch'] as const;
@@ -36,6 +34,8 @@ const STEPS = [
     'customize_import',
     /** Easy Switch: a row of the import table */
     'import_report',
+    /** BYOE: a user with only an external address creates a Proton address */
+    'claim_proton_address',
 ] as const;
 
 const ACTIONS = [
@@ -111,6 +111,13 @@ const byoeTiming = { durationFrom: byoeTimer, flushImmediately: true };
 const easySwitchTiming = { durationFrom: easySwitchTimer, flushImmediately: true };
 
 const withTimestamp = () => ({ values: { timestampMs: Date.now() } });
+
+/**
+ * Drive-only imports have their own views and are not part of this funnel after the products are submitted.
+ * `products_submitted` is still sent (with `importsDrive: true`) because the product selection modal sends
+ * `creation_started` before the products are known: analysis can filter `drive` out of the first step.
+ */
+const isDriveOnly = (products: ImportType[] | undefined) => products?.length === 1 && products[0] === ImportType.DRIVE;
 
 // step_load
 
@@ -206,6 +213,18 @@ const importReportAction = defineEvent({
 
 // step_completed
 
+const byoeClaimProtonAddressInteracted = defineEvent({
+    ...baseEvent,
+    event: TelemetryAccountImportFlowEvents.stepInteracted,
+    dimensions: { flow: flowSpec, step: stepSpec, action: actionSpec, source: sourceSpec },
+});
+
+const byoeClaimProtonAddressCompleted = defineEvent({
+    ...baseEvent,
+    event: TelemetryAccountImportFlowEvents.stepCompleted,
+    dimensions: { flow: flowSpec, step: stepSpec, source: sourceSpec },
+});
+
 const byoeStepCompleted = defineEvent({
     ...baseEvent,
     event: TelemetryAccountImportFlowEvents.stepCompleted,
@@ -291,6 +310,15 @@ const toEasySwitchProvider = (provider: ImportProvider | undefined): Provider =>
 const startFlow = (timer: typeof byoeTimer | typeof easySwitchTimer) => tracker.startTimer(timer, { restart: true });
 
 /**
+ * Variant of the running BYOE flow, set by `trackAccountImportBYOEStarted`. Kept here so that the steps emitted from
+ * hooks far from the modal carry it without having it passed down to each of them.
+ */
+let currentVariant: AccountImportFlowVariant = 'n/a';
+
+// BYOE only supports Google for now, the dimension is ready for Outlook.
+const DEFAULT_BYOE_PROVIDER: Provider = 'google';
+
+/**
  * Timestamp (epoch ms) at which the running BYOE flow started, `undefined` when none runs. Used to keep the time across a
  * full-page redirect, see `resumeAccountImportBYOE`.
  */
@@ -304,20 +332,23 @@ export const resumeAccountImportBYOE = (startedAt: number | undefined) => {
     if (startedAt === undefined || !Number.isFinite(startedAt)) {
         return;
     }
+    // The experiment does not run in the flows that resume after a redirect
+    currentVariant = 'n/a';
     tracker.startTimer(byoeTimer, { restart: true, elapsedMs: Date.now() - startedAt });
 };
 
 export const trackAccountImportBYOEStarted = ({
     source,
-    provider,
+    provider = DEFAULT_BYOE_PROVIDER,
     isConversion,
-    variant,
+    variant = 'n/a',
 }: {
     source: EASY_SWITCH_SOURCES;
-    provider: Provider;
+    provider?: Provider;
     isConversion: boolean;
-    variant: AccountImportFlowVariant;
+    variant?: AccountImportFlowVariant;
 }) => {
+    currentVariant = variant;
     startFlow(byoeTimer);
     tracker.emit(
         byoeConnectModalShown,
@@ -330,15 +361,13 @@ export const trackAccountImportBYOEStarted = ({
 };
 
 export const trackAccountImportBYOESignInClicked = ({
-    provider,
+    provider = DEFAULT_BYOE_PROVIDER,
     hasImportEmails,
     importPeriod,
-    variant,
 }: {
-    provider: Provider;
+    provider?: Provider;
     hasImportEmails: boolean;
     importPeriod: TIME_PERIOD | undefined;
-    variant: AccountImportFlowVariant;
 }) => {
     tracker.emit(
         byoeSignInClicked,
@@ -350,7 +379,7 @@ export const trackAccountImportBYOESignInClicked = ({
                 provider,
                 hasImportEmails,
                 importPeriodSelected: hasImportEmails ? toImportPeriod(importPeriod) : 'n/a',
-                variant,
+                variant: currentVariant,
             },
             ...withTimestamp(),
         },
@@ -359,48 +388,38 @@ export const trackAccountImportBYOESignInClicked = ({
 };
 
 export const trackAccountImportBYOEAuthenticated = ({
-    provider,
-    variant,
-}: {
-    provider: Provider;
-    variant: AccountImportFlowVariant;
-}) => {
+    provider = DEFAULT_BYOE_PROVIDER,
+}: { provider?: Provider } = {}) => {
     tracker.emit(
         byoeStepCompleted,
-        { dimensions: { flow: BYOE, step: 'sign_in', provider, variant }, ...withTimestamp() },
+        { dimensions: { flow: BYOE, step: 'sign_in', provider, variant: currentVariant }, ...withTimestamp() },
         byoeTiming
     );
 };
 
 export const trackAccountImportBYOEUpsellViewed = ({
-    provider,
-    variant,
-}: {
-    provider: Provider;
-    variant: AccountImportFlowVariant;
-}) => {
+    provider = DEFAULT_BYOE_PROVIDER,
+}: { provider?: Provider } = {}) => {
     // After the address was created: the flow is over, there is no `activeMs`
     tracker.emit(
         byoeStepLoad,
-        { dimensions: { flow: BYOE, step: 'upsell', provider, variant }, ...withTimestamp() },
+        { dimensions: { flow: BYOE, step: 'upsell', provider, variant: currentVariant }, ...withTimestamp() },
         { flushImmediately: true }
     );
 };
 
 export const trackAccountImportBYOEFinished = ({
-    provider,
+    provider = DEFAULT_BYOE_PROVIDER,
     hasImportEmails,
     importPeriod,
     isUpsellShown,
     isClaimedAddress,
-    variant,
 }: {
-    provider: Provider;
+    provider?: Provider;
     hasImportEmails: boolean;
     importPeriod: TIME_PERIOD | undefined;
     isUpsellShown: boolean;
     isClaimedAddress: boolean;
-    variant: AccountImportFlowVariant;
 }) => {
     tracker.emit(
         byoeFlowFinished,
@@ -412,7 +431,7 @@ export const trackAccountImportBYOEFinished = ({
                 importPeriodSelected: hasImportEmails ? toImportPeriod(importPeriod) : 'n/a',
                 isUpsellShown,
                 isClaimedAddress,
-                variant,
+                variant: currentVariant,
             },
             ...withTimestamp(),
         },
@@ -421,18 +440,16 @@ export const trackAccountImportBYOEFinished = ({
 };
 
 export const trackAccountImportBYOEError = ({
-    provider,
+    provider = DEFAULT_BYOE_PROVIDER,
     errorStep,
-    variant,
 }: {
-    provider: Provider;
+    provider?: Provider;
     errorStep: AccountImportFlowErrorStep;
-    variant: AccountImportFlowVariant;
 }) => {
     // The timer keeps running: the user can retry, and the next start restarts it anyway
     tracker.emit(
         byoeFlowError,
-        { dimensions: { flow: BYOE, provider, errorStep, variant }, ...withTimestamp() },
+        { dimensions: { flow: BYOE, provider, errorStep, variant: currentVariant }, ...withTimestamp() },
         byoeTiming
     );
 };
@@ -475,6 +492,27 @@ export const trackAccountImportLinkedAddressModalAction = (
     );
 };
 
+/**
+ * A BYOE-only user chose to create a Proton address from `source`, before the creation. Standalone event, there is no
+ * running flow, so no `activeMs`.
+ */
+export const trackAccountImportClaimProtonAddressClicked = (source: BYOE_CLAIM_PROTON_ADDRESS_SOURCE) => {
+    tracker.emit(
+        byoeClaimProtonAddressInteracted,
+        { dimensions: { flow: BYOE, step: 'claim_proton_address', action: 'claim', source }, ...withTimestamp() },
+        { delay: false, flushImmediately: true }
+    );
+};
+
+/** The Proton address of a BYOE-only user was created from `source` */
+export const trackAccountImportClaimProtonAddressCompleted = (source: BYOE_CLAIM_PROTON_ADDRESS_SOURCE) => {
+    tracker.emit(
+        byoeClaimProtonAddressCompleted,
+        { dimensions: { flow: BYOE, step: 'claim_proton_address', source }, ...withTimestamp() },
+        { delay: false, flushImmediately: true }
+    );
+};
+
 export const trackAccountImportBYOEAddressAction = (
     action: Extract<Action, 'manage_address' | 'disconnect' | 'reconnect'>,
     provider: Provider = 'google'
@@ -488,10 +526,16 @@ export const trackAccountImportBYOEAddressAction = (
 export const trackAccountImportEasySwitchStarted = ({
     source,
     provider,
+    products,
 }: {
     source: EASY_SWITCH_SOURCES;
     provider: ImportProvider;
+    /** Not known yet when the modal is shown, the user has not chosen */
+    products?: ImportType[];
 }) => {
+    if (isDriveOnly(products)) {
+        return;
+    }
     startFlow(easySwitchTimer);
     tracker.emit(
         easySwitchImportModalShown,
@@ -535,6 +579,9 @@ export const trackAccountImportEasySwitchInstructionsViewed = ({
     provider: ImportProvider | undefined;
     products: ImportType[] | undefined;
 }) => {
+    if (isDriveOnly(products)) {
+        return;
+    }
     tracker.emit(
         easySwitchInstructionsShown,
         {
@@ -559,6 +606,9 @@ export const trackAccountImportEasySwitchCustomizeViewed = ({
     products: ImportType[] | undefined;
     importPeriod: TIME_PERIOD | undefined;
 }) => {
+    if (isDriveOnly(products)) {
+        return;
+    }
     tracker.emit(
         easySwitchCustomizeShown,
         {
@@ -584,6 +634,9 @@ export const trackAccountImportEasySwitchFinished = ({
     products: ImportType[] | undefined;
     importPeriod: TIME_PERIOD | undefined;
 }) => {
+    if (isDriveOnly(products)) {
+        return;
+    }
     tracker.emit(
         easySwitchFlowFinished,
         {
@@ -608,6 +661,9 @@ export const trackAccountImportEasySwitchError = ({
     products: ImportType[] | undefined;
     errorStep: AccountImportFlowErrorStep;
 }) => {
+    if (isDriveOnly(products)) {
+        return;
+    }
     tracker.emit(
         easySwitchFlowError,
         {
