@@ -2,10 +2,10 @@ import { TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { mockTracker } from '@proton/telemetry-tracker/testing';
 
 /**
- * `mockTracker` that only records the reports of one measurement group. Every flow sends its events to several groups
- * (the earlier funnels and `accountImportFlow`), a test of one group must not see the others.
+ * `mockTracker` that only records the reports of one measurement group. A test of one group must not see the
+ * events of the others.
  */
-export const mockTrackerOfGroup = (group: TelemetryMeasurementGroups) => {
+const mockTrackerOfGroup = (group: TelemetryMeasurementGroups) => {
     const tracker = mockTracker();
     const allReports = tracker.reports;
     const reports: typeof allReports = [];
@@ -18,7 +18,4 @@ export const mockTrackerOfGroup = (group: TelemetryMeasurementGroups) => {
     return { ...tracker, reports };
 };
 
-export const mockBYOECreationFunnelTracker = () => mockTrackerOfGroup(TelemetryMeasurementGroups.byoeCreationFunnel);
-
-export const mockEasySwitchCreationFunnelTracker = () =>
-    mockTrackerOfGroup(TelemetryMeasurementGroups.easySwitchCreationFunnel);
+export const mockAccountImportFlowTracker = () => mockTrackerOfGroup(TelemetryMeasurementGroups.accountImportFlow);

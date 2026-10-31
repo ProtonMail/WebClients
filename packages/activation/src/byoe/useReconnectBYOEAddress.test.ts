@@ -7,7 +7,6 @@ import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import type { ImportToken } from '../interface';
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '../interface';
 import { createSyncItem, deleteSyncItem } from '../logic/sync/sync.actions';
-import { BYOEAddressAction } from '../telemetry/events';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import type { ReconnectBYOEAddressResult } from './reconnectBYOEAddress.interface';
 import { useReconnectBYOEAddress } from './useReconnectBYOEAddress';
@@ -142,9 +141,6 @@ describe('useReconnectBYOEAddress', () => {
 
         expect(createSyncItem).toHaveBeenCalledWith({ type: 'useExisting', token: mockToken, ...sharedSyncProps });
         expect(updateBYOEAddressConnection).toHaveBeenCalledWith({ address, type: 'reconnect' });
-        expect(tracker.emit).toHaveBeenCalledWith(BYOEAddressAction, {
-            dimensions: { addressAction: 'reconnect', provider: 'google' },
-        });
         expect(outcome).toEqual({ status: 'success', address });
     });
 
@@ -159,9 +155,6 @@ describe('useReconnectBYOEAddress', () => {
             ...sharedSyncProps,
         });
         expect(updateBYOEAddressConnection).toHaveBeenCalledWith({ address, type: 'reconnect' });
-        expect(tracker.emit).toHaveBeenCalledWith(BYOEAddressAction, {
-            dimensions: { addressAction: 'reconnect', provider: 'google' },
-        });
         expect(outcome).toEqual({ status: 'success', address });
     });
 

@@ -7,11 +7,11 @@ import { getBYOEDisabledNotification, getGenericLimitReached } from '@proton/act
 import type { BYOEAddressLimit } from '@proton/activation/src/helpers/byoeAddresses';
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import {
-    getBYOECreationStartedAt,
-    resumeBYOECreation,
-    trackBYOECreationStarted,
-    trackBYOEGoogleSignInClicked,
-} from '@proton/activation/src/telemetry/byoeCreationFunnel';
+    getAccountImportBYOEStartedAt,
+    resumeAccountImportBYOE,
+    trackAccountImportBYOESignInClicked,
+    trackAccountImportBYOEStarted,
+} from '@proton/activation/src/telemetry/accountImportFlow';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
@@ -125,7 +125,7 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
 
     const startOAuthFlowNow = (importEmails: boolean) => {
         // The page navigates away right after, so the telemetry event must be sent before starting the flow.
-        trackBYOEGoogleSignInClicked({ hasImportEmails: importEmails, importPeriod: undefined });
+        trackAccountImportBYOESignInClicked({ hasImportEmails: importEmails, importPeriod: undefined });
         telemetry.trackConnectStarted(importEmails);
         // The page navigates away, so the auto-starting status is intentionally never reset.
         setStatus(status === 'auto-starting' ? 'auto-starting' : 'starting-oauth');
@@ -134,7 +134,7 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
             redirect,
             sessionUID: UID,
             sessionLocalID: localID,
-            creationStartedAt: getBYOECreationStartedAt(),
+            creationStartedAt: getAccountImportBYOEStartedAt(),
         });
     };
 
@@ -176,10 +176,10 @@ export const BYOEMobileProvider = ({ redirect, initialSearchParams, children }: 
     // redirected back, it resumes the timer saved in the OAuth state, since the funnel began before the redirect.
     useEffect(() => {
         if (callback.type === 'none') {
-            trackBYOECreationStarted({ source: EASY_SWITCH_SOURCES.ACCOUNT_LITE_BYOE, isConversion: false });
+            trackAccountImportBYOEStarted({ source: EASY_SWITCH_SOURCES.ACCOUNT_LITE_BYOE, isConversion: false });
         } else {
             // Coming back from Google is the same creation, which started before the redirect: restore its timer
-            resumeBYOECreation(
+            resumeAccountImportBYOE(
                 callback.type === 'code' ? callback.state.creationStartedAt : callback.state?.creationStartedAt
             );
         }

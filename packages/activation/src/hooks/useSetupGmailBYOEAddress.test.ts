@@ -8,7 +8,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { startEasySwitchSignupImportTask } from '../api/api';
 import type { ImportToken } from '../interface';
 import { BYOE_ADDRESS_ERROR, EASY_SWITCH_SOURCES, OAUTH_PROVIDER, TIME_PERIOD } from '../interface';
-import { mockBYOECreationFunnelTracker } from '../telemetry/mockTrackerOfGroup';
+import { mockAccountImportFlowTracker } from '../telemetry/mockTrackerOfGroup';
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 import useSetupGmailBYOEAddress from './useSetupGmailBYOEAddress';
 
@@ -679,15 +679,15 @@ describe('useSetupGmailBYOEAddress', () => {
             mockUseFlag.mockReturnValue(false);
         });
 
-        it('sends authenticated then importer_created when the address is created', async () => {
-            const { reports } = mockBYOECreationFunnelTracker();
+        it('sends step_completed then flow_finished when the address is created', async () => {
+            const { reports } = mockAccountImportFlowTracker();
             const result = setup();
 
             await callback(result);
 
-            expect(reports.map((report) => report.event)).toEqual(['authenticated', 'importer_created']);
+            expect(reports.map((report) => report.event)).toEqual(['step_completed', 'flow_finished']);
             expect(reports[1]).toMatchObject({
-                measurementGroup: 'any.web.byoe_creation_funnel',
+                measurementGroup: 'any.web.account_import_flow',
                 dimensions: {
                     provider: 'google',
                     hasImportEmails: 'true',
@@ -699,7 +699,7 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('does not upsell, and has no period, when the user does not import emails', async () => {
-            const { reports } = mockBYOECreationFunnelTracker();
+            const { reports } = mockAccountImportFlowTracker();
             const result = setup();
 
             await callback(result, { importEmails: false });
@@ -711,33 +711,33 @@ describe('useSetupGmailBYOEAddress', () => {
             });
         });
 
-        it('sends creation_error when the Google sign-in failed', async () => {
-            const { reports } = mockBYOECreationFunnelTracker();
+        it('sends flow_error when the Google sign-in failed', async () => {
+            const { reports } = mockAccountImportFlowTracker();
             const result = setup();
 
             await callback(result, { hasError: true, token: undefined });
 
             expect(reports).toHaveLength(1);
             expect(reports[0]).toMatchObject({
-                event: 'creation_error',
+                event: 'flow_error',
                 dimensions: { provider: 'google', errorStep: 'authentication' },
             });
         });
 
-        it('sends creation_error when the address is already connected', async () => {
-            const { reports } = mockBYOECreationFunnelTracker();
+        it('sends flow_error when the address is already connected', async () => {
+            const { reports } = mockAccountImportFlowTracker();
             mockFindUserAddress.mockReturnValue({ Email: 'test@gmail.com' } as any);
             mockGetIsBYOEAddress.mockReturnValue(true);
             const result = setup();
 
             await callback(result);
 
-            expect(reports.map((report) => report.event)).toEqual(['authenticated', 'creation_error']);
+            expect(reports.map((report) => report.event)).toEqual(['step_completed', 'flow_error']);
             expect(reports[1].dimensions).toMatchObject({ errorStep: 'address_already_connected' });
         });
 
-        it('sends creation_error when the address is linked to another account and cannot be claimed', async () => {
-            const { reports } = mockBYOECreationFunnelTracker();
+        it('sends flow_error when the address is linked to another account and cannot be claimed', async () => {
+            const { reports } = mockAccountImportFlowTracker();
             mockApi.mockRejectedValue({
                 data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
             });
@@ -745,12 +745,12 @@ describe('useSetupGmailBYOEAddress', () => {
 
             await callback(result);
 
-            expect(reports.map((report) => report.event)).toEqual(['authenticated', 'creation_error']);
+            expect(reports.map((report) => report.event)).toEqual(['step_completed', 'flow_error']);
             expect(reports[1].dimensions).toMatchObject({ errorStep: 'address_linked_to_another_account' });
         });
 
         it('does not send an error when the address is claimable: the user goes on with the claim modal', async () => {
-            const { reports } = mockBYOECreationFunnelTracker();
+            const { reports } = mockAccountImportFlowTracker();
             mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
             mockApi
                 .mockRejectedValueOnce({
@@ -761,11 +761,11 @@ describe('useSetupGmailBYOEAddress', () => {
 
             await callback(result);
 
-            expect(reports.map((report) => report.event)).toEqual(['authenticated']);
+            expect(reports.map((report) => report.event)).toEqual(['step_completed']);
         });
 
-        it('sends importer_created flagged as claimed when the address was claimed', async () => {
-            const { reports } = mockBYOECreationFunnelTracker();
+        it('sends flow_finished flagged as claimed when the address was claimed', async () => {
+            const { reports } = mockAccountImportFlowTracker();
             mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
             const result = setup();
 
@@ -779,19 +779,19 @@ describe('useSetupGmailBYOEAddress', () => {
 
             expect(reports).toHaveLength(1);
             expect(reports[0]).toMatchObject({
-                event: 'importer_created',
+                event: 'flow_finished',
                 dimensions: { isClaimedAddress: 'true', importPeriodSelected: 'big_bang' },
             });
         });
 
-        it('sends creation_error when creating the address fails', async () => {
-            const { reports } = mockBYOECreationFunnelTracker();
+        it('sends flow_error when creating the address fails', async () => {
+            const { reports } = mockAccountImportFlowTracker();
             mockDispatch.mockRejectedValue(new Error('nope'));
             const result = setup();
 
             await callback(result);
 
-            expect(reports.map((report) => report.event)).toEqual(['authenticated', 'creation_error']);
+            expect(reports.map((report) => report.event)).toEqual(['step_completed', 'flow_error']);
             expect(reports[1].dimensions).toMatchObject({ errorStep: 'address_creation' });
         });
     });

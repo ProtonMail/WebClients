@@ -18,7 +18,7 @@ import {
     selectOauthImportStateProducts,
 } from '../../../../../logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../../logic/store';
-import { trackEasySwitchPrepareImportViewed } from '../../../../../telemetry/easySwitchCreationFunnel';
+import { trackAccountImportEasySwitchCustomizeViewed } from '../../../../../telemetry/accountImportFlow';
 import { getMailCustomLabel, importerHasErrors } from './useStepPrepareOAuth.helpers';
 
 const useStepPrepare = () => {
@@ -56,7 +56,7 @@ const useStepPrepare = () => {
     const isLabelMapping = provider === ImportProvider.GOOGLE;
 
     useEffect(() => {
-        trackEasySwitchPrepareImportViewed({
+        trackAccountImportEasySwitchCustomizeViewed({
             provider,
             products,
             importPeriod: emailSelected ? importerData.emails?.fields?.importPeriod : undefined,

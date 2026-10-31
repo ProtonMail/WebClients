@@ -23,10 +23,10 @@ import { loadImporters } from '../logic/importers/importers.actions';
 import { useEasySwitchDispatch } from '../logic/store';
 import { WRONG_ACCOUNT_ERROR, createTokenItem, loadSyncList } from '../logic/sync/sync.actions';
 import {
-    trackBYOEAuthenticated,
-    trackBYOECreationError,
-    trackBYOEImporterCreated,
-} from '../telemetry/byoeCreationFunnel';
+    trackAccountImportBYOEAuthenticated,
+    trackAccountImportBYOEError,
+    trackAccountImportBYOEFinished,
+} from '../telemetry/accountImportFlow';
 import { convertBYOEAddress, createBYOEAddress } from '../thunks/byoeAddresses';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import type {
@@ -138,9 +138,9 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
     /** A claimable address is not an error: the user goes on to claim it. */
     const trackImportTaskFailure = (reason: ConnectBYOEAddressFailure) => {
         if (reason.type === 'linked-to-another-account') {
-            trackBYOECreationError('address_linked_to_another_account');
+            trackAccountImportBYOEError({ errorStep: 'address_linked_to_another_account' });
         } else if (reason.type !== 'claimable-address') {
-            trackBYOECreationError('address_creation');
+            trackAccountImportBYOEError({ errorStep: 'address_creation' });
         }
     };
 
@@ -160,12 +160,12 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
     }): Promise<ConnectBYOEAddressResult> => {
         const finalized = await finalizeAddress(existingAddress, account);
         if (finalized.status === 'failure') {
-            trackBYOECreationError('address_creation');
+            trackAccountImportBYOEError({ errorStep: 'address_creation' });
             return finalized;
         }
         // Convert or create returned no address
         if (!finalized.address) {
-            trackBYOECreationError('address_creation');
+            trackAccountImportBYOEError({ errorStep: 'address_creation' });
             return fail({ type: 'unknown' });
         }
 
@@ -173,7 +173,7 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
         void easySwitchDispatch(loadImporters());
 
         // The mobile flow has no upsell modal
-        trackBYOEImporterCreated({
+        trackAccountImportBYOEFinished({
             hasImportEmails: importEmails,
             importPeriod,
             isUpsellShown: false,
@@ -199,7 +199,7 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
         // Stop if the address is already a BYOE address
         const existingAddress = findUserAddress(token.Account, addresses);
         if (existingAddress && getIsBYOEAddress(existingAddress)) {
-            trackBYOECreationError('address_already_connected');
+            trackAccountImportBYOEError({ errorStep: 'address_already_connected' });
             return fail({ type: 'already-added' });
         }
 
@@ -293,11 +293,11 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
 
         if (response.meta.requestStatus === 'rejected') {
             const isWrongAccount = response.payload?.Error === WRONG_ACCOUNT_ERROR;
-            trackBYOECreationError(isWrongAccount ? 'wrong_account' : 'authentication');
+            trackAccountImportBYOEError({ errorStep: isWrongAccount ? 'wrong_account' : 'authentication' });
             return fail({ type: isWrongAccount ? 'wrong-account' : 'token-failed' });
         }
 
-        trackBYOEAuthenticated();
+        trackAccountImportBYOEAuthenticated();
 
         onAccountResolved?.(response.payload.Account);
 

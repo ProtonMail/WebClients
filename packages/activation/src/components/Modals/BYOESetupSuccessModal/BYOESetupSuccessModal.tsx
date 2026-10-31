@@ -3,17 +3,15 @@ import { c } from 'ttag';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeSetupSuccess from '@proton/styles/assets/img/illustrations/byoe-setup-success.svg';
-import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { trackAccountImportBYOEAddressAction } from '../../../telemetry/accountImportFlow';
-import { BYOEAddressAction } from '../../../telemetry/events';
 
 interface Props extends ModalProps {
     connectedAddress: string;
@@ -36,12 +34,6 @@ export const BYOESetupSuccessModal = ({ onClose, onComplete, connectedAddress, s
     };
 
     const handleManageAddresses = async () => {
-        tracker.emit(BYOEAddressAction, {
-            dimensions: {
-                addressAction: 'manage-address',
-                provider: 'google',
-            },
-        });
         trackAccountImportBYOEAddressAction('manage_address');
 
         await onComplete?.();

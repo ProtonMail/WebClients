@@ -11,7 +11,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { ImportProvider, ImportType } from '../../../../interface';
 import { selectImapDraftProduct, selectImapDraftProvider } from '../../../../logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchSelector } from '../../../../logic/store';
-import { trackEasySwitchInstructionsViewed } from '../../../../telemetry/easySwitchCreationFunnel';
+import { trackAccountImportEasySwitchInstructionsViewed } from '../../../../telemetry/accountImportFlow';
 import DefaultCalendarInstructions from './Instructions/default/DefaultCalendarInstructions';
 import DefaultContactsInstructions from './Instructions/default/DefaultContactsInstructions';
 import DefaultMailInstructions from './Instructions/default/DefaultMailInstructions';
@@ -31,7 +31,7 @@ const InstructionsModal = ({ onSubmit, onClose }: Props) => {
     const provider = useEasySwitchSelector(selectImapDraftProvider);
 
     useEffect(() => {
-        trackEasySwitchInstructionsViewed({ provider, products: product ? [product] : undefined });
+        trackAccountImportEasySwitchInstructionsViewed({ provider, products: product ? [product] : undefined });
     }, []);
 
     const titleRenderer = () => {

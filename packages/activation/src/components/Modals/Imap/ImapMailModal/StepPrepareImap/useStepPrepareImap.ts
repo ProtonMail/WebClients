@@ -25,7 +25,7 @@ import {
     selectImapDraftProvider,
 } from '../../../../../logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../../logic/store';
-import { trackEasySwitchPrepareImportViewed } from '../../../../../telemetry/easySwitchCreationFunnel';
+import { trackAccountImportEasySwitchCustomizeViewed } from '../../../../../telemetry/accountImportFlow';
 import type { MailImportFields } from '../../../CustomizeMailImportModal/CustomizeMailImportModal.interface';
 import { formatPrepareStepPayload } from './StepPrepareImap.helpers';
 import getDefaultLabel from './useStepPrepareImap.helpers';
@@ -132,7 +132,7 @@ const useStepPrepare = ({ user, handleCloseCustomizeModal }: Props) => {
     });
 
     useEffect(() => {
-        trackEasySwitchPrepareImportViewed({
+        trackAccountImportEasySwitchCustomizeViewed({
             provider: importProvider,
             products: [ImportType.MAIL],
             importPeriod: customFields.importPeriod.initialValue,

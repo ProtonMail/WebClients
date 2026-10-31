@@ -15,12 +15,12 @@ import { IMAPS } from '../../../constants';
 import type { MailImportFolder } from '../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
 import MailImportFoldersParser from '../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { getEasySwitchFeaturesFromProducts } from '../../../hooks/useOAuthPopup.helpers';
-import { AuthenticationMethod, ImportType, OAUTH_PROVIDER } from '../../../interface';
 import type { ImportProvider } from '../../../interface';
+import { AuthenticationMethod, ImportType, OAUTH_PROVIDER } from '../../../interface';
 import {
-    trackEasySwitchCreationError,
-    trackEasySwitchImporterCreated,
-} from '../../../telemetry/easySwitchCreationFunnel';
+    trackAccountImportEasySwitchError,
+    trackAccountImportEasySwitchFinished,
+} from '../../../telemetry/accountImportFlow';
 import type { EasySwitchThunkExtra } from '../../store';
 import type { MailImportState } from './imapDraft.interface';
 
@@ -107,12 +107,12 @@ export const startImapMailImport = createAsyncThunk<ApiStartImportResponse, ApiS
         try {
             result = await thunkApi.extra.api(startImportTask(params));
         } catch (error) {
-            trackEasySwitchCreationError({ ...funnelContext, errorStep: 'import_start' });
+            trackAccountImportEasySwitchError({ ...funnelContext, errorStep: 'import_start' });
             throw error;
         }
 
         // The import is running: it is created even if refreshing the events fails below
-        trackEasySwitchImporterCreated({
+        trackAccountImportEasySwitchFinished({
             ...funnelContext,
             importPeriod: imapDraft.mailImport?.fields?.importPeriod,
         });

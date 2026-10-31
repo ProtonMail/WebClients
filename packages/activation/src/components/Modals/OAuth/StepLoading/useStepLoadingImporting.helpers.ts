@@ -20,9 +20,9 @@ import { ImportType, IsCustomCalendarMapping } from '../../../../interface';
 import { changeOAuthStep, resetOauthDraft } from '../../../../logic/draft/oauthDraft/oauthDraft.actions';
 import type { ImporterCalendar, ImporterData } from '../../../../logic/draft/oauthDraft/oauthDraft.interface';
 import {
-    trackEasySwitchCreationError,
-    trackEasySwitchImporterCreated,
-} from '../../../../telemetry/easySwitchCreationFunnel';
+    trackAccountImportEasySwitchError,
+    trackAccountImportEasySwitchFinished,
+} from '../../../../telemetry/accountImportFlow';
 import { formatPrepareStepPayload } from '../../Imap/ImapMailModal/StepPrepareImap/StepPrepareImap.helpers';
 import { startDriveImportTask } from '../Drive/driveImportTask';
 
@@ -123,7 +123,7 @@ export const createImporterTask = async ({
     increaseCalendarCount,
 }: StartImporterProps) => {
     if (!importerData || !products) {
-        trackEasySwitchCreationError({ provider, products, errorStep: 'import_payload' });
+        trackAccountImportEasySwitchError({ provider, products, errorStep: 'import_payload' });
         throw new Error('Importer data and products should be defined');
     }
 
@@ -201,7 +201,7 @@ export const createImporterTask = async ({
             };
             setIsCreatingCalendar(false);
         } catch (e) {
-            trackEasySwitchCreationError({ provider, products, errorStep: 'calendar_creation' });
+            trackAccountImportEasySwitchError({ provider, products, errorStep: 'calendar_creation' });
             //Rollback to previous state if an error occurred during calendar creation
             dispatch(changeOAuthStep('prepare-import'));
             captureMessage('Error while creating calendars', {
@@ -241,7 +241,7 @@ export const createImporterTask = async ({
             importPayload.Contacts = {};
         }
     } catch (error) {
-        trackEasySwitchCreationError({ provider, products, errorStep: 'import_payload' });
+        trackAccountImportEasySwitchError({ provider, products, errorStep: 'import_payload' });
         throw error;
     }
 
@@ -273,7 +273,7 @@ export const createImporterTask = async ({
 
         // The import is running: it is created even if refreshing the events fails below
         isImporterCreated = true;
-        trackEasySwitchImporterCreated({
+        trackAccountImportEasySwitchFinished({
             provider,
             products,
             importPeriod: products.includes(ImportType.MAIL) ? importerData.emails?.fields?.importPeriod : undefined,
@@ -287,7 +287,7 @@ export const createImporterTask = async ({
             await call();
         }
         if (!isImporterCreated) {
-            trackEasySwitchCreationError({ provider, products, errorStep: 'import_start' });
+            trackAccountImportEasySwitchError({ provider, products, errorStep: 'import_start' });
         }
         // Already reported to Sentry with context --> only notify the user
         errorHandler(error, { trace: !isErrorReported });

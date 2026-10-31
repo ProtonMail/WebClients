@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { EASY_SWITCH_SOURCES } from '../../interface';
 import { ImportProvider, ImportType } from '../../interface';
-import { isEasySwitchDriveOnly, trackEasySwitchCreationStarted } from '../../telemetry/easySwitchCreationFunnel';
+import { trackAccountImportEasySwitchStarted } from '../../telemetry/accountImportFlow';
 import { useProductSelectionSubmit } from '../Modals/ProductSelectionModal/useProductSelectionSubmit';
 import GoogleButton from './GoogleButton';
 import GoogleDriveButton from './GoogleDriveButton';
@@ -31,10 +31,7 @@ const EasySwitchOauthImportButton = ({
     const { handleSubmit } = useProductSelectionSubmit();
 
     const handleClick = () => {
-        // No "Import your data" modal here: the creation starts with the click
-        if (!isEasySwitchDriveOnly(products)) {
-            trackEasySwitchCreationStarted({ source, provider });
-        }
+        trackAccountImportEasySwitchStarted({ source, provider, products });
         handleSubmit(provider, products, source);
         onClick?.();
     };
