@@ -21,7 +21,10 @@ import {
 } from '../../../logic/sync/sync.actions';
 import type { Sync } from '../../../logic/sync/sync.interface';
 import { selectCreateSyncState } from '../../../logic/sync/sync.selectors';
-import { trackBYOECreationStarted, trackBYOEGoogleSignInClicked } from '../../../telemetry/byoeCreationFunnel';
+import {
+    trackAccountImportBYOESignInClicked,
+    trackAccountImportBYOEStarted,
+} from '../../../telemetry/accountImportFlow';
 import AddBYOEModal from '../AddBYOEModal/AddBYOEModal';
 import GmailSyncModalAnimation from './GmailSyncModalAnimation';
 import SignInWithGoogle from './SignInWithGoogle';
@@ -103,12 +106,12 @@ const GmailSyncModal = ({
     useEffect(() => {
         // Without access to BYOE this modal only sets up a Gmail forwarding, which is not a BYOE creation
         if (hasAccessToBYOE) {
-            trackBYOECreationStarted({ source, isConversion: !!expectedEmailAddress, variant });
+            trackAccountImportBYOEStarted({ source, isConversion: !!expectedEmailAddress, variant });
         }
     }, []);
 
     const handleBYOEWithImport = (importEmails: boolean, importPeriod?: TIME_PERIOD) => {
-        trackBYOEGoogleSignInClicked({ hasImportEmails: importEmails, importPeriod });
+        trackAccountImportBYOESignInClicked({ hasImportEmails: importEmails, importPeriod });
 
         void triggerOAuthPopup({
             provider: OAUTH_PROVIDER.GOOGLE,

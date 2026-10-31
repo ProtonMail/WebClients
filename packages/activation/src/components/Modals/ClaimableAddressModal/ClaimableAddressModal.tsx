@@ -16,13 +16,11 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import claimExternalAddress from '@proton/styles/assets/img/byoe/claim-external-address.svg';
 import claimStepDone from '@proton/styles/assets/img/byoe/claim-step-done.svg';
 import claimStepNext from '@proton/styles/assets/img/byoe/claim-step-next.svg';
-import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import {
     trackAccountImportClaimableAddressModalAction,
     trackAccountImportClaimableAddressModalShown,
 } from '../../../telemetry/accountImportFlow';
-import { BYOEClaimableAddressModalAction, BYOEClaimableAddressModalShown } from '../../../telemetry/events';
 
 interface Props extends ModalStateProps {
     emailAddress: string;
@@ -34,12 +32,10 @@ export const ClaimableAddressModal = ({ emailAddress, onClaim, ...rest }: Props)
     const [loading, withLoading] = useLoading();
 
     useEffect(() => {
-        tracker.emit(BYOEClaimableAddressModalShown);
         trackAccountImportClaimableAddressModalShown();
     }, []);
 
     const handleConnectClick = async () => {
-        tracker.emit(BYOEClaimableAddressModalAction, { dimensions: { claimableAddressAction: 'claim' } });
         trackAccountImportClaimableAddressModalAction('claim');
         const claimed = await withLoading(onClaim());
         if (claimed) {
@@ -48,7 +44,6 @@ export const ClaimableAddressModal = ({ emailAddress, onClaim, ...rest }: Props)
     };
 
     const handleClose = () => {
-        tracker.emit(BYOEClaimableAddressModalAction, { dimensions: { claimableAddressAction: 'close' } });
         trackAccountImportClaimableAddressModalAction('close');
         rest.onClose();
     };
@@ -111,9 +106,6 @@ export const ClaimableAddressModal = ({ emailAddress, onClaim, ...rest }: Props)
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={() => {
-                                tracker.emit(BYOEClaimableAddressModalAction, {
-                                    dimensions: { claimableAddressAction: 'learn_more' },
-                                });
                                 trackAccountImportClaimableAddressModalAction('learn_more');
                             }}
                             href={getKnowledgeBaseUrl('/troubleshooting-easy-switch#gmail-connection-setup')}

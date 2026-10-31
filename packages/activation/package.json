@@ -63,7 +63,7 @@
         "./src/logic/sync/sync.actions": "./src/logic/sync/sync.actions.ts",
         "./src/logic/sync/sync.interface": "./src/logic/sync/sync.interface.ts",
         "./src/logic/sync/sync.selectors": "./src/logic/sync/sync.selectors.ts",
-        "./src/telemetry/byoeCreationFunnel": "./src/telemetry/byoeCreationFunnel.ts"
+        "./src/telemetry/accountImportFlow": "./src/telemetry/accountImportFlow.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",

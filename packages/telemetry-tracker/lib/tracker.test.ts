@@ -1,4 +1,4 @@
-import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { TelemetryAccountImportFlowEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
@@ -14,8 +14,8 @@ jest.mock('@proton/shared/lib/helpers/metrics', () => ({ sendTelemetryReport: je
 jest.mock('@proton/shared/lib/telemetry', () => ({ telemetry: { sendCustomEvent: jest.fn() } }));
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({ captureMessage: jest.fn(), traceError: jest.fn() }));
 
-const group = TelemetryMeasurementGroups.bringYourOwnEmail;
-const event = TelemetryBringYourOwnEmailEvents.claim_proton_address;
+const group = TelemetryMeasurementGroups.accountImportFlow;
+const event = TelemetryAccountImportFlowEvents.stepCompleted;
 
 const simpleEvent = defineEvent({
     target: 'telemetry',

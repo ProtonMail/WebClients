@@ -19,7 +19,7 @@ import {
     selectOauthImportStateScopes,
 } from '../../../logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../logic/store';
-import { trackEasySwitchCreationError } from '../../../telemetry/easySwitchCreationFunnel';
+import { trackAccountImportEasySwitchError } from '../../../telemetry/accountImportFlow';
 
 const useOAuthModal = () => {
     const [user] = useUser();
@@ -63,7 +63,7 @@ const useOAuthModal = () => {
                 dispatch(changeOAuthStep('loading-importer'));
                 const result = await dispatch(createImporterThunk({ oAuthProps, source, user, availableAddresses }));
                 if (createImporterThunk.rejected.match(result)) {
-                    trackEasySwitchCreationError({ provider, products, errorStep: 'importer_creation' });
+                    trackAccountImportEasySwitchError({ provider, products, errorStep: 'importer_creation' });
                 }
             },
         });

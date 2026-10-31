@@ -15,9 +15,9 @@ import {
 } from '../../../logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '../../../logic/store';
 import {
-    trackEasySwitchCreationError,
-    trackEasySwitchProductsSubmitted,
-} from '../../../telemetry/easySwitchCreationFunnel';
+    trackAccountImportEasySwitchError,
+    trackAccountImportEasySwitchProductsSubmitted,
+} from '../../../telemetry/accountImportFlow';
 import { getScopeFromProvider } from '../OAuth/OAuthModal.helpers';
 
 export const useProductSelectionSubmit = () => {
@@ -36,7 +36,7 @@ export const useProductSelectionSubmit = () => {
         source: EASY_SWITCH_SOURCES,
         { hasReadInstructions }: { hasReadInstructions?: boolean } = {}
     ) => {
-        trackEasySwitchProductsSubmitted({ source, provider, products });
+        trackAccountImportEasySwitchProductsSubmitted({ source, provider, products });
 
         const isOAuth = provider === ImportProvider.GOOGLE || provider === ImportProvider.OUTLOOK;
 
@@ -64,7 +64,7 @@ export const useProductSelectionSubmit = () => {
                             createImporterThunk({ oAuthProps, source, user, availableAddresses })
                         );
                         if (createImporterThunk.rejected.match(result)) {
-                            trackEasySwitchCreationError({ provider, products, errorStep: 'importer_creation' });
+                            trackAccountImportEasySwitchError({ provider, products, errorStep: 'importer_creation' });
                         }
                     },
                 });

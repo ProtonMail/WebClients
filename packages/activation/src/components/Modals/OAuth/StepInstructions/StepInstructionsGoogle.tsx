@@ -19,7 +19,7 @@ import {
     selectOauthImportStateProducts,
 } from '../../../../logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '../../../../logic/store';
-import { trackEasySwitchInstructionsViewed } from '../../../../telemetry/easySwitchCreationFunnel';
+import { trackAccountImportEasySwitchInstructionsViewed } from '../../../../telemetry/accountImportFlow';
 
 interface Props {
     triggerOAuth: () => void;
@@ -31,7 +31,7 @@ const StepInstructionsGoogle = ({ triggerOAuth }: Props) => {
     const products = useEasySwitchSelector(selectOauthImportStateProducts);
 
     useEffect(() => {
-        trackEasySwitchInstructionsViewed({ provider, products });
+        trackAccountImportEasySwitchInstructionsViewed({ provider, products });
     }, []);
 
     const handleQuit = () => {
