@@ -1,4 +1,5 @@
 import type { Configuration } from 'webpack'
+import fs from 'node:fs'
 import path from 'node:path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
@@ -13,10 +14,24 @@ const result = (opts: WebpackEnvArguments): Configuration => {
   const webpackOptions = getWebpackOptions(opts, { appConfig })
   const config = getConfig(webpackOptions)
 
+  const rowsNColumnsVendorDir = path.resolve(__dirname, '../../vendor/rowsncolumns')
+  const rowsNColumnsDistDirs = fs.existsSync(rowsNColumnsVendorDir)
+    ? fs
+        .readdirSync(rowsNColumnsVendorDir)
+        .map((name) => path.join(rowsNColumnsVendorDir, name, 'dist'))
+        .filter((dir) => fs.existsSync(dir))
+    : []
+
   config.devServer = {
     ...config.devServer,
     // Reload the top-level Docs app when vendored Rows n Columns code used by the editor changes.
-    watchFiles: [path.resolve(__dirname, '../../vendor/rowsncolumns/**/dist/**/*')],
+    // Watch the dist directories directly instead of a `**` glob: each vendor package has a
+    // node_modules with symlinks to its siblings, and globbing through them expands to
+    // hundreds of thousands of paths, which exhausts file handles (EMFILE).
+    watchFiles: {
+      paths: rowsNColumnsDistDirs,
+      options: { ignored: /[\\/]node_modules[\\/]/, followSymlinks: false },
+    },
   }
 
   if (webpackOptions.appMode === 'standalone') {
