@@ -3,6 +3,9 @@ import {
   getContextualCommentsWidth,
   getDocsLayoutColumnWidths,
   getEditorBleedArea,
+  getGutterClickCaretProbePoint,
+  isDocsLayoutGutterTarget,
+  isOutsideClientArea,
 } from './docsLayoutUtils'
 
 describe('getDocsLayoutColumnWidths', () => {
@@ -116,5 +119,60 @@ describe('getContextualCommentsWidth', () => {
   it('claims the responsive comments width on desktop', () => {
     expect(getContextualCommentsWidth(DOCS_EDITOR_MAX_WIDTH)).toBe(200)
     expect(getContextualCommentsWidth(1600)).toBe(328)
+  })
+})
+
+describe('isDocsLayoutGutterTarget', () => {
+  function elementWithClass(className: string) {
+    const element = document.createElement('div')
+    element.className = className
+    return element
+  }
+
+  it('accepts the layout grid and the center panel', () => {
+    expect(isDocsLayoutGutterTarget(elementWithClass('docs-layout-grid'))).toBe(true)
+    expect(isDocsLayoutGutterTarget(elementWithClass('docs-layout-center-panel'))).toBe(true)
+  })
+
+  it('rejects editor content, panels and non-elements', () => {
+    expect(isDocsLayoutGutterTarget(elementWithClass('DocumentEditor'))).toBe(false)
+    expect(isDocsLayoutGutterTarget(elementWithClass('docs-layout-left-panel'))).toBe(false)
+    expect(isDocsLayoutGutterTarget(document.createTextNode('text'))).toBe(false)
+    expect(isDocsLayoutGutterTarget(null)).toBe(false)
+  })
+})
+
+describe('getGutterClickCaretProbePoint', () => {
+  const editorRect = { left: 400, right: 1200, top: 50, bottom: 900 }
+
+  it('pulls a left gutter click to the start of the editor at the same height', () => {
+    expect(getGutterClickCaretProbePoint({ x: 100, y: 300 }, editorRect)).toEqual({ x: 401, y: 300 })
+  })
+
+  it('pulls a right gutter click to the end of the editor at the same height', () => {
+    expect(getGutterClickCaretProbePoint({ x: 1500, y: 300 }, editorRect)).toEqual({ x: 1199, y: 300 })
+  })
+
+  it('keeps the point inside the editor vertically', () => {
+    expect(getGutterClickCaretProbePoint({ x: 100, y: 10 }, editorRect)).toEqual({ x: 401, y: 51 })
+    expect(getGutterClickCaretProbePoint({ x: 100, y: 990 }, editorRect)).toEqual({ x: 401, y: 899 })
+  })
+})
+
+describe('isOutsideClientArea', () => {
+  const element = { clientWidth: 1425, clientHeight: 800 }
+
+  it('is false inside the client area', () => {
+    expect(isOutsideClientArea({ offsetX: 100, offsetY: 300 }, element)).toBe(false)
+    expect(isOutsideClientArea({ offsetX: 1424, offsetY: 799 }, element)).toBe(false)
+  })
+
+  it('is true on a right or bottom scrollbar', () => {
+    expect(isOutsideClientArea({ offsetX: 1430, offsetY: 300 }, element)).toBe(true)
+    expect(isOutsideClientArea({ offsetX: 100, offsetY: 805 }, element)).toBe(true)
+  })
+
+  it('is true on a left scrollbar (RTL)', () => {
+    expect(isOutsideClientArea({ offsetX: -5, offsetY: 300 }, element)).toBe(true)
   })
 })

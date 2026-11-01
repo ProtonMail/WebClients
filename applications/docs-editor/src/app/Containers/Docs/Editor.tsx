@@ -31,6 +31,7 @@ import { TablePlugin } from './Plugins/Table/TablePlugin'
 import { SafeLexicalComposer } from './Utils/SafeLexicalComposer'
 import { CheckListPlugin } from './Plugins/CheckListPlugin'
 import { AutoFocusPlugin } from './Plugins/AutoFocusPlugin'
+import { GutterClickPlugin } from './Plugins/GutterClickPlugin'
 import { KeyboardShortcutsPlugin } from './Plugins/KeyboardShortcuts/KeyboardShortcutsPlugin'
 import { PasteLimitPlugin } from './Plugins/PasteLimitPlugin'
 import { CombiningMarkPasteGuardPlugin } from './Plugins/CombiningMarkPasteGuardPlugin'
@@ -214,9 +215,7 @@ export function Editor({
         )}
         <DocsLayoutGrid leftPanelEnabled={tableOfContentsVisible}>
           <DocsLayoutLeftPanel>
-            {tableOfContentsVisible && (
-              <TableOfContentsPlugin editorHidden={hidden} />
-            )}
+            {tableOfContentsVisible && <TableOfContentsPlugin editorHidden={hidden} />}
           </DocsLayoutLeftPanel>
           <DocsLayoutCenterPanel>
             <RichTextPlugin
@@ -295,6 +294,7 @@ export function Editor({
         {hasMutationDisplay && <PasteLimitPlugin showGenericAlertModal={showGenericAlertModal} />}
         {hasMutationDisplay && <CombiningMarkPasteGuardPlugin showGenericAlertModal={showGenericAlertModal} />}
         <AutoFocusPlugin isEditorHidden={hidden} />
+        <GutterClickPlugin isEditorHidden={hidden} />
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
         <WordCountPlugin
