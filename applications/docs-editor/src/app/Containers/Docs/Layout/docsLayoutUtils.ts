@@ -112,3 +112,54 @@ export function getContextualCommentsWidth(viewportWidth: number): number | null
 export function getDocsLayoutScrollContainer(rootElement: HTMLElement | null | undefined): HTMLElement | null {
   return rootElement?.closest('.docs-layout-grid') ?? null
 }
+
+type Point = { x: number; y: number }
+type Rect = { left: number; right: number; top: number; bottom: number }
+
+// Keeps the caret probe strictly inside the editor box, where caret lookups always land on editor content.
+const CARET_PROBE_INSET = 1
+
+/**
+ * Whether a mousedown landed on empty layout space around the editor (the margins on either side of
+ * the page), rather than on the editor itself or on a panel's content (table of contents, comments).
+ */
+export function isDocsLayoutGutterTarget(target: EventTarget | null): boolean {
+  if (!(target instanceof Element)) {
+    return false
+  }
+
+  return target.classList.contains('docs-layout-grid') || target.classList.contains('docs-layout-center-panel')
+}
+
+/**
+ * Whether a pointer event landed outside the target's client area, i.e. on its scrollbar. Offsets are
+ * relative to the padding box, so a scrollbar on the right/bottom gives offsets past the client size,
+ * and one on the left (RTL) gives a negative offset.
+ */
+export function isOutsideClientArea(
+  offset: { offsetX: number; offsetY: number },
+  element: { clientWidth: number; clientHeight: number },
+): boolean {
+  return (
+    offset.offsetX < 0 ||
+    offset.offsetY < 0 ||
+    offset.offsetX >= element.clientWidth ||
+    offset.offsetY >= element.clientHeight
+  )
+}
+
+/**
+ * Maps a click in the gutter to the closest point inside the editor: same height, pulled in
+ * horizontally to the editor edge on the side that was clicked.
+ */
+export function getGutterClickCaretProbePoint(click: Point, editorRect: Rect): Point {
+  const minX = editorRect.left + CARET_PROBE_INSET
+  const maxX = editorRect.right - CARET_PROBE_INSET
+  const minY = editorRect.top + CARET_PROBE_INSET
+  const maxY = editorRect.bottom - CARET_PROBE_INSET
+
+  return {
+    x: Math.min(Math.max(click.x, minX), maxX),
+    y: Math.min(Math.max(click.y, minY), maxY),
+  }
+}
