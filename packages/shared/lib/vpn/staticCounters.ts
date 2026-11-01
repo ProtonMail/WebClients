@@ -1,5 +1,5 @@
-const servers = 21202;
-const capacity = 24806.34;
+const servers = 21722;
+const capacity = 25414.739999999998;
 const countries = 149;
 const locations = 197;
 export { servers, capacity, countries, locations };
