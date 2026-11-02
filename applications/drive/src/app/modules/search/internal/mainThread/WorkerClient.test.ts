@@ -1,5 +1,5 @@
 // Import after mocks are set up.
-import { SearchWorkerDisconnectedError } from '../shared/errors';
+import { SearchWorkerDisconnectedError, sendErrorReportForSearch } from '../shared/errors';
 import type { ClientId, UserId } from '../shared/types';
 import type { MainThreadBridge } from './MainThreadBridge';
 import { HEARTBEAT_INTERVAL, HEARTBEAT_TIMEOUT, WorkerClient } from './WorkerClient';
@@ -88,17 +88,18 @@ describe('WorkerClient', () => {
     });
 
     describe('reverse heartbeat', () => {
-        it('sends heartbeat every interval', () => {
+        it('sends heartbeat every interval', async () => {
+            fakeApi.heartbeatClient.mockResolvedValue({ isClientRegistered: true });
             new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
 
             expect(fakeApi.heartbeatClient).not.toHaveBeenCalled();
 
-            jest.advanceTimersByTime(HEARTBEAT_INTERVAL);
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
             expect(fakeApi.heartbeatClient).toHaveBeenCalledTimes(1);
             // jsdom default visibilityState is 'visible'
             expect(fakeApi.heartbeatClient).toHaveBeenCalledWith(CLIENT_ID, true);
 
-            jest.advanceTimersByTime(HEARTBEAT_INTERVAL);
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
             expect(fakeApi.heartbeatClient).toHaveBeenCalledTimes(2);
         });
 
@@ -205,6 +206,35 @@ describe('WorkerClient', () => {
 
             jest.advanceTimersByTime(10_000);
             expect(fakeApi.heartbeatClient).not.toHaveBeenCalled();
+        });
+
+        it('sends only one heartbeat at a time while the worker does not answer', async () => {
+            fakeApi.heartbeatClient.mockReturnValue(new Promise(() => {}));
+
+            new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
+            createdWorkers = [];
+
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL * 5);
+            expect(fakeApi.heartbeatClient).toHaveBeenCalledTimes(1);
+
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_TIMEOUT + 1000);
+            expect(createdWorkers).toHaveLength(1);
+            expect(sendErrorReportForSearch).toHaveBeenCalledTimes(1);
+        });
+
+        it('does not reconnect after dispose when a pending heartbeat times out', async () => {
+            fakeApi.heartbeatClient.mockReturnValue(new Promise(() => {}));
+
+            const client = new WorkerClient(USER_ID, '1.0.0', CLIENT_ID, BRIDGE);
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_INTERVAL);
+            client.dispose();
+            createdWorkers = [];
+            jest.clearAllMocks();
+
+            await jest.advanceTimersByTimeAsync(HEARTBEAT_TIMEOUT + 1000);
+            expect(createdWorkers).toHaveLength(0);
+            expect(fakeApi.heartbeatClient).not.toHaveBeenCalled();
+            expect(sendErrorReportForSearch).not.toHaveBeenCalled();
         });
     });
 });

@@ -30,6 +30,8 @@ export const HEARTBEAT_TIMEOUT = 60_000;
 export class WorkerClient {
     private api: Comlink.Remote<SharedWorkerAPI>;
     private heartbeatInterval: ReturnType<typeof setInterval> | null = null;
+    private heartbeatInFlight = false;
+    private disposed = false;
     private onBeforeUnload: () => void;
     private running = false;
     private connectionAbort = new AbortController();
@@ -79,14 +81,21 @@ export class WorkerClient {
     //
     //   False positives are safe: recreating a SharedWorker with the same name reuses the
     //   browser-managed singleton, and re-registering the client is a noop (covered by tests).
+    //
+    //   Skip while a heartbeat is pending, so a hung worker doesn't stack timeouts.
     private async heartbeatWithCheck() {
+        if (this.heartbeatInFlight) {
+            return;
+        }
+        this.heartbeatInFlight = true;
+        let timeoutId: ReturnType<typeof setTimeout> | undefined;
         try {
             const isForeground = document.visibilityState === 'visible';
             const { isClientRegistered } = await Promise.race([
                 this.api.heartbeatClient(this.clientId, isForeground),
-                new Promise<never>((_, reject) =>
-                    setTimeout(() => reject(new SharedWorkerHeartbeatTimeout()), HEARTBEAT_TIMEOUT)
-                ),
+                new Promise<never>((_, reject) => {
+                    timeoutId = setTimeout(() => reject(new SharedWorkerHeartbeatTimeout()), HEARTBEAT_TIMEOUT);
+                }),
             ]);
             if (!isClientRegistered && this.running) {
                 // Worker evicted the client (e.g. inactive tab cleaned up while throttled). Re-register.
@@ -94,6 +103,9 @@ export class WorkerClient {
                 this.start();
             }
         } catch (error) {
+            if (this.disposed) {
+                return;
+            }
             if (error instanceof SharedWorkerHeartbeatTimeout) {
                 searchMetrics.markWorkerHealthError({ kind: 'heartbeat-timeout', error });
                 this.connectionAbort.abort(new SearchWorkerDisconnectedError());
@@ -105,16 +117,25 @@ export class WorkerClient {
                 searchMetrics.markWorkerHealthError({ kind: 'heartbeat-error', error });
                 // No need to recover, another heartbeat will be sent by the periodic timer.
             }
+        } finally {
+            clearTimeout(timeoutId);
+            this.heartbeatInFlight = false;
         }
     }
 
     private reconnectSharedWorker() {
+        if (this.disposed) {
+            return;
+        }
         Logger.info('WorkerClient: reconnecting');
         this.stopHeartbeat();
 
         // Jitter avoids all tabs reconnecting at the exact same instant.
-        const jitter = Math.random() * 1000;
+        const jitter = (crypto.getRandomValues(new Uint32Array(1))[0] / 2 ** 32) * 1000;
         setTimeout(() => {
+            if (this.disposed) {
+                return;
+            }
             try {
                 this.api = this.createWorker();
 
@@ -246,6 +267,7 @@ export class WorkerClient {
     }
 
     private disconnect() {
+        this.disposed = true;
         this.stopHeartbeat();
         window.removeEventListener('beforeunload', this.onBeforeUnload);
         void this.api.disconnectClient(this.clientId);
