@@ -20,7 +20,7 @@ export const load = createAsyncThunk<ConversationResult, ConversationParams, Mai
     'conversations/load',
     async ({ silentFetch = false, conversationID, messageID }, thunkApi) => {
         try {
-            return await thunkApi.extra.api({ ...getConversation(conversationID, messageID), silent: silentFetch });
+            return await thunkApi.extra.api({ ...getConversation(conversationID, messageID), silence: silentFetch });
         } catch (error: any | undefined) {
             console.error(error);
             throw error;

@@ -19,7 +19,7 @@ import clsx from '@proton/utils/clsx';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { filterAttachmentToPreview } from '../../helpers/attachment/attachmentThumbnails';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
-import { getDate, isElementMessage, isUnread } from '../../helpers/elements';
+import { getDate, hasLabel, isElementMessage, isUnread } from '../../helpers/elements';
 import { getDisplayRecipients } from '../../helpers/recipients';
 import { useCategoryViewConversationPrefetch } from '../../hooks/conversation/useCategoryViewConversationPrefetch';
 import type { Element } from '../../models/element';
@@ -102,7 +102,9 @@ const Item = ({
     const elementRef = useRef<HTMLDivElement>(null);
 
     const prefetchConversation = useCategoryViewConversationPrefetch();
-    const conversationID = !conversationMode && isElementMessage(element) ? element.ConversationID : undefined;
+    const canPrefetchConversation =
+        !conversationMode && isElementMessage(element) && !hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED);
+    const conversationID = canPrefetchConversation ? element.ConversationID : undefined;
 
     const displayRecipients = getDisplayRecipients(element, labelID);
     const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();
