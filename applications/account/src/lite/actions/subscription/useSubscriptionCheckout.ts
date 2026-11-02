@@ -21,14 +21,13 @@ import { FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES } from '@proton/payments/core/c
 import type { PaymentMethodType } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
+import { getCodes } from '@proton/payments/core/subscription/helpers';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import noop from '@proton/utils/noop';
-
-import { getCodesForSubscription } from './helpers';
 
 type SubscriptionContext = {
     operationsSubscriptionData: OperationsSubscriptionData;
@@ -110,7 +109,7 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed }:
                     paymentFacade.methods.savedMethods ?? []
                 );
 
-                const codes = getCodesForSubscription(checkResult?.Gift ? coupon : '', checkResult?.Coupon?.Code);
+                const codes = getCodes({ gift: checkResult?.Gift ? coupon : '', coupon: checkResult?.Coupon?.Code });
                 await operations.subscribe({
                     Codes: codes,
                     Plans: planIDs,
@@ -159,7 +158,7 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed }:
                     Plans: planIDs,
                     Cycle: cycle,
                     product: appName,
-                    Codes: getCodesForSubscription(coupon, checkResult?.Coupon?.Code),
+                    Codes: getCodes({ gift: coupon, coupon: checkResult?.Coupon?.Code }),
                     taxBillingAddress: billingAddress,
                     StartTrial: checkResult?.SubscriptionMode === SubscriptionMode.Trial,
                     vatNumber: vatNumber,

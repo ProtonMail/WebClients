@@ -53,6 +53,7 @@ import { hasPlanIDs, switchPlan } from '@proton/payments/core/planIDs';
 import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
 import {
     getAutoCoupon,
+    getCodes,
     getIsB2BAudienceFromSubscription,
     getMaximumCycleForApp,
     getPlanIDs,
@@ -122,7 +123,7 @@ import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { canShowGiftCodeInput } from './modal-components/helpers/canShowGiftCodeInput';
 import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
 import type { OpenCallbackProps } from './subscriptionModalTypes';
-import { getCodes, useSubscriptionContainerInnerCheck } from './useSubscriptionContainerInnerCheck';
+import { useSubscriptionContainerInnerCheck } from './useSubscriptionContainerInnerCheck';
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
 
 import './SubscriptionContainer.scss';

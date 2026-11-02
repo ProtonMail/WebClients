@@ -4,6 +4,7 @@ import { createPaymentSubscription } from '@proton/payments/core/api/createPayme
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { Currency, Cycle, ExtendedTokenPayment, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { hasFreePlanIDs } from '@proton/payments/core/planIDs';
+import { getCodes } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
@@ -66,6 +67,8 @@ export const handleSubscribeUser = async (
     }
 
     try {
+        const Codes = getCodes({ coupon: subscriptionData.checkResult.Coupon?.Code });
+
         const { Subscription } = await createPaymentSubscription(
             api,
             {
@@ -78,9 +81,7 @@ export const handleSubscribeUser = async (
                 ...{
                     Payment: subscriptionData.paymentToken,
                     Amount: subscriptionData.checkResult.AmountDue,
-                    ...(subscriptionData.checkResult.Coupon?.Code
-                        ? { Codes: [subscriptionData.checkResult.Coupon.Code] }
-                        : undefined),
+                    ...(Codes.length ? { Codes } : undefined),
                 },
             },
             {

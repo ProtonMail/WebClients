@@ -129,8 +129,8 @@ describe('SubscriptionCheckoutPaymentSection guards', () => {
 });
 
 /**
- * Regression for P2-2741: the Codes sent on subscribe are built by getCodesForSubscription, which is going to move to
- * packages/payments/core. Asserted through the submit of the lite checkout so the move cannot change them.
+ * Regression for P2-2741: the Codes sent on subscribe are built by getCodes from
+ * @proton/payments/core. Asserted through the submit of the lite checkout so the move cannot change them.
  */
 describe('SubscriptionCheckoutPaymentSection subscription codes', () => {
     const submitWith = ({

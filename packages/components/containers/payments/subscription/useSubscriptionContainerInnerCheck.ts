@@ -16,6 +16,7 @@ import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription
 import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
 import {
     getAutoCoupon,
+    getCodes,
     getPlanIDs,
     isModifyingPaidSubscriptionSelection,
     isSubscriptionCheckForbiddenWithReason,
@@ -29,14 +30,11 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
-import isTruthy from '@proton/utils/isTruthy';
 
 import { forceAddonsMinMaxConstraints } from '../planCustomizer/helpers';
 import type { Model } from './SubscriptionContainer';
 import { reportPlanIDsIfChangedTelemetry } from './helpers/subscriptionTelemetry';
 import { switchCycle } from './helpers/switchCycle';
-
-export const getCodes = ({ gift, coupon }: Pick<Model, 'gift' | 'coupon'>): string[] => [gift, coupon].filter(isTruthy);
 
 interface PlanTransitionCallbacks {
     onPlusToPlusTransition: (unlockPlan: Plan | undefined) => void;

@@ -20,6 +20,7 @@ import {
     getPlanName,
     getPlanTitle,
 } from '@proton/shared/lib/payments/subscription/helpers/plan-info';
+import isTruthy from '@proton/utils/isTruthy';
 
 import {
     type ADDON_NAMES,
@@ -969,3 +970,6 @@ export function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: Plan
     const maxCycle = Math.max(...availableCycles) as CYCLE;
     return Math.min(cycle, maxCycle);
 }
+
+export const getCodes = ({ gift, coupon }: { gift?: string; coupon?: string }): string[] =>
+    [gift, coupon].filter(isTruthy);
