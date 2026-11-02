@@ -12,11 +12,11 @@ import AddressesAutocomplete from '@proton/components/components/addressesAutoco
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useAddressesInputDrag } from '@proton/mail-composer/hooks/useAddressesInputDrag';
 import type { MessageSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { getRecipientOrGroupKey, recipientsWithoutGroup } from '@proton/mail-message/helpers/message/messageRecipients';
 import { useContactsMap, useGroupsWithContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
 import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 import type { RecipientGroup } from '@proton/mail-message/models/address';
-import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { rootFontSize, scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -63,6 +63,7 @@ const AddressesInput = ({
 
     const { getRecipientsOrGroups } = useRecipientLabel();
     const [contactEmails] = useContactEmails();
+    const { useContactGroups } = useComposerMessageHost();
     const [contactGroups] = useContactGroups();
 
     const { createNotification } = useNotifications();

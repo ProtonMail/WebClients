@@ -2,13 +2,13 @@ import { useEffect } from 'react';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 import { getAddressFromEmail } from '@proton/mail-message/helpers/addresses';
 import { changeSignature } from '@proton/mail-message/helpers/message/messageSignature';
 import type { RecipientType } from '@proton/mail-message/models/address';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { defaultFontStyle } from '@proton/shared/lib/mail/fontFace';
@@ -24,6 +24,7 @@ interface Props {
 }
 
 const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeContent }: Props) => {
+    const { useMailSettings } = useComposerMessageHost();
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
     const [addresses = []] = useAddresses();

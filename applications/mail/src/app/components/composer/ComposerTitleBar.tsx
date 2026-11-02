@@ -10,7 +10,7 @@ import { IcArrowsToCenter } from '@proton/icons/icons/IcArrowsToCenter';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcDots } from '@proton/icons/icons/IcDots';
 import { IcLowDash } from '@proton/icons/icons/IcLowDash';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { isSafari as checkIsSafari, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -75,6 +75,7 @@ const ComposerTitleBar = ({
 }: Props) => {
     const isSafari = checkIsSafari();
 
+    const { useMailSettings } = useComposerMessageHost();
     const [mailSettings] = useMailSettings();
 
     const handleDoubleClick = () => {
@@ -127,13 +128,14 @@ const ComposerTitleBar = ({
             data-testid="composer:header"
             onDoubleClick={handleDoubleClick}
         >
-            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/prefer-tag-over-role */}
+            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
             <span
                 className={clsx([
                     'flex-1 flex flex-row flex-nowrap items-center py-3 pr-4 ml-2',
                     (!maximized || minimized) && 'cursor-move',
                 ])}
                 onMouseDown={handleStartDragging}
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 role="heading"
                 aria-level={1}
                 id={`composer-title-${composerID}`}

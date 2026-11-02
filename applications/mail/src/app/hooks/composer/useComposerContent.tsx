@@ -41,7 +41,6 @@ import {
 } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import { messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { sanitizeComposerReply } from '@proton/sanitize/purify';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -86,6 +85,8 @@ export type EditorArgs = {
 
 export const useComposerContent = (args: EditorArgs) => {
     const [addresses = []] = useAddresses();
+    const { useMailSettings, useLoadRemoteImages, useLoadEmbeddedImages, useMessage, useInitializeMessage } =
+        useComposerMessageHost();
     const [mailSettings] = useMailSettings();
     const isRemoveReplyStyleEnabled = useFlag('RemoveReplyStyles');
     const [userSettings] = useUserSettings();
@@ -117,7 +118,6 @@ export const useComposerContent = (args: EditorArgs) => {
     });
 
     const newDraftImageLoadingStatus = useRef<'not-loaded' | 'loading' | 'loaded'>('not-loaded');
-    const { useLoadRemoteImages, useLoadEmbeddedImages, useMessage, useInitializeMessage } = useComposerMessageHost();
     const loadRemoteImages = useLoadRemoteImages(messageID);
     const loadEmbeddedImages = useLoadEmbeddedImages(messageID);
 

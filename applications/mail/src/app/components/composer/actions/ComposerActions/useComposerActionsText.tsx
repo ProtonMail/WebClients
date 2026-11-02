@@ -3,8 +3,8 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { formatSimpleDate } from '@proton/mail-message/helpers/date';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { altKey, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 
 interface Props {
@@ -14,6 +14,7 @@ interface Props {
 }
 
 const useComposerSendActionsText = ({ opening, syncInProgress, date }: Props) => {
+    const { useMailSettings } = useComposerMessageHost();
     const [{ Shortcuts }] = useMailSettings();
 
     let dateMessage: string | string[];
