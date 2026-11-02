@@ -1,15 +1,22 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
+import { flushPromises } from '@proton/test-api/flush-promises';
 
+import { addApiMock, api, clearApiMocks } from '../../../../../helpers/tests/api';
 import { mailTestRender } from '../../../../../helpers/tests/render';
 import { activeSubscription } from '../../testData';
 import ModalUnsubscribe from './ModalUnsubscribe';
 
 jest.mock('@proton/shared/lib/helpers/browser');
+
+const mockCreateNotification = jest.fn();
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: mockCreateNotification }),
+}));
 const mockedOpenNewTab = jest.mocked(openNewTab);
 
 describe('ModalUnsubscribe', () => {
@@ -153,5 +160,51 @@ describe('ModalUnsubscribe', () => {
         expect(linkConfirmationModal).not.toBeInTheDocument();
 
         expect(mockedOpenNewTab).toHaveBeenCalledWith('https://example.com');
+    });
+
+    describe('one click unsubscribe', () => {
+        beforeEach(() => {
+            mockCreateNotification.mockClear();
+            clearApiMocks();
+        });
+
+        it('should create the success notification when the API succeeds', async () => {
+            addApiMock(`mail/v4/newsletter-subscriptions/${activeSubscription.ID}/unsubscribe`, () => ({}));
+            await mailTestRender(<ModalUnsubscribe subscription={activeSubscription} open={true} />);
+
+            fireEvent.click(screen.getByTestId('unsubscribe-button'));
+
+            await waitFor(() => expect(mockCreateNotification).toHaveBeenCalledTimes(1));
+            expect(mockCreateNotification).toHaveBeenCalledWith({
+                text: `Unsubscribed from ${activeSubscription.Name}.`,
+            });
+        });
+
+        it('should not create the success notification but still apply the selected actions when the API fails', async () => {
+            addApiMock(`mail/v4/newsletter-subscriptions/${activeSubscription.ID}/unsubscribe`, () => {
+                throw new Error('fail');
+            });
+            await mailTestRender(<ModalUnsubscribe subscription={activeSubscription} open={true} />);
+
+            fireEvent.click(screen.getByTestId('trash-checkbox'));
+            fireEvent.click(screen.getByTestId('unsubscribe-button'));
+
+            await waitFor(() =>
+                expect(api).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        url: `mail/v4/newsletter-subscriptions/${activeSubscription.ID}/unsubscribe`,
+                    })
+                )
+            );
+            await waitFor(() =>
+                expect(api).toHaveBeenCalledWith(
+                    expect.objectContaining({
+                        url: `mail/v4/newsletter-subscriptions/${activeSubscription.ID}/filter`,
+                    })
+                )
+            );
+            await flushPromises();
+            expect(mockCreateNotification).not.toHaveBeenCalled();
+        });
     });
 });
