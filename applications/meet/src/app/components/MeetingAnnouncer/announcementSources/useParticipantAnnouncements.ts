@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectEvents } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
@@ -7,7 +8,6 @@ import { ParticipantEvent } from '@proton/meet/types/types';
 
 import { getAgentDisplayInfo } from '../../../utils/getAgentDisplayInfo';
 import { announcementMessages } from '../messages';
-import { useAnnounce } from '../useAnnounce';
 
 export const useParticipantAnnouncements = () => {
     const announce = useAnnounce();

@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { AnnouncementPriority } from '@proton/components/components/liveAnnouncer/types';
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { MINUTE } from '@proton/shared/lib/constants';
 
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
 import { announcementMessages } from '../MeetingAnnouncer/messages';
-import { AnnouncementPriority } from '../MeetingAnnouncer/types';
-import { useAnnounce } from '../MeetingAnnouncer/useAnnounce';
 
 interface AutoCloseMeetingModalProps {
     participantCount: number;

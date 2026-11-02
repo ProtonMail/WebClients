@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 
+import { AnnouncementPriority } from '@proton/components/components/liveAnnouncer/types';
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import {
     selectIsLocalParticipantRecording,
@@ -7,8 +9,6 @@ import {
 } from '@proton/meet/store/slices/recordingStatusSlice';
 
 import { announcementMessages } from '../messages';
-import { AnnouncementPriority } from '../types';
-import { useAnnounce } from '../useAnnounce';
 
 const getRecordingStartedMessage = (isLocalParticipantRecording: boolean) =>
     // Remote start adds consent context (its modal is silenced); local start was user-initiated.

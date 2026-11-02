@@ -16,7 +16,7 @@ import { useBackgroundEffectAnnouncements } from './useBackgroundEffectAnnouncem
 
 const announce = vi.fn();
 
-vi.mock('../useAnnounce', () => ({ useAnnounce: () => announce }));
+vi.mock('@proton/components/components/liveAnnouncer/useAnnounce', () => ({ useAnnounce: () => announce }));
 vi.mock('@proton/unleash/useFlag', () => ({ useFlag: () => true }));
 
 const renderWithEffect = (initialEffect: BackgroundEffect) => {

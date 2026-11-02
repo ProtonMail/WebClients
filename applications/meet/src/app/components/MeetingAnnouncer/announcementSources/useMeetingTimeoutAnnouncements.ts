@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 
+import { AnnouncementPriority } from '@proton/components/components/liveAnnouncer/types';
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectTimeLeftMs } from '@proton/meet/store/slices/currentMeeting';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 
 import { announcementMessages } from '../messages';
-import { AnnouncementPriority } from '../types';
-import { useAnnounce } from '../useAnnounce';
 
 // Ordered high → low; each fires once as the remaining time crosses it. The first descriptive
 // message doubles as the "countdown is now showing" announcement.

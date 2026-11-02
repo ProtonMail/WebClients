@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import type { BackgroundEffect } from '@proton/meet/store/slices/backgroundSlice';
 import { isCustomBackgroundEffect } from '@proton/meet/utils/customBackgrounds';
 
 import { useAppliedBackgroundEffect } from '../../../contexts/BackgroundEffects/useAppliedBackgroundEffect';
 import { announcementMessages } from '../messages';
-import { useAnnounce } from '../useAnnounce';
 
 const getMessage = (effect: BackgroundEffect) => {
     if (isCustomBackgroundEffect(effect)) {

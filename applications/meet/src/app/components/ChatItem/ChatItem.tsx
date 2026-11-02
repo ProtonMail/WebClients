@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
+import { useToolbarRovingFocus } from '@proton/hooks/useToolbarRovingFocus';
 import { IcArrowUpAndLeft } from '@proton/icons/icons/IcArrowUpAndLeft';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { useMeetSelector } from '@proton/meet/store/hooks';
@@ -23,11 +25,9 @@ import { ParticipantAvatar } from '../../atoms/ParticipantAvatar/ParticipantAvat
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useChatMessageReaction } from '../../hooks/bridges/useChatMessageReaction';
 import { useMessagePlainText } from '../../hooks/useMessagePlainText';
-import { useToolbarRovingFocus } from '../../hooks/useToolbarRovingFocus';
 import { getAgentDisplayInfo } from '../../utils/getAgentDisplayInfo';
 import { ChatMessageContent } from '../ChatMessageContent';
 import { announcementMessages } from '../MeetingAnnouncer/messages';
-import { useAnnounce } from '../MeetingAnnouncer/useAnnounce';
 import { ChatMessageFailedActions } from './ChatMessageFailedActions';
 import { ChatMessageReactions } from './ChatMessageReactions';
 

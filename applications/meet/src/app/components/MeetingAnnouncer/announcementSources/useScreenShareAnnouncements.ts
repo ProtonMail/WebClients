@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectScreenSharingParticipantIdentity } from '@proton/meet/store/slices/screenShareStatusSlice';
 
 import { announcementMessages } from '../messages';
-import { useAnnounce } from '../useAnnounce';
 
 export const useScreenShareAnnouncements = () => {
     const announce = useAnnounce();
