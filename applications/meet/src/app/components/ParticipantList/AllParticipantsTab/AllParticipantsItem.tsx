@@ -72,6 +72,8 @@ export const AllParticipantsItem = memo(
             return <IcMeetCamera />;
         };
 
+        const isCameraOn = !(participant.isLocal && isVideoDisabled);
+
         return (
             <ParticipantNameWithInitials
                 identity={participant.identity}
@@ -85,48 +87,58 @@ export const AllParticipantsItem = memo(
                     className="flex items-center justify-center w-custom h-custom"
                     style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
                 >
-                    {isMuted ? (
-                        <IcMeetMicrophoneOff className="muted-media-stream" />
-                    ) : (
-                        <SpeakingIndicator participant={participant} size={32} stopped={!isSpeaking} />
-                    )}
+                    <span className="sr-only">
+                        {isMuted ? c('Accessibility').t`Microphone muted` : c('Accessibility').t`Microphone on`}
+                    </span>
+                    <span className="display-contents" aria-hidden="true">
+                        {isMuted ? (
+                            <IcMeetMicrophoneOff className="muted-media-stream" />
+                        ) : (
+                            <SpeakingIndicator participant={participant} size={32} stopped={!isSpeaking} />
+                        )}
+                    </span>
                 </div>
 
                 {hasVideoPublication ? (
-                    <Tooltip
-                        title={getLabel()}
-                        tooltipClassName="participants-button-tooltip color-norm"
-                        originalPlacement="top-end"
-                    >
-                        <Button
-                            className="participant-list-button-base participant-list-button-background p-2 flex items-center justify-center rounded-full w-custom h-custom border-none"
-                            onClick={() => {
-                                if (participant.isLocal) {
-                                    void toggleVideo({
-                                        isEnabled: isVideoDisabled,
-                                        preserveCache: true,
-                                    });
-                                    return;
-                                }
-
-                                if (isVideoDisabled) {
-                                    dispatch(enableParticipantVideo(participant.identity));
-                                } else {
-                                    dispatch(disableParticipantVideo(participant.identity));
-                                }
-                            }}
-                            aria-label={getLabel()}
-                            aria-pressed={!isVideoDisabled}
-                            style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
+                    <>
+                        <span className="sr-only">
+                            {isCameraOn ? c('Accessibility').t`Camera on` : c('Accessibility').t`Camera off`}
+                        </span>
+                        <Tooltip
+                            title={getLabel()}
+                            tooltipClassName="participants-button-tooltip color-norm"
+                            originalPlacement="top-end"
                         >
-                            {getVideoIcon()}
-                        </Button>
-                    </Tooltip>
+                            <Button
+                                className="participant-list-button-base participant-list-button-background p-2 flex items-center justify-center rounded-full w-custom h-custom border-none"
+                                onClick={() => {
+                                    if (participant.isLocal) {
+                                        void toggleVideo({
+                                            isEnabled: isVideoDisabled,
+                                            preserveCache: true,
+                                        });
+                                        return;
+                                    }
+
+                                    if (isVideoDisabled) {
+                                        dispatch(enableParticipantVideo(participant.identity));
+                                    } else {
+                                        dispatch(disableParticipantVideo(participant.identity));
+                                    }
+                                }}
+                                aria-label={getLabel()}
+                                style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
+                            >
+                                {getVideoIcon()}
+                            </Button>
+                        </Tooltip>
+                    </>
                 ) : (
                     <div
                         className="flex items-center justify-center w-custom h-custom"
                         style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
                     >
+                        <span className="sr-only">{c('Accessibility').t`Camera off`}</span>
                         <IcMeetCameraOff className="muted-media-stream" />
                     </div>
                 )}

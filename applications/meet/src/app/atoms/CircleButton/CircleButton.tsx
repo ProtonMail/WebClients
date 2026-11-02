@@ -91,14 +91,19 @@ export const CircleButton = ({
                     noBorder && 'border-none',
                     className
                 )}
-                onClick={onClick}
+                onClick={() => {
+                    if (!loading) {
+                        onClick?.();
+                    }
+                }}
                 aria-label={ariaLabel}
                 aria-pressed={ariaPressed}
                 aria-expanded={ariaExpanded}
                 aria-haspopup={ariaHasPopup}
                 ref={anchorRef}
                 style={buttonStyle}
-                disabled={disabled || loading}
+                aria-disabled={loading || undefined}
+                disabled={disabled}
             >
                 {getToggleIcon()}
                 {indicatorContent && (
