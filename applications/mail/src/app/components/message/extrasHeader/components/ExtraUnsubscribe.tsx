@@ -20,6 +20,9 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import { useSendMessage } from '@proton/mail-composer/hooks/composer/useSendMessage';
+import { useSendVerifications } from '@proton/mail-composer/hooks/composer/useSendVerifications';
 import { findSender } from '@proton/mail-message/helpers/message/messageRecipients';
 import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import type {
@@ -38,9 +41,6 @@ import { getOriginalTo, hasProtonSender, hasSimpleLoginSender, isUnsubscribed } 
 import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useOnCompose } from '../../../../containers/ComposeProvider';
-import { useSendMessage } from '../../../../hooks/composer/useSendMessage';
-import { useSendVerifications } from '../../../../hooks/composer/useSendVerifications';
 import { useSaveDraft } from '../../../../hooks/message/useSaveDraft';
 import { selectLabelID } from '../../../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../../../store/hooks';

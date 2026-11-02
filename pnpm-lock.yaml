@@ -3259,9 +3259,6 @@ importers:
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
-      roosterjs-editor-types:
-        specifier: ^8.62.0
-        version: 8.62.0
       tinycolor2:
         specifier: 'catalog:'
         version: 1.6.0
@@ -7919,12 +7916,18 @@ importers:
       '@proton/account':
         specifier: workspace:^
         version: link:../account
+      '@proton/activation':
+        specifier: workspace:^
+        version: link:../activation
       '@proton/app-context':
         specifier: workspace:^
         version: link:../app-context
       '@proton/atoms':
         specifier: workspace:^
         version: link:../atoms
+      '@proton/calendar':
+        specifier: workspace:^
+        version: link:../calendar
       '@proton/components':
         specifier: workspace:^
         version: link:../components
@@ -7943,12 +7946,21 @@ importers:
       '@proton/mail-message':
         specifier: workspace:^
         version: link:../mail-message
+      '@proton/payments':
+        specifier: workspace:^
+        version: link:../payments
       '@proton/react-redux-store':
         specifier: workspace:^
         version: link:../react-redux-store
+      '@proton/redux-shared-store':
+        specifier: workspace:^
+        version: link:../redux-shared-store
       '@proton/redux-shared-store-types':
         specifier: workspace:^
         version: link:../redux-shared-store-types
+      '@proton/redux-utilities':
+        specifier: workspace:^
+        version: link:../redux-utilities
       '@proton/sanitize':
         specifier: workspace:^
         version: link:../sanitize
@@ -7985,6 +7997,12 @@ importers:
       react:
         specifier: 'catalog:'
         version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
+      roosterjs-editor-types:
+        specifier: ^8.62.0
+        version: 8.62.0
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -8004,6 +8022,9 @@ importers:
       '@testing-library/react':
         specifier: ^15.0.7
         version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@testing-library/react-hooks':
+        specifier: 'catalog:'
+        version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -8016,6 +8037,9 @@ importers:
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
+      '@types/react-dom':
+        specifier: 'catalog:'
+        version: 18.3.7(@types/react@18.3.31)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8

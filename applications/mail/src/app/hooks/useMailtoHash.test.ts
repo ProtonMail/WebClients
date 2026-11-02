@@ -2,11 +2,12 @@ import { useLocation } from 'react-router';
 
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useOnMailTo } from '../containers/ComposeProvider';
+import { useOnMailTo } from '@proton/mail-composer/containers/ComposeProvider';
+
 import useMailtoHash from './useMailtoHash';
 
 jest.mock('react-router');
-jest.mock('proton-mail/containers/ComposeProvider');
+jest.mock('@proton/mail-composer/containers/ComposeProvider');
 
 describe('useMailtoHash', () => {
     const mockReturn = jest.fn();

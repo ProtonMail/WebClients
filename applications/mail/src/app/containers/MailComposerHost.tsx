@@ -3,6 +3,8 @@ import { useMemo } from 'react';
 import { useHistory } from 'react-router';
 
 import { useHandler } from '@proton/hooks/useHandler';
+import type { ComposerHost } from '@proton/mail-composer/hooks/composer/useComposerHost';
+import { ComposerHostProvider } from '@proton/mail-composer/hooks/composer/useComposerHost';
 import { ComposerMessageHostProvider } from '@proton/mail-composer/host/composerMessageHost';
 import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -11,8 +13,6 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParamsFromPathname, setParamsInLocation } from '../helpers/mailboxUrl';
 import { MOVE_BACK_ACTION_TYPES } from '../hooks/actions/moveBackAction/interfaces';
 import { useMoveBackAction } from '../hooks/actions/moveBackAction/useMoveBackAction';
-import type { ComposerHost } from '../hooks/composer/useComposerHost';
-import { ComposerHostProvider } from '../hooks/composer/useComposerHost';
 import { useMailboxCounter } from '../hooks/mailboxCounter/useMailboxCounter';
 import { mailComposerMessageHost } from './mailComposerMessageHost';
 

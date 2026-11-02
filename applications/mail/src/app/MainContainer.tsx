@@ -20,12 +20,12 @@ import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktop
 import useOnline from '@proton/components/hooks/useOnline';
 import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLoading';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
+import ComposerContainer from '@proton/mail-composer/containers/ComposerContainer';
 import { MailContentRefProvider } from '@proton/mail-composer/hooks/useClickMailContent';
 import { EventNotifierLoopType } from '@proton/shared/lib/eventNotifier/interface';
 
 import { ROUTE_MAIN } from './constants';
 import { CheckAllRefProvider } from './containers/CheckAllRefProvider';
-import ComposerContainer from './containers/ComposerContainer';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 import { MailComposerHost } from './containers/MailComposerHost';
 import { GlobalModalProvider } from './containers/globalModals/GlobalModalProvider';

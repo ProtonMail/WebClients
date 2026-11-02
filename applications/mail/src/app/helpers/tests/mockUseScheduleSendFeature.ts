@@ -1,6 +1,6 @@
-import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
+import useScheduleSendFeature from '@proton/mail-composer/components/composer/actions/scheduleSend/useScheduleSendFeature';
 
-jest.mock('../../components/composer/actions/scheduleSend/useScheduleSendFeature', () => ({
+jest.mock('@proton/mail-composer/components/composer/actions/scheduleSend/useScheduleSendFeature', () => ({
     __esModule: true,
     default: jest.fn(),
 }));

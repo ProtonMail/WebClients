@@ -15,13 +15,12 @@ import { IcCross } from '@proton/icons/icons/IcCross';
 import type { AttachmentHandler } from '@proton/mail-composer/attachments/attachmentListTypes';
 import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentListTypes';
 import type { PendingUpload } from '@proton/mail-composer/attachments/uploadTypes';
+import { isAttachmentUpload } from '@proton/mail-composer/hooks/composer/useAttachments/helpers';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
-
-import { isAttachmentUpload } from '../../../../hooks/composer/useAttachments/helpers';
 
 const getActionTitle = (action: AttachmentAction, attachmentName: string) => {
     switch (action) {

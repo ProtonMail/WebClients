@@ -1,6 +1,10 @@
 import { act, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import ComposerContainer from '@proton/mail-composer/containers/ComposerContainer';
+import type { OnCompose } from '@proton/mail-composer/hooks/composer/useCompose';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { formatFullDate } from '@proton/mail-message/helpers/date';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
@@ -15,10 +19,6 @@ import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 import { getCompleteAddress, minimalCache } from '../helpers/tests/cache';
 import { clearAll } from '../helpers/tests/helper';
 import { mailTestRender, tick } from '../helpers/tests/render';
-import type { OnCompose } from '../hooks/composer/useCompose';
-import { ComposeTypes } from '../hooks/composer/useCompose';
-import { useOnCompose } from './ComposeProvider';
-import ComposerContainer from './ComposerContainer';
 
 const ID = 'ID';
 const Email = 'me@test.com';

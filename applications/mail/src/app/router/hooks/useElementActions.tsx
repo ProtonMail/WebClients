@@ -2,6 +2,8 @@ import { useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import useItemsSelection from '@proton/components/containers/items/useItemsSelection';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -9,22 +11,19 @@ import { isDraft } from '@proton/shared/lib/mail/messages';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { SOURCE_ACTION } from '../../components/list/list-telemetry/useListTelemetry';
-import { useOnCompose } from '../../containers/ComposeProvider';
 import { hasLabel, isElementMessage } from '../../helpers/elements';
+import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 import { usePermanentDelete } from '../../hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { MoveAllType, useMoveAllToFolder } from '../../hooks/actions/move/useMoveAllToFolder';
-import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { type ElementsStructure, useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useSelectAll } from '../../hooks/useSelectAll';
 import { useMailECRTMetric } from '../../metrics/useMailECRTMetric';
 import { selectElementID, selectPage, selectParams } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
-import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
 import { useMailboxLayoutProvider } from '../components/MailboxLayoutContext';
 import type { RouterNavigation } from '../interface';
 

@@ -1,0 +1,332 @@
+import type { MutableRefObject } from 'react';
+import { useCallback } from 'react';
+
+import { c, msgid } from 'ttag';
+
+import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useGetSubscription } from '@proton/account/subscription/hooks';
+import { useGetUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { Button } from '@proton/atoms/Button/Button';
+import { Href } from '@proton/atoms/Href/Href';
+import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import { useHandler } from '@proton/hooks/useHandler';
+import type { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
+import { isDirtyAddress } from '@proton/mail-message/helpers/addresses';
+import { useGetLocalID, useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
+import { openDraft, updateDraftContent } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
+import type { MessageState, PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
+import { forceSend } from '@proton/shared/lib/api/messages';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { pick } from '@proton/shared/lib/helpers/object';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
+
+import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
+import { insertBodyIntoNewDraft } from '../../helpers/composer/contentFromComposerMessage';
+import { useComposerMessageHost } from '../../host/composerMessageHost';
+import { addComposerAction } from '../../store/composers/composerActions';
+import { composerActions } from '../../store/composers/composersSlice';
+import { useComposerDispatch, useComposerStore } from '../../store/hooks';
+import { useDraft } from '../useDraft';
+
+export enum ComposeTypes {
+    existingDraft = 0,
+    newMessage = 1,
+    fromMessage = 2,
+}
+
+interface ComposeExisting {
+    type: ComposeTypes.existingDraft;
+    existingDraft: MessageState;
+    fromUndo: boolean;
+}
+
+interface ComposeNew {
+    type: ComposeTypes.newMessage;
+    action: MESSAGE_ACTIONS;
+    referenceMessage?: PartialMessageState;
+    forceOpenScheduleSend?: boolean;
+    bodyBeforeQuote?: string;
+}
+
+interface ComposeModelMessage {
+    type: ComposeTypes.fromMessage;
+    modelMessage: MessageState;
+}
+
+export type ComposeArgs = (ComposeExisting | ComposeNew | ComposeModelMessage) & {
+    returnFocusTo?: HTMLElement;
+};
+
+const getComposeArgs = (composeArgs: ComposeArgs) => ({
+    ...composeArgs,
+    returnFocusTo: composeArgs.returnFocusTo || (document.activeElement as HTMLElement),
+});
+
+export interface OnCompose {
+    (args: ComposeArgs): Promise<void>;
+}
+
+interface UseComposeProps {
+    openedComposerIDs: string[];
+    focusComposer: (messageID: string) => void;
+    maxActiveComposer: number;
+    returnFocusToElementRef: MutableRefObject<HTMLElement | null>;
+}
+
+export const useCompose = ({
+    openedComposerIDs,
+    focusComposer,
+    maxActiveComposer,
+    returnFocusToElementRef,
+}: UseComposeProps) => {
+    // Avoid useUser for performance issues
+    const getUser = useGetUser();
+    const store = useComposerStore();
+    const getSubscription = useGetSubscription();
+    const getAddresses = useGetAddresses();
+    const { createNotification } = useNotifications();
+    const dispatch = useComposerDispatch();
+    const { createDraft, sendingFromDefaultAddressModal } = useDraft();
+    const goToSettings = useSettingsLink();
+    const api = useApi();
+    const { call } = useEventManager();
+    const { useGetMailSettings } = useComposerMessageHost();
+    const getMailSettings = useGetMailSettings();
+    const getLocalID = useGetLocalID();
+    const getMessage = useGetMessage();
+
+    const openComposer = useCallback(
+        ({
+            messageID,
+            type,
+            returnFocusTo,
+            forceOpenScheduleSend,
+        }: {
+            messageID: string;
+            type: ComposeTypes;
+            returnFocusTo?: HTMLElement;
+
+            forceOpenScheduleSend?: boolean;
+        }) => {
+            const message = getMessage(messageID);
+
+            if (type === ComposeTypes.existingDraft) {
+                void dispatch(
+                    addComposerAction({
+                        messageID,
+                        senderEmailAddress: undefined,
+                        status: 'loading',
+                        forceOpenScheduleSend,
+                    })
+                );
+            } else {
+                if (!message?.data?.Sender.Address) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`No address with sending permissions`,
+                    });
+                    throw new Error('No address');
+                }
+
+                void dispatch(
+                    addComposerAction({
+                        messageID,
+                        senderEmailAddress: message.data.Sender.Address,
+                        recipients: pick(message.data, ['ToList', 'CCList', 'BCCList']),
+                        status: 'idle',
+                        forceOpenScheduleSend,
+                    })
+                );
+            }
+
+            if (returnFocusTo) {
+                returnFocusToElementRef.current = returnFocusTo;
+            }
+        },
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C5E0C1
+        []
+    );
+
+    const [storageCapacityModalProps] = useModalState();
+    const [sendingOriginalMessageModal, handleSendingOriginalMessage] = useModalTwo(SendingOriginalMessageModal);
+
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.MODAL,
+        feature: MAIL_UPSELL_PATHS.STORAGE_FULL,
+    });
+
+    const storageCapacityModal = (
+        <Prompt
+            title={c('Title').t`Storage capacity warning`}
+            buttons={[
+                <Button
+                    color="danger"
+                    onClick={async () => {
+                        const user = await getUser();
+                        const subscription = await getSubscription();
+                        goToSettings(getUpgradePath({ user, subscription }, upsellRef));
+                    }}
+                >{c('Action').t`Upgrade`}</Button>,
+                <Button onClick={storageCapacityModalProps.onClose}>{c('Action').t`Close`}</Button>,
+            ]}
+            {...storageCapacityModalProps}
+        >
+            {c('Info')
+                .t`You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.`}
+            <br />
+            <Href href={getKnowledgeBaseUrl('/increase-storage-space')}>{c('Link').t`Learn more`}</Href>
+        </Prompt>
+    );
+
+    const handleCompose = useHandler(async (composeArgs: ComposeArgs) => {
+        const addresses = await getAddresses();
+
+        const createMaxActiveComposerNotification = () => {
+            createNotification({
+                type: 'error',
+                // translator: maxActiveComposer should never be 1, is fixed to 3 today but can potentially vary from 2 to 5(?) in the future.
+                text: c('Error').ngettext(
+                    msgid`You cannot open more than ${maxActiveComposer} composer window at a time`,
+                    `You cannot open more than ${maxActiveComposer} composer windows at a time`,
+                    maxActiveComposer
+                ),
+            });
+        };
+
+        const activeAddresses = addresses.filter((address) => !isDirtyAddress(address));
+        const compose = getComposeArgs(composeArgs);
+
+        if (activeAddresses.length === 0) {
+            createNotification({
+                type: 'error',
+                text: (
+                    <>
+                        {c('Error').t`No address with keys available to compose a message`}
+                        <br />
+                        {c('Error').t`Contact your organization’s administrator to resolve this`}
+                    </>
+                ),
+            });
+            return;
+        }
+
+        // Opened composer length is checked also in ComposeType.existingDraft condition
+        // If draft is already has a composer, we don't want to show the error message on click
+        if (openedComposerIDs.length >= maxActiveComposer && compose.type !== ComposeTypes.existingDraft) {
+            createMaxActiveComposerNotification();
+            return;
+        }
+
+        if (compose.type === ComposeTypes.existingDraft) {
+            const { existingDraft, fromUndo, returnFocusTo } = compose;
+            const localID = getLocalID(existingDraft.localID);
+
+            let composer = Object.values(store.getState().composers.composers).find(
+                ({ messageID }) => messageID === localID
+            );
+
+            if (composer) {
+                if (composer.isMinimized) {
+                    dispatch(composerActions.toggleMinimizeComposer(composer.ID));
+                }
+                focusComposer(composer.ID);
+                return;
+            }
+
+            if (openedComposerIDs.length >= maxActiveComposer) {
+                createMaxActiveComposerNotification();
+                return;
+            }
+
+            const existingMessage = getMessage(localID);
+
+            // If message is in sending state we stop here
+            if (existingMessage?.draftFlags?.sending && !fromUndo) {
+                return;
+            }
+
+            dispatch(openDraft({ ID: localID, fromUndo }));
+
+            openComposer({ messageID: localID, returnFocusTo, type: compose.type });
+
+            composer = Object.values(store.getState().composers.composers).find(
+                ({ messageID }) => messageID === localID
+            );
+
+            if (composer) {
+                focusComposer(composer.ID);
+            }
+
+            return;
+        }
+
+        if (compose.type === ComposeTypes.newMessage) {
+            const { action, referenceMessage, returnFocusTo, forceOpenScheduleSend, bodyBeforeQuote } = compose;
+            const message = referenceMessage?.data;
+
+            if (isOutbox(message) && message?.ID) {
+                if (isScheduledSend(message)) {
+                    createNotification({ text: c('Error').t`Message needs to be sent first`, type: 'error' });
+                    return;
+                }
+
+                await handleSendingOriginalMessage({});
+                await api(forceSend(message?.ID));
+                await call();
+            }
+
+            const newMessageID = await createDraft(action, referenceMessage);
+
+            if (bodyBeforeQuote?.trim()) {
+                const mailSettings = await getMailSettings();
+                const newDraft = getMessage(newMessageID);
+
+                if (newDraft) {
+                    dispatch(
+                        updateDraftContent({
+                            ID: newMessageID,
+                            content: insertBodyIntoNewDraft(newDraft, bodyBeforeQuote, mailSettings),
+                        })
+                    );
+                } else {
+                    captureMessage('Draft missing from the store right after creation', {
+                        level: 'error',
+                        extra: { action },
+                    });
+                }
+            }
+
+            openComposer({ messageID: newMessageID, returnFocusTo, type: compose.type, forceOpenScheduleSend });
+            const composer = Object.values(store.getState().composers.composers).find(
+                ({ messageID }) => messageID === newMessageID
+            );
+            if (composer) {
+                focusComposer(composer?.ID);
+            }
+        }
+
+        if (compose.type === ComposeTypes.fromMessage) {
+            const { modelMessage, returnFocusTo } = compose;
+            openComposer({ messageID: modelMessage.localID, returnFocusTo, type: compose.type });
+            const composer = Object.values(store.getState().composers.composers).find(
+                ({ messageID }) => messageID === modelMessage.localID
+            );
+            if (composer) {
+                focusComposer(composer?.ID);
+            }
+        }
+    });
+
+    return { handleCompose, storageCapacityModal, sendingFromDefaultAddressModal, sendingOriginalMessageModal };
+};

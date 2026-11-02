@@ -3,6 +3,7 @@ import { fireEvent, screen } from '@testing-library/react';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { BookingsLimitReached } from '@proton/components/containers/calendar/BookingsLimitReached';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import ComposerMoreActions from '@proton/mail-composer/components/composer/actions/ComposerMoreActions';
 import {
     BookingUpsellSource,
     useComposerBookingsTracking,
@@ -13,7 +14,6 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { mailTestRender } from '../../../helpers/tests/render';
-import ComposerMoreActions from './ComposerMoreActions';
 
 const mockGetInternalBooking = jest.fn();
 jest.mock('@proton/calendar/bookings/store/hooks', () => ({
@@ -27,15 +27,15 @@ jest.mock('@proton/mail-composer/telemetry/composerBookingsEvents', () => ({
 jest.mock('@proton/components/hooks/useActiveBreakpoint');
 const mockSpotlightClose = jest.fn();
 const mockUseComposerBookingSpotlight = jest.fn();
-jest.mock('./bookingSpotlight/useComposerBookingSpotlight', () => ({
+jest.mock('@proton/mail-composer/components/composer/actions/bookingSpotlight/useComposerBookingSpotlight', () => ({
     useComposerBookingSpotlight: () => mockUseComposerBookingSpotlight(),
     ComposerBookingSpotlightContent: () => null,
 }));
-jest.mock('./MoreActionsExtension', () => ({
+jest.mock('@proton/mail-composer/components/composer/actions/MoreActionsExtension', () => ({
     __esModule: true,
     default: jest.fn(() => null),
 }));
-jest.mock('./ComposerBookingDropdownContent', () => ({
+jest.mock('@proton/mail-composer/components/composer/actions/ComposerBookingDropdownContent', () => ({
     __esModule: true,
     default: jest.fn(
         ({ onLimitReached, onUpsell }: { onLimitReached: () => void; onUpsell: (pageCount: string) => void }) => (

@@ -11,6 +11,8 @@ import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcBoltFilled } from '@proton/icons/icons/IcBoltFilled';
 import { IcPen } from '@proton/icons/icons/IcPen';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { selectHasFocusedComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
@@ -21,9 +23,7 @@ import { CampaignVariant } from '@proton/offers-delivery/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
-import { useOnCompose } from '../../containers/ComposeProvider';
 import { getLabelName } from '../../helpers/labels';
-import { ComposeTypes } from '../../hooks/composer/useCompose';
 import type { ElementsStructure } from '../../hooks/mailbox/useElements';
 import { useOfferUpgrade } from '../../offers/useOfferUpgrade';
 import type { MailboxActions } from '../../router/interface';

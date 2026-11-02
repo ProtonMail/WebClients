@@ -2,6 +2,7 @@ import { getByText as getByTextDefault, screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import Composer from '@proton/mail-composer/components/composer/Composer';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { AddressKey } from '@proton/shared/lib/interfaces/Key';
@@ -20,7 +21,6 @@ import {
 import { clearAll } from '../../../helpers/tests/helper';
 import { mailTestRender } from '../../../helpers/tests/render';
 import { messageID } from '../../message/tests/Message.test.helpers';
-import Composer from '../Composer';
 import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 
 loudRejection();

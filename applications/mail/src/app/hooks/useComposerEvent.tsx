@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 
+import { useOnCompose, useOnMailTo } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { OPEN_COMPOSER_WITH_MAILTO_EVENT } from '@proton/shared/lib/constants';
-
-import { useOnCompose, useOnMailTo } from '../containers/ComposeProvider';
-import { ComposeTypes } from './composer/useCompose';
 
 /**
  * Interface for the custom event detail

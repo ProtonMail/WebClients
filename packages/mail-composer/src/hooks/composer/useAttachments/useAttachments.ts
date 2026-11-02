@@ -1,0 +1,329 @@
+import type { MutableRefObject } from 'react';
+import { useState } from 'react';
+
+import { c } from 'ttag';
+
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { useHandler } from '@proton/hooks/useHandler';
+import {
+    createEmbeddedImageFromUpload,
+    isEmbeddable,
+    matchSameCidOrLoc,
+    readContentIDandLocation,
+} from '@proton/mail-message/helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, updateImages } from '@proton/mail-message/helpers/message/messageImages';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
+import { addAttachment, addImageIdentifierAction } from '@proton/mail-message/store/attachments/attachmentsActions';
+import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
+import { removeAttachment } from '@proton/shared/lib/api/attachments';
+import removeExifMetadata from '@proton/shared/lib/helpers/exif';
+import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
+import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import {
+    ATTACHMENT_DISPOSITION,
+    ATTACHMENT_MAX_COUNT,
+    MAIL_VERIFICATION_STATUS,
+} from '@proton/shared/lib/mail/constants';
+import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
+
+import type { AddAttachmentsParams, AttachmentUpload, PendingUpload } from '../../../attachments/uploadTypes';
+import type { MessageChange } from '../../../components/composer/Composer';
+import type { ExternalEditorActions } from '../../../components/composer/editor/EditorWrapper';
+import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR } from '../../../constants';
+import { checkSizeAndLength, upload } from '../../../helpers/attachment/attachmentUploader';
+import { useComposerMessageHost } from '../../../host/composerMessageHost';
+import { useComposerDispatch } from '../../../store/hooks';
+import { useLongLivingState } from '../../useLongLivingState';
+import { usePromise } from '../../usePromise';
+import { createDummyUpload, isAttachmentUpload, isDummyAttachmentUpload } from './helpers';
+
+interface UseAttachmentsParameters {
+    message: MessageState;
+    onChange: MessageChange;
+    saveNow: (message: MessageState) => Promise<void>;
+    editorActionsRef?: MutableRefObject<ExternalEditorActions | undefined>;
+    onMessageAlreadySent: () => void;
+}
+
+interface PendingUploadParams {
+    pendingUploads: PendingUpload[];
+    error?: unknown;
+}
+
+interface EndAddAttachmentsParams {
+    action: ATTACHMENT_DISPOSITION;
+    pendingUpload: AttachmentUpload;
+    isReinsertion?: boolean;
+}
+
+export const useAttachments = ({
+    message,
+    onChange,
+    saveNow,
+    editorActionsRef,
+    onMessageAlreadySent,
+}: UseAttachmentsParameters) => {
+    const api = useApi();
+    const { createNotification } = useNotifications();
+    const auth = useAuthentication();
+    const config = useConfig();
+    const getMessage = useGetMessage();
+    const { useGetMessageKeys } = useComposerMessageHost();
+    const getMessageKeys = useGetMessageKeys();
+    const dispatch = useComposerDispatch();
+
+    // Pending files to upload
+    const [pendingFiles, setPendingFiles] = useState<File[]>();
+
+    // Pending uploads
+    // Long living because we have to track upload progress after closing
+    const [pendingUploads, setPendingUploads, getPendingUpload] = useLongLivingState<PendingUpload[]>([]);
+
+    const {
+        promise: promiseUpload,
+        resolver: resolveUpload,
+        rejecter: rejectUpload,
+        renew: newUpload,
+        isPending: uploadInProgress,
+    } = usePromise<void>();
+
+    const { localID } = message;
+
+    const updatePendingUpload = useHandler(({ pendingUploads, error }: PendingUploadParams) => {
+        const previousValue = getPendingUpload();
+        setPendingUploads(pendingUploads);
+
+        if (error) {
+            rejectUpload(error);
+        } else if (!pendingUploads.length && previousValue.length) {
+            resolveUpload();
+        }
+    });
+
+    const addPendingUploads = ({ pendingUploads }: PendingUploadParams) => {
+        updatePendingUpload({ pendingUploads: [...getPendingUpload(), ...pendingUploads] });
+    };
+
+    const removePendingUpload = ({ pendingUpload, error }: { pendingUpload: PendingUpload; error?: unknown }) => {
+        updatePendingUpload({
+            pendingUploads: getPendingUpload().filter((aPendingUpload) => aPendingUpload !== pendingUpload),
+            error,
+        });
+    };
+
+    /**
+     * Wait for upload to finish, modify the message, add to embedded images if needed
+     */
+    const handleAddAttachmentEnd = useHandler(
+        async ({ action, pendingUpload, isReinsertion = false }: EndAddAttachmentsParams) => {
+            try {
+                const upload = await pendingUpload.upload.resultPromise;
+
+                const data = new Uint8Array(await readFileAsBuffer(pendingUpload.file));
+                const filename = pendingUpload.file.name;
+                dispatch(
+                    addAttachment({
+                        ID: upload?.attachment.ID || '',
+                        attachment: {
+                            data,
+                            verificationStatus: MAIL_VERIFICATION_STATUS.SIGNED_AND_VALID,
+                            filename,
+                            signatures: [],
+                            // Needed to keep track of the original MIME type so the re-uploaded image can be
+                            // identified as an inline image (isInline checks the type) and preserved as such.
+                            type: upload.attachment.MIMEType || pendingUpload.file.type,
+                        },
+                    })
+                );
+
+                // Warning, that change function can be called multiple times, don't do any side effect in it
+                onChange((message: MessageState) => {
+                    // New attachment list
+                    const Attachments = [...getAttachments(message.data), upload.attachment];
+                    const embeddedImages = getEmbeddedImages(message);
+
+                    if (action === ATTACHMENT_DISPOSITION.INLINE) {
+                        embeddedImages.push(createEmbeddedImageFromUpload(upload.attachment));
+                    }
+
+                    const messageImages = updateImages(message.messageImages, undefined, undefined, embeddedImages);
+
+                    return { data: { Attachments }, messageImages };
+                });
+
+                if (action === ATTACHMENT_DISPOSITION.INLINE) {
+                    const { cid, cloc } = readContentIDandLocation(upload.attachment);
+                    if (upload.attachment.ID) {
+                        dispatch(addImageIdentifierAction({ ID: upload.attachment.ID, cid, cloc }));
+                    }
+
+                    if (!isReinsertion) {
+                        editorActionsRef?.current?.insertEmbedded(upload.attachment, upload.packets.Preview);
+                    }
+                }
+
+                removePendingUpload({ pendingUpload });
+            } catch (error: any) {
+                if (error?.message === MESSAGE_ALREADY_SENT_INTERNAL_ERROR) {
+                    onMessageAlreadySent();
+                } else if (error?.message === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error')
+                            .t`Sending attachments is restricted while you exceed your plan limits or until you upgrade your plan.`,
+                    });
+                }
+
+                removePendingUpload({ pendingUpload, error });
+            }
+        }
+    );
+
+    /**
+     * Start uploading a file, the choice between attachment or inline is done.
+     */
+    const handleAddAttachmentsUpload = useHandler(
+        async ({ action, files = pendingFiles || [], removeImageMetadata, cid }: AddAttachmentsParams) => {
+            // Prepare dummy upload const and methods
+            let hasDummyUploads: boolean = false;
+            const removeDummyUploads = () => {
+                if (hasDummyUploads) {
+                    const filteredUploads = getPendingUpload().filter((upload) => !isDummyAttachmentUpload(upload));
+                    setPendingUploads(filteredUploads);
+                }
+            };
+
+            // Reset pending files state
+            setPendingFiles(undefined);
+
+            // Trigger upload state before ensureMessageIsCreated
+            // In case of the user close or send even before
+            if (getPendingUpload().length === 0) {
+                newUpload();
+            }
+
+            // If message is not saved, save it
+            if (!message.data?.ID) {
+                // Just before save, insert dummy uploads
+                // this provides instant visual feedback to the user
+                addPendingUploads({ pendingUploads: files.map(createDummyUpload) });
+                hasDummyUploads = true;
+
+                // Then save message
+                await saveNow(message).catch((error) => {
+                    // Remove dummy uploads in case of message save error
+                    removeDummyUploads();
+                    throw error;
+                });
+            }
+
+            // Message has now an ID and `data` because we just saved it
+            const messageFromState = getMessage(localID) as MessageStateWithData;
+
+            // Do not start upload if message was already sent
+            if (messageFromState.draftFlags?.isSentDraft) {
+                removeDummyUploads();
+                onMessageAlreadySent();
+                return;
+            }
+
+            const messageKeys = await getMessageKeys(messageFromState.data);
+
+            // When last async call is done, we can remove dummy uploads and replace with the real ones
+            removeDummyUploads();
+            const promises = files.map((file) =>
+                removeImageMetadata ? removeExifMetadata(file).catch(() => file) : file
+            );
+            const strippedFiles = await Promise.all(promises);
+            const uploads = upload(strippedFiles, messageFromState, messageKeys, action, auth.UID, config, cid);
+            const pendingUploads = strippedFiles.map<AttachmentUpload>((file, i) => ({ file, upload: uploads[i] }));
+
+            // Add real pending uploads
+            addPendingUploads({ pendingUploads });
+            pendingUploads.forEach((pendingUpload) =>
+                handleAddAttachmentEnd({ action, pendingUpload, isReinsertion: !!cid })
+            );
+        }
+    );
+
+    /**
+     * Entry point for upload, will check and ask for attachment action if possible
+     */
+    const handleAddAttachmentsStart = useHandler(async (files: File[]) => {
+        const embeddable = files.every((file) => isEmbeddable(file.type));
+        const plainText = isPlainText(message.data);
+        const pendingUploadFiles = pendingUploads.map((upload) => upload.file);
+
+        const hasReachedLimits = checkSizeAndLength({
+            createNotification,
+            message,
+            files,
+            pendingUploadFiles,
+            attachmentsCountLimit: ATTACHMENT_MAX_COUNT,
+        });
+        if (hasReachedLimits) {
+            return;
+        }
+
+        if (!plainText && embeddable) {
+            setPendingFiles(files);
+        } else {
+            void handleAddAttachmentsUpload({ action: ATTACHMENT_DISPOSITION.ATTACHMENT, files });
+        }
+    });
+
+    const handleCancelAddAttachment = () => setPendingFiles(undefined);
+
+    /**
+     * Remove an existing attachment, deal with potential embedded image
+     */
+    const handleRemoveAttachment = useHandler(async (attachment: Attachment) => {
+        if (attachment.ID && message.data?.ID) {
+            await api(removeAttachment(attachment.ID, message.data.ID));
+        }
+
+        onChange((message: MessageState) => {
+            const Attachments = message.data?.Attachments?.filter((a: Attachment) => a.ID !== attachment.ID) || [];
+
+            const { cid, cloc } = readContentIDandLocation(attachment);
+            const embeddedImages = getEmbeddedImages(message);
+            const embeddedImage = embeddedImages.find((image) => matchSameCidOrLoc(image, cid, cloc));
+            const newEmbeddedImages = embeddedImages.filter((image) => !matchSameCidOrLoc(image, cid, cloc));
+
+            if (embeddedImage) {
+                setTimeout(() => {
+                    editorActionsRef?.current?.removeEmbedded(embeddedImage.attachment);
+                });
+            }
+
+            const messageImages = updateImages(message.messageImages, undefined, undefined, newEmbeddedImages);
+
+            return { data: { Attachments }, messageImages };
+        });
+    });
+
+    /**
+     * Cancel pending upload
+     */
+    const handleRemoveUpload = async (pendingUpload: PendingUpload) => {
+        if (isAttachmentUpload(pendingUpload)) {
+            pendingUpload.upload.abort();
+        }
+        void removePendingUpload({ pendingUpload });
+    };
+
+    return {
+        pendingFiles,
+        pendingUploads,
+        promiseUpload,
+        uploadInProgress,
+        handleAddAttachmentsStart,
+        handleAddAttachmentsUpload,
+        handleCancelAddAttachment,
+        handleRemoveAttachment,
+        handleRemoveUpload,
+    };
+};

@@ -1,6 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import { BookingCreateAction, useBookingUpsell } from '@proton/calendar/bookings/store/useBookingUpsell';
+import ComposerBookingDropdownContent from '@proton/mail-composer/components/composer/actions/ComposerBookingDropdownContent';
 import {
     BookingLimitReason,
     BookingUpsellSource,
@@ -8,7 +9,6 @@ import {
 } from '@proton/mail-composer/telemetry/composerBookingsEvents';
 
 import { mailTestRender } from '../../../helpers/tests/render';
-import ComposerBookingDropdownContent from './ComposerBookingDropdownContent';
 
 jest.mock('@proton/calendar/bookings/store/hooks', () => ({
     useInternalBooking: () => [

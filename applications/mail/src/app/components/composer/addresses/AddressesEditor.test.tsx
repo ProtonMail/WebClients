@@ -2,6 +2,7 @@ import type { MutableRefObject } from 'react';
 
 import { fireEvent, getByText, screen } from '@testing-library/react';
 
+import AddressesEditor from '@proton/mail-composer/components/composer/addresses/AddressesEditor';
 import type { MessageSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
 import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
@@ -14,7 +15,6 @@ import { addApiMock } from '../../../helpers/tests/api';
 import { clearAll, getDropdown } from '../../../helpers/tests/helper';
 import { mailTestRender, tick } from '../../../helpers/tests/render';
 import type { MailStore } from '../../../store/store';
-import AddressesEditor from './AddressesEditor';
 
 const email1 = 'test@test.com';
 const email2 = 'test2@test.com';

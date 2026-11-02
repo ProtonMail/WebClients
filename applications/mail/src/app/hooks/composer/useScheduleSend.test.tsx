@@ -1,12 +1,12 @@
 import { renderHook } from '@testing-library/react-hooks';
 import loudRejection from 'loud-rejection';
 
+import { useComposerHost } from '@proton/mail-composer/hooks/composer/useComposerHost';
+import { useScheduleSend } from '@proton/mail-composer/hooks/composer/useScheduleSend';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 
 import { clearAll } from '../../helpers/tests/helper';
 import { mockUseScheduleSendFeature } from '../../helpers/tests/mockUseScheduleSendFeature';
-import { useComposerHost } from './useComposerHost';
-import { useScheduleSend } from './useScheduleSend';
 
 loudRejection();
 
@@ -19,6 +19,11 @@ const mockPreliminaryVerifications = jest.fn();
 
 jest.mock('react-router-dom', () => ({
     useLocation: () => mockUseLocation(),
+}));
+
+jest.mock('@proton/mail-composer/components/composer/actions/scheduleSend/useScheduleSendFeature', () => ({
+    __esModule: true,
+    default: jest.fn(),
 }));
 
 jest.mock('@proton/unleash/useFlag', () => ({
@@ -56,10 +61,10 @@ jest.mock('ttag', () => ({
     }),
 }));
 
-jest.mock('./useComposerHost');
+jest.mock('@proton/mail-composer/hooks/composer/useComposerHost');
 const mockUseComposerHost = useComposerHost as jest.Mock;
 
-jest.mock('./useSendVerifications', () => ({
+jest.mock('@proton/mail-composer/hooks/composer/useSendVerifications', () => ({
     useSendVerifications: () => ({
         preliminaryVerifications: () => mockPreliminaryVerifications(),
     }),

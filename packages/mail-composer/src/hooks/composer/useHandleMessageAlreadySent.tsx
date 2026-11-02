@@ -1,0 +1,50 @@
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { useHandler } from '@proton/hooks/useHandler';
+import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
+import { deleteDraft } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
+import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
+
+import { useComposerMessageHost } from '../../host/composerMessageHost';
+import { useComposerDispatch } from '../../store/hooks';
+
+interface UseHandleMessageAlreadySentParameters {
+    modelMessage: MessageState;
+    onClose: () => void;
+}
+
+export const useHandleMessageAlreadySent = ({ modelMessage, onClose }: UseHandleMessageAlreadySentParameters) => {
+    const { createNotification } = useNotifications();
+    const { useCreateDraft } = useComposerMessageHost();
+    const createDraft = useCreateDraft();
+    const getMessage = useGetMessage();
+    const dispatch = useComposerDispatch();
+
+    const duplicateDraft = useHandler(() => {
+        const messageFromCache = getMessage(modelMessage.localID) as MessageStateWithData;
+
+        void createDraft({
+            ...messageFromCache,
+            localID: '',
+            data: {
+                ...messageFromCache.data,
+                ID: '',
+            },
+        });
+
+        // remove the old draft from message cache (which will close the composer)
+        dispatch(deleteDraft(modelMessage.localID));
+    });
+
+    const handleMessageAlreadySent = () => {
+        duplicateDraft();
+        createNotification({
+            text: c('Error').t`This message has already been sent. A new draft has been saved.`,
+            type: 'error',
+        });
+        onClose();
+    };
+
+    return handleMessageAlreadySent;
+};

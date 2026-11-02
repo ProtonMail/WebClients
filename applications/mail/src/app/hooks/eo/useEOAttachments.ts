@@ -6,6 +6,8 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useHandler } from '@proton/hooks/useHandler';
 import type { AddAttachmentsParams } from '@proton/mail-composer/attachments/uploadTypes';
+import type { MessageChange } from '@proton/mail-composer/components/composer/Composer';
+import type { ExternalEditorActions } from '@proton/mail-composer/components/composer/editor/EditorWrapper';
 import { checkSizeAndLength, uploadEO } from '@proton/mail-composer/helpers/attachment/attachmentUploader';
 import {
     createEmbeddedImageFromUpload,
@@ -19,9 +21,6 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
-
-import type { MessageChange } from '../../components/composer/Composer';
-import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 
 interface Props {
     message: MessageState;

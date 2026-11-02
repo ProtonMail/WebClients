@@ -1,0 +1,189 @@
+import type { MouseEventHandler, ReactNode, Ref, RefObject } from 'react';
+import { forwardRef } from 'react';
+
+import { c } from 'ttag';
+
+import { Kbd } from '@proton/atoms/Kbd/Kbd';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcArrowsFromCenter } from '@proton/icons/icons/IcArrowsFromCenter';
+import { IcArrowsToCenter } from '@proton/icons/icons/IcArrowsToCenter';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcDots } from '@proton/icons/icons/IcDots';
+import { IcLowDash } from '@proton/icons/icons/IcLowDash';
+import { isSafari as checkIsSafari, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
+import clsx from '@proton/utils/clsx';
+
+import { useComposerMessageHost } from '../../host/composerMessageHost';
+
+interface ButtonProps {
+    onClick: MouseEventHandler<HTMLButtonElement>;
+    className?: string;
+    title?: ReactNode;
+    children?: ReactNode;
+    disabled?: boolean;
+    dataTestId?: string;
+}
+
+const TitleBarButton = forwardRef<HTMLButtonElement, ButtonProps>(
+    (
+        { onClick, children, className = '', title, disabled = false, dataTestId }: ButtonProps,
+        ref: Ref<HTMLButtonElement>
+    ) => {
+        return (
+            <Tooltip title={title}>
+                <button
+                    type="button"
+                    className={clsx([
+                        'composer-title-bar-button interactive-pseudo-inset relative flex p-2',
+                        className,
+                    ])}
+                    onClick={onClick}
+                    disabled={disabled}
+                    data-testid={dataTestId}
+                    ref={ref}
+                >
+                    {children}
+                </button>
+            </Tooltip>
+        );
+    }
+);
+
+TitleBarButton.displayName = 'TitleBarButton';
+
+interface Props {
+    title: string;
+    minimized: boolean;
+    maximized: boolean;
+    toggleMinimized: () => void;
+    toggleMaximized: () => void;
+    onClose: MouseEventHandler<HTMLButtonElement>;
+    handleStartDragging: React.MouseEventHandler<HTMLElement>;
+    minimizeButtonRef: RefObject<HTMLButtonElement>;
+    composerID: string;
+}
+
+const ComposerTitleBar = ({
+    title,
+    minimized,
+    maximized,
+    toggleMinimized,
+    toggleMaximized,
+    handleStartDragging,
+    onClose,
+    minimizeButtonRef,
+    composerID,
+}: Props) => {
+    const isSafari = checkIsSafari();
+
+    const { useMailSettings } = useComposerMessageHost();
+    const [mailSettings] = useMailSettings();
+
+    const handleDoubleClick = () => {
+        if (minimized) {
+            toggleMinimized();
+        } else {
+            toggleMaximized();
+        }
+    };
+
+    const titleMinimize =
+        // eslint-disable-next-line no-nested-ternary
+        mailSettings.Shortcuts && !isSafari ? (
+            <>
+                {minimized ? c('Action').t`Maximize composer` : c('Action').t`Minimize composer`}
+                <br />
+                <Kbd shortcut={metaKey} /> + <Kbd shortcut="M" />
+            </>
+        ) : minimized ? (
+            c('Action').t`Maximize composer`
+        ) : (
+            c('Action').t`Minimize composer`
+        );
+
+    const titleMaximize =
+        // eslint-disable-next-line no-nested-ternary
+        mailSettings.Shortcuts && !isSafari ? (
+            <>
+                {maximized ? c('Action').t`Contract composer` : c('Action').t`Expand composer`}
+                <br />
+                <Kbd shortcut={metaKey} /> + <Kbd shortcut={shiftKey} /> + <Kbd shortcut="M" />
+            </>
+        ) : maximized ? (
+            c('Action').t`Contract composer`
+        ) : (
+            c('Action').t`Expand composer`
+        );
+
+    const titleClose = mailSettings.Shortcuts ? (
+        <>
+            {c('Action').t`Close composer`}
+            <br />
+            <Kbd shortcut="Escape" />
+        </>
+    ) : (
+        c('Action').t`Close composer`
+    );
+
+    return (
+        <header
+            className="composer-title-bar ui-prominent flex flex-row items-stretch flex-nowrap px-1 w-full"
+            data-testid="composer:header"
+            onDoubleClick={handleDoubleClick}
+        >
+            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
+            <span
+                className={clsx([
+                    'flex-1 flex flex-row flex-nowrap items-center py-3 pr-4 ml-2',
+                    (!maximized || minimized) && 'cursor-move',
+                ])}
+                onMouseDown={handleStartDragging}
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+                role="heading"
+                aria-level={1}
+                id={`composer-title-${composerID}`}
+            >
+                <IcDots
+                    className="my-auto mr-2 shrink-0"
+                    alt={
+                        // translator: this string is for blind user: it will be vocalized in blind navigation context: "Composer: " <title of the message>
+                        c('Info').t`Composer:`
+                    }
+                />
+                <span className="text-ellipsis user-select-none">{title}</span>
+            </span>
+            <TitleBarButton
+                className={clsx(['hidden md:flex', minimized && 'rotateX-180'])}
+                title={titleMinimize}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    toggleMinimized();
+                }}
+                dataTestId="composer:minimize-button"
+                ref={minimizeButtonRef}
+            >
+                <IcLowDash alt={title} className="m-auto" />
+            </TitleBarButton>
+            <TitleBarButton
+                title={titleMaximize}
+                className="hidden md:flex"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    toggleMaximized();
+                }}
+                dataTestId="composer:maximize-button"
+            >
+                {maximized ? (
+                    <IcArrowsToCenter alt={title} className="m-auto" />
+                ) : (
+                    <IcArrowsFromCenter alt={title} className="m-auto" />
+                )}
+            </TitleBarButton>
+            <TitleBarButton title={titleClose} onClick={onClose} dataTestId="composer:close-button">
+                <IcCrossBig alt={title} className="m-auto" />
+            </TitleBarButton>
+        </header>
+    );
+};
+
+export default ComposerTitleBar;

@@ -5,10 +5,10 @@ import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import AddressInput from '@proton/mail-composer/components/composer/addresses/AddressInput';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import { mailTestRender } from '../../../helpers/tests/render';
-import AddressInput from './AddressInput';
 
 type AddressInputWrapperProps = Omit<ComponentProps<typeof AddressInput>, 'anchorRef' | 'id'>;
 

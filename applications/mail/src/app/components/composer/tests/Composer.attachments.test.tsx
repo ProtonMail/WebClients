@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import Composer from '@proton/mail-composer/components/composer/Composer';
 import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { AddressKey } from '@proton/shared/lib/interfaces/Key';
@@ -28,7 +29,6 @@ import {
 } from '../../../helpers/tests/helper';
 import { createAttachment } from '../../../helpers/tests/message';
 import { mailTestRender, tick } from '../../../helpers/tests/render';
-import Composer from '../Composer';
 import { ID, getMessage, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 
 loudRejection();

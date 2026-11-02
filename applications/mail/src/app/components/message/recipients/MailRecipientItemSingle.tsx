@@ -14,6 +14,8 @@ import { IcEnvelopeMagnifyingGlass } from '@proton/icons/icons/IcEnvelopeMagnify
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { getContactEmail } from '@proton/mail-message/helpers/message/messageRecipients';
 import { useContactsMap } from '@proton/mail-message/hooks/contact/useContacts';
@@ -29,8 +31,6 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 
-import { useOnCompose } from '../../../containers/ComposeProvider';
-import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import useBlockSender from '../../../hooks/useBlockSender';
 import type { Element } from '../../../models/element';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
