@@ -31,6 +31,14 @@ const result = (opts: WebpackEnvArguments): Configuration => {
     },
   }
 
+  // @proton-docs/docs-editor is an ES module that imports `lodash/debounce` without an extension, which
+  // webpack resolves in ES modules only when told not to require fully specified paths.
+  config.module?.rules?.push({
+    test: /\.js$/,
+    include: /[\\/]node_modules[\\/]@proton-docs[\\/]docs-editor[\\/]/,
+    resolve: { fullySpecified: false },
+  })
+
   if (isStandaloneEditor) {
     const standaloneEntry = isStandaloneDoc ? 'standalone-doc' : 'standalone-sheet'
     config.entry = { index: [path.resolve(__dirname, `src/${standaloneEntry}/index.tsx`)] }

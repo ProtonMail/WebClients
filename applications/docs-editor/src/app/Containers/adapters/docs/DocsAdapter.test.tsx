@@ -23,6 +23,7 @@ import { Application } from '../../../Lib/Application'
 import { reportErrorToSentry } from '../../../Utils/errorMessage'
 import { createClientInvokerFixture } from './create-client-invoker-fixture'
 import { DocsAdapter } from './DocsAdapter'
+import { docsContainerSource } from './docs-editor-source'
 
 const mockCreateNotification = jest.fn()
 const mockShowAlert = jest.fn()
@@ -82,7 +83,7 @@ function setup({
   function Tree({ app, client = clientInvoker }: { app: Application; client?: EditorRequiresClientMethods }) {
     return (
       <ApplicationProvider application={app}>
-        <DocsAdapter clientInvoker={client}>
+        <DocsAdapter clientInvoker={client} docsEditor={docsContainerSource}>
           <Consumer />
         </DocsAdapter>
       </ApplicationProvider>
