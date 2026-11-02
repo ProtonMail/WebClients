@@ -8,10 +8,13 @@ import {
     selectMeetingNavigationSeed,
 } from '@proton/meet/store/slices/currentMeeting';
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { supportsSetSinkId } from '../../utils/browser';
 
 export const MeetingAnalyticsProvider = ({ sampleRate, children }: { sampleRate: number; children: ReactNode }) => {
+    const isRecordingEncryptionEnabled = useFlag('MeetRecordingEncryption');
+
     const meetingLinkName = useMeetSelector(selectMeetingLinkName);
     const waitingRoomSetting = useMeetSelector(selectWaitingRoomSetting);
     const instantMeeting = useMeetSelector(selectInstantMeeting);
@@ -26,6 +29,7 @@ export const MeetingAnalyticsProvider = ({ sampleRate, children }: { sampleRate:
                 instantMeeting,
                 hasNavigationSeed,
                 supportSetSinkId: supportsSetSinkId(),
+                isRecordingEncryptionEnabled,
             }}
         >
             {children}
