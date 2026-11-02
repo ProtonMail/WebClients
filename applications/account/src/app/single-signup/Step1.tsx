@@ -1066,6 +1066,19 @@ const Step1 = ({
         </div>
     ) : null;
 
+    const checkSelectionWithCoupon = (coupon: string | undefined) =>
+        getSubscriptionPrices({
+            paymentsApi: getPaymentsApi(silentApi),
+            planIDs: options.planIDs,
+            currency: options.currency,
+            cycle: options.cycle,
+            billingAddress: model.subscriptionData.billingAddress,
+            coupon,
+            trial: signupTrial,
+            ValidateBillingAddress: true,
+            VatId: model.subscriptionData.vatNumber,
+        });
+
     const paymentSummary = (
         <PaymentSummary
             model={model}
@@ -1087,17 +1100,7 @@ const Step1 = ({
                     planIDs={options.planIDs}
                     plansMap={model.plansMap}
                     onApplyCode={async (code) => {
-                        const checkResult = await getSubscriptionPrices({
-                            paymentsApi: getPaymentsApi(silentApi),
-                            planIDs: options.planIDs,
-                            currency: options.currency,
-                            cycle: options.cycle,
-                            billingAddress: model.subscriptionData.billingAddress,
-                            coupon: code,
-                            trial: signupTrial,
-                            ValidateBillingAddress: true,
-                            VatId: model.subscriptionData.vatNumber,
-                        });
+                        const checkResult = await checkSelectionWithCoupon(code);
 
                         setModel((old) => ({
                             ...old,
@@ -1114,17 +1117,7 @@ const Step1 = ({
                         }
                     }}
                     onRemoveCode={async () => {
-                        const checkResult = await getSubscriptionPrices({
-                            paymentsApi: getPaymentsApi(silentApi),
-                            planIDs: options.planIDs,
-                            currency: options.currency,
-                            cycle: options.cycle,
-                            billingAddress: model.subscriptionData.billingAddress,
-                            coupon: undefined, // don't pass coupon code, it will be removed
-                            trial: signupTrial,
-                            ValidateBillingAddress: true,
-                            VatId: model.subscriptionData.vatNumber,
-                        });
+                        const checkResult = await checkSelectionWithCoupon(undefined);
 
                         setModel((old) => ({
                             ...old,
