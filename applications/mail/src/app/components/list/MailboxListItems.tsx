@@ -129,9 +129,13 @@ const MailboxListItems = ({
             isColumnModeActive &&
             !location.pathname.includes(CUSTOM_VIEWS[CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS].route)
         ) {
+            const message = isSearch
+                ? c('Info').t`No results found`
+                : c('Info').t`Seems like you are all caught up for now`;
+
             return (
                 <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-center color-weak">{c('Info').t`Seems like you are all caught up for now`}</p>
+                    <p className="text-center color-weak">{message}</p>
                 </div>
             );
         }
