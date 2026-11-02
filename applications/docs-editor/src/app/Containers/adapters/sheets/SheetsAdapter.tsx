@@ -11,16 +11,15 @@ import { useSyncedState } from '../../../Hooks/useSyncedState'
 import { reportErrorToSentry } from '../../../Utils/errorMessage'
 import { useApplication } from '../../ApplicationProvider'
 import { useEditorTheme } from '../../../Theme/EditorThemeProvider'
-import {
-  SheetsDependenciesProvider,
-  type SheetsPatchCategory,
-  type SheetsDependencies,
-  type SheetsEditorToShellActions,
-  type SheetsLogger,
-  type SheetsSession,
-  type SheetsShellToEditorActions,
-  type SpreadsheetImportDestination,
-  type SpreadsheetImportRequest,
+import type {
+  SheetsPatchCategory,
+  SheetsDependencies,
+  SheetsEditorToShellActions,
+  SheetsLogger,
+  SheetsSession,
+  SheetsShellToEditorActions,
+  SpreadsheetImportDestination,
+  SpreadsheetImportRequest,
 } from '../../Spreadsheet/public'
 import { useSheetsLocalization } from './useSheetsLocalization'
 import { useResolvedAppPlatform } from './utils/use-resolved-app-platform'
@@ -28,9 +27,12 @@ import { createSheetsFileMenuActions } from './utils/create-sheets-file-menu-act
 import { toCollaboratorCursorNavigationDestination } from './utils/collaborator-cursor-navigation-adapter'
 import { toStoredSheetsActionType } from './utils/sheets-action-adapter'
 import { useSheetsFeatureFlags } from './utils/use-sheets-feature-flags'
+import type { SheetsEditorSource } from './sheets-editor-source'
 
 type SheetsAdapterProps = PropsWithChildren<{
   clientInvoker: EditorRequiresClientMethods
+  /** The editor whose dependencies context the children read. */
+  sheetsEditor: SheetsEditorSource
 }>
 
 const storedSheetsPatchesTypes = {
@@ -46,7 +48,8 @@ function toStoredSheetsPatchesType(type: SheetsPatchCategory | undefined): Store
 /**
  * Docs host glue that collects SheetsDependencies and provides them to the sheets editor.
  */
-export function SheetsAdapter({ children, clientInvoker }: SheetsAdapterProps) {
+export function SheetsAdapter({ children, clientInvoker, sheetsEditor }: SheetsAdapterProps) {
+  const { SheetsDependenciesProvider } = sheetsEditor
   const { messages, localization } = useSheetsLocalization()
   const { createNotification } = useNotifications()
   const { application } = useApplication()

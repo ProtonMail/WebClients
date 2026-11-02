@@ -186,6 +186,7 @@ enum DocsFeatureFlag {
     SheetsCustomDateTimeFormatEnabled = 'SheetsCustomDateTimeFormatEnabled',
     SheetsCustomNumberFormatEnabled = 'SheetsCustomNumberFormatEnabled',
     SheetsDriftDetectionEnabled = 'SheetsDriftDetectionEnabled',
+    SheetsEditorPackageEnabled = 'SheetsEditorPackageEnabled',
     SheetsMountAfterInitialLoadDisabled = 'SheetsMountAfterInitialLoadDisabled',
     SheetsODSExportEnabled = 'SheetsODSExportEnabled',
     SheetsODSImportEnabled = 'SheetsODSImportEnabled',

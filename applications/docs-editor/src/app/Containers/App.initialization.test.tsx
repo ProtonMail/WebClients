@@ -54,7 +54,8 @@ jest.mock('./SheetsLayout', () => ({ __esModule: true, default: ({ children }: {
 
 function setup(
   documentType: DocumentType = 'doc',
-  isFeatureFlagEnabled = async (flag: string) => flag !== 'DocsEditorPackageEnabled',
+  isFeatureFlagEnabled = async (flag: string) =>
+    flag !== 'DocsEditorPackageEnabled' && flag !== 'SheetsEditorPackageEnabled',
 ) {
   const reportUserInterfaceError = jest.fn().mockResolvedValue(undefined)
   const clientInvoker = {
