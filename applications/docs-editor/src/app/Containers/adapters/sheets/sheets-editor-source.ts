@@ -14,8 +14,8 @@ export const sheetsContainerSource: SheetsEditorSource = { SheetsDependenciesPro
  * page when a failed load falls back to `Containers/Spreadsheet`.
  */
 export async function loadSheetsEditorPackage(): Promise<SheetsEditorSource> {
-  const sheetsEditorPackage = await import('@proton-docs/sheets-editor')
-  await import('@proton-docs/sheets-editor/style.css')
+  const sheetsEditorPackage = await import(/* webpackChunkName: "sheets-editor-package" */ '@proton-docs/sheets-editor')
+  await import(/* webpackChunkName: "sheets-editor-package-style" */ '@proton-docs/sheets-editor/style.css')
 
   return {
     SheetsDependenciesProvider: sheetsEditorPackage.SheetsDependenciesProvider,
