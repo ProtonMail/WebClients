@@ -9,6 +9,7 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import LinkConfirmationModal from '@proton/components/components/notifications/LinkConfirmationModal/LinkConfirmationModal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import ContactImage from '@proton/components/containers/contacts/ContactImage';
+import useLoading from '@proton/hooks/useLoading';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
@@ -61,6 +62,8 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
         props?.onClose?.();
     };
 
+    const [loading, withLoading] = useLoading();
+
     const onUnsubscribe = async () => {
         sendNewsletterAction({
             newsletterAction: NewsletterSubscriptionAction.unsubscribe,
@@ -70,12 +73,14 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
         });
 
         if (unsubscribeMethod === UnsubscribeMethod.OneClick) {
-            void dispatch(unsubscribeSubscription({ subscription, subscriptionIndex }));
+            const result = await dispatch(unsubscribeSubscription({ subscription, subscriptionIndex }));
 
-            const truncatedName = truncate(subscription.Name.trim(), MAX_LENGTH_SUB_NAME);
-            createNotification({
-                text: c('Label').t`Unsubscribed from ${truncatedName}.`,
-            });
+            if (unsubscribeSubscription.fulfilled.match(result)) {
+                const truncatedName = truncate(subscription.Name.trim(), MAX_LENGTH_SUB_NAME);
+                createNotification({
+                    text: c('Label').t`Unsubscribed from ${truncatedName}.`,
+                });
+            }
         } else {
             if (unsubscribeMethod === UnsubscribeMethod.HttpClient) {
                 const askForLinkConfirmation = mailSettings.ConfirmLink ?? CONFIRM_LINK.CONFIRM;
@@ -138,7 +143,12 @@ const ModalUnsubscribe = ({ subscription, ...props }: PropsWithNewsletterSubscri
                     </>
                 }
                 buttons={[
-                    <Button color="norm" onClick={onUnsubscribe} data-testid="unsubscribe-button">
+                    <Button
+                        color="norm"
+                        onClick={() => withLoading(onUnsubscribe())}
+                        loading={loading}
+                        data-testid="unsubscribe-button"
+                    >
                         {unsubscribeMethod === UnsubscribeMethod.Mailto
                             ? c('Action').t`Send unsubscribe email`
                             : c('Action').t`Unsubscribe`}

@@ -61,7 +61,19 @@ export const handleUpdateRejection = (
         stateValue.tabs.unsubscribe.ids.splice(originalIndex, 0, subscriptionId);
         stateValue.tabs.unsubscribe.totalCount = safeIncreaseCount(stateValue.tabs.unsubscribe.totalCount);
     } else {
-        stateValue.tabs.active.ids.splice(originalIndex, 0, subscriptionId);
+        // The optimistic unsubscribe added the ID to the unsubscribe tab, we revert it
+        if (stateValue.tabs.unsubscribe.ids.includes(subscriptionId)) {
+            stateValue.tabs.unsubscribe.ids = filterNewsletterSubscriptionList(
+                stateValue.tabs.unsubscribe.ids,
+                subscriptionId
+            );
+            stateValue.tabs.unsubscribe.totalCount = safeDecreaseCount(stateValue.tabs.unsubscribe.totalCount);
+        }
+
+        // The ID stays in the active tab until the animation is done, avoid duplicating it
+        if (!stateValue.tabs.active.ids.includes(subscriptionId)) {
+            stateValue.tabs.active.ids.splice(originalIndex, 0, subscriptionId);
+        }
         stateValue.tabs.active.totalCount = safeIncreaseCount(stateValue.tabs.active.totalCount);
     }
 

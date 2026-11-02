@@ -213,6 +213,18 @@ describe('Newsletter subscription reducers', () => {
             expect(state.value?.tabs.active.ids).toEqual(['2', '3']);
         });
 
+        it('should not remove a subscription restored after a failed unsubscribe', () => {
+            state.value!.byId = { [activeSubscription.ID]: activeSubscription };
+            state.value!.tabs.active.ids = [activeSubscription.ID];
+
+            removeSubscriptionFromActiveTabReducer(state, {
+                type: 'newsletterSubscriptions/removeSubscriptionFromActiveTab',
+                payload: activeSubscription.ID,
+            });
+
+            expect(state.value?.tabs.active.ids).toEqual([activeSubscription.ID]);
+        });
+
         it('should not remove the subscription if it is not in the active tab', () => {
             state.value!.tabs.active.ids = ['1', '2', '3'];
             state.value!.tabs.unsubscribe.ids = [];
@@ -369,6 +381,49 @@ describe('Newsletter subscription reducers', () => {
             expect(state.value?.byId[activeSubscription.ID].ReceivedMessageCount).toEqual(
                 previousState.ReceivedMessageCount
             );
+        });
+
+        it('should remove the subscription from the unsubscribe tab without duplicating it in the active tab', () => {
+            const previousState = activeSubscription;
+
+            state.value!.tabs.unsubscribe.ids = [activeSubscription.ID];
+            state.value!.tabs.unsubscribe.totalCount = 1;
+            state.value!.tabs.active.ids = [activeSubscription.ID];
+            state.value!.tabs.active.totalCount = 0;
+
+            unsubscribeSubscriptionRejected(state, {
+                type: 'newsletterSubscriptions/unsubscribeSubscription',
+                payload: { previousState, originalIndex: 0 },
+                meta,
+                error: {},
+            });
+
+            expect(state.value?.tabs.unsubscribe.ids).toEqual([]);
+            expect(state.value?.tabs.unsubscribe.totalCount).toEqual(0);
+            expect(state.value?.tabs.active.ids).toEqual([activeSubscription.ID]);
+            expect(state.value?.tabs.active.totalCount).toEqual(1);
+        });
+
+        it('should keep the subscription in the active tab when the animation cleanup runs after the rejection', () => {
+            state.value!.tabs.unsubscribe.ids = [activeSubscription.ID];
+            state.value!.tabs.unsubscribe.totalCount = 1;
+            state.value!.tabs.active.ids = [activeSubscription.ID];
+            state.value!.tabs.active.totalCount = 0;
+
+            unsubscribeSubscriptionRejected(state, {
+                type: 'newsletterSubscriptions/unsubscribeSubscription',
+                payload: { previousState: activeSubscription, originalIndex: 0 },
+                meta,
+                error: {},
+            });
+            removeSubscriptionFromActiveTabReducer(state, {
+                type: 'newsletterSubscriptions/removeSubscriptionFromActiveTab',
+                payload: activeSubscription.ID,
+            });
+
+            expect(state.value?.tabs.active.ids).toEqual([activeSubscription.ID]);
+            expect(state.value?.tabs.active.totalCount).toEqual(1);
+            expect(state.value?.tabs.unsubscribe.ids).toEqual([]);
         });
 
         it('should select the previous subscription and reset the deleting subscription id if no subscription is selected', () => {

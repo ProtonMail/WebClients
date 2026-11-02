@@ -93,6 +93,12 @@ export const removeSubscriptionFromActiveTabReducer = (
         return;
     }
 
+    // A failed unsubscribe restores the subscription, the card cleanup must not remove it afterwards
+    const subscription = stateValue.byId[action.payload];
+    if (subscription && !subscription.UnsubscribedTime) {
+        return;
+    }
+
     const originalIndex = stateValue.tabs.active.ids.indexOf(action.payload);
 
     if (originalIndex !== -1) {
