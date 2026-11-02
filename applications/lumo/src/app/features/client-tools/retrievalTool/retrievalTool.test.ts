@@ -49,6 +49,8 @@ function makeContext(overrides: Partial<RetrievalContext> = {}): RetrievalContex
         allowWideScopes: true,
         chatSearch: 'all',
         searchOtherSpaces: true,
+        allowsSearchFromOutside: () => true,
+        exclusions: { attachmentIds: new Set(), documentIds: new Set() },
         hasLumoPlus: true,
         getVisibleMessageIds: () => new Set(['visible']),
         chatAttachments: [report],
@@ -207,6 +209,90 @@ describe('search_knowledge', () => {
         });
     });
 
+    describe('into a project that keeps its chats to itself', () => {
+        const closed = () => makeContext({ allowsSearchFromOutside: (spaceId) => spaceId !== 'elsewhere' });
+
+        it('neither finds nor reads its chats, even with all chats allowed here', async () => {
+            const { body } = await call(closed(), SEARCH_KNOWLEDGE_TOOL_NAME, {
+                query: 'supplier invoice marketing budget',
+                scope: 'all',
+                sources: ['messages'],
+            });
+            const read = await call(closed(), READ_KNOWLEDGE_TOOL_NAME, { message_id: 'otherChat' });
+
+            expect(body.results).toEqual([]);
+            expect(read.result.is_error).toBe(true);
+        });
+
+        it('still finds them when the project is open', async () => {
+            const { body } = await call(makeContext(), SEARCH_KNOWLEDGE_TOOL_NAME, {
+                query: 'supplier invoice',
+                scope: 'all',
+                sources: ['messages'],
+            });
+
+            expect(body.results.map((result: { message_id: string }) => result.message_id)).toContain('otherChat');
+        });
+    });
+
+    describe('shortlisting other chats with the chat index', () => {
+        const hoursAgo = (hours: number) => new Date(Date.now() - hours * 3_600_000).toISOString();
+        const withChats = (ranked: string[]) => {
+            const ids = ['r1', 'r2', 'r3', 'r4', 'r5', 'stale', 'old'];
+            const conversations = Object.fromEntries([
+                ['current', conversation('current')],
+                ...ids.map((id, position) => [id, conversation(id, { updatedAt: hoursAgo(position + 1) })]),
+            ]);
+            const messages = Object.fromEntries(
+                ids.map((id) => [`${id}-msg`, message(`${id}-msg`, id, `Budget notes from chat ${id}`)])
+            );
+            const rankConversations = jest.fn(async () => ranked);
+            const context = makeContext({
+                getState: () => ({ conversations, messages }) as unknown as ReturnType<RetrievalContext['getState']>,
+                index: {
+                    rankConversations,
+                    rankDocumentsInScope: async () => [],
+                    getIndexedDocument: async () => undefined,
+                    listDocuments: async () => [],
+                },
+            });
+            return { context, rankConversations };
+        };
+        const searchedChats = async (context: RetrievalContext) => {
+            const { body } = await call(context, SEARCH_KNOWLEDGE_TOOL_NAME, {
+                query: 'budget notes',
+                scope: 'all',
+                sources: ['messages'],
+                limit: 10,
+            });
+            return body.results.map((result: { message_id: string }) => result.message_id.replace('-msg', '')).sort();
+        };
+
+        it("searches the index's matches and the latest chats, not every chat", async () => {
+            const { context, rankConversations } = withChats(['old', 'ghost-or-unknown']);
+
+            expect(await searchedChats(context)).toEqual(['old', 'r1', 'r2', 'r3', 'r4', 'r5']);
+            expect(rankConversations).toHaveBeenCalledWith('budget notes', expect.any(Number));
+        });
+
+        it('searches every allowed chat when the index has no matches', async () => {
+            const { context } = withChats([]);
+
+            expect(await searchedChats(context)).toEqual(['old', 'r1', 'r2', 'r3', 'r4', 'r5', 'stale']);
+        });
+    });
+
+    it('defaults to this chat in a project chat that has no index', async () => {
+        const { result, body } = await call(
+            makeContext({ isProject: true, allowWideScopes: false }),
+            SEARCH_KNOWLEDGE_TOOL_NAME,
+            { query: 'launch March', sources: ['messages'] }
+        );
+
+        expect(result.is_error).toBeFalsy();
+        expect(body.scope).toBe('this_chat');
+    });
+
     it('reads which messages the request carries at call time, not when the tools were set up', async () => {
         const visible = new Set(['visible', 'earlier']);
         const executor = createRetrievalToolExecutor(makeContext({ getVisibleMessageIds: () => visible }));
@@ -260,6 +346,7 @@ describe('search_knowledge', () => {
                 text: 'Hiring plan: two engineers join in April.',
             })),
             listDocuments: jest.fn(async () => []),
+            rankConversations: jest.fn(async () => []),
         };
         const { body } = await call(
             makeContext({ isProject: true, index, chatAttachments: [] }),
@@ -339,6 +426,7 @@ function memoryIndex(docs: IndexedDoc[]): RetrievalIndex {
                 .sort((a, b) => b.score - a.score)
                 .map(({ doc, score }) => ({ id: doc.id, name: doc.name, content: doc.text, score, coverage: 1 })),
         getIndexedDocument: async (id) => docs.find((doc) => doc.id === id),
+        rankConversations: async () => [],
         listDocuments: async (scope = {}) =>
             docs
                 .filter((doc) => !scope.spaceId || doc.spaceId === scope.spaceId)
@@ -420,6 +508,46 @@ describe('following references between files', () => {
         expect((await call(executor, READ_KNOWLEDGE_TOOL_NAME, { file_name: 'pricing sheet' })).result.is_error).toBe(
             true
         );
+    });
+});
+
+describe('a chat file the user switched off', () => {
+    const excluded = () =>
+        makeContext({ exclusions: { attachmentIds: new Set(['report']), documentIds: new Set(['report']) } });
+
+    it('is neither found nor read', async () => {
+        const search = await call(excluded(), SEARCH_KNOWLEDGE_TOOL_NAME, {
+            query: 'marketing budget',
+            sources: ['files'],
+        });
+        const read = await call(excluded(), READ_KNOWLEDGE_TOOL_NAME, { file_id: 'report' });
+        const byName = await call(excluded(), READ_KNOWLEDGE_TOOL_NAME, { file_name: 'report.md' });
+
+        expect(search.body.results).toEqual([]);
+        expect(read.result.is_error).toBe(true);
+        expect(byName.result.is_error).toBe(true);
+    });
+});
+
+describe('usage counts', () => {
+    it('counts searches, empty searches, reads, errors and limits, without any content', async () => {
+        const executor = createRetrievalToolExecutor(makeContext());
+        await call(executor, SEARCH_KNOWLEDGE_TOOL_NAME, { query: 'marketing budget' });
+        await call(executor, SEARCH_KNOWLEDGE_TOOL_NAME, { query: 'zebra xylophone' });
+        await call(executor, READ_KNOWLEDGE_TOOL_NAME, { file_id: 'report' });
+        await call(executor, READ_KNOWLEDGE_TOOL_NAME, { file_id: 'missing' });
+        for (let index = 0; index < MAX_RETRIEVAL_CALLS_PER_REPLY; index += 1) {
+            await call(executor, SEARCH_KNOWLEDGE_TOOL_NAME, { query: 'budget' });
+        }
+
+        expect(executor.getUsage()).toEqual({
+            searches: MAX_RETRIEVAL_CALLS_PER_REPLY - 2,
+            emptySearches: 1,
+            reads: 1,
+            errors: 1,
+            callLimitHit: true,
+            readLimitHit: false,
+        });
     });
 });
 

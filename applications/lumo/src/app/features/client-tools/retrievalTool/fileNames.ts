@@ -28,7 +28,9 @@ const normalizeText = (text: string) => ` ${text.toLowerCase().replace(/[\s_\-.,
 export function findFilesByName(reference: string, files: NamedFile[]): NamedFile[] {
     const wanted = reference.trim().toLowerCase();
     const wantedName = lastSegment(wanted);
-    const wantedFolder = wanted.includes('/') ? wanted.slice(0, wanted.length - wantedName.length).replace(/\/+$/, '') : '';
+    const wantedFolder = wanted.includes('/')
+        ? wanted.slice(0, wanted.length - wantedName.length).replace(/\/+$/, '')
+        : '';
     const wantedNormalized = normalizeFileName(reference);
     if (!wantedNormalized) {
         return [];
@@ -44,7 +46,8 @@ export function findFilesByName(reference: string, files: NamedFile[]): NamedFil
             return (
                 wantedNormalized.length >= MIN_NAME_CHARS &&
                 inFolder(file) &&
-                (normalized.includes(wantedNormalized) || (normalized.length >= MIN_NAME_CHARS && wantedNormalized.includes(normalized)))
+                (normalized.includes(wantedNormalized) ||
+                    (normalized.length >= MIN_NAME_CHARS && wantedNormalized.includes(normalized)))
             );
         },
     ];

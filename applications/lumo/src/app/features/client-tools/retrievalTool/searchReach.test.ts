@@ -1,5 +1,5 @@
 import { type Space, SpaceType } from '../../../types';
-import { resolveSearchReach } from './searchReach';
+import { isOpenToOtherSpaces, resolveSearchReach } from './searchReach';
 
 const base = { id: 'space', createdAt: '2026-01-01', updatedAt: '2026-01-01', spaceKey: 'key' };
 const project = (overrides: object = {}) => ({ ...base, spaceType: SpaceType.Project, ...overrides }) as Space;
@@ -25,6 +25,13 @@ describe('resolveSearchReach', () => {
                 project({ chatSearch: 'project', searchOtherProjects: true })
             )
         ).toEqual({ chatSearch: 'project', searchOtherSpaces: true });
+    });
+
+    it("keeps only private projects out of other chats' searches, whatever their own reach", () => {
+        expect(isOpenToOtherSpaces(project({ chatSearch: 'project', searchOtherProjects: false }))).toBe(true);
+        expect(isOpenToOtherSpaces(project({ isPrivate: true }))).toBe(false);
+        expect(isOpenToOtherSpaces({ ...simple, isPrivate: true } as Space)).toBe(true);
+        expect(isOpenToOtherSpaces(undefined)).toBe(true);
     });
 
     it('searches no other chats with "same project only" outside a project', () => {

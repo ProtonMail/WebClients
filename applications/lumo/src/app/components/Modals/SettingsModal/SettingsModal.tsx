@@ -37,7 +37,7 @@ import { LumoSettingsUpsellSection } from '../../../upsells/composed/LumoSetting
 import { sendArtifactCreationDefaultChangedEvent } from '../../../util/telemetry';
 import { getInitials } from '../../../util/username';
 import LumoThemeButton from '../../Buttons/LumoThemeButton';
-import { ChatSearchSelect } from '../../ChatSearchSelect/ChatSearchSelect';
+import { ChatSearchSelect, FileSearchSelect } from '../../ChatSearchSelect/ChatSearchSelect';
 import { DictationLanguageSelect } from '../../Composer/DictationLanguageSelect';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBanner';
@@ -319,6 +319,9 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                         />
                     }
                 />
+            </SettingsGroup>
+
+            <SettingsGroup title={c('collider_2025: Title').t`Voice`}>
                 <SettingsSectionItem
                     icon="Mic"
                     text={c('collider_2025: Title').t`Dictation language`}
@@ -406,7 +409,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                 description={
                     isRetrievalToolsEnabled
                         ? c('collider_2025: Description')
-                              .t`These are the defaults for all chats. Each project can set its own in its Search section.`
+                              .t`What ${LUMO_SHORT_APP_NAME} can look up when answering. Each project can change these for its own chats.`
                         : undefined
                 }
             >
@@ -414,9 +417,9 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                     <>
                         <SettingsSectionItem
                             icon="MessagesSquare"
-                            text={c('collider_2025: Title').t`Search past chats`}
+                            text={c('collider_2025: Title').t`Past chats`}
                             subtext={c('collider_2025: Description')
-                                .t`Let ${LUMO_SHORT_APP_NAME} look up your other chats when they help answer. With "Same project only", chats in a project only search that project's chats.`}
+                                .t`Which other chats can ${LUMO_SHORT_APP_NAME} look up. Ghost chats are never searched.`}
                             button={
                                 <div className="min-w-custom" style={{ '--min-w-custom': '10rem' }}>
                                     <ChatSearchSelect
@@ -432,20 +435,20 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                         />
                         <SettingsSectionItem
                             icon="FolderSearch"
-                            text={c('collider_2025: Title').t`Search across projects`}
+                            text={c('collider_2025: Title').t`Project files`}
                             subtext={c('collider_2025: Description')
-                                .t`Let ${LUMO_SHORT_APP_NAME} look up files from all your projects, not only the one a chat belongs to.`}
+                                .t`Whether ${LUMO_SHORT_APP_NAME} can also look up files from other projects.`}
                             button={
-                                <Toggle
-                                    id="cross-project-search-toggle"
-                                    checked={crossProjectSearchEnabled}
-                                    onChange={() => {
-                                        updateSettings({
-                                            isCrossProjectSearchEnabled: !crossProjectSearchEnabled,
-                                            _autoSave: true,
-                                        });
-                                    }}
-                                />
+                                <div className="min-w-custom" style={{ '--min-w-custom': '10rem' }}>
+                                    <FileSearchSelect
+                                        id="cross-project-search-select"
+                                        context="settings"
+                                        value={crossProjectSearchEnabled}
+                                        onChange={(value) => {
+                                            updateSettings({ isCrossProjectSearchEnabled: value, _autoSave: true });
+                                        }}
+                                    />
+                                </div>
                             }
                         />
                     </>

@@ -21,3 +21,8 @@ export function resolveSearchReach(
         searchOtherSpaces: project?.searchOtherProjects ?? settings.isCrossProjectSearchEnabled ?? false,
     };
 }
+
+/** Whether chats outside this space may search its chats and files. Only projects can be private. */
+export function isOpenToOtherSpaces(space: Space | undefined): boolean {
+    return space?.spaceType !== SpaceType.Project || space.isPrivate !== true;
+}
