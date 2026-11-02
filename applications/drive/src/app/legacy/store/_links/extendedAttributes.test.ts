@@ -216,6 +216,17 @@ describe('extended attrbiutes', () => {
                 },
             ],
             [
+                '{"Common": {"Digests": null}}',
+                {
+                    Common: {
+                        ModificationTime: undefined,
+                        Size: undefined,
+                        BlockSizes: undefined,
+                        Digests: undefined,
+                    },
+                },
+            ],
+            [
                 '{"Common": {"Digests": {"SHA1": null}}}',
                 {
                     Common: {

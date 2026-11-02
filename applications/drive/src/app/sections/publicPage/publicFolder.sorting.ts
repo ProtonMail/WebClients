@@ -10,7 +10,7 @@ export function getPublicFolderSortValue(item: PublicFolderItem, field: SortFiel
         case SortField.size:
             return item.size;
         case SortField.uploadedBy:
-            return item.uploadedBy;
+            return item.uploadedBy ?? '';
         default:
             return undefined;
     }

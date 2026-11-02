@@ -37,7 +37,7 @@ export const useTrashActions = () => {
                 if (result.ok) {
                     success.push(item);
                 } else {
-                    failures.push({ uid: result.uid, error: result.error.message });
+                    failures.push({ uid: result.uid, error: result.error });
                 }
             }
         } catch (e) {

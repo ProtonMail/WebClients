@@ -283,7 +283,7 @@ function parseMedia(xattr: MaybeExtendedAttributes): { Width: number; Height: nu
 
 function parseDigests(xattr: MaybeExtendedAttributes): { SHA1: string } | undefined {
     const digests = xattr?.Common?.Digests;
-    if (digests === undefined || digests.SHA1 === undefined) {
+    if (!digests || digests.SHA1 === undefined) {
         return undefined;
     }
 

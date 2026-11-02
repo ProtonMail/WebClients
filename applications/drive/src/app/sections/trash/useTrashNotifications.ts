@@ -13,7 +13,7 @@ export const useTrashNotifications = () => {
 
     const createTrashedItemsNotifications = (
         successItems: { name: string; uid: string }[],
-        failureItems: { uid: string; error: string }[],
+        failureItems: { uid: string; error: Error }[],
         undoAction?: () => Promise<void>
     ) => {
         createSuccessMessage(
@@ -29,8 +29,8 @@ export const useTrashNotifications = () => {
         );
 
         showAggregatedErrorNotification(
-            Object.values(failureItems),
-            () => c('Notification').t`"${name}" failed to be moved to trash`,
+            failureItems.map(({ error }) => error),
+            (error) => error.message,
             () => {
                 const numberOfItems = failureItems.length;
                 return c('Notification').ngettext(
@@ -44,7 +44,7 @@ export const useTrashNotifications = () => {
 
     const createTrashRestoreNotification = (
         successItems: { name: string; uid: string }[],
-        failureItems: { uid: string; error: string }[],
+        failureItems: { uid: string; error: Error }[],
         undoAction?: () => Promise<void>
     ) => {
         createSuccessMessage(
@@ -63,15 +63,15 @@ export const useTrashNotifications = () => {
         );
 
         showAggregatedErrorNotification(
-            Object.values(failureItems),
-            (error) => error.error,
+            failureItems.map(({ error }) => error),
+            (error) => error.message,
             () => `${failureItems.length} items failed to be restored from trash`
         );
     };
 
     const createTrashDeleteNotification = (
         successItems: { name: string; uid: string }[],
-        failureItems: { uid: string; error: string }[]
+        failureItems: { uid: string; error: Error }[]
     ) => {
         createSuccessMessage(
             successItems,
@@ -88,8 +88,8 @@ export const useTrashNotifications = () => {
         );
 
         showAggregatedErrorNotification(
-            Object.values(failureItems),
-            (error) => error.error,
+            failureItems.map(({ error }) => error),
+            (error) => error.message,
             () => `${failureItems.length} items failed to be deleted from trash`
         );
     };
