@@ -2,8 +2,8 @@ import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
@@ -16,10 +16,17 @@ import {
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
-import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
+import { CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
-import { getSubscriptionPlanTitle, isManagedExternally } from '@proton/payments/core/subscription/helpers';
+import {
+    getPlanName,
+    getSubscriptionPlanTitle,
+    hasAllProductsB2CPlan,
+    isManagedExternally,
+} from '@proton/payments/core/subscription/helpers';
+import { getPlanNamesOfSubscriptions } from '@proton/payments/core/subscription/plan-names';
 import { getPlanByName, getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { TelemetryAccountDashboardEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
@@ -73,13 +80,20 @@ interface Card {
     buttonCopy: () => string;
     image: string;
     logo: ReactElement;
-    shouldRender: (planName: string) => boolean;
+    shouldRender: (planNames: PLANS[]) => boolean;
 }
 
 const plusPlans = [PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN2024, PLANS.LUMO];
 const freeAndPlusPlans = [PLANS.FREE, ...plusPlans];
-const vpnPlans = [PLANS.VPN2024];
+const vpnPlans = [PLANS.VPN, PLANS.VPN2024];
 const bundlePlans = [PLANS.BUNDLE, PLANS.FAMILY, PLANS.DUO, PLANS.VISIONARY];
+
+const hasOnlyPlusPlansWithoutVpn = (planNames: PLANS[]) =>
+    planNames.every((name) => plusPlans.includes(name)) && !planNames.some((name) => vpnPlans.includes(name));
+const hasOnlyFreeOrPlusPlans = (planNames: PLANS[]) => planNames.every((name) => freeAndPlusPlans.includes(name));
+const hasBundlePlan = (planNames: PLANS[]) => planNames.some((name) => bundlePlans.includes(name));
+const canUpsellPlusPlan = (plusPlan: PLANS) => (planNames: PLANS[]) =>
+    !planNames.includes(plusPlan) && hasOnlyFreeOrPlusPlans(planNames);
 
 interface CardProps {
     plan: Plan | undefined;
@@ -105,7 +119,7 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
             image: mail,
             buttonCopy: () => goToPlanOrAppNameText(MAIL_APP_NAME),
             logo: <MailLogo />,
-            shouldRender: (planName: string) => planName !== PLANS.MAIL && freeAndPlusPlans.includes(planName as PLANS),
+            shouldRender: canUpsellPlusPlan(PLANS.MAIL),
         },
         {
             app: APPS.PROTONMAIL,
@@ -117,7 +131,7 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
                 getNDomainsFeature({ n: plan?.MaxDomains || 0 }),
                 getDarkWebMonitoringFeature(),
             ],
-            shouldRender: (planName: string) => bundlePlans.includes(planName as PLANS),
+            shouldRender: hasBundlePlan,
         },
         {
             app: APPS.PROTONDRIVE,
@@ -126,8 +140,7 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
             image: drive,
             buttonCopy: () => goToPlanOrAppNameText(DRIVE_APP_NAME),
             logo: <DriveLogo />,
-            shouldRender: (planName: string) =>
-                planName !== PLANS.DRIVE && freeAndPlusPlans.includes(planName as PLANS),
+            shouldRender: canUpsellPlusPlan(PLANS.DRIVE),
         },
         {
             app: APPS.PROTONDRIVE,
@@ -143,7 +156,7 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
                 getDocumentEditor(),
                 getVersionHistory(),
             ],
-            shouldRender: (planName: string) => bundlePlans.includes(planName as PLANS),
+            shouldRender: hasBundlePlan,
         },
         {
             app: APPS.PROTONPASS,
@@ -151,7 +164,7 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
             image: pass,
             buttonCopy: () => goToPlanOrAppNameText(PASS_APP_NAME),
             logo: <PassLogo />,
-            shouldRender: (planName: string) => planName !== PLANS.PASS && freeAndPlusPlans.includes(planName as PLANS),
+            shouldRender: canUpsellPlusPlan(PLANS.PASS),
         },
         {
             app: APPS.PROTONPASS,
@@ -159,7 +172,7 @@ const cards = ({ plan, space, freePlan }: CardProps): Card[] => {
             buttonCopy: () => goToPlanOrAppNameText(PASS_APP_NAME),
             logo: <PassLogo />,
             features: [getLoginsAndNotes(), getVaultSharing(PASS_PLUS_VAULT_SHARING), get2FAAuthenticator(true)],
-            shouldRender: (planName: string) => bundlePlans.includes(planName as PLANS),
+            shouldRender: hasBundlePlan,
         },
     ];
 };
@@ -168,11 +181,11 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
     const api = useApi();
     const [user] = useUser();
     const { APP_NAME } = useConfig();
-    const [subscription, loadingSubscription] = useSubscription();
+    const [subscription, loadingSubscription] = useSubscriptionForApp(app);
+    const [allSubscriptions = []] = useAllSubscriptions();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
     const plan = PLANS.BUNDLE;
-    const planIsManagedExternally = isManagedExternally(subscription);
 
     useLoad();
 
@@ -182,14 +195,14 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
 
     const space = getSpace(user);
 
-    const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
+    const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription ?? FREE_SUBSCRIPTION);
     const loading = loadingSubscription || loadingPlans;
 
-    if (!subscription || !plans || loading || !planName) {
+    if (!plans || loading || !planName) {
         return <Loader />;
     }
 
-    const currency = subscription.Currency || user?.Currency || 'USD';
+    const currency = subscription?.Currency || user.Currency || 'USD';
 
     const plansMap = getPlansMap(plans, currency, false);
     const bundle = getPlanByName(plansResult?.plans ?? [], plan, currency);
@@ -197,30 +210,41 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
 
     const priceString = bundle ? getSimplePriceString(currency, planPricePerCycle / CYCLE.YEARLY) : undefined;
 
+    const planNames = getPlanNamesOfSubscriptions(allSubscriptions, planName);
+    const bundleSubscription = allSubscriptions.find(hasAllProductsB2CPlan);
+    const cardsPlan = (() => {
+        const bundlePlanName = getPlanName(bundleSubscription);
+        if (bundleSubscription && bundlePlanName) {
+            return getPlansMap(plans, bundleSubscription.Currency, false)[bundlePlanName];
+        }
+
+        return plansMap[planName];
+    })();
+    const allSubscriptionsManagedExternally =
+        allSubscriptions.length > 0 && allSubscriptions.every(isManagedExternally);
+
     const sectionSubtitleCopy = () => {
         const planTitlePlusMaybeBrand = planName === PLANS.FREE ? `${BRAND_NAME} ${planTitle}` : planTitle;
 
-        if (plusPlans.includes(planName) && !vpnPlans.includes(planName)) {
+        if (hasOnlyPlusPlansWithoutVpn(planNames)) {
             return c('VPN Dashboard')
                 .t`With ${planTitlePlusMaybeBrand}, you get free access to ${VPN_APP_NAME} and other privacy services.`;
         }
 
-        if (freeAndPlusPlans.includes(planName)) {
+        if (hasOnlyFreeOrPlusPlans(planNames)) {
             return c('VPN Dashboard')
                 .t`With ${planTitlePlusMaybeBrand}, you get free access to all ${BRAND_NAME} privacy services.`;
         }
 
-        if (bundlePlans.includes(planName)) {
+        if (hasBundlePlan(planNames)) {
             // Translator: Examples: "Get more from your Visionary subscription", "Get more from your Duo subscription"
             return c('VPN Dashboard').t`Get more from your ${planTitle} subscription.`;
         }
     };
 
-    const filteredCards = cards({ plan: planName ? plansMap[planName] : freePlan, space, freePlan }).filter((card) =>
-        card.shouldRender(planName)
-    );
+    const filteredCards = cards({ plan: cardsPlan, space, freePlan }).filter((card) => card.shouldRender(planNames));
 
-    const showUnlimitedUpsell = user.canPay && freeAndPlusPlans.includes(planName) && !planIsManagedExternally;
+    const showUnlimitedUpsell = user.canPay && hasOnlyFreeOrPlusPlans(planNames) && !allSubscriptionsManagedExternally;
 
     if (filteredCards.length === 0) {
         return false;

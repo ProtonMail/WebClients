@@ -2,24 +2,25 @@ import { Children, type PropsWithChildren, type ReactNode, createContext } from 
 
 import { c } from 'ttag';
 
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import {
     DashboardGrid,
     DashboardGridSection,
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { PLANS } from '@proton/payments/core/constants';
+import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
+import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
+    getPlanName,
     getSubscriptionPlanTitle,
     hasAllProductsB2CPlan,
     hasFreeOrPlus,
-    hasVPN2024,
 } from '@proton/payments/core/subscription/helpers';
+import { getPlanNamesOfSubscriptions } from '@proton/payments/core/subscription/plan-names';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
-import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getHasPlusPlan } from '@proton/shared/lib/payments/plan/helpers';
@@ -45,7 +46,8 @@ const AlsoInYourPlanSection = ({
     subtitle,
 }: PropsWithChildren<{ app: APP_NAMES; upsellBanner?: ReactNode; title?: ReactNode; subtitle?: ReactNode }>) => {
     const [user] = useUser();
-    const [subscription, loadingSubscription] = useSubscription();
+    const [subscription, loadingSubscription] = useSubscriptionForApp(app);
+    const [allSubscriptions = []] = useAllSubscriptions();
 
     useLoad();
 
@@ -53,17 +55,28 @@ const AlsoInYourPlanSection = ({
     const plans = plansResult?.plans;
     const freePlan = plansResult?.freePlan || FREE_PLAN;
 
-    const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
+    const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription ?? FREE_SUBSCRIPTION);
     const loading = loadingSubscription || loadingPlans;
 
-    if (!subscription || !plans || loading || !planName) {
+    if (!plans || loading || !planName) {
         return <Loader />;
     }
 
-    const plan =
-        planName && isPaidSubscription(subscription)
-            ? getPlansMap(plans, subscription.Currency, false)[planName]
-            : freePlan;
+    const planNames = getPlanNamesOfSubscriptions(allSubscriptions, planName);
+    const allProductsSubscription = allSubscriptions.find(hasAllProductsB2CPlan);
+
+    const plan = (() => {
+        const allProductsPlanName = getPlanName(allProductsSubscription);
+        if (allProductsSubscription && allProductsPlanName) {
+            return getPlansMap(plans, allProductsSubscription.Currency, false)[allProductsPlanName];
+        }
+
+        if (subscription) {
+            return getPlansMap(plans, subscription.Currency, false)[planName];
+        }
+
+        return freePlan;
+    })();
 
     const sectionSubtitleCopy = () => {
         const planTitlePlusMaybeBrand = planName === PLANS.FREE ? `${BRAND_NAME} ${planTitle}` : planTitle;
@@ -72,17 +85,17 @@ const AlsoInYourPlanSection = ({
             return subtitle;
         }
 
-        if (getHasPlusPlan(planName) && !hasVPN2024(subscription)) {
+        if (planNames.every(getHasPlusPlan) && !planNames.includes(PLANS.VPN2024)) {
             return c('Dashboard')
                 .t`With ${planTitlePlusMaybeBrand}, you get free access to ${VPN_APP_NAME} and other privacy services.`;
         }
 
-        if (hasFreeOrPlus(subscription)) {
+        if (allSubscriptions.every(hasFreeOrPlus)) {
             return c('Dashboard')
                 .t`With ${planTitlePlusMaybeBrand}, you get free access to all ${BRAND_NAME} privacy services.`;
         }
 
-        if (hasAllProductsB2CPlan(subscription)) {
+        if (allProductsSubscription) {
             // Translator: Examples: "Get more from your Visionary subscription", "Get more from your Duo subscription"
             return c('Dashboard').t`Get more from your ${planTitle} subscription.`;
         }
@@ -94,7 +107,7 @@ const AlsoInYourPlanSection = ({
                 app,
                 freePlan,
                 plan,
-                isBundlePlan: hasAllProductsB2CPlan(subscription),
+                isBundlePlan: !!allProductsSubscription,
             }}
         >
             <DashboardGrid columns={Children.count(children)}>
