@@ -198,7 +198,6 @@ const PlansSectionInner = ({ app }: Props) => {
                 cycle={cycle}
                 onChangeCycle={setCycle}
                 planIDs={currentPlanIDs}
-                hasFreePlan={false}
                 hasPlanSelectionComparison={false}
                 subscription={subscription}
                 onChangePlanIDs={handlePlanChange}

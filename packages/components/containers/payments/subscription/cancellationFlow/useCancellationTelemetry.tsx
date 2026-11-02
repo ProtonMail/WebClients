@@ -44,7 +44,7 @@ const useCancellationTelemetry = () => {
         });
     };
 
-    const sendStartCancellationReport = (source: 'cancellation_section' | 'cancellation_pricing') => {
+    const sendStartCancellationReport = (source: 'cancellation_section') => {
         sendReport(TelemetryAccountCancellationEvents.startCancellation, {
             cancellation_start: source,
         });
@@ -88,7 +88,6 @@ const useCancellationTelemetry = () => {
 
     return {
         sendStartCancellationSectionReport: () => sendStartCancellationReport('cancellation_section'),
-        sendStartCancellationPricingReport: () => sendStartCancellationReport('cancellation_pricing'),
         sendCancelPageKeepPlanReport: () => sendCancelPageReport('keep_plan'),
         sendCancelPageConfirmCancelReport: () => sendCancelPageReport('confirm_cancel'),
         sendCancelModalKeepPlanReport: () => sendCancelModalReport('keep_plan'),

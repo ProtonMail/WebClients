@@ -20,7 +20,6 @@ import type {
 import { getPlanFeatureLimit } from '@proton/payments/core/plan/feature-limits';
 import { switchPlan } from '@proton/payments/core/planIDs';
 import { getIpPricePerMonth } from '@proton/payments/core/price-helpers';
-import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getAutoCoupon,
     getBundleProPlanToUse,
@@ -52,7 +51,6 @@ import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { getIsB2BAudienceFromPlan, isPlan } from '@proton/shared/lib/payments/plan/helpers';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
-import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { isFree } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -79,8 +77,6 @@ import { getShortPlan } from '../features/plan';
 import { getForcedFeatureLimitations } from '../planCustomizer/forced-addon-limits';
 import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
 import PlanSelectionPlanCard, { type HocPrice } from './PlanSelectionPlanCard';
-import useCancellationFlow from './cancellationFlow/useCancellationFlow';
-import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
 import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
 import { getAllowedCycles } from './helpers/getAllowedCycles';
 
@@ -104,7 +100,6 @@ interface Props {
     planIDs: PlanIDs;
     currency: Currency;
     hasPlanSelectionComparison?: boolean;
-    hasFreePlan?: boolean;
     cycle: Cycle;
     minimumCycle?: Cycle;
     maximumCycle?: Cycle;
@@ -166,10 +161,6 @@ const PlanRequiresDedicatedServerNote = ({
     );
 };
 
-function excludingTheOnlyFreePlan(plan: Plan | ShortPlanLike, _: number, allPlans: (Plan | ShortPlanLike)[]): boolean {
-    return !(plan === FREE_PLAN && allPlans.length === 1);
-}
-
 /**
  * There might be cases when all the possible cycles are forbidden for a plan.
  * This can happen if there is a subscription with a selected plan managed externally, by Google or Apple.
@@ -205,19 +196,10 @@ export type AccessiblePlansHookProps = {
     user: UserModel;
 } & Pick<
     Props,
-    | 'app'
-    | 'selectedProductPlans'
-    | 'subscription'
-    | 'planIDs'
-    | 'hasFreePlan'
-    | 'paymentStatus'
-    | 'plans'
-    | 'currency'
-    | 'audience'
+    'app' | 'selectedProductPlans' | 'subscription' | 'planIDs' | 'paymentStatus' | 'plans' | 'currency' | 'audience'
 >;
 
 export function useAccessiblePlans({
-    hasFreePlan,
     selectedProductPlans,
     subscription,
     planIDs,
@@ -258,15 +240,12 @@ export function useAccessiblePlans({
     function filterPlans(plans: (Plan | null | undefined)[]): Plan[];
     function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[];
     function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[] {
-        return plans
-            .filter(isTruthy)
-            .filter(excludingTheOnlyFreePlan)
-            .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap));
+        return plans.filter(isTruthy).filter(excludingPlansWithAllChecksFordidden(subscription, plansMap));
     }
 
     let IndividualPlans: (Plan | ShortPlanLike)[] = [];
 
-    const walletIndividualPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.VISIONARY]]);
+    const walletIndividualPlans = filterPlans([plansMap[PLANS.VISIONARY]]);
     const isWalletIndividualPlans = isWalletSettingsApp && walletIndividualPlans.length !== 0;
 
     if (isGenericSettingsApp) {
@@ -278,10 +257,7 @@ export function useAccessiblePlans({
     } else if (isWalletIndividualPlans) {
         IndividualPlans = walletIndividualPlans;
     } else if (isMeetSettingsApp) {
-        IndividualPlans = filterPlans([
-            hasFreePlan ? FREE_PLAN : null,
-            hasMeetBusiness(subscription) ? null : plansMap[PLANS.MEET],
-        ]);
+        IndividualPlans = filterPlans([hasMeetBusiness(subscription) ? null : plansMap[PLANS.MEET]]);
     } else {
         const plusPlan =
             enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
@@ -292,7 +268,6 @@ export function useAccessiblePlans({
         const showPlusPlan = plusPlan?.Name !== PLANS.LUMO || canChangeToLumoPlus;
 
         IndividualPlans = filterPlans([
-            hasFreePlan ? FREE_PLAN : null,
             showPlusPlan ? plusPlan : null,
             plansMap[PLANS.BUNDLE],
             canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
@@ -307,7 +282,6 @@ export function useAccessiblePlans({
     let FamilyPlans: Plan[] = [];
     if (getCanAccessFamilyPlans(subscription) && !isMeetSettingsApp && !isGenericSettingsApp) {
         FamilyPlans = filterPlans([
-            hasFreePlan ? FREE_PLAN : null,
             canAccessDuoPlan && !canAccessPassFamilyPlan ? plansMap[PLANS.DUO] : null,
             canAccessPassFamilyPlan ? plansMap[PLANS.PASS_FAMILY] : null,
             plansMap[PLANS.FAMILY],
@@ -554,8 +528,6 @@ const PlanSelection = (props: Props) => {
     // to always true.
     const renderCycleSelector = isFreeSubscription || trial || isPassSettingsApp;
 
-    const { b2bAccess, b2cAccess, redirectToCancellationFlow } = useCancellationFlow();
-    const { sendStartCancellationPricingReport } = useCancellationTelemetry();
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
 
     const maximumCycle: Cycle | undefined = getMaximumCycle(maybeMaximumCycle, audience, app, currency);
@@ -624,8 +596,7 @@ const PlanSelection = (props: Props) => {
     };
 
     const renderPlanCard = (plan: Plan, audience: Audience, recommendedPlans: PLANS[], plansInAudience: Plan[]) => {
-        const isFree = plan.ID === PLANS.FREE;
-        const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
+        const isCurrentPlan = currentPlan?.ID === plan.ID;
         const isRecommended = !hasRecommended.has(audience) && recommendedPlans.includes(plan.Name as PLANS);
         // Only find one recommended plan, in order of priority
         if (isRecommended) {
@@ -649,9 +620,6 @@ const PlanSelection = (props: Props) => {
 
         const action = (() => {
             if (isCurrentPlan && !trial) {
-                if (isFree) {
-                    return c('Action').t`Current plan`;
-                }
                 return c('Action').t`Edit subscription`;
             }
 
@@ -738,26 +706,15 @@ const PlanSelection = (props: Props) => {
                     )
                 }
                 recommended={isRecommended}
-                disabled={
-                    loading ||
-                    (isFree && !isSignupMode && isCurrentPlan) ||
-                    (plan.ID === PLANS.FREE && !isFreeSubscription && subscription?.Renew === Renew.Disabled)
-                }
+                disabled={loading}
                 key={plan.ID}
                 getPrice={getPrice}
                 features={featuresElement}
                 onSelect={(planName) => {
-                    // Mail plus users selecting free plan are redirected to the cancellation reminder flow
-                    if (planName === PLANS.FREE && (b2bAccess || b2cAccess)) {
-                        sendStartCancellationPricingReport();
-                        redirectToCancellationFlow();
-                        return;
-                    }
-
                     onChangePlanIDs(
                         switchPlan({
                             subscription,
-                            newPlan: isFree ? undefined : planName,
+                            newPlan: planName,
                             organization,
                             plans,
                         }),
