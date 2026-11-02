@@ -594,6 +594,8 @@ overrides:
   minimatch@^9.0.3: 9.0.9
   minimatch@^9.0.4: 9.0.9
   multiparty@4.2.3: 4.3.0
+  macos-alias@~0.2.5: 0.2.12
+  macos-alias>nan: 2.30.0
   nanoid@^5.0.4: 5.1.16
   nanoid@^5.1.2: 5.1.16
   node-forge@^1: 1.4.0
@@ -25015,8 +25017,8 @@ packages:
     resolution: {integrity: sha512-0Xkgs8NeBvO2hW6bjJT8ewLWrMfh1haMPstaghpASWjXkLjRhtDiaJG1Kb7mslaOHxZYxpH7PIjpmirRVYbMMA==}
     engines: {node: '>=22.22'}
 
-  macos-alias@0.2.11:
-    resolution: {integrity: sha512-zIUs3+qpml+w3wiRuADutd7XIO8UABqksot10Utl/tji4UxZzLG4fWDC+yJZoO8/Ehg5RqsvSRE/6TS5AEOeWw==}
+  macos-alias@0.2.12:
+    resolution: {integrity: sha512-yiLHa7cfJcGRFq4FrR4tMlpNHb4Vy4mWnpajlSSIFM5k4Lv8/7BbbDLzCAVogWNl0LlLhizRp1drXv0hK9h0Yw==}
     os: [darwin]
 
   macos-release@3.5.1:
@@ -25611,6 +25613,9 @@ packages:
 
   nan@2.22.0:
     resolution: {integrity: sha512-nbajikzWTMwsW+eSsNm3QwlOs7het9gGJU5dDZzRTQGk03vyBOauxgI4VakDzE0PtsGTmXPsXTbbjVhRwR5mpw==}
+
+  nan@2.30.0:
+    resolution: {integrity: sha512-P5mokDkSvCGBz6mZDD/2l+w9QoICRXdCyZ9ONGmTePr40oihJg3Kpn0YU3twKd6PJnwSlLBWNQeOT6yWEV2c4A==}
 
   nanoclone@0.2.1:
     resolution: {integrity: sha512-wynEP02LmIbLpcYw8uBKpcfF6dmg2vcpKqxeH5UcoKEYdExslsdUA4ugFauuaeYdTB76ez6gJW8XAZ6CgkXYxA==}
@@ -41828,7 +41833,7 @@ snapshots:
   ds-store@0.1.6:
     dependencies:
       bplist-creator: 0.0.8
-      macos-alias: 0.2.11
+      macos-alias: 0.2.12
       tn1150: 0.1.0
     optional: true
 
@@ -46244,9 +46249,9 @@ snapshots:
 
   machina@7.0.1: {}
 
-  macos-alias@0.2.11:
+  macos-alias@0.2.12:
     dependencies:
-      nan: 2.22.0
+      nan: 2.30.0
     optional: true
 
   macos-release@3.5.1: {}
@@ -47107,6 +47112,9 @@ snapshots:
       thenify-all: 1.6.0
 
   nan@2.22.0:
+    optional: true
+
+  nan@2.30.0:
     optional: true
 
   nanoclone@0.2.1: {}
