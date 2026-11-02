@@ -56,6 +56,41 @@ export const formatApiCurrency = (value: number, currency: Currency) =>
 export const toCurrencyBaseUnits = (amount: number, currency: Currency) =>
     amount * getCurrencyFormattingConfig(currency).divisor;
 
+export const getBalanceEstimate = (balance: number, averageDailySpend: number) => {
+    if (averageDailySpend <= 0) {
+        return c('collider_2025: Info').t`Usage estimate unavailable`;
+    }
+    const estimatedDays = Math.floor(balance / averageDailySpend);
+    if (estimatedDays === 0) {
+        return c('collider_2025: Info').t`Less than one day left at current usage`;
+    }
+    return c('collider_2025: Info').t`About ${estimatedDays} days left at current usage`;
+};
+
+export const getSpendingLimitSummary = (
+    usage: number,
+    spendingLimit: { enabled: boolean; limit: number },
+    currency: Currency
+) => {
+    if (!spendingLimit.enabled) {
+        return { isOverLimit: false, text: c('collider_2025: Info').t`No monthly spending limit` };
+    }
+    if (usage >= spendingLimit.limit) {
+        return {
+            isOverLimit: true,
+            text: c('collider_2025: Info').t`Monthly spending limit reached. API requests are paused until next month.`,
+        };
+    }
+    const formattedSpend = formatApiCurrency(usage, currency);
+    const formattedLimit = formatApiCurrency(spendingLimit.limit, currency);
+    const limitUsagePercent = spendingLimit.limit > 0 ? Math.round((usage / spendingLimit.limit) * 100) : 0;
+    return {
+        isOverLimit: false,
+        text: c('collider_2025: Info')
+            .t`Monthly spending limit: ${formattedSpend} of ${formattedLimit} used (${limitUsagePercent}%)`,
+    };
+};
+
 /** Parses a user-entered amount; returns null for empty, non-numeric, or negative input. */
 export const parseApiAmount = (value: string): number | null => {
     if (value.trim() === '') {

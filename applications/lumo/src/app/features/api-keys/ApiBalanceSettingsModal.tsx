@@ -11,8 +11,29 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import type { Currency } from '@proton/payments/core/interface';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import unique from '@proton/utils/unique';
 
 import { formatApiCurrency, parseApiAmount } from './apiKeysHelpers';
+import type { ApiBalanceSettingsFailure } from './useLumoCredits';
+
+const MIN_AUTO_TOP_UP_AMOUNT = 25;
+const MAX_AUTO_TOP_UP_AMOUNT = 100;
+const OUT_OF_RANGE_CODE = 2001;
+const NOT_PRIMARY_ADMIN_CODE = 2011;
+const MISSING_SCOPE_CODE = 9100;
+
+const getAmountRangeMessage = (currency: Currency) => {
+    const formattedMinAmount = formatApiCurrency(MIN_AUTO_TOP_UP_AMOUNT, currency);
+    const formattedMaxAmount = formatApiCurrency(MAX_AUTO_TOP_UP_AMOUNT, currency);
+    return c('collider_2025: Error').t`Top-up amount must be between ${formattedMinAmount} and ${formattedMaxAmount}`;
+};
+
+const isSectionChanged = <Section extends { enabled: boolean }>(
+    opened: Section,
+    edited: Section,
+    valueKey: keyof Section
+) => opened.enabled !== edited.enabled || (edited.enabled && opened[valueKey] !== edited[valueKey]);
 
 interface ApiAutoTopUpSettings {
     enabled: boolean;
@@ -77,14 +98,16 @@ const AmountField = ({
     value,
     onValue,
     currency,
-    invalid,
+    invalid = false,
+    readOnly = false,
 }: {
     id: string;
     label: string;
     value: string;
-    onValue: (value: string) => void;
+    onValue?: (value: string) => void;
     currency: Currency;
-    invalid: boolean;
+    invalid?: boolean;
+    readOnly?: boolean;
 }) => (
     <div className="api-usage-settings-field">
         <label htmlFor={id}>{label}</label>
@@ -95,93 +118,140 @@ const AmountField = ({
             step="1"
             value={value}
             onValue={onValue}
+            readOnly={readOnly}
             prefix={<span className="color-weak text-sm">{currency}</span>}
             error={invalid}
         />
     </div>
 );
 
+const getSaveErrorMessage = ({ section, error }: ApiBalanceSettingsFailure, currency: Currency) => {
+    const { status, code } = getApiError(error);
+    if (code === NOT_PRIMARY_ADMIN_CODE || (status === 403 && code === MISSING_SCOPE_CODE)) {
+        return c('collider_2025: Error').t`Only the organization's primary admin can change these settings.`;
+    }
+    if (section === 'autoTopUp' && code === OUT_OF_RANGE_CODE) {
+        return getAmountRangeMessage(currency);
+    }
+    return section === 'autoTopUp'
+        ? c('collider_2025: Error').t`Automatic top-up could not be saved. Please try again.`
+        : c('collider_2025: Error').t`Monthly spending limit could not be saved. Please try again.`;
+};
+
 interface Props extends ModalStateProps {
     settings: ApiBalanceSettings;
     currency: Currency;
     monthlySpend: number;
-    onSave: (settings: ApiBalanceSettings) => void;
+    showAutoTopUp: boolean;
+    canChargeAutoTopUp: boolean;
+    onSave: (changes: Partial<ApiBalanceSettings>) => Promise<ApiBalanceSettingsFailure[]>;
 }
 
-export const ApiBalanceSettingsModal = ({ settings, currency, monthlySpend, onSave, ...modalProps }: Props) => {
-    const [autoTopUpEnabled, setAutoTopUpEnabled] = useState(settings.autoTopUp.enabled);
-    const [amount, setAmount] = useState(String(settings.autoTopUp.amount));
-    const [threshold, setThreshold] = useState(String(settings.autoTopUp.threshold));
-    const [limitEnabled, setLimitEnabled] = useState(settings.spendingLimit.enabled);
-    const [limit, setLimit] = useState(String(settings.spendingLimit.limit));
+export const ApiBalanceSettingsModal = ({
+    settings,
+    currency,
+    monthlySpend,
+    showAutoTopUp,
+    canChargeAutoTopUp,
+    onSave,
+    ...modalProps
+}: Props) => {
+    const [openedSettings] = useState(settings);
+    const [autoTopUpEnabled, setAutoTopUpEnabled] = useState(openedSettings.autoTopUp.enabled);
+    const [amount, setAmount] = useState(String(openedSettings.autoTopUp.amount));
+    const [limitEnabled, setLimitEnabled] = useState(openedSettings.spendingLimit.enabled);
+    const [limit, setLimit] = useState(String(openedSettings.spendingLimit.limit));
+    const [saving, setSaving] = useState(false);
+    const [failures, setFailures] = useState<ApiBalanceSettingsFailure[]>([]);
 
+    const { threshold } = openedSettings.autoTopUp;
     const parsedAmount = parseApiAmount(amount);
-    const parsedThreshold = parseApiAmount(threshold);
     const parsedLimit = parseApiAmount(limit);
-    const isAmountValid = parsedAmount !== null && parsedAmount > 0;
-    const isThresholdValid = parsedThreshold !== null;
+    const isAmountValid =
+        parsedAmount !== null &&
+        Number.isInteger(parsedAmount) &&
+        parsedAmount >= MIN_AUTO_TOP_UP_AMOUNT &&
+        parsedAmount <= MAX_AUTO_TOP_UP_AMOUNT;
     const isLimitValid = parsedLimit !== null && parsedLimit > 0;
-    const isAutoTopUpValid = !autoTopUpEnabled || (isAmountValid && isThresholdValid);
+    const isAutoTopUpValid = !autoTopUpEnabled || isAmountValid;
     const isLimitSettingValid = !limitEnabled || isLimitValid;
     const isValid = isAutoTopUpValid && isLimitSettingValid;
 
     const formattedSpend = formatApiCurrency(monthlySpend, currency);
     const formattedLimit = isLimitValid ? formatApiCurrency(parsedLimit, currency) : '';
 
-    const handleSave = () => {
+    const handleSave = async () => {
         if (!isValid) {
             return;
         }
-        onSave({
-            autoTopUp: {
-                enabled: autoTopUpEnabled,
-                amount: isAmountValid ? parsedAmount : settings.autoTopUp.amount,
-                threshold: isThresholdValid ? parsedThreshold : settings.autoTopUp.threshold,
-            },
-            spendingLimit: {
-                enabled: limitEnabled,
-                limit: isLimitValid ? parsedLimit : settings.spendingLimit.limit,
-            },
+        const autoTopUp = {
+            enabled: autoTopUpEnabled,
+            amount: isAmountValid ? parsedAmount : openedSettings.autoTopUp.amount,
+            threshold,
+        };
+        const spendingLimit = {
+            enabled: limitEnabled,
+            limit: isLimitValid ? parsedLimit : openedSettings.spendingLimit.limit,
+        };
+        setSaving(true);
+        const failed = await onSave({
+            ...(isSectionChanged(openedSettings.autoTopUp, autoTopUp, 'amount') && { autoTopUp }),
+            ...(isSectionChanged(openedSettings.spendingLimit, spendingLimit, 'limit') && { spendingLimit }),
         });
-        modalProps.onClose?.();
+        setSaving(false);
+        setFailures(failed);
+        if (failed.length === 0) {
+            modalProps.onClose?.();
+        }
     };
 
     return (
         <ModalTwo {...modalProps} size="medium">
             <ModalTwoHeader title={c('collider_2025: Title').t`Balance settings`} />
             <ModalTwoContent>
-                <SettingSection
-                    id="api-auto-top-up-enabled"
-                    checked={autoTopUpEnabled}
-                    onChange={setAutoTopUpEnabled}
-                    title={c('collider_2025: Label').t`Automatic top-up`}
-                    description={c('collider_2025: Info')
-                        .t`Top up from your default payment method when your balance runs low.`}
-                >
-                    <AmountField
-                        id="api-auto-top-up-threshold"
-                        label={c('collider_2025: Label').t`When balance falls below`}
-                        value={threshold}
-                        onValue={setThreshold}
-                        currency={currency}
-                        invalid={!isThresholdValid}
-                    />
-                    <AmountField
-                        id="api-auto-top-up-amount"
-                        label={c('collider_2025: Label').t`Top up by`}
-                        value={amount}
-                        onValue={setAmount}
-                        currency={currency}
-                        invalid={!isAmountValid}
-                    />
-                    {isAmountValid && isThresholdValid && (
-                        <p className="api-usage-settings-summary m-0 text-sm">
-                            {getAutoTopUpSummary({ amount: parsedAmount, threshold: parsedThreshold }, currency)}
-                        </p>
-                    )}
-                </SettingSection>
+                {showAutoTopUp && (
+                    <>
+                        <SettingSection
+                            id="api-auto-top-up-enabled"
+                            checked={autoTopUpEnabled}
+                            onChange={setAutoTopUpEnabled}
+                            title={c('collider_2025: Label').t`Automatic top-up`}
+                            description={c('collider_2025: Info')
+                                .t`Top up from your default payment method when your balance runs low.`}
+                        >
+                            <AmountField
+                                id="api-auto-top-up-threshold"
+                                label={c('collider_2025: Label').t`When balance falls below`}
+                                value={String(threshold)}
+                                currency={currency}
+                                readOnly
+                            />
+                            <AmountField
+                                id="api-auto-top-up-amount"
+                                label={c('collider_2025: Label').t`Top up by`}
+                                value={amount}
+                                onValue={setAmount}
+                                currency={currency}
+                                invalid={!isAmountValid}
+                            />
+                            {isAmountValid ? (
+                                <p className="api-usage-settings-summary m-0 text-sm">
+                                    {getAutoTopUpSummary({ amount: parsedAmount, threshold }, currency)}
+                                </p>
+                            ) : (
+                                <p className="m-0 text-sm color-danger">{getAmountRangeMessage(currency)}</p>
+                            )}
+                            {!canChargeAutoTopUp && (
+                                <p className="m-0 text-sm color-warning">
+                                    {c('collider_2025: Warning')
+                                        .t`Automatic top-up needs a card or PayPal set as default payment method with automatic payments on.`}
+                                </p>
+                            )}
+                        </SettingSection>
 
-                <hr className="my-6" />
+                        <hr className="my-6" />
+                    </>
+                )}
 
                 <SettingSection
                     id="api-spending-limit-enabled"
@@ -204,12 +274,17 @@ export const ApiBalanceSettingsModal = ({ settings, currency, monthlySpend, onSa
                         </p>
                     )}
                 </SettingSection>
+                {unique(failures.map((failure) => getSaveErrorMessage(failure, currency))).map((message) => (
+                    <p key={message} className="m-0 mt-4 text-sm color-danger">
+                        {message}
+                    </p>
+                ))}
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button color="weak" onClick={modalProps.onClose}>
                     {c('collider_2025: Action').t`Cancel`}
                 </Button>
-                <Button color="norm" disabled={!isValid} onClick={handleSave}>
+                <Button color="norm" disabled={!isValid} loading={saving} onClick={handleSave}>
                     {c('collider_2025: Action').t`Save settings`}
                 </Button>
             </ModalTwoFooter>

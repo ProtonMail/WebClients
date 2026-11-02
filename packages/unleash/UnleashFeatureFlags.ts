@@ -245,6 +245,7 @@ enum LumoFeatureFlag {
     LumoAiPaperTrail = 'LumoAiPaperTrail',
     LumoAiPaperTrailPopup = 'LumoAiPaperTrailPopup',
     LumoAiPaperTrailRoute = 'LumoAiPaperTrailRoute',
+    LumoAllowAutomaticCreditTopUps = 'LumoAllowAutomaticCreditTopUps',
     LumoAllowPurchasingCredits = 'LumoAllowPurchasingCredits',
     LumoApertusModel = 'LumoApertusModel',
     LumoAPIKeyManagement = 'LumoAPIKeyManagement',
