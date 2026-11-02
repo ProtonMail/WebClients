@@ -22,3 +22,8 @@ export const LOAD_RETRY_DELAY = 3000; // in ms => 3s
  * This can be applied to snoozed message and schedule send
  */
 export const FUTURE_MESSAGES_BUFFER = 120;
+
+export enum SAVE_DRAFT_ERROR_CODES {
+    MESSAGE_ALREADY_SENT = 15034,
+    DRAFT_DOES_NOT_EXIST = 15033,
+}

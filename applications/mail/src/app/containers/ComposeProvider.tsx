@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext } from 'react';
 
+import { mailtoParser } from '@proton/mail-composer/helpers/mailto';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 
-import { mailtoParser } from '../helpers/url';
 import type { OnCompose } from '../hooks/composer/useCompose';
 import { ComposeTypes } from '../hooks/composer/useCompose';
 

@@ -13,19 +13,11 @@ export const ROUTE_ELEMENT = '/:labelID?/:elementID?';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 export const EXPIRATION_CHECK_FREQUENCY = 10000; // each 10 seconds
-export const MAX_EXPIRATION_TIME = 672; // hours
-export const DEFAULT_EO_EXPIRATION_DAYS = 28;
 export const DEFAULT_PLACEHOLDERS_COUNT = DEFAULT_MAIL_PAGE_SIZE;
 export const LOAD_RETRY_COUNT = 3;
 export const PREVENT_CANCEL_SEND_INTERVAL = 30000; // Prevent form cancelling a message about to be sent 30s before
 
-export const ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT = 'advancedsearchclose';
-
-export const SCHEDULED_MESSAGES_LIMIT = 1000;
-export const SCHEDULED_MAX_DATE_DAYS = 90;
 export const EXPIRATION_TIME_MAX_DAYS = 730; // 2 years
-
-export const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
 export const MAIL_ACTION_DEFAULT_CHUNK_SIZE = 10;
 
@@ -34,15 +26,6 @@ export const MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM = `mailto`;
 export const MAILTO_PROTOCOL_HANDLER_PATH = `/${
     LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]
 }/#${MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM}=%s`;
-
-export enum SAVE_DRAFT_ERROR_CODES {
-    MESSAGE_ALREADY_SENT = 15034,
-    DRAFT_DOES_NOT_EXIST = 15033,
-}
-
-export enum SEND_EMAIL_ERROR_CODES {
-    MESSAGE_ALREADY_SENT = 2500,
-}
 
 export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
 
@@ -97,5 +80,3 @@ export const EO_PASSWORD_KEY = 'proton:eo_password';
 
 export const MAX_ROW_ATTACHMENT_THUMBNAILS = 3;
 export const MAX_COLUMN_ATTACHMENT_THUMBNAILS = 2;
-
-export const NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY = 'no-reply-email-dont-show-again';

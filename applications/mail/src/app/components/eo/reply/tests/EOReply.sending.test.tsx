@@ -8,8 +8,8 @@ jest.setTimeout(20000);
 
 // The "Message sent" notification is kept for at least 2.5s, which the test would otherwise wait out.
 // Fake timers are not an option here: the EO message is decrypted with real crypto while rendering.
-jest.mock('../../../../constants', () => ({
-    ...jest.requireActual('../../../../constants'),
+jest.mock('@proton/mail-composer/constants', () => ({
+    ...jest.requireActual('@proton/mail-composer/constants'),
     MIN_DELAY_SENT_NOTIFICATION: 0,
 }));
 

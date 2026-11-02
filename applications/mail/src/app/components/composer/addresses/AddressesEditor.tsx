@@ -10,12 +10,12 @@ import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import type { MessageSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
+import { useComposerDispatch, useComposerSelector } from '@proton/mail-composer/store/hooks';
 import type { RecipientType } from '@proton/mail-message/models/address';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 import AddressesCCButton from './AddressesCCButton';
 import AddressesInput from './AddressesInput';
 
@@ -43,9 +43,9 @@ const AddressesEditor = ({
     toggleExpanded,
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
-    const composer = useMailSelector((store) => selectComposer(store, composerID));
+    const composer = useComposerSelector((store) => selectComposer(store, composerID));
     const expanded = ccExpanded || bccExpanded;
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
 
     const toListAnchorRef = useRef<HTMLDivElement>(null);
     const ccListAnchorRef = useRef<HTMLDivElement>(null);

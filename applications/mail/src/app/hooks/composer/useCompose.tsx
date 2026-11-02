@@ -21,6 +21,7 @@ import { useDraft } from '@proton/mail-composer/hooks/useDraft';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
+import { useComposerDispatch, useComposerStore } from '@proton/mail-composer/store/hooks';
 import type { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { isDirtyAddress } from '@proton/mail-message/helpers/addresses';
 import { useGetLocalID, useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
@@ -36,7 +37,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
-import { useMailDispatch, useMailStore } from '../../store/hooks';
 
 export enum ComposeTypes {
     existingDraft = 0,
@@ -91,11 +91,11 @@ export const useCompose = ({
 }: UseComposeProps) => {
     // Avoid useUser for performance issues
     const getUser = useGetUser();
-    const store = useMailStore();
+    const store = useComposerStore();
     const getSubscription = useGetSubscription();
     const getAddresses = useGetAddresses();
     const { createNotification } = useNotifications();
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
     const { createDraft, sendingFromDefaultAddressModal } = useDraft();
     const goToSettings = useSettingsLink();
     const api = useApi();

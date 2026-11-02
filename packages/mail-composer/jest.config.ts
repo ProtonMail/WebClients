@@ -7,6 +7,7 @@ const jestConfig: Config = {
     testTimeout: 10000,
     preset: '@proton/jest-swc-preset',
     transformIgnorePatterns: getTransformIgnorePatterns(),
+    resolver: './jest.resolver.js',
     setupFilesAfterEnv: ['./jest.setup.ts'],
     testEnvironment: 'jsdom',
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],

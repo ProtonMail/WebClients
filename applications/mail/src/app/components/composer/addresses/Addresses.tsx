@@ -8,10 +8,10 @@ import useToggle from '@proton/hooks/useToggle';
 import type { MessageSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
+import { useComposerDispatch, useComposerSelector } from '@proton/mail-composer/store/hooks';
 import type { RecipientType } from '@proton/mail-message/models/address';
 import noop from '@proton/utils/noop';
 
-import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 
@@ -27,8 +27,8 @@ const Addresses = ({ messageSendInfo, disabled, addressesBlurRef, addressesFocus
     const toFocusRef = useRef<() => void>(noop);
     const ccFocusRef = useRef<() => void>(noop);
     const bccFocusRef = useRef<() => void>(noop);
-    const composer = useMailSelector((store) => selectComposer(store, composerID));
-    const dispatch = useMailDispatch();
+    const composer = useComposerSelector((store) => selectComposer(store, composerID));
+    const dispatch = useComposerDispatch();
 
     const inputFocusRefs = {
         to: toFocusRef,

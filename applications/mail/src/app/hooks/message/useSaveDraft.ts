@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { SAVE_DRAFT_ERROR_CODES } from '@proton/mail-message/constants';
 import { isDecryptionError, isNetworkError, pickMessageInfosForSentry } from '@proton/mail-message/helpers/errors';
 import { createMessage, updateMessage } from '@proton/mail-message/helpers/message/messageExport';
 import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
@@ -17,7 +18,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
 import { deleteConversation } from '../../store/conversations/conversationsActions';
 import { useMailDispatch } from '../../store/hooks';
 import { useGetConversation } from '../conversation/useConversation';

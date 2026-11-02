@@ -10,6 +10,7 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentListTypes';
 import type { AddAttachmentsParams, PendingUpload } from '@proton/mail-composer/attachments/uploadTypes';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
+import type { ComposerStoreState } from '@proton/mail-composer/store/hooks';
 import type { MessageState, MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
@@ -17,7 +18,6 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import type { MailState } from '../../store/store';
 import type { MessageChange } from './Composer';
 import type { ExternalEditorActions } from './editor/EditorWrapper';
 import EditorWrapper from './editor/EditorWrapper';
@@ -42,7 +42,7 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     toolbarWrapperRef?: RefObject<HTMLDivElement>;
     onExpandBlockquotes?: () => void;
     onUploadAttachments?: (data: AddAttachmentsParams) => void;
-    getStoreState?: () => MailState;
+    getStoreState?: () => ComposerStoreState;
     // Kill switch to prevent the re-upload of inline images on undo
     isInlineImageReuploadDisabled: boolean;
 }

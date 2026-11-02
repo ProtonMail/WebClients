@@ -7920,12 +7920,21 @@ importers:
       '@proton/react-redux-store':
         specifier: workspace:^
         version: link:../react-redux-store
+      '@proton/redux-shared-store-types':
+        specifier: workspace:^
+        version: link:../redux-shared-store-types
+      '@proton/sanitize':
+        specifier: workspace:^
+        version: link:../sanitize
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
+      '@proton/telemetry-tracker':
+        specifier: workspace:^
+        version: link:../telemetry-tracker
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
@@ -7966,6 +7975,9 @@ importers:
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
+      '@testing-library/react':
+        specifier: ^15.0.7
+        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0

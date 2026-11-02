@@ -5,6 +5,7 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
+import { useComposerSelector } from '@proton/mail-composer/store/hooks';
 import { getAddressFromEmail } from '@proton/mail-message/helpers/addresses';
 import { changeSignature } from '@proton/mail-message/helpers/message/messageSignature';
 import type { RecipientType } from '@proton/mail-message/models/address';
@@ -14,7 +15,6 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { defaultFontStyle } from '@proton/shared/lib/mail/fontFace';
 
 import type { MessageChange } from '../../components/composer/Composer';
-import { useMailSelector } from '../../store/hooks';
 
 interface Props {
     composerID?: ComposerID;
@@ -28,7 +28,7 @@ const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeCon
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
     const [addresses = []] = useAddresses();
-    const composer = useMailSelector((state) => selectComposer(state, composerID || ''));
+    const composer = useComposerSelector((state) => selectComposer(state, composerID || ''));
 
     useEffect(() => {
         if (!composer || composer.changesCount === 0) {

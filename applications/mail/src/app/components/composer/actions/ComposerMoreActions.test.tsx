@@ -3,13 +3,16 @@ import { fireEvent, screen } from '@testing-library/react';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { BookingsLimitReached } from '@proton/components/containers/calendar/BookingsLimitReached';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import {
+    BookingUpsellSource,
+    useComposerBookingsTracking,
+} from '@proton/mail-composer/telemetry/composerBookingsEvents';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { mailTestRender } from '../../../helpers/tests/render';
-import { BookingUpsellSource, useComposerBookingsTracking } from '../../../telemetry/composerBookingsEvents';
 import ComposerMoreActions from './ComposerMoreActions';
 
 const mockGetInternalBooking = jest.fn();
@@ -17,8 +20,8 @@ jest.mock('@proton/calendar/bookings/store/hooks', () => ({
     useGetInternalBooking: () => mockGetInternalBooking,
 }));
 jest.mock('@proton/unleash/useFlag');
-jest.mock('../../../telemetry/composerBookingsEvents', () => ({
-    ...jest.requireActual('../../../telemetry/composerBookingsEvents'),
+jest.mock('@proton/mail-composer/telemetry/composerBookingsEvents', () => ({
+    ...jest.requireActual('@proton/mail-composer/telemetry/composerBookingsEvents'),
     useComposerBookingsTracking: jest.fn(),
 }));
 jest.mock('@proton/components/hooks/useActiveBreakpoint');

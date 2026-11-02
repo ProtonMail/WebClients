@@ -3,6 +3,8 @@ import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
+import { DEFAULT_EO_EXPIRATION_DAYS } from '@proton/mail-composer/constants';
+import { useComposerDispatch } from '@proton/mail-composer/store/hooks';
 import { updateExpires } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -10,9 +12,7 @@ import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import { DEFAULT_EO_EXPIRATION_DAYS } from '../../../constants';
 import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
-import { useMailDispatch } from '../../../store/hooks';
 import type { MessageChange } from '../Composer';
 import ComposerInnerModal from './ComposerInnerModal';
 import PasswordInnerModalForm from './PasswordInnerModalForm';
@@ -47,7 +47,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
     const { password, setPassword, passwordHint, setPasswordHint, validator, onFormSubmit } =
         useExternalExpiration(message);
     const { createNotification } = useNotifications();
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
 
     const isEdition = message?.draftFlags?.expiresIn;
 

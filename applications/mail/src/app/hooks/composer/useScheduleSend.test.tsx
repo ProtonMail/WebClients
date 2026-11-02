@@ -25,8 +25,8 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: () => mockUseFlag(),
 }));
 
-jest.mock('proton-mail/store/hooks', () => ({
-    useMailDispatch: () => mockDispatch,
+jest.mock('@proton/mail-composer/store/hooks', () => ({
+    useComposerDispatch: () => mockDispatch,
 }));
 
 jest.mock('@proton/components/components/modalTwo/useModalState', () => ({

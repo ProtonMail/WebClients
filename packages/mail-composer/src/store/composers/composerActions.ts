@@ -17,7 +17,7 @@ type AddComposerActionPayload = Optional<
     'recipients'
 > & { ID?: string };
 
-interface AddComposerState {
+export interface AddComposerState {
     mailSettings: { value?: Pick<MailSettings, 'ComposerMode'> };
 }
 

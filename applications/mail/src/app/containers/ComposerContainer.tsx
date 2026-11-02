@@ -12,13 +12,13 @@ import {
     MAX_ACTIVE_COMPOSER_LARGE_SCREEN,
     MAX_ACTIVE_COMPOSER_SMALL_SCREEN,
 } from '@proton/mail-composer/helpers/composerPositioning';
+import { useClickMailContent } from '@proton/mail-composer/hooks/useClickMailContent';
 import { selectOpenedComposersIds } from '@proton/mail-composer/store/composers/composerSelectors';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
+import { useComposerDispatch, useComposerSelector } from '@proton/mail-composer/store/hooks';
 
 import ComposerFrame from '../components/composer/ComposerFrame';
 import { useCompose } from '../hooks/composer/useCompose';
-import { useClickMailContent } from '../hooks/useClickMailContent';
-import { useMailDispatch, useMailSelector } from '../store/hooks';
 import { ComposeProvider } from './ComposeProvider';
 
 import '../components/composer/composer.scss';
@@ -28,8 +28,8 @@ interface Props {
 }
 
 const ComposerContainer = ({ children }: Props) => {
-    const dispatch = useMailDispatch();
-    const composerIDs = useMailSelector(selectOpenedComposersIds);
+    const dispatch = useComposerDispatch();
+    const composerIDs = useComposerSelector(selectOpenedComposersIds);
     const [focusedComposerID, setFocusedComposerID] = useState<string>();
     const drawerOffset = useDrawerWidth();
     const returnFocusToElementRef = useRef<HTMLElement | null>(null);

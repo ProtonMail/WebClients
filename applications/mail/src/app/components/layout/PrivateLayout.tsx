@@ -7,6 +7,7 @@ import FeatureTour from '@proton/components/components/featureTour/FeatureTour';
 import SmartBanner from '@proton/components/components/smartBanner/SmartBanner';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
 import TopBanners from '@proton/components/containers/topBanners/TopBanners';
+import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '@proton/mail-composer/constants';
 import { selectHasFocusedComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import PassAliasesContainer from '@proton/pass/components/Drawer/PassAliases/PassAliasesContainer';
@@ -14,7 +15,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 
-import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { LumoFloatingPanelProvider } from '../../lumo/floating/LumoFloatingPanelProvider';

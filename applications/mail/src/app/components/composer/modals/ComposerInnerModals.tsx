@@ -6,12 +6,12 @@ import Alert from '@proton/components/components/alert/Alert';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import type { AddAttachmentsParams } from '@proton/mail-composer/attachments/uploadTypes';
+import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '@proton/mail-composer/constants';
 import { ComposerInnerModalStates } from '@proton/mail-composer/hooks/composer/useComposerInnerModals';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../../constants';
 import type { MessageChange } from '../Composer';
 import ComposerAssistantSettingModal from './ComposerAssistantSettingModal';
 import ComposerExpirationModal from './ComposerExpirationModal';

@@ -8,6 +8,8 @@ import { Href } from '@proton/atoms/Href/Href';
 import TimeInput from '@proton/components/components/input/TimeInput';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
+import { SCHEDULED_MAX_DATE_DAYS } from '@proton/mail-composer/constants';
+import { useComposerDispatch } from '@proton/mail-composer/store/hooks';
 import { getMinScheduleTime } from '@proton/mail-message/helpers/schedule';
 import useFutureTimeDate from '@proton/mail-message/hooks/message/useFutureTimeDate';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
@@ -16,8 +18,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';
 
-import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
-import { useMailDispatch } from '../../../store/hooks';
 import ComposerInnerModal from './ComposerInnerModal';
 import { getChooseDateText } from './helper';
 
@@ -28,7 +28,7 @@ interface Props {
 }
 
 const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
     const [userSettings] = useUserSettings();
 
     const [uid] = useState(generateUID('schedule-send-modal'));

@@ -20,11 +20,13 @@ import {
     setMessageContentBeforeBlockquote,
 } from '@proton/mail-composer/helpers/composer/contentFromComposerMessage';
 import { useComposerInnerModals } from '@proton/mail-composer/hooks/composer/useComposerInnerModals';
+import { useLongLivingState } from '@proton/mail-composer/hooks/useLongLivingState';
 import { useMessageSendInfo, useReloadSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
+import { useComposerDispatch, useComposerStore } from '@proton/mail-composer/store/hooks';
 import { updateKeyPackets } from '@proton/mail-message/helpers/attachment/attachment';
 import {
     getComposerDefaultFontStyles,
@@ -52,8 +54,6 @@ import noop from '@proton/utils/noop';
 
 import type { MessageChange } from '../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
-import { useMailDispatch, useMailStore } from '../../store/hooks';
-import { useLongLivingState } from '../useLongLivingState';
 import { useAttachments } from './useAttachments/useAttachments';
 import { useAutoSave } from './useAutoSave';
 import { useCloseHandler } from './useCloseHandler';
@@ -92,8 +92,8 @@ export const useComposerContent = (args: EditorArgs) => {
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const getMessage = useGetMessage();
-    const dispatch = useMailDispatch();
-    const store = useMailStore();
+    const dispatch = useComposerDispatch();
+    const store = useComposerStore();
 
     const { onDraftDiscarded } = useComposerHost();
 

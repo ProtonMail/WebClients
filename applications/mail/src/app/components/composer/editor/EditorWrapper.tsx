@@ -10,6 +10,7 @@ import type { EditorActions, EditorMetadata } from '@proton/components/component
 import { useHandler } from '@proton/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { AddAttachmentsParams } from '@proton/mail-composer/attachments/uploadTypes';
+import type { ComposerStoreState } from '@proton/mail-composer/store/hooks';
 import { locateBlockquote } from '@proton/mail-message/helpers/message/messageBlockquote';
 import { getContent } from '@proton/mail-message/helpers/message/messageContent';
 import {
@@ -32,7 +33,6 @@ import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages
 import clsx from '@proton/utils/clsx';
 import diff from '@proton/utils/diff';
 
-import type { MailState } from '../../../store/store';
 import type { MessageChange } from '../Composer';
 import { getAttachedCIDs, getInlineImagesToRestore, getRemovedInlineImageData } from './editorWrapperHelpers';
 
@@ -64,7 +64,7 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     hasAttachments?: boolean;
     onExpandBlockquotes?: () => void;
     onUploadAttachments?: (data: AddAttachmentsParams) => void;
-    getStoreState?: () => MailState;
+    getStoreState?: () => ComposerStoreState;
     // Kill switch to prevent the re-upload of inline images on undo
     isInlineImageReuploadDisabled: boolean;
 }

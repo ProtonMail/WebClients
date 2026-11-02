@@ -3,11 +3,10 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useHandler } from '@proton/hooks/useHandler';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
+import { useComposerDispatch } from '@proton/mail-composer/store/hooks';
 import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import { deleteDraft } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
-
-import { useMailDispatch } from '../../store/hooks';
 
 interface UseHandleMessageAlreadySentParameters {
     modelMessage: MessageState;
@@ -19,7 +18,7 @@ export const useHandleMessageAlreadySent = ({ modelMessage, onClose }: UseHandle
     const { useCreateDraft } = useComposerMessageHost();
     const createDraft = useCreateDraft();
     const getMessage = useGetMessage();
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
 
     const duplicateDraft = useHandler(() => {
         const messageFromCache = getMessage(modelMessage.localID) as MessageStateWithData;
