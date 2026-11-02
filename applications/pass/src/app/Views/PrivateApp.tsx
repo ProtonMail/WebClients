@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { AccountSwitcher } from 'proton-pass-web/app/Views/AccountSwitcher/AccountSwitcher';
+import { useSaveFilterPreferences } from 'proton-pass-web/lib/hooks/useSaveFilterPreferences';
 import { useSpotlightListener } from 'proton-pass-web/lib/hooks/useSpotlightListener';
 
 import { AuthDeviceTopBanner } from '@proton/pass/components/Auth/AuthDeviceTopBanner';
@@ -55,6 +56,7 @@ const Main: FC = () => {
     const connectivityBar = useAppConnectivityBar(status, localID);
 
     useSpotlightListener();
+    useSaveFilterPreferences();
 
     const handleLock = useCallback(() => authService.lock(lockMode, { broadcast: true, soft: false }), [lockMode]);
 
