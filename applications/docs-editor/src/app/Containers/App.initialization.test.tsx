@@ -1,4 +1,4 @@
-import { act, render } from '@testing-library/react'
+import { act, render, waitFor } from '@testing-library/react'
 import type { ComponentProps, ReactNode } from 'react'
 import type { DocumentType } from '@proton/docs-shared/BasicTypes'
 import type { ClientRequiresEditorMethods } from '@proton/docs-shared/Bridge/ClientRequiresEditorMethods'
@@ -10,6 +10,7 @@ import type { EditorConfig } from '../Lib/useBridge'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { App } from './App'
 import { EditorSystemMode, StandaloneDocsEditor } from './Docs/public'
+import { StandaloneDocsEditor as PackageStandaloneDocsEditor } from '@proton-docs/docs-editor'
 import { EditorStateProvider } from './EditorStateProvider'
 
 jest.mock('@proton/docs-shared/Bridge/BridgeOriginProvider', () => ({
@@ -39,6 +40,11 @@ jest.mock('./Docs/public', () => ({
   DocsLayoutContainer: ({ children }: { children: ReactNode }) => children,
   getDocsLayoutScrollContainer: () => null,
 }))
+jest.mock('@proton-docs/docs-editor', () => ({
+  DocsLayoutContainer: ({ children }: { children: ReactNode }) => children,
+  PreviewModeEditor: () => null,
+  StandaloneDocsEditor: jest.fn(() => null),
+}))
 jest.mock('./Spreadsheet/public', () => ({ StandaloneSheetsEditor: () => null }))
 jest.mock('./adapters/docs/DocsAdapter', () => ({ DocsAdapter: ({ children }: { children: ReactNode }) => children }))
 jest.mock('./adapters/sheets/SheetsAdapter', () => ({
@@ -46,11 +52,14 @@ jest.mock('./adapters/sheets/SheetsAdapter', () => ({
 }))
 jest.mock('./SheetsLayout', () => ({ __esModule: true, default: ({ children }: { children: ReactNode }) => children }))
 
-function setup(documentType: DocumentType = 'doc') {
+function setup(
+  documentType: DocumentType = 'doc',
+  isFeatureFlagEnabled = async (flag: string) => flag !== 'DocsEditorPackageEnabled',
+) {
   const reportUserInterfaceError = jest.fn().mockResolvedValue(undefined)
   const clientInvoker = {
     reportUserInterfaceError,
-    checkIfFeatureFlagIsEnabled: jest.fn().mockResolvedValue(true),
+    checkIfFeatureFlagIsEnabled: jest.fn(isFeatureFlagEnabled),
   }
   const bridgeState = {
     application: {
@@ -200,6 +209,33 @@ describe('App bridge initialization', () => {
 
     expect(reportErrorToSentry).toHaveBeenCalledWith(error)
     expect(bridgeState.application.setDateLocale).toHaveBeenCalledWith(enGBLocale)
+  })
+
+  it('mounts the package editor instead of the Docs container when DocsEditorPackageEnabled is on', async () => {
+    const { initialize, rerender } = setup('doc', async () => true)
+
+    await initialize()
+    rerender()
+
+    await waitFor(() => expect(PackageStandaloneDocsEditor).toHaveBeenCalled())
+    expect(StandaloneDocsEditor).not.toHaveBeenCalled()
+  })
+
+  it('reports a failed DocsEditorPackageEnabled check and mounts the Docs container', async () => {
+    const error = new Error('Bridge unavailable')
+    const { initialize, rerender } = setup('doc', async (flag) => {
+      if (flag === 'DocsEditorPackageEnabled') {
+        throw error
+      }
+      return false
+    })
+
+    await initialize()
+    rerender()
+
+    await waitFor(() => expect(StandaloneDocsEditor).toHaveBeenCalled())
+    expect(reportErrorToSentry).toHaveBeenCalledWith(error)
+    expect(PackageStandaloneDocsEditor).not.toHaveBeenCalled()
   })
 
   it('continues accepting spreadsheet conversions for Sheets', async () => {

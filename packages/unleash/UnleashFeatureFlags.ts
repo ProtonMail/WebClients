@@ -163,6 +163,7 @@ export enum CommonFeatureFlag {
 enum DocsFeatureFlag {
     // General
     DocsDarkTheme = 'DocsDarkTheme',
+    DocsEditorPackageEnabled = 'DocsEditorPackageEnabled',
     DocsEmojiPicker = 'DocsEmojiPicker',
     DocsGatePrivateInviteAccess = 'DocsGatePrivateInviteAccess',
     DocsHomepageBulkMove = 'DocsHomepageBulkMove',
