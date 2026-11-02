@@ -66,6 +66,14 @@ describe('getSkillCommands', () => {
         expect(commands.map(({ skillId }) => skillId)).toEqual(['a']);
     });
 
+    it('resolves handle collisions consistently regardless of store or display order', () => {
+        const a = skill({ id: 'a', name: 'Weekly Report' });
+        const b = skill({ id: 'b', name: 'Weekly-Report' });
+        const expected = getSkillCommands([a, b]);
+        expect(getSkillCommands([b, a])).toEqual(expected);
+        expect(expected).toHaveLength(1);
+    });
+
     it('keeps skills named in non-Latin scripts and drops names without a handle', () => {
         const commands = getSkillCommands([skill({ id: 'a', name: '日本語の要約' }), skill({ id: 'b', name: '🚀' })]);
         expect(commands.map(({ handle }) => handle)).toEqual(['日本語の要約']);
@@ -275,7 +283,7 @@ describe('formatSkillCatalogue', () => {
         ]);
         const catalogue = formatSkillCatalogue(commands, 'use_skill');
         expect(catalogue).toContain('call the use_skill tool');
-        expect(catalogue).toContain(`- weekly-report: Status updates\n- long: ${'x'.repeat(200)}\n- bare]`);
+        expect(catalogue).toContain(`- bare\n- long: ${'x'.repeat(200)}\n- weekly-report: Status updates]`);
     });
 
     it('is empty without skills', () => {

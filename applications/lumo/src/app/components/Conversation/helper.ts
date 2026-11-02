@@ -15,6 +15,7 @@ import type { RetrievalContext } from '../../features/client-tools/retrievalTool
 import { isOpenToOtherSpaces, resolveSearchReach } from '../../features/client-tools/retrievalTool/searchReach';
 import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
 import { formatSkillCatalogue } from '../../features/skills/skillInvocation';
+import { getSkillLookupPool } from '../../features/skills/skillSelection';
 import { USE_SKILL_TOOL_NAME } from '../../features/skills/skillTool';
 import { resolveSkillContext } from '../../features/skills/skillsThunks';
 import {
@@ -524,22 +525,41 @@ async function loadDesktopConnectorState(): Promise<DesktopConnectorState | unde
 async function resolveChainSkills(
     dispatch: LumoDispatch,
     chain: Message[],
-    { enabled, offerSkillTools }: { enabled: boolean; offerSkillTools: boolean }
+    {
+        enabled,
+        offerSkillTools,
+        state,
+        spaceId,
+    }: {
+        enabled: boolean;
+        offerSkillTools: boolean;
+        state: LumoState;
+        spaceId?: string;
+    }
 ): Promise<ChainSkills> {
     if (!enabled) {
         return {};
     }
     const texts = chain.filter((message) => message.role === Role.User).map((message) => message.content ?? '');
+    const space = spaceId ? state.spaces[spaceId] : undefined;
+    // Schedule selections apply automatically; every enabled store skill remains available for lookup.
+    const invokedSkillRefs =
+        space?.spaceType === SpaceType.Schedule ? (space.schedule.skillIdsOrSubSkillRefs ?? []) : [];
+    const lookupPool = getSkillLookupPool(Object.values(state.skills.skills), invokedSkillRefs);
     try {
         const desktopConnectors = offerSkillTools ? await loadDesktopConnectorState() : undefined;
         const { instructions, loadable, readable } = await dispatch(
-            resolveSkillContext({ texts, listFiles: offerSkillTools, desktopConnectors })
+            resolveSkillContext({ texts, listFiles: offerSkillTools, desktopConnectors, lookupPool, invokedSkillRefs })
         ).unwrap();
         const catalogue = offerSkillTools ? formatSkillCatalogue(loadable, USE_SKILL_TOOL_NAME) : undefined;
         return {
             instructions: [instructions, catalogue].filter(Boolean).join('\n\n') || undefined,
             tools: offerSkillTools
-                ? { loadable: catalogue ? loadable.map(({ handle }) => handle) : [], readable, desktopConnectors }
+                ? {
+                      loadable: catalogue ? loadable.map(({ handle }) => handle) : [],
+                      readable,
+                      desktopConnectors,
+                  }
                 : undefined,
         };
     } catch {
@@ -748,6 +768,8 @@ export function executeConversationTurn({
         const chainSkills = await resolveChainSkills(dispatch, newMessageChain, {
             enabled: isSkillsEnabledForRequest(s),
             offerSkillTools: !ui.isFromQueryParam,
+            state,
+            spaceId: conversationContext.spaceId,
         });
 
         const allAttachments = state.attachments;
@@ -1121,6 +1143,8 @@ export function regenerateMessage({
             const chainSkills = await resolveChainSkills(dispatch, c.messageChain, {
                 enabled: isSkillsEnabledForRequest(s),
                 offerSkillTools: true,
+                state,
+                spaceId: c.spaceId,
             });
 
             const artifactToolMode = resolveArtifactToolMode(
@@ -1388,6 +1412,8 @@ export function retrySendMessage({
         const chainSkills = await resolveChainSkills(dispatch, updatedLinearChain, {
             enabled: isSkillsEnabledForRequest(s),
             offerSkillTools: true,
+            state,
+            spaceId: c.spaceId,
         });
 
         const artifactToolMode = resolveArtifactToolMode(

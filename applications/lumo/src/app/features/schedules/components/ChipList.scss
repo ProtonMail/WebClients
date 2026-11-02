@@ -1,11 +1,11 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
-.connector-list {
+.schedule-chip-list {
 	&__header--compact {
 		font-weight: 500;
 	}
 
-	&__add-connector-chip {
+	&__add-chip {
 		line-height: rem(16);
 
 		&.border {

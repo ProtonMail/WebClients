@@ -8,7 +8,7 @@ import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tool
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import { getConnectorStatusLabel } from './utils/connectors';
 
-import './ConnectorChip.scss';
+import './Chip.scss';
 
 interface ConnectorChipProps {
     className?: string;
@@ -64,26 +64,26 @@ export const ConnectorChip = ({ compact, connector, onRemove, unavailable, warni
     return (
         <span
             className={clsx(
-                'connector-chip',
-                compact ? 'connector-chip--compact' : 'connector-chip--regular',
-                unavailable && 'connector-chip--unavailable',
-                warning && 'connector-chip--warning',
-                'relative inline-flex flex-nowrap shrink-0 items-center',
+                'schedule-chip',
+                compact ? 'schedule-chip--compact' : 'schedule-chip--regular',
+                unavailable && 'schedule-chip--unavailable',
+                warning && 'schedule-chip--warning',
+                'inline-flex flex-nowrap shrink-0 items-center max-w-full',
                 compact ? 'gap-1' : 'gap-1.5',
                 onRemove && 'pr-1.5',
                 'border rounded'
             )}
         >
             <Tooltip openDelay={300} title={unavailable || warning ? statusLabel : undefined}>
-                <span className="inline-flex flex-nowrap shrink-0 items-center gap-1.5">
+                <span className="inline-flex flex-nowrap items-center gap-1.5 min-w-0">
                     <ConnectorIcon
-                        className="connector-chip__icon"
+                        className="shrink-0"
                         icon={connector.icon}
                         size={compact ? 12 : 14}
                         unavailable={unavailable}
                         warning={warning}
                     />
-                    <span className="connector-chip__label relative">{label}</span>
+                    <span className="schedule-chip__label text-ellipsis">{label}</span>
                 </span>
             </Tooltip>
             {(unavailable || warning) && (
@@ -98,7 +98,7 @@ export const ConnectorChip = ({ compact, connector, onRemove, unavailable, warni
                         // translator: Accessible label for removing an external tool or service from this task, not uninstalling it. ${label} is its display name.
                         c('collider_2025:Action').t`Remove ${label}`
                     }
-                    className="connector-chip__remove inline-flex shrink-0 items-center justify-center p-0 border border-transparent rounded-sm"
+                    className="schedule-chip__remove inline-flex shrink-0 items-center justify-center p-0 border border-transparent rounded-sm"
                     icon
                     increasedClickArea
                     onClick={onRemove}

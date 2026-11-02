@@ -27,6 +27,7 @@ import { useDeviceSettings } from '../../../../providers/DeviceSettingsProvider'
 import type { SpaceId } from '../../../../types';
 import type { ScheduleDetails } from '../../types';
 import { ConnectorList } from '../ConnectorList';
+import { SkillList } from '../SkillList';
 import type { ScheduleDetailsValidationField } from '../utils/schedules';
 import { getScheduleDetailsValidationErrors } from '../utils/schedules';
 import { DeleteScheduledTaskPrompt } from './DeleteScheduledTaskPrompt';
@@ -234,6 +235,13 @@ export const ScheduledTaskEditorModal = ({
                                 </span>
                             </p>
                         </section>
+
+                        <SkillList
+                            value={values.skillIdsOrSubSkillRefs ?? []}
+                            onChange={(skillIdsOrSubSkillRefs) =>
+                                updateValues((prev) => ({ ...prev, skillIdsOrSubSkillRefs }))
+                            }
+                        />
 
                         <ConnectorList
                             editMode

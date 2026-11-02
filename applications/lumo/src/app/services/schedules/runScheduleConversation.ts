@@ -5,6 +5,7 @@ import busy from '@proton/shared/lib/busy/busy';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { executeConversationTurn } from '../../components/Conversation/helper';
+import { loadSkills } from '../../features/skills/skillsThunks';
 import { DEFAULT_MODEL_TIER, DEFAULT_RESPONSE_MODE } from '../../providers/modelTierConstants';
 import { generationRegistry } from '../generation/generationRegistry';
 import { getRemainingLimits, resolveAvailableModelTier } from '../usageLimitsStore';
@@ -13,6 +14,7 @@ import { restrictScheduleTools } from './restrictedTools';
 import type { ScheduleContext, ScheduleExecutionResult, ScheduleExecutionTarget, ScheduleTask } from './types';
 
 export type ScheduleGenerationOptions = {
+    customAgents?: boolean;
     externalTools: boolean;
     imageTools: boolean;
     artifactsView: boolean;
@@ -78,6 +80,14 @@ export function createScheduleConversationRunner({
         const releaseBusy = busy.register();
         let outcome: ScheduleExecutionResult['outcome'] = 'interrupted';
         try {
+            if (options.customAgents && storage.store.getState().skills.status !== 'ready') {
+                const result = await storage.store.dispatch(loadSkills());
+                guard();
+                // Skills enhance the prompt; a storage failure shall not prevent the task from running.
+                if (loadSkills.rejected.match(result)) {
+                    console.warn('Could not load skills for scheduled conversation; continuing without skills');
+                }
+            }
             const guardedApi: Api = async <T>(request: object): Promise<T> => {
                 guard();
                 const response = await api<T>(request);
@@ -107,6 +117,7 @@ export function createScheduleConversationRunner({
                     },
                     settingsContext: {
                         personalization: settings.personalization,
+                        isSkillsFeatureEnabled: options.customAgents,
                         isMemoryFeatureEnabled: options.memory,
                         isArtifactsViewFeatureEnabled: options.artifactsView,
                         isArtifactSlidesFeatureEnabled: options.artifactSlides,
@@ -124,6 +135,7 @@ export function createScheduleConversationRunner({
             outcome = result?.status === 'succeeded' ? 'succeeded' : 'failed';
         } catch (error) {
             guard();
+            outcome = 'failed';
             console.error('Scheduled conversation execution failed', error);
         } finally {
             releaseBusy();

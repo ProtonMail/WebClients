@@ -50,10 +50,10 @@ const collectSkillCommands = (skills: Skill[]): SkillCommand[] => {
     return [...roots, ...subSkills];
 };
 
-/** Enabled skills and the enabled sub-skills of enabled plugins. The first skill to claim a handle keeps it. */
+/** Enabled commands. Name order resolves handle conflicts consistently for store and display lists. */
 export const getSkillCommands = (skills: Skill[]): SkillCommand[] => {
     const seen = new Set<string>();
-    return collectSkillCommands(skills).filter(({ handle }) => {
+    return collectSkillCommands([...skills].sort((a, b) => a.name.localeCompare(b.name))).filter(({ handle }) => {
         if (!handle || seen.has(handle)) {
             return false;
         }

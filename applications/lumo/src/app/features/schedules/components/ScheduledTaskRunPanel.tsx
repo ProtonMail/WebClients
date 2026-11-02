@@ -14,6 +14,7 @@ import { useLumoMemoSelector, useLumoSelector } from '../../../redux/hooks';
 import { selectConversationsBySpaceId, selectProvisionalAttachments } from '../../../redux/selectors';
 import type { Conversation, Message } from '../../../types';
 import { useRunScheduleNow } from '../useRunScheduleNow';
+import { ScheduleSkillsToolsPanel } from './ScheduleSkillsToolsPanel';
 import { getScheduleRunHistoryLabel } from './utils/run-label';
 import { getScheduleRunTimestampLabel } from './utils/run-timestamp-label';
 
@@ -145,6 +146,7 @@ export const ScheduledTaskRunPanel = ({
                     </div>
                 </div>
             </section>
+            <ScheduleSkillsToolsPanel spaceId={conversation.spaceId} />
         </KnowledgeBasePanel>
     );
 };

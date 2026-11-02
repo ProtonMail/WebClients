@@ -6,12 +6,10 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { askUserQuestionsToolExecutor } from '../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
 import { createScheduleToolExecutor } from '../../features/client-tools/createScheduleTool/createScheduleTool';
-import {
-    type RetrievalContext,
-    type RetrievalToolExecutor,
-    createRetrievalToolExecutor,
-} from '../../features/client-tools/retrievalTool/retrievalTool';
+import type { RetrievalContext, RetrievalToolExecutor } from '../../features/client-tools/retrievalTool/retrievalTool';
+import { createRetrievalToolExecutor } from '../../features/client-tools/retrievalTool/retrievalTool';
 import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
+import { getSkillLookupPool } from '../../features/skills/skillSelection';
 import { createSkillToolExecutor } from '../../features/skills/skillTool';
 import { loadSkillInstructions, readSkillFile } from '../../features/skills/skillsThunks';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
@@ -31,7 +29,7 @@ import {
     newMessageId,
     pushMessageRequest,
 } from '../../redux/slices/core/messages';
-import type { LumoDispatch } from '../../redux/store';
+import type { LumoDispatch, LumoState } from '../../redux/store';
 import { isAbortError, throwIfAborted } from '../../services/generation/abortGeneration';
 import { waitForModels } from '../../services/modelsStore';
 import {
@@ -43,6 +41,7 @@ import {
     type MessageId,
     Role,
     type SpaceId,
+    SpaceType,
     type Turn,
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
@@ -141,6 +140,7 @@ const compactionsInFlight = new Map<ConversationId, Promise<unknown>>();
 function resolveClientToolExecutor(
     sendOptions: ForwardedSendOptions,
     dispatch: LumoDispatch,
+    getSkillLookupPool: () => string[],
     getVisibleMessageIds?: () => ReadonlySet<MessageId>
 ): { executor?: ClientToolExecutor; retrieval?: RetrievalToolExecutor } {
     const executors: ClientToolExecutor[] = [];
@@ -162,9 +162,14 @@ function resolveClientToolExecutor(
                 readableHandles: skillTools.readable,
                 loadSkill: (handle) =>
                     dispatch(
-                        loadSkillInstructions({ handle, desktopConnectors: skillTools.desktopConnectors })
+                        loadSkillInstructions({
+                            handle,
+                            desktopConnectors: skillTools.desktopConnectors,
+                            lookupPool: getSkillLookupPool(),
+                        })
                     ).unwrap(),
-                readFile: (handle, path) => dispatch(readSkillFile({ handle, path })).unwrap(),
+                readFile: (handle, path) =>
+                    dispatch(readSkillFile({ handle, path, lookupPool: getSkillLookupPool() })).unwrap(),
             })
         );
     }
@@ -249,7 +254,7 @@ function newAssistantPlaceholder(conversationId: ConversationId, parentId: Messa
  * discarded behind its persisted boundary, and the overflow error is surfaced.
  */
 export function runGenerationWithCompaction(params: GenerationWithCompactionParams) {
-    return async (dispatch: LumoDispatch): Promise<ConversationGenerationResult> => {
+    return async (dispatch: LumoDispatch, getState: () => LumoState): Promise<ConversationGenerationResult> => {
         const {
             api,
             conversationId,
@@ -284,9 +289,20 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             }
             return visibleFor.ids;
         };
+        // Resolve the current task selection again for each skill tool call.
+        const getCurrentSkillLookupPool = () => {
+            const state = getState();
+            const space = state.spaces[spaceId];
+            if (!space) return [];
+            // Use the same union as context preparation, refreshed before each tool lookup.
+            const scheduleRefs =
+                space.spaceType === SpaceType.Schedule ? (space.schedule.skillIdsOrSubSkillRefs ?? []) : [];
+            return getSkillLookupPool(Object.values(state.skills.skills), scheduleRefs);
+        };
         const { executor: resolvedExecutor, retrieval } = resolveClientToolExecutor(
             sendOptions,
             dispatch,
+            getCurrentSkillLookupPool,
             getVisibleMessageIds
         );
         const clientToolExecutor = resolvedExecutor && {
