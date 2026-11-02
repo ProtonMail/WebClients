@@ -14,6 +14,10 @@ import {
     trackAccountImportClaimProtonAddressCompleted,
     trackAccountImportClaimableAddressModalAction,
     trackAccountImportClaimableAddressModalShown,
+    trackAccountImportEasySwitchCustomizeMailImportCancelled,
+    trackAccountImportEasySwitchCustomizeMailImportChanged,
+    trackAccountImportEasySwitchCustomizeMailImportSaved,
+    trackAccountImportEasySwitchCustomizeMailImportViewed,
     trackAccountImportEasySwitchCustomizeViewed,
     trackAccountImportEasySwitchError,
     trackAccountImportEasySwitchFinished,
@@ -321,6 +325,43 @@ describe('account import flow telemetry', () => {
                 provider: 'google',
                 product: 'mail',
             });
+        });
+
+        it('describes the customization of the mail import without the edited values', () => {
+            const { reports } = mockAccountImportFlowTracker();
+            const provider = ImportProvider.YAHOO;
+
+            trackAccountImportEasySwitchCustomizeMailImportViewed({ provider });
+            trackAccountImportEasySwitchCustomizeMailImportChanged({ provider, action: 'change_label' });
+            trackAccountImportEasySwitchCustomizeMailImportChanged({
+                provider,
+                action: 'change_period',
+                importPeriod: TIME_PERIOD.LAST_YEAR,
+            });
+            trackAccountImportEasySwitchCustomizeMailImportCancelled({ provider, hasChanges: true });
+            trackAccountImportEasySwitchCustomizeMailImportSaved({ provider, hasChanges: false });
+
+            expect(reports.map(({ event }) => event)).toEqual([
+                'step_load',
+                'step_interacted',
+                'step_interacted',
+                'step_interacted',
+                'step_completed',
+            ]);
+            const step = 'customize_mail_import';
+            expect(reports.map(({ dimensions }) => dimensions)).toEqual([
+                { flow: 'easy_switch', step, provider: 'yahoo' },
+                { flow: 'easy_switch', step, action: 'change_label', provider: 'yahoo' },
+                {
+                    flow: 'easy_switch',
+                    step,
+                    action: 'change_period',
+                    provider: 'yahoo',
+                    importPeriodSelected: 'last_year',
+                },
+                { flow: 'easy_switch', step, action: 'cancel', provider: 'yahoo', hasChanges: 'true' },
+                { flow: 'easy_switch', step, provider: 'yahoo', hasChanges: 'false' },
+            ]);
         });
     });
 });

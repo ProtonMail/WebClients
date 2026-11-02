@@ -32,6 +32,8 @@ const STEPS = [
     'instructions',
     /** Easy Switch: the user is signed in and can customize the import */
     'customize_import',
+    /** Easy Switch: the modal opened from `customize_import` to change how the emails are imported */
+    'customize_mail_import',
     /** Easy Switch: a row of the import table */
     'import_report',
     /** BYOE: a user with only an external address creates a Proton address */
@@ -52,6 +54,12 @@ const ACTIONS = [
     'resume_import',
     'undo_import',
     'delete_report',
+    'change_address',
+    'change_period',
+    'change_label',
+    'change_categories',
+    'change_folders',
+    'cancel',
 ] as const;
 type Action = (typeof ACTIONS)[number];
 
@@ -170,6 +178,12 @@ const easySwitchCustomizeShown = defineEvent({
     },
 });
 
+const easySwitchCustomizeMailImportShown = defineEvent({
+    ...baseEvent,
+    event: TelemetryAccountImportFlowEvents.stepLoad,
+    dimensions: { flow: flowSpec, step: stepSpec, provider: providerSpec },
+});
+
 // step_interacted
 
 const modalAction = defineEvent({
@@ -211,7 +225,37 @@ const importReportAction = defineEvent({
     },
 });
 
+const easySwitchCustomizeMailImportAction = defineEvent({
+    ...baseEvent,
+    event: TelemetryAccountImportFlowEvents.stepInteracted,
+    dimensions: { flow: flowSpec, step: stepSpec, action: actionSpec, provider: providerSpec },
+});
+
+const easySwitchCustomizeMailImportPeriodChanged = defineEvent({
+    ...baseEvent,
+    event: TelemetryAccountImportFlowEvents.stepInteracted,
+    dimensions: {
+        flow: flowSpec,
+        step: stepSpec,
+        action: actionSpec,
+        provider: providerSpec,
+        importPeriodSelected: importPeriodSpec,
+    },
+});
+
+const easySwitchCustomizeMailImportCancelled = defineEvent({
+    ...baseEvent,
+    event: TelemetryAccountImportFlowEvents.stepInteracted,
+    dimensions: { flow: flowSpec, step: stepSpec, action: actionSpec, provider: providerSpec, hasChanges: bool() },
+});
+
 // step_completed
+
+const easySwitchCustomizeMailImportCompleted = defineEvent({
+    ...baseEvent,
+    event: TelemetryAccountImportFlowEvents.stepCompleted,
+    dimensions: { flow: flowSpec, step: stepSpec, provider: providerSpec, hasChanges: bool() },
+});
 
 const byoeClaimProtonAddressInteracted = defineEvent({
     ...baseEvent,
@@ -618,6 +662,103 @@ export const trackAccountImportEasySwitchCustomizeViewed = ({
                 provider: toEasySwitchProvider(provider),
                 ...toProducts(products),
                 importPeriodSelected: toImportPeriod(importPeriod),
+            },
+            ...withTimestamp(),
+        },
+        easySwitchTiming
+    );
+};
+
+export const trackAccountImportEasySwitchCustomizeMailImportViewed = ({
+    provider,
+}: {
+    provider: ImportProvider | undefined;
+}) => {
+    tracker.emit(
+        easySwitchCustomizeMailImportShown,
+        {
+            dimensions: { flow: EASY_SWITCH, step: 'customize_mail_import', provider: toEasySwitchProvider(provider) },
+            ...withTimestamp(),
+        },
+        easySwitchTiming
+    );
+};
+
+/**
+ * A field of the customize modal was changed. The value is not sent, only the field, and the period which is a fixed
+ * list. The modal reports each field once.
+ */
+export const trackAccountImportEasySwitchCustomizeMailImportChanged = ({
+    provider,
+    action,
+    importPeriod,
+}: {
+    provider: ImportProvider | undefined;
+    action: Extract<
+        Action,
+        'change_address' | 'change_period' | 'change_label' | 'change_categories' | 'change_folders'
+    >;
+    /** Only for `change_period` */
+    importPeriod?: TIME_PERIOD;
+}) => {
+    const dimensions = {
+        flow: EASY_SWITCH,
+        step: 'customize_mail_import',
+        action,
+        provider: toEasySwitchProvider(provider),
+    } as const;
+
+    if (action === 'change_period') {
+        tracker.emit(
+            easySwitchCustomizeMailImportPeriodChanged,
+            { dimensions: { ...dimensions, importPeriodSelected: toImportPeriod(importPeriod) }, ...withTimestamp() },
+            easySwitchTiming
+        );
+        return;
+    }
+    tracker.emit(easySwitchCustomizeMailImportAction, { dimensions, ...withTimestamp() }, easySwitchTiming);
+};
+
+/** The modal was closed without saving, `hasChanges` tells if the user gave up edits */
+export const trackAccountImportEasySwitchCustomizeMailImportCancelled = ({
+    provider,
+    hasChanges,
+}: {
+    provider: ImportProvider | undefined;
+    hasChanges: boolean;
+}) => {
+    tracker.emit(
+        easySwitchCustomizeMailImportCancelled,
+        {
+            dimensions: {
+                flow: EASY_SWITCH,
+                step: 'customize_mail_import',
+                action: 'cancel',
+                provider: toEasySwitchProvider(provider),
+                hasChanges,
+            },
+            ...withTimestamp(),
+        },
+        easySwitchTiming
+    );
+};
+
+/** Save was clicked in the modal, `hasChanges` is false when nothing was edited */
+export const trackAccountImportEasySwitchCustomizeMailImportSaved = ({
+    provider,
+    hasChanges,
+}: {
+    provider: ImportProvider | undefined;
+    hasChanges: boolean;
+}) => {
+    tracker.emit(
+        easySwitchCustomizeMailImportCompleted,
+        {
+            dimensions: {
+                flow: EASY_SWITCH,
+                step: 'customize_mail_import',
+                provider: toEasySwitchProvider(provider),
+                hasChanges,
             },
             ...withTimestamp(),
         },
