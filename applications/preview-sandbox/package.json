@@ -6,7 +6,7 @@
     "scripts": {
         "build": "cross-env NODE_ENV=production ./bin/build.mjs",
         "check:types": "tsc --checkers 1",
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "pretty": "prettier --write  $(find src -type f -name '*.ts')",
         "test": "echo No tests yet",
         "test:ci": "echo No tests yet"
@@ -17,14 +17,15 @@
         "docx-preview": "^0.4.1"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
         "browserslist-to-esbuild": "^2.1.1",
         "cross-env": "catalog:",
         "esbuild": "^0.28.2",
-        "eslint": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
         "prettier": "catalog:",
         "typescript": "catalog:"
     }
