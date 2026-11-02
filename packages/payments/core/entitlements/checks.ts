@@ -1,5 +1,6 @@
 import { EntitlementName } from './entitlement-names';
 import type { EntitlementCheckForSelection, SingleEntitlementCheckForOrgAndUser } from './interface';
+import { getProductFlagsOtherThan } from './product-flags';
 
 /**
  * This group of checks is special, as they have double purpose. They can be used both for org/user and for specific
@@ -47,6 +48,16 @@ export const entitlementChecksForSelection = {
     hasSentinel: (r) => r.hasEntitlement(EntitlementName.Sentinel),
 
     hasLumo: (r) => r.hasEntitlement(EntitlementName.FlagsLumo),
+
+    isLumoOnlyB2C: (r) =>
+        r.hasMatchingSubscription({
+            includes: [EntitlementName.FlagsLumo],
+            excludes: [
+                ...getProductFlagsOtherThan(EntitlementName.FlagsLumo),
+                EntitlementName.MultiUser,
+                EntitlementName.Business,
+            ],
+        }),
 
     hasPassActivityMonitor: (r) => r.hasEntitlement(EntitlementName.ActivityMonitorPass),
 
