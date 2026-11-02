@@ -4365,9 +4365,9 @@ importers:
         specifier: ^0.4.1
         version: 0.4.1
     devDependencies:
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
+        version: link:../../packages/oxlint-config
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.0
@@ -4386,9 +4386,12 @@ importers:
       esbuild:
         specifier: ^0.28.2
         version: 0.28.2
-      eslint:
+      oxlint:
         specifier: 'catalog:'
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
       prettier:
         specifier: 'catalog:'
         version: 3.9.10
@@ -6798,15 +6801,15 @@ importers:
         specifier: ^4.5.7
         version: 4.5.7(@types/react@18.3.31)(immer@11.1.21)(react@18.3.1)
     devDependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../eslint-config-proton
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../jest-env
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../oxlint-config
       '@swc/jest':
         specifier: ^0.2.39
         version: 0.2.39(@swc/core@1.16.18(@swc/helpers@0.5.17))
@@ -6846,9 +6849,6 @@ importers:
       esbuild:
         specifier: ^0.28.1
         version: 0.28.2
-      eslint:
-        specifier: 'catalog:'
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       fake-indexeddb:
         specifier: 'catalog:'
         version: 6.2.5
@@ -6858,6 +6858,12 @@ importers:
       jest-when:
         specifier: 'catalog:'
         version: 3.7.0(jest@30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2)))
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -6958,15 +6964,15 @@ importers:
       '@openpgp/web-stream-tools':
         specifier: ^0.3.1
         version: 0.3.1(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../eslint-config-proton
       '@proton/jest-env':
         specifier: workspace:^
         version: link:../jest-env
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../oxlint-config
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
@@ -6997,15 +7003,18 @@ importers:
       '@typescript/native':
         specifier: 'catalog:'
         version: typescript@7.0.2
-      eslint:
-        specifier: 'catalog:'
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       jest:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
       jest-junit:
         specifier: 'catalog:'
         version: 16.0.0
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
       prettier:
         specifier: 'catalog:'
         version: 3.9.10
