@@ -18,12 +18,14 @@ import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
+import { useTypeFilterNotification } from '@proton/pass/components/Item/Filters/TypeFilterNotification';
 import { themeOptionToDesktop } from '@proton/pass/components/Layout/Theme/types';
 import {
     decodeFilters,
     encodeFilters,
     getLocalPath,
     removeLocalPath,
+    setSearchFilters,
 } from '@proton/pass/components/Navigation/routing';
 import { useReauthActionHandler } from '@proton/pass/hooks/auth/useReauthActionHandler';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
@@ -33,6 +35,7 @@ import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { applyFilterPreferences } from '@proton/pass/lib/filters/preferences';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
 import { createForceSyncStore, getForceSyncStorageKey } from '@proton/pass/lib/sync/force-sync';
@@ -70,6 +73,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const enhance = useNotificationEnhancer();
 
     const handleReauthAction = useReauthActionHandler(store);
+    const notifyTypeFilter = useTypeFilterNotification();
+
+    const showAllItemTypes = () => {
+        const searchParams = new URLSearchParams(history.location.search);
+        setSearchFilters(searchParams, { type: '*' });
+        history.replace({ ...history.location, search: searchParams.toString() });
+    };
 
     useEffect(() => {
         const runner = sagaMiddleware.run(
@@ -137,12 +147,14 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         const searchParams = new URLSearchParams(history.location.search);
                         const searchFilters = searchParams.get('filters');
                         const currentFilters = decodeFilters(searchFilters);
-                        const cachedFilters = selectFilters(state);
 
-                        /* if no search filters are in the URL - apply the last seen sort order */
-                        if (searchFilters === null && cachedFilters?.sort) currentFilters.sort = cachedFilters.sort;
+                        /* URL filters (deep link or reload) win over the cached preferences */
+                        const bootFilters =
+                            searchFilters === null
+                                ? applyFilterPreferences(currentFilters, selectFilters(state))
+                                : currentFilters;
 
-                        searchParams.set('filters', encodeFilters(currentFilters));
+                        searchParams.set('filters', encodeFilters(bootFilters));
                         const search = searchParams.toString();
 
                         if (emptyPath) {
@@ -154,6 +166,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         }
 
                         history.replace({ ...history.location, search });
+                        if (searchFilters === null) notifyTypeFilter(bootFilters.type, showAllItemTypes);
 
                         if (res.reauth) void handleReauthAction(res.reauth);
                     } else {
