@@ -2,6 +2,7 @@ import { addApiMock, addApiResolver } from '@proton/test-api/api';
 import lastItem from '@proton/utils/lastItem';
 
 import { createToken } from '../core/api/api';
+import type { ProductCheckResponse } from '../core/api/createPaymentSubscription';
 import { Autopay, DEFAULT_PAYMENT_VENDOR_STATES, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../core/constants';
 import type { PayPalDetails, PaymentStatus, SavedCardDetails, SavedPaymentMethod } from '../core/interface';
 
@@ -124,3 +125,12 @@ export function mockPaymentMethods(methods = PAYMENT_METHODS_MOCK) {
 
     return addons;
 }
+
+export const LUMO_CREDIT_CHECK_TAX_EXCLUSIVE: ProductCheckResponse = {
+    Currency: 'USD',
+    Amount: 2000,
+    AmountDue: 2162,
+    Credit: 0,
+    TaxInclusive: 0,
+    Taxes: [{ Name: 'Mehrwertsteuer (MWST)', Rate: 8.1, Amount: 162 }],
+};

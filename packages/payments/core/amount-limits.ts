@@ -1,6 +1,8 @@
 import { getNaiveCurrencyRate } from './currencies';
 import type { Currency } from './interface';
 
+export const MIN_LUMO_CREDIT_AMOUNT = 2000;
+
 export function getMinCreditAmount(currency: Currency): number {
     const minUsdAmount = 500;
     const rate = getNaiveCurrencyRate(currency);

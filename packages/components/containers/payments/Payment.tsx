@@ -105,6 +105,7 @@ export interface Props {
     selectedProcessor: PaymentProcessorHook | undefined;
     processingPayment: boolean;
     checkResult?: SubscriptionEstimation;
+    minCreditAmount?: number;
 }
 
 export const PaymentsNoApi = ({
@@ -145,6 +146,7 @@ export const PaymentsNoApi = ({
     selectedProcessor,
     processingPayment,
     checkResult,
+    minCreditAmount = getMinCreditAmount(currency),
 }: Props) => {
     const isBitcoinMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
     const showBitcoinMethod = isBitcoinMethod && !isBilledUser(user);
@@ -174,7 +176,6 @@ export const PaymentsNoApi = ({
 
     const loadingBitcoin = useStableLoading([loadingHookProps, !!loadingBitcoinProp]);
 
-    const minCreditAmount = getMinCreditAmount(currency);
     if ((flow === 'credit' || flow === 'lumo-credit') && amount < minCreditAmount) {
         const price = (
             <Price key="price" currency={currency}>

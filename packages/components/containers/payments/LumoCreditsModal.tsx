@@ -4,7 +4,12 @@ import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { getBuyLumoCreditConfig } from '@proton/payments/core/api/createPaymentSubscription';
+import { MIN_LUMO_CREDIT_AMOUNT } from '@proton/payments/core/amount-limits';
+import {
+    type ProductCheckResponse,
+    getBuyLumoCreditConfig,
+    getCheckLumoCreditConfig,
+} from '@proton/payments/core/api/createPaymentSubscription';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -22,6 +27,7 @@ export const LumoCreditsModal = (props: TopUpModalProps) => {
     }
 
     const { CountryCode, State, ZipCode } = props.paymentStatus;
+    const billingAddress = { CountryCode, State, ZipCode };
 
     return (
         <TopUpModal
@@ -33,14 +39,37 @@ export const LumoCreditsModal = (props: TopUpModalProps) => {
             sentryComponent="lumo-credits-modal"
             flow="lumo-credit"
             initialCurrency={subscription?.Currency}
-            onTopUp={async (_, { chargeablePaymentParameters }) => {
+            minAmount={MIN_LUMO_CREDIT_AMOUNT}
+            checkTopUp={(amount, currency) =>
+                api<ProductCheckResponse>(
+                    getCheckLumoCreditConfig({
+                        CreditAmount: amount,
+                        Currency: currency,
+                        BillingAddress: billingAddress,
+                    })
+                )
+            }
+            onTopUpFromAccountCredit={async (credits, currency) => {
+                await api(
+                    getBuyLumoCreditConfig(props.app, {
+                        PaymentToken: undefined,
+                        Amount: 0,
+                        Currency: currency,
+                        CreditAmount: credits,
+                        BillingAddress: billingAddress,
+                    })
+                );
+                createNotification({ text: c('Success').t`Funds added` });
+            }}
+            onTopUp={async (_, { chargeablePaymentParameters }, credits) => {
                 const { PaymentToken, Amount, Currency } = chargeablePaymentParameters;
                 await api(
                     getBuyLumoCreditConfig(props.app, {
                         PaymentToken,
                         Amount,
                         Currency,
-                        BillingAddress: { CountryCode, State, ZipCode },
+                        CreditAmount: credits,
+                        BillingAddress: billingAddress,
                     })
                 );
 
