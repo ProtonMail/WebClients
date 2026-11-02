@@ -99,7 +99,7 @@ const slice = createSlice({
                 }
                 const oldMembers = oldRecord.value.Members;
                 const memberIndex = oldMembers.findIndex(({ ID }) => memberID === ID);
-                if (memberIndex !== -1) {
+                if (memberIndex === -1) {
                     return;
                 }
                 oldMembers.splice(memberIndex, 1);
