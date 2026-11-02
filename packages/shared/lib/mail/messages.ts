@@ -1,11 +1,10 @@
-import { c } from 'ttag';
-
 import identity from '@proton/utils/identity';
 
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '../constants';
 import { clearBit, hasBit, hasBitBigInt, setBit, toggleBit } from '../helpers/bitset';
 import { canonicalizeInternalEmail, getEmailParts } from '../helpers/email';
 import { isICS } from '../helpers/mimetype';
+import { escapeRegex } from '../helpers/regex';
 import type { AttachmentInfo, Message } from '../interfaces/mail/Message';
 import { MESSAGE_FLAGS, SIGNATURE_START } from './constants';
 
@@ -194,21 +193,74 @@ export const isSentAutoReply = ({ Flags, ParsedHeaders = {} }: Message) => {
         )
     );
 };
+export const RE_PREFIX = () => {
+    return 'Re:';
+};
+export const FW_PREFIX = () => {
+    return 'Fw:';
+};
+
+// Ambiguous tokens (single letters, tokens shared by both kinds, common English abbreviations such as REF/RES/ENC) are left out on purpose
+const REPLY_PREFIXES = [
+    'Re',
+    'رد',
+    '回复',
+    '回覆',
+    'SV',
+    'Antw',
+    'AW',
+    'ΑΠ',
+    'ΣΧΕΤ',
+    'השב',
+    'תשובה',
+    'Vá',
+    'RIF',
+    'BLS',
+    'Atb',
+    'Odp',
+    'பதில்',
+    'YNT',
+];
+const FORWARD_PREFIXES = [
+    'Fw',
+    'Fwd',
+    'إعادة توجيه',
+    '转发',
+    '轉寄',
+    'Doorst',
+    'VL',
+    'TR',
+    'WG',
+    'ΠΡΘ',
+    'הועבר',
+    'העברה',
+    'Továbbítás',
+    'TRS',
+    'Pārs',
+    'VB',
+    'RV',
+    'முன்னனுப்பு',
+    'İLT',
+    'YML',
+];
+
+const getPrefixPattern = (prefixes: string[]) => `(?:${prefixes.map(escapeRegex).join('|')})\\.?\\s?:`;
+
 /**
- * Format the subject to add the prefix only when the subject
- * doesn't start with it
+ * Add a prefix to the subject if it doesn't start with it already.
+ * We always write the English prefix, but recognise the common localised ones.
  */
 export const formatSubject = (subject = '', prefix = '') => {
-    const hasPrefix = new RegExp(`^${prefix}`, 'i');
+    let pattern = escapeRegex(prefix);
+    if (prefix === RE_PREFIX()) {
+        pattern = getPrefixPattern(REPLY_PREFIXES);
+    } else if (prefix === FW_PREFIX()) {
+        pattern = getPrefixPattern(FORWARD_PREFIXES);
+    }
+    const hasPrefix = new RegExp(`^${pattern}`, 'i');
     return hasPrefix.test(subject) ? subject : `${prefix} ${subject}`;
 };
 
 export const DRAFT_ID_PREFIX = 'draft';
 export const ORIGINAL_MESSAGE = `------- Original Message -------`;
 export const FORWARDED_MESSAGE = `------- Forwarded Message -------`;
-export const RE_PREFIX = () => {
-    return c('Message').t`Re:`;
-};
-export const FW_PREFIX = () => {
-    return c('Message').t`Fw:`;
-};

@@ -1,4 +1,5 @@
 import { addDays, differenceInDays, getUnixTime, isSameDay } from 'date-fns';
+import { addLocale, c, useLocale } from 'ttag';
 
 import { addPlusAlias } from '@proton/shared/lib/helpers/email';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -60,6 +61,45 @@ describe('messageDraft', () => {
         const listRe = ['Subject', 'Re: Subject', 'Fw: Subject', 'Fw: Re: Subject', 'Re: Fw: Subject'];
 
         const listFw = ['Subject', 'Re: Subject', 'Fw: Subject', 'Fw: Re: Subject', 'Re: Fw: Subject'];
+
+        it('should not translate prefixes nor re-prefix when locale is not English', () => {
+            addLocale('de', {
+                charset: 'utf-8',
+                headers: { 'plural-forms': 'nplurals=2; plural=(n != 1);' },
+                contexts: { Message: { 'Re:': ['AW:'], 'Fw:': ['WG:'] } },
+            });
+            useLocale('de');
+            try {
+                expect(c('Message').t`Re:`).toBe('AW:');
+                expect(RE_PREFIX()).toBe('Re:');
+                expect(FW_PREFIX()).toBe('Fw:');
+                expect(formatSubject('Re: hello', RE_PREFIX())).toBe('Re: hello');
+                expect(formatSubject('Fwd: hello', FW_PREFIX())).toBe('Fwd: hello');
+            } finally {
+                useLocale('en_US');
+            }
+        });
+
+        it('should recognise localised prefixes of the same kind', () => {
+            expect(formatSubject('AW: Hallo', RE_PREFIX())).toBe('AW: Hallo');
+            expect(formatSubject('回复: 你好', RE_PREFIX())).toBe('回复: 你好');
+            expect(formatSubject('RE : Bonjour', RE_PREFIX())).toBe('RE : Bonjour');
+            expect(formatSubject('Atb.: Sveiki', RE_PREFIX())).toBe('Atb.: Sveiki');
+            expect(formatSubject('WG: Hallo', FW_PREFIX())).toBe('WG: Hallo');
+            expect(formatSubject('转发: 你好', FW_PREFIX())).toBe('转发: 你好');
+            expect(formatSubject('TR: Bonjour', FW_PREFIX())).toBe('TR: Bonjour');
+            expect(formatSubject('Fwd: x', FW_PREFIX())).toBe('Fwd: x');
+        });
+
+        it('should not match localised prefixes without a colon or of another kind', () => {
+            expect(formatSubject('I need help', FW_PREFIX())).toBe('Fw: I need help');
+            expect(formatSubject('REF: Invoice 1234', RE_PREFIX())).toBe('Re: REF: Invoice 1234');
+            expect(formatSubject('VS: Final', RE_PREFIX())).toBe('Re: VS: Final');
+            expect(formatSubject('VS: Final', FW_PREFIX())).toBe('Fw: VS: Final');
+            expect(formatSubject('Resume', RE_PREFIX())).toBe('Re: Resume');
+            expect(formatSubject('WG: Hallo', RE_PREFIX())).toBe('Re: WG: Hallo');
+            expect(formatSubject('AW: Hallo', FW_PREFIX())).toBe('Fw: AW: Hallo');
+        });
 
         it('should add the RE only if id does not start with it', () => {
             const [subject, reply, forward, fwreply, reforward] = listRe;
