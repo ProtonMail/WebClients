@@ -1,4 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -87,6 +88,7 @@ export const useSendHandler = ({
     const sendMessage = useSendMessage();
 
     const onCompose = useOnCompose();
+    const sendInProgressRef = useRef(false);
 
     const handleSendAfterUploads = useHandler(async (notifManager: SendingMessageNotificationManager) => {
         let verificationResults;
@@ -185,7 +187,7 @@ export const useSendHandler = ({
          */
         sendAsScheduled?: boolean;
     };
-    const handleSend = useHandler(({ sendAsScheduled = false }: HandleSendOptions = {}) => async () => {
+    const sendOnce = async (sendAsScheduled: boolean) => {
         const { localID, draftFlags } = getModelMessage();
 
         const scheduledAt = (() => {
@@ -279,6 +281,26 @@ export const useSendHandler = ({
                 setIsSending?.(false);
             };
             void asyncFinally();
+        }
+    };
+
+    const handleSend = useHandler(({ sendAsScheduled = false }: HandleSendOptions = {}) => async () => {
+        // Prevent multiple sends while a send is in progress (e.g. double click on the send button)
+        if (sendInProgressRef.current) {
+            return;
+        }
+        sendInProgressRef.current = true;
+        // Lock the send button right away, before the verifications are done
+        setIsSending?.(true);
+
+        try {
+            await sendOnce(sendAsScheduled);
+        } catch (error) {
+            // Early failures (e.g. no recipients) must unlock the button, the user can retry
+            setIsSending?.(false);
+            throw error;
+        } finally {
+            sendInProgressRef.current = false;
         }
     });
 

@@ -25,7 +25,7 @@ import {
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../../helpers/tests/crypto';
-import { clearAll } from '../../../helpers/tests/helper';
+import { clearAll, waitForNotification } from '../../../helpers/tests/helper';
 import {
     createAttachment,
     createEmbeddedImage,
@@ -619,5 +619,35 @@ describe('Composer sending', () => {
         const decryptResult = await decryptMessage(pack, fromKeys.privateKeys, sessionKey);
 
         expect(decryptResult.data).toBe(editorContent);
+    });
+
+    it('should send only once when clicking send multiple times', async () => {
+        minimalCache();
+        addApiKeys(false, toAddress, []);
+
+        const message = getMessage({
+            localID: ID,
+            messageDocument: { plainText: 'test' },
+            data: { MIMEType: MIME_TYPES.PLAINTEXT },
+        });
+
+        const view = await renderComposer({ preloadedState: getPreloadedState(message.data.AddressID), message });
+
+        const sendSpy = jest.fn(() => Promise.resolve({ Sent: {} }));
+        addApiMock(`mail/v4/messages/${ID}`, sendSpy, 'post');
+        addApiMock(`mail/v4/messages/${ID}`, () => {}, 'get');
+        addApiMock(`mail/v4/messages/${ID}`, ({ data: { Message } }) => ({ Message }), 'put');
+
+        const sendButton = await view.findByTestId('composer:send-button');
+        fireEvent.click(sendButton);
+        fireEvent.click(sendButton);
+        fireEvent.click(sendButton);
+
+        await waitForNotification('Message sent');
+
+        // The button is locked as soon as a send is in progress
+        expect(sendButton).toBeDisabled();
+
+        expect(sendSpy).toHaveBeenCalledTimes(1);
     });
 });
