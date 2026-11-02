@@ -30,6 +30,7 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
   const [editorInvoker, setEditorInvoker] = useState<EditorInvoker | null>(null)
   const isDarkMode = isDarkThemeEnabled && information.dark
   const isSheetsMountAfterInitialLoadDisabled = useFlag('SheetsMountAfterInitialLoadDisabled')
+  const isSheetsEditorPackageEnabled = useFlag('SheetsEditorPackageEnabled')
 
   useEffect(() => {
     if (editorInvoker) {
@@ -41,7 +42,8 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
       const orchestrator = {
         provideEditorInvoker: () => {},
         checkIfFeatureFlagIsEnabled: async (featureFlag: FeatureFlag) =>
-          featureFlag === 'SheetsMountAfterInitialLoadDisabled' && isSheetsMountAfterInitialLoadDisabled,
+          (featureFlag === 'SheetsMountAfterInitialLoadDisabled' && isSheetsMountAfterInitialLoadDisabled) ||
+          (featureFlag === 'SheetsEditorPackageEnabled' && isSheetsEditorPackageEnabled),
       } as unknown as EditorOrchestratorInterface
 
       const bridge = new ClientToEditorBridge(frame, orchestrator, new InternalEventBus(), new SyncedEditorState())
@@ -78,7 +80,7 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
 
       onEditorInvokerRef(newEditorInvoker)
     },
-    [APP_VERSION, isSheetsMountAfterInitialLoadDisabled, onEditorInvokerRef, state],
+    [APP_VERSION, isSheetsEditorPackageEnabled, isSheetsMountAfterInitialLoadDisabled, onEditorInvokerRef, state],
   )
 
   return (

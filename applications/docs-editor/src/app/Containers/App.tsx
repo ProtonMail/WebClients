@@ -39,8 +39,9 @@ import { $generateJSONFromSelectedNodes } from '@lexical/clipboard'
 import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 import { useStore } from 'zustand'
 import { SheetsAdapter } from './adapters/sheets/SheetsAdapter'
-import { StandaloneSheetsEditor, type SpreadsheetRef } from './Spreadsheet/public'
+import type { SpreadsheetRef } from './Spreadsheet/public'
 import { toSheetsInitialization } from './adapters/sheets/utils/sheets-initialization-adapter'
+import { useSheetsEditorSource } from './adapters/sheets/utils/use-sheets-editor-source'
 import SheetsLayout from './SheetsLayout'
 import { useEditorTheme } from '../Theme/EditorThemeProvider'
 import { DocsAdapter } from './adapters/docs/DocsAdapter'
@@ -128,6 +129,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   }, [bridge, didSetInitialConfig, documentType])
 
   const [sheetsInitializationMode, setSheetsInitializationMode] = useState<SheetsInitializationMode>('resolving')
+  const sheetsEditor = useSheetsEditorSource(bridge.getClientInvoker(), didSetInitialConfig && documentType === 'sheet')
   useEffect(() => {
     if (!didSetInitialConfig) {
       return
@@ -812,8 +814,11 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   }
 
   if (documentType === 'sheet') {
-    if (sheetsInitializationMode === 'after-initial-load' && !receivedEverythingFromRTS) {
-      application.logger.info('Waiting for initial updates to be applied before mounting Sheets editor')
+    const isWaitingForInitialUpdates = sheetsInitializationMode === 'after-initial-load' && !receivedEverythingFromRTS
+    if (!sheetsEditor || isWaitingForInitialUpdates) {
+      if (isWaitingForInitialUpdates) {
+        application.logger.info('Waiting for initial updates to be applied before mounting Sheets editor')
+      }
 
       return (
         <SheetsLayout>
@@ -825,6 +830,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
       )
     }
 
+    const { StandaloneSheetsEditor } = sheetsEditor
+
     return (
       <SheetsLayout>
         <ErrorBoundary
@@ -832,7 +839,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             reportErrorToSentry(error)
           }}
         >
-          <SheetsAdapter clientInvoker={bridge.getClientInvoker()}>
+          <SheetsAdapter clientInvoker={bridge.getClientInvoker()} sheetsEditor={sheetsEditor}>
             <StandaloneSheetsEditor
               ref={spreadsheetRef}
               docState={docState}
