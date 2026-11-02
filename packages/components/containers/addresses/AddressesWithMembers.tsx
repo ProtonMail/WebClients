@@ -80,8 +80,8 @@ const AddressesWithMembers = ({
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
 
     const { UsedAddresses: OrganizationUsedAddresses, MaxAddresses: OrganizationMaxAddresses } = organization || {};
-    const usedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
-    const maxAddresses = OrganizationMaxAddresses || 1;
+    const usedAddresses = hasAddresses ? (OrganizationUsedAddresses ?? 1) : 0;
+    const maxAddresses = OrganizationMaxAddresses ?? 1;
     // This value may become negative due to the API may allow plan changes for disabled addresses
     const addressesAvailable = Math.max(maxAddresses - usedAddresses, 0);
 
