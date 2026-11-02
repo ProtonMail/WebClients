@@ -1,13 +1,15 @@
 import { isAfter, roundToNearestMinutes } from 'date-fns';
 import { c } from 'ttag';
 
+import { supportsDesktopScheduleReadOnly } from '@proton/lumo-api-client/core/desktop-tools';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { convertZonedDateTimeToUTC, toUTCDate } from '@proton/shared/lib/date/timezone';
 
 import { ALWAYS_LOCAL_TIMEZONE_ID } from '../../../../components/RecurrenceRuleFieldset/types';
 import type { ScheduleDetails, ScheduleTemplate } from '../../types';
 
 export type ScheduleDetailsValidationField =
-    'name' | 'instructions' | 'time' | 'dateTime' | 'weekDayPicker' | 'monthDayPicker';
+    'name' | 'instructions' | 'connectors' | 'time' | 'dateTime' | 'weekDayPicker' | 'monthDayPicker';
 
 export type ScheduleDetailsValidationErrors = Partial<Record<ScheduleDetailsValidationField, string>>;
 
@@ -49,7 +51,10 @@ export const createScheduleDetailsFrom = (template: ScheduleTemplate): ScheduleD
         name: template.name,
         instructions: template.instructions,
         recurrenceRule: copiedRecurrenceRule,
-        connectors: template.connectors.map((connector) => ({ ...connector })),
+        connectors: template.connectors.map((connector) => ({
+            ...connector,
+            readOnly: connector.readOnly ?? supportsDesktopScheduleReadOnly(),
+        })),
         skillIdsOrSubSkillRefs: [],
         autoApprove: true,
         notifyOnComplete: true,
@@ -59,6 +64,12 @@ export const createScheduleDetailsFrom = (template: ScheduleTemplate): ScheduleD
 /** Returns validation error messages keyed by form field (empty object when valid). */
 export const getScheduleDetailsValidationErrors = (details: ScheduleDetails): ScheduleDetailsValidationErrors => {
     const errors: ScheduleDetailsValidationErrors = {};
+
+    if (details.connectors.some(({ readOnly }) => readOnly === true) && !supportsDesktopScheduleReadOnly()) {
+        // translator: A scheduled task requires read-only tool permissions unsupported by this desktop version.
+        errors.connectors = c('collider_2025:Error')
+            .t`Update ${LUMO_SHORT_APP_NAME} Desktop to use read-only connector access for this task.`;
+    }
 
     if (!details.name.trim()) {
         // translator: Validation error when the scheduled task name is empty.

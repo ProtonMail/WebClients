@@ -9,8 +9,14 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tools';
-import { openDesktopSettings, useDesktopManifests } from '@proton/lumo-api-client/core/desktop-tools';
+import {
+    openDesktopSettings,
+    supportsDesktopScheduleReadOnly,
+    useDesktopManifests,
+} from '@proton/lumo-api-client/core/desktop-tools';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import type { ScheduleConnector } from '../types';
@@ -62,6 +68,7 @@ const ConnectorListReadyView = ({
     value: selectedConnectors,
 }: ConnectorListReadyViewProps) => {
     const addConnectorButtonRef = useRef<HTMLButtonElement>(null);
+    const supportsReadOnly = supportsDesktopScheduleReadOnly();
 
     const unselectedConnectors = connectors.filter(
         (connector) => !selectedConnectors.some(({ id }) => id === connector.id)
@@ -93,30 +100,60 @@ const ConnectorListReadyView = ({
                 {selectedConnectors.map((connector) => {
                     const manifest = connectors.find(({ id }) => id === connector.id);
                     const unavailable = !manifest || !isUsable(manifest);
+                    const label = manifest?.display_name ?? connector.label;
                     return (
-                        <ConnectorChip
-                            compact={compact}
-                            connector={
-                                manifest ?? {
-                                    id: connector.id,
-                                    display_name: connector.label,
-                                    icon: connector.icon,
-                                    enabled: false,
-                                    readiness: { state: 'blocked', reason: 'Connector is not registered' },
-                                    status: { state: 'not_ready', reason: 'Not connected yet' },
+                        <div className="inline-flex flex-nowrap items-center gap-2" key={connector.id}>
+                            <ConnectorChip
+                                compact={compact}
+                                connector={
+                                    manifest ?? {
+                                        id: connector.id,
+                                        display_name: connector.label,
+                                        icon: connector.icon,
+                                        enabled: false,
+                                        readiness: { state: 'blocked', reason: 'Connector is not registered' },
+                                        status: { state: 'not_ready', reason: 'Not connected yet' },
+                                    }
                                 }
-                            }
-                            key={connector.id}
-                            onRemove={
-                                editMode
-                                    ? () => {
-                                          onChange(selectedConnectors.filter(({ id }) => id !== connector.id));
-                                          addConnectorButtonRef.current?.focus();
-                                      }
-                                    : undefined
-                            }
-                            unavailable={unavailable}
-                        />
+                                onRemove={
+                                    editMode
+                                        ? () => {
+                                              onChange(selectedConnectors.filter(({ id }) => id !== connector.id));
+                                              addConnectorButtonRef.current?.focus();
+                                          }
+                                        : undefined
+                                }
+                                unavailable={unavailable}
+                            />
+                            {editMode && (supportsReadOnly || connector.readOnly === true) ? (
+                                <div className="inline-flex flex-nowrap items-center gap-1.5 text-sm color-weak">
+                                    <span>{
+                                        // translator: Restricts this scheduled task's connector to tools explicitly classified as read-only.
+                                        c('collider_2025:Label').t`Read-only`
+                                    }</span>
+                                    <Toggle
+                                        aria-label={
+                                            // translator: Accessible label for a connector's scheduled-task read-only toggle. ${label} is the connector name.
+                                            c('collider_2025:Label').t`Read-only access for ${label}`
+                                        }
+                                        checked={connector.readOnly === true}
+                                        disabled={!supportsReadOnly}
+                                        id={`${labelId}-${connector.id}-read-only`}
+                                        onChange={() =>
+                                            onChange(
+                                                selectedConnectors.map((item) =>
+                                                    item.id === connector.id
+                                                        ? { ...item, readOnly: item.readOnly !== true }
+                                                        : item
+                                                )
+                                            )
+                                        }
+                                    />
+                                </div>
+                            ) : connector.readOnly === true ? (
+                                <span className="text-sm color-weak">{c('collider_2025:Label').t`Read-only`}</span>
+                            ) : null}
+                        </div>
                     );
                 })}
 
@@ -159,6 +196,7 @@ const ConnectorListReadyView = ({
                                                     id: connector.id,
                                                     label: connector.display_name,
                                                     icon: connector.icon ?? undefined,
+                                                    readOnly: supportsReadOnly,
                                                 },
                                             ]);
                                         }}
@@ -206,6 +244,16 @@ const ConnectorListReadyView = ({
                     </SimpleDropdown>
                 )}
             </fieldset>
+
+            {!supportsReadOnly && selectedConnectors.some(({ readOnly }) => readOnly === true) && (
+                <Banner className="text-sm" variant="warning">
+                    {
+                        // translator: A saved task requires read-only permissions that this desktop version cannot enforce.
+                        c('collider_2025:Info')
+                            .t`Update ${LUMO_SHORT_APP_NAME} Desktop to use read-only connector access for this task.`
+                    }
+                </Banner>
+            )}
 
             {editMode && showWarning && (
                 <Banner className="text-sm" variant="warning">

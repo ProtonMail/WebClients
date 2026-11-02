@@ -9,6 +9,8 @@ export interface ScheduleConnector {
     label: string;
     /** The icon URL returned by the Desktop bridge, when available. */
     icon?: string;
+    /** Only explicitly read-only tools are allowed. Missing preserves legacy read/write access. */
+    readOnly?: boolean;
 }
 
 /** The details of a scheduled task. */

@@ -18,6 +18,7 @@ export type ScheduleTask = {
     name?: string;
     notifyOnComplete?: boolean;
     connectorIds: string[];
+    readOnlyConnectorIds?: string[];
     autoApprove?: boolean;
     modelTier?: AssistantCallOptions['modelTier'];
     enableReasoning?: boolean;

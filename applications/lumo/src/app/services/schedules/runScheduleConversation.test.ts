@@ -92,7 +92,7 @@ async function setup() {
             name: 'Scheduled report',
             instructions: 'Write a report',
             recurrenceRule: { frequency: 'DAILY', hour: 15, minute: 0, timezone: 'Asia/Taipei' },
-            connectors: [{ id: 'calendar', label: 'Calendar' }],
+            connectors: [{ id: 'calendar', label: 'Calendar', readOnly: true }],
             autoApprove: false,
             notifyOnComplete: false,
         })
@@ -124,7 +124,7 @@ async function setup() {
                 id: 'calendar',
                 display_name: 'Calendar',
                 status: { state: 'ready' },
-                tools: [{ name: 'read', description: '', input_schema: { type: 'object' } }],
+                tools: [{ name: 'read', read_only: true, description: '', input_schema: { type: 'object' } }],
             },
             {
                 id: 'shell',
@@ -141,6 +141,7 @@ afterEach(() => jest.restoreAllMocks());
 
 it('shares chat settings and tool composition, preserves streamed metadata, and durably saves the real messages', async () => {
     const h = await setup();
+    expect(h.task.readOnlyConnectorIds).toEqual(['calendar']);
     h.store.dispatch(setPendingAgent('draft-agent'));
     h.store.dispatch(updateLumoUserSettings({ preferredResponseMode: 'thinking', preferredModelTier: 'lumo-lite' }));
     const model = jest
@@ -238,6 +239,7 @@ it('shares chat settings and tool composition, preserves streamed metadata, and 
         'generated-image'
     );
     expect(model).toHaveBeenCalledTimes(1);
+    expect(h.createTools).toHaveBeenCalledWith(expect.objectContaining({ readOnlyConnectorIds: ['calendar'] }));
     h.source.dispose();
 });
 
