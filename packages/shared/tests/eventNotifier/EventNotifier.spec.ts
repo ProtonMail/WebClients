@@ -2,9 +2,12 @@ import { FIBONACCI_LIST, INTERVAL_EVENT_TIMER } from '../../lib/constants';
 import type { VisibilityState } from '../../lib/eventManager/VisibilityState';
 import { EventNotifier } from '../../lib/eventNotifier/EventNotifier';
 import { EventNotifierLoopType, type EventNotifierPing } from '../../lib/eventNotifier/interface';
+import type { EventNotifierConnection, EventNotifierConnectionHandlers } from '../../lib/eventNotifier/transports';
 import type { Api } from '../../lib/interfaces/Api';
 
 const URL = 'https://mail.proton.me/api/event-notifier/v1/events';
+
+const CONNECTION_TOKEN_URL = 'event-notifier/v1/connection-token';
 
 // Longest possible backoff of the first reconnection, jitter included.
 const RECONNECT_DELAY = 3000;
@@ -14,51 +17,38 @@ const LONGEST_BACKOFF = 2000 * FIBONACCI_LIST[FIBONACCI_LIST.length - 1] + 1000;
 
 const GAVE_UP = 'giving up on the connection after too many failed attempts';
 
-type Listener = (event: MessageEvent) => void;
-
-interface FakeEventSource {
+interface FakeConnection extends EventNotifierConnection {
     url: string;
     closeCount: number;
-    listeners: Record<string, Listener[]>;
-    onerror: (() => void) | null;
-    addEventListener: (name: string, listener: Listener) => void;
-    removeEventListener: (name: string, listener: Listener) => void;
-    close: () => void;
+    handlers: EventNotifierConnectionHandlers;
 }
 
 /** Substitutes the connection by overriding the protected seam, the way a consumer never would. */
 class TestEventNotifier extends EventNotifier {
-    public sources: FakeEventSource[] = [];
+    public connections: FakeConnection[] = [];
 
     public throwOnCreate = false;
 
     public last() {
-        return this.sources[this.sources.length - 1];
+        return this.connections[this.connections.length - 1];
     }
 
-    protected createEventSource(): EventSource {
+    protected openConnection(url: string, handlers: EventNotifierConnectionHandlers): EventNotifierConnection {
         if (this.throwOnCreate) {
             throw new Error('cannot open a connection');
         }
 
-        const source: FakeEventSource = {
-            url: this.url,
+        const connection: FakeConnection = {
+            url,
             closeCount: 0,
-            listeners: {},
-            onerror: null,
-            addEventListener: (name, listener) => {
-                source.listeners[name] = [...(source.listeners[name] ?? []), listener];
-            },
-            removeEventListener: (name, listener) => {
-                source.listeners[name] = (source.listeners[name] ?? []).filter((item) => item !== listener);
-            },
+            handlers,
             close: () => {
-                source.closeCount += 1;
+                connection.closeCount += 1;
             },
         };
 
-        this.sources.push(source);
-        return source as unknown as EventSource;
+        this.connections.push(connection);
+        return connection;
     }
 }
 
@@ -83,13 +73,21 @@ const createMockVisibilityState = () => {
     return state as unknown as VisibilityState & { triggerChange: (visible: boolean) => void };
 };
 
-/** Dispatches an SSE frame the way `EventSource` would, as a named event carrying string data. */
-const emit = (source: FakeEventSource, name: string, data?: unknown) => {
-    (source.listeners[name] ?? []).forEach((listener) => listener({ type: name, data } as MessageEvent));
+/** Delivers a frame the way the transports do, as an event name with string data. Like them, a closed connection delivers nothing. */
+const emit = (connection: FakeConnection, name: string, data?: unknown) => {
+    if (!connection.closeCount) {
+        connection.handlers.onMessage(name, data);
+    }
 };
 
-const hello = (source: FakeEventSource, id = 'connection-1') => {
-    emit(source, 'Hello', JSON.stringify({ id }));
+const drop = (connection: FakeConnection) => {
+    if (!connection.closeCount) {
+        connection.handlers.onDrop();
+    }
+};
+
+const hello = (connection: FakeConnection, id = 'connection-1') => {
+    emit(connection, 'Hello', JSON.stringify({ id }));
 };
 
 const flushPromises = async () => {
@@ -98,33 +96,63 @@ const flushPromises = async () => {
     }
 };
 
-const createMockApi = (implementation: (config: { signal?: AbortSignal }) => Promise<unknown> = async () => ({})) => {
-    const api = vi.fn(implementation);
+type ApiImplementation = (config: { signal?: AbortSignal }) => Promise<unknown>;
+
+/** Hands out `token-1`, `token-2`… for the connection tokens, and defers the rest to `subscribe`. */
+const createMockApi = ({
+    subscribe = async () => ({}),
+    fetchConnectionToken,
+}: { subscribe?: ApiImplementation; fetchConnectionToken?: ApiImplementation } = {}) => {
+    let tokenCount = 0;
+    const api = vi.fn((config: { url: string; signal?: AbortSignal }) => {
+        if (config.url === CONNECTION_TOKEN_URL) {
+            tokenCount += 1;
+            return (
+                fetchConnectionToken?.(config) ?? Promise.resolve({ ConnectionToken: { Token: `token-${tokenCount}` } })
+            );
+        }
+        return subscribe(config);
+    });
     return api as Api & typeof api;
 };
 
 /** Stays pending until its signal aborts, then rejects the way `protonFetch` does. */
-const createPendingApi = () =>
-    createMockApi(
-        ({ signal }) =>
-            new Promise((_resolve, reject) => {
-                signal?.addEventListener('abort', () => {
-                    reject(new DOMException('The operation was aborted.', 'AbortError'));
-                });
-            })
-    );
+const pending: ApiImplementation = ({ signal }) =>
+    new Promise((_resolve, reject) => {
+        signal?.addEventListener('abort', () => {
+            reject(new DOMException('The operation was aborted.', 'AbortError'));
+        });
+    });
+
+const getSubscribeCalls = (api: ReturnType<typeof createMockApi>) =>
+    api.mock.calls.filter(([config]) => config.url !== CONNECTION_TOKEN_URL);
+
+const getConnectionToken = (connection: FakeConnection) =>
+    new globalThis.URL(connection.url).searchParams.get('ConnectionToken');
+
+/** Connecting waits for the connection token, so timers are advanced along with the promises. */
+const advance = async (ms: number) => {
+    await vi.advanceTimersByTimeAsync(ms);
+    await flushPromises();
+};
 
 const getReportedErrors = (onError: ReturnType<typeof vi.fn>) => {
     return onError.mock.calls.map(([message]) => message);
 };
 
 /** Fails every attempt until the notifier gives up, and returns how many were made. */
-const exhaustReconnections = ({ sources, last }: { sources: FakeEventSource[]; last: () => FakeEventSource }) => {
+const exhaustReconnections = async ({
+    connections,
+    last,
+}: {
+    connections: FakeConnection[];
+    last: () => FakeConnection;
+}) => {
     for (let failure = 0; failure <= FIBONACCI_LIST.length; failure++) {
-        last().onerror?.();
-        vi.advanceTimersByTime(LONGEST_BACKOFF);
+        drop(last());
+        await advance(LONGEST_BACKOFF);
     }
-    return sources.length;
+    return connections.length;
 };
 
 const setup = ({
@@ -150,7 +178,11 @@ const setup = ({
 
     return {
         eventNotifier,
-        sources: eventNotifier.sources,
+        start: async () => {
+            eventNotifier.start();
+            await flushPromises();
+        },
+        connections: eventNotifier.connections,
         last: () => eventNotifier.last(),
         api,
         onPing,
@@ -168,36 +200,36 @@ describe('event notifier', () => {
         vi.useRealTimers();
     });
 
-    it('should open a connection on start', () => {
-        const { eventNotifier, sources } = setup();
+    it('should open a connection on start', async () => {
+        const { eventNotifier, start, connections } = setup();
 
-        eventNotifier.start();
+        await start();
 
-        expect(sources.length).toBe(1);
-        expect(sources[0].url).toBe(URL);
-
-        eventNotifier.stop();
-    });
-
-    it('should only open one connection when started twice', () => {
-        const { eventNotifier, sources } = setup();
-
-        eventNotifier.start();
-        eventNotifier.start();
-
-        expect(sources.length).toBe(1);
+        expect(connections.length).toBe(1);
+        expect(connections[0].url).toBe(`${URL}?ConnectionToken=token-1`);
 
         eventNotifier.stop();
     });
 
-    it('should subscribe to the loops with the connection id received in the hello frame', () => {
-        const { eventNotifier, api, last } = setup();
+    it('should only open one connection when started twice', async () => {
+        const { eventNotifier, start, connections } = setup();
 
         eventNotifier.start();
+        await start();
+
+        expect(connections.length).toBe(1);
+
+        eventNotifier.stop();
+    });
+
+    it('should subscribe to the loops with the connection id received in the hello frame', async () => {
+        const { eventNotifier, start, api, last } = setup();
+
+        await start();
         hello(last(), 'connection-42');
 
-        expect(api).toHaveBeenCalledTimes(1);
-        expect(api).toHaveBeenCalledWith(
+        expect(getSubscribeCalls(api)).toHaveLength(1);
+        expect(api).toHaveBeenLastCalledWith(
             expect.objectContaining({
                 method: 'post',
                 url: 'event-notifier/v1/connection/connection-42/loops',
@@ -215,10 +247,10 @@ describe('event notifier', () => {
         eventNotifier.stop();
     });
 
-    it('should notify a ping', () => {
-        const { eventNotifier, onPing, last } = setup();
+    it('should notify a ping', async () => {
+        const { eventNotifier, start, onPing, last } = setup();
 
-        eventNotifier.start();
+        await start();
         hello(last());
         emit(last(), 'Ping', JSON.stringify({ type: 'mail', identifier: 'user-1' }));
 
@@ -228,10 +260,10 @@ describe('event notifier', () => {
         eventNotifier.stop();
     });
 
-    it('should ignore malformed frames', () => {
-        const { eventNotifier, onPing, onError, last } = setup();
+    it('should ignore malformed frames', async () => {
+        const { eventNotifier, start, onPing, onError, last } = setup();
 
-        eventNotifier.start();
+        await start();
         emit(last(), 'Ping', 'not json');
         emit(last(), 'Ping', JSON.stringify({ type: 'not-a-loop' }));
 
@@ -241,39 +273,38 @@ describe('event notifier', () => {
         eventNotifier.stop();
     });
 
-    it('should report a server error frame without dropping the connection', () => {
-        const { eventNotifier, onError, sources, last } = setup();
+    it('should report a server error frame without dropping the connection', async () => {
+        const { eventNotifier, start, onError, connections, last } = setup();
 
-        eventNotifier.start();
+        await start();
         emit(last(), 'Error', 'too many connections');
-        vi.advanceTimersByTime(RECONNECT_DELAY);
+        await advance(RECONNECT_DELAY);
 
         expect(onError).toHaveBeenCalledWith('server error: too many connections');
-        expect(sources.length).toBe(1);
-        expect(sources[0].closeCount).toBe(0);
+        expect(connections.length).toBe(1);
+        expect(connections[0].closeCount).toBe(0);
 
         eventNotifier.stop();
     });
 
-    it('should close and reconnect itself instead of letting EventSource retry', () => {
-        const { eventNotifier, api, sources, last, onError } = setup();
+    it('should close a dropped connection and reconnect with a backoff', async () => {
+        const { eventNotifier, start, api, connections, last, onError } = setup();
 
-        eventNotifier.start();
+        await start();
         hello(last(), 'connection-1');
-        last().onerror?.();
+        drop(last());
 
-        // The connection is torn down right away so that EventSource stops retrying on its own.
-        expect(sources[0].closeCount).toBe(1);
-        expect(sources.length).toBe(1);
+        expect(connections[0].closeCount).toBe(1);
+        expect(connections.length).toBe(1);
         expect(onError).toHaveBeenCalledWith('the connection dropped');
 
-        vi.advanceTimersByTime(RECONNECT_DELAY);
+        await advance(RECONNECT_DELAY);
 
-        expect(sources.length).toBe(2);
+        expect(connections.length).toBe(2);
 
         hello(last(), 'connection-2');
 
-        expect(api).toHaveBeenCalledTimes(2);
+        expect(getSubscribeCalls(api)).toHaveLength(2);
         expect(api).toHaveBeenLastCalledWith(
             expect.objectContaining({ url: 'event-notifier/v1/connection/connection-2/loops' })
         );
@@ -281,170 +312,153 @@ describe('event notifier', () => {
         eventNotifier.stop();
     });
 
-    it('should detach its listeners when closing, so a teardown error does not reconnect twice', () => {
-        const { eventNotifier, sources, last } = setup();
+    it('should reconnect after a goodbye frame', async () => {
+        const { eventNotifier, start, connections, last } = setup();
 
-        eventNotifier.start();
-        const source = last();
-        source.onerror?.();
-
-        expect(source.onerror).toBeNull();
-        expect(source.listeners.Ping).toEqual([]);
-
-        // Replaying the detached handlers must not schedule anything.
-        emit(source, 'Ping', JSON.stringify({ type: 'mail' }));
-        vi.advanceTimersByTime(RECONNECT_DELAY);
-
-        expect(sources.length).toBe(2);
-
-        eventNotifier.stop();
-    });
-
-    it('should reconnect after a goodbye frame', () => {
-        const { eventNotifier, sources, last } = setup();
-
-        eventNotifier.start();
+        await start();
         hello(last());
         emit(last(), 'Goodbye');
 
-        expect(sources[0].closeCount).toBe(1);
+        expect(connections[0].closeCount).toBe(1);
 
-        vi.advanceTimersByTime(RECONNECT_DELAY);
+        await advance(RECONNECT_DELAY);
 
-        expect(sources.length).toBe(2);
+        expect(connections.length).toBe(2);
 
         eventNotifier.stop();
     });
 
-    it('should back off on consecutive failures and reset the backoff once connected', () => {
-        const { eventNotifier, sources, last } = setup();
+    it('should back off on consecutive failures and reset the backoff once connected', async () => {
+        const { eventNotifier, start, connections, last } = setup();
 
-        eventNotifier.start();
+        await start();
 
         // The first two reconnections are scheduled with the same fibonacci factor.
         for (let attempt = 1; attempt <= 2; attempt++) {
-            last().onerror?.();
-            vi.advanceTimersByTime(RECONNECT_DELAY);
-            expect(sources.length).toBe(attempt + 1);
+            drop(last());
+            await advance(RECONNECT_DELAY);
+            expect(connections.length).toBe(attempt + 1);
         }
 
         // The third one has to wait longer.
-        last().onerror?.();
-        vi.advanceTimersByTime(RECONNECT_DELAY);
-        expect(sources.length).toBe(3);
-        vi.advanceTimersByTime(RECONNECT_DELAY);
-        expect(sources.length).toBe(4);
+        drop(last());
+        await advance(RECONNECT_DELAY);
+        expect(connections.length).toBe(3);
+        await advance(RECONNECT_DELAY);
+        expect(connections.length).toBe(4);
 
         // A connection that stays up long enough resets the backoff, so the next failure is
         // scheduled from the start of the curve again.
         hello(last());
-        vi.advanceTimersByTime(INTERVAL_EVENT_TIMER);
-        last().onerror?.();
-        vi.advanceTimersByTime(RECONNECT_DELAY);
-        expect(sources.length).toBe(5);
+        await advance(INTERVAL_EVENT_TIMER);
+        drop(last());
+        await advance(RECONNECT_DELAY);
+        expect(connections.length).toBe(5);
 
         eventNotifier.stop();
     });
 
-    it('should give up once the whole backoff curve has been walked', () => {
-        const { eventNotifier, sources, last, onError } = setup();
+    it('should give up once the whole backoff curve has been walked', async () => {
+        const { eventNotifier, start, connections, last, onError } = setup();
 
-        eventNotifier.start();
-        const attempts = exhaustReconnections({ sources, last });
+        await start();
+        const attempts = await exhaustReconnections({ connections, last });
 
         expect(attempts).toBe(FIBONACCI_LIST.length + 1);
         expect(getReportedErrors(onError)).toContain(GAVE_UP);
 
         // Nothing is retried any more, however long the tab stays open.
-        last().onerror?.();
-        vi.advanceTimersByTime(LONGEST_BACKOFF * 100);
+        drop(last());
+        await advance(LONGEST_BACKOFF * 100);
 
-        expect(sources.length).toBe(attempts);
+        expect(connections.length).toBe(attempts);
 
         eventNotifier.stop();
     });
 
-    it('should give up on a connection that keeps dropping right after greeting us', () => {
-        const { eventNotifier, sources, last, onError } = setup();
+    it('should give up on a connection that keeps dropping right after greeting us', async () => {
+        const { eventNotifier, start, connections, last, onError } = setup();
 
-        eventNotifier.start();
+        await start();
 
         // Being greeted must not hand back a fresh attempt budget every round, otherwise a
         // server that greets us and drops the stream is retried for the lifetime of the tab.
         for (let round = 0; round < 50; round++) {
             hello(last(), `connection-${round}`);
-            last().onerror?.();
-            vi.advanceTimersByTime(LONGEST_BACKOFF);
+            drop(last());
+            await advance(LONGEST_BACKOFF);
         }
 
-        expect(sources.length).toBe(FIBONACCI_LIST.length + 1);
+        expect(connections.length).toBe(FIBONACCI_LIST.length + 1);
         expect(getReportedErrors(onError)).toContain(GAVE_UP);
 
         eventNotifier.stop();
     });
 
-    it('should reset the backoff once a connection has stayed up long enough', () => {
-        const { eventNotifier, sources, last } = setup();
+    it('should reset the backoff once a connection has stayed up long enough', async () => {
+        const { eventNotifier, start, connections, last } = setup();
 
-        eventNotifier.start();
+        await start();
 
         // Two quick flaps advance the curve.
         for (let round = 0; round < 2; round++) {
             hello(last(), `connection-${round}`);
-            last().onerror?.();
-            vi.advanceTimersByTime(LONGEST_BACKOFF);
+            drop(last());
+            await advance(LONGEST_BACKOFF);
         }
 
         // This one lasts, which is what makes it count as healthy.
         hello(last(), 'connection-stable');
-        vi.advanceTimersByTime(INTERVAL_EVENT_TIMER);
+        await advance(INTERVAL_EVENT_TIMER);
 
         // So the whole curve is available again from here.
-        const stableAt = sources.length;
-        expect(exhaustReconnections({ sources, last })).toBe(stableAt + FIBONACCI_LIST.length);
+        const stableAt = connections.length;
+        expect(await exhaustReconnections({ connections, last })).toBe(stableAt + FIBONACCI_LIST.length);
 
         eventNotifier.stop();
     });
 
-    it('should resume after giving up when the network comes back', () => {
-        const { eventNotifier, sources, last } = setup();
+    it('should resume after giving up when the network comes back', async () => {
+        const { eventNotifier, start, connections, last } = setup();
 
-        eventNotifier.start();
-        const attempts = exhaustReconnections({ sources, last });
+        await start();
+        const attempts = await exhaustReconnections({ connections, last });
 
         window.dispatchEvent(new Event('online'));
+        await flushPromises();
 
-        expect(sources.length).toBe(attempts + 1);
+        expect(connections.length).toBe(attempts + 1);
 
         eventNotifier.stop();
     });
 
-    it('should resume after giving up when the tab is focused again', () => {
-        const { eventNotifier, sources, last, visibilityState } = setup();
+    it('should resume after giving up when the tab is focused again', async () => {
+        const { eventNotifier, start, connections, last, visibilityState } = setup();
 
-        eventNotifier.start();
-        const attempts = exhaustReconnections({ sources, last });
+        await start();
+        const attempts = await exhaustReconnections({ connections, last });
 
         visibilityState.triggerChange(true);
+        await flushPromises();
 
-        expect(sources.length).toBe(attempts + 1);
+        expect(connections.length).toBe(attempts + 1);
 
         // The attempt count is reset, so the whole curve is available again.
-        const resumedAt = sources.length;
-        expect(exhaustReconnections({ sources, last })).toBe(resumedAt + FIBONACCI_LIST.length);
+        const resumedAt = connections.length;
+        expect(await exhaustReconnections({ connections, last })).toBe(resumedAt + FIBONACCI_LIST.length);
 
         eventNotifier.stop();
     });
 
-    it('should reconnect with a backoff when the connection cannot be created', () => {
-        const { eventNotifier, onError } = setup({ throwOnCreate: true });
+    it('should reconnect with a backoff when the connection cannot be created', async () => {
+        const { eventNotifier, start, onError } = setup({ throwOnCreate: true });
 
-        eventNotifier.start();
+        await start();
 
         expect(onError).toHaveBeenCalledWith('failed to open the connection', expect.any(Error));
 
         // Reconnecting keeps failing, but it never throws nor loops synchronously.
-        vi.advanceTimersByTime(RECONNECT_DELAY);
+        await advance(RECONNECT_DELAY);
 
         expect(onError).toHaveBeenCalledTimes(2);
 
@@ -453,12 +467,14 @@ describe('event notifier', () => {
 
     it('should swallow a failing subscription', async () => {
         const error = new Error('nope');
-        const api = createMockApi(async () => {
-            throw error;
+        const api = createMockApi({
+            subscribe: async () => {
+                throw error;
+            },
         });
-        const { eventNotifier, onError, last } = setup({ api });
+        const { eventNotifier, start, onError, last } = setup({ api });
 
-        eventNotifier.start();
+        await start();
         hello(last());
         await flushPromises();
 
@@ -468,12 +484,12 @@ describe('event notifier', () => {
     });
 
     it('should not report a subscription aborted by a reconnection as a failure', async () => {
-        const { eventNotifier, onError, last } = setup({ api: createPendingApi() });
+        const { eventNotifier, start, onError, last } = setup({ api: createMockApi({ subscribe: pending }) });
 
-        eventNotifier.start();
+        await start();
         hello(last());
         // The subscription is still in flight when the connection drops.
-        last().onerror?.();
+        drop(last());
         await flushPromises();
 
         expect(getReportedErrors(onError)).not.toContain('failed to subscribe to the event loops');
@@ -484,9 +500,9 @@ describe('event notifier', () => {
     });
 
     it('should not report a subscription aborted by stop as a failure', async () => {
-        const { eventNotifier, onError, last } = setup({ api: createPendingApi() });
+        const { eventNotifier, start, onError, last } = setup({ api: createMockApi({ subscribe: pending }) });
 
-        eventNotifier.start();
+        await start();
         hello(last());
         eventNotifier.stop();
         await flushPromises();
@@ -494,86 +510,218 @@ describe('event notifier', () => {
         expect(getReportedErrors(onError)).toEqual([]);
     });
 
-    it('should close the connection and stop reconnecting on stop', () => {
-        const { eventNotifier, sources, last } = setup();
+    it('should close the connection and stop reconnecting on stop', async () => {
+        const { eventNotifier, start, connections, last } = setup();
 
-        eventNotifier.start();
+        await start();
         hello(last());
         eventNotifier.stop();
 
-        expect(sources[0].closeCount).toBe(1);
-        expect(sources[0].onerror).toBeNull();
+        expect(connections[0].closeCount).toBe(1);
 
-        vi.advanceTimersByTime(RECONNECT_DELAY * 20);
+        await advance(RECONNECT_DELAY * 20);
 
-        expect(sources.length).toBe(1);
+        expect(connections.length).toBe(1);
     });
 
-    it('should not reconnect after the connection drops once stopped', () => {
-        const { eventNotifier, sources, last } = setup();
+    it('should not reconnect after the connection drops once stopped', async () => {
+        const { eventNotifier, start, connections, last } = setup();
 
-        eventNotifier.start();
-        const source = last();
+        await start();
+        const connection = last();
         eventNotifier.stop();
-        source.onerror?.();
+        drop(connection);
 
-        vi.advanceTimersByTime(RECONNECT_DELAY * 20);
+        await advance(RECONNECT_DELAY * 20);
 
-        expect(sources.length).toBe(1);
+        expect(connections.length).toBe(1);
     });
 
-    it('should reconnect immediately when the network comes back', () => {
-        const { eventNotifier, sources } = setup();
+    it('should reconnect immediately when the network comes back', async () => {
+        const { eventNotifier, start, connections } = setup();
 
-        eventNotifier.start();
+        await start();
         window.dispatchEvent(new Event('offline'));
 
-        expect(sources[0].closeCount).toBe(1);
+        expect(connections[0].closeCount).toBe(1);
 
         window.dispatchEvent(new Event('online'));
+        await flushPromises();
 
-        expect(sources.length).toBe(2);
+        expect(connections.length).toBe(2);
 
         eventNotifier.stop();
     });
 
-    it('should stop listening to the network events on stop', () => {
-        const { eventNotifier, sources } = setup();
+    it('should stop listening to the network events on stop', async () => {
+        const { eventNotifier, start, connections } = setup();
 
-        eventNotifier.start();
+        await start();
         eventNotifier.stop();
         window.dispatchEvent(new Event('online'));
+        await flushPromises();
 
-        expect(sources.length).toBe(1);
+        expect(connections.length).toBe(1);
     });
 
-    it('should reconnect immediately when becoming visible again without a connection', () => {
-        const { eventNotifier, sources, last, visibilityState } = setup();
+    it('should reconnect immediately when becoming visible again without a connection', async () => {
+        const { eventNotifier, start, connections, last, visibilityState } = setup();
 
-        eventNotifier.start();
-        last().onerror?.();
+        await start();
+        drop(last());
         visibilityState.triggerChange(false);
         visibilityState.triggerChange(true);
+        await flushPromises();
 
-        expect(sources.length).toBe(2);
+        expect(connections.length).toBe(2);
 
         // The pending backoff has been cleared, so no extra connection is opened.
-        vi.advanceTimersByTime(RECONNECT_DELAY * 20);
+        await advance(RECONNECT_DELAY * 20);
 
-        expect(sources.length).toBe(2);
+        expect(connections.length).toBe(2);
 
         eventNotifier.stop();
     });
 
-    it('should keep the connection when becoming visible again while connected', () => {
-        const { eventNotifier, sources, last, visibilityState } = setup();
+    it('should keep the connection when becoming visible again while connected', async () => {
+        const { eventNotifier, start, connections, last, visibilityState } = setup();
 
-        eventNotifier.start();
+        await start();
         hello(last());
         visibilityState.triggerChange(true);
+        await flushPromises();
 
-        expect(sources.length).toBe(1);
-        expect(sources[0].closeCount).toBe(0);
+        expect(connections.length).toBe(1);
+        expect(connections[0].closeCount).toBe(0);
+
+        eventNotifier.stop();
+    });
+
+    it('should only authenticate the connection with the connection token', async () => {
+        const { eventNotifier, start, api, last } = setup();
+
+        await start();
+
+        expect(api).toHaveBeenCalledWith(
+            expect.objectContaining({ method: 'post', url: CONNECTION_TOKEN_URL, silence: true })
+        );
+        expect([...new globalThis.URL(last().url).searchParams.keys()]).toEqual(['ConnectionToken']);
+
+        eventNotifier.stop();
+    });
+
+    it('should fetch a fresh connection token for every reconnection', async () => {
+        const { eventNotifier, start, connections, last } = setup();
+
+        await start();
+        drop(last());
+        await advance(RECONNECT_DELAY);
+        emit(last(), 'Goodbye');
+        await advance(LONGEST_BACKOFF);
+
+        expect(connections.map(getConnectionToken)).toEqual(['token-1', 'token-2', 'token-3']);
+
+        eventNotifier.stop();
+    });
+
+    it('should not open the connection before the connection token is received', async () => {
+        const { eventNotifier, start, connections } = setup({
+            api: createMockApi({ fetchConnectionToken: pending }),
+        });
+
+        await start();
+
+        expect(connections.length).toBe(0);
+
+        eventNotifier.stop();
+    });
+
+    it('should retry with a backoff and a new token when fetching the connection token fails', async () => {
+        const error = new Error('nope');
+        let attempt = 0;
+        const api = createMockApi({
+            fetchConnectionToken: async () => {
+                attempt += 1;
+                if (attempt === 1) {
+                    throw error;
+                }
+                return { ConnectionToken: { Token: `retried-${attempt}` } };
+            },
+        });
+        const { eventNotifier, start, connections, onError } = setup({ api });
+
+        await start();
+
+        expect(onError).toHaveBeenCalledWith('failed to fetch a connection token', error);
+        expect(connections.length).toBe(0);
+
+        await advance(RECONNECT_DELAY);
+
+        expect(connections.map(getConnectionToken)).toEqual(['retried-2']);
+
+        eventNotifier.stop();
+    });
+
+    it.each([
+        { name: 'no connection token', response: {} },
+        { name: 'a connection token without its token', response: { ConnectionToken: {} } },
+        { name: 'a connection token that is not nested', response: { ConnectionToken: 'token' } },
+    ])('should treat a response with $name as a failure', async ({ response }) => {
+        const { eventNotifier, start, connections, onError } = setup({
+            api: createMockApi({ fetchConnectionToken: async () => response }),
+        });
+
+        await start();
+
+        expect(getReportedErrors(onError)).toEqual(['failed to fetch a connection token']);
+        expect(connections.length).toBe(0);
+
+        eventNotifier.stop();
+    });
+
+    it('should give up when the connection token keeps failing', async () => {
+        const { eventNotifier, start, api, onError } = setup({
+            api: createMockApi({
+                fetchConnectionToken: async () => {
+                    throw new Error('unauthorized');
+                },
+            }),
+        });
+
+        await start();
+        await advance(LONGEST_BACKOFF * (FIBONACCI_LIST.length + 1));
+
+        expect(getReportedErrors(onError)).toContain(GAVE_UP);
+        expect(api).toHaveBeenCalledTimes(FIBONACCI_LIST.length + 1);
+
+        eventNotifier.stop();
+    });
+
+    it('should not connect nor report anything when stopped while fetching the connection token', async () => {
+        const { eventNotifier, start, connections, onError, api } = setup({
+            api: createMockApi({ fetchConnectionToken: pending }),
+        });
+
+        await start();
+        eventNotifier.stop();
+        await advance(LONGEST_BACKOFF);
+
+        expect(api.mock.calls[0][0].signal?.aborted).toBe(true);
+        expect(connections.length).toBe(0);
+        expect(getReportedErrors(onError)).toEqual([]);
+    });
+
+    it('should not fetch a second connection token when becoming visible while fetching one', async () => {
+        const { eventNotifier, start, api, visibilityState } = setup({
+            api: createMockApi({ fetchConnectionToken: pending }),
+        });
+
+        await start();
+        visibilityState.triggerChange(true);
+        await flushPromises();
+
+        expect(api).toHaveBeenCalledTimes(1);
+        expect(api.mock.calls[0][0].signal?.aborted).toBe(false);
 
         eventNotifier.stop();
     });

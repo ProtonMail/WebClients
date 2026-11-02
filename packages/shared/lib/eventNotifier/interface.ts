@@ -14,7 +14,13 @@ export enum EventNotifierLoopType {
     Legacy = 'legacy',
 }
 
-/** Names of the SSE events pushed by the server. */
+/** How the connection to the event notifier is held, both behave the same otherwise. */
+export enum EventNotifierTransport {
+    Sse = 'sse',
+    WebSocket = 'websocket',
+}
+
+/** Names of the events pushed by the server, whatever the transport. */
 export enum EventNotifierEventName {
     Hello = 'Hello',
     Ping = 'Ping',

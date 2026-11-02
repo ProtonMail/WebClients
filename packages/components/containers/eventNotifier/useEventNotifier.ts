@@ -4,21 +4,19 @@ import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getClientID } from '@proton/shared/lib/apps/helper';
 import { EventNotifier } from '@proton/shared/lib/eventNotifier/EventNotifier';
 import { getEventNotifierUrl } from '@proton/shared/lib/eventNotifier/getEventNotifierUrl';
-import type { EventNotifierLoopType } from '@proton/shared/lib/eventNotifier/interface';
-import { getAppVersionHeaders, getUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { type EventNotifierLoopType, EventNotifierTransport } from '@proton/shared/lib/eventNotifier/interface';
 import { SentryCommonInitiatives, captureInitiativeMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import useAuthentication from '../../hooks/useAuthentication';
 import useEventManager from '../../hooks/useEventManager';
 
 /**
- * "Ping-o-matic": keeps an SSE connection open to the event notifier and calls the event loop as
- * soon as the server signals that new events are available, on top of its regular polling.
+ * "Ping-o-matic": keeps a connection open to the event notifier and calls the event loop as soon as
+ * the server signals that new events are available, on top of its regular polling. The connection
+ * is held over SSE, or over WebSocket behind `PingOMaticWebSocket`.
  *
  * `types` must be referentially stable, a module level constant for example.
  */
@@ -30,10 +28,10 @@ export const useEventNotifier = ({
     debug: (message: string, ...args: unknown[]) => void;
 }) => {
     const api = useApi();
-    const { API_URL, APP_NAME, APP_VERSION } = useConfig();
-    const authentication = useAuthentication();
+    const { API_URL } = useConfig();
     const { call } = useEventManager();
     const isPingOMaticEnabled = useFlag('PingOMatic');
+    const transport = useFlag('PingOMaticWebSocket') ? EventNotifierTransport.WebSocket : EventNotifierTransport.Sse;
     const [user] = useUser();
 
     useEffect(() => {
@@ -43,17 +41,11 @@ export const useEventNotifier = ({
 
         const eventNotifier = new EventNotifier({
             api: getSilentApi(api),
-            url: getEventNotifierUrl({
-                apiUrl: API_URL,
-                origin: window.location.origin,
-                headers: {
-                    ...getUIDHeaders(authentication.UID ?? ''),
-                    ...getAppVersionHeaders(getClientID(APP_NAME), APP_VERSION),
-                },
-            }),
+            url: getEventNotifierUrl({ apiUrl: API_URL, origin: window.location.origin }),
+            transport,
             loops: types.map((Type) => ({ Type, Identifier: user.ID })),
             onPing: ({ type }) => {
-                debug(`Event notifier: ping received for the ${type} event loop`);
+                debug(`Event notifier: ping received over ${transport} for the ${type} event loop`);
                 // Pings received while a call is in flight are coalesced by the event manager.
                 void call('Ping').catch(noop);
             },
@@ -63,7 +55,7 @@ export const useEventNotifier = ({
                 if (sentryError) {
                     captureInitiativeMessage(SentryCommonInitiatives.EVENT_NOTIFIER, `Event notifier: ${message}`, {
                         level: 'warning',
-                        extra: { error: sentryError },
+                        extra: { error: sentryError, transport },
                     });
                 }
             },
@@ -74,5 +66,5 @@ export const useEventNotifier = ({
         return () => {
             eventNotifier.stop();
         };
-    }, [isPingOMaticEnabled, api, API_URL, APP_NAME, APP_VERSION, authentication.UID, call, types, user.ID]);
+    }, [isPingOMaticEnabled, transport, api, API_URL, call, types, user.ID]);
 };
