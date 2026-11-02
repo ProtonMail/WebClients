@@ -1,5 +1,5 @@
 import type { MutableRefObject, ReactNode } from 'react';
-import { useEffect, useImperativeHandle, useRef } from 'react';
+import { useImperativeHandle, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -25,7 +25,6 @@ import type {
     PaymentsApi,
     TokenPayment,
 } from '@proton/payments/core/interface';
-import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/currencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { isV5PaymentToken } from '@proton/payments/core/type-guards';
 import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
@@ -76,7 +75,6 @@ interface Props {
     signupParameters: SignupParameters2;
     showRenewalNotice: boolean;
     app: APP_NAMES | undefined;
-    setCurrencySelectorDisabled: (disabled: boolean) => void;
     paymentsApi: PaymentsApi;
     onVatNumberChange: (vatNumber: string) => void;
     telemetryContext: PaymentTelemetryContext;
@@ -106,7 +104,6 @@ const AccountStepPayment = ({
     signupParameters,
     showRenewalNotice,
     app,
-    setCurrencySelectorDisabled,
     paymentsApi,
     onVatNumberChange,
     telemetryContext,
@@ -246,13 +243,6 @@ const AccountStepPayment = ({
         product: app,
         telemetryContext,
     });
-
-    useEffect(
-        function disableCurrencySelectorForCurrencyRestrictedMethod() {
-            setCurrencySelectorDisabled(isCurrencyRestrictedMethod(paymentFacade.selectedMethodType));
-        },
-        [paymentFacade.selectedMethodType]
-    );
 
     const billingAddressHook = useBillingAddress({
         paymentsApi,
@@ -416,7 +406,6 @@ const AccountStepPayment = ({
                     loadingBitcoin={loadingPaymentDetails}
                     subscription={model.session?.subscription}
                     startTrial={isTrial}
-                    onCurrencyChange={(currency) => handleOptimistic({ currency })}
                 />
                 {(() => {
                     if (loadingPaymentsForm) {

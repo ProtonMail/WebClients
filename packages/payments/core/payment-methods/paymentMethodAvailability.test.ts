@@ -28,7 +28,7 @@ import type {
 import type { PaymentMethodsContext } from './paymentMethodAvailability';
 import { getNewMethods, getUsedMethods, isMethodTypeEnabled } from './paymentMethodAvailability';
 
-const TEST_CURRENCY = 'USD' as const;
+const TEST_CURRENCY = 'EUR' as const;
 
 let status: PaymentStatus;
 
@@ -2171,5 +2171,70 @@ describe('bitcoin delinquency', () => {
 describe('trial mode', () => {
     it('should leave the card as the only new method even when everything else would be available', () => {
         expect(newTypes({ ...permissive, isTrial: true })).toEqual([PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]);
+    });
+});
+
+describe('methods that only charge some currencies', () => {
+    const everyMethodInTheNetherlands: Partial<PaymentMethodsContext> = {
+        ...permissive,
+        enableIdeal: true,
+        billingAddress: { CountryCode: 'NL', State: '' },
+    };
+
+    const savedMethod = (Type: PlainPaymentMethodType) =>
+        ({ ID: `saved-${Type}`, Type, Order: 500, Details: {} }) as unknown as SavedPaymentMethod;
+
+    const savedMethods = [
+        savedMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD),
+        savedMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT),
+        savedMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL),
+    ];
+
+    it('offers new SEPA and iDEAL in EUR', () => {
+        expect(newTypes({ ...everyMethodInTheNetherlands, currency: 'EUR' })).toEqual([
+            PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            PAYMENT_METHOD_TYPES.CASH,
+            PAYMENT_METHOD_TYPES.APPLE_PAY,
+            PAYMENT_METHOD_TYPES.GOOGLE_PAY,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+        ]);
+    });
+
+    it.each(['USD', 'CHF', 'GBP'] as Currency[])('does not offer new SEPA or iDEAL in %s', (currency) => {
+        expect(newTypes({ ...everyMethodInTheNetherlands, currency })).toEqual([
+            PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+            PAYMENT_METHOD_TYPES.CASH,
+            PAYMENT_METHOD_TYPES.APPLE_PAY,
+            PAYMENT_METHOD_TYPES.GOOGLE_PAY,
+        ]);
+    });
+
+    it('keeps saved SEPA and iDEAL in EUR', () => {
+        const usedMethods = getUsedMethods(buildMethods({ paymentMethods: savedMethods, currency: 'EUR' }));
+
+        expect(usedMethods.map(({ value }) => value)).toEqual([
+            'saved-chargebee-card',
+            'saved-sepa-direct-debit',
+            'saved-chargebee-ideal',
+        ]);
+    });
+
+    it('drops saved SEPA and iDEAL in USD', () => {
+        const usedMethods = getUsedMethods(buildMethods({ paymentMethods: savedMethods, currency: 'USD' }));
+
+        expect(usedMethods.map(({ value }) => value)).toEqual(['saved-chargebee-card']);
+    });
+
+    it('reports SEPA and iDEAL as disabled in USD', () => {
+        const context = buildMethods({ ...everyMethodInTheNetherlands, currency: 'USD' });
+
+        expect(isMethodTypeEnabled(context, PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)).toBe(false);
+        expect(isMethodTypeEnabled(context, PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL)).toBe(false);
+        expect(isMethodTypeEnabled(context, PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(true);
     });
 });

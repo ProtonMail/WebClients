@@ -25,6 +25,7 @@ import type {
 import { getHas2025OfferCoupon } from '../subscription/helpers';
 import type { Subscription } from '../subscription/interface';
 import { isFreeSubscription } from '../type-guards';
+import { isCurrencySupportedByMethod } from './methodCurrencies';
 import { getPaymentMethodConfig } from './registry';
 
 /**
@@ -272,13 +273,20 @@ const availabilityByMethodType: [PAYMENT_METHOD_TYPES, (context: PaymentMethodsC
     [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, isChargebeeIdealAvailable],
 ];
 
+const isNewMethodAvailable = (
+    context: PaymentMethodsContext,
+    [type, isAvailable]: (typeof availabilityByMethodType)[number]
+): boolean => isCurrencySupportedByMethod(type, context.currency) && isAvailable(context);
+
 export const getNewMethods = (context: PaymentMethodsContext): AvailablePaymentMethod[] =>
     availabilityByMethodType
-        .filter(([, isAvailable]) => isAvailable(context))
+        .filter((availability) => isNewMethodAvailable(context, availability))
         .map(([type]) => ({ type, value: type, isSaved: false, isDefault: false }));
 
-export const isMethodTypeEnabled = (context: PaymentMethodsContext, methodType: PlainPaymentMethodType): boolean =>
-    !!availabilityByMethodType.find(([type]) => type === methodType)?.[1](context);
+export const isMethodTypeEnabled = (context: PaymentMethodsContext, methodType: PlainPaymentMethodType): boolean => {
+    const availability = availabilityByMethodType.find(([type]) => type === methodType);
+    return !!availability && isNewMethodAvailable(context, availability);
+};
 
 /**
  * Formats the list of saved payment methods. It can be then used to render the list of payment methods.
@@ -297,6 +305,10 @@ export const getUsedMethods = (context: PaymentMethodsContext): AvailablePayment
         }
 
         if (Type === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL && isLumoCreditFlow(context)) {
+            return false;
+        }
+
+        if (!isCurrencySupportedByMethod(Type, context.currency)) {
             return false;
         }
 

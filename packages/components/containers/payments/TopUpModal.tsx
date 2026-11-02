@@ -369,12 +369,7 @@ export const TopUpModal = ({
                         {c('Payments').t`Paid from your account credit.`}
                     </p>
                 ) : (
-                    <PaymentWrapper
-                        {...paymentFacade}
-                        noMaxWidth
-                        onCurrencyChange={setCurrency}
-                        minCreditAmount={lowAmount ? minAmount : 0}
-                    />
+                    <PaymentWrapper {...paymentFacade} noMaxWidth minCreditAmount={lowAmount ? minAmount : 0} />
                 )}
                 {!paidByAccountCredit && amountToCharge && (
                     <p

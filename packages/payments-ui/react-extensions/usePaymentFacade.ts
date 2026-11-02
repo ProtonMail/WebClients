@@ -33,7 +33,6 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { useCurrencyOverride } from '../payment-methods/useCurrencyOverride';
 import { type ApplePayModalHandles, useApplePay } from '../payment-processors/useApplePay';
 import { useApplePay as useApplePayLegacy } from '../payment-processors/useApplePayLegacy';
 import { type ChargebeePaypalModalHandles, useChargebeePaypal } from '../payment-processors/useChargebeePaypal';
@@ -627,12 +626,6 @@ export const usePaymentFacade = (
         ].forEach((paymentProcessor) => paymentProcessor.reset());
     };
 
-    const currencyOverride = useCurrencyOverride({
-        currentCurrency: currency,
-        currentSelectedMethodType: paymentMethodType,
-        methods: methods.allMethods,
-    });
-
     return {
         methods,
         chargebeeCard,
@@ -649,6 +642,5 @@ export const usePaymentFacade = (
         directDebit,
         initialized,
         reset,
-        currencyOverride,
     };
 };

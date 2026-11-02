@@ -183,7 +183,6 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
                         {...paymentFacade}
                         noMaxWidth
                         hideFirstLabel
-                        onCurrencyChange={payments.selectCurrency}
                         taxCountry={billingAddressHook.taxCountry}
                         vatNumber={billingAddressHook.vatNumber}
                     />

@@ -17,7 +17,7 @@ import type { Operations, OperationsSubscriptionData } from '@proton/payments-ui
 import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { usePaymentPollers } from '@proton/payments-ui/ui/hooks/usePaymentPollers';
 import { ProrationMode } from '@proton/payments/core/api/api';
-import { FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
 import type { PaymentMethodType } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
@@ -196,11 +196,9 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed }:
         sortNewMethods: sortMethodsBasedOnDevice,
     });
 
-    const isSepaDirectDebit =
-        paymentFacade.methods.selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
     const isLifetimeWithCredits = user.Credit > 0 && isLifetimePlanSelected(planIDs);
 
-    const disableCurrencySelector = isSepaDirectDebit || isLifetimeWithCredits || loading;
+    const disableCurrencySelector = isLifetimeWithCredits || loading;
 
     return {
         paymentFacade,

@@ -37,7 +37,6 @@ jest.mock('./payment-section/PaymentMethodSelector', () => ({ __esModule: true, 
 const paymentFacade = {
     amount: 1200,
     selectedMethodValue: undefined,
-    currencyOverride: { updateCurrencyOverride: jest.fn() },
     methods: { allMethods: [], savedMethods: [], selectMethod: jest.fn() },
     bitcoinChargebee: { bitcoinLoading: false },
 } as any;

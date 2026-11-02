@@ -42,7 +42,6 @@ import type {
     PlanIDs,
     TokenPayment,
 } from '@proton/payments/core/interface';
-import { isCurrencyRestrictedMethod } from '@proton/payments/core/payment-methods/currencyOverride';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
@@ -1018,7 +1017,6 @@ const Step1 = ({
             currency={options.currency}
             loading={changingCurrency}
             onSelect={(currency) => handleChangeCurrency(currency)}
-            disabled={isCurrencyRestrictedMethod(paymentFacade.selectedMethodType)}
         />
     );
 
@@ -1507,7 +1505,6 @@ const Step1 = ({
                                             taxCountry={billingAddressHook.taxCountry}
                                             vatNumber={billingAddressHook.vatNumber}
                                             startTrial={checkTrial}
-                                            onCurrencyChange={handleChangeCurrency}
                                         />
                                         {(() => {
                                             if (!actualCheckout.discountPercent || checkTrial || signupTrial) {

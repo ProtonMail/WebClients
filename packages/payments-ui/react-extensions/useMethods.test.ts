@@ -208,6 +208,7 @@ describe('deriving the methods from the props', () => {
             flow: 'subscription',
             paymentMethodFlags: { enableSepa: true, enableSepaB2C: true },
             billingAddress: { CountryCode: 'US', State: 'AL' },
+            currency: 'EUR',
         };
         const { result, rerender } = await renderLoadedMethods(sepaProps);
 
@@ -218,6 +219,29 @@ describe('deriving the methods from the props', () => {
         rerender({ ...sepaProps, billingAddress: { CountryCode: 'DE', State: '' } });
 
         expect(result.current.newMethods).toContainEqual(newMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT));
+    });
+
+    it('should select another method when the currency no longer supports the selected SEPA', async () => {
+        const sepaInEur: Partial<Props> = {
+            paymentStatus,
+            flow: 'subscription',
+            paymentMethodFlags: { enableSepa: true, enableSepaB2C: true },
+            billingAddress: { CountryCode: 'DE', State: '' },
+            currency: 'EUR',
+        };
+        const { result, rerender } = await renderLoadedMethods(sepaInEur);
+
+        act(() => {
+            result.current.selectMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT);
+        });
+        expect(result.current.selectedMethod?.type).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT);
+
+        rerender({ ...sepaInEur, currency: 'USD' });
+
+        expect(result.current.newMethods).not.toContainEqual(
+            newMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT)
+        );
+        expect(result.current.selectedMethod?.type).toBe(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
     });
 
     it('should update the methods when the user becomes a Pass Lifetime buyer with credits', async () => {

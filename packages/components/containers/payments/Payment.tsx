@@ -8,7 +8,6 @@ import useStableLoading from '@proton/hooks/useStableLoading';
 import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/billed-user/BilledUserInlineMessage';
 import type { ThemeCode } from '@proton/payments-ui/client-extensions/helpers';
 import type { ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';
-import type { useCurrencyOverride } from '@proton/payments-ui/payment-methods/useCurrencyOverride';
 import type { ChargebeePaypalProcessorHook } from '@proton/payments-ui/payment-processors/useChargebeePaypal';
 import type { BitcoinHook } from '@proton/payments-ui/react-extensions/useBitcoin';
 import type { ChargebeeCardProcessorHook } from '@proton/payments-ui/react-extensions/useChargebeeCard';
@@ -57,7 +56,6 @@ import PayPalInfoMessage from './PayPalInfoMessage';
 import PayPalView from './PayPalView';
 import Bitcoin from './bitcoin/Bitcoin';
 import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
-import { CurrencyOverrideBannerText } from './currencyOverrideBannerText';
 import PaymentMethodDetails from './methods/PaymentMethodDetails';
 import PaymentMethodSelector from './methods/PaymentMethodSelector';
 import { getPaymentMethodRequired } from './subscription/helpers/getPaymentMethodRequired';
@@ -100,7 +98,6 @@ export interface Props {
     loadingBitcoin?: boolean;
     showTaxCountry: boolean;
     subscription?: Subscription | FreeSubscription;
-    currencyOverride: ReturnType<typeof useCurrencyOverride>;
     creditCardDetailsRef?: Ref<HTMLDivElement>;
     selectedProcessor: PaymentProcessorHook | undefined;
     processingPayment: boolean;
@@ -141,7 +138,6 @@ export const PaymentsNoApi = ({
     showTaxCountry,
     subscription,
     startTrial,
-    currencyOverride,
     creditCardDetailsRef,
     selectedProcessor,
     processingPayment,
@@ -242,7 +238,6 @@ export const PaymentsNoApi = ({
                     selectedPaymentMethod={method}
                 />
             )}
-            {currencyOverride.isCurrencyOverriden && <CurrencyOverrideBannerText selectedMethod={method} />}
         </>
     );
 

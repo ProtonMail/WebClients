@@ -97,7 +97,6 @@ describe('SubscriptionCheckout', () => {
                 isScheduled={false}
                 subscription={buildSubscription()}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -127,7 +126,6 @@ describe('SubscriptionCheckout', () => {
                 isScheduled={false}
                 subscription={buildSubscription()}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -162,7 +160,6 @@ describe('SubscriptionCheckout', () => {
                 isScheduled={false}
                 subscription={buildSubscription()}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -210,7 +207,6 @@ describe('SubscriptionCheckout', () => {
                     }
                 )}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -254,7 +250,6 @@ describe('SubscriptionCheckout', () => {
                     PeriodEnd: 1668868986,
                 })}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -305,7 +300,6 @@ describe('SubscriptionCheckout', () => {
                     PeriodEnd: 1668868986,
                 })}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -356,7 +350,6 @@ describe('SubscriptionCheckout', () => {
                     PeriodEnd: 1668868986,
                 })}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -397,7 +390,6 @@ describe('SubscriptionCheckout', () => {
                     isScheduled={false}
                     subscription={buildSubscription()}
                     paymentForbiddenReason={paymentForbiddenReason}
-                    paymentMethods={{} as any}
                     paymentFacade={{ showTaxCountry: true, selectedMethodValue, amount } as any}
                     trial={false}
                     submit={<button type="submit">Pay</button>}
@@ -431,7 +423,6 @@ describe('SubscriptionCheckout', () => {
                 isScheduled={false}
                 subscription={buildSubscription()}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -464,7 +455,6 @@ describe('SubscriptionCheckout', () => {
                 isScheduled={false}
                 subscription={buildSubscription()}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -497,7 +487,6 @@ describe('SubscriptionCheckout', () => {
                 isScheduled={false}
                 subscription={buildSubscription()}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -525,7 +514,6 @@ describe('SubscriptionCheckout', () => {
                 isScheduled={false}
                 subscription={buildSubscription()}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -553,7 +541,6 @@ describe('SubscriptionCheckout', () => {
                 isScheduled={false}
                 subscription={buildSubscription()}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -581,7 +568,6 @@ describe('SubscriptionCheckout', () => {
                 isScheduled={false}
                 subscription={buildSubscription()}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -617,7 +603,6 @@ describe('SubscriptionCheckout', () => {
                 isScheduled={false}
                 subscription={buildSubscription()}
                 paymentForbiddenReason={{ forbidden: false }}
-                paymentMethods={{} as any}
                 paymentFacade={{ showTaxCountry: true } as any}
                 trial={false}
             />
@@ -652,7 +637,6 @@ describe('SubscriptionCheckout', () => {
                     isScheduled={false}
                     subscription={buildSubscription()}
                     paymentForbiddenReason={{ forbidden: false }}
-                    paymentMethods={{} as any}
                     paymentFacade={{ showTaxCountry: true } as any}
                     trial={false}
                 />

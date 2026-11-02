@@ -183,7 +183,6 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
-                currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
                 paymentComponentLoaded={jest.fn()}
                 selectedProcessor={undefined}
@@ -225,7 +224,6 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
-                currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
                 paymentComponentLoaded={jest.fn()}
                 selectedProcessor={undefined}
@@ -310,7 +308,6 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
-                currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
                 paymentComponentLoaded={jest.fn()}
                 selectedProcessor={undefined}
@@ -386,7 +383,6 @@ describe('Payment', () => {
                     } as any
                 }
                 savedPaymentMethods={[]}
-                currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
                 paymentComponentLoaded={jest.fn()}
                 selectedProcessor={undefined}
@@ -397,58 +393,6 @@ describe('Payment', () => {
         await waitFor(() => {
             expect(container).not.toHaveTextContent('We use 3-D Secure to protect your payments');
         });
-    });
-
-    it.each([
-        [
-            PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
-            'Your currency has been changed to euros (€) because iDEAL | Wero only supports payments in euros.',
-        ],
-        [
-            PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
-            'Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.',
-        ],
-    ])('displays currency override banner for %s when isCurrencyOverriden is true', (method, bannerText) => {
-        render(
-            <WrappedPaymentsNoApi
-                onMethod={() => {}}
-                flow="subscription"
-                method={method}
-                amount={1000}
-                isAuthenticated={true}
-                lastUsedMethod={lastUsedMethod}
-                allMethods={allMethods}
-                loading={false}
-                currency="USD"
-                iframeHandles={
-                    {
-                        iframeRef: { current: null },
-                        handles: {
-                            initializeSavedCreditCard: jest.fn(),
-                        },
-                    } as any
-                }
-                chargebeeCard={null as any}
-                chargebeePaypal={null as any}
-                chargebeeIdeal={{ accountHolderName: '' } as any}
-                bitcoinChargebee={{} as any}
-                user={undefined}
-                directDebit={
-                    {
-                        customer: {} as any,
-                        bankAccount: {} as any,
-                    } as any
-                }
-                savedPaymentMethods={[]}
-                currencyOverride={{ isCurrencyOverriden: true } as any}
-                showTaxCountry={true}
-                paymentComponentLoaded={jest.fn()}
-                selectedProcessor={undefined}
-                processingPayment={false}
-            />
-        );
-
-        expect(screen.getByText(bannerText)).toBeInTheDocument();
     });
 
     describe('PaymentMethodSelector disabled state', () => {
@@ -485,7 +429,6 @@ describe('Payment', () => {
                         } as any
                     }
                     savedPaymentMethods={[]}
-                    currencyOverride={{ isCurrencyOverriden: false } as any}
                     showTaxCountry={true}
                     paymentComponentLoaded={jest.fn()}
                     selectedProcessor={overrides.selectedProcessor}
