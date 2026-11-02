@@ -170,6 +170,28 @@ describe('Offline fallback on backend errors', () => {
             });
         });
 
+        test('three wrong passwords in a row log out and wipe the local data', async () => {
+            const { ctx, local, unlock } = await setupOutage();
+            for (let attempt = 0; attempt < 3; attempt++) await expect(unlock('wrong-password')).rejects.toThrow();
+
+            expect(ctx.status).toBe(AppStatus.UNAUTHORIZED);
+            expect(await local.getItem('ps')).toBeNull();
+        });
+
+        test('the failed attempts survive a worker restart', async () => {
+            const worker = await setupOutage();
+            for (let attempt = 0; attempt < 2; attempt++) {
+                await expect(worker.unlock('wrong-password')).rejects.toThrow();
+            }
+
+            const restarted = worker.restart();
+            await restarted.start();
+            await expect(restarted.unlock('wrong-password')).rejects.toThrow();
+
+            expect(restarted.ctx.status).toBe(AppStatus.UNAUTHORIZED);
+            expect(await restarted.local.getItem('ps')).toBeNull();
+        });
+
         test('a wrong password is rejected without booting nor clearing the local data', async () => {
             const { ctx, getPersistedSession, unlock } = await setupOutage();
             await expect(unlock('wrong-password')).rejects.toThrow();

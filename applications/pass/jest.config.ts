@@ -14,8 +14,13 @@ const jestConfig: Config = {
         '@protontech/autofill',
         '@protontech/fathom',
         '@protontech/ml-inference',
+        'msw',
+        '@mswjs',
+        'until-async',
+        '@protontech/mutex-browser',
     ]),
     preset: '@proton/jest-swc-preset',
+    resolver: './jest.resolver.js',
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
