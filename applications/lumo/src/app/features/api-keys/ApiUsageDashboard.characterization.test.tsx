@@ -6,6 +6,7 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
+import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit';
 
 import { ApiUsageDashboard } from './ApiUsageDashboard';
 import { useCanBuyLumoCredits } from './useCanBuyLumoCredits';
@@ -27,8 +28,14 @@ jest.mock('@proton/components/containers/payments/LumoCreditsModal', () => ({
 }));
 jest.mock('./useCanBuyLumoCredits');
 
-const setup = ({ isOrgAdmin = false }: { isOrgAdmin?: boolean } = {}) => {
-    (useApi as jest.Mock).mockReturnValue(jest.fn(() => new Promise(() => {})));
+const setup = ({
+    isOrgAdmin = false,
+    creditResponse = new Promise(() => {}),
+}: {
+    isOrgAdmin?: boolean;
+    creditResponse?: Promise<unknown>;
+} = {}) => {
+    (useApi as jest.Mock).mockReturnValue(jest.fn(() => creditResponse));
     (useUser as jest.Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
     (useSubscription as jest.Mock).mockReturnValue([{ Currency: 'USD' }]);
     (usePaymentStatus as jest.Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
@@ -83,10 +90,10 @@ describe('ApiUsageDashboard outside the balance amount', () => {
         expect(screen.getByText('Credits modal')).toBeInTheDocument();
     });
 
-    it('opens the balance settings from Manage', () => {
-        setup();
+    it('opens the balance settings from Manage', async () => {
+        setup({ creditResponse: Promise.resolve(MOCK_LUMO_CREDIT_RESPONSE) });
 
-        fireEvent.click(screen.getByRole('button', { name: 'Manage automatic top-up and spending limit' }));
+        fireEvent.click(await screen.findByRole('button', { name: 'Manage automatic top-up and spending limit' }));
 
         expect(screen.getByText('Balance settings')).toBeInTheDocument();
     });

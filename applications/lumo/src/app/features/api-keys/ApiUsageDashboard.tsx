@@ -17,16 +17,23 @@ import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { LumoCreditsModal } from '@proton/components/containers/payments/LumoCreditsModal';
+import type { LumoCreditAutoTopUpStatus } from '@proton/payments/core/api/lumoCredit';
 import type { Currency } from '@proton/payments/core/interface';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useDebugApiCreditBalance, useDebugApiEmptyUsage } from '../../services/apiUsageDebugStore';
-import { type ApiBalanceSettings, ApiBalanceSettingsModal, getAutoTopUpSummary } from './ApiBalanceSettingsModal';
+import { ApiBalanceSettingsModal, getAutoTopUpSummary } from './ApiBalanceSettingsModal';
 import { ApiPayAsYouGoCard } from './ApiPayAsYouGoCard';
 import { ApiTokenUsageChart } from './ApiTokenUsageChart';
 import { ApiUsageMetricCard } from './ApiUsageMetricCard';
 import { ApiUsageModelStats } from './ApiUsageModelStats';
-import { formatApiCurrency, formatTokenCount, toCurrencyBaseUnits } from './apiKeysHelpers';
+import {
+    formatApiCurrency,
+    formatTokenCount,
+    getBalanceEstimate,
+    getSpendingLimitSummary,
+    toCurrencyBaseUnits,
+} from './apiKeysHelpers';
 import {
     type ApiModelUsage,
     type ApiUsageDay,
@@ -456,40 +463,83 @@ const ApiBalanceStatusMessage = ({ balance, isOrgMember }: { balance: number; is
     );
 };
 
+const getAutoTopUpReasonMessage = (reason: string | undefined) => {
+    if (reason === 'PaymentFailed') {
+        return c('collider_2025: Status').t`The last payment did not go through.`;
+    }
+    if (reason === 'NoAutopay') {
+        return c('collider_2025: Status').t`Automatic payments are off for your payment method.`;
+    }
+    return undefined;
+};
+
+const getAutoTopUpTitle = (enabled: boolean, status: LumoCreditAutoTopUpStatus | undefined) => {
+    if (status === 'Failed') {
+        return c('collider_2025: Title').t`Automatic top-up failed`;
+    }
+    if (status === 'Paused') {
+        return c('collider_2025: Title').t`Automatic top-up paused`;
+    }
+    return enabled
+        ? c('collider_2025: Title').t`Automatic top-up enabled`
+        : c('collider_2025: Title').t`Automatic top-up off`;
+};
+
+const ApiAutoTopUpStatusMessage = ({
+    status,
+    reason,
+}: {
+    status: LumoCreditAutoTopUpStatus;
+    reason: string | undefined;
+}) => {
+    const reasonMessage = getAutoTopUpReasonMessage(reason);
+    return (
+        <output className="api-usage-balance-status api-usage-balance-status--low flex flex-nowrap items-center gap-2 rounded-lg text-sm">
+            <LumoIcon name="TriangleAlert" size={14} className="shrink-0" />
+            <span>
+                {status === 'Failed'
+                    ? c('collider_2025: Status')
+                          .t`Automatic top-up failed. Update your payment method to resume automatic top-ups.`
+                    : c('collider_2025: Status')
+                          .t`Automatic top-up paused. Update your payment method to resume automatic top-ups.`}
+                {reasonMessage && ` ${reasonMessage}`}
+            </span>
+        </output>
+    );
+};
+
 const ApiBalanceCard = ({
     balance,
     isBalanceLoading,
+    credits,
     currency,
     averageDailySpend,
-    monthlySpend,
     isOrgMember,
+    canManageBalance,
+    canChargeAutoTopUp,
+    showAutoTopUp,
     topUpDisabled,
     onTopUp,
     canTopUp,
 }: {
     balance: number | undefined;
     isBalanceLoading: boolean;
+    credits: ReturnType<typeof useLumoCredits>;
     currency: Currency;
     averageDailySpend: number;
-    monthlySpend: number;
     isOrgMember: boolean;
+    canManageBalance: boolean;
+    canChargeAutoTopUp: boolean;
+    showAutoTopUp: boolean;
     topUpDisabled: boolean;
     onTopUp: () => void;
     canTopUp: boolean;
 }) => {
-    const [balanceSettings, setBalanceSettings] = useState<ApiBalanceSettings>({
-        autoTopUp: { enabled: false, amount: 50, threshold: 10 },
-        spendingLimit: { enabled: true, limit: 250 },
-    });
-    const { autoTopUp, spendingLimit } = balanceSettings;
+    const { settings, usage, autoTopUpStatus } = credits;
+    const { autoTopUp, spendingLimit } = settings;
     const [settingsModalProps, setSettingsModalOpen, renderSettingsModal] = useModalState();
 
-    const estimatedDays =
-        balance !== undefined && averageDailySpend > 0 ? Math.floor(balance / averageDailySpend) : null;
-    const limitUsagePercent = spendingLimit.limit > 0 ? Math.round((monthlySpend / spendingLimit.limit) * 100) : 0;
-    const isOverLimit = spendingLimit.enabled && monthlySpend >= spendingLimit.limit;
-    const formattedSpend = formatApiCurrency(monthlySpend, currency);
-    const formattedLimit = formatApiCurrency(spendingLimit.limit, currency);
+    const spendingLimitSummary = getSpendingLimitSummary(usage, spendingLimit, currency);
 
     return (
         <section
@@ -515,86 +565,101 @@ const ApiBalanceCard = ({
                                 <Price currency={currency} className="api-usage-balance-amount">
                                     {toCurrencyBaseUnits(balance, currency)}
                                 </Price>
-                                <small className="color-weak">
-                                    {estimatedDays === null
-                                        ? c('collider_2025: Info').t`Usage estimate unavailable`
-                                        : estimatedDays === 0
-                                          ? c('collider_2025: Info').t`Less than one day left at current usage`
-                                          : c('collider_2025: Info')
-                                                .t`About ${estimatedDays} days left at current usage`}
-                                </small>
+                                <small className="color-weak">{getBalanceEstimate(balance, averageDailySpend)}</small>
                             </>
                         )}
                     </div>
                     {canTopUp && (
-                        <Button color="norm" className="shrink-0" disabled={topUpDisabled} onClick={onTopUp}>
+                        <Button
+                            color="norm"
+                            className="shrink-0"
+                            disabled={topUpDisabled || spendingLimitSummary.isOverLimit}
+                            onClick={onTopUp}
+                        >
                             {c('collider_2025: Action').t`Top up balance`}
                         </Button>
                     )}
                 </div>
                 {balance !== undefined && <ApiBalanceStatusMessage balance={balance} isOrgMember={isOrgMember} />}
+                {showAutoTopUp && !isOrgMember && autoTopUpStatus && (
+                    <ApiAutoTopUpStatusMessage status={autoTopUpStatus} reason={credits.autoTopUpReason} />
+                )}
             </div>
 
             {!isOrgMember && (
                 <div className="api-usage-balance-card__settings api-usage-balance-row flex flex-nowrap items-center gap-4">
                     <span className="api-usage-balance-row__icon relative flex flex-none items-center justify-center rounded-lg">
                         <LumoIcon name="RefreshCw" size={18} />
-                        {autoTopUp.enabled && (
+                        {autoTopUp.enabled && !autoTopUpStatus && (
                             <span className="api-usage-balance-row__badge absolute flex items-center justify-center rounded-full">
                                 <LumoIcon name="Check" size={10} strokeWidth={3} />
                             </span>
                         )}
                     </span>
                     <div className="flex flex-column gap-1 flex-1 min-w-0">
-                        <strong className="color-norm">
-                            {autoTopUp.enabled
-                                ? c('collider_2025: Title').t`Automatic top-up enabled`
-                                : c('collider_2025: Title').t`Automatic top-up off`}
-                        </strong>
-                        <span className="text-sm color-weak">
-                            {autoTopUp.enabled
-                                ? getAutoTopUpSummary(autoTopUp, currency)
-                                : c('collider_2025: Info').t`Keep API requests running when your balance gets low.`}
-                        </span>
-                        <span className={clsx('text-sm', isOverLimit ? 'color-danger text-semibold' : 'color-weak')}>
-                            {(() => {
-                                if (!spendingLimit.enabled) {
-                                    return c('collider_2025: Info').t`No monthly spending limit`;
-                                }
-                                if (isOverLimit) {
-                                    return c('collider_2025: Info')
-                                        .t`Monthly spending limit reached. API requests are paused until next month.`;
-                                }
-                                return c('collider_2025: Info')
-                                    .t`Monthly spending limit: ${formattedSpend} of ${formattedLimit} used (${limitUsagePercent}%)`;
-                            })()}
+                        {showAutoTopUp && (
+                            <>
+                                <strong className="color-norm">
+                                    {getAutoTopUpTitle(autoTopUp.enabled, autoTopUpStatus)}
+                                </strong>
+                                <span className="text-sm color-weak">
+                                    {autoTopUp.enabled
+                                        ? getAutoTopUpSummary(autoTopUp, currency)
+                                        : c('collider_2025: Info')
+                                              .t`Keep API requests running when your balance gets low.`}
+                                </span>
+                            </>
+                        )}
+                        <span
+                            className={clsx(
+                                'text-sm',
+                                spendingLimitSummary.isOverLimit ? 'color-danger text-semibold' : 'color-weak'
+                            )}
+                        >
+                            {spendingLimitSummary.text}
                         </span>
                     </div>
-                    <Button
-                        color="weak"
-                        className="shrink-0"
-                        aria-label={c('collider_2025: Action').t`Manage automatic top-up and spending limit`}
-                        onClick={() => setSettingsModalOpen(true)}
-                    >
-                        {c('collider_2025: Action').t`Manage`}
-                    </Button>
+                    {canManageBalance && !credits.loading && !credits.error && (
+                        <Button
+                            color="weak"
+                            className="shrink-0"
+                            aria-label={c('collider_2025: Action').t`Manage automatic top-up and spending limit`}
+                            onClick={() => setSettingsModalOpen(true)}
+                        >
+                            {c('collider_2025: Action').t`Manage`}
+                        </Button>
+                    )}
                 </div>
             )}
 
             {renderSettingsModal && (
                 <ApiBalanceSettingsModal
                     {...settingsModalProps}
-                    settings={balanceSettings}
+                    settings={settings}
                     currency={currency}
-                    monthlySpend={monthlySpend}
-                    onSave={setBalanceSettings}
+                    monthlySpend={usage}
+                    showAutoTopUp={showAutoTopUp}
+                    canChargeAutoTopUp={canChargeAutoTopUp}
+                    onSave={credits.saveSettings}
                 />
             )}
         </section>
     );
 };
 
-export const ApiUsageDashboard = ({ isOrgAdmin, isOrgMember }: { isOrgAdmin: boolean; isOrgMember: boolean }) => {
+export const ApiUsageDashboard = ({
+    isOrgAdmin,
+    isOrgMember,
+    canManageBalance = true,
+    canChargeAutoTopUp = true,
+    showAutoTopUp = false,
+}: {
+    isOrgAdmin: boolean;
+    isOrgMember: boolean;
+    canManageBalance?: boolean;
+    canChargeAutoTopUp?: boolean;
+    showAutoTopUp?: boolean;
+}) => {
     const { APP_NAME } = useConfig();
     const [{ Currency }] = useUser();
     const [subscription] = useSubscription();
@@ -645,10 +710,13 @@ export const ApiUsageDashboard = ({ isOrgAdmin, isOrgMember }: { isOrgAdmin: boo
                 <ApiBalanceCard
                     balance={displayedCreditBalance}
                     isBalanceLoading={lumoCredits.loading}
+                    credits={lumoCredits}
                     currency={subscription?.Currency ?? Currency}
                     averageDailySpend={averageDailySpend}
-                    monthlySpend={monthlySpend}
                     isOrgMember={isOrgMember}
+                    canManageBalance={canManageBalance}
+                    canChargeAutoTopUp={canChargeAutoTopUp}
+                    showAutoTopUp={showAutoTopUp}
                     topUpDisabled={paymentStatusLoading || !paymentStatus}
                     onTopUp={() => setCreditModalOpen(true)}
                     canTopUp={canTopUp}
