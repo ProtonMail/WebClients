@@ -67,11 +67,13 @@ export const NetworkQualityIndicator = ({ size, participant, indicatorSize = 24 
         return null;
     }
 
+    const poorConnectionLabel = c('Info').t`Poor connection`;
+
     return (
         <div className="flex items-center justify-center">
             <Tooltip
                 tooltipClassName="meet-tooltip text-semibold p-4 "
-                title={c('Info').t`Poor connection`}
+                title={poorConnectionLabel}
                 openDelay={0}
                 closeDelay={0}
                 originalPlacement="top"
@@ -85,6 +87,7 @@ export const NetworkQualityIndicator = ({ size, participant, indicatorSize = 24 
                     style={{ width: size, height: size, opacity: 0.8 }}
                 >
                     <IcMeetConnectionIndicator width={indicatorSize} height={indicatorSize} />
+                    <span className="sr-only">{poorConnectionLabel}</span>
                 </div>
             </Tooltip>
         </div>

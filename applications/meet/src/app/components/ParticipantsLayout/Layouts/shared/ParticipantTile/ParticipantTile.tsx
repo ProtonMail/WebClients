@@ -14,7 +14,10 @@ import {
     selectInitialCameraState,
     selectIsMediaInitializing,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
-import { selectParticipantName } from '@proton/meet/store/slices/participants/participantsSlice';
+import {
+    selectParticipantIsHostOrAdmin,
+    selectParticipantName,
+} from '@proton/meet/store/slices/participants/participantsSlice';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -32,6 +35,7 @@ import { NetworkQualityIndicator } from '../../../../NetworkQualityIndicator/Net
 import { ParticipantPlaceholder } from '../../../../ParticipantPlaceholder/ParticipantPlaceholder';
 import { ParticipantTileReaction } from './ParticipantTileReaction';
 import { AUDIO_ICON_SIZE, INDICATOR_SIZE_BY_SIZE, POSITION_BY_SIZE } from './constants';
+import { getParticipantTileAriaLabel } from './getParticipantTileAriaLabel';
 import { useDebouncedSpeakingStatus } from './useDebouncedSpeakingStatus';
 
 import './ParticipantTile.scss';
@@ -93,12 +97,18 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
         (shouldShowVideo ? 'tile-border-1' : borderColor) + (viewSize === 'large' ? '' : '-small');
 
     const participantName =
-        useMeetSelector((state) => selectParticipantName(state, participant.identity)) ??
+        useMeetSelector((state) => selectParticipantName(state, participant.identity)) ||
         (isLocalParticipant ? displayName : c('Info').t`Loading...`);
 
-    const audioStateLabel = audioIsOn ? c('Accessibility').t`microphone on` : c('Accessibility').t`microphone muted`;
-    const videoStateLabel = shouldShowVideo ? c('Accessibility').t`camera on` : c('Accessibility').t`camera off`;
-    const tileAriaLabel = `${participantName}, ${audioStateLabel}, ${videoStateLabel}`;
+    const isHost = useMeetSelector((state) => selectParticipantIsHostOrAdmin(state, participant.identity));
+
+    const tileAriaLabel = getParticipantTileAriaLabel({
+        participantName,
+        isHost,
+        isSpeaking,
+        isMicrophoneOn: !!audioIsOn,
+        isCameraOn: shouldShowVideo,
+    });
 
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isVideoVertical, setIsVideoVertical] = useState(false);
