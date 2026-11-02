@@ -30,6 +30,7 @@ type Props = ReturnType<typeof usePaymentFacade> & {
     loadingBitcoin?: boolean;
     subscription?: Subscription | FreeSubscription;
     creditCardDetailsRef?: Ref<HTMLDivElement>;
+    minCreditAmount?: number;
 };
 
 const PaymentWrapper = ({

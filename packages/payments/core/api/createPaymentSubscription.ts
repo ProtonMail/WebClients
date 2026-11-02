@@ -2,6 +2,7 @@ import { type ProductParam, getProductHeaders } from '@proton/shared/lib/apps/pr
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { getPlanNameFromIDs, isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
+import type { Tax } from '@proton/shared/lib/payments/subscription/interface';
 
 import { capturePaymentMessage } from '../../sentry/capture';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
@@ -124,16 +125,42 @@ export function getBuyProductConfig(product: ProductParam, params: BuyProductCon
     };
 }
 
+const getLumoCreditQuantity = (creditAmount: number, currency: Currency) =>
+    Math.floor(creditAmount / getCurrencyFormattingConfig(currency).divisor);
+
 export function getBuyLumoCreditConfig(
     product: ProductParam,
-    params: Omit<BuyProductConfigParams, 'ProductType' | 'Quantity'>
+    { CreditAmount, ...params }: Omit<BuyProductConfigParams, 'ProductType' | 'Quantity'> & { CreditAmount: number }
 ) {
-    const { divisor } = getCurrencyFormattingConfig(params.Currency);
     return getBuyProductConfig(product, {
         ...params,
         ProductType: 'lumo-credit',
-        Quantity: params.Amount / divisor,
+        Quantity: getLumoCreditQuantity(CreditAmount, params.Currency),
     });
+}
+
+export interface ProductCheckResponse {
+    Currency: Currency;
+    Amount: number;
+    AmountDue: number;
+    Credit: number;
+    TaxInclusive: 0 | 1;
+    Taxes: Tax[];
+}
+
+export function getCheckLumoCreditConfig(
+    params: Pick<BuyProductConfigParams, 'Currency' | 'BillingAddress'> & { CreditAmount: number }
+) {
+    return {
+        url: 'payments/v5/products/check',
+        method: 'post',
+        data: {
+            ProductType: 'lumo-credit',
+            Quantity: getLumoCreditQuantity(params.CreditAmount, params.Currency),
+            Currency: params.Currency,
+            BillingAddress: params.BillingAddress,
+        },
+    };
 }
 
 const buyProduct = (rawData: SubscribeData, product: ProductParam) => {

@@ -5,7 +5,7 @@ import type { SubscriptionEstimation } from '@proton/payments/core/subscription/
 import { TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
-export const formatTax = (checkResult: SubscriptionEstimation) => {
+export const formatTax = (checkResult: Pick<SubscriptionEstimation, 'Taxes' | 'TaxMode' | 'Currency'>) => {
     const taxesQuantity = checkResult.Taxes?.length ?? 0;
     if (!checkResult.Taxes || !taxesQuantity) {
         return null;

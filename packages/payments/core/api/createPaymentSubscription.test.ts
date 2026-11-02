@@ -1,11 +1,15 @@
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { capturePaymentMessage } from '../../sentry/capture';
 import { PLANS } from '../constants';
 import type { Cycle, PlanIDs } from '../interface';
 import type { SubscribeData } from './createPaymentSubscription';
-import { createPaymentSubscription } from './createPaymentSubscription';
+import {
+    createPaymentSubscription,
+    getBuyLumoCreditConfig,
+    getCheckLumoCreditConfig,
+} from './createPaymentSubscription';
 
 jest.mock('../../sentry/capture', () => ({
     capturePaymentMessage: jest.fn(),
@@ -161,5 +165,30 @@ describe('createPaymentSubscription', () => {
                 data: expect.objectContaining({ BillingAddress: expect.objectContaining({ ZipCode: null }) }),
             })
         );
+    });
+});
+
+describe('Lumo credit configs', () => {
+    const billingAddress = { CountryCode: 'DE', State: null };
+
+    it('should check and buy whole credits only', () => {
+        const check = getCheckLumoCreditConfig({ CreditAmount: 2050, Currency: 'USD', BillingAddress: billingAddress });
+        const buy = getBuyLumoCreditConfig(APPS.PROTONLUMO, {
+            CreditAmount: 2050,
+            PaymentToken: 'token',
+            Amount: 2050,
+            Currency: 'USD',
+            BillingAddress: billingAddress,
+        });
+
+        expect(check.data.Quantity).toBe(20);
+        expect(buy.data.Quantity).toBe(20);
+    });
+
+    it('should count credits in the currency units', () => {
+        expect(
+            getCheckLumoCreditConfig({ CreditAmount: 2000, Currency: 'JPY', BillingAddress: billingAddress }).data
+                .Quantity
+        ).toBe(2000);
     });
 });
