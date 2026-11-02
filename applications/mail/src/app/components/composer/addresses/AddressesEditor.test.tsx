@@ -8,6 +8,7 @@ import type { MessageState } from '@proton/mail-message/store/messages/messagesT
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
 import { addApiMock } from '../../../helpers/tests/api';
 import { clearAll, getDropdown } from '../../../helpers/tests/helper';
@@ -315,7 +316,7 @@ describe('AddressesEditor', () => {
         expect(remainingAddresses.length).toEqual(1);
     });
 
-    it('should not focus CC BCC or Insert contacts buttons', async () => {
+    it('should focus CC and BCC buttons but not Insert contacts button', async () => {
         const { getByTestId } = await mailTestRender(<AddressesEditor {...props} composerID={composerID} />, {
             onStore: (store) => {
                 setupComposer(store, composerID);
@@ -326,8 +327,22 @@ describe('AddressesEditor', () => {
         const bccButton = getByTestId('composer:recipients:bcc-button');
         const insertContactsButton = getByTestId('composer:to-button');
 
-        expect(ccButton.getAttribute('tabindex')).toEqual('-1');
-        expect(bccButton.getAttribute('tabindex')).toEqual('-1');
+        expect(ccButton.getAttribute('tabindex')).toBeNull();
+        expect(bccButton.getAttribute('tabindex')).toBeNull();
         expect(insertContactsButton.getAttribute('tabindex')).toEqual('-1');
+    });
+
+    it('should skip CC and BCC buttons when the kill switch is enabled', async () => {
+        const useFlagSpy = mockUseFlag(true);
+        const { getByTestId } = await mailTestRender(<AddressesEditor {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                setupComposer(store, composerID);
+            },
+        });
+
+        expect(getByTestId('composer:recipients:cc-button').getAttribute('tabindex')).toEqual('-1');
+        expect(getByTestId('composer:recipients:bcc-button').getAttribute('tabindex')).toEqual('-1');
+
+        useFlagSpy.mockRestore();
     });
 });
