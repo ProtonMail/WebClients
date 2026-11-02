@@ -1,10 +1,8 @@
-import { getEventNotifierUrl } from '../../lib/eventNotifier/getEventNotifierUrl';
-
-const headers = { 'x-pm-uid': 'uid-1', 'x-pm-appversion': 'web-mail@5.0.0' };
+import { getEventNotifierConnectionUrl, getEventNotifierUrl } from '../../lib/eventNotifier/getEventNotifierUrl';
 
 describe('getEventNotifierUrl', () => {
     it('should build the url from a relative api url', () => {
-        expect(getEventNotifierUrl({ apiUrl: '/api', origin: 'https://mail.proton.me', headers: {} })).toBe(
+        expect(getEventNotifierUrl({ apiUrl: '/api', origin: 'https://mail.proton.me' })).toBe(
             'https://mail.proton.me/api/event-notifier/v1/events'
         );
     });
@@ -14,28 +12,31 @@ describe('getEventNotifierUrl', () => {
             getEventNotifierUrl({
                 apiUrl: 'https://mail.proton.me/api',
                 origin: 'https://account.proton.me',
-                headers: {},
             })
         ).toBe('https://mail.proton.me/api/event-notifier/v1/events');
     });
 
     it('should keep the protocol and the port of the origin', () => {
-        expect(getEventNotifierUrl({ apiUrl: '/api', origin: 'http://localhost:8080', headers: {} })).toBe(
+        expect(getEventNotifierUrl({ apiUrl: '/api', origin: 'http://localhost:8080' })).toBe(
             'http://localhost:8080/api/event-notifier/v1/events'
         );
     });
 
     it('should not duplicate the separator of a trailing slash', () => {
-        expect(getEventNotifierUrl({ apiUrl: '/api/', origin: 'https://mail.proton.me', headers: {} })).toBe(
+        expect(getEventNotifierUrl({ apiUrl: '/api/', origin: 'https://mail.proton.me' })).toBe(
             'https://mail.proton.me/api/event-notifier/v1/events'
         );
     });
+});
 
-    it('should pass the headers as query parameters, since EventSource cannot send them', () => {
-        const url = new URL(getEventNotifierUrl({ apiUrl: '/api', origin: 'https://mail.proton.me', headers }));
+describe('getEventNotifierConnectionUrl', () => {
+    it('should pass the connection token as a query parameter, since EventSource cannot send headers', () => {
+        const url = new URL(
+            getEventNotifierConnectionUrl('https://mail.proton.me/api/event-notifier/v1/events', 'a.b+c/d')
+        );
 
         expect(url.pathname).toBe('/api/event-notifier/v1/events');
-        expect(url.searchParams.get('x-pm-uid')).toBe('uid-1');
-        expect(url.searchParams.get('x-pm-appversion')).toBe('web-mail@5.0.0');
+        expect(url.searchParams.get('ConnectionToken')).toBe('a.b+c/d');
+        expect([...url.searchParams.keys()]).toEqual(['ConnectionToken']);
     });
 });

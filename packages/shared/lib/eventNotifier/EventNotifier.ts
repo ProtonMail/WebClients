@@ -1,26 +1,35 @@
 import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import { subscribeToEventNotifierLoops } from '../api/eventNotifier';
+import { getEventNotifierConnectionToken, subscribeToEventNotifierLoops } from '../api/eventNotifier';
 import { FIBONACCI_LIST } from '../constants';
 import { type VisibilityState, getVisibilityStateSingleton } from '../eventManager/VisibilityState';
 import { SentryCommonInitiatives, captureInitiativeMessage } from '../helpers/sentry';
 import type { Api } from '../interfaces/Api';
+import { getEventNotifierConnectionUrl } from './getEventNotifierUrl';
 import {
     EventNotifierEventName,
     type EventNotifierLoop,
     type EventNotifierPing,
+    EventNotifierTransport,
     MAX_RECONNECT_ATTEMPTS,
     RECONNECT_DELAY,
     RECONNECT_JITTER,
     STABLE_CONNECTION_DELAY,
 } from './interface';
 import { parseEventNotifierMessage } from './parseEventNotifierMessage';
+import {
+    type EventNotifierConnection,
+    type EventNotifierConnectionHandlers,
+    openEventNotifierConnection,
+} from './transports';
 
 interface EventNotifierConfig {
     api: Api;
-    /** SSE url, see `getEventNotifierUrl`. */
+    /** See `getEventNotifierUrl`, the same url serves every transport. */
     url: string;
+    /** Defaults to SSE. */
+    transport?: EventNotifierTransport;
     /** Loops to subscribe to. A ping is received for each of them, even when there is no new event. */
     loops: EventNotifierLoop[];
     onPing: (ping: EventNotifierPing) => void;
@@ -30,7 +39,7 @@ interface EventNotifierConfig {
 }
 
 /**
- * The event notifier ("Ping-o-matic"): it keeps an SSE connection open to the API and notifies the
+ * The event notifier ("Ping-o-matic"): it keeps a connection open to the API and notifies the
  * caller as soon as the server signals that new events are available, so that the event loop can
  * be called without waiting for its next poll.
  *
@@ -41,8 +50,9 @@ interface EventNotifierConfig {
 export class EventNotifier {
     private readonly api: Api;
 
-    /** Protected so that an override of `createEventSource` can reach it. */
-    protected readonly url: string;
+    private readonly url: string;
+
+    private readonly transport: EventNotifierTransport;
 
     private readonly loops: EventNotifierLoop[];
 
@@ -52,11 +62,14 @@ export class EventNotifier {
 
     private readonly visibilityState: VisibilityState;
 
-    private source: EventSource | undefined;
+    private connection: EventNotifierConnection | undefined;
 
     private reconnectHandle: ReturnType<typeof setTimeout> | undefined;
 
     private stableConnectionHandle: ReturnType<typeof setTimeout> | undefined;
+
+    /** Set while the connection token is being fetched, before the connection itself is opened. */
+    private connectAbortController: AbortController | undefined;
 
     private subscribeAbortController: AbortController | undefined;
 
@@ -69,6 +82,7 @@ export class EventNotifier {
     constructor({
         api,
         url,
+        transport = EventNotifierTransport.Sse,
         loops,
         onPing,
         onError = noop,
@@ -76,6 +90,7 @@ export class EventNotifier {
     }: EventNotifierConfig) {
         this.api = api;
         this.url = url;
+        this.transport = transport;
         this.loops = loops;
         this.onPing = onPing;
         this.onError = onError;
@@ -91,7 +106,7 @@ export class EventNotifier {
         window.addEventListener('online', this.handleOnline);
         window.addEventListener('offline', this.handleOffline);
         this.unsubscribeVisibilityState = this.visibilityState.subscribe(this.handleVisibilityChange);
-        this.connect();
+        void this.connect();
     }
 
     stop() {
@@ -113,53 +128,76 @@ export class EventNotifier {
      * Seam for the tests to drive the state machine without a network. Overriding this is the only
      * supported way to substitute the connection, which is why it isn't part of the config.
      */
-    protected createEventSource(): EventSource {
-        return new EventSource(this.url, { withCredentials: true });
+    protected openConnection(url: string, handlers: EventNotifierConnectionHandlers): EventNotifierConnection {
+        return openEventNotifierConnection[this.transport](url, handlers);
     }
 
-    private connect() {
-        if (!this.started || this.source) {
+    /** Whether a connection is open, or about to be while its connection token is being fetched. */
+    private hasConnection() {
+        return !!this.connection || !!this.connectAbortController;
+    }
+
+    /**
+     * A fresh connection token is fetched for every attempt: it is only valid for 2 minutes, so one
+     * kept from a previous attempt is likely expired after a sleep or a long backoff. This is also
+     * what recovers from the server rejecting a token, as the retry comes with a new one.
+     */
+    private async connect() {
+        if (!this.started || this.hasConnection()) {
             return;
         }
 
+        const abortController = new AbortController();
+        this.connectAbortController = abortController;
+
+        let connectionToken: string;
         try {
-            this.source = this.createEventSource();
+            const { ConnectionToken } = await this.api<{ ConnectionToken?: { Token?: unknown } }>({
+                ...getEventNotifierConnectionToken(),
+                signal: abortController.signal,
+                silence: true,
+            });
+            const token = ConnectionToken?.Token;
+            if (typeof token !== 'string' || !token) {
+                throw new Error('missing connection token');
+            }
+            connectionToken = token;
+        } catch (error) {
+            // Aborted by a teardown, which has already taken care of what comes next.
+            if (abortController.signal.aborted) {
+                return;
+            }
+            this.connectAbortController = undefined;
+            this.onError('failed to fetch a connection token', error);
+            this.reconnect();
+            return;
+        }
+
+        if (abortController.signal.aborted) {
+            return;
+        }
+        this.connectAbortController = undefined;
+
+        try {
+            this.connection = this.openConnection(getEventNotifierConnectionUrl(this.url, connectionToken), {
+                onMessage: this.handleMessage,
+                onDrop: this.handleDrop,
+            });
         } catch (error) {
             this.onError('failed to open the connection', error);
             this.reconnect();
-            return;
         }
-
-        Object.values(EventNotifierEventName).forEach((name) => this.source?.addEventListener(name, this.handleEvent));
-
-        /**
-         * `EventSource` reconnects on its own when the stream drops, but on a fixed interval that
-         * every client shares, and it gives up for good on an HTTP error (a 401 for example).
-         * Closing it here and driving the reconnection instead gives a single jittered backoff.
-         */
-        this.source.onerror = () => {
-            this.onError('the connection dropped');
-            this.reconnect();
-        };
     }
 
     private closeConnection() {
         this.clearStableConnection();
+        this.connectAbortController?.abort();
+        this.connectAbortController = undefined;
         this.subscribeAbortController?.abort();
         this.subscribeAbortController = undefined;
 
-        if (!this.source) {
-            return;
-        }
-
-        // Detach the handlers before closing, otherwise the error it can raise while tearing down
-        // would schedule another reconnection.
-        Object.values(EventNotifierEventName).forEach((name) =>
-            this.source?.removeEventListener(name, this.handleEvent)
-        );
-        this.source.onerror = null;
-        this.source.close();
-        this.source = undefined;
+        this.connection?.close();
+        this.connection = undefined;
     }
 
     /** Closes the current connection, if any, and schedules a new one with a backoff. */
@@ -180,7 +218,7 @@ export class EventNotifier {
         this.retryIndex += 1;
         this.reconnectHandle = setTimeout(() => {
             this.reconnectHandle = undefined;
-            this.connect();
+            void this.connect();
         }, delay);
     }
 
@@ -195,7 +233,7 @@ export class EventNotifier {
         this.closeConnection();
         this.clearReconnect();
         this.retryIndex = 0;
-        this.connect();
+        void this.connect();
     }
 
     private getReconnectDelay() {
@@ -239,12 +277,12 @@ export class EventNotifier {
     }
 
     /*
-     * The handlers below are arrow properties on purpose: they are handed to `addEventListener`
-     * and to the visibility state, which need the very same reference back to detach them.
+     * The handlers below are arrow properties on purpose: they are handed to `addEventListener`,
+     * to the visibility state and to the connection, without being bound.
      */
 
-    private handleEvent = (event: MessageEvent) => {
-        const message = parseEventNotifierMessage(event.type, event.data);
+    private handleMessage = (name: string, data: unknown) => {
+        const message = parseEventNotifierMessage(name, data);
 
         if (!message) {
             return;
@@ -281,6 +319,11 @@ export class EventNotifier {
         }
     };
 
+    private handleDrop = () => {
+        this.onError('the connection dropped');
+        this.reconnect();
+    };
+
     private handleOnline = () => {
         this.reconnectNow();
     };
@@ -296,7 +339,7 @@ export class EventNotifier {
     private handleVisibilityChange = (visible: boolean) => {
         // A connection can have died silently, e.g. after the device woke up from sleep. Becoming
         // visible is a good moment to retry without waiting for the backoff to elapse.
-        if (visible && !this.source) {
+        if (visible && !this.hasConnection()) {
             this.reconnectNow();
         }
     };
