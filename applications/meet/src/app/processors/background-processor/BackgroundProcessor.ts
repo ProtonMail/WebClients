@@ -10,6 +10,7 @@ import type { ProcessorOptions, Track, TrackProcessor } from 'livekit-client';
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isFirefox, isIos } from '@proton/shared/lib/helpers/browser';
 
+import { registerBackgroundEffectDebug } from '../../dev/backgroundEffectDebug';
 import {
     BACKGROUND_IMAGE_DECODE_TIMEOUT_MS,
     MAX_BACKGROUND_IMAGE_EDGE,
@@ -39,7 +40,7 @@ import {
     getSegmentationResizeQuality,
     pickWorkerOverrides,
 } from './tunableConstants';
-import type { BackgroundMode, BackgroundProcessor, BackgroundProcessorOptions } from './types';
+import type { BackgroundDebugView, BackgroundMode, BackgroundProcessor, BackgroundProcessorOptions } from './types';
 import { WorkerSession } from './workerSession';
 
 export { preloadBackgroundBlurAssets } from './segmenterHost';
@@ -74,6 +75,7 @@ interface PipelineHost {
     resolveBackground: () => Promise<PipelineBackground>;
     startSegmenter: () => Promise<SegmenterHandle>;
     isEnabled: () => boolean;
+    getDebugView: () => BackgroundDebugView;
     onApplied: () => void;
     onInitializationFailed: (error: Error) => void;
     update: (options: Partial<BackgroundProcessorOptions>) => Promise<void>;
@@ -85,6 +87,7 @@ interface EffectSession {
     replaceSegmenter: (segmenter: SegmenterHandle | null) => void;
     setBackground: (background: PipelineBackground) => Promise<void>;
     setEnabled: (enabled: boolean) => void;
+    setDebugView: (view: BackgroundDebugView) => void;
     destroy: () => Promise<void>;
 }
 
@@ -171,6 +174,7 @@ class MainThreadTransformer implements VideoTrackTransformer<BackgroundOptions> 
         );
 
         try {
+            pipeline.setDebugView(this.host.getDebugView());
             pipeline.init();
             pipeline.setEnabled(this.host.isEnabled());
             await pipeline.setBackground(await this.host.resolveBackground());
@@ -370,6 +374,10 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
     // Composited frames per segmentation request; 1 segments every frame.
     private readonly segmentationFrameInterval: number;
 
+    private debugView: BackgroundDebugView = 'composite';
+
+    private unregisterDebug: (() => void) | null = null;
+
     constructor(options: BackgroundProcessorOptions) {
         this.options = options;
         this.mode = options.mode ?? { type: 'blur' };
@@ -395,6 +403,7 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
                     : this.resolveBackground(this.mode),
             startSegmenter: () => this.startSegmenter(),
             isEnabled: () => this.enabled,
+            getDebugView: () => this.debugView,
             onApplied: () => this.markApplied(),
             onInitializationFailed: (error) => this.rejectApplied(error),
             update: (update) => this.update(update),
@@ -416,6 +425,7 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
                 await transformer.activePipeline?.setBackground(background);
             },
             setEnabled: (enabled) => transformer.activePipeline?.setEnabled(enabled),
+            setDebugView: (view) => transformer.activePipeline?.setDebugView(view),
             destroy: () => this.mainThreadWrapper.destroy(),
         };
     }
@@ -452,6 +462,9 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
         if (workerSession) {
             this.session = workerSession;
             this.processedTrack = workerSession.processedTrack ?? undefined;
+            if (this.debugView !== 'composite') {
+                workerSession.setDebugView(this.debugView);
+            }
         } else {
             this.reusableSegmenter = unusedSegmenter;
             this.initializingBackground = background;
@@ -471,6 +484,7 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
         }
         this.appliedBackgroundKey = background.type === 'image' ? background.key : null;
         this.sessionModeId = this.getModeId(mode);
+        this.unregisterDebug ??= registerBackgroundEffectDebug(this);
 
         // setMode() resolved for this mode while no session existed, so a failure here is the
         // attach's to report; LiveKit doesn't destroy a processor whose init() rejects.
@@ -501,6 +515,8 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
     async destroy() {
         this.lifecycleGeneration += 1;
         this.modeGeneration += 1;
+        this.unregisterDebug?.();
+        this.unregisterDebug = null;
         const session = this.session;
         this.session = null;
         this.processedTrack = undefined;
@@ -536,6 +552,11 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
 
     hasAppliedMask() {
         return this.hasInitialMask;
+    }
+
+    setDebugView(view: BackgroundDebugView) {
+        this.debugView = view;
+        this.session?.setDebugView(view);
     }
 
     async setMode(mode: BackgroundMode) {

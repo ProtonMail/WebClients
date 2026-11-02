@@ -1,5 +1,5 @@
 // Derived from @livekit/track-processors 0.8.1 (Apache-2.0), src/webgl.
-import type { PipelineLogger } from './types';
+import type { BackgroundDebugView, PipelineLogger } from './types';
 
 const GAUSSIAN_MAX_RADIUS = 16;
 const GAUSSIAN_MAX_TAPS = 1 + Math.ceil(GAUSSIAN_MAX_RADIUS / 2);
@@ -18,6 +18,7 @@ export interface Compositor {
     updateMask: (mask: WebGLTexture) => void;
     setBackgroundImage: (image: ImageBitmap | null) => Promise<void>;
     setBlurRadius: (radius: number | null) => void;
+    setDebugView: (view: BackgroundDebugView) => void;
     cleanup: () => void;
 }
 
@@ -202,6 +203,7 @@ const compositeFragmentShader = `#version 300 es
   uniform sampler2D background;
   uniform sampler2D frame;
   uniform sampler2D mask;
+  uniform bool u_showMask;
   out vec4 fragColor;
 
   void main() {
@@ -213,6 +215,10 @@ const compositeFragmentShader = `#version 300 es
     float edgeSoftness = 2.0;
     float smoothAlpha = smoothstep(0.5 - grad * edgeSoftness, 0.5 + grad * edgeSoftness, maskVal);
 
+    if (u_showMask) {
+      fragColor = vec4(vec3(1.0 - smoothAlpha), 1.0);
+      return;
+    }
     fragColor = mix(bgTex, vec4(frameTex.rgb, 1.0), 1.0 - smoothAlpha);
   }
 `;
@@ -357,6 +363,7 @@ export const createCompositor = (canvas: CompositorCanvas, logger: PipelineLogge
     const maskLocation = gl.getUniformLocation(compositeProgram, 'mask');
     const frameLocation = gl.getUniformLocation(compositeProgram, 'frame');
     const backgroundLocation = gl.getUniformLocation(compositeProgram, 'background');
+    const showMaskLocation = gl.getUniformLocation(compositeProgram, 'u_showMask');
 
     const gaussianBlur = createGaussianBlurPass(gl);
     const boxBlur = createBoxBlurPass(gl);
@@ -560,6 +567,11 @@ export const createCompositor = (canvas: CompositorCanvas, logger: PipelineLogge
         void setBackgroundImage(null);
     };
 
+    const setDebugView = (view: BackgroundDebugView) => {
+        gl.useProgram(compositeProgram);
+        gl.uniform1i(showMaskLocation, view === 'mask' ? 1 : 0);
+    };
+
     const cleanup = () => {
         if (isCleanedUp) {
             return;
@@ -591,5 +603,5 @@ export const createCompositor = (canvas: CompositorCanvas, logger: PipelineLogge
         backgroundSourceImage = null;
     };
 
-    return { gl, renderFrame, updateMask, setBackgroundImage, setBlurRadius, cleanup };
+    return { gl, renderFrame, updateMask, setBackgroundImage, setBlurRadius, setDebugView, cleanup };
 };
