@@ -29,6 +29,8 @@ const jestConfig: Config = {
     preset: '@proton/jest-swc-preset',
     transform,
     transformIgnorePatterns: getTransformIgnorePatterns([
+        'imask',
+        'client-zip',
         'otpauth',
         '@protontech/pass-rust-core/ui',
         '@protontech/pass-rust-core/worker',
@@ -44,6 +46,7 @@ const jestConfig: Config = {
     testTimeout: 30000,
     resolver: './jest.resolver.js',
     moduleNameMapper: {
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
         '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
         '\\.raw.scss$': '@proton/components/__mocks__/styleMock.js',
     },
@@ -53,6 +56,7 @@ const jestConfig: Config = {
         EXTENSION_BUILD: true,
         DESKTOP_BUILD: false,
         E2E_TESTS: false,
+        VERSION: '1.0.0',
     },
 };
 

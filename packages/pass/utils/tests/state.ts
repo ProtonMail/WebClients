@@ -13,6 +13,7 @@ export type TestStateInit = {
     settings?: Partial<SettingsState>;
     features?: FeatureFlagState;
     featureVariants?: State['user']['featureVariants'];
+    user?: Partial<State['user']>;
 };
 
 const indexItems = (items: ItemRevision[]) =>
@@ -27,6 +28,7 @@ export const createTestState = ({
     settings = {},
     features,
     featureVariants,
+    user,
 }: TestStateInit = {}): State => {
     const state = reducer(
         undefined,
@@ -44,6 +46,7 @@ export const createTestState = ({
         settings: { ...state.settings, clipboard: { timeoutMs: DEFAULT_CLIPBOARD_TTL }, ...settings },
         user: {
             ...state.user,
+            ...user,
             ...(features && { features }),
             ...(featureVariants && { featureVariants }),
         },

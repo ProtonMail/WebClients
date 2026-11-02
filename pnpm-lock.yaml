@@ -3869,6 +3869,9 @@ importers:
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
+      '@testing-library/react':
+        specifier: ^15.0.7
+        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/chrome':
         specifier: 'catalog:'
         version: 0.3.4
@@ -3899,6 +3902,9 @@ importers:
       cross-env:
         specifier: 'catalog:'
         version: 10.1.0
+      fake-indexeddb:
+        specifier: 'catalog:'
+        version: 6.2.5
       jest:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))

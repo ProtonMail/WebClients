@@ -16,7 +16,7 @@ const browser = {
                 }
             }
         }),
-        getManifest: () => ({}),
+        getManifest: () => ({ version: '1.0.0' }),
         requestUpdateCheck: jest.fn().mockResolvedValue(['no_update']),
         onMessage: {
             addListener: jest.fn(),

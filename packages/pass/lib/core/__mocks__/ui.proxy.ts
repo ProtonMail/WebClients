@@ -8,4 +8,6 @@ const wasm = new WebAssembly.Instance(wasmModule, { './proton_pass_web_bg.js': P
 
 __wbg_set_wasm(wasm.exports);
 
+export const preloadPassUI = async () => undefined;
+
 export default PassRustUI;

@@ -2,6 +2,8 @@ import '@testing-library/jest-dom';
 import { ReadableStream, WritableStream } from 'stream/web';
 import { TextDecoder, TextEncoder } from 'util';
 
+import '@proton/components/testing/mockMatchMedia';
+
 /* Getting ReferenceError: TextDecoder is not defined without */
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;

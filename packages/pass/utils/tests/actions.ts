@@ -69,6 +69,24 @@ export const createLogin = async (values: LoginFormValues) => {
     await itemView().findByRole('heading', { name: values.name });
 };
 
+/** Lock screen asking for the account password. Offline, the submit button says so:
+ * the screen is the user-visible outcome of an outage with offline mode enabled. */
+export const findOfflinePasswordPrompt = async () => {
+    await screen.findByText(/Unlock .* with your .* password/, undefined, { timeout: 30_000 });
+    return screen.findByRole('button', { name: 'Continue offline' });
+};
+
+/** The password input has no label: it is the only password field of the lock screen */
+export const unlockWithPassword = async (password: string, submit: HTMLElement) => {
+    const input = document.querySelector<HTMLInputElement>('input[name="password"]');
+    if (!input) throw new Error('No password field rendered');
+    /** `user-event` waits on a timer between keystrokes: with fake timers it must advance them */
+    const fakeTimers = 'clock' in setTimeout;
+    const user = userEvent.setup(fakeTimers ? { advanceTimers: (ms) => jest.advanceTimersByTime(ms) } : {});
+    await user.type(input, password);
+    await user.click(submit);
+};
+
 export const editLogin = async (values: Partial<LoginFormValues>) => {
     await userEvent.click(itemView().getByRole('button', { name: 'Edit' }));
     await fillForm(intoLoginForm(values));
