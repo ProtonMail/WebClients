@@ -1,8 +1,12 @@
 import { buildEntitlementCatalog } from '../../testing/buildEntitlementCatalog';
 import { buildSubscription } from '../../testing/buildSubscription';
-import { buildOrgAndUserEntitlementChecks } from '../../testing/prodCatalogGrantsForTesting';
+import {
+    buildOrgAndUserEntitlementChecks,
+    prodCatalogGrantsForTesting,
+} from '../../testing/prodCatalogGrantsForTesting';
 import { organizationMember } from '../../testing/usersWhoCannotReadSubscriptions';
-import { PLANS } from '../constants';
+import { ADDON_NAMES, PLANS } from '../constants';
+import type { PlanIDs } from '../interface';
 import { EntitlementName } from './entitlement-names';
 import { createEntitlementResolverForSelection } from './resolver';
 
@@ -411,6 +415,53 @@ describe('hasBusySlots', () => {
         expect(
             buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.VPN_BUSINESS], ...organizationMember })
                 .hasBusySlots
+        ).toBe(false);
+    });
+});
+
+describe('isLumoOnlyB2C', () => {
+    const catalog = buildEntitlementCatalog(
+        {
+            ...prodCatalogGrantsForTesting,
+            [PLANS.LUMO_BASIC]: [EntitlementName.FlagsLumo],
+            [PLANS.LUMO_ULTRA]: [EntitlementName.FlagsLumo],
+        },
+        {
+            [ADDON_NAMES.LUMO_MAIL]: [EntitlementName.FlagsLumo],
+        }
+    );
+
+    const isLumoOnlyB2C = (selection: PlanIDs) =>
+        createEntitlementResolverForSelection(catalog, selection).isLumoOnlyB2C;
+
+    it.each([PLANS.LUMO_BASIC, PLANS.LUMO, PLANS.LUMO_ULTRA])('returns true for %s', (plan) => {
+        expect(isLumoOnlyB2C({ [plan]: 1 })).toBe(true);
+    });
+
+    it.each([PLANS.LUMO_BUSINESS, PLANS.VISIONARY, PLANS.BUNDLE_BIZ_2025, PLANS.MAIL, PLANS.MEET_BUSINESS])(
+        'returns false for %s',
+        (plan) => {
+            expect(isLumoOnlyB2C({ [plan]: 1 })).toBe(false);
+        }
+    );
+
+    it('returns false for a Mail plan with the Lumo addon', () => {
+        expect(isLumoOnlyB2C({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 })).toBe(false);
+    });
+
+    it('returns false without a catalog', () => {
+        expect(createEntitlementResolverForSelection(undefined, PLANS.LUMO).isLumoOnlyB2C).toBe(false);
+    });
+
+    it('returns true when one of several subscriptions is a B2C Lumo plan', () => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.MAIL, PLANS.LUMO] }).isLumoOnlyB2C).toBe(
+            true
+        );
+    });
+
+    it('returns false when Lumo comes from a bundle next to a single-product plan', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.VISIONARY, PLANS.MAIL] }).isLumoOnlyB2C
         ).toBe(false);
     });
 });

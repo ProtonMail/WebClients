@@ -84,6 +84,7 @@ export const prodCatalogGrantsForTesting = {
     ],
     [PLANS.VISIONARY]: [
         EntitlementName.FlagsInbox,
+        EntitlementName.FlagsLumo,
         EntitlementName.FlagsDrive,
         EntitlementName.FlagsVpn,
         EntitlementName.FlagsPass,
@@ -142,6 +143,7 @@ export const prodCatalogGrantsForTesting = {
         EntitlementName.Sso,
         EntitlementName.CustomOrganizationLogo,
     ],
+    [PLANS.LUMO]: [EntitlementName.FlagsLumo],
     [PLANS.LUMO_BUSINESS]: [
         EntitlementName.FlagsLumo,
         EntitlementName.Business,
