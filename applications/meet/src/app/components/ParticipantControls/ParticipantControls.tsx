@@ -170,7 +170,6 @@ export const ParticipantControls = () => {
                                 Content={AudioSettings}
                                 popUp={PopUpControls.Microphone}
                                 ariaLabel={microphoneLabel}
-                                ariaPressed={microphoneHasWarning ? undefined : isMicrophoneEnabled}
                                 secondaryAriaLabel={c('Alt').t`Audio settings`}
                                 hasWarning={microphoneHasWarning}
                                 tooltipTitle={microphoneTooltipTitle}
@@ -198,7 +197,6 @@ export const ParticipantControls = () => {
                                 Content={VideoSettings}
                                 popUp={PopUpControls.Camera}
                                 ariaLabel={cameraLabel}
-                                ariaPressed={cameraHasWarning ? undefined : isCameraEnabled}
                                 secondaryAriaLabel={c('Alt').t`Video settings`}
                                 hasWarning={cameraHasWarning}
                                 tooltipTitle={cameraTooltipTitle}
@@ -224,7 +222,6 @@ export const ParticipantControls = () => {
                                 indicatorContent={microphoneHasWarning ? '!' : undefined}
                                 indicatorStatus={microphoneHasWarning ? 'warning' : 'success'}
                                 ariaLabel={microphoneLabel}
-                                ariaPressed={microphoneHasWarning ? undefined : isMicrophoneEnabled}
                             />
                             <CircleButton
                                 IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
@@ -239,7 +236,6 @@ export const ParticipantControls = () => {
                                 indicatorContent={cameraHasWarning ? '!' : undefined}
                                 indicatorStatus={cameraHasWarning ? 'warning' : 'success'}
                                 ariaLabel={cameraLabel}
-                                ariaPressed={cameraHasWarning ? undefined : isCameraEnabled}
                             />
                         </>
                     )}
