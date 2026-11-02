@@ -425,6 +425,9 @@ overrides:
     'minimatch@^9.0.3': '9.0.9'
     'minimatch@^9.0.4': '9.0.9'
     'multiparty@4.2.3': '4.3.0'
+    # DMG maker on Node 24: 0.2.11 calls the removed util.isDate, nan 2.22.0 doesn't compile.
+    'macos-alias@~0.2.5': '0.2.12'
+    'macos-alias>nan': '2.30.0'
     'nanoid@^5.0.4': '5.1.16'
     'nanoid@^5.1.2': '5.1.16'
     'node-forge@^1': '1.4.0'
