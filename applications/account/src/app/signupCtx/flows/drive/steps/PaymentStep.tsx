@@ -171,7 +171,6 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     {...paymentFacade}
                     noMaxWidth
                     hideFirstLabel
-                    onCurrencyChange={payments.selectCurrency}
                     taxCountry={billingAddressHook.taxCountry}
                     vatNumber={billingAddressHook.vatNumber}
                 />

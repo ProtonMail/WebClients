@@ -53,10 +53,6 @@ async function waitUntilChecked() {
     await wait(0);
 }
 
-async function selectPaymentMethod(paymentMethodTypes: PAYMENT_METHOD_TYPES) {
-    fireEvent.click(screen.getByTestId(`payment-method-${paymentMethodTypes}`));
-}
-
 async function selectCurrency(currency: Currency) {
     await waitFor(() => {
         expect(screen.getByTestId('currency-selector')).toBeEnabled();
@@ -156,17 +152,22 @@ describe('SubscriptionContainer', () => {
         expect(screen.getByTestId('currency-selector')).toHaveTextContent('USD');
     });
 
-    it('should select EUR when SEPA is selected', async () => {
+    it('offers SEPA only once EUR is selected, without switching the currency', async () => {
+        const sepaOption = `payment-method-${PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT}`;
         props.step = SUBSCRIPTION_STEPS.CHECKOUT;
         props.planIDs = { [PLANS.MAIL_PRO]: 1 };
         props.currency = 'CHF';
 
         await initialize(props);
-        expect(screen.getByTestId('currency-selector')).toHaveTextContent('CHF');
-
-        await selectPaymentMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT);
         await waitUntilChecked();
 
+        expect(screen.getByTestId('currency-selector')).toHaveTextContent('CHF');
+        expect(screen.queryByTestId(sepaOption)).not.toBeInTheDocument();
+
+        await selectCurrency('EUR');
+        await waitUntilChecked();
+
+        expect(await screen.findByTestId(sepaOption)).toBeInTheDocument();
         expect(screen.getByTestId('currency-selector')).toHaveTextContent('EUR');
     });
 

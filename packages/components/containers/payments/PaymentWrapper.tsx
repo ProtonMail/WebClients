@@ -6,7 +6,7 @@ import type { usePaymentFacade } from '@proton/payments-ui/client-extensions/use
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';
 import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
-import type { AvailablePaymentMethod, Currency, FreeSubscription } from '@proton/payments/core/interface';
+import type { AvailablePaymentMethod, FreeSubscription } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 
@@ -24,7 +24,6 @@ type Props = ReturnType<typeof usePaymentFacade> & {
     onChargebeeInitialized?: () => void;
     showCardIcons?: boolean;
     startTrial?: boolean;
-    onCurrencyChange?: (currency: Currency) => void;
     taxCountry?: TaxCountryHook;
     vatNumber?: VatNumberHook;
     loadingBitcoin?: boolean;
@@ -33,13 +32,7 @@ type Props = ReturnType<typeof usePaymentFacade> & {
     minCreditAmount?: number;
 };
 
-const PaymentWrapper = ({
-    methods,
-    isAuthenticated: isAuthenticatedProp,
-    onMethod,
-    onCurrencyChange,
-    ...rest
-}: Props) => {
+const PaymentWrapper = ({ methods, isAuthenticated: isAuthenticatedProp, onMethod, ...rest }: Props) => {
     const { UID } = useAuthentication();
     const { APP_NAME } = useConfig();
     const isAuthenticated = !!UID || !!isAuthenticatedProp;
@@ -70,11 +63,6 @@ const PaymentWrapper = ({
                         product: rest.product,
                         isTrial: rest.isTrialIntended,
                     });
-                }
-
-                const maybeNewCurrency = rest.currencyOverride.updateCurrencyOverride(newPaymentMethodValue);
-                if (maybeNewCurrency) {
-                    onCurrencyChange?.(maybeNewCurrency);
                 }
             }}
             lastUsedMethod={methods.lastUsedMethod}

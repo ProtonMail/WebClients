@@ -1333,7 +1333,6 @@ const SubscriptionContainerInner = ({
                                 noMaxWidth
                                 hideFirstLabel={true}
                                 hideSavedMethodsDetails={isAccountLiteApp}
-                                onCurrencyChange={handleChangeCurrency}
                                 taxCountry={billingAddressHook.taxCountry}
                                 vatNumber={billingAddressHook.vatNumber}
                                 subscription={subscription}
@@ -1361,7 +1360,6 @@ const SubscriptionContainerInner = ({
                                 planIDs={model.planIDs}
                                 onChangeCurrency={handleChangeCurrency}
                                 paymentFacade={paymentFacade}
-                                paymentMethods={paymentFacade.methods}
                                 showPlanDescription={audience !== Audience.B2B || !!model.planIDs[PLANS.PASS_BASIC]}
                                 paymentForbiddenReason={model.paymentForbiddenReason}
                                 taxCountry={billingAddressHook.taxCountry}

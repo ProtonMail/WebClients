@@ -26,7 +26,6 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
-import noop from '@proton/utils/noop';
 
 import PaymentMethodForm from './payment-section/PaymentMethodForm';
 import PaymentMethodSelector from './payment-section/PaymentMethodSelector';
@@ -59,12 +58,11 @@ const SubscriptionCheckoutPaymentSection = ({
         loading: paymentsLoading,
         setVatNumber,
         coupon,
-        selectCurrency,
         couponConfig,
     } = usePayments();
     const guardErrors = checkResult.GuardResult ?? [];
     const { planIDs, cycle, planName, currency } = checkoutUi;
-    const { amount, selectedMethodValue, methods, currencyOverride } = paymentFacade;
+    const { amount, selectedMethodValue, methods } = paymentFacade;
     const { selectMethod, savedMethods } = methods;
 
     const billingAddressHook = useBillingAddress({
@@ -184,11 +182,6 @@ const SubscriptionCheckoutPaymentSection = ({
                 product: appName,
                 isTrial: false, // lite subscription checkout has no trial intention
             });
-        }
-
-        const maybeNewCurrency = currencyOverride.updateCurrencyOverride(value);
-        if (maybeNewCurrency) {
-            selectCurrency(maybeNewCurrency).catch(noop);
         }
     };
 

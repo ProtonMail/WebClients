@@ -11,7 +11,6 @@ import PayPalInfoMessage from '@proton/components/containers/payments/PayPalInfo
 import PayPalView from '@proton/components/containers/payments/PayPalView';
 import Bitcoin from '@proton/components/containers/payments/bitcoin/Bitcoin';
 import BitcoinInfoMessage from '@proton/components/containers/payments/bitcoin/BitcoinInfoMessage';
-import { CurrencyOverrideBannerText } from '@proton/components/containers/payments/currencyOverrideBannerText';
 import PaymentMethodDetails from '@proton/components/containers/payments/methods/PaymentMethodDetails';
 import { NoPaymentRequiredNote } from '@proton/components/containers/payments/subscription/modal-components/NoPaymentRequiredNote';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -116,7 +115,6 @@ const PaymentMethodForm = ({
         currency,
         methods,
         flow,
-        currencyOverride,
     } = paymentFacade;
     const sharedCbProps: Pick<
         ChargebeeCardWrapperProps & ChargebeePaypalButtonProps & DirectDebitProps,
@@ -277,9 +275,6 @@ const PaymentMethodForm = ({
                             savedPaymentMethods={methods.savedMethods}
                             selectedPaymentMethod={selectedMethodValue}
                         />
-                    )}
-                    {currencyOverride.isCurrencyOverriden && (
-                        <CurrencyOverrideBannerText selectedMethod={selectedMethodValue} />
                     )}
                 </>
             </div>

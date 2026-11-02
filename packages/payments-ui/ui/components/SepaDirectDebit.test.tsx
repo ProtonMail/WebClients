@@ -212,14 +212,4 @@ describe('SepaDirectDebit', () => {
             expect(addressErrorMessage).toHaveTextContent('This field is required');
         });
     });
-
-    it('does not display currency override banner when isCurrencyOverriden is false', () => {
-        render(<TestComponent />);
-
-        expect(
-            screen.queryByText(
-                'Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.'
-            )
-        ).not.toBeInTheDocument();
-    });
 });

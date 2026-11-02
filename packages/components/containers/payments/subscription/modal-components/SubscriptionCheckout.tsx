@@ -8,7 +8,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
 import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
-import type { MethodsHook } from '@proton/payments-ui/react-extensions/useMethods';
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import { GuardBanner } from '@proton/payments-ui/ui/components/GuardBanner';
 import {
@@ -79,7 +78,6 @@ type Props = {
     onChangeCurrency: (currency: Currency) => void;
     showPlanDescription?: boolean;
     subscription: Subscription | FreeSubscription;
-    paymentMethods: MethodsHook;
     user: UserModel;
     trial: boolean;
     couponConfig?: CouponConfigRendered;
@@ -103,7 +101,6 @@ const SubscriptionCheckout = ({
     onChangeCurrency,
     showPlanDescription = true,
     subscription,
-    paymentMethods,
     user,
     trial,
     couponConfig,
@@ -125,7 +122,7 @@ const SubscriptionCheckout = ({
 
     const isPassBasic = !!planIDs[PLANS.PASS_BASIC];
     const list = getWhatsIncluded({ planIDs, plansMap, freePlan, scribeToLumo });
-    const disableCurrencySelector = getDisableCurrencySelector(paymentMethods, user, planIDs, couponConfig, loading);
+    const disableCurrencySelector = getDisableCurrencySelector(user, planIDs, couponConfig, loading);
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
 
