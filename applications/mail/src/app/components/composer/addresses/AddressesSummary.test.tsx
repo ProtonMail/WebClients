@@ -88,4 +88,16 @@ describe('AddressesSummary', () => {
         screen.getByText(recipientLabel);
         screen.getByText(group.Name, { exact: false });
     });
+
+    it('should keep CC and BCC buttons reachable with the keyboard', async () => {
+        await mailTestRender(<AddressesSummary {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                prepareMessage(store, { data: { ToList: [recipient] } }, composerID);
+            },
+        });
+        expect(screen.getByRole('button', { name: 'CC' })).toBe(screen.getByTestId('composer:recipients:cc-button'));
+        expect(screen.getByRole('button', { name: 'BCC' })).toBe(screen.getByTestId('composer:recipients:bcc-button'));
+        expect(screen.getByTestId('composer:recipients:cc-button')).not.toHaveAttribute('tabindex', '-1');
+        expect(screen.getByTestId('composer:recipients:bcc-button')).not.toHaveAttribute('tabindex', '-1');
+    });
 });
