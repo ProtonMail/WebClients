@@ -1088,7 +1088,6 @@ const SubscriptionContainerInner = ({
     };
 
     const modeType = mode ? mode : 'modal';
-    const showFreePlan = modeType === 'upsell-modal' ? false : undefined;
 
     const hasPaymentMethod = !!paymentFacade.methods.savedMethods?.length;
 
@@ -1191,7 +1190,6 @@ const SubscriptionContainerInner = ({
                     minimumCycle={minimumCycle}
                     planIDs={model.planIDs}
                     mode={modeType}
-                    hasFreePlan={showFreePlan}
                     subscription={subscription}
                     onChangePlanIDs={(planIDs, cycle, currency) => {
                         return check({
