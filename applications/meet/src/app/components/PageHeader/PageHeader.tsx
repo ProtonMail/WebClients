@@ -1,3 +1,4 @@
+import type { MouseEvent } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -17,7 +18,7 @@ import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { requestFork } from '@proton/shared/lib/authentication/fork/consume';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import { isElectronMeet } from '@proton/shared/lib/helpers/desktop';
+import { isElectronMeet, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import logo from '@proton/styles/assets/img/meet/brand-dual-colors.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -54,6 +55,11 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
         });
     };
 
+    const focusMainContentKeepingHash = (event: MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault();
+        document.getElementById('main-content')?.focus();
+    };
+
     const isJoinPage = window.location.pathname.includes('join');
     const isSchedulePage = window.location.pathname.includes('schedule');
 
@@ -84,7 +90,11 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
 
     return (
         <>
-            <a href="#main-content" className="skip-to-content">
+            <a
+                href="#main-content"
+                className={clsx('skip-to-content', isElectronOnMac && 'skip-to-content--mac-desktop')}
+                onClick={focusMainContentKeepingHash}
+            >
                 {c('Action').t`Skip to main content`}
             </a>
             <header

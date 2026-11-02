@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '~@proton/styles/scss/lib/config' as *;
 @use '~@proton/styles/scss/lib/rem' as *;
 @use '~@proton/styles/scss/meet/meet-breakpoints' as *;
@@ -15,6 +16,31 @@ im.$media-expressions: $media-expressions;
 	overflow: hidden;
 	border: 0;
 	clip: rect(0 0 0 0);
+
+	&:focus {
+		inset-block-start: var(--space-2);
+		inset-inline-start: var(--space-2);
+		z-index: map.get($z-indexes, 'up');
+		block-size: auto;
+		inline-size: auto;
+		padding-block: var(--space-2);
+		padding-inline: var(--space-4);
+		margin: 0;
+		overflow: visible;
+		clip: auto;
+		border: 1px solid var(--border-norm);
+		border-radius: var(--border-radius-full);
+		background-color: var(--background-norm);
+		color: var(--text-norm);
+		font-weight: var(--font-weight-semibold);
+		text-decoration: none;
+	}
+
+	// The macOS window buttons are drawn over the top start corner of the desktop app.
+	&--mac-desktop:focus {
+		inset-inline-start: rem(80);
+		-webkit-app-region: no-drag;
+	}
 }
 
 .apps-dropdown-button,

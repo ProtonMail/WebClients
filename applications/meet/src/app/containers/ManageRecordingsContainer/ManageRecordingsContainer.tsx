@@ -176,11 +176,16 @@ export const ManageRecordingsContainer = () => {
     };
 
     return (
-        <div className="overflow-y-auto h-full flex flex-column flex-nowrap">
+        <div className="overflow-y-auto h-full flex flex-column flex-nowrap relative">
             <div className="meet-container-padding-x w-full shrink-0">
                 <PageHeader showAppSwitcher={!isElectronApp} />
             </div>
-            <div className="p-7 max-w-custom mx-auto w-full" style={{ '--max-w-custom': '60rem' }}>
+            <main
+                id="main-content"
+                tabIndex={-1}
+                className="p-7 max-w-custom mx-auto w-full outline-none"
+                style={{ '--max-w-custom': '60rem' }}
+            >
                 <Button
                     shape="ghost"
                     className="flex items-center gap-2 mb-4"
@@ -209,7 +214,7 @@ export const ManageRecordingsContainer = () => {
                         onClose={() => setRecordingToDelete(null)}
                     />
                 )}
-            </div>
+            </main>
         </div>
     );
 };
