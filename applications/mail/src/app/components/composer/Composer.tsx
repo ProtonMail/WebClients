@@ -203,6 +203,7 @@ const Composer = (
         handleAddAttachmentsUpload,
         handleRemoveAttachment,
         handleRemoveUpload,
+        isSending,
 
         setHasUsedAssistantText,
         getContentBeforeBlockquote,
@@ -506,6 +507,7 @@ const Composer = (
                     onScheduleSend={handleScheduleSend}
                     onSend={handleSend({ sendAsScheduled: false })}
                     opening={opening}
+                    isSending={isSending}
                     syncInProgress={pendingSave.isPending}
                     canScheduleSend={canScheduleSend}
                     showAssistantButton={canShowAssistant}

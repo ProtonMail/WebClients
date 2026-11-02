@@ -68,6 +68,7 @@ interface Props {
     canScheduleSend: boolean;
     onSend: () => Promise<void>;
     opening: boolean;
+    isSending: boolean;
     syncInProgress: boolean;
     showAssistantButton: boolean;
     onToggleAssistant: () => void;
@@ -96,6 +97,7 @@ const ComposerActions = ({
     onScheduleSend,
     onSend,
     opening,
+    isSending,
     syncInProgress,
     canScheduleSend,
     showAssistantButton,
@@ -211,6 +213,7 @@ const ComposerActions = ({
                             <Tooltip title={titleSendButton}>
                                 <Button
                                     onClick={onSend}
+                                    loading={isSending}
                                     disabled={disabled}
                                     className="composer-send-button"
                                     data-testid="composer:send-button"
