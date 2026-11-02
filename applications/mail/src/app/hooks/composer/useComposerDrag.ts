@@ -6,7 +6,7 @@ import throttle from 'lodash/throttle';
 
 import type { ComposerDimension } from '@proton/mail-composer/helpers/composerPositioning';
 import { computeLeftPosition } from '@proton/mail-composer/helpers/composerPositioning';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 interface Props {
@@ -56,6 +56,7 @@ const useComposerDrag = ({
     composerIndex,
 }: Props) => {
     const windowWidth = window.innerWidth - drawerOffset;
+    const { useMailSettings } = useComposerMessageHost();
     const [mailSettings] = useMailSettings();
     const prevMinimized = useRef(isMinimized);
     const prevMaximized = useRef(isMaximized);

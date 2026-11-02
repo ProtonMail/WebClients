@@ -6,7 +6,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -19,6 +19,7 @@ interface Props {
 }
 
 const ComposerPasswordActions = ({ isPassword, onRemoveOutsideEncryption, onPassword }: Props) => {
+    const { useMailSettings } = useComposerMessageHost();
     const [mailSettings] = useMailSettings();
 
     const titleEncryption = mailSettings.Shortcuts ? (

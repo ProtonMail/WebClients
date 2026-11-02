@@ -8,13 +8,13 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import {
     exportPlainText,
     plainTextToHTML,
     setDocumentContent,
 } from '@proton/mail-message/helpers/message/messageContent';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { defaultFontStyle } from '@proton/shared/lib/mail/fontFace';
@@ -38,6 +38,7 @@ interface Props {
 }
 
 const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorMetadata, onChange }: Props) => {
+    const { useMailSettings } = useComposerMessageHost();
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
     const [userSettings] = useUserSettings();

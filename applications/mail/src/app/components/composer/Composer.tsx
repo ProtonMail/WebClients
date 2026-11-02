@@ -16,6 +16,7 @@ import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import ComposerAssistant from '@proton/mail-composer/components/assistant/ComposerAssistant';
 import { DRAG_ADDRESS_KEY } from '@proton/mail-composer/constants';
 import { ComposerInnerModalStates } from '@proton/mail-composer/hooks/composer/useComposerInnerModals';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { insertTextBeforeContent, prepareContentToInsert } from '@proton/mail-message/helpers/message/messageContent';
 import { removeLineBreaks } from '@proton/mail-message/helpers/string';
 import type {
@@ -23,7 +24,6 @@ import type {
     MessageStateWithData,
     PartialMessageState,
 } from '@proton/mail-message/store/messages/messagesTypes';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailBlockquotes, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
@@ -91,6 +91,7 @@ const Composer = (
 ) => {
     const [displayToolbar, setDisplayToolbar] = useLocalState(true, 'composer-toolbar-expanded');
     const toolbarWrapperRef = useRef<HTMLDivElement>(null);
+    const { useMailSettings } = useComposerMessageHost();
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
     const [selectedText, setSelectedText] = useState('');

@@ -7,8 +7,8 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import type { AddAttachmentsParams } from '@proton/mail-composer/attachments/uploadTypes';
 import { ComposerInnerModalStates } from '@proton/mail-composer/hooks/composer/useComposerInnerModals';
+import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../../constants';
@@ -53,6 +53,7 @@ const ComposerInnerModals = ({
     noReplyEmail,
     composerID,
 }: Props) => {
+    const { useMailSettings } = useComposerMessageHost();
     const [mailSettings] = useMailSettings();
     const boldNoReplyEmail = <strong key="no-reply-email">{noReplyEmail}</strong>;
     const [dontShowAgain, setDontShowAgain] = useLocalState(false, NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY);
