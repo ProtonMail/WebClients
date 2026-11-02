@@ -2,8 +2,6 @@ import type { ReactNode } from 'react';
 import { createContext, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import { useFlag } from '@proton/unleash/useFlag';
-
 import type { AnnounceFn } from './types';
 import { AnnouncementPriority } from './types';
 
@@ -120,7 +118,7 @@ const useAnnouncementChannel = (): Channel => {
                 clearTimeout(cooldownRef.current);
             }
             clearTimeoutsRef.current.forEach((timeout) => clearTimeout(timeout));
-            // eslint-disable-next-line react-hooks/exhaustive-deps
+
             clearTimeoutsRef.current.clear();
         };
     }, []);
@@ -128,7 +126,7 @@ const useAnnouncementChannel = (): Channel => {
     return { regions, submit };
 };
 
-export interface MeetingAnnouncerContextValue {
+interface LiveAnnouncerContextValue {
     announce: AnnounceFn;
     /**
      * Drop non-critical announcements while set (e.g. during reconnect churn, to avoid
@@ -138,14 +136,14 @@ export interface MeetingAnnouncerContextValue {
     setSuspendNonCritical: (suspend: boolean) => void;
 }
 
-export const MeetingAnnouncerContext = createContext<MeetingAnnouncerContextValue | null>(null);
+export const LiveAnnouncerContext = createContext<LiveAnnouncerContextValue | null>(null);
 
-interface MeetingAnnouncerProviderProps {
+interface LiveAnnouncerProviderProps {
     children: ReactNode;
 }
 
 /** Live region with priority queue, dedupe, and stable focus. */
-const MeetingAnnouncerProviderInner = ({ children }: MeetingAnnouncerProviderProps) => {
+export const LiveAnnouncerProvider = ({ children }: LiveAnnouncerProviderProps) => {
     const { regions, submit } = useAnnouncementChannel();
 
     const recentRef = useRef<Map<string, number>>(new Map());
@@ -189,13 +187,13 @@ const MeetingAnnouncerProviderInner = ({ children }: MeetingAnnouncerProviderPro
         [submit]
     );
 
-    const value = useMemo<MeetingAnnouncerContextValue>(
+    const value = useMemo<LiveAnnouncerContextValue>(
         () => ({ announce, setSuspendNonCritical }),
         [announce, setSuspendNonCritical]
     );
 
     return (
-        <MeetingAnnouncerContext.Provider value={value}>
+        <LiveAnnouncerContext.Provider value={value}>
             {children}
             {/*
              * Portaled to body (avoids aria-hidden traps). Two persistent regions alternate as the
@@ -219,18 +217,6 @@ const MeetingAnnouncerProviderInner = ({ children }: MeetingAnnouncerProviderPro
                     </>,
                     document.body
                 )}
-        </MeetingAnnouncerContext.Provider>
+        </LiveAnnouncerContext.Provider>
     );
-};
-
-// Mount once around the meeting subtree (inside the Redux + LiveKit room providers). When the
-// accessibility flag is off, no context is provided so `useAnnounce` becomes a no-op.
-export const MeetingAnnouncerProvider = ({ children }: MeetingAnnouncerProviderProps) => {
-    const enableAccessibilityAnnouncements = useFlag('EnableAccessibilityAnnouncements');
-
-    if (!enableAccessibilityAnnouncements) {
-        return <>{children}</>;
-    }
-
-    return <MeetingAnnouncerProviderInner>{children}</MeetingAnnouncerProviderInner>;
 };

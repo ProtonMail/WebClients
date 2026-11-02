@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 
+import { LiveAnnouncerProvider } from '@proton/components/components/liveAnnouncer/LiveAnnouncerProvider';
+import { useSetSuspendNonCritical } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useAnnouncementSources } from './announcementSources/useAnnouncementSources';
 import { getConnectionPhase } from './announcementSources/useConnectionAnnouncements';
 import type { ConnectionAnnouncementState } from './types';
-import { useSetSuspendNonCritical } from './useAnnounce';
 
 const useSuspendNonCriticalSync = (connectionState: ConnectionAnnouncementState) => {
     const setSuspendNonCritical = useSetSuspendNonCritical();
@@ -22,6 +23,18 @@ const AnnouncementSourcesRunner = ({ connectionState }: { connectionState: Conne
     useSuspendNonCriticalSync(connectionState);
     useAnnouncementSources({ connectionState });
     return null;
+};
+
+// Mount once around the meeting subtree (inside the Redux + LiveKit room providers). When the
+// accessibility flag is off, no context is provided so `useAnnounce` becomes a no-op.
+export const MeetingAnnouncerProvider = ({ children }: { children: ReactNode }) => {
+    const enableAccessibilityAnnouncements = useFlag('EnableAccessibilityAnnouncements');
+
+    if (!enableAccessibilityAnnouncements) {
+        return <>{children}</>;
+    }
+
+    return <LiveAnnouncerProvider>{children}</LiveAnnouncerProvider>;
 };
 
 export type MeetingAnnouncerProps = ConnectionAnnouncementState & {

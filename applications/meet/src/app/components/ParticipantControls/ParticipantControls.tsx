@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLoading from '@proton/hooks/useLoading';
+import { useToolbarRovingFocus } from '@proton/hooks/useToolbarRovingFocus';
 import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
@@ -30,7 +31,6 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLowerMediumWidth } from '../../hooks/useIsLowerMediumWidth';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
-import { useToolbarRovingFocus } from '../../hooks/useToolbarRovingFocus';
 import { getCameraButtonAriaLabel, getMicrophoneButtonAriaLabel } from '../../utils/mediaButtonAriaLabels';
 import { cameraShortcutLabel, microphoneShortcutLabel } from '../../utils/mediaShortcuts';
 import { AudioPlaybackPrompt } from '../AudioPlaybackPrompt/AudioPlaybackPrompt';

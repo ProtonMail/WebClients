@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/participants/participantsSlice';
 
 import { RAISE_HAND_EMOJI } from '../../../constants';
 import { announcementMessages } from '../messages';
-import { useAnnounce } from '../useAnnounce';
 
 // Raise-hand reactions are excluded; they are handled by useHandRaiseAnnouncements.
 export const useReactionAnnouncements = () => {

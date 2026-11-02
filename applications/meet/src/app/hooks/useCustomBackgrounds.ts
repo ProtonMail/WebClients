@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { selectUserKeys } from '@proton/account/userKeys';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { ValidationError } from '@proton/drive/sdk';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
@@ -43,7 +44,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { announcementMessages } from '../components/MeetingAnnouncer/messages';
-import { useAnnounce } from '../components/MeetingAnnouncer/useAnnounce';
 import { prepareBackground } from '../utils/customBackgrounds/backgroundPreview';
 import {
     attachCachedBackgroundImage,

@@ -2,10 +2,11 @@ import { useEffect, useRef } from 'react';
 
 import { ConnectionState } from 'livekit-client';
 
+import { AnnouncementPriority } from '@proton/components/components/liveAnnouncer/types';
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
+
 import { announcementMessages } from '../messages';
-import { AnnouncementPriority } from '../types';
 import type { ConnectionAnnouncementState } from '../types';
-import { useAnnounce } from '../useAnnounce';
 
 export type ConnectionPhase = 'connected' | 'reconnecting' | 'reconnected' | 'disconnected';
 

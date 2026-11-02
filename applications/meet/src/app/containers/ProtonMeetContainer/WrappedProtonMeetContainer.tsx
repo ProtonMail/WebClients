@@ -9,7 +9,7 @@ import { resetActiveDevices } from '@proton/meet/store/slices/deviceManagementSl
 import { isDevOrBlack } from '@proton/shared/lib/env';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { MeetingAnnouncerProvider } from '../../components/MeetingAnnouncer/MeetingAnnouncerContext';
+import { MeetingAnnouncerProvider } from '../../components/MeetingAnnouncer/MeetingAnnouncer';
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
 import { SortedParticipantsProvider } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';

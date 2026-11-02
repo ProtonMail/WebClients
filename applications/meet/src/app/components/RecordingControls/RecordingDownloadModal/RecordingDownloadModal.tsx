@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { AnnouncementPriority } from '@proton/components/components/liveAnnouncer/types';
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { IcArrowDownCircle } from '@proton/icons/icons/IcArrowDownCircle';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { clearRecording, selectRecording, selectRecordingStatus } from '@proton/meet/store/slices/recordingsSlice';
@@ -13,8 +15,6 @@ import warningImg from '@proton/styles/assets/img/meet/warning-icon.svg';
 import { useLastRecordingDownload } from '../../../hooks/useMeetingRecorder/hooks/useLastRecordingDownload';
 import { ConfirmationModal } from '../../ConfirmationModal/ConfirmationModal';
 import { announcementMessages } from '../../MeetingAnnouncer/messages';
-import { AnnouncementPriority } from '../../MeetingAnnouncer/types';
-import { useAnnounce } from '../../MeetingAnnouncer/useAnnounce';
 import { RecordingProcessingModal } from './RecordingProcessingModal';
 
 export const RecordingDownloadModal = () => {

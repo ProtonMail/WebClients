@@ -3,11 +3,11 @@ import { useEffect } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 import { RoomEvent, Track } from 'livekit-client';
 
+import { AnnouncementPriority } from '@proton/components/components/liveAnnouncer/types';
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 
 import { announcementMessages } from '../messages';
-import { AnnouncementPriority } from '../types';
-import { useAnnounce } from '../useAnnounce';
 
 // `remoteMute` fires only for host/server-forced mutes, unlike the generic `TrackMuted`.
 // The engine is swapped on a full reconnect, so we rebind then.

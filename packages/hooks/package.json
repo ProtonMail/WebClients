@@ -25,7 +25,8 @@
         "./useStableLoading": "./useStableLoading.ts",
         "./useStateRef": "./useStateRef.ts",
         "./useSynchronizingState": "./useSynchronizingState.ts",
-        "./useToggle": "./useToggle.ts"
+        "./useToggle": "./useToggle.ts",
+        "./useToolbarRovingFocus": "./useToolbarRovingFocus.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",

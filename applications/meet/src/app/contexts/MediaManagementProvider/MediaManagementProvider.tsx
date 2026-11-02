@@ -7,6 +7,8 @@ import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { AnnouncementPriority } from '@proton/components/components/liveAnnouncer/types';
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import {
@@ -48,8 +50,6 @@ import { TimeoutError, withTimeout } from '@proton/meet/utils/withTimeout';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { AnnouncementPriority } from '../../components/MeetingAnnouncer/types';
-import { useAnnounce } from '../../components/MeetingAnnouncer/useAnnounce';
 import { useMediaToggleShortcuts } from '../../hooks/useMediaToggleShortcuts';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { requestPermissionWithTelemetry } from '../../telemetry/permissions';

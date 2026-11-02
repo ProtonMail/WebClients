@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnnounce';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import {
@@ -12,7 +13,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMessagePlainText } from '../../../hooks/useMessagePlainText';
 import { announcementMessages } from '../messages';
-import { useAnnounce } from '../useAnnounce';
 
 export const useChatAnnouncements = () => {
     const announce = useAnnounce();
