@@ -70,7 +70,7 @@ export const DashboardContainerBody = ({
             {!isGuest && <UpsellBanner />}
             <div className="flex-1 min-h-0 w-full meet-container-padding-x flex flex-column flex-nowrap meet-container relative">
                 <PageHeader showAppSwitcher={!isElectronApp} />
-                <main id="main-content" className="flex flex-column flex-nowrap flex-1">
+                <main id="main-content" tabIndex={-1} className="flex flex-column flex-nowrap flex-1 outline-none">
                     <div className="flex flex-column items-center flex-nowrap w-full shrink-0 meet-dashboard-header-wrapper">
                         <h1 className="meet-dashboard-headline text-center">{getHeadline()}</h1>
                         <span className="meet-dashboard-subtitle mt-4 mb-5 text-center text-wrap-balance">{c('Header')

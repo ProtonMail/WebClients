@@ -197,7 +197,8 @@ export const PrejoinContainer = ({
                 </div>
                 <main
                     id="main-content"
-                    className="prejoin-container flex flex-column md:flex-row md:items-center md:justify-center w-full"
+                    tabIndex={-1}
+                    className="prejoin-container flex flex-column md:flex-row md:items-center md:justify-center w-full outline-none"
                 >
                     <div
                         className={clsx(
