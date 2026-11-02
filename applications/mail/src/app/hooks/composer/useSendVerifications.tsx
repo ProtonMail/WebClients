@@ -7,7 +7,10 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useModals from '@proton/components/hooks/useModals';
-import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '@proton/mail-composer/constants';
+import {
+    MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
+    NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY,
+} from '@proton/mail-composer/constants';
 import { getAddressFromEmail } from '@proton/mail-message/helpers/addresses';
 import { removeMessageRecipients, uniqueMessageRecipients } from '@proton/mail-message/helpers/message/cleanMessage';
 import {
@@ -39,7 +42,6 @@ import SendWithChangedPreferencesModal, {
 import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
 import SendWithExpirationModal from '../../components/composer/addresses/SendWithExpirationModal';
 import SendWithWarningsModal from '../../components/composer/addresses/SendWithWarningsModal';
-import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../constants';
 
 interface Verifications {
     alreadySent?: boolean;

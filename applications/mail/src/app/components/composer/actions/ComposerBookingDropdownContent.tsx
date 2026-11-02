@@ -10,17 +10,17 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { IcCalendarList } from '@proton/icons/icons/IcCalendarList';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { escape } from '@proton/sanitize/escape';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
-
-import type { BookingPageCount } from '../../../telemetry/composerBookingsEvents';
+import type { BookingPageCount } from '@proton/mail-composer/telemetry/composerBookingsEvents';
 import {
     BookingLimitReason,
     BookingUpsellSource,
     getBookingPageCountDimension,
     useComposerBookingsTracking,
-} from '../../../telemetry/composerBookingsEvents';
+} from '@proton/mail-composer/telemetry/composerBookingsEvents';
+import { escape } from '@proton/sanitize/escape';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
+
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
 
 interface Props {

@@ -5,13 +5,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import { SCHEDULED_MESSAGES_LIMIT } from '@proton/mail-composer/constants';
+import { useComposerDispatch } from '@proton/mail-composer/store/hooks';
 import type { MessageState, MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 import { updateScheduled } from '@proton/mail-message/store/messages/scheduled/scheduledActions';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
-import { SCHEDULED_MESSAGES_LIMIT } from '../../constants';
-import { useMailDispatch } from '../../store/hooks';
 import { useComposerHost } from './useComposerHost';
 import { useSendVerifications } from './useSendVerifications';
 
@@ -41,7 +41,7 @@ export const useScheduleSend = ({
     const { canScheduleSend } = useScheduleSendFeature();
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
 
     const [waitBeforeScheduleModalProps, setWaitBeforeScheduleModalOpen] = useModalState();
 

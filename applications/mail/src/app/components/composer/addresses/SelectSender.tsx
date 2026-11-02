@@ -7,11 +7,11 @@ import type { SelectChangeEvent } from '@proton/components/components/selectTwo/
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import type { ComposerID } from '@proton/mail-composer/store/composers/composerTypes';
 import { composerActions } from '@proton/mail-composer/store/composers/composersSlice';
+import { useComposerDispatch, useComposerSelector } from '@proton/mail-composer/store/hooks';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import generateUID from '@proton/utils/generateUID';
 
 import useGetSenderOptions from '../../../hooks/composer/useGetSenderOptions';
-import { useMailDispatch, useMailSelector } from '../../../store/hooks';
 
 interface Props {
     composerID: ComposerID;
@@ -21,8 +21,8 @@ interface Props {
 }
 
 const SelectSender = ({ composerID, message, disabled, addressesBlurRef }: Props) => {
-    const dispatch = useMailDispatch();
-    const composer = useMailSelector((state) => selectComposer(state, composerID));
+    const dispatch = useComposerDispatch();
+    const composer = useComposerSelector((state) => selectComposer(state, composerID));
 
     const [uid] = useState(generateUID('select-sender'));
 

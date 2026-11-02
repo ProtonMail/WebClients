@@ -25,6 +25,7 @@ import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 import { useComposerAssistantProvider } from '@proton/mail-composer/components/assistant/provider/ComposerAssistantProvider';
 import ComposerAssistantSpotlight from '@proton/mail-composer/components/assistant/spotlights/ComposerAssistantSpotlight';
 import AttachmentsButton from '@proton/mail-composer/components/message/extrasFooter/attachment/AttachmentsButton';
+import { useComposerDispatch } from '@proton/mail-composer/store/hooks';
 import { getAttachmentCounts } from '@proton/mail-message/helpers/message/messages';
 import { updateExpires } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
@@ -36,7 +37,6 @@ import lumoIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { useMailDispatch } from '../../../../store/hooks';
 import type { MessageChange, MessageChangeFlag } from '../../Composer';
 import type { ExternalEditorActions } from '../../editor/EditorWrapper';
 import ComposerMoreActions from '../ComposerMoreActions';
@@ -106,7 +106,7 @@ const ComposerActions = ({
     onToggleToolbar,
     displayToolbar,
 }: Props) => {
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
     const scribeToLumo = useFlag('ScribeToLumo');
     const { viewportWidth } = useActiveBreakpoint();
     const assistantSpotlight = useSpotlightOnFeature(FeatureCode.ComposerAssistantSpotlight, !viewportWidth['<=small']);

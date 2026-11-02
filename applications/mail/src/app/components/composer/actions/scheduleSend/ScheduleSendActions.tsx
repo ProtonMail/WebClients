@@ -11,6 +11,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import UpsellModal from '@proton/components/components/upsell/UpsellModal/UpsellModal';
 import { isScheduledDuringNight } from '@proton/mail-composer/components/composer/actions/scheduleSend/helpers';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
+import { useComposerSelector } from '@proton/mail-composer/store/hooks';
 import { FUTURE_MESSAGES_BUFFER } from '@proton/mail-message/constants';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
@@ -20,7 +21,6 @@ import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg
 import scheduleSendImg from '@proton/styles/assets/img/illustrations/new-upsells-img/paperplane-clock.svg';
 import clsx from '@proton/utils/clsx';
 
-import { useMailSelector } from '../../../../store/hooks';
 import useScheduleSendFeature from './useScheduleSendFeature';
 
 interface Props {
@@ -168,7 +168,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
             handleUpsellModalDisplay(true);
         };
 
-        const composer = useMailSelector((store) => selectComposer(store, composerID));
+        const composer = useComposerSelector((store) => selectComposer(store, composerID));
 
         return (
             <>

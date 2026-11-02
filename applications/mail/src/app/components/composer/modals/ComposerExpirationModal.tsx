@@ -24,6 +24,8 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import TimeInput from '@proton/components/components/input/TimeInput';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
+import { MAX_EXPIRATION_TIME } from '@proton/mail-composer/constants';
+import { useComposerDispatch } from '@proton/mail-composer/store/hooks';
 import { updateExpires } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -34,9 +36,7 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import generateUID from '@proton/utils/generateUID';
 
-import { MAX_EXPIRATION_TIME } from '../../../constants';
 import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
-import { useMailDispatch } from '../../../store/hooks';
 import type { MessageChange } from '../Composer';
 import ComposerInnerModal from './ComposerInnerModal';
 import PasswordInnerModalForm from './PasswordInnerModalForm';
@@ -60,7 +60,7 @@ interface Props {
 }
 
 const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
     const { createNotification } = useNotifications();
     const [userSettings] = useUserSettings();
 

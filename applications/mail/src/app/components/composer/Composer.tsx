@@ -16,7 +16,9 @@ import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import ComposerAssistant from '@proton/mail-composer/components/assistant/ComposerAssistant';
 import { DRAG_ADDRESS_KEY } from '@proton/mail-composer/constants';
 import { ComposerInnerModalStates } from '@proton/mail-composer/hooks/composer/useComposerInnerModals';
+import { useHasScroll } from '@proton/mail-composer/hooks/useHasScroll';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
+import { useComposerStore } from '@proton/mail-composer/store/hooks';
 import { insertTextBeforeContent, prepareContentToInsert } from '@proton/mail-message/helpers/message/messageContent';
 import { removeLineBreaks } from '@proton/mail-message/helpers/string';
 import type {
@@ -37,8 +39,6 @@ import noop from '@proton/utils/noop';
 
 import { useComposerContent } from '../../hooks/composer/useComposerContent';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
-import { useHasScroll } from '../../hooks/useHasScroll';
-import { useMailStore } from '../../store/hooks';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
 import ComposerActions from './actions/ComposerActions/ComposerActions';
@@ -142,7 +142,7 @@ const Composer = (
         editorRef.current = editorActions;
     }, []);
 
-    const store = useMailStore();
+    const store = useComposerStore();
     const getStoreState = useCallback(() => store.getState(), [store]);
 
     // Manage focus from the container yet keeping logic in each component

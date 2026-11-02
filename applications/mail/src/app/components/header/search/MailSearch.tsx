@@ -8,14 +8,14 @@ import TopNavbarListItemSearchButton from '@proton/components/components/topnavb
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import useToggle from '@proton/hooks/useToggle';
+import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '@proton/mail-composer/constants';
+import { useClickMailContent } from '@proton/mail-composer/hooks/useClickMailContent';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import generateUID from '@proton/utils/generateUID';
 
-import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { extractSearchParameters } from '../../../helpers/mailboxUrl';
-import { useClickMailContent } from '../../../hooks/useClickMailContent';
 import AdvancedSearch from './AdvancedSearch';
 import MailSearchInput from './MailSearchInput';
 import SearchOverlay from './SearchOverlay';

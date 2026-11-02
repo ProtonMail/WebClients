@@ -4,9 +4,8 @@ import type { Notification } from '@proton/app-context/notifications/interfaces'
 import createNotificationManager from '@proton/app-context/notifications/manager';
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
 import NotificationsContainer from '@proton/components/containers/notifications/Container';
+import { useLongLivingState } from '@proton/mail-composer/hooks/useLongLivingState';
 import noop from '@proton/utils/noop';
-
-import { useLongLivingState } from '../../hooks/useLongLivingState';
 
 interface Props {
     children: React.ReactNode;

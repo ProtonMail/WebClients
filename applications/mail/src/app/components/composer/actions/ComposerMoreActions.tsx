@@ -22,6 +22,12 @@ import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { useComposerDispatch } from '@proton/mail-composer/store/hooks';
+import type { BookingUpsellContext } from '@proton/mail-composer/telemetry/composerBookingsEvents';
+import {
+    BookingUpsellSource,
+    useComposerBookingsTracking,
+} from '@proton/mail-composer/telemetry/composerBookingsEvents';
 import { updateExpires } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { CacheType } from '@proton/redux-utilities/interface';
@@ -31,9 +37,6 @@ import bookingImg from '@proton/styles/assets/img/illustrations/new-upsells-img/
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { useMailDispatch } from '../../../store/hooks';
-import type { BookingUpsellContext } from '../../../telemetry/composerBookingsEvents';
-import { BookingUpsellSource, useComposerBookingsTracking } from '../../../telemetry/composerBookingsEvents';
 import type { MessageChange, MessageChangeFlag } from '../Composer';
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
 import ComposerBookingDropdownContent from './ComposerBookingDropdownContent';
@@ -84,7 +87,7 @@ const ComposerMoreActions = ({
     onRemoveOutsideEncryption,
     onDelete,
 }: Props) => {
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
 
     const bookingsDisabled = useFlag('CalendarBookingsDisabled');
     const bookingsInComposerEnabled = useFlag('BookingsInComposerEnabled');

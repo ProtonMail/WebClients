@@ -1,7 +1,8 @@
 import { protonizer } from '@proton/sanitize/purify';
 
-import { removeLineBreaks } from './tests/message';
-import { mailtoParser, toAddresses } from './url';
+import { mailtoParser, toAddresses } from './mailto';
+
+const removeLineBreaks = (text: string) => text.replaceAll(/\n/g, '');
 
 describe('toAddresses', () => {
     it('should split an addresses string to a list of recipients', function () {

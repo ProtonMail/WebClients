@@ -18,8 +18,10 @@ import {
     STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
 } from '@proton/mail-composer/constants';
 import { checkSizeAndLength, upload } from '@proton/mail-composer/helpers/attachment/attachmentUploader';
+import { useLongLivingState } from '@proton/mail-composer/hooks/useLongLivingState';
 import { usePromise } from '@proton/mail-composer/hooks/usePromise';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
+import { useComposerDispatch } from '@proton/mail-composer/store/hooks';
 import {
     createEmbeddedImageFromUpload,
     isEmbeddable,
@@ -43,8 +45,6 @@ import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 
 import type { MessageChange } from '../../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../../components/composer/editor/EditorWrapper';
-import { useMailDispatch } from '../../../store/hooks';
-import { useLongLivingState } from '../../useLongLivingState';
 import { createDummyUpload, isAttachmentUpload, isDummyAttachmentUpload } from './helpers';
 
 interface UseAttachmentsParameters {
@@ -80,7 +80,7 @@ export const useAttachments = ({
     const getMessage = useGetMessage();
     const { useGetMessageKeys } = useComposerMessageHost();
     const getMessageKeys = useGetMessageKeys();
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
 
     // Pending files to upload
     const [pendingFiles, setPendingFiles] = useState<File[]>();

@@ -9,6 +9,7 @@ import Label from '@proton/components/components/label/Label';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
 import { selectComposer } from '@proton/mail-composer/store/composers/composerSelectors';
+import { useComposerSelector } from '@proton/mail-composer/store/hooks';
 import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 import type { RecipientType } from '@proton/mail-message/models/address';
 import { recipientTypes } from '@proton/mail-message/models/address';
@@ -18,7 +19,6 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { useMailSelector } from '../../../store/hooks';
 import AddressesCCButton from './AddressesCCButton';
 
 interface Props {
@@ -40,7 +40,7 @@ const AddressesSummary = ({
 }: Props) => {
     const { EncryptionStatusIcon } = useComposerMessageHost();
     const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
-    const composer = useMailSelector((store) => selectComposer(store, composerID));
+    const composer = useComposerSelector((store) => selectComposer(store, composerID));
     const recipients = getRecipients(composer?.recipients);
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(recipients)).join(', ');
 

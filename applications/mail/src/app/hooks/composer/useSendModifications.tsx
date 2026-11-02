@@ -6,6 +6,7 @@ import { upload } from '@proton/mail-composer/helpers/attachment/attachmentUploa
 import { attachPublicKey } from '@proton/mail-composer/helpers/message/messageAttachPublicKey';
 import { replaceDataUrl } from '@proton/mail-composer/helpers/message/messageDataUrl';
 import { useComposerMessageHost } from '@proton/mail-composer/host/composerMessageHost';
+import { useComposerDispatch } from '@proton/mail-composer/store/hooks';
 import { createEmbeddedImageFromUpload } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import { sendModifications } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
@@ -14,11 +15,9 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { isAttachPublicKey, isPlainText } from '@proton/shared/lib/mail/messages';
 
-import { useMailDispatch } from '../../store/hooks';
-
 export const useSendModifications = () => {
     const getMessage = useGetMessage();
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
     const { useGetMessageKeys } = useComposerMessageHost();
     const getMessageKeys = useGetMessageKeys();
     const auth = useAuthentication();

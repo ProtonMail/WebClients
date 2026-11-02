@@ -14,9 +14,12 @@ import SendingMessageNotification, {
 } from '@proton/mail-composer/components/notifications/SendingMessageNotification';
 import {
     MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
+    SEND_EMAIL_ERROR_CODES,
     STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR,
 } from '@proton/mail-composer/constants';
 import type { PromiseHandlers } from '@proton/mail-composer/hooks/usePromise';
+import { useComposerDispatch } from '@proton/mail-composer/store/hooks';
+import { SAVE_DRAFT_ERROR_CODES } from '@proton/mail-message/constants';
 import { useGetMessage } from '@proton/mail-message/hooks/message/useGetMessage';
 import type { MapSendInfo } from '@proton/mail-message/models/crypto';
 import { endSending, startSending } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
@@ -24,9 +27,7 @@ import type { MessageState, MessageStateWithData } from '@proton/mail-message/st
 import { cancelScheduled } from '@proton/mail-message/store/messages/scheduled/scheduledActions';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { useMailDispatch } from '../../store/hooks';
 import { ComposeTypes } from './useCompose';
 import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';
@@ -76,7 +77,7 @@ export const useSendHandler = ({
     const { createNotification, hideNotification } = useNotifications();
     const { call } = useEventManager();
     const shouldPreventEventLoopCallOnCompose = useFlag('PreventEventLoopCallOnCompose');
-    const dispatch = useMailDispatch();
+    const dispatch = useComposerDispatch();
     const getMessage = useGetMessage();
 
     const { preliminaryVerifications, extendedVerifications } = useSendVerifications(

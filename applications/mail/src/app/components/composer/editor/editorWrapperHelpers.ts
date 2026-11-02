@@ -1,3 +1,4 @@
+import type { ComposerStoreState } from '@proton/mail-composer/store/hooks';
 import { readContentIDandLocation } from '@proton/mail-message/helpers/message/messageEmbeddeds';
 import { attachmentByID } from '@proton/mail-message/store/attachments/attachmentsSelectors';
 import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
@@ -5,8 +6,6 @@ import { messageByID } from '@proton/mail-message/store/messages/messagesSelecto
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
-
-import type { MailState } from '../../../store/store';
 
 export const getAttachedCIDs = (message: MessageState) => {
     if (!message.data?.Attachments) {
@@ -22,7 +21,7 @@ export const getAttachedCIDs = (message: MessageState) => {
  * so the data is only ever looked up by attachment ID.
  */
 export const getRemovedInlineImageData = (
-    state: MailState,
+    state: ComposerStoreState,
     message: MessageState,
     attachment: Attachment,
     cid: string

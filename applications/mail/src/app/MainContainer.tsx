@@ -20,6 +20,7 @@ import { useInboxDesktopMetrics } from '@proton/components/hooks/useInboxDesktop
 import useOnline from '@proton/components/hooks/useOnline';
 import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLoading';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
+import { MailContentRefProvider } from '@proton/mail-composer/hooks/useClickMailContent';
 import { EventNotifierLoopType } from '@proton/shared/lib/eventNotifier/interface';
 
 import { ROUTE_MAIN } from './constants';
@@ -29,7 +30,6 @@ import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 import { MailComposerHost } from './containers/MailComposerHost';
 import { GlobalModalProvider } from './containers/globalModals/GlobalModalProvider';
 import ChecklistsProvider from './containers/onboardingChecklist/provider/ChecklistsProvider';
-import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { useInboxDesktopHeartbeat } from './hooks/useInboxDesktopHeartbeat';
 import MailAppShell from './router/MailAppShell';
 import { extraThunkArguments } from './store/thunk';

@@ -1,9 +1,9 @@
+import type { ComposerStoreState } from '@proton/mail-composer/store/hooks';
 import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import type { MailState } from '../../../store/store';
 import { getInlineImagesToRestore, getRemovedInlineImageData } from './editorWrapperHelpers';
 
 const decryptedAttachment = (cid: string, cloc = ''): DecryptedAttachment => ({
@@ -22,11 +22,14 @@ const draftAttachment = { ID: 'DraftAttachmentID', Headers: { 'content-id': cid 
 const parentAttachment = { ID: 'ParentAttachmentID', Headers: { 'content-id': cid } } as Attachment;
 const draft = { localID: 'DraftLocalID', draftFlags: { ParentID: parentID } } as MessageState;
 
-const getState = (attachments: MailState['attachments'], parentAttachments: Attachment[] = [parentAttachment]) =>
+const getState = (
+    attachments: ComposerStoreState['attachments'],
+    parentAttachments: Attachment[] = [parentAttachment]
+) =>
     ({
         attachments,
         messages: { [parentID]: { localID: parentID, data: { ID: parentID, Attachments: parentAttachments } } },
-    }) as unknown as MailState;
+    }) as unknown as ComposerStoreState;
 
 describe('editorWrapperHelpers', () => {
     describe('getRemovedInlineImageData', () => {
