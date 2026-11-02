@@ -1,4 +1,5 @@
 import type { PipelineBackground, PipelineConfig } from './BackgroundPipeline';
+import type { BackgroundDebugView } from './types';
 
 export type PipelineWorkerRequest =
     | {
@@ -16,6 +17,7 @@ export type PipelineWorkerRequest =
     | { type: 'set-background'; id: number; background: PipelineBackground }
     | { type: 'set-enabled'; enabled: boolean }
     | { type: 'set-page-hidden'; hidden: boolean }
+    | { type: 'set-debug-view'; view: BackgroundDebugView }
     | { type: 'destroy' };
 
 export type PipelineWorkerEvent =

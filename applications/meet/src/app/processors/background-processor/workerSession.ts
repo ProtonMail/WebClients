@@ -10,6 +10,7 @@ import { forwardWorkerLog } from '../../utils/forwardWorkerLog';
 import type { PipelineBackground, PipelineConfig } from './BackgroundPipeline';
 import type { PipelineWorkerEvent, PipelineWorkerRequest } from './pipelineProtocol';
 import type { SegmenterHandle } from './segmenterHost';
+import type { BackgroundDebugView } from './types';
 
 const WORKER_STEP_TIMEOUT_MS = 5000;
 
@@ -162,6 +163,10 @@ export class WorkerSession {
 
     setEnabled(enabled: boolean) {
         this.post({ type: 'set-enabled', enabled });
+    }
+
+    setDebugView(view: BackgroundDebugView) {
+        this.post({ type: 'set-debug-view', view });
     }
 
     setBackground(background: PipelineBackground): Promise<void> {

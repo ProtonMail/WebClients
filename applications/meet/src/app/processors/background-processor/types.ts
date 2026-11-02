@@ -7,6 +7,8 @@ export interface PipelineLogger {
     error: (message: string, ...args: unknown[]) => void;
 }
 
+export type BackgroundDebugView = 'composite' | 'mask';
+
 // What the segmented person is composited over. Both variants run on the same
 // pipeline, so switching between them only changes compositor state.
 export type BackgroundMode =

@@ -37,6 +37,7 @@ test-results
 tests/**/*.png
 !tests/**/*-linux.png
 !tests/mail/**/*.png
+!tests/meet/agent/background-blur/snapshots/**/*.png
 tests/mail/old/binaries/credentials.json
 tests/mail/old/binaries/tokens.json
 # ignore Zone.identifier

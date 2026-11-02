@@ -166,6 +166,9 @@ self.onmessage = (event: MessageEvent<PipelineWorkerRequest>) => {
         case 'set-page-hidden':
             pipeline?.setPageHidden(msg.hidden);
             break;
+        case 'set-debug-view':
+            pipeline?.setDebugView(msg.view);
+            break;
         case 'destroy':
             handleDestroy();
             break;

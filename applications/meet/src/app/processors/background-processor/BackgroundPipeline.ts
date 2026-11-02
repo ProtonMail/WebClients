@@ -1,7 +1,7 @@
 import { type Compositor, createCompositor } from './compositor';
 import { MaskShaper } from './maskShaper';
 import type { SegmentationClient, SegmentationResult } from './segmentationClient';
-import type { PipelineLogger } from './types';
+import type { BackgroundDebugView, PipelineLogger } from './types';
 
 // Two frames in flight keep the next mask request queued while the current frame composites.
 const PIPELINE_DEPTH = 2;
@@ -91,6 +91,8 @@ export class BackgroundPipeline {
 
     private blackFrameCanvas: OffscreenCanvas | null = null;
 
+    private debugView: BackgroundDebugView = 'composite';
+
     constructor(
         private readonly canvas: OffscreenCanvas | HTMLCanvasElement,
         private segmentation: SegmentationClient | null,
@@ -104,6 +106,7 @@ export class BackgroundPipeline {
         if (!this.compositor) {
             throw new Error('WebGL2 is unavailable for the background compositor');
         }
+        this.compositor.setDebugView(this.debugView);
     }
 
     isEnabled() {
@@ -116,6 +119,11 @@ export class BackgroundPipeline {
 
     setPageHidden(hidden: boolean) {
         this.pageHidden = hidden;
+    }
+
+    setDebugView(view: BackgroundDebugView) {
+        this.debugView = view;
+        this.compositor?.setDebugView(view);
     }
 
     // With null, frames composite against the last mask instead of waiting out request timeouts.
