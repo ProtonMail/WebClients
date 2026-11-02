@@ -35,6 +35,20 @@ describe('serialization', () => {
         expect(deserialized).toEqual(mockSpace);
     });
 
+    it('round-trips schedule skill and sub-skill references only inside encrypted metadata', async () => {
+        const masterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
+        const space: Space = {
+            ...mockSpace,
+            spaceType: SpaceType.Schedule,
+            schedule: createTestSchedule({ skillIdsOrSubSkillRefs: ['skill-root', 'bundle/skills/draft'] }),
+        };
+        const serialized = await serializeSpace(space, masterKey);
+        expect(serialized).not.toHaveProperty('schedule');
+        expect(JSON.stringify(serialized)).not.toContain('skill-root');
+        expect(JSON.stringify(serialized)).not.toContain('bundle/skills/draft');
+        expect(await deserializeSpace(serialized, masterKey)).toEqual(space);
+    });
+
     it('space decrypts with a legacy master key and flags migration', async () => {
         const legacyMasterKey = await base64ToMasterKey('BBBBBAQQQQQEEEEEBBBBBAQQQQQEEEEEBBBBBAQQQQQ=');
         const primaryMasterKey = await base64ToMasterKey('CCCCCAQQQQQFFFFECCCCCAQQQQQFFFFECCCCCAQQQQQ=');

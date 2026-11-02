@@ -17,7 +17,7 @@ import type { ScheduleConnector } from '../types';
 import { ConnectorChip, ConnectorIcon } from './ConnectorChip';
 import { getConnectorStatusLabel } from './utils/connectors';
 
-import './ConnectorList.scss';
+import './ChipList.scss';
 
 const isUsable = (connector: DesktopConnector) =>
     connector.enabled !== false && connector.readiness?.state !== 'blocked';
@@ -82,7 +82,7 @@ const ConnectorListReadyView = ({
                 {/* Compact header */}
                 {compact && (
                     <span
-                        className={clsx('connector-list__header--compact self-center text-sm', headerClassName)}
+                        className={clsx('schedule-chip-list__header--compact self-center text-sm', headerClassName)}
                         id={labelId}
                     >
                         {header}
@@ -125,10 +125,10 @@ const ConnectorListReadyView = ({
                     <SimpleDropdown
                         as="button"
                         className={clsx(
-                            'connector-list__add-connector-chip button-ghost-norm inline-flex flex-nowrap shrink-0 items-center border border-dashed rounded cursor-pointer interactive interactive--no-background',
+                            'schedule-chip-list__add-chip button-ghost-norm inline-flex flex-nowrap shrink-0 items-center border border-dashed rounded cursor-pointer interactive interactive--no-background',
                             compact
-                                ? 'connector-list__add-connector-chip--compact gap-1'
-                                : 'connector-list__add-connector-chip--regular gap-1.5'
+                                ? 'schedule-chip-list__add-chip--compact gap-1'
+                                : 'schedule-chip-list__add-chip--regular gap-1.5'
                         )}
                         content={
                             <>

@@ -266,7 +266,8 @@ test('concurrent claims create one conversation; prompt, tool turns and outcome 
     const claims = await Promise.all([h.repository.claim(run), second.claim(run)]);
     expect(claims.filter(Boolean)).toHaveLength(1);
     expect(claims).toContain(false);
-    await h.repository.startRun(run, {
+    const owner = claims[0] ? h.repository : second;
+    await owner.startRun(run, {
         id: details.id,
         timingRevision: 1,
         prompt: 'The actual prompt at execution',

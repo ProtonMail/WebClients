@@ -21,6 +21,8 @@ export interface ScheduleDetails {
     recurrenceRule: RecurrenceRule;
     /** Allowlisted connectors that can be used during a run. */
     connectors: ScheduleConnector[];
+    /** Skill IDs, or bundle-ID/sub-skill-path references. Display data and instructions come from the skills store. */
+    skillIdsOrSubSkillRefs?: string[];
     /** When true, allowed connectors run without confirmation; when false, Lumo pauses before each Ask tool. */
     autoApprove: boolean;
     /** When true, show a notification after a run completes successfully. */

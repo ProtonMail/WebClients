@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.schedule-skill-picker {
+	.dropdown-content {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	&__description {
+		z-index: map.get($z-indexes, 'tooltips');
+		inline-size: rem(288);
+		max-inline-size: calc(100vw - #{rem(32)});
+		padding-block: rem(10);
+		background-color: var(--background-invert);
+		font-size: rem(13);
+		line-height: 1.45;
+	}
+}

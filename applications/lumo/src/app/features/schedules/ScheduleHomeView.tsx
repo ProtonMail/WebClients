@@ -19,6 +19,7 @@ import { ConnectorList } from './components/ConnectorList';
 import { ScheduleBreadcrumbs } from './components/ScheduleBreadcrumbs';
 import { ScheduleRunPrimaryLabel } from './components/ScheduleRunPrimaryLabel';
 import { ScheduleRunSecondaryLabel } from './components/ScheduleRunSecondaryLabel';
+import { SkillList } from './components/SkillList';
 import { ScheduledTaskEditorModal } from './components/modals/ScheduledTaskEditorModal';
 import type { ScheduleDetails } from './types';
 import { useRunScheduleNow } from './useRunScheduleNow';
@@ -87,6 +88,11 @@ export const ScheduleHomeView = () => {
                         }</h2>
                         <p className="m-0 text-ellipsis-four-lines">{schedule.instructions}</p>
                     </section>
+
+                    {/* Schedule skills */}
+                    {!!schedule.skillIdsOrSubSkillRefs?.length && (
+                        <SkillList value={schedule.skillIdsOrSubSkillRefs} headerClassName="text-sm color-weak" />
+                    )}
 
                     {/* Schedule connectors */}
                     {schedule.connectors.length > 0 && (

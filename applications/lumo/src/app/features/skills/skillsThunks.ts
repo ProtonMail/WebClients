@@ -10,8 +10,8 @@ import { type DesktopConnectorState, formatSkillConnectorMap, matchSkillConnecto
 import { customAgentToSkillDraft, getAgentsToMigrate } from './customAgentMigration';
 import { BUNDLE_INDEX_VERSION, deriveBundleInfo } from './skillBundle';
 import { decodeText, isSkillScriptFile, isTextSkillFile } from './skillFiles';
+import type { SkillCommand } from './skillInvocation';
 import {
-    type SkillCommand,
     findCommandFile,
     findInvokedCommands,
     formatSkillInstructions,
@@ -23,6 +23,7 @@ import {
     truncateSkillInstructions,
 } from './skillInvocation';
 import { parseSkillMarkdown } from './skillMarkdown';
+import { getSkillSelectionId, isSkillCommandSelected } from './skillSelection';
 import {
     deserializeSkill,
     deserializeSkillAsset,
@@ -260,8 +261,10 @@ const loadCommandContent = async (
     return { instructions: markdown ? parseSkillMarkdown(decodeText(markdown.data)).body : '', files: paths };
 };
 
-const findCommand = (skills: Record<SkillId, Skill>, handle: string) =>
-    getSkillCommands(Object.values(skills)).find((candidate) => candidate.handle === handle);
+const findCommand = (skills: Record<SkillId, Skill>, handle: string, lookupPool?: string[]) => {
+    const command = getSkillCommands(Object.values(skills)).find((candidate) => candidate.handle === handle);
+    return command && (!lookupPool || lookupPool.includes(getSkillSelectionId(command))) ? command : undefined;
+};
 
 /** Appends which connected tools stand for the skill's `~~placeholders`, when on desktop. */
 const withConnectorMap = (
@@ -277,7 +280,7 @@ const withConnectorMap = (
 };
 
 export type SkillContext = {
-    /** Instructions of the skills invoked with `/handle`, ready for the system prompt. */
+    /** Instructions of skills invoked by reference or `/handle`, ready for the system prompt. */
     instructions?: string;
     /** Enabled skills the model may load itself with the skill tool. */
     loadable: SkillCommand[];
@@ -289,44 +292,64 @@ export type SkillContext = {
  * Skills invoked with `/handle` in `texts` and the ones the model may load. `listFiles` adds each
  * invoked skill's files to its instructions; leave it off when the file tool won't be offered.
  * `desktopConnectors` adds the connected tools for each skill's `~~placeholders`.
+ * `lookupPool` limits available references, matching the instruction/file loaders; omitted means all enabled skills.
+ * `invokedSkillRefs` applies those skills automatically, in addition to slash commands in `texts`.
  */
 export const resolveSkillContext = createAsyncThunk<
     SkillContext,
-    { texts: string[]; listFiles: boolean; desktopConnectors?: DesktopConnectorState },
+    {
+        texts: string[];
+        listFiles: boolean;
+        desktopConnectors?: DesktopConnectorState;
+        lookupPool?: string[];
+        invokedSkillRefs?: string[];
+    },
     ThunkConfig
->('skills/resolveContext', async ({ texts, listFiles, desktopConnectors }, { dispatch, getState }) => {
-    const { status, skills } = getState().skills;
-    if (status !== 'ready') {
-        return { loadable: [], readable: [] };
+>(
+    'skills/resolveContext',
+    async ({ texts, listFiles, desktopConnectors, lookupPool, invokedSkillRefs = [] }, { dispatch, getState }) => {
+        const { status, skills } = getState().skills;
+        if (status !== 'ready') {
+            return { loadable: [], readable: [] };
+        }
+        const commands = getSkillCommands(Object.values(skills)).filter(
+            (command) => !lookupPool || lookupPool.includes(getSkillSelectionId(command))
+        );
+        const invokedRefs = new Set([
+            ...invokedSkillRefs,
+            ...findInvokedCommands(commands, texts).map(getSkillSelectionId),
+        ]);
+        const invoked = commands.filter((command) => isSkillCommandSelected(command, invokedRefs));
+        const loadFiles = (id: SkillId) => dispatch(loadSkillFiles(id));
+        const resolved = await Promise.all(
+            invoked.map(async (command) => {
+                const content = await loadCommandContent(skills, command, loadFiles, listFiles);
+                return {
+                    handle: command.handle,
+                    instructions: withConnectorMap(content.instructions, skills[command.skillId], desktopConnectors),
+                    files: content.files,
+                };
+            })
+        );
+        return {
+            instructions: formatSkillInstructions(resolved, listFiles ? READ_SKILL_FILE_TOOL_NAME : undefined),
+            loadable: getLoadableCommands(commands, invoked),
+            readable: resolved.filter(({ files }) => files.length).map(({ handle }) => handle),
+        };
     }
-    const commands = getSkillCommands(Object.values(skills));
-    const invoked = findInvokedCommands(commands, texts);
-    const loadFiles = (id: SkillId) => dispatch(loadSkillFiles(id));
-    const resolved = await Promise.all(
-        invoked.map(async (command) => {
-            const content = await loadCommandContent(skills, command, loadFiles, listFiles);
-            return {
-                handle: command.handle,
-                instructions: withConnectorMap(content.instructions, skills[command.skillId], desktopConnectors),
-                files: content.files,
-            };
-        })
-    );
-    return {
-        instructions: formatSkillInstructions(resolved, listFiles ? READ_SKILL_FILE_TOOL_NAME : undefined),
-        loadable: getLoadableCommands(commands, invoked),
-        readable: resolved.filter(({ files }) => files.length).map(({ handle }) => handle),
-    };
-});
+);
 
-/** Instructions and file list of one enabled skill by handle; empty when there is no such skill. */
+/**
+ * Instructions and file list of one enabled skill by handle; empty when there is no such skill.
+ * `lookupPool` restricts lookup to these skill or sub-skill references; an empty pool allows none, omission allows all enabled skills.
+ */
 export const loadSkillInstructions = createAsyncThunk<
     CommandContent,
-    { handle: string; desktopConnectors?: DesktopConnectorState },
+    { handle: string; desktopConnectors?: DesktopConnectorState; lookupPool?: string[] },
     ThunkConfig
->('skills/loadInstructions', async ({ handle, desktopConnectors }, { dispatch, getState }) => {
+>('skills/loadInstructions', async ({ handle, desktopConnectors, lookupPool }, { dispatch, getState }) => {
     const { skills } = getState().skills;
-    const command = findCommand(skills, handle);
+    const command = findCommand(skills, handle, lookupPool);
     if (!command) {
         return { instructions: '', files: [] };
     }
@@ -349,33 +372,35 @@ export const loadSkillInstructions = createAsyncThunk<
 /**
  * Reads a text file of an enabled skill for the model. `path` resolves like a link in the skill's
  * SKILL.md (relative to its folder, `/` for the bundle root), falling back to the bundle root.
+ * `lookupPool` restricts lookup to these skill or sub-skill references; an empty pool allows none, omission allows all enabled skills.
  */
-export const readSkillFile = createAsyncThunk<ReadFileResult, { handle: string; path: string }, ThunkConfig>(
-    'skills/readFile',
-    async ({ handle, path }, { dispatch, getState }) => {
-        const { skills } = getState().skills;
-        const command = findCommand(skills, handle);
-        if (!command) {
-            return { ok: false, error: 'unknown-skill' };
-        }
-        const files = await dispatch(loadSkillFiles(command.skillId)).catch((): SkillFileDraft[] => []);
-        const file = findCommandFile(command, files, path, getSubSkillPaths(skills[command.skillId]));
-        if (!file) {
-            return { ok: false, error: 'not-found' };
-        }
-        if (!isTextSkillFile(file.mimeType)) {
-            return { ok: false, error: 'binary' };
-        }
-        const text = decodeText(file.data);
-        return {
-            ok: true,
-            path: file.path,
-            content: text.slice(0, MAX_SKILL_FILE_READ_CHARS),
-            truncated: text.length > MAX_SKILL_FILE_READ_CHARS,
-            isScript: isSkillScriptFile(file.path),
-        };
+export const readSkillFile = createAsyncThunk<
+    ReadFileResult,
+    { handle: string; path: string; lookupPool?: string[] },
+    ThunkConfig
+>('skills/readFile', async ({ handle, path, lookupPool }, { dispatch, getState }) => {
+    const { skills } = getState().skills;
+    const command = findCommand(skills, handle, lookupPool);
+    if (!command) {
+        return { ok: false, error: 'unknown-skill' };
     }
-);
+    const files = await dispatch(loadSkillFiles(command.skillId)).catch((): SkillFileDraft[] => []);
+    const file = findCommandFile(command, files, path, getSubSkillPaths(skills[command.skillId]));
+    if (!file) {
+        return { ok: false, error: 'not-found' };
+    }
+    if (!isTextSkillFile(file.mimeType)) {
+        return { ok: false, error: 'binary' };
+    }
+    const text = decodeText(file.data);
+    return {
+        ok: true,
+        path: file.path,
+        content: text.slice(0, MAX_SKILL_FILE_READ_CHARS),
+        truncated: text.length > MAX_SKILL_FILE_READ_CHARS,
+        isScript: isSkillScriptFile(file.path),
+    };
+});
 
 /** Turns each Custom Lumo without a skill into one. Safe to call repeatedly. */
 export const migrateCustomAgentsToSkills = createAsyncThunk<number, void, ThunkConfig>(

@@ -26,6 +26,7 @@ export const getEmptyScheduleDetails = (): ScheduleDetails => {
             timezone: ALWAYS_LOCAL_TIMEZONE_ID,
         },
         connectors: [],
+        skillIdsOrSubSkillRefs: [],
         autoApprove: true,
         notifyOnComplete: true,
     };
@@ -49,6 +50,7 @@ export const createScheduleDetailsFrom = (template: ScheduleTemplate): ScheduleD
         instructions: template.instructions,
         recurrenceRule: copiedRecurrenceRule,
         connectors: template.connectors.map((connector) => ({ ...connector })),
+        skillIdsOrSubSkillRefs: [],
         autoApprove: true,
         notifyOnComplete: true,
     };
