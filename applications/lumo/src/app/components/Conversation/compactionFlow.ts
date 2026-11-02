@@ -8,6 +8,7 @@ import { askUserQuestionsToolExecutor } from '../../features/client-tools/askUse
 import { createScheduleToolExecutor } from '../../features/client-tools/createScheduleTool/createScheduleTool';
 import {
     type RetrievalContext,
+    type RetrievalToolExecutor,
     createRetrievalToolExecutor,
 } from '../../features/client-tools/retrievalTool/retrievalTool';
 import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
@@ -45,6 +46,7 @@ import {
     type Turn,
 } from '../../types';
 import type { GenerationResponseMessage } from '../../types-api';
+import { sendRetrievalReplyEvent } from '../../util/telemetry';
 import { markArtifactTelemetryLiveMessage } from './artifact/artifactVersionTelemetry';
 import { createArtifactToolExecutor } from './artifact/createArtifactTool';
 import type { ArtifactToolMode } from './helper';
@@ -140,8 +142,9 @@ function resolveClientToolExecutor(
     sendOptions: ForwardedSendOptions,
     dispatch: LumoDispatch,
     getVisibleMessageIds?: () => ReadonlySet<MessageId>
-): ClientToolExecutor | undefined {
+): { executor?: ClientToolExecutor; retrieval?: RetrievalToolExecutor } {
     const executors: ClientToolExecutor[] = [];
+    let retrieval: RetrievalToolExecutor | undefined;
 
     if (sendOptions.enableCreateScheduleTool) {
         executors.push(createScheduleToolExecutor);
@@ -167,12 +170,11 @@ function resolveClientToolExecutor(
     }
 
     if (sendOptions.retrievalTools) {
-        executors.push(
-            createRetrievalToolExecutor({
-                ...sendOptions.retrievalTools,
-                getVisibleMessageIds: getVisibleMessageIds ?? sendOptions.retrievalTools.getVisibleMessageIds,
-            })
-        );
+        retrieval = createRetrievalToolExecutor({
+            ...sendOptions.retrievalTools,
+            getVisibleMessageIds: getVisibleMessageIds ?? sendOptions.retrievalTools.getVisibleMessageIds,
+        });
+        executors.push(retrieval);
     }
 
     if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
@@ -188,10 +190,26 @@ function resolveClientToolExecutor(
     }
 
     if (executors.length === 0) {
-        return undefined;
+        return {};
     }
 
-    return composeClientToolExecutors(...executors);
+    return { executor: composeClientToolExecutors(...executors), retrieval };
+}
+
+/** Report a reply's lookups once it is over, whatever the outcome. */
+function reportRetrievalUsage(retrieval: RetrievalToolExecutor | undefined, sendOptions: ForwardedSendOptions) {
+    const context = sendOptions.retrievalTools;
+    const usage = retrieval?.getUsage();
+    if (!context || !usage || usage.searches + usage.reads + usage.errors === 0) {
+        return;
+    }
+    sendRetrievalReplyEvent({
+        usage,
+        chatSearch: context.chatSearch,
+        searchOtherSpaces: context.searchOtherSpaces,
+        isProject: context.isProject,
+        modelTier: sendOptions.modelTier,
+    });
 }
 
 /** Client tool definitions travel with every request but are not part of the turns. */
@@ -266,7 +284,11 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             }
             return visibleFor.ids;
         };
-        const resolvedExecutor = resolveClientToolExecutor(sendOptions, dispatch, getVisibleMessageIds);
+        const { executor: resolvedExecutor, retrieval } = resolveClientToolExecutor(
+            sendOptions,
+            dispatch,
+            getVisibleMessageIds
+        );
         const clientToolExecutor = resolvedExecutor && {
             ...resolvedExecutor,
             execute: async (...args: Parameters<ClientToolExecutor['execute']>) => {
@@ -275,188 +297,195 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
             },
         };
 
-        await waitForModels(MODELS_WAIT_MS);
-        const toolSchemaTokens = await estimateClientToolSchemaTokens(resolvedExecutor);
-        const getBudget = (): RequestBudget =>
-            resolveRequestBudget({
-                modelTier: sendOptions.modelTier,
-                reasoning: sendOptions.enableReasoning,
-                conversationId,
-            });
-        const attachmentLookup = Object.fromEntries((attachments ?? []).map((a) => [a.id, a]));
-
-        /** Estimated size of the request `buildTurns` produces for a chain, tool definitions included. */
-        const estimateRequest = (candidate: Message[]): number => {
-            try {
-                return estimateTurnsTokens(buildTurns(candidate)) + toolSchemaTokens;
-            } catch {
-                return 0;
-            }
-        };
-
-        /**
-         * Compact when the planned request is over budget, or when it only fits by shedding or
-         * excerpting files while there is enough history to make room for them.
-         */
-        const shouldCompact = (candidate: Message[]): boolean => {
-            const budget = getBudget();
-            if (estimateRequest(candidate) > budget.inputBudget) {
-                return true;
-            }
-            try {
-                const usage = estimateEffectiveContextUsage({
-                    messageChain: candidate,
-                    contextFilters: contextFilters ?? [],
-                    allAttachments: attachmentLookup,
-                    messageMap,
-                    budget,
-                    fileCards: !!sendOptions.retrievalTools,
-                });
-                const shedsFiles =
-                    usage.droppedForBudget.length > 0 ||
-                    usage.excerptedForBudget.size > 0 ||
-                    [...usage.cardedFiles.values()].includes('budget');
-                return shedsFiles && usage.conversationTokens + usage.toolCallTokens > budget.keepRecentTokens;
-            } catch {
-                return false;
-            }
-        };
-
-        /** Run compaction, materialize the branch, and advance the local cursors. */
-        const compactAndAdvance = async ({ skipIfBusy }: { skipIfBusy: boolean }): Promise<void> => {
-            const inFlight = compactionsInFlight.get(conversationId);
-            if (inFlight) {
-                // Another send is already folding this history; this chain predates its boundary.
-                if (skipIfBusy) {
-                    throw new NotEnoughToCompactError();
-                }
-                await inFlight.catch(() => undefined);
-            }
-            const run = dispatch(
-                compactAndBranch({
-                    api,
+        try {
+            await waitForModels(MODELS_WAIT_MS);
+            const toolSchemaTokens = await estimateClientToolSchemaTokens(resolvedExecutor);
+            const getBudget = (): RequestBudget =>
+                resolveRequestBudget({
+                    modelTier: sendOptions.modelTier,
+                    reasoning: sendOptions.enableReasoning,
                     conversationId,
-                    parentMessageId: currentParentId,
-                    failedAssistantId: currentAssistantId,
-                    chain: currentChain,
-                    attachments,
-                    contextFilters,
-                    messageMap,
-                    signal: sendOptions.signal,
-                    preferSibling,
-                    budget: getBudget(),
-                    estimateRequest,
-                })
-            );
-            compactionsInFlight.set(conversationId, run);
-            let branch: Awaited<typeof run>;
-            try {
-                branch = await run;
-            } finally {
-                if (compactionsInFlight.get(conversationId) === run) {
-                    compactionsInFlight.delete(conversationId);
-                }
-            }
-            preferSibling?.(branch.boundary);
-            currentChain = [...currentChain, branch.boundary];
-            currentAssistantId = branch.assistant.id;
-            currentParentId = branch.boundary.id;
-        };
-
-        /** Replace the overflowed attempt (never persisted) with a fresh one under the same parent. */
-        const restartAttempt = () => {
-            const assistant = newAssistantPlaceholder(conversationId, currentParentId);
-            dispatch(deleteMessage(currentAssistantId));
-            dispatch(addMessage(assistant));
-            preferSibling?.(assistant);
-            currentAssistantId = assistant.id;
-        };
-
-        /**
-         * Stop retrying. An attempt that overflowed was not persisted. Without a compaction
-         * boundary it is the question's only reply (a retry without compaction replaced the
-         * original), so keep it as the failed turn; under a persisted boundary, drop it, since
-         * the boundary already continues the branch.
-         */
-        const giveUp = (error: unknown): never => {
-            dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.COMPLETED }));
-            if (currentParentId === parentMessageId) {
-                dispatch(pushMessageRequest({ id: currentAssistantId }));
-            } else {
-                dispatch(deleteMessage(currentAssistantId));
-            }
-            throw error;
-        };
-
-        if (enableProactiveCompaction && proactiveCompactions < MAX_PROACTIVE_COMPACTIONS) {
-            throwIfAborted(sendOptions.signal);
-            if (shouldCompact(currentChain)) {
-                try {
-                    await compactAndAdvance({ skipIfBusy: true });
-                    proactiveCompactions += 1;
-                } catch (proactiveError) {
-                    if (isAbortError(proactiveError)) {
-                        throw proactiveError;
-                    }
-                    // Nothing to compact, or compaction failed: fall through and
-                    // attempt the send as-is (the reactive path can still catch overflow).
-                    if (!(proactiveError instanceof NotEnoughToCompactError)) {
-                        console.warn('Proactive compaction failed; sending without it', proactiveError);
-                    }
-                }
-            }
-        }
-
-        while (true) {
-            throwIfAborted(sendOptions.signal);
-            // Marked per attempt: compaction retries stream into a fresh assistant message.
-            if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
-                markArtifactTelemetryLiveMessage(currentAssistantId, {
-                    artifactToolMode: sendOptions.artifactToolMode,
                 });
-            }
-            const attemptEstimate = estimateRequest(currentChain);
-            try {
-                const turns = buildTurns(currentChain);
-                const result = await dispatch(
-                    sendMessageWithRedux(api, turns, {
-                        ...sendOptions,
-                        clientToolExecutor,
-                        messageId: currentAssistantId,
+            const attachmentLookup = Object.fromEntries((attachments ?? []).map((a) => [a.id, a]));
+
+            /** Estimated size of the request `buildTurns` produces for a chain, tool definitions included. */
+            const estimateRequest = (candidate: Message[]): number => {
+                try {
+                    return estimateTurnsTokens(buildTurns(candidate)) + toolSchemaTokens;
+                } catch {
+                    return 0;
+                }
+            };
+
+            /**
+             * Compact when the planned request is over budget, or when it only fits by shedding or
+             * excerpting files while there is enough history to make room for them.
+             */
+            const shouldCompact = (candidate: Message[]): boolean => {
+                const budget = getBudget();
+                if (estimateRequest(candidate) > budget.inputBudget) {
+                    return true;
+                }
+                try {
+                    const usage = estimateEffectiveContextUsage({
+                        messageChain: candidate,
+                        contextFilters: contextFilters ?? [],
+                        allAttachments: attachmentLookup,
+                        messageMap,
+                        budget,
+                        fileCards: !!sendOptions.retrievalTools,
+                    });
+                    const shedsFiles =
+                        usage.droppedForBudget.length > 0 ||
+                        usage.excerptedForBudget.size > 0 ||
+                        [...usage.cardedFiles.values()].includes('budget');
+                    return shedsFiles && usage.conversationTokens + usage.toolCallTokens > budget.keepRecentTokens;
+                } catch {
+                    return false;
+                }
+            };
+
+            /** Run compaction, materialize the branch, and advance the local cursors. */
+            const compactAndAdvance = async ({ skipIfBusy }: { skipIfBusy: boolean }): Promise<void> => {
+                const inFlight = compactionsInFlight.get(conversationId);
+                if (inFlight) {
+                    // Another send is already folding this history; this chain predates its boundary.
+                    if (skipIfBusy) {
+                        throw new NotEnoughToCompactError();
+                    }
+                    await inFlight.catch(() => undefined);
+                }
+                const run = dispatch(
+                    compactAndBranch({
+                        api,
                         conversationId,
-                        spaceId,
+                        parentMessageId: currentParentId,
+                        failedAssistantId: currentAssistantId,
+                        chain: currentChain,
+                        attachments,
+                        contextFilters,
+                        messageMap,
+                        signal: sendOptions.signal,
+                        preferSibling,
+                        budget: getBudget(),
+                        estimateRequest,
                     })
                 );
-                return { assistantMessageId: currentAssistantId, status: result.status };
-            } catch (error) {
-                if (!isContextLengthExceededError(error)) {
-                    throw error;
+                compactionsInFlight.set(conversationId, run);
+                let branch: Awaited<typeof run>;
+                try {
+                    branch = await run;
+                } finally {
+                    if (compactionsInFlight.get(conversationId) === run) {
+                        compactionsInFlight.delete(conversationId);
+                    }
                 }
-                if ((!retryAfterToolExecution && toolExecutionStarted) || overflowRetries >= MAX_OVERFLOW_RETRIES) {
-                    giveUp(error);
-                }
-                overflowRetries += 1;
+                preferSibling?.(branch.boundary);
+                currentChain = [...currentChain, branch.boundary];
+                currentAssistantId = branch.assistant.id;
+                currentParentId = branch.boundary.id;
+            };
 
-                // The overflow already recalibrated the budget, so both paths below plan smaller.
-                let compacted = false;
-                if (reactiveCompactions < MAX_REACTIVE_COMPACTIONS) {
+            /** Replace the overflowed attempt (never persisted) with a fresh one under the same parent. */
+            const restartAttempt = () => {
+                const assistant = newAssistantPlaceholder(conversationId, currentParentId);
+                dispatch(deleteMessage(currentAssistantId));
+                dispatch(addMessage(assistant));
+                preferSibling?.(assistant);
+                currentAssistantId = assistant.id;
+            };
+
+            /**
+             * Stop retrying. An attempt that overflowed was not persisted. Without a compaction
+             * boundary it is the question's only reply (a retry without compaction replaced the
+             * original), so keep it as the failed turn; under a persisted boundary, drop it, since
+             * the boundary already continues the branch.
+             */
+            const giveUp = (error: unknown): never => {
+                dispatch(updateConversationStatus({ id: conversationId, status: ConversationStatus.COMPLETED }));
+                if (currentParentId === parentMessageId) {
+                    dispatch(pushMessageRequest({ id: currentAssistantId }));
+                } else {
+                    dispatch(deleteMessage(currentAssistantId));
+                }
+                throw error;
+            };
+
+            if (enableProactiveCompaction && proactiveCompactions < MAX_PROACTIVE_COMPACTIONS) {
+                throwIfAborted(sendOptions.signal);
+                if (shouldCompact(currentChain)) {
                     try {
-                        await compactAndAdvance({ skipIfBusy: false });
-                        reactiveCompactions += 1;
-                        compacted = true;
-                    } catch (compactionError) {
-                        if (isAbortError(compactionError) || !(compactionError instanceof NotEnoughToCompactError)) {
-                            giveUp(compactionError);
+                        await compactAndAdvance({ skipIfBusy: true });
+                        proactiveCompactions += 1;
+                    } catch (proactiveError) {
+                        if (isAbortError(proactiveError)) {
+                            throw proactiveError;
+                        }
+                        // Nothing to compact, or compaction failed: fall through and
+                        // attempt the send as-is (the reactive path can still catch overflow).
+                        if (!(proactiveError instanceof NotEnoughToCompactError)) {
+                            console.warn('Proactive compaction failed; sending without it', proactiveError);
                         }
                     }
                 }
-                if (!compacted) {
-                    if (estimateRequest(currentChain) >= attemptEstimate) {
+            }
+
+            while (true) {
+                throwIfAborted(sendOptions.signal);
+                // Marked per attempt: compaction retries stream into a fresh assistant message.
+                if (sendOptions.artifactToolMode && sendOptions.artifactToolMode !== 'off') {
+                    markArtifactTelemetryLiveMessage(currentAssistantId, {
+                        artifactToolMode: sendOptions.artifactToolMode,
+                    });
+                }
+                const attemptEstimate = estimateRequest(currentChain);
+                try {
+                    const turns = buildTurns(currentChain);
+                    const result = await dispatch(
+                        sendMessageWithRedux(api, turns, {
+                            ...sendOptions,
+                            clientToolExecutor,
+                            messageId: currentAssistantId,
+                            conversationId,
+                            spaceId,
+                        })
+                    );
+                    return { assistantMessageId: currentAssistantId, status: result.status };
+                } catch (error) {
+                    if (!isContextLengthExceededError(error)) {
+                        throw error;
+                    }
+                    if ((!retryAfterToolExecution && toolExecutionStarted) || overflowRetries >= MAX_OVERFLOW_RETRIES) {
                         giveUp(error);
                     }
-                    restartAttempt();
+                    overflowRetries += 1;
+
+                    // The overflow already recalibrated the budget, so both paths below plan smaller.
+                    let compacted = false;
+                    if (reactiveCompactions < MAX_REACTIVE_COMPACTIONS) {
+                        try {
+                            await compactAndAdvance({ skipIfBusy: false });
+                            reactiveCompactions += 1;
+                            compacted = true;
+                        } catch (compactionError) {
+                            if (
+                                isAbortError(compactionError) ||
+                                !(compactionError instanceof NotEnoughToCompactError)
+                            ) {
+                                giveUp(compactionError);
+                            }
+                        }
+                    }
+                    if (!compacted) {
+                        if (estimateRequest(currentChain) >= attemptEstimate) {
+                            giveUp(error);
+                        }
+                        restartAttempt();
+                    }
                 }
             }
+        } finally {
+            reportRetrievalUsage(retrieval, sendOptions);
         }
     };
 }

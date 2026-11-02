@@ -86,6 +86,8 @@ export type ProjectSpacePriv = {
     // Knowledge lookup reach for this project's chats; unset follows the user's settings
     chatSearch?: ChatSearchReach;
     searchOtherProjects?: boolean;
+    // When set, chats outside this project never search its chats or files
+    isPrivate?: boolean;
 };
 
 type SimpleSpacePriv = {};
@@ -147,6 +149,7 @@ function getSpacePriv(s: Space): SpacePriv {
                 linkedDriveFolder,
                 chatSearch,
                 searchOtherProjects,
+                isPrivate,
             } = s;
             return {
                 projectName,
@@ -155,6 +158,7 @@ function getSpacePriv(s: Space): SpacePriv {
                 linkedDriveFolder,
                 chatSearch,
                 searchOtherProjects,
+                isPrivate,
             };
         }
         case SpaceType.Default:

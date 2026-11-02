@@ -82,7 +82,8 @@ export const readKnowledgeTool = {
                 file_id: { type: 'string', description: 'Id of the file to read.' },
                 file_name: {
                     type: 'string',
-                    description: 'Name or path of the file to read, when you do not have its id. Case and extension are optional.',
+                    description:
+                        'Name or path of the file to read, when you do not have its id. Case and extension are optional.',
                 },
                 message_id: { type: 'string', description: 'Id of the chat message to read.' },
                 page: { type: 'integer', minimum: 1, description: 'Page to read, starting at 1 (default 1).' },

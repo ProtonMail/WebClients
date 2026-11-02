@@ -43,6 +43,8 @@ const executor = (): ClientToolExecutor =>
         allowWideScopes: true,
         chatSearch: 'none',
         searchOtherSpaces: false,
+        allowsSearchFromOutside: () => true,
+        exclusions: { attachmentIds: new Set(), documentIds: new Set() },
         hasLumoPlus: true,
         getVisibleMessageIds: () => new Set(),
         chatAttachments: [],

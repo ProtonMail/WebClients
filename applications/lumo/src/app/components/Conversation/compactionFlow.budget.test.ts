@@ -10,6 +10,7 @@ import { addMessage, deleteMessage, pushMessageRequest } from '../../redux/slice
 import type { LumoDispatch } from '../../redux/store';
 import { markModelsUnavailable } from '../../services/modelsStore';
 import { type Message, Role, type Turn } from '../../types';
+import { sendRetrievalReplyEvent } from '../../util/telemetry';
 import { runGenerationWithCompaction } from './compactionFlow';
 
 /*
@@ -18,6 +19,10 @@ import { runGenerationWithCompaction } from './compactionFlow';
  */
 
 jest.mock('../../lib/lumoApiClientRedux', () => ({ sendMessageWithRedux: jest.fn() }));
+jest.mock('../../util/telemetry', () => ({
+    ...jest.requireActual('../../util/telemetry'),
+    sendRetrievalReplyEvent: jest.fn(),
+}));
 jest.mock('../../llm/compaction', () => ({
     // buildTurns returns one turn per compaction boundary: each boundary shrinks the request.
     estimateTurnsTokens: (turns: unknown[]) => [10_000_000, 100_000][turns.length] ?? 1_000,
@@ -204,6 +209,8 @@ it('lets the lookup tools find what a compaction in the same send summarized awa
             allowWideScopes: false,
             chatSearch: 'none',
             searchOtherSpaces: false,
+            allowsSearchFromOutside: () => true,
+            exclusions: { attachmentIds: new Set(), documentIds: new Set() },
             hasLumoPlus: true,
             // Computed before the send, when the whole chain still went to the model in full.
             getVisibleMessageIds: () => new Set(Object.keys(messages)),
@@ -215,4 +222,12 @@ it('lets the lookup tools find what a compaction in the same send summarized awa
 
     expect(jest.mocked(compactConversation)).toHaveBeenCalled();
     expect(found).toEqual(['q1']);
+    expect(jest.mocked(sendRetrievalReplyEvent)).toHaveBeenCalledTimes(1);
+    expect(jest.mocked(sendRetrievalReplyEvent)).toHaveBeenCalledWith(
+        expect.objectContaining({
+            usage: expect.objectContaining({ searches: 1, emptySearches: 0, reads: 0, errors: 0 }),
+            chatSearch: 'none',
+            isProject: false,
+        })
+    );
 });

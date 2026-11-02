@@ -5,7 +5,8 @@ import type { ArtifactPanelLayout } from '../components/Conversation/artifact/Ar
 import type { ArtifactSaveFormat } from '../components/Conversation/artifact/artifactSaveFormats';
 import type { ArtifactType } from '../components/Conversation/artifact/parseArtifacts';
 import type { ArtifactCreationSetting, ArtifactToolMode } from '../components/Conversation/helper';
-import type { ArtifactActionKind } from '../types';
+import type { RetrievalUsage } from '../features/client-tools/retrievalTool/retrievalTool';
+import type { ArtifactActionKind, ChatSearchReach } from '../types';
 
 /**
  * The shared telemetry singleton can only send events once it has been
@@ -29,6 +30,34 @@ const sendLumoCustomEvent: (typeof telemetry)['sendCustomEvent'] = (...args) => 
     }
 
     return telemetry.sendCustomEvent(...args);
+};
+
+/**
+ * One per reply that used the knowledge lookup tools: how often the model searches and reads,
+ * how often it finds nothing, and how often it runs into the per-reply limits. Counts and
+ * settings only, never queries, file names or results.
+ */
+export const sendRetrievalReplyEvent = ({
+    usage,
+    chatSearch,
+    searchOtherSpaces,
+    isProject,
+    modelTier,
+}: {
+    usage: RetrievalUsage;
+    chatSearch: ChatSearchReach;
+    searchOtherSpaces: boolean;
+    isProject: boolean;
+    modelTier?: string;
+}) => {
+    sendLumoCustomEvent('lumo-retrieval-event', {
+        eventType: 'retrieval-reply',
+        ...usage,
+        chatSearch,
+        searchOtherSpaces,
+        isProject,
+        ...(modelTier && { modelTier }),
+    });
 };
 
 export const sendNewMessageDataEvent = (

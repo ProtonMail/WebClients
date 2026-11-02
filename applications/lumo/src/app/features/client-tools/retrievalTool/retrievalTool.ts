@@ -16,6 +16,7 @@ import {
     type SpaceId,
     isTextBlock,
 } from '../../../types';
+import type { RetrievalExclusions } from './exclusions';
 import {
     MAX_MENTIONED_FILES,
     type NamedFile,
@@ -48,10 +49,16 @@ export const MAX_READS_PER_REPLY = 4;
 const MAX_INDEXED_DOCUMENTS = 8;
 /** Newest messages considered when searching chats, so a long history stays fast. */
 const MAX_MESSAGE_CANDIDATES = 2_000;
+/** Other chats searched per call: the index's best matches, plus the latest ones it may not have caught up with. */
+const MAX_RANKED_CONVERSATIONS = 25;
+const RECENT_CONVERSATIONS = 5;
 const MAX_ID_CHARS = 128;
 const MAX_FILE_NAME_CHARS = 300;
 
-export type RetrievalIndex = Pick<SearchService, 'rankDocumentsInScope' | 'getIndexedDocument' | 'listDocuments'>;
+export type RetrievalIndex = Pick<
+    SearchService,
+    'rankDocumentsInScope' | 'getIndexedDocument' | 'listDocuments' | 'rankConversations'
+>;
 
 export type RetrievalContext = {
     conversationId: ConversationId;
@@ -69,11 +76,15 @@ export type RetrievalContext = {
      * turns it on; this chat's files and the current project's files are always reachable.
      */
     searchOtherSpaces: boolean;
+    /** Whether another space lets chats elsewhere reach its chats or files; read at call time. */
+    allowsSearchFromOutside: (spaceId: SpaceId | undefined) => boolean;
     hasLumoPlus: boolean;
     /** Messages already sent in full with the request, left out of message search. */
     getVisibleMessageIds: () => ReadonlySet<MessageId>;
     /** Every attachment of the current chat, with its converted text. */
     chatAttachments: Attachment[];
+    /** Files the user switched off in this chat: never found, read or listed. */
+    exclusions: RetrievalExclusions;
     getState: () => Pick<LumoState, 'conversations' | 'messages'>;
     /** The user's search index; absent for guests and ghost chats. */
     index?: RetrievalIndex;
@@ -113,7 +124,7 @@ const isSearchableConversation = (conversation: Conversation | undefined) =>
 type Parsed<T> = { value: T } | { error: string };
 
 function parseScope(value: unknown, context: RetrievalContext): Parsed<RetrievalScope> {
-    const scope = value ?? (context.isProject ? 'project' : 'this_chat');
+    const scope = value ?? (context.isProject && context.allowWideScopes ? 'project' : 'this_chat');
     if (typeof scope !== 'string' || !(RETRIEVAL_SCOPES as readonly string[]).includes(scope)) {
         return { error: `scope must be one of: ${RETRIEVAL_SCOPES.join(', ')}` };
     }
@@ -176,12 +187,32 @@ function parsePage(value: unknown): Parsed<number> {
     return { value };
 }
 
-export const createRetrievalToolExecutor = (context: RetrievalContext): ClientToolExecutor => {
+/** Counts for one reply's lookups. Never queries, names or results. */
+export type RetrievalUsage = {
+    searches: number;
+    emptySearches: number;
+    reads: number;
+    errors: number;
+    callLimitHit: boolean;
+    readLimitHit: boolean;
+};
+
+export type RetrievalToolExecutor = ClientToolExecutor & { getUsage: () => RetrievalUsage };
+
+export const createRetrievalToolExecutor = (context: RetrievalContext): RetrievalToolExecutor => {
     const tools = [searchKnowledgeTool, readKnowledgeTool];
     const toolNames = new Set(tools.map((tool) => tool.function.name));
     const pagesById = new Map<string, string[]>();
     let calls = 0;
     let reads = 0;
+    const usage: RetrievalUsage = {
+        searches: 0,
+        emptySearches: 0,
+        reads: 0,
+        errors: 0,
+        callLimitHit: false,
+        readLimitHit: false,
+    };
 
     const pagesOf = (key: string, text: string) => {
         let pages = pagesById.get(key);
@@ -194,10 +225,20 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): ClientTo
 
     const chatFiles = (): FileSource[] =>
         context.chatAttachments
-            .filter(isTextAttachment)
+            .filter(
+                (attachment) => isTextAttachment(attachment) && !context.exclusions.attachmentIds.has(attachment.id)
+            )
             .map((attachment) => ({ id: attachment.id, name: attachment.filename, text: attachment.markdown! }));
 
     const findChatFile = (fileId: string) => chatFiles().find((file) => file.id === fileId);
+
+    const isReachableFileSpace = (spaceId: string | undefined) =>
+        spaceId === context.spaceId ||
+        (context.searchOtherSpaces && context.allowsSearchFromOutside(spaceId as SpaceId | undefined));
+
+    const isReachableChat = (conversation: Conversation) =>
+        conversation.spaceId === context.spaceId ||
+        (context.chatSearch === 'all' && context.allowsSearchFromOutside(conversation.spaceId));
 
     /** Files the model may name, nearest first: this chat, the current space, then everything. */
     let knownFileGroups: Promise<NamedFile[][]> | undefined;
@@ -205,9 +246,15 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): ClientTo
         knownFileGroups ??= (async () => {
             const groups: NamedFile[][] = [chatFiles().map(({ id, name }) => ({ id, name }))];
             if (context.allowWideScopes && context.index) {
-                groups.push(await context.index.listDocuments({ spaceId: context.spaceId }).catch(() => []));
+                const spaceFiles = await context.index.listDocuments({ spaceId: context.spaceId }).catch(() => []);
+                groups.push(spaceFiles.filter((file) => !context.exclusions.documentIds.has(file.id)));
                 if (context.searchOtherSpaces) {
-                    groups.push(await context.index.listDocuments().catch(() => []));
+                    const allFiles = await context.index.listDocuments().catch(() => []);
+                    groups.push(
+                        allFiles.filter(
+                            (file) => isReachableFileSpace(file.spaceId) && !context.exclusions.documentIds.has(file.id)
+                        )
+                    );
                 }
             }
             return groups;
@@ -277,22 +324,28 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): ClientTo
             return files;
         }
         const seen = new Set(files.map((file) => file.id));
+        const everywhere = scope === 'all' && context.searchOtherSpaces;
         const ranked = await context.index.rankDocumentsInScope(
             query,
-            {
-                spaceId: scope === 'all' && context.searchOtherSpaces ? undefined : context.spaceId,
-                documentIds: fileIds,
-            },
-            MAX_INDEXED_DOCUMENTS
+            { spaceId: everywhere ? undefined : context.spaceId, documentIds: fileIds },
+            // Room for documents of spaces that turn out to be closed to this chat.
+            everywhere ? MAX_INDEXED_DOCUMENTS * 4 : MAX_INDEXED_DOCUMENTS
         );
-        for (const { id } of ranked) {
-            if (seen.has(id)) {
+        let added = 0;
+        for (const { id, spaceId } of ranked) {
+            if (
+                seen.has(id) ||
+                context.exclusions.documentIds.has(id) ||
+                !isReachableFileSpace(spaceId) ||
+                added >= MAX_INDEXED_DOCUMENTS
+            ) {
                 continue;
             }
             const document = await context.index.getIndexedDocument(id);
             if (document?.text) {
                 files.push({ id: document.id, name: document.name, text: document.text });
                 seen.add(id);
+                added += 1;
             }
         }
         return files;
@@ -308,12 +361,31 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): ClientTo
         const conversation = context.getState().conversations[conversationId];
         return (
             isSearchableConversation(conversation) &&
-            (context.chatSearch === 'all' || conversation!.spaceId === context.spaceId) &&
+            isReachableChat(conversation!) &&
             applyRetentionPolicy([conversation!], context.hasLumoPlus).length > 0
         );
     };
 
-    const messageSources = (scope: RetrievalScope): Message[] => {
+    /**
+     * Other chats worth searching: the index's best matches for the query among the allowed ones,
+     * plus the most recently updated. Without index matches, every allowed chat.
+     */
+    const shortlistConversations = async (query: string, allowed: Conversation[]): Promise<ConversationId[]> => {
+        const allowedIds = new Set(allowed.map((conversation) => conversation.id));
+        const ranked =
+            (await context.index?.rankConversations(query, MAX_RANKED_CONVERSATIONS * 4).catch(() => [])) ?? [];
+        const matches = ranked.filter((id) => allowedIds.has(id)).slice(0, MAX_RANKED_CONVERSATIONS);
+        if (matches.length === 0) {
+            return [...allowedIds];
+        }
+        const recent = [...allowed]
+            .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+            .slice(0, RECENT_CONVERSATIONS)
+            .map((conversation) => conversation.id);
+        return [...new Set([...matches, ...recent])];
+    };
+
+    const messageSources = async (query: string, scope: RetrievalScope): Promise<Message[]> => {
         const { conversations, messages } = context.getState();
         const visibleMessageIds = context.getVisibleMessageIds();
         let allowedConversations: Set<ConversationId>;
@@ -323,12 +395,12 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): ClientTo
             const everywhere = scope === 'all' && context.chatSearch === 'all';
             const inScope = Object.values(conversations).filter(
                 (conversation) =>
-                    isSearchableConversation(conversation) && (everywhere || conversation.spaceId === context.spaceId)
+                    conversation.id !== context.conversationId &&
+                    isSearchableConversation(conversation) &&
+                    (everywhere ? isReachableChat(conversation) : conversation.spaceId === context.spaceId)
             );
-            allowedConversations = new Set([
-                context.conversationId,
-                ...applyRetentionPolicy(inScope, context.hasLumoPlus).map((conversation) => conversation.id),
-            ]);
+            const allowed = applyRetentionPolicy(inScope, context.hasLumoPlus);
+            allowedConversations = new Set([context.conversationId, ...(await shortlistConversations(query, allowed))]);
         }
         return Object.values(messages)
             .filter(
@@ -390,7 +462,7 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): ClientTo
             }
         }
         if (validSources.includes('messages') && !validFileIds) {
-            for (const message of messageSources(validScope)) {
+            for (const message of await messageSources(query, validScope)) {
                 const text = getMessageText(message);
                 if (text) {
                     candidates.push({ id: `message:${message.id}`, text, kind: 'message', message });
@@ -445,9 +517,9 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): ClientTo
 
     const readFile = async (fileId: string, page: number): Promise<ClientToolResult> => {
         let file: FileSource | undefined = findChatFile(fileId);
-        if (!file && context.allowWideScopes && context.index) {
+        if (!file && context.allowWideScopes && context.index && !context.exclusions.documentIds.has(fileId)) {
             const document = await context.index.getIndexedDocument(fileId);
-            const reachable = document?.spaceId === context.spaceId || context.searchOtherSpaces;
+            const reachable = !!document && isReachableFileSpace(document.spaceId);
             if (document?.text && reachable) {
                 file = { id: document.id, name: document.name, text: document.text };
             }
@@ -525,6 +597,7 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): ClientTo
     const runCall = async (name: string, rawArguments: string): Promise<ClientToolResult> => {
         calls += 1;
         if (calls > MAX_RETRIEVAL_CALLS_PER_REPLY) {
+            usage.callLimitHit = true;
             return errorResult(
                 'Retrieval limit for this reply reached. Answer with what you have, and tell the user which parts you could not look up.'
             );
@@ -532,29 +605,44 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): ClientTo
         const args = parseArguments(rawArguments);
         if (name === READ_KNOWLEDGE_TOOL_NAME) {
             if (reads >= MAX_READS_PER_REPLY) {
+                usage.readLimitHit = true;
                 return errorResult(
                     'Read limit for this reply reached. Answer with what you have, and tell the user which parts you could not read.'
                 );
             }
             const result = await runRead(args);
-            if (!result.is_error) {
+            if (result.is_error) {
+                usage.errors += 1;
+            } else {
                 reads += 1;
+                usage.reads += 1;
             }
             return result;
         }
-        return runSearch(args);
+        const result = await runSearch(args);
+        if (result.is_error) {
+            usage.errors += 1;
+        } else {
+            usage.searches += 1;
+            if ((JSON.parse(result.content) as { results: unknown[] }).results.length === 0) {
+                usage.emptySearches += 1;
+            }
+        }
+        return result;
     };
 
     return {
+        getUsage: () => ({ ...usage }),
         getClientTools: async () => tools,
         canExecute: (name) => toolNames.has(name),
         execute: async (toolCalls) => {
             const results: ClientToolResult[] = [];
             for (const call of toolCalls) {
                 results.push(
-                    await runCall(call.name, call.arguments).catch(() =>
-                        errorResult('The lookup failed. Answer without it.')
-                    )
+                    await runCall(call.name, call.arguments).catch(() => {
+                        usage.errors += 1;
+                        return errorResult('The lookup failed. Answer without it.');
+                    })
                 );
             }
             return results;

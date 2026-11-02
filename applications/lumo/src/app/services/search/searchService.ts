@@ -23,6 +23,10 @@ const WorkerMessageType = {
     Status: 3,
 } as const;
 
+/** Words the worker's query language reads as operators. */
+const WORKER_QUERY_OPERATORS = new Set(['and', 'or', 'not']);
+const MAX_CONVERSATION_QUERY_WORDS = 12;
+
 const buildSearchableText = (doc: DriveDocument, includeChunkTitle = false): string => {
     const chunkContext = includeChunkTitle && doc.chunkTitle ? ` [${doc.chunkTitle}]` : '';
     return `${doc.name}${chunkContext} ${doc.folderPath || ''} ${doc.content}`;
@@ -447,6 +451,21 @@ export class SearchService {
             console.warn('[SearchService] Worker search failed:', error);
             return [];
         }
+    }
+
+    /**
+     * Conversations whose indexed text matches any word of `query`, best first. Empty when the
+     * chat index isn't available, so callers need their own fallback.
+     */
+    async rankConversations(query: string, limit: number): Promise<string[]> {
+        const words = [...new Set(query.toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [])]
+            .filter((word) => word.length > 1 && !WORKER_QUERY_OPERATORS.has(word))
+            .slice(0, MAX_CONVERSATION_QUERY_WORDS);
+        if (words.length === 0) {
+            return [];
+        }
+        const results = await this.searchWithWorker(words.join(' OR '));
+        return results.slice(0, limit).map(([, conversationId]) => conversationId);
     }
 
     async searchAsync(query: string, state: SearchState, options?: { hasLumoPlus?: boolean }): Promise<SearchResult[]> {
@@ -1241,13 +1260,15 @@ export class SearchService {
      * Distinct indexed documents (chunks folded into their parent), optionally of one space.
      * `folderPath` is the Drive folder, or "Uploaded Files" for uploads.
      */
-    async listDocuments(scope: { spaceId?: string } = {}): Promise<{ id: string; name: string; folderPath?: string }[]> {
+    async listDocuments(
+        scope: { spaceId?: string } = {}
+    ): Promise<{ id: string; name: string; folderPath?: string; spaceId?: string }[]> {
         await this.ensureManifestReady();
-        const byId = new Map<string, { id: string; name: string; folderPath?: string }>();
+        const byId = new Map<string, { id: string; name: string; folderPath?: string; spaceId?: string }>();
         for (const doc of this.driveDocuments) {
             if ((scope.spaceId === undefined || doc.spaceId === scope.spaceId) && doc.content) {
                 const id = doc.parentDocumentId || doc.id;
-                byId.set(id, { id, name: doc.name, folderPath: doc.folderPath || undefined });
+                byId.set(id, { id, name: doc.name, folderPath: doc.folderPath || undefined, spaceId: doc.spaceId });
             }
         }
         return Array.from(byId.values());

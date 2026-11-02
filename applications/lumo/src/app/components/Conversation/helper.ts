@@ -9,9 +9,10 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { generateSpaceKeyBase64 } from '../../crypto';
 import { findAgentById } from '../../features/agents/registry';
+import { collectRetrievalExclusions } from '../../features/client-tools/retrievalTool/exclusions';
 import { formatRetrievalInstructions } from '../../features/client-tools/retrievalTool/instructions';
 import type { RetrievalContext } from '../../features/client-tools/retrievalTool/retrievalTool';
-import { resolveSearchReach } from '../../features/client-tools/retrievalTool/searchReach';
+import { isOpenToOtherSpaces, resolveSearchReach } from '../../features/client-tools/retrievalTool/searchReach';
 import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
 import { formatSkillCatalogue } from '../../features/skills/skillInvocation';
 import { USE_SKILL_TOOL_NAME } from '../../features/skills/skillTool';
@@ -26,6 +27,7 @@ import { prepareTurns } from '../../llm';
 import { flattenAttachmentsForLlm } from '../../llm/attachments';
 import { collapseCompactedChain } from '../../llm/compaction';
 import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
+import type { ContextFilter } from '../../llm/contextFilter';
 import { resolveRequestBudget } from '../../llm/requestBudget';
 import { selectMessagesByConversationId, selectRemoteIdFromLocal } from '../../redux/selectors';
 import { clearPendingAgent, clearPendingArtifactCreation } from '../../redux/slices/composerActions';
@@ -139,6 +141,7 @@ async function resolveRetrieval({
     chain,
     messageMap,
     chatAttachments,
+    contextFilters,
     hasLumoPlus,
 }: {
     enabled: boolean;
@@ -150,6 +153,8 @@ async function resolveRetrieval({
     chain: Message[];
     messageMap?: Record<MessageId, Message>;
     chatAttachments: Attachment[];
+    /** Files the user switched off in this chat; the tools must not reach them either. */
+    contextFilters: ContextFilter[];
     hasLumoPlus: boolean;
 }): Promise<{ tools?: RetrievalContext; instructions?: string }> {
     if (!enabled) {
@@ -159,7 +164,10 @@ async function resolveRetrieval({
     const isGhost = state.conversations[conversationId]?.ghost === true;
     const { chatSearch, searchOtherSpaces } = resolveSearchReach(state.lumoUserSettings, state.spaces[spaceId]);
     const index = userId && !isGhost ? SearchService.get(userId) : undefined;
-    const projectFiles = isProject && index ? await index.listDocuments({ spaceId }).catch(() => []) : [];
+    const exclusions = collectRetrievalExclusions(chain, contextFilters);
+    const projectFiles = (isProject && index ? await index.listDocuments({ spaceId }).catch(() => []) : []).filter(
+        (file) => !exclusions.documentIds.has(file.id)
+    );
     // Replaced by the chain actually sent once the compaction flow runs (see compactionFlow).
     const visibleMessageIds = new Set(collapseCompactedChain(chain, messageMap).chain.map((message) => message.id));
     return {
@@ -170,9 +178,12 @@ async function resolveRetrieval({
             allowWideScopes: !!index,
             chatSearch,
             searchOtherSpaces,
+            allowsSearchFromOutside: (otherSpaceId) =>
+                isOpenToOtherSpaces(otherSpaceId ? getState().spaces[otherSpaceId] : undefined),
             hasLumoPlus,
             getVisibleMessageIds: () => visibleMessageIds,
             chatAttachments,
+            exclusions,
             getState,
             index,
         },
@@ -894,6 +905,7 @@ export function executeConversationTurn({
                 chain: updatedLinearChain,
                 messageMap: updatedC.messageMap,
                 chatAttachments: updatedC.allConversationAttachments,
+                contextFilters: updatedC.contextFilters,
                 hasLumoPlus: !!s.hasLumoPlus,
             });
 
@@ -1137,6 +1149,7 @@ export function regenerateMessage({
                 chain: c.messageChain,
                 messageMap: conversationMessageMap,
                 chatAttachments: c.allConversationAttachments,
+                contextFilters: c.contextFilters,
                 hasLumoPlus: !!s.hasLumoPlus,
             });
 
@@ -1403,6 +1416,7 @@ export function retrySendMessage({
             chain: updatedLinearChain,
             messageMap: conversationMessageMap,
             chatAttachments: c2.allConversationAttachments,
+            contextFilters: c2.contextFilters,
             hasLumoPlus: !!s.hasLumoPlus,
         });
 

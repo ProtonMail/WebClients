@@ -27,6 +27,8 @@ const executorFor = (overrides: Partial<RetrievalContext> = {}) =>
         allowWideScopes: true,
         chatSearch: 'none',
         searchOtherSpaces: false,
+        allowsSearchFromOutside: () => true,
+        exclusions: { attachmentIds: new Set(), documentIds: new Set() },
         hasLumoPlus: true,
         getVisibleMessageIds: () => new Set(),
         chatAttachments: [],
@@ -128,6 +130,53 @@ describe('files of other projects, when searching them is off', () => {
         const { body } = await call(executorFor(), READ_KNOWLEDGE_TOOL_NAME, { file_id: 'readme' });
 
         expect(JSON.stringify(body)).not.toContain('other-');
+    });
+});
+
+describe('files of a project that keeps them to itself', () => {
+    const closedOther = () =>
+        executorFor({
+            searchOtherSpaces: true,
+            allowsSearchFromOutside: (spaceId) => spaceId !== OTHER_SPACE,
+        });
+
+    it('stay out of searches, reads and name lookups, even with other projects allowed here', async () => {
+        const executor = closedOther();
+        const search = await call(executor, SEARCH_KNOWLEDGE_TOOL_NAME, {
+            query: 'Initech payment',
+            scope: 'all',
+            limit: 10,
+        });
+
+        expect(JSON.stringify(search.body)).not.toContain('other-');
+        expect((await call(executor, READ_KNOWLEDGE_TOOL_NAME, { file_id: 'other-contracts' })).isError).toBe(true);
+        expect((await call(executor, READ_KNOWLEDGE_TOOL_NAME, { file_name: 'Initech partnership.md' })).isError).toBe(
+            true
+        );
+    });
+});
+
+describe('a project file the user switched off in this chat', () => {
+    const withoutContracts = () =>
+        executorFor({ exclusions: { attachmentIds: new Set(), documentIds: new Set(['contracts']) } });
+
+    it('is neither found, read by id or name, nor listed as mentioned', async () => {
+        const executor = withoutContracts();
+        const search = await call(executor, SEARCH_KNOWLEDGE_TOOL_NAME, {
+            query: 'supplier contracts payment terms',
+            scope: 'project',
+            limit: 10,
+        });
+        const manifest = await call(executor, READ_KNOWLEDGE_TOOL_NAME, { file_id: 'vendor-index' });
+
+        expect(JSON.stringify(search.body)).not.toContain('"contracts"');
+        expect((await call(executor, READ_KNOWLEDGE_TOOL_NAME, { file_id: 'contracts' })).isError).toBe(true);
+        expect(
+            (await call(executor, READ_KNOWLEDGE_TOOL_NAME, { file_name: 'Supplier contracts 2026.pdf' })).isError
+        ).toBe(true);
+        expect(manifest.body.mentioned_files.map((file: { file_id: string }) => file.file_id)).not.toContain(
+            'contracts'
+        );
     });
 });
 
