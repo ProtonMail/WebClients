@@ -80,7 +80,7 @@ export const useTrashActions = () => {
 
         const successDriveUids: string[] = [];
         const successPhotoUids: string[] = [];
-        const failureItems: { uid: string; error: string }[] = [];
+        const failureItems: { uid: string; error: Error }[] = [];
 
         try {
             setLoading('restore', true);
@@ -89,14 +89,14 @@ export const useTrashActions = () => {
                 if (result.ok) {
                     successDriveUids.push(result.uid);
                 } else {
-                    failureItems.push({ uid: result.uid, error: result.error.message });
+                    failureItems.push({ uid: result.uid, error: result.error });
                 }
             }
             for await (const result of photos.restoreNodes(photoUids)) {
                 if (result.ok) {
                     successPhotoUids.push(result.uid);
                 } else {
-                    failureItems.push({ uid: result.uid, error: result.error.message });
+                    failureItems.push({ uid: result.uid, error: result.error });
                 }
             }
         } catch (e) {
@@ -173,7 +173,7 @@ export const useTrashActions = () => {
         const deleted = [...filesDeleted, ...photoDeleted];
         const successUids = deleted.filter((t) => t.ok).map((t) => t.uid);
         const successItems = successUids.map((uid) => nodesMap.get(uid)).filter(isTruthy);
-        const failureItems = deleted.filter((t) => !t.ok).map((t) => ({ uid: t.uid, error: t.error.message }));
+        const failureItems = deleted.filter((t) => !t.ok).map((t) => ({ uid: t.uid, error: t.error }));
 
         createTrashDeleteNotification(successItems, failureItems);
     };
