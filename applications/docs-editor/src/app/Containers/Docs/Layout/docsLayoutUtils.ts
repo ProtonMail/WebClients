@@ -163,3 +163,23 @@ export function getGutterClickCaretProbePoint(click: Point, editorRect: Rect): P
     y: Math.min(Math.max(click.y, minY), maxY),
   }
 }
+
+type HorizontalBoxStyle = Pick<
+  CSSStyleDeclaration,
+  'borderLeftWidth' | 'paddingLeft' | 'borderRightWidth' | 'paddingRight'
+>
+
+/**
+ * Pulls `x` inside an element's content box, past its border and padding. Blocks draw things there
+ * (list markers, checkboxes, quote bars, code line numbers), and probing for a caret on them can give
+ * the start of the block instead of a position on the line.
+ */
+export function clampToContentBoxX(x: number, rect: Pick<Rect, 'left' | 'right'>, style: HorizontalBoxStyle): number {
+  const minX = rect.left + parseFloat(style.borderLeftWidth) + parseFloat(style.paddingLeft) + CARET_PROBE_INSET
+  const maxX = rect.right - parseFloat(style.borderRightWidth) - parseFloat(style.paddingRight) - CARET_PROBE_INSET
+  if (!(minX <= maxX)) {
+    return x
+  }
+
+  return Math.min(Math.max(x, minX), maxX)
+}

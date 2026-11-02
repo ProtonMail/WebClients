@@ -1,4 +1,5 @@
 import {
+  clampToContentBoxX,
   DOCS_EDITOR_MAX_WIDTH,
   getContextualCommentsWidth,
   getDocsLayoutColumnWidths,
@@ -174,5 +175,26 @@ describe('isOutsideClientArea', () => {
 
   it('is true on a left scrollbar (RTL)', () => {
     expect(isOutsideClientArea({ offsetX: -5, offsetY: 300 }, element)).toBe(true)
+  })
+})
+
+describe('clampToContentBoxX', () => {
+  const rect = { left: 400, right: 1200 }
+  const style = { borderLeftWidth: '4px', paddingLeft: '15px', borderRightWidth: '0px', paddingRight: '10px' }
+
+  it('moves a point on the left padding or border just inside the content box', () => {
+    expect(clampToContentBoxX(401, rect, style)).toBe(420)
+  })
+
+  it('moves a point on the right padding just inside the content box', () => {
+    expect(clampToContentBoxX(1199, rect, style)).toBe(1189)
+  })
+
+  it('leaves a point inside the content box alone', () => {
+    expect(clampToContentBoxX(800, rect, style)).toBe(800)
+  })
+
+  it('leaves the point alone when the content box is too narrow', () => {
+    expect(clampToContentBoxX(401, { left: 400, right: 420 }, style)).toBe(401)
   })
 })
