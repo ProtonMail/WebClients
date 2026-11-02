@@ -12,15 +12,15 @@ Before building the extension, please ensure that you have the following version
 
 ### File info
 
-- `ProtonPass-{version}-{commit}-FF.zip` : firefox add-on release
-- `ProtonPass-{version}-{commit}-FF-sources.zip` : firefox add-on source files
+- `ProtonPass-{version}-{commit}-firefox-prod.zip` : firefox add-on release
+- `ProtonPass-{version}-{commit}-firefox-sources.zip` : firefox add-on source files
 
 ### Build Steps
 
 To build the Firefox version of the ProtonPass extension, please follow these steps:
 
-1.  Unzip `ProtonPass-{version}-{commit}-FF-sources.zip`
-2.  Navigate to the unzipped folder in your terminal: `cd ProtonPass-{version}-{commit}-FF`
+1.  Unzip `ProtonPass-{version}-{commit}-firefox-sources.zip`
+2.  Navigate to the unzipped folder in your terminal: `cd ProtonPass-{version}-{commit}-firefox-sources`
 3.  Install pnpm (the exact version is pinned in the `packageManager` field of the root `package.json`): `npm install -g pnpm@<version>`
 4.  Install dependencies: `pnpm install --frozen-lockfile --trust-lockfile --filter 'proton-pass-extension...'`
 5.  Navigate to the extension folder: `cd applications/pass-extension`

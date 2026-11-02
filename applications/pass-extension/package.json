@@ -4,8 +4,7 @@
     "license": "GPL-3.0",
     "scripts": {
         "build:extension": "cross-env API_ENV=proton.me BUILD_TARGET=${BUILD_TARGET:-chrome} sh -c 'pnpm run clean && pnpm run build:extension:helper'",
-        "build:extension:all": "./tools/build-all.sh",
-        "build:extension:beta": "./tools/build-all.sh --beta",
+        "build:extension:all": "pnpm --filter @proton/ci-pass run extension-build",
         "build:extension:dev": "cross-env API_ENV=proton.black BUILD_TARGET=${BUILD_TARGET:-chrome} sh -c 'pnpm run clean && pnpm run build:extension:helper'",
         "build:extension:e2e": "cross-env BUILD_TARGET=chrome E2E_TESTS=true NODE_ENV=production webpack --config webpack.config.ts",
         "build:extension:env": "cross-env BUILD_TARGET=${BUILD_TARGET:-chrome} sh -c 'pnpm run clean && pnpm run build:extension:helper'",
