@@ -10,6 +10,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useToggle from '@proton/hooks/useToggle';
 
+import type { ImportProvider } from '../../../interface';
 import type { MailImportFields } from './CustomizeMailImportModal.interface';
 import Addresses from './CustomizeMailImportModalAddresses';
 import CustomizeMailImportModalConfirmLeaveModal from './CustomizeMailImportModalConfirmLeaveModal';
@@ -28,6 +29,7 @@ interface Props {
     isLabelMapping: boolean;
     modalProps: ModalStateProps;
     displayCategories: boolean;
+    provider: ImportProvider | undefined;
     onSubmit: (nextFields: MailImportFields) => void;
 }
 
@@ -39,12 +41,14 @@ const CustomizeMailImportModal = ({
     modalProps,
     onSubmit,
     displayCategories,
+    provider,
 }: Props) => {
     const [confirmLeaveModalProps, openConfirmLeaveModal, renderConfirmLeaveModal] = useModalState();
     const {
         customFields,
         handleCancel,
         handleChangeField,
+        handleDiscard,
         handleSaveErroredInput,
         handleSubmit,
         selectedFoldersCount,
@@ -56,6 +60,7 @@ const CustomizeMailImportModal = ({
         onClose: modalProps.onClose,
         onSubmit,
         openConfirmModal: () => openConfirmLeaveModal(true),
+        provider,
     });
 
     const { state: displayFolders, toggle: toggleFolders } = useToggle(foldersOpened);
@@ -123,7 +128,7 @@ const CustomizeMailImportModal = ({
                     }}
                     onStop={() => {
                         openConfirmLeaveModal(false);
-                        modalProps.onClose();
+                        handleDiscard();
                     }}
                     {...confirmLeaveModalProps}
                 />

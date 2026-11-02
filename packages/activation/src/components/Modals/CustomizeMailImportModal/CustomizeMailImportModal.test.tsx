@@ -4,7 +4,8 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 
 import type { ApiMailImporterFolder } from '../../../api/api.interface';
 import MailImportFoldersParser from '../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
-import { MailImportDestinationFolder, TIME_PERIOD } from '../../../interface';
+import { ImportProvider, MailImportDestinationFolder, TIME_PERIOD } from '../../../interface';
+import { mockAccountImportFlowTracker } from '../../../telemetry/mockTrackerOfGroup';
 import { generateMockAddress } from '../../../tests/data/addresses';
 import { easySwitchRender } from '../../../tests/render';
 import CustomizeMailImportModal from './CustomizeMailImportModal';
@@ -57,6 +58,7 @@ describe('Customize modal tests', () => {
                 isLabelMapping={false}
                 onSubmit={() => {}}
                 displayCategories={false}
+                provider={ImportProvider.GOOGLE}
                 modalProps={getModalProps()}
             />
         );
@@ -74,6 +76,7 @@ describe('Customize modal tests', () => {
                 isLabelMapping={false}
                 onSubmit={() => {}}
                 displayCategories={false}
+                provider={ImportProvider.GOOGLE}
                 modalProps={getModalProps()}
             />
         );
@@ -91,6 +94,7 @@ describe('Customize modal tests', () => {
                 isLabelMapping={false}
                 onSubmit={() => {}}
                 displayCategories={false}
+                provider={ImportProvider.GOOGLE}
                 modalProps={getModalProps()}
             />
         );
@@ -147,6 +151,7 @@ describe('Customize modal tests', () => {
                 isLabelMapping={true}
                 displayCategories={true}
                 onSubmit={onSubmit}
+                provider={ImportProvider.GOOGLE}
                 modalProps={getModalProps()}
             />
         );
@@ -194,6 +199,7 @@ describe('Customize modal tests', () => {
                 importedEmail="test@proton.ch"
                 isLabelMapping={false}
                 displayCategories={false}
+                provider={ImportProvider.GOOGLE}
                 onSubmit={onSubmit}
                 modalProps={getModalProps()}
             />
@@ -230,6 +236,7 @@ describe('Customize modal tests', () => {
                 importedEmail="test@proton.ch"
                 isLabelMapping={false}
                 displayCategories={false}
+                provider={ImportProvider.GOOGLE}
                 onSubmit={onSubmit}
                 modalProps={getModalProps()}
             />
@@ -278,6 +285,7 @@ describe('Customize modal tests', () => {
                 importedEmail="test@proton.ch"
                 isLabelMapping={false}
                 displayCategories={false}
+                provider={ImportProvider.GOOGLE}
                 onSubmit={onSubmit}
                 modalProps={getModalProps()}
             />
@@ -307,6 +315,7 @@ describe('Customize modal tests', () => {
                 importedEmail="test@proton.ch"
                 isLabelMapping={false}
                 displayCategories={false}
+                provider={ImportProvider.GOOGLE}
                 onSubmit={onSubmit}
                 modalProps={getModalProps()}
             />
@@ -355,6 +364,7 @@ describe('Customize modal tests', () => {
                 importedEmail="test@proton.ch"
                 isLabelMapping={false}
                 displayCategories={false}
+                provider={ImportProvider.GOOGLE}
                 onSubmit={onSubmit}
                 modalProps={getModalProps()}
             />
@@ -410,6 +420,7 @@ describe('Customize modal tests', () => {
                 importedEmail="test@proton.ch"
                 isLabelMapping={true}
                 displayCategories={false}
+                provider={ImportProvider.GOOGLE}
                 onSubmit={onSubmit}
                 modalProps={getModalProps()}
             />
@@ -425,5 +436,89 @@ describe('Customize modal tests', () => {
             'Sent',
             'Drafts',
         ]);
+    });
+
+    describe('telemetry', () => {
+        const renderModal = () =>
+            easySwitchRender(
+                <CustomizeMailImportModal
+                    foldersOpened={false}
+                    fields={simpleFields}
+                    importedEmail="test@proton.ch"
+                    isLabelMapping={false}
+                    onSubmit={() => {}}
+                    displayCategories={false}
+                    provider={ImportProvider.GOOGLE}
+                    modalProps={getModalProps()}
+                />
+            );
+
+        it('reports the opening, each changed field once, and the save', () => {
+            const { reports } = mockAccountImportFlowTracker();
+            renderModal();
+
+            fireEvent.click(screen.getByText('Last month only'));
+            fireEvent.click(screen.getByText('Last 3 months only'));
+            fireEvent.click(screen.getByTestId('CustomizeModal:toggleFolders'));
+            const checkboxes = screen.getAllByTestId('CustomizeModal:checkbox');
+            fireEvent.click(checkboxes[0]);
+            fireEvent.click(checkboxes[0]);
+            fireEvent.click(screen.getByTestId('CustomizeModal:modalSave'));
+
+            expect(reports.map(({ event, dimensions }) => [event, dimensions])).toEqual([
+                ['step_load', { flow: 'easy_switch', step: 'customize_mail_import', provider: 'google' }],
+                [
+                    'step_interacted',
+                    {
+                        flow: 'easy_switch',
+                        step: 'customize_mail_import',
+                        action: 'change_period',
+                        provider: 'google',
+                        importPeriodSelected: 'last_3_months',
+                    },
+                ],
+                [
+                    'step_interacted',
+                    {
+                        flow: 'easy_switch',
+                        step: 'customize_mail_import',
+                        action: 'change_folders',
+                        provider: 'google',
+                    },
+                ],
+                [
+                    'step_completed',
+                    { flow: 'easy_switch', step: 'customize_mail_import', provider: 'google', hasChanges: 'true' },
+                ],
+            ]);
+        });
+
+        it('reports a cancel without changes', () => {
+            const { reports } = mockAccountImportFlowTracker();
+            renderModal();
+
+            fireEvent.click(screen.getByTestId('CustomizeModal:modalCancel'));
+
+            expect(reports[1]).toMatchObject({
+                event: 'step_interacted',
+                dimensions: { action: 'cancel', hasChanges: 'false' },
+            });
+        });
+
+        it('reports a cancel with changes only once the user confirmed to leave', () => {
+            const { reports } = mockAccountImportFlowTracker();
+            renderModal();
+
+            fireEvent.click(screen.getByText('Last month only'));
+            fireEvent.click(screen.getByText('Last 3 months only'));
+            fireEvent.click(screen.getByTestId('CustomizeModal:modalCancel'));
+            fireEvent.click(screen.getByTestId('CancelModal:cancel'));
+            expect(reports.filter(({ dimensions }) => dimensions?.action === 'cancel')).toHaveLength(0);
+
+            fireEvent.click(screen.getByTestId('CustomizeModal:modalCancel'));
+            fireEvent.click(screen.getByTestId('CancelModal:quit'));
+            expect(reports.filter(({ dimensions }) => dimensions?.action === 'cancel')).toHaveLength(1);
+            expect(reports[reports.length - 1].dimensions).toMatchObject({ hasChanges: 'true' });
+        });
     });
 });

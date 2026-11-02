@@ -44,6 +44,7 @@ const StepPrepareEmailsSummary = ({ isSelected }: Props) => {
                     isLabelMapping={provider === ImportProvider.GOOGLE}
                     modalProps={displayCustomizeModalProps}
                     onSubmit={handleSubmitCustomizeModal}
+                    provider={provider}
                 />
             )}
         </>

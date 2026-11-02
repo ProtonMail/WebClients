@@ -41,6 +41,7 @@ const StepPrepare = () => {
         isConnectingToProvider,
         importSize,
         hasCategories,
+        provider,
     } = useStepPrepare({ user, handleCloseCustomizeModal: () => handleDisplayCustomizeModal(false) });
     const { importLabel, importPeriod, importAddress } = fields;
     const space = getAppSpace(getSpace(user), APPS.PROTONMAIL);
@@ -93,6 +94,7 @@ const StepPrepare = () => {
                                 isLabelMapping={isLabelMapping}
                                 modalProps={displayCustomizeModalProps}
                                 onSubmit={handleSubmitCustomizeModal}
+                                provider={provider}
                             />
                         )}
                     </div>

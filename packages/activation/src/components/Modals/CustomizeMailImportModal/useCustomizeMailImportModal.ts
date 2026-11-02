@@ -1,12 +1,27 @@
 import type { FormEvent } from 'react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import isDeepEqual from 'lodash/isEqual';
 
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 
 import { getMailMappingErrors } from '../../../helpers/getMailMappingErrors';
+import type { ImportProvider } from '../../../interface';
+import {
+    trackAccountImportEasySwitchCustomizeMailImportCancelled,
+    trackAccountImportEasySwitchCustomizeMailImportChanged,
+    trackAccountImportEasySwitchCustomizeMailImportSaved,
+    trackAccountImportEasySwitchCustomizeMailImportViewed,
+} from '../../../telemetry/accountImportFlow';
 import type { FolderMapItem, MailImportFields } from './CustomizeMailImportModal.interface';
+
+const CHANGE_ACTIONS = {
+    importAddress: 'change_address',
+    importPeriod: 'change_period',
+    importLabel: 'change_label',
+    importCategoriesDestination: 'change_categories',
+    mapping: 'change_folders',
+} as const satisfies Record<keyof MailImportFields, string>;
 
 interface Props {
     fields: MailImportFields;
@@ -14,9 +29,17 @@ interface Props {
     onClose: () => void;
     onSubmit: (nextFields: MailImportFields) => void;
     openConfirmModal: () => void;
+    provider: ImportProvider | undefined;
 }
 
-const useCustomizeMailImportModal = ({ fields, onClose, onSubmit, openConfirmModal, isLabelMapping }: Props) => {
+const useCustomizeMailImportModal = ({
+    fields,
+    onClose,
+    onSubmit,
+    openConfirmModal,
+    isLabelMapping,
+    provider,
+}: Props) => {
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const [customFields, setCustomFields] = useState<MailImportFields>({
@@ -26,6 +49,13 @@ const useCustomizeMailImportModal = ({ fields, onClose, onSubmit, openConfirmMod
         importPeriod: fields.importPeriod,
         importCategoriesDestination: fields.importCategoriesDestination,
     });
+    // A field is reported once per opening of the modal: we want to know which ones are touched, not how often
+    const reportedFields = useRef(new Set<keyof MailImportFields>());
+
+    useEffect(() => {
+        trackAccountImportEasySwitchCustomizeMailImportViewed({ provider });
+    }, []);
+
     const [savedErroredIds, setSavedErroredIds] = useState<FolderMapItem['id'][]>([]);
 
     // [Errors] 1. Lets parse errors once when we open the modal
@@ -65,8 +95,15 @@ const useCustomizeMailImportModal = ({ fields, onClose, onSubmit, openConfirmMod
         if (hasChanged()) {
             openConfirmModal();
         } else {
+            trackAccountImportEasySwitchCustomizeMailImportCancelled({ provider, hasChanges: false });
             onClose();
         }
+    };
+
+    /** The user confirmed they leave without saving their edits */
+    const handleDiscard = () => {
+        trackAccountImportEasySwitchCustomizeMailImportCancelled({ provider, hasChanges: true });
+        onClose();
     };
 
     function handleChangeField<K extends keyof MailImportFields>(key: K, value: MailImportFields[K]) {
@@ -74,6 +111,15 @@ const useCustomizeMailImportModal = ({ fields, onClose, onSubmit, openConfirmMod
         nextCustomFields[key] = value;
 
         setCustomFields(nextCustomFields);
+
+        if (!reportedFields.current.has(key)) {
+            reportedFields.current.add(key);
+            trackAccountImportEasySwitchCustomizeMailImportChanged({
+                provider,
+                action: CHANGE_ACTIONS[key],
+                importPeriod: key === 'importPeriod' ? (value as MailImportFields['importPeriod']) : undefined,
+            });
+        }
     }
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -82,7 +128,9 @@ const useCustomizeMailImportModal = ({ fields, onClose, onSubmit, openConfirmMod
         if (submitDisabled) {
             return;
         }
-        if (hasChanged()) {
+        const changed = hasChanged();
+        trackAccountImportEasySwitchCustomizeMailImportSaved({ provider, hasChanges: changed });
+        if (changed) {
             onSubmit(customFields);
         } else {
             onClose();
@@ -96,6 +144,7 @@ const useCustomizeMailImportModal = ({ fields, onClose, onSubmit, openConfirmMod
     return {
         customFields,
         handleCancel,
+        handleDiscard,
         handleChangeField,
         handleSubmit,
         handleSaveErroredInput,

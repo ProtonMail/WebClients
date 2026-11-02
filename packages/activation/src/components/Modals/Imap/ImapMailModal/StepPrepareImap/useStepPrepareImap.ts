@@ -247,6 +247,7 @@ const useStepPrepare = ({ user, handleCloseCustomizeModal }: Props) => {
         importSize,
         selectedFolders,
         hasCategories,
+        provider: importProvider,
     };
 };
 
