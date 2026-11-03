@@ -1,4 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies -- dev-only Prettier config */
+/* eslint-disable proton/no-extraneous-dependencies -- dev-only Prettier config */
 import config from '@proton/prettier-config-proton';
 
 /** Increase `printWidth` for readability */

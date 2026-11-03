@@ -1,4 +1,4 @@
-/* eslint-disable-next-line lodash/import-scope */
+/* eslint-disable-next-line proton/restricted-imports */
 import type { DebounceSettings } from 'lodash';
 import debounce from 'lodash/debounce';
 
