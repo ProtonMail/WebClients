@@ -50,11 +50,12 @@ function main {
   # Use this package's own binary instead of npx or dlx since they don't resolve to the installed dependencies
   local ttagBin;
   ttagBin="$(cd "$(dirname "$0")/.." && pwd)/node_modules/.bin/ttag";
+  local extractParallel;
+  extractParallel="$(cd "$(dirname "$0")" && pwd)/extract-parallel.mjs";
   (
     cd i18n-js;
     echo "Running ttag extract"
-    # Output from ttag extract is full of babel errors, silence it
-    "$ttagBin" extract $(getFileList) -o "../${1}" 2>&1;
+    node "$extractParallel" "$ttagBin" "../${1}" $(getFileList);
     echo "done"
   )
 
