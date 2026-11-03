@@ -19,6 +19,8 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { contentIndexingProgress } from '@proton/encrypted-search/esIDB/indexingProgress';
 import type { ESIndexingState } from '@proton/encrypted-search/models/interfaces';
 import { useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
+import AddressInput from '@proton/mail-composer/components/composer/addresses/AddressInput';
+import AddressesInput from '@proton/mail-composer/components/composer/addresses/AddressesInput';
 import { getHumanLabelID, isCategoryLabel } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -36,8 +38,6 @@ import {
     keywordToString,
     setFilterInUrl,
 } from '../../../helpers/mailboxUrl';
-import AddressInput from '../../composer/addresses/AddressInput';
-import AddressesInput from '../../composer/addresses/AddressesInput';
 import EncryptedSearchField from './AdvancedSearchFields/EncryptedSearchField';
 import LocationField from './AdvancedSearchFields/LocationField';
 import SearchField from './AdvancedSearchFields/SearchField';

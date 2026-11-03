@@ -1,5 +1,6 @@
 import loudRejection from 'loud-rejection';
 
+import { useSendVerifications } from '@proton/mail-composer/hooks/composer/useSendVerifications';
 import type { SendInfo } from '@proton/mail-message/models/crypto';
 import { ADDRESS_FLAGS, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -9,7 +10,6 @@ import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences'
 
 import { clearAll } from '../../helpers/tests/helper';
 import { renderHook } from '../../helpers/tests/render';
-import { useSendVerifications } from './useSendVerifications';
 
 loudRejection();
 

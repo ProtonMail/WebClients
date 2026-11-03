@@ -1,3 +1,8 @@
+import {
+    fromFields,
+    protonSignature,
+    recipients,
+} from '@proton/mail-composer/components/composer/tests/Composer.test.data';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { generateBlockquote } from '@proton/mail-message/helpers/message/draftContent/html';
 import {
@@ -14,7 +19,6 @@ import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
-import { fromFields, protonSignature, recipients } from '../../components/composer/tests/Composer.test.data';
 import { addressID, messageID, subject } from '../../components/message/tests/Message.test.helpers';
 import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../tests/crypto';
 import { clearAll } from '../tests/helper';

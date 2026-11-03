@@ -23,6 +23,7 @@ import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import { registerFeatureFlagsApiMock } from '@proton/features/testing/features';
 import { ComposerAssistantProvider } from '@proton/mail-composer/components/assistant/provider/ComposerAssistantProvider';
+import { ComposeProvider } from '@proton/mail-composer/containers/ComposeProvider';
 import { MailContentRefProvider } from '@proton/mail-composer/hooks/useClickMailContent';
 import { composersInitialState } from '@proton/mail-composer/store/composers/composersSlice';
 import type { AttachmentsState } from '@proton/mail-message/store/attachments/attachmentsTypes';
@@ -47,7 +48,6 @@ import { DEFAULT_MAIL_SETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/s
 import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';
 import { MAIN_ROUTE_PATH } from '../../constants';
 import { CheckAllRefProvider } from '../../containers/CheckAllRefProvider';
-import { ComposeProvider } from '../../containers/ComposeProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailComposerHost } from '../../containers/MailComposerHost';
 import { GlobalModalProvider } from '../../containers/globalModals/GlobalModalProvider';

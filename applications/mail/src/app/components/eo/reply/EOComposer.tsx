@@ -4,6 +4,10 @@ import type { PublicKeyReference } from '@protontech/crypto';
 
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { useHandler } from '@proton/hooks/useHandler';
+import type { MessageChange } from '@proton/mail-composer/components/composer/Composer';
+import ComposerContent from '@proton/mail-composer/components/composer/ComposerContent';
+import type { ExternalEditorActions } from '@proton/mail-composer/components/composer/editor/EditorWrapper';
+import ComposerInsertImageModal from '@proton/mail-composer/components/composer/modals/ComposerInsertImageModal';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { setContent } from '@proton/mail-message/helpers/message/messageContent';
 import { createNewDraft } from '@proton/mail-message/helpers/message/messageDraft';
@@ -15,10 +19,6 @@ import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages
 import noop from '@proton/utils/noop';
 
 import { useEOAttachments } from '../../../hooks/eo/useEOAttachments';
-import type { MessageChange } from '../../composer/Composer';
-import ComposerContent from '../../composer/ComposerContent';
-import type { ExternalEditorActions } from '../../composer/editor/EditorWrapper';
-import ComposerInsertImageModal from '../../composer/modals/ComposerInsertImageModal';
 import EOReplyFooter from './EOReplyFooter';
 import EOReplyHeader from './EOReplyHeader';
 

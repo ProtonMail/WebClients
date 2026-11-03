@@ -1,0 +1,124 @@
+import { useEffect, useState } from 'react';
+
+import { addDays, endOfToday, getUnixTime, isToday } from 'date-fns';
+import { c } from 'ttag';
+
+import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { Href } from '@proton/atoms/Href/Href';
+import TimeInput from '@proton/components/components/input/TimeInput';
+import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
+import DateInputTwo from '@proton/components/components/v2/input/DateInputTwo';
+import { getMinScheduleTime } from '@proton/mail-message/helpers/schedule';
+import useFutureTimeDate from '@proton/mail-message/hooks/message/useFutureTimeDate';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import { updateScheduled } from '@proton/mail-message/store/messages/scheduled/scheduledActions';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
+import generateUID from '@proton/utils/generateUID';
+
+import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
+import { useComposerDispatch } from '../../../store/hooks';
+import ComposerInnerModal from './ComposerInnerModal';
+import { getChooseDateText } from './helper';
+
+interface Props {
+    message: MessageState;
+    onClose: () => void;
+    onSubmit: (timestamp: number) => void;
+}
+
+const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
+    const dispatch = useComposerDispatch();
+    const [userSettings] = useUserSettings();
+
+    const [uid] = useState(generateUID('schedule-send-modal'));
+
+    const defaultDate =
+        message && message.draftFlags?.scheduledAt
+            ? new Date(message.draftFlags?.scheduledAt * 1000)
+            : addDays(new Date(), 1);
+
+    if (!message || (message && !message.draftFlags?.scheduledAt)) {
+        defaultDate.setHours(8, 0, 0, 0);
+    }
+
+    const maxDateErrorMessage = getChooseDateText(SCHEDULED_MAX_DATE_DAYS);
+
+    const {
+        date,
+        time,
+        disabled,
+        handleChangeDate,
+        handleChangeTime,
+        formatDateInput,
+        scheduleDateTime,
+        minDate,
+        maxDate,
+        errorDate,
+        errorTime,
+    } = useFutureTimeDate({
+        defaultDate,
+        maxDaysAllowed: SCHEDULED_MAX_DATE_DAYS,
+        maxDateErrorMessage,
+    });
+
+    useEffect(() => {
+        dispatch(updateScheduled({ ID: message.localID, scheduledAt: getUnixTime(scheduleDateTime) }));
+        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-0770BA
+    }, [scheduleDateTime]);
+
+    const handleSubmit = () => {
+        onClose(); // Close the modal first (see MAILWEB-5895)
+        onSubmit(getUnixTime(scheduleDateTime));
+    };
+
+    const handleCancel = () => {
+        onClose();
+    };
+
+    return (
+        <ComposerInnerModal
+            title={c('Title').t`Schedule send`}
+            disabled={disabled}
+            submit={c('Action').t`Schedule message`}
+            onSubmit={handleSubmit}
+            onCancel={handleCancel}
+        >
+            <div className="mb-4 flex">
+                <span data-testid="composer:schedule-send:custom-modal:title">{c('Description')
+                    .t`When do you want your message to be sent?`}</span>{' '}
+                <Href className="underline inline-block" href={getKnowledgeBaseUrl('/schedule-email-send')}>{c('Link')
+                    .t`Learn more`}</Href>
+            </div>
+            <div className="flex gap-2 flex-row flex-nowrap">
+                <InputFieldTwo
+                    as={DateInputTwo}
+                    id={`composer-schedule-date-${uid}`}
+                    label={c('Label').t`Date`}
+                    onChange={handleChangeDate}
+                    value={date}
+                    min={minDate}
+                    weekStartsOn={getWeekStartsOn({ WeekStart: userSettings.WeekStart })}
+                    max={maxDate}
+                    toFormatter={formatDateInput}
+                    preventValueReset
+                    error={errorDate}
+                    data-testid="composer:schedule-date-input"
+                />
+                <InputFieldTwo
+                    as={TimeInput}
+                    id={`composer-schedule-time-${uid}`}
+                    label={c('Label').t`Time`}
+                    onChange={handleChangeTime}
+                    value={time}
+                    min={getMinScheduleTime(date)}
+                    max={isToday(date) ? endOfToday() : undefined}
+                    error={errorTime}
+                    data-testid="composer:schedule-time-input"
+                />
+            </div>
+        </ComposerInnerModal>
+    );
+};
+
+export default ComposerScheduleSendModal;

@@ -14,6 +14,8 @@ import { IcArrowUpAndLeftBig } from '@proton/icons/icons/IcArrowUpAndLeftBig';
 import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
 import { IcArrowsUpAndLeftBig } from '@proton/icons/icons/IcArrowsUpAndLeftBig';
 import { IcTrashClock } from '@proton/icons/icons/IcTrashClock';
+import { useOnCompose, useOnMailTo } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { isSelfAddress } from '@proton/mail-message/helpers/addresses';
 import type { MessageViewIcons } from '@proton/mail-message/helpers/message/icon';
@@ -41,9 +43,7 @@ import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { hasLabel } from '../../../helpers/elements';
-import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';

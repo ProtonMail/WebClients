@@ -19,6 +19,8 @@ import useLocalState from '@proton/components/hooks/useLocalState';
 import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
 import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { selectHasFocusedComposer } from '@proton/mail-composer/store/composers/composerSelectors';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -32,9 +34,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 import clsx from '@proton/utils/clsx';
 
-import { useOnCompose } from '../../containers/ComposeProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';

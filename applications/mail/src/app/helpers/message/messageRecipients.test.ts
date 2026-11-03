@@ -1,3 +1,4 @@
+import { fromFields, recipients } from '@proton/mail-composer/components/composer/tests/Composer.test.data';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import {
     findSender,
@@ -17,7 +18,6 @@ import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import { fromFields, recipients } from '../../components/composer/tests/Composer.test.data';
 import type { Element } from '../../models/element';
 import { getNumParticipants, getSendersToBlock } from '../recipients';
 

@@ -8,6 +8,7 @@ import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentListTypes';
+import { isDummyAttachmentUpload } from '@proton/mail-composer/hooks/composer/useAttachments/helpers';
 import { useHasScroll } from '@proton/mail-composer/hooks/useHasScroll';
 import type { AttachmentListProps as Props } from '@proton/mail-composer/host/composerMessageHost';
 import { canPreviewAttachment } from '@proton/mail-message/helpers/attachment/attachment';
@@ -18,7 +19,6 @@ import type { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants
 import clsx from '@proton/utils/clsx';
 
 import { useDownload, useDownloadAll } from '../../../../hooks/attachments/useDownload';
-import { isDummyAttachmentUpload } from '../../../../hooks/composer/useAttachments/helpers';
 import AttachmentItem from './AttachmentItem';
 import type { AttachmentPreviewControls } from './AttachmentPreview';
 import AttachmentPreview from './AttachmentPreview';

@@ -1,0 +1,352 @@
+import type { MutableRefObject } from 'react';
+import { useMemo } from 'react';
+
+import { c } from 'ttag';
+
+import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { Vr } from '@proton/atoms/Vr/Vr';
+import type { EditorMetadata } from '@proton/components/components/editor/interface';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
+import { getWritingAssistantTitle } from '@proton/components/helpers/assistant';
+import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
+import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
+import { IcPenSparks } from '@proton/icons/icons/IcPenSparks';
+import { IcTextStyle } from '@proton/icons/icons/IcTextStyle';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { getIsAssistantOpened } from '@proton/llm/lib/helpers';
+import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
+import { getAttachmentCounts } from '@proton/mail-message/helpers/message/messages';
+import { updateExpires } from '@proton/mail-message/store/messages/draft/messagesDraftActions';
+import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
+import { clearBit } from '@proton/shared/lib/helpers/bitset';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces/UserSettings';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { hasFlag } from '@proton/shared/lib/mail/messages';
+import lumoIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
+import { useFlag } from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
+
+import { useComposerDispatch } from '../../../../store/hooks';
+import { useComposerAssistantProvider } from '../../../assistant/provider/ComposerAssistantProvider';
+import ComposerAssistantSpotlight from '../../../assistant/spotlights/ComposerAssistantSpotlight';
+import AttachmentsButton from '../../../message/extrasFooter/attachment/AttachmentsButton';
+import type { MessageChange, MessageChangeFlag } from '../../Composer';
+import type { ExternalEditorActions } from '../../editor/EditorWrapper';
+import ComposerMoreActions from '../ComposerMoreActions';
+import ComposerPasswordActions from '../ComposerPasswordActions';
+import ComposerSendButton from '../ComposerSendButton';
+import ComposerScheduleSendActions from '../scheduleSend/ScheduleSendActions';
+import ComposerScheduleSendSpotlight from '../scheduleSend/ScheduleSendSpotlight';
+import useScheduleSendSpotlight from '../scheduleSend/useScheduleSendSpotlight';
+import useComposerSendActionsText from './useComposerActionsText';
+
+interface Props {
+    composerID: string;
+    addressesBlurRef: MutableRefObject<() => void>;
+    attachmentTriggerRef: MutableRefObject<() => void>;
+    className?: string;
+    date: Date;
+    editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
+    editorMetadata: EditorMetadata;
+    loadingScheduleCount: boolean;
+    message: MessageState;
+    onAddAttachments: (files: File[]) => void;
+    onChange: MessageChange;
+    onChangeFlag: MessageChangeFlag;
+    onDelete: () => void;
+    onExpiration: () => void;
+    onPassword: () => void;
+    onScheduleSendModal: () => void;
+    onScheduleSend: (scheduledAt: number) => void;
+    canScheduleSend: boolean;
+    onSend: () => Promise<void>;
+    opening: boolean;
+    isSending: boolean;
+    syncInProgress: boolean;
+    showAssistantButton: boolean;
+    onToggleAssistant: () => void;
+    isInert: boolean;
+    onToggleToolbar: () => void;
+    displayToolbar: boolean;
+}
+
+const ComposerActions = ({
+    composerID,
+    addressesBlurRef,
+    attachmentTriggerRef,
+    className,
+    date,
+    editorActionsRef,
+    editorMetadata,
+    loadingScheduleCount,
+    message,
+    onAddAttachments,
+    onChange,
+    onChangeFlag,
+    onDelete,
+    onExpiration,
+    onPassword,
+    onScheduleSendModal,
+    onScheduleSend,
+    onSend,
+    opening,
+    isSending,
+    syncInProgress,
+    canScheduleSend,
+    showAssistantButton,
+    onToggleAssistant,
+    isInert,
+    onToggleToolbar,
+    displayToolbar,
+}: Props) => {
+    const dispatch = useComposerDispatch();
+    const scribeToLumo = useFlag('ScribeToLumo');
+    const { viewportWidth } = useActiveBreakpoint();
+    const assistantSpotlight = useSpotlightOnFeature(FeatureCode.ComposerAssistantSpotlight, !viewportWidth['<=small']);
+    const disabled = opening;
+    const [{ AIAssistantFlags }] = useUserSettings();
+    const { feature: numAttachmentsWithoutEmbeddedFeature } = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded);
+    const scheduleSendSpotlight = useScheduleSendSpotlight(!opening);
+    const { sendShowAssistantReport } = useAssistantTelemetry();
+
+    const { pureAttachmentsCount, attachmentsCount } = message.data?.Attachments
+        ? getAttachmentCounts(message.data?.Attachments, message.messageImages)
+        : { pureAttachmentsCount: 0, attachmentsCount: 0 };
+
+    const isAttachments = numAttachmentsWithoutEmbeddedFeature?.Value ? pureAttachmentsCount > 0 : attachmentsCount > 0;
+    const isPassword = hasFlag(MESSAGE_FLAGS.FLAG_INTERNAL)(message.data) && !!message.data?.Password;
+    const isExpiration = !!message.draftFlags?.expiresIn;
+    const { dateMessage, titleAttachment, titleDeleteDraft, titleSendButton } = useComposerSendActionsText({
+        date,
+        opening,
+        syncInProgress,
+    });
+
+    const assistantUpsellModal = useModalStateObject();
+    const { initAssistant, hasCompatibleHardware, hasCompatibleBrowser, openedAssistants, downloadPaused } =
+        useAssistant(composerID);
+    const { displayAssistantModal } = useComposerAssistantProvider();
+
+    const isAssistantOpened = useMemo(() => {
+        return getIsAssistantOpened(openedAssistants, composerID);
+    }, [composerID, openedAssistants]);
+
+    const isSmallViewport = viewportWidth['<=small'];
+
+    const handleToggleAssistant = () => {
+        if (assistantSpotlight.show) {
+            assistantSpotlight.onClose();
+        }
+        if (!isAssistantOpened && AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
+            if (!hasCompatibleHardware) {
+                displayAssistantModal('incompatibleHardware');
+                return;
+            }
+
+            if (!hasCompatibleBrowser) {
+                displayAssistantModal('incompatibleBrowser');
+                return;
+            }
+
+            // Start initializing the Assistant when opening it if able to
+            if (!downloadPaused) {
+                void initAssistant?.();
+            }
+        }
+
+        onToggleAssistant();
+        sendShowAssistantReport();
+    };
+
+    const handleRemoveOutsideEncryption = () => {
+        onChange(
+            (message) => ({
+                data: {
+                    Flags: clearBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_INTERNAL),
+                    Password: undefined,
+                    PasswordHint: undefined,
+                },
+                draftFlags: {
+                    expiresIn: undefined,
+                },
+            }),
+            true
+        );
+        dispatch(updateExpires({ ID: message?.localID || '', expiresIn: undefined }));
+    };
+
+    const assistantTooltipText = (() => {
+        if (assistantSpotlight.show) {
+            return '';
+        }
+
+        const title = getWritingAssistantTitle(scribeToLumo);
+        return isAssistantOpened ? c('Action').t`Hide ${title}` : c('Action').t`Show ${title}`;
+    })();
+
+    return (
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
+        <footer
+            data-testid="composer:footer"
+            className={clsx(['composer-actions shrink-0 flex max-w-full', className])}
+            onClick={addressesBlurRef.current}
+            // @ts-ignore
+            inert={isInert ? '' : undefined}
+        >
+            <div className="flex flex-row-reverse self-center w-full ml-2 mr-6 pl-5 pr-1 mb-4">
+                <ComposerScheduleSendSpotlight
+                    anchorRef={scheduleSendSpotlight.anchorRef}
+                    onDisplayed={scheduleSendSpotlight.spotlight.onDisplayed}
+                    showSpotlight={scheduleSendSpotlight.spotlight.show}
+                >
+                    <ComposerSendButton
+                        shape="solid"
+                        color="norm"
+                        primaryAction={
+                            <Tooltip title={titleSendButton}>
+                                <Button
+                                    onClick={onSend}
+                                    loading={isSending}
+                                    disabled={disabled}
+                                    className="composer-send-button"
+                                    data-testid="composer:send-button"
+                                >
+                                    <IcPaperPlane className="md:hidden flex" />
+                                    <span className="px-4 hidden md:inline">{c('Action').t`Send`}</span>
+                                </Button>
+                            </Tooltip>
+                        }
+                        secondaryAction={
+                            canScheduleSend && (
+                                <ComposerScheduleSendActions
+                                    ref={scheduleSendSpotlight.anchorRef}
+                                    loading={loadingScheduleCount}
+                                    onDropdownToggle={() => {
+                                        scheduleSendSpotlight.spotlight.onClose();
+                                    }}
+                                    onDisplayScheduleSendModal={onScheduleSendModal}
+                                    onScheduleSend={onScheduleSend}
+                                    scheduledAtUnixTimestamp={message.draftFlags?.scheduledAt}
+                                    composerID={composerID}
+                                />
+                            )
+                        }
+                    />
+                </ComposerScheduleSendSpotlight>
+
+                <div className="flex flex-1">
+                    <div className="flex gap-1 md:gap-2">
+                        {!isSmallViewport && (
+                            <>
+                                <Tooltip title={titleDeleteDraft}>
+                                    <Button
+                                        icon
+                                        disabled={disabled}
+                                        onClick={onDelete}
+                                        shape="ghost"
+                                        data-testid="composer:delete-draft-button"
+                                    >
+                                        <IcTrash alt={c('Action').t`Delete draft`} />
+                                    </Button>
+                                </Tooltip>
+                                <ComposerPasswordActions
+                                    isPassword={isPassword}
+                                    onPassword={onPassword}
+                                    onRemoveOutsideEncryption={handleRemoveOutsideEncryption}
+                                />
+                            </>
+                        )}
+                        <Tooltip title={titleAttachment}>
+                            <AttachmentsButton
+                                isAttachments={isAttachments}
+                                disabled={disabled}
+                                onAddAttachments={onAddAttachments}
+                                attachmentTriggerRef={attachmentTriggerRef}
+                                data-testid="composer:attachment-button"
+                            />
+                        </Tooltip>
+                        {showAssistantButton && (
+                            <>
+                                <Vr className="border-weak" aria-hidden="true" />
+                                <Tooltip title={assistantTooltipText}>
+                                    <div>
+                                        <ComposerAssistantSpotlight {...assistantSpotlight}>
+                                            <Button
+                                                icon
+                                                disabled={disabled}
+                                                onClick={handleToggleAssistant}
+                                                shape="ghost"
+                                                data-testid="composer:use-assistant-button"
+                                                aria-expanded={isAssistantOpened}
+                                                aria-pressed={isAssistantOpened}
+                                                className="flex"
+                                            >
+                                                {scribeToLumo ? (
+                                                    <img
+                                                        src={lumoIcon}
+                                                        alt={c('Action').t`Your email writing assistant`}
+                                                        width={18}
+                                                        height={18}
+                                                    />
+                                                ) : (
+                                                    <IcPenSparks
+                                                        alt={c('Action').t`Your email writing assistant`}
+                                                        style={{ color: '#D132EA' }}
+                                                    />
+                                                )}
+                                            </Button>
+                                        </ComposerAssistantSpotlight>
+                                    </div>
+                                </Tooltip>
+                            </>
+                        )}
+                        <Tooltip title={displayToolbar ? c('Action').t`Hide toolbar` : c('Action').t`Show toolbar`}>
+                            <Button
+                                icon
+                                disabled={disabled || editorMetadata.isPlainText}
+                                onClick={onToggleToolbar}
+                                shape="ghost"
+                                data-testid="composer:show-toolbar-button"
+                                aria-expanded={displayToolbar}
+                                aria-pressed={displayToolbar}
+                                className="flex"
+                            >
+                                <IcTextStyle alt={c('Action').t`Show toolbar`} />
+                            </Button>
+                        </Tooltip>
+                        {showAssistantButton && <Vr className="border-weak" aria-hidden="true" />}
+                        <ComposerMoreActions
+                            isExpiration={isExpiration}
+                            message={message}
+                            onExpiration={onExpiration}
+                            onChangeFlag={onChangeFlag}
+                            lock={disabled}
+                            editorActionsRef={editorActionsRef}
+                            editorMetadata={editorMetadata}
+                            onChange={onChange}
+                            isPassword={isPassword}
+                            onPassword={onPassword}
+                            onRemoveOutsideEncryption={handleRemoveOutsideEncryption}
+                            onDelete={onDelete}
+                        />
+                    </div>
+                    <div className="flex-1 flex pr-4">
+                        <span className="mr-0 m-auto hidden md:flex color-weak">{dateMessage}</span>
+                    </div>
+                </div>
+            </div>
+            {assistantUpsellModal.render && (
+                <ComposerAssistantUpsellModal modalProps={assistantUpsellModal.modalProps} />
+            )}
+        </footer>
+    );
+};
+
+export default ComposerActions;

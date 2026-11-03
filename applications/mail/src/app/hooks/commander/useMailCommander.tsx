@@ -14,6 +14,8 @@ import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
 import { IcStar } from '@proton/icons/icons/IcStar';
 import { IcTag } from '@proton/icons/icons/IcTag';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -23,8 +25,6 @@ import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import { useCategoriesShortcuts } from '../../components/categoryView/useCategoriesShortcuts';
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
-import { useOnCompose } from '../../containers/ComposeProvider';
-import { ComposeTypes } from '../composer/useCompose';
 
 export const useMailCommander = () => {
     const history = useHistory();

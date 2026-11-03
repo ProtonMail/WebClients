@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import type { IconComponent } from '@proton/icons/component';
+import useScheduleSendFeature from '@proton/mail-composer/components/composer/actions/scheduleSend/useScheduleSendFeature';
 import { getCategoryIconComponent } from '@proton/mail/features/categoriesView/CategoryIcon';
 import { getLabelFromCategoryId } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
@@ -16,7 +17,6 @@ import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { getStandardFolders } from '../../../../helpers/labels';
 import { categoryColorClassName } from '../../../categoryView/categoriesTabs/tabsInterface';
 import { useCategoriesView } from '../../../categoryView/useCategoriesView';
-import useScheduleSendFeature from '../../../composer/actions/scheduleSend/useScheduleSendFeature';
 import { buildFolderOption, folderReducer } from './advancesSearchFieldHelpers';
 
 interface ItemBase {

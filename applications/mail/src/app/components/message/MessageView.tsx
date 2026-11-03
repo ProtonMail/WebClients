@@ -2,6 +2,8 @@ import type { FocusEvent, FocusEventHandler, Ref, RefObject } from 'react';
 import { forwardRef, memo, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import type { MessageViewIcons } from '@proton/mail-message/helpers/message/icon';
 import { getReceivedStatusIcon, getSentStatusIconInfo } from '@proton/mail-message/helpers/message/icon';
 import type { MessageWithOptionalBody } from '@proton/mail-message/store/messages/messagesTypes';
@@ -16,11 +18,9 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { LOAD_RETRY_COUNT } from '../../constants';
-import { useOnCompose } from '../../containers/ComposeProvider';
 import { hasLabel, isUnread } from '../../helpers/elements';
 import { isElementReminded } from '../../helpers/snooze';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
-import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/useLoadImages';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';

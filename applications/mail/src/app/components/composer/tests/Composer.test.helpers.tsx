@@ -4,6 +4,7 @@ import type { RenderResult } from '@testing-library/react';
 import { fireEvent } from '@testing-library/react';
 
 import { mockDefaultBreakpoints } from '@proton/components/testing/mockUseActiveBreakpoint';
+import Composer from '@proton/mail-composer/components/composer/Composer';
 import type { DraftBodyWriterManager } from '@proton/mail-composer/containers/DraftBodyWriterProvider';
 import { DraftBodyWriterProvider, useDraftBodyWriters } from '@proton/mail-composer/containers/DraftBodyWriterProvider';
 import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
@@ -18,7 +19,6 @@ import { addApiKeys, apiKeys } from '../../../helpers/tests/crypto';
 import { waitForNoNotification, waitForNotification } from '../../../helpers/tests/helper';
 import { mailTestRender } from '../../../helpers/tests/render';
 import type { MailStore } from '../../../store/store';
-import Composer from '../Composer';
 
 // Fake timers fails for the complexe send action
 // These more manual trick is used to skip undo timing

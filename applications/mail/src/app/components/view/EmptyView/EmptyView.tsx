@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { getPlaceholderSrc } from '@proton/mail/helpers/getPlaceholderSrc';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -28,9 +30,7 @@ import noTrashSvgDark from '@proton/styles/assets/img/placeholders/trash-empty-c
 import noTrashSvgCool from '@proton/styles/assets/img/placeholders/trash-empty-cool-light.svg';
 import noTrashSvgWarm from '@proton/styles/assets/img/placeholders/trash-empty-warm-light.svg';
 
-import { useOnCompose } from '../../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import EnableEncryptedSearchModal from '../../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
 import ProtonPassPlaceholder from '../ProtonPassPlaceholder';
 import { EmptyViewWrapper } from './EmptyViewWrapper';

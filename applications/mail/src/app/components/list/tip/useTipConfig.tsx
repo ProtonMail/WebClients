@@ -11,6 +11,8 @@ import LabelsUpsellModal from '@proton/components/components/upsell/modals/Label
 import PmMeUpsellModal from '@proton/components/components/upsell/modals/PmMeUpsellModal';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import useShortDomainAddress from '@proton/components/hooks/mail/useShortDomainAddress';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
@@ -27,8 +29,6 @@ import {
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useOnCompose } from '../../../containers/ComposeProvider';
-import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { TipActionType } from '../../../models/tip';
 import { elements } from '../../../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../../../store/hooks';

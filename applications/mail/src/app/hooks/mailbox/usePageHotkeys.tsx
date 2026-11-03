@@ -2,13 +2,12 @@ import { useRef } from 'react';
 
 import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
 import { useHotkeys } from '@proton/hooks/useHotkeys';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { KeyboardKey } from '@proton/shared/lib/interfaces/Hotkeys';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
-
-import { useOnCompose } from '../../containers/ComposeProvider';
-import { ComposeTypes } from '../composer/useCompose';
 
 export interface PageHotkeysHandlers {
     onOpenShortcutsModal: () => void;

@@ -3,6 +3,7 @@ import { addHours } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import Composer from '@proton/mail-composer/components/composer/Composer';
 import type { PartialMessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
@@ -17,7 +18,6 @@ import {
 } from '../../../helpers/tests/crypto';
 import { clearAll, getDropdown, waitForNotification } from '../../../helpers/tests/helper';
 import { mailTestRender, tick } from '../../../helpers/tests/render';
-import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 
 loudRejection();

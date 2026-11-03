@@ -7,6 +7,8 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import type { HotkeyTuple } from '@proton/hooks/useHotkeys';
 import { useHotkeys } from '@proton/hooks/useHotkeys';
+import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
+import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -23,13 +25,11 @@ import {
     MESSAGE_FOLDER_DROPDOWN_ID,
     MESSAGE_LABEL_DROPDOWN_ID,
 } from '../../components/message/extrasHeader/constants';
-import { useOnCompose } from '../../containers/ComposeProvider';
 import { hasLabel, isStarred } from '../../helpers/elements';
 import type { Element } from '../../models/element';
 import { APPLY_LOCATION_TYPES } from '../actions/applyLocation/interface';
 import { useApplyLocation } from '../actions/applyLocation/useApplyLocation';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
-import { ComposeTypes } from '../composer/useCompose';
 
 enum ARROW_SCROLL_DIRECTIONS {
     UP = 0,

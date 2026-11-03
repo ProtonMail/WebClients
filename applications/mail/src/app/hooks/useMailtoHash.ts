@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 
+import { useOnMailTo } from '@proton/mail-composer/containers/ComposeProvider';
 import { parseMailtoParams } from '@proton/mail-composer/helpers/mailto';
 
 import { MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM } from '../constants';
-import { useOnMailTo } from '../containers/ComposeProvider';
 
 // e.g. `mailto=mailto:` — the search param followed by the mailto scheme
 const MAILTO_PREFIX = `${MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM}=`;

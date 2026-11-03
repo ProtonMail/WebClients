@@ -1,12 +1,12 @@
 import { fireEvent, screen } from '@testing-library/react';
 
+import Composer from '@proton/mail-composer/components/composer/Composer';
 import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
 
 import { clearAll, waitForSpyCall } from '../../../helpers/tests/helper';
 import { mailTestRender } from '../../../helpers/tests/render';
 import * as useSaveDraft from '../../../hooks/message/useSaveDraft';
-import Composer from '../Composer';
 import { ID, prepareMessage, props } from './Composer.test.helpers';
 
 jest.setTimeout(20000);
