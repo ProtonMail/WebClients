@@ -221,7 +221,7 @@ export const ScheduledTaskEditorModal = ({
                                 recurrenceRule={values.recurrenceRule}
                                 title={
                                     // translator: Label for the section configuring the recurrence rule of the scheduled task.
-                                    c('collider_2025:Label').t`When to run`
+                                    c('collider_2025:Label').t`Schedule`
                                 }
                             />
                             <p className="flex flex-nowrap items-center gap-2 m-0 mt-3 color-hint">
@@ -265,7 +265,7 @@ export const ScheduledTaskEditorModal = ({
                                         {
                                             // translator: Description for the auto-approve toggle to automatically approve the use of connectors (bridges to external systems/tools).
                                             c('collider_2025:Description')
-                                                .t`Use the connectors above without asking. Off: pause and notify me before each Ask tool.`
+                                                .t`Allow this task to use these tools without asking each time.`
                                         }
                                     </span>
                                 </div>

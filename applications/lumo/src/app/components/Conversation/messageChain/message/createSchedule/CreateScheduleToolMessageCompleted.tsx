@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { supportsDesktopScheduleReadOnly } from '@proton/lumo-api-client/core/desktop-tools';
+import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
@@ -134,9 +135,9 @@ export const CreateScheduleToolMessageCompleted = ({ draft }: { draft: CreateSch
                                 c('collider_2025:Title').t`Auto-approve`
                             }</span>
                             <span className="text-sm color-weak" id={`${id}-auto-approve-description`}>{
-                                // translator: Explains the Auto-approve toggle. Connectors provide access to external tools and services; "Off" means the toggle is switched off.
+                                // translator: Explains the Auto-approve toggle. ${LUMO_SHORT_APP_NAME} is the product name; selected tools provide access to external services.
                                 c('collider_2025:Description')
-                                    .t`Run without asking, using only the connectors you allow. Off: pause and notify you before each tool that requires confirmation.`
+                                    .t`Let ${LUMO_SHORT_APP_NAME} use selected tools automatically. When off, the task pauses for your approval before using a tool that requires confirmation.`
                             }</span>
                         </div>
                         <Toggle
