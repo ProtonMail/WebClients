@@ -1747,6 +1747,9 @@ importers:
       '@lexical/utils':
         specifier: 'catalog:'
         version: 0.31.2
+      '@proton-docs/realtime-sdk':
+        specifier: 0.8.1
+        version: 0.8.1(@types/node@24.19.0)(@typescript/typescript6@6.0.2)(yjs@13.6.27)
       '@proton/account':
         specifier: workspace:^
         version: link:../../packages/account
@@ -16608,6 +16611,11 @@ packages:
       react-dom: ^18.3.1
       y-protocols: ^1.0.6
       yjs: ^13.6.15
+
+  '@proton-docs/realtime-sdk@0.8.1':
+    resolution: {integrity: sha512-X+jA+AKSKURiHtNxNF0DvIqm+G0f9X9EeRVafqbWTh8DdxCETRBr7bddAkCtvztqqWeQHcMGaFpq2EtbcrKP3Q==}
+    peerDependencies:
+      yjs: ^13.5.0
 
   '@proton-docs/sheets-editor@0.1.0':
     resolution: {integrity: sha512-GUB1E6FGV3Eb9ZU+N+0XKjMO0KXTUryQ7Ma2s5X4v6gKnUUoSbkX8k8gwZ2WBuJV8SjaLBd07D8AMVFkgRHhUA==}
@@ -35946,6 +35954,17 @@ snapshots:
       ua-parser-js: 1.0.41
       uuid: 14.0.2
       y-protocols: 1.0.6(yjs@13.6.27)
+      yjs: 13.6.27
+    transitivePeerDependencies:
+      - '@types/node'
+      - typescript
+
+  '@proton-docs/realtime-sdk@0.8.1(@types/node@24.19.0)(@typescript/typescript6@6.0.2)(yjs@13.6.27)':
+    dependencies:
+      '@protontech/crypto': 2.2.0(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      fflate: 0.8.3
+      google-protobuf: 3.21.4
+      xstate: 5.33.2
       yjs: 13.6.27
     transitivePeerDependencies:
       - '@types/node'

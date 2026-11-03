@@ -9,7 +9,13 @@ import { Routes, Route, useSearchParams, Navigate } from 'react-router-dom-v5-co
 
 import { ApplicationProvider } from '~/utils/application-context'
 import { DocsNotificationsProvider } from '../__utils/notifications-context'
-import { DOCUMENT_CREATION_PATHS, DOCUMENT_EDITOR_PATH, DocsUrlContextProvider } from '~/utils/docs-url-bar'
+import {
+  DOCUMENT_CREATION_PATHS,
+  DOCUMENT_EDITOR_PATH,
+  DOCUMENT_V2_PATHS,
+  DocsUrlContextProvider,
+} from '~/utils/docs-url-bar'
+import { useRealtimeSdkEnabled } from '~/utils/flags'
 import { useInitializeApplication } from './useInitializeApplication'
 import { useCoreEventSubscription } from '~/drive-sdk/core-event-subscriber'
 import OpenTracer from '@proton/docs-shared/Tracer/Module'
@@ -58,13 +64,22 @@ function Content() {
 
 const HomepagePage = lazy(() => import('../(homepage)/recents/page'))
 const DocumentPage = lazy(() => import('../(document)/doc/page'))
+const DocumentPageV2 = lazy(() => import('../(document)/doc2/page'))
 
 type AppRoutesProps = { driveCompat: DriveCompat }
 
 function AppRoutes({ driveCompat }: AppRoutesProps) {
+  const isRealtimeSdkEnabled = useRealtimeSdkEnabled()
+
   const documentPage = (
     <Suspense>
       <DocumentPage driveCompat={driveCompat} />
+    </Suspense>
+  )
+
+  const documentPageV2 = (
+    <Suspense>
+      <DocumentPageV2 />
     </Suspense>
   )
 
@@ -80,6 +95,9 @@ function AppRoutes({ driveCompat }: AppRoutesProps) {
       {DOCUMENT_CREATION_PATHS.map((path) => (
         <Route key={path} path={path} element={documentPage} />
       ))}
+      {/* document on the realtime SDK, flagged; off, these paths fall through to the wildcard */}
+      {isRealtimeSdkEnabled &&
+        DOCUMENT_V2_PATHS.map((path) => <Route key={path} path={path} element={documentPageV2} />)}
       {/* homepage */}
       {HOMEPAGE_PATHS.map((path) => (
         <Route key={path} path={path} element={homepagePage} />

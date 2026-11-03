@@ -10,6 +10,7 @@ SDK switch flags:
 - DocsMoveModalDriveSDK - no dependencies
 - DocsInvitationsDriveSDK - no dependencies
 - DocsDriveCompatSDK - no dependencies
+- DocsRealtimeSdkEnabled - no dependencies
 
 Other flags:
 - DocsHomepageBulkTrash - requires DocsTrashWithDriveSDK
@@ -40,6 +41,10 @@ export function useInvitationsSdkEnabled() {
 
 export function useDriveCompatSDK() {
   return useFlag('DocsDriveCompatSDK')
+}
+
+export function useRealtimeSdkEnabled() {
+  return useFlag('DocsRealtimeSdkEnabled')
 }
 
 // Other flags
