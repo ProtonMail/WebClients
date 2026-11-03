@@ -348,6 +348,9 @@
       "Download logs": [
         "Registros de downloads"
       ],
+      "Download now": [
+        "Baixar agora"
+      ],
       "Download participant report": [
         "Baixar relatório de participantes"
       ],
@@ -429,6 +432,9 @@
       "Join and leave sounds": [
         "Sons de entrada e saída"
       ],
+      "Join from ${ MEET_APP_NAME } app": [
+        "Participar a partir do aplicativo do ${ MEET_APP_NAME }"
+      ],
       "Join in browser": [
         "Participar no navegador"
       ],
@@ -458,6 +464,9 @@
       ],
       "Lock meeting": [
         "Bloquear reunião"
+      ],
+      "Log audio output state": [
+        "Registrar o estado da saída de áudio"
       ],
       "Lower hand": [
         "Baixar mão"
@@ -2708,6 +2717,12 @@
       "Admitting": [
         "Admitindo"
       ],
+      "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
+        "Modo avançado: ajuste cada constante de desfoque e depois clique em Aplicar para recriar a pré-visualização. As substituições têm precedência sobre os valores de arquivos e do Unleash."
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Após a atualização, o Mac pode pedir uma senha. Digite a senha que você usa para desbloquear o Mac e clique em Sempre Permitir para ficar conectado. ${ learnMore }"
+      ],
       "Allow camera access to preview your background": [
         "Permitir que a câmera acesse o seu plano de fundo para pré-visualizá-lo"
       ],
@@ -2854,6 +2869,9 @@
       ],
       "End the meeting for everyone?": [
         "Finalizar reunião para todos?"
+      ],
+      "End to end encrypted chat": [
+        "Bate-papo criptografado de ponta a ponta."
       ],
       "End-to-end encryption is active for audio and video.": [
         "A criptografia de ponta a ponta está ativa para áudio e vídeo."
@@ -3172,6 +3190,9 @@
       ],
       "Please try again or try another browser": [
         "Tente novamente ou use outro navegador"
+      ],
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Atualize o ${ MEET_APP_NAME } para continuar usando o aplicativo. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Conexão ruim"
@@ -3987,6 +4008,69 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Erro ao iniciar Picture-in-Picture"
+      ]
+    },
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } e ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } para ${ endDateLabel }, ${ endTimeLabel }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } para ${ endTimeLabel }"
+      ],
+      "Repeats daily": [
+        "Repete diariamente"
+      ],
+      "Repeats every ${ interval } day": [
+        "Repete a cada ${ interval } dia",
+        "Repete a cada ${ interval } dias"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Repete a cada ${ interval } mês, no ${ ordinalDay }",
+        "Repete a cada ${ interval } meses, no ${ ordinalDay }"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Repete a cada ${ interval } semana, na(o) ${ weekdayName }",
+        "Repete a cada ${ interval } semanas, na(o) ${ weekdayName }"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Repete a cada ${ interval } ano, na(o) ${ monthDay }",
+        "Repete a cada ${ interval } anos, na(o) ${ monthDay }"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Repete a cada ${ weekdayName }"
+      ],
+      "Repeats every weekday": [
+        "Repete todos os dias da semana"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Repete a cada ano em ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Repete mensalmente"
+      ],
+      "Repeats weekly": [
+        "Repete semanalmente"
+      ],
+      "Repeats yearly": [
+        "Repete anualmente"
+      ],
+      "Today · ${ monthDay }": [
+        "Hoje · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Amanhã · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Repete a cada ${ interval } semana, na(o) ${ weekdayList }",
+        "Repete a cada ${ interval } semanas, na(o) ${ weekdayList }"
+      ],
+      "Repeats every ${ weekdayList }": [
+        "Repete a cada ${ weekdayList }"
       ]
     },
     "Notification": {

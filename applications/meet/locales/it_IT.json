@@ -8,11 +8,20 @@
       "(opens in new tab)": [
         "(si apre in una nuova scheda)"
       ],
+      "Camera off": [
+        "Videocamera spenta"
+      ],
       "camera off": [
         "fotocamera spenta"
       ],
+      "Camera on": [
+        "Telecamera accesa"
+      ],
       "camera on": [
         "fotocamera attiva"
+      ],
+      "host": [
+        "host"
       ],
       "Meeting controls": [
         "Controlli della riunione"
@@ -20,8 +29,17 @@
       "microphone muted": [
         "microfono disattivato"
       ],
+      "Microphone muted": [
+        "Muto"
+      ],
+      "Microphone on": [
+        "Microfono acceso"
+      ],
       "microphone on": [
         "microfono attivo"
+      ],
+      "speaking": [
+        "sta parlando"
       ]
     },
     "Accessibility announcement": {
@@ -344,6 +362,9 @@
       ],
       "Download logs": [
         "Scarica i log"
+      ],
+      "Download now": [
+        "Scarica ora"
       ],
       "Download participant report": [
         "Scarica il report dei partecipanti"
@@ -2534,6 +2555,9 @@
       ],
       "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Modalità avanzata: regola ogni costante di sfocatura, quindi fai clic su “Applica” per aggiornare l'anteprima. Le impostazioni personalizzate hanno la precedenza sui valori del file e su quelli di Unleash."
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Dopo l'aggiornamento, il Mac potrebbe richiedere una password. Digita la password che utilizzi per sbloccare il Mac, quindi fai clic su “Consenti sempre” per rimanere connesso. ${ learnMore }"
       ],
       "Allow camera access to preview your background": [
         "Consenti l'accesso alla fotocamera per l'anteprima dello sfondo"

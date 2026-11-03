@@ -8,11 +8,20 @@
       "(opens in new tab)": [
         "(wird in einem neuen Tab geöffnet)"
       ],
+      "Camera off": [
+        "Kamera AUS"
+      ],
       "camera off": [
         "Kamera aus"
       ],
+      "Camera on": [
+        "Kamera EIN"
+      ],
       "camera on": [
         "Kamera an"
+      ],
+      "host": [
+        "Organisator"
       ],
       "Meeting controls": [
         "Meetingsteuerung"
@@ -20,8 +29,17 @@
       "microphone muted": [
         "Mikrofon stumm geschaltet"
       ],
+      "Microphone muted": [
+        "Mikrofon stummgeschaltet"
+      ],
+      "Microphone on": [
+        "Mikrofon EIN"
+      ],
       "microphone on": [
         "Mikrofon an"
+      ],
+      "speaking": [
+        "spricht"
       ]
     },
     "Accessibility announcement": {
@@ -347,6 +365,9 @@
       ],
       "Download logs": [
         "Protokolle herunterladen"
+      ],
+      "Download now": [
+        "Jetzt herunterladen"
       ],
       "Download participant report": [
         "Teilnehmerbericht herunterladen"
@@ -2751,6 +2772,9 @@
       "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Erweiterter Modus: Passe jede Unschärfekonstante an und wähle dann „Anwenden\", um die Vorschau neu zu erstellen. Überschreibungen haben Vorrang vor Datei- und Unleash-Werten."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Nach dem Aktualisieren werden Sie möglicherweise aufgefordert, ein Passwort einzugeben. Geben Sie das Passwort ein, mit dem Sie Ihren Mac entsperren, und klicken Sie anschließend auf „Immer zulassen“, um angemeldet zu bleiben. ${ learnMore }"
+      ],
       "Allow camera access to preview your background": [
         "Der Kamera den Zugriff erlauben, um eine Vorschau deines Hintergrunds anzuzeigen"
       ],
@@ -3233,6 +3257,9 @@
       ],
       "Please try again or try another browser": [
         "Bitte versuche es erneut oder probiere es mit einem anderen Browser"
+      ],
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Bitte ${ MEET_APP_NAME } aktualisieren, um die App weiterhin nutzen zu können. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Schlechte Verbindung"
@@ -4060,6 +4087,72 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Fehler beim Starten des Bild-im-Bild-Modus"
+      ]
+    },
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } und ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } bis ${ endDateLabel }, ${ endTimeLabel }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } bis ${ endTimeLabel }"
+      ],
+      "Repeats daily": [
+        "Wiederholt sich täglich"
+      ],
+      "Repeats every ${ interval } day": [
+        "Wiederholt sich alle ${ interval } Tage",
+        "Wiederholt sich alle ${ interval } Tage"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Wiederholt sich alle ${ interval } Monat am ${ ordinalDay }",
+        "Wiederholt sich alle ${ interval } Monaten am ${ ordinalDay }"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Wiederholt sich alle ${ interval } Woche am ${ weekdayName }",
+        "Wiederholt sich alle ${ interval } Wochen am ${ weekdayName }"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Wiederholt sich alle ${ interval } Jahre am ${ monthDay }",
+        "Wiederholt sich alle ${ interval } Jahre am ${ monthDay }"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Wiederholt sich jeden ${ weekdayName }"
+      ],
+      "Repeats every weekday": [
+        "Wiederholt sich an jedem Wochentag"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Wiederholt sich jedes Jahr am ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Wiederholt sich monatlich"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Wiederholt sich am ${ ordinalDay } jedes Monats"
+      ],
+      "Repeats weekly": [
+        "Wiederholt sich wöchentlich"
+      ],
+      "Repeats yearly": [
+        "Wiederholt sich jährlich"
+      ],
+      "Today · ${ monthDay }": [
+        "Heute · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Morgen · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Wiederholt sich alle ${ interval } Wochen an ${ weekdayList }",
+        "Wiederholt sich alle ${ interval } Wochen an ${ weekdayList }"
+      ],
+      "Repeats every ${ weekdayList }": [
+        "Wiederholt sich alle ${ weekdayList }"
       ]
     },
     "Notification": {

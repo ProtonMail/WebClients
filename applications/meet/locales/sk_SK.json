@@ -354,6 +354,9 @@
       "Download logs": [
         "Záznamy sťahovania"
       ],
+      "Download now": [
+        "Stiahnuť teraz"
+      ],
       "Download participant report": [
         "Stiahnuť správu o účastníkoch"
       ],
@@ -2785,6 +2788,9 @@
       "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Pokročilý režim: nastavte všetky konštanty rozostrenia a potom kliknite na „Použiť“, aby sa znovu vygeneroval náhľad. Tieto nastavenia majú prednosť pred hodnotami v súbore a v nástroji Unleash."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Po aktualizácii vás Mac môže požiadať o zadanie hesla. Zadajte heslo, ktoré používate na odomknutie Macu, a potom kliknite na možnosť „Vždy povoliť“, aby ste zostali prihlásení. ${ learnMore }"
+      ],
       "Allow camera access to preview your background": [
         "Povoľte kamere prístup k náhľadu vášho pozadia"
       ],
@@ -3267,6 +3273,9 @@
       ],
       "Please try again or try another browser": [
         "Skúste to znova alebo použite iný prehliadač, prosím"
+      ],
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Ak chcete aplikáciu naďalej používať, aktualizujte prosím ${ MEET_APP_NAME }. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Slabé pripojenie"
@@ -4102,6 +4111,82 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Nepodarilo sa spustiť obraz v obraze"
+      ]
+    },
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } a ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } do ${ endDateLabel }, ${ endTimeLabel }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } do ${ endTimeLabel }"
+      ],
+      "Repeats daily": [
+        "Opakuje sa denne"
+      ],
+      "Repeats every ${ interval } day": [
+        "Opakuje sa každý ${ interval } deň",
+        "Opakuje sa každé ${ interval } dni",
+        "Opakuje sa každých ${ interval } dní",
+        "Opakuje sa každých ${ interval } dní"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Opakuje sa každý ${ interval } mesiac v ${ ordinalDay }",
+        "Opakuje sa každé ${ interval } mesiace v ${ ordinalDay }",
+        "Opakuje sa každých ${ interval } mesiacov, vždy v ${ ordinalDay }",
+        "Opakuje sa každých ${ interval } mesiacov, vždy v ${ ordinalDay }"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Opakuje sa každý ${ interval } týždeň v ${ weekdayName }",
+        "Opakuje sa každé ${ interval } týždne v ${ weekdayName }",
+        "Opakuje sa každých ${ interval } týždňov v ${ weekdayName }",
+        "Opakuje sa každých ${ interval } týždňov v ${ weekdayName }"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Opakuje sa každý ${ interval } rok v ${ monthDay }",
+        "Opakuje sa každé ${ interval } roky v ${ monthDay }",
+        "Opakuje sa každých ${ interval } rokov v ${ monthDay }",
+        "Opakuje sa každých ${ interval } rokov v ${ monthDay }"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Opakuje sa každý ${ weekdayName }"
+      ],
+      "Repeats every weekday": [
+        "Opakuje sa každý pracovný deň"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Opakuje sa každý rok v ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Opakuje sa mesačne"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Opakuje sa v ${ ordinalDay } každého mesiaca"
+      ],
+      "Repeats weekly": [
+        "Opakuje sa týždenne"
+      ],
+      "Repeats yearly": [
+        "Opakuje sa ročne"
+      ],
+      "Today · ${ monthDay }": [
+        "Dnes · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Zajtra · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Opakuje sa každý ${ interval } týždeň v ${ weekdayList }",
+        "Opakuje sa každých ${ interval } týždňov v ${ weekdayList }",
+        "Opakuje sa každé ${ interval } týždne v ${ weekdayList }",
+        "Opakuje sa každé ${ interval } týždne v ${ weekdayList }"
+      ],
+      "Repeats every ${ weekdayList }": [
+        "Opakuje sa každý ${ weekdayList }"
       ]
     },
     "Notification": {
