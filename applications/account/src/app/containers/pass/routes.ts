@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
+import { getPassOrganizationAccess, getPassPageAvailability } from '@proton/console/pass/getPassOrganizationAccess';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { IcChartLine } from '@proton/icons/icons/IcChartLine';
 import { IcCheckmarkTriple } from '@proton/icons/icons/IcCheckmarkTriple';
@@ -14,12 +15,8 @@ export const getPassAppRoutes = ({ app, organization, permissions, entitlements 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
 
-    // MSP subsidiary orgs don't own their subscription (it belongs to the MSP manager), so `subscription`
-    // resolves to the free/dummy value for them. Workaround: MSP currently only runs on Pass Pro, which is
-    // already a B2B plan, so treat subsidiaries as such directly (same pattern as organization/routes.ts).
-    const isMspSubsidiary = !!organization?.IsSubsidiary;
-    const hasPassOrBundleB2B = entitlements.isPassB2B || isMspSubsidiary;
-    const isOrganizationPolicyUpgradeRequired = !isMspSubsidiary && !entitlements.hasOrganizationPolicy;
+    const { isPolicyUpgradeRequired } = getPassOrganizationAccess({ organization, entitlements });
+    const pageAvailability = getPassPageAvailability({ organization, entitlements, permissions });
     const canUpgradeToPassActivityLog = entitlements.isPassB2BWithoutActivityMonitor;
 
     return <const>{
@@ -58,9 +55,8 @@ export const getPassAppRoutes = ({ app, organization, permissions, entitlements 
                 text: c('Title').t`Policies`,
                 to: '/policies',
                 icon: IcCheckmarkTriple,
-                available:
-                    (hasOrganizationKey || hasOrganization) && permissions['pass.policy.read'] && hasPassOrBundleB2B,
-                upgradeRequired: isOrganizationPolicyUpgradeRequired,
+                available: pageAvailability.policies,
+                upgradeRequired: isPolicyUpgradeRequired,
                 subsections: [
                     {
                         id: 'policies',
@@ -72,9 +68,8 @@ export const getPassAppRoutes = ({ app, organization, permissions, entitlements 
                 text: c('Title').t`Reports`,
                 to: '/reports',
                 icon: IcChartLine,
-                available:
-                    (hasOrganizationKey || hasOrganization) && permissions['pass.report.read'] && hasPassOrBundleB2B,
-                upgradeRequired: isOrganizationPolicyUpgradeRequired,
+                available: pageAvailability.reports,
+                upgradeRequired: isPolicyUpgradeRequired,
                 subsections: [
                     {
                         id: 'reports',
