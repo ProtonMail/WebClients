@@ -20,11 +20,10 @@ describe('extractSubscriptionSearchParams', () => {
         expect(result.fixedCycle).toBe(true);
     });
 
-    it('maps legacy type, edit, and offer params', () => {
+    it('maps legacy type and edit params', () => {
         expect(extractSubscriptionSearchParams('?plan=mail2022&type=offer').fixedPlan).toBe(true);
         expect(extractSubscriptionSearchParams('?plan=mail2022&type=offer').fixedCycle).toBe(true);
         expect(extractSubscriptionSearchParams('?plan=mail2022&edit=disable').fixedPlan).toBe(true);
-        expect(extractSubscriptionSearchParams('?plan=mail2022&offer=anything').fixedCycle).toBe(true);
         expect(extractSubscriptionSearchParams('?plan=mail2022&type=offer&edit=enable').fixedCycle).toBeUndefined();
     });
 
@@ -210,5 +209,38 @@ describe('extractSubscriptionSearchParams and getSubscriptionSearchParamsString'
         const rebuilt = getSubscriptionSearchParamsString(extractSubscriptionSearchParams(search) as any);
 
         expect(rebuilt).toBe(search);
+    });
+});
+
+describe('offer search param', () => {
+    it('parses a named offer without fixing the cycle', () => {
+        expect(extractSubscriptionSearchParams('?plan=mail2022&offer=SUMMITDEAL')).toMatchObject({
+            offer: 'SUMMITDEAL',
+            fixedCycle: undefined,
+        });
+    });
+
+    it('keeps type=offer meaning fixedCycle', () => {
+        expect(extractSubscriptionSearchParams('?plan=mail2022&type=offer')).toMatchObject({
+            fixedCycle: true,
+        });
+    });
+
+    it('ignores the coupon when an offer is present, in either order', () => {
+        expect(extractSubscriptionSearchParams('?offer=SUMMITDEAL&coupon=X')).toMatchObject({
+            offer: 'SUMMITDEAL',
+            coupon: undefined,
+        });
+        expect(extractSubscriptionSearchParams('?coupon=X&offer=SUMMITDEAL')).toMatchObject({
+            offer: 'SUMMITDEAL',
+            coupon: undefined,
+        });
+    });
+
+    it('round-trips the offer name and drops the coupon when building', () => {
+        const search = getSubscriptionSearchParamsString({ plan: PLANS.MAIL, offer: 'SUMMITDEAL', coupon: 'X' });
+
+        expect(new URLSearchParams(search).get('coupon')).toBeNull();
+        expect(extractSubscriptionSearchParams(search)).toMatchObject({ offer: 'SUMMITDEAL', coupon: undefined });
     });
 });

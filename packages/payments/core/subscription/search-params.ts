@@ -27,6 +27,8 @@ type SubscriptionSearchParamsBase = {
      * disallow the user to change the plan via UI
      */
     fixedPlan?: true;
+    /** Name of a private offer, e.g. SUMMITDEAL. Mutually exclusive with `coupon`: the parser and builder drop `coupon` when an offer is present. */
+    offer?: string;
     /**
      * @deprecated use fixedPlan=true
      */
@@ -35,10 +37,6 @@ type SubscriptionSearchParamsBase = {
      * @deprecated use fixedCycle=true && fixedPlan=true
      */
     type?: 'offer';
-    /**
-     * @deprecated use fixedCycle=true
-     */
-    offer?: true;
     /**
      * @deprecated use totalLumo or totalMeet instead
      */
@@ -107,19 +105,19 @@ const getTotalParams = (params: URLSearchParams, addons: (keyof TotalParams)[] =
  */
 export const extractSubscriptionSearchParams = (
     search: string | URLSearchParams
-): Omit<SubscriptionSearchParams, 'billing' | 'addon' | 'edit' | 'type' | 'offer'> => {
+): Omit<SubscriptionSearchParams, 'billing' | 'addon' | 'edit' | 'type'> => {
     const params = new URLSearchParams(search);
 
-    const coupon = params.get('coupon') || undefined;
+    const offer = params.get('offer') || undefined;
+    const coupon = offer ? undefined : params.get('coupon') || undefined;
 
     const rawFixedPlan = params.has('fixedPlan');
     const rawFixedCycle = params.has('fixedCycle');
     const rawEdit = params.get('edit');
     const edit = ['enable', 'disable'].find((e) => e === rawEdit) ?? undefined;
-    const offer = params.has('offer');
     const typeOffer = params.get('type') === 'offer';
     const fixedPlan = rawFixedPlan || typeOffer || edit === 'disable' || undefined;
-    const fixedCycle = rawFixedCycle || (edit !== 'enable' && (typeOffer || offer)) || undefined;
+    const fixedCycle = rawFixedCycle || (edit !== 'enable' && typeOffer) || undefined;
 
     const minimumCycle = getValidCycle(Number(params.get('minimumCycle')));
     const maximumCycle = getValidCycle(Number(params.get('maximumCycle')));
@@ -152,6 +150,7 @@ export const extractSubscriptionSearchParams = (
 
     const partialParams = {
         coupon,
+        ...(offer && { offer }),
         fixedPlan,
         fixedCycle,
         minimumCycle,
@@ -206,10 +205,10 @@ export const getSubscriptionSearchParamsString = (
         target,
         plan: rawPlan,
         upsellRef,
+        offer,
         // deprecated
         edit,
         type,
-        offer,
         addon,
         billing,
         ...othersAndTotals
@@ -264,9 +263,10 @@ export const getSubscriptionSearchParamsString = (
     }
 
     const polishedParams = {
-        coupon,
+        coupon: offer ? undefined : coupon,
+        offer: offer || undefined,
         fixedPlan: fixedPlan || type === 'offer' || edit === 'disable' || undefined,
-        fixedCycle: fixedCycle || (edit !== 'enable' && (type === 'offer' || offer)) || undefined,
+        fixedCycle: fixedCycle || (edit !== 'enable' && type === 'offer') || undefined,
         minimumCycle,
         maximumCycle,
         upsellRef,

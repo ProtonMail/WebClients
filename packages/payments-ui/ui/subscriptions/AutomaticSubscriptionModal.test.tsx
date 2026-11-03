@@ -236,7 +236,6 @@ describe('getParameters', () => {
         it.each([
             ['fixedCycle', '?plan=mail2022&fixedCycle=true'],
             ['type=offer (deprecated)', '?plan=mail2022&type=offer'],
-            ['offer present (deprecated)', '?plan=mail2022&offer=anything'],
         ])('is true for %s', (_label, search) => {
             expect(callGetParameters(search).disableCycleSelector).toBe(true);
         });
