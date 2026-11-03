@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
 import { useLumoDispatch, useLumoMemoSelector } from '../redux/hooks';
-import { selectConversationHasGeneratedImages, selectSpaceById } from '../redux/selectors';
+import { selectSpaceById } from '../redux/selectors';
 import { locallyDeleteConversationFromLocalRequest } from '../redux/slices/core/conversations';
 import { locallyDeleteSpaceFromLocalRequest } from '../redux/slices/core/spaces';
 import type { Conversation } from '../types';
@@ -30,8 +30,6 @@ export const useConversationDelete = ({ conversation, navigateAfterDelete = true
         modalProps: confirmDeleteModalProps,
     } = useModalStateObject();
     const space = useLumoMemoSelector(selectSpaceById, [spaceId]);
-    const hasGeneratedImages = useLumoMemoSelector(selectConversationHasGeneratedImages, [conversationId]);
-
     const openConfirmationModal = useCallback(() => {
         openConfirmDeleteModal(true);
     }, [openConfirmDeleteModal]);
@@ -40,7 +38,8 @@ export const useConversationDelete = ({ conversation, navigateAfterDelete = true
         sendConversationDeleteEvent();
 
         // Project spaces and any space with more than one chat only delete the conversation (legacy 1:1 was space delete)
-        const deleteConversationOnly = space?.spaceType === SpaceType.Project || space?.spaceType === SpaceType.Schedule;
+        const deleteConversationOnly =
+            space?.spaceType === SpaceType.Project || space?.spaceType === SpaceType.Schedule;
 
         try {
             if (deleteConversationOnly) {
@@ -75,6 +74,5 @@ export const useConversationDelete = ({ conversation, navigateAfterDelete = true
         showConfirmDeleteModal,
         confirmDeleteModalProps,
         handleDelete,
-        hasGeneratedImages,
     };
 };

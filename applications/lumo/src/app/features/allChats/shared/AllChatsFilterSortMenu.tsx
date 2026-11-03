@@ -20,6 +20,7 @@ interface AllChatsFilterSortMenuProps {
     onSortFieldChange: (value: ChatHistoryDateField) => void;
     className?: string;
     forIcon?: boolean;
+    excludedFilters?: AllChatsFilterValue[];
 }
 
 export const AllChatsFilterSortMenu = ({
@@ -29,6 +30,7 @@ export const AllChatsFilterSortMenu = ({
     onSortFieldChange,
     className,
     forIcon = false,
+    excludedFilters,
 }: AllChatsFilterSortMenuProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const anchorRef = useRef<HTMLButtonElement>(null);
@@ -74,6 +76,7 @@ export const AllChatsFilterSortMenu = ({
                     onFilterChange={onFilterChange}
                     sortField={sortField}
                     onSortFieldChange={onSortFieldChange}
+                    excludedFilters={excludedFilters}
                     onItemSelect={() => {
                         setIsOpen(false);
                     }}

@@ -291,35 +291,6 @@ export const selectMessageHasGeneratedImages =
         return messageHasGeneratedImages(message, state.attachments);
     };
 
-export const selectConversationHasGeneratedImages =
-    (conversationId: ConversationId | null | undefined): LumoSelector<boolean> =>
-    (state) => {
-        if (!conversationId) {
-            return false;
-        }
-
-        const messages = selectMessagesByConversationId(conversationId)(state);
-        return Object.values(messages).some((message) => messageHasGeneratedImages(message, state.attachments));
-    };
-
-export const selectConversationsHaveGeneratedImages =
-    (conversationIds: ConversationId[]): LumoSelector<boolean> =>
-    (state) => {
-        if (conversationIds.length === 0) {
-            return false;
-        }
-
-        const conversationIdSet = new Set(conversationIds);
-        return Object.values(state.messages).some(
-            (message) =>
-                conversationIdSet.has(message.conversationId) && messageHasGeneratedImages(message, state.attachments)
-        );
-    };
-
-export const selectAnyGeneratedImages = createSelector([selectMessages, selectAttachments], (messages, attachments) =>
-    Object.values(messages).some((message) => messageHasGeneratedImages(message, attachments))
-);
-
 /** Schedule details keyed by schedule space ID. */
 export type ScheduleMap = Record<SpaceId, ScheduleDetails>;
 
