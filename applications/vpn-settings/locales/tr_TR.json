@@ -5485,6 +5485,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "İlke adının uzunluğu 3 ile 40 karakter arasında olmalıdır."
       ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Toplam tutar hesaplanamadı. Yeniden denemek için tutarı değiştirin."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Dış hesabınızda çok fazla klasör var. Lütfen bazı klasörleri silmek için içe aktarma işlemini özelleştirin."
       ],
@@ -11077,6 +11080,9 @@
       "To: ${ toEmail }": [
         "Kime: ${ toEmail }"
       ],
+      "Total": [
+        "Toplam"
+      ],
       "Two-password mode": [
         "İki parola kipi"
       ],
@@ -14075,6 +14081,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Yalnızca bir ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } satın alınabilir."
       ],
+      "Paid from your account credit.": [
+        "Hesabınızdaki krediden ödendi."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "${ IDEAL_WERO_BRAND_NAME } ile öde"
       ],
@@ -14237,12 +14246,6 @@
       "Your account is too old for the Born Private initiative.": [
         "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "${ IDEAL_WERO_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
-      ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
       ],
@@ -14291,7 +14294,7 @@
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
       "Credits will be added to your balance": [
-        "Kalan kredi bakiyenize eklenecek"
+        "Krediler hesabınızın kalan tutarına eklenecek"
       ]
     },
     "Payments.InfoBanner": {

@@ -5485,6 +5485,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Der Name der Richtlinie muss zwischen 3 und 40 Zeichen lang sein."
       ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Der Gesamtbetrag konnte nicht berechnet werden. Ändere den Betrag und versuche es erneut."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Es gibt zu viele Ordner in deinem externen Konto. Bitte passe den Import an, um einige Ordner zu löschen."
       ],
@@ -11077,6 +11080,9 @@
       "To: ${ toEmail }": [
         "An: ${ toEmail }"
       ],
+      "Total": [
+        "Gesamt"
+      ],
       "Two-password mode": [
         "Zwei-Passwort-Modus"
       ],
@@ -14075,6 +14081,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Es kann nur ein ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } erworben werden."
       ],
+      "Paid from your account credit.": [
+        "Die Zahlung erfolgt über dein Kontoguthaben."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Mit ${ IDEAL_WERO_BRAND_NAME } bezahlen"
       ],
@@ -14236,12 +14245,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Dein Konto ist zu alt für die „Born Private“-Initiative."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_WERO_BRAND_NAME } nur Zahlungen in Euro unterstützt."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."

@@ -2617,6 +2617,9 @@
       "Your address has changed": [
         "Ваш адрас змяніўся"
       ],
+      "Your administrator can give you a new address.": [
+        "Ваш адміністратар можа даць вам новы адрас."
+      ],
       "Your new address": [
         "Ваш новы адрас"
       ],
@@ -4818,6 +4821,9 @@
       ],
       "Recover data": [
         "Аднаўленне даных"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Аднавіце свае даныя перад дадаваннем новага кантакту."
       ],
       "Recovery approved": [
         "Аднаўленне зацверджана"
@@ -9690,6 +9696,9 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
       ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Толькі асноўны адрас электроннай пошты ${ primaryEmailElement } і ваша імя карыстальніка ${ usernameElement } можна будзе выкарыстоўваць для ўваходу, калі ўваход забаронены. Вашы іншыя адрасы нельга будзе звязаць з вашым уліковым запісам, нават калі нехта будзе ведаць пра іх."
+      ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ваша падпіска не будзе падоўжана пасля скасавання, але вы ўсё яшчэ зможаце атрымліваць асалоду ад пераваг тарыфнага плана пакуль не завершыцца перыяд падпіскі. Пасля гэтага, ваша падпіска будзе паніжана да тарыфнага плана ${ BRAND_NAME } Free"
       ],
@@ -11071,6 +11080,9 @@
       ],
       "Require password check-ins": [
         "Патрабуе рэгістрацыі пароля"
+      ],
+      "Restrict sign-in to email address": [
+        "Абмежаваць уваход з адрасам электроннай пошты"
       ],
       "Restrict sign-in to primary email address": [
         "Абмежаваць уваход з асноўным адрасам электроннай пошты"
@@ -14405,12 +14417,6 @@
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Ваша валюта была зменена на еўра (€), бо ${ IDEAL_WERO_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
-      ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
       ],
@@ -15755,6 +15761,12 @@
         "${ memberCount } новых удзельнікаў",
         "${ memberCount } новых удзельнікаў"
       ],
+      "${ numberOfCleanUps } clean up action required": [
+        "Патрабуецца ${ numberOfCleanUps } дзеянне пры ачыстцы",
+        "Патрабуецца ${ numberOfCleanUps } дзеянні пры ачыстцы",
+        "Патрабуецца ${ numberOfCleanUps } дзеянняў пры ачыстцы",
+        "Патрабуецца ${ numberOfCleanUps } дзеянняў пры ачыстцы"
+      ],
       "${ numberOfPendingGroups } group synced": [
         "${ numberOfPendingGroups } група сінхранізавана",
         "${ numberOfPendingGroups } групы сінхранізаваны",
@@ -15796,6 +15808,9 @@
       ],
       "Approve changes from your identity provider": [
         "Ухваліць змяненні ад вашага пастаўшчыка пасведчанняў"
+      ],
+      "Approve permission changes for your organization": [
+        "Ухваліце змены дазволаў для сваёй арганізацыі"
       ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Неабходна канчатковае ўхваленне, каб даць доступ паміж усімі сэрвісамі ${ BRAND_NAME }."

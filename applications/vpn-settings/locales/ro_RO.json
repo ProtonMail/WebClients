@@ -5531,6 +5531,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Numele regulei trebuie să aibă între 3 și 40 de caractere."
       ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Totalul nu a putut fi calculat. Modificați suma pentru a reîncerca."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Aveți prea multe foldere în contul extern. Modificați opțiunile de importare pentru a șterge unele foldere."
       ],
@@ -11217,6 +11220,9 @@
       "To: ${ toEmail }": [
         "Către: ${ toEmail }"
       ],
+      "Total": [
+        "Total"
+      ],
       "Two-password mode": [
         "Mod cu două parole"
       ],
@@ -14267,6 +14273,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Poate fi achiziționat doar un singur plan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "Paid from your account credit.": [
+        "Plătit din creditul contului."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Plata cu ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -14434,12 +14443,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Contul este prea vechi pentru inițiativa „Born Private”."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_WERO_BRAND_NAME } acceptă doar plăți în euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
