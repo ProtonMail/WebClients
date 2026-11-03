@@ -2,6 +2,7 @@ import { type Dispatch, type MutableRefObject, type SetStateAction, useCallback,
 import { useHistory } from 'react-router-dom';
 
 import { useRoomContext } from '@livekit/components-react';
+import { logger } from '@protontech/logger';
 import type { Room } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -321,6 +322,7 @@ export const useJoinFlow = ({
             joinBlockedRef.current = false;
 
             const { code } = getApiError(error);
+            logger.info('[telemetry] logJoinedRoomFailed', { code });
 
             // Log failed room join
             if (isMeetClientMetricsLogEnabled) {
