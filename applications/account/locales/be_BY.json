@@ -3885,6 +3885,9 @@
       "Your address has changed": [
         "Ваш адрас змяніўся"
       ],
+      "Your administrator can give you a new address.": [
+        "Ваш адміністратар можа даць вам новы адрас."
+      ],
       "Your new address": [
         "Ваш новы адрас"
       ],
@@ -7013,6 +7016,9 @@
       "Recover data now": [
         "Аднавіць даныя"
       ],
+      "Recover your data before adding a new contact.": [
+        "Аднавіце свае даныя перад дадаваннем новага кантакту."
+      ],
       "Recovery approved": [
         "Аднаўленне зацверджана"
       ],
@@ -7491,6 +7497,9 @@
       "Failed to get inviter keys": [
         "Не ўдалося атрымаць ключы запрашэння"
       ],
+      "Failed to get the organization domains": [
+        "Не ўдалося атрымаць дамены арганізацыі"
+      ],
       "Failed to load OAuth": [
         "Не ўдалося загрузіць OAuth"
       ],
@@ -7646,6 +7655,12 @@
       ],
       "Missing key packet": [
         "Адсутнічае пакет ключоў"
+      ],
+      "Missing organization private key": [
+        "Адсутнічае закрыты ключ арганізацыі"
+      ],
+      "Missing organization public key": [
+        "Адсутнічае адкрыты ключ арганізацыі"
       ],
       "Missing signature": [
         "Адсутнічае подпіс"
@@ -10626,6 +10641,9 @@
       "(formerly Twitter)": [
         "(раней вядомы як Twitter)"
       ],
+      "**${ applicationName }** requested to sign in.": [
+        "**${ applicationName }** запытвае ўваход."
+      ],
       "**${ appName }** is not available for your account.": [
         "**${ appName }** недаступна для вашага ўліковага запісу."
       ],
@@ -11457,6 +11475,9 @@
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
       ],
+      "DKIM adds a digital signature to each email so recipients can verify that the message really came from your domain and was not altered in transit. Without it, messages may be treated as less trustworthy.": [
+        "DKIM дадае лічбавы подпіс да кожнага ліста, каб атрымальнікі маглі спраўдзіць, што паведамленне сапраўды паступіла з вашага дамена і не было зменена пры перадачы. Без гэтага спосабу спраўджання паведамленні могуць лічыцца менш надзейнымі."
+      ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
         "DKIM дазваляе ${ BRAND_NAME } крыптаграфічна падпісваць вашы электронныя лісты і прадухіляць падробку вашай электроннай пошты зламыснікамі. Пераканайцеся, што вы дадалі наступныя тры запісы CNAME у сваю кансоль DNS (яны размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен)."
       ],
@@ -12156,6 +12177,9 @@
       "Invited": [
         "Запрошаны"
       ],
+      "IP address: ${ IP }": [
+        "IP-адрас: ${ IP }"
+      ],
       "It can take up to 24 hours for these changes to propagate.": [
         "Гэтыя змены ўвойдуць у сілу на працягу 24 гадзін."
       ],
@@ -12455,6 +12479,9 @@
       ],
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
+      ],
+      "Not added to ${ BRAND_NAME }": [
+        "Не дададзена ў ${ BRAND_NAME }"
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Сістэма не змагла вызначыць аўтаматычна? Выберыце пастаўшчыка са спіса ўручную."
@@ -13835,6 +13862,9 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Калі апавяшчэнні ўключаны, то будуць адпраўляцца абвесткі на ваш адрас аднаўлення, калі ў вашай паштовай скрыні ${ MAIL_APP_NAME } з'яўляюцца новыя паведамленні."
+      ],
+      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Толькі асноўны адрас электроннай пошты ${ primaryEmailElement } і ваша імя карыстальніка ${ usernameElement } можна будзе выкарыстоўваць для ўваходу, калі ўваход забаронены. Вашы іншыя адрасы нельга будзе звязаць з вашым уліковым запісам, нават калі нехта будзе ведаць пра іх."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ваша падпіска не будзе падоўжана пасля скасавання, але вы ўсё яшчэ зможаце атрымліваць асалоду ад пераваг тарыфнага плана пакуль не завершыцца перыяд падпіскі. Пасля гэтага, ваша падпіска будзе паніжана да тарыфнага плана ${ BRAND_NAME } Free"
@@ -16320,6 +16350,9 @@
       "Reserved email address": [
         "Зарэзерваваны адрас электроннай пошты"
       ],
+      "Restrict sign-in to email address": [
+        "Абмежаваць уваход з адрасам электроннай пошты"
+      ],
       "Restrict sign-in to primary email address": [
         "Абмежаваць уваход з асноўным адрасам электроннай пошты"
       ],
@@ -17185,6 +17218,9 @@
       ],
       "Visit our support site": [
         "Наведаць наш сайт падтрымкі"
+      ],
+      "Want to import email, calendar and contacts?": [
+        "Хочаце імпартаваць лісты, календары і кантакты?"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Чым адрозніваюцца пратаколы UDP і TCP?"
@@ -21034,12 +21070,6 @@
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Ваша валюта была зменена на еўра (€), бо ${ IDEAL_WERO_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
-      ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
       ],
@@ -22648,6 +22678,12 @@
         "${ memberCount } новых удзельнікаў",
         "${ memberCount } новых удзельнікаў"
       ],
+      "${ numberOfCleanUps } clean up action required": [
+        "Патрабуецца ${ numberOfCleanUps } дзеянне пры ачыстцы",
+        "Патрабуецца ${ numberOfCleanUps } дзеянні пры ачыстцы",
+        "Патрабуецца ${ numberOfCleanUps } дзеянняў пры ачыстцы",
+        "Патрабуецца ${ numberOfCleanUps } дзеянняў пры ачыстцы"
+      ],
       "${ numberOfPendingGroups } group synced": [
         "${ numberOfPendingGroups } група сінхранізавана",
         "${ numberOfPendingGroups } групы сінхранізаваны",
@@ -22692,6 +22728,9 @@
       ],
       "Approve changes from your identity provider": [
         "Ухваліць змяненні ад вашага пастаўшчыка пасведчанняў"
+      ],
+      "Approve permission changes for your organization": [
+        "Ухваліце змены дазволаў для сваёй арганізацыі"
       ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Неабходна канчатковае ўхваленне, каб даць доступ паміж усімі сэрвісамі ${ BRAND_NAME }."
@@ -26246,6 +26285,9 @@
       "Allocate storage": [
         "Вылучэнне аб'ёму ў сховішчы"
       ],
+      "Allow access to connect your Gmail": [
+        "Дазвольце доступ, каб падключыць свой Gmail"
+      ],
       "Already have multiple accounts?": [
         "У вас некалькі ўліковых запісаў?"
       ],
@@ -26444,6 +26486,9 @@
       "Confirm": [
         "Пацвердзіць"
       ],
+      "Confirm sign in": [
+        "Пацверджанне ўваходу"
+      ],
       "Confirm where to sign in": [
         "Пацвердзіце, дзе ўваходзіць"
       ],
@@ -26464,6 +26509,9 @@
       ],
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Падключэнне вашага ${ ACCOUNT_APP_NAME }"
       ],
       "Connect your custom domain": [
         "Падключэнне свайго карыстальніцкага дамена"
@@ -27059,6 +27107,9 @@
       "Going private": [
         "Пераход да прыватнасці"
       ],
+      "Good to know before you connect": [
+        "Варта ведаць перад падключэннем"
+      ],
       "Grant access": [
         "Даць доступ"
       ],
@@ -27485,6 +27536,9 @@
       "QR code sign-in": [
         "Увайсці з QR-кодам"
       ],
+      "QR sign-in isn't available for business accounts": [
+        "Уваход па QR-коду недаступны для ўліковых запісаў для бізнесу"
+      ],
       "Ready, set, forward": [
         "На старт, увага, марш"
       ],
@@ -27895,6 +27949,9 @@
       ],
       "This field cannot contain only spaces": [
         "Гэта поле не можа змяшчаць толькі прабелы"
+      ],
+      "This Gmail is already connected": [
+        "Гэты ўліковы запіс Gmail ужо падключаны"
       ],
       "Time zone": [
         "Часавы пояс"
@@ -28612,6 +28669,9 @@
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
         "Вы аўтаматычна будзеце адпісаны ад спіса рассылкі адпраўніка, калі вы перамясціце ліст у спам."
+      ],
+      "Your ${ DRIVE_APP_NAME } storage is almost full": [
+        "Сховішча вашай паштовай скрыні ${ DRIVE_APP_NAME } амаль запоўнена"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Ваша паштовая скрыня ${ MAIL_APP_NAME } амаль запоўнена"
@@ -29421,9 +29481,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "Эксклюзіўны ранні доступ да ${ appName }."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Наш самы эксклюзіўны тарыфны план. Атрымайце ранні доступ да новых функцый і ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Бяспечна абменьвайцеся Bitcoin праз электронную пошту замест складаных 26-значных адрасоў Bitcoin, у якіх лёгка памыліцца пры ўводзе"

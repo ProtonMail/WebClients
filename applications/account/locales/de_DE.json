@@ -7400,6 +7400,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Fehler beim Laden der Transaktionen. Bitte versuche es später erneut."
       ],
+      "Couldn't load your account": [
+        "Dein Konto konnten nicht geladen werden"
+      ],
       "Couldn't load your connections": [
         "Deine Verbindungen konnten nicht geladen werden"
       ],
@@ -8062,6 +8065,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Die Sitzung ist abgelaufen. Bitte melde dich erneut an."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Der Gesamtbetrag konnte nicht berechnet werden. Ändere den Betrag und versuche es erneut."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Die hochgeladene Datei stimmt nicht mit dem Original überein. Bitte versuche es erneut."
@@ -16624,6 +16630,9 @@
       "Token name": [
         "Name des Tokens"
       ],
+      "Total": [
+        "Gesamt"
+      ],
       "Total cost": [
         "Gesamtkosten"
       ],
@@ -20864,6 +20873,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Es kann nur ein ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } erworben werden."
       ],
+      "Paid from your account credit.": [
+        "Die Zahlung erfolgt über dein Kontoguthaben."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Mit ${ IDEAL_WERO_BRAND_NAME } bezahlen"
       ],
@@ -21025,12 +21037,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Dein Konto ist zu alt für die „Born Private“-Initiative."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_WERO_BRAND_NAME } nur Zahlungen in Euro unterstützt."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."
@@ -29280,9 +29286,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "Exklusiver frühzeitiger Zugang zu ${ appName }."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Unser exklusivstes Abonnement. Erhalte frühzeitigen Zugang zu neuen Funktionen und allen Premium ${ BRAND_NAME }-Diensten."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Tausche Bitcoin sicher per E-Mail aus statt komplexe, 26-stellige Bitcoin-Adressen zu verwenden, die anfällig für Fehler sind"

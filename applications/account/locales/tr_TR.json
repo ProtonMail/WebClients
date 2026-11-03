@@ -7400,6 +7400,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Hesap işlemleri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
+      "Couldn't load your account": [
+        "Hesabınız yüklenemedi"
+      ],
       "Couldn't load your connections": [
         "Bağlantılarınız yüklenemedi"
       ],
@@ -8062,6 +8065,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden oturum açın."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Toplam tutar hesaplanamadı. Yeniden denemek için tutarı değiştirin."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Yüklenen dosya özgün dosya ile eşleşmiyor. Lütfen yeniden deneyin."
@@ -16624,6 +16630,9 @@
       "Token name": [
         "Kod adı"
       ],
+      "Total": [
+        "Toplam"
+      ],
       "Total cost": [
         "Toplam maliyet"
       ],
@@ -16793,7 +16802,7 @@
         "Takvim adresiniz"
       ],
       "Your credit balance": [
-        "Kredi hesabınız"
+        "Kalan kredi tutarınız"
       ],
       "Your email address": [
         "E-posta adresiniz"
@@ -20864,6 +20873,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Yalnızca bir ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } satın alınabilir."
       ],
+      "Paid from your account credit.": [
+        "Hesabınızdaki krediden ödendi."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "${ IDEAL_WERO_BRAND_NAME } ile öde"
       ],
@@ -21026,12 +21038,6 @@
       "Your account is too old for the Born Private initiative.": [
         "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "${ IDEAL_WERO_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
-      ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
       ],
@@ -21080,7 +21086,7 @@
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
       "Credits will be added to your balance": [
-        "Kalan kredi bakiyenize eklenecek"
+        "Krediler hesabınızın kalan tutarına eklenecek"
       ]
     },
     "Payments.InfoBanner": {
@@ -29280,9 +29286,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "${ appName } için özel erken erişim."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "En geniş kapsamlı tarifemiz. Yeni özelliklere ve tüm ücretli ${ BRAND_NAME } hizmetlerine erkenden erişin."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Aktarım sırasında kolayca yanlış yazılabilecek olan 26 karakter uzunluğundaki karmaşık Bitcoin adresleri yerine, E-posta ile Bitcoin özelliğini kullanarak güvenli bir şekilde Bitcoin alışverişi yapabilirsiniz"

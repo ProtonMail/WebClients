@@ -7394,6 +7394,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Indlæsning af transaktioner mislykkedes. Prøv igen senere."
       ],
+      "Couldn't load your account": [
+        "Din konto kunne ikke indlæses"
+      ],
       "Couldn't load your connections": [
         "Kunne ikke indlæse dine forbindelser"
       ],
@@ -8041,6 +8044,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Sessionen er udløbet. Log ind igen."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Det samlede beløb kunne ikke beregnes. Ændr antallet og prøv igen."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Den uploadede fil matcher ikke den originale. Prøv igen."
@@ -16532,6 +16538,9 @@
       "Token name": [
         "Tokennavn"
       ],
+      "Total": [
+        "I alt"
+      ],
       "Total cost": [
         "Pris i alt"
       ],
@@ -20772,6 +20781,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Der kan kun købes ét ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "Paid from your account credit.": [
+        "Betalt med kredit fra din konto."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betal med ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -20933,12 +20945,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Din konto er for gammel til Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Din valuta er blevet ændret til euro (€), fordi ${ IDEAL_WERO_BRAND_NAME } kun understøtter betalinger i euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Din valuta er blevet ændret til euro (€), fordi SEPA-bankoverførsler kun understøtter betalinger i euro."
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"
@@ -29161,9 +29167,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "Eksklusiv tidlig adgang til ${ appName }."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Vores mest eksklusive abonnement. Få tidlig adgang til nye funktioner og alle premium ${ BRAND_NAME }-tjenester."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Udveksl sikkert Bitcoin via e-mail i stedet for komplekse, 26-tegns Bitcoin-adresser, der er fejlbehæftede."

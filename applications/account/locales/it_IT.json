@@ -2126,6 +2126,9 @@
       "View all reports": [
         "Visualizza tutte le segnalazioni"
       ],
+      "View guide": [
+        "Visualizza la guida"
+      ],
       "View invoice": [
         "Visualizza fattura"
       ],
@@ -2576,6 +2579,9 @@
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porta la produttività delle email a nuovi livelli. Lascia che ${ BRAND_NAME } Scribe ti aiuti a scrivere, rispondere e correggere le tue email."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Porta la produttività delle email a nuovi livelli. Lascia che ${ LUMO_SHORT_APP_NAME } ti aiuti a scrivere, rispondere e correggere le tue email."
       ],
       "Trial expires on ${ formattedDate }": [
         "Il periodo di prova termina il ${ formattedDate }"
@@ -7189,6 +7195,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Impossibile caricare le transazioni. Per favore riprova più tardi."
       ],
+      "Couldn't load your account": [
+        "Impossibile caricare il tuo account"
+      ],
       "Couldn't load your connections": [
         "Impossibile caricare le tue connessioni"
       ],
@@ -7743,6 +7752,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "La sessione è scaduta. Effettua di nuovo il login."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Non è stato possibile calcolare il totale. Modifica l'importo e riprova."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Il file caricato non corrisponde all'originale. Riprova."
@@ -9946,6 +9958,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include l'assistente di scrittura ${ BRAND_NAME } Scribe."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } include l'assistente di scrittura."
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -16145,6 +16160,9 @@
       "Token name": [
         "Nome token"
       ],
+      "Total": [
+        "Totale"
+      ],
       "Total cost": [
         "Costo totale"
       ],
@@ -16984,6 +17002,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Aggiungi l'assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Aggiungi assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add-on with free trial": [
         "Componente aggiuntivo con prova gratuita"
       ],
@@ -17731,6 +17752,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } con accesso limitato"
       ],
       "${ n } calendar": [
         "${ n } calendario",
@@ -20344,6 +20368,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "È possibile acquistare solo un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "Paid from your account credit.": [
+        "Addebitato sul credito del tuo conto."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Paga con ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -20505,12 +20532,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Il tuo account è troppo vecchio per partecipare all'iniziativa Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
@@ -26358,6 +26379,9 @@
       "Groups": [
         "Gruppi"
       ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Avviso: questo account Gmail è collegato a un altro account ${ BRAND_NAME }"
+      ],
       "Help and feedback": [
         "Aiuto e feedback"
       ],
@@ -28677,9 +28701,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "Accesso anticipato esclusivo a ${ appName }."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Il nostro piano più esclusivo. Ottieni l'accesso anticipato alle nuove funzionalità e a tutti i servizi premium ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Scambia Bitcoin in modo sicuro tramite email invece di complesse indirizzi Bitcoin di 26 caratteri soggetti a errori."

@@ -7446,6 +7446,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Nu s-au putut încărca tranzacțiile. Reîncercați mai târziu."
       ],
+      "Couldn't load your account": [
+        "Contul nu s-a putut încărca."
+      ],
       "Couldn't load your connections": [
         "Conexiunile nu vi s-au putut încărca."
       ],
@@ -8117,6 +8120,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Sesiunea a expirat. Reconectați-vă."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Totalul nu a putut fi calculat. Modificați suma pentru a reîncerca."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Fișierul încărcat nu corespunde cu originalul. Reîncercați."
@@ -16781,6 +16787,9 @@
       "Token name": [
         "Nume cod de acces"
       ],
+      "Total": [
+        "Total"
+      ],
       "Total cost": [
         "Cost total"
       ],
@@ -20115,7 +20124,7 @@
         "Oprită"
       ],
       "On": [
-        "Pornită"
+        "Activat"
       ],
       "Optional ${ defaultLabel }": [
         "${ defaultLabel } opțional"
@@ -21084,6 +21093,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Poate fi achiziționat doar un singur plan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "Paid from your account credit.": [
+        "Plătit din creditul contului."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Plata cu ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -21251,12 +21263,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Contul este prea vechi pentru inițiativa „Born Private”."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Moneda a fost schimbată în euro (€) deoarece ${ IDEAL_WERO_BRAND_NAME } acceptă doar plăți în euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
       ],
       "Your payment is still being processed": [
         "Plata este încă în curs de procesare."
@@ -29626,9 +29632,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "Acces timpuriu exclusiv la ${ appName }."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Planul nostru cel mai exclusiv. Obțineți acces timpuriu la funcțiile noi și la toate serviciile speciale ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Schimbați în siguranță Bitcoin prin e-mail, în loc de adrese Bitcoin complexe, de 26 de caractere, care sunt predispuse la erori de redactare."

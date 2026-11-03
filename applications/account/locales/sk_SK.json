@@ -7492,6 +7492,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Nie je možné načítať transakcie. Skúste to neskôr, prosím."
       ],
+      "Couldn't load your account": [
+        "Nepodarilo sa načítať váš účet"
+      ],
       "Couldn't load your connections": [
         "Nepodarilo sa načítať vaše pripojenia"
       ],
@@ -8172,6 +8175,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Platnosť relácie vypršala. Prihláste sa znovu, prosím."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Celková suma sa nedala vypočítať. Zmeňte sumu a skúste to znova."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Nahratý súbor nezodpovedá originálu. Skúste to znova, prosím."
@@ -16948,6 +16954,9 @@
       "Token name": [
         "Názov tokenu"
       ],
+      "Total": [
+        "Celkom"
+      ],
       "Total cost": [
         "Celkové náklady"
       ],
@@ -21314,6 +21323,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Je možné zakúpiť iba jeden ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "Paid from your account credit.": [
+        "Uhradené z kreditu na vašom účte."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Platba cez ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -21487,12 +21499,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Váš účet je príliš starý na iniciatívu Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_WERO_BRAND_NAME } podporuje platby len v eurách."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
@@ -29982,9 +29988,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "Exkluzívny predčasný prístup k ${ appName }."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Náš najexkluzívnejší plán. Získajte skorší prístup k novým funkciám a všetkým prémiovým službami ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Bezpečne vymieňajte Bitcoin prostredníctvom emailu namiesto zložitých, 26-znakových bitcoinových adries, ktoré sú náchylné na chybu"

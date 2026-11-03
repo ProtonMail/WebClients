@@ -7400,6 +7400,9 @@
       "Couldn't load transactions. Please try again later.": [
         "No se pudieron cargar las transacciones. Intente más tarde."
       ],
+      "Couldn't load your account": [
+        "No se pudo cargar su cuenta"
+      ],
       "Couldn't load your connections": [
         "No se pudieron cargar sus conexiones"
       ],
@@ -8062,6 +8065,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "La sesión ha expirado. Inicie sesión de nuevo."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "No se pudo calcular el total. Cambie la cantidad e intente de nuevo."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "El archivo cargado no coincide con el original. Intente de nuevo."
@@ -16627,6 +16633,9 @@
       "Token name": [
         "Nombre de token"
       ],
+      "Total": [
+        "Total"
+      ],
       "Total cost": [
         "Costo total"
       ],
@@ -20867,6 +20876,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Solo un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } puede ser comprado."
       ],
+      "Paid from your account credit.": [
+        "Pagado con los créditos de su cuenta."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Pagar con ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -21028,12 +21040,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Su cuenta es demasiado antigua para la iniciativa Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Su moneda ha sido cambiada a euros (€) porque ${ IDEAL_WERO_BRAND_NAME } solo admite pagos en euros."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Su moneda ha sido cambiada a euros (€) porque las transferencias bancarias SEPA solo admiten pagos en euros."
       ],
       "Your payment is still being processed": [
         "Su pago aún está siendo procesado"
@@ -29283,9 +29289,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "Acceso anticipado exclusivo a ${ appName }."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Nuestro plan más exclusivo. Obtenga acceso anticipado a nuevas funciones y a todos los servicios premium de ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Intercambie Bitcoin de forma segura por correo electrónico en lugar de utilizar direcciones de Bitcoin complejas de 26 caracteres que son propensas a errores"

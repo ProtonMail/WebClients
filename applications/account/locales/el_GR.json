@@ -5475,6 +5475,9 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Μεταφέρετε τα μηνύματα, τις εκδηλώσεις ημερολογίου και τις επαφές σας από έναν άλλο πάροχο."
       ],
+      "Bring over your files and folders from another provider.": [
+        "Μεταφέρετε τα αρχεία και τους φακέλους σας από άλλον πάροχο."
+      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Δημιουργήστε εμπιστοσύνη και αναγνώριση επωνυμίας με επαγγελματικές διευθύνσεις ηλεκτρονικού ταχυδρομείου στον δικό σας τομέα."
       ],
@@ -7102,6 +7105,9 @@
       "They may ask to access your account in case of an emergency.": [
         "Μπορεί να ζητήσουν πρόσβαση στον λογαριασμό σας σε περίπτωση έκτακτης ανάγκης."
       ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Θα αποκτήσουν πρόσβαση αυτόματα **σήμερα**, στις **${ formattedAccessibleAt }**. Μπορείτε να απορρίψετε το αίτημά τους ή να τους δώσετε πρόσβαση άμεσα, οποιαδήποτε στιγμή."
+      ],
       "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
         "Θα αποκτήσουν πρόσβαση αυτόματα σε **${ days } ημέρα**, στις **${ formattedAccessibleAt }**. Μπορείτε να απορρίψετε το αίτημά τους ή να τους δώσετε πρόσβαση άμεσα, οποιαδήποτε στιγμή.",
         "Θα αποκτήσουν πρόσβαση αυτόματα σε **${ days } ημέρες**, στις **${ formattedAccessibleAt }**. Μπορείτε να απορρίψετε το αίτημά τους ή να τους δώσετε πρόσβαση άμεσα, οποιαδήποτε στιγμή."
@@ -7394,6 +7400,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Δεν ήταν δυνατή η φόρτωση των συναλλαγών. Παρακαλούμε προσπαθήστε ξανά αργότερα."
       ],
+      "Couldn't load your account": [
+        "Δεν ήταν δυνατή η φόρτωση του λογαριασμού σας"
+      ],
       "Couldn't load your connections": [
         "Δεν ήταν δυνατή η φόρτωση των συνδέσεών σας"
       ],
@@ -7497,6 +7506,9 @@
       ],
       "Failed to get inviter keys": [
         "Αποτυχία λήψης κλειδιών προσκλητού"
+      ],
+      "Failed to get the organization domains": [
+        "Απέτυχε η λήψη των τομέων του οργανισμού"
       ],
       "Failed to load OAuth": [
         "Αποτυχία φόρτωσης OAuth"
@@ -7721,6 +7733,9 @@
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "Δεν βρέθηκε επαληθευμένος τομέας στον λογαριασμό σας στο ${ providerName }. Επαληθεύστε τον τομέα σας μέσω του ${ providerName } και, στη συνέχεια, δοκιμάστε ξανά."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Δεν είναι λογαριασμός ${ BRAND_NAME }"
@@ -8050,6 +8065,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Έχει λήξει η συνεδρία σας. Παρακαλώ συνδεθείτε ξανά."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Δεν ήταν δυνατός ο υπολογισμός του συνόλου. Αλλάξτε το ποσό για να προσπαθήσετε ξανά."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Το μεταφορτωμένο αρχείο δεν ταιριάζει με το πρωτότυπο. Παρακαλούμε δοκιμάστε ξανά."
@@ -10720,6 +10738,9 @@
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "Προσθέστε τον τομέα ηλεκτρονικού ταχυδρομείου του οργανισμού σας στο ${ BRAND_NAME }."
       ],
+      "Added to ${ BRAND_NAME }": [
+        "Προστέθηκε στο ${ BRAND_NAME }"
+      ],
       "Adding ${ total } gateway server": [
         "Προσθήκη ${ total } διακομιστή πύλης",
         "Προσθήκη ${ total } διακομιστών πύλης"
@@ -11095,6 +11116,9 @@
       ],
       "Cancel anytime": [
         "Ακυρώστε ανά πάσα στιγμή"
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Ακυρώστε εντός 30 ημερών από την αγορά σας και επικοινωνήστε με το ${ customerSupportLink } για να λάβετε επιστροφή χρημάτων."
       ],
       "Can’t access your recovery email?": [
         "Δεν μπορείτε να αποκτήσετε πρόσβαση στο email ανάκτησης;"
@@ -12421,6 +12445,9 @@
       ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
+      ],
+      "Not added to ${ BRAND_NAME }": [
+        "Δεν προστέθηκε στο ${ BRAND_NAME }"
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Δεν εντοπίστηκε σωστά; Επιλέξτε τον παροχέα σας από τη λίστα."
@@ -16603,6 +16630,9 @@
       "Token name": [
         "Όνομα διακριτικού"
       ],
+      "Total": [
+        "Σύνολο"
+      ],
       "Total cost": [
         "Συνολικό κόστος"
       ],
@@ -17223,6 +17253,9 @@
       ],
       "Visit our support site": [
         "Επισκεφθείτε τον ιστότοπο υποστήριξής μας"
+      ],
+      "Want to import email, calendar and contacts?": [
+        "Θέλετε να εισαγάγετε email, ημερολόγιο και επαφές;"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Ποια είναι η διαφορά μεταξύ των πρωτοκόλλων UDP και TCP;"
@@ -20840,6 +20873,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Μπορεί να αγοραστεί μόνο ένα ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "Paid from your account credit.": [
+        "Πληρώθηκε από το υπόλοιπο του λογαριασμού σας."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Πληρωμή με ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -20884,6 +20920,9 @@
       ],
       "terms and conditions": [
         "όροι και προϋποθέσεις"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Η πρωτοβουλία Born Private απαιτεί δωρεά."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανέωση.",
@@ -20984,6 +21023,9 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ήδη διαθέτετε το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Έχετε ήδη ένα Born Private λογαριασμό."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Θα χρεωθείτε ${ amountToCharge } από τον επιλεγμένο τρόπο πληρωμής."
       ],
@@ -20993,11 +21035,8 @@
       "You will soon be redirected to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Το νόμισμά σας έχει αλλάξει σε ευρώ (€) επειδή το ${ IDEAL_WERO_BRAND_NAME } υποστηρίζει μόνο πληρωμές σε ευρώ."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
+      "Your account is too old for the Born Private initiative.": [
+        "Ο λογαριασμός σας είναι πολύ παλιός για την πρωτοβουλία Born Private."
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
@@ -22642,11 +22681,17 @@
       "Approve changes from your identity provider": [
         "Έγκριση αλλαγών από τον πάροχο ταυτότητάς σας"
       ],
+      "Approve permission changes for your organization": [
+        "Εγκρίνετε αλλαγές δικαιωμάτων για τον οργανισμό σας"
+      ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Απαιτείται τελική έγκριση για την παραχώρηση πρόσβασης σε όλες τις υπηρεσίες ${ BRAND_NAME }."
       ],
       "Final approval needed to remove organization key access.": [
         "Απαιτείται τελική έγκριση για την κατάργηση της πρόσβασης μέσω κλειδιού οργανισμού."
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "Απαιτείται τελική έγκριση για την ανάκληση των κλειδιών του οργανισμού τους."
       ],
       "From your identity provider": [
         "Από τον πάροχο ταυτότητάς σας"
@@ -24412,6 +24457,9 @@
       ],
       "Generate a recovery phrase": [
         "Παραγωγή μιας φράσης ανάκτησης"
+      ],
+      "key removal scheduled": [
+        "προγραμματισμένη αφαίρεση κλειδιού"
       ],
       "Last changed ${ formattedDate }": [
         "Τελευταία αλλαγή ${ formattedDate }"
@@ -27930,6 +27978,9 @@
       "You have no resolved alerts": [
         "Δεν έχετε επιλυμένες ειδοποιήσεις"
       ],
+      "You need a ${ BRAND_NAME } address": [
+        "Χρειάζεστε μια διεύθυνση ${ BRAND_NAME }"
+      ],
       "You're all set!": [
         "Είστε έτοιμοι!"
       ],
@@ -28958,6 +29009,9 @@
       "Send invite link via email instead": [
         "Αποστολή συνδέσμου πρόσκλησης μέσω ηλεκτρονικού ταχυδρομείου"
       ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Αυτός ο χρήστης αποκτά δικαιώματα διαχειριστή την επόμενη φορά που θα συνδεθεί."
+      ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Αυτό θα δημιουργήσει μια νέα διεύθυνση ${ MAIL_APP_NAME }."
       ],
@@ -29232,9 +29286,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "Αποκλειστική πρώιμη πρόσβαση στο ${ appName }."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Το πιο αποκλειστικό μας σχέδιο. Αποκτήστε πρώιμη πρόσβαση σε νέες δυνατότητες και όλες τις premium υπηρεσίες ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Ανταλλάξτε με ασφάλεια Bitcoin μέσω email αντί για πολύπλοκες διευθύνσεις Bitcoin 26 χαρακτήρων που είναι επιρρεπείς σε σφάλματα"

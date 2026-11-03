@@ -7192,6 +7192,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Kunde inte ladda transaktioner. Försök igen senare."
       ],
+      "Couldn't load your account": [
+        "Kunde inte ladda ditt konto"
+      ],
       "Couldn't load your connections": [
         "Kunde inte ladda dina anslutningar"
       ],
@@ -11389,6 +11392,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter fungerar på all e-post, såväl inkommande som skickade. Varje filter måste innehålla minst ett namn, ett villkor och en åtgärd."
       ],
+      "Find out what can be migrated.": [
+        "Ta reda på vad som kan migreras."
+      ],
       "for ${ price }": [
         "för ${ price }"
       ],
@@ -11733,6 +11739,9 @@
       ],
       "Invited": [
         "Inbjuden"
+      ],
+      "IP address: ${ IP }": [
+        "IP-adress: ${ IP }"
       ],
       "It takes 10 days to change a server's country, so make sure your selection is correct.": [
         "Det tar 10 dagar att ändra en servers land, så se till att ditt val är korrekt."
@@ -15969,6 +15978,9 @@
       "Token name": [
         "Tokennamn"
       ],
+      "Total": [
+        "Totalt"
+      ],
       "Total cost": [
         "Total kostnad"
       ],
@@ -20201,12 +20213,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Din valuta har ändrats till euro (€) eftersom ${ IDEAL_WERO_BRAND_NAME } endast stöder betalningar i euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
@@ -28287,9 +28293,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "Exklusiv förhandstillgång till ${ appName }."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Vårt mest exklusiva paket. Få förhandstillgång till nya funktioner och alla premium ${ BRAND_NAME } tjänster."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Överför Bitcoin på ett säkert sätt via e-post istället för att använda komplexa Bitcoin-adresser med 26 tecken som är känsliga för fel"

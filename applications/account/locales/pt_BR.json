@@ -1185,7 +1185,7 @@
         "Obter desconto"
       ],
       "Get help from ${ LUMO_SHORT_APP_NAME }": [
-        "Obtenha ajuda do ${ LUMO_SHORT_APP_NAME }"
+        "Obtenha ajuda com o ${ LUMO_SHORT_APP_NAME }"
       ],
       "Get in touch": [
         "Entre em contato"
@@ -2171,6 +2171,9 @@
       "Upgrade to Business": [
         "Fazer upgrade para o Business"
       ],
+      "Upgrade to connect": [
+        "Faça o upgrade para conectar"
+      ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Faça o upgrade para ativar o ${ PROTON_SENTINEL_NAME }"
       ],
@@ -3093,7 +3096,7 @@
         "Dois anos"
       ],
       "Yearly": [
-        "Anualmente"
+        "Anual"
       ]
     },
     "Billing type": {
@@ -10563,6 +10566,9 @@
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "Adicione o domínio de e-mail da sua organização para a ${ BRAND_NAME }."
       ],
+      "Added to ${ BRAND_NAME }": [
+        "Adicionado à ${ BRAND_NAME }"
+      ],
       "Adding ${ total } gateway server": [
         "Adicionando ${ total } servidor gateway",
         "Adicionando ${ total } servidores gateway"
@@ -12373,7 +12379,7 @@
         "É mais provável que clientes PGP detectem automaticamente suas chaves PGP se as mensagens de saída forem assinadas."
       ],
       "Phone number": [
-        "Número do telefone"
+        "Número de telefone"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fixe o ${ PASS_APP_NAME } em sua barra de ferramentas"
@@ -13531,7 +13537,7 @@
         "Sessões web detectadas:"
       ],
       "Web URL": [
-        "URL da Web"
+        "URL da web"
       ],
       "Week": [
         "Semana"
@@ -20586,12 +20592,6 @@
       "You will soon be redirected to verify your payment.": [
         "Em breve você será redirecionado para verificar seu pagamento."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Sua moeda foi alterada para euros (€) porque ${ IDEAL_WERO_BRAND_NAME } suporta apenas pagamentos em euros."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Sua moeda foi alterada para euros (€) porque transferências bancárias SEPA apenas suportam pagamentos em euros."
-      ],
       "Your payment is still being processed": [
         "Seu pagamento ainda está sendo processado"
       ],
@@ -27218,7 +27218,7 @@
         "Para pré-visualizar esta planilha, abra-a no ${ SHEETS_APP_NAME } ou faça o download."
       ],
       "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
-        "Solucionar problemas do ${ LUMO_SHORT_APP_NAME }"
+        "Solucionar problemas com o ${ LUMO_SHORT_APP_NAME }"
       ],
       "Troubleshoot your issue": [
         "Solucione seu problema"
@@ -27408,6 +27408,9 @@
       ],
       "With your ${ BRAND_NAME } Account, you get access to all ${ BRAND_NAME } apps": [
         "Com a sua conta do ${ BRAND_NAME }, você obtém acesso a todos os aplicativos do ${ BRAND_NAME }"
+      ],
+      "Wrong Gmail account": [
+        "Conta do Gmail incorreta"
       ],
       "You are all set": [
         "Tudo pronto"
@@ -27726,6 +27729,9 @@
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente categoriza alguns e-mails como Social e Promoções. Você pode selecionar para onde importar esses e-mails."
+      ],
+      "Grant access to your ${ providerName } account to start a migration": [
+        "Conceda acesso à sua conta do ${ providerName } para iniciar uma migração"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupe e-mails na mesma conversa junto em sua Caixa de Entrada ou exiba-os separadamente."
@@ -28702,9 +28708,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "Acesso antecipado exclusivo para ${ appName }."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Nosso plano mais exclusivo. Obtenha acesso antecipado a novos recursos e a todos os serviços premium da ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Troque Bitcoin via e-mail com segurança em vez de usar endereços de Bitcoin complexos de 26 caracteres, que são propensos a erro"
