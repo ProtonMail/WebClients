@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import {
     hasBundle,
     hasBundleBiz2025,
@@ -13,47 +12,41 @@ import {
     hasMailPro,
     hasVisionary,
 } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 
 import useSettingsLink from '../../../../components/link/useSettingsLink';
-import { CANCEL_ROUTE } from './helper';
+import { getCancelRoute } from './helper';
+
+const getHasB2BAccess = (subscription: Subscription) => {
+    return (
+        hasMailPro(subscription) ||
+        hasMailBusiness(subscription) ||
+        hasBundlePro2024(subscription) ||
+        hasBundleBiz2025(subscription)
+    );
+};
+
+const getHasB2CAccess = (subscription: Subscription) => {
+    return (
+        hasMail(subscription) ||
+        hasBundle(subscription) ||
+        hasDuo(subscription) ||
+        hasFamily(subscription) ||
+        hasVisionary(subscription) ||
+        hasDrive(subscription)
+    );
+};
+
+export const getCanUseCancellationReminder = (subscription: Subscription) => {
+    return getHasB2BAccess(subscription) || getHasB2CAccess(subscription);
+};
 
 const useCancellationFlow = () => {
-    const [subscription] = useSubscription();
     const [startedCancellation, setStartedCancellation] = useState(false);
     const goToSettings = useSettingsLink();
 
-    const getHasB2BAccess = () => {
-        if (
-            startedCancellation ||
-            hasMailPro(subscription) ||
-            hasMailBusiness(subscription) ||
-            hasBundlePro2024(subscription) ||
-            hasBundleBiz2025(subscription)
-        ) {
-            return true;
-        }
-
-        return false;
-    };
-
-    const getHasB2CAccess = () => {
-        if (
-            startedCancellation ||
-            hasMail(subscription) ||
-            hasBundle(subscription) ||
-            hasDuo(subscription) ||
-            hasFamily(subscription) ||
-            hasVisionary(subscription) ||
-            hasDrive(subscription)
-        ) {
-            return true;
-        }
-
-        return false;
-    };
-
-    const redirectToCancellationFlow = () => {
-        goToSettings(CANCEL_ROUTE);
+    const redirectToCancellationFlow = (subscription: Subscription) => {
+        goToSettings(getCancelRoute(subscription));
     };
 
     const redirectToDashboard = () => {
@@ -63,8 +56,7 @@ const useCancellationFlow = () => {
     return {
         redirectToCancellationFlow,
         redirectToDashboard,
-        b2cAccess: getHasB2CAccess(),
-        b2bAccess: getHasB2BAccess(),
+        startedCancellation,
         setStartedCancellation,
     };
 };

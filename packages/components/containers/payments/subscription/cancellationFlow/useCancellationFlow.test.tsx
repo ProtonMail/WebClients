@@ -1,66 +1,33 @@
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
-import { useFlag } from '@proton/unleash/useFlag';
+import { PLANS } from '@proton/payments/core/constants';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
+import useSettingsLink from '../../../../components/link/useSettingsLink';
 import { componentsHookRenderer } from '../../../contacts/tests/render';
-import useCancellationFlow from './useCancellationFlow';
+import useCancellationFlow, { getCanUseCancellationReminder } from './useCancellationFlow';
 
-jest.mock('@proton/account/subscription/hooks');
-const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
+jest.mock('../../../../components/link/useSettingsLink');
+const mockGoToSettings = jest.fn();
+jest.mocked(useSettingsLink).mockReturnValue(mockGoToSettings);
 
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.MockedFunction<any>;
-
-const b2bSubscription = {
-    Plans: [
-        {
-            Type: PLAN_TYPES.PLAN,
-            Name: PLANS.BUNDLE_PRO_2024,
-        },
-    ],
-};
-
-const b2cSubscription = {
-    Plans: [
-        {
-            Type: PLAN_TYPES.PLAN,
-            Name: PLANS.MAIL,
-        },
-    ],
-};
-
-const unsupportedSubscription = {
-    Plans: [
-        {
-            Type: PLAN_TYPES.PLAN,
-            Name: PLANS.PASS_BUSINESS,
-        },
-    ],
-};
+describe('getCanUseCancellationReminder', () => {
+    it.each([
+        [PLANS.BUNDLE_PRO_2024, true],
+        [PLANS.MAIL_PRO, true],
+        [PLANS.MAIL, true],
+        [PLANS.DRIVE, true],
+        [PLANS.PASS_BUSINESS, false],
+        [PLANS.LUMO, false],
+    ])('returns %s -> %s', (plan, expected) => {
+        expect(getCanUseCancellationReminder(buildSubscription(plan))).toBe(expected);
+    });
+});
 
 describe('useCancellationFlow', () => {
-    beforeEach(() => {
-        // We want to enable the feature everywhere
-        mockUseFlag.mockReturnValue(true);
-    });
-
-    it.each([
-        [b2bSubscription, { b2cAccess: false, b2bAccess: true }],
-        [b2cSubscription, { b2cAccess: true, b2bAccess: false }],
-        [unsupportedSubscription, { b2cAccess: false, b2bAccess: false }],
-    ])(`Should return b2bAccess for b2b users and b2cAccess for b2c users`, (subscription, expected) => {
-        mockUseSubscription.mockReturnValue([subscription, false]);
-
+    it('redirects to the reminder page of the given subscription', () => {
         const { result } = componentsHookRenderer(() => useCancellationFlow());
-        expect(result.current.b2bAccess).toBe(expected.b2bAccess);
-        expect(result.current.b2cAccess).toBe(expected.b2cAccess);
-    });
 
-    it('Should return false for b2b and b2c access if new flow is disabled', () => {
-        mockUseFlag.mockReturnValue(false);
+        result.current.redirectToCancellationFlow({ ...buildSubscription(PLANS.MAIL), ID: 'sub-mail' });
 
-        const { result } = componentsHookRenderer(() => useCancellationFlow());
-        expect(result.current.b2bAccess).toBe(false);
-        expect(result.current.b2cAccess).toBe(false);
+        expect(mockGoToSettings).toHaveBeenCalledWith('/cancel-subscription?subscriptionId=sub-mail');
     });
 });

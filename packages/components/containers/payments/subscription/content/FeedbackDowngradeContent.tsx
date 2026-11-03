@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircledNumber } from '@proton/atoms/CircledNumber/CircledNumber';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
@@ -60,6 +60,7 @@ export function isKeepSubscription(data: FeedbackDowngradeResult): data is KeepS
 
 type FeedbackDowngradeContentProps = {
     user: UserModel;
+    subscription: Subscription;
     onResolve: ModalTwoPromiseHandlers<FeedbackDowngradeResult>['onResolve'];
     onClose?: () => void;
 };
@@ -76,13 +77,12 @@ const InputLimit = ({ maxLength, value }: { maxLength: number; value: string }) 
     return <span className={`text-sm ${colorClass}`}>{getCharacterCountText(value.length, maxLength)}</span>;
 };
 
-const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngradeContentProps) => {
-    const [subscription] = useSubscription();
+const FeedbackDowngradeContent = ({ onResolve, onClose, user, subscription }: FeedbackDowngradeContentProps) => {
     const [organization] = useOrganization();
     const [entitlementCatalog] = useEntitlementCatalog();
     const { isB2BTrial } = getTrialInfoForSingleSubscription(entitlementCatalog, subscription);
     const { APP_NAME } = useConfig();
-    const { hasB2CAccess, hasB2BAccess } = useFeedbackFirstEligibility();
+    const { hasB2CAccess, hasB2BAccess } = useFeedbackFirstEligibility(subscription);
     const isEligibleForFeedbackFirst = hasB2CAccess || hasB2BAccess;
 
     const { isPaid } = user;

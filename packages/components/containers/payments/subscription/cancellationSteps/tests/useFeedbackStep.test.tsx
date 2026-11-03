@@ -1,5 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
 import type { FeedbackDowngradeData } from '@proton/payments/core/api/api';
+import { PLANS } from '@proton/payments/core/constants';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { useModalTwoPromise } from '../../../../../components/modalTwo/useModalTwo';
 import { componentsHookRenderer } from '../../../../contacts/tests/render';
@@ -22,6 +24,7 @@ jest.mock('../../cancellationFlow/useCancellationTelemetry', () => ({
 }));
 
 const mockShowModal = jest.fn();
+const lumoSubscription = { ...buildSubscription(PLANS.LUMO), ID: 'sub-lumo' };
 
 describe('useFeedbackStep', () => {
     beforeEach(() => {
@@ -32,7 +35,7 @@ describe('useFeedbackStep', () => {
     it('should return kept when canShow returns false', async () => {
         const { result } = componentsHookRenderer(() => useFeedbackStep({ canShow: async () => false }));
 
-        const res = await result.current.show();
+        const res = await result.current.show(lumoSubscription);
 
         expect(res).toEqual({ status: 'kept' });
         expect(mockShowModal).not.toHaveBeenCalled();
@@ -43,7 +46,7 @@ describe('useFeedbackStep', () => {
 
         const { result } = componentsHookRenderer(() => useFeedbackStep({ canShow: async () => true }));
 
-        const res = await result.current.show();
+        const res = await result.current.show(lumoSubscription);
 
         expect(res).toEqual({ status: 'kept' });
     });
@@ -59,9 +62,30 @@ describe('useFeedbackStep', () => {
 
         const { result } = componentsHookRenderer(() => useFeedbackStep({ canShow: async () => true }));
 
-        const res = (await result.current.show()) as FeedbackStepResult;
+        const res = (await result.current.show(lumoSubscription)) as FeedbackStepResult;
 
         expect(res).toEqual({ status: 'feedback', feedback });
+        expect(mockShowModal).toHaveBeenCalledWith({ subscription: lumoSubscription });
+    });
+
+    it('should render the feedback form for the subscription it was shown for', () => {
+        let modalElement: any;
+        jest.mocked(useModalTwoPromise).mockReturnValue([
+            (cb: any) => {
+                modalElement = cb({
+                    subscription: lumoSubscription,
+                    onResolve: jest.fn(),
+                    onReject: jest.fn(),
+                    onClose: jest.fn(),
+                });
+                return null;
+            },
+            mockShowModal,
+        ] as any);
+
+        componentsHookRenderer(() => useFeedbackStep({ canShow: async () => true }));
+
+        expect(modalElement?.props?.children?.props?.subscription).toBe(lumoSubscription);
     });
 });
 

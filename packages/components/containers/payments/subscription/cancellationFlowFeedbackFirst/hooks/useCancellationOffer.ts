@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
 import { usePlans } from '@proton/account/plans/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
@@ -12,6 +11,7 @@ import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import { getPrice } from '@proton/payments/core/price-helpers';
 import { getPlanName, isDangerouslyAllowedSubscriptionEstimation } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 
 const SUPPORTED_PLANS = new Set([PLANS.MAIL, PLANS.BUNDLE]);
@@ -27,8 +27,7 @@ export interface OfferCheckResult {
     coupon: string;
 }
 
-export const useCancellationOffer = (): OfferCheckResult => {
-    const [subscription] = useSubscription();
+export const useCancellationOffer = (subscription: Subscription): OfferCheckResult => {
     const [plans] = usePlans();
     const { paymentsApi } = usePaymentsApiWithCheckFallback();
     const [isLoading, withIsLoading] = useLoading(true);
@@ -39,9 +38,9 @@ export const useCancellationOffer = (): OfferCheckResult => {
 
     const planName = getPlanName(subscription);
     const plansData = plans?.plans;
-    const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
+    const cycle = subscription.Cycle;
     const isYearly = cycle === CYCLE.YEARLY;
-    const currency = subscription?.Currency ?? 'USD';
+    const currency = subscription.Currency;
     const coupon = isYearly ? COUPON_CODES.RENEWANDSAVE12M26 : COUPON_CODES.RENEWANDSAVE1M26;
     const isSupported = !!planName && SUPPORTED_PLANS.has(planName);
 

@@ -1,4 +1,3 @@
-import { useSubscription } from '@proton/account/subscription/hooks';
 import {
     hasBundle,
     hasBundleBiz2025,
@@ -13,10 +12,9 @@ import {
     hasMailPro,
     hasVisionary,
 } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 
-export const useFeedbackFirstEligibility = () => {
-    const [subscription] = useSubscription();
-
+export const useFeedbackFirstEligibility = (subscription: Subscription) => {
     const getHasB2BAccess = () => {
         if (
             hasMailPro(subscription) ||

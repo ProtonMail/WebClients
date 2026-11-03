@@ -1,20 +1,21 @@
 import { c } from 'ttag';
 
+import { useGetAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
-import { useGetSubscription, useSubscription } from '@proton/account/subscription/hooks';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
+    type MaybeFreeSubscription,
     getAvailableSubscriptionActions,
-    getPlanName,
     hasCancellablePlan,
+    hasPassLaunchOffer,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
@@ -30,7 +31,6 @@ import { usePassLaunchOfferStep } from '../cancellationSteps/usePassLaunchOfferS
 import { useUpsellStep } from '../cancellationSteps/useUpsellStep';
 import type { CancelSubscriptionResult } from './types';
 import { useCancelRenewal } from './useCancelRenewal';
-import { useCancellationStepEligibility } from './useCancellationStepEligibility';
 
 const SUBSCRIPTION_KEPT: CancelSubscriptionResult = {
     status: 'kept',
@@ -61,19 +61,14 @@ interface Props {
  * cancelSubscription: the function to call to cancel the subscription.
  */
 export const useCancelSubscriptionFlow = ({ app }: Props) => {
-    const getSubscription = useGetSubscription();
+    const getAllSubscriptions = useGetAllSubscriptions();
     const getUser = useGetUser();
-    const [subscription, loadingSubscription] = useSubscription();
     const [entitlementCatalog, loadingEntitlementCatalog] = useEntitlementCatalog();
-    const { isB2BTrial } = getTrialInfoForSingleSubscription(entitlementCatalog, subscription);
     const [plansResult, loadingPlans] = usePlans();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const plans = plansResult?.plans ?? [];
-    const currentPlanId = getPlanName(subscription);
     const isUpsellEnabled = useFlag('NewCancellationFlowUpsell');
     const canUseUpsellFlow = isUpsellEnabled && app === APPS.PROTONMAIL;
-
-    const { canShowPassLaunchOffer } = useCancellationStepEligibility();
 
     const cancelTrial = useCancelTrialStep({ canShow: async () => true });
     const cancelConfirmation = useCancelConfirmationStep({ canShow: async () => true });
@@ -81,7 +76,9 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     const upsell = useUpsellStep();
     const highlightPlanDowngrade = useHighlightPlanDowngradeStep({ canShow: async () => true });
     const inAppPurchase = useInAppPurchaseStep({ canShow: async () => true });
-    const passLaunchOffer = usePassLaunchOfferStep({ canShow: canShowPassLaunchOffer });
+    const passLaunchOffer = usePassLaunchOfferStep({
+        canShow: async (subscription) => hasPassLaunchOffer(subscription),
+    });
     const feedback = useFeedbackStep({ canShow: async () => true });
     const { cancelSubscriptionRenewal } = useCancelRenewal();
 
@@ -92,7 +89,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             {cancelTrial.modal}
             {highlightPlanDowngrade.modal}
             {inAppPurchase.modal}
-            {currentPlanId ? upsell.modal : null}
+            {upsell.modal}
             {passLaunchOffer.modal}
             {cancelConfirmation.modal}
             {cancelViaSupport.modal}
@@ -109,10 +106,6 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         subscription,
         upsellPlanId,
     }: CancelWithUpsellProps): Promise<CancelSubscriptionResult> => {
-        if (!currentPlanId) {
-            return SUBSCRIPTION_KEPT;
-        }
-
         const resolution = upsellPlanId
             ? await upsell.show({
                   freePlan,
@@ -127,16 +120,17 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         }
 
         if (resolution.status === SUBSCRIPTION_CANCELLED.status) {
-            const feedbackResult = await feedback.show();
+            const feedbackResult = await feedback.show(subscription);
             if (feedbackResult.status === 'kept') {
                 return SUBSCRIPTION_KEPT;
             }
-            return cancelSubscriptionRenewal(feedbackResult.feedback);
+            return cancelSubscriptionRenewal(subscription, feedbackResult.feedback);
         }
         return SUBSCRIPTION_UPSOLD;
     };
 
     interface CancelRenewProps {
+        isB2BTrial: boolean;
         skipUpsell?: boolean;
         subscription: Subscription;
         subscriptionReminderFlow: boolean | undefined;
@@ -144,6 +138,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     }
 
     const cancelRenew = async ({
+        isB2BTrial,
         skipUpsell,
         subscription,
         subscriptionReminderFlow,
@@ -151,7 +146,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     }: CancelRenewProps): Promise<CancelSubscriptionResult> => {
         if (isB2BTrial) {
             try {
-                await cancelTrial.show();
+                await cancelTrial.show(subscription);
             } catch {
                 return SUBSCRIPTION_KEPT;
             }
@@ -161,7 +156,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             if (canUseUpsellFlow && !skipUpsell) {
                 return cancelWithUpsell({ subscription, upsellPlanId });
             } else {
-                const result = await cancelConfirmation.show();
+                const result = await cancelConfirmation.show(subscription);
 
                 if (result.status === 'kept') {
                     return SUBSCRIPTION_KEPT;
@@ -171,7 +166,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
 
         if (!isB2BTrial && !subscriptionReminderFlow) {
             try {
-                await highlightPlanDowngrade.show({ app });
+                await highlightPlanDowngrade.show({ app, subscription });
             } catch {
                 return SUBSCRIPTION_KEPT;
             }
@@ -179,41 +174,53 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
 
         if (!isB2BTrial) {
             try {
-                await passLaunchOffer.show();
+                await passLaunchOffer.show(subscription);
             } catch {
                 return SUBSCRIPTION_KEPT;
             }
         }
 
-        const feedbackResult = await feedback.show();
+        const feedbackResult = await feedback.show(subscription);
         if (feedbackResult.status === 'kept') {
             return SUBSCRIPTION_KEPT;
         }
 
-        return cancelSubscriptionRenewal(feedbackResult.feedback);
+        return cancelSubscriptionRenewal(subscription, feedbackResult.feedback);
+    };
+
+    const getLatestSubscription = async (subscription: MaybeFreeSubscription) => {
+        if (!isPaidSubscription(subscription)) {
+            return undefined;
+        }
+
+        const subscriptions = await getAllSubscriptions();
+        return subscriptions.find(({ ID }) => ID === subscription.ID);
     };
 
     const cancelSubscription = async ({
+        subscription: targetSubscription,
         subscriptionReminderFlow,
         upsellPlanId,
         skipUpsell,
     }: {
+        subscription: MaybeFreeSubscription;
         subscriptionReminderFlow?: boolean;
         upsellPlanId?: PLANS;
         skipUpsell?: boolean;
     }): Promise<CancelSubscriptionResult> => {
-        const [subscription, user] = await Promise.all([getSubscription(), getUser()]);
-        if (user.isFree || isFreeSubscription(subscription)) {
+        const [subscription, user] = await Promise.all([getLatestSubscription(targetSubscription), getUser()]);
+        if (user.isFree || !subscription) {
             createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
             return SUBSCRIPTION_KEPT;
         }
 
         const subscriptionActions = getAvailableSubscriptionActions(subscription);
         if (!subscriptionActions.canCancel) {
-            await inAppPurchase.show();
+            await inAppPurchase.show(subscription);
             return SUBSCRIPTION_KEPT;
         }
 
+        const { isB2BTrial } = getTrialInfoForSingleSubscription(entitlementCatalog, subscription);
         if (!isB2BTrial && !hasCancellablePlan(subscription)) {
             await cancelViaSupport.show();
             return SUBSCRIPTION_KEPT;
@@ -224,6 +231,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         }
 
         return cancelRenew({
+            isB2BTrial,
             skipUpsell,
             subscription,
             subscriptionReminderFlow,
@@ -232,7 +240,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     };
 
     return {
-        loadingCancelSubscription: loadingSubscription || loadingPlans || loadingEntitlementCatalog,
+        loadingCancelSubscription: loadingPlans || loadingEntitlementCatalog,
         cancelSubscriptionModals: modals,
         cancelSubscription,
     };

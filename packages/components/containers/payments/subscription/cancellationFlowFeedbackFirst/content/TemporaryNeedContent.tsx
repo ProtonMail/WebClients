@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ModalTwoContent from '../../../../../components/modalTwo/ModalContent';
@@ -18,14 +18,14 @@ import { getPlanDisplayName } from '../helpers/getPlanDisplayName';
 import { useFeedbackFirstEligibility } from '../hooks/useFeedbackFirstEligibility';
 
 interface Props {
+    subscription: Subscription;
     onKeepPlan: () => void;
     onContinueCancelling: () => void;
 }
 
-export const TemporaryNeedContent = ({ onKeepPlan, onContinueCancelling }: Props) => {
-    const [subscription] = useSubscription();
+export const TemporaryNeedContent = ({ subscription, onKeepPlan, onContinueCancelling }: Props) => {
     const [plansResult] = usePlans();
-    const { hasB2BAccess, hasB2CAccess } = useFeedbackFirstEligibility();
+    const { hasB2BAccess, hasB2CAccess } = useFeedbackFirstEligibility(subscription);
 
     const planName = getPlanName(subscription);
     const plans = plansResult?.plans ?? [];

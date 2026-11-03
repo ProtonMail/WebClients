@@ -77,7 +77,7 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed }:
         { operationsSubscriptionData, paymentMethodValue }: SubscriptionContext
     ) => {
         if (!hasPlanIDs(operationsSubscriptionData.Plans)) {
-            const result = await cancelSubscription({});
+            const result = await cancelSubscription({ subscription });
             if (result?.status === 'kept') {
                 return;
             }

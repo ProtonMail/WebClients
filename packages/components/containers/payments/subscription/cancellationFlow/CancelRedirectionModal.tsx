@@ -1,11 +1,10 @@
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { PLANS } from '@proton/payments/core/constants';
 import { getRenewalTime } from '@proton/payments/core/subscription/helpers';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import SettingsLink from '../../../../components/link/SettingsLink';
@@ -15,18 +14,14 @@ import useEventManager from '../../../../hooks/useEventManager';
 import useCancellationTelemetry, { REACTIVATE_SOURCE } from './useCancellationTelemetry';
 
 interface Props extends ModalProps {
+    subscription: Subscription;
     plan: PLANS;
     planName: string;
 }
 
-export const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
+export const CancelRedirectionModal = ({ subscription, planName, plan, ...props }: Props) => {
     const { sendResubscribeModalResubcribeReport, sendResubscribeModalCloseReport } = useCancellationTelemetry();
     const eventManager = useEventManager();
-    const [subscription] = useSubscription();
-
-    if (!subscription || isFreeSubscription(subscription)) {
-        return null;
-    }
 
     const subscriptionEndDateString = format(fromUnixTime(getRenewalTime(subscription)), 'PPP', {
         locale: dateLocale,

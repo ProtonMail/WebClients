@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { PLANS } from '@proton/payments/core/constants';
 import { getAvailableSubscriptionActions, getPlanName } from '@proton/payments/core/subscription/helpers';
-import { isPaidSubscription } from '@proton/payments/core/type-guards';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 
 import type { ModalProps } from '../../../../components/modalTwo/Modal';
 import ModalTwo from '../../../../components/modalTwo/Modal';
@@ -38,19 +37,19 @@ enum CANCELLATION_STEPS {
 }
 
 interface Props extends ModalProps {
+    subscription: Subscription;
     onCancelled: () => void;
 }
 
-export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props) => {
+export const FeedbackFirstCancellation = ({ subscription, onCancelled, ...modalProps }: Props) => {
     const [step, setStep] = useState(CANCELLATION_STEPS.FEEDBACK);
     const [user] = useUser();
     const [feedback, setFeedback] = useState<FeedbackDowngradeFormData | undefined>();
-    const [subscription] = useSubscription();
-    const offerData = useCancellationOffer();
+    const offerData = useCancellationOffer(subscription);
     const { cancelSubscriptionRenewal } = useCancelRenewal();
 
     const { sendFeedbackReport, sendSecondStepReport, sendConfirmCancellation, sendManagedExternally } =
-        useFeedbackFirstTelemetry();
+        useFeedbackFirstTelemetry(subscription);
 
     const closeModal = () => {
         modalProps.onClose?.();
@@ -101,13 +100,14 @@ export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props)
     };
 
     const handleConfirmCancellation = async () => {
-        if (subscription && !getAvailableSubscriptionActions(subscription).canCancel) {
+        if (!getAvailableSubscriptionActions(subscription).canCancel) {
             sendManagedExternally();
             setStep(CANCELLATION_STEPS.MANAGED_EXTERNALLY);
             return;
         }
 
         await cancelSubscriptionRenewal(
+            subscription,
             feedback ?? { Reason: '', Feedback: '', ReasonDetails: '', Context: 'mail' },
             false
         );
@@ -120,7 +120,7 @@ export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props)
     return (
         <ModalTwo className="h-full" size="xlarge" {...modalProps}>
             {step === CANCELLATION_STEPS.FEEDBACK && (
-                <FeedbackDowngradeContent user={user} onResolve={handleFeedbackResolve} />
+                <FeedbackDowngradeContent user={user} subscription={subscription} onResolve={handleFeedbackResolve} />
             )}
             {step === CANCELLATION_STEPS.MISSING_FEATURE && (
                 <MissingFeatureContent onKeepPlan={closeModal} onContinueCancelling={handleContinueToConfirm} />
@@ -133,7 +133,11 @@ export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props)
                 />
             )}
             {step === CANCELLATION_STEPS.TEMPORARY_NEED && (
-                <TemporaryNeedContent onKeepPlan={closeModal} onContinueCancelling={handleContinueToConfirm} />
+                <TemporaryNeedContent
+                    subscription={subscription}
+                    onKeepPlan={closeModal}
+                    onContinueCancelling={handleContinueToConfirm}
+                />
             )}
             {step === CANCELLATION_STEPS.DIFFERENT_ACCOUNT && (
                 <DifferentAccountContent onContinueCancelling={handleContinueToConfirm} onKeepPlan={closeModal} />
@@ -143,15 +147,20 @@ export const FeedbackFirstCancellation = ({ onCancelled, ...modalProps }: Props)
             )}
             {step === CANCELLATION_STEPS.DIFFERENT_PROVIDER && (
                 <DifferentProviderContent
+                    subscription={subscription}
                     onKeepPlan={closeModal}
                     onContinueCancelling={handleContinueToConfirm}
                     feedbackReason={feedback?.ReasonDetails}
                 />
             )}
             {step === CANCELLATION_STEPS.CONFIRM && (
-                <ConfirmCancellationContent onKeepPlan={closeModal} onCancelSubscription={handleConfirmCancellation} />
+                <ConfirmCancellationContent
+                    subscription={subscription}
+                    onKeepPlan={closeModal}
+                    onCancelSubscription={handleConfirmCancellation}
+                />
             )}
-            {step === CANCELLATION_STEPS.MANAGED_EXTERNALLY && isPaidSubscription(subscription) && (
+            {step === CANCELLATION_STEPS.MANAGED_EXTERNALLY && (
                 <ManagedExternallyContent subscription={subscription} onClose={closeModal} />
             )}
         </ModalTwo>

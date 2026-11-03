@@ -1,26 +1,25 @@
 import { usePlans } from '@proton/account/plans/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
 import type { PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlan, getRenewalTime } from '@proton/payments/core/subscription/helpers';
-import { isPaidSubscription } from '@proton/payments/core/type-guards';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import { getShortPlan } from '../../features/plan';
 import type { HighlightPlanDowngradeModalOwnProps } from '../HighlightPlanDowngradeModal';
 import HighlightPlanDowngradeModal, { planSupportsCancellationDowngradeModal } from '../HighlightPlanDowngradeModal';
-import type { CancellationStepConfig } from './types';
+import type { SubscriptionCancellationStepConfig } from './types';
 
 interface ShowProps {
     app: ProductParam;
+    subscription: Subscription;
 }
 
-export const useHighlightPlanDowngradeStep = ({ canShow }: CancellationStepConfig) => {
+export const useHighlightPlanDowngradeStep = ({ canShow }: SubscriptionCancellationStepConfig) => {
     const [user] = useUser();
-    const [subscription] = useSubscription();
     const [plansResult] = usePlans();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const { plansMap } = usePreferredPlansMap();
@@ -32,12 +31,8 @@ export const useHighlightPlanDowngradeStep = ({ canShow }: CancellationStepConfi
         return <HighlightPlanDowngradeModal {...props} onConfirm={onResolve} onClose={onReject} />;
     });
 
-    const show = async ({ app }: ShowProps) => {
-        if (!(await canShow())) {
-            return;
-        }
-
-        if (!isPaidSubscription(subscription)) {
+    const show = async ({ app, subscription }: ShowProps) => {
+        if (!(await canShow(subscription))) {
             return;
         }
 

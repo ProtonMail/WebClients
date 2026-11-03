@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
@@ -12,6 +11,7 @@ import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useA
 import type { PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlanName, getPlanTitle } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
@@ -27,9 +27,11 @@ import Time from '../../../components/time/Time';
 import { useSilentApi } from '../../../hooks/useSilentApi';
 import { getShortPlan } from '../features/plan';
 
-const FeatureList = () => {
-    const [subscription] = useSubscription();
+interface FeatureListProps {
+    subscription: Subscription;
+}
 
+const FeatureList = ({ subscription }: FeatureListProps) => {
     const silentApi = useSilentApi();
     const getPlans = useGetPlans();
 
@@ -45,7 +47,7 @@ const FeatureList = () => {
         });
     }, []);
 
-    if (loadingCurrency || !plans || !freePlan || !subscription) {
+    if (loadingCurrency || !plans || !freePlan) {
         return null;
     }
 
@@ -83,17 +85,17 @@ const FeatureList = () => {
 };
 
 interface CancelTrialModalProps extends ModalStateProps {
+    subscription: Subscription;
     onConfirm: () => void;
 }
 
-const CancelTrialModal = ({ onConfirm, onClose, ...rest }: CancelTrialModalProps) => {
-    const [subscription] = useSubscription();
+const CancelTrialModal = ({ subscription, onConfirm, onClose, ...rest }: CancelTrialModalProps) => {
     const [organization] = useOrganization();
     const [user] = useUser();
 
-    const trialEndsOn = subscription?.PeriodEnd;
+    const trialEndsOn = subscription.PeriodEnd;
 
-    if (!subscription || !organization || !user) {
+    if (!organization || !user) {
         return null;
     }
 
@@ -115,7 +117,7 @@ const CancelTrialModal = ({ onConfirm, onClose, ...rest }: CancelTrialModalProps
             <ModalTwoContent>
                 <p>{c('Info')
                     .jt`At the end of your trial ${boldCancelDate}, you’ll be downgraded to ${boldProtonFree}. All user accounts will be removed from your organization.`}</p>
-                <FeatureList />
+                <FeatureList subscription={subscription} />
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Close`}</Button>

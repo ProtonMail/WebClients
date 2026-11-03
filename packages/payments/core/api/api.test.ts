@@ -1,9 +1,9 @@
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+import { Renew, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { ADDON_NAMES, PLANS } from '../constants';
 import type { Subscription } from '../subscription/interface';
-import { fetchPreviousSubscription, getPaymentsInit, getSubscription } from './api';
+import { changeRenewState, fetchPreviousSubscription, getPaymentsInit, getSubscription } from './api';
 
 describe('fetchPreviousSubscription', () => {
     const buildApi = (response: unknown) => jest.fn().mockResolvedValue(response) as unknown as Api;
@@ -232,5 +232,19 @@ describe('getSubscription', () => {
 describe('getPaymentsInit', () => {
     it('builds GET payments/v5/init request', () => {
         expect(getPaymentsInit()).toEqual({ url: 'payments/v5/init', method: 'get' });
+    });
+});
+
+describe('changeRenewState', () => {
+    it('targets the given subscription by its ID', () => {
+        expect(changeRenewState({ RenewalState: Renew.Enabled }, 'sub-lumo')).toEqual({
+            url: 'payments/v5/subscription/sub-lumo/renew',
+            method: 'put',
+            data: { RenewalState: Renew.Enabled },
+        });
+    });
+
+    it('uses the route without an ID when no subscription is given', () => {
+        expect(changeRenewState({ RenewalState: Renew.Enabled }).url).toBe('payments/v5/subscription/renew');
     });
 });

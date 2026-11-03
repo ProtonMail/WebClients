@@ -17,12 +17,14 @@ const checkUrl = 'payments/v5/subscription/check';
 
 const getCheckCalls = () => apiMock.mock.calls.map(([config]) => config).filter((config) => config.url === checkUrl);
 
+const getMailSubscription = (cycle: CYCLE) => buildSubscription({ planName: PLANS.MAIL, cycle, currency: 'EUR' });
+
 const getWrapper = (cycle: CYCLE) =>
     getStoreWrapper({
         preloadedState: {
             user: getModelState(buildUser({ Currency: 'EUR' })),
             plans: getModelState({ plans: getTestPlans('EUR'), freePlan: FREE_PLAN }),
-            subscription: getSubscriptionState(buildSubscription({ planName: PLANS.MAIL, cycle, currency: 'EUR' })),
+            subscription: getSubscriptionState(getMailSubscription(cycle)),
         },
     }).Wrapper;
 
@@ -53,7 +55,9 @@ describe('useCancellationOffer', () => {
             Currency: 'EUR',
         }));
 
-        const { result } = renderHook(() => useCancellationOffer(), { wrapper: getWrapper(cycle) });
+        const { result } = renderHook(() => useCancellationOffer(getMailSubscription(cycle)), {
+            wrapper: getWrapper(cycle),
+        });
 
         await waitFor(() => expect(result.current.offerIsAvailable).toBe(true));
         expect(getCheckCalls()).toHaveLength(1);
@@ -70,10 +74,38 @@ describe('useCancellationOffer', () => {
     it('falls back to the optimistic price without the coupon discount when the check fails', async () => {
         addApiMock(checkUrl, () => Promise.reject(new Error('check failed')));
 
-        const { result } = renderHook(() => useCancellationOffer(), { wrapper: getWrapper(CYCLE.YEARLY) });
+        const { result } = renderHook(() => useCancellationOffer(getMailSubscription(CYCLE.YEARLY)), {
+            wrapper: getWrapper(CYCLE.YEARLY),
+        });
 
         await waitFor(() => expect(result.current.offerIsAvailable).toBe(true));
         expect(getCheckCalls()).toHaveLength(1);
         expect(result.current.checkout?.withDiscountPerCycle).toBe(4788);
+    });
+
+    it('checks the plan, cycle and currency of the given subscription, not of the one in the store', async () => {
+        const bundleSubscription = buildSubscription({ planName: PLANS.BUNDLE, cycle: CYCLE.YEARLY, currency: 'EUR' });
+        addApiMock(checkUrl, () => ({
+            Amount: 100,
+            AmountDue: 50,
+            CouponDiscount: -50,
+            Coupon: { Code: COUPON_CODES.RENEWANDSAVE12M26, Description: '' },
+            Cycle: CYCLE.YEARLY,
+            Currency: 'EUR',
+        }));
+
+        const { result } = renderHook(() => useCancellationOffer(bundleSubscription), {
+            wrapper: getWrapper(CYCLE.MONTHLY),
+        });
+
+        await waitFor(() => expect(result.current.offerIsAvailable).toBe(true));
+        expect(getCheckCalls()[0].data).toEqual(
+            expect.objectContaining({
+                Plans: { [PLANS.BUNDLE]: 1 },
+                Cycle: CYCLE.YEARLY,
+                CouponCode: COUPON_CODES.RENEWANDSAVE12M26,
+            })
+        );
+        expect(result.current.planName).toBe(PLANS.BUNDLE);
     });
 });

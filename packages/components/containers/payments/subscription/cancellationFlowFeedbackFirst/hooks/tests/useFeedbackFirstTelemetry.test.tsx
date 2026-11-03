@@ -2,11 +2,14 @@ import { renderHook } from '@testing-library/react';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { PLANS } from '@proton/payments/core/constants';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import {
     TelemetryAccountCancellationFlowFeedbackEvents,
     sendMultipleTelemetryData,
     sendTelemetryData,
 } from '@proton/shared/lib/api/telemetry';
+import { getBaseTelemetryDimensions } from '@proton/shared/lib/helpers/metrics';
 
 import { useSilentApi } from '../../../../../../hooks/useSilentApi';
 import { useFeedbackFirstTelemetry } from '../useFeedbackFirstTelemetry';
@@ -39,6 +42,9 @@ jest.mock('@proton/shared/lib/helpers/metrics', () => ({
     getBaseTelemetryDimensions: jest.fn(() => ({})),
 }));
 
+const mailSubscription = buildSubscription(PLANS.MAIL, { CouponCode: 'MAILCOUPON' });
+const lumoSubscription = buildSubscription(PLANS.LUMO, { CouponCode: 'LUMOCOUPON' });
+
 describe('useFeedbackFirstTelemetry', () => {
     let mockSilentApi: jest.Mock;
 
@@ -46,12 +52,12 @@ describe('useFeedbackFirstTelemetry', () => {
         jest.clearAllMocks();
         mockSilentApi = jest.fn();
         mockUseSilentApi.mockReturnValue(mockSilentApi);
-        mockUseSubscription.mockReturnValue([{ CouponCode: null }, false]);
+        mockUseSubscription.mockReturnValue([mailSubscription, false]);
         mockUseUserSettings.mockReturnValue([{}, false]);
     });
 
     it('should send the managed_externally telemetry event as an individual request', () => {
-        const { result } = renderHook(() => useFeedbackFirstTelemetry());
+        const { result } = renderHook(() => useFeedbackFirstTelemetry(lumoSubscription));
 
         result.current.sendManagedExternally();
 
@@ -66,7 +72,7 @@ describe('useFeedbackFirstTelemetry', () => {
     });
 
     it('should report a skipped cancellation reason when no reason was given', () => {
-        const { result } = renderHook(() => useFeedbackFirstTelemetry());
+        const { result } = renderHook(() => useFeedbackFirstTelemetry(lumoSubscription));
 
         const feedback = { Reason: '', Feedback: '', ReasonDetails: '' } as any;
 
@@ -90,7 +96,7 @@ describe('useFeedbackFirstTelemetry', () => {
     });
 
     it('should report the selected cancellation reason when one was given', () => {
-        const { result } = renderHook(() => useFeedbackFirstTelemetry());
+        const { result } = renderHook(() => useFeedbackFirstTelemetry(lumoSubscription));
 
         const feedback = { Reason: 'TOO_EXPENSIVE', Feedback: '', ReasonDetails: '' } as any;
 
@@ -105,7 +111,7 @@ describe('useFeedbackFirstTelemetry', () => {
     });
 
     it('should send each event as a separate individual request rather than batching them', () => {
-        const { result } = renderHook(() => useFeedbackFirstTelemetry());
+        const { result } = renderHook(() => useFeedbackFirstTelemetry(lumoSubscription));
 
         const feedback = { Reason: 'reason', ReasonDetails: 'Other' } as any;
 
@@ -131,5 +137,18 @@ describe('useFeedbackFirstTelemetry', () => {
             expect(request.url).toBe('data/v1/stats');
         });
         expect(mockSendMultipleTelemetryData).not.toHaveBeenCalled();
+    });
+
+    it('should describe the given subscription, not the one from useSubscription', () => {
+        const { result } = renderHook(() => useFeedbackFirstTelemetry(lumoSubscription));
+
+        result.current.startCancellation();
+
+        expect(mockSendTelemetryData).toHaveBeenCalledWith(
+            expect.objectContaining({ Dimensions: expect.objectContaining({ couponCode: 'LUMOCOUPON' }) })
+        );
+        expect(getBaseTelemetryDimensions).toHaveBeenCalledWith(
+            expect.objectContaining({ subscription: lumoSubscription })
+        );
     });
 });

@@ -1,7 +1,6 @@
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
@@ -9,6 +8,7 @@ import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
 import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -19,14 +19,13 @@ import StripedItem from '../../../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../../../components/stripedList/StripedList';
 
 interface Props {
+    subscription: Subscription;
     onKeepPlan: () => void;
     onCancelSubscription: () => void;
 }
 
-export const ConfirmCancellationContent = ({ onKeepPlan, onCancelSubscription }: Props) => {
-    const [subscription] = useSubscription();
-
-    const endDate = subscription?.PeriodEnd
+export const ConfirmCancellationContent = ({ subscription, onKeepPlan, onCancelSubscription }: Props) => {
+    const endDate = subscription.PeriodEnd
         ? format(fromUnixTime(subscription.PeriodEnd), 'PPP', { locale: dateLocale })
         : '';
 

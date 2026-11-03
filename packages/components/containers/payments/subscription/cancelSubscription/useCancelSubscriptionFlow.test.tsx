@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getOrganizationState } from '@proton/account/testing/redux-state';
 import { changeRenewState } from '@proton/payments/core/api/api';
-import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
@@ -15,6 +15,7 @@ import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { apiMock } from '@proton/test-api/api';
 
 import { renderWithProviders } from '../../../../testing/renderWithProviders';
+import NotificationsChildren from '../../../notifications/Children';
 import { organization } from '../__mocks__/data';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
@@ -24,9 +25,23 @@ const userModel: UserModel = {
     ID: 'user-123',
 } as UserModel;
 
-const vpnSubscription = buildSubscription(PLANS.VPN2024);
+const vpnSubscription = { ...buildSubscription(PLANS.VPN2024), ID: 'sub-vpn' };
 
-const vpnBusinessSubscription = buildSubscription(PLANS.VPN_BUSINESS);
+const vpnBusinessSubscription = { ...buildSubscription(PLANS.VPN_BUSINESS), ID: 'sub-vpn-business' };
+
+const mailSubscription = { ...buildSubscription(PLANS.MAIL), ID: 'sub-mail' };
+
+const lumoSubscription = { ...buildSubscription(PLANS.LUMO), ID: 'sub-lumo' };
+
+const differentAccountFeedback = {
+    RenewalState: Renew.Disabled,
+    CancellationFeedback: {
+        Reason: 'DIFFERENT_ACCOUNT',
+        Feedback: null,
+        ReasonDetails: null,
+        Context: 'mail',
+    },
+} as const;
 
 type HookRef = { hook?: ReturnType<typeof useCancelSubscriptionFlow> };
 const Component = ({ hookRef }: { hookRef: HookRef }) => {
@@ -34,7 +49,12 @@ const Component = ({ hookRef }: { hookRef: HookRef }) => {
 
     hookRef.hook = result;
 
-    return result.cancelSubscriptionModals;
+    return (
+        <>
+            {result.cancelSubscriptionModals}
+            <NotificationsChildren />
+        </>
+    );
 };
 
 const setup = ({
@@ -50,7 +70,7 @@ const setup = ({
 };
 
 describe('cancel subscription', () => {
-    it('should return subscription kept if free subscription', async () => {
+    it('should keep the subscription and tell the user when the given subscription is free', async () => {
         const { hookRef } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(FREE_SUBSCRIPTION as unknown as Subscription),
@@ -59,7 +79,23 @@ describe('cancel subscription', () => {
             },
         });
 
-        await expect(hookRef.hook?.cancelSubscription({})).resolves.toEqual({
+        await expect(hookRef.hook?.cancelSubscription({ subscription: FREE_SUBSCRIPTION })).resolves.toEqual({
+            status: 'kept',
+        });
+        expect(await screen.findByText('You already have a free account')).toBeInTheDocument();
+        expect(apiMock).not.toHaveBeenCalledWith(expect.objectContaining({ method: 'put' }));
+    });
+
+    it('should return subscription kept if the subscription is no longer there', async () => {
+        const { hookRef } = setup({
+            preloadedState: {
+                subscription: getSubscriptionState(FREE_SUBSCRIPTION as unknown as Subscription),
+                user: getModelState({ ...userModel }),
+                organization: getOrganizationState(organization),
+            },
+        });
+
+        await expect(hookRef.hook?.cancelSubscription({ subscription: vpnSubscription })).resolves.toEqual({
             status: 'kept',
         });
     });
@@ -73,7 +109,7 @@ describe('cancel subscription', () => {
             },
         });
 
-        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({});
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({ subscription: vpnSubscription });
 
         await screen.findByTestId('keepSubscription');
         await userEvent.click(screen.getByTestId('keepSubscription'));
@@ -92,7 +128,7 @@ describe('cancel subscription', () => {
             },
         });
 
-        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({});
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({ subscription: vpnSubscription });
 
         await screen.findByTestId('cancelSubscription');
         await userEvent.click(screen.getByTestId('cancelSubscription'));
@@ -129,7 +165,7 @@ describe('cancel subscription', () => {
                 },
             });
 
-            const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({});
+            const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({ subscription });
 
             await screen.findByTestId('cancelSubscription');
             await userEvent.click(screen.getByTestId('cancelSubscription'));
@@ -141,23 +177,61 @@ describe('cancel subscription', () => {
 
             await wait(0);
 
-            expect(apiMock).toHaveBeenCalledWith(
-                changeRenewState({
-                    RenewalState: Renew.Disabled,
-                    CancellationFeedback: {
-                        Reason: 'DIFFERENT_ACCOUNT',
-                        Feedback: null,
-                        ReasonDetails: null,
-                        Context: 'mail',
-                    },
-                })
-            );
+            expect(apiMock).toHaveBeenCalledWith(changeRenewState(differentAccountFeedback, 'sub-vpn'));
 
             await expect(cancelSubscriptionPromise).resolves.toEqual({
                 status: 'cancelled',
             });
         }
     );
+});
+
+describe('cancelling one of several subscriptions', () => {
+    const preloadedState = {
+        subscription: getSubscriptionState({ ...mailSubscription, SecondarySubscriptions: [lumoSubscription] }),
+        user: getModelState({ ...userModel }),
+        organization: getOrganizationState(organization),
+    };
+
+    it('runs every step for the given subscription and cancels it by its ID', async () => {
+        const {
+            hookRef,
+            result: { container },
+        } = setup({ preloadedState });
+
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({ subscription: lumoSubscription });
+
+        expect(
+            await screen.findByText(`You will lose access to ${PLAN_NAMES[PLANS.LUMO]} features on this date.`)
+        ).toBeInTheDocument();
+        await userEvent.click(screen.getByTestId('cancelSubscription'));
+        await wait(0);
+        await userEvent.click(container.querySelector('#reason') as HTMLButtonElement);
+        await userEvent.click(screen.getByText('I use a different Proton account'));
+        await userEvent.click(screen.getByTestId('submitFeedback'));
+        await wait(0);
+
+        expect(apiMock).toHaveBeenCalledWith(changeRenewState(differentAccountFeedback, 'sub-lumo'));
+        expect(apiMock).not.toHaveBeenCalledWith(changeRenewState(differentAccountFeedback, 'sub-mail'));
+        await expect(cancelSubscriptionPromise).resolves.toEqual({ status: 'cancelled' });
+    });
+
+    it('re-reads the given subscription, not the other one', async () => {
+        const { hookRef } = setup({
+            preloadedState: {
+                ...preloadedState,
+                subscription: getSubscriptionState({
+                    ...mailSubscription,
+                    SecondarySubscriptions: [{ ...lumoSubscription, Renew: Renew.Disabled }],
+                }),
+            },
+        });
+
+        await expect(hookRef.hook?.cancelSubscription({ subscription: lumoSubscription })).resolves.toEqual({
+            status: 'kept',
+        });
+        expect(screen.queryByTestId('cancelSubscription')).not.toBeInTheDocument();
+    });
 });
 
 describe('subscription cancellable only via support', () => {
@@ -170,7 +244,7 @@ describe('subscription cancellable only via support', () => {
             },
         });
 
-        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({});
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription({ subscription: vpnBusinessSubscription });
 
         expect(await screen.findByText('Why would you like to cancel?')).toBeInTheDocument();
         await userEvent.click(screen.getByRole('button', { name: 'Cancel' }));

@@ -1,32 +1,28 @@
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { isPaidSubscription } from '@proton/payments/core/type-guards';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 
 import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import { CancelSubscriptionModal } from '../cancelSubscription/CancelSubscriptionModal';
 import type { CancelSubscriptionResult } from '../cancelSubscription/types';
-import type { CancellationStep, CancellationStepConfig } from './types';
+import type { SubscriptionCancellationStep, SubscriptionCancellationStepConfig } from './types';
 
 export const useCancelConfirmationStep = ({
     canShow,
-}: CancellationStepConfig): CancellationStep<CancelSubscriptionResult> => {
-    const [subscription] = useSubscription();
+}: SubscriptionCancellationStepConfig): SubscriptionCancellationStep<CancelSubscriptionResult> => {
     const [cancelSubscriptionModal, showCancelSubscriptionModal] = useModalTwoPromise<
-        undefined,
+        { subscription: Subscription },
         CancelSubscriptionResult
     >();
 
-    const modal = isPaidSubscription(subscription)
-        ? cancelSubscriptionModal((props) => {
-              return <CancelSubscriptionModal subscription={subscription} {...props} />;
-          })
-        : null;
+    const modal = cancelSubscriptionModal((props) => {
+        return <CancelSubscriptionModal {...props} />;
+    });
 
-    const show = async () => {
-        if (!(await canShow())) {
+    const show = async (subscription: Subscription) => {
+        if (!(await canShow(subscription))) {
             return { status: 'kept' as const };
         }
 
-        return showCancelSubscriptionModal();
+        return showCancelSubscriptionModal({ subscription });
     };
 
     return { modal, show };

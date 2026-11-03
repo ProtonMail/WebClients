@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { changeRenewState } from '@proton/payments/core/api/api';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getTrialInfoForSingleSubscription } from '@proton/payments/core/trials';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
@@ -21,11 +21,14 @@ export const useCancelRenewal = () => {
     const api = useApi();
     const eventManager = useEventManager();
     const { createNotification, hideNotification } = useNotifications();
-    const [subscription] = useSubscription();
     const [entitlementCatalog] = useEntitlementCatalog();
-    const { isB2BTrial } = getTrialInfoForSingleSubscription(entitlementCatalog, subscription);
 
-    const cancelSubscriptionRenewal = async (feedback: FeedbackDowngradeFormData, refreshState = true) => {
+    const cancelSubscriptionRenewal = async (
+        subscription: Subscription,
+        feedback: FeedbackDowngradeFormData,
+        refreshState = true
+    ) => {
+        const { isB2BTrial } = getTrialInfoForSingleSubscription(entitlementCatalog, subscription);
         let cancelNotificationId;
 
         try {
@@ -36,15 +39,18 @@ export const useCancelRenewal = () => {
             });
 
             await api(
-                changeRenewState({
-                    RenewalState: Renew.Disabled,
-                    CancellationFeedback: {
-                        Reason: feedback.Reason || null,
-                        Feedback: feedback.Feedback || null,
-                        ReasonDetails: feedback.ReasonDetails || null,
-                        Context: feedback.Context,
+                changeRenewState(
+                    {
+                        RenewalState: Renew.Disabled,
+                        CancellationFeedback: {
+                            Reason: feedback.Reason || null,
+                            Feedback: feedback.Feedback || null,
+                            ReasonDetails: feedback.ReasonDetails || null,
+                            Context: feedback.Context,
+                        },
                     },
-                })
+                    subscription.ID
+                )
             );
             if (refreshState) {
                 await eventManager.call();
