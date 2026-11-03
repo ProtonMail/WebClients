@@ -18,10 +18,11 @@
     ],
     "scripts": {
         "build": "bash ./build-dcraw.sh && bash ./build-cr3.sh",
-        "lint": "eslint --quiet"
+        "lint": "oxlint --quiet"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
-        "eslint": "catalog:"
+        "@proton/oxlint-config": "workspace:^",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:"
     }
 }
