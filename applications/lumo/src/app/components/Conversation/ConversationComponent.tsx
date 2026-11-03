@@ -290,6 +290,7 @@ const ConversationLayout = ({
                             {openPanel.type === 'files' &&
                                 (!isScheduledRun || openPanel.autoShowDriveBrowser || openPanel.filterMessage) && (
                                     <FilesManagementView
+                                        key={openPanel.driveBrowserRequestId ?? 'files'}
                                         messageChain={messageChain}
                                         filesContainerRef={filesContainerRef}
                                         onClose={handleClosePanel}

@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { NodeType } from '@proton/drive/sdk';
 import { getFileIcon } from '@proton/file-icons/getFileIcon';
+import { MimeFolder } from '@proton/file-icons/icons/MimeFolder';
 
 import { getFileTypeDescription, getMimeTypeFromExtension } from '../../../util/filetypes';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
@@ -66,7 +67,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
 
         switch (variant) {
             case 'simple':
-                return `${base} p-2 mb-2 rounded-lg`;
+                return `${base} px-2 py-1.5 mb-0.5 rounded-lg`;
             case 'compact':
                 return `${base} p-2 mb-1 rounded border border-weak`;
             case 'detailed':
@@ -100,11 +101,11 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
             onClick={isClickable ? onClick : undefined}
         >
             {/* File icon */}
-            <div className="shrink-0 mr-3 relative">
+            <div className="shrink-0 mr-3 relative flex">
                 {file.type === NodeType.Folder ? (
-                    <LumoIcon name="Folder" size={variant === 'simple' ? 40 : 24} className="color-warning" />
+                    <MimeFolder size={6} className="shrink-0" />
                 ) : (
-                    <FileTypeIcon size={variant === 'simple' ? 10 : 6} className="shrink-0" />
+                    <FileTypeIcon size={6} className="shrink-0" />
                 )}
                 {file.isSharedWithMe && (
                     <Tooltip
@@ -131,7 +132,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
             </div>
 
             {/* File info */}
-            <div className="flex flex-column flex-1 min-w-0 gap-1">
+            <div className={`flex flex-column flex-1 min-w-0 ${variant === 'simple' ? 'gap-0' : 'gap-1'}`}>
                 <span
                     className={`${variant === 'simple' ? 'text-sm text-bold' : `font-semibold ${variant === 'compact' ? 'text-xs' : 'text-sm'}`}`}
                     style={{

@@ -10,6 +10,8 @@ type PanelState = {
     message?: Message;
     filterMessage?: Message;
     autoShowDriveBrowser?: boolean;
+    /** Bumped on every Drive browser request so an already-open files panel remounts into the browser. */
+    driveBrowserRequestId?: number;
     attachment?: Attachment;
 };
 
@@ -61,7 +63,12 @@ export const useConversationPanelState = () => {
     );
 
     const handleShowDriveBrowser = useCallback(() => {
-        setOpenPanel({ type: 'files', filterMessage: undefined, autoShowDriveBrowser: true });
+        setOpenPanel((prev) => ({
+            type: 'files',
+            filterMessage: undefined,
+            autoShowDriveBrowser: true,
+            driveBrowserRequestId: (prev.driveBrowserRequestId ?? 0) + 1,
+        }));
         open();
     }, [open]);
 

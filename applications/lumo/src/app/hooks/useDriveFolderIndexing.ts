@@ -26,7 +26,7 @@ interface IndexFolderOptions {
 
 const PARALLEL_DOWNLOAD_LIMIT = 5;
 
-export const MAX_INDEXABLE_FILES = 200;
+export const MAX_INDEXABLE_FILES = 300;
 
 interface IndexFolderResult {
     success: boolean;
@@ -149,39 +149,6 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
             setIndexingFile(folderName);
             setIndexingProgress(0, 0, 'Preparing...');
 
-            const persistFolderMetadata = (
-                documentCount: number,
-                treeEventScopeId?: string,
-                {
-                    incomplete = false,
-                    indexedAt = Date.now(),
-                }: { incomplete?: boolean; indexedAt?: number } = {}
-            ): void => {
-                const latestFolders = store.getState().lumoUserSettings.indexedDriveFolders || [];
-                const existing = latestFolders.find((f) => f.nodeUid === folderUid);
-
-                const indexedFolder: IndexedDriveFolder = {
-                    id: folderUid,
-                    nodeUid: folderUid,
-                    name: folderName,
-                    path: folderPath,
-                    spaceId,
-                    indexedAt,
-                    documentCount,
-                    isActive: true,
-                    incomplete,
-                    treeEventScopeId: treeEventScopeId || existing?.treeEventScopeId,
-                };
-
-                const updatedFolders = latestFolders.filter((f) => f.nodeUid !== folderUid);
-                updatedFolders.push(indexedFolder);
-
-                updateSettings({
-                    indexedDriveFolders: updatedFolders,
-                    _autoSave: true,
-                });
-            };
-
             try {
                 console.log('[DriveIndexing] Collecting files recursively from folder:', folderName);
                 const { files: allFiles, treeEventScopeId } = await collectDriveFolderFiles(
@@ -213,6 +180,41 @@ export function useDriveFolderIndexing(): UseDriveFolderIndexingReturn {
                         `[DriveIndexing] File limit exceeded. Indexing first ${MAX_INDEXABLE_FILES} of ${totalIndexableFiles} indexable files. ${skippedFiles} files will be skipped.`
                     );
                 }
+
+                const persistFolderMetadata = (
+                    documentCount: number,
+                    treeEventScopeId?: string,
+                    {
+                        incomplete = false,
+                        indexedAt = Date.now(),
+                    }: { incomplete?: boolean; indexedAt?: number } = {}
+                ): void => {
+                    const latestFolders = store.getState().lumoUserSettings.indexedDriveFolders || [];
+                    const existing = latestFolders.find((f) => f.nodeUid === folderUid);
+
+                    const indexedFolder: IndexedDriveFolder = {
+                        id: folderUid,
+                        nodeUid: folderUid,
+                        name: folderName,
+                        path: folderPath,
+                        spaceId,
+                        indexedAt,
+                        documentCount,
+                        isActive: true,
+                        incomplete,
+                        treeEventScopeId: treeEventScopeId || existing?.treeEventScopeId,
+                        totalIndexableFiles,
+                        skippedFiles,
+                    };
+
+                    const updatedFolders = latestFolders.filter((f) => f.nodeUid !== folderUid);
+                    updatedFolders.push(indexedFolder);
+
+                    updateSettings({
+                        indexedDriveFolders: updatedFolders,
+                        _autoSave: true,
+                    });
+                };
 
                 // Register the folder immediately so subscriptions and UI can react while indexing
                 // runs. Re-indexing keeps the previous counts so a run that never finishes doesn't

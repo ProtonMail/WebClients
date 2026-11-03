@@ -14,6 +14,10 @@ export interface IndexedDriveFolder {
     /** True while a folder walk is in flight, or after one was cancelled/failed part-way through. */
     incomplete?: boolean;
     treeEventScopeId?: string;
+    /** Supported files found in the folder tree during the last full index. */
+    totalIndexableFiles?: number;
+    /** Supported files left out of the last full index because the tree exceeded `MAX_INDEXABLE_FILES`. */
+    skippedFiles?: number;
 }
 
 /**
