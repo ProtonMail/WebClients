@@ -11,7 +11,7 @@ import { generateSpaceKeyBase64 } from '../../crypto';
 import { findAgentById } from '../../features/agents/registry';
 import { collectRetrievalExclusions } from '../../features/client-tools/retrievalTool/exclusions';
 import { formatRetrievalInstructions } from '../../features/client-tools/retrievalTool/instructions';
-import type { RetrievalContext } from '../../features/client-tools/retrievalTool/retrievalTool';
+import { type RetrievalContext, findRelatedChats } from '../../features/client-tools/retrievalTool/retrievalTool';
 import { isOpenToOtherSpaces, resolveSearchReach } from '../../features/client-tools/retrievalTool/searchReach';
 import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
 import { formatSkillCatalogue } from '../../features/skills/skillInvocation';
@@ -30,6 +30,7 @@ import { collapseCompactedChain } from '../../llm/compaction';
 import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
 import type { ContextFilter } from '../../llm/contextFilter';
 import { resolveRequestBudget } from '../../llm/requestBudget';
+import { getMessageContent } from '../../messageHelpers';
 import { selectMessagesByConversationId, selectRemoteIdFromLocal } from '../../redux/selectors';
 import { clearPendingAgent, clearPendingArtifactCreation } from '../../redux/slices/composerActions';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
@@ -89,6 +90,20 @@ import {
     runGenerationWithCompaction,
 } from './compactionFlow';
 import type { ConversationContext } from './conversationContext';
+
+/** Start of the user's message matched against other chats before sending. */
+const MAX_RELATED_QUERY_CHARS = 500;
+/** The message is sent without the related-chats hint rather than wait longer for it. */
+const RELATED_CHATS_BUDGET_MS = 500;
+
+/** `promise`'s value, or `fallback` if it fails or takes longer than `ms`. */
+function withinBudget<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const timeout = new Promise<T>((resolve) => {
+        timer = setTimeout(() => resolve(fallback), ms);
+    });
+    return Promise.race([promise.catch(() => fallback), timeout]).finally(() => clearTimeout(timer));
+}
 
 const createLumoErrorHandler =
     () =>
@@ -171,29 +186,39 @@ async function resolveRetrieval({
     );
     // Replaced by the chain actually sent once the compaction flow runs (see compactionFlow).
     const visibleMessageIds = new Set(collapseCompactedChain(chain, messageMap).chain.map((message) => message.id));
+    const tools: RetrievalContext = {
+        conversationId,
+        spaceId,
+        isProject,
+        allowWideScopes: !!index,
+        chatSearch,
+        searchOtherSpaces,
+        allowsSearchFromOutside: (otherSpaceId) =>
+            isOpenToOtherSpaces(otherSpaceId ? getState().spaces[otherSpaceId] : undefined),
+        hasLumoPlus,
+        getVisibleMessageIds: () => visibleMessageIds,
+        chatAttachments,
+        exclusions,
+        getState,
+        index,
+    };
+    const latestUserMessage = chain.findLast((message) => message.role === Role.User);
+    const relatedChats = latestUserMessage
+        ? await withinBudget(
+              findRelatedChats(tools, getMessageContent(latestUserMessage).slice(0, MAX_RELATED_QUERY_CHARS)),
+              RELATED_CHATS_BUDGET_MS,
+              []
+          )
+        : [];
     return {
-        tools: {
-            conversationId,
-            spaceId,
-            isProject,
-            allowWideScopes: !!index,
-            chatSearch,
-            searchOtherSpaces,
-            allowsSearchFromOutside: (otherSpaceId) =>
-                isOpenToOtherSpaces(otherSpaceId ? getState().spaces[otherSpaceId] : undefined),
-            hasLumoPlus,
-            getVisibleMessageIds: () => visibleMessageIds,
-            chatAttachments,
-            exclusions,
-            getState,
-            index,
-        },
+        tools,
         instructions: formatRetrievalInstructions({
             isProject,
             allowWideScopes: !!index,
             chatSearch,
             searchOtherSpaces,
             projectFiles,
+            relatedChats,
         }),
     };
 }

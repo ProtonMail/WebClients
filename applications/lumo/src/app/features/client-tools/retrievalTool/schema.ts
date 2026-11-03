@@ -41,7 +41,7 @@ export const searchKnowledgeTool = {
                     description:
                         '"this_chat": files and earlier messages of this chat. "project": the current project (only ' +
                         'in a project). "all": everything the user has. The system message says what each scope ' +
-                        'covers. Defaults to "project" in a project, otherwise "this_chat".',
+                        'covers. Defaults to "project" in a project, otherwise to "all" when available.',
                 },
                 sources: {
                     type: 'array',

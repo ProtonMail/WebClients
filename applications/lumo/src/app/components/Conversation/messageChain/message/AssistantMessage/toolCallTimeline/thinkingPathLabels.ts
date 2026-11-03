@@ -7,11 +7,19 @@ import {
     SEARCH_KNOWLEDGE_TOOL_NAME,
 } from '../../../../../../features/client-tools/retrievalTool/schema';
 import type { ToolCallAnnouncement, ToolCallData } from '../../../../../../lib/toolCall/types';
+import type { KnowledgeStepDetails } from './knowledgeStepDetails';
 
 export type ThinkingStep =
     | { type: 'reasoning'; content: string; isActive: boolean; durationMs?: number }
     | { type: 'preamble'; content: string }
-    | { type: 'tool_call'; toolCall: ToolCallData | ToolCallAnnouncement; result?: string; isActive: boolean };
+    | {
+          type: 'tool_call';
+          toolCall: ToolCallData | ToolCallAnnouncement;
+          result?: string;
+          isActive: boolean;
+          /** For knowledge lookups, which run on the client and carry no typed call data. */
+          knowledge?: KnowledgeStepDetails;
+      };
 
 type ThinkingPhase =
     | 'reasoning'

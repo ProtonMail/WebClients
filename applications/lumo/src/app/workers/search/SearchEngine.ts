@@ -18,10 +18,41 @@ import type { CryptoAdapter } from './adapters/CryptoAdapter';
 import type { DatabaseAdapter, SearchStatus } from './adapters/DatabaseAdapter';
 import { SEARCH_BLOB_VERSION_KEY, SEARCH_LIBRARY_BLOB_VERSION } from './config';
 
+/**
+ * Which chats the engine holds, and at which fingerprint. An engine blob in all but name, so it is
+ * wiped with them on a format reset and never says a chat is indexed when it isn't.
+ */
+const CONVERSATION_MANIFEST_BLOB = 'conversation_manifest';
+
+export type IndexableConversation = {
+    id: string;
+    title: string;
+    /** Text of the chat's user and assistant messages, oldest first. */
+    messages: { role: 'user' | 'assistant'; content: string }[];
+    /** Changes whenever the indexed text does, so unchanged chats are skipped. */
+    fingerprint: string;
+};
+
+/** Every attribute is always written: insert keeps attributes a document leaves out. */
+function toDocument({ id, title, messages }: IndexableConversation): Document {
+    const textOf = (role?: 'user' | 'assistant') =>
+        messages
+            .filter((message) => !role || message.role === role)
+            .map((message) => message.content)
+            .join(' ');
+    const doc = new Document(id);
+    doc.addAttribute('title', Value.text(title));
+    doc.addAttribute('content', Value.text(textOf()));
+    doc.addAttribute('usermessages', Value.text(textOf('user')));
+    doc.addAttribute('assistantmessages', Value.text(textOf('assistant')));
+    return doc;
+}
+
 // Search Engine class to encapsulate the core search logic
 export class SearchEngine {
     private readonly engine: Engine;
     private readonly cache: Map<string, Cached>;
+    private conversationManifest: Record<string, string> | null = null;
 
     constructor(
         public readonly userId: string,
@@ -157,8 +188,7 @@ export class SearchEngine {
             try {
                 event.send(SerDes.Cbor, data);
             } catch (x) {
-                const b64 = await bufferToBase64(data);
-                console.error(`Load event: send failed for "${name}" - ${b64}`);
+                console.error(`Load event: send failed for "${name}" (${data.length} bytes)`);
                 throw x;
             }
             console.log(`Load event: loading blob "${name}" (${data.length} bytes)`);
@@ -181,187 +211,10 @@ export class SearchEngine {
         await this.removeBlob(name);
     }
 
-    // Populate the engine with conversation data
-    async populateEngine(conversations: Record<string, any>): Promise<void> {
-        console.log('populateEngine called with', Object.keys(conversations).length, 'conversations');
-
-        console.log('Starting engine population with single engine instance...');
-
-        // Get write handle once for all conversations
-        // caller must serialize writes
-        const writer = this.engine.write();
-        if (!writer) {
-            throw new Error('Failed to get write handle - another write operation may be in progress');
-        }
-        console.log('Got write handle for population');
-
-        let indexedCount = 0;
-        let skippedCount = 0;
-        let errorCount = 0;
-
-        try {
-            // Index all conversations in a single engine instance
-            for (const [conversationId, conversation] of Object.entries(conversations)) {
-                if (!conversation || typeof conversation !== 'object') {
-                    console.log(`Skipping invalid conversation: ${conversationId}`);
-                    skippedCount++;
-                    continue;
-                }
-
-                // Skip conversations that don't need indexing (not dirty and not new)
-                if (conversation.dirty === false && conversation.status !== 'generating') {
-                    console.log(`Skipping conversation ${conversationId} (not dirty and not generating)`);
-                    skippedCount++;
-                    continue;
-                }
-
-                try {
-                    console.log(`Indexing conversation ${conversationId}...`);
-
-                    // Create document for this conversation
-                    const doc = new Document(conversation.id);
-
-                    // Add conversation title/subject
-                    if (conversation.title) {
-                        const titleValue = Value.text(conversation.title);
-                        doc.addAttribute('title', titleValue);
-                    }
-
-                    // Add conversation content from messages
-                    if (conversation.messages && Array.isArray(conversation.messages)) {
-                        const allMessages: string[] = [];
-                        const userMessages: string[] = [];
-                        const assistantMessages: string[] = [];
-
-                        conversation.messages.forEach((msg: any) => {
-                            if (msg.content && typeof msg.content === 'string') {
-                                const content = msg.content.trim();
-                                if (content) {
-                                    allMessages.push(content);
-                                    if (msg.role === 'user') {
-                                        userMessages.push(content);
-                                    } else if (msg.role === 'assistant') {
-                                        assistantMessages.push(content);
-                                    }
-                                }
-                            }
-                        });
-
-                        // Add all content as a single field
-                        const allText = allMessages.join(' ');
-                        if (allText) {
-                            const contentValue = Value.text(allText);
-                            doc.addAttribute('content', contentValue);
-                        }
-
-                        // Add user messages separately
-                        if (userMessages.length > 0) {
-                            const userText = userMessages.join(' ');
-                            const userValue = Value.text(userText);
-                            doc.addAttribute('usermessages', userValue);
-                        }
-
-                        // Add assistant messages separately
-                        if (assistantMessages.length > 0) {
-                            const assistantText = assistantMessages.join(' ');
-                            const assistantValue = Value.text(assistantText);
-                            doc.addAttribute('assistantmessages', assistantValue);
-                        }
-                    } else {
-                        // No messages, add empty content
-                        const contentValue = Value.text('');
-                        doc.addAttribute('content', contentValue);
-                    }
-
-                    // Add other searchable fields
-                    if (conversation.subject) {
-                        const subjectValue = Value.text(conversation.subject);
-                        doc.addAttribute('subject', subjectValue);
-                    }
-
-                    if (conversation.preview) {
-                        const previewValue = Value.text(conversation.preview);
-                        doc.addAttribute('preview', previewValue);
-                    }
-
-                    // Insert the document
-                    writer.insert(doc);
-                    console.log(`Document inserted for conversation: ${conversationId}`);
-                    indexedCount++;
-                } catch (error) {
-                    console.error(`Failed to index conversation ${conversationId}:`, error);
-                    errorCount++;
-                    // Continue with other conversations even if one fails
-                }
-            }
-        } catch (error) {
-            // If anything fails before commit(), we need to free the writer explicitly
-            writer.free();
-            throw error;
-        }
-
-        // Commit all changes at once
-        console.log('Committing all writer changes...');
-        const execution = writer.commit();
-        // Writer is consumed by commit()
-        console.log('Writer committed, processing execution events...');
-
-        try {
-            // Handle execution events (Load/Save events)
-            let saveEventCount = 0;
-            let loadEventCount = 0;
-            let totalEvents = 0;
-            let event;
-            while ((event = execution.next())) {
-                totalEvents++;
-                switch (event.kind()) {
-                    case WriteEventKind.Save: {
-                        saveEventCount++;
-                        await this.saveEvent(event);
-                        break;
-                    }
-                    case WriteEventKind.Load: {
-                        loadEventCount++;
-                        await this.loadEvent(event);
-                        break;
-                    }
-                    case WriteEventKind.Stats: {
-                        console.log('Documents indexed: ', event.stats().documents);
-                        break;
-                    }
-                    default: {
-                        console.error('Invalid write event', event.kind());
-                        break;
-                    }
-                }
-            }
-
-            console.log(
-                `Execution completed: ${totalEvents} total events, ${saveEventCount} saves, ${loadEventCount} loads`
-            );
-        } catch (executionError) {
-            console.error('Error processing execution events:', executionError);
-        } finally {
-            // Free the execution object to release the write handle
-            // This prevents "Failed to get write handle" errors
-            execution.free();
-        }
-
-        console.log(`Population completed: ${indexedCount} indexed, ${skippedCount} skipped, ${errorCount} errors`);
-
-        if (errorCount > 0) {
-            console.warn(`Population completed with ${errorCount} errors`);
-        }
-    }
-
     async performSearch(query: string): Promise<[number, string][]> {
-        console.log('performSearch called with query:', query);
-
         const queryBuilder = this.engine.query();
 
         // Create a comprehensive search query that searches across multiple fields
-        console.log('Search expression:', query);
-
         const search = queryBuilder.withStringExpression(query).search();
         const found: FoundEntry[] = [];
         const stats = new CollectionStats();
@@ -403,162 +256,68 @@ export class SearchEngine {
         return stats.rank(found).map<[number, string]>((entry) => [entry.score().value(), entry.identifier()]);
     }
 
-    // Index a single conversation
-    async indexConversations(conversations: any[]): Promise<void> {
-        console.log('indexConversations called for conversations:', conversations.length);
+    /** Fingerprint of every indexed chat, by conversation id. */
+    async getIndexedConversations(): Promise<Record<string, string>> {
+        if (!this.conversationManifest) {
+            try {
+                const blob = await this.loadBlob(CONVERSATION_MANIFEST_BLOB);
+                this.conversationManifest = blob ? JSON.parse(new TextDecoder().decode(blob)) : {};
+            } catch (error) {
+                // Unreadable: every chat is indexed again, which overwrites what the engine holds.
+                console.warn('Conversation manifest could not be read; re-indexing all chats', error);
+                this.conversationManifest = {};
+            }
+        }
+        return this.conversationManifest!;
+    }
+
+    /** Index or re-index chats and drop removed ones, then record what the index now holds. */
+    async indexConversations(conversations: IndexableConversation[], removedIds: string[]): Promise<void> {
+        const manifest = await this.getIndexedConversations();
+
+        // caller must serialize writes
+        const writer = this.engine.write();
+        if (!writer) {
+            throw new Error('Failed to get write handle - another write operation may be in progress');
+        }
 
         try {
-            // Get write handle
-            // caller must serialize writes
-            const writer = this.engine.write();
-            if (!writer) {
-                throw new Error('Failed to get write handle - another write operation may be in progress');
-            }
-
-            console.log('Got write handle, indexing conversation...');
-
-            try {
-                for (const conversation of conversations) {
-                    // Create document for this conversation
-                    const doc = new Document(conversation.id);
-
-                    // Add conversation title/subject
-                    if (conversation.title) {
-                        const titleValue = Value.text(conversation.title);
-                        doc.addAttribute('title', titleValue);
-                    }
-
-                    // Add message content indexing
-                    if (conversation.messages && Array.isArray(conversation.messages)) {
-                        console.log('Processing messages for indexing:', {
-                            messageCount: conversation.messages.length,
-                            messageDetails: conversation.messages.map((msg: any, index: number) => ({
-                                index,
-                                id: msg.id,
-                                role: msg.role,
-                                hasContent: !!(msg.content || msg.text),
-                                contentLength: (msg.content || msg.text || '').length,
-                                contentPreview: (msg.content || msg.text || '').substring(0, 50) + '...',
-                                allFields: Object.keys(msg),
-                            })),
-                        });
-
-                        const userMessages: string[] = [];
-                        const assistantMessages: string[] = [];
-                        const allMessages: string[] = [];
-
-                        conversation.messages.forEach((msg: any) => {
-                            const content = msg.content || msg.text || '';
-
-                            if (content) {
-                                allMessages.push(content);
-                                if (msg.role === 'user') {
-                                    userMessages.push(content);
-                                } else if (msg.role === 'assistant') {
-                                    assistantMessages.push(content);
-                                }
-                            }
-                        });
-
-                        // Add all content as a single field
-                        const allText = allMessages.join(' ');
-                        if (allText) {
-                            const contentValue = Value.text(allText);
-                            doc.addAttribute('content', contentValue);
-                            console.log('Added content attribute with length:', allText.length);
-                        } else {
-                            console.log('No content to add - allText is empty');
-                        }
-
-                        // Add user messages separately
-                        if (userMessages.length > 0) {
-                            const userText = userMessages.join(' ');
-                            const userValue = Value.text(userText);
-                            doc.addAttribute('usermessages', userValue);
-                            console.log('Added usermessages attribute with length:', userText.length);
-                        }
-
-                        // Add assistant messages separately
-                        if (assistantMessages.length > 0) {
-                            const assistantText = assistantMessages.join(' ');
-                            const assistantValue = Value.text(assistantText);
-                            doc.addAttribute('assistantmessages', assistantValue);
-                            console.log('Added assistantmessages attribute with length:', assistantText.length);
-                        }
-                    } else {
-                        console.log('No messages found in conversation');
-                        const contentValue = Value.text('');
-                        doc.addAttribute('content', contentValue);
-                    }
-
-                    if (conversation.subject) {
-                        const subjectValue = Value.text(conversation.subject);
-                        doc.addAttribute('subject', subjectValue);
-                    }
-
-                    if (conversation.preview) {
-                        const previewValue = Value.text(conversation.preview);
-                        doc.addAttribute('preview', previewValue);
-                    }
-
-                    // Insert the document
-                    writer.insert(doc);
-                    console.log('Document inserted for conversation:', conversation.id);
-                }
-            } catch (error) {
-                // If anything fails before commit(), we need to free the writer explicitly
-                writer.free();
-                throw error;
-            }
-
-            // Commit the changes
-            console.log('Committing writer changes...');
-            const execution = writer.commit();
-            console.log('Writer committed, processing execution events...');
-
-            try {
-                // Handle execution events (Load/Save events)
-                let saveEventCount = 0;
-                let loadEventCount = 0;
-                let totalEvents = 0;
-                let event;
-                while ((event = execution.next())) {
-                    totalEvents++;
-                    switch (event.kind()) {
-                        case WriteEventKind.Save: {
-                            saveEventCount++;
-                            await this.saveEvent(event);
-                            break;
-                        }
-                        case WriteEventKind.Load: {
-                            loadEventCount++;
-                            await this.loadEvent(event);
-                            break;
-                        }
-                        case WriteEventKind.Stats: {
-                            const stats = event.stats();
-                            console.log('Documents indexed: ', stats.documents);
-                            break;
-                        }
-                        default: {
-                            console.error('Invalid write event:', event.kind());
-                            break;
-                        }
-                    }
-                }
-
-                console.log(
-                    `Single conversation indexing completed: ${saveEventCount} saves, ${loadEventCount} loads, ${totalEvents} total events`
-                );
-            } finally {
-                execution.free();
-            }
-
-            // Writer is consumed by commit()
+            removedIds.forEach((id) => writer.remove(id));
+            conversations.forEach((conversation) => writer.insert(toDocument(conversation)));
         } catch (error) {
-            console.error('Failed to index single conversation:', error);
+            // If anything fails before commit(), we need to free the writer explicitly
+            writer.free();
             throw error;
         }
+
+        const execution = writer.commit();
+        try {
+            let event;
+            while ((event = execution.next())) {
+                switch (event.kind()) {
+                    case WriteEventKind.Save:
+                        await this.saveEvent(event);
+                        break;
+                    case WriteEventKind.Load:
+                        await this.loadEvent(event);
+                        break;
+                    case WriteEventKind.Stats:
+                        break;
+                    default:
+                        console.error('Invalid write event:', event.kind());
+                }
+            }
+        } finally {
+            execution.free();
+        }
+
+        removedIds.forEach((id) => delete manifest[id]);
+        conversations.forEach(({ id, fingerprint }) => (manifest[id] = fingerprint));
+        await this.saveBlob(
+            CONVERSATION_MANIFEST_BLOB,
+            new TextEncoder().encode(JSON.stringify(manifest)) as Uint8Array<ArrayBuffer>
+        );
+        console.log(`Indexed ${conversations.length} chats, removed ${removedIds.length}`);
     }
 
     async getStatus(): Promise<SearchStatus> {
@@ -597,13 +356,4 @@ export class SearchEngine {
             cleanup.free();
         }
     }
-}
-
-async function bufferToBase64(buffer: ArrayBuffer | Uint8Array<ArrayBuffer>): Promise<string> {
-    const base64url = await new Promise<string>((r) => {
-        const reader = new FileReader();
-        reader.onload = () => r(reader.result as string);
-        reader.readAsDataURL(new Blob([buffer]));
-    });
-    return base64url.slice(base64url.indexOf(',') + 1);
 }

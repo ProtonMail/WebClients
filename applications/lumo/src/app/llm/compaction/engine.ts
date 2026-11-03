@@ -1,11 +1,13 @@
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
+import { collectRetrievalExclusions } from '../../features/client-tools/retrievalTool/exclusions';
+import { redactExcludedKnowledge } from '../../features/client-tools/retrievalTool/knowledgeReads';
 import { getMessageBlocks } from '../../messageHelpers';
 import type { Attachment, CompactionStats, CompactionStrategyName, Message, MessageId } from '../../types';
-import { buildCompactionAudit, collectClearedToolNames, collectDroppedToolNames } from './audit';
-import { SUMMARY_TURN_PREFIX, collapseCompactedChain } from './collapse';
 import { excerptToTokens } from '../excerpt';
 import { getRequestBudget } from '../requestBudget';
+import { buildCompactionAudit, collectClearedToolNames, collectDroppedToolNames } from './audit';
+import { SUMMARY_TURN_PREFIX, collapseCompactedChain } from './collapse';
 import {
     CLEARED_TOOL_RESULT_PLACEHOLDER,
     KEEP_RECENT_TOOL_RESULTS,
@@ -189,7 +191,13 @@ export async function compactConversation(
 
     const initialToolResults = countToolResults(head);
     const appliedStrategies: CompactionStrategyName[] = [];
-    let working = head;
+    // What lookups returned from files the user removed must not live on in the summary.
+    const excludedLookupFileIds = collectRetrievalExclusions(chainToCompact, exclusions).documentIds;
+    let working = head.map((message) => {
+        const blocks = getMessageBlocks(message);
+        const redacted = redactExcludedKnowledge(blocks, excludedLookupFileIds);
+        return redacted === blocks ? message : { ...message, blocks: redacted };
+    });
     let transcript = composeTranscript(working);
     const clearedTools: string[] = [];
     const droppedTools: string[] = [];

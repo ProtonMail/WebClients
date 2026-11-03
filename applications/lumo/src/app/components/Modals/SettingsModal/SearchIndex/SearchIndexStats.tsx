@@ -12,6 +12,8 @@ interface Props {
     foundationStatus: SearchServiceStatus | undefined;
     conversationCount: number;
     messageCount: number;
+    /** Undefined until the first sync has read the index. */
+    indexedConversationCount: number | undefined;
     displayFolders: number;
     displayDriveDocs: number;
     progressColor: (count: number) => string;
@@ -23,6 +25,7 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
     foundationStatus,
     conversationCount,
     messageCount,
+    indexedConversationCount,
     displayFolders,
     displayDriveDocs,
     progressColor,
@@ -50,6 +53,12 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
             <span>{c('Info').t`Total messages:`}</span>
             <span className="text-semibold">{messageCount}</span>
         </div>
+        <div className="flex justify-space-between">
+            <span>{c('Info').t`Indexed chats:`}</span>
+            <span className="text-semibold" style={{ color: progressColor(indexedConversationCount ?? 0) }}>
+                {indexedConversationCount === undefined ? '–' : `${indexedConversationCount}/${conversationCount}`}
+            </span>
+        </div>
 
         <hr className={'mt-3'} />
         <div className="flex justify-space-between">
@@ -70,7 +79,7 @@ export const SearchIndexStats: FunctionComponent<Props> = ({
                 {foundationStatus?.driveDocumentsUnique ?? displayDriveDocs}
             </span>
         </div>
-        {foundationStatus?.driveChunks && foundationStatus.driveChunks > 0 && (
+        {!!foundationStatus?.driveChunks && (
             <div className="flex justify-space-between">
                 <span className="flex items-center gap-2 pl-6">
                     <LumoIcon name="Copy" size={16} className="color-weak" />

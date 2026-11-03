@@ -37,7 +37,7 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
         mimeTypeIcon,
         prettyType,
         isTooLargeForPreview,
-    } = useFileItemData(file);
+    } = useFileItemData(file, file);
 
     const handleFileClick = (e: React.MouseEvent) => {
         // Don't trigger preview if clicking on action buttons

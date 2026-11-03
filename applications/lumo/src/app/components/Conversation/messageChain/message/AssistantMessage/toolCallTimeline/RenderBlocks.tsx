@@ -17,6 +17,7 @@ import { parseToolCallBlock } from '../../toolCall/toolCallUtils';
 import { ThinkingPath, type ThinkingStep } from './ThinkingPath';
 import { WeatherToolResult, parseWeatherResult } from './WeatherToolResult';
 import { type FinanceComparisonItem, collectFinanceComparisonItems } from './financeUtils';
+import { getKnowledgeStepDetails } from './knowledgeStepDetails';
 
 // Recharts (~341KB) lives only inside these two components. Lazy-load them so a finance
 // chart is fetched on demand (when a stock/crypto tool result renders) instead of sitting
@@ -78,6 +79,18 @@ function isToolCallInProgress(
     const isLastToolCall = block === toolCallBlocks[toolCallBlocks.length - 1];
 
     return isLastToolCall && findToolResultForCall(allBlocks, block) === undefined;
+}
+
+function getToolCallArguments(block: ToolCallBlock): unknown {
+    const parsed = block.toolCall as { arguments?: unknown } | undefined;
+    if (parsed?.arguments !== undefined) {
+        return parsed.arguments;
+    }
+    try {
+        return (JSON.parse(block.content) as { arguments?: unknown }).arguments;
+    } catch {
+        return undefined;
+    }
 }
 
 function createInProgressToolCallStep(content: string): ThinkingStep {
@@ -173,12 +186,22 @@ function toToolCallStep(
 
     if (!toolCall) {
         const toolCallName = getToolCallNameFromBlock(block);
+        if (toolCallName === SEARCH_KNOWLEDGE_TOOL_NAME || toolCallName === READ_KNOWLEDGE_TOOL_NAME) {
+            return {
+                type: 'tool_call',
+                toolCall: { name: toolCallName },
+                isActive: isInProgress,
+                knowledge: getKnowledgeStepDetails(
+                    toolCallName,
+                    getToolCallArguments(block),
+                    findToolResultForCall(allBlocks, block)?.content
+                ),
+            };
+        }
         if (
             toolCallName === CREATE_ARTIFACT_TOOL_NAME ||
             toolCallName === USE_SKILL_TOOL_NAME ||
-            toolCallName === READ_SKILL_FILE_TOOL_NAME ||
-            toolCallName === SEARCH_KNOWLEDGE_TOOL_NAME ||
-            toolCallName === READ_KNOWLEDGE_TOOL_NAME
+            toolCallName === READ_SKILL_FILE_TOOL_NAME
         ) {
             return {
                 type: 'tool_call',

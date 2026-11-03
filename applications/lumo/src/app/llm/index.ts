@@ -1,8 +1,10 @@
 import { CREATE_ARTIFACT_TOOL_NAME } from '../components/Conversation/artifact/createArtifactTool';
 import type { ArtifactToolMode, ConversationContext } from '../components/Conversation/helper';
 import { decryptString } from '../crypto';
-import { fileCardPolicy, formatFileCard } from '../features/client-tools/retrievalTool/instructions';
 import type { AesGcmCryptoKey } from '../crypto/types';
+import { collectRetrievalExclusions } from '../features/client-tools/retrievalTool/exclusions';
+import { fileCardPolicy, formatFileCard } from '../features/client-tools/retrievalTool/instructions';
+import { redactExcludedKnowledge } from '../features/client-tools/retrievalTool/knowledgeReads';
 import {
     createImageAttachment,
     generateImageMarkdown,
@@ -231,11 +233,14 @@ export function prepareTurns(
         };
     });
 
+    // Files the user removed after a lookup read them: their content leaves the replayed results too.
+    const excludedLookupFileIds = collectRetrievalExclusions(effectiveChain, c?.contextFilters ?? []).documentIds;
+
     // Step 1: Transform messages to turns by iterating over blocks
     let turns: TurnInProgress[] = [];
 
     for (const message of effectiveChain) {
-        const blocks = getMessageBlocks(message);
+        const blocks = redactExcludedKnowledge(getMessageBlocks(message), excludedLookupFileIds);
         const contextFilters = c?.contextFilters ?? [];
         let filteredAttachments = filterMessageAttachments(message.attachments, message.id, contextFilters) ?? [];
         // Images follow the separate MAX_IMAGES_PER_REQUEST path below, which also emits
