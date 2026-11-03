@@ -27,19 +27,13 @@ import type { UpsellModalConfig } from '../interface';
 interface Props {
     upsellRef?: string;
     preventInApp?: boolean;
-    onSubscribed?: () => void;
-    step?: SUBSCRIPTION_STEPS;
-}
-
-type FetchUpsellConfig = (props: Props) => Promise<UpsellModalConfig>;
-
-interface Props {
-    upsellRef?: string;
     preventInAppPayment?: boolean;
     /** Called when user subscription is completed */
     onSubscribed?: () => void;
     step?: SUBSCRIPTION_STEPS;
 }
+
+type FetchUpsellConfig = (props: Props) => Promise<UpsellModalConfig>;
 
 const CONFIG_FETCH_TIMEOUT = 5000;
 

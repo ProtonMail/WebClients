@@ -60,6 +60,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 aria-busy={loading}
                 aria-live="assertive"
                 aria-atomic="true"
+                // eslint-disable-next-line jsx-a11y/role-supports-aria-props -- the error state is exposed on the button
                 aria-invalid={Boolean(error)}
                 className={clsx([
                     !unstyled && 'select field',

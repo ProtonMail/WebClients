@@ -22,11 +22,6 @@ interface Event {
     EventTypeName: string;
 }
 
-interface Event {
-    EventType: string;
-    EventTypeName: string;
-}
-
 interface Props {
     filter: FilterModel;
     keyword: string;

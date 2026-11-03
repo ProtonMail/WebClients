@@ -199,7 +199,7 @@ export const AutoReplySection = () => {
 
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
+                                {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
                                 <label
                                     htmlFor="rooster-editor"
                                     className="text-semibold"
