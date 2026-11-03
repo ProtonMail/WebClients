@@ -177,6 +177,24 @@ describe('parseOpenAction', () => {
   })
 })
 
+describe('parseOpenAction on the doc2 paths', () => {
+  // Not 'new': with the flag off they redirect to the homepage, and openAction outlives that redirect.
+  test.each(['/doc2', '/new2', '/u/0/doc2', '/u/0/new2'])('%s with no parameters has no action', (pathname) => {
+    expect(parseOpenAction(new URLSearchParams(), pathname)).toBeNull()
+  })
+
+  test.each(['/doc2', '/new2', '/u/0/doc2'])('%s opens a doc', (pathname) => {
+    const params = new URLSearchParams({ mode: 'open', volumeId: 'test-volume', linkId: 'test-link' })
+
+    expect(parseOpenAction(params, pathname)).toEqual({
+      type: 'doc',
+      mode: 'open',
+      volumeId: 'test-volume',
+      linkId: 'test-link',
+    })
+  })
+})
+
 describe('replaceLastPathSegment', () => {
   it('should preserve user portion when replacing last segment', () => {
     expect(replaceLastPathSegment('/u/1/foo', 'bar')).toBe('/u/1/bar')
