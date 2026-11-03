@@ -4,12 +4,10 @@ import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import OnboardingModal from '@proton/components/containers/onboarding/OnboardingModal';
 import type { OnboardingStepComponent } from '@proton/components/containers/onboarding/interface';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useMailDispatch } from '../../../store/hooks';
 import { useOnboardingTracking } from '../../../telemetry/onboardingEvents';
-import { useMailOnboardingTelemetry } from '../useMailOnboardingTelemetry';
 import type { OnboardingStepEligibleCallback } from './interface';
 import ActivatePremiumFeaturesStep, {
     isActivatePremiumFeaturesStepEligible,
@@ -93,7 +91,6 @@ const MailB2COnboardingModal = (props: MailOnboardingProps) => {
     const { call } = useEventManager();
     const { endReplay } = useWelcomeFlags();
     const dispatch = useMailDispatch();
-    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const { trackFlowFinished, trackFlowDismissed } = useOnboardingTracking();
     const [loading, setLoading] = useState(true);
     const [imgsToPreload, setImgsToPreload] = useState<string[]>([]);
@@ -105,15 +102,11 @@ const MailB2COnboardingModal = (props: MailOnboardingProps) => {
     };
 
     const handleDone = () => {
-        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.finish_onboarding_modals, {});
         trackFlowFinished();
         props.onDone?.();
     };
 
     useEffect(() => {
-        // Send telemetry onboarding start event
-        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.start_onboarding_modals, {});
-
         const init = async () => {
             const toPreload = new Set<string>();
             const stepsToDisplay = new Set<StepId>();

@@ -7,14 +7,12 @@ import type { OnboardingStepRenderCallback } from '@proton/components/containers
 import ThemeCard from '@proton/components/containers/themes/ThemeCard';
 import { getThemeCardSize } from '@proton/components/containers/themes/ThemeCards';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import type { ThemeTypes } from '@proton/shared/lib/themes/constants';
 import clsx from '@proton/utils/clsx';
 
 import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
 import { ONBOARDING_ACTIONS, ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
-import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -24,7 +22,6 @@ export const isNewOnboardingThemesStepEligible: OnboardingStepEligibleCallback =
 
 const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
     const { trackStepInteracted, trackThemeStepCompleted } = useOnboardingTracking();
-    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const mobile = isMobile();
     const theme = useTheme();
     const largeSizeProps = getThemeCardSize('large');
@@ -37,12 +34,6 @@ const NewOnboardingThemes = ({ onNext }: OnboardingStepRenderCallback) => {
     };
 
     const handleNext = () => {
-        const selectedTheme = theme.information.theme;
-        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.select_theme, {
-            theme: `${selectedTheme}`,
-            is_default_theme: selectedTheme === 0 ? 'yes' : 'no',
-        });
-
         trackThemeStepCompleted(theme.information.label);
 
         onNext();

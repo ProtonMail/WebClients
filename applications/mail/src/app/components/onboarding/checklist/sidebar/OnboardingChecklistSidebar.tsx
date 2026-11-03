@@ -3,13 +3,11 @@ import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import useLocalState from '@proton/components/hooks/useLocalState';
-import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
 
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { CHECKLIST_ACTIONS, CHECKLIST_STEPS } from '../../../../telemetry/checklistEvents';
 import { useChecklistTracking } from '../../../../telemetry/useChecklistTracking';
-import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import OnboardingChecklistModalsProvider from '../OnboardingChecklistModalsProvider';
 import useOnboardingChecklist from '../useOnboardingChecklist';
 import OnboardingChecklistSidebarHeader from './components/OnboardingChecklistSidebarHeader';
@@ -42,9 +40,7 @@ const OnboardingChecklistSidebar = () => {
 
     const [user] = useUser();
     const [isOpened, toggleChecklist] = useLocalState(true, `sidebar-checklist-opened-${user.ID}`);
-    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
-    const { items, changeChecklistDisplay, isChecklistFinished, isUserPaid, expiresAt, createdAt } =
-        useGetStartedChecklist();
+    const { changeChecklistDisplay, isChecklistFinished, isUserPaid, expiresAt, createdAt } = useGetStartedChecklist();
     const tracking = useChecklistTracking();
 
     // If no expiration date, we consider the checklist as expired
@@ -76,12 +72,6 @@ const OnboardingChecklistSidebar = () => {
                     }
 
                     changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.HIDDEN);
-                    void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.close_checklist, {
-                        checklist_step_import_completed: items.has('Import') ? 'yes' : 'no',
-                        checklist_step_mobile_app_completed: items.has('MobileApp') ? 'yes' : 'no',
-                        checklist_step_privacy_completed: items.has('ProtectInbox') ? 'yes' : 'no',
-                        checklist_step_update_login_completed: items.has('AccountLogin') ? 'yes' : 'no',
-                    });
                 }}
                 onToggleChecklist={(value) => {
                     tracking.trackStepInteracted(

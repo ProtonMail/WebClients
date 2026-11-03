@@ -24,7 +24,6 @@ import { PLANS } from '@proton/payments/core/constants';
 import { getIsB2BAudienceFromSubscription, hasVisionary, isTrial } from '@proton/payments/core/subscription/helpers';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
 import { enableBreachAlert } from '@proton/shared/lib/api/settings';
-import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { DARK_WEB_MONITORING_STATE } from '@proton/shared/lib/interfaces/UserSettings';
@@ -39,7 +38,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
 import { ONBOARDING_SETTINGS, ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
-import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -156,7 +154,6 @@ export const isActivatePremiumFeaturesStepEligible: OnboardingStepEligibleCallba
 
 const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const api = useApi();
-    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
     const { trackSettingToggled, trackStepCompleted } = useOnboardingTracking();
     const [addresses, addressesLoading] = useAddresses();
     const [userSettings, userSettingsLoading] = useUserSettings();
@@ -193,13 +190,7 @@ const ActivatePremiumFeaturesStep = ({ onNext }: OnboardingStepRenderCallback) =
     const handleNext = () => {
         trackStepCompleted(ONBOARDING_STEPS.premiumFeatures);
 
-        const promises: Promise<any>[] = [
-            sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.premium_features, {
-                feature_auto_delete: checkedFeatures.autoDelete ? 'yes' : 'no',
-                feature_dark_web_monitoring: checkedFeatures.monitoring ? 'yes' : 'no',
-                feature_short_domain: checkedFeatures.aliases ? 'yes' : 'no',
-            }),
-        ];
+        const promises: Promise<any>[] = [];
 
         if (checkedFeatures.aliases && !activeFeatures.aliases) {
             promises.push(createShortDomainAddress({ setDefault: true }));
