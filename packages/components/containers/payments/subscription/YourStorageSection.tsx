@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
@@ -144,7 +143,6 @@ const getBaseWarning = () => {
 
 const YourStorageSection = ({ app }: Props) => {
     const [user] = useUser();
-    const [subscription] = useSubscription();
     const space = getSpace(user);
     const details = getCompleteSpaceDetails(space);
     const plan = getPlanToUpsell({ storageDetails: details, app });
@@ -219,7 +217,7 @@ const YourStorageSection = ({ app }: Props) => {
                                 <ButtonLike
                                     as={SettingsLink}
                                     path={getUpgradePath(
-                                        { user, subscription, plan },
+                                        { user, plan },
                                         getUpsellRefFromApp({
                                             app,
                                             feature: SHARED_UPSELL_PATHS.STORAGE_PERCENTAGE,

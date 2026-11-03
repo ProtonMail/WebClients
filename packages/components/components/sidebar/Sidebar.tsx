@@ -3,11 +3,11 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -45,7 +45,7 @@ const Storage = ({
     appSpace: ReturnType<typeof getAppSpace>;
     app: APP_NAMES;
     user: UserModel;
-    subscription: MaybeFreeSubscription;
+    subscription: Subscription | undefined;
     version?: ReactNode;
     wavyMeter?: boolean;
 }) => {
@@ -178,7 +178,7 @@ const Sidebar = ({
     });
     const { APP_NAME } = useConfig();
     const [user] = useUser();
-    const [subscription] = useSubscription();
+    const [subscription] = useSubscriptionForApp(app);
     const appSpace = getAppSpace(getSpace(user), app);
     const { viewportWidth } = useActiveBreakpoint();
 

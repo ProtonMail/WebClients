@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
@@ -11,7 +10,6 @@ import { getStorageUpsell } from './helperStorageBanner';
 
 export const StorageUpgradeCta = () => {
     const [user] = useUser();
-    const [subscription] = useSubscription();
     const { APP_NAME } = useConfig();
 
     const space = getSpace(user);
@@ -21,11 +19,7 @@ export const StorageUpgradeCta = () => {
     const upsellRef = getStorageUpsell(APP_NAME);
 
     return user.canPay ? (
-        <SettingsLink
-            key="storage-link"
-            className="color-inherit"
-            path={getUpgradePath({ user, plan, subscription }, upsellRef)}
-        >
+        <SettingsLink key="storage-link" className="color-inherit" path={getUpgradePath({ user, plan }, upsellRef)}>
             {
                 // Translator: To upload or sync files, free up space or upgrade for more storage
                 c('storage_split: info').t`upgrade for more storage`

@@ -1,6 +1,6 @@
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getSpace } from '@proton/shared/lib/user/storage';
 
@@ -18,7 +18,7 @@ interface Props {
 
 const StorageLimitTopBanner = ({ app }: Props) => {
     const [user] = useUser();
-    const [subscription] = useSubscription();
+    const [subscription] = useSubscriptionForApp();
     const { APP_NAME } = useConfig();
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useLocalState(false, `${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`);
 

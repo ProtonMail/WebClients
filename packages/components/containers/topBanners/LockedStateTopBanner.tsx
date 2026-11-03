@@ -7,7 +7,8 @@ import { useGetPreviousSubscription } from '@proton/account/previousSubscription
 import { Href } from '@proton/atoms/Href/Href';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
-import { type MaybeFreeSubscription, getPlanName } from '@proton/payments/core/subscription/helpers';
+import { getPlanName } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -85,7 +86,7 @@ const useUpgradePath = ({
     lockedFlag,
     app,
 }: {
-    subscription: MaybeFreeSubscription;
+    subscription: Subscription | undefined;
     user: UserModel;
     lockedFlag: UserLockedFlags;
     app: APP_NAMES;
@@ -125,7 +126,7 @@ const useUpgradePath = ({
         return app === APPS.PROTONDRIVE ? PLANS.DRIVE : PLANS.MAIL;
     })();
 
-    return getUpgradePath({ user, plan: fallbackPlanName, subscription });
+    return getUpgradePath({ user, plan: fallbackPlanName });
 };
 
 const UpgradeSettingsLink = ({
@@ -137,7 +138,7 @@ const UpgradeSettingsLink = ({
     app,
 }: {
     user: UserModel;
-    subscription: MaybeFreeSubscription;
+    subscription: Subscription | undefined;
     upsellRef: string | undefined;
     lockedFlag: UserLockedFlags;
     ctaText: string | undefined;
@@ -160,7 +161,7 @@ const StorageBannerCTA = ({
     app,
 }: {
     user: UserModel;
-    subscription: MaybeFreeSubscription;
+    subscription: Subscription | undefined;
     upsellRef: string | undefined;
     lockedFlag: UserLockedFlags;
     app: APP_NAMES;
@@ -208,7 +209,7 @@ const getLockedFlagFromLockedFlags = (lockedFlags: number): UserLockedFlags | nu
 interface Props {
     app: APP_NAMES;
     user: UserModel;
-    subscription: MaybeFreeSubscription;
+    subscription: Subscription | undefined;
     upsellRef: string | undefined;
     lockedFlags: number;
 }
