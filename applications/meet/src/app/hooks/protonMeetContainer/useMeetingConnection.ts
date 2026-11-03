@@ -2,6 +2,7 @@ import { type MutableRefObject, useEffect, useRef } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
+import { logger } from '@protontech/logger';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import {
@@ -246,6 +247,28 @@ export const useMeetingConnection = ({
         isReconnectingRef.current = true;
         const reconnectionStartTimeMs = BigInt(Date.now());
 
+        const trackUserRejoin = async (success: boolean) => {
+            const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
+            logger.info('[telemetry] logUserRejoin', {
+                rejoinTimeMs: Number(rejoinTimeMs),
+                reason: RejoinReasonInfo[reason],
+                success,
+            });
+
+            if (!isMeetClientMetricsLogEnabled) {
+                return;
+            }
+
+            await meetCoreClient
+                .logUserRejoin(rejoinTimeMs, 1, reason, success)
+                .catch((error: unknown) =>
+                    reportMeetError(
+                        success ? 'Failed to log reconnection success' : 'Failed to log reconnection failure',
+                        { context: { error } }
+                    )
+                );
+        };
+
         dispatch(setIsReconnecting(true));
         dispatch(setReconnectionFailed(false));
         dispatch(setMlsRetrying(false));
@@ -306,14 +329,7 @@ export const useMeetingConnection = ({
             isReconnectingRef.current = false;
             allowHealthCheck();
 
-            if (isMeetClientMetricsLogEnabled) {
-                const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
-                await meetCoreClient
-                    .logUserRejoin(rejoinTimeMs, 1, reason, true)
-                    .catch((error: unknown) =>
-                        reportMeetError('Failed to log reconnection success', { context: { error } })
-                    );
-            }
+            await trackUserRejoin(true);
         } catch (error) {
             reportMeetError('Full reconnection failed', { context: { error } });
 
@@ -334,14 +350,7 @@ export const useMeetingConnection = ({
             accessTokenRef.current = null;
             websocketUrlRef.current = null;
 
-            if (isMeetClientMetricsLogEnabled) {
-                const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
-                await meetCoreClient
-                    ?.logUserRejoin(rejoinTimeMs, 1, reason, false)
-                    .catch((error: unknown) =>
-                        reportMeetError('Failed to log reconnection failure', { context: { error } })
-                    );
-            }
+            await trackUserRejoin(false);
         }
     });
 

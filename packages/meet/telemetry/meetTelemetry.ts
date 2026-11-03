@@ -1,3 +1,5 @@
+import { logger } from '@protontech/logger';
+
 import { selectSubscription } from '@proton/account/subscription';
 import { selectUser } from '@proton/account/user';
 import {
@@ -143,6 +145,8 @@ const send = (
     dimensions?: SimpleMap<string | boolean>,
     values?: SimpleMap<number>
 ) => {
+    logger.info(`[telemetry] ${event}`, { dimensions, values });
+
     if (!telemetryContext || !isMeetTelemetryEnabled()) {
         return;
     }

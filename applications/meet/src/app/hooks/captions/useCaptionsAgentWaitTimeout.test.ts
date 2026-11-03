@@ -19,7 +19,7 @@ vi.mock('@proton/app-context/useNotifications', () => ({
 }));
 
 vi.mock('@protontech/logger', () => ({
-    logger: { error: vi.fn() },
+    logger: { error: vi.fn(), info: vi.fn() },
 }));
 
 // Runs the real selectors against a minimal state, rather than stubbing their results.

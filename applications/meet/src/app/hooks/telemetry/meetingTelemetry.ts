@@ -1,15 +1,22 @@
+import { logger } from '@protontech/logger';
+
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import type { JoinStats, ParticipantQualityStats, RecordingStats } from './types';
 
+const sendCustomEventAndLog = (eventName: string, payload: Record<string, unknown>) => {
+    logger.info(`[telemetry] ${eventName}`, payload);
+    telemetry.sendCustomEvent(eventName, payload);
+};
+
 export const logParticipantQuality = (qualityStats: ParticipantQualityStats) => {
-    telemetry.sendCustomEvent('meet-participant-quality', qualityStats);
+    sendCustomEventAndLog('meet-participant-quality', qualityStats);
 };
 
 export const logJoinStats = (joinStats: JoinStats) => {
-    telemetry.sendCustomEvent('meet-join-stats', joinStats);
+    sendCustomEventAndLog('meet-join-stats', joinStats);
 };
 
 export const logRecordingStats = (recordingStats: RecordingStats) => {
-    telemetry.sendCustomEvent('meet-recording-stats', recordingStats);
+    sendCustomEventAndLog('meet-recording-stats', recordingStats);
 };
