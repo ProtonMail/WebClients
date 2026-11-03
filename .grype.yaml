@@ -200,6 +200,78 @@ ignore:
       type: npm
       version: 9.0.1
 
+  ## glob@10.5.0 / 13.0.0 / 13.0.6 (via jest 30, test-exclude, rimraf 5/6, cacache, sucrase,
+  ## ttag-cli, netlify-cli's @fastify/static and @vercel/nft)
+  # Accepted risk: patched only in 14.0.2, a major that also moves matching to minimatch 11.
+  # Every parent, at its latest release, still requires ^10 or ^13 (ttag-cli 1.12.0 pins 13.0.0),
+  # so the fix is only reachable through an incompatible override. The workspace's own glob
+  # dependencies are on 14. The flaw is an aborted async walk that keeps reading directories;
+  # build, test and dev tooling only, walking repository paths with repository-defined patterns.
+  - vulnerability: GHSA-3g3m-2fjr-6pw4
+    reason: >-
+      Accepted: build, test and dev tooling walking repository paths; patched only in 14.0.2,
+      which no parent release accepts yet.
+    package:
+      name: glob
+      type: npm
+      version: 10.5.0
+  - vulnerability: GHSA-3g3m-2fjr-6pw4
+    reason: >-
+      Accepted: build, test and dev tooling walking repository paths; patched only in 14.0.2,
+      which no parent release accepts yet.
+    package:
+      name: glob
+      type: npm
+      version: 13.0.0
+  - vulnerability: GHSA-3g3m-2fjr-6pw4
+    reason: >-
+      Accepted: build, test and dev tooling walking repository paths; patched only in 14.0.2,
+      which no parent release accepts yet.
+    package:
+      name: glob
+      type: npm
+      version: 13.0.6
+
+  ## minimatch@3.1.5 / 5.1.9 / 9.0.9 / 10.2.6 (via eslint 9/10 and its plugins, typescript-eslint,
+  ## glob, test-exclude, electron-builder and @electron/asar, netlify-cli, ts-morph, serve)
+  # Accepted risk: patched only in 11.0.1, a major that removes makeRe(), Minimatch#regexp and the
+  # callable CommonJS export that 3.x callers use. Every parent, at its latest release, still
+  # requires ^3, ^5, ^9 or ^10. The amplification is in the optimizationLevel >= 2 preprocessing,
+  # which 3.1.5 and 5.1.9 do not have; for 9.0.9 and 10.2.6 it needs an attacker-supplied pattern.
+  # Lint, test, build and dev tooling only, with patterns from repository configuration.
+  - vulnerability: GHSA-g3hv-75wg-m249
+    reason: >-
+      Accepted: lint, test and build tooling with repository-defined patterns; patched only in
+      11.0.1, which no parent release accepts yet.
+    package:
+      name: minimatch
+      type: npm
+      version: 3.1.5
+  - vulnerability: GHSA-g3hv-75wg-m249
+    reason: >-
+      Accepted: lint, test and build tooling with repository-defined patterns; patched only in
+      11.0.1, which no parent release accepts yet.
+    package:
+      name: minimatch
+      type: npm
+      version: 5.1.9
+  - vulnerability: GHSA-g3hv-75wg-m249
+    reason: >-
+      Accepted: lint, test and build tooling with repository-defined patterns; patched only in
+      11.0.1, which no parent release accepts yet.
+    package:
+      name: minimatch
+      type: npm
+      version: 9.0.9
+  - vulnerability: GHSA-g3hv-75wg-m249
+    reason: >-
+      Accepted: lint, test and build tooling with repository-defined patterns; patched only in
+      11.0.1, which no parent release accepts yet.
+    package:
+      name: minimatch
+      type: npm
+      version: 10.2.6
+
   ## Rust
 
   ## glib@0.18.5 (via tauri 2.11 -> gtk-rs 0.18 stack in applications/authenticator)

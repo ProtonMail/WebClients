@@ -15,10 +15,10 @@ name = "proton_authenticator_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-tauri-build = { version = "2.6.2", features = [] }
+tauri-build = { version = "2.7.4", features = [] }
 
 [dependencies]
-tauri = { version = "2.11.2", features = [] }
+tauri = { version = "2.12.5", features = [] }
 tauri-plugin-opener = "2.5.4"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.149"
@@ -47,7 +47,7 @@ objc2 = "0.6.4"
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
 tauri-plugin-single-instance = "2.4.1"
-tauri-plugin-updater = "2.11.0"
+tauri-plugin-updater = "2.14.1"
 tauri-plugin-window-state = "2.4.1"
 
 [target.'cfg(windows)'.dependencies]
@@ -55,8 +55,8 @@ widestring = "1.2.1"
 # Both `windows` and `windows-future` are pinned to match the versions pulled
 # transitively by Tauri. Mismatched versions cause type conflicts (eg: HWND).
 # When bumping Tauri, check `cargo tree | grep windows` and update pins accordingly.
-windows-future = "0.2"
-windows = { version = "=0.61.3", features = [
+windows-future = "0.3"
+windows = { version = "=0.62.2", features = [
   "Foundation",
   "Security_Credentials_UI",
   "Security_Cryptography",
