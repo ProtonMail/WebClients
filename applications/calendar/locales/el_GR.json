@@ -297,9 +297,6 @@
       "Create new password": [
         "Δημιουργία νέου κωδικού πρόσβασης"
       ],
-      "Current plan": [
-        "Τρέχον πρόγραμμα"
-      ],
       "Customize": [
         "Προσαρμογή"
       ],
@@ -7730,12 +7727,6 @@
       ]
     },
     "Message": {
-      "Fw:": [
-        "Προώθ:"
-      ],
-      "Re:": [
-        "Απ:"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Η δωρεάν δοκιμή σας έχει λήξει. ${ nonAutoRenewalAction }"
       ],
@@ -9585,6 +9576,9 @@
       "terms and conditions": [
         "όροι και προϋποθέσεις"
       ],
+      "The Born Private initiative requires a donation.": [
+        "Η πρωτοβουλία Born Private απαιτεί δωρεά."
+      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανέωση.",
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανεώσεις."
@@ -9681,17 +9675,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ήδη διαθέτετε το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Έχετε ήδη ένα Born Private λογαριασμό."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
       ],
       "You will soon be redirected to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα, για να επαληθεύσετε την πληρωμή σας."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Το νόμισμά σας έχει αλλάξει σε ευρώ (€) επειδή το ${ IDEAL_WERO_BRAND_NAME } υποστηρίζει μόνο πληρωμές σε ευρώ."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
+      "Your account is too old for the Born Private initiative.": [
+        "Ο λογαριασμός σας είναι πολύ παλιός για την πρωτοβουλία Born Private."
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
@@ -12578,6 +12572,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Αυτός ο χρήστης αποκτά δικαιώματα διαχειριστή την επόμενη φορά που θα συνδεθεί."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Αναβαθμίστε σε ένα υποστηριζόμενο πρόγραμμα για να χρησιμοποιήσετε ρόλους διαχειριστή."
       ],

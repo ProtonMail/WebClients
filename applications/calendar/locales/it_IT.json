@@ -297,9 +297,6 @@
       "Create new password": [
         "Crea una nuova password"
       ],
-      "Current plan": [
-        "Piano attuale"
-      ],
       "Customize": [
         "Personalizza"
       ],
@@ -1237,6 +1234,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porta la produttività delle email a nuovi livelli. Lascia che ${ BRAND_NAME } Scribe ti aiuti a scrivere, rispondere e correggere le tue email."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Porta la produttività delle email a nuovi livelli. Lascia che ${ LUMO_SHORT_APP_NAME } ti aiuti a scrivere, rispondere e correggere le tue email."
       ]
     },
     "Attached ics file error": {
@@ -5079,6 +5079,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include l'assistente di scrittura ${ BRAND_NAME } Scribe."
       ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } include l'assistente di scrittura."
+      ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } è una soluzione per videoconferenze crittografata end-to-end. Aggiungila al tuo piano per ospitare riunioni sicure."
       ],
@@ -7612,6 +7615,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Aggiungi l'assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Aggiungi assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add-on with free trial": [
         "Componente aggiuntivo con prova gratuita"
       ],
@@ -7706,12 +7712,6 @@
       ]
     },
     "Message": {
-      "Fw:": [
-        "I:"
-      ],
-      "Re:": [
-        "R:"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "La tua prova gratuita termina tra ${ nonAutoRenewalAction }."
       ],
@@ -7972,6 +7972,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } con accesso limitato"
       ],
       "${ n } calendar": [
         "${ n } calendario",
@@ -9662,12 +9665,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Il tuo account è troppo vecchio per partecipare all'iniziativa Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
