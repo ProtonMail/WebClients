@@ -1,0 +1,7 @@
+.open-desktop-app-banner {
+	// Same gradient as GuestUserPrompt.scss; no token yet
+	background: linear-gradient(270deg, #5b4f96 0%, #34296b 100%);
+
+	// --focus-outline is too faint on the gradient
+	--focus-outline: var(--focus-ring);
+}

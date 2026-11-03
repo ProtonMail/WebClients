@@ -31,6 +31,7 @@ import clsx from '@proton/utils/clsx';
 
 import { DeviceSettings } from '../../components/DeviceSettings/DeviceSettings';
 import { JoiningRoomLoader } from '../../components/JoiningRoomLoader';
+import { OpenDesktopAppBanner } from '../../components/OpenDesktopAppBanner/OpenDesktopAppBanner';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
 import { WaitingRoomRejectedModal } from '../../components/PreJoinDetails/WaitingRoomAdmission/WaitingRoomRejectedModal';
@@ -182,7 +183,7 @@ export const PrejoinContainer = ({
     };
 
     return (
-        <div className="prejoin-page h-full relative">
+        <div className="prejoin-page h-full relative flex flex-column flex-nowrap">
             <div className="prejoin-background" aria-hidden="true">
                 <div className="prejoin-glow prejoin-glow--norm" />
                 <div className="prejoin-glow prejoin-glow--ground" />
@@ -190,7 +191,8 @@ export const PrejoinContainer = ({
                 <div className="prejoin-glow prejoin-glow--bot" />
                 <div className="prejoin-glow prejoin-glow--main" />
             </div>
-            <div className="h-full overflow-y-auto relative flex flex-column flex-nowrap">
+            <OpenDesktopAppBanner />
+            <div className="flex-1 min-h-0 overflow-y-auto relative flex flex-column flex-nowrap">
                 {joiningInProgress && <div className="w-full h-full absolute top-0 left-0 z-up" />}
                 <div className="w-full prejoin-padding-x shrink-0">
                     <PageHeader showAppSwitcher={false} isInstantJoin={isInstantJoin} />
