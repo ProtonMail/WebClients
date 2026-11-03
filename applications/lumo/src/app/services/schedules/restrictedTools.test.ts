@@ -3,7 +3,7 @@ import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tool
 
 import { restrictScheduleTools } from './restrictedTools';
 
-function setup() {
+function setup(readOnlyConnectorIds: string[] = []) {
     const manifests: DesktopConnector[] = [
         {
             id: 'calendar',
@@ -41,7 +41,7 @@ function setup() {
         manifests,
         execute,
         guard,
-        tools: restrictScheduleTools(base, ['calendar'], async () => manifests, guard),
+        tools: restrictScheduleTools(base, ['calendar'], async () => manifests, guard, readOnlyConnectorIds),
     };
 }
 test('advertises only exact tools attached to selected connectors', async () => {
@@ -90,5 +90,40 @@ test('a connector becoming blocked prevents dispatch after advertisement', async
     await h.tools.getClientTools!();
     h.manifests[0].readiness = { state: 'blocked', reason: 'Setup required' };
     expect((await h.tools.execute([{ id: '1', name: 'calendar__read', arguments: '{}' }]))[0].is_error).toBe(true);
+    expect(h.execute).not.toHaveBeenCalled();
+});
+
+test('read-only schedules advertise and execute only tools explicitly classified as reads', async () => {
+    const h = setup(['calendar']);
+    h.manifests[0].tools = [
+        { name: 'read', read_only: true },
+        { name: 'write', read_only: false },
+        { name: 'unknown' },
+    ];
+    expect((await h.tools.getClientTools!()).map((tool) => tool.function.name)).toEqual(['calendar__read']);
+    const results = await h.tools.execute(
+        ['write', 'unknown', 'read'].map((name) => ({ id: name, name: `calendar__${name}`, arguments: '{}' }))
+    );
+    expect(results.map((result) => result.is_error === true)).toEqual([true, true, false]);
+    expect(h.execute).toHaveBeenCalledTimes(1);
+    h.manifests[0].tools[0].read_only = false;
+    expect((await h.tools.execute([{ id: 'read', name: 'calendar__read', arguments: '{}' }]))[0].is_error).toBe(true);
+    expect(h.execute).toHaveBeenCalledTimes(1);
+});
+
+test('unrestricted schedules keep write tools and tools without classification', async () => {
+    const h = setup();
+    h.manifests[0].tools = [{ name: 'write', read_only: false }, { name: 'unknown' }];
+    expect((await h.tools.getClientTools!()).map((tool) => tool.function.name)).toEqual([
+        'calendar__write',
+        'calendar__unknown',
+    ]);
+});
+
+test('desktop settings read-only restrictions are respected even by unrestricted schedules', async () => {
+    const h = setup();
+    h.manifests[0].read_only = true;
+    expect(await h.tools.getClientTools!()).toEqual([]);
+    expect((await h.tools.execute([{ id: 'read', name: 'calendar__read', arguments: '{}' }]))[0].is_error).toBe(true);
     expect(h.execute).not.toHaveBeenCalled();
 });

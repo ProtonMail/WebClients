@@ -6,9 +6,11 @@ export function restrictScheduleTools(
     base: ClientToolExecutor,
     connectorIds: string[],
     getConnectors: () => Promise<DesktopConnector[]>,
-    guard: () => void
+    guard: () => void,
+    readOnlyConnectorIds: string[] = []
 ): ClientToolExecutor {
     const connectors = new Set(connectorIds);
+    const readOnly = new Set(readOnlyConnectorIds);
     let allowed = new Set<string>();
     const reload = async () => {
         guard();
@@ -19,7 +21,11 @@ export function restrictScheduleTools(
                 .filter(
                     (item) => item.enabled !== false && item.readiness?.state !== 'blocked' && connectors.has(item.id)
                 )
-                .flatMap((item) => (item.tools ?? []).map((tool) => `${item.id}__${tool.name}`))
+                .flatMap((item) =>
+                    (item.tools ?? [])
+                        .filter((tool) => !(readOnly.has(item.id) || item.read_only) || tool.read_only === true)
+                        .map((tool) => `${item.id}__${tool.name}`)
+                )
         );
     };
     return {

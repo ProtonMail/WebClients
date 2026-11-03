@@ -15,9 +15,15 @@ type NativeToolResultMessage = {
 };
 
 export type ScheduleToolContext = { connectionId: string; runId: string };
-export type ScheduleExecutionInput = { runId: string; connectorIds: string[]; autoApprove: boolean };
+export type ScheduleExecutionInput = {
+    runId: string;
+    connectorIds: string[];
+    autoApprove: boolean;
+    readOnlyConnectorIds?: string[];
+};
 
 export type DesktopExternalTools = {
+    scheduleExecutionCapabilities?: { readOnlyConnectors?: boolean };
     registerScheduleExecutionContext?: (input: ScheduleExecutionInput) => Promise<ScheduleToolContext>;
     ready?: Promise<void>;
     getTools?: () => ChatCompletionsFlatFunctionTool[] | ChatCompletionsFunctionTool[];
@@ -51,9 +57,11 @@ export type DesktopConnector = {
     icon?: string | null;
     /** Defaults to enabled when omitted by a gateway manifest. Only explicit false disables the connector. */
     enabled?: boolean;
+    /** Optional desktop settings restriction. */
+    read_only?: boolean;
     readiness?: { state: 'ready' } | { state: 'blocked'; reason: string };
     status: { state: 'ready' } | { state: 'warning'; error: string } | { state: 'not_ready'; reason: string };
-    tools?: { name: string; title?: string; description?: string }[];
+    tools?: { name: string; title?: string; description?: string; read_only?: boolean }[];
     /** Desktop catalog category. Absent on older desktop builds. */
     category?: string;
     /** MCP server id (the connector id without `mcp-`). Absent on older desktop builds. */
@@ -133,6 +141,13 @@ export function getDesktopConnectorCatalog(): DesktopConnectorCatalog {
 
 export function isDesktopEnvironment(): boolean {
     return getDesktopBridge() !== null;
+}
+
+/** Older desktop builds may ignore unknown registration fields; require explicit support. */
+export function supportsDesktopScheduleReadOnly(): boolean {
+    return (
+        typeof window !== 'undefined' && getDesktopBridge()?.scheduleExecutionCapabilities?.readOnlyConnectors === true
+    );
 }
 
 /** Opt in to the desktop tool bridge when running inside the Lumo Desktop shell. */
@@ -406,7 +421,13 @@ export function initDesktopToolApprovals(): void {
 export function createDesktopClientToolExecutor(schedule?: ScheduleExecutionInput): ClientToolExecutor {
     initDesktopToolApprovals();
     // Capture permissions once for this executor; never mutate shared bridge or global policies.
-    const permissions = schedule ? { ...schedule, connectorIds: [...schedule.connectorIds] } : undefined;
+    const permissions = schedule
+        ? {
+              ...schedule,
+              connectorIds: [...schedule.connectorIds],
+              ...(schedule.readOnlyConnectorIds && { readOnlyConnectorIds: [...schedule.readOnlyConnectorIds] }),
+          }
+        : undefined;
     let registration: Promise<ScheduleToolContext> | undefined;
     const registerContext = () => {
         if (!permissions) return Promise.resolve(undefined);
@@ -414,6 +435,9 @@ export function createDesktopClientToolExecutor(schedule?: ScheduleExecutionInpu
             registration = (async () => {
                 await waitForDesktopTools();
                 const bridge = getDesktopBridge();
+                if (permissions.readOnlyConnectorIds?.length && !supportsDesktopScheduleReadOnly()) {
+                    throw new Error('Update Lumo Desktop to run scheduled tasks with read-only connector access.');
+                }
                 if (!bridge?.registerScheduleExecutionContext) {
                     throw new Error('Desktop does not support scheduled tool approval contexts');
                 }

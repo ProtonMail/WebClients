@@ -68,11 +68,13 @@ export function createScheduleConversationRunner({
             createTools({
                 runId: run.runId,
                 connectorIds: task.connectorIds,
+                readOnlyConnectorIds: task.readOnlyConnectorIds,
                 autoApprove: task.autoApprove === true,
             }),
             task.connectorIds,
             getConnectors,
-            guard
+            guard,
+            task.readOnlyConnectorIds
         );
         const controller = generationRegistry.start(target.conversationId);
         const stop = () => controller.abort();

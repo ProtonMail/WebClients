@@ -169,6 +169,20 @@ test('definitions use encrypted spaces and survive reopening without losing sche
     reopened.dispose();
 });
 
+test('read-only access survives encrypted persistence and is passed to run permissions', async () => {
+    const h = setup();
+    await h.save({ ...details, connectors: [{ id: 'calendar', label: 'Calendar', readOnly: true }] });
+    const restored = await h.storage.getSpace(details.id);
+    h.store.dispatch(addSpace(cleanSpace(restored!)));
+    const source = new SpaceScheduleSource(h.accountId, h.storage);
+    expect(await source.getTask(run, h.context)).toMatchObject({
+        connectorIds: ['calendar'],
+        readOnlyConnectorIds: ['calendar'],
+    });
+    source.dispose();
+    h.source.dispose();
+});
+
 test('editor saves feed desktop timings and run conversations without changing the UI schedule shape', async () => {
     const h = setup();
     const { id, ...values } = details;

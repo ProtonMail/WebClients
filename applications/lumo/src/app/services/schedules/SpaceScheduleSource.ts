@@ -97,6 +97,7 @@ export class SpaceScheduleSource implements ScheduleTaskSource {
             name: details.name,
             notifyOnComplete: details.notifyOnComplete,
             connectorIds: details.connectors.map(({ id }) => id),
+            readOnlyConnectorIds: details.connectors.filter(({ readOnly }) => readOnly === true).map(({ id }) => id),
             autoApprove: details.autoApprove,
         };
     }

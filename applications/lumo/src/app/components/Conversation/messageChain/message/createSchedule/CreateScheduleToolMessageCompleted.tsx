@@ -7,6 +7,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import { supportsDesktopScheduleReadOnly } from '@proton/lumo-api-client/core/desktop-tools';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
@@ -58,7 +59,7 @@ export const CreateScheduleToolMessageCompleted = ({ draft }: { draft: CreateSch
         recurrenceRule: draft.recurrenceRule,
         autoApprove: true,
         notifyOnComplete: true,
-        connectors: draft.connectors.map((id) => ({ id, label: id })),
+        connectors: draft.connectors.map((id) => ({ id, label: id, readOnly: supportsDesktopScheduleReadOnly() })),
     }));
     const [showDetails, setShowDetails] = useState(true);
     const cadenceLabel = getScheduleCadenceLabel(schedule.recurrenceRule, getWeekStartsOn(userSettings));
