@@ -15,7 +15,7 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --ci",
         "test:watch": "jest --watch"
@@ -24,9 +24,9 @@
         "@proton/utils": "workspace:^"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@testing-library/react": "^15.0.7",
         "@types/jest": "catalog:",
         "@types/node": "catalog:",
@@ -34,9 +34,10 @@
         "@types/react-dom": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "eslint": "catalog:",
         "jest": "catalog:",
         "jest-junit": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
         "react": "catalog:",
         "react-dom": "catalog:",
         "typescript": "catalog:"
