@@ -505,6 +505,9 @@
       "Move all items": [
         "Mutare toate articolele"
       ],
+      "Move folder": [
+        "Mutare folder"
+      ],
       "Move to": [
         "Mutare în"
       ],
@@ -693,6 +696,9 @@
       ],
       "Show advanced options": [
         "Afișare opțiuni avansate"
+      ],
+      "Show all": [
+        "Arată tot"
       ],
       "Show Less": [
         "Arată mai puțin"
@@ -1213,6 +1219,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Eșuare mutare toate articolele din „${ payload.content.name }”."
+      ],
+      "Failed to move folder": [
+        "Mutarea folderului a eșuat."
       ],
       "Failed to move items": [
         "Mutarea articolelor a eșuat."
@@ -2082,6 +2091,9 @@
       "Folder \"${ payload.folder.name }\" created": [
         "S-a creat folderul „${ payload.folder.name }”"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "S-a mutat folderul \"${ payload.folder.name }\"."
+      ],
       "Folder deleted": [
         "Folder șters"
       ],
@@ -2271,12 +2283,13 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
       ],
       "Moving items": [
         "Se mută articolele."
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items to trash": [
         "Se mută articolele în gunoi."
@@ -2335,6 +2348,24 @@
         "Se va muta doar ${ count } articol. Articolele din foldere nu vor fi mutate.",
         "Se vor muta doar ${ count } articole. Articolele din foldere nu vor fi mutate.",
         "Se vor muta doar ${ count } de articole. Articolele din foldere nu vor fi mutate."
+      ],
+      "Only aliases are shown": [
+        "Sunt afișare doar aliasurile"
+      ],
+      "Only cards are shown": [
+        "Sunt afișare doar cardurile"
+      ],
+      "Only custom items are shown": [
+        "Sunt afișare doar articolele personalizate"
+      ],
+      "Only identities are shown": [
+        "Sunt afișare doar identitățile"
+      ],
+      "Only logins are shown": [
+        "Sunt afișare doar autentificările"
+      ],
+      "Only notes are shown": [
+        "Sunt afișare doar notițele"
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Sunt afișate doar codurile de acces care au expirat în ultimele 30 de zile. Cele mai vechi sunt șterse automat."
@@ -2674,6 +2705,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Va fi necesară o parolă suplimentară pentru a utiliza ${ PASS_APP_NAME }. Acționează ca o parolă adițională pe lângă parola ${ BRAND_NAME } principală."
       ],
+      "The folder is already here": [
+        "Folderul este deja aici."
+      ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Nu s-a putut importa ${ totalIgnored } articol:",
         "Nu s-au putut importa ${ totalIgnored } articole:",
@@ -2874,6 +2908,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Când este activată, puteți accesa în continuare datele ${ PASS_SHORT_APP_NAME } dacă pierdeți conectivitatea la internet sau dacă serverele ${ BRAND_NAME } nu sunt accesibile."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "La mutarea articolelor între seifuri, vom păstra până la ultimele 50 de modificări efectuate fiecărui articol."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Când trimiteți un mesaj de pe acest alias, acesta va afișa ${ emailSender } ca expeditor."
@@ -3587,7 +3624,7 @@
         "Informații"
       ],
       "Instagram handle": [
-        "Nume de utilizator Instagram"
+        "Cont Instagram"
       ],
       "Install and continue": [
         "Instalare și continuare"
@@ -5124,6 +5161,9 @@
       "Modified": [
         "Modificat"
       ],
+      "Move \"${ folderName }\" to": [
+        "Mutare „${ folderName }” în"
+      ],
       "Move ${ count } item to ${ target }": [
         "Mutare ${ count } articol în ${ target }",
         "Mutare ${ count } articole în ${ target }",
@@ -5639,6 +5679,9 @@
       "Move to trash": [
         "Mutare în gunoi"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Mutarea folderului aici ar depăși nivelul maxim de imbricare a folderelor."
+      ],
       "No items": [
         "Nu există articole."
       ],
@@ -5746,6 +5789,9 @@
       ],
       "Verification code is required": [
         "Este necesar codul de verificare."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Nu puteți muta un folder în el însuși sau în subfolderele sale."
       ],
       "You have reached the limit of members who can access this item.": [
         "Ați atins limita de membri care pot accesa acest seif."

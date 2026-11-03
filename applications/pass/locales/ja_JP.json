@@ -679,6 +679,9 @@
       "Show advanced options": [
         "高度なオプションを表示"
       ],
+      "Show all": [
+        "全て表示"
+      ],
       "Show Less": [
         "一部のみ表示"
       ],
@@ -2140,7 +2143,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
+        "アイテムを別の保管庫に移動すると、そのセキュアリンクは消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
