@@ -6,7 +6,8 @@
 	background-color: var(--background-weak);
 
 	&__list {
-		padding: rem(8) rem(6);
+		padding-block: rem(8);
+		padding-inline: rem(6);
 	}
 
 	&__row {

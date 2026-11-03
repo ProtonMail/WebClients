@@ -93,7 +93,7 @@ export const CustomizePageHeader = ({
             return c('collider_2025:Placeholder').t`Search connectors`;
         }
         return skillsView === 'discover'
-            ? c('collider_2025:Placeholder').t`Search ready-made skills`
+            ? c('collider_2025:Placeholder').t`Search plugins`
             : c('collider_2025:Placeholder').t`Search your skills`;
     })();
 
@@ -117,7 +117,7 @@ export const CustomizePageHeader = ({
                             onChange={onSkillsViewChange}
                             options={[
                                 { value: 'yours', label: c('collider_2025:Tab').t`Yours` },
-                                { value: 'discover', label: c('collider_2025:Tab').t`Discover` },
+                                { value: 'discover', label: c('collider_2025:Tab').t`Discover plugins` },
                             ]}
                         />
                     </>

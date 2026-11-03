@@ -4,11 +4,26 @@ import {
     parseConnectorsMarkdown,
     parseMcpConnectors,
     parsePluginManifest,
+    resolvePluginInfo,
 } from './skillBundle';
 import { encodeText } from './skillFiles';
 import type { SkillFileDraft } from './types';
 
 const file = (path: string, text: string): SkillFileDraft => ({ path, mimeType: 'text/plain', data: encodeText(text) });
+
+describe('resolvePluginInfo', () => {
+    const fromFiles = { version: '2.0.0', author: 'Anthropic' };
+    const stored = { version: '1.0.0', author: 'Proton' };
+
+    it('prefers the manifest in the files', () => {
+        expect(resolvePluginInfo('proton', fromFiles, stored)).toEqual(fromFiles);
+    });
+
+    it('keeps the stored info only for Proton plugins', () => {
+        expect(resolvePluginInfo('proton', undefined, stored)).toEqual(stored);
+        expect(resolvePluginInfo('uploaded', undefined, stored)).toBeUndefined();
+    });
+});
 
 describe('parsePluginManifest', () => {
     it('reads name, version, description and author', () => {

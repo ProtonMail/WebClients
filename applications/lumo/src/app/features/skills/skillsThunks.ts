@@ -8,7 +8,7 @@ import type { MasterKeyContext } from '../../serialization';
 import { buildMasterKeyContext } from '../../util/masterKeys';
 import { type DesktopConnectorState, formatSkillConnectorMap, matchSkillConnectors } from './connectorMatching';
 import { customAgentToSkillDraft, getAgentsToMigrate } from './customAgentMigration';
-import { BUNDLE_INDEX_VERSION, deriveBundleInfo } from './skillBundle';
+import { BUNDLE_INDEX_VERSION, deriveBundleInfo, resolvePluginInfo } from './skillBundle';
 import { decodeText, isSkillScriptFile, isTextSkillFile } from './skillFiles';
 import type { SkillCommand } from './skillInvocation';
 import {
@@ -60,7 +60,12 @@ const decryptSkillFiles = async ({ dbApi }: LumoThunkArguments, skill: Skill): P
 const reindexSkill = async (extra: LumoThunkArguments, masterKeys: MasterKeyContext, skill: Skill): Promise<Skill> => {
     try {
         const files = await decryptSkillFiles(extra, skill);
-        const reindexed: Skill = { ...skill, ...deriveBundleInfo(files, skill.subSkills) };
+        const bundle = deriveBundleInfo(files, skill.subSkills);
+        const reindexed: Skill = {
+            ...skill,
+            ...bundle,
+            plugin: resolvePluginInfo(skill.source, bundle.plugin, skill.plugin),
+        };
         await extra.dbApi.putSkill(await serializeSkill(reindexed, masterKeys.primary));
         return reindexed;
     } catch {
@@ -166,6 +171,7 @@ export const saveSkill = createAsyncThunk<Skill, { id?: SkillId; draft: SkillDra
         const { legacyAgentId, enabled, ...rest } = draft;
         const { files: draftFiles, ...priv } = rest;
         const files = await assignChangedFileIds(extra, existing, draftFiles);
+        const bundle = deriveBundleInfo(files, existing?.subSkills);
         const skill: Skill = {
             id: existing?.id ?? crypto.randomUUID(),
             createdAt: existing?.createdAt ?? now,
@@ -173,7 +179,8 @@ export const saveSkill = createAsyncThunk<Skill, { id?: SkillId; draft: SkillDra
             legacyAgentId: existing?.legacyAgentId ?? legacyAgentId,
             skillKey: existing?.skillKey ?? generateSkillKeyBase64(),
             ...priv,
-            ...deriveBundleInfo(files, existing?.subSkills),
+            ...bundle,
+            plugin: resolvePluginInfo(priv.source, bundle.plugin, priv.plugin ?? existing?.plugin),
             enabled: enabled ?? existing?.enabled ?? true,
         };
         await writeSkill(extra, masterKeys, skill, files);

@@ -1,6 +1,6 @@
 import { getDesktopCategory } from './connectorCategories';
 import { getProtonPlugins, protonPluginMatches, protonPluginToDraft } from './protonCatalog';
-import { deriveBundleInfo } from './skillBundle';
+import { PLUGIN_MANIFEST_PATH, deriveBundleInfo } from './skillBundle';
 import { decodeText } from './skillFiles';
 import { SKILL_DESCRIPTION_MAX_LENGTH, getSkillHandle, parseSkillMarkdown } from './skillMarkdown';
 
@@ -38,13 +38,22 @@ describe('protonPluginToDraft', () => {
     const [plugin] = getProtonPlugins();
     const draft = protonPluginToDraft(plugin);
 
-    it('builds a Proton plugin keyed by its id', () => {
-        expect(draft).toMatchObject({ source: 'proton', legacyAgentId: plugin.id, instructions: '' });
+    it('builds a Proton plugin keyed by its id, with its version and author', () => {
+        expect(draft).toMatchObject({
+            source: 'proton',
+            legacyAgentId: plugin.id,
+            instructions: '',
+            plugin: { version: plugin.version, author: 'Proton' },
+        });
     });
 
-    it('produces files that index as a plugin with every skill', () => {
+    it('has no Claude plugin manifest', () => {
+        expect(draft.files.map(({ path }) => path)).not.toContain(PLUGIN_MANIFEST_PATH);
+        expect(deriveBundleInfo(draft.files).plugin).toBeUndefined();
+    });
+
+    it('produces files that index every skill', () => {
         const info = deriveBundleInfo(draft.files);
-        expect(info.plugin).toEqual({ version: plugin.version, author: 'Proton' });
         expect(info.subSkills?.map(({ name }) => name).sort()).toEqual(plugin.skills.map(({ name }) => name).sort());
     });
 
