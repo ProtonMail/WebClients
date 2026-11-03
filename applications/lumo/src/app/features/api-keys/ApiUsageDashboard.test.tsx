@@ -8,7 +8,6 @@ import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit'
 
 import { setDebugApiCreditBalance } from '../../services/apiUsageDebugStore';
 import { ApiUsageDashboard } from './ApiUsageDashboard';
-import { useCanBuyLumoCredits } from './useCanBuyLumoCredits';
 
 jest.mock('@proton/account/paymentStatus/hooks');
 jest.mock('@proton/account/subscription/hooks');
@@ -20,7 +19,6 @@ jest.mock('@proton/components/containers/payments/LumoCreditsModal', () => ({
     LumoCreditsModal: ({ open, onClose }: { open: boolean; onClose: () => void }) =>
         open ? <button onClick={onClose}>Close top-up</button> : null,
 }));
-jest.mock('./useCanBuyLumoCredits');
 
 const withBalance = (Balance: string) => () => Promise.resolve({ ...MOCK_LUMO_CREDIT_RESPONSE, Balance });
 
@@ -33,7 +31,6 @@ const setup = (
     (useUser as jest.Mock).mockReturnValue([{ Credit: 987_654, Currency: 'EUR' }]);
     (useSubscription as jest.Mock).mockReturnValue([hasSubscription ? { Currency: 'USD' } : undefined]);
     (usePaymentStatus as jest.Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
-    (useCanBuyLumoCredits as jest.Mock).mockReturnValue(!isOrgMember);
     render(<ApiUsageDashboard isOrgAdmin={false} isOrgMember={isOrgMember} />);
     return api;
 };

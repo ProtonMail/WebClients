@@ -174,6 +174,67 @@ it('should buy the lumo-credit product once the payment is chargeable', async ()
     expect(onClose).toHaveBeenCalled();
 });
 
+const chargeLumoCreditsModal = async (onSuccess: () => void) => {
+    mockPaymentMethods().noSaved();
+    render(
+        <ContextLumoCreditsModal
+            paymentStatus={MOCK_PAYMENT_STATUS}
+            open={true}
+            onSuccess={onSuccess}
+            app={APPS.PROTONLUMO}
+        />
+    );
+    await waitFor(() => expect(mockFacadeCalls.length).toBeGreaterThan(0));
+    const chargeablePaymentParameters = { Amount: 5000, Currency: 'EUR', PaymentToken: 'payment-token-123' };
+    const { onChargeable } = mockFacadeCalls.at(-1);
+    return act(() => onChargeable({}, { chargeablePaymentParameters, sourceType: 'card' }));
+};
+
+it('should report success once the lumo-credit purchase went through', async () => {
+    const onSuccess = jest.fn();
+
+    await chargeLumoCreditsModal(onSuccess);
+
+    expect(buyProductMock).toHaveBeenCalled();
+    expect(onSuccess).toHaveBeenCalledTimes(1);
+});
+
+it('should report success even when refreshing the payment methods fails after the purchase', async () => {
+    const onSuccess = jest.fn();
+    mockPaymentMethods().noSaved();
+    render(
+        <ContextLumoCreditsModal
+            paymentStatus={MOCK_PAYMENT_STATUS}
+            open={true}
+            onSuccess={onSuccess}
+            app={APPS.PROTONLUMO}
+        />
+    );
+    await waitFor(() => expect(mockFacadeCalls.length).toBeGreaterThan(0));
+    addApiMock('payments/v5/methods', () => {
+        throw new Error('Refresh failed');
+    });
+    const chargeablePaymentParameters = { Amount: 5000, Currency: 'EUR', PaymentToken: 'payment-token-123' };
+    const { onChargeable } = mockFacadeCalls.at(-1);
+
+    await act(async () => {
+        await onChargeable({}, { chargeablePaymentParameters, sourceType: 'card' }).catch(() => {});
+    });
+
+    expect(buyProductMock).toHaveBeenCalled();
+    expect(onSuccess).toHaveBeenCalledTimes(1);
+});
+
+it('should not report success when the lumo-credit purchase fails', async () => {
+    buyProductMock.mockRejectedValueOnce(new Error('Payment declined'));
+    const onSuccess = jest.fn();
+
+    await chargeLumoCreditsModal(onSuccess).catch(() => {});
+
+    expect(buyProductMock).toHaveBeenCalled();
+    expect(onSuccess).not.toHaveBeenCalled();
+});
+
 it('should only accept whole currency units, so the lumo-credit Quantity stays an integer', async () => {
     mockPaymentMethods().noSaved();
 
@@ -466,12 +527,14 @@ describe('tax', () => {
             Taxes: [],
         }));
         const onClose = jest.fn();
+        const onSuccess = jest.fn();
 
         render(
             <ContextLumoCreditsModal
                 paymentStatus={MOCK_PAYMENT_STATUS}
                 open={true}
                 onClose={onClose}
+                onSuccess={onSuccess}
                 app={APPS.PROTONLUMO}
             />
         );
@@ -492,6 +555,7 @@ describe('tax', () => {
         const { data } = buyProductMock.mock.calls.at(-1)[0];
         expect(data).toMatchObject({ ProductType: 'lumo-credit', Quantity: 25, Amount: 0 });
         expect(data.PaymentToken).toBeUndefined();
+        expect(onSuccess).toHaveBeenCalledTimes(1);
     });
 
     it('should keep the payment method when account credit covers only part of the amount due', async () => {

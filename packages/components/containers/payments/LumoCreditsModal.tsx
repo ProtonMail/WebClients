@@ -16,7 +16,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import Loader from '../../components/loader/Loader';
 import { TopUpModal, type TopUpModalProps } from './TopUpModal';
 
-export const LumoCreditsModal = (props: TopUpModalProps) => {
+export const LumoCreditsModal = ({ onSuccess, ...props }: TopUpModalProps & { onSuccess?: () => void }) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const getPaymentMethods = useGetPaymentMethods();
@@ -59,6 +59,7 @@ export const LumoCreditsModal = (props: TopUpModalProps) => {
                         BillingAddress: billingAddress,
                     })
                 );
+                onSuccess?.();
                 createNotification({ text: c('Success').t`Funds added` });
             }}
             onTopUp={async (_, { chargeablePaymentParameters }, credits) => {
@@ -72,6 +73,7 @@ export const LumoCreditsModal = (props: TopUpModalProps) => {
                         BillingAddress: billingAddress,
                     })
                 );
+                onSuccess?.();
 
                 await getPaymentMethods({ cache: CacheType.None });
                 createNotification({ text: c('Success').t`Funds added` });

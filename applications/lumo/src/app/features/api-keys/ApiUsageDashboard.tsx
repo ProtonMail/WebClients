@@ -42,7 +42,6 @@ import {
     MOCK_API_USAGE_MEMBERS,
     getMockApiUsageDays,
 } from './apiUsageMockData';
-import { useCanBuyLumoCredits } from './useCanBuyLumoCredits';
 import { useLumoCredits } from './useLumoCredits';
 
 type UsagePeriod = 'last-7-days' | 'last-30-days' | 'previous-30-days' | 'last-90-days';
@@ -569,7 +568,7 @@ const ApiBalanceCard = ({
                             </>
                         )}
                     </div>
-                    {canTopUp && (
+                    {!isOrgMember && canTopUp && (
                         <Button color="norm" className="shrink-0" disabled={topUpDisabled} onClick={onTopUp}>
                             {c('collider_2025: Action').t`Top up balance`}
                         </Button>
@@ -642,12 +641,14 @@ export const ApiUsageDashboard = ({
     canManageBalance = true,
     canChargeAutoTopUp = true,
     showAutoTopUp = false,
+    canTopUp = true,
 }: {
     isOrgAdmin: boolean;
     isOrgMember: boolean;
     canManageBalance?: boolean;
     canChargeAutoTopUp?: boolean;
     showAutoTopUp?: boolean;
+    canTopUp?: boolean;
 }) => {
     const { APP_NAME } = useConfig();
     const [{ Currency }] = useUser();
@@ -655,7 +656,6 @@ export const ApiUsageDashboard = ({
     const [paymentStatus, paymentStatusLoading] = usePaymentStatus();
     const lumoCredits = useLumoCredits();
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
-    const canTopUp = useCanBuyLumoCredits();
     const creditBalanceOverride = useDebugApiCreditBalance();
     const emptyUsageEnabled = useDebugApiEmptyUsage();
     const displayedCreditBalance = creditBalanceOverride ?? lumoCredits.balance;
@@ -763,7 +763,12 @@ export const ApiUsageDashboard = ({
             )}
 
             {canTopUp && renderCreditModal && paymentStatus && (
-                <LumoCreditsModal app={APP_NAME} paymentStatus={paymentStatus} {...creditModalProps} />
+                <LumoCreditsModal
+                    app={APP_NAME}
+                    paymentStatus={paymentStatus}
+                    onSuccess={lumoCredits.waitForBalanceIncrease}
+                    {...creditModalProps}
+                />
             )}
         </section>
     );

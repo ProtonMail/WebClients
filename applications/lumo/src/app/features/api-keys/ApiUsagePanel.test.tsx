@@ -12,6 +12,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { ApiUsageDashboard } from './ApiUsageDashboard';
 import { ApiUsagePanel } from './ApiUsagePanel';
+import { useCanBuyLumoCredits } from './useCanBuyLumoCredits';
 
 jest.mock('@proton/account/member/hook');
 jest.mock('@proton/account/paymentMethods/hooks');
@@ -19,6 +20,7 @@ jest.mock('@proton/account/user/hooks');
 jest.mock('../../hooks/useLumoPlan');
 jest.mock('@proton/unleash/useFlag');
 jest.mock('./ApiUsageDashboard', () => ({ ApiUsageDashboard: jest.fn(() => null) }));
+jest.mock('./useCanBuyLumoCredits');
 
 const card = { Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD, Autopay: Autopay.ENABLE, IsDefault: true };
 
@@ -27,12 +29,15 @@ const renderedProps = ({
     member = { Subscriber: MEMBER_SUBSCRIBER.PAYER },
     paymentMethods = [card],
     autoTopUpFlag = true,
+    canBuyLumoCredits = true,
 }: {
     Role?: USER_ROLES;
     member?: { Subscriber?: MEMBER_SUBSCRIBER };
     paymentMethods?: object[];
     autoTopUpFlag?: boolean;
+    canBuyLumoCredits?: boolean;
 } = {}) => {
+    (useCanBuyLumoCredits as jest.Mock).mockReturnValue(canBuyLumoCredits);
     (useFlag as jest.Mock).mockImplementation(
         (name: string) => name === 'LumoAllowAutomaticCreditTopUps' && autoTopUpFlag
     );
@@ -55,6 +60,10 @@ describe('ApiUsagePanel', () => {
 
     it('lets a user without an organization manage the balance', () => {
         expect(renderedProps({ Role: USER_ROLES.FREE_ROLE, member: {} }).canManageBalance).toBe(true);
+    });
+
+    it.each([true, false])('lets the dashboard top up when the Lumo credits buyer check is %p', (canBuyLumoCredits) => {
+        expect(renderedProps({ canBuyLumoCredits }).canTopUp).toBe(canBuyLumoCredits);
     });
 
     it('does not let a non-paying member manage the balance', () => {

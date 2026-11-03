@@ -16,7 +16,6 @@ jest.mock('@proton/app-context/useApi');
 jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
 jest.mock('./ApiTokenUsageChart', () => ({ ApiTokenUsageChart: () => null }));
 jest.mock('@proton/components/containers/payments/LumoCreditsModal', () => ({ LumoCreditsModal: () => null }));
-jest.mock('./useCanBuyLumoCredits', () => ({ useCanBuyLumoCredits: () => true }));
 
 const getUrl = 'payments/v5/products/lumo-credit';
 const autoTopUpUrl = 'payments/v5/products/lumo-credit/auto-top-up';
