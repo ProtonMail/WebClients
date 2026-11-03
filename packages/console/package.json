@@ -5,7 +5,9 @@
     "author": "",
     "sideEffects": false,
     "type": "module",
-    "exports": {},
+    "exports": {
+        "./pass/getPassOrganizationAccess": "./src/pass/getPassOrganizationAccess.ts"
+    },
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "eslint --quiet",
@@ -13,6 +15,10 @@
         "test:ci": "pnpm run test --run",
         "test:ui": "pnpm run test --ui",
         "test:watch": "pnpm run test --watch"
+    },
+    "dependencies": {
+        "@proton/payments": "workspace:^",
+        "@proton/shared": "workspace:^"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
