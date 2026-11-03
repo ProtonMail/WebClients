@@ -288,14 +288,19 @@ export const getMailConfiguration = ({
 
     const title = c('mail_signup_2024: Info').t`An encrypted email service that puts your privacy first`;
     const b2bTitle = c('mail_signup_2024: Info').t`Encrypted solutions to protect your entire business`;
-    const inviteTitle =
-        invite?.type === 'porkbun' ? (
-            <PorkbunHeader />
-        ) : (
+    const inviteTitle = (() => {
+        if (invite?.type === 'porkbun') {
+            return <PorkbunHeader />;
+        }
+        if (invite?.type === 'provisioning') {
+            return <SignupHeaderV2>{b2bTitle}</SignupHeaderV2>;
+        }
+        return (
             <SignupHeaderV2 className="max-w-full">
                 {c('mail_signup_2024: Info').t`You’ve been invited to try ${MAIL_APP_NAME}`}
             </SignupHeaderV2>
         );
+    })();
 
     let features = getGenericFeatures(isLargeViewport, audience);
     if (invite?.type === 'porkbun') {

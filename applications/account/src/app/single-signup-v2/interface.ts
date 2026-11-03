@@ -24,6 +24,7 @@ import type {
     SubscriptionData,
     UserCacheResult,
 } from '../signup/interfaces';
+import type { ProvisionedDeal } from '../signup/orgProvisioning';
 import type { getSignupSearchParams } from '../signup/searchParams';
 import type { SubscriptionDataCycleMapping } from './helper';
 import type { TelemetryMeasurementData } from './measure';
@@ -118,6 +119,12 @@ export interface SignupModelV2 {
         installed: boolean;
     };
     signupTokenMode?: boolean;
+    /**
+     * Set for a sales-provisioned signup link. The signup is then read-only: everything comes from the
+     * link's params and, for what they don't carry, the token lookup. Only the password, plus card details
+     * on a card deal, are entered.
+     */
+    provisionedDeal?: ProvisionedDeal;
     loadingDependencies: boolean;
     initialBillingAddress: BillingAddressExtended;
 }

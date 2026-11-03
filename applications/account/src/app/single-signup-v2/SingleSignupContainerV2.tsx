@@ -64,6 +64,7 @@ import mailReferPage from '../../pages/refer-a-friend';
 import type { AuthSession, OnLoginCallback } from '../content/authSession';
 import type { Paths } from '../content/helper';
 import { cachedPlans, cachedPlansMap } from '../defaultPlans';
+import ExpiredError from '../public/ExpiredError';
 import { getOptimisticDomains, isPorkbunSignup, isReferralSignup } from '../signup/helper';
 import type {
     InviteData,
@@ -75,6 +76,7 @@ import type {
     UserCacheResult,
 } from '../signup/interfaces';
 import { SignupHumanVerification } from '../signup/interfaces';
+import { InvalidProvisioningLinkError, getProvisionedDeal, resolveProvisioning } from '../signup/orgProvisioning';
 import { getPlanIDsFromParamsWithForcedAddons } from '../signup/searchParams';
 import { handleDone, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
@@ -546,16 +548,21 @@ const SingleSignupContainerV2 = ({
 
             const paymentsApi = getPaymentsApi(silentApi);
 
-            const [{ plans, freePlan }, { paymentStatus, billingAddress: savedOrDetectedBillingInformation }] =
-                await Promise.all([
-                    getPlans({ api: silentApi }),
-                    loadInitialBillingAddress({
-                        getPaymentStatus: () => getPaymentStatus({ api: silentApi }),
-                        getFullBillingAddress: paymentsApi.getFullBillingAddress,
-                        isAuthenticated: !!resumedSession?.UID,
-                    }),
-                ]);
-
+            const [
+                { plans, freePlan },
+                { paymentStatus, billingAddress: savedOrDetectedBillingInformation },
+                resolvedProvisioning,
+            ] = await Promise.all([
+                getPlans({ api: silentApi }),
+                loadInitialBillingAddress({
+                    getPaymentStatus: () => getPaymentStatus({ api: silentApi }),
+                    getFullBillingAddress: paymentsApi.getFullBillingAddress,
+                    isAuthenticated: !!resumedSession?.UID,
+                }),
+                signupParameters.invite?.type === 'provisioning'
+                    ? resolveProvisioning(silentApi, signupParameters.invite.data.token)
+                    : undefined,
+            ]);
             const currency = getPreferredCurrency({
                 paymentStatus,
                 plans: getAccessiblePlans({
@@ -581,6 +588,17 @@ const SingleSignupContainerV2 = ({
 
             const plansMap = getPlansMap(plans, currency, false);
 
+            // Everything a provisioned link reads besides the plan, put together once so pricing, the read-only
+            // details and the org setup agree.
+            const provisionedDeal =
+                resolvedProvisioning && signupParameters.invite?.type === 'provisioning'
+                    ? getProvisionedDeal({
+                          token: signupParameters.invite.data.token,
+                          provisioning: resolvedProvisioning,
+                          urlParams: signupParameters,
+                      })
+                    : undefined;
+
             const planParameters = getPlanIDsFromParamsWithForcedAddons({
                 plans,
                 currency,
@@ -597,17 +615,22 @@ const SingleSignupContainerV2 = ({
                 cycle,
             });
 
-            const initialBillingAddress = {
-                ...savedOrDetectedBillingInformation,
-                // If the initial billing address loaded from the current user already has the extra data (Company,
-                // City, etc) then the input paramters have to be ignored, because inline editing of billing address
-                // isn't possible. Instead, user has to open the edit billing address modal.
-                Company: savedOrDetectedBillingInformation.Company ?? modifiedSignupParameters.orgName,
-                FirstName: savedOrDetectedBillingInformation.FirstName ?? modifiedSignupParameters.firstName,
-                LastName: savedOrDetectedBillingInformation.LastName ?? modifiedSignupParameters.lastName,
-                Address: savedOrDetectedBillingInformation.Address ?? modifiedSignupParameters.streetAddress,
-                City: savedOrDetectedBillingInformation.City ?? modifiedSignupParameters.city,
-            };
+            const vatNumber = provisionedDeal ? provisionedDeal.vatNumber : modifiedSignupParameters.vatNumber;
+
+            // A provisioned deal is priced and redeemed with the negotiated address, never the detected one.
+            const initialBillingAddress = provisionedDeal
+                ? provisionedDeal.billingAddress
+                : {
+                      ...savedOrDetectedBillingInformation,
+                      // If the initial billing address loaded from the current user already has the extra data (Company,
+                      // City, etc) then the input paramters have to be ignored, because inline editing of billing address
+                      // isn't possible. Instead, user has to open the edit billing address modal.
+                      Company: savedOrDetectedBillingInformation.Company ?? modifiedSignupParameters.orgName,
+                      FirstName: savedOrDetectedBillingInformation.FirstName ?? modifiedSignupParameters.firstName,
+                      LastName: savedOrDetectedBillingInformation.LastName ?? modifiedSignupParameters.lastName,
+                      Address: savedOrDetectedBillingInformation.Address ?? modifiedSignupParameters.streetAddress,
+                      City: savedOrDetectedBillingInformation.City ?? modifiedSignupParameters.city,
+                  };
 
             const [
                 { Domains: domains },
@@ -643,7 +666,7 @@ const SingleSignupContainerV2 = ({
                         billingAddress: initialBillingAddress,
                         trial: signupTrial,
                         ValidateBillingAddress: true,
-                        VatId: modifiedSignupParameters.vatNumber,
+                        VatId: vatNumber,
                     },
                     toApp: product,
                     availableCycles: signupConfiguration.cycles,
@@ -709,6 +732,10 @@ const SingleSignupContainerV2 = ({
                     history.replace(SSO_PATHS.SIGNUP);
                 }
             }
+            if (provisionedDeal) {
+                // Pre-fills the org setup step after signup.
+                signupParametersDiff.orgName = provisionedDeal.details.OrganizationName;
+            }
             if (Object.keys(signupParametersDiff).length > 0) {
                 setSignupParameters((old) => ({ ...old, ...signupParametersDiff }));
             }
@@ -725,7 +752,8 @@ const SingleSignupContainerV2 = ({
                 referralData,
                 inviteData: signupParameters.invite?.type === 'generic' ? signupParameters.invite.data : undefined,
                 paymentStatus,
-                subscriptionData: { ...subscriptionData, vatNumber: modifiedSignupParameters.vatNumber },
+                subscriptionData: { ...subscriptionData, vatNumber },
+                provisionedDeal,
                 cache: undefined,
                 source: signupParameters.source,
                 loadingDependencies: false,
@@ -1023,6 +1051,14 @@ const SingleSignupContainerV2 = ({
             accountRef.current.signingIn = false;
         }
     };
+
+    if (error instanceof InvalidProvisioningLinkError) {
+        return (
+            <div className="absolute inset-center text-center">
+                <ExpiredError type="provisioning" />
+            </div>
+        );
+    }
 
     if (error) {
         return <StandardLoadErrorPage errorMessage={error.message} />;
@@ -1482,6 +1518,7 @@ const SingleSignupContainerV2 = ({
                                     subscriptionData,
                                     inviteData: model.inviteData,
                                     referralData: model.referralData,
+                                    provisioningToken: model.provisionedDeal?.token,
                                     persistent: isElectronApp,
                                     trusted: isElectronApp,
                                     clientType,

@@ -22,7 +22,8 @@ const ReportLink = () => {
 };
 
 interface Props {
-    type: 'report' | 'email' | 'unsubscribe' | 'forwarding' | 'group' | 'magic-link' | 'magic-link-used';
+    type:
+        'report' | 'email' | 'unsubscribe' | 'forwarding' | 'group' | 'magic-link' | 'magic-link-used' | 'provisioning';
 }
 
 const getTexts = (type: Props['type']) => {
@@ -69,6 +70,13 @@ const getTexts = (type: Props['type']) => {
         return {
             title: c('Info').t`Invitation link used`,
             description: c('Info').t`This invitation link is already used. Please sign in directly instead.`,
+        };
+    }
+    if (type === 'provisioning') {
+        return {
+            title: c('Info').t`Signup link no longer valid`,
+            description: c('Info')
+                .t`This signup link has expired, been revoked or already been used. Please contact your ${BRAND_NAME} representative for a new one.`,
         };
     }
     return {

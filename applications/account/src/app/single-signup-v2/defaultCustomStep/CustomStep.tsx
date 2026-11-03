@@ -163,6 +163,8 @@ const CustomStep = ({
             {step === Step.Congratulations && (
                 <CongratulationsStep
                     defaultName={
+                        // A provisioned deal carries the admin's name the agent stored.
+                        model.provisionedDeal?.details.AdminDisplayName ||
                         accountData.username ||
                         (accountData?.signupType === SignupType.External && getLocalPart(accountData.email)) ||
                         ''

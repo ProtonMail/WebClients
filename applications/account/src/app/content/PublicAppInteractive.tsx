@@ -59,6 +59,7 @@ import SignInContainer, { type SignInLocationState } from '../sign-in/SignInCont
 import { AuthType } from '../sign-in/auth/interface';
 import { getLoginMeta } from '../sign-in/loginPagesJson';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
+import { getProvisioningToken } from '../signup/orgProvisioning';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import Activation from '../signupCtx/flows/bornPrivate/activation/Activation';
 import Recovery from '../signupCtx/flows/bornPrivate/recovery/Recovery';
@@ -485,6 +486,12 @@ const PublicAppInteractive = ({
                                                 SSO_PATHS.PORKBUN_SIGNUP,
                                                 SSO_PATHS.PORKBUN_SIGN_IN,
                                                 SSO_PATHS.BORN_PRIVATE,
+                                                // A sales-provisioned link (`provisioningToken`) keeps the /vpn path but
+                                                // signs up here, since this signup resolves and redeems the deal. The VPN
+                                                // signup ignores the token, so links without one still go to it.
+                                                ...(getProvisioningToken(location.hash)
+                                                    ? [SSO_PATHS.VPN_SIGNUP, SSO_PATHS.VPN_PRICING]
+                                                    : []),
                                             ]}
                                         >
                                             <SingleSignupSwitchContainer
