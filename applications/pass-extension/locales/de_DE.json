@@ -520,6 +520,9 @@
       "Move all items": [
         "Alle Einträge verschieben"
       ],
+      "Move folder": [
+        "Ordner verschieben"
+      ],
       "Move to": [
         "Verschieben nach"
       ],
@@ -1249,6 +1252,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Fehler beim Verschieben der Einträge von \"${ payload.content.name }\"."
+      ],
+      "Failed to move folder": [
+        "Fehler beim Verschieben des Ordners"
       ],
       "Failed to move items": [
         "Fehler beim Verschieben der Einträge."
@@ -2365,6 +2371,9 @@
       "Folder \"${ payload.folder.name }\" created": [
         "Ordner \"${ payload.folder.name }\" erstellt"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Ordner „${ payload.folder.name }“ verschoben"
+      ],
       "Folder deleted": [
         "Ordner gelöscht"
       ],
@@ -3014,6 +3023,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Das zusätzliche Passwort wird für die Verwendung von ${ PASS_APP_NAME } benötigt. Es dient als zusätzliches Passwort zu deinem ${ BRAND_NAME }-Passwort."
+      ],
+      "The folder is already here": [
+        "Der Ordner ist bereits vorhanden"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Der folgende ${ totalIgnored } Eintrag konnte nicht importiert werden:",
@@ -5501,6 +5513,9 @@
       "Modified": [
         "Geändert"
       ],
+      "Move \"${ folderName }\" to": [
+        "„${ folderName }“ verschieben nach"
+      ],
       "Move ${ count } item to ${ target }": [
         "${ count } Eintrag nach ${ target } verschieben",
         "${ count } Einträge nach ${ target } verschieben"
@@ -6041,6 +6056,9 @@
       "Move to trash": [
         "In den Papierkorb verschieben"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Das Verschieben des Ordners an diesen Ort überschreitet die maximale Verschachtelungstiefe"
+      ],
       "No items": [
         "Keine Einträge"
       ],
@@ -6142,6 +6160,9 @@
       ],
       "Verification code is required": [
         "Verifizierungscode ist erforderlich"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Ein Ordner kann nicht in sich selbst oder in einen seiner Unterordner verschoben werden"
       ],
       "You have reached the limit of members who can access this item.": [
         "Du hast das Benutzerlimit für den Zugriff auf diesen Eintrag erreicht."

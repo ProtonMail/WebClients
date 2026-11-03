@@ -520,6 +520,9 @@
       "Move all items": [
         "Mou tots els elements"
       ],
+      "Move folder": [
+        "Mou la carpeta"
+      ],
       "Move to": [
         "Mou a"
       ],
@@ -1249,6 +1252,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "No s'han pogut moure tots els elements de «${ payload.content.name }»"
+      ],
+      "Failed to move folder": [
+        "No s'ha pogut moure la carpeta"
       ],
       "Failed to move items": [
         "No s'ha pogut moure els elements."
@@ -2365,6 +2371,9 @@
       "Folder \"${ payload.folder.name }\" created": [
         "S'ha creat la carpeta «${ payload.folder.name }»"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "S'ha mogut la carpeta \"${ payload.folder.name }\""
+      ],
       "Folder deleted": [
         "S'ha eliminat la carpeta"
       ],
@@ -3014,6 +3023,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Es requerirà la contrasenya addicional per utilitzar ${ PASS_APP_NAME }. Actua com una contrasenya addicional a la contrasenya de ${ BRAND_NAME }."
+      ],
+      "The folder is already here": [
+        "La carpeta ja hi és present"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "No s'ha pogut importar ${ totalIgnored } element:",
@@ -5501,6 +5513,9 @@
       "Modified": [
         "Modificació"
       ],
+      "Move \"${ folderName }\" to": [
+        "Mou \"${ folderName }\" a"
+      ],
       "Move ${ count } item to ${ target }": [
         "Moure ${ count } element a ${ target }",
         "Moure ${ count } elements a ${ target }"
@@ -6041,6 +6056,9 @@
       "Move to trash": [
         "Mou a la paperera"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Moure la carpeta aquí superaria el nivell màxim d'imbricació de carpetes"
+      ],
       "No items": [
         "Sense elements"
       ],
@@ -6142,6 +6160,9 @@
       ],
       "Verification code is required": [
         "Cal un codi de verificació"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "No podeu moure una carpeta dins d'ella mateixa ni de les seves subcarpetes"
       ],
       "You have reached the limit of members who can access this item.": [
         "Heu arribat al límit de membres que poden accedir a aquest element."

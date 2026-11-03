@@ -517,6 +517,9 @@
       "Move all items": [
         "Déplacer tous les éléments"
       ],
+      "Move folder": [
+        "Déplacer le dossier"
+      ],
       "Move to": [
         "Déplacer vers"
       ],
@@ -1237,6 +1240,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Le déplacement de tous les éléments depuis « ${ payload.content.name } » n'a pas abouti."
+      ],
+      "Failed to move folder": [
+        "Le déplacement du dossier n'a pas abouti"
       ],
       "Failed to move items": [
         "Les éléments n'ont pas été déplacés."
@@ -2254,6 +2260,9 @@
       "Folder \"${ payload.folder.name }\" created": [
         "Le dossier \"${ payload.folder.name }\" a été créé"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Le dossier « ${ payload.folder.name } » a été déplacé"
+      ],
       "Folder deleted": [
         "Le dossier a été supprimé."
       ],
@@ -2444,6 +2453,9 @@
       ],
       "Moving items": [
         "Déplacement des éléments"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items to trash": [
         "Déplacement des éléments vers la corbeille"
@@ -2883,6 +2895,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Ce mot de passe supplémentaire vous sera demandé pour utiliser ${ PASS_APP_NAME }. Il fonctionne comme un mot de passe supplémentaire en plus de votre mot de passe ${ BRAND_NAME }."
       ],
+      "The folder is already here": [
+        "Le dossier se trouve déjà ici"
+      ],
       "The following ${ totalIgnored } item could not be imported:": [
         "L'importation pour ${ totalIgnored } élément n'a pas abouti :",
         "L'importation pour les ${ totalIgnored } éléments suivants n'a pas abouti :"
@@ -3089,6 +3104,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Quand cette option est activée, vous pouvez toujours accéder à vos données ${ PASS_SHORT_APP_NAME } si vous perdez la connectivité Internet ou si les serveurs ${ BRAND_NAME } sont inaccessibles."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Quand des éléments sont déplacés d'un coffre-fort à l'autre, nous conservons jusqu'aux 50 dernières modifications apportées à chaque élément."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Lors de l'envoi d'un email depuis cet alias, l'expéditeur affiché sera ${ emailSender }."
@@ -5330,6 +5348,9 @@
       "Modified": [
         "Modifié"
       ],
+      "Move \"${ folderName }\" to": [
+        "Déplacer « ${ folderName } » vers"
+      ],
       "Move ${ count } item to ${ target }": [
         "Déplacer ${ count } élément vers ${ target }",
         "Déplacer ${ count } éléments vers ${ target }"
@@ -5846,6 +5867,9 @@
       "Move to trash": [
         "Déplacer dans la corbeille"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Le déplacement de ce dossier à cet emplacement entraînerait un dépassement du niveau maximal d'imbrication des dossiers."
+      ],
       "No items": [
         "Aucun élément"
       ],
@@ -5947,6 +5971,9 @@
       ],
       "Verification code is required": [
         "Le code de vérification est nécessaire."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Il n'est pas possible de déplacer un dossier vers lui-même ou vers ses sous-dossiers"
       ],
       "You have reached the limit of members who can access this item.": [
         "Vous avez atteint le nombre limite de membres qui peuvent accéder à cet élément."

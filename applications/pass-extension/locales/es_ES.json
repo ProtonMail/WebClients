@@ -520,6 +520,9 @@
       "Move all items": [
         "Mover todos los elementos"
       ],
+      "Move folder": [
+        "Mover carpeta"
+      ],
       "Move to": [
         "Mover a"
       ],
@@ -1249,6 +1252,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Error al mover todos los elementos desde \"${ payload.content.name }\""
+      ],
+      "Failed to move folder": [
+        "Error al mover la carpeta"
       ],
       "Failed to move items": [
         "Error al mover elementos"
@@ -2365,6 +2371,9 @@
       "Folder \"${ payload.folder.name }\" created": [
         "Carpeta «${ payload.folder.name }» creada"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Carpeta \"${ payload.folder.name }\" movida"
+      ],
       "Folder deleted": [
         "Carpeta eliminada"
       ],
@@ -3014,6 +3023,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "La contraseña adicional se requerirá para usar ${ PASS_APP_NAME }. Funciona como una contraseña extra por encima de tu contraseña de ${ BRAND_NAME }."
+      ],
+      "The folder is already here": [
+        "La carpeta ya está aquí"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "No se ha podido importar ${ totalIgnored } elemento:",
@@ -5501,6 +5513,9 @@
       "Modified": [
         "Modificado"
       ],
+      "Move \"${ folderName }\" to": [
+        "Mover \"${ folderName }\" a"
+      ],
       "Move ${ count } item to ${ target }": [
         "Mover ${ count } elemento a ${ target }",
         "Mover ${ count } elementos a ${ target }"
@@ -6041,6 +6056,9 @@
       "Move to trash": [
         "Mover a la papelera"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Mover la carpeta aquí superaría el nivel máximo de anidación de carpetas"
+      ],
       "No items": [
         "No hay elementos."
       ],
@@ -6142,6 +6160,9 @@
       ],
       "Verification code is required": [
         "El código de verificación es obligatorio."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "No puedes mover una carpeta dentro de sí misma ni de sus subcarpetas"
       ],
       "You have reached the limit of members who can access this item.": [
         "Has alcanzado el límite de miembros que pueden acceder a esta elemento."
