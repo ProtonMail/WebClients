@@ -18,6 +18,7 @@ import { KnowledgeBaseFileItem } from '../../components/Files/KnowledgeBase/Know
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import type { Attachment, LinkedDriveFolder } from '../../types';
 import { ProjectDriveFolderInfo } from './components/ProjectDriveFolderInfo';
+import { ProjectDriveIndexLimitNotice } from './components/ProjectDriveIndexLimitNotice';
 
 // ---------------------------------------------------------------------------
 // Drive-specific props — only present when a Drive folder is linked
@@ -67,6 +68,7 @@ const DriveFolderContent = ({ driveProps, onUpload }: DriveFolderContentProps) =
             onUpload={onUpload}
         />
         <hr className="my-2 border-bottom" />
+        <ProjectDriveIndexLimitNotice folderId={driveProps.linkedDriveFolder.folderId} />
         <DriveBrowser
             key={driveProps.linkedDriveFolder.folderId}
             ref={driveProps.driveBrowserRef}
