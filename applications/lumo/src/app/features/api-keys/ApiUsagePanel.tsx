@@ -9,6 +9,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useDebugApiOrganizationMemberView, useDebugApiOrganizationView } from '../../services/apiUsageDebugStore';
 import { ApiUsageDashboard } from './ApiUsageDashboard';
+import { useCanBuyLumoCredits } from './useCanBuyLumoCredits';
 
 import './ApiKeysPanel.scss';
 
@@ -32,6 +33,7 @@ export const ApiUsagePanel = () => {
     const [member] = useMember();
     const [paymentMethods] = usePaymentMethods();
     const showAutoTopUp = useFlag('LumoAllowAutomaticCreditTopUps');
+    const canTopUp = useCanBuyLumoCredits();
     const debugOrganizationView = useDebugApiOrganizationView();
     const debugOrganizationMemberView = useDebugApiOrganizationMemberView();
     const effectiveOrgAdmin = isOrgAdmin || debugOrganizationView;
@@ -43,6 +45,7 @@ export const ApiUsagePanel = () => {
             canManageBalance={user.canPay && member?.Subscriber !== MEMBER_SUBSCRIBER.NON_PAYER}
             canChargeAutoTopUp={canChargeAutoTopUp(paymentMethods)}
             showAutoTopUp={showAutoTopUp}
+            canTopUp={canTopUp}
         />
     );
 };

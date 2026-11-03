@@ -9,7 +9,6 @@ import { useApi } from '@proton/app-context/useApi';
 import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit';
 
 import { ApiUsageDashboard } from './ApiUsageDashboard';
-import { useCanBuyLumoCredits } from './useCanBuyLumoCredits';
 
 jest.mock('@proton/account/paymentStatus/hooks');
 jest.mock('@proton/account/subscription/hooks');
@@ -26,7 +25,6 @@ jest.mock('@proton/components/components/link/SettingsLink', () => ({
 jest.mock('@proton/components/containers/payments/LumoCreditsModal', () => ({
     LumoCreditsModal: ({ open }: { open: boolean }) => (open ? <div>Credits modal</div> : null),
 }));
-jest.mock('./useCanBuyLumoCredits');
 
 const setup = ({
     isOrgAdmin = false,
@@ -41,7 +39,6 @@ const setup = ({
     (useUser as jest.Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
     (useSubscription as jest.Mock).mockReturnValue([{ Currency: 'USD' }]);
     (usePaymentStatus as jest.Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
-    (useCanBuyLumoCredits as jest.Mock).mockReturnValue(true);
     render(<ApiUsageDashboard isOrgAdmin={isOrgAdmin} isOrgMember={false} showAutoTopUp={showAutoTopUp} />);
 };
 

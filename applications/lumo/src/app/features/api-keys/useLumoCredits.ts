@@ -6,12 +6,15 @@ import {
     getLumoCreditConfig,
     updateLumoCreditAutoTopUpConfig,
 } from '@proton/payments/core/api/lumoCredit';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { ApiBalanceSettings } from './ApiBalanceSettingsModal';
 
 const DEFAULT_AUTO_TOP_UP_AMOUNT = 50;
 const DEFAULT_AUTO_TOP_UP_THRESHOLD = 20;
 const DEFAULT_SPENDING_LIMIT = 250;
+const BALANCE_POLL_INTERVAL_MS = 3000;
+const BALANCE_POLL_ATTEMPTS = 5;
 
 const parseCredits = (credits?: string) => {
     if (!credits) {
@@ -39,8 +42,14 @@ export const useLumoCredits = () => {
 
     const fetchCredits = () =>
         api<LumoCreditResponse>({ ...getLumoCreditConfig(), silence: true }).then(
-            (response) => setState({ response }),
-            (error) => setState((previous) => (previous.response ? previous : { error }))
+            (response) => {
+                setState({ response });
+                return response;
+            },
+            (error) => {
+                setState((previous) => (previous.response ? previous : { error }));
+                return undefined;
+            }
         );
 
     useEffect(() => {
@@ -48,6 +57,17 @@ export const useLumoCredits = () => {
     }, []);
 
     const settings = getBalanceSettings(response);
+
+    const waitForBalanceIncrease = async () => {
+        const initialBalance = parseCredits(response?.Balance) ?? 0;
+        for (let attempt = 0; attempt < BALANCE_POLL_ATTEMPTS; attempt++) {
+            await wait(BALANCE_POLL_INTERVAL_MS);
+            const latest = await fetchCredits();
+            if ((parseCredits(latest?.Balance) ?? 0) > initialBalance) {
+                return;
+            }
+        }
+    };
 
     const saveSettings = async ({ autoTopUp, spendingLimit }: ApiBalanceSettings) => {
         await api(
@@ -70,5 +90,6 @@ export const useLumoCredits = () => {
         loading: !response && !error,
         error,
         saveSettings,
+        waitForBalanceIncrease,
     };
 };
