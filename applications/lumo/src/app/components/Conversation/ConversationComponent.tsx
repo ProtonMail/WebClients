@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -102,6 +103,14 @@ const ConversationLayout = ({
     const conversationId = conversation?.id;
     const space = useLumoSelector((state) => (conversation ? state.spaces[conversation.spaceId] : undefined));
     const isScheduledRun = space?.spaceType === SpaceType.Schedule;
+    const location = useLocation<{ expandedScheduleRuns?: string }>();
+
+    useEffect(() => {
+        // Allow navigation to the run history to open the drawer as well as expand the run list inside it.
+        if (isScheduledRun && location.state?.expandedScheduleRuns === conversation?.spaceId) {
+            showFilesDrawer();
+        }
+    }, [conversation?.spaceId, isScheduledRun, location.key, location.state?.expandedScheduleRuns, showFilesDrawer]);
 
     const { exceedsLimit: imageLimitExceeded } = useImageLimitInfo(messageChain);
 
