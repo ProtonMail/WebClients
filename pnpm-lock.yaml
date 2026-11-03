@@ -670,9 +670,6 @@ importers:
 
   .:
     dependencies:
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:packages/eslint-config-proton
       '@proton/prettier-config-proton':
         specifier: workspace:^
         version: link:packages/prettier-config
@@ -7148,9 +7145,6 @@ importers:
       '@eslint/compat':
         specifier: ^2.1.1
         version: 2.1.1(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))
-      '@eslint/json':
-        specifier: ^2.1.1
-        version: 2.1.1
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
@@ -7462,18 +7456,21 @@ importers:
         specifier: 'catalog:'
         version: 18.3.1
     devDependencies:
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../eslint-config-proton
+        version: link:../oxlint-config
       '@types/mustache':
         specifier: ^4.2.6
         version: 4.2.6
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
-      eslint:
+      oxlint:
         specifier: 'catalog:'
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
       tsx:
         specifier: 'catalog:'
         version: 4.23.15
@@ -9397,12 +9394,18 @@ importers:
         specifier: 'catalog:'
         version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
     devDependencies:
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../eslint-config-proton
+        version: link:../oxlint-config
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
 
   packages/recovery-kit:
     dependencies:
@@ -9936,6 +9939,15 @@ importers:
 
   packages/styles:
     devDependencies:
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../oxlint-config
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
       sass:
         specifier: 'catalog:'
         version: 1.97.1
@@ -10016,9 +10028,15 @@ importers:
 
   packages/types:
     devDependencies:
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../eslint-config-proton
+        version: link:../oxlint-config
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
 
   packages/unleash:
     dependencies:
@@ -10964,15 +10982,18 @@ importers:
         specifier: 'catalog:'
         version: 4.23.15
     devDependencies:
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
+        version: link:../../packages/oxlint-config
       '@types/node':
         specifier: ^22.20.4
         version: 22.20.4
-      typescript-eslint:
+      oxlint:
         specifier: 'catalog:'
-        version: 8.71.2(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)(typescript@6.0.3)
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
 
   utilities/pass-dev:
     devDependencies:
@@ -13672,10 +13693,6 @@ packages:
     resolution: {integrity: sha512-QywQuszQh77pIXCsq998c8hbhSTI/azTty1Z6N53dmAudKHhy573j3yvRLsX2BSp8YpLtoCEG8E9DJe+8zUh4A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/json@2.1.1':
-    resolution: {integrity: sha512-ffVzPZALaJzxuo46ggBtJ9c8YBWKLMh/R35aFBHk/dRobmFNortJlHJfBWbHGuydoFeVZbvPy0PLX2wvCI9T9w==}
-    engines: {node: ^20.19.0 || ^22.13.0 || >=24}
-
   '@eslint/object-schema@2.1.7':
     resolution: {integrity: sha512-VtAOaymWVfZcmZbp6E2mympDIHvyjXs/12LqWYjVw6qjrfF+VK+fyG33kChz3nnK+SU5/NeHOqrTEHS8sXO3OA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -13820,10 +13837,6 @@ packages:
   '@humanwhocodes/momoa@2.0.4':
     resolution: {integrity: sha512-RE815I4arJFtt+FVeU1Tgp9/Xvecacji8w/V6XtXsWWH/wz/eNkNbhb+ny/+PlVZjV0rxQpRSQKNKE3lcktHEA==}
     engines: {node: '>=10.10.0'}
-
-  '@humanwhocodes/momoa@3.3.13':
-    resolution: {integrity: sha512-AbKq3EW41+HY6pNMJgAOrz68iyiTTf0Nr1JRHHfuG5zwniJ9Dw8J3U7oa1I2ptpqYwmEf1sXKOGK6lbdZ9eqmg==}
-    engines: {node: '>=18'}
 
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
@@ -32780,13 +32793,6 @@ snapshots:
 
   '@eslint/js@9.39.5': {}
 
-  '@eslint/json@2.1.1':
-    dependencies:
-      '@eslint/core': 1.2.1
-      '@eslint/plugin-kit': 0.7.3
-      '@humanwhocodes/momoa': 3.3.13
-      natural-compare: 1.4.0
-
   '@eslint/object-schema@2.1.7': {}
 
   '@eslint/object-schema@3.0.5': {}
@@ -32947,8 +32953,6 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/momoa@2.0.4': {}
-
-  '@humanwhocodes/momoa@3.3.13': {}
 
   '@humanwhocodes/retry@0.4.3': {}
 

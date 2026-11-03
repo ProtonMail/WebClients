@@ -527,7 +527,7 @@
             "ignoreDependencies": ["stylelint", "stylelint-config-prettier-scss"]
         },
         "packages/styles": {
-            "entry": ["eslint.config.{js,mjs,ts}"],
+            "entry": [],
             "project": ["**/*.{ts,tsx,scss,sass}"],
             "ignore": ["scss/**"]
         },
@@ -540,7 +540,7 @@
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/types": {
-            "entry": ["eslint.config.{js,mjs,ts}"],
+            "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/unleash": {

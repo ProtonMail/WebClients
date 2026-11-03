@@ -4,12 +4,17 @@
     "exports": {
         "./ProtonStoreContext": "./ProtonStoreContext.ts"
     },
+    "scripts": {
+        "lint": "oxlint --quiet"
+    },
     "dependencies": {
         "react": "catalog:",
         "react-redux": "catalog:"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
-        "@types/react": "catalog:"
+        "@proton/oxlint-config": "workspace:^",
+        "@types/react": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:"
     }
 }

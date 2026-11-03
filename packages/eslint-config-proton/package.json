@@ -20,13 +20,11 @@
         "./all": "./all.js",
         "./base": "./base.js",
         "./extraneousDependencies": "./extraneousDependencies.js",
-        "./package-json": "./package-json.js",
         "./react": "./react.js",
         "./restrictedImports": "./restrictedImports.js"
     },
     "dependencies": {
         "@eslint/compat": "^2.1.1",
-        "@eslint/json": "^2.1.1",
         "@proton/oxlint-config": "workspace:^",
         "@protontech/eslint-plugin-enforce-uint8array-arraybuffer": "^3.0.2",
         "@types/eslint-plugin-jsx-a11y": "^6.10.1",
