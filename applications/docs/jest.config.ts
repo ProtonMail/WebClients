@@ -9,6 +9,7 @@ const jestConfig: Config = {
   transformIgnorePatterns: getTransformIgnorePatterns([
     '@proton/raw-images',
     '@protontech/drive-sdk',
+    '@proton-docs/realtime-sdk',
     'client-zip',
     'uuid',
   ]),
