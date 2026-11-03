@@ -30,13 +30,13 @@ export const ClickToCopy: FC<PropsWithChildren<ClickToCopyProps>> = ({ className
     return (
         /* disabling `prefer-tag-over-role` as we cannot use a * `button` element here - children may include
             buttons and * this would lead to invalid DOM structure */
-        /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
         <div
             ref={ref}
             className={clsx('cursor-pointer overflow-hidden', className)}
             onKeyDown={(evt) => evt.key === 'Enter' && copyToClipboard(getValue())}
             onClick={handleClick}
             tabIndex={0}
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="button"
         >
             <span className="sr-only"> {c('Info').t`Press Enter to copy`}</span>
