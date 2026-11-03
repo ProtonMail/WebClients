@@ -4397,6 +4397,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Gi personer mulighet til å avtale time med deg direkte fra e-post, uten at du trenger å få og motta svar."
       ]
     },
     "description": {
@@ -7750,7 +7753,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9463,6 +9467,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hei Lumo, vis meg hvordan du kan hjelpe meg med postkassen min. Hva slags ting kan jeg be deg om å gjøre, og hva kan du ikke hjelpe med?"
       ]
     },
     "info": {
@@ -13309,6 +13316,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Dette abonnementet støtter ikke medlemmene på kontoen din."
       ]
     },
     "Payments.Error": {
@@ -17452,6 +17462,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved å bekrefte gir du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, tillatelse til å innkreve fremtidige betalinger for abonnementet ditt fra denne bankkontoen via SEPA AvtaleGiro, og banken din til å debitere disse betalingene. Første betaling gjøres nå av ${ IDEAL_WERO_BRAND_NAME }. Abonnementet fornyes automatisk inntil du kansellerer. Vi varsler deg før hver innkreving. For innkreving via AvtaleGiro kan du be om refusjon fra banken innen 8 uker etter debiteringsdatoen, i henhold til vilkårene i avtalen med banken din. Dette gjelder ikke for ${ IDEAL_WERO_BRAND_NAME }-betalingen du foretar nå."
       ]
     }
   }

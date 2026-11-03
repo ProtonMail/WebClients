@@ -8096,7 +8096,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9918,6 +9921,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Папрасіце свайго адміністратара палепшыць тарыфны план або выдаліць старонку з бакавой панэлі браніравання старонак у ${ CALENDAR_APP_NAME }."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Паслухай, Lumo! Я пакідаю офіс і хачу наладзіць адказ «Няма на месцы». Спытай мяне пра даты і што там павінна быць напісана, а потым пакажы мне само паведамленне перад яго ўключэннем."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Выдаліце існуючую старонку з бакавой панэлі браніравання старонак у ${ CALENDAR_APP_NAME }, каб дадаць новую старонку браніравання."
       ]
     },
     "info": {
@@ -11294,6 +11306,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "Памочнік ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Label (begin date/advanced search)": {
