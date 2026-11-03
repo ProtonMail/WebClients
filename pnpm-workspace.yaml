@@ -5,6 +5,7 @@ packages:
     - packages/wasm/*
     - packages/pass/docs/starlight
     - tests
+    - tests/mail-composer
     - tests/mail-renderer
     - tests/packages/*
     - utilities/*

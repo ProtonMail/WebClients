@@ -569,6 +569,12 @@
             "playwright": false,
             "ignore": ["**"]
         },
+        "tests/mail-composer": {
+            "entry": [],
+            "project": [],
+            "playwright": false,
+            "ignore": ["**"]
+        },
         "tests/mail-renderer": {
             "entry": [],
             "project": [],
