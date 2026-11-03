@@ -2,7 +2,7 @@ import type { ComponentProps, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { CollapsibleGroup } from '@proton/components/components/collapsible/CollapsibleGroup';
+import { CollapsibleGroup } from '@proton/atoms/Collapsible/CollapsibleGroup';
 
 type CollapsibleGroupChildren = ComponentProps<typeof CollapsibleGroup>['children'];
 

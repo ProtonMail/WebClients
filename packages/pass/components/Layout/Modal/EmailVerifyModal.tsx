@@ -4,9 +4,9 @@ import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
-import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
-import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
+import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
+import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 

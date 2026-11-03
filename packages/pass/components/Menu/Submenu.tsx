@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import { memo, useContext, useEffect, useRef } from 'react';
 
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
-import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
-import CollapsibleContext from '@proton/components/components/collapsible/CollapsibleContext';
-import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
-import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
+import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
+import { CollapsibleContext } from '@proton/atoms/Collapsible/CollapsibleContext';
+import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
+import { CollapsibleHeaderIconButton } from '@proton/atoms/Collapsible/CollapsibleHeaderIconButton';
 import type { IconComponent } from '@proton/icons/component';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';

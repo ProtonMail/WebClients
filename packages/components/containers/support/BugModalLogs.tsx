@@ -4,12 +4,12 @@ import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
+import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
+import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
+import { CollapsibleHeaderIconButton } from '@proton/atoms/Collapsible/CollapsibleHeaderIconButton';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 
-import Collapsible from '../../components/collapsible/Collapsible';
-import CollapsibleContent from '../../components/collapsible/CollapsibleContent';
-import CollapsibleHeader from '../../components/collapsible/CollapsibleHeader';
-import CollapsibleHeaderIconButton from '../../components/collapsible/CollapsibleHeaderIconButton';
 import Checkbox from '../../components/input/Checkbox';
 
 const PREVIEW_LINE_COUNT = 10;

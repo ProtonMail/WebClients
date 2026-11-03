@@ -3,12 +3,12 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
+import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
+import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
+import { CollapsibleHeaderIconButton } from '@proton/atoms/Collapsible/CollapsibleHeaderIconButton';
 import { removeVideoConfInfoFromDescription } from '@proton/calendar-video-conferencing/videoConferencing/videoConfHelpers';
 import { useVideoConferencingWidget } from '@proton/calendar-video-conferencing/videoConferencing/widget';
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
-import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
-import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
-import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import IconRow from '@proton/components/components/iconRow/IconRow';
 import Info from '@proton/components/components/link/Info';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';

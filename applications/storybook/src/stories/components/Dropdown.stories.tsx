@@ -3,11 +3,11 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
+import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
+import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
+import { CollapsibleHeaderIconButton } from '@proton/atoms/Collapsible/CollapsibleHeaderIconButton';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
-import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
-import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
-import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
 import Dropdown, { DropdownBorderRadius } from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';

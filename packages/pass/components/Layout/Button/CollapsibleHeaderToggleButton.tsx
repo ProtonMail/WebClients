@@ -2,7 +2,7 @@ import { type FC, useContext } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
-import CollapsibleContext from '@proton/components/components/collapsible/CollapsibleContext';
+import { CollapsibleContext } from '@proton/atoms/Collapsible/CollapsibleContext';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcCross } from '@proton/icons/icons/IcCross';
 

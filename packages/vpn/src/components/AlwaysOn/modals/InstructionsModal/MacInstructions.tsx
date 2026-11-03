@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
 import { Href } from '@proton/atoms/Href/Href';
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import { IcFileArrowInUp } from '@proton/icons/icons/IcFileArrowInUp';
 import { IcUsersMerge } from '@proton/icons/icons/IcUsersMerge';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';

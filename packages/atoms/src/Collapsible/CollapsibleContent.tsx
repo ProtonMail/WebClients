@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
-import CollapsibleContext from './CollapsibleContext';
+import { CollapsibleContext } from './CollapsibleContext';
 
 import './CollapsibleContent.scss';
 
@@ -20,7 +20,7 @@ type CollapsibleContentProps<E extends ElementType> = PolymorphicPropsWithoutRef
 
 const defaultElement = 'div';
 
-const CollapsibleContent = <E extends ElementType = typeof defaultElement>({
+export const CollapsibleContent = <E extends ElementType = typeof defaultElement>({
     as,
     animated = false,
     className,
@@ -49,4 +49,3 @@ const CollapsibleContent = <E extends ElementType = typeof defaultElement>({
         </Element>
     );
 };
-export default CollapsibleContent;

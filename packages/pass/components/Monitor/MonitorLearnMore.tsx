@@ -2,9 +2,9 @@ import { type FC, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
-import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
-import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
+import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
+import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
 import { IcAlias } from '@proton/icons/icons/IcAlias';
 import { IcEarth } from '@proton/icons/icons/IcEarth';
 import { IcLocks } from '@proton/icons/icons/IcLocks';
