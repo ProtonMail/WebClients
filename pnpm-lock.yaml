@@ -6274,9 +6274,6 @@ importers:
       '@jest/globals':
         specifier: 'catalog:'
         version: 30.5.2(supports-color@11.0.0)
-      '@proton/eslint-config-proton':
-        specifier: workspace:^
-        version: link:../eslint-config-proton
       '@proton/i18n':
         specifier: workspace:^
         version: link:../i18n
@@ -6286,6 +6283,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../oxlint-config
       '@proton/test-api':
         specifier: workspace:^
         version: link:../test-api
@@ -6334,9 +6334,6 @@ importers:
       cross-fetch:
         specifier: ^4.1.0
         version: 4.1.0(encoding@0.1.13)
-      eslint:
-        specifier: 'catalog:'
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       jest:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
@@ -6346,6 +6343,12 @@ importers:
       msw:
         specifier: 'catalog:'
         version: 2.12.14(@types/node@24.19.0)(@typescript/typescript6@6.0.2)
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
       prettier:
         specifier: 'catalog:'
         version: 3.9.10

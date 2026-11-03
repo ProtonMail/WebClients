@@ -8,8 +8,8 @@ import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { SidebarNode, SidebarTree } from '@proton/nav/types/sidebar';
 
+import { Sidebar } from '.';
 import { Badge } from '../../badge/Badge';
-import { Sidebar } from './index';
 import { getActiveBranches } from './traverse';
 
 function isThemeColor(value: unknown): value is ThemeColor {
