@@ -73,7 +73,7 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
         "test": "TZ=UTC vitest",
@@ -106,7 +106,7 @@
         "ttag": "catalog:"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@proton/pack": "workspace:^",
         "@proton/polyfill": "workspace:^",
         "@proton/vitest-config": "workspace:^",
@@ -117,8 +117,9 @@
         "@vitejs/plugin-react": "^6.1.2",
         "@vitest/coverage-v8": "catalog:",
         "@vitest/ui": "catalog:",
-        "eslint": "catalog:",
         "happy-dom": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
         "prettier": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
