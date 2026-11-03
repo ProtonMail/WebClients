@@ -6,17 +6,55 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import { useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo'
 import { c } from 'ttag'
 
+import { modalTwoBackdropRootClassName } from '@proton/shared/lib/busy/busy'
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser'
 import { useState } from 'react'
 
-function ExportToPDFModal({ onClose, open, ...modalProps }: ModalStateProps) {
+/** Longest wait for the backdrop, which stays shown while another modal is open. */
+const BACKDROP_HIDE_TIMEOUT_MS = 1000
+
+/** The backdrop is shared by every modal, and hides only once its own exit animation has ended. */
+function waitForBackdropToHide(): Promise<void> {
+  const backdrops = [...document.querySelectorAll(`.${modalTwoBackdropRootClassName}`)]
+  const allHidden = () => backdrops.every((backdrop) => !backdrop.isConnected || backdrop.classList.contains('hidden'))
+
+  return new Promise((resolve) => {
+    if (allHidden()) {
+      resolve()
+      return
+    }
+    const done = () => {
+      observer.disconnect()
+      clearTimeout(timeout)
+      resolve()
+    }
+    const observer = new MutationObserver(() => {
+      if (allHidden()) {
+        done()
+      }
+    })
+    backdrops.forEach((backdrop) => observer.observe(backdrop, { attributes: true, attributeFilter: ['class'] }))
+    const timeout = setTimeout(done, BACKDROP_HIDE_TIMEOUT_MS)
+  })
+}
+
+export type ExportToPDFModalProps = ModalStateProps
+
+export function ExportToPDFModal({ onClose, onExit, open, ...modalProps }: ExportToPDFModalProps) {
   const [isOpen, setIsOpen] = useState(open)
 
   const close = () => {
     setIsOpen(false)
-    if (typeof onClose !== 'undefined') {
-      onClose()
-    }
+  }
+
+  /**
+   * `onClose` prints. Chrome stops rendering this page while its print preview is open, and an exit
+   * animation that ends meanwhile never fires `animationend`, which is what removes the modal and then
+   * the backdrop: either would stay over the page. So print only once both have finished exiting.
+   */
+  const handleExit = () => {
+    onExit?.()
+    void waitForBackdropToHide().then(() => onClose?.())
   }
 
   const saveString = () => {
@@ -37,6 +75,7 @@ function ExportToPDFModal({ onClose, open, ...modalProps }: ModalStateProps) {
       size="small"
       open={isOpen === undefined ? true : isOpen}
       onClose={close}
+      onExit={handleExit}
       {...modalProps}
     >
       <ModalTwoContent className="m-0 p-0">
