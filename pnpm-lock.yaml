@@ -6388,9 +6388,9 @@ importers:
         specifier: workspace:^
         version: link:../shared
     devDependencies:
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../eslint-config-proton
+        version: link:../oxlint-config
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../vitest-config
@@ -6412,12 +6412,15 @@ importers:
       '@vitest/ui':
         specifier: 'catalog:'
         version: 5.0.5(vitest@5.0.5)
-      eslint:
-        specifier: 'catalog:'
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       happy-dom:
         specifier: 'catalog:'
         version: 21.0.4
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -11004,9 +11007,9 @@ importers:
       '@playwright/test':
         specifier: ^1.64.1
         version: 1.64.1
-      '@proton/eslint-config-proton':
+      '@proton/oxlint-config':
         specifier: workspace:^
-        version: link:../../packages/eslint-config-proton
+        version: link:../../packages/oxlint-config
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
@@ -11019,9 +11022,12 @@ importers:
       core-js:
         specifier: 'catalog:'
         version: 3.50.0
-      eslint:
+      oxlint:
         specifier: 'catalog:'
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
       tsx:
         specifier: 'catalog:'
         version: 4.23.15
