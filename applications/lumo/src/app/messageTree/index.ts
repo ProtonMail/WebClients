@@ -8,8 +8,12 @@ type MessageNode = {
     date: Date;
 };
 
+// Nil UUID: never a real message id (those are uuidv4). Only used for the node grouping several roots.
+const VIRTUAL_ROOT_ID: MessageId = '00000000-0000-0000-0000-000000000000';
+
 type MessageTree = {
-    rootNode: MessageNode | undefined;
+    // Editing the first message adds a sibling with no parent, so a conversation can have several roots.
+    rootNodes: MessageNode[];
     nodeMap: Record<MessageId, MessageNode>;
 };
 
@@ -43,10 +47,14 @@ function hasAncestor(maybeDescendant: MessageId, maybeAncestor: MessageId, messa
         if (parentId === maybeAncestor) {
             return true;
         }
-        if (parentId === undefined) {
+        if (!parentId) {
             return false;
         }
         message = messageMap[parentId];
+        if (!message) {
+            // tree is malformed: should not happen, but in case it does, fail gracefully
+            return false;
+        }
     }
 }
 
@@ -79,7 +87,7 @@ function buildTree(messageMap: MessageMap): MessageTree {
             },
         ])
     );
-    let rootNode: MessageNode | undefined = undefined;
+    const rootNodes: MessageNode[] = [];
     for (const message of Object.values(messageMap)) {
         const childNode = nodeMap[message.id];
         if (message.parentId) {
@@ -91,10 +99,10 @@ function buildTree(messageMap: MessageMap): MessageTree {
             childNode.parent = parentNode;
             parentNode.children.push(childNode);
         } else {
-            rootNode = childNode;
+            rootNodes.push(childNode);
         }
     }
-    return { rootNode, nodeMap };
+    return { rootNodes, nodeMap };
 }
 
 function walkBackFromLeaf(messageMap: MessageMap, messageId: MessageId | undefined): Message[] {
@@ -111,12 +119,16 @@ function walkBackFromLeaf(messageMap: MessageMap, messageId: MessageId | undefin
 }
 
 function findLeaf(messageMap: MessageMap, preferredSiblings: MessageId[]): Message | undefined {
-    const { rootNode, nodeMap } = buildTree(messageMap);
-    if (rootNode === undefined) {
+    const { rootNodes, nodeMap } = buildTree(messageMap);
+    if (rootNodes.length === 0) {
         return undefined;
     }
-    const deepestQueriedNode = findDeepestQueriedNode(preferredSiblings, messageMap) || rootNode.id;
-    return findMostRecentMessage(nodeMap, deepestQueriedNode, messageMap);
+    const deepestQueriedNode = findDeepestQueriedNode(preferredSiblings, messageMap);
+    if (deepestQueriedNode) {
+        return findMostRecentMessage(nodeMap, deepestQueriedNode, messageMap);
+    }
+    const virtualRoot: MessageNode = { id: VIRTUAL_ROOT_ID, parent: null, children: rootNodes, date: new Date(0) };
+    return messageMap[findMostRecent(virtualRoot).id];
 }
 
 export function buildLinearChain(
