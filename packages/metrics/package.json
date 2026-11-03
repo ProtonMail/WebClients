@@ -24,7 +24,7 @@
         "check:types": "tsc --checkers 1",
         "generate-metrics": "ts-node -P scripts/tsconfig.metrics-scripts.json ./scripts/generate-metrics.ts",
         "generate-schema-types": "bash scripts/generate-schema-types.sh",
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage",
         "test:watch": "jest --watch",
@@ -37,16 +37,17 @@
         "web-vitals": "^4.2.4"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@types/jest": "catalog:",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "eslint": "catalog:",
         "jest": "catalog:",
         "jest-fetch-mock": "^3.2.0",
         "json-schema-to-typescript": "^13.1.2",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
         "rimraf": "^5.0.10",
         "ts-node": "catalog:"
     }

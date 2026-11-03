@@ -25,7 +25,7 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage",
         "test:watch": "jest --watch"
@@ -37,8 +37,8 @@
         "react": "catalog:"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@proton/utils": "workspace:^",
         "@testing-library/react-hooks": "catalog:",
         "@types/jest": "catalog:",
@@ -46,9 +46,10 @@
         "@types/react": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "eslint": "catalog:",
         "jest": "catalog:",
         "jest-environment-jsdom": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
         "react-test-renderer": "^18.3.1",
         "typescript": "catalog:",
         "vitest": "catalog:"
