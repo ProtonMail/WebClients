@@ -5,12 +5,12 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import EasySwitchProvider from '@proton/activation/src/logic/StoreProvider';
 import { Button } from '@proton/atoms/Button/Button';
-import useContactsDrawerFromURL from '@proton/mail/hooks/autoOpenContacts/useContactsDrawerFromURL';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import noop from '@proton/utils/noop';
 
 import { useContactMergeModals } from '../../../containers/contacts/hooks/useContactMergeModals';
 import { useContactModals } from '../../../containers/contacts/hooks/useContactModals';
+import useContactsDrawerFromURL from '../../../containers/contacts/hooks/useContactsDrawerFromURL';
 import ContactImportModal from '../../../containers/contacts/import/ContactImportModal';
 import ContactsTabImportDropdown from '../../../containers/contacts/widget/ContactsTabImportDropdown';
 import ContactsWidgetContainer from '../../../containers/contacts/widget/ContactsWidgetContainer';
