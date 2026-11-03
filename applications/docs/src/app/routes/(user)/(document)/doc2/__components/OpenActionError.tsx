@@ -1,0 +1,34 @@
+import { Button } from '@proton/atoms/Button/Button'
+import { DOCS_SHORT_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { useNavigate } from 'react-router-dom-v5-compat'
+import { c } from 'ttag'
+
+import { HOMEPAGE_RECENTS_PATH } from '../../../__utils/homepage-paths'
+import type { OpenResolution } from '../__utils/resolveOpenAction'
+
+type OpenActionErrorReason = Extract<OpenResolution, { kind: 'error' }>['reason']
+
+const messages: Record<OpenActionErrorReason, () => string> = {
+  invalidUrl: () => c('Info').t`No document supplied in URL. Return to ${DRIVE_APP_NAME} and select a document.`,
+  slackTruncated: () =>
+    c('Info')
+      .t`The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose "Copy link" rather than copying the truncated URL text directly.`,
+  unsupported: () => c('Info').t`This link is not supported on this page.`,
+}
+
+export type OpenActionErrorProps = { reason: OpenActionErrorReason }
+
+export function OpenActionError({ reason }: OpenActionErrorProps) {
+  const navigate = useNavigate()
+
+  return (
+    <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+      <div className="max-w-prose text-center" data-testid="invalid-openaction-error">
+        {messages[reason]()}
+      </div>
+      <Button color="norm" onClick={() => navigate(HOMEPAGE_RECENTS_PATH)}>
+        {c('Action').t`Go to ${DOCS_SHORT_APP_NAME} home`}
+      </Button>
+    </div>
+  )
+}
