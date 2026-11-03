@@ -12,6 +12,7 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useNativeComposerVisibilityApi } from '../../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
 import { IconPicker } from '../components/IconPicker';
 import { DEFAULT_PROJECT_ICON, getIconFromProjectName } from '../constants';
@@ -38,6 +39,7 @@ export const NewProjectModal = ({
     const [selectedIcon, setSelectedIcon] = useState<string>(initialIcon || DEFAULT_PROJECT_ICON);
     const [userSelectedIcon, setUserSelectedIcon] = useState(!!initialIcon);
     const { createProject } = useProjectActions();
+    useNativeComposerVisibilityApi({ hideComposer: Boolean(modalProps.open) });
 
     // Auto-suggest icon based on project name (only if user hasn't manually selected)
     useEffect(() => {

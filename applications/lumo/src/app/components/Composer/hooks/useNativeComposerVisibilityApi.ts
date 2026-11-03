@@ -36,6 +36,12 @@ const useDefaultVisibility = (): boolean => {
     return lumoNativeComposerEnabled && shouldShowNativeComposer;
 };
 
+/**
+ * How many components are covering the composer right now. Covers nest (a modal opened from a
+ * full-screen view), so the composer may only come back once the last one is gone.
+ */
+let activeCoverCount = 0;
+
 const useNativeComposerVisibility = ({
     hideComposer,
     isComposerHost,
@@ -62,14 +68,18 @@ const useNativeComposerVisibility = ({
             return;
         }
 
+        activeCoverCount += 1;
         setNativeComposerVisibility(false);
         return () => {
-            setNativeComposerVisibility(defaultVisibilityRef.current);
+            activeCoverCount -= 1;
+            if (activeCoverCount === 0) {
+                setNativeComposerVisibility(defaultVisibilityRef.current);
+            }
         };
     }, [hideComposer]);
 
     useEffect(() => {
-        if (!isComposerHost || hideComposer) {
+        if (!isComposerHost || hideComposer || activeCoverCount > 0) {
             return;
         }
 
@@ -87,7 +97,7 @@ const useNativeComposerVisibility = ({
 
 /**
  * For anything that can cover the native composer. It only ever hides: while `hideComposer` is
- * true, and it puts the default back when it stops. With nothing to cover it says nothing at all,
+ * true, and it puts the default back when it stops, unless something else still covers it. With nothing to cover it says nothing at all,
  * so a component that lives for the whole session (the sidebar user menu) can't uncover a composer
  * that something else is covering.
  */

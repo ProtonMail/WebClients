@@ -195,6 +195,24 @@ describe('useNativeComposerVisibilityApi', () => {
             expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
         });
 
+        it('keeps the composer hidden while an outer cover is still open', () => {
+            const outer = renderHook(() => useNativeComposerVisibilityApi({ hideComposer: true }));
+            const inner = renderHook(() => useNativeComposerVisibilityApi({ hideComposer: true }));
+
+            inner.unmount();
+            expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
+
+            outer.unmount();
+            expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(true);
+        });
+
+        it('stops the composer host from uncovering the composer while something covers it', () => {
+            renderHook(() => useNativeComposerVisibilityApi({ hideComposer: true }));
+            renderHook(() => useNativeComposerHostVisibilityApi());
+
+            expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
+        });
+
         it('leaves the composer hidden when the native composer is disabled', () => {
             mockedUseLumoFlags.mockReturnValue({ nativeComposer: false });
 
