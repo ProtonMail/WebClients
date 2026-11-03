@@ -10879,6 +10879,9 @@ importers:
       '@proton/repo-rules':
         specifier: workspace:^
         version: link:../repo-rules
+      commander:
+        specifier: 'catalog:'
+        version: 14.0.3
       glob:
         specifier: ^14.0.3
         version: 14.0.3
