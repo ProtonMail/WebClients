@@ -843,6 +843,27 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ],
+      "Download for Linux": [
+        "Спампаваць для Linux"
+      ],
+      "Download for macOS": [
+        "Спампаваць для macOS"
+      ],
+      "Download for Windows": [
+        "Спампаваць для Windows"
+      ],
+      "Hide passwords": [
+        "Схаваць паролі"
+      ],
+      "Move folder": [
+        "Перамясціць папку"
+      ],
+      "Open platform selection dropdown": [
+        "Адкрыць выпадное меню платформы"
+      ],
+      "Show all": [
+        "Паказаць усе"
       ]
     },
     "Activity": {
@@ -1016,6 +1037,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Адбылася ўцечка вашых асабістых звестак са старонняга сэрвісу."
+      ],
+      "Check if you're reusing passwords": [
+        "Праверыць, ці ёсць паўторна выкарыстаныя паролі"
       ]
     },
     "Email": {
@@ -1575,6 +1599,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
+      ],
+      "Biometric authentication cancelled.": [
+        "Біяметрычная аўтэнтыфікацыя скасавана."
       ]
     },
     "Error message": {
@@ -3064,6 +3091,57 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Гэта не перашкаджае праглядальнікам атрымліваць паролі іншымі спосабамі."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "CSV прапануе зручны фармат прагляду вашых даных. Аднак некаторыя даныя не будуць уключаны (карыстальніцкія палі, папкі структуры сховішча і г.д.), бо дадзены фармат мае спрошчаную рэалізацыю. Рэкамендуецца скарыстацца іншым фарматам для поўнага экспартавання."
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Поле схавана. Вы ўсё яшчэ можаце аўтазапоўніць яго."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Папка \"${ payload.folder.name }\" перамешчана"
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Поўная сінхранізацыя даных палепшыць прадукцыйнасць праграмы. Дзякуй за цярпенне."
+      ],
+      "Important:": [
+        "Важна:"
+      ],
+      "iOS and Android Apps": [
+        "Праграмы для iOS і Android"
+      ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Толькі ${ count } элемент у папцы з назвай \"${ folderName }\" будзе перамешчаны. Элементы ў падпапках перамешчаны не будуць.",
+        "Толькі ${ count } элементы ў папцы з назвай \"${ folderName }\" будуць перамешчаны. Элементы ў падпапках перамешчаны не будуць.",
+        "Толькі ${ count } элементаў у папцы з назвай \"${ folderName }\" будуць перамешчаны. Элементы ў падпапках перамешчаны не будуць.",
+        "Толькі ${ count } элементаў у папцы з назвай \"${ folderName }\" будуць перамешчаны. Элементы ў падпапках перамешчаны не будуць."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Толькі ${ count } элемент будзе перамешчаны. Элементы ў папках перамешчаны не будуць.",
+        "Толькі ${ count } элементы будуць перамешчаны. Элементы ў папках перамешчаны не будуць.",
+        "Толькі ${ count } элементаў будуць перамешчаны. Элементы ў папках перамешчаны не будуць.",
+        "Толькі ${ count } элементаў будуць перамешчаны. Элементы ў папках перамешчаны не будуць."
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Пароль схаваны. Вы ўсё яшчэ можаце аўтазапоўніць яго."
+      ],
+      "Scan to download": [
+        "Сканіраваць і спампаваць"
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "${ PASS_APP_NAME } патрабуе новага дазволу ад браўзера, каб наладзіць біяметрычную разблакіроўку."
+      ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Праглядайце свае элементы ${ PASS_SHORT_APP_NAME } па-за сеткай. Патрабуе ўключанай аўтарызацыі па паролі."
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Праглядальнікі ўсё яшчэ могуць аўтазапаўняць паролі, але не змогуць бачыць іх у ${ PASS_APP_NAME }. Гэта перашкаджае выпадковаму прагляданню і змяншае рызыку выпадковага раскрыцця."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Праглядальнікі ўсё яшчэ могуць аўтазапаўняць паролі. Рэдактары і адміністратары заўсёды могуць бачыць іх."
       ]
     },
     "Keyboard key": {
@@ -4412,6 +4490,18 @@
       ],
       "ZIP or Postal code": [
         "Паштовы індэкс"
+      ],
+      "Allow viewers to see passwords": [
+        "Дазволіць праглядальнікам глядзець паролі"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5562,6 +5652,18 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ],
+      "Get mobile and desktop apps": [
+        "Атрымаць мабільныя праграмы і праграмы для камп'ютара"
+      ],
+      "Get mobile apps": [
+        "Атрымаць мабільныя праграмы"
+      ],
+      "Hide passwords from viewers?": [
+        "Хаваць паролі ад праглядальнікаў?"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Палепшыце, каб праверыць наяўнасць паўторна выкарыстаных пароляў"
       ]
     },
     "Title_cloned_item": {
@@ -5948,6 +6050,36 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } папка была аб'яднана з яе бацькоўскай папкай, бо быў дасягнуты максімальны ўзровень укладзенасці.",
+        "${ count } папкі былі аб'яднаны з іх бацькоўскай папкай, бо быў дасягнуты максімальны ўзровень укладзенасці.",
+        "${ count } папак былі аб'яднаны з іх бацькоўскай папкай, бо быў дасягнуты максімальны ўзровень укладзенасці.",
+        "${ count } папак былі аб'яднаны з іх бацькоўскай папкай, бо быў дасягнуты максімальны ўзровень укладзенасці."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } папка не была імпартавана, бо яе бацькоўская папка дасягнула максімальнай колькасці падпапак. Яе элементы былі імпартаваны ў бліжэйшую даступную папку.",
+        "${ count } папкі не былі імпартаваны, бо іх бацькоўская папка дасягнула максімальнай колькасці падпапак. Іх элементы былі імпартаваны ў бліжэйшую даступную папку.",
+        "${ count } папак не былі імпартаваны, бо іх бацькоўская папка дасягнула максімальнай колькасці падпапак. Іх элементы былі імпартаваны ў бліжэйшую даступную папку.",
+        "${ count } папак не былі імпартаваны, бо іх бацькоўская папка дасягнула максімальнай колькасці падпапак. Іх элементы былі імпартаваны ў бліжэйшую даступную папку."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } папка не была імпартавана, бо гэта сховішча дасягнула абмежавання па колькасці сваіх папак. Яе элементы былі імпартаваны ў бліжэйшую даступную папку.",
+        "${ count } папкі не былі імпартаваны, бо гэта сховішча дасягнула абмежавання па колькасці сваіх папак. Іх элементы былі імпартаваны ў бліжэйшую даступную папку.",
+        "${ count } папкі не былі імпартаваны, бо гэта сховішча дасягнула абмежавання па колькасці сваіх папак. Іх элементы былі імпартаваны ў бліжэйшую даступную папку.",
+        "${ count } папкі не былі імпартаваны, бо гэта сховішча дасягнула абмежавання па колькасці сваіх папак. Іх элементы былі імпартаваны ў бліжэйшую даступную папку."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "Немагчыма стварыць ${ failed } папку. Яе элементы былі імпартаваны ў бліжэйшую даступную папку.",
+        "Немагчыма стварыць ${ failed } папкі. Іх элементы былі імпартаваны ў бліжэйшую даступную папку.",
+        "Немагчыма стварыць ${ failed } папкі. Іх элементы былі імпартаваны ў бліжэйшую даступную папку.",
+        "Немагчыма стварыць ${ failed } папкі. Іх элементы былі імпартаваны ў бліжэйшую даступную папку."
+      ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Усе элементы ў гэтай папцы ўключаючы яе падпапкі будуць выдалены. Вы не зможаце адрабіць гэта дзеянне."
+      ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Сховішча \"${ name }\" і ўсе яго элементы будуць незваротна выдалены. Вы не зможаце адрабіць гэта дзеянне."
       ]
     }
   }
