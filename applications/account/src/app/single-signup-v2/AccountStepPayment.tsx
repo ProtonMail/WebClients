@@ -81,6 +81,8 @@ interface Props {
     onMethodChanged: (method: AvailablePaymentMethod) => void;
     couponConfig: CouponConfigMetadata | undefined;
     renewalNotice: ReactNode;
+    /** Shown above the payment form, e.g. the read-only details of a provisioned deal. */
+    children?: ReactNode;
 }
 
 const AccountStepPayment = ({
@@ -110,6 +112,7 @@ const AccountStepPayment = ({
     onMethodChanged,
     couponConfig,
     renewalNotice,
+    children,
 }: Props) => {
     const signupV2Theme = useSignupV2Theme();
     const formRef = useRef<HTMLFormElement>(null);
@@ -250,6 +253,13 @@ const AccountStepPayment = ({
         telemetryContext,
         isAuthenticated,
         onBillingAddressChange: (billingAddress: FullBillingAddressFlat) => {
+            // A provisioned deal keeps the address the agent negotiated: the payment form would otherwise
+            // overwrite it with its own, e.g. an empty postal code, and the backend only redeems the link when
+            // it matches the record.
+            if (model.provisionedDeal) {
+                onBillingAddressChange(options.billingAddress, options.vatNumber);
+                return;
+            }
             onBillingAddressChange(
                 {
                     ...options.billingAddress,
@@ -259,9 +269,15 @@ const AccountStepPayment = ({
             );
         },
         initialBillingAddress: model.initialBillingAddress,
-        initialVatNumber: signupParameters.vatNumber,
+        initialVatNumber: model.provisionedDeal?.vatNumber ?? signupParameters.vatNumber,
         selectedPlanName: selectedPlan?.Name,
-        onVatChange: onVatNumberChange,
+        onVatChange: (vatNumber: string) => {
+            // Same for the VAT number: the form clears it on mount outside VAT countries or B2B plans.
+            if (model.provisionedDeal) {
+                return;
+            }
+            onVatNumberChange(vatNumber);
+        },
         onVatUpdated: () => handleOptimistic({}),
     });
 
@@ -347,6 +363,11 @@ const AccountStepPayment = ({
     const showLumoCustomizer = app === APPS.PROTONLUMO;
     const showMeetCustomizer = app === APPS.PROTONMEET;
 
+    // A provisioned deal's billing address was negotiated, so the tax country and VAT inputs are
+    // not offered. It is already applied to the price check through the initial billing address.
+    const taxCountry = model.provisionedDeal ? undefined : billingAddressHook.taxCountry;
+    const vatNumber = model.provisionedDeal ? undefined : billingAddressHook.vatNumber;
+
     const paymentsForm = (
         <>
             <form
@@ -369,7 +390,8 @@ const AccountStepPayment = ({
             >
                 {(() => {
                     const planIDs = options.planIDs;
-                    if (!getHasPlanCustomizer(planIDs)) {
+                    // Seats and addons of a provisioned deal were negotiated and are not editable.
+                    if (!getHasPlanCustomizer(planIDs) || model.provisionedDeal) {
                         return null;
                     }
                     return (
@@ -401,8 +423,8 @@ const AccountStepPayment = ({
                     isAuthenticated={isAuthenticated} // needed for Bitcoin signup
                     noMaxWidth
                     hideFirstLabel
-                    taxCountry={billingAddressHook.taxCountry}
-                    vatNumber={billingAddressHook.vatNumber}
+                    taxCountry={taxCountry}
+                    vatNumber={vatNumber}
                     loadingBitcoin={loadingPaymentDetails}
                     subscription={model.session?.subscription}
                     startTrial={isTrial}
@@ -501,7 +523,10 @@ const AccountStepPayment = ({
 
     return (
         <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-10 lg:gap-20">
-            <div className="shrink-0 md:flex-1 order-1 md:order-0">{paymentsForm}</div>
+            <div className="shrink-0 md:flex-1 order-1 md:order-0">
+                {children}
+                {paymentsForm}
+            </div>
             <AccountStepPaymentSummary
                 model={model}
                 options={options}

@@ -80,6 +80,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import type { SignupInviteParameters } from '../../signup/interfaces';
 import { SignupType } from '../../signup/interfaces';
 import type { BenefitItem } from '../Benefits';
 import Benefits from '../Benefits';
@@ -459,7 +460,7 @@ export const getPassConfiguration = ({
     isPaidPassVPNBundle: boolean;
     plansMap?: PlansMap;
     plan: Plan | undefined;
-    signupParameters?: { trial?: boolean };
+    signupParameters?: { trial?: boolean; invite?: SignupInviteParameters };
 }): SignupConfiguration => {
     const logo = <PassLogo />;
 
@@ -637,7 +638,12 @@ export const getPassConfiguration = ({
         logo,
         title: {
             [SignupMode.Default]: <SignupHeaderV2>{audience === Audience.B2B ? b2bTitle : title}</SignupHeaderV2>,
-            [SignupMode.Invite]: <SignupHeaderV2 className="max-w-full">{inviteTitle}</SignupHeaderV2>,
+            [SignupMode.Invite]:
+                signupParameters?.invite?.type === 'provisioning' ? (
+                    <SignupHeaderV2>{b2bTitle}</SignupHeaderV2>
+                ) : (
+                    <SignupHeaderV2 className="max-w-full">{inviteTitle}</SignupHeaderV2>
+                ),
             [SignupMode.MailReferral]: <SignupHeaderV2>{title}</SignupHeaderV2>,
             [SignupMode.PassSimpleLogin]: <SignupHeaderV2>{simpleLoginTitle}</SignupHeaderV2>,
         }[mode],

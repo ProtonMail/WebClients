@@ -689,7 +689,7 @@ export const getDuoPlan = ({ freePlan, plan }: { freePlan: FreePlanDefault; plan
     };
 };
 
-const getVPNProPlan = (plan: Plan): ShortPlan => {
+export const getVPNProPlan = (plan: Plan): ShortPlan => {
     const plusServers = getPlusServers(VPN_SERVERS.paid.servers, VPN_SERVERS.paid.countries);
     return {
         plan: PLANS.VPN_PRO,
@@ -732,7 +732,7 @@ const getVpnBusinessFeatures = () => {
     ];
 };
 
-const getVPNBusinessPlan = (plan: Plan): ShortPlan => {
+export const getVPNBusinessPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.VPN_BUSINESS,
         title: plan.Title,

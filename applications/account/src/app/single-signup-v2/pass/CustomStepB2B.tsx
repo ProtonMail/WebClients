@@ -96,6 +96,8 @@ const CustomStepB2B = ({ measure, productAppName, logo, model, signupParameters 
                             .t`Enter a display name for **${username}**. This is what your users will see when you change their permissions or share data with them.`
                     )}
                     defaultName={
+                        // A provisioned deal carries the admin's name the agent stored.
+                        model.provisionedDeal?.details.AdminDisplayName ||
                         accountData.username ||
                         (accountData?.signupType === SignupType.External && getLocalPart(accountData.email)) ||
                         ''

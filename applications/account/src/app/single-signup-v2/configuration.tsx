@@ -33,8 +33,10 @@ import {
     getPassFamilyPlan,
     getPassLifetimePlan,
     getPassPlan,
+    getVPNBusinessPlan,
     getVPNPassProPlan,
     getVPNPlan,
+    getVPNProPlan,
     getVisionaryPlan,
 } from '@proton/components/containers/payments/features/plan';
 import {
@@ -340,6 +342,17 @@ export const getSummaryPlan = ({
         const shortPlan = getLumoBusinessPlan(plan);
         return {
             logo: <Logo appName={APPS.PROTONLUMO} variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+            features: [],
+        };
+    }
+
+    // Reached by sales-provisioned VPN links, which sign up through this flow.
+    if (plan?.Name === PLANS.VPN_PRO || plan?.Name === PLANS.VPN_BUSINESS) {
+        const shortPlan = plan.Name === PLANS.VPN_PRO ? getVPNProPlan(plan) : getVPNBusinessPlan(plan);
+        return {
+            logo: <VpnLogo variant="glyph-only" size={iconSize} />,
             ...shortPlan,
             plan,
             features: [],

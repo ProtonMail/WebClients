@@ -87,6 +87,7 @@ import FeatureItem from './FeatureItem';
 import Guarantee from './Guarantee';
 import Layout from './Layout';
 import { PlanCardSelector } from './PlanCardSelector';
+import { ProvisioningDetails } from './ProvisioningDetails';
 import RightSummary from './RightSummary';
 import { useSignupV2Theme } from './SignupV2ThemeProvider';
 import { Step1OfferBanner } from './components/Step1OfferBanner';
@@ -634,10 +635,20 @@ const Step1 = ({
 
     const hasSelectedFree = selectedPlan.Name === PLANS.FREE || mode === SignupMode.MailReferral;
 
-    const showPaymentStep = !hasSelectedFree && !isPaymentlessTrial;
+    const provisioning = model.provisionedDeal?.details;
+    // Bank transfer deals are invoiced on the agreed terms, so there is no card to capture. The plan is still
+    // subscribed to, without a payment, since that subscription call is what redeems the provisioning link.
+    const isProvisionedBankTransfer = Boolean(model.provisionedDeal?.isBankTransfer);
 
+    const showPaymentStep = !hasSelectedFree && !isPaymentlessTrial && !isProvisionedBankTransfer;
+
+    // A provisioned deal is read-only, but still shows its details and the price summary in the checkout box.
+    const showCheckoutStep = showPaymentStep || Boolean(provisioning);
+
+    // Keeps the plan for a paymentless trial and a provisioned bank transfer deal. The free fallback empties
+    // `planIDs`, which skips the subscription call.
     const getNoPaymentSubscriptionData = () =>
-        isPaymentlessTrial
+        isPaymentlessTrial || isProvisionedBankTransfer
             ? { ...model.subscriptionData, payment: undefined }
             : getFreeSubscriptionData(model.subscriptionData);
 
@@ -728,6 +739,19 @@ const Step1 = ({
     );
 
     const showRenewalNotice = checkoutView.getItem('renewalNotice').visible && !checkTrial && showPaymentStep;
+
+    // The negotiated deal, read-only, as the "Plan details" and "Billing details" steps next to the price summary.
+    const renderProvisioningDetails = (detailsStep: number) =>
+        provisioning && (
+            <ProvisioningDetails
+                provisioning={provisioning}
+                planIDs={options.planIDs}
+                plansMap={model.plansMap}
+                cycle={options.cycle}
+                currency={options.currency}
+                step={detailsStep}
+            />
+        );
     /**
      * If there is a regional currency then B2C plans can have plans in this currency while B2B plans do not.
      * In that case, we need to automatically select the fallback currency for B2B plans.
@@ -820,7 +844,9 @@ const Step1 = ({
     const currencySelector =
         // Paid users can't change the currency. Only new and free existing users can change it.
         (!model.session?.resumedSessionResult.User || isFree(model.session.resumedSessionResult.User)) &&
-        !couponConfig?.disableCurrencySelector ? (
+        !couponConfig?.disableCurrencySelector &&
+        // A provisioned deal is priced in the negotiated currency.
+        !provisioning ? (
             <CurrencySelector
                 currencies={availableCurrencies}
                 mode="select-two"
@@ -1081,7 +1107,7 @@ const Step1 = ({
                                 </InlineLinkButton>
                             );
 
-                            const willShowStep2 = showPaymentStep;
+                            const willShowStep2 = showCheckoutStep;
                             const willHaveSingleStep = step === 1 && !willShowStep2;
                             const accountStep = willHaveSingleStep ? undefined : step++;
 
@@ -1199,6 +1225,16 @@ const Step1 = ({
 
                                 if (isPaymentlessTrial) {
                                     contextProps.availableSignupTypes = new Set([SignupType.External]);
+                                }
+
+                                // A provisioned deal signs up with the admin email the agent negotiated, from the link
+                                // or else the lookup. It is usually on the prospect's own domain, so it is locked.
+                                const provisionedEmail =
+                                    provisioning && (signupParameters.email || provisioning.AdminEmail);
+                                if (provisionedEmail) {
+                                    contextProps.defaultEmail = provisionedEmail;
+                                    contextProps.availableSignupTypes = new Set([SignupType.External]);
+                                    stepProps.emailReadOnly = true;
                                 }
 
                                 return {
@@ -1467,78 +1503,112 @@ const Step1 = ({
                         })()}
                     </Box>
                 )}
-                {showPaymentStep && (
+                {showCheckoutStep && (
                     <Box className="mt-12" style={boxWidth}>
-                        <BoxHeader
-                            step={step++}
-                            title={
-                                signupTrial
-                                    ? c('b2b_trials_2025: Header').t`Payment details`
-                                    : c('pass_signup_2023: Header').t`Checkout`
-                            }
-                            right={!hasPlanSelector ? currencySelector : null}
-                        />
+                        {
+                            // A provisioned deal numbers its own steps: plan details, billing details, then checkout.
+                            !provisioning && (
+                                <BoxHeader
+                                    step={step++}
+                                    title={
+                                        signupTrial
+                                            ? c('b2b_trials_2025: Header').t`Payment details`
+                                            : c('pass_signup_2023: Header').t`Checkout`
+                                    }
+                                    right={!hasPlanSelector ? currencySelector : null}
+                                />
+                            )
+                        }
                         <BoxContent>
                             {signupTrial && (
                                 <div className="mb-4 text-sm color-weak">
                                     {c('b2b_trials_2025_Info').t`During the trial period, you can have up to 10 users.`}
                                 </div>
                             )}
-                            <AccountStepPayment
-                                selectedPlan={selectedPlan}
-                                measure={measure}
-                                cta={cta}
-                                terms={terms}
-                                key={model.session?.resumedSessionResult.UID || 'free'}
-                                defaultMethod={model.session?.defaultPaymentMethod}
-                                accountStepPaymentRef={accountStepPaymentRef}
-                                api={normalApi}
-                                model={model}
-                                handleOptimistic={handleOptimistic}
-                                options={options}
-                                loadingSignup={loadingSignup}
-                                loadingPaymentDetails={loadingPaymentDetails || loadingSignout}
-                                isDarkBg={isDarkBg}
-                                signupParameters={signupParameters}
-                                showRenewalNotice={showRenewalNotice}
-                                app={app}
-                                onPay={async (payment, type) => {
-                                    if (payment === 'signup-token') {
-                                        await handleCompletion(model.subscriptionData, 'signup-token');
-                                        return;
-                                    }
-                                    await handleCompletion({
-                                        ...model.subscriptionData,
-                                        payment,
-                                        type,
-                                    });
-                                }}
-                                onValidate={async () => {
-                                    return accountDetailsRef.current?.validate() ?? true;
-                                }}
-                                isFormValid={isFormValid}
-                                withLoadingSignup={withLoadingSignup}
-                                onBillingAddressChange={(
-                                    billingAddress: BillingAddress,
-                                    vatNumber: string | undefined
-                                ) => {
-                                    handleOptimistic({ billingAddress, vatNumber });
-                                }}
-                                onVatNumberChange={(vatNumber) => {
-                                    setModel((model) => ({
-                                        ...model,
-                                        subscriptionData: { ...model.subscriptionData, vatNumber },
-                                    }));
-                                    handleOptimistic({ vatNumber });
-                                }}
-                                paymentsApi={getPaymentsApi(normalApi)}
-                                telemetryContext={telemetryContext}
-                                onMethodChanged={(method) => {
-                                    selectedMethodRef.current = method;
-                                }}
-                                couponConfig={couponConfig}
-                                renewalNotice={checkoutView.render('renewalNotice')}
-                            />
+                            {isProvisionedBankTransfer ? (
+                                <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-10 lg:gap-20">
+                                    <div className="shrink-0 md:flex-1 order-1 md:order-0">
+                                        {renderProvisioningDetails(step)}
+                                    </div>
+                                    <AccountStepPaymentSummary
+                                        model={model}
+                                        options={options}
+                                        selectedPlan={selectedPlan}
+                                        loadingPaymentDetails={loadingPaymentDetails}
+                                        showRenewalNotice={showRenewalNotice}
+                                        app={app}
+                                        couponConfig={couponConfig}
+                                    />
+                                </div>
+                            ) : (
+                                <AccountStepPayment
+                                    selectedPlan={selectedPlan}
+                                    measure={measure}
+                                    cta={cta}
+                                    terms={terms}
+                                    key={model.session?.resumedSessionResult.UID || 'free'}
+                                    defaultMethod={model.session?.defaultPaymentMethod}
+                                    accountStepPaymentRef={accountStepPaymentRef}
+                                    api={normalApi}
+                                    model={model}
+                                    handleOptimistic={handleOptimistic}
+                                    options={options}
+                                    loadingSignup={loadingSignup}
+                                    loadingPaymentDetails={loadingPaymentDetails || loadingSignout}
+                                    isDarkBg={isDarkBg}
+                                    signupParameters={signupParameters}
+                                    showRenewalNotice={showRenewalNotice}
+                                    app={app}
+                                    onPay={async (payment, type) => {
+                                        if (payment === 'signup-token') {
+                                            await handleCompletion(model.subscriptionData, 'signup-token');
+                                            return;
+                                        }
+                                        await handleCompletion({
+                                            ...model.subscriptionData,
+                                            payment,
+                                            type,
+                                        });
+                                    }}
+                                    onValidate={async () => {
+                                        return accountDetailsRef.current?.validate() ?? true;
+                                    }}
+                                    isFormValid={isFormValid}
+                                    withLoadingSignup={withLoadingSignup}
+                                    onBillingAddressChange={(
+                                        billingAddress: BillingAddress,
+                                        vatNumber: string | undefined
+                                    ) => {
+                                        handleOptimistic({ billingAddress, vatNumber });
+                                    }}
+                                    onVatNumberChange={(vatNumber) => {
+                                        setModel((model) => ({
+                                            ...model,
+                                            subscriptionData: { ...model.subscriptionData, vatNumber },
+                                        }));
+                                        handleOptimistic({ vatNumber });
+                                    }}
+                                    paymentsApi={getPaymentsApi(normalApi)}
+                                    telemetryContext={telemetryContext}
+                                    onMethodChanged={(method) => {
+                                        selectedMethodRef.current = method;
+                                    }}
+                                    couponConfig={couponConfig}
+                                    renewalNotice={checkoutView.render('renewalNotice')}
+                                >
+                                    {provisioning && (
+                                        <>
+                                            {renderProvisioningDetails(step)}
+                                            <div className="mt-12 mb-8">
+                                                <BoxHeader
+                                                    step={step + 2}
+                                                    title={c('pass_signup_2023: Header').t`Checkout`}
+                                                />
+                                            </div>
+                                        </>
+                                    )}
+                                </AccountStepPayment>
+                            )}
                         </BoxContent>
                     </Box>
                 )}

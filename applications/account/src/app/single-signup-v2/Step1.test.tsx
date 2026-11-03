@@ -16,6 +16,9 @@ import {
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
+import { SignupType } from '../signup/interfaces';
+import type { SignupProvisioning } from '../signup/orgProvisioning';
+import { ProvisioningPaymentMethod, getProvisionedDeal } from '../signup/orgProvisioning';
 import Step1 from './Step1';
 import { SignupMode, UpsellTypes } from './interface';
 
@@ -675,5 +678,58 @@ describe('Step1 - subscription guards', () => {
         await act(async () => retry.resolve(blocked));
 
         expect(await screen.findByText(STORAGE_COPY)).toBeInTheDocument();
+    });
+});
+
+describe('Step1 - provisioned signup', () => {
+    const provisioning: SignupProvisioning = {
+        OrganizationName: 'Acme',
+        AdminDisplayName: 'Jane Doe',
+        AdminEmail: 'jane@acme.com',
+        BillingAddress: { CountryCode: 'CH', State: null, ZipCode: '8000', FirstName: 'Jane', LastName: 'Doe' },
+        InvoiceEmail: 'billing@acme.com',
+        Taxable: true,
+        PaymentMethod: ProvisioningPaymentMethod.BankTransfer,
+        PaymentTermsDays: 30,
+    };
+
+    it('should sign up with the locked admin email instead of a Proton address', async () => {
+        const signupConfiguration = createMockSignupConfiguration();
+        signupConfiguration.signupTypes = [SignupType.Proton];
+        const signupParameters = createMockSignupParameters();
+        signupParameters.mode = SignupMode.Invite;
+        signupParameters.invite = { type: 'provisioning', data: { token: 'token' } };
+
+        renderStep1({
+            model: {
+                ...createMockModel(),
+                provisionedDeal: getProvisionedDeal({ token: 'token', provisioning, urlParams: {} }),
+            },
+            signupConfiguration,
+            signupParameters,
+            mode: SignupMode.Invite,
+        });
+
+        const email = await screen.findByDisplayValue('jane@acme.com');
+        expect(email).toHaveAttribute('readonly');
+        expect(document.querySelector('#username')).not.toBeInTheDocument();
+    });
+
+    it("should prefer the link's email over the lookup's admin email", async () => {
+        const signupParameters = createMockSignupParameters();
+        signupParameters.mode = SignupMode.Invite;
+        signupParameters.invite = { type: 'provisioning', data: { token: 'token' } };
+        signupParameters.email = 'admin@acme.com';
+
+        renderStep1({
+            model: {
+                ...createMockModel(),
+                provisionedDeal: getProvisionedDeal({ token: 'token', provisioning, urlParams: {} }),
+            },
+            signupParameters,
+            mode: SignupMode.Invite,
+        });
+
+        expect(await screen.findByDisplayValue('admin@acme.com')).toHaveAttribute('readonly');
     });
 });
