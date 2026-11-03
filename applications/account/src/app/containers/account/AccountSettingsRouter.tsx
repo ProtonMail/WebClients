@@ -289,7 +289,11 @@ const AccountSettingsRouter = ({
             )}
             {getIsSectionAvailable(groupMembership) && (
                 <Route path={getSectionPath(path, groupMembership)}>
-                    <PrivateMainSettingsArea config={groupMembership}>
+                    <PrivateMainSettingsArea
+                        config={groupMembership}
+                        variant={SettingsLayoutVariant.Card}
+                        maxWidth={SettingsCardMaxWidth.Narrow}
+                    >
                         <GroupMembershipSection />
                     </PrivateMainSettingsArea>
                 </Route>
