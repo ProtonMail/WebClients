@@ -1,14 +1,22 @@
 import { renderHook } from '@testing-library/react-hooks';
 import loudRejection from 'loud-rejection';
 
-import { useComposerHost } from '@proton/mail-composer/hooks/composer/useComposerHost';
-import { useScheduleSend } from '@proton/mail-composer/hooks/composer/useScheduleSend';
 import type { MessageStateWithData } from '@proton/mail-message/store/messages/messagesTypes';
 
-import { clearAll } from '../../helpers/tests/helper';
-import { mockUseScheduleSendFeature } from '../../helpers/tests/mockUseScheduleSendFeature';
+import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
+import { clearAll } from '../../test-helpers/helpers';
+import { useComposerHost } from './useComposerHost';
+import { useScheduleSend } from './useScheduleSend';
 
 loudRejection();
+
+const mockUseScheduleSendFeature = (value?: Partial<ReturnType<typeof useScheduleSendFeature>>) =>
+    jest.mocked(useScheduleSendFeature).mockReturnValue({
+        canScheduleSend: false,
+        canScheduleSendCustom: false,
+        loading: false,
+        ...value,
+    });
 
 // Mock functions - using 'mock' prefix allows Jest to hoist these properly
 const mockUseLocation = jest.fn(() => ({ pathname: '/inbox' }));
@@ -21,7 +29,7 @@ jest.mock('react-router-dom', () => ({
     useLocation: () => mockUseLocation(),
 }));
 
-jest.mock('@proton/mail-composer/components/composer/actions/scheduleSend/useScheduleSendFeature', () => ({
+jest.mock('../../components/composer/actions/scheduleSend/useScheduleSendFeature', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
@@ -30,7 +38,7 @@ jest.mock('@proton/unleash/useFlag', () => ({
     useFlag: () => mockUseFlag(),
 }));
 
-jest.mock('@proton/mail-composer/store/hooks', () => ({
+jest.mock('../../store/hooks', () => ({
     useComposerDispatch: () => mockDispatch,
 }));
 
@@ -61,10 +69,10 @@ jest.mock('ttag', () => ({
     }),
 }));
 
-jest.mock('@proton/mail-composer/hooks/composer/useComposerHost');
+jest.mock('./useComposerHost');
 const mockUseComposerHost = useComposerHost as jest.Mock;
 
-jest.mock('@proton/mail-composer/hooks/composer/useSendVerifications', () => ({
+jest.mock('./useSendVerifications', () => ({
     useSendVerifications: () => ({
         preliminaryVerifications: () => mockPreliminaryVerifications(),
     }),

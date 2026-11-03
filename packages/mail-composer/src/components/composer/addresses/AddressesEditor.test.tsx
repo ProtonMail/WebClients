@@ -2,19 +2,19 @@ import type { MutableRefObject } from 'react';
 
 import { fireEvent, getByText, screen } from '@testing-library/react';
 
-import AddressesEditor from '@proton/mail-composer/components/composer/addresses/AddressesEditor';
-import type { MessageSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
-import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { addApiMock } from '@proton/test-api/api';
 import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
 
-import { addApiMock } from '../../../helpers/tests/api';
-import { clearAll, getDropdown } from '../../../helpers/tests/helper';
-import { mailTestRender, tick } from '../../../helpers/tests/render';
-import type { MailStore } from '../../../store/store';
+import type { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { addComposerAction } from '../../../store/composers/composerActions';
+import { clearAll, getDropdown } from '../../../test-helpers/helpers';
+import { composerTestRender, tick } from '../../../test-helpers/render';
+import type { ComposerTestStore } from '../../../test-helpers/store';
+import AddressesEditor from './AddressesEditor';
 
 const email1 = 'test@test.com';
 const email2 = 'test2@test.com';
@@ -79,7 +79,7 @@ const props = {
     },
 };
 
-const setupComposer = (store: MailStore, composerID: string) => {
+const setupComposer = (store: ComposerTestStore, composerID: string) => {
     void store.dispatch(
         addComposerAction({
             ID: composerID,
@@ -102,7 +102,7 @@ describe('AddressesEditor', () => {
     const composerID = 'composer-test-id';
 
     it('should render Addresses', async () => {
-        const { getByText } = await mailTestRender(<AddressesEditor {...props} composerID={composerID} />, {
+        const { getByText } = await composerTestRender(<AddressesEditor {...props} composerID={composerID} />, {
             onStore: (store) => {
                 setupComposer(store, composerID);
             },
@@ -113,7 +113,7 @@ describe('AddressesEditor', () => {
     });
 
     it('should delete an address', async () => {
-        const { getByTestId, getAllByTestId } = await mailTestRender(
+        const { getByTestId, getAllByTestId } = await composerTestRender(
             <AddressesEditor {...props} composerID={composerID} />,
             {
                 onStore: (store) => {
@@ -147,7 +147,7 @@ describe('AddressesEditor', () => {
         async ({ input, expectedArray }: { input: string; expectedArray: Recipient[] }) => {
             addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [] } }));
 
-            const { getAllByTestId, getByTestId } = await mailTestRender(
+            const { getAllByTestId, getByTestId } = await composerTestRender(
                 <AddressesEditor {...props} composerID={composerID} />,
                 {
                     onStore: (store) => {
@@ -171,7 +171,7 @@ describe('AddressesEditor', () => {
     );
 
     it('should edit an address on double click', async () => {
-        const { getAllByTestId, getByText } = await mailTestRender(
+        const { getAllByTestId, getByText } = await composerTestRender(
             <AddressesEditor {...props} composerID={composerID} />,
             {
                 onStore: (store) => {
@@ -199,7 +199,7 @@ describe('AddressesEditor', () => {
     });
 
     it('should open option dropdown', async () => {
-        const { getAllByTestId } = await mailTestRender(<AddressesEditor {...props} composerID={composerID} />, {
+        const { getAllByTestId } = await composerTestRender(<AddressesEditor {...props} composerID={composerID} />, {
             onStore: (store) => {
                 setupComposer(store, composerID);
             },
@@ -220,7 +220,7 @@ describe('AddressesEditor', () => {
     it('should copy an address', async () => {
         document.execCommand = jest.fn();
 
-        const { getAllByTestId } = await mailTestRender(<AddressesEditor {...props} composerID={composerID} />, {
+        const { getAllByTestId } = await composerTestRender(<AddressesEditor {...props} composerID={composerID} />, {
             onStore: (store) => {
                 setupComposer(store, composerID);
             },
@@ -240,7 +240,7 @@ describe('AddressesEditor', () => {
     });
 
     it('should edit an address in option dropdown', async () => {
-        const { getAllByTestId } = await mailTestRender(<AddressesEditor {...props} composerID={composerID} />, {
+        const { getAllByTestId } = await composerTestRender(<AddressesEditor {...props} composerID={composerID} />, {
             onStore: (store) => {
                 setupComposer(store, composerID);
             },
@@ -271,7 +271,7 @@ describe('AddressesEditor', () => {
     it('should open create modal when clicking on create contact', async () => {
         addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
 
-        const { getAllByTestId } = await mailTestRender(<AddressesEditor {...props} composerID={composerID} />, {
+        const { getAllByTestId } = await composerTestRender(<AddressesEditor {...props} composerID={composerID} />, {
             onStore: (store) => {
                 setupComposer(store, composerID);
             },
@@ -293,7 +293,7 @@ describe('AddressesEditor', () => {
     });
 
     it('should delete an address in option modal', async () => {
-        const { getAllByTestId } = await mailTestRender(<AddressesEditor {...props} composerID={composerID} />, {
+        const { getAllByTestId } = await composerTestRender(<AddressesEditor {...props} composerID={composerID} />, {
             onStore: (store) => {
                 setupComposer(store, composerID);
             },
@@ -317,7 +317,7 @@ describe('AddressesEditor', () => {
     });
 
     it('should focus CC and BCC buttons but not Insert contacts button', async () => {
-        const { getByTestId } = await mailTestRender(<AddressesEditor {...props} composerID={composerID} />, {
+        const { getByTestId } = await composerTestRender(<AddressesEditor {...props} composerID={composerID} />, {
             onStore: (store) => {
                 setupComposer(store, composerID);
             },
@@ -334,7 +334,7 @@ describe('AddressesEditor', () => {
 
     it('should skip CC and BCC buttons when the kill switch is enabled', async () => {
         const useFlagSpy = mockUseFlag(true);
-        const { getByTestId } = await mailTestRender(<AddressesEditor {...props} composerID={composerID} />, {
+        const { getByTestId } = await composerTestRender(<AddressesEditor {...props} composerID={composerID} />, {
             onStore: (store) => {
                 setupComposer(store, composerID);
             },

@@ -100,10 +100,12 @@
     "devDependencies": {
         "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
+        "@proton/test-api": "workspace:^",
         "@proton/types": "workspace:^",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "^15.0.7",
         "@testing-library/react-hooks": "catalog:",
+        "@testing-library/user-event": "catalog:",
         "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
@@ -113,6 +115,7 @@
         "@typescript/native": "catalog:",
         "jest": "catalog:",
         "jest-environment-jsdom": "catalog:",
+        "loud-rejection": "^2.2.0",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "typescript": "catalog:"

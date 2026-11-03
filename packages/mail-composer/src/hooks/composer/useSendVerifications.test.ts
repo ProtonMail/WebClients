@@ -1,6 +1,5 @@
 import loudRejection from 'loud-rejection';
 
-import { useSendVerifications } from '@proton/mail-composer/hooks/composer/useSendVerifications';
 import type { SendInfo } from '@proton/mail-message/models/crypto';
 import { ADDRESS_FLAGS, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import type { Address, Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -8,8 +7,9 @@ import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPr
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 
-import { clearAll } from '../../helpers/tests/helper';
-import { renderHook } from '../../helpers/tests/render';
+import { clearAll } from '../../test-helpers/helpers';
+import { composerTestRenderHook } from '../../test-helpers/render';
+import { useSendVerifications } from './useSendVerifications';
 
 loudRejection();
 
@@ -228,20 +228,19 @@ afterAll(() => {
 
 describe('useSendVerifications', () => {
     const setup = async () => {
-        const view = await renderHook({ useCallback: () => useSendVerifications() });
+        const view = await composerTestRenderHook(() => useSendVerifications());
         return view.result.current.extendedVerifications as any;
     };
 
     const setupPreliminaryVerificationsWithHandlers = async () => {
-        const view = await renderHook({
-            useCallback: () =>
-                useSendVerifications(
-                    mockHandleNoRecipients,
-                    mockHandleNoSubjects,
-                    mockHandleNoAttachments,
-                    mockHandleNoReplyEmail
-                ),
-        });
+        const view = await composerTestRenderHook(() =>
+            useSendVerifications(
+                mockHandleNoRecipients,
+                mockHandleNoSubjects,
+                mockHandleNoAttachments,
+                mockHandleNoReplyEmail
+            )
+        );
         return view.result.current.preliminaryVerifications as any;
     };
 
