@@ -9,6 +9,11 @@
 	--table-border-color: var(--border-norm);
 	--table-padding: var(--space-2);
 
+	// Inline padding of cells, and space above the first row, in the stacked layout, e.g. when the table sits flush in a card.
+	// 0 keeps the current look
+	--table-stacked-padding-inline: 0;
+	--table-stacked-padding-block-start: 0;
+
 	&-wrapper {
 		inline-size: 100%;
 		container-type: inline-size;
@@ -44,6 +49,11 @@
 				padding-inline-end: 0;
 			}
 		}
+	}
+
+	// Wide layout; the stacked layout has its own rule below, as rows carry the border there
+	&--last-row-no-border tbody tr:last-child td {
+		border-block-end: none;
 	}
 
 	.show-when-stacked {
@@ -222,8 +232,17 @@
 							border-block-end: 1px solid var(--table-border-color);
 						}
 
+						tbody tr:first-child {
+							padding-block-start: var(--table-stacked-padding-block-start);
+						}
+
 						td {
 							padding-block-end: var(--table-padding);
+						}
+
+						// Same specificity as `--no-inline-padding`'s first/last cell rule and later, so it also wins there
+						tr td {
+							padding-inline: var(--table-stacked-padding-inline);
 						}
 
 						td.text-left-when-stacked {

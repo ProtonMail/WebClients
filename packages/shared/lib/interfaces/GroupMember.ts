@@ -52,7 +52,7 @@ export interface GroupMember {
 export interface GroupMembership {
     Name: string;
     Address: string;
-    Status: string;
+    Status: GROUP_MEMBERSHIP_STATUS;
     Keys: GroupMemberAddressPendingKey;
     AddressID: string;
     ID: string;
