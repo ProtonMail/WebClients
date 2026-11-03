@@ -465,3 +465,38 @@ describe('isLumoOnlyB2C', () => {
         ).toBe(false);
     });
 });
+
+describe('hasSmtpSubmission', () => {
+    it.each([
+        PLANS.MAIL,
+        PLANS.BUNDLE,
+        PLANS.DUO,
+        PLANS.FAMILY,
+        PLANS.VISIONARY,
+        PLANS.MAIL_PRO,
+        PLANS.BUNDLE_PRO_2024,
+        PLANS.BUNDLE_BIZ_2025,
+    ] as const)('returns true for %s', (plan) => {
+        expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).hasSmtpSubmission).toBe(true);
+    });
+
+    it.each([PLANS.DRIVE_PRO, PLANS.VPN2024, PLANS.PASS, PLANS.MEET_BUSINESS, PLANS.VPN_BUSINESS] as const)(
+        'returns false for %s',
+        (plan) => {
+            expect(buildOrgAndUserEntitlementChecks({ subscriptionPlans: [plan] }).hasSmtpSubmission).toBe(false);
+        }
+    );
+
+    it('returns true when Mail Plus comes next to VPN Plus', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.VPN2024, PLANS.MAIL] }).hasSmtpSubmission
+        ).toBe(true);
+    });
+
+    it('returns true for a member who cannot read the organization subscriptions', () => {
+        expect(
+            buildOrgAndUserEntitlementChecks({ subscriptionPlans: [PLANS.BUNDLE_PRO_2024], ...organizationMember })
+                .hasSmtpSubmission
+        ).toBe(true);
+    });
+});

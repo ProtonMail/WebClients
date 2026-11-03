@@ -74,23 +74,6 @@ export const isOrganizationB2B = (organization?: Organization) => {
     return getIsB2BAudienceFromPlan(organization?.PlanName);
 };
 
-export const getIsSMPTEligible = (organization?: Organization) => {
-    return [
-        PLANS.MAIL_PRO,
-        PLANS.MAIL_BUSINESS,
-        PLANS.DRIVE_PRO,
-        PLANS.BUNDLE_PRO,
-        PLANS.BUNDLE_PRO_2024,
-        PLANS.BUNDLE_BIZ_2025,
-        PLANS.FAMILY,
-        PLANS.PASS_FAMILY,
-        PLANS.DUO,
-        PLANS.VISIONARY,
-        PLANS.MAIL,
-        PLANS.BUNDLE,
-    ].includes(organization?.PlanName as PLANS);
-};
-
 /** True if user is part of an organization (works also for org admins) */
 export const isOrganization = (organization?: Organization) =>
     isOrganizationFamily(organization) ||
