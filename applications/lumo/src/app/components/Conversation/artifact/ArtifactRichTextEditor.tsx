@@ -226,7 +226,7 @@ const EditorToolbar = ({ editor }: EditorToolbarProps) => {
                 />
                 <ToolbarSeparator />
                 <ToolbarButton
-                    icon="Bold"
+                    icon="LetterB"
                     label={c('collider_2025:Action').t`Bold`}
                     isActive={state.bold}
                     onClick={() => {

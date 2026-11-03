@@ -2887,8 +2887,8 @@ importers:
         specifier: ^2.4.2
         version: 2.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       lucide-react:
-        specifier: ^1.49.0
-        version: 1.49.0(@types/react@18.3.31)(react@18.3.1)
+        specifier: ^1.65.0
+        version: 1.65.0(@types/react@18.3.31)(react@18.3.1)
       mdast-util-gfm:
         specifier: ^3.1.0
         version: 3.1.0(supports-color@11.0.0)
@@ -25004,8 +25004,8 @@ packages:
   lru-queue@0.1.0:
     resolution: {integrity: sha512-BpdYkt9EvGl8OfWHDQPISVpcl5xZthb+XPsbELj5AQXxIC8IriDZIQYjBJPEm5rS420sjZ0TLEzRcq5KdBhYrQ==}
 
-  lucide-react@1.49.0:
-    resolution: {integrity: sha512-ApfaNM4/7jBrVopqLJ84Jz8TMQ1Q1JeZ1PmKh25aeS3E1FTVcMkSh1bEQB7dfzdIrwXRP8p3z4AJjTIHHb5IIA==}
+  lucide-react@1.65.0:
+    resolution: {integrity: sha512-roSdtzudEY39i2hn5LLjA8toYfhF2z4S10WSqZF4ubXpHlOmNTvaxMxZLdJfQDi6pEifQWX+cRmYihKSsvAxfA==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -35598,7 +35598,7 @@ snapshots:
       antd: 6.6.5(date-fns@4.4.0)(luxon@3.7.2)(moment@2.31.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       dompurify: 3.4.17
       hotkeys-js: 4.0.8
-      lucide-react: 1.49.0(@types/react@18.3.31)(react@19.3.0)
+      lucide-react: 1.65.0(@types/react@18.3.31)(react@19.3.0)
       rc-field-form: 2.7.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
@@ -46242,13 +46242,13 @@ snapshots:
     dependencies:
       es5-ext: 0.10.64
 
-  lucide-react@1.49.0(@types/react@18.3.31)(react@18.3.1):
+  lucide-react@1.65.0(@types/react@18.3.31)(react@18.3.1):
     dependencies:
       react: 18.3.1
     optionalDependencies:
       '@types/react': 18.3.31
 
-  lucide-react@1.49.0(@types/react@18.3.31)(react@19.3.0):
+  lucide-react@1.65.0(@types/react@18.3.31)(react@19.3.0):
     dependencies:
       react: 19.3.0
     optionalDependencies:
