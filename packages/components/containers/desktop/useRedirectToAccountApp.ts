@@ -1,9 +1,11 @@
 import { useCallback } from 'react';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import type { COUPON_CODES } from '@proton/payments/core/constants';
+import { getSubscriptionForApp } from '@proton/payments/core/subscription/subscription-for-app';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -21,7 +23,8 @@ export function useRedirectToAccountApp() {
     const { APP_NAME } = useConfig();
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
     const [user] = useUser();
-    const [subscription] = useSubscription();
+    const [allSubscriptions] = useAllSubscriptions();
+    const [entitlementCatalog] = useEntitlementCatalog();
 
     return useCallback(
         (params?: Partial<SubscriptionContainerProps>) => {
@@ -38,7 +41,11 @@ export function useRedirectToAccountApp() {
                 const upsellPath = getUpgradePath(
                     {
                         user,
-                        subscription,
+                        subscription: getSubscriptionForApp(
+                            allSubscriptions ?? [],
+                            entitlementCatalog,
+                            appName ?? APP_NAME
+                        ),
                         plan: selectedPlan,
                         app: appName,
                         audience: params.defaultAudience,
@@ -59,6 +66,6 @@ export function useRedirectToAccountApp() {
 
             return false;
         },
-        [APP_NAME, hasInboxDesktopInAppPayments, user, subscription]
+        [APP_NAME, hasInboxDesktopInAppPayments, user, allSubscriptions, entitlementCatalog]
     );
 }

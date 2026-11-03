@@ -1,9 +1,14 @@
+import type { ReactNode, Ref } from 'react';
+
 import { render, screen } from '@testing-library/react';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
+import { PLANS } from '@proton/payments/core/constants';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { UserLockedFlags, type UserModel } from '@proton/shared/lib/interfaces/User';
+import { buildUser } from '@proton/shared/testing/buildUser';
 
 import StorageLimitTopBanner from './StorageLimitTopBanner';
 
@@ -11,13 +16,23 @@ jest.mock('react-router-dom', () => ({
     useLocation: jest.fn().mockReturnValue({ pathname: '' }),
 }));
 
-jest.mock('../../components/link/AppLink');
+jest.mock('../../components/link/AppLink', () => {
+    const { forwardRef } = jest.requireActual('react');
+    return {
+        __esModule: true,
+        default: forwardRef(({ to, children }: { to: string; children: ReactNode }, ref: Ref<HTMLAnchorElement>) => (
+            <a ref={ref} href={to}>
+                {children}
+            </a>
+        )),
+    };
+});
 
 jest.mock('@proton/account/user/hooks');
 const mockedUser = useUser as jest.Mock;
 
-jest.mock('@proton/account/subscription/hooks');
-const mockedSub = useSubscription as jest.Mock;
+jest.mock('@proton/payments-ui/ui/hooks/useSubscriptionForApp');
+const mockedSub = useSubscriptionForApp as jest.Mock;
 
 jest.mock('@proton/app-context/useConfig');
 const mockConfig = useConfig as jest.Mock;
@@ -304,6 +319,17 @@ describe('StorageLimitTopBanner', () => {
     });
 
     describe('User with lock state', () => {
+        it('Should preselect the plan of the subscription for the current app in the upgrade link', () => {
+            mockedUser.mockReturnValue([buildUser({ LockedFlags: UserLockedFlags.BASE_STORAGE_EXCEEDED })]);
+            mockedSub.mockReturnValue([buildSubscription(PLANS.BUNDLE), false]);
+            mockConfig.mockReturnValue({ APP_NAME: 'proton-account' });
+
+            render(<StorageLimitTopBanner app="proton-mail" />);
+            const href = screen.getByRole('link', { name: 'upgrade for more storage' }).getAttribute('href') ?? '';
+
+            expect(new URLSearchParams(href.split('?')[1]).get('plan')).toBe(PLANS.BUNDLE);
+        });
+
         it('Should show the lock state for base storage excess', () => {
             mockedUser.mockReturnValue([{ LockedFlags: UserLockedFlags.BASE_STORAGE_EXCEEDED }]);
             mockedSub.mockReturnValue([]);

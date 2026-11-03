@@ -109,14 +109,14 @@ export const getAppSpace = (options: ReturnType<typeof getSpace>, app: APP_NAMES
 };
 
 export const getCanAddStorage = ({ user, subscription }: { user: UserModel; subscription: MaybeFreeSubscription }) => {
-    if (!subscription) {
-        return false;
-    }
     if (user.isMember) {
         return false;
     }
     if (!user.canPay) {
         return false;
+    }
+    if (!subscription) {
+        return user.isFree;
     }
     if (hasVisionary(subscription) || getHasMailB2BPlan(subscription)) {
         return false;

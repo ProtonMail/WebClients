@@ -77,7 +77,7 @@ const QuickSettingsStorageLimitBanner = () => {
                 shape="ghost"
                 fullWidth
                 className="py-2 px-3"
-                path={getUpgradePath({ user, subscription, plan }, upsellRef)}
+                path={getUpgradePath({ user, plan }, upsellRef)}
             >
                 <div className="flex gap-2">
                     <div className="shrink-0">
