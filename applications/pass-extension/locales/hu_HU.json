@@ -4645,6 +4645,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } e-mail álnév végleges törlésére készül.",
         "${ aliasCount } e-mail álnév végleges törlésére készül."
+      ],
+      "Export": [
+        "Exportálás"
+      ],
+      "Import failed": [
+        "Importálás sikertelen"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4985,6 +4991,21 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Az előfizetése nem teszi lehetővé több tároló létrehozását. Az összes elem az első tárolóba kerül importálásra. Több tárolóba való importáláshoz váltson nagyobb csomagra."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } további eredmény nem látható",
+        "${ hiddenResultsCount } további eredmény nem látható"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz",
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz"
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Használja a Fel és Le billentyűket a javaslatok eléréséhez és böngészéséhez. Nyomja meg az Enter billentyűt a választásának megerősítéséhez, vagy az Escape billentyűt a javaslatok doboz bezárásához."
       ]
     }
   }

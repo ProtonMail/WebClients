@@ -824,6 +824,27 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ],
+      "Create a login": [
+        "Créer un identifiant"
+      ],
+      "Download for Linux": [
+        "Télécharger la version pour Linux"
+      ],
+      "Download for macOS": [
+        "Télécharger pour macOS"
+      ],
+      "Download for Windows": [
+        "Télécharger pour Windows"
+      ],
+      "Hide passwords": [
+        "Masquer les mots de passe"
+      ],
+      "Move folder": [
+        "Déplacer le dossier"
+      ],
+      "Skip for now": [
+        "Ignorer pour le moment"
       ]
     },
     "Activity": {
@@ -1564,6 +1585,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "Biometric authentication cancelled.": [
+        "L'Authentification biométrique a été annulée."
+      ],
+      "Failed to move folder": [
+        "Le déplacement du dossier n'a pas abouti"
       ]
     },
     "Error message": {
@@ -2326,8 +2353,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -3098,6 +3124,27 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Champ masqué. Vous pouvez tout de même le remplir automatiquement."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Le dossier « ${ payload.folder.name } » a été déplacé"
+      ],
+      "Important:": [
+        "Important :"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Mot de passe masqué. Vous pouvez tout de même le remplir automatiquement."
+      ],
+      "The folder is already here": [
+        "Le dossier se trouve déjà ici"
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Quand des éléments sont déplacés d'un coffre-fort à l'autre, nous conservons jusqu'aux 50 dernières modifications apportées à chaque élément."
       ]
     },
     "Keyboard key": {
@@ -4331,6 +4378,21 @@
       ],
       "ZIP or Postal code": [
         "Code postal"
+      ],
+      "Allow viewers to see passwords": [
+        "Permettre aux lecteurs de voir les mots de passe"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Service": [
+        "Service"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5455,6 +5517,51 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ],
+      "Browsers": [
+        "Navigateurs"
+      ],
+      "Export": [
+        "Exporter"
+      ],
+      "Fill in your details": [
+        "Renseignez vos informations"
+      ],
+      "First login created": [
+        "Premier identifiant créé"
+      ],
+      "Get mobile apps": [
+        "Télécharger les applications mobiles"
+      ],
+      "Import completed with warnings": [
+        "L'importation a terminé avec des avertissements"
+      ],
+      "Import failed": [
+        "L'importation n'a pas abouti."
+      ],
+      "Import successful": [
+        "Importation réussie"
+      ],
+      "Imported from:": [
+        "Importé depuis :"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Déplacer « ${ folderName } » vers"
+      ],
+      "Password managers": [
+        "Gestionnaires de mots de passe"
+      ],
+      "Select your password manager": [
+        "Sélectionnez votre gestionnaire de mots de passe"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Changer d'abonnement pour vérifier si certains mots de passe ont été réutilisés"
+      ],
+      "Upload": [
+        "Importer"
+      ],
+      "Upload your data": [
+        "Importer vos données"
       ]
     },
     "Title_cloned_item": {
@@ -5849,6 +5956,104 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Le déplacement de ce dossier à cet emplacement entraînerait un dépassement du niveau maximal d'imbrication des dossiers."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Il n'est pas possible de déplacer un dossier vers lui-même ou vers ses sous-dossiers"
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "${ hiddenResultsCount } autre résultat non affiché",
+        "${ hiddenResultsCount } autres résultats non affichés"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } suggestion a été trouvée. Utilisez le clavier pour naviguer.",
+        "${ itemsCount } suggestions ont été trouvées. Utilisez le clavier pour naviguer."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boite de suggestions."
+      ]
+    },
+    "Import Tutorial": {
+      "Advanced Options": [
+        "Options avancées"
+      ],
+      "Export": [
+        "Exporter"
+      ],
+      "Export Data": [
+        "Exporter les données"
+      ],
+      "Export data": [
+        "Exporter les données"
+      ],
+      "Export items": [
+        "Exporter les éléments"
+      ],
+      "Export passwords": [
+        "Exporter les mots de passe"
+      ],
+      "Export to CSV": [
+        "Exporter au format CSV"
+      ],
+      "Export to TXT": [
+        "Exporter au format TXT"
+      ],
+      "File": [
+        "Fichier"
+      ],
+      "Go to ${ passwords }.": [
+        "Accéder à ${ passwords }."
+      ],
+      "Microsoft password manager": [
+        "Gestionnaire de mots de passe Microsoft"
+      ],
+      "More actions": [
+        "Actions supplémentaires"
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "Ouvrez ${ name } et accédez à ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and go to ☰ → ${ settings } → ${ autoFill }.": [
+        "Ouvrez ${ name } et accédez à ☰ → ${ settings } → ${ autoFill }."
+      ],
+      "Open ${ name } and select ${ menu } → ${ option }.": [
+        "Ouvrez ${ name } et sélectionnez ${ menu } → ${ option }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Ouvrez ${ name } et sélectionnez ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Ouvrez ${ name } et sélectionnez ☰ → ${ passwords }."
+      ],
+      "Passwords": [
+        "Mots de passe"
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Sélectionnez ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Sélectionnez ${ option }."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Sélectionnez ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Paramètres"
+      ],
+      "Vault": [
+        "Coffre-fort"
+      ],
+      "Vault options": [
+        "Options du coffre-fort"
+      ],
+      "your username": [
+        "votre nom d’utilisateur"
       ]
     }
   }

@@ -827,6 +827,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
+      ],
+      "Create a login": [
+        "Criar um início de sessão"
+      ],
+      "Download for Linux": [
+        "Baixar para Linux"
+      ],
+      "Download for macOS": [
+        "Baixar para macOS"
+      ],
+      "Download for Windows": [
+        "Baixar para Windows"
+      ],
+      "Hide passwords": [
+        "Ocultar senhas"
+      ],
+      "Skip for now": [
+        "Pular por enquanto"
       ]
     },
     "Activity": {
@@ -1564,6 +1582,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }"
+      ],
+      "Biometric authentication cancelled.": [
+        "Autenticação biométrica cancelada."
       ]
     },
     "Error message": {
@@ -2317,8 +2338,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"
@@ -3069,6 +3089,30 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } de ${ total } (${ percentage }%)"
+      ],
+      "Don’t close this tab": [
+        "Não feche esta guia"
+      ],
+      "Important:": [
+        "Importante:"
+      ],
+      "iOS and Android Apps": [
+        "Aplicativos para iOS e Android"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Nenhuma das suas senhas salvas apareceu em um vazamento de dados conhecido."
+      ],
+      "Open the extension here.": [
+        "Abra a extensão aqui."
+      ],
+      "Scan to download": [
+        "Digitalizar para baixar"
+      ],
+      "Switch to another folder or create an item in this folder": [
+        "Altere para outra pasta ou crie um item nessa pasta"
       ]
     },
     "Keyboard key": {
@@ -4302,6 +4346,18 @@
       ],
       "ZIP or Postal code": [
         "CEP ou código postal"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Service": [
+        "Serviço"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5426,6 +5482,63 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ],
+      "Add one account": [
+        "Adicionar uma conta"
+      ],
+      "Browsers": [
+        "Navegadores"
+      ],
+      "Create your first login": [
+        "Crie seu primeiro início de sessão"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Export from ${ provider.title }": [
+        "Exportar de ${ provider.title }"
+      ],
+      "First login created": [
+        "Primeiro inicio de sessão criado"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtenha aplicativos móveis e para computador"
+      ],
+      "Get mobile apps": [
+        "Obter aplicativos móveis"
+      ],
+      "Import completed with warnings": [
+        "Importação completada com avisos"
+      ],
+      "Import failed": [
+        "Erro na importação"
+      ],
+      "Import successful": [
+        "Importação com sucesso"
+      ],
+      "Imported from:": [
+        "Importado de:"
+      ],
+      "Imported items:": [
+        "Itens importados"
+      ],
+      "Password managers": [
+        "Gerenciadores de senhas"
+      ],
+      "Select your password manager": [
+        "Selecione seu gerenciador de senhas"
+      ],
+      "Some of your items could not be imported. See the details below.": [
+        "Alguns de seus itens não ponderam ser importados. Veja os detalhes abaixo."
+      ],
+      "Starting the extension": [
+        "Iniciando a extensão"
+      ],
+      "Upload": [
+        "Enviar"
+      ],
+      "Upload your data": [
+        "Enviar seus dados"
       ]
     },
     "Title_cloned_item": {
@@ -5792,6 +5905,131 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."
+      ]
+    },
+    "Autocomplete": {
+      "${ hiddenResultsCount } more result not shown": [
+        "Mais ${ hiddenResultsCount } resultado não exibido",
+        "Mais ${ hiddenResultsCount } resultados não exibidos"
+      ]
+    },
+    "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Encontrada ${ itemsCount } sugestão, use o teclado para navegar.",
+        "Encontradas ${ itemsCount } sugestões, use o teclado para navegar."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Use as teclas Para cima e Para baixo para acessar e procurar sugestões após a entrada. Pressione Enter para confirmar sua escolha, ou Escape para fechar a caixa de sugestões."
+      ]
+    },
+    "Import Tutorial": {
+      "Account & Data": [
+        "Conta e dados"
+      ],
+      "Advanced Options": [
+        "Opções avançadas"
+      ],
+      "Autofill and passwords": [
+        "Preenchimento automático e senhas"
+      ],
+      "Choose JSON downloads": [
+        "Escolha downloads JSON"
+      ],
+      "Choose the file format → Select ${ exportLabel }.": [
+        "Escolha o formato de arquivo → Selecione ${ exportLabel }."
+      ],
+      "Continue export": [
+        "Continuar exportação"
+      ],
+      "Download file": [
+        "Baixar arquivo"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Export Data": [
+        "Exportar dados"
+      ],
+      "Export data": [
+        "Exportar dados"
+      ],
+      "Export file format: 1PUX": [
+        "Formato de arquivo de exportação: 1PUX"
+      ],
+      "Export items": [
+        "Exportar itens"
+      ],
+      "Export passwords": [
+        "Exportar senhas"
+      ],
+      "Export to CSV": [
+        "Exportar para CSV"
+      ],
+      "Export to TXT": [
+        "Exportar para TXT"
+      ],
+      "File": [
+        "Arquivo"
+      ],
+      "Go to ${ passwords }.": [
+        "Vá para ${ passwords }."
+      ],
+      "Google Password Manager": [
+        "Gerenciador de Senhas do Google"
+      ],
+      "Identify your password manager.": [
+        "Identifique seu gerenciador de senhas."
+      ],
+      "Manage your vault": [
+        "Gerencie seu cofre"
+      ],
+      "Microsoft password manager": [
+        "Gerenciador de senhas da Microsoft"
+      ],
+      "More actions": [
+        "Mais ações"
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "Abra ${ name } e selecione ${ settings }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Abra ${ name } e selecione⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Abra ${ name } e selecione ☰ → ${ passwords }."
+      ],
+      "Passwords": [
+        "Senhas"
+      ],
+      "Passwords and Autofill": [
+        "Senhas e preenchimento automático"
+      ],
+      "Passwords and autofill": [
+        "Senhas e preenchimento automático"
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Selecione ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Selecione ${ option }."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Selecione ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Configurações"
+      ],
+      "Submit": [
+        "Enviar"
+      ],
+      "Vault": [
+        "Cofre"
+      ],
+      "Vault options": [
+        "Opções do cofre"
+      ],
+      "your username": [
+        "seu nome de usuário"
       ]
     }
   }
