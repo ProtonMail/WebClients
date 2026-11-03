@@ -4,7 +4,7 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useOrganization } from '@proton/account/organization/hooks';
+import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
@@ -24,7 +24,6 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
-import { getIsSMPTEligible } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -58,8 +57,8 @@ const SMTPSubmissionSection = () => {
     const hasActiveCustomAddress = addresses.some(
         (address) => address.Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN && getIsAddressEnabled(address)
     );
-    const [organization, loadingOrganization] = useOrganization();
-    const isSMPTEligible = getIsSMPTEligible(organization);
+    const [entitlements, loadingEntitlements] = useEntitlementChecksForOrgAndUser();
+    const hasSmtpSubmission = !loadingEntitlements && entitlements.hasSmtpSubmission;
     const [tokenIDToRemove, setTokenIDToRemove] = useState('');
     const [loadingTokens, withLoadingTokens] = useLoading();
     const [loading, withLoading] = useLoading();
@@ -111,12 +110,12 @@ const SMTPSubmissionSection = () => {
     };
 
     useEffect(() => {
-        if (isSMPTEligible) {
+        if (hasSmtpSubmission) {
             void withLoadingTokens(fetchTokens());
         }
-    }, [isSMPTEligible]);
+    }, [hasSmtpSubmission]);
 
-    if (loadingOrganization) {
+    if (loadingEntitlements) {
         return (
             <SettingsSection>
                 <Loader />
@@ -133,7 +132,7 @@ const SMTPSubmissionSection = () => {
         isSettings: true,
     });
 
-    if (!isSMPTEligible) {
+    if (!hasSmtpSubmission) {
         return (
             <SettingsSectionWide>
                 <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>

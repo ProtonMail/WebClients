@@ -144,6 +144,12 @@ export const entitlementChecksForSelection = {
      */
     hasBusySlots: (r) =>
         r.hasMatchingSubscription({ includes: [EntitlementName.MultiUser, EntitlementName.FlagsInbox] }),
+
+    /**
+     * Candidate for a dedicated SMTP submission entitlement. Until one exists, it uses `flags-inbox`, the same rule
+     * the backend applies before it creates an SMTP token.
+     */
+    hasSmtpSubmission: (r) => r.hasEntitlement(EntitlementName.FlagsInbox),
 } satisfies Record<string, EntitlementCheckForSelection>;
 
 /**
