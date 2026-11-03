@@ -4,6 +4,7 @@ import type { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getOrganizationState } from '@proton/account/testing/redux-state';
+import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
@@ -36,6 +37,7 @@ export const getStoreWrapper = ({
                 DelaySendSeconds: DELAY_IN_SECONDS.NONE,
             }),
             subscription: getSubscriptionState(),
+            entitlementCatalog: getModelState(buildEntitlementCatalog()),
             organization: getOrganizationState(),
             organizationKey: getModelState({} as CachedOrganizationKey),
             userInvitations: getModelState([]),
