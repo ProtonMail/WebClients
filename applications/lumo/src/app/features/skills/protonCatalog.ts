@@ -34,7 +34,7 @@ import { SALES_SKILLS } from './protonPlugins/sales';
 import { SMALL_BUSINESS_SKILLS } from './protonPlugins/smallBusiness';
 import type { ProtonPluginConnector, ProtonPluginSkill } from './protonPlugins/types';
 import { WRITING_SKILLS } from './protonPlugins/writing';
-import { CONNECTORS_MARKDOWN_PATH, PLUGIN_MANIFEST_PATH, README_PATH } from './skillBundle';
+import { CONNECTORS_MARKDOWN_PATH, README_PATH } from './skillBundle';
 import { encodeText, getSkillFileMimeType } from './skillFiles';
 import { buildSkillMarkdown } from './skillMarkdown';
 import { SKILL_MARKDOWN_PATH, type SkillDraft, type SkillFileDraft } from './types';
@@ -324,11 +324,8 @@ export const protonPluginToDraft = (plugin: ProtonPlugin): SkillDraft => ({
     source: 'proton',
     metadata: { author: BRAND_NAME },
     legacyAgentId: plugin.id,
+    plugin: { version: plugin.version, author: BRAND_NAME },
     files: [
-        textFile(
-            PLUGIN_MANIFEST_PATH,
-            JSON.stringify({ name: plugin.id, version: plugin.version, author: { name: BRAND_NAME } }, null, 2)
-        ),
         textFile(README_PATH, buildReadme(plugin)),
         ...(plugin.connectors.length ? [textFile(CONNECTORS_MARKDOWN_PATH, buildConnectorsMarkdown(plugin))] : []),
         ...plugin.skills.map(({ name, description, instructions }) =>

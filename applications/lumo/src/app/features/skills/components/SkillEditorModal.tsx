@@ -45,6 +45,8 @@ const getTooLongError = (maxLength: number) => c('collider_2025:Error').t`Use ${
 
 const newSkillMarkdown = (): WorkspaceFile => ({ path: SKILL_MARKDOWN_PATH, mimeType: 'text/markdown', text: '' });
 
+const isInFolder = (folder: string, path: string) => path.startsWith(`${folder}/`);
+
 export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEditorModalProps) => {
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
@@ -139,10 +141,19 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
         setFiles((prev) => prev.map((file) => (file.path === activeFile?.path ? { ...file, text } : file)));
     };
 
+    const startNewFile = () => {
+        setNewPath('');
+        setNewPathError(undefined);
+    };
+
+    const cancelNewFile = () => {
+        setNewPath(undefined);
+        setNewPathError(undefined);
+    };
+
     const commitNewPath = () => {
         if (newPath === undefined || !newPath.trim()) {
-            setNewPath(undefined);
-            setNewPathError(undefined);
+            cancelNewFile();
             return;
         }
         const path = normalizeSkillFilePath(newPath);
@@ -150,8 +161,16 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
             setNewPathError(c('collider_2025:Error').t`Use a relative path, like references/guide.md`);
             return;
         }
+        if (newPath.trim().endsWith('/')) {
+            setNewPathError(c('collider_2025:Error').t`Add a file name after the folder, like ${path}/notes.md`);
+            return;
+        }
         if (files.some((file) => file.path === path)) {
             setNewPathError(c('collider_2025:Error').t`A file with this path already exists`);
+            return;
+        }
+        if (files.some((file) => isInFolder(path, file.path))) {
+            setNewPathError(c('collider_2025:Error').t`A folder with this name already exists`);
             return;
         }
         if (isBlockedSkillFile(path)) {
@@ -334,7 +353,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                                     <button
                                         type="button"
                                         className="skill-editor__add-file flex flex-nowrap items-center gap-2 border-none bg-transparent"
-                                        onClick={() => setNewPath('')}
+                                        onClick={startNewFile}
                                     >
                                         <LumoIcon name="Plus" size={14} />
                                         {c('collider_2025:Action').t`Add file`}
@@ -352,18 +371,19 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                                             }}
                                             onKeyDown={(event) => {
                                                 if (event.key === 'Enter') commitNewPath();
-                                                if (event.key === 'Escape') {
-                                                    setNewPath(undefined);
-                                                    setNewPathError(undefined);
-                                                }
+                                                if (event.key === 'Escape') cancelNewFile();
                                             }}
                                             onBlur={commitNewPath}
                                             placeholder="path/to/file.md"
                                             aria-label={c('collider_2025:Label').t`New file path`}
                                             error={!!newPathError}
                                         />
-                                        {newPathError && (
+                                        {newPathError ? (
                                             <p className="m-0 mt-1 text-xs color-danger">{newPathError}</p>
+                                        ) : (
+                                            <p className="m-0 mt-1 text-xs color-hint">
+                                                {c('collider_2025:Info').t`Use / to put it in a folder.`}
+                                            </p>
                                         )}
                                     </li>
                                 )}
@@ -381,7 +401,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                     ) : (
                         <div className="flex flex-column flex-nowrap flex-1 min-w-0">
                             <div className="skill-editor__file-header skill-editor__file-header--single flex flex-nowrap items-center justify-end gap-2">
-                                <Button size="small" shape="ghost" onClick={() => setNewPath('')}>
+                                <Button size="small" shape="ghost" onClick={startNewFile}>
                                     <span className="flex flex-nowrap items-center gap-1">
                                         <LumoIcon name="Plus" size={14} />
                                         {c('collider_2025:Action').t`Add file`}
@@ -394,14 +414,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                     )}
                 </div>
             </ModalTwoContent>
-            <ModalTwoFooter>
-                <span className="skill-editor__status text-xs color-weak">
-                    {loadingFiles
-                        ? c('collider_2025:Info').t`Loading…`
-                        : existing
-                          ? null
-                          : c('collider_2025:Info').t`Draft`}
-                </span>
+            <ModalTwoFooter className="justify-end">
                 <div className="flex flex-nowrap gap-2">
                     <Button onClick={modalProps.onClose}>{c('collider_2025:Action').t`Cancel`}</Button>
                     <Button color="norm" onClick={handleSave} loading={saving} disabled={loadingFiles}>

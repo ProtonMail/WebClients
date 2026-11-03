@@ -7,6 +7,7 @@ import {
     type SkillConnectorCategory,
     type SkillFileDraft,
     type SkillPluginInfo,
+    type SkillSource,
     type SubSkill,
 } from './types';
 
@@ -201,6 +202,13 @@ export const deriveBundleInfo = (
         bundleIndexVersion: BUNDLE_INDEX_VERSION,
     };
 };
+
+/** Proton plugins have no manifest file, so they keep the plugin info stored on the skill. */
+export const resolvePluginInfo = (
+    source: SkillSource,
+    fromFiles: SkillPluginInfo | undefined,
+    stored: SkillPluginInfo | undefined
+): SkillPluginInfo | undefined => fromFiles ?? (source === 'proton' ? stored : undefined);
 
 /** A plugin bundles several skills, and may have no root SKILL.md of its own. */
 export const isSkillPlugin = (skill: Pick<Skill, 'plugin' | 'subSkills'>) =>

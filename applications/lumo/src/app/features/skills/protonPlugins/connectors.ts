@@ -8,7 +8,7 @@ export const CHAT: ProtonPluginConnector = { category: 'Chat', placeholder: '~~c
 export const CLOUD_STORAGE: ProtonPluginConnector = {
     category: 'Cloud storage',
     placeholder: '~~cloud storage',
-    included: ['Google Drive', 'Dropbox'],
+    included: ['Proton Drive'],
 };
 
 export const LOCAL_FILES: ProtonPluginConnector = {
@@ -34,7 +34,7 @@ export const DESIGN_TOOL: ProtonPluginConnector = { category: 'Design', placehol
 export const DATA_WAREHOUSE: ProtonPluginConnector = {
     category: 'Data warehouse',
     placeholder: '~~data warehouse',
-    included: ['Snowflake', 'Databricks', 'BigQuery'],
+    included: ['Snowflake', 'Databricks'],
 };
 
 export const SOURCE_CONTROL: ProtonPluginConnector = {

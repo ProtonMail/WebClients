@@ -46,7 +46,7 @@ export type SkillConnectorCategory = {
     alternatives: string[];
 };
 
-/** From `.claude-plugin/plugin.json`. */
+/** From `.claude-plugin/plugin.json` of an uploaded plugin, or from the catalog for Proton plugins. */
 export type SkillPluginInfo = {
     version?: string;
     author?: string;
@@ -126,4 +126,6 @@ export type SkillDraft = Omit<SkillPriv, DerivedSkillFields> & {
     enabled?: boolean;
     files: SkillFileDraft[];
     legacyAgentId?: string;
+    /** Only for Proton plugins, which have no manifest file. */
+    plugin?: SkillPluginInfo;
 };

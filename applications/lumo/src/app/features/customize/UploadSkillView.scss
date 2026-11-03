@@ -1,31 +1,43 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .upload-skill-dropzone {
-	min-block-size: rem(100);
-	padding: rem(24);
+	min-block-size: rem(180);
+	padding-block: rem(32);
+	padding-inline: rem(24);
 	border: 1px dashed var(--border-norm);
 	border-radius: rem(12);
+	background-color: var(--background-norm);
 	color: var(--text-weak);
-	cursor: pointer;
 	text-align: center;
+	transition:
+		border-color 0.15s ease,
+		background-color 0.15s ease;
 
 	&:hover,
-	&:focus-visible,
 	&.is-dragging {
 		border-color: var(--interaction-norm);
 		background-color: var(--interaction-default-hover);
 	}
+
+	&.is-dragging .upload-skill-dropzone-icon {
+		color: var(--interaction-norm);
+	}
 }
 
-.upload-skill-results > li {
-	padding-block: rem(10);
-	border-block-end: 1px solid var(--border-weak);
+.upload-skill-dropzone-icon {
+	inline-size: rem(48);
+	block-size: rem(48);
+	background-color: var(--background-weak);
+	color: var(--text-norm);
 }
 
-.upload-skill-scan {
-	padding-block: rem(14);
-	padding-inline: rem(14);
-	border: 1px solid var(--border-weak);
-	border-radius: rem(12);
-	background-color: var(--background-norm);
+// Lines the details up with the text next to the row's 18px icon.
+.upload-skill-result-details {
+	padding-inline-start: rem(30);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.upload-skill-dropzone {
+		transition: none;
+	}
 }
