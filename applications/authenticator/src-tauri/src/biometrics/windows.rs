@@ -22,7 +22,7 @@ impl super::BiometricsTrait for Biometrics {
     fn can_check_presence(&self) -> Result<bool, isize> {
         let available = UserConsentVerifier::CheckAvailabilityAsync()
             .map_err(|_| -1_isize)?
-            .get()
+            .join()
             .map_err(|_| -1_isize)?;
 
         match available {
@@ -39,7 +39,7 @@ impl super::BiometricsTrait for Biometrics {
             .and_then(|interop| unsafe {
                 interop.RequestVerificationForWindowAsync(self.handle, &HSTRING::from(reason))
             })
-            .and_then(|operation: IAsyncOperation<UserConsentVerificationResult>| operation.get())
+            .and_then(|operation: IAsyncOperation<UserConsentVerificationResult>| operation.join())
             .map_err(|_| -1_isize)?;
 
         match result {
