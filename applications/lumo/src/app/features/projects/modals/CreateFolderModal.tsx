@@ -12,6 +12,7 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 
+import { useNativeComposerVisibilityApi } from '../../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import type { DriveBrowserHandle } from '../../../components/Files/DriveBrowser/DriveBrowser';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
 import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
@@ -28,6 +29,7 @@ export const CreateFolderModal = ({ open, folderId, driveBrowserRef, onClose }: 
     const { createFolder } = useDriveSDK();
     const folderName = useUncontrolledField<HTMLInputElement>('');
     const [loading, withLoading] = useLoading();
+    useNativeComposerVisibilityApi({ hideComposer: open });
 
     const handleClose = () => {
         folderName.reset('');

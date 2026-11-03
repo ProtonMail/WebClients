@@ -12,6 +12,7 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useNativeComposerVisibilityApi } from '../../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
 import { useLumoDispatch } from '../../../redux/hooks';
 import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
@@ -39,6 +40,7 @@ export const ProjectEditModal = ({
     const instructions = useUncontrolledField<HTMLTextAreaElement>(currentInstructions || '');
     const [selectedIcon, setSelectedIcon] = useState<string>(currentIcon || DEFAULT_PROJECT_ICON);
     const dispatch = useLumoDispatch();
+    useNativeComposerVisibilityApi({ hideComposer: Boolean(modalProps.open) });
 
     const handleSave = () => {
         const updatedSpace = {
