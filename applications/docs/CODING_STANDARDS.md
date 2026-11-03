@@ -19,6 +19,24 @@ These packages are being phased out; development happens inside the two apps.
 
 - Use named exports. The only default exports are components loaded through `React.lazy()`, and the client's `page.tsx` files.
 
+### Drive SDK
+
+For managing files and folders we use Drive SDK instead of legacy `drive-store` package (which should not be used).
+
+Drive SDK documentation is available at https://drive.gitlab-pages.protontech.ch/sdk/ and TypeScript API documentation at https://drive.gitlab-pages.protontech.ch/sdk/client/reference/typescript/
+
+We are not allowed to import "private" code from @proton/drive e.g. @proton/drive/modules - use only what's exported for public
+
+### Scope of modifications
+
+We are not allowed to modify code that belongs to:
+
+- `applications/drive`
+- `packages/drive`
+- `packages/drive-store`
+
+It is advised not to modify monorepo-wide shared packages e.g. `packages/components` to reduce blast radius of the MR.
+
 ### React components
 
 - Declare components as named functions. Pass a named function to `forwardRef` and `memo` too (it keeps names in React DevTools).
@@ -208,10 +226,6 @@ Rules that follow:
 - Host shell: log with the editor `Application`'s `logger`. Standalone editors: use the injected `logger` and `reportError` from their dependencies.
 - Combine classes with bare `clsx` inside the standalone editors, `@proton/utils/clsx` elsewhere.
 - The standalone editors use no Proton classes, since `src/standalone-doc` and `src/standalone-sheet` load only Tailwind. Write colours, borders and shadows as CSS-variable utilities (`bg-[--background-norm]`, `border-[--border-weak]`, `text-[--text-weak]`, `shadow-[shadow:--shadow-norm]`); Docs defines its variables in `Containers/Docs/docs.scss`. A shadow variable needs the `shadow:` hint, or Tailwind reads it as a shadow colour.
-
-## Drive SDK
-
-- We are not allowed to import "private" code from @proton/drive e.g. @proton/drive/modules - use only what's exported for public
 
 ## Documentation
 
