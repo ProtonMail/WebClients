@@ -123,9 +123,6 @@
       "Create key": [
         "Crea chiave"
       ],
-      "Current plan": [
-        "Piano attuale"
-      ],
       "Decrease": [
         "Riduci"
       ],
@@ -569,6 +566,9 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porta la produttività delle email a nuovi livelli. Lascia che ${ BRAND_NAME } Scribe ti aiuti a scrivere, rispondere e correggere le tue email."
+      ],
+      "Take email productivity to new levels. Let ${ LUMO_SHORT_APP_NAME } help you write, reply to, and proofread your emails.": [
+        "Porta la produttività delle email a nuovi livelli. Lascia che ${ LUMO_SHORT_APP_NAME } ti aiuti a scrivere, rispondere e correggere le tue email."
       ]
     },
     "b2b_trials_2025_Info": {
@@ -1056,9 +1056,6 @@
       ],
       "Creations": [
         "Creazione"
-      ],
-      "Custom ${ LUMO_SHORT_APP_NAME }s": [
-        "${ LUMO_SHORT_APP_NAME } personalizzati"
       ],
       "Dark": [
         "Scura"
@@ -1601,6 +1598,15 @@
       "Turning off memory will permanently delete all ${ memories.length } saved memories. You can turn on memory later, but the deleted memories cannot be recovered.": [
         "Disattivando la memoria eliminerai in modo permanente tutti i ${ memories.length } ricordi salvati. Potrai riattivare la memoria in seguito, ma i ricordi eliminati non potranno essere recuperati."
       ],
+      "What ${ LUMO_SHORT_APP_NAME } can look up when answering. Each project can change these for its own chats.": [
+        "Cosa può cercare ${ LUMO_SHORT_APP_NAME } quando risponde. Ogni progetto può modificare queste impostazioni per le proprie chat."
+      ],
+      "Whether ${ LUMO_SHORT_APP_NAME } can also look up files from other projects.": [
+        "Se ${ LUMO_SHORT_APP_NAME } è in grado di cercare anche file provenienti da altri progetti."
+      ],
+      "Which other chats can ${ LUMO_SHORT_APP_NAME } look up. Ghost chats are never searched.": [
+        "Quali altre chat può cercare ${ LUMO_SHORT_APP_NAME }? Le chat “ghost” non vengono mai cercate."
+      ],
       "You can learn more on the ${ protonBlogLink }.": [
         "Per saperne di più, visita il sito ${ protonBlogLink }."
       ],
@@ -1624,6 +1630,9 @@
       ]
     },
     "collider_2025: Error": {
+      "Automatic top-up could not be saved. Please try again.": [
+        "Non è stato possibile salvare la ricarica automatica. Riprova."
+      ],
       "Available models could not be loaded.": [
         "Impossibile caricare i modelli disponibili."
       ],
@@ -1681,11 +1690,17 @@
       "File uploaded but failed to add to knowledge base": [
         "File aggiunto con successo alla base di conoscenza"
       ],
+      "Monthly spending limit could not be saved. Please try again.": [
+        "Impossibile salvare il limite di spesa mensile. Riprovare."
+      ],
       "Name is required": [
         "Il nome è obbligatorio"
       ],
       "Name must be 191 characters or fewer": [
         "Il nome deve contenere al massimo 191 caratteri"
+      ],
+      "Only the organization's primary admin can change these settings.": [
+        "Solo l'amministratore principale dell'organizzazione può modificare queste impostazioni."
       ],
       "Please select a category to describe what went wrong with the generated text": [
         "Seleziona una categoria per descrivere cosa è andato storto con il testo generato"
@@ -1729,6 +1744,9 @@
       "This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${ LUMO_SHORT_APP_NAME } purring.": [
         "Questo progetto è pieno fino ai baffi. Elimina una conversazione per fare spazio a una nuova e far sì che ${ LUMO_SHORT_APP_NAME } continui a fare le fusa."
       ],
+      "Top-up amount must be between ${ formattedMinAmount } and ${ formattedMaxAmount }": [
+        "L'importo della ricarica deve essere compreso tra ${ formattedMinAmount } e ${ formattedMaxAmount }"
+      ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Esegui l'aggiornamento a ${ LUMO_SHORT_APP_NAME } Plus per chat illimitate, cronologia estesa, accesso a modelli AI avanzati e altro ancora."
       ],
@@ -1769,6 +1787,9 @@
       ]
     },
     "collider_2025: Error Message": {
+      "Even after summarizing earlier messages, this conversation and its files don't fit. Remove some files or start a new chat.": [
+        "Anche dopo aver riassunto i messaggi precedenti, questa conversazione e i relativi file non rientrano nei limiti consentiti. Elimina alcuni file oppure avvia una nuova chat."
+      ],
       "If retrying doesn't work, check back in a few minutes. In the meantime, we are doing our best to ensure your experience goes smoothly.": [
         "Se riprovare non funziona, riprova tra qualche minuto. Nel frattempo, stiamo facendo del nostro meglio per garantirti un'esperienza senza problemi."
       ],
@@ -1809,6 +1830,9 @@
       ],
       "Something went wrong": [
         "Si è verificato un errore"
+      ],
+      "This conversation is too long": [
+        "Questa conversazione è troppo lunga"
       ],
       "Too many requests": [
         "Troppe richieste"
@@ -1978,6 +2002,10 @@
       ],
       "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space. When it fills up, older messages are summarized — not deleted — so you can keep chatting. Your full chat history stays in the conversation.": [
         "${ LUMO_SHORT_APP_NAME } può elaborare una quantità limitata di informazioni per ogni conversazione. Qui puoi vedere cosa sta occupando quello spazio al momento. Quando lo spazio si esaurisce, i messaggi più vecchi vengono sintetizzati — non eliminati — in modo che tu possa continuare a chattare. La cronologia completa della chat rimane nella conversazione."
+      ],
+      "${ onDemandCount } large file is read on demand: ${ LUMO_SHORT_APP_NAME } looks up the parts it needs instead of loading it all.": [
+        "${ onDemandCount } file di grandi dimensioni viene letto su richiesta: ${ LUMO_SHORT_APP_NAME } recupera solo le parti necessarie invece di caricarle tutte.",
+        "${ onDemandCount } file di grandi dimensioni vengono letti su richiesta: ${ LUMO_SHORT_APP_NAME } recupera solo le parti necessarie invece di caricarli tutti."
       ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "${ urgentTotal } chat scadrà entro 24 ore",
@@ -2950,8 +2978,23 @@
       "90 days": [
         "90 giorni"
       ],
+      "All chats": [
+        "Tutte le chat"
+      ],
+      "All projects": [
+        "Tutti i progetti"
+      ],
       "Auto-detect": [
         "Auto-rilevamento"
+      ],
+      "Off": [
+        "Disattivo"
+      ],
+      "Same project only": [
+        "Solo lo stesso progetto"
+      ],
+      "This project": [
+        "Questo progetto"
       ]
     },
     "collider_2025: Personality": {
@@ -3091,6 +3134,15 @@
       "API requests are paused. Top up your balance to resume requests.": [
         "Le richieste API sono state sospese. Ricarica il tuo credito per riprendere le richieste."
       ],
+      "Automatic payments are off for your payment method.": [
+        "I pagamenti automatici sono disattivati per il tuo metodo di pagamento."
+      ],
+      "Automatic top-up failed. Update your payment method to resume automatic top-ups.": [
+        "La ricarica automatica non è andata a buon fine. Aggiorna il tuo metodo di pagamento per riprendere le ricariche automatiche."
+      ],
+      "Automatic top-up paused. Update your payment method to resume automatic top-ups.": [
+        "La ricarica automatica è stata sospesa. Aggiorna il metodo di pagamento per riprendere le ricariche automatiche."
+      ],
       "Blocked": [
         "Bloccato"
       ],
@@ -3105,6 +3157,9 @@
       ],
       "Organization API requests are paused. Contact your organization administrator to top up the balance.": [
         "Le richieste API dell'organizzazione sono state sospese. Contatta l'amministratore della tua organizzazione per ricaricare il credito."
+      ],
+      "The last payment did not go through.": [
+        "L'ultimo pagamento non è andato a buon fine."
       ],
       "Your API balance is running low. Top up your balance to avoid interruptions.": [
         "Il tuo credito API sta per esaurirsi. Ricarica il tuo credito per evitare interruzioni."
@@ -3220,8 +3275,14 @@
       "Automatic top-up enabled": [
         "Ricarica automatica abilitata"
       ],
+      "Automatic top-up failed": [
+        "Ricarica automatica non riuscita"
+      ],
       "Automatic top-up off": [
         "Ricarica automatica disattivata"
+      ],
+      "Automatic top-up paused": [
+        "Ricarica automatica sospesa"
       ],
       "Balance settings": [
         "Impostazioni bilanciate"
@@ -3230,6 +3291,9 @@
         "Crea app intelligenti."
       ],
       "Chat": [
+        "Chat"
+      ],
+      "Chats": [
         "Chat"
       ],
       "Check organization access": [
@@ -3334,6 +3398,9 @@
       "Parameters": [
         "Parametri"
       ],
+      "Past chats": [
+        "Chat precedenti"
+      ],
       "Pay as you go": [
         "Paga in base al consumo"
       ],
@@ -3348,6 +3415,9 @@
       ],
       "Project chats in Recent": [
         "Chat dei progetti in “Recenti”"
+      ],
+      "Project files": [
+        "Documenti del progetto"
       ],
       "Raw response": [
         "Risposta non elaborata"
@@ -3364,6 +3434,9 @@
       "Saved memories": [
         "Ricordi salvati"
       ],
+      "Search": [
+        "Cerca"
+      ],
       "Search index": [
         "Ricerca nell'indice"
       ],
@@ -3379,6 +3452,9 @@
       "Tokens per day": [
         "Token al giorno"
       ],
+      "Tools": [
+        "Strumenti"
+      ],
       "Top up balance": [
         "Ricaricare il saldo"
       ],
@@ -3393,6 +3469,9 @@
       ],
       "Visionary": [
         "Visionario"
+      ],
+      "Voice": [
+        "Voce"
       ],
       "Web search": [
         "Ricerca web"
@@ -3417,6 +3496,9 @@
       ],
       "Your API keys": [
         "Le tue chiavi API"
+      ],
+      "Your data": [
+        "I tuoi dati"
       ],
       "Your new API key": [
         "La tua nuova chiave API"
@@ -3589,6 +3671,9 @@
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } sta lavorando sodo"
       ],
+      "Automatic top-up needs a card or PayPal set as default payment method with automatic payments on.": [
+        "Per la ricarica automatica è necessario che una carta o un conto PayPal siano impostati come metodo di pagamento predefinito con l'opzione di pagamento automatico attivata."
+      ],
       "Conversation too long": [
         "Conversazione troppo lunga"
       ],
@@ -3671,6 +3756,9 @@
       ]
     },
     "collider_2025:Action": {
+      "Actions for ${ label }": [
+        "Azioni per ${ label }"
+      ],
       "Add column right": [
         "Aggiungi colonna a destra"
       ],
@@ -3685,6 +3773,9 @@
       ],
       "Add row below": [
         "Aggiungi riga sotto"
+      ],
+      "Add skill": [
+        "Aggiungi abilità"
       ],
       "Add to favorites": [
         "Aggiungi ai preferiti"
@@ -3745,6 +3836,9 @@
       ],
       "Code block": [
         "Blocco di codice"
+      ],
+      "Connector settings": [
+        "Impostazioni del connettore"
       ],
       "Continue to next question": [
         "Passa alla domanda successiva"
@@ -3839,6 +3933,9 @@
       "Edit project": [
         "Modifica il progetto"
       ],
+      "Enable notifications": [
+        "Attiva le notifiche"
+      ],
       "Exit full screen": [
         "Esci dallo schermo intero"
       ],
@@ -3905,6 +4002,9 @@
       "Manage Drive folder link": [
         "Gestisci il link alla cartella di Drive"
       ],
+      "Manage skills": [
+        "Gestire le competenze"
+      ],
       "Markdown": [
         "Riduzione di prezzo"
       ],
@@ -3949,6 +4049,12 @@
       ],
       "Open scheduled task: ${ name }": [
         "Apri attività pianificata: ${ name }"
+      ],
+      "Open Settings": [
+        "Apri Impostazioni"
+      ],
+      "Open System Settings": [
+        "Apri Impostazioni di sistema"
       ],
       "Open task": [
         "Apri attività"
@@ -4004,11 +4110,17 @@
       "Remove from favorites": [
         "Rimuovi dai preferiti"
       ],
+      "Remove from this task": [
+        "Rimuovi da questa attività"
+      ],
       "Rename chat": [
         "Rinomina la chat"
       ],
       "Request a shorter, more focused response": [
         "Richiedi una risposta più breve e concisa."
+      ],
+      "Reset": [
+        "Azzera"
       ],
       "Retry": [
         "Riprova"
@@ -4057,6 +4169,9 @@
       ],
       "Show sidebar": [
         "Mostra barra laterale"
+      ],
+      "Skill settings": [
+        "Impostazioni delle competenze"
       ],
       "Skip": [
         "Salta"
@@ -4338,6 +4453,9 @@
       "Could not build HTML for PDF export.": [
         "Impossibile generare il codice HTML per l'esportazione in PDF."
       ],
+      "Could not enable desktop notifications. Please try again.": [
+        "Impossibile abilitare le notifiche sul desktop. Riprova."
+      ],
       "Could not find ${ CONVERSATIONS_JSON } or conversations-*.json inside the uploaded archive.": [
         "Non è stato possibile trovare ${ CONVERSATIONS_JSON } o i file conversations-*.json all'interno dell'archivio caricato."
       ],
@@ -4347,6 +4465,12 @@
       "Could not load creations.": [
         "Impossibile caricare le creazioni."
       ],
+      "Could not load skills": [
+        "Impossibile caricare le abilità"
+      ],
+      "Could not open notification settings. Please open System Settings manually.": [
+        "Impossibile aprire le impostazioni delle notifiche. Aprire manualmente le Impostazioni di sistema."
+      ],
       "Could not read this file.": [
         "Impossibile leggere questo file."
       ],
@@ -4355,6 +4479,9 @@
       ],
       "Could not start this task. Please try again.": [
         "Impossibile avviare questa attività. Riprovare."
+      ],
+      "Could not update this task. Reload the page and try again.": [
+        "Impossibile aggiornare questa attività. Aggiorna la pagina e riprova."
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "Connessione al database persa. Aggiorna la pagina per continuare."
@@ -4548,6 +4675,12 @@
       "${ LUMO_SHORT_APP_NAME } remembers your preferences, so each conversation can build on the last. It can also handle longer chats and larger documents.": [
         "${ LUMO_SHORT_APP_NAME } ricorda le tue preferenze, così ogni conversazione può basarsi sulla precedente. Può anche gestire chat più lunghe e documenti più grandi."
       ],
+      "${ LUMO_SHORT_APP_NAME } uses the skills you add here automatically.": [
+        "${ LUMO_SHORT_APP_NAME } uses the skills you add here automatically."
+      ],
+      "${ LUMO_SHORT_APP_NAME } uses these every time it runs your task.": [
+        "${ LUMO_SHORT_APP_NAME } li utilizza ogni volta che esegue la tua attività."
+      ],
       "${ name } completed.": [
         "${ name } completato."
       ],
@@ -4582,8 +4715,14 @@
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it's owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
         "Le IA delle Big Tech si basano sulla raccolta dei tuoi dati. Ma ${ LUMO_SHORT_APP_NAME } è diversa. È stata creata dagli scienziati che hanno sviluppato servizi innovativi e attenti alla privacy come ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }. Ed è di proprietà di un'organizzazione svizzera non profit, la cui missione è promuovere la privacy e non monetizzare mai i dati degli utenti."
       ],
+      "All available skills are added.": [
+        "Vengono aggiunte tutte le competenze disponibili."
+      ],
       "All messages and chat history": [
         "Tutti i messaggi e la cronologia chat"
+      ],
+      "All your chats, except ghost chats and projects that aren't searchable.": [
+        "Tutte le tue chat, ad eccezione delle chat fantasma e dei progetti che non sono ricercabili."
       ],
       "Almost ready…": [
         "Quasi pronto…"
@@ -4621,6 +4760,9 @@
       "Chats from your projects will appear here.": [
         "Le chat dei tuoi progetti verranno visualizzate qui."
       ],
+      "Chats outside this project can look up its chats and files.": [
+        "Le chat esterne a questo progetto possono visualizzarne le conversazioni e i file."
+      ],
       "Checking your plan, try again in a moment.": [
         "Verifica il tuo piano e riprova tra un attimo."
       ],
@@ -4632,6 +4774,9 @@
       ],
       "Code · ${ langLabel }": [
         "Codice · ${ langLabel }"
+      ],
+      "Connector unavailable": [
+        "Connettore non disponibile"
       ],
       "Conversation encrypted": [
         "Conversazione crittografata"
@@ -4687,6 +4832,9 @@
       "Edited by hand": [
         "Modificato a mano"
       ],
+      "Enable notifications to get notified when a task finishes or needs your attention.": [
+        "Attiva le notifiche per ricevere un avviso quando un'attività viene completata o richiede la tua attenzione."
+      ],
       "Example prompts shown when a conversation begins.": [
         "Suggerimenti di esempio mostrati all'inizio di una conversazione."
       ],
@@ -4701,6 +4849,9 @@
       ],
       "File attached": [
         "File allegato"
+      ],
+      "Files from all your projects.": [
+        "I file di tutti i tuoi progetti."
       ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "I file caricati in questo progetto verranno salvati nella cartella Drive collegata."
@@ -4729,6 +4880,9 @@
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Collega file da ${ DRIVE_APP_NAME } o caricali dal tuo computer."
       ],
+      "Loading skills": [
+        "Caricamento delle competenze"
+      ],
       "Loading…": [
         "Caricamento…"
       ],
@@ -4747,6 +4901,9 @@
       "No favorites yet. Star a chat to find it here quickly.": [
         "Nessun preferito al momento. Contrassegna una chat come preferita per trovarla rapidamente qui."
       ],
+      "No matching skills": [
+        "Nessuna competenza corrispondente"
+      ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Su questa scheda non sono presenti dettagli personali, ma solo il tuo punteggio di esposizione per area. Più è basso, meno dati hai condiviso."
       ],
@@ -4759,14 +4916,38 @@
       "No scheduled tasks yet.": [
         "Non ci sono ancora attività pianificate."
       ],
+      "No skills available yet. Manage skills to add or enable them.": [
+        "Non sono ancora disponibili competenze. Gestisci le competenze per aggiungerle o attivarle."
+      ],
+      "No skills or tools added.": [
+        "Non sono state aggiunte competenze né strumenti."
+      ],
+      "Notifications are off for ${ LUMO_SHORT_APP_NAME }. ": [
+        "Le notifiche sono disattivate per ${ LUMO_SHORT_APP_NAME }. "
+      ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "Su iPhone o iPad, apri Impostazioni → App → Safari e assicurati che l'opzione \"Blocca tutti i cookie\" sia disattivata, quindi ricarica."
+      ],
+      "Only chats in this project can look up its chats and files.": [
+        "Solo le chat di questo progetto possono visualizzare le proprie chat e i propri file."
+      ],
+      "Only the chat you're in.": [
+        "Solo la chat in cui ti trovi."
+      ],
+      "Only this project's files.": [
+        "Solo i file di questo progetto."
       ],
       "Open in panel • v${ versionNumber }": [
         "Apri nel pannello • v${ versionNumber }"
       ],
+      "Other chats in this project.": [
+        "Altre chat relative a questo progetto."
+      ],
       "PASTED": [
         "INCOLLATO"
+      ],
+      "Preparing questions": [
+        "Preparazione delle domande"
       ],
       "Preparing your canvas…": [
         "Preparazione della tela…"
@@ -4823,11 +5004,17 @@
       "Select one answer.": [
         "Seleziona una risposta."
       ],
+      "Skill unavailable": [
+        "Abilità non disponibile"
+      ],
       "Skipped": [
         "Saltati"
       ],
       "Some content, such as images and attachments, may not be included in the exported file.": [
         "Alcuni contenuti, come immagini e allegati, potrebbero non essere inclusi nel file esportato."
+      ],
+      "Some selected skills are unavailable. This task may run without them. Check your skills in settings.": [
+        "Alcune competenze selezionate non sono disponibili. Questa attività potrebbe essere eseguita anche senza di esse. Controlla le tue competenze nelle impostazioni."
       ],
       "Something went wrong analysing this export. Please try again.": [
         "Si è verificato un errore durante l'analisi di questa esportazione. Riprova."
@@ -4898,6 +5085,9 @@
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Usa il modello Max per lavori complessi o il modello Lite per le attività quotidiane. Scegli la modalità Veloce per risposte rapide o la modalità Ragionamento per domande più difficili."
       ],
+      "Use your general setting": [
+        "Utilizza le impostazioni generali"
+      ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Usare ${ DRIVE_APP_NAME } permette a ${ LUMO_SHORT_APP_NAME } di lavorare con file più grandi."
       ],
@@ -4909,6 +5099,9 @@
       ],
       "Webpage · HTML": [
         "Pagina web · HTML"
+      ],
+      "What ${ LUMO_SHORT_APP_NAME } can look up from this project's chats. Follows your general settings unless changed here.": [
+        "Cosa può visualizzare ${ LUMO_SHORT_APP_NAME } dalle chat di questo progetto. Segue le impostazioni generali, a meno che non vengano modificate qui."
       ],
       "When this task ran.": [
         "Quando questa attività è stata eseguita."
@@ -5156,6 +5349,9 @@
       "Feels Like": [
         "Temperatua Percipita"
       ],
+      "Files": [
+        "File"
+      ],
       "Files in Drive": [
         "File in Drive"
       ],
@@ -5297,6 +5493,9 @@
       "Out of 100": [
         "Su 100"
       ],
+      "Past chats": [
+        "Chat precedenti"
+      ],
       "Plotting purr-fect data…": [
         "Elaborazione di dati “fusa-tti”…"
       ],
@@ -5314,6 +5513,9 @@
       ],
       "Privacy maxxing": [
         "Massimizzazione della privacy"
+      ],
+      "Project content is searchable": [
+        "È possibile effettuare ricerche nei contenuti del progetto"
       ],
       "Project Instructions (optional)": [
         "Istruzioni del progetto (opzionale)"
@@ -5342,6 +5544,9 @@
       "Search library": [
         "Cerca nella libreria"
       ],
+      "Search skills": [
+        "Cerca per competenze"
+      ],
       "Selected:": [
         "Selezionato:"
       ],
@@ -5362,6 +5567,9 @@
       ],
       "Sifting through the meow-trics…": [
         "Analizzando le statistiche sui miagolii…"
+      ],
+      "Skill": [
+        "Competenze"
       ],
       "SSE": [
         "SSE"
@@ -5386,6 +5594,9 @@
       ],
       "Today, ${ time }": [
         "Oggi, ${ time }"
+      ],
+      "Unavailable skill": [
+        "Abilità non disponibile"
       ],
       "Untitled chat": [
         "Chat senza titolo"
@@ -5542,6 +5753,9 @@
       ],
       "Search library": [
         "Cerca nella libreria"
+      ],
+      "Search skills": [
+        "Capacità di ricerca"
       ],
       "Sign in required": [
         "Login richiesto"
@@ -5944,6 +6158,9 @@
       "Read ${ path } and sent contents back": [
         "Leggi ${ path } e restituisci il contenuto"
       ],
+      "Read a file": [
+        "Leggere un file"
+      ],
       "Read a web page": [
         "Lettura di una pagina web"
       ],
@@ -5952,6 +6169,9 @@
       ],
       "Reading ${ path }...": [
         "Lettura di ${ path }..."
+      ],
+      "Reading a file...": [
+        "Lettura di un file..."
       ],
       "Reading a web page": [
         "Lettura di una pagina web"
@@ -5986,6 +6206,9 @@
       "Searched the web for \"${ query }\"": [
         "Searched the web for \"${ query }\""
       ],
+      "Searched your files and chats": [
+        "Ho cercato nei tuoi file e nelle tue chat"
+      ],
       "Searching files for \"${ query }\"...": [
         "Ricerca dei file contenenti “${ query }”..."
       ],
@@ -6000,6 +6223,12 @@
       ],
       "Searching the web...": [
         "Ricerca sul web..."
+      ],
+      "Searching your files and chats": [
+        "Ricerca tra i tuoi file e le tue chat"
+      ],
+      "Searching your files and chats...": [
+        "Ricerca in corso tra i tuoi file e le tue chat..."
       ],
       "Thinking": [
         "Pensando"
@@ -6198,6 +6427,9 @@
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "Impossibile avviare ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "About search": [
+        "Informazioni sulla ricerca"
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Un assistente IA dovrebbe darti più controllo, non sfruttarti per i tuoi dati."
@@ -6400,6 +6632,9 @@
       "Scheduled · ${ name }": [
         "In programma · ${ name }"
       ],
+      "Search": [
+        "Cerca"
+      ],
       "See your AI paper trail": [
         "Vedi la tua traccia dell'IA"
       ],
@@ -6411,6 +6646,9 @@
       ],
       "Sign in to create projects": [
         "Accedi per creare progetti"
+      ],
+      "Skills & tools": [
+        "Competenze e strumenti"
       ],
       "Sort by": [
         "Ordina per"
@@ -7801,6 +8039,9 @@
       "The minimum donation amount is ${ price }": [
         "L'importo minimo della donazione è ${ price }"
       ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Non è stato possibile calcolare il totale. Modifica l'importo e riprova."
+      ],
       "The uploaded file does not match the original. Please try again.": [
         "Il file caricato non corrisponde all'originale. Riprova."
       ],
@@ -8048,6 +8289,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include l'assistente di scrittura ${ BRAND_NAME } Scribe."
+      ],
+      "${ LUMO_APP_NAME } includes the writing assistant": [
+        "${ LUMO_APP_NAME } include l'assistente di scrittura."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } è una soluzione di videoconferenza crittografata end-to-end. Aggiungila al tuo piano per ospitare riunioni sicure."
@@ -8886,6 +9130,9 @@
       "Thomas": [
         "Mario"
       ],
+      "Total": [
+        "Totale"
+      ],
       "Verification code": [
         "Codice di verifica"
       ],
@@ -9409,6 +9656,9 @@
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Aggiungi l'assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
+      "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Aggiungi assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add-on with free trial": [
         "Componente aggiuntivo con prova gratuita"
       ],
@@ -9538,6 +9788,9 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
+        "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } con accesso limitato"
       ],
       "${ n } calendar": [
         "${ n } calendario",
@@ -10563,6 +10816,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "È possibile acquistare solo un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "Paid from your account credit.": [
+        "Addebitato sul credito del tuo conto."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Paga con ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -10718,12 +10974,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Il tuo account è troppo vecchio per partecipare all'iniziativa Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "La tua valuta è stata cambiata in euro (€) perché ${ IDEAL_WERO_BRAND_NAME } supporta esclusivamente i pagamenti in euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "La tua valuta è stata cambiata in euro (€) perché i bonifici bancari SEPA supportano solo pagamenti in euro."
       ],
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
