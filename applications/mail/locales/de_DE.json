@@ -397,9 +397,6 @@
       "Create new password": [
         "Neues Passwort erstellen"
       ],
-      "Current plan": [
-        "Aktuelles Abonnement"
-      ],
       "Custom": [
         "Benutzerdefiniert"
       ],
@@ -1580,8 +1577,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -7891,7 +7887,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -11619,17 +11616,11 @@
       "Exact URL matching rule": [
         "Genaue URL-Übereinstimmungsregel"
       ],
-      "Fw:": [
-        "WG:"
-      ],
       "Never fill with this exact URL": [
         "Niemals mit dieser genauen URL ausfüllen"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ senderString } schrieb am ${ date }:"
-      ],
-      "Re:": [
-        "AW:"
       ],
       "Regular expression rule": [
         "Reguläre-Ausdruck-Regel"
@@ -13657,12 +13648,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Dein Konto ist zu alt für die „Born Private“-Initiative."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Deine Währung wurde zu Euro (€) geändert, da ${ IDEAL_WERO_BRAND_NAME } nur Zahlungen in Euro unterstützt."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."

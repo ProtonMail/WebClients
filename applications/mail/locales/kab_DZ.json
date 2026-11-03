@@ -280,9 +280,6 @@
       "Create new message": [
         "Rnu izen amaynut"
       ],
-      "Current plan": [
-        "Aɣawas amiran"
-      ],
       "Custom": [
         "Yugen"
       ],
@@ -1095,6 +1092,9 @@
       ],
       "Trust": [
         "Amen"
+      ],
+      "Trust key": [
+        "Tasarut yettwamanen"
       ],
       "Trust public key": [
         "Tasarut tazayezt yettwamanen"
@@ -4960,7 +4960,8 @@
         "Yettwaɣellet seg ukaram agejdan"
       ],
       "Insert image": [
-        "Ger tugna"
+        "Ger tugna",
+        "Ger tugniwn"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -6830,14 +6831,8 @@
       ]
     },
     "Message": {
-      "Fw:": [
-        "Welleh:"
-      ],
       "On ${ date }, ${ senderString } wrote:": [
         "Deg ${ date }, ${ senderString } t/yura :"
-      ],
-      "Re:": [
-        "Err:"
       ]
     },
     "Message display when a new app version is available": {

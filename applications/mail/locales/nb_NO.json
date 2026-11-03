@@ -391,9 +391,6 @@
       "Create new password": [
         "Opprett nytt passord"
       ],
-      "Current plan": [
-        "Gjeldende plan"
-      ],
       "Custom": [
         "Tilpasset"
       ],
@@ -1541,8 +1538,7 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
+        "Klarer nøkkel"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -4210,6 +4206,9 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Gi personer mulighet til å avtale time med deg direkte fra e-post, uten at du trenger å få og motta svar."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Lar deg umiddelbart legge til møtekoblinger i hendelsesinvitasjonene dine."
@@ -7658,6 +7657,9 @@
       "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
         "Hei, Lumo! Jeg skal bort en stund og vil konfigurere et automatisk svar i mellomtiden. Spør meg om datoene og hva som skal stå i svaret, og vis meg meldingen før du slår dette på."
       ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hei Lumo, vis meg hvordan du kan hjelpe meg med postkassen min. Hva slags ting kan jeg be deg om å gjøre, og hva kan du ikke hjelpe med?"
+      ],
       "Hide original message": [
         "Skjul opprinnelig melding"
       ],
@@ -7750,7 +7752,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -11376,17 +11379,11 @@
       "Exact URL matching rule": [
         "Regel for nøyaktig URL-samsvar"
       ],
-      "Fw:": [
-        "Vs:"
-      ],
       "Never fill with this exact URL": [
         "Fyll aldri med denne nøyaktige nettadressen"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "På ${ date }, skrev ${ senderString }:"
-      ],
-      "Re:": [
-        "Sv:"
       ],
       "Regular expression rule": [
         "Regel for regulært uttrykk"
@@ -13277,6 +13274,9 @@
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Dette abonnementet støtter ikke medlemmene på kontoen din."
+      ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
       ],
@@ -13297,12 +13297,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du vil snart bli omdirigert for å bekrefte betalingen din."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Valutaen er endret til euro (€) fordi ${ IDEAL_WERO_BRAND_NAME } kun støtter betalinger i euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
@@ -13340,6 +13334,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Noe gikk galt. Google Pay-verifiseringen mislyktes."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved å bekrefte gir du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, tillatelse til å innkreve fremtidige betalinger for abonnementet ditt fra denne bankkontoen via SEPA AvtaleGiro, og banken din til å debitere disse betalingene. Første betaling gjøres nå av ${ IDEAL_WERO_BRAND_NAME }. Abonnementet fornyes automatisk inntil du kansellerer. Vi varsler deg før hver innkreving. For innkreving via AvtaleGiro kan du be om refusjon fra banken innen 8 uker etter debiteringsdatoen, i henhold til vilkårene i avtalen med banken din. Dette gjelder ikke for ${ IDEAL_WERO_BRAND_NAME }-betalingen du foretar nå."
       ]
     },
     "Payments.info": {

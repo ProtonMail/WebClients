@@ -397,9 +397,6 @@
       "Create new password": [
         "Opret ny adgangskode"
       ],
-      "Current plan": [
-        "Nuværende abonnement"
-      ],
       "Custom": [
         "Tilpas"
       ],
@@ -1580,8 +1577,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -7891,7 +7887,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -11619,17 +11616,11 @@
       "Exact URL matching rule": [
         "Nøjagtig URL-matchende regel"
       ],
-      "Fw:": [
-        "Vs:"
-      ],
       "Never fill with this exact URL": [
         "Udfyld aldrig med denne nøjagtige URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, skrev ${ senderString }:"
-      ],
-      "Re:": [
-        "Sv:"
       ],
       "Regular expression rule": [
         "Regel for regulært udtryk"
@@ -13657,12 +13648,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Din konto er for gammel til Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Din valuta er blevet ændret til euro (€), fordi ${ IDEAL_WERO_BRAND_NAME } kun understøtter betalinger i euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Din valuta er blevet ændret til euro (€), fordi SEPA-bankoverførsler kun understøtter betalinger i euro."
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"

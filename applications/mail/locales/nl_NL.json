@@ -385,9 +385,6 @@
       "Create new password": [
         "Nieuw wachtwoord instellen"
       ],
-      "Current plan": [
-        "Huidig abonnement"
-      ],
       "Custom": [
         "Aangepast"
       ],
@@ -1544,8 +1541,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -7718,7 +7714,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -11227,17 +11224,11 @@
       "Exact URL matching rule": [
         "Exacte URL-matchregel"
       ],
-      "Fw:": [
-        "Fw:"
-      ],
       "Never fill with this exact URL": [
         "Nooit invullen met deze exacte URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "Op ${ date } schreef ${ senderString }:"
-      ],
-      "Re:": [
-        "Re:"
       ],
       "Regular expression rule": [
         "Reguliere expressieregel"
@@ -13150,12 +13141,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Binnenkort wordt u doorgestuurd om uw betaling te verifiëren."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Uw valuta is gewijzigd naar euro's (€), omdat ${ IDEAL_WERO_BRAND_NAME } alleen betalingen in euro's ondersteunt."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Uw valuta is gewijzigd naar euro (€) omdat SEPA-bankoverschrijvingen alleen betalingen in euro ondersteunen."
       ],
       "Your payment is still being processed": [
         "Uw betaling wordt nog verwerkt"

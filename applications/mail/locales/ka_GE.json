@@ -385,9 +385,6 @@
       "Create new password": [
         "ახალი პაროლის შექმნა"
       ],
-      "Current plan": [
-        "მიმდინარე ტარიფი"
-      ],
       "Custom": [
         "ხელით"
       ],
@@ -1514,8 +1511,7 @@
         "ნდობა"
       ],
       "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
+        "გასაღების სანდოობა"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -7522,7 +7518,8 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა"
+        "გამოსახულების ჩასმა",
+        "გამოსახულებების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -10769,17 +10766,11 @@
       "Exact URL matching rule": [
         "ზუსტი URL შესაბამისობის წესი"
       ],
-      "Fw:": [
-        "გადა:"
-      ],
       "Never fill with this exact URL": [
         "არასოდეს შეავსო ამ ზუსტი URL-ით"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ senderString } -მა ${ date }-ზე დაწერა:"
-      ],
-      "Re:": [
-        "პას:"
       ],
       "Regular expression rule": [
         "რეგულარული გამოსახულების წესი"
@@ -12654,9 +12645,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "მალე გადაგამისამართებთ თქვენი გადახდის გადასამოწმებლად."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "თქვენი ვალუტა ევროზე (€) შეიცვალა, რადგან SEPA საბანკო გადარიცხვები მხოლოდ ევროში გადახდებს უჭერს მხარს."
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"

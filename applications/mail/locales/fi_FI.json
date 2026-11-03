@@ -385,9 +385,6 @@
       "Create new password": [
         "Luo uusi salasana"
       ],
-      "Current plan": [
-        "Nykyinen tilaus"
-      ],
       "Custom": [
         "Mukautettu"
       ],
@@ -1526,8 +1523,7 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
+        "Luota avaimeen"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -7576,7 +7572,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -10893,17 +10890,11 @@
       "Exact URL matching rule": [
         "Tarkka URL-vastaavuussääntö"
       ],
-      "Fw:": [
-        "Vl:"
-      ],
       "Never fill with this exact URL": [
         "Älä koskaan syötä juuri tätä URL-osoitetta"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, ${ senderString } kirjoitti:"
-      ],
-      "Re:": [
-        "Vs:"
       ],
       "Regular expression rule": [
         "Säännöllisen lausekkeen sääntö"
@@ -12789,9 +12780,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Sinut ohjataan pian maksun vahvistamiseen."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Valuuttanne on vaihdettu euroiksi (€), koska SEPA-pankkisiirrot tukevat vain euroissa tehtäviä maksuja."
       ],
       "Your payment is still being processed": [
         "Maksuasi käsitellään vielä"

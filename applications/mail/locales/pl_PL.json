@@ -387,9 +387,6 @@
       "Create new password": [
         "Utwórz nowe hasło"
       ],
-      "Current plan": [
-        "Obecny plan"
-      ],
       "Custom": [
         "Niestandardowe"
       ],
@@ -1522,10 +1519,7 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufany klucz",
-        "Zaufane klucze",
-        "Zaufanych kluczy",
-        "Zaufane klucze"
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -7776,7 +7770,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -11106,17 +11103,11 @@
       "Exact URL matching rule": [
         "Reguła dopasowania dokładnego adresu URL"
       ],
-      "Fw:": [
-        "Fw:"
-      ],
       "Never fill with this exact URL": [
         "Nigdy nie uzupełniaj tym dokładnym adresem URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, ${ senderString } napisał(a):"
-      ],
-      "Re:": [
-        "Re:"
       ],
       "Regular expression rule": [
         "Reguła wyrażenia regularnego"
@@ -13065,9 +13056,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Wkrótce zostaniesz przekierowany w celu zweryfikowania płatności."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Twoja waluta została zmieniona na euro (€), ponieważ przelewy bankowe SEPA obsługują tylko płatności w euro."
       ],
       "Your payment is still being processed": [
         "Twoja płatność jest wciąż przetwarzana"

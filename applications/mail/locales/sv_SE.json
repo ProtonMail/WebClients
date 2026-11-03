@@ -397,9 +397,6 @@
       "Create new password": [
         "Skapa nytt lösenord"
       ],
-      "Current plan": [
-        "Nuvarande paket"
-      ],
       "Custom": [
         "Anpassad"
       ],
@@ -1565,8 +1562,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -7766,7 +7762,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -11344,17 +11341,11 @@
       "Exact URL matching rule": [
         "Matchningsregel för exakt URL"
       ],
-      "Fw:": [
-        "Vb:"
-      ],
       "Never fill with this exact URL": [
         "Fyll aldrig med denna exakta URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "Den ${ date } skrev ${ senderString }:"
-      ],
-      "Re:": [
-        "Svar:"
       ],
       "Regular expression rule": [
         "Regel för reguljärt uttryck"
@@ -13292,12 +13283,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du kommer snart att omdirigeras för att verifiera din betalning."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Din valuta har ändrats till euro (€) eftersom ${ IDEAL_WERO_BRAND_NAME } endast stöder betalningar i euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Din valuta har ändrats till euro (€) eftersom SEPA-banköverföringar endast stöder betalningar i euro."
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
