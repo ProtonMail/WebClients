@@ -1,5 +1,5 @@
 import Logger from "electron-log";
-/* eslint-disable-next-line inbox-desktop/no-direct-electron-store-access */
+/* oxlint-disable-next-line inbox-desktop/no-direct-electron-store-access */
 import Store from "electron-store";
 
 const storeLogger = Logger.scope("store");

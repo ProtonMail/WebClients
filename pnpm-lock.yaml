@@ -2627,9 +2627,6 @@ importers:
       '@electron/fuses':
         specifier: 'catalog:'
         version: 1.8.0
-      '@eslint/js':
-        specifier: ^9.39.5
-        version: 9.39.5
       '@jest/globals':
         specifier: 'catalog:'
         version: 30.5.2(supports-color@11.0.0)
@@ -2639,6 +2636,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../../packages/oxlint-config
       '@proton/types':
         specifier: workspace:^
         version: link:../../packages/types
@@ -2675,21 +2675,9 @@ importers:
       electron:
         specifier: 43.8.3
         version: 43.8.3(supports-color@11.0.0)
-      eslint:
-        specifier: 'catalog:'
-        version: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
-      eslint-import-resolver-typescript:
-        specifier: 4.4.5
-        version: 4.4.5(eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0))(eslint-import-resolver-node@0.3.9(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
-      eslint-plugin-import-x:
-        specifier: ^4.17.1
-        version: 4.17.1(@typescript-eslint/utils@8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0))(eslint-import-resolver-node@0.3.9(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
       fork-ts-checker-webpack-plugin:
         specifier: 'catalog:'
         version: 9.1.0(@typescript/typescript6@6.0.2)(webpack@5.111.1)
-      globals:
-        specifier: ^14.0.0
-        version: 14.0.0
       jest:
         specifier: 'catalog:'
         version: 30.5.2(@types/node@24.19.0)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.17))(@types/node@24.19.0)(@typescript/typescript6@6.0.2))
@@ -2699,6 +2687,12 @@ importers:
       node-loader:
         specifier: ^2.1.0
         version: 2.1.0(webpack@5.111.1)
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.87.0(oxlint-tsgolint@7.0.2004)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2004
       prettier:
         specifier: 3.9.10
         version: 3.9.10
@@ -2711,9 +2705,6 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
-      typescript-eslint:
-        specifier: 'catalog:'
-        version: 8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
       webpack:
         specifier: 'catalog:'
         version: 5.111.1(@swc/core@1.16.18(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.0))(svgo@4.1.0)(webpack-cli@7.2.3)
@@ -42508,21 +42499,6 @@ snapshots:
       - supports-color
     optional: true
 
-  eslint-import-resolver-typescript@4.4.5(eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0))(eslint-import-resolver-node@0.3.9(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0):
-    dependencies:
-      debug: 4.4.3(supports-color@11.0.0)
-      eslint: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
-      eslint-import-context: 0.1.9(unrs-resolver@1.12.2)
-      get-tsconfig: 4.14.3
-      is-bun-module: 2.0.0
-      stable-hash-x: 0.2.0
-      tinyglobby: 0.2.17
-      unrs-resolver: 1.12.2
-    optionalDependencies:
-      eslint-plugin-import-x: 4.17.1(@typescript-eslint/utils@8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0))(eslint-import-resolver-node@0.3.9(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
-    transitivePeerDependencies:
-      - supports-color
-
   eslint-import-resolver-typescript@4.4.5(eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.71.2(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)(typescript@6.0.3))(eslint-import-resolver-node@0.3.9(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0):
     dependencies:
       debug: 4.4.3(supports-color@11.0.0)
@@ -42548,24 +42524,6 @@ snapshots:
       globals: 15.15.0
       lodash.memoize: 4.1.2
       semver: 7.8.5
-
-  eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0))(eslint-import-resolver-node@0.3.9(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0):
-    dependencies:
-      '@typescript-eslint/types': 8.71.2
-      comment-parser: 1.4.8
-      debug: 4.4.3(supports-color@11.0.0)
-      eslint: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
-      eslint-import-context: 0.1.9(unrs-resolver@1.12.2)
-      is-glob: 4.0.3
-      minimatch: 9.0.9
-      semver: 7.8.5
-      stable-hash-x: 0.2.0
-      unrs-resolver: 1.12.2
-    optionalDependencies:
-      '@typescript-eslint/utils': 8.71.2(@typescript/typescript6@6.0.2)(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)
-      eslint-import-resolver-node: 0.3.9(supports-color@11.0.0)
-    transitivePeerDependencies:
-      - supports-color
 
   eslint-plugin-import-x@4.17.1(@typescript-eslint/utils@8.71.2(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0)(typescript@6.0.3))(eslint-import-resolver-node@0.3.9(supports-color@11.0.0))(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))(supports-color@11.0.0):
     dependencies:
