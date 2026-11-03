@@ -535,11 +535,11 @@ const ApiBalanceCard = ({
     onTopUp: () => void;
     canTopUp: boolean;
 }) => {
-    const { settings, usage, autoTopUpStatus } = credits;
+    const { settings, spent, autoTopUpStatus } = credits;
     const { autoTopUp, spendingLimit } = settings;
     const [settingsModalProps, setSettingsModalOpen, renderSettingsModal] = useModalState();
 
-    const spendingLimitSummary = getSpendingLimitSummary(usage, spendingLimit, currency);
+    const spendingLimitSummary = getSpendingLimitSummary(spent, autoTopUp, spendingLimit, currency);
 
     return (
         <section
@@ -570,12 +570,7 @@ const ApiBalanceCard = ({
                         )}
                     </div>
                     {canTopUp && (
-                        <Button
-                            color="norm"
-                            className="shrink-0"
-                            disabled={topUpDisabled || spendingLimitSummary.isOverLimit}
-                            onClick={onTopUp}
-                        >
+                        <Button color="norm" className="shrink-0" disabled={topUpDisabled} onClick={onTopUp}>
                             {c('collider_2025: Action').t`Top up balance`}
                         </Button>
                     )}
@@ -586,7 +581,7 @@ const ApiBalanceCard = ({
                 )}
             </div>
 
-            {!isOrgMember && (
+            {showAutoTopUp && !isOrgMember && (
                 <div className="api-usage-balance-card__settings api-usage-balance-row flex flex-nowrap items-center gap-4">
                     <span className="api-usage-balance-row__icon relative flex flex-none items-center justify-center rounded-lg">
                         <LumoIcon name="RefreshCw" size={18} />
@@ -597,27 +592,22 @@ const ApiBalanceCard = ({
                         )}
                     </span>
                     <div className="flex flex-column gap-1 flex-1 min-w-0">
-                        {showAutoTopUp && (
-                            <>
-                                <strong className="color-norm">
-                                    {getAutoTopUpTitle(autoTopUp.enabled, autoTopUpStatus)}
-                                </strong>
-                                <span className="text-sm color-weak">
-                                    {autoTopUp.enabled
-                                        ? getAutoTopUpSummary(autoTopUp, currency)
-                                        : c('collider_2025: Info')
-                                              .t`Keep API requests running when your balance gets low.`}
-                                </span>
-                            </>
-                        )}
-                        <span
-                            className={clsx(
-                                'text-sm',
-                                spendingLimitSummary.isOverLimit ? 'color-danger text-semibold' : 'color-weak'
-                            )}
-                        >
-                            {spendingLimitSummary.text}
+                        <strong className="color-norm">{getAutoTopUpTitle(autoTopUp.enabled, autoTopUpStatus)}</strong>
+                        <span className="text-sm color-weak">
+                            {autoTopUp.enabled
+                                ? getAutoTopUpSummary(autoTopUp, currency)
+                                : c('collider_2025: Info').t`Keep API requests running when your balance gets low.`}
                         </span>
+                        {spendingLimitSummary && (
+                            <span
+                                className={clsx(
+                                    'text-sm',
+                                    spendingLimitSummary.isLimitReached ? 'color-danger text-semibold' : 'color-weak'
+                                )}
+                            >
+                                {spendingLimitSummary.text}
+                            </span>
+                        )}
                     </div>
                     {canManageBalance && !credits.loading && !credits.error && (
                         <Button
@@ -637,8 +627,7 @@ const ApiBalanceCard = ({
                     {...settingsModalProps}
                     settings={settings}
                     currency={currency}
-                    monthlySpend={usage}
-                    showAutoTopUp={showAutoTopUp}
+                    spent={spent}
                     canChargeAutoTopUp={canChargeAutoTopUp}
                     onSave={credits.saveSettings}
                 />

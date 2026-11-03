@@ -12,21 +12,19 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import Toggle from '@proton/components/components/toggle/Toggle';
 import type { Currency } from '@proton/payments/core/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import unique from '@proton/utils/unique';
 
 import { formatApiCurrency, parseApiAmount } from './apiKeysHelpers';
-import type { ApiBalanceSettingsFailure } from './useLumoCredits';
 
 const MIN_AUTO_TOP_UP_AMOUNT = 25;
 const MAX_AUTO_TOP_UP_AMOUNT = 100;
-const OUT_OF_RANGE_CODE = 2001;
 const NOT_PRIMARY_ADMIN_CODE = 2011;
 const MISSING_SCOPE_CODE = 9100;
 
 const getAmountRangeMessage = (currency: Currency) => {
     const formattedMinAmount = formatApiCurrency(MIN_AUTO_TOP_UP_AMOUNT, currency);
     const formattedMaxAmount = formatApiCurrency(MAX_AUTO_TOP_UP_AMOUNT, currency);
-    return c('collider_2025: Error').t`Top-up amount must be between ${formattedMinAmount} and ${formattedMaxAmount}`;
+    return c('collider_2025: Error')
+        .t`Top-up amount must be a whole amount between ${formattedMinAmount} and ${formattedMaxAmount}`;
 };
 
 const isSectionChanged = <Section extends { enabled: boolean }>(
@@ -125,33 +123,26 @@ const AmountField = ({
     </div>
 );
 
-const getSaveErrorMessage = ({ section, error }: ApiBalanceSettingsFailure, currency: Currency) => {
+const getSaveErrorMessage = (error: unknown) => {
     const { status, code } = getApiError(error);
     if (code === NOT_PRIMARY_ADMIN_CODE || (status === 403 && code === MISSING_SCOPE_CODE)) {
         return c('collider_2025: Error').t`Only the organization's primary admin can change these settings.`;
     }
-    if (section === 'autoTopUp' && code === OUT_OF_RANGE_CODE) {
-        return getAmountRangeMessage(currency);
-    }
-    return section === 'autoTopUp'
-        ? c('collider_2025: Error').t`Automatic top-up could not be saved. Please try again.`
-        : c('collider_2025: Error').t`Monthly spending limit could not be saved. Please try again.`;
+    return c('collider_2025: Error').t`Automatic top-up could not be saved. Please try again.`;
 };
 
 interface Props extends ModalStateProps {
     settings: ApiBalanceSettings;
     currency: Currency;
-    monthlySpend: number;
-    showAutoTopUp: boolean;
+    spent: number;
     canChargeAutoTopUp: boolean;
-    onSave: (changes: Partial<ApiBalanceSettings>) => Promise<ApiBalanceSettingsFailure[]>;
+    onSave: (settings: ApiBalanceSettings) => Promise<void>;
 }
 
 export const ApiBalanceSettingsModal = ({
     settings,
     currency,
-    monthlySpend,
-    showAutoTopUp,
+    spent,
     canChargeAutoTopUp,
     onSave,
     ...modalProps
@@ -162,7 +153,7 @@ export const ApiBalanceSettingsModal = ({
     const [limitEnabled, setLimitEnabled] = useState(openedSettings.spendingLimit.enabled);
     const [limit, setLimit] = useState(String(openedSettings.spendingLimit.limit));
     const [saving, setSaving] = useState(false);
-    const [failures, setFailures] = useState<ApiBalanceSettingsFailure[]>([]);
+    const [saveError, setSaveError] = useState<unknown>();
 
     const { threshold } = openedSettings.autoTopUp;
     const parsedAmount = parseApiAmount(amount);
@@ -172,36 +163,41 @@ export const ApiBalanceSettingsModal = ({
         Number.isInteger(parsedAmount) &&
         parsedAmount >= MIN_AUTO_TOP_UP_AMOUNT &&
         parsedAmount <= MAX_AUTO_TOP_UP_AMOUNT;
-    const isLimitValid = parsedLimit !== null && parsedLimit > 0;
-    const isAutoTopUpValid = !autoTopUpEnabled || isAmountValid;
-    const isLimitSettingValid = !limitEnabled || isLimitValid;
-    const isValid = isAutoTopUpValid && isLimitSettingValid;
+    const savedAmount = isAmountValid ? parsedAmount : openedSettings.autoTopUp.amount;
+    const isLimitValid = parsedLimit !== null && Number.isInteger(parsedLimit) && parsedLimit >= savedAmount;
+    const isAutoTopUpValid = !autoTopUpEnabled || (isAmountValid && (!limitEnabled || isLimitValid));
 
-    const formattedSpend = formatApiCurrency(monthlySpend, currency);
+    const formattedSpent = formatApiCurrency(spent, currency);
     const formattedLimit = isLimitValid ? formatApiCurrency(parsedLimit, currency) : '';
+    const formattedSavedAmount = formatApiCurrency(savedAmount, currency);
 
     const handleSave = async () => {
-        if (!isValid) {
+        if (!isAutoTopUpValid) {
             return;
         }
-        const autoTopUp = {
-            enabled: autoTopUpEnabled,
-            amount: isAmountValid ? parsedAmount : openedSettings.autoTopUp.amount,
-            threshold,
+        const edited = {
+            autoTopUp: { enabled: autoTopUpEnabled, amount: savedAmount, threshold },
+            spendingLimit: {
+                enabled: limitEnabled,
+                limit: isLimitValid ? parsedLimit : openedSettings.spendingLimit.limit,
+            },
         };
-        const spendingLimit = {
-            enabled: limitEnabled,
-            limit: isLimitValid ? parsedLimit : openedSettings.spendingLimit.limit,
-        };
-        setSaving(true);
-        const failed = await onSave({
-            ...(isSectionChanged(openedSettings.autoTopUp, autoTopUp, 'amount') && { autoTopUp }),
-            ...(isSectionChanged(openedSettings.spendingLimit, spendingLimit, 'limit') && { spendingLimit }),
-        });
-        setSaving(false);
-        setFailures(failed);
-        if (failed.length === 0) {
+        const hasChanges =
+            isSectionChanged(openedSettings.autoTopUp, edited.autoTopUp, 'amount') ||
+            isSectionChanged(openedSettings.spendingLimit, edited.spendingLimit, 'limit');
+        if (!hasChanges) {
             modalProps.onClose?.();
+            return;
+        }
+        setSaving(true);
+        setSaveError(undefined);
+        try {
+            await onSave(edited);
+            modalProps.onClose?.();
+        } catch (error) {
+            setSaveError(error);
+        } finally {
+            setSaving(false);
         }
     };
 
@@ -209,82 +205,81 @@ export const ApiBalanceSettingsModal = ({
         <ModalTwo {...modalProps} size="medium">
             <ModalTwoHeader title={c('collider_2025: Title').t`Balance settings`} />
             <ModalTwoContent>
-                {showAutoTopUp && (
-                    <>
-                        <SettingSection
-                            id="api-auto-top-up-enabled"
-                            checked={autoTopUpEnabled}
-                            onChange={setAutoTopUpEnabled}
-                            title={c('collider_2025: Label').t`Automatic top-up`}
-                            description={c('collider_2025: Info')
-                                .t`Top up from your default payment method when your balance runs low.`}
-                        >
-                            <AmountField
-                                id="api-auto-top-up-threshold"
-                                label={c('collider_2025: Label').t`When balance falls below`}
-                                value={String(threshold)}
-                                currency={currency}
-                                readOnly
-                            />
-                            <AmountField
-                                id="api-auto-top-up-amount"
-                                label={c('collider_2025: Label').t`Top up by`}
-                                value={amount}
-                                onValue={setAmount}
-                                currency={currency}
-                                invalid={!isAmountValid}
-                            />
-                            {isAmountValid ? (
-                                <p className="api-usage-settings-summary m-0 text-sm">
-                                    {getAutoTopUpSummary({ amount: parsedAmount, threshold }, currency)}
-                                </p>
-                            ) : (
-                                <p className="m-0 text-sm color-danger">{getAmountRangeMessage(currency)}</p>
-                            )}
-                            {!canChargeAutoTopUp && (
-                                <p className="m-0 text-sm color-warning">
-                                    {c('collider_2025: Warning')
-                                        .t`Automatic top-up needs a card or PayPal set as default payment method with automatic payments on.`}
-                                </p>
-                            )}
-                        </SettingSection>
-
-                        <hr className="my-6" />
-                    </>
-                )}
-
                 <SettingSection
-                    id="api-spending-limit-enabled"
-                    checked={limitEnabled}
-                    onChange={setLimitEnabled}
-                    title={c('collider_2025: Label').t`Monthly spending limit`}
-                    description={c('collider_2025: Info').t`Pause API requests until next month once this is reached.`}
+                    id="api-auto-top-up-enabled"
+                    checked={autoTopUpEnabled}
+                    onChange={setAutoTopUpEnabled}
+                    title={c('collider_2025: Label').t`Automatic top-up`}
+                    description={c('collider_2025: Info')
+                        .t`Top up from your default payment method when your balance runs low.`}
                 >
                     <AmountField
-                        id="api-spending-limit-amount"
-                        label={c('collider_2025: Label').t`Limit`}
-                        value={limit}
-                        onValue={setLimit}
+                        id="api-auto-top-up-threshold"
+                        label={c('collider_2025: Label').t`When balance falls below`}
+                        value={String(threshold)}
                         currency={currency}
-                        invalid={!isLimitValid}
+                        readOnly
                     />
-                    {isLimitValid && (
+                    <AmountField
+                        id="api-auto-top-up-amount"
+                        label={c('collider_2025: Label').t`Top up by`}
+                        value={amount}
+                        onValue={setAmount}
+                        currency={currency}
+                        invalid={!isAmountValid}
+                    />
+                    {isAmountValid ? (
                         <p className="api-usage-settings-summary m-0 text-sm">
-                            {c('collider_2025: Info').t`${formattedSpend} of ${formattedLimit} used this month`}
+                            {getAutoTopUpSummary({ amount: parsedAmount, threshold }, currency)}
+                        </p>
+                    ) : (
+                        <p className="m-0 text-sm color-danger">{getAmountRangeMessage(currency)}</p>
+                    )}
+                    {!canChargeAutoTopUp && (
+                        <p className="m-0 text-sm color-warning">
+                            {c('collider_2025: Warning')
+                                .t`Automatic top-up needs a card or PayPal set as default payment method with automatic payments on.`}
                         </p>
                     )}
+
+                    <SettingSection
+                        id="api-spending-limit-enabled"
+                        checked={limitEnabled}
+                        onChange={setLimitEnabled}
+                        title={c('collider_2025: Label').t`Monthly spending limit`}
+                        description={c('collider_2025: Info')
+                            .t`Pause automatic top-ups until next month once they reach this amount.`}
+                    >
+                        <AmountField
+                            id="api-spending-limit-amount"
+                            label={c('collider_2025: Label').t`Limit`}
+                            value={limit}
+                            onValue={setLimit}
+                            currency={currency}
+                            invalid={!isLimitValid}
+                        />
+                        {isLimitValid ? (
+                            <p className="api-usage-settings-summary m-0 text-sm">
+                                {c('collider_2025: Info')
+                                    .t`${formattedSpent} of ${formattedLimit} bought automatically this month`}
+                            </p>
+                        ) : (
+                            <p className="m-0 text-sm color-danger">
+                                {c('collider_2025: Error')
+                                    .t`Limit must be a whole amount of at least ${formattedSavedAmount}`}
+                            </p>
+                        )}
+                    </SettingSection>
                 </SettingSection>
-                {unique(failures.map((failure) => getSaveErrorMessage(failure, currency))).map((message) => (
-                    <p key={message} className="m-0 mt-4 text-sm color-danger">
-                        {message}
-                    </p>
-                ))}
+                {saveError !== undefined && (
+                    <p className="m-0 mt-4 text-sm color-danger">{getSaveErrorMessage(saveError)}</p>
+                )}
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button color="weak" onClick={modalProps.onClose}>
                     {c('collider_2025: Action').t`Cancel`}
                 </Button>
-                <Button color="norm" disabled={!isValid} loading={saving} onClick={handleSave}>
+                <Button color="norm" disabled={!isAutoTopUpValid} loading={saving} onClick={handleSave}>
                     {c('collider_2025: Action').t`Save settings`}
                 </Button>
             </ModalTwoFooter>

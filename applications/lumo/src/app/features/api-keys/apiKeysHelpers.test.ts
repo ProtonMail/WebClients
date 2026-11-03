@@ -30,24 +30,38 @@ describe('getBalanceEstimate', () => {
 });
 
 describe('getSpendingLimitSummary', () => {
-    it('says there is no limit when it is off, even above the amount', () => {
-        expect(getSpendingLimitSummary(300, { enabled: false, limit: 250 }, 'USD')).toEqual({
-            isOverLimit: false,
-            text: 'No monthly spending limit',
+    const autoTopUp = { enabled: true, amount: 50 };
+
+    it('has no summary while automatic top-up is off', () => {
+        expect(
+            getSpendingLimitSummary(0, { ...autoTopUp, enabled: false }, { enabled: true, limit: 250 }, 'USD')
+        ).toBeUndefined();
+    });
+
+    it('says automatic top-ups have no limit when it is off', () => {
+        expect(getSpendingLimitSummary(300, autoTopUp, { enabled: false, limit: 250 }, 'USD')).toEqual({
+            isLimitReached: false,
+            text: 'No monthly limit on automatic top-ups',
         });
     });
 
-    it('shows the spend against the limit', () => {
-        expect(getSpendingLimitSummary(147.37, { enabled: true, limit: 250 }, 'USD')).toEqual({
-            isOverLimit: false,
-            text: 'Monthly spending limit: $147.37 of $250.00 used (59%)',
+    it('shows the credits bought automatically against the limit', () => {
+        expect(getSpendingLimitSummary(150, autoTopUp, { enabled: true, limit: 250 }, 'USD')).toEqual({
+            isLimitReached: false,
+            text: 'Monthly spending limit: $150.00 of $250.00 bought automatically (60%)',
         });
     });
 
-    it('pauses requests once the limit is reached', () => {
-        expect(getSpendingLimitSummary(250, { enabled: true, limit: 250 }, 'USD')).toEqual({
-            isOverLimit: true,
-            text: 'Monthly spending limit reached. API requests are paused until next month.',
+    it('counts the limit as reached once the next top-up would exceed it', () => {
+        expect(getSpendingLimitSummary(201, autoTopUp, { enabled: true, limit: 250 }, 'USD')).toEqual({
+            isLimitReached: true,
+            text: 'Monthly spending limit reached. Automatic top-ups are paused until next month.',
         });
+    });
+
+    it('allows a last top-up that lands exactly on the limit', () => {
+        expect(getSpendingLimitSummary(200, autoTopUp, { enabled: true, limit: 250 }, 'USD')?.isLimitReached).toBe(
+            false
+        );
     });
 });

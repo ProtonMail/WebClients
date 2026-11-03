@@ -20,7 +20,6 @@ jest.mock('./useCanBuyLumoCredits', () => ({ useCanBuyLumoCredits: () => true })
 
 const getUrl = 'payments/v5/products/lumo-credit';
 const autoTopUpUrl = 'payments/v5/products/lumo-credit/auto-top-up';
-const spendingLimitUrl = 'payments/v5/products/lumo-credit/spending-limit';
 
 const apiError = (Code: number, Error: string, status = 422) =>
     Object.assign(new globalThis.Error(Error), { status, data: { Code, Error } });
@@ -36,26 +35,38 @@ const setup = ({
 }: {
     firstGetReleased?: Promise<void>;
     isOrgMember?: boolean;
-    credits?: Partial<LumoCreditResponse>;
+    credits?: Partial<LumoCreditResponse['AutoTopUp']>;
     failures?: Record<string, Error>;
     autoTopUpFlag?: boolean;
     canManageBalance?: boolean;
     canChargeAutoTopUp?: boolean;
 } = {}) => {
-    let response: LumoCreditResponse = { ...MOCK_LUMO_CREDIT_RESPONSE, ...credits };
+    let response: LumoCreditResponse = {
+        ...MOCK_LUMO_CREDIT_RESPONSE,
+        AutoTopUp: { ...MOCK_LUMO_CREDIT_RESPONSE.AutoTopUp, ...credits },
+    };
     const api = jest.fn(
-        ({ url, data }: { url: string; data?: { Enabled: boolean; Quantity?: number; Limit?: number } }) => {
+        ({
+            url,
+            data,
+        }: {
+            url: string;
+            data?: { Enabled: boolean; Quantity: number; SpendingLimitEnabled: boolean; SpendingLimit: number };
+        }) => {
             if (failures[url]) {
                 return Promise.reject(failures[url]);
             }
             if (url === autoTopUpUrl && data) {
                 response = {
                     ...response,
-                    AutoTopUp: { ...response.AutoTopUp, Enabled: data.Enabled, Quantity: data.Quantity ?? null },
+                    AutoTopUp: {
+                        ...response.AutoTopUp,
+                        Enabled: data.Enabled,
+                        Quantity: data.Quantity,
+                        SpendingLimitEnabled: data.SpendingLimitEnabled,
+                        SpendingLimit: data.SpendingLimit,
+                    },
                 };
-            }
-            if (url === spendingLimitUrl && data) {
-                response = { ...response, UsageLimit: data.Enabled ? String(data.Limit) : '0' };
             }
             if (url === getUrl && callsTo(api, getUrl).length === 1) {
                 return firstGetReleased.then(() => response);
@@ -89,9 +100,11 @@ const saveSettings = () => fireEvent.click(screen.getByText('Save settings').clo
 const waitForBalance = () => waitFor(() => expect(balanceCard()).toHaveTextContent('US$15'));
 
 describe('ApiUsageDashboard balance settings', () => {
+    const autoTopUpOn = { Enabled: true, Threshold: 20, Quantity: 50 };
+
     it('opens Manage with the settings from the balance', async () => {
         setup({
-            credits: { AutoTopUp: { Enabled: true, Threshold: 20, Quantity: 75 }, Usage: '40', UsageLimit: '300' },
+            credits: { ...autoTopUpOn, Quantity: 75, SpendingLimitEnabled: true, SpendingLimit: 300, Spent: 40 },
         });
         await waitForBalance();
 
@@ -102,67 +115,82 @@ describe('ApiUsageDashboard balance settings', () => {
         expect(screen.getByLabelText('When balance falls below')).toHaveValue(20);
         expect(screen.getByLabelText(/^Monthly spending limit/)).toBeChecked();
         expect(screen.getByLabelText('Limit')).toHaveValue(300);
-        expect(screen.getByText('$40.00 of $300.00 used this month')).toBeInTheDocument();
+        expect(screen.getByText('$40.00 of $300.00 bought automatically this month')).toBeInTheDocument();
     });
 
     it('summarises the automatic top-up from the balance', async () => {
-        setup({ credits: { AutoTopUp: { Enabled: true, Threshold: 20, Quantity: 75 } } });
+        setup({ credits: { ...autoTopUpOn, Quantity: 75 } });
 
         await waitFor(() => expect(settingsRow()).toHaveTextContent('Automatic top-up enabled'));
         expect(settingsRow()).toHaveTextContent('Adding $75.00 when your balance falls below $20.00');
     });
 
-    it.each([
-        ['147.5', 'Monthly spending limit: $147.50 of $250.00 used (59%)'],
-        ['200', 'Monthly spending limit: $200.00 of $250.00 used (80%)'],
-    ])('shows a usage of %p against the limit', async (Usage, text) => {
-        setup({ credits: { Usage, UsageLimit: '250' } });
-
-        await waitFor(() => expect(settingsRow()).toHaveTextContent(text));
-        expect(screen.getByRole('button', { name: 'Top up balance' })).toBeEnabled();
-    });
-
-    it('blocks topping up once the spending limit is reached', async () => {
-        setup({ credits: { Usage: '250', UsageLimit: '250' } });
+    it('shows the credits bought automatically against the limit', async () => {
+        setup({ credits: { ...autoTopUpOn, SpendingLimitEnabled: true, SpendingLimit: 250, Spent: 150 } });
 
         await waitFor(() =>
             expect(settingsRow()).toHaveTextContent(
-                'Monthly spending limit reached. API requests are paused until next month.'
+                'Monthly spending limit: $150.00 of $250.00 bought automatically (60%)'
             )
         );
-        expect(screen.getByRole('button', { name: 'Top up balance' })).toBeDisabled();
     });
 
-    it('shows no limit when the limit is zero', async () => {
-        setup({ credits: { Usage: '0', UsageLimit: '0' } });
+    it('keeps manual top-ups available once the spending limit is reached', async () => {
+        setup({ credits: { ...autoTopUpOn, SpendingLimitEnabled: true, SpendingLimit: 250, Spent: 225 } });
 
-        await waitFor(() => expect(settingsRow()).toHaveTextContent('No monthly spending limit'));
+        await waitFor(() =>
+            expect(settingsRow()).toHaveTextContent(
+                'Monthly spending limit reached. Automatic top-ups are paused until next month.'
+            )
+        );
         expect(screen.getByRole('button', { name: 'Top up balance' })).toBeEnabled();
     });
 
-    it('saves the changed settings, closes and shows the refetched values', async () => {
-        const api = setup({ credits: { UsageLimit: '0' } });
+    it('says automatic top-ups have no limit when it is off', async () => {
+        setup({ credits: autoTopUpOn });
+
+        await waitFor(() => expect(settingsRow()).toHaveTextContent('No monthly limit on automatic top-ups'));
+    });
+
+    it('shows no spending limit while automatic top-up is off', async () => {
+        setup({ credits: { SpendingLimitEnabled: true, SpendingLimit: 250, Spent: 225 } });
+
+        await waitFor(() => expect(settingsRow()).toHaveTextContent('Automatic top-up off'));
+        expect(settingsRow()).not.toHaveTextContent('Monthly spending limit');
+    });
+
+    it('saves the automatic top-up with its spending limit, closes and shows the refetched values', async () => {
+        const api = setup();
         await waitForBalance();
         openManage();
 
         fireEvent.click(screen.getByLabelText(/^Automatic top-up/));
         fireEvent.change(screen.getByLabelText('Top up by'), { target: { value: '30' } });
+        fireEvent.click(screen.getByLabelText(/^Monthly spending limit/));
+        fireEvent.change(screen.getByLabelText('Limit'), { target: { value: '120' } });
         saveSettings();
 
         await waitFor(() => expect(document.querySelector('.modal-two--out')).toBeInTheDocument());
         expect(callsTo(api, autoTopUpUrl)).toEqual([
-            [{ url: autoTopUpUrl, method: 'put', data: { Enabled: true, Quantity: 30 }, silence: true }],
+            [
+                {
+                    url: autoTopUpUrl,
+                    method: 'put',
+                    data: { Enabled: true, Quantity: 30, SpendingLimitEnabled: true, SpendingLimit: 120 },
+                    silence: true,
+                },
+            ],
         ]);
-        expect(callsTo(api, spendingLimitUrl)).toHaveLength(0);
         expect(callsTo(api, getUrl)).toHaveLength(2);
         expect(settingsRow()).toHaveTextContent('Adding $30.00 when your balance falls below $20.00');
+        expect(settingsRow()).toHaveTextContent('Monthly spending limit: $0.00 of $120.00 bought automatically (0%)');
     });
 
     it.each([
         [
-            'an out-of-range amount',
-            apiError(2001, 'Invalid quantity'),
-            'Top-up amount must be between $25.00 and $100.00',
+            'an invalid quantity or spending limit',
+            apiError(2001, 'Invalid spending limit'),
+            'Automatic top-up could not be saved. Please try again.',
         ],
         [
             'a user who is not the primary administrator',
@@ -193,39 +221,12 @@ describe('ApiUsageDashboard balance settings', () => {
         expect(callsTo(api, autoTopUpUrl)[0][0]).toHaveProperty('silence', true);
     });
 
-    it('names the spending limit when only the automatic top-up saved', async () => {
-        setup({ credits: { UsageLimit: '0' }, failures: { [spendingLimitUrl]: apiError(2001, 'Not found', 404) } });
-        await waitForBalance();
-        openManage();
-
-        fireEvent.click(screen.getByLabelText(/^Automatic top-up/));
-        fireEvent.click(screen.getByLabelText(/^Monthly spending limit/));
-        saveSettings();
-
-        expect(
-            await screen.findByText('Monthly spending limit could not be saved. Please try again.')
-        ).toBeInTheDocument();
-        await waitFor(() => expect(settingsRow()).toHaveTextContent('Automatic top-up enabled'));
-    });
-
-    it('shows only the spending limit in the card while the automatic top-up is off', async () => {
-        setup({ autoTopUpFlag: false, credits: { Usage: '147.5', UsageLimit: '250' } });
-
-        await waitFor(() =>
-            expect(settingsRow()).toHaveTextContent('Monthly spending limit: $147.50 of $250.00 used (59%)')
-        );
-        expect(settingsRow()).not.toHaveTextContent('Automatic top-up');
-        expect(settingsRow()).not.toHaveTextContent('Keep API requests running');
-    });
-
-    it('hides the automatic top-up settings while the feature is off', async () => {
-        setup({ autoTopUpFlag: false });
+    it('hides the balance settings while the automatic top-up feature is off', async () => {
+        setup({ autoTopUpFlag: false, credits: { SpendingLimitEnabled: true, SpendingLimit: 250 } });
         await waitForBalance();
 
-        openManage();
-
-        expect(screen.queryByLabelText(/^Automatic top-up/)).not.toBeInTheDocument();
-        expect(screen.getByLabelText(/^Monthly spending limit/)).toBeInTheDocument();
+        expect(settingsRow()).toBeNull();
+        expect(queryManage()).not.toBeInTheDocument();
     });
 
     it('shows Manage only once the balance settings have loaded', async () => {
@@ -265,9 +266,7 @@ describe('ApiUsageDashboard balance settings', () => {
         expect(screen.getByText(/^Automatic top-up needs a card or PayPal/)).toBeInTheDocument();
     });
 
-    const failedAutoTopUp = (Reason?: string) => ({
-        AutoTopUp: { Enabled: true, Threshold: 20, Quantity: 50, Status: 'Failed' as const, Reason },
-    });
+    const failedAutoTopUp = (Reason?: string) => ({ ...autoTopUpOn, Status: 'Failed' as const, Reason });
     const statusBanner = () => balanceCard().querySelector('.api-usage-balance-status');
 
     it.each([
@@ -294,7 +293,7 @@ describe('ApiUsageDashboard balance settings', () => {
     });
 
     it('shows a paused automatic top-up', async () => {
-        setup({ credits: { AutoTopUp: { Enabled: true, Threshold: 20, Quantity: 50, Status: 'Paused' } } });
+        setup({ credits: { ...autoTopUpOn, Status: 'Paused' } });
 
         await waitFor(() =>
             expect(statusBanner()).toHaveTextContent(
@@ -327,7 +326,7 @@ describe('ApiUsageDashboard balance settings', () => {
     });
 
     it('shows only on or off without a status', async () => {
-        setup({ credits: { AutoTopUp: { Enabled: true, Threshold: 20, Quantity: 50 } } });
+        setup({ credits: autoTopUpOn });
 
         await waitFor(() => expect(settingsRow()).toHaveTextContent('Automatic top-up enabled'));
         expect(balanceCard()).not.toHaveTextContent('Update your payment method');

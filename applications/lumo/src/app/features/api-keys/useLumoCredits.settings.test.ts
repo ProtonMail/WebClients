@@ -10,11 +10,10 @@ jest.mock('@proton/app-context/useApi');
 
 const getUrl = 'payments/v5/products/lumo-credit';
 const autoTopUpUrl = 'payments/v5/products/lumo-credit/auto-top-up';
-const spendingLimitUrl = 'payments/v5/products/lumo-credit/spending-limit';
 
-const credits = (overrides: Partial<LumoCreditResponse> = {}): LumoCreditResponse => ({
+const credits = (autoTopUp: Partial<LumoCreditResponse['AutoTopUp']> = {}): LumoCreditResponse => ({
     ...MOCK_LUMO_CREDIT_RESPONSE,
-    ...overrides,
+    AutoTopUp: { ...MOCK_LUMO_CREDIT_RESPONSE.AutoTopUp, ...autoTopUp },
 });
 
 const setup = (response: LumoCreditResponse, failingUrls: string[] = []) => {
@@ -34,12 +33,15 @@ const savedSettings = {
 };
 
 describe('useLumoCredits balance settings', () => {
-    it('reads the automatic top-up and the spending limit from the balance', async () => {
+    it('reads the automatic top-up and its spending limit from the balance', async () => {
         const { result } = setup(
             credits({
-                Usage: '147.5000000000',
-                UsageLimit: '250.0000000000',
-                AutoTopUp: { Enabled: true, Threshold: 20, Quantity: 75 },
+                Enabled: true,
+                Threshold: 20,
+                Quantity: 75,
+                SpendingLimitEnabled: true,
+                SpendingLimit: 250,
+                Spent: 150,
             })
         );
 
@@ -48,103 +50,58 @@ describe('useLumoCredits balance settings', () => {
             autoTopUp: { enabled: true, amount: 75, threshold: 20 },
             spendingLimit: { enabled: true, limit: 250 },
         });
-        expect(result.current).toMatchObject({ usage: 147.5, usageLimit: 250 });
+        expect(result.current.spent).toBe(150);
     });
 
-    it('defaults the top-up amount to 50 and treats a zero limit as no limit', async () => {
-        const { result } = setup(
-            credits({ UsageLimit: '0', AutoTopUp: { Enabled: false, Threshold: 20, Quantity: null } })
-        );
+    it('defaults the top-up amount to 50 and the limit to 250 until they are set', async () => {
+        const { result } = setup(credits());
 
         await waitFor(() => expect(result.current.loading).toBe(false));
         expect(result.current.settings).toEqual({
             autoTopUp: { enabled: false, amount: 50, threshold: 20 },
             spendingLimit: { enabled: false, limit: 250 },
         });
-        expect(result.current.usageLimit).toBe(0);
+        expect(result.current.spent).toBe(0);
     });
 
     it('exposes the automatic top-up status and reason', async () => {
-        const { result } = setup(
-            credits({
-                AutoTopUp: { Enabled: true, Threshold: 20, Quantity: 50, Status: 'Failed', Reason: 'Card declined' },
-            })
-        );
+        const { result } = setup(credits({ Enabled: true, Quantity: 50, Status: 'Failed', Reason: 'Card declined' }));
 
         await waitFor(() => expect(result.current.autoTopUpStatus).toBe('Failed'));
         expect(result.current.autoTopUpReason).toBe('Card declined');
     });
 
-    it('saves the automatic top-up it is given, then refetches', async () => {
+    it('saves the automatic top-up with its spending limit in one request, then refetches', async () => {
         const { api, result } = setup(credits());
         await waitFor(() => expect(result.current.loading).toBe(false));
 
-        let failedSections: unknown[] = [];
-        await act(async () => {
-            failedSections = await result.current.saveSettings({ autoTopUp: savedSettings.autoTopUp });
-        });
+        await act(() => result.current.saveSettings(savedSettings));
 
-        expect(failedSections).toEqual([]);
         expect(callsTo(api, autoTopUpUrl)).toEqual([
-            [{ url: autoTopUpUrl, method: 'put', data: { Enabled: true, Quantity: 40 }, silence: true }],
+            [
+                {
+                    url: autoTopUpUrl,
+                    method: 'put',
+                    data: { Enabled: true, Quantity: 40, SpendingLimitEnabled: true, SpendingLimit: 300 },
+                    silence: true,
+                },
+            ],
         ]);
-        expect(callsTo(api, spendingLimitUrl)).toHaveLength(0);
         expect(callsTo(api, getUrl)).toHaveLength(2);
     });
 
-    it('saves the spending limit it is given', async () => {
-        const { api, result } = setup(credits());
+    it('rejects and keeps the balance when the save fails', async () => {
+        const { api, result } = setup(credits(), [autoTopUpUrl]);
         await waitFor(() => expect(result.current.loading).toBe(false));
 
-        await act(() => result.current.saveSettings({ spendingLimit: savedSettings.spendingLimit }));
+        await act(() => expect(result.current.saveSettings(savedSettings)).rejects.toEqual(new Error(autoTopUpUrl)));
 
-        expect(callsTo(api, autoTopUpUrl)).toHaveLength(0);
-        expect(callsTo(api, spendingLimitUrl)).toEqual([
-            [{ url: spendingLimitUrl, method: 'put', data: { Enabled: true, Limit: 300 }, silence: true }],
-        ]);
-    });
-
-    it('sends nothing and does not refetch without changes', async () => {
-        const { api, result } = setup(credits());
-        await waitFor(() => expect(result.current.loading).toBe(false));
-
-        await act(() => result.current.saveSettings({}));
-
-        expect(api).toHaveBeenCalledTimes(1);
-    });
-
-    it('names the section that failed when the other one saved', async () => {
-        const { api, result } = setup(credits({ UsageLimit: '0' }), [spendingLimitUrl]);
-        await waitFor(() => expect(result.current.loading).toBe(false));
-
-        let failedSections: unknown[] = [];
-        await act(async () => {
-            failedSections = await result.current.saveSettings(savedSettings);
-        });
-
-        expect(failedSections).toEqual([{ section: 'spendingLimit', error: new Error(spendingLimitUrl) }]);
-        expect(callsTo(api, autoTopUpUrl)).toHaveLength(1);
-        expect(callsTo(api, getUrl)).toHaveLength(2);
-    });
-
-    it('names both sections and keeps the balance when every save fails', async () => {
-        const { api, result } = setup(credits({ UsageLimit: '0' }), [autoTopUpUrl, spendingLimitUrl]);
-        await waitFor(() => expect(result.current.loading).toBe(false));
-
-        let failedSections: unknown[] = [];
-        await act(async () => {
-            failedSections = await result.current.saveSettings(savedSettings);
-        });
-
-        expect(failedSections).toEqual([
-            { section: 'autoTopUp', error: new Error(autoTopUpUrl) },
-            { section: 'spendingLimit', error: new Error(spendingLimitUrl) },
-        ]);
         expect(callsTo(api, getUrl)).toHaveLength(1);
+        expect(result.current.balance).toBe(15);
     });
 
     it('keeps the balance when the refetch after a save fails', async () => {
-        const response = credits({ AutoTopUp: { Enabled: true, Threshold: 20, Quantity: 75 } });
+        const response = credits({ Enabled: true, Threshold: 20, Quantity: 75 });
         const api = jest
             .fn()
             .mockResolvedValueOnce(response)
@@ -154,7 +111,7 @@ describe('useLumoCredits balance settings', () => {
         const { result } = renderHook(() => useLumoCredits());
         await waitFor(() => expect(result.current.loading).toBe(false));
 
-        await act(() => result.current.saveSettings({ autoTopUp: savedSettings.autoTopUp }));
+        await act(() => result.current.saveSettings(savedSettings));
 
         expect(api).toHaveBeenCalledTimes(3);
         expect(result.current).toMatchObject({ balance: 15, loading: false });

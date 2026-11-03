@@ -31,16 +31,18 @@ jest.mock('./useCanBuyLumoCredits');
 const setup = ({
     isOrgAdmin = false,
     creditResponse = new Promise(() => {}),
+    showAutoTopUp = false,
 }: {
     isOrgAdmin?: boolean;
     creditResponse?: Promise<unknown>;
+    showAutoTopUp?: boolean;
 } = {}) => {
     (useApi as jest.Mock).mockReturnValue(jest.fn(() => creditResponse));
     (useUser as jest.Mock).mockReturnValue([{ Credit: 0, Currency: 'USD' }]);
     (useSubscription as jest.Mock).mockReturnValue([{ Currency: 'USD' }]);
     (usePaymentStatus as jest.Mock).mockReturnValue([{ CountryCode: 'DE', VendorStates: {} }, false]);
     (useCanBuyLumoCredits as jest.Mock).mockReturnValue(true);
-    render(<ApiUsageDashboard isOrgAdmin={isOrgAdmin} isOrgMember={false} />);
+    render(<ApiUsageDashboard isOrgAdmin={isOrgAdmin} isOrgMember={false} showAutoTopUp={showAutoTopUp} />);
 };
 
 const getMetric = (label: string) => screen.getAllByText(label)[0].parentElement?.textContent;
@@ -91,7 +93,7 @@ describe('ApiUsageDashboard outside the balance amount', () => {
     });
 
     it('opens the balance settings from Manage', async () => {
-        setup({ creditResponse: Promise.resolve(MOCK_LUMO_CREDIT_RESPONSE) });
+        setup({ creditResponse: Promise.resolve(MOCK_LUMO_CREDIT_RESPONSE), showAutoTopUp: true });
 
         fireEvent.click(await screen.findByRole('button', { name: 'Manage automatic top-up and spending limit' }));
 

@@ -1,9 +1,9 @@
+import { CryptoProxy } from '@protontech/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { getCurrencyFormattingConfig } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
-import { CryptoProxy } from '@protontech/crypto';
-import type { PublicKeyReference } from '@protontech/crypto';
 
 export const EXPIRATION_OPTIONS = [
     { value: '30', text: c('collider_2025: Option').t`30 days` },
@@ -68,26 +68,31 @@ export const getBalanceEstimate = (balance: number, averageDailySpend: number) =
 };
 
 export const getSpendingLimitSummary = (
-    usage: number,
+    spent: number,
+    autoTopUp: { enabled: boolean; amount: number },
     spendingLimit: { enabled: boolean; limit: number },
     currency: Currency
 ) => {
-    if (!spendingLimit.enabled) {
-        return { isOverLimit: false, text: c('collider_2025: Info').t`No monthly spending limit` };
+    if (!autoTopUp.enabled) {
+        return undefined;
     }
-    if (usage >= spendingLimit.limit) {
+    if (!spendingLimit.enabled) {
+        return { isLimitReached: false, text: c('collider_2025: Info').t`No monthly limit on automatic top-ups` };
+    }
+    if (spent + autoTopUp.amount > spendingLimit.limit) {
         return {
-            isOverLimit: true,
-            text: c('collider_2025: Info').t`Monthly spending limit reached. API requests are paused until next month.`,
+            isLimitReached: true,
+            text: c('collider_2025: Info')
+                .t`Monthly spending limit reached. Automatic top-ups are paused until next month.`,
         };
     }
-    const formattedSpend = formatApiCurrency(usage, currency);
+    const formattedSpent = formatApiCurrency(spent, currency);
     const formattedLimit = formatApiCurrency(spendingLimit.limit, currency);
-    const limitUsagePercent = spendingLimit.limit > 0 ? Math.round((usage / spendingLimit.limit) * 100) : 0;
+    const limitSpentPercent = Math.round((spent / spendingLimit.limit) * 100);
     return {
-        isOverLimit: false,
+        isLimitReached: false,
         text: c('collider_2025: Info')
-            .t`Monthly spending limit: ${formattedSpend} of ${formattedLimit} used (${limitUsagePercent}%)`,
+            .t`Monthly spending limit: ${formattedSpent} of ${formattedLimit} bought automatically (${limitSpentPercent}%)`,
     };
 };
 
@@ -103,7 +108,7 @@ export const parseApiAmount = (value: string): number | null => {
 export const shortDayLabel = (isoDate: string) =>
     new Date(isoDate).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
 
-/** 30 placeholder points for empty sparkline */
-export const GHOST_DATA = [3, 5, 7, 4, 8, 6, 3, 5, 9, 4, 7, 6, 3, 8, 5, 4, 7, 3, 6, 9, 4, 5, 8, 3, 7, 6, 4, 8, 5, 7].map(
-    (v, i) => ({ Date: String(i), TokenCount: v })
-);
+/** Placeholder sparkline shown when a key has no usage yet */
+export const GHOST_DATA = [
+    3, 5, 7, 4, 8, 6, 3, 5, 9, 4, 7, 6, 3, 8, 5, 4, 7, 3, 6, 9, 4, 5, 8, 3, 7, 6, 4, 8, 5, 7,
+].map((v, i) => ({ Date: String(i), TokenCount: v }));
