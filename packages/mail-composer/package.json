@@ -29,6 +29,7 @@
         "./containers/DraftBodyWriterProvider": "./src/containers/DraftBodyWriterProvider.tsx",
         "./helpers/attachment/attachmentUploader": "./src/helpers/attachment/attachmentUploader.ts",
         "./helpers/composer/contentFromComposerMessage": "./src/helpers/composer/contentFromComposerMessage.ts",
+        "./helpers/composer/mimeTypeSwitch": "./src/helpers/composer/mimeTypeSwitch.ts",
         "./helpers/mailto": "./src/helpers/mailto.ts",
         "./helpers/upload": "./src/helpers/upload.ts",
         "./hooks/composer/useAttachments/helpers": "./src/hooks/composer/useAttachments/helpers.ts",
