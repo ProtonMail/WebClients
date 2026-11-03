@@ -79,6 +79,26 @@
             "matchPackageNames": ["/babel/"]
         },
         {
+            "description": "exifreader >=4.52 ships ESM-only sources; drive Jest needs a transformIgnorePatterns update before it can land",
+            "groupName": "exifreader",
+            "matchPackageNames": ["exifreader"]
+        },
+        {
+            "description": "@tanstack/react-virtual 3.14.24 breaks DriveExplorer keyboard navigation tests (rows not rendered)",
+            "groupName": "tanstack virtual",
+            "matchPackageNames": ["@tanstack/react-virtual"]
+        },
+        {
+            "description": "Autofill/fathom bumps change form detection and need Pass team validation",
+            "groupName": "Pass autofill",
+            "matchPackageNames": ["@protontech/autofill", "@protontech/fathom"]
+        },
+        {
+            "description": "axios 1.21 bump coincided with ci-tools Slack connectivity integration test timing out",
+            "groupName": "axios",
+            "matchPackageNames": ["axios"]
+        },
+        {
             "groupName": "pass-desktop and inbox-desktop exclusions",
             "enabled": false,
             "matchPackageNames": ["@electron-forge/*", "@electron/fuses", "@vercel/webpack-asset-relocator-loader"]
