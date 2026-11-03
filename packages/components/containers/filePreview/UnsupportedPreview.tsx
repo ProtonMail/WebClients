@@ -6,16 +6,27 @@ import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unav
 import clsx from '@proton/utils/clsx';
 
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import type { DownloadHandler } from './useDownloading';
+import useDownloading from './useDownloading';
 
 interface Props {
     type?: 'file' | 'image' | 'video' | 'audio';
-    onDownload?: () => void;
+    onDownload?: DownloadHandler;
+    downloadFeedback?: boolean;
     browser?: boolean;
     tooLarge?: boolean;
 }
 
-const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLarge = false }: Props) => {
+const UnsupportedPreview = ({
+    onDownload,
+    downloadFeedback = false,
+    type = 'file',
+    browser = false,
+    tooLarge = false,
+}: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
+    const [downloading, handleDownloadWithFeedback] = useDownloading(onDownload);
+    const handleDownload = downloadFeedback ? handleDownloadWithFeedback : onDownload;
 
     let message = c('Info').t`Preview for this file type is not supported`;
     let subtext = undefined;
@@ -50,7 +61,8 @@ const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLar
                     color="norm"
                     size={!viewportWidth['<=small'] ? 'large' : undefined}
                     className="text-bold mt-8"
-                    onClick={onDownload}
+                    onClick={handleDownload}
+                    loading={downloadFeedback ? downloading : undefined}
                 >{c('Action').t`Download`}</Button>
             )}
         </div>

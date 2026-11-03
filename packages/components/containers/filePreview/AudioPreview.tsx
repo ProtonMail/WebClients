@@ -8,9 +8,10 @@ interface Props {
     mimeType: string;
     contents: Uint8Array<ArrayBuffer>[];
     onDownload?: () => void;
+    downloadFeedback?: boolean;
 }
 
-const AudioPreview = ({ contents, mimeType, onDownload }: Props) => {
+const AudioPreview = ({ contents, mimeType, onDownload, downloadFeedback }: Props) => {
     const [url, setUrl] = useState<string>();
     const [error, setError] = useState(false);
 
@@ -31,7 +32,7 @@ const AudioPreview = ({ contents, mimeType, onDownload }: Props) => {
     if (error) {
         return (
             <div className="flex flex-auto relative">
-                <UnsupportedPreview onDownload={onDownload} type="audio" />
+                <UnsupportedPreview onDownload={onDownload} downloadFeedback={downloadFeedback} type="audio" />
             </div>
         );
     }

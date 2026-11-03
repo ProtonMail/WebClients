@@ -29,6 +29,8 @@ import clsx from '@proton/utils/clsx';
 import FileNameDisplay from '../../components/fileNameDisplay/FileNameDisplay';
 import TimeIntl from '../../components/time/TimeIntl';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
+import type { DownloadHandler } from './useDownloading';
+import useDownloading from './useDownloading';
 
 const SHARED_STATUS_TO_COLOR = {
     '': undefined,
@@ -45,7 +47,8 @@ interface Props {
     signatureStatus?: ReactNode;
     isDirty?: boolean;
     onClose?: () => void;
-    onDownload?: () => void;
+    onDownload?: DownloadHandler;
+    downloadFeedback?: boolean;
     onSave?: () => Promise<void>;
     onDetails?: () => void;
     onShare?: () => void;
@@ -67,6 +70,7 @@ const Header = ({
     isDirty,
     onClose,
     onDownload,
+    downloadFeedback = false,
     onSave,
     onDetails,
     onShare,
@@ -81,6 +85,8 @@ const Header = ({
 }: Props) => {
     const [isSaving, withSaving] = useLoading();
     const [saveError, setSaveError] = useState();
+    const [downloading, handleDownloadWithFeedback] = useDownloading(onDownload);
+    const handleDownload = downloadFeedback ? handleDownloadWithFeedback : onDownload;
     const { viewportWidth } = useActiveBreakpoint();
     const isMobileHeaderPreview = viewportWidth['<=small'] && isMobile();
     const isLargeViewport = viewportWidth['>=large'];
@@ -197,9 +203,10 @@ const Header = ({
                         icon
                         shape="ghost"
                         title={c('Action').t`Download`}
-                        onClick={onDownload}
+                        onClick={handleDownload}
                         className="sm:ml-2 hidden sm:inline-flex"
                         data-testid="file-preview:actions:download"
+                        loading={downloadFeedback ? downloading : undefined}
                     >
                         <IcArrowDownLine size={5} alt={c('Action').t`Download`} />
                     </Button>

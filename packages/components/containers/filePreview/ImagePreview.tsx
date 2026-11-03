@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
-import DOMPurify from 'dompurify';
+import purify from 'dompurify';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -19,6 +19,7 @@ interface Props {
     mimeType: string;
     fileName?: string;
     onDownload?: () => void;
+    downloadFeedback?: boolean;
     contents?: Uint8Array<ArrayBuffer>[];
     placeholderSrc?: string;
     isLoading: boolean;
@@ -67,7 +68,7 @@ function getImageDimensions(imageElement: HTMLImageElement | null): ElementDimen
  */
 function sanitizeSVG(contents: Uint8Array<ArrayBuffer>[]): Uint8Array<ArrayBuffer>[] {
     const contentsString = new TextDecoder('utf-8', { fatal: true }).decode(mergeUint8Arrays(contents));
-    const sanitizedSVG = DOMPurify.sanitize(contentsString);
+    const sanitizedSVG = purify.sanitize(contentsString);
     return [utf8StringToUint8Array(sanitizedSVG)];
 }
 
@@ -96,6 +97,7 @@ const ImagePreview = ({
     mimeType,
     contents,
     onDownload,
+    downloadFeedback,
     placeholderSrc,
     fileName,
 }: Props) => {
@@ -240,7 +242,7 @@ const ImagePreview = ({
             {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
             <div ref={containerRef} className="file-preview-container" onMouseDown={onMouseDown}>
                 {error ? (
-                    <UnsupportedPreview onDownload={onDownload} type="image" />
+                    <UnsupportedPreview onDownload={onDownload} downloadFeedback={downloadFeedback} type="image" />
                 ) : (
                     <div
                         className="flex *:min-size-auto m-auto relative"

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -17,6 +17,7 @@ import { AttachmentAction } from '@proton/mail-composer/attachments/attachmentLi
 import type { PendingUpload } from '@proton/mail-composer/attachments/uploadTypes';
 import { isAttachmentUpload } from '@proton/mail-composer/hooks/composer/useAttachments/helpers';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -40,6 +41,9 @@ const actionIcons = {
     [AttachmentAction.Preview]: IcArrowsFromCenter,
     [AttachmentAction.Remove]: IcCross,
 };
+
+/** Keeps the download loader visible long enough to be noticed, even when the file is already in memory. */
+const MIN_DOWNLOADING_DURATION = 400;
 
 const getSenderVerificationString = (verificationStatus?: MAIL_VERIFICATION_STATUS) => {
     if (verificationStatus === MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID) {
@@ -74,6 +78,9 @@ const AttachmentItem = ({
     onSecondary,
 }: Props) => {
     const [loading, withLoading] = useLoading();
+    // Synchronous lock: every control on the chip (icon, name, secondary button) can trigger an action,
+    // and on files that cannot be previewed both primary and secondary actions download.
+    const actionInProgressRef = useRef(false);
     const [progression, setProgression] = useState<number>(0);
     const isMounted = useIsMounted();
 
@@ -97,11 +104,16 @@ const AttachmentItem = ({
     const primaryTitle = `${name} ${humanAttachmentSize}${getSenderVerificationString(attachmentVerified)}`;
     const primaryActionTitle = getActionTitle(primaryAction, primaryTitle);
 
-    const SecondaryActionIcon = secondaryAction === AttachmentAction.None ? undefined : actionIcons[secondaryAction];
+    const SecondaryActionIcon = actionIcons[secondaryAction];
     const secondaryActionTitle = getActionTitle(secondaryAction, name);
 
     const handleAction = (primary: boolean) => () => {
+        if (actionInProgressRef.current) {
+            return;
+        }
+
         const actionHandler = primary ? onPrimary : onSecondary;
+        const isDownload = (primary ? primaryAction : secondaryAction) === AttachmentAction.Download;
         let action = Promise.resolve();
 
         if (attachment) {
@@ -113,7 +125,16 @@ const AttachmentItem = ({
             action = uploadHandler(pendingUpload);
         }
 
-        void withLoading(action);
+        if (isDownload) {
+            action = Promise.all([action, wait(MIN_DOWNLOADING_DURATION)]).then(() => undefined);
+        }
+
+        actionInProgressRef.current = true;
+        void withLoading(
+            action.finally(() => {
+                actionInProgressRef.current = false;
+            })
+        );
     };
 
     const AttachmentIcon = getFileIcon(attachment?.MIMEType || 'unknown');
@@ -134,6 +155,7 @@ const AttachmentItem = ({
                         onClick={handleAction(true)}
                         tabIndex={-1}
                         aria-hidden="true"
+                        disabled={loading}
                     >
                         {progressionHappening ? (
                             <CircularProgress progress={value} size={20} className="mr-2" />
@@ -148,6 +170,8 @@ const AttachmentItem = ({
                             title={primaryActionTitle}
                             type="button"
                             onClick={handleAction(true)}
+                            aria-disabled={loading}
+                            aria-busy={loading}
                             data-testid={`attachment-item:${name}--primary-action`}
                         >
                             <span className="my-auto flex items-baseline flex-nowrap pr-2">
@@ -162,31 +186,29 @@ const AttachmentItem = ({
                         </button>
                     </Tooltip>
                 </span>
-                {SecondaryActionIcon && (
-                    <button
-                        type="button"
-                        className="inline-flex pr-2 pl-1 *:pointer-events-none rounded relative interactive-pseudo interactive--no-background message-attachmentSecondaryAction"
-                        onClick={handleAction(false)}
-                        title={secondaryActionTitle}
-                        disabled={loading}
-                        aria-busy={loading}
-                        data-testid={`attachment-item:${name}--secondary-action`}
+                <button
+                    type="button"
+                    className="inline-flex pr-2 pl-1 *:pointer-events-none rounded relative interactive-pseudo interactive--no-background message-attachmentSecondaryAction"
+                    onClick={handleAction(false)}
+                    title={secondaryActionTitle}
+                    disabled={loading}
+                    aria-busy={loading}
+                    data-testid={`attachment-item:${name}--secondary-action`}
+                >
+                    <span
+                        className="message-attachmentSecondaryAction-size color-weak text-ellipsis text-sm my-2"
+                        aria-hidden="true"
                     >
-                        <span
-                            className="message-attachmentSecondaryAction-size color-weak text-ellipsis text-sm my-2"
-                            aria-hidden="true"
-                        >
-                            {humanAttachmentSize}
-                        </span>
-                        <span className="message-attachmentSecondaryAction-download flex shrink-0">
-                            {loading ? (
-                                <CircleLoader className="m-auto" size="small" />
-                            ) : (
-                                <SecondaryActionIcon className="m-auto" alt={secondaryActionTitle} />
-                            )}
-                        </span>
-                    </button>
-                )}
+                        {humanAttachmentSize}
+                    </span>
+                    <span className="message-attachmentSecondaryAction-download flex shrink-0">
+                        {loading ? (
+                            <CircleLoader className="m-auto" size="small" />
+                        ) : (
+                            <SecondaryActionIcon className="m-auto" alt={secondaryActionTitle} />
+                        )}
+                    </span>
+                </button>
             </div>
         </div>
     );

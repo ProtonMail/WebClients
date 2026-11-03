@@ -54,4 +54,23 @@ describe('AttachmentsList', () => {
         getByText('file attached,');
         getByText('embedded image');
     });
+
+    it('should offer the download button for attachments that cannot be previewed', async () => {
+        const archive = { ID: 'ID3', Name: 'archive.zip', MIMEType: 'application/zip' } as Attachment;
+        const { getByTestId } = await mailTestRender(
+            <AttachmentList
+                {...props}
+                message={{ ...props.message, messageImages: createMessageImages([]) }}
+                attachments={[archive]}
+                primaryAction={AttachmentAction.Preview}
+                secondaryAction={AttachmentAction.Download}
+                collapsable={false}
+            />
+        );
+
+        expect(getByTestId('attachment-item:archive.zip--secondary-action')).toHaveAttribute(
+            'title',
+            'Download archive.zip'
+        );
+    });
 });

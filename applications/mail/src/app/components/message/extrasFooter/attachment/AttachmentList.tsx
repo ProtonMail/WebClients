@@ -136,7 +136,6 @@ const AttachmentList = ({
         [AttachmentAction.Download]: handleDownload,
         [AttachmentAction.Preview]: handlePreview,
         [AttachmentAction.Remove]: onRemoveAttachment || noop,
-        [AttachmentAction.None]: noop,
     };
 
     const titleButton = collapsable
@@ -246,21 +245,15 @@ const AttachmentList = ({
                             primaryAction === AttachmentAction.Preview && !canPreviewAttachment(attachment.MIMEType)
                                 ? AttachmentAction.Download
                                 : primaryAction;
-                        // Avoid showing two identical download actions on the same row.
-                        const itemSecondaryAction =
-                            itemPrimaryAction === AttachmentAction.Download &&
-                            secondaryAction === AttachmentAction.Download
-                                ? AttachmentAction.None
-                                : secondaryAction;
                         return (
                             <AttachmentItem
                                 key={attachment.ID}
                                 attachment={attachment}
                                 attachmentVerified={verifiedAttachments[attachment.ID || '']}
                                 primaryAction={itemPrimaryAction}
-                                secondaryAction={itemSecondaryAction}
+                                secondaryAction={secondaryAction}
                                 onPrimary={actions[itemPrimaryAction]}
-                                onSecondary={actions[itemSecondaryAction]}
+                                onSecondary={actions[secondaryAction]}
                             />
                         );
                     })}

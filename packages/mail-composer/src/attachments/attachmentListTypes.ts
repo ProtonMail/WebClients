@@ -6,7 +6,6 @@ export enum AttachmentAction {
     Download = 0,
     Preview = 1,
     Remove = 2,
-    None = 3,
 }
 
 export type AttachmentHandler =

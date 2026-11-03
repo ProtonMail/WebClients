@@ -158,6 +158,7 @@ const ItemAttachmentThumbnails = ({
                             onClose={handleClose}
                             ref={rootRef}
                             onDownload={handleDownload}
+                            downloadFeedback
                             navigationControls={
                                 <NavigationControl
                                     current={current + 1}

@@ -1,4 +1,4 @@
-import { act, fireEvent, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, screen, waitFor, within } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { MimeImage } from '@proton/file-icons/icons/MimeImage';
@@ -14,7 +14,7 @@ import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 
 import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from '../../constants';
 import { filterAttachmentToPreview } from '../../helpers/attachment/attachmentThumbnails';
-import { addApiMock } from '../../helpers/tests/api';
+import { addApiMock, addApiResolver, api } from '../../helpers/tests/api';
 import { assertIconComponent } from '../../helpers/tests/assertion';
 import { getCompleteAddress } from '../../helpers/tests/cache';
 import type { GeneratedKey } from '../../helpers/tests/crypto';
@@ -567,5 +567,42 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         });
         await waitFor(() => expect(downloadFile).toHaveBeenCalledTimes(1));
         expect(downloadFile).toHaveBeenCalledWith(blob, 'Attachment-0.txt.pgp');
+    });
+
+    it('should show the download in progress and download only once when download buttons are clicked again', async () => {
+        window.URL.createObjectURL = jest.fn();
+        const attachmentsMetadata = generateAttachmentsMetadata(1, 'txt', 'text/plain');
+        const attachmentURL = `mail/v4/attachments/${attachmentsMetadata[0].ID}`;
+
+        // Decryption fails, so the attachment is not kept in state and each download fetches it again
+        const mocks = await mockAttachmentThumbnailsAPICalls(attachmentsMetadata, fromKeys, true);
+        await setup(attachmentsMetadata, 1, { AddressID, fromKeys, fromAddress });
+
+        fireEvent.click(screen.getByTestId('attachment-thumbnail'));
+        await waitFor(() =>
+            expect(screen.getByTestId('file-preview').textContent).toMatch(
+                new RegExp('Preview for this file type is not supported')
+            )
+        );
+
+        const attachmentRequest = addApiResolver(attachmentURL);
+        const headerDownloadButton = screen.getByTestId('file-preview:actions:download');
+        const previewDownloadButton = within(
+            screen.getByTestId('file-preview:unsupported-preview-text').parentElement as HTMLElement
+        ).getByRole('button');
+        fireEvent.click(headerDownloadButton);
+        expect(headerDownloadButton).toBeDisabled();
+        fireEvent.click(headerDownloadButton);
+        // The in-preview button shares the same lock and joins the pending download
+        fireEvent.click(previewDownloadButton);
+        expect(previewDownloadButton).toBeDisabled();
+
+        await act(async () => attachmentRequest.resolve(mocks[0].attachmentPackets.data));
+
+        await waitFor(() => expect(headerDownloadButton).toBeEnabled());
+        await waitFor(() => expect(previewDownloadButton).toBeEnabled());
+        expect(downloadFile).toHaveBeenCalledTimes(1);
+        const attachmentRequestsAfterPreview = api.mock.calls.filter(([{ url }]) => url === attachmentURL).length - 1;
+        expect(attachmentRequestsAfterPreview).toBe(1);
     });
 });
