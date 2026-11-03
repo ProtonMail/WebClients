@@ -28,7 +28,7 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
-        "lint": "eslint --quiet",
+        "lint": "oxlint --quiet",
         "test": "TZ=UTC vitest run",
         "test:ci": "pnpm run test --run",
         "test:ui": "pnpm run test --ui",
@@ -55,7 +55,7 @@
         "ttag": "catalog:"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@proton/vitest-config": "workspace:^",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "^15.0.7",
@@ -68,8 +68,9 @@
         "@vitejs/plugin-react": "^6.1.2",
         "@vitest/coverage-v8": "catalog:",
         "@vitest/ui": "catalog:",
-        "eslint": "catalog:",
         "happy-dom": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
         "react-dom": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
