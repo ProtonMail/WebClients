@@ -2,7 +2,12 @@
     "name": "@proton/types",
     "version": "0.0.1",
     "types": "./index.d.ts",
+    "scripts": {
+        "lint": "oxlint --quiet"
+    },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^"
+        "@proton/oxlint-config": "workspace:^",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:"
     }
 }

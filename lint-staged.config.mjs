@@ -37,10 +37,6 @@ export default {
     },
     '(*.scss|.css)': ['prettier --write', 'stylelint --fix'],
     '(!(package).json|*.md|*.mdx|*.html|*.mjs|*.yml|*.svg)': 'prettier --write',
-    'package.json': [
-        'eslint --config packages/eslint-config-proton/package-json.js --max-warnings=0 --no-warn-ignored',
-        'sort-package-json',
-        'prettier --write',
-    ],
+    'package.json': [() => 'pnpm run check:constraints', 'sort-package-json', 'prettier --write'],
     'ci/bin/drive-release/drive-release': 'ci/bin/drive-release/check-binary-platform.sh',
 };

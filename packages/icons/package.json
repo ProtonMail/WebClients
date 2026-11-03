@@ -509,6 +509,7 @@
     "scripts": {
         "build": "pnpm run generate && tsc -P build.tsconfig.json",
         "generate": "tsx ./bin/generateReactIcons.ts",
+        "lint": "oxlint --quiet",
         "prepack": "pnpm run build"
     },
     "dependencies": {
@@ -518,10 +519,11 @@
         "react": "catalog:"
     },
     "devDependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
+        "@proton/oxlint-config": "workspace:^",
         "@types/mustache": "^4.2.6",
         "@types/react": "catalog:",
-        "eslint": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
         "tsx": "catalog:",
         "typescript": "^6.0.3"
     }

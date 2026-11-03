@@ -18,7 +18,6 @@
         "version": "pnpm --filter @proton/version run version"
     },
     "dependencies": {
-        "@proton/eslint-config-proton": "workspace:^",
         "@proton/prettier-config-proton": "workspace:^",
         "@proton/stylelint-config-proton": "workspace:^",
         "is-ci": "^4.1.0",
