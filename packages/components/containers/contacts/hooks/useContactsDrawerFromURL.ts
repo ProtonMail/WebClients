@@ -7,16 +7,16 @@ import { c } from 'ttag';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import type { ContactGroupEditProps } from '@proton/components/containers/contacts/group/ContactGroupEditModal';
+import { CONTACT_SEARCH_PARAMS, isContactSearchParams } from '@proton/mail/hooks/autoOpenContacts/helper';
+import { useGetContact } from '@proton/mail/store/contacts/contactHooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { useGetContact } from '../../store/contacts/contactHooks';
-import { CONTACT_SEARCH_PARAMS, isContactSearchParams } from './helper';
+import type { ContactEditProps } from '../edit/ContactEditModal';
+import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 
 interface Props {
     onEdit: (props: ContactEditProps) => void;

@@ -19,7 +19,6 @@
         "./features/categoriesView/useMarkOnboardingComplete": "./features/categoriesView/useMarkOnboardingComplete.ts",
         "./store/categoriesView/categoriesViewSelector": "./store/categoriesView/categoriesViewSelector.ts",
         "./hooks/autoOpenContacts/helper": "./hooks/autoOpenContacts/helper.ts",
-        "./hooks/autoOpenContacts/useContactsDrawerFromURL": "./hooks/autoOpenContacts/useContactsDrawerFromURL.ts",
         "./features/categoriesView/CategoryIcon": "./features/categoriesView/CategoryIcon.tsx",
         "./store/contacts": "./store/contacts/index.ts",
         "./store/contacts/contactSlice": "./store/contacts/contactSlice.ts",
@@ -94,7 +93,6 @@
         "history": "catalog:",
         "react": "catalog:",
         "react-redux": "catalog:",
-        "react-router-dom": "catalog:",
         "ttag": "catalog:"
     },
     "devDependencies": {
@@ -107,7 +105,6 @@
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
-        "@types/react-router-dom": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
         "jest": "catalog:",
