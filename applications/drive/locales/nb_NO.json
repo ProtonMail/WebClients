@@ -306,9 +306,6 @@
       "Create new text file": [
         "Opprett ny tekstfil"
       ],
-      "Current plan": [
-        "Gjeldende plan"
-      ],
       "Customize": [
         "Tilpass"
       ],
@@ -9413,9 +9410,6 @@
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" slettet permanent"
       ],
-      "\"${ name }\" failed to be moved to trash": [
-        "\"${ name }\" kunne ikke flyttes til papirkurven"
-      ],
       "\"${ name }\" moved to trash": [
         "\"${ name }\" flyttet til papirkurven"
       ],
@@ -10246,6 +10240,9 @@
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
       ],
+      "This plan doesn’t support the members on your account.": [
+        "Dette abonnementet støtter ikke medlemmene på kontoen din."
+      ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
       ],
@@ -10266,12 +10263,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Du vil snart bli omdirigert for å bekrefte betalingen din."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Valutaen er endret til euro (€) fordi ${ IDEAL_WERO_BRAND_NAME } kun støtter betalinger i euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Din valuta har blitt endret til euro (€) fordi SEPA-bankoverføringer bare støtter betalinger i euro."
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
@@ -10309,6 +10300,11 @@
     "Payments.error": {
       "Something went wrong. Google Pay verification failed.": [
         "Noe gikk galt. Google Pay-verifiseringen mislyktes."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved å bekrefte gir du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, tillatelse til å innkreve fremtidige betalinger for abonnementet ditt fra denne bankkontoen via SEPA AvtaleGiro, og banken din til å debitere disse betalingene. Første betaling gjøres nå av ${ IDEAL_WERO_BRAND_NAME }. Abonnementet fornyes automatisk inntil du kansellerer. Vi varsler deg før hver innkreving. For innkreving via AvtaleGiro kan du be om refusjon fra banken innen 8 uker etter debiteringsdatoen, i henhold til vilkårene i avtalen med banken din. Dette gjelder ikke for ${ IDEAL_WERO_BRAND_NAME }-betalingen du foretar nå."
       ]
     },
     "Payments.info": {
