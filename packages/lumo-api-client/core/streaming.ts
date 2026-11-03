@@ -233,7 +233,7 @@ export class StreamProcessor {
     }
 
     private processChatToolResultChunk(chunk: ChatToolResultChunk): ServerToolResultMessage {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
+        // eslint-disable-next-line proton/naming-convention
         const { call_id, content, encrypted } = chunk.tool_result;
         return {
             type: 'server_tool_result',
