@@ -33,3 +33,19 @@ export const deleteSchedule =
             dispatch(locallyDeleteSpaceFromLocalRequest(id));
         }
     };
+
+/** Updates future executions through the existing encrypted space persistence pipeline. */
+export const setScheduleEnabled =
+    (id: SpaceId, enabled: boolean) =>
+    (dispatch: Dispatch, getState: () => LumoState): void => {
+        const space = getState().spaces[id];
+        if (space?.spaceType !== SpaceType.Schedule || !space.scheduleDefinition) return;
+        dispatch(
+            addSpace({
+                ...space,
+                updatedAt: new Date().toISOString(),
+                scheduleDefinition: { ...space.scheduleDefinition, enabled },
+            })
+        );
+        dispatch(pushSpaceRequest({ id, skipInGhostChatMode: false }));
+    };
