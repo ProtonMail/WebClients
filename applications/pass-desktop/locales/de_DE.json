@@ -526,6 +526,9 @@
       "Move all items": [
         "Alle Einträge verschieben"
       ],
+      "Move folder": [
+        "Ordner verschieben"
+      ],
       "Move to": [
         "Verschieben nach"
       ],
@@ -723,6 +726,9 @@
       ],
       "Show advanced options": [
         "Erweiterte Optionen anzeigen"
+      ],
+      "Show all": [
+        "Alle anzeigen"
       ],
       "Show Less": [
         "Weniger anzeigen"
@@ -1260,6 +1266,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Fehler beim Verschieben der Einträge von \"${ payload.content.name }\"."
+      ],
+      "Failed to move folder": [
+        "Fehler beim Verschieben des Ordners"
       ],
       "Failed to move items": [
         "Fehler beim Verschieben der Einträge."
@@ -2137,6 +2146,9 @@
       "Folder \"${ payload.folder.name }\" created": [
         "Ordner \"${ payload.folder.name }\" erstellt"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Ordner „${ payload.folder.name }“ verschoben"
+      ],
       "Folder deleted": [
         "Ordner gelöscht"
       ],
@@ -2403,6 +2415,24 @@
       "Only ${ count } item will be moved. Items in folders will not be moved.": [
         "Es wird nur ${ count } Eintrag verschoben. Einträge in Ordnern werden nicht verschoben.",
         "Es werden nur ${ count } Einträge verschoben. Einträge in Ordnern werden nicht verschoben."
+      ],
+      "Only aliases are shown": [
+        "Nur Aliase werden angezeigt"
+      ],
+      "Only cards are shown": [
+        "Nur Karten werden angezeigt"
+      ],
+      "Only custom items are shown": [
+        "Nur benutzerdefinierte Einträge werden angezeigt"
+      ],
+      "Only identities are shown": [
+        "Nur Identitäten werden angezeigt"
+      ],
+      "Only logins are shown": [
+        "Nur Anmeldungen werden angezeigt"
+      ],
+      "Only notes are shown": [
+        "Nur Notizen werden angezeigt"
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Nur Token, die in den letzten 30 Tagen abgelaufen sind, werden angezeigt. Ältere Token wurden automatisch gelöscht."
@@ -2758,6 +2788,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Das zusätzliche Passwort wird für die Verwendung von ${ PASS_APP_NAME } benötigt. Es dient als zusätzliches Passwort zu deinem ${ BRAND_NAME }-Passwort."
+      ],
+      "The folder is already here": [
+        "Der Ordner ist bereits vorhanden"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Der folgende ${ totalIgnored } Eintrag konnte nicht importiert werden:",
@@ -5264,6 +5297,9 @@
       "Modified": [
         "Geändert"
       ],
+      "Move \"${ folderName }\" to": [
+        "„${ folderName }“ verschieben nach"
+      ],
       "Move ${ count } item to ${ target }": [
         "${ count } Eintrag nach ${ target } verschieben",
         "${ count } Einträge nach ${ target } verschieben"
@@ -5773,6 +5809,9 @@
       "Move to trash": [
         "In den Papierkorb verschieben"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Das Verschieben des Ordners an diesen Ort überschreitet die maximale Verschachtelungstiefe"
+      ],
       "No items": [
         "Keine Einträge"
       ],
@@ -5880,6 +5919,9 @@
       ],
       "Verification code is required": [
         "Verifizierungscode ist erforderlich"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Ein Ordner kann nicht in sich selbst oder in einen seiner Unterordner verschoben werden"
       ],
       "You have reached the limit of members who can access this item.": [
         "Du hast das Benutzerlimit für den Zugriff auf diesen Eintrag erreicht."

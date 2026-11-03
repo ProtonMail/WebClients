@@ -526,6 +526,9 @@
       "Move all items": [
         "Mover todos los elementos"
       ],
+      "Move folder": [
+        "Mover carpeta"
+      ],
       "Move to": [
         "Mover a"
       ],
@@ -723,6 +726,9 @@
       ],
       "Show advanced options": [
         "Mostrar las opciones avanzadas"
+      ],
+      "Show all": [
+        "Mostrar todo"
       ],
       "Show Less": [
         "Mostrar menos"
@@ -1260,6 +1266,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Error al mover todos los elementos desde \"${ payload.content.name }\""
+      ],
+      "Failed to move folder": [
+        "Error al mover a la carpeta"
       ],
       "Failed to move items": [
         "Error al mover los elementos"
@@ -2137,6 +2146,9 @@
       "Folder \"${ payload.folder.name }\" created": [
         "Carpeta «${ payload.folder.name }» creada"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Carpeta «${ payload.folder.name }» movida"
+      ],
       "Folder deleted": [
         "Carpeta eliminada"
       ],
@@ -2403,6 +2415,24 @@
       "Only ${ count } item will be moved. Items in folders will not be moved.": [
         "Solo se moverá ${ count } elemento. Los elementos en carpetas no se moverán.",
         "Solo se moverán ${ count } elementos. Los elementos en carpetas no se moverán."
+      ],
+      "Only aliases are shown": [
+        "Solo se muestran los alias"
+      ],
+      "Only cards are shown": [
+        "Solo se muestran las tarjetas"
+      ],
+      "Only custom items are shown": [
+        "Solo se muestran los elementos personalizados"
+      ],
+      "Only identities are shown": [
+        "Solo se muestran las identidades"
+      ],
+      "Only logins are shown": [
+        "Solo se muestran los inicios de sesión"
+      ],
+      "Only notes are shown": [
+        "Solo se muestran las notas"
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Solo se muestran los tokens que han expirado en los últimos 30 días. Los tokens más antiguos son eliminados automáticamente."
@@ -2758,6 +2788,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "La contraseña adicional se requerirá para usar ${ PASS_APP_NAME }. Funciona como una contraseña extra por encima de su contraseña de ${ BRAND_NAME }."
+      ],
+      "The folder is already here": [
+        "La carpeta ya está aquí"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "${ totalIgnored } elemento no se pudo importar:",
@@ -5264,6 +5297,9 @@
       "Modified": [
         "Modificado"
       ],
+      "Move \"${ folderName }\" to": [
+        "Mover «${ folderName }» a"
+      ],
       "Move ${ count } item to ${ target }": [
         "Mover ${ count } elemento a ${ target }",
         "Mover ${ count } elementos a ${ target }"
@@ -5773,6 +5809,9 @@
       "Move to trash": [
         "Mover a la papelera"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Mover la carpeta aquí excedería el nivel máximo de anidación de carpetas"
+      ],
       "No items": [
         "No hay elementos"
       ],
@@ -5880,6 +5919,9 @@
       ],
       "Verification code is required": [
         "El código de verificación es obligatorio"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "No puede mover una carpeta dentro de sí misma ni de sus subcarpetas"
       ],
       "You have reached the limit of members who can access this item.": [
         "Alcanzó el límite de miembros que pueden acceder a este elemento."
