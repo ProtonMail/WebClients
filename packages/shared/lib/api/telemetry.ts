@@ -31,7 +31,6 @@ export enum TelemetryMeasurementGroups {
     calendarInvite = 'any.web.calendar_invite',
     keyTransparency = 'any.web.key_transparency',
     subscriptionModal = 'any.web.subscription_modal',
-    oldMailOnboarding = 'mail.web.onboarding',
     paidUsersNudge = 'any.web.paid_users_nudge',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
@@ -93,20 +92,6 @@ export enum TelemetryMeasurementGroups {
     vpnAlwaysOnPolicy = 'vpn.web.always_on_policy',
     vpnB2bUserActivity = 'vpn.web.b2b_user_activity',
     mailForegroundActivity = 'mail.common.foreground_activity',
-}
-
-export enum OldTelemetryMailOnboardingEvents {
-    start_onboarding_modals = 'start_onboarding_modals',
-    finish_onboarding_modals = 'finish_onboarding_modals',
-    select_theme = 'select_theme',
-    enable_gmail_forwarding = 'enable_gmail_forwarding',
-    change_login = 'change_login',
-    change_login_checklist = 'change_login_checklist',
-    finish_change_login = 'finish_change_login',
-    download_desktop_app = 'download_desktop_app',
-    premium_features = 'premium_features',
-    close_checklist = 'close_checklist',
-    clicked_checklist_setting = 'clicked_checklist_setting',
 }
 
 export enum TelemetrySubscriptionModalEvents {
@@ -755,7 +740,6 @@ export type TelemetryEvents =
     | TelemetryMailSelectAllEvents
     | TelemetryMailComposerAssistantEvents
     | TelemetryMailLumoEvents
-    | OldTelemetryMailOnboardingEvents
     | TelemetryMailPagingControlsEvents
     | TelemetryMailBlockquotes
     | TelemetryMailForegroundEvents

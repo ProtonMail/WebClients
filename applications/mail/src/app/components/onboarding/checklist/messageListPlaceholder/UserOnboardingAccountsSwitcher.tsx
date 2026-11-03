@@ -9,7 +9,6 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { IcSquares } from '@proton/icons/icons/IcSquares';
-import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces/Checklist';
@@ -19,7 +18,6 @@ import checklistAccountsSwitcherImg from '@proton/styles/assets/img/illustration
 import { useGetStartedChecklist } from '../../../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { CHECKLIST_ACTIONS, CHECKLIST_REDUCE_TRIGGERS, CHECKLIST_STEPS } from '../../../../telemetry/checklistEvents';
 import { useChecklistTracking } from '../../../../telemetry/useChecklistTracking';
-import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import { ONLINE_SERVICES } from '../constants';
 import UpdateMailAddressModal from './UpdateMailAddressModal';
 
@@ -30,7 +28,6 @@ const UserOnboardingAccountsSwitcher = () => {
     const { createNotification } = useNotifications();
     const { changeChecklistDisplay, canDisplayChecklist } = useGetStartedChecklist();
     const tracking = useChecklistTracking();
-    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
 
     useEffect(() => {
         tracking.trackStepLoaded(CHECKLIST_STEPS.accountsScreen);
@@ -44,7 +41,6 @@ const UserOnboardingAccountsSwitcher = () => {
     const handleChangeChecklistDisplay = () => {
         tracking.trackStepInteracted(CHECKLIST_STEPS.accountsScreen, CHECKLIST_ACTIONS.skip);
         changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.REDUCED, CHECKLIST_REDUCE_TRIGGERS.user);
-        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.finish_change_login, {});
     };
 
     const defaultEmailAddress: string | undefined = sortedAddresses?.[0]?.Email;
@@ -101,9 +97,6 @@ const UserOnboardingAccountsSwitcher = () => {
                                 target="_blank"
                                 onClick={() => {
                                     tracking.trackServiceSelected(service.key);
-                                    void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.change_login, {
-                                        service: service.key,
-                                    });
                                 }}
                                 className="inline-flex items-center justify-center rounded-lg shrink-0 gap-2"
                                 data-testid={`ServiceButton:${service.key}`}

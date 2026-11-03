@@ -7,7 +7,6 @@ import useInboxDesktopVersion from '@proton/components/containers/desktop/useInb
 import OnboardingStep from '@proton/components/containers/onboarding/OnboardingStep';
 import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { OldTelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
 import { isDebianBased, isFedoraOrRedHatBased, isMac, isMobile, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import linuxAppImg1x from '@proton/styles/assets/img/onboarding/mail_onboarding_desktop_app_download_linux@1x.webp';
@@ -20,7 +19,6 @@ import clsx from '@proton/utils/clsx';
 
 import { TrackOnboardingStepLoad } from '../../../../telemetry/TrackOnboardingStepLoad';
 import { ONBOARDING_ACTIONS, ONBOARDING_STEPS, useOnboardingTracking } from '../../../../telemetry/onboardingEvents';
-import { useMailOnboardingTelemetry } from '../../useMailOnboardingTelemetry';
 import type { OnboardingStepEligibleCallback } from '../interface';
 import OnboardingContent from '../layout/OnboardingContent';
 
@@ -47,7 +45,6 @@ export const isGetDesktopAppStepEligible: OnboardingStepEligibleCallback = async
 const GetDesktopAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
     const { trackStepInteracted, trackStepCompleted } = useOnboardingTracking();
     const { viewportWidth } = useActiveBreakpoint();
-    const sendMailOnboardingTelemetry = useMailOnboardingTelemetry();
 
     const { desktopAppLink } = useInboxDesktopVersion();
 
@@ -57,7 +54,6 @@ const GetDesktopAppStep = ({ onNext }: OnboardingStepRenderCallback) => {
     };
 
     const handleDesktopAppButtonClick = () => {
-        void sendMailOnboardingTelemetry(OldTelemetryMailOnboardingEvents.download_desktop_app, {});
         trackStepInteracted(ONBOARDING_STEPS.desktopApp, ONBOARDING_ACTIONS.downloadApp);
         handleNext();
     };
