@@ -166,7 +166,7 @@ const LearnMoreModal = (props: ModalStateProps) => {
                         onClick={async () => {
                             setShowModal(false);
                             try {
-                                await cancelSubscription({});
+                                await cancelSubscription({ subscription });
                             } finally {
                                 // Once `cancelSubscription` shows a modal instead of a notification,
                                 // we can call onClose instead of onExit to display a closing animation

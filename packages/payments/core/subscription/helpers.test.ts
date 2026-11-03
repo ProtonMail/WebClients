@@ -13,6 +13,7 @@ import {
     getSoonestEndingSubscription,
     getSubscriptionPlanTitle,
     hasBlackFriday2026Coupon,
+    hasPassLaunchOffer,
     isAddonDowngrade,
     isDangerouslyAllowedSubscriptionEstimation,
     isModifyingPaidSubscriptionSelection,
@@ -1354,6 +1355,33 @@ describe('hasBlackFriday2026Coupon', () => {
 
     it('is false for a free subscription', () => {
         expect(hasBlackFriday2026Coupon(FREE_SUBSCRIPTION)).toBe(false);
+    });
+});
+
+describe('hasPassLaunchOffer', () => {
+    const buildPassSubscription = (offer: string, cycle: CYCLE) => {
+        const subscription = buildSubscription(PLANS.PASS, { Cycle: cycle });
+        return { ...subscription, Plans: [{ ...subscription.Plans[0], Offer: offer }] };
+    };
+
+    it('is true for a yearly Pass Plus subscription with the launch offer', () => {
+        expect(hasPassLaunchOffer(buildPassSubscription('passlaunch', CYCLE.YEARLY))).toBe(true);
+    });
+
+    it('is false for a monthly Pass Plus subscription with the launch offer', () => {
+        expect(hasPassLaunchOffer(buildPassSubscription('passlaunch', CYCLE.MONTHLY))).toBe(false);
+    });
+
+    it('is false for a yearly Pass Plus subscription without the launch offer', () => {
+        expect(hasPassLaunchOffer(buildPassSubscription('default', CYCLE.YEARLY))).toBe(false);
+    });
+
+    it('is false for another plan', () => {
+        expect(hasPassLaunchOffer(buildSubscription(PLANS.VPN2024, { Cycle: CYCLE.YEARLY }))).toBe(false);
+    });
+
+    it('is false for a free subscription', () => {
+        expect(hasPassLaunchOffer(FREE_SUBSCRIPTION)).toBe(false);
     });
 });
 

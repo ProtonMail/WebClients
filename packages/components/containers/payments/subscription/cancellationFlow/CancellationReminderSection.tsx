@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { addDays, fromUnixTime, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { PLANS } from '@proton/payments/core/constants';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
-import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -25,19 +26,24 @@ import { CancelRedirectionModal } from './CancelRedirectionModal';
 import ReminderSectionFeatures from './ReminderSectionFeatures';
 import ReminderSectionPlan from './ReminderSectionPlan';
 import ReminderSectionTestimonials from './ReminderSectionTestimonials';
+import { getSubscriptionForCancelRoute } from './helper';
 import { getReminderPageConfig } from './reminderPageConfig';
-import useCancellationFlow from './useCancellationFlow';
+import useCancellationFlow, { getCanUseCancellationReminder } from './useCancellationFlow';
 import useCancellationTelemetry from './useCancellationTelemetry';
 
 interface Props {
     app: APP_NAMES;
 }
 
-export const CancellationReminderSection = ({ app }: Props) => {
-    const [subscription] = useSubscription();
+interface ContentProps extends Props {
+    subscription: Subscription;
+}
+
+const CancellationReminderContent = ({ app, subscription }: ContentProps) => {
     const { reportCancellationOnSameDay } = useSubscriptionModalTelemetry();
     const openSubscriptionModal = useSubscriptionModalRaw();
-    const { b2bAccess, b2cAccess, redirectToDashboard, setStartedCancellation } = useCancellationFlow();
+    const { redirectToDashboard, startedCancellation, setStartedCancellation } = useCancellationFlow();
+    const hasAccess = startedCancellation || getCanUseCancellationReminder(subscription);
     const { sendCancelPageKeepPlanReport, sendCancelPageConfirmCancelReport } = useCancellationTelemetry();
 
     const { cancelSubscription, cancelSubscriptionModals } = useCancelSubscriptionFlow({
@@ -58,15 +64,15 @@ export const CancellationReminderSection = ({ app }: Props) => {
     useEffect(() => {
         const newConfig = getReminderPageConfig({ app, subscription, scribeToLumo });
         setConfig(newConfig);
-    }, [b2bAccess, b2cAccess]);
+    }, [hasAccess]);
 
     useAppTitle(c('Subscription reminder').t`Cancel subscription`);
 
     const isUpsellEnabled = useFlag('NewCancellationFlowUpsell');
 
-    if ((!b2bAccess && !b2cAccess) || !config) {
+    if (!hasAccess || !config) {
         redirectToDashboard();
-        return;
+        return null;
     }
 
     const handleCancelSubscription = async () => {
@@ -77,10 +83,9 @@ export const CancellationReminderSection = ({ app }: Props) => {
         const isSubscriptionReminderFlow = !isUpsellEnabled || !config.upsellPlan;
 
         const hasCancelledOnSameDayHeSubscribed =
-            isPaidSubscription(subscription) &&
-            subscription?.CreateTime &&
-            isBefore(new Date(), addDays(fromUnixTime(subscription.CreateTime), 1));
+            subscription.CreateTime && isBefore(new Date(), addDays(fromUnixTime(subscription.CreateTime), 1));
         const { status } = await cancelSubscription({
+            subscription,
             subscriptionReminderFlow: isSubscriptionReminderFlow,
             upsellPlanId: config.upsellPlan,
         });
@@ -157,10 +162,33 @@ export const CancellationReminderSection = ({ app }: Props) => {
                 />
             )}
             {redirectRenderModal && (
-                <CancelRedirectionModal {...redirectModalProps} planName={config.planName} plan={config.plan} />
+                <CancelRedirectionModal
+                    {...redirectModalProps}
+                    subscription={subscription}
+                    planName={config.planName}
+                    plan={config.plan}
+                />
             )}
 
             {cancelSubscriptionModals}
         </>
     );
+};
+
+export const CancellationReminderSection = ({ app }: Props) => {
+    const location = useLocation();
+    const [subscriptions, loadingSubscriptions] = useAllSubscriptions();
+    const { redirectToDashboard } = useCancellationFlow();
+
+    if (loadingSubscriptions) {
+        return null;
+    }
+
+    const subscription = getSubscriptionForCancelRoute(subscriptions ?? [], location.search);
+    if (!subscription) {
+        redirectToDashboard();
+        return null;
+    }
+
+    return <CancellationReminderContent app={app} subscription={subscription} />;
 };

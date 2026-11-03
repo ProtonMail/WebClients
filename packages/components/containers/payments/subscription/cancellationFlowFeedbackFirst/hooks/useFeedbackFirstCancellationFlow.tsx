@@ -1,15 +1,14 @@
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { PLAN_NAMES } from '@proton/payments/core/constants';
 import { getPlanName, getPlanTitle } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 
 import useModalState from '../../../../../components/modalTwo/useModalState';
 import { CancelRedirectionModal } from '../../cancellationFlow/CancelRedirectionModal';
 import { FeedbackFirstCancellation } from '../FeedbackFirstCancellation';
 
-export const useFeedbackFirstCancellationFlow = () => {
+export const useFeedbackFirstCancellationFlow = (subscription: Subscription) => {
     const [modalProps, setModalOpen, renderModal] = useModalState();
     const [redirectModalProps, setRedirectModalOpen, redirectRenderModal] = useModalState();
-    const [subscription] = useSubscription();
 
     const plan = getPlanName(subscription);
     const planDisplayName = plan ? PLAN_NAMES[plan] : (getPlanTitle(subscription) ?? '');
@@ -23,13 +22,19 @@ export const useFeedbackFirstCancellationFlow = () => {
             {renderModal && (
                 <FeedbackFirstCancellation
                     {...modalProps}
+                    subscription={subscription}
                     onCancelled={() => {
                         setRedirectModalOpen(true);
                     }}
                 />
             )}
             {redirectRenderModal && plan && (
-                <CancelRedirectionModal {...redirectModalProps} plan={plan} planName={planDisplayName} />
+                <CancelRedirectionModal
+                    {...redirectModalProps}
+                    subscription={subscription}
+                    plan={plan}
+                    planName={planDisplayName}
+                />
             )}
         </>
     );

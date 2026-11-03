@@ -1,12 +1,21 @@
 import type { ReactNode } from 'react';
 
-interface CancellationStepConfig {
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+
+export interface CancellationStepConfig {
     canShow: () => Promise<boolean>;
 }
 
-interface CancellationStep<T = void> {
+export interface CancellationStep<T = void> {
     modal: ReactNode;
     show: () => Promise<T>;
 }
 
-export type { CancellationStep, CancellationStepConfig };
+export interface SubscriptionCancellationStepConfig {
+    canShow: (subscription: Subscription) => Promise<boolean>;
+}
+
+export interface SubscriptionCancellationStep<T = void> {
+    modal: ReactNode;
+    show: (subscription: Subscription) => Promise<T>;
+}

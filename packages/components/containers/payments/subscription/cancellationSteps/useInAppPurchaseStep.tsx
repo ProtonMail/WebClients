@@ -1,25 +1,22 @@
-import { useSubscription } from '@proton/account/subscription/hooks';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 
 import { useModalTwoPromise } from '../../../../components/modalTwo/useModalTwo';
 import InAppPurchaseModal from '../InAppPurchaseModal';
-import type { CancellationStep, CancellationStepConfig } from './types';
+import type { SubscriptionCancellationStep, SubscriptionCancellationStepConfig } from './types';
 
-export const useInAppPurchaseStep = ({ canShow }: CancellationStepConfig): CancellationStep => {
-    const [subscription] = useSubscription();
-    const [inAppPurchaseModal, showInAppPurchaseModal] = useModalTwoPromise();
+export const useInAppPurchaseStep = ({ canShow }: SubscriptionCancellationStepConfig): SubscriptionCancellationStep => {
+    const [inAppPurchaseModal, showInAppPurchaseModal] = useModalTwoPromise<{ subscription: Subscription }>();
 
-    const modal = subscription
-        ? inAppPurchaseModal(({ onReject, ...props }) => {
-              return <InAppPurchaseModal {...props} subscription={subscription} onClose={onReject} />;
-          })
-        : null;
+    const modal = inAppPurchaseModal(({ onReject, ...props }) => {
+        return <InAppPurchaseModal {...props} onClose={onReject} />;
+    });
 
-    const show = async () => {
-        if (!(await canShow())) {
+    const show = async (subscription: Subscription) => {
+        if (!(await canShow(subscription))) {
             return;
         }
 
-        await showInAppPurchaseModal();
+        await showInAppPurchaseModal({ subscription });
     };
 
     return { modal, show };

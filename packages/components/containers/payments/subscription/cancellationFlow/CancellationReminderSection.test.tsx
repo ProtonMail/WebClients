@@ -1,19 +1,24 @@
 import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
-import { PLANS, PLAN_NAMES, PLAN_TYPES } from '@proton/payments/core/constants';
+import { getModelState } from '@proton/account/testing/getModelState';
+import { changeRenewState } from '@proton/payments/core/api/api';
+import { FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { Renew } from '@proton/shared/lib/payments/subscription/constants';
+import { buildUser } from '@proton/shared/testing/buildUser';
+import { apiMock } from '@proton/test-api/api';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import useSettingsLink from '../../../../components/link/useSettingsLink';
 import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import { CancellationReminderSection } from './CancellationReminderSection';
-import useCancellationFlow from './useCancellationFlow';
 
-jest.mock('@proton/account/user/hooks');
-const mockUseUser = useUser as jest.MockedFunction<any>;
-jest.mock('@proton/account/subscription/hooks');
-const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
+jest.mock('@proton/atoms/Portal/Portal');
 
 jest.mock('@proton/unleash/useFlag');
 const mockUseFlag = useFlag as jest.MockedFunction<any>;
@@ -22,88 +27,105 @@ jest.mock('@proton/shared/lib/vpn/vpnServers', () => ({
     VPN_SERVERS: { paid: { countries: 10 } },
 }));
 
-jest.mock('./useCancellationFlow');
-const mockUseCancellationFlow = useCancellationFlow as jest.Mock;
+jest.mock('../../../../components/link/useSettingsLink');
+const mockGoToSettings = jest.fn();
+jest.mocked(useSettingsLink).mockReturnValue(mockGoToSettings);
 
-const defaultUser = {
-    ChargebeeUser: 2,
+const mailSubscription = { ...buildSubscription(PLANS.MAIL), ID: 'sub-mail' };
+const driveSubscription = { ...buildSubscription(PLANS.DRIVE), ID: 'sub-drive' };
+
+const renderSection = (subscription: Subscription, initialUrl = '/cancel-subscription') => {
+    return renderWithProviders(<CancellationReminderSection app={APPS.PROTONMAIL} />, {
+        initialUrl,
+        preloadedState: {
+            user: getModelState(buildUser()),
+            subscription: getSubscriptionState(subscription),
+        },
+    });
 };
 
-const defaultB2CSubscription = {
-    Plans: [
-        {
-            MaxAddresses: 5,
-            MaxDomains: 1,
-            Name: PLANS.MAIL,
-            Type: PLAN_TYPES.PLAN,
-        },
-    ],
+const getHeading = (plan: PLANS) => {
+    return screen.queryByRole('heading', { name: `What you give up when you cancel ${PLAN_NAMES[plan]}` });
 };
 
 describe('Cancellation flow section', () => {
     beforeEach(() => {
-        mockUseCancellationFlow.mockImplementation(() => {
-            const originalModule = jest.requireActual('./useCancellationFlow');
-            return originalModule.default();
-        });
-
-        // We want to enable the feature everywhere
+        jest.clearAllMocks();
         mockUseFlag.mockReturnValue(true);
     });
 
     it('Should render the CancellationReminderSection component', () => {
-        mockUseUser.mockReturnValue([defaultUser, false]);
-        mockUseSubscription.mockReturnValue([defaultB2CSubscription, false]);
+        renderSection(mailSubscription);
 
-        renderWithProviders(<CancellationReminderSection app={APPS.PROTONMAIL} />);
-        expect(
-            screen.getByRole('heading', { name: `What you give up when you cancel ${PLAN_NAMES[PLANS.MAIL]}` })
-        ).toBeInTheDocument();
+        expect(getHeading(PLANS.MAIL)).toBeInTheDocument();
     });
 
-    it.each([
-        [PLANS.BUNDLE, PLAN_NAMES[PLANS.BUNDLE]],
-        [PLANS.DRIVE, PLAN_NAMES[PLANS.DRIVE]],
-        [PLANS.BUNDLE_PRO_2024, PLAN_NAMES[PLANS.BUNDLE_PRO_2024]],
-    ])('Should adapt UI depending on the user plan', (plan, planName) => {
-        mockUseUser.mockReturnValue([defaultUser, false]);
-        mockUseSubscription.mockReturnValue([
-            {
-                Plans: [
-                    {
-                        MaxAddresses: 5,
-                        MaxCalendars: 10,
-                        MaxDomains: 10,
-                        Name: plan,
-                        Type: PLAN_TYPES.PLAN,
-                    },
-                ],
-            },
-            false,
-        ]);
+    it.each([PLANS.BUNDLE, PLANS.DRIVE, PLANS.BUNDLE_PRO_2024])(
+        'Should adapt UI depending on the user plan',
+        (plan) => {
+            renderSection(buildSubscription(plan));
 
-        renderWithProviders(<CancellationReminderSection app={APPS.PROTONMAIL} />);
-
-        expect(
-            screen.getByRole('heading', { name: `What you give up when you cancel ${planName}` })
-        ).toBeInTheDocument();
-
-        expect(screen.getByRole('button', { name: 'Keep subscription' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: 'Cancel subscription' })).toBeInTheDocument();
-    });
+            expect(getHeading(plan)).toBeInTheDocument();
+            expect(screen.getByRole('button', { name: 'Keep subscription' })).toBeInTheDocument();
+            expect(screen.getByRole('button', { name: 'Cancel subscription' })).toBeInTheDocument();
+        }
+    );
 
     it('Should redirect to the dashboard for free users', () => {
-        mockUseUser.mockReturnValue([{}, false]);
-        mockUseSubscription.mockReturnValue([{}, false]);
+        renderSection(FREE_SUBSCRIPTION as unknown as Subscription);
 
-        const spyRedirectDashboard = jest.fn();
-        mockUseCancellationFlow.mockReturnValue({
-            b2bAccess: false,
-            b2cAccess: false,
-            redirectToDashboard: spyRedirectDashboard,
+        expect(mockGoToSettings).toHaveBeenCalledWith('/dashboard');
+    });
+
+    describe('with several subscriptions', () => {
+        const mailAndDrive = { ...mailSubscription, SecondarySubscriptions: [driveSubscription] };
+
+        it('shows the subscription from the URL', () => {
+            renderSection(mailAndDrive, '/cancel-subscription?subscriptionId=sub-drive');
+
+            expect(getHeading(PLANS.DRIVE)).toBeInTheDocument();
+            expect(getHeading(PLANS.MAIL)).not.toBeInTheDocument();
+            expect(mockGoToSettings).not.toHaveBeenCalled();
         });
 
-        renderWithProviders(<CancellationReminderSection app={APPS.PROTONMAIL} />);
-        expect(spyRedirectDashboard).toHaveBeenCalled();
+        it('redirects to the dashboard when the URL names no subscription', () => {
+            renderSection(mailAndDrive);
+
+            expect(mockGoToSettings).toHaveBeenCalledWith('/dashboard');
+            expect(getHeading(PLANS.MAIL)).not.toBeInTheDocument();
+        });
+
+        it('redirects to the dashboard when the URL names an unknown subscription', () => {
+            renderSection(mailAndDrive, '/cancel-subscription?subscriptionId=sub-unknown');
+
+            expect(mockGoToSettings).toHaveBeenCalledWith('/dashboard');
+        });
+
+        it('cancels the subscription from the URL by its ID', async () => {
+            mockUseFlag.mockReturnValue(false);
+            const { container } = renderSection(mailAndDrive, '/cancel-subscription?subscriptionId=sub-drive');
+
+            await userEvent.click(screen.getByTestId('cancellation-flow:confirm-cancellation'));
+            await userEvent.click(screen.getByTestId('confirm-cancellation-button'));
+            await userEvent.click(container.ownerDocument.querySelector('#reason') as HTMLButtonElement);
+            await userEvent.click(screen.getByText('I use a different Proton account'));
+            await userEvent.click(screen.getByTestId('submitFeedback'));
+            await wait(0);
+
+            expect(apiMock).toHaveBeenCalledWith(
+                changeRenewState(
+                    {
+                        RenewalState: Renew.Disabled,
+                        CancellationFeedback: {
+                            Reason: 'DIFFERENT_ACCOUNT',
+                            Feedback: null,
+                            ReasonDetails: null,
+                            Context: 'mail',
+                        },
+                    },
+                    'sub-drive'
+                )
+            );
+        });
     });
 });

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import DropdownMenu from '../../../../../components/dropdown/DropdownMenu';
@@ -24,6 +25,7 @@ import type { Competitor } from '../config/differentProviderConfig';
 import { useFeedbackFirstEligibility } from '../hooks/useFeedbackFirstEligibility';
 
 interface Props {
+    subscription: Subscription;
     onKeepPlan: () => void;
     onContinueCancelling: () => void;
     feedbackReason?: string;
@@ -72,8 +74,8 @@ const CompetitorHeader = ({ competitors, competitor, onSelect }: CompetitorHeade
     );
 };
 
-export const DifferentProviderContent = ({ onKeepPlan, onContinueCancelling, feedbackReason }: Props) => {
-    const { hasB2CAccess, hasB2BAccess } = useFeedbackFirstEligibility();
+export const DifferentProviderContent = ({ subscription, onKeepPlan, onContinueCancelling, feedbackReason }: Props) => {
+    const { hasB2CAccess, hasB2BAccess } = useFeedbackFirstEligibility(subscription);
 
     const getInitialCompetitor = () => {
         const competitorsList = hasB2CAccess ? B2C_COMPETITORS : B2B_COMPETITORS;

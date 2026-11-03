@@ -1,32 +1,18 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
-import { useFlag } from '@proton/unleash/useFlag';
+import { PLANS } from '@proton/payments/core/constants';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import { componentsHookRenderer } from '../../../../contacts/tests/render';
 import { useFeedbackFirstEligibility } from './useFeedbackFirstEligibility';
 
 jest.mock('@proton/account/subscription/hooks');
-const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
-
-jest.mock('@proton/unleash/useFlag');
-const mockUseFlag = useFlag as jest.MockedFunction<any>;
-
-const buildSubscriptionMock = (planName: PLANS) => ({
-    Plans: [{ Type: PLAN_TYPES.PLAN, Name: planName }],
-});
 
 describe('useFeedbackFirstEligibility', () => {
-    beforeEach(() => {
-        mockUseFlag.mockReturnValue(true);
-    });
-
     describe('B2C plans', () => {
         it.each([PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY, PLANS.DRIVE, PLANS.DRIVE_1TB])(
             'should grant B2C access for %s',
             (plan) => {
-                mockUseSubscription.mockReturnValue([buildSubscriptionMock(plan), false]);
-
-                const { result } = componentsHookRenderer(() => useFeedbackFirstEligibility());
+                const { result } = componentsHookRenderer(() => useFeedbackFirstEligibility(buildSubscription(plan)));
                 expect(result.current.hasB2CAccess).toBe(true);
                 expect(result.current.hasB2BAccess).toBe(false);
             }
@@ -37,12 +23,19 @@ describe('useFeedbackFirstEligibility', () => {
         it.each([PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025])(
             'should grant B2B access for %s',
             (plan) => {
-                mockUseSubscription.mockReturnValue([buildSubscriptionMock(plan), false]);
-
-                const { result } = componentsHookRenderer(() => useFeedbackFirstEligibility());
+                const { result } = componentsHookRenderer(() => useFeedbackFirstEligibility(buildSubscription(plan)));
                 expect(result.current.hasB2CAccess).toBe(false);
                 expect(result.current.hasB2BAccess).toBe(true);
             }
         );
+    });
+
+    it('should check the given subscription, not the one from useSubscription', () => {
+        jest.mocked(useSubscription).mockReturnValue([buildSubscription(PLANS.MAIL), false]);
+
+        const { result } = componentsHookRenderer(() => useFeedbackFirstEligibility(buildSubscription(PLANS.LUMO)));
+
+        expect(result.current.hasB2CAccess).toBe(false);
+        expect(result.current.hasB2BAccess).toBe(false);
     });
 });

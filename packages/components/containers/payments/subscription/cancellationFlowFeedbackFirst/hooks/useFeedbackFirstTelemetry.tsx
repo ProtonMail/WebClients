@@ -1,6 +1,6 @@
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import {
     TelemetryAccountCancellationFlowFeedbackEvents,
     type TelemetryEvents,
@@ -32,10 +32,9 @@ const getCancellationReason = (feedback: FeedbackDowngradeFormData) => {
     return feedback.Reason || SKIPPED_CANCELLATION_REASON;
 };
 
-export const useFeedbackFirstTelemetry = () => {
+export const useFeedbackFirstTelemetry = (subscription: Subscription) => {
     const silentApi = useSilentApi();
     const [user] = useUser();
-    const [subscription] = useSubscription();
     const [userSettings] = useUserSettings();
 
     const sendReport = (event: TelemetryEvents, dimensions?: Record<string, string>) => {
@@ -45,7 +44,7 @@ export const useFeedbackFirstTelemetry = () => {
                 Event: event,
                 Dimensions: {
                     ...dimensions,
-                    couponCode: subscription?.CouponCode || undefined,
+                    couponCode: subscription.CouponCode || undefined,
                     feedbackFirstCancellationEnabled: 'true',
                     ...getBaseTelemetryDimensions({ user, subscription, userSettings }),
                 },
