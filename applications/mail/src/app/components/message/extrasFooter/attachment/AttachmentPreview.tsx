@@ -102,6 +102,7 @@ const AttachmentPreview = (
                 fileSize={previewing.attachment?.Size}
                 onClose={handleClose}
                 onDownload={handleDownload}
+                downloadFeedback
                 ref={rootRef}
                 navigationControls={
                     <NavigationControl

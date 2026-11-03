@@ -48,6 +48,8 @@ import TextPreview from './TextPreview';
 import UnsupportedPreview from './UnsupportedPreview';
 import VideoPreview from './VideoPreview';
 import { VideoStreamingPreview } from './VideoStreamingPreview';
+import type { DownloadHandler } from './useDownloading';
+import useDownloading from './useDownloading';
 
 // Lazy Loaded since it includes jszip and it's a rare file type (not common)
 const ComicBookPreview = lazy(() => import(/* webpackChunkName: "comic-book-preview" */ './ComicBookPreview'));
@@ -82,7 +84,9 @@ interface FilePreviewProps {
     sharedStatus?: SharedStatus;
 
     onClose?: () => void;
-    onDownload?: () => void;
+    onDownload?: DownloadHandler;
+    /** Loader, minimum duration, and parallel-download lock for download actions. Off by default. */
+    downloadFeedback?: boolean;
     onSave?: (content: Uint8Array<ArrayBuffer>[]) => Promise<void>;
     onDetails?: () => void;
     onShare?: () => void;
@@ -125,6 +129,7 @@ export const FilePreviewContent = ({
     contents,
 
     onDownload,
+    downloadFeedback = false,
     onNewContents,
     onOpenInDocs,
 
@@ -154,7 +159,8 @@ export const FilePreviewContent = ({
 
     contents?: Uint8Array<ArrayBuffer>[];
 
-    onDownload?: () => void;
+    onDownload?: DownloadHandler;
+    downloadFeedback?: boolean;
     onNewContents?: (content: Uint8Array<ArrayBuffer>[]) => void;
     onOpenInDocs?: () => void;
 
@@ -202,7 +208,7 @@ export const FilePreviewContent = ({
         if (isTooLarge) {
             return (
                 <div className="file-preview-container">
-                    <UnsupportedPreview onDownload={onDownload} tooLarge={true} />
+                    <UnsupportedPreview onDownload={onDownload} downloadFeedback={downloadFeedback} tooLarge={true} />
                 </div>
             );
         }
@@ -267,6 +273,7 @@ export const FilePreviewContent = ({
                     contents={contents}
                     mimeType={mimeType}
                     onDownload={onDownload}
+                    downloadFeedback={downloadFeedback}
                 />
             );
         }
@@ -278,12 +285,20 @@ export const FilePreviewContent = ({
                     mimeType={mimeType}
                     isSharedFile={isSharedFile}
                     onDownload={onDownload}
+                    downloadFeedback={downloadFeedback}
                 />
             );
         }
 
         if (mimeType && contents && isAudio(mimeType)) {
-            return <AudioPreview contents={contents} mimeType={mimeType} onDownload={onDownload} />;
+            return (
+                <AudioPreview
+                    contents={contents}
+                    mimeType={mimeType}
+                    onDownload={onDownload}
+                    downloadFeedback={downloadFeedback}
+                />
+            );
         }
 
         if (mimeType && isSupportedText(mimeType)) {
@@ -298,11 +313,18 @@ export const FilePreviewContent = ({
             if (isSafari() && !isMinimumSafariVersion(16)) {
                 return (
                     <div className="file-preview-container">
-                        <UnsupportedPreview onDownload={onDownload} browser />
+                        <UnsupportedPreview onDownload={onDownload} downloadFeedback={downloadFeedback} browser />
                     </div>
                 );
             }
-            return <SandboxedPreview contents={contents} mimeType={mimeType} onDownload={onDownload} />;
+            return (
+                <SandboxedPreview
+                    contents={contents}
+                    mimeType={mimeType}
+                    onDownload={onDownload}
+                    downloadFeedback={downloadFeedback}
+                />
+            );
         }
 
         // A thumbnail skips the early loader, but only images can render it --> keep loading until contents arrive
@@ -312,7 +334,7 @@ export const FilePreviewContent = ({
 
         return (
             <div className="file-preview-container">
-                <UnsupportedPreview onDownload={onDownload} tooLarge={isTooLarge} />
+                <UnsupportedPreview onDownload={onDownload} downloadFeedback={downloadFeedback} tooLarge={isTooLarge} />
             </div>
         );
     };
@@ -342,6 +364,7 @@ const FilePreview = (
         signatureConfirmation,
         onClose,
         onDownload,
+        downloadFeedback = false,
         onSave,
         onDetails,
         onShare,
@@ -362,6 +385,9 @@ const FilePreview = (
     });
 
     const [isSaving, withSaving] = useLoading(false);
+    // One lock shared by every download control (header and in-preview button), so they cannot start parallel downloads.
+    const [, sharedDownload] = useDownloading(onDownload);
+    const handleDownload = onDownload && downloadFeedback ? sharedDownload : onDownload;
     const [isDirty, setIsDirty] = useState<boolean>(false);
     const [newContent, setNewContent] = useState<Uint8Array<ArrayBuffer>[]>([]);
     const [isAssistantOpen, setIsAssistantOpen] = useState(false);
@@ -441,7 +467,8 @@ const FilePreview = (
                     newContent.some((item) => item.length > 0)
                 }
                 onClose={handleClose}
-                onDownload={onDownload}
+                onDownload={handleDownload}
+                downloadFeedback={downloadFeedback}
                 onSave={handleSave}
                 onDetails={onDetails}
                 onShare={onShare}
@@ -496,7 +523,8 @@ const FilePreview = (
                         sheetsEnabled={sheetsEnabled}
                         onOpenInDocs={onOpenInDocs}
                         contents={contents}
-                        onDownload={onDownload}
+                        onDownload={handleDownload}
+                        downloadFeedback={downloadFeedback}
                         onNewContents={
                             onSave
                                 ? (content: Uint8Array<ArrayBuffer>[]) => {

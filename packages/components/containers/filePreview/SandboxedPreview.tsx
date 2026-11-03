@@ -14,9 +14,10 @@ interface Props {
     mimeType: string;
     contents?: Uint8Array<ArrayBuffer>[];
     onDownload?: () => void;
+    downloadFeedback?: boolean;
 }
 
-export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) => {
+export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload, downloadFeedback }) => {
     const [isError, setError] = useState(false);
     const ref = useRef<HTMLIFrameElement>(null);
 
@@ -97,7 +98,7 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
     if (isError) {
         return (
             <div className="flex flex-auto relative">
-                <UnsupportedPreview onDownload={onDownload} type="file" />
+                <UnsupportedPreview onDownload={onDownload} downloadFeedback={downloadFeedback} type="file" />
             </div>
         );
     }

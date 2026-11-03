@@ -9,10 +9,11 @@ interface Props {
     mimeType: string;
     contents: Uint8Array<ArrayBuffer>[];
     onDownload?: () => void;
+    downloadFeedback?: boolean;
     isSharedFile?: boolean;
 }
 
-const VideoPreview = ({ contents, mimeType, onDownload, isSharedFile }: Props) => {
+const VideoPreview = ({ contents, mimeType, onDownload, downloadFeedback, isSharedFile }: Props) => {
     const [url, setUrl] = useState<string>();
     const [error, setError] = useState(false);
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -35,7 +36,7 @@ const VideoPreview = ({ contents, mimeType, onDownload, isSharedFile }: Props) =
     if (error) {
         return (
             <div className="flex flex-auto relative">
-                <UnsupportedPreview onDownload={onDownload} type="video" />
+                <UnsupportedPreview onDownload={onDownload} downloadFeedback={downloadFeedback} type="video" />
             </div>
         );
     }
