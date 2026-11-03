@@ -299,9 +299,6 @@
       "Create new password": [
         "Стварыць новы пароль"
       ],
-      "Current plan": [
-        "Бягучы тарыфны план"
-      ],
       "Customize": [
         "Наладзіць"
       ],
@@ -5444,6 +5441,9 @@
       "Are you sure you want to discard your import?": [
         "Вы сапраўды хочаце адхіліць імпарт?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Папрасіце свайго адміністратара палепшыць тарыфны план або выдаліць старонку з бакавой панэлі браніравання старонак у ${ CALENDAR_APP_NAME }."
+      ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Папрасіце свайго адміністратара палепшыць тарыфны план або выдаліць старонку з бакавой панэлі браніравання старонак."
       ],
@@ -6325,6 +6325,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "Папрасіце свайго адміністратара палепшыць ваш тарыфны план, каб дадаць новую старонку браніравання."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Выдаліце існуючую старонку з бакавой панэлі браніравання старонак у ${ CALENDAR_APP_NAME }, каб дадаць новую старонку браніравання."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Выдаліце існуючую старонку з бакавой панэлі браніравання старонак, каб дадаць новую старонку браніравання."
@@ -7917,12 +7920,6 @@
       ]
     },
     "Message": {
-      "Fw:": [
-        "Пераслаць:"
-      ],
-      "Re:": [
-        "Адказаць:"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Ваш бясплатны пробны перыяд завяршыўся. ${ nonAutoRenewalAction }"
       ],
@@ -9964,12 +9961,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Ваша валюта была зменена на еўра (€), бо ${ IDEAL_WERO_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"

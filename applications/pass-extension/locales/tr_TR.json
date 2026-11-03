@@ -520,6 +520,9 @@
       "Move all items": [
         "Tüm ögeleri taşı"
       ],
+      "Move folder": [
+        "Klasörü taşı"
+      ],
       "Move to": [
         "Taşı"
       ],
@@ -1249,6 +1252,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınamadı"
+      ],
+      "Failed to move folder": [
+        "Klasör taşınamadı"
       ],
       "Failed to move items": [
         "Ögeler taşınamadı"
@@ -2365,6 +2371,9 @@
       "Folder \"${ payload.folder.name }\" created": [
         "\"${ payload.folder.name }\" klasörü oluşturuldu"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "\"${ payload.folder.name }\" klasörü taşındı"
+      ],
       "Folder deleted": [
         "Klasör silindi"
       ],
@@ -3014,6 +3023,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } kullanmak için ek parola gerekir. ${ BRAND_NAME } parolanıza ek bir parola olarak kullanılır."
+      ],
+      "The folder is already here": [
+        "Klasör zaten burada"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Şu ${ totalIgnored } öge içe aktarılamadı:",
@@ -4221,7 +4233,7 @@
         "PIN kodu"
       ],
       "Points Balance": [
-        "Puan bakiyesi"
+        "Kalan puan tutarı"
       ],
       "Port": [
         "Bağlantı noktası"
@@ -5501,6 +5513,9 @@
       "Modified": [
         "Değiştirilme"
       ],
+      "Move \"${ folderName }\" to": [
+        "\"${ folderName }\" klasörünü şuraya taşı"
+      ],
       "Move ${ count } item to ${ target }": [
         "${ count } ögeyi ${ target } konumuna taşı",
         "${ count } ögeyi ${ target } konumuna taşı"
@@ -6041,6 +6056,9 @@
       "Move to trash": [
         "Çöpe at"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Klasörü buraya taşımak, alt alta olabilecek en fazla klasör sayısını aşacak"
+      ],
       "No items": [
         "Herhangi bir öge yok"
       ],
@@ -6142,6 +6160,9 @@
       ],
       "Verification code is required": [
         "Doğrulama kodunun yazılması zorunludur"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Bir klasörü kendi içine veya alt klasörlerine taşıyamazsınız"
       ],
       "You have reached the limit of members who can access this item.": [
         "Bu ögeye erişebilecek üye sayısı sınırına ulaştınız."

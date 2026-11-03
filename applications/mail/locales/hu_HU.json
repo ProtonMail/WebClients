@@ -376,9 +376,6 @@
       "Create new password": [
         "Új jelszó készítése"
       ],
-      "Current plan": [
-        "Jelenlegi csomag"
-      ],
       "Custom": [
         "Egyéni"
       ],
@@ -1487,8 +1484,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Kulcs megjelölése megbízhatóként",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -7237,6 +7233,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -10261,14 +10258,8 @@
       ]
     },
     "Message": {
-      "Fw:": [
-        "Fwd:"
-      ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date } keltezéssel, ${ senderString } írta:"
-      ],
-      "Re:": [
-        "Re:"
       ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Az ingyenes próbaidőszaka lejárt. ${ nonAutoRenewalAction }"
@@ -11936,9 +11927,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítjuk."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "A pénznem átállítva Euróra (€), mert az ${ IDEAL_WERO_BRAND_NAME } csak ebben teszi lehetővé a fizetést."
       ],
       "Your payment is still being processed": [
         "A kifizetés még feldolgozás alatt van"

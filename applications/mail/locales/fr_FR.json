@@ -397,9 +397,6 @@
       "Create new password": [
         "Créer un nouveau mot de passe"
       ],
-      "Current plan": [
-        "Abonnement actuel"
-      ],
       "Custom": [
         "Personnaliser"
       ],
@@ -1571,8 +1568,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -7844,7 +7840,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -11482,17 +11479,11 @@
       "Exact URL matching rule": [
         "Règle de correspondance exacte d'URL"
       ],
-      "Fw:": [
-        "Tr :"
-      ],
       "Never fill with this exact URL": [
         "Ne saisissez jamais cette URL exacte"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "Le ${ date }, ${ senderString } a écrit :"
-      ],
-      "Re:": [
-        "Re :"
       ],
       "Regular expression rule": [
         "Règle d'expression régulière"
@@ -13508,12 +13499,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Votre devise a été changée en euros (€) car ${ IDEAL_WERO_BRAND_NAME } prennent uniquement en charge les paiements en euros."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."

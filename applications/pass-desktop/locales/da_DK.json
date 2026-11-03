@@ -526,6 +526,9 @@
       "Move all items": [
         "Flyt alle elementer"
       ],
+      "Move folder": [
+        "Flyt mappe"
+      ],
       "Move to": [
         "Flyt til"
       ],
@@ -723,6 +726,9 @@
       ],
       "Show advanced options": [
         "Vis avancerede indstillinger"
+      ],
+      "Show all": [
+        "Vis alle"
       ],
       "Show Less": [
         "Vis færre"
@@ -1260,6 +1266,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kunne ikke flytte alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Failed to move folder": [
+        "Kunne ikke flytte mappen"
       ],
       "Failed to move items": [
         "Kunne ikke flytte elementer"
@@ -2137,6 +2146,9 @@
       "Folder \"${ payload.folder.name }\" created": [
         "Mappen \"${ payload.folder.name }\" blev oprettet"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Mappen \"${ payload.folder.name }\" blev flyttet"
+      ],
       "Folder deleted": [
         "Mappe slettet"
       ],
@@ -2403,6 +2415,24 @@
       "Only ${ count } item will be moved. Items in folders will not be moved.": [
         "Kun ${ count } element flyttes. Elementer i mapper flyttes ikke.",
         "Kun ${ count } elementer flyttes. Elementer i mapper flyttes ikke."
+      ],
+      "Only aliases are shown": [
+        "Kun aliasser vises"
+      ],
+      "Only cards are shown": [
+        "Kun kort vises"
+      ],
+      "Only custom items are shown": [
+        "Kun tilpassede elementer vises"
+      ],
+      "Only identities are shown": [
+        "Kun identiter vises"
+      ],
+      "Only logins are shown": [
+        "Kun login vises"
+      ],
+      "Only notes are shown": [
+        "Kun noter vises"
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Kun tokens som udløb i de seneste 30 dage er vist. Ældre tokens slettes automatisk."
@@ -2758,6 +2788,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Den ekstra adgangskode er påkrævet for at bruge ${ PASS_APP_NAME }. Den virker som en tillægskode til din ${ BRAND_NAME }-adgangskode."
+      ],
+      "The folder is already here": [
+        "Denne mappe eksisterer allerede her"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Følgende ${ totalIgnored } element kunne ikke importeres:",
@@ -5264,6 +5297,9 @@
       "Modified": [
         "Ændret"
       ],
+      "Move \"${ folderName }\" to": [
+        "Flyt \"${ folderName }\" til"
+      ],
       "Move ${ count } item to ${ target }": [
         "Flyt ${ count } element til ${ target }",
         "Flyt ${ count } elementer til ${ target }"
@@ -5773,6 +5809,9 @@
       "Move to trash": [
         "Flyt til papirkurv"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Ved at flytte mappen her overskrides det dybeste niveau for undermapper"
+      ],
       "No items": [
         "Ingen elementer"
       ],
@@ -5880,6 +5919,9 @@
       ],
       "Verification code is required": [
         "Bekræftelseskode er påkrævet."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Du kan ikke flytte en mappe ind i sig selv eller i dens undermapper"
       ],
       "You have reached the limit of members who can access this item.": [
         "Du har nået grænsen for medlemmer, der kan få adgang til dette element."

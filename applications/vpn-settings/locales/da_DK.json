@@ -5485,6 +5485,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Politiknavnet skal være mellem 3 og 40 tegn lang."
       ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Det samlede beløb kunne ikke beregnes. Ændr antallet og prøv igen."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Der er for mange mapper i din eksterne konto. Rediger venligst importen for at slette nogle mapper."
       ],
@@ -11074,6 +11077,9 @@
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
       ],
+      "Total": [
+        "I alt"
+      ],
       "Two-password mode": [
         "To-adgangskodetilstand"
       ],
@@ -14072,6 +14078,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Der kan kun købes ét ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "Paid from your account credit.": [
+        "Betalt med kredit fra din konto."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betal med ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -14233,12 +14242,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Din konto er for gammel til Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Din valuta er blevet ændret til euro (€), fordi ${ IDEAL_WERO_BRAND_NAME } kun understøtter betalinger i euro."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Din valuta er blevet ændret til euro (€), fordi SEPA-bankoverførsler kun understøtter betalinger i euro."
       ],
       "Your payment is still being processed": [
         "Din betaling behandles stadig"

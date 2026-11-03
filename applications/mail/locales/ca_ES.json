@@ -397,9 +397,6 @@
       "Create new password": [
         "Crea una contrasenya nova"
       ],
-      "Current plan": [
-        "Pla actual"
-      ],
       "Custom": [
         "Personalitza"
       ],
@@ -1580,8 +1577,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Confia en aquesta clau",
-        "Confia en aquestes claus"
+        "Marca com a clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -7891,7 +7887,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -11619,17 +11616,11 @@
       "Exact URL matching rule": [
         "Regla de coincidència exacta d'URL"
       ],
-      "Fw:": [
-        "RV:"
-      ],
       "Never fill with this exact URL": [
         "No ho emplenis mai amb aquest URL exacte"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "El ${ date }, ${ senderString } va escriure:"
-      ],
-      "Re:": [
-        "Re:"
       ],
       "Regular expression rule": [
         "Regla d'expressió regular"
@@ -13657,12 +13648,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "El vostre compte és massa antic per a la iniciativa Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_WERO_BRAND_NAME } només admet pagaments en euros."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
       "Your payment is still being processed": [
         "Encara s'està processant el pagament."

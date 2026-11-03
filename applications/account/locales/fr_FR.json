@@ -7096,6 +7096,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Les transactions n'ont pas pu être chargées. Veuillez réessayer plus tard."
       ],
+      "Couldn't load your account": [
+        "Impossible de charger votre compte"
+      ],
       "Couldn't load your connections": [
         "Impossible de charger vos connexions"
       ],
@@ -7181,6 +7184,9 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Les sessions actives n'ont pas pu être obtenues. Nous vous invitons à ${ refresh } ou à réessayer plus tard."
+      ],
+      "Failed to get the organization domains": [
+        "La récupération des domaines de l'organisation n'a pas abouti"
       ],
       "Failed to load OAuth": [
         "OAuth n'a pas pu être chargé."
@@ -7381,6 +7387,9 @@
       ],
       "No valid address found": [
         "Aucune adresse valide n'a été trouvée."
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "Aucun domaine vérifié n'a été trouvé dans votre compte ${ providerName }. Vérifiez votre domaine auprès de ${ providerName }, puis réessayez."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Ce n'est pas un compte ${ BRAND_NAME }."
@@ -10249,6 +10258,9 @@
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "Ajoutez le domaine de messagerie de votre organisation à ${ BRAND_NAME }."
       ],
+      "Added to ${ BRAND_NAME }": [
+        "Ajouté à ${ BRAND_NAME }"
+      ],
       "Adding ${ total } gateway server": [
         "Ajout de ${ total } serveur de passerelle",
         "Ajout de ${ total } serveurs de passerelle"
@@ -11889,6 +11901,9 @@
       ],
       "Not a valid URL": [
         "L'URL n'est pas valide."
+      ],
+      "Not added to ${ BRAND_NAME }": [
+        "N'a pas été ajouté à ${ BRAND_NAME }"
       ],
       "Nothing changes in your other ${ BRAND_NAME } account.": [
         "Rien ne change dans votre autre compte ${ BRAND_NAME }."
@@ -15930,6 +15945,9 @@
       ],
       "Token name": [
         "Nom du jeton"
+      ],
+      "Total": [
+        "Total"
       ],
       "Total cost": [
         "Coût total"
@@ -20205,12 +20223,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Votre devise a été changée en euros (€) car ${ IDEAL_WERO_BRAND_NAME } prennent uniquement en charge les paiements en euros."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
@@ -28270,9 +28282,6 @@
       ],
       "Exclusive early access to ${ appName }.": [
         "Accès exclusif anticipé à ${ appName }."
-      ],
-      "Our most exclusive plan. Get early access to new features and all premium ${ BRAND_NAME } services.": [
-        "Notre offre la plus exclusive. Accédez en avant-première aux nouvelles fonctionnalités et à tous les services premium de ${ BRAND_NAME }."
       ],
       "Securely exchange Bitcoin via email instead of complex, 26-character Bitcoin addresses that are prone to error": [
         "Échangez des bitcoins en toute sécurité par e-mail, sans avoir à utiliser des adresses Bitcoin complexes de 26 caractères sujettes aux erreurs."

@@ -8,11 +8,20 @@
       "(opens in new tab)": [
         "(åbner i en ny fane)"
       ],
+      "Camera off": [
+        "Kameraet er slået fra"
+      ],
       "camera off": [
         "Kamera slået fra"
       ],
+      "Camera on": [
+        "Kameraet er slået til"
+      ],
       "camera on": [
         "Kamera slået til"
+      ],
+      "host": [
+        "vært"
       ],
       "Meeting controls": [
         "Møde-kontroller"
@@ -20,8 +29,17 @@
       "microphone muted": [
         "Mikrofon slået fra"
       ],
+      "Microphone muted": [
+        "mikrofonen er slået fra"
+      ],
+      "Microphone on": [
+        "Mikrofonen er slået til"
+      ],
       "microphone on": [
         "mikrofon slået til"
+      ],
+      "speaking": [
+        "taler"
       ]
     },
     "Accessibility announcement": {
@@ -347,6 +365,9 @@
       ],
       "Download logs": [
         "Download logfiler"
+      ],
+      "Download now": [
+        "Download nu"
       ],
       "Download participant report": [
         "Download deltagerrapport"
@@ -2748,6 +2769,9 @@
       "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Avanceret tilstand: Indstil hver sløringskonstant, og tryk derefter på Anvend for at oprette forhåndsvisningen igen. Overrides prioriteres højere end fil- og Unleash-værdier."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Mac vil muligvis bede om en adgangskode efter opdateringen. Indtast adgangskoden, som du bruger til at låse op for din Mac, og vælg derefter Tillad altid for at forblive logget ind. ${ learnMore }"
+      ],
       "Allow camera access to preview your background": [
         "Tillad adgang til kameraet for at forhåndsvise din baggrund"
       ],
@@ -3230,6 +3254,9 @@
       ],
       "Please try again or try another browser": [
         "Prøv igen, eller brug en anden browser"
+      ],
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Opdater ${ MEET_APP_NAME } for at fortsætte med at bruge appen. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Dårlig forbindelse"
@@ -4060,6 +4087,52 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Kunne ikke starte billede-i-billede"
+      ]
+    },
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } og ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } til ${ endDateLabel }, ${ endTimeLabel }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } til ${ endTimeLabel }"
+      ],
+      "Repeats daily": [
+        "Gentages dagligt"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Gentages hver ${ weekdayName }"
+      ],
+      "Repeats every weekday": [
+        "Gentages alle hverdage"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Gentages hvert år den ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Gentages månedligt"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Gentages den ${ ordinalDay } hver måned"
+      ],
+      "Repeats weekly": [
+        "Gentages ugentligt"
+      ],
+      "Repeats yearly": [
+        "Gentages årligt"
+      ],
+      "Today · ${ monthDay }": [
+        "I dag · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "I morgen · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ weekdayList }": [
+        "Gentages hver ${ weekdayList }"
       ]
     },
     "Notification": {

@@ -117,9 +117,6 @@
       "Create key": [
         "Créer une clé"
       ],
-      "Current plan": [
-        "Abonnement actuel"
-      ],
       "Decrease": [
         "Diminuer"
       ],
@@ -1048,9 +1045,6 @@
       ],
       "Creations": [
         "Créations"
-      ],
-      "Custom ${ LUMO_SHORT_APP_NAME }s": [
-        "${ LUMO_SHORT_APP_NAME }s personnalisés"
       ],
       "Dark": [
         "Sombre"
@@ -2561,8 +2555,17 @@
       "90 days": [
         "90 jours"
       ],
+      "All projects": [
+        "Tous les projets"
+      ],
       "Auto-detect": [
         "Détection automatique"
+      ],
+      "Off": [
+        "Désactivé"
+      ],
+      "This project": [
+        "Ce projet"
       ]
     },
     "collider_2025: Personality": {
@@ -2894,6 +2897,9 @@
       "Saved memories": [
         "Souvenirs enregistrés"
       ],
+      "Search": [
+        "Rechercher"
+      ],
       "Search index": [
         "Index de recherche"
       ],
@@ -2906,6 +2912,9 @@
       "Tokens per day": [
         "Jetons par jour"
       ],
+      "Tools": [
+        "Outils"
+      ],
       "Turn off memory?": [
         "Désactiver la mémoire ?"
       ],
@@ -2917,6 +2926,9 @@
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "Voice": [
+        "Voix"
       ],
       "Web search": [
         "Recherche web"
@@ -2941,6 +2953,9 @@
       ],
       "Your API keys": [
         "Votre clé API"
+      ],
+      "Your data": [
+        "Vos données"
       ],
       "Your new API key": [
         "Votre nouvelle clé API"
@@ -3195,6 +3210,9 @@
       ]
     },
     "collider_2025:Action": {
+      "Add": [
+        "Ajouter"
+      ],
       "Add column right": [
         "Ajouter une colonne à droite"
       ],
@@ -3203,6 +3221,9 @@
       ],
       "Add details": [
         "Ajouter des informations"
+      ],
+      "Add file": [
+        "Ajouter le fichier"
       ],
       "Add more information to improve the response": [
         "Ajoutez plus d'informations pour améliorer la réponse"
@@ -3243,6 +3264,9 @@
       "Change style": [
         "Changer de style"
       ],
+      "Choose a folder": [
+        "Choisir un dossier"
+      ],
       "Choose project icon": [
         "Choisissez l’icône du projet"
       ],
@@ -3260,6 +3284,12 @@
       ],
       "Code block": [
         "Bloc de code"
+      ],
+      "Connect": [
+        "Se connecter"
+      ],
+      "Connector settings": [
+        "Paramètres du connecteur"
       ],
       "Continue": [
         "Continuer"
@@ -3294,6 +3324,9 @@
       "Delete conversation": [
         "Supprimer la conversation"
       ],
+      "Delete file": [
+        "Supprimer le fichier"
+      ],
       "Delete project": [
         "Supprimer le projet"
       ],
@@ -3314,6 +3347,9 @@
       ],
       "Discard changes": [
         "Abandonner les modifications"
+      ],
+      "Dismiss": [
+        "Fermer"
       ],
       "Dismiss questions": [
         "Fermer les questions"
@@ -3347,6 +3383,15 @@
       ],
       "Edit project": [
         "Modifier le projet"
+      ],
+      "Edit source": [
+        "Modifier la source"
+      ],
+      "Enable connector": [
+        "Activé le connecteur"
+      ],
+      "Enable notifications": [
+        "Activer les notifications"
       ],
       "Exit full screen": [
         "Quitter le mode plein écran"
@@ -3441,6 +3486,15 @@
       "Open conversation": [
         "Ouvrir la conversation"
       ],
+      "Open Settings": [
+        "Ouvrir les paramètres"
+      ],
+      "Open System Settings": [
+        "Ouvrir les paramètres système"
+      ],
+      "Open task": [
+        "Ouvrir une tâche"
+      ],
       "PDF": [
         "PDF"
       ],
@@ -3495,11 +3549,17 @@
       "Remove from favorites": [
         "Retirer des favoris"
       ],
+      "Remove from this task": [
+        "Retirer de cette tâche"
+      ],
       "Rename chat": [
         "Modifier le nom du chat"
       ],
       "Request a shorter, more focused response": [
         "Demander une réponse plus courte et plus ciblée"
+      ],
+      "Reset": [
+        "Réinitialiser"
       ],
       "Retry": [
         "Réessayer"
@@ -3588,6 +3648,9 @@
       "Upgrade to Plus": [
         "Passer à Plus"
       ],
+      "Upload": [
+        "Importer"
+      ],
       "Upload file": [
         "Importer un fichier"
       ],
@@ -3596,6 +3659,9 @@
       ],
       "Upload your AI export": [
         "Téléchargez votre exportation IA"
+      ],
+      "View all": [
+        "Tout afficher"
       ],
       "View mode": [
         "Mode d'affichage"
@@ -3658,6 +3724,9 @@
       ]
     },
     "collider_2025:Button": {
+      "Add": [
+        "Ajouter"
+      ],
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Ajoutez des instructions pour adapter les réponses de ${ LUMO_SHORT_APP_NAME }."
       ],
@@ -3681,6 +3750,9 @@
       ],
       "Create task": [
         "Créer une tâche"
+      ],
+      "Customize": [
+        "Personnaliser"
       ],
       "Delete": [
         "Supprimer"
@@ -3727,6 +3799,9 @@
       "Save here": [
         "Enregistrer ici"
       ],
+      "Schedule": [
+        "Programmer"
+      ],
       "Scheduled": [
         "Programmés"
       ],
@@ -3759,11 +3834,29 @@
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
         "${ LUMO_SHORT_APP_NAME } a besoin d'une base de données locale (indexedDB) pour fonctionner, mais celle-ci n'est pas disponible sur ce navigateur. Cela peut se produire lorsque les cookies ou les données du site sont bloqués, en navigation privée, ou lorsque que le mode verrouillage est activé. Veuillez autoriser les données du site web pour ce site et recharger."
       ],
+      "Add a name": [
+        "Ajouter un nom"
+      ],
       "Cannot link the root folder. Please select a subfolder.": [
         "Le dossier racine n'a pas pu être associé. Veuillez sélectionner un sous-dossier."
       ],
+      "Could not copy to clipboard": [
+        "La copie dans le presse-papiers n'a pas abouti."
+      ],
+      "Could not enable desktop notifications. Please try again.": [
+        "Impossible d'activer les notifications de bureau. Veuillez réessayer."
+      ],
+      "Could not open notification settings. Please open System Settings manually.": [
+        "Impossible d'ouvrir les paramètres de notification. Veuillez ouvrir manuellement les paramètres système."
+      ],
+      "Could not open the desktop settings": [
+        "Impossible d'ouvrir les paramètres du bureau"
+      ],
       "Could not save this task. Reload the page and try again.": [
         "Impossible d'enregistrer cette tâche. Actualisez la page et réessayez."
+      ],
+      "Could not start this task. Please try again.": [
+        "Impossible de lancer cette tâche. Veuillez réessayer."
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "La connexion à la base de données a été perdue. Veuillez actualiser la page pour continuer."
@@ -3888,6 +3981,10 @@
       "${ name } completed.": [
         "${ name } a été complété."
       ],
+      "${ pluginCount } plugin": [
+        "${ pluginCount } extension",
+        "${ pluginCount } extensions"
+      ],
       "${ project.conversationCount } conversation": [
         "${ project.conversationCount } conversations"
       ],
@@ -3902,6 +3999,9 @@
       ],
       "ad value": [
         "valeur publicitaire"
+      ],
+      "Added": [
+        "Ajouté"
       ],
       "Advanced models, a new look, new features, and the same privacy you trust. Click through to see what’s new.": [
         "Des modèles avancés, une nouvelle interface, de nouvelles fonctionnalités et le même respect de la vie privée en lequel vous avez confiance. Cliquez sur continuer pour découvrir les nouveautés."
@@ -3945,6 +4045,12 @@
       "Built-in ${ BRAND_NAME } agent": [
         "Agent ${ BRAND_NAME } intégré"
       ],
+      "by ${ author }": [
+        "par ${ author }"
+      ],
+      "Checking…": [
+        "Vérification en cours…"
+      ],
       "Choose a format to export \"${ conversation.title }\":": [
         "Sélectionner un format pour exporter « ${ conversation.title } » :"
       ],
@@ -3984,11 +4090,17 @@
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Découvrez ce que l'IA des géants de la tech pourrait déduire de votre historique de conversations — et obtenez un score de confidentialité que vous pouvez partager."
       ],
+      "Draft": [
+        "Brouillon"
+      ],
       "Drafting content…": [
         "Contenu en cours de création…"
       ],
       "Drive files are not available for guest users": [
         "Les fichiers Drive ne sont pas disponibles pour les utilisateurs invités."
+      ],
+      "Enable notifications to get notified when a task finishes or needs your attention.": [
+        "Activez les notifications pour être averti lorsqu'une tâche est terminée ou nécessite votre attention."
       ],
       "Example prompts shown when a conversation begins.": [
         "Exemples de prompts affichés lorsqu'une conversation commence."
@@ -4038,11 +4150,17 @@
       "No projects yet": [
         "Aucun projet pour le moment"
       ],
+      "Notifications are off for ${ LUMO_SHORT_APP_NAME }. ": [
+        "Les notifications sont désactivées pour ${ LUMO_SHORT_APP_NAME }. "
+      ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "Sur iPhone ou iPad, ouvrez Réglages → Applications → Safari et assurez-vous que l'option « Bloquer tous les cookies » est désactivée, puis actualisez la page."
       ],
       "PASTED": [
         "COLLÉ"
+      ],
+      "Preparing questions": [
+        "Préparation des questions en cours"
       ],
       "Preparing…": [
         "Préparation en cours…"
@@ -4061,6 +4179,9 @@
       ],
       "red flags": [
         "drapeaux rouges"
+      ],
+      "Resume to run again": [
+        "Reprendre pour démarrer à nouveau"
       ],
       "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
         "Enregistrement sous ${ formatLabel }. Parcourez le dossier ${ DRIVE_SHORT_APP_NAME } que vous souhaitez utiliser, puis cliquez « Sauvegarder ici »."
@@ -4082,6 +4203,21 @@
       ],
       "Something went wrong analysing this export. Please try again.": [
         "Une erreur est survenue lors de l'analyse de cette exportation. Veuillez réessayer."
+      ],
+      "Started ${ count } day ago": [
+        "A commencé il y a ${ count } jour",
+        "A commencé il y a ${ count } jours"
+      ],
+      "Started ${ count } hour ago": [
+        "A commencé il y a ${ count } heure",
+        "A commencé il y a ${ count } heures"
+      ],
+      "Started ${ count } minute ago": [
+        "A commencé il y a ${ count } minute",
+        "A commencé il y a ${ count } minutes"
+      ],
+      "Started just now": [
+        "Démarré tout juste maintenant"
       ],
       "Structured data, aiming for compatibility with the ChatGPT export format": [
         "Données structurées, dans un objectif de compatibilité avec le format d'export de ChatGPT"
@@ -4106,6 +4242,9 @@
       ],
       "Tips on how to write useful instructions": [
         "Conseils sur la manière de rédiger des instructions utiles"
+      ],
+      "Try “${ example }”": [
+        "Essayez «  ${ example }  »"
       ],
       "Type @filename to ask questions about a specific file": [
         "Tapez @fichier pour poser des questions sur un fichier spécifique"
@@ -4214,6 +4353,10 @@
         "${ file.tokenCount } jeton",
         "${ file.tokenCount } jetons"
       ],
+      "${ fileCount } file": [
+        "${ fileCount } fichier",
+        "${ fileCount } fichiers"
+      ],
       "${ progress.indexed }/${ progress.total } file (${ percentage }%)": [
         "${ progress.indexed } / ${ progress.total } fichier (${ percentage } %)",
         "${ progress.indexed } / ${ progress.total } fichiers (${ percentage } %)"
@@ -4269,11 +4412,17 @@
       "Created": [
         "Créé"
       ],
+      "Created by you": [
+        "Créés par vous"
+      ],
       "Created on": [
         "Créée le"
       ],
       "CSS File": [
         "Fichier CSS"
+      ],
+      "Daily": [
+        "Quotidien"
       ],
       "Dart File": [
         "Fichier Dart"
@@ -4292,6 +4441,9 @@
       ],
       "Describe what to change": [
         "Décrivez ce qui doit être changé"
+      ],
+      "Description": [
+        "Description"
       ],
       "Description (optional)": [
         "Description (facultative)"
@@ -4314,11 +4466,17 @@
       "Elixir File": [
         "Fichier Elixir"
       ],
+      "Enabled": [
+        "Activé"
+      ],
       "Excel Document": [
         "Document Excel"
       ],
       "File": [
         "Fichier"
+      ],
+      "Files": [
+        "Fichiers"
       ],
       "Fine": [
         "Bien"
@@ -4416,6 +4574,9 @@
       "Minimal": [
         "Minimaliste"
       ],
+      "Monthly": [
+        "Tous les mois"
+      ],
       "Name": [
         "Nom"
       ],
@@ -4433,6 +4594,9 @@
       ],
       "Platform": [
         "Plateforme"
+      ],
+      "Plugin name": [
+        "Nom de l’extension"
       ],
       "Politics": [
         "Politiques"
@@ -4533,11 +4697,20 @@
       "Upload": [
         "Importer"
       ],
+      "Uploaded": [
+        "Importé"
+      ],
       "Vim Script": [
         "Script Vim"
       ],
       "WebP Image": [
         "Image WebP"
+      ],
+      "Weekdays": [
+        "Jours de la semaine"
+      ],
+      "Weekly": [
+        "Toutes les semaines"
       ],
       "Wind": [
         "Vent"
@@ -4640,6 +4813,17 @@
       ],
       "Something else…": [
         "Autre chose…"
+      ]
+    },
+    "collider_2025:Plugin name": {
+      "Data": [
+        "Données"
+      ],
+      "Presentations": [
+        "Présentations"
+      ],
+      "Privacy and security": [
+        "Vie privée et sécurité"
       ]
     },
     "collider_2025:Prefill": {
@@ -5020,8 +5204,32 @@
       "Interrupted": [
         "Interrompu"
       ],
+      "On schedule": [
+        "Comme prévu"
+      ],
+      "Paused": [
+        "Suspendu"
+      ],
+      "Queued": [
+        "En attente"
+      ],
+      "Queued · Running next": [
+        "En attente · Prochaine exécution"
+      ],
+      "Ran late": [
+        "A démarré en retard"
+      ],
+      "Ran manually": [
+        "Démarré manuellement"
+      ],
       "Running": [
         "En cours"
+      ],
+      "Running now…": [
+        "En cours…"
+      ],
+      "Running soon…": [
+        "Démarrage bientôt…"
       ]
     },
     "collider_2025:Subline": {
@@ -5062,6 +5270,12 @@
       ]
     },
     "collider_2025:Tab": {
+      "Connectors": [
+        "Connecteurs"
+      ],
+      "Contents": [
+        "Contenus"
+      ],
       "Create": [
         "Créer"
       ],
@@ -5114,14 +5328,23 @@
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "${ LUMO_SHORT_APP_NAME }s personnalisés"
       ],
+      "Customize": [
+        "Personnaliser"
+      ],
       "Delete project?": [
         "Supprimer le projet ?"
       ],
       "Delete scheduled task?": [
         "Supprimer la tâche planifiée ?"
       ],
+      "Description": [
+        "Description"
+      ],
       "Detail makes fraud convincing": [
         "Le détail rend la fraude convaincante."
+      ],
+      "Details": [
+        "Détails"
       ],
       "Discard changes?": [
         "Abandonner les modifications ?"
@@ -5140,6 +5363,9 @@
       ],
       "Every clarification is a new data point": [
         "Chaque clarification constitue une nouvelle donnée."
+      ],
+      "Everyday": [
+        "Tous les jours"
       ],
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "Explorez les images créées avec ${ LUMO_SHORT_APP_NAME }"
@@ -5233,6 +5459,9 @@
       ],
       "Scheduled tasks": [
         "Tâches planifiées"
+      ],
+      "Search": [
+        "Rechercher"
       ],
       "See your AI paper trail": [
         "Consultez la piste d'audit de votre IA"
@@ -7362,6 +7591,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
+      "Top up your ${ LUMO_SHORT_APP_NAME } API balance. API usage is deducted from this balance.": [
+        "Rechargez votre crédit API ${ LUMO_SHORT_APP_NAME }. L'utilisation de l'API est déduite de ce crédit."
+      ],
       "Total conversations:": [
         "Nombre total de conversations :"
       ],
@@ -7773,6 +8005,9 @@
       ],
       "Thomas": [
         "Camille"
+      ],
+      "Total": [
+        "Total"
       ],
       "Verification code": [
         "Code de vérification"
@@ -9532,12 +9767,6 @@
       "Your account is too old for the Born Private initiative.": [
         "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Votre devise a été changée en euros (€) car ${ IDEAL_WERO_BRAND_NAME } prennent uniquement en charge les paiements en euros."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
-      ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
       ],
@@ -10263,6 +10492,9 @@
       "Email address copied to clipboard": [
         "L'adresse e-mail a été copiée dans le presse-papiers."
       ],
+      "Funds added": [
+        "Fonds ajoutés"
+      ],
       "Payment method added": [
         "Le moyen de paiement a été ajouté."
       ],
@@ -10388,6 +10620,9 @@
       ],
       "Add credit/debit card": [
         "Ajouter une carte de paiement"
+      ],
+      "Add funds": [
+        "Ajouter des fonds"
       ],
       "Add user": [
         "Ajouter un utilisateur"

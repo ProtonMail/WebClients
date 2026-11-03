@@ -399,9 +399,6 @@
       "Create new password": [
         "Стварыць новы пароль"
       ],
-      "Current plan": [
-        "Бягучы тарыфны план"
-      ],
       "Custom": [
         "Карыстальніцкі"
       ],
@@ -1588,10 +1585,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -7402,6 +7396,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Вы сапраўды хочаце незваротна выдаліць гэта паведамленне?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Папрасіце свайго адміністратара палепшыць тарыфны план або выдаліць старонку з бакавой панэлі браніравання старонак у ${ CALENDAR_APP_NAME }."
+      ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Папрасіце свайго адміністратара палепшыць тарыфны план або выдаліць старонку з бакавой панэлі браніравання старонак."
       ],
@@ -8002,6 +7999,9 @@
       "Here's what happens when you continue:": [
         "Вось што адбудзецца, калі вы працягнеце:"
       ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Паслухай, Lumo! Я пакідаю офіс і хачу наладзіць адказ «Няма на месцы». Спытай мяне пра даты і што там павінна быць напісана, а потым пакажы мне само паведамленне перад яго ўключэннем."
+      ],
       "Hide original message": [
         "Схаваць арыгінальнае паведамленне"
       ],
@@ -8096,7 +8096,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9238,6 +9241,9 @@
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "Папрасіце свайго адміністратара палепшыць ваш тарыфны план, каб дадаць новую старонку браніравання."
       ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Выдаліце існуючую старонку з бакавой панэлі браніравання старонак у ${ CALENDAR_APP_NAME }, каб дадаць новую старонку браніравання."
+      ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Выдаліце існуючую старонку з бакавой панэлі браніравання старонак, каб дадаць новую старонку браніравання."
       ],
@@ -10259,6 +10265,9 @@
       ],
       "${ length }/${ maxLength } characters": [
         "Сімвалаў: ${ length }/${ maxLength }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "Памочнік ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Памочнік у напісанні ${ LUMO_SHORT_APP_NAME }"
@@ -11897,17 +11906,11 @@
       "Exact URL matching rule": [
         "Правіла дакладнага супадзення URL-адраса"
       ],
-      "Fw:": [
-        "Пераслаць:"
-      ],
       "Never fill with this exact URL": [
         "Ніколі не запаўняць з гэтага дакладнага URL-адраса"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }, ${ senderString } піша:"
-      ],
-      "Re:": [
-        "Адказаць:"
       ],
       "Regular expression rule": [
         "Правіла рэгулярнага выразу"
@@ -13967,12 +13970,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны для спраўджання вашага плацяжу."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Ваша валюта была зменена на еўра (€), бо ${ IDEAL_WERO_BRAND_NAME } падтрымлівае толькі плацяжы ў еўра."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Ваша валюта была зменена на еўра (€), таму што банкаўскія пераводы SEPA падтрымліваюць толькі плацяжы ў еўра."
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"

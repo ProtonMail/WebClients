@@ -767,7 +767,7 @@
         "Exploreu els plans de grup"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Explora altres ${ BRAND_NAME } plans"
+        "Explora altres plans de ${ BRAND_NAME }"
       ],
       "Explore other plans": [
         "Explora altres plans"
@@ -5484,6 +5484,9 @@
       ],
       "The policy name must be between 3 and 40 characters.": [
         "El nom de la política ha de tenir entre 3 i 40 caràcters."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "No s'ha pogut calcular el total. Modifiqueu l'import i torneu-ho a intentar."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hi ha massa carpetes al vostre compte extern. Personalitzeu la importació per eliminar algunes carpetes."
@@ -11077,6 +11080,9 @@
       "To: ${ toEmail }": [
         "Per a: ${ toEmail }"
       ],
+      "Total": [
+        "Total"
+      ],
       "Two-password mode": [
         "Mode de dues contrasenyes"
       ],
@@ -14075,6 +14081,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Només es pot comprar un ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "Paid from your account credit.": [
+        "S'ha pagat amb el crèdit del vostre compte."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Pagueu amb ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -14236,12 +14245,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "El vostre compte és massa antic per a la iniciativa Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "S'ha canviat la vostra moneda a euros (€) perquè ${ IDEAL_WERO_BRAND_NAME } només admet pagaments en euros."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
       ],
       "Your payment is still being processed": [
         "Encara s'està processant el pagament."

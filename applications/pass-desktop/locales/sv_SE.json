@@ -520,6 +520,9 @@
       "Move all items": [
         "Flytta alla objekt"
       ],
+      "Move folder": [
+        "Flytta mapp"
+      ],
       "Move to": [
         "Flytta till"
       ],
@@ -714,6 +717,9 @@
       ],
       "Show advanced options": [
         "Visa avancerade alternativ"
+      ],
+      "Show all": [
+        "Visa alla"
       ],
       "Show Less": [
         "Visa mindre"
@@ -1060,6 +1066,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentisering misslyckades. Bekräfta ditt andra lösenord för att fortsätta med exporten"
       ],
+      "Biometric authentication cancelled.": [
+        "Biometrisk autentisering avbruten."
+      ],
       "Biometric authentication failed.": [
         "Biometrisk autentisering misslyckades."
       ],
@@ -1245,6 +1254,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
+      ],
+      "Failed to move folder": [
+        "Misslyckades med att flytta mapp"
       ],
       "Failed to move items": [
         "Misslyckades att flytta objekt"
@@ -2351,6 +2363,24 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod. Du kommer att loggas ut efter 3 misslyckade försök."
       ],
+      "Only aliases are shown": [
+        "Endast alias visas"
+      ],
+      "Only cards are shown": [
+        "Endast kort visas"
+      ],
+      "Only custom items are shown": [
+        "Endast anpassade objekt visas"
+      ],
+      "Only identities are shown": [
+        "Endast identiteter visas"
+      ],
+      "Only logins are shown": [
+        "Endast inloggningar visas"
+      ],
+      "Only notes are shown": [
+        "Endast anteckningar visas"
+      ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Endast tokens som löpt ut under de senaste 30 dagarna visas. Äldre tokens tas bort automatiskt."
       ],
@@ -2696,6 +2726,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Extralösenordet kommer att krävas för att använda ${ PASS_APP_NAME }. Det fungerar som ett extra lösenord utöver ditt ${ BRAND_NAME }-lösenord."
+      ],
+      "The folder is already here": [
+        "Mappen är redan här"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Följande ${ totalIgnored } objekt kunde inte importeras:",
@@ -5177,6 +5210,9 @@
       ],
       "Modified": [
         "Ändrad"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Flytta “${ folderName }“ till"
       ],
       "Move ${ count } item to ${ target }": [
         "Flytta ${ count } objekt till ${ target }",

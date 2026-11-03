@@ -397,9 +397,6 @@
       "Create new password": [
         "Yeni parola oluştur"
       ],
-      "Current plan": [
-        "Geçerli tarife"
-      ],
       "Custom": [
         "Özel"
       ],
@@ -1580,8 +1577,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -7891,7 +7887,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -11619,17 +11616,11 @@
       "Exact URL matching rule": [
         "Tam adres eşleştirme kuralı"
       ],
-      "Fw:": [
-        "İlt:"
-      ],
       "Never fill with this exact URL": [
         "Bu tam adres asla doldurulmasın"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ senderString }, ${ date } tarihinde şunu yazdı:"
-      ],
-      "Re:": [
-        "Ynt:"
       ],
       "Regular expression rule": [
         "Kurallı ifade kuralı"
@@ -13658,12 +13649,6 @@
       "Your account is too old for the Born Private initiative.": [
         "Hesabınız Born Private girişiminden yararlanmak için çok eski."
       ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "${ IDEAL_WERO_BRAND_NAME } yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
-      ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
       ],
@@ -13712,7 +13697,7 @@
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
       ],
       "Credits will be added to your balance": [
-        "Kalan kredi bakiyenize eklenecek"
+        "Krediler hesabınızın kalan tutarına eklenecek"
       ]
     },
     "Payments.InfoBanner": {

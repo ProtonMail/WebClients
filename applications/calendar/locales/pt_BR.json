@@ -297,9 +297,6 @@
       "Create new password": [
         "Criar nova senha"
       ],
-      "Current plan": [
-        "Plano atual"
-      ],
       "Customize": [
         "Personalizar"
       ],
@@ -1486,7 +1483,7 @@
         "Dois anos"
       ],
       "Yearly": [
-        "Anualmente"
+        "Anual"
       ]
     },
     "Browser": {
@@ -5299,6 +5296,9 @@
       "Are you sure you want to discard your import?": [
         "Você tem certeza de que quer descartar sua importação?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Peça ao seu administrador para fazer upgrade do plano ou remover uma página da barra lateral de Páginas de agendamento em ${ CALENDAR_APP_NAME }."
+      ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Peça ao seu administrador para fazer upgrade do plano ou remover uma página da barra lateral de Páginas de agendamento."
       ],
@@ -6173,6 +6173,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "Para adicionar uma nova página de agendamento, peça ao seu administrador para fazer upgrade do seu plano."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Para adicionar uma nova página de agendamento, remova uma existente da barra lateral de Páginas de agendamento em ${ CALENDAR_APP_NAME }."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Para adicionar uma nova página de agendamento, remova uma existente da barra lateral de Páginas de agendamento."
@@ -7719,12 +7722,6 @@
       ]
     },
     "Message": {
-      "Fw:": [
-        "Enc:"
-      ],
-      "Re:": [
-        "Re:"
-      ],
       "Your free trial has ended. ${ nonAutoRenewalAction }": [
         "Sua avaliação gratuita terminou. ${ nonAutoRenewalAction }"
       ],
@@ -9678,12 +9675,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Em breve você será redirecionado para verificar seu pagamento."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Sua moeda foi alterada para euros (€) porque ${ IDEAL_WERO_BRAND_NAME } suporta apenas pagamentos em euros."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Sua moeda foi alterada para euros (€) porque transferências bancárias SEPA apenas suportam pagamentos em euros."
       ],
       "Your payment is still being processed": [
         "Seu pagamento ainda está sendo processado"

@@ -514,6 +514,9 @@
       "Move all items": [
         "Flytta alla objekt"
       ],
+      "Move folder": [
+        "Flytta mapp"
+      ],
       "Move to": [
         "Flytta till"
       ],
@@ -1046,6 +1049,9 @@
       "Authentication failure: ${ message }": [
         "Autentiseringsfel: ${ message }"
       ],
+      "Biometric authentication cancelled.": [
+        "Biometrisk autentisering avbruten."
+      ],
       "Biometric authentication failed.": [
         "Biometrisk autentisering misslyckades."
       ],
@@ -1234,6 +1240,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
+      ],
+      "Failed to move folder": [
+        "Misslyckades med att flytta mapp"
       ],
       "Failed to move items": [
         "Misslyckades att flytta objekt"
@@ -2904,6 +2913,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Extralösenordet kommer att krävas för att använda ${ PASS_APP_NAME }. Det fungerar som ett extra lösenord utöver ditt ${ BRAND_NAME }-lösenord."
+      ],
+      "The folder is already here": [
+        "Mappen är redan här"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Följande ${ totalIgnored } objekt kunde inte importeras:",
@@ -5351,6 +5363,9 @@
       ],
       "Modified": [
         "Ändrad"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Flytta “${ folderName }“ till"
       ],
       "Move ${ count } item to ${ target }": [
         "Flytta ${ count } objekt till ${ target }",

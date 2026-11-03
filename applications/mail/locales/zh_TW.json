@@ -387,9 +387,6 @@
       "Create new password": [
         "建立新密碼"
       ],
-      "Current plan": [
-        "現行方案"
-      ],
       "Custom": [
         "個人化"
       ],
@@ -1532,6 +1529,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -7542,7 +7542,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入圖像"
+        "插入影像"
       ],
       "Insert link": [
         "插入連結"
@@ -10971,17 +10971,11 @@
       "Exact URL matching rule": [
         "精確的 URL 比對規則"
       ],
-      "Fw:": [
-        "轉寄:"
-      ],
       "Never fill with this exact URL": [
         "絕不填入此精確的 URL"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "在 ${ date }，${ senderString } 寫道："
-      ],
-      "Re:": [
-        "回覆："
       ],
       "Regular expression rule": [
         "正規表示式規則"
@@ -12857,12 +12851,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "將會被重新導向驗證您的付款。"
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "您的貨幣以變更至歐元 (€) 因為 ${ IDEAL_WERO_BRAND_NAME } 僅支援歐元付款。"
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "您的貨幣已變更為歐元 (€)，因為 SEPA 銀行轉帳僅支援以歐元付款。"
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"

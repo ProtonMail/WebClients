@@ -5577,6 +5577,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Názov politiky musí mať 3 až 40 znakov."
       ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Celková suma sa nedala vypočítať. Zmeňte sumu a skúste to znova."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Na vašom externom účte je príliš veľa priečinkov. Upravte import na zmazanie niektorých priečinkov, prosím."
       ],
@@ -11367,6 +11370,9 @@
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
       ],
+      "Total": [
+        "Celkom"
+      ],
       "Two-password mode": [
         "Režim s dvomi heslami"
       ],
@@ -14469,6 +14475,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Je možné zakúpiť iba jeden ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "Paid from your account credit.": [
+        "Uhradené z kreditu na vašom účte."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Platba cez ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -14642,12 +14651,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Váš účet je príliš starý na iniciatívu Born Private."
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "Vaša mena bola zmenená na eurá (€), pretože ${ IDEAL_WERO_BRAND_NAME } podporuje platby len v eurách."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"

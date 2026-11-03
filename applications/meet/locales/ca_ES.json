@@ -8,11 +8,20 @@
       "(opens in new tab)": [
         "(s'obre en una pestanya nova)"
       ],
+      "Camera off": [
+        "Càmera desactivada"
+      ],
       "camera off": [
         "càmera desactivada"
       ],
+      "Camera on": [
+        "Càmera activada"
+      ],
       "camera on": [
         "càmera activada"
+      ],
+      "host": [
+        "amfitrió"
       ],
       "Meeting controls": [
         "Controls de la reunió"
@@ -20,8 +29,17 @@
       "microphone muted": [
         "micròfon silenciat"
       ],
+      "Microphone muted": [
+        "Micròfon silenciat"
+      ],
+      "Microphone on": [
+        "Micròfon activat"
+      ],
       "microphone on": [
         "micròfon activat"
+      ],
+      "speaking": [
+        "parlant"
       ]
     },
     "Accessibility announcement": {
@@ -347,6 +365,9 @@
       ],
       "Download logs": [
         "Descarrega els registres"
+      ],
+      "Download now": [
+        "Descarrega"
       ],
       "Download participant report": [
         "Descarrega l'informe de participants"
@@ -2751,6 +2772,9 @@
       "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Mode avançat: ajusteu cada constant de difuminació i, tot seguit, apliqueu per tornar a generar la previsualització. Les superposicions tenen prioritat sobre els valors del fitxer i d'Unleash."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Després de l'actualització, pot ser que el vostre Mac us demani una contrasenya. Escriviu la que feu servir per desbloquejar-lo i, a continuació, feu clic a Permet sempre per mantenir la sessió iniciada. ${ learnMore }"
+      ],
       "Allow camera access to preview your background": [
         "Permeteu l'accés a la càmera per a previsualitzar el fons"
       ],
@@ -3233,6 +3257,9 @@
       ],
       "Please try again or try another browser": [
         "Torneu-ho a provar o feu-ho amb un altre navegador"
+      ],
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Actualitzeu ${ MEET_APP_NAME } per continuar utilitzant l'aplicació. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Connexió deficient"
@@ -4066,6 +4093,72 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "No s'ha pogut iniciar el mode Imatge sobre imatge"
+      ]
+    },
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } i ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } a ${ endDateLabel }, ${ endTimeLabel }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } a ${ endTimeLabel }"
+      ],
+      "Repeats daily": [
+        "Es repeteix diàriament"
+      ],
+      "Repeats every ${ interval } day": [
+        "Es repeteix cada ${ interval } dia",
+        "Es repeteix cada ${ interval } dies"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Es repeteix cada ${ interval } mes el ${ ordinalDay }",
+        "Es repeteix cada ${ interval } mesos el ${ ordinalDay }"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Es repeteix cada ${ interval } setmana el ${ weekdayName }",
+        "Es repeteix cada ${ interval } setmanes el ${ weekdayName }"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Es repeteix cada ${ interval } any al ${ monthDay }",
+        "Es repeteix cada ${ interval } anys al ${ monthDay }"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Es repeteix cada ${ weekdayName }"
+      ],
+      "Repeats every weekday": [
+        "Es repeteix cada dia entre setmana"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Es repeteix cada any el ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Es repeteix mensualment"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Es repeteix el ${ ordinalDay } de cada mes"
+      ],
+      "Repeats weekly": [
+        "Es repeteix cada setmana"
+      ],
+      "Repeats yearly": [
+        "Es repeteix cada any"
+      ],
+      "Today · ${ monthDay }": [
+        "Avui · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Demà · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Es repeteix cada ${ interval } setmana el ${ weekdayList }",
+        "Es repeteix cada ${ interval } setmanes el ${ weekdayList }"
+      ],
+      "Repeats every ${ weekdayList }": [
+        "Es repeteix cada ${ weekdayList }"
       ]
     },
     "Notification": {

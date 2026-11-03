@@ -348,6 +348,9 @@
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
       ],
+      "Download now": [
+        "Λήψη τώρα"
+      ],
       "Download participant report": [
         "Λήψη αναφοράς συμμετεχόντων"
       ],
@@ -431,6 +434,9 @@
       ],
       "Join and leave sounds": [
         "Ήχοι σύνδεσης και αποσύνδεσης"
+      ],
+      "Join from ${ MEET_APP_NAME } app": [
+        "Συμμετοχή με την εφαρμογή ${ MEET_APP_NAME }"
       ],
       "Join in browser": [
         "Συμμετοχή μέσω προγράμματος περιήγησης"
@@ -2748,6 +2754,9 @@
       "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Λειτουργία για προχωρημένους: ρυθμίστε κάθε σταθερά θολώματος και, στη συνέχεια, επιλέξτε Εφαρμογή για να δημιουργήσετε ξανά την προεπισκόπηση. Οι παρακάμψεις έχουν προτεραιότητα έναντι των τιμών αρχείου και Unleash."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Μετά την ενημέρωση, ενδέχεται το Mac σας να ζητήσει κωδικό πρόσβασης. Πληκτρολογήστε τον κωδικό πρόσβασης που χρησιμοποιείτε για να ξεκλειδώσετε το Mac σας και, στη συνέχεια, κάντε κλικ στην επιλογή Να επιτρέπεται πάντα για να παραμείνετε συνδεδεμένοι. ${ learnMore }"
+      ],
       "Allow camera access to preview your background": [
         "Επιτρέψτε την πρόσβαση στην κάμερα για προεπισκόπηση του φόντου σας"
       ],
@@ -3230,6 +3239,9 @@
       ],
       "Please try again or try another browser": [
         "Παρακαλούμε προσπαθήστε ξανά ή δοκιμάστε έναν άλλο περιηγητή"
+      ],
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Παρακαλούμε ενημερώστε το ${ MEET_APP_NAME } για να συνεχίσετε να χρησιμοποιείτε την εφαρμογή. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Κακή σύνδεση"
@@ -4054,6 +4066,72 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Αποτυχία εκκίνησης της λειτουργίας Picture-in-Picture"
+      ]
+    },
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } και ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } σε ${ endDateLabel }, ${ endTimeLabel }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } σε ${ endTimeLabel }"
+      ],
+      "Repeats daily": [
+        "Επαναλαμβάνεται καθημερινά"
+      ],
+      "Repeats every ${ interval } day": [
+        "Επαναλαμβάνεται κάθε ${ interval } ημέρα",
+        "Επαναλαμβάνεται κάθε ${ interval } ημέρες"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Επαναλαμβάνεται κάθε ${ interval } μήνα σε ${ ordinalDay }",
+        "Επαναλαμβάνεται κάθε ${ interval } μήνες σε ${ ordinalDay }"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Επαναλαμβάνεται κάθε ${ interval } εβδομάδα σε ${ weekdayName }",
+        "Επαναλαμβάνεται κάθε ${ interval } εβδομάδες σε ${ weekdayName }"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Επαναλαμβάνεται κάθε ${ interval } χρόνο σε ${ monthDay }",
+        "Επαναλαμβάνεται κάθε ${ interval } χρόνια σε ${ monthDay }"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Επαναλαμβάνεται κάθε ${ weekdayName }"
+      ],
+      "Repeats every weekday": [
+        "Επαναλαμβάνεται κάθε καθημερινή"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Επαναλαμβάνεται κάθε χρόνο στις ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Επαναλαμβάνεται μηνιαίως"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Επαναλαμβάνεται την ${ ordinalDay } κάθε μήνα"
+      ],
+      "Repeats weekly": [
+        "Επαναλαμβάνεται εβδομαδιαίως"
+      ],
+      "Repeats yearly": [
+        "Επαναλαμβάνεται ετησίως"
+      ],
+      "Today · ${ monthDay }": [
+        "Σήμερα · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Αύριο · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Επαναλαμβάνεται κάθε ${ interval } εβδομάδα σε ${ weekdayList }",
+        "Επαναλαμβάνεται κάθε ${ interval } εβδομάδες σε ${ weekdayList }"
+      ],
+      "Repeats every ${ weekdayList }": [
+        "Επαναλαμβάνεται κάθε ${ weekdayList }"
       ]
     },
     "Notification": {

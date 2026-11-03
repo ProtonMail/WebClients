@@ -354,6 +354,9 @@
       "Download logs": [
         "Спампаваць журналы"
       ],
+      "Download now": [
+        "Спампаваць"
+      ],
       "Download participant report": [
         "Спампаваць справаздачу ўдзельніка"
       ],
@@ -437,6 +440,9 @@
       ],
       "Join and leave sounds": [
         "Гук пры далучэнні і выхадзе"
+      ],
+      "Join from ${ MEET_APP_NAME } app": [
+        "Далучыць з праграмы ${ MEET_APP_NAME }"
       ],
       "Join in browser": [
         "Далучыцца ў браўзеры"
@@ -3373,6 +3379,9 @@
       "This will sign you out of all accounts currently logged in.": [
         "Гэта правядзе да выхаду з усіх уліковых запісаў у якіх вы ў цяперашні час аўтарызаваныя."
       ],
+      "Time is up for ${ meetingName }": [
+        "Скончыўся час для ${ meetingName }"
+      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Вам спатрэбіцца **бясплатны ўліковы запіс ${ BRAND_NAME }**, каб стварыць і захаваць пакой. Гэта не зойме шмат часу."
       ],
@@ -3997,6 +4006,40 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Не ўдалося запусціць \"Малюнак у малюнку\""
+      ]
+    },
+    "Meeting schedule": {
+      "Repeats daily": [
+        "Паўтараць штодзень"
+      ],
+      "Repeats every ${ interval } day": [
+        "Паўтараецца кожны ${ interval } дзень",
+        "Паўтараецца кожныя ${ interval } дні",
+        "Паўтараецца кожныя ${ interval } дзён",
+        "Паўтараецца кожныя ${ interval } дзён"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Паўтараецца кожны ${ weekdayName }"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Паўтараецца кожны год у ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Паўтараць штомесяц"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Паўтараецца ў ${ ordinalDay } кожны месяц"
+      ],
+      "Repeats weekly": [
+        "Паўтараць штотыдзень"
+      ],
+      "Repeats yearly": [
+        "Паўтараць штогод"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ weekdayList }": [
+        "Паўтараецца кожны ${ weekdayList }"
       ]
     },
     "Notification": {

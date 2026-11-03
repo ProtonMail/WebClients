@@ -8,11 +8,20 @@
       "(opens in new tab)": [
         "(se deschide în filă nouă)"
       ],
+      "Camera off": [
+        "Cameră oprită"
+      ],
       "camera off": [
         "cameră oprită"
       ],
+      "Camera on": [
+        "Cameră pornită"
+      ],
       "camera on": [
         "cameră pornită"
+      ],
+      "host": [
+        "gazdă"
       ],
       "Meeting controls": [
         "Controale conferință"
@@ -20,8 +29,17 @@
       "microphone muted": [
         "microfon oprit"
       ],
+      "Microphone muted": [
+        "Microfon oprit"
+      ],
+      "Microphone on": [
+        "Microfon pornit"
+      ],
       "microphone on": [
         "microfon pornit"
+      ],
+      "speaking": [
+        "vorbește"
       ]
     },
     "Accessibility announcement": {
@@ -350,6 +368,9 @@
       ],
       "Download logs": [
         "Jurnal descărcare"
+      ],
+      "Download now": [
+        "Descărcare"
       ],
       "Download participant report": [
         "Descărcare raport participanți"
@@ -2768,6 +2789,9 @@
       "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Mod avansat: ajustați fiecare constantă de estompare, apoi folosiți butonul „Aplicare” pentru a reconstrui examinarea. Suprascrierile au prioritate față de valorile fișierului și Unleash."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "După actualizare, este posibil ca Mac-ul să solicite o parolă. Introduceți parola pe care o folosiți pentru a debloca Mac-ul, apoi faceți clic pe „Permitere întotdeauna” pentru a păstra conexiunea. ${ learnMore }"
+      ],
       "Allow camera access to preview your background": [
         "Permiteți accesul camerei pentru examinarea fundalului"
       ],
@@ -3250,6 +3274,9 @@
       ],
       "Please try again or try another browser": [
         "Reîncercați sau folosiți un alt navigator web"
+      ],
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Actualizați ${ MEET_APP_NAME } pentru a o utiliza în continuare. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Conexiune slabă"
@@ -4084,6 +4111,77 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Eșuare pornire Imagine în imagine"
+      ]
+    },
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } și ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } la ${ endDateLabel }, ${ endTimeLabel }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } la ${ endTimeLabel }"
+      ],
+      "Repeats daily": [
+        "Repetare zilnică"
+      ],
+      "Repeats every ${ interval } day": [
+        "Repetare la fiecare ${ interval } zi",
+        "Repetare la fiecare ${ interval } zile",
+        "Repetare la fiecare ${ interval } de zile"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Repetare la fiecare ${ interval } lună, în ziua ${ ordinalDay }",
+        "Repetare la fiecare ${ interval } luni, în ziua ${ ordinalDay }",
+        "Repetare la fiecare ${ interval } de luni, în ziua ${ ordinalDay }"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Repetare la fiecare ${ interval } săptămână, ${ weekdayName }",
+        "Repetare la fiecare ${ interval } săptămâni, ${ weekdayName }",
+        "Repetare la fiecare ${ interval } de săptămâni, ${ weekdayName }"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Repetare la fiecare ${ interval } an, ${ monthDay }",
+        "Repetare la fiecare ${ interval } ani, ${ monthDay }",
+        "Repetare la fiecare ${ interval } de ani, ${ monthDay }"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Repetare în fiecare ${ weekdayName }"
+      ],
+      "Repeats every weekday": [
+        "Repetare în fiecare zi lucrătoare"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Repetare anuală, ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Repetare lunară"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Repetare ${ ordinalDay } în fiecare lună"
+      ],
+      "Repeats weekly": [
+        "Repetare săptămânală"
+      ],
+      "Repeats yearly": [
+        "Repetare anuală"
+      ],
+      "Today · ${ monthDay }": [
+        "Astăzi · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Mâine · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Repetare la fiecare ${ interval } săptămână, ${ weekdayList }",
+        "Repetare la fiecare ${ interval } săptămâni, ${ weekdayList }",
+        "Repetare la fiecare ${ interval } de săptămâni, ${ weekdayList }"
+      ],
+      "Repeats every ${ weekdayList }": [
+        "Repetare în fiecare ${ weekdayList }"
       ]
     },
     "Notification": {

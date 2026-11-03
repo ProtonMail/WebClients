@@ -301,6 +301,9 @@
       "Download logs": [
         "Télécharger les journaux"
       ],
+      "Download now": [
+        "Télécharger"
+      ],
       "Download participant report": [
         "Télécharger le rapport des participants"
       ],
@@ -2487,6 +2490,9 @@
       "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Mode avancé : réglez chaque constante de flou, puis cliquez sur « Appliquer » pour actualiser l'aperçu. Les modifications manuelles ont priorité sur les valeurs définies dans le fichier et dans Unleash."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Après avoir effectué la mise à jour, votre Mac pourrait demander un mot de passe. Saisissez le mot de passe que vous utilisez pour déverrouiller votre Mac, puis cliquez Toujours Autoriser pour rester connecté. ${ learnMore }"
+      ],
       "Allow camera access to preview your background": [
         "Autorisez l'accès à la caméra pour prévisualiser votre arrière-plan"
       ],
@@ -2945,6 +2951,9 @@
       ],
       "Please try again or try another browser": [
         "Veuillez réessayer ou essayez un autre navigateur"
+      ],
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Veuillez mettre à jour ${ MEET_APP_NAME } pour continuer à utiliser l'application. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Connexion médiocre"
@@ -3730,6 +3739,72 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Impossible de démarrer l'incrustation d'image"
+      ]
+    },
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } et ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } jusqu'au ${ endDateLabel }, ${ endTimeLabel }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } jusqu'au ${ endTimeLabel }"
+      ],
+      "Repeats daily": [
+        "Se répète chaque jour"
+      ],
+      "Repeats every ${ interval } day": [
+        "Se répète tous les ${ interval } jours",
+        "Se répète tous les ${ interval } jours"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Se répète tous les ${ interval } mois, le ${ ordinalDay }",
+        "Se répète tous les ${ interval } mois, le ${ ordinalDay }"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Se répète toutes les ${ interval } semaines, le ${ weekdayName }",
+        "Se répète toutes les ${ interval } semaines, le ${ weekdayName }"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Se répète toutes les ${ interval } ans, le ${ monthDay }",
+        "Se répète toutes les ${ interval } ans, le ${ monthDay }"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Se répète tous les ${ weekdayName }"
+      ],
+      "Repeats every weekday": [
+        "Se répète tous les jours de la semaine"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Se répète chaque année le ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Se répète tous les mois"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Se répète tous les ${ ordinalDay } de chaque mois"
+      ],
+      "Repeats weekly": [
+        "Se répète toutes les semaines"
+      ],
+      "Repeats yearly": [
+        "Se répète tous les ans"
+      ],
+      "Today · ${ monthDay }": [
+        "Aujourd'hui · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Demain · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Se répète toutes les ${ interval } semaines, le ${ weekdayList }",
+        "Se répète toutes les ${ interval } semaines, le ${ weekdayList }"
+      ],
+      "Repeats every ${ weekdayList }": [
+        "Se répète tous les ${ weekdayList }"
       ]
     },
     "Notification": {

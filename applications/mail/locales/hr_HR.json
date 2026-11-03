@@ -386,9 +386,6 @@
       "Create new password": [
         "Stvori novu lozinku"
       ],
-      "Current plan": [
-        "Trenutna pretplata"
-      ],
       "Custom": [
         "Prilagođeno"
       ],
@@ -1518,9 +1515,7 @@
         "Vjeruj"
       ],
       "Trust key": [
-        "Vjeruj ključu",
-        "Vjeruj ključevima",
-        "Vjeruj ključevima"
+        "Ključ povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -7649,7 +7644,9 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku"
+        "Umetni sliku",
+        "Umetni slike",
+        "Umetni slike"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -10930,17 +10927,11 @@
       "Exact URL matching rule": [
         "Pravilo podudaranja točnog URL-a"
       ],
-      "Fw:": [
-        "FW:"
-      ],
       "Never fill with this exact URL": [
         "Nikada nemoj ispuniti s ovim točnim URL-om"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "Dana ${ date }, ${ senderString } piše:"
-      ],
-      "Re:": [
-        "Odg:"
       ],
       "Regular expression rule": [
         "Pravilo regularnog izraza"
@@ -12852,9 +12843,6 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Uskoro ćete biti preusmjereni radi potvrde plaćanja."
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "Vaša je valuta promijenjena u eure (€) jer SEPA bankovni prijenosi podržavaju samo plaćanja u eurima."
       ],
       "Your payment is still being processed": [
         "Vaša se uplata još uvijek obrađuje"

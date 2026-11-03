@@ -526,6 +526,9 @@
       "Move all items": [
         "Presunúť všetky položky"
       ],
+      "Move folder": [
+        "Presunúť priečinok"
+      ],
       "Move to": [
         "Presunúť do"
       ],
@@ -723,6 +726,9 @@
       ],
       "Show advanced options": [
         "Zobraziť pokročilé možnosti"
+      ],
+      "Show all": [
+        "Zobraziť všetko"
       ],
       "Show Less": [
         "Zobraziť menej"
@@ -1272,6 +1278,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Presun všetkých položiek z \"${ payload.content.name }\" zlyhal"
+      ],
+      "Failed to move folder": [
+        "Priečinok sa nepodarilo presunúť"
       ],
       "Failed to move items": [
         "Nepodarilo sa presunúť položky"
@@ -2183,6 +2192,9 @@
       "Folder \"${ payload.folder.name }\" created": [
         "Priečinok \"${ payload.folder.name }\" bol vytvorený"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Priečinok \"${ payload.folder.name }\" bol presunutý"
+      ],
       "Folder deleted": [
         "Priečinok odstránený"
       ],
@@ -2395,6 +2407,9 @@
       ],
       "Moving items": [
         "Presúvanie položiek"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items to trash": [
         "Presúvanie položiek do koša"
@@ -2816,6 +2831,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Na použitie ${ PASS_APP_NAME } bude vyžadované dodatočné heslo. Funguje ako dodatočné heslo k vášmu heslu pre ${ BRAND_NAME }."
       ],
+      "The folder is already here": [
+        "Priečinok už tu je"
+      ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Nasledujúcu ${ totalIgnored } položku nebolo možné importovať:",
         "Nasledujúce ${ totalIgnored } položky nebolo možné importovať:",
@@ -3022,6 +3040,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Ak je táto funkcia povolená, môžete naďalej pristupovať k svojim údajom ${ PASS_SHORT_APP_NAME }, aj keď stratíte pripojenie k internetu alebo ak sú servery ${ BRAND_NAME } nedostupné."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Pri presúvaní položiek medzi trezormi zachováme až posledných 50 vykonaných úprav pre každú položku."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Pri odosielaní emailu z tohto aliasu bude ako odosielateľ uvedený email ${ emailSender }."
@@ -5368,6 +5389,9 @@
       "Modified": [
         "Upravené"
       ],
+      "Move \"${ folderName }\" to": [
+        "Presunúť \"${ folderName }\" do"
+      ],
       "Move ${ count } item to ${ target }": [
         "Presunúť ${ count } položku do ${ target }",
         "Presunúť ${ count } položky do ${ target }",
@@ -5907,6 +5931,9 @@
       "Move to trash": [
         "Presunúť do koša"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Presunutím tohto priečinka by sa prekročila maximálna úroveň vnorenia priečinkov"
+      ],
       "No items": [
         "Žiadne položky"
       ],
@@ -6014,6 +6041,9 @@
       ],
       "Verification code is required": [
         "Vyžaduje sa overovací kód"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Priečinok nemožno presunúť do seba samého ani do jeho podpriečinkov"
       ],
       "You have reached the limit of members who can access this item.": [
         "Dosiahli ste limit členov, ktorí majú prístup k tejto položke."

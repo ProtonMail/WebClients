@@ -8,8 +8,14 @@
       "(opens in new tab)": [
         "(öppnas i ny flik)"
       ],
+      "Camera off": [
+        "Kamera av"
+      ],
       "camera off": [
         "kamera av"
+      ],
+      "Camera on": [
+        "Kamera på"
       ],
       "camera on": [
         "kamera på"
@@ -19,6 +25,9 @@
       ],
       "microphone muted": [
         "mikrofon tystad"
+      ],
+      "Microphone on": [
+        "Mikrofon på"
       ],
       "microphone on": [
         "mikrofon på"
@@ -322,6 +331,9 @@
       "Download logs": [
         "Ladda ner loggar"
       ],
+      "Download now": [
+        "Ladda ner nu"
+      ],
       "Download participant report": [
         "Ladda ner deltagarrapport"
       ],
@@ -399,6 +411,9 @@
       ],
       "Join": [
         "Gå med"
+      ],
+      "Join in browser": [
+        "Gå med i webbläsare"
       ],
       "Join meeting": [
         "Gå med i möte"
@@ -3748,6 +3763,14 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Misslyckades att starta bild-i-bild"
+      ]
+    },
+    "Meeting schedule": {
+      "Today · ${ monthDay }": [
+        "Idag · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Imorgon · ${ monthDay }"
       ]
     },
     "Notification": {

@@ -396,9 +396,6 @@
       "Create new password": [
         "创建新密码"
       ],
-      "Current plan": [
-        "当前等级"
-      ],
       "Custom": [
         "自定义"
       ],
@@ -1574,6 +1571,9 @@
       ],
       "Trust": [
         "信任"
+      ],
+      "Trust key": [
+        "信任密钥"
       ],
       "Trust public key": [
         "信任公钥"
@@ -11403,17 +11403,11 @@
       "Exact URL matching rule": [
         "精确 URL 匹配规则"
       ],
-      "Fw:": [
-        "转发："
-      ],
       "Never fill with this exact URL": [
         "绝不在此精确 URL 上填充"
       ],
       "On ${ date }, ${ senderString } wrote:": [
         "${ date }，${ senderString } 来信："
-      ],
-      "Re:": [
-        "回复："
       ],
       "Regular expression rule": [
         "正则表达式规则"
@@ -13404,12 +13398,6 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "您的账户注册时间过长，不符合 Born Private 套餐的要求。"
-      ],
-      "Your currency has been changed to euros (€) because ${ IDEAL_WERO_BRAND_NAME } only supports payments in euros.": [
-        "您的货币已更改为欧元 (€)，因为 ${ IDEAL_WERO_BRAND_NAME } 仅支持欧元支付。"
-      ],
-      "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
-        "您的货币已更改为欧元 (€)，因为 SEPA 银行转账只支持欧元支付。"
       ],
       "Your payment is still being processed": [
         "您的付款正在处理中"

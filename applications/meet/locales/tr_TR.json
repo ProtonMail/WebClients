@@ -8,11 +8,20 @@
       "(opens in new tab)": [
         "(yeni sekmede açılır)"
       ],
+      "Camera off": [
+        "Kamera kapalı"
+      ],
       "camera off": [
         "Kamera kapalı"
       ],
+      "Camera on": [
+        "Kamera açık"
+      ],
       "camera on": [
         "Kamera açık"
+      ],
+      "host": [
+        "sunucu"
       ],
       "Meeting controls": [
         "Görüşme denetimleri"
@@ -20,8 +29,17 @@
       "microphone muted": [
         "Mikrofon kapalı"
       ],
+      "Microphone muted": [
+        "Mikrofon sessize alındı"
+      ],
+      "Microphone on": [
+        "Mikrofon açık"
+      ],
       "microphone on": [
         "Mikrofon açık"
+      ],
+      "speaking": [
+        "konuşma"
       ]
     },
     "Accessibility announcement": {
@@ -347,6 +365,9 @@
       ],
       "Download logs": [
         "Günlüğü indir"
+      ],
+      "Download now": [
+        "Şimdi indir"
       ],
       "Download participant report": [
         "Katılımcı raporunu indir"
@@ -2751,6 +2772,9 @@
       "Advanced mode: tune every blur constant, then Apply to rebuild the preview. Overrides take precedence over file and Unleash values.": [
         "Gelişmiş kip: Bulanıklık sabitlerini ayarlayın ardından ön izlemeyi yeniden oluşturmak için uygulayın. Bu ayarlar dosyaya ve belirtilmemiş değerlere göre önceliklidir."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Güncellemeden sonra Mac bilgisayarınız parolayı yazmanızı isteyebilir. Mac bilgisayarınızın kilidini açmak için kullandığınız parolayı yazın, ardından oturumunuzun açık kalması için Her zaman izin ver üzerine tıklayın. ${ learnMore }"
+      ],
       "Allow camera access to preview your background": [
         "Arka planınızın ön izlemesini görmek için kameraya erişme izni verin"
       ],
@@ -3233,6 +3257,9 @@
       ],
       "Please try again or try another browser": [
         "Lütfen yeniden deneyin ya da başka bir tarayıcı kullanın"
+      ],
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "${ MEET_APP_NAME } uygulamasını kullanmayı sürdürmek için lütfen güncelleyin. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Bağlantı kötü"
@@ -4066,6 +4093,72 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Resim içinde resim başlatılamadı"
+      ]
+    },
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } ve ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } ile ${ endDateLabel }, ${ endTimeLabel } arasında"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } ile ${ endTimeLabel } arasında"
+      ],
+      "Repeats daily": [
+        "Her gün yinelenir"
+      ],
+      "Repeats every ${ interval } day": [
+        "Her ${ interval } günde bir yinelenir",
+        "Her ${ interval } günde bir yinelenir"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Her ${ interval } ayda bir ${ ordinalDay } gününde yinelenir",
+        "Her ${ interval } ayda bir ${ ordinalDay } gününde yinelenir"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Her ${ interval } haftada bir ${ weekdayName } gününde yinelenir",
+        "Her ${ interval } haftada bir ${ weekdayName } gününde yinelenir"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Her ${ interval } yılda bir ${ monthDay } günlerinde yinelenir",
+        "Her ${ interval } yılda bir ${ monthDay } günlerinde yinelenir"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Her ${ weekdayName } gününde yinelenir"
+      ],
+      "Repeats every weekday": [
+        "Her hafta içi gününde yinelenir"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Her yıl ${ monthDay } günlerinde yinelenir"
+      ],
+      "Repeats monthly": [
+        "Her ay yinelenir"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Her ay ${ ordinalDay } gününde yinelenir"
+      ],
+      "Repeats weekly": [
+        "Her hafta yinelenir"
+      ],
+      "Repeats yearly": [
+        "Her yıl yinelenir"
+      ],
+      "Today · ${ monthDay }": [
+        "Bugün · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Yarın · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Her ${ interval } haftada bir ${ weekdayList } günlerinde yinelenir",
+        "Her ${ interval } haftada bir ${ weekdayList } günlerinde yinelenir"
+      ],
+      "Repeats every ${ weekdayList }": [
+        "Her ${ weekdayList } günlerinde yinelenir"
       ]
     },
     "Notification": {
