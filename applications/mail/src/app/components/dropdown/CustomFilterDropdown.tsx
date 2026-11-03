@@ -166,8 +166,11 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
         <>
             <form onSubmit={handleSubmit}>
                 <div className="m-4">
-                    <span className="text-bold" tabIndex={-2}>
-                        {c('CustomFilter').t`Filter on`}
+                    <span className="text-bold" tabIndex={-1}>
+                        {
+                            // translator: This is the title of the filter dropdown (don't translate it as an action, neither as a "filter activated", understand it as a "filter on... (list of fields)")
+                            c('Title').t`Filter on`
+                        }
                     </span>
                 </div>
                 <ul className="unstyled my-4">
