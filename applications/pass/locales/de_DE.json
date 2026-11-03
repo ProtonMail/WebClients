@@ -809,6 +809,27 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
+      ],
+      "Download for Linux": [
+        "Für Linux herunterladen"
+      ],
+      "Download for macOS": [
+        "Für macOS herunterladen"
+      ],
+      "Download for Windows": [
+        "Für Windows herunterladen"
+      ],
+      "Hide passwords": [
+        "Passwörter ausblenden"
+      ],
+      "Move folder": [
+        "Ordner verschieben"
+      ],
+      "Open platform selection dropdown": [
+        "Plattformauswahl öffnen"
+      ],
+      "Show all": [
+        "Alle anzeigen"
       ]
     },
     "Activity": {
@@ -963,6 +984,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Deine persönlichen Daten wurden durch ein Datenleck bei einem Drittanbieterdienst bekannt."
+      ],
+      "Check if you're reusing passwords": [
+        "Überprüfen, ob Passwörter wiederverwendet werden"
       ]
     },
     "Email": {
@@ -1516,6 +1540,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrische Authentifizierung abgebrochen."
+      ],
+      "Failed to move folder": [
+        "Fehler beim Verschieben des Ordners"
       ]
     },
     "Error message": {
@@ -2595,7 +2625,7 @@
         "Vielen Dank, das Problem wurde gemeldet."
       ],
       "The agent will be required to provide a reason for every action it performs, and each action will be recorded in an audit log you can review. After token creation, you'll get instructions to copy-paste into your AI agent.": [
-        "Der Agent muss für jede von ihm ausgeführte Aktion eine Begründung angeben, und jede Aktion wird in einem Prüfprotokoll festgehalten, das du einsehen kannst. Nach der Erstellung des Tokens erhältst du Anweisungen, die du in deinen KI-Agenten einfügen kannst."
+        "Der Agent muss für jede von ihm ausgeführte Aktion einen Grund angeben, und jede Aktion wird in einem Prüfprotokoll festgehalten, das eingesehen werden kann. Nach der Erstellung des Tokens erhältst du Anweisungen, die du per Kopieren und Einfügen in deinen KI-Agenten einfügen kannst."
       ],
       "The display name when sending an email from this alias.": [
         "Der Anzeigename, wenn eine E-Mail von diesem Alias versendet wird."
@@ -2916,6 +2946,63 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
+      ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Dies kann jedoch nicht verhindern, dass Zuschauer Passwörter auf andere Weise in Erfahrung bringen."
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Feld ausgeblendet. Es kann dennoch automatisch ausgefüllt werden."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Ordner „${ payload.folder.name }“ verschoben"
+      ],
+      "Important:": [
+        "Wichtig:"
+      ],
+      "iOS and Android Apps": [
+        "iOS und Android Apps"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden deren sichere Verknüpfungen gelöscht."
+      ],
+      "Only aliases are shown": [
+        "Nur Aliase werden angezeigt"
+      ],
+      "Only cards are shown": [
+        "Nur Karten werden angezeigt"
+      ],
+      "Only custom items are shown": [
+        "Nur benutzerdefinierte Einträge werden angezeigt"
+      ],
+      "Only identities are shown": [
+        "Nur Identitäten werden angezeigt"
+      ],
+      "Only logins are shown": [
+        "Nur Anmeldungen werden angezeigt"
+      ],
+      "Only notes are shown": [
+        "Nur Notizen werden angezeigt"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Das Passwort ist ausgeblendet. Es kann dennoch automatisch ausgefüllt werden."
+      ],
+      "Scan to download": [
+        "Zum Herunterladen scannen"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "QR-Code einlesen, um ${ PASS_APP_NAME } für iOS und Android herunterzuladen"
+      ],
+      "The folder is already here": [
+        "Der Ordner ist bereits vorhanden"
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Zuschauer können Passwörter weiterhin automatisch ausfüllen, werden ihnen jedoch nicht in ${ PASS_APP_NAME } angezeigt. Dies verhindert eine beiläufige Einsichtnahme und verringert das Risiko einer versehentlichen Offenlegung."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Zuschauer können weiterhin die automatische Ausfüllfunktion nutzen. Redakteure und Administratoren werden die Passwörter immer angezeigt."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Beim Verschieben von Einträgen zwischen Tresoren werden die letzten 50 Änderungen, die an jedem Eintrag vorgenommen wurden, beibehalten."
       ]
     },
     "Keyboard key": {
@@ -4176,6 +4263,18 @@
       ],
       "ZIP or Postal code": [
         "Postleitzahl oder ZIP-Code"
+      ],
+      "Allow viewers to see passwords": [
+        "Zuschauern ermöglichen, Passwörter einzusehen"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5284,6 +5383,21 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du bist dabei, ${ aliasCount } Alias dauerhaft zu löschen.",
         "Du bist dabei, ${ aliasCount } Aliasse dauerhaft zu löschen."
+      ],
+      "Get mobile and desktop apps": [
+        "Mobile und Desktop-Apps herunterladen"
+      ],
+      "Get mobile apps": [
+        "Apps für Mobilgeräte herunterladen"
+      ],
+      "Hide passwords from viewers?": [
+        "Passwörter vor Zuschauern ausblenden?"
+      ],
+      "Move \"${ folderName }\" to": [
+        "„${ folderName }“ verschieben nach"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Umsteigen, um auf wiederverwendete Passwörter prüfen zu können"
       ]
     },
     "Title_cloned_item": {
@@ -5677,6 +5791,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Das Verschieben des Ordners an diesen Ort überschreitet die maximale Verschachtelungstiefe"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Ein Ordner kann nicht in sich selbst oder in einen seiner Unterordner verschoben werden"
       ]
     }
   }

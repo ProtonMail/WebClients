@@ -803,6 +803,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Download for Linux": [
+        "Ladda ner för Linux"
+      ],
+      "Download for macOS": [
+        "Ladda ner för macOS"
+      ],
+      "Download for Windows": [
+        "Ladda ner för Windows"
+      ],
+      "Hide passwords": [
+        "Dölj lösenord"
+      ],
+      "Move folder": [
+        "Flytta mapp"
+      ],
+      "Show all": [
+        "Visa alla"
       ]
     },
     "Activity": {
@@ -1510,6 +1528,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrisk autentisering avbruten."
+      ],
+      "Failed to move folder": [
+        "Misslyckades med att flytta mapp"
       ]
     },
     "Error message": {
@@ -2875,6 +2899,36 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "Important:": [
+        "Viktig:"
+      ],
+      "iOS and Android Apps": [
+        "Appar för iOS och Android"
+      ],
+      "Only aliases are shown": [
+        "Endast alias visas"
+      ],
+      "Only cards are shown": [
+        "Endast kort visas"
+      ],
+      "Only custom items are shown": [
+        "Endast anpassade objekt visas"
+      ],
+      "Only identities are shown": [
+        "Endast identiteter visas"
+      ],
+      "Only logins are shown": [
+        "Endast inloggningar visas"
+      ],
+      "Only notes are shown": [
+        "Endast anteckningar visas"
+      ],
+      "Scan to download": [
+        "Skanna för att ladda ner"
+      ],
+      "The folder is already here": [
+        "Mappen är redan här"
       ]
     },
     "Keyboard key": {
@@ -4135,6 +4189,15 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5240,6 +5303,15 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ],
+      "Get mobile and desktop apps": [
+        "Skaffa appar för mobil och stationär dator"
+      ],
+      "Get mobile apps": [
+        "Skaffa mobilappar"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Flytta “${ folderName }“ till"
       ]
     },
     "Title_cloned_item": {

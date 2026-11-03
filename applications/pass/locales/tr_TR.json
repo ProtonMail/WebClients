@@ -809,6 +809,27 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ],
+      "Download for Linux": [
+        "Linux için indir"
+      ],
+      "Download for macOS": [
+        "macOS için indirin"
+      ],
+      "Download for Windows": [
+        "Windows için indirin"
+      ],
+      "Hide passwords": [
+        "Parolaları gizle"
+      ],
+      "Move folder": [
+        "Klasörü taşı"
+      ],
+      "Open platform selection dropdown": [
+        "Platform seçimi listesini aç"
+      ],
+      "Show all": [
+        "Tümünü görüntüle"
       ]
     },
     "Activity": {
@@ -963,6 +984,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Kişisel bilgileriniz üçüncü taraf bir hizmetin verilerinin sızdırılması nedeniyle ele geçirildi."
+      ],
+      "Check if you're reusing passwords": [
+        "Parolaları yeniden kullanıp kullanmadığınızı denetleyin"
       ]
     },
     "Email": {
@@ -1516,6 +1540,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biyometrik kimlik doğrulama iptal edildi."
+      ],
+      "Failed to move folder": [
+        "Klasör taşınamadı"
       ]
     },
     "Error message": {
@@ -2916,6 +2946,63 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Bu önlem, izleyicilerin parolaları başka yollarla almasını engellemez."
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Alan gizli. Otomatik olarak doldurmayı sürdürebilirsiniz."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "\"${ payload.folder.name }\" klasörü taşındı"
+      ],
+      "Important:": [
+        "Önemli"
+      ],
+      "iOS and Android Apps": [
+        "iOS ve Android uygulamaları"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+      ],
+      "Only aliases are shown": [
+        "Yalnızca takma adlar görüntüleniyor"
+      ],
+      "Only cards are shown": [
+        "Yalnızca kartlar görüntüleniyor"
+      ],
+      "Only custom items are shown": [
+        "Yalnızca özel ögeler görüntüleniyor"
+      ],
+      "Only identities are shown": [
+        "Yalnızca kimlikler görüntüleniyor"
+      ],
+      "Only logins are shown": [
+        "Yalnızca oturum açma kayıtları görüntüleniyor"
+      ],
+      "Only notes are shown": [
+        "Yalnızca notlar görüntüleniyor"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Parola gizli. Hala otomatik olarak doldurabilirsiniz."
+      ],
+      "Scan to download": [
+        "İndirmek için tara"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "iOS ve Android için ${ PASS_APP_NAME } indirmek için tarayın"
+      ],
+      "The folder is already here": [
+        "Klasör zaten burada"
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "İzleyiciler parolaları otomatik olarak doldurmayı sürdürebilir. Ancak bunları ${ PASS_APP_NAME } içinde göremezler. Bu, önlem sıradan görüntülemeyi engeller ve yanlışlıkla açığa çıkma riskini azaltır."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "İzleyiciler otomatik doldurmayı sürdürebilir. Düzenleyiciler ve yöneticiler parolaları her zaman görür."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Ögeleri kasalar arasında taşırken, her öge üzerinde yapılmış son 50 değişikliği koruruz."
       ]
     },
     "Keyboard key": {
@@ -3782,7 +3869,7 @@
         "Plus"
       ],
       "Points Balance": [
-        "Puan bakiyesi"
+        "Kalan puan tutarı"
       ],
       "Port": [
         "Bağlantı noktası"
@@ -4176,6 +4263,18 @@
       ],
       "ZIP or Postal code": [
         "Posta kodu"
+      ],
+      "Allow viewers to see passwords": [
+        "İzleyiciler parolaları görebilsin"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5284,6 +5383,21 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ],
+      "Get mobile and desktop apps": [
+        "Mobil ve bilgisayar uygulamalarını edinin"
+      ],
+      "Get mobile apps": [
+        "Mobil uygulamaları edinin"
+      ],
+      "Hide passwords from viewers?": [
+        "Parolalar izleyenlerden gizlensin mi?"
+      ],
+      "Move \"${ folderName }\" to": [
+        "\"${ folderName }\" klasörünü şuraya taşı"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Yeniden kullanılan parolaları denetlemek için tarifenizi yükseltin"
       ]
     },
     "Title_cloned_item": {
@@ -5677,6 +5791,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Klasörü buraya taşımak, alt alta olabilecek en fazla klasör sayısını aşacak"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Bir klasörü kendi içine veya alt klasörlerine taşıyamazsınız"
       ]
     }
   }

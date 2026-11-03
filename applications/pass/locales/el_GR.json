@@ -809,6 +809,27 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Download for Linux": [
+        "Λήψη για Linux"
+      ],
+      "Download for macOS": [
+        "Λήψη για MacOS"
+      ],
+      "Download for Windows": [
+        "Λήψη για Windows"
+      ],
+      "Hide passwords": [
+        "Απόκρυψη κωδικών πρόσβασης"
+      ],
+      "Move folder": [
+        "Μετακίνηση φακέλου"
+      ],
+      "Open platform selection dropdown": [
+        "Άνοιγμα αναπτυσσόμενου μενού επιλογής πλατφόρμας"
+      ],
+      "Show all": [
+        "Εμφάνιση όλων"
       ]
     },
     "Activity": {
@@ -963,6 +984,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Τα προσωπικά σας στοιχεία διέρρευσαν σε παραβίαση δεδομένων μιας υπηρεσίας τρίτου μέρους."
+      ],
+      "Check if you're reusing passwords": [
+        "Ελέγξτε αν χρησιμοποιείτε ξανά τους ίδιους κωδικούς πρόσβασης"
       ]
     },
     "Email": {
@@ -1516,6 +1540,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
+      ],
+      "Biometric authentication cancelled.": [
+        "Η βιομετρική ταυτοποίηση ακυρώθηκε."
+      ],
+      "Failed to move folder": [
+        "Αποτυχία μετακίνησης φακέλου"
       ]
     },
     "Error message": {
@@ -2916,6 +2946,63 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Αυτό δεν εμποδίζει τους θεατές από το να αποκτήσουν κωδικούς πρόσβασης με άλλα μέσα."
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Το πεδίο είναι κρυμμένο. Μπορείτε ακόμα να τον συμπληρώσετε αυτόματα."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Ο φάκελος \"${ payload.folder.name }\" μετακινήθηκε"
+      ],
+      "Important:": [
+        "Σημαντικό:"
+      ],
+      "iOS and Android Apps": [
+        "Εφαρμογές για iOS και Android"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+      ],
+      "Only aliases are shown": [
+        "Εμφανίζονται μόνο τα ψευδώνυμα"
+      ],
+      "Only cards are shown": [
+        "Εμφανίζονται μόνο οι κάρτες"
+      ],
+      "Only custom items are shown": [
+        "Εμφανίζονται μόνο τα εξατομικευμένα είδη"
+      ],
+      "Only identities are shown": [
+        "Εμφανίζονται μόνο οι ταυτότητες"
+      ],
+      "Only logins are shown": [
+        "Εμφανίζονται μόνο οι συνδέσεις"
+      ],
+      "Only notes are shown": [
+        "Εμφανίζονται μόνο οι σημειώσεις"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Ο κωδικός πρόσβασης είναι κρυμμένος. Μπορείτε ακόμα να τον συμπληρώσετε αυτόματα."
+      ],
+      "Scan to download": [
+        "Σαρώστε για λήψη"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Σκανάρετε για να κατεβάσετε το ${ PASS_APP_NAME } για iOS και Android"
+      ],
+      "The folder is already here": [
+        "Ο φάκελος βρίσκεται ήδη εδώ"
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Οι θεατές μπορούν ακόμα να χρησιμοποιούν την αυτόματη συμπλήρωση κωδικών πρόσβασης, αλλά δε θα τους βλέπουν στο ${ PASS_APP_NAME }. Αυτό αποθαρρύνει την περιστασιακή προβολή και μειώνει τον κίνδυνο ακούσιας αποκάλυψης."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Οι θεατές μπορούν ακόμα να χρησιμοποιούν την αυτόματη συμπλήρωση. Οι συντάκτες και οι διαχειριστές βλέπουν πάντα τους κωδικούς πρόσβασης."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Κατά τη μετακίνηση αντικειμένων μεταξύ κρυπτών, θα διατηρήσουμε έως και τις τελευταίες 50 τροποποιήσεις που πραγματοποιήθηκαν σε κάθε αντικείμενο."
       ]
     },
     "Keyboard key": {
@@ -4176,6 +4263,18 @@
       ],
       "ZIP or Postal code": [
         "Τ.Κ. / Ταχυδρομικός κώδικας"
+      ],
+      "Allow viewers to see passwords": [
+        "Επιτρέψτε στους θεατές να βλέπουν τους κωδικούς πρόσβασης"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5284,6 +5383,21 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ],
+      "Get mobile and desktop apps": [
+        "Αποκτήστε τις εφαρμογές για κινητά και υπολογιστές"
+      ],
+      "Get mobile apps": [
+        "Αποκτήστε εφαρμογές κινητών"
+      ],
+      "Hide passwords from viewers?": [
+        "Απόκρυψη κωδικών πρόσβασης από τους θεατές;"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Μετακίνηση του \"${ folderName }\" σε"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Αναβάθμιση για έλεγχο επαναχρησιμοποιημένων κωδικών πρόσβασης"
       ]
     },
     "Title_cloned_item": {
@@ -5677,6 +5791,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Η μετακίνηση του φακέλου εδώ θα ξεπερνούσε το μέγιστο επίπεδο εμφώλευσης φακέλων."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Δεν μπορείτε να μετακινήσετε έναν φάκελο μέσα στον εαυτό του ή στους υποφακέλους του."
       ]
     }
   }

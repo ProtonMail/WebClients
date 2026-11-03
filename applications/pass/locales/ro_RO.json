@@ -811,6 +811,27 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Download for Linux": [
+        "Descărcare pentru Windows"
+      ],
+      "Download for macOS": [
+        "Descărcare pentru macOS"
+      ],
+      "Download for Windows": [
+        "Descărcare pentru Windows"
+      ],
+      "Hide passwords": [
+        "Ascundere parole"
+      ],
+      "Move folder": [
+        "Mutare folder"
+      ],
+      "Open platform selection dropdown": [
+        "Deschide meniul derulant pentru selectarea platformei"
+      ],
+      "Show all": [
+        "Arată tot"
       ]
     },
     "Activity": {
@@ -966,6 +987,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Informațiile personale v-au fost divulgate într-o compromitere a datelor a unui serviciu terță parte."
+      ],
+      "Check if you're reusing passwords": [
+        "Verifică dacă refolosiți parolele."
       ]
     },
     "Email": {
@@ -1522,6 +1546,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ],
+      "Biometric authentication cancelled.": [
+        "Autentificarea biometrică a fost anulată."
+      ],
+      "Failed to move folder": [
+        "Mutarea folderului a eșuat."
       ]
     },
     "Error message": {
@@ -2951,6 +2981,63 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Acest lucru nu îi împiedică pe spectatori să obțină parolele prin alte mijloace."
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Câmp ascuns. Încă se poate autocompleta."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "S-a mutat folderul \"${ payload.folder.name }\"."
+      ],
+      "Important:": [
+        "Important:"
+      ],
+      "iOS and Android Apps": [
+        "Aplicații iOS și Android"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
+      "Only aliases are shown": [
+        "Sunt afișare doar aliasurile"
+      ],
+      "Only cards are shown": [
+        "Sunt afișare doar cardurile"
+      ],
+      "Only custom items are shown": [
+        "Sunt afișare doar articolele personalizate"
+      ],
+      "Only identities are shown": [
+        "Sunt afișare doar identitățile"
+      ],
+      "Only logins are shown": [
+        "Sunt afișare doar autentificările"
+      ],
+      "Only notes are shown": [
+        "Sunt afișare doar notițele"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Parola este ascunsă. Încă se poate autocompleta."
+      ],
+      "Scan to download": [
+        "Scanați pentru descărcare"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scanați pentru a descărca ${ PASS_APP_NAME } pentru iOS și Android"
+      ],
+      "The folder is already here": [
+        "Folderul este deja aici."
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Utilizatorii cu drept de vizualizare pot în continuare să completeze automat parolele, dar nu le vor vedea în ${ PASS_APP_NAME }. Acest lucru descurajează vizualizarea ocazională și reduce riscul unei dezvăluiri accidentale."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Utilizatorii cu drept de vizualizare pot folosi în continuare completarea automată. Editorii și administratorii văd întotdeauna parolele."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "La mutarea articolelor între seifuri, vom păstra până la ultimele 50 de modificări efectuate fiecărui articol."
       ]
     },
     "Keyboard key": {
@@ -3546,7 +3633,7 @@
         "Informații"
       ],
       "Instagram handle": [
-        "Nume de utilizator Instagram"
+        "Cont Instagram"
       ],
       "Install and continue": [
         "Instalare și continuare"
@@ -4225,6 +4312,18 @@
       ],
       "ZIP or Postal code": [
         "Cod poștal"
+      ],
+      "Allow viewers to see passwords": [
+        "Permitere ca spectatorii să vadă parolele"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5344,6 +5443,21 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "Get mobile and desktop apps": [
+        "Luați aplicațiile pentru mobile și desktop"
+      ],
+      "Get mobile apps": [
+        "Luați aplicații mobile"
+      ],
+      "Hide passwords from viewers?": [
+        "Ascundeți parolele pentru spectatori?"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Mutare „${ folderName }” în"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Modificați contul pentru a putea verifica parolele reutilizate"
       ]
     },
     "Title_cloned_item": {
@@ -5747,6 +5861,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Mutarea folderului aici ar depăși nivelul maxim de imbricare a folderelor."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Nu puteți muta un folder în el însuși sau în subfolderele sale."
       ]
     }
   }

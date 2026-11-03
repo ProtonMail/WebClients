@@ -809,6 +809,27 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ],
+      "Download for Linux": [
+        "Download til Linux"
+      ],
+      "Download for macOS": [
+        "Download til macOS"
+      ],
+      "Download for Windows": [
+        "Download til Windows"
+      ],
+      "Hide passwords": [
+        "Skjul adgangskoder"
+      ],
+      "Move folder": [
+        "Flyt mappe"
+      ],
+      "Open platform selection dropdown": [
+        "Åbn platform-vælgeren"
+      ],
+      "Show all": [
+        "Vis alle"
       ]
     },
     "Activity": {
@@ -963,6 +984,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Dine personlige oplysninger blev lækket i et databrud hos en tredjepartstjeneste."
+      ],
+      "Check if you're reusing passwords": [
+        "Tjek om du genbruger adgangskoder"
       ]
     },
     "Email": {
@@ -1516,6 +1540,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrisk godkendelse annulleret."
+      ],
+      "Failed to move folder": [
+        "Kunne ikke flytte mappen"
       ]
     },
     "Error message": {
@@ -2916,6 +2946,63 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Dette forhindrer ikke seere fra at få adgang til adgangskoder på andre måder."
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Feltet er skjult. Du kan stadig autofylde det."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Mappen \"${ payload.folder.name }\" blev flyttet"
+      ],
+      "Important:": [
+        "Vigtigt:"
+      ],
+      "iOS and Android Apps": [
+        "iOS- og Android-apps"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
+      ],
+      "Only aliases are shown": [
+        "Kun aliasser vises"
+      ],
+      "Only cards are shown": [
+        "Kun kort vises"
+      ],
+      "Only custom items are shown": [
+        "Kun tilpassede elementer vises"
+      ],
+      "Only identities are shown": [
+        "Kun identiter vises"
+      ],
+      "Only logins are shown": [
+        "Kun login vises"
+      ],
+      "Only notes are shown": [
+        "Kun noter vises"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Adgangskoden er skjult. Du kan stadig autofylde den."
+      ],
+      "Scan to download": [
+        "Skan for at downloade"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scan for at downloade ${ PASS_APP_NAME } til iOS og Android"
+      ],
+      "The folder is already here": [
+        "Denne mappe eksisterer allerede her"
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Seere kan stadig autofylde adgangskoder, men kan ikke se dem i ${ PASS_APP_NAME }. Dette afholder folk fra at se adgangskoder unødvendigt, og reducerer risikoen for at lække dem ved en fejl."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Seere kan stadig autofylde. Redaktører og administrator kan altid se adgangskoder."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Når elementer flyttes mellem bokse, bevares op til de sidste 50 ændringer, der er foretaget på hvert element."
       ]
     },
     "Keyboard key": {
@@ -4176,6 +4263,18 @@
       ],
       "ZIP or Postal code": [
         "Postnummer"
+      ],
+      "Allow viewers to see passwords": [
+        "Tillad at seere kan se adgangskoder"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5284,6 +5383,21 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ],
+      "Get mobile and desktop apps": [
+        "Få mobil- og desktop-apps"
+      ],
+      "Get mobile apps": [
+        "Hent mobilapps"
+      ],
+      "Hide passwords from viewers?": [
+        "Skjul adgangskoder fra seere?"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Flyt \"${ folderName }\" til"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Opgrader for at tjekke for genbrugte adgangskoder"
       ]
     },
     "Title_cloned_item": {
@@ -5677,6 +5791,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Ved at flytte mappen her overskrides det dybeste niveau for undermapper"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Du kan ikke flytte en mappe ind i sig selv eller i dens undermapper"
       ]
     }
   }

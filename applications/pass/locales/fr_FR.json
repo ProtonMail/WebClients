@@ -806,6 +806,24 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ],
+      "Download for Linux": [
+        "Télécharger la version pour Linux"
+      ],
+      "Download for macOS": [
+        "Télécharger pour macOS"
+      ],
+      "Download for Windows": [
+        "Télécharger pour Windows"
+      ],
+      "Hide passwords": [
+        "Masquer les mots de passe"
+      ],
+      "Move folder": [
+        "Déplacer le dossier"
+      ],
+      "Show all": [
+        "Tout afficher"
       ]
     },
     "Activity": {
@@ -1513,6 +1531,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "Biometric authentication cancelled.": [
+        "L'Authentification biométrique a été annulée."
+      ],
+      "Failed to move folder": [
+        "Le déplacement du dossier n'a pas abouti"
       ]
     },
     "Error message": {
@@ -2913,6 +2937,45 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Champ masqué. Vous pouvez tout de même le remplir automatiquement."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Le dossier « ${ payload.folder.name } » a été déplacé"
+      ],
+      "Important:": [
+        "Important :"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+      ],
+      "Only aliases are shown": [
+        "Seules les alias sont affichées"
+      ],
+      "Only cards are shown": [
+        "Seules les cartes sont affichées"
+      ],
+      "Only custom items are shown": [
+        "Seules les éléments personnalisées sont affichés"
+      ],
+      "Only identities are shown": [
+        "Seules les identités sont affichées"
+      ],
+      "Only logins are shown": [
+        "Seules les identifiants sont affichés"
+      ],
+      "Only notes are shown": [
+        "Seules les notes sont affichées"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Mot de passe masqué. Vous pouvez tout de même le remplir automatiquement."
+      ],
+      "The folder is already here": [
+        "Le dossier se trouve déjà ici"
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Quand des éléments sont déplacés d'un coffre-fort à l'autre, nous conservons jusqu'aux 50 dernières modifications apportées à chaque élément."
       ]
     },
     "Keyboard key": {
@@ -4173,6 +4236,18 @@
       ],
       "ZIP or Postal code": [
         "Code postal"
+      ],
+      "Allow viewers to see passwords": [
+        "Permettre aux lecteurs de voir les mots de passe"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5281,6 +5356,15 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ],
+      "Get mobile apps": [
+        "Télécharger les applications mobiles"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Déplacer « ${ folderName } » vers"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Changer d'abonnement pour vérifier si certains mots de passe ont été réutilisés"
       ]
     },
     "Title_cloned_item": {
@@ -5674,6 +5758,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Le déplacement de ce dossier à cet emplacement entraînerait un dépassement du niveau maximal d'imbrication des dossiers."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Il n'est pas possible de déplacer un dossier vers lui-même ou vers ses sous-dossiers"
       ]
     }
   }

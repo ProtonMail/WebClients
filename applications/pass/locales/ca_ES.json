@@ -38,7 +38,7 @@
         "Accepta i mostra l'element"
       ],
       "Accept invitation": [
-        "Accepta invitació"
+        "Accepta la invitació"
       ],
       "Account": [
         "Compte"
@@ -809,6 +809,27 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Download for Linux": [
+        "Descarregar-ho per a Linux"
+      ],
+      "Download for macOS": [
+        "Descarrega per a macOS"
+      ],
+      "Download for Windows": [
+        "Descarrega per a Windows"
+      ],
+      "Hide passwords": [
+        "Amagar les contrasenyes"
+      ],
+      "Move folder": [
+        "Mou la carpeta"
+      ],
+      "Open platform selection dropdown": [
+        "Obriu el menú desplegable de selecció de plataformes"
+      ],
+      "Show all": [
+        "Mostra-ho tot"
       ]
     },
     "Activity": {
@@ -963,6 +984,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "La vostra informació personal s'ha filtrat en una violació de les dades d'un servei de tercers."
+      ],
+      "Check if you're reusing passwords": [
+        "Comproveu si reutilitzeu contrasenyes"
       ]
     },
     "Email": {
@@ -1516,6 +1540,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
+      ],
+      "Biometric authentication cancelled.": [
+        "S'ha cancel·lat l'autenticació biomètrica."
+      ],
+      "Failed to move folder": [
+        "No s'ha pogut moure la carpeta"
       ]
     },
     "Error message": {
@@ -1928,7 +1958,7 @@
         "Descarregueu-vos pass-cli des de ${ passCliLink }."
       ],
       "Drop file here to upload": [
-        "Arrossegueu el fitxer aquí per carregar-lo."
+        "Arrossegueu el fitxer aquí per a carregar-lo."
       ],
       "Drop to import": [
         "Arrossegueu aquí per a importar"
@@ -2916,6 +2946,63 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold }. Això no impedeix que els espectadors recuperin les contrasenyes per altres mitjans."
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Camp ocult. Encara el podeu emplenar automàticament."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "S'ha mogut la carpeta \"${ payload.folder.name }\""
+      ],
+      "Important:": [
+        "Important:"
+      ],
+      "iOS and Android Apps": [
+        "Aplicacions per a iOS i Android"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Si moveu els elements a una altra caixa forta, se n'esborraran els enllaços segurs."
+      ],
+      "Only aliases are shown": [
+        "Només es mostren els àlies"
+      ],
+      "Only cards are shown": [
+        "Només es mostren les targetes"
+      ],
+      "Only custom items are shown": [
+        "Només es mostren els elements personalitzats"
+      ],
+      "Only identities are shown": [
+        "Només es mostren les identitats"
+      ],
+      "Only logins are shown": [
+        "Només es mostren els inicis de sessió"
+      ],
+      "Only notes are shown": [
+        "Només es mostren les notes"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Contrasenya amagada. Encara la podeu emplenar automàticament."
+      ],
+      "Scan to download": [
+        "Escanegeu per a descarregar"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Escaneja per descarregar ${ PASS_APP_NAME } per a iOS i Android"
+      ],
+      "The folder is already here": [
+        "La carpeta ja hi és present"
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Els espectadors encara poden emplenar automàticament les contrasenyes, però no les veuran a ${ PASS_APP_NAME }. Això desincentiva la visualització casual i redueix el risc de divulgació accidental."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Els espectadors encara ho poden emplenar automàticament. Els editors i els administradors sempre veuen les contrasenyes."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "En moure elements entre caixes fortes, conservarem fins a les últimes 50 modificacions realitzades a cada element."
       ]
     },
     "Keyboard key": {
@@ -3350,7 +3437,7 @@
         "Testimonis caducats (${ expired.length })"
       ],
       "Expires in": [
-        "Caducarà d'aquí a"
+        "Caduca en"
       ],
       "Expiry Date": [
         "Data d'expiració"
@@ -4176,6 +4263,18 @@
       ],
       "ZIP or Postal code": [
         "Codi postal"
+      ],
+      "Allow viewers to see passwords": [
+        "Permeteu que els espectadors vegin les contrasenyes"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -4240,7 +4339,7 @@
     },
     "Notification": {
       "${ reason } has been disabled": [
-        "${ reason } s'ha desactivat"
+        "S'ha desactivat ${ reason }"
       ],
       "${ reason } has been enabled": [
         "S'ha activat ${ reason } "
@@ -4437,7 +4536,7 @@
         "per exemple: 60"
       ],
       "e.g. My automation script": [
-        "per exemple, el meu guió d'automatització"
+        "p. ex. El meu script d'automatització"
       ],
       "E.g., ": [
         "Ex., "
@@ -5284,6 +5383,21 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "Get mobile and desktop apps": [
+        "Obteniu les aplicacions per a mòbil i per a escriptori"
+      ],
+      "Get mobile apps": [
+        "Obtingueu aplicacions mòbils"
+      ],
+      "Hide passwords from viewers?": [
+        "Voleu amagar les contrasenyes als espectadors?"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Mou \"${ folderName }\" a"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Actualitza per comprovar si hi ha contrasenyes reutilitzades"
       ]
     },
     "Title_cloned_item": {
@@ -5677,6 +5791,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Moure la carpeta aquí superaria el nivell màxim d'imbricació de carpetes"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "No podeu moure una carpeta dins d'ella mateixa ni de les seves subcarpetes"
       ]
     }
   }

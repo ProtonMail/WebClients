@@ -813,6 +813,27 @@
       ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
+      ],
+      "Download for Linux": [
+        "Stiahnuť pre Linux"
+      ],
+      "Download for macOS": [
+        "Stiahnuť pre macOS"
+      ],
+      "Download for Windows": [
+        "Stiahnuť pre Windows"
+      ],
+      "Hide passwords": [
+        "Skryť heslá"
+      ],
+      "Move folder": [
+        "Presunúť priečinok"
+      ],
+      "Open platform selection dropdown": [
+        "Rozbaľovacie menu na výber otvorenej platformy"
+      ],
+      "Show all": [
+        "Zobraziť všetko"
       ]
     },
     "Activity": {
@@ -969,6 +990,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Vaše osobné údaje boli zverejnené pri úniku údajov zo služby tretej strany."
+      ],
+      "Check if you're reusing passwords": [
+        "Skontrolujte, či nepoužívate rovnaké heslá"
       ]
     },
     "Email": {
@@ -1528,6 +1552,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrické overenie zrušené."
+      ],
+      "Failed to move folder": [
+        "Priečinok sa nepodarilo presunúť"
       ]
     },
     "Error message": {
@@ -2983,6 +3013,66 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
+      ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } To však nezabráni používateľom v získaní hesiel inými spôsobmi."
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Pole je skryté. Stále ho však môžete automaticky vyplniť."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Priečinok \"${ payload.folder.name }\" bol presunutý"
+      ],
+      "Important:": [
+        "Dôležité:"
+      ],
+      "iOS and Android Apps": [
+        "iOS a Android aplikácie"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
+      "Only aliases are shown": [
+        "Zobrazujú sa len aliasy"
+      ],
+      "Only cards are shown": [
+        "Zobrazujú sa len karty"
+      ],
+      "Only custom items are shown": [
+        "Zobrazujú sa len vlastné položky"
+      ],
+      "Only identities are shown": [
+        "Zobrazujú sa len identity"
+      ],
+      "Only logins are shown": [
+        "Zobrazujú sa len prihlásenia"
+      ],
+      "Only notes are shown": [
+        "Zobrazujú sa len poznámky"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Heslo je skryté. Stále ho však môžete automaticky vyplniť."
+      ],
+      "Scan to download": [
+        "Naskenovaním stiahnite"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Naskenujte a stiahnite si aplikáciu ${ PASS_APP_NAME } pre iOS a Android"
+      ],
+      "The folder is already here": [
+        "Priečinok už tu je"
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "Na nastavenie odomknutia pomocou biometrických údajov vyžaduje aplikácia ${ PASS_APP_NAME } nové povolenie prehliadača."
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Čitateľom sa stále môžu automaticky vyplňovať heslá, ale v ${ PASS_APP_NAME } sa im nezobrazia. To odrádza od náhodného prezerania a znižuje riziko neúmyselného prezradenia."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Čitatelia môžu naďalej využívať automatické vypĺňanie. Redaktori a správcovia majú heslá vždy na očiach."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Pri presúvaní položiek medzi trezormi zachováme až posledných 50 vykonaných úprav pre každú položku."
       ]
     },
     "Keyboard key": {
@@ -4271,6 +4361,18 @@
       ],
       "ZIP or Postal code": [
         "PSČ"
+      ],
+      "Allow viewers to see passwords": [
+        "Umožnite čitateľom zobraziť heslá"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5401,6 +5503,21 @@
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
         "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ],
+      "Get mobile and desktop apps": [
+        "Získať mobilné a desktopové aplikácie"
+      ],
+      "Get mobile apps": [
+        "Získať mobilné aplikácie"
+      ],
+      "Hide passwords from viewers?": [
+        "Skryť heslá čitateľom?"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Presunúť \"${ folderName }\" do"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Aktualizujte, aby ste skontrolovali, či sa heslá nepoužívajú opakovane"
       ]
     },
     "Title_cloned_item": {
@@ -5814,6 +5931,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Presunutím tohto priečinka by sa prekročila maximálna úroveň vnorenia priečinkov"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Priečinok nemožno presunúť do seba samého ani do jeho podpriečinkov"
       ]
     }
   }
