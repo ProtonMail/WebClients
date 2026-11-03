@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import { Redirect, Route, BrowserRouter as Router, Switch, useRouteMatch } from 'react-router-dom';
 
+import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
+
 import ConversationSkeleton from '../components/ConversationSkeleton';
 import DebugView from '../features/dev/DebugView';
 import { useSkillsSync } from '../features/skills/useSkillsSync';
@@ -79,8 +81,10 @@ export function InnerApp() {
                                     {!artifactsView && imageTools && <Redirect exact from="/library" to="/images" />}
                                     {apiKeyManagement && <Route exact path="/docs/api" component={ApiDocsPage} />}
                                     <Route exact path="/chats" component={AllChatsView} />
-                                    {schedules && <Route exact path="/schedules" component={SchedulesView} />}
-                                    {schedules && (
+                                    {schedules && isDesktopEnvironment() && (
+                                        <Route exact path="/schedules" component={SchedulesView} />
+                                    )}
+                                    {schedules && isDesktopEnvironment() && (
                                         <Route exact path="/schedules/:scheduleId" component={ScheduleHomeView} />
                                     )}
                                     {customAgents && <Route exact path="/customize" component={CustomizeView} />}

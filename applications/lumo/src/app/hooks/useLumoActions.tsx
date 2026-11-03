@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
+import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { buildArtifactActionLlmPrompt } from '../components/Conversation/artifact/artifactActionPrompts';
@@ -330,7 +331,7 @@ export const useLumoActions = ({
                 uiContext: {
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     enableRetrievalTools: ffRetrievalTools,
-                    enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool,
+                    enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool && isDesktopEnvironment(),
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,
@@ -430,7 +431,7 @@ export const useLumoActions = ({
                 uiContext: {
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     enableRetrievalTools: ffRetrievalTools,
-                    enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool,
+                    enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool && isDesktopEnvironment(),
                     // Pin the freshly created assistant message so the regenerated answer is the
                     // one displayed. Without this, the new assistant is added as a hidden sibling
                     // of the failed attempt and the retry does nothing.
@@ -505,7 +506,7 @@ export const useLumoActions = ({
                 uiContext: {
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     enableRetrievalTools: ffRetrievalTools,
-                    enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool,
+                    enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool && isDesktopEnvironment(),
                     isEdit: true,
                     editOriginalContent: originalMessage.content,
                     updateSibling: preferSibling,
@@ -614,7 +615,7 @@ export const useLumoActions = ({
                 uiContext: {
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     enableRetrievalTools: ffRetrievalTools,
-                    enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool,
+                    enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool && isDesktopEnvironment(),
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,

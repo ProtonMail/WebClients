@@ -1,3 +1,5 @@
+import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
+
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useSidebar } from '../../../providers/SidebarProvider';
@@ -32,7 +34,7 @@ export const useSidebarVisibility = (): SidebarVisibility => {
         showUserDropdown: !isGuest,
         // Collapse toggle is desktop-only regardless of auth state
         showCollapseToggle: !isSmallScreen,
-        showSchedules: schedules && !isGuest,
+        showSchedules: schedules && isDesktopEnvironment() && !isGuest,
         showCustomize: customAgents && !isGuest,
     };
 };
