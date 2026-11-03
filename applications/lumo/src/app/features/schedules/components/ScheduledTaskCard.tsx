@@ -46,7 +46,7 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule, scheduleId }: Sc
 
     return (
         <>
-            <div className="scheduled-task-card flex flex-column px-5 py-4 border rounded-xl bg-norm">
+            <div className="scheduled-task-card flex flex-column h-full px-5 py-4 border rounded-xl bg-norm">
                 <div className="flex flex-nowrap items-center gap-2 w-full">
                     <h4 className="scheduled-task-card__title flex-1 m-0 text-semibold">{schedule.name}</h4>
                     {isRunning ? (
@@ -157,7 +157,7 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule, scheduleId }: Sc
 
                 <p className="m-0 text-rg text-ellipsis-two-lines color-weak">{schedule.instructions}</p>
 
-                <div className="flex flex-nowrap items-center justify-space-between gap-2 w-full">
+                <div className="flex flex-nowrap items-center justify-space-between gap-2 w-full mt-auto">
                     <ScheduleRunPrimaryLabel chip rule={recurrenceRule} scheduleId={scheduleId} />
                     <ScheduleRunSecondaryLabel
                         className="text-sm color-hint"

@@ -42,8 +42,10 @@ export const SchedulesPageHeader = ({ onNewTaskClick }: SchedulesPageHeaderProps
             <div className="flex flex-column flex-1 gap-1 min-w-0">
                 <h2 className="text-semibold">{c('collider_2025:Title').t`Scheduled tasks`}</h2>
                 <p className="schedules-page-header__subtitle m-0 text-md">
-                    {c('collider_2025:Info')
-                        .t`Run tasks on a schedule or whenever you need them. Tasks run on this computer while ${LUMO_SHORT_APP_NAME} is open.`}
+                    {
+                        // translator: Introduction to scheduled tasks. ${LUMO_SHORT_APP_NAME} is the product name.
+                        c('collider_2025:Info').t`Set up regular tasks, then leave the rest to ${LUMO_SHORT_APP_NAME}.`
+                    }
                 </p>
             </div>
             <div className="flex flex-nowrap shrink-0 items-center gap-3">

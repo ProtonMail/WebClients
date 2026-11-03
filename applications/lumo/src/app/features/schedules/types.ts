@@ -35,8 +35,6 @@ export interface ScheduleDetails {
 export interface ScheduleTemplate extends Omit<ScheduleDetails, 'autoApprove' | 'notifyOnComplete'> {
     /** A short description of the schedule template. */
     description: string;
-    /** The recurrence rule label to display for the schedule in the schedule template list (e.g. "Every Friday at 4:00 PM"). */
-    scheduleLabel: string;
     /** The icon to display for the schedule in the schedule template list. */
     icon: IconName;
 }

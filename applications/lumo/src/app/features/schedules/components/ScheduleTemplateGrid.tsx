@@ -1,15 +1,19 @@
-import { useId, useState } from 'react';
+import { useId, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useDesktopManifests } from '@proton/lumo-api-client/core/desktop-tools';
+import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
-import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
+import { useElementSizeMatch } from '../../../hooks/useElementSizeMatch';
 import { batchItems } from '../../../util/batchItems';
 import { getScheduleTemplates } from '../templates';
 import type { ScheduleTemplate } from '../types';
 import { ScheduleTemplateCard } from './ScheduleTemplateCard';
+import { getScheduleCadenceLabel } from './utils/cadence-label';
+import { shouldShowColumnLayout } from './utils/layout';
 
 import './ScheduleTemplateGrid.scss';
 
@@ -20,9 +24,12 @@ interface ScheduleTemplateGridProps {
 export const ScheduleTemplateGrid = ({ onSelect }: ScheduleTemplateGridProps) => {
     const [templatesVisible, setTemplatesVisible] = useState(true);
     const headerId = useId();
-    const { isSmallScreen } = useIsLumoSmallScreen();
+    const containerRef = useRef<HTMLDivElement>(null);
+    const enableColumnLayout = useElementSizeMatch(containerRef, shouldShowColumnLayout);
     const { manifests } = useDesktopManifests();
-    const columnCount = isSmallScreen ? 1 : 2;
+    const [userSettings] = useUserSettings();
+    const weekStartsOn = getWeekStartsOn(userSettings);
+    const columnCount = enableColumnLayout ? 1 : 2;
     const templateRows = batchItems(getScheduleTemplates(manifests), columnCount);
 
     const toggleLabel = templatesVisible
@@ -30,7 +37,7 @@ export const ScheduleTemplateGrid = ({ onSelect }: ScheduleTemplateGridProps) =>
         : c('collider_2025:Button').t`Show templates`;
 
     return (
-        <div className="schedule-template-grid flex flex-column flex-nowrap gap-4 w-full">
+        <div className="schedule-template-grid flex flex-column flex-nowrap gap-4 w-full" ref={containerRef}>
             <hr className="m-0 mb-4 border-top border-weak" />
             <div className="flex items-center justify-space-between gap-2">
                 <h3 className={clsx('text-sm text-semibold color-hint')} id={headerId}>
@@ -55,22 +62,22 @@ export const ScheduleTemplateGrid = ({ onSelect }: ScheduleTemplateGridProps) =>
                     role="grid"
                 >
                     {templateRows.map((row, rowIndex) => (
-                        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                         <div
                             aria-rowindex={rowIndex + 1}
                             className="flex flex-nowrap gap-5 w-full"
                             key={rowIndex}
+                            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                             role="row"
                         >
                             {Array.from({ length: columnCount }, (_, columnIndex) => {
                                 const template = row[columnIndex];
 
                                 return (
-                                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                                     <div
                                         aria-colindex={columnIndex + 1}
                                         className="flex-1 min-w-0"
                                         key={template?.name ?? columnIndex}
+                                        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                                         role={template ? 'gridcell' : undefined}
                                     >
                                         {template && (
@@ -78,7 +85,10 @@ export const ScheduleTemplateGrid = ({ onSelect }: ScheduleTemplateGridProps) =>
                                                 description={template.description}
                                                 icon={template.icon}
                                                 onClick={() => onSelect?.(template)}
-                                                scheduleLabel={template.scheduleLabel}
+                                                scheduleLabel={getScheduleCadenceLabel(
+                                                    template.recurrenceRule,
+                                                    weekStartsOn
+                                                )}
                                                 title={template.name}
                                             />
                                         )}

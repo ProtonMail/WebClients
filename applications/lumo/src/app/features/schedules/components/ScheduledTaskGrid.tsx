@@ -1,13 +1,14 @@
-import { useId } from 'react';
+import { useId, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
+import { useElementSizeMatch } from '../../../hooks/useElementSizeMatch';
 import type { ScheduleMap } from '../../../redux/selectors';
 import type { SpaceId } from '../../../types';
 import { batchItems } from '../../../util/batchItems';
 import type { ScheduleDetails } from '../types';
 import { ScheduledTaskCard } from './ScheduledTaskCard';
+import { shouldShowColumnLayout } from './utils/layout';
 
 import './ScheduledTaskGrid.scss';
 
@@ -17,18 +18,15 @@ interface ScheduledTaskGridProps {
     schedules: ScheduleMap;
 }
 
-export const ScheduledTaskGrid = ({ onDeleteSchedule, onEditSchedule, schedules }: ScheduledTaskGridProps) => {
+const ScheduledTaskGridContent = ({ onDeleteSchedule, onEditSchedule, schedules }: ScheduledTaskGridProps) => {
     const headerId = useId();
-    const { isSmallScreen } = useIsLumoSmallScreen();
-    const columnCount = isSmallScreen ? 1 : 2;
+    const containerRef = useRef<HTMLDivElement>(null);
+    const enableColumnLayout = useElementSizeMatch(containerRef, shouldShowColumnLayout);
+    const columnCount = enableColumnLayout ? 1 : 2;
     const scheduleRows = batchItems(Object.entries(schedules), columnCount);
 
-    if (scheduleRows.length === 0) {
-        return null;
-    }
-
     return (
-        <div className="scheduled-task-grid flex flex-column gap-4 w-full">
+        <div className="scheduled-task-grid flex flex-column gap-4 w-full" ref={containerRef}>
             <h3 className="scheduled-task-grid__heading m-0 text-sm text-semibold color-hint" id={headerId}>
                 {
                     // translator: Section heading for saved scheduled tasks.
@@ -78,3 +76,6 @@ export const ScheduledTaskGrid = ({ onDeleteSchedule, onEditSchedule, schedules 
         </div>
     );
 };
+
+export const ScheduledTaskGrid = (props: ScheduledTaskGridProps) =>
+    Object.keys(props.schedules).length > 0 ? <ScheduledTaskGridContent {...props} /> : null;

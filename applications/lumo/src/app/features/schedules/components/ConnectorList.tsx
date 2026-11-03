@@ -291,7 +291,7 @@ export const ConnectorList = (props: ConnectorListProps) => {
     const { manifests, status } = useDesktopManifests();
 
     // translator: Heading for the scheduled task's allowed connectors (external tools and services).
-    const header = props.header ?? c('collider_2025:Label').t`Connectors this task can use`;
+    const header = props.header ?? c('collider_2025:Label').t`Tools this task can use`;
 
     const renderView = () => {
         switch (status) {
