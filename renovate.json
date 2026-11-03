@@ -99,6 +99,11 @@
             "matchPackageNames": ["axios"]
         },
         {
+            "description": "mdast-util-to-markdown 2.2 changes emphasis serialization (***x*** -> **_x_**), breaking the lumo markdownEditorDoc test",
+            "groupName": "mdast-util-to-markdown",
+            "matchPackageNames": ["mdast-util-to-markdown"]
+        },
+        {
             "groupName": "pass-desktop and inbox-desktop exclusions",
             "enabled": false,
             "matchPackageNames": ["@electron-forge/*", "@electron/fuses", "@vercel/webpack-asset-relocator-loader"]
