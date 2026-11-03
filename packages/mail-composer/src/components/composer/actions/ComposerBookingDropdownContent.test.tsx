@@ -1,14 +1,14 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import { BookingCreateAction, useBookingUpsell } from '@proton/calendar/bookings/store/useBookingUpsell';
-import ComposerBookingDropdownContent from '@proton/mail-composer/components/composer/actions/ComposerBookingDropdownContent';
+
 import {
     BookingLimitReason,
     BookingUpsellSource,
     useComposerBookingsTracking,
-} from '@proton/mail-composer/telemetry/composerBookingsEvents';
-
-import { mailTestRender } from '../../../helpers/tests/render';
+} from '../../../telemetry/composerBookingsEvents';
+import { composerTestRender } from '../../../test-helpers/render';
+import ComposerBookingDropdownContent from './ComposerBookingDropdownContent';
 
 jest.mock('@proton/calendar/bookings/store/hooks', () => ({
     useInternalBooking: () => [
@@ -24,8 +24,8 @@ jest.mock('@proton/components/hooks/useAuthentication', () => ({
     __esModule: true,
     default: () => ({ getLocalID: () => 0 }),
 }));
-jest.mock('@proton/mail-composer/telemetry/composerBookingsEvents', () => ({
-    ...jest.requireActual('@proton/mail-composer/telemetry/composerBookingsEvents'),
+jest.mock('../../../telemetry/composerBookingsEvents', () => ({
+    ...jest.requireActual('../../../telemetry/composerBookingsEvents'),
     useComposerBookingsTracking: jest.fn(),
 }));
 
@@ -49,7 +49,7 @@ const render = async (createBookingAction: BookingCreateAction, { bookingPageLim
         loadingLimits: false,
     });
 
-    await mailTestRender(
+    await composerTestRender(
         <ComposerBookingDropdownContent
             editorActionsRef={{ current: undefined }}
             onClose={mockOnClose}

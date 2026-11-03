@@ -3,20 +3,19 @@ import type { MutableRefObject } from 'react';
 import { act, fireEvent, getAllByRole, getByText, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import Addresses from '@proton/mail-composer/components/composer/addresses/Addresses';
-import type { MessageSendInfo } from '@proton/mail-composer/hooks/useSendInfo';
-import { addComposerAction } from '@proton/mail-composer/store/composers/composerActions';
 import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { addApiMock } from '@proton/test-api/api';
 
-import { addApiMock } from '../../../helpers/tests/api';
-import { minimalCache } from '../../../helpers/tests/cache';
-import { clearAll } from '../../../helpers/tests/helper';
-import { mailTestRender } from '../../../helpers/tests/render';
+import type { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { addComposerAction } from '../../../store/composers/composerActions';
+import { clearAll } from '../../../test-helpers/helpers';
+import { composerTestRender } from '../../../test-helpers/render';
+import Addresses from './Addresses';
 
 jest.mock('@proton/shared/lib/helpers/dom', () => ({
     ...jest.requireActual('@proton/shared/lib/helpers/dom'),
@@ -115,12 +114,12 @@ const setup = async ({
     renderOptions,
 }: {
     messageProp?: Partial<MessageState>;
-    renderOptions?: Parameters<typeof mailTestRender>[1];
+    renderOptions?: Parameters<typeof composerTestRender>[1];
 } = {}) => {
     const nextMessage = mergeMessages(DEFAULT_PROPS.message, messageProp || {});
 
     const composerID = 'composer-test-id';
-    const result = await mailTestRender(<Addresses {...DEFAULT_PROPS} composerID={composerID} />, {
+    const result = await composerTestRender(<Addresses {...DEFAULT_PROPS} composerID={composerID} />, {
         onStore: (store) => {
             void store.dispatch(
                 addComposerAction({
@@ -165,7 +164,6 @@ describe('Addresses', () => {
     });
 
     it('should add a contact from insert contact modal', async () => {
-        minimalCache();
         addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [] } }));
 
         const { store, rerender, composerID } = await setup({

@@ -8010,6 +8010,9 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
+      '@proton/test-api':
+        specifier: workspace:^
+        version: link:../test-api
       '@proton/types':
         specifier: workspace:^
         version: link:../types
@@ -8022,6 +8025,9 @@ importers:
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
+      '@testing-library/user-event':
+        specifier: 'catalog:'
+        version: 14.6.8(@testing-library/dom@10.4.2)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -8049,6 +8055,9 @@ importers:
       jest-environment-jsdom:
         specifier: 'catalog:'
         version: 30.5.2(supports-color@11.0.0)
+      loud-rejection:
+        specifier: ^2.2.0
+        version: 2.2.0
       oxlint:
         specifier: 'catalog:'
         version: 1.87.0(oxlint-tsgolint@7.0.2004)

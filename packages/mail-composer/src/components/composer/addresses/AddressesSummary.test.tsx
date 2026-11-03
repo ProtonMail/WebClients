@@ -1,6 +1,5 @@
 import { screen } from '@testing-library/react';
 
-import AddressesSummary from '@proton/mail-composer/components/composer/addresses/AddressesSummary';
 import { getRecipientLabel } from '@proton/mail-message/helpers/message/messageRecipients';
 import type { RecipientType } from '@proton/mail-message/models/address';
 import { refresh } from '@proton/mail-message/store/contacts/contactsActions';
@@ -8,9 +7,10 @@ import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contac
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
 
-import { clearAll } from '../../../helpers/tests/helper';
-import { mailTestRender } from '../../../helpers/tests/render';
-import { prepareMessage } from '../tests/Composer.test.helpers';
+import { prepareComposerMessage } from '../../../test-helpers/composer';
+import { clearAll } from '../../../test-helpers/helpers';
+import { composerTestRender } from '../../../test-helpers/render';
+import AddressesSummary from './AddressesSummary';
 
 const message = {} as Message;
 const props = {
@@ -33,9 +33,9 @@ describe('AddressesSummary', () => {
     const composerID = 'composer-test-id';
 
     it('should render a recipient', async () => {
-        await mailTestRender(<AddressesSummary {...props} composerID={composerID} />, {
+        await composerTestRender(<AddressesSummary {...props} composerID={composerID} />, {
             onStore: (store) => {
-                prepareMessage(
+                prepareComposerMessage(
                     store,
                     {
                         data: {
@@ -51,9 +51,9 @@ describe('AddressesSummary', () => {
     });
 
     it('should render a group', async () => {
-        await mailTestRender(<AddressesSummary {...props} composerID={composerID} />, {
+        await composerTestRender(<AddressesSummary {...props} composerID={composerID} />, {
             onStore: (store) => {
-                prepareMessage(
+                prepareComposerMessage(
                     store,
                     {
                         data: {
@@ -70,9 +70,9 @@ describe('AddressesSummary', () => {
     });
 
     it('should render a recipient and a group', async () => {
-        await mailTestRender(<AddressesSummary {...props} composerID={composerID} />, {
+        await composerTestRender(<AddressesSummary {...props} composerID={composerID} />, {
             onStore: (store) => {
-                prepareMessage(
+                prepareComposerMessage(
                     store,
                     {
                         data: {
@@ -90,9 +90,9 @@ describe('AddressesSummary', () => {
     });
 
     it('should keep CC and BCC buttons reachable with the keyboard', async () => {
-        await mailTestRender(<AddressesSummary {...props} composerID={composerID} />, {
+        await composerTestRender(<AddressesSummary {...props} composerID={composerID} />, {
             onStore: (store) => {
-                prepareMessage(store, { data: { ToList: [recipient] } }, composerID);
+                prepareComposerMessage(store, { data: { ToList: [recipient] } }, composerID);
             },
         });
         expect(screen.getByRole('button', { name: 'CC' })).toBe(screen.getByTestId('composer:recipients:cc-button'));
