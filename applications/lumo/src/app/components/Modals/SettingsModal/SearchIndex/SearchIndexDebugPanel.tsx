@@ -9,10 +9,11 @@ import { ENABLE_FOUNDATION_SEARCH } from '../../../../config/search';
 import { useLumoUserSettings } from '../../../../hooks';
 import { useDriveFolderIndexing } from '../../../../hooks/useDriveFolderIndexing';
 import { useLumoSelector } from '../../../../redux/hooks';
+import { selectConversations, selectMessages } from '../../../../redux/selectors';
 import { selectSpaceMap } from '../../../../redux/slices/core/spaces';
 import { SearchService } from '../../../../services/search/searchService';
 import type { SearchServiceStatus } from '../../../../services/search/types';
-import type { SpaceId } from '../../../../types';
+import { Role, type SpaceId } from '../../../../types';
 import type { DriveDocument } from '../../../../types/documents';
 import { LumoIcon } from '../../../LumoIcon/LumoIcon';
 import { SearchIndexStats } from './SearchIndexStats';
@@ -33,10 +34,13 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
     const [user] = useUser();
     const userId = user?.ID;
     const spaceMap = useLumoSelector(selectSpaceMap);
+    const conversations = useLumoSelector(selectConversations);
+    const messages = useLumoSelector(selectMessages);
     const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const { indexedFolders: driveIndexedFolders } = useDriveFolderIndexing();
 
     const [foundationStatus, setFoundationStatus] = useState<SearchServiceStatus | undefined>();
+    const [indexedConversationCount, setIndexedConversationCount] = useState<number | undefined>();
     const [viewMode, setViewMode] = useState<'stats' | 'inspectList' | 'inspectDetail'>('stats');
     const [inspectDocs, setInspectDocs] = useState<DriveDocument[]>([]);
     const [selectedGrouped, setSelectedGrouped] = useState<GroupedDocument | null>(null);
@@ -46,6 +50,19 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
     const [isCleaningUp, setIsCleaningUp] = useState(false);
 
     const validSpaceIds = useMemo(() => new Set<SpaceId>(Object.keys(spaceMap) as SpaceId[]), [spaceMap]);
+    const { conversationCount, messageCount } = useMemo(() => {
+        const searchableIds = new Set(
+            Object.values(conversations)
+                .filter((conversation) => !conversation.ghost && !conversation.scheduleRun)
+                .map((conversation) => conversation.id)
+        );
+        const searchableMessages = Object.values(messages).filter(
+            (message) =>
+                searchableIds.has(message.conversationId) &&
+                (message.role === Role.User || message.role === Role.Assistant)
+        );
+        return { conversationCount: searchableIds.size, messageCount: searchableMessages.length };
+    }, [conversations, messages]);
     const allIndexedFolders = driveIndexedFolders ?? lumoUserSettings.indexedDriveFolders ?? [];
     const indexedFolders = allIndexedFolders.filter((f) => !f.spaceId || validSpaceIds.has(f.spaceId as SpaceId));
     const totalIndexedDocuments = indexedFolders.reduce((sum, folder) => sum + (folder.documentCount || 0), 0);
@@ -61,6 +78,7 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
                 if (service) {
                     const status = await service.status();
                     setFoundationStatus(status);
+                    setIndexedConversationCount(service.getIndexedConversationCount());
 
                     const orphaned = service.getOrphanedDocuments(validSpaceIds);
                     const orphanSpaceList = Array.from(orphaned.bySpace.keys());
@@ -197,8 +215,9 @@ export const SearchIndexDebugPanel = ({ enabled = true }: SearchIndexDebugPanelP
         <div className="flex flex-column gap-4">
             <SearchIndexStats
                 foundationStatus={foundationStatus}
-                conversationCount={0}
-                messageCount={0}
+                conversationCount={conversationCount}
+                messageCount={messageCount}
+                indexedConversationCount={indexedConversationCount}
                 displayFolders={displayFolders}
                 displayDriveDocs={displayDriveDocs}
                 progressColor={progressColor}

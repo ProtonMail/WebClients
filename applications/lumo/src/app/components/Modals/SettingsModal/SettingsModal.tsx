@@ -32,7 +32,7 @@ import { useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments, selectConversations, selectMessages } from '../../../redux/selectors';
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
 import { SearchService } from '../../../services/search/searchService';
-import type { Conversation, Message, SpaceId } from '../../../types';
+import type { SpaceId } from '../../../types';
 import { LumoSettingsUpsellSection } from '../../../upsells/composed/LumoSettingsUpsellSection';
 import { sendArtifactCreationDefaultChangedEvent } from '../../../util/telemetry';
 import { getInitials } from '../../../util/username';
@@ -253,22 +253,11 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                 return;
             }
 
-            const conversationList = Object.values(conversations) as Conversation[];
-            const conversationsWithMessages: Record<string, any> = {};
-            for (const conversation of conversationList) {
-                const conversationMessages = Object.values(messages).filter(
-                    (msg: Message) => msg.conversationId === conversation.id
-                ) as Message[];
-                conversationsWithMessages[conversation.id] = {
-                    ...conversation,
-                    messages: conversationMessages,
-                };
-            }
-
             try {
-                await searchService.populateEngine(conversationsWithMessages);
+                await searchService.resetConversationIndex();
+                await searchService.syncConversations(() => ({ conversations, messages }));
             } catch (error) {
-                console.error('[Settings] Conversation populate failed:', error);
+                console.error('[Settings] Conversation indexing failed:', error);
             }
 
             const validSpaceIds = new Set<SpaceId>(Object.keys(spaceMap) as SpaceId[]);
@@ -404,55 +393,52 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
                 </SettingsGroup>
             )}
 
-            <SettingsGroup
-                title={c('collider_2025: Title').t`Search`}
-                description={
-                    isRetrievalToolsEnabled
-                        ? c('collider_2025: Description')
-                              .t`What ${LUMO_SHORT_APP_NAME} can look up when answering. Each project can change these for its own chats.`
-                        : undefined
-                }
-            >
-                {isRetrievalToolsEnabled && (
-                    <>
-                        <SettingsSectionItem
-                            icon="MessagesSquare"
-                            text={c('collider_2025: Title').t`Past chats`}
-                            subtext={c('collider_2025: Description')
-                                .t`Which other chats can ${LUMO_SHORT_APP_NAME} look up. Ghost chats are never searched.`}
-                            button={
-                                <div className="min-w-custom" style={{ '--min-w-custom': '10rem' }}>
-                                    <ChatSearchSelect
-                                        id="conversation-search-select"
-                                        context="settings"
-                                        value={conversationSearch}
-                                        onChange={(value) => {
-                                            updateSettings({ conversationSearch: value, _autoSave: true });
-                                        }}
-                                    />
-                                </div>
-                            }
-                        />
-                        <SettingsSectionItem
-                            icon="FolderSearch"
-                            text={c('collider_2025: Title').t`Project files`}
-                            subtext={c('collider_2025: Description')
-                                .t`Whether ${LUMO_SHORT_APP_NAME} can also look up files from other projects.`}
-                            button={
-                                <div className="min-w-custom" style={{ '--min-w-custom': '10rem' }}>
-                                    <FileSearchSelect
-                                        id="cross-project-search-select"
-                                        context="settings"
-                                        value={crossProjectSearchEnabled}
-                                        onChange={(value) => {
-                                            updateSettings({ isCrossProjectSearchEnabled: value, _autoSave: true });
-                                        }}
-                                    />
-                                </div>
-                            }
-                        />
-                    </>
-                )}
+            {isRetrievalToolsEnabled && (
+                <SettingsGroup
+                    title={c('collider_2025: Title').t`What can ${LUMO_SHORT_APP_NAME} see?`}
+                    description={c('collider_2025: Description')
+                        .t`What ${LUMO_SHORT_APP_NAME} can look up when answering. Each project can change these for its own chats.`}
+                >
+                    <SettingsSectionItem
+                        icon="MessagesSquare"
+                        text={c('collider_2025: Title').t`Past chats`}
+                        subtext={c('collider_2025: Description')
+                            .t`Which other chats can ${LUMO_SHORT_APP_NAME} look up. Ghost chats are never searched.`}
+                        button={
+                            <div className="min-w-custom" style={{ '--min-w-custom': '10rem' }}>
+                                <ChatSearchSelect
+                                    id="conversation-search-select"
+                                    context="settings"
+                                    value={conversationSearch}
+                                    onChange={(value) => {
+                                        updateSettings({ conversationSearch: value, _autoSave: true });
+                                    }}
+                                />
+                            </div>
+                        }
+                    />
+                    <SettingsSectionItem
+                        icon="FolderSearch"
+                        text={c('collider_2025: Title').t`Project files`}
+                        subtext={c('collider_2025: Description')
+                            .t`Whether ${LUMO_SHORT_APP_NAME} can also look up files from other projects.`}
+                        button={
+                            <div className="min-w-custom" style={{ '--min-w-custom': '10rem' }}>
+                                <FileSearchSelect
+                                    id="cross-project-search-select"
+                                    context="settings"
+                                    value={crossProjectSearchEnabled}
+                                    onChange={(value) => {
+                                        updateSettings({ isCrossProjectSearchEnabled: value, _autoSave: true });
+                                    }}
+                                />
+                            </div>
+                        }
+                    />
+                </SettingsGroup>
+            )}
+
+            <SettingsGroup title={c('collider_2025: Title').t`Search`}>
                 <SettingsSectionItem
                     icon="Search"
                     text={c('collider_2025: Title').t`Search index`}

@@ -2,15 +2,16 @@ import init, { enableTracing, setPanicHook } from '@proton/proton-foundation-sea
 
 import { decryptUint8Array, encryptUint8Array } from '../../crypto';
 import { DbApi } from '../../indexedDb/db';
-import { SearchEngine } from './SearchEngine';
+import { type IndexableConversation, SearchEngine } from './SearchEngine';
 import { LumoCryptoAdapter } from './adapters/CryptoAdapter';
 import { LumoDatabaseAdapter } from './adapters/DatabaseAdapter';
 
 export enum MessageType {
     Search = 0,
-    Populate = 1,
     IndexConversation = 2,
     Status = 3,
+    IndexedConversations = 4,
+    Reset = 5,
 }
 
 export interface SearchRequest {
@@ -19,21 +20,6 @@ export interface SearchRequest {
     query: string;
     userId: string;
     searchIndexKey: string; // Unwrapped search index key
-}
-
-export interface PopulateRequest {
-    id: string;
-    type: MessageType.Populate;
-    conversations: Record<string, any>;
-    userId: string;
-    searchIndexKey: string; // Unwrapped search index key
-}
-
-export interface PopulateResponse {
-    id: string;
-    type: MessageType.Populate;
-    success: boolean;
-    error?: string;
 }
 
 export interface Status {
@@ -66,7 +52,8 @@ export interface SearchResponse {
 export interface IndexConversationRequest {
     id: string;
     type: MessageType.IndexConversation;
-    conversations: any[];
+    conversations: IndexableConversation[];
+    removedIds: string[];
     userId: string;
     searchIndexKey: string; // Unwrapped search index key
 }
@@ -78,17 +65,43 @@ export interface IndexConversationResponse {
     error?: string;
 }
 
+export interface IndexedConversationsRequest {
+    id: string;
+    type: MessageType.IndexedConversations;
+    userId: string;
+    searchIndexKey: string; // Unwrapped search index key
+}
+
+export interface IndexedConversationsResponse {
+    id: string;
+    type: MessageType.IndexedConversations;
+    /** Fingerprint of every indexed chat, by conversation id. */
+    fingerprints: Record<string, string>;
+    error?: string;
+}
+
+/** Drop the engine after its blobs were wiped from storage, so nothing stale stays in memory. */
+export interface ResetRequest {
+    id: string;
+    type: MessageType.Reset;
+    userId: string;
+}
+
 // Type guards
 function isSearchRequest(item: any): item is SearchRequest {
     return item.type === MessageType.Search;
 }
 
-function isPopulateRequest(item: any): item is PopulateRequest {
-    return item.type === MessageType.Populate;
-}
-
 function isIndexConversationRequest(item: any): item is IndexConversationRequest {
     return item.type === MessageType.IndexConversation;
+}
+
+function isIndexedConversationsRequest(item: any): item is IndexedConversationsRequest {
+    return item.type === MessageType.IndexedConversations;
+}
+
+function isResetRequest(item: any): item is ResetRequest {
+    return item.type === MessageType.Reset;
 }
 
 function isStatusRequest(item: any): item is StatusRequest {
@@ -161,11 +174,14 @@ async function postStatus(userId: string, searchIndexKey: string, id: string): P
 
 // Handle messages from the main thread
 self.addEventListener('message', async (event: MessageEvent) => {
-    console.log('Worker received a message', event.data);
-
-    if (isPopulateRequest(event.data)) {
-        // Handle populate requests
-        await serialized(event.data.userId, () => populate(event.data));
+    if (isResetRequest(event.data)) {
+        const { id, userId } = event.data;
+        await serialized(userId, async () => {
+            searchEngine = null;
+            self.postMessage({ id, type: MessageType.Reset });
+        });
+    } else if (isIndexedConversationsRequest(event.data)) {
+        await serialized(event.data.userId, () => indexedConversations(event.data));
     } else if (isIndexConversationRequest(event.data)) {
         // Handle indexing requests
         await serialized(event.data.userId, () => index(event.data));
@@ -218,7 +234,7 @@ async function immediately(task: () => Promise<void>) {
 
 async function search(request: SearchRequest) {
     const { id, query, userId, searchIndexKey } = request;
-    console.log(`Search worker received search request ${id} with query: "${query}"`);
+    console.log(`Search worker received search request ${id}`);
 
     if (!query) {
         console.warn(`Search worker got empty query`);
@@ -290,44 +306,25 @@ We're working on adding support for advanced search syntax and Unicode character
     }
 }
 
-async function populate(request: PopulateRequest) {
-    const { id, conversations, userId, searchIndexKey } = request;
-    console.log(`Search worker received populate request ${id} for ${Object.keys(conversations).length} conversations`);
-
+async function indexedConversations(request: IndexedConversationsRequest) {
+    const { id, userId, searchIndexKey } = request;
+    let response: IndexedConversationsResponse;
     try {
         const searchEngine = await getSearchEngine(userId, searchIndexKey);
         if (!searchEngine) {
             throw new Error('Search engine not available');
         }
-        await searchEngine.populateEngine(conversations);
-
-        const response: PopulateResponse = {
-            id,
-            type: MessageType.Populate,
-            success: true,
-        };
-
-        console.log(`Search worker sending populate response ${id} - success`);
-        self.postMessage(response);
+        const fingerprints = await searchEngine.getIndexedConversations();
+        response = { id, type: MessageType.IndexedConversations, fingerprints: { ...fingerprints } };
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);
-        console.error(`Search worker populate error for message ${id}:`, errorMessage);
-
-        const response: PopulateResponse = {
-            id,
-            type: MessageType.Populate,
-            success: false,
-            error: errorMessage,
-        };
-
-        self.postMessage(response);
-    } finally {
-        await postStatus(userId, searchIndexKey, id);
+        response = { id, type: MessageType.IndexedConversations, fingerprints: {}, error: errorMessage };
     }
+    self.postMessage(response);
 }
 
 async function index(request: IndexConversationRequest) {
-    const { id, conversations, userId, searchIndexKey } = request;
+    const { id, conversations, removedIds, userId, searchIndexKey } = request;
     console.log(`Search worker received indexing request ${id} for conversation: ${conversations.length}`);
 
     try {
@@ -335,7 +332,7 @@ async function index(request: IndexConversationRequest) {
         if (!searchEngine) {
             throw new Error('Search engine not available');
         }
-        await searchEngine.indexConversations(conversations);
+        await searchEngine.indexConversations(conversations, removedIds);
 
         const response: IndexConversationResponse = {
             id,

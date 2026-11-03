@@ -4,13 +4,15 @@ import { ENABLE_FOUNDATION_SEARCH } from '../../config/search';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import { DbApi } from '../../indexedDb/db';
 import { applyRetentionPolicy } from '../../layouts/sidepanel/helpers';
+import { getMessageContent } from '../../messageHelpers';
 import { selectMasterKeysBundle } from '../../redux/selectors';
 import type { SpaceMap } from '../../redux/slices/core/spaces';
 import { getStoreRef } from '../../redux/storeRef';
-import { Role, SpaceType } from '../../types';
+import { type Conversation, ConversationStatus, type Message, Role, SpaceType } from '../../types';
 import type { DriveDocument } from '../../types/documents';
 import { buildMasterKeyContext } from '../../util/masterKeys';
 import { safeLogger } from '../../util/safeLogger';
+import type { IndexableConversation } from '../../workers/search/SearchEngine';
 import { type ProjectKnowledgeSnapshot, findStaleProjectDocumentIds } from '../reconcileProjectSearchIndex';
 import { BM25Index } from './bm25Index';
 import { chunkDocument } from './documentChunker';
@@ -18,10 +20,83 @@ import type { SearchResult, SearchServiceStatus, SearchState } from './types';
 
 const WorkerMessageType = {
     Search: 0,
-    Populate: 1,
     IndexConversation: 2,
     Status: 3,
+    IndexedConversations: 4,
+    Reset: 5,
 } as const;
+
+/** Chats sent to the worker per write, so one commit stays small. */
+const CONVERSATION_INDEX_BATCH = 25;
+
+/**
+ * How long a worker request may take before its caller gives up. Searches wait behind the
+ * engine's start-up, writes behind other writes; the worker still finishes what it was given.
+ */
+const SEARCH_TIMEOUT_MS = 5_000;
+const WRITE_TIMEOUT_MS = 120_000;
+
+/** Same scheme as the engine's blobs, so a blob only decrypts under the name it was stored as. */
+const searchBlobAd = (name: string) => `lumo.search.blob.constant.${name}`;
+
+class UnreadableSearchBlobError extends Error {}
+
+/** The documents in a manifest's JSON, with sizes filled in; undefined when it isn't a manifest. */
+const parseManifestDocuments = (json: string): DriveDocument[] | undefined => {
+    let parsed: unknown;
+    try {
+        parsed = JSON.parse(json);
+    } catch {
+        return undefined;
+    }
+    if (!Array.isArray(parsed)) {
+        return undefined;
+    }
+    const encoder = new TextEncoder();
+    return (parsed as DriveDocument[]).map((doc) => {
+        if (!doc.size && doc.content) {
+            try {
+                return { ...doc, size: encoder.encode(doc.content).byteLength };
+            } catch {
+                return { ...doc, size: 0 };
+            }
+        }
+        return doc;
+    });
+};
+
+/** FNV-1a: cheap, and only compared for equality. */
+function hashString(text: string): string {
+    let hash = 0x811c9dc5;
+    for (let i = 0; i < text.length; i++) {
+        hash = Math.imul(hash ^ text.charCodeAt(i), 0x01000193) >>> 0;
+    }
+    return hash.toString(36);
+}
+
+/** Chats that never appear in search, so are never indexed. */
+const isIndexableConversation = (conversation: Conversation) => !conversation.ghost && !conversation.scheduleRun;
+
+function toIndexableConversation(conversation: Conversation, messages: Message[]): IndexableConversation {
+    const indexed = messages
+        .filter((message) => (message.role === Role.User || message.role === Role.Assistant) && !message.placeholder)
+        .sort((a, b) => a.createdAt.localeCompare(b.createdAt))
+        .map((message) => ({
+            id: message.id,
+            role: message.role === Role.User ? ('user' as const) : ('assistant' as const),
+            content: getMessageContent(message).trim(),
+        }))
+        .filter((message) => message.content);
+    const title = conversation.title ?? '';
+    return {
+        id: conversation.id,
+        title,
+        messages: indexed.map(({ role, content }) => ({ role, content })),
+        fingerprint: hashString(
+            `${title}\u0000${indexed.map(({ id, content }) => `${id}:${content.length}`).join(',')}`
+        ),
+    };
+}
 
 /** Words the worker's query language reads as operators. */
 const WORKER_QUERY_OPERATORS = new Set(['and', 'or', 'not']);
@@ -90,8 +165,9 @@ export class SearchService {
     private searchIndexKey: string | null = null;
     // Cached DEK for BM25 index encryption
     private cachedSearchDek: AesGcmCryptoKey | null = null;
-    // AD string for BM25 index blob encryption
-    private static readonly BM25_INDEX_AD = 'lumo.search.blob.constant.bm25_index';
+    /** Fingerprint of each chat in the worker's index; read from the worker on the first sync. */
+    private indexedConversations: Map<string, string> | null = null;
+    private conversationTasks: Promise<void> = Promise.resolve();
 
     private getMasterKeysBundle() {
         const store = getStoreRef();
@@ -234,8 +310,22 @@ export class SearchService {
         await this.workerReady;
         const id = message.id ?? crypto.randomUUID();
         const payload = { ...message, id, userId: this.userId, searchIndexKey };
+        const timeoutMs = message.type === WorkerMessageType.Search ? SEARCH_TIMEOUT_MS : WRITE_TIMEOUT_MS;
         return new Promise((resolve, reject) => {
-            this.pending.set(id, { resolve, reject });
+            const timer = setTimeout(() => {
+                this.pending.delete(id);
+                reject(new Error('Search worker timed out'));
+            }, timeoutMs);
+            this.pending.set(id, {
+                resolve: (value: any) => {
+                    clearTimeout(timer);
+                    resolve(value);
+                },
+                reject: (error: any) => {
+                    clearTimeout(timer);
+                    reject(error);
+                },
+            });
             this.worker!.postMessage(payload);
         });
     }
@@ -254,56 +344,86 @@ export class SearchService {
         return created;
     }
 
+    /** Encrypts `plaintext` under the search DEK, bound to the blob's name. Never stores it otherwise. */
+    private async saveEncryptedBlob(dbApi: DbApi, name: string, plaintext: string): Promise<void> {
+        const { encryptUint8Array } = await import('../../crypto');
+        const dek = await this.getSearchDek();
+        const encrypted = await encryptUint8Array(new TextEncoder().encode(plaintext), dek, searchBlobAd(name));
+        await dbApi.saveSearchBlob(name, encrypted);
+    }
+
+    /**
+     * The decrypted blob, or undefined when there is none. Throws `UnreadableSearchBlobError` for
+     * anything that doesn't decrypt under the search DEK as this blob, plaintext included.
+     */
+    private async loadEncryptedBlob(dbApi: DbApi, name: string): Promise<string | undefined> {
+        const blob = await dbApi.loadSearchBlob(name);
+        if (blob === null) {
+            return undefined;
+        }
+        const dek = await this.getSearchDek();
+        const { decryptUint8Array } = await import('../../crypto');
+        try {
+            if (typeof blob !== 'string') {
+                throw new Error('Not ciphertext');
+            }
+            return new TextDecoder('utf-8').decode(await decryptUint8Array(blob, dek, searchBlobAd(name)));
+        } catch {
+            throw new UnreadableSearchBlobError();
+        }
+    }
+
     private async loadManifest(): Promise<void> {
+        this.driveDocuments = [];
+        this.bm25Index = new BM25Index();
         if (!this.userId) return;
         const dbApi = new DbApi(this.userId);
         await dbApi.initialize();
+        let json: string | undefined;
         try {
-            const blob = await dbApi.loadSearchBlob(SearchService.MANIFEST_BLOB);
-            if (!blob) {
-                // Manifest missing (e.g., IDB cleared) — drop in-memory cache
-                this.driveDocuments = [];
-                this.bm25Index = new BM25Index();
-                return;
-            }
-
-            let jsonString = undefined;
-
-            if (typeof blob === 'string') {
-                jsonString = blob;
-            } else if (blob instanceof Uint8Array) {
-                jsonString = new TextDecoder('utf-8').decode(blob);
-            }
-
-            if (!jsonString) {
-                this.driveDocuments = [];
-                this.bm25Index = new BM25Index();
-                return;
-            }
-
-            const parsed = JSON.parse(jsonString) as DriveDocument[];
-            if (Array.isArray(parsed)) {
-                const encoder = new TextEncoder();
-                this.driveDocuments = parsed.map((doc) => {
-                    if (!doc.size && doc.content) {
-                        try {
-                            return { ...doc, size: encoder.encode(doc.content).byteLength };
-                        } catch {
-                            return { ...doc, size: 0 };
-                        }
-                    }
-                    return doc;
-                });
-                // Load BM25 index after documents are loaded
-                await this.loadBM25Index();
-            } else {
-                this.driveDocuments = [];
-                this.bm25Index = new BM25Index();
-            }
+            json = await this.loadEncryptedBlob(dbApi, SearchService.MANIFEST_BLOB);
         } catch (error) {
-            console.warn('Failed to load drive manifest', error);
-            this.driveDocuments = [];
-            this.bm25Index = new BM25Index();
+            if (error instanceof UnreadableSearchBlobError) {
+                await this.migrateLegacyManifest(dbApi);
+            } else {
+                // No search key yet: load again on the next use instead of settling on an empty manifest.
+                console.warn('[SearchService] Drive manifest not loaded, search key unavailable');
+                this.manifestReady = null;
+            }
+            return;
+        }
+        const documents = json === undefined ? undefined : parseManifestDocuments(json);
+        if (!documents) {
+            return;
+        }
+        this.driveDocuments = documents;
+        await this.loadBM25Index(dbApi);
+    }
+
+    /**
+     * Older versions stored the manifest and BM25 index as plaintext. Re-saves that manifest encrypted
+     * and rebuilds the index from it, so Drive folder documents survive the upgrade without a re-index.
+     * Anything else that doesn't decrypt, such as ciphertext under a search key that is gone, is dropped.
+     */
+    private async migrateLegacyManifest(dbApi: DbApi): Promise<void> {
+        const blob = await dbApi.loadSearchBlob(SearchService.MANIFEST_BLOB).catch(() => null);
+        const text = typeof blob === 'string' ? blob : blob ? new TextDecoder('utf-8').decode(blob) : undefined;
+        const documents = text === undefined ? undefined : parseManifestDocuments(text);
+        if (!documents) {
+            console.warn('[SearchService] Discarding a drive manifest that is not readable');
+            await dbApi.removeSearchBlob(SearchService.MANIFEST_BLOB).catch(() => {});
+            await dbApi.removeSearchBlob(SearchService.BM25_INDEX_BLOB).catch(() => {});
+            return;
+        }
+        this.driveDocuments = documents;
+        this.rebuildBM25Index();
+        try {
+            await this.saveEncryptedBlob(dbApi, SearchService.MANIFEST_BLOB, JSON.stringify(documents));
+            await this.saveEncryptedBlob(dbApi, SearchService.BM25_INDEX_BLOB, this.bm25Index.serialize());
+            console.log('[SearchService] Migrated a plaintext drive manifest to encrypted storage');
+        } catch (error) {
+            // Documents stay usable in memory; the plaintext is replaced on the next successful save.
+            console.warn('[SearchService] Could not encrypt the migrated drive manifest', error);
         }
     }
 
@@ -312,7 +432,7 @@ export class SearchService {
         const dbApi = new DbApi(this.userId);
         await dbApi.initialize();
         try {
-            await dbApi.saveSearchBlob(SearchService.MANIFEST_BLOB, JSON.stringify(this.driveDocuments));
+            await this.saveEncryptedBlob(dbApi, SearchService.MANIFEST_BLOB, JSON.stringify(this.driveDocuments));
         } catch (error) {
             console.warn('Failed to persist drive manifest', error);
         }
@@ -323,43 +443,20 @@ export class SearchService {
         const dbApi = new DbApi(this.userId);
         await dbApi.initialize();
         try {
-            const serialized = this.bm25Index.serialize();
-            const { encryptUint8Array } = await import('../../crypto');
-            const dek = await this.getSearchDek();
-            const plaintextBytes = new TextEncoder().encode(serialized);
-            const encryptedBase64 = await encryptUint8Array(plaintextBytes, dek, SearchService.BM25_INDEX_AD);
-            await dbApi.saveSearchBlob(SearchService.BM25_INDEX_BLOB, encryptedBase64);
+            await this.saveEncryptedBlob(dbApi, SearchService.BM25_INDEX_BLOB, this.bm25Index.serialize());
         } catch (error) {
             console.warn('Failed to persist BM25 index', error);
         }
     }
 
-    private async loadBM25Index(): Promise<void> {
-        if (!this.userId) return;
-        const dbApi = new DbApi(this.userId);
-        await dbApi.initialize();
+    private async loadBM25Index(dbApi: DbApi): Promise<void> {
         try {
-            const blob = await dbApi.loadSearchBlob(SearchService.BM25_INDEX_BLOB);
-            if (!blob) {
-                // Index missing - rebuild from documents
+            const json = await this.loadEncryptedBlob(dbApi, SearchService.BM25_INDEX_BLOB);
+            if (!json) {
                 this.rebuildBM25Index();
                 return;
             }
-
-            // The blob should be an encrypted base64 string
-            const encryptedBase64 = typeof blob === 'string' ? blob : undefined;
-            if (!encryptedBase64) {
-                console.warn('[SearchService] BM25 index blob is not a string, rebuilding');
-                this.rebuildBM25Index();
-                return;
-            }
-
-            const { decryptUint8Array } = await import('../../crypto');
-            const dek = await this.getSearchDek();
-            const decryptedBytes = await decryptUint8Array(encryptedBase64, dek, SearchService.BM25_INDEX_AD);
-            const jsonString = new TextDecoder('utf-8').decode(decryptedBytes);
-
-            this.bm25Index = BM25Index.deserialize(jsonString);
+            this.bm25Index = BM25Index.deserialize(json);
             console.log('[SearchService] Loaded BM25 index:', this.bm25Index.getStats());
         } catch (error) {
             console.warn('Failed to load BM25 index, rebuilding:', error);
@@ -1372,21 +1469,86 @@ export class SearchService {
         });
     }
 
-    // Placeholder populate for conversations; to be wired to worker
-    async populateEngine(conversations: Record<string, any>): Promise<void> {
-        if (!this.userId) return;
+    /** Chats in the index, once a sync has read what the worker holds. */
+    getIndexedConversationCount(): number | undefined {
+        return this.indexedConversations?.size;
+    }
 
-        try {
+    /**
+     * Bring the chat index up to date: index new and changed chats, drop deleted ones. Chats still
+     * generating wait for a later sync. Syncs run one at a time, each on the state of when it starts.
+     */
+    syncConversations(getState: () => Pick<SearchState, 'conversations' | 'messages'>): Promise<void> {
+        return this.enqueueConversationTask(() => this.runConversationSync(getState()));
+    }
+
+    /** After the index's blobs were wiped from storage, so the next sync indexes every chat again. */
+    resetConversationIndex(): Promise<void> {
+        return this.enqueueConversationTask(async () => {
+            this.indexedConversations = null;
+            await this.postToWorker({ type: WorkerMessageType.Reset });
+        });
+    }
+
+    private enqueueConversationTask(task: () => Promise<void>): Promise<void> {
+        const run = this.conversationTasks.then(task);
+        this.conversationTasks = run.catch(() => {});
+        return run;
+    }
+
+    private async runConversationSync(state: Pick<SearchState, 'conversations' | 'messages'>): Promise<void> {
+        if (!this.userId || !ENABLE_FOUNDATION_SEARCH) {
+            return;
+        }
+        if (!this.indexedConversations) {
+            const response = await this.postToWorker({ type: WorkerMessageType.IndexedConversations });
+            if (response?.error) {
+                throw new Error(response.error);
+            }
+            this.indexedConversations = new Map(Object.entries(response?.fingerprints ?? {}));
+        }
+        const indexed = this.indexedConversations;
+
+        const messagesByConversation = new Map<string, Message[]>();
+        for (const message of Object.values(state.messages)) {
+            const list = messagesByConversation.get(message.conversationId);
+            if (list) {
+                list.push(message);
+            } else {
+                messagesByConversation.set(message.conversationId, [message]);
+            }
+        }
+
+        const present = new Set<string>();
+        const changed: IndexableConversation[] = [];
+        for (const conversation of Object.values(state.conversations)) {
+            if (!isIndexableConversation(conversation)) {
+                continue;
+            }
+            present.add(conversation.id);
+            if (conversation.status === ConversationStatus.GENERATING) {
+                continue;
+            }
+            const indexable = toIndexableConversation(conversation, messagesByConversation.get(conversation.id) ?? []);
+            if (indexed.get(conversation.id) !== indexable.fingerprint) {
+                changed.push(indexable);
+            }
+        }
+        let removedIds = [...indexed.keys()].filter((id) => !present.has(id));
+
+        for (let start = 0; start < changed.length || removedIds.length > 0; start += CONVERSATION_INDEX_BATCH) {
+            const batch = changed.slice(start, start + CONVERSATION_INDEX_BATCH);
             const response = await this.postToWorker({
-                type: WorkerMessageType.Populate,
-                conversations,
+                type: WorkerMessageType.IndexConversation,
+                conversations: batch,
+                removedIds,
             });
             if (response?.success === false) {
-                throw new Error(response?.error || 'Populate failed');
+                throw new Error(response.error || 'Indexing chats failed');
             }
-        } catch (error) {
-            console.error('Failed to populate search index via worker', error);
-            throw error;
+            removedIds.forEach((id) => indexed.delete(id));
+            batch.forEach(({ id, fingerprint }) => indexed.set(id, fingerprint));
+            removedIds = [];
         }
     }
 }

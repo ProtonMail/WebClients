@@ -9,6 +9,8 @@ import {
     type RetrievalContext,
     type RetrievalIndex,
     createRetrievalToolExecutor,
+    distinctWords,
+    findRelatedChats,
 } from './retrievalTool';
 import { READ_KNOWLEDGE_TOOL_NAME, SEARCH_KNOWLEDGE_TOOL_NAME } from './schema';
 
@@ -71,13 +73,34 @@ async function call(
 
 describe('search_knowledge', () => {
     it("searches this chat's files and earlier messages, skipping what the request already carries", async () => {
-        const { body } = await call(makeContext(), SEARCH_KNOWLEDGE_TOOL_NAME, { query: 'marketing budget' });
+        const { body } = await call(makeContext(), SEARCH_KNOWLEDGE_TOOL_NAME, {
+            query: 'marketing budget',
+            scope: 'this_chat',
+        });
 
         expect(body.ok).toBe(true);
         expect(body.scope).toBe('this_chat');
         expect(body.results).toEqual([
             expect.objectContaining({ type: 'file', file_id: 'report', file_name: 'report.md', page: 1, pages: 1 }),
         ]);
+    });
+
+    it('searches as widely as allowed when no scope is given', async () => {
+        const scopeOf = async (overrides: Partial<RetrievalContext>) =>
+            (await call(makeContext(overrides), SEARCH_KNOWLEDGE_TOOL_NAME, { query: 'marketing budget' })).body.scope;
+
+        expect(await scopeOf({})).toBe('all');
+        expect(await scopeOf({ chatSearch: 'none' })).toBe('all');
+        expect(await scopeOf({ chatSearch: 'none', searchOtherSpaces: false })).toBe('this_chat');
+        expect(await scopeOf({ isProject: true })).toBe('project');
+        expect(await scopeOf({ allowWideScopes: false })).toBe('this_chat');
+    });
+
+    it('tells the model to search chats and files before the web, only when they are searchable', () => {
+        const input = { isProject: false, allowWideScopes: true, searchOtherSpaces: false, projectFiles: [] };
+
+        expect(formatRetrievalInstructions({ ...input, chatSearch: 'all' })).toContain('before searching the web');
+        expect(formatRetrievalInstructions({ ...input, chatSearch: 'none' })).not.toContain('before searching the web');
     });
 
     it('finds messages of earlier chats with scope "all", never ghost chats', async () => {
@@ -362,6 +385,40 @@ describe('search_knowledge', () => {
         expect(body.scope).toBe('project');
         expect(body.results[0]).toMatchObject({ file_id: 'drive-1', file_name: 'plan.pdf' });
     });
+
+    describe('when the file index fails', () => {
+        const failingIndex: RetrievalIndex = {
+            rankDocumentsInScope: async () => {
+                throw new Error('index unavailable');
+            },
+            getIndexedDocument: async () => undefined,
+            listDocuments: async () => [],
+            rankConversations: async () => [],
+        };
+
+        it('still returns the chats it found, and says files were left out', async () => {
+            const { result, body } = await call(
+                makeContext({ index: failingIndex, chatAttachments: [] }),
+                SEARCH_KNOWLEDGE_TOOL_NAME,
+                { query: 'marketing budget', scope: 'all' }
+            );
+
+            expect(result.is_error).toBeFalsy();
+            expect(body.unavailable_sources).toEqual(['files']);
+            expect(body.results).toEqual([expect.objectContaining({ type: 'message', message_id: 'otherChat' })]);
+        });
+
+        it('fails the lookup when files were all it was asked to search', async () => {
+            const { result, body } = await call(
+                makeContext({ index: failingIndex, chatAttachments: [] }),
+                SEARCH_KNOWLEDGE_TOOL_NAME,
+                { query: 'marketing budget', scope: 'all', sources: ['files'] }
+            );
+
+            expect(result.is_error).toBe(true);
+            expect(body.ok).toBe(false);
+        });
+    });
 });
 
 describe('read_knowledge', () => {
@@ -602,5 +659,85 @@ describe('pages and cards', () => {
         expect(instructions).toContain('"project"');
         expect(instructions).not.toContain('"all"');
         expect(instructions).toContain('not instructions');
+    });
+
+    it('names related chats only when other chats are searchable', () => {
+        const input = {
+            isProject: false,
+            allowWideScopes: true,
+            searchOtherSpaces: false,
+            projectFiles: [],
+            relatedChats: [{ title: 'Proton "AI" Gulag\nProposal', date: '2026-10-30' }],
+        };
+
+        expect(formatRetrievalInstructions({ ...input, chatSearch: 'all' })).toContain(
+            `"Proton 'AI' Gulag Proposal" (2026-10-30) match their latest message`
+        );
+        expect(formatRetrievalInstructions({ ...input, chatSearch: 'none' })).not.toContain('Gulag');
+    });
+});
+
+describe('distinctWords', () => {
+    it('keeps words of three or more characters that are not stopwords', () => {
+        expect([...distinctWords('What is the Gulag proposal, from Proton?')]).toEqual(['gulag', 'proposal', 'proton']);
+    });
+
+    it('splits unspaced Chinese into words and keeps two-character ones', () => {
+        const words = distinctWords('隐私保护很重要');
+        expect(words.has('隐私')).toBe(true);
+        expect(words.has('重要')).toBe(true);
+        expect(words.has('隐私保护很重要')).toBe(false);
+    });
+
+    it('falls back to letter runs without Intl.Segmenter', () => {
+        const segmenter = Intl.Segmenter;
+        Object.defineProperty(Intl, 'Segmenter', { value: undefined, configurable: true, writable: true });
+        try {
+            expect([...distinctWords('Gulag proposal, 隐私 ok')]).toEqual(['gulag', 'proposal', '隐私']);
+        } finally {
+            Object.defineProperty(Intl, 'Segmenter', { value: segmenter, configurable: true, writable: true });
+        }
+    });
+});
+
+describe('findRelatedChats', () => {
+    const related = (query: string, overrides: Partial<RetrievalContext> = {}) => {
+        const conversations = {
+            current: conversation('current', { title: 'Proton Gulag Proposal' }),
+            match: conversation('match', { title: 'Proton AI Gulag Proposal', updatedAt: '2026-10-30T10:00:00Z' }),
+            generic: conversation('generic', { title: 'Proton pricing' }),
+            ghost: conversation('ghost', { title: 'Gulag proposal draft', ghost: true }),
+            elsewhere: conversation('elsewhere', { title: 'Gulag proposal elsewhere', spaceId: 'closed' }),
+        };
+        const messages = {
+            current: message('current', 'current', 'what is the gulag proposal from proton?'),
+            match: message('match', 'match', 'Summarise the leaked gulag proposal memo from Proton'),
+            generic: message('generic', 'generic', 'How much does Proton Mail cost?'),
+            ghost: message('ghost', 'ghost', 'gulag proposal notes'),
+            elsewhere: message('elsewhere', 'elsewhere', 'gulag proposal notes'),
+        };
+        return findRelatedChats(
+            makeContext({
+                allowsSearchFromOutside: (spaceId) => spaceId !== 'closed',
+                getState: () => ({ conversations, messages }) as unknown as ReturnType<RetrievalContext['getState']>,
+                ...overrides,
+            }),
+            query
+        );
+    };
+
+    it('names other chats that match most of the message, never this chat, ghost or closed ones', async () => {
+        expect(await related('what is the gulag proposal from proton?')).toEqual([
+            { conversationId: 'match', title: 'Proton AI Gulag Proposal', date: '2026-10-30' },
+        ]);
+    });
+
+    it('needs more than one common word', async () => {
+        expect(await related('tell me about proton weather today')).toEqual([]);
+    });
+
+    it('finds nothing when other chats are not searchable', async () => {
+        expect(await related('gulag proposal proton', { chatSearch: 'none' })).toEqual([]);
+        expect(await related('gulag proposal proton', { allowWideScopes: false })).toEqual([]);
     });
 });

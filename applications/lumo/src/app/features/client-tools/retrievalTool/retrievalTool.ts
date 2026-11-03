@@ -1,10 +1,12 @@
 import type { ClientToolExecutor, ClientToolResult } from '@proton/lumo-api-client/core/client-tools';
+import { languageCode } from '@proton/shared/lib/i18n';
 
 import { applyRetentionPolicy } from '../../../layouts/sidepanel/helpers';
 import { isImageAttachment } from '../../../llm/attachments';
 import type { LumoState } from '../../../redux/store';
 import { BM25Index } from '../../../services/search/bm25Index';
 import type { SearchService } from '../../../services/search/searchService';
+import { STOPWORDS } from '../../../services/search/stopwords';
 import {
     type Attachment,
     type ChatSearchReach,
@@ -54,6 +56,16 @@ const MAX_RANKED_CONVERSATIONS = 25;
 const RECENT_CONVERSATIONS = 5;
 const MAX_ID_CHARS = 128;
 const MAX_FILE_NAME_CHARS = 300;
+/** Chats named to the model as likely relevant before it answers. */
+const MAX_RELATED_CHATS = 3;
+/** Chats weighed for that hint when the index has no match, newest first. */
+const MAX_RELATED_CANDIDATES = 50;
+/** Text of a chat weighed for that hint, so one long chat stays cheap. */
+const MAX_RELATED_CHAT_CHARS = 20_000;
+/** Share of the query's weight a chat must match to be named. */
+const MIN_RELATED_COVERAGE = 0.6;
+/** Distinct query words a chat must contain, so one common word is never enough. */
+const MIN_RELATED_WORDS = 2;
 
 export type RetrievalIndex = Pick<
     SearchService,
@@ -121,10 +133,67 @@ const isTextAttachment = (attachment: Attachment) => !isImageAttachment(attachme
 const isSearchableConversation = (conversation: Conversation | undefined) =>
     !!conversation && !conversation.ghost && !conversation.scheduleRun;
 
+const isReachableChat = (context: RetrievalContext, conversation: Conversation) =>
+    conversation.spaceId === context.spaceId ||
+    (context.chatSearch === 'all' && context.allowsSearchFromOutside(conversation.spaceId));
+
+/** Chats other than this one whose messages `scope` may search; none when chat search is off. */
+function otherChatsInScope(context: RetrievalContext, scope: RetrievalScope): Conversation[] {
+    if (scope === 'this_chat' || context.chatSearch === 'none') {
+        return [];
+    }
+    const everywhere = scope === 'all' && context.chatSearch === 'all';
+    const inScope = Object.values(context.getState().conversations).filter(
+        (conversation) =>
+            conversation.id !== context.conversationId &&
+            isSearchableConversation(conversation) &&
+            (everywhere ? isReachableChat(context, conversation) : conversation.spaceId === context.spaceId)
+    );
+    return applyRetentionPolicy(inScope, context.hasLumoPlus);
+}
+
+const newestFirst = (conversations: Conversation[]) =>
+    [...conversations].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+
+/**
+ * Other chats worth searching: the index's best matches for the query among the allowed ones,
+ * plus the most recently updated. Without index matches, every allowed chat.
+ */
+async function shortlistConversations(
+    context: RetrievalContext,
+    query: string,
+    allowed: Conversation[]
+): Promise<ConversationId[]> {
+    const allowedIds = new Set(allowed.map((conversation) => conversation.id));
+    const ranked = (await context.index?.rankConversations(query, MAX_RANKED_CONVERSATIONS * 4).catch(() => [])) ?? [];
+    const matches = ranked.filter((id) => allowedIds.has(id)).slice(0, MAX_RANKED_CONVERSATIONS);
+    if (matches.length === 0) {
+        return [...allowedIds];
+    }
+    const recent = newestFirst(allowed)
+        .slice(0, RECENT_CONVERSATIONS)
+        .map((conversation) => conversation.id);
+    return [...new Set([...matches, ...recent])];
+}
+
+const isLookupMessage = (message: Message) =>
+    (message.role === Role.User || message.role === Role.Assistant) && !message.compaction && !message.placeholder;
+
 type Parsed<T> = { value: T } | { error: string };
 
+/** The project in a project; outside one, everything the user lets this chat reach. */
+function defaultScope(context: RetrievalContext): RetrievalScope {
+    if (!context.allowWideScopes) {
+        return 'this_chat';
+    }
+    if (context.isProject) {
+        return 'project';
+    }
+    return context.chatSearch === 'all' || context.searchOtherSpaces ? 'all' : 'this_chat';
+}
+
 function parseScope(value: unknown, context: RetrievalContext): Parsed<RetrievalScope> {
-    const scope = value ?? (context.isProject && context.allowWideScopes ? 'project' : 'this_chat');
+    const scope = value ?? defaultScope(context);
     if (typeof scope !== 'string' || !(RETRIEVAL_SCOPES as readonly string[]).includes(scope)) {
         return { error: `scope must be one of: ${RETRIEVAL_SCOPES.join(', ')}` };
     }
@@ -235,10 +304,6 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
     const isReachableFileSpace = (spaceId: string | undefined) =>
         spaceId === context.spaceId ||
         (context.searchOtherSpaces && context.allowsSearchFromOutside(spaceId as SpaceId | undefined));
-
-    const isReachableChat = (conversation: Conversation) =>
-        conversation.spaceId === context.spaceId ||
-        (context.chatSearch === 'all' && context.allowsSearchFromOutside(conversation.spaceId));
 
     /** Files the model may name, nearest first: this chat, the current space, then everything. */
     let knownFileGroups: Promise<NamedFile[][]> | undefined;
@@ -361,55 +426,25 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
         const conversation = context.getState().conversations[conversationId];
         return (
             isSearchableConversation(conversation) &&
-            isReachableChat(conversation!) &&
+            isReachableChat(context, conversation!) &&
             applyRetentionPolicy([conversation!], context.hasLumoPlus).length > 0
         );
     };
 
-    /**
-     * Other chats worth searching: the index's best matches for the query among the allowed ones,
-     * plus the most recently updated. Without index matches, every allowed chat.
-     */
-    const shortlistConversations = async (query: string, allowed: Conversation[]): Promise<ConversationId[]> => {
-        const allowedIds = new Set(allowed.map((conversation) => conversation.id));
-        const ranked =
-            (await context.index?.rankConversations(query, MAX_RANKED_CONVERSATIONS * 4).catch(() => [])) ?? [];
-        const matches = ranked.filter((id) => allowedIds.has(id)).slice(0, MAX_RANKED_CONVERSATIONS);
-        if (matches.length === 0) {
-            return [...allowedIds];
-        }
-        const recent = [...allowed]
-            .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
-            .slice(0, RECENT_CONVERSATIONS)
-            .map((conversation) => conversation.id);
-        return [...new Set([...matches, ...recent])];
-    };
-
     const messageSources = async (query: string, scope: RetrievalScope): Promise<Message[]> => {
-        const { conversations, messages } = context.getState();
+        const { messages } = context.getState();
         const visibleMessageIds = context.getVisibleMessageIds();
-        let allowedConversations: Set<ConversationId>;
-        if (scope === 'this_chat' || context.chatSearch === 'none') {
-            allowedConversations = new Set([context.conversationId]);
-        } else {
-            const everywhere = scope === 'all' && context.chatSearch === 'all';
-            const inScope = Object.values(conversations).filter(
-                (conversation) =>
-                    conversation.id !== context.conversationId &&
-                    isSearchableConversation(conversation) &&
-                    (everywhere ? isReachableChat(conversation) : conversation.spaceId === context.spaceId)
-            );
-            const allowed = applyRetentionPolicy(inScope, context.hasLumoPlus);
-            allowedConversations = new Set([context.conversationId, ...(await shortlistConversations(query, allowed))]);
-        }
+        const others = otherChatsInScope(context, scope);
+        const allowedConversations = new Set<ConversationId>([
+            context.conversationId,
+            ...(others.length > 0 ? await shortlistConversations(context, query, others) : []),
+        ]);
         return Object.values(messages)
             .filter(
                 (message) =>
                     allowedConversations.has(message.conversationId) &&
                     !visibleMessageIds.has(message.id) &&
-                    (message.role === Role.User || message.role === Role.Assistant) &&
-                    !message.compaction &&
-                    !message.placeholder
+                    isLookupMessage(message)
             )
             .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
             .slice(0, MAX_MESSAGE_CANDIDATES);
@@ -445,9 +480,15 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
             | { id: string; text: string; kind: 'file'; file: FileSource; page: number; pages: number }
             | { id: string; text: string; kind: 'message'; message: Message };
         const candidates: Candidate[] = [];
+        const unavailable: RetrievalSource[] = [];
+        const load = <T>(source: RetrievalSource, sources: () => Promise<T[]>): Promise<T[]> =>
+            sources().catch(() => {
+                unavailable.push(source);
+                return [];
+            });
 
         if (validSources.includes('files')) {
-            for (const file of await fileSources(query, validScope, validFileIds)) {
+            for (const file of await load('files', () => fileSources(query, validScope, validFileIds))) {
                 const pages = pagesOf(`file:${file.id}`, file.text);
                 pages.forEach((text, pageIndex) => {
                     candidates.push({
@@ -462,12 +503,19 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
             }
         }
         if (validSources.includes('messages') && !validFileIds) {
-            for (const message of await messageSources(query, validScope)) {
+            for (const message of await load('messages', () => messageSources(query, validScope))) {
                 const text = getMessageText(message);
                 if (text) {
                     candidates.push({ id: `message:${message.id}`, text, kind: 'message', message });
                 }
             }
+        }
+
+        const searched = validSources.filter(
+            (source) => !(source === 'messages' && validFileIds) && !unavailable.includes(source)
+        );
+        if (searched.length === 0 && unavailable.length > 0) {
+            return errorResult('The lookup failed. Answer without it.');
         }
 
         candidates.forEach((candidate) => index.addDocument(candidate.id, candidate.text));
@@ -508,6 +556,10 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
                 ok: true,
                 scope: validScope,
                 results,
+                ...(unavailable.length > 0 && {
+                    unavailable_sources: unavailable,
+                    warning: `The user's ${unavailable.join(' and ')} could not be searched right now; these results leave them out.`,
+                }),
                 ...(results.length === 0 && {
                     message: 'Nothing matched. Try other keywords, a wider scope, or answer without it.',
                 }),
@@ -557,6 +609,10 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
             content: JSON.stringify({
                 ok: true,
                 message_id: message.id,
+                ...(message.conversationId !== context.conversationId && {
+                    chat_title: context.getState().conversations[message.conversationId]?.title || undefined,
+                }),
+                in_this_chat: message.conversationId === context.conversationId,
                 role: message.role,
                 date: message.createdAt.slice(0, 10),
                 page,
@@ -649,3 +705,86 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
         },
     };
 };
+
+export type RelatedChat = { conversationId: ConversationId; title: string; date: string };
+
+/** Scripts written without spaces, where two-character words are common and meaningful. */
+const SHORT_WORD_SCRIPTS = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u;
+
+let wordSegmenter: { locale: string; segmenter: Intl.Segmenter } | undefined;
+
+/**
+ * Words in `text`, split by the locale-aware segmenter so unspaced Chinese, Japanese or Thai is split
+ * into words too. Older browsers without `Intl.Segmenter` fall back to runs of letters and digits.
+ */
+const splitWords = (text: string): string[] => {
+    if (typeof Intl.Segmenter !== 'function') {
+        return text.match(/[\p{L}\p{N}]+/gu) ?? [];
+    }
+    if (wordSegmenter?.locale !== languageCode) {
+        wordSegmenter = { locale: languageCode, segmenter: new Intl.Segmenter(languageCode, { granularity: 'word' }) };
+    }
+    return Array.from(wordSegmenter.segmenter.segment(text)).flatMap(({ segment, isWordLike }) =>
+        isWordLike ? [segment] : []
+    );
+};
+
+const isMeaningfulWord = (word: string) =>
+    !STOPWORDS.has(word) && (word.length >= 3 || (word.length >= 2 && SHORT_WORD_SCRIPTS.test(word)));
+
+export const distinctWords = (text: string) => new Set(splitWords(text.toLowerCase()).filter(isMeaningfulWord));
+
+/**
+ * Other chats this chat may search that clearly match `query`: most of its weight and at least two
+ * of its words (or its only word). Best first; empty when chat search is off or nothing matches well.
+ */
+export async function findRelatedChats(context: RetrievalContext, query: string): Promise<RelatedChat[]> {
+    const queryWords = distinctWords(query);
+    if (!context.allowWideScopes || queryWords.size === 0) {
+        return [];
+    }
+    const allowed = otherChatsInScope(context, defaultScope(context));
+    if (allowed.length === 0) {
+        return [];
+    }
+    const shortlisted = await shortlistConversations(context, query, allowed);
+    const candidateIds = new Set(
+        shortlisted.length < allowed.length
+            ? shortlisted
+            : newestFirst(allowed)
+                  .slice(0, MAX_RELATED_CANDIDATES)
+                  .map((conversation) => conversation.id)
+    );
+    const candidates = allowed.filter((conversation) => candidateIds.has(conversation.id));
+
+    const textByChat = new Map(candidates.map((conversation) => [conversation.id, [conversation.title ?? '']]));
+    for (const message of Object.values(context.getState().messages)) {
+        if (isLookupMessage(message)) {
+            textByChat.get(message.conversationId)?.push(getMessageText(message));
+        }
+    }
+    const documents = candidates.map((conversation) => ({
+        id: conversation.id,
+        text: textByChat.get(conversation.id)!.join('\n').slice(0, MAX_RELATED_CHAT_CHARS),
+        conversation,
+    }));
+
+    const index = new BM25Index();
+    documents.forEach((document) => index.addDocument(document.id, document.text));
+    const minWords = Math.min(MIN_RELATED_WORDS, queryWords.size);
+    return index
+        .rankDocuments(query, documents)
+        .filter(({ document, coverage }) => {
+            if (coverage < MIN_RELATED_COVERAGE) {
+                return false;
+            }
+            const words = distinctWords(document.text);
+            return [...queryWords].filter((word) => words.has(word)).length >= minWords;
+        })
+        .slice(0, MAX_RELATED_CHATS)
+        .map(({ document: { conversation } }) => ({
+            conversationId: conversation.id,
+            title: conversation.title,
+            date: conversation.updatedAt.slice(0, 10),
+        }));
+}

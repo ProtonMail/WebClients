@@ -5,6 +5,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 
 import { ChatRetentionEnforcer } from '../../components/ChatRetentionEnforcer';
+import { ConversationIndexer } from '../../components/ConversationIndexer';
 import { SafeUserProvider } from '../../contexts/SafeUserContext';
 import { ConversationProvider } from '../../providers/ConversationProvider';
 import { DeviceSettingsProvider } from '../../providers/DeviceSettingsProvider';
@@ -35,6 +36,7 @@ const RouterContainer = () => {
                                     <LumoUpsellModalProvider>
                                         <UsageLimitsTierSync />
                                         <ChatRetentionEnforcer />
+                                        <ConversationIndexer />
                                         <SafeUserProvider>
                                             <Router>
                                                 <Switch>

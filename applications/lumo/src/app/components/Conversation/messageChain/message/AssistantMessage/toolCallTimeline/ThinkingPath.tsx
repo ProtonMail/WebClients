@@ -15,7 +15,9 @@ import { isNativeToolCallData } from '../../../../../../lib/toolCall/types';
 import type { Message } from '../../../../../../types';
 import { type IconName, LumoIcon } from '../../../../../LumoIcon/LumoIcon';
 import { LazyProgressiveMarkdownRenderer } from '../../../../../LumoMarkdown/LazyMarkdownComponents';
+import { KnowledgeStepBody } from './KnowledgeStepBody';
 import { ThinkingProgressDots } from './ThinkingProgressDots';
+import type { KnowledgeStepDetails } from './knowledgeStepDetails';
 import { type ThinkingStep, getThinkingPathHeader } from './thinkingPathLabels';
 import { useThinkingHeaderAnimation } from './useThinkingHeaderAnimation';
 
@@ -240,6 +242,19 @@ function getToolCallLabel(toolCall: ToolCallData | ToolCallAnnouncement): [strin
     }
 }
 
+/** A read of a chat message is labelled as such; every other step by its tool. */
+function getStepLabels(
+    toolCall: ToolCallData | ToolCallAnnouncement,
+    knowledge: KnowledgeStepDetails | undefined,
+    short: boolean
+): [string, string] {
+    if (knowledge?.readsChat) {
+        // translator: Assistant activity status, while reading a message of one of the user's chats.
+        return [c('collider_2025:Reasoning').t`Reading a chat...`, c('collider_2025:Reasoning').t`Read a chat`];
+    }
+    return short ? getToolCallShortLabel(toolCall) : getToolCallLabel(toolCall);
+}
+
 export type { ThinkingStep };
 
 interface ThinkingPathProps {
@@ -287,7 +302,7 @@ function buildThinkingTraceLines(steps: ThinkingStep[]): string[] {
             continue;
         }
 
-        const [presentLabel, pastLabel] = getToolCallLabel(step.toolCall);
+        const [presentLabel, pastLabel] = getStepLabels(step.toolCall, step.knowledge, false);
         lines.push(step.isActive ? presentLabel : pastLabel);
     }
 
@@ -298,7 +313,7 @@ function buildThinkingTraceLines(steps: ThinkingStep[]): string[] {
         );
 
     if (activeToolStep) {
-        const [presentLabel] = getToolCallLabel(activeToolStep.toolCall);
+        const [presentLabel] = getStepLabels(activeToolStep.toolCall, activeToolStep.knowledge, false);
         if (lines.at(-1) !== presentLabel) {
             lines.push(presentLabel);
         }
@@ -479,8 +494,12 @@ function getToolCallShortLabel(toolCall: ToolCallData | ToolCallAnnouncement): [
     }
 }
 
-function getToolCallStateLabel(toolCall: ToolCallData | ToolCallAnnouncement, isActive: boolean): string {
-    const [presentLabel, pastLabel] = getToolCallShortLabel(toolCall);
+function getToolCallStateLabel(
+    toolCall: ToolCallData | ToolCallAnnouncement,
+    knowledge: KnowledgeStepDetails | undefined,
+    isActive: boolean
+): string {
+    const [presentLabel, pastLabel] = getStepLabels(toolCall, knowledge, true);
     return isActive ? presentLabel : pastLabel;
 }
 
@@ -671,6 +690,12 @@ interface WebExtractResult {
     failedUrls: WebExtractFailedUrl[];
 }
 
+/** Result items are untyped JSON: one without a valid url can't be listed or linked. */
+const hasUrl = <T,>(item: T): item is T & { url: string } => {
+    const url = (item as { url?: unknown } | null)?.url;
+    return typeof url === 'string' && URL.canParse(url);
+};
+
 const normalizeWebExtractFailedUrl = (item: unknown): WebExtractFailedUrl | null => {
     if (typeof item === 'string') {
         return { url: item };
@@ -709,7 +734,7 @@ const parseWebExtractResult = (result: string): WebExtractResult | null => {
 
             return {
                 type: parsed.type,
-                results: parsed.results,
+                results: parsed.results.filter(hasUrl),
                 failedUrls,
             };
         }
@@ -723,7 +748,7 @@ const parseWebSearchResults = (result: string): WebSearchResults | null => {
     try {
         const parsed = JSON.parse(result);
         if (parsed.results && Array.isArray(parsed.results)) {
-            return parsed as WebSearchResults;
+            return { ...parsed, results: parsed.results.filter(hasUrl) } as WebSearchResults;
         }
     } catch {
         // Not valid JSON or not web search format
@@ -792,20 +817,22 @@ const toolStepToggleClassName =
 const ToolCallStep = ({
     toolCall,
     result,
+    knowledge,
     isActive,
     message,
     handleLinkClick,
 }: {
     toolCall: ToolCallData | ToolCallAnnouncement;
     result?: string;
+    knowledge?: KnowledgeStepDetails;
     isActive: boolean;
     message: Message;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const stateLabel = getToolCallStateLabel(toolCall, isActive);
+    const stateLabel = getToolCallStateLabel(toolCall, knowledge, isActive);
     const contentLines = getToolCallContentLines(toolCall, result);
-    const iconName = getToolCallIcon(toolCall);
+    const iconName = knowledge?.readsChat ? 'MessageSquareText' : getToolCallIcon(toolCall);
 
     const hasDetails = result && result.trim().length > 0;
     const webSearchResults = hasDetails && toolCall.name === 'web_search' ? parseWebSearchResults(result) : null;
@@ -1104,6 +1131,11 @@ const ToolCallStep = ({
                             </div>
                         )}
                     </>
+                ) : knowledge ? (
+                    <>
+                        <ThinkingStepLabel isActive={isActive}>{stateLabel}</ThinkingStepLabel>
+                        <KnowledgeStepBody details={knowledge} />
+                    </>
                 ) : (
                     <>
                         <ThinkingStepLabel isActive={isActive}>{stateLabel}</ThinkingStepLabel>
@@ -1202,6 +1234,7 @@ export const ThinkingPath = ({ steps, message, isThinking, showThinkingTrace, ha
                                 key={idx}
                                 toolCall={step.toolCall}
                                 result={step.result}
+                                knowledge={step.knowledge}
                                 isActive={step.isActive}
                                 message={message}
                                 handleLinkClick={handleLinkClick}
