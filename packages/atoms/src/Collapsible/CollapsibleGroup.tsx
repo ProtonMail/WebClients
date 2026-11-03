@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactElement } from 'react';
 import React, { Children, cloneElement, isValidElement, useState } from 'react';
 
-import type Collapsible from './Collapsible';
+import type { Collapsible } from './Collapsible';
 
 type CollapsibleProps = ComponentProps<typeof Collapsible>;
 type CollapsibleElement = ReactElement<CollapsibleProps, typeof Collapsible>;

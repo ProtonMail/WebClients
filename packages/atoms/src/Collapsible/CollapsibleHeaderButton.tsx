@@ -2,11 +2,10 @@ import { useContext } from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonProps } from '@proton/atoms/Button/Button';
-import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-
-import CollapsibleContext from './CollapsibleContext';
+import type { ButtonProps } from '../Button/Button';
+import { Button } from '../Button/Button';
+import { Tooltip } from '../Tooltip/Tooltip';
+import { CollapsibleContext } from './CollapsibleContext';
 
 export interface CollapsibleHeaderButtonProps extends ButtonProps {
     /**
@@ -19,7 +18,7 @@ export interface CollapsibleHeaderButtonProps extends ButtonProps {
     collapseText?: string;
 }
 
-const CollapsibleHeaderButton = ({
+export const CollapsibleHeaderButton = ({
     expandText = c('Collapsible tooltip').t`Expand`,
     collapseText = c('Collapsible tooltip').t`Collapse`,
     children,
@@ -54,4 +53,3 @@ const CollapsibleHeaderButton = ({
         </Tooltip>
     );
 };
-export default CollapsibleHeaderButton;

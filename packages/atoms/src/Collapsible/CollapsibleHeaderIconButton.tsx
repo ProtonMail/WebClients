@@ -1,7 +1,7 @@
 import clsx from '@proton/utils/clsx';
 
 import type { CollapsibleHeaderButtonProps } from './CollapsibleHeaderButton';
-import CollapsibleHeaderButton from './CollapsibleHeaderButton';
+import { CollapsibleHeaderButton } from './CollapsibleHeaderButton';
 
 import './CollapsibleHeaderIconButton.scss';
 
@@ -10,7 +10,7 @@ interface CollapsibleHeaderIconButtonProps extends Omit<CollapsibleHeaderButtonP
 /**
  * Icon button which rotates the icon by 180° when collapsible is toggled.
  */
-const CollapsibleHeaderIconButton = ({ children, className, ...rest }: CollapsibleHeaderIconButtonProps) => {
+export const CollapsibleHeaderIconButton = ({ children, className, ...rest }: CollapsibleHeaderIconButtonProps) => {
     return (
         <CollapsibleHeaderButton
             className={clsx('collapsible-header-icon-button', className)}
@@ -23,5 +23,3 @@ const CollapsibleHeaderIconButton = ({ children, className, ...rest }: Collapsib
         </CollapsibleHeaderButton>
     );
 };
-
-export default CollapsibleHeaderIconButton;

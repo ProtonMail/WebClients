@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import Collapsible from './Collapsible';
-import CollapsibleContent from './CollapsibleContent';
-import CollapsibleHeader from './CollapsibleHeader';
+import { Collapsible } from './Collapsible';
+import { CollapsibleContent } from './CollapsibleContent';
+import { CollapsibleHeader } from './CollapsibleHeader';
 
 // test accessibility?
 

@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { type WasmAccount, WasmSigningType } from '@proton/andromeda';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
+import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
+import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
+import { CollapsibleHeaderIconButton } from '@proton/atoms/Collapsible/CollapsibleHeaderIconButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
-import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
-import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
-import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';

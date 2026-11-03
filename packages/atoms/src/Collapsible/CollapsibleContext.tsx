@@ -8,6 +8,4 @@ export interface CollapsibleContextValue {
     contentId: string;
 }
 
-const CollapsibleContext = createContext({} as CollapsibleContextValue);
-
-export default CollapsibleContext;
+export const CollapsibleContext = createContext({} as CollapsibleContextValue);

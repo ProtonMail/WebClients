@@ -5,7 +5,7 @@ import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types
 import generateUID from '@proton/utils/generateUID';
 
 import type { CollapsibleContextValue } from './CollapsibleContext';
-import CollapsibleContext from './CollapsibleContext';
+import { CollapsibleContext } from './CollapsibleContext';
 
 interface CollapsibleOwnProps {
     /**
@@ -30,7 +30,7 @@ type CollapsibleProps<E extends ElementType> = PolymorphicPropsWithoutRef<Collap
 
 const defaultElement = 'div';
 
-const Collapsible = <E extends ElementType = typeof defaultElement>({
+export const Collapsible = <E extends ElementType = typeof defaultElement>({
     disabled = false,
     expandByDefault = false,
     children: childrenProp,
@@ -76,4 +76,3 @@ const Collapsible = <E extends ElementType = typeof defaultElement>({
         </CollapsibleContext.Provider>
     );
 };
-export default Collapsible;

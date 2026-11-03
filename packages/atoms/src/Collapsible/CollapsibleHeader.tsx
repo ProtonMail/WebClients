@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
-import CollapsibleContext from './CollapsibleContext';
+import { CollapsibleContext } from './CollapsibleContext';
 
 import './CollapsibleHeader.scss';
 
@@ -32,7 +32,7 @@ type CollapsibleHeaderProps<E extends ElementType> = PolymorphicPropsWithoutRef<
 
 const defaultElement = 'header';
 
-const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
+export const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
     prefix,
     suffix,
     disableFullWidth,
@@ -81,4 +81,3 @@ const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
         </Element>
     );
 };
-export default CollapsibleHeader;

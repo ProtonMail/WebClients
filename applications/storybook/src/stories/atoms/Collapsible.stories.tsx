@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
-import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
-import { CollapsibleGroup } from '@proton/components/components/collapsible/CollapsibleGroup';
-import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
-import CollapsibleHeaderButton from '@proton/components/components/collapsible/CollapsibleHeaderButton';
-import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
+import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
+import { CollapsibleGroup } from '@proton/atoms/Collapsible/CollapsibleGroup';
+import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
+import { CollapsibleHeaderButton } from '@proton/atoms/Collapsible/CollapsibleHeaderButton';
+import { CollapsibleHeaderIconButton } from '@proton/atoms/Collapsible/CollapsibleHeaderIconButton';
 import { IcBrandProton } from '@proton/icons/icons/IcBrandProton';
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 
@@ -15,7 +15,7 @@ const loremIpsum =
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
 
 const meta: Meta<typeof Collapsible> = {
-    title: 'Components/Collapsible',
+    title: 'Atoms/Collapsible',
     component: Collapsible,
     subcomponents: {
         CollapsibleHeader: CollapsibleHeader as any,

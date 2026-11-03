@@ -4,10 +4,10 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { WasmMnemonic, WasmWordCount } from '@proton/andromeda';
-import Collapsible from '@proton/components/components/collapsible/Collapsible';
-import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
-import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
-import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
+import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
+import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
+import { CollapsibleHeaderIconButton } from '@proton/atoms/Collapsible/CollapsibleHeaderIconButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
