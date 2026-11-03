@@ -1,3 +1,7 @@
+### Version 1.43.1
+
+- Update internal dependencies
+
 ### Version 1.43.0
 
 - New onboarding after sign-up (gradual rollout)
