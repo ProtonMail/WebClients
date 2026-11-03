@@ -7893,6 +7893,9 @@
       "terms and conditions": [
         "όροι και προϋποθέσεις"
       ],
+      "The Born Private initiative requires a donation.": [
+        "Η πρωτοβουλία Born Private απαιτεί δωρεά."
+      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανέωση.",
         "Το έκπτωση ισχύει για ${ renewalsWithCoupon } ανανεώσεις."
@@ -7961,6 +7964,12 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Ήδη διαθέτετε το ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own a Born Private account.": [
+        "Έχετε ήδη ένα Born Private λογαριασμό."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Ο λογαριασμός σας είναι πολύ παλιός για την πρωτοβουλία Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -9946,6 +9955,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Αυτός ο χρήστης αποκτά δικαιώματα διαχειριστή την επόμενη φορά που θα συνδεθεί."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Αναβαθμίστε σε ένα υποστηριζόμενο πρόγραμμα για να χρησιμοποιήσετε ρόλους διαχειριστή."
       ],
