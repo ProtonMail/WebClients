@@ -1,9 +1,15 @@
+import { useHistory } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
+import { useLumoFlags } from '../../../hooks/useLumoFlags';
 
 import './SchedulesPageHeader.scss';
 
@@ -12,6 +18,25 @@ interface SchedulesPageHeaderProps {
 }
 
 export const SchedulesPageHeader = ({ onNewTaskClick }: SchedulesPageHeaderProps) => {
+    const history = useHistory();
+    const { createScheduleTool: ffCreateScheduleTool } = useLumoFlags();
+
+    const handleCreateWithLumo = () => {
+        // translator: Editable starter message asking the assistant to help create a scheduled task.
+        const prompt = c('collider_2025:Prefill').t`Help me create a scheduled task. `;
+        history.push({ pathname: '/', hash: `prefill=${encodeURIComponent(prompt)}` });
+    };
+
+    const newTaskContent = (
+        <span className="flex flex-nowrap items-center gap-2">
+            <LumoIcon aria-hidden name="Plus" size={16} />
+            {
+                // translator: Button for creating a new scheduled task (imperative).
+                c('collider_2025:Button').t`New task`
+            }
+        </span>
+    );
+
     return (
         <div className="schedules-page-header flex flex-nowrap items-start gap-3 w-full">
             <div className="flex flex-column flex-1 gap-1 min-w-0">
@@ -22,15 +47,54 @@ export const SchedulesPageHeader = ({ onNewTaskClick }: SchedulesPageHeaderProps
                 </p>
             </div>
             <div className="flex flex-nowrap shrink-0 items-center gap-3">
+                {/* Search button */}
                 <Button aria-label={c('collider_2025:Button').t`Search`} className="shrink-0" icon shape="ghost">
                     <LumoIcon name="Search" size={20} />
                 </Button>
-                <Button className="shrink-0" color="norm" onClick={onNewTaskClick}>
-                    <span className="flex flex-nowrap items-center gap-2">
-                        <LumoIcon name="Plus" size={16} />
-                        {c('collider_2025:Button').t`New task`}
-                    </span>
-                </Button>
+
+                {/* Dropdown for creating a new task with the assistant or manually */}
+                {ffCreateScheduleTool ? (
+                    <SimpleDropdown
+                        as={Button}
+                        className="shrink-0"
+                        color="norm"
+                        content={newTaskContent}
+                        dropdownClassName="chat-dropdown-menu"
+                        hasCaret={false}
+                        originalPlacement="bottom-end"
+                    >
+                        <DropdownMenu>
+                            <DropdownMenuButton
+                                className="flex flex-nowrap items-center gap-2 w-full"
+                                onClick={handleCreateWithLumo}
+                            >
+                                <LumoIcon aria-hidden name="MessageSquare" size={16} />
+                                <span>
+                                    {
+                                        // translator: Opens a new chat to create a scheduled task with the assistant.
+                                        c('collider_2025:Action').t`Create with ${LUMO_SHORT_APP_NAME}`
+                                    }
+                                </span>
+                            </DropdownMenuButton>
+                            <DropdownMenuButton
+                                className="flex flex-nowrap items-center gap-2 w-full"
+                                onClick={onNewTaskClick}
+                            >
+                                <LumoIcon aria-hidden name="Settings" size={16} />
+                                <span>
+                                    {
+                                        // translator: Opens the editor to configure a scheduled task manually (imperative).
+                                        c('collider_2025:Action').t`Set up manually`
+                                    }
+                                </span>
+                            </DropdownMenuButton>
+                        </DropdownMenu>
+                    </SimpleDropdown>
+                ) : (
+                    <Button className="shrink-0" color="norm" onClick={onNewTaskClick}>
+                        {newTaskContent}
+                    </Button>
+                )}
             </div>
         </div>
     );

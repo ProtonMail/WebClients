@@ -4,6 +4,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ASK_USER_QUESTIONS_TOOL_NAME } from '../../../../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
@@ -447,7 +448,7 @@ const AssistantMessage = ({
                                                 messageContentContainerRef={markdownContainerRef}
                                                 reasoning={message.reasoning}
                                             />
-                                            {isLastMessage && (
+                                            {isLastMessage && isDesktopEnvironment() && (
                                                 <CreateScheduleToolMessage
                                                     blocks={blocks}
                                                     isGenerating={isGenerating}

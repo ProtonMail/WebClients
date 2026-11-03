@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
+
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoSelector } from '../../redux/hooks';
 import type { Message, SpaceId } from '../../types';
@@ -21,7 +23,7 @@ export const ComposerNativeNotificationPermissionBanner = ({
     const spaces = useLumoSelector((state) => state.spaces);
 
     const hasNotifyingSchedule = useMemo(() => {
-        if (!schedules) return false;
+        if (!schedules || !isDesktopEnvironment()) return false;
         const space = spaceId ? spaces[spaceId] : undefined;
         const isNotifyingScheduledRun = space?.spaceType === SpaceType.Schedule && space.schedule.notifyOnComplete;
         const hasNotifyingSavedSchedule = messageChain.some(({ createScheduleToolResponse: response }) => {

@@ -1,6 +1,8 @@
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
+
 import { useLumoFlags } from '../../../../../hooks/useLumoFlags';
 import type { CreateScheduleToolResponse } from '../../../../../types';
 import { LumoLink } from '../../../../Links/LumoLink';
@@ -48,7 +50,7 @@ export const CreateScheduleResponseMessage = ({
                 </div>
             )}
 
-            {schedulesFlag && scheduleId && !cancelled && (
+            {schedulesFlag && isDesktopEnvironment() && scheduleId && !cancelled && (
                 <LumoLink
                     aria-label={
                         // translator: Accessible name for the link to a saved task. ${name} is the task's user-visible name.
