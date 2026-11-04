@@ -9767,6 +9767,12 @@
       ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "Billing details": [
+        "Detalii de facturare"
+      ],
+      "Plan details": [
+        "Detalii plan"
       ]
     },
     "Header for addresses table": {
@@ -14599,6 +14605,12 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "Signup link no longer valid": [
+        "Legătura web de înscriere nu mai este validă."
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Această legătură web de înscriere a expirat, a fost revocată sau a fost deja utilizată. Contactați reprezentantul ${ BRAND_NAME } pentru una nouă."
       ]
     },
     "info": {
@@ -16987,6 +16999,33 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Billing contact": [
+        "Contact facturare"
+      ],
+      "Currency": [
+        "Moneda"
+      ],
+      "Custom email domains": [
+        "Domenii personale de e-mail"
+      ],
+      "Dedicated VPN servers": [
+        "Servere VPN dedicate"
+      ],
+      "Invoice email": [
+        "Email de facturare"
+      ],
+      "Organization size": [
+        "Mărime organizație"
+      ],
+      "Payment terms": [
+        "Termeni de plată"
+      ],
+      "Taxable": [
+        "Taxabil"
+      ],
+      "VAT number": [
+        "Valoare TVA"
       ]
     },
     "label": {
@@ -28369,6 +28408,15 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Payment": [
+        "Plata"
+      ],
+      "Tax": [
+        "Taxa"
+      ],
+      "Your groups": [
+        "Grupurile mele"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30097,6 +30145,24 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Payment method": {
+      "Bank transfer": [
+        "Transfer bancar"
+      ],
+      "Credit card": [
+        "Card de credit"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "Zile: ${ days }",
+        "Zile: ${ days }",
+        "Zile: ${ days }"
+      ],
+      "Due on receipt": [
+        "Plată la primire"
       ]
     }
   }

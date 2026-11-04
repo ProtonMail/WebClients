@@ -2263,6 +2263,9 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "action": {
@@ -2391,6 +2394,9 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentseter"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisasjoner med Managed Service Provider-tillegget kan opprette og administrere datterselskaper."
       ]
     },
     "Address action": {
@@ -13909,6 +13915,18 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** brukes også til å logge på en separat ${ BRAND_NAME }-konto, utenfor ${ MAIL_APP_NAME }."
+      ],
+      "1 vault per user": [
+        "1 hvelv per bruker"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Du bruker den til å logge på fra da av. Det er den eneste endringen."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Gmail-en din kobles til denne ${ MAIL_APP_NAME }-adressen"
       ]
     },
     "info": {
@@ -14370,6 +14388,9 @@
       ],
       "Week view": [
         "Ukesvisning"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Lukk ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -16252,6 +16273,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Currency": [
+        "Valuta"
       ]
     },
     "label": {
@@ -16678,6 +16702,9 @@
       ],
       "What’s this?": [
         "Hva er det der?"
+      ],
+      "Pay it": [
+        "Betal"
       ]
     },
     "Link (Scribe)": {
@@ -19002,6 +19029,9 @@
       ],
       "Your subscription renews soon": [
         "Abonnementet ditt fornyes snart"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Siste sjanse til å få din første måned med ${ plan } til denne prisen."
       ]
     },
     "Offer fearue": {
@@ -19102,6 +19132,12 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Legg til en betalingsmåte** for å fortsette å bruke alle funksjonene etter at prøveperioden er over."
+      ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
       ]
     },
     "Option": {
@@ -20339,6 +20375,21 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Kun én ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan kjøpes."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Den valgte planen tilbyr ikke nok domener for kontoen din."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Den valgte planen tilbyr ikke nok lagringsplass for kontoen din."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Prøveplaner støtter ikke Scribe-seter."
       ]
     },
     "Payments.Error": {
@@ -28117,6 +28168,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan ikke endre dine egne roller. Be en annen administrator om å endre dem."
       ]
     },
     "Users table: badge": {

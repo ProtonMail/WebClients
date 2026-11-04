@@ -9262,6 +9262,12 @@
       ],
       "Username": [
         "Nom d'utilisateur"
+      ],
+      "Billing details": [
+        "Informations de facturation"
+      ],
+      "Plan details": [
+        "Informations de l'abonnement"
       ]
     },
     "Header for addresses table": {
@@ -13796,6 +13802,12 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "Signup link no longer valid": [
+        "Le lien d'inscription n'est plus valide"
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Ce lien d'inscription a expiré, a été révoqué ou a déjà été utilisé. Veuillez contacter votre représentant ${ BRAND_NAME } pour en obtenir un nouveau."
       ]
     },
     "info": {
@@ -16140,6 +16152,33 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Billing contact": [
+        "Contact de facturation"
+      ],
+      "Currency": [
+        "Devise"
+      ],
+      "Custom email domains": [
+        "Domaines de messagerie personnalisés"
+      ],
+      "Dedicated VPN servers": [
+        "Serveurs VPN dédiés"
+      ],
+      "Invoice email": [
+        "E-mail de facturation"
+      ],
+      "Organization size": [
+        "Taille de l’organisation"
+      ],
+      "Payment terms": [
+        "Conditions de paiement"
+      ],
+      "Taxable": [
+        "Taxable"
+      ],
+      "VAT number": [
+        "Numéro de TVA"
       ]
     },
     "label": {
@@ -27068,6 +27107,15 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Payment": [
+        "Paiement"
+      ],
+      "Tax": [
+        "Taxe"
+      ],
+      "Your groups": [
+        "Vos groupes"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28704,6 +28752,23 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "Payment method": {
+      "Bank transfer": [
+        "Virement bancaire"
+      ],
+      "Credit card": [
+        "Carte de paiement"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } jour",
+        "${ days } jours"
+      ],
+      "Due on receipt": [
+        "Paiement à la réception"
       ]
     }
   }

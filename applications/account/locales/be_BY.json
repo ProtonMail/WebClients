@@ -9704,6 +9704,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Plan details": [
+        "Падрабязнасці тарыфнага плана"
       ]
     },
     "Header for addresses table": {
@@ -16793,6 +16796,24 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Currency": [
+        "Валюта"
+      ],
+      "Invoice email": [
+        "Ліст з рахункам"
+      ],
+      "Payment terms": [
+        "Умовы аплаты"
+      ],
+      "Taxable": [
+        "Падлягае падаткаабкладанню"
+      ],
+      "Total": [
+        "Агулам"
+      ],
+      "VAT number": [
+        "Нумар ПДВ"
       ]
     },
     "label": {
@@ -28231,6 +28252,15 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Payment": [
+        "Плацеж"
+      ],
+      "Tax": [
+        "Падатак"
+      ],
+      "Your groups": [
+        "Вашы групы"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29965,6 +29995,22 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "Payment method": {
+      "Bank transfer": [
+        "Банкаўскі перавод"
+      ],
+      "Credit card": [
+        "Крэдытная картка"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } дзень",
+        "${ days } дні",
+        "${ days } дзён",
+        "${ days } дзён"
       ]
     }
   }

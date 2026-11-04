@@ -9694,6 +9694,12 @@
       ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "Billing details": [
+        "Λεπτομέρειες χρέωσης"
+      ],
+      "Plan details": [
+        "Λεπτομέρειες πλάνου"
       ]
     },
     "Header for addresses table": {
@@ -14451,6 +14457,12 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "Signup link no longer valid": [
+        "Ο σύνδεσμος εγγραφής δεν είναι πλέον έγκυρος"
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Αυτός ο σύνδεσμος εγγραφής έχει λήξει, έχει ανακληθεί ή έχει ήδη χρησιμοποιηθεί. Παρακαλούμε επικοινωνήστε με τον εκπρόσωπο της ${ BRAND_NAME } για να λάβετε έναν νέο."
       ]
     },
     "info": {
@@ -16830,6 +16842,33 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Billing contact": [
+        "Υπεύθυνος τιμολόγησης"
+      ],
+      "Currency": [
+        "Νόμισμα"
+      ],
+      "Custom email domains": [
+        "Προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
+      ],
+      "Invoice email": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου τιμολογίου"
+      ],
+      "Organization size": [
+        "Μέγεθος οργανισμού"
+      ],
+      "Payment terms": [
+        "Όροι πληρωμής"
+      ],
+      "Taxable": [
+        "Φορολογητέο"
+      ],
+      "VAT number": [
+        "Αριθμός ΑΦΜ"
       ]
     },
     "label": {
@@ -28040,6 +28079,15 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Payment": [
+        "Πληρωμή"
+      ],
+      "Tax": [
+        "Φόρος"
+      ],
+      "Your groups": [
+        "Οι ομάδες σας"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29720,6 +29768,23 @@
       ],
       "Yearly, ${ untilString }": [
         "Ετησίως, ${ untilString }"
+      ]
+    },
+    "Payment method": {
+      "Bank transfer": [
+        "Τραπεζική μεταφορά"
+      ],
+      "Credit card": [
+        "Πιστωτική κάρτα"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "Due on receipt": [
+        "Πληρωτέο κατά την παραλαβή"
       ]
     }
   }

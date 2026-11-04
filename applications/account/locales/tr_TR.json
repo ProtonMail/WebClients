@@ -9694,6 +9694,12 @@
       ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "Billing details": [
+        "Fatura bilgileri"
+      ],
+      "Plan details": [
+        "Tarife ayrıntıları"
       ]
     },
     "Header for addresses table": {
@@ -14451,6 +14457,12 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Signup link no longer valid": [
+        "Hesap açma bağlantısı artık geçerli değil"
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Bu hesap açma bağlantısının geçerlilik süresi dolmuş, iptal edilmiş veya daha önce kullanılmış. Yeni bir bağlantı almak için lütfen ${ BRAND_NAME } temsilciniz ile görüşün."
       ]
     },
     "info": {
@@ -16830,6 +16842,33 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Billing contact": [
+        "Fatura ilgilisi"
+      ],
+      "Currency": [
+        "Para birimi"
+      ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Dedicated VPN servers": [
+        "Size ayrılmış VPN sunucuları"
+      ],
+      "Invoice email": [
+        "Fatura e-postası"
+      ],
+      "Organization size": [
+        "Kuruluşun büyüklüğü"
+      ],
+      "Payment terms": [
+        "Ödeme koşulları"
+      ],
+      "Taxable": [
+        "Vergilendirilebilir"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ]
     },
     "label": {
@@ -28040,6 +28079,15 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Payment": [
+        "Ödeme"
+      ],
+      "Tax": [
+        "Vergi"
+      ],
+      "Your groups": [
+        "Gruplarınız"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29720,6 +29768,23 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Payment method": {
+      "Bank transfer": [
+        "Banka havalesi"
+      ],
+      "Credit card": [
+        "Kredi kartı"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } gün",
+        "${ days } gün"
+      ],
+      "Due on receipt": [
+        "Alındı ile tamamlanacak"
       ]
     }
   }

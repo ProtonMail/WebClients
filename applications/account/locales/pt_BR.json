@@ -9546,6 +9546,12 @@
       ],
       "Username": [
         "Nome de usuário"
+      ],
+      "Billing details": [
+        "Detalhes de faturamento"
+      ],
+      "Plan details": [
+        "Detalhes do plano"
       ]
     },
     "Header for addresses table": {
@@ -16454,6 +16460,33 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Billing contact": [
+        "Contatos de faturamento"
+      ],
+      "Currency": [
+        "Moeda"
+      ],
+      "Custom email domains": [
+        "Domínios personalizados de e-mail"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores de VPN dedicados"
+      ],
+      "Invoice email": [
+        "E-mail da fatura"
+      ],
+      "Organization size": [
+        "Tamanho da organização"
+      ],
+      "Payment terms": [
+        "Termos de pagamento"
+      ],
+      "Taxable": [
+        "Taxável"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ]
     },
     "label": {
@@ -27486,6 +27519,15 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Payment": [
+        "Pagamento"
+      ],
+      "Tax": [
+        "Impostos"
+      ],
+      "Your groups": [
+        "Seus grupos"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29139,6 +29181,20 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Payment method": {
+      "Bank transfer": [
+        "Transferência bancária"
+      ],
+      "Credit card": [
+        "Cartão de crédito"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dias"
       ]
     }
   }
