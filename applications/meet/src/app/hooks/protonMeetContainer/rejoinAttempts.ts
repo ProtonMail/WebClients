@@ -73,6 +73,7 @@ const waitForOnlineOrDelay = (delayMs: number, signal: AbortSignal) =>
         signal.addEventListener('abort', finish);
     });
 
+// nosemgrep: rules_lgpl_javascript_crypto_rule-node-insecure-random-generator -- retry backoff jitter, not security-sensitive
 const withJitter = (delayMs: number) => delayMs * (0.5 + Math.random() / 2);
 
 export const runRejoinAttempts = async (
