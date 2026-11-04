@@ -1,5 +1,6 @@
 import { downloadHtmlAsPdf, downloadHtmlSlidesAsPdf } from '../../../util/pdf/downloadHtmlAsPdf';
 import { printHtmlDocument } from '../../../util/pdf/printHtmlDocument';
+import { buildDeckPdfBytes } from './artifactDeckPdf';
 import { exportArtifactPdf, getArtifactPdfExportMode } from './artifactPdfExport';
 import type { ParsedArtifact } from './parseArtifacts';
 
@@ -17,6 +18,14 @@ jest.mock('./artifactMarkdownHtml', () => ({
         return '<h1>Summary</h1>';
     }),
 }));
+jest.mock('./artifactDeckPdf', () => ({
+    buildDeckPdfBytes: jest.fn(async () => {
+        return new Uint8Array();
+    }),
+}));
+jest.mock('../../../util/triggerFileDownload', () => ({
+    triggerFileDownload: jest.fn(async () => {}),
+}));
 jest.mock('vega-embed', () => ({ __esModule: true, default: jest.fn() }));
 jest.mock('vega-interpreter', () => ({ expressionInterpreter: {} }));
 
@@ -32,6 +41,13 @@ const presentationArtifact: ParsedArtifact = {
     type: 'presentation',
     title: 'Deck',
     content: '<section><h2>One</h2></section>',
+};
+
+const jsonDeckArtifact: ParsedArtifact = {
+    id: 'deck-2',
+    type: 'presentation',
+    title: 'JSON deck',
+    content: JSON.stringify({ title: 'JSON deck', slides: [{ layout: 'bullets', title: 'One', bullets: ['A'] }] }),
 };
 
 describe('getArtifactPdfExportMode', () => {
@@ -83,6 +99,13 @@ describe('exportArtifactPdf', () => {
 
         await expect(exportArtifactPdf(presentationArtifact)).resolves.toBe('print_fallback');
         expect(printHtmlDocument).toHaveBeenCalledWith(expect.any(String), { title: 'Deck' });
+    });
+
+    it('fails rather than printing the raw JSON when a JSON deck PDF cannot be built', async () => {
+        jest.mocked(buildDeckPdfBytes).mockRejectedValueOnce(new Error('layout failed'));
+
+        await expect(exportArtifactPdf(jsonDeckArtifact)).resolves.toBe('failed');
+        expect(printHtmlDocument).not.toHaveBeenCalled();
     });
 
     it('is unavailable for code and webpage artifacts', async () => {

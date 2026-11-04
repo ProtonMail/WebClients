@@ -7,6 +7,8 @@ export interface ArtifactSelection {
     position: PopperPosition;
     /** Viewport Y coordinate of the selection's bottom edge — used to anchor inline edit UI. */
     anchorBottom: number;
+    /** A copy of the selected range, for content that maps it back to its source (JSON slide decks). */
+    range: Range;
 }
 
 /**
@@ -45,11 +47,13 @@ export function useArtifactSelection(containerRef: RefObject<HTMLDivElement>) {
                 return;
             }
 
-            const rect = domSelection.getRangeAt(0).getBoundingClientRect();
+            const range = domSelection.getRangeAt(0);
+            const rect = range.getBoundingClientRect();
             setSelection({
                 text,
                 position: { top: rect.top, left: rect.left + rect.width / 2 },
                 anchorBottom: rect.bottom,
+                range: range.cloneRange(),
             });
         };
 
@@ -66,7 +70,9 @@ export function useArtifactSelection(containerRef: RefObject<HTMLDivElement>) {
             return;
         }
 
-        const scrollables = container.querySelectorAll('.artifact-code-content, .artifact-document-content');
+        const scrollables = container.querySelectorAll(
+            '.artifact-code-content, .artifact-document-content, .artifact-deck-content'
+        );
         const handleScroll = () => {
             clearSelection();
         };

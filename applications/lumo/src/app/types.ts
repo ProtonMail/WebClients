@@ -376,6 +376,50 @@ export type CompactionMeta = {
 
 export type ArtifactActionKind = 'explain' | 'improve' | 'edit';
 
+// The type is derived from this list so the two can't drift: a field missing here fails
+// `isMessagePriv`, and the message is dropped when the conversation is loaded.
+const DECK_SELECTION_FIELDS = [
+    'title',
+    'subtitle',
+    'bullet',
+    'left',
+    'right',
+    'quote',
+    'attribution',
+    'takeaway',
+    'missingData',
+    'notes',
+] as const;
+
+export type DeckSelectionField = (typeof DECK_SELECTION_FIELDS)[number];
+
+/** One deck field a selection on a JSON slide deck touches (D19). */
+export type DeckSelectionPart = {
+    /** 1-based number of the deck slide (a split slide's parts share it). */
+    slide: number;
+    field: DeckSelectionField;
+    /** 1-based number in the slide's bullets, or in the column for `field: 'left' | 'right'`. */
+    bullet?: number;
+    /** The field's whole text in the deck. */
+    text: string;
+    /** The part of it that was selected. */
+    selected: string;
+};
+
+function isDeckSelectionPart(value: unknown): value is DeckSelectionPart {
+    if (typeof value !== 'object' || value === null) {
+        return false;
+    }
+    const part = value as DeckSelectionPart;
+    return (
+        typeof part.slide === 'number' &&
+        (DECK_SELECTION_FIELDS as readonly string[]).includes(part.field) &&
+        (part.bullet === undefined || typeof part.bullet === 'number') &&
+        typeof part.text === 'string' &&
+        typeof part.selected === 'string'
+    );
+}
+
 /** UI metadata for artifact panel selection actions (Explain / Improve / Edit). */
 export type ArtifactActionMeta = {
     kind: ArtifactActionKind;
@@ -385,6 +429,8 @@ export type ArtifactActionMeta = {
     selection: string;
     /** Present for document edits — the user's freeform change instruction. */
     userInstruction?: string;
+    /** Present for JSON slide decks: where in the deck the selection is. */
+    deckSelection?: DeckSelectionPart[];
 };
 
 export function isArtifactActionMeta(value: unknown): value is ArtifactActionMeta {
@@ -398,7 +444,9 @@ export function isArtifactActionMeta(value: unknown): value is ArtifactActionMet
         typeof meta.artifactTitle === 'string' &&
         isArtifactType(meta.artifactType) &&
         typeof meta.selection === 'string' &&
-        (meta.userInstruction === undefined || typeof meta.userInstruction === 'string')
+        (meta.userInstruction === undefined || typeof meta.userInstruction === 'string') &&
+        (meta.deckSelection === undefined ||
+            (Array.isArray(meta.deckSelection) && meta.deckSelection.every(isDeckSelectionPart)))
     );
 }
 

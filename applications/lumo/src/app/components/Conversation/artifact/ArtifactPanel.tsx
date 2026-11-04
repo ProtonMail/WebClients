@@ -15,6 +15,7 @@ import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useArtifactPanelHostActions } from '../../../providers/ArtifactPanelHostProvider';
 import { useConversationActions } from '../../../providers/ConversationActionsProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
+import { isDeckArtifact } from '../../../util/slides/deckContent';
 import {
     sendArtifactContentCopiedEvent,
     sendArtifactTitleMenuOpenedEvent,
@@ -38,6 +39,7 @@ import { ArtifactPreviewErrorBoundary } from './ArtifactPreviewErrorBoundary';
 import type { ArtifactRichTextEditorHandle } from './ArtifactRichTextEditor';
 import { ArtifactTitleMenu } from './ArtifactTitleMenu';
 import { ArtifactViewModeToggle } from './ArtifactViewModeToggle';
+import { DeckEditor } from './DeckEditor';
 import type { ArtifactVersion } from './artifactRegistry';
 import { normalizeDocumentCardFences } from './artifactVizCards';
 import type { ArtifactType } from './parseArtifacts';
@@ -499,11 +501,12 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
     }
 
     const artifact = selectedArtifact!;
-    // Only latest-version document artifacts can be manually edited — editing an older version
+    const isDeck = isDeckArtifact(artifact);
+    // Only latest-version document/deck artifacts can be manually edited — editing an older version
     // would raise branch-fork semantics (overwrite vs. fork the conversation) that aren't solved yet.
     const canManuallyEdit =
         isArtifactsViewFlagEnabled &&
-        artifact.type === 'document' &&
+        (artifact.type === 'document' || (isDeck && isArtifactSlidesFlagEnabled)) &&
         !isGenerating &&
         !isSelectedVersionProvisional &&
         versionCount !== undefined &&
@@ -521,7 +524,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
         : undefined;
 
     const getLatestDraft = () => {
-        if (manualEditMode === 'rich' && richEditorRef.current) {
+        if (!isDeck && manualEditMode === 'rich' && richEditorRef.current) {
             return richEditorRef.current.getMarkdown();
         }
         return draftContent;
@@ -664,7 +667,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                         manualEditActive={manualEditActive}
                         manualEditDirty={manualEditDirty}
                         manualEditMode={manualEditMode}
-                        onToggleManualEditMode={handleToggleManualEditMode}
+                        onToggleManualEditMode={!isDeck ? handleToggleManualEditMode : undefined}
                         onStartManualEdit={handleStartManualEdit}
                         onSaveManualEdit={handleSaveManualEdit}
                         onCancelManualEdit={handleCancelManualEdit}
@@ -685,7 +688,14 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                 ref={contentRef}
                 className="artifact-content-area relative flex flex-column flex-1 min-h-0 min-w-0 overflow-hidden w-full"
             >
-                {manualEditActive && manualEditMode === 'rich' ? (
+                {manualEditActive && isDeck ? (
+                    // Keyed by version: the editor copies the deck once on mount, so a new version must remount it.
+                    <DeckEditor
+                        key={`${artifact.id}-${selectedVersionIndex}`}
+                        artifact={artifact}
+                        onChange={setDraftContent}
+                    />
+                ) : manualEditActive && manualEditMode === 'rich' ? (
                     <ArtifactPreviewErrorBoundary
                         content={draftContent}
                         resetKey={`${artifact.id}-${selectedVersionIndex}`}
@@ -724,7 +734,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                         {isArtifactRevisionLoading && <ArtifactPanelRevisionOverlay artifactType={artifact.type} />}
                         {/* Hidden on older versions: the selection would come from this version while the
                             model revises the latest, where that text may no longer exist. Hidden on decks
-                            without LumoArtifactSlides: the model isn't offered `presentation`. */}
+                            without LumoArtifactSlides: the model isn't offered `presentation` (D20). */}
                         {isArtifactsViewFlagEnabled &&
                             !isViewingOlderVersion &&
                             (artifact.type !== 'presentation' || isArtifactSlidesFlagEnabled) && (
@@ -735,6 +745,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                                     artifactType={artifact.type}
                                     isGenerating={isGenerating || isSelectedVersionProvisional}
                                     layout={layout}
+                                    isDeck={isDeckArtifact(artifact)}
                                 />
                             )}
                     </div>

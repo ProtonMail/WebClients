@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Suspense, lazy, useState } from 'react';
 
 import { subDays } from 'date-fns';
 import { c } from 'ttag';
@@ -10,7 +10,9 @@ import { addConversation } from '../../redux/slices/core/conversations';
 import { addSpace, newSpaceId } from '../../redux/slices/core/spaces';
 import type { Conversation, Space } from '../../types';
 import { ConversationStatus, SpaceType } from '../../types';
-import { TestRendererModal } from './TestRendererModal';
+
+// Loaded only when opened: its fixtures are debugging data, and this tab is part of the main app bundle.
+const TestRendererModal = lazy(() => import('./TestRendererModal').then((m) => ({ default: m.TestRendererModal })));
 
 export const RenderingTab = () => {
     const dispatch = useLumoDispatch();
@@ -133,7 +135,9 @@ export const RenderingTab = () => {
                 </div>
             </div>
             {showTestRenderer && (
-                <TestRendererModal open={showTestRenderer} onClose={() => setShowTestRenderer(false)} />
+                <Suspense fallback={null}>
+                    <TestRendererModal open={showTestRenderer} onClose={() => setShowTestRenderer(false)} />
+                </Suspense>
             )}
         </>
     );

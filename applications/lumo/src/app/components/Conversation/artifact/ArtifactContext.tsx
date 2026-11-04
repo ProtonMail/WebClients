@@ -50,6 +50,10 @@ interface ArtifactContextValue {
     // All artifacts seen anywhere on the active linear chain, keyed by artifact id, each
     // holding one version per finalized assistant message that reused that id.
     registry: ArtifactRegistry;
+    // The active branch the registry was built from; slide decks read their source material from it.
+    // A getter, not the array: the chain is rebuilt on every render, and putting it in the value
+    // would change the value on every render too.
+    getLinearChain: () => Message[];
     // The artifact + version currently shown in the panel, or null when nothing is open.
     selectedArtifact: ParsedArtifact | null;
     selectedId: string | null;
@@ -94,6 +98,11 @@ export const ArtifactProvider = ({
     const { artifactsView: isArtifactsViewFlagEnabled } = useLumoFlags();
     const openArtifactQueryParam = useQueryParam('artifact', true, 'search', Boolean(conversationId));
     const registry = useArtifactRegistry(linearChain);
+    const linearChainRef = useRef(linearChain);
+    linearChainRef.current = linearChain;
+    const getLinearChain = useCallback(() => {
+        return linearChainRef.current;
+    }, []);
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [selectedVersionIndex, setSelectedVersionIndex] = useState(0);
     const [panelUserClosed, setPanelUserClosed] = useState(false);
@@ -508,6 +517,7 @@ export const ArtifactProvider = ({
     const value = useMemo(
         () => ({
             registry,
+            getLinearChain,
             selectedArtifact: displayArtifact,
             selectedId,
             selectedVersionIndex,
@@ -528,6 +538,7 @@ export const ArtifactProvider = ({
         }),
         [
             registry,
+            getLinearChain,
             displayArtifact,
             selectedId,
             selectedVersionIndex,
@@ -548,6 +559,11 @@ export const ArtifactProvider = ({
     );
 
     return <ArtifactContext.Provider value={value}>{children}</ArtifactContext.Provider>;
+};
+
+/** For surfaces that also render outside a conversation (no provider): null there. */
+export const useOptionalArtifactContext = (): ArtifactContextValue | null => {
+    return useContext(ArtifactContext);
 };
 
 export const useArtifactContext = (): ArtifactContextValue => {

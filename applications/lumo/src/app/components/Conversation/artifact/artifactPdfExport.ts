@@ -1,7 +1,10 @@
 import { yieldToMainThread } from '../../../util/export/exportUiHelpers';
-import { downloadHtmlAsPdf, downloadHtmlSlidesAsPdf } from '../../../util/pdf/downloadHtmlAsPdf';
+import { downloadHtmlAsPdf, downloadHtmlSlidesAsPdf, ensurePdfFileName } from '../../../util/pdf/downloadHtmlAsPdf';
 import type { PdfExportProgressCallback } from '../../../util/pdf/htmlDocumentToPdfBytes';
 import { printHtmlDocument } from '../../../util/pdf/printHtmlDocument';
+import { isDeckArtifact } from '../../../util/slides/deckContent';
+import { triggerFileDownload } from '../../../util/triggerFileDownload';
+import { buildDeckPdfBytes } from './artifactDeckPdf';
 import {
     DOCUMENT_PDF_EXPORT_OPTIONS,
     PRESENTATION_PDF_EXPORT_OPTIONS,
@@ -74,6 +77,15 @@ async function exportDocumentPdf(
     }
 }
 
+async function printPresentationFallback(artifact: ParsedArtifact): Promise<ArtifactPdfExportResult> {
+    const stackedHtml = await buildArtifactHtmlDocument(artifact);
+    if (stackedHtml && (await printHtmlDocument(stackedHtml, { title: artifact.title }))) {
+        return 'print_fallback';
+    }
+
+    return 'failed';
+}
+
 async function exportPresentationPdf(
     artifact: ParsedArtifact,
     onProgress?: PdfExportProgressCallback
@@ -81,9 +93,20 @@ async function exportPresentationPdf(
     onProgress?.(0, 1);
     await yieldToMainThread();
 
-    const slideDocuments = await buildPresentationSlideExportDocuments(artifact, {
-        onPrepareProgress: onProgress,
-    });
+    const fileName = buildArtifactFileName(artifact, 'pdf');
+
+    if (isDeckArtifact(artifact)) {
+        try {
+            const bytes = await buildDeckPdfBytes(artifact, onProgress);
+            await triggerFileDownload(new Blob([bytes], { type: 'application/pdf' }), ensurePdfFileName(fileName));
+            return 'success';
+        } catch {
+            // The print fallback builds from HTML <section> slides; for a JSON deck it would print the raw JSON.
+            return 'failed';
+        }
+    }
+
+    const slideDocuments = await buildPresentationSlideExportDocuments(artifact, { onPrepareProgress: onProgress });
     if (slideDocuments.length === 0) {
         return 'unavailable';
     }
@@ -91,18 +114,13 @@ async function exportPresentationPdf(
     await yieldToMainThread();
 
     try {
-        await downloadHtmlSlidesAsPdf(slideDocuments, buildArtifactFileName(artifact, 'pdf'), {
+        await downloadHtmlSlidesAsPdf(slideDocuments, fileName, {
             ...PRESENTATION_PDF_EXPORT_OPTIONS,
             onProgress,
         });
         return 'success';
     } catch {
-        const stackedHtml = await buildArtifactHtmlDocument(artifact);
-        if (stackedHtml && (await printHtmlDocument(stackedHtml, { title: artifact.title }))) {
-            return 'print_fallback';
-        }
-
-        return 'failed';
+        return printPresentationFallback(artifact);
     }
 }
 

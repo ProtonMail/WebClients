@@ -8,6 +8,9 @@ import { ensurePdfFileName } from '../../../util/pdf/downloadHtmlAsPdf';
 import { htmlDocumentToPdfBytes, htmlSlideDocumentsToPdfBytes } from '../../../util/pdf/htmlDocumentToPdfBytes';
 import { ensurePptxFileName } from '../../../util/pptx/downloadHtmlAsPptx';
 import { htmlSlidesToPptxBytes } from '../../../util/pptx/htmlSlidesToPptxBytes';
+import { isDeckArtifact } from '../../../util/slides/deckContent';
+import { buildDeckPdfBytes } from './artifactDeckPdf';
+import { buildDeckPptxBytes } from './artifactDeckPptx';
 import { prepareDocxCharts } from './artifactDocxCharts';
 import {
     PRESENTATION_PDF_EXPORT_OPTIONS,
@@ -106,6 +109,14 @@ async function buildArtifactPdfFile(
         onProgress?.(0, 1);
         await yieldToMainThread();
 
+        if (isDeckArtifact(artifact)) {
+            return {
+                data: await buildDeckPdfBytes(artifact, onProgress),
+                fileName: ensurePdfFileName(buildArtifactFileName(artifact, 'pdf')),
+                mimeType: SAVE_FORMAT_MIME_TYPES.pdf,
+            };
+        }
+
         const slideDocuments = await buildPresentationSlideExportDocuments(artifact, {
             onPrepareProgress: onProgress,
         });
@@ -159,6 +170,14 @@ async function buildArtifactPptxFile(
     if (artifact.type !== 'presentation') {
         // translator: Export error. PPTX is the PowerPoint file format.
         throw new Error(c('collider_2025:Error').t`PPTX export is only supported for presentations.`);
+    }
+
+    if (isDeckArtifact(artifact)) {
+        return {
+            data: await buildDeckPptxBytes(artifact),
+            fileName: buildArtifactFileName(artifact, 'pptx'),
+            mimeType: SAVE_FORMAT_MIME_TYPES.pptx,
+        };
     }
 
     onProgress?.(0, 1);

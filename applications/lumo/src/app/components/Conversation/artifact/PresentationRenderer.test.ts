@@ -1,5 +1,5 @@
-import { buildRevealTemplate, injectSlides } from './PresentationRenderer';
 import { buildArtifactDocument } from './WebpageRenderer';
+import { buildRevealTemplate, injectSlides } from './revealTemplate';
 
 // `vega-embed` ships ESM-only and isn't wired into this repo's Jest transform allowlist — mocked
 // here purely so importing PresentationRenderer.tsx (which now pulls in presentationCharts.ts,

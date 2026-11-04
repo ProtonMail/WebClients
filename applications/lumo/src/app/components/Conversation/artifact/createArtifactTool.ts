@@ -2,86 +2,113 @@ import type { ClientToolExecutor } from '@proton/lumo-api-client/core/types';
 
 import { ARTIFACT_CHART_RULES } from '../../../llm/visualizationPrompt';
 import type { ContentBlock } from '../../../types';
+import { readDeckContent } from '../../../util/slides/deckContent';
 import { type ArtifactType, type ParsedArtifact, hashArtifactIdentity, isArtifactType } from './parseArtifacts';
 
 export const CREATE_ARTIFACT_TOOL_NAME = 'create_artifact';
 
 // "Artifact" is the internal and model-facing term; users see "creation", and the panel is the
 // "canvas". Without this, the model echoes the tool's own vocabulary ("I've created an artifact
-// in the side panel") back to the user.
-const USER_FACING_VOCABULARY =
-    ' How to talk about this to the user: the app never shows the words "artifact" or "side ' +
-    'panel", or this tool\'s name. Refer to the content by what it is ("your email", "the script", ' +
-    '"the slide deck"); if you need a general word, call it a creation, shown in the canvas. Never ' +
-    'mention tool names. If the user mentions a creation or the canvas, they mean content from ' +
-    'this tool.';
+// in the side panel") back to the user. The third example only names slide decks when the model
+// can make them (D20).
+const buildUserFacingVocabulary = (presentationEnabled: boolean): string => {
+    return (
+        ' How to talk about this to the user: the app never shows the words "artifact" or "side ' +
+        'panel", or this tool\'s name. Refer to the content by what it is ("your email", "the script", ' +
+        (presentationEnabled ? '"the slide deck"' : '"the web page"') +
+        '); if you need a general word, call it a creation, shown in the canvas. Never ' +
+        'mention tool names. If the user mentions a creation or the canvas, they mean content from ' +
+        'this tool.'
+    );
+};
 
-// Slide-deck guidance, only sent when `presentation` is offered (`LumoArtifactSlides`).
-const PRESENTATION_FORMAT_RULES =
-    'Use `type: "presentation"` ' +
-    'specifically for a slide deck meant to be presented slide-by-slide, as opposed to a ' +
-    'single scrollable page (`webpage`) or linear text (`document`) — for this type, ' +
-    '`content` must be ONLY one or more `<section>...</section>` fragments (one per slide; ' +
-    'a nested `<section>` inside one makes a vertical sub-slide), and nothing else: no ' +
-    '`<html>`/`<head>`/`<body>`, and no `<script>`/`<style>` tags of your own — the app ' +
-    'supplies the slide library, theme, and initialization, so a full document or your own ' +
-    'script/style tags would be redundant or conflict with it. The one exception: to include ' +
-    'a chart on a presentation slide, embed a single spec as ' +
-    '`<script type="application/lumo-vega-lite+json">{...}</script>` inside that slide\'s ' +
-    '`<section>` (this script never runs — the app renders it to a static image — so it is ' +
-    'not "your own script"); never use a ```vega-lite fence in a slide, it shows as raw ' +
-    'text. In a `document`, put a chart in a ```vega-lite fenced block instead. ';
+// D20: without `LumoArtifactSlides` the tool doesn't offer `presentation` at all, so nothing tells
+// the model how to write slides. Decks made earlier as reveal.js HTML still render.
+const DOCUMENT_CHART_FORMAT = 'In a `document`, put a chart in a ```vega-lite fenced block. ';
 
-const DOCUMENT_CHART_RULE = 'In a `document`, put a chart in a ```vega-lite fenced block. ';
+// D18: the model describes the deck; the app lays it out and writes an editable PowerPoint file.
+// Field names and limits match `parseDeck` (util/slides/deck.ts).
+const PRESENTATION_DECK_FORMAT =
+    'Use `type: "presentation"` for a slide deck meant to be presented slide by slide. For this ' +
+    'type, `content` is a JSON object (as a string), never HTML; the app designs the slides and ' +
+    'makes the PowerPoint file. Shape: {"title": string, "slides": [slide, ...], "gaps": [string], ' +
+    '"calculated": [{"value": string, "how": string}]}. Each slide has a `layout` and optional ' +
+    '`notes` (speaker notes, plain text). Layouts: ' +
+    '{"layout": "title", "title": string, "subtitle": string}; ' +
+    '{"layout": "bullets", "title": string, "bullets": [string or {"text": string, "level": 2}]} ' +
+    '(level 2 is a sub-point of the bullet before it); ' +
+    '{"layout": "chart", "title": string, ' +
+    '"chart": {"kind": "bar" | "line" | "pie", "categories": [string], "series": [{"name": string, ' +
+    '"values": [number]}], "unit": string, "source": string}, "takeaway": string}; ' +
+    '{"layout": "section", "title": string, "subtitle": string} (a chapter-break divider); ' +
+    '{"layout": "two-column", "title": string, ' +
+    '"left": [string or {"text": string, "level": 2}], ' +
+    '"right": [string or {"text": string, "level": 2}]} (two equal bullet columns); ' +
+    '{"layout": "quote", "quote": string, "attribution": string} (a large pull quote; title is optional). ' +
+    'Start with a title slide. Use section dividers to break a long deck into chapters. ' +
+    'Keep slides short: at most 6 bullets of about 15 words each; split a long list ' +
+    'over several slides and put detail in the notes. A chart has at most 4 series; a pie has ' +
+    "one. Never invent data: every number on a slide or in a chart must come from the user's " +
+    "messages, their files, or web search results in this conversation, and a chart's `source` " +
+    'says which. List every number you calculated from those in `calculated`, with how: totals, ' +
+    'averages, percentages, and changes such as "+11%" or "-5%". Don\'t add claims the material ' +
+    'doesn\'t support, such as "best quarter ever". If a slide needs data you don\'t have, use {"layout": "chart", ' +
+    '"title": string, "chart": {"missing": "what data is needed"}} and add it to `gaps`; never use ' +
+    "placeholder or example numbers. Write the slides in the user's language. Slide charts use " +
+    'this format, not Vega-Lite; the chart rules below are for documents. In a `document`, put a ' +
+    'chart in a ```vega-lite fenced block. ';
 
 interface CreateArtifactToolOptions {
-    /** `LumoArtifactSlides`: offer `type: "presentation"` (slide decks) to the model. */
+    /** `LumoArtifactSlides`: whether the model may create slide decks (JSON, D18). */
     presentationEnabled: boolean;
 }
+
+const buildToolDescription = (presentationEnabled: boolean): string => {
+    return (
+        'Show a substantial, standalone piece of content to the user in a dedicated side panel, ' +
+        'instead of inline in the chat. Use it only for deliverables the user is likely to copy, ' +
+        'edit, send, save, or run outside this chat: a drafted email, letter, cover letter, Slack ' +
+        'message, essay, or report (`type: "document"`), a complete script or program (`code`), ' +
+        (presentationEnabled
+            ? 'a web page, interactive demo, or small game (`webpage`), or a slide deck (`presentation`). '
+            : 'or a web page, interactive demo, or small game (`webpage`). ') +
+        'Do NOT use it — regardless of how long the answer is — for answering ' +
+        'questions, explanations, factual or real-time information (weather, news, stock prices, ' +
+        'sports scores), summaries of search results, advice, recommendations, comparisons, or ' +
+        'conversational replies; nor for short code snippets used to illustrate a point, a small table ' +
+        'or short list, or anything that only makes sense as part of your explanation. Write those inline ' +
+        'instead. When in doubt, do not use this tool. ' +
+        'Formats: use ' +
+        '`type: "code"` (with `language: "html"`) when HTML is meant to be read as source, and ' +
+        '`type: "webpage"` when it is a complete, self-contained HTML document meant to be ' +
+        'rendered live in a sandboxed preview (interactive demos, small games, visualizations, ' +
+        'styled pages) — webpage content must be fully self-contained (inline all CSS in ' +
+        '`<style>` and all JS in `<script>`; images as `data:` URIs) since it cannot load ' +
+        'external resources or make network requests when rendered. ' +
+        (presentationEnabled ? PRESENTATION_DECK_FORMAT : DOCUMENT_CHART_FORMAT) +
+        ARTIFACT_CHART_RULES +
+        ' Never put ```card-row or ```card blocks in any artifact: they only render in chat. To ' +
+        'revise something you already created earlier in this conversation, call this again ' +
+        'with the exact same ' +
+        '`id` and the full updated content (never a diff or partial update); use a new `id` ' +
+        "only for a genuinely new, unrelated artifact. If the user's message references an " +
+        'artifact by its id, reuse that same id. Call this tool promptly once the content is ' +
+        'ready; add at most a brief confirmation afterward if needed.' +
+        buildUserFacingVocabulary(presentationEnabled)
+    );
+};
 
 export const createArtifactToolExecutor = ({ presentationEnabled }: CreateArtifactToolOptions): ClientToolExecutor => {
     const types: ArtifactType[] = presentationEnabled
         ? ['code', 'document', 'webpage', 'presentation']
         : ['code', 'document', 'webpage'];
-    const deliverables = presentationEnabled
-        ? 'a web page, interactive demo, or small game (`webpage`), or a slide deck (`presentation`). '
-        : 'or a web page, interactive demo, or small game (`webpage`). ';
-
     return {
         getClientTools: async () => [
             {
                 type: 'function',
                 function: {
                     name: CREATE_ARTIFACT_TOOL_NAME,
-                    description:
-                        'Show a substantial, standalone piece of content to the user in a dedicated side panel, ' +
-                        'instead of inline in the chat. Use it only for deliverables the user is likely to copy, ' +
-                        'edit, send, save, or run outside this chat: a drafted email, letter, cover letter, Slack ' +
-                        'message, essay, or report (`type: "document"`), a complete script or program (`code`), ' +
-                        deliverables +
-                        'Do NOT use it — regardless of how long the answer is — for answering ' +
-                        'questions, explanations, factual or real-time information (weather, news, stock prices, ' +
-                        'sports scores), summaries of search results, advice, recommendations, comparisons, or ' +
-                        'conversational replies; nor for short code snippets used to illustrate a point, a small table ' +
-                        'or short list, or anything that only makes sense as part of your explanation. Write those inline ' +
-                        'instead. When in doubt, do not use this tool. ' +
-                        'Formats: use ' +
-                        '`type: "code"` (with `language: "html"`) when HTML is meant to be read as source, and ' +
-                        '`type: "webpage"` when it is a complete, self-contained HTML document meant to be ' +
-                        'rendered live in a sandboxed preview (interactive demos, small games, visualizations, ' +
-                        'styled pages) — webpage content must be fully self-contained (inline all CSS in ' +
-                        '`<style>` and all JS in `<script>`; images as `data:` URIs) since it cannot load ' +
-                        'external resources or make network requests when rendered. ' +
-                        (presentationEnabled ? PRESENTATION_FORMAT_RULES : DOCUMENT_CHART_RULE) +
-                        ARTIFACT_CHART_RULES +
-                        ' Never put ```card-row or ```card blocks in any artifact: they only render in chat. To ' +
-                        'revise something you already created earlier in this conversation, call this again ' +
-                        'with the exact same ' +
-                        '`id` and the full updated content (never a diff or partial update); use a new `id` ' +
-                        "only for a genuinely new, unrelated artifact. If the user's message references an " +
-                        'artifact by its id, reuse that same id. Call this tool promptly once the content is ' +
-                        'ready; add at most a brief confirmation afterward if needed.' +
-                        USER_FACING_VOCABULARY,
+                    description: buildToolDescription(presentationEnabled),
                     parameters: {
                         type: 'object',
                         properties: {
@@ -152,8 +179,21 @@ function resolveType(rawType: unknown, language: string | undefined): ArtifactTy
  * Returns `null` only if a field with no reasonable fallback (title/content) is missing.
  */
 export function parseCompleteArtifactToolCall(args: Record<string, unknown>): ParsedArtifact | null {
-    const title = typeof args.title === 'string' ? args.title : undefined;
-    const content = typeof args.content === 'string' ? args.content : undefined;
+    let title = typeof args.title === 'string' ? args.title : undefined;
+    // A deck's content is described to the model as a JSON object; some send the object itself
+    // rather than a string. Keep it as the JSON text the rest of the app stores (D18).
+    const content =
+        typeof args.content === 'string'
+            ? args.content
+            : typeof args.content === 'object' && args.content !== null && !Array.isArray(args.content)
+              ? JSON.stringify(args.content)
+              : undefined;
+
+    // A deck carries its own title, and models sometimes put it only there and leave out the tool's
+    // `title` (model eval, 2026-10-15); without this the creation was dropped silently.
+    if (!title && content !== undefined && args.type === 'presentation') {
+        title = readDeckContent(content)?.deck?.title;
+    }
 
     if (!title || content === undefined) {
         return null;

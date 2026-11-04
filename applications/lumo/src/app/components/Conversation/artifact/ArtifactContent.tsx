@@ -1,6 +1,8 @@
 import { memo } from 'react';
 
+import { isDeckArtifact } from '../../../util/slides/deckContent';
 import { sendArtifactRenderFailedEvent } from '../../../util/telemetry';
+import { ArtifactPanelLoading } from './ArtifactPanelLoading';
 import { ArtifactPreviewErrorBoundary } from './ArtifactPreviewErrorBoundary';
 import { CodeRenderer } from './artifactRenderers';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
@@ -41,6 +43,11 @@ export const ArtifactContent = memo(function ArtifactContent({
     resetKey,
     isStreaming,
 }: ArtifactContentProps) {
+    // A deck is laid out again on every change, and a half-written deck repairs into a different one each
+    // time, so the preview waits for the finished deck. The chat still shows the generation progress.
+    if (isStreaming && isDeckArtifact(artifact)) {
+        return <ArtifactPanelLoading />;
+    }
     return (
         <ArtifactPreviewErrorBoundary
             resetKey={resetKey}

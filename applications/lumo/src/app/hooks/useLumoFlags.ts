@@ -27,7 +27,7 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - askUserQuestionsTool: Enable the ask-user-questions client tool
  * - retrievalTools: Let the model search files and chats with lookup tools instead of retrieving project files before sending
  * - artifactsViewSpotlight: Enable the create-artifact onboarding spotlight and New label
- * - artifactSlides: Let the model create slide decks (`presentation` artifacts)
+ * - artifactSlides: Slide decks are JSON rendered to a native .pptx (D18) instead of reveal.js HTML
  * - aiPaperTrailRoute: Enable the AI Paper Trail route (/aitrail)
  * - aiPaperTrailPopup: Show the AI Paper Trail popup panel on the home screen
  * - maxAvailableFree: When enabled, free users can select Lumo Max (default off during high load)

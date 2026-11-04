@@ -57,7 +57,7 @@ type ForwardedSendOptions = AssistantCallOptions & {
     errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
     /** Whether/how the `create_artifact` client tool is registered for this request. See `resolveArtifactToolMode`. */
     artifactToolMode?: ArtifactToolMode;
-    /** Whether `create_artifact` offers `presentation` (slide decks, `LumoArtifactSlides`). */
+    /** Whether `create_artifact` offers `presentation` (JSON decks, D18/D20, `LumoArtifactSlides`). */
     artifactPresentationEnabled?: boolean;
     /** Advertise the ask_user_questions tool only when its feature flag is enabled. */
     enableAskUserQuestionsTool?: boolean;
