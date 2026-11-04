@@ -90,6 +90,9 @@ const TopUpSummary = ({ check }: { check: ProductCheckResponse }) => {
         <div className="mb-4" data-testid="top-up-summary">
             <CheckoutRow title={c('Label').t`Credits`} amount={check.Amount} currency={check.Currency} />
             {tax && <CheckoutRow title={tax.taxRateElement} amount={tax.amount} currency={check.Currency} />}
+            {check.Credit > 0 && (
+                <CheckoutRow title={c('Label').t`Account credit`} amount={-check.Credit} currency={check.Currency} />
+            )}
             <CheckoutRow
                 className="text-bold"
                 title={c('Label').t`Total`}
