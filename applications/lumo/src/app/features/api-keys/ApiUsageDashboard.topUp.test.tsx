@@ -12,6 +12,9 @@ jest.mock('@proton/account/paymentStatus/hooks');
 jest.mock('@proton/account/subscription/hooks');
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/app-context/useApi');
+jest.mock('@proton/account/bootstrap', () => ({
+    coreEventManagerV6: () => ({ subscribe: () => () => {}, start: () => {}, reset: () => {} }),
+}));
 jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
 jest.mock('./ApiTokenUsageChart', () => ({ ApiTokenUsageChart: () => null }));
 jest.mock('@proton/components/containers/payments/LumoCreditsModal', () => ({

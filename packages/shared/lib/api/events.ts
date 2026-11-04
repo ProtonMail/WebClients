@@ -100,6 +100,7 @@ export interface CoreEventV6Response extends EventV6Defaults {
     GroupOwners: EventV6Response;
     AuthDevices: EventV6Response;
     MemberAuthDevices: EventV6Response;
+    LumoCredits: EventV6Response;
 }
 
 export interface MailEventV6Response extends EventV6Defaults {
