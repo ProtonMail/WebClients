@@ -7,6 +7,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import type { ThemeColorUnion } from '@proton/colors/types';
 
+import { useLumoFlags } from '../../hooks/useLumoFlags';
+import { canShowWebComposer } from '../../util/userAgent';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 import './ComposerNotificationCard.scss';
@@ -75,6 +77,9 @@ export const ComposerNotificationCard = ({
     className,
     role,
 }: ComposerNotificationCardProps) => {
+    const { nativeComposer } = useLumoFlags();
+    const usesNativeComposer = !canShowWebComposer(nativeComposer);
+
     const renderedAction = (() => {
         if (!action) return null;
         if (isActionConfig(action)) {
@@ -99,13 +104,19 @@ export const ComposerNotificationCard = ({
             className={clsx(
                 'composer-notification-card',
                 `composer-notification-card--${severity}`,
-                'flex flex-row flex-nowrap items-center gap-2 w-full border border-weak rounded-xl p-4 justify-space-between mb-4 relative group-hover-opacity-container',
+                'flex flex-nowrap gap-2 w-full border border-weak rounded-xl p-4 justify-space-between mb-4 relative group-hover-opacity-container',
+                usesNativeComposer ? 'flex-column items-stretch' : 'flex-row items-center',
                 hidden && 'composer-notification-card--hidden',
                 className
             )}
             role={role ?? defaultRoleForSeverity(severity)}
         >
-            <div className="flex flex-row flex-nowrap items-center gap-4 flex-1 min-w-0">
+            <div
+                className={clsx(
+                    'flex flex-row flex-nowrap items-center gap-4 min-w-0',
+                    usesNativeComposer ? 'shrink-0 w-full' : 'flex-1'
+                )}
+            >
                 {icon ? <div className="shrink-0 flex items-center">{icon}</div> : null}
                 <div className="flex flex-column gap-1 min-w-0">
                     <span className="text-semibold">{title}</span>

@@ -33,7 +33,7 @@ const useDefaultVisibility = (): boolean => {
         ? !isSidebarVisible && !isRightPanelOverlay // phone: either drawer covers the screen
         : canUseNativeSidebarLayout() || isSidebarVisible; // large: always, or legacy behavior
 
-    return lumoNativeComposerEnabled && shouldShowNativeComposer;
+    return !canShowWebComposer(lumoNativeComposerEnabled) && shouldShowNativeComposer;
 };
 
 /**

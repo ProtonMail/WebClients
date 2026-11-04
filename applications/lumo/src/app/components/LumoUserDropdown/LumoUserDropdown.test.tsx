@@ -11,7 +11,10 @@ jest.mock('../../providers/SidebarProvider', () => ({
 }));
 jest.mock('../../hooks/useIsLumoSmallScreen', () => ({ useIsLumoSmallScreen: () => ({ isSmallScreen: false }) }));
 jest.mock('../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
-jest.mock('../../util/userAgent', () => ({ canUseNativeSidebarLayout: () => true }));
+jest.mock('../../util/userAgent', () => ({
+    canUseNativeSidebarLayout: () => true,
+    canShowWebComposer: (enabled: boolean) => !enabled,
+}));
 jest.mock('../../hooks/useLumoAuthAction', () => ({ useLumoAuthAction: () => ({ trigger: jest.fn() }) }));
 
 // The dropdown's own chrome and the support modals come from @proton/components

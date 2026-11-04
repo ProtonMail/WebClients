@@ -5,7 +5,7 @@ import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useOptionalRightPanel } from '../../../providers/RightPanelProvider';
 import { useOptionalSidebar } from '../../../providers/SidebarProvider';
 import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
-import { canUseNativeSidebarLayout } from '../../../util/userAgent';
+import { canShowWebComposer, canUseNativeSidebarLayout } from '../../../util/userAgent';
 import { useNativeComposerHostVisibilityApi, useNativeComposerVisibilityApi } from './useNativeComposerVisibilityApi';
 
 jest.mock('../../../hooks/useLumoFlags');
@@ -36,6 +36,7 @@ describe('useNativeComposerVisibilityApi', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         mockedUseLumoFlags.mockReturnValue({ nativeComposer: true });
+        (canShowWebComposer as jest.Mock).mockImplementation((enabled: boolean) => !enabled);
         givenRightPanel({ isOverlay: false });
     });
 
