@@ -17,7 +17,6 @@ export const FLAGS_WITH_VARIANT = [
     'OrganizationLevelEasySwitch',
     'VPNReferralWithoutTrial',
     'B2BAlwaysOnWindowsRelease',
-    'CategoryViewVariant',
     'MeetScreenShareAudioSupportedElectronVersion',
     'CheckoutCondensedAddons',
     'InboxBringYourOwnEmailImportPeriodExperiment',
@@ -48,20 +47,6 @@ export type CheckoutCondensedAddonsVariant = 'control' | 'condensed';
 export type InboxBringYourOwnEmailImportPeriodExperimentVariant = 'Control' | 'Treatment';
 
 /**
- * The important variant for the client is `RecategorizationButton`. Users with this variant will see the move to primary badge.
- * The other variants are used for other experiments and are here for reference.
- */
-export type CategoryViewVariantVariant =
-    | 'FeatureAccessOn'
-    | 'PrimaryFiltering45'
-    | 'PrimaryFiltering60'
-    | 'RecategorizationButton'
-    | 'RecategorizationNoButton'
-    | 'BackBucket'
-    | 'GradualRollout'
-    | 'NoAccess';
-
-/**
  * @description Union type of the list of feature flags with a variant.
  *
  * Based on `FLAG_VARIANTS` list.
@@ -89,7 +74,6 @@ type FeatureFlagVariantMap = {
     MeetSpotlightType: VariantReturnType<MeetSpotlightTypeVariant>;
     VPNReferralWithoutTrial: VariantReturnType<VPNReferralWithoutTrialVariant>;
     B2BAlwaysOnWindowsRelease: VariantReturnType<B2BAlwaysOnWindowsReleaseVariant>;
-    CategoryViewVariant: VariantReturnType<CategoryViewVariantVariant>;
     MeetScreenShareAudioSupportedElectronVersion: VariantReturnType<MeetScreenShareAudioSupportedElectronVersionVariant>;
     CheckoutCondensedAddons: VariantReturnType<CheckoutCondensedAddonsVariant>;
     InboxBringYourOwnEmailImportPeriodExperiment: VariantReturnType<InboxBringYourOwnEmailImportPeriodExperimentVariant>;

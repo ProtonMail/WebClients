@@ -46,7 +46,6 @@ interface Props {
     attachmentsMetadata?: AttachmentsMetadata[];
     userSettings?: UserSettings;
     oneTimeCode?: string | null;
-    shouldShowPrimaryBadge: boolean;
     showHoverButtons: boolean;
 }
 
@@ -63,7 +62,6 @@ const ItemColumnLayout = ({
     attachmentsMetadata = [],
     userSettings,
     oneTimeCode,
-    shouldShowPrimaryBadge,
     showHoverButtons,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
@@ -250,13 +248,7 @@ const ItemColumnLayout = ({
                     </div>
                 </div>
                 {showHoverButtons && (
-                    <ItemHoverButtons
-                        element={element}
-                        labelID={labelID}
-                        onBack={onBack}
-                        size="small"
-                        shouldShowPrimaryBadge={shouldShowPrimaryBadge}
-                    />
+                    <ItemHoverButtons element={element} labelID={labelID} onBack={onBack} size="small" />
                 )}
             </div>
 
