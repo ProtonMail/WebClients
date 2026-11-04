@@ -1,5 +1,6 @@
 import type { ConnectionStateInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 
+import { forwardWorkerLog } from '../utils/forwardWorkerLog';
 import type { CreateJoinRequestResult, MeetCoreClient } from './MeetCoreClient';
 import {
     emitMeetCoreAgentLeftEvent,
@@ -482,6 +483,10 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
 
     private readonly handleWorkerMessage = (event: MessageEvent<MeetCoreWorkerResponseMessage>) => {
         const message = event.data;
+
+        if (forwardWorkerLog(message)) {
+            return;
+        }
 
         if (isCookieBridgeRequestMessage(message)) {
             void this.handleCookieBridgeRequest(message);
