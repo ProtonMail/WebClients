@@ -6,7 +6,7 @@ import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 
 import { isConnectionTimeoutError } from '../../utils/connectionErrors';
 import { toMeetCoreErrorEnum } from '../../wasm/meetCoreError';
-import { MeetCoreStalledError, isMeetCoreRestartedError } from '../../wasm/meetCoreStallRecovery';
+import { MeetCoreStalledError } from '../../wasm/meetCoreStallRecovery';
 
 export const REJOIN_RETRY_DELAYS_MS = [2 * SECOND, 5 * SECOND, 10 * SECOND, 20 * SECOND];
 
@@ -52,7 +52,7 @@ const isRetryableRejoinError = (error: unknown) => {
     if (meetCoreError !== undefined) {
         return RETRYABLE_MEET_CORE_ERRORS.has(meetCoreError);
     }
-    return isMeetCoreRestartedError(error) || getIsConnectionIssue(error) || isConnectionTimeoutError(error);
+    return getIsConnectionIssue(error) || isConnectionTimeoutError(error);
 };
 
 const waitForOnlineOrDelay = (delayMs: number, signal: AbortSignal) =>

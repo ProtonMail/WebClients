@@ -1,7 +1,7 @@
 import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { ConnectionError } from 'livekit-client';
 
-import { MeetCoreRestartedError, MeetCoreStalledError } from '../../wasm/meetCoreStallRecovery';
+import { MeetCoreStalledError } from '../../wasm/meetCoreStallRecovery';
 import { OFFLINE_GIVE_UP_MS, OFFLINE_RECHECK_MS, REJOIN_RETRY_DELAYS_MS, runRejoinAttempts } from './rejoinAttempts';
 
 const offlineError = Object.assign(new Error('Offline'), { name: 'OfflineError' });
@@ -101,10 +101,6 @@ describe('runRejoinAttempts', () => {
         { name: 'an API network error', error: networkError },
         { name: 'an unavailable API', error: Object.assign(new Error('Unavailable'), { status: 503 }) },
         { name: 'a meet-core call abandoned after a restart', error: new MeetCoreStalledError('joinMeeting', true) },
-        {
-            name: 'an MLS setup dropped by a restart',
-            error: Object.assign(new Error('MLS setup failed'), { coreError: new MeetCoreRestartedError() }),
-        },
         { name: 'a meet-core HTTP failure', error: meetCoreError(MeetCoreErrorEnum.HttpClientError) },
         { name: 'a meet-core network timeout', error: meetCoreError(MeetCoreErrorEnum.NetworkTimeout) },
         { name: 'a meet-core websocket failure', error: meetCoreError(MeetCoreErrorEnum.WebSocketError) },

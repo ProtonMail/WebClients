@@ -18,7 +18,7 @@ export class MeetCoreRestartedError extends Error {
     }
 }
 
-export const isMeetCoreRestartedError = (error: unknown) =>
+const isMeetCoreRestartedError = (error: unknown) =>
     error instanceof MeetCoreRestartedError ||
     (error instanceof Error && (error as { coreError?: unknown }).coreError instanceof MeetCoreRestartedError);
 
