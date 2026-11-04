@@ -26,4 +26,22 @@ describe('<Card />', () => {
 
         expect(container.firstChild).toHaveClass('rounded');
     });
+
+    it.each([
+        ['sm', 'rounded-sm'],
+        ['md', 'rounded'],
+        ['lg', 'rounded-lg'],
+        ['xl', 'rounded-xl'],
+        ['xxl', 'rounded-xxl'],
+    ] as const)('renders rounded with size %s', (size, className) => {
+        const { container } = render(<Card rounded={size}>Lorem ipsum</Card>);
+
+        expect(container.firstChild).toHaveClass(className);
+    });
+
+    it('is not rounded when rounded is false', () => {
+        const { container } = render(<Card rounded={false}>Lorem ipsum</Card>);
+
+        expect(container.firstChild).not.toHaveClass('rounded');
+    });
 });
