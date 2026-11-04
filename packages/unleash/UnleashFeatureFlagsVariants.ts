@@ -21,6 +21,7 @@ export const FLAGS_WITH_VARIANT = [
     'MeetScreenShareAudioSupportedElectronVersion',
     'CheckoutCondensedAddons',
     'InboxBringYourOwnEmailImportPeriodExperiment',
+    'PingOMaticEventLoopInterval',
 ] satisfies FeatureFlag[];
 
 /**
@@ -40,6 +41,7 @@ export type OrganizationLevelEasySwitchVariant = 'Config';
 export type VPNReferralWithoutTrialVariant = 'A' | 'B';
 export type B2BAlwaysOnWindowsReleaseVariant = 'version';
 export type MeetScreenShareAudioSupportedElectronVersionVariant = 'version';
+export type PingOMaticEventLoopIntervalVariant = 'Config';
 export type EnableVpn2024AddonsExperimentVariant =
     'lumo-addon-only' | 'meet-addon-only' | 'pass-addon-only' | 'no-addon';
 export type CheckoutCondensedAddonsVariant = 'control' | 'condensed';
@@ -91,6 +93,7 @@ type FeatureFlagVariantMap = {
     MeetScreenShareAudioSupportedElectronVersion: VariantReturnType<MeetScreenShareAudioSupportedElectronVersionVariant>;
     CheckoutCondensedAddons: VariantReturnType<CheckoutCondensedAddonsVariant>;
     InboxBringYourOwnEmailImportPeriodExperiment: VariantReturnType<InboxBringYourOwnEmailImportPeriodExperimentVariant>;
+    PingOMaticEventLoopInterval: VariantReturnType<PingOMaticEventLoopIntervalVariant>;
 };
 
 /**

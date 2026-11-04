@@ -51,7 +51,6 @@ const createMockTimeoutIntervalsState = (initialIntervals: EventManagerIntervals
         getInterval: vi.fn((type: EventManagerIntervalTypes) => {
             return intervals[type];
         }),
-        isForegroundEqualToBackground: vi.fn(() => intervals.foreground === intervals.background),
         setIntervals: (newIntervals: EventManagerIntervals) => {
             intervals = { ...newIntervals };
         },
@@ -482,6 +481,137 @@ describe('event manager', () => {
             vi.advanceTimersByTime(1); // t=35000 — second call fires at new interval
             await flushPromises();
             expect(getEvents).toHaveBeenCalledTimes(2);
+
+            eventManager.reset();
+        });
+    });
+
+    describe('intervals override', () => {
+        beforeEach(() => {
+            vi.useFakeTimers();
+            vi.setSystemTime(new Date(0));
+        });
+
+        afterEach(() => {
+            vi.useRealTimers();
+        });
+
+        const setupOverride = ({ visible = true }: { visible?: boolean } = {}) => {
+            const visibilityState = createMockVisibilityState(visible);
+            const getEvents = mockApi([
+                { EventID: '2', More: 0 },
+                { EventID: '3', More: 0 },
+                { EventID: '4', More: 0 },
+            ]);
+            const eventManager = createEventManager({
+                eventID: '1',
+                getEvents,
+                timeoutIntervalsState: createMockTimeoutIntervalsState({ foreground: 30_000, background: 30_000 }),
+                visibilityState,
+            });
+            return { eventManager, getEvents, visibilityState };
+        };
+
+        const advance = async (ms: number) => {
+            vi.advanceTimersByTime(ms);
+            await flushPromises();
+        };
+
+        it('applies the override from the next scheduled call', async () => {
+            const { eventManager, getEvents } = setupOverride();
+
+            eventManager.start(); // scheduled at t=30000
+            eventManager.setIntervalsOverride!({ foreground: 120_000, background: 300_000 });
+
+            await advance(30_000); // t=30000, still on the regular schedule
+            expect(getEvents).toHaveBeenCalledTimes(1);
+
+            await advance(119_999); // t=149999
+            expect(getEvents).toHaveBeenCalledTimes(1);
+
+            await advance(1); // t=150000, on the extended schedule
+            expect(getEvents).toHaveBeenCalledTimes(2);
+
+            eventManager.reset();
+        });
+
+        it('uses the background override while hidden', async () => {
+            const { eventManager, getEvents } = setupOverride({ visible: false });
+
+            eventManager.setIntervalsOverride!({ foreground: 120_000, background: 300_000 });
+            eventManager.start();
+
+            await advance(299_999);
+            expect(getEvents).toHaveBeenCalledTimes(0);
+
+            await advance(1);
+            expect(getEvents).toHaveBeenCalledTimes(1);
+
+            eventManager.reset();
+        });
+
+        it('falls back to the regular interval right away when the override is cleared', async () => {
+            const { eventManager, getEvents } = setupOverride();
+
+            eventManager.setIntervalsOverride!({ foreground: 120_000, background: 120_000 });
+            eventManager.start(); // scheduled at t=120000
+
+            await advance(10_000); // t=10000
+            eventManager.setIntervalsOverride!(undefined); // brought forward to t=30000
+
+            await advance(19_999); // t=29999
+            expect(getEvents).toHaveBeenCalledTimes(0);
+
+            await advance(1); // t=30000
+            expect(getEvents).toHaveBeenCalledTimes(1);
+
+            eventManager.reset();
+        });
+
+        it('calls soon when the override is cleared past the regular interval', async () => {
+            const { eventManager, getEvents } = setupOverride();
+
+            eventManager.setIntervalsOverride!({ foreground: 120_000, background: 120_000 });
+            eventManager.start(); // scheduled at t=120000
+
+            await advance(60_000); // t=60000
+            eventManager.setIntervalsOverride!(undefined);
+
+            await advance(50);
+            expect(getEvents).toHaveBeenCalledTimes(1);
+
+            eventManager.reset();
+        });
+
+        it('never polls more often than the regular interval', async () => {
+            const { eventManager, getEvents } = setupOverride();
+
+            eventManager.setIntervalsOverride!({ foreground: 5_000, background: 5_000 });
+            eventManager.start();
+
+            await advance(29_999);
+            expect(getEvents).toHaveBeenCalledTimes(0);
+
+            await advance(1);
+            expect(getEvents).toHaveBeenCalledTimes(1);
+
+            eventManager.reset();
+        });
+
+        it('reschedules to the foreground override when becoming visible', async () => {
+            const { eventManager, getEvents, visibilityState } = setupOverride({ visible: false });
+
+            eventManager.setIntervalsOverride!({ foreground: 120_000, background: 300_000 });
+            eventManager.start(); // scheduled at t=300000
+
+            await advance(10_000);
+            visibilityState.triggerChange(true); // brought forward to t=120000
+
+            await advance(109_999); // t=119999
+            expect(getEvents).toHaveBeenCalledTimes(0);
+
+            await advance(1); // t=120000
+            expect(getEvents).toHaveBeenCalledTimes(1);
 
             eventManager.reset();
         });

@@ -33,6 +33,12 @@ interface EventNotifierConfig {
     /** Loops to subscribe to. A ping is received for each of them, even when there is no new event. */
     loops: EventNotifierLoop[];
     onPing: (ping: EventNotifierPing) => void;
+    /**
+     * Called with true once pings can be received, i.e. the connection is open and the loops are
+     * subscribed, and with false as soon as that stops being the case. Pings only replace polling
+     * while this is true.
+     */
+    onPingChannelChange?: (active: boolean) => void;
     /** Errors are never actionable for the user, this is only meant for logging. */
     onError?: (message: string, error?: unknown) => void;
     visibilityState?: VisibilityState;
@@ -58,6 +64,8 @@ export class EventNotifier {
 
     private readonly onPing: (ping: EventNotifierPing) => void;
 
+    private readonly onPingChannelChange: (active: boolean) => void;
+
     private readonly onError: (message: string, error?: unknown) => void;
 
     private readonly visibilityState: VisibilityState;
@@ -77,6 +85,8 @@ export class EventNotifier {
 
     private retryIndex = 0;
 
+    private pingChannelActive = false;
+
     private started = false;
 
     constructor({
@@ -85,6 +95,7 @@ export class EventNotifier {
         transport = EventNotifierTransport.Sse,
         loops,
         onPing,
+        onPingChannelChange = noop,
         onError = noop,
         visibilityState = getVisibilityStateSingleton(),
     }: EventNotifierConfig) {
@@ -93,6 +104,7 @@ export class EventNotifier {
         this.transport = transport;
         this.loops = loops;
         this.onPing = onPing;
+        this.onPingChannelChange = onPingChannelChange;
         this.onError = onError;
         this.visibilityState = visibilityState;
     }
@@ -198,6 +210,16 @@ export class EventNotifier {
 
         this.connection?.close();
         this.connection = undefined;
+
+        this.setPingChannelActive(false);
+    }
+
+    private setPingChannelActive(active: boolean) {
+        if (this.pingChannelActive === active) {
+            return;
+        }
+        this.pingChannelActive = active;
+        this.onPingChannelChange(active);
     }
 
     /** Closes the current connection, if any, and schedules a new one with a backoff. */
@@ -273,6 +295,11 @@ export class EventNotifier {
             }
             // Without a subscription no ping is received, which the regular polling covers.
             this.onError('failed to subscribe to the event loops', error);
+            return;
+        }
+
+        if (!abortController.signal.aborted) {
+            this.setPingChannelActive(true);
         }
     }
 

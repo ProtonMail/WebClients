@@ -83,9 +83,9 @@ describe('onceWithQueue', () => {
     });
 
     it('should run the queued call with the arguments of the last call', async () => {
-        const calls = [];
+        const calls: string[] = [];
 
-        const cb = onceWithQueue(async (arg) => {
+        const cb = onceWithQueue(async (arg: string) => {
             await wait(DELAY);
             calls.push(arg);
         });
