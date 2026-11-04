@@ -47,6 +47,7 @@ import {
 import type { LumoDispatch, LumoState } from '../redux/store';
 import { attachmentDataCache } from '../services/attachmentDataCache';
 import { recordLastRequest } from '../services/feedback/lastRequestStore';
+import { createToolFileProcessor } from '../services/files/toolFileProcessing';
 import { syncArtifactAssets } from '../services/generation/syncArtifactAssets';
 import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
 import { ConversationStatus, Role } from '../types';
@@ -125,6 +126,7 @@ export function sendMessageWithRedux(
 
         const client = new LumoApiClient({
             ...getDesktopLumoApiClientConfig(),
+            processToolFile: createToolFileProcessor(assistantOptions.enableImageTools ?? false),
             ...config,
         });
 
@@ -152,7 +154,7 @@ export function sendMessageWithRedux(
             const result = await client.callAssistant(api, turns, {
                 ...assistantOptions,
                 featureFlags,
-                chunkCallback: async (message: GenerationResponseMessage) => {
+                chunkCallback: async (message) => {
                     if (message.type !== 'token_data' || message.target !== 'message') {
                         flushContent();
                     }
@@ -221,6 +223,15 @@ export function sendMessageWithRedux(
                             // response's model belongs on the assistant message.
                             if (message.target === 'message') {
                                 servingModelID = message.model;
+                            }
+                            break;
+
+                        case 'client_tool_result':
+                            sawToolActivity = true;
+                            if (messageId) {
+                                dispatch(
+                                    setToolResult({ messageId, content: message.content, toolImages: message.images })
+                                );
                             }
                             break;
 

@@ -8,7 +8,7 @@ import type { LumoApiClient } from '@proton/lumo-api-client/core/client';
 import { isContextLengthExceededApiError } from '@proton/lumo-api-client/core/context-length';
 import type {
     ChatCompletionsFunctionTool,
-    GenerationResponseMessage,
+    ChunkCallback,
     Role,
     ToolName as ServerToolName,
     Turn,
@@ -401,7 +401,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             let streamFailed = false;
             let hitContextLimit = false;
 
-            const chunkCallback = (chunk: GenerationResponseMessage) => {
+            const chunkCallback: ChunkCallback = (chunk) => {
                 if (chunk.type === 'token_data' && chunk.target === 'message') {
                     appendReplyDelta(chunk.content);
                 } else if (chunk.type === 'server_tool_call') {

@@ -18,6 +18,7 @@ import type {
     MessagePub,
     MessageUsage,
     ShallowAttachment,
+    ToolResultBlock,
 } from '../../../types';
 import type { LumoStreamUsage } from '../../../types-api';
 import type { LumoDispatch, LumoState } from '../../store';
@@ -49,6 +50,7 @@ export type SetMessageUsageAction = {
 };
 
 export type SetToolResultAction = ChunkAction & {
+    toolImages?: ToolResultBlock['toolImages'];
     callId?: string;
     meta?: {
         settings: string;
@@ -178,7 +180,13 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
 
             // Update blocks
             message.blocks ??= [];
-            message.blocks = setToolResultInBlocks(message.blocks, chunk.content, chunk.meta, chunk.callId);
+            message.blocks = setToolResultInBlocks(
+                message.blocks,
+                chunk.content,
+                chunk.meta,
+                chunk.callId,
+                chunk.toolImages
+            );
         })
         .addCase(setSuggestedQuestions, (state, action) => {
             const { messageId, questions } = action.payload;

@@ -322,7 +322,8 @@ export function setToolResultInBlocks(
     blocks: ContentBlock[],
     toolResult: string,
     meta?: ToolResultBlock['meta'],
-    toolCallId?: string
+    toolCallId?: string,
+    toolImages?: ToolResultBlock['toolImages']
 ): ContentBlock[] {
     const resolvedToolCallId = toolCallId ?? findUnpairedToolCallId(blocks);
 
@@ -333,6 +334,7 @@ export function setToolResultInBlocks(
             const resolvedMeta = meta ?? prev.meta;
             const block: ToolResultBlock = {
                 type: 'tool_result',
+                ...(toolImages?.length ? { toolImages } : {}),
                 content: toolResult,
                 toolResult: tryParseJSON(toolResult),
                 ...(resolvedMeta ? { meta: resolvedMeta } : {}),
@@ -342,8 +344,10 @@ export function setToolResultInBlocks(
         }
 
         const resolvedMeta = meta ?? prev?.meta;
+        const resolvedImages = toolImages ?? prev?.toolImages;
         const block: ToolResultBlock = {
             type: 'tool_result',
+            ...(resolvedImages?.length ? { toolImages: resolvedImages } : {}),
             content: toolResult,
             toolResult: tryParseJSON(toolResult),
             tool_call_id: resolvedToolCallId,
@@ -358,8 +362,10 @@ export function setToolResultInBlocks(
     const index = trailingIndex !== -1 && countUnpairedIdLessToolCalls(blocks) > 0 ? -1 : trailingIndex;
     const prev = index === -1 ? undefined : (blocks[index] as ToolResultBlock);
     const resolvedMeta = meta ?? prev?.meta;
+    const resolvedImages = toolImages ?? prev?.toolImages;
     const block: ToolResultBlock = {
         type: 'tool_result',
+        ...(resolvedImages?.length ? { toolImages: resolvedImages } : {}),
         content: toolResult,
         toolResult: tryParseJSON(toolResult),
         ...(prev?.tool_call_id ? { tool_call_id: prev.tool_call_id } : {}),

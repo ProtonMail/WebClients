@@ -111,6 +111,7 @@ export const WorkflowCodegenPanel = ({ isGuest }: WorkflowCodegenPanelProps) => 
                 enableExternalTools: false,
                 enableImageTools: false,
                 chunkCallback: async (message) => {
+                    if (message.type === 'client_tool_result') return;
                     accumulated = appendWorkflowCodegenAssistantText(accumulated, message);
                 },
                 finishCallback: async (status) => {
