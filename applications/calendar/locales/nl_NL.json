@@ -6825,6 +6825,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "U heeft de limiet voor boekingen bereikt (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Vraag uw beheerder om het abonnement op te waarderen of een pagina uit de zijbalk \"Boekingspagina's\" in ${ CALENDAR_APP_NAME } te verwijderen."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Om een nieuwe boekingspagina toe te voegen, verwijdert u een bestaande pagina uit de zijbalk \"Boekingspagina's\" in ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {

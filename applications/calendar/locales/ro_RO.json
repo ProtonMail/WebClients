@@ -1116,12 +1116,12 @@
         "Servere VPN dedicate: ${ ips }"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
-        "Asistent de IA ${ LUMO_APP_NAME }"
+        "Asistent ${ LUMO_APP_NAME } AI"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } utilizator)",
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } utilizatori)",
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } de utilizatori)"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "Licențe IA ${ LUMO_APP_NAME }"
@@ -1152,9 +1152,9 @@
         "${ quantity } de domenii personale"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }"
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
@@ -1925,7 +1925,7 @@
     },
     "collider_2025: feature": {
       "Access to advanced AI models": [
-        "Acces la modele AI avansate"
+        "Acces la modele de IA avansate"
       ],
       "Basic chat history": [
         "Istoric de bază conversații"
