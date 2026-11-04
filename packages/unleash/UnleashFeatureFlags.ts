@@ -393,6 +393,7 @@ enum MeetFeatureFlag {
     MeetUnblockAudioButton = 'MeetUnblockAudioButton',
     MeetUpsell = 'MeetUpsell',
     MeetUseCachedServerTime = 'MeetUseCachedServerTime',
+    MeetUseMessageQueues = 'MeetUseMessageQueues',
     MeetVirtualBackground = 'MeetVirtualBackground',
     MeetVp9 = 'MeetVp9',
     MeetWaitingRoom = 'MeetWaitingRoom',

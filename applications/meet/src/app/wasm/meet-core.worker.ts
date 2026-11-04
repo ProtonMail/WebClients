@@ -198,6 +198,9 @@ const handleInit = async (request: MeetCoreInitRequestMessage) => {
     app = await new App(env, appVersion, userAgent, dbPath, httpHost, wsHost, userId, uid);
     app.setWorkerCookieBridgeEnabled(true);
     app.setUseCachedServerTime(request.params.useCachedServerTime);
+    app.setUseMessageQueues(request.params.useMessageQueues);
+    // eslint-disable-next-line no-console
+    console.log(`[Meet] setUseMessageQueues(${request.params.useMessageQueues}) [worker]`);
 };
 
 const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<MeetCoreRpcResult> => {
