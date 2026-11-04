@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 
+import { coreEventManagerV6 } from '@proton/account/bootstrap';
 import { useApi } from '@proton/app-context/useApi';
 import {
     type LumoCreditResponse,
     getLumoCreditConfig,
     updateLumoCreditAutoTopUpConfig,
 } from '@proton/payments/core/api/lumoCredit';
+import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { ApiBalanceSettings } from './ApiBalanceSettingsModal';
@@ -23,6 +26,8 @@ const parseCredits = (credits?: string) => {
     const amount = Number(credits);
     return Number.isFinite(amount) ? amount : undefined;
 };
+
+const hasLumoCreditsChanged = (event: CoreEventV6Response) => event.Refresh || !!event.LumoCredits?.length;
 
 const getBalanceSettings = (response?: LumoCreditResponse): ApiBalanceSettings => ({
     autoTopUp: {
@@ -54,6 +59,18 @@ export const useLumoCredits = () => {
 
     useEffect(() => {
         void fetchCredits();
+
+        const coreEventManager = coreEventManagerV6({ api: getSilentApi(api) });
+        const unsubscribe = coreEventManager.subscribe((event) => {
+            if (hasLumoCreditsChanged(event)) {
+                void fetchCredits();
+            }
+        });
+        coreEventManager.start();
+        return () => {
+            unsubscribe();
+            coreEventManager.reset();
+        };
     }, []);
 
     const settings = getBalanceSettings(response);

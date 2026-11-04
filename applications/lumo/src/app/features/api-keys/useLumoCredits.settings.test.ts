@@ -7,6 +7,9 @@ import { MOCK_LUMO_CREDIT_RESPONSE } from '@proton/payments/testing/lumo-credit'
 import { useLumoCredits } from './useLumoCredits';
 
 jest.mock('@proton/app-context/useApi');
+jest.mock('@proton/account/bootstrap', () => ({
+    coreEventManagerV6: () => ({ subscribe: () => () => {}, start: () => {}, reset: () => {} }),
+}));
 
 const getUrl = 'payments/v5/products/lumo-credit';
 const autoTopUpUrl = 'payments/v5/products/lumo-credit/auto-top-up';
