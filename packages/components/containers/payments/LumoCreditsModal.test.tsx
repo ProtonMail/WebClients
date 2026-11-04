@@ -407,7 +407,31 @@ describe('tax', () => {
         const summary = screen.getByTestId('top-up-summary');
         expect(summary).toHaveTextContent(/Tax 8\.1%\s*1\.62/);
         expect(summary).toHaveTextContent(/Total\s*21\.62/);
+        expect(summary).not.toHaveTextContent('Account credit');
         expect(screen.getByTestId('amountToCharge-text')).toHaveTextContent('21.62');
+    });
+
+    it.each([
+        { name: 'part of', Credit: 500, AmountDue: 1500, credit: /Account credit\s*[-−]5\b/, total: /Total\s*15\b/ },
+        { name: 'all of', Credit: 2000, AmountDue: 0, credit: /Account credit\s*[-−]20\b/, total: /Total\s*0\b/ },
+    ])('should show the account credit that pays $name the credits', async ({ Credit, AmountDue, credit, total }) => {
+        mockPaymentMethods().noSaved();
+        checkProductMock.mockImplementation(({ data }) => ({
+            Currency: data.Currency,
+            Amount: data.Quantity * 100,
+            AmountDue: data.Quantity === 20 ? AmountDue : data.Quantity * 100,
+            Credit: data.Quantity === 20 ? Credit : 0,
+            TaxInclusive: 1,
+            Taxes: [{ Name: 'Mehrwertsteuer (MWST)', Rate: 8.1, Amount: 112 }],
+        }));
+
+        render(<ContextLumoCreditsModal paymentStatus={MOCK_PAYMENT_STATUS} open={true} app={APPS.PROTONLUMO} />);
+        await typeCredits('20');
+
+        await waitFor(() => expect(screen.getByTestId('top-up-summary')).toHaveTextContent(credit));
+        const summary = screen.getByTestId('top-up-summary');
+        expect(summary).toHaveTextContent(/Credits\s*20\b/);
+        expect(summary).toHaveTextContent(total);
     });
 
     it('should show the tax included in the credits for a tax-inclusive check', async () => {
