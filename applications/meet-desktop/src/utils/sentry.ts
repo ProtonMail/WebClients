@@ -67,7 +67,6 @@ export async function initializeSentry() {
         dsn,
         getSessions: () => [appSession(), updateSession()],
         maxBreadcrumbs: 100,
-        attachStacktrace: true,
         sampleRate: 1.0,
         environment,
         release,
