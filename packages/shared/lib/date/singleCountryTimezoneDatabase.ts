@@ -167,6 +167,7 @@ export const singleCountryTimezoneDatabase = {
     'America/Porto_Velho': 'BR',
     'America/Puerto_Rico': 'PR',
     'America/Punta_Arenas': 'CL',
+    'America/Coyhaique': 'CL',
     'America/Rankin_Inlet': 'CA',
     'America/Recife': 'BR',
     'America/Regina': 'CA',
