@@ -4,19 +4,9 @@ import { mainLogger, sanitizeUrlForLogging } from "./index";
 
 function sanitizeErrorForLogging(reason: unknown): unknown {
     if (reason instanceof Error) {
-        const sanitizedError: Record<string, unknown> = {
-            name: sanitizeMessageForLogging(reason.name),
-            message: sanitizeMessageForLogging(reason.message),
-        };
-
-        if ("code" in reason && typeof reason.code === "string") {
-            sanitizedError.code = reason.code;
-        }
-
-        if (reason.stack) {
-            sanitizedError.stack = sanitizeStackTrace(reason.stack);
-        }
-
+        const sanitizedError = new Error(sanitizeMessageForLogging(reason.message));
+        sanitizedError.name = sanitizeMessageForLogging(reason.name);
+        sanitizedError.stack = reason.stack && sanitizeStackTrace(reason.stack);
         return sanitizedError;
     }
 
