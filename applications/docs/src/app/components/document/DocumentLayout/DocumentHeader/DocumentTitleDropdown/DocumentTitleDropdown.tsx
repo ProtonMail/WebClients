@@ -64,13 +64,7 @@ import { WordCountIcon } from '../icons'
 import { useSheetImportModal } from './SheetImportModal'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import { useEvent } from '~/utils/misc'
-import {
-  useIsSheetsEnabled,
-  useIsDownloadLogsAllowed,
-  useMoveModalDriveSdkEnabled,
-  useTrashWithSDK,
-  useIsODTEnabled,
-} from '~/utils/flags'
+import { useIsSheetsEnabled, useIsDownloadLogsAllowed, useIsODTEnabled } from '~/utils/flags'
 import { useDebugMode } from '~/utils/debug-mode-context'
 import * as Ariakit from '@ariakit/react'
 import clsx from '@proton/utils/clsx'
@@ -116,8 +110,6 @@ export function DocumentTitleDropdown({
   const { APP_VERSION } = useConfig()
   const appVersion = getAppVersion(APP_VERSION)
   const { createNotification } = useNotifications()
-  const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
-  const trashWithSDK = useTrashWithSDK()
   const isSheetsEnabled = useIsSheetsEnabled()
   const isODTEnabled = useIsODTEnabled()
 
@@ -356,13 +348,12 @@ export function DocumentTitleDropdown({
   }, [handleSheetImportData, showSheetImportModal])
 
   const openMoveToFolderModal = useCallback(() => {
-    if (moveModalDriveSdkEnabled && !isPublicMode) {
-      const { volumeId, linkId } = documentState.getProperty('entitlements').nodeMeta as NodeMeta
-      showMoveItemsModal({ nodeUids: [generateNodeUid(volumeId, linkId)] })
-    } else {
-      authenticatedController?.openMoveToFolderModal()
+    if (isPublicMode) {
+      return
     }
-  }, [authenticatedController, documentState, isPublicMode, moveModalDriveSdkEnabled, showMoveItemsModal])
+    const { volumeId, linkId } = documentState.getProperty('entitlements').nodeMeta as NodeMeta
+    showMoveItemsModal({ nodeUids: [generateNodeUid(volumeId, linkId)] })
+  }, [documentState, isPublicMode, showMoveItemsModal])
 
   const trashDocument = useCallback(async () => {
     if (!authenticatedController) {
@@ -370,11 +361,11 @@ export function DocumentTitleDropdown({
     }
 
     try {
-      await authenticatedController.trashDocument(trashWithSDK)
+      await authenticatedController.trashDocument()
     } finally {
       close()
     }
-  }, [authenticatedController, close, trashWithSDK])
+  }, [authenticatedController, close])
 
   const showVersionHistory = useCallback(() => {
     if (!authenticatedController) {

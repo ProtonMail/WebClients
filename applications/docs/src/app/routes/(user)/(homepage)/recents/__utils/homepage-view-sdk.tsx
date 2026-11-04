@@ -34,7 +34,7 @@ import { traceRecentsError } from './traceRecentsError'
 import { useAddresses } from '@proton/account/addresses/hooks'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
 
-export function HomepageViewProviderSDK({ children }: HomepageViewProviderProps) {
+export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
   const drive = getDrive()
   const eventSubscriber = getEventSubscriber()
 

@@ -2,7 +2,6 @@ import { c } from 'ttag'
 import type { SquashDocument } from '../UseCase/SquashDocument'
 import type { DuplicateDocument } from '../UseCase/DuplicateDocument'
 import type { CreateNewDocument } from '../UseCase/CreateNewDocument'
-import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import type { DocumentType, NodeMeta } from '@proton/docs-shared/BasicTypes'
 import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
 import type { YjsState } from '@proton/docs-shared/YjsState'
@@ -53,7 +52,6 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
 
   constructor(
     private readonly documentState: DocumentState,
-    private driveCompat: DriveCompat,
     private _squashDocument: SquashDocument,
     readonly _createInitialCommit: SeedInitialCommit,
     private _duplicateDocument: DuplicateDocument,
@@ -403,23 +401,17 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     return result.getValue()
   }
 
-  public async trashDocument(replaceDriveCompat = false): Promise<void> {
+  public async trashDocument(): Promise<void> {
     this.documentState.setProperty('documentTrashState', 'trashing')
 
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
 
-      if (replaceDriveCompat) {
-        try {
-          await trashDocumentSDK(generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
-        } catch (error) {
-          reportTrashError(error)
-          throw error
-        }
-      } else {
-        // Not replacing this, because will be deleted when we switch to SDK 100%
-        const parentLinkId = decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
-        await this.driveCompat.trashDocument(this.documentState.getProperty('entitlements').nodeMeta, parentLinkId)
+      try {
+        await trashDocumentSDK(generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
+      } catch (error) {
+        reportTrashError(error)
+        throw error
       }
 
       await this.refreshNodeAndDocMeta({ imposeTrashState: 'trashed' })
@@ -435,33 +427,25 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     }
   }
 
-  public async restoreDocument(replaceDriveCompat = false): Promise<void> {
+  public async restoreDocument(): Promise<void> {
     this.documentState.setProperty('documentTrashState', 'restoring')
 
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
 
-      if (replaceDriveCompat) {
-        await restoreDocumentSDK(generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
-      } else {
-        // Not replacing this, because will be deleted when we switch to SDK 100%
-        const parentLinkId = decryptedNode.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
-        await this.driveCompat.restoreDocument(this.documentState.getProperty('entitlements').nodeMeta, parentLinkId)
-      }
+      await restoreDocumentSDK(generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
 
       await this.refreshNodeAndDocMeta({ imposeTrashState: 'not_trashed' })
     } catch (error: any) {
-      if (replaceDriveCompat) {
-        if (error.message.includes('Insufficient permissions')) {
-          PostApplicationError(this.eventBus, {
-            translatedError: c('Error')
-              .t`Because this document was in a shared folder, only the folder owner can restore it`,
-          })
-          this.documentState.setProperty('documentTrashState', 'trashed')
-          return
-        }
-        reportTrashError(error)
+      if (error.message.includes('Insufficient permissions')) {
+        PostApplicationError(this.eventBus, {
+          translatedError: c('Error')
+            .t`Because this document was in a shared folder, only the folder owner can restore it`,
+        })
+        this.documentState.setProperty('documentTrashState', 'trashed')
+        return
       }
+      reportTrashError(error)
 
       this.logger.error(getErrorString(error) ?? 'Failed to restore document')
 
@@ -470,10 +454,6 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
       })
       this.documentState.setProperty('documentTrashState', 'trashed')
     }
-  }
-
-  public openMoveToFolderModal() {
-    void this.driveCompat.openMoveToFolderModal(this.documentState.getProperty('entitlements').nodeMeta)
   }
 
   public async getUpdatesInformationAsJsonFile(ydoc?: unknown) {

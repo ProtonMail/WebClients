@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 
 import { OpenButton } from './buttons/OpenButton'
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
-import { rawPermissionToRole } from '@proton/docs-core/Types/DocumentEntitlements'
 import type { ContextMenuProps } from '@proton/components/components/contextMenu/ContextMenu'
 import { OpenFolderButton } from './buttons/OpenFolderButton'
 import { ShareButton } from './buttons/ShareButton'
@@ -17,7 +16,6 @@ import { useEvent } from '~/utils/misc'
 import { useHomepageView } from '../../../__utils/homepage-view'
 import { RestoreFromTrashButton } from './buttons/RestoreFromTrash'
 import { DeletePermanentlyButton } from './buttons/DeletePermanently'
-import { useLoadRecentsWithSdkEnabled, useTrashWithSDK } from '~/utils/flags'
 import { MemberRole } from '@proton/drive/sdk'
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
 import { IcTrash } from '@proton/icons/icons/IcTrash'
@@ -45,9 +43,6 @@ export function DocContextMenu({
   currentDocument,
   selectionActions,
 }: DocContextMenuProps) {
-  const canShare = useCanShare(currentDocument)
-  const canTrash = useCanTrash()
-
   // NOTE: this effect was copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx
   // I'm not actually sure it's necessary here, but I'm leaving it in for now just in case.
   useEffect(() => {
@@ -110,7 +105,7 @@ export function DocContextMenu({
         ) : !isTrash ? (
           <>
             <OpenButton currentDocument={currentDocument} close={close} />
-            {canShare ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
+            {canShare(currentDocument) ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
             {separator}
             <MoveButton currentDocument={currentDocument} close={close} />
             <OpenFolderButton currentDocument={currentDocument} close={close} />
@@ -161,27 +156,10 @@ function SelectionMenuItems({ actions: { move, trash, disabled }, close }: Selec
   )
 }
 
-function useCanShare(currentDocument: RecentDocumentsItem | undefined) {
-  const loadRecentsWithSdkEnabled = useLoadRecentsWithSdkEnabled()
-
-  if (!currentDocument) {
-    return false
-  }
-
-  if (loadRecentsWithSdkEnabled) {
-    return currentDocument.effectiveRole === MemberRole.Admin
-  } else if (currentDocument.permissions) {
-    return rawPermissionToRole(currentDocument.permissions).canShare()
-  }
-
-  return !currentDocument.isSharedWithMe
+function canShare(document: RecentDocumentsItem) {
+  return document.effectiveRole === MemberRole.Admin
 }
 
-export function useCanTrash() {
-  const trashWithSDK = useTrashWithSDK()
-  const loadRecentsWithSdkEnabled = useLoadRecentsWithSdkEnabled()
-  const checkRole = trashWithSDK && loadRecentsWithSdkEnabled
-
-  return (document: RecentDocumentsItem) =>
-    checkRole ? document.effectiveRole === MemberRole.Admin : !document.isSharedWithMe
+export function canTrash(document: RecentDocumentsItem) {
+  return document.effectiveRole === MemberRole.Admin
 }

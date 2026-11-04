@@ -45,14 +45,10 @@ jest.mock('@proton/app-context/useNotifications', () => ({
 
 let mockBulkEnabled = false
 let mockBulkMoveEnabled = false
-// Switches `useCanTrash` to the role check, which lets shared documents with the admin role be selected.
-let mockTrashAndRecentsWithSDK = false
 jest.mock('~/utils/flags', () => ({
   ...jest.requireActual('~/utils/flags'),
   useBulkTrashEnabled: () => mockBulkEnabled,
   useBulkMoveEnabled: () => mockBulkMoveEnabled,
-  useTrashWithSDK: () => mockTrashAndRecentsWithSDK,
-  useLoadRecentsWithSdkEnabled: () => mockTrashAndRecentsWithSDK,
 }))
 
 let mockIsNarrow = false
@@ -115,10 +111,20 @@ const MOCK_DATA = [
     createdBy: 'Creator',
     location: { type: 'shared-with-me' },
     isSharedWithMe: true,
-    effectiveRole: MemberRole.Admin,
+    effectiveRole: MemberRole.Viewer,
     ancestorsNodeUids: ['volume2~sharedFolder'],
   }),
 ]
+
+const SHARED_ADMIN_DOCUMENT = createMockRecentDocument({
+  name: 'Shared Doc',
+  linkId: 'link5',
+  createdBy: 'Creator',
+  location: { type: 'shared-with-me' },
+  isSharedWithMe: true,
+  effectiveRole: MemberRole.Admin,
+  ancestorsNodeUids: ['volume2~sharedFolder'],
+})
 
 const DEVICE_DOCUMENT = createMockRecentDocument({
   name: 'Device Document',
@@ -194,7 +200,6 @@ describe('HomepageContent', () => {
     afterEach(() => {
       mockBulkEnabled = false
       mockBulkMoveEnabled = false
-      mockTrashAndRecentsWithSDK = false
       mockIsNarrow = false
       mockIsTrashing = false
       mockItems = MOCK_DATA
@@ -490,7 +495,9 @@ describe('HomepageContent', () => {
         await screen.findByRole('table')
         await selectAll()
 
-        act(() => mockReceiveRecentsUpdate([createMockRecentDocument({ ...first.value, name: 'Renamed' }), second, shared]))
+        act(() =>
+          mockReceiveRecentsUpdate([createMockRecentDocument({ ...first.value, name: 'Renamed' }), second, shared]),
+        )
 
         expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
       })
@@ -508,12 +515,12 @@ describe('HomepageContent', () => {
       })
 
       test('hides the move button when the selection includes a document shared with the user', async () => {
-        mockTrashAndRecentsWithSDK = true
+        mockItems = [...MOCK_DATA, SHARED_ADMIN_DOCUMENT]
         renderWithProviders(<HomepageContent />)
         await userEvent.click(await screen.findByRole('checkbox', { name: 'Select Document1' }))
         expect(screen.getByTestId('bulk-move-button')).toBeInTheDocument()
 
-        await userEvent.click(screen.getByRole('checkbox', { name: 'Select Test Doc' }))
+        await userEvent.click(screen.getByRole('checkbox', { name: 'Select Shared Doc' }))
 
         expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
         expect(screen.queryByTestId('bulk-move-button')).toBeNull()
@@ -681,10 +688,10 @@ describe('HomepageContent', () => {
         })
 
         test('offers only Move to trash when the selection includes a document shared with the user', async () => {
-          mockTrashAndRecentsWithSDK = true
+          mockItems = [...MOCK_DATA, SHARED_ADMIN_DOCUMENT]
           renderWithProviders(<HomepageContent />)
           await userEvent.click(await screen.findByRole('checkbox', { name: 'Select Document1' }))
-          await userEvent.click(screen.getByRole('checkbox', { name: 'Select Test Doc' }))
+          await userEvent.click(screen.getByRole('checkbox', { name: 'Select Shared Doc' }))
           await openMenu('Document1')
 
           expect(await findMenuItemNames()).toEqual(['Move to trash'])
@@ -768,7 +775,8 @@ describe('HomepageContent', () => {
     flow: 'one_document' | 'empty_recents' | 'delayed' | 'trash'
   }) {
     const [state, setState] = useState<HomepageViewState>({ view: 'recents-initial' })
-    mockReceiveRecentsUpdate = (items) => setState({ view: 'recents', sort: 'viewed', itemSections: [{ id: 'today', items }] })
+    mockReceiveRecentsUpdate = (items) =>
+      setState({ view: 'recents', sort: 'viewed', itemSections: [{ id: 'today', items }] })
 
     useEffect(() => {
       if (flow === 'one_document') {

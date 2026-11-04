@@ -10,7 +10,6 @@ import { Button } from '@proton/atoms/Button/Button'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
-import { useTrashWithSDK } from '~/utils/flags'
 
 import { useEvent } from '~/utils/misc'
 
@@ -29,10 +28,9 @@ export function TrashedDocumentModal({
 }: TrashedDocumentModalProps) {
   const { didTrashDocInCurrentSession } = controller
   const trashedState = documentState.getProperty('documentTrashState')
-  const trashWithSDK = useTrashWithSDK()
 
   const restore = useEvent(() => {
-    void controller.restoreDocument(trashWithSDK)
+    void controller.restoreDocument()
   })
 
   return (

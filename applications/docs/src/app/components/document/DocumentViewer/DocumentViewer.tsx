@@ -59,7 +59,6 @@ import { useDebugMode } from '~/utils/debug-mode-context'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { getLogsAsJSON } from '~/utils/downloadLogs'
 import {
-  useDocsDocumentViewerEventsSDK,
   useDriveCompatSDK,
   useIsDarkThemeEnabled,
   useIsGatePrivateInviteAccessEnabled,
@@ -135,7 +134,6 @@ export function DocumentViewer({
   const [ready, setReady] = useState(false)
 
   const isSheetsEnabled = useIsSheetsEnabled()
-  const sdkEventsEnabled = useDocsDocumentViewerEventsSDK()
   const isDriveCompatSDKFlagOn = useDriveCompatSDK()
   const documentWindowAction = useDocumentWindowAction()
   const getMemberAddressKeys = useGetMemberAddressKeys(useApi())
@@ -174,7 +172,7 @@ export function DocumentViewer({
 
   const [currentDocumentNode, setCurrentDocumentNode] = useState<NodeEntity>()
   useEffect(() => {
-    if (!sdkEventsEnabled || !nodeUid) {
+    if (!nodeUid) {
       return
     }
 
@@ -186,7 +184,7 @@ export function DocumentViewer({
       .catch((error) => {
         traceErrorSDK(error, 'DocsDocumentViewerEventsSDK')
       })
-  }, [drive, nodeUid, sdkEventsEnabled])
+  }, [drive, nodeUid])
 
   const handleEvent = useCallback(
     async (event: DriveEvent) => {
@@ -216,14 +214,14 @@ export function DocumentViewer({
   )
 
   useEffect(() => {
-    if (!sdkEventsEnabled || !currentDocumentNode || !documentState) {
+    if (!currentDocumentNode || !documentState) {
       return
     }
     void eventSubscriber.initialize(currentDocumentNode.treeEventScopeId, [handleEvent]).catch((error) => {
       traceErrorSDK(error, 'DocsDocumentViewerEventsSDK')
     })
     return () => eventSubscriber.reset()
-  }, [application.logger, currentDocumentNode, documentState, eventSubscriber, handleEvent, sdkEventsEnabled])
+  }, [application.logger, currentDocumentNode, documentState, eventSubscriber, handleEvent])
 
   const [error, setError] = useState<DocumentError | null>(() => {
     if (documentType === 'sheet' && !isSheetsEnabled) {

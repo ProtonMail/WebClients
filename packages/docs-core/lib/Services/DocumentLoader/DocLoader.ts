@@ -125,7 +125,6 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
 
     const controller = new AuthenticatedDocController(
       documentState,
-      this.driveCompat,
       this.squashDoc,
       this.createInitialCommit,
       this.duplicateDocument,

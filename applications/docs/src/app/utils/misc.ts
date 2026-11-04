@@ -1,6 +1,4 @@
-import type { BasePropertiesState } from '@proton/docs-shared/State/BasePropertiesState'
-import type { BasePropertyValues } from '@proton/docs-shared/State/BasePropertiesStateInterface'
-import { useCallback, useEffect, useInsertionEffect, useRef, useState } from 'react'
+import { useCallback, useInsertionEffect, useRef } from 'react'
 
 // use event
 // ---------
@@ -33,17 +31,3 @@ export function useEvent<T extends AnyFunction>(callback?: T) {
   return useCallback<AnyFunction>((...args) => ref.current?.(...args), []) as T
 }
 
-// use subscribe
-// -------------
-
-/**
- * Subscribes to a property of a store and returns its up-to-date value.
- */
-export function useSubscribe<T extends BasePropertyValues, K extends keyof T>(
-  store: BasePropertiesState<T>,
-  property: K,
-): T[K] {
-  const [value, setValue] = useState(store.getProperty(property))
-  useEffect(() => store.subscribeToProperty(property, (newValue) => setValue(() => newValue)), [property, store])
-  return value
-}

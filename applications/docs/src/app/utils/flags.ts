@@ -4,36 +4,15 @@ import { isDevOrBlack } from '@proton/shared/lib/env'
 
 /*
 SDK switch flags:
-- DocsLoadRecentsWithDriveSDK - no dependencies
-- DocsDocumentViewerEventsSDK - no dependencies
-- DocsTrashWithDriveSDK - no dependencies
-- DocsMoveModalDriveSDK - no dependencies
 - DocsInvitationsDriveSDK - no dependencies
 - DocsDriveCompatSDK - no dependencies
 - DocsRealtimeSdkEnabled - no dependencies
 
 Other flags:
-- DocsHomepageBulkTrash - requires DocsTrashWithDriveSDK
-- DocsHomepageBulkMove - requires DocsHomepageBulkTrash (with DocsTrashWithDriveSDK), DocsMoveModalDriveSDK
-  and DocsLoadRecentsWithDriveSDK.
+- DocsHomepageBulkTrash - no dependencies
+- DocsHomepageBulkMove - requires DocsHomepageBulkTrash.
   It also shows row actions on hover only, and gives a selection's row menu just Move and Move to trash.
 */
-
-export function useLoadRecentsWithSdkEnabled() {
-  return useFlag('DocsLoadRecentsWithDriveSDK')
-}
-
-export function useDocsDocumentViewerEventsSDK() {
-  return useFlag('DocsDocumentViewerEventsSDK')
-}
-
-export function useTrashWithSDK() {
-  return useFlag('DocsTrashWithDriveSDK')
-}
-
-export function useMoveModalDriveSdkEnabled() {
-  return useFlag('DocsMoveModalDriveSDK')
-}
 
 export function useInvitationsSdkEnabled() {
   return useFlag('DocsInvitationsDriveSDK')
@@ -50,17 +29,13 @@ export function useRealtimeSdkEnabled() {
 // Other flags
 
 export function useBulkTrashEnabled() {
-  const bulk = useFlag('DocsHomepageBulkTrash')
-  const trashWithSDK = useTrashWithSDK()
-  return bulk && trashWithSDK
+  return useFlag('DocsHomepageBulkTrash')
 }
 
 export function useBulkMoveEnabled() {
   const bulkMove = useFlag('DocsHomepageBulkMove')
   const bulkTrash = useBulkTrashEnabled()
-  const moveModalDriveSdk = useMoveModalDriveSdkEnabled()
-  const recentsWithSdk = useLoadRecentsWithSdkEnabled()
-  return bulkMove && bulkTrash && moveModalDriveSdk && recentsWithSdk
+  return bulkMove && bulkTrash
 }
 
 export function useIsOpenTracerEnabled() {

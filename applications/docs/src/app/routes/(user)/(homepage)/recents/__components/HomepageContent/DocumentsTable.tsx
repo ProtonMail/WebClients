@@ -49,7 +49,7 @@ import { useBulkMove } from '../../__utils/useBulkMove'
 import { useBulkTrash } from '../../__utils/useBulkTrash'
 import { useDoubleClick } from '../../__utils/useDoubleClick'
 import { useRowSelection, type RowSelection } from '../../__utils/useRowSelection'
-import { DocContextMenu, useCanTrash } from './DocContextMenu/DocContextMenu'
+import { DocContextMenu, canTrash } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
@@ -72,7 +72,6 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   // Like Drive: single click selects, double click opens.
   const openOnDoubleClick = useBulkTrashEnabled()
   const bulkEnabled = openOnDoubleClick && (isRecents || isSearch)
-  const canTrash = useCanTrash()
   const allItems = itemsSections.flatMap(({ items }) => items)
   const selectableIds = bulkEnabled ? allItems.filter(canTrash).map((item) => item.uniqueId()) : []
   const selectableIdsSet = new Set(selectableIds)

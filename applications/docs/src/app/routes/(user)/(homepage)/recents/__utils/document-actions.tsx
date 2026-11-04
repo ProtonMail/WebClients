@@ -3,12 +3,10 @@ import { useConfirmActionModal } from '@proton/components/components/confirmActi
 import { useNotifications } from '@proton/app-context/useNotifications'
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
-import { useMoveModalDriveSdkEnabled, useTrashWithSDK } from '~/utils/flags'
 import { constructDriveFolderUrl } from '~/utils/open-drive-folder'
 import { useEvent } from '~/utils/misc'
 import { getDrive, generateNodeUid } from '@proton/drive/sdk'
@@ -56,7 +54,6 @@ const RESTORED_LISTENERS = new Set<(id: string) => void>()
 export function DocumentActionsProvider({ children }: DocumentActionsProviderProps) {
   const application = useApplication()
   const { createNotification } = useNotifications()
-  const driveCompat = application.compatWrapper.getUserCompat()
   const [renamingDocument, setRenamingDocument] = useState<RecentDocumentsItem>()
   const [isRenameSaving, setRenameSaving] = useState(false)
   const [currentlyTrashingId, setCurrentlyTrashingId] = useState<string | undefined>(undefined)
@@ -64,8 +61,6 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const { getLocalID } = useAuthentication()
 
   const drive = getDrive()
-  const moveModalDriveSdkEnabled = useMoveModalDriveSdkEnabled()
-  const trashWithSDK = useTrashWithSDK()
 
   const { showSharingModal, sharingModal } = useSharingModal()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
@@ -91,11 +86,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   })
 
   const move = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
-    if (moveModalDriveSdkEnabled) {
-      showMoveItemsModal({ nodeUids: [generateNodeUid(volumeId, linkId)] })
-    } else {
-      void driveCompat.openMoveToFolderModal({ linkId, volumeId })
-    }
+    showMoveItemsModal({ nodeUids: [generateNodeUid(volumeId, linkId)] })
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_moved)
   })
 
@@ -149,33 +140,19 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const trash = useEvent(async (document: RecentDocumentsItem) => {
     setCurrentlyTrashingId(document.uniqueId())
 
-    if (trashWithSDK) {
-      const emitRestored = () => RESTORED_LISTENERS.forEach((listener) => listener(document.uniqueId()))
+    const emitRestored = () => RESTORED_LISTENERS.forEach((listener) => listener(document.uniqueId()))
 
-      try {
-        const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-        await trashAndNotify(createNotification, nodeUid, emitRestored)
-      } catch (error) {
-        reportTrashError(error)
-        createNotification({
-          type: 'error',
-          text: c('Error').t`Failed to trash document`,
-        })
-        setCurrentlyTrashingId(undefined)
-        return
-      }
-    } else {
-      try {
-        await application.recentDocumentsService.trashDocument(document)
-      } catch (error) {
-        traceError(error)
-        createNotification({
-          type: 'error',
-          text: c('Error').t`Failed to trash document`,
-        })
-        setCurrentlyTrashingId(undefined)
-        return
-      }
+    try {
+      const nodeUid = generateNodeUid(document.volumeId, document.linkId)
+      await trashAndNotify(createNotification, nodeUid, emitRestored)
+    } catch (error) {
+      reportTrashError(error)
+      createNotification({
+        type: 'error',
+        text: c('Error').t`Failed to trash document`,
+      })
+      setCurrentlyTrashingId(undefined)
+      return
     }
 
     setCurrentlyTrashingId(undefined)
@@ -193,26 +170,15 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const restore = useEvent(async (document: RecentDocumentsItem) => {
     setCurrentlyRestoringId(document.uniqueId())
 
-    if (trashWithSDK) {
-      const emitTrashed = () => TRASHED_LISTENERS.forEach((listener) => listener(document.uniqueId()))
+    const emitTrashed = () => TRASHED_LISTENERS.forEach((listener) => listener(document.uniqueId()))
 
-      try {
-        const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-        await restoreAndNotify(createNotification, nodeUid, emitTrashed)
-      } catch (error: any) {
-        handleRestoreError(createNotification, error)
-        setCurrentlyRestoringId(undefined)
-        return
-      }
-    } else {
-      try {
-        await application.recentDocumentsService.restoreDocument(document)
-      } catch (error) {
-        traceError(error)
-        createNotification({ type: 'error', text: c('Notification').t`Failed to restore document` })
-        setCurrentlyRestoringId(undefined)
-        return
-      }
+    try {
+      const nodeUid = generateNodeUid(document.volumeId, document.linkId)
+      await restoreAndNotify(createNotification, nodeUid, emitTrashed)
+    } catch (error: any) {
+      handleRestoreError(createNotification, error)
+      setCurrentlyRestoringId(undefined)
+      return
     }
 
     setCurrentlyRestoringId(undefined)
@@ -228,35 +194,30 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   })
 
   const deletePermanently = useEvent(async (document: RecentDocumentsItem) => {
-    if (trashWithSDK) {
-      const itemName = document.name
-      showConfirmDeleteModal({
-        title: c('Title').t`Delete permanently`,
-        submitText: c('Action').t`Delete permanently`,
-        message: c('Info').t`Are you sure you want to permanently delete "${itemName}" from trash?`,
-        onSubmit: async () => {
-          try {
-            const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-            await deleteDocument(nodeUid)
-          } catch (error) {
-            reportTrashError(error)
-            createNotification({
-              type: 'error',
-              text: c('Notification').t`Failed to delete document`,
-            })
-            return
-          }
+    const itemName = document.name
+    showConfirmDeleteModal({
+      title: c('Title').t`Delete permanently`,
+      submitText: c('Action').t`Delete permanently`,
+      message: c('Info').t`Are you sure you want to permanently delete "${itemName}" from trash?`,
+      onSubmit: async () => {
+        try {
+          const nodeUid = generateNodeUid(document.volumeId, document.linkId)
+          await deleteDocument(nodeUid)
+        } catch (error) {
+          reportTrashError(error)
           createNotification({
-            type: 'success',
-            text: c('Notification').t`"Document deleted permanently`,
+            type: 'error',
+            text: c('Notification').t`Failed to delete document`,
           })
-          application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_permanently_deleted)
-        },
-      })
-    } else {
-      await application.recentDocumentsService.deleteDocumentPermanently(document)
-      application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_permanently_deleted)
-    }
+          return
+        }
+        createNotification({
+          type: 'success',
+          text: c('Notification').t`"Document deleted permanently`,
+        })
+        application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_permanently_deleted)
+      },
+    })
   })
 
   const value = useMemo(
