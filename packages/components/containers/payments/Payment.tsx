@@ -8,6 +8,12 @@ import useStableLoading from '@proton/hooks/useStableLoading';
 import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/billed-user/BilledUserInlineMessage';
 import type { ThemeCode } from '@proton/payments-ui/client-extensions/helpers';
 import type { ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';
+import { BitcoinNewMethodForm } from '@proton/payments-ui/payment-methods/bitcoin/BitcoinNewMethodForm';
+import { CardNewMethodForm } from '@proton/payments-ui/payment-methods/card/CardNewMethodForm';
+import { CashNewMethodForm } from '@proton/payments-ui/payment-methods/cash/CashNewMethodForm';
+import { IdealNewMethodForm } from '@proton/payments-ui/payment-methods/ideal/IdealNewMethodForm';
+import { PayPalNewMethodForm } from '@proton/payments-ui/payment-methods/paypal/PayPalNewMethodForm';
+import { SepaNewMethodForm } from '@proton/payments-ui/payment-methods/sepa/SepaNewMethodForm';
 import type { ChargebeePaypalProcessorHook } from '@proton/payments-ui/payment-processors/useChargebeePaypal';
 import type { BitcoinHook } from '@proton/payments-ui/react-extensions/useBitcoin';
 import type { ChargebeeCardProcessorHook } from '@proton/payments-ui/react-extensions/useChargebeeCard';
@@ -20,11 +26,9 @@ import type { CbIframeHandles } from '@proton/payments-ui/ui/components/Chargebe
 import type { ChargebeePaypalButtonProps } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
 import {
     type ChargebeeCardWrapperProps,
-    ChargebeeCreditCardWrapper,
     ChargebeeSavedCardWrapper,
 } from '@proton/payments-ui/ui/components/ChargebeeWrapper';
-import { IdealAccountHolderInput } from '@proton/payments-ui/ui/components/IdealAccountHolderInput';
-import { type DirectDebitProps, SepaDirectDebit } from '@proton/payments-ui/ui/components/SepaDirectDebit';
+import type { DirectDebitProps } from '@proton/payments-ui/ui/components/SepaDirectDebit';
 import { getMinCreditAmount, getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import type { BillingAddressStatus } from '@proton/payments/core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
@@ -40,6 +44,7 @@ import type {
 } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { methodMatches } from '@proton/payments/core/type-guards';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { isBilledUser } from '@proton/shared/lib/interfaces/User';
 import clsx from '@proton/utils/clsx';
@@ -47,15 +52,7 @@ import clsx from '@proton/utils/clsx';
 import Loader from '../../components/loader/Loader';
 import Price from '../../components/price/Price';
 import Alert3DS from './Alert3ds';
-import { ApplePayView } from './ApplePayView';
-import Cash from './Cash';
 import DefaultPaymentMethodMessage from './DefaultPaymentMethodMessage';
-import { GooglePayView } from './GooglePayView';
-import { IdealInfoMessage } from './IdealInfoMessage';
-import PayPalInfoMessage from './PayPalInfoMessage';
-import PayPalView from './PayPalView';
-import Bitcoin from './bitcoin/Bitcoin';
-import BitcoinInfoMessage from './bitcoin/BitcoinInfoMessage';
 import PaymentMethodDetails from './methods/PaymentMethodDetails';
 import PaymentMethodSelector from './methods/PaymentMethodSelector';
 import { getPaymentMethodRequired } from './subscription/helpers/getPaymentMethodRequired';
@@ -144,10 +141,6 @@ export const PaymentsNoApi = ({
     checkResult,
     minCreditAmount = getMinCreditAmount(currency),
 }: Props) => {
-    const isBitcoinMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
-    const showBitcoinMethod = isBitcoinMethod && !isBilledUser(user);
-    const showBitcoinPlaceholder = isBitcoinMethod && isBilledUser(user);
-
     useEffect(() => {
         paymentComponentLoaded();
     }, []);
@@ -226,9 +219,6 @@ export const PaymentsNoApi = ({
         onInitialized: onChargebeeInitialized,
     };
 
-    const isPaypalMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
-    const showPaypalView = isPaypalMethod && !isSingleSignup;
-
     const infoMessages = (
         <>
             {flow === 'subscription' && (
@@ -251,6 +241,68 @@ export const PaymentsNoApi = ({
     const taxFields = (
         <TaxFields user={user} taxCountry={taxCountry} vatNumber={vatNumber} subscription={subscription} />
     );
+
+    const renderNewMethodForm = (newMethod: PlainPaymentMethodType) => {
+        switch (newMethod) {
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
+                return (
+                    <CardNewMethodForm
+                        {...sharedCbProps}
+                        themeCode={themeCode}
+                        // if we don't let user select the tax country then we still need a fallback way to
+                        // collect the card country and the postal code
+                        showCountry={!showTaxCountry}
+                        creditCardDetailsRef={creditCardDetailsRef}
+                        taxFields={taxFields}
+                        showAlert3ds={showAlert3ds}
+                    />
+                );
+            case PAYMENT_METHOD_TYPES.CASH:
+                return <CashNewMethodForm />;
+            case PAYMENT_METHOD_TYPES.APPLE_PAY:
+            case PAYMENT_METHOD_TYPES.GOOGLE_PAY:
+                return (
+                    <div key={newMethod} className="mt-2">
+                        {taxFields}
+                    </div>
+                );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT:
+                return <SepaNewMethodForm {...sharedCbProps} taxFields={taxFields} />;
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL:
+                return <IdealNewMethodForm chargebeeIdeal={chargebeeIdeal} taxFields={taxFields} />;
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN:
+                if (isBilledUser(user)) {
+                    return <BilledUserInlineMessage />;
+                }
+                if (!isAuthenticated) {
+                    return (
+                        <p>{c('Info')
+                            .t`In the next step, you’ll be able to submit a deposit using a Bitcoin address.`}</p>
+                    );
+                }
+                return (
+                    <BitcoinNewMethodForm
+                        bitcoin={bitcoinProps}
+                        loading={loadingBitcoin || (!!taxCountry && !taxCountry.billingAddressValid)}
+                        taxFields={taxFields}
+                    />
+                );
+            case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
+                return (
+                    <PayPalNewMethodForm
+                        amount={amount}
+                        currency={currency}
+                        taxFields={taxFields}
+                        showPaypalView={!isSingleSignup}
+                    />
+                );
+            case PAYMENT_METHOD_TYPES.TOKEN:
+                return null;
+            default:
+                newMethod satisfies never;
+                return null;
+        }
+    };
 
     return (
         <>
@@ -278,90 +330,7 @@ export const PaymentsNoApi = ({
                 )}
                 {paymentMethodRequired && (
                     <div className="mt-4">
-                        {method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
-                            <>
-                                <ChargebeeCreditCardWrapper
-                                    {...sharedCbProps}
-                                    themeCode={themeCode}
-                                    suffix={taxFields}
-                                    // if we don't let user select the tax country then we still need a fallback way to
-                                    // collect the card country and the postal code
-                                    showCountry={!showTaxCountry}
-                                    creditCardDetailsRef={creditCardDetailsRef}
-                                />
-                                {showAlert3ds && <Alert3DS />}
-                            </>
-                        )}
-                        {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
-                        {method === PAYMENT_METHOD_TYPES.APPLE_PAY && (
-                            <>
-                                <ApplePayView />
-                                <div className="mt-2">{taxFields}</div>
-                            </>
-                        )}
-                        {method === PAYMENT_METHOD_TYPES.GOOGLE_PAY && (
-                            <>
-                                <GooglePayView />
-                                <div className="mt-2">{taxFields}</div>
-                            </>
-                        )}
-                        {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
-                            <>
-                                <SepaDirectDebit {...sharedCbProps} />
-                                <div className="mt-2">{taxFields}</div>
-                            </>
-                        )}
-                        {method === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL && (
-                            <>
-                                <IdealAccountHolderInput chargebeeIdeal={chargebeeIdeal} />
-                                {taxFields}
-                                <div className="p-4 border rounded bg-weak mb-4" data-testid="ideal-view">
-                                    <IdealInfoMessage />
-                                </div>
-                            </>
-                        )}
-                        {(function renderBitcoin() {
-                            if (!showBitcoinMethod) {
-                                return null;
-                            }
-
-                            if (!isAuthenticated) {
-                                return (
-                                    <p>{c('Info')
-                                        .t`In the next step, you’ll be able to submit a deposit using a Bitcoin address.`}</p>
-                                );
-                            }
-
-                            if (method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
-                                return (
-                                    <>
-                                        <BitcoinInfoMessage />
-                                        <Bitcoin
-                                            loading={
-                                                loadingBitcoin || (!!taxCountry && !taxCountry.billingAddressValid)
-                                            }
-                                            {...bitcoinProps}
-                                        />
-                                        <div className="mt-4">{taxFields}</div>
-                                    </>
-                                );
-                            }
-
-                            return null;
-                        })()}
-                        {showBitcoinPlaceholder && <BilledUserInlineMessage />}
-                        {isPaypalMethod && (
-                            <>
-                                {taxFields}
-                                {showPaypalView ? (
-                                    <PayPalView method={method} amount={amount} currency={currency}>
-                                        <div className="p-4 border rounded bg-weak mb-4" data-testid="paypal-view">
-                                            <PayPalInfoMessage />
-                                        </div>
-                                    </PayPalView>
-                                ) : null}
-                            </>
-                        )}
+                        {methodMatches(method, Object.values(PAYMENT_METHOD_TYPES)) && renderNewMethodForm(method)}
                         {savedMethod && (
                             <>
                                 {!hideSavedMethodsDetails && (

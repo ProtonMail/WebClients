@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { render, screen, waitFor } from '@testing-library/react';
 
 import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
@@ -14,7 +16,7 @@ import { withCache } from '../../testing/with-cache';
 import { withConfig } from '../../testing/with-config';
 import { withNotifications } from '../../testing/with-notifications';
 import { withReduxStore } from '../../testing/with-redux-store';
-import { PaymentsNoApi } from './Payment';
+import { PaymentsNoApi, type Props } from './Payment';
 
 const apiMock = jest.fn();
 jest.mock('@proton/app-context/useApi', () => {
@@ -28,13 +30,27 @@ jest.mock('@proton/app-context/useApi', () => {
 // hook, neither of which is exercised here. Stub it so the surrounding Payment UI can render.
 jest.mock('@proton/payments-ui/ui/components/ChargebeeWrapper', () => ({
     ...jest.requireActual('@proton/payments-ui/ui/components/ChargebeeWrapper'),
-    ChargebeeCreditCardWrapper: () => <div data-testid="chargebee-credit-card-wrapper" />,
+    ChargebeeCreditCardWrapper: ({ suffix }: { suffix: ReactNode }) => (
+        <div data-testid="chargebee-credit-card-wrapper">{suffix}</div>
+    ),
 }));
 
 // Same for the SEPA form: it renders a third-party iframe and reads the full directDebit hook.
 jest.mock('@proton/payments-ui/ui/components/SepaDirectDebit', () => ({
     ...jest.requireActual('@proton/payments-ui/ui/components/SepaDirectDebit'),
     SepaDirectDebit: () => <div data-testid="sepa-direct-debit" />,
+}));
+
+let mockTaxFieldsMountCount = 0;
+jest.mock('@proton/payments-ui/ui/billing-address/components/TaxFields', () => ({
+    TaxFields: () => {
+        const [mountId] = jest.requireActual('react').useState(() => ++mockTaxFieldsMountCount);
+        return <div data-testid="tax-fields" data-mount-id={mountId} />;
+    },
+}));
+
+jest.mock('@proton/payments-ui/payment-methods/bitcoin/BitcoinView', () => ({
+    BitcoinView: () => <div data-testid="bitcoin" />,
 }));
 
 let paymentMethods: SavedPaymentMethod[];
@@ -456,6 +472,125 @@ describe('Payment', () => {
                 selectedProcessor: { userInitiatedProcessing: false, processingToken: true } as any,
             });
             expect(screen.getByTestId('payment-method-methodid1')).not.toBeDisabled();
+        });
+    });
+
+    describe('new method forms', () => {
+        const paymentsElement = (props: Partial<Props>) => (
+            <WrappedPaymentsNoApi
+                flow="subscription"
+                onMethod={() => {}}
+                amount={1000}
+                isAuthenticated={true}
+                lastUsedMethod={lastUsedMethod}
+                allMethods={allMethods}
+                loading={false}
+                currency="EUR"
+                iframeHandles={
+                    {
+                        iframeRef: { current: null },
+                        handles: {
+                            initializeSavedCreditCard: jest.fn(),
+                            getHeight: jest.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
+                        },
+                        notifyIframeUnloaded: jest.fn(),
+                        notifyIframeLoaded: jest.fn(),
+                    } as any
+                }
+                chargebeeCard={null as any}
+                chargebeePaypal={null as any}
+                chargebeeIdeal={{ accountHolderName: '' } as any}
+                bitcoinChargebee={{} as any}
+                user={undefined}
+                directDebit={{ customer: {} as any, bankAccount: {} as any, reset: jest.fn() } as any}
+                savedPaymentMethods={[]}
+                showTaxCountry={true}
+                paymentComponentLoaded={jest.fn()}
+                selectedProcessor={undefined}
+                processingPayment={false}
+                {...props}
+            />
+        );
+        const renderPayments = (props: Partial<Props>) => render(paymentsElement(props));
+
+        it('remounts tax fields when switching between Apple Pay and Google Pay', () => {
+            const { rerender } = renderPayments({ method: PAYMENT_METHOD_TYPES.APPLE_PAY });
+            const applePayMountId = screen.getByTestId('tax-fields').dataset.mountId;
+
+            rerender(paymentsElement({ method: PAYMENT_METHOD_TYPES.GOOGLE_PAY }));
+
+            expect(screen.getByTestId('tax-fields').dataset.mountId).not.toBe(applePayMountId);
+        });
+
+        it.each([
+            PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            PAYMENT_METHOD_TYPES.APPLE_PAY,
+            PAYMENT_METHOD_TYPES.GOOGLE_PAY,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+        ])('renders tax fields for %s', (method) => {
+            renderPayments({ method });
+            expect(screen.getByTestId('tax-fields')).toBeInTheDocument();
+        });
+
+        it('renders the card form with the 3DS alert', () => {
+            renderPayments({ method: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD });
+            expect(screen.getByTestId('chargebee-credit-card-wrapper')).toBeInTheDocument();
+            expect(screen.getByText('We use 3-D Secure to protect your payments')).toBeInTheDocument();
+        });
+
+        it('does not mount a new card form when a saved card is selected', () => {
+            renderPayments({ method: paymentMethods[0].ID, savedMethod: paymentMethods[0] });
+            expect(screen.queryByTestId('chargebee-credit-card-wrapper')).not.toBeInTheDocument();
+            expect(screen.getByTestId('existing-credit-card')).toBeInTheDocument();
+        });
+
+        it('renders cash instructions without tax fields', () => {
+            renderPayments({ method: PAYMENT_METHOD_TYPES.CASH });
+            expect(screen.getByText('How to send a cash payment?')).toBeInTheDocument();
+            expect(screen.queryByTestId('tax-fields')).not.toBeInTheDocument();
+        });
+
+        it('renders the SEPA form', () => {
+            renderPayments({ method: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT });
+            expect(screen.getByTestId('sepa-direct-debit')).toBeInTheDocument();
+        });
+
+        it('renders the iDEAL redirect notice', () => {
+            renderPayments({ method: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL });
+            expect(screen.getByTestId('ideal-view')).toBeInTheDocument();
+        });
+
+        it('renders the PayPal view', () => {
+            renderPayments({ method: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL });
+            expect(screen.getByTestId('paypal-view')).toBeInTheDocument();
+        });
+
+        it('hides the PayPal view in single signup', () => {
+            renderPayments({ method: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL, flow: 'signup-pass' });
+            expect(screen.queryByTestId('paypal-view')).not.toBeInTheDocument();
+        });
+
+        it('renders the bitcoin form for an authenticated user', () => {
+            renderPayments({ method: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN });
+            expect(screen.getByTestId('bitcoin-info-message')).toBeInTheDocument();
+            expect(screen.getByTestId('bitcoin')).toBeInTheDocument();
+        });
+
+        it('renders a next-step note instead of the bitcoin form for an unauthenticated user', () => {
+            renderPayments({ method: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, isAuthenticated: false });
+            expect(
+                screen.getByText('In the next step, you’ll be able to submit a deposit using a Bitcoin address.')
+            ).toBeInTheDocument();
+            expect(screen.queryByTestId('bitcoin')).not.toBeInTheDocument();
+        });
+
+        it('renders the billed-user warning instead of the bitcoin form for a billed user', () => {
+            renderPayments({ method: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, user: { Billed: 1 } as any });
+            expect(screen.getByText(/you will not be able to modify or cancel your subscription/)).toBeInTheDocument();
+            expect(screen.queryByTestId('bitcoin')).not.toBeInTheDocument();
         });
     });
 });

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
 import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 
-import { maskedLast4 } from '../maskedLast4';
+import { maskedLast4 } from '../formatters';
 import type { PaymentMethodUi } from '../paymentMethodUi';
 
 export const applePayPaymentMethodUi: PaymentMethodUi<PAYMENT_METHOD_TYPES.APPLE_PAY> = {

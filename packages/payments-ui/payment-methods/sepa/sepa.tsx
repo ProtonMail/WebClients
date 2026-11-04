@@ -7,7 +7,7 @@ import type { SavedMethodDetails, SepaDetails } from '@proton/payments/core/inte
 import { isSepaDetails } from '@proton/payments/core/type-guards';
 
 import { SepaAuthorizationText } from '../../ui/components/SepaAuthorizationText';
-import { NBSP_HTML, maskedLast4 } from '../maskedLast4';
+import { NBSP_HTML, maskedLast4 } from '../formatters';
 import type { PaymentMethodUi } from '../paymentMethodUi';
 
 export function formattedShortSavedSepaDetails(details: SepaDetails): string {
