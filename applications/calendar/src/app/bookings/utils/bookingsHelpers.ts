@@ -47,7 +47,6 @@ export const transformAvailableSlotToTimeslot = (
     detachedSignature: availableSlot.DetachedSignature,
 });
 
-
 export const generateWeeklyRangeSimple = (startDate: Date, endDate?: Date, weekStartsOn: Day = 0) => {
     const weekRangeSimple = [];
 

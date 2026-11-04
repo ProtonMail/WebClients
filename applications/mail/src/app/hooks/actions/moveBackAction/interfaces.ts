@@ -35,7 +35,11 @@ interface MarkAsActionProps {
 }
 
 export type ActionProps = (
-    MoveActionProps | ApplyLabelActionProps | StarActionProps | PermanentDeleteActionProps | MarkAsActionProps
+    | MoveActionProps
+    | ApplyLabelActionProps
+    | StarActionProps
+    | PermanentDeleteActionProps
+    | MarkAsActionProps
 ) & {
     elements: Element[];
 };

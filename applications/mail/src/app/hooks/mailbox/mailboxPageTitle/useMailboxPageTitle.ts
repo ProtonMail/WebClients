@@ -5,11 +5,10 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useMailboxCounter } from '../../mailboxCounter/useMailboxCounter';
+import { getLabelName } from '../../../helpers/labels';
 import { selectLabelID } from '../../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../../store/hooks';
-
-import { getLabelName } from '../../../helpers/labels';
+import { useMailboxCounter } from '../../mailboxCounter/useMailboxCounter';
 
 export const useMailboxPageTitle = () => {
     const labelID = useMailSelector(selectLabelID);

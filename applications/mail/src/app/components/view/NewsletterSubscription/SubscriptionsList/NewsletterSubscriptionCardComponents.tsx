@@ -15,7 +15,6 @@ import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { useMailSelector } from '../../../../store/hooks';
 import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
 import { selectedTab } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
-
 import { getReceivedMessagesCount, getUnsubscribeMethod, shouldOpenUpsellOnFilterClick } from '../helper';
 import { type ModalFilterType, NewsletterSubscriptionAction, type PropsWithNewsletterSubscription } from '../interface';
 import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';

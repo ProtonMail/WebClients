@@ -1,6 +1,5 @@
 import type { ElementsStructure } from '../../hooks/mailbox/useElements';
 import type { MailboxActions } from '../../router/interface';
-
 import { MailToolbarHeader } from './MailToolbarHeader';
 import { MailToolbarList } from './MailToolbarList';
 

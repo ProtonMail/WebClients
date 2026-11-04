@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 
-import { useMailboxLayoutProvider } from '../components/MailboxLayoutContext';
 import {
     selectCategoryIDs,
     selectFilter,
@@ -10,6 +9,7 @@ import {
     selectSort,
 } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
+import { useMailboxLayoutProvider } from '../components/MailboxLayoutContext';
 
 export const useScrollListToTopOnViewChange = () => {
     const { scrollContainerRef } = useMailboxLayoutProvider();

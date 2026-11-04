@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import useEventManager from '@proton/components/hooks/useEventManager';
 
 import { useMailDispatch } from '../../store/hooks';
-
 import { event } from '../../store/incomingDefaults/incomingDefaultsActions';
 
 export default () => {

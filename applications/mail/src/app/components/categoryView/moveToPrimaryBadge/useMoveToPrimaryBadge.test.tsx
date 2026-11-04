@@ -4,7 +4,6 @@ import { useVariant } from '@proton/unleash/useVariant';
 
 import { selectShouldShowMoveToPrimaryBadge } from '../../../store/categories/categoriesSelector';
 import { useMailSelector } from '../../../store/hooks';
-
 import { useMoveToPrimaryBadge } from './useMoveToPrimaryBadge';
 
 jest.mock('@proton/unleash/useVariant');

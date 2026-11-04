@@ -43,6 +43,7 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
+        "pretty:fix": "oxfmt --write \"**/*.{ts,tsx,js}\"",
         "test": "jest",
         "test:ci": "jest --runInBand --logHeapUsage",
         "test:watch": "jest --watch"
@@ -79,6 +80,7 @@
         "@typescript/native": "catalog:",
         "jest": "catalog:",
         "msw": "catalog:",
+        "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "typescript": "catalog:"

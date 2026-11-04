@@ -1,9 +1,8 @@
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useCategoriesView } from '../../components/categoryView/useCategoriesView';
-import { useMailDispatch } from '../../store/hooks';
-
 import { load } from '../../store/conversations/conversationsActions';
+import { useMailDispatch } from '../../store/hooks';
 import { useGetConversation } from './useConversation';
 
 export const useCategoryViewConversationPrefetch = () => {

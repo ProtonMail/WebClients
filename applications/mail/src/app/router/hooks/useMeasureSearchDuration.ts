@@ -2,7 +2,6 @@ import { useLayoutEffect, useRef } from 'react';
 
 import { isSearch } from '../../helpers/elements';
 import type { ElementsStructure } from '../../hooks/mailbox/useElements';
-
 import type { useGetElementParams } from './useGetElementParams';
 
 export function useMeasureSearchDuration(

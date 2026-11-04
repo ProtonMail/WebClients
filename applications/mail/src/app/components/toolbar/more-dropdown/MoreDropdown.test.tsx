@@ -4,10 +4,9 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useMailSelector } from '../../../store/hooks';
-
 import useSnooze from '../../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../../hooks/useLabelActions';
+import { useMailSelector } from '../../../store/hooks';
 import { MoreDropdown } from './MoreDropdown';
 
 jest.mock('@proton/mail/store/mailSettings/hooks');

@@ -6,7 +6,16 @@ export const SEARCH_VERSION_V2: ContentSearchVersion = 'v2';
 export type ContentSearchEndReason = 'newSearch' | 'clearField' | 'navigation';
 
 export type ContentSearchResultAction =
-    'reply' | 'delete' | 'forward' | 'move' | 'label' | 'star' | 'unstar' | 'read' | 'unread' | 'other';
+    | 'reply'
+    | 'delete'
+    | 'forward'
+    | 'move'
+    | 'label'
+    | 'star'
+    | 'unstar'
+    | 'read'
+    | 'unread'
+    | 'other';
 
 export type ContentSearchActionSurface = 'result_list' | 'opened_message';
 

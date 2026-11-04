@@ -14,7 +14,6 @@ import {
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MAIL_UPSELL_BANNERS_OPTIONS_URLS } from '../../../../constants';
-
 import MailUpsellOptionCTA from './MailUpsellOptionCTA';
 
 interface Props {

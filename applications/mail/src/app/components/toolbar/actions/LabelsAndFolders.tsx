@@ -11,7 +11,6 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { useSelectAll } from '../../../hooks/useSelectAll';
-
 import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
 import ToolbarDropdown from '../ToolbarDropdown';

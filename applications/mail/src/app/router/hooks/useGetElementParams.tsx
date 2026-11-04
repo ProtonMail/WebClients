@@ -4,12 +4,11 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
+import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
 import { extractSearchParameters, pageFromUrl } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { selectParams } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
-import { convertCustomViewLabelsToAlmostAllMail } from '../../helpers/labels';
 import type { RouterNavigation } from '../interface';
 
 interface Props {

@@ -8,7 +8,6 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { DEFAULT_MAIL_SETTINGS, UNREAD_FAVICON } from '@proton/shared/lib/mail/mailSettings';
 
 import { useMailboxCounter } from '../mailboxCounter/useMailboxCounter';
-
 import { useMailboxFavicon } from './useMailboxFavicon';
 
 jest.mock('@proton/components/hooks/useDynamicFavicon', () => ({

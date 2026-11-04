@@ -5,7 +5,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import { TipActionType } from '../../../models/tip';
 import { useMailSelector } from '../../../store/hooks';
 import { selectSnoozeElement } from '../../../store/snooze/snoozeSliceSelectors';
-
 import useTipConfig from './useTipConfig';
 
 interface Props {

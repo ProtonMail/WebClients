@@ -9,7 +9,6 @@ import useIncomingDefaultsEvents from '../../hooks/incomingDefaults/useIncomingD
 import { usePageHotkeys } from '../../hooks/mailbox/usePageHotkeys';
 import useComposerEvent from '../../hooks/useComposerEvent';
 import { useMailPTTMetric } from '../../metrics/useMailPTTMetric';
-
 import { useAppShellSideEffects } from './useAppShellSideEffects';
 
 jest.mock('@proton/components/hooks/drawer/useOpenDrawerOnLoad', () => ({

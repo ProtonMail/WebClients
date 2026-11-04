@@ -64,7 +64,9 @@ export interface UpdateEventActionOperation {
 }
 
 export type SyncEventActionOperation =
-    CreateEventActionOperation | UpdateEventActionOperation | DeleteEventActionOperation;
+    | CreateEventActionOperation
+    | UpdateEventActionOperation
+    | DeleteEventActionOperation;
 
 export interface SyncEventActionOperations {
     calendarID: string;

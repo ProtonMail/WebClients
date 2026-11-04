@@ -14,13 +14,6 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
-import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
-import type { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
-import SnoozeUpsellModal from '../../list/snooze/components/SnoozeUpsellModal';
-import SnoozeToolbarDropdownStepWrapper, {
-    SnoozeToolbarDropdownStepWrapperProps,
-} from '../../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
 import { canMoveAll } from '../../../helpers/labels';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { useMoveAllToFolder } from '../../../hooks/actions/move/useMoveAllToFolder';
@@ -30,7 +23,13 @@ import { useLabelActions } from '../../../hooks/useLabelActions';
 import { useSelectAll } from '../../../hooks/useSelectAll';
 import { selectLabelID } from '../../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../../store/hooks';
-
+import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
+import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
+import type { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
+import SnoozeUpsellModal from '../../list/snooze/components/SnoozeUpsellModal';
+import SnoozeToolbarDropdownStepWrapper, {
+    SnoozeToolbarDropdownStepWrapperProps,
+} from '../../list/snooze/containers/SnoozeToolbarDropdownStepWrapper';
 import type { DropdownRender } from '../ToolbarDropdown';
 import ToolbarDropdown from '../ToolbarDropdown';
 import {

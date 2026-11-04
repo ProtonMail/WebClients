@@ -6,10 +6,9 @@ import { c } from 'ttag';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { isInDeletedFolder } from '../../helpers/elements';
 import { selectConversationMode, selectLabelID } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
-import { isInDeletedFolder } from '../../helpers/elements';
 import { useMailboxListContext } from './MailboxListProvider';
 import { MailboxListScreenReaderHeading } from './MailboxListScreenReaderHeading';
 

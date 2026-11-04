@@ -7,7 +7,6 @@ import useIncomingDefaultsEvents from '../../hooks/incomingDefaults/useIncomingD
 import { usePageHotkeys } from '../../hooks/mailbox/usePageHotkeys';
 import useComposerEvent from '../../hooks/useComposerEvent';
 import { useMailPTTMetric } from '../../metrics/useMailPTTMetric';
-
 import { useMailNavigationLogger } from './useMailNavigationLogger';
 
 interface Props {

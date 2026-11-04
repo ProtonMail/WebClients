@@ -8,14 +8,13 @@ import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/use
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
-import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
-import { selectCategoryIDs } from '../../store/elements/elementsSelectors';
-import { useMailSelector } from '../../store/hooks';
-
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isElementConversation } from '../../helpers/elements';
+import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
+import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 import type { Element } from '../../models/element';
+import { selectCategoryIDs } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 import { MoveToPrimaryBadge } from '../categoryView/moveToPrimaryBadge/MoveToPrimaryBadge';
 import { useMoveToPrimaryBadge } from '../categoryView/moveToPrimaryBadge/useMoveToPrimaryBadge';
 import NumMessages from './NumMessages';

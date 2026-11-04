@@ -7,9 +7,8 @@ import { c } from 'ttag';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import type { MoveParams } from '../../hooks/actions/applyLocation/interface';
-import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
-
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
+import { useMailboxCounter } from '../../hooks/mailboxCounter/useMailboxCounter';
 import SidebarFolder from './SidebarFolder';
 
 interface Props {

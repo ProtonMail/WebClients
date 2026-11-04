@@ -1,6 +1,8 @@
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { MoveEngine } from './MoveEngine';
+import { CUSTOM_FOLDER_KEY, CUSTOM_LABEL_KEY } from './moveEngineInterface';
 import {
     conversationAllDraftRules,
     conversationAllMailRules,
@@ -40,9 +42,6 @@ import {
     messageStarredRules,
     messageTrashRules,
 } from './moveEngineRulesMessages';
-
-import { MoveEngine } from './MoveEngine';
-import { CUSTOM_FOLDER_KEY, CUSTOM_LABEL_KEY } from './moveEngineInterface';
 
 export const useMoveEngine = () => {
     const [folders = []] = useFolders();

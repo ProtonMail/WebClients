@@ -7,7 +7,6 @@ import AssistantIframe from '../components/assistant/AssistantIframe';
 import PrivateLayout from '../components/layout/PrivateLayout';
 import { LabelActionsContextProvider } from '../components/sidebar/EditLabelContext';
 import MailStartupModals from '../containers/MailStartupModals';
-
 import { RouterMailboxContainer } from './RouterMailboxContainer';
 import { MailboxLayoutProvider } from './components/MailboxLayoutContext';
 import { useAppShellSideEffects } from './sideEffects/useAppShellSideEffects';

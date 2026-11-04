@@ -4,11 +4,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { ElementsState } from '../elementsTypes';
-import {
-    generateElementContextIdentifier,
-    setupMessage,
-} from '../tests/elementsReducer.test.helpers';
-
+import { generateElementContextIdentifier, setupMessage } from '../tests/elementsReducer.test.helpers';
 import {
     computeContextTotals,
     updateContextTotals,

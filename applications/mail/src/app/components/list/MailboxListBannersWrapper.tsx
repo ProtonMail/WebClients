@@ -1,6 +1,4 @@
-import SelectAllBanner from './select-all/SelectAllBanner';
 import { getCanDisplaySelectAllBanner } from '../../helpers/selectAll';
-
 import {
     selectFilter,
     selectIsSearching,
@@ -11,6 +9,7 @@ import {
 import { useMailSelector } from '../../store/hooks';
 import ListBanners from './MailboxListBanners';
 import { useMailboxListContext } from './MailboxListProvider';
+import SelectAllBanner from './select-all/SelectAllBanner';
 
 interface MailboxListBannersWrapperProps {
     columnLayout: boolean;

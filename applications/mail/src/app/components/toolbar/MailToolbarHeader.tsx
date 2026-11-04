@@ -21,7 +21,6 @@ import {
     selectMessageID,
 } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
 import MailSearch from '../header/search/MailSearch';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelName from './actions/LabelName';

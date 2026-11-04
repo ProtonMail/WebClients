@@ -122,4 +122,3 @@ export const useCalendarsAlarmsEventListeners = (
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-6C5055
     }, [calendarIDs]);
 };
-

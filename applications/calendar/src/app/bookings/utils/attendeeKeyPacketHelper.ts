@@ -8,7 +8,9 @@ import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calenda
 import type { DecryptedCalendarKey } from '@proton/shared/lib/interfaces/calendar/CalendarKey';
 
 export type AttendeeSharedKeyPacketResult =
-    { type: 'success'; keyPacket: string } | { type: 'skipped' } | { type: 'disabled_address' };
+    | { type: 'success'; keyPacket: string }
+    | { type: 'skipped' }
+    | { type: 'disabled_address' };
 
 export const getAttendeeSharedKeyPacket = async ({
     isGuest,

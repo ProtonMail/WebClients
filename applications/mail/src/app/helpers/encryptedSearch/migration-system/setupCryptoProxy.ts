@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@protontech/crypto';
+
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 export const setupCryptoProxy = async () => {

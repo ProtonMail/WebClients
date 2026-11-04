@@ -10,12 +10,11 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { useSelectAll } from '../../../hooks/useSelectAll';
-import { useMailSelector } from '../../../store/hooks';
-
 import {
     elementsAreUnread as elementsAreUnreadSelector,
     selectLabelID,
 } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
 import { SOURCE_ACTION } from '../../list/list-telemetry/useListTelemetry';
 
 interface Props {
