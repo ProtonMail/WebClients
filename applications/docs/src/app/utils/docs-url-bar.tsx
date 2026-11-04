@@ -183,7 +183,8 @@ const SHEET_EDITOR_PATH = '/sheet'
 export const DOCUMENT_EDITOR_PATH = '/doc'
 const DOCUMENT_NEW_PATH = '/new'
 export const DOCUMENT_CREATION_PATHS = [DOCUMENT_EDITOR_PATH, SHEET_EDITOR_PATH, DOCUMENT_NEW_PATH]
-export const DOCUMENT_V2_PATHS = ['/doc2', '/new2']
+export const DOCUMENT_V2_PATH = '/doc2'
+export const DOCUMENT_V2_PATHS = [DOCUMENT_V2_PATH, '/new2']
 
 export function parseOpenAction(searchParams: URLSearchParams, pathname: string): DocumentAction | null {
   let type = stripLocalBasenameFromPathname(pathname).slice(1) as DocumentAction['type']

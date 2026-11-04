@@ -79,7 +79,7 @@ function AppRoutes({ driveCompat }: AppRoutesProps) {
 
   const documentPageV2 = (
     <Suspense>
-      <DocumentPageV2 />
+      <DocumentPageV2 driveCompat={driveCompat} />
     </Suspense>
   )
 
