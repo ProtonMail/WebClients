@@ -1,22 +1,20 @@
 import path from 'node:path';
+import { RuleTester } from 'oxlint/plugins-dev';
 
-import rule from '../no-boolean-entitlement-composition';
-
-const { RuleTester } = require('eslint');
+import rule from './no-boolean-entitlement-composition.js';
 
 const ruleTester = new RuleTester({
     languageOptions: {
-        ecmaVersion: 2020,
         sourceType: 'module',
     },
 });
 
-const registryFilename = path.resolve(__dirname, '../../payments/core/entitlements/checks.ts');
+const registryFilename = path.resolve(__dirname, '../../../payments/core/entitlements/checks.ts');
 
 // A real path inside the monorepo, so the rule finds the check registry and knows the names of the
 // checks bound onto the resolver (`isB2B`, `hasVpn`, ...). Not the registry itself, which the rule
 // skips entirely.
-const filename = path.resolve(__dirname, '../../payments/core/entitlements/resolver.ts');
+const filename = path.resolve(__dirname, '../../../payments/core/entitlements/resolver.ts');
 
 ruleTester.run('no-boolean-entitlement-composition', rule, {
     valid: [

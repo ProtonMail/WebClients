@@ -1,10 +1,9 @@
-import rule from '../use-subscription-modal-loading';
+import { RuleTester } from 'oxlint/plugins-dev';
 
-const { RuleTester } = require('eslint');
+import rule from './use-subscription-modal-loading.js';
 
 const ruleTester = new RuleTester({
     languageOptions: {
-        ecmaVersion: 2020,
         sourceType: 'module',
     },
 });

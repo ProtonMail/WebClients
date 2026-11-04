@@ -1,10 +1,9 @@
-import rule from '../no-playwright-string-tag';
+import { RuleTester } from 'oxlint/plugins-dev';
 
-const { RuleTester } = require('eslint');
+import rule from './no-playwright-string-tag.js';
 
 const ruleTester = new RuleTester({
     languageOptions: {
-        ecmaVersion: 2020,
         sourceType: 'module',
     },
 });
@@ -36,7 +35,7 @@ ruleTester.run('no-playwright-string-tag', rule, {
             `,
             errors: [
                 {
-                    column: 30,
+                    column: 29,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
                 },
             ],
@@ -54,7 +53,7 @@ ruleTester.run('no-playwright-string-tag', rule, {
             `,
             errors: [
                 {
-                    column: 30,
+                    column: 29,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
                 },
             ],
@@ -72,7 +71,7 @@ ruleTester.run('no-playwright-string-tag', rule, {
             `,
             errors: [
                 {
-                    column: 31,
+                    column: 30,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
                 },
             ],
@@ -90,11 +89,11 @@ ruleTester.run('no-playwright-string-tag', rule, {
             `,
             errors: [
                 {
-                    column: 31,
+                    column: 30,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
                 },
                 {
-                    column: 40,
+                    column: 39,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
                 },
             ],
@@ -112,7 +111,7 @@ ruleTester.run('no-playwright-string-tag', rule, {
             `,
             errors: [
                 {
-                    column: 46,
+                    column: 45,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
                 },
             ],
@@ -130,7 +129,7 @@ ruleTester.run('no-playwright-string-tag', rule, {
             `,
             errors: [
                 {
-                    column: 46,
+                    column: 45,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
                 },
             ],
@@ -148,7 +147,7 @@ ruleTester.run('no-playwright-string-tag', rule, {
             `,
             errors: [
                 {
-                    column: 46,
+                    column: 45,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
                 },
             ],
@@ -166,7 +165,7 @@ ruleTester.run('no-playwright-string-tag', rule, {
             `,
             errors: [
                 {
-                    column: 46,
+                    column: 45,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
                 },
             ],
@@ -184,7 +183,7 @@ ruleTester.run('no-playwright-string-tag', rule, {
             `,
             errors: [
                 {
-                    column: 30,
+                    column: 29,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
                 },
             ],
@@ -201,7 +200,7 @@ ruleTester.run('no-playwright-string-tag', rule, {
             `,
             errors: [
                 {
-                    column: 46,
+                    column: 45,
                     message: 'Test tags cannot be strings, please use the TEST_TAGS enum constant instead.',
                 },
             ],

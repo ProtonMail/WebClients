@@ -1,10 +1,9 @@
-import rule from '../validate-ttag-key-autofix-warning';
+import { RuleTester } from 'oxlint/plugins-dev';
 
-const { RuleTester } = require('eslint');
+import rule from './validate-ttag-key-autofix-warning.js';
 
 const ruleTester = new RuleTester({
     languageOptions: {
-        ecmaVersion: 2020,
         sourceType: 'module',
         parserOptions: {
             ecmaFeatures: {

@@ -28,7 +28,7 @@
     "ignoreWorkspaces": ["packages/wasm/andromeda"],
     "workspaces": {
         ".": {
-            "entry": [],
+            "entry": ["ci/bin/update-chargebee-iframe/oxlint.config.mts"],
             "project": [],
             "ignoreDependencies": [
                 "turbo",
@@ -343,10 +343,6 @@
         "packages/encrypted-search": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
-        },
-        "packages/eslint-plugin-custom-rules": {
-            "entry": [],
-            "project": ["**/*.{js,ts,tsx}"]
         },
         "packages/features": {
             "entry": [],

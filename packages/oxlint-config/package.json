@@ -6,6 +6,7 @@
     "exports": {
         "./brandNames": "./src/brandNames.ts",
         "./createOxlintConfig": "./src/createOxlintConfig.ts",
+        "./custom-rules": "./src/custom-rules/index.js",
         "./extraneousDependencies": "./src/extraneousDependencies.ts",
         "./globs": "./src/globs.ts",
         "./namingConvention": "./src/namingConvention.ts",
@@ -22,7 +23,6 @@
     "dependencies": {
         "@oxlint/plugins": "catalog:",
         "eslint-plugin-compat": "^7.0.2",
-        "eslint-plugin-custom-rules": "workspace:^",
         "ignore": "^7.0.5",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:"
