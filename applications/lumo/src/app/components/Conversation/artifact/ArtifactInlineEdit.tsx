@@ -1,4 +1,4 @@
-import { type RefObject, useEffect, useRef, useState } from 'react';
+import { type RefObject, useEffect, useMemo, useRef, useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
 import { c } from 'ttag';
@@ -11,7 +11,8 @@ import { useWebSearch } from '../../../providers/WebSearchProvider';
 import type { ArtifactActionMeta } from '../../../types';
 import { sendArtifactInlineActionSentEvent } from '../../../util/telemetry';
 import type { ArtifactPanelLayout } from './ArtifactPanel';
-import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
+import { getInlineEditMode } from './artifactTypeConfig';
+import { readDeckSelection } from './deckSelection';
 import type { ArtifactType } from './parseArtifacts';
 import { useArtifactSelection } from './useArtifactSelection';
 
@@ -22,6 +23,8 @@ interface ArtifactInlineEditProps {
     artifactType: ArtifactType;
     isGenerating: boolean;
     layout: ArtifactPanelLayout;
+    /** A JSON slide deck: the selection is read back as deck fields (D19). */
+    isDeck: boolean;
 }
 
 export const ArtifactInlineEdit = ({
@@ -31,11 +34,15 @@ export const ArtifactInlineEdit = ({
     artifactType,
     isGenerating,
     layout,
+    isDeck,
 }: ArtifactInlineEditProps) => {
     const { handleSendArtifactAction } = useConversationActions();
     const { isWebSearchButtonToggled } = useWebSearch();
-    const inlineEditMode = ARTIFACT_TYPE_CONFIG[artifactType].inlineEditMode;
+    const inlineEditMode = getInlineEditMode(artifactType, isDeck);
     const { selection, clearSelection } = useArtifactSelection(containerRef);
+    const deckSelection = useMemo(() => {
+        return isDeck && selection ? readDeckSelection(selection.range) : undefined;
+    }, [isDeck, selection]);
     const [editPrompt, setEditPrompt] = useState('');
     const [containerRect, setContainerRect] = useState<DOMRect | null>(null);
     const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -105,6 +112,10 @@ export const ArtifactInlineEdit = ({
     if (inlineEditMode === 'none' || !selection || !containerRect || isGenerating) {
         return null;
     }
+    // On a deck, only text the deck holds can be edited this way: not chart labels or the canvas's own labels.
+    if (deckSelection?.length === 0) {
+        return null;
+    }
 
     const sendArtifactAction = (meta: ArtifactActionMeta) => {
         sendArtifactInlineActionSentEvent({
@@ -127,8 +138,15 @@ export const ArtifactInlineEdit = ({
             artifactId,
             artifactTitle: title,
             artifactType,
-            selection: selection.text,
+            selection: deckSelection
+                ? deckSelection
+                      .map((part) => {
+                          return part.selected;
+                      })
+                      .join('\n')
+                : selection.text,
             userInstruction: trimmed,
+            ...(deckSelection && { deckSelection }),
         });
     };
 

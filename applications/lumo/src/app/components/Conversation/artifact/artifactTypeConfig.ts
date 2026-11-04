@@ -12,6 +12,8 @@ import type { ArtifactType, ParsedArtifact } from './parseArtifacts';
 
 export type { ArtifactType } from './parseArtifacts';
 
+export type InlineEditMode = 'selection' | 'freeform' | 'none';
+
 interface ArtifactTypeConfigEntry {
     icon: typeof IcCode;
     badgeLabel: string;
@@ -22,9 +24,9 @@ interface ArtifactTypeConfigEntry {
      * 'none' — no inline-edit affordance at all; follow-ups go through the normal composer
      *          (webpage/presentation — content is rendered inside a sandboxed iframe, so the
      *          panel can't read a text selection out of it the way it can for DOM-rendered
-     *          content).
+     *          content). JSON slide decks are the exception: see `getInlineEditMode`.
      */
-    inlineEditMode: 'selection' | 'freeform' | 'none';
+    inlineEditMode: InlineEditMode;
     Renderer: React.ComponentType<ArtifactRendererProps>;
 }
 
@@ -57,4 +59,15 @@ export const ARTIFACT_TYPE_CONFIG: Record<ArtifactType, ArtifactTypeConfigEntry>
         inlineEditMode: 'none',
         Renderer: PresentationRenderer,
     },
+};
+
+/**
+ * JSON slide decks are drawn as DOM text rather than in an iframe, so they take a selection and an
+ * instruction like documents (D19). HTML decks keep the type's 'none'.
+ */
+export const getInlineEditMode = (artifactType: ArtifactType, isDeck: boolean): InlineEditMode => {
+    if (isDeck) {
+        return 'freeform';
+    }
+    return ARTIFACT_TYPE_CONFIG[artifactType].inlineEditMode;
 };

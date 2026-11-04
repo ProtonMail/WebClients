@@ -35,5 +35,14 @@ export default createOxlintConfig({
                 'compat/compat': 'off',
             },
         },
+        {
+            // Local development tools (slides eval runners, in-app checks) that never ship. They use
+            // packages hoisted in the monorepo (playwright, esbuild, @napi-rs/canvas, @xmldom/xmldom)
+            // rather than adding them to Lumo's dependencies.
+            files: ['dev/**'],
+            rules: {
+                'proton/no-extraneous-dependencies': 'off',
+            },
+        },
     ],
 });

@@ -44,6 +44,7 @@ import { addMessage } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId } from '../../redux/slices/core/spaces';
 import type { ContentBlock, Conversation, Message, Space } from '../../types';
 import { ConversationStatus, Role, SpaceType } from '../../types';
+import { SLIDES_EVAL_FIXTURES } from '../../util/slides/eval/slidesEvalFixtures';
 
 interface TestRendererModalProps {
     open: boolean;
@@ -55,6 +56,16 @@ interface TestContentSample {
     content: string;
     blocks?: ContentBlock[];
 }
+
+const getSlidesEvalFixture = (id: string) => {
+    const fixture = SLIDES_EVAL_FIXTURES.find((item) => {
+        return item.id === id;
+    });
+    if (!fixture) {
+        throw new Error(`Unknown slides eval fixture ${id}`);
+    }
+    return fixture;
+};
 
 function makeArtifactToolCallBlock(
     args: { id: string; type: string; title: string; content: string; language?: string },
@@ -363,6 +374,141 @@ console.log(\`Expected headcount: \${countGuests(sample)}\`);`,
                     content: PRESENTATION_WITH_CHART_PLACEHOLDER,
                 },
                 'call-artifact-viz-slides-ok'
+            ),
+        ],
+    },
+    artifact_deck_json_northwind: {
+        name: 'Artifact panel: JSON slide deck (D18, title + bullets + charts + notes)',
+        content: `Open the **presentation** artifact. It's a JSON deck, drawn by the app (no reveal.js): five slides with bar and line charts and speaker notes. There's no user message with the source data here, so the canvas flags every number as not found in your material. Download → PowerPoint gives the native .pptx.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'deck-json-northwind',
+                    type: 'presentation',
+                    title: 'Northwind Coffee Q3 2026',
+                    content: JSON.stringify(getSlidesEvalFixture('northwind-q3').modelOutput),
+                },
+                'call-artifact-deck-json-northwind'
+            ),
+        ],
+    },
+    artifact_deck_json_missing_data: {
+        name: 'Artifact panel: JSON slide deck with missing chart data',
+        content: `Open the **presentation** artifact. The market size slide shows a "Data needed" box, and the canvas lists the missing information above the slides.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'deck-json-missing-data',
+                    type: 'presentation',
+                    title: 'Seed Pitch',
+                    content: JSON.stringify(getSlidesEvalFixture('missing-data').modelOutput),
+                },
+                'call-artifact-deck-json-missing'
+            ),
+        ],
+    },
+    artifact_deck_json_new_layouts: {
+        name: 'Artifact panel: JSON slide deck with section, two-column and quote layouts',
+        content: `Open the **presentation** artifact. It has a section divider (purple background), a pull quote slide, and a two-column comparison slide.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'deck-json-new-layouts',
+                    type: 'presentation',
+                    title: 'New Layout Types Demo',
+                    content: JSON.stringify(getSlidesEvalFixture('new-layouts').modelOutput),
+                },
+                'call-artifact-deck-json-new-layouts'
+            ),
+        ],
+    },
+    artifact_deck_json_section_layout: {
+        name: 'Slide: section layout (purple divider, optional subtitle)',
+        content: `Open the **presentation** artifact. Slides 2 and 4 are section dividers with a purple background and centered title. Slide 2 has a subtitle; slide 4 does not.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'deck-json-section-layout',
+                    type: 'presentation',
+                    title: 'Product Roadmap H2 2026',
+                    content: JSON.stringify(getSlidesEvalFixture('section-layout').modelOutput),
+                },
+                'call-artifact-deck-json-section-layout'
+            ),
+        ],
+    },
+    artifact_deck_json_two_column_layout: {
+        name: 'Slide: two-column layout (side-by-side bullet columns)',
+        content: `Open the **presentation** artifact. Slides 2 and 3 each show two equal columns of bullets side by side under a shared title. Slide 3 has sub-bullets.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'deck-json-two-column-layout',
+                    type: 'presentation',
+                    title: 'Build vs Buy: Search Infrastructure',
+                    content: JSON.stringify(getSlidesEvalFixture('two-column-layout').modelOutput),
+                },
+                'call-artifact-deck-json-two-column-layout'
+            ),
+        ],
+    },
+    artifact_deck_json_quote_layout: {
+        name: 'Slide: quote layout (large pull-quote, attribution)',
+        content: `Open the **presentation** artifact. Slides 2–4 are quote slides: large centered text with a bottom-anchored attribution line and no header.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'deck-json-quote-layout',
+                    type: 'presentation',
+                    title: 'Customer Voice · October 2026',
+                    content: JSON.stringify(getSlidesEvalFixture('quote-layout').modelOutput),
+                },
+                'call-artifact-deck-json-quote-layout'
+            ),
+        ],
+    },
+    artifact_deck_json_all_layouts: {
+        name: 'Slide: all six layout types in one deck',
+        content: `Open the **presentation** artifact. One deck with every layout: title slide, section divider (purple), bar chart, two-column comparison, bullets and a closing quote slide. Good for checking visual flow and .pptx download.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'deck-json-all-layouts',
+                    type: 'presentation',
+                    title: 'Meridian Analytics · FY 2026 Review',
+                    content: JSON.stringify(getSlidesEvalFixture('all-layouts').modelOutput),
+                },
+                'call-artifact-deck-json-all-layouts'
+            ),
+        ],
+    },
+    artifact_deck_json_pie: {
+        name: 'Slide: pie chart with shares and a takeaway',
+        content: `Open the **presentation** artifact. A pie chart slide, for checking the preview against the PDF.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'deck-json-pie',
+                    type: 'presentation',
+                    title: 'Trial sources',
+                    content: JSON.stringify(getSlidesEvalFixture('pie-shares').modelOutput),
+                },
+                'call-artifact-deck-json-pie'
+            ),
+        ],
+    },
+    artifact_deck_json_cjk: {
+        name: 'Slide: Japanese text (non-Latin PDF fallback)',
+        content: `Open the **presentation** artifact. Japanese text, which the built-in PDF fonts can't show, so PDF export falls back to images.`,
+        blocks: [
+            makeArtifactToolCallBlock(
+                {
+                    id: 'deck-json-cjk',
+                    type: 'presentation',
+                    title: '新製品の発売計画',
+                    content: JSON.stringify(getSlidesEvalFixture('cjk-text').modelOutput),
+                },
+                'call-artifact-deck-json-cjk'
             ),
         ],
     },

@@ -60,8 +60,9 @@ describe('prepareTurns — artifact tool nudge', () => {
         expect(nudge?.content).not.toContain('answered as a creation in the canvas');
     });
 
-    it('lists slide decks in the auto nudge only with LumoArtifactSlides', () => {
-        const getNudge = (artifactPresentationEnabled: boolean) => {
+    // D20: slide decks are only suggested when the tool offers `presentation` (LumoArtifactSlides).
+    it('lists slide decks in the auto nudge only with the slides flag', () => {
+        const findNudge = (artifactPresentationEnabled: boolean) => {
             const turns = prepareTurns(
                 [message],
                 personalization,
@@ -78,8 +79,9 @@ describe('prepareTurns — artifact tool nudge', () => {
             return turns.find((turn) => turn.role === Role.System && turn.content?.includes('create_artifact'));
         };
 
-        expect(getNudge(true)?.content).toContain('slide deck');
-        expect(getNudge(false)?.content).not.toContain('slide deck');
+        expect(findNudge(false)?.content).toContain('a complete script or program, or a web page.');
+        expect(findNudge(false)?.content).not.toContain('slide deck');
+        expect(findNudge(true)?.content).toContain('a complete script or program, a web page, or a slide deck.');
     });
 
     it('injects the revise-only nudge when artifactToolMode is "revise"', () => {

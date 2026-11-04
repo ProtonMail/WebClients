@@ -375,7 +375,7 @@ export type SettingsContext = {
     personalization?: PersonalizationSettings;
     isMemoryFeatureEnabled?: boolean;
     isArtifactsViewFeatureEnabled?: boolean;
-    /** `LumoArtifactSlides`: the model may create slide decks (`presentation` artifacts). */
+    /** `LumoArtifactSlides`: the model may create slide decks, as JSON rendered to a native .pptx (D18, D20). */
     isArtifactSlidesFeatureEnabled?: boolean;
     hasLumoPlus?: boolean;
     isVisualizationInstructionsFeatureEnabled?: boolean;

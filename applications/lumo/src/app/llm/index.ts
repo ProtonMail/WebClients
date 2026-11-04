@@ -121,7 +121,7 @@ const ARTIFACT_TOOL_CREATE_NUDGE = `The user has asked for this message to be an
 // decide for itself whether the request qualifies — and the default answer is "no". Without an
 // explicit bias towards answering inline, factual questions answered from web search results
 // (weather, stock prices) were being routed into the side panel. Slide decks are only listed when
-// the tool offers `presentation` (`LumoArtifactSlides`).
+// the tool offers `presentation` (`LumoArtifactSlides`, D20).
 const buildArtifactToolAutoNudge = (presentationEnabled: boolean): string => {
     const examples = presentationEnabled
         ? 'a complete script or program, a web page, or a slide deck'

@@ -100,6 +100,21 @@ describe('useArtifactFileActions', () => {
         expect(triggerFileDownload).toHaveBeenCalledWith(expect.any(Blob), 'Deck.html');
     });
 
+    // D18: a JSON deck's source is the deck itself; D26: its PDF is written from the layout.
+    it('offers a JSON deck its data, PDF and PowerPoint, and both on Drive', () => {
+        const jsonDeck: ParsedArtifact = {
+            id: 'deck',
+            type: 'presentation',
+            title: 'Deck',
+            content: JSON.stringify({ slides: [{ layout: 'title', title: 'Deck' }] }),
+        };
+        const actions = renderFileActions({ artifact: jsonDeck, layout: 'docked', viewedOlderVersion: false });
+        expect(keys(actions.downloadOptions)).toEqual(['source', 'pdf', 'pptx']);
+        expect(actions.downloadOptions[0].extension).toBe('.json');
+        expect(actions.downloadOptions[0].label).toBe('Slide data');
+        expect(keys(actions.saveToDriveOptions)).toEqual(['pdf', 'pptx']);
+    });
+
     it('hides Save to Drive from guests', () => {
         const actions = renderFileActions({ artifact: document, layout: 'docked', viewedOlderVersion: false }, true);
         expect(actions.saveToDriveOptions).toEqual([]);

@@ -7,6 +7,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { createThrottledProgressCallback, yieldToMainThreadPaint } from '../../../util/export/exportUiHelpers';
+import { isDeckArtifact } from '../../../util/slides/deckContent';
 import { bucketArtifactContentLength, sendArtifactDownloadedEvent } from '../../../util/telemetry';
 import type { ArtifactDownloadFormat, ArtifactDownloadLayout, ArtifactDownloadResult } from '../../../util/telemetry';
 import { triggerFileDownload } from '../../../util/triggerFileDownload';
@@ -221,13 +222,15 @@ export function useArtifactFileActions({
     };
 
     const canExport = !sourceOnly && !exportsDisabled;
+    // A JSON deck's source is the deck JSON (D18).
+    const isDeck = isDeckArtifact(artifact);
     const sourceExtension =
         (sourceFile && getFileExtension(sourceFile.fileName)) ?? getArtifactSourceDownloadExtension(artifact);
     // Source (what the Library syncs) first, then the exports this type supports.
     const downloadOptions: ArtifactMenuFormatOption[] = [
         {
             key: 'source',
-            label: getArtifactSourceMenuLabel(artifact.type),
+            label: isDeck ? c('collider_2025:Action').t`Slide data` : getArtifactSourceMenuLabel(artifact.type),
             extension: `.${sourceExtension}`,
             icon: artifact.type === 'document' ? 'FileText' : 'FileCode',
             onSelect: () => {
