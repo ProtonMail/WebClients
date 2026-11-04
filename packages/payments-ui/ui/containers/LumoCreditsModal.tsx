@@ -4,6 +4,7 @@ import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import Loader from '@proton/components/components/loader/Loader';
 import { MIN_LUMO_CREDIT_AMOUNT } from '@proton/payments/core/amount-limits';
 import {
     type ProductCheckResponse,
@@ -13,7 +14,6 @@ import {
 import { CacheType } from '@proton/redux-utilities/interface';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
-import Loader from '../../components/loader/Loader';
 import { TopUpModal, type TopUpModalProps } from './TopUpModal';
 
 export const LumoCreditsModal = ({ onSuccess, ...props }: TopUpModalProps & { onSuccess?: () => void }) => {

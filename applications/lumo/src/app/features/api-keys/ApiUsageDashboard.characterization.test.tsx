@@ -22,7 +22,7 @@ jest.mock('@proton/components/components/link/SettingsLink', () => ({
     __esModule: true,
     default: ({ children }: { children: ReactNode }) => <a href="/users-addresses">{children}</a>,
 }));
-jest.mock('@proton/components/containers/payments/LumoCreditsModal', () => ({
+jest.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
     LumoCreditsModal: ({ open }: { open: boolean }) => (open ? <div>Credits modal</div> : null),
 }));
 

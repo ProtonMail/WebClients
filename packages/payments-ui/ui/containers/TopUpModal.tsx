@@ -8,17 +8,20 @@ import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import Form from '@proton/components/components/form/Form';
+import useDebounceInput from '@proton/components/components/input/useDebounceInput';
+import Loader from '@proton/components/components/loader/Loader';
+import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import Price from '@proton/components/components/price/Price';
+import AmountRow from '@proton/components/containers/payments/AmountRow';
+import PaymentInfo from '@proton/components/containers/payments/PaymentInfo';
+import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
+import CheckoutRow from '@proton/components/containers/payments/subscription/modal-components/helpers/CheckoutRow';
 import useLoading from '@proton/hooks/useLoading';
-import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
-import type { OnChargeable } from '@proton/payments-ui/client-extensions/usePaymentFacade';
-import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
-import { ChargebeeIdealButton } from '@proton/payments-ui/ui/components/ChargebeeIdealButton';
-import { ChargebeePaypalButton } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
-import {
-    IdealAuthorizationText,
-    isIdealAuthorizationNoteShown,
-} from '@proton/payments-ui/ui/components/IdealAuthorizationText';
-import { formatTax } from '@proton/payments-ui/ui/headless-checkout/tax-helpers';
 import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
 import type { ProductCheckResponse } from '@proton/payments/core/api/createPaymentSubscription';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
@@ -35,19 +38,13 @@ import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
-import Form from '../../components/form/Form';
-import useDebounceInput from '../../components/input/useDebounceInput';
-import Loader from '../../components/loader/Loader';
-import type { ModalProps } from '../../components/modalTwo/Modal';
-import ModalTwo from '../../components/modalTwo/Modal';
-import ModalTwoContent from '../../components/modalTwo/ModalContent';
-import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
-import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
-import Price from '../../components/price/Price';
-import AmountRow from './AmountRow';
-import PaymentInfo from './PaymentInfo';
-import PaymentWrapper from './PaymentWrapper';
-import CheckoutRow from './subscription/modal-components/helpers/CheckoutRow';
+import { useAutomaticCurrency } from '../../client-extensions/useAutomaticCurrency';
+import type { OnChargeable } from '../../client-extensions/usePaymentFacade';
+import { usePaymentFacade } from '../../client-extensions/usePaymentFacade';
+import { ChargebeeIdealButton } from '../components/ChargebeeIdealButton';
+import { ChargebeePaypalButton } from '../components/ChargebeePaypalButton';
+import { IdealAuthorizationText, isIdealAuthorizationNoteShown } from '../components/IdealAuthorizationText';
+import { formatTax } from '../headless-checkout/tax-helpers';
 
 export type TopUpModalProps = {
     app: APP_NAMES;

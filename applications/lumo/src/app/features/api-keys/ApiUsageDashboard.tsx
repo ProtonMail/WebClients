@@ -16,7 +16,7 @@ import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { LumoCreditsModal } from '@proton/components/containers/payments/LumoCreditsModal';
+import { LumoCreditsModal } from '@proton/payments-ui/ui/containers/LumoCreditsModal';
 import type { LumoCreditAutoTopUpStatus } from '@proton/payments/core/api/lumoCredit';
 import type { Currency } from '@proton/payments/core/interface';
 
