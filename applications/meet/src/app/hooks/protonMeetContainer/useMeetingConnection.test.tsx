@@ -341,6 +341,33 @@ describe('useMeetingConnection', () => {
                 expect(mockMeetCoreClient.restart).toHaveBeenCalledTimes(1);
                 expect(params.handleMlsSetup).toHaveBeenCalled();
             });
+
+            it('restarts meet-core and retries when the leave after a failed LiveKit connect hangs', async () => {
+                mockMeetCoreClient.leaveMeeting.mockReturnValueOnce(new Promise(() => {}));
+                const params = createParams({
+                    connectWithStunFallbackToTurnRelay: vi
+                        .fn()
+                        .mockRejectedValueOnce(
+                            ConnectionError.serverUnreachable('could not establish signal connection')
+                        )
+                        .mockResolvedValue({ stunFailed: false, connectionAttempts: 1 }),
+                });
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+                await act(() => vi.advanceTimersByTimeAsync(MEET_CORE_STALL_TIMEOUT_MS));
+
+                expect(mockMeetCoreClient.restart).toHaveBeenCalledTimes(1);
+                expect(params.reportMeetError).toHaveBeenCalledWith(
+                    'Meet core leaveMeeting timed out',
+                    expect.anything()
+                );
+
+                await act(() => vi.advanceTimersByTimeAsync(REJOIN_RETRY_DELAYS_MS[0]));
+
+                await expect(run).resolves.toBe('joined');
+                expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalledTimes(2);
+            });
         });
 
         describe('when joining the MLS group hangs', () => {

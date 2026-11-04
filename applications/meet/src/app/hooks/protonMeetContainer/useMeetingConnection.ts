@@ -241,7 +241,9 @@ export const useMeetingConnection = ({
                 }
                 // If LiveKit connection fails after MLS join, clean up MLS group to prevent inconsistent state
                 try {
-                    await meetCoreClient.leaveMeeting();
+                    await (recoverStalledMeetCore
+                        ? leaveMeetingOrRestart(meetCoreClient, reportMeetError)
+                        : meetCoreClient.leaveMeeting());
                 } catch (leaveError) {
                     reportMeetError('Failed to leave MLS group after LiveKit connection failure', {
                         context: { error: leaveError },
