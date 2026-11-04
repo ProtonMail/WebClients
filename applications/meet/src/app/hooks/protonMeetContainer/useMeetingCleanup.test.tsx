@@ -14,6 +14,7 @@ import {
 import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { MeetCoreRestartedError } from '../../wasm/meetCoreStallRecovery';
 import { useMeetingCleanup } from './useMeetingCleanup';
 
 vi.mock('@livekit/components-react', () => ({
@@ -167,6 +168,19 @@ describe('useMeetingCleanup', () => {
         await expect(mockMeetCoreClient.leaveMeeting.mock.results[0].value).rejects.toBe(
             MeetCoreErrorEnum.ParticipantNotFound
         );
+        expect(reportMeetError).not.toHaveBeenCalled();
+    });
+
+    it('reports nothing when a meet-core restart dropped the leave', async () => {
+        const error = new MeetCoreRestartedError();
+        mockMeetCoreClient.leaveMeeting.mockRejectedValue(error);
+        const { result } = renderHook(() => useMeetingCleanup(createParams()), {
+            wrapper: createTestWrapper(createMockStore()),
+        });
+
+        result.current.cleanupMeeting({ disconnect: true });
+
+        await expect(mockMeetCoreClient.leaveMeeting.mock.results[0].value).rejects.toBe(error);
         expect(reportMeetError).not.toHaveBeenCalled();
     });
 

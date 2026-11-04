@@ -10,6 +10,7 @@ import { resetParticipantMaps } from '@proton/meet/store/slices/participants/par
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { toMeetCoreErrorEnum } from '../../wasm/meetCoreError';
+import { MeetCoreRestartedError } from '../../wasm/meetCoreStallRecovery';
 import { useStableCallback } from '../useStableCallback';
 
 interface UseMeetingCleanupParams {
@@ -52,7 +53,10 @@ export const useMeetingCleanup = ({
         if (disconnect) {
             void room.disconnect();
             void meetCoreClient.leaveMeeting().catch((error: unknown) => {
-                if (toMeetCoreErrorEnum(error) === MeetCoreErrorEnum.ParticipantNotFound) {
+                if (
+                    toMeetCoreErrorEnum(error) === MeetCoreErrorEnum.ParticipantNotFound ||
+                    error instanceof MeetCoreRestartedError
+                ) {
                     return;
                 }
                 reportMeetError('Failed to leave meeting', { context: { error } });
