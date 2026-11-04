@@ -22,8 +22,9 @@ interface UsePageVisibilityHandlerParams {
  *   - Resumes paused audio and video elements that were created while in background
  *   - Resubscribes all video tracks (with debounce)
  *
- * Only the websocket settings are Safari only: other browsers run meet-core in a worker whose timers
- * are not throttled, and the defaults let a background tab notice a lost connection quickly.
+ * Only the websocket settings are Safari only: elsewhere the defaults let a background tab notice a
+ * lost connection quickly. Chrome throttles a hidden page with a live WebRTC connection to one timer
+ * check per second at most, so the default pings keep running.
  * The video pause runs everywhere: adaptiveStream's visibility signal is IntersectionObserver
  * based and does not re-fire on a backgrounded tab. It stays in this handler so the setEnabled
  * burst cannot reach the socket while Safari is still reconfiguring the websocket.
