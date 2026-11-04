@@ -12,6 +12,7 @@ export interface MeetCoreInitParams {
     userId: string;
     uid: string;
     useCachedServerTime: boolean;
+    useMessageQueues: boolean;
 }
 
 export interface MeetCoreCookieAckMessage {
