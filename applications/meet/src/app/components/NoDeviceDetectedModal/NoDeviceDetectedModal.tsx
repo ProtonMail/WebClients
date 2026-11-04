@@ -21,7 +21,10 @@ export const NoDeviceDetectedModal = () => {
         return null;
     }
 
-    const deviceContentType = noDeviceDetected === PermissionPromptStatus.CAMERA ? 'see' : 'hear';
+    const title =
+        noDeviceDetected === PermissionPromptStatus.CAMERA
+            ? c('Info').t`Do you want people to see you in the meeting?`
+            : c('Info').t`Do you want people to hear you in the meeting?`;
 
     const deviceNameBasedLabel =
         noDeviceDetected === PermissionPromptStatus.CAMERA
@@ -44,8 +47,7 @@ export const NoDeviceDetectedModal = () => {
         >
             <ModalTwoHeader />
             <ModalTwoContent className="flex flex-column justify-center gap-4 text-center ">
-                <div className="text-3xl text-semibold my-2">{c('Info')
-                    .t`Do you want people to ${deviceContentType} you in the meeting?`}</div>
+                <div className="text-3xl text-semibold my-2">{title}</div>
 
                 <div className="color-weak mb-8">{deviceNameBasedLabel}</div>
 
