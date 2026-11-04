@@ -131,8 +131,6 @@ export const useMeetingConnection = ({
     const room = useRoomContext();
 
     const isReconnectingRef = useRef(false);
-    // Non-null exactly while isReconnectingRef is true. A run checks its own signal, never this ref: after a
-    // cancel, a newer run may own the ref.
     const rejoinControllerRef = useRef<AbortController | null>(null);
     const websocketUrlRef = useRef<string | null>(null);
 
@@ -238,7 +236,6 @@ export const useMeetingConnection = ({
                 await initDevices;
                 deviceInitMs = Math.round(performance.now() - t2);
             } catch (livekitError) {
-                // Whoever cancelled the rejoin already left the MLS group and cleaned up
                 if (signal?.aborted) {
                     throw livekitError;
                 }
@@ -254,7 +251,6 @@ export const useMeetingConnection = ({
                 cleanupMlsState();
                 throw livekitError;
             }
-            // Only here is the room known to be this run's: later, a newer join may have connected it
             if (signal?.aborted) {
                 void room.disconnect();
                 signal.throwIfAborted();
@@ -323,14 +319,9 @@ export const useMeetingConnection = ({
 
         const meetingLinkName = meetingLinkNameRef.current;
 
-        // Snapshot the live camera/mic state so it survives the rejoin; otherwise
-        // initializeDevices falls back to the prejoin defaults and silently turns them off.
-        // Once per run: a later attempt would read the room this run disconnected.
         const wasCameraEnabled = room.localParticipant.isCameraEnabled;
         const wasMicrophoneEnabled = room.localParticipant.isMicrophoneEnabled;
 
-        // A rejoin follows an unstable network, which is when a meet-core request can hang while holding
-        // the state lock the leave needs.
         const leaveMlsGroup = () =>
             isHandleStalledLiveKitReconnectEnabled
                 ? leaveMeetingOrRestart(meetCoreClient, reportMeetError)

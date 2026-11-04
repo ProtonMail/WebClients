@@ -8,7 +8,6 @@ import type { MeetCoreClient } from './MeetCoreClient';
 // timeout), and every later call would queue behind it until that request fails.
 export const MEET_CORE_STALL_TIMEOUT_MS = 5 * SECOND;
 
-// Joining is an HTTP round trip plus MLS crypto, which legitimately takes several seconds.
 export const MEET_CORE_JOIN_TIMEOUT_MS = 20 * SECOND;
 
 export class MeetCoreRestartedError extends Error {
@@ -18,10 +17,6 @@ export class MeetCoreRestartedError extends Error {
     }
 }
 
-/**
- * A meet-core call outlived its deadline. `restarted` is false when meet-core could not be restarted,
- * so the next call would queue behind the hung one.
- */
 export class MeetCoreStalledError extends Error {
     public readonly restarted: boolean;
 
@@ -50,8 +45,7 @@ const TIMED_OUT = Symbol('timed out');
 
 /**
  * Runs `call`, and if it hasn't settled within the timeout, reports it and restarts meet-core so the
- * calls that follow don't queue behind it. Rejects when `call` itself fails, or with the abort reason
- * when `signal` aborts first, in which case meet-core is left running: whoever aborted may be using it.
+ * calls that follow don't queue behind it.
  */
 export const callMeetCoreOrRestart = async (
     meetCoreClient: MeetCoreClient,
@@ -89,7 +83,6 @@ export const callMeetCoreOrRestart = async (
     return restarted ? 'restarted' : 'stuck';
 };
 
-/** Like `callMeetCoreOrRestart`, but returns what `call` returned, and throws `MeetCoreStalledError` past the deadline. */
 export const callMeetCoreWithinDeadline = async <T>(
     meetCoreClient: MeetCoreClient,
     call: () => Promise<T>,

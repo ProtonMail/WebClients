@@ -197,8 +197,6 @@ export const useRoomEventHandlers = ({
 
     const handleDisconnected = useStableCallback((reason?: DisconnectReason) => {
         if (shouldRejoinAfterDisconnect(reason, isHandleStalledLiveKitReconnectEnabled)) {
-            // No leaveMeeting here: performFullReconnection leaves the MLS group while mlsSetupDone is still set.
-            // cleanupMlsState clears it, so it runs here only with the flag off, where that leave is unbounded and can hang.
             disallowHealthCheck();
             dispatch(setIsReconnecting(true));
             dispatch(setJoinedRoom(false));
@@ -221,7 +219,6 @@ export const useRoomEventHandlers = ({
             return;
         }
 
-        // Before the isReconnectingRef read below, so the meeting is left here instead of by the cancelled rejoin
         if (MEETING_ENDING_DISCONNECT_REASONS.has(reason)) {
             cancelReconnection();
         }
@@ -259,7 +256,6 @@ export const useRoomEventHandlers = ({
         } else if (reason !== undefined && reason !== DisconnectReason.CLIENT_INITIATED) {
             reportMeetError('Room disconnected unexpectedly', { context: { error: DisconnectReason[reason] } });
         }
-        // Whoever called room.disconnect() owns the meeting link name: leaving clears it, a rejoin keeps it.
         if (reason !== DisconnectReason.CLIENT_INITIATED) {
             meetingLinkNameRef.current = '';
         }

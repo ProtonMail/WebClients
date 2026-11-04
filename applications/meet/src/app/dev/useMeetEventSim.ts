@@ -10,10 +10,6 @@ import { useStableCallback } from '../hooks/useStableCallback';
 import { initMeetEventSim } from './meetEventSim';
 
 /**
- * React bridge for `meetEventSim`. Passes Redux dispatch, the store's `getState`,
- * the LiveKit room and the meet-core client to the tool and tears it down when
- * the component unmounts.
- *
  * No-op in production builds — the effect body is statically eliminated by the bundler.
  */
 export const useMeetEventSim = () => {

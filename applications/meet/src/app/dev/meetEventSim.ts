@@ -68,8 +68,6 @@ declare global {
 const SIM_IDENTITY_PREFIX = '__event_sim__';
 const SIM_RECORDING_IDENTITY = `${SIM_IDENTITY_PREFIX}recording`;
 
-// meet-core calls queue behind a hung request until it fails (see meetCoreStallRecovery), so a
-// state probe that waited on getWsState could hang the scenario reading it.
 const MEET_CORE_STATE_TIMEOUT_MS = 2 * SECOND;
 
 let counter = 0;
@@ -101,13 +99,6 @@ interface MeetEventSimOptions {
     meetCoreClient: MeetCoreClient;
 }
 
-/**
- * Wires up the `window.meetEventSim` tool with a Redux dispatch function, a
- * `sendMessage` function used to actually publish a chat message to the room,
- * the store's `getState` for the simulations that read the current state, and
- * the LiveKit room and meet-core client the connection simulations drive and read.
- * Returns a cleanup function that removes the tool from the window.
- */
 export const initMeetEventSim = ({
     dispatch,
     sendMessage,
