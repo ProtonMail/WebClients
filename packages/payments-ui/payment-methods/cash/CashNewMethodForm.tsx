@@ -1,11 +1,10 @@
 import { c } from 'ttag';
 
+import Bordered from '@proton/components/components/container/Bordered';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import envelopSvg from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
 
-import Bordered from '../../components/container/Bordered';
-
-const Cash = () => {
+export const CashNewMethodForm = () => {
     const howToSendCashArticleUrl = (
         <a
             href={getStaticURL('/support/payment-options#cash')}
@@ -26,5 +25,3 @@ const Cash = () => {
         </Bordered>
     );
 };
-
-export default Cash;

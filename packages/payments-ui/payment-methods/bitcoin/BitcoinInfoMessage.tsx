@@ -9,7 +9,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 type Props = HTMLAttributes<HTMLDivElement>;
 
-const BitcoinInfoMessage = ({ ...rest }: Props) => {
+export const BitcoinInfoMessage = ({ ...rest }: Props) => {
     const { APP_NAME } = useConfig();
 
     return (
@@ -28,5 +28,3 @@ const BitcoinInfoMessage = ({ ...rest }: Props) => {
         </div>
     );
 };
-
-export default BitcoinInfoMessage;

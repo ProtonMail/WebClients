@@ -1,10 +1,9 @@
 import { render, screen } from '@testing-library/react';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 
-import PayPalInfoMessage from './PayPalInfoMessage';
-import PayPalView from './PayPalView';
+import { PayPalInfoMessage } from './PayPalInfoMessage';
+import { PayPalView } from './PayPalView';
 
 const amountAndCurrency = {
     Amount: 1000,
@@ -14,11 +13,7 @@ const amountAndCurrency = {
 describe('<PayPalView />', () => {
     it('should render info message', () => {
         const { container } = render(
-            <PayPalView
-                amount={amountAndCurrency.Amount}
-                currency={amountAndCurrency.Currency}
-                method={PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL}
-            >
+            <PayPalView amount={amountAndCurrency.Amount} currency={amountAndCurrency.Currency}>
                 <div className="p-4 border rounded bg-weak mb-4" data-testid="paypal-view">
                     <PayPalInfoMessage />
                 </div>
@@ -32,7 +27,7 @@ describe('<PayPalView />', () => {
 
     it('should render minimum amount alert', () => {
         const { container } = render(
-            <PayPalView amount={1} currency={amountAndCurrency.Currency} method={PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL}>
+            <PayPalView amount={1} currency={amountAndCurrency.Currency}>
                 <div className="p-4 border rounded bg-weak mb-4" data-testid="paypal-view">
                     <PayPalInfoMessage />
                 </div>
@@ -44,11 +39,7 @@ describe('<PayPalView />', () => {
 
     it('should render maximum amount alert', () => {
         const { container } = render(
-            <PayPalView
-                amount={4000001}
-                currency={amountAndCurrency.Currency}
-                method={PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL}
-            >
+            <PayPalView amount={4000001} currency={amountAndCurrency.Currency}>
                 <div className="p-4 border rounded bg-weak mb-4" data-testid="paypal-view">
                     <PayPalInfoMessage />
                 </div>

@@ -31,12 +31,6 @@ export function getMaxBitcoinAmount(currency: Currency): number {
     return getMaxCreditAmount(currency);
 }
 
-export function getMinPaypalAmountInhouse(currency: Currency): number {
-    const minUsdAmount = 499;
-    const rate = getNaiveCurrencyRate(currency);
-    return minUsdAmount * rate;
-}
-
 export function getMinPaypalAmountChargebee(currency: Currency): number {
     const minUsdAmount = 100;
     const rate = getNaiveCurrencyRate(currency);

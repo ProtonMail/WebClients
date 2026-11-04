@@ -255,6 +255,10 @@ type ChargebeeIframeProps = React.IframeHTMLAttributes<HTMLIFrameElement> & {
     onClick?: () => void;
 };
 
+export type ProcessorsResetOnIframeUnmount = Required<
+    Pick<ChargebeeIframeProps, 'chargebeeCard' | 'chargebeePaypal' | 'directDebit'>
+>;
+
 interface ChargebeeConfiguration {
     site: string;
     publishableKey: string;

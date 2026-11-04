@@ -7,10 +7,6 @@ import { Badge } from '@proton/components/components/badge/Badge';
 import Price from '@proton/components/components/price/Price';
 import Alert3DS from '@proton/components/containers/payments/Alert3ds';
 import DefaultPaymentMethodMessage from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
-import PayPalInfoMessage from '@proton/components/containers/payments/PayPalInfoMessage';
-import PayPalView from '@proton/components/containers/payments/PayPalView';
-import Bitcoin from '@proton/components/containers/payments/bitcoin/Bitcoin';
-import BitcoinInfoMessage from '@proton/components/containers/payments/bitcoin/BitcoinInfoMessage';
 import PaymentMethodDetails from '@proton/components/containers/payments/methods/PaymentMethodDetails';
 import { NoPaymentRequiredNote } from '@proton/components/containers/payments/subscription/modal-components/NoPaymentRequiredNote';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
@@ -19,6 +15,10 @@ import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRecta
 import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
 import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/billed-user/BilledUserInlineMessage';
 import type { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
+import { BitcoinInfoMessage } from '@proton/payments-ui/payment-methods/bitcoin/BitcoinInfoMessage';
+import { BitcoinView } from '@proton/payments-ui/payment-methods/bitcoin/BitcoinView';
+import { PayPalInfoMessage } from '@proton/payments-ui/payment-methods/paypal/PayPalInfoMessage';
+import { PayPalView } from '@proton/payments-ui/payment-methods/paypal/PayPalView';
 import { TaxFields } from '@proton/payments-ui/ui/billing-address/components/TaxFields';
 import type { useTaxCountry } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import type { useVatNumber } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';
@@ -198,7 +198,7 @@ const PaymentMethodForm = ({
                 {!isBilledUser(user) && UID && selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN && (
                     <>
                         <BitcoinInfoMessage />
-                        <Bitcoin
+                        <BitcoinView
                             loading={loadingBitcoin || (!!taxCountry && !taxCountry.billingAddressValid)}
                             {...bitcoinProps}
                         />
@@ -222,7 +222,7 @@ const PaymentMethodForm = ({
                 {selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL && (
                     <>
                         {taxFields}
-                        <PayPalView method={selectedMethodValue} amount={amount} currency={currency}>
+                        <PayPalView amount={amount} currency={currency}>
                             <div className="flex gap-2 items-center flex-nowrap mb-4">
                                 <IcArrowOutFromRectangle className="color-weak shrink-0" size={8} />
                                 <PayPalInfoMessage />

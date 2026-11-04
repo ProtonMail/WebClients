@@ -1,7 +1,7 @@
 import { act, render, waitFor } from '@testing-library/react';
 
-import type { OnBitcoinTokenValidated } from '@proton/payments-ui/react-extensions/useBitcoin';
-import useBitcoin, { BITCOIN_POLLING_INTERVAL } from '@proton/payments-ui/react-extensions/useBitcoin';
+import { applyHOCs } from '@proton/components/testing/hocs/helpers';
+import { withNotifications } from '@proton/components/testing/with-notifications';
 import { createToken, getTokenStatusV5 } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
@@ -9,9 +9,9 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { addApiMock, apiMock } from '@proton/test-api/api';
 import { flushPromises } from '@proton/test-api/flush-promises';
 
-import { applyHOCs } from '../../../testing/hocs/helpers';
-import { withNotifications } from '../../../testing/with-notifications';
-import Bitcoin from './Bitcoin';
+import type { OnBitcoinTokenValidated } from '../../react-extensions/useBitcoin';
+import useBitcoin, { BITCOIN_POLLING_INTERVAL } from '../../react-extensions/useBitcoin';
+import { BitcoinView } from './BitcoinView';
 
 const onTokenValidated = jest.fn();
 
@@ -23,7 +23,7 @@ type InnerProps = {
     processingToken: boolean;
 };
 
-const BitcoinContext = applyHOCs(withNotifications())(Bitcoin);
+const BitcoinContext = applyHOCs(withNotifications())(BitcoinView);
 
 const BitcoinTestComponent = (props: InnerProps) => {
     const bitcoinHook = useBitcoin({

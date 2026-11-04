@@ -4,7 +4,7 @@ import { IcBrandGoogle } from '@proton/icons/icons/IcBrandGoogle';
 import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import googlePayMarkSvg from '@proton/styles/assets/img/bank-icons/google-pay-mark.svg';
 
-import { maskedLast4 } from '../maskedLast4';
+import { maskedLast4 } from '../formatters';
 import type { PaymentMethodUi } from '../paymentMethodUi';
 
 export const googlePayPaymentMethodUi: PaymentMethodUi<PAYMENT_METHOD_TYPES.GOOGLE_PAY> = {

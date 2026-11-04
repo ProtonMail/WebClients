@@ -15,7 +15,7 @@ import type { SavedCardDetails } from '@proton/payments/core/interface';
 import { type CreditCardType, getBankSvg } from '@proton/payments/core/payment-methods/credit-card-icons';
 import { isSavedCardDetails } from '@proton/payments/core/type-guards';
 
-import { maskedLast4 } from '../maskedLast4';
+import { maskedLast4 } from '../formatters';
 import type { PaymentMethodUi } from '../paymentMethodUi';
 
 import './card.scss';

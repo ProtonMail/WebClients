@@ -5,20 +5,20 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import type { BitcoinHook } from '@proton/payments-ui/react-extensions/useBitcoin';
+import Bordered from '@proton/components/components/container/Bordered';
+import Price from '@proton/components/components/price/Price';
 import { getMaxBitcoinAmount, getMinBitcoinAmount } from '@proton/payments/core/amount-limits';
 
-import Bordered from '../../../components/container/Bordered';
-import Price from '../../../components/price/Price';
-import BitcoinDetails from './BitcoinDetails';
+import type { BitcoinHook } from '../../react-extensions/useBitcoin';
+import { BitcoinDetails } from './BitcoinDetails';
 import type { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
-import BitcoinQRCode from './BitcoinQRCode';
+import { BitcoinQRCode } from './BitcoinQRCode';
 
 type Props = BitcoinHook & {
     suffix?: ReactNode;
 };
 
-const Bitcoin = ({
+export const BitcoinView = ({
     amount,
     currency,
     processingBitcoinToken,
@@ -110,5 +110,3 @@ const Bitcoin = ({
         </Bordered>
     );
 };
-
-export default Bitcoin;

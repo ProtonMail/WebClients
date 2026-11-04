@@ -3,10 +3,9 @@ import type { HTMLAttributes } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import Copy from '@proton/components/components/button/Copy';
+import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import clsx from '@proton/utils/clsx';
-
-import Copy from '../../../components/button/Copy';
-import SkeletonLoader from '../../../components/skeletonLoader/SkeletonLoader';
 
 interface Props {
     amount: number;
@@ -55,7 +54,7 @@ const BitcoinDetailsLine = ({
     );
 };
 
-const BitcoinDetails = ({ amount, address, loading }: Props) => {
+export const BitcoinDetails = ({ amount, address, loading }: Props) => {
     return (
         <div>
             {amount ? (
@@ -70,5 +69,3 @@ const BitcoinDetails = ({ amount, address, loading }: Props) => {
         </div>
     );
 };
-
-export default BitcoinDetails;
