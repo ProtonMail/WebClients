@@ -1,6 +1,7 @@
 import { Provider } from 'react-redux';
 
 import { useRoomContext } from '@livekit/components-react';
+import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { configureStore } from '@reduxjs/toolkit';
 import { renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
@@ -152,6 +153,35 @@ describe('useMeetingCleanup', () => {
 
         await vi.waitFor(() =>
             expect(reportMeetError).toHaveBeenCalledWith('Failed to leave meeting', { context: { error } })
+        );
+    });
+
+    it('reports nothing when meet-core no longer has the participant to remove', async () => {
+        mockMeetCoreClient.leaveMeeting.mockRejectedValue(MeetCoreErrorEnum.ParticipantNotFound);
+        const { result } = renderHook(() => useMeetingCleanup(createParams()), {
+            wrapper: createTestWrapper(createMockStore()),
+        });
+
+        result.current.cleanupMeeting({ disconnect: true });
+
+        await expect(mockMeetCoreClient.leaveMeeting.mock.results[0].value).rejects.toBe(
+            MeetCoreErrorEnum.ParticipantNotFound
+        );
+        expect(reportMeetError).not.toHaveBeenCalled();
+    });
+
+    it('still reports any other meet-core failure to leave', async () => {
+        mockMeetCoreClient.leaveMeeting.mockRejectedValue(MeetCoreErrorEnum.HttpClientError);
+        const { result } = renderHook(() => useMeetingCleanup(createParams()), {
+            wrapper: createTestWrapper(createMockStore()),
+        });
+
+        result.current.cleanupMeeting({ disconnect: true });
+
+        await vi.waitFor(() =>
+            expect(reportMeetError).toHaveBeenCalledWith('Failed to leave meeting', {
+                context: { error: MeetCoreErrorEnum.HttpClientError },
+            })
         );
     });
 

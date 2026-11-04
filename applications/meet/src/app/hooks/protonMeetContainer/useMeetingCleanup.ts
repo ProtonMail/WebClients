@@ -1,6 +1,7 @@
 import type { MutableRefObject } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
+import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
@@ -8,6 +9,7 @@ import { setJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import { resetParticipantMaps } from '@proton/meet/store/slices/participants/participantsSlice';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { toMeetCoreErrorEnum } from '../../wasm/meetCoreError';
 import { useStableCallback } from '../useStableCallback';
 
 interface UseMeetingCleanupParams {
@@ -49,9 +51,12 @@ export const useMeetingCleanup = ({
 
         if (disconnect) {
             void room.disconnect();
-            void meetCoreClient
-                .leaveMeeting()
-                .catch((error: unknown) => reportMeetError('Failed to leave meeting', { context: { error } }));
+            void meetCoreClient.leaveMeeting().catch((error: unknown) => {
+                if (toMeetCoreErrorEnum(error) === MeetCoreErrorEnum.ParticipantNotFound) {
+                    return;
+                }
+                reportMeetError('Failed to leave meeting', { context: { error } });
+            });
             void stopPiP();
         }
 
