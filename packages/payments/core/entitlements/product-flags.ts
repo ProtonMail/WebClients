@@ -2,7 +2,7 @@ import { EntitlementName } from './entitlement-names';
 
 export type ProductFlag = Extract<EntitlementName, `flags-${string}`>;
 
-const isProductFlag = (name: EntitlementName): name is ProductFlag => name.startsWith('flags-');
+export const isProductFlag = (name: EntitlementName): name is ProductFlag => name.startsWith('flags-');
 
 const productFlags = Object.values(EntitlementName).filter(isProductFlag);
 

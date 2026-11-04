@@ -3,9 +3,8 @@ import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getEntitlementsPerSubscription } from '../entitlements/entitlement-grants';
 import { EntitlementName } from '../entitlements/entitlement-names';
 import type { EntitlementCatalog } from '../entitlements/interface';
+import { type ProductFlag, isProductFlag } from '../entitlements/product-flags';
 import type { Subscription } from './interface';
-
-type ProductFlag = Extract<EntitlementName, `flags-${string}`>;
 
 export const appsByProductFlag: Record<ProductFlag, readonly APP_NAMES[]> = {
     [EntitlementName.FlagsInbox]: [APPS.PROTONMAIL, APPS.PROTONCALENDAR],
@@ -24,8 +23,6 @@ export const appsByProductFlag: Record<ProductFlag, readonly APP_NAMES[]> = {
 };
 
 const productFlags = Object.keys(appsByProductFlag) as ProductFlag[];
-
-const isProductFlag = (name: EntitlementName): name is ProductFlag => productFlags.includes(name as ProductFlag);
 
 export const getProductFlagForApp = (appName: APP_NAMES): ProductFlag | undefined =>
     productFlags.find((flag) => appsByProductFlag[flag].includes(appName));
