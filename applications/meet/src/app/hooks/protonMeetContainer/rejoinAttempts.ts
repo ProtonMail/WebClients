@@ -98,11 +98,16 @@ export const runRejoinAttempts = async (
         }
 
         attempts += 1;
+        const attemptStartedOffline = waitWhileOffline && !navigator.onLine;
+        const attemptStartedAtMs = Date.now();
         try {
             await attempt();
             return signal.aborted ? { status: 'cancelled', attempts } : { status: 'joined', attempts };
         } catch (error) {
             lastError = error;
+        }
+        if (attemptStartedOffline) {
+            offlineMs += Date.now() - attemptStartedAtMs;
         }
 
         if (signal.aborted) {

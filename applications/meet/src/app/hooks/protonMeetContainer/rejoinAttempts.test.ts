@@ -1,6 +1,8 @@
 import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { ConnectionError } from 'livekit-client';
 
+import { SECOND } from '@proton/shared/lib/constants';
+
 import { MeetCoreStalledError } from '../../wasm/meetCoreStallRecovery';
 import { OFFLINE_GIVE_UP_MS, OFFLINE_RECHECK_MS, REJOIN_RETRY_DELAYS_MS, runRejoinAttempts } from './rejoinAttempts';
 
@@ -203,6 +205,24 @@ describe('runRejoinAttempts', () => {
             attempts: OFFLINE_GIVE_UP_MS / OFFLINE_RECHECK_MS,
             error: offlineError,
         });
+        expect(vi.getTimerCount()).toBe(0);
+    });
+
+    it('counts the time of attempts made while offline towards OFFLINE_GIVE_UP_MS', async () => {
+        isOnline = false;
+        const hangingAttemptMs = 25 * SECOND;
+        const connectTimeout = ConnectionError.timeout('timed out');
+        const attempt = vi.fn(
+            () => new Promise<void>((_, reject) => setTimeout(() => reject(connectTimeout), hangingAttemptMs))
+        );
+        const { outcome, isSettled } = startRun(attempt);
+
+        await vi.advanceTimersByTimeAsync(OFFLINE_GIVE_UP_MS + hangingAttemptMs - 1);
+        expect(isSettled()).toBe(false);
+
+        await vi.advanceTimersByTimeAsync(1);
+        expect(isSettled()).toBe(true);
+        await expect(outcome).resolves.toEqual({ status: 'failed', attempts: 6, error: connectTimeout });
         expect(vi.getTimerCount()).toBe(0);
     });
 
