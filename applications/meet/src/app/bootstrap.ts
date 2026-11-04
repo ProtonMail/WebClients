@@ -71,12 +71,13 @@ setMeetCoreErrorResolver(getMeetCoreErrorName);
 
 const MEET_CORE_WORKER_FLAG = 'MeetCoreWorker';
 const MEET_USE_CACHED_SERVER_TIME_FLAG = 'MeetUseCachedServerTime';
+const MEET_USE_MESSAGE_QUEUES_FLAG = 'MeetUseMessageQueues';
 const MEET_EXTENDED_TELEMETRY_FLAG = 'MeetExtendedTelemetry';
 
 const getMeetCoreInitParams = (
     authentication: MeetExtraThunkArguments['authentication'],
     appVersion: string
-): Omit<MeetCoreInitParams, 'useCachedServerTime'> => {
+): Omit<MeetCoreInitParams, 'useCachedServerTime' | 'useMessageQueues'> => {
     const persistedSession = getPersistedSession(authentication.localID);
     const userId = persistedSession?.UserID ?? '';
     const uid = authentication.UID ?? '';
@@ -102,6 +103,9 @@ const createDirectMeetCoreClient = async (params: MeetCoreInitParams): Promise<D
         params.uid
     );
     app.setUseCachedServerTime(params.useCachedServerTime);
+    app.setUseMessageQueues(params.useMessageQueues);
+    // eslint-disable-next-line no-console
+    console.log(`[Meet] setUseMessageQueues(${params.useMessageQueues}) [direct]`);
 
     // The worker client installs them in its own global scope on init, this is the direct equivalent.
     installWaitingRoomCallbackNamespaces();
@@ -125,13 +129,15 @@ const initializeMeetCoreClient = async ({
     appVersion,
     meetCoreWorkerEnabled,
     useCachedServerTime,
+    useMessageQueues,
 }: {
     authentication: MeetExtraThunkArguments['authentication'];
     appVersion: string;
     meetCoreWorkerEnabled: boolean;
     useCachedServerTime: boolean;
+    useMessageQueues: boolean;
 }): Promise<MeetCoreClient> => {
-    const params = { ...getMeetCoreInitParams(authentication, appVersion), useCachedServerTime };
+    const params = { ...getMeetCoreInitParams(authentication, appVersion), useCachedServerTime, useMessageQueues };
 
     if (!meetCoreWorkerEnabled) {
         return createDirectMeetCoreClient(params);
@@ -335,9 +341,16 @@ const completeAppBootstrap = async ({
     });
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
     const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
+    const useMessageQueues = unleashClient.isEnabled(MEET_USE_MESSAGE_QUEUES_FLAG);
     const meetCoreClient = await measureLoadPhase(
         'wasmInitMs',
-        initializeMeetCoreClient({ authentication, appVersion, meetCoreWorkerEnabled, useCachedServerTime })
+        initializeMeetCoreClient({
+            authentication,
+            appVersion,
+            meetCoreWorkerEnabled,
+            useCachedServerTime,
+            useMessageQueues,
+        })
     );
     setWasmMode(meetCoreClient);
     bootstrap.onAbort(signal, () => meetCoreClient.dispose());
@@ -522,10 +535,17 @@ export const bootstrapGuestApp = async (
 
     const meetCoreWorkerEnabled = unleashClient.isEnabled(MEET_CORE_WORKER_FLAG);
     const useCachedServerTime = unleashClient.isEnabled(MEET_USE_CACHED_SERVER_TIME_FLAG);
+    const useMessageQueues = unleashClient.isEnabled(MEET_USE_MESSAGE_QUEUES_FLAG);
     const [meetCoreClient] = await Promise.all([
         measureLoadPhase(
             'wasmInitMs',
-            initializeMeetCoreClient({ authentication, appVersion, meetCoreWorkerEnabled, useCachedServerTime })
+            initializeMeetCoreClient({
+                authentication,
+                appVersion,
+                meetCoreWorkerEnabled,
+                useCachedServerTime,
+                useMessageQueues,
+            })
         ),
         measureLoadPhase('cryptoInitMs', bootstrap.loadCrypto({ appName: config.APP_NAME, unleashClient })),
         loadLocales({ locale: getBrowserLocale(), locales, userSettings: undefined }),
