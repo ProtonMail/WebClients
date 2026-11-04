@@ -225,7 +225,7 @@ const CreateTabContent = ({
     );
 };
 
-export type GalleryViewLayout = 'standalone' | 'embedded';
+type GalleryViewLayout = 'standalone' | 'embedded';
 
 export interface GalleryViewProps {
     isProcessingAttachment: boolean;
