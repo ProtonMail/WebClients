@@ -80,6 +80,10 @@ describe('getSupportedTimezone', () => {
         expect(getSupportedTimezone('/Africa/Freetown/')).toEqual('Africa/Abidjan');
     });
 
+    it('should convert America/Coyhaique to America/Punta_Arenas', () => {
+        expect(getSupportedTimezone('America/Coyhaique')).toEqual('America/Punta_Arenas');
+    });
+
     it('should support the bluejeans format', () => {
         expect(getSupportedTimezone('/tzurl.org/2020b/America/Chicago')).toEqual('America/Chicago');
         expect(getSupportedTimezone('/tzurl.org/2020b/Asia/Istanbul')).toEqual('Europe/Istanbul');
@@ -195,6 +199,18 @@ describe('guessTimeZone', () => {
 
         it('guesses "Europe/Zurich"', () => {
             expect(guessTimezone(timeZoneList)).toBe('Europe/Zurich');
+        });
+    });
+
+    describe('should guess right when the browser detects "America/Coyhaique"', () => {
+        beforeEach(() => {
+            vi.spyOn<any, any>(Intl, 'DateTimeFormat').mockReturnValue({
+                resolvedOptions: () => ({ timeZone: 'America/Coyhaique' }),
+            });
+        });
+
+        it('guesses "America/Punta_Arenas"', () => {
+            expect(guessTimezone(timeZoneList)).toBe('America/Punta_Arenas');
         });
     });
 
