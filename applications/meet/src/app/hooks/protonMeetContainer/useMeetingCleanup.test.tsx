@@ -80,6 +80,7 @@ const createParams = () => ({
     disallowHealthCheck: vi.fn(),
     cleanupMlsState: vi.fn(),
     stopPiP: vi.fn().mockResolvedValue(undefined),
+    cancelReconnection: vi.fn(),
 });
 
 describe('useMeetingCleanup', () => {
@@ -132,6 +133,23 @@ describe('useMeetingCleanup', () => {
         expect(params.stopPiP).toHaveBeenCalledTimes(1);
 
         expect(store.getState().connection.joinedRoom).toBe(false);
+        expect(params.meetingLinkNameRef.current).toBe('');
+    });
+
+    it('cancels a running rejoin before it forgets the meeting', () => {
+        const store = createMockStore();
+        const params = createParams();
+        const meetingLinkNamesWhenCancelled: string[] = [];
+        params.cancelReconnection.mockImplementation(() => {
+            meetingLinkNamesWhenCancelled.push(params.meetingLinkNameRef.current);
+        });
+        const { result } = renderHook(() => useMeetingCleanup(params), {
+            wrapper: createTestWrapper(store),
+        });
+
+        result.current.cleanupMeeting({ disconnect: true });
+
+        expect(meetingLinkNamesWhenCancelled).toEqual(['meeting-abc']);
         expect(params.meetingLinkNameRef.current).toBe('');
     });
 });

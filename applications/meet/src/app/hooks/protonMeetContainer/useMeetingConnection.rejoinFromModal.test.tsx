@@ -93,6 +93,7 @@ const renderConnectionWithRoomEventHandlers = (getParticipants: Mock) => {
             meetingLinkRef: { current: 'https://meet/link' },
             meetingLinkNameRef,
             triggerFullReconnectionRef,
+            cancelReconnection: connection.cancelReconnection,
             reportMeetError,
         });
 

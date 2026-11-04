@@ -46,6 +46,7 @@ interface ConnectWithMlsParams {
     resetParticipantsBeforeFetch?: boolean;
     isWaitingRoom?: boolean;
     accessDetails?: MeetingAccessDetails;
+    signal?: AbortSignal;
 }
 
 type ConnectionInfo = Awaited<ReturnType<UseLiveKitConnectionResult['connectWithStunFallbackToTurnRelay']>>;
@@ -83,12 +84,13 @@ interface UseMeetingConnectionParams {
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
 }
 
-type RejoinStatus = 'joined' | 'failed' | 'skipped';
+type RejoinStatus = 'joined' | 'failed' | 'cancelled' | 'skipped';
 
 export interface UseMeetingConnectionResult {
     isReconnectingRef: MutableRefObject<boolean>;
     websocketUrlRef: MutableRefObject<string | null>;
     performFullReconnection: (reason: RejoinReasonInfo) => Promise<RejoinStatus>;
+    cancelReconnection: () => void;
     connectWithMls: (params: ConnectWithMlsParams) => Promise<ConnectWithMlsResult>;
 }
 
@@ -123,7 +125,12 @@ export const useMeetingConnection = ({
     const room = useRoomContext();
 
     const isReconnectingRef = useRef(false);
+    // Non-null exactly while isReconnectingRef is true. A run checks its own signal, never this ref: after a
+    // cancel, a newer run may own the ref.
+    const rejoinControllerRef = useRef<AbortController | null>(null);
     const websocketUrlRef = useRef<string | null>(null);
+
+    useEffect(() => () => rejoinControllerRef.current?.abort(), []);
 
     // Shared connect sequence used by both the initial join (useJoinFlow) and reconnection.
     const connectWithMls = useStableCallback(
@@ -138,6 +145,7 @@ export const useMeetingConnection = ({
             resetParticipantsBeforeFetch = false,
             isWaitingRoom = false,
             accessDetails,
+            signal,
         }: ConnectWithMlsParams): Promise<ConnectWithMlsResult> => {
             const fetchAccessDetails = async () => {
                 const sanitizedDisplayName = sanitizeMessage(displayNameArg);
@@ -151,6 +159,7 @@ export const useMeetingConnection = ({
             const t0 = performance.now();
             const { websocketUrl, accessToken } = accessDetails ?? (await fetchAccessDetails());
             const tokenFetchMs = Math.round(performance.now() - t0);
+            signal?.throwIfAborted();
 
             websocketUrlRef.current = websocketUrl;
             accessTokenRef.current = accessToken;
@@ -168,6 +177,7 @@ export const useMeetingConnection = ({
             const { key: groupKey, epoch } =
                 (await handleMlsSetup(meetingLinkName, accessToken, password, isWaitingRoom)) || {};
             const mlsSetupMs = Math.round(performance.now() - t1);
+            signal?.throwIfAborted();
 
             reportMLSRelatedError(groupKey, epoch);
 
@@ -189,6 +199,7 @@ export const useMeetingConnection = ({
             } else {
                 await keyProvider.setKeyWithEpoch(groupKey, epoch);
             }
+            signal?.throwIfAborted();
 
             let connectionInfo: ConnectionInfo;
             let e2eeEnableMs: number;
@@ -211,6 +222,10 @@ export const useMeetingConnection = ({
                 await initDevices;
                 deviceInitMs = Math.round(performance.now() - t2);
             } catch (livekitError) {
+                // Whoever cancelled the rejoin already left the MLS group and cleaned up
+                if (signal?.aborted) {
+                    throw livekitError;
+                }
                 // If LiveKit connection fails after MLS join, clean up MLS group to prevent inconsistent state
                 try {
                     await meetCoreClient.leaveMeeting();
@@ -222,6 +237,11 @@ export const useMeetingConnection = ({
                 disallowHealthCheck();
                 cleanupMlsState();
                 throw livekitError;
+            }
+            // Only here is the room known to be this run's: later, a newer join may have connected it
+            if (signal?.aborted) {
+                void room.disconnect();
+                signal.throwIfAborted();
             }
 
             if (resetParticipantsBeforeFetch) {
@@ -242,10 +262,18 @@ export const useMeetingConnection = ({
         }
     );
 
+    const endRun = () => {
+        rejoinControllerRef.current = null;
+        isReconnectingRef.current = false;
+    };
+
     const performFullReconnection = useStableCallback(async (reason: RejoinReasonInfo): Promise<RejoinStatus> => {
         if (isReconnectingRef.current || !meetingLinkNameRef.current) {
             return 'skipped';
         }
+        const controller = new AbortController();
+        const { signal } = controller;
+        rejoinControllerRef.current = controller;
         isReconnectingRef.current = true;
         const reconnectionStartTimeMs = BigInt(Date.now());
 
@@ -292,6 +320,7 @@ export const useMeetingConnection = ({
             } catch {
                 // best effort
             }
+            signal.throwIfAborted();
 
             // Always await leaveMeeting when MLS was active. We do this here (not in the disconnect
             // handler) so it is properly awaited before joinMeetingWithAccessToken is called below.
@@ -310,6 +339,7 @@ export const useMeetingConnection = ({
                 } catch {
                     // best effort
                 }
+                signal.throwIfAborted();
                 mlsSetupDone.current = false;
             }
 
@@ -323,17 +353,22 @@ export const useMeetingConnection = ({
                 desiredCameraState: wasCameraEnabled,
                 desiredMicrophoneState: wasMicrophoneEnabled,
                 resetParticipantsBeforeFetch: true,
+                signal,
             });
+            signal.throwIfAborted();
 
             dispatch(setJoinedRoom(true));
             dispatch(setIsReconnecting(false));
-            isReconnectingRef.current = false;
+            endRun();
             allowHealthCheck();
 
             await trackUserRejoin(true);
 
             return 'joined';
         } catch (error) {
+            if (signal.aborted) {
+                return 'cancelled';
+            }
             reportMeetError('Full reconnection failed', { context: { error } });
 
             // Best-effort MLS leave in case handleMlsSetup succeeded but a later step failed
@@ -343,11 +378,14 @@ export const useMeetingConnection = ({
                 } catch {
                     // best effort
                 }
+                if (signal.aborted) {
+                    return 'cancelled';
+                }
             }
             cleanupMlsState();
 
             dispatch(setIsReconnecting(false));
-            isReconnectingRef.current = false;
+            endRun();
             dispatch(setReconnectionFailed(true));
             // Clear stored credentials so the next attempt (manual rejoin) fetches fresh ones
             accessTokenRef.current = null;
@@ -357,6 +395,16 @@ export const useMeetingConnection = ({
 
             return 'failed';
         }
+    });
+
+    const cancelReconnection = useStableCallback(() => {
+        const controller = rejoinControllerRef.current;
+        if (!controller) {
+            return;
+        }
+        endRun();
+        controller.abort();
+        dispatch(setIsReconnecting(false));
     });
 
     // Keep the stable ref in sync so callbacks registered before performFullReconnection was defined
@@ -369,6 +417,7 @@ export const useMeetingConnection = ({
         isReconnectingRef,
         websocketUrlRef,
         performFullReconnection,
+        cancelReconnection,
         connectWithMls,
     };
 };

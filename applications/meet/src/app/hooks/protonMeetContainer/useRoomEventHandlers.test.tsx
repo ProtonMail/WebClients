@@ -58,6 +58,7 @@ const createParams = (overrides: Record<string, any> = {}) => ({
     meetingLinkRef: { current: 'https://meet/link' },
     meetingLinkNameRef: { current: 'meeting-abc' },
     triggerFullReconnectionRef: { current: vi.fn() },
+    cancelReconnection: vi.fn(),
     reportMeetError: vi.fn(),
     ...overrides,
 });
@@ -168,6 +169,31 @@ describe('useRoomEventHandlers', () => {
             act(() => getHandler(RoomEvent.Disconnected)(DisconnectReason.CLIENT_INITIATED));
 
             expect(params.meetingLinkNameRef.current).toBe('meeting-abc');
+            expect(params.cancelReconnection).not.toHaveBeenCalled();
+        });
+
+        it.each(
+            [
+                DisconnectReason.ROOM_DELETED,
+                DisconnectReason.PARTICIPANT_REMOVED,
+                DisconnectReason.DUPLICATE_IDENTITY,
+                DisconnectReason.ROOM_CLOSED,
+            ].map((reason) => [DisconnectReason[reason], reason])
+        )('on %s during a rejoin stops the rejoin and leaves the meeting', (_name, reason) => {
+            const isReconnectingRef = { current: true };
+            const params = createParams({
+                isReconnectingRef,
+                cancelReconnection: vi.fn(() => {
+                    isReconnectingRef.current = false;
+                }),
+            });
+            renderHook(() => useRoomEventHandlers(params));
+
+            act(() => getHandler(RoomEvent.Disconnected)(reason));
+
+            expect(params.cancelReconnection).toHaveBeenCalledTimes(1);
+            expect(params.meetingLinkNameRef.current).toBe('');
+            expect(mockMeetCoreClient.leaveMeeting).toHaveBeenCalledTimes(1);
         });
 
         it('clears the meeting link name on an unexpected disconnect', () => {

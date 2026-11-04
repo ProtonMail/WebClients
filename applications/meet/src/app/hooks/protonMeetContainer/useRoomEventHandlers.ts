@@ -36,6 +36,14 @@ export const LIVEKIT_RECONNECT_STALL_TIMEOUT_MS = 60 * SECOND;
 const isLiveKitReconnecting = (state: ConnectionState | null) =>
     state === ConnectionState.Reconnecting || state === ConnectionState.SignalReconnecting;
 
+const MEETING_ENDING_DISCONNECT_REASONS: ReadonlySet<DisconnectReason | undefined> = new Set([
+    DisconnectReason.ROOM_DELETED,
+    DisconnectReason.PARTICIPANT_REMOVED,
+    // Rejoining would kick the user's other session, which would rejoin and kick this one
+    DisconnectReason.DUPLICATE_IDENTITY,
+    DisconnectReason.ROOM_CLOSED,
+]);
+
 interface UseRoomEventHandlersParams {
     joinedRoom: boolean;
     disallowHealthCheck: () => void;
@@ -49,6 +57,7 @@ interface UseRoomEventHandlersParams {
     meetingLinkRef: MutableRefObject<string | null>;
     meetingLinkNameRef: MutableRefObject<string>;
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
+    cancelReconnection: () => void;
     reportMeetError: ReportMeetError;
 }
 
@@ -72,6 +81,7 @@ export const useRoomEventHandlers = ({
     meetingLinkRef,
     meetingLinkNameRef,
     triggerFullReconnectionRef,
+    cancelReconnection,
     reportMeetError,
 }: UseRoomEventHandlersParams): UseRoomEventHandlersResult => {
     const room = useRoomContext();
@@ -186,6 +196,11 @@ export const useRoomEventHandlers = ({
             dispatch(resetUiState());
             triggerFullReconnectionRef.current(RejoinReasonInfo.LivekitStateMismatch);
             return;
+        }
+
+        // Before the isReconnectingRef read below, so the meeting is left here instead of by the cancelled rejoin
+        if (MEETING_ENDING_DISCONNECT_REASONS.has(reason)) {
+            cancelReconnection();
         }
 
         instantMeetingRef.current = false;

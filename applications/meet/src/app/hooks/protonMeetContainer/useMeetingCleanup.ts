@@ -16,6 +16,7 @@ interface UseMeetingCleanupParams {
     disallowHealthCheck: () => void;
     cleanupMlsState: () => void;
     stopPiP: () => Promise<void>;
+    cancelReconnection: () => void;
 }
 
 interface CleanupMeetingOptions {
@@ -33,12 +34,14 @@ export const useMeetingCleanup = ({
     disallowHealthCheck,
     cleanupMlsState,
     stopPiP,
+    cancelReconnection,
 }: UseMeetingCleanupParams): UseMeetingCleanupResult => {
     const dispatch = useMeetDispatch();
     const room = useRoomContext();
     const meetCoreClient = useMeetCoreClient();
 
     const cleanupMeeting = useStableCallback(({ disconnect = false }: CleanupMeetingOptions = {}) => {
+        cancelReconnection();
         instantMeetingRef.current = false;
         meetingLinkNameRef.current = '';
 

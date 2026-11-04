@@ -219,6 +219,29 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         lastEpochRef.current = null;
     }, [isMeetSeamlessKeyRotationEnabled, keyRotationScheduler, keyProvider, lastEpochRef, mlsSetupDone]);
 
+    const { isReconnectingRef, websocketUrlRef, performFullReconnection, cancelReconnection, connectWithMls } =
+        useMeetingConnection({
+            meetingLinkNameRef,
+            meetingPassword,
+            displayName,
+            decryptionKeyRef,
+            mlsSetupDone,
+            accessTokenRef,
+            keyProvider,
+            keyRotationScheduler,
+            handleMlsSetup,
+            reportMLSRelatedError,
+            connectWithStunFallbackToTurnRelay,
+            cleanupMlsState,
+            allowHealthCheck,
+            disallowHealthCheck,
+            initializeDevices,
+            getParticipants,
+            getQueryParticipantsCount,
+            reportMeetError,
+            triggerFullReconnectionRef,
+        });
+
     const { cleanupMeeting } = useMeetingCleanup({
         instantMeetingRef,
         meetingLinkNameRef,
@@ -226,6 +249,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         disallowHealthCheck,
         cleanupMlsState,
         stopPiP,
+        cancelReconnection,
     });
 
     usePageVisibilityHandler({
@@ -234,28 +258,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     });
 
     const assignHost = useAssignHost(accessTokenRef.current as string, urlMeetingLinkName);
-
-    const { isReconnectingRef, websocketUrlRef, performFullReconnection, connectWithMls } = useMeetingConnection({
-        meetingLinkNameRef,
-        meetingPassword,
-        displayName,
-        decryptionKeyRef,
-        mlsSetupDone,
-        accessTokenRef,
-        keyProvider,
-        keyRotationScheduler,
-        handleMlsSetup,
-        reportMLSRelatedError,
-        connectWithStunFallbackToTurnRelay,
-        cleanupMlsState,
-        allowHealthCheck,
-        disallowHealthCheck,
-        initializeDevices,
-        getParticipants,
-        getQueryParticipantsCount,
-        reportMeetError,
-        triggerFullReconnectionRef,
-    });
 
     const { liveKitConnectionState, setLiveKitConnectionState, showReconnectedMessage, setShowReconnectedMessage } =
         useRoomEventHandlers({
@@ -271,6 +273,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
             meetingLinkRef,
             meetingLinkNameRef,
             triggerFullReconnectionRef,
+            cancelReconnection,
             reportMeetError,
         });
 

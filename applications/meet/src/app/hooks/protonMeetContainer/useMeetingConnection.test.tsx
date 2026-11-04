@@ -1,6 +1,7 @@
 import { useRoomContext } from '@livekit/components-react';
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { act, renderHook } from '@testing-library/react';
+import { ConnectionState } from 'livekit-client';
 import type { Mock } from 'vitest';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
@@ -16,7 +17,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MEET_CORE_STALL_TIMEOUT_MS } from '../../wasm/meetCoreStallRecovery';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
-import { useMeetingConnection } from './useMeetingConnection';
+import { type MeetingAccessDetails, useMeetingConnection } from './useMeetingConnection';
 
 vi.mock('@livekit/components-react', () => ({ useRoomContext: vi.fn() }));
 vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn() }));
@@ -35,9 +36,20 @@ const mockGetAccessDetails = vi.fn();
 const mockDispatch = vi.fn();
 
 const mockRoom = {
+    state: ConnectionState.Disconnected,
     setE2EEEnabled: vi.fn().mockResolvedValue(undefined),
     disconnect: vi.fn().mockResolvedValue(undefined),
     localParticipant: { isCameraEnabled: true, isMicrophoneEnabled: false },
+};
+
+const createDeferred = <T,>() => {
+    let resolve!: (value: T) => void;
+    let reject!: (error: unknown) => void;
+    const promise = new Promise<T>((onResolve, onReject) => {
+        resolve = onResolve;
+        reject = onReject;
+    });
+    return { promise, resolve, reject };
 };
 
 const mockMeetCoreClient = {
@@ -85,6 +97,7 @@ describe('useMeetingConnection', () => {
         mockGetAccessDetails.mockResolvedValue({ websocketUrl: 'wss://x', accessToken: 'tok' });
         useMeetingAuthenticationMock.mockReturnValue({ getAccessDetails: mockGetAccessDetails });
         useFlagMock.mockReturnValue(false);
+        mockRoom.state = ConnectionState.Disconnected;
         mockRoom.setE2EEEnabled.mockResolvedValue(undefined);
         mockRoom.disconnect.mockResolvedValue(undefined);
     });
@@ -317,6 +330,217 @@ describe('useMeetingConnection', () => {
                 expect(mockMeetCoreClient.restart).not.toHaveBeenCalled();
                 expect(params.handleMlsSetup).not.toHaveBeenCalled();
             });
+        });
+    });
+
+    describe('cancelReconnection', () => {
+        beforeEach(() => {
+            useFlagMock.mockImplementation((name: string) => name === 'MeetClientMetricsLog');
+        });
+
+        it.each([
+            { step: 'the room disconnects', getPendingCall: () => mockRoom.disconnect },
+            { step: 'it leaves the MLS group', getPendingCall: () => mockMeetCoreClient.leaveMeeting },
+        ])(
+            'a rejoin cancelled while $step resolves cancelled and changes nothing afterwards',
+            async ({ getPendingCall }) => {
+                const pendingCall = createDeferred<void>();
+                getPendingCall().mockReturnValueOnce(pendingCall.promise);
+                const params = createParams({ mlsSetupDone: { current: true } });
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+                await vi.waitFor(() => expect(getPendingCall()).toHaveBeenCalled());
+                result.current.cancelReconnection();
+                mockDispatch.mockClear();
+                mockMeetCoreClient.leaveMeeting.mockClear();
+                pendingCall.resolve();
+
+                await expect(run).resolves.toBe('cancelled');
+                expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
+                expect(params.mlsSetupDone.current).toBe(true);
+                expect(params.cleanupMlsState).not.toHaveBeenCalled();
+                expect(mockGetAccessDetails).not.toHaveBeenCalled();
+                expect(mockDispatch).not.toHaveBeenCalled();
+                expect(mockMeetCoreClient.logUserRejoin).not.toHaveBeenCalled();
+            }
+        );
+
+        it('a rejoin cancelled while fetching the access token keeps the stored credentials', async () => {
+            const accessDetails = createDeferred<MeetingAccessDetails>();
+            mockGetAccessDetails.mockReturnValueOnce(accessDetails.promise);
+            const params = createParams({ accessTokenRef: { current: 'old-token' } });
+            const { result } = renderHook(() => useMeetingConnection(params));
+            result.current.websocketUrlRef.current = 'wss://old';
+
+            const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+            await vi.waitFor(() => expect(mockGetAccessDetails).toHaveBeenCalled());
+            result.current.cancelReconnection();
+            accessDetails.resolve({ websocketUrl: 'wss://new', accessToken: 'new-token' });
+
+            await expect(run).resolves.toBe('cancelled');
+            expect(params.accessTokenRef.current).toBe('old-token');
+            expect(result.current.websocketUrlRef.current).toBe('wss://old');
+            expect(params.handleMlsSetup).not.toHaveBeenCalled();
+        });
+
+        it('a rejoin cancelled while joining the MLS group does not connect to LiveKit or report anything', async () => {
+            const mlsSetup = createDeferred<{ key: string; epoch: bigint }>();
+            const params = createParams({ handleMlsSetup: vi.fn().mockReturnValue(mlsSetup.promise) });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+            await vi.waitFor(() => expect(params.handleMlsSetup).toHaveBeenCalled());
+            result.current.cancelReconnection();
+            mockDispatch.mockClear();
+            mlsSetup.resolve({ key: 'group-key', epoch: 1n });
+
+            await expect(run).resolves.toBe('cancelled');
+            expect(params.connectWithStunFallbackToTurnRelay).not.toHaveBeenCalled();
+            expect(params.reportMLSRelatedError).not.toHaveBeenCalled();
+            expect(mockDispatch).not.toHaveBeenCalled();
+            expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
+            expect(params.reportMeetError).not.toHaveBeenCalled();
+            expect(mockMeetCoreClient.logUserRejoin).not.toHaveBeenCalled();
+        });
+
+        it('a rejoin whose LiveKit connect fails after the cancel leaves the MLS cleanup to whoever cancelled it', async () => {
+            const connect = createDeferred<unknown>();
+            const params = createParams({
+                connectWithStunFallbackToTurnRelay: vi.fn().mockReturnValue(connect.promise),
+            });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+            await vi.waitFor(() => expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalled());
+            result.current.cancelReconnection();
+            params.cleanupMlsState.mockClear();
+            params.disallowHealthCheck.mockClear();
+            connect.reject(new Error('Client initiated disconnect'));
+
+            await expect(run).resolves.toBe('cancelled');
+            expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
+            expect(params.cleanupMlsState).not.toHaveBeenCalled();
+            expect(params.disallowHealthCheck).not.toHaveBeenCalled();
+            expect(params.reportMeetError).not.toHaveBeenCalled();
+        });
+
+        it('a rejoin whose LiveKit connect succeeds after the cancel disconnects the room again', async () => {
+            const connect = createDeferred<unknown>();
+            const params = createParams({
+                connectWithStunFallbackToTurnRelay: vi.fn().mockReturnValue(connect.promise),
+            });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+            await vi.waitFor(() => expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalled());
+            result.current.cancelReconnection();
+            mockRoom.disconnect.mockClear();
+            connect.resolve({ stunFailed: false, connectionAttempts: 1 });
+
+            await expect(run).resolves.toBe('cancelled');
+            expect(mockRoom.disconnect).toHaveBeenCalledTimes(1);
+            expect(params.getParticipants).not.toHaveBeenCalled();
+            expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
+        });
+
+        it('a cancelled rejoin whose participant fetch settles after a newer join connected leaves that room alone', async () => {
+            const participants = createDeferred<void>();
+            const params = createParams({ getParticipants: vi.fn().mockReturnValue(participants.promise) });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+            await vi.waitFor(() => expect(params.getParticipants).toHaveBeenCalled());
+            result.current.cancelReconnection();
+            mockRoom.disconnect.mockClear();
+            mockRoom.state = ConnectionState.Connected;
+            participants.resolve();
+
+            await expect(run).resolves.toBe('cancelled');
+            expect(mockRoom.disconnect).not.toHaveBeenCalled();
+        });
+
+        it('a rejoin cancelled during the teardown after a failure does not show the Connection lost modal', async () => {
+            const teardownLeave = createDeferred<void>();
+            mockMeetCoreClient.leaveMeeting.mockReturnValueOnce(teardownLeave.promise);
+            const params = createParams({ getParticipants: vi.fn().mockRejectedValue(new Error('unavailable')) });
+            params.handleMlsSetup.mockImplementation(async () => {
+                params.mlsSetupDone.current = true;
+                return { key: 'group-key', epoch: 1n };
+            });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+            await vi.waitFor(() => expect(mockMeetCoreClient.leaveMeeting).toHaveBeenCalled());
+            expect(result.current.isReconnectingRef.current).toBe(true);
+            result.current.cancelReconnection();
+            mockDispatch.mockClear();
+            mockRoom.disconnect.mockClear();
+            mockRoom.state = ConnectionState.Connected;
+            teardownLeave.resolve();
+
+            await expect(run).resolves.toBe('cancelled');
+            expect(mockDispatch).not.toHaveBeenCalled();
+            expect(mockMeetCoreClient.logUserRejoin).not.toHaveBeenCalled();
+            expect(mockRoom.disconnect).not.toHaveBeenCalled();
+        });
+
+        it('ends the rejoin synchronously, and does nothing again or when no rejoin runs', async () => {
+            const params = createParams();
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            result.current.cancelReconnection();
+            expect(mockDispatch).not.toHaveBeenCalled();
+
+            const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+            mockDispatch.mockClear();
+            result.current.cancelReconnection();
+
+            expect(result.current.isReconnectingRef.current).toBe(false);
+            expect(mockDispatch).toHaveBeenCalledTimes(1);
+            expect(mockDispatch).toHaveBeenCalledWith(setIsReconnecting(false));
+
+            result.current.cancelReconnection();
+            expect(mockDispatch).toHaveBeenCalledTimes(1);
+            await expect(run).resolves.toBe('cancelled');
+        });
+
+        it('unmounting stops a running rejoin', async () => {
+            const params = createParams();
+            const { result, unmount } = renderHook(() => useMeetingConnection(params));
+
+            const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+            mockDispatch.mockClear();
+            unmount();
+
+            await expect(run).resolves.toBe('cancelled');
+            expect(mockGetAccessDetails).not.toHaveBeenCalled();
+            expect(mockDispatch).not.toHaveBeenCalled();
+            expect(mockMeetCoreClient.logUserRejoin).not.toHaveBeenCalled();
+        });
+
+        it('a trigger after a cancel starts a new rejoin, and the cancelled one stays silent', async () => {
+            const firstMlsSetup = createDeferred<{ key: string; epoch: bigint }>();
+            const params = createParams({
+                handleMlsSetup: vi
+                    .fn()
+                    .mockReturnValueOnce(firstMlsSetup.promise)
+                    .mockResolvedValue({ key: 'group-key', epoch: 1n }),
+            });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            const cancelledRun = result.current.performFullReconnection(RejoinReasonInfo.Other);
+            await vi.waitFor(() => expect(params.handleMlsSetup).toHaveBeenCalled());
+            result.current.cancelReconnection();
+
+            await expect(result.current.performFullReconnection(RejoinReasonInfo.Other)).resolves.toBe('joined');
+            mockDispatch.mockClear();
+            firstMlsSetup.resolve({ key: 'group-key', epoch: 1n });
+
+            await expect(cancelledRun).resolves.toBe('cancelled');
+            expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalledTimes(1);
+            expect(mockDispatch).not.toHaveBeenCalled();
+            expect(result.current.isReconnectingRef.current).toBe(false);
         });
     });
 });
