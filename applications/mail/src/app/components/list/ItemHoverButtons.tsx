@@ -12,7 +12,6 @@ import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
 import { IcStar } from '@proton/icons/icons/IcStar';
 import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { useCategoriesTelemetry } from '@proton/mail/features/categoriesView/useCategoriesTelemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -29,10 +28,9 @@ import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLoca
 import { usePermanentDelete } from '../../hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import type { Element } from '../../models/element';
-import { selectCategoryIDs, selectElementID } from '../../store/elements/elementsSelectors';
+import { selectElementID } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
-import { MoveToPrimaryBadge } from '../categoryView/moveToPrimaryBadge/MoveToPrimaryBadge';
 import { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 import SnoozeDropdown from './snooze/containers/SnoozeDropdown';
 
@@ -43,28 +41,16 @@ interface Props {
     onBack: () => void;
     hasStar?: boolean;
     size?: 'small' | 'medium';
-    shouldShowPrimaryBadge: boolean;
 }
 
-const ItemHoverButtons = ({
-    element,
-    labelID,
-    className,
-    onBack,
-    hasStar = true,
-    size = 'medium',
-    shouldShowPrimaryBadge,
-}: Props) => {
+const ItemHoverButtons = ({ element, labelID, className, onBack, hasStar = true, size = 'medium' }: Props) => {
     const { markAs } = useMarkAs();
     const { applyLocation } = useApplyLocation();
     const { handleDelete: permanentDelete, deleteSelectionModal } = usePermanentDelete(labelID);
     const snoozedElement = useMailSelector(selectSnoozeElement);
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
 
-    const { sendReportRecategorizeExperiment } = useCategoriesTelemetry();
-
     const elementID = useMailSelector(selectElementID);
-    const categoryIDs = useMailSelector(selectCategoryIDs);
 
     const [loadingStar, withLoadingStar] = useLoading();
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
@@ -137,20 +123,6 @@ const ItemHoverButtons = ({
         );
     };
 
-    const handleMoveToPrimary = (event: MouseEvent) => {
-        event.stopPropagation();
-
-        void applyLocation({
-            type: APPLY_LOCATION_TYPES.MOVE,
-            elements: [element],
-            destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
-        });
-
-        if (categoryIDs[0]) {
-            sendReportRecategorizeExperiment(categoryIDs[0]);
-        }
-    };
-
     const starAlt = isElementMessage(element)
         ? isStarred
             ? c('Alt').t`Unstar message`
@@ -176,9 +148,6 @@ const ItemHoverButtons = ({
                     className
                 )}
             >
-                {shouldShowPrimaryBadge && (
-                    <MoveToPrimaryBadge onClick={handleMoveToPrimary} className="item-move-to-primary" />
-                )}
                 <Tooltip
                     title={isUnread ? c('Title').t`Mark as read` : c('Title').t`Mark as unread`}
                     tooltipClassName="pointer-events-none"

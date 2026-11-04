@@ -1,9 +1,7 @@
 import { useFlagsStatus } from '@unleash/proxy-client-react';
 
 import { baseUseSelector } from '@proton/react-redux-store/ProtonStoreContext';
-import type { CategoryViewVariantVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 import { useFlag } from '@proton/unleash/useFlag';
-import { useVariant } from '@proton/unleash/useVariant';
 
 import {
     selectCategoryViewLoading,
@@ -14,37 +12,22 @@ import type { CategoryTab } from './categoriesConstants';
 
 const EMPTY_ARRAY: CategoryTab[] = [];
 
-type CategoryViewVariantName = CategoryViewVariantVariant | 'disabled';
-
-const variantWithAccess = new Set<CategoryViewVariantName>([
-    'FeatureAccessOn',
-    'PrimaryFiltering45',
-    'PrimaryFiltering60',
-    'RecategorizationButton',
-    'RecategorizationNoButton',
-    'GradualRollout',
-]);
-
 export const useCategoriesData = () => {
     const { flagsReady } = useFlagsStatus();
     const categoryViewFlag = useFlag('CategoryView');
-
-    const flagVariant = useVariant('CategoryViewVariant');
-    const variantWithCategoryViewAccess = flagVariant.name ? variantWithAccess.has(flagVariant.name) : false;
 
     const isLoading = baseUseSelector(selectCategoryViewLoading);
     const settingAccess = baseUseSelector(selectCategoryViewSettingAccess);
     const categoriesStore = baseUseSelector(selectCategoriesLabel);
     const activeCategoriesTabs = baseUseSelector(selectActiveCategoriesTabs);
 
-    const canUseCategoryView = categoryViewFlag || variantWithCategoryViewAccess;
-    const isCategoryViewEnabled = canUseCategoryView && settingAccess;
+    const isCategoryViewEnabled = categoryViewFlag && settingAccess;
 
     // Redirect decisions must wait until every input behind `categoryViewAccess` has loaded.
     const isCategoryViewEnabledSettled = !isLoading && flagsReady;
 
     return {
-        canUseCategoryView,
+        canUseCategoryView: categoryViewFlag,
         categoriesStore,
         activeCategoriesTabs: isCategoryViewEnabled ? activeCategoriesTabs : EMPTY_ARRAY,
         isCategoryViewEnabled,

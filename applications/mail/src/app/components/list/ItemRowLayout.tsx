@@ -43,7 +43,6 @@ interface Props {
     onBack?: () => void;
     attachmentsMetadata?: AttachmentsMetadata[];
     oneTimeCode?: string | null;
-    shouldShowPrimaryBadge: boolean;
     showHoverButtons: boolean;
 }
 
@@ -60,7 +59,6 @@ const ItemRowLayout = ({
     onBack = () => {},
     attachmentsMetadata = [],
     oneTimeCode,
-    shouldShowPrimaryBadge,
     showHoverButtons,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
@@ -188,7 +186,6 @@ const ItemRowLayout = ({
                             onBack={onBack}
                             hasStar={false}
                             size="small"
-                            shouldShowPrimaryBadge={shouldShowPrimaryBadge}
                         />
                     )}
                     {loading && <div className="item-senddate-row w-custom" style={{ '--w-custom': '5rem' }} />}

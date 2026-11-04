@@ -295,7 +295,6 @@ export enum MailFeatureFlag {
     CategoryOnboardingDisableCategorize = 'CategoryOnboardingDisableCategorize',
     CategoryReportUnreadCountDisabled = 'CategoryReportUnreadCountDisabled',
     CategoryView = 'CategoryView',
-    CategoryViewVariant = 'CategoryViewVariant',
     UseUserEmbedding = 'UseUserEmbedding',
     MailStoreDebugMode = 'MailStoreDebugMode',
     // Attempt to fix the unability to save/send drafts on huge accounts

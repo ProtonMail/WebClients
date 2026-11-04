@@ -10,7 +10,6 @@ import { usePaging } from '../../hooks/usePaging';
 import type { Element as MailElement } from '../../models/element';
 import { selectPageSize, selectParams } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-import { useMoveToPrimaryBadge } from '../categoryView/moveToPrimaryBadge/useMoveToPrimaryBadge';
 import type { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
 
 interface MailboxListProviderProps {
@@ -63,7 +62,6 @@ interface MailboxListContextValue {
 
     // Others
     mailboxListLoading: boolean;
-    shouldShowPrimaryBadge: boolean;
 }
 
 const MailboxListContext = createContext<MailboxListContextValue | null>(null);
@@ -90,7 +88,6 @@ export const MailboxListProvider = ({
     customActions = {},
 }: MailboxListProviderProps) => {
     const { labelID, isSearching: isSearch, filter, conversationMode } = useMailSelector(selectParams);
-    const shouldShowPrimaryBadge = useMoveToPrimaryBadge();
 
     const elementsData = useListElements({
         inputElements,
@@ -151,7 +148,6 @@ export const MailboxListProvider = ({
         handlePage: onPage,
 
         mailboxListLoading: loading,
-        shouldShowPrimaryBadge,
     };
 
     return <MailboxListContext.Provider value={contextValue}>{children}</MailboxListContext.Provider>;
