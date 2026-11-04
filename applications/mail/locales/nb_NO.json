@@ -1541,7 +1541,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1747,6 +1748,18 @@
       ],
       "Create a booking page": [
         "Opprett en bestillingsside"
+      ],
+      "Don't show this offer again": [
+        "Ikke vis dette tilbudet igjen"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "Learn how this works": [
+        "Lær hvordan dette fungerer"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "Flytt ${ LUMO_SHORT_APP_NAME } til venstre"
       ]
     },
     "action": {
@@ -1902,6 +1915,9 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentseter"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisasjoner med Managed Service Provider-tillegget kan opprette og administrere datterselskaper."
       ]
     },
     "Alert": {
@@ -4294,6 +4310,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Gi personer mulighet til å avtale time med deg direkte fra e-post, uten at du trenger å få og motta svar."
+      ],
+      "Move emails to the right category to improve categorization.": [
+        "Flytt e-poster til riktig kategori for å forbedre kategoriseringen."
       ]
     },
     "description": {
@@ -7963,7 +7985,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9715,6 +9738,51 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Du har nådd maksimalt antall bestillingssider som er tilgjengelige i planen din."
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** brukes også til å logge på en separat ${ BRAND_NAME }-konto, utenfor ${ MAIL_APP_NAME }."
+      ],
+      "1 vault per user": [
+        "1 hvelv per bruker"
+      ],
+      "Draft an ${ kind }": [
+        "Skriv et utkast til ${ kind }"
+      ],
+      "Draft an ${ kind } to ${ recipient }": [
+        "Lag et utkast til ${ kind } til ${ recipient }"
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Hei Lumo, ta en titt på hva jeg får mest av i innboksen min, og på mappene og filtrene jeg allerede har. Foreslå hvordan jeg kan holde det organisert: hva som bør endres ved de jeg har, og hva som er verdt å legge til av nytt. Gå gjennom planen med meg først, og ikke flytt på noe før jeg sier ja."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Hei Lumo, vis meg hvordan du kan hjelpe meg med postkassen min. Hva slags ting kan jeg be deg om å gjøre, og hva kan du ikke hjelpe med?"
+      ],
+      "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
+        "Jeg skal se på hva du får mest ut av de mappene og filtrene du allerede har, og deretter foreslå hva du kan forbedre og hva som mangler. Ingenting endrer seg før du sier det."
+      ],
+      "No booking pages yet": [
+        "Ingen bestillingssider ennå"
+      ],
+      "No payment is required.": [
+        "Ingen betaling kreves."
+      ],
+      "reply all": [
+        "svar alle"
+      ],
+      "Revise the ${ draft }": [
+        "Revider det ${ draft }"
+      ],
+      "Rewrote and readdressed": [
+        "Omskrevet og omadressert"
+      ],
+      "What needs handling?": [
+        "Hva må følges opp?"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Du bruker den til å logge på fra da av. Det er den eneste endringen."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Gmail-en din kobles til denne ${ MAIL_APP_NAME }-adressen"
       ]
     },
     "info": {
@@ -9969,6 +10037,9 @@
       ],
       "Star": [
         "Stjernemerk"
+      ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Lukk ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -11057,6 +11128,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "To": [
+        "Til"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11410,6 +11484,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du må aktivere nøklene på nytt for å se den oppdaterte invitasjonen"
+      ],
+      "Pay it": [
+        "Betal"
       ]
     },
     "Link to calendar event": {
@@ -12877,6 +12954,9 @@
       ],
       "Your subscription renews soon": [
         "Abonnementet ditt fornyes snart"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Siste sjanse til å få din første måned med ${ plan } til denne prisen."
       ]
     },
     "Offer fearue": {
@@ -13138,6 +13218,12 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Legg til en betalingsmåte** for å fortsette å bruke alle funksjonene etter at prøveperioden er over."
+      ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
       ]
     },
     "Option": {
@@ -13556,6 +13642,30 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Kun én ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan kjøpes."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet-seter må samsvare med antall medlemmer."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Den valgte planen tilbyr ikke nok domener for kontoen din."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Den valgte planen tilbyr ikke nok lagringsplass for kontoen din."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Dette abonnementet støtter ikke medlemmene på kontoen din."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dette abonnementet kan ikke fullføres akkurat nå. Prøv igjen."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Prøveplaner støtter ikke Scribe-seter."
       ]
     },
     "Payments.Error": {
@@ -17088,6 +17198,12 @@
       ],
       "Cannot create more Booking pages": [
         "Kan ikke opprette flere bestillingssider"
+      ],
+      "Filter on": [
+        "Filtrer på"
+      ],
+      "Share your availability": [
+        "Del tilgjengeligheten din"
       ]
     },
     "Title header for keys table": {
@@ -17301,6 +17417,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan ikke endre dine egne roller. Be en annen administrator om å endre dem."
       ]
     },
     "Validation": {
@@ -17871,6 +17990,11 @@
     "Payment Method": {
       "Bank Account": [
         "Bankkonto"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved å bekrefte gir du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, tillatelse til å innkreve fremtidige betalinger for abonnementet ditt fra denne bankkontoen via SEPA AvtaleGiro, og banken din til å debitere disse betalingene. Første betaling gjøres nå av ${ IDEAL_WERO_BRAND_NAME }. Abonnementet fornyes automatisk inntil du kansellerer. Vi varsler deg før hver innkreving. For innkreving via AvtaleGiro kan du be om refusjon fra banken innen 8 uker etter debiteringsdatoen, i henhold til vilkårene i avtalen med banken din. Dette gjelder ikke for ${ IDEAL_WERO_BRAND_NAME }-betalingen du foretar nå."
       ]
     }
   }
