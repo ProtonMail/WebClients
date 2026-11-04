@@ -96,7 +96,7 @@ export async function initializeSentry() {
             category: scope,
             level: LOG_LEVEL_TO_SEVERITY[level],
             message: serialize(data),
-            timestamp: date.getTime(),
+            timestamp: date.getTime() / 1000,
         });
 
         if (level === "error" || level === "warn") {
