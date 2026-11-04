@@ -97,8 +97,8 @@ addGlobalOptions(program.command('build').description('create an optimized produ
 
 addGlobalOptions(program.command('dev-server').description('run locally'))
     .option('--port <port>', '')
-    .option('--warning-logs', 'emit typescript and eslint warnings')
-    .option('--no-error-logs', 'do not emit typescript and eslint errors')
+    .option('--warning-logs', 'emit typescript warnings')
+    .option('--no-error-logs', 'do not emit typescript errors')
     .option('--overlay-warnings', 'show a full screen overlay when there are compiler warnings')
     .option('--overlay-runtime-errors', 'show a full screen overlay when there are runtime errors')
     .option('--overlay-errors', 'show a full screen overlay when there are compiler errors')

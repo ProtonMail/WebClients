@@ -6,7 +6,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 const { RetryChunkLoadPlugin } = require('webpack-retry-chunk-load-plugin');
@@ -23,9 +22,6 @@ const { getIndexChunks } = require('../webpack/entries');
 
 const { CI, CI_SERVER_HOST } = process.env;
 const isProtonCI = Boolean(CI) && (CI_SERVER_HOST || '').includes('protontech.ch');
-const hasEslintConfig = ['js', 'mjs', 'cjs', 'ts', 'mts', 'cts'].some((extension) =>
-    fs.existsSync(path.resolve(`eslint.config.${extension}`))
-);
 
 module.exports = ({
     isProduction,
@@ -59,20 +55,6 @@ module.exports = ({
                   new ReactRefreshWebpackPlugin({
                       overlay: false,
                   }),
-                  (warningLogs || errorLogs) &&
-                      hasEslintConfig &&
-                      new ESLintPlugin({
-                          extensions: ['js', 'ts', 'tsx'],
-                          eslintPath: require.resolve('eslint'),
-                          context: path.resolve('.'),
-                          emitWarning: warningLogs,
-                          emitError: errorLogs,
-                          failOnError: false,
-                          failOnWarning: false,
-                          // ESLint class options
-                          cwd: path.resolve('.'),
-                          cache: true,
-                      }),
                   (warningLogs || errorLogs) &&
                       new ForkTsCheckerWebpackPlugin({
                           typescript: {

@@ -110,7 +110,7 @@ export const isPdfPreviewSupported = () => getSandbox().isSupported();
 export const getPdfInfo = async (file: Blob) => pdfInfoSchema.parse(await getSandbox().getInfo(file));
 ```
 
-`createSandboxedLibrary('pdfPreview')` is the opinionated wrapper: it loads the sandboxed code from our own `/assets/` with Drive's standard CSP, so you don't re-decide security per consumer. Note the `import type`: that's what keeps the library out of the app bundle and out of our page. A value import would run the library in our origin, so ESLint rejects any non-type import of a `*.sandboxed` file.
+`createSandboxedLibrary('pdfPreview')` is the opinionated wrapper: it loads the sandboxed code from our own `/assets/` with Drive's standard CSP, so you don't re-decide security per consumer. Note the `import type`: that's what keeps the library out of the app bundle and out of our page. A value import would run the library in our origin, so lint rejects any non-type import of a `*.sandboxed` file.
 
 **Every returned value goes through a zod schema.** `getInfo` is typed `Promise<{ pageCount: number }>`, but the compiler can't keep that promise: the value crossed a `postMessage` boundary and nothing verified its shape. A working parser faithfully reports whatever a hostile file told it, so anything a sandboxed library returns is attacker-influenced. Give every number and string a `.max()`, especially if it reaches the DOM, a URL, a filename or an allocation size. Call sites only see `z.infer<typeof schema>`.
 

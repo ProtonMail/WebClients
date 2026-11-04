@@ -1,7 +1,6 @@
 /**
- * Every restricted import in the repo, in one file, enforced by the `proton/restricted-imports` rule of both
- * linters: the ESLint one in `@proton/eslint-config-proton/restrictedImports` and the oxlint one in `./plugin`.
- * Both take the same options and merge them the same way with `collectRestrictions`.
+ * Every restricted import in the repo, in one file, enforced by the `proton/restricted-imports` rule in `./plugin`,
+ * which merges the options with `collectRestrictions`.
  *
  * Three kinds of restrictions, from strictest to loosest:
  *   - BASE      enforced on every client, no opt-out
@@ -104,7 +103,6 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
             '@proton/drive',
             '@proton/drive-store',
             '@proton/encrypted-search',
-            '@proton/eslint-config-proton',
             '@proton/features',
             '@proton/file-icons',
             '@proton/gitlab',
@@ -177,7 +175,7 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
     },
     {
         name: 'only the public surface of @proton/drive is importable',
-        // applications/drive and packages/drive-store own the drive code and have their own fence, see their eslint
+        // applications/drive and packages/drive-store own the drive code and have their own fence, see their oxlint
         // configs.
         appliesTo: (filename) =>
             !['/applications/drive/', '/packages/drive-store/'].some((folder) => filename.includes(folder)),
@@ -218,8 +216,7 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
 ];
 
 /**
- * BASE restrictions only the oxlint rule enforces, because they stand in for ESLint rules oxlint doesn't have.
- * ESLint workspaces keep enforcing them with the original rule.
+ * BASE restrictions that stand in for ESLint rules oxlint doesn't have.
  */
 export const OXLINT_BASE_RESTRICTIONS: Restrictions = {
     // Stands in for `lodash/import-scope` with the `method` scope.
@@ -294,8 +291,8 @@ export function collectRestrictions(
 
 /**
  * Builds the `proton/restricted-imports` rule value for a client's `oxlint.config.mts`. The BASE restrictions are
- * always on. Severity is always `error` and cannot be changed. Options are the ESLint `createRestrictedImportsConfig`
- * ones, minus `files`: put the rule in an override for that.
+ * always on. Severity is always `error` and cannot be changed. Options are those of the former ESLint
+ * `createRestrictedImportsConfig`, minus `files`: put the rule in an override for that.
  */
 export function createRestrictedImportRule({
     rollout = [],

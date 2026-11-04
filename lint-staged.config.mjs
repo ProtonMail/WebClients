@@ -10,10 +10,8 @@ const quote = (files) => files.map((file) => JSON.stringify(file)).join(' ');
 export default {
     '(*.ts|*.tsx|*.js)': (files) => {
         const oxlintFiles = files.filter((file) => usesOxlint(path.dirname(file)));
-        const eslintFiles = files.filter((file) => !usesOxlint(path.dirname(file)));
         return [
             ...(oxlintFiles.length ? [`oxlint --fix --max-warnings=0 ${quote(oxlintFiles)}`] : []),
-            ...(eslintFiles.length ? [`eslint --fix --max-warnings=0 --no-warn-ignored ${quote(eslintFiles)}`] : []),
             `prettier --write ${quote(files)}`,
         ];
     },
