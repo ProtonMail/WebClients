@@ -29,6 +29,8 @@ const isHeld = (entry: CacheEntry) => entry.pinned || entry.spotlightPinned;
 // until the track decodes frames again.
 const MAX_FROZEN_TRACK_RESETS = 3;
 
+const CHECKS_WITHOUT_FRAMES_DECODED_BEFORE_RESET = 3;
+
 const removeValueInPlace = (arr: string[], value: string) => {
     const idx = arr.indexOf(value);
     if (idx !== -1) {
@@ -45,6 +47,7 @@ export class CameraTrackSubscriptionManager {
     private reconcileInterval: NodeJS.Timeout | null = null;
     private allowResettingFrozenVideoTracks = false;
     private lastFramesDecodedByTrackSid = new Map<string, number>();
+    private checksWithoutFramesDecodedByTrackSid = new Map<string, number>();
     private frozenTrackResetsByTrackSid = new Map<string, number>();
     private isCheckingFrozenTracks = false;
     // Serializes all operations that touch LiveKit publications (subscribe/enable/quality/reset).
@@ -94,6 +97,7 @@ export class CameraTrackSubscriptionManager {
     setAllowResettingFrozenVideoTracks(allowResettingFrozenVideoTracks: boolean) {
         this.allowResettingFrozenVideoTracks = allowResettingFrozenVideoTracks;
         this.lastFramesDecodedByTrackSid.clear();
+        this.checksWithoutFramesDecodedByTrackSid.clear();
     }
 
     setSpotlightParticipantIdentity(spotlightParticipantIdentity: string | undefined) {
@@ -274,6 +278,7 @@ export class CameraTrackSubscriptionManager {
         }
         this.entriesByTrackSid.delete(trackSid);
         this.lastFramesDecodedByTrackSid.delete(trackSid);
+        this.checksWithoutFramesDecodedByTrackSid.delete(trackSid);
         this.frozenTrackResetsByTrackSid.delete(trackSid);
         removeValueInPlace(this.cacheOrderByRecencyTrackSids, trackSid);
     }
@@ -447,6 +452,7 @@ export class CameraTrackSubscriptionManager {
 
         if (this.videosPaused || this.disableVideos || !isDocumentVisible()) {
             this.lastFramesDecodedByTrackSid.clear();
+            this.checksWithoutFramesDecodedByTrackSid.clear();
             return;
         }
 
@@ -467,6 +473,11 @@ export class CameraTrackSubscriptionManager {
                     this.lastFramesDecodedByTrackSid.delete(trackSid);
                 }
             }
+            for (const trackSid of this.checksWithoutFramesDecodedByTrackSid.keys()) {
+                if (!checkedTrackSids.has(trackSid)) {
+                    this.checksWithoutFramesDecodedByTrackSid.delete(trackSid);
+                }
+            }
 
             const stats = await Promise.all(checkedEntries.map(({ publication }) => readInboundRtp(publication)));
 
@@ -476,8 +487,17 @@ export class CameraTrackSubscriptionManager {
 
                 if (typeof framesDecoded !== 'number') {
                     this.lastFramesDecodedByTrackSid.delete(trackSid);
+                    const checksWithoutFramesDecoded =
+                        (this.checksWithoutFramesDecodedByTrackSid.get(trackSid) ?? 0) + 1;
+                    if (checksWithoutFramesDecoded < CHECKS_WITHOUT_FRAMES_DECODED_BEFORE_RESET) {
+                        this.checksWithoutFramesDecodedByTrackSid.set(trackSid, checksWithoutFramesDecoded);
+                        return;
+                    }
+                    this.resetFrozenVideoTrack(publication);
                     return;
                 }
+
+                this.checksWithoutFramesDecodedByTrackSid.delete(trackSid);
 
                 const previousFramesDecoded = this.lastFramesDecodedByTrackSid.get(trackSid);
                 if (previousFramesDecoded !== framesDecoded) {
@@ -488,19 +508,25 @@ export class CameraTrackSubscriptionManager {
                     return;
                 }
 
-                const resets = this.frozenTrackResetsByTrackSid.get(trackSid) ?? 0;
-                if (resets >= MAX_FROZEN_TRACK_RESETS) {
-                    return;
-                }
-
-                this.frozenTrackResetsByTrackSid.set(trackSid, resets + 1);
-                this.lastFramesDecodedByTrackSid.delete(trackSid);
-                logger.warn('Resetting frozen camera track', trackSid);
-                void this.resetQueueManagedVideoTrack(publication);
+                this.resetFrozenVideoTrack(publication);
             });
         } finally {
             this.isCheckingFrozenTracks = false;
         }
+    }
+
+    private resetFrozenVideoTrack(publication: RemoteTrackPublication) {
+        const trackSid = publication.trackSid;
+        const resets = this.frozenTrackResetsByTrackSid.get(trackSid) ?? 0;
+        if (resets >= MAX_FROZEN_TRACK_RESETS) {
+            return;
+        }
+
+        this.frozenTrackResetsByTrackSid.set(trackSid, resets + 1);
+        this.lastFramesDecodedByTrackSid.delete(trackSid);
+        this.checksWithoutFramesDecodedByTrackSid.delete(trackSid);
+        logger.warn('Resetting frozen camera track', trackSid);
+        void this.resetQueueManagedVideoTrack(publication);
     }
 
     setupReconcileLoop = () => {
@@ -582,6 +608,7 @@ export class CameraTrackSubscriptionManager {
         this.cacheOrderByRecencyTrackSids = [];
         this.pendingSubscriptionWorkTrackSids = [];
         this.lastFramesDecodedByTrackSid.clear();
+        this.checksWithoutFramesDecodedByTrackSid.clear();
         this.frozenTrackResetsByTrackSid.clear();
         this.disableVideos = false;
         this.participantsWithDisabledVideos = [];

@@ -581,6 +581,140 @@ describe('CameraTrackSubscriptionCache', () => {
         expect(setSubscribedSpy).not.toHaveBeenCalled();
     });
 
+    describe('tracks without a framesDecoded count', () => {
+        const setUpHeldTrackWithoutStats = async ({ allowResettingFrozenVideoTracks = true } = {}) => {
+            const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+            manager.setPolicy(lowQualityPolicy);
+            manager.setAllowResettingFrozenVideoTracks(allowResettingFrozenVideoTracks);
+
+            const pub = createCameraPublication('track-1');
+            manager.register(pub, 'p1');
+            await waitFor(() => {
+                expect(pub.isSubscribed).toBe(true);
+                expect(pub.isEnabled).toBe(true);
+            });
+
+            defineWritable(pub, 'track', { receiver: { getStats: async () => new Map() } });
+            const setSubscribedSpy = vi.spyOn(pub, 'setSubscribed');
+
+            const check = async (times = 1) => {
+                for (let index = 0; index < times; index++) {
+                    manager.reconcileCameraTracks();
+                    await flushPendingWork();
+                }
+            };
+            const countResets = () => setSubscribedSpy.mock.calls.filter(([subscribed]) => subscribed === false).length;
+
+            return { pub, setSubscribedSpy, check, countResets };
+        };
+
+        const setStats = (pub: RemoteTrackPublication, stats: Map<string, unknown>) => {
+            defineWritable(pub, 'track', { receiver: { getStats: async () => stats } });
+        };
+
+        const statsWithFramesDecoded = new Map([['inbound', { type: 'inbound-rtp', framesDecoded: 10 }]]);
+
+        it('should reset a held track that has no stats on 3 consecutive checks', async () => {
+            const { pub, setSubscribedSpy, check } = await setUpHeldTrackWithoutStats();
+
+            await check(3);
+
+            await waitFor(() => {
+                expect(setSubscribedSpy).toHaveBeenCalledWith(false);
+                expect(setSubscribedSpy).toHaveBeenLastCalledWith(true);
+                expect(pub.isEnabled).toBe(true);
+            });
+        });
+
+        it('should not reset a held track that has no stats on 2 consecutive checks', async () => {
+            const { setSubscribedSpy, check } = await setUpHeldTrackWithoutStats();
+
+            await check(2);
+
+            expect(setSubscribedSpy).not.toHaveBeenCalled();
+        });
+
+        it('should reset a held track whose inbound-rtp stats have no framesDecoded on the 3rd check', async () => {
+            const { pub, check, countResets } = await setUpHeldTrackWithoutStats();
+            setStats(pub, new Map([['inbound', { type: 'inbound-rtp' }]]));
+
+            await check(2);
+            expect(countResets()).toBe(0);
+
+            await check();
+            expect(countResets()).toBe(1);
+        });
+
+        it('should not reset a held track whose stats appear on the 3rd check', async () => {
+            const { pub, setSubscribedSpy, check } = await setUpHeldTrackWithoutStats();
+
+            await check(2);
+            setStats(pub, statsWithFramesDecoded);
+            await check();
+
+            expect(setSubscribedSpy).not.toHaveBeenCalled();
+        });
+
+        it('should count checks without stats from zero again after a check with stats', async () => {
+            const { pub, check, countResets } = await setUpHeldTrackWithoutStats();
+
+            await check();
+            setStats(pub, statsWithFramesDecoded);
+            await check();
+            setStats(pub, new Map());
+            await check(2);
+            expect(countResets()).toBe(0);
+
+            await check();
+            expect(countResets()).toBe(1);
+        });
+
+        it('should count checks without stats from zero again after the track was muted for a check', async () => {
+            const { pub, check, countResets } = await setUpHeldTrackWithoutStats();
+
+            await check(2);
+            defineWritable(pub, 'isMuted', true);
+            await check();
+            defineWritable(pub, 'isMuted', false);
+            await check(2);
+            expect(countResets()).toBe(0);
+
+            await check();
+            expect(countResets()).toBe(1);
+        });
+
+        it('should stop resetting a track that never gets stats after the maximum number of resets', async () => {
+            const { check, countResets } = await setUpHeldTrackWithoutStats();
+
+            await check(15);
+
+            expect(countResets()).toBe(3);
+        });
+
+        it('should not reset a track without stats when resetting frozen tracks is not allowed', async () => {
+            const { setSubscribedSpy, check } = await setUpHeldTrackWithoutStats({
+                allowResettingFrozenVideoTracks: false,
+            });
+
+            await check(4);
+
+            expect(setSubscribedSpy).not.toHaveBeenCalled();
+        });
+
+        it('should need 3 more checks without stats before resetting a track a second time', async () => {
+            const { check, countResets } = await setUpHeldTrackWithoutStats();
+
+            await check(3);
+            expect(countResets()).toBe(1);
+
+            await check(2);
+            expect(countResets()).toBe(1);
+
+            await check();
+            expect(countResets()).toBe(2);
+        });
+    });
+
     it('should not reconcile camera tracks when room is not connected', () => {
         const disconnectedRoom = {
             state: ConnectionState.Disconnected,
