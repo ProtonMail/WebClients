@@ -27,6 +27,7 @@ import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
+import { MEETING_CONTROLS_TOOLBAR_ID } from '../../constants';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsLowerMediumWidth } from '../../hooks/useIsLowerMediumWidth';
@@ -154,6 +155,7 @@ export const ParticipantControls = () => {
 
                 <div
                     {...toolbarProps}
+                    id={MEETING_CONTROLS_TOOLBAR_ID}
                     role="toolbar"
                     aria-label={c('Accessibility').t`Meeting controls`}
                     className="participant-controls-buttons flex flex-nowrap w-full lg:w-auto gap-1 sm:gap-2 items-center"

@@ -17,6 +17,7 @@ import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton
 import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
+import { SideBarTitle } from '../../atoms/SideBar/SideBarTitle';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useSortedParticipants } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
@@ -73,7 +74,7 @@ export const AssignHostSidebar = () => {
         >
             <div className="assign-host-sidebar flex-1 w-full flex flex-column flex-nowrap gap-4 h-full">
                 <div className="text-center flex flex-column gap-3 flex-nowrap mb-4 px-6">
-                    <h2 className="text-4xl text-semibold">{c('Title').t`Assign a new host`}</h2>
+                    <SideBarTitle className="text-4xl text-semibold">{c('Title').t`Assign a new host`}</SideBarTitle>
                     <div className="color-hint">{c('Info')
                         .t`Select a participant to assign as the new host before you go: `}</div>
                 </div>

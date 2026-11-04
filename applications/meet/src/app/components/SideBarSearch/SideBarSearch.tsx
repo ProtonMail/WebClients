@@ -1,8 +1,12 @@
+import type { KeyboardEvent } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+
+import { isImeComposing } from '../../utils/isImeComposing';
 
 import './SideBarSearch.scss';
 
@@ -19,6 +23,18 @@ export const SideBarSearch = ({
     setIsSearchOn,
     placeholder,
 }: SideBarSearchProps) => {
+    const closeSearch = () => {
+        setIsSearchOn(false);
+        setSearchExpression('');
+    };
+
+    const closeSearchOnEscape = (event: KeyboardEvent<HTMLElement>) => {
+        if (event.key === 'Escape' && !isImeComposing(event)) {
+            event.preventDefault();
+            closeSearch();
+        }
+    };
+
     return (
         <div className="flex items-center w-full side-bar-search">
             <IcMagnifier className="color-norm shrink-0 ml-2" size={6} />
@@ -26,6 +42,7 @@ export const SideBarSearch = ({
                 type="search"
                 value={searchExpression}
                 onChange={(e) => setSearchExpression(e.target.value)}
+                onKeyDown={closeSearchOnEscape}
                 unstyled={true}
                 className="flex-1"
                 placeholder={placeholder}
@@ -37,10 +54,8 @@ export const SideBarSearch = ({
                 className="search-cancel-button ml-2 flex items-center justify-center text-hint color-primary rounded-full shrink-0 px-1"
                 shape="ghost"
                 size="small"
-                onClick={() => {
-                    setIsSearchOn(false);
-                    setSearchExpression('');
-                }}
+                onClick={closeSearch}
+                onKeyDown={closeSearchOnEscape}
                 aria-label={c('Alt').t`Close search`}
             >
                 {c('Action').t`Cancel`}

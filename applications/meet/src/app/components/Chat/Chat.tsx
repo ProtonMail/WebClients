@@ -23,6 +23,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SideBar } from '../../atoms/SideBar/SideBar';
+import { SideBarTitle } from '../../atoms/SideBar/SideBarTitle';
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useChatMessageListNavigation } from '../../hooks/useChatMessageListNavigation';
 import { useMeetingRoomUpdates } from '../../hooks/useMeetingRoomUpdates';
@@ -293,7 +294,7 @@ export const Chat = () => {
                         <div className="text-semibold flex items-center">
                             <SecurityShield title={c('Info').t`End-to-end encryption is active for this chat.`} />
 
-                            <h2 className="text-semibold text-3xl m-0">{c('Title').t`Chat`}</h2>
+                            <SideBarTitle className="text-semibold text-3xl m-0">{c('Title').t`Chat`}</SideBarTitle>
                             <Button
                                 className="search-open-button p-0 ml-2 flex items-center justify-center"
                                 shape="ghost"

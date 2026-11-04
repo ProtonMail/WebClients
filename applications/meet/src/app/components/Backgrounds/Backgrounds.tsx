@@ -12,6 +12,7 @@ import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/t
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
+import { SideBarTitle } from '../../atoms/SideBar/SideBarTitle';
 import { SideBarSection } from '../../atoms/SideBarSection/SideBarSection';
 import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
 import { useAppliedBackgroundEffect } from '../../contexts/BackgroundEffects/useAppliedBackgroundEffect';
@@ -77,7 +78,7 @@ export const Backgrounds = () => {
             paddingClassName="px-4 py-4"
             header={
                 <div className="flex items-center">
-                    <h2 className="text-3xl text-semibold">{c('Title').t`Backgrounds`}</h2>
+                    <SideBarTitle className="text-3xl text-semibold">{c('Title').t`Backgrounds`}</SideBarTitle>
                 </div>
             }
         >

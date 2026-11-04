@@ -17,6 +17,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useMentionLabels } from '../../hooks/useMentionLabels';
+import { getInteractionCount, isLastInteractionKeyboard } from '../../utils/lastInteraction';
 import { $readMentionValue, $writeMentionValue } from '../../utils/mentions/mentionEditorState';
 import { LumoEmojiNode } from './LumoEmojiNode';
 import { MentionNode } from './MentionNode';
@@ -51,6 +52,12 @@ const ComposerErrorBoundary = ({ children, onError }: { children: ReactNode; onE
 
 /** Single source for the line height: the vertical padding and the placeholder both derive from it. */
 const LINE_HEIGHT_REM = 1.5;
+
+type FocusOrigin = 'keyboard' | 'pointer';
+
+type ComposerFocus =
+    | { status: 'focused'; origin: FocusOrigin }
+    | { status: 'windowInactive'; origin: FocusOrigin; interactionCountAtWindowBlur: number };
 
 export interface MentionInputHandle {
     setValue: (value: string) => void;
@@ -176,6 +183,11 @@ export const MentionInput = ({
 
     const [isEmpty, setIsEmpty] = useState(initialValue === '');
 
+    // The origin is read when focus arrives, so typing after a mouse focus does not turn the ring on. It
+    // outlives the blur and focus the browser fires when the window loses and regains focus, but not a key
+    // press or pointer down in between, after which something else (a dialog's focus trap) brought focus back.
+    const [focus, setFocus] = useState<ComposerFocus>();
+
     // Padding rather than centring: the first line keeps its position once the text wraps and the
     // field grows downwards.
     const verticalPadding = Math.max(0, (minHeight - LINE_HEIGHT_REM) / 2);
@@ -202,7 +214,38 @@ export const MentionInput = ({
                     theme: { paragraph: 'm-0' },
                 }}
             >
-                <div className={clsx('relative', className)}>
+                <div
+                    className={clsx(
+                        'relative',
+                        focus?.status === 'focused' && focus.origin === 'keyboard' && 'mention-input-keyboard-focus',
+                        className
+                    )}
+                    onFocus={() => {
+                        const lastInteractionOrigin = isLastInteractionKeyboard() ? 'keyboard' : 'pointer';
+                        const interactionCount = getInteractionCount();
+                        setFocus((previous) => ({
+                            status: 'focused',
+                            origin:
+                                previous?.status === 'windowInactive' &&
+                                previous.interactionCountAtWindowBlur === interactionCount
+                                    ? previous.origin
+                                    : lastInteractionOrigin,
+                        }));
+                    }}
+                    onBlur={() => {
+                        const isWindowBlur = !document.hasFocus();
+                        const interactionCount = getInteractionCount();
+                        setFocus((previous) =>
+                            isWindowBlur && previous
+                                ? {
+                                      status: 'windowInactive',
+                                      origin: previous.origin,
+                                      interactionCountAtWindowBlur: interactionCount,
+                                  }
+                                : undefined
+                        );
+                    }}
+                >
                     <PlainTextPlugin
                         contentEditable={
                             // eslint-disable-next-line jsx-a11y/prefer-tag-over-role

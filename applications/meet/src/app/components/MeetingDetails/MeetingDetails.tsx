@@ -32,6 +32,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
+import { SideBarTitle } from '../../atoms/SideBar/SideBarTitle';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
 import { MismatchStage, useMismatchStage } from '../../hooks/useMismatchStage';
@@ -132,7 +133,7 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
             paddingHeaderClassName="px-4"
             header={
                 <div className="flex items-center">
-                    <h2 className="text-3xl text-semibold">{c('Title').t`Info`}</h2>
+                    <SideBarTitle className="text-3xl text-semibold">{c('Title').t`Info`}</SideBarTitle>
                 </div>
             }
         >
