@@ -355,6 +355,8 @@ export const FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST = [
 export const unsupportedTimezoneLinks: { [key: string]: string } = {
     'America/Indiana/Indianapolis': 'America/New_York',
     'America/Fort_Wayne': 'America/New_York',
+    // Coyhaique (UTC-03 since 2025-03-20) has no exact match: Punta_Arenas is the closest supported zone. Before that date it followed Santiago, so older winter events shift by one hour. Accepted trade-off
+    'America/Coyhaique': 'America/Punta_Arenas',
     'America/Godthab': 'Atlantic/Stanley',
     'Asia/Singapore': 'Asia/Shanghai',
     'Asia/Rangoon': 'Indian/Cocos',
@@ -760,6 +762,7 @@ export const MANUAL_TIMEZONE_EQUIVALENCE: { [key: string]: string } = {
 };
 
 export const MANUAL_TIMEZONE_LINKS: { [key: string]: string } = {
+    'america/coyhaique': 'America/Punta_Arenas',
     'abu dhabi, muscat': 'Asia/Muscat',
     acre: 'America/Rio_Branco',
     'adelaide, central australia': 'Australia/Adelaide',
