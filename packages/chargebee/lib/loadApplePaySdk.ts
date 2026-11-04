@@ -1,4 +1,6 @@
-const APPLE_PAY_SDK_URL = 'https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js';
+// https://developer.apple.com/documentation/applepayontheweb/apple-pay-js-change-log
+const APPLE_PAY_SDK_URL = 'https://applepay.cdn-apple.com/jsapi/v1.3.8/apple-pay-sdk.js';
+const APPLE_PAY_SDK_INTEGRITY = 'sha384-u/9mOkmShCO0v+dqCAZFhiutJuORfzvuyM5i+676iy7mLSWS6rlllHrIt15f/mqH';
 const LOAD_TIMEOUT = 10000;
 
 let injection: Promise<void> | undefined;
@@ -29,6 +31,7 @@ export function loadApplePaySdk(): Promise<void> {
 
         const script = document.createElement('script');
         script.src = APPLE_PAY_SDK_URL;
+        script.integrity = APPLE_PAY_SDK_INTEGRITY;
         script.crossOrigin = 'anonymous';
 
         script.addEventListener('load', settle);
