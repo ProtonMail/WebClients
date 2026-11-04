@@ -255,14 +255,16 @@ export const useMlsSession = ({
             }
 
             agentAdmissionRef.current = startAgentAdmission(meetingLinkName, meetingPassword);
-            // Picks up an agent that went pending before this client had a handler registered.
-            void agentAdmissionRef.current.admitPendingAgents();
 
             const groupKeyData = await meetCoreClient.getGroupKey();
 
             currentKeyRef.current = groupKeyData.key;
 
             await refreshMlsGroupState(groupKeyData.epoch);
+
+            // Started after the group state reads, since in measured joins meet-core answered getGroupKey and
+            // refreshMlsGroupState only once the sweep's agent/keypackages request had finished.
+            void agentAdmissionRef.current.admitPendingAgents();
 
             allowHealthCheck();
 

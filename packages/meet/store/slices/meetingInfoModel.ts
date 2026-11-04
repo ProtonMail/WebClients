@@ -68,12 +68,14 @@ const decryptAndBuildModel = async ({
     api,
     meetingLinkName,
     meetingPassword,
+    silence,
 }: {
     api: Api;
     meetingLinkName: string;
     meetingPassword: string;
+    silence?: number[];
 }): Promise<MeetingInfoModel> => {
-    const { MeetingInfo } = await requestMeetingInfo(api, meetingLinkName);
+    const { MeetingInfo } = await requestMeetingInfo(api, meetingLinkName, silence);
 
     const meetingName = await decryptMeetingName({
         password: meetingPassword,
@@ -202,13 +204,17 @@ export const meetingInfoThunk = ({
 export const refreshMeetingInfoThunk = ({
     meetingLinkName,
     meetingPassword,
+    silence,
 }: {
     meetingLinkName: string;
     meetingPassword: string;
+    silence?: number[];
 }): ThunkAction<Promise<MeetingInfoModel>, MeetingInfoModelState, MeetExtraThunkArguments, UnknownAction> => {
     return (dispatch, getState, { api }) => {
         const cb = () =>
-            runWithModelDispatch(dispatch, () => decryptAndBuildModel({ api, meetingLinkName, meetingPassword }));
+            runWithModelDispatch(dispatch, () =>
+                decryptAndBuildModel({ api, meetingLinkName, meetingPassword, silence })
+            );
 
         return cacheHelper({
             store: promiseStore,

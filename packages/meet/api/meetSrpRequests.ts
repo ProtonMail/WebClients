@@ -65,8 +65,8 @@ export const requestSessionToken = async (
     return response.json();
 };
 
-export const requestMeetingInfo = (api: Api, meetingLinkName: string) =>
-    api<MeetingInfoResponse>(queryMeetingInfo(meetingLinkName));
+export const requestMeetingInfo = (api: Api, meetingLinkName: string, silence?: number[]) =>
+    api<MeetingInfoResponse>({ ...queryMeetingInfo(meetingLinkName), ...(silence && { silence }) });
 
 export const requestAccessToken = (
     api: Api,

@@ -80,8 +80,28 @@ interface DecryptSessionKeyParams {
     salt: string;
 }
 
+let lastSessionKeyPassphrase: { password: string; salt: string; passphrase: Promise<string> } | undefined;
+
+// A join decrypts the same meeting's session key several times, and bcrypt makes each one slow
+const computeSessionKeyPassphrase = (password: string, salt: string) => {
+    if (lastSessionKeyPassphrase?.password === password && lastSessionKeyPassphrase.salt === salt) {
+        return lastSessionKeyPassphrase.passphrase;
+    }
+
+    const passphrase = computeBcryptHash(password, salt);
+    lastSessionKeyPassphrase = { password, salt, passphrase };
+
+    passphrase.catch(() => {
+        if (lastSessionKeyPassphrase?.passphrase === passphrase) {
+            lastSessionKeyPassphrase = undefined;
+        }
+    });
+
+    return passphrase;
+};
+
 export const decryptSessionKey = async ({ encryptedSessionKey, password, salt }: DecryptSessionKeyParams) => {
-    const sessionKeyPassphrase = await computeBcryptHash(password, salt);
+    const sessionKeyPassphrase = await computeSessionKeyPassphrase(password, salt);
 
     const encryptedSessionKeyData = Uint8Array.fromBase64(encryptedSessionKey);
 
@@ -179,7 +199,7 @@ const encryptSessionKey = async (sessionKey: SessionKey, passwordHash: string) =
 const hashPasswordWithSalt = async (password: string, salt?: string) => {
     const saltForHash = salt || generateBcryptSalt();
 
-    const passwordHash = await computeBcryptHash(password, saltForHash);
+    const passwordHash = await computeSessionKeyPassphrase(password, saltForHash);
 
     return { salt: saltForHash, passwordHash };
 };

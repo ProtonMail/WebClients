@@ -246,6 +246,7 @@ export const useMeetingConnection = ({
             let e2eeEnableMs: number;
             let livekitConnectMs: number;
             let deviceInitMs: number;
+            let participantsFetch: Promise<void> | undefined;
             try {
                 const e2eeStart = performance.now();
                 await room.setE2EEEnabled(true);
@@ -260,6 +261,13 @@ export const useMeetingConnection = ({
                 });
                 connectionInfo = await connectWithStunFallbackToTurnRelay(websocketUrl, accessToken, timeoutMs);
                 livekitConnectMs = Math.round(performance.now() - t2);
+                if (!signal?.aborted) {
+                    if (resetParticipantsBeforeFetch) {
+                        dispatch(resetParticipantMaps());
+                    }
+                    // The backend lists the local participant only once LiveKit does, so this is the earliest it can run
+                    participantsFetch = getParticipants(meetingLinkName);
+                }
                 await initDevices;
                 deviceInitMs = Math.round(performance.now() - t2);
             } catch (livekitError) {
@@ -285,10 +293,7 @@ export const useMeetingConnection = ({
                 signal.throwIfAborted();
             }
 
-            if (resetParticipantsBeforeFetch) {
-                dispatch(resetParticipantMaps());
-            }
-            await getParticipants(meetingLinkName);
+            await participantsFetch;
 
             return {
                 connectionInfo,

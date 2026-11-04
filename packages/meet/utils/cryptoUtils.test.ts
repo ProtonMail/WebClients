@@ -1,9 +1,12 @@
 import type { SessionKey } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
+import type * as srp from '@protontech/crypto/srp';
+import { computeKeyPassword } from '@protontech/crypto/srp';
 
 import {
     decryptMeetingName,
     decryptMetadataWithKey,
+    decryptSessionKey,
     deriveEncryptionKeyFromSessionKey,
     encryptMetadataWithKey,
     prepareMeetingCryptoData,
@@ -19,6 +22,11 @@ vi.mock('@proton/shared/lib/srp', () => ({
         },
     }),
 }));
+
+vi.mock('@protontech/crypto/srp', async (importOriginal) => {
+    const original = await importOriginal<typeof srp>();
+    return { ...original, computeKeyPassword: vi.fn(original.computeKeyPassword) };
+});
 
 vi.mock('@proton/utils/getRandomString', () => ({
     __esModule: true,
@@ -98,5 +106,54 @@ describe('utils', () => {
         });
 
         expect(decryptionResult.data).toBe('mockpassword');
+    });
+
+    it('reuses the hash from the creation for every decryption of its session key', async () => {
+        const { encryptedSessionKey, salt, passwordBase } = await prepareMeetingCryptoData({
+            meetingName: mockMeetingName,
+            // @ts-expect-error - srpGetVerify is mocked, no need for the api
+            api: null,
+        });
+        vi.mocked(computeKeyPassword).mockClear();
+
+        const sessionKeys = await Promise.all([
+            decryptSessionKey({ encryptedSessionKey, password: passwordBase, salt }),
+            decryptSessionKey({ encryptedSessionKey, password: passwordBase, salt }),
+        ]);
+
+        expect(computeKeyPassword).not.toHaveBeenCalled();
+        expect(sessionKeys.map((sessionKey) => sessionKey?.algorithm)).toEqual(['aes256', 'aes256']);
+    });
+
+    it('hashes the meeting password once across the decryptions of a meeting created elsewhere', async () => {
+        const { encryptedSessionKey, salt, passwordBase } = await prepareMeetingCryptoData({
+            meetingName: mockMeetingName,
+            // @ts-expect-error - srpGetVerify is mocked, no need for the api
+            api: null,
+        });
+        // Another meeting's creation replaces the hash, as when a participant opens a link
+        await prepareMeetingCryptoData({
+            meetingName: mockMeetingName,
+            // @ts-expect-error - srpGetVerify is mocked, no need for the api
+            api: null,
+        });
+        vi.mocked(computeKeyPassword).mockClear();
+
+        await decryptSessionKey({ encryptedSessionKey, password: passwordBase, salt });
+        const sessionKey = await decryptSessionKey({ encryptedSessionKey, password: passwordBase, salt });
+
+        expect(computeKeyPassword).toHaveBeenCalledTimes(1);
+        expect(sessionKey?.algorithm).toBe('aes256');
+    });
+
+    it('still rejects a wrong password after the right one decrypted the session key', async () => {
+        const { encryptedSessionKey, salt, passwordBase } = await prepareMeetingCryptoData({
+            meetingName: mockMeetingName,
+            // @ts-expect-error - srpGetVerify is mocked, no need for the api
+            api: null,
+        });
+        await decryptSessionKey({ encryptedSessionKey, password: passwordBase, salt });
+
+        await expect(decryptSessionKey({ encryptedSessionKey, password: 'wrongpassword', salt })).rejects.toThrow();
     });
 });

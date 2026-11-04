@@ -44,11 +44,15 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
     const missingNamesFromWaitingRoomHash = useMeetSelector(selectMissingNamesFromWaitingRoomHash);
     const joinedRoom = useMeetSelector(selectJoinedRoom);
 
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+    const isMountedRef = useRef(true);
+
+    const runningFetchRef = useRef<Promise<void> | null>(null);
+
+    const followUpFetchRef = useRef<Promise<void> | null>(null);
+
+    const throttleWaitRef = useRef<{ timeout: NodeJS.Timeout; release: () => void } | null>(null);
 
     const countRef = useRef(0);
-
-    const isFetchingRef = useRef(false);
 
     const lastFetchTimestamp = useRef(0);
 
@@ -57,91 +61,123 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
     const handleFetch = useCallback(
         async (meetingLinkName: string) => {
             dispatch(setIsFetchingParticipants(true));
-            const response = await api<{ Participants: ParticipantEntity[] }>(queryParticipants(meetingLinkName));
+            try {
+                const response = await api<{ Participants: ParticipantEntity[] }>(queryParticipants(meetingLinkName));
 
-            const participants = response.Participants;
-            const currentDecryptionKey = decryptionKeyRef?.current;
+                const participants = response.Participants;
+                const currentDecryptionKey = decryptionKeyRef?.current;
 
-            const resolvedNames = await Promise.all(
-                participants.map(async (participant) => {
-                    // Skip if already resolved, unless we can now decrypt an encrypted name
-                    // (e.g. session key wasn't available on a previous fetch)
-                    const cached = participantDecryptedNameMapRef.current[participant.ParticipantUUID];
-                    const pendingName = c('Display name').t`Loading…`;
-                    // Only re-decrypt if the cached value is still the unencrypted fallback
-                    if (cached && cached !== pendingName) {
-                        return cached;
-                    }
-                    if (currentDecryptionKey) {
-                        try {
-                            return await decryptDisplayNameWithKey(
-                                currentDecryptionKey,
-                                participant.EncryptedDisplayName
-                            );
-                        } catch {
-                            return pendingName;
+                const resolvedNames = await Promise.all(
+                    participants.map(async (participant) => {
+                        // Skip if already resolved, unless we can now decrypt an encrypted name
+                        // (e.g. session key wasn't available on a previous fetch)
+                        const cached = participantDecryptedNameMapRef.current[participant.ParticipantUUID];
+                        const pendingName = c('Display name').t`Loading…`;
+                        // Only re-decrypt if the cached value is still the unencrypted fallback
+                        if (cached && cached !== pendingName) {
+                            return cached;
                         }
-                    }
-                    return pendingName;
-                })
-            );
+                        if (currentDecryptionKey) {
+                            try {
+                                return await decryptDisplayNameWithKey(
+                                    currentDecryptionKey,
+                                    participant.EncryptedDisplayName
+                                );
+                            } catch {
+                                return pendingName;
+                            }
+                        }
+                        return pendingName;
+                    })
+                );
 
-            dispatch(setIsFetchingParticipants(false));
+                // The store outlives this hook, and resetMeetingState has already cleared it on unmount
+                if (!isMountedRef.current) {
+                    return;
+                }
 
-            dispatch(
-                mergeParticipantsMap(
-                    Object.fromEntries(participants.map((participant) => [participant.ParticipantUUID, participant]))
-                )
-            );
-            dispatch(
-                mergeParticipantDecryptedNameMap(
-                    Object.fromEntries(
-                        participants.map((participant, i) => [participant.ParticipantUUID, resolvedNames[i]])
+                dispatch(setIsFetchingParticipants(false));
+
+                dispatch(
+                    mergeParticipantsMap(
+                        Object.fromEntries(
+                            participants.map((participant) => [participant.ParticipantUUID, participant])
+                        )
                     )
-                )
-            );
+                );
+                dispatch(
+                    mergeParticipantDecryptedNameMap(
+                        Object.fromEntries(
+                            participants.map((participant, i) => [participant.ParticipantUUID, resolvedNames[i]])
+                        )
+                    )
+                );
 
-            countRef.current = participants.length;
-            isFetchingRef.current = false;
-
-            lastFetchTimestamp.current = Date.now();
+                countRef.current = participants.length;
+                lastFetchTimestamp.current = Date.now();
+            } catch (error) {
+                logger.error('Failed to fetch participants', error);
+                if (isMountedRef.current) {
+                    dispatch(setIsFetchingParticipants(false));
+                }
+            }
         },
         [api, dispatch, decryptionKeyRef]
     );
 
     const getParticipants = useCallback(
-        async (meetingLinkName: string) => {
-            try {
-                if (isFetchingRef.current) {
-                    return;
-                }
+        (meetingLinkName: string): Promise<void> => {
+            const waitForThrottle = () => {
+                const timeSinceLastFetch = Date.now() - lastFetchTimestamp.current;
 
-                isFetchingRef.current = true;
+                return new Promise<void>((resolve) => {
+                    const release = () => {
+                        throttleWaitRef.current = null;
+                        resolve();
+                    };
+                    throttleWaitRef.current = {
+                        timeout: setTimeout(release, Math.max(FETCH_TIME_CONSTRAINT_MS - timeSinceLastFetch, 0)),
+                        release,
+                    };
+                });
+            };
 
-                if (timeoutRef.current) {
-                    clearTimeout(timeoutRef.current);
-                    timeoutRef.current = null;
-                }
-
+            const runFetch = async () => {
                 if (countRef.current > PARTICIPANT_COUNT_THRESHOLD) {
-                    const timeDiff = Date.now() - lastFetchTimestamp.current;
-
-                    const timeout = Math.max(FETCH_TIME_CONSTRAINT_MS - timeDiff, 0);
-
-                    timeoutRef.current = setTimeout(async () => {
-                        try {
-                            await handleFetch(meetingLinkName);
-                        } catch (error) {
-                            isFetchingRef.current = false;
-                        }
-                    }, timeout);
-                } else {
+                    await waitForThrottle();
+                }
+                if (isMountedRef.current) {
                     await handleFetch(meetingLinkName);
                 }
-            } catch (error) {
-                logger.error('Failed to fetch participants', error);
-                isFetchingRef.current = false;
+            };
+
+            const startFetch = () => {
+                const runningFetch = runFetch().finally(() => {
+                    runningFetchRef.current = null;
+                });
+                runningFetchRef.current = runningFetch;
+                return runningFetch;
+            };
+
+            if (!isMountedRef.current) {
+                return Promise.resolve();
             }
+
+            if (followUpFetchRef.current) {
+                return followUpFetchRef.current;
+            }
+
+            if (!runningFetchRef.current) {
+                return startFetch();
+            }
+
+            // A fetch already past its server read can miss what changed since, so one more runs after it
+            const followUp = runningFetchRef.current.then(() => {
+                followUpFetchRef.current = null;
+                return isMountedRef.current ? startFetch() : undefined;
+            });
+            followUpFetchRef.current = followUp;
+            return followUp;
         },
         [handleFetch]
     );
@@ -177,9 +213,13 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?
     }, [room, dispatch]);
 
     useEffect(() => {
+        isMountedRef.current = true;
+
         return () => {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
+            isMountedRef.current = false;
+            if (throttleWaitRef.current) {
+                clearTimeout(throttleWaitRef.current.timeout);
+                throttleWaitRef.current.release();
             }
         };
     }, []);
