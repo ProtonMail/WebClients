@@ -1,8 +1,12 @@
 import { HttpResponse, http } from 'msw';
 
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
-
-import { addressBuilder, calendarBuilder, calendarEventBuilder, userBuilder } from './builders';
+import {
+    addressBuilder,
+    calendarBuilder,
+    calendarEventBuilder,
+    userBuilder,
+} from '@proton/shared/testing/calendarBuilders';
 
 /**
  * Default MSW handlers for tests.

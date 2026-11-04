@@ -1,7 +1,7 @@
-import { generateOwnedPersonalCalendars } from '@proton/calendar/testing/builders';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import { generateOwnedPersonalCalendars } from '@proton/shared/testing/calendarBuilders';
 
 import type { MailImportFolder } from '../../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
 import {

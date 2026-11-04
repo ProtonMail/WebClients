@@ -1,20 +1,15 @@
 import { build } from '@jackfranklin/test-data-bot';
 
-import {
-    ATTENDEE_MORE_ATTENDEES,
-    CALENDAR_DISPLAY,
-    CALENDAR_FLAGS,
-    CALENDAR_TYPE,
-} from '@proton/shared/lib/calendar/constants';
-import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
-import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import type { Address } from '@proton/shared/lib/interfaces/Address';
-import type { AddressKey } from '@proton/shared/lib/interfaces/Key';
-import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
-import type { CalendarEvent } from '@proton/shared/lib/interfaces/calendar/Event';
-import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar/Subscription';
-import type { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { ATTENDEE_MORE_ATTENDEES, CALENDAR_DISPLAY, CALENDAR_FLAGS, CALENDAR_TYPE } from '../lib/calendar/constants';
+import { MEMBER_PERMISSIONS } from '../lib/calendar/permissions';
+import { ADDRESS_TYPE } from '../lib/constants';
+import type { Address } from '../lib/interfaces/Address';
+import type { AddressKey } from '../lib/interfaces/Key';
+import type { CalendarUserSettings, VisualCalendar } from '../lib/interfaces/calendar/Calendar';
+import type { CalendarEvent } from '../lib/interfaces/calendar/Event';
+import { CALENDAR_SUBSCRIPTION_STATUS } from '../lib/interfaces/calendar/Subscription';
+import type { VcalVeventComponent } from '../lib/interfaces/calendar/VcalModel';
+import type { Message } from '../lib/interfaces/mail/Message';
 
 export const messageBuilder = build<Pick<Message, 'ID' | 'ParsedHeaders'>>('Message', {
     fields: {

@@ -3,10 +3,10 @@ import { mocked } from 'jest-mock';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
-import { generateHolidaysCalendars } from '@proton/calendar/testing/builders';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { localeCode, setLocales } from '@proton/shared/lib/i18n';
 import type { HolidaysDirectoryCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
+import { generateHolidaysCalendars } from '@proton/shared/testing/calendarBuilders';
 
 import { mockNotifications } from '../../../../../testing/mockNotifications';
 import { CALENDAR_MODAL_TYPE } from '../../interface';

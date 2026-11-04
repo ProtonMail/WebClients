@@ -658,6 +658,7 @@
         "./lib/webpack.constants": "./lib/webpack.constants.ts",
         "./lib/window": "./lib/window.ts",
         "./testing/buildUser": "./testing/buildUser.ts",
+        "./testing/calendarBuilders": "./testing/calendarBuilders.ts",
         "./tests/keys/keyDataHelper": "./tests/keys/keyDataHelper.ts"
     },
     "scripts": {
@@ -708,6 +709,7 @@
         "zod": "catalog:"
     },
     "devDependencies": {
+        "@jackfranklin/test-data-bot": "^2.1.0",
         "@proton/i18n": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/polyfill": "workspace:^",
