@@ -19,7 +19,7 @@ vi.mock('@proton/unleash/useFlag', () => ({
 
 const reportMeetError = vi.fn();
 
-vi.mock('@proton/meet', () => ({
+vi.mock('@proton/meet/hooks/useMeetErrorReporting', () => ({
     useMeetErrorReporting: () => ({ reportMeetError }),
 }));
 
