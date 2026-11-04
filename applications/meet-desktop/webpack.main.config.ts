@@ -3,7 +3,7 @@ import { rules } from "./webpack.rules";
 
 import appConfig from "../meet/appConfig";
 
-const sentryDSN = appConfig.sentry;
+const sentryDSN = appConfig.sentryDesktop;
 
 export const mainConfig: Configuration = {
     /**
