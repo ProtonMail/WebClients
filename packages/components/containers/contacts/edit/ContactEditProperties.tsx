@@ -14,6 +14,7 @@ import { IcPhone } from '@proton/icons/icons/IcPhone';
 import { IcTextAlignJustify } from '@proton/icons/icons/IcTextAlignJustify';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
+import type { ContactGroupLimitReachedProps } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import {
     compareVCardPropertyByPref,
     compareVCardPropertyByUid,
@@ -29,7 +30,6 @@ import move from '@proton/utils/move';
 
 import { SortableList } from '../../../components/dnd/SortableList';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
-import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import type { ContactImageProps } from '../modals/ContactImageModal';
 import EncryptedIcon from '../view/EncryptedIcon';
 import ContactEditProperty from './ContactEditProperty';

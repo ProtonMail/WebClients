@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
+import type { ContactGroupLimitReachedProps } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
@@ -10,10 +11,6 @@ import Prompt from '../../../components/prompt/Prompt';
 const getContactGroupsNames = (groupIDs: string[], contactGroups: ContactGroup[]) => {
     return contactGroups.filter((contactGroup) => groupIDs.includes(contactGroup.ID));
 };
-
-export interface ContactGroupLimitReachedProps {
-    groupIDs?: string[];
-}
 
 type Props = ContactGroupLimitReachedProps & ModalProps;
 const ContactGroupLimitReachedModal = ({ groupIDs, ...rest }: Props) => {
