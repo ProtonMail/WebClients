@@ -12,6 +12,7 @@ import {
     setPrejoinParticipantCount,
     setReconnectionFailed,
 } from '@proton/meet/store/slices/connectionSlice';
+import { resetParticipantMaps } from '@proton/meet/store/slices/participants/participantsSlice';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -135,6 +136,61 @@ describe('useMeetingConnection', () => {
             expect(res.connectionInfo).toEqual({ stunFailed: false, connectionAttempts: 2 });
             expect(params.accessTokenRef.current).toBe('tok');
             expect(result.current.websocketUrlRef.current).toBe('wss://x');
+        });
+
+        it('waits for the participant list, which it requests while the devices initialize', async () => {
+            let resolveParticipantsFetch!: () => void;
+            let resolveDevices!: () => void;
+            const params = createParams({
+                getParticipants: vi.fn(
+                    () =>
+                        new Promise<void>((resolve) => {
+                            resolveParticipantsFetch = resolve;
+                        })
+                ),
+                initializeDevices: vi.fn(
+                    () =>
+                        new Promise<void>((resolve) => {
+                            resolveDevices = resolve;
+                        })
+                ),
+            });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            let isConnected = false;
+            await act(async () => {
+                void result.current.connectWithMls(baseConnectParams).then(() => {
+                    isConnected = true;
+                });
+            });
+
+            expect(params.getParticipants).toHaveBeenCalledWith('meeting-abc');
+
+            await act(async () => {
+                resolveDevices();
+            });
+
+            expect(isConnected).toBe(false);
+
+            await act(async () => {
+                resolveParticipantsFetch();
+            });
+
+            expect(isConnected).toBe(true);
+        });
+
+        it('requests the participant list only once LiveKit is connected', async () => {
+            const params = createParams({
+                connectWithStunFallbackToTurnRelay: vi.fn(() => new Promise(() => {})),
+            });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            await act(async () => {
+                void result.current.connectWithMls(baseConnectParams);
+            });
+
+            expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalled();
+            expect(params.getParticipants).not.toHaveBeenCalled();
         });
 
         it('uses the seamless key rotation scheduler when the flag is on', async () => {
@@ -263,6 +319,32 @@ describe('useMeetingConnection', () => {
             expect(mockDispatch).toHaveBeenCalledWith(setIsReconnecting(false));
             expect(params.allowHealthCheck).toHaveBeenCalledTimes(1);
             expect(result.current.isReconnectingRef.current).toBe(false);
+        });
+
+        it('restores the joined state only once the participant list has landed', async () => {
+            let resolveParticipantsFetch!: () => void;
+            const params = createParams({
+                getParticipants: vi.fn(
+                    () =>
+                        new Promise<void>((resolve) => {
+                            resolveParticipantsFetch = resolve;
+                        })
+                ),
+            });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            await act(async () => {
+                void result.current.performFullReconnection(RejoinReasonInfo.Other);
+            });
+
+            expect(params.getParticipants).toHaveBeenCalledWith('meeting-abc');
+            expect(mockDispatch).not.toHaveBeenCalledWith(setJoinedRoom(true));
+
+            await act(async () => {
+                resolveParticipantsFetch();
+            });
+
+            expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
         });
 
         it('marks the reconnection as failed and clears credentials when it throws', async () => {
@@ -986,6 +1068,7 @@ describe('useMeetingConnection', () => {
             await expect(run).resolves.toBe('cancelled');
             expect(mockRoom.disconnect).toHaveBeenCalledTimes(1);
             expect(params.getParticipants).not.toHaveBeenCalled();
+            expect(mockDispatch).not.toHaveBeenCalledWith(resetParticipantMaps());
             expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
         });
 

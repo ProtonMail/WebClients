@@ -12,7 +12,11 @@ import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { setJoinedRoom, setJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
 import { setCurrentMeeting } from '@proton/meet/store/slices/currentMeeting';
-import { meetingInfoThunk, refreshMeetingInfoThunk } from '@proton/meet/store/slices/meetingInfoModel';
+import {
+    meetingInfoThunk,
+    refreshMeetingInfoThunk,
+    selectMeetingInfoModel,
+} from '@proton/meet/store/slices/meetingInfoModel';
 import { setIsGuestAdmin } from '@proton/meet/store/slices/participants/participantsSlice';
 import { hydrateMeetingPolicies, selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { setMeetingReadyPopupOpen } from '@proton/meet/store/slices/uiStateSlice';
@@ -22,7 +26,8 @@ import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { SECOND } from '@proton/shared/lib/constants';
+import { HTTP_STATUS_CODE, SECOND } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -75,6 +80,12 @@ export interface UseJoinFlowResult {
 
 // Only joins slower than this are reported while the telemetry kill switch is on
 const SLOW_JOIN_THRESHOLD_MS = 15 * SECOND;
+
+// The meeting grant is gone (password changed, evicted) or the session behind it is no longer valid
+const isMeetingSessionLost = (error: unknown) => {
+    const { status, code } = getApiError(error);
+    return status === HTTP_STATUS_CODE.UNAUTHORIZED || code === API_CUSTOM_ERROR_CODES.PERMISSION_DENIED;
+};
 
 const getNetworkHints = () => {
     const connection = (navigator as any).connection;
@@ -181,6 +192,7 @@ export const useJoinFlow = ({
     const isGuest = useMeetSelector(selectIsGuest);
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
     const waitingRoomSetting = useMeetSelector(selectWaitingRoomSetting);
+    const prejoinMeetingInfoModel = useMeetSelector(selectMeetingInfoModel);
 
     const isMeetClientMetricsLogEnabled = useFlag('MeetClientMetricsLog');
     const meetJoinTelemetryEnabled = useFlag('MeetJoinTelemetry');
@@ -513,6 +525,43 @@ export const useJoinFlow = ({
         cleanupJoin: cleanupWaitingRoomJoin,
     });
 
+    const getMeetingInfoForJoin = async (meetingLinkName: string) => {
+        // The backend keeps the grant from the prejoin's handshake on this session, so only the data is read again
+        if (prejoinMeetingInfoModel.value?.meetingLinkName === meetingLinkName) {
+            try {
+                const { meetingInfo } = await joinTimerRef.current.measure(
+                    'meetingInfoMs',
+                    dispatch(
+                        refreshMeetingInfoThunk({
+                            meetingLinkName,
+                            meetingPassword: urlMeetingPassword,
+                            silence: [API_CUSTOM_ERROR_CODES.PERMISSION_DENIED, API_CUSTOM_ERROR_CODES.NOT_FOUND],
+                        })
+                    )
+                );
+                return meetingInfo;
+            } catch (error) {
+                if (!isMeetingSessionLost(error)) {
+                    throw error;
+                }
+            }
+        }
+
+        const handshakeInfo = await joinTimerRef.current.measure('srpMs', initHandshake(meetingLinkName));
+        const { meetingInfo } = await joinTimerRef.current.measure(
+            'meetingInfoMs',
+            dispatch(
+                meetingInfoThunk({
+                    meetingLinkName,
+                    meetingPassword: urlMeetingPassword,
+                    handshakeInfo,
+                    cache: CacheType.None,
+                })
+            )
+        );
+        return meetingInfo;
+    };
+
     const joinMeeting = async (displayName: string, meetingLinkName: string = urlMeetingLinkName) => {
         isExpiringRef.current = false;
         meetingLinkNameRef.current = meetingLinkName;
@@ -536,23 +585,10 @@ export const useJoinFlow = ({
         }
 
         try {
-            const handshakeInfo = await joinTimerRef.current.measure('srpMs', initHandshake(meetingLinkName));
-
             let meetingInfo;
 
             try {
-                // Not cached: the join needs a fresh meeting session, not just the data
-                ({ meetingInfo } = await joinTimerRef.current.measure(
-                    'meetingInfoMs',
-                    dispatch(
-                        meetingInfoThunk({
-                            meetingLinkName,
-                            meetingPassword: urlMeetingPassword,
-                            handshakeInfo,
-                            cache: CacheType.None,
-                        })
-                    )
-                ));
+                meetingInfo = await getMeetingInfoForJoin(meetingLinkName);
             } catch (error: any) {
                 dispatch(setJoiningInProgress(false));
                 joinBlockedRef.current = false;

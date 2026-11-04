@@ -213,6 +213,36 @@ describe('useMlsSession', () => {
         );
     });
 
+    it('starts the pending agents sweep only after the join read the group state', async () => {
+        vi.mocked(useLiveCaptionsFeatureEnabled).mockReturnValue(true);
+        let finishGroupStateRefresh = () => {};
+        const params = {
+            ...createParams(),
+            refreshMlsGroupState: vi.fn(
+                () =>
+                    new Promise<void>((resolve) => {
+                        finishGroupStateRefresh = resolve;
+                    })
+            ),
+        };
+        const { result } = renderHook(() => useMlsSession(params));
+
+        let join: Promise<unknown> = Promise.resolve();
+        await act(async () => {
+            join = result.current.handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD);
+        });
+
+        expect(meetCoreClient.getGroupKey).toHaveBeenCalled();
+        expect(meetCoreClient.listPendingAgents).not.toHaveBeenCalled();
+
+        await act(async () => {
+            finishGroupStateRefresh();
+            await join;
+        });
+
+        expect(meetCoreClient.listPendingAgents).toHaveBeenCalledWith(MEETING_LINK_NAME);
+    });
+
     it('admits an agent the wasm side reports as pending', async () => {
         await setup();
 
