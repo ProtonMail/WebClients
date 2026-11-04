@@ -53,6 +53,7 @@ import { meetTelemetryConfig } from './telemetryConfig';
 import { pruneOrphanBackgroundCaches, purgeUserBackgrounds } from './utils/customBackgrounds/purge';
 import { clearStoredDevices } from './utils/deviceStorage';
 import { clearDisabledRotatePersonalMeeting } from './utils/disableRotatePersonalMeeting';
+import { forwardLiveKitLogsToLogger } from './utils/forwardLiveKitLogs';
 import {
     MEET_LOGGER_NAME,
     deleteUnusedGuestLoggerDatabases,
@@ -210,15 +211,16 @@ const initializeLogger = ({
     }
 
     getLoggerKey()
-        .then(({ key, ID }) =>
+        .then(({ key, ID }) => {
             logger.initialize({
                 encryptionKey: key,
                 appName,
                 loggerID: ID,
                 loggerName: MEET_LOGGER_NAME,
                 consoleLevels: isProduction(window.location.host) ? undefined : ALL_CONSOLE_LEVELS,
-            })
-        )
+            });
+            forwardLiveKitLogsToLogger();
+        })
         .catch((error) => {
             // eslint-disable-next-line no-console
             console.error('Failed to initialize the proton logger', error);

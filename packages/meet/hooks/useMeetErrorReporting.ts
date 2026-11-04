@@ -70,8 +70,16 @@ export const useMeetErrorReporting = () => {
 
             const meetCoreError = resolveMeetCoreError(context?.error);
             const reportLabel = meetCoreError ? `${label}: ${meetCoreError}` : label;
+            const tagsWithAnalyticsAttributes = {
+                ...getAnalyticsAttributes(),
+                ...(meetCoreError && { meetCoreError }),
+                ...tags,
+                label,
+            };
 
-            logger[LOG_LEVEL_BY_SEVERITY[level]](reportLabel, ...getLoggerArgs(context));
+            logger[LOG_LEVEL_BY_SEVERITY[level]](reportLabel, ...getLoggerArgs(context), {
+                tags: tagsWithAnalyticsAttributes,
+            });
 
             if (!shouldReportError) {
                 return;
@@ -86,12 +94,6 @@ export const useMeetErrorReporting = () => {
 
             errorCountMapRef.current.set(reportLabel, currentCount + 1);
 
-            const tagsWithAnalyticsAttributes = {
-                ...getAnalyticsAttributes(),
-                ...(meetCoreError && { meetCoreError }),
-                ...tags,
-                label,
-            };
             const exception = getReportableException(context?.error);
 
             if (exception) {
