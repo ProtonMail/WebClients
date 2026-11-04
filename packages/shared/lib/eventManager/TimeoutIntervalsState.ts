@@ -37,10 +37,6 @@ export class TimeoutIntervalsState {
         };
     };
 
-    public isForegroundEqualToBackground() {
-        return this.value.foreground === this.value.background;
-    }
-
     public getInterval(type: EventManagerIntervalTypes) {
         return this.value[type];
     }

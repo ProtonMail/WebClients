@@ -28,6 +28,9 @@ const createCompatEventManager = <EventResult>({
         reset: () => {
             eventManagers.forEach((eventManager) => eventManager.reset());
         },
+        setIntervalsOverride: (intervals) => {
+            eventManagers.forEach((eventManager) => eventManager.setIntervalsOverride?.(intervals));
+        },
         // Not supported
         subscribe: () => {
             return () => {};

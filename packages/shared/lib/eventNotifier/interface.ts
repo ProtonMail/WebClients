@@ -76,3 +76,10 @@ export const MAX_RECONNECT_ATTEMPTS = FIBONACCI_LIST.length;
  * cycle is doing its job".
  */
 export const STABLE_CONNECTION_DELAY = INTERVAL_EVENT_TIMER;
+
+/**
+ * Upper bound of the event loop polling interval set by `PingOMaticEventLoopInterval` while pings
+ * can be received, so that a misconfigured flag can't make polling stop altogether. Polling stays
+ * the safety net for missed pings.
+ */
+export const MAX_EXTENDED_EVENT_LOOP_INTERVAL = INTERVAL_EVENT_TIMER * 60;

@@ -8,6 +8,7 @@ import { onceWithQueue } from '../helpers/onceWithQueue';
 import { type TimeoutIntervalsState, getTimeoutIntervalsStateSingleton } from './TimeoutIntervalsState';
 import { type VisibilityState, getVisibilityStateSingleton } from './VisibilityState';
 import { type EventLoopParams, type EventLoopTrigger, getEventLoopParams } from './eventLoopParams';
+import type { EventManagerIntervalTypes, EventManagerIntervals } from './eventManagerIntervals';
 import { getIntervalTypeFromVisibility } from './getIntervalTypeFromVisibility';
 
 interface DefaultEventResult {
@@ -60,6 +61,13 @@ export type EventManager<EventResult> = {
     call: (trigger?: EventLoopTrigger) => Promise<void>;
     reset: () => void;
     subscribe: SubscribeFn<[EventResult]>;
+    /**
+     * Polls at the given intervals instead of the regular ones, when they are longer, until called
+     * again with undefined. Meant for when another channel already signals new events, so that
+     * polling is only a safety net. Optional as only the event managers created by
+     * `createEventManager` support it.
+     */
+    setIntervalsOverride?: (intervals: EventManagerIntervals | undefined) => void;
 };
 
 const defaultParseResults: EventManagerConfigBase<any>['parseResults'] = (result: DefaultEventResult) => ({
@@ -76,40 +84,31 @@ interface EventManagerState {
     abortController?: AbortController;
 }
 
-function handleVisibilityChange(
-    isVisible: boolean,
-    state: EventManagerState,
-    timeoutIntervalsState: TimeoutIntervalsState
-) {
-    // No need to do anything if it became hidden.
-    if (!isVisible) {
-        return;
-    }
+/**
+ * Returns how to reschedule the pending call so that it happens `interval` after the timeout started,
+ * if that is sooner than currently scheduled.
+ */
+function getSoonerCall(state: EventManagerState, interval: number) {
     const { timeoutStartTime, timeoutStartDelay, timeoutHandle, retryIndex } = state;
     // No need to do anything if the event loop is not running.
     if (timeoutStartTime === undefined || timeoutStartDelay === undefined || timeoutHandle === undefined) {
         return;
     }
-    // No need to do anything if the foreground and background intervals are equal
-    if (timeoutIntervalsState.isForegroundEqualToBackground()) {
-        return;
-    }
     // Compute the next expected call time.
     const nextCallTime = timeoutStartTime + timeoutStartDelay;
-    // Compute at what time the next call time would have been if the event loop had been running in foreground.
-    const nextForegroundCallTime =
-        timeoutStartTime + timeoutIntervalsState.getInterval('foreground') * FIBONACCI_LIST[retryIndex];
+    // Compute at what time the next call time would have been with the given interval.
+    const soonerCallTime = timeoutStartTime + interval * FIBONACCI_LIST[retryIndex];
     // If the next call is scheduled inside a min delay, either:
-    // because it's already been rescheduled to foreground, or
-    // it was soon enough for background, then ignore.
+    // because it's already been rescheduled, or
+    // it was soon enough anyway, then ignore.
     const minDelay = 50;
-    if (nextCallTime - nextForegroundCallTime < minDelay) {
+    if (nextCallTime - soonerCallTime < minDelay) {
         return;
     }
     const now = Date.now();
-    // Compute the difference between the next foreground call time and now.
+    // Compute the difference between the sooner call time and now.
     // Take a max with min delay, instead of doing it immediately, to avoid slowing down the UI on becoming visible.
-    const diff = Math.max(minDelay, nextForegroundCallTime - now);
+    const diff = Math.max(minDelay, soonerCallTime - now);
     return { now, delay: diff };
 }
 
@@ -150,11 +149,25 @@ const createEventManager = <EventResult = DefaultEventResult>({
         STATE.timeoutHandle = setTimeout(() => call('Timer'), delay);
     };
 
-    const unsubscribeVisibilityState = visibilityState.subscribe((isVisible) => {
-        const reschedule = handleVisibilityChange(isVisible, STATE, timeoutIntervalsState);
+    let intervalsOverride: EventManagerIntervals | undefined;
+
+    // The override only ever extends the intervals, it never makes the event loop poll more often.
+    const getInterval = (type: EventManagerIntervalTypes) =>
+        Math.max(intervalsOverride?.[type] ?? 0, timeoutIntervalsState.getInterval(type));
+
+    const rescheduleSooner = (interval: number) => {
+        const reschedule = getSoonerCall(STATE, interval);
         if (reschedule) {
             scheduleCall(reschedule.now, reschedule.delay);
         }
+    };
+
+    const unsubscribeVisibilityState = visibilityState.subscribe((isVisible) => {
+        // No need to do anything if it became hidden, or if the foreground and background intervals are equal.
+        if (!isVisible || getInterval('foreground') === getInterval('background')) {
+            return;
+        }
+        rescheduleSooner(getInterval('foreground'));
     });
 
     const unsubscribeTimeoutIntervals = timeoutIntervalsState.subscribe();
@@ -194,8 +207,16 @@ const createEventManager = <EventResult = DefaultEventResult>({
         }
 
         const intervalType = getIntervalTypeFromVisibility(visibilityState.visible);
-        const ms = timeoutIntervalsState.getInterval(intervalType) * FIBONACCI_LIST[retryIndex];
+        const ms = getInterval(intervalType) * FIBONACCI_LIST[retryIndex];
         scheduleCall(Date.now(), ms);
+    };
+
+    const setIntervalsOverride = (intervals: EventManagerIntervals | undefined) => {
+        intervalsOverride = intervals;
+        // A pending call scheduled with a longer interval is brought forward, so that dropping the
+        // override takes effect right away rather than after the extended interval. A longer
+        // interval only applies from the next scheduled call.
+        rescheduleSooner(getInterval(getIntervalTypeFromVisibility(visibilityState.visible)));
     };
 
     /**
@@ -223,6 +244,7 @@ const createEventManager = <EventResult = DefaultEventResult>({
     const reset = () => {
         stop();
         STATE = { retryIndex: 0 };
+        intervalsOverride = undefined;
         listeners.clear();
         unsubscribeVisibilityState();
         unsubscribeTimeoutIntervals();
@@ -344,6 +366,7 @@ const createEventManager = <EventResult = DefaultEventResult>({
         call,
         reset,
         subscribe: listeners.subscribe,
+        setIntervalsOverride,
     };
 };
 

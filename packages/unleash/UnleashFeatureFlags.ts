@@ -142,6 +142,7 @@ export enum CommonFeatureFlag {
     PassNewOnboarding = 'PassNewOnboarding',
     PassSimpleLoginLifetimeOffer = 'PassSimpleLoginLifetimeOffer',
     PingOMatic = 'PingOMatic',
+    PingOMaticEventLoopInterval = 'PingOMaticEventLoopInterval',
     PingOMaticWebSocket = 'PingOMaticWebSocket',
     ReferralExpansionDiscover = 'ReferralExpansionDiscover',
     ReferralFreeUsersDiscover = 'ReferralFreeUsersDiscover',

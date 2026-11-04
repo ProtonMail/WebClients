@@ -162,6 +162,7 @@ const setup = ({
     const visibilityState = createMockVisibilityState();
     const onPing = vi.fn<(ping: EventNotifierPing) => void>();
     const onError = vi.fn<(message: string, error?: unknown) => void>();
+    const onPingChannelChange = vi.fn<(active: boolean) => void>();
 
     const eventNotifier = new TestEventNotifier({
         api,
@@ -171,6 +172,7 @@ const setup = ({
             { Type: EventNotifierLoopType.Legacy, Identifier: 'user-1' },
         ],
         onPing,
+        onPingChannelChange,
         onError,
         visibilityState,
     });
@@ -186,6 +188,7 @@ const setup = ({
         last: () => eventNotifier.last(),
         api,
         onPing,
+        onPingChannelChange,
         onError,
         visibilityState,
     };
@@ -724,5 +727,99 @@ describe('event notifier', () => {
         expect(api.mock.calls[0][0].signal?.aborted).toBe(false);
 
         eventNotifier.stop();
+    });
+
+    describe('ping channel', () => {
+        const getChanges = (onPingChannelChange: ReturnType<typeof vi.fn>) =>
+            onPingChannelChange.mock.calls.map(([active]) => active);
+
+        it('should become active once the loops are subscribed', async () => {
+            const { eventNotifier, start, onPingChannelChange, last } = setup();
+
+            await start();
+            expect(getChanges(onPingChannelChange)).toEqual([]);
+
+            hello(last());
+            expect(getChanges(onPingChannelChange)).toEqual([]);
+
+            await flushPromises();
+            expect(getChanges(onPingChannelChange)).toEqual([true]);
+
+            eventNotifier.stop();
+        });
+
+        it('should not become active when the subscription fails', async () => {
+            const api = createMockApi({
+                subscribe: async () => {
+                    throw new Error('nope');
+                },
+            });
+            const { eventNotifier, start, onPingChannelChange, last } = setup({ api });
+
+            await start();
+            hello(last());
+            await flushPromises();
+
+            expect(getChanges(onPingChannelChange)).toEqual([]);
+
+            eventNotifier.stop();
+        });
+
+        it('should not become active when the connection drops while subscribing', async () => {
+            const { eventNotifier, start, onPingChannelChange, last } = setup({
+                api: createMockApi({ subscribe: pending }),
+            });
+
+            await start();
+            hello(last());
+            drop(last());
+            await flushPromises();
+
+            expect(getChanges(onPingChannelChange)).toEqual([]);
+
+            eventNotifier.stop();
+        });
+
+        it('should become inactive when the connection drops, and active again once reconnected', async () => {
+            const { eventNotifier, start, onPingChannelChange, last } = setup();
+
+            await start();
+            hello(last());
+            await flushPromises();
+
+            drop(last());
+            expect(getChanges(onPingChannelChange)).toEqual([true, false]);
+
+            await advance(RECONNECT_DELAY);
+            hello(last(), 'connection-2');
+            await flushPromises();
+            expect(getChanges(onPingChannelChange)).toEqual([true, false, true]);
+
+            eventNotifier.stop();
+        });
+
+        it('should become inactive after a goodbye frame', async () => {
+            const { eventNotifier, start, onPingChannelChange, last } = setup();
+
+            await start();
+            hello(last());
+            await flushPromises();
+            emit(last(), 'Goodbye');
+
+            expect(getChanges(onPingChannelChange)).toEqual([true, false]);
+
+            eventNotifier.stop();
+        });
+
+        it('should become inactive on stop', async () => {
+            const { eventNotifier, start, onPingChannelChange, last } = setup();
+
+            await start();
+            hello(last());
+            await flushPromises();
+            eventNotifier.stop();
+
+            expect(getChanges(onPingChannelChange)).toEqual([true, false]);
+        });
     });
 });
