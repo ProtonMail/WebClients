@@ -5,10 +5,10 @@ import type { Mock } from 'vitest';
 
 import * as orgHooks from '@proton/account/organization/hooks';
 import * as hooks from '@proton/account/user/hooks';
+import type { SidebarTree } from '@proton/components/components/sidebar/nav/interface';
 import * as helper from '@proton/components/containers/layout/helper';
 import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
 import { IcBrandProton } from '@proton/icons/icons/IcBrandProton';
-import type { SidebarTree } from '@proton/nav/types/sidebar';
 import * as navigation from '@proton/vpn/contexts/navigation';
 
 import { VPNSidebar } from './VPNSidebar';

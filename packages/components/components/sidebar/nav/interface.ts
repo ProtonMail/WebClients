@@ -1,7 +1,7 @@
-import type { IconComponent } from '@proton/components/containers/layout/interface';
+import type { IconComponent } from '../../../containers/layout/interface';
 
 /**
- * A node in the sidebar tree, as produced by `defineSidebar`.
+ * A node in the sidebar tree, as produced by `defineSidebar` in `@proton/nav`.
  *
  * This is a deliberately strict, standalone contract — it is NOT derived from
  * `NavItemResolved`. The sidebar renders only the fields declared here, so the

@@ -1,7 +1,7 @@
 import { IcBrandProtonVpnFilled } from '@proton/icons/icons/IcBrandProtonVpnFilled';
 import { IcHouse } from '@proton/icons/icons/IcHouse';
-import type { SidebarTree } from '@proton/nav/types/sidebar';
 
+import type { SidebarTree } from './interface';
 import { getActiveBranches } from './traverse';
 
 const routes: SidebarTree = {

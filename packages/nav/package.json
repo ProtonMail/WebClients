@@ -12,8 +12,7 @@
         "./types/models": "./src/types/models.ts",
         "./types/nav": "./src/types/nav.ts",
         "./types/navIds": "./src/types/navIds.ts",
-        "./types/section": "./src/types/section.ts",
-        "./types/sidebar": "./src/types/sidebar.ts"
+        "./types/section": "./src/types/section.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",

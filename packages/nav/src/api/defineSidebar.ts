@@ -1,6 +1,7 @@
+import type { SidebarNode, SidebarTree } from '@proton/components/components/sidebar/nav/interface';
+
 import type { NavContext } from '../types/models';
 import type { NavArgs, NavItemResolved, NavResolved } from '../types/nav';
-import type { SidebarNode, SidebarTree } from '../types/sidebar';
 import { defineNavigation } from './defineNavigation';
 
 /**

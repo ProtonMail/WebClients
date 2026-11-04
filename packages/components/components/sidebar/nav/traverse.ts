@@ -1,4 +1,4 @@
-import type { SidebarNode } from '@proton/nav/types/sidebar';
+import type { SidebarNode } from './interface';
 
 interface Match {
     parents: SidebarNode[];
