@@ -12,7 +12,7 @@ interface Props {
 
 /** Mount only when the user initiates delete — keeps heavy selectors off sidebar list rows. */
 export const ConversationDeleteFlow = ({ conversation, onClose, navigateAfterDelete }: Props) => {
-    const { openConfirmationModal, showConfirmDeleteModal, handleDelete, confirmDeleteModalProps, hasGeneratedImages } =
+    const { openConfirmationModal, showConfirmDeleteModal, handleDelete, confirmDeleteModalProps } =
         useConversationDelete({
             conversation,
             navigateAfterDelete,
@@ -35,7 +35,6 @@ export const ConversationDeleteFlow = ({ conversation, onClose, navigateAfterDel
     return (
         <ConfirmDeleteModal
             handleDelete={handleDelete}
-            hasGeneratedImages={hasGeneratedImages}
             {...confirmDeleteModalProps}
             onClose={() => {
                 confirmDeleteModalProps.onClose();

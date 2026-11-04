@@ -282,7 +282,7 @@ im.$media-expressions: $media-expressions;
 	display: flex;
 	flex-direction: column;
 	flex: 1;
-	overflow: hidden auto;
+	overflow: hidden;
 	min-block-size: 0;
 	margin-block-end: 24px;
 	inline-size: 100%;
@@ -312,86 +312,6 @@ im.$media-expressions: $media-expressions;
 	letter-spacing: 0.5px;
 	margin-block: 10px;
 	margin-inline: 0;
-}
-
-.project-detail-conversation-list {
-	display: flex;
-	flex-direction: column;
-	inline-size: 100%;
-	max-inline-size: 100%;
-	overflow: hidden;
-	box-sizing: border-box;
-
-	@media (width <= 1024px) {
-		padding-block: 0;
-		padding-inline: 30px 0;
-	}
-
-	@include im.media('<small') {
-		padding: 0;
-		inline-size: 100%;
-		max-inline-size: 100%;
-	}
-}
-
-.project-detail-conversation-item {
-	gap: 16px;
-	padding-block: 8px;
-	padding-inline: 10px;
-	border-radius: var(--border-radius-lg);
-	background: var(--background-norm);
-	cursor: pointer;
-	transition: all 0.2s ease;
-	text-align: start;
-	inline-size: 100%;
-
-	&:hover {
-		background-color: var(--background-weak);
-		transform: translateY(-1px);
-		box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
-
-		.project-detail-conversation-arrow {
-			opacity: 1;
-			transform: translateX(4px);
-		}
-	}
-
-	&:active {
-		transform: translateY(0);
-	}
-}
-
-.project-detail-conversation-icon {
-	inline-size: 40px;
-	block-size: 40px;
-	border-radius: var(--border-radius-md);
-	background-color: var(--background-weak);
-	color: var(--text-norm);
-	flex-shrink: 0;
-}
-
-.project-detail-conversation-content {
-	gap: 4px;
-	flex: 1;
-	min-inline-size: 0;
-}
-
-.project-detail-conversation-title {
-	font-weight: 500;
-	color: var(--text-norm);
-	line-height: 1.4;
-}
-
-.project-detail-conversation-date {
-	color: var(--text-weak);
-	line-height: 1.3;
-}
-
-.project-detail-conversation-arrow {
-	color: var(--text-weak);
-	opacity: 0;
-	transition: all 0.2s ease;
-	flex-shrink: 0;
 }
 
 .project-detail-composer {
@@ -454,21 +374,6 @@ im.$media-expressions: $media-expressions;
 		max-block-size: 70vh;
 		overflow-y: auto;
 	}
-}
-
-.conversation-menu-button {
-	opacity: 0;
-	transition: opacity 0.2s ease;
-
-	&:hover,
-	&:focus {
-		opacity: 1;
-	}
-}
-
-.project-detail-conversation-item:hover .conversation-menu-button,
-.selectable-conversation-item:hover .conversation-menu-button {
-	opacity: 1;
 }
 
 .keep-projects-button {

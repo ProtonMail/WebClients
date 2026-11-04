@@ -8,7 +8,6 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 
 import { useLumoNavigate } from '../../../hooks/useLumoNavigate';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { selectAnyGeneratedImages } from '../../../redux/selectors';
 import { deleteAllSpacesRequest, selectHasSpaces } from '../../../redux/slices/core/spaces';
 import ConfirmDeleteModal from '../ConfirmDeleteModal';
 
@@ -20,8 +19,6 @@ const DeleteAllButton = ({ onClose }: { onClose?: () => void }) => {
     const confirmDeleteModal = useModalStateObject();
 
     const hasSpaces = useLumoSelector(selectHasSpaces);
-    const hasGeneratedImages = useLumoSelector(selectAnyGeneratedImages);
-
     useEffect(() => {
         if (isDeletionInProgress && !hasSpaces) {
             setIsDeletionInProgress(false);
@@ -58,7 +55,6 @@ const DeleteAllButton = ({ onClose }: { onClose?: () => void }) => {
                 <ConfirmDeleteModal
                     handleDelete={handleDeleteAll}
                     deleteAll={true}
-                    hasGeneratedImages={hasGeneratedImages}
                     loading={isDeletionInProgress}
                     {...confirmDeleteModal.modalProps}
                 />
