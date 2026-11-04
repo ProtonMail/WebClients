@@ -1,3 +1,4 @@
+import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { act, renderHook } from '@testing-library/react';
 
 import type { MeetState } from '@proton/meet/store/rootReducer';
@@ -44,8 +45,10 @@ vi.mock('../../utils/wasmUtils', () => ({
     setupWasmDependencies: vi.fn(),
 }));
 
+const notifyError = vi.fn();
+
 vi.mock('../useNotifyError', () => ({
-    useNotifyError: () => vi.fn(),
+    useNotifyError: () => notifyError,
 }));
 
 vi.mock('@proton/unleash/useFlag', () => ({
@@ -166,6 +169,48 @@ describe('useMlsSession', () => {
             false
         );
         expect(meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType).not.toHaveBeenCalled();
+    });
+
+    describe('when joining the MLS session fails', () => {
+        const joinMeetingFailing = (error: unknown = new Error('join failed')) => {
+            meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType.mockRejectedValue(error);
+            return renderHook(() => useMlsSession(createParams())).result.current;
+        };
+
+        it('tells the user and marks the error as already shown', async () => {
+            const { handleMlsSetup } = joinMeetingFailing();
+
+            await expect(handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD)).rejects.toMatchObject({
+                message: expect.stringContaining('MLS setup failed'),
+                userNotified: true,
+            });
+            expect(notifyError).toHaveBeenCalledTimes(1);
+        });
+
+        it('throws without telling the user when asked not to notify generic errors', async () => {
+            const { handleMlsSetup } = joinMeetingFailing();
+
+            await expect(
+                handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD, false, false)
+            ).rejects.toMatchObject({ message: expect.stringContaining('MLS setup failed'), userNotified: false });
+            expect(notifyError).not.toHaveBeenCalled();
+        });
+
+        it.each([
+            { error: MeetCoreErrorEnum.CheckDeviceClock, hint: 'clock' },
+            { error: MeetCoreErrorEnum.MlsServerVersionNotSupported, hint: 'older version' },
+        ])(
+            'still tells the user how to fix $hint errors when asked not to notify generic errors',
+            async ({ error, hint }) => {
+                const { handleMlsSetup } = joinMeetingFailing(error);
+
+                await expect(
+                    handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD, false, false)
+                ).rejects.toMatchObject({ coreError: error, userNotified: true });
+                expect(notifyError).toHaveBeenCalledTimes(1);
+                expect(notifyError).toHaveBeenCalledWith(expect.stringContaining(hint));
+            }
+        );
     });
 
     it('admits an agent the wasm side reports as pending', async () => {

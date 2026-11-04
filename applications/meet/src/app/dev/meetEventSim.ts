@@ -1,4 +1,6 @@
+import { ConnectionStateInfo } from '@proton-meet/proton-meet-core';
 import type { Dispatch, UnknownAction } from '@reduxjs/toolkit';
+import type { ConnectionState, Room, SimulationScenario } from 'livekit-client';
 
 import {
     addChatMessages,
@@ -6,6 +8,12 @@ import {
     raiseHand,
     setActiveReaction,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import {
+    selectIsReconnecting,
+    selectJoinedRoom,
+    selectMlsRetrying,
+    selectReconnectionFailed,
+} from '@proton/meet/store/slices/connectionSlice';
 import {
     mergeParticipantDecryptedNameMap,
     mergeParticipantsMap,
@@ -15,12 +23,31 @@ import {
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import type { MeetState } from '@proton/meet/store/store';
 import { ParticipantCapabilityPermission, ParticipantEvent } from '@proton/meet/types/types';
+import { SECOND } from '@proton/shared/lib/constants';
 
+import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 import type { CaptionsSim } from './captionsSim';
 import { createCaptionsSim } from './captionsSim';
 
+type MeetCoreWebSocketState = keyof typeof ConnectionStateInfo | 'no answer';
+
+interface ConnectionSnapshot {
+    liveKit: ConnectionState;
+    joinedRoom: boolean;
+    isReconnecting: boolean;
+    reconnectionFailed: boolean;
+    mlsRetrying: boolean;
+    meetCoreWebSocket: MeetCoreWebSocketState;
+}
+
+interface MeetEventSimConnection {
+    simulate(scenario: SimulationScenario): Promise<void>;
+    state(): Promise<ConnectionSnapshot>;
+}
+
 interface MeetEventSim {
     captions: CaptionsSim;
+    connection: MeetEventSimConnection;
     participantJoined(name?: string): void;
     participantLeft(name?: string): void;
     raiseHand(name?: string): void;
@@ -41,24 +68,67 @@ declare global {
 const SIM_IDENTITY_PREFIX = '__event_sim__';
 const SIM_RECORDING_IDENTITY = `${SIM_IDENTITY_PREFIX}recording`;
 
+const MEET_CORE_STATE_TIMEOUT_MS = 2 * SECOND;
+
 let counter = 0;
 const nextIdentity = () => `${SIM_IDENTITY_PREFIX}${++counter}`;
 
-/**
- * Wires up the `window.meetEventSim` tool with a Redux dispatch function, a
- * `sendMessage` function used to actually publish a chat message to the room,
- * and the store's `getState` for the simulations that read the current state.
- * Returns a cleanup function that removes the tool from the window.
- */
-export const initMeetEventSim = (
-    dispatch: Dispatch<UnknownAction>,
-    sendMessage: (content: string) => Promise<boolean>,
-    getState: () => MeetState
-): (() => void) => {
+const getMeetCoreWebSocketState = async (meetCoreClient: MeetCoreClient): Promise<MeetCoreWebSocketState> => {
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    const timeout = new Promise<MeetCoreWebSocketState>((resolve) => {
+        timeoutId = setTimeout(() => resolve('no answer'), MEET_CORE_STATE_TIMEOUT_MS);
+    });
+    const stateName = meetCoreClient
+        .getWsState()
+        .then((state) => ConnectionStateInfo[state] as keyof typeof ConnectionStateInfo);
+
+    try {
+        return await Promise.race([stateName, timeout]);
+    } catch {
+        return 'no answer';
+    } finally {
+        clearTimeout(timeoutId);
+    }
+};
+
+interface MeetEventSimOptions {
+    dispatch: Dispatch<UnknownAction>;
+    sendMessage: (content: string) => Promise<boolean>;
+    getState: () => MeetState;
+    room: Room;
+    meetCoreClient: MeetCoreClient;
+}
+
+export const initMeetEventSim = ({
+    dispatch,
+    sendMessage,
+    getState,
+    room,
+    meetCoreClient,
+}: MeetEventSimOptions): (() => void) => {
     const captions = createCaptionsSim(dispatch);
 
     const sim: MeetEventSim = {
         captions,
+
+        connection: {
+            simulate(scenario) {
+                return room.simulateScenario(scenario);
+            },
+
+            async state() {
+                const meetCoreWebSocket = await getMeetCoreWebSocketState(meetCoreClient);
+                const state = getState();
+                return {
+                    liveKit: room.state,
+                    joinedRoom: selectJoinedRoom(state),
+                    isReconnecting: selectIsReconnecting(state),
+                    reconnectionFailed: selectReconnectionFailed(state),
+                    mlsRetrying: selectMlsRetrying(state),
+                    meetCoreWebSocket,
+                };
+            },
+        },
 
         participantJoined(name = 'Simulated User') {
             const identity = nextIdentity();

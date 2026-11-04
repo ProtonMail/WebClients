@@ -1,8 +1,9 @@
 import { type MutableRefObject, useEffect, useRef } from 'react';
 
-import { useRoomContext } from '@livekit/components-react';
+import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { logger } from '@protontech/logger';
+import { ConnectionState } from 'livekit-client';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import {
@@ -18,16 +19,28 @@ import { encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import type { InitializeDevices } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import type { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
-import { leaveMeetingOrRestart } from '../../wasm/meetCoreStallRecovery';
+import {
+    MEET_CORE_JOIN_TIMEOUT_MS,
+    callMeetCoreWithinDeadline,
+    leaveMeetingOrRestart,
+} from '../../wasm/meetCoreStallRecovery';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import type { UseKeyManagementResult } from '../useKeyManagement';
 import type { UseLiveKitConnectionResult } from '../useLiveKitConnection';
 import { useStableCallback } from '../useStableCallback';
+import { REJOIN_RETRY_DELAYS_MS, type RejoinOutcome, runRejoinAttempts } from './rejoinAttempts';
+import {
+    AUTOMATIC_REJOIN_RUN_LIMIT,
+    AUTOMATIC_REJOIN_RUN_WINDOW_MS,
+    canStartAutomaticRejoinRun,
+    recordAutomaticRejoinRunStart,
+} from './rejoinRunLimit';
 import type { UseMlsSessionResult } from './useMlsSession';
 
 export interface MeetingAccessDetails {
@@ -46,6 +59,9 @@ interface ConnectWithMlsParams {
     resetParticipantsBeforeFetch?: boolean;
     isWaitingRoom?: boolean;
     accessDetails?: MeetingAccessDetails;
+    signal?: AbortSignal;
+    recoverStalledMeetCore?: boolean;
+    notifyOnGenericMlsError?: boolean;
 }
 
 type ConnectionInfo = Awaited<ReturnType<UseLiveKitConnectionResult['connectWithStunFallbackToTurnRelay']>>;
@@ -83,10 +99,15 @@ interface UseMeetingConnectionParams {
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
 }
 
+type RejoinStatus = RejoinOutcome['status'] | 'skipped';
+
+type PerformFullReconnection = (reason: RejoinReasonInfo, options?: { manual?: boolean }) => Promise<RejoinStatus>;
+
 export interface UseMeetingConnectionResult {
     isReconnectingRef: MutableRefObject<boolean>;
     websocketUrlRef: MutableRefObject<string | null>;
-    performFullReconnection: (reason: RejoinReasonInfo) => Promise<void>;
+    performFullReconnection: PerformFullReconnection;
+    cancelReconnection: () => void;
     connectWithMls: (params: ConnectWithMlsParams) => Promise<ConnectWithMlsResult>;
 }
 
@@ -121,7 +142,25 @@ export const useMeetingConnection = ({
     const room = useRoomContext();
 
     const isReconnectingRef = useRef(false);
+    const rejoinControllerRef = useRef<AbortController | null>(null);
     const websocketUrlRef = useRef<string | null>(null);
+    const automaticRunStartTimesMsRef = useRef<readonly number[]>([]);
+    const { isCameraEnabled, isMicrophoneEnabled } = useLocalParticipant();
+    const lastLiveDeviceStateRef = useRef({ camera: false, microphone: false });
+
+    useEffect(() => () => rejoinControllerRef.current?.abort(), []);
+
+    // Not recorded while Disconnected: LiveKit unpublishes local tracks before it reports Disconnected.
+    useEffect(() => {
+        const isRoomLive = [
+            ConnectionState.Connected,
+            ConnectionState.Reconnecting,
+            ConnectionState.SignalReconnecting,
+        ].includes(room.state);
+        if (isRoomLive && !isReconnectingRef.current) {
+            lastLiveDeviceStateRef.current = { camera: isCameraEnabled, microphone: isMicrophoneEnabled };
+        }
+    });
 
     // Shared connect sequence used by both the initial join (useJoinFlow) and reconnection.
     const connectWithMls = useStableCallback(
@@ -136,6 +175,9 @@ export const useMeetingConnection = ({
             resetParticipantsBeforeFetch = false,
             isWaitingRoom = false,
             accessDetails,
+            signal,
+            recoverStalledMeetCore = false,
+            notifyOnGenericMlsError = true,
         }: ConnectWithMlsParams): Promise<ConnectWithMlsResult> => {
             const fetchAccessDetails = async () => {
                 const sanitizedDisplayName = sanitizeMessage(displayNameArg);
@@ -149,6 +191,7 @@ export const useMeetingConnection = ({
             const t0 = performance.now();
             const { websocketUrl, accessToken } = accessDetails ?? (await fetchAccessDetails());
             const tokenFetchMs = Math.round(performance.now() - t0);
+            signal?.throwIfAborted();
 
             websocketUrlRef.current = websocketUrl;
             accessTokenRef.current = accessToken;
@@ -163,9 +206,19 @@ export const useMeetingConnection = ({
             }
 
             const t1 = performance.now();
+            const setupMls = () =>
+                handleMlsSetup(meetingLinkName, accessToken, password, isWaitingRoom, notifyOnGenericMlsError);
             const { key: groupKey, epoch } =
-                (await handleMlsSetup(meetingLinkName, accessToken, password, isWaitingRoom)) || {};
+                (await (recoverStalledMeetCore
+                    ? callMeetCoreWithinDeadline(meetCoreClient, setupMls, {
+                          name: 'joinMeeting',
+                          reportMeetError,
+                          timeoutMs: MEET_CORE_JOIN_TIMEOUT_MS,
+                          signal,
+                      })
+                    : setupMls())) || {};
             const mlsSetupMs = Math.round(performance.now() - t1);
+            signal?.throwIfAborted();
 
             reportMLSRelatedError(groupKey, epoch);
 
@@ -187,6 +240,7 @@ export const useMeetingConnection = ({
             } else {
                 await keyProvider.setKeyWithEpoch(groupKey, epoch);
             }
+            signal?.throwIfAborted();
 
             let connectionInfo: ConnectionInfo;
             let e2eeEnableMs: number;
@@ -209,9 +263,14 @@ export const useMeetingConnection = ({
                 await initDevices;
                 deviceInitMs = Math.round(performance.now() - t2);
             } catch (livekitError) {
+                if (signal?.aborted) {
+                    throw livekitError;
+                }
                 // If LiveKit connection fails after MLS join, clean up MLS group to prevent inconsistent state
                 try {
-                    await meetCoreClient.leaveMeeting();
+                    await (recoverStalledMeetCore
+                        ? leaveMeetingOrRestart(meetCoreClient, reportMeetError)
+                        : meetCoreClient.leaveMeeting());
                 } catch (leaveError) {
                     reportMeetError('Failed to leave MLS group after LiveKit connection failure', {
                         context: { error: leaveError },
@@ -220,6 +279,10 @@ export const useMeetingConnection = ({
                 disallowHealthCheck();
                 cleanupMlsState();
                 throw livekitError;
+            }
+            if (signal?.aborted) {
+                void room.disconnect();
+                signal.throwIfAborted();
             }
 
             if (resetParticipantsBeforeFetch) {
@@ -240,18 +303,41 @@ export const useMeetingConnection = ({
         }
     );
 
-    const performFullReconnection = useStableCallback(async (reason: RejoinReasonInfo) => {
+    const endRun = () => {
+        rejoinControllerRef.current = null;
+        isReconnectingRef.current = false;
+    };
+
+    const performFullReconnection = useStableCallback<PerformFullReconnection>(async (reason, { manual } = {}) => {
         if (isReconnectingRef.current || !meetingLinkNameRef.current) {
-            return;
+            return 'skipped';
         }
+
+        const nowMs = Date.now();
+        const isLimitedAutomaticRun = isHandleStalledLiveKitReconnectEnabled && !manual;
+        const isOverAutomaticRunLimit =
+            isLimitedAutomaticRun && !canStartAutomaticRejoinRun(automaticRunStartTimesMsRef.current, nowMs);
+        if (manual) {
+            automaticRunStartTimesMsRef.current = [];
+        } else if (isLimitedAutomaticRun && !isOverAutomaticRunLimit) {
+            automaticRunStartTimesMsRef.current = recordAutomaticRejoinRunStart(
+                automaticRunStartTimesMsRef.current,
+                nowMs
+            );
+        }
+
+        const controller = new AbortController();
+        const { signal } = controller;
+        rejoinControllerRef.current = controller;
         isReconnectingRef.current = true;
         const reconnectionStartTimeMs = BigInt(Date.now());
 
-        const trackUserRejoin = async (success: boolean) => {
+        const trackUserRejoin = async (success: boolean, attempts: number) => {
             const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
             logger.info('[telemetry] logUserRejoin', {
                 rejoinTimeMs: Number(rejoinTimeMs),
                 reason: RejoinReasonInfo[reason],
+                attempts,
                 success,
             });
 
@@ -260,7 +346,7 @@ export const useMeetingConnection = ({
             }
 
             await meetCoreClient
-                .logUserRejoin(rejoinTimeMs, 1, reason, success)
+                .logUserRejoin(rejoinTimeMs, attempts, reason, success)
                 .catch((error: unknown) =>
                     reportMeetError(
                         success ? 'Failed to log reconnection success' : 'Failed to log reconnection failure',
@@ -276,82 +362,127 @@ export const useMeetingConnection = ({
 
         const meetingLinkName = meetingLinkNameRef.current;
 
-        try {
+        const { camera: cameraEnabledBeforeRejoin, microphone: microphoneEnabledBeforeRejoin } =
+            lastLiveDeviceStateRef.current;
+
+        const leaveMlsGroup = () =>
+            isHandleStalledLiveKitReconnectEnabled
+                ? leaveMeetingOrRestart(meetCoreClient, reportMeetError)
+                : meetCoreClient.leaveMeeting();
+
+        const leaveRoomAndMeetCore = async () => {
             // Snapshot before room.disconnect() — the Disconnected handler clears this ref synchronously
             const wasMlsActive = mlsSetupDone.current;
-
-            // Snapshot the live camera/mic state so it survives the rejoin; otherwise
-            // initializeDevices falls back to the prejoin defaults and silently turns them off.
-            const wasCameraEnabled = room.localParticipant.isCameraEnabled;
-            const wasMicrophoneEnabled = room.localParticipant.isMicrophoneEnabled;
 
             try {
                 await room.disconnect();
             } catch {
                 // best effort
             }
+            signal.throwIfAborted();
 
             // Always await leaveMeeting when MLS was active. We do this here (not in the disconnect
-            // handler) so it is properly awaited before joinMeetingWithAccessToken is called below.
+            // handler) so it is properly awaited before a rejoin calls joinMeetingWithAccessToken.
             if (wasMlsActive) {
                 try {
-                    // A stalled LiveKit reconnect means the network was unstable, which is when a meet-core
-                    // request can hang while holding the state lock the leave needs.
-                    if (
-                        isHandleStalledLiveKitReconnectEnabled &&
-                        reason === RejoinReasonInfo.LivekitConnectionTimeout
-                    ) {
-                        await leaveMeetingOrRestart(meetCoreClient, reportMeetError);
-                    } else {
-                        await meetCoreClient.leaveMeeting();
-                    }
+                    await leaveMlsGroup();
                 } catch {
                     // best effort
                 }
+                signal.throwIfAborted();
                 mlsSetupDone.current = false;
             }
 
             cleanupMlsState();
+        };
 
+        const rejoin = async () => {
+            await leaveRoomAndMeetCore();
             await connectWithMls({
                 meetingLinkName,
                 meetingPassword,
                 displayName,
                 timeoutMs: 20 * SECOND,
-                desiredCameraState: wasCameraEnabled,
-                desiredMicrophoneState: wasMicrophoneEnabled,
+                desiredCameraState: cameraEnabledBeforeRejoin,
+                desiredMicrophoneState: microphoneEnabledBeforeRejoin,
                 resetParticipantsBeforeFetch: true,
+                signal,
+                recoverStalledMeetCore: isHandleStalledLiveKitReconnectEnabled,
+                notifyOnGenericMlsError: !isHandleStalledLiveKitReconnectEnabled,
             });
+        };
 
-            meetingLinkNameRef.current = meetingLinkName;
+        const failWithoutRejoining = async (): Promise<RejoinOutcome> => {
+            await leaveRoomAndMeetCore().catch(noop);
+            return signal.aborted
+                ? { status: 'cancelled', attempts: 0 }
+                : { status: 'failed', attempts: 0, error: undefined };
+        };
+
+        const outcome = isOverAutomaticRunLimit
+            ? await failWithoutRejoining()
+            : await runRejoinAttempts(rejoin, {
+                  signal,
+                  retryDelaysMs: isHandleStalledLiveKitReconnectEnabled ? REJOIN_RETRY_DELAYS_MS : [],
+                  waitWhileOffline: isHandleStalledLiveKitReconnectEnabled,
+              });
+
+        if (outcome.status === 'cancelled') {
+            return 'cancelled';
+        }
+
+        if (outcome.status === 'joined') {
             dispatch(setJoinedRoom(true));
             dispatch(setIsReconnecting(false));
-            isReconnectingRef.current = false;
+            endRun();
             allowHealthCheck();
-
-            await trackUserRejoin(true);
-        } catch (error) {
-            reportMeetError('Full reconnection failed', { context: { error } });
+        } else {
+            if (isOverAutomaticRunLimit) {
+                reportMeetError('Automatic rejoin limit reached', {
+                    level: 'warning',
+                    context: { runs: AUTOMATIC_REJOIN_RUN_LIMIT, windowMs: AUTOMATIC_REJOIN_RUN_WINDOW_MS },
+                });
+            } else {
+                reportMeetError('Full reconnection failed', {
+                    context: { error: outcome.error, attempts: outcome.attempts },
+                });
+            }
 
             // Best-effort MLS leave in case handleMlsSetup succeeded but a later step failed
             if (mlsSetupDone.current) {
                 try {
-                    await meetCoreClient.leaveMeeting();
+                    await leaveMlsGroup();
                 } catch {
                     // best effort
+                }
+                if (signal.aborted) {
+                    return 'cancelled';
                 }
             }
             cleanupMlsState();
 
             dispatch(setIsReconnecting(false));
-            isReconnectingRef.current = false;
+            endRun();
             dispatch(setReconnectionFailed(true));
             // Clear stored credentials so the next attempt (manual rejoin) fetches fresh ones
             accessTokenRef.current = null;
             websocketUrlRef.current = null;
-
-            await trackUserRejoin(false);
         }
+
+        await trackUserRejoin(outcome.status === 'joined', outcome.attempts);
+
+        return outcome.status;
+    });
+
+    const cancelReconnection = useStableCallback(() => {
+        automaticRunStartTimesMsRef.current = [];
+        const controller = rejoinControllerRef.current;
+        if (!controller) {
+            return;
+        }
+        endRun();
+        controller.abort();
+        dispatch(setIsReconnecting(false));
     });
 
     // Keep the stable ref in sync so callbacks registered before performFullReconnection was defined
@@ -364,6 +495,7 @@ export const useMeetingConnection = ({
         isReconnectingRef,
         websocketUrlRef,
         performFullReconnection,
+        cancelReconnection,
         connectWithMls,
     };
 };

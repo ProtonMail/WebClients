@@ -36,6 +36,29 @@ export const LIVEKIT_RECONNECT_STALL_TIMEOUT_MS = 60 * SECOND;
 const isLiveKitReconnecting = (state: ConnectionState | null) =>
     state === ConnectionState.Reconnecting || state === ConnectionState.SignalReconnecting;
 
+const MEETING_ENDING_DISCONNECT_REASONS: ReadonlySet<DisconnectReason | undefined> = new Set([
+    DisconnectReason.ROOM_DELETED,
+    DisconnectReason.PARTICIPANT_REMOVED,
+    // Rejoining would kick the user's other session, which would rejoin and kick this one
+    DisconnectReason.DUPLICATE_IDENTITY,
+    DisconnectReason.ROOM_CLOSED,
+]);
+
+// LiveKit gives no reason (undefined) when it gives up reconnecting
+const shouldRejoinAfterDisconnect = (
+    reason: DisconnectReason | undefined,
+    isHandleStalledLiveKitReconnectEnabled: boolean
+) =>
+    reason === DisconnectReason.STATE_MISMATCH ||
+    (isHandleStalledLiveKitReconnectEnabled &&
+        reason !== DisconnectReason.CLIENT_INITIATED &&
+        !MEETING_ENDING_DISCONNECT_REASONS.has(reason));
+
+const getRejoinReason = (reason: DisconnectReason | undefined) =>
+    reason === DisconnectReason.STATE_MISMATCH
+        ? RejoinReasonInfo.LivekitStateMismatch
+        : RejoinReasonInfo.WebsocketDisconnected;
+
 interface UseRoomEventHandlersParams {
     joinedRoom: boolean;
     disallowHealthCheck: () => void;
@@ -49,6 +72,7 @@ interface UseRoomEventHandlersParams {
     meetingLinkRef: MutableRefObject<string | null>;
     meetingLinkNameRef: MutableRefObject<string>;
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
+    cancelReconnection: () => void;
     reportMeetError: ReportMeetError;
 }
 
@@ -72,6 +96,7 @@ export const useRoomEventHandlers = ({
     meetingLinkRef,
     meetingLinkNameRef,
     triggerFullReconnectionRef,
+    cancelReconnection,
     reportMeetError,
 }: UseRoomEventHandlersParams): UseRoomEventHandlersResult => {
     const room = useRoomContext();
@@ -171,9 +196,7 @@ export const useRoomEventHandlers = ({
     );
 
     const handleDisconnected = useStableCallback((reason?: DisconnectReason) => {
-        // STATE_MISMATCH is recoverable — trigger full reconnection flow
-        if (reason === DisconnectReason.STATE_MISMATCH) {
-            // Don't call leaveMeeting here, performFullReconnection will await it
+        if (shouldRejoinAfterDisconnect(reason, isHandleStalledLiveKitReconnectEnabled)) {
             disallowHealthCheck();
             dispatch(setIsReconnecting(true));
             dispatch(setJoinedRoom(false));
@@ -181,11 +204,23 @@ export const useRoomEventHandlers = ({
             setShowReconnectedMessage(false);
             liveKitConnectionStateRef.current = null;
             joinedRoomLoggedRef.current = false;
-            cleanupMlsState();
+            if (!isHandleStalledLiveKitReconnectEnabled) {
+                cleanupMlsState();
+            }
             dispatch(resetChatAndReactions());
             dispatch(resetUiState());
-            triggerFullReconnectionRef.current(RejoinReasonInfo.LivekitStateMismatch);
+            if (reason !== DisconnectReason.STATE_MISMATCH) {
+                reportMeetError('Room disconnected unexpectedly, rejoining', {
+                    level: 'warning',
+                    context: { reason: reason === undefined ? 'none' : DisconnectReason[reason] },
+                });
+            }
+            triggerFullReconnectionRef.current(getRejoinReason(reason));
             return;
+        }
+
+        if (MEETING_ENDING_DISCONNECT_REASONS.has(reason)) {
+            cancelReconnection();
         }
 
         instantMeetingRef.current = false;
@@ -221,7 +256,9 @@ export const useRoomEventHandlers = ({
         } else if (reason !== undefined && reason !== DisconnectReason.CLIENT_INITIATED) {
             reportMeetError('Room disconnected unexpectedly', { context: { error: DisconnectReason[reason] } });
         }
-        meetingLinkNameRef.current = '';
+        if (reason !== DisconnectReason.CLIENT_INITIATED) {
+            meetingLinkNameRef.current = '';
+        }
 
         if (reason === DisconnectReason.ROOM_DELETED || reason === DisconnectReason.PARTICIPANT_REMOVED) {
             history.push('/dashboard');

@@ -6,7 +6,7 @@ import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { Track } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { resetMeetingState } from '@proton/meet/store/resetMeetingState';
 import {
     selectIsReconnecting,
@@ -136,7 +136,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const joinedRoom = useMeetSelector(selectJoinedRoom);
     const isReconnecting = useMeetSelector(selectIsReconnecting);
     const reconnectionFailed = useMeetSelector(selectReconnectionFailed);
-    const store = useMeetStore();
     const mlsRetrying = useMeetSelector(selectMlsRetrying);
     const prejoinParticipantCount = useMeetSelector(selectPrejoinParticipantCount);
 
@@ -220,6 +219,29 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         lastEpochRef.current = null;
     }, [isMeetSeamlessKeyRotationEnabled, keyRotationScheduler, keyProvider, lastEpochRef, mlsSetupDone]);
 
+    const { isReconnectingRef, websocketUrlRef, performFullReconnection, cancelReconnection, connectWithMls } =
+        useMeetingConnection({
+            meetingLinkNameRef,
+            meetingPassword,
+            displayName,
+            decryptionKeyRef,
+            mlsSetupDone,
+            accessTokenRef,
+            keyProvider,
+            keyRotationScheduler,
+            handleMlsSetup,
+            reportMLSRelatedError,
+            connectWithStunFallbackToTurnRelay,
+            cleanupMlsState,
+            allowHealthCheck,
+            disallowHealthCheck,
+            initializeDevices,
+            getParticipants,
+            getQueryParticipantsCount,
+            reportMeetError,
+            triggerFullReconnectionRef,
+        });
+
     const { cleanupMeeting } = useMeetingCleanup({
         instantMeetingRef,
         meetingLinkNameRef,
@@ -227,6 +249,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         disallowHealthCheck,
         cleanupMlsState,
         stopPiP,
+        cancelReconnection,
     });
 
     usePageVisibilityHandler({
@@ -235,28 +258,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     });
 
     const assignHost = useAssignHost(accessTokenRef.current as string, urlMeetingLinkName);
-
-    const { isReconnectingRef, websocketUrlRef, performFullReconnection, connectWithMls } = useMeetingConnection({
-        meetingLinkNameRef,
-        meetingPassword,
-        displayName,
-        decryptionKeyRef,
-        mlsSetupDone,
-        accessTokenRef,
-        keyProvider,
-        keyRotationScheduler,
-        handleMlsSetup,
-        reportMLSRelatedError,
-        connectWithStunFallbackToTurnRelay,
-        cleanupMlsState,
-        allowHealthCheck,
-        disallowHealthCheck,
-        initializeDevices,
-        getParticipants,
-        getQueryParticipantsCount,
-        reportMeetError,
-        triggerFullReconnectionRef,
-    });
 
     const { liveKitConnectionState, setLiveKitConnectionState, showReconnectedMessage, setShowReconnectedMessage } =
         useRoomEventHandlers({
@@ -272,6 +273,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
             meetingLinkRef,
             meetingLinkNameRef,
             triggerFullReconnectionRef,
+            cancelReconnection,
             reportMeetError,
         });
 
@@ -557,12 +559,15 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                 <ConnectionLostModal
                     onRejoin={() => {
                         dispatch(setReconnectionFailed(false));
-                        void performFullReconnection(RejoinReasonInfo.Other).then(() =>
+                        void performFullReconnection(RejoinReasonInfo.Other, { manual: true }).then((status) => {
+                            if (status !== 'joined' && status !== 'failed') {
+                                return;
+                            }
                             sendMeetActionsEvent(TelemetryMeetActionsEvents.connection_lost_modal_answered, {
                                 action: 'rejoin',
-                                outcome: selectReconnectionFailed(store.getState()) ? 'failed' : 'success',
-                            })
-                        );
+                                outcome: status === 'joined' ? 'success' : 'failed',
+                            });
+                        });
                     }}
                     onLeave={() => {
                         sendMeetActionsEvent(TelemetryMeetActionsEvents.connection_lost_modal_answered, {
