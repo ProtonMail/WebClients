@@ -17,6 +17,10 @@ export class MeetCoreRestartedError extends Error {
     }
 }
 
+export const isMeetCoreRestartedError = (error: unknown) =>
+    error instanceof MeetCoreRestartedError ||
+    (error instanceof Error && (error as { coreError?: unknown }).coreError instanceof MeetCoreRestartedError);
+
 export class MeetCoreStalledError extends Error {
     public readonly restarted: boolean;
 
@@ -68,7 +72,7 @@ export const callMeetCoreOrRestart = async (
         }
     } catch (error) {
         // Another stalled call already restarted meet-core, which dropped this one
-        if (error instanceof MeetCoreRestartedError) {
+        if (isMeetCoreRestartedError(error)) {
             return 'restarted';
         }
         throw error;

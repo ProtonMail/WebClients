@@ -11,6 +11,8 @@ import {
 } from './meetCoreStallRecovery';
 
 const neverSettles = () => new Promise<void>(() => {});
+const mlsSetupDroppedByRestart = () =>
+    Object.assign(new Error('MLS setup failed'), { coreError: new MeetCoreRestartedError() });
 
 describe('callMeetCoreOrRestart', () => {
     beforeEach(() => vi.useFakeTimers());
@@ -80,15 +82,17 @@ describe('callMeetCoreOrRestart', () => {
         expect(meetCoreClient.restart).not.toHaveBeenCalled();
     });
 
-    it('treats a call dropped by another restart as restarted', async () => {
+    it.each([
+        { call: 'a meet-core call', error: () => new MeetCoreRestartedError() },
+        { call: 'an MLS setup', error: mlsSetupDroppedByRestart },
+    ])('treats $call dropped by another restart as restarted', async ({ error }) => {
         const meetCoreClient = createMeetCoreClientMock();
         const reportMeetError = vi.fn();
 
-        const outcome = await callMeetCoreOrRestart(
-            meetCoreClient,
-            () => Promise.reject(new MeetCoreRestartedError()),
-            { name: 'leaveMeeting', reportMeetError }
-        );
+        const outcome = await callMeetCoreOrRestart(meetCoreClient, () => Promise.reject(error()), {
+            name: 'leaveMeeting',
+            reportMeetError,
+        });
 
         expect(outcome).toBe('restarted');
         expect(meetCoreClient.restart).not.toHaveBeenCalled();
@@ -190,6 +194,16 @@ describe('callMeetCoreWithinDeadline', () => {
         const error = new Error('boom');
 
         await expect(callWithinJoinDeadline(meetCoreClient, () => Promise.reject(error))).rejects.toBe(error);
+        expect(meetCoreClient.restart).not.toHaveBeenCalled();
+    });
+
+    it('throws a stall that says meet-core was restarted when another restart dropped the MLS setup', async () => {
+        const meetCoreClient = createMeetCoreClientMock();
+
+        const callPromise = callWithinJoinDeadline(meetCoreClient, () => Promise.reject(mlsSetupDroppedByRestart()));
+
+        await expect(callPromise).rejects.toThrow(MeetCoreStalledError);
+        await expect(callPromise).rejects.toMatchObject({ restarted: true });
         expect(meetCoreClient.restart).not.toHaveBeenCalled();
     });
 });
