@@ -22,7 +22,7 @@ import type { WordCountInfoCollection } from '@proton/docs-shared/WordCount/Word
 import type { ErrorInfo } from 'react'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
-import type { SheetsPatchesType } from '@proton/docs-core/Database/SheetsDBSchema'
+import type { SheetsPatchesType } from '@proton/docs-shared/SheetsPatchesType'
 import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 
