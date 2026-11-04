@@ -49,7 +49,20 @@ describe('useMeetErrorReporting', () => {
 
         result.current.reportMeetError('Something failed', { context: { error, epoch: 4 }, level: 'warning' });
 
-        expect(loggerMock.warn).toHaveBeenCalledWith('Something failed', error, { epoch: 4 });
+        expect(loggerMock.warn).toHaveBeenCalledWith('Something failed', error, { epoch: 4 }, { tags: expectedTags });
+    });
+
+    it('writes the same tags to the logger that it sends to Sentry', () => {
+        const { result } = renderHook(() => useMeetErrorReporting(), { wrapper });
+
+        result.current.reportMeetError('Something failed', { tags: { stage: 'join' } });
+
+        const sentryTags = { ...expectedTags, stage: 'join' };
+        expect(loggerMock.error).toHaveBeenCalledWith('Something failed', { tags: sentryTags });
+        expect(captureMessageMock).toHaveBeenCalledWith(
+            'Something failed',
+            expect.objectContaining({ tags: sentryTags })
+        );
     });
 
     it('writes to the logger even when Sentry reporting is off', () => {
@@ -58,7 +71,7 @@ describe('useMeetErrorReporting', () => {
 
         result.current.reportMeetError('Something failed', 29);
 
-        expect(loggerMock.error).toHaveBeenCalledWith('Something failed', 29);
+        expect(loggerMock.error).toHaveBeenCalledWith('Something failed', 29, { tags: expectedTags });
         expect(captureMessageMock).not.toHaveBeenCalled();
     });
 
