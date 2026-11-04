@@ -32,6 +32,7 @@ import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import type { UseKeyManagementResult } from '../useKeyManagement';
 import type { UseLiveKitConnectionResult } from '../useLiveKitConnection';
 import { useStableCallback } from '../useStableCallback';
+import { REJOIN_RETRY_DELAYS_MS, type RejoinOutcome, runRejoinAttempts } from './rejoinAttempts';
 import type { UseMlsSessionResult } from './useMlsSession';
 
 export interface MeetingAccessDetails {
@@ -89,7 +90,7 @@ interface UseMeetingConnectionParams {
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
 }
 
-type RejoinStatus = 'joined' | 'failed' | 'cancelled' | 'skipped';
+type RejoinStatus = RejoinOutcome['status'] | 'skipped';
 
 export interface UseMeetingConnectionResult {
     isReconnectingRef: MutableRefObject<boolean>;
@@ -292,11 +293,12 @@ export const useMeetingConnection = ({
         isReconnectingRef.current = true;
         const reconnectionStartTimeMs = BigInt(Date.now());
 
-        const trackUserRejoin = async (success: boolean) => {
+        const trackUserRejoin = async (success: boolean, attempts: number) => {
             const rejoinTimeMs = BigInt(Date.now()) - reconnectionStartTimeMs;
             logger.info('[telemetry] logUserRejoin', {
                 rejoinTimeMs: Number(rejoinTimeMs),
                 reason: RejoinReasonInfo[reason],
+                attempts,
                 success,
             });
 
@@ -305,7 +307,7 @@ export const useMeetingConnection = ({
             }
 
             await meetCoreClient
-                .logUserRejoin(rejoinTimeMs, 1, reason, success)
+                .logUserRejoin(rejoinTimeMs, attempts, reason, success)
                 .catch((error: unknown) =>
                     reportMeetError(
                         success ? 'Failed to log reconnection success' : 'Failed to log reconnection failure',
@@ -321,6 +323,12 @@ export const useMeetingConnection = ({
 
         const meetingLinkName = meetingLinkNameRef.current;
 
+        // Snapshot the live camera/mic state so it survives the rejoin; otherwise
+        // initializeDevices falls back to the prejoin defaults and silently turns them off.
+        // Once per run: a later attempt would read the room this run disconnected.
+        const wasCameraEnabled = room.localParticipant.isCameraEnabled;
+        const wasMicrophoneEnabled = room.localParticipant.isMicrophoneEnabled;
+
         // A rejoin follows an unstable network, which is when a meet-core request can hang while holding
         // the state lock the leave needs.
         const leaveMlsGroup = () =>
@@ -328,14 +336,9 @@ export const useMeetingConnection = ({
                 ? leaveMeetingOrRestart(meetCoreClient, reportMeetError)
                 : meetCoreClient.leaveMeeting();
 
-        try {
+        const rejoin = async () => {
             // Snapshot before room.disconnect() — the Disconnected handler clears this ref synchronously
             const wasMlsActive = mlsSetupDone.current;
-
-            // Snapshot the live camera/mic state so it survives the rejoin; otherwise
-            // initializeDevices falls back to the prejoin defaults and silently turns them off.
-            const wasCameraEnabled = room.localParticipant.isCameraEnabled;
-            const wasMicrophoneEnabled = room.localParticipant.isMicrophoneEnabled;
 
             try {
                 await room.disconnect();
@@ -369,21 +372,27 @@ export const useMeetingConnection = ({
                 signal,
                 recoverStalledMeetCore: isHandleStalledLiveKitReconnectEnabled,
             });
-            signal.throwIfAborted();
+        };
 
+        const outcome = await runRejoinAttempts(rejoin, {
+            signal,
+            retryDelaysMs: isHandleStalledLiveKitReconnectEnabled ? REJOIN_RETRY_DELAYS_MS : [],
+            waitWhileOffline: isHandleStalledLiveKitReconnectEnabled,
+        });
+
+        if (outcome.status === 'cancelled') {
+            return 'cancelled';
+        }
+
+        if (outcome.status === 'joined') {
             dispatch(setJoinedRoom(true));
             dispatch(setIsReconnecting(false));
             endRun();
             allowHealthCheck();
-
-            await trackUserRejoin(true);
-
-            return 'joined';
-        } catch (error) {
-            if (signal.aborted) {
-                return 'cancelled';
-            }
-            reportMeetError('Full reconnection failed', { context: { error } });
+        } else {
+            reportMeetError('Full reconnection failed', {
+                context: { error: outcome.error, attempts: outcome.attempts },
+            });
 
             // Best-effort MLS leave in case handleMlsSetup succeeded but a later step failed
             if (mlsSetupDone.current) {
@@ -404,11 +413,11 @@ export const useMeetingConnection = ({
             // Clear stored credentials so the next attempt (manual rejoin) fetches fresh ones
             accessTokenRef.current = null;
             websocketUrlRef.current = null;
-
-            await trackUserRejoin(false);
-
-            return 'failed';
         }
+
+        await trackUserRejoin(outcome.status === 'joined', outcome.attempts);
+
+        return outcome.status;
     });
 
     const cancelReconnection = useStableCallback(() => {

@@ -1,7 +1,7 @@
 import { useRoomContext } from '@livekit/components-react';
-import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
+import { MeetCoreErrorEnum, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { act, renderHook } from '@testing-library/react';
-import { ConnectionState } from 'livekit-client';
+import { ConnectionError, ConnectionState } from 'livekit-client';
 import type { Mock } from 'vitest';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
@@ -15,12 +15,9 @@ import {
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
-import {
-    MEET_CORE_JOIN_TIMEOUT_MS,
-    MEET_CORE_STALL_TIMEOUT_MS,
-    MeetCoreStalledError,
-} from '../../wasm/meetCoreStallRecovery';
+import { MEET_CORE_JOIN_TIMEOUT_MS, MEET_CORE_STALL_TIMEOUT_MS } from '../../wasm/meetCoreStallRecovery';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
+import { OFFLINE_GIVE_UP_MS, OFFLINE_RECHECK_MS, REJOIN_RETRY_DELAYS_MS } from './rejoinAttempts';
 import { type MeetingAccessDetails, useMeetingConnection } from './useMeetingConnection';
 
 vi.mock('@livekit/components-react', () => ({ useRoomContext: vi.fn() }));
@@ -102,6 +99,7 @@ describe('useMeetingConnection', () => {
         useMeetingAuthenticationMock.mockReturnValue({ getAccessDetails: mockGetAccessDetails });
         useFlagMock.mockReturnValue(false);
         mockRoom.state = ConnectionState.Disconnected;
+        mockRoom.localParticipant = { isCameraEnabled: true, isMicrophoneEnabled: false };
         mockRoom.setE2EEEnabled.mockResolvedValue(undefined);
         mockRoom.disconnect.mockResolvedValue(undefined);
         mockMeetCoreClient.restart.mockResolvedValue(true);
@@ -354,26 +352,30 @@ describe('useMeetingConnection', () => {
             });
             afterEach(() => vi.useRealTimers());
 
-            it('fails the rejoin at the deadline, restarting meet-core and reporting the stall', async () => {
-                const params = createParams({ handleMlsSetup: vi.fn(neverSettles) });
+            it('abandons the join at the deadline, restarting meet-core, and rejoins on the next attempt', async () => {
+                const params = createParams({
+                    handleMlsSetup: vi
+                        .fn()
+                        .mockImplementationOnce(neverSettles)
+                        .mockResolvedValue({ key: 'group-key', epoch: 1n }),
+                });
                 const { result } = renderHook(() => useMeetingConnection(params));
 
                 const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
                 await act(() => vi.advanceTimersByTimeAsync(MEET_CORE_JOIN_TIMEOUT_MS - 1));
                 expect(mockMeetCoreClient.restart).not.toHaveBeenCalled();
-                expect(mockDispatch).not.toHaveBeenCalledWith(setReconnectionFailed(true));
 
                 await act(() => vi.advanceTimersByTimeAsync(1));
-
-                await expect(run).resolves.toBe('failed');
                 expect(mockMeetCoreClient.restart).toHaveBeenCalledTimes(1);
                 expect(params.reportMeetError).toHaveBeenCalledWith('Meet core joinMeeting timed out', {
                     context: { timeoutMs: MEET_CORE_JOIN_TIMEOUT_MS, restarted: true },
                 });
-                expect(params.reportMeetError).toHaveBeenCalledWith('Full reconnection failed', {
-                    context: { error: expect.any(MeetCoreStalledError) },
-                });
-                expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(true));
+
+                await act(() => vi.advanceTimersByTimeAsync(REJOIN_RETRY_DELAYS_MS[0]));
+
+                await expect(run).resolves.toBe('joined');
+                expect(params.handleMlsSetup).toHaveBeenCalledTimes(2);
+                expect(mockDispatch).not.toHaveBeenCalledWith(setReconnectionFailed(true));
                 expect(result.current.isReconnectingRef.current).toBe(false);
             });
 
@@ -392,7 +394,7 @@ describe('useMeetingConnection', () => {
 
                 await expect(run).resolves.toBe('failed');
                 expect(params.reportMeetError).toHaveBeenCalledWith('Full reconnection failed', {
-                    context: { error: expect.objectContaining({ restarted: false }) },
+                    context: { error: expect.objectContaining({ restarted: false }), attempts: 1 },
                 });
                 expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(true));
             });
@@ -452,6 +454,186 @@ describe('useMeetingConnection', () => {
                 await act(() => result.current.connectWithMls(baseConnectParams));
 
                 expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, true);
+            });
+        });
+
+        describe('when a rejoin attempt fails', () => {
+            const offlineError = Object.assign(new Error('Offline'), { name: 'OfflineError' });
+            const networkError = Object.assign(new Error('Network error'), { name: 'NetworkError' });
+            const allRetryDelaysMs = REJOIN_RETRY_DELAYS_MS.reduce((total, delayMs) => total + delayMs, 0);
+            let isOnline: boolean;
+
+            beforeEach(() => {
+                vi.useFakeTimers();
+                isOnline = true;
+                vi.spyOn(navigator, 'onLine', 'get').mockImplementation(() => isOnline);
+                vi.spyOn(Math, 'random').mockReturnValue(1);
+                useFlagMock.mockImplementation(
+                    (name: string) => name === 'MeetHandleStalledLiveKitReconnect' || name === 'MeetClientMetricsLog'
+                );
+            });
+            afterEach(() => {
+                vi.restoreAllMocks();
+                vi.useRealTimers();
+            });
+
+            it('waits offline without the Connection lost modal, and rejoins once the browser is back online', async () => {
+                isOnline = false;
+                mockGetAccessDetails.mockRejectedValueOnce(offlineError);
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.EpochMismatch);
+                await act(() => vi.advanceTimersByTimeAsync(2 * OFFLINE_RECHECK_MS - 1));
+
+                expect(mockGetAccessDetails).toHaveBeenCalledTimes(1);
+                expect(mockDispatch).not.toHaveBeenCalledWith(setReconnectionFailed(true));
+                expect(mockDispatch).not.toHaveBeenCalledWith(setIsReconnecting(false));
+                expect(result.current.isReconnectingRef.current).toBe(true);
+
+                isOnline = true;
+                act(() => {
+                    window.dispatchEvent(new Event('online'));
+                });
+
+                await expect(run).resolves.toBe('joined');
+                expect(mockGetAccessDetails).toHaveBeenCalledTimes(2);
+                expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
+                expect(mockDispatch).not.toHaveBeenCalledWith(setReconnectionFailed(true));
+                expect(vi.getTimerCount()).toBe(0);
+            });
+
+            it('retries a failed meet-core join and rejoins', async () => {
+                const params = createParams({
+                    handleMlsSetup: vi
+                        .fn()
+                        .mockRejectedValueOnce(
+                            Object.assign(new Error('MLS setup failed: HttpClientError'), {
+                                coreError: MeetCoreErrorEnum.HttpClientError,
+                            })
+                        )
+                        .mockResolvedValue({ key: 'group-key', epoch: 1n }),
+                });
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+                await act(() => vi.advanceTimersByTimeAsync(REJOIN_RETRY_DELAYS_MS[0]));
+
+                await expect(run).resolves.toBe('joined');
+                expect(params.handleMlsSetup).toHaveBeenCalledTimes(2);
+                expect(mockDispatch).not.toHaveBeenCalledWith(setReconnectionFailed(true));
+            });
+
+            it('reports the real attempt count to the rejoin telemetry', async () => {
+                mockGetAccessDetails.mockRejectedValueOnce(networkError);
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+                await act(() => vi.advanceTimersByTimeAsync(REJOIN_RETRY_DELAYS_MS[0]));
+
+                await expect(run).resolves.toBe('joined');
+                expect(mockMeetCoreClient.logUserRejoin).toHaveBeenCalledTimes(1);
+                expect(mockMeetCoreClient.logUserRejoin).toHaveBeenCalledWith(
+                    expect.any(BigInt),
+                    2,
+                    RejoinReasonInfo.Other,
+                    true
+                );
+            });
+
+            it('shows the Connection lost modal and reports the failure once, after the last attempt', async () => {
+                mockGetAccessDetails.mockRejectedValue(networkError);
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+                const attempts = REJOIN_RETRY_DELAYS_MS.length + 1;
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+                await act(() => vi.advanceTimersByTimeAsync(allRetryDelaysMs - 1));
+                expect(mockDispatch).not.toHaveBeenCalledWith(setReconnectionFailed(true));
+                expect(params.reportMeetError).not.toHaveBeenCalledWith('Full reconnection failed', expect.anything());
+
+                await act(() => vi.advanceTimersByTimeAsync(1));
+
+                await expect(run).resolves.toBe('failed');
+                expect(mockGetAccessDetails).toHaveBeenCalledTimes(attempts);
+                expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(true));
+                expect(params.reportMeetError).toHaveBeenCalledTimes(1);
+                expect(params.reportMeetError).toHaveBeenCalledWith('Full reconnection failed', {
+                    context: { error: networkError, attempts },
+                });
+                expect(mockMeetCoreClient.logUserRejoin).toHaveBeenCalledWith(
+                    expect.any(BigInt),
+                    attempts,
+                    RejoinReasonInfo.Other,
+                    false
+                );
+            });
+
+            it('restores the camera and microphone as they were before the first attempt', async () => {
+                mockRoom.localParticipant = { isCameraEnabled: true, isMicrophoneEnabled: true };
+                mockRoom.disconnect.mockImplementation(async () => {
+                    mockRoom.localParticipant = { isCameraEnabled: false, isMicrophoneEnabled: false };
+                });
+                const params = createParams({
+                    connectWithStunFallbackToTurnRelay: vi
+                        .fn()
+                        .mockRejectedValueOnce(
+                            ConnectionError.serverUnreachable('could not establish signal connection')
+                        )
+                        .mockResolvedValue({ stunFailed: false, connectionAttempts: 1 }),
+                });
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+                await act(() => vi.advanceTimersByTimeAsync(REJOIN_RETRY_DELAYS_MS[0]));
+
+                await expect(run).resolves.toBe('joined');
+                expect(params.initializeDevices).toHaveBeenCalledTimes(2);
+                expect(params.initializeDevices).toHaveBeenLastCalledWith(
+                    expect.objectContaining({ desiredCameraState: true, desiredMicrophoneState: true })
+                );
+            });
+
+            it('a rejoin cancelled while waiting to retry makes no further attempt and changes nothing', async () => {
+                mockGetAccessDetails.mockRejectedValueOnce(networkError);
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+                await act(() => vi.advanceTimersByTimeAsync(1));
+                expect(mockGetAccessDetails).toHaveBeenCalledTimes(1);
+                result.current.cancelReconnection();
+                mockDispatch.mockClear();
+
+                await expect(run).resolves.toBe('cancelled');
+                expect(vi.getTimerCount()).toBe(0);
+                await act(() => vi.advanceTimersByTimeAsync(allRetryDelaysMs));
+                expect(mockGetAccessDetails).toHaveBeenCalledTimes(1);
+                expect(mockDispatch).not.toHaveBeenCalled();
+                expect(params.reportMeetError).not.toHaveBeenCalled();
+                expect(mockMeetCoreClient.logUserRejoin).not.toHaveBeenCalled();
+            });
+
+            it('makes one attempt, even offline, when MeetHandleStalledLiveKitReconnect is disabled', async () => {
+                useFlagMock.mockImplementation((name: string) => name === 'MeetClientMetricsLog');
+                isOnline = false;
+                mockGetAccessDetails.mockRejectedValue(offlineError);
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+
+                await expect(run).resolves.toBe('failed');
+                await act(() => vi.advanceTimersByTimeAsync(OFFLINE_GIVE_UP_MS));
+                expect(mockGetAccessDetails).toHaveBeenCalledTimes(1);
+                expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(true));
+                expect(mockMeetCoreClient.logUserRejoin).toHaveBeenCalledWith(
+                    expect.any(BigInt),
+                    1,
+                    RejoinReasonInfo.Other,
+                    false
+                );
             });
         });
     });
