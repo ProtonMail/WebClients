@@ -111,13 +111,26 @@ html:is(
 		[lang^='vi'],
 		[lang^='th'],
 		[lang^='fil'],
-		[lang^='cs']
+		[lang^='cs'],
+		[lang^='ru'],
+		[lang^='ko'],
+		[lang^='ka']
 	)
 	.bf2026Title {
 	font-size: 3.5rem;
 
 	@include im.media('<=small') {
 		font-size: 2.75rem;
+	}
+}
+
+// Japanese can break between any two characters, so a title that wraps splits mid-word. Sized to fit on one line,
+// shrinking with the viewport on phones. The title is 9 full-width characters, about 8.8em wide.
+html[lang^='ja'] .bf2026Title {
+	font-size: 2.75rem;
+
+	@include im.media('<=small') {
+		font-size: min(2.5rem, calc(10.5vw - 0.4rem));
 	}
 }
 
