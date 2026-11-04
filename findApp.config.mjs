@@ -105,7 +105,7 @@ export default {
                 glob: '{src/**/*,index}.{js,jsx,ts,tsx}',
             },
         ],
-        ignore: ['pack', 'config', 'i18n', 'eslint-config-proton', 'stylelint-config-proton', 'styles', 'testing'],
+        ignore: ['pack', 'config', 'i18n', 'stylelint-config-proton', 'styles', 'testing'],
     },
 
     applications: {

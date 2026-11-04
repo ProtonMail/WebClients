@@ -10,8 +10,8 @@ const testGlobs = ['**/*.test.ts', '**/*.test.tsx', '**/__mocks__/**'];
 const javaScriptGlobs = ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'];
 
 /**
- * Shared oxlint config without React, equivalent to `@proton/eslint-config-proton/base`. Rules oxlint lacks run
- * from the `proton` plugin in `./plugin` (`proton/*`); compat and the in-house `custom-rules` run as ESLint plugins.
+ * Shared oxlint config without React. Rules oxlint lacks run from the `proton` plugin in `./plugin` (`proton/*`);
+ * compat and the in-house `custom-rules` run as ESLint plugins.
  * Only the listed rules are on: the default `correctness` category is off so the switch from
  * ESLint does not add new findings.
  */
@@ -32,7 +32,6 @@ export const base = defineConfig({
         '**/public/assets/**',
         '**/coverage/**',
         '**/__snapshots__/**',
-        'eslint.config.mjs',
     ],
     rules: {
         'custom-rules/no-package-self-import': 'error',
@@ -134,7 +133,7 @@ export const base = defineConfig({
     ],
 });
 
-/** `base` plus the React, jsx-a11y and UI rules, equivalent to `@proton/eslint-config-proton/all`. */
+/** `base` plus the React, jsx-a11y and UI rules. */
 export const all = defineConfig({
     ...base,
     plugins: [...(base.plugins ?? []), 'react', 'jsx-a11y'],
@@ -258,7 +257,7 @@ export const all = defineConfig({
 const presets = { base, all };
 
 export interface WorkspaceConfigOptions {
-    /** `all` adds React, jsx-a11y and the UI rules to `base`, like the ESLint presets of the same names. */
+    /** `all` adds React, jsx-a11y and the UI rules to `base`. */
     preset?: keyof typeof presets;
     /** Rollout ids and client additions for `proton/restricted-imports`, as in `createRestrictedImportRule`. */
     restrictedImports?: RestrictedImportsOptions;

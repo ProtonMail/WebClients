@@ -24,7 +24,6 @@ export const extraneousDependenciesDevDependencies = [
     '**/*.spec.{js,ts,tsx,jsx}',
     // Others
     '**/cypress.config.{js,ts}',
-    '**/eslint.config.{js,mjs}',
     '**/oxlint.config.{js,mjs,ts,mts}',
     '**/playwright.config.ts',
 ];

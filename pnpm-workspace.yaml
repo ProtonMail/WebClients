@@ -137,7 +137,6 @@ catalog:
     ttag-cli: ^1.12.0
     # A few workspaces (including the root) still declare the real `typescript` package directly.
     typescript: npm:@typescript/typescript6@^6.0.2
-    typescript-eslint: ^8.71.2
     uuid: ^14.0.2
     vite: ^8.3.4
     vitest: ^5.0.5
@@ -205,17 +204,12 @@ patchedDependencies:
     '@lexical/table@0.31.2': patches/@lexical__table@0.31.2.patch
     '@mlc-ai/web-llm@0.2.32': patches/@mlc-ai__web-llm@0.2.32.patch
     '@pdf-lib/standard-fonts@1.0.0': patches/@pdf-lib__standard-fonts@1.0.0.patch
-    eslint-plugin-monorepo-cop@1.0.2: patches/eslint-plugin-monorepo-cop@1.0.2.patch
     jsdom@26.1.0: patches/jsdom@26.1.0.patch
     rfc2047@2.0.1: patches/rfc2047@2.0.1.patch
 
 # Missing peer declarations. Without them, these packages resolve the dependency through pnpm's
 # hidden hoisting directory, which may hold a different version than the workspace uses.
 packageExtensions:
-    eslint-plugin-no-only-tests@3:
-        # Its JSDoc types reference `eslint`.
-        peerDependencies:
-            eslint: '*'
     # Requires `electron`, which the desktop apps pin to different versions. Jest mocks are keyed by
     # resolved path, so `jest.mock('electron')` only applies if it shares the app's copy.
     # electron-log gets no peer. With one, a desktop app on another electron version than
