@@ -38,7 +38,7 @@ export const usePostSignupOneDollarPromotionPrice = ({ offerProduct, priceWithGr
             const result = await fetchPrice({
                 data: {
                     Plans: { [plan]: 1 },
-                    Currency: currency,
+                    Currency: curr,
                     Cycle: CYCLE.MONTHLY,
                     CouponCode: isMail ? COUPON_CODES.TRYMAILPLUS0724 : COUPON_CODES.TRYDRIVEPLUS2024,
                 },
