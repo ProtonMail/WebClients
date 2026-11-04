@@ -8,21 +8,15 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
-import {
-    exportPlainText,
-    plainTextToHTML,
-    setDocumentContent,
-} from '@proton/mail-message/helpers/message/messageContent';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { defaultFontStyle } from '@proton/shared/lib/mail/fontFace';
 import {
     isAttachPublicKey as testIsAttachPublicKey,
     isRequestReadReceipt as testIsRequestReadReceipt,
 } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import { getSwitchToHTMLChange, getSwitchToPlainTextChange } from '../../../helpers/composer/mimeTypeSwitch';
 import { useComposerMessageHost } from '../../../host/composerMessageHost';
 import type { MessageChange, MessageChangeFlag } from '../Composer';
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
@@ -57,27 +51,11 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
     const handleChangeMetadata = useCallback(
         (change: Partial<EditorMetadata>) => {
             const switchToPlainText = () => {
-                const plainText = exportPlainText(editorActionsRef.current?.getContent() || '');
-
-                const messageImages = message?.messageImages ? { ...message.messageImages, images: [] } : undefined;
-                onChange({ messageDocument: { plainText }, data: { MIMEType: MIME_TYPES.PLAINTEXT }, messageImages });
+                onChange(getSwitchToPlainTextChange(message, editorActionsRef.current?.getContent() || ''));
             };
 
             const switchToHTML = () => {
-                const MIMEType = MIME_TYPES.DEFAULT;
-                const content = plainTextToHTML(
-                    message?.data,
-                    message?.messageDocument?.plainText,
-                    mailSettings,
-                    userSettings,
-                    addresses || []
-                );
-
-                const fontStyles = defaultFontStyle(mailSettings);
-                const wrappedContent = `<div style="${fontStyles}">${content}</div>`;
-
-                const document = setDocumentContent(message?.messageDocument?.document, wrappedContent);
-                onChange({ messageDocument: { document }, data: { MIMEType } });
+                onChange(getSwitchToHTMLChange(message, mailSettings, userSettings, addresses || []));
             };
 
             if (change.isPlainText !== undefined) {
