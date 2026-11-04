@@ -2,7 +2,7 @@ import { ThumbnailType } from '@protontech/drive-sdk';
 
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
-import { isIosDevice, isSafariDevice } from './constants';
+import { isIosDevice, isWebKitDevice } from './constants';
 import { ThumbnailProcessor } from './handlerRegistry';
 import { reportThumbnailError, reportThumbnailSuccess } from './metrics';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
@@ -112,7 +112,7 @@ export function generateThumbnail(
     mimeTypePromise: Promise<string>;
     thumbnailsPromise: Promise<{ ok: true; result: ThumbnailResult } | { ok: false; error: unknown }>;
 } {
-    const thumbnailMimeType = isIosDevice || isSafariDevice ? SupportedMimeTypes.jpg : SupportedMimeTypes.webp;
+    const thumbnailMimeType = isIosDevice || isWebKitDevice ? SupportedMimeTypes.jpg : SupportedMimeTypes.webp;
     const thumbnailTypes = [ThumbnailType.Type1, ThumbnailType.Type2];
 
     const mimeTypePromise = mimeTypeFromFile({ type: content.type, name: fileName });

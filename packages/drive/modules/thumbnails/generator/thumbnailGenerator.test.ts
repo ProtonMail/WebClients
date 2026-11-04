@@ -17,7 +17,7 @@ jest.mock('@proton/metrics/metricsInstance', () => ({
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({ traceError: jest.fn() }));
 jest.mock('@proton/shared/lib/helpers/browser', () => ({
     isIos: jest.fn().mockReturnValue(false),
-    isSafari: jest.fn().mockReturnValue(false),
+    isWebKit: jest.fn().mockReturnValue(false),
     isMobile: jest.fn().mockReturnValue(false),
 }));
 
