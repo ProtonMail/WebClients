@@ -319,8 +319,8 @@ export const useMeetingConnection = ({
 
         const meetingLinkName = meetingLinkNameRef.current;
 
-        const wasCameraEnabled = room.localParticipant.isCameraEnabled;
-        const wasMicrophoneEnabled = room.localParticipant.isMicrophoneEnabled;
+        const cameraEnabledBeforeRejoin = room.localParticipant.isCameraEnabled;
+        const microphoneEnabledBeforeRejoin = room.localParticipant.isMicrophoneEnabled;
 
         const leaveMlsGroup = () =>
             isHandleStalledLiveKitReconnectEnabled
@@ -357,8 +357,8 @@ export const useMeetingConnection = ({
                 meetingPassword,
                 displayName,
                 timeoutMs: 20 * SECOND,
-                desiredCameraState: wasCameraEnabled,
-                desiredMicrophoneState: wasMicrophoneEnabled,
+                desiredCameraState: cameraEnabledBeforeRejoin,
+                desiredMicrophoneState: microphoneEnabledBeforeRejoin,
                 resetParticipantsBeforeFetch: true,
                 signal,
                 recoverStalledMeetCore: isHandleStalledLiveKitReconnectEnabled,

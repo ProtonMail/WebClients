@@ -24,6 +24,7 @@ vi.mock('../srp/useMeetingAuthentication', () => ({ useMeetingAuthentication: vi
 
 const mockDispatch = vi.fn();
 const mockGetAccessDetails = vi.fn();
+const mockHandleMlsSetup = vi.fn();
 const mockMeetCoreClient = {
     leaveMeeting: vi.fn().mockResolvedValue(undefined),
     logUserRejoin: vi.fn().mockResolvedValue(undefined),
@@ -31,6 +32,9 @@ const mockMeetCoreClient = {
 
 const createRoomThatEmitsOnDisconnect = () => {
     const disconnectedListeners = new Set<(reason?: DisconnectReason) => void>();
+    const emitDisconnected = (reason?: DisconnectReason) => {
+        disconnectedListeners.forEach((listener) => listener(reason));
+    };
 
     return {
         localParticipant: { isCameraEnabled: false, isMicrophoneEnabled: false },
@@ -43,9 +47,8 @@ const createRoomThatEmitsOnDisconnect = () => {
         off: vi.fn((_event: RoomEvent, listener: (reason?: DisconnectReason) => void) => {
             disconnectedListeners.delete(listener);
         }),
-        disconnect: vi.fn(async () => {
-            disconnectedListeners.forEach((listener) => listener(DisconnectReason.CLIENT_INITIATED));
-        }),
+        disconnect: vi.fn(async () => emitDisconnected(DisconnectReason.CLIENT_INITIATED)),
+        emitDisconnected,
     };
 };
 
@@ -53,11 +56,13 @@ const renderConnectionWithRoomEventHandlers = (getParticipants: Mock) => {
     const meetingLinkNameRef = { current: 'meeting-abc' };
     const mlsSetupDone = { current: true };
     const triggerFullReconnectionRef = { current: vi.fn() };
-    const cleanupMlsState = vi.fn();
+    const cleanupMlsState = vi.fn(() => {
+        mlsSetupDone.current = false;
+    });
     const disallowHealthCheck = vi.fn();
     const reportMeetError = vi.fn();
 
-    return renderHook(() => {
+    const rendered = renderHook(() => {
         const connection = useMeetingConnection({
             meetingLinkNameRef,
             meetingPassword: 'pw',
@@ -67,7 +72,7 @@ const renderConnectionWithRoomEventHandlers = (getParticipants: Mock) => {
             accessTokenRef: { current: null },
             keyProvider: { setKeyWithEpoch: vi.fn().mockResolvedValue(undefined) } as any,
             keyRotationScheduler: { schedule: vi.fn().mockResolvedValue(undefined) } as any,
-            handleMlsSetup: vi.fn().mockResolvedValue({ key: 'group-key', epoch: 1n }),
+            handleMlsSetup: mockHandleMlsSetup,
             reportMLSRelatedError: vi.fn(),
             connectWithStunFallbackToTurnRelay: vi.fn().mockResolvedValue({ stunFailed: false, connectionAttempts: 1 }),
             cleanupMlsState,
@@ -99,24 +104,27 @@ const renderConnectionWithRoomEventHandlers = (getParticipants: Mock) => {
 
         return connection;
     });
+
+    return { ...rendered, triggerFullReconnectionRef };
 };
 
+let room: ReturnType<typeof createRoomThatEmitsOnDisconnect>;
+
+beforeEach(() => {
+    vi.clearAllMocks();
+    room = createRoomThatEmitsOnDisconnect();
+    (useRoomContext as unknown as Mock).mockReturnValue(room);
+    (useHistory as unknown as Mock).mockReturnValue({ push: vi.fn() });
+    (useMeetDispatch as unknown as Mock).mockReturnValue(mockDispatch);
+    (useMeetStore as unknown as Mock).mockReturnValue({ getState: vi.fn() });
+    (useFlag as unknown as Mock).mockReturnValue(false);
+    (useMeetCoreClient as unknown as Mock).mockReturnValue(mockMeetCoreClient);
+    (useMeetingAuthentication as unknown as Mock).mockReturnValue({ getAccessDetails: mockGetAccessDetails });
+    mockGetAccessDetails.mockResolvedValue({ websocketUrl: 'wss://x', accessToken: 'tok' });
+    mockHandleMlsSetup.mockResolvedValue({ key: 'group-key', epoch: 1n });
+});
+
 describe('rejoining from the Connection lost modal', () => {
-    let room: ReturnType<typeof createRoomThatEmitsOnDisconnect>;
-
-    beforeEach(() => {
-        vi.clearAllMocks();
-        room = createRoomThatEmitsOnDisconnect();
-        (useRoomContext as unknown as Mock).mockReturnValue(room);
-        (useHistory as unknown as Mock).mockReturnValue({ push: vi.fn() });
-        (useMeetDispatch as unknown as Mock).mockReturnValue(mockDispatch);
-        (useMeetStore as unknown as Mock).mockReturnValue({ getState: vi.fn() });
-        (useFlag as unknown as Mock).mockReturnValue(false);
-        (useMeetCoreClient as unknown as Mock).mockReturnValue(mockMeetCoreClient);
-        (useMeetingAuthentication as unknown as Mock).mockReturnValue({ getAccessDetails: mockGetAccessDetails });
-        mockGetAccessDetails.mockResolvedValue({ websocketUrl: 'wss://x', accessToken: 'tok' });
-    });
-
     it('rejoins after a rejoin that failed once the room had connected', async () => {
         const getParticipants = vi
             .fn()
@@ -142,5 +150,32 @@ describe('rejoining from the Connection lost modal', () => {
         expect(mockGetAccessDetails).toHaveBeenCalledTimes(2);
         expect(getParticipants).toHaveBeenCalledTimes(2);
         expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
+    });
+});
+
+describe('rejoining after an unexpected LiveKit disconnect', () => {
+    beforeEach(() => {
+        (useFlag as unknown as Mock).mockImplementation((flag: string) => flag === 'MeetHandleStalledLiveKitReconnect');
+    });
+
+    it.each([
+        ['no reason', undefined],
+        ['SERVER_SHUTDOWN', DisconnectReason.SERVER_SHUTDOWN],
+    ])('leaves meet-core before joining MLS again after a disconnect with %s', async (_name, reason) => {
+        const { triggerFullReconnectionRef } = renderConnectionWithRoomEventHandlers(
+            vi.fn().mockResolvedValue(undefined)
+        );
+        const performFullReconnection = vi.spyOn(triggerFullReconnectionRef, 'current');
+
+        await act(async () => {
+            room.emitDisconnected(reason);
+            await expect(performFullReconnection.mock.results[0]?.value).resolves.toBe('joined');
+        });
+
+        expect(mockMeetCoreClient.leaveMeeting).toHaveBeenCalledTimes(1);
+        expect(mockHandleMlsSetup).toHaveBeenCalledTimes(1);
+        expect(mockMeetCoreClient.leaveMeeting.mock.invocationCallOrder[0]).toBeLessThan(
+            mockHandleMlsSetup.mock.invocationCallOrder[0]
+        );
     });
 });

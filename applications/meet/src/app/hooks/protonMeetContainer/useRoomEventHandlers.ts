@@ -219,7 +219,8 @@ export const useRoomEventHandlers = ({
             return;
         }
 
-        if (MEETING_ENDING_DISCONNECT_REASONS.has(reason)) {
+        const isMeetingEnding = MEETING_ENDING_DISCONNECT_REASONS.has(reason);
+        if (isMeetingEnding) {
             cancelReconnection();
         }
 
@@ -234,7 +235,7 @@ export const useRoomEventHandlers = ({
 
         joinedRoomLoggedRef.current = false;
         // Skip leaveMeeting when performFullReconnection is active, it will await it properly.
-        if (!isReconnectingRef.current) {
+        if (isMeetingEnding || !isReconnectingRef.current) {
             void meetCoreClient.leaveMeeting();
         }
         void stopPiP();
