@@ -460,6 +460,7 @@ export const useMeetingConnection = ({
     });
 
     const cancelReconnection = useStableCallback(() => {
+        automaticRunStartTimesMsRef.current = [];
         const controller = rejoinControllerRef.current;
         if (!controller) {
             return;

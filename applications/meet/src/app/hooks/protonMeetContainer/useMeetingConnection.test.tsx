@@ -782,6 +782,18 @@ describe('useMeetingConnection', () => {
                 await expect(result.current.performFullReconnection(reason)).resolves.toBe('failed');
             });
 
+            it('leaving the meeting with no active run starts a fresh count for the next session', async () => {
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+                await rejoinThreeTimesThirtySecondsApart(result);
+                await expect(result.current.performFullReconnection(reason)).resolves.toBe('failed');
+
+                result.current.cancelReconnection();
+
+                await expect(result.current.performFullReconnection(reason)).resolves.toBe('joined');
+                expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalledTimes(4);
+            });
+
             it('a skipped rejoin does not count', async () => {
                 const params = createParams();
                 const { result } = renderHook(() => useMeetingConnection(params));
