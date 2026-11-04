@@ -83,10 +83,12 @@ interface UseMeetingConnectionParams {
     triggerFullReconnectionRef: MutableRefObject<(reason: RejoinReasonInfo) => void>;
 }
 
+type RejoinStatus = 'joined' | 'failed' | 'skipped';
+
 export interface UseMeetingConnectionResult {
     isReconnectingRef: MutableRefObject<boolean>;
     websocketUrlRef: MutableRefObject<string | null>;
-    performFullReconnection: (reason: RejoinReasonInfo) => Promise<void>;
+    performFullReconnection: (reason: RejoinReasonInfo) => Promise<RejoinStatus>;
     connectWithMls: (params: ConnectWithMlsParams) => Promise<ConnectWithMlsResult>;
 }
 
@@ -240,9 +242,9 @@ export const useMeetingConnection = ({
         }
     );
 
-    const performFullReconnection = useStableCallback(async (reason: RejoinReasonInfo) => {
+    const performFullReconnection = useStableCallback(async (reason: RejoinReasonInfo): Promise<RejoinStatus> => {
         if (isReconnectingRef.current || !meetingLinkNameRef.current) {
-            return;
+            return 'skipped';
         }
         isReconnectingRef.current = true;
         const reconnectionStartTimeMs = BigInt(Date.now());
@@ -323,13 +325,14 @@ export const useMeetingConnection = ({
                 resetParticipantsBeforeFetch: true,
             });
 
-            meetingLinkNameRef.current = meetingLinkName;
             dispatch(setJoinedRoom(true));
             dispatch(setIsReconnecting(false));
             isReconnectingRef.current = false;
             allowHealthCheck();
 
             await trackUserRejoin(true);
+
+            return 'joined';
         } catch (error) {
             reportMeetError('Full reconnection failed', { context: { error } });
 
@@ -351,6 +354,8 @@ export const useMeetingConnection = ({
             websocketUrlRef.current = null;
 
             await trackUserRejoin(false);
+
+            return 'failed';
         }
     });
 

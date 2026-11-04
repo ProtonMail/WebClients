@@ -221,7 +221,10 @@ export const useRoomEventHandlers = ({
         } else if (reason !== undefined && reason !== DisconnectReason.CLIENT_INITIATED) {
             reportMeetError('Room disconnected unexpectedly', { context: { error: DisconnectReason[reason] } });
         }
-        meetingLinkNameRef.current = '';
+        // Whoever called room.disconnect() owns the meeting link name: leaving clears it, a rejoin keeps it.
+        if (reason !== DisconnectReason.CLIENT_INITIATED) {
+            meetingLinkNameRef.current = '';
+        }
 
         if (reason === DisconnectReason.ROOM_DELETED || reason === DisconnectReason.PARTICIPANT_REMOVED) {
             history.push('/dashboard');

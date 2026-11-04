@@ -197,10 +197,12 @@ describe('useMeetingConnection', () => {
             const params = createParams({ meetingLinkNameRef: { current: '' } });
             const { result } = renderHook(() => useMeetingConnection(params));
 
+            let status;
             await act(async () => {
-                await result.current.performFullReconnection(RejoinReasonInfo.Other);
+                status = await result.current.performFullReconnection(RejoinReasonInfo.Other);
             });
 
+            expect(status).toBe('skipped');
             expect(mockDispatch).not.toHaveBeenCalledWith(setIsReconnecting(true));
             expect(mockGetAccessDetails).not.toHaveBeenCalled();
         });
@@ -210,10 +212,12 @@ describe('useMeetingConnection', () => {
             const { result } = renderHook(() => useMeetingConnection(params));
             result.current.isReconnectingRef.current = true;
 
+            let status;
             await act(async () => {
-                await result.current.performFullReconnection(RejoinReasonInfo.Other);
+                status = await result.current.performFullReconnection(RejoinReasonInfo.Other);
             });
 
+            expect(status).toBe('skipped');
             expect(mockDispatch).not.toHaveBeenCalledWith(setIsReconnecting(true));
         });
 
@@ -221,10 +225,12 @@ describe('useMeetingConnection', () => {
             const params = createParams();
             const { result } = renderHook(() => useMeetingConnection(params));
 
+            let status;
             await act(async () => {
-                await result.current.performFullReconnection(RejoinReasonInfo.Other);
+                status = await result.current.performFullReconnection(RejoinReasonInfo.Other);
             });
 
+            expect(status).toBe('joined');
             expect(mockDispatch).toHaveBeenCalledWith(setIsReconnecting(true));
             expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(false));
             expect(mockDispatch).toHaveBeenCalledWith(setMlsRetrying(false));
@@ -241,10 +247,12 @@ describe('useMeetingConnection', () => {
             });
             const { result } = renderHook(() => useMeetingConnection(params));
 
+            let status;
             await act(async () => {
-                await result.current.performFullReconnection(RejoinReasonInfo.Other);
+                status = await result.current.performFullReconnection(RejoinReasonInfo.Other);
             });
 
+            expect(status).toBe('failed');
             expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(true));
             expect(params.accessTokenRef.current).toBeNull();
             expect(result.current.websocketUrlRef.current).toBeNull();

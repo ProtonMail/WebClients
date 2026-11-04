@@ -161,6 +161,24 @@ describe('useRoomEventHandlers', () => {
             expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
         });
 
+        it('keeps the meeting link name on a client-initiated disconnect', () => {
+            const params = createParams({ isReconnectingRef: { current: true } });
+            renderHook(() => useRoomEventHandlers(params));
+
+            act(() => getHandler(RoomEvent.Disconnected)(DisconnectReason.CLIENT_INITIATED));
+
+            expect(params.meetingLinkNameRef.current).toBe('meeting-abc');
+        });
+
+        it('clears the meeting link name on an unexpected disconnect', () => {
+            const params = createParams();
+            renderHook(() => useRoomEventHandlers(params));
+
+            act(() => getHandler(RoomEvent.Disconnected)(DisconnectReason.SERVER_SHUTDOWN));
+
+            expect(params.meetingLinkNameRef.current).toBe('');
+        });
+
         it('does not save the meeting or set the meeting-ended upsell when the meeting is expiring', () => {
             const params = createParams({ isExpiringRef: { current: true } });
             renderHook(() => useRoomEventHandlers(params));

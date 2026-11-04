@@ -6,7 +6,7 @@ import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { Track } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { resetMeetingState } from '@proton/meet/store/resetMeetingState';
 import {
     selectIsReconnecting,
@@ -136,7 +136,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const joinedRoom = useMeetSelector(selectJoinedRoom);
     const isReconnecting = useMeetSelector(selectIsReconnecting);
     const reconnectionFailed = useMeetSelector(selectReconnectionFailed);
-    const store = useMeetStore();
     const mlsRetrying = useMeetSelector(selectMlsRetrying);
     const prejoinParticipantCount = useMeetSelector(selectPrejoinParticipantCount);
 
@@ -557,12 +556,15 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                 <ConnectionLostModal
                     onRejoin={() => {
                         dispatch(setReconnectionFailed(false));
-                        void performFullReconnection(RejoinReasonInfo.Other).then(() =>
+                        void performFullReconnection(RejoinReasonInfo.Other).then((status) => {
+                            if (status !== 'joined' && status !== 'failed') {
+                                return;
+                            }
                             sendMeetActionsEvent(TelemetryMeetActionsEvents.connection_lost_modal_answered, {
                                 action: 'rejoin',
-                                outcome: selectReconnectionFailed(store.getState()) ? 'failed' : 'success',
-                            })
-                        );
+                                outcome: status === 'joined' ? 'success' : 'failed',
+                            });
+                        });
                     }}
                     onLeave={() => {
                         sendMeetActionsEvent(TelemetryMeetActionsEvents.connection_lost_modal_answered, {

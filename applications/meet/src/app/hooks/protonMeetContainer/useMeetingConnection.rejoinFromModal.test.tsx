@@ -1,0 +1,145 @@
+import { useHistory } from 'react-router-dom';
+
+import { useRoomContext } from '@livekit/components-react';
+import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
+import { act, renderHook } from '@testing-library/react';
+import { DisconnectReason, RoomEvent } from 'livekit-client';
+import type { Mock } from 'vitest';
+
+import { useMeetDispatch, useMeetStore } from '@proton/meet/store/hooks';
+import { setJoinedRoom, setReconnectionFailed } from '@proton/meet/store/slices/connectionSlice';
+import { useFlag } from '@proton/unleash/useFlag';
+
+import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
+import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
+import { useMeetingConnection } from './useMeetingConnection';
+import { useRoomEventHandlers } from './useRoomEventHandlers';
+
+vi.mock('@livekit/components-react', () => ({ useRoomContext: vi.fn() }));
+vi.mock('react-router-dom', () => ({ useHistory: vi.fn() }));
+vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn(), useMeetStore: vi.fn() }));
+vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
+vi.mock('../../contexts/MeetCoreClientContext', () => ({ useMeetCoreClient: vi.fn() }));
+vi.mock('../srp/useMeetingAuthentication', () => ({ useMeetingAuthentication: vi.fn() }));
+
+const mockDispatch = vi.fn();
+const mockGetAccessDetails = vi.fn();
+const mockMeetCoreClient = {
+    leaveMeeting: vi.fn().mockResolvedValue(undefined),
+    logUserRejoin: vi.fn().mockResolvedValue(undefined),
+};
+
+const createRoomThatEmitsOnDisconnect = () => {
+    const disconnectedListeners = new Set<(reason?: DisconnectReason) => void>();
+
+    return {
+        localParticipant: { isCameraEnabled: false, isMicrophoneEnabled: false },
+        setE2EEEnabled: vi.fn().mockResolvedValue(undefined),
+        on: vi.fn((event: RoomEvent, listener: (reason?: DisconnectReason) => void) => {
+            if (event === RoomEvent.Disconnected) {
+                disconnectedListeners.add(listener);
+            }
+        }),
+        off: vi.fn((_event: RoomEvent, listener: (reason?: DisconnectReason) => void) => {
+            disconnectedListeners.delete(listener);
+        }),
+        disconnect: vi.fn(async () => {
+            disconnectedListeners.forEach((listener) => listener(DisconnectReason.CLIENT_INITIATED));
+        }),
+    };
+};
+
+const renderConnectionWithRoomEventHandlers = (getParticipants: Mock) => {
+    const meetingLinkNameRef = { current: 'meeting-abc' };
+    const mlsSetupDone = { current: true };
+    const triggerFullReconnectionRef = { current: vi.fn() };
+    const cleanupMlsState = vi.fn();
+    const disallowHealthCheck = vi.fn();
+    const reportMeetError = vi.fn();
+
+    return renderHook(() => {
+        const connection = useMeetingConnection({
+            meetingLinkNameRef,
+            meetingPassword: 'pw',
+            displayName: 'Alice',
+            decryptionKeyRef: { current: null },
+            mlsSetupDone,
+            accessTokenRef: { current: null },
+            keyProvider: { setKeyWithEpoch: vi.fn().mockResolvedValue(undefined) } as any,
+            keyRotationScheduler: { schedule: vi.fn().mockResolvedValue(undefined) } as any,
+            handleMlsSetup: vi.fn().mockResolvedValue({ key: 'group-key', epoch: 1n }),
+            reportMLSRelatedError: vi.fn(),
+            connectWithStunFallbackToTurnRelay: vi.fn().mockResolvedValue({ stunFailed: false, connectionAttempts: 1 }),
+            cleanupMlsState,
+            allowHealthCheck: vi.fn(),
+            disallowHealthCheck,
+            initializeDevices: vi.fn().mockResolvedValue(undefined),
+            getParticipants,
+            getQueryParticipantsCount: vi.fn().mockResolvedValue(undefined),
+            reportMeetError,
+            triggerFullReconnectionRef,
+        });
+
+        useRoomEventHandlers({
+            joinedRoom: true,
+            disallowHealthCheck,
+            cleanupMlsState,
+            stopPiP: vi.fn().mockResolvedValue(undefined),
+            joinedRoomLoggedRef: { current: true },
+            instantMeetingRef: { current: false },
+            mlsSetupDone,
+            isReconnectingRef: connection.isReconnectingRef,
+            isExpiringRef: { current: false },
+            meetingLinkRef: { current: 'https://meet/link' },
+            meetingLinkNameRef,
+            triggerFullReconnectionRef,
+            reportMeetError,
+        });
+
+        return connection;
+    });
+};
+
+describe('rejoining from the Connection lost modal', () => {
+    let room: ReturnType<typeof createRoomThatEmitsOnDisconnect>;
+
+    beforeEach(() => {
+        vi.clearAllMocks();
+        room = createRoomThatEmitsOnDisconnect();
+        (useRoomContext as unknown as Mock).mockReturnValue(room);
+        (useHistory as unknown as Mock).mockReturnValue({ push: vi.fn() });
+        (useMeetDispatch as unknown as Mock).mockReturnValue(mockDispatch);
+        (useMeetStore as unknown as Mock).mockReturnValue({ getState: vi.fn() });
+        (useFlag as unknown as Mock).mockReturnValue(false);
+        (useMeetCoreClient as unknown as Mock).mockReturnValue(mockMeetCoreClient);
+        (useMeetingAuthentication as unknown as Mock).mockReturnValue({ getAccessDetails: mockGetAccessDetails });
+        mockGetAccessDetails.mockResolvedValue({ websocketUrl: 'wss://x', accessToken: 'tok' });
+    });
+
+    it('rejoins after a rejoin that failed once the room had connected', async () => {
+        const getParticipants = vi
+            .fn()
+            .mockRejectedValueOnce(new Error('participants unavailable'))
+            .mockResolvedValue(undefined);
+        const { result } = renderConnectionWithRoomEventHandlers(getParticipants);
+
+        let failedRunStatus;
+        await act(async () => {
+            failedRunStatus = await result.current.performFullReconnection(RejoinReasonInfo.Other);
+        });
+
+        expect(failedRunStatus).toBe('failed');
+        expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(true));
+
+        let modalRunStatus;
+        await act(async () => {
+            modalRunStatus = await result.current.performFullReconnection(RejoinReasonInfo.Other);
+        });
+
+        expect(modalRunStatus).toBe('joined');
+        expect(room.disconnect).toHaveBeenCalledTimes(2);
+        expect(mockGetAccessDetails).toHaveBeenCalledTimes(2);
+        expect(getParticipants).toHaveBeenCalledTimes(2);
+        expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
+    });
+});
