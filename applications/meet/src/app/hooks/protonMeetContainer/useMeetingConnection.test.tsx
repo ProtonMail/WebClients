@@ -1,4 +1,4 @@
-import { useRoomContext } from '@livekit/components-react';
+import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import { MeetCoreErrorEnum, RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { act, renderHook } from '@testing-library/react';
 import { ConnectionError, ConnectionState } from 'livekit-client';
@@ -25,13 +25,14 @@ import {
     useMeetingConnection,
 } from './useMeetingConnection';
 
-vi.mock('@livekit/components-react', () => ({ useRoomContext: vi.fn() }));
+vi.mock('@livekit/components-react', () => ({ useRoomContext: vi.fn(), useLocalParticipant: vi.fn() }));
 vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn() }));
 vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 vi.mock('../../contexts/MeetCoreClientContext', () => ({ useMeetCoreClient: vi.fn() }));
 vi.mock('../srp/useMeetingAuthentication', () => ({ useMeetingAuthentication: vi.fn() }));
 
 const useRoomContextMock = useRoomContext as unknown as Mock;
+const useLocalParticipantMock = useLocalParticipant as unknown as Mock;
 const useMeetDispatchMock = useMeetDispatch as unknown as Mock;
 const useFlagMock = useFlag as unknown as Mock;
 const useMeetCoreClientMock = useMeetCoreClient as unknown as Mock;
@@ -45,8 +46,10 @@ const mockRoom = {
     state: ConnectionState.Disconnected,
     setE2EEEnabled: vi.fn().mockResolvedValue(undefined),
     disconnect: vi.fn().mockResolvedValue(undefined),
-    localParticipant: { isCameraEnabled: true, isMicrophoneEnabled: false },
 };
+
+const setLocalDevices = (isCameraEnabled: boolean, isMicrophoneEnabled: boolean) =>
+    useLocalParticipantMock.mockReturnValue({ isCameraEnabled, isMicrophoneEnabled });
 
 const createDeferred = <T,>() => {
     let resolve!: (value: T) => void;
@@ -104,7 +107,7 @@ describe('useMeetingConnection', () => {
         useMeetingAuthenticationMock.mockReturnValue({ getAccessDetails: mockGetAccessDetails });
         useFlagMock.mockReturnValue(false);
         mockRoom.state = ConnectionState.Disconnected;
-        mockRoom.localParticipant = { isCameraEnabled: true, isMicrophoneEnabled: false };
+        setLocalDevices(true, false);
         mockRoom.setE2EEEnabled.mockResolvedValue(undefined);
         mockRoom.disconnect.mockResolvedValue(undefined);
         mockMeetCoreClient.restart.mockResolvedValue(true);
@@ -607,9 +610,10 @@ describe('useMeetingConnection', () => {
             });
 
             it('restores the camera and microphone as they were before the first attempt', async () => {
-                mockRoom.localParticipant = { isCameraEnabled: true, isMicrophoneEnabled: true };
+                mockRoom.state = ConnectionState.Connected;
+                setLocalDevices(true, true);
                 mockRoom.disconnect.mockImplementation(async () => {
-                    mockRoom.localParticipant = { isCameraEnabled: false, isMicrophoneEnabled: false };
+                    setLocalDevices(false, false);
                 });
                 const params = createParams({
                     connectWithStunFallbackToTurnRelay: vi
@@ -629,6 +633,63 @@ describe('useMeetingConnection', () => {
                 expect(params.initializeDevices).toHaveBeenLastCalledWith(
                     expect.objectContaining({ desiredCameraState: true, desiredMicrophoneState: true })
                 );
+            });
+
+            describe('restoring devices after a connection loss', () => {
+                // LiveKit unpublishes local tracks before it reports Disconnected
+                const loseConnection = (rerender: () => void) => {
+                    setLocalDevices(false, false);
+                    mockRoom.state = ConnectionState.Disconnected;
+                    act(() => rerender());
+                };
+
+                it.each([
+                    { camera: true, microphone: true },
+                    { camera: true, microphone: false },
+                    { camera: false, microphone: true },
+                    { camera: false, microphone: false },
+                ])('restores camera $camera and microphone $microphone after a disconnect', async (before) => {
+                    mockRoom.state = ConnectionState.Connected;
+                    setLocalDevices(before.camera, before.microphone);
+                    const params = createParams();
+                    const { result, rerender } = renderHook(() => useMeetingConnection(params));
+                    loseConnection(rerender);
+
+                    await expect(
+                        result.current.performFullReconnection(RejoinReasonInfo.WebsocketDisconnected)
+                    ).resolves.toBe('joined');
+
+                    expect(params.initializeDevices).toHaveBeenCalledWith(
+                        expect.objectContaining({
+                            desiredCameraState: before.camera,
+                            desiredMicrophoneState: before.microphone,
+                        })
+                    );
+                });
+
+                it('keeps the pre-loss state when a half-connected room is rendered during a failed run', async () => {
+                    mockRoom.state = ConnectionState.Connected;
+                    setLocalDevices(true, true);
+                    const params = createParams();
+                    const { result, rerender } = renderHook(() => useMeetingConnection(params));
+                    loseConnection(rerender);
+                    params.connectWithStunFallbackToTurnRelay.mockImplementationOnce(async () => {
+                        mockRoom.state = ConnectionState.Connected;
+                        act(() => rerender());
+                        throw new Error('not retryable');
+                    });
+
+                    await expect(
+                        result.current.performFullReconnection(RejoinReasonInfo.WebsocketDisconnected)
+                    ).resolves.toBe('failed');
+                    await expect(
+                        result.current.performFullReconnection(RejoinReasonInfo.Other, { manual: true })
+                    ).resolves.toBe('joined');
+
+                    expect(params.initializeDevices).toHaveBeenLastCalledWith(
+                        expect.objectContaining({ desiredCameraState: true, desiredMicrophoneState: true })
+                    );
+                });
             });
 
             it('a rejoin cancelled while waiting to retry makes no further attempt and changes nothing', async () => {

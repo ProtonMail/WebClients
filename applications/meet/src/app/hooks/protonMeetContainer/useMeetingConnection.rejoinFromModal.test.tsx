@@ -15,7 +15,10 @@ import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import { useMeetingConnection } from './useMeetingConnection';
 import { useRoomEventHandlers } from './useRoomEventHandlers';
 
-vi.mock('@livekit/components-react', () => ({ useRoomContext: vi.fn() }));
+vi.mock('@livekit/components-react', () => ({
+    useRoomContext: vi.fn(),
+    useLocalParticipant: () => ({ isCameraEnabled: false, isMicrophoneEnabled: false }),
+}));
 vi.mock('react-router-dom', () => ({ useHistory: vi.fn() }));
 vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn(), useMeetStore: vi.fn() }));
 vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));

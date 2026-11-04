@@ -1,8 +1,9 @@
 import { type MutableRefObject, useEffect, useRef } from 'react';
 
-import { useRoomContext } from '@livekit/components-react';
+import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { logger } from '@protontech/logger';
+import { ConnectionState } from 'livekit-client';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import {
@@ -144,8 +145,22 @@ export const useMeetingConnection = ({
     const rejoinControllerRef = useRef<AbortController | null>(null);
     const websocketUrlRef = useRef<string | null>(null);
     const automaticRunStartTimesMsRef = useRef<readonly number[]>([]);
+    const { isCameraEnabled, isMicrophoneEnabled } = useLocalParticipant();
+    const lastLiveDeviceStateRef = useRef({ camera: false, microphone: false });
 
     useEffect(() => () => rejoinControllerRef.current?.abort(), []);
+
+    // Not recorded while Disconnected: LiveKit unpublishes local tracks before it reports Disconnected.
+    useEffect(() => {
+        const isRoomLive = [
+            ConnectionState.Connected,
+            ConnectionState.Reconnecting,
+            ConnectionState.SignalReconnecting,
+        ].includes(room.state);
+        if (isRoomLive && !isReconnectingRef.current) {
+            lastLiveDeviceStateRef.current = { camera: isCameraEnabled, microphone: isMicrophoneEnabled };
+        }
+    });
 
     // Shared connect sequence used by both the initial join (useJoinFlow) and reconnection.
     const connectWithMls = useStableCallback(
@@ -347,8 +362,8 @@ export const useMeetingConnection = ({
 
         const meetingLinkName = meetingLinkNameRef.current;
 
-        const cameraEnabledBeforeRejoin = room.localParticipant.isCameraEnabled;
-        const microphoneEnabledBeforeRejoin = room.localParticipant.isMicrophoneEnabled;
+        const { camera: cameraEnabledBeforeRejoin, microphone: microphoneEnabledBeforeRejoin } =
+            lastLiveDeviceStateRef.current;
 
         const leaveMlsGroup = () =>
             isHandleStalledLiveKitReconnectEnabled
