@@ -1,4 +1,4 @@
-import { isIos, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isIos, isWebKit } from '@proton/shared/lib/helpers/browser';
 
 // Those values are arbitrary, there is no way for now to check what would be the limit to prevent the browser from crashing.
 // But they should be safe.
@@ -10,4 +10,4 @@ export const MAX_MEDIA_SIZE_FOR_THUMBNAIL_IOS = 100 * 1024 * 1024;
 export const THUMBNAIL_GENERATION_TIMEOUT_MS = 10_000;
 
 export const isIosDevice: boolean = isIos();
-export const isSafariDevice: boolean = isSafari();
+export const isWebKitDevice: boolean = isWebKit();
