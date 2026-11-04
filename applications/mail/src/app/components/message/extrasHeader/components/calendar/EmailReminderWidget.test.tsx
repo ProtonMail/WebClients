@@ -12,14 +12,6 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useGetCalendarEventRaw } from '@proton/calendar/calendarEvent/useGetCalendarEventRaw';
-import {
-    addressBuilder,
-    calendarBuilder,
-    calendarEventBuilder,
-    calendarUserSettingsBuilder,
-    messageBuilder,
-    veventBuilder,
-} from '@proton/calendar/testing/builders';
 import { getHandlers } from '@proton/calendar/testing/handlers';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
@@ -36,6 +28,14 @@ import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces/UserSettings';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { Nullable } from '@proton/shared/lib/interfaces/utils';
+import {
+    addressBuilder,
+    calendarBuilder,
+    calendarEventBuilder,
+    calendarUserSettingsBuilder,
+    messageBuilder,
+    veventBuilder,
+} from '@proton/shared/testing/calendarBuilders';
 import { mockApiWithServer } from '@proton/test-api/mockApiWithServer';
 import { useFlag } from '@proton/unleash/useFlag';
 

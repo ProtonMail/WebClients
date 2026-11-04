@@ -2,9 +2,9 @@ import { render } from '@testing-library/react';
 
 import { SEPARATOR_PROTON_EVENTS } from '@proton/calendar-video-conferencing/videoConferencing/constants';
 import { useVideoConferencingWidget } from '@proton/calendar-video-conferencing/videoConferencing/widget';
-import { calendarBuilder } from '@proton/calendar/testing/builders';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { EventModelReadView } from '@proton/shared/lib/interfaces/calendar/Event';
+import { calendarBuilder } from '@proton/shared/testing/calendarBuilders';
 
 import PopoverEventContent from './PopoverEventContent';
 

@@ -5,7 +5,6 @@ import { getUnixTime } from 'date-fns';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
-import { generateOwnedPersonalCalendars, generateSubscribedCalendars } from '@proton/calendar/testing/builders';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { mockUseAuthentication } from '@proton/components/testing/mockUseAuthentication';
@@ -13,6 +12,7 @@ import { CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CALENDARS_PAID } from '@proton/share
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar/Subscription';
+import { generateOwnedPersonalCalendars, generateSubscribedCalendars } from '@proton/shared/testing/calendarBuilders';
 import noop from '@proton/utils/noop';
 
 import { getStoreWrapper } from '../../tests/Store';

@@ -37,7 +37,6 @@
         "./holidaysDirectory/hooks": "./holidaysDirectory/hooks.ts",
         "./holidaysDirectory/listener": "./holidaysDirectory/listener.ts",
         "./telemetry/events": "./telemetry/events.ts",
-        "./testing/builders": "./testing/builders.ts",
         "./testing/handlers": "./testing/handlers.ts",
         "./utils": "./utils.ts"
     },
@@ -65,7 +64,6 @@
         "react": "catalog:"
     },
     "devDependencies": {
-        "@jackfranklin/test-data-bot": "^2.1.0",
         "@proton/app-context": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",

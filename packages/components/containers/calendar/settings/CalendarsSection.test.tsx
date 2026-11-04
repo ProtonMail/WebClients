@@ -3,8 +3,8 @@ import { Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
-import { generateSimpleCalendar } from '@proton/calendar/testing/builders';
 import createCache from '@proton/shared/lib/helpers/cache';
+import { generateSimpleCalendar } from '@proton/shared/testing/calendarBuilders';
 
 import { mockUseAuthentication } from '../../../testing/mockUseAuthentication';
 import { CacheProvider } from '../../cache/Provider';

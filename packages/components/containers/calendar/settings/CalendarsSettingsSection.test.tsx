@@ -5,13 +5,6 @@ import { createMemoryHistory } from 'history';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
-import {
-    addressBuilder,
-    generateHolidaysCalendars,
-    generateOwnedPersonalCalendars,
-    generateSharedCalendars,
-    generateSubscribedCalendars,
-} from '@proton/calendar/testing/builders';
 import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
@@ -29,6 +22,13 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 import type { SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar/Subscription';
 import type { RequireOnly } from '@proton/shared/lib/interfaces/utils';
+import {
+    addressBuilder,
+    generateHolidaysCalendars,
+    generateOwnedPersonalCalendars,
+    generateSharedCalendars,
+    generateSubscribedCalendars,
+} from '@proton/shared/testing/calendarBuilders';
 
 import { mockUseAuthentication } from '../../../testing/mockUseAuthentication';
 import type { CalendarsSettingsSectionProps } from './CalendarsSettingsSection';
