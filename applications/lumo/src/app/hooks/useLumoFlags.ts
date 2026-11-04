@@ -23,6 +23,9 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - memory: Enable the memory feature (saved memories used to personalize general chats)
  * - visualizationInstructions: Enable chart and KPI card formatting instructions in the system prompt
  * - customAgents: Enable the custom agents option in the composer tools dropdown
+ * - customize: Enable the Customize panel (/customize sidebar nav, skills and connectors pages); also needs customAgents
+ * - skills: customAgents && customize. Skills replace Custom Lumos (composer, `/` menu, sync, prompts); when off,
+ *   the composer falls back to the Custom Lumos picker
  * - artifactsView: Enable the create-artifact composer tool and artifact panel interactions
  * - askUserQuestionsTool: Enable the ask-user-questions client tool
  * - retrievalTools: Let the model search files and chats with lookup tools instead of retrieving project files before sending
@@ -59,6 +62,7 @@ export const useLumoFlags = () => {
     const lumoNativeAuthAndroid = useFlag('LumoNativeAuthAndroid');
     const lumoNativeAuthIOS = useFlag('LumoNativeAuthIOS');
     const customAgents = useFlag('LumoCustomAgents');
+    const customize = useFlag('LumoCustomize');
     const artifactsView = useFlag('LumoArtifactsView');
     const askUserQuestionsTool = useFlag('LumoAskUserQuestionsTool');
     const retrievalTools = useFlag('LumoRetrievalTools');
@@ -73,11 +77,14 @@ export const useLumoFlags = () => {
     const dictationV2 = useFlag('LumoDictationV2');
     const schedules = useFlag('LumoSchedules');
     const createScheduleTool = useFlag('LumoCreateScheduleTool');
+    const skills = customAgents && customize;
 
     return {
         memory,
         visualizationInstructions,
         customAgents,
+        customize,
+        skills,
         artifactsView,
         askUserQuestionsTool,
         retrievalTools,

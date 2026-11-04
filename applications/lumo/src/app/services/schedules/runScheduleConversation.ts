@@ -14,7 +14,7 @@ import { restrictScheduleTools } from './restrictedTools';
 import type { ScheduleContext, ScheduleExecutionResult, ScheduleExecutionTarget, ScheduleTask } from './types';
 
 export type ScheduleGenerationOptions = {
-    customAgents?: boolean;
+    skills?: boolean;
     externalTools: boolean;
     imageTools: boolean;
     artifactsView: boolean;
@@ -82,7 +82,7 @@ export function createScheduleConversationRunner({
         const releaseBusy = busy.register();
         let outcome: ScheduleExecutionResult['outcome'] = 'interrupted';
         try {
-            if (options.customAgents && storage.store.getState().skills.status !== 'ready') {
+            if (options.skills && storage.store.getState().skills.status !== 'ready') {
                 const result = await storage.store.dispatch(loadSkills());
                 guard();
                 // Skills enhance the prompt; a storage failure shall not prevent the task from running.
@@ -119,7 +119,7 @@ export function createScheduleConversationRunner({
                     },
                     settingsContext: {
                         personalization: settings.personalization,
-                        isSkillsFeatureEnabled: options.customAgents,
+                        isSkillsFeatureEnabled: options.skills,
                         isMemoryFeatureEnabled: options.memory,
                         isArtifactsViewFeatureEnabled: options.artifactsView,
                         isArtifactSlidesFeatureEnabled: options.artifactSlides,

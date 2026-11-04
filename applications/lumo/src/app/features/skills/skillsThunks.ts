@@ -7,7 +7,12 @@ import type { LumoThunkArguments } from '../../redux/thunk';
 import type { MasterKeyContext } from '../../serialization';
 import { buildMasterKeyContext } from '../../util/masterKeys';
 import { type DesktopConnectorState, formatSkillConnectorMap, matchSkillConnectors } from './connectorMatching';
-import { customAgentToSkillDraft, getAgentsToMigrate } from './customAgentMigration';
+import {
+    customAgentEditsToSkillDraft,
+    customAgentToSkillDraft,
+    getAgentsToMigrate,
+    getSkillsToResync,
+} from './customAgentMigration';
 import { BUNDLE_INDEX_VERSION, deriveBundleInfo, resolvePluginInfo } from './skillBundle';
 import { decodeText, isSkillScriptFile, isTextSkillFile } from './skillFiles';
 import type { SkillCommand } from './skillInvocation';
@@ -409,19 +414,27 @@ export const readSkillFile = createAsyncThunk<
     };
 });
 
-/** Turns each Custom Lumo without a skill into one. Safe to call repeatedly. */
+/**
+ * Turns each Custom Lumo without a skill into one, and carries over Custom Lumo edits made after
+ * their skill was saved. Safe to call repeatedly.
+ */
 export const migrateCustomAgentsToSkills = createAsyncThunk<number, void, ThunkConfig>(
     'skills/migrateCustomAgents',
-    async (_, { dispatch, getState }) => {
+    async (_, { dispatch, extra, getState }) => {
         const state = getState();
-        const agents = getAgentsToMigrate(
-            state.lumoUserSettings.customAgents ?? [],
-            new Set(state.skills.migratedAgentIds)
-        );
+        const customAgents = state.lumoUserSettings.customAgents ?? [];
+        const agents = getAgentsToMigrate(customAgents, new Set(state.skills.migratedAgentIds));
         for (const agent of agents) {
             await dispatch(saveSkill({ draft: customAgentToSkillDraft(agent) })).unwrap();
         }
-        return agents.length;
+        const resyncs = getSkillsToResync(customAgents, Object.values(state.skills.skills));
+        for (const { skill, agent } of resyncs) {
+            const files = await decryptSkillFiles(extra, skill);
+            await dispatch(
+                saveSkill({ id: skill.id, draft: customAgentEditsToSkillDraft(skill, agent, files) })
+            ).unwrap();
+        }
+        return agents.length + resyncs.length;
     },
     {
         condition: (_, { getState }) => {

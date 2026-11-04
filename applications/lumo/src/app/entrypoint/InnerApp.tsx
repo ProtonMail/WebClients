@@ -42,7 +42,14 @@ const SkillDetailView = lazy(() =>
 
 export function InnerApp() {
     const { url } = useRouteMatch(); // either "/guest" or "/u/:sessionId"
-    const { apiKeyManagement, imageTools, artifactsView, aiPaperTrailRoute, schedules, customAgents } = useLumoFlags();
+    const {
+        apiKeyManagement,
+        imageTools,
+        artifactsView,
+        aiPaperTrailRoute,
+        schedules,
+        skills: showCustomize,
+    } = useLumoFlags();
     useSkillsSync();
 
     return (
@@ -87,11 +94,11 @@ export function InnerApp() {
                                     {schedules && isDesktopEnvironment() && (
                                         <Route exact path="/schedules/:scheduleId" component={ScheduleHomeView} />
                                     )}
-                                    {customAgents && <Route exact path="/customize" component={CustomizeView} />}
-                                    {customAgents && (
+                                    {showCustomize && <Route exact path="/customize" component={CustomizeView} />}
+                                    {showCustomize && (
                                         <Route exact path="/customize/upload" component={UploadSkillView} />
                                     )}
-                                    {customAgents && (
+                                    {showCustomize && (
                                         <Route exact path="/customize/skills/:skillId" component={SkillDetailView} />
                                     )}
 

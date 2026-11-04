@@ -10,6 +10,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
+import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import type { SkillCommand } from '../../skills/skillInvocation';
 import { getSkillSelectionId } from '../../skills/skillSelection';
 import { SkillPickerOptions } from './SkillPickerOptions';
@@ -30,6 +31,7 @@ interface SkillListReadyViewProps {
 
 export const SkillListReadyView = ({ commands, value, onChange, buttonRef }: SkillListReadyViewProps) => {
     const history = useHistory();
+    const { customize } = useLumoFlags();
     const pickerId = useId();
     const [query, setQuery] = useState('');
     // Keep selected commands out of the picker; search names, descriptions and bundle names.
@@ -104,19 +106,21 @@ export const SkillListReadyView = ({ commands, value, onChange, buttonRef }: Ski
                         {commands.length ? allAddedLabel : noSkillsLabel}
                     </div>
                 )}
-                <DropdownMenu className="shrink-0">
-                    <hr className="mx-3 mb-1" />
-                    <DropdownMenuButton
-                        className="flex flex-nowrap items-center gap-2 text-left"
-                        onClick={() => history.push('/customize')}
-                    >
-                        <LumoIcon aria-hidden className="shrink-0" name="Settings" size={16} />
-                        <span>{
-                            // translator: Footer action opening Customize to create, enable or manage skills.
-                            c('collider_2025:Action').t`Manage skills`
-                        }</span>
-                    </DropdownMenuButton>
-                </DropdownMenu>
+                {customize && (
+                    <DropdownMenu className="shrink-0">
+                        <hr className="mx-3 mb-1" />
+                        <DropdownMenuButton
+                            className="flex flex-nowrap items-center gap-2 text-left"
+                            onClick={() => history.push('/customize')}
+                        >
+                            <LumoIcon aria-hidden className="shrink-0" name="Settings" size={16} />
+                            <span>{
+                                // translator: Footer action opening Customize to create, enable or manage skills.
+                                c('collider_2025:Action').t`Manage skills`
+                            }</span>
+                        </DropdownMenuButton>
+                    </DropdownMenu>
+                )}
             </div>
         </SimpleDropdown>
     );

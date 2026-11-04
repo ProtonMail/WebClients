@@ -1,5 +1,5 @@
 import type { CustomAgent } from '../../redux/slices/lumoUserSettings';
-import type { SkillDraft } from './types';
+import type { Skill, SkillDraft, SkillFileDraft } from './types';
 
 /**
  * Custom Lumos become skills one-to-one: the persona instructions are the SKILL.md body.
@@ -20,3 +20,33 @@ export const customAgentToSkillDraft = (agent: CustomAgent): SkillDraft => ({
 /** Agents with no skill (live or deleted) carrying their id yet. */
 export const getAgentsToMigrate = (agents: CustomAgent[], migratedAgentIds: Set<string>): CustomAgent[] =>
     agents.filter((agent) => agent.source === 'personal' && !migratedAgentIds.has(agent.id));
+
+/**
+ * Migrated skills whose Custom Lumo was edited after the skill, which happens when skills are turned
+ * off and the Custom Lumos picker is back. The newer edit wins.
+ */
+export const getSkillsToResync = (agents: CustomAgent[], skills: Skill[]): { skill: Skill; agent: CustomAgent }[] => {
+    const agentsById = new Map(
+        agents.filter((agent) => agent.source === 'personal').map((agent) => [agent.id, agent] as const)
+    );
+    return skills.flatMap((skill) => {
+        const agent = skill.legacyAgentId ? agentsById.get(skill.legacyAgentId) : undefined;
+        return agent && agent.updatedAt > Date.parse(skill.updatedAt) ? [{ skill, agent }] : [];
+    });
+};
+
+/** Takes the Custom Lumo's persona and keeps what only the skill has: its files, metadata and on/off state. */
+export const customAgentEditsToSkillDraft = (
+    skill: Skill,
+    agent: CustomAgent,
+    files: SkillFileDraft[]
+): SkillDraft => ({
+    name: agent.name,
+    description: agent.description ?? '',
+    instructions: agent.instructions ?? '',
+    icon: agent.icon,
+    source: skill.source,
+    metadata: skill.metadata,
+    conversationStarters: agent.conversationStarters,
+    files,
+});

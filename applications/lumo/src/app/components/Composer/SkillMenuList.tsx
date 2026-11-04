@@ -7,6 +7,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 
 import { getSkillCommands, groupSkillCommands } from '../../features/skills/skillInvocation';
 import { useSkills } from '../../features/skills/useSkills';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoDispatch } from '../../redux/hooks';
 import { insertSkillCommand } from '../../redux/slices/composerActions';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
@@ -20,6 +21,7 @@ interface SkillMenuListProps {
 export const SkillMenuList = ({ onBack, onClose }: SkillMenuListProps) => {
     const history = useHistory();
     const dispatch = useLumoDispatch();
+    const { customize } = useLumoFlags();
     const { status, skills } = useSkills();
     const commands = useMemo(() => groupSkillCommands(getSkillCommands(skills)), [skills]);
 
@@ -63,19 +65,23 @@ export const SkillMenuList = ({ onBack, onClose }: SkillMenuListProps) => {
                 })}
             </div>
 
-            <hr className="my-1 w-custom mx-auto" style={{ '--w-custom': '90%' }} />
-            <DropdownMenuButton className="justify-start" onClick={() => goTo('/customize')}>
-                <div className="flex items-center gap-3 w-full">
-                    <LumoIcon name="Settings" size={16} />
-                    <span className="text-sm">{c('collider_2025: Action').t`Manage skills`}</span>
-                </div>
-            </DropdownMenuButton>
-            <DropdownMenuButton className="justify-start" onClick={() => goTo('/customize/upload')}>
-                <div className="flex items-center gap-3 w-full">
-                    <LumoIcon name="Upload" size={16} />
-                    <span className="text-sm">{c('collider_2025: Action').t`Upload a skill`}</span>
-                </div>
-            </DropdownMenuButton>
+            {customize && (
+                <>
+                    <hr className="my-1 w-custom mx-auto" style={{ '--w-custom': '90%' }} />
+                    <DropdownMenuButton className="justify-start" onClick={() => goTo('/customize')}>
+                        <div className="flex items-center gap-3 w-full">
+                            <LumoIcon name="Settings" size={16} />
+                            <span className="text-sm">{c('collider_2025: Action').t`Manage skills`}</span>
+                        </div>
+                    </DropdownMenuButton>
+                    <DropdownMenuButton className="justify-start" onClick={() => goTo('/customize/upload')}>
+                        <div className="flex items-center gap-3 w-full">
+                            <LumoIcon name="Upload" size={16} />
+                            <span className="text-sm">{c('collider_2025: Action').t`Upload a skill`}</span>
+                        </div>
+                    </DropdownMenuButton>
+                </>
+            )}
         </div>
     );
 };

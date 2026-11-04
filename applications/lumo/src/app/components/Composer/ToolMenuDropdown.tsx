@@ -6,13 +6,15 @@ import { c } from 'ttag';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
-import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useArtifactCreation } from '../../providers/ArtifactCreationProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
+import { useLumoDispatch } from '../../redux/hooks';
+import { openAgentPicker } from '../../redux/slices/composerActions';
 import { isLimitExhausted, useRemainingLimits } from '../../services/usageLimitsStore';
 import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
 import useLumoPlusUpsellButtonConfig from '../../upsells/useLumoPlusUpsellButtonConfig';
@@ -48,8 +50,10 @@ export const ToolMenuDropdown = ({
         imageTools: isImageToolsFlagEnabled,
         externalTools: isToolsFlagEnabled,
         customAgents: isCustomAgentsFlagEnabled,
+        skills: isSkillsFlagEnabled,
         artifactsView: isArtifactsViewFlagEnabled,
     } = useLumoFlags();
+    const dispatch = useLumoDispatch();
     const { hasLumoPlus } = useLumoPlan();
     const remainingLimits = useRemainingLimits();
     const imageLimitExhausted = isLimitExhausted(remainingLimits?.images);
@@ -120,8 +124,19 @@ export const ToolMenuDropdown = ({
             canShow: isToolsFlagEnabled && isImageToolsFlagEnabled,
             isDisabled: imageLimitExhausted,
         },
+        {
+            icon: <LumoIcon name="Bot" size={16} />,
+            getLabel: () => c('collider_2025: Action').t`Custom ${LUMO_SHORT_APP_NAME}s`,
+            getDescription: isGuest ? () => c('collider_2025:Placeholder').t`Sign in required` : undefined,
+            onClick: () => dispatch(openAgentPicker()),
+            onClose: onClose,
+            canShow:
+                isToolsFlagEnabled && isCustomAgentsFlagEnabled && !isSkillsFlagEnabled && (canUseAgents || isGuest),
+            isDisabled: isGuest,
+            isSignInRequired: isGuest,
+        },
     ];
-    const showSkills = isToolsFlagEnabled && isCustomAgentsFlagEnabled && (canUseAgents || isGuest);
+    const showSkills = isToolsFlagEnabled && isSkillsFlagEnabled && (canUseAgents || isGuest);
     const visibleToolMenuItems = toolMenuItems.filter((item) => item.canShow);
     const showImageUpsellFooter =
         imageLimitExhausted && !hasLumoPlus && Boolean(imageUpsellConfig?.onUpgrade || imageUpsellConfig?.path);
@@ -144,7 +159,10 @@ export const ToolMenuDropdown = ({
                         <div
                             key={index}
                             className={clsx(
-                                item.isDisabled && 'tool-menu-item--disabled pointer-events-none opacity-55'
+                                item.isSignInRequired && 'tool-menu-item--sign-in-required',
+                                item.isDisabled &&
+                                    !item.isSignInRequired &&
+                                    'tool-menu-item--disabled pointer-events-none opacity-55'
                             )}
                         >
                             <MenuItem {...item} />

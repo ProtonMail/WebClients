@@ -41,8 +41,8 @@ export const useSkillCommandAutocomplete = (
     setValue: (value: string) => void
 ) => {
     const isGuest = useIsGuest();
-    const { customAgents } = useLumoFlags();
-    const enabled = customAgents && !isGuest;
+    const { skills: skillsFlag } = useLumoFlags();
+    const enabled = skillsFlag && !isGuest;
     const { skills } = useSkills({ enabled });
     const [state, setState] = useState<SkillCommandState>(INITIAL_STATE);
 
