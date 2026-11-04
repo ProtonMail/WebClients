@@ -916,6 +916,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "Actions message": {
@@ -1018,6 +1021,9 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentseter"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisasjoner med Managed Service Provider-tillegget kan opprette og administrere datterselskaper."
       ]
     },
     "Alert": {
@@ -6157,6 +6163,9 @@
       ],
       "What’s this?": [
         "Hva er det der?"
+      ],
+      "Pay it": [
+        "Betal"
       ]
     },
     "List title": {
@@ -7540,6 +7549,9 @@
       ],
       "Your subscription renews soon": [
         "Abonnementet ditt fornyes snart"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Siste sjanse til å få din første måned med ${ plan } til denne prisen."
       ]
     },
     "Offer fearue": {
@@ -7624,6 +7636,12 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Legg til en betalingsmåte** for å fortsette å bruke alle funksjonene etter at prøveperioden er over."
+      ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
       ]
     },
     "Option": {
@@ -7793,6 +7811,21 @@
       ],
       "This plan doesn’t support the members on your account.": [
         "Dette abonnementet støtter ikke medlemmene på kontoen din."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Kun én ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan kjøpes."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Den valgte planen tilbyr ikke nok domener for kontoen din."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Den valgte planen tilbyr ikke nok lagringsplass for kontoen din."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Prøveplaner støtter ikke Scribe-seter."
       ]
     },
     "PGP key encryption warning": {
@@ -9783,6 +9816,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan ikke endre dine egne roller. Be en annen administrator om å endre dem."
       ]
     },
     "Validation": {
