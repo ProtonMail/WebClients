@@ -23,6 +23,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
 import { SideBar } from '../../atoms/SideBar/SideBar';
+import { SideBarTitle } from '../../atoms/SideBar/SideBarTitle';
 import { SideBarSection } from '../../atoms/SideBarSection/SideBarSection';
 import { useBackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
 import { useIsBackgroundEffectsSupported } from '../../contexts/BackgroundEffects/useIsBackgroundEffectsSupported';
@@ -89,7 +90,7 @@ export const Settings = () => {
             paddingClassName="px-4 py-4"
             header={
                 <div className="flex items-center">
-                    <h2 className="text-xl text-semibold">{c('Title').t`Settings`}</h2>
+                    <SideBarTitle className="text-xl text-semibold">{c('Title').t`Settings`}</SideBarTitle>
                 </div>
             }
         >

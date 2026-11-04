@@ -7,6 +7,7 @@ import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMaxParticipants } from '@proton/meet/store/slices/currentMeeting';
 import { selectIsWaitingRoomHost } from '@proton/meet/store/slices/waitingRoomSlice';
 
+import { SideBarTitle } from '../../atoms/SideBar/SideBarTitle';
 import { SideBarSearch } from '../SideBarSearch/SideBarSearch';
 
 type Props = {
@@ -41,7 +42,8 @@ export const ParticipantListHeader = ({
             ) : (
                 <div className="text-semibold flex items-center flex-nowrap">
                     <div className="flex items-baseline gap-1 flex-nowrap">
-                        <h2 className="text-semibold text-3xl text-ellipsis m-0">{c('Title').t`Participants`}</h2>
+                        <SideBarTitle className="text-semibold text-3xl text-ellipsis m-0">{c('Title')
+                            .t`Participants`}</SideBarTitle>
                         {!isWaitingRoomHost && (
                             <span className="text-semibold text-sm color-hint text-tabular-nums">
                                 {maxParticipants

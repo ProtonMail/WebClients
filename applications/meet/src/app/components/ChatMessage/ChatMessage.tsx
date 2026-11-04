@@ -345,7 +345,7 @@ export const ChatMessage = ({
                 (isThread ? c('Placeholder').t`Reply...` : c('Placeholder').t`Type an encrypted message...`)
             }
             ariaLabel={isThread ? c('Label').t`Reply` : c('Label').t`Message`}
-            className="my-auto flex-1 min-w-0"
+            className="chat-message-composer my-auto flex-1 min-w-0"
             minHeight={minHeight}
             maxHeight={maxHeight}
             autoFocus={resolvedAutoFocus}

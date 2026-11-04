@@ -1,8 +1,11 @@
+import type { KeyboardEvent } from 'react';
 import { useEffect, useRef } from 'react';
 
 import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import clsx from '@proton/utils/clsx';
 
+import { MEETING_CONTROLS_TOOLBAR_ID } from '../../constants';
+import { isImeComposing } from '../../utils/isImeComposing';
 import { CloseButton } from '../CloseButton/CloseButton';
 
 import './SideBar.scss';
@@ -31,14 +34,36 @@ export const SideBar = ({
     const asideRef = useRef<HTMLDivElement>(null);
     const headerRef = useRef<HTMLDivElement>(null);
 
-    // Trap Tab focus within the open side-bar, focus it on open, and restore
-    // focus to the opener on close. `disableRestoreByPointer` is off so focus
-    // returns to the opener even when closed via a pointer click.
+    // Restore focus to the opener on close, even when closed via a pointer click.
     const focusTrapProps = useFocusTrap({
         rootRef: asideRef,
-        enableInitialFocus: false,
         disableRestoreByPointer: false,
     });
+
+    // Declared after the trap so this cleanup runs after its restore: when the opener is gone,
+    // focus would otherwise be left on the body.
+    useEffect(() => {
+        return () => {
+            if (document.activeElement && document.activeElement !== document.body) {
+                return;
+            }
+            document.getElementById(MEETING_CONTROLS_TOOLBAR_ID)?.querySelector<HTMLElement>('[tabindex="0"]')?.focus();
+        };
+    }, []);
+
+    // React events bubble through portals: Escape in content the panel renders into a portal must not close it.
+    const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+        if (
+            event.key !== 'Escape' ||
+            isImeComposing(event) ||
+            event.defaultPrevented ||
+            !event.currentTarget.contains(event.target as Node)
+        ) {
+            return;
+        }
+        event.preventDefault();
+        onClose();
+    };
 
     // Publish the offset from the scroll region's top to the header's bottom so content (e.g. sticky
     // chat thread roots) can align flush beneath the absolute header.
@@ -68,6 +93,8 @@ export const SideBar = ({
     }, []);
 
     return (
+        // Escape bubbling from any control in the panel closes it; the aside itself is not a control.
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
         <aside
             ref={asideRef}
             aria-label={ariaLabel}
@@ -76,6 +103,7 @@ export const SideBar = ({
                 paddingClassName
             )}
             {...focusTrapProps}
+            onKeyDown={handleKeyDown}
         >
             <div
                 ref={headerRef}

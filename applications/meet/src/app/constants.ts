@@ -37,3 +37,5 @@ export const CAPTIONS_AGENT_RETRY_DELAYS_MS = [
 export const CAPTIONS_DISABLED_METADATA_KEY = 'captions_disabled';
 
 export const CHAT_MESSAGE_MAX_LENGTH = 2048;
+
+export const MEETING_CONTROLS_TOOLBAR_ID = 'meeting-controls-toolbar';

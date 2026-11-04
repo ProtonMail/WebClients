@@ -3,8 +3,6 @@
 	box-shadow: 0 0.5rem 2.5rem 0 #00000029;
 	background-color: var(--background-card);
 
-	// The container only receives programmatic focus on open to move keyboard
-	// and screen reader users into the side-bar, so it should not show a ring.
 	&:focus {
 		outline: none;
 	}
@@ -12,6 +10,11 @@
 	.close-button {
 		z-index: +3;
 	}
+}
+
+.side-bar-title:focus-visible {
+	outline: 2px solid var(--focus-outline, var(--interaction-norm));
+	outline-offset: 2px;
 }
 
 .side-bar-header-wrapper {

@@ -1,8 +1,9 @@
 import { Provider } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
-import { act, cleanup, render, screen, within } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { UserEvent } from '@testing-library/user-event';
 import type { LexicalEditor } from 'lexical';
 import { $getRoot, $getSelection, $isRangeSelection, UNDO_COMMAND } from 'lexical';
 import { afterEach, describe, expect, it, vi } from 'vitest';
@@ -411,6 +412,94 @@ describe('ChatMessage', () => {
         await type(atThreshold);
 
         expect(screen.getByText(`${atThreshold.length}/${CHAT_MESSAGE_MAX_LENGTH} characters`)).toBeInTheDocument();
+    });
+
+    describe('focus ring', () => {
+        const hasFocusRing = () =>
+            getComposer().closest('.chat-message-composer')?.classList.contains('mention-input-keyboard-focus');
+
+        // Stands in for a dialog's button, such as "Rejoin" in the connection lost modal, whose focus trap
+        // restores focus to the composer.
+        const getOtherButton = () => screen.getByRole('button', { name: 'Rejoin' });
+
+        const withWindowFocus = (hasFocus: boolean, action: () => void) => {
+            const hasFocusSpy = vi.spyOn(document, 'hasFocus').mockReturnValue(hasFocus);
+            try {
+                action();
+            } finally {
+                hasFocusSpy.mockRestore();
+            }
+        };
+
+        // The browser blurs the focused element when the window loses focus and focuses it again when the
+        // window comes back, while it stays document.activeElement.
+        const steps = {
+            'pointer down on the page': (user: UserEvent) =>
+                user.pointer({ keys: '[MouseLeft]', target: document.body }),
+            'key press': (user: UserEvent) => user.keyboard('a'),
+            'Tab into the composer': async (user: UserEvent) => {
+                await user.tab();
+                expect(getComposer()).toHaveFocus();
+            },
+            'click into the composer': (user: UserEvent) => user.click(getComposer()),
+            'focus the composer in code': () => act(() => getComposer().focus()),
+            'real blur': () => withWindowFocus(true, () => act(() => getOtherButton().focus())),
+            'window blur': () => withWindowFocus(false, () => fireEvent.blur(getComposer())),
+            'window refocus': () => withWindowFocus(true, () => fireEvent.focus(getComposer())),
+            'focus moved away while the window is inactive': () =>
+                withWindowFocus(false, () => act(() => getOtherButton().focus())),
+        } satisfies Record<string, (user: UserEvent) => unknown>;
+
+        type Step = keyof typeof steps;
+
+        const rows: { events: Step[]; hasRing: boolean }[] = [
+            { events: ['key press', 'focus the composer in code'], hasRing: true },
+            { events: ['pointer down on the page', 'focus the composer in code'], hasRing: false },
+            { events: ['pointer down on the page', 'focus the composer in code', 'key press'], hasRing: false },
+            { events: ['Tab into the composer'], hasRing: true },
+            { events: ['Tab into the composer', 'real blur', 'click into the composer'], hasRing: false },
+            {
+                events: ['click into the composer', 'key press', 'window blur', 'window refocus'],
+                hasRing: false,
+            },
+            { events: ['Tab into the composer', 'window blur', 'window refocus'], hasRing: true },
+            {
+                events: [
+                    'click into the composer',
+                    'key press',
+                    'window blur',
+                    'focus moved away while the window is inactive',
+                    'key press',
+                    'focus the composer in code',
+                ],
+                hasRing: true,
+            },
+            {
+                events: [
+                    'Tab into the composer',
+                    'window blur',
+                    'focus moved away while the window is inactive',
+                    'pointer down on the page',
+                    'focus the composer in code',
+                ],
+                hasRing: false,
+            },
+        ];
+
+        it.each(rows.map((row) => ({ ...row, sequence: row.events.join(', ') })))(
+            'after $sequence, the ring shows: $hasRing',
+            async ({ events, hasRing }) => {
+                renderComposer();
+                render(<button type="button">Rejoin</button>);
+                const user = userEvent.setup();
+
+                for (const event of events) {
+                    await steps[event](user);
+                }
+
+                expect(hasFocusRing()).toBe(hasRing);
+            }
+        );
     });
 
     describe('mentions', () => {
