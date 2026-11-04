@@ -5,10 +5,6 @@ export const canShowWebComposer = (nativeComposerEnabled: boolean): boolean => {
     }
 
     const userAgent = navigator.userAgent;
-    if (userAgent.includes('iPadOS')) {
-        return true;
-    }
-
     // Flag ON: hide the web composer if the native app meets the version criteria
     const appInfo = getNativeAppInfo();
     if (appInfo) {
@@ -16,7 +12,8 @@ export const canShowWebComposer = (nativeComposerEnabled: boolean): boolean => {
         const { version, platform } = appInfo;
 
         if (platform === 'ios') {
-            targetVersion = '1.4.0';
+            // Older iPad binaries intentionally use the web composer.
+            targetVersion = userAgent.includes('iPadOS') ? '2.2.0' : '1.4.0';
         } else if (platform === 'android') {
             targetVersion = '1.4.0';
         }
@@ -132,7 +129,7 @@ export const canUsePreviewModel = (): boolean => {
  * around the sidebar. Older clients would render a full-width composer over an expanded
  * sidebar, so they keep the previous behavior (composer only when the sidebar is collapsed).
  *
- * iOS has no target version yet — the gate stays closed there until native support ships.
+ * iOS 2.2.0 adds native sidebar layout on iPhone, iPad, and Duo.
  */
 export const canUseNativeSidebarLayout = (): boolean => {
     const appInfo = getNativeAppInfo();
@@ -140,7 +137,7 @@ export const canUseNativeSidebarLayout = (): boolean => {
         return false;
     }
 
-    const targetVersion = appInfo.platform === 'android' ? '2.0.4' : null;
+    const targetVersion = appInfo.platform === 'android' ? '2.0.4' : appInfo.platform === 'ios' ? '2.2.0' : null;
 
     return targetVersion !== null && !isNativeVersionOlderThan(appInfo.version, targetVersion);
 };

@@ -29,8 +29,8 @@ describe('canShowWebComposer', () => {
         expect(canShowWebComposer(false)).toBe(true);
     });
 
-    // The native composer is not laid out for iPad yet, so the web composer stays on iPadOS.
-    it('is true on iPadOS with the flag on, whatever the version', () => {
+    // Older iPad binaries still require the web composer.
+    it('is true on iPadOS below 2.2.0 with the flag on', () => {
         setUserAgent(ipadUA('2.1.0'));
         expect(canShowWebComposer(true)).toBe(true);
     });
@@ -53,7 +53,7 @@ describe('canShowWebComposer', () => {
         expect(canShowWebComposer(true)).toBe(false);
     });
 
-    it('is true on iPadOS with the new (>= 2.1.1) UA, whatever the version', () => {
+    it('is true on iPadOS with the new UA below 2.2.0', () => {
         setUserAgent(ipadUANew('2.1.1'));
         expect(canShowWebComposer(true)).toBe(true);
     });
@@ -102,7 +102,7 @@ describe('canUseNativeSidebarLayout', () => {
         expect(canUseNativeSidebarLayout()).toBe(false);
     });
 
-    it('is false on iOS until native support ships there', () => {
+    it('is false on iOS below the sidebar support version', () => {
         setUserAgent('Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) ProtonLumo/2.0.4 (iOS/26.0; iPhone 17)');
         expect(canUseNativeSidebarLayout()).toBe(false);
     });
@@ -236,4 +236,25 @@ describe('isNativeAuthFlagEnabled', () => {
 
         expect(isNativeAuthFlagEnabled({ android: true, ios: true })).toBe(false);
     });
+});
+
+describe('iOS 2.2.0 native composer rollout', () => {
+    it.each([
+        ['2.1.3', true, false],
+        ['2.2.0', false, true],
+        ['2.2.1', false, true],
+        ['2.2', true, false],
+    ])('keeps composer and sidebar support consistent on iPad %s', (version, showWeb, sidebar) => {
+        setUserAgent(ipadUANew(version as string));
+        expect(canShowWebComposer(true)).toBe(showWeb);
+        expect(canUseNativeSidebarLayout()).toBe(sidebar);
+        expect(canShowWebComposer(false)).toBe(true);
+    });
+});
+
+it.each(['iOS', 'iPadOS'])('enables native sidebar layout on %s starting at 2.2.0', (platform) => {
+    setUserAgent(`ProtonLumo/2.1.3 (${platform} 27.2; Apple QA)`);
+    expect(canUseNativeSidebarLayout()).toBe(false);
+    setUserAgent(`ProtonLumo/2.2.0 (${platform} 27.2; Apple QA)`);
+    expect(canUseNativeSidebarLayout()).toBe(true);
 });

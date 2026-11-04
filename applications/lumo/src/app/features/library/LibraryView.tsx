@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { Input } from '@proton/atoms/Input/Input';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
@@ -130,6 +131,8 @@ export const LibraryView = ({ isProcessingAttachment, prefillQuery }: Props) => 
 
     const requestedTab = new URLSearchParams(location.search).get('tab');
     const activeTab: LibraryTab = (requestedTab === 'images' && imageTools) || !artifactsView ? 'images' : 'creations';
+
+    useNativeComposerVisibilityApi({ hideComposer: isGuest || activeTab === 'creations' });
 
     const selectTab = (tab: LibraryTab) => {
         history.replace({ search: tab === 'images' ? '?tab=images' : '' });

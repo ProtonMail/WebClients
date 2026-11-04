@@ -7,7 +7,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { markNotificationPanelDismissed } from '../../util/notificationPanelStorage';
-import { canShowWebComposer, getNativeAppInfo } from '../../util/userAgent';
+import { canShowWebComposer } from '../../util/userAgent';
 
 import './Notification.scss';
 
@@ -39,10 +39,8 @@ export default function NotificationPanel({
     const [exiting, setExiting] = useState(false);
     const { nativeComposer: nativeComposerEnabled } = useLumoFlags();
 
-    // Android draws its composer over the bottom of the WebView, where this panel sits on
-    // large screens. Small screens already move it out of the way; do the same there.
-    const isCoveredByNativeComposer =
-        getNativeAppInfo()?.platform === 'android' && !canShowWebComposer(nativeComposerEnabled);
+    // Native composers occupy the bottom of the WebView on both mobile platforms.
+    const isCoveredByNativeComposer = !canShowWebComposer(nativeComposerEnabled);
 
     useEffect(() => {
         const t = setTimeout(() => setVisible(true), 50);
