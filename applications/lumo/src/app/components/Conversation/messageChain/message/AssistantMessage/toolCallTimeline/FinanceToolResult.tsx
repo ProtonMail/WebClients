@@ -16,8 +16,6 @@ import {
 
 import './FinanceToolResult.scss';
 
-export type { FinanceData };
-
 interface CustomTooltipProps {
     active?: boolean;
     payload?: { value: number; name: string; dataKey: string }[];

@@ -15,8 +15,6 @@ import {
 
 import './FinanceComparisonResult.scss';
 
-export type { FinanceComparisonItem };
-
 const LINE_COLORS = ['#6d4aff', '#1ea885', '#239ece', '#ff9900', '#dc3251', '#4c34b3'];
 
 const getStatRows = (): { label: string; getValue: (d: FinanceData) => string }[] => [
