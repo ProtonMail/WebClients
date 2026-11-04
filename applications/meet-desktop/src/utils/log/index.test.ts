@@ -1,6 +1,6 @@
 import { describe } from "@jest/globals";
 import { LogMessage } from "electron-log";
-import { filterSensitiveLogMessageTestOnly, sanitizeUrlForLogging } from "./index";
+import { filterSensitiveLogMessageTestOnly, getFilteredHomePath, sanitizeUrlForLogging } from "./index";
 import { app } from "electron";
 
 jest.mock("electron", () => ({
@@ -342,6 +342,32 @@ describe("filter sensitive data", () => {
         expect(resultData.events[1].message).toContain("__HOME_ASCII_");
         expect(resultData.config.paths.data).toContain("__HOME_ASCII_");
         expect(resultData.config.paths.cache).toContain("__HOME_ASCII_");
+    });
+});
+
+describe("getFilteredHomePath", () => {
+    it("removes the home path from Electron load errors with forward slashes", () => {
+        getPathMock.mockImplementation(() => "C:\\Users\\Ben");
+
+        expect(
+            getFilteredHomePath(
+                "ERR_ABORTED (-3) loading 'file:///C:/Users/Ben/AppData/Local/proton_meet/app-1.0.14/resources/error-network.html'",
+            ),
+        ).toBe(
+            "ERR_ABORTED (-3) loading 'file:////__HOME_ASCII_bec06a808560c68e086cc6d0ab8d8ed5f80371d8__/AppData/Local/proton_meet/app-1.0.14/resources/error-network.html'",
+        );
+    });
+
+    it("removes the home path from Electron load errors with backslashes", () => {
+        getPathMock.mockImplementation(() => "C:\\Users\\ya140");
+
+        expect(
+            getFilteredHomePath(
+                "ERR_FAILED (-2) loading 'file:///C:\\Users\\ya140\\AppData\\Local\\proton_meet\\app-1.0.14\\resources\\loading.html'",
+            ),
+        ).toBe(
+            "ERR_FAILED (-2) loading 'file:////__HOME_ASCII_25a8599bbab9548ffd1f6a6291b0a270a9a65131__/AppData/Local/proton_meet/app-1.0.14/resources/loading.html'",
+        );
     });
 });
 

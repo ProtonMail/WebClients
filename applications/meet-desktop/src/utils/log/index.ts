@@ -114,7 +114,7 @@ const isIDKey = (str: string) => {
     return str.toLowerCase() === "sentry_key";
 };
 
-const getFilteredHomePath = (somePath: string) => {
+export const getFilteredHomePath = (somePath: string) => {
     const normalizedPath = somePath.replaceAll("\\", "/");
     const basePath = app.getPath("home").replaceAll("\\", "/");
     const basePathRegExp = new RegExp(basePath, "gi");

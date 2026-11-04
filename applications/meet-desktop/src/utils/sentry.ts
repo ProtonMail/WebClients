@@ -17,7 +17,7 @@ import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";
 import { getSettings } from "../store/settingsStore";
 import { getAccountView, getCurrentViewID, getMainWindow } from "./view/viewManagement";
-import { NET_LOGGER_VIEW_PREFIX, sanitizeUrlForLogging, sentryLogger } from "./log";
+import { getFilteredHomePath, NET_LOGGER_VIEW_PREFIX, sanitizeUrlForLogging, sentryLogger } from "./log";
 import { isProdEnv } from "./isProdEnv";
 import { getOSInfo } from "./log/getOSInfo";
 
@@ -47,6 +47,12 @@ export async function initializeSentry() {
     init({
         debug,
         beforeSend: (event) => {
+            for (const exception of event.exception?.values ?? []) {
+                if (exception.value) {
+                    exception.value = getFilteredHomePath(exception.value);
+                }
+            }
+
             if (debug) {
                 sentryLogger.silly(
                     "beforeSend",
