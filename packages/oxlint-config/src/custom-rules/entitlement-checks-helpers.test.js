@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { parseRegisteredCheckNames } from '../entitlement-checks-helpers';
+import { parseRegisteredCheckNames } from './entitlement-checks-helpers.js';
 
 describe('parseRegisteredCheckNames', () => {
     it('collects the keys of every entitlement check registry', () => {
@@ -31,7 +31,7 @@ describe('parseRegisteredCheckNames', () => {
 
     it('reads the names of the checks that exist today', () => {
         const checksSource = fs.readFileSync(
-            path.resolve(__dirname, '../../payments/core/entitlements/checks.ts'),
+            path.resolve(__dirname, '../../../payments/core/entitlements/checks.ts'),
             'utf8'
         );
 

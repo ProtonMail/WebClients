@@ -1,10 +1,9 @@
-import rule from '../no-single-entitlement-condition';
+import { RuleTester } from 'oxlint/plugins-dev';
 
-const { RuleTester } = require('eslint');
+import rule from './no-single-entitlement-condition.js';
 
 const ruleTester = new RuleTester({
     languageOptions: {
-        ecmaVersion: 2020,
         sourceType: 'module',
     },
 });

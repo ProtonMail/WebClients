@@ -1,82 +1,80 @@
 import path from 'node:path';
+import { RuleTester } from 'oxlint/plugins-dev';
 
-import rule from '../no-package-self-import';
-
-const { RuleTester } = require('eslint');
+import rule from './no-package-self-import.js';
 
 const ruleTester = new RuleTester({
     languageOptions: {
-        ecmaVersion: 2022,
         sourceType: 'module',
     },
 });
 
-// Resolves to `eslint-plugin-custom-rules` via this package's own package.json.
+// Resolves to `@proton/oxlint-config` via this package's own package.json.
 const filename = path.join(import.meta.dirname, '..', 'some-rule.js');
 const selfImport = (importPath) => ({
     messageId: 'selfImport',
-    data: { importPath, packageName: 'eslint-plugin-custom-rules' },
+    data: { importPath, packageName: '@proton/oxlint-config' },
 });
 
 ruleTester.run('no-package-self-import', rule, {
     valid: [
         { code: `import foo from './foo';`, filename },
-        { code: `import foo from '../lib/foo';`, filename },
+        { code: `import foo from './lib/foo.js';`, filename },
         // Cross-package imports must keep using the npm package name.
         { code: `import { Button } from '@proton/atoms/Button/Button';`, filename },
         { code: `import fs from 'node:fs';`, filename },
         // A package whose name only starts with this package's name is not a self-reference.
-        { code: `import foo from 'eslint-plugin-custom-rules-extra';`, filename },
+        { code: `import foo from '@proton/oxlint-config-extra';`, filename },
         { code: `export { foo } from './foo';`, filename },
         { code: `const foo = require('./foo');`, filename },
         // Dynamic imports built at runtime cannot be resolved statically.
         { code: `const mod = await import(somePath);`, filename },
         // Files outside any package are ignored.
-        { code: `import foo from 'eslint-plugin-custom-rules';`, filename: '/foo.js' },
+        { code: `import foo from '@proton/oxlint-config';`, filename: '/foo.js' },
     ],
     invalid: [
         {
-            code: `import foo from 'eslint-plugin-custom-rules';`,
+            code: `import foo from '@proton/oxlint-config';`,
             filename,
-            errors: [selfImport('eslint-plugin-custom-rules')],
+            errors: [selfImport('@proton/oxlint-config')],
         },
         {
-            code: `import foo from 'eslint-plugin-custom-rules/lib/foo';`,
+            code: `import foo from '@proton/oxlint-config/lib/foo';`,
             filename,
-            errors: [selfImport('eslint-plugin-custom-rules/lib/foo')],
+            errors: [selfImport('@proton/oxlint-config/lib/foo')],
         },
         {
-            code: `export { foo } from 'eslint-plugin-custom-rules/lib/foo';`,
+            code: `export { foo } from '@proton/oxlint-config/lib/foo';`,
             filename,
-            errors: [selfImport('eslint-plugin-custom-rules/lib/foo')],
+            errors: [selfImport('@proton/oxlint-config/lib/foo')],
         },
         {
-            code: `export * from 'eslint-plugin-custom-rules/lib/foo';`,
+            code: `export * from '@proton/oxlint-config/lib/foo';`,
             filename,
-            errors: [selfImport('eslint-plugin-custom-rules/lib/foo')],
+            errors: [selfImport('@proton/oxlint-config/lib/foo')],
         },
         {
-            code: `const mod = await import('eslint-plugin-custom-rules/lib/foo');`,
+            code: `const mod = await import('@proton/oxlint-config/lib/foo');`,
             filename,
-            errors: [selfImport('eslint-plugin-custom-rules/lib/foo')],
+            errors: [selfImport('@proton/oxlint-config/lib/foo')],
         },
         {
-            code: `const foo = require('eslint-plugin-custom-rules/lib/foo');`,
+            code: `const foo = require('@proton/oxlint-config/lib/foo');`,
             filename,
-            errors: [selfImport('eslint-plugin-custom-rules/lib/foo')],
+            errors: [selfImport('@proton/oxlint-config/lib/foo')],
         },
         {
-            code: `import 'eslint-plugin-custom-rules/lib/side-effect';`,
+            code: `import '@proton/oxlint-config/lib/side-effect';`,
             filename,
-            errors: [selfImport('eslint-plugin-custom-rules/lib/side-effect')],
+            errors: [selfImport('@proton/oxlint-config/lib/side-effect')],
         },
         {
             code: `
-                import a from 'eslint-plugin-custom-rules/a';
-                import b from 'eslint-plugin-custom-rules/b';
+                import a from '@proton/oxlint-config/a';
+                import b from '@proton/oxlint-config/b';
             `,
             filename,
-            errors: [selfImport('eslint-plugin-custom-rules/a'), selfImport('eslint-plugin-custom-rules/b')],
+            errors: [selfImport('@proton/oxlint-config/a'), selfImport('@proton/oxlint-config/b')],
         },
     ],
 });
@@ -104,20 +102,20 @@ describe('typescript-only syntax', () => {
         it('reports `let x: import("<self>").Foo`', () => {
             const reports = runVisitor('TSImportType', {
                 type: 'TSImportType',
-                source: literal('eslint-plugin-custom-rules/lib/foo'),
+                source: literal('@proton/oxlint-config/lib/foo'),
             });
 
             expect(reports).toHaveLength(1);
             expect(reports[0].data).toEqual({
-                importPath: 'eslint-plugin-custom-rules/lib/foo',
-                packageName: 'eslint-plugin-custom-rules',
+                importPath: '@proton/oxlint-config/lib/foo',
+                packageName: '@proton/oxlint-config',
             });
         });
 
         it('supports the pre-v8 `argument` field', () => {
             const reports = runVisitor('TSImportType', {
                 type: 'TSImportType',
-                argument: literal('eslint-plugin-custom-rules/lib/foo'),
+                argument: literal('@proton/oxlint-config/lib/foo'),
             });
 
             expect(reports).toHaveLength(1);
@@ -139,14 +137,14 @@ describe('typescript-only syntax', () => {
                 type: 'TSImportEqualsDeclaration',
                 moduleReference: {
                     type: 'TSExternalModuleReference',
-                    expression: literal('eslint-plugin-custom-rules/lib/foo'),
+                    expression: literal('@proton/oxlint-config/lib/foo'),
                 },
             });
 
             expect(reports).toHaveLength(1);
             expect(reports[0].data).toEqual({
-                importPath: 'eslint-plugin-custom-rules/lib/foo',
-                packageName: 'eslint-plugin-custom-rules',
+                importPath: '@proton/oxlint-config/lib/foo',
+                packageName: '@proton/oxlint-config',
             });
         });
 

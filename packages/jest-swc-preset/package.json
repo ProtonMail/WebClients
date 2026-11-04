@@ -11,6 +11,7 @@
         "core-js": "catalog:"
     },
     "devDependencies": {
+        "@proton/oxlint-config": "workspace:^",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:"
     }

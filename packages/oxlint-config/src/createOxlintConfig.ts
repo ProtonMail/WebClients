@@ -11,13 +11,13 @@ const javaScriptGlobs = ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'];
 
 /**
  * Shared oxlint config without React. Rules oxlint lacks run from the `proton` plugin in `./plugin` (`proton/*`);
- * compat and the in-house `custom-rules` run as ESLint plugins.
+ * the in-house `custom-rules/*` from `./custom-rules`; compat runs as an ESLint plugin.
  * Only the listed rules are on: the default `correctness` category is off so the switch from
  * ESLint does not add new findings.
  */
 export const base = defineConfig({
     plugins: ['typescript', 'import'],
-    jsPlugins: ['@proton/oxlint-config/plugin', 'eslint-plugin-custom-rules', 'eslint-plugin-compat'],
+    jsPlugins: ['@proton/oxlint-config/plugin', '@proton/oxlint-config/custom-rules', 'eslint-plugin-compat'],
     categories: { correctness: 'off' },
     options: { typeAware: true },
     env: { builtin: true, browser: true },
