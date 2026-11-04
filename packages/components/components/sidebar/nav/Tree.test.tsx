@@ -5,9 +5,9 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { IcBrandProtonVpnFilled } from '@proton/icons/icons/IcBrandProtonVpnFilled';
 import { IcHouse } from '@proton/icons/icons/IcHouse';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import type { SidebarTree } from '@proton/nav/types/sidebar';
 
 import { Tree } from './Tree';
+import type { SidebarTree } from './interface';
 
 jest.mock('./animated', () => ({
     AnimatedChildren: ({ isOpen, children }: { isOpen: boolean; children: React.ReactNode }) => (
