@@ -19,9 +19,11 @@ interface UsePageVisibilityHandlerParams {
  *   - Unsubscribes all video tracks to save bandwidth and resources (with debounce)
  * When returning to foreground:
  *   - Safari only: resets websocket parameters to null (default)
- *   - Safari only: resumes paused audio and video elements that were created while in background
+ *   - Resumes paused audio and video elements that were created while in background
  *   - Resubscribes all video tracks (with debounce)
  *
+ * Only the websocket settings are Safari only: other browsers run meet-core in a worker whose timers
+ * are not throttled, and the defaults let a background tab notice a lost connection quickly.
  * The video pause runs everywhere: adaptiveStream's visibility signal is IntersectionObserver
  * based and does not re-fire on a backgrounded tab. It stays in this handler so the setEnabled
  * burst cannot reach the socket while Safari is still reconfiguring the websocket.
@@ -55,12 +57,14 @@ export const usePageVisibilityHandler = ({ joinedRoom, isPipActive }: UsePageVis
             if (document.visibilityState === 'hidden') {
                 // Page is in background, set websocket parameters to 60 and max ping failures to 3
                 // This is to prevent the websocket from being closed due to inactivity
-                try {
-                    await meetCoreClient.setWebsocketPingInterval(60n);
-                    await meetCoreClient.setWebsocketPongTimeout(60n);
-                    await meetCoreClient.setWebsocketMaxPingFailures(3);
-                } catch (error) {
-                    reportMeetError('Failed to set websocket parameters for background', error);
+                if (isSafari()) {
+                    try {
+                        await meetCoreClient.setWebsocketPingInterval(60n);
+                        await meetCoreClient.setWebsocketPongTimeout(60n);
+                        await meetCoreClient.setWebsocketMaxPingFailures(3);
+                    } catch (error) {
+                        reportMeetError('Failed to set websocket parameters for background', error);
+                    }
                 }
 
                 // Picture-in-Picture keeps rendering remote cameras from a hidden tab,
@@ -80,12 +84,14 @@ export const usePageVisibilityHandler = ({ joinedRoom, isPipActive }: UsePageVis
                 }, DEBOUNCE_DELAY);
             } else if (document.visibilityState === 'visible') {
                 // Page is in foreground, reset websocket parameters to null to use the default values
-                try {
-                    await meetCoreClient.setWebsocketPingInterval(null);
-                    await meetCoreClient.setWebsocketPongTimeout(null);
-                    await meetCoreClient.setWebsocketMaxPingFailures(null);
-                } catch (error) {
-                    reportMeetError('Failed to reset websocket parameters for foreground', error);
+                if (isSafari()) {
+                    try {
+                        await meetCoreClient.setWebsocketPingInterval(null);
+                        await meetCoreClient.setWebsocketPongTimeout(null);
+                        await meetCoreClient.setWebsocketMaxPingFailures(null);
+                    } catch (error) {
+                        reportMeetError('Failed to reset websocket parameters for foreground', error);
+                    }
                 }
 
                 // Resume paused audio elements that were created while in background
