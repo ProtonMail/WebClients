@@ -99,8 +99,8 @@ describe('callMeetCoreOrRestart', () => {
         expect(reportMeetError).not.toHaveBeenCalled();
     });
 
-    it('stops waiting when the signal aborts, without restarting', async () => {
-        const meetCoreClient = createMeetCoreClientMock();
+    it('stops waiting when the signal aborts, restarting meet-core without reporting a timeout', async () => {
+        const meetCoreClient = createMeetCoreClientMock({ restart: vi.fn(() => new Promise(() => {})) });
         const reportMeetError = vi.fn();
         const controller = new AbortController();
 
@@ -110,12 +110,28 @@ describe('callMeetCoreOrRestart', () => {
             signal: controller.signal,
         });
         controller.abort();
-        const rejection = expect(outcomePromise).rejects.toBe(controller.signal.reason);
-        await vi.advanceTimersByTimeAsync(MEET_CORE_STALL_TIMEOUT_MS);
+        expect(meetCoreClient.restart).toHaveBeenCalledTimes(1);
 
-        await rejection;
-        expect(meetCoreClient.restart).not.toHaveBeenCalled();
+        await expect(outcomePromise).rejects.toBe(controller.signal.reason);
+        await vi.advanceTimersByTimeAsync(MEET_CORE_STALL_TIMEOUT_MS);
+        expect(meetCoreClient.restart).toHaveBeenCalledTimes(1);
         expect(reportMeetError).not.toHaveBeenCalled();
+    });
+
+    it('does not restart meet-core when the signal aborts after the call settled', async () => {
+        const meetCoreClient = createMeetCoreClientMock();
+        const controller = new AbortController();
+
+        await expect(
+            callMeetCoreOrRestart(meetCoreClient, () => Promise.resolve(), {
+                name: 'joinMeeting',
+                reportMeetError: vi.fn(),
+                signal: controller.signal,
+            })
+        ).resolves.toBe('done');
+        controller.abort();
+
+        expect(meetCoreClient.restart).not.toHaveBeenCalled();
     });
 
     it('does not start the call when the signal has already aborted', async () => {

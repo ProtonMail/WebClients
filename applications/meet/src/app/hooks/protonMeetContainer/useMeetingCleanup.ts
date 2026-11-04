@@ -2,6 +2,7 @@ import type { MutableRefObject } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
 
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
 import { resetParticipantMaps } from '@proton/meet/store/slices/participants/participantsSlice';
@@ -39,6 +40,7 @@ export const useMeetingCleanup = ({
     const dispatch = useMeetDispatch();
     const room = useRoomContext();
     const meetCoreClient = useMeetCoreClient();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const cleanupMeeting = useStableCallback(({ disconnect = false }: CleanupMeetingOptions = {}) => {
         cancelReconnection();
@@ -47,7 +49,9 @@ export const useMeetingCleanup = ({
 
         if (disconnect) {
             void room.disconnect();
-            void meetCoreClient.leaveMeeting();
+            void meetCoreClient
+                .leaveMeeting()
+                .catch((error: unknown) => reportMeetError('Failed to leave meeting', { context: { error } }));
             void stopPiP();
         }
 

@@ -426,17 +426,21 @@ describe('useMeetingConnection', () => {
                 expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(true));
             });
 
-            it('a rejoin cancelled while the join hangs stops waiting and leaves meet-core running', async () => {
+            it('a rejoin cancelled while the join hangs stops waiting and restarts meet-core', async () => {
                 const params = createParams({ handleMlsSetup: vi.fn(neverSettles) });
                 const { result } = renderHook(() => useMeetingConnection(params));
 
                 const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
                 await vi.waitFor(() => expect(params.handleMlsSetup).toHaveBeenCalled());
                 result.current.cancelReconnection();
+                expect(mockMeetCoreClient.restart).toHaveBeenCalledTimes(1);
+                const dispatchCountAtCancel = mockDispatch.mock.calls.length;
 
                 await expect(run).resolves.toBe('cancelled');
                 await act(() => vi.advanceTimersByTimeAsync(MEET_CORE_JOIN_TIMEOUT_MS));
-                expect(mockMeetCoreClient.restart).not.toHaveBeenCalled();
+                expect(mockMeetCoreClient.restart).toHaveBeenCalledTimes(1);
+                expect(mockDispatch).toHaveBeenCalledTimes(dispatchCountAtCancel);
+                expect(params.reportMeetError).not.toHaveBeenCalled();
             });
 
             it('waits for the join however long it takes when MeetHandleStalledLiveKitReconnect is disabled', async () => {

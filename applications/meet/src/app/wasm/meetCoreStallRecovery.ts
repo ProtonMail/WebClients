@@ -1,5 +1,6 @@
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { SECOND } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import type { MeetCoreClient } from './MeetCoreClient';
 
@@ -49,7 +50,7 @@ const TIMED_OUT = Symbol('timed out');
 
 /**
  * Runs `call`, and if it hasn't settled within the timeout, reports it and restarts meet-core so the
- * calls that follow don't queue behind it.
+ * calls that follow don't queue behind it. Abandoning it on abort restarts meet-core too, unreported.
  */
 export const callMeetCoreOrRestart = async (
     meetCoreClient: MeetCoreClient,
@@ -62,7 +63,10 @@ export const callMeetCoreOrRestart = async (
     let rejectOnAbort = () => {};
     const timeoutOrAbort = new Promise<typeof TIMED_OUT>((resolve, reject) => {
         timeoutId = setTimeout(() => resolve(TIMED_OUT), timeoutMs);
-        rejectOnAbort = () => reject(signal?.reason);
+        rejectOnAbort = () => {
+            reject(signal?.reason);
+            void meetCoreClient.restart().catch(noop);
+        };
         signal?.addEventListener('abort', rejectOnAbort);
     });
 

@@ -23,6 +23,11 @@ vi.mock('../../contexts/MeetCoreClientContext', () => ({
     useMeetCoreClient: vi.fn(),
 }));
 
+const reportMeetError = vi.fn();
+vi.mock('@proton/meet/hooks/useMeetErrorReporting', () => ({
+    useMeetErrorReporting: () => ({ reportMeetError }),
+}));
+
 const useRoomContextMock = useRoomContext as unknown as Mock;
 const useMeetCoreClientMock = useMeetCoreClient as unknown as Mock;
 
@@ -134,6 +139,20 @@ describe('useMeetingCleanup', () => {
 
         expect(store.getState().connection.joinedRoom).toBe(false);
         expect(params.meetingLinkNameRef.current).toBe('');
+    });
+
+    it('reports a failed leave instead of leaving it unhandled', async () => {
+        const error = new Error('Meet core worker client is not available');
+        mockMeetCoreClient.leaveMeeting.mockRejectedValue(error);
+        const { result } = renderHook(() => useMeetingCleanup(createParams()), {
+            wrapper: createTestWrapper(createMockStore()),
+        });
+
+        result.current.cleanupMeeting({ disconnect: true });
+
+        await vi.waitFor(() =>
+            expect(reportMeetError).toHaveBeenCalledWith('Failed to leave meeting', { context: { error } })
+        );
     });
 
     it('cancels a running rejoin before it forgets the meeting', () => {
