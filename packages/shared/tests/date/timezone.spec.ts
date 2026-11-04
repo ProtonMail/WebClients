@@ -229,6 +229,18 @@ describe('guessTimeZone', () => {
         });
     });
 
+    describe('should guess right when the browser detects "America/Coyhaique"', () => {
+        beforeEach(() => {
+            vi.spyOn<any, any>(Intl, 'DateTimeFormat').mockReturnValue({
+                resolvedOptions: () => ({ timeZone: 'America/Coyhaique' }),
+            });
+        });
+
+        it('guesses "America/Punta_Arenas"', () => {
+            expect(guessTimezone(timeZoneList)).toBe('America/Punta_Arenas');
+        });
+    });
+
     describe('should guess right when the browser detects "Europe/Kyiv"', () => {
         beforeEach(() => {
             vi.spyOn<any, any>(Intl, 'DateTimeFormat').mockReturnValue({
