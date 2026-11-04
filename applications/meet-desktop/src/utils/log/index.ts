@@ -56,6 +56,13 @@ const filterSensitiveStringValue = (str: string): string => {
     return filterSensitiveString(str);
 };
 
+const filterSensitiveError = (error: Error): Error => {
+    const filteredError = new Error(filterSensitiveStringValue(error.message));
+    filteredError.name = error.name;
+    filteredError.stack = error.stack?.split("\n").map(filterSensitiveStringValue).join("\n");
+    return filteredError;
+};
+
 const filterSensitiveLogData = (data: unknown): unknown => {
     if (Array.isArray(data)) {
         for (let i = 0; i < data.length; i++) {
@@ -70,6 +77,8 @@ const filterSensitiveLogData = (data: unknown): unknown => {
             }
         }
         return data;
+    } else if (data instanceof Error) {
+        return filterSensitiveError(data);
     } else if (data !== null && typeof data === "object") {
         const filteredObject: { [key: string]: unknown } = {};
         for (const [key, value] of Object.entries(data)) {

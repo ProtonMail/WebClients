@@ -135,6 +135,8 @@ function serialize(value: unknown): string {
         return value.toString();
     } else if (Array.isArray(value)) {
         return value.map((chunk) => serialize(chunk)).join(" ");
+    } else if (value instanceof Error) {
+        return `${value.name}: ${value.message}`;
     }
 
     return JSON.stringify(value);

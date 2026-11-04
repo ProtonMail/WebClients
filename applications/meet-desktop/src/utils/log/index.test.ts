@@ -274,6 +274,31 @@ describe("filter sensitive data", () => {
         expect(resultData.nested.boolean).toBe(false);
     });
 
+    it("keeps errors and filters their message and stack", () => {
+        getPathMock.mockImplementation(() => "/home/user");
+
+        const givenLogMessage: LogMessage = {
+            data: [
+                "Check update: failed to get available versions:",
+                new TypeError("Failed to parse URL from /home/user/version.json"),
+            ],
+            date: new Date(),
+            level: "error",
+        };
+
+        const result = filterSensitiveLogMessageTestOnly(givenLogMessage) as LogMessage;
+        const [text, error] = result.data as [string, Error];
+
+        expect(text).toBe("Check update: failed to get available versions:");
+        expect(error).toBeInstanceOf(Error);
+        expect(error.name).toBe("TypeError");
+        expect(error.message).toBe(
+            "Failed to parse URL from /__HOME_ASCII_182d1a38c6316445c1333b7dc7006f481de72c9a__/version.json",
+        );
+        expect(error.stack).toContain(error.message);
+        expect(error.stack).not.toContain("/home/user");
+    });
+
     it("filters complex nested structures", () => {
         getPathMock.mockImplementation(() => "C:\\Users\\TestUser");
 
