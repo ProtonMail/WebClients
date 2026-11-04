@@ -28,8 +28,8 @@ beforeEach(() => {
 });
 
 /**
- * Regression for P2-2728: the one dollar promotion price goes through useRegionalPricing.fetchPrice, which is going to
- * reuse the shared fetchCheckoutPrice. Pins the main currency short-circuit and the regional check request.
+ * Regression for P2-2728: pins the main currency short-circuit, the regional check request and the optimistic
+ * fallback of the one dollar promotion price.
  */
 describe('usePostSignupOneDollarPromotionPrice', () => {
     it('returns one dollar without checking for main currencies', async () => {
@@ -63,5 +63,17 @@ describe('usePostSignupOneDollarPromotionPrice', () => {
         expect(getCheckCalls()[0].data).toEqual(
             expect.objectContaining({ Plans: { [plan]: 1 }, Currency: 'BRL', Cycle: CYCLE.MONTHLY, CouponCode: coupon })
         );
+    });
+
+    it('falls back to the regular monthly price when the regional check fails', async () => {
+        addApiMock(checkUrl, () => Promise.reject(new Error('check failed')));
+        const mailMonthly = getTestPlans('BRL').find((plan) => plan.Name === PLANS.MAIL)!.Pricing[CYCLE.MONTHLY]!;
+
+        const { result } = renderHook(() => usePostSignupOneDollarPromotionPrice({ offerProduct: 'mail' }), {
+            wrapper: getWrapper('BRL'),
+        });
+
+        await waitFor(() => expect(result.current.amountDue).toBe(mailMonthly));
+        expect(getCheckCalls()).toHaveLength(1);
     });
 });
