@@ -1,3 +1,4 @@
+import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { act, renderHook } from '@testing-library/react';
 
 import type { MeetState } from '@proton/meet/store/rootReducer';
@@ -171,8 +172,8 @@ describe('useMlsSession', () => {
     });
 
     describe('when joining the MLS session fails', () => {
-        const joinMeetingFailing = () => {
-            meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType.mockRejectedValue(new Error('join failed'));
+        const joinMeetingFailing = (error: unknown = new Error('join failed')) => {
+            meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType.mockRejectedValue(error);
             return renderHook(() => useMlsSession(createParams())).result.current;
         };
 
@@ -186,7 +187,7 @@ describe('useMlsSession', () => {
             expect(notifyError).toHaveBeenCalledTimes(1);
         });
 
-        it('throws without telling the user when asked not to notify', async () => {
+        it('throws without telling the user when asked not to notify generic errors', async () => {
             const { handleMlsSetup } = joinMeetingFailing();
 
             await expect(
@@ -194,6 +195,22 @@ describe('useMlsSession', () => {
             ).rejects.toMatchObject({ message: expect.stringContaining('MLS setup failed'), userNotified: false });
             expect(notifyError).not.toHaveBeenCalled();
         });
+
+        it.each([
+            { error: MeetCoreErrorEnum.CheckDeviceClock, hint: 'clock' },
+            { error: MeetCoreErrorEnum.MlsServerVersionNotSupported, hint: 'older version' },
+        ])(
+            'still tells the user how to fix $hint errors when asked not to notify generic errors',
+            async ({ error, hint }) => {
+                const { handleMlsSetup } = joinMeetingFailing(error);
+
+                await expect(
+                    handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD, false, false)
+                ).rejects.toMatchObject({ coreError: error, userNotified: true });
+                expect(notifyError).toHaveBeenCalledTimes(1);
+                expect(notifyError).toHaveBeenCalledWith(expect.stringContaining(hint));
+            }
+        );
     });
 
     it('admits an agent the wasm side reports as pending', async () => {

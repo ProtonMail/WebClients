@@ -53,6 +53,7 @@ interface ConnectWithMlsParams {
     accessDetails?: MeetingAccessDetails;
     signal?: AbortSignal;
     recoverStalledMeetCore?: boolean;
+    notifyOnGenericMlsError?: boolean;
 }
 
 type ConnectionInfo = Awaited<ReturnType<UseLiveKitConnectionResult['connectWithStunFallbackToTurnRelay']>>;
@@ -151,6 +152,7 @@ export const useMeetingConnection = ({
             accessDetails,
             signal,
             recoverStalledMeetCore = false,
+            notifyOnGenericMlsError = true,
         }: ConnectWithMlsParams): Promise<ConnectWithMlsResult> => {
             const fetchAccessDetails = async () => {
                 const sanitizedDisplayName = sanitizeMessage(displayNameArg);
@@ -180,7 +182,7 @@ export const useMeetingConnection = ({
 
             const t1 = performance.now();
             const setupMls = () =>
-                handleMlsSetup(meetingLinkName, accessToken, password, isWaitingRoom, !recoverStalledMeetCore);
+                handleMlsSetup(meetingLinkName, accessToken, password, isWaitingRoom, notifyOnGenericMlsError);
             const { key: groupKey, epoch } =
                 (await (recoverStalledMeetCore
                     ? callMeetCoreWithinDeadline(meetCoreClient, setupMls, {
@@ -364,6 +366,7 @@ export const useMeetingConnection = ({
                 resetParticipantsBeforeFetch: true,
                 signal,
                 recoverStalledMeetCore: isHandleStalledLiveKitReconnectEnabled,
+                notifyOnGenericMlsError: !isHandleStalledLiveKitReconnectEnabled,
             });
         };
 

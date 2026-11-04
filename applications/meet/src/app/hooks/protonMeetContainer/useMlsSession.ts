@@ -41,7 +41,7 @@ export interface UseMlsSessionResult {
         accessToken: string,
         meetingPassword: string,
         isWaitingRoom?: boolean,
-        notifyOnError?: boolean
+        notifyOnGenericError?: boolean
     ) => Promise<{ key: string; epoch: bigint } | undefined>;
 }
 
@@ -195,7 +195,7 @@ export const useMlsSession = ({
         accessToken: string,
         meetingPassword: string,
         isWaitingRoom = false,
-        notifyOnError = true
+        notifyOnGenericError = true
     ): Promise<{ key: string; epoch: bigint } | undefined> => {
         if (!mlsSetupDone.current) {
             mlsSetupDone.current = true;
@@ -268,7 +268,7 @@ export const useMlsSession = ({
 
             return groupKeyData;
         } catch (error) {
-            let message: string;
+            let message: string | undefined;
             switch (error) {
                 case MeetCoreErrorEnum.MlsServerVersionNotSupported:
                     message = c('Error')
@@ -282,13 +282,15 @@ export const useMlsSession = ({
                 case MeetCoreErrorEnum.HttpClientError:
                 default:
                     logger.error('Failed to join the MLS session', error);
-                    message = c('Error').t`Failed to join meeting. Please try again later.`;
+                    if (notifyOnGenericError) {
+                        message = c('Error').t`Failed to join meeting. Please try again later.`;
+                    }
             }
-            if (notifyOnError) {
+            if (message) {
                 notifyError(message);
             }
             const err = new Error(`MLS setup failed: ${getMeetCoreErrorName(error) ?? String(error)}`);
-            Object.assign(err, { userNotified: notifyOnError, coreError: error });
+            Object.assign(err, { userNotified: message !== undefined, coreError: error });
             throw err;
         }
     };
