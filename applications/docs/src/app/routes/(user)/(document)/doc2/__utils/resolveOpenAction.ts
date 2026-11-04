@@ -2,7 +2,7 @@ import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
 
 export type OpenResolution =
   | { kind: 'open'; nodeMeta: { volumeId: string; linkId: string } }
-  | { kind: 'create'; parentLinkId?: string }
+  | { kind: 'create'; parent?: { volumeId: string; linkId: string } }
   | { kind: 'redirect'; to: 'public' }
   | { kind: 'error'; reason: 'invalidUrl' | 'slackTruncated' | 'unsupported' }
 
@@ -20,7 +20,7 @@ export function resolveOpenAction(openAction: DocumentAction | null, search: str
     case 'open':
       return { kind: 'open', nodeMeta: { volumeId: openAction.volumeId, linkId: openAction.linkId } }
     case 'create':
-      return { kind: 'create', parentLinkId: openAction.parentLinkId }
+      return { kind: 'create', parent: { volumeId: openAction.volumeId, linkId: openAction.parentLinkId } }
     case 'new':
       return { kind: 'create' }
     case 'open-url-reauth':

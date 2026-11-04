@@ -17,7 +17,7 @@ describe('resolveOpenAction', () => {
   test('mode create resolves to creating in the parent folder', () => {
     expect(resolveUrl('/doc2?mode=create&volumeId=VOLUME&parentLinkId=PARENT')).toEqual({
       kind: 'create',
-      parentLinkId: 'PARENT',
+      parent: { volumeId: 'VOLUME', linkId: 'PARENT' },
     })
   })
 
