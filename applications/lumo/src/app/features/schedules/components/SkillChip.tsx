@@ -10,6 +10,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
+import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import type { Skill } from '../../skills/types';
 
 import './Chip.scss';
@@ -29,6 +30,7 @@ interface SkillChipProps {
 
 export const SkillChip = ({ skill, statusLabel, unavailable, rows, onRemove }: SkillChipProps) => {
     const history = useHistory();
+    const { customize } = useLumoFlags();
     // translator: Fallback chip label for a skill that was deleted or could not be decrypted.
     const label = skill?.name ?? c('collider_2025:Label').t`Unavailable skill`;
     // translator: Type label below a selected skill name in the task side panel, distinguishing it from an external connector.
@@ -95,16 +97,18 @@ export const SkillChip = ({ skill, statusLabel, unavailable, rows, onRemove }: S
                     }
                 >
                     <DropdownMenu>
-                        <DropdownMenuButton
-                            className="flex flex-nowrap items-center gap-2 text-left"
-                            onClick={() => history.push('/customize')}
-                        >
-                            <LumoIcon aria-hidden className="shrink-0" name="ExternalLink" size={16} />
-                            <span>{
-                                // translator: Menu item opening Customize to manage skills used by a scheduled task.
-                                c('collider_2025:Action').t`Skill settings`
-                            }</span>
-                        </DropdownMenuButton>
+                        {customize && (
+                            <DropdownMenuButton
+                                className="flex flex-nowrap items-center gap-2 text-left"
+                                onClick={() => history.push('/customize')}
+                            >
+                                <LumoIcon aria-hidden className="shrink-0" name="ExternalLink" size={16} />
+                                <span>{
+                                    // translator: Menu item opening Customize to manage skills used by a scheduled task.
+                                    c('collider_2025:Action').t`Skill settings`
+                                }</span>
+                            </DropdownMenuButton>
+                        )}
                         <DropdownMenuButton
                             className="flex flex-nowrap items-center gap-2 text-left color-danger"
                             onClick={onRemove}

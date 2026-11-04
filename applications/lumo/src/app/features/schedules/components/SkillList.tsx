@@ -63,7 +63,7 @@ const SkillListErrorView = () => {
 };
 
 export const SkillList = ({ value, onChange, headerClassName, rows }: SkillListProps) => {
-    const { customAgents: skillsEnabled } = useLumoFlags();
+    const { skills: skillsEnabled } = useLumoFlags();
     const { skills, status } = useSkills({ enabled: skillsEnabled });
 
     const labelId = useId();

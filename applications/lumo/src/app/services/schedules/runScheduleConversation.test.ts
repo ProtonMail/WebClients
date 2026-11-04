@@ -37,7 +37,7 @@ jest.mock('../../llm/tokenizer', () => ({ countTokens: () => 0 }));
 jest.mock('../../llm/config', () => ({ ENABLE_U2L_ENCRYPTION: false }));
 
 const options: ScheduleGenerationOptions = {
-    customAgents: true,
+    skills: true,
     externalTools: true,
     imageTools: true,
     artifactsView: true,

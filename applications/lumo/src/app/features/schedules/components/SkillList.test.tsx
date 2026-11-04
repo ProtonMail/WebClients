@@ -21,7 +21,9 @@ const skill = {
 } as Skill;
 
 beforeEach(() => {
-    jest.mocked(useLumoFlags).mockReturnValue({ customAgents: true } as ReturnType<typeof useLumoFlags>);
+    jest.mocked(useLumoFlags).mockReturnValue({ customAgents: true, customize: true, skills: true } as ReturnType<
+        typeof useLumoFlags
+    >);
     jest.mocked(useLumoDispatch).mockReturnValue(jest.fn());
     jest.mocked(useSkills).mockReturnValue({ status: 'ready', skills: [skill] });
 });

@@ -257,6 +257,7 @@ enum LumoFeatureFlag {
     LumoAskUserQuestionsTool = 'LumoAskUserQuestionsTool',
     LumoCreateScheduleTool = 'LumoCreateScheduleTool',
     LumoCustomAgents = 'LumoCustomAgents',
+    LumoCustomize = 'LumoCustomize',
     LumoDarkMode = 'LumoDarkMode',
     LumoDictationV2 = 'LumoDictationV2',
     LumoImageTools = 'LumoImageTools',
