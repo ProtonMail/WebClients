@@ -110,7 +110,6 @@ export async function initializeSentry() {
                 level: LOG_LEVEL_TO_SEVERITY[level],
                 tags: { logScope: scope },
                 extra: {
-                    appID: getAppID(),
                     settings: getSettings(),
                     mainWindow: {
                         isMinimized: getMainWindow().isMinimized(),
