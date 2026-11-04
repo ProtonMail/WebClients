@@ -13,7 +13,7 @@
         "i18n:validate:context:web": "proton-i18n validate",
         "lint": "oxlint --quiet",
         "lint:warning": "oxlint",
-        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty": "oxfmt --write \"src/app/**/*.{ts,tsx,js}\"",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
         "test": "cross-env TZ=UTC jest",
         "test:ci": "pnpm run test --ci --runInBand --logHeapUsage",
@@ -90,9 +90,9 @@
         "html-webpack-plugin": "catalog:",
         "jest": "catalog:",
         "jest-junit": "catalog:",
+        "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "typescript": "catalog:",
         "webpack": "catalog:"
     }

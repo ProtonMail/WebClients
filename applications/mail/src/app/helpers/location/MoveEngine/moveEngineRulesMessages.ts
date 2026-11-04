@@ -2,7 +2,6 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isDraft, isReceived, isScheduled, isSent } from '@proton/shared/lib/mail/messages';
 
 import { hasLabel, isElementMessage } from '../../elements';
-
 import { ERROR_ELEMENT_NOT_MESSAGE, type MoveEngineRule, MoveEngineRuleResult } from './moveEngineInterface';
 
 // Sent, drafts, soft-deleted, and scheduled messages cannot move to INBOX

@@ -11,7 +11,6 @@ import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
 import useInboxBadgeCount from '../../hooks/useInboxBadgeCount';
 import useInboxDesktopElementId from '../../hooks/useInboxDesktopElementId';
 import useMailtoHash from '../../hooks/useMailtoHash';
-
 import { useMailboxContainerSideEffects } from './useMailboxContainerSideEffects';
 
 jest.mock('../../hooks/useMailtoHash', () => ({

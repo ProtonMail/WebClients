@@ -4,13 +4,12 @@ import { Route, Switch } from 'react-router-dom';
 import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 
-import { useMailDispatch } from '../../store/hooks';
-
 import ViewEOMessage from '../../components/eo/message/ViewEOMessage';
 import EOReply from '../../components/eo/reply/EOReply';
 import EOUnlock from '../../components/eo/unlock/EOUnlock';
 import { EO_MESSAGE_REDIRECT_PATH, EO_REDIRECT_PATH, EO_REPLY_REDIRECT_PATH } from '../../constants';
 import { init } from '../../store/eo/eoActions';
+import { useMailDispatch } from '../../store/hooks';
 
 const { set, get } = createSecureSessionStorage();
 

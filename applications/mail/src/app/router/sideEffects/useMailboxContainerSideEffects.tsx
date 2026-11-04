@@ -10,9 +10,8 @@ import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
 import useInboxBadgeCount from '../../hooks/useInboxBadgeCount';
 import useInboxDesktopElementId from '../../hooks/useInboxDesktopElementId';
 import useMailtoHash from '../../hooks/useMailtoHash';
-import type { Element } from '../../models/element';
-
 import useShowBYOESpotlightModal from '../../hooks/useShowBYOESpotlightModal';
+import type { Element } from '../../models/element';
 
 interface Props {
     labelID: string;

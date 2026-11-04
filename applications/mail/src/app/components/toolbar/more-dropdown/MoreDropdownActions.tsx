@@ -10,12 +10,12 @@ import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { type MoveAllToFolderArgs, MoveAllType } from '../../../hooks/actions/move/useMoveAllToFolder';
 import useListTelemetry, {
     ACTION_TYPE,
     SELECTED_RANGE,
     SOURCE_ACTION,
 } from '../../list/list-telemetry/useListTelemetry';
-import { type MoveAllToFolderArgs, MoveAllType } from '../../../hooks/actions/move/useMoveAllToFolder';
 
 interface ActionProps {
     onMove: (labelID: string) => void;

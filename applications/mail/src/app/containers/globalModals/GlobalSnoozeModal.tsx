@@ -10,7 +10,6 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import { setItem } from '@proton/shared/lib/helpers/storage';
 
 import { HIDE_SNOOZE_CONFIRMATION_LS_KEY } from '../../components/list/snooze/constant';
-
 import { useMailGlobalModals } from './globalModalContext';
 import { ModalType, type SnoozeModalPayload } from './inteface';
 

@@ -2,7 +2,6 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { useMailSelector } from '../../../../store/hooks';
 import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
-
 import { unsubscribedSubscription } from '../testData';
 import { SubscriptionCardButtons } from './NewsletterSubscriptionCardComponents';
 

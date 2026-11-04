@@ -57,10 +57,12 @@ const ExtraSpamScore = ({ message }: Props) => {
 
     const isSuspiciousFlagged = isSuspicious(message.data);
 
-    if (!(
-        (isAutoFlaggedPhishing(message.data) || isSuspiciousFlagged) &&
-        (!isManualFlaggedHam(message.data) || LabelIDs.includes(MAILBOX_LABEL_IDS.SPAM))
-    )) {
+    if (
+        !(
+            (isAutoFlaggedPhishing(message.data) || isSuspiciousFlagged) &&
+            (!isManualFlaggedHam(message.data) || LabelIDs.includes(MAILBOX_LABEL_IDS.SPAM))
+        )
+    ) {
         return null;
     }
 

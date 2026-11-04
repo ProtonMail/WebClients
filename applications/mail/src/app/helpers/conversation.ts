@@ -3,7 +3,11 @@ import type { ConversationState } from '@proton/mail-message/store/conversations
 
 type LabelValue = 'NumMessages' | 'NumUnread' | 'Time' | 'Size' | 'NumAttachments';
 type LabelContextValue =
-    'ContextNumMessages' | 'ContextNumUnread' | 'ContextTime' | 'ContextSize' | 'ContextNumAttachments';
+    | 'ContextNumMessages'
+    | 'ContextNumUnread'
+    | 'ContextTime'
+    | 'ContextSize'
+    | 'ContextNumAttachments';
 
 export const getSenders = ({ Senders = [] }: Conversation) => Senders;
 

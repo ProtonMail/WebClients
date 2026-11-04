@@ -3,10 +3,9 @@ import { useLocation } from 'react-router-dom';
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 
 import { isConversationMode } from '../../helpers/mailSettings';
+import type { Event } from '../../models/event';
 import { selectConversationMode, selectLabelID } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
-import type { Event } from '../../models/event';
 import type { RouterNavigation } from '../interface';
 
 interface Props {

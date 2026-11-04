@@ -5,10 +5,9 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { useMailDispatch } from '../../../../store/hooks';
-
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import type { Element } from '../../../../models/element';
+import { useMailDispatch } from '../../../../store/hooks';
 import SnoozeDropdown from './SnoozeDropdown';
 
 jest.mock('@proton/account/user/hooks');

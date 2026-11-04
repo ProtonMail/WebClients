@@ -10,7 +10,6 @@ import {
     selectTabSubscriptionsList,
     unsubscribingSubscriptionIdSelector,
 } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
-
 import { useNewsletterSubscriptionTelemetry } from '../useNewsletterSubscriptionTelemetry';
 import { NewsletterSubscriptionCard } from './NewsletterSubscriptionCard';
 import { NewsletterSubscriptionListPlaceholder } from './NewsletterSubscriptionListPlaceholder';

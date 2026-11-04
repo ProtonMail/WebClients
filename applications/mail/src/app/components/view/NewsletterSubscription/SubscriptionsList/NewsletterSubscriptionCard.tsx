@@ -12,7 +12,6 @@ import {
     selectedTab,
 } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
 import { newsletterSubscriptionsActions } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSlice';
-
 import type { ModalFilterType, PropsWithNewsletterSubscription } from '../interface';
 import ModalNewsletterSubscriptionFilter from './ModalNewsletterSubscriptionFilter';
 import { NewsletterSubscriptionCardActiveFilter } from './NewsletterSubscriptionCardActiveFilter';

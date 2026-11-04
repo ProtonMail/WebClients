@@ -13,14 +13,12 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
-import { useSelectAll } from '../../hooks/useSelectAll';
-import { useMailSelector } from '../../store/hooks';
-
 import { isSearch as testIsSearch } from '../../helpers/elements';
 import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
+import { useSelectAll } from '../../hooks/useSelectAll';
 import {
     contextTotal,
     loadedEmpty,
@@ -28,6 +26,7 @@ import {
     selectLabelID,
     taskRunningInLabel,
 } from '../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../store/hooks';
 import EmptyView from './EmptyView/EmptyView';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 import { getCategoryText, getFolderText, getLabelText } from './SelectionPane.strings';

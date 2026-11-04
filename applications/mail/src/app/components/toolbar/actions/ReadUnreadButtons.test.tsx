@@ -4,12 +4,11 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { useMailSelector } from '../../../store/hooks';
-
 import {
     elementsAreUnread as elementsAreUnreadSelector,
     selectParams,
 } from '../../../store/elements/elementsSelectors';
+import { useMailSelector } from '../../../store/hooks';
 import ReadUnreadButtons from './ReadUnreadButtons';
 
 jest.mock('@proton/mail/store/mailSettings/hooks');

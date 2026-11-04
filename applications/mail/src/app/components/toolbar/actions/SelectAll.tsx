@@ -10,10 +10,9 @@ import { IcEnvelopeOpen } from '@proton/icons/icons/IcEnvelopeOpen';
 import { IcStar } from '@proton/icons/icons/IcStar';
 import { IcStarFilled } from '@proton/icons/icons/IcStarFilled';
 
-import { useSelectAll } from '../../../hooks/useSelectAll';
-
 import { isStarred, isUnread } from '../../../helpers/elements';
 import { useGetElementsFromIDs } from '../../../hooks/mailbox/useElements';
+import { useSelectAll } from '../../../hooks/useSelectAll';
 import ToolbarDropdown from '../ToolbarDropdown';
 
 interface Props {

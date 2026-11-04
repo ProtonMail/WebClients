@@ -1,8 +1,6 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import {
-    getNotificationTextUnauthorized,
-} from '../helpers/moveToFolder';
+import { getNotificationTextUnauthorized } from '../helpers/moveToFolder';
 
 describe('moveToFolder', () => {
     describe('getNotificationTextUnauthorized', () => {

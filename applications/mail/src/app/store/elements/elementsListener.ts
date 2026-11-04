@@ -1,5 +1,5 @@
-import { resetRetry } from './elementsActions';
 import type { AppStartListening } from '../store';
+import { resetRetry } from './elementsActions';
 
 export const startElementsListener = (startListening: AppStartListening) => {
     startListening({

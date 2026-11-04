@@ -1,6 +1,5 @@
 import { selectSearch } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
-
 import SelectionPane from './SelectionPane';
 import WelcomePane from './WelcomePane';
 

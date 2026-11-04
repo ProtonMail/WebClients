@@ -6,14 +6,9 @@ import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector'
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import {
-    categoryIDFromUrl,
-    removeCategoryFromCurrentUrl,
-    setCategoryInCurrentUrl,
-} from '../../helpers/mailboxUrl';
+import { categoryIDFromUrl, removeCategoryFromCurrentUrl, setCategoryInCurrentUrl } from '../../helpers/mailboxUrl';
 import { selectLabelID } from '../../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
-
 import { useCategoriesView } from './useCategoriesView';
 import { useCategoryFlagWatcher } from './useCategoryFlagWatcher';
 

@@ -9,9 +9,8 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { DEFAULT_MAIL_SETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { useMailboxCounter } from '../../mailboxCounter/useMailboxCounter';
 import { useMailSelector } from '../../../store/hooks';
-
+import { useMailboxCounter } from '../../mailboxCounter/useMailboxCounter';
 import { useMailboxPageTitle } from './useMailboxPageTitle';
 
 const EMAIL = 'testing@example.com';

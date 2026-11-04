@@ -4,13 +4,12 @@ import { useLocation } from 'react-router-dom';
 
 import { useLabels } from '@proton/mail/store/labels/hooks';
 
-import type { ElementsStructure } from '../../hooks/mailbox/useElements';
-import type { MailboxActions } from '../../router/interface';
-import { selectElementID, selectLabelID } from '../../store/elements/elementsSelectors';
-
 import { pageFromUrl } from '../../helpers/mailboxUrl';
+import type { ElementsStructure } from '../../hooks/mailbox/useElements';
 import { useMailboxLayoutProvider } from '../../router/components/MailboxLayoutContext';
 import { useRouterNavigation } from '../../router/hooks/useRouterNavigation';
+import type { MailboxActions } from '../../router/interface';
+import { selectElementID, selectLabelID } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
 import MailboxListBannersWrapper from './MailboxListBannersWrapper';
 import MailboxListContainer from './MailboxListContainer';

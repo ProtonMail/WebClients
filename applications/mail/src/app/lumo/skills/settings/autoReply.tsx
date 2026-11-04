@@ -53,7 +53,8 @@ export interface SetAutoReplyParams {
  * the stored message and window — while enabling carries the whole validated away message.
  */
 export type ResolvedAutoReply =
-    { enabled: false } | { enabled: true; message: string; subject: string; startMs: number; endMs: number };
+    | { enabled: false }
+    | { enabled: true; message: string; subject: string; startMs: number; endMs: number };
 
 export type SetAutoReplyResult = { enabled: false } | { enabled: true; startMs: number; endMs: number };
 

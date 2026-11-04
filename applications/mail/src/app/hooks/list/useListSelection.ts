@@ -4,14 +4,13 @@ import { c, msgid } from 'ttag';
 
 import useItemsDraggable from '@proton/components/containers/items/useItemsDraggable';
 
-import { getCanDisplaySelectAllBanner } from '../../helpers/selectAll';
-import { useSelectAll } from '../useSelectAll';
-
 import { isElementMessage } from '../../helpers/elements';
+import { getCanDisplaySelectAllBanner } from '../../helpers/selectAll';
 import type { Element } from '../../models/element';
 import { selectPageSize } from '../../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../../store/hooks';
 import { layoutActions } from '../../store/layout/layoutSlice';
+import { useSelectAll } from '../useSelectAll';
 
 /**
  * Hook to manage list selection, checked states, and drag-drop functionality

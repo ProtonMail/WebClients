@@ -13,7 +13,6 @@ import { selectCategoryIDs } from '../store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from '../store/hooks';
 import { layoutActions } from '../store/layout/layoutSlice';
 import { selectSelectAll } from '../store/layout/layoutSliceSelectors';
-
 import { useMailboxCounter } from './mailboxCounter/useMailboxCounter';
 
 interface Props {

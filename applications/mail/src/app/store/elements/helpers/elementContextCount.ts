@@ -6,7 +6,6 @@ import {
     getSearchParameters,
     parseElementContextIdentifier,
 } from '../../../helpers/elements';
-
 import type { ElementsState } from '../elementsTypes';
 
 export const computeContextTotals = (state: Draft<ElementsState>): Record<string, number> => {

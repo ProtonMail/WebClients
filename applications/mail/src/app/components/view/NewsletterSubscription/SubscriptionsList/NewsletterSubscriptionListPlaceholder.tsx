@@ -6,7 +6,6 @@ import { getInboxEmptyPlaceholder } from '@proton/mail/helpers/getPlaceholderSrc
 import { useMailSelector } from '../../../../store/hooks';
 import { SubscriptionTabs } from '../../../../store/newsletterSubscriptions/interface';
 import { selectedTab } from '../../../../store/newsletterSubscriptions/newsletterSubscriptionsSelector';
-
 import { EmptyViewWrapper } from '../../EmptyView/EmptyViewWrapper';
 
 export const NewsletterSubscriptionListPlaceholder = () => {
