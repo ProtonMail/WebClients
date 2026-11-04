@@ -1,5 +1,5 @@
 import { useNotifications } from '@proton/app-context/useNotifications'
-import { SheetsPatchesType as StoredSheetsPatchesType } from '@proton/docs-core/Database/SheetsDBSchema'
+import { SheetsPatchesType as StoredSheetsPatchesType } from '@proton/docs-shared/SheetsPatchesType'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 import type { SheetImportData } from '@proton/docs-shared/SheetImportData'
 import { SheetImportDestination, SheetImportEvent } from '@proton/docs-shared/SheetImportData'

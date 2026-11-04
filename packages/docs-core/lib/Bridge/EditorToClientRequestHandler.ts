@@ -19,7 +19,7 @@ import { WordCountEvent } from './Events'
 import type { CustomWindow } from '../Application/Window'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
-import type { SheetsPatchesType } from '../Database/SheetsDBSchema'
+import type { SheetsPatchesType } from '@proton/docs-shared/SheetsPatchesType'
 import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 

@@ -1,4 +1,5 @@
 import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
+import type { SheetsPatchesType } from '@proton/docs-shared/SheetsPatchesType'
 
 const SheetsDBVersions = {
   InitialVersion: 1,
@@ -7,12 +8,6 @@ const SheetsDBVersions = {
 
 export const CURRENT_SHEETS_DB_VERSION = SheetsDBVersions.AddedActionsStore
 export const SHEETS_DATABASE_NAME = 'proton-sheets'
-
-export enum SheetsPatchesType {
-  Base = 0,
-  Delta = 1,
-  Drifted = 2,
-}
 
 /**
  * Which key/method encrypted a record's payload, so a reader can pick the matching

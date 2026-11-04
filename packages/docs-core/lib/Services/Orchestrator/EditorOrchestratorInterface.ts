@@ -9,7 +9,7 @@ import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayloa
 import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'
 import type { SuggestionSummaryType } from '@proton/docs-shared/SuggestionType'
 import type { FeatureFlag } from '@proton/unleash/Flags'
-import type { SheetsPatchesType } from '../../Database/SheetsDBSchema'
+import type { SheetsPatchesType } from '@proton/docs-shared/SheetsPatchesType'
 import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
 
