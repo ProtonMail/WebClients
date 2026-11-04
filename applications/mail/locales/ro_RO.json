@@ -1879,15 +1879,15 @@
         "Servere VPN dedicate: ${ ips }"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
-        "Asistent de IA ${ LUMO_APP_NAME }"
+        "Asistent ${ LUMO_APP_NAME } AI"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } utilizator)",
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } utilizatori)",
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } de utilizatori)"
       ],
       "${ LUMO_APP_NAME } AI license": [
-        "Licențe IA ${ LUMO_APP_NAME }"
+        "Licențe ${ LUMO_APP_NAME } AI"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licențe ${ LUMO_APP_NAME }"
@@ -1915,9 +1915,9 @@
         "${ quantity } de domenii personale"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }"
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
@@ -2835,7 +2835,7 @@
     },
     "collider_2025: feature": {
       "Access to advanced AI models": [
-        "Acces la modele AI avansate"
+        "Acces la modele de IA avansate"
       ],
       "Basic chat history": [
         "Istoric de bază conversații"
@@ -9052,7 +9052,7 @@
         "Acest fișier este prea mare pentru a fi examinat."
       ],
       "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
-        "Această adresă de Gmail este înregistrată cu un alt cont ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } IA și altele). Lucrăm pentru a face această conexiune perfectă, dar deocamdată va trebui să parcurgeți câțiva pași."
+        "Această adresă de Gmail este înregistrată cu un alt cont ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI și altele). Lucrăm pentru a face această conexiune perfectă, dar deocamdată va trebui să parcurgeți câțiva pași."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Această invitație este salvată într-un calendar dezactivat."
@@ -17493,6 +17493,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Filter on": [
+        "Filtru activat"
       ]
     },
     "Title header for keys table": {
