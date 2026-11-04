@@ -3,7 +3,6 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 
@@ -13,21 +12,10 @@ interface Props extends ModalStateProps {
     deleteAll?: boolean;
     /** Number of conversations being deleted. Used for plural messaging on bulk delete. Defaults to 1. */
     count?: number;
-    /** Whether any of the conversations being deleted contain generated images. */
-    hasGeneratedImages?: boolean;
     loading?: boolean;
 }
 
-const ConfirmDeleteModal = ({
-    handleDelete,
-    deleteAll = false,
-    count = 1,
-    hasGeneratedImages = false,
-    loading,
-    ...modalProps
-}: Props) => {
-    const imageTools = useFlag('LumoImageTools');
-
+const ConfirmDeleteModal = ({ handleDelete, deleteAll = false, count = 1, loading, ...modalProps }: Props) => {
     // "Delete all" and any multi-selection share the plural copy; a single conversation uses the singular copy.
     const isPlural = deleteAll || count > 1;
 
@@ -55,9 +43,11 @@ const ConfirmDeleteModal = ({
         message = c('Action').t`Are you sure you want to delete this conversation?`;
     }
 
-    const imagesMessage = isPlural
-        ? c('collider_2025:Info').t`Any images generated in these conversations will also be deleted.`
-        : c('collider_2025:Info').t`Any images generated in this conversation will also be deleted.`;
+    const contentWarning = isPlural
+        ? c('collider_2025:Info')
+              .t`Artifacts, generated images and everything else created in these conversations will also be deleted. This can't be undone.`
+        : c('collider_2025:Info')
+              .t`Artifacts, generated images and everything else created in this conversation will also be deleted. This can't be undone.`;
 
     const deleteButtonText = deleteAll ? c('collider_2025').t`Delete all` : c('collider_2025').t`Delete`;
 
@@ -73,12 +63,10 @@ const ConfirmDeleteModal = ({
             ]}
         >
             <p className="m-0">{message}</p>
-            {imageTools && hasGeneratedImages && (
-                <div className="flex flex-row flex-nowrap items-start gap-2 mt-4 p-3 rounded bg-weak">
-                    <LumoIcon name="TriangleAlert" className="color-warning shrink-0 mt-0.5" size={16} />
-                    <span className="text-bold">{imagesMessage}</span>
-                </div>
-            )}
+            <div className="flex flex-row flex-nowrap items-start gap-2 mt-4 p-3 rounded bg-weak">
+                <LumoIcon name="TriangleAlert" className="color-warning shrink-0 mt-0.5" size={16} />
+                <span className="text-bold">{contentWarning}</span>
+            </div>
         </Prompt>
     );
 };

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -13,8 +13,6 @@ import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { sendMessage } from '../../components/Conversation/helper';
 import { FilesManagementView } from '../../components/Files';
-import ConfirmDeleteModal from '../../components/Modals/ConfirmDeleteModal';
-import { SelectableConversationList } from '../../components/SelectableConversationList';
 import { useLumoUserSettings, usePersonalization } from '../../hooks';
 import { useIsChatHistoryHydrating } from '../../hooks/useIsChatHistoryHydrating';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
@@ -22,27 +20,27 @@ import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
-import { applyRetentionPolicy, groupConversationsByDate } from '../../layouts/sidepanel/helpers';
+import { ConversationExpirationLegend } from '../../layouts/sidepanel/ConversationExpirationLegend';
+import { applyRetentionPolicy } from '../../layouts/sidepanel/helpers';
 import { ArtifactCreationProvider } from '../../providers/ArtifactCreationProvider';
 import { ModelTierProvider } from '../../providers/ModelTierProvider';
 import { WebSearchProvider } from '../../providers/WebSearchProvider';
-import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
+import { useLumoDispatch, useLumoSelector, useLumoStore } from '../../redux/hooks';
 import {
     selectAttachmentsBySpaceId,
-    selectConversationHasGeneratedImages,
     selectConversationsBySpaceId,
     selectProvisionalAttachments,
     selectSpaceById,
 } from '../../redux/selectors';
 import { clearProvisionalAttachments, upsertAttachment } from '../../redux/slices/core/attachments';
-import {
-    locallyDeleteConversationFromLocalRequest,
-    pushConversationRequest,
-} from '../../redux/slices/core/conversations';
 import { addSpace, pullSpaceRequest, pushSpaceRequest } from '../../redux/slices/core/spaces';
+import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import { ComposerMode, SpaceType, getProjectInfo } from '../../types';
+import type { AllChatsFilterValue } from '../allChats/filterAllChatsConversations';
+import { filterAllChatsConversations, getAllChatsEmptyVariant } from '../allChats/filterAllChatsConversations';
+import { AllChatsEmptyState } from '../allChats/shared/AllChatsEmptyState';
+import { ConversationListPanel } from '../allChats/shared/ConversationListPanel';
 import { ProjectFilesPanel } from './ProjectFilesPanel';
-import { ConversationDropdown } from './components/ConversationDropdown';
 import { ProjectEmptyState } from './components/ProjectEmptyState';
 import { ProjectTitleSection } from './components/ProjectTitleSection';
 import { getProjectCategory, getPromptSuggestionsForCategory } from './constants';
@@ -54,6 +52,8 @@ import type { Project } from './types';
 
 import './ProjectDetailView.scss';
 
+const PROJECT_EXCLUDED_FILTERS: AllChatsFilterValue[] = ['projects'];
+
 interface RouteParams {
     projectId: string;
 }
@@ -64,6 +64,7 @@ const ProjectDetailViewInner = () => {
     const history = useHistory();
     const isDataHydrating = useIsChatHistoryHydrating();
     const dispatch = useLumoDispatch();
+    const store = useLumoStore();
     const api = useApi();
     const [showSidebar] = useState(true);
     const [isEditorFocused, setIsEditorFocused] = useState(false);
@@ -72,11 +73,6 @@ const ProjectDetailViewInner = () => {
     // Modal state
     const instructionsModal = useModalStateObject();
     const deleteModal = useModalStateObject();
-    const deleteConversationModal = useModalStateObject();
-    const [conversationToDelete, setConversationToDelete] = useState<string | null>(null);
-    const hasGeneratedImagesInConversationToDelete = useLumoSelector(
-        selectConversationHasGeneratedImages(conversationToDelete)
-    );
     const sidebarModal = useModalStateObject();
     const driveBrowserModal = useModalStateObject();
     const { isSmallScreen: isMobileViewport } = useIsLumoSmallScreen();
@@ -96,8 +92,10 @@ const ProjectDetailViewInner = () => {
     const conversations = useLumoSelector(selectConversationsBySpaceId(projectId));
     const allConversations = Object.values(conversations);
     const { hasLumoPlus } = useLumoPlan();
-    const { lumoUserSettings } = useLumoUserSettings();
+    const { lumoUserSettings, updateSettings } = useLumoUserSettings();
     const dateField = lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
+    const [filter, setFilter] = useState<AllChatsFilterValue>('all');
+    const [isSelectionMode, setIsSelectionMode] = useState(false);
 
     // Project data
     const { project } = getProjectInfo(space);
@@ -108,7 +106,17 @@ const ProjectDetailViewInner = () => {
 
     const retainedConversations = applyRetentionPolicy(allConversations, hasLumoPlus);
 
-    const conversationGroups = groupConversationsByDate(retainedConversations, { sortBy: dateField });
+    const projectConversations = useMemo(() => {
+        return filterAllChatsConversations({
+            conversations: Object.values(conversations),
+            filter,
+            searchQuery: '',
+            rowDataMap: {},
+            sortField: dateField,
+            hasLumoPlus,
+            getState: store.getState,
+        });
+    }, [conversations, filter, dateField, hasLumoPlus, store]);
 
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(projectId));
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
@@ -242,15 +250,11 @@ const ProjectDetailViewInner = () => {
         [space, dispatch, projectId]
     );
 
-    // Handler for deleting multiple conversations - must be before conditional return (Rules of Hooks)
-    const handleDeleteSelectedConversations = useCallback(
-        async (conversationIds: string[]) => {
-            for (const id of conversationIds) {
-                dispatch(locallyDeleteConversationFromLocalRequest(id));
-                dispatch(pushConversationRequest({ id }));
-            }
+    const handleSortFieldChange = useCallback(
+        (nextDateField: ChatHistoryDateField) => {
+            updateSettings({ chatHistoryDateField: nextDateField, _autoSave: true });
         },
-        [dispatch]
+        [updateSettings]
     );
 
     if (!space || space.spaceType !== SpaceType.Project) {
@@ -304,19 +308,6 @@ const ProjectDetailViewInner = () => {
         void deleteProject(projectId);
     };
 
-    const handleDeleteConversation = (conversationId: string) => {
-        setConversationToDelete(conversationId);
-        deleteConversationModal.openModal(true);
-    };
-
-    const confirmDeleteConversation = () => {
-        if (conversationToDelete) {
-            dispatch(locallyDeleteConversationFromLocalRequest(conversationToDelete));
-            dispatch(pushConversationRequest({ id: conversationToDelete }));
-            setConversationToDelete(null);
-        }
-    };
-
     return (
         <LumoLayoutWithDrawer
             header={{
@@ -356,25 +347,25 @@ const ProjectDetailViewInner = () => {
                                 />
                             ) : (
                                 <div className="project-detail-conversations pt-5 mb-0">
-                                    <div className="project-detail-conversation-list p-0 md:py-4 md:pl-8 md:pr-6">
-                                        <SelectableConversationList
-                                            groups={conversationGroups
-                                                .map((group) => ({
-                                                    title: group.title,
-                                                    conversations: group.conversations,
-                                                }))
-                                                .filter((group) => group.conversations.length > 0)}
-                                            showDate={false}
-                                            onConversationClick={(id) => history.push(`/c/${id}`)}
-                                            onDeleteSelected={handleDeleteSelectedConversations}
-                                            renderConversationActions={(conversation) => (
-                                                <ConversationDropdown
-                                                    conversationId={conversation.id}
-                                                    onDelete={() => handleDeleteConversation(conversation.id)}
-                                                />
-                                            )}
-                                        />
-                                    </div>
+                                    <ConversationExpirationLegend conversations={retainedConversations} />
+                                    <ConversationListPanel
+                                        title={c('collider_2025:Title').t`Chats`}
+                                        titleAs="h2"
+                                        conversations={projectConversations}
+                                        filter={filter}
+                                        onFilterChange={setFilter}
+                                        excludedFilters={PROJECT_EXCLUDED_FILTERS}
+                                        sortField={dateField}
+                                        onSortFieldChange={handleSortFieldChange}
+                                        isSelectionMode={isSelectionMode}
+                                        onSelectionModeChange={setIsSelectionMode}
+                                        isMobileLayout={isMobileViewport}
+                                        isLoading={false}
+                                        showProjectLink={false}
+                                        emptyState={
+                                            <AllChatsEmptyState variant={getAllChatsEmptyVariant('', filter)} />
+                                        }
+                                    />
                                 </div>
                             )}
 
@@ -446,17 +437,6 @@ const ProjectDetailViewInner = () => {
                         {...deleteModal.modalProps}
                         project={projectForModal}
                         onConfirmDelete={handleDelete}
-                    />
-                )}
-
-                {deleteConversationModal.render && (
-                    <ConfirmDeleteModal
-                        {...deleteConversationModal.modalProps}
-                        handleDelete={() => {
-                            confirmDeleteConversation();
-                            deleteConversationModal.openModal(false);
-                        }}
-                        hasGeneratedImages={hasGeneratedImagesInConversationToDelete}
                     />
                 )}
 

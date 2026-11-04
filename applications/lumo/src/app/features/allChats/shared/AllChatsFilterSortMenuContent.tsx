@@ -77,6 +77,7 @@ interface AllChatsFilterSortMenuContentProps {
     sortField: ChatHistoryDateField;
     onSortFieldChange: (value: ChatHistoryDateField) => void;
     onItemSelect?: () => void;
+    excludedFilters?: AllChatsFilterValue[];
 }
 
 export const AllChatsFilterSortMenuContent = ({
@@ -85,11 +86,16 @@ export const AllChatsFilterSortMenuContent = ({
     sortField,
     onSortFieldChange,
     onItemSelect,
+    excludedFilters = [],
 }: AllChatsFilterSortMenuContentProps) => {
+    const filterOptions = getAllChatsMenuFilterOptions().filter((option) => {
+        return !excludedFilters.includes(option.value);
+    });
+
     return (
         <>
             <div className="px-4 py-2 color-weak text-semibold">{c('collider_2025:Title').t`Filters`}</div>
-            {getAllChatsMenuFilterOptions().map((option) => {
+            {filterOptions.map((option) => {
                 return (
                     <FilterMenuItem
                         key={option.value}

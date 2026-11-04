@@ -49,6 +49,26 @@ im.$media-expressions: $media-expressions;
 		overflow: hidden;
 	}
 
+	.navigation-link.is-renaming {
+		border-color: transparent;
+		box-shadow: none;
+	}
+
+	.sidebar-conversation-rename-input {
+		min-inline-size: 0;
+		flex: 1 1 auto;
+
+		&.input:focus-within {
+			box-shadow: none;
+		}
+
+		.input-element {
+			font-size: inherit;
+			padding-block: #{rem(2)};
+			padding-inline: #{rem(6)};
+		}
+	}
+
 	.chat-history-list {
 		min-inline-size: 0;
 		max-inline-size: 100%;
