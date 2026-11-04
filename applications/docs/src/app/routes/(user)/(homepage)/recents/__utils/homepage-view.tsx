@@ -1,26 +1,11 @@
-import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
-import { useHistory, useRouteMatch } from 'react-router'
-import { HOMEPAGE_RECENTS_PATH, HOMEPAGE_TRASH_PATH } from '../../../__utils/homepage-paths'
+import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import { useHistory } from 'react-router'
 import type { ReactNode } from 'react'
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
+import { createContext, useCallback, useContext, useEffect } from 'react'
 import { useLocation } from 'react-router-dom-v5-compat'
-import type { DecryptedLink } from '@proton/drive-store/store/_links/interface'
-import { useDriveEventManager } from '@proton/drive-store/store/_events/useDriveEventManager'
-import useDefaultShare from '@proton/drive-store/store/_shares/useDefaultShare'
-import useTrashView from '@proton/drive-store/store/_views/useTrashView'
-import { ServerTime } from '@proton/docs-shared/ServerTime'
-import { useApplication } from '~/utils/application-context'
-import { useEvent, useSubscribe } from '~/utils/misc'
-import { useContactEmails } from '@proton/account/contactEmails/hooks'
-import { VolumeTypeForEvents } from '@proton/drive-store/store/_volumes/interface'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { getOwnerName } from './get-owner-name'
-import {
-  isProtonDocsDocument,
-  isProtonDocsSpreadsheet,
-  type ProtonDocumentType,
-} from '@proton/shared/lib/helpers/mimetype'
-import { useAddresses } from '@proton/account/addresses/hooks'
+import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
 import { isMyDocument } from './is-my-document'
 
@@ -80,7 +65,7 @@ export type HomepageViewValue = {
   updateRenamedDocumentInCache: (uniqueId: string, name: string) => Promise<void>
   isRecentsUpdating: boolean
   type: ProtonDocumentType | undefined
-  /** Known only with recents loaded through the Drive SDK, once the My files folder has loaded. */
+  /** Known once the My files folder has loaded. */
   myFilesRootUid?: string
 }
 
@@ -90,170 +75,12 @@ export type HomepageViewProviderProps = {
   children: ReactNode
 }
 
-export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
-  useSubscribeToMainVolume()
-
-  const isRecentsRoute = Boolean(useRouteMatch(HOMEPAGE_RECENTS_PATH))
-  const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
-
-  const [search, setSearch] = useSearch()
-  const [recentsSort, setRecentsSort] = useRecentsSort()
-  const [type] = useType()
-  const {
-    recentDocuments,
-    updateRecentDocuments,
-    updateRenamedDocumentInCache,
-    isLoading: isRecentsLoading,
-    isUpdating: isRecentsUpdating,
-    isInitial: isRecentsInitial,
-  } = useRecentDocuments({ search, type })
-  const { trashedDocuments, isLoading: isTrashedLoading } = useTrashedDocuments()
-
-  const state = useHomepageViewState({
-    isRecentsRoute,
-    isTrashRoute,
-    search,
-    recentsSort,
-    recentDocuments,
-    trashedDocuments,
-    isRecentsLoading,
-    isRecentsInitial,
-    isTrashedLoading,
-  })
-  const value = useMemo(
-    () => ({
-      state,
-      setRecentsSort,
-      setSearch,
-      updateRecentDocuments,
-      updateRenamedDocumentInCache,
-      isRecentsUpdating,
-      type,
-    }),
-    [isRecentsUpdating, setRecentsSort, setSearch, state, type, updateRecentDocuments, updateRenamedDocumentInCache],
-  )
-
-  return <HomepageViewContext.Provider value={value}>{children}</HomepageViewContext.Provider>
-}
-
 export function useHomepageView() {
   const value = useContext(HomepageViewContext)
   if (!value) {
     throw new Error('Missing View context')
   }
   return value
-}
-
-// view state resolver
-// -------------------
-
-type HomepageViewStateOptions = {
-  isRecentsRoute: boolean
-  isTrashRoute: boolean
-  search: string | undefined
-  recentsSort: RecentsSort
-  recentDocuments: RecentDocumentsItem[]
-  trashedDocuments: RecentDocumentsItem[]
-  isRecentsLoading: boolean
-  isRecentsInitial: boolean
-  isTrashedLoading: boolean
-}
-
-function useHomepageViewState({
-  isRecentsRoute,
-  isTrashRoute,
-  search,
-  recentsSort,
-  recentDocuments,
-  trashedDocuments,
-  isRecentsLoading,
-  isRecentsInitial,
-  isTrashedLoading,
-}: HomepageViewStateOptions): HomepageViewState {
-  // The state, without the items.
-  const protoState = useMemo(() => {
-    let outputState: HomepageViewState = { view: 'unknown' }
-    if (isRecentsRoute) {
-      // Search.
-      if (search && search.length > 0) {
-        if (isRecentsInitial) {
-          outputState = { view: 'search-initial', query: search }
-        } else if (isRecentsLoading) {
-          outputState = { view: 'search-loading', query: search }
-        } else if (recentDocuments.length === 0) {
-          outputState = { view: 'search-empty', query: search }
-        } else {
-          outputState = { view: 'search', itemSections: [], query: search }
-        }
-        // Recents.
-      } else {
-        if (isRecentsInitial) {
-          outputState = { view: 'recents-initial' }
-        } else if (isRecentsLoading) {
-          outputState = { view: 'recents-loading' }
-        } else if (recentDocuments.length === 0) {
-          outputState = { view: 'recents-empty' }
-        } else {
-          outputState = { view: 'recents', itemSections: [], sort: recentsSort }
-        }
-      }
-    } else if (isTrashRoute) {
-      if (isTrashedLoading) {
-        outputState = { view: 'trash-loading' }
-      } else if (trashedDocuments.length === 0) {
-        outputState = { view: 'trash-empty' }
-      } else {
-        outputState = { view: 'trash', itemSections: [] }
-      }
-    }
-
-    return outputState
-  }, [
-    isRecentsInitial,
-    isRecentsLoading,
-    isRecentsRoute,
-    isTrashedLoading,
-    isTrashRoute,
-    recentDocuments.length,
-    recentsSort,
-    search,
-    trashedDocuments.length,
-  ])
-
-  if (protoState.view === 'unknown') {
-    throw new Error('Unknown view state')
-  }
-
-  const [contactEmails] = useContactEmails()
-  const [addresses] = useAddresses()
-
-  // Populate the state with ordered and sectioned items.
-  // Done in a separate memoized computation to minimize re-computations.
-  const state = useMemo(() => {
-    const outputState = { ...protoState }
-    if (outputState.view === 'recents') {
-      // if (recentsSort === 'viewed' || recentsSort === 'modified') {
-      if (recentsSort === 'viewed') {
-        outputState.itemSections = splitIntoSectionsByTime(
-          recentDocuments,
-          recentsSort === 'viewed' ? 'lastViewed' : 'lastModified',
-        )
-      } else if (recentsSort === 'owner') {
-        outputState.itemSections = splitIntoSectionsByOwner(recentDocuments, addresses, contactEmails)
-      } else if (recentsSort === 'location') {
-        outputState.itemSections = splitIntoSectionsByLocation(recentDocuments)
-      } else {
-        outputState.itemSections = splitIntoSectionsByName(recentDocuments)
-      }
-    } else if (outputState.view === 'search') {
-      outputState.itemSections = splitIntoSectionsByName(recentDocuments, { isSearchResults: true })
-    } else if (outputState.view === 'trash') {
-      outputState.itemSections = splitIntoSectionsByName(trashedDocuments)
-    }
-    return outputState
-  }, [addresses, contactEmails, protoState, recentDocuments, recentsSort, trashedDocuments])
-
-  return state
 }
 
 // query state (recents sort and search)
@@ -337,88 +164,6 @@ export function filterDocuments(items?: RecentDocumentsItem[], search?: string, 
     return isValid
   })
   return outputItems
-}
-
-function useRecentDocuments({ search, type }: { search?: string; type?: ProtonDocumentType }) {
-  const { recentDocumentsService, logger } = useApplication()
-  const store = recentDocumentsService.state
-
-  const items = useSubscribe(store, 'recents')
-  const state = useSubscribe(store, 'state')
-
-  const isEmpty = items.length === 0
-  const isInitial = state === 'not_fetched'
-  const isUpdating = state === 'fetching' || state === 'resolving'
-  const isLoading = isEmpty && isUpdating
-
-  const startTimeRef = useRef<number>()
-  useEffect(() => {
-    if (state === 'resolving' && !startTimeRef.current) {
-      startTimeRef.current = Date.now()
-    }
-    if (state === 'done' && startTimeRef.current) {
-      const duration = (Date.now() - startTimeRef.current) / 1000
-      logger.debug(`Time to resolve ${items.length} recent documents: ${duration.toFixed(2)}s`)
-      startTimeRef.current = undefined
-    }
-  }, [items.length, logger, state])
-
-  const filteredItems = useMemo(() => filterDocuments(items, search, type), [items, search, type])
-
-  const updateRecentDocuments = useEvent(() => recentDocumentsService.fetch())
-  const updateRenamedDocumentInCache = useEvent((uniqueId: string, name: string) =>
-    recentDocumentsService.updateRenamedDocumentInCache(uniqueId, name),
-  )
-
-  // Initial update.
-  useEffect(() => {
-    void updateRecentDocuments()
-  }, [updateRecentDocuments])
-
-  return {
-    recentDocuments: filteredItems,
-    updateRecentDocuments,
-    updateRenamedDocumentInCache,
-    isInitial,
-    isUpdating,
-    isLoading,
-  }
-}
-
-// trashed documents
-// -----------------
-
-function isTrashedDocument(item: DecryptedLink): item is DecryptedLink & { trashed: number } {
-  return Boolean(item.trashed) && (isProtonDocsDocument(item.mimeType) || isProtonDocsSpreadsheet(item.mimeType))
-}
-
-/**
- * This is a pile of hacks. It reuses the "trash" view from Drive (drive.proton.me/trash), and since
- * we depend on the shape of "RecentDocumentsItem", we just do a rough conversion so that we can
- * display it in the table for the "Trash" view, which is temporary anyway.
- *
- * When we unwind this temporary implementation, we should make sure to generalize the "RecentDocuments"
- * concept to cover these use cases in a clean way.
- */
-function useTrashedDocuments() {
-  const { items, isLoading } = useTrashView()
-  const trashedDocuments = items.filter(isTrashedDocument).map((item) =>
-    RecentDocumentsItem.create({
-      type: isProtonDocsDocument(item.mimeType) ? 'document' : 'spreadsheet',
-      createdBy: item.nameSignatureEmail,
-      name: item.name,
-      isSharedWithMe: Boolean(item.sharedBy),
-      linkId: item.linkId,
-      parentLinkId: item.parentLinkId,
-      volumeId: item.volumeId,
-      // The properties below are pure lies, but good enough for the purposes of this temporary UI.
-      shareId: item.shareId ?? '', // We won't use this, so it's fine if missing.
-      lastViewed: new ServerTime(item.trashed), // This is actually the trashed date.
-      lastModified: new ServerTime(item.trashed),
-      location: { type: 'root' }, // We don't actually rely on this, and just display a link to the Drive "Trash" view.
-    }),
-  )
-  return { trashedDocuments, isLoading }
 }
 
 // sort utils
@@ -540,30 +285,4 @@ export function splitIntoSectionsByLocation(items: RecentDocumentsItem[]): Items
       }),
     },
   ]
-}
-
-// subscribe to main volume
-// ------------------------
-
-function useSubscribeToMainVolume() {
-  const driveEventManager = useDriveEventManager()
-  const { getDefaultShare } = useDefaultShare()
-  const [volumeId, setVolumeId] = useState<string>()
-  const obtainVolumeId = useEvent(async () => {
-    const { volumeId } = await getDefaultShare()
-    setVolumeId(volumeId)
-  })
-  useEffect(() => {
-    void obtainVolumeId()
-  }, [obtainVolumeId])
-
-  useEffect(() => {
-    if (!volumeId) {
-      return
-    }
-    driveEventManager.volumes.startSubscription(volumeId, VolumeTypeForEvents.main).catch(console.error)
-    return () => {
-      driveEventManager.volumes.unsubscribe(volumeId)
-    }
-  }, [driveEventManager.volumes, volumeId])
 }

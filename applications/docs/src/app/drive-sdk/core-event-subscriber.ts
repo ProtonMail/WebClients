@@ -4,7 +4,6 @@ import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager'
 import type { CoreApiEvent, ProtonDriveClient } from '@protontech/drive-sdk'
 import { useEffect } from 'react'
-import { useInvitationsSdkEnabled, useLoadRecentsWithSdkEnabled } from '~/utils/flags'
 
 type CoreEventListener = () => void
 
@@ -71,20 +70,14 @@ export function getCoreEventSubscriber() {
 }
 
 /**
- * Mount ONCE in the app. Subscribes only when a feature using core events has its SDK flag on.
+ * Mount ONCE in the app.
  */
 export function useCoreEventSubscription() {
   const coreEventManager = useEventManager()
-  const invitationsSdk = useInvitationsSdkEnabled()
-  const recentsSdk = useLoadRecentsWithSdkEnabled()
 
   useEffect(() => {
-    if (!invitationsSdk && !recentsSdk) {
-      return
-    }
-
     const coreEventSubscriber = getCoreEventSubscriber()
     coreEventSubscriber.initialize(coreEventManager)
     return () => coreEventSubscriber.reset()
-  }, [coreEventManager, invitationsSdk, recentsSdk])
+  }, [coreEventManager])
 }

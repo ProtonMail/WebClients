@@ -6,12 +6,6 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { TrashedDocumentModal } from './TrashedDocumentModal'
 
-let mockTrashWithSDK = true
-jest.mock('~/utils/flags', () => ({
-  ...jest.requireActual('~/utils/flags'),
-  useTrashWithSDK: () => mockTrashWithSDK,
-}))
-
 function renderModal({
   didTrashDocInCurrentSession,
   role = 'Admin',
@@ -73,19 +67,13 @@ describe('TrashedDocumentModal', () => {
   )
 
   test.each([
-    { didTrashDocInCurrentSession: true, restoreButton: 'Undo', trashWithSDK: true },
-    { didTrashDocInCurrentSession: true, restoreButton: 'Undo', trashWithSDK: false },
-    { didTrashDocInCurrentSession: false, restoreButton: 'Take out of trash', trashWithSDK: true },
-    { didTrashDocInCurrentSession: false, restoreButton: 'Take out of trash', trashWithSDK: false },
-  ])(
-    '$restoreButton passes useTrashWithSDK $trashWithSDK to restoreDocument',
-    async ({ didTrashDocInCurrentSession, restoreButton, trashWithSDK }) => {
-      mockTrashWithSDK = trashWithSDK
-      const { controller } = renderModal({ didTrashDocInCurrentSession })
+    { didTrashDocInCurrentSession: true, restoreButton: 'Undo' },
+    { didTrashDocInCurrentSession: false, restoreButton: 'Take out of trash' },
+  ])('$restoreButton restores the document', async ({ didTrashDocInCurrentSession, restoreButton }) => {
+    const { controller } = renderModal({ didTrashDocInCurrentSession })
 
-      await userEvent.click(screen.getByRole('button', { name: restoreButton, hidden: true }))
+    await userEvent.click(screen.getByRole('button', { name: restoreButton, hidden: true }))
 
-      expect(controller.restoreDocument).toHaveBeenCalledWith(trashWithSDK)
-    },
-  )
+    expect(controller.restoreDocument).toHaveBeenCalledTimes(1)
+  })
 })

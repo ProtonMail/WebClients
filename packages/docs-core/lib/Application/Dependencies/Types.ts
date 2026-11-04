@@ -11,7 +11,6 @@ export const App_TYPES = {
   MetricService: Symbol.for('MetricService'),
   PublicDocLoader: Symbol.for('PublicDocLoader'),
   RealtimeEncryptionService: Symbol.for('RealtimeEncryptionService'),
-  RecentDocumentsService: Symbol.for('RecentDocumentsService'),
   WebsocketService: Symbol.for('WebsocketService'),
   Database: Symbol.for('Database'),
   SheetsDatabase: Symbol.for('SheetsDatabase'),

@@ -37,7 +37,6 @@ import { WebsocketService } from '../../Services/Websockets/WebsocketService'
 import { VerifyMessages } from '../../UseCase/VerifyMessages'
 import type { ImageProxyParams } from '../../Api/Types/ImageProxyParams'
 import { MetricService } from '../../Services/Metrics/MetricService'
-import { RecentDocumentsService } from '../../Services/recent-documents'
 import { GetNode } from '../../UseCase/GetNode'
 import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import { PublicDocLoader } from '../../Services/DocumentLoader/PublicDocLoader'
@@ -462,15 +461,6 @@ export class AppDependencies extends DependencyContainer {
 
     this.bind(App_TYPES.HandleRealtimeCommentsEvent, () => {
       return new HandleRealtimeCommentsEvent()
-    })
-
-    this.bind(App_TYPES.RecentDocumentsService, () => {
-      return new RecentDocumentsService(
-        compatWrapper.getUserCompat(),
-        this.get<DocsApi>(App_TYPES.DocsApi),
-        this.get<CacheService>(App_TYPES.CacheService),
-        this.get<LoggerInterface>(App_TYPES.Logger),
-      )
     })
   }
 }

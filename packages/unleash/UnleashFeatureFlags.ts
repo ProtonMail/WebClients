@@ -204,13 +204,9 @@ enum DocsFeatureFlag {
     SheetsUpdateChunkingEnabled = 'SheetsUpdateChunkingEnabled',
     SheetsUpdateCompressionEnabled = 'SheetsUpdateCompressionEnabled',
     // SDK Migration
-    DocsDocumentViewerEventsSDK = 'DocsDocumentViewerEventsSDK',
     DocsDriveCompatSDK = 'DocsDriveCompatSDK',
     DocsInvitationsDriveSDK = 'DocsInvitationsDriveSDK',
-    DocsLoadRecentsWithDriveSDK = 'DocsLoadRecentsWithDriveSDK',
-    DocsMoveModalDriveSDK = 'DocsMoveModalDriveSDK',
     DocsRealtimeSdkEnabled = 'DocsRealtimeSdkEnabled',
-    DocsTrashWithDriveSDK = 'DocsTrashWithDriveSDK',
 }
 
 enum DriveFeatureFlag {

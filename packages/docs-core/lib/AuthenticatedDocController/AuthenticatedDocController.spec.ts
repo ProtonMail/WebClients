@@ -3,7 +3,6 @@ import type { DocumentMetaInterface } from '@proton/docs-shared/DocumentMetaInte
 import type { InternalEventBusInterface } from '@proton/docs-shared/Events/InternalEventBusInterface'
 import { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
 import { Result } from '@proton/docs-shared/Result'
-import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 import type { CreateNewDocument } from '../UseCase/CreateNewDocument'
@@ -16,15 +15,17 @@ import type { GetNode } from '../UseCase/GetNode'
 import type { DocumentStateValues } from '../State/DocumentState'
 import { DocumentState } from '../State/DocumentState'
 import { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
+import { generateNodeUid } from '@proton/drive/sdk'
+import { restoreDocument as restoreDocumentSDK, trashDocument as trashDocumentSDK } from '../DriveSDK/trash'
+
+jest.mock('../DriveSDK/trash', () => ({
+  trashDocument: jest.fn(),
+  restoreDocument: jest.fn(),
+  reportTrashError: jest.fn(),
+}))
 
 describe('AuthenticatedDocController', () => {
   let controller: AuthenticatedDocController
-  const driveCompat = {
-    getNode: jest.fn(),
-    trashDocument: jest.fn(),
-    restoreDocument: jest.fn(),
-    getShareId: jest.fn(),
-  }
   let documentState: DocumentState
 
   beforeEach(async () => {
@@ -39,7 +40,6 @@ describe('AuthenticatedDocController', () => {
 
     controller = new AuthenticatedDocController(
       documentState,
-      driveCompat as unknown as jest.Mocked<DriveCompat>,
       {} as jest.Mocked<SquashDocument>,
       {} as jest.Mocked<SeedInitialCommit>,
       {} as jest.Mocked<DuplicateDocument>,
@@ -78,9 +78,19 @@ describe('AuthenticatedDocController', () => {
     beforeEach(() => {
       documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456))
 
-      documentState.setProperty('decryptedNode', { parentNodeId: '123', trashed: true } as unknown as DecryptedNode)
+      documentState.setProperty('decryptedNode', {
+        volumeId: 'volume-id',
+        nodeId: 'node-id',
+        parentNodeId: '123',
+        trashed: true,
+      } as unknown as DecryptedNode)
 
       documentState.setProperty('documentTrashState', 'not_trashed')
+    })
+
+    it('trashes the node through the Drive SDK', async () => {
+      await controller.trashDocument()
+      expect(trashDocumentSDK).toHaveBeenCalledWith(generateNodeUid('volume-id', 'node-id'))
     })
 
     it('trashState should be trashing initially', () => {
@@ -114,9 +124,19 @@ describe('AuthenticatedDocController', () => {
     beforeEach(() => {
       documentState.setProperty('documentMeta', new DocumentMeta('volume-id-def', ['ghi'], 123, 456))
 
-      documentState.setProperty('decryptedNode', { parentNodeId: '123', trashed: true } as unknown as DecryptedNode)
+      documentState.setProperty('decryptedNode', {
+        volumeId: 'volume-id',
+        nodeId: 'node-id',
+        parentNodeId: '123',
+        trashed: true,
+      } as unknown as DecryptedNode)
 
       documentState.setProperty('documentTrashState', 'trashed')
+    })
+
+    it('restores the node through the Drive SDK', async () => {
+      await controller.restoreDocument()
+      expect(restoreDocumentSDK).toHaveBeenCalledWith(generateNodeUid('volume-id', 'node-id'))
     })
 
     it('trashState should be restoring initially', () => {

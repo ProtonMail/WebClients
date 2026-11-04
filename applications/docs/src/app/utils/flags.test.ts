@@ -4,9 +4,8 @@ import { useBulkMoveEnabled, useBulkTrashEnabled, useRealtimeSdkEnabled } from '
 
 describe('useBulkTrashEnabled', () => {
   test.each([
-    [{ DocsHomepageBulkTrash: true, DocsTrashWithDriveSDK: true }, true],
-    [{ DocsHomepageBulkTrash: true, DocsTrashWithDriveSDK: false }, false],
-    [{ DocsHomepageBulkTrash: false, DocsTrashWithDriveSDK: true }, false],
+    [{ DocsHomepageBulkTrash: true }, true],
+    [{ DocsHomepageBulkTrash: false }, false],
   ])('%j -> %s', (flags: Record<string, boolean>, expected) => {
     jest.mocked(useFlag).mockImplementation((name) => flags[name])
 
@@ -17,31 +16,16 @@ describe('useBulkTrashEnabled', () => {
 })
 
 describe('useBulkMoveEnabled', () => {
-  const withFlags = (bulkMove: boolean, bulkTrash: boolean, moveModalSdk: boolean, recentsSdk: boolean) => ({
+  const withFlags = (bulkMove: boolean, bulkTrash: boolean) => ({
     DocsHomepageBulkMove: bulkMove,
     DocsHomepageBulkTrash: bulkTrash,
-    DocsTrashWithDriveSDK: true,
-    DocsMoveModalDriveSDK: moveModalSdk,
-    DocsLoadRecentsWithDriveSDK: recentsSdk,
   })
 
   test.each([
-    [withFlags(true, true, true, true), true],
-    [withFlags(true, true, true, false), false],
-    [withFlags(true, true, false, true), false],
-    [withFlags(true, true, false, false), false],
-    [withFlags(true, false, true, true), false],
-    [withFlags(true, false, true, false), false],
-    [withFlags(true, false, false, true), false],
-    [withFlags(true, false, false, false), false],
-    [withFlags(false, true, true, true), false],
-    [withFlags(false, true, true, false), false],
-    [withFlags(false, true, false, true), false],
-    [withFlags(false, true, false, false), false],
-    [withFlags(false, false, true, true), false],
-    [withFlags(false, false, true, false), false],
-    [withFlags(false, false, false, true), false],
-    [withFlags(false, false, false, false), false],
+    [withFlags(true, true), true],
+    [withFlags(true, false), false],
+    [withFlags(false, true), false],
+    [withFlags(false, false), false],
   ])('%j -> %s', (flags: Record<string, boolean>, expected) => {
     jest.mocked(useFlag).mockImplementation((name) => flags[name])
 

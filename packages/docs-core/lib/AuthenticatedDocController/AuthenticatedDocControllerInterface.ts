@@ -17,12 +17,11 @@ export interface AuthenticatedDocControllerInterface {
     editorYjsState: Uint8Array<ArrayBuffer>,
   ): Promise<{ nodeMeta: NodeMeta; documentType: DocumentType }>
   getVersionHistory(): NativeVersionHistory | undefined
-  openMoveToFolderModal(): void
   restoreRevisionAsCopy(yjsContent: YjsState): Promise<{ nodeMeta: NodeMeta; documentType: DocumentType }>
-  restoreDocument(replaceDriveCompat?: boolean): Promise<void>
+  restoreDocument(): Promise<void>
   squashDocument(): Promise<void>
   squashEverythingInBaseCommit(): Promise<Result<boolean>>
-  trashDocument(replaceDriveCompat?: boolean): Promise<void>
+  trashDocument(): Promise<void>
   getAllUpdatesAsZip(): Promise<Blob>
   downloadAllUpdatesAsZip(): Promise<void>
   downloadUpdatesInformation(ydoc?: unknown): Promise<void>
