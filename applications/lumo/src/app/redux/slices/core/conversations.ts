@@ -113,6 +113,7 @@ const conversationsReducer = createReducer<ConversationMap>(EMPTY_CONVERSATION_M
             console.log('Action triggered: changeConversationTitle', action.payload);
             const payload = action.payload;
             const conversation = state[payload.id];
+            if (!conversation) return;
             conversation.title = payload.title;
         })
         .addCase(setConversationAgent, (state, action) => {
