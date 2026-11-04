@@ -105,8 +105,7 @@ const createDirectMeetCoreClient = async (params: MeetCoreInitParams): Promise<D
     );
     app.setUseCachedServerTime(params.useCachedServerTime);
     app.setUseMessageQueues(params.useMessageQueues);
-    // eslint-disable-next-line no-console
-    console.log(`[Meet] setUseMessageQueues(${params.useMessageQueues}) [direct]`);
+    logger.info(`setUseMessageQueues(${params.useMessageQueues}) [direct]`);
 
     // The worker client installs them in its own global scope on init, this is the direct equivalent.
     installWaitingRoomCallbackNamespaces();
