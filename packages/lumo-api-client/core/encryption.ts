@@ -23,10 +23,7 @@ function base64StringToUint8Array(base64: string): Uint8Array<ArrayBuffer> {
  */
 async function encryptImage(image: WireImage, encryption: RequestEncryptionParams) {
     const data = base64StringToUint8Array(image.data);
-    console.log('image.data (truncated):', image.data.slice(0, 128));
-    console.log('decoded data (truncated):', data.slice(0, 128));
     const encryptedData = await encryption.encryptUint8Array(data);
-    console.log('encryptedData (truncated):', encryptedData.slice(0, 128));
     return {
         ...image,
         data: encryptedData,

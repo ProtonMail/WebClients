@@ -8,6 +8,7 @@ import { NotEnoughToCompactError, partitionChain } from './partition';
 import { clearOldToolResults, dropToolPairs, stripContext } from './strategies';
 import { getLatestCompactionBoundary } from './summarizedMessages';
 import { estimateChainAttachmentTokens, estimateTurnsTokens } from './tokens';
+import { buildTranscript } from './transcript';
 
 let seq = 0;
 function textMsg(role: Role, content: string, overrides: Partial<Message> = {}): Message {
@@ -38,6 +39,23 @@ function toolMsg(content: string): Message {
 
 beforeEach(() => {
     seq = 0;
+});
+
+it('summarizes tool images by filename without sending their encoded bytes as text', () => {
+    const data = btoa('\x89PNG\r\n\x1a\n' + 'x'.repeat(40_000));
+    const content = JSON.stringify({
+        type: 'lumo_file_image',
+        image_id: 'image',
+        path: '/cat.png',
+        mime_type: 'image/png',
+        data,
+    });
+    const message = toolMsg('Image read from /cat.png');
+    const block = message.blocks![1];
+    if (block.type === 'tool_result') block.toolImages = [JSON.parse(content)];
+    const transcript = buildTranscript([message]);
+    expect(transcript).toContain('[tool result] Image read from /cat.png');
+    expect(transcript).not.toContain(data);
 });
 
 describe('partitionChain', () => {

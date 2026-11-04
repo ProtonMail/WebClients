@@ -71,6 +71,8 @@ describe('composeClientToolExecutors', () => {
             },
         ],
         canExecute: (name) => name.startsWith('filesystem__'),
+        prepareCalls: (calls, { processFiles }) =>
+            processFiles ? calls.map((call) => ({ ...call, arguments: '{"prepared":true}' })) : calls,
         execute: async (calls) => {
             return calls.map(() => {
                 return { content: 'desktop-ok' };
@@ -92,7 +94,10 @@ describe('composeClientToolExecutors', () => {
             { id: '3', name: 'filesystem__fs_read', arguments: '{}' },
         ];
 
-        const results = await composed.execute(calls);
+        const prepared = composed.prepareCalls!(calls, { processFiles: true });
+        expect(prepared.map((call) => call.arguments)).toEqual(['{"prepared":true}', '{}', '{"prepared":true}']);
+        expect(composed.prepareCalls!(calls, { processFiles: false })).toEqual(calls);
+        const results = await composed.execute(prepared);
         expect(results).toEqual([{ content: 'desktop-ok' }, { content: 'artifact-ok' }, { content: 'desktop-ok' }]);
     });
 

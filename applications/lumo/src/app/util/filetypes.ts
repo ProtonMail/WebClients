@@ -9,6 +9,7 @@ import { c } from 'ttag';
 interface FileTypeConfig {
     extensions: string[];
     mimeTypes: string[];
+    mimeTypesByExtension?: Record<string, string>;
     description: string;
     category:
         | 'document'
@@ -87,6 +88,7 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     word: {
         extensions: ['doc', 'docx'],
         mimeTypes: ['application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
+        mimeTypesByExtension: { docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' },
         get description() {
             // translator: Human-readable file type description shown for attachments.
             return c('collider_2025:Label').t`Word Document`;
@@ -119,6 +121,7 @@ const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
     excel: {
         extensions: ['xls', 'xlsx'],
         mimeTypes: ['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
+        mimeTypesByExtension: { xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' },
         get description() {
             // translator: Human-readable file type description shown for attachments.
             return c('collider_2025:Label').t`Excel Document`;
@@ -702,7 +705,7 @@ function getExtensionToMimeTypeMap(): Record<string, string> {
             return;
         }
         config.extensions.forEach((ext) => {
-            map[ext] = mime;
+            map[ext] = config.mimeTypesByExtension?.[ext] ?? mime;
         });
     });
     return map;
@@ -922,19 +925,5 @@ export function getProcessingCategory(mimeType: string, fileName?: string): Proc
 /** Get MIME type from filename */
 export function getMimeTypeFromName(filename: string): string {
     const ext = filename.split('.').pop()?.toLowerCase() || '';
-    const mimeTypes: Record<string, string> = {
-        pdf: 'application/pdf',
-        doc: 'application/msword',
-        docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-        txt: 'text/plain',
-        md: 'text/markdown',
-        csv: 'text/csv',
-        xls: 'application/vnd.ms-excel',
-        xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        json: 'application/json',
-        html: 'text/html',
-        xml: 'application/xml',
-        gpx: 'application/gpx+xml',
-    };
-    return mimeTypes[ext] || 'application/octet-stream';
+    return getExtensionToMimeTypeMap()[ext] ?? 'application/octet-stream';
 }

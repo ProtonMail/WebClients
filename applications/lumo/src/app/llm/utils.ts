@@ -1,4 +1,5 @@
 import type { Attachment, ContentBlock, Message } from '../types';
+import { IMAGE_TOKEN_ESTIMATE } from './compaction/constants';
 import { countTokens } from './tokenizer';
 
 /**
@@ -12,7 +13,7 @@ function calculateBlockTokens(block: ContentBlock): number {
         case 'tool_call':
             return countTokens(block.content);
         case 'tool_result':
-            return countTokens(block.content);
+            return countTokens(block.content) + (block.toolImages?.length ?? 0) * IMAGE_TOKEN_ESTIMATE;
         default:
             // Future-proof: unknown block types
             return 0;

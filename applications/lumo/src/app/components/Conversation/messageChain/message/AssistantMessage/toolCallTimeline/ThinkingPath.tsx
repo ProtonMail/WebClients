@@ -922,7 +922,7 @@ const ToolCallStep = ({
                         <ThinkingStepBodyLines lines={contentLines} />
                         {isExpanded && (
                             <div className="thinking-step-details mt-2 text-rg lh130">
-                                <pre className="text-sm m-0 whitespace-pre-wrap">{result}</pre>
+                                <pre className="text-sm m-0 whitespace-pre-wrap">{result ?? ''}</pre>
                             </div>
                         )}
                         <button
@@ -1126,7 +1126,7 @@ const ToolCallStep = ({
                                         />
                                     </div>
                                 ) : (
-                                    <pre className="text-sm m-0 whitespace-pre-wrap">{result}</pre>
+                                    <pre className="text-sm m-0 whitespace-pre-wrap">{result ?? ''}</pre>
                                 )}
                             </div>
                         )}

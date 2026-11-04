@@ -77,7 +77,13 @@ import {
     isTimeoutMessage,
     isTokenDataMessage,
 } from '../types-api';
-import type { ClientToolExecutor, ClientToolResult, PendingClientToolCall } from './client-tools';
+import type {
+    ClientToolExecutor,
+    ClientToolResult,
+    PendingClientToolCall,
+    ToolFileProcessor,
+    ToolImage,
+} from './client-tools';
 
 // Re-export types with aliases
 export {
@@ -119,7 +125,7 @@ export {
     type WireImage,
 };
 export type EncryptedTurn = EncryptedWireTurn;
-export type Turn = WireTurn;
+export type Turn = WireTurn & { toolImages?: ToolImage[] };
 
 // Re-export functions with aliases
 export {
@@ -166,6 +172,8 @@ export interface LumoApiClientConfig {
     imageTools: ToolName[];
     /** When true and no `clientToolExecutor` is supplied, registers the Lumo Desktop bridge executor. */
     enableDesktopTools: boolean;
+    /** Reuse the product's attachment conversions for tool-read files. */
+    processToolFile?: ToolFileProcessor;
     interceptors: {
         request?: RequestInterceptor[];
         response?: ResponseInterceptor[];
@@ -173,7 +181,9 @@ export interface LumoApiClientConfig {
 }
 
 // Callback types
-export type ChunkCallback = (message: GenerationResponseMessage) => Promise<void> | void;
+/** Emitted locally after client execution; not accepted by the server stream parser. */
+export type ClientToolResultMessage = { type: 'client_tool_result'; content: string; images?: ToolImage[] };
+export type ChunkCallback = (message: GenerationResponseMessage | ClientToolResultMessage) => Promise<void> | void;
 export type FinishCallback = (status: Status) => Promise<void> | void;
 export type RecordRequestCallback = (body: ChatCompletionsRequest) => void;
 

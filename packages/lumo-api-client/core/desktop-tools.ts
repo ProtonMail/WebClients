@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 import type { ChatCompletionsFlatFunctionTool, ChatCompletionsFunctionTool } from '../types-api';
-import type { ClientToolExecutor, ClientToolResult, PendingClientToolCall } from './client-tools';
+import type { ClientToolExecutor, ClientToolResult, PendingClientToolCall, ToolFileAttachment } from './client-tools';
 import type { LumoApiClientConfig } from './types';
 
 /** Result payload matching connector-bridge executeToolCall output. */
@@ -11,6 +11,7 @@ type NativeToolResultMessage = {
     tool_call_id: string | null;
     name: string;
     content: string;
+    fileTransfer?: unknown;
     is_error?: boolean;
 };
 
@@ -24,6 +25,7 @@ export type ScheduleExecutionInput = {
 
 export type DesktopExternalTools = {
     scheduleExecutionCapabilities?: { readOnlyConnectors?: boolean };
+    completeFileRead?: (resultId: string, value: unknown) => Promise<unknown>;
     registerScheduleExecutionContext?: (input: ScheduleExecutionInput) => Promise<ScheduleToolContext>;
     ready?: Promise<void>;
     getTools?: () => ChatCompletionsFlatFunctionTool[] | ChatCompletionsFunctionTool[];
@@ -120,6 +122,140 @@ export const TOOL_APPROVAL_RESOLVED_EVENT = 'lumo:tool-approval-resolved';
 
 function getDesktopBridge(): DesktopExternalTools | null {
     return window.__TAURI__?.external_tools ?? window.LumoConnectors ?? null;
+}
+
+function supportsDesktopFileProcessing(): boolean {
+    return typeof window !== 'undefined' && typeof getDesktopBridge()?.completeFileRead === 'function';
+}
+
+export function prepareDesktopToolFileReads(calls: PendingClientToolCall[]): PendingClientToolCall[] {
+    if (!supportsDesktopFileProcessing()) return calls;
+    return calls.map((call) => {
+        if (!['filesystem__fs_read', 'filesystem_fs_read'].includes(call.name)) return call;
+        try {
+            const args = JSON.parse(call.arguments || '{}');
+            if (
+                !args ||
+                typeof args !== 'object' ||
+                Array.isArray(args) ||
+                args.start !== undefined ||
+                args.end !== undefined ||
+                args.format !== undefined
+            ) {
+                return call;
+            }
+            return { ...call, arguments: JSON.stringify({ ...args, format: 'file' }) };
+        } catch {
+            return call;
+        }
+    });
+}
+
+/** Bound converted output using the same account-scoped store as other native tools. */
+export async function completeDesktopFileRead(resultId: string, value: unknown): Promise<ClientToolResult> {
+    const bridge = typeof window === 'undefined' ? null : getDesktopBridge();
+    if (!bridge?.completeFileRead) throw new Error('Update Lumo Desktop to process local file attachments.');
+    const result = await bridge.completeFileRead(resultId, value);
+    return { content: typeof result === 'string' ? result : JSON.stringify(result) };
+}
+
+/** Native envelope decoding and receipt IDs stay inside the desktop adapter. */
+function decodeDesktopToolFile(value: unknown): ToolFileAttachment {
+    const file = value as Record<string, unknown> | null;
+    const maxBytes = 5 * 1024 * 1024;
+    if (
+        !file ||
+        file.type !== 'lumo_file' ||
+        typeof file.file_id !== 'string' ||
+        !file.file_id ||
+        file.file_id.length > 256 ||
+        typeof file.result_id !== 'string' ||
+        !file.result_id ||
+        file.result_id.length > 256 ||
+        typeof file.path !== 'string' ||
+        file.path.length > 8192 ||
+        typeof file.name !== 'string' ||
+        !file.name ||
+        file.name.length > 1024 ||
+        typeof file.mime_type !== 'string' ||
+        file.mime_type.length > 256 ||
+        typeof file.binary !== 'boolean' ||
+        typeof file.size !== 'number' ||
+        !Number.isSafeInteger(file.size) ||
+        file.size < 0 ||
+        file.size > maxBytes ||
+        typeof file.data !== 'string' ||
+        file.data.length > Math.ceil(maxBytes / 3) * 4 ||
+        file.data.length % 4 !== 0 ||
+        /[^A-Za-z0-9+/=]/.test(file.data)
+    ) {
+        throw new Error('Invalid file transfer or file exceeds the 5 MiB desktop read limit.');
+    }
+    const bytes = atob(file.data);
+    if (bytes.length !== file.size) throw new Error('Incomplete file transfer.');
+    const receipt = file.result_id;
+    return {
+        file: {
+            id: file.file_id,
+            path: file.path,
+            name: file.name,
+            mimeType: file.mime_type,
+            binary: file.binary,
+            data: Uint8Array.from(bytes, (char) => char.charCodeAt(0)),
+        },
+        onProcessed: async (result) => {
+            if (result.images?.length) {
+                await completeDesktopFileRead(receipt, { ...result.images[0], type: 'lumo_file_image' });
+                return result;
+            }
+            // Converted processor output, never raw tool text.
+            let converted: unknown = result.content;
+            try {
+                converted = JSON.parse(result.content);
+            } catch {
+                /* Plain text is also supported. */
+            }
+            return { ...result, ...(await completeDesktopFileRead(receipt, converted)) };
+        },
+    };
+}
+
+/** Translate trusted bridge metadata into the platform-independent executor contract. */
+export function normalizeDesktopToolResult(
+    result: Pick<NativeToolResultMessage, 'content' | 'fileTransfer' | 'is_error'>
+): ClientToolResult {
+    const plain = { content: result.content, is_error: result.is_error };
+    if (result.fileTransfer === undefined) return plain;
+    try {
+        const value = result.fileTransfer as Record<string, unknown> | null;
+        if (!value || typeof value !== 'object') throw new Error('Invalid file transport metadata.');
+        if (value.type === 'lumo_file' && !result.is_error) {
+            return { content: '', files: [decodeDesktopToolFile(value)] };
+        }
+        if (value.type !== 'lumo_tool_result' || !Array.isArray(value.files) || value.files.length > 10) {
+            throw new Error('Invalid multimodal tool result.');
+        }
+        let isError = result.is_error || value.isError === true;
+        const text = typeof value.text === 'string' ? value.text : JSON.stringify(value.text ?? '');
+        const parts = isError ? ['[Tool reported isError=true]', text] : [text];
+        const files: ToolFileAttachment[] = [];
+        for (const file of value.files) {
+            try {
+                files.push(decodeDesktopToolFile(file));
+            } catch (error) {
+                parts.push(
+                    JSON.stringify({ error: error instanceof Error ? error.message : 'Invalid file transfer.' })
+                );
+                isError = true;
+            }
+        }
+        return { content: parts.join('\n'), files, is_error: isError };
+    } catch (error) {
+        return {
+            content: JSON.stringify({ error: error instanceof Error ? error.message : 'Invalid file transfer.' }),
+            is_error: true,
+        };
+    }
 }
 
 export function getDesktopConnectorsApi(): LumoConnectorsApi | null {
@@ -454,12 +590,10 @@ export function createDesktopClientToolExecutor(schedule?: ScheduleExecutionInpu
         },
         canExecute: isDesktopNativeTool,
         normalizeCalls: normalizeDesktopToolCalls,
+        prepareCalls: (calls, { processFiles }) => (processFiles ? prepareDesktopToolFileReads(calls) : calls),
         execute: async (calls) => {
             const results = await executeBridgeToolCalls(calls, await registerContext());
-            return results.map((result): ClientToolResult => ({
-                content: result.content,
-                is_error: result.is_error,
-            }));
+            return results.map(normalizeDesktopToolResult);
         },
     };
 }

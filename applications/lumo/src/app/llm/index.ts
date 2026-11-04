@@ -278,6 +278,7 @@ export function prepareTurns(
                 turns.push({
                     role: Role.ToolResult,
                     content: block.content,
+                    ...(block.toolImages?.length ? { toolImages: block.toolImages } : {}),
                 });
             }
         }

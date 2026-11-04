@@ -133,15 +133,27 @@ describe('setToolResultInBlocks', () => {
         expect(blocks[0].type).toBe('tool_result');
     });
 
-    it('replaces the tool result for the same call id', () => {
+    it('replaces the tool result for the same call id, retaining images unless explicitly cleared', () => {
         const partial = JSON.stringify({ type: 'Weather', location_name: 'London' });
         const final = JSON.stringify({ type: 'Weather', location_name: 'London', temperature: 12.8 });
 
-        let blocks = setToolResultInBlocks([], partial, undefined, 'call_1');
+        const images = [
+            {
+                type: 'lumo_file_image' as const,
+                image_id: 'image',
+                path: '/receipt.png',
+                mime_type: 'image/png',
+                data: '',
+            },
+        ];
+        let blocks = setToolResultInBlocks([], partial, undefined, 'call_1', images);
         blocks = setToolResultInBlocks(blocks, final, undefined, 'call_1');
 
         expect(blocks).toHaveLength(1);
         expect(blocks[0].content).toBe(final);
+        expect(blocks[0]).toHaveProperty('toolImages', images);
+        blocks = setToolResultInBlocks(blocks, final, undefined, 'call_1', []);
+        expect(blocks[0]).not.toHaveProperty('toolImages');
     });
 
     it('pairs sequential id-less tool results with the first unpaired tagged tool calls', () => {

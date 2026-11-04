@@ -1,3 +1,4 @@
+import type { ToolImage } from '@proton/lumo-api-client/core/client-tools';
 import type { ScheduleDefinition, ScheduleRun } from '@proton/lumo-api-client/core/desktop-schedules';
 
 import { type ArtifactType, isArtifactType } from './components/Conversation/artifact/parseArtifacts';
@@ -18,9 +19,8 @@ export { IMAGE_ASPECT_RATIOS };
 export type { ImageAspectRatio };
 
 // *** Turn aliases ***
-// Turn types are defined in types-api as WireTurn (matching backend schema)
-// We export them here as Turn for convenience throughout the codebase
-export type Turn = WireTurn;
+// Include client-owned tool image metadata; it is removed before wire serialization.
+export type Turn = WireTurn & { toolImages?: ToolImage[] };
 export { Role };
 
 export { isOldEncryptedData } from './crypto/encryptedData';
@@ -298,6 +298,7 @@ export type ToolCallBlock = {
 
 export type ToolResultBlock = {
     type: 'tool_result';
+    toolImages?: ToolImage[];
     content: string; // JSON string (for serialization/prepareTurns)
     toolResult?: unknown; // Parsed JSON (for easy access, may be invalid/unknown)
     tool_call_id?: string; // OpenAI tool_call id linking result to its call

@@ -1,5 +1,25 @@
 import type { ChatCompletionsFunctionTool } from '../types-api';
 
+export { toolImageMimeType } from './tool-files';
+export type ToolImage = { image_id: string; path: string; mime_type: string; data: string };
+
+export type ToolFile = {
+    id: string;
+    path: string;
+    name: string;
+    mimeType: string;
+    binary: boolean;
+    data: Uint8Array<ArrayBuffer>;
+};
+
+export type ToolFileProcessor = (file: ToolFile) => Promise<ClientToolResult>;
+
+export type ToolFileAttachment = {
+    file: ToolFile;
+    /** Adapter-owned completion, for example retaining converted output for paging. */
+    onProcessed?: (result: ClientToolResult) => Promise<ClientToolResult>;
+};
+
 export type PendingClientToolCall = {
     id: string;
     name: string;
@@ -8,6 +28,10 @@ export type PendingClientToolCall = {
 
 export type ClientToolResult = {
     content: string;
+    /** Executor-supplied files; process before persistence, never infer them from tool text. */
+    files?: ToolFileAttachment[];
+    /** Processed images supplied by a trusted client executor or file processor. */
+    images?: ToolImage[];
     is_error?: boolean;
     /** End the assistant turn after recording this successful result, without requesting another completion. */
     endTurn?: boolean;
@@ -24,6 +48,8 @@ export interface ClientToolExecutor {
     getClientTools?(): Promise<ChatCompletionsFunctionTool[]>;
     canExecute(name: string): boolean;
     normalizeCalls?(calls: PendingClientToolCall[]): PendingClientToolCall[];
+    /** Adapt arguments one-to-one, preserving call identity, before execution. */
+    prepareCalls?(calls: PendingClientToolCall[], context: { processFiles: boolean }): PendingClientToolCall[];
     /** One result per call, in the same order; a short array is filled with per-call errors. */
     execute(calls: PendingClientToolCall[]): Promise<ClientToolResult[]>;
 }
@@ -144,6 +170,11 @@ export function composeClientToolExecutors(...executors: ClientToolExecutor[]): 
                 return executor.normalizeCalls?.(normalizedCalls) ?? normalizedCalls;
             }, calls);
         },
+        prepareCalls: (calls, context) =>
+            calls.map((call) => {
+                const executor = findExecutorForCall(activeExecutors, call);
+                return executor?.prepareCalls?.([call], context)[0] ?? call;
+            }),
         execute: async (calls) => {
             const results: ClientToolResult[] = new Array(calls.length);
             let index = 0;

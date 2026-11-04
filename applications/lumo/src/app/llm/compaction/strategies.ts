@@ -47,7 +47,12 @@ export function clearOldToolResults(messages: Message[], keepRecent: number): St
             if (index < clearThreshold && block.content !== CLEARED_TOOL_RESULT_PLACEHOLDER) {
                 mutated = true;
                 affected += 1;
-                return { ...block, content: CLEARED_TOOL_RESULT_PLACEHOLDER, toolResult: undefined };
+                return {
+                    ...block,
+                    content: CLEARED_TOOL_RESULT_PLACEHOLDER,
+                    toolResult: undefined,
+                    toolImages: undefined,
+                };
             }
             return block;
         });

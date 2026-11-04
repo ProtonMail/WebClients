@@ -26,6 +26,8 @@ import { RequestEncryptionParams } from './encryptionParams';
 import { LUMO_CHAT_ENDPOINT, callChatEndpoint } from './network';
 import { RequestBuilder } from './request-builder';
 import { extractTitleSourceText } from './title-generation';
+import { processToolFileResult } from './tool-files';
+import { expandToolResultImages } from './tool-result-images';
 import { makeAbortTransformStream } from './transforms/abort';
 import { makeChunkParserTransformStreamWithCapture } from './transforms/chunks';
 import { makeContextUpdaterTransformStream } from './transforms/context';
@@ -449,7 +451,7 @@ export class LumoApiClient {
         const tools = await this.getTools(enableExternalTools, enableImageTools, clientToolExecutor);
         return {
             type: 'generation_request',
-            turns,
+            turns: expandToolResultImages(turns),
             options: {
                 tools,
                 reasoning: enableReasoning,
@@ -502,7 +504,12 @@ export class LumoApiClient {
         executor: ClientToolExecutor,
         chunkCallback: ChunkCallback | undefined
     ): Promise<{ turns: Turn[]; endTurn: boolean }> {
-        const results = await executor.execute(calls);
+        const executionCalls = executor.prepareCalls?.(calls, { processFiles: !!this.config.processToolFile }) ?? calls;
+        const rawResults = await executor.execute(executionCalls);
+        const results: ClientToolResult[] = [];
+        for (const result of rawResults) {
+            results.push(await processToolFileResult(result, this.config.processToolFile));
+        }
         // An executor that answers fewer calls than it was given must not take the whole turn down
         // with it; the model can recover from a per-call error.
         const executed = calls.map((call, index) => ({ call, result: results[index] ?? missingResultFor(call) }));
@@ -530,6 +537,7 @@ export class LumoApiClient {
             nextTurns.push({
                 role: Role.ToolResult,
                 content: result.content,
+                ...(result.images?.length ? { toolImages: result.images } : {}),
             });
 
             if (chunkCallback) {
@@ -542,10 +550,9 @@ export class LumoApiClient {
                     content: toolCallContent,
                 });
                 await chunkCallback({
-                    type: 'token_data',
-                    target: 'tool_result',
-                    count: 0,
+                    type: 'client_tool_result',
                     content: result.content,
+                    ...(result.images?.length ? { images: result.images } : {}),
                 });
             }
         }
@@ -836,7 +843,7 @@ export class LumoApiClient {
      * Get the current configuration
      * @returns Current client configuration
      */
-    getConfig(): Readonly<Required<LumoApiClientConfig>> {
+    getConfig(): Readonly<LumoApiClientConfig> {
         return { ...this.config };
     }
 
