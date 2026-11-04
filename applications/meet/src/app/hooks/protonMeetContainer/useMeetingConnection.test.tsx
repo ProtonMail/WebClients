@@ -12,13 +12,18 @@ import {
     setPrejoinParticipantCount,
     setReconnectionFailed,
 } from '@proton/meet/store/slices/connectionSlice';
+import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MEET_CORE_JOIN_TIMEOUT_MS, MEET_CORE_STALL_TIMEOUT_MS } from '../../wasm/meetCoreStallRecovery';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import { OFFLINE_GIVE_UP_MS, OFFLINE_RECHECK_MS, REJOIN_RETRY_DELAYS_MS } from './rejoinAttempts';
-import { type MeetingAccessDetails, useMeetingConnection } from './useMeetingConnection';
+import {
+    type MeetingAccessDetails,
+    type UseMeetingConnectionResult,
+    useMeetingConnection,
+} from './useMeetingConnection';
 
 vi.mock('@livekit/components-react', () => ({ useRoomContext: vi.fn() }));
 vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn() }));
@@ -665,6 +670,137 @@ describe('useMeetingConnection', () => {
                     RejoinReasonInfo.Other,
                     false
                 );
+            });
+        });
+
+        describe('when the server keeps disconnecting right after each rejoin', () => {
+            const reason = RejoinReasonInfo.LivekitConnectionTimeout;
+
+            const rejoinThreeTimesThirtySecondsApart = async (connection: { current: UseMeetingConnectionResult }) => {
+                for (let run = 0; run < 3; run += 1) {
+                    await expect(connection.current.performFullReconnection(reason)).resolves.toBe('joined');
+                    await act(() => vi.advanceTimersByTimeAsync(30 * SECOND));
+                }
+            };
+
+            beforeEach(() => {
+                vi.useFakeTimers();
+                useFlagMock.mockImplementation(
+                    (name: string) => name === 'MeetHandleStalledLiveKitReconnect' || name === 'MeetClientMetricsLog'
+                );
+            });
+            afterEach(() => vi.useRealTimers());
+
+            it('a 4th automatic rejoin within 2 minutes shows the Connection lost modal without connecting', async () => {
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+                await rejoinThreeTimesThirtySecondsApart(result);
+
+                await expect(result.current.performFullReconnection(reason)).resolves.toBe('failed');
+
+                expect(mockGetAccessDetails).toHaveBeenCalledTimes(3);
+                expect(params.handleMlsSetup).toHaveBeenCalledTimes(3);
+                expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalledTimes(3);
+                expect(mockDispatch).toHaveBeenLastCalledWith(setReconnectionFailed(true));
+                expect(result.current.isReconnectingRef.current).toBe(false);
+                expect(params.accessTokenRef.current).toBeNull();
+                expect(result.current.websocketUrlRef.current).toBeNull();
+                expect(params.reportMeetError).toHaveBeenCalledTimes(1);
+                expect(params.reportMeetError).toHaveBeenCalledWith('Automatic rejoin limit reached', {
+                    level: 'warning',
+                    context: { runs: 3, windowMs: 2 * MINUTE },
+                });
+                expect(mockMeetCoreClient.logUserRejoin).toHaveBeenLastCalledWith(expect.any(BigInt), 0, reason, false);
+            });
+
+            it('a capped rejoin disconnects the room and leaves meet-core', async () => {
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+                await rejoinThreeTimesThirtySecondsApart(result);
+                params.mlsSetupDone.current = true;
+                mockRoom.disconnect.mockClear();
+                params.cleanupMlsState.mockClear();
+
+                await expect(result.current.performFullReconnection(reason)).resolves.toBe('failed');
+
+                expect(mockRoom.disconnect).toHaveBeenCalledTimes(1);
+                expect(mockMeetCoreClient.leaveMeeting).toHaveBeenCalledTimes(1);
+                expect(mockRoom.disconnect.mock.invocationCallOrder[0]).toBeLessThan(
+                    mockMeetCoreClient.leaveMeeting.mock.invocationCallOrder[0]
+                );
+                expect(params.mlsSetupDone.current).toBe(false);
+                expect(params.cleanupMlsState).toHaveBeenCalled();
+                expect(params.handleMlsSetup).toHaveBeenCalledTimes(3);
+            });
+
+            it('a capped rejoin cancelled while the room disconnects resolves cancelled and changes nothing afterwards', async () => {
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+                await rejoinThreeTimesThirtySecondsApart(result);
+                params.mlsSetupDone.current = true;
+                const pendingDisconnect = createDeferred<void>();
+                mockRoom.disconnect.mockReturnValueOnce(pendingDisconnect.promise);
+
+                const run = result.current.performFullReconnection(reason);
+                await vi.waitFor(() => expect(mockRoom.disconnect).toHaveBeenCalledTimes(4));
+                result.current.cancelReconnection();
+                mockDispatch.mockClear();
+                mockMeetCoreClient.logUserRejoin.mockClear();
+                pendingDisconnect.resolve();
+
+                await expect(run).resolves.toBe('cancelled');
+                expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
+                expect(params.mlsSetupDone.current).toBe(true);
+                expect(mockDispatch).not.toHaveBeenCalled();
+                expect(params.reportMeetError).not.toHaveBeenCalled();
+                expect(mockMeetCoreClient.logUserRejoin).not.toHaveBeenCalled();
+            });
+
+            it('an automatic rejoin more than 2 minutes after the oldest counted one rejoins, and the window slides', async () => {
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+                await rejoinThreeTimesThirtySecondsApart(result);
+                await act(() => vi.advanceTimersByTimeAsync(30 * SECOND + 1));
+
+                await expect(result.current.performFullReconnection(reason)).resolves.toBe('joined');
+                await expect(result.current.performFullReconnection(reason)).resolves.toBe('failed');
+                expect(mockGetAccessDetails).toHaveBeenCalledTimes(4);
+            });
+
+            it('a manual rejoin after the cap rejoins and starts a fresh count without counting itself', async () => {
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+                await rejoinThreeTimesThirtySecondsApart(result);
+                await expect(result.current.performFullReconnection(reason)).resolves.toBe('failed');
+
+                await expect(
+                    result.current.performFullReconnection(RejoinReasonInfo.Other, { manual: true })
+                ).resolves.toBe('joined');
+                await rejoinThreeTimesThirtySecondsApart(result);
+
+                expect(mockGetAccessDetails).toHaveBeenCalledTimes(7);
+                await expect(result.current.performFullReconnection(reason)).resolves.toBe('failed');
+            });
+
+            it('a skipped rejoin does not count', async () => {
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+                result.current.isReconnectingRef.current = true;
+                await expect(result.current.performFullReconnection(reason)).resolves.toBe('skipped');
+                result.current.isReconnectingRef.current = false;
+
+                await rejoinThreeTimesThirtySecondsApart(result);
+            });
+
+            it('has no limit when MeetHandleStalledLiveKitReconnect is disabled', async () => {
+                useFlagMock.mockImplementation((name: string) => name === 'MeetClientMetricsLog');
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+                await rejoinThreeTimesThirtySecondsApart(result);
+
+                await expect(result.current.performFullReconnection(reason)).resolves.toBe('joined');
+                expect(mockGetAccessDetails).toHaveBeenCalledTimes(4);
+                expect(mockDispatch).not.toHaveBeenCalledWith(setReconnectionFailed(true));
             });
         });
     });

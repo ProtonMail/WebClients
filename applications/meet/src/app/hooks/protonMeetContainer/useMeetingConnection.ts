@@ -18,6 +18,7 @@ import { encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { SECOND } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
+import noop from '@proton/utils/noop';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import type { InitializeDevices } from '../../types';
@@ -33,6 +34,12 @@ import type { UseKeyManagementResult } from '../useKeyManagement';
 import type { UseLiveKitConnectionResult } from '../useLiveKitConnection';
 import { useStableCallback } from '../useStableCallback';
 import { REJOIN_RETRY_DELAYS_MS, type RejoinOutcome, runRejoinAttempts } from './rejoinAttempts';
+import {
+    AUTOMATIC_REJOIN_RUN_LIMIT,
+    AUTOMATIC_REJOIN_RUN_WINDOW_MS,
+    canStartAutomaticRejoinRun,
+    recordAutomaticRejoinRunStart,
+} from './rejoinRunLimit';
 import type { UseMlsSessionResult } from './useMlsSession';
 
 export interface MeetingAccessDetails {
@@ -93,10 +100,12 @@ interface UseMeetingConnectionParams {
 
 type RejoinStatus = RejoinOutcome['status'] | 'skipped';
 
+type PerformFullReconnection = (reason: RejoinReasonInfo, options?: { manual?: boolean }) => Promise<RejoinStatus>;
+
 export interface UseMeetingConnectionResult {
     isReconnectingRef: MutableRefObject<boolean>;
     websocketUrlRef: MutableRefObject<string | null>;
-    performFullReconnection: (reason: RejoinReasonInfo) => Promise<RejoinStatus>;
+    performFullReconnection: PerformFullReconnection;
     cancelReconnection: () => void;
     connectWithMls: (params: ConnectWithMlsParams) => Promise<ConnectWithMlsResult>;
 }
@@ -134,6 +143,7 @@ export const useMeetingConnection = ({
     const isReconnectingRef = useRef(false);
     const rejoinControllerRef = useRef<AbortController | null>(null);
     const websocketUrlRef = useRef<string | null>(null);
+    const automaticRunStartTimesMsRef = useRef<readonly number[]>([]);
 
     useEffect(() => () => rejoinControllerRef.current?.abort(), []);
 
@@ -283,10 +293,24 @@ export const useMeetingConnection = ({
         isReconnectingRef.current = false;
     };
 
-    const performFullReconnection = useStableCallback(async (reason: RejoinReasonInfo): Promise<RejoinStatus> => {
+    const performFullReconnection = useStableCallback<PerformFullReconnection>(async (reason, { manual } = {}) => {
         if (isReconnectingRef.current || !meetingLinkNameRef.current) {
             return 'skipped';
         }
+
+        const nowMs = Date.now();
+        const isLimitedAutomaticRun = isHandleStalledLiveKitReconnectEnabled && !manual;
+        const isOverAutomaticRunLimit =
+            isLimitedAutomaticRun && !canStartAutomaticRejoinRun(automaticRunStartTimesMsRef.current, nowMs);
+        if (manual) {
+            automaticRunStartTimesMsRef.current = [];
+        } else if (isLimitedAutomaticRun && !isOverAutomaticRunLimit) {
+            automaticRunStartTimesMsRef.current = recordAutomaticRejoinRunStart(
+                automaticRunStartTimesMsRef.current,
+                nowMs
+            );
+        }
+
         const controller = new AbortController();
         const { signal } = controller;
         rejoinControllerRef.current = controller;
@@ -331,7 +355,7 @@ export const useMeetingConnection = ({
                 ? leaveMeetingOrRestart(meetCoreClient, reportMeetError)
                 : meetCoreClient.leaveMeeting();
 
-        const rejoin = async () => {
+        const leaveRoomAndMeetCore = async () => {
             // Snapshot before room.disconnect() — the Disconnected handler clears this ref synchronously
             const wasMlsActive = mlsSetupDone.current;
 
@@ -343,7 +367,7 @@ export const useMeetingConnection = ({
             signal.throwIfAborted();
 
             // Always await leaveMeeting when MLS was active. We do this here (not in the disconnect
-            // handler) so it is properly awaited before joinMeetingWithAccessToken is called below.
+            // handler) so it is properly awaited before a rejoin calls joinMeetingWithAccessToken.
             if (wasMlsActive) {
                 try {
                     await leaveMlsGroup();
@@ -355,7 +379,10 @@ export const useMeetingConnection = ({
             }
 
             cleanupMlsState();
+        };
 
+        const rejoin = async () => {
+            await leaveRoomAndMeetCore();
             await connectWithMls({
                 meetingLinkName,
                 meetingPassword,
@@ -370,11 +397,20 @@ export const useMeetingConnection = ({
             });
         };
 
-        const outcome = await runRejoinAttempts(rejoin, {
-            signal,
-            retryDelaysMs: isHandleStalledLiveKitReconnectEnabled ? REJOIN_RETRY_DELAYS_MS : [],
-            waitWhileOffline: isHandleStalledLiveKitReconnectEnabled,
-        });
+        const failWithoutRejoining = async (): Promise<RejoinOutcome> => {
+            await leaveRoomAndMeetCore().catch(noop);
+            return signal.aborted
+                ? { status: 'cancelled', attempts: 0 }
+                : { status: 'failed', attempts: 0, error: undefined };
+        };
+
+        const outcome = isOverAutomaticRunLimit
+            ? await failWithoutRejoining()
+            : await runRejoinAttempts(rejoin, {
+                  signal,
+                  retryDelaysMs: isHandleStalledLiveKitReconnectEnabled ? REJOIN_RETRY_DELAYS_MS : [],
+                  waitWhileOffline: isHandleStalledLiveKitReconnectEnabled,
+              });
 
         if (outcome.status === 'cancelled') {
             return 'cancelled';
@@ -386,9 +422,16 @@ export const useMeetingConnection = ({
             endRun();
             allowHealthCheck();
         } else {
-            reportMeetError('Full reconnection failed', {
-                context: { error: outcome.error, attempts: outcome.attempts },
-            });
+            if (isOverAutomaticRunLimit) {
+                reportMeetError('Automatic rejoin limit reached', {
+                    level: 'warning',
+                    context: { runs: AUTOMATIC_REJOIN_RUN_LIMIT, windowMs: AUTOMATIC_REJOIN_RUN_WINDOW_MS },
+                });
+            } else {
+                reportMeetError('Full reconnection failed', {
+                    context: { error: outcome.error, attempts: outcome.attempts },
+                });
+            }
 
             // Best-effort MLS leave in case handleMlsSetup succeeded but a later step failed
             if (mlsSetupDone.current) {

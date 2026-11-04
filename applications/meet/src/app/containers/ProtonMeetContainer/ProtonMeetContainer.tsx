@@ -559,7 +559,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
                 <ConnectionLostModal
                     onRejoin={() => {
                         dispatch(setReconnectionFailed(false));
-                        void performFullReconnection(RejoinReasonInfo.Other).then((status) => {
+                        void performFullReconnection(RejoinReasonInfo.Other, { manual: true }).then((status) => {
                             if (status !== 'joined' && status !== 'failed') {
                                 return;
                             }

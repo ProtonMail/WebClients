@@ -105,7 +105,7 @@ const renderConnectionWithRoomEventHandlers = (getParticipants: Mock) => {
         return connection;
     });
 
-    return { ...rendered, triggerFullReconnectionRef };
+    return { ...rendered, triggerFullReconnectionRef, mlsSetupDone };
 };
 
 let room: ReturnType<typeof createRoomThatEmitsOnDisconnect>;
@@ -177,5 +177,32 @@ describe('rejoining after an unexpected LiveKit disconnect', () => {
         expect(mockMeetCoreClient.leaveMeeting.mock.invocationCallOrder[0]).toBeLessThan(
             mockHandleMlsSetup.mock.invocationCallOrder[0]
         );
+    });
+
+    it('stops rejoining after three disconnects in a row, leaves meet-core and shows the Connection lost modal', async () => {
+        const { triggerFullReconnectionRef, mlsSetupDone } = renderConnectionWithRoomEventHandlers(
+            vi.fn().mockResolvedValue(undefined)
+        );
+        mockHandleMlsSetup.mockImplementation(async () => {
+            mlsSetupDone.current = true;
+            return { key: 'group-key', epoch: 1n };
+        });
+        const performFullReconnection = vi.spyOn(triggerFullReconnectionRef, 'current');
+        const { emitDisconnected } = room;
+
+        for (const expectedStatus of ['joined', 'joined', 'joined', 'failed']) {
+            await act(async () => {
+                emitDisconnected(undefined);
+                await expect(performFullReconnection.mock.results.at(-1)?.value).resolves.toBe(expectedStatus);
+            });
+        }
+
+        expect(mockHandleMlsSetup).toHaveBeenCalledTimes(3);
+        expect(room.disconnect).toHaveBeenCalledTimes(4);
+        expect(mockMeetCoreClient.leaveMeeting).toHaveBeenCalledTimes(4);
+        expect(mockMeetCoreClient.leaveMeeting.mock.invocationCallOrder[3]).toBeGreaterThan(
+            mockHandleMlsSetup.mock.invocationCallOrder[2]
+        );
+        expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(true));
     });
 });
