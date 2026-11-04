@@ -21,6 +21,17 @@ describe('loadApplePaySdk', () => {
         expect(getInjectedScripts()).toHaveLength(0);
     });
 
+    it('pins the SDK version and checks its integrity', async () => {
+        const loadApplePaySdk = await importFresh();
+
+        void loadApplePaySdk();
+        const [script] = getInjectedScripts();
+
+        expect(script.src).toBe('https://applepay.cdn-apple.com/jsapi/v1.3.8/apple-pay-sdk.js');
+        expect(script.integrity).toBe('sha384-u/9mOkmShCO0v+dqCAZFhiutJuORfzvuyM5i+676iy7mLSWS6rlllHrIt15f/mqH');
+        expect(script.crossOrigin).toBe('anonymous');
+    });
+
     it('injects the script once for concurrent callers', async () => {
         const loadApplePaySdk = await importFresh();
 

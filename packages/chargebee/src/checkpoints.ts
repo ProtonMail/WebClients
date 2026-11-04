@@ -1,4 +1,4 @@
-export const chargebeeWrapperVersion = '1.9.0';
+export const chargebeeWrapperVersion = '1.9.1';
 
 export type Checkpoint = {
     name: string;
