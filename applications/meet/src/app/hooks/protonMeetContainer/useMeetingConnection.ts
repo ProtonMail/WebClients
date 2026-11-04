@@ -23,7 +23,11 @@ import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import type { InitializeDevices } from '../../types';
 import type { ProtonMeetKeyProvider } from '../../utils/ProtonMeetKeyProvider';
 import type { KeyRotationScheduler } from '../../utils/SeamlessKeyRotationScheduler';
-import { leaveMeetingOrRestart } from '../../wasm/meetCoreStallRecovery';
+import {
+    MEET_CORE_JOIN_TIMEOUT_MS,
+    callMeetCoreWithinDeadline,
+    leaveMeetingOrRestart,
+} from '../../wasm/meetCoreStallRecovery';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import type { UseKeyManagementResult } from '../useKeyManagement';
 import type { UseLiveKitConnectionResult } from '../useLiveKitConnection';
@@ -47,6 +51,7 @@ interface ConnectWithMlsParams {
     isWaitingRoom?: boolean;
     accessDetails?: MeetingAccessDetails;
     signal?: AbortSignal;
+    recoverStalledMeetCore?: boolean;
 }
 
 type ConnectionInfo = Awaited<ReturnType<UseLiveKitConnectionResult['connectWithStunFallbackToTurnRelay']>>;
@@ -146,6 +151,7 @@ export const useMeetingConnection = ({
             isWaitingRoom = false,
             accessDetails,
             signal,
+            recoverStalledMeetCore = false,
         }: ConnectWithMlsParams): Promise<ConnectWithMlsResult> => {
             const fetchAccessDetails = async () => {
                 const sanitizedDisplayName = sanitizeMessage(displayNameArg);
@@ -174,8 +180,17 @@ export const useMeetingConnection = ({
             }
 
             const t1 = performance.now();
+            const setupMls = () =>
+                handleMlsSetup(meetingLinkName, accessToken, password, isWaitingRoom, !recoverStalledMeetCore);
             const { key: groupKey, epoch } =
-                (await handleMlsSetup(meetingLinkName, accessToken, password, isWaitingRoom)) || {};
+                (await (recoverStalledMeetCore
+                    ? callMeetCoreWithinDeadline(meetCoreClient, setupMls, {
+                          name: 'joinMeeting',
+                          reportMeetError,
+                          timeoutMs: MEET_CORE_JOIN_TIMEOUT_MS,
+                          signal,
+                      })
+                    : setupMls())) || {};
             const mlsSetupMs = Math.round(performance.now() - t1);
             signal?.throwIfAborted();
 
@@ -306,6 +321,13 @@ export const useMeetingConnection = ({
 
         const meetingLinkName = meetingLinkNameRef.current;
 
+        // A rejoin follows an unstable network, which is when a meet-core request can hang while holding
+        // the state lock the leave needs.
+        const leaveMlsGroup = () =>
+            isHandleStalledLiveKitReconnectEnabled
+                ? leaveMeetingOrRestart(meetCoreClient, reportMeetError)
+                : meetCoreClient.leaveMeeting();
+
         try {
             // Snapshot before room.disconnect() — the Disconnected handler clears this ref synchronously
             const wasMlsActive = mlsSetupDone.current;
@@ -326,16 +348,7 @@ export const useMeetingConnection = ({
             // handler) so it is properly awaited before joinMeetingWithAccessToken is called below.
             if (wasMlsActive) {
                 try {
-                    // A stalled LiveKit reconnect means the network was unstable, which is when a meet-core
-                    // request can hang while holding the state lock the leave needs.
-                    if (
-                        isHandleStalledLiveKitReconnectEnabled &&
-                        reason === RejoinReasonInfo.LivekitConnectionTimeout
-                    ) {
-                        await leaveMeetingOrRestart(meetCoreClient, reportMeetError);
-                    } else {
-                        await meetCoreClient.leaveMeeting();
-                    }
+                    await leaveMlsGroup();
                 } catch {
                     // best effort
                 }
@@ -354,6 +367,7 @@ export const useMeetingConnection = ({
                 desiredMicrophoneState: wasMicrophoneEnabled,
                 resetParticipantsBeforeFetch: true,
                 signal,
+                recoverStalledMeetCore: isHandleStalledLiveKitReconnectEnabled,
             });
             signal.throwIfAborted();
 
@@ -374,7 +388,7 @@ export const useMeetingConnection = ({
             // Best-effort MLS leave in case handleMlsSetup succeeded but a later step failed
             if (mlsSetupDone.current) {
                 try {
-                    await meetCoreClient.leaveMeeting();
+                    await leaveMlsGroup();
                 } catch {
                     // best effort
                 }

@@ -15,7 +15,11 @@ import {
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
-import { MEET_CORE_STALL_TIMEOUT_MS } from '../../wasm/meetCoreStallRecovery';
+import {
+    MEET_CORE_JOIN_TIMEOUT_MS,
+    MEET_CORE_STALL_TIMEOUT_MS,
+    MeetCoreStalledError,
+} from '../../wasm/meetCoreStallRecovery';
 import { useMeetingAuthentication } from '../srp/useMeetingAuthentication';
 import { type MeetingAccessDetails, useMeetingConnection } from './useMeetingConnection';
 
@@ -100,6 +104,7 @@ describe('useMeetingConnection', () => {
         mockRoom.state = ConnectionState.Disconnected;
         mockRoom.setE2EEEnabled.mockResolvedValue(undefined);
         mockRoom.disconnect.mockResolvedValue(undefined);
+        mockMeetCoreClient.restart.mockResolvedValue(true);
     });
 
     describe('connectWithMls', () => {
@@ -115,7 +120,7 @@ describe('useMeetingConnection', () => {
             expect(mockGetAccessDetails).toHaveBeenCalledWith(
                 expect.objectContaining({ meetingLinkName: 'meeting-abc' })
             );
-            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false);
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, true);
             expect(params.keyProvider.setKeyWithEpoch).toHaveBeenCalledWith('group-key', 1n);
             expect(mockRoom.setE2EEEnabled).toHaveBeenCalledWith(true);
             expect(params.connectWithStunFallbackToTurnRelay).toHaveBeenCalledWith('wss://x', 'tok', 20_000);
@@ -150,7 +155,7 @@ describe('useMeetingConnection', () => {
 
             expect(params.getQueryParticipantsCount).toHaveBeenCalledWith('meeting-abc');
             expect(mockDispatch).toHaveBeenCalledWith(setPrejoinParticipantCount(5));
-            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false);
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, true);
         });
 
         it('does not query the participant count when not requested', async () => {
@@ -163,7 +168,7 @@ describe('useMeetingConnection', () => {
 
             expect(params.getQueryParticipantsCount).not.toHaveBeenCalled();
             expect(mockDispatch).not.toHaveBeenCalledWith(setPrejoinParticipantCount(5));
-            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false);
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, true);
         });
 
         it('forwards the waiting room flag to MLS setup', async () => {
@@ -174,7 +179,7 @@ describe('useMeetingConnection', () => {
                 await result.current.connectWithMls({ ...baseConnectParams, isWaitingRoom: true });
             });
 
-            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', true);
+            expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', true, true);
         });
 
         it('throws when MLS setup returns no key', async () => {
@@ -317,18 +322,136 @@ describe('useMeetingConnection', () => {
                 expect(result.current.isReconnectingRef.current).toBe(false);
             });
 
-            it('does not restart meet-core for other reconnection reasons', async () => {
+            it.each([
+                RejoinReasonInfo.Other,
+                RejoinReasonInfo.EpochMismatch,
+                RejoinReasonInfo.LivekitStateMismatch,
+                RejoinReasonInfo.FetchTimeout,
+            ])('restarts meet-core and still rejoins for reason %s', async (reason) => {
                 mockMeetCoreClient.leaveMeeting.mockReturnValueOnce(new Promise(() => {}));
                 const params = createParams({ mlsSetupDone: { current: true } });
                 const { result } = renderHook(() => useMeetingConnection(params));
 
+                let status;
                 await act(async () => {
-                    void result.current.performFullReconnection(RejoinReasonInfo.Other);
+                    const reconnection = result.current.performFullReconnection(reason);
                     await vi.advanceTimersByTimeAsync(MEET_CORE_STALL_TIMEOUT_MS);
+                    status = await reconnection;
                 });
 
+                expect(status).toBe('joined');
+                expect(mockMeetCoreClient.restart).toHaveBeenCalledTimes(1);
+                expect(params.handleMlsSetup).toHaveBeenCalled();
+            });
+        });
+
+        describe('when joining the MLS group hangs', () => {
+            const neverSettles = () => new Promise<never>(() => {});
+
+            beforeEach(() => {
+                vi.useFakeTimers();
+                useFlagMock.mockImplementation((name: string) => name === 'MeetHandleStalledLiveKitReconnect');
+            });
+            afterEach(() => vi.useRealTimers());
+
+            it('fails the rejoin at the deadline, restarting meet-core and reporting the stall', async () => {
+                const params = createParams({ handleMlsSetup: vi.fn(neverSettles) });
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+                await act(() => vi.advanceTimersByTimeAsync(MEET_CORE_JOIN_TIMEOUT_MS - 1));
                 expect(mockMeetCoreClient.restart).not.toHaveBeenCalled();
-                expect(params.handleMlsSetup).not.toHaveBeenCalled();
+                expect(mockDispatch).not.toHaveBeenCalledWith(setReconnectionFailed(true));
+
+                await act(() => vi.advanceTimersByTimeAsync(1));
+
+                await expect(run).resolves.toBe('failed');
+                expect(mockMeetCoreClient.restart).toHaveBeenCalledTimes(1);
+                expect(params.reportMeetError).toHaveBeenCalledWith('Meet core joinMeeting timed out', {
+                    context: { timeoutMs: MEET_CORE_JOIN_TIMEOUT_MS, restarted: true },
+                });
+                expect(params.reportMeetError).toHaveBeenCalledWith('Full reconnection failed', {
+                    context: { error: expect.any(MeetCoreStalledError) },
+                });
+                expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(true));
+                expect(result.current.isReconnectingRef.current).toBe(false);
+            });
+
+            it('fails the rejoin when meet-core cannot restart, even though leaving the group then hangs too', async () => {
+                mockMeetCoreClient.restart.mockResolvedValue(false);
+                mockMeetCoreClient.leaveMeeting.mockReturnValueOnce(neverSettles());
+                const params = createParams();
+                params.handleMlsSetup.mockImplementation(() => {
+                    params.mlsSetupDone.current = true;
+                    return neverSettles();
+                });
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+                await act(() => vi.advanceTimersByTimeAsync(MEET_CORE_JOIN_TIMEOUT_MS + MEET_CORE_STALL_TIMEOUT_MS));
+
+                await expect(run).resolves.toBe('failed');
+                expect(params.reportMeetError).toHaveBeenCalledWith('Full reconnection failed', {
+                    context: { error: expect.objectContaining({ restarted: false }) },
+                });
+                expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(true));
+            });
+
+            it('a rejoin cancelled while the join hangs stops waiting and leaves meet-core running', async () => {
+                const params = createParams({ handleMlsSetup: vi.fn(neverSettles) });
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                const run = result.current.performFullReconnection(RejoinReasonInfo.Other);
+                await vi.waitFor(() => expect(params.handleMlsSetup).toHaveBeenCalled());
+                result.current.cancelReconnection();
+
+                await expect(run).resolves.toBe('cancelled');
+                await act(() => vi.advanceTimersByTimeAsync(MEET_CORE_JOIN_TIMEOUT_MS));
+                expect(mockMeetCoreClient.restart).not.toHaveBeenCalled();
+            });
+
+            it('waits for the join however long it takes when MeetHandleStalledLiveKitReconnect is disabled', async () => {
+                useFlagMock.mockReturnValue(false);
+                const params = createParams({ handleMlsSetup: vi.fn(neverSettles) });
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                void result.current.performFullReconnection(RejoinReasonInfo.Other);
+                await act(() => vi.advanceTimersByTimeAsync(10 * MEET_CORE_JOIN_TIMEOUT_MS));
+
+                expect(mockMeetCoreClient.restart).not.toHaveBeenCalled();
+                expect(mockDispatch).not.toHaveBeenCalledWith(setReconnectionFailed(true));
+                expect(result.current.isReconnectingRef.current).toBe(true);
+            });
+        });
+
+        describe('MLS join failure notifications', () => {
+            it('a rejoin leaves them to the rejoin UI when MeetHandleStalledLiveKitReconnect is enabled', async () => {
+                useFlagMock.mockImplementation((name: string) => name === 'MeetHandleStalledLiveKitReconnect');
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                await act(() => result.current.performFullReconnection(RejoinReasonInfo.Other));
+
+                expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, false);
+            });
+
+            it('a rejoin still shows them when MeetHandleStalledLiveKitReconnect is disabled', async () => {
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                await act(() => result.current.performFullReconnection(RejoinReasonInfo.Other));
+
+                expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, true);
+            });
+
+            it('the initial join shows them when MeetHandleStalledLiveKitReconnect is enabled', async () => {
+                useFlagMock.mockImplementation((name: string) => name === 'MeetHandleStalledLiveKitReconnect');
+                const params = createParams();
+                const { result } = renderHook(() => useMeetingConnection(params));
+
+                await act(() => result.current.connectWithMls(baseConnectParams));
+
+                expect(params.handleMlsSetup).toHaveBeenCalledWith('meeting-abc', 'tok', 'pw', false, true);
             });
         });
     });

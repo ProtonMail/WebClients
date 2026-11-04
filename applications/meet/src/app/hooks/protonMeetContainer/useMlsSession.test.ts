@@ -44,8 +44,10 @@ vi.mock('../../utils/wasmUtils', () => ({
     setupWasmDependencies: vi.fn(),
 }));
 
+const notifyError = vi.fn();
+
 vi.mock('../useNotifyError', () => ({
-    useNotifyError: () => vi.fn(),
+    useNotifyError: () => notifyError,
 }));
 
 vi.mock('@proton/unleash/useFlag', () => ({
@@ -166,6 +168,32 @@ describe('useMlsSession', () => {
             false
         );
         expect(meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType).not.toHaveBeenCalled();
+    });
+
+    describe('when joining the MLS session fails', () => {
+        const joinMeetingFailing = () => {
+            meetCoreClient.joinMeetingWithAccessTokenWithSwitchJoinType.mockRejectedValue(new Error('join failed'));
+            return renderHook(() => useMlsSession(createParams())).result.current;
+        };
+
+        it('tells the user and marks the error as already shown', async () => {
+            const { handleMlsSetup } = joinMeetingFailing();
+
+            await expect(handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD)).rejects.toMatchObject({
+                message: expect.stringContaining('MLS setup failed'),
+                userNotified: true,
+            });
+            expect(notifyError).toHaveBeenCalledTimes(1);
+        });
+
+        it('throws without telling the user when asked not to notify', async () => {
+            const { handleMlsSetup } = joinMeetingFailing();
+
+            await expect(
+                handleMlsSetup(MEETING_LINK_NAME, 'access-token', MEETING_PASSWORD, false, false)
+            ).rejects.toMatchObject({ message: expect.stringContaining('MLS setup failed'), userNotified: false });
+            expect(notifyError).not.toHaveBeenCalled();
+        });
     });
 
     it('admits an agent the wasm side reports as pending', async () => {

@@ -40,7 +40,8 @@ export interface UseMlsSessionResult {
         meetingLinkName: string,
         accessToken: string,
         meetingPassword: string,
-        isWaitingRoom?: boolean
+        isWaitingRoom?: boolean,
+        notifyOnError?: boolean
     ) => Promise<{ key: string; epoch: bigint } | undefined>;
 }
 
@@ -193,7 +194,8 @@ export const useMlsSession = ({
         meetingLinkName: string,
         accessToken: string,
         meetingPassword: string,
-        isWaitingRoom = false
+        isWaitingRoom = false,
+        notifyOnError = true
     ): Promise<{ key: string; epoch: bigint } | undefined> => {
         if (!mlsSetupDone.current) {
             mlsSetupDone.current = true;
@@ -282,9 +284,11 @@ export const useMlsSession = ({
                     logger.error('Failed to join the MLS session', error);
                     message = c('Error').t`Failed to join meeting. Please try again later.`;
             }
-            notifyError(message);
+            if (notifyOnError) {
+                notifyError(message);
+            }
             const err = new Error(`MLS setup failed: ${getMeetCoreErrorName(error) ?? String(error)}`);
-            Object.assign(err, { userNotified: true, coreError: error });
+            Object.assign(err, { userNotified: notifyOnError, coreError: error });
             throw err;
         }
     };
