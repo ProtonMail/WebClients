@@ -1,5 +1,6 @@
 import initWasm, { App, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 
+import { createWorkerLogger } from '../utils/workerLogger';
 import { toChatComposeResultData, toChatIncomingEventInfoData } from './MeetCoreClient';
 import type {
     MeetCoreCookieAckMessage,
@@ -48,6 +49,7 @@ interface WorkerCallbackGlobals extends DedicatedWorkerGlobalScope {
 }
 
 const workerGlobal = self as WorkerCallbackGlobals;
+const logger = createWorkerLogger('meetCoreWorker');
 
 const meetCoreErrorEnumValues = new Set<number>(
     Object.values(MeetCoreErrorEnum).filter((value): value is number => typeof value === 'number')
@@ -199,8 +201,7 @@ const handleInit = async (request: MeetCoreInitRequestMessage) => {
     app.setWorkerCookieBridgeEnabled(true);
     app.setUseCachedServerTime(request.params.useCachedServerTime);
     app.setUseMessageQueues(request.params.useMessageQueues);
-    // eslint-disable-next-line no-console
-    console.log(`[Meet] setUseMessageQueues(${request.params.useMessageQueues}) [worker]`);
+    logger.info(`setUseMessageQueues(${request.params.useMessageQueues}) [worker]`);
 };
 
 const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<MeetCoreRpcResult> => {
