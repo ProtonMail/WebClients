@@ -265,7 +265,7 @@ describe('useRoomEventHandlers', () => {
                 DisconnectReason.DUPLICATE_IDENTITY,
                 DisconnectReason.ROOM_CLOSED,
             ].map((reason) => [DisconnectReason[reason], reason])
-        )('on %s during a rejoin stops the rejoin and leaves the meeting', (_name, reason) => {
+        )('on %s during a rejoin leaves the meeting after cancelling the run', (_name, reason) => {
             const isReconnectingRef = { current: true };
             const params = createParams({
                 isReconnectingRef,
