@@ -11,9 +11,9 @@ import { MeetCoreStalledError } from '../../wasm/meetCoreStallRecovery';
 export const REJOIN_RETRY_DELAYS_MS = [2 * SECOND, 5 * SECOND, 10 * SECOND, 20 * SECOND];
 
 // navigator.onLine can stay false on a network that works, so a run still attempts now and then.
-export const OFFLINE_RECHECK_MS = 30 * SECOND;
+export const OFFLINE_RECHECK_MS = 15 * SECOND;
 
-export const OFFLINE_GIVE_UP_MS = 5 * MINUTE;
+export const OFFLINE_GIVE_UP_MS = 2.5 * MINUTE;
 
 export type RejoinOutcome =
     | { status: 'joined'; attempts: number }

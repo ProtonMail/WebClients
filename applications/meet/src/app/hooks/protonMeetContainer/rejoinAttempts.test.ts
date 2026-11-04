@@ -210,7 +210,7 @@ describe('runRejoinAttempts', () => {
 
     it('counts the time of attempts made while offline towards OFFLINE_GIVE_UP_MS', async () => {
         isOnline = false;
-        const hangingAttemptMs = 25 * SECOND;
+        const hangingAttemptMs = 20 * SECOND;
         const connectTimeout = ConnectionError.timeout('timed out');
         const attempt = vi.fn(
             () => new Promise<void>((_, reject) => setTimeout(() => reject(connectTimeout), hangingAttemptMs))
@@ -222,7 +222,7 @@ describe('runRejoinAttempts', () => {
 
         await vi.advanceTimersByTimeAsync(1);
         expect(isSettled()).toBe(true);
-        await expect(outcome).resolves.toEqual({ status: 'failed', attempts: 6, error: connectTimeout });
+        await expect(outcome).resolves.toEqual({ status: 'failed', attempts: 5, error: connectTimeout });
         expect(vi.getTimerCount()).toBe(0);
     });
 
