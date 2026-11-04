@@ -1031,6 +1031,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Don't show this offer again": [
+        "Ikke vis dette tilbudet igjen"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ]
     },
     "action": {
@@ -1154,6 +1160,9 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentlisenser"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisasjoner med Managed Service Provider-tillegget kan opprette og administrere datterselskaper."
       ]
     },
     "Alarm notification": {
@@ -6517,6 +6526,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "1 vault per user": [
+        "1 hvelv per bruker"
+      ],
+      "No payment is required.": [
+        "Ingen betaling kreves."
       ]
     },
     "info": {
@@ -7454,6 +7469,9 @@
       ],
       "What’s this?": [
         "Hva er det der?"
+      ],
+      "Pay it": [
+        "Betal"
       ]
     },
     "Link label (optional)": {
@@ -9037,6 +9055,9 @@
       ],
       "Your subscription renews soon": [
         "Abonnementet ditt fornyes snart"
+      ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Siste sjanse til å få din første måned med ${ plan } til denne prisen."
       ]
     },
     "Offer fearue": {
@@ -9157,6 +9178,12 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Legg til en betalingsmåte** for å fortsette å bruke alle funksjonene etter at prøveperioden er over."
+      ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
       ]
     },
     "Option": {
@@ -9514,6 +9541,30 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Kun én ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan kjøpes."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet-seter må samsvare med antall medlemmer."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Den valgte planen tilbyr ikke nok domener for kontoen din."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Den valgte planen tilbyr ikke nok lagringsplass for kontoen din."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Dette abonnementet støtter ikke medlemmene på kontoen din."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dette abonnementet kan ikke fullføres akkurat nå. Prøv igjen."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Prøveplaner støtter ikke Scribe-seter."
       ]
     },
     "Payments.Error": {
@@ -12391,6 +12442,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan ikke endre dine egne roller. Be en annen administrator om å endre dem."
       ]
     },
     "Validation": {
@@ -12849,6 +12903,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Ved å bekrefte gir du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, tillatelse til å innkreve fremtidige betalinger for abonnementet ditt fra denne bankkontoen via SEPA AvtaleGiro, og banken din til å debitere disse betalingene. Første betaling gjøres nå av ${ IDEAL_WERO_BRAND_NAME }. Abonnementet fornyes automatisk inntil du kansellerer. Vi varsler deg før hver innkreving. For innkreving via AvtaleGiro kan du be om refusjon fra banken innen 8 uker etter debiteringsdatoen, i henhold til vilkårene i avtalen med banken din. Dette gjelder ikke for ${ IDEAL_WERO_BRAND_NAME }-betalingen du foretar nå."
       ]
     }
   }
