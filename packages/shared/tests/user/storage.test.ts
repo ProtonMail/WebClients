@@ -1,12 +1,12 @@
-import { PLANS } from '@proton/payments/core/constants';
-import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-
 import type { UserModel } from '../../lib/interfaces/User';
-import { FREE_SUBSCRIPTION } from '../../lib/payments/constants';
+import { FREE_SUBSCRIPTION, PLANS } from '../../lib/payments/constants';
+import type { Subscription } from '../../lib/payments/subscription/interface';
 import { getCanAddStorage } from '../../lib/user/storage';
 
 const freeUser = { isFree: true, isMember: false, canPay: true } as UserModel;
 const paidUser = { isFree: false, isMember: false, canPay: true } as UserModel;
+
+const buildSubscription = (plan: PLANS) => ({ Plans: [{ Name: plan }] }) as Subscription;
 
 describe('getCanAddStorage', () => {
     it('lets a free user add storage without a subscription', () => {
