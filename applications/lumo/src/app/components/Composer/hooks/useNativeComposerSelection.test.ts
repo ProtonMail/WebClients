@@ -68,6 +68,7 @@ describe('native composer selection sent by its host', () => {
                 'selectedCustomLumo',
                 'showTsAndCs',
                 'sidebar',
+                'skills',
                 'userFlags',
             ].sort()
         );

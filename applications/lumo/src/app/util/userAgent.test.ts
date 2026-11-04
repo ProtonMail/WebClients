@@ -3,6 +3,7 @@ import {
     canUseNativeAuth,
     canUseNativeRightPanelLayout,
     canUseNativeSidebarLayout,
+    canUseNativeSkills,
     getNativeAppInfo,
     isNativeAuthFlagEnabled,
 } from './userAgent';
@@ -273,4 +274,28 @@ it.each(['iOS', 'iPadOS'])('enables native sidebar layout on %s starting at 2.2.
     expect(canUseNativeSidebarLayout()).toBe(false);
     setUserAgent(`ProtonLumo/2.2.0 (${platform} 27.2; Apple QA)`);
     expect(canUseNativeSidebarLayout()).toBe(true);
+});
+
+describe('canUseNativeSkills', () => {
+    it.each([
+        [androidUA('2.1.5'), false],
+        [androidUA('2.1.6'), false],
+        [androidUA('2.1.99'), false],
+        [androidUA('2.2.0-gms'), true],
+        [androidUA('2.2.0'), true],
+        [iosUA('2.1.2'), false],
+        [iosUA('2.1.3'), false],
+        [iosUA('2.1.99'), false],
+        [iosUA('2.2.0'), true],
+        [iosUANew('2.2.0'), true],
+        [ipadUANew('2.2.0'), true],
+        [iosUANew('3.0.0'), true],
+        ['Mozilla/5.0', false],
+        ['ProtonLumo/2.1.6 (Unknown)', false],
+        [androidUA('invalid'), false],
+        [iosUA('2.1'), false],
+    ])('gates %s as %s', (ua, expected) => {
+        setUserAgent(ua as string);
+        expect(canUseNativeSkills()).toBe(expected);
+    });
 });
