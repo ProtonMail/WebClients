@@ -98,7 +98,10 @@ describe('useRoomEventHandlers', () => {
     });
 
     describe('Disconnected handler', () => {
-        it('treats STATE_MISMATCH as recoverable and triggers reconnection without leaving the meeting', () => {
+        const enableRejoinOnDisconnect = () =>
+            useFlagMock.mockImplementation((name: string) => name === 'MeetHandleStalledLiveKitReconnect');
+
+        it('with the flag off, treats STATE_MISMATCH as recoverable and cleans up the MLS state as before', () => {
             const params = createParams();
             renderHook(() => useRoomEventHandlers(params));
 
@@ -107,11 +110,89 @@ describe('useRoomEventHandlers', () => {
             expect(params.disallowHealthCheck).toHaveBeenCalledTimes(1);
             expect(mockDispatch).toHaveBeenCalledWith(setIsReconnecting(true));
             expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(false));
-            expect(params.cleanupMlsState).toHaveBeenCalledTimes(1);
             expect(params.triggerFullReconnectionRef.current).toHaveBeenCalledWith(
                 RejoinReasonInfo.LivekitStateMismatch
             );
             expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
+            expect(params.cleanupMlsState).toHaveBeenCalledTimes(1);
+            expect(params.reportMeetError).not.toHaveBeenCalled();
+        });
+
+        it.each<[string, DisconnectReason | undefined]>([
+            ['none', undefined],
+            ...[
+                DisconnectReason.UNKNOWN_REASON,
+                DisconnectReason.SERVER_SHUTDOWN,
+                DisconnectReason.JOIN_FAILURE,
+                DisconnectReason.MIGRATION,
+                DisconnectReason.SIGNAL_CLOSE,
+                DisconnectReason.CONNECTION_TIMEOUT,
+                DisconnectReason.MEDIA_FAILURE,
+            ].map((reason): [string, DisconnectReason] => [DisconnectReason[reason], reason]),
+        ])(
+            'with the flag on, reason %s starts a rejoin that keeps the meeting and reports the reason',
+            (name, reason) => {
+                enableRejoinOnDisconnect();
+                const params = createParams();
+                renderHook(() => useRoomEventHandlers(params));
+
+                act(() => getHandler(RoomEvent.Disconnected)(reason));
+
+                expect(mockDispatch).toHaveBeenCalledWith(setIsReconnecting(true));
+                expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(false));
+                expect(params.triggerFullReconnectionRef.current).toHaveBeenCalledTimes(1);
+                expect(params.triggerFullReconnectionRef.current).toHaveBeenCalledWith(
+                    RejoinReasonInfo.WebsocketDisconnected
+                );
+                expect(params.meetingLinkNameRef.current).toBe('meeting-abc');
+                expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
+                expect(params.cleanupMlsState).not.toHaveBeenCalled();
+                expect(params.mlsSetupDone.current).toBe(true);
+                expect(params.reportMeetError).toHaveBeenCalledWith('Room disconnected unexpectedly, rejoining', {
+                    level: 'warning',
+                    context: { reason: name },
+                });
+                expect(mockHistory.push).not.toHaveBeenCalled();
+            }
+        );
+
+        it('with the flag on, STATE_MISMATCH rejoins with its own reason, no report, and leaves the MLS session for the rejoin to close', () => {
+            enableRejoinOnDisconnect();
+            const params = createParams();
+            renderHook(() => useRoomEventHandlers(params));
+
+            act(() => getHandler(RoomEvent.Disconnected)(DisconnectReason.STATE_MISMATCH));
+
+            expect(params.triggerFullReconnectionRef.current).toHaveBeenCalledWith(
+                RejoinReasonInfo.LivekitStateMismatch
+            );
+            expect(params.reportMeetError).not.toHaveBeenCalled();
+            expect(mockMeetCoreClient.leaveMeeting).not.toHaveBeenCalled();
+            expect(params.cleanupMlsState).not.toHaveBeenCalled();
+            expect(params.mlsSetupDone.current).toBe(true);
+        });
+
+        it.each(
+            [
+                DisconnectReason.ROOM_DELETED,
+                DisconnectReason.PARTICIPANT_REMOVED,
+                DisconnectReason.DUPLICATE_IDENTITY,
+                DisconnectReason.ROOM_CLOSED,
+                DisconnectReason.CLIENT_INITIATED,
+            ].map((reason) => [DisconnectReason[reason], reason])
+        )('with the flag on, %s tears down without rejoining', (_name, reason) => {
+            enableRejoinOnDisconnect();
+            const params = createParams();
+            renderHook(() => useRoomEventHandlers(params));
+
+            act(() => getHandler(RoomEvent.Disconnected)(reason));
+
+            expect(params.triggerFullReconnectionRef.current).not.toHaveBeenCalled();
+            expect(mockDispatch).not.toHaveBeenCalledWith(setIsReconnecting(true));
+            expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(false));
+            expect(mockMeetCoreClient.leaveMeeting).toHaveBeenCalledTimes(1);
+            expect(params.cleanupMlsState).toHaveBeenCalledTimes(1);
+            expect(params.mlsSetupDone.current).toBe(false);
         });
 
         it('on ROOM_DELETED cleans up, saves the meeting, sets the meeting-ended upsell and navigates to the dashboard', () => {
@@ -143,13 +224,18 @@ describe('useRoomEventHandlers', () => {
             expect(mockHistory.push).toHaveBeenCalledWith('/dashboard');
         });
 
-        it('reports an abnormal disconnect without navigating', () => {
+        it('with the flag off, tears down and reports an abnormal disconnect without rejoining or navigating', () => {
             const params = createParams();
             renderHook(() => useRoomEventHandlers(params));
 
             act(() => getHandler(RoomEvent.Disconnected)(DisconnectReason.SERVER_SHUTDOWN));
 
-            expect(params.reportMeetError).toHaveBeenCalledWith('Room disconnected unexpectedly', expect.anything());
+            expect(params.triggerFullReconnectionRef.current).not.toHaveBeenCalled();
+            expect(mockMeetCoreClient.leaveMeeting).toHaveBeenCalledTimes(1);
+            expect(params.cleanupMlsState).toHaveBeenCalledTimes(1);
+            expect(params.reportMeetError).toHaveBeenCalledWith('Room disconnected unexpectedly', {
+                context: { error: 'SERVER_SHUTDOWN' },
+            });
             expect(mockHistory.push).not.toHaveBeenCalled();
         });
 
@@ -364,6 +450,22 @@ describe('useRoomEventHandlers', () => {
                     expect(params.triggerFullReconnectionRef.current).not.toHaveBeenCalled();
                 }
             );
+
+            it('rejoins once when LiveKit gives up reconnecting before the timeout', () => {
+                const params = createParams();
+                renderHook(() => useRoomEventHandlers(params));
+
+                act(() => getHandler(RoomEvent.ConnectionStateChanged)(ConnectionState.SignalReconnecting));
+                advanceTimers(53 * SECOND);
+                act(() => getHandler(RoomEvent.ConnectionStateChanged)(ConnectionState.Disconnected));
+                act(() => getHandler(RoomEvent.Disconnected)(undefined));
+                advanceTimers(LIVEKIT_RECONNECT_STALL_TIMEOUT_MS);
+
+                expect(params.triggerFullReconnectionRef.current).toHaveBeenCalledTimes(1);
+                expect(params.triggerFullReconnectionRef.current).toHaveBeenCalledWith(
+                    RejoinReasonInfo.WebsocketDisconnected
+                );
+            });
 
             it('does not trigger while a full reconnection is already running', () => {
                 const params = createParams({ isReconnectingRef: { current: true } });

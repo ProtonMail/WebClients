@@ -44,6 +44,21 @@ const MEETING_ENDING_DISCONNECT_REASONS: ReadonlySet<DisconnectReason | undefine
     DisconnectReason.ROOM_CLOSED,
 ]);
 
+// LiveKit gives no reason (undefined) when it gives up reconnecting
+const shouldRejoinAfterDisconnect = (
+    reason: DisconnectReason | undefined,
+    isHandleStalledLiveKitReconnectEnabled: boolean
+) =>
+    reason === DisconnectReason.STATE_MISMATCH ||
+    (isHandleStalledLiveKitReconnectEnabled &&
+        reason !== DisconnectReason.CLIENT_INITIATED &&
+        !MEETING_ENDING_DISCONNECT_REASONS.has(reason));
+
+const getRejoinReason = (reason: DisconnectReason | undefined) =>
+    reason === DisconnectReason.STATE_MISMATCH
+        ? RejoinReasonInfo.LivekitStateMismatch
+        : RejoinReasonInfo.WebsocketDisconnected;
+
 interface UseRoomEventHandlersParams {
     joinedRoom: boolean;
     disallowHealthCheck: () => void;
@@ -181,9 +196,9 @@ export const useRoomEventHandlers = ({
     );
 
     const handleDisconnected = useStableCallback((reason?: DisconnectReason) => {
-        // STATE_MISMATCH is recoverable — trigger full reconnection flow
-        if (reason === DisconnectReason.STATE_MISMATCH) {
-            // Don't call leaveMeeting here, performFullReconnection will await it
+        if (shouldRejoinAfterDisconnect(reason, isHandleStalledLiveKitReconnectEnabled)) {
+            // No leaveMeeting here: performFullReconnection leaves the MLS group while mlsSetupDone is still set.
+            // cleanupMlsState clears it, so it runs here only with the flag off, where that leave is unbounded and can hang.
             disallowHealthCheck();
             dispatch(setIsReconnecting(true));
             dispatch(setJoinedRoom(false));
@@ -191,10 +206,18 @@ export const useRoomEventHandlers = ({
             setShowReconnectedMessage(false);
             liveKitConnectionStateRef.current = null;
             joinedRoomLoggedRef.current = false;
-            cleanupMlsState();
+            if (!isHandleStalledLiveKitReconnectEnabled) {
+                cleanupMlsState();
+            }
             dispatch(resetChatAndReactions());
             dispatch(resetUiState());
-            triggerFullReconnectionRef.current(RejoinReasonInfo.LivekitStateMismatch);
+            if (reason !== DisconnectReason.STATE_MISMATCH) {
+                reportMeetError('Room disconnected unexpectedly, rejoining', {
+                    level: 'warning',
+                    context: { reason: reason === undefined ? 'none' : DisconnectReason[reason] },
+                });
+            }
+            triggerFullReconnectionRef.current(getRejoinReason(reason));
             return;
         }
 
