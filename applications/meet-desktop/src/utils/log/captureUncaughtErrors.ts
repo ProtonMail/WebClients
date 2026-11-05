@@ -1,11 +1,12 @@
 import { app, dialog } from "electron";
 import { c } from "ttag";
-import { mainLogger, sanitizeUrlForLogging } from "./index";
+import { getErrorCode, mainLogger, sanitizeUrlForLogging } from "./index";
 
 function sanitizeErrorForLogging(reason: unknown): unknown {
     if (reason instanceof Error) {
-        const sanitizedError = new Error(sanitizeMessageForLogging(reason.message));
+        const sanitizedError: NodeJS.ErrnoException = new Error(sanitizeMessageForLogging(reason.message));
         sanitizedError.name = sanitizeMessageForLogging(reason.name);
+        sanitizedError.code = getErrorCode(reason);
         sanitizedError.stack = reason.stack && sanitizeStackTrace(reason.stack);
         return sanitizedError;
     }

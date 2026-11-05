@@ -17,7 +17,7 @@ import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";
 import { getSettings } from "../store/settingsStore";
 import { getAccountView, getCurrentViewID, getMainWindow } from "./view/viewManagement";
-import { getFilteredHomePath, NET_LOGGER_VIEW_PREFIX, sanitizeUrlForLogging, sentryLogger } from "./log";
+import { describeError, getFilteredHomePath, NET_LOGGER_VIEW_PREFIX, sanitizeUrlForLogging, sentryLogger } from "./log";
 import { isProdEnv } from "./isProdEnv";
 import { getOSInfo } from "./log/getOSInfo";
 
@@ -141,7 +141,7 @@ function serialize(value: unknown): string {
     } else if (Array.isArray(value)) {
         return value.map((chunk) => serialize(chunk)).join(" ");
     } else if (value instanceof Error) {
-        return `${value.name}: ${value.message}`;
+        return describeError(value);
     }
 
     return JSON.stringify(value);

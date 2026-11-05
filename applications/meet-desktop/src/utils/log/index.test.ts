@@ -1,6 +1,6 @@
 import { describe } from "@jest/globals";
 import { LogMessage } from "electron-log";
-import { filterSensitiveLogMessageTestOnly, getFilteredHomePath, sanitizeUrlForLogging } from "./index";
+import { describeError, filterSensitiveLogMessageTestOnly, getFilteredHomePath, sanitizeUrlForLogging } from "./index";
 import { app } from "electron";
 
 jest.mock("electron", () => ({
@@ -345,6 +345,39 @@ describe("filter sensitive data", () => {
     });
 });
 
+describe("describeError", () => {
+    const outOfRangeMessage =
+        'The value of "size" is out of range. It must be >= 0 && <= 9007199254740991. Received -1';
+
+    it("adds the code when the message does not include it", () => {
+        const error = Object.assign(new RangeError(outOfRangeMessage), { code: "ERR_OUT_OF_RANGE" });
+
+        expect(describeError(error)).toBe(`RangeError [ERR_OUT_OF_RANGE]: ${outOfRangeMessage}`);
+    });
+
+    it("does not repeat a code that is already in the message", () => {
+        const error = Object.assign(new Error("ENOENT: no such file or directory, open '/tmp/config.json'"), {
+            code: "ENOENT",
+        });
+
+        expect(describeError(error)).toBe("Error: ENOENT: no such file or directory, open '/tmp/config.json'");
+    });
+
+    it("keeps the error code through the log filter", () => {
+        getPathMock.mockImplementation(() => "/home/user");
+        const givenLogMessage: LogMessage = {
+            data: [Object.assign(new RangeError(outOfRangeMessage), { code: "ERR_OUT_OF_RANGE" })],
+            date: new Date(),
+            level: "error",
+        };
+
+        const result = filterSensitiveLogMessageTestOnly(givenLogMessage) as LogMessage;
+        const [error] = result.data as [Error];
+
+        expect(describeError(error)).toBe(`RangeError [ERR_OUT_OF_RANGE]: ${outOfRangeMessage}`);
+    });
+});
+
 describe("getFilteredHomePath", () => {
     it("removes the home path from Electron load errors with forward slashes", () => {
         getPathMock.mockImplementation(() => "C:\\Users\\Ben");
@@ -367,6 +400,18 @@ describe("getFilteredHomePath", () => {
             ),
         ).toBe(
             "ERR_FAILED (-2) loading 'file:////__HOME_ASCII_25a8599bbab9548ffd1f6a6291b0a270a9a65131__/AppData/Local/proton_meet/app-1.0.14/resources/loading.html'",
+        );
+    });
+
+    it("removes home paths that contain regex characters", () => {
+        getPathMock.mockImplementation(() => "C:\\Users\\John (Work)");
+
+        expect(
+            getFilteredHomePath(
+                "ERR_ABORTED (-3) loading 'file:///C:/Users/John (Work)/AppData/Local/proton_meet/app-1.0.14/resources/error-network.html'",
+            ),
+        ).toBe(
+            "ERR_ABORTED (-3) loading 'file:////__HOME_NONASCII_ce9849d1f524c0afe986a2def63b8aee2f03b219__/AppData/Local/proton_meet/app-1.0.14/resources/error-network.html'",
         );
     });
 });

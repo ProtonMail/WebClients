@@ -1,5 +1,6 @@
 import { app, WebContents } from "electron";
 import Logger, { Hook, LogMessage, Transport } from "electron-log";
+import { escapeRegExp } from "lodash";
 import { createHash } from "node:crypto";
 import { isAbsolute } from "node:path";
 import { appSession } from "../session";
@@ -56,9 +57,20 @@ const filterSensitiveStringValue = (str: string): string => {
     return filterSensitiveString(str);
 };
 
+export const getErrorCode = (error: Error): string | undefined =>
+    "code" in error && typeof error.code === "string" && error.code ? error.code : undefined;
+
+export const describeError = (error: Error) => {
+    const code = getErrorCode(error);
+    return code && !error.message.includes(code)
+        ? `${error.name} [${code}]: ${error.message}`
+        : `${error.name}: ${error.message}`;
+};
+
 const filterSensitiveError = (error: Error): Error => {
-    const filteredError = new Error(filterSensitiveStringValue(error.message));
+    const filteredError: NodeJS.ErrnoException = new Error(filterSensitiveStringValue(error.message));
     filteredError.name = error.name;
+    filteredError.code = getErrorCode(error);
     filteredError.stack = error.stack?.split("\n").map(filterSensitiveStringValue).join("\n");
     return filteredError;
 };
@@ -117,7 +129,7 @@ const isIDKey = (str: string) => {
 export const getFilteredHomePath = (somePath: string) => {
     const normalizedPath = somePath.replaceAll("\\", "/");
     const basePath = app.getPath("home").replaceAll("\\", "/");
-    const basePathRegExp = new RegExp(basePath, "gi");
+    const basePathRegExp = new RegExp(escapeRegExp(basePath), "gi");
 
     if (!basePathRegExp.test(normalizedPath)) {
         return somePath;
