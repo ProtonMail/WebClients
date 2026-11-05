@@ -5,6 +5,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
+import { ThemeContext, useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { backgroundReducer } from '@proton/meet/store/slices/backgroundSlice';
 import { connectionReducer, initialState as initialConnectionState } from '@proton/meet/store/slices/connectionSlice';
 import {
@@ -27,6 +28,8 @@ import { MeetingSideBars, uiStateReducer } from '@proton/meet/store/slices/uiSta
 import { meetUserReducer } from '@proton/meet/store/slices/userSlice';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
+import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
+import type { ThemeInformation } from '@proton/shared/lib/themes/themes';
 
 import { BackgroundEffectsContext } from '../../contexts/BackgroundEffects/BackgroundEffectsContext';
 import type { MediaManagementContextType } from '../../contexts/MediaManagementProvider/MediaManagementContext';
@@ -164,6 +167,7 @@ const Wrapper = ({
     settingsState = {},
     participantsState = {},
     screenShareState = {},
+    themeInformation = {},
 }: {
     children: React.ReactNode;
     contextValue?: Partial<MeetContextValues>;
@@ -171,24 +175,28 @@ const Wrapper = ({
     settingsState?: Partial<MeetSettingsState>;
     participantsState?: Partial<typeof initialParticipantsState>;
     screenShareState?: Partial<ScreenShareStatusState>;
+    themeInformation?: Partial<ThemeInformation>;
 }) => {
     const store = createMockStore(settingsState, participantsState, screenShareState);
+    const theme = useTheme();
 
     return (
         <Provider context={ProtonStoreContext} store={store}>
-            <NotificationsProvider>
-                {/* @ts-expect-error - contextValue is a partial MeetContextValues */}
-                <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>
-                    <MediaManagementContext.Provider value={mediaContextValue as MediaManagementContextType}>
-                        <BackgroundEffectsContext.Provider
-                            // @ts-expect-error - only the blur toggle is needed
-                            value={{ toggleBackgroundBlur: vi.fn() }}
-                        >
-                            {children}
-                        </BackgroundEffectsContext.Provider>
-                    </MediaManagementContext.Provider>
-                </MeetContext.Provider>
-            </NotificationsProvider>
+            <ThemeContext.Provider value={{ ...theme, information: { ...theme.information, ...themeInformation } }}>
+                <NotificationsProvider>
+                    {/* @ts-expect-error - contextValue is a partial MeetContextValues */}
+                    <MeetContext.Provider value={{ ...mockContextValues, ...contextValue }}>
+                        <MediaManagementContext.Provider value={mediaContextValue as MediaManagementContextType}>
+                            <BackgroundEffectsContext.Provider
+                                // @ts-expect-error - only the blur toggle is needed
+                                value={{ toggleBackgroundBlur: vi.fn() }}
+                            >
+                                {children}
+                            </BackgroundEffectsContext.Provider>
+                        </MediaManagementContext.Provider>
+                    </MeetContext.Provider>
+                </NotificationsProvider>
+            </ThemeContext.Provider>
         </Provider>
     );
 };
@@ -466,7 +474,39 @@ describe('Settings', () => {
             </Wrapper>
         );
 
-        expect(scrollIntoView).toHaveBeenCalled();
+        expect(scrollIntoView).toHaveBeenCalledWith(expect.objectContaining({ behavior: 'smooth' }));
+        scrollIntoView.mockRestore();
+    });
+
+    it.each([
+        {
+            reason: 'the system asks for reduced motion',
+            themeInformation: { motionMode: MotionModeSetting.Reduce },
+        },
+        {
+            reason: 'the account disables animations',
+            themeInformation: {
+                motionMode: MotionModeSetting.No_preference,
+                features: { scrollbars: false, animations: true },
+            },
+        },
+    ])('jumps to the captions setting without smooth scrolling when $reason', ({ themeInformation }) => {
+        const scrollIntoView = vi.spyOn(Element.prototype, 'scrollIntoView').mockImplementation(() => {});
+
+        const { rerender } = render(
+            <Wrapper themeInformation={themeInformation}>
+                <Settings />
+            </Wrapper>
+        );
+
+        localAttributes.current = { [WANTS_CAPTIONS_ATTR]: 'true' };
+        rerender(
+            <Wrapper themeInformation={themeInformation}>
+                <Settings />
+            </Wrapper>
+        );
+
+        expect(scrollIntoView).toHaveBeenCalledWith(expect.objectContaining({ behavior: 'auto' }));
         scrollIntoView.mockRestore();
     });
 

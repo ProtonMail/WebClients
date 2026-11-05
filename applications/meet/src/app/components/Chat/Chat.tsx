@@ -3,6 +3,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -17,6 +18,7 @@ import {
 } from '@proton/meet/store/slices/uiStateSlice';
 import type { MeetChatMessage } from '@proton/meet/types/types';
 import { isParticipantMentioned } from '@proton/meet/utils/mentions/mentionToken';
+import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
 import placeholder from '@proton/styles/assets/img/meet/chat-empty-state.png';
 import placeholderSearch from '@proton/styles/assets/img/meet/search-empty-state.png';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -62,6 +64,9 @@ export const Chat = () => {
     const { viewportWidth } = useActiveBreakpoint();
     const isSmallScreen = viewportWidth['<=small'];
 
+    const { information } = useTheme();
+    const isMotionReduced = information.motionMode === MotionModeSetting.Reduce || information.features.animations;
+
     const focusedMessageId = useMeetSelector(selectChatFocusedMessageId);
 
     const meetingRoomUpdates = useMeetingRoomUpdates();
@@ -88,7 +93,7 @@ export const Chat = () => {
         if (!el) {
             return;
         }
-        el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
+        el.scrollTo({ top: el.scrollHeight, behavior: isMotionReduced ? 'auto' : 'smooth' });
         wasAtBottomRef.current = true;
         resetNewMessages();
     };

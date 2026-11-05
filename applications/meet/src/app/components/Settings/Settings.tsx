@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
@@ -18,6 +19,7 @@ import {
     toggleSideBarState as toggleSideBarStateAction,
 } from '@proton/meet/store/slices/uiStateSlice';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
+import { MotionModeSetting } from '@proton/shared/lib/themes/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { ConditionalTooltip } from '../../atoms/ConditionalTooltip/ConditionalTooltip';
@@ -57,6 +59,8 @@ export const Settings = () => {
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
     const liveCaptionsEnabled = useLiveCaptionsFeatureEnabled();
     const { wantsCaptions } = useCaptionsPreference();
+    const { information } = useTheme();
+    const isMotionReduced = information.motionMode === MotionModeSetting.Reduce || information.features.animations;
 
     const isVirtualBackgroundEnabled = useFlag('MeetVirtualBackground');
     const canPickCaptionLanguage = useFlag('MeetSaveCaptionLanguagePreference');
@@ -74,9 +78,12 @@ export const Settings = () => {
         captionsWereOn.current = wantsCaptions;
 
         if (justTurnedOn) {
-            displayRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            displayRef.current?.scrollIntoView({
+                block: 'nearest',
+                behavior: isMotionReduced ? 'auto' : 'smooth',
+            });
         }
-    }, [wantsCaptions]);
+    }, [wantsCaptions, isMotionReduced]);
 
     if (!sideBarState[MeetingSideBars.Settings]) {
         return null;
