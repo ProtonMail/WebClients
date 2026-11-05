@@ -107,6 +107,9 @@
       ],
       "Clear application data": [
         "Εκκαθάριση δεδομένων εφαρμογής"
+      ],
+      "This removes all data associated with this app. The app will close and you will need to sign in again to use the app.": [
+        "Με αυτό διαγράφονται όλα τα δεδομένα που σχετίζονται με αυτήν την εφαρμογή. Η εφαρμογή θα κλείσει και θα χρειαστεί να συνδεθείτε ξανά για να τη χρησιμοποιήσετε."
       ]
     },
     "Download warning": {
@@ -173,6 +176,9 @@
       ],
       "Open System Settings": [
         "Άνοιγμα Ρυθμίσεων Συστήματος"
+      ],
+      "To share your screen, allow Proton Meet in System Settings > Privacy & Security > Screen & System Audio Recording.": [
+        "Για να κοινοποιήσετε την οθόνη σας, επιτρέψτε το Proton Meet στις Ρυθμίσεις Συστήματος > Απόρρητο και ασφάλεια > Εγγραφή οθόνης και ήχου συστήματος."
       ]
     },
     "Screen share picker": {
@@ -197,6 +203,9 @@
       "Hide advanced options": [
         "Απόκρυψη προηγμένων επιλογών"
       ],
+      "Just one app": [
+        "Μόνο μία εφαρμογή"
+      ],
       "No windows available to share": [
         "Δεν υπάρχουν διαθέσιμα παράθυρα για κοινοποίηση"
       ],
@@ -211,6 +220,9 @@
       ],
       "Show advanced options": [
         "Εμφάνιση προηγμένων επιλογών"
+      ],
+      "Viewers only see this app, even if you switch windows.": [
+        "Οι θεατές βλέπουν μόνο αυτή την εφαρμογή, ακόμα κι αν αλλάξετε παράθυρα."
       ],
       "Viewers see your entire screen, including apps and notifications.": [
         "Οι θεατές βλέπουν ολόκληρη την οθόνη σας, συμπεριλαμβανομένων των εφαρμογών και των ειδοποιήσεων."
@@ -231,6 +243,9 @@
       ]
     },
     "Update prompt": {
+      "A new version of ${ MEET_APP_NAME } has been downloaded. Restart the application to apply the updates.": [
+        "Μια νέα έκδοση του ${ MEET_APP_NAME } έχει ληφθεί. Επανεκκινήστε την εφαρμογή για να εφαρμοστούν οι ενημερώσεις."
+      ],
       "Later": [
         "Αργότερα"
       ],
