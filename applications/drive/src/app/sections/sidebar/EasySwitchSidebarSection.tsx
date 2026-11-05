@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 
@@ -13,6 +14,8 @@ import NewFeatureTag from '@proton/components/components/newFeatureTag/NewFeatur
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
 import { navigationIconClassName } from '@proton/components/components/sidebar/SidebarListItemContentIcon';
+import { getDriveNodePath } from '@proton/drive/modules/nodes';
+import { splitNodeUid } from '@proton/drive/sdk';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
@@ -34,7 +37,9 @@ interface EasySwitchSidebarSectionProps {
 export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSectionProps) => {
     const { handleSubmit } = useProductSelectionSubmit();
     const goToSettings = useSettingsLink();
-    const { isLoaded, isImporting, isPaused, hasCompletedImport, outcome, clearOutcome } = useDriveImportStatus();
+    const navigate = useNavigate();
+    const { isLoaded, isImporting, isPaused, hasCompletedImport, outcome, importFolderUid, clearOutcome } =
+        useDriveImportStatus();
     const [showPausedModal, setShowPausedModal] = useState(false);
     const hasOngoingImport = isImporting || isPaused;
 
@@ -190,7 +195,20 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                     onImport={handleSpotlightImport}
                 />
             )}
-            {outcome === 'success' && <DriveImportSuccessStep onClose={clearOutcome} />}
+            {outcome === 'success' && (
+                <DriveImportSuccessStep
+                    onClose={clearOutcome}
+                    onGoToFolder={
+                        importFolderUid
+                            ? () => {
+                                  clearOutcome();
+                                  const { volumeId, nodeId } = splitNodeUid(importFolderUid);
+                                  navigate(getDriveNodePath(volumeId, nodeId));
+                              }
+                            : undefined
+                    }
+                />
+            )}
             {isPaused && (outcome === 'paused' || (showPausedModal && !outcome)) && (
                 <DriveImportPausedStep
                     onClose={() => {

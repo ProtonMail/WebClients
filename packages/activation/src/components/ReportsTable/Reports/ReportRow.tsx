@@ -39,6 +39,7 @@ const ReportRow = ({ reportSummary, report }: Props) => {
                     product={product}
                     provider={provider}
                     account={account}
+                    importFolder={reportSummary.importFolder}
                 />
             </TableCell>
         </TableRow>

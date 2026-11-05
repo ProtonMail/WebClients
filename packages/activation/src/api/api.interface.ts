@@ -94,6 +94,9 @@ export interface ApiReportSummary {
     DestinationFiles?: number;
     SourceFiles?: number;
     SourceBytes?: number;
+    /** Only for Drive, set once the import is done: the folder the files were imported into. */
+    ImportFolderLinkID?: string | null;
+    ImportFolderVolumeID?: string | null;
 }
 
 export enum ApiImportProvider {

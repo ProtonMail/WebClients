@@ -9,6 +9,7 @@ import { loadImporters } from '@proton/activation/src/logic/importers/importers.
 import { selectDriveImportStatus } from '@proton/activation/src/logic/importers/importers.selectors';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { generateNodeUid } from '@proton/drive/sdk';
 
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 
@@ -25,6 +26,7 @@ export const useDriveImportStatus = () => {
     const { isLoaded, isImporting, isPaused, hasCompletedImport } = useEasySwitchSelector(selectDriveImportStatus);
     const oauthStep = useEasySwitchSelector(selectOauthImportStateStep);
     const [outcome, setOutcome] = useState<DriveImportOutcome>();
+    const [importFolderUid, setImportFolderUid] = useState<string>();
 
     useEffect(
         function loadEasySwitchImporters() {
@@ -42,9 +44,10 @@ export const useDriveImportStatus = () => {
                 const importerStates = (Imports ?? []).map(
                     ({ Importer }) => Importer?.Active?.[ImportType.DRIVE]?.State
                 );
-                const reportStates = (ImportReports ?? []).map(
-                    ({ ImportReport }) => ImportReport?.Summary?.[ImportType.DRIVE]?.State
+                const driveReports = (ImportReports ?? []).map(
+                    ({ ImportReport }) => ImportReport?.Summary?.[ImportType.DRIVE]
                 );
+                const reportStates = driveReports.map((summary) => summary?.State);
 
                 // Paused only comes from importer events, which already update the importers slice --> no refresh needed.
                 if (importerStates.includes(ApiImporterState.PAUSED)) {
@@ -59,6 +62,18 @@ export const useDriveImportStatus = () => {
                     return;
                 }
 
+                if (!isDone) {
+                    setImportFolderUid(undefined);
+                }
+                for (const summary of driveReports) {
+                    if (
+                        summary?.State === ApiImporterState.DONE &&
+                        summary.ImportFolderVolumeID &&
+                        summary.ImportFolderLinkID
+                    ) {
+                        setImportFolderUid(generateNodeUid(summary.ImportFolderVolumeID, summary.ImportFolderLinkID));
+                    }
+                }
                 setOutcome(isDone ? 'success' : 'failed');
 
                 // Importer events already update the importers slice, report events don't,
@@ -111,6 +126,10 @@ export const useDriveImportStatus = () => {
         isPaused,
         hasCompletedImport,
         outcome,
-        clearOutcome: useCallback(() => setOutcome(undefined), []),
+        importFolderUid,
+        clearOutcome: useCallback(() => {
+            setOutcome(undefined);
+            setImportFolderUid(undefined);
+        }, []),
     };
 };

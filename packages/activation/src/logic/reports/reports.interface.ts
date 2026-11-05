@@ -19,6 +19,7 @@ export type ReportSummary = {
     state: ApiReportSummary['State'];
     size: ApiReportSummary['TotalSize'];
     rollbackState: ApiReportSummary['RollbackState'];
+    importFolder?: { volumeID: string; linkID: string };
 };
 
 export type ReportsMap = Record<string, Report>;

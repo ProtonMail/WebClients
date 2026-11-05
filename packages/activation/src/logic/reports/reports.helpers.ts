@@ -17,19 +17,25 @@ export const normalizeReport: NormalizeReport = (apiReport) => {
     const reportSummaries: ReportSummary[] = [];
 
     if (apiReport.Summary) {
-        Object.entries(apiReport.Summary).forEach(([key, { RollbackState, State, TotalSize }]) => {
-            const product = key as ImportType;
-            const summary: ReportSummary = {
-                localID: `${apiReport.ID}-${product}`,
-                reportID: apiReport.ID,
-                product,
-                rollbackState: RollbackState,
-                size: TotalSize,
-                state: State,
-            };
+        Object.entries(apiReport.Summary).forEach(
+            ([key, { RollbackState, State, TotalSize, ImportFolderVolumeID, ImportFolderLinkID }]) => {
+                const product = key as ImportType;
+                const summary: ReportSummary = {
+                    localID: `${apiReport.ID}-${product}`,
+                    reportID: apiReport.ID,
+                    product,
+                    rollbackState: RollbackState,
+                    size: TotalSize,
+                    state: State,
+                    importFolder:
+                        ImportFolderVolumeID && ImportFolderLinkID
+                            ? { volumeID: ImportFolderVolumeID, linkID: ImportFolderLinkID }
+                            : undefined,
+                };
 
-            reportSummaries.push(summary);
-        });
+                reportSummaries.push(summary);
+            }
+        );
     }
 
     return { report, reportSummaries };
