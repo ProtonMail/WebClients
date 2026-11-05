@@ -1,17 +1,30 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .desktop-connectors-notice {
-	padding-block: rem(14);
-	padding-inline: rem(16);
+	padding: rem(40);
 	border: 1px solid var(--border-weak);
-	border-radius: rem(12);
-	background-color: var(--background-weak);
+	border-radius: rem(16);
+	background-color: var(--background-norm);
 
-	&__icon {
-		block-size: rem(32);
-		inline-size: rem(32);
-		border-radius: rem(8);
-		background-color: var(--background-norm);
-		color: var(--primary);
+	// The icon artwork has transparent padding around the squircle (~72px of 88px is visible).
+	&__app-icon {
+		margin-block: rem(-8);
+		// drop-shadow follows the squircle's alpha, so the shadow hugs the icon rather than its square box.
+		filter: drop-shadow(0 rem(2) rem(4) rgb(0 0 0 / 0.18)) drop-shadow(0 rem(8) rem(16) rgb(83 52 200 / 0.48));
+	}
+
+	&__title {
+		font-size: rem(22);
+	}
+
+	&__description {
+		max-inline-size: rem(560);
+		font-size: rem(15);
+		line-height: rem(20);
+	}
+
+	&__points {
+		font-size: rem(14);
+		line-height: rem(20);
 	}
 }
