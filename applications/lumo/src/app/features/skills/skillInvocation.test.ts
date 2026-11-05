@@ -204,7 +204,7 @@ describe('formatSkillInstructions', () => {
         const skills = [{ handle: 'pdf', instructions: 'See references/api.md', files: ['references/api.md'] }];
         expect(formatSkillInstructions(skills)).not.toContain('Files in this skill');
         expect(formatSkillInstructions(skills, 'read_skill_file')).toContain(
-            "read one with the read_skill_file tool when the instructions refer to it; scripts can't be run): references/api.md]"
+            'read one with the read_skill_file tool when the instructions refer to it; scripts must use execute_skill_script when that tool is available): references/api.md]'
         );
     });
 });

@@ -40,6 +40,7 @@ import { extendStore, setupStore } from './redux/store';
 import { setStoreRef } from './redux/storeRef';
 import { extraThunkArguments } from './redux/thunk';
 import { LumoApi } from './remote/api';
+import { getSkillRuntime } from './remote/skillRuntime';
 import { LUMO_ELIGIBILITY } from './types';
 import {
     consumeNativeSwitchLocalID,
@@ -182,7 +183,7 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
 
         const user = sessionResult.session?.User;
-        extendStore({ config, api, authentication, unleashClient, history });
+        extendStore({ config, api, authentication, unleashClient, history, skillRuntime: getSkillRuntime() });
 
         registerNativeMigrationOutcomeHandler({ api, authentication });
 

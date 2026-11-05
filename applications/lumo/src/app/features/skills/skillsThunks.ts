@@ -14,7 +14,7 @@ import {
     getSkillsToResync,
 } from './customAgentMigration';
 import { BUNDLE_INDEX_VERSION, deriveBundleInfo, resolvePluginInfo } from './skillBundle';
-import { decodeText, isSkillScriptFile, isTextSkillFile } from './skillFiles';
+import { decodeText, encodeText, isSkillScriptFile, isTextSkillFile } from './skillFiles';
 import type { SkillCommand } from './skillInvocation';
 import {
     findCommandFile,
@@ -27,7 +27,8 @@ import {
     limitSkillFileList,
     truncateSkillInstructions,
 } from './skillInvocation';
-import { parseSkillMarkdown } from './skillMarkdown';
+import { buildSkillMarkdown, parseSkillMarkdown } from './skillMarkdown';
+import { getSkillBundleRevision } from './skillRuntime';
 import { getSkillSelectionId, isSkillCommandSelected } from './skillSelection';
 import {
     deserializeSkill,
@@ -51,10 +52,17 @@ const getMasterKeys = async (state: LumoState): Promise<MasterKeyContext> => {
     return buildMasterKeyContext(bundle);
 };
 
-const decryptSkillFiles = async ({ dbApi }: LumoThunkArguments, skill: Skill): Promise<SkillFileDraft[]> => {
+const decryptSkillFiles = async (
+    { dbApi }: LumoThunkArguments,
+    skill: Skill,
+    requireComplete = false
+): Promise<SkillFileDraft[]> => {
     const dek = await getSkillDek(skill);
     const serialized = await dbApi.getSkillAssets(skill.id);
     const assets = await Promise.all(serialized.map((asset) => deserializeSkillAsset(asset, dek)));
+    if (requireComplete && assets.some((asset, i) => asset === null && !serialized[i].deleted)) {
+        throw new Error('Cannot execute an incomplete skill bundle');
+    }
     return assets
         .filter((asset) => asset !== null)
         .map(({ id, createdAt, path, mimeType, data }) => ({ id, createdAt, path, mimeType, data }))
@@ -443,3 +451,33 @@ export const migrateCustomAgentsToSkills = createAsyncThunk<number, void, ThunkC
         },
     }
 );
+
+/** The domain validates the selected script; the injected host owns synchronization and execution. */
+export const executeSkillScript =
+    ({ handle, path, args, lookupPool }: { handle: string; path: string; args: string[]; lookupPool?: string[] }) =>
+    async (_dispatch: unknown, getState: () => LumoState, extra: LumoThunkArguments): Promise<unknown> => {
+        const host = extra.skillRuntime;
+        if (!host) throw new Error('Script execution is unavailable in this environment');
+        const skills = getState().skills.skills;
+        const command = findCommand(skills, handle, lookupPool);
+        if (!command) throw new Error('Unknown or disabled skill');
+        const skill = skills[command.skillId];
+        const files = await decryptSkillFiles(extra, skill, true);
+        const script = findCommandFile(command, files, path, getSubSkillPaths(skill));
+        if (!script || !isSkillScriptFile(script.path)) throw new Error('Choose a script from this skill’s file list');
+        const bundleFiles = [
+            { path: 'SKILL.md', data: encodeText(buildSkillMarkdown(skill)) },
+            ...files.filter(({ path }) => path !== 'SKILL.md').map(({ path, data }) => ({ path, data })),
+        ];
+        const revision = await getSkillBundleRevision(bundleFiles);
+        await host.syncBundle({ skillId: skill.id, revision, files: bundleFiles });
+        // A skill may be removed or disabled while synchronization is in flight.
+        if (getState().skills.skills[skill.id] !== skill) throw new Error('Skill changed; retry execution');
+        return host.executeScript({
+            skillId: skill.id,
+            revision,
+            skillPath: command.subSkillPath ?? '',
+            scriptPath: script.path,
+            args,
+        });
+    };

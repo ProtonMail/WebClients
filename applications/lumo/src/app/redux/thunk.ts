@@ -2,12 +2,14 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/inte
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { LumoEventResponse } from '@proton/shared/lib/interfaces/Lumo';
 
+import type { SkillRuntime } from '../features/skills/skillRuntime';
 import type { DbApi } from '../indexedDb/db';
 import type { LumoApi } from '../remote/api';
 
 export interface LumoThunkArguments extends ProtonThunkArguments {
     dbApi: DbApi;
     lumoApi: LumoApi;
+    skillRuntime?: SkillRuntime;
     lumoEventManager?: EventManager<LumoEventResponse>;
 }
 
