@@ -18,7 +18,6 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { EnhancedGroup, Group } from '@proton/shared/lib/interfaces/Group';
 import type { GroupMembershipReturn } from '@proton/shared/lib/interfaces/GroupMember';
 import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces/GroupMember';
-import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
@@ -26,7 +25,6 @@ import type { DomainsState } from '../domains';
 import { serverEvent } from '../eventLoop';
 import type { GroupMembershipsState } from '../groupMemberships';
 import { groupMembershipsThunk } from '../groupMemberships';
-import { organizationThunk } from '../organization';
 import type { OrganizationKeyState } from '../organizationKey';
 import { userThunk } from '../user';
 
@@ -64,8 +62,8 @@ const applyGroupUpdate = (state: ModelState<EnhancedGroup[]>, group: Group) => {
     };
 };
 
-const canFetch = (user: UserModel, organization: Organization, memberships: GroupMembershipReturn[]): boolean => {
-    if (user.isAdmin && organization?.ID) {
+const canFetch = (user: UserModel, memberships: GroupMembershipReturn[]): boolean => {
+    if (user.isAdmin) {
         return true; // org admin
     }
 
@@ -80,12 +78,8 @@ export const fetchGroup = async (groupID: string, api: Api) => {
 
 const modelThunk = createAsyncModelThunk<Model, GroupsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
-        const [user, organization, memberships] = await Promise.all([
-            dispatch(userThunk()),
-            dispatch(organizationThunk()),
-            dispatch(groupMembershipsThunk()),
-        ]);
-        if (!canFetch(user, organization, memberships)) {
+        const [user, memberships] = await Promise.all([dispatch(userThunk()), dispatch(groupMembershipsThunk())]);
+        if (!canFetch(user, memberships)) {
             return [];
         }
         return extraArgument
@@ -358,13 +352,9 @@ export const groupsEventLoopV6Thunk = ({
     api: Api;
 }): ThunkAction<Promise<void>, GroupsState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
-        const [user, organization, memberships] = await Promise.all([
-            dispatch(userThunk()),
-            dispatch(organizationThunk()),
-            dispatch(groupMembershipsThunk()),
-        ]);
+        const [user, memberships] = await Promise.all([dispatch(userThunk()), dispatch(groupMembershipsThunk())]);
 
-        if (!canFetch(user, organization, memberships)) {
+        if (!canFetch(user, memberships)) {
             return;
         }
         await updateCollectionAsyncV6({
