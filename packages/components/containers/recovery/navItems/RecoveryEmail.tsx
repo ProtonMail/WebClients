@@ -16,14 +16,17 @@ interface Props {
 }
 
 type EmailState =
-    { type: 'no-email' } | { type: 'unverified'; email: string } | { type: 'off' } | { type: 'active'; email: string };
+    | { type: 'no-email' }
+    | { type: 'unverified'; email: string }
+    | { type: 'off'; email: string }
+    | { type: 'active'; email: string };
 
 const getEmailState = (emailRecovery: ReturnType<typeof selectAccountRecovery>['emailRecovery']): EmailState => {
     if (!emailRecovery.value) {
         return { type: 'no-email' };
     }
     if (!emailRecovery.hasReset) {
-        return { type: 'off' };
+        return { type: 'off', email: emailRecovery.value };
     }
     if (!emailRecovery.isVerified) {
         return { type: 'unverified', email: emailRecovery.value };
@@ -40,14 +43,19 @@ const RecoveryEmailBadge = () => {
     }
 
     const state = getEmailState(emailRecovery);
-    if (isSentinelUser && (state.type === 'active' || state.type === 'unverified')) {
-        return (
-            <StatusBadge
-                status={StatusBadgeStatus.Danger}
-                text={c('Status').t`Disable recovery by email`}
-                icon={IcShieldExclamationFilled}
-            />
-        );
+    if (isSentinelUser) {
+        if (state.type === 'active' || state.type === 'unverified') {
+            return (
+                <StatusBadge
+                    status={StatusBadgeStatus.Danger}
+                    text={c('Status').t`Disable recovery by email`}
+                    icon={IcShieldExclamationFilled}
+                />
+            );
+        }
+        if (state.type === 'off') {
+            return <span className="color-weak">{state.email}</span>;
+        }
     }
     if (state.type === 'off') {
         return <StatusBadge status={StatusBadgeStatus.Off} text={c('Status').t`Off`} />;

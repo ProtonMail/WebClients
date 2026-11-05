@@ -26,6 +26,12 @@ describe('LastChanged', () => {
         expect(screen.getByTestId('last-changed')).toHaveTextContent('Last changed Aug 10');
     });
 
+    it('renders the date in its own element', () => {
+        render(<LastChanged date={new Date(2026, 7, 10, 10, 38)} data-testid="last-changed" />);
+
+        expect(screen.getByTestId('last-changed:date')).toHaveTextContent(/^Aug 10$/);
+    });
+
     it('includes the year for dates in other years', () => {
         render(<LastChanged date={new Date(2024, 2, 2, 10, 38)} data-testid="last-changed" />);
 

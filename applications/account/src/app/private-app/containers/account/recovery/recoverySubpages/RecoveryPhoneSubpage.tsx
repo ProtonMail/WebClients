@@ -10,19 +10,19 @@ import { Href } from '@proton/atoms/Href/Href';
 import Loader from '@proton/components/components/loader/Loader';
 import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
+import { StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
 import { RecoveryFieldForm } from '@proton/components/containers/recovery/RecoveryFieldForm';
 import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
-import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
-import { BRAND_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import darkIllustration from './assets/recovery-phone-dark.svg';
 import illustration from './assets/recovery-phone.svg';
-import SentinelWarning from './shared/SentinelWarning';
+import SentinelWarning from './shared/SentinelBadge';
 
 const RecoveryPhoneSubpage = () => {
     const theme = useTheme();
@@ -119,22 +119,15 @@ const RecoveryPhoneSubpage = () => {
                                         <>
                                             <SettingsToggleRow.Label>
                                                 {c('Label').t`Allow recovery by phone`}
-                                                {isSentinelUser && (
-                                                    <IcShieldExclamationFilled className="color-warning shrink-0" />
-                                                )}
                                             </SettingsToggleRow.Label>
                                             <SettingsToggleRow.Description>
-                                                {isSentinelUser
-                                                    ? c('Info')
-                                                          .t`Recovery by phone is not available while ${PROTON_SENTINEL_NAME} is enabled.`
-                                                    : c('Info')
-                                                          .t`If disabled, ${BRAND_NAME} will still use your recovery phone to send security notifications.`}
+                                                {c('Info')
+                                                    .t`If disabled, ${BRAND_NAME} will still use your recovery phone to send security notifications.`}
                                             </SettingsToggleRow.Description>
                                         </>
                                     }
                                     toggle={
                                         <SettingsToggleRow.Toggle
-                                            disabled={!phoneRecovery.hasReset && isSentinelUser}
                                             {...accountRecovery.recoveryPhone.toggleProps}
                                             /* Overridden for new design */
                                             checked={phoneRecovery.hasReset}
@@ -143,15 +136,30 @@ const RecoveryPhoneSubpage = () => {
                                 />
                             </div>
                         )}
-
-                        {phoneRecovery.value && phoneRecovery.hasReset && isSentinelUser && (
+                        {isSentinelUser && !phoneRecovery.value && (
                             <SentinelWarning
-                                text={c('Info')
-                                    .t`To ensure the highest possible security of your account, disable **Recovery by recovery phone**.`}
+                                className="mt-6"
+                                status={StatusBadgeStatus.Warning}
+                                text={c('Info').t`Add a phone number in case we need to contact you`}
                             />
                         )}
-                        {!phoneRecovery.value && isSentinelUser && (
-                            <SentinelWarning text={c('Info').t`Add a phone number in case we need to contact you`} />
+
+                        {isSentinelUser && phoneRecovery.value && phoneRecovery.hasReset && (
+                            <SentinelWarning
+                                className="mt-6"
+                                status={StatusBadgeStatus.Danger}
+                                text={c('Info')
+                                    .t`To ensure the highest possible security of your account, disable **Recovery by phone**.`}
+                            />
+                        )}
+
+                        {isSentinelUser && phoneRecovery.value && !phoneRecovery.hasReset && (
+                            <SentinelWarning
+                                className="mt-6"
+                                status={StatusBadgeStatus.Success}
+                                text={c('Info')
+                                    .t`To ensure the highest possible security of your account, keep **Recovery by phone** disabled.`}
+                            />
                         )}
                     </DashboardCardContent>
                 </DashboardCard>

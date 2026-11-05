@@ -16,14 +16,17 @@ interface Props {
 }
 
 type PhoneState =
-    { type: 'no-phone' } | { type: 'unverified'; phone: string } | { type: 'off' } | { type: 'active'; phone: string };
+    | { type: 'no-phone' }
+    | { type: 'unverified'; phone: string }
+    | { type: 'off'; phone: string }
+    | { type: 'active'; phone: string };
 
 const getPhoneState = (phoneRecovery: ReturnType<typeof selectAccountRecovery>['phoneRecovery']): PhoneState => {
     if (!phoneRecovery.value) {
         return { type: 'no-phone' };
     }
     if (!phoneRecovery.hasReset) {
-        return { type: 'off' };
+        return { type: 'off', phone: phoneRecovery.value };
     }
     if (!phoneRecovery.isVerified) {
         return { type: 'unverified', phone: phoneRecovery.value };
@@ -41,14 +44,20 @@ const RecoveryPhoneBadge = () => {
 
     const state = getPhoneState(phoneRecovery);
 
-    if (isSentinelUser && (state.type === 'active' || state.type === 'unverified')) {
-        return (
-            <StatusBadge
-                status={StatusBadgeStatus.Danger}
-                text={c('Status').t`Disable recovery by phone`}
-                icon={IcShieldExclamationFilled}
-            />
-        );
+    if (isSentinelUser) {
+        if (state.type === 'active' || state.type === 'unverified') {
+            return (
+                <StatusBadge
+                    status={StatusBadgeStatus.Danger}
+                    text={c('Status').t`Disable recovery by phone`}
+                    icon={IcShieldExclamationFilled}
+                />
+            );
+        }
+
+        if (state.type === 'off') {
+            return <span className="color-weak">{state.phone}</span>;
+        }
     }
     if (state.type === 'off') {
         return <StatusBadge status={StatusBadgeStatus.Off} text={c('Status').t`Off`} />;
