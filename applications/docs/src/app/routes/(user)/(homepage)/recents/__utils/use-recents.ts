@@ -305,7 +305,7 @@ async function loadDocument(drive: ProtonDriveClient, nodeUid: string, document?
   // Always present - getNodeHierarchy includes self (so at least 1 item)
   const node = hierarchy.at(-1) as NodeEntity
 
-  // CAREFUL the order here is different than in prepareDocumentData!
+  // CAREFUL the order here is different than in getDocumentDetails!
   // root first, most immediate parent last
   const ancestors = hierarchy.slice(0, -1)
   // most immediate parent first, root last

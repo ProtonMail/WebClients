@@ -18,7 +18,7 @@ export type RecentDocumentsItemValue = {
   location: RecentDocumentsItemLocation
   isSharedWithMe: boolean
   shareId: string
-  // In order from root to direct parent
+  // Most immediate parent first, root last (My files root, or the share root for items shared with me)
   ancestorsNodeUids?: string[]
   effectiveRole?: MemberRole
 }

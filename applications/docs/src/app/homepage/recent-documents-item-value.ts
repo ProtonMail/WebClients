@@ -12,7 +12,7 @@ export type RecentDocumentsItemValue = {
   location: RecentDocumentsItemLocation
   isSharedWithMe: boolean
   shareId: string
-  // Available (and used) only when RecentDocumentsItem is used with SDK; in order from root to direct parent
+  // Available (and used) only when RecentDocumentsItem is used with SDK; most immediate parent first, root last
   ancestorsNodeUids?: string[]
   // Available (and used) only when RecentDocumentsItem is used with SDK
   effectiveRole?: 'viewer' | 'editor' | 'admin' | 'inherited'
