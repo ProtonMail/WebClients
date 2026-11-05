@@ -11,6 +11,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
 import type { ExcelSheetInfo } from '../../services/files/excelSheets';
+import { useNativeComposerVisibilityApi } from './hooks/useNativeComposerVisibilityApi';
 
 export type ExcelSheetSelectionRequest = {
     fileName: string;
@@ -32,6 +33,7 @@ const ExcelSheetSelectionModal = ({
     onConfirm,
     ...modalProps
 }: ExcelSheetSelectionModalProps) => {
+    useNativeComposerVisibilityApi({ hideComposer: Boolean(modalProps.open) });
     const [selectedSheetNames, setSelectedSheetNames] = useState(() => new Set(sheets.map(({ name }) => name)));
     const selectedCount = selectedSheetNames.size;
     const areAllSheetsSelected = selectedCount === sheets.length;

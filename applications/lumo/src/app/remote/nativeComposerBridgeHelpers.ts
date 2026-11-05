@@ -226,6 +226,13 @@ export const setNativeIsSmallScreen = (isSmallScreen: boolean): void => {
     (window as any).nativeComposerApiInstance.setIsSmallScreen(isSmallScreen);
 };
 
+export const setNativeRightPanelWidth = (width: number): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setRightPanelWidth(width);
+};
+
 export const setNativeSidebarLayout = (sidebar: SidebarLayout | null): void => {
     if (!isNativeComposerBridgeAvailable()) {
         console.warn('Native Composer Bridge not available');

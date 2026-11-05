@@ -1,6 +1,7 @@
-import { type ReactNode, lazy } from 'react';
+import { type ReactNode, lazy, useRef } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
+import { useNativeRightPanelLayoutApi } from '../components/Composer/hooks/useNativeRightPanelLayoutApi';
 import { useNativeSidebarLayoutApi } from '../components/Composer/hooks/useNativeSidebarLayoutApi';
 import { ArtifactPanelHost } from '../components/Conversation/artifact/ArtifactPanelHost';
 import { MasterKeyBanner } from '../components/MasterKeyBanner';
@@ -27,6 +28,7 @@ interface Props {
 }
 
 const MainLayoutContent = ({ children }: Props) => {
+    const chatRef = useRef<HTMLElement>(null);
     const isHomepage = !!useRouteMatch({ path: '/', exact: true });
     const { openSearchModal } = useSearchModal();
     const { isOpen, toggle } = useRightPanel();
@@ -35,6 +37,7 @@ const MainLayoutContent = ({ children }: Props) => {
     useResourceLimitNotifications();
     useDataLossWarningNotification();
     useNativeSidebarLayoutApi();
+    useNativeRightPanelLayoutApi(chatRef);
 
     useKeyboardShortcuts({ onOpenSearch: openSearchModal });
 
@@ -47,7 +50,10 @@ const MainLayoutContent = ({ children }: Props) => {
                             <div className="lumo-sidebar-shell shrink-0 h-full min-h-0 self-stretch">
                                 <LumoSidebar />
                             </div>
-                            <main className="flex-1 flex flex-column flex-nowrap reset4print md:rounded-xl relative overflow-hidden min-w-0">
+                            <main
+                                ref={chatRef}
+                                className="flex-1 flex flex-column flex-nowrap reset4print md:rounded-xl relative overflow-hidden min-w-0"
+                            >
                                 {isHomepage && <MainLayoutAnimatedBackground />}
                                 <HighLoadWarning />
                                 <MasterKeyBanner />

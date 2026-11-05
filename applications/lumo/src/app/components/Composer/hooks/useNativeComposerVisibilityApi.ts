@@ -2,10 +2,11 @@ import { useEffect, useRef } from 'react';
 
 import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
+import { useOptionalArtifactPanelHostLayout } from '../../../providers/ArtifactPanelHostProvider';
 import { useOptionalRightPanel } from '../../../providers/RightPanelProvider';
 import { useOptionalSidebar } from '../../../providers/SidebarProvider';
 import { setNativeComposerVisibility, setNativeIsSmallScreen } from '../../../remote/nativeComposerBridgeHelpers';
-import { canShowWebComposer, canUseNativeSidebarLayout } from '../../../util/userAgent';
+import { canShowWebComposer, canUseNativeRightPanelLayout, canUseNativeSidebarLayout } from '../../../util/userAgent';
 
 interface NativeComposerVisibilityConfig {
     /**
@@ -23,15 +24,21 @@ interface NativeComposerVisibilityConfig {
 const useDefaultVisibility = (): boolean => {
     // A route with no sidebar layout (the paper trail) has nothing competing for the screen.
     const isSidebarVisible = useOptionalSidebar()?.isVisible ?? false;
-    // `isOverlay` is already small-screen-only: on a large screen the panel sits beside the
-    // content instead of over it, so it never covers the composer.
-    const isRightPanelOverlay = useOptionalRightPanel()?.isOverlay ?? false;
+    const rightPanel = useOptionalRightPanel();
+    const isRightPanelOpen = rightPanel?.isOpen ?? false;
+    const isArtifactPanelDocked = useOptionalArtifactPanelHostLayout()?.isHostVisible ?? false;
     const { isSmallScreen } = useIsLumoSmallScreen();
     const { nativeComposer: lumoNativeComposerEnabled } = useLumoFlags();
 
-    const shouldShowNativeComposer = isSmallScreen
-        ? !isSidebarVisible && !isRightPanelOverlay // phone: either drawer covers the screen
-        : canUseNativeSidebarLayout() || isSidebarVisible; // large: always, or legacy behavior
+    // Fit beside docked panels only on clients that consume the measured right inset.
+    // Keep overlay panels and the narrow column between two open sidebars covered.
+    const rightPanelAllowsComposer =
+        (!isRightPanelOpen && !isArtifactPanelDocked) ||
+        (canUseNativeRightPanelLayout() && !isSmallScreen && !isSidebarVisible && !rightPanel?.isOverlay);
+
+    const shouldShowNativeComposer =
+        rightPanelAllowsComposer &&
+        (isSmallScreen ? !isSidebarVisible : canUseNativeSidebarLayout() || isSidebarVisible);
 
     return !canShowWebComposer(lumoNativeComposerEnabled) && shouldShowNativeComposer;
 };

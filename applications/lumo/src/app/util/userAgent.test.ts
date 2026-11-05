@@ -1,6 +1,7 @@
 import {
     canShowWebComposer,
     canUseNativeAuth,
+    canUseNativeRightPanelLayout,
     canUseNativeSidebarLayout,
     getNativeAppInfo,
     isNativeAuthFlagEnabled,
@@ -112,6 +113,21 @@ describe('canUseNativeSidebarLayout', () => {
             'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/140.0.0.0 Safari/537.36'
         );
         expect(canUseNativeSidebarLayout()).toBe(false);
+    });
+});
+
+describe('canUseNativeRightPanelLayout', () => {
+    it.each([
+        [iosUANew('2.2.0'), true],
+        [ipadUANew('2.2.0'), true],
+        [iosUANew('2.1.9'), false],
+        [androidUA('2.2.0'), false],
+        [androidUA('9.0.0'), false],
+        ['Mozilla/5.0 Safari/605.1.15', false],
+    ])('limits docked right-panel fitting to supported iOS builds (%s)', (userAgent, expected) => {
+        setUserAgent(userAgent as string);
+
+        expect(canUseNativeRightPanelLayout()).toBe(expected);
     });
 });
 

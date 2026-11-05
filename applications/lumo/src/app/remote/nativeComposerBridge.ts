@@ -245,6 +245,8 @@ interface State {
      * non-null `sidebar`) before the next push corrects it.
      */
     sidebar: SidebarLayout | null;
+    /** Measured space to the right of chat, including docked panels and gutters (CSS px). */
+    rightPanelWidth?: number;
     showTsAndCs: boolean;
     userFlags: UserFlags;
     attachedFiles: LumoFile[];
@@ -752,6 +754,10 @@ class NativeComposerApi {
     public setIsSmallScreen(isSmallScreen: boolean): void {
         console.log(`NativeComposerApi: Setting isSmallScreen to ${isSmallScreen}`);
         this.updateState({ isSmallScreen });
+    }
+
+    public setRightPanelWidth(width: number): void {
+        this.updateState({ rightPanelWidth: width });
     }
 
     public setSidebarLayout(sidebar: SidebarLayout | null): void {

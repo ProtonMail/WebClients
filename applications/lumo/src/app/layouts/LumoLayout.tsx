@@ -57,19 +57,20 @@ export const LumoLayoutWithDrawer = ({ children, header, drawer }: LumoLayoutWit
         disabled: withoutDrawerToggle = false,
         defaultOpened = false,
     } = drawerConfig;
+    const hasDrawerContent = Boolean(drawerContentComponent);
 
     // Automatically close panel if this layout doesn't support panels
     useEffect(() => {
         // If drawer toggle is disabled AND there's no drawer content, close any open panel
-        if (withoutDrawerToggle && !drawerContentComponent && isOpen) {
+        if (withoutDrawerToggle && !hasDrawerContent && isOpen) {
             close();
         }
-    }, [withoutDrawerToggle, drawerContentComponent, close, isOpen]);
+    }, [withoutDrawerToggle, hasDrawerContent, close, isOpen]);
 
     // Keep defaultOpened drawer behavior desktop-only. On small screens the drawer is an
     // overlay and should stay closed unless the user opens it explicitly.
     useLayoutEffect(() => {
-        if (withoutDrawerToggle || !drawerContentComponent) {
+        if (withoutDrawerToggle || !hasDrawerContent) {
             return;
         }
 
@@ -83,7 +84,7 @@ export const LumoLayoutWithDrawer = ({ children, header, drawer }: LumoLayoutWit
         if (defaultOpened) {
             open();
         }
-    }, [defaultOpened, open, close, withoutDrawerToggle, drawerContentComponent, isSmallScreen]);
+    }, [defaultOpened, open, close, withoutDrawerToggle, hasDrawerContent, isSmallScreen]);
 
     return (
         <div
