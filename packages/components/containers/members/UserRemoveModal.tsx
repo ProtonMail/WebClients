@@ -6,7 +6,6 @@ import { deleteMembers } from '@proton/account/members/actions';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
-import { PLANS } from '@proton/payments/core/constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
@@ -57,12 +56,8 @@ const UserRemoveModal = ({ member: initialMember, organization, ...rest }: Props
         });
     };
 
-    const isPassFamily = organization?.PlanName === PLANS.PASS_FAMILY;
-
-    const descriptionCopy = isPassFamily
-        ? c('familyOffer_2023:Info').t`After leaving your plan, this user will be moved to a ${BRAND_NAME} Free plan.`
-        : c('familyOffer_2023:Info')
-              .t`After leaving your plan, this user will be moved to a ${BRAND_NAME} Unlimited plan with a 30-day free trial.*`;
+    const descriptionCopy = c('familyOffer_2023:Info')
+        .t`After leaving your plan, this user will be moved to a ${BRAND_NAME} Free plan.`;
 
     const description = isInvitationPending
         ? // translator: Info message when a user has been invited to an organization. Looks like: 'The invitation will be canceled and the user won't be able to join Bernie's Family.'
@@ -74,11 +69,6 @@ const UserRemoveModal = ({ member: initialMember, organization, ...rest }: Props
         <Prompt
             {...rest}
             title={c('Title').t`Remove user?`}
-            footnote={
-                isInvitationPending || isPassFamily
-                    ? undefined
-                    : c('familyOffer_2023:Info').t`*Only one free trial per user. Regular pricing applies thereafter.`
-            }
             buttons={[
                 <Button
                     color="danger"
