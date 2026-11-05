@@ -2,7 +2,7 @@ import { EncoderPipeline } from './encoderPipeline';
 import type { AudioTapSamples } from './types';
 
 const mediabunny = vi.hoisted(() => ({
-    addVideoFrame: vi.fn<() => Promise<void>>(),
+    addVideoFrame: vi.fn<(timestamp: number) => Promise<void>>(),
     addAudioSample: vi.fn<() => Promise<void>>(),
     finalize: vi.fn<() => Promise<void>>(),
 }));
@@ -22,8 +22,8 @@ vi.mock('mediabunny', () => ({
     Mp4OutputFormat: class {},
     AppendOnlyStreamTarget: class {},
     CanvasSource: class {
-        public add() {
-            return mediabunny.addVideoFrame();
+        public add(timestamp: number) {
+            return mediabunny.addVideoFrame(timestamp);
         }
     },
     AudioSampleSource: class {
@@ -46,7 +46,7 @@ const flushPromises = () => new Promise((resolve) => setTimeout(resolve, 0));
 
 const createPipeline = () => {
     const onError = vi.fn();
-    const pipeline = new EncoderPipeline({} as OffscreenCanvas, 30, 'aac', vi.fn(), onError);
+    const pipeline = new EncoderPipeline({} as OffscreenCanvas, 20, 'aac', vi.fn(), onError);
     return { pipeline, onError };
 };
 
@@ -89,5 +89,45 @@ describe('EncoderPipeline encoder failures', () => {
 
         expect(onError).toHaveBeenCalledTimes(1);
         expect(onError).toHaveBeenCalledWith('audio', encoderError);
+    });
+});
+
+describe('EncoderPipeline frame timestamps', () => {
+    let nowMs = 0;
+
+    beforeEach(() => {
+        nowMs = 0;
+        vi.spyOn(performance, 'now').mockImplementation(() => nowMs);
+    });
+
+    afterEach(() => {
+        vi.restoreAllMocks();
+    });
+
+    const recordFrameTimesMs = async (encodeDurationsMs: number[]) => {
+        const { pipeline } = createPipeline();
+        const frameTimesMs: number[] = [];
+        let stopping: Promise<void> | undefined;
+        mediabunny.addVideoFrame.mockImplementation(async (timestamp) => {
+            frameTimesMs.push(Math.round(timestamp * 1000));
+            nowMs += encodeDurationsMs[frameTimesMs.length - 1];
+            if (frameTimesMs.length === encodeDurationsMs.length) {
+                stopping = pipeline.stop();
+            }
+            await flushPromises();
+        });
+
+        await pipeline.start();
+        await vi.waitFor(() => expect(stopping).toBeDefined());
+        await stopping;
+        return frameTimesMs;
+    };
+
+    it('stamps each frame with its capture time when the encoder is slower than the frame rate', async () => {
+        expect(await recordFrameTimesMs([500, 500, 500, 500])).toEqual([0, 500, 1000, 1500]);
+    });
+
+    it('fills the slots missed during a short encoder hiccup without leaving gaps', async () => {
+        expect(await recordFrameTimesMs([110, 0, 0])).toEqual([0, 50, 100]);
     });
 });

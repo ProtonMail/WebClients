@@ -14,11 +14,15 @@ import type { AudioTapSamples, EncoderTrack } from './types';
 const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
 
 const AUDIO_POLL_MS = 4; // re-check cadence while waiting for the clock to advance
+const MAX_CATCH_UP_SLOTS = 1;
+const DURATION_FROM_NEXT_FRAME = 0;
 
-// Encodes the live OffscreenCanvas to a fragmented MP4 at constant frame rate:
-// evenly spaced timestamps (n / fps), duplicating the canvas on a missed slot.
-// The frame count follows the audio clock (wall-clock fallback when there's no
-// audio), so the video duration tracks the audio and can't drift from it.
+// Encodes the live OffscreenCanvas to a fragmented MP4 with timestamps on a
+// 1 / fps grid. Each frame takes the clock's slot at capture time (audio clock,
+// wall-clock fallback when there's no audio), so an encoder that can't keep up
+// skips slots instead of squeezing the video shorter than the audio. The muxer
+// derives each frame's duration from the next frame so a skipped slot extends
+// the previous one: QuickTime times frames by duration, not fragment start.
 export class EncoderPipeline {
     private output: Output;
     private videoSource: CanvasSource;
@@ -32,7 +36,7 @@ export class EncoderPipeline {
     private running = false;
     private hasFailed = false;
     private startMs = 0;
-    private emittedFrames = 0;
+    private nextSlot = 0;
     private loopPromise: Promise<void> | null = null;
     private onError: (track: EncoderTrack, error: unknown) => void;
 
@@ -83,12 +87,13 @@ export class EncoderPipeline {
                 const wallElapsed = (nowMs - this.startMs) / 1000;
                 const audioLive = this.hasAudio && nowMs - this.audioUpdatedMs < AUDIO_STALL_MS;
                 const reference = audioLive ? Math.min(wallElapsed, this.audioElapsed) : wallElapsed;
-                const dueFrames = Math.floor(reference * this.fps);
-                if (this.emittedFrames <= dueFrames) {
-                    await this.videoSource.add(this.emittedFrames * frameDuration, frameDuration);
-                    this.emittedFrames += 1;
+                const dueSlot = Math.floor(reference * this.fps);
+                if (this.nextSlot <= dueSlot) {
+                    const slot = dueSlot - this.nextSlot > MAX_CATCH_UP_SLOTS ? dueSlot : this.nextSlot;
+                    await this.videoSource.add(slot * frameDuration, DURATION_FROM_NEXT_FRAME);
+                    this.nextSlot = slot + 1;
                 } else {
-                    const nextSlotMs = this.startMs + (this.emittedFrames * 1000) / this.fps;
+                    const nextSlotMs = this.startMs + (this.nextSlot * 1000) / this.fps;
                     await sleep(Math.max(AUDIO_POLL_MS, nextSlotMs - nowMs));
                 }
             }
