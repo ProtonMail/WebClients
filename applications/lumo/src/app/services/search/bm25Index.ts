@@ -1,39 +1,108 @@
 /**
  * BM25 Search Index
- * 
+ *
  * Relevance-based document ranking using the BM25 algorithm. Supports searching
  * with full sentences/paragraphs and ranks documents by semantic relevance.
- * 
+ *
  * How it works:
- * 1. Tokenization: Text is normalized (compound words joined), lowercased, and 
+ * 1. Tokenization: Text is normalized (compound words joined), lowercased, and
  *    split into words ≥3 chars, filtered against stopwords
- * 
+ *
  * 2. Indexing: Each document is tokenized and unique terms are tracked with their
  *    document frequency (df). Document lengths are stored for normalization.
- * 
+ *
  * 3. IDF Calculation: Terms that appear in fewer documents get higher weights
  *    Formula: log((N - df + 0.5) / (df + 0.5) + 1)
- * 
+ *
  * 4. BM25 Scoring: For each query term in a document, score combines:
  *    - IDF: term importance across corpus
  *    - TF saturation: diminishing returns for repeated terms (controlled by k1)
  *    - Length normalization: adjusts for document length (controlled by b)
  *    Formula: Σ IDF(term) × (tf × (k1+1)) / (tf + k1 × (1 - b + b × (docLen/avgLen)))
- * 
+ *
  * 5. Ranking: Documents scored against query, sorted by relevance
- * 
+ *
  * Parameters:
  * - k1 (default 1.5): controls TF saturation (higher = more weight to term frequency)
  * - b (default 0.75): controls length normalization (0 = no normalization, 1 = full)
  */
-
-import { STOPWORDS } from "./stopwords";
+import { STOPWORDS } from './stopwords';
 
 /** Cap tokenization input to avoid regex / memory blow-ups on very large documents. */
 const MAX_TOKENIZE_CHARS = 512_000;
 
+const isWordChar = (char: string | undefined): boolean => char !== undefined && /\w/.test(char);
+const isWhitespace = (char: string | undefined): boolean => char !== undefined && /\s/.test(char);
+const isSeparator = (char: string | undefined): boolean => char === '-' || char === '_';
+
+/**
+ * Join hyphenated and underscored words ("open source" style compounds are added later):
+ * `open-source` becomes `opensource`, `api_gateway` becomes `apigateway`.
+ *
+ * This used to be `text.replace(/(\w+)\s*[-_]\s*(\w+)/g, '$1$2')`. That pattern is quadratic
+ * and recursion-heavy on long inputs: `(\w+)` runs greedily to the end of a long run of word
+ * characters, then backtracks one position at a time looking for a separator, and this repeats
+ * from every start position when no separator follows. Underscores make it worse because `_`
+ * is both a word character and a separator (`-` is not a `\w` character). On Firefox and WebKit
+ * that surfaces as `InternalError: too much recursion` (WEB-LUMO-8WE) rather than a catchable
+ * error. A whole Drive document reaches here unchunked below the chunker's threshold, so one big
+ * file could take down indexing of the entire corpus. The scan below walks the text once with
+ * bounded backtracking and produces identical output to the regex.
+ */
 function normalizeHyphenatedWords(text: string): string {
-    return text.replace(/(\w+)\s*[-_]\s*(\w+)/g, '$1$2');
+    const length = text.length;
+    let result = '';
+    let copied = 0;
+    let index = 0;
+
+    while (index < length) {
+        if (!isWordChar(text[index])) {
+            index++;
+            continue;
+        }
+
+        // The whole run of word characters, which is where `(\w+)` starts being greedy.
+        let wordEnd = index;
+        while (wordEnd < length && isWordChar(text[wordEnd])) {
+            wordEnd++;
+        }
+
+        // Greedy `(\w+)` keeps as many word characters as it can while still leaving a
+        // separator for `[-_]`, so try the longest split first and stop at the first
+        // `\s*[-_]\s*\w+` that matches. `split === wordEnd` is the common case, where the
+        // separator directly follows the run of word characters ("open-source"); the lower
+        // bound excludes `split === index`, since `(\w+)` cannot match an empty word.
+        let match: { wordEnd: number; secondStart: number; secondEnd: number } | undefined;
+        for (let split = wordEnd; split > index; split--) {
+            let afterGap = split;
+            while (isWhitespace(text[afterGap])) afterGap++;
+            if (!isSeparator(text[afterGap])) continue;
+
+            let secondStart = afterGap + 1;
+            while (isWhitespace(text[secondStart])) secondStart++;
+            if (!isWordChar(text[secondStart])) continue;
+
+            let secondEnd = secondStart;
+            while (isWordChar(text[secondEnd])) secondEnd++;
+
+            match = { wordEnd: split, secondStart, secondEnd };
+            break;
+        }
+
+        if (!match) {
+            index = wordEnd;
+            continue;
+        }
+
+        // `$1$2` drops the separator and the whitespace around it.
+        result +=
+            text.slice(copied, index) +
+            text.slice(index, match.wordEnd) +
+            text.slice(match.secondStart, match.secondEnd);
+        copied = index = match.secondEnd;
+    }
+
+    return result + text.slice(copied);
 }
 
 function tokenize(text: string): string[] {
@@ -252,6 +321,11 @@ export class BM25Index {
 
     hasTermInVocabulary(term: string): boolean {
         return this.idfIndex.df.has(term.toLowerCase());
+    }
+
+    /** Terms the index has seen, for diagnostics and tests. */
+    getVocabulary(): string[] {
+        return Array.from(this.idfIndex.df.keys());
     }
 
     getMatchingTerms(queryText: string): string[] {
