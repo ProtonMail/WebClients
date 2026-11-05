@@ -402,6 +402,9 @@
       "Go back": [
         "Torna enrere"
       ],
+      "Go to ${ DOCS_SHORT_APP_NAME } home": [
+        "Aneu a l'inici de ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Go to ${ planOrAppName }": [
         "Aneu a ${ planOrAppName }"
       ],
@@ -5192,6 +5195,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Alguns governs bloquegen o restringeixen l'accés a determinats llocs web. Una VPN ajuda a evitar la censura mentre manté la vostra activitat i identitat privades."
       ],
+      "Some of the document's content could not be read.": [
+        "No s'ha pogut llegir part del contingut del document."
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Alguns llocs web i serveis d'estríming bloquegen els continguts per regió. Una VPN us permet evitar aquestes restriccions i accedir a internet lliurement."
       ],
@@ -5235,6 +5241,15 @@
       "The Beginning": [
         "Inici"
       ],
+      "The document could not be created.": [
+        "No s'ha pogut crear el document."
+      ],
+      "The document could not be loaded.": [
+        "No s'ha pogut carregar el document."
+      ],
+      "The editor could not be loaded.": [
+        "No s'ha pogut carregar l'editor."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "La informació exposada es va filtrar d'un servei de tercers. La informació del vostre compte de ${ BRAND_NAME } continua sent segura i xifrada. ${ learnMoreLink }"
       ],
@@ -5273,6 +5288,9 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-lo en qualsevol moment."
+      ],
+      "This link is not supported on this page.": [
+        "Aquest enllaç no és compatible en aquesta pàgina."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."

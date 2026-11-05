@@ -402,6 +402,9 @@
       "Go back": [
         "Gå tilbage"
       ],
+      "Go to ${ DOCS_SHORT_APP_NAME } home": [
+        "Gå til ${ DOCS_SHORT_APP_NAME } startsiden"
+      ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
       ],
@@ -5192,6 +5195,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Nogle regeringer blokerer eller begrænser adgangen til visse websteder. En VPN hjælper med at omgå censur, samtidig med at din aktivitet og identitet holdes privat."
       ],
+      "Some of the document's content could not be read.": [
+        "Noget af dokumentets indhold kunne ikke indlæses."
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Nogle websteder og streamingservices blokerer indhold efter region. En VPN giver dig mulighed for at omgå disse begrænsninger og få fri adgang til internettet."
       ],
@@ -5235,6 +5241,15 @@
       "The Beginning": [
         "Begyndelsen"
       ],
+      "The document could not be created.": [
+        "Dokumentet kunne ikke oprettes."
+      ],
+      "The document could not be loaded.": [
+        "Dokumentet kunne ikke indlæses."
+      ],
+      "The editor could not be loaded.": [
+        "Redigeringsvinduet kunne ikke indlæses."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De eksponerede oplysninger blev lækket fra en tredjepartstjeneste. Din ${ BRAND_NAME }-kontooplysninger er stadig sikre og krypterede. ${ learnMoreLink }"
       ],
@@ -5273,6 +5288,9 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Dette er et navn eller kaldenavn for din organisation, som dine brugere vil se. Du kan ændre det når som helst."
+      ],
+      "This link is not supported on this page.": [
+        "Dette link understøttes ikke på denne side."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."

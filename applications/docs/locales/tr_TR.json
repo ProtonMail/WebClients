@@ -402,6 +402,9 @@
       "Go back": [
         "Geri dön"
       ],
+      "Go to ${ DOCS_SHORT_APP_NAME } home": [
+        "${ DOCS_SHORT_APP_NAME } girişine git"
+      ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName } uygulamasına git"
       ],
@@ -5189,6 +5192,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Bazı devletler belirli sitelere erişimi engeller veya kısıtlar. VPN, etkinliğinizi ve kimliğinizi güvenli tutarken engellemeyi aşmanıza yardımcı olur."
       ],
+      "Some of the document's content could not be read.": [
+        "Belge içeriğinin bir bölümü okunamadı."
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Bazı siteler ve yayın akışı hizmetleri, içeriklerini bölgelere göre engeller. Bir VPN, bu kısıtlamaları aşmanızı ve internete özgürce erişmenizi sağlar."
       ],
@@ -5232,6 +5238,15 @@
       "The Beginning": [
         "Başlangıç"
       ],
+      "The document could not be created.": [
+        "Belge oluşturulamadı."
+      ],
+      "The document could not be loaded.": [
+        "Belge yüklenemedi."
+      ],
+      "The editor could not be loaded.": [
+        "Düzenleyici yüklenemedi."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Bilgiler üçüncü taraf bir hizmetten sızdırılmış. ${ BRAND_NAME } hesap bilgileriniz güvende ve şifrelenmiş olarak kalır. ${ learnMoreLink }"
       ],
@@ -5270,6 +5285,9 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Kullanıcılarınıza görüntülenecek kuruluş adınız veya kısaltmanız. İstediğiniz zaman değiştirebilirsiniz."
+      ],
+      "This link is not supported on this page.": [
+        "Bu bağlantı bu sayfada desteklenmiyor."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
