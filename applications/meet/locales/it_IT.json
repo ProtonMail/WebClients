@@ -2682,9 +2682,6 @@
       "Delete room": [
         "Cancella Stanza"
       ],
-      "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "Vuoi che le persone ti ${ deviceContentType } nella riunione?"
-      ],
       "Download current logs": [
         "Scarica i log correnti"
       ],
@@ -3026,6 +3023,9 @@
       ],
       "Please try again or try another browser": [
         "Riprova o prova un altro browser"
+      ],
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Aggiorna ${ MEET_APP_NAME } per continuare a utilizzare l'app. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Connessione debole"
@@ -3728,6 +3728,72 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Impossibile avviare la modalità Picture-in-Picture"
+      ]
+    },
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } e ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "Da ${ startDateLabel }, ${ startTimeLabel } a ${ endDateLabel }, ${ endTimeLabel }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }"
+      ],
+      "Repeats daily": [
+        "In replica tutti i giorni"
+      ],
+      "Repeats every ${ interval } day": [
+        "Si ripete ogni ${ interval } giorno",
+        "Si ripete ogni ${ interval } giorni"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Si ripete ogni ${ interval } mesi il ${ ordinalDay }",
+        "Si ripete ogni ${ interval } mesi il ${ ordinalDay }"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Si ripete ogni ${ interval } settimana di ${ weekdayName }",
+        "Si ripete ogni ${ interval } settimane di ${ weekdayName }"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Si ripete ogni ${ interval } anni il ${ monthDay }",
+        "Si ripete ogni ${ interval } anni il ${ monthDay }"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Si ripete ogni ${ weekdayName }"
+      ],
+      "Repeats every weekday": [
+        "Si ripete tutti i giorni feriali"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Si ripete ogni anno il ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Ripetere ogni mese"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Si ripete il ${ ordinalDay } di ogni mese"
+      ],
+      "Repeats weekly": [
+        "Ripeti ogni settimana"
+      ],
+      "Repeats yearly": [
+        "Ripeti ogni anno"
+      ],
+      "Today · ${ monthDay }": [
+        "Oggi · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Domani · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Si ripete ogni ${ interval } settimana nei giorni ${ weekdayList }",
+        "Si ripete ogni ${ interval } settimane nei giorni ${ weekdayList }"
+      ],
+      "Repeats every ${ weekdayList }": [
+        "Si ripete ogni ${ weekdayList }"
       ]
     },
     "Notification": {

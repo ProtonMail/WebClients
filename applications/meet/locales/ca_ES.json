@@ -39,7 +39,7 @@
         "micròfon activat"
       ],
       "speaking": [
-        "parlant"
+        "està parlant"
       ]
     },
     "Accessibility announcement": {
@@ -360,6 +360,9 @@
       "Download": [
         "Baixa"
       ],
+      "Download app": [
+        "Descarregueu l'aplicació"
+      ],
       "Download local participant report": [
         "Descarrega l'informe de participants locals"
       ],
@@ -454,7 +457,7 @@
         "Sons d'entrada i sortida"
       ],
       "Join from ${ MEET_APP_NAME } app": [
-        "Afegiu-vos-hi amb ${ MEET_APP_NAME }7"
+        "Uniu-vos-hi des de l'aplicació ${ MEET_APP_NAME }"
       ],
       "Join in browser": [
         "Uneix-m'hi al navegador"
@@ -2901,8 +2904,11 @@
       "Delete room": [
         "Elimina la sala"
       ],
-      "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "Voleu que la gent us ${ deviceContentType } a la reunió?"
+      "Do you want people to hear you in the meeting?": [
+        "Voleu que els altres us sentin a la reunió?"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "Voleu que els altres us vegin a la reunió?"
       ],
       "Download current logs": [
         "Descarrega els registres actuals"
@@ -2984,6 +2990,9 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Obteniu un enllaç de reunió segur i afegiu-lo al calendari"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Obtingueu la millor experiència amb l'aplicació d'escriptori ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Aneu a about:config, cerqueu media.peerconnection.enabled i establiu el valor a \"true\"."
@@ -3250,7 +3259,7 @@
         "No s'han concedit els permisos."
       ],
       "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
-        "Feu clic a ${ downloadLink } i instal·leu l'aplicació, després torneu a fer clic a \"Unir-s'hi\" a l'aplicació ${ MEET_APP_NAME }."
+        "Feu clic a ${ downloadLink } i instal·leu l'aplicació. Després, torneu a fer clic a Uneix-me a l'aplicació ${ MEET_APP_NAME }."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Habiliteu l'accés al ${ microphoneLinkButton }${ andString }a la ${ cameraLinkButton } per a una experiència òptima."
@@ -3259,7 +3268,7 @@
         "Torneu-ho a provar o feu-ho amb un altre navegador"
       ],
       "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
-        "Actualitzeu ${ MEET_APP_NAME } per continuar utilitzant l'aplicació. ${ downloadUpdate }"
+        "Actualitzeu ${ MEET_APP_NAME } per a continuar utilitzant l'aplicació. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Connexió deficient"
@@ -3544,7 +3553,7 @@
         "Ahir — ${ absoluteDate }"
       ],
       "You": [
-        "Tú"
+        "Vós"
       ],
       "You are almost there": [
         "Ja gairebé ho teniu"
@@ -3933,7 +3942,7 @@
         "buidar la memòria cau del navegador"
       ],
       "download": [
-        "descarregar"
+        "descarrega"
       ],
       "Learn more": [
         "Més informació"
@@ -3968,7 +3977,7 @@
         "Celebració"
       ],
       "Cheers": [
-        "Salut!"
+        "Salut"
       ],
       "Chef's kiss": [
         "Petó del Xef"
@@ -4031,7 +4040,7 @@
         "Seu"
       ],
       "Slay": [
-        "Morir de riure"
+        "Triomf"
       ],
       "Sleepy": [
         "Amb son"
@@ -4106,7 +4115,7 @@
         "${ startDateLabel }, ${ startTimeLabel } a ${ endTimeLabel }"
       ],
       "Repeats daily": [
-        "Es repeteix diàriament"
+        "Es repeteix cada dia"
       ],
       "Repeats every ${ interval } day": [
         "Es repeteix cada ${ interval } dia",
@@ -4121,14 +4130,14 @@
         "Es repeteix cada ${ interval } setmanes el ${ weekdayName }"
       ],
       "Repeats every ${ interval } year on ${ monthDay }": [
-        "Es repeteix cada ${ interval } any al ${ monthDay }",
-        "Es repeteix cada ${ interval } anys al ${ monthDay }"
+        "Es repeteix cada ${ interval } any el ${ monthDay }",
+        "Es repeteix cada ${ interval } anys el ${ monthDay }"
       ],
       "Repeats every ${ weekdayName }": [
         "Es repeteix cada ${ weekdayName }"
       ],
       "Repeats every weekday": [
-        "Es repeteix cada dia entre setmana"
+        "Es repeteix cada dia de la setmana"
       ],
       "Repeats every year on ${ monthDay }": [
         "Es repeteix cada any el ${ monthDay }"

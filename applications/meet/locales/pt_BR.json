@@ -8,11 +8,20 @@
       "(opens in new tab)": [
         "(abre em nova aba)"
       ],
+      "Camera off": [
+        "Câmera desligada"
+      ],
       "camera off": [
         "câmera desligada"
       ],
+      "Camera on": [
+        "Câmera ligada"
+      ],
       "camera on": [
         "câmera ligada"
+      ],
+      "host": [
+        "anfitrião"
       ],
       "Meeting controls": [
         "Controle da reunião"
@@ -20,8 +29,17 @@
       "microphone muted": [
         "Microfone silenciado"
       ],
+      "Microphone muted": [
+        "Microfone silenciado"
+      ],
+      "Microphone on": [
+        "Microfone ligado"
+      ],
       "microphone on": [
         "microfone ligado"
+      ],
+      "speaking": [
+        "falando"
       ]
     },
     "Accessibility announcement": {
@@ -341,6 +359,9 @@
       ],
       "Download": [
         "Baixar"
+      ],
+      "Download app": [
+        "Baixar aplicativo"
       ],
       "Download local participant report": [
         "Baixar relatório de participantes locais"
@@ -2849,9 +2870,6 @@
       "Delete room": [
         "Excluir sala"
       ],
-      "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "Deseja que as pessoas ${ deviceContentType } você na reunião?"
-      ],
       "Download current logs": [
         "Baixar os registros atuais"
       ],
@@ -2932,6 +2950,9 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Receba um link de reunião seguro e adicione-o ao seu calendário"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Obtenha a melhor experiência com o aplicativo do ${ protonMeet } para computador."
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vá para about:config, pesquise por media.peerconnection.enabled, e defina-o como true."

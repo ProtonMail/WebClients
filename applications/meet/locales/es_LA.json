@@ -8,11 +8,20 @@
       "(opens in new tab)": [
         "(se abre en una pestaña nueva)"
       ],
+      "Camera off": [
+        "Cámara desactivada"
+      ],
       "camera off": [
         "cámara desactivada"
       ],
+      "Camera on": [
+        "Cámara activada"
+      ],
       "camera on": [
         "cámara activada"
+      ],
+      "host": [
+        "anfitrión"
       ],
       "Meeting controls": [
         "Controles de reunión"
@@ -20,8 +29,17 @@
       "microphone muted": [
         "micrófono silenciado"
       ],
+      "Microphone muted": [
+        "Micrófono silenciado"
+      ],
+      "Microphone on": [
+        "Micrófono activado"
+      ],
       "microphone on": [
         "micrófono activado"
+      ],
+      "speaking": [
+        "hablando"
       ]
     },
     "Accessibility announcement": {
@@ -341,6 +359,9 @@
       ],
       "Download": [
         "Descargar"
+      ],
+      "Download app": [
+        "Descargar aplicación"
       ],
       "Download local participant report": [
         "Descargar informe de participante local"
@@ -2883,9 +2904,6 @@
       "Delete room": [
         "Eliminar sala"
       ],
-      "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "¿Desea que la gente le ${ deviceContentType } en la reunión?"
-      ],
       "Download current logs": [
         "Descargar registros actuales"
       ],
@@ -2966,6 +2984,9 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Obtenga un enlace de reunión seguro y luego añádalo a su calendario"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Obtenga la mejor experiencia con la aplicación de escritorio de ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vaya a about:config, busque media.peerconnection.enabled y actívelo."
@@ -3239,6 +3260,9 @@
       ],
       "Please try again or try another browser": [
         "Inténtelo de nuevo o pruebe con otro navegador"
+      ],
+      "Please update ${ MEET_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Actualice ${ MEET_APP_NAME } para seguir usando la aplicación. ${ downloadUpdate }"
       ],
       "Poor connection": [
         "Conexión débil"
@@ -4072,6 +4096,72 @@
     "meet_2025 Error": {
       "Failed to start Picture-in-Picture": [
         "Error al iniciar Imagen en Imagen"
+      ]
+    },
+    "Meeting schedule": {
+      "${ leadingWeekdays } and ${ lastWeekday }": [
+        "${ leadingWeekdays } y ${ lastWeekday }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endDateLabel }, ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } a ${ endDateLabel }, ${ endTimeLabel }"
+      ],
+      "${ startDateLabel }, ${ startTimeLabel } to ${ endTimeLabel }": [
+        "${ startDateLabel }, ${ startTimeLabel } a ${ endTimeLabel }"
+      ],
+      "Repeats daily": [
+        "Se repite diariamente"
+      ],
+      "Repeats every ${ interval } day": [
+        "Se repite cada ${ interval } día",
+        "Se repite cada ${ interval } días"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Se repite cada ${ interval } mes el ${ ordinalDay }",
+        "Se repite cada ${ interval } meses el ${ ordinalDay }"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Se repite cada ${ interval } semana los ${ weekdayName }",
+        "Se repite cada ${ interval } semanas los ${ weekdayName }"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Se repite cada ${ interval } año el ${ monthDay }",
+        "Se repite cada ${ interval } años el ${ monthDay }"
+      ],
+      "Repeats every ${ weekdayName }": [
+        "Se repite cada ${ weekdayName }"
+      ],
+      "Repeats every weekday": [
+        "Se repite cada día laboral"
+      ],
+      "Repeats every year on ${ monthDay }": [
+        "Se repite cada año el ${ monthDay }"
+      ],
+      "Repeats monthly": [
+        "Se repite mensualmente"
+      ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Se repite el ${ ordinalDay } de cada mes"
+      ],
+      "Repeats weekly": [
+        "Se repite semanalmente"
+      ],
+      "Repeats yearly": [
+        "Se repite anualmente"
+      ],
+      "Today · ${ monthDay }": [
+        "Hoy · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Mañana · ${ monthDay }"
+      ]
+    },
+    "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Se repite cada ${ interval } semana los ${ weekdayList }",
+        "Se repite cada ${ interval } semanas los ${ weekdayList }"
+      ],
+      "Repeats every ${ weekdayList }": [
+        "Se repite cada ${ weekdayList }"
       ]
     },
     "Notification": {

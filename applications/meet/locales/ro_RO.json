@@ -169,13 +169,13 @@
         "Conferința se va încheia peste 5 minute"
       ],
       "This meeting is being recorded. By joining, you acknowledge and consent to being recorded.": [
-        "Această întâlnire este înregistrată. Prin participare, luați la cunoștință și sunteți de acord cu înregistrarea conferinței."
+        "Această conferință este înregistrată. Prin participare, luați la cunoștință și sunteți de acord cu înregistrarea acesteia."
       ],
       "You are the only participant. The meeting will close in 2 minutes unless someone joins.": [
         "Ești singurul participant. Conferința se va încheia peste 2 minute, dacă nu se alătură cineva."
       ],
       "You have been disconnected from the meeting": [
-        "V-ați deconectat de la întâlnire"
+        "V-ați deconectat de la conferință"
       ],
       "You have been muted by the host": [
         "Gazda v-a oprit microfonul"
@@ -304,16 +304,16 @@
         "Copiere legătură web și închidere"
       ],
       "Copy meeting link": [
-        "Copiere legătură web întâlnire"
+        "Copiere legătură web conferință"
       ],
       "Copy room link": [
-        "Copiere legătură web cameră"
+        "Copiere legătură web sală"
       ],
       "Create a free account": [
         "Creare cont gratuit"
       ],
       "Create a room": [
-        "Creare cameră"
+        "Creare sală"
       ],
       "Create an account": [
         "Creare cont"
@@ -363,6 +363,9 @@
       "Download": [
         "Descărcare"
       ],
+      "Download app": [
+        "Descărcare aplicație"
+      ],
       "Download local participant report": [
         "Descărcare raport participant local"
       ],
@@ -379,7 +382,7 @@
         "Descărcare înregistrare"
       ],
       "Download room level report": [
-        "Descărcare raport la nivel de cameră"
+        "Descărcare raport la nivel de sală"
       ],
       "Edit": [
         "Editare"
@@ -403,7 +406,7 @@
         "Încheiere conferință"
       ],
       "End meeting for all": [
-        "Încheiere întâlnire pentru toți"
+        "Încheiere conferință pentru toți"
       ],
       "Fail audio output pin": [
         "Conexiune ieșire audio eșuată"
@@ -451,7 +454,7 @@
         "Inserare emoji"
       ],
       "Join": [
-        "Alăturare"
+        "Participare"
       ],
       "Join and leave sounds": [
         "Sunete de conectare și deconectare"
@@ -460,10 +463,10 @@
         "Participați din aplicația ${ MEET_APP_NAME }"
       ],
       "Join in browser": [
-        "Alăturare în navigatorul web"
+        "Participare în navigatorul web"
       ],
       "Join meeting": [
-        "Alăturare la întâlnire"
+        "Participare la conferință"
       ],
       "Join with a link": [
         "Participare cu legătură web"
@@ -481,13 +484,13 @@
         "Lăsați"
       ],
       "Leave meeting": [
-        "Părăsire întâlnire"
+        "Părăsire conferință"
       ],
       "Live captions": [
         "Subtitrări live"
       ],
       "Lock meeting": [
-        "Blocare întâlnire"
+        "Blocare conferință"
       ],
       "Log audio output state": [
         "Înregistrare stare ieșire audio"
@@ -612,7 +615,7 @@
         "Împrospătați pagina"
       ],
       "Rejoin meeting": [
-        "Revenire la întâlnire"
+        "Revenire la conferință"
       ],
       "Remove ${ name }": [
         "Eliminare ${ name }"
@@ -653,7 +656,7 @@
         "Înapoi la panoul de control"
       ],
       "Room": [
-        "Camera"
+        "Sală"
       ],
       "Rotate personal meeting link": [
         "Alternare legătura web personală conferință"
@@ -731,7 +734,7 @@
         "Pornire conferință instantanee"
       ],
       "Start meeting": [
-        "Începere întâlnire"
+        "Începere conferință"
       ],
       "Start meeting in browser": [
         "Pornire conferință în navigatorul web"
@@ -752,7 +755,7 @@
         "Se pornește…"
       ],
       "Stay in meeting": [
-        "Rămânere în întâlnire"
+        "Rămânere în conferință"
       ],
       "Stop receiving video": [
         "Oprire recepționare video"
@@ -877,7 +880,7 @@
         "Copiere legătură web"
       ],
       "Copy meeting link": [
-        "Copiere legătură web întâlnire"
+        "Copiere legătură web conferință"
       ],
       "Go to dashboard": [
         "Spre panoul de control"
@@ -889,13 +892,13 @@
         "Sunete de conectare și deconectare"
       ],
       "Leave Meeting": [
-        "Părăsire întâlnire"
+        "Părăsire conferință"
       ],
       "Live captions": [
         "Subtitrări live"
       ],
       "Lock meeting": [
-        "Blocare întâlnire"
+        "Blocare conferință"
       ],
       "Meeting timer": [
         "Cronometru conferință"
@@ -1959,7 +1962,7 @@
         "Încercați un nume diferit."
       ],
       "You'll see people here when they join the meeting.": [
-        "Veți vedea aici persoane când se alătură conferinței."
+        "Aici veți vedea persoanele când se alătură conferinței."
       ]
     },
     "Display name": {
@@ -2130,7 +2133,7 @@
         "Ștergerea articolului a eșuat."
       ],
       "Failed to delete room": [
-        "Eroare la ștergerea camerei."
+        "Eroare la ștergerea sălii."
       ],
       "Failed to deny the participant. Please try again.": [
         "Participantul nu s-a putut respinge. Reîncercați."
@@ -2142,7 +2145,7 @@
         "Editarea conferinței a eșuat."
       ],
       "Failed to edit room name": [
-        "Eroare la editarea numelui camerei."
+        "Eroare la editarea numelui sălii."
       ],
       "Failed to get inviter keys": [
         "Eșuare obținere cheie a celui care a invitat."
@@ -2160,7 +2163,7 @@
         "Eșuare solicitare subtitrări live."
       ],
       "Failed to rotate personal meeting link": [
-        "Nu s-a putut roti legătura web a întâlnirii personale."
+        "Nu s-a putut roti legătura web a conferinței personale."
       ],
       "Failed to send chat message. Please try again.": [
         "Eroare la trimiterea mesajului din conversație. Reîncercați."
@@ -2327,7 +2330,7 @@
         "Solicitarea a expirat"
       ],
       "Room deleted": [
-        "Cameră ștearsă"
+        "Sală ștearsă"
       ],
       "Screen share is not supported on mobile browsers": [
         "Partajarea ecranului nu este acceptată pe navigatoarele web mobile."
@@ -2375,7 +2378,7 @@
         "Emoticonul nu a putut fi adăugat deoarece mesajul a atins limita de caractere."
       ],
       "The meeting password is incorrect": [
-        "Parola întâlnirii nu este corectă"
+        "Parola conferinței nu este corectă"
       ],
       "The meeting password is invalid": [
         "Parola conferinței nu este validă."
@@ -2662,7 +2665,7 @@
     },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
-        "${ createAnActionAction } sau ${ signInAction } pentru a vă accesa camera personală și a crea camere noi"
+        "${ createAnActionAction } sau ${ signInAction } pentru a vă accesa sala personală și a crea săli noi"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
         "${ createAnActionAction } sau ${ signInAction } pentru a putea accesa planificarea conferințelor"
@@ -2918,8 +2921,11 @@
       "Delete room": [
         "Ștergere cameră"
       ],
-      "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "Doriți ca oamenii să vă ${ deviceContentType } în conferință?"
+      "Do you want people to hear you in the meeting?": [
+        "Doriți ca participanții să vă audă în conferință?"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "Doriți ca participanții să vă vadă în conferință?"
       ],
       "Download current logs": [
         "Descărcare jurnale actuale"
@@ -2985,13 +2991,13 @@
         "Eșuare aplicare culoare personală fundal."
       ],
       "Failed to update meeting name": [
-        "Actualizarea numelui întâlnirii a eșuat."
+        "Actualizarea numelui conferinței a eșuat."
       ],
       "Failed to update meeting schedule": [
         "Actualizarea planificării conferinței a eșuat."
       ],
       "Free meeting": [
-        "Întâlnire gratuită"
+        "Conferință gratuită"
       ],
       "Free meetings are limited to 1 hour. This call will disconnect soon.": [
         "Conferințele gratuite sunt limitate la o oră. Acest apel se va deconecta în curând."
@@ -3001,6 +3007,9 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Obțineți o legătură web securizată pentru conferință, apoi adăugați-o în calendarul personal."
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Bucurați-vă de cea mai bună experiență cu aplicația desktop ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Accesați opțiunea „about:config”, căutați „media.peerconnection.enabled” și setați la „true”."
@@ -3114,10 +3123,10 @@
         "Conferința este plină"
       ],
       "Meeting link": [
-        "Legătură web întâlnire"
+        "Legătură web conferință"
       ],
       "Meeting locked. No new participants can join.": [
-        "Întâlnirea este blocată. Niciun participant nou nu se poate alătura."
+        "Conferința este blocată. Nu se mai pot alătura participanți."
       ],
       "Meeting recordings aren’t supported in Firefox.": [
         "Înregistrările conferințelor nu sunt suportate în Firefox."
@@ -3129,7 +3138,7 @@
         "Timpul conferinței a expirat"
       ],
       "Meeting unlocked. Participants can join again.": [
-        "Întâlnirea a fost deblocată. Participanții se pot alătura din nou."
+        "Conferința a fost deblocată. Participanții se pot alătura din nou."
       ],
       "Meeting will end in ${ timeLeft }": [
         "Conferința se va încheia peste ${ timeLeft }."
@@ -3165,7 +3174,7 @@
         "Conferințele mele"
       ],
       "My rooms": [
-        "Camerele mele"
+        "Sălile mele"
       ],
       "New": [
         "Nou"
@@ -3240,7 +3249,7 @@
         "Alte conturi"
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
-        "Întâlnirile noastre criptate bilateral vă protejează confidențialitatea și vă permit o exprimare cu adevărat liberă."
+        "Conferințele noastre criptate bilateral vă protejează confidențialitatea și vă permit o exprimare cu adevărat liberă."
       ],
       "Page ${ displayPage } of ${ totalPages }": [
         "Pagina ${ displayPage } din ${ totalPages }"
@@ -3261,7 +3270,7 @@
         "„Participanții” indică persoanele conectate în prezent. „Membri MLS” indică persoanele incluse în grupul de securitate al reuniunii. Aceste cifre pot diferi pentru scurt timp, însă această discrepanță a persistat mai mult decât era de așteptat."
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
-        "Inserați legătura web ${ MEET_APP_NAME } pentru a vă alătura unei întâlniri securizate."
+        "Inserați legătura web ${ MEET_APP_NAME } pentru a vă alătura unei conferințe securizate."
       ],
       "Permissions not given.": [
         "Permisiuni neacordate."
@@ -3345,7 +3354,7 @@
         "Rulați camera live prin procesorul de fundal personalizat. Încărcați o imagine pentru a o folosi ca fundal."
       ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
-        "Planificați-vă următoarea întâlnire. Creați un cont pentru a vă planifica întâlniri din calendarul personal."
+        "Planificați-vă următoarea conferință. Creați un cont pentru a le planifica din calendarul personal."
       ],
       "Select a camera": [
         "Selectați o cameră"
@@ -3387,7 +3396,7 @@
         "Sesiunea a expirat"
       ],
       "Set up a permanent meeting room for your team or clients": [
-        "Configurați o cameră permanentă pentru echipa sau clienții personali."
+        "Configurați o sală permanentă pentru echipa sau clienții personali."
       ],
       "Share screen": [
         "Partajare ecran"
@@ -3429,10 +3438,10 @@
         "Serviciul de subtitrare utilizează sunetul din cadrul conferinței. Subtitrările sunt vizibile doar pentru dumneavoastră și nu sunt salvate."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
-        "Gazda v-a eliminat din această întâlnire. Dacă a fost o greșeală, rugați gazda să vă invite din nou."
+        "Gazda v-a eliminat din această conferință. Dacă a fost o greșeală, rugați gazda să vă reinvite."
       ],
       "The meeting link you tried to open doesn't exist or may have expired. Make sure the link is correct, or start a new secure meeting instead.": [
-        "Legătura web a întâlnirii pe care ați încercat să o deschideți nu există sau poate a expirat. Asigurați-vă că aceasta este corectă sau începeți o întâlnire securizată nouă."
+        "Legătura web a conferinței pe care ați încercat să o deschideți nu există sau poate a expirat. Asigurați-vă că aceasta este corectă sau începeți o conferință securizată nouă."
       ],
       "This conversation started before you joined.": [
         "Această conversație a început înainte de a vă alătura."
@@ -3447,13 +3456,13 @@
         "Această conferință are o sală de așteptare."
       ],
       "This meeting is being recorded": [
-        "Această întâlnire este înregistrată."
+        "Această conferință este înregistrată."
       ],
       "This meeting is locked. Please contact the host to join.": [
-        "Această întâlnire este blocată. Contactați gazda pentru a vă alătura."
+        "Această conferință este blocată. Contactați gazda pentru a participa."
       ],
       "This meeting reached the time limit of a free plan. Upgrade to extend your meeting length in future calls.": [
-        "Această întâlnire a atins limita de timp a unui abonament gratuit. Modificați planul pentru a prelungi durata conferințelor în apelurile viitoare."
+        "Această conferință a atins limita de timp a unui abonament gratuit. Modificați planul pentru a prelungi durata conferințelor în apelurile viitoare."
       ],
       "This meeting reached the time limit.": [
         "Această conferință a atins limita de timp."
@@ -3465,7 +3474,7 @@
         "Aceasta va încheia conferința pentru toți participanții și vă va opri partajarea ecranului."
       ],
       "This will end the meeting for all participants.": [
-        "Aceasta va încheia întâlnirea pentru toți participanții."
+        "Aceasta va încheia conferință pentru toți participanții."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Aceasta vă va deconectat din toate conturile conectate acum."
@@ -3474,7 +3483,7 @@
         "A expirat timpul pentru ${ meetingName }"
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
-        "Pentru a crea o cameră, veți avea nevoie de **un cont gratuit ${ BRAND_NAME }** pentru a o putea salva. Acest lucru durează doar câteva secunde."
+        "Pentru a crea o sală, veți avea nevoie de **un cont gratuit ${ BRAND_NAME }** pentru a o putea salva. Acest lucru durează doar câteva secunde."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
@@ -3513,7 +3522,7 @@
         "Schimbați-vă tipul planului pentru a putea înregistra local conferințele."
       ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
-        "Treceți la alt tip de plan pentru a elimina limita de 1 oră și a omite numărătoarea inversă. Bucurați-vă de întâlniri de până la 24 de ore."
+        "Treceți la alt tip de plan pentru a elimina limita de o oră și a omite numărătoarea inversă. Bucurați-vă de conferințe de până la 24 de ore."
       ],
       "Upload an image to preview it as the background.": [
         "Încărcați o imagine pentru a o examina ca fundal."
@@ -3528,7 +3537,7 @@
         "Se așteaptă vorbirea…"
       ],
       "Waiting for the host to admit you. The host has been notified that you're waiting.": [
-        "Se așteaptă ca gazda să vă admită. Gazda a fost anunțată că așteptați."
+        "Se așteaptă aprobarea de la gazdă. Gazda a fost anunțată că așteptați."
       ],
       "Waiting for the host to start. You'll join when the host starts the meeting and admits you.": [
         "Se așteaptă ca gazda să înceapă conferința. Vă veți alătura când gazda începe conferința și vă acceptă."
@@ -3549,7 +3558,7 @@
         "Doriți să ștergeți acest eveniment?"
       ],
       "Would you like to delete this room?": [
-        "Doriți să ștergeți această cameră de întâlnire?"
+        "Doriți să ștergeți această sală de conferință?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -3576,7 +3585,7 @@
         "Puteți totuși dezactiva microfonul și camera oricând în cadrul ședinței."
       ],
       "You have too many meetings in progress": [
-        "Aveți prea multe întâlniri în desfășurare."
+        "Aveți prea multe conferințe în desfășurare."
       ],
       "You left ${ meetingName }": [
         "Ați părăsit ${ meetingName }"
@@ -3600,13 +3609,13 @@
         "Veți părăsi conferința. Ceilalți vor continua."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
-        "Ați primit o invitație să vă alăturați unei întâlniri securizate. Confirmați-vă numele și faceți clic mai jos pentru a intra."
+        "Ați primit o invitație să vă alăturați unei conferințe securizate. Confirmați-vă numele și faceți clic mai jos pentru a intra."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, trebuie să plătiți toate facturile restante."
       ],
       "Your always available meeting room": [
-        "Camera personală de conferințe disponibilă permanent"
+        "Sala personală de conferințe disponibilă permanent"
       ],
       "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
         "Fundalurile nu au putut fi încărcate, așa că unul nou nu poate fi adăugat acum."
@@ -3630,7 +3639,7 @@
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
       "Your meeting is ready": [
-        "Întâlnirea este pregătită"
+        "Conferința este pregătită"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
@@ -3817,7 +3826,7 @@
         "Gestionare înregistrări"
       ],
       "Meeting ID": [
-        "ID întâlnire"
+        "ID conferință"
       ],
       "Meeting link": [
         "Legătură web conferință"
@@ -4081,10 +4090,10 @@
         "Creare și copiere legătură web"
       ],
       "Create new room": [
-        "Creare cameră"
+        "Creare sală"
       ],
       "Meeting rooms can be used at any time": [
-        "Camerele de conferințe pot fi folosite oricând"
+        "Sălile de conferințe pot fi folosite oricând"
       ],
       "Save and copy link": [
         "Salvare și copiere legătură web"
@@ -4097,15 +4106,15 @@
     },
     "meet_2025": {
       "Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?": [
-        "Deoarece nu mai participă altcineva la această întâlnire, aceasta se va închide automat. Doriți să rămâneți la această întâlnire?"
+        "Deoarece nu mai participă nimeni la această conferință, aceasta se va închide automat. Doriți să rămâneți în această conferință?"
       ]
     },
     "meet_2025 Action": {
       "Leave meeting": [
-        "Părăsire întâlnire"
+        "Părăsire conferință"
       ],
       "Stay in the meeting": [
-        "Rămânere în întâlnire"
+        "Rămânere în conferință"
       ]
     },
     "meet_2025 Error": {
@@ -4198,10 +4207,10 @@
         "Legătura a fost copiată în memorie."
       ],
       "Room name updated": [
-        "Nume cameră actualizat"
+        "Numele sălii s-a actualizat."
       ],
       "Successfully rotated your personal meeting": [
-        "V-ați rotit cu succes întâlnirea personală."
+        "V-ați rotit cu succes conferința personală."
       ],
       "Thanks! Your feedback has been submitted.": [
         "Vă mulțumim! Feedback-ul a fost trimis."
@@ -4278,7 +4287,7 @@
         "Se încarcă…"
       ],
       "Meeting name, e.g. team sync, project update, etc": [
-        "Nume întâlnire, ex. sincronizare echipă, actualizare proiect, etc."
+        "Nume conferință, ex. sincronizare echipă, actualizare proiect, etc."
       ],
       "Password": [
         "Parola"
@@ -4290,7 +4299,7 @@
         "Răspuns..."
       ],
       "Room name, e.g. team sync, project update, etc": [
-        "Nume cameră, ex. sincronizare echipă, actualizare proiect, etc."
+        "Nume sală, ex. sincronizare echipă, actualizare proiect, etc."
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Planificare în ${ CALENDAR_APP_NAME }"
@@ -4542,7 +4551,7 @@
         "Nu s-a putut pregăti înregistrarea"
       ],
       "Create new room": [
-        "Creare cameră"
+        "Creare sală"
       ],
       "Custom background tester": [
         "Testare fundal personal"
@@ -4596,10 +4605,10 @@
         "Link web de invitație"
       ],
       "Join a meeting": [
-        "Alăturare la întâlnire"
+        "Participare la conferință"
       ],
       "Join meeting": [
-        "Alăturare la întâlnire"
+        "Participare la conferință"
       ],
       "Join request expired": [
         "Solicitare de participare expirată"
@@ -4608,9 +4617,9 @@
         "Alăturat la epoca ${ log.epoch }"
       ],
       "Joining meeting with ${ participantCount } other participant…": [
-        "Vă alăturați întâlnirii cu încă ${ participantCount } participant…",
-        "Vă alăturați întâlnirii cu încă ${ participantCount } participanți…",
-        "Vă alăturați întâlnirii cu încă ${ participantCount } de participanți…"
+        "Vă alăturați conferinței cu încă ${ participantCount } participant…",
+        "Vă alăturați conferinței cu încă ${ participantCount } participanți…",
+        "Vă alăturați conferinței cu încă ${ participantCount } de participanți…"
       ],
       "Launching Meeting...": [
         "Se inițiază conferința..."
@@ -4646,7 +4655,7 @@
         "Membri MLS"
       ],
       "No one is waiting": [
-        "Nimeni nu așteaptă"
+        "Nu așteaptă nimeni"
       ],
       "No results found": [
         "Nu s-au găsit rezultate."
@@ -4664,7 +4673,7 @@
         "Persoane"
       ],
       "Personal meeting room": [
-        "Cameră de întâlnire personală"
+        "Sală de conferință personală"
       ],
       "Preparing your recording…": [
         "Se pregătește înregistrarea…"
@@ -4682,7 +4691,7 @@
         "Înregistrare cameră brută vs estompată"
       ],
       "Record this meeting": [
-        "Înregistrare această întâlnire"
+        "Înregistrare această conferință"
       ],
       "Recordings": [
         "Înregistrări"
@@ -4697,13 +4706,13 @@
         "Solicitare cod nou"
       ],
       "Schedule a meeting": [
-        "Planificare întâlnire"
+        "Planificare conferință"
       ],
       "Screen share is blocked": [
         "Partajarea ecranului este blocată"
       ],
       "Secure meeting": [
-        "Întâlnire securizată"
+        "Conferință securizată"
       ],
       "Security code": [
         "Cod de securitate"
@@ -4715,7 +4724,7 @@
         "Deconectare"
       ],
       "Starting meeting as the first participant…": [
-        "Se inițiază întâlnirea în calitate de prim participant…"
+        "Se inițiază conferința în calitate de prim participant…"
       ],
       "Stop recording": [
         "Oprire înregistrare"
@@ -4782,7 +4791,7 @@
         "Persoane incluse în grupul MLS al conferinței"
       ],
       "Recurring meeting": [
-        "Întâlnire recurentă"
+        "Conferință recurentă"
       ],
       "Stop sharing your screen to change this setting": [
         "Opriți partajarea ecranului pentru a schimba această setare."
