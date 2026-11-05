@@ -223,18 +223,7 @@ export function useRecents(drive: ProtonDriveClient) {
 
           // In case we have children of the updated folder we'll only reload existing nodes
           if (childrenOfUpdatedFolder.length > 0) {
-            const results = await Promise.allSettled(
-              childrenOfUpdatedFolder.map((document) =>
-                loadDocument(drive, generateNodeUid(document.volumeId, document.linkId), document),
-              ),
-            )
-            for (const result of results) {
-              if (result.status === 'fulfilled') {
-                updateDocument(result.value)
-              } else {
-                traceRecentsError(traceError, result.reason)
-              }
-            }
+            await reloadDocuments(drive, childrenOfUpdatedFolder)
           } else {
             // This is probably a folder restored from trash - reload everything
             // Currently not supported
@@ -249,6 +238,15 @@ export function useRecents(drive: ProtonDriveClient) {
     removeDocument(nodeUid)
   }, [])
 
+  /** Shows moved documents in their new folder without waiting for their events. */
+  const updateMovedDocuments = useCallback(async (nodeUids: string[]) => {
+    const { recentDocuments } = useRecentsStore.getState()
+    await reloadDocuments(
+      getDrive(),
+      nodeUids.flatMap((nodeUid) => recentDocuments[nodeUid] ?? []),
+    )
+  }, [])
+
   return {
     fetchRecentDocuments,
     updateRenamedDocumentInCache,
@@ -257,6 +255,7 @@ export function useRecents(drive: ProtonDriveClient) {
     isRecentsUpdating,
     removeDocument,
     recentsListener,
+    updateMovedDocuments,
   }
 }
 
@@ -284,6 +283,20 @@ function getDocumentDetails(document: RecentDocumentAPIItem, node: NodeEntity, n
     effectiveRole: getRoleFromHierarchy([node, ...ancestors]) ?? MemberRole.Viewer,
     lastOpenTime: document.LastOpenTime,
     deprecatedShareId: document.ContextShareID,
+  }
+}
+
+async function reloadDocuments(drive: ProtonDriveClient, documents: RecentDocumentsItemValue[]) {
+  const results = await Promise.allSettled(
+    documents.map((document) => loadDocument(drive, generateNodeUid(document.volumeId, document.linkId), document)),
+  )
+  const { updateDocument } = useRecentsStore.getState()
+  for (const result of results) {
+    if (result.status === 'fulfilled') {
+      updateDocument(result.value)
+    } else {
+      traceRecentsError(traceError, result.reason)
+    }
   }
 }
 

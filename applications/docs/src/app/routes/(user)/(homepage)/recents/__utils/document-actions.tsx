@@ -16,6 +16,7 @@ import { c } from 'ttag'
 import { deleteDocument, reportTrashError } from '@proton/docs-core/DriveSDK/trash'
 import { trashAndNotify, restoreAndNotify, handleRestoreError } from '~/drive-sdk/trash-restore-notify'
 import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
+import { useHomepageView } from './homepage-view-sdk-utils'
 
 export type DocumentActionsContextValue = {
   open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void
@@ -64,6 +65,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
 
   const { showSharingModal, sharingModal } = useSharingModal()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
+  const { updateMovedDocuments } = useHomepageView()
   const [confirmDeleteModal, showConfirmDeleteModal] = useConfirmActionModal()
 
   const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem, source = 'normal') => {
@@ -86,7 +88,12 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   })
 
   const move = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
-    showMoveItemsModal({ nodeUids: [generateNodeUid(volumeId, linkId)] })
+    showMoveItemsModal({
+      nodeUids: [generateNodeUid(volumeId, linkId)],
+      onMoved: ({ movedUids }) => {
+        void updateMovedDocuments?.(movedUids)
+      },
+    })
     application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_moved)
   })
 

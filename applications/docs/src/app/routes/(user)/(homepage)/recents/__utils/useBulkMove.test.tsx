@@ -7,6 +7,7 @@ import { ServerTime } from '@proton/docs-shared/ServerTime'
 import { generateNodeUid } from '@proton/drive/sdk'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { ApplicationProvider } from '~/utils/application-context'
+import { HomepageViewContext, type HomepageViewValue } from './homepage-view-sdk-utils'
 import { useBulkMove } from './useBulkMove'
 
 const mockShowMoveItemsModal = jest.fn()
@@ -15,11 +16,14 @@ jest.mock('@proton/drive/public/moveItemsModal', () => ({
 }))
 
 const reportHomepageTelemetry = jest.fn()
+const updateMovedDocuments = jest.fn()
 
 function Wrapper({ children }: { children: ReactNode }) {
   return (
     <ApplicationProvider application={{ metrics: { reportHomepageTelemetry } } as unknown as Application}>
-      {children}
+      <HomepageViewContext.Provider value={{ updateMovedDocuments } as unknown as HomepageViewValue}>
+        {children}
+      </HomepageViewContext.Provider>
     </ApplicationProvider>
   )
 }
@@ -57,8 +61,26 @@ describe('useBulkMove', () => {
     expect(mockShowMoveItemsModal).toHaveBeenCalledTimes(1)
     expect(mockShowMoveItemsModal).toHaveBeenCalledWith({
       nodeUids: [generateNodeUid('volume1', 'link1'), generateNodeUid('volume1', 'link2')],
+      onMoved: expect.any(Function),
     })
     expect(reportHomepageTelemetry).toHaveBeenCalledTimes(2)
     expect(reportHomepageTelemetry).toHaveBeenCalledWith(TelemetryDocsHomepageEvents.document_moved)
+  })
+
+  it('moves only the documents the move modal reports as moved', () => {
+    const onMoved = jest.fn()
+    const { result } = renderHook(() => useBulkMove(), { wrapper: Wrapper })
+    act(() => result.current.move([d1, d2], onMoved))
+    const [{ onMoved: onModalMoved }] = mockShowMoveItemsModal.mock.calls[0]
+
+    onModalMoved({
+      movedUids: [generateNodeUid('volume1', 'link1')],
+      failedItems: [{ uid: generateNodeUid('volume1', 'link2'), error: new Error('Failed') }],
+      targetFolderUid: generateNodeUid('volume1', 'folder'),
+    })
+
+    expect(updateMovedDocuments).toHaveBeenCalledTimes(1)
+    expect(updateMovedDocuments).toHaveBeenCalledWith([generateNodeUid('volume1', 'link1')])
+    expect(onMoved).toHaveBeenCalledWith([d1])
   })
 })

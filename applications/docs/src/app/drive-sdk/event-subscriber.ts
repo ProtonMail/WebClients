@@ -117,7 +117,17 @@ class EventSubscriber {
         this.lastEventPerScope[eventScope] = event.eventId
 
         if (this.listeners) {
-          await Promise.all(this.listeners.map((listener) => listener(event)))
+          const results = await Promise.allSettled(this.listeners.map((listener) => listener(event)))
+          for (const result of results) {
+            if (result.status !== 'rejected') {
+              continue
+            }
+            if (result.reason instanceof ValidationError) {
+              // Expected failure (e.g. user lost access to a document) - don't spam Sentry
+              continue
+            }
+            EventSubscriber.trace(result.reason)
+          }
         }
 
         // Shared document deleted
