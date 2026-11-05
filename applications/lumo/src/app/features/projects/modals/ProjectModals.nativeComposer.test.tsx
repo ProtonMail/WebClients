@@ -4,8 +4,15 @@ import { useOptionalRightPanel } from '../../../providers/RightPanelProvider';
 import { useOptionalSidebar } from '../../../providers/SidebarProvider';
 import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
 import { type ProjectSpace, type SpaceKeyClear, SpaceType } from '../../../types';
+import { ProjectLimitModal } from './ProjectLimitModal';
 import { ProjectSearchModal } from './ProjectSearchModal';
 
+jest.mock('@proton/components/containers/payments/subscription/SubscriptionModalProvider', () => ({
+    useSubscriptionModal: () => [jest.fn(), false],
+}));
+jest.mock('@proton/payments-ui/ui/hooks/usePreferredPlansMap', () => ({
+    usePreferredPlansMap: () => ({ plansMapLoading: false }),
+}));
 jest.mock('../../../hooks', () => ({ useLumoUserSettings: () => ({ lumoUserSettings: {} }) }));
 jest.mock('../../../redux/hooks', () => ({ useLumoDispatch: () => jest.fn() }));
 jest.mock('../../../hooks/useLumoFlags', () => ({ useLumoFlags: () => ({ nativeComposer: true }) }));
@@ -55,4 +62,19 @@ it('keeps the composer hidden when access settings close between two open sideba
     unmount();
 
     expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
+});
+
+it('hides the composer behind the project-limit upsell and restores it on close', () => {
+    jest.mocked(useOptionalRightPanel).mockReturnValue({
+        isOpen: false,
+        isOverlay: false,
+    } as ReturnType<typeof useOptionalRightPanel>);
+    jest.mocked(useOptionalSidebar).mockReturnValue({ isVisible: true } as ReturnType<typeof useOptionalSidebar>);
+    const props = { onClose: jest.fn(), onExit: jest.fn() };
+    const { rerender } = render(<ProjectLimitModal {...props} open />);
+    expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
+
+    rerender(<ProjectLimitModal {...props} open={false} />);
+
+    expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(true);
 });
