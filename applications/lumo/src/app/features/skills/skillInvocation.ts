@@ -257,7 +257,7 @@ export const formatSkillInstructions = (
         .map(({ handle, instructions, files = [] }) => {
             const listed = readFileToolName ? limitSkillFileList(files) : [];
             const fileNote = listed.length
-                ? `\nFiles in this skill (read one with the ${readFileToolName} tool when the instructions refer to it; scripts can't be run): ${listed.join(', ')}`
+                ? `\nFiles in this skill (read one with the ${readFileToolName} tool when the instructions refer to it; scripts must use execute_skill_script when that tool is available): ${listed.join(', ')}`
                 : '';
             return `[Skill /${handle}: the user invoked this skill. Follow its instructions.\n${truncateSkillInstructions(instructions)}${fileNote}]`;
         });

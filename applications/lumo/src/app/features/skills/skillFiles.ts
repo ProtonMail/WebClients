@@ -51,7 +51,7 @@ export const isBlockedSkillFile = (path: string) => BLOCKED_EXTENSIONS.has(getEx
 
 const SCRIPT_EXTENSIONS = new Set(['py', 'sh', 'bash', 'zsh', 'js', 'mjs', 'cjs', 'ts', 'rb', 'pl', 'ps1']);
 
-/** Scripts are stored and readable, but nothing runs them. */
+/** Script resources that a host runtime can execute. */
 export const isSkillScriptFile = (path: string) => SCRIPT_EXTENSIONS.has(getExtension(path));
 
 export const isTextSkillFile = (mimeType: string) =>

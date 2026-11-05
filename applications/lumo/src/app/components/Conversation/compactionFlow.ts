@@ -11,7 +11,7 @@ import { createRetrievalToolExecutor } from '../../features/client-tools/retriev
 import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
 import { getSkillLookupPool } from '../../features/skills/skillSelection';
 import { createSkillToolExecutor } from '../../features/skills/skillTool';
-import { loadSkillInstructions, readSkillFile } from '../../features/skills/skillsThunks';
+import { executeSkillScript, loadSkillInstructions, readSkillFile } from '../../features/skills/skillsThunks';
 import { sendMessageWithRedux } from '../../lib/lumoApiClientRedux';
 import type { ContextFilter } from '../../llm';
 import { compactConversation, estimateTurnsTokens } from '../../llm/compaction';
@@ -30,6 +30,7 @@ import {
     pushMessageRequest,
 } from '../../redux/slices/core/messages';
 import type { LumoDispatch, LumoState } from '../../redux/store';
+import { extraThunkArguments } from '../../redux/thunk';
 import { isAbortError, throwIfAborted } from '../../services/generation/abortGeneration';
 import { waitForModels } from '../../services/modelsStore';
 import {
@@ -168,6 +169,14 @@ function resolveClientToolExecutor(
                             lookupPool: getSkillLookupPool(),
                         })
                     ).unwrap(),
+                // Custom/restricted tool contexts must not acquire a separate execution path.
+                executeScript:
+                    extraThunkArguments.skillRuntime &&
+                    !sendOptions.clientToolExecutor &&
+                    sendOptions.enableDesktopTools !== false
+                        ? (handle, path, args) =>
+                              dispatch(executeSkillScript({ handle, path, args, lookupPool: getSkillLookupPool() }))
+                        : undefined,
                 readFile: (handle, path) =>
                     dispatch(readSkillFile({ handle, path, lookupPool: getSkillLookupPool() })).unwrap(),
             })

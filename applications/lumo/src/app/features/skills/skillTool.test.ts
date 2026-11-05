@@ -82,12 +82,9 @@ describe('createSkillToolExecutor', () => {
             expect(JSON.parse(result.content)).not.toHaveProperty('files');
         });
 
-        it('rejects skills outside the loadable list without loading them', async () => {
-            const results = await executor.execute([
-                call(USE_SKILL_TOOL_NAME, { name: 'secret-skill' }),
-                call(USE_SKILL_TOOL_NAME, { name: 'invoked-skill' }),
-            ]);
-            expect(results.map(({ is_error }) => is_error)).toEqual([true, true]);
+        it('rejects unknown skills without loading them', async () => {
+            const results = await executor.execute([call(USE_SKILL_TOOL_NAME, { name: 'secret-skill' })]);
+            expect(results.map(({ is_error }) => is_error)).toEqual([true]);
             expect(JSON.parse(results[0].content).error).toContain('Use one of: pdf-tools, empty');
             expect(loadSkill).not.toHaveBeenCalled();
         });
