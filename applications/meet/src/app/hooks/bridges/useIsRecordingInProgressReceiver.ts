@@ -9,12 +9,12 @@ import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting'
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import { selectParticipantsMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
-import type { ParticipantEntity } from '@proton/meet/types/types';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes, RecordingStatus } from '../../types';
 import { isValidMessageString } from '../../utils/isValidMessageString';
+import { waitForParticipant } from '../../utils/waitForParticipant';
 
 export const useIsRecordingInProgressReceiver = () => {
     const { reportMeetError } = useMeetErrorReporting();
@@ -28,34 +28,6 @@ export const useIsRecordingInProgressReceiver = () => {
     const participantsMapRef = useRef(participantsMap);
     participantsMapRef.current = participantsMap;
 
-    const waitForParticipant = useCallback(
-        (identity: string, timeoutMs = 10_000): Promise<ParticipantEntity | undefined> => {
-            const current = store.getState().participants.participantsMap[identity];
-            if (current) {
-                return Promise.resolve(current);
-            }
-
-            return new Promise((resolve) => {
-                let timeout: NodeJS.Timeout;
-
-                const unsubscribe = store.subscribe(() => {
-                    const participant = store.getState().participants.participantsMap[identity];
-                    if (participant) {
-                        clearTimeout(timeout);
-                        unsubscribe();
-                        resolve(participant);
-                    }
-                });
-
-                timeout = setTimeout(() => {
-                    unsubscribe();
-                    resolve(undefined);
-                }, timeoutMs);
-            });
-        },
-        [store]
-    );
-
     const handleDataReceive = useCallback(
         async (payload: Uint8Array<ArrayBuffer>, participant?: RemoteParticipant) => {
             if (!participant || !payload) {
@@ -63,7 +35,7 @@ export const useIsRecordingInProgressReceiver = () => {
             }
 
             // Wait for the participant to be fetched
-            const senderParticipant = await waitForParticipant(participant.identity);
+            const senderParticipant = await waitForParticipant(store, participant.identity);
 
             // Only allow messages sent by admins or hosts
             if (!senderParticipant?.IsAdmin && !senderParticipant?.IsHost) {
@@ -138,7 +110,7 @@ export const useIsRecordingInProgressReceiver = () => {
                 logger.error('Error handling recording status message', error);
             }
         },
-        [dispatch, meetCoreClient, reportMeetError, waitForParticipant]
+        [dispatch, meetCoreClient, reportMeetError, store]
     );
 
     const handleParticipantDisconnected = useCallback(
