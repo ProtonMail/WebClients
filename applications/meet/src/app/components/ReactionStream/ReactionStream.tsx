@@ -65,7 +65,7 @@ const ReactionStreamItem = ({ item, onDone }: { item: StreamItem; onDone: (id: s
 
     return (
         <div
-            className="reaction-stream-item"
+            className="reaction-stream-item keep-motion"
             style={
                 {
                     '--reaction-left': `${item.left}%`,

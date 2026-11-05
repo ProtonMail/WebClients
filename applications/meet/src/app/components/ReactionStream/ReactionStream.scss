@@ -85,7 +85,7 @@
 	}
 }
 
-@media (prefers-reduced-motion: reduce) {
+@mixin reaction-stream-reduced-motion {
 	.reaction-stream-item {
 		animation: reaction-stream-fade 3s ease-in-out forwards;
 	}
@@ -93,6 +93,14 @@
 	.reaction-stream-sway {
 		animation: none;
 	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	@include reaction-stream-reduced-motion;
+}
+
+.feature-animations-off {
+	@include reaction-stream-reduced-motion;
 }
 
 @keyframes reaction-stream-fade {
