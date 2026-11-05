@@ -33,6 +33,7 @@ import {
     sortMemoriesByDate,
 } from '../../../util/memoryHelpers';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
+import { MemoryOptimizePreviewModal } from './MemoryOptimizePreviewModal';
 
 import './MemoryPanel.scss';
 
@@ -370,6 +371,10 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
     const clearGeneratedModal = useModalStateObject();
     const disableMemoryModal = useModalStateObject();
     const optimizeModal = useModalStateObject();
+    const optimizePreviewModal = useModalStateObject();
+    const [pendingOptimization, setPendingOptimization] = useState<{ current: Memory[]; optimized: Memory[] } | null>(
+        null
+    );
 
     const memories = useMemo(
         () => sortMemoriesByDate(normalizeMemories(lumoUserSettings.memories)),
@@ -530,21 +535,61 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
             .sort()
             .join('\n');
 
+    // Exact snapshot (id, source, case-sensitive content): an edit that only changes case or promotes a
+    // generated memory to a user memory (e.g. from another tab/device) must invalidate the proposal.
+    const getMemorySnapshotKey = (nextMemories: Memory[]) =>
+        normalizeMemories(nextMemories)
+            .map((memory) => JSON.stringify([memory.id, memory.source, memory.content]))
+            .sort()
+            .join('\n');
+
+    // Generates a proposal only. Nothing is persisted until the user confirms in the preview modal.
     const handleConfirmOptimizeMemories = async () => {
         try {
             const latestMemories = normalizeMemories(store.getState().lumoUserSettings.memories);
-            const beforeCount = latestMemories.length;
-            const beforeKey = getMemoryContentsKey(latestMemories);
             const optimized = await optimizeMemories(latestMemories);
-            const afterKey = getMemoryContentsKey(optimized);
 
             optimizeModal.openModal(false);
             setEditingId(null);
 
-            if (beforeKey === afterKey) {
+            if (getMemoryContentsKey(latestMemories) === getMemoryContentsKey(optimized)) {
                 createNotification({
                     type: 'info',
                     text: c('collider_2025: Info').t`Your memories are already well organized.`,
+                });
+                return;
+            }
+
+            setPendingOptimization({ current: latestMemories, optimized });
+            optimizePreviewModal.openModal(true);
+        } catch (error) {
+            handleGenerationError(error);
+        }
+    };
+
+    const handleDiscardOptimization = () => {
+        optimizePreviewModal.openModal(false);
+        setPendingOptimization(null);
+    };
+
+    const handleApplyOptimization = () => {
+        if (!pendingOptimization) {
+            return;
+        }
+        const { current: proposedFrom, optimized } = pendingOptimization;
+        optimizePreviewModal.openModal(false);
+        setPendingOptimization(null);
+
+        try {
+            const latestMemories = normalizeMemories(store.getState().lumoUserSettings.memories);
+            const beforeCount = latestMemories.length;
+
+            // Memories changed while the preview was open: the proposal is stale, don't overwrite.
+            if (getMemorySnapshotKey(latestMemories) !== getMemorySnapshotKey(proposedFrom)) {
+                createNotification({
+                    type: 'warning',
+                    text: c('collider_2025: Warning')
+                        .t`Your memories changed while reviewing. Please run Optimize again.`,
                 });
                 return;
             }
@@ -826,9 +871,19 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
             >
                 <p className="m-0">
                     {c('collider_2025: Description')
-                        .t`${LUMO_SHORT_APP_NAME} will review chat-based memories, remove duplicates, and merge related entries into clearer ones. Memories you wrote yourself are left unchanged.`}
+                        .t`${LUMO_SHORT_APP_NAME} will review chat-based memories and suggest merging duplicates and related entries. You'll see a preview and can approve or discard the changes before anything is replaced. Memories you wrote yourself are left unchanged.`}
                 </p>
             </Prompt>
+
+            {pendingOptimization && (
+                <MemoryOptimizePreviewModal
+                    {...optimizePreviewModal.modalProps}
+                    current={pendingOptimization.current}
+                    optimized={pendingOptimization.optimized}
+                    onApply={handleApplyOptimization}
+                    onDiscard={handleDiscardOptimization}
+                />
+            )}
 
             <Prompt
                 {...clearGeneratedModal.modalProps}

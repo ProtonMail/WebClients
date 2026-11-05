@@ -1,0 +1,16 @@
+.memory-diff-removed,
+.memory-diff-added {
+	border-radius: 0.25rem;
+	padding-inline: 0.125rem;
+	box-decoration-break: clone;
+}
+
+.memory-diff-removed {
+	background-color: color-mix(in srgb, var(--signal-danger) 18%, transparent);
+	text-decoration: line-through;
+}
+
+.memory-diff-added {
+	background-color: color-mix(in srgb, var(--signal-success) 22%, transparent);
+	font-weight: var(--font-weight-semibold);
+}
