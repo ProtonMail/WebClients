@@ -47,6 +47,7 @@ import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { MeetingRecorderProvider } from '../../contexts/MeetingRecorderContext';
 import { WaitingRoomProvider } from '../../contexts/WaitingRoomContext';
 import { useIsRecordingInProgressReceiver } from '../../hooks/bridges/useIsRecordingInProgressReceiver';
+import { useRaiseHandReceiver } from '../../hooks/bridges/useRaiseHandReceiver';
 import { useJoinFlow } from '../../hooks/protonMeetContainer/useJoinFlow';
 import { useMeetingCleanup } from '../../hooks/protonMeetContainer/useMeetingCleanup';
 import { useMeetingConnection } from '../../hooks/protonMeetContainer/useMeetingConnection';
@@ -177,6 +178,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const isExpiringRef = useRef(false);
 
     useIsRecordingInProgressReceiver();
+    useRaiseHandReceiver();
 
     const isMeetSeamlessKeyRotationEnabled = useFlag('MeetSeamlessKeyRotationEnabled');
 

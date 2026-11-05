@@ -18,12 +18,12 @@ import type { MeetChatMessage } from '@proton/meet/types/types';
 import { isChatThreadExpanded } from '@proton/meet/utils/isChatThreadExpanded';
 import { escape } from '@proton/sanitize/escape';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
 import { clampChatMessageLength } from '../../utils/clampChatMessageLength';
+import { decryptMessageWithRetry } from '../../utils/decryptMessageWithRetry';
 import { isValidMessageString } from '../../utils/isValidMessageString';
 import { retry } from '../../utils/retry';
 import type { ChatIncomingEventInfoData } from '../../wasm/MeetCoreClient';
@@ -194,31 +194,12 @@ export const useChat = () => {
 
                 const encryptedData = binaryStringToUint8Array(decodedMessage.message);
 
-                // Trying the decryption 3 times with increasing delays, to work around temporary issues with the MLS
-                const tryDecrypt = async (attemptIndex: number) => {
-                    const delays = [0, 2000, 4000];
-
-                    if (attemptIndex >= delays.length) {
-                        return undefined;
-                    }
-
-                    if (delays[attemptIndex] > 0) {
-                        await wait(delays[attemptIndex]);
-                    }
-
-                    try {
-                        const result = await meetCoreClient.decryptMessage(encryptedData);
-                        if (!result) {
-                            return await tryDecrypt(attemptIndex + 1);
-                        }
-                        return result;
-                    } catch (_error) {
-                        reportMeetError('Failed to decrypt chat message', { level: 'error' });
-                        return tryDecrypt(attemptIndex + 1);
-                    }
-                };
-
-                const decryptedMessage = await tryDecrypt(0);
+                const decryptedMessage = await decryptMessageWithRetry({
+                    meetCoreClient,
+                    encryptedData,
+                    reportMeetError,
+                    failureLabel: 'Failed to decrypt chat message',
+                });
 
                 if (!decryptedMessage) {
                     return;
