@@ -2874,9 +2874,6 @@
       "Delete": [
         "Удалить"
       ],
-      "Delete conversation": [
-        "Удалить цепочку писем"
-      ],
       "Delete project": [
         "Удалить проект"
       ],
@@ -2933,9 +2930,6 @@
       ],
       "Next message": [
         "Cледующее сообщение"
-      ],
-      "Open conversation": [
-        "Открыть цепочку писем"
       ],
       "Previous message": [
         "Предыдущее сообщение"
@@ -3209,12 +3203,6 @@
       ]
     },
     "collider_2025:Info": {
-      " Chat in Project": [
-        " чат в проекте",
-        " чата в проекте",
-        " чатов в проекте",
-        " чата в проекте"
-      ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } требуется локальное хранилище баз данных (IndexedDB), чтобы сохранять ваши цепочки писем на этом устройстве, но здесь оно недоступно."
       ],
@@ -3247,12 +3235,6 @@
       ],
       "All messages and chat history": [
         "Все сообщения и история чата"
-      ],
-      "Any images generated in these conversations will also be deleted.": [
-        "Все изображения, созданные в этих цепочках писем, также будут удалены."
-      ],
-      "Any images generated in this conversation will also be deleted.": [
-        "Все изображения, созданные в этой цепочке писем, также будут удалены."
       ],
       "Ask a question to get started. Your conversation is private.": [
         "Задайте вопрос, чтобы начать. Ваша цепочка писем конфиденциальна."
@@ -3471,9 +3453,6 @@
       ],
       "Thick": [
         "Толстый"
-      ],
-      "Untitled chat": [
-        "Чат без названия"
       ]
     },
     "collider_2025:Notification": {

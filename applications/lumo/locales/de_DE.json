@@ -1690,8 +1690,8 @@
       "File uploaded but failed to add to knowledge base": [
         "Datei hochgeladen, konnte aber nicht zur Wissensdatenbank hinzugefügt werden."
       ],
-      "Monthly spending limit could not be saved. Please try again.": [
-        "Das monatliche Ausgabenlimit konnte nicht gespeichert werden. Bitte versuche es erneut."
+      "Limit must be a whole amount of at least ${ formattedSavedAmount }": [
+        "Der Höchstbetrag muss ein ganzzahliger Betrag von mindestens ${ formattedSavedAmount } sein."
       ],
       "Name is required": [
         "Name ist erforderlich"
@@ -1744,8 +1744,8 @@
       "This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${ LUMO_SHORT_APP_NAME } purring.": [
         "Dieses Projekt ist randvoll. Lösche eine Unterhaltung, um Platz für eine neue zu schaffen und ${ LUMO_SHORT_APP_NAME } am Laufen zu halten."
       ],
-      "Top-up amount must be between ${ formattedMinAmount } and ${ formattedMaxAmount }": [
-        "Der aufzuladende Betrag muss zwischen ${ formattedMinAmount } und ${ formattedMaxAmount } liegen."
+      "Top-up amount must be a whole amount between ${ formattedMinAmount } and ${ formattedMaxAmount }": [
+        "Der Aufladebetrag muss ein ganzzahliger Betrag zwischen ${ formattedMinAmount } und ${ formattedMaxAmount } sein."
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus für unbegrenzte Chats, erweiterten Verlauf, Zugriff auf erweiterte KI-Modelle und mehr."
@@ -1994,11 +1994,18 @@
         "${ fileCount } Datei",
         "${ fileCount } Dateien"
       ],
+      "${ formattedSpent } of ${ formattedLimit } bought automatically this month": [
+        "${ formattedSpent } von ${ formattedLimit } wurden diesen Monat automatisch ausgegeben"
+      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
       "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space. When it fills up, older messages are summarized — not deleted — so you can keep chatting. Your full chat history stays in the conversation.": [
         "${ LUMO_SHORT_APP_NAME } kann pro Unterhaltung nur eine begrenzte Menge an Informationen verarbeiten. Hier siehst du, was diesen Speicherplatz derzeit belegt. Wenn er voll ist, werden ältere Nachrichten zusammengefasst – nicht gelöscht –, damit du weiter chatten kannst. Dein vollständiger Chatverlauf bleibt in der Unterhaltung erhalten."
+      ],
+      "${ LUMO_SHORT_APP_NAME } can search ${ searchableFiles } of ${ totalFiles } file in this folder. Link a smaller folder to include the rest.": [
+        "${ LUMO_SHORT_APP_NAME } kann ${ searchableFiles } der insgesamt ${ totalFiles } Datei in diesem Ordner durchsuchen. Verknüpfe einen kleineren Ordner, um den Rest einzubeziehen.",
+        "${ LUMO_SHORT_APP_NAME } kann ${ searchableFiles } der insgesamt ${ totalFiles } Datei in diesem Ordner durchsuchen. Verknüpfe einen kleineren Ordner, um den Rest einzubeziehen."
       ],
       "${ onDemandCount } large file is read on demand: ${ LUMO_SHORT_APP_NAME } looks up the parts it needs instead of loading it all.": [
         "${ onDemandCount } große Datei wird bedarfsgerecht gelesen: ${ LUMO_SHORT_APP_NAME } ruft nur die benötigten Teile ab, anstatt die gesamte Datei zu laden.",
@@ -2269,8 +2276,11 @@
       "Monitor your balance, usage, spending controls, and access.": [
         "Deine Guthaben, Verwendung, Ausgaben und Zugriffe überwachen"
       ],
-      "Monthly spending limit reached. API requests are paused until next month.": [
-        "Monatliche Ausgabengrenze erreicht. API-Anfragen sind bis zum nächsten Monat pausiert."
+      "Monthly spending limit reached. Automatic top-ups are paused until next month.": [
+        "Das monatliche Ausgabenlimit wurde erreicht. Automatisches Aufladen wird bis zum nächsten Monat ausgesetzt."
+      ],
+      "Monthly spending limit: ${ formattedSpent } of ${ formattedLimit } bought automatically (${ limitSpentPercent }%)": [
+        "Monatliches Ausgabenlimit: ${ formattedSpent } von ${ formattedLimit } wurden automatisch ausgegeben (${ limitSpentPercent } %)"
       ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Bette API-Schlüssel niemals in clientseitige Pakete ein. Verwende Umgebungsvariablen und einen serverseitigen Proxy in der Produktion."
@@ -2287,8 +2297,8 @@
       "No files or creations yet": [
         "Noch keine Dateien oder erstellten Inhalte"
       ],
-      "No monthly spending limit": [
-        "Keine monatliche Ausgabenlimite"
+      "No monthly limit on automatic top-ups": [
+        "Keine monatliche Obergrenze für das automatische Aufladen"
       ],
       "No new memories were found in your recent chats.": [
         "In deinen letzten Chats wurden keine neuen Erinnerungen gefunden."
@@ -2310,6 +2320,9 @@
       ],
       "Partial content": [
         "Teilinhalt"
+      ],
+      "Pause automatic top-ups until next month once they reach this amount.": [
+        "Sobald dieser Betrag erreicht ist, wird das automatische Aufladen bis zum nächsten Monat ausgesetzt."
       ],
       "PDF": [
         "PDF"
@@ -3756,9 +3769,6 @@
       "Delete column": [
         "Spalte entfernen"
       ],
-      "Delete conversation": [
-        "Unterhaltung löschen"
-      ],
       "Delete project": [
         "Projekt löschen"
       ],
@@ -3767,9 +3777,6 @@
       ],
       "Delete table": [
         "Tabelle löschen"
-      ],
-      "Delete task": [
-        "Aufgabe löschen"
       ],
       "Describe desired changes...": [
         "Beschreibe gewünschte Änderungen..."
@@ -3830,6 +3837,9 @@
       ],
       "Export": [
         "Exportieren"
+      ],
+      "Export chat": [
+        "Chat exportieren"
       ],
       "Favorite": [
         "Favorit"
@@ -3933,9 +3943,6 @@
       "Open chat": [
         "Chat öffnen"
       ],
-      "Open conversation": [
-        "Unterhaltung öffnen"
-      ],
       "Open scheduled task: ${ name }": [
         "Geplante Aufgabe öffnen: ${ name }"
       ],
@@ -4010,9 +4017,6 @@
       ],
       "Request a shorter, more focused response": [
         "Bitte eine kürzere, präzisere Antwort"
-      ],
-      "Reset": [
-        "Zurücksetzen"
       ],
       "Retry": [
         "Wiederholen"
@@ -4330,12 +4334,6 @@
     "collider_2025:Description": {
       "Big Tech AI built a scarily accurate profile of me from my chat history. See what yours knows about you 👀": [
         "Die KI der Big-Tech-Unternehmen hat anhand meines Chat-Verlaufs ein erschreckend genaues Profil von mir erstellt. Schau mal, was deine über dich weiß 👀"
-      ],
-      "Run without asking, using only the connectors you allow. Off: pause and notify you before each tool that requires confirmation.": [
-        "Ohne Nachfrage ausführen, wobei nur die von dir zugelassenen Konnektoren verwendet werden. „Deaktiviert“: Vor jedem Tool, das eine Bestätigung erfordert, wird eine Pause eingelegt und du wirst benachrichtigt."
-      ],
-      "Use the connectors above without asking. Off: pause and notify me before each Ask tool.": [
-        "Die oben genannten Konnektoren ohne Nachfrage verwenden. Ausschalten: Vor jeder Anfrage pausieren und mich benachrichtigen."
       ]
     },
     "collider_2025:Error": {
@@ -4360,6 +4358,9 @@
       "Could not build HTML for PDF export.": [
         "Der HTML-Code für den PDF-Export konnte nicht erstellt werden."
       ],
+      "Could not copy to clipboard": [
+        "Fehler beim Kopieren in die Zwischenablage"
+      ],
       "Could not enable desktop notifications. Please try again.": [
         "Desktop-Benachrichtigungen konnten nicht aktiviert werden. Bitte versuche es erneut."
       ],
@@ -4380,6 +4381,9 @@
       ],
       "Could not open notification settings. Please open System Settings manually.": [
         "Die Benachrichtigungseinstellungen konnten nicht geöffnet werden. Bitte öffne die Systemeinstellungen manuell."
+      ],
+      "Could not open the desktop settings": [
+        "Desktop-Einstellungen konnten nicht geöffnet werden"
       ],
       "Could not read this file.": [
         "Diese Datei konnte nicht eingelesen werden."
@@ -4583,12 +4587,12 @@
       ]
     },
     "collider_2025:Info": {
-      " Chat in Project": [
-        " Chat im Projekt",
-        " Chats im Projekt"
-      ],
       "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
         "„${ file.name }“ wird noch indiziert. Der Inhalt wird beim Absenden geladen."
+      ],
+      "${ findingCount } thing to review": [
+        "${ findingCount } Punkt, der noch geprüft werden muss",
+        "${ findingCount } Punkte, die noch geprüft werden müssen"
       ],
       "${ lineCount } line": [
         "${ lineCount } Zeile",
@@ -4596,9 +4600,6 @@
       ],
       "${ LUMO_SHORT_APP_NAME } and edits change the latest version.": [
         "${ LUMO_SHORT_APP_NAME } und Änderungen wirken sich auf die neueste Version aus."
-      ],
-      "${ LUMO_SHORT_APP_NAME } can run a prompt for you every morning, every Friday, or whenever you like.": [
-        "${ LUMO_SHORT_APP_NAME } kann jeden Morgen, jeden Freitag oder wann immer du möchtest eine Aufforderung für dich anzeigen."
       ],
       "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
         "${ LUMO_SHORT_APP_NAME } ist eine private KI. Deine Unterhaltungen sind verschlüsselt und werden niemals zum Trainieren von KI-Modellen verwendet."
@@ -4636,6 +4637,14 @@
       "${ report.sensitiveCategories.length } sensitive categories": [
         "${ report.sensitiveCategories.length } sensible Kategorien"
       ],
+      "${ skillCount } skill ready to add, including ${ pluginLabel }.": [
+        "${ skillCount } Skill kann hinzugefügt werden, darunter ${ pluginLabel }.",
+        "${ skillCount } Skills können hinzugefügt werden, darunter ${ pluginLabel }."
+      ],
+      "${ skillCount } skill ready to add.": [
+        "${ skillCount } Skill kann hinzugefügt werden.",
+        "${ skillCount } Skills können hinzugefügt werden."
+      ],
       "${ wordCount } word": [
         "${ wordCount } Wort",
         "${ wordCount } Wörter"
@@ -4643,11 +4652,18 @@
       "(latest)": [
         "(Neuste)"
       ],
+      "1 plugin with ${ skillCount } skill ready to add.": [
+        "1 Plugin mit ${ skillCount } Skill kann hinzugefügt werden.",
+        "1 Plugin mit ${ skillCount } Skills kann hinzugefügt werden."
+      ],
       "ad value": [
         "Werbewert"
       ],
       "Added": [
         "Hinzugefügt"
+      ],
+      "Added ${ first.name }": [
+        "${ first.name } wurde hinzugefügt"
       ],
       "Advanced models, a new look, new features, and the same privacy you trust. Click through to see what’s new.": [
         "Erweiterte Modelle, ein neues Design, neue Funktionen und die gleiche Privatsphäre, der du vertraust. Klicke dich durch, um zu sehen, was es Neues gibt."
@@ -4673,17 +4689,8 @@
       "An offhand mention of stress, a diagnosis, or a medication can feed risk models that quietly affect what coverage you’re offered and what you pay.": [
         "Eine beiläufige Erwähnung von Stress, einer Diagnose oder eines Medikaments kann in Risikomodelle einfließen, die still und leise Einfluss darauf nehmen, welcher Versicherungsschutz dir angeboten wird und wie viel du bezahlst."
       ],
-      "Any images generated in these conversations will also be deleted.": [
-        "Alle in diesen Unterhaltungen erstellten Bilder werden ebenfalls gelöscht."
-      ],
-      "Any images generated in this conversation will also be deleted.": [
-        "Alle in dieser Unterhaltung erstellten Bilder werden ebenfalls gelöscht."
-      ],
       "Applying your changes…": [
         "Deine Änderungen werden angewendet…"
-      ],
-      "Are you sure you want to delete \"${ taskName }\"? Its run history will also be deleted. This action cannot be undone.": [
-        "Möchtest du „${ taskName }“ wirklich löschen? Der Ausführungsverlauf wird ebenfalls gelöscht. Diese Aktion kann nicht widerrufen werden."
       ],
       "Are you sure you want to delete \"${ taskName }\"? This action cannot be undone.": [
         "Möchtest du \"${ taskName }\" wirklich löschen? Diese Aktion kann nicht widerrufen werden."
@@ -4802,9 +4809,6 @@
       "Documents, code and webpages created in your chats will appear here.": [
         "In deinen Chats erstellte Dokumente, Code und Webseiten werden hier angezeigt."
       ],
-      "Draft": [
-        "Entwurf"
-      ],
       "Drafting content…": [
         "Inhalt wird entworfen…"
       ],
@@ -4850,6 +4854,9 @@
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Dateien, die in dieses Projekt hochgeladen werden, werden im verknüpften Drive-Ordner gespeichert."
       ],
+      "Folders and plugins can hold several skills, each in its own folder with a SKILL.md.": [
+        "Ordner und Plugins können mehrere Skills enthalten, wobei jeder Skill in einem eigenen Ordner mit einer SKILL.md-Datei abgelegt ist."
+      ],
       "Follow the prompts to confirm the export": [
         "Folge den Anweisungen, um den Export zu bestätigen"
       ],
@@ -4870,6 +4877,10 @@
       ],
       "In the pop-up window, click Confirm export": [
         "Klicke im Pop-up-Fenster auf „Export bestätigen“"
+      ],
+      "Includes ${ scriptCount } script. ${ LUMO_SHORT_APP_NAME } can read it but won't run it.": [
+        "Enthält ${ scriptCount } Skript. ${ LUMO_SHORT_APP_NAME } kann dieses zwar auslesen, führt es jedoch nicht aus.",
+        "Enthält ${ scriptCount } Skripte. ${ LUMO_SHORT_APP_NAME } kann diese zwar lesen, führt sie jedoch nicht aus."
       ],
       "Inferences drawn only from your prompts — grouped by life area.": [
         "Schlussfolgerungen, die ausschließlich auf der Grundlage deiner Eingaben gezogen wurden – nach Lebensbereichen gruppiert."
@@ -4944,6 +4955,10 @@
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Auf dieser Karte befinden sich keine persönlichen Details – nur dein Preisgabe-Score nach Bereich. Je niedriger, desto weniger hast du preisgegeben."
       ],
+      "No problems found in ${ checkedFileCount } file.": [
+        "In ${ checkedFileCount } Datei wurde keine Probleme festgestellt",
+        "In ${ checkedFileCount } Dateien wurden keine Probleme festgestellt"
+      ],
       "No projects yet": [
         "Noch keine Projekte"
       ],
@@ -4986,6 +5001,10 @@
       "Please upload your AI export before continuing.": [
         "Bitte lade deinen KI-Export hoch, bevor du fortfährst."
       ],
+      "Plugin with ${ subSkillCount } skill": [
+        "Plugin mit ${ subSkillCount } Skill",
+        "Plugin mit ${ subSkillCount } Skills"
+      ],
       "Preparing questions": [
         "Fragen werden vorbereitet"
       ],
@@ -5021,9 +5040,6 @@
       ],
       "Revising your creation…": [
         "Deine erstellten Inhalte werden überarbeitet …"
-      ],
-      "Run tasks on a schedule or whenever you need them. Tasks run on this computer while ${ LUMO_SHORT_APP_NAME } is open.": [
-        "Führe Aufgaben nach einem Zeitplan oder bei Bedarf aus. Die Aufgaben werden auf diesem Computer ausgeführt, solange ${ LUMO_SHORT_APP_NAME } geöffnet bleibt."
       ],
       "Runs on an available computer while ${ LUMO_SHORT_APP_NAME } is open. Computers in the same timezone share one run for each occurrence.": [
         "Wird auf einem verfügbaren Computer ausgeführt, solange ${ LUMO_SHORT_APP_NAME } geöffnet ist. Computer in derselben Zeitzone teilen sich jeweils einen Durchlauf pro Instanz."
@@ -5128,6 +5144,9 @@
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Dieses Projekt hat bereits Dateien. Bitte entferne alle Dateien, bevor du einen Drive-Ordner verknüpfst."
       ],
+      "This project's files": [
+        "Dateien dieses Projekts"
+      ],
       "This usually happens when:": [
         "Dies geschieht in der Regel, wenn:"
       ],
@@ -5163,9 +5182,6 @@
       ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Nutze das Max-Modell für komplexe Arbeiten oder das Lite-Modell für alltägliche Aufgaben. Wähle den schnellen Modus für kurze Antworten oder den Denk-Modus für schwierigere Fragen."
-      ],
-      "Use your general setting": [
-        "Verwende deine allgemeinen Einstellungen"
       ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Die Verwendung von ${ DRIVE_APP_NAME } ermöglicht ${ LUMO_SHORT_APP_NAME }, mit größeren Dateien zu arbeiten."
@@ -5407,9 +5423,6 @@
       ],
       "Connection failed": [
         "Verbindung fehlgeschlagen"
-      ],
-      "Connectors this task can use": [
-        "Konnektoren, die für diese Aufgabe verwendet werden können"
       ],
       "Conversation starters (optional)": [
         "Unterhaltungsaufhänger (optional)"
@@ -5810,9 +5823,6 @@
       "Progress": [
         "Fortschritt"
       ],
-      "Project content is searchable": [
-        "Der Projektinhalt ist durchsuchbar"
-      ],
       "Project Instructions (optional)": [
         "Projektanweisungen (optional)"
       ],
@@ -5824,6 +5834,9 @@
       ],
       "R File": [
         "R-Datei"
+      ],
+      "Read-only": [
+        "Nur Lesezugriff"
       ],
       "reStructuredText": [
         "reStructuredText"
@@ -5936,6 +5949,9 @@
       "TOML File": [
         "TOML-Datei"
       ],
+      "Tools this task can use": [
+        "Werkzeuge, die für diese Aufgabe verwendet werden dürfen"
+      ],
       "TypeScript File": [
         "TypeScript-Datei"
       ],
@@ -5944,9 +5960,6 @@
       ],
       "Unknown file": [
         "Unbekannte Datei"
-      ],
-      "Untitled chat": [
-        "Unbenannter Chat"
       ],
       "Untitled project": [
         "Unbenanntes Projekt"
@@ -6004,9 +6017,6 @@
       ],
       "What's your AI Paper Trail? ": [
         "Wie sieht deine KI-Datenspur aus? "
-      ],
-      "When to run": [
-        "Wann ausführen"
       ],
       "Wind": [
         "Wind"
@@ -6142,6 +6152,14 @@
       ],
       "Something else…": [
         "Etwas anderes …"
+      ],
+      "Summarize my recent work in three sections: wins, blockers, and next steps. Keep the tone professional but not stiff...": [
+        "Fasse meine jüngsten Arbeiten in drei Abschnitten zusammen: Erfolge, Hindernisse und nächste Schritte. Der Ton sollte professionell, aber nicht zu förmlich sein ..."
+      ]
+    },
+    "collider_2025:Plugin description": {
+      "Explore and clean spreadsheets, chart the results and build interactive dashboards.": [
+        "Tabellen analysieren und bereinigen, die Ergebnisse grafisch darstellen und interaktive Übersichten erstellen."
       ]
     },
     "collider_2025:Plugin name": {
@@ -6150,6 +6168,9 @@
       ],
       "Finance": [
         "Finanzen"
+      ],
+      "People and HR": [
+        "Mitarbeiter und Personalwesen"
       ],
       "Sales": [
         "Verkauf"
@@ -6341,6 +6362,10 @@
       "${ urlCount } URL": [
         "${ urlCount } URL",
         "${ urlCount } URLs"
+      ],
+      "and ${ more } more": [
+        "und ${ more } weitere",
+        "und ${ more } weitere"
       ],
       "Checked ${ BRAND_NAME } knowledge": [
         "${ BRAND_NAME }-Wissen überprüft"
@@ -6579,6 +6604,9 @@
       "Reading ${ path }...": [
         "${ path } wird eingelesen …"
       ],
+      "Reading a chat...": [
+        "Chat wird ausgelesen ..."
+      ],
       "Reading a file...": [
         "Eine Datei wird gelesen..."
       ],
@@ -6797,6 +6825,9 @@
       "Creations": [
         "Kreationen"
       ],
+      "Discover plugins": [
+        "Plugins entdecken"
+      ],
       "Gallery": [
         "Galerie"
       ],
@@ -6894,8 +6925,8 @@
       "Delete project?": [
         "Projekt löschen?"
       ],
-      "Delete scheduled task?": [
-        "Geplante Aufgabe löschen?"
+      "Delete skill?": [
+        "Skill löschen?"
       ],
       "Delete your data regularly": [
         "Lösche deine Daten regelmäßig"
@@ -7082,9 +7113,6 @@
       ],
       "Scheduled · ${ name }": [
         "Geplant · ${ name }"
-      ],
-      "Search": [
-        "Suche"
       ],
       "See what Big Tech AI already knows about you": [
         "Finden heraus, was die KI der großen Tech-Konzerne bereits über dich weiß"
@@ -9565,6 +9593,9 @@
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Greife sicher vom Terminal auf ${ PASS_APP_NAME } zu, ideal für Skripterstellung, Automatisierung und Entwicklungs-Workflows."
+      ],
+      "Account credit": [
+        "Kontoguthaben"
       ],
       "Account holder": [
         "Kontoinhaber"
