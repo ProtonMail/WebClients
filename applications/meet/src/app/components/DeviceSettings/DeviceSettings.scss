@@ -83,3 +83,8 @@ im.$media-expressions: $media-expressions;
 .device-settings-preview-actions .circle-button-transparent {
 	--circle-button-bg: color-mix(in srgb, var(--interaction-weak-minor-3), transparent 60%);
 }
+
+// The dark band on both sides of the light ring keeps it visible over the camera preview.
+.device-settings .circle-button:focus-visible {
+	box-shadow: 0 0 0 0.375rem var(--background-norm) !important;
+}

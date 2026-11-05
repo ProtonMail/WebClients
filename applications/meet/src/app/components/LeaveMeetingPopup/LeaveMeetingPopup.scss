@@ -5,6 +5,11 @@
 	&:focus-within {
 		background-color: var(--signal-danger-minor-1);
 	}
+
+	&:focus-visible {
+		outline: 2px solid var(--focus-ring) !important;
+		outline-offset: 2px;
+	}
 }
 
 .dropdown.leave-meeting-popup {
