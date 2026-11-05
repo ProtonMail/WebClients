@@ -21,14 +21,14 @@ const refusalMessages: Record<Refusal['reason'], () => string> = {
 
 export type LiveEditingOptions = {
   session: Session | undefined
-  /** Undefined until the editor shows the base state */
+  /** Undefined until the editor holds the base state */
   editorInvoker: Pick<EditorInvoker, 'receiveMessage' | 'changeLockedState'> | undefined
   role: DocumentRole
   onEditorError: (error: Error) => void
 }
 
 /**
- * Connects `session` once the editor shows its base state, and keeps the editor in step with it: updates from other
+ * Connects `session` once the editor holds its base state, and keeps the editor in step with it: updates from other
  * clients and replaced base states go to the editor, which stays locked unless the role can edit, the session allows
  * editing and it isn't paused. Tells the user about the edits the SDK refuses, discards or can't read, and locks the
  * editor for good after one is refused or discarded, since later edits would build on content the server lacks.
