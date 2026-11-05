@@ -7,6 +7,7 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import type { MailState } from '../rootReducer';
 import type { MailThunkExtra } from '../store';
 import { backendActionFinished, labelAll, load, markAll, moveAll } from './elementsActions';
+import { selectCurrentContextIdentifier } from './elementsSelectors';
 import { newElementsState } from './elementsSlice';
 import type { ElementsStateParams } from './elementsTypes';
 
@@ -115,6 +116,57 @@ describe('elementsActions.ts', () => {
 
             jest.advanceTimersByTime(1);
             expect(mockDispatch).toHaveBeenCalledTimes(1);
+        });
+
+        it('should keep retrying a Stale search every 4s when its results are already shown', async () => {
+            mockStaleApiResponse();
+            const state = buildMailState({
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+                isSearching: true,
+                search: { keyword: 'foo' },
+            });
+            // The search results are already on screen, e.g. the user just deleted some of them
+            state.elements.total[selectCurrentContextIdentifier(state)] = 105;
+            const mockGetState = jest.fn().mockReturnValue(state);
+
+            // A count past the end of SEARCH_REFRESHES, as after the first retries all came back Stale
+            const thunk = load({ page: 0, pageSize: 50, abortController: undefined, count: 5 });
+            await thunk(mockDispatch, mockGetState, mockExtra);
+            mockDispatch.mockClear();
+
+            jest.advanceTimersByTime(3999);
+            expect(mockDispatch).not.toHaveBeenCalled();
+            jest.advanceTimersByTime(1);
+            expect(mockDispatch).toHaveBeenCalledTimes(1);
+
+            // The retry is itself Stale, so it schedules the next one with the same 4s delay
+            const retry = mockDispatch.mock.calls[0][0];
+            mockDispatch.mockClear();
+            await retry(mockDispatch, mockGetState, mockExtra);
+            mockDispatch.mockClear();
+
+            jest.advanceTimersByTime(3999);
+            expect(mockDispatch).not.toHaveBeenCalled();
+            jest.advanceTimersByTime(1);
+            expect(mockDispatch).toHaveBeenCalledTimes(1);
+        });
+
+        it('should stop retrying a Stale search once the retries run out when nothing is shown yet', async () => {
+            mockStaleApiResponse();
+            const mockGetState = jest.fn().mockReturnValue(
+                buildMailState({
+                    labelID: MAILBOX_LABEL_IDS.INBOX,
+                    isSearching: true,
+                    search: { keyword: 'foo' },
+                })
+            );
+
+            const thunk = load({ page: 0, pageSize: 50, abortController: undefined, count: 3 });
+            await thunk(mockDispatch, mockGetState, mockExtra);
+            mockDispatch.mockClear();
+
+            jest.advanceTimersByTime(60_000);
+            expect(mockDispatch).not.toHaveBeenCalled();
         });
 
         describe('dynamic page fetch count', () => {
