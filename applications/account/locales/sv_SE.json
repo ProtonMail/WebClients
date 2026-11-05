@@ -9322,6 +9322,9 @@
       "Best deal": [
         "Bästa erbjudandet"
       ],
+      "Billing details": [
+        "Faktureringsdetaljer"
+      ],
       "Checkout": [
         "Kassa"
       ],
@@ -9375,6 +9378,9 @@
       ],
       "Permissions": [
         "Behörigheter"
+      ],
+      "Plan details": [
+        "Paketdetaljer"
       ],
       "Protection": [
         "Skydd"
@@ -14509,6 +14515,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Kom åt ${ PASS_APP_NAME } säkert från terminalen, perfekt för skript, automatisering och utvecklingsarbetsflöden."
       ],
+      "Account credit": [
+        "Kontokredit"
+      ],
       "Account holder": [
         "Kontoinnehavare"
       ],
@@ -14737,6 +14746,9 @@
       "Billed monthly.": [
         "Faktureras månadsvis."
       ],
+      "Billing contact": [
+        "Faktureringskontakt"
+      ],
       "Billing cycle": [
         "Faktureringsperiod"
       ],
@@ -14940,6 +14952,9 @@
       ],
       "Credits used": [
         "Krediter använda"
+      ],
+      "Currency": [
+        "Valuta"
       ],
       "Current display name": [
         "Nuvarande visningsnamn"
@@ -15589,6 +15604,9 @@
       ],
       "Organization password": [
         "Organisationens lösenord"
+      ],
+      "Organization size": [
+        "Organisationsstorlek"
       ],
       "Other": [
         "Annat"
@@ -20009,6 +20027,14 @@
         "Du behöver åtkomst till organisationsnyckeln för att utföra denna åtgärd."
       ]
     },
+    "Payment method": {
+      "Bank transfer": [
+        "Banköverföring"
+      ],
+      "Credit card": [
+        "Kreditkort"
+      ]
+    },
     "Payment Method": {
       "Bank Account": [
         "Bankkonto"
@@ -20035,6 +20061,12 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagar"
       ]
     },
     "Payment.Sepa.Action": {
@@ -26008,9 +26040,6 @@
       "Grant access": [
         "Bevilja åtkomst"
       ],
-      "Group": [
-        "Grupp"
-      ],
       "Group membership": [
         "Gruppmedlemskap"
       ],
@@ -26347,6 +26376,9 @@
       ],
       "Pay invoice": [
         "Betala faktura"
+      ],
+      "Payment": [
+        "Betalning"
       ],
       "Payment failed": [
         "Betalning misslyckades"
@@ -26784,6 +26816,9 @@
       "Switch to two-password mode": [
         "Växla till två-lösenordsläge"
       ],
+      "Tax": [
+        "Moms"
+      ],
       "Text": [
         "Text"
       ],
@@ -27027,6 +27062,9 @@
       "You have no resolved alerts": [
         "Du har inga lösta varningar"
       ],
+      "You need a ${ BRAND_NAME } address": [
+        "Du behöver en ${ BRAND_NAME }-adress"
+      ],
       "You're all set!": [
         "Du är klar!"
       ],
@@ -27056,6 +27094,9 @@
       ],
       "Your exposed information": [
         "Din exponerade information"
+      ],
+      "Your groups": [
+        "Dina grupper"
       ],
       "Your import is finished!": [
         "Din import är klar!"

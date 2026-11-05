@@ -2883,6 +2883,11 @@
         "最新バージョンが見つかりませんでした"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } デスクトップアプリ"
+      ]
+    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } の不具合"
@@ -12514,6 +12519,9 @@
       "Yearly": [
         "毎年"
       ],
+      "You": [
+        "あなた"
+      ],
       "You already have a free account": [
         "あなたはすでに無料アカウントをお持ちです"
       ],
@@ -13990,6 +13998,9 @@
       ],
       "Credits used": [
         "使用クレジット"
+      ],
+      "Currency": [
+        "通貨"
       ],
       "Current display name": [
         "現在の表示名"
@@ -15515,7 +15526,7 @@
         "方法を見る"
       ],
       "Learn more": [
-        "詳細"
+        "より詳しく"
       ],
       "Manage addresses": [
         "アドレスを管理"
@@ -24595,9 +24606,6 @@
       ],
       "Gift code": [
         "ギフトコード"
-      ],
-      "Group": [
-        "グループ"
       ],
       "Group membership": [
         "グループメンバーシップ"

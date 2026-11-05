@@ -9454,6 +9454,9 @@
       "Best deal": [
         "Melhor oferta"
       ],
+      "Billing details": [
+        "Detalhes de faturamento"
+      ],
       "Checkout": [
         "Pagamento"
       ],
@@ -9507,6 +9510,9 @@
       ],
       "Permissions": [
         "Permissões"
+      ],
+      "Plan details": [
+        "Detalhes do plano"
       ],
       "Protection": [
         "Protecção"
@@ -14770,6 +14776,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Acesse o ${ PASS_APP_NAME } com segurança pelo terminal, ideal para scripts, automação e fluxos de trabalho de desenvolvimento."
       ],
+      "Account credit": [
+        "Crédito da conta"
+      ],
       "Account holder": [
         "Titular da conta"
       ],
@@ -15004,6 +15013,9 @@
       "Billed monthly.": [
         "Cobrado mensalmente."
       ],
+      "Billing contact": [
+        "Contatos de faturamento"
+      ],
       "Billing cycle": [
         "Ciclo de faturamento"
       ],
@@ -15208,6 +15220,9 @@
       "Credits used": [
         "Créditos usados"
       ],
+      "Currency": [
+        "Moeda"
+      ],
       "Current display name": [
         "Nome de exibição atual"
       ],
@@ -15220,6 +15235,9 @@
       "Custom email domain": [
         "Domínio de e-mail personalizado",
         "Domínios de e-mail personalizados"
+      ],
+      "Custom email domains": [
+        "Domínios personalizados de e-mail"
       ],
       "Daily email notifications": [
         "Notificações diárias por e-mail"
@@ -15235,6 +15253,9 @@
       ],
       "Deals, offers, and marketing emails": [
         "Ofertas, descontos e e-mails de propaganda"
+      ],
+      "Dedicated VPN servers": [
+        "Servidores de VPN dedicados"
       ],
       "Default email address": [
         "Endereço de e-mail padrão"
@@ -15578,6 +15599,9 @@
       "Invite via email": [
         "Convidar através do e-mail"
       ],
+      "Invoice email": [
+        "E-mail da fatura"
+      ],
       "Issuer ID": [
         "ID do emissor"
       ],
@@ -15860,6 +15884,9 @@
       "Organization password": [
         "Senha da organização"
       ],
+      "Organization size": [
+        "Tamanho da organização"
+      ],
       "Other": [
         "Outros"
       ],
@@ -15892,6 +15919,9 @@
       ],
       "Payment method": [
         "Forma de pagamento"
+      ],
+      "Payment terms": [
+        "Termos de pagamento"
       ],
       "Peak allocated licenses": [
         "Pico de licenças alocadas"
@@ -16221,6 +16251,9 @@
       "System information": [
         "Informações do sistema"
       ],
+      "Taxable": [
+        "Taxável"
+      ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "O melhor da ${ BRAND_NAME } com uma assinatura"
       ],
@@ -16346,6 +16379,9 @@
       ],
       "Value": [
         "Valor"
+      ],
+      "VAT number": [
+        "Número de IVA"
       ],
       "Vault": [
         "Cofre"
@@ -20321,6 +20357,14 @@
         "Você precisa ter acesso à chave da organização para realizar esta operação."
       ]
     },
+    "Payment method": {
+      "Bank transfer": [
+        "Transferência bancária"
+      ],
+      "Credit card": [
+        "Cartão de crédito"
+      ]
+    },
     "Payment Method": {
       "Bank Account": [
         "Conta bancária"
@@ -20347,6 +20391,12 @@
       ],
       "PayPal": [
         "PayPal"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dias"
       ]
     },
     "Payment.Sepa.Action": {
@@ -26390,9 +26440,6 @@
       "Grant access": [
         "Permitir acesso"
       ],
-      "Group": [
-        "Grupo"
-      ],
       "Group membership": [
         "Membros do grupo"
       ],
@@ -26741,6 +26788,9 @@
       ],
       "Pay invoice": [
         "Pagar fatura"
+      ],
+      "Payment": [
+        "Pagamento"
       ],
       "Payment failed": [
         "Erro no pagamento"
@@ -27181,6 +27231,9 @@
       "Switch to two-password mode": [
         "Alternar para o modo de duas senhas"
       ],
+      "Tax": [
+        "Impostos"
+      ],
       "Text": [
         "Texto"
       ],
@@ -27456,6 +27509,9 @@
       ],
       "Your exposed information": [
         "Sua informação exposta"
+      ],
+      "Your groups": [
+        "Seus grupos"
       ],
       "Your import is finished!": [
         "Sua importação terminou!"

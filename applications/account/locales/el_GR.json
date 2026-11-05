@@ -9602,6 +9602,9 @@
       "Best deal": [
         "Η καλύτερη προσφορά"
       ],
+      "Billing details": [
+        "Λεπτομέρειες χρέωσης"
+      ],
       "Checkout": [
         "Ολοκλήρωση παραγγελίας"
       ],
@@ -9655,6 +9658,9 @@
       ],
       "Permissions": [
         "Δικαιώματα"
+      ],
+      "Plan details": [
+        "Λεπτομέρειες πλάνου"
       ],
       "Protection": [
         "Προστασία"
@@ -13003,6 +13009,9 @@
       "Signed up": [
         "Εγγράφηκε"
       ],
+      "Signup link no longer valid": [
+        "Ο σύνδεσμος εγγραφής δεν είναι πλέον έγκυρος"
+      ],
       "Smart Routed through a different country.": [
         "Έξυπνη δρομολόγηση μέσω διαφορετικής χώρας."
       ],
@@ -13326,6 +13335,9 @@
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Αυτή η υπηρεσία δεν είναι διαθέσιμη στους χρήστες που συνδέονται με καθολική σύνδεση."
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Αυτός ο σύνδεσμος εγγραφής έχει λήξει, έχει ανακληθεί ή έχει ήδη χρησιμοποιηθεί. Παρακαλούμε επικοινωνήστε με τον εκπρόσωπο της ${ BRAND_NAME } για να λάβετε έναν νέο."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Αυτό το διακριτικό δεν θα είναι διαθέσιμο όταν κλείσετε αυτό το παράθυρο και δεν θα πρέπει να το μοιραστείτε με κανέναν."
@@ -15134,6 +15146,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Αποκτήστε ασφαλή πρόσβαση στο ${ PASS_APP_NAME } από το τερματικό, ιδανικό για scripting, αυτοματοποίηση και ροές εργασιών ανάπτυξης."
       ],
+      "Account credit": [
+        "Μονάδες λογαριασμού"
+      ],
       "Account holder": [
         "Δικαιούχος λογαριασμού"
       ],
@@ -15368,6 +15383,9 @@
       "Billed monthly.": [
         "Μηνιαία χρέωση."
       ],
+      "Billing contact": [
+        "Υπεύθυνος τιμολόγησης"
+      ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
@@ -15572,6 +15590,9 @@
       "Credits used": [
         "Χρησιμοποιημένες μονάδες"
       ],
+      "Currency": [
+        "Νόμισμα"
+      ],
       "Current display name": [
         "Τρέχον εμφανιζόμενο όνομα"
       ],
@@ -15583,6 +15604,9 @@
       ],
       "Custom email domain": [
         "Προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "Προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Custom email domains": [
         "Προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
       ],
       "Daily email notifications": [
@@ -15599,6 +15623,9 @@
       ],
       "Deals, offers, and marketing emails": [
         "Συμφωνίες, προσφορές, και διαφημιστικά email"
+      ],
+      "Dedicated VPN servers": [
+        "Αποκλειστικοί διακομιστές VPN"
       ],
       "Default email address": [
         "Προεπιλεγμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -15942,6 +15969,9 @@
       "Invite via email": [
         "Πρόσκληση μέσω email"
       ],
+      "Invoice email": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου τιμολογίου"
+      ],
       "Issuer ID": [
         "Issuer ID"
       ],
@@ -16224,6 +16254,9 @@
       "Organization password": [
         "Κωδικός πρόσβασης οργανισμού"
       ],
+      "Organization size": [
+        "Μέγεθος οργανισμού"
+      ],
       "Other": [
         "Άλλο"
       ],
@@ -16256,6 +16289,9 @@
       ],
       "Payment method": [
         "Μέθοδος πληρωμής"
+      ],
+      "Payment terms": [
+        "Όροι πληρωμής"
       ],
       "Peak allocated licenses": [
         "Εκχωρημένες άδειες χρήσης σε αιχμή"
@@ -16594,6 +16630,9 @@
       "System information": [
         "Πληροφορίες Συστήματος"
       ],
+      "Taxable": [
+        "Φορολογητέο"
+      ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "Το καλύτερο της ${ BRAND_NAME } με μία συνδρομή"
       ],
@@ -16722,6 +16761,9 @@
       ],
       "Value": [
         "Τιμή"
+      ],
+      "VAT number": [
+        "Αριθμός ΑΦΜ"
       ],
       "Vault": [
         "Κρύπτη"
@@ -20758,6 +20800,14 @@
         "Χρειάζεστε πρόσβαση στο κλειδί οργανισμού για να εκτελέσετε αυτήν τη λειτουργία."
       ]
     },
+    "Payment method": {
+      "Bank transfer": [
+        "Τραπεζική μεταφορά"
+      ],
+      "Credit card": [
+        "Πιστωτική κάρτα"
+      ]
+    },
     "Payment Method": {
       "Bank Account": [
         "Τραπεζικός Λογαριασμός"
@@ -20778,6 +20828,15 @@
       ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "Due on receipt": [
+        "Πληρωτέο κατά την παραλαβή"
       ]
     },
     "Payment.Sepa.Action": {
@@ -26917,9 +26976,6 @@
       "Grant access": [
         "Παραχώρηση πρόσβασης"
       ],
-      "Group": [
-        "Ομάδα"
-      ],
       "Group membership": [
         "Συμμετοχή σε ομάδες"
       ],
@@ -27274,6 +27330,9 @@
       ],
       "Pay invoice": [
         "Πληρωμή τιμολογίου"
+      ],
+      "Payment": [
+        "Πληρωμή"
       ],
       "Payment failed": [
         "Αποτυχία πληρωμής"
@@ -27729,6 +27788,9 @@
       "Switch to two-password mode": [
         "Μετάβαση σε λειτουργία δύο κωδικών πρόσβασης"
       ],
+      "Tax": [
+        "Φόρος"
+      ],
       "Text": [
         "Κείμενο"
       ],
@@ -28010,6 +28072,9 @@
       ],
       "Your exposed information": [
         "Οι εκτεθειμένες πληροφορίες σας"
+      ],
+      "Your groups": [
+        "Οι ομάδες σας"
       ],
       "Your import is finished!": [
         "Η εισαγωγή σας ολοκληρώθηκε!"

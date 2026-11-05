@@ -9170,6 +9170,9 @@
       "Best deal": [
         "Meilleure offre"
       ],
+      "Billing details": [
+        "Informations de facturation"
+      ],
       "Checkout": [
         "Paiement"
       ],
@@ -9223,6 +9226,9 @@
       ],
       "Permissions": [
         "Autorisations"
+      ],
+      "Plan details": [
+        "Informations de l'abonnement"
       ],
       "Protection": [
         "Protection"
@@ -12441,6 +12447,9 @@
       "Signed up": [
         "Inscrit"
       ],
+      "Signup link no longer valid": [
+        "Le lien d'inscription n'est plus valide"
+      ],
       "Smart Routed through a different country.": [
         "Routé via Smart Routing à travers un autre pays."
       ],
@@ -12755,6 +12764,9 @@
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Ce service n’est pas accessible aux utilisateurs qui se connectent avec l’authentification unique."
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Ce lien d'inscription a expiré, a été révoqué ou a déjà été utilisé. Veuillez contacter votre représentant ${ BRAND_NAME } pour en obtenir un nouveau."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Ce jeton ne sera plus disponible une fois que vous aurez fermé cette fenêtre. Nous vous recommandons de ne le partager avec personne."
@@ -14471,6 +14483,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accédez à ${ PASS_APP_NAME } en toute sécurité depuis le terminal, idéal pour les scripts, l'automatisation et les flux de travail de développement."
       ],
+      "Account credit": [
+        "Crédit de compte"
+      ],
       "Account holder": [
         "Titulaire du compte"
       ],
@@ -14702,6 +14717,9 @@
       "Billed monthly.": [
         "Facturé mensuellement."
       ],
+      "Billing contact": [
+        "Contact de facturation"
+      ],
       "Billing cycle": [
         "Cycle de facturation"
       ],
@@ -14906,6 +14924,9 @@
       "Credits used": [
         "Crédits utilisés"
       ],
+      "Currency": [
+        "Devise"
+      ],
       "Current display name": [
         "Nom d'affichage actuel"
       ],
@@ -14917,6 +14938,9 @@
       ],
       "Custom email domain": [
         "Domaine de messagerie personnalisé",
+        "Domaines de messagerie personnalisés"
+      ],
+      "Custom email domains": [
         "Domaines de messagerie personnalisés"
       ],
       "Daily email notifications": [
@@ -14933,6 +14957,9 @@
       ],
       "Deals, offers, and marketing emails": [
         "Offres, promotions et messages marketing"
+      ],
+      "Dedicated VPN servers": [
+        "Serveurs VPN dédiés"
       ],
       "Default email address": [
         "Adresse e-mail par défaut"
@@ -15276,6 +15303,9 @@
       "Invite via email": [
         "Inviter par e-mail"
       ],
+      "Invoice email": [
+        "E-mail de facturation"
+      ],
       "Issuer ID": [
         "ID de l'émetteur"
       ],
@@ -15552,6 +15582,9 @@
       "Organization password": [
         "Mot de passe de l'organisation"
       ],
+      "Organization size": [
+        "Taille de l’organisation"
+      ],
       "Other": [
         "Autre"
       ],
@@ -15584,6 +15617,9 @@
       ],
       "Payment method": [
         "Moyen de paiement"
+      ],
+      "Payment terms": [
+        "Conditions de paiement"
       ],
       "Peak allocated licenses": [
         "Nombre maximal de licences attribuées"
@@ -15910,6 +15946,9 @@
       "System information": [
         "Informations système"
       ],
+      "Taxable": [
+        "Taxable"
+      ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "Le meilleur de ${ BRAND_NAME }, un seul abonnement"
       ],
@@ -16032,6 +16071,9 @@
       ],
       "Value": [
         "Valeur"
+      ],
+      "VAT number": [
+        "Numéro de TVA"
       ],
       "Vault": [
         "Coffre-fort"
@@ -19959,6 +20001,14 @@
         "Vous devez accéder à la clé de l'organisation pour réaliser cette opération."
       ]
     },
+    "Payment method": {
+      "Bank transfer": [
+        "Virement bancaire"
+      ],
+      "Credit card": [
+        "Carte de paiement"
+      ]
+    },
     "Payment Method": {
       "Bank Account": [
         "Compte bancaire"
@@ -19979,6 +20029,15 @@
       ],
       "New credit/debit card": [
         "Nouvelle carte de paiement"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } jour",
+        "${ days } jours"
+      ],
+      "Due on receipt": [
+        "Paiement à la réception"
       ]
     },
     "Payment.Sepa.Action": {
@@ -26011,9 +26070,6 @@
       "Grant access": [
         "Autoriser l'accès"
       ],
-      "Group": [
-        "Groupe"
-      ],
       "Group membership": [
         "Membres du groupe"
       ],
@@ -26341,6 +26397,9 @@
       ],
       "Pay invoice": [
         "Payer la facture"
+      ],
+      "Payment": [
+        "Paiement"
       ],
       "Payment failed": [
         "Le paiement n'a pas abouti."
@@ -26778,6 +26837,9 @@
       "Switch to two-password mode": [
         "Passer au mode deux mots de passe"
       ],
+      "Tax": [
+        "Taxe"
+      ],
       "Text": [
         "Texte"
       ],
@@ -27038,6 +27100,9 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "Your groups": [
+        "Vos groupes"
       ],
       "Your import is finished!": [
         "L'importation est terminée !"
