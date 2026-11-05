@@ -16,8 +16,22 @@
 	}
 }
 
+.toggle-button-body-on,
+.toggle-button-body-off,
+.toggle-button-circle {
+	&:focus-visible {
+		outline: 2px solid var(--focus-ring) !important;
+		outline-offset: 2px;
+	}
+}
+
 .toggle-button-circle {
 	transform: translateY(-50%);
+
+	// Inset: the chevron sits 0.25rem inside the body pill, so an outset ring would touch the pill
+	&:focus-visible {
+		outline-offset: -4px;
+	}
 
 	path {
 		stroke: currentcolor !important;

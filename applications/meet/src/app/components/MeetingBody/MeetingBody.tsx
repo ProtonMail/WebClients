@@ -148,7 +148,7 @@ export const MeetingBody = ({
                 {!isNarrowHeight && !isLargeDesktop && (
                     <div className="flex flex-nowrap gap-2 justify-between items-center">
                         <MeetingName classNames={{ name: 'flex-1 text-lg text-semibold' }} />
-                        <div className="text-ellipsis overflow-hidden">
+                        <div className="shrink-0">
                             {isVideoEnabled && isMobile() && (
                                 <CircleButton
                                     IconComponent={IcMeetRotateCamera}
