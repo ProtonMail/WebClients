@@ -21,7 +21,8 @@ const getPathVisibilityClasses = (connectionQuality: ConnectionQuality | undefin
     switch (connectionQuality) {
         case ConnectionQuality.Good:
             return 'hide-connection-path-3';
-        case ConnectionQuality.Poor || ConnectionQuality.Lost:
+        case ConnectionQuality.Poor:
+        case ConnectionQuality.Lost:
             return 'hide-connection-path-2 hide-connection-path-3';
         default:
             return '';

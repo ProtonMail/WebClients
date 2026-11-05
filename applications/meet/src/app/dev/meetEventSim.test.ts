@@ -1,5 +1,6 @@
 import { ConnectionStateInfo } from '@proton-meet/proton-meet-core';
-import { ConnectionState, type Room } from 'livekit-client';
+import { ConnectionQuality, ConnectionState, type Room } from 'livekit-client';
+import { EventEmitter } from 'node:events';
 
 import { mergeParticipantsMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import type { MeetState } from '@proton/meet/store/store';
@@ -102,6 +103,18 @@ describe('meetEventSim.connection', () => {
         await window.meetEventSim?.connection.simulate('signal-reconnect');
 
         expect(room.simulateScenario).toHaveBeenCalledWith('signal-reconnect');
+    });
+
+    it('emits a connection quality change for the local participant', () => {
+        const localRoomParticipant = { identity: LOCAL_IDENTITY };
+        const room = Object.assign(new EventEmitter(), { localParticipant: localRoomParticipant });
+        const handleConnectionQualityChanged = vi.fn();
+        room.on('connectionQualityChanged', handleConnectionQualityChanged);
+        cleanup = init({ room: room as unknown as Room });
+
+        window.meetEventSim?.connection.quality(ConnectionQuality.Lost);
+
+        expect(handleConnectionQualityChanged).toHaveBeenCalledWith('lost', localRoomParticipant);
     });
 
     it('reports the store flags, the LiveKit state and the meet-core websocket state by name', async () => {

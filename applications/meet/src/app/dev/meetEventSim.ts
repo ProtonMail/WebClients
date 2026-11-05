@@ -1,6 +1,12 @@
 import { ConnectionStateInfo } from '@proton-meet/proton-meet-core';
 import type { Dispatch, UnknownAction } from '@reduxjs/toolkit';
-import type { ConnectionState, Room, SimulationScenario } from 'livekit-client';
+import {
+    type ConnectionQuality,
+    type ConnectionState,
+    type Room,
+    RoomEvent,
+    type SimulationScenario,
+} from 'livekit-client';
 
 import {
     addChatMessages,
@@ -43,6 +49,7 @@ interface ConnectionSnapshot {
 interface MeetEventSimConnection {
     simulate(scenario: SimulationScenario): Promise<void>;
     state(): Promise<ConnectionSnapshot>;
+    quality(quality: ConnectionQuality): void;
 }
 
 interface MeetEventSim {
@@ -127,6 +134,10 @@ export const initMeetEventSim = ({
                     mlsRetrying: selectMlsRetrying(state),
                     meetCoreWebSocket,
                 };
+            },
+
+            quality(quality) {
+                room.emit(RoomEvent.ConnectionQualityChanged, quality, room.localParticipant);
             },
         },
 

@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode, RefObject } from 'react';
+import { type CSSProperties, type ReactNode, type RefObject, useId } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -20,6 +20,7 @@ interface CircleButtonProps {
     className?: string;
     indicatorContent?: string | ReactNode;
     indicatorStatus?: IndicatorStatus;
+    indicatorDescription?: string;
     iconViewPort?: string;
     variant?: CircleButtonVariant;
     ariaLabel?: string;
@@ -43,6 +44,7 @@ export const CircleButton = ({
     className,
     indicatorContent,
     indicatorStatus = 'default',
+    indicatorDescription,
     iconViewPort,
     variant = 'default',
     ariaLabel,
@@ -59,6 +61,8 @@ export const CircleButton = ({
     disabled = false,
     loading = false,
 }: CircleButtonProps) => {
+    const indicatorDescriptionId = useId();
+
     const getToggleIcon = () => {
         if (loading) {
             return (
@@ -100,6 +104,7 @@ export const CircleButton = ({
                 aria-pressed={ariaPressed}
                 aria-expanded={ariaExpanded}
                 aria-haspopup={ariaHasPopup}
+                aria-describedby={indicatorDescription ? indicatorDescriptionId : undefined}
                 ref={anchorRef}
                 style={buttonStyle}
                 aria-disabled={loading || undefined}
@@ -122,6 +127,11 @@ export const CircleButton = ({
                     >
                         {indicatorContent}
                     </div>
+                )}
+                {indicatorDescription && (
+                    <span id={indicatorDescriptionId} className="sr-only">
+                        {indicatorDescription}
+                    </span>
                 )}
             </Button>
         </ConditionalTooltip>

@@ -10,6 +10,19 @@ import { selectIsGuest, selectSubscriptionStatus } from '@proton/meet/store/slic
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
 
+type ParticipantCountIndicatorStatus = 'default' | 'warning' | 'danger';
+
+const getCapacityLabel = (status: ParticipantCountIndicatorStatus) => {
+    switch (status) {
+        case 'warning':
+            return c('Info').t`Meeting almost full`;
+        case 'danger':
+            return c('Info').t`Meeting full`;
+        case 'default':
+            return undefined;
+    }
+};
+
 export const useParticipantCountIndicator = () => {
     const isGuest = useMeetSelector(selectIsGuest);
     const instantMeeting = useMeetSelector(selectInstantMeeting);
@@ -17,8 +30,12 @@ export const useParticipantCountIndicator = () => {
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
 
-    const getParticipantCountIndicatorVariant = (): 'default' | 'warning' | 'danger' => {
+    const getParticipantCountIndicatorVariant = (): ParticipantCountIndicatorStatus => {
         if (!isLocalParticipantAdminOrHost && !(isGuest && instantMeeting)) {
+            return 'default';
+        }
+
+        if (maxParticipants === 0) {
             return 'default';
         }
 
@@ -33,16 +50,19 @@ export const useParticipantCountIndicator = () => {
         return 'default';
     };
 
+    const indicatorStatus = getParticipantCountIndicatorVariant();
+
     return {
         totalParticipantCount,
         maxParticipants,
-        indicatorStatus: getParticipantCountIndicatorVariant(),
+        indicatorStatus,
+        capacityLabel: getCapacityLabel(indicatorStatus),
     };
 };
 
 export const ParticipantsButton = () => {
     const dispatch = useMeetDispatch();
-    const { totalParticipantCount, maxParticipants, indicatorStatus } = useParticipantCountIndicator();
+    const { totalParticipantCount, maxParticipants, indicatorStatus, capacityLabel } = useParticipantCountIndicator();
     const { isPaidUser } = useMeetSelector(selectSubscriptionStatus);
 
     const sideBarState = useMeetSelector(selectSideBarState);
@@ -76,6 +96,7 @@ export const ParticipantsButton = () => {
             }}
             indicatorContent={totalParticipantCount.toString()}
             indicatorStatus={indicatorStatus}
+            indicatorDescription={capacityLabel}
             ariaLabel={c('Alt').t`Toggle participants`}
             ariaPressed={sideBarState[MeetingSideBars.Participants]}
             tooltipTitle={getParticipantButtonTooltipTitle()}
