@@ -482,3 +482,6 @@ overrides:
     'xlsx@0.18.5': 'https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz'
     'xlsx@^0.18.5': 'https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz'
     'yaml@^1.7.2': '1.10.3'
+permissions:
+    dotenv:
+        skills: false
