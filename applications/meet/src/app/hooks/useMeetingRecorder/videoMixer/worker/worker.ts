@@ -102,8 +102,14 @@ async function startEncoder() {
         (data) => {
             self.postMessage({ type: 'encoderChunk', data }, [data.buffer]);
         },
-        (error) => {
-            logger.error('audio sample add failed:', error);
+        (track, error) => {
+            logger.error(`${track} encoder failed:`, error);
+            self.postMessage({
+                type: 'encoderError',
+                track,
+                name: error instanceof Error ? error.name : 'UnknownError',
+                message: error instanceof Error ? error.message : String(error),
+            });
         }
     );
     await state.encoder.start();

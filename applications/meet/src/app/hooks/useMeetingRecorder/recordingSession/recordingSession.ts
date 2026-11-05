@@ -3,7 +3,7 @@ import { logger } from '@protontech/logger';
 
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import type { OpfsRecording } from '@proton/meet/store/slices/recordingsSlice';
-import { withIdleTimeout } from '@proton/meet/utils/withTimeout';
+import { TimeoutError, withIdleTimeout, withTimeout } from '@proton/meet/utils/withTimeout';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import type { RecordingStopTelemetry } from '../../telemetry/types';
@@ -12,6 +12,7 @@ import { createChunkWatchdog } from '../chunkWatchdog/chunkWatchdog';
 import type { ChunkWatchdog, RecordingStallCause, StallSummary } from '../chunkWatchdog/types';
 import type { RecordingCodec } from '../codec/types';
 import { AUDIO_STALL_MS } from '../mediaEncoder/constants';
+import type { EncoderFailure } from '../mediaEncoder/types';
 import { WebCodecsRecorder } from '../mediaEncoder/webCodecsRecorder';
 import { type ChunkStats, createChunkStats } from '../mediaRecorder/chunkStats';
 import { MeetMediaRecorder } from '../mediaRecorder/meetMediaRecorder';
@@ -51,8 +52,10 @@ export class RecordingSession {
     private onRuntimeError: () => void;
     private onStorageFull: (hasWrittenData: boolean) => void;
     private onWriteError: (hasWrittenData: boolean) => void;
+    private onEncoderError: () => void;
     private storageFull = false;
     private writeError: string | null = null;
+    private encoderFailure: EncoderFailure | null = null;
     private startedAt: number | null = null;
     private stopStartedAt: number | null = null;
     private stopFinishedAt: number | null = null;
@@ -64,6 +67,7 @@ export class RecordingSession {
     private finalAudioDiagnostics: AudioMixerDiagnostics | null = null;
     private stallSummary: StallSummary | null = null;
     private stopResult: Promise<OpfsRecording | null> | null = null;
+    private hasEncoderStopped = false;
 
     constructor({
         codec,
@@ -73,6 +77,7 @@ export class RecordingSession {
         onRuntimeError,
         onStorageFull,
         onWriteError,
+        onEncoderError,
     }: RecordingSessionOptions) {
         this.codec = codec;
         this.isWebCodecs = isWebCodecs;
@@ -81,6 +86,7 @@ export class RecordingSession {
         this.onRuntimeError = onRuntimeError;
         this.onStorageFull = onStorageFull;
         this.onWriteError = onWriteError;
+        this.onEncoderError = onEncoderError;
     }
 
     private handleStorageFull = (hasWrittenData: boolean): void => {
@@ -107,6 +113,23 @@ export class RecordingSession {
         }
 
         this.onWriteError(hasWrittenData);
+    };
+
+    private handleEncoderFailure = (failure: EncoderFailure): void => {
+        this.reportMeetError('MeetingRecording Error WebCodecs: encoder failed', {
+            context: {
+                ...failure,
+                chunksWithData: this.stats?.snapshot().chunkCount ?? 0,
+                ...this.getErrorReportContext(),
+            },
+        });
+        this.encoderFailure = failure;
+
+        if (!this.active) {
+            return;
+        }
+
+        this.onEncoderError();
     };
 
     public async start({
@@ -159,6 +182,7 @@ export class RecordingSession {
                         });
                     });
                 },
+                onEncoderFailure: this.handleEncoderFailure,
             });
         } else {
             this.mediaRecorder = new MeetMediaRecorder({
@@ -227,15 +251,12 @@ export class RecordingSession {
 
         await this.mediaRecorder.start();
 
-        if (this.storageFull || this.writeError) {
+        const startFailure = this.getStartFailure();
+        if (startFailure) {
             await this.mediaRecorder.stop().catch(() => {});
             await storage.clear().catch(() => {});
 
-            throw new Error(
-                this.storageFull
-                    ? 'Storage is full, the recording could not be started'
-                    : `The recording could not be written: ${this.writeError}`
-            );
+            throw new Error(startFailure);
         }
 
         this.watchdog = createChunkWatchdog({
@@ -258,16 +279,34 @@ export class RecordingSession {
         });
     }
 
-    public async stop(): Promise<OpfsRecording | null> {
-        const { mediaRecorder, storage, stats } = this;
+    private getStartFailure(): string | null {
+        if (this.storageFull) {
+            return 'Storage is full, the recording could not be started';
+        }
+        if (this.writeError) {
+            return `The recording could not be written: ${this.writeError}`;
+        }
+        if (this.encoderFailure) {
+            return `The recording encoder failed: ${this.encoderFailure.message}`;
+        }
+        return null;
+    }
+
+    public stop(): Promise<OpfsRecording | null> {
+        const { mediaRecorder, storage } = this;
         if (!this.active || !mediaRecorder || !storage) {
-            return null;
+            return Promise.resolve(null);
         }
 
-        if (this.stopResult) {
-            return this.stopResult;
-        }
+        this.stopResult ??= this.stopWithStorageRecovery(mediaRecorder, storage);
+        return this.stopResult;
+    }
 
+    private async stopWithStorageRecovery(
+        mediaRecorder: RecorderAPI,
+        storage: RecordingStorageClient
+    ): Promise<OpfsRecording | null> {
+        const { stats } = this;
         const stopStartedAt = performance.now();
         this.stopStartedAt = stopStartedAt;
         this.bytesBeforeStop = stats?.snapshot().totalBytes ?? 0;
@@ -276,13 +315,21 @@ export class RecordingSession {
             Math.max(stopStartedAt, stats?.snapshot().lastChunkAt ?? 0, storage.getLastChunkWrittenAt() ?? 0);
 
         try {
-            this.stopResult = withIdleTimeout(
+            return await withIdleTimeout(
                 this.stopRecorderAndFinalize(mediaRecorder, storage),
                 'Stop recording',
                 STOP_IDLE_TIMEOUT_MS,
                 getLastStopProgressAt
             );
-            return await this.stopResult;
+        } catch (error) {
+            if (error instanceof TimeoutError && !this.hasEncoderStopped) {
+                this.file = await withTimeout(
+                    storage.finalize(),
+                    'Finalize the recording after the encoder stop timed out',
+                    STOP_IDLE_TIMEOUT_MS
+                ).catch(() => null);
+            }
+            throw error;
         } finally {
             this.stopFinishedAt = performance.now();
             const snapshot = this.stats?.snapshot();
@@ -300,6 +347,7 @@ export class RecordingSession {
         storage: RecordingStorageClient
     ): Promise<OpfsRecording | null> {
         await mediaRecorder.stop();
+        this.hasEncoderStopped = true;
         this.stallSummary = this.watchdog?.getStallSummary() ?? null;
         this.watchdog?.stop();
         this.watchdog = null;

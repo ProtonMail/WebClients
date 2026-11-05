@@ -274,6 +274,14 @@ export const useMeetingRecorder = () => {
         void finishRecording({ hasRecordedData: hasWrittenData });
     });
 
+    const handleEncoderError = useStableCallback(() => {
+        createNotification({
+            type: 'error',
+            text: c('Error').t`Recording stopped because of an error.`,
+        });
+        void finishRecording();
+    });
+
     const startRecording = useStableCallback(async () => {
         if (!recordingCodec) {
             reportMeetError('MeetingRecording Error: codec detection not ready at startRecording');
@@ -304,6 +312,7 @@ export const useMeetingRecorder = () => {
                 },
                 onStorageFull: handleStorageFull,
                 onWriteError: handleWriteError,
+                onEncoderError: handleEncoderError,
             });
             sessionRef.current = session;
 

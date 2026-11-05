@@ -18,6 +18,7 @@ export interface RecordingSessionOptions {
     onStorageFull: (hasWrittenData: boolean) => void;
     // Called when writing to OPFS fails for any other reason
     onWriteError: (hasWrittenData: boolean) => void;
+    onEncoderError: () => void;
 }
 
 export type RecordingOutcome = 'ready' | 'empty' | 'failed';

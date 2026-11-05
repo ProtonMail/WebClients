@@ -9,7 +9,7 @@ import {
 } from 'mediabunny';
 
 import { AUDIO_STALL_MS, ENCODER_AUDIO_BITRATE, ENCODER_VIDEO_BITRATE, KEYFRAME_INTERVAL_SEC } from './constants';
-import type { AudioTapSamples } from './types';
+import type { AudioTapSamples, EncoderTrack } from './types';
 
 const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
 
@@ -30,17 +30,18 @@ export class EncoderPipeline {
     private hasAudio = false;
     private fps: number;
     private running = false;
+    private hasFailed = false;
     private startMs = 0;
     private emittedFrames = 0;
     private loopPromise: Promise<void> | null = null;
-    private onError: (error: unknown) => void;
+    private onError: (track: EncoderTrack, error: unknown) => void;
 
     constructor(
         canvas: OffscreenCanvas,
         fps: number,
         audioCodec: AudioCodec,
         onChunk: (data: Uint8Array<ArrayBuffer>) => void,
-        onError: (error: unknown) => void
+        onError: (track: EncoderTrack, error: unknown) => void
     ) {
         this.fps = fps;
         this.onError = onError;
@@ -76,20 +77,33 @@ export class EncoderPipeline {
 
     private async captureLoop(): Promise<void> {
         const frameDuration = 1 / this.fps;
-        while (this.running) {
-            const nowMs = performance.now();
-            const wallElapsed = (nowMs - this.startMs) / 1000;
-            const audioLive = this.hasAudio && nowMs - this.audioUpdatedMs < AUDIO_STALL_MS;
-            const reference = audioLive ? Math.min(wallElapsed, this.audioElapsed) : wallElapsed;
-            const dueFrames = Math.floor(reference * this.fps);
-            if (this.emittedFrames <= dueFrames) {
-                await this.videoSource.add(this.emittedFrames * frameDuration, frameDuration);
-                this.emittedFrames += 1;
-            } else {
-                const nextSlotMs = this.startMs + (this.emittedFrames * 1000) / this.fps;
-                await sleep(Math.max(AUDIO_POLL_MS, nextSlotMs - nowMs));
+        try {
+            while (this.running) {
+                const nowMs = performance.now();
+                const wallElapsed = (nowMs - this.startMs) / 1000;
+                const audioLive = this.hasAudio && nowMs - this.audioUpdatedMs < AUDIO_STALL_MS;
+                const reference = audioLive ? Math.min(wallElapsed, this.audioElapsed) : wallElapsed;
+                const dueFrames = Math.floor(reference * this.fps);
+                if (this.emittedFrames <= dueFrames) {
+                    await this.videoSource.add(this.emittedFrames * frameDuration, frameDuration);
+                    this.emittedFrames += 1;
+                } else {
+                    const nextSlotMs = this.startMs + (this.emittedFrames * 1000) / this.fps;
+                    await sleep(Math.max(AUDIO_POLL_MS, nextSlotMs - nowMs));
+                }
             }
+        } catch (error) {
+            this.fail('video', error);
         }
+    }
+
+    private fail(track: EncoderTrack, error: unknown): void {
+        if (!this.running) {
+            return;
+        }
+        this.running = false;
+        this.hasFailed = true;
+        this.onError(track, error);
     }
 
     public addAudioSamples({ channels, frame, sampleRate }: AudioTapSamples): void {
@@ -127,9 +141,7 @@ export class EncoderPipeline {
         try {
             await this.audioSource.add(sample);
         } catch (error) {
-            if (this.running) {
-                this.onError(error);
-            }
+            this.fail('audio', error);
         }
         sample.close();
     }
@@ -138,6 +150,9 @@ export class EncoderPipeline {
         this.running = false;
         await this.loopPromise;
         await this.audioTail;
+        if (this.hasFailed) {
+            return;
+        }
         await this.output.finalize();
     }
 }
