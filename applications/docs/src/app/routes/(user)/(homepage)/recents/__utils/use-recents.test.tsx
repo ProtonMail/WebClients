@@ -15,7 +15,7 @@ import type { ReactNode } from 'react'
 import { ApplicationProvider } from '~/utils/application-context'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { useRecents } from './use-recents'
-import { useRecentsStore } from './use-recents-store'
+import { useRecentsStore } from '~/homepage/use-recents-store'
 
 jest.mock('@proton/account/addresses/hooks', () => ({
   useAddresses: () => [undefined, false],

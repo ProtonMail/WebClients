@@ -10,8 +10,8 @@ import type { RecentDocumentsItemLocation, RecentDocumentsItemValue } from '@pro
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import userEvent from '@testing-library/user-event'
 import { ApplicationProvider } from '~/utils/application-context'
-import type { HomepageViewState } from '../../__utils/homepage-view'
-import { HomepageViewContext } from '../../__utils/homepage-view'
+import type { HomepageViewState } from '../../__utils/homepage-view-sdk-utils'
+import { HomepageViewContext } from '../../__utils/homepage-view-sdk-utils'
 import { MemberRole } from '@proton/drive/sdk'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))

@@ -12,7 +12,7 @@ export type RowSelection = {
   allState: 'none' | 'some' | 'all'
 }
 
-// Mirrors Drive's `useSelectionControls`: the anchor is the start of a shift-click range.
+// The anchor is the start of a shift-click range.
 export function useRowSelection(selectableIds: string[], resetKey: string): RowSelection {
   const [selected, setSelected] = useState<string[]>([])
   const [anchorId, setAnchorId] = useState<string>()

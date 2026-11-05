@@ -1,16 +1,14 @@
-import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import { createContext, useCallback, useContext, useEffect, type ReactNode } from 'react'
 import { useHistory } from 'react-router'
-import type { ReactNode } from 'react'
-import { createContext, useCallback, useContext, useEffect } from 'react'
 import { useLocation } from 'react-router-dom-v5-compat'
+
+import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
-import { getOwnerName } from './get-owner-name'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
-import { isMyDocument } from './is-my-document'
 
-// constants
-// ---------
+import { isMyDocument } from '~/homepage/is-my-document'
+import { getOwnerName } from '~/homepage/get-owner-name'
 
 const ALLOWED_SORT_VALUES = [
   'viewed',
@@ -29,9 +27,6 @@ const ORDERED_SECTION_IDS = [
   'previous30Days',
   'earlier',
 ] as const
-
-// types
-// -----
 
 export type RecentsSort = (typeof ALLOWED_SORT_VALUES)[number]
 export type ItemsSectionId = (typeof ORDERED_SECTION_IDS)[number]
@@ -53,9 +48,6 @@ export type HomepageViewState =
   | { view: 'trash-empty' }
   | { view: 'trash-loading' }
   | { view: 'trash'; itemSections: ItemsSection[] }
-
-// context
-// -------
 
 export type HomepageViewValue = {
   state: HomepageViewState
@@ -82,9 +74,6 @@ export function useHomepageView() {
   }
   return value
 }
-
-// query state (recents sort and search)
-// -------------------------------------
 
 function useQueryState<T extends string | undefined>(name: string, defaultValue: T, allowedValues?: readonly T[]) {
   const isAllowed = useCallback(
@@ -138,9 +127,6 @@ export function useType() {
   return useQueryState<ProtonDocumentType | undefined>('type', undefined)
 }
 
-// recent documents
-// ----------------
-
 export function filterDocuments(items?: RecentDocumentsItem[], search?: string, type?: ProtonDocumentType) {
   if (!items || items.length === 0) {
     return items || []
@@ -165,9 +151,6 @@ export function filterDocuments(items?: RecentDocumentsItem[], search?: string, 
   })
   return outputItems
 }
-
-// sort utils
-// ----------
 
 function sortByMostRecent(a: RecentDocumentsItem, b: RecentDocumentsItem, property: 'lastViewed' | 'lastModified') {
   return b[property].date.getTime() - a[property].date.getTime()

@@ -16,7 +16,7 @@ jest.mock('@proton/app-context/useNotifications', () => ({
 }))
 
 const mockUpdateRecentDocuments = jest.fn()
-jest.mock('./homepage-view', () => ({
+jest.mock('./homepage-view-sdk-utils', () => ({
   useHomepageView: () => ({ updateRecentDocuments: mockUpdateRecentDocuments }),
 }))
 

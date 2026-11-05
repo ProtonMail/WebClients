@@ -76,6 +76,7 @@ const result = (opts: WebpackEnvArguments): Configuration => {
       '~/drive-sdk': path.resolve(__dirname, 'src/app/drive-sdk'),
       '~/utils': path.resolve(__dirname, 'src/app/utils'),
       '~/redux-store': path.resolve(__dirname, 'src/app/redux-store'),
+      '~/homepage': path.resolve(__dirname, 'src/app/homepage'),
       '~/config': path.resolve(__dirname, 'src/app/config'),
     },
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],

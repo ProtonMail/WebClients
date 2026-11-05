@@ -6,7 +6,7 @@ import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { trashManyAndNotify } from '~/drive-sdk/trash-restore-notify'
 import { useApplication } from '~/utils/application-context'
 import { useEvent } from '~/utils/misc'
-import { useHomepageView } from './homepage-view'
+import { useHomepageView } from './homepage-view-sdk-utils'
 
 export function useBulkTrash() {
   const application = useApplication()

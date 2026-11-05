@@ -1,7 +1,7 @@
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
-import type { ItemsSectionId } from './homepage-view'
-import { filterDocuments, splitIntoSectionsByTime } from './homepage-view'
+import type { ItemsSectionId } from './homepage-view-sdk-utils'
+import { filterDocuments, splitIntoSectionsByTime } from './homepage-view-sdk-utils'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 
