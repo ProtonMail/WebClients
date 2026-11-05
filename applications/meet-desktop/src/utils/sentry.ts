@@ -17,7 +17,7 @@ import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";
 import { getSettings } from "../store/settingsStore";
 import { getAccountView, getCurrentViewID, getMainWindow } from "./view/viewManagement";
-import { NET_LOGGER_VIEW_PREFIX, sanitizeUrlForLogging, sentryLogger } from "./log";
+import { describeError, getFilteredHomePath, NET_LOGGER_VIEW_PREFIX, sanitizeUrlForLogging, sentryLogger } from "./log";
 import { isProdEnv } from "./isProdEnv";
 import { getOSInfo } from "./log/getOSInfo";
 
@@ -47,6 +47,12 @@ export async function initializeSentry() {
     init({
         debug,
         beforeSend: (event) => {
+            for (const exception of event.exception?.values ?? []) {
+                if (exception.value) {
+                    exception.value = getFilteredHomePath(exception.value);
+                }
+            }
+
             if (debug) {
                 sentryLogger.silly(
                     "beforeSend",
@@ -67,7 +73,6 @@ export async function initializeSentry() {
         dsn,
         getSessions: () => [appSession(), updateSession()],
         maxBreadcrumbs: 100,
-        attachStacktrace: true,
         sampleRate: 1.0,
         environment,
         release,
@@ -97,7 +102,7 @@ export async function initializeSentry() {
             category: scope,
             level: LOG_LEVEL_TO_SEVERITY[level],
             message: serialize(data),
-            timestamp: date.getTime(),
+            timestamp: date.getTime() / 1000,
         });
 
         if (level === "error" || level === "warn") {
@@ -111,7 +116,6 @@ export async function initializeSentry() {
                 level: LOG_LEVEL_TO_SEVERITY[level],
                 tags: { logScope: scope },
                 extra: {
-                    appID: getAppID(),
                     settings: getSettings(),
                     mainWindow: {
                         isMinimized: getMainWindow().isMinimized(),
@@ -136,6 +140,8 @@ function serialize(value: unknown): string {
         return value.toString();
     } else if (Array.isArray(value)) {
         return value.map((chunk) => serialize(chunk)).join(" ");
+    } else if (value instanceof Error) {
+        return describeError(value);
     }
 
     return JSON.stringify(value);
