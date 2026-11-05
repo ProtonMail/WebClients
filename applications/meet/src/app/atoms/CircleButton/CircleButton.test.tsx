@@ -18,6 +18,26 @@ describe('CircleButton', () => {
         expect(button).not.toHaveAttribute('aria-disabled');
     });
 
+    it('describes the button with the indicator description and keeps its label as name', () => {
+        render(
+            <CircleButton
+                IconComponent={IcMeetCamera}
+                ariaLabel="Toggle participants"
+                indicatorContent="10"
+                indicatorStatus="danger"
+                indicatorDescription="Meeting full"
+            />
+        );
+
+        expect(screen.getByRole('button', { name: 'Toggle participants' })).toHaveAccessibleDescription('Meeting full');
+    });
+
+    it('has no description without an indicator description', () => {
+        render(<CircleButton IconComponent={IcMeetCamera} ariaLabel="Toggle participants" indicatorContent="10" />);
+
+        expect(screen.getByRole('button', { name: 'Toggle participants' })).toHaveAccessibleDescription('');
+    });
+
     it('should stay focusable, be aria-disabled and ignore clicks while loading', async () => {
         const onClick = vi.fn();
 

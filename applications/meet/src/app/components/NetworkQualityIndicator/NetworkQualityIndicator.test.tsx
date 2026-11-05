@@ -28,9 +28,23 @@ describe('NetworkQualityIndicator', () => {
         expect(label.closest('[aria-hidden="true"]')).toBeNull();
     });
 
-    it('does not announce a poor connection when the connection is good', () => {
-        renderIndicator(ConnectionQuality.Good);
+    it.each([ConnectionQuality.Poor, ConnectionQuality.Lost])(
+        'shows one signal bar and the poor connection label when the connection is %s',
+        (connectionQuality) => {
+            renderIndicator(connectionQuality);
 
-        expect(screen.queryByText('Poor connection')).toBeNull();
-    });
+            const indicator = screen.getByText('Poor connection').parentElement;
+
+            expect(indicator).toHaveClass('hide-connection-path-2', 'hide-connection-path-3');
+        }
+    );
+
+    it.each([ConnectionQuality.Good, ConnectionQuality.Excellent])(
+        'shows nothing when the connection is %s',
+        (connectionQuality) => {
+            const { container } = renderIndicator(connectionQuality);
+
+            expect(container).toBeEmptyDOMElement();
+        }
+    );
 });
