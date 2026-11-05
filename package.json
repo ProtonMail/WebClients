@@ -52,14 +52,14 @@
         "oxlint-tsgolint": "catalog:",
         "prettier": "catalog:",
         "prettier-plugin-tailwindcss": "catalog:",
-        "sort-package-json": "^4.0.0",
+        "sort-package-json": "^4.1.0",
         "stylelint": "catalog:",
-        "turbo": "2.11.8"
+        "turbo": "2.11.10"
     },
-    "packageManager": "pnpm@12.13.0",
+    "packageManager": "pnpm@12.16.1",
     "engines": {
         "node": "^24.22.1",
-        "pnpm": "^12.8.1"
+        "pnpm": "^12.16.1"
     },
     "publishConfig": {
         "registry": "https://nexus.protontech.ch/repository/web-npm/"
