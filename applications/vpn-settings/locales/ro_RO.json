@@ -1673,15 +1673,15 @@
         "Servere VPN dedicate: ${ ips }"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
-        "Asistent de IA ${ LUMO_APP_NAME }"
+        "Asistent ${ LUMO_APP_NAME } AI"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } utilizator)",
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } utilizatori)",
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } de utilizatori)"
       ],
       "${ LUMO_APP_NAME } AI license": [
-        "Licențe IA ${ LUMO_APP_NAME }"
+        "Licențe ${ LUMO_APP_NAME } AI"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licențe ${ LUMO_APP_NAME }"
@@ -1709,9 +1709,9 @@
         "${ quantity } de domenii personale"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }"
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
@@ -2674,7 +2674,7 @@
     },
     "collider_2025: feature": {
       "Access to advanced AI models": [
-        "Acces la modele AI avansate"
+        "Acces la modele de IA avansate"
       ],
       "Basic chat history": [
         "Istoric de bază conversații"
@@ -3928,7 +3928,7 @@
         "Conectați-vă CRM-ul, site-ul web, imprimantele și altele."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
-        "Creați o întâlnire pe Zoom și adăugați detaliile de conectare la evenimentul dvs. cu un singur clic."
+        "Creați o conferință pe Zoom și adăugați detaliile de conectare la eveniment cu un singur clic."
       ],
       "Create groups you can email with a single address.": [
         "Creați grupuri cărora le puteți trimite mesaje cu o singură adresă."
@@ -4009,7 +4009,7 @@
         "Păstrați-vă echipa în siguranță din mers cu aplicațiile noastre pentru web, iOS, Android, Windows, Mac și Linux."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Vă permite să adăugați imediat legături web de întâlnire în invitațiile la evenimente."
+        "Vă permite să adăugați imediat legături web de conferință în invitațiile la evenimente."
       ],
       "Methods that include both password reset and data recovery.": [
         "Metode care includ atât resetarea parolei, cât și recuperarea datelor."
@@ -4039,7 +4039,7 @@
         "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
-        "Simplificați sincronizarea și programarea cu calendare partajate."
+        "Simplificați sincronizarea și planificarea cu calendare partajate."
       ],
       "Still need help? Our support team is here for you.": [
         "Încă aveți nevoie de ajutor? Echipa noastră de asistență este aici să vă ajute."
@@ -9286,7 +9286,7 @@
         "Acest fișier este prea mare pentru a fi examinat."
       ],
       "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
-        "Această adresă de Gmail este înregistrată cu un alt cont ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } IA și altele). Lucrăm pentru a face această conexiune perfectă, dar deocamdată va trebui să parcurgeți câțiva pași."
+        "Această adresă de Gmail este înregistrată cu un alt cont ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI și altele). Lucrăm pentru a face această conexiune perfectă, dar deocamdată va trebui să parcurgeți câțiva pași."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Aceasta este o frază de 12 cuvinte care vi s-a solicitat să o setați."
@@ -10126,7 +10126,7 @@
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
       ],
       "Zoom meeting": [
-        "o întâlnire pe Zoom"
+        "o conferință pe Zoom"
       ]
     },
     "info": {
@@ -10357,6 +10357,9 @@
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accesați ${ PASS_APP_NAME } în siguranță de la terminal, ideal pentru editare comenzi, automatizare și fluxuri de lucru de dezvoltare."
+      ],
+      "Account credit": [
+        "Credit cont"
       ],
       "Account holder": [
         "Titular cont"
@@ -11893,7 +11896,7 @@
         "Conferințe de 24 de ore"
       ],
       "60 minutes per meeting": [
-        "60 de minute per întâlnire"
+        "60 de minute per conferință"
       ],
       "Booking pages": [
         "Pagini de rezervare"
@@ -11920,7 +11923,7 @@
         "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
       ],
       "Hosts can record meetings locally on their computers": [
-        "Gazdele pot înregistra întâlnirile local pe computerele lor"
+        "Gazdele pot înregistra conferințele local pe computerele lor"
       ],
       "Includes Meet Professional": [
         "Include Meet Professional"
@@ -11935,7 +11938,7 @@
         "Manager de parole cu seifuri pentru echipe"
       ],
       "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Conversații private cu IA (${ LUMO_SHORT_APP_NAME })"
+        "Conversații private (${ LUMO_SHORT_APP_NAME }) AI"
       ],
       "Screen-sharing": [
         "Partajare ecran"
@@ -12460,9 +12463,9 @@
         "Planificare întâlniri"
       ],
       "Appointment scheduling with ${ n } booking page": [
-        "Planificare întâlniri cu ${ n } pagină de programări",
-        "Planificare întâlniri cu ${ n } pagini de programări",
-        "Planificare întâlniri cu ${ n } de pagini de programări"
+        "Planificare întâlniri cu ${ n } pagină de planificări",
+        "Planificare întâlniri cu ${ n } pagini de planificări",
+        "Planificare întâlniri cu ${ n } de pagini de planificări"
       ],
       "Apps for": [
         "Aplicații pentru"
@@ -13027,7 +13030,7 @@
         "Transferați automat mesajele trimise spre contul din ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
+        "În prezent, trimiterea mesajelor promoționale sau planificate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Alegeți un timp personal pentru a vi se reaminti despre un mesaj sau când să sosească mesajul."
@@ -13158,7 +13161,7 @@
         "Stocați în siguranță detaliile contactelor personale, cum ar fi numărul de telefon, adresa, ziua de naștere și notele personale. Criptarea cu acces zero vă garantează că nici chiar ${ BRAND_NAME } nu le poate accesa."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Vedeți disponibilitatea participanților la întâlnire și economisiți timp programând întâlniri."
+        "Vedeți disponibilitatea participanților la conferință și economisiți timp programând conferințe."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Trimiteți e-mailuri către grupuri mari rapid și ușor prin crearea a cât mai multe grupuri de contact de care aveți nevoie (până la 100 de contacte per grup)."
@@ -17006,7 +17009,7 @@
         "Generare frază de recuperare"
       ],
       "key removal scheduled": [
-        "eliminarea cheii programată"
+        "eliminarea cheii planificată"
       ],
       "Last changed ${ formattedDate }": [
         "Ultima modificare ${ formattedDate }"
@@ -19173,7 +19176,7 @@
         "Autentificare SAML"
       ],
       "Schedule meetings in one click": [
-        "Planificare întâlniri cu un singur clic"
+        "Planificare conferințe cu un singur clic"
       ],
       "Search for additional servers": [
         "Căutare servere suplimentare"
@@ -20131,7 +20134,7 @@
         "Știați că?"
       ],
       "Everything you need to collaborate securely in a single subscription. Get access to ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME } AI Assistant.": [
-        "Tot ce aveți nevoie pentru a colabora securizat într-un singur abonament. Obțineți acces la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și Asistentul de IA ${ LUMO_SHORT_APP_NAME }."
+        "Tot ce aveți nevoie pentru a colabora securizat într-un singur abonament. Obțineți acces la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, ${ SHEETS_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și Asistentul ${ LUMO_SHORT_APP_NAME } AI."
       ],
       "Get ${ drivePlusPlanMaxSpace } storage for your files, photos and documents, and recover file versions with 10-year file recovery.": [
         "Obțineți ${ drivePlusPlanMaxSpace } spațiu de stocare pentru fișierele, fotografiile și documentele personale și recuperați fișierele cu versiuni de fișiere de până la 10 ani."
