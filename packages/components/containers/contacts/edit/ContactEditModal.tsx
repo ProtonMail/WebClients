@@ -7,6 +7,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { useHandler } from '@proton/hooks/useHandler';
 import useLoading from '@proton/hooks/useLoading';
+import type { ContactGroupLimitReachedProps } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import {
     addVCardProperty,
     getSortedProperties,
@@ -34,7 +35,6 @@ import useEventManager from '../../../hooks/useEventManager';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useApplyGroups from '../hooks/useApplyGroups';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
-import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import type { ContactImageProps } from '../modals/ContactImageModal';
 import ContactEditProperties from './ContactEditProperties';
 import ContactEditProperty from './ContactEditProperty';

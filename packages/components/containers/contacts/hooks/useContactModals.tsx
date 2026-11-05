@@ -1,3 +1,4 @@
+import type { ContactGroupLimitReachedProps } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import noop from '@proton/utils/noop';
 
@@ -20,7 +21,6 @@ import type { ContactDeleteProps } from '../modals/ContactDeleteModal';
 import ContactDeleteModal from '../modals/ContactDeleteModal';
 import type { ContactExportingProps } from '../modals/ContactExportingModal';
 import ContactExportingModal from '../modals/ContactExportingModal';
-import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import ContactGroupLimitReachedModal from '../modals/ContactGroupLimitReachedModal';
 import type { ContactImageProps } from '../modals/ContactImageModal';
 import ContactImageModal from '../modals/ContactImageModal';

@@ -16,6 +16,7 @@ import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
+    type ContactGroupLimitReachedProps,
     getContactGroupsDelayedSaveChanges,
     hasReachedContactGroupMembersLimit,
 } from '@proton/shared/lib/contacts/helpers/contactGroup';
@@ -33,7 +34,6 @@ import SearchInput from '../../components/input/SearchInput';
 import Mark from '../../components/text/Mark';
 import type { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
-import type { ContactGroupLimitReachedProps } from './modals/ContactGroupLimitReachedModal';
 import type { SelectEmailsProps } from './modals/SelectEmailsModal';
 
 import './ContactGroupDropdown.scss';

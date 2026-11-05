@@ -13,6 +13,7 @@ import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcUsersMerge } from '@proton/icons/icons/IcUsersMerge';
+import type { ContactGroupLimitReachedProps } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -24,7 +25,6 @@ import Checkbox from '../../../components/input/Checkbox';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import type useContactList from '../hooks/useContactList';
-import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
 import type { SelectEmailsProps } from '../modals/SelectEmailsModal';
 import type { CustomAction } from './types';
 

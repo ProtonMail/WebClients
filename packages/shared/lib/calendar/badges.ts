@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-import type { BadgeType } from '@proton/components/components/badge/Badge';
-
 import type { VisualCalendar } from '../interfaces/calendar/Calendar';
 import type { SubscribedCalendar } from '../interfaces/calendar/Subscription';
 import { getIsCalendarDisabled, getIsCalendarProbablyActive, getIsSubscribedCalendar } from './calendar';
@@ -15,9 +13,12 @@ export enum CALENDAR_STATUS_TYPE {
     NOT_SYNCED = 4,
 }
 
+/** Must stay a subset of the `BadgeType` of `@proton/components` `Badge`. */
+type CalendarBadgeType = 'primary' | 'success' | 'light' | 'warning';
+
 export interface CalendarStatusBadge {
     statusType: CALENDAR_STATUS_TYPE;
-    badgeType: BadgeType;
+    badgeType: CalendarBadgeType;
     text: string;
     tooltipText?: string;
     className?: string;

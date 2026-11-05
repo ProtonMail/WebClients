@@ -1,7 +1,9 @@
-import type { ContactGroupLimitReachedProps } from '@proton/components/containers/contacts/modals/ContactGroupLimitReachedModal';
-
 import type { MailSettings } from '../../interfaces/MailSettings';
 import type { ContactEmail } from '../../interfaces/contacts/Contact';
+
+export interface ContactGroupLimitReachedProps {
+    groupIDs?: string[];
+}
 
 /**
  * Check that the user can add other contacts to a contact group.
