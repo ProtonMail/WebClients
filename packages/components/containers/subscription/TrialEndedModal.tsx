@@ -16,6 +16,7 @@ import { getPlanTitle, getRenewalTime } from '@proton/payments/core/subscription
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import paymentlessIllustration from '@proton/styles/assets/img/illustrations/b2b-trial-end-paymentless.svg';
 import illustration from '@proton/styles/assets/img/illustrations/b2b-trial-end.svg';
 import noop from '@proton/utils/noop';
 
@@ -31,15 +32,16 @@ import PayInvoiceModal from '../invoices/PayInvoiceModal';
 
 interface TrialEndedModalLayoutProps extends Omit<ModalStateProps, 'onClose'> {
     title: string;
+    illustrationSrc: string;
     footer: ReactNode;
     children: ReactNode;
 }
 
-const TrialEndedModalLayout = ({ title, footer, children, ...rest }: TrialEndedModalLayoutProps) => (
+const TrialEndedModalLayout = ({ title, illustrationSrc, footer, children, ...rest }: TrialEndedModalLayoutProps) => (
     <ModalTwo size="small" className="p-3" {...rest}>
         <ModalTwoHeader title={title} titleClassName="text-center mx-auto" hasClose={false} />
         <ModalTwoContent className="flex flex-column items-center">
-            <img src={illustration} alt="" />
+            <img src={illustrationSrc} alt="" />
             {children}
         </ModalTwoContent>
         <ModalTwoFooter>{footer}</ModalTwoFooter>
@@ -74,6 +76,7 @@ const PaymentfulTrialEndedModal = ({ subscription, planTitle, onClose, ...rest }
     return (
         <TrialEndedModalLayout
             title={title}
+            illustrationSrc={illustration}
             footer={<Button fullWidth onClick={onClose}>{c('Action').t`Got it`}</Button>}
             {...rest}
         >
@@ -120,6 +123,7 @@ const PaymentlessTrialEndedModal = ({ planTitle, onClose, ...rest }: Paymentless
     return (
         <TrialEndedModalLayout
             title={c('Title').t`Subscribe to ${planTitle}`}
+            illustrationSrc={paymentlessIllustration}
             footer={
                 <>
                     <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
