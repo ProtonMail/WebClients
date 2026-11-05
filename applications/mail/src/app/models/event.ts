@@ -1,5 +1,5 @@
-import type { EventLoop } from '@proton/account/eventLoop';
 import type { ConversationEvent, EventType, MessageEvent } from '@proton/mail-message/models/event';
+import type { EventLoop } from '@proton/redux-shared-store-types/eventLoop';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces/Checklist';
 import type { LabelCount } from '@proton/shared/lib/interfaces/Label';

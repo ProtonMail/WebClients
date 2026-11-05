@@ -14,6 +14,7 @@ import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
+import type { OutgoingDelegatedAccessOutput } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces/SignedKeyList';
@@ -42,7 +43,6 @@ import {
     selectIsDelegatedAccessSupported,
     selectOutgoingDelegatedAccess,
 } from './index';
-import type { OutgoingDelegatedAccessOutput } from './interface';
 
 const queryListOutgoingDelegatedAccess = () => ({
     url: `account/v1/access/outgoing`,

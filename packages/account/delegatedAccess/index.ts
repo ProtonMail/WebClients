@@ -6,7 +6,11 @@ import type { ModelState } from '@proton/redux-utilities/initialModelState/inter
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
+import type {
+    DelegatedAccessTypeEnum,
+    IncomingDelegatedAccessOutput,
+    OutgoingDelegatedAccessOutput,
+} from '@proton/shared/lib/interfaces/DelegatedAccess';
 import { removeById } from '@proton/utils/removeById';
 import { upsertById } from '@proton/utils/upsertById';
 
@@ -18,13 +22,7 @@ import type { KtState } from '../kt';
 import type { OrganizationKeyState } from '../organizationKey';
 import type { UserState } from '../user';
 import type { UserKeysState } from '../userKeys';
-import type {
-    IncomingDelegatedAccessOutput,
-    IncomingEphemeral,
-    OutgoingDelegatedAccessOutput,
-    OutgoingEphemeral,
-    OutgoingEphemeralKeys,
-} from './interface';
+import type { IncomingEphemeral, OutgoingEphemeral, OutgoingEphemeralKeys } from './interface';
 
 const name = 'delegatedAccess';
 

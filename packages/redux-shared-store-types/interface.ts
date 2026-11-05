@@ -1,12 +1,13 @@
 import type { Action, ThunkDispatch, TypedStartListening } from '@reduxjs/toolkit';
 import type { History } from 'history';
 
-import type { EventLoop } from '@proton/account/eventLoop';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import type { UnleashClient } from '@proton/unleash/UnleashClient';
+
+import type { EventLoop } from './eventLoop';
 
 export interface ProtonThunkArguments {
     api: ApiWithListener;

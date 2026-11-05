@@ -2,13 +2,16 @@
     "name": "@proton/redux-shared-store-types",
     "description": "",
     "exports": {
+        "./eventLoop": "./eventLoop.ts",
         "./interface": "./interface.ts"
     },
     "scripts": {
         "lint": "oxlint --quiet"
     },
     "dependencies": {
+        "@proton/payments": "workspace:^",
         "@proton/shared": "workspace:^",
+        "@proton/sieve": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@reduxjs/toolkit": "catalog:",
         "history": "catalog:",

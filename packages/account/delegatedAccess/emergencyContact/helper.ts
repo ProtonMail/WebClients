@@ -2,9 +2,8 @@ import { c, msgid } from 'ttag';
 
 import { DAY } from '@proton/shared/lib/constants';
 import { isValidDate } from '@proton/shared/lib/date/date';
+import type { IncomingDelegatedAccessOutput } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
-
-import type { IncomingDelegatedAccessOutput } from '../interface';
 
 export const getContact = (email: string, contactEmail: ContactEmail | undefined) => {
     if (!contactEmail || contactEmail.Name === email) {
