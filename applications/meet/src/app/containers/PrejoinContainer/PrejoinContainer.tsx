@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import { useRoomContext } from '@livekit/components-react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
@@ -28,6 +29,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { getPrivacyPolicyURL, getTermsURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
+import noop from '@proton/utils/noop';
 
 import { DeviceSettings } from '../../components/DeviceSettings/DeviceSettings';
 import { JoiningRoomLoader } from '../../components/JoiningRoomLoader';
@@ -71,6 +73,7 @@ export const PrejoinContainer = ({
     joinTelemetryDimensions,
 }: PrejoinContainerProps) => {
     const dispatch = useMeetDispatch();
+    const room = useRoomContext();
     const isGuest = useMeetSelector(selectIsGuest);
     const userId = useMeetSelector(selectUserId);
 
@@ -130,6 +133,10 @@ export const PrejoinContainer = ({
     const currentSelectedAudioOutputDevice = activeAudioOutputDeviceId || speakerState.systemDefault?.deviceId || '';
 
     const handleJoinMeeting = (displayName: string, keepOnDevice: boolean) => {
+        // Browsers only let the playback context resume inside a user gesture, and connecting happens
+        // after async work that leaves this click behind
+        room.startAudio().catch(noop);
+
         const storageKey = getDisplayNameStorageKey(isGuest, userId);
 
         if (keepOnDevice && displayName.trim()) {
