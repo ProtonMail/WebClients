@@ -60,7 +60,7 @@ afterEach(() => {
 describe('VideoMixerClient.provideAudioSamples', () => {
     it('sends only the audio provided after the encoder reported that it started', () => {
         const { client, worker } = createClient();
-        client.startEncoder(vi.fn());
+        client.startEncoder(vi.fn(), vi.fn());
 
         client.provideAudioSamples(samplesAt(0));
         client.provideAudioSamples(samplesAt(1024));
@@ -68,6 +68,20 @@ describe('VideoMixerClient.provideAudioSamples', () => {
         client.provideAudioSamples(samplesAt(2048));
 
         expect(postedAudioFrames(worker)).toEqual([2048]);
+    });
+});
+
+describe('VideoMixerClient encoder failure', () => {
+    it('passes the encoder failure posted by the worker to the recorder', () => {
+        const { client, worker } = createClient();
+        const onFailure = vi.fn();
+        client.startEncoder(vi.fn(), onFailure);
+
+        worker.onmessage?.({
+            data: { type: 'encoderError', track: 'audio', name: 'EncodingError', message: 'Encoder failure' },
+        });
+
+        expect(onFailure).toHaveBeenCalledWith({ track: 'audio', name: 'EncodingError', message: 'Encoder failure' });
     });
 });
 

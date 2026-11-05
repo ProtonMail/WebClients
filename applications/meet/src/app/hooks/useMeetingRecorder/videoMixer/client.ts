@@ -1,7 +1,7 @@
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 
 import { forwardWorkerLog } from '../../../utils/forwardWorkerLog';
-import type { AudioTapSamples } from '../mediaEncoder/types';
+import type { AudioTapSamples, EncoderFailure } from '../mediaEncoder/types';
 import { CANVAS_HEIGHT, CANVAS_WIDTH, RECORDING_FPS } from './constants';
 import { type TrackCapture, startTrackCapture } from './trackCapture';
 import { type RecordingTrackInfo, type SceneState, VideoMixerMessageType } from './types';
@@ -25,6 +25,7 @@ export class VideoMixerClient {
     private trackCaptures: Map<string, TrackCapture> = new Map();
     private reportMeetError: ReportMeetError;
     private encoderOnChunk: ((data: Uint8Array<ArrayBuffer>) => void) | null = null;
+    private encoderOnFailure: ((failure: EncoderFailure) => void) | null = null;
     private encoderDoneResolve: (() => void) | null = null;
     private audioCodec: string | null = null;
     private encoderStarted = false;
@@ -62,6 +63,8 @@ export class VideoMixerClient {
             } else if (message?.type === 'encoderStarted') {
                 this.audioCodec = message.audioCodec;
                 this.encoderStarted = true;
+            } else if (message?.type === 'encoderError') {
+                this.encoderOnFailure?.({ track: message.track, name: message.name, message: message.message });
             }
         };
 
@@ -142,8 +145,12 @@ export class VideoMixerClient {
         return this.audioCodec;
     }
 
-    public startEncoder(onChunk: (data: Uint8Array<ArrayBuffer>) => void): void {
+    public startEncoder(
+        onChunk: (data: Uint8Array<ArrayBuffer>) => void,
+        onFailure: (failure: EncoderFailure) => void
+    ): void {
         this.encoderOnChunk = onChunk;
+        this.encoderOnFailure = onFailure;
         this.worker.postMessage({ type: VideoMixerMessageType.START_ENCODER });
     }
 

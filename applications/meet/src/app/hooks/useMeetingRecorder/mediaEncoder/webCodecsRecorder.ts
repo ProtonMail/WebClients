@@ -2,6 +2,7 @@ import type { AudioMixer } from '../audioMixer/audioMixer';
 import type { RecordingCodec } from '../codec/types';
 import type { RecorderAPI } from '../types';
 import type { VideoMixerClient } from '../videoMixer/client';
+import type { EncoderFailure } from './types';
 
 export const WEBCODECS_MP4_CODEC: RecordingCodec = { mimeType: 'video/mp4', extension: 'mp4' };
 
@@ -10,6 +11,7 @@ interface WebCodecsRecorderOptions {
     audioMixer: AudioMixer;
     codec: RecordingCodec;
     onChunk: (data: Uint8Array<ArrayBuffer>) => void;
+    onEncoderFailure: (failure: EncoderFailure) => void;
 }
 
 // RecorderAPI that drives the WebCodecs/mediabunny pipeline living in the
@@ -20,17 +22,19 @@ export class WebCodecsRecorder implements RecorderAPI {
     private audioMixer: AudioMixer;
     private codec: RecordingCodec;
     private onChunk: (data: Uint8Array<ArrayBuffer>) => void;
+    private onEncoderFailure: (failure: EncoderFailure) => void;
     private recording = false;
 
-    constructor({ videoMixer, audioMixer, codec, onChunk }: WebCodecsRecorderOptions) {
+    constructor({ videoMixer, audioMixer, codec, onChunk, onEncoderFailure }: WebCodecsRecorderOptions) {
         this.videoMixer = videoMixer;
         this.audioMixer = audioMixer;
         this.codec = codec;
         this.onChunk = onChunk;
+        this.onEncoderFailure = onEncoderFailure;
     }
 
     public async start(): Promise<void> {
-        this.videoMixer.startEncoder(this.onChunk);
+        this.videoMixer.startEncoder(this.onChunk, this.onEncoderFailure);
         await this.audioMixer.startWorkletTap((samples) => this.videoMixer.provideAudioSamples(samples));
         this.recording = true;
     }
