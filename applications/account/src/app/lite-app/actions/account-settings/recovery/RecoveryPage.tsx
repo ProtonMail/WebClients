@@ -8,7 +8,7 @@ import SettingsNavGroup from '@proton/components/containers/layout/SettingsNavGr
 import { getSectionPath, getSubroutePath } from '@proton/components/containers/layout/helper';
 import type { SectionConfig } from '@proton/components/containers/layout/interface';
 import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
-import { OverviewSectionV2 } from '@proton/components/containers/recovery/OverviewSectionV2';
+import { OverviewSection } from '@proton/components/containers/recovery/OverviewSection';
 import RecoveryPageTelemetry from '@proton/components/containers/recovery/RecoveryPageTelemetry';
 import EmergencyContacts from '@proton/components/containers/recovery/navItems/EmergencyContacts';
 import RecoveryContacts from '@proton/components/containers/recovery/navItems/RecoveryContacts';
@@ -185,7 +185,7 @@ const RecoveryPage = ({ routeConfig }: Props) => {
                         maxWidth={SettingsCardMaxWidth.Medium}
                         variant={SettingsLayoutVariant.Card}
                     >
-                        <OverviewSectionV2 variant={SettingsLayoutVariant.Mobile} />
+                        <OverviewSection variant={SettingsLayoutVariant.Mobile} />
                         <SettingsNavGroup
                             title={passwordReset.title}
                             description={passwordReset.description}
