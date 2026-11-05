@@ -1,7 +1,7 @@
 import { act, renderHook, waitFor } from '@testing-library/react'
 import type { ReactNode } from 'react'
 
-import { generateNodeUid, getDrive } from '@proton/drive/sdk'
+import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
@@ -16,6 +16,7 @@ jest.mock('@proton/drive/sdk', () => ({
 
 const nodeMeta = { volumeId: 'volume-1', linkId: 'link-1' }
 const getNode = jest.fn()
+const getNodeHierarchy = jest.fn()
 const logger = { info: jest.fn(), warn: jest.fn(), error: jest.fn() }
 const application = { logger } as unknown as ApplicationProviderProps['application']
 
@@ -70,15 +71,16 @@ function createFakeClient() {
 
 describe('useDocumentSession', () => {
   beforeEach(() => {
-    jest.mocked(getDrive).mockReturnValue({ getNode } as unknown as ReturnType<typeof getDrive>)
+    jest.mocked(getDrive).mockReturnValue({ getNode, getNodeHierarchy } as unknown as ReturnType<typeof getDrive>)
     getNode.mockResolvedValue({ mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE })
+    getNodeHierarchy.mockResolvedValue([{ directRole: MemberRole.Inherited }, { directRole: MemberRole.Editor }])
   })
 
   afterEach(() => {
     jest.clearAllMocks()
   })
 
-  test('creates a doc session, listens for unreadable updates before bootstrapping, and is ready with the session', async () => {
+  test('creates a doc session, listens for unreadable updates before bootstrapping, and is ready with the session and role', async () => {
     const fake = createFakeClient()
     const { result } = renderHook(() => useDocumentSession(fake.client, nodeMeta), { wrapper })
 
@@ -86,9 +88,10 @@ describe('useDocumentSession', () => {
     await act(() => fake.resolveBootstrap())
 
     expect(getNode).toHaveBeenCalledWith(generateNodeUid('volume-1', 'link-1'))
+    expect(getNodeHierarchy).toHaveBeenCalledWith(generateNodeUid('volume-1', 'link-1'))
     expect(fake.client.createSession).toHaveBeenCalledWith({ documentType: 'doc', nodeMeta })
     expect(fake.calls).toEqual(['on:updateUnreadable', 'bootstrap'])
-    expect(result.current).toEqual({ status: 'ready', session: fake.session })
+    expect(result.current).toEqual({ status: 'ready', session: fake.session, role: 'Editor' })
   })
 
   test('an unreadable base state update fails the load, leaves no listener and disconnects the session', async () => {
@@ -163,6 +166,15 @@ describe('useDocumentSession', () => {
     const { result } = renderHook(() => useDocumentSession(fake.client, nodeMeta), { wrapper })
 
     await waitFor(() => expect(result.current).toEqual({ status: 'failed', reason: 'unsupported' }))
+    expect(fake.client.createSession).not.toHaveBeenCalled()
+  })
+
+  test('a node whose role cannot be read fails to bootstrap, and creates no session', async () => {
+    getNodeHierarchy.mockRejectedValue(new Error('Drive failed'))
+    const fake = createFakeClient()
+    const { result } = renderHook(() => useDocumentSession(fake.client, nodeMeta), { wrapper })
+
+    await waitFor(() => expect(result.current).toEqual({ status: 'failed', reason: 'bootstrapFailed' }))
     expect(fake.client.createSession).not.toHaveBeenCalled()
   })
 

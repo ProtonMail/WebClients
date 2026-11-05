@@ -11,7 +11,10 @@ import { GenerateUUID } from '@proton/docs-shared/GenerateUuid'
 
 export const EDITOR_CALL_TIMEOUT_MS = 10_000
 
-type EditorMethodsCalledByDoc2 = Pick<ClientRequiresEditorMethods, 'initializeEditor' | 'receiveMessage' | 'showEditor'>
+type EditorMethodsCalledByDoc2 = Pick<
+  ClientRequiresEditorMethods,
+  'initializeEditor' | 'receiveMessage' | 'showEditor' | 'changeLockedState'
+>
 
 // Copied from docs-core `Bridge/EditorInvoker.ts`, which doc2 must not import, with only the methods doc2 calls.
 // Unlike it, a call the editor doesn't answer within EDITOR_CALL_TIMEOUT_MS rejects instead of waiting forever.
@@ -26,6 +29,10 @@ export class EditorInvoker implements EditorMethodsCalledByDoc2 {
 
   async receiveMessage(message: RtsMessagePayload): Promise<void> {
     return this.invokeEditorMethod('receiveMessage', [message])
+  }
+
+  async changeLockedState(locked: boolean): Promise<void> {
+    return this.invokeEditorMethod('changeLockedState', [locked])
   }
 
   async initializeEditor(
