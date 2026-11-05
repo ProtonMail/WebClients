@@ -12,6 +12,7 @@ import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'
 import { ApplicationProvider } from '~/utils/application-context'
 import { DocumentActionsProvider, useDocumentActions } from './document-actions'
+import { HomepageViewContext, type HomepageViewValue } from './homepage-view-sdk-utils'
 
 jest.mock('@proton/docs-core/DriveSDK/trash', () => ({
   trashDocument: jest.fn(),
@@ -48,6 +49,7 @@ const nodeUid = generateNodeUid(recentDocument.volumeId, recentDocument.linkId)
 function renderDocumentActions() {
   const createNotification = jest.fn()
   const reportHomepageTelemetry = jest.fn()
+  const updateMovedDocuments = jest.fn()
   const application = {
     metrics: { reportHomepageTelemetry },
   } as unknown as Application
@@ -57,14 +59,16 @@ function renderDocumentActions() {
       <AuthenticationContext.Provider value={{ getLocalID: () => undefined } as any}>
         <ApplicationProvider application={application}>
           <NotificationsContext.Provider value={{ createNotification } as unknown as NotificationsManager}>
-            <DocumentActionsProvider>{children}</DocumentActionsProvider>
+            <HomepageViewContext.Provider value={{ updateMovedDocuments } as unknown as HomepageViewValue}>
+              <DocumentActionsProvider>{children}</DocumentActionsProvider>
+            </HomepageViewContext.Provider>
           </NotificationsContext.Provider>
         </ApplicationProvider>
       </AuthenticationContext.Provider>
     ),
   })
 
-  return { result, createNotification, reportHomepageTelemetry }
+  return { result, createNotification, reportHomepageTelemetry, updateMovedDocuments }
 }
 
 function deferred() {
@@ -92,7 +96,7 @@ describe('DocumentActionsProvider', () => {
 
     act(() => result.current.move(recentDocument))
 
-    expect(mockShowMoveItemsModal).toHaveBeenCalledWith({ nodeUids: [nodeUid] })
+    expect(mockShowMoveItemsModal).toHaveBeenCalledWith({ nodeUids: [nodeUid], onMoved: expect.any(Function) })
     expect(reportHomepageTelemetry).toHaveBeenCalledWith(TelemetryDocsHomepageEvents.document_moved)
   })
 
@@ -152,6 +156,17 @@ describe('DocumentActionsProvider', () => {
 
     expect(trashedListener).not.toHaveBeenCalled()
     expect(restoredListener).not.toHaveBeenCalled()
+  })
+
+  test('move updates the moved document once the move modal reports it moved', () => {
+    const { result, updateMovedDocuments } = renderDocumentActions()
+
+    act(() => result.current.move(recentDocument))
+    const [{ nodeUids, onMoved }] = mockShowMoveItemsModal.mock.calls[0]
+    onMoved({ movedUids: [nodeUid], failedItems: [], targetFolderUid: generateNodeUid('volume1', 'folder') })
+
+    expect(nodeUids).toEqual([nodeUid])
+    expect(updateMovedDocuments).toHaveBeenCalledWith([nodeUid])
   })
 
   test('trash failure shows an error toast, sends no telemetry and notifies no listeners', async () => {

@@ -59,6 +59,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
     updateRenamedDocumentInCache,
     removeDocument,
     recentsListener,
+    updateMovedDocuments,
   } = useRecents(drive)
   const { fetchTrashed, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(drive)
 
@@ -165,8 +166,19 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
       isRecentsUpdating,
       type,
       myFilesRootUid: myFilesNode?.uid,
+      updateMovedDocuments,
     }),
-    [state, setRecentsSort, setSearch, loadData, updateRenamedDocumentInCache, isRecentsUpdating, type, myFilesNode],
+    [
+      state,
+      setRecentsSort,
+      setSearch,
+      loadData,
+      updateRenamedDocumentInCache,
+      isRecentsUpdating,
+      type,
+      myFilesNode,
+      updateMovedDocuments,
+    ],
   )
 
   return <HomepageViewContext.Provider value={value}>{children}</HomepageViewContext.Provider>

@@ -138,15 +138,6 @@ const DEVICE_DOCUMENT = createMockRecentDocument({
 
 let mockItems = MOCK_DATA
 let mockMyFilesRootUid: string | undefined = MY_FILES_ROOT_UID
-let mockReceiveRecentsUpdate: (items: RecentDocumentsItem[]) => void = () => {}
-
-const moveToArchive = (document: RecentDocumentsItem) =>
-  createMockRecentDocument({
-    ...document.value,
-    parentLinkId: 'archive',
-    location: { type: 'path', path: ['Archive'] },
-    ancestorsNodeUids: ['volume1~archive', MY_FILES_ROOT_UID],
-  })
 
 describe('HomepageContent', () => {
   test('Show loading spinner whilst fetching', async () => {
@@ -465,53 +456,25 @@ describe('HomepageContent', () => {
 
         await userEvent.click(screen.getByTestId('bulk-move-button'))
 
-        expect(mockBulkMove).toHaveBeenCalledWith([
-          expect.objectContaining(MOCK_DATA[0]),
-          expect.objectContaining(MOCK_DATA[1]),
-        ])
+        expect(mockBulkMove).toHaveBeenCalledWith(
+          [expect.objectContaining(MOCK_DATA[0]), expect.objectContaining(MOCK_DATA[1])],
+          expect.any(Function),
+        )
         expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
       })
 
-      test('drops each document from the selection once it has moved, as moved items leave a Drive folder', async () => {
-        const [first, second, shared] = MOCK_DATA
+      test('drops the moved documents from the selection once the move finishes, as moved items leave a Drive folder', async () => {
+        const [first, second] = MOCK_DATA
         renderWithProviders(<HomepageContent />)
         await screen.findByRole('table')
         await selectAll()
         await userEvent.click(screen.getByTestId('bulk-move-button'))
+        const [, onMoved] = mockBulkMove.mock.calls[0]
 
-        act(() => mockReceiveRecentsUpdate([moveToArchive(first), second, shared]))
+        await act(async () => onMoved([first]))
 
         expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('1 selected')
-        expect(screen.getByRole('checkbox', { name: 'Select Test Document' })).toBeChecked()
-
-        act(() => mockReceiveRecentsUpdate([moveToArchive(first), moveToArchive(second), shared]))
-
-        expect(screen.queryByTestId('bulk-selected-count')).toBeNull()
-      })
-
-      test('keeps updated documents that have not moved in the selection', async () => {
-        const [first, second, shared] = MOCK_DATA
-        renderWithProviders(<HomepageContent />)
-        await screen.findByRole('table')
-        await selectAll()
-
-        act(() =>
-          mockReceiveRecentsUpdate([createMockRecentDocument({ ...first.value, name: 'Renamed' }), second, shared]),
-        )
-
-        expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
-      })
-
-      test('keeps moved documents in the selection when bulk move is off', async () => {
-        mockBulkMoveEnabled = false
-        const [first, second, shared] = MOCK_DATA
-        renderWithProviders(<HomepageContent />)
-        await screen.findByRole('table')
-        await selectAll()
-
-        act(() => mockReceiveRecentsUpdate([moveToArchive(first), moveToArchive(second), shared]))
-
-        expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
+        expect(screen.getByRole('checkbox', { name: `Select ${second.name}` })).toBeChecked()
       })
 
       test('hides the move button when the selection includes a document shared with the user', async () => {
@@ -652,10 +615,10 @@ describe('HomepageContent', () => {
 
           await userEvent.click(screen.getByText('Move'))
 
-          expect(mockBulkMove).toHaveBeenCalledWith([
-            expect.objectContaining(MOCK_DATA[0]),
-            expect.objectContaining(MOCK_DATA[1]),
-          ])
+          expect(mockBulkMove).toHaveBeenCalledWith(
+            [expect.objectContaining(MOCK_DATA[0]), expect.objectContaining(MOCK_DATA[1])],
+            expect.any(Function),
+          )
           expect(screen.getByTestId('bulk-selected-count')).toHaveTextContent('2 selected')
         })
 
@@ -775,8 +738,6 @@ describe('HomepageContent', () => {
     flow: 'one_document' | 'empty_recents' | 'delayed' | 'trash'
   }) {
     const [state, setState] = useState<HomepageViewState>({ view: 'recents-initial' })
-    mockReceiveRecentsUpdate = (items) =>
-      setState({ view: 'recents', sort: 'viewed', itemSections: [{ id: 'today', items }] })
 
     useEffect(() => {
       if (flow === 'one_document') {

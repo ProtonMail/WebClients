@@ -59,6 +59,8 @@ export type HomepageViewValue = {
   type: ProtonDocumentType | undefined
   /** Known once the My files folder has loaded. */
   myFilesRootUid?: string
+  /** Only with recents loaded through the Drive SDK. */
+  updateMovedDocuments?: (nodeUids: string[]) => Promise<void>
 }
 
 export const HomepageViewContext = createContext<HomepageViewValue | undefined>(undefined)

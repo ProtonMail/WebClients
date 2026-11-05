@@ -85,8 +85,12 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   const bulkMoveEnabled = useBulkMoveEnabled()
   // The move modal fails on nodes from more than one root, and the user's own documents can also sit on a device.
   const canBulkMove = bulkMoveEnabled && selectedDocuments.every((document) => isInMyFiles(document, myFilesRootUid))
-  useDeselectMoved(selectedDocuments, selection, bulkMoveEnabled)
-  const moveSelection = () => move(selectedDocuments)
+  // Like Drive, where moved documents leave the folder.
+  const deselect = useEvent((documents: RecentDocumentsItem[]) => {
+    const ids = documents.map((document) => document.uniqueId())
+    selection.set(selection.selectedIds.filter((id) => !ids.includes(id)))
+  })
+  const moveSelection = () => move(selectedDocuments, deselect)
   const trashSelection = async () => {
     const failed = await trash(selectedDocuments)
     if (failed.length) {
@@ -238,23 +242,6 @@ function SelectAllCheckbox({ selection, isTrashing }: SelectAllCheckboxProps) {
 // Ancestors run from the parent to the root.
 function isInMyFiles(document: RecentDocumentsItem, myFilesRootUid: string | undefined) {
   return myFilesRootUid !== undefined && document.ancestorsNodeUids?.at(-1) === myFilesRootUid
-}
-
-// The move modal can't report back, so a move shows only as a new parent in the document's update.
-function useDeselectMoved(selectedDocuments: RecentDocumentsItem[], selection: RowSelection, enabled: boolean) {
-  const parentLinkIds = useRef(new Map<string, string | undefined>())
-  const deselectMoved = useEvent(() => {
-    const previous = parentLinkIds.current
-    parentLinkIds.current = new Map(selectedDocuments.map((document) => [document.uniqueId(), document.parentLinkId]))
-    const movedIds = selectedDocuments
-      .map((document) => document.uniqueId())
-      .filter((id) => previous.has(id) && previous.get(id) !== parentLinkIds.current.get(id))
-    if (enabled && movedIds.length) {
-      selection.set(selection.selectedIds.filter((id) => !movedIds.includes(id)))
-    }
-  })
-  const parentsKey = selectedDocuments.map((document) => `${document.uniqueId()}/${document.parentLinkId}`).join()
-  useEffect(deselectMoved, [parentsKey, deselectMoved])
 }
 
 type BulkMoveButtonProps = { onMove: () => void; disabled: boolean }

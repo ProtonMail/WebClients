@@ -1,6 +1,7 @@
 import type { NotificationsManager } from '@proton/app-context/notifications/manager'
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
 import type { Application } from '@proton/docs-core/Application/Application'
+import type { RecentDocumentsItemValue } from '~/homepage/recent-documents-item-value'
 import {
   type DriveEvent,
   DriveEventType,
@@ -335,7 +336,63 @@ describe('useRecents', () => {
       expect(Object.keys(result.current.recentDocuments)).toEqual(['volume1~inside', 'volume1~outside'])
     })
   })
+
+  describe('updateMovedDocuments', () => {
+    test('reloads moved documents keeping their last viewed time', async () => {
+      const { result, nodes } = await renderDocsInSourceFolder()
+      moveNode(nodes, 'volume1~doc1', 'volume1~destination')
+
+      await act(() => result.current.updateMovedDocuments(['volume1~doc1']))
+
+      expect(result.current.recentDocuments['volume1~doc1']).toMatchObject({
+        parentLinkId: 'destination',
+        ancestorsNodeUids: ['volume1~destination', 'volume1~root'],
+      })
+      expect(result.current.recentDocuments['volume1~doc1'].lastViewed.serverTimestamp).toBe(1000)
+      expect(locationsOf(result.current.recentDocuments)).toEqual({
+        'volume1~doc1': ['Destination'],
+        'volume1~doc2': ['Source'],
+      })
+    })
+
+    test('reloads the other moved documents when one fails to load', async () => {
+      const { result, nodes, drive } = await renderDocsInSourceFolder()
+      moveNode(nodes, 'volume1~doc1', 'volume1~destination')
+      moveNode(nodes, 'volume1~doc2', 'volume1~destination')
+      drive.getNodeHierarchy.mockRejectedValueOnce(new Error('Network error'))
+
+      await act(() => result.current.updateMovedDocuments(['volume1~doc1', 'volume1~doc2']))
+
+      expect(locationsOf(result.current.recentDocuments)).toEqual({
+        'volume1~doc1': ['Source'],
+        'volume1~doc2': ['Destination'],
+      })
+    })
+  })
 })
+
+async function renderDocsInSourceFolder() {
+  return renderLoadedRecents([
+    createNode({ uid: 'volume1~root', type: NodeType.Folder }),
+    createNode({ uid: 'volume1~source', parentUid: 'volume1~root', name: 'Source', type: NodeType.Folder }),
+    createNode({ uid: 'volume1~destination', parentUid: 'volume1~root', name: 'Destination', type: NodeType.Folder }),
+    createNode({ uid: 'volume1~doc1', parentUid: 'volume1~source', name: 'Doc1' }),
+    createNode({ uid: 'volume1~doc2', parentUid: 'volume1~source', name: 'Doc2' }),
+  ])
+}
+
+function moveNode(nodes: Map<string, NodeEntity>, nodeUid: string, parentUid: string) {
+  nodes.set(nodeUid, { ...(nodes.get(nodeUid) as NodeEntity), parentUid })
+}
+
+function locationsOf(recentDocuments: { [nodeUid: string]: RecentDocumentsItemValue }) {
+  return Object.fromEntries(
+    Object.entries(recentDocuments).map(([nodeUid, { location }]) => [
+      nodeUid,
+      location.type === 'path' ? location.path : location.type,
+    ]),
+  )
+}
 
 function renderRecents({ documents, nodes }: { documents: ApiDocument[]; nodes: Map<string, NodeEntity> }) {
   const docsApi = {
