@@ -16,6 +16,7 @@ import { convertRefTokensToSpans, normalizeBrTags } from '../../util/tokens';
 import { getDomain } from '../Conversation/messageChain/message/toolCall/helpers';
 import { InlineImageComponent } from './InlineImageComponent';
 import { LumoMarkdownCodeBlock } from './LumoMarkdownCodeBlock';
+import { MarkdownErrorBoundary } from './MarkdownErrorBoundary';
 import { LumoMarkdownCardBlock } from './card/LumoMarkdownCardBlock';
 import { LumoMetricCardRow } from './card/LumoMetricCardRow';
 import { buildMarkdownRenderUnits } from './card/coalesceMetricCardBlocks';
@@ -29,6 +30,7 @@ import { parseCardRowFence, parseCardRowSegmentCode } from './card/parseCardRowF
 import { tryParseCardSpec } from './card/parseCardSpec';
 import { renderCardAwareSegment } from './card/renderCardSegments';
 import { LUMO_MARKDOWN_CARD_SHELL_CLASS, TRAILING_VEGA_CHART_KEY } from './lumoMarkdownCardShell';
+import { findSingleLineParagraphEnd, isPathologicalMarkdown } from './markdownSafety';
 import { normalizeGfmTableSpacing } from './normalizeGfmTableSpacing';
 import { remarkLatexDelimiters } from './remarkLatexDelimiters';
 import { VegaChartLoading } from './vega/VegaChartLoading';
@@ -135,7 +137,8 @@ function splitIntoBlocks(content: string, isStreaming: boolean): ContentBlock[] 
 
         // 2. Check for complete table (header | separator | rows, followed by \n\n or EOF)
         // Table format: |...| (header) \n |---| (separator) \n |...| (rows) \n\n
-        const tableMatch = remaining.match(/^(\|[^\n]+\|\n\|[\s:-]+\|\n(?:\|[^\n]+\|\n)+)(\n|$)/);
+        const tableMatch =
+            remaining.startsWith('|') && remaining.match(/^(\|[^\n]+\|\n\|[\s:-]+\|\n(?:\|[^\n]+\|\n)+)(\n|$)/);
         if (tableMatch) {
             const tableContent = tableMatch[1];
             const hasDoubleNewline = remaining.substring(tableContent.length).startsWith('\n\n');
@@ -154,9 +157,10 @@ function splitIntoBlocks(content: string, isStreaming: boolean): ContentBlock[] 
         }
 
         // 3. Check for complete paragraph (text followed by \n\n)
-        const paraMatch = remaining.match(/^((?:(?!\n\n|```|\|[^\n]+\|).)+)(\n\n)/);
-        if (paraMatch) {
-            const blockContent = paraMatch[0];
+        // (linear scan: the equivalent regex recurses on long lines in Firefox/Safari)
+        const paragraphEnd = findSingleLineParagraphEnd(remaining);
+        if (paragraphEnd !== null) {
+            const blockContent = remaining.slice(0, paragraphEnd);
             blocks.push({
                 type: 'complete',
                 content: blockContent,
@@ -416,30 +420,38 @@ const MarkdownBlock: React.FC<{
             [CodeBlock, handleLinkClick, sourcesContainerRef, toolCallResults]
         );
 
+        // Deeply nested input can exhaust the parser's call stack; show it as plain text instead.
+        const isPathological = useMemo(() => isPathologicalMarkdown(content), [content]);
+        if (isPathological) {
+            return <div className="whitespace-pre-wrap break-word">{content}</div>;
+        }
+
         return (
-            <Markdown
-                remarkPlugins={[
-                    remarkGfm,
-                    // singleDollarTextMath is intentionally disabled: single `$` is ambiguous with
-                    // currency ($500, $30,000) and shell variables ($HOME, $DEST). Inline math is
-                    // handled by remarkLatexDelimiters via \(...\), and display math via \[...\] or $$...$$
-                    [remarkMath, { singleDollarTextMath: false }],
-                    remarkLatexDelimiters,
-                    remarkBrToBreak,
-                ]}
-                rehypePlugins={[() => rehypeKatex({ output: 'mathml' })]}
-                components={components}
-                urlTransform={(url) => {
-                    // Preserve attachment: URLs, sanitize everything else
-                    if (url.startsWith('attachment:')) {
+            <MarkdownErrorBoundary content={content}>
+                <Markdown
+                    remarkPlugins={[
+                        remarkGfm,
+                        // singleDollarTextMath is intentionally disabled: single `$` is ambiguous with
+                        // currency ($500, $30,000) and shell variables ($HOME, $DEST). Inline math is
+                        // handled by remarkLatexDelimiters via \(...\), and display math via \[...\] or $$...$$
+                        [remarkMath, { singleDollarTextMath: false }],
+                        remarkLatexDelimiters,
+                        remarkBrToBreak,
+                    ]}
+                    rehypePlugins={[() => rehypeKatex({ output: 'mathml' })]}
+                    components={components}
+                    urlTransform={(url) => {
+                        // Preserve attachment: URLs, sanitize everything else
+                        if (url.startsWith('attachment:')) {
+                            return url;
+                        }
+                        // Default sanitization for other URLs
                         return url;
-                    }
-                    // Default sanitization for other URLs
-                    return url;
-                }}
-            >
-                {content}
-            </Markdown>
+                    }}
+                >
+                    {content}
+                </Markdown>
+            </MarkdownErrorBoundary>
         );
     },
     (prev, next) => {
