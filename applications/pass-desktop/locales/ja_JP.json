@@ -876,6 +876,11 @@
         "${ PASS_APP_NAME }をアンインストール"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } デスクトップアプリ"
+      ]
+    },
     "Button": {
       "More info": [
         "詳細はこちら"
@@ -4240,7 +4245,7 @@
         "もしデータが漏洩した場合"
       ],
       "Learn more": [
-        "詳細"
+        "より詳しく"
       ]
     },
     "Log preference": {
