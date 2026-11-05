@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
-import { getNodeEffectiveRole } from '../../../modules/nodes';
+import { getNodeEffectiveRoleFromHierarchy } from '../../../modules/nodes';
 import { MemberRole, type NodeEntity, type ProtonDriveClient } from '../../../sdk';
 
 type SelectedItemsConfig = {
@@ -56,18 +56,10 @@ export const useMoveEligibility = (
                 return;
             }
 
-            try {
-                const targetNode = await drive.getNode(targetFolderUid);
-                const targetEffectiveRole = await getNodeEffectiveRole(targetNode, drive);
-                const isReadOnly = targetEffectiveRole === MemberRole.Viewer;
-
-                if (isReadOnly) {
-                    setIsInvalidMove(true);
-                    setInvalidMoveMessage(c('Info').t`Can't write into folder`);
-                    return;
-                }
-            } catch (e) {
-                handleSdkError(e);
+            const isReadOnly = getNodeEffectiveRoleFromHierarchy(hierarchy) === MemberRole.Viewer;
+            if (isReadOnly) {
+                setIsInvalidMove(true);
+                setInvalidMoveMessage(c('Info').t`Can't write into folder`);
                 return;
             }
 

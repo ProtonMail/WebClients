@@ -30,13 +30,7 @@ export const useFolderViewBreadcrumbs = (driveClient: ProtonDriveClient) => {
                     error: e instanceof Error ? e : new Error(String(e)),
                 };
             }
-            const nodeLocation = await getNodeLocation(driveClient, hierarchy[0]);
-            if (!nodeLocation.ok) {
-                return {
-                    ok: false,
-                    error: nodeLocation.error,
-                };
-            }
+            const nodeLocation = await getNodeLocation(driveClient, hierarchy);
 
             const pathItems: CrumbDefinition[] = hierarchy.map((nodeEntity) => {
                 const normalizedNode = getNodeEntity(nodeEntity).node;
@@ -55,11 +49,11 @@ export const useFolderViewBreadcrumbs = (driveClient: ProtonDriveClient) => {
                 lastPathItem.supportDropOperations = false;
             }
 
-            if (nodeLocation.value === NodeLocation.MY_FILES) {
+            if (nodeLocation === NodeLocation.MY_FILES) {
                 if (pathItems[0]) {
                     pathItems[0].name = c('Title').t`My files`;
                 }
-            } else if (nodeLocation.value === NodeLocation.DEVICES) {
+            } else if (nodeLocation === NodeLocation.DEVICES) {
                 if (pathItems[0]) {
                     // Dropping files at the root of a device is not allowed by the SDK.
                     pathItems[0].supportDropOperations = false;
@@ -74,7 +68,7 @@ export const useFolderViewBreadcrumbs = (driveClient: ProtonDriveClient) => {
                         void navigateToDevices();
                     },
                 });
-            } else if (nodeLocation.value === NodeLocation.SHARED_WITH_ME) {
+            } else if (nodeLocation === NodeLocation.SHARED_WITH_ME) {
                 pathItems.unshift({
                     uid: SYNTHETIC_UID_SHARED_WITH_ME,
                     name: c('Title').t`Shared with me`,
@@ -85,9 +79,7 @@ export const useFolderViewBreadcrumbs = (driveClient: ProtonDriveClient) => {
                     },
                 });
             } else {
-                sendErrorReport(
-                    new Error(`Unsupported NodeLocation <${nodeLocation.value}> for useFolderViewBreadcrumbs`)
-                );
+                sendErrorReport(new Error(`Unsupported NodeLocation <${nodeLocation}> for useFolderViewBreadcrumbs`));
             }
             return {
                 ok: true,

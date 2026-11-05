@@ -1,4 +1,4 @@
-import { type Device, type NodeEntity, NodeType, type Result } from '@protontech/drive-sdk';
+import { type Device, type NodeEntity, NodeType } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
@@ -19,33 +19,24 @@ export type ProtonDriveClientOrPublicDriveClient = {
     iterateDevices?: (signal?: AbortSignal) => AsyncGenerator<Device>;
 };
 
+const isPhotosNode = (node: NodeEntity) => node.type === NodeType.Album || node.type === NodeType.Photo;
+
+/**
+ * Returns where the node is, from its hierarchy (from the root to the node).
+ */
 export async function getNodeLocation(
-    drive: ProtonDriveClientOrPublicDriveClient,
-    node: NodeEntity
-): Promise<Result<NodeLocation, Error>> {
-    if (node.type === NodeType.Album || node.type === NodeType.Photo) {
-        return {
-            ok: true,
-            value: NodeLocation.PHOTOS,
-        };
+    drive: Omit<ProtonDriveClientOrPublicDriveClient, 'getNode'>,
+    hierarchy: NodeEntity[]
+): Promise<NodeLocation> {
+    if (isPhotosNode(hierarchy[hierarchy.length - 1])) {
+        return NodeLocation.PHOTOS;
     }
 
-    const nodesResult = await getNodeAncestry(node.uid, drive);
-    if (!nodesResult.ok) {
-        return {
-            ok: false,
-            error: nodesResult.error,
-        };
-    }
-    const nodes = nodesResult.value;
-    const rootNode = nodes[0];
+    const rootNode = hierarchy[0];
     // If node have a membership it means it is a direct share
     // We also check the getMyFilesRootFolder presence to exclude public page
     if (Boolean(rootNode.membership && drive.getMyFilesRootFolder)) {
-        return {
-            ok: true,
-            value: NodeLocation.SHARED_WITH_ME,
-        };
+        return NodeLocation.SHARED_WITH_ME;
     }
 
     let myFilesRootFolderUid: string | undefined;
@@ -55,24 +46,15 @@ export async function getNodeLocation(
     }
 
     if (rootNode.uid === myFilesRootFolderUid) {
-        return {
-            ok: true,
-            value: NodeLocation.MY_FILES,
-        };
+        return NodeLocation.MY_FILES;
     }
 
     // NOTE: We use the presence of iterateDevices method to understand if we are not using a public drive client.
     if (drive.iterateDevices) {
-        return {
-            ok: true,
-            value: NodeLocation.DEVICES,
-        };
+        return NodeLocation.DEVICES;
     }
 
-    return {
-        ok: true,
-        value: NodeLocation.PUBLIC_PAGE,
-    };
+    return NodeLocation.PUBLIC_PAGE;
 }
 
 const formatPath = (pathItems: string[], additionalTopNodeName?: string) => {
@@ -113,25 +95,45 @@ export async function getFormattedNodeLocation(
     drive: ProtonDriveClientOrPublicDriveClient,
     node: NodeEntity
 ): Promise<string> {
-    const location = await getNodeLocation(drive, node);
-
-    const formattedLocationError = c('Error').t`Unknown location`;
-    if (!location.ok) {
-        handleSdkError(location.error);
-        return formattedLocationError;
-    }
-    const nodeLocation = location.value;
-    const needsPath = nodeLocation !== NodeLocation.PHOTOS;
-
-    let path: NodeEntity[] = [];
-    if (needsPath) {
-        const ancestryResult = await getNodeAncestry(node.uid, drive, false);
-        if (!ancestryResult.ok) {
-            handleSdkError(ancestryResult.error);
-            return formattedLocationError;
-        }
-        path = ancestryResult.value;
+    if (isPhotosNode(node)) {
+        return formatNodeLocation(NodeLocation.PHOTOS, []);
     }
 
-    return formatNodeLocation(location.value, path);
+    const ancestry = await getNodeAncestry(node.uid, drive);
+    if (!ancestry.ok) {
+        handleSdkError(ancestry.error);
+        return c('Error').t`Unknown location`;
+    }
+    return getFormattedNodeLocationFromHierarchy(drive, ancestry.value);
+}
+
+/**
+ * Same as `getFormattedNodeLocation`, for a hierarchy already loaded with `getNodeHierarchy`
+ * (from the root to the node).
+ */
+export async function getFormattedNodeLocationFromHierarchy(
+    drive: Omit<ProtonDriveClientOrPublicDriveClient, 'getNode'>,
+    hierarchy: NodeEntity[]
+): Promise<string> {
+    const location = await getNodeLocation(drive, hierarchy);
+    return formatNodeLocation(location, hierarchy.slice(0, -1));
+}
+
+/**
+ * Same as `getFormattedNodeLocation`, loading the hierarchy with `getNodeHierarchy`.
+ */
+export async function getFormattedNodeLocationUsingHierarchy(
+    drive: Omit<ProtonDriveClientOrPublicDriveClient, 'getNode'> & {
+        getNodeHierarchy: (uid: string) => Promise<NodeEntity[]>;
+    },
+    node: NodeEntity
+): Promise<string> {
+    let hierarchy: NodeEntity[];
+    try {
+        hierarchy = await drive.getNodeHierarchy(node.uid);
+    } catch (e) {
+        handleSdkError(e);
+        return c('Error').t`Unknown location`;
+    }
+    return getFormattedNodeLocationFromHierarchy(drive, hierarchy);
 }

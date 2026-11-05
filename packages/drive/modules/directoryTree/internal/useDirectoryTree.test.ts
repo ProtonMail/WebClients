@@ -86,6 +86,16 @@ describe('useDirectoryTree', () => {
         iterateSharedNodesWithMe: mockIterateSharedNodesWithMe,
         iterateFolderChildren: mockIterateFolderChildren,
         getNode: mockGetNode,
+        // Walks up the parents through getNode, like the SDK, so tests only need to mock getNode.
+        async getNodeHierarchy(nodeUid: string) {
+            let node = await this.getNode(nodeUid);
+            const hierarchy = [node];
+            while (node.parentUid) {
+                node = await this.getNode(node.parentUid);
+                hierarchy.unshift(node);
+            }
+            return hierarchy;
+        },
     };
 
     const createMyFilesRoot = (uid = MY_FILES_ROOT_UID) => {

@@ -1,7 +1,7 @@
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import {
-    getFormattedNodeLocation,
-    getNodeEffectiveRole,
+    getFormattedNodeLocationFromHierarchy,
+    getNodeEffectiveRoleFromHierarchy,
     getNodeName,
     isMissingNode,
 } from '@proton/drive/modules/nodes';
@@ -13,38 +13,23 @@ import { getSignatureIssues } from '../../../../utils/sdk/getSignatureIssues';
 import type { SearchResultItemUI } from '../../searchView/store';
 import { useSearchViewStore } from '../../searchView/store';
 
-// Nodes don't inherit trashTime when their parent folder is trashed,
-// so we must check ancestors.
-const isNodeOrAncestorTrashed = async (node: NodeEntity, drive: ProtonDriveClient): Promise<boolean> => {
-    if (node.trashTime) {
-        return Promise.resolve(true);
-    }
-
-    let currentNodeToCheckForTrash: NodeEntity = node;
-    while (currentNodeToCheckForTrash.parentUid) {
-        const parentUid = currentNodeToCheckForTrash.parentUid;
-        const parentNode = await drive.getNode(parentUid);
-        if (parentNode.trashTime) {
-            return true;
-        }
-        currentNodeToCheckForTrash = parentNode;
-    }
-    return false;
-};
-
 const resolveNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<SearchResultItemUI | null> => {
     // The legacy search library indexes trashed items.
     // We need to filter them out after loading since trash information
     // is only available after fetching the metadata.
-    const isNodeOrAncestorInTrash = await isNodeOrAncestorTrashed(node, drive);
-    if (isNodeOrAncestorInTrash) {
+    if (node.trashTime) {
         return null;
     }
 
-    const [location, role] = await Promise.all([
-        getFormattedNodeLocation(drive, node),
-        getNodeEffectiveRole(node, drive),
-    ]);
+    // Nodes don't inherit trashTime when their parent folder is trashed,
+    // so we must check ancestors.
+    const hierarchy = await drive.getNodeHierarchy(node.uid);
+    if (hierarchy.some((ancestor) => ancestor.trashTime)) {
+        return null;
+    }
+
+    const location = await getFormattedNodeLocationFromHierarchy(drive, hierarchy);
+    const role = getNodeEffectiveRoleFromHierarchy(hierarchy);
 
     const signatureResult = getSignatureIssues(node);
 

@@ -81,6 +81,11 @@ export function createThrottledSearchSdkDriveClient(
             return driveClient.getNode(nodeUid);
         },
 
+        async getNodeHierarchy(nodeUid: string): Promise<NodeEntity[]> {
+            await acquire();
+            return driveClient.getNodeHierarchy(nodeUid);
+        },
+
         async *iterateFolderChildrenNodeUids(parentNodeUid: string, filterOptions?: { type?: NodeType }) {
             await acquire();
             yield* driveClient.iterateFolderChildrenNodeUids(parentNodeUid, filterOptions);

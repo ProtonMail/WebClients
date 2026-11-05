@@ -14,7 +14,6 @@ import { useSelectionStore } from '../../../../modules/selection';
 import type { SortConfig, SortField } from '../../../../modules/sorting/types';
 import { useUserSettings } from '../../../../modules/userSettings';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
-import { getRootNode } from '../../../../utils/sdk/mapNodeToLegacyItem';
 import { useSearchViewStore } from '../../searchView/store';
 
 export const useSearchResultItems = () => {
@@ -93,9 +92,9 @@ export const useSearchResultItems = () => {
             // Get root node share id to for navigation calls below.
             const { nodeId } = splitNodeUid(item.nodeUid);
             const drive = getDrive();
-            const maybeNode = await drive.getNode(item.nodeUid);
-            const node = getNodeEntity(maybeNode).node;
-            const rootNode = await getRootNode(maybeNode, getDrive());
+            const hierarchy = await drive.getNodeHierarchy(item.nodeUid);
+            const node = getNodeEntity(hierarchy[hierarchy.length - 1]).node;
+            const rootNode = hierarchy[0];
             const deprecatedShareId = rootNode.deprecatedShareId || '';
 
             if (item.mediaType) {

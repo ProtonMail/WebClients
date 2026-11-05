@@ -1,5 +1,6 @@
 import type { NodeEntity, ProtonDriveClient } from '../../../sdk';
 import { MemberRole } from '../../../sdk';
+import { getNodeEffectiveRoleFromHierarchy } from '../../nodes';
 
 export const DEVICES_ROOT_ID = 'devices-root';
 export const SHARED_WITH_ME_ROOT_ID = 'shared-with-me-root';
@@ -12,48 +13,11 @@ export function getNodeUidFromTreeItemId(treeItemId: string) {
     return treeItemId.split('___').at(-1);
 }
 
-export async function findEffectiveRole(drive: ProtonDriveClient, node: NodeEntity, previousHighestRole?: MemberRole) {
+export async function findEffectiveRole(drive: ProtonDriveClient, node: NodeEntity) {
     if (node.directRole === MemberRole.Admin) {
         return MemberRole.Admin;
     }
 
-    if (previousHighestRole) {
-        const newHighest = getMorePermissiveRole(previousHighestRole, node.directRole);
-
-        if (newHighest === MemberRole.Admin) {
-            return MemberRole.Admin;
-        }
-
-        // No parent, stop traversing
-        if (!node.parentUid) {
-            return newHighest;
-        }
-
-        const parent = await drive.getNode(node.parentUid);
-        return findEffectiveRole(drive, parent, newHighest);
-    }
-
-    // No previous highest role = current one is the highest
-    if (node.parentUid) {
-        const parent = await drive.getNode(node.parentUid);
-        return findEffectiveRole(drive, parent, node.directRole);
-    } else {
-        // No parent, stop traversing
-        return node.directRole;
-    }
-}
-
-const PERMISSION_LEVELS = {
-    [MemberRole.Inherited]: 0,
-    [MemberRole.Viewer]: 1,
-    [MemberRole.Editor]: 2,
-    [MemberRole.Admin]: 3,
-};
-
-function getMorePermissiveRole(first: MemberRole, second: MemberRole) {
-    if (PERMISSION_LEVELS[first] > PERMISSION_LEVELS[second]) {
-        return first;
-    } else {
-        return second;
-    }
+    const ancestors = node.parentUid ? await drive.getNodeHierarchy(node.parentUid) : [];
+    return getNodeEffectiveRoleFromHierarchy([...ancestors, node]);
 }

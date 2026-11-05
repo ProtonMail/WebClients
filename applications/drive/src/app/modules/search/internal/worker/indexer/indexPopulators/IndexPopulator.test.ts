@@ -74,6 +74,10 @@ class TestPopulator extends NodeTreeIndexPopulator {
     protected async getRootNodeUid(): Promise<string> {
         return 'root';
     }
+
+    resolveParentPathForTest(parentNodeUid: string | undefined, ctx: TaskContext) {
+        return this.resolveParentPath(parentNodeUid, ctx);
+    }
 }
 
 describe('IndexPopulator', () => {
@@ -227,6 +231,50 @@ describe('IndexPopulator', () => {
 
             const event = makeNodeEvent('node_created', 'child', { parentNodeUid: 'missing-parent' });
             await expect(populator.processNodeMutation(event, ctx)).rejects.toThrow();
+        });
+    });
+
+    // =========================================================================
+    // resolveParentPath
+    // =========================================================================
+    describe('resolveParentPath', () => {
+        it('returns an empty path when the parent is the root', async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', parentUid: undefined }));
+
+            const result = await new TestPopulator().resolveParentPathForTest('root', await buildCtx());
+
+            expect(result).toEqual({ ok: true, parentPath: '' });
+        });
+
+        it('returns the ancestor uids below the root, ending with the parent', async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', parentUid: undefined }));
+            bridge.setNode('folder-1', makeMaybeNode({ uid: 'folder-1', parentUid: 'root' }));
+            bridge.setNode('folder-2', makeMaybeNode({ uid: 'folder-2', parentUid: 'folder-1' }));
+
+            const result = await new TestPopulator().resolveParentPathForTest('folder-2', await buildCtx());
+
+            expect(result).toEqual({ ok: true, parentPath: '/folder-1/folder-2' });
+        });
+
+        it('resolves the path of a deeply nested parent', async () => {
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', parentUid: undefined }));
+            const folderUids = ['f1', 'f2', 'f3', 'f4', 'f5', 'f6'];
+            folderUids.forEach((uid, i) =>
+                bridge.setNode(uid, makeMaybeNode({ uid, parentUid: i ? folderUids[i - 1] : 'root' }))
+            );
+
+            const result = await new TestPopulator().resolveParentPathForTest('f6', await buildCtx());
+
+            expect(result).toEqual({ ok: true, parentPath: '/f1/f2/f3/f4/f5/f6' });
+        });
+
+        it('fails when an ancestor cannot be loaded', async () => {
+            bridge.setNode('folder-2', makeMaybeNode({ uid: 'folder-2', parentUid: 'folder-1' }));
+            bridge.setGetNodeError('folder-1', new Error('Permission denied'));
+
+            const result = await new TestPopulator().resolveParentPathForTest('folder-2', await buildCtx());
+
+            expect(result.ok).toBe(false);
         });
     });
 
@@ -757,6 +805,58 @@ describe('IndexPopulator', () => {
                 await db.getBFSVisitorState(
                     NodeTreeIndexPopulator.subtreeVisitorId(IndexKind.MAIN, SCOPE_ID, 'folder-a')
                 )
+            ).toBeUndefined();
+        });
+
+        it('on un-trash of a nested folder: restores its deep subtree', async () => {
+            const folder = (uid: string, parentUid: string, trashTime?: Date) =>
+                makeMaybeNode({ uid, name: uid, type: 'folder' as NodeType, parentUid, trashTime });
+            bridge.setNode('root', makeMaybeNode({ uid: 'root', name: 'root', parentUid: undefined }));
+            bridge.setNode('l1', folder('l1', 'root'));
+            bridge.setNode('l2', folder('l2', 'l1'));
+            bridge.setNode('l3', folder('l3', 'l2'));
+            bridge.setNode('l4', folder('l4', 'l3'));
+            const deepFile = makeMaybeNode({
+                uid: 'deep-file',
+                name: 'deep.txt',
+                type: 'file' as NodeType,
+                parentUid: 'l4',
+            });
+            bridge.setNode('deep-file', deepFile);
+
+            const populator = new TestPopulator();
+            const ctx = await buildCtx();
+
+            for (const [uid, parentUid] of [
+                ['l1', 'root'],
+                ['l2', 'l1'],
+                ['l3', 'l2'],
+                ['l4', 'l3'],
+                ['deep-file', 'l4'],
+            ]) {
+                await indexNode(populator, ctx, uid, parentUid);
+            }
+            await expectIndexed('deep-file');
+
+            bridge.setNode('l3', folder('l3', 'l2', new Date('2025-06-01')));
+            await populator.processNodeMutation(
+                makeNodeEvent('node_updated', 'l3', { parentNodeUid: 'l2', isTrashed: true }),
+                ctx
+            );
+            await expectIndexed('deep-file', 0);
+
+            bridge.setNode('l3', folder('l3', 'l2'));
+            bridge.setChildren('l3', [folder('l4', 'l3')]);
+            bridge.setChildren('l4', [deepFile]);
+            await populator.processNodeMutation(
+                makeNodeEvent('node_updated', 'l3', { parentNodeUid: 'l2', isTrashed: false }),
+                ctx
+            );
+
+            await expectIndexed('l3');
+            await expectIndexed('deep-file');
+            expect(
+                await db.getBFSVisitorState(NodeTreeIndexPopulator.subtreeVisitorId(IndexKind.MAIN, SCOPE_ID, 'l3'))
             ).toBeUndefined();
         });
 

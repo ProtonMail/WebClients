@@ -1,14 +1,12 @@
 import { create } from 'zustand';
 
 import type { NormalizedNode } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import type { BusDriverClient } from '@proton/drive/modules/busDriver';
 import type { NodeEntity, NodeType } from '@proton/drive/sdk';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortConfig } from '../../modules/sorting';
 import { SortField, sortItems } from '../../modules/sorting';
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
-import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
 import { defaultTrashSortConfig, getTrashSortValue } from './trash.sorting';
 
 export interface TrashItem {
@@ -26,15 +24,13 @@ export interface TrashItem {
     size: number;
 }
 
-export const createTrashItem = async (
+export const createTrashItem = (
     rawNode: NodeEntity,
     node: NormalizedNode,
     location: string,
-    client: BusDriverClient,
+    rootNode: NodeEntity,
     haveSignatureIssues?: boolean
-): Promise<TrashItem> => {
-    const rootNode = await getRootNode(rawNode, client);
-
+): TrashItem => {
     return {
         uid: node.uid,
         name: node.name,

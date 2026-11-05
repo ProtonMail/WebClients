@@ -67,7 +67,7 @@ const deviceNode = createMockNodeEntity({
 
 // Test utilities
 const mockNodeLocation = (location: NodeLocation) => {
-    mockGetNodeLocation.mockResolvedValue({ ok: true, value: location });
+    mockGetNodeLocation.mockResolvedValue(location);
 };
 
 const mockNodeAncestry = (nodes: NodeEntity[]) => {
@@ -138,6 +138,30 @@ describe('useFolderViewBreadcrumbs', () => {
             createCrumb('My files', 'uid-volume1Root', true),
             createCrumb('folder1', 'uid-folder1', false),
         ]);
+    });
+
+    it('should compute deeply nested "My files" crumbs from a single hierarchy call', async () => {
+        const nestedFolders = Array.from({ length: 6 }, (_, i) =>
+            createMockNodeEntity({
+                uid: `uid-nested${i + 1}`,
+                name: { ok: true, value: `nested${i + 1}` },
+                type: NodeType.Folder,
+            })
+        );
+        const hook = setupTest(NodeLocation.MY_FILES, [myFileRootNode, ...nestedFolders]);
+
+        await loadAndExpect(hook, [
+            createCrumb('My files', 'uid-volume1Root', true),
+            createCrumb('nested1', 'uid-nested1', true),
+            createCrumb('nested2', 'uid-nested2', true),
+            createCrumb('nested3', 'uid-nested3', true),
+            createCrumb('nested4', 'uid-nested4', true),
+            createCrumb('nested5', 'uid-nested5', true),
+            createCrumb('nested6', 'uid-nested6', false),
+        ]);
+        expect(mockGetNodeHierarchy).toHaveBeenCalledTimes(1);
+        expect(mockDrive.getNode).not.toHaveBeenCalled();
+        expect(mockGetNodeLocation).toHaveBeenCalledWith(mockDrive, [myFileRootNode, ...nestedFolders]);
     });
 
     it('should compute "Shared with me" crumbs properly', async () => {

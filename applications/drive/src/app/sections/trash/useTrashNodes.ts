@@ -3,10 +3,11 @@ import { useCallback } from 'react';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { driveMetrics } from '@proton/drive/modules/metrics';
-import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
+import { getFormattedNodeLocation, getFormattedNodeLocationFromHierarchy } from '@proton/drive/modules/nodes';
 import { getDrive, getDriveForPhotos } from '@proton/drive/sdk';
 
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
+import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
 import { createTrashItem, useTrashStore } from './useTrash.store';
 
 export const useTrashNodes = () => {
@@ -20,10 +21,11 @@ export const useTrashNodes = () => {
             const { onItemsLoadedToState, onFinished } = driveMetrics.drivePerformance.startDataLoad('trash');
             for await (const trashNode of drive.iterateTrashedNodes(abortSignal)) {
                 try {
-                    const location = await getFormattedNodeLocation(drive, trashNode);
+                    const hierarchy = await drive.getNodeHierarchy(trashNode.uid);
+                    const location = await getFormattedNodeLocationFromHierarchy(drive, hierarchy);
                     const { node } = getNodeEntity(trashNode);
                     const haveSignatureIssues = !getSignatureIssues(trashNode).ok;
-                    setItem(await createTrashItem(trashNode, node, location, drive, haveSignatureIssues));
+                    setItem(createTrashItem(trashNode, node, location, hierarchy[0], haveSignatureIssues));
                     onItemsLoadedToState(1);
                 } catch (e) {
                     handleSdkError(e, { showNotification: !shownErrorNotification });
@@ -47,9 +49,10 @@ export const useTrashNodes = () => {
             for await (const trashNode of drive.iterateTrashedNodes(abortSignal)) {
                 try {
                     const location = await getFormattedNodeLocation(drive, trashNode);
+                    const rootNode = await getRootNode(trashNode, drive);
                     const { node } = getNodeEntity(trashNode);
                     const haveSignatureIssues = !getSignatureIssues(trashNode).ok;
-                    setItem(await createTrashItem(trashNode, node, location, drive, haveSignatureIssues));
+                    setItem(createTrashItem(trashNode, node, location, rootNode, haveSignatureIssues));
                 } catch (e) {
                     handleSdkError(e, { showNotification: !shownErrorNotification });
                     shownErrorNotification = true;
