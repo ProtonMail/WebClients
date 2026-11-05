@@ -1,7 +1,7 @@
-import { showReadOnlyDocument } from './showReadOnlyDocument'
+import { showDocument } from './showDocument'
 
-describe('showReadOnlyDocument', () => {
-  test('initializes the editor as a Viewer, applies each base state update as the base commit, then shows it', async () => {
+describe('showDocument', () => {
+  test('initializes the editor with the role, applies each base state update as the base commit, then shows it', async () => {
     const calls: unknown[][] = []
     const editorInvoker = {
       initializeEditor: jest.fn(async (...args: unknown[]) => {
@@ -30,10 +30,10 @@ describe('showReadOnlyDocument', () => {
       }),
     }
 
-    await showReadOnlyDocument(editorInvoker, session, '0.0.2.89')
+    await showDocument(editorInvoker, session, 'Editor', '0.0.2.89')
 
     expect(calls).toEqual([
-      ['initializeEditor', expect.any(String), 'member@example.com', 'Viewer', false, '0.0.2.89'],
+      ['initializeEditor', expect.any(String), 'member@example.com', 'Editor', false, '0.0.2.89'],
       ['receiveMessage', { type: { wrapper: 'du' }, content: first, origin: 'BaseCommit' }],
       ['receiveMessage', { type: { wrapper: 'du' }, content: second, origin: 'BaseCommit' }],
       ['showEditor'],
@@ -64,7 +64,7 @@ describe('showReadOnlyDocument', () => {
       }),
     }
 
-    const shown = showReadOnlyDocument(editorInvoker, session, '0.0.2.89')
+    const shown = showDocument(editorInvoker, session, 'Viewer', '0.0.2.89')
     await new Promise((resolve) => setTimeout(resolve, 0))
 
     expect(editorInvoker.receiveMessage).toHaveBeenCalledTimes(1)
@@ -87,7 +87,7 @@ describe('showReadOnlyDocument', () => {
       getBaseState: () => ({ commitId: undefined, updates: [] }),
     }
 
-    await expect(showReadOnlyDocument(editorInvoker, session, '0.0.2.89')).rejects.toThrow('Editor did not answer')
+    await expect(showDocument(editorInvoker, session, 'Viewer', '0.0.2.89')).rejects.toThrow('Editor did not answer')
     expect(editorInvoker.showEditor).not.toHaveBeenCalled()
   })
 })

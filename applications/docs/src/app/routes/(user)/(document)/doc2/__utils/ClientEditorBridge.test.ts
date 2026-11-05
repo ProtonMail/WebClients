@@ -8,6 +8,8 @@ const logger = { debug: jest.fn(), warn: jest.fn(), error: jest.fn() } as unknow
   typeof ClientEditorBridge
 >[2]
 
+const sendUpdate = jest.fn()
+
 describe('ClientEditorBridge', () => {
   let frame: HTMLIFrameElement
   let postToEditor: jest.SpyInstance
@@ -20,7 +22,7 @@ describe('ClientEditorBridge', () => {
     const isFlagEnabled = (flag: string) => flag === 'DocsEditorPackageEnabled'
     bridge = new ClientEditorBridge(
       frame,
-      createClientHandler({ editorFrame: frame, isFlagEnabled, onEditorError: jest.fn(), logger }),
+      createClientHandler({ editorFrame: frame, sendUpdate, isFlagEnabled, onEditorError: jest.fn(), logger }),
       logger,
     )
   })
@@ -29,6 +31,7 @@ describe('ClientEditorBridge', () => {
     bridge.destroy()
     frame.remove()
     jest.useRealTimers()
+    jest.clearAllMocks()
   })
 
   test("answers the editor's flag check", async () => {
@@ -81,17 +84,36 @@ describe('ClientEditorBridge', () => {
     expect(frame.style.getPropertyValue('--print-min-height')).toBe('480px')
   })
 
-  test('answers an update the editor asks to propagate without sending it anywhere', async () => {
+  test('sends an update the editor asks to propagate, and answers it', async () => {
+    const content = new Uint8Array([1])
     receiveFromEditor({
       type: EditorBridgeMessageType.EditorToClientInvokation,
       functionName: 'editorRequestsPropagationOfUpdate',
-      args: [{ type: { wrapper: 'du' }, content: new Uint8Array([1]) }, 'DocState'],
+      args: [{ type: { wrapper: 'du' }, content }, 'DocState'],
       messageId: 'message-1',
     })
 
     await waitForReply()
 
+    expect(sendUpdate).toHaveBeenCalledWith(content)
     expect(postToEditor).toHaveBeenCalledTimes(1)
+    expect(postToEditor).toHaveBeenCalledWith(
+      { type: EditorBridgeMessageType.ClientToEditorReply, messageId: 'message-1', returnValue: undefined },
+      expect.any(String),
+    )
+  })
+
+  test('answers a presence event the editor asks to propagate without sending it', async () => {
+    receiveFromEditor({
+      type: EditorBridgeMessageType.EditorToClientInvokation,
+      functionName: 'editorRequestsPropagationOfUpdate',
+      args: [{ type: { wrapper: 'events', eventType: 2 }, content: new Uint8Array([1]) }, 'DocState'],
+      messageId: 'message-1',
+    })
+
+    await waitForReply()
+
+    expect(sendUpdate).not.toHaveBeenCalled()
     expect(postToEditor).toHaveBeenCalledWith(
       { type: EditorBridgeMessageType.ClientToEditorReply, messageId: 'message-1', returnValue: undefined },
       expect.any(String),

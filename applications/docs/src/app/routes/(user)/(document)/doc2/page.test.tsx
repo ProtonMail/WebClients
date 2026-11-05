@@ -22,6 +22,9 @@ jest.mock('@proton-docs/realtime-sdk', () => ({ version: '0.0.0' }))
 const mockCreateSession = jest.fn()
 const mockClient = { createSession: mockCreateSession }
 jest.mock('./__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockClient }))
+jest.mock('@proton/app-context/useNotifications', () => ({
+  useNotifications: () => ({ createNotification: jest.fn() }),
+}))
 jest.mock('@proton/drive/sdk', () => ({
   ...jest.requireActual('@proton/drive/sdk'),
   getDrive: jest.fn(),
@@ -31,6 +34,7 @@ const ORIGIN = 'https://docs.proton.dev'
 
 const driveCompat = { getMyFilesNodeMeta: jest.fn(), createDocumentNode: jest.fn() }
 const getNode = jest.fn()
+const getNodeHierarchy = jest.fn(async () => [])
 const getMyFilesRootFolder = jest.fn()
 
 describe('DocumentPageV2', () => {
@@ -39,7 +43,11 @@ describe('DocumentPageV2', () => {
 
   beforeEach(() => {
     mockIsDriveCompatSDK = false
-    jest.mocked(getDrive).mockReturnValue({ getNode, getMyFilesRootFolder } as unknown as ReturnType<typeof getDrive>)
+    jest.mocked(getDrive).mockReturnValue({
+      getNode,
+      getNodeHierarchy,
+      getMyFilesRootFolder,
+    } as unknown as ReturnType<typeof getDrive>)
     getNode.mockResolvedValue({ mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE })
     mockCreateSession.mockReturnValue(pendingSession(() => new Promise(() => {})))
     driveCompat.getMyFilesNodeMeta.mockResolvedValue({ volumeId: 'MY_VOLUME', linkId: 'MY_FILES' })

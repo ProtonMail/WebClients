@@ -6,6 +6,8 @@ export type ClientHandler = EditorRequiresClientMethods
 
 export type ClientHandlerDependencies = {
   editorFrame: HTMLIFrameElement
+  /** Where the user's edits go */
+  sendUpdate: (update: Uint8Array<ArrayBuffer>) => void
   isFlagEnabled: (flag: FeatureFlag) => boolean
   onEditorError: (error: Error) => void
   logger: LoggerInterface
@@ -14,12 +16,13 @@ export type ClientHandlerDependencies = {
 type NativeMobileWindow = Window & { Android?: unknown; webkit?: { messageHandlers?: { iOS?: unknown } } }
 
 /**
- * Answers every call from the editor for a read-only text document, after docs-core
- * `Bridge/EditorToClientRequestHandler.ts`. The editor never times out a call to the client, so each one gets a reply.
- * With no websocket, comments or editing yet, the calls for those change nothing and answer as if there were none.
+ * Answers every call from the editor for a text document, after docs-core `Bridge/EditorToClientRequestHandler.ts`.
+ * The editor never times out a call to the client, so each one gets a reply. With no comments or presence yet, the
+ * calls for those change nothing and answer as if there were none.
  */
 export function createClientHandler({
   editorFrame,
+  sendUpdate,
   isFlagEnabled,
   onEditorError,
   logger,
@@ -29,9 +32,13 @@ export function createClientHandler({
     checkIfFeatureFlagIsEnabled: async (flag) => isFlagEnabled(flag),
     reportUserInterfaceError: async (error) => onEditorError(error),
 
-    // Never sent: the document is read-only and has no websocket to send it on
-    editorRequestsPropagationOfUpdate: async () => {
-      logger.warn('Editor asked to propagate an update of a read-only document')
+    editorRequestsPropagationOfUpdate: async (message) => {
+      // The other wrappers are presence events, which doc2 doesn't send yet, and conversions, which it never opens
+      if (message.type.wrapper !== 'du') {
+        logger.debug('Editor message not sent', { wrapper: message.type.wrapper })
+        return
+      }
+      sendUpdate(message.content)
     },
     handleAwarenessStateUpdate: async () => {},
 
