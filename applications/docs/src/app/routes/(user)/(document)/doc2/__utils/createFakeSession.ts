@@ -1,4 +1,4 @@
-import type { Session, SessionEvents, SessionSnapshot } from '@proton-docs/realtime-sdk'
+import type { BaseState, Session, SessionEvents, SessionSnapshot } from '@proton-docs/realtime-sdk'
 
 /** A session for tests: its snapshot changes and its events fire by hand, and every method is a jest mock. */
 export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
@@ -9,6 +9,7 @@ export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
     delivery: 'synced',
     editing: { allowed: true },
     baseCommitId: 'commit-1',
+    caughtUp: false,
     participants: [],
     ...snapshot,
   }
@@ -28,6 +29,8 @@ export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
       }
     },
     getSnapshot: () => current,
+    getBaseState: jest.fn((): BaseState => ({ commitId: 'commit-1', updates: [] })),
+    getNodeMeta: jest.fn(() => ({ volumeId: 'VOLUME', linkId: 'LINK', userOwnAddress: 'member@example.com' })),
     connect: jest.fn(async () => {}),
     pause: jest.fn(async () => {}),
     resume: jest.fn(async () => {}),

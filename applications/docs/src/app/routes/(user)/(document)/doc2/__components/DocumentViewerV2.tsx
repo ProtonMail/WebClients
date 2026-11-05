@@ -11,7 +11,7 @@ import { useApplication } from '~/utils/application-context'
 import { ClientEditorBridge } from '../__utils/ClientEditorBridge'
 import type { EditorInvoker } from '../__utils/EditorInvoker'
 import { createClientHandler } from '../__utils/createClientHandler'
-import { showDocument } from '../__utils/showDocument'
+import { sendBaseState, showDocument } from '../__utils/showDocument'
 import { useDocumentSession } from '../__utils/useDocumentSession'
 import { useLiveEditing } from '../__utils/useLiveEditing'
 import { usePauseWhileAway } from '../__utils/usePauseWhileAway'
@@ -86,9 +86,9 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
       }),
       logger,
     )
-    showDocument(bridge.editorInvoker, session, role, APP_VERSION).then(() => {
+    // useLiveEditing connects once the editor holds the base state, so RTS's replay reaches the editor after it
+    sendBaseState(bridge.editorInvoker, session).then(() => {
       if (!controller.signal.aborted) {
-        setEditorStatus('shown')
         setEditorInvoker(bridge.editorInvoker)
       }
     }, onEditorError)
@@ -98,7 +98,26 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
       bridge.destroy()
       setEditorInvoker(undefined)
     }
-  }, [APP_VERSION, editorFrame, failEditor, isFlagEnabled, logger, role, session])
+  }, [editorFrame, failEditor, isFlagEnabled, logger, session])
+
+  // As docs-core's EditorController, wait for RTS to replay the edits it has not committed yet: before that the
+  // editor may hold nothing. While reconnecting or stopped before then, the loader stays, under SessionStatus.
+  const caughtUp = snapshot?.caughtUp === true
+  useEffect(() => {
+    if (!session || !editorInvoker || !caughtUp) {
+      return
+    }
+
+    let cancelled = false
+    showDocument(editorInvoker, session, role, APP_VERSION).then(
+      () => !cancelled && setEditorStatus('shown'),
+      (error) => !cancelled && failEditor(error),
+    )
+
+    return () => {
+      cancelled = true
+    }
+  }, [APP_VERSION, caughtUp, editorInvoker, failEditor, role, session])
 
   if (sessionState.status === 'failed') {
     const canRetry = sessionState.reason === 'bootstrapFailed' || sessionState.reason === 'unreadableUpdate'

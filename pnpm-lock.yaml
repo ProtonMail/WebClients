@@ -1744,8 +1744,8 @@ importers:
         specifier: 'catalog:'
         version: 0.31.2
       '@proton-docs/realtime-sdk':
-        specifier: 0.8.3
-        version: 0.8.3(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(yjs@13.6.27)
+        specifier: 0.9.0
+        version: 0.9.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(yjs@13.6.27)
       '@proton/account':
         specifier: workspace:^
         version: link:../../packages/account
@@ -16878,8 +16878,8 @@ packages:
       y-protocols: ^1.0.6
       yjs: ^13.6.15
 
-  '@proton-docs/realtime-sdk@0.8.3':
-    resolution: {integrity: sha512-PDnOW6PFyCPy74t3pj78RH3KHZ2V/1TG6Wsiwxs/5jsSmcHq6k1ENbQK+MifKe+cpYS/C8YmCb+b8vnWynkBFA==}
+  '@proton-docs/realtime-sdk@0.9.0':
+    resolution: {integrity: sha512-FUcX+0nPFznUm/i+24pyM1Xkg5IQaICOY+0aG0pwDpodhnyrUM/IJFPrqBjnzGgvE8C4XD2Ow8jClsXB1V2gaw==}
     peerDependencies:
       yjs: ^13.5.0
 
@@ -35718,7 +35718,7 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@proton-docs/realtime-sdk@0.8.3(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(yjs@13.6.27)':
+  '@proton-docs/realtime-sdk@0.9.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)(yjs@13.6.27)':
     dependencies:
       '@protontech/crypto': 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       fflate: 0.8.3
@@ -50936,21 +50936,6 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
-
-  webpack-cli@7.3.1(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@5.2.7)(webpack@5.112.2):
-    dependencies:
-      '@discoveryjs/json-ext': 1.1.0
-      commander: 14.0.3
-      envinfo: 7.21.0
-      interpret: 3.1.1
-      rechoir: 1.0.0
-      webpack: 5.112.2(@swc/core@1.16.21(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(svgo@4.1.0)(webpack-cli@7.3.1)
-      webpack-merge: 6.0.1
-    optionalDependencies:
-      js-yaml: 4.3.2
-      json5: 2.2.3
-      webpack-bundle-analyzer: 5.4.0
-      webpack-dev-server: 5.2.7(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)(webpack-cli@7.3.1)(webpack@5.112.2)
 
   webpack-cli@7.3.1(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@6.1.0)(webpack@5.112.2):
     dependencies:

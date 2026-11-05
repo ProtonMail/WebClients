@@ -68,7 +68,7 @@ describe('useLiveEditing', () => {
     expect(result.current).toBe(fake.session.getSnapshot())
   })
 
-  test('once the editor is shown, listens to every event before connecting, and follows the snapshot', () => {
+  test('once the editor holds the base state, listens to every event before connecting, and follows the snapshot', () => {
     const fake = createFakeSession()
     const calls: string[] = []
     fake.mocks.on.mockImplementation((event: string) => {
