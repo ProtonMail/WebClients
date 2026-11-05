@@ -1,5 +1,5 @@
 import type { AttachmentInfo, Message } from '../../lib/interfaces/mail/Message';
-import { hasAttachments, isBounced, numAttachments } from '../../lib/mail/messages';
+import { hasAttachments, isBounced, isThirdPartyRegistration, numAttachments } from '../../lib/mail/messages';
 
 describe('isBounced helper', () => {
     const generateMessage = (sender: string, subject: string) =>
@@ -122,5 +122,17 @@ describe('hasAttachments', () => {
             } as Partial<Record<string, AttachmentInfo>>,
         } as Partial<Message>;
         expect(hasAttachments(message, false)).toBe(false);
+    });
+});
+
+describe('isThirdPartyRegistration', () => {
+    it('should return true when bit 40 is set', () => {
+        expect(isThirdPartyRegistration({ Flags: 2 ** 40 })).toBe(true);
+        expect(isThirdPartyRegistration({ Flags: 2 ** 40 + 1 })).toBe(true);
+    });
+
+    it('should return false when bit 40 is not set', () => {
+        expect(isThirdPartyRegistration({ Flags: 2 ** 40 - 1 })).toBe(false);
+        expect(isThirdPartyRegistration({ Flags: 0 })).toBe(false);
     });
 });

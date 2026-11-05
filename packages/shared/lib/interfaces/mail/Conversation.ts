@@ -26,6 +26,7 @@ export interface Conversation {
     AttachmentsMetadata?: AttachmentsMetadata[];
     DisplaySnoozedReminder?: boolean;
     ExpiringByRetention?: boolean;
+    IsThirdPartyRegistration?: boolean;
 }
 
 export interface ConversationLabel {

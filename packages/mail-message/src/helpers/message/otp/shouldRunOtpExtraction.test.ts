@@ -47,4 +47,31 @@ describe('shouldRunOtpExtraction', () => {
             )
         ).toBe(false);
     });
+
+    it('runs for a recent flagged email whose subject is not an OTP subject', () => {
+        expect(
+            shouldRunOtpExtraction(
+                { subject: 'Lunch tomorrow?', isThirdPartyRegistration: true, timestampMs: recent },
+                NOW
+            )
+        ).toBe(true);
+    });
+
+    it('does not run for a recent unflagged email whose subject is not an OTP subject', () => {
+        expect(
+            shouldRunOtpExtraction(
+                { subject: 'Lunch tomorrow?', isThirdPartyRegistration: false, timestampMs: recent },
+                NOW
+            )
+        ).toBe(false);
+    });
+
+    it('does not run for a stale flagged email', () => {
+        expect(
+            shouldRunOtpExtraction(
+                { subject: 'Lunch tomorrow?', isThirdPartyRegistration: true, timestampMs: stale },
+                NOW
+            )
+        ).toBe(false);
+    });
 });
