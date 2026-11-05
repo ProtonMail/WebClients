@@ -4064,9 +4064,6 @@
       "Attachment": [
         "Συνημμένο"
       ],
-      "Filter on": [
-        "Φιλτράρισμα σε"
-      ],
       "Next": [
         "Επόμενο"
       ],
@@ -7192,6 +7189,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Θέλετε σίγουρα να διαγράψετε οριστικά αυτό το μήνυμα;"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Ζητήστε από τον διαχειριστή σας να αναβαθμίσει το πλάνο ή να αφαιρέσει μια σελίδα από την πλαϊνή στήλη των Σελίδων Κρατήσεων στο ${ CALENDAR_APP_NAME }."
+      ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Ζητήστε από τον διαχειριστή σας να αναβαθμίσει το πλάνο ή να αφαιρέσει μια σελίδα από την πλαϊνή στήλη των Σελίδων Κρατήσεων."
       ],
@@ -8102,9 +8102,6 @@
       ],
       "Move here": [
         "Μετακίνηση εδώ"
-      ],
-      "Move to Primary": [
-        "Μετακίνηση στα Κύρια"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
@@ -9018,6 +9015,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "Για να προσθέσετε μια νέα σελίδα κρατήσεων, ζητήστε από τον διαχειριστή σας να αναβαθμίσει το πλάνο σας."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, αφαιρέστε μια υπάρχουσα από την πλαϊνή στήλη των Σελίδων Κρατήσεων στο ${ CALENDAR_APP_NAME }."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Για να προσθέσετε μια νέα σελίδα κρατήσεων, αφαιρέστε μια υπάρχουσα από την πλαϊνή στήλη των σελίδων κρατήσεων."
@@ -16435,6 +16435,9 @@
       ],
       "Filter name cannot contain only spaces": [
         "Το όνομα φίλτρου δεν μπορεί να περιέχει μόνο κενά διαστήματα"
+      ],
+      "Filter on": [
+        "Φίλτρο σε"
       ],
       "Filter on...": [
         "Φίλτρο σε..."

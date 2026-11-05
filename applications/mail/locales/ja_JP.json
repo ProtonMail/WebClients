@@ -2271,6 +2271,11 @@
         "年払い"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName } デスクトップアプリ"
+      ]
+    },
     "Bug category": {
       "${ LUMO_SHORT_APP_NAME } problem": [
         "${ LUMO_SHORT_APP_NAME } の不具合"
@@ -4032,9 +4037,6 @@
     "CustomFilter": {
       "Attachment": [
         "添付ファイル"
-      ],
-      "Filter on": [
-        "絞り込み"
       ],
       "Next": [
         "次へ"
@@ -7962,9 +7964,6 @@
       "Move here": [
         "ここに移動"
       ],
-      "Move to Primary": [
-        "メインに移動"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
@@ -11081,7 +11080,7 @@
         "ラベル"
       ],
       "Learn more": [
-        "詳細"
+        "より詳しく"
       ],
       "Learn more.": [
         "より詳しく。"

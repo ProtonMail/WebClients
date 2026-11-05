@@ -4064,9 +4064,6 @@
       "Attachment": [
         "Adjunt"
       ],
-      "Filter on": [
-        "Filtra per"
-      ],
       "Next": [
         "Següent"
       ],
@@ -6246,6 +6243,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Abans de ${ MAIL_APP_NAME }, quina adreça de correu electrònic fèieu servir més?"
+      ],
       "Contacts": [
         "Contactes"
       ],
@@ -6287,6 +6287,9 @@
       ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Quina és la raó principal per la qual us heu unit a ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -6726,6 +6729,9 @@
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } de ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } a ${ formattedTime }"
       ],
@@ -6994,6 +7000,9 @@
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per obtenir un reemborsament."
       ],
+      "A new or separate address": [
+        "Una adreça nova o diferent"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número de telèfon només es pot utilitzar per verificar un sol compte de ${ BRAND_NAME }."
       ],
@@ -7005,6 +7014,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Una connexió segura és essencial quan es treballa a distància. Una VPN protegeix les dades de l'empresa de les amenaces cibernètiques i manté la feina privada."
+      ],
+      "A specific feature (tell us)": [
+        "Un altra característica (indiqueu-nos-ho)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
@@ -7107,6 +7119,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "S'importaran tots els vostres contactes, fins a un límit d'${ maxContact }",
         "S'importaran tots els vostres contactes, fins a un límit de ${ maxContact }"
+      ],
+      "Almost done": [
+        "Gairebé hem acabat"
       ],
       "American Express SafeKey logo": [
         "Logo d'American Express SafeKey"
@@ -7222,6 +7237,9 @@
       "Awaiting transaction": [
         "S'està esperant la transacció"
       ],
+      "Back": [
+        "Torna"
+      ],
       "Background color": [
         "Color de fons"
       ],
@@ -7296,6 +7314,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Trieu el pla que se us adapti millor."
+      ],
+      "Choose all that apply.": [
+        "Trieu totes les opcions que corresponguin."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Trieu-ne una. Ens ajuda a millorar ${ MAIL_APP_NAME }."
       ],
       "Choose your service to connect with": [
         "Trieu el servei amb què us voleu connectar"
@@ -7463,6 +7487,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
+      ],
+      "Dismiss": [
+        "Descarta"
       ],
       "Do you remember your password?": [
         "Recordeu la vostra contrasenya?"
@@ -7798,6 +7825,12 @@
       "How hide-my-email aliases works": [
         "Funcionament dels àlies hide-my-email"
       ],
+      "I didn't have one": [
+        "No en tenia cap"
+      ],
+      "I use other Proton products": [
+        "Faig servir altres productes de Proton"
+      ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "Revisaré el correu de la setmana passada i n'extrauré el que realment necessiti resposta, així ho podreu gestionar tot de cop."
       ],
@@ -7956,6 +7989,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Més informació sobre què fer ${ dataLeakedLink }"
       ],
+      "Leave Big Tech": [
+        "Deixeu les grans empreses tecnològiques"
+      ],
       "Left to Right": [
         "D'esquerra a dreta"
       ],
@@ -8106,9 +8142,6 @@
       "Move here": [
         "Moure aquí"
       ],
-      "Move to Primary": [
-        "Moure a Primari"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
@@ -8118,11 +8151,17 @@
       "newsletter": [
         "butlletí"
       ],
+      "Next": [
+        "Següent"
+      ],
       "Next time you sign in to your other account": [
         "La pròxima vegada que inicieu sessió al vostre altre compte"
       ],
       "No action selected": [
         "No s'ha seleccionat cap acció"
+      ],
+      "No ads": [
+        "Sense publicitat"
       ],
       "No booking pages yet": [
         "Encara no hi ha cap pàgina de reserves"
@@ -8232,6 +8271,9 @@
       "On public WiFi networks": [
         "A les xarxes wifi públiques"
       ],
+      "One last step": [
+        "Un últim pas"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
       ],
@@ -8261,6 +8303,9 @@
       ],
       "Organization size": [
         "Mida de l'organització"
+      ],
+      "Other (tell us)": [
+        "Altres (indiqueu-nos-ho)"
       ],
       "Other accounts": [
         "Altres comptes"
@@ -8412,6 +8457,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Protegeix el vostre correu de filtracions a llistes de correu o generadors de correu brossa amb ${ hideMyEmailAliasesLink }."
+      ],
+      "Protection from hackers and leaks": [
+        "Protecció contra pirates informàtics i fuites"
       ],
       "Public sharing of documents is not yet supported.": [
         "Encara no s'admet l'intercanvi públic de documents."
@@ -8718,6 +8766,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Alguns llocs web i serveis d'estríming bloquegen els continguts per regió. Una VPN us permet evitar aquestes restriccions i accedir a internet lliurement."
       ],
+      "Someone recommended it": [
+        "Algú us ho ha recomanat"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Aquest missatge no existeix o ja ha caducat."
       ],
@@ -8733,11 +8784,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Comenceu a compartir-la amb els contactes i utilitzeu-la per als serveis en línia."
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Comenceu a utilitzar ${ MAIL_APP_NAME }"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "Comenceu a usar la versió més curta i fàcil de recordar de la vostra adreça."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Mantingueu-vos connectat fàcilment activant la configuració següent de la VPN:"
+      ],
+      "Stop companies reading my emails": [
+        "Atureu que les empreses llegeixin els meus correus electrònics"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Les capacitats d'emmagatzematge no són compatibles amb aquest navegador. Necessitem aquest suport per activar la cerca de contingut dels missatges."
@@ -8784,6 +8841,9 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Digueu-me quan sereu fora i què voleu que hi digui, i ho veureu tot abans que es desi."
+      ],
+      "Tell us more (optional)": [
+        "Explica'ns més (opcional)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporalment no disponible a causa de l'alta demanda. Torneu-ho a provar més tard."
@@ -9023,7 +9083,7 @@
         "Per a afegir una pàgina de reserves nova, demaneu al vostre administrador/a que us millori el pla."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
-        "Per afegir una pàgina de reserves nova, elimineu-ne una d'existent de la barra lateral de pàgines de reserves a ${ CALENDAR_APP_NAME }."
+        "Per a afegir una pàgina de reserves nova, elimineu-ne una d'existent de la barra lateral de pàgines de reserves a ${ CALENDAR_APP_NAME }."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Per a afegir una pàgina de reserves nova, esborreu-ne una d’existent de la barra lateral de pàgines de reserves."
@@ -9331,8 +9391,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Quan viatgeu o utilitzeu una WiFi pública, connecteu-vos a ${ VPN_APP_NAME } per a evitar que ningú faci el seguiment de la vostra activitat en línia o us robi les dades. És gratuït."
       ],
+      "Which feature? (optional)": [
+        "Quines característiques? (opcional)"
+      ],
+      "Which provider?": [
+        "Quin proveïdor?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Amb les noves categories de correu, només els missatges importants arriben a la safata d'entrada principal. Tota la resta s'organitza en categories."
+      ],
+      "Work or business": [
+        "Feina o negoci"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -16441,6 +16510,9 @@
       ],
       "Filter name cannot contain only spaces": [
         "El nom del filtre no pot contenir només espais"
+      ],
+      "Filter on": [
+        "Habilitar filtre"
       ],
       "Filter on...": [
         "Filtra per..."

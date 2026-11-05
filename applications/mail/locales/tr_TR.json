@@ -4064,9 +4064,6 @@
       "Attachment": [
         "Ek dosya"
       ],
-      "Filter on": [
-        "Şuna göre süz"
-      ],
       "Next": [
         "İlerle"
       ],
@@ -6246,6 +6243,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "${ MAIL_APP_NAME }'den önce en çok hangi e-posta uygulamasını kullanıyordunuz?"
+      ],
       "Contacts": [
         "Kişiler"
       ],
@@ -6287,6 +6287,9 @@
       ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "${ MAIL_APP_NAME }'e katılmanızın başlıca nedeni nedir?"
       ]
     },
     "Hint": {
@@ -6726,6 +6729,9 @@
         "${ currentProgress } / ${ totalProgress }",
         "${ currentProgress } / ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } / ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } tarihinde ${ formattedTime } saatinde"
       ],
@@ -6994,6 +7000,9 @@
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
       ],
+      "A new or separate address": [
+        "Yeni veya farklı bir adres"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
       ],
@@ -7005,6 +7014,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Uzaktan çalışırken güvenli bir bağlantı kullanmak şarttır. VPN, şirket verilerini siber tehditlerden korur ve işinizin güvende kalmasını sağlar."
+      ],
+      "A specific feature (tell us)": [
+        "Belirli bir özellik (bize bildirin)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
@@ -7107,6 +7119,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak",
         "${ maxContact } kişiye kadar olan tüm kişileriniz içe aktarılacak"
+      ],
+      "Almost done": [
+        "Neredeyse bitti"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logosu"
@@ -7222,6 +7237,9 @@
       "Awaiting transaction": [
         "Ödemenin tamamlanması bekleniyor"
       ],
+      "Back": [
+        "Geri"
+      ],
       "Background color": [
         "Arka plan rengi"
       ],
@@ -7296,6 +7314,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Size en uygun tarifeyi seçin."
+      ],
+      "Choose all that apply.": [
+        "Uygun olan tüm seçenekleri işaretleyin."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Birini seçin. Bu ${ MAIL_APP_NAME } ürünümüzü geliştirmemize yardımcı olur."
       ],
       "Choose your service to connect with": [
         "Bağlamak istediğiniz hizmeti seçin"
@@ -7463,6 +7487,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
+      ],
+      "Dismiss": [
+        "Kapat"
       ],
       "Do you remember your password?": [
         "Parolanızı anımsıyor musunuz?"
@@ -7798,6 +7825,12 @@
       "How hide-my-email aliases works": [
         "Hide-my-email adları nasıl çalışır"
       ],
+      "I didn't have one": [
+        "Bende yoktu"
+      ],
+      "I use other Proton products": [
+        "Diğer Proton ürünlerini kullanıyorum"
+      ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "Geçen haftanın e-postalarını gözden geçirip gerçekten yanıtlanması gerekenleri ayıracağım. Böylece sen de tümünü tek seferde halledebilirsin."
       ],
@@ -7956,6 +7989,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "${ dataLeakedLink } ne yapacağınızı öğrenin"
       ],
+      "Leave Big Tech": [
+        "Büyük Teknoloji Şirketlerinden Ayrılın"
+      ],
       "Left to Right": [
         "Soldan sağa"
       ],
@@ -8106,9 +8142,6 @@
       "Move here": [
         "Buraya taşı"
       ],
-      "Move to Primary": [
-        "Birincil e-postalara taşı"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
@@ -8118,11 +8151,17 @@
       "newsletter": [
         "duyuru"
       ],
+      "Next": [
+        "Sonraki"
+      ],
       "Next time you sign in to your other account": [
         "Bir dahaki sefere diğer hesabınızda oturum açtığınızda"
       ],
       "No action selected": [
         "Herhangi bir işlem seçilmemiş"
+      ],
+      "No ads": [
+        "Reklamsız"
       ],
       "No booking pages yet": [
         "Henüz bir rezervasyon sayfası yok"
@@ -8232,6 +8271,9 @@
       "On public WiFi networks": [
         "Herkese açık Wi-Fi ağlarında"
       ],
+      "One last step": [
+        "Son bir adım"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilen anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
@@ -8261,6 +8303,9 @@
       ],
       "Organization size": [
         "Kuruluş boyutu"
+      ],
+      "Other (tell us)": [
+        "Diğer (bize bildirin)"
       ],
       "Other accounts": [
         "Diğer hesaplar"
@@ -8412,6 +8457,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "${ hideMyEmailAliasesLink } ile e-posta adresinizin e-posta listelerine veya istenmeyen posta gönderenlere sızdırılmasını önleyin."
+      ],
+      "Protection from hackers and leaks": [
+        "Bilgisayar korsanlarına ve bilgi sızıntılarına karşı koruma"
       ],
       "Public sharing of documents is not yet supported.": [
         "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
@@ -8718,6 +8766,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Bazı siteler ve yayın akışı hizmetleri, içeriklerini bölgelere göre engeller. Bir VPN, bu kısıtlamaları aşmanızı ve internete özgürce erişmenizi sağlar."
       ],
+      "Someone recommended it": [
+        "Biri bunu tavsiye etti"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne yazık ki, bu ileti bulunamadı ya da geçerlilik süresi dolmuş."
       ],
@@ -8733,11 +8784,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Bu adresi kişilerinizle paylaşmaya ve çevrim içi hizmetlerde kullanmaya başlayın."
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } kullanmaya başlayın"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "E-posta adresinizin daha kısa ve kolay sürümünü kullanmaya başlayın."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Aşağıdaki VPN ayarlarını etkinleştirerek kolayca bağlı kalın:"
+      ],
+      "Stop companies reading my emails": [
+        "Şirketlerin e-postalarımı okumasını durdur"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Bu tarayıcıda depolama alanı özelliği desteklenmiyor. İletilerin içeriklerinde arama yapabilmek için bu özellik desteklenmelidir."
@@ -8784,6 +8841,9 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Ne zaman uzakta olacağını ve ne yazılmasını istediğini bana söyle. Kaydetmeden önce tümünü görebileceksin."
+      ],
+      "Tell us more (optional)": [
+        "Bize daha fazla bilgi verin (isteğe bağlı)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Yoğun istek nedeniyle geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden deneyin."
@@ -9331,8 +9391,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Seyahat ederken veya herkese açık Wi-Fi ağlarını kullanırken, çevrim içi etkinliğinizin izlenmesini veya verilerinizin çalınmasını önlemek için bağlantınızı ${ VPN_APP_NAME } ile kurun. Ücretsizdir."
       ],
+      "Which feature? (optional)": [
+        "Hangi özellik? (isteğe bağlı)"
+      ],
+      "Which provider?": [
+        "Hangi sağlayıcı?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Yeni e-posta kategorileri ile, yalnızca önemli iletiler birincil gelen kutunuza düşer. Diğer her şey kategoriler halinde düzenlenir."
+      ],
+      "Work or business": [
+        "İş veya ticari faaliyet"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -16441,6 +16510,9 @@
       ],
       "Filter name cannot contain only spaces": [
         "Süzgeç adında yalnızca boşluk bulunamaz"
+      ],
+      "Filter on": [
+        "Şuna göre süz"
       ],
       "Filter on...": [
         "Şuna göre süz..."

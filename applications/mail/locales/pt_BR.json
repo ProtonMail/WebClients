@@ -4059,9 +4059,6 @@
       "Attachment": [
         "Anexo"
       ],
-      "Filter on": [
-        "Filtrar em"
-      ],
       "Next": [
         "Próximo"
       ],
@@ -6715,6 +6712,9 @@
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } de ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } às ${ formattedTime }"
       ],
@@ -7208,6 +7208,9 @@
       "Awaiting transaction": [
         "Esperando transação"
       ],
+      "Back": [
+        "Voltar"
+      ],
       "Background color": [
         "Cor de fundo"
       ],
@@ -7449,6 +7452,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
+      ],
+      "Dismiss": [
+        "Descartar"
       ],
       "Do you remember your password?": [
         "Você lembra sua senha?"
@@ -8092,9 +8098,6 @@
       "Move here": [
         "Mover aqui"
       ],
-      "Move to Primary": [
-        "Mover para Principal"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
       ],
@@ -8103,6 +8106,9 @@
       ],
       "newsletter": [
         "boletim"
+      ],
+      "Next": [
+        "Próximo"
       ],
       "Next time you sign in to your other account": [
         "Da próxima vez que você entrar na sua outra conta"
@@ -16409,6 +16415,9 @@
       ],
       "Filter name cannot contain only spaces": [
         "O nome do filtro não pode somente espaços"
+      ],
+      "Filter on": [
+        "Filtrar em"
       ],
       "Filter on...": [
         "Filtrar em..."
