@@ -68,9 +68,16 @@ const importerEvent = (state: ApiImporterState): ApiEvent => ({
     Imports: [{ ID: 'importer-id', Action: 2, Importer: { Active: { Drive: { State: state } } } } as any],
 });
 
-const reportEvent = (state: ApiImporterState): ApiEvent => ({
-    ImportReports: [{ ID: 'report-id', Action: 2, ImportReport: { Summary: { Drive: { State: state } } } } as any],
+const reportEvent = (
+    state: ApiImporterState,
+    importFolder?: { ImportFolderVolumeID: string; ImportFolderLinkID: string }
+): ApiEvent => ({
+    ImportReports: [
+        { ID: 'report-id', Action: 2, ImportReport: { Summary: { Drive: { State: state, ...importFolder } } } } as any,
+    ],
 });
+
+const IMPORT_FOLDER = { ImportFolderVolumeID: 'volume-id', ImportFolderLinkID: 'link-id' };
 
 describe('useDriveImportStatus', () => {
     beforeEach(() => {
@@ -170,6 +177,41 @@ describe('useDriveImportStatus', () => {
 
             act(() => result.current.clearOutcome());
             expect(result.current.outcome).toBeUndefined();
+        });
+
+        it('exposes the import folder when the report carries it', () => {
+            const { result } = renderWithState(easySwitchState({ importer: true }));
+
+            act(() => emitEvent(reportEvent(ApiImporterState.DONE, IMPORT_FOLDER)));
+
+            expect(result.current.importFolderUid).toBe('volume-id~link-id');
+        });
+
+        it('has no import folder when only the importer reports the finished import', () => {
+            const { result } = renderWithState(easySwitchState({ importer: true }));
+
+            act(() => emitEvent(importerEvent(ApiImporterState.DONE)));
+
+            expect(result.current.outcome).toBe('success');
+            expect(result.current.importFolderUid).toBeUndefined();
+        });
+
+        it('forgets the import folder when the outcome is cleared', () => {
+            const { result } = renderWithState(easySwitchState({ importer: true }));
+
+            act(() => emitEvent(reportEvent(ApiImporterState.DONE, IMPORT_FOLDER)));
+            act(() => result.current.clearOutcome());
+
+            expect(result.current.importFolderUid).toBeUndefined();
+        });
+
+        it('forgets the import folder of a previous import when the next one fails', () => {
+            const { result } = renderWithState(easySwitchState({ importer: true }));
+
+            act(() => emitEvent(reportEvent(ApiImporterState.DONE, IMPORT_FOLDER)));
+            act(() => emitEvent(importerEvent(ApiImporterState.FAILED)));
+
+            expect(result.current.importFolderUid).toBeUndefined();
         });
 
         it('reports failure when the import failed', () => {

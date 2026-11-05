@@ -7,15 +7,14 @@ import { TransferFinishIllustration } from './illustrations/TransferFinishIllust
 
 interface Props {
     onClose: () => void;
-    // onGoToFolder: () => void;
+    onGoToFolder?: () => void;
 }
 
-export const DriveImportSuccessStep = ({ onClose }: Props) => (
+export const DriveImportSuccessStep = ({ onClose, onGoToFolder }: Props) => (
     <DriveStepModal
         onClose={onClose}
         media={<TransferFinishIllustration />}
-        // TODO: Go to folder action needs BE change and will be implemented later
-        // secondaryAction={{ label: c('Action').t`Go to folder`, onClick: onGoToFolder }}
+        secondaryAction={onGoToFolder && { label: c('Action').t`Go to folder`, onClick: onGoToFolder }}
         primaryAction={{ label: c('Action').t`Got it`, onClick: onClose }}
     >
         <h3 className="text-bold">{c('Title').t`Your import is finished!`}</h3>

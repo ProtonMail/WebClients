@@ -1,17 +1,21 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import useAppLink from '@proton/components/components/link/useAppLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import { getDriveNodePath } from '@proton/drive/public/nodes';
 import useLoading from '@proton/hooks/useLoading';
+import { IcFolderOpen } from '@proton/icons/icons/IcFolderOpen';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { APPS } from '@proton/shared/lib/constants';
 
 import type { ApiImportProvider } from '../../../api/api.interface';
 import { ApiReportRollbackState } from '../../../api/api.interface';
 import { useTrackImportAction } from '../../../hooks/useTrackImportAction';
 import type { ImportType } from '../../../interface';
 import { deleteReportSummary, rollbackReportSummary } from '../../../logic/reports/reports.actions';
-import type { ReportSummaryID } from '../../../logic/reports/reports.interface';
+import type { ReportSummary, ReportSummaryID } from '../../../logic/reports/reports.interface';
 import { useEasySwitchDispatch } from '../../../logic/store';
 
 interface Props {
@@ -20,9 +24,11 @@ interface Props {
     provider: ApiImportProvider;
     account: string;
     rollbackState: ApiReportRollbackState | undefined;
+    importFolder: ReportSummary['importFolder'];
 }
 
-const ReportRowActions = ({ reportSummaryID, rollbackState, product, provider, account }: Props) => {
+const ReportRowActions = ({ reportSummaryID, rollbackState, product, provider, account, importFolder }: Props) => {
+    const goToApp = useAppLink();
     const trackEvent = useTrackImportAction({ account, provider, product });
     const dispatch = useEasySwitchDispatch();
     const [deleteModalProps, showDeleteModal, renderDeleteModal] = useModalState();
@@ -51,6 +57,18 @@ const ReportRowActions = ({ reportSummaryID, rollbackState, product, provider, a
         <div className="inline-flex gap-1">
             {rollbackState === ApiReportRollbackState.CAN_ROLLBACK && !loadingDeleteRecord && (
                 <Button onClick={() => showRollbackModal(true)}>{c('Action').t`Undo import`}</Button>
+            )}
+
+            {importFolder && rollbackState !== ApiReportRollbackState.ROLLED_BACK && (
+                <Button
+                    onClick={() =>
+                        goToApp(getDriveNodePath(importFolder.volumeID, importFolder.linkID), APPS.PROTONDRIVE, true)
+                    }
+                    shape="ghost"
+                    icon
+                >
+                    <IcFolderOpen alt={c('Action').t`Go to folder`} />
+                </Button>
             )}
 
             <Button

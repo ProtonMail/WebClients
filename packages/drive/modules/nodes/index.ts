@@ -13,3 +13,4 @@ export {
     getFormattedNodeLocationFromHierarchy,
     getFormattedNodeLocationUsingHierarchy,
 } from './internal/getNodeLocation';
+export { getDriveNodePath } from './internal/getDriveNodePath';
